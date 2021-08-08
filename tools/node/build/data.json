@@ -1,0 +1,2512 @@
+[
+    {
+        "name": "#250 鳳王 ホウオウ ho_oh",
+        "hp": 106,
+        "atk": 130,
+        "def": 90,
+        "spd": 90,
+        "sat": 110,
+        "sdf": 154,
+        "total": 680
+    },
+    {
+        "name": "#249 洛奇亞 ルギア lugia",
+        "hp": 106,
+        "atk": 90,
+        "def": 130,
+        "spd": 110,
+        "sat": 90,
+        "sdf": 154,
+        "total": 680
+    },
+    {
+        "name": "#150 超夢 ミュウツー mewtwo",
+        "hp": 106,
+        "atk": 110,
+        "def": 90,
+        "spd": 130,
+        "sat": 154,
+        "sdf": 90,
+        "total": 680
+    },
+    {
+        "name": "#251 時拉比 セレビィ celebi",
+        "hp": 100,
+        "atk": 100,
+        "def": 100,
+        "spd": 100,
+        "sat": 100,
+        "sdf": 100,
+        "total": 600
+    },
+    {
+        "name": "#149 快龍 カイリュー dragonite",
+        "hp": 91,
+        "atk": 134,
+        "def": 95,
+        "spd": 80,
+        "sat": 100,
+        "sdf": 100,
+        "total": 600
+    },
+    {
+        "name": "#151 夢幻 ミュウ mew",
+        "hp": 100,
+        "atk": 100,
+        "def": 100,
+        "spd": 100,
+        "sat": 100,
+        "sdf": 100,
+        "total": 600
+    },
+    {
+        "name": "#248 班基拉斯 バンギラス tyranitar",
+        "hp": 100,
+        "atk": 134,
+        "def": 110,
+        "spd": 61,
+        "sat": 95,
+        "sdf": 100,
+        "total": 600
+    },
+    {
+        "name": "#144 急凍鳥 フリーザー articuno",
+        "hp": 90,
+        "atk": 85,
+        "def": 100,
+        "spd": 85,
+        "sat": 95,
+        "sdf": 125,
+        "total": 580
+    },
+    {
+        "name": "#244 炎帝 エンテイ entei",
+        "hp": 115,
+        "atk": 115,
+        "def": 85,
+        "spd": 100,
+        "sat": 90,
+        "sdf": 75,
+        "total": 580
+    },
+    {
+        "name": "#146 火焰鳥 ファイヤー moltres",
+        "hp": 90,
+        "atk": 100,
+        "def": 90,
+        "spd": 90,
+        "sat": 125,
+        "sdf": 85,
+        "total": 580
+    },
+    {
+        "name": "#243 雷公 ライコウ raikou",
+        "hp": 90,
+        "atk": 85,
+        "def": 75,
+        "spd": 115,
+        "sat": 115,
+        "sdf": 100,
+        "total": 580
+    },
+    {
+        "name": "#245 水君 スイクン suicune",
+        "hp": 100,
+        "atk": 75,
+        "def": 115,
+        "spd": 85,
+        "sat": 90,
+        "sdf": 115,
+        "total": 580
+    },
+    {
+        "name": "#145 閃電鳥 サンダー zapdos",
+        "hp": 90,
+        "atk": 90,
+        "def": 85,
+        "spd": 100,
+        "sat": 125,
+        "sdf": 90,
+        "total": 580
+    },
+    {
+        "name": "#059 風速狗 ウインディ arcanine",
+        "hp": 90,
+        "atk": 110,
+        "def": 80,
+        "spd": 95,
+        "sat": 100,
+        "sdf": 80,
+        "total": 555
+    },
+    {
+        "name": "#242 幸福蛋 ハピナス blissey",
+        "hp": 255,
+        "atk": 10,
+        "def": 10,
+        "spd": 55,
+        "sat": 75,
+        "sdf": 135,
+        "total": 540
+    },
+    {
+        "name": "#130 暴鯉龍 ギャラドス gyarados",
+        "hp": 95,
+        "atk": 125,
+        "def": 79,
+        "spd": 81,
+        "sat": 60,
+        "sdf": 100,
+        "total": 540
+    },
+    {
+        "name": "#230 刺龍王 キングドラ kingdra",
+        "hp": 75,
+        "atk": 95,
+        "def": 95,
+        "spd": 85,
+        "sat": 95,
+        "sdf": 95,
+        "total": 540
+    },
+    {
+        "name": "#143 卡比獸 カビゴン snorlax",
+        "hp": 160,
+        "atk": 110,
+        "def": 65,
+        "spd": 30,
+        "sat": 65,
+        "sdf": 110,
+        "total": 540
+    },
+    {
+        "name": "#169 叉字蝠 クロバット crobat",
+        "hp": 85,
+        "atk": 90,
+        "def": 80,
+        "spd": 130,
+        "sat": 70,
+        "sdf": 80,
+        "total": 535
+    },
+    {
+        "name": "#131 拉普拉斯 ラプラス lapras",
+        "hp": 130,
+        "atk": 85,
+        "def": 80,
+        "spd": 60,
+        "sat": 85,
+        "sdf": 95,
+        "total": 535
+    },
+    {
+        "name": "#006 噴火龍 リザードン charizard",
+        "hp": 78,
+        "atk": 84,
+        "def": 78,
+        "spd": 100,
+        "sat": 109,
+        "sdf": 85,
+        "total": 534
+    },
+    {
+        "name": "#157 火爆獸 バクフーン typhlosion",
+        "hp": 78,
+        "atk": 84,
+        "def": 78,
+        "spd": 100,
+        "sat": 109,
+        "sdf": 85,
+        "total": 534
+    },
+    {
+        "name": "#009 水箭龜 カメックス blastoise",
+        "hp": 79,
+        "atk": 83,
+        "def": 100,
+        "spd": 78,
+        "sat": 85,
+        "sdf": 105,
+        "total": 530
+    },
+    {
+        "name": "#160 大力鱷 オーダイル feraligatr",
+        "hp": 85,
+        "atk": 105,
+        "def": 100,
+        "spd": 78,
+        "sat": 79,
+        "sdf": 83,
+        "total": 530
+    },
+    {
+        "name": "#091 刺甲貝 パルシェン cloyster",
+        "hp": 50,
+        "atk": 95,
+        "def": 180,
+        "spd": 70,
+        "sat": 85,
+        "sdf": 45,
+        "total": 525
+    },
+    {
+        "name": "#196 太陽伊布 エーフィ espeon",
+        "hp": 65,
+        "atk": 65,
+        "def": 60,
+        "spd": 110,
+        "sat": 130,
+        "sdf": 95,
+        "total": 525
+    },
+    {
+        "name": "#136 火伊布 ブースター flareon",
+        "hp": 65,
+        "atk": 130,
+        "def": 60,
+        "spd": 65,
+        "sat": 95,
+        "sdf": 110,
+        "total": 525
+    },
+    {
+        "name": "#135 雷伊布 サンダース jolteon",
+        "hp": 65,
+        "atk": 65,
+        "def": 60,
+        "spd": 130,
+        "sat": 110,
+        "sdf": 95,
+        "total": 525
+    },
+    {
+        "name": "#154 大竺葵 メガニウム meganium",
+        "hp": 80,
+        "atk": 82,
+        "def": 100,
+        "spd": 80,
+        "sat": 83,
+        "sdf": 100,
+        "total": 525
+    },
+    {
+        "name": "#197 月亮伊布 ブラッキー umbreon",
+        "hp": 95,
+        "atk": 65,
+        "def": 110,
+        "spd": 65,
+        "sat": 60,
+        "sdf": 130,
+        "total": 525
+    },
+    {
+        "name": "#134 水伊布 シャワーズ vaporeon",
+        "hp": 130,
+        "atk": 65,
+        "def": 60,
+        "spd": 65,
+        "sat": 110,
+        "sdf": 95,
+        "total": 525
+    },
+    {
+        "name": "#003 妙蛙花 フシギバナ venusaur",
+        "hp": 80,
+        "atk": 82,
+        "def": 83,
+        "spd": 80,
+        "sat": 100,
+        "sdf": 100,
+        "total": 525
+    },
+    {
+        "name": "#103 椰蛋樹 ナッシー exeggutor",
+        "hp": 95,
+        "atk": 95,
+        "def": 85,
+        "spd": 55,
+        "sat": 125,
+        "sdf": 65,
+        "total": 520
+    },
+    {
+        "name": "#121 寶石海星 スターミー starmie",
+        "hp": 60,
+        "atk": 75,
+        "def": 85,
+        "spd": 115,
+        "sat": 100,
+        "sdf": 85,
+        "total": 520
+    },
+    {
+        "name": "#142 化石翼龍 プテラ aerodactyl",
+        "hp": 80,
+        "atk": 105,
+        "def": 65,
+        "spd": 130,
+        "sat": 60,
+        "sdf": 75,
+        "total": 515
+    },
+    {
+        "name": "#233 多邊獸ⅱ ポリゴン２ porygon2",
+        "hp": 85,
+        "atk": 80,
+        "def": 90,
+        "spd": 60,
+        "sat": 105,
+        "sdf": 95,
+        "total": 515
+    },
+    {
+        "name": "#073 毒刺水母 ドククラゲ tentacruel",
+        "hp": 80,
+        "atk": 70,
+        "def": 65,
+        "spd": 100,
+        "sat": 80,
+        "sdf": 120,
+        "total": 515
+    },
+    {
+        "name": "#208 大鋼蛇 ハガネール steelix",
+        "hp": 75,
+        "atk": 85,
+        "def": 200,
+        "spd": 30,
+        "sat": 55,
+        "sdf": 65,
+        "total": 510
+    },
+    {
+        "name": "#068 怪力 カイリキー machamp",
+        "hp": 90,
+        "atk": 130,
+        "def": 80,
+        "spd": 55,
+        "sat": 65,
+        "sdf": 85,
+        "total": 505
+    },
+    {
+        "name": "#038 九尾 キュウコン ninetales",
+        "hp": 73,
+        "atk": 76,
+        "def": 75,
+        "spd": 100,
+        "sat": 81,
+        "sdf": 100,
+        "total": 505
+    },
+    {
+        "name": "#213 壺壺 ツボツボ shuckle",
+        "hp": 20,
+        "atk": 10,
+        "def": 230,
+        "spd": 5,
+        "sat": 10,
+        "sdf": 230,
+        "total": 505
+    },
+    {
+        "name": "#181 電龍 デンリュウ ampharos",
+        "hp": 90,
+        "atk": 75,
+        "def": 75,
+        "spd": 55,
+        "sat": 115,
+        "sdf": 90,
+        "total": 500
+    },
+    {
+        "name": "#232 頓甲 ドンファン donphan",
+        "hp": 90,
+        "atk": 120,
+        "def": 120,
+        "spd": 50,
+        "sat": 60,
+        "sdf": 60,
+        "total": 500
+    },
+    {
+        "name": "#094 耿鬼 ゲンガー gengar",
+        "hp": 60,
+        "atk": 65,
+        "def": 60,
+        "spd": 110,
+        "sat": 130,
+        "sdf": 75,
+        "total": 500
+    },
+    {
+        "name": "#055 哥達鴨 ゴルダック golduck",
+        "hp": 80,
+        "atk": 82,
+        "def": 78,
+        "spd": 85,
+        "sat": 95,
+        "sdf": 80,
+        "total": 500
+    },
+    {
+        "name": "#214 赫拉克羅斯 ヘラクロス heracross",
+        "hp": 80,
+        "atk": 125,
+        "def": 75,
+        "spd": 85,
+        "sat": 40,
+        "sdf": 95,
+        "total": 500
+    },
+    {
+        "name": "#229 黑魯加 ヘルガー houndoom",
+        "hp": 75,
+        "atk": 90,
+        "def": 50,
+        "spd": 95,
+        "sat": 110,
+        "sdf": 80,
+        "total": 500
+    },
+    {
+        "name": "#089 臭臭泥 ベトベトン muk",
+        "hp": 105,
+        "atk": 105,
+        "def": 75,
+        "spd": 50,
+        "sat": 65,
+        "sdf": 100,
+        "total": 500
+    },
+    {
+        "name": "#127 凱羅斯 カイロス pinsir",
+        "hp": 65,
+        "atk": 125,
+        "def": 100,
+        "spd": 85,
+        "sat": 55,
+        "sdf": 70,
+        "total": 500
+    },
+    {
+        "name": "#186 蚊香蛙皇 ニョロトノ politoed",
+        "hp": 90,
+        "atk": 75,
+        "def": 75,
+        "spd": 70,
+        "sat": 90,
+        "sdf": 100,
+        "total": 500
+    },
+    {
+        "name": "#062 蚊香泳士 ニョロボン poliwrath",
+        "hp": 90,
+        "atk": 85,
+        "def": 95,
+        "spd": 70,
+        "sat": 70,
+        "sdf": 90,
+        "total": 500
+    },
+    {
+        "name": "#078 烈焰馬 ギャロップ rapidash",
+        "hp": 65,
+        "atk": 100,
+        "def": 70,
+        "spd": 105,
+        "sat": 80,
+        "sdf": 80,
+        "total": 500
+    },
+    {
+        "name": "#212 巨鉗螳螂 ハッサム scizor",
+        "hp": 70,
+        "atk": 130,
+        "def": 100,
+        "spd": 65,
+        "sat": 55,
+        "sdf": 80,
+        "total": 500
+    },
+    {
+        "name": "#123 飛天螳螂 ストライク scyther",
+        "hp": 70,
+        "atk": 110,
+        "def": 80,
+        "spd": 105,
+        "sat": 55,
+        "sdf": 80,
+        "total": 500
+    },
+    {
+        "name": "#217 圈圈熊 リングマ ursaring",
+        "hp": 90,
+        "atk": 130,
+        "def": 75,
+        "spd": 55,
+        "sat": 75,
+        "sdf": 75,
+        "total": 500
+    },
+    {
+        "name": "#141 鐮刀盔 カブトプス kabutops",
+        "hp": 60,
+        "atk": 115,
+        "def": 105,
+        "spd": 80,
+        "sat": 65,
+        "sdf": 70,
+        "total": 495
+    },
+    {
+        "name": "#126 鴨嘴火獸 ブーバー magmar",
+        "hp": 65,
+        "atk": 95,
+        "def": 57,
+        "spd": 93,
+        "sat": 100,
+        "sdf": 85,
+        "total": 495
+    },
+    {
+        "name": "#034 尼多王 ニドキング nidoking",
+        "hp": 81,
+        "atk": 92,
+        "def": 77,
+        "spd": 85,
+        "sat": 85,
+        "sdf": 75,
+        "total": 495
+    },
+    {
+        "name": "#031 尼多后 ニドクイン nidoqueen",
+        "hp": 90,
+        "atk": 82,
+        "def": 87,
+        "spd": 76,
+        "sat": 75,
+        "sdf": 85,
+        "total": 495
+    },
+    {
+        "name": "#139 多刺菊石獸 オムスター omastar",
+        "hp": 70,
+        "atk": 60,
+        "def": 125,
+        "spd": 55,
+        "sat": 115,
+        "sdf": 70,
+        "total": 495
+    },
+    {
+        "name": "#065 胡地 フーディン alakazam",
+        "hp": 55,
+        "atk": 50,
+        "def": 45,
+        "spd": 120,
+        "sat": 135,
+        "sdf": 85,
+        "total": 490
+    },
+    {
+        "name": "#125 電擊獸 エレブー electabuzz",
+        "hp": 65,
+        "atk": 83,
+        "def": 57,
+        "spd": 105,
+        "sat": 95,
+        "sdf": 85,
+        "total": 490
+    },
+    {
+        "name": "#115 袋獸 ガルーラ kangaskhan",
+        "hp": 105,
+        "atk": 95,
+        "def": 80,
+        "spd": 90,
+        "sat": 40,
+        "sdf": 80,
+        "total": 490
+    },
+    {
+        "name": "#241 大奶罐 ミルタンク miltank",
+        "hp": 95,
+        "atk": 80,
+        "def": 105,
+        "spd": 100,
+        "sat": 40,
+        "sdf": 70,
+        "total": 490
+    },
+    {
+        "name": "#080 呆殼獸 ヤドラン slowbro",
+        "hp": 95,
+        "atk": 75,
+        "def": 110,
+        "spd": 30,
+        "sat": 100,
+        "sdf": 80,
+        "total": 490
+    },
+    {
+        "name": "#199 呆呆王 ヤドキング slowking",
+        "hp": 95,
+        "atk": 75,
+        "def": 80,
+        "spd": 30,
+        "sat": 100,
+        "sdf": 110,
+        "total": 490
+    },
+    {
+        "name": "#128 肯泰羅 ケンタロス tauros",
+        "hp": 75,
+        "atk": 100,
+        "def": 95,
+        "spd": 110,
+        "sat": 40,
+        "sdf": 70,
+        "total": 490
+    },
+    {
+        "name": "#110 雙彈瓦斯 マタドガス weezing",
+        "hp": 65,
+        "atk": 90,
+        "def": 120,
+        "spd": 60,
+        "sat": 85,
+        "sdf": 70,
+        "total": 490
+    },
+    {
+        "name": "#076 隆隆岩 ゴローニャ golem",
+        "hp": 80,
+        "atk": 110,
+        "def": 130,
+        "spd": 45,
+        "sat": 55,
+        "sdf": 65,
+        "total": 485
+    },
+    {
+        "name": "#112 鑽角犀獸 サイドン rhydon",
+        "hp": 105,
+        "atk": 130,
+        "def": 120,
+        "spd": 40,
+        "sat": 45,
+        "sdf": 45,
+        "total": 485
+    },
+    {
+        "name": "#097 引夢貘人 スリーパー hypno",
+        "hp": 85,
+        "atk": 73,
+        "def": 70,
+        "spd": 67,
+        "sat": 73,
+        "sdf": 115,
+        "total": 483
+    },
+    {
+        "name": "#182 美麗花 キレイハナ bellossom",
+        "hp": 75,
+        "atk": 80,
+        "def": 85,
+        "spd": 50,
+        "sat": 90,
+        "sdf": 100,
+        "total": 480
+    },
+    {
+        "name": "#101 頑皮雷彈 マルマイン electrode",
+        "hp": 60,
+        "atk": 50,
+        "def": 70,
+        "spd": 140,
+        "sat": 80,
+        "sdf": 80,
+        "total": 480
+    },
+    {
+        "name": "#224 章魚桶 オクタン octillery",
+        "hp": 75,
+        "atk": 105,
+        "def": 75,
+        "spd": 45,
+        "sat": 105,
+        "sdf": 75,
+        "total": 480
+    },
+    {
+        "name": "#071 大食花 ウツボット victreebel",
+        "hp": 80,
+        "atk": 105,
+        "def": 65,
+        "spd": 70,
+        "sat": 100,
+        "sdf": 60,
+        "total": 480
+    },
+    {
+        "name": "#045 霸王花 ラフレシア vileplume",
+        "hp": 75,
+        "atk": 80,
+        "def": 85,
+        "spd": 50,
+        "sat": 100,
+        "sdf": 90,
+        "total": 480
+    },
+    {
+        "name": "#087 白海獅 ジュゴン dewgong",
+        "hp": 90,
+        "atk": 70,
+        "def": 80,
+        "spd": 70,
+        "sat": 70,
+        "sdf": 95,
+        "total": 475
+    },
+    {
+        "name": "#099 巨鉗蟹 キングラー kingler",
+        "hp": 55,
+        "atk": 130,
+        "def": 115,
+        "spd": 75,
+        "sat": 50,
+        "sdf": 50,
+        "total": 475
+    },
+    {
+        "name": "#026 雷丘 ライチュウ raichu",
+        "hp": 60,
+        "atk": 90,
+        "def": 55,
+        "spd": 100,
+        "sat": 90,
+        "sdf": 80,
+        "total": 475
+    },
+    {
+        "name": "#036 皮可西 ピクシー clefable",
+        "hp": 95,
+        "atk": 70,
+        "def": 73,
+        "spd": 60,
+        "sat": 85,
+        "sdf": 90,
+        "total": 473
+    },
+    {
+        "name": "#178 天然鳥 ネイティオ xatu",
+        "hp": 65,
+        "atk": 75,
+        "def": 70,
+        "spd": 95,
+        "sat": 95,
+        "sdf": 70,
+        "total": 470
+    },
+    {
+        "name": "#018 大比鳥 ピジョット pidgeot",
+        "hp": 83,
+        "atk": 80,
+        "def": 75,
+        "spd": 91,
+        "sat": 70,
+        "sdf": 70,
+        "total": 469
+    },
+    {
+        "name": "#205 佛烈托斯 フォレトス forretress",
+        "hp": 75,
+        "atk": 90,
+        "def": 140,
+        "spd": 40,
+        "sat": 60,
+        "sdf": 60,
+        "total": 465
+    },
+    {
+        "name": "#082 三合一磁怪 レアコイル magneton",
+        "hp": 50,
+        "atk": 60,
+        "def": 95,
+        "spd": 70,
+        "sat": 120,
+        "sdf": 70,
+        "total": 465
+    },
+    {
+        "name": "#226 巨翅飛魚 マンタイン mantine",
+        "hp": 65,
+        "atk": 40,
+        "def": 70,
+        "spd": 70,
+        "sat": 80,
+        "sdf": 140,
+        "total": 465
+    },
+    {
+        "name": "#227 盔甲鳥 エアームド skarmory",
+        "hp": 65,
+        "atk": 80,
+        "def": 140,
+        "spd": 70,
+        "sat": 40,
+        "sdf": 70,
+        "total": 465
+    },
+    {
+        "name": "#234 驚角鹿 オドシシ stantler",
+        "hp": 73,
+        "atk": 95,
+        "def": 62,
+        "spd": 85,
+        "sat": 85,
+        "sdf": 65,
+        "total": 465
+    },
+    {
+        "name": "#085 嘟嘟利 ドードリオ dodrio",
+        "hp": 60,
+        "atk": 110,
+        "def": 70,
+        "spd": 100,
+        "sat": 60,
+        "sdf": 60,
+        "total": 460
+    },
+    {
+        "name": "#171 電燈怪 ランターン lanturn",
+        "hp": 125,
+        "atk": 58,
+        "def": 58,
+        "spd": 67,
+        "sat": 76,
+        "sdf": 76,
+        "total": 460
+    },
+    {
+        "name": "mr__mime",
+        "hp": 40,
+        "atk": 45,
+        "def": 65,
+        "spd": 90,
+        "sat": 100,
+        "sdf": 120,
+        "total": 460
+    },
+    {
+        "name": "#203 麒麟奇 キリンリキ girafarig",
+        "hp": 70,
+        "atk": 80,
+        "def": 65,
+        "spd": 85,
+        "sat": 90,
+        "sdf": 65,
+        "total": 455
+    },
+    {
+        "name": "#042 大嘴蝠 ゴルバット golbat",
+        "hp": 75,
+        "atk": 80,
+        "def": 70,
+        "spd": 90,
+        "sat": 65,
+        "sdf": 75,
+        "total": 455
+    },
+    {
+        "name": "#107 快拳郎 エビワラー hitmonchan",
+        "hp": 50,
+        "atk": 105,
+        "def": 79,
+        "spd": 76,
+        "sat": 35,
+        "sdf": 110,
+        "total": 455
+    },
+    {
+        "name": "#106 飛腿郎 サワムラー hitmonlee",
+        "hp": 50,
+        "atk": 120,
+        "def": 53,
+        "spd": 87,
+        "sat": 35,
+        "sdf": 110,
+        "total": 455
+    },
+    {
+        "name": "#237 戰舞郎 カポエラー hitmontop",
+        "hp": 50,
+        "atk": 95,
+        "def": 95,
+        "spd": 70,
+        "sat": 35,
+        "sdf": 110,
+        "total": 455
+    },
+    {
+        "name": "#124 迷唇姐 ルージュラ jynx",
+        "hp": 65,
+        "atk": 50,
+        "def": 35,
+        "spd": 95,
+        "sat": 115,
+        "sdf": 95,
+        "total": 455
+    },
+    {
+        "name": "#057 火爆猴 オコリザル primeape",
+        "hp": 65,
+        "atk": 105,
+        "def": 60,
+        "spd": 95,
+        "sat": 60,
+        "sdf": 70,
+        "total": 455
+    },
+    {
+        "name": "#113 吉利蛋 ラッキー chansey",
+        "hp": 250,
+        "atk": 5,
+        "def": 5,
+        "spd": 50,
+        "sat": 35,
+        "sdf": 105,
+        "total": 450
+    },
+    {
+        "name": "#210 布魯皇 グランブル granbull",
+        "hp": 90,
+        "atk": 120,
+        "def": 75,
+        "spd": 45,
+        "sat": 60,
+        "sdf": 60,
+        "total": 450
+    },
+    {
+        "name": "#189 毽子棉 ワタッコ jumpluff",
+        "hp": 75,
+        "atk": 55,
+        "def": 70,
+        "spd": 110,
+        "sat": 55,
+        "sdf": 85,
+        "total": 450
+    },
+    {
+        "name": "#221 長毛豬 イノムー piloswine",
+        "hp": 100,
+        "atk": 100,
+        "def": 80,
+        "spd": 50,
+        "sat": 60,
+        "sdf": 60,
+        "total": 450
+    },
+    {
+        "name": "#028 穿山王 サンドパン sandslash",
+        "hp": 75,
+        "atk": 100,
+        "def": 110,
+        "spd": 65,
+        "sat": 45,
+        "sdf": 55,
+        "total": 450
+    },
+    {
+        "name": "#119 金魚王 アズマオウ seaking",
+        "hp": 80,
+        "atk": 92,
+        "def": 65,
+        "spd": 68,
+        "sat": 65,
+        "sdf": 80,
+        "total": 450
+    },
+    {
+        "name": "#049 摩魯蛾 モルフォン venomoth",
+        "hp": 70,
+        "atk": 65,
+        "def": 60,
+        "spd": 90,
+        "sat": 90,
+        "sdf": 75,
+        "total": 450
+    },
+    {
+        "name": "#022 大嘴雀 オニドリル fearow",
+        "hp": 65,
+        "atk": 90,
+        "def": 65,
+        "spd": 100,
+        "sat": 61,
+        "sdf": 61,
+        "total": 442
+    },
+    {
+        "name": "#164 貓頭夜鷹 ヨルノズク noctowl",
+        "hp": 100,
+        "atk": 50,
+        "def": 50,
+        "spd": 70,
+        "sat": 76,
+        "sdf": 96,
+        "total": 442
+    },
+    {
+        "name": "#053 貓老大 ペルシアン persian",
+        "hp": 65,
+        "atk": 70,
+        "def": 60,
+        "spd": 115,
+        "sat": 65,
+        "sdf": 65,
+        "total": 440
+    },
+    {
+        "name": "#117 海刺龍 シードラ seadra",
+        "hp": 55,
+        "atk": 65,
+        "def": 95,
+        "spd": 85,
+        "sat": 95,
+        "sdf": 45,
+        "total": 440
+    },
+    {
+        "name": "#024 阿柏怪 アーボック arbok",
+        "hp": 60,
+        "atk": 85,
+        "def": 69,
+        "spd": 80,
+        "sat": 65,
+        "sdf": 79,
+        "total": 438
+    },
+    {
+        "name": "#200 夢妖 ムウマ misdreavus",
+        "hp": 60,
+        "atk": 60,
+        "def": 60,
+        "spd": 85,
+        "sat": 85,
+        "sdf": 85,
+        "total": 435
+    },
+    {
+        "name": "#114 蔓藤怪 モンジャラ tangela",
+        "hp": 65,
+        "atk": 55,
+        "def": 115,
+        "spd": 60,
+        "sat": 100,
+        "sdf": 40,
+        "total": 435
+    },
+    {
+        "name": "#207 天蠍 グライガー gligar",
+        "hp": 65,
+        "atk": 75,
+        "def": 105,
+        "spd": 85,
+        "sat": 35,
+        "sdf": 65,
+        "total": 430
+    },
+    {
+        "name": "#195 沼王 ヌオー quagsire",
+        "hp": 95,
+        "atk": 85,
+        "def": 85,
+        "spd": 35,
+        "sat": 65,
+        "sdf": 65,
+        "total": 430
+    },
+    {
+        "name": "#211 千針魚 ハリーセン qwilfish",
+        "hp": 65,
+        "atk": 95,
+        "def": 75,
+        "spd": 85,
+        "sat": 55,
+        "sdf": 55,
+        "total": 430
+    },
+    {
+        "name": "#215 狃拉 ニューラ sneasel",
+        "hp": 55,
+        "atk": 95,
+        "def": 55,
+        "spd": 115,
+        "sat": 35,
+        "sdf": 75,
+        "total": 430
+    },
+    {
+        "name": "#105 嘎啦嘎啦 ガラガラ marowak",
+        "hp": 60,
+        "atk": 80,
+        "def": 110,
+        "spd": 45,
+        "sat": 50,
+        "sdf": 80,
+        "total": 425
+    },
+    {
+        "name": "#192 向日花怪 キマワリ sunflora",
+        "hp": 75,
+        "atk": 75,
+        "def": 55,
+        "spd": 30,
+        "sat": 105,
+        "sdf": 85,
+        "total": 425
+    },
+    {
+        "name": "#040 胖可丁 プクリン wigglytuff",
+        "hp": 140,
+        "atk": 70,
+        "def": 45,
+        "spd": 45,
+        "sat": 75,
+        "sdf": 50,
+        "total": 425
+    },
+    {
+        "name": "#148 哈克龍 ハクリュー dragonair",
+        "hp": 61,
+        "atk": 84,
+        "def": 65,
+        "spd": 70,
+        "sat": 70,
+        "sdf": 70,
+        "total": 420
+    },
+    {
+        "name": "#206 土龍弟弟 ノコッチ dunsparce",
+        "hp": 100,
+        "atk": 70,
+        "def": 70,
+        "spd": 45,
+        "sat": 65,
+        "sdf": 65,
+        "total": 415
+    },
+    {
+        "name": "#162 大尾立 オオタチ furret",
+        "hp": 85,
+        "atk": 76,
+        "def": 64,
+        "spd": 90,
+        "sat": 45,
+        "sdf": 55,
+        "total": 415
+    },
+    {
+        "name": "#020 拉達 ラッタ raticate",
+        "hp": 55,
+        "atk": 81,
+        "def": 60,
+        "spd": 97,
+        "sat": 50,
+        "sdf": 70,
+        "total": 413
+    },
+    {
+        "name": "#184 瑪力露麗 マリルリ azumarill",
+        "hp": 100,
+        "atk": 50,
+        "def": 80,
+        "spd": 50,
+        "sat": 50,
+        "sdf": 80,
+        "total": 410
+    },
+    {
+        "name": "#219 熔岩蝸牛 マグカルゴ magcargo",
+        "hp": 50,
+        "atk": 50,
+        "def": 120,
+        "spd": 30,
+        "sat": 80,
+        "sdf": 80,
+        "total": 410
+    },
+    {
+        "name": "#077 小火馬 ポニータ ponyta",
+        "hp": 50,
+        "atk": 85,
+        "def": 55,
+        "spd": 90,
+        "sat": 65,
+        "sdf": 65,
+        "total": 410
+    },
+    {
+        "name": "#247 沙基拉斯 サナギラス pupitar",
+        "hp": 70,
+        "atk": 84,
+        "def": 70,
+        "spd": 51,
+        "sat": 65,
+        "sdf": 70,
+        "total": 410
+    },
+    {
+        "name": "#185 樹才怪 ウソッキー sudowoodo",
+        "hp": 70,
+        "atk": 100,
+        "def": 115,
+        "spd": 30,
+        "sat": 30,
+        "sdf": 65,
+        "total": 410
+    },
+    {
+        "name": "#153 月桂葉 ベイリーフ bayleef",
+        "hp": 60,
+        "atk": 62,
+        "def": 80,
+        "spd": 60,
+        "sat": 63,
+        "sdf": 80,
+        "total": 405
+    },
+    {
+        "name": "#005 火恐龍 リザード charmeleon",
+        "hp": 58,
+        "atk": 64,
+        "def": 58,
+        "spd": 80,
+        "sat": 80,
+        "sdf": 65,
+        "total": 405
+    },
+    {
+        "name": "#159 藍鱷 アリゲイツ croconaw",
+        "hp": 65,
+        "atk": 80,
+        "def": 80,
+        "spd": 58,
+        "sat": 59,
+        "sdf": 63,
+        "total": 405
+    },
+    {
+        "name": "#051 三地鼠 ダグトリオ dugtrio",
+        "hp": 35,
+        "atk": 80,
+        "def": 50,
+        "spd": 120,
+        "sat": 50,
+        "sdf": 70,
+        "total": 405
+    },
+    {
+        "name": "#093 鬼斯通 ゴースト haunter",
+        "hp": 45,
+        "atk": 50,
+        "def": 45,
+        "spd": 95,
+        "sat": 115,
+        "sdf": 55,
+        "total": 405
+    },
+    {
+        "name": "#002 妙蛙草 フシギソウ ivysaur",
+        "hp": 60,
+        "atk": 62,
+        "def": 63,
+        "spd": 60,
+        "sat": 80,
+        "sdf": 80,
+        "total": 405
+    },
+    {
+        "name": "#067 豪力 ゴーリキー machoke",
+        "hp": 80,
+        "atk": 100,
+        "def": 70,
+        "spd": 45,
+        "sat": 50,
+        "sdf": 60,
+        "total": 405
+    },
+    {
+        "name": "#198 黑暗鴉 ヤミカラス murkrow",
+        "hp": 60,
+        "atk": 85,
+        "def": 42,
+        "spd": 91,
+        "sat": 85,
+        "sdf": 42,
+        "total": 405
+    },
+    {
+        "name": "#047 派拉斯特 パラセクト parasect",
+        "hp": 60,
+        "atk": 95,
+        "def": 80,
+        "spd": 30,
+        "sat": 60,
+        "sdf": 80,
+        "total": 405
+    },
+    {
+        "name": "#156 火岩鼠 マグマラシ quilava",
+        "hp": 58,
+        "atk": 64,
+        "def": 58,
+        "spd": 80,
+        "sat": 80,
+        "sdf": 65,
+        "total": 405
+    },
+    {
+        "name": "#176 波克基古 トゲチック togetic",
+        "hp": 55,
+        "atk": 40,
+        "def": 85,
+        "spd": 40,
+        "sat": 80,
+        "sdf": 105,
+        "total": 405
+    },
+    {
+        "name": "#008 卡咪龜 カメール wartortle",
+        "hp": 59,
+        "atk": 63,
+        "def": 80,
+        "spd": 58,
+        "sat": 65,
+        "sdf": 80,
+        "total": 405
+    },
+    {
+        "name": "#202 果然翁 ソーナンス wobbuffet",
+        "hp": 190,
+        "atk": 33,
+        "def": 58,
+        "spd": 33,
+        "sat": 33,
+        "sdf": 58,
+        "total": 405
+    },
+    {
+        "name": "#064 勇基拉 ユンゲラー kadabra",
+        "hp": 40,
+        "atk": 35,
+        "def": 30,
+        "spd": 105,
+        "sat": 120,
+        "sdf": 70,
+        "total": 400
+    },
+    {
+        "name": "#044 臭臭花 クサイハナ gloom",
+        "hp": 60,
+        "atk": 65,
+        "def": 70,
+        "spd": 40,
+        "sat": 85,
+        "sdf": 75,
+        "total": 395
+    },
+    {
+        "name": "#137 多邊獸 ポリゴン porygon",
+        "hp": 65,
+        "atk": 60,
+        "def": 70,
+        "spd": 40,
+        "sat": 85,
+        "sdf": 75,
+        "total": 395
+    },
+    {
+        "name": "#168 阿利多斯 アリアドス ariados",
+        "hp": 70,
+        "atk": 90,
+        "def": 70,
+        "spd": 40,
+        "sat": 60,
+        "sdf": 60,
+        "total": 390
+    },
+    {
+        "name": "#075 隆隆石 ゴローン graveler",
+        "hp": 55,
+        "atk": 95,
+        "def": 115,
+        "spd": 35,
+        "sat": 45,
+        "sdf": 45,
+        "total": 390
+    },
+    {
+        "name": "#166 安瓢蟲 レディアン ledian",
+        "hp": 55,
+        "atk": 35,
+        "def": 50,
+        "spd": 85,
+        "sat": 55,
+        "sdf": 110,
+        "total": 390
+    },
+    {
+        "name": "#070 口呆花 ウツドン weepinbell",
+        "hp": 65,
+        "atk": 90,
+        "def": 50,
+        "spd": 55,
+        "sat": 85,
+        "sdf": 45,
+        "total": 390
+    },
+    {
+        "name": "#193 蜻蜻蜓 ヤンヤンマ yanma",
+        "hp": 65,
+        "atk": 65,
+        "def": 45,
+        "spd": 95,
+        "sat": 75,
+        "sdf": 45,
+        "total": 390
+    },
+    {
+        "name": "#015 大針蜂 スピアー beedrill",
+        "hp": 65,
+        "atk": 80,
+        "def": 40,
+        "spd": 75,
+        "sat": 45,
+        "sdf": 80,
+        "total": 385
+    },
+    {
+        "name": "#012 巴大蝶 バタフリー butterfree",
+        "hp": 60,
+        "atk": 45,
+        "def": 50,
+        "spd": 70,
+        "sat": 80,
+        "sdf": 80,
+        "total": 385
+    },
+    {
+        "name": "#108 大舌頭 ベロリンガ lickitung",
+        "hp": 90,
+        "atk": 55,
+        "def": 75,
+        "spd": 30,
+        "sat": 60,
+        "sdf": 75,
+        "total": 385
+    },
+    {
+        "name": "#095 大岩蛇 イワーク onix",
+        "hp": 35,
+        "atk": 45,
+        "def": 160,
+        "spd": 70,
+        "sat": 30,
+        "sdf": 45,
+        "total": 385
+    },
+    {
+        "name": "#061 蚊香君 ニョロゾ poliwhirl",
+        "hp": 65,
+        "atk": 65,
+        "def": 65,
+        "spd": 90,
+        "sat": 50,
+        "sdf": 50,
+        "total": 385
+    },
+    {
+        "name": "#222 太陽珊瑚 サニーゴ corsola",
+        "hp": 55,
+        "atk": 55,
+        "def": 85,
+        "spd": 35,
+        "sat": 65,
+        "sdf": 85,
+        "total": 380
+    },
+    {
+        "name": "#180 茸茸羊 モココ flaaffy",
+        "hp": 70,
+        "atk": 55,
+        "def": 55,
+        "spd": 45,
+        "sat": 80,
+        "sdf": 60,
+        "total": 365
+    },
+    {
+        "name": "#240 鴨嘴寶寶 ブビィ magby",
+        "hp": 45,
+        "atk": 75,
+        "def": 37,
+        "spd": 83,
+        "sat": 70,
+        "sdf": 55,
+        "total": 365
+    },
+    {
+        "name": "#030 尼多娜 ニドリーナ nidorina",
+        "hp": 70,
+        "atk": 62,
+        "def": 67,
+        "spd": 56,
+        "sat": 55,
+        "sdf": 55,
+        "total": 365
+    },
+    {
+        "name": "#033 尼多力諾 ニドリーノ nidorino",
+        "hp": 61,
+        "atk": 72,
+        "def": 57,
+        "spd": 65,
+        "sat": 55,
+        "sdf": 55,
+        "total": 365
+    },
+    {
+        "name": "#190 長尾怪手 エイパム aipom",
+        "hp": 55,
+        "atk": 70,
+        "def": 55,
+        "spd": 85,
+        "sat": 40,
+        "sdf": 55,
+        "total": 360
+    },
+    {
+        "name": "#239 電擊怪 エレキッド elekid",
+        "hp": 45,
+        "atk": 63,
+        "def": 37,
+        "spd": 95,
+        "sat": 65,
+        "sdf": 55,
+        "total": 360
+    },
+    {
+        "name": "#140 化石盔 カブト kabuto",
+        "hp": 30,
+        "atk": 80,
+        "def": 90,
+        "spd": 55,
+        "sat": 55,
+        "sdf": 45,
+        "total": 355
+    },
+    {
+        "name": "#138 菊石獸 オムナイト omanyte",
+        "hp": 35,
+        "atk": 40,
+        "def": 100,
+        "spd": 35,
+        "sat": 90,
+        "sdf": 55,
+        "total": 355
+    },
+    {
+        "name": "farfetch_d",
+        "hp": 52,
+        "atk": 65,
+        "def": 55,
+        "spd": 60,
+        "sat": 58,
+        "sdf": 62,
+        "total": 352
+    },
+    {
+        "name": "#058 卡蒂狗 ガーディ growlithe",
+        "hp": 55,
+        "atk": 70,
+        "def": 45,
+        "spd": 60,
+        "sat": 70,
+        "sdf": 50,
+        "total": 350
+    },
+    {
+        "name": "#017 比比鳥 ピジョン pidgeotto",
+        "hp": 63,
+        "atk": 60,
+        "def": 55,
+        "spd": 71,
+        "sat": 50,
+        "sdf": 50,
+        "total": 349
+    },
+    {
+        "name": "#111 獨角犀牛 サイホーン rhyhorn",
+        "hp": 80,
+        "atk": 85,
+        "def": 95,
+        "spd": 25,
+        "sat": 30,
+        "sdf": 30,
+        "total": 345
+    },
+    {
+        "name": "#109 瓦斯彈 ドガース koffing",
+        "hp": 40,
+        "atk": 65,
+        "def": 95,
+        "spd": 35,
+        "sat": 60,
+        "sdf": 45,
+        "total": 340
+    },
+    {
+        "name": "#188 毽子花 ポポッコ skiploom",
+        "hp": 55,
+        "atk": 45,
+        "def": 50,
+        "spd": 80,
+        "sat": 45,
+        "sdf": 65,
+        "total": 340
+    },
+    {
+        "name": "#120 海星星 ヒトデマン staryu",
+        "hp": 30,
+        "atk": 45,
+        "def": 55,
+        "spd": 85,
+        "sat": 70,
+        "sdf": 55,
+        "total": 340
+    },
+    {
+        "name": "#201 未知圖騰 アンノーン unown",
+        "hp": 48,
+        "atk": 72,
+        "def": 48,
+        "spd": 48,
+        "sat": 72,
+        "sdf": 48,
+        "total": 336
+    },
+    {
+        "name": "#072 瑪瑙水母 メノクラゲ tentacool",
+        "hp": 40,
+        "atk": 40,
+        "def": 35,
+        "spd": 70,
+        "sat": 50,
+        "sdf": 100,
+        "total": 335
+    },
+    {
+        "name": "#170 燈籠魚 チョンチー chinchou",
+        "hp": 75,
+        "atk": 38,
+        "def": 38,
+        "spd": 67,
+        "sat": 56,
+        "sdf": 56,
+        "total": 330
+    },
+    {
+        "name": "#225 信使鳥 デリバード delibird",
+        "hp": 45,
+        "atk": 55,
+        "def": 45,
+        "spd": 75,
+        "sat": 65,
+        "sdf": 45,
+        "total": 330
+    },
+    {
+        "name": "#228 戴魯比 デルビル houndour",
+        "hp": 45,
+        "atk": 60,
+        "def": 30,
+        "spd": 65,
+        "sat": 80,
+        "sdf": 50,
+        "total": 330
+    },
+    {
+        "name": "#231 小小象 ゴマゾウ phanpy",
+        "hp": 90,
+        "atk": 60,
+        "def": 60,
+        "spd": 40,
+        "sat": 40,
+        "sdf": 40,
+        "total": 330
+    },
+    {
+        "name": "#216 熊寶寶 ヒメグマ teddiursa",
+        "hp": 60,
+        "atk": 80,
+        "def": 50,
+        "spd": 40,
+        "sat": 50,
+        "sdf": 50,
+        "total": 330
+    },
+    {
+        "name": "#100 霹靂電球 ビリリダマ voltorb",
+        "hp": 40,
+        "atk": 30,
+        "def": 50,
+        "spd": 100,
+        "sat": 55,
+        "sdf": 55,
+        "total": 330
+    },
+    {
+        "name": "#096 催眠貘 スリープ drowzee",
+        "hp": 60,
+        "atk": 48,
+        "def": 45,
+        "spd": 42,
+        "sat": 43,
+        "sdf": 90,
+        "total": 328
+    },
+    {
+        "name": "#133 伊布 イーブイ eevee",
+        "hp": 55,
+        "atk": 55,
+        "def": 50,
+        "spd": 55,
+        "sat": 45,
+        "sdf": 65,
+        "total": 325
+    },
+    {
+        "name": "#102 蛋蛋 タマタマ exeggcute",
+        "hp": 60,
+        "atk": 40,
+        "def": 80,
+        "spd": 40,
+        "sat": 60,
+        "sdf": 45,
+        "total": 325
+    },
+    {
+        "name": "#088 臭泥 ベトベター grimer",
+        "hp": 80,
+        "atk": 80,
+        "def": 50,
+        "spd": 25,
+        "sat": 40,
+        "sdf": 50,
+        "total": 325
+    },
+    {
+        "name": "#098 大鉗蟹 クラブ krabby",
+        "hp": 30,
+        "atk": 105,
+        "def": 90,
+        "spd": 50,
+        "sat": 25,
+        "sdf": 25,
+        "total": 325
+    },
+    {
+        "name": "#081 小磁怪 コイル magnemite",
+        "hp": 25,
+        "atk": 35,
+        "def": 70,
+        "spd": 45,
+        "sat": 95,
+        "sdf": 55,
+        "total": 325
+    },
+    {
+        "name": "#086 小海獅 パウワウ seel",
+        "hp": 65,
+        "atk": 45,
+        "def": 55,
+        "spd": 45,
+        "sat": 45,
+        "sdf": 70,
+        "total": 325
+    },
+    {
+        "name": "#035 皮皮 ピッピ clefairy",
+        "hp": 70,
+        "atk": 45,
+        "def": 48,
+        "spd": 35,
+        "sat": 60,
+        "sdf": 65,
+        "total": 323
+    },
+    {
+        "name": "#104 卡拉卡拉 カラカラ cubone",
+        "hp": 50,
+        "atk": 50,
+        "def": 95,
+        "spd": 35,
+        "sat": 40,
+        "sdf": 50,
+        "total": 320
+    },
+    {
+        "name": "#118 角金魚 トサキント goldeen",
+        "hp": 45,
+        "atk": 67,
+        "def": 60,
+        "spd": 63,
+        "sat": 35,
+        "sdf": 50,
+        "total": 320
+    },
+    {
+        "name": "#177 天然雀 ネイティ natu",
+        "hp": 40,
+        "atk": 50,
+        "def": 45,
+        "spd": 70,
+        "sat": 70,
+        "sdf": 45,
+        "total": 320
+    },
+    {
+        "name": "#043 走路草 ナゾノクサ oddish",
+        "hp": 45,
+        "atk": 50,
+        "def": 55,
+        "spd": 30,
+        "sat": 75,
+        "sdf": 65,
+        "total": 320
+    },
+    {
+        "name": "#054 可達鴨 コダック psyduck",
+        "hp": 50,
+        "atk": 52,
+        "def": 48,
+        "spd": 55,
+        "sat": 65,
+        "sdf": 50,
+        "total": 320
+    },
+    {
+        "name": "#001 妙蛙種子 フシギダネ bulbasaur",
+        "hp": 45,
+        "atk": 49,
+        "def": 49,
+        "spd": 45,
+        "sat": 65,
+        "sdf": 65,
+        "total": 318
+    },
+    {
+        "name": "#152 菊草葉 チコリータ chikorita",
+        "hp": 45,
+        "atk": 49,
+        "def": 65,
+        "spd": 45,
+        "sat": 49,
+        "sdf": 65,
+        "total": 318
+    },
+    {
+        "name": "#079 呆呆獸 ヤドン slowpoke",
+        "hp": 90,
+        "atk": 65,
+        "def": 65,
+        "spd": 15,
+        "sat": 40,
+        "sdf": 40,
+        "total": 315
+    },
+    {
+        "name": "#007 傑尼龜 ゼニガメ squirtle",
+        "hp": 44,
+        "atk": 48,
+        "def": 65,
+        "spd": 43,
+        "sat": 50,
+        "sdf": 64,
+        "total": 314
+    },
+    {
+        "name": "#158 小鋸鱷 ワニノコ totodile",
+        "hp": 50,
+        "atk": 65,
+        "def": 64,
+        "spd": 43,
+        "sat": 44,
+        "sdf": 48,
+        "total": 314
+    },
+    {
+        "name": "#063 凱西 ケーシィ abra",
+        "hp": 25,
+        "atk": 20,
+        "def": 15,
+        "spd": 90,
+        "sat": 105,
+        "sdf": 55,
+        "total": 310
+    },
+    {
+        "name": "#084 嘟嘟 ドードー doduo",
+        "hp": 35,
+        "atk": 85,
+        "def": 45,
+        "spd": 75,
+        "sat": 35,
+        "sdf": 35,
+        "total": 310
+    },
+    {
+        "name": "#092 鬼斯 ゴース gastly",
+        "hp": 30,
+        "atk": 35,
+        "def": 30,
+        "spd": 80,
+        "sat": 100,
+        "sdf": 35,
+        "total": 310
+    },
+    {
+        "name": "#004 小火龍 ヒトカゲ charmander",
+        "hp": 39,
+        "atk": 52,
+        "def": 43,
+        "spd": 65,
+        "sat": 60,
+        "sdf": 50,
+        "total": 309
+    },
+    {
+        "name": "#155 火球鼠 ヒノアラシ cyndaquil",
+        "hp": 39,
+        "atk": 52,
+        "def": 43,
+        "spd": 65,
+        "sat": 60,
+        "sdf": 50,
+        "total": 309
+    },
+    {
+        "name": "#066 腕力 ワンリキー machop",
+        "hp": 70,
+        "atk": 80,
+        "def": 50,
+        "spd": 35,
+        "sat": 35,
+        "sdf": 35,
+        "total": 305
+    },
+    {
+        "name": "#056 猴怪 マンキー mankey",
+        "hp": 40,
+        "atk": 80,
+        "def": 35,
+        "spd": 70,
+        "sat": 35,
+        "sdf": 45,
+        "total": 305
+    },
+    {
+        "name": "#090 大舌貝 シェルダー shellder",
+        "hp": 30,
+        "atk": 65,
+        "def": 100,
+        "spd": 40,
+        "sat": 45,
+        "sdf": 25,
+        "total": 305
+    },
+    {
+        "name": "#238 迷唇娃 ムチュール smoochum",
+        "hp": 45,
+        "atk": 30,
+        "def": 15,
+        "spd": 65,
+        "sat": 85,
+        "sdf": 65,
+        "total": 305
+    },
+    {
+        "name": "#048 毛球 コンパン venonat",
+        "hp": 60,
+        "atk": 55,
+        "def": 50,
+        "spd": 45,
+        "sat": 40,
+        "sdf": 55,
+        "total": 305
+    },
+    {
+        "name": "#069 喇叭芽 マダツボミ bellsprout",
+        "hp": 50,
+        "atk": 75,
+        "def": 35,
+        "spd": 40,
+        "sat": 70,
+        "sdf": 30,
+        "total": 300
+    },
+    {
+        "name": "#147 迷你龍 ミニリュウ dratini",
+        "hp": 41,
+        "atk": 64,
+        "def": 45,
+        "spd": 50,
+        "sat": 50,
+        "sdf": 50,
+        "total": 300
+    },
+    {
+        "name": "#074 小拳石 イシツブテ geodude",
+        "hp": 40,
+        "atk": 80,
+        "def": 100,
+        "spd": 20,
+        "sat": 30,
+        "sdf": 30,
+        "total": 300
+    },
+    {
+        "name": "#246 幼基拉斯 ヨーギラス larvitar",
+        "hp": 50,
+        "atk": 64,
+        "def": 50,
+        "spd": 41,
+        "sat": 45,
+        "sdf": 50,
+        "total": 300
+    },
+    {
+        "name": "#025 皮卡丘 ピカチュウ pikachu",
+        "hp": 35,
+        "atk": 55,
+        "def": 30,
+        "spd": 90,
+        "sat": 50,
+        "sdf": 40,
+        "total": 300
+    },
+    {
+        "name": "#060 蚊香蝌蚪 ニョロモ poliwag",
+        "hp": 40,
+        "atk": 50,
+        "def": 40,
+        "spd": 90,
+        "sat": 40,
+        "sdf": 40,
+        "total": 300
+    },
+    {
+        "name": "#223 鐵炮魚 テッポウオ remoraid",
+        "hp": 35,
+        "atk": 65,
+        "def": 35,
+        "spd": 65,
+        "sat": 65,
+        "sdf": 35,
+        "total": 300
+    },
+    {
+        "name": "#027 穿山鼠 サンド sandshrew",
+        "hp": 50,
+        "atk": 75,
+        "def": 85,
+        "spd": 40,
+        "sat": 20,
+        "sdf": 30,
+        "total": 300
+    },
+    {
+        "name": "#209 布魯 ブルー snubbull",
+        "hp": 60,
+        "atk": 80,
+        "def": 50,
+        "spd": 30,
+        "sat": 40,
+        "sdf": 40,
+        "total": 300
+    },
+    {
+        "name": "#037 六尾 ロコン vulpix",
+        "hp": 38,
+        "atk": 41,
+        "def": 40,
+        "spd": 65,
+        "sat": 50,
+        "sdf": 65,
+        "total": 299
+    },
+    {
+        "name": "#116 墨海馬 タッツー horsea",
+        "hp": 30,
+        "atk": 40,
+        "def": 70,
+        "spd": 60,
+        "sat": 70,
+        "sdf": 25,
+        "total": 295
+    },
+    {
+        "name": "#052 喵喵 ニャース meowth",
+        "hp": 40,
+        "atk": 45,
+        "def": 35,
+        "spd": 90,
+        "sat": 40,
+        "sdf": 40,
+        "total": 290
+    },
+    {
+        "name": "#204 榛果球 クヌギダマ pineco",
+        "hp": 50,
+        "atk": 65,
+        "def": 90,
+        "spd": 15,
+        "sat": 35,
+        "sdf": 35,
+        "total": 290
+    },
+    {
+        "name": "#132 百變怪 メタモン ditto",
+        "hp": 48,
+        "atk": 48,
+        "def": 48,
+        "spd": 48,
+        "sat": 48,
+        "sdf": 48,
+        "total": 288
+    },
+    {
+        "name": "#023 阿柏蛇 アーボ ekans",
+        "hp": 35,
+        "atk": 60,
+        "def": 44,
+        "spd": 55,
+        "sat": 40,
+        "sdf": 54,
+        "total": 288
+    },
+    {
+        "name": "#046 派拉斯 パラス paras",
+        "hp": 35,
+        "atk": 70,
+        "def": 55,
+        "spd": 25,
+        "sat": 45,
+        "sdf": 55,
+        "total": 285
+    },
+    {
+        "name": "#179 咩利羊 メリープ mareep",
+        "hp": 55,
+        "atk": 40,
+        "def": 40,
+        "spd": 35,
+        "sat": 65,
+        "sdf": 45,
+        "total": 280
+    },
+    {
+        "name": "nidoran_f",
+        "hp": 55,
+        "atk": 47,
+        "def": 52,
+        "spd": 41,
+        "sat": 40,
+        "sdf": 40,
+        "total": 275
+    },
+    {
+        "name": "nidoran_m",
+        "hp": 46,
+        "atk": 57,
+        "def": 40,
+        "spd": 50,
+        "sat": 40,
+        "sdf": 40,
+        "total": 273
+    },
+    {
+        "name": "#039 胖丁 プリン jigglypuff",
+        "hp": 115,
+        "atk": 45,
+        "def": 20,
+        "spd": 20,
+        "sat": 45,
+        "sdf": 25,
+        "total": 270
+    },
+    {
+        "name": "#050 地鼠 ディグダ diglett",
+        "hp": 10,
+        "atk": 55,
+        "def": 25,
+        "spd": 95,
+        "sat": 35,
+        "sdf": 45,
+        "total": 265
+    },
+    {
+        "name": "#165 芭瓢蟲 レディバ ledyba",
+        "hp": 40,
+        "atk": 20,
+        "def": 30,
+        "spd": 55,
+        "sat": 40,
+        "sdf": 80,
+        "total": 265
+    },
+    {
+        "name": "#163 咕咕 ホーホー hoothoot",
+        "hp": 60,
+        "atk": 30,
+        "def": 30,
+        "spd": 50,
+        "sat": 36,
+        "sdf": 56,
+        "total": 262
+    },
+    {
+        "name": "#021 烈雀 オニスズメ spearow",
+        "hp": 40,
+        "atk": 60,
+        "def": 30,
+        "spd": 70,
+        "sat": 31,
+        "sdf": 31,
+        "total": 262
+    },
+    {
+        "name": "#019 小拉達 コラッタ rattata",
+        "hp": 30,
+        "atk": 56,
+        "def": 35,
+        "spd": 72,
+        "sat": 25,
+        "sdf": 35,
+        "total": 253
+    },
+    {
+        "name": "#016 波波 ポッポ pidgey",
+        "hp": 40,
+        "atk": 45,
+        "def": 40,
+        "spd": 56,
+        "sat": 35,
+        "sdf": 35,
+        "total": 251
+    },
+    {
+        "name": "#187 毽子草 ハネッコ hoppip",
+        "hp": 35,
+        "atk": 35,
+        "def": 40,
+        "spd": 50,
+        "sat": 35,
+        "sdf": 55,
+        "total": 250
+    },
+    {
+        "name": "#183 瑪力露 マリル marill",
+        "hp": 70,
+        "atk": 20,
+        "def": 50,
+        "spd": 40,
+        "sat": 20,
+        "sdf": 50,
+        "total": 250
+    },
+    {
+        "name": "#218 熔岩蟲 マグマッグ slugma",
+        "hp": 40,
+        "atk": 40,
+        "def": 40,
+        "spd": 20,
+        "sat": 70,
+        "sdf": 40,
+        "total": 250
+    },
+    {
+        "name": "#235 圖圖犬 ドーブル smeargle",
+        "hp": 55,
+        "atk": 20,
+        "def": 35,
+        "spd": 75,
+        "sat": 20,
+        "sdf": 45,
+        "total": 250
+    },
+    {
+        "name": "#167 圓絲蛛 イトマル spinarak",
+        "hp": 40,
+        "atk": 60,
+        "def": 40,
+        "spd": 30,
+        "sat": 40,
+        "sdf": 40,
+        "total": 250
+    },
+    {
+        "name": "#220 小山豬 ウリムー swinub",
+        "hp": 50,
+        "atk": 50,
+        "def": 40,
+        "spd": 50,
+        "sat": 30,
+        "sdf": 30,
+        "total": 250
+    },
+    {
+        "name": "#175 波克比 トゲピー togepi",
+        "hp": 35,
+        "atk": 20,
+        "def": 65,
+        "spd": 20,
+        "sat": 40,
+        "sdf": 65,
+        "total": 245
+    },
+    {
+        "name": "#041 超音蝠 ズバット zubat",
+        "hp": 40,
+        "atk": 45,
+        "def": 35,
+        "spd": 55,
+        "sat": 30,
+        "sdf": 40,
+        "total": 245
+    },
+    {
+        "name": "#173 皮寶寶 ピィ cleffa",
+        "hp": 50,
+        "atk": 25,
+        "def": 28,
+        "spd": 15,
+        "sat": 45,
+        "sdf": 55,
+        "total": 218
+    },
+    {
+        "name": "#161 尾立 オタチ sentret",
+        "hp": 35,
+        "atk": 46,
+        "def": 34,
+        "spd": 20,
+        "sat": 35,
+        "sdf": 45,
+        "total": 215
+    },
+    {
+        "name": "#174 寶寶丁 ププリン igglybuff",
+        "hp": 90,
+        "atk": 30,
+        "def": 15,
+        "spd": 15,
+        "sat": 40,
+        "sdf": 20,
+        "total": 210
+    },
+    {
+        "name": "#236 無畏小子 バルキー tyrogue",
+        "hp": 35,
+        "atk": 35,
+        "def": 35,
+        "spd": 35,
+        "sat": 35,
+        "sdf": 35,
+        "total": 210
+    },
+    {
+        "name": "#194 烏波 ウパー wooper",
+        "hp": 55,
+        "atk": 45,
+        "def": 45,
+        "spd": 15,
+        "sat": 25,
+        "sdf": 25,
+        "total": 210
+    },
+    {
+        "name": "#014 鐵殼蛹 コクーン kakuna",
+        "hp": 45,
+        "atk": 25,
+        "def": 50,
+        "spd": 35,
+        "sat": 25,
+        "sdf": 25,
+        "total": 205
+    },
+    {
+        "name": "#011 鐵甲蛹 トランセル metapod",
+        "hp": 50,
+        "atk": 20,
+        "def": 55,
+        "spd": 30,
+        "sat": 25,
+        "sdf": 25,
+        "total": 205
+    },
+    {
+        "name": "#172 皮丘 ピチュー pichu",
+        "hp": 20,
+        "atk": 40,
+        "def": 15,
+        "spd": 60,
+        "sat": 35,
+        "sdf": 35,
+        "total": 205
+    },
+    {
+        "name": "#129 鯉魚王 コイキング magikarp",
+        "hp": 20,
+        "atk": 10,
+        "def": 55,
+        "spd": 80,
+        "sat": 15,
+        "sdf": 20,
+        "total": 200
+    },
+    {
+        "name": "#010 綠毛蟲 キャタピー caterpie",
+        "hp": 45,
+        "atk": 30,
+        "def": 35,
+        "spd": 45,
+        "sat": 20,
+        "sdf": 20,
+        "total": 195
+    },
+    {
+        "name": "#013 獨角蟲 ビードル weedle",
+        "hp": 40,
+        "atk": 35,
+        "def": 30,
+        "spd": 50,
+        "sat": 20,
+        "sdf": 20,
+        "total": 195
+    },
+    {
+        "name": "#191 向日種子 ヒマナッツ sunkern",
+        "hp": 30,
+        "atk": 30,
+        "def": 30,
+        "spd": 30,
+        "sat": 30,
+        "sdf": 30,
+        "total": 180
+    }
+]

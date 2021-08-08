@@ -61,10 +61,10 @@ MartViolet:
 	db ESCAPE_ROPE
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db AWAKENING
-	db X_DEFEND
-	db X_ATTACK
-	db X_SPEED
+	db MAX_ELIXER
+	db MAX_REVIVE
+	db RARE_CANDY
+	db FULL_RESTORE
 	db FLOWER_MAIL
 	db -1 ; end
 

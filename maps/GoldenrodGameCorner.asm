@@ -1,9 +1,9 @@
-GOLDENRODGAMECORNER_TM25_COINS EQU 5500
-GOLDENRODGAMECORNER_TM14_COINS EQU 5500
-GOLDENRODGAMECORNER_TM38_COINS EQU 5500
-GOLDENRODGAMECORNER_ABRA_COINS      EQU 100
-GOLDENRODGAMECORNER_CUBONE_COINS    EQU 800
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
+GOLDENRODGAMECORNER_TM25_COINS EQU 0
+GOLDENRODGAMECORNER_TM14_COINS EQU 0
+GOLDENRODGAMECORNER_TM38_COINS EQU 0
+GOLDENRODGAMECORNER_ABRA_COINS      EQU 0
+GOLDENRODGAMECORNER_CUBONE_COINS    EQU 0
+GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 0
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -216,16 +216,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
+	getmonname STRING_BUFFER_3, MEW
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval WOBBUFFET
+	setval MEW
 	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
+	givepoke MEW, 15
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 
@@ -240,7 +240,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	db 4 ; items
 	db "ABRA        100@"
 	db "CUBONE      800@"
-	db "WOBBUFFET  1500@"
+	db "MEW        1500@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPharmacistScript:

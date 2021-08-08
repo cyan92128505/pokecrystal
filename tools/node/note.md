@@ -1,0 +1,4 @@
+VitaminEffect
+RareCandyEffect
+MoveEffectsPointers
+MoveEffects

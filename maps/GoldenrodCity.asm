@@ -31,16 +31,20 @@ GoldenrodCity_MapScripts:
 .FloriaDone:
 	endcallback
 
+;.MoveTutor:
+;	checkevent EVENT_BEAT_ELITE_FOUR
+;	iffalse .MoveTutorDone
+;	checkitem COIN_CASE
+;	iffalse .MoveTutorDisappear
+;	readvar VAR_WEEKDAY
+;	ifequal WEDNESDAY, .MoveTutorAppear
+;	ifequal SATURDAY, .MoveTutorAppear
+;.MoveTutorDisappear:
+;	disappear GOLDENRODCITY_MOVETUTOR
+;	endcallback
+
 .MoveTutor:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MoveTutorDone
-	checkitem COIN_CASE
-	iffalse .MoveTutorDisappear
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MoveTutorAppear
-	ifequal SATURDAY, .MoveTutorAppear
-.MoveTutorDisappear:
-	disappear GOLDENRODCITY_MOVETUTOR
+	appear GOLDENRODCITY_MOVETUTOR
 	endcallback
 
 .MoveTutorAppear:
@@ -53,15 +57,15 @@ GoldenrodCity_MapScripts:
 MoveTutorScript:
 	faceplayer
 	opentext
-	writetext GoldenrodCityMoveTutorAskTeachAMoveText
-	yesorno
-	iffalse .Refused
-	special DisplayCoinCaseBalance
-	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
-	yesorno
-	iffalse .Refused2
-	checkcoins 4000
-	ifequal HAVE_LESS, .NotEnoughMoney
+	;writetext GoldenrodCityMoveTutorAskTeachAMoveText
+	;yesorno
+	;iffalse .Refused
+	;special DisplayCoinCaseBalance
+	;writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
+	;yesorno
+	;iffalse .Refused2
+	;checkcoins 4000
+	;ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -121,7 +125,7 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takecoins 4000
+	;takecoins 4000
 	waitsfx
 	playsound SFX_TRANSACTION
 	special DisplayCoinCaseBalance

@@ -16,6 +16,7 @@ SweetScentFromMenu:
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .BugCatchingContest
 	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SWEETSCENT
 	startbattle
 	reloadmapafterbattle
 	end

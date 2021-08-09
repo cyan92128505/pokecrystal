@@ -6103,11 +6103,24 @@ LoadEnemyMon:
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_SHINY
-	jr nz, .GenerateDVs
+	jr nz, .NotRoaming2
 
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
+
+.NotRoaming2:
+; Register a contains wBattleType
+
+; Forced shiny battle type
+; Used by Red Gyarados at Lake of Rage
+	cp BATTLETYPE_SWEETSCENT
+	jr nz, .GenerateDVs
+
+	ld b, ATKDEFDV_SHINY_2 ; $ea
+	ld c, SPDSPCDV_SHINY_2 ; $aa
+	jr .UpdateDVs
+
 
 .GenerateDVs:
 ; Generate new random DVs

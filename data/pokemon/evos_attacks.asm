@@ -545,7 +545,7 @@ ZubatEvosAttacks:
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
-	db EVOLVE_LEVEL, 32, CROBAT
+	db EVOLVE_LEVEL, 30, CROBAT
 	db 0 ; no more evolutions
 	db 1, SCREECH
 	db 1, LEECH_LIFE
@@ -2001,7 +2001,7 @@ DratiniEvosAttacks:
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
-	db EVOLVE_LEVEL, 55, DRAGONITE
+	db EVOLVE_ITEM, WATER_STONE, DRAGONITE
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 1, LEER
@@ -2433,6 +2433,7 @@ MareepEvosAttacks:
 	db 1, GROWL
 	db 9, THUNDERSHOCK
 	db 16, THUNDER_WAVE
+	db 20, THUNDERBOLT
 	db 23, COTTON_SPORE
 	db 30, LIGHT_SCREEN
 	db 37, THUNDER
@@ -2446,6 +2447,7 @@ FlaaffyEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 9, THUNDERSHOCK
 	db 18, THUNDER_WAVE
+	db 24, THUNDERBOLT
 	db 27, COTTON_SPORE
 	db 36, LIGHT_SCREEN
 	db 45, THUNDER
@@ -2459,9 +2461,12 @@ AmpharosEvosAttacks:
 	db 1, THUNDER_WAVE
 	db 9, THUNDERSHOCK
 	db 18, THUNDER_WAVE
+	db 24, THUNDERBOLT
 	db 27, COTTON_SPORE
 	db 30, THUNDERPUNCH
+	db 32, DRAGON_RAGE
 	db 42, LIGHT_SCREEN
+	db 48, OUTRAGE
 	db 57, THUNDER
 	db 0 ; no more level-up moves
 

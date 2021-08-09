@@ -2,3 +2,5 @@ VitaminEffect
 RareCandyEffect
 MoveEffectsPointers
 MoveEffects
+.copywildmonDVs
+.registerpokedex

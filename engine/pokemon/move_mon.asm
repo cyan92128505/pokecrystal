@@ -1,4 +1,4 @@
-DEF RANDY_OT_ID EQU 01001
+RANDY_OT_ID EQU 01001
 
 TryAddMonToParty:
 ; Check if to copy wild mon or generate a new one
@@ -864,7 +864,7 @@ RetrieveBreedmon:
 	add hl, bc
 	ld d, h
 	ld e, l
-	ld hl, MON_EXP + 2
+	ld hl, $a
 	add hl, bc
 	push bc
 	ld b, TRUE
@@ -887,7 +887,7 @@ RetrieveBreedmon:
 	ld d, a
 	callfar CalcExpAtLevel
 	pop bc
-	ld hl, MON_EXP
+	ld hl, $8
 	add hl, bc
 	ldh a, [hMultiplicand]
 	ld [hli], a
@@ -1009,7 +1009,7 @@ SendMonIntoBox:
 
 	; Set all 5 Experience Values to 0
 	xor a
-	ld b, 2 * NUM_EXP_STATS
+	ld b, 2 * 5
 .loop2
 	ld [de], a
 	inc de

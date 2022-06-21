@@ -376,7 +376,7 @@ PopulateDecoCategoryMenu:
 	ld [wMenuScrollPosition], a
 	call ScrollingMenu
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	cp 2
 	jr z, .no_action_2
 	call DoDecorationAction2
 

@@ -102,7 +102,7 @@ AI_Redundant:
 .Snore:
 .SleepTalk:
 	ld a, [wEnemyMonStatus]
-	and SLP_MASK
+	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
 
@@ -166,7 +166,7 @@ AI_Redundant:
 
 .DreamEater:
 	ld a, [wBattleMonStatus]
-	and SLP_MASK
+	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
 

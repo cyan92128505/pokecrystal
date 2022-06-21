@@ -1,4 +1,4 @@
-DEF NUM_SQUARE_ROOTS EQU 255
+NUM_SQUARE_ROOTS EQU 255
 
 GetSquareRoot:
 ; Return the square root of de in b.

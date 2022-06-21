@@ -18,7 +18,7 @@
 	const SCRATCH      ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
-	const RAZOR_WIND   ; 0d
+	const SKY_CLEAVE   ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -154,7 +154,7 @@
 	const DIZZY_PUNCH  ; 92
 	const SPORE        ; 93
 	const FLASH        ; 94
-	const PSYWAVE      ; 95
+	const PSYBLAST     ; 95
 	const SPLASH       ; 96
 	const ACID_ARMOR   ; 97
 	const CRABHAMMER   ; 98
@@ -257,7 +257,10 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-DEF NUM_ATTACKS EQU const_value - 1
+	const HOLY_ARMOUR  ; fc
+	const JUDGEMENT    ; fd
+	const FURIOUS_WILL ; fe
+NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point
 	const_next $ff
@@ -285,7 +288,7 @@ DEF NUM_ATTACKS EQU const_value - 1
 	const ANIM_WOBBLE            ; 113
 	const ANIM_SHAKE             ; 114
 	const ANIM_HIT_CONFUSION     ; 115
-DEF NUM_BATTLE_ANIMS EQU const_value - 1
+NUM_BATTLE_ANIMS EQU const_value - 1
 
 ; wNumHits uses offsets from ANIM_MISS
 	const_def

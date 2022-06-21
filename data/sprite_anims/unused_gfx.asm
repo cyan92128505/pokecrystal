@@ -1,4 +1,4 @@
-MACRO sprite_anim_obj_gfx
+sprite_anim_obj_gfx: MACRO
 ; # tiles, gfx pointer
 	db \1
 	dbw \2, \3

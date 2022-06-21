@@ -4044,7 +4044,7 @@ MobileEZChatCategoryPointers:
 	db "なんの@@", $2, $4, $0
 
 MobileEZChatData_WordAndPageCounts:
-MACRO macro_11f220
+macro_11f220: MACRO
 ; parameter: number of words
 	db \1
 ; 12 words per page (0-based indexing)
@@ -4071,11 +4071,11 @@ EZChat_SortedWords:
 ; allocated size for each.
 ; These arrays are expanded dynamically to accomodate
 ; any Pokemon you've seen that starts with each kana.
-MACRO macro_11f23c
+macro_11f23c: MACRO
 	dw w3_d012 - w3_d000 + x, \1
-	DEF x += 2 * \1
+x += 2 * \1
 ENDM
-DEF x = 0
+x = 0
 	macro_11f23c $2f ; a
 	macro_11f23c $1e ; i
 	macro_11f23c $11 ; u

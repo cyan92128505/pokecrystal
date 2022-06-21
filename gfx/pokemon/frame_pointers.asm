@@ -233,7 +233,6 @@ FramesPointers:
 	dw PhanpyFrames
 	dw DonphanFrames
 	dw Porygon2Frames
-	dw StantlerFrames
 	dw SmeargleFrames
 	dw TyrogueFrames
 	dw HitmontopFrames
@@ -251,4 +250,7 @@ FramesPointers:
 	dw LugiaFrames
 	dw HoOhFrames
 	dw CelebiFrames
+	dw RayquazaFrames
+	dw MewtwoOGFrames
+	dw ArceusFrames
 	assert_table_length NUM_POKEMON

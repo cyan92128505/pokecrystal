@@ -1,3 +1,11 @@
+INCLUDE "constants.asm"
+
+INCLUDE "macros/wram.asm"
+
+
+INCLUDE "vram.asm"
+
+
 SECTION "Stack", WRAM0
 
 wStackBottom::
@@ -1187,7 +1195,7 @@ wc983:: dw
 wc985:: db
 wc986:: db
 wc987:: db
-wMobileAPIIndex:: db
+wc988:: db
 wc989:: db
 wc98a:: db
 wc98b:: db
@@ -1622,7 +1630,6 @@ wRequested1bppSize:: db
 wRequested1bppSource:: dw
 wRequested1bppDest:: dw
 
-wMenuMetadata::
 wWindowStackPointer:: dw
 wMenuJoypad:: db
 wMenuSelection:: db
@@ -1630,8 +1637,8 @@ wMenuSelectionQuantity:: db
 wWhichIndexSet:: db
 wScrollingMenuCursorPosition:: db
 wWindowStackSize:: db
+
 	ds 8
-wMenuMetadataEnd::
 
 ; menu header
 wMenuHeader::
@@ -1679,7 +1686,6 @@ wMenuData_ScrollingMenuFunction3:: ds 3
 ENDU
 wMenuDataEnd::
 
-wMoreMenuData::
 w2DMenuData::
 w2DMenuCursorInitY:: db
 w2DMenuCursorInitX:: db
@@ -1704,8 +1710,8 @@ wMenuCursorY:: db
 wMenuCursorX:: db
 wCursorOffCharacter:: db
 wCursorCurrentTile:: dw
+
 	ds 3
-wMoreMenuDataEnd::
 
 wOverworldDelay:: db
 wTextDelayFrames:: db
@@ -2225,10 +2231,7 @@ wBattleMenuCursorPosition:: db
 
 	ds 1
 
-wCurBattleMon::
-; index of the player's mon currently in battle (0-5)
-	db
-
+wCurBattleMon:: db
 wCurMoveNum:: db
 
 wLastPocket:: db
@@ -2315,7 +2318,9 @@ wMartItemID::
 wCurPartySpecies:: db
 
 wCurPartyMon::
-; index of mon's party location (0-5)
+; contains which monster in a party
+; is being dealt with at the moment
+; 0-5
 	db
 
 wWhichHPBar::
@@ -2755,7 +2760,8 @@ wDudeNumBalls:: db
 wDudeBalls:: ds 2 * 4 + 1
 ENDU
 
-	ds 4
+wOtherTrainerType:: db
+	ds 3
 
 wd430:: ; mobile
 wBattleAction:: db
@@ -3466,6 +3472,7 @@ ENDU
 
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
+; LCD expects wLYOverrides to have an alignment of $100
 
 ; eight 4-color palettes each
 wGBCPalettes:: ; used only for BANK(wGBCPalettes)
@@ -3474,7 +3481,6 @@ wOBPals1:: ds 8 palettes
 wBGPals2:: ds 8 palettes
 wOBPals2:: ds 8 palettes
 
-	align 8
 wLYOverrides:: ds SCREEN_HEIGHT_PX
 wLYOverridesEnd::
 
@@ -3489,7 +3495,6 @@ wMagnetTrainPlayerSpriteInitX:: db
 
 	ds 106
 
-	align 8
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
 wLYOverridesBackupEnd::
 
@@ -3606,3 +3611,8 @@ SECTION "Stack RAM", WRAMX
 
 wWindowStack:: ds $1000 - 1
 wWindowStackBottom:: ds 1
+
+
+INCLUDE "sram.asm"
+
+INCLUDE "hram.asm"

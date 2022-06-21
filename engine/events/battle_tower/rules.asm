@@ -1,10 +1,14 @@
 CheckForMobileBattleRules:
-	ld de, .PointerTables
-	call BattleTower_ExecuteJumptable
-	ret z
-	call BattleTower_PleaseReturnWhenReady
-	scf
-	ret
+
+    ; there are no rules!
+    ret
+
+	;ld de, .PointerTables
+	;call BattleTower_ExecuteJumptable
+	;ret z
+	;call BattleTower_PleaseReturnWhenReady
+	;scf
+	;ret
 
 .PointerTables:
 	db 2
@@ -25,6 +29,9 @@ CheckForMobileBattleRules:
 	text_end
 
 _CheckForBattleTowerRules:
+    ; no rules!
+    ret
+
 	ld hl, wStringBuffer2
 	ld [hl], "3"
 	inc hl
@@ -211,6 +218,9 @@ CheckBTRule_PartyCountEq3:
 	ret
 
 CheckBTRule_PartySpeciesAreUnique:
+    ; no rules
+    ret
+
 	ld hl, wPartyMon1Species
 	call CheckPartyValueIsUnique
 	ret
@@ -277,6 +287,9 @@ CheckPartyValueIsUnique:
 	ret
 
 CheckBTRule_PartyItemsAreUnique:
+    ; no rules
+    ret
+
 	ld hl, wPartyMon1Item
 	call CheckPartyValueIsUnique
 	ret

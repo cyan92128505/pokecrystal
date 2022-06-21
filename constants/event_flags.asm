@@ -1459,4 +1459,4 @@
 ; Unused: next 48 events
 
 	const_next 2048
-DEF NUM_EVENTS EQU const_value ; 800
+NUM_EVENTS EQU const_value ; 800

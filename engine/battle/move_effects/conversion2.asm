@@ -1,4 +1,6 @@
 BattleCommand_Conversion2:
+; conversion2
+
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed

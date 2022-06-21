@@ -716,7 +716,12 @@ SECTION "Pics 19", ROMX
 
 ; Seems to be an accidental copy of the previous bank
 
-INCBIN "gfx/pokemon/spinarak/back.2bpp.lz"
+RayquazaFrontpic: INCBIN "gfx/pokemon/rayquaza/front.animated.2bpp.lz"
+RayquazaBackpic:  INCBIN "gfx/pokemon/rayquaza/back.2bpp.lz"
+MewtwoOGFrontpic: INCBIN "gfx/pokemon/mewtwo_og/front.animated.2bpp.lz"
+MewtwoOGBackpic:  INCBIN "gfx/pokemon/mewtwo_og/back.2bpp.lz"
+ArceusFrontpic: INCBIN "gfx/pokemon/arceus/front.animated.2bpp.lz"
+ArceusBackpic:  INCBIN "gfx/pokemon/arceus/back.2bpp.lz"
 INCBIN "gfx/pokemon/raikou/back.2bpp.lz"
 INCBIN "gfx/pokemon/unown_k/front.animated.2bpp.lz"
 INCBIN "gfx/pokemon/houndour/back.2bpp.lz"
@@ -756,7 +761,6 @@ INCBIN "gfx/pokemon/unown_i/front.animated.2bpp.lz"
 INCBIN "gfx/pokemon/unown_v/back.2bpp.lz"
 INCBIN "gfx/pokemon/forretress/back.2bpp.lz"
 INCBIN "gfx/pokemon/unown_s/back.2bpp.lz"
-INCBIN "gfx/pokemon/unown_r/front.animated.2bpp.lz"
 INCBIN "gfx/pokemon/unown_e/back.2bpp.lz"
 INCBIN "gfx/pokemon/unown_j/back.2bpp.lz"
 INCBIN "gfx/pokemon/unown_b/back.2bpp.lz"

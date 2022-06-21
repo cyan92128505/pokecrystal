@@ -1,4 +1,4 @@
-MACRO rating
+rating: MACRO
 ; count, sfx, text
 	db \1
 	dw \2, \3

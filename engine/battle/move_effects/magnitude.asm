@@ -1,4 +1,6 @@
 BattleCommand_GetMagnitude:
+; getmagnitude
+
 	push bc
 	call BattleRandom
 	ld b, a

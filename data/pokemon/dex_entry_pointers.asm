@@ -234,7 +234,6 @@ PokedexDataPointerTable:
 	dw PhanpyPokedexEntry
 	dw DonphanPokedexEntry
 	dw Porygon2PokedexEntry
-	dw StantlerPokedexEntry
 	dw SmearglePokedexEntry
 	dw TyroguePokedexEntry
 	dw HitmontopPokedexEntry
@@ -252,4 +251,7 @@ PokedexDataPointerTable:
 	dw LugiaPokedexEntry
 	dw HoOhPokedexEntry
 	dw CelebiPokedexEntry
+	dw RayquazaPokedexEntry
+	dw MewtwoOGPokedexEntry
+	dw ArceusPokedexEntry
 	assert_table_length NUM_POKEMON

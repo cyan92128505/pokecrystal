@@ -765,7 +765,7 @@ TryEnemyFlee:
 	jr nz, .Stay
 
 	ld a, [wEnemyMonStatus]
-	and 1 << FRZ | SLP_MASK
+	and 1 << FRZ | SLP
 	jr nz, .Stay
 
 	ld a, [wTempEnemyMonSpecies]
@@ -905,10 +905,17 @@ Battle_EnemyFirst:
 	ret
 
 Battle_PlayerFirst:
+	ld a, [wEnemyIsSwitching]
+	and a
+	jr z, .noSwitch
+    callfar AI_TrySwitch
+    jr .continue
+.noSwitch
 	xor a
 	ld [wEnemyGoesFirst], a
 	call SetEnemyTurn
 	callfar AI_SwitchOrTryItem
+.continue
 	push af
 	call PlayerTurn_EndOpponentProtectEndureDestinyBond
 	pop bc
@@ -3238,13 +3245,13 @@ FindMonInOTPartyToSwitchIntoBattle:
 	sla [hl]
 	inc hl ; wPlayerEffectivenessVsEnemyMons
 	sla [hl]
-	inc b
+	inc b ; b is the index of the current poke in loop
 	ld a, [wOTPartyCount]
-	cp b
-	jp z, ScoreMonTypeMatchups
+	cp b ; if b is equal to partyCount we have done all pokes
+	jp z, ScoreMonTypeMatchups ; get final scores if finished all pokes
 	ld a, [wCurOTMon]
 	cp b
-	jr z, .discourage
+	jr z, .dontUse ; dont switch to the poke already out
 	ld hl, wOTPartyMon1HP
 	push bc
 	ld a, b
@@ -3255,11 +3262,14 @@ FindMonInOTPartyToSwitchIntoBattle:
 	or c
 	pop bc
 	jr z, .discourage
-	call LookUpTheEffectivenessOfEveryMove
-	call IsThePlayerMonTypesEffectiveAgainstOTMon
+	call LookUpTheEffectivenessOfEveryMove ; consider how good enemy mon is against player mon
+	call IsThePlayerMonTypesEffectiveAgainstOTMon ; consider how good player mon is against enemy mon
 	jr .loop
-
 .discourage
+	ld hl, wPlayerEffectivenessVsEnemyMons
+	set 0, [hl]
+	jr .loop
+.dontUse
 	ld hl, wPlayerEffectivenessVsEnemyMons
 	set 0, [hl]
 	jr .loop
@@ -6047,15 +6057,21 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-; Trainer DVs
 
-; All trainers have preset DVs, determined by class
-; See GetTrainerDVs for more on that
-	farcall GetTrainerDVs
-; These are the DVs we'll use if we're actually in a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .UpdateDVs
+	jr z, .WildDVs
+
+; Trainer DVs
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1DVs
+	call GetPartyLocation
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	jr .UpdateDVs
+
+.WildDVs:
 
 ; Wild DVs
 ; Here's where the fun starts
@@ -6228,6 +6244,14 @@ LoadEnemyMon:
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
 	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP + 1)
+	ld a, [wBattleMode]
+	cp TRAINER_BATTLE
+	jr nz, .no_stat_exp
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1StatExp - 1
+	call GetPartyLocation
+	ld b, TRUE
+.no_stat_exp
 	predef CalcMonStats
 
 ; If we're in a trainer battle,
@@ -6388,15 +6412,27 @@ LoadEnemyMon:
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
 
-	call GetPokemonName
-
 ; Did we catch it?
 	ld a, [wBattleMode]
 	and a
 	ret z
 
 ; Update enemy nickname
+	ld a, [wBattleMode]
+	dec a ; WILD_BATTLE?
+	jr z, .no_nickname
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_NICKNAME_F, a
+	jr z, .no_nickname
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMonNicknames
+	ld bc, MON_NAME_LENGTH
+	call AddNTimes
+	jr .got_nickname
+.no_nickname
+	call GetPokemonName
 	ld hl, wStringBuffer1
+.got_nickname
 	ld de, wEnemyMonNickname
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
@@ -6762,6 +6798,7 @@ ApplyStatLevelMultiplier:
 INCLUDE "data/battle/stat_multipliers_2.asm"
 
 BadgeStatBoosts:
+    ret ; no badge boosts
 ; Raise the stats of the battle mon in wBattleMon
 ; depending on which badges have been obtained.
 
@@ -8940,7 +8977,6 @@ InitBattleDisplay:
 	predef PlaceGraphic
 	xor a
 	ldh [hWY], a
-	vc_hook Unknown_InitBattleDisplay
 	ldh [rWY], a
 	call WaitBGMap
 	call HideSprites

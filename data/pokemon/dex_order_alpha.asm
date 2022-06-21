@@ -9,6 +9,7 @@ AlphabeticalPokedexOrder:
 	db AMPHAROS
 	db ARBOK
 	db ARCANINE
+	db ARCEUS
 	db ARIADOS
 	db ARTICUNO
 	db AZUMARILL
@@ -134,6 +135,7 @@ AlphabeticalPokedexOrder:
 	db METAPOD
 	db MEW
 	db MEWTWO
+	db MEWTWO_OG
 	db MILTANK
 	db MISDREAVUS
 	db MOLTRES
@@ -184,6 +186,7 @@ AlphabeticalPokedexOrder:
 	db RAPIDASH
 	db RATICATE
 	db RATTATA
+	db RAYQUAZA
 	db REMORAID
 	db RHYDON
 	db RHYHORN
@@ -211,7 +214,6 @@ AlphabeticalPokedexOrder:
 	db SPEAROW
 	db SPINARAK
 	db SQUIRTLE
-	db STANTLER
 	db STARMIE
 	db STARYU
 	db STEELIX

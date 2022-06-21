@@ -1,24 +1,24 @@
 ; used in data/pokemon/base_stats/*.asm
-MACRO tmhm
-	; initialize bytes to 0
-	for n, (NUM_TM_HM_TUTOR + 7) / 8
-		DEF _tm{d:n} = 0
-	endr
-	; set bits of bytes
-	rept _NARG
-		if DEF(\1_TMNUM)
-		DEF n = (\1_TMNUM - 1) / 8
-		DEF i = (\1_TMNUM - 1) % 8
-		DEF _tm{d:n} |= 1 << i
-		else
-			fail "\1 is not a TM, HM, or tutor move"
-		endc
-		shift
-	endr
-	; output bytes
-	for n, (NUM_TM_HM_TUTOR + 7) / 8
-		db _tm{d:n}
-	endr
+tmhm: MACRO
+; initialize bytes to 0
+for n, (NUM_TM_HM_TUTOR + 7) / 8
+_tm{d:n} = 0
+endr
+; set bits of bytes
+rept _NARG
+	if DEF(\1_TMNUM)
+n = (\1_TMNUM - 1) / 8
+i = (\1_TMNUM - 1) % 8
+_tm{d:n} |= 1 << i
+	else
+		fail "\1 is not a TM, HM, or tutor move"
+	endc
+	shift
+endr
+; output bytes
+for n, (NUM_TM_HM_TUTOR + 7) / 8
+	db _tm{d:n}
+endr
 ENDM
 
 BaseData::
@@ -256,7 +256,6 @@ INCLUDE "data/pokemon/base_stats/kingdra.asm"
 INCLUDE "data/pokemon/base_stats/phanpy.asm"
 INCLUDE "data/pokemon/base_stats/donphan.asm"
 INCLUDE "data/pokemon/base_stats/porygon2.asm"
-INCLUDE "data/pokemon/base_stats/stantler.asm"
 INCLUDE "data/pokemon/base_stats/smeargle.asm"
 INCLUDE "data/pokemon/base_stats/tyrogue.asm"
 INCLUDE "data/pokemon/base_stats/hitmontop.asm"
@@ -274,4 +273,7 @@ INCLUDE "data/pokemon/base_stats/tyranitar.asm"
 INCLUDE "data/pokemon/base_stats/lugia.asm"
 INCLUDE "data/pokemon/base_stats/ho_oh.asm"
 INCLUDE "data/pokemon/base_stats/celebi.asm"
+INCLUDE "data/pokemon/base_stats/rayquaza.asm"
+INCLUDE "data/pokemon/base_stats/mewtwo_og.asm"
+INCLUDE "data/pokemon/base_stats/arceus.asm"
 	assert_table_length NUM_POKEMON

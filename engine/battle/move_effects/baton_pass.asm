@@ -1,4 +1,6 @@
 BattleCommand_BatonPass:
+; batonpass
+
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
@@ -128,7 +130,7 @@ ResetBatonPassStatus:
 	; Nightmare isn't passed.
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
-	and SLP_MASK
+	and SLP
 	jr nz, .ok
 
 	ld a, BATTLE_VARS_SUBSTATUS1

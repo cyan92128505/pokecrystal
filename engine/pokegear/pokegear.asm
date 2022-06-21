@@ -4,9 +4,9 @@
 	const POKEGEARCARD_MAP   ; 1
 	const POKEGEARCARD_PHONE ; 2
 	const POKEGEARCARD_RADIO ; 3
-DEF NUM_POKEGEAR_CARDS EQU const_value
+NUM_POKEGEAR_CARDS EQU const_value
 
-DEF PHONE_DISPLAY_HEIGHT EQU 4
+PHONE_DISPLAY_HEIGHT EQU 4
 
 ; PokegearJumptable.Jumptable indexes
 	const_def

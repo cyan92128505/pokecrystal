@@ -341,7 +341,7 @@ PokeBallEffect:
 ; Uncomment the line below to fix this.
 	ld b, a
 	ld a, [wEnemyMonStatus]
-	and 1 << FRZ | SLP_MASK
+	and 1 << FRZ | SLP
 	ld c, 10
 	jr nz, .addstatus
 	; ld a, [wEnemyMonStatus]
@@ -760,7 +760,7 @@ ParkBallMultiplier:
 	ld b, $ff
 	ret
 
-HeavyBall_GetDexEntryBank:
+GetPokedexEntryBank:
 ; This function is buggy.
 ; It gets the wrong bank for Kadabra (64), Tauros (128), and Sunflora (192).
 ; Uncomment the line below to fix this.
@@ -791,7 +791,7 @@ HeavyBallMultiplier:
 ; else add 0 to catch rate if weight < 204.8 kg
 ; else add 20 to catch rate if weight < 307.2 kg
 ; else add 30 to catch rate if weight < 409.6 kg
-; else add 40 to catch rate
+; else add 40 to catch rate (never happens)
 	ld a, [wEnemyMonSpecies]
 	ld hl, PokedexDataPointerTable
 	dec a
@@ -803,13 +803,13 @@ HeavyBallMultiplier:
 	call GetFarWord
 
 .SkipText:
-	call HeavyBall_GetDexEntryBank
+	call GetPokedexEntryBank
 	call GetFarByte
 	inc hl
 	cp "@"
 	jr nz, .SkipText
 
-	call HeavyBall_GetDexEntryBank
+	call GetPokedexEntryBank
 	push bc
 	inc hl
 	inc hl
@@ -2189,7 +2189,7 @@ PokeFluteEffect:
 	xor a
 	ld [wPokeFluteCuredSleep], a
 
-	ld b, ~SLP_MASK
+	ld b, ~SLP
 
 	ld hl, wPartyMon1Status
 	call .CureSleep
@@ -2231,7 +2231,7 @@ PokeFluteEffect:
 .loop
 	ld a, [hl]
 	push af
-	and SLP_MASK
+	and SLP
 	jr z, .not_asleep
 	ld a, TRUE
 	ld [wPokeFluteCuredSleep], a

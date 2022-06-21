@@ -130,7 +130,6 @@ NewPokedexOrder:
 	db NINETALES
 	db GROWLITHE
 	db ARCANINE
-	db STANTLER
 	db MARILL
 	db AZUMARILL
 	db DIGLETT
@@ -253,4 +252,7 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db RAYQUAZA
+	db MEWTWO_OG
+	db ARCEUS
 	assert_table_length NUM_POKEMON

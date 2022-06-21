@@ -233,7 +233,6 @@ AnimationPointers:
 	dw PhanpyAnimation
 	dw DonphanAnimation
 	dw Porygon2Animation
-	dw StantlerAnimation
 	dw SmeargleAnimation
 	dw TyrogueAnimation
 	dw HitmontopAnimation
@@ -251,4 +250,7 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+	dw RayquazaAnimation
+	dw MewtwoOGAnimation
+	dw ArceusAnimation
 	assert_table_length NUM_POKEMON

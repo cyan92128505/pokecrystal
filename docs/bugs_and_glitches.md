@@ -34,7 +34,6 @@ Fixes in the [multi-player battle engine](#multi-player-battle-engine) category 
   - [Beat Up may fail to raise Substitute](#beat-up-may-fail-to-raise-substitute)
   - [Beat Up may trigger King's Rock even if it failed](#beat-up-may-trigger-kings-rock-even-if-it-failed)
   - [Present damage is incorrect in link battles](#present-damage-is-incorrect-in-link-battles)
-  - [Return and Frustration deal no damage when the user's happiness is low or high, respectively](#return-and-frustration-deal-no-damage-when-the-users-happiness-is-low-or-high-respectively)
   - [Dragon Scale, not Dragon Fang, boosts Dragon-type moves](#dragon-scale-not-dragon-fang-boosts-dragon-type-moves)
   - [Switching out or switching against a Pokémon with max HP below 4 freezes the game](#switching-out-or-switching-against-a-pokémon-with-max-HP-below-4-freezes-the-game)
   - [Moves that do damage and increase your stats do not increase stats after a KO](#moves-that-do-damage-and-increase-your-stats-do-not-increase-stats-after-a-ko)
@@ -62,11 +61,10 @@ Fixes in the [multi-player battle engine](#multi-player-battle-engine) category 
   - [`RIVAL2` has lower DVs than `RIVAL1`](#rival2-has-lower-dvs-than-rival1)
   - [`HELD_CATCH_CHANCE` has no effect](#held_catch_chance-has-no-effect)
   - [Credits sequence changes move selection menu behavior](#credits-sequence-changes-move-selection-menu-behavior)
-- [Game engine](#game-engine)
+- [Overworld engine](#overworld-engine)
   - [`LoadMetatiles` wraps around past 128 blocks](#loadmetatiles-wraps-around-past-128-blocks)
   - [Surfing directly across a map connection does not load the new map](#surfing-directly-across-a-map-connection-does-not-load-the-new-map)
   - [Swimming NPCs aren't limited by their movement radius](#swimming-npcs-arent-limited-by-their-movement-radius)
-  - [Pokémon deposited in the Day-Care might lose experience](#pokémon-deposited-in-the-day-care-might-lose-experience)
 - [Graphics](#graphics)
   - [In-battle “`…`” ellipsis is too high](#in-battle--ellipsis-is-too-high)
   - [Two tiles in the `port` tileset are drawn incorrectly](#two-tiles-in-the-port-tileset-are-drawn-incorrectly)
@@ -183,33 +181,23 @@ Fixes in the [multi-player battle engine](#multi-player-battle-engine) category 
 
 ([Video](https://www.youtube.com/watch?v=rGqu3d3pdok&t=450))
 
-**Fix:** Edit [engine/battle/effect_commands.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/effect_commands.asm):
+**Fix:** Edit `DittoMetalPowder` in [engine/battle/effect_commands.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/effect_commands.asm):
 
 ```diff
- DittoMetalPowder:
- 	...
+ 	ld a, c
+ 	srl a
+ 	add c
+ 	ld c, a
+ 	ret nc
 
--	ld a, c
--	srl a
--	add c
--	ld c, a
--	ret nc
--
--	srl b
--	ld a, b
--	and a
--	jr nz, .done
--	inc b
--.done
--	scf
--	rr c
-+	ld h, b
-+	ld l, c
-+	srl b
-+	rr c
-+	add hl, bc
-+	ld b, h
-+	ld c, l
+ 	srl b
+ 	ld a, b
+ 	and a
+ 	jr nz, .done
+ 	inc b
+ .done
+ 	scf
+ 	rr c
 +
 +	ld a, HIGH(MAX_STAT_VALUE)
 +	cp b
@@ -224,52 +212,12 @@ Fixes in the [multi-player battle engine](#multi-player-battle-engine) category 
  	ret
 ```
 
-```diff
- PlayerAttackDamage:
- 	...
-
- .done
-+	push hl
-+	call DittoMetalPowder
-+	pop hl
-
- 	call TruncateHL_BC
-
- 	ld a, [wBattleMonLevel]
- 	ld e, a
--	call DittoMetalPowder
-
- 	ld a, 1
- 	and a
- 	ret
-```
-
-```diff
- EnemyAttackDamage:
- 	...
-
- .done
-+	push hl
-+	call DittoMetalPowder
-+	pop hl
-
- 	call TruncateHL_BC
-
- 	ld a, [wBattleMonLevel]
- 	ld e, a
--	call DittoMetalPowder
-
- 	ld a, 1
- 	and a
- 	ret
-```
-
 
 ### Reflect and Light Screen can make (Special) Defense wrap around above 1024
 
 This bug existed for all battles in Gold and Silver, and was only fixed for single-player battles in Crystal to preserve link compatibility.
 
-**Fix:** Edit `TruncateHL_BC` in [engine/battle/effect_commands.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/effect_commands.asm):
+**Fix:** Edit `TruncateHL_BC` in [engine/battle/effect_commands.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/effect_commands.asm)
 
 ```diff
  .finish
@@ -752,53 +700,6 @@ This bug existed for all battles in Gold and Silver, and was only fixed for sing
 ```
 
 
-### Return and Frustration deal no damage when the user's happiness is low or high, respectively
-
-This happens because the user's happiness (or 255 − happiness for Frustration) is multiplied by 10 and divided by 25, which rounds down to zero when the happiness is 0–2 (or 253–255 for Frustration).
-
-**Fix:**
-
-Edit [engine/battle/move_effects/return.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/move_effects/return.asm):
-
-```diff
- BattleCommand_HappinessPower:
- 	...
- 	call Multiply
- 	ld a, 25
- 	ldh [hDivisor], a
- 	ld b, 4
- 	call Divide
- 	ldh a, [hQuotient + 3]
-+	and a
-+	jr nz, .done
-+	inc a
-+.done
- 	ld d, a
- 	pop bc
- 	ret
-```
-
-And edit [engine/battle/move_effects/frustration.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/move_effects/frustration.asm):
-
-```diff
- BattleCommand_FrustrationPower:
- 	...
- 	call Multiply
- 	ld a, 25
- 	ldh [hDivisor], a
- 	ld b, 4
- 	call Divide
- 	ldh a, [hQuotient + 3]
-+	and a
-+	jr nz, .done
-+	inc a
-+.done
- 	ld d, a
- 	pop bc
- 	ret
-```
-
-
 ### Dragon Scale, not Dragon Fang, boosts Dragon-type moves
 
 **Fix:** Edit `ItemAttributes` in [data/items/attributes.asm](https://github.com/pret/pokecrystal/blob/master/data/items/attributes.asm):
@@ -1148,7 +1049,7 @@ This can occur if your party and current PC box are both full when you start the
 -; Uncomment the line below to fix this.
  	ld b, a
  	ld a, [wEnemyMonStatus]
- 	and 1 << FRZ | SLP_MASK
+ 	and 1 << FRZ | SLP
  	ld c, 10
  	jr nz, .addstatus
 -	; ld a, [wEnemyMonStatus]
@@ -1222,10 +1123,10 @@ This can occur if your party and current PC box are both full when you start the
 
 ### Heavy Ball uses wrong weight value for three Pokémon
 
-**Fix:** Edit `HeavyBall_GetDexEntryBank` in [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/item_effects.asm):
+**Fix:** Edit `GetPokedexEntryBank` in [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/item_effects.asm):
 
 ```diff
- HeavyBall_GetDexEntryBank:
+ GetPokedexEntryBank:
 -; This function is buggy.
 -; It gets the wrong bank for Kadabra (64), Tauros (128), and Sunflora (192).
 -; Uncomment the line below to fix this.
@@ -1400,13 +1301,19 @@ SunnyDayMoves:
 -	; res SUBSTATUS_NIGHTMARE, [hl]
 +	ld hl, wEnemySubStatus1
 +	res SUBSTATUS_NIGHTMARE, [hl]
- 	...
+-	; Bug: this should reset SUBSTATUS_CONFUSED
+-	; Uncomment the 2 lines below to fix
+-	; ld hl, wEnemySubStatus3
+-	; res SUBSTATUS_CONFUSED, [hl]
++	ld hl, wEnemySubStatus5
++	res SUBSTATUS_TOXIC, [hl]
+ 	ret
 ```
 
 
 ### AI use of Full Heal does not cure confusion status
 
-**Fix:** Edit `EnemyUsedFullRestore`, and `AI_HealStatus` in [engine/battle/ai/items.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/ai/items.asm):
+**Fix:** Edit `EnemyUsedFullRestore`, `EnemyUsedFullHeal`, and `AI_HealStatus` in [engine/battle/ai/items.asm](https://github.com/pret/pokecrystal/blob/master/engine/battle/ai/items.asm):
 
 ```diff
  EnemyUsedFullRestore:
@@ -1415,8 +1322,19 @@ SunnyDayMoves:
  	ld [wCurEnemyItem], a
 -	ld hl, wEnemySubStatus3
 -	res SUBSTATUS_CONFUSED, [hl]
-- 	xor a
-- 	ld [wEnemyConfuseCount], a
+ 	xor a
+ 	ld [wEnemyConfuseCount], a
+```
+
+```diff
+ EnemyUsedFullHeal:
+ 	call AIUsedItemSound
+ 	call AI_HealStatus
+ 	ld a, FULL_HEAL
++	ld [wCurEnemyItem], a
++	xor a
++	ld [wEnemyConfuseCount], a
+ 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 ```
 
 ```diff
@@ -1428,11 +1346,12 @@ SunnyDayMoves:
  	xor a
  	ld [hl], a
  	ld [wEnemyMonStatus], a
-+	ld [wEnemyConfuseCount], a
-	; Bug: this should reset SUBSTATUS_NIGHTMARE
-	; Uncomment the 2 lines below to fix
-	; ld hl, wEnemySubStatus1
-	; res SUBSTATUS_NIGHTMARE, [hl]
+-	; Bug: this should reset SUBSTATUS_NIGHTMARE
+-	; Uncomment the 2 lines below to fix
+-	; ld hl, wEnemySubStatus1
+-	; res SUBSTATUS_NIGHTMARE, [hl]
++	ld hl, wEnemySubStatus1
++	res SUBSTATUS_NIGHTMARE, [hl]
 -	; Bug: this should reset SUBSTATUS_CONFUSED
 -	; Uncomment the 2 lines below to fix
 -	; ld hl, wEnemySubStatus3
@@ -1560,7 +1479,7 @@ The `[hInMenu]` value determines this button behavior. However, the battle moves
 ```
 
 
-## Game engine
+## Overworld engine
 
 
 ### `LoadMetatiles` wraps around past 128 blocks
@@ -1670,57 +1589,6 @@ This bug is why the Lapras in [maps/UnionCaveB2F.asm](https://github.com/pret/po
  	bit NOCLIP_TILES_F, [hl] ; lost, uncomment next line to fix
 -	; jr nz, .noclip_tiles
 +	jr nz, .noclip_tiles
-```
-
-
-### Pokémon deposited in the Day-Care might lose experience
-
-This happens because when a Pokémon is withdrawn from the Day-Care, its Exp. Points are reset to the minimum required for its level. This means that if it hasn't gained any levels, it may lose experience.
-
-**Fix**: Edit `RetrieveBreedmon` in [engine/pokemon/move_mon.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokemon/move_mon.asm):
-
-```diff
- RetrieveBreedmon:
-
- 	...
-
- 	ld a, [wPartyCount]
- 	dec a
- 	ld [wCurPartyMon], a
- 	farcall HealPartyMon
--	ld a, [wCurPartyLevel]
--	ld d, a
-+	; Check if there's an exp overflow
-+	ld d, MAX_LEVEL
- 	callfar CalcExpAtLevel
- 	pop bc
--	ld hl, MON_EXP
-+	ld hl, MON_EXP + 2
- 	add hl, bc
- 	ldh a, [hMultiplicand]
--	ld [hli], a
-+	ld b, a
- 	ldh a, [hMultiplicand + 1]
--	ld [hli], a
-+	ld c, a
- 	ldh a, [hMultiplicand + 2]
-+	ld d, a
-+	ld a, [hld]
-+	sub d
-+	ld a, [hld]
-+	sbc c
-+	ld a, [hl]
-+	sbc b
-+	jr c, .not_max_exp
-+	ld a, b
-+	ld [hli], a
-+	ld a, c
-+	ld [hli], a
-+	ld a, d
- 	ld [hl], a
-+.not_max_exp
- 	and a
- 	ret
 ```
 
 
@@ -2354,7 +2222,7 @@ CopyPokemonName_Buffer1_Buffer3:
 
 This bug can allow you to talk to Eusine in Celadon City and encounter Ho-Oh with only traded legendary beasts.
 
-**Fix:** Edit `CheckOwnMon` in [engine/pokemon/search_owned.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokemon/search_owned.asm):
+**Fix:** Edit `CheckOwnMon` in [engine/pokemon/search.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokemon/search.asm):
 
 ```diff
  ; check OT
@@ -2386,7 +2254,7 @@ This bug can allow you to talk to Eusine in Celadon City and encounter Ho-Oh wit
 
 This bug can prevent you from talking to Eusine in Celadon City or encountering Ho-Oh when a caught legendary beast is in the Day-Care.
 
-**Fix:** Edit `CheckOwnMonAnywhere` in [engine/pokemon/search_owned.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokemon/search_owned.asm):
+**Fix:** Edit `CheckOwnMonAnywhere` in [engine/pokemon/search.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokemon/search.asm):
 
 ```diff
  	; If there are no monsters in the party,

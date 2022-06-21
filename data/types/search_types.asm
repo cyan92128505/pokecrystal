@@ -18,4 +18,6 @@ PokedexTypeSearchConversionTable:
 	db DRAGON
 	db DARK
 	db STEEL
-	assert_table_length NUM_TYPES
+	db HOLY
+	db UBER
+	assert_table_length NUM_TYPES + 1

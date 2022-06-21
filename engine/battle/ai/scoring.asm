@@ -1,5 +1,17 @@
 AIScoring: ; used only for BANK(AIScoring)
 
+SubstituteImmuneEffects:	;joenote - added this table to track for substitute immunities
+	db $01 ; unused sleep effect
+	db EFFECT_SLEEP
+	db EFFECT_POISON
+	db EFFECT_PARALYZE
+	db EFFECT_CONFUSE
+	db EFFECT_LEECH_SEED
+	db EFFECT_ACCURACY_DOWN
+	db EFFECT_DEFENSE_DOWN
+	db EFFECT_DEFENSE_DOWN_2
+	db EFFECT_ATTACK_DOWN
+	db $FF
 
 AI_Basic:
 ; Don't do anything redundant:
@@ -48,12 +60,30 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr nc, .checkmove
+	jr nc, .checkSub
 
 	ld a, [wBattleMonStatus]
 	and a
 	jr nz, .discourage
 
+.checkSub
+; dismiss moves blocked by sub if sub is up
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr z, .checkSafeguard	;if the substitute bit is not set, then skip out of this block
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	push hl
+	push de
+	push bc
+	ld hl, SubstituteImmuneEffects
+	ld de, 1
+	call IsInArray	;see if a is found in the hl array (carry flag set if true)
+	pop bc
+	pop de
+	pop hl
+	jr c, .discourage
+
+.checkSafeguard
 ; Dismiss Safeguard if it's already active.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
@@ -65,6 +95,90 @@ AI_Basic:
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
+AI_Smart_Switch:
+; Enemies can switch intelligently under certain conditions
+; 80% chance to switch if unboosted enemy is SLP or FRZ and player sets up
+; don't switch if enemy is weakened, just let it die
+; switch if enemy accuracy at -2 or lower
+; switch if enemy is cursed
+; 50% chance to switch per turn if enemy afflicted with toxic
+; 50% chance to switch per turn if enemy afflicted with leech seed
+
+; possibly switch if enemy is setup bait
+	ld a, [wEnemyMonStatus]
+	and 1 << FRZ | SLP
+	jr nz, .checkSetUp
+
+; don't switch if enemy is weakened, just let it die
+	call AICheckEnemyQuarterHP
+	ret nc
+
+; switch if enemy accuracy at -2 or lower
+    ld a, [wEnemyAccLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr c, .switch
+
+; switch if enemy is cursed
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	bit SUBSTATUS_CURSE, a
+	jr nz, .switch
+
+; 50% chance to switch per turn if enemy afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+	jr nz, .switch50
+
+; 50% chance to switch per turn if enemy afflicted with leech seed
+    ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_LEECH_SEED, a
+	jr nz, .switch50
+
+    ret
+
+.checkSetUp
+; don't switch if enemy mon is already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+
+; 80% chance to switch if player attempts to set up
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_ATTACK_UP_2
+	jr z, .switch80
+	cp EFFECT_SP_ATK_UP
+	jr z, .switch80
+	cp EFFECT_SUBSTITUTE
+	jr z, .switch80
+	cp EFFECT_CURSE
+	jr z, .switch80
+	cp EFFECT_FURIOUS_WILL
+	jr z, .switch80
+
+	ret
+
+.switch80
+    call AI_80_20
+	jr nc, .switch
+	ret
+.switch50
+    call AI_50_50
+	ret c
+.switch
+	ld a, $1
+	ld [wEnemyIsSwitching], a
+	ret
 
 AI_Setup:
 ; Use stat-modifying moves on turn 1.
@@ -325,7 +439,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_RAZOR_WIND,       AI_Smart_RazorWind
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
-	dbw EFFECT_UNUSED_2B,        AI_Smart_Unused2B
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Reflect
@@ -387,6 +500,10 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
+	dbw EFFECT_HOLY_ARMOUR,      AI_Smart_HolyArmour
+	dbw EFFECT_FURIOUS_WILL,     AI_Smart_FuriousWill
+	dbw EFFECT_ATTACK_UP_2,      AI_Smart_SwordsDance
+	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -942,24 +1059,22 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
-; 90% chance to greatly encourage this move if enemy's HP is below 25%.
-; Discourage this move if enemy's HP is higher than 50%.
-; Do nothing otherwise.
-
-	call AICheckEnemyQuarterHP
-	jr nc, .encourage
+; use if below 50%, don't use otherwise
+; AndrewNote - need to fix this up
 	call AICheckEnemyHalfHP
-	ret nc
-	inc [hl]
-	ret
+	jr nc, .encourage
+	jr .discourage
 
 .encourage
-	call Random
-	cp 10 percent
-	ret c
 	dec [hl]
 	dec [hl]
 	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_Toxic:
 AI_Smart_LeechSeed:
@@ -1036,7 +1151,6 @@ AI_Smart_TrapTarget:
 	ret
 
 AI_Smart_RazorWind:
-AI_Smart_Unused2B:
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .no_perish_count
@@ -1472,7 +1586,7 @@ AI_Smart_SleepTalk:
 ; Greatly discourage this move otherwise.
 
 	ld a, [wEnemyMonStatus]
-	and SLP_MASK
+	and SLP
 	cp 1
 	jr z, .discourage
 
@@ -1610,7 +1724,7 @@ AI_Smart_HealBell:
 	jr z, .ok
 	dec [hl]
 .ok
-	and 1 << FRZ | SLP_MASK
+	and 1 << FRZ | SLP
 	ret z
 	call AI_50_50
 	ret c
@@ -2582,6 +2696,8 @@ AI_Smart_Gust:
 	ld a, [wLastPlayerCounterMove]
 	cp FLY
 	ret nz
+	cp SKY_CLEAVE
+	ret nz
 
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_FLYING, a
@@ -2671,6 +2787,90 @@ AI_Smart_Thunder:
 	cp 10 percent
 	ret c
 
+	inc [hl]
+	ret
+
+AI_Smart_HolyArmour:
+; Discourage this move if enemy's special defense level is higher than +3.
+	ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .encourage
+	ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .encourage
+	jr .discourage
+.encourage
+	dec [hl]
+	dec [hl]
+	ret
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_FuriousWill:
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage ; don't use if already at +4
+    cp BASE_STAT_LEVEL + 2
+    ret ; if at +2 then neither encourage nor discourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage ; if player SpAtk boosted strongly encourage
+	jr .encourage ; otherwise encourage to get to +2
+.strongEncourage
+    dec [hl]
+    dec [hl]
+.encourage
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_SwordsDance:
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .encourage
+	jr .discourage
+.encourage
+	dec [hl]
+	ret
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_Barrier:
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage
+	ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage
+	ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .encourage
+.strongEncourage
+    dec [hl]
+.encourage
+	dec [hl]
+	dec [hl]
+	ret
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
 	inc [hl]
 	ret
 
@@ -2928,11 +3128,7 @@ INCLUDE "data/battle/ai/stall_moves.asm"
 
 
 AI_Aggressive:
-; Use whatever does the most damage.
-
-; Discourage all damaging moves but the one that does the most damage.
-; If no damaging move deals damage to the player (immune),
-; no move will be discouraged
+; discourage all damaging moves except the one that deals the most damage
 
 ; Figure out which attack does the most damage and put it in c.
 	ld hl, wEnemyMonMoves
@@ -3013,17 +3209,17 @@ AI_Aggressive:
 	jr c, .checkmove2
 
 ; Ignore this move if it is reckless.
-	push hl
-	push de
-	push bc
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	ld hl, RecklessMoves
-	ld de, 1
-	call IsInArray
-	pop bc
-	pop de
-	pop hl
-	jr c, .checkmove2
+	;push hl
+	;push de
+	;push bc
+	;ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	;ld hl, RecklessMoves
+	;ld de, 1
+	;call IsInArray
+	;pop bc
+	;pop de
+	;pop hl
+	;jr c, .checkmove2
 
 ; If we made it this far, discourage this move.
 	inc [hl]

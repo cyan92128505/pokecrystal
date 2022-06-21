@@ -34,4 +34,6 @@ StallMoves:
 	db CONVERSION
 	db SUBSTITUTE
 	db FLAME_WHEEL
+	db HOLY_ARMOUR
+	db FURIOUS_WILL
 	db -1 ; end

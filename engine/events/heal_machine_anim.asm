@@ -59,11 +59,11 @@ HealMachineAnim:
 	dw .ElmsLab
 	dw .HallOfFame
 
-MACRO healmachineanimseq
-	rept _NARG
-		db HEALMACHINESTATE_\1
-		shift
-	endr
+healmachineanimseq: MACRO
+rept _NARG
+	db HEALMACHINESTATE_\1
+	shift
+endr
 ENDM
 
 .Pokecenter:

@@ -7,7 +7,7 @@
 	const MONMENUVALUE_MOVE   ; 5
 	const MONMENUVALUE_MAIL   ; 6
 	const MONMENUVALUE_ERROR  ; 7
-DEF NUM_MONMENUVALUES EQU const_value - 1
+NUM_MONMENUVALUES EQU const_value - 1
 
 MonMenuOptionStrings:
 ; entries correspond to MONMENUVALUE_* constants

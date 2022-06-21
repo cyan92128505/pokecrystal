@@ -834,6 +834,7 @@ ForceSwitch:
 	usedmovetext
 	doturn
 	checkhit
+	checkdeathimmunity
 	forceswitch
 	endmove
 
@@ -917,6 +918,7 @@ OHKOHit:
 	usedmovetext
 	doturn
 	stab
+	checkdeathimmunity
 	ohko
 	moveanim
 	failuretext
@@ -1240,6 +1242,7 @@ StaticDamage:
 	doturn
 	constantdamage
 	checkhit
+	checkdeathimmunity
 	resettypematchup
 	moveanim
 	failuretext
@@ -1358,6 +1361,7 @@ DestinyBond:
 	checkobedience
 	usedmovetext
 	doturn
+	checkdeathimmunity
 	destinybond
 	endmove
 
@@ -1516,6 +1520,8 @@ PerishSong:
 	checkobedience
 	usedmovetext
 	doturn
+	checkhit
+	checkdeathimmunity
 	perishsong
 	endmove
 
@@ -2074,4 +2080,39 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	endmove
+
+HolyArmour:
+	checkobedience
+	usedmovetext
+	doturn
+	holyarmour
+	endmove
+
+Judgement:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	judgement
+	endmove
+
+FuriousWill:
+	checkobedience
+	usedmovetext
+	doturn
+	furiouswill
 	endmove

@@ -61,7 +61,7 @@ void parse_args(int argc, char *argv[]) {
 			break;
 		case 'r':
 			for (char *token = strtok(optarg, ","); token; token = strtok(NULL, ",")) {
-				options.preserved = xrealloc(options.preserved, ++options.num_preserved * sizeof(*options.preserved));
+				options.preserved = realloc(options.preserved, ++options.num_preserved * sizeof(*options.preserved));
 				options.preserved[options.num_preserved-1] = strtoul(token, NULL, 0);
 			}
 			break;
@@ -134,12 +134,15 @@ void remove_whitespace(struct Graphic *graphic) {
 	graphic->size &= ~(tile_size - 1);
 	int i = 0;
 	for (int j = 0, d = 0; i < graphic->size && j < graphic->size; i += tile_size, j += tile_size) {
-		for (; j < graphic->size && is_whitespace(&graphic->data[j], tile_size) && !is_preserved(j / tile_size - d); j += tile_size, d++) {
+		while (j < graphic->size && is_whitespace(&graphic->data[j], tile_size) && !is_preserved(j / tile_size - d)) {
 			shift_preserved(j / tile_size - d);
+			d++;
+			j += tile_size;
 		}
 		if (j >= graphic->size) {
 			break;
-		} else if (j > i) {
+		}
+		if (j > i) {
 			memcpy(&graphic->data[i], &graphic->data[j], tile_size);
 		}
 	}
@@ -167,11 +170,13 @@ void remove_duplicates(struct Graphic *graphic) {
 	graphic->size &= ~(tile_size - 1);
 	int num_tiles = 0;
 	for (int i = 0, j = 0, d = 0; i < graphic->size && j < graphic->size; i += tile_size, j += tile_size) {
-		for (; j < graphic->size && tile_exists(&graphic->data[j], graphic->data, tile_size, num_tiles); j += tile_size, d++) {
+		while (j < graphic->size && tile_exists(&graphic->data[j], graphic->data, tile_size, num_tiles)) {
 			if ((options.keep_whitespace && is_whitespace(&graphic->data[j], tile_size)) || is_preserved(j / tile_size - d)) {
 				break;
 			}
 			shift_preserved(j / tile_size - d);
+			d++;
+			j += tile_size;
 		}
 		if (j >= graphic->size) {
 			break;
@@ -207,7 +212,7 @@ const uint8_t flipped[256] = {
 };
 
 bool flip_exists(const uint8_t *tile, const uint8_t *tiles, int tile_size, int num_tiles, bool xflip, bool yflip) {
-	uint8_t flip[tile_size]; // VLA
+	uint8_t flip[tile_size];
 	memset(flip, 0, tile_size);
 	int half_size = tile_size / 2;
 	for (int i = 0; i < tile_size; i++) {
@@ -222,11 +227,13 @@ void remove_flip(struct Graphic *graphic, bool xflip, bool yflip) {
 	graphic->size &= ~(tile_size - 1);
 	int num_tiles = 0;
 	for (int i = 0, j = 0, d = 0; i < graphic->size && j < graphic->size; i += tile_size, j += tile_size) {
-		for (; j < graphic->size && flip_exists(&graphic->data[j], graphic->data, tile_size, num_tiles, xflip, yflip); j += tile_size, d++) {
+		while (j < graphic->size && flip_exists(&graphic->data[j], graphic->data, tile_size, num_tiles, xflip, yflip)) {
 			if ((options.keep_whitespace && is_whitespace(&graphic->data[j], tile_size)) || is_preserved(j / tile_size - d)) {
 				break;
 			}
 			shift_preserved(j / tile_size - d);
+			d++;
+			j += tile_size;
 		}
 		if (j >= graphic->size) {
 			break;
@@ -243,7 +250,7 @@ void interleave(struct Graphic *graphic, int width) {
 	int tile_size = options.depth * 8;
 	int width_tiles = width / 8;
 	int num_tiles = graphic->size / tile_size;
-	uint8_t *interleaved = xmalloc(graphic->size);
+	uint8_t *interleaved = malloc(graphic->size);
 	for (int i = 0; i < num_tiles; i++) {
 		int row = i / width_tiles;
 		int tile = i * 2 - (row % 2 ? width_tiles * (row + 1) - 1 : width_tiles * row);
@@ -271,9 +278,9 @@ int main(int argc, char *argv[]) {
 	}
 	if (options.interleave) {
 		if (!options.png_file) {
-			error_exit("--interleave needs --png to infer dimensions\n");
+			error_exit("--interleave needs --png to infer dimensions");
 		}
-		int width = read_png_width(options.png_file);
+		int width = read_png_width_verbose(options.png_file);
 		interleave(&graphic, width);
 	}
 	if (options.remove_duplicates) {

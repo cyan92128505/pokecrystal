@@ -481,8 +481,6 @@ INCBIN "gfx/pokemon/donphan/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/donphan/shiny.pal"
 INCBIN "gfx/pokemon/porygon2/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/porygon2/shiny.pal"
-INCBIN "gfx/pokemon/stantler/front.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/stantler/shiny.pal"
 INCBIN "gfx/pokemon/smeargle/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/smeargle/shiny.pal"
 INCBIN "gfx/pokemon/tyrogue/front.gbcpal", middle_colors
@@ -517,15 +515,21 @@ INCBIN "gfx/pokemon/ho_oh/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ho_oh/shiny.pal"
 INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/celebi/shiny.pal"
+INCBIN "gfx/pokemon/rayquaza/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/rayquaza/shiny.pal"
+INCBIN "gfx/pokemon/mewtwo_og/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/mewtwo_og/shiny.pal"
+INCBIN "gfx/pokemon/arceus/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/arceus/shiny.pal"
 
 	assert_table_length NUM_POKEMON + 1
 
 ; 252
-	RGB 30, 26, 11
-	RGB 23, 16, 00
+;	RGB 30, 26, 11
+;	RGB 23, 16, 00
 ; 252 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
+;	RGB 30, 26, 11
+;	RGB 23, 16, 00
 
 INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/egg/shiny.pal"
@@ -533,11 +537,11 @@ INCLUDE "gfx/pokemon/egg/shiny.pal"
 	assert_table_length EGG + 1
 
 ; 254
-	RGB 30, 26, 11
-	RGB 23, 16, 00
+;	RGB 30, 26, 11
+;	RGB 23, 16, 00
 ; 254 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
+;	RGB 30, 26, 11
+;	RGB 23, 16, 00
 
 ; 255
 	RGB 23, 23, 23

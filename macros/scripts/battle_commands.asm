@@ -1,6 +1,6 @@
-MACRO command
+command: MACRO
 	const \1_command
-	DEF \1 EQUS "db \1_command"
+\1 EQUS "db \1_command"
 ENDM
 
 ; BattleCommandPointers indexes (see data/battle/effect_command_pointers.asm)
@@ -64,7 +64,7 @@ ENDM
 	command charge                  ; 39
 	command checkcharge             ; 3a
 	command traptarget              ; 3b
-	command effect0x3c              ; 3c
+	command checkdeathimmunity      ; 3c
 	command rampage                 ; 3d
 	command checkrampage            ; 3e
 	command constantdamage          ; 3f
@@ -97,7 +97,7 @@ ENDM
 	command endure                  ; 5a
 	command checkcurl               ; 5b
 	command rolloutpower            ; 5c
-	command effect0x5d              ; 5d
+	command holyarmour              ; 5d
 	command furycutter              ; 5e
 	command attract                 ; 5f
 	command happinesspower          ; 60
@@ -180,7 +180,9 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
-DEF NUM_EFFECT_COMMANDS EQU const_value - 1
+	command judgement               ; b0
+	command furiouswill             ; b1
+NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
 	command endmove                 ; ff

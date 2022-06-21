@@ -1,4 +1,6 @@
 BattleCommand_BeatUp:
+; beatup
+
 	call ResetDamage
 	ldh a, [hBattleTurn]
 	and a
@@ -196,6 +198,8 @@ BattleCommand_BeatUp:
 	jp SkipToBattleCommand
 
 BattleCommand_BeatUpFailText:
+; beatupfailtext
+
 	ld a, [wBeatUpHitAtLeastOnce]
 	and a
 	ret nz

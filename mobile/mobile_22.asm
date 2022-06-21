@@ -2136,9 +2136,9 @@ Function89dab:
 	ld hl, wMenuJoypadFilter
 	and [hl]
 	ret z
-	bit A_BUTTON_F, a
+	bit 0, a
 	jr nz, .asm_89dc7
-	bit B_BUTTON_F, a
+	bit 1, a
 	jr nz, .asm_89dd9
 	xor a
 	ret
@@ -2943,9 +2943,9 @@ Function8a383:
 	ld hl, wMenuJoypadFilter
 	and [hl]
 	ret z
-	bit A_BUTTON_F, a
+	bit 0, a
 	jr nz, .asm_8a399
-	bit B_BUTTON_F, a
+	bit 1, a
 	jr nz, .asm_8a39e
 	xor a
 	ret
@@ -3664,7 +3664,7 @@ Function8a930:
 .asm_8a943
 	call Function8b7bd
 	ld a, [wMenuJoypad]
-	and A_BUTTON
+	and $1
 	jr nz, .asm_8a953
 	ld a, c
 	and a

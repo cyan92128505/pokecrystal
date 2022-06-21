@@ -128,42 +128,42 @@ LoadRandomBattleTowerMon:
 	ld b, a
 	ld a, [hld]
 	ld c, a
-	ld a, [wBT_OTMon1]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon1Item]
-	cp c
-	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon2]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon2Item]
-	cp c
-	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon3]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [wBT_OTMon3Item]
-	cp c
-	jr z, .FindARandomBattleTowerMon
-	ld a, [sBTMonPrevTrainer1]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [sBTMonPrevTrainer2]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [sBTMonPrevTrainer3]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [sBTMonPrevPrevTrainer1]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [sBTMonPrevPrevTrainer2]
-	cp b
-	jr z, .FindARandomBattleTowerMon
-	ld a, [sBTMonPrevPrevTrainer3]
-	cp b
-	jr z, .FindARandomBattleTowerMon
+	;ld a, [wBT_OTMon1]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [wBT_OTMon1Item]
+	;cp c
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [wBT_OTMon2]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [wBT_OTMon2Item]
+	;cp c
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [wBT_OTMon3]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [wBT_OTMon3Item]
+	;cp c
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [sBTMonPrevTrainer1]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [sBTMonPrevTrainer2]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [sBTMonPrevTrainer3]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [sBTMonPrevPrevTrainer1]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [sBTMonPrevPrevTrainer2]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
+	;ld a, [sBTMonPrevPrevTrainer3]
+	;cp b
+	;jr z, .FindARandomBattleTowerMon
 
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH
 	call CopyBytes

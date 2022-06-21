@@ -1,7 +1,7 @@
-MobileAPI::
+Function3e32::
 ; Mobile
 	cp $2
-	ld [wMobileAPIIndex], a
+	ld [wc988], a
 	ld a, l
 	ld [wc986], a
 	ld a, h
@@ -22,19 +22,19 @@ MobileAPI::
 	set 6, [hl]
 	ldh a, [hROMBank]
 	push af
-	ld a, BANK(_MobileAPI)
+	ld a, BANK(Function110030)
 	ld [wc981], a
 	rst Bankswitch
 
-	jp _MobileAPI
+	jp Function110030
 
-ReturnMobileAPI::
-; Return from _MobileAPI
+Function3e60::
+; Return from Function110030
 	ld [wc986], a
 	ld a, l
 	ld [wc987], a
 	ld a, h
-	ld [wMobileAPIIndex], a
+	ld [wc988], a
 
 	pop bc
 	ld a, b

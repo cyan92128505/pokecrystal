@@ -1,4 +1,4 @@
-DEF SPECIALCELEBIEVENT_CELEBI EQU $84
+SPECIALCELEBIEVENT_CELEBI EQU $84
 
 UnusedForestTreeFrames: ; unreferenced
 INCBIN "gfx/tilesets/forest-tree/1.2bpp"

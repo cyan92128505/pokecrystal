@@ -51,7 +51,6 @@ CheckOwnMonAnywhere:
 
 	; If there are no monsters in the party,
 	; the player must not own any yet.
-
 	ld a, [wPartyCount]
 	and a
 	ret z
@@ -62,10 +61,9 @@ CheckOwnMonAnywhere:
 	ld bc, wPartyMonOTs
 
 	; Run CheckOwnMon on each Pokémon in the party.
-
 .partymon
 	call CheckOwnMon
-	ret c
+	ret c ; found!
 
 	push bc
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -76,7 +74,6 @@ CheckOwnMonAnywhere:
 	jr nz, .partymon
 
 	; Run CheckOwnMon on each Pokémon in the PC.
-
 	ld a, BANK(sBoxCount)
 	call OpenSRAM
 	ld a, [sBoxCount]
@@ -90,6 +87,7 @@ CheckOwnMonAnywhere:
 	call CheckOwnMon
 	jr nc, .loop
 
+	; found!
 	call CloseSRAM
 	ret
 
@@ -103,7 +101,6 @@ CheckOwnMonAnywhere:
 	jr nz, .openboxmon
 
 	; Run CheckOwnMon on each monster in the other 13 PC boxes.
-
 .boxes
 	call CloseSRAM
 
@@ -116,7 +113,6 @@ CheckOwnMonAnywhere:
 	jr z, .loopbox
 
 	; Load the box.
-
 	ld hl, SearchBoxAddressTable
 	ld b, 0
 	add hl, bc
@@ -129,7 +125,6 @@ CheckOwnMonAnywhere:
 	ld l, a
 
 	; Number of monsters in the box
-
 	ld a, [hl]
 	and a
 	jr z, .loopbox
@@ -155,6 +150,7 @@ CheckOwnMonAnywhere:
 	call CheckOwnMon
 	jr nc, .loopboxmon
 
+	; found!
 	pop bc
 	call CloseSRAM
 	ret
@@ -175,14 +171,13 @@ CheckOwnMonAnywhere:
 	cp NUM_BOXES
 	jr c, .box
 
+	; not found
 	call CloseSRAM
 	and a
 	ret
 
 CheckOwnMon:
 ; Check if a Pokémon belongs to the player and is of a specific species.
-; We compare the species we are looking for in [wScriptVar] to the species
-; we have in [hl].
 
 ; inputs:
 ; hl, pointer to PartyMonNSpecies
@@ -198,26 +193,26 @@ CheckOwnMon:
 	ld d, b
 	ld e, c
 
-	; check species
-
-	ld a, [wScriptVar]
-	ld b, [hl]
+; check species
+	ld a, [wScriptVar] ; species we're looking for
+	ld b, [hl] ; species we have
 	cp b
-	jr nz, .notfound
+	jr nz, .notfound ; species doesn't match
 
-	; check ID number
-
+; check ID number
 	ld bc, MON_ID
-	add hl, bc
+	add hl, bc ; now hl points to ID number
 	ld a, [wPlayerID]
 	cp [hl]
-	jr nz, .notfound
+	jr nz, .notfound ; ID doesn't match
 	inc hl
 	ld a, [wPlayerID + 1]
 	cp [hl]
-	jr nz, .notfound
+	jr nz, .notfound ; ID doesn't match
 
-	; check OT
+; check OT
+; This only checks five characters, which is fine for the Japanese version,
+; but in the English version the player name is 7 characters, so this is wrong.
 
 	ld hl, wPlayerName
 
@@ -226,7 +221,7 @@ rept NAME_LENGTH_JAPANESE - 2 ; should be PLAYER_NAME_LENGTH - 2
 	cp [hl]
 	jr nz, .notfound
 	cp "@"
-	jr z, .found
+	jr z, .found ; reached end of string
 	inc hl
 	inc de
 endr

@@ -1,4 +1,4 @@
-MACRO anim_obj_gfx
+anim_obj_gfx: MACRO
 ; # tiles, gfx pointer
 	db \1
 	dba \2

@@ -319,7 +319,7 @@ AI_Items:
 	jp c, .Use
 .FailToxicCheck:
 	ld a, [wEnemyMonStatus]
-	and 1 << FRZ | SLP_MASK
+	and 1 << FRZ | SLP
 	jp z, .DontUse
 	jp .Use
 
@@ -698,8 +698,8 @@ AI_Switch:
 	call PrintText
 
 .skiptext
-	ld a, 1
-	ld [wBattleHasJustStarted], a
+	;ld a, 1
+	;ld [wBattleHasJustStarted], a
 	callfar NewEnemyMonStatus
 	callfar ResetEnemyStatLevels
 	ld hl, wPlayerSubStatus1

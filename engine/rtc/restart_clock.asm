@@ -3,7 +3,7 @@
 	const RESTART_CLOCK_DAY
 	const RESTART_CLOCK_HOUR
 	const RESTART_CLOCK_MIN
-DEF NUM_RESTART_CLOCK_DIVISIONS EQU const_value - 1
+NUM_RESTART_CLOCK_DIVISIONS EQU const_value - 1
 
 RestartClock_GetWraparoundTime:
 	push hl
@@ -26,7 +26,7 @@ endr
 
 .WrapAroundTimes:
 ; entries correspond to RESTART_CLOCK_* constants
-MACRO wraparound_time
+wraparound_time: MACRO
 	dw \1 ; value pointer
 	db \2 ; maximum value
 	db \3 ; up/down arrow x coord (pairs with wRestartClockUpArrowYCoord)

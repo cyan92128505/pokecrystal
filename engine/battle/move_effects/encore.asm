@@ -1,4 +1,10 @@
 BattleCommand_Encore:
+; encore
+
+	ld a, [wEffectFailed]
+	and a
+	jp nz, .failed
+
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyEncoreCount
 	ldh a, [hBattleTurn]

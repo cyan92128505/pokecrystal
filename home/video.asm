@@ -182,7 +182,7 @@ UpdateBGMap::
 	jr z, .middle
 	; 2
 
-DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
+THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 
 ; bottom
 	ld de, 2 * THIRD_HEIGHT * SCREEN_WIDTH

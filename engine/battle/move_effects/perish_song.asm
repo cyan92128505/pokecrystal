@@ -1,4 +1,10 @@
 BattleCommand_PerishSong:
+; perishsong
+
+	ld a, [wEffectFailed]
+	and a
+	jr nz, .failed
+
 	ld hl, wPlayerSubStatus1
 	ld de, wEnemySubStatus1
 	bit SUBSTATUS_PERISH, [hl]

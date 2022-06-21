@@ -2697,7 +2697,6 @@ SlowkingEvosAttacks:
 MisdreavusEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 1, PSYWAVE
 	db 6, SPITE
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
@@ -3357,4 +3356,28 @@ CelebiEvosAttacks:
 	db 30, FUTURE_SIGHT
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
+	db 0 ; no more level-up moves
+
+RayquazaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SKY_CLEAVE
+	db 1, EARTHQUAKE
+	db 1, EXTREMESPEED
+	db 1, SWORDS_DANCE
+	db 0 ; no more level-up moves
+
+MewtwoOGEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, PSYBLAST
+	db 1, FURIOUS_WILL
+	db 1, BARRIER
+	db 1, RECOVER
+	db 0 ; no more level-up moves
+
+ArceusEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, JUDGEMENT
+	db 1, RECOVER
+	db 1, HOLY_ARMOUR
+	db 1, SWORDS_DANCE
 	db 0 ; no more level-up moves

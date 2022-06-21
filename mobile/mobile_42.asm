@@ -1,9 +1,9 @@
-MACRO add_mobiletradeanim
+add_mobiletradeanim: MACRO
 \1_MobileTradeCmd:
 	dw \1
 ENDM
 
-MACRO mobiletradeanim
+mobiletradeanim: MACRO
 	db (\1_MobileTradeCmd - MobileTradeAnim_JumptableLoop.Jumptable) / 2
 ENDM
 
@@ -1474,7 +1474,7 @@ Function108b78:
 	ld [hld], a
 	pop af
 	ldh [rSVBK], a
-	ld a, TRUE
+	ld a, TRUE 
 	ldh [hCGBPalUpdate], a
 	ret
 

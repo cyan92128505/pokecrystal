@@ -1,4 +1,6 @@
 BattleCommand_MirrorMove:
+; mirrormove
+
 	call ClearLastMove
 
 	ld a, BATTLE_VARS_MOVE

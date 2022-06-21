@@ -1,4 +1,6 @@
 BattleCommand_Disable:
+; disable
+
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed

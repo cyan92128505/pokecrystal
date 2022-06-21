@@ -170,7 +170,7 @@
 	const DRAGONITE  ; 95
 	const MEWTWO     ; 96
 	const MEW        ; 97
-DEF JOHTO_POKEMON EQU const_value
+JOHTO_POKEMON EQU const_value
 	const CHIKORITA  ; 98
 	const BAYLEEF    ; 99
 	const MEGANIUM   ; 9a
@@ -253,27 +253,28 @@ DEF JOHTO_POKEMON EQU const_value
 	const PHANPY     ; e7
 	const DONPHAN    ; e8
 	const PORYGON2   ; e9
-	const STANTLER   ; ea
-	const SMEARGLE   ; eb
-	const TYROGUE    ; ec
-	const HITMONTOP  ; ed
-	const SMOOCHUM   ; ee
-	const ELEKID     ; ef
-	const MAGBY      ; f0
-	const MILTANK    ; f1
-	const BLISSEY    ; f2
-	const RAIKOU     ; f3
-	const ENTEI      ; f4
-	const SUICUNE    ; f5
-	const LARVITAR   ; f6
-	const PUPITAR    ; f7
-	const TYRANITAR  ; f8
-	const LUGIA      ; f9
-	const HO_OH      ; fa
-	const CELEBI     ; fb
-DEF NUM_POKEMON EQU const_value - 1
-	const_skip       ; fc
-	const EGG        ; fd
+	const SMEARGLE   ; ea
+	const TYROGUE    ; eb
+	const HITMONTOP  ; ec
+	const SMOOCHUM   ; ed
+	const ELEKID     ; ee
+	const MAGBY      ; ef
+	const MILTANK    ; f0
+	const BLISSEY    ; f1
+	const RAIKOU     ; f2
+	const ENTEI      ; f3
+	const SUICUNE    ; f4
+	const LARVITAR   ; f5
+	const PUPITAR    ; f6
+	const TYRANITAR  ; f7
+	const LUGIA      ; f8
+	const HO_OH      ; f9
+	const CELEBI     ; fa
+	const RAYQUAZA  ; fb
+	const MEWTWO_OG  ; fc
+	const ARCEUS     ; fd
+NUM_POKEMON EQU const_value - 1
+	const EGG        ; fe
 
 ; Unown forms
 ; indexes for:
@@ -310,4 +311,4 @@ DEF NUM_POKEMON EQU const_value - 1
 	const UNOWN_X ; 24
 	const UNOWN_Y ; 25
 	const UNOWN_Z ; 26
-DEF NUM_UNOWN EQU const_value - 1 ; 26
+NUM_UNOWN EQU const_value - 1 ; 26

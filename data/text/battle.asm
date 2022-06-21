@@ -606,6 +606,11 @@ DoesntAffectText:
 	line "<TARGET>!"
 	prompt
 
+PowerTooGreatText:
+    text "<TARGET>"
+    line "is too powerful!"
+    prompt
+
 CriticalHitText:
 	text "A critical hit!"
 	prompt
@@ -727,6 +732,11 @@ DefrostedOpponentText:
 WasFrozenText:
 	text "<TARGET>"
 	line "was frozen solid!"
+	prompt
+
+JudgementText:
+	text "<USER>'s"
+	line "judgement is final"
 	prompt
 
 WontRiseAnymoreText:

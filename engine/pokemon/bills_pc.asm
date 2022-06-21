@@ -750,7 +750,7 @@ _MovePKMNWithoutMail:
 .a_button_2
 	call BillsPC_CheckSpaceInDestination
 	jr c, .no_space
-	call MovePKMNWithoutMail_InsertMon
+	call MovePKMNWitoutMail_InsertMon
 	ld a, $0
 	ld [wJumptableIndex], a
 	ret
@@ -1370,7 +1370,7 @@ BillsPC_RefreshTextboxes:
 .Placeholder:
 	db "-----@"
 
-MACRO copy_box_data
+copy_box_data: MACRO
 .loop\@
 	ld a, [hl]
 	cp -1
@@ -1394,9 +1394,9 @@ MACRO copy_box_data
 	jr .loop\@
 
 .done\@
-	if \1
-		call CloseSRAM
-	endc
+if \1
+	call CloseSRAM
+endc
 	ld a, -1
 	ld [de], a
 	ld a, [wBillsPCTempBoxCount]
@@ -1918,7 +1918,7 @@ ReleasePKMN_ByePKMN:
 	call DelayFrames
 	ret
 
-MovePKMNWithoutMail_InsertMon:
+MovePKMNWitoutMail_InsertMon:
 	push hl
 	push de
 	push bc

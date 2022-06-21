@@ -4,8 +4,8 @@
 ; then a row of the bottom two tiles for those eight footprints.
 
 ; These macros help extract the first and the last two tiles, respectively.
-DEF footprint_top    EQUS "0,                 2 * LEN_1BPP_TILE"
-DEF footprint_bottom EQUS "2 * LEN_1BPP_TILE, 2 * LEN_1BPP_TILE"
+footprint_top    EQUS "0,                 2 * LEN_1BPP_TILE"
+footprint_bottom EQUS "2 * LEN_1BPP_TILE, 2 * LEN_1BPP_TILE"
 
 Footprints:
 ; Entries correspond to Pokémon species, two apiece, 8 tops then 8 bottoms
@@ -535,7 +535,6 @@ INCBIN "gfx/footprints/phanpy.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/donphan.1bpp",    footprint_bottom
 ; 233-240 top halves
 INCBIN "gfx/footprints/porygon2.1bpp",   footprint_top
-INCBIN "gfx/footprints/stantler.1bpp",   footprint_top
 INCBIN "gfx/footprints/smeargle.1bpp",   footprint_top
 INCBIN "gfx/footprints/tyrogue.1bpp",    footprint_top
 INCBIN "gfx/footprints/hitmontop.1bpp",  footprint_top
@@ -544,7 +543,6 @@ INCBIN "gfx/footprints/elekid.1bpp",     footprint_top
 INCBIN "gfx/footprints/magby.1bpp",      footprint_top
 ; 233-240 bottom halves
 INCBIN "gfx/footprints/porygon2.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/stantler.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/smeargle.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/tyrogue.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/hitmontop.1bpp",  footprint_bottom
@@ -573,8 +571,9 @@ INCBIN "gfx/footprints/tyranitar.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/lugia.1bpp",      footprint_top
 INCBIN "gfx/footprints/ho_oh.1bpp",      footprint_top
 INCBIN "gfx/footprints/celebi.1bpp",     footprint_top
-INCBIN "gfx/footprints/252.1bpp",        footprint_top
-INCBIN "gfx/footprints/253.1bpp",        footprint_top
+INCBIN "gfx/footprints/rayquaza.1bpp",   footprint_top
+INCBIN "gfx/footprints/mewtwo_og.1bpp",  footprint_top
+INCBIN "gfx/footprints/arceus.1bpp",     footprint_top
 INCBIN "gfx/footprints/254.1bpp",        footprint_top
 INCBIN "gfx/footprints/255.1bpp",        footprint_top
 INCBIN "gfx/footprints/256.1bpp",        footprint_top
@@ -582,8 +581,9 @@ INCBIN "gfx/footprints/256.1bpp",        footprint_top
 INCBIN "gfx/footprints/lugia.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/ho_oh.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/celebi.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/252.1bpp",        footprint_bottom
-INCBIN "gfx/footprints/253.1bpp",        footprint_bottom
+INCBIN "gfx/footprints/rayquaza.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/mewtwo_og.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/arceus.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/254.1bpp",        footprint_bottom
 INCBIN "gfx/footprints/255.1bpp",        footprint_bottom
 INCBIN "gfx/footprints/256.1bpp",        footprint_bottom

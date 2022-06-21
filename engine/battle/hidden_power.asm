@@ -79,8 +79,8 @@ HiddenPowerDamage:
 ; Skip Normal
 	inc a
 
-; Skip Bird
-	cp BIRD
+; Skip Holy
+	cp HOLY
 	jr c, .done
 	inc a
 

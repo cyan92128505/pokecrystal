@@ -728,6 +728,11 @@ _BattleFlewText::
 	line "flew up high!"
 	prompt
 
+_BattleSoarText::
+	text_start
+	line "Soared skyward!"
+	prompt
+
 _BattleDugText::
 	text_start
 	line "dug a hole!"

@@ -127,17 +127,17 @@ endr
 	ret
 
 DebugColor_InitVRAM:
-	ld a, $1
+	ld a, BANK(vTiles3)
 	ldh [rVBK], a
-	ld hl, VRAM_Begin
-	ld bc, VRAM_End - VRAM_Begin
+	ld hl, vTiles3
+	ld bc, sScratch - vTiles3
 	xor a
 	call ByteFill
 
-	ld a, $0
+	ld a, BANK(vTiles0)
 	ldh [rVBK], a
-	ld hl, VRAM_Begin
-	ld bc, VRAM_End - VRAM_Begin
+	ld hl, vTiles0
+	ld bc, sScratch - vTiles0
 	xor a
 	call ByteFill
 

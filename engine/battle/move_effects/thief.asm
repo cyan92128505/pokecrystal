@@ -1,4 +1,6 @@
 BattleCommand_Thief:
+; thief
+
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
@@ -94,7 +96,7 @@ BattleCommand_Thief:
 	jp StdBattleTextbox
 
 .playeritem
-	ld a, MON_ITEM
+	ld a, 1
 	call BattlePartyAttr
 	ld d, h
 	ld e, l
@@ -102,7 +104,7 @@ BattleCommand_Thief:
 	ret
 
 .enemyitem
-	ld a, MON_ITEM
+	ld a, 1
 	call OTPartyAttr
 	ld d, h
 	ld e, l

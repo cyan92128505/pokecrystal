@@ -16,7 +16,7 @@ MapSetupScripts:
 	assert_table_length NUM_MAPSETUP_SCRIPTS
 
 ; valid commands are listed in MapSetupCommands (see data/maps/setup_script_pointers.asm)
-MACRO mapsetup
+mapsetup: MACRO
 	db (\1_MapSetupCmd - MapSetupCommands) / 3
 ENDM
 

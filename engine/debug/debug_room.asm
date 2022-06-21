@@ -3,7 +3,7 @@
 	const DEBUGROOMMENU_PAGE_1 ; 0
 	const DEBUGROOMMENU_PAGE_2 ; 1
 	const DEBUGROOMMENU_PAGE_3 ; 2
-DEF DEBUGROOMMENU_NUM_PAGES EQU const_value
+DEBUGROOMMENU_NUM_PAGES EQU const_value
 
 	; _DebugRoom.Strings and _DebugRoom.Jumptable indexes
 	const_def
@@ -538,7 +538,7 @@ DebugRoomMenu_DecorateAll:
 	call DebugRoom_SaveChecksum
 	ret
 
-MACRO paged_value
+paged_value: MACRO
 	dw \1 ; value address
 	db \2 ; min value
 	db \3 ; max value
@@ -548,7 +548,7 @@ MACRO paged_value
 	db \7 ; is hex value?
 ENDM
 
-DEF PAGED_VALUE_SIZE EQU 10
+PAGED_VALUE_SIZE EQU 10
 
 DebugRoom_EditPagedValues:
 	xor a

@@ -1,4 +1,6 @@
 BattleCommand_StoreEnergy:
+; storeenergy
+
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_BIDE, a
@@ -68,6 +70,8 @@ BattleCommand_StoreEnergy:
 	jp EndMoveEffect
 
 BattleCommand_UnleashEnergy:
+; unleashenergy
+
 	ld de, wPlayerDamageTaken
 	ld bc, wPlayerRolloutCount
 	ldh a, [hBattleTurn]

@@ -234,7 +234,7 @@ Buena_PrizeMenu:
 	ld a, [wMenuCursorY]
 	ld [wMenuSelection], a
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	cp $2
 	jr z, .cancel
 	ld a, c
 	and a

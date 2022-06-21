@@ -20,7 +20,7 @@ These are parts of the code that do not work *incorrectly*, like [bugs and glitc
 [data/pokemon/pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/pic_pointers.asm), [data/pokemon/unown_pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/unown_pic_pointers.asm), and [data/trainers/pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/trainers/pic_pointers.asm) all have to use `dba_pic` instead of `dba`. This is a macro in [macros/data.asm](https://github.com/pret/pokecrystal/blob/master/macros/data.asm) that offsets banks by `PICS_FIX`:
 
 ```asm
-MACRO dba_pic ; dbw bank, address
+dba_pic: MACRO ; dbw bank, address
 	db BANK(\1) - PICS_FIX
 	dw \1
 ENDM
@@ -32,7 +32,7 @@ The offset is translated into a correct bank by `FixPicBank` in [engine/gfx/load
 FixPicBank:
 ; This is a thing for some reason.
 
-DEF PICS_FIX EQU $36
+PICS_FIX EQU $36
 GLOBAL PICS_FIX
 
 	push hl
@@ -148,12 +148,10 @@ In [gfx/footprints.asm](https://github.com/pret/pokecrystal/blob/master/gfx/foot
 ; then a row of the bottom two tiles for those eight footprints.
 
 ; These macros help extract the first and the last two tiles, respectively.
-DEF footprint_top    EQUS "0,                 2 * LEN_1BPP_TILE"
-DEF footprint_bottom EQUS "2 * LEN_1BPP_TILE, 2 * LEN_1BPP_TILE"
+footprint_top    EQUS "0,                 2 * LEN_1BPP_TILE"
+footprint_bottom EQUS "2 * LEN_1BPP_TILE, 2 * LEN_1BPP_TILE"
 
-Footprints:
 ; Entries correspond to Pokémon species, two apiece, 8 tops then 8 bottoms
-	table_width LEN_1BPP_TILE * 4, Footprints
 
 ; 001-008 top halves
 INCBIN "gfx/footprints/bulbasaur.1bpp",  footprint_top
@@ -183,10 +181,6 @@ INCBIN "gfx/footprints/wartortle.1bpp",  footprint_bottom
 Store footprints contiguously:
 
 ```asm
-
-Footprints:
-	table_width LEN_1BPP_TILE * 4, Footprints
-
 INCBIN "gfx/footprints/bulbasaur.1bpp"
 INCBIN "gfx/footprints/ivysaur.1bpp"
 INCBIN "gfx/footprints/venusaur.1bpp"
@@ -328,7 +322,7 @@ Edit `GetMapMusic`:
 	add_tm PSYCHIC_M    ; dd
 	...
 	add_tm NIGHTMARE    ; f2
-DEF NUM_TMS EQU const_value - TM01 - 2 ; discount ITEM_C3 and ITEM_DC
+NUM_TMS EQU const_value - TM01 - 2 ; discount ITEM_C3 and ITEM_DC
 ```
 
 `GetTMHMNumber` and `GetNumberedTMHM` in [engine/items/items.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/items.asm) have to compensate for this.
@@ -409,7 +403,7 @@ Edit [engine/items/items.asm](https://github.com/pret/pokecrystal/blob/master/en
 
 `PokedexDataPointerTable` in [data/pokemon/dex_entry_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/dex_entry_pointers.asm) is a table of `dw`, not `dba`, yet there are four banks used for Pokédex entries. The correct bank is derived from the species ID at the beginning of each Pokémon's base stats. (This is the only use the base stat species ID has.)
 
-Three separate routines do the same derivation: `GetDexEntryPointer` in [engine/pokedex/pokedex_2.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokedex/pokedex_2.asm):
+Three separate routines do the same derivation; `GetDexEntryPointer` in [engine/pokedex/pokedex_2.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokedex/pokedex_2.asm):
 
 ```asm
 GetDexEntryPointer:
@@ -445,10 +439,10 @@ GetDexEntryPointer:
 	db BANK("Pokedex Entries 193-251")
 ```
 
-`HeavyBall_GetDexEntryBank` in [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/item_effects.asm):
+`GetPokedexEntryBank` in [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/master/engine/items/item_effects.asm):
 
 ```asm
-HeavyBall_GetDexEntryBank:
+GetPokedexEntryBank:
 	push hl
 	push de
 	ld a, [wEnemyMonSpecies]
@@ -502,7 +496,7 @@ PokedexShow_GetDexEntryBank:
 
 Use `dba` instead of `dw` in `PokedexDataPointerTable`. Make sure to edit the `table_width` line to specify a width of 3 instead of 2.
 
-Delete `HeavyBall_GetDexEntryBank` and `PokedexShow_GetDexEntryBank`. You can also delete `NUM_DEX_ENTRY_BANKS` from [constants/pokemon_data_constants.asm](https://github.com/pret/pokecrystal/blob/master/constants/pokemon_data_constants.asm).
+Delete `GetPokedexEntryBank` and `PokedexShow_GetDexEntryBank`. You can also delete `NUM_DEX_ENTRY_BANKS` from [constants/pokemon_data_constants.asm](https://github.com/pret/pokecrystal/blob/master/constants/pokemon_data_constants.asm).
 
 Edit [engine/pokedex/pokedex_2.asm](https://github.com/pret/pokecrystal/blob/master/engine/pokedex/pokedex_2.asm):
 
@@ -556,7 +550,7 @@ Edit [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/ma
  ; else add 0 to catch rate if weight < 204.8 kg
  ; else add 20 to catch rate if weight < 307.2 kg
  ; else add 30 to catch rate if weight < 409.6 kg
- ; else add 40 to catch rate
+ ; else add 40 to catch rate (never happens)
  	ld a, [wEnemyMonSpecies]
  	ld hl, PokedexDataPointerTable
  	dec a
@@ -575,14 +569,14 @@ Edit [engine/items/item_effects.asm](https://github.com/pret/pokecrystal/blob/ma
 +	pop de
 
  .SkipText:
--	call HeavyBall_GetDexEntryBank
+-	call GetPokedexEntryBank
 +	ld a, d
  	call GetFarByte
  	inc hl
  	cp "@"
  	jr nz, .SkipText
 
--	call HeavyBall_GetDexEntryBank
+-	call GetPokedexEntryBank
 +	ld a, d
  	push bc
  	inc hl
@@ -677,7 +671,7 @@ CelebiEvent_Cosine:
 They all rely on `calc_sine_wave` in [macros/code.asm](https://github.com/pret/pokecrystal/blob/master/macros/code.asm):
 
 ```asm
-MACRO calc_sine_wave
+calc_sine_wave: MACRO
 ; input: a = a signed 6-bit value
 ; output: a = d * sin(a * pi/32)
 	and %111111
@@ -728,13 +722,13 @@ ENDM
 And on `sine_table` in [macros/data.asm](https://github.com/pret/pokecrystal/blob/master/macros/data.asm):
 
 ```asm
-MACRO sine_table
+sine_table: MACRO
 ; \1 samples of sin(x) from x=0 to x<32768 (pi radians)
-	DEF x = 0
-	rept \1
-		dw (sin(x) + (sin(x) & $ff)) >> 8 ; round up
-		DEF x += DIV(32768, \1) ; a circle has 65536 "degrees"
-	endr
+x = 0
+rept \1
+	dw (sin(x) + (sin(x) & $ff)) >> 8 ; round up
+x += DIV(32768, \1) ; a circle has 65536 "degrees"
+endr
 ENDM
 ```
 

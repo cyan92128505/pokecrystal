@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw SkyCleaveDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -149,7 +149,7 @@ MoveDescriptions::
 	dw DizzyPunchDescription
 	dw SporeDescription
 	dw FlashDescription
-	dw PsywaveDescription
+	dw PsyblastDescription
 	dw SplashDescription
 	dw AcidArmorDescription
 	dw CrabhammerDescription
@@ -252,10 +252,10 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HolyArmourDescription
+	dw JudgementDescription
+	dw FuriousWillDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -315,9 +315,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+SkyCleaveDescription:
+	db   "Soar to the Ozone"
+	next "then attack.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -859,9 +859,9 @@ FlashDescription:
 	db   "Blinds the foe to"
 	next "reduce accuracy.@"
 
-PsywaveDescription:
-	db   "An attack with"
-	next "variable power.@"
+PsyblastDescription:
+	db   "A powerful blast"
+	next "that may freeze.@"
 
 SplashDescription:
 	db   "Has no effect"
@@ -1270,3 +1270,15 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+HolyArmourDescription:
+    db "Greatly raise"
+    next "defenses.@"
+
+JudgementDescription:
+    db "Always hits and"
+    next "may KO target.@"
+
+FuriousWillDescription:
+    db "Greatly raises"
+    next "special stats.@"

@@ -278,6 +278,7 @@ FlashFunction:
 	ret
 
 .CheckUseFlash:
+; Flash
 	ld de, ENGINE_ZEPHYRBADGE
 	farcall CheckBadge
 	jr c, .nozephyrbadge
@@ -556,6 +557,7 @@ FlyFunction:
  	dw .FailFly
 
 .TryFly:
+; Fly
 	ld de, ENGINE_STORMBADGE
 	call CheckBadge
 	jr c, .nostormbadge
@@ -635,6 +637,7 @@ WaterfallFunction:
 	ret
 
 .TryWaterfall:
+; Waterfall
 	ld de, ENGINE_RISINGBADGE
 	farcall CheckBadge
 	ld a, $80
@@ -960,6 +963,7 @@ StrengthFunction:
 	ret
 
 .TryStrength:
+; Strength
 	ld de, ENGINE_PLAINBADGE
 	call CheckBadge
 	jr c, .Failed

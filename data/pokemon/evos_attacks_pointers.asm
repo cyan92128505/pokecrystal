@@ -235,12 +235,13 @@ EvosAttacksPointers::
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
 	dw Porygon2EvosAttacks
+	dw RayquazaEvosAttacks
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
 	dw SmoochumEvosAttacks
 	dw ElekidEvosAttacks
-	dw MagbyEvosAttacks
+	dw GiratinaEvosAttacks
 	dw MiltankEvosAttacks
 	dw BlisseyEvosAttacks
 	dw RaikouEvosAttacks
@@ -252,7 +253,6 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
-	dw RayquazaEvosAttacks
-	dw MewtwoOGEvosAttacks
+	dw Mew2OGEvosAttacks
 	dw ArceusEvosAttacks
 	assert_table_length NUM_POKEMON

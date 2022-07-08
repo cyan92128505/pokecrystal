@@ -54,6 +54,15 @@ BlackthornGymClairScript:
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
 	end
+.rematch
+    writetext ClairIntroText
+	waitbutton
+	closetext
+	winlosstext ClairWinText, 0
+	loadtrainer CLAIR, CLAIR1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .FightDone:
 	writetext ClairText_TooMuchToExpect
@@ -86,6 +95,13 @@ BlackthornGymClairScript:
 
 .GotTM24:
 	writetext BlackthornGymClairText_League
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextClair
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextClair
 	waitbutton
 	closetext
 	end
@@ -383,6 +399,15 @@ BlackthornGymGuideWinText:
 	line "to becoming the"
 	cont "#MON CHAMPION!"
 	done
+
+RematchTextClair:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextClair:
+    text "Maybe next time."
+    done
 
 BlackthornGym1F_MapEvents:
 	db 0, 0 ; filler

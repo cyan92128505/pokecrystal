@@ -35,7 +35,6 @@ ENDM
 	command statup                  ; 1c
 	command statdown                ; 1d
 	command payday                  ; 1e
-	command conversion              ; 1f
 	command resetstats              ; 20
 	command storeenergy             ; 21
 	command unleashenergy           ; 22
@@ -182,6 +181,7 @@ ENDM
 	command curl                    ; af
 	command judgement               ; b0
 	command furiouswill             ; b1
+	command calmmind                ; b2
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

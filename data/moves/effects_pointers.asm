@@ -31,7 +31,6 @@ MoveEffectsPointers:
 	dw Rampage
 	dw ForceSwitch
 	dw MultiHit
-	dw Conversion
 	dw FlinchHit
 	dw Heal
 	dw Toxic
@@ -40,7 +39,6 @@ MoveEffectsPointers:
 	dw TriAttack
 	dw HolyArmour
 	dw OHKOHit
-	dw RazorWind
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
@@ -159,4 +157,5 @@ MoveEffectsPointers:
 	dw Fly
 	dw DefenseCurl
 	dw FuriousWill
+	dw CalmMind
 	assert_table_length NUM_MOVE_EFECTS

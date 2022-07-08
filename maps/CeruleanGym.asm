@@ -80,7 +80,23 @@ CeruleanGymMistyScript:
 .FightDone:
 	writetext MistyFightDoneText
 	waitbutton
+    closetext
+	opentext
+	writetext RematchTextMisty
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextMisty
+	waitbutton
 	closetext
+	end
+.rematch
+    writetext MistyIntroText
+	waitbutton
+	closetext
+	winlosstext MistyWinLossText, 0
+	loadtrainer MISTY, MISTY1
+	startbattle
+	reloadmapafterbattle
 	end
 
 TrainerSwimmerfDiana:
@@ -359,6 +375,15 @@ CeruleanGymGuideWinText:
 	line "was one heck of a"
 	cont "great battle!"
 	done
+
+RematchTextMisty:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextMisty:
+    text "Maybe next time."
+    done
 
 CeruleanGym_MapEvents:
 	db 0, 0 ; filler

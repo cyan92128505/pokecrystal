@@ -173,6 +173,7 @@ BattleTurn:
 
 	call HandleBerserkGene
 	call UpdateBattleMonInParty
+
 	farcall AIChooseMove
 
 	call IsMobileBattle
@@ -180,6 +181,7 @@ BattleTurn:
 	farcall Function100da5
 	farcall StartMobileInactivityTimer
 	farcall Function100dd8
+
 	jp c, .quit
 .not_disconnected
 
@@ -865,11 +867,20 @@ Battle_EnemyFirst:
 	call LoadTilemapToTempTilemap
 	call TryEnemyFlee
 	jp c, WildFled_EnemyFled_LinkBattleCanceled
-	call SetEnemyTurn
+    call SetEnemyTurn
 	ld a, $1
 	ld [wEnemyGoesFirst], a
+
+	ld a, [wEnemyIsSwitching]
+	and a
+	jr z, .noSwitch
+ 	callfar AI_TrySwitch
+ 	jr c, .switch_item
+    jr .continue
+.noSwitch
 	callfar AI_SwitchOrTryItem
 	jr c, .switch_item
+.continue
 	call EnemyTurn_EndOpponentProtectEndureDestinyBond
 	call CheckMobileBattleError
 	ret c
@@ -3246,12 +3257,15 @@ FindMonInOTPartyToSwitchIntoBattle:
 	inc hl ; wPlayerEffectivenessVsEnemyMons
 	sla [hl]
 	inc b ; b is the index of the current poke in loop
+
 	ld a, [wOTPartyCount]
 	cp b ; if b is equal to partyCount we have done all pokes
 	jp z, ScoreMonTypeMatchups ; get final scores if finished all pokes
+
 	ld a, [wCurOTMon]
 	cp b
-	jr z, .dontUse ; dont switch to the poke already out
+	jr z, .discourage ; dont switch to the poke already out
+
 	ld hl, wOTPartyMon1HP
 	push bc
 	ld a, b
@@ -3262,14 +3276,20 @@ FindMonInOTPartyToSwitchIntoBattle:
 	or c
 	pop bc
 	jr z, .discourage
+
+	ld hl, wOTPartyMon1Status
+	push bc
+	ld a, b
+	call GetPartyLocation
+	ld a, [hl]
+	and 1 << FRZ | SLP
+	pop bc
+	jr nz, .discourage
+
 	call LookUpTheEffectivenessOfEveryMove ; consider how good enemy mon is against player mon
 	call IsThePlayerMonTypesEffectiveAgainstOTMon ; consider how good player mon is against enemy mon
 	jr .loop
 .discourage
-	ld hl, wPlayerEffectivenessVsEnemyMons
-	set 0, [hl]
-	jr .loop
-.dontUse
 	ld hl, wPlayerEffectivenessVsEnemyMons
 	set 0, [hl]
 	jr .loop
@@ -5692,14 +5712,18 @@ MoveInfoBox:
 	ld [wStringBuffer1], a
 	call .PrintPP
 
+	callfar UpdateMoveData
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	ld b, a
+	farcall GetMoveCategoryName
 	hlcoord 1, 9
-	ld de, .Type
+	ld de, wStringBuffer1
 	call PlaceString
 
-	hlcoord 7, 11
+	ld h, b
+	ld l, c
 	ld [hl], "/"
 
-	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
@@ -5710,8 +5734,6 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
-.Type:
-	db "TYPE/@"
 
 .PrintPP:
 	hlcoord 5, 11

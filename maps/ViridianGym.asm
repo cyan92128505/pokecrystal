@@ -29,9 +29,25 @@ ViridianGymBlueScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext LeaderBlueBeforeText
+	waitbutton
+	closetext
+	winlosstext LeaderBlueWinText, 0
+	loadtrainer BLUE, BLUE1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .FightDone:
 	writetext LeaderBlueEpilogueText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextBlue
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextBlue
 	waitbutton
 	closetext
 	end
@@ -166,6 +182,15 @@ ViridianGymGuideWinText:
 	para "battle. It brought"
 	line "tears to my eyes."
 	done
+
+RematchTextBlue:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextBlue:
+    text "Maybe next time."
+    done
 
 ViridianGym_MapEvents:
 	db 0, 0 ; filler

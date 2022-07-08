@@ -150,7 +150,6 @@ NewPokedexOrder:
 	db GIRAFARIG
 	db TAUROS
 	db MILTANK
-	db MAGBY
 	db MAGMAR
 	db SMOOCHUM
 	db JYNX
@@ -253,6 +252,7 @@ NewPokedexOrder:
 	db MEW
 	db CELEBI
 	db RAYQUAZA
-	db MEWTWO_OG
+	db MEW2_OG
+	db GIRATINA
 	db ARCEUS
 	assert_table_length NUM_POKEMON

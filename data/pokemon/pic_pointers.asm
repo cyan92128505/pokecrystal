@@ -472,6 +472,8 @@ PokemonPicPointers::
 	dba_pic DonphanBackpic
 	dba_pic Porygon2Frontpic
 	dba_pic Porygon2Backpic
+	dba_pic RayquazaFrontpic
+	dba_pic RayquazaBackpic
 	dba_pic SmeargleFrontpic
 	dba_pic SmeargleBackpic
 	dba_pic TyrogueFrontpic
@@ -482,8 +484,8 @@ PokemonPicPointers::
 	dba_pic SmoochumBackpic
 	dba_pic ElekidFrontpic
 	dba_pic ElekidBackpic
-	dba_pic MagbyFrontpic
-	dba_pic MagbyBackpic
+	dba_pic GiratinaFrontpic
+	dba_pic GiratinaBackpic
 	dba_pic MiltankFrontpic
 	dba_pic MiltankBackpic
 	dba_pic BlisseyFrontpic
@@ -506,10 +508,8 @@ PokemonPicPointers::
 	dba_pic HoOhBackpic
 	dba_pic CelebiFrontpic
 	dba_pic CelebiBackpic
-	dba_pic RayquazaFrontpic
-	dba_pic RayquazaBackpic
-	dba_pic MewtwoOGFrontpic
-	dba_pic MewtwoOGBackpic
+	dba_pic Mew2OGFrontpic
+	dba_pic Mew2OGBackpic
 	dba_pic ArceusFrontpic
 	dba_pic ArceusBackpic
 	assert_table_length NUM_POKEMON

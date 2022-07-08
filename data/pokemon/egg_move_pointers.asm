@@ -234,18 +234,18 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw NoEggMoves
 	dw TyrogueEggMoves
 	dw NoEggMoves
 	dw SmoochumEggMoves
 	dw ElekidEggMoves
-	dw MagbyEggMoves
+	dw GiratinaEggMoves
 	dw MiltankEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw LarvitarEggMoves
-	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves

@@ -45,10 +45,28 @@ VioletGymFalknerScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext FalknerIntroText
+	waitbutton
+	closetext
+	winlosstext FalknerWinLossText, 0
+	loadtrainer FALKNER, FALKNER1
+	startbattle
+	reloadmapafterbattle
+    end
 
 .SpeechAfterTM:
 	writetext FalknerFightDoneText
 	waitbutton
+	closetext
+	opentext
+	writetext RematchText
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseText
+	waitbutton
+	closetext
+	end
 .NoRoomForMudSlap:
 	closetext
 	end
@@ -278,6 +296,15 @@ VioletGymGuideWinText:
 	para "be the CHAMP in no"
 	line "time at all!"
 	done
+
+RematchText:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseText:
+    text "Maybe next time."
+    done
 
 VioletGym_MapEvents:
 	db 0, 0 ; filler

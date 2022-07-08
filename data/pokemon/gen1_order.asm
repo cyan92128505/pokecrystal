@@ -134,6 +134,7 @@ Pokered_MonIndices:
 	db SNORLAX
 	db MAGIKARP
 	db PORYGON2 ; MISSINGNO.
+	db RAYQUAZA ; MISSINGNO.
 	db MUK
 	db SMEARGLE ; MISSINGNO.
 	db KINGLER
@@ -158,7 +159,7 @@ Pokered_MonIndices:
 	db GOLDEEN
 	db SEAKING
 	db ELEKID ; MISSINGNO.
-	db MAGBY ; MISSINGNO.
+	db GIRATINA ; MISSINGNO.
 	db MILTANK ; MISSINGNO.
 	db BLISSEY ; MISSINGNO.
 	db PONYTA
@@ -189,7 +190,7 @@ Pokered_MonIndices:
 	db BELLSPROUT
 	db WEEPINBELL
 	db VICTREEBEL
-	assert_table_length 189 ; gen 1 mon indexes
+	assert_table_length 190 ; gen 1 mon indexes
 	db CHIKORITA
 	db BAYLEEF
 	db MEGANIUM
@@ -252,7 +253,6 @@ Pokered_MonIndices:
 	db QWILFISH
 	db WOBBUFFET
 	db WOBBUFFET
-	db MEWTWO_OG
+	db MEW2_OG
 	db ARCEUS
-	db RAYQUAZA
 	assert_table_length NUM_POKEMON + 1

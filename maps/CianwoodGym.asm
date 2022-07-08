@@ -65,10 +65,43 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	end
+.rematch
+	writetext ChuckIntroText1
+	waitbutton
+	closetext
+	turnobject CIANWOODGYM_CHUCK, RIGHT
+	opentext
+	writetext ChuckIntroText2
+	waitbutton
+	closetext
+	applymovement CIANWOODGYM_BOULDER1, CianwoodGymMovement_ChuckChucksBoulder
+	playsound SFX_STRENGTH
+	earthquake 80
+	disappear CIANWOODGYM_BOULDER1
+	pause 30
+	faceplayer
+	opentext
+	writetext ChuckIntroText3
+	waitbutton
+	closetext
+	winlosstext ChuckLossText, 0
+	loadtrainer CHUCK, CHUCK1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .AlreadyGotTM:
 	writetext ChuckAfterText
 	waitbutton
+    closetext
+	opentext
+	writetext RematchTextChuck
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextChuck
+	waitbutton
+	closetext
+	end
 .BagFull:
 	closetext
 	end
@@ -302,6 +335,15 @@ BlackbeltLungAfterText:
 	line "My… my pride is"
 	cont "shattered…"
 	done
+
+RematchTextChuck:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextChuck:
+    text "Maybe next time."
+    done
 
 CianwoodGym_MapEvents:
 	db 0, 0 ; filler

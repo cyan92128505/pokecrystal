@@ -48,10 +48,28 @@ AzaleaGymBugsyScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext BugsyText_INeverLose
+	waitbutton
+	closetext
+	winlosstext BugsyText_ResearchIncomplete, 0
+	loadtrainer BUGSY, BUGSY1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .GotFuryCutter:
 	writetext BugsyText_BugMonsAreDeep
 	waitbutton
+	closetext
+	opentext
+	writetext RematchTextBugsy
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextBugsy
+	waitbutton
+	closetext
+	end
 .NoRoomForFuryCutter:
 	closetext
 	end
@@ -358,6 +376,15 @@ AzaleaGymGuideWinText:
 	line "you, the future of"
 	cont "#MON is bright!"
 	done
+
+RematchTextBugsy:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextBugsy:
+    text "Maybe next time."
+    done
 
 AzaleaGym_MapEvents:
 	db 0, 0 ; filler

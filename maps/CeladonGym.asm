@@ -41,8 +41,24 @@ CeladonGymErikaScript:
 	verbosegiveitem TM_GIGA_DRAIN
 	iffalse .GotGigaDrain
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
+.rematch
+	writetext ErikaBeforeBattleText
+	waitbutton
+	closetext
+	winlosstext ErikaBeatenText, 0
+	loadtrainer ERIKA, ERIKA1
+	startbattle
+	reloadmapafterbattle
+	end
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextErika
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextErika
 	waitbutton
 	closetext
 	end
@@ -264,6 +280,15 @@ TwinsJoAndZoe2AfterBattleText:
 	text "ERIKA is much,"
 	line "much stronger!"
 	done
+
+RematchTextErika:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextErika:
+    text "Maybe next time."
+    done
 
 CeladonGym_MapEvents:
 	db 0, 0 ; filler

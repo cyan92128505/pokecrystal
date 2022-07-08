@@ -21,7 +21,7 @@ prob_total = 0
 ; Smoochum
 	prob 14
 	prob 2
-; Magby
+; Giratina
 	prob 10
 	prob 2
 ; Elekid
@@ -244,7 +244,7 @@ OddEggs:
 	bigdw 12 ; SDef
 	db "EGG@@@@@@@@"
 
-	db MAGBY
+	db GIRATINA
 	db NO_ITEM
 	db EMBER, DIZZY_PUNCH, 0, 0
 	dw 02560 ; OT ID
@@ -270,7 +270,7 @@ OddEggs:
 	bigdw 10 ; SDef
 	db "EGG@@@@@@@@"
 
-	db MAGBY
+	db GIRATINA
 	db NO_ITEM
 	db EMBER, DIZZY_PUNCH, 0, 0
 	dw 00512 ; OT ID

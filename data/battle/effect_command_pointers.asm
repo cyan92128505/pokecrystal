@@ -35,7 +35,6 @@ BattleCommandPointers:
 	dw BattleCommand_StatUp
 	dw BattleCommand_StatDown
 	dw BattleCommand_PayDay
-	dw BattleCommand_Conversion
 	dw BattleCommand_ResetStats
 	dw BattleCommand_StoreEnergy
 	dw BattleCommand_UnleashEnergy
@@ -182,4 +181,5 @@ BattleCommandPointers:
 	dw BattleCommand_Curl
 	dw BattleCommand_Judgement
 	dw BattleCommand_FuriousWill
+	dw BattleCommand_CalmMind
 	assert_table_length NUM_EFFECT_COMMANDS

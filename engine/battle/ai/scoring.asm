@@ -107,7 +107,7 @@ AI_Smart_Switch:
 ; possibly switch if enemy is setup bait
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
-	jr nz, .checkSetUp
+	jr nz, .checkSetUpAndSwitchIfPlayerSetsUp
 
 ; don't switch if enemy is weakened, just let it die
 	call AICheckEnemyQuarterHP
@@ -116,20 +116,26 @@ AI_Smart_Switch:
 ; switch if enemy accuracy at -2 or lower
     ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
-	jr c, .switch
+	jp c, .switch
 
 ; switch if enemy is cursed
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	bit SUBSTATUS_CURSE, a
-	jr nz, .switch
+	jp nz, .switch
 
-; 50% chance to switch per turn if enemy afflicted with toxic
+; if enemy afflicted with toxic
+; 50% chance to switch when above 50% hp if not set up
+; switch when below 50% hp
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
-	jr nz, .switch50
+    jr z, .checkLeechSeed
+	call AICheckEnemyHalfHP
+	jr nc, .switch
+	jr .checkSetUpAndSwitch50
 
+.checkLeechSeed
 ; 50% chance to switch per turn if enemy afflicted with leech seed
     ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
@@ -138,7 +144,7 @@ AI_Smart_Switch:
 
     ret
 
-.checkSetUp
+.checkSetUpAndSwitchIfPlayerSetsUp
 ; don't switch if enemy mon is already set up
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -165,8 +171,39 @@ AI_Smart_Switch:
 	jr z, .switch80
 	cp EFFECT_FURIOUS_WILL
 	jr z, .switch80
-
 	ret
+
+.checkSetUpAndSwitch
+; don't switch if enemy mon is already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+	jr .switch
+
+.checkSetUpAndSwitch50
+; don't switch if enemy mon is already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+	jr .switch50
 
 .switch80
     call AI_80_20
@@ -176,8 +213,8 @@ AI_Smart_Switch:
     call AI_50_50
 	ret c
 .switch
-	ld a, $1
-	ld [wEnemyIsSwitching], a
+    ld a, $1
+    ld [wEnemyIsSwitching], a
 	ret
 
 AI_Setup:
@@ -307,6 +344,7 @@ AI_Types:
 	push de
 	push bc
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	ld d, a
 	ld hl, wEnemyMonMoves
 	ld b, NUM_MOVES + 1
@@ -321,6 +359,7 @@ AI_Types:
 
 	call AIGetEnemyMove
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	cp d
 	jr z, .checkmove2
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
@@ -436,7 +475,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_TOXIC,            AI_Smart_Toxic
 	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_LightScreen
 	dbw EFFECT_OHKO,             AI_Smart_Ohko
-	dbw EFFECT_RAZOR_WIND,       AI_Smart_RazorWind
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
@@ -1059,12 +1097,39 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
-; use if below 50%, don't use otherwise
-; AndrewNote - need to fix this up
+; don't use when above 50% hp
 	call AICheckEnemyHalfHP
-	jr nc, .encourage
-	jr .discourage
+	jr c, .discourage
 
+; check if the move is Rest
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp REST
+	jr nz, .healBelowHalfHp
+
+; if it is Rest check if the enemy is afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr z, .restHeal
+
+; if enemy knows Rest and is afflicted with toxic cancel any switching and heal below 1/2 HP
+    ld a, $0
+    ld [wEnemyIsSwitching], a
+    jr .healBelowHalfHp
+
+; for rest heal below 1/4 HP if faster than player
+.restHeal
+	call AICompareSpeed
+	jr c, .healBelowHalfHp
+    call AICheckEnemyQuarterHP
+    jr c, .encourage
+
+; otherwise encourage heal when under 1/2 hp
+.healBelowHalfHp
+    call AICheckEnemyHalfHP
+    ret c
+
+; fall through
 .encourage
 	dec [hl]
 	dec [hl]
@@ -1229,15 +1294,31 @@ AI_Smart_SpDefenseUp2:
 	jr nc, .discourage
 
 ; 80% chance to greatly encourage this move if
-; enemy's Special Defense level is lower than +2, and the player is of a special type.
+; enemy's Special Defense level is lower than +2,
+; and the player's Pokémon is Special-oriented.
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
-	ld a, [wBattleMonType1]
-	cp SPECIAL
-	jr nc, .encourage
-	ld a, [wBattleMonType2]
-	cp SPECIAL
+	push hl
+; Get the pointer for the player's Pokémon's base Attack
+	ld a, [wBattleMonSpecies]
+	ld hl, BaseData + BASE_ATK
+	ld bc, BASE_DATA_SIZE
+	call AddNTimes
+; Get the Pokémon's base Attack
+	ld a, BANK(BaseData)
+	call GetFarByte
+	ld d, a
+; Get the pointer for the player's Pokémon's base Special Attack
+	ld bc, BASE_SAT - BASE_ATK
+	add hl, bc
+; Get the Pokémon's base Special Attack
+	ld a, BANK(BaseData)
+	call GetFarByte
+	pop hl
+; If its base Attack is greater than its base Special Attack,
+; don't encourage this move.
+	cp d
 	ret c
 
 .encourage
@@ -1282,14 +1363,12 @@ AI_Smart_Paralyze:
 	call AICheckPlayerQuarterHP
 	jr nc, .discourage
 
-; 80% chance to greatly encourage this move
+; greatly encourage this move
 ; if enemy is slower than player and its HP is above 25%.
 	call AICompareSpeed
 	ret c
 	call AICheckEnemyQuarterHP
 	ret nc
-	call AI_80_20
-	ret c
 	dec [hl]
 	dec [hl]
 	ret
@@ -1523,6 +1602,7 @@ AI_Smart_Encore:
 
 	push hl
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	ld hl, wEnemyMonType1
 	predef CheckTypeMatchup
 
@@ -1943,37 +2023,42 @@ AI_Smart_Curse:
 	cp GHOST
 	jr z, .ghost_curse
 
-	call AICheckEnemyHalfHP
-	jr nc, .encourage
-
-	ld a, [wEnemyAtkLevel]
+; don't go past +4
+    ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .encourage
-	cp BASE_STAT_LEVEL + 2
-	ret nc
+	jr nc, .discourage
 
-	ld a, [wBattleMonType1]
-	cp GHOST
-	jr z, .greatly_encourage
-	cp SPECIAL
-	ret nc
-	ld a, [wBattleMonType2]
-	cp SPECIAL
-	ret nc
-	call AI_80_20
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
+; encourage to +1, strongly encourage to +2 if player has boosted Atk
+    cp BASE_STAT_LEVEL + 1
+    jr nc, .checkToxic ;
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .greatly_encourage
+	jr .encourage
+
+; discourage after +1 if afflicted with toxic
+.checkToxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
 
 .approve
-	inc [hl]
-	inc [hl]
+	dec [hl]
+	dec [hl]
 .greatly_encourage
-	inc [hl]
+	dec [hl]
 .encourage
-	inc [hl]
+	dec [hl]
 	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 .ghost_curse
 	ld a, [wPlayerSubStatus1]
@@ -2791,16 +2876,32 @@ AI_Smart_Thunder:
 	ret
 
 AI_Smart_HolyArmour:
-; Discourage this move if enemy's special defense level is higher than +3.
-	ld a, [wEnemySDefLevel]
+; don't go past +4
+    ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr c, .encourage
-	ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .encourage
-	jr .discourage
+	jr nc, .discourage
+
+; discourage if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+; strongly encourage if player has boosted offenses
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage
+
+; otherwise encourage
+	jr .encourage
+
+.strongEncourage
+    dec [hl]
+    dec [hl]
 .encourage
-	dec [hl]
 	dec [hl]
 	ret
 .discourage
@@ -2811,19 +2912,31 @@ AI_Smart_HolyArmour:
 	ret
 
 AI_Smart_FuriousWill:
+; don't go past +4
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage ; don't use if already at +4
+	jr nc, .discourage
+
+; encourage to +2, strongly encourage if player has boosted SpAtk
     cp BASE_STAT_LEVEL + 2
-    ret ; if at +2 then neither encourage nor discourage
+    jr nc, .checkToxic ;
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .strongEncourage ; if player SpAtk boosted strongly encourage
-	jr .encourage ; otherwise encourage to get to +2
+	jr nc, .strongEncourage
+	jr .encourage
+
+; discourage after +2 if afflicted with toxic
+.checkToxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
 .strongEncourage
     dec [hl]
-    dec [hl]
 .encourage
+    dec [hl]
 	dec [hl]
 	ret
 .discourage
@@ -2834,11 +2947,25 @@ AI_Smart_FuriousWill:
 	ret
 
 AI_Smart_SwordsDance:
+; don't go past +4
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; encourage to get to +2
+	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
-	jr .discourage
+
+; discourage after +2 if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
+
 .encourage
+	dec [hl]
 	dec [hl]
 	ret
 .discourage
@@ -2849,22 +2976,36 @@ AI_Smart_SwordsDance:
 	ret
 
 AI_Smart_Barrier:
+; don't go past +4
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; discourage if player has boosted SpAtk
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage
-	ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+
+; discourage if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+; strongly encourage if player has boosted attack
 	ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
-	ld a, [wEnemyDefLevel]
+
+; otherwise encourage to +2
+    ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
+
 .strongEncourage
     dec [hl]
+    dec [hl]
 .encourage
-	dec [hl]
 	dec [hl]
 	ret
 .discourage
@@ -3078,19 +3219,17 @@ AIHasMoveInArray:
 INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Opportunist:
-; Discourage stall moves when the enemy's HP is low.
+; Discourage stall moves when the enemy or players HP is low.
 
-; Do nothing if enemy's HP is above 50%.
-	call AICheckEnemyHalfHP
-	ret c
-
-; Discourage stall moves if enemy's HP is below 25%.
-	call AICheckEnemyQuarterHP
+; Discourage stall moves if Players HP is below 1/4.
+    call AICheckPlayerQuarterHP
 	jr nc, .lowhp
 
-; 50% chance to discourage stall moves if enemy's HP is between 25% and 50%.
-	call AI_50_50
-	ret c
+; Discourage stall moves if enemy's HP is below 1/3.
+    call AICheckEnemyQuarterHP
+	jr nc, .lowhp
+
+	ret
 
 .lowhp
 	ld hl, wEnemyAIMoveScores - 1

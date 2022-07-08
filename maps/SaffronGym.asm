@@ -37,9 +37,25 @@ SaffronGymSabrinaScript:
 	waitbutton
 	closetext
 	end
+.rematch
+	writetext SabrinaIntroText
+	waitbutton
+	closetext
+	winlosstext SabrinaWinLossText, 0
+	loadtrainer SABRINA, SABRINA1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .FightDone:
 	writetext SabrinaFightDoneText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextSabrina
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextSabrina
 	waitbutton
 	closetext
 	end
@@ -287,6 +303,15 @@ SaffronGymGuideWinText:
 	text "That was another"
 	line "fantastic battle!"
 	done
+
+RematchTextSabrina:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextSabrina:
+    text "Maybe next time."
+    done
 
 SaffronGym_MapEvents:
 	db 0, 0 ; filler

@@ -53,6 +53,24 @@ MahoganyGymPryceScript:
 PryceScript_Defeat:
 	writetext PryceText_CherishYourPokemon
 	waitbutton
+    closetext
+	opentext
+	writetext RematchTextPryce
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextPryce
+	waitbutton
+	closetext
+	end
+.rematch
+    writetext PryceText_Intro
+	waitbutton
+	closetext
+	winlosstext PryceText_Impressed, 0
+	loadtrainer PRYCE, PRYCE1
+	startbattle
+	reloadmapafterbattle
+	end
 MahoganyGym_NoRoomForIcyWind:
 	closetext
 	end
@@ -369,6 +387,15 @@ MahoganyGymGuideWinText:
 	para "bridged the gen-"
 	line "eration gap!"
 	done
+
+RematchTextPryce:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextPryce:
+    text "Maybe next time."
+    done
 
 MahoganyGym_MapEvents:
 	db 0, 0 ; filler

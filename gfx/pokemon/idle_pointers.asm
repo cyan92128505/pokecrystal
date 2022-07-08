@@ -233,12 +233,13 @@ AnimationIdlePointers:
 	dw PhanpyAnimationIdle
 	dw DonphanAnimationIdle
 	dw Porygon2AnimationIdle
+	dw RayquazaAnimationIdle
 	dw SmeargleAnimationIdle
 	dw TyrogueAnimationIdle
 	dw HitmontopAnimationIdle
 	dw SmoochumAnimationIdle
 	dw ElekidAnimationIdle
-	dw MagbyAnimationIdle
+	dw GiratinaAnimationIdle
 	dw MiltankAnimationIdle
 	dw BlisseyAnimationIdle
 	dw RaikouAnimationIdle
@@ -250,7 +251,6 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
-	dw RayquazaAnimationIdle
-	dw MewtwoOGAnimationIdle
+	dw Mew2OGAnimationIdle
 	dw ArceusAnimationIdle
 	assert_table_length NUM_POKEMON

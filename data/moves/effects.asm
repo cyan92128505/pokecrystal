@@ -776,17 +776,11 @@ PayDay:
 	kingsrock
 	endmove
 
-Conversion:
-	checkobedience
-	usedmovetext
-	doturn
-	conversion
-	endmove
-
 ResetStats:
 	checkobedience
 	usedmovetext
 	doturn
+	checkdeathimmunity
 	resetstats
 	endmove
 
@@ -2115,4 +2109,11 @@ FuriousWill:
 	usedmovetext
 	doturn
 	furiouswill
+	endmove
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	calmmind
 	endmove

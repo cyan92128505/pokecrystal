@@ -71,6 +71,7 @@ AlphabeticalPokedexOrder:
 	db GENGAR
 	db GEODUDE
 	db GIRAFARIG
+	db GIRATINA
 	db GLIGAR
 	db GLOOM
 	db GOLBAT
@@ -119,7 +120,6 @@ AlphabeticalPokedexOrder:
 	db MACHAMP
 	db MACHOKE
 	db MACHOP
-	db MAGBY
 	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
@@ -135,7 +135,7 @@ AlphabeticalPokedexOrder:
 	db METAPOD
 	db MEW
 	db MEWTWO
-	db MEWTWO_OG
+	db MEW2_OG
 	db MILTANK
 	db MISDREAVUS
 	db MOLTRES

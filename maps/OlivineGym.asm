@@ -39,10 +39,28 @@ OlivineGymJasmineScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext Jasmine_SteelTypeIntro
+	waitbutton
+	closetext
+	winlosstext Jasmine_BetterTrainer, 0
+	loadtrainer JASMINE, JASMINE1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .GotIronTail:
 	writetext Jasmine_GoodLuck
 	waitbutton
+    closetext
+	opentext
+	writetext RematchTextJasmine
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextJasmine
+	waitbutton
+	closetext
+	end
 .NoRoomForIronTail:
 	closetext
 	end
@@ -194,6 +212,15 @@ OlivineGymGuidePreText:
 	line "has to be compas-"
 	cont "sionate."
 	done
+
+RematchTextJasmine:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextJasmine:
+    text "Maybe next time."
+    done
 
 OlivineGym_MapEvents:
 	db 0, 0 ; filler

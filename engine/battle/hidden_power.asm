@@ -84,6 +84,11 @@ HiddenPowerDamage:
 	jr c, .done
 	inc a
 
+; Skip Uber
+	cp UBER
+	jr c, .done
+	inc a
+
 ; Skip unused types
 	cp UNUSED_TYPES
 	jr c, .done
@@ -96,6 +101,7 @@ HiddenPowerDamage:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
 	pop af
+	and TYPE_MASK
 	ld [hl], a
 
 ; Get the rest of the damage formula variables

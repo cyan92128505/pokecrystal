@@ -1083,7 +1083,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1251,6 +1250,7 @@ BattleCommand_Stab:
 .go
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
+	and TYPE_MASK
 	ld [wCurType], a
 
 	push hl
@@ -1298,6 +1298,7 @@ BattleCommand_Stab:
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	ld b, a
 	ld hl, TypeMatchups
 
@@ -1421,6 +1422,7 @@ CheckTypeMatchup:
 	push bc
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -1910,8 +1912,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -1987,8 +1987,6 @@ BattleCommand_MoveAnimNoSub:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
-	jr z, .alternate_anim
-	cp EFFECT_CONVERSION
 	jr z, .alternate_anim
 	cp EFFECT_DOUBLE_HIT
 	jr z, .alternate_anim
@@ -2969,9 +2967,6 @@ BattleCommand_DamageCalc:
 	cp EFFECT_MULTI_HIT
 	jr z, .skip_zero_damage_check
 
-	cp EFFECT_CONVERSION
-	jr z, .skip_zero_damage_check
-
 ; No damage if move power is 0.
 	ld a, d
 	and a
@@ -3054,6 +3049,7 @@ BattleCommand_DamageCalc:
 	ld b, a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	cp b
 	jr nz, .DoneItem
 
@@ -3651,8 +3647,6 @@ BattleCommand_SleepTarget:
 	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
-	call .CheckAIRandomFail
-	jr c, .fail
 
 	ld a, [de]
 	and a
@@ -3692,34 +3686,6 @@ BattleCommand_SleepTarget:
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextbox
-
-.CheckAIRandomFail:
-	; Enemy turn
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_fail
-
-	; Not in link battle
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_fail
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_fail
-
-	; Not locked-on by the enemy
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_fail
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	ret c
-
-.dont_fail
-	xor a
-	ret
 
 BattleCommand_PoisonTarget:
 ; poisontarget
@@ -3791,27 +3757,6 @@ BattleCommand_Poison:
 	and a
 	jr nz, .failed
 
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	;call BattleRandom
-	;cp 25 percent + 1 ; 25% chance AI fails
-	;jr c, .failed
-
-.dont_sample_failure
 	call CheckSubstituteOpp
 	jr nz, .failed
 	ld a, [wAttackMissed]
@@ -4442,41 +4387,12 @@ BattleCommand_StatDown:
 ; Sharply lower the stat if applicable.
 	ld a, [wLoweredStat]
 	and $f0
-	jr z, .ComputerMiss
+	jr z, .GotAmountToLower
 	dec b
-	jr nz, .ComputerMiss
+	jr nz, .GotAmountToLower
 	inc b
 
-.ComputerMiss:
-; Computer opponents have a 25% chance of failing.
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .DidntMiss
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .DidntMiss
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .DidntMiss
-
-; Lock-On still always works.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .DidntMiss
-
-; Attacking moves that also lower accuracy are unaffected.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_ACCURACY_DOWN_HIT
-	jr z, .DidntMiss
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .Failed
-
-.DidntMiss:
+.GotAmountToLower
 	call CheckSubstituteOpp
 	jr nz, .Failed
 
@@ -5539,7 +5455,9 @@ BattleCommand_CheckDeathImmunity:
 .checkSpecies
     cp ARCEUS
     jr z, .immune
-    cp MEWTWO_OG
+    cp MEW2_OG
+    jr z, .immune
+    cp GIRATINA
     jr z, .immune
     ret
 .immune
@@ -6024,27 +5942,6 @@ BattleCommand_Paralyze:
 	jp StdBattleTextbox
 
 .no_item_protection
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -6098,6 +5995,7 @@ CheckMoveTypeMatchesTarget:
 
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	cp NORMAL
 	jr z, .normal
 	cp UBER
@@ -6178,10 +6076,12 @@ INCLUDE "engine/battle/move_effects/disable.asm"
 
 INCLUDE "engine/battle/move_effects/pay_day.asm"
 
-INCLUDE "engine/battle/move_effects/conversion.asm"
-
 BattleCommand_ResetStats:
 ; resetstats
+
+	ld a, [wEffectFailed]
+	and a
+	jr nz, .failed
 
 	ld a, BASE_STAT_LEVEL
 	ld hl, wPlayerStatLevels
@@ -6212,6 +6112,9 @@ BattleCommand_ResetStats:
 	dec b
 	jr nz, .next
 	ret
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
 
 BattleCommand_Heal:
 ; heal
@@ -6537,6 +6440,8 @@ INCLUDE "engine/battle/move_effects/curse.asm"
 INCLUDE "engine/battle/move_effects/holyarmour.asm"
 
 INCLUDE "engine/battle/move_effects/furiouswill.asm"
+
+INCLUDE "engine/battle/move_effects/calmmind.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
 

@@ -35,9 +35,25 @@ VermilionGymSurgeScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext LtSurgeIntroText
+	waitbutton
+	closetext
+	winlosstext LtSurgeWinLossText, 0
+	loadtrainer LT_SURGE, LT_SURGE1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .FightDone:
 	writetext LtSurgeFightDoneText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextSurge
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextSurge
 	waitbutton
 	closetext
 	end
@@ -257,6 +273,15 @@ VermilionGymTrashCanText:
 	text "Nope! Nothing here"
 	line "but trash."
 	done
+
+RematchTextSurge:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextSurge:
+    text "Maybe next time."
+    done
 
 VermilionGym_MapEvents:
 	db 0, 0 ; filler

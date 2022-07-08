@@ -4,7 +4,7 @@ MoveDescriptions::
 	dw PoundDescription
 	dw KarateChopDescription
 	dw DoubleslapDescription
-	dw CometPunchDescription
+	dw CalmMindDescription
 	dw MegaPunchDescription
 	dw PayDayDescription
 	dw FirePunchDescription
@@ -279,9 +279,9 @@ DoubleslapDescription:
 	db   "Repeatedly slaps"
 	next "2-5 times.@"
 
-CometPunchDescription:
-	db   "Repeatedly punches"
-	next "2-5 times.@"
+CalmMindDescription:
+	db   "Focus mind to raise"
+	next "special stats.@"
 
 MegaPunchDescription:
 	db   "A powerful punch"

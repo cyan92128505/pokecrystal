@@ -1,7 +1,7 @@
 TalkToTrainerScript::
 	faceplayer
 	trainerflagaction CHECK_FLAG
-	iftrue AlreadyBeatenTrainerScript
+	iftrue RematchScript
 	loadtemptrainer
 	encountermusic
 	sjump StartBattleWithMapTrainerScript
@@ -29,3 +29,27 @@ StartBattleWithMapTrainerScript:
 
 AlreadyBeatenTrainerScript:
 	scripttalkafter
+
+RematchScript:
+    scall AlreadyBeatenTrainerScript
+	opentext
+	writetext RematchText
+	yesorno
+	iffalse .refused
+    loadtemptrainer
+	encountermusic
+	sjump StartBattleWithMapTrainerScript
+.refused
+	writetext RematchRefuseText
+	waitbutton
+	closetext
+	end
+
+RematchText:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseText:
+    text "Maybe next time."
+    done

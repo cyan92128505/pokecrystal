@@ -772,7 +772,7 @@ ElekidEggMoves:
 	db CROSS_CHOP
 	db -1 ; end
 
-MagbyEggMoves:
+GiratinaEggMoves:
 	db KARATE_CHOP
 	db MEGA_PUNCH
 	db BARRIER

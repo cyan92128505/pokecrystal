@@ -233,12 +233,13 @@ BitmasksPointers:
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
+	dw RayquazaBitmasks
 	dw SmeargleBitmasks
 	dw TyrogueBitmasks
 	dw HitmontopBitmasks
 	dw SmoochumBitmasks
 	dw ElekidBitmasks
-	dw MagbyBitmasks
+	dw GiratinaBitmasks
 	dw MiltankBitmasks
 	dw BlisseyBitmasks
 	dw RaikouBitmasks
@@ -250,7 +251,6 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
-	dw RayquazaBitmasks
-	dw MewtwoOGBitmasks
+	dw Mew2OGBitmasks
 	dw ArceusBitmasks
 	assert_table_length NUM_POKEMON

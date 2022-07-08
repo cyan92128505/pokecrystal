@@ -40,6 +40,15 @@ FuchsiaGymJanineScript:
 	waitsfx
 	setflag ENGINE_SOULBADGE
 	sjump .AfterBattle
+.rematch
+    writetext JanineText_DisappointYou
+	waitbutton
+	closetext
+	winlosstext JanineText_ToughOne, 0
+	loadtrainer JANINE, JANINE1
+	startbattle
+	reloadmapafterbattle
+	end
 .FightDone:
 	faceplayer
 	opentext
@@ -53,6 +62,13 @@ FuchsiaGymJanineScript:
 	setevent EVENT_GOT_TM06_TOXIC
 .AfterTM:
 	writetext JanineText_ApplyMyself
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextJanine
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextJanine
 	waitbutton
 	closetext
 	end
@@ -377,6 +393,15 @@ FuchsiaGymGuideWinText:
 	line "battle, trainer"
 	cont "from JOHTO!"
 	done
+
+RematchTextJanine:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextJanine:
+    text "Maybe next time."
+    done
 
 FuchsiaGym_MapEvents:
 	db 0, 0 ; filler

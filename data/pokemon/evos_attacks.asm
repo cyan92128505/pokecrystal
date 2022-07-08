@@ -1452,7 +1452,7 @@ HitmonleeEvosAttacks:
 
 HitmonchanEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, COMET_PUNCH
+	db 1, MEGA_PUNCH
 	db 7, AGILITY
 	db 13, PURSUIT
 	db 26, THUNDERPUNCH
@@ -1564,7 +1564,7 @@ TangelaEvosAttacks:
 
 KangaskhanEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, COMET_PUNCH
+	db 1, MEGA_PUNCH
 	db 7, LEER
 	db 13, BITE
 	db 19, TAIL_WHIP
@@ -2250,7 +2250,6 @@ LedybaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 8, SUPERSONIC
-	db 15, COMET_PUNCH
 	db 22, LIGHT_SCREEN
 	db 22, REFLECT
 	db 22, SAFEGUARD
@@ -2265,7 +2264,6 @@ LedianEvosAttacks:
 	db 1, TACKLE
 	db 1, SUPERSONIC
 	db 8, SUPERSONIC
-	db 15, COMET_PUNCH
 	db 24, LIGHT_SCREEN
 	db 24, REFLECT
 	db 24, SAFEGUARD
@@ -3125,6 +3123,14 @@ StantlerEvosAttacks:
 	db 49, CONFUSE_RAY
 	db 0 ; no more level-up moves
 
+RayquazaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SKY_CLEAVE
+	db 1, EARTHQUAKE
+	db 1, EXTREMESPEED
+	db 1, SWORDS_DANCE
+	db 0 ; no more level-up moves
+
 SmeargleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SKETCH
@@ -3188,18 +3194,12 @@ ElekidEvosAttacks:
 	db 49, THUNDER
 	db 0 ; no more level-up moves
 
-MagbyEvosAttacks:
-	db EVOLVE_LEVEL, 30, MAGMAR
+GiratinaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, EMBER
-	db 7, LEER
-	db 13, SMOG
-	db 19, FIRE_PUNCH
-	db 25, SMOKESCREEN
-	db 31, SUNNY_DAY
-	db 37, FLAMETHROWER
-	db 43, CONFUSE_RAY
-	db 49, FIRE_BLAST
+	db 1, SHADOW_BALL
+	db 1, DRAGONBREATH
+	db 1, CALM_MIND
+	db 1, REST
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:
@@ -3358,15 +3358,7 @@ CelebiEvosAttacks:
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
 
-RayquazaEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, SKY_CLEAVE
-	db 1, EARTHQUAKE
-	db 1, EXTREMESPEED
-	db 1, SWORDS_DANCE
-	db 0 ; no more level-up moves
-
-MewtwoOGEvosAttacks:
+Mew2OGEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PSYBLAST
 	db 1, FURIOUS_WILL

@@ -60,10 +60,28 @@ EcruteakGymMortyScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext MortyIntroText
+	waitbutton
+	closetext
+	winlosstext MortyWinLossText, 0
+	loadtrainer MORTY, MORTY1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .GotShadowBall:
 	writetext MortyFightDoneText
 	waitbutton
+    closetext
+	opentext
+	writetext RematchTextMorty
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextMorty
+	waitbutton
+	closetext
+	end
 .NoRoomForShadowBall:
 	closetext
 	end
@@ -373,6 +391,15 @@ EcruteakGymGuideWinText:
 	line "the corner out of"
 	cont "pure terror!"
 	done
+
+RematchTextMorty:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextMorty:
+    text "Maybe next time."
+    done
 
 EcruteakGymClosedText:
 	text "MORTY, the GYM"

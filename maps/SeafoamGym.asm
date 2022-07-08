@@ -22,7 +22,7 @@ SeafoamGymBlaineScript:
 	winlosstext BlaineWinLossText, 0
 	loadtrainer BLAINE, BLAINE1
 	startbattle
-	iftrue .ReturnAfterBattle
+	iftrue .ReturnAfterBattle   ; AndrewNote - is this how you make something happen after victory?
 	appear SEAFOAMGYM_GYM_GUIDE
 .ReturnAfterBattle:
 	reloadmapafterbattle
@@ -36,9 +36,25 @@ SeafoamGymBlaineScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext BlaineIntroText
+	waitbutton
+	closetext
+	winlosstext BlaineWinLossText, 0
+	loadtrainer BLAINE, BLAINE1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .FightDone:
 	writetext BlaineFightDoneText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextBlaine
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextBlaine
 	waitbutton
 	closetext
 	end
@@ -154,6 +170,15 @@ SeafoamGymGuideWinText2:
 	para "There's no need"
 	line "for a building."
 	done
+
+RematchTextBlaine:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextBlaine:
+    text "Maybe next time."
+    done
 
 SeafoamGym_MapEvents:
 	db 0, 0 ; filler

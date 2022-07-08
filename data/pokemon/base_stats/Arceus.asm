@@ -3,7 +3,7 @@
 	db 120, 120, 120, 120, 120, 120
 	;   hp  atk  def  spd  sat  sdf
 
-	db HOLY, HOLY ; type
+	db UBER, UBER ; type
 	db 45 ; catch rate
 	db 255 ; base exp
 	db NO_ITEM, MIRACLEBERRY ; items

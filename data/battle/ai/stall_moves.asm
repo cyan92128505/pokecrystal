@@ -36,4 +36,5 @@ StallMoves:
 	db FLAME_WHEEL
 	db HOLY_ARMOUR
 	db FURIOUS_WILL
+	db CALM_MIND
 	db -1 ; end

@@ -46,6 +46,15 @@ GoldenrodGymWhitneyScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext WhitneyBeforeText
+	waitbutton
+	closetext
+	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	loadtrainer WHITNEY, WHITNEY1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .StoppedCrying:
 	checkevent EVENT_GOT_TM45_ATTRACT
@@ -75,6 +84,15 @@ GoldenrodGymWhitneyScript:
 .GotAttract:
 	writetext WhitneyGoodCryText
 	waitbutton
+    closetext
+	opentext
+	writetext RematchTextWhitney
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextWhitney
+	waitbutton
+	closetext
+	end
 .NoRoomForAttract:
 	closetext
 	end
@@ -376,6 +394,15 @@ GoldenrodGymGuideWinText:
 	line "was busy admiring"
 	cont "the ladies here."
 	done
+
+RematchTextWhitney:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextWhitney:
+    text "Maybe next time."
+    done
 
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler

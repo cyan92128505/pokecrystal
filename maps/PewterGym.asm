@@ -31,9 +31,25 @@ PewterGymBrockScript:
 	waitbutton
 	closetext
 	end
+.rematch
+    writetext BrockIntroText
+	waitbutton
+	closetext
+	winlosstext BrockWinLossText, 0
+	loadtrainer BROCK, BROCK1
+	startbattle
+	reloadmapafterbattle
+	end
 
 .FightDone:
 	writetext BrockFightDoneText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextBrock
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextBrock
 	waitbutton
 	closetext
 	end
@@ -205,6 +221,15 @@ PewterGymGuideWinText:
 	para "inspiring. I mean"
 	line "that seriously."
 	done
+
+RematchTextBrock:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextBrock:
+    text "Maybe next time."
+    done
 
 PewterGym_MapEvents:
 	db 0, 0 ; filler

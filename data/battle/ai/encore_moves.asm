@@ -6,11 +6,10 @@ EncoreMoves:
 	db LEER
 	db ROAR
 	db DISABLE
-	db MIST
+	db GEOMANCY
 	db LEECH_SEED
 	db GROWTH
 	db POISONPOWDER
-	db STRING_SHOT
 	db MEDITATE
 	db AGILITY
 	db TELEPORT

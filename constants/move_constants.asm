@@ -9,14 +9,14 @@
 	const POUND        ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
-	const CALM_MIND  ; 04
+	const CALM_MIND    ; 04
 	const MEGA_PUNCH   ; 05
-	const PAY_DAY      ; 06
+	const NASTY_PLOT   ; 06
 	const FIRE_PUNCH   ; 07
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
 	const SCRATCH      ; 0a
-	const VICEGRIP     ; 0b
+	const DARK_PULSE     ; 0b
 	const GUILLOTINE   ; 0c
 	const SKY_CLEAVE   ; 0d
 	const SWORDS_DANCE ; 0e
@@ -25,13 +25,13 @@
 	const WING_ATTACK  ; 11
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
-	const BIND         ; 14
+	const OBLIVION     ; 14
 	const SLAM         ; 15
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
 	const MEGA_KICK    ; 19
-	const JUMP_KICK    ; 1a
+	const MOON_BLAST   ; 1a
 	const ROLLING_KICK ; 1b
 	const SAND_ATTACK  ; 1c
 	const HEADBUTT     ; 1d
@@ -59,7 +59,7 @@
 	const ACID         ; 33
 	const EMBER        ; 34
 	const FLAMETHROWER ; 35
-	const MIST         ; 36
+	const GEOMANCY     ; 36
 	const WATER_GUN    ; 37
 	const HYDRO_PUMP   ; 38
 	const SURF         ; 39
@@ -86,7 +86,7 @@
 	const STUN_SPORE   ; 4e
 	const SLEEP_POWDER ; 4f
 	const PETAL_DANCE  ; 50
-	const STRING_SHOT  ; 51
+	const DRAGON_CLAW  ; 51
 	const DRAGON_RAGE  ; 52
 	const FIRE_SPIN    ; 53
 	const THUNDERSHOCK ; 54

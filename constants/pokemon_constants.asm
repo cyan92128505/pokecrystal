@@ -244,7 +244,7 @@ JOHTO_POKEMON EQU const_value
 	const CORSOLA    ; de
 	const REMORAID   ; df
 	const OCTILLERY  ; e0
-	const DELIBIRD   ; e1
+	const KYOGRE     ; e1
 	const MANTINE    ; e2
 	const SKARMORY   ; e3
 	const HOUNDOUR   ; e4
@@ -255,10 +255,10 @@ JOHTO_POKEMON EQU const_value
 	const PORYGON2   ; e9
 	const RAYQUAZA   ; ea
 	const SMEARGLE   ; eb
-	const TYROGUE    ; ec
+	const DIALGA     ; ec
 	const HITMONTOP  ; ed
-	const SMOOCHUM   ; ee
-	const ELEKID     ; ef
+	const XERNEAS    ; ee
+	const YVELTAL    ; ef
 	const GIRATINA   ; f0
 	const MILTANK    ; f1
 	const BLISSEY    ; f2

@@ -17,7 +17,6 @@ AI_Redundant:
 	dbw EFFECT_DREAM_EATER,  .DreamEater
 	dbw EFFECT_HEAL,         .Heal
 	dbw EFFECT_LIGHT_SCREEN, .LightScreen
-	dbw EFFECT_MIST,         .Mist
 	dbw EFFECT_FOCUS_ENERGY, .FocusEnergy
 	dbw EFFECT_CONFUSE,      .Confuse
 	dbw EFFECT_TRANSFORM,    .Transform
@@ -49,11 +48,6 @@ AI_Redundant:
 .LightScreen:
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
-	ret
-
-.Mist:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_MIST, a
 	ret
 
 .FocusEnergy:

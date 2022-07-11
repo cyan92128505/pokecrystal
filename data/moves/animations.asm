@@ -7,12 +7,12 @@ BattleAnimations::
 	dw BattleAnim_Doubleslap
 	dw BattleAnim_CalmMind
 	dw BattleAnim_MegaPunch
-	dw BattleAnim_PayDay
+	dw BattleAnim_NastyPlot
 	dw BattleAnim_FirePunch
 	dw BattleAnim_IcePunch
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_Scratch
-	dw BattleAnim_Vicegrip
+	dw BattleAnim_DarkPulse
 	dw BattleAnim_Guillotine
 	dw BattleAnim_Fly
 	dw BattleAnim_SwordsDance
@@ -21,13 +21,13 @@ BattleAnimations::
 	dw BattleAnim_WingAttack
 	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
-	dw BattleAnim_Bind
+	dw BattleAnim_Oblivion
 	dw BattleAnim_Slam
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
 	dw BattleAnim_DoubleKick
 	dw BattleAnim_MegaKick
-	dw BattleAnim_JumpKick
+	dw BattleAnim_MoonBlast
 	dw BattleAnim_RollingKick
 	dw BattleAnim_SandAttack
 	dw BattleAnim_Headbutt
@@ -55,7 +55,7 @@ BattleAnimations::
 	dw BattleAnim_Acid
 	dw BattleAnim_Ember
 	dw BattleAnim_Flamethrower
-	dw BattleAnim_Mist
+	dw BattleAnim_Geomancy
 	dw BattleAnim_WaterGun
 	dw BattleAnim_HydroPump
 	dw BattleAnim_Surf
@@ -82,7 +82,7 @@ BattleAnimations::
 	dw BattleAnim_StunSpore
 	dw BattleAnim_SleepPowder
 	dw BattleAnim_PetalDance
-	dw BattleAnim_StringShot
+	dw BattleAnim_DragonClaw
 	dw BattleAnim_DragonRage
 	dw BattleAnim_FireSpin
 	dw BattleAnim_Thundershock
@@ -1192,6 +1192,7 @@ BattleAnim_RazorLeaf:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_MoonBlast:
 BattleAnim_Solarbeam:
 	anim_if_param_equal $0, .FireSolarBeam
 	; charge turn
@@ -1481,13 +1482,13 @@ BattleAnim_AuroraBeam:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_Vicegrip:
-	anim_1gfx ANIM_GFX_CUT
-	anim_sound 0, 1, SFX_VICEGRIP
-	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 152, 40, $0
-	anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 72, $0
-	anim_wait 32
-	anim_ret
+;BattleAnim_Vicegrip:
+;	anim_1gfx ANIM_GFX_CUT
+;	anim_sound 0, 1, SFX_VICEGRIP
+;	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 152, 40, $0
+;	anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 72, $0
+;	anim_wait 32
+;	anim_ret
 
 BattleAnim_Scratch:
 	anim_1gfx ANIM_GFX_CUT
@@ -1746,21 +1747,21 @@ BattleAnim_Bide:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_Bind:
-	anim_1gfx ANIM_GFX_ROPE
-	anim_sound 0, 1, SFX_BIND
-	anim_obj ANIM_OBJ_BIND1, 132, 64, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_BIND2, 132, 56, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_BIND1, 132, 48, $0
-	anim_wait 64
-	anim_sound 0, 1, SFX_BIND
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
-	anim_wait 96
-	anim_ret
+;BattleAnim_Bind:
+;	anim_1gfx ANIM_GFX_ROPE
+;	anim_sound 0, 1, SFX_BIND
+;	anim_obj ANIM_OBJ_BIND1, 132, 64, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_BIND2, 132, 56, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_BIND1, 132, 48, $0
+;	anim_wait 64
+;	anim_sound 0, 1, SFX_BIND
+;	anim_incobj 1
+;	anim_incobj 2
+;	anim_incobj 3
+;	anim_wait 96
+;	anim_ret
 
 BattleAnim_Wrap:
 	anim_1gfx ANIM_GFX_ROPE
@@ -2362,15 +2363,15 @@ BattleAnim_Barrage:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_PayDay:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_STATUS
-	anim_sound 0, 1, SFX_POUND
-	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
-	anim_wait 16
-	anim_sound 0, 1, SFX_PAY_DAY
-	anim_obj ANIM_OBJ_PAY_DAY, 120, 76, $1
-	anim_wait 64
-	anim_ret
+;BattleAnim_PayDay:
+;	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_STATUS
+;	anim_sound 0, 1, SFX_POUND
+;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
+;	anim_wait 16
+;	anim_sound 0, 1, SFX_PAY_DAY
+;	anim_obj ANIM_OBJ_PAY_DAY, 120, 76, $1
+;	anim_wait 64
+;	anim_ret
 
 BattleAnim_Mimic:
 	anim_1gfx ANIM_GFX_SPEED
@@ -2600,6 +2601,7 @@ BattleAnim_SkyAttack:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_DarkPulse:
 BattleAnim_NightShade:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgp $1b
@@ -3213,6 +3215,7 @@ BattleAnim_Snore:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_Geomancy:
 BattleAnim_Curse:
 	anim_if_param_equal $1, .NotGhost
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
@@ -3288,6 +3291,7 @@ BattleAnim_Conversion:
 	anim_wait 128
 	anim_ret
 
+BattleAnim_Oblivion:
 BattleAnim_Aeroblast:
 	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
@@ -4191,6 +4195,7 @@ BattleAnim_IronTail:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_DragonClaw:
 BattleAnim_MetalClaw:
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
@@ -4432,6 +4437,7 @@ BattleAnim_MirrorCoat:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_NastyPlot:
 BattleAnim_FuriousWill:
 BattleAnim_PsychUp:
 	anim_1gfx ANIM_GFX_STATUS

@@ -542,6 +542,8 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_FURIOUS_WILL,     AI_Smart_FuriousWill
 	dbw EFFECT_ATTACK_UP_2,      AI_Smart_SwordsDance
 	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
+	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
+	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1177,7 +1179,7 @@ AI_Smart_Ohko:
 	ret
 
 AI_Smart_TrapTarget:
-; Bind, Wrap, Fire Spin, Clamp
+; Wrap, Fire Spin, Clamp
 
 ; 50% chance to discourage this move if the player is already trapped.
 	ld a, [wPlayerWrapCount]
@@ -3015,6 +3017,55 @@ AI_Smart_Barrier:
 	inc [hl]
 	ret
 
+AI_Smart_NastyPlot:
+; don't go past +4
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; encourage to get to +2
+	cp BASE_STAT_LEVEL + 2
+	jr c, .encourage
+
+; discourage after +2 if afflicted with toxic
+.checkToxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
+.strongEncourage
+    dec [hl]
+.encourage
+    dec [hl]
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_Geomancy:
+; strongly encourage to +2
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .encourage ;
+
+; discourage after +2
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+.encourage
+    dec [hl]
+    dec [hl]
+	dec [hl]
+	ret
+
 AICompareSpeed:
 ; Return carry if enemy is faster than player.
 
@@ -3225,8 +3276,8 @@ AI_Opportunist:
     call AICheckPlayerQuarterHP
 	jr nc, .lowhp
 
-; Discourage stall moves if enemy's HP is below 1/3.
-    call AICheckEnemyQuarterHP
+; Discourage stall moves if enemy's HP is below 1/2.
+    call AICheckEnemyHalfHP
 	jr nc, .lowhp
 
 	ret

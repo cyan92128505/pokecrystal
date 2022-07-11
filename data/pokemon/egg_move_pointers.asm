@@ -224,7 +224,7 @@ EggMovePointers::
 	dw CorsolaEggMoves
 	dw RemoraidEggMoves
 	dw NoEggMoves
-	dw DelibirdEggMoves
+	dw NoEggMoves
 	dw MantineEggMoves
 	dw SkarmoryEggMoves
 	dw HoundourEggMoves
@@ -235,11 +235,11 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw TyrogueEggMoves
 	dw NoEggMoves
-	dw SmoochumEggMoves
-	dw ElekidEggMoves
-	dw GiratinaEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
 	dw MiltankEggMoves
 	dw NoEggMoves
 	dw NoEggMoves

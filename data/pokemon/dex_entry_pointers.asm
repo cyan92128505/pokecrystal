@@ -225,7 +225,7 @@ PokedexDataPointerTable:
 	dw CorsolaPokedexEntry
 	dw RemoraidPokedexEntry
 	dw OctilleryPokedexEntry
-	dw DelibirdPokedexEntry
+	dw KyogrePokedexEntry
 	dw MantinePokedexEntry
 	dw SkarmoryPokedexEntry
 	dw HoundourPokedexEntry
@@ -236,10 +236,10 @@ PokedexDataPointerTable:
 	dw Porygon2PokedexEntry
 	dw RayquazaPokedexEntry
 	dw SmearglePokedexEntry
-	dw TyroguePokedexEntry
+	dw DialgaPokedexEntry
 	dw HitmontopPokedexEntry
-	dw SmoochumPokedexEntry
-	dw ElekidPokedexEntry
+	dw XerneasPokedexEntry
+	dw YveltalPokedexEntry
 	dw GiratinaPokedexEntry
 	dw MiltankPokedexEntry
 	dw BlisseyPokedexEntry

@@ -944,11 +944,13 @@ RecoilHit:
 	kingsrock
 	endmove
 
-Mist:
+Geomancy:
+	checkcharge
 	checkobedience
-	usedmovetext
 	doturn
-	mist
+	charge
+	usedmovetext
+    geomancy
 	endmove
 
 FocusEnergy:

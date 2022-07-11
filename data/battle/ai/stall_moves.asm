@@ -7,11 +7,10 @@ StallMoves:
 	db LEER
 	db GROWL
 	db DISABLE
-	db MIST
+	db GEOMANCY
 	db COUNTER
 	db LEECH_SEED
 	db GROWTH
-	db STRING_SHOT
 	db MEDITATE
 	db AGILITY
 	db RAGE
@@ -37,4 +36,5 @@ StallMoves:
 	db HOLY_ARMOUR
 	db FURIOUS_WILL
 	db CALM_MIND
+	db NASTY_PLOT
 	db -1 ; end

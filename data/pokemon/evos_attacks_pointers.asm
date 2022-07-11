@@ -226,7 +226,7 @@ EvosAttacksPointers::
 	dw CorsolaEvosAttacks
 	dw RemoraidEvosAttacks
 	dw OctilleryEvosAttacks
-	dw DelibirdEvosAttacks
+	dw KyogreEvosAttacks
 	dw MantineEvosAttacks
 	dw SkarmoryEvosAttacks
 	dw HoundourEvosAttacks
@@ -237,10 +237,10 @@ EvosAttacksPointers::
 	dw Porygon2EvosAttacks
 	dw RayquazaEvosAttacks
 	dw SmeargleEvosAttacks
-	dw TyrogueEvosAttacks
+	dw DialgaEvosAttacks
 	dw HitmontopEvosAttacks
-	dw SmoochumEvosAttacks
-	dw ElekidEvosAttacks
+	dw XerneasEvosAttacks
+	dw YveltalEvosAttacks
 	dw GiratinaEvosAttacks
 	dw MiltankEvosAttacks
 	dw BlisseyEvosAttacks

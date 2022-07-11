@@ -3843,10 +3843,23 @@ BattleCommand_EatDream:
 
 SapHealth:
 	; Divide damage by 2, store it in hDividend
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+    cp AEROBLAST
+    jr nz, .halfDrain
+	ld hl, wCurDamage
+	ld a, [hli]
+	srl a
+    srl a ; a is 1/4 damage
+    add a ; 1/2 damage
+    add a ; 3/4 damage
+	ldh [hDividend], a
+	jr .continueDrain
+.halfDrain
 	ld hl, wCurDamage
 	ld a, [hli]
 	srl a
 	ldh [hDividend], a
+.continueDrain
 	ld b, a
 	ld a, [hl]
 	rr a
@@ -5459,6 +5472,8 @@ BattleCommand_CheckDeathImmunity:
     jr z, .immune
     cp GIRATINA
     jr z, .immune
+    cp YVELTAL
+    jr z, .immune
     ret
 .immune
     ld a, 1
@@ -5647,6 +5662,10 @@ BattleCommand_Charge:
 	ld hl, .BattleGlowingText
 	jr z, .done
 
+	cp GEOMANCY
+	ld hl, .BattleGlowingText
+	jr z, .done
+
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -5743,13 +5762,12 @@ BattleCommand_TrapTarget:
 	jp StdBattleTextbox
 
 .Traps:
-	dbw BIND,      UsedBindText      ; 'used BIND on'
 	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
 	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
 	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
 
-INCLUDE "engine/battle/move_effects/mist.asm"
+INCLUDE "engine/battle/move_effects/geomancy.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 

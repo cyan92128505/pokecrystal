@@ -45,7 +45,7 @@ MoveEffectsPointers:
     dw Judgement
 	dw MultiHit
 	dw NormalHit
-	dw Mist
+	dw Geomancy
 	dw FocusEnergy
 	dw RecoilHit
 	dw DoConfuse

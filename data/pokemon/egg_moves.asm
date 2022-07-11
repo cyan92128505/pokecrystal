@@ -32,7 +32,6 @@ CharmanderEggMoves:
 SquirtleEggMoves:
 	db MIRROR_COAT
 	db HAZE
-	db MIST
 	db CONFUSION
 	db FORESIGHT
 	db FLAIL
@@ -180,7 +179,6 @@ GrowlitheEggMoves:
 	db -1 ; end
 
 PoliwagEggMoves:
-	db MIST
 	db SPLASH
 	db BUBBLEBEAM
 	db HAZE
@@ -434,7 +432,6 @@ SnorlaxEggMoves:
 
 DratiniEggMoves:
 	db LIGHT_SCREEN
-	db MIST
 	db HAZE
 	db SUPERSONIC
 	db -1 ; end
@@ -572,7 +569,6 @@ HoppipEggMoves:
 	db DOUBLE_EDGE
 	db REFLECT
 	db AMNESIA
-	db PAY_DAY
 	db -1 ; end
 
 AipomEggMoves:
@@ -702,7 +698,6 @@ CorsolaEggMoves:
 	db ROCK_SLIDE
 	db SAFEGUARD
 	db SCREECH
-	db MIST
 	db AMNESIA
 	db -1 ; end
 
@@ -712,14 +707,6 @@ RemoraidEggMoves:
 	db SUPERSONIC
 	db HAZE
 	db SCREECH
-	db -1 ; end
-
-DelibirdEggMoves:
-	db AURORA_BEAM
-	db QUICK_ATTACK
-	db FUTURE_SIGHT
-	db SPLASH
-	db RAPID_SPIN
 	db -1 ; end
 
 MantineEggMoves:
@@ -751,33 +738,6 @@ PhanpyEggMoves:
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db WATER_GUN
-	db -1 ; end
-
-TyrogueEggMoves:
-	db RAPID_SPIN
-	db HI_JUMP_KICK
-	db MACH_PUNCH
-	db MIND_READER
-	db -1 ; end
-
-SmoochumEggMoves:
-	db MEDITATE
-	db -1 ; end
-
-ElekidEggMoves:
-	db KARATE_CHOP
-	db BARRIER
-	db ROLLING_KICK
-	db MEDITATE
-	db CROSS_CHOP
-	db -1 ; end
-
-GiratinaEggMoves:
-	db KARATE_CHOP
-	db MEGA_PUNCH
-	db BARRIER
-	db SCREECH
-	db CROSS_CHOP
 	db -1 ; end
 
 MiltankEggMoves:

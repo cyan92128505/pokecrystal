@@ -23,7 +23,7 @@ OftenFleeMons:
 	db ZAPDOS
 	db MOLTRES
 	db QUAGSIRE
-	db DELIBIRD
+	db KYOGRE
 	db PHANPY
 	db TEDDIURSA
 	db -1

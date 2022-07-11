@@ -58,10 +58,9 @@ MoveGrammar:
 ; 3: originally "[mon]の¯[move]　こうげき!" ("[mon]'s¯[move] attack!")
 	db POUND
 	db SCRATCH
-	db VICEGRIP
+	db DARK_PULSE
 	db WING_ATTACK
 	db FLY
-	db BIND
 	db SLAM
 	db HORN_ATTACK
 	db WRAP
@@ -74,7 +73,6 @@ MoveGrammar:
 	db SING
 	db PECK
 	db ABSORB
-	db STRING_SHOT
 	db EARTHQUAKE
 	db FISSURE
 	db DIG

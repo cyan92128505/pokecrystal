@@ -516,7 +516,7 @@ INCBIN "gfx/footprints/corsola.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/remoraid.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/octillery.1bpp",  footprint_bottom
 ; 225-232 top halves
-INCBIN "gfx/footprints/delibird.1bpp",   footprint_top
+INCBIN "gfx/footprints/kyogre.1bpp",   footprint_top
 INCBIN "gfx/footprints/mantine.1bpp",    footprint_top
 INCBIN "gfx/footprints/skarmory.1bpp",   footprint_top
 INCBIN "gfx/footprints/houndour.1bpp",   footprint_top
@@ -525,7 +525,7 @@ INCBIN "gfx/footprints/kingdra.1bpp",    footprint_top
 INCBIN "gfx/footprints/phanpy.1bpp",     footprint_top
 INCBIN "gfx/footprints/donphan.1bpp",    footprint_top
 ; 225-232 bottom halves
-INCBIN "gfx/footprints/delibird.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/kyogre.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/mantine.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/skarmory.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/houndour.1bpp",   footprint_bottom
@@ -537,19 +537,19 @@ INCBIN "gfx/footprints/donphan.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/porygon2.1bpp",   footprint_top
 INCBIN "gfx/footprints/rayquaza.1bpp",   footprint_top
 INCBIN "gfx/footprints/smeargle.1bpp",   footprint_top
-INCBIN "gfx/footprints/tyrogue.1bpp",    footprint_top
+INCBIN "gfx/footprints/dialga.1bpp",    footprint_top
 INCBIN "gfx/footprints/hitmontop.1bpp",  footprint_top
-INCBIN "gfx/footprints/smoochum.1bpp",   footprint_top
-INCBIN "gfx/footprints/elekid.1bpp",     footprint_top
+INCBIN "gfx/footprints/xerneas.1bpp",   footprint_top
+INCBIN "gfx/footprints/yveltal.1bpp",     footprint_top
 INCBIN "gfx/footprints/giratina.1bpp",      footprint_top
 ; 233-240 bottom halves
 INCBIN "gfx/footprints/porygon2.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/rayquaza.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/smeargle.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/tyrogue.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/dialga.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/hitmontop.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/smoochum.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/elekid.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/xerneas.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/yveltal.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/giratina.1bpp",      footprint_bottom
 ; 241-248 top halves
 INCBIN "gfx/footprints/miltank.1bpp",    footprint_top

@@ -224,7 +224,7 @@ AnimationIdlePointers:
 	dw CorsolaAnimationIdle
 	dw RemoraidAnimationIdle
 	dw OctilleryAnimationIdle
-	dw DelibirdAnimationIdle
+	dw KyogreAnimationIdle
 	dw MantineAnimationIdle
 	dw SkarmoryAnimationIdle
 	dw HoundourAnimationIdle
@@ -235,10 +235,10 @@ AnimationIdlePointers:
 	dw Porygon2AnimationIdle
 	dw RayquazaAnimationIdle
 	dw SmeargleAnimationIdle
-	dw TyrogueAnimationIdle
+	dw DialgaAnimationIdle
 	dw HitmontopAnimationIdle
-	dw SmoochumAnimationIdle
-	dw ElekidAnimationIdle
+	dw XerneasAnimationIdle
+	dw YveltalAnimationIdle
 	dw GiratinaAnimationIdle
 	dw MiltankAnimationIdle
 	dw BlisseyAnimationIdle

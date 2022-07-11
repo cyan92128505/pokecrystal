@@ -224,7 +224,7 @@ BitmasksPointers:
 	dw CorsolaBitmasks
 	dw RemoraidBitmasks
 	dw OctilleryBitmasks
-	dw DelibirdBitmasks
+	dw KyogreBitmasks
 	dw MantineBitmasks
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
@@ -235,10 +235,10 @@ BitmasksPointers:
 	dw Porygon2Bitmasks
 	dw RayquazaBitmasks
 	dw SmeargleBitmasks
-	dw TyrogueBitmasks
+	dw DialgaBitmasks
 	dw HitmontopBitmasks
-	dw SmoochumBitmasks
-	dw ElekidBitmasks
+	dw XerneasBitmasks
+	dw YveltalBitmasks
 	dw GiratinaBitmasks
 	dw MiltankBitmasks
 	dw BlisseyBitmasks

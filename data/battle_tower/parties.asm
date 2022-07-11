@@ -5259,7 +5259,7 @@ BattleTowerMons:
 
     db TYRANITAR
 	db LEFTOVERS
-	db EARTHQUAKE, CURSE, ROCK_SLIDE, REST
+	db ROCK_SLIDE, CURSE, CRUNCH, REST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

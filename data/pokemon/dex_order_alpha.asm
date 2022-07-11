@@ -38,8 +38,8 @@ AlphabeticalPokedexOrder:
 	db CROCONAW
 	db CUBONE
 	db CYNDAQUIL
-	db DELIBIRD
 	db DEWGONG
+	db DIALGA
 	db DIGLETT
 	db DITTO
 	db DODRIO
@@ -55,7 +55,6 @@ AlphabeticalPokedexOrder:
 	db EKANS
 	db ELECTABUZZ
 	db ELECTRODE
-	db ELEKID
 	db ENTEI
 	db ESPEON
 	db EXEGGCUTE
@@ -110,6 +109,7 @@ AlphabeticalPokedexOrder:
 	db KINGLER
 	db KOFFING
 	db KRABBY
+	db KYOGRE
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
@@ -207,7 +207,6 @@ AlphabeticalPokedexOrder:
 	db SLOWPOKE
 	db SLUGMA
 	db SMEARGLE
-	db SMOOCHUM
 	db SNEASEL
 	db SNORLAX
 	db SNUBBULL
@@ -232,7 +231,6 @@ AlphabeticalPokedexOrder:
 	db TOTODILE
 	db TYPHLOSION
 	db TYRANITAR
-	db TYROGUE
 	db UMBREON
 	db UNOWN
 	db URSARING
@@ -252,7 +250,9 @@ AlphabeticalPokedexOrder:
 	db WOBBUFFET
 	db WOOPER
 	db XATU
+	db XERNEAS
 	db YANMA
+	db YVELTAL
 	db ZAPDOS
 	db ZUBAT
 	assert_table_length NUM_POKEMON

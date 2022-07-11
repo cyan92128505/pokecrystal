@@ -224,7 +224,7 @@ FramesPointers:
 	dw CorsolaFrames
 	dw RemoraidFrames
 	dw OctilleryFrames
-	dw DelibirdFrames
+	dw KyogreFrames
 	dw MantineFrames
 	dw SkarmoryFrames
 	dw HoundourFrames
@@ -235,10 +235,10 @@ FramesPointers:
 	dw Porygon2Frames
 	dw RayquazaFrames
 	dw SmeargleFrames
-	dw TyrogueFrames
+	dw DialgaFrames
 	dw HitmontopFrames
-	dw SmoochumFrames
-	dw ElekidFrames
+	dw XerneasFrames
+	dw YveltalFrames
 	dw GiratinaFrames
 	dw MiltankFrames
 	dw BlisseyFrames

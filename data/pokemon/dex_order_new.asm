@@ -143,7 +143,6 @@ NewPokedexOrder:
 	db MACHOP
 	db MACHOKE
 	db MACHAMP
-	db TYROGUE
 	db HITMONLEE
 	db HITMONCHAN
 	db HITMONTOP
@@ -151,9 +150,7 @@ NewPokedexOrder:
 	db TAUROS
 	db MILTANK
 	db MAGMAR
-	db SMOOCHUM
 	db JYNX
-	db ELEKID
 	db ELECTABUZZ
 	db MR__MIME
 	db SMEARGLE
@@ -189,7 +186,6 @@ NewPokedexOrder:
 	db SEADRA
 	db KINGDRA
 	db GLIGAR
-	db DELIBIRD
 	db SWINUB
 	db PILOSWINE
 	db TEDDIURSA
@@ -251,7 +247,11 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db KYOGRE
 	db RAYQUAZA
+	db DIALGA
+	db XERNEAS
+	db YVELTAL
 	db MEW2_OG
 	db GIRATINA
 	db ARCEUS

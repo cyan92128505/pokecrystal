@@ -224,7 +224,7 @@ AnimationPointers:
 	dw CorsolaAnimation
 	dw RemoraidAnimation
 	dw OctilleryAnimation
-	dw DelibirdAnimation
+	dw KyogreAnimation
 	dw MantineAnimation
 	dw SkarmoryAnimation
 	dw HoundourAnimation
@@ -235,10 +235,10 @@ AnimationPointers:
 	dw Porygon2Animation
 	dw RayquazaAnimation
 	dw SmeargleAnimation
-	dw TyrogueAnimation
+	dw DialgaAnimation
 	dw HitmontopAnimation
-	dw SmoochumAnimation
-	dw ElekidAnimation
+	dw XerneasAnimation
+	dw YveltalAnimation
 	dw GiratinaAnimation
 	dw MiltankAnimation
 	dw BlisseyAnimation

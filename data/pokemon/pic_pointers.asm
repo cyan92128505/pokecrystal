@@ -454,8 +454,8 @@ PokemonPicPointers::
 	dba_pic RemoraidBackpic
 	dba_pic OctilleryFrontpic
 	dba_pic OctilleryBackpic
-	dba_pic DelibirdFrontpic
-	dba_pic DelibirdBackpic
+	dba_pic KyogreFrontpic
+	dba_pic KyogreBackpic
 	dba_pic MantineFrontpic
 	dba_pic MantineBackpic
 	dba_pic SkarmoryFrontpic
@@ -476,14 +476,14 @@ PokemonPicPointers::
 	dba_pic RayquazaBackpic
 	dba_pic SmeargleFrontpic
 	dba_pic SmeargleBackpic
-	dba_pic TyrogueFrontpic
-	dba_pic TyrogueBackpic
+	dba_pic DialgaFrontpic
+	dba_pic DialgaBackpic
 	dba_pic HitmontopFrontpic
 	dba_pic HitmontopBackpic
-	dba_pic SmoochumFrontpic
-	dba_pic SmoochumBackpic
-	dba_pic ElekidFrontpic
-	dba_pic ElekidBackpic
+	dba_pic XerneasFrontpic
+	dba_pic XerneasBackpic
+	dba_pic YveltalFrontpic
+	dba_pic YveltalBackpic
 	dba_pic GiratinaFrontpic
 	dba_pic GiratinaBackpic
 	dba_pic MiltankFrontpic

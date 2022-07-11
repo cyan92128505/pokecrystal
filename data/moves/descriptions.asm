@@ -6,12 +6,12 @@ MoveDescriptions::
 	dw DoubleslapDescription
 	dw CalmMindDescription
 	dw MegaPunchDescription
-	dw PayDayDescription
+	dw NastyPlotDescription
 	dw FirePunchDescription
 	dw IcePunchDescription
 	dw ThunderpunchDescription
 	dw ScratchDescription
-	dw VicegripDescription
+	dw DarkPulseDescription
 	dw GuillotineDescription
 	dw SkyCleaveDescription
 	dw SwordsDanceDescription
@@ -20,13 +20,13 @@ MoveDescriptions::
 	dw WingAttackDescription
 	dw WhirlwindDescription
 	dw FlyDescription
-	dw BindDescription
+	dw OblivionDescription
 	dw SlamDescription
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
 	dw MegaKickDescription
-	dw JumpKickDescription
+	dw MoonBlastDescription
 	dw RollingKickDescription
 	dw SandAttackDescription
 	dw HeadbuttDescription
@@ -54,7 +54,7 @@ MoveDescriptions::
 	dw AcidDescription
 	dw EmberDescription
 	dw FlamethrowerDescription
-	dw MistDescription
+	dw GeomancyDescription
 	dw WaterGunDescription
 	dw HydroPumpDescription
 	dw SurfDescription
@@ -81,7 +81,7 @@ MoveDescriptions::
 	dw StunSporeDescription
 	dw SleepPowderDescription
 	dw PetalDanceDescription
-	dw StringShotDescription
+	dw DragonClawDescription
 	dw DragonRageDescription
 	dw FireSpinDescription
 	dw ThundershockDescription
@@ -287,9 +287,9 @@ MegaPunchDescription:
 	db   "A powerful punch"
 	next "thrown very hard.@"
 
-PayDayDescription:
-	db   "Throws coins. Gets"
-	next "them back later.@"
+NastyPlotDescription:
+	db   "Evil thoughts"
+	next "raise Sp Attack.@"
 
 FirePunchDescription:
 	db   "A fiery punch. May"
@@ -307,9 +307,9 @@ ScratchDescription:
 	db   "Scratches with"
 	next "sharp claws.@"
 
-VicegripDescription:
-	db   "Grips with power-"
-	next "ful pincers.@"
+DarkPulseDescription:
+	db   "Launch evil energy"
+	next "May flinch foe.@"
 
 GuillotineDescription:
 	db   "A one-hit KO,"
@@ -343,9 +343,9 @@ FlyDescription:
 	db   "1st turn: Fly"
 	next "2nd turn: Attack@"
 
-BindDescription:
-	db   "Binds the target"
-	next "for 2-5 turns.@"
+OblivionDescription:
+	db   "Drains life force"
+	next "from the victim.@"
 
 SlamDescription:
 	db   "Slams the foe with"
@@ -367,9 +367,9 @@ MegaKickDescription:
 	db   "A powerful kicking"
 	next "attack.@"
 
-JumpKickDescription:
-	db   "May miss, damaging"
-	next "the user.@"
+MoonBlastDescription:
+	db   "A blast of"
+	next "life force.@"
 
 RollingKickDescription:
 	db   "A fast, spinning"
@@ -479,9 +479,9 @@ FlamethrowerDescription:
 	db   "An attack that may"
 	next "inflict a burn.@"
 
-MistDescription:
-	db   "Prevents stat"
-	next "reduction.@"
+GeomancyDescription:
+	db   "Charge up, then"
+	next "raise stats.@"
 
 WaterGunDescription:
 	db   "Squirts water to"
@@ -587,9 +587,9 @@ PetalDanceDescription:
 	db   "Works 2-3 turns"
 	next "and confuses user.@"
 
-StringShotDescription:
-	db   "A move that lowers"
-	next "the foe's SPEED.@"
+DragonClawDescription:
+	db   "Rend foe with"
+	next "mighty claws.@"
 
 DragonRageDescription:
 	db   "Always inflicts"

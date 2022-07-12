@@ -3952,7 +3952,7 @@ BattleTower_UbersCheck:
 .loop
 	push af
 	ld a, [de]
-	cp MEWTWO
+	cp DARKRAI
 	jr z, .uber
 	cp MEW
 	jr z, .uber

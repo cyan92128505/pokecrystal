@@ -1679,7 +1679,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db LEFTOVERS
-	db SURF, DRAGONBREATH, HYPER_BEAM, BLIZZARD
+	db SURF, DRAGON_PULSE, HYPER_BEAM, BLIZZARD
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2202,7 +2202,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db GOLD_BERRY
-	db SURF, HYPER_BEAM, BLIZZARD, DRAGONBREATH
+	db SURF, HYPER_BEAM, BLIZZARD, DRAGON_PULSE
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2751,7 +2751,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db LEFTOVERS
-	db DRAGONBREATH, SURF, HYPER_BEAM, BLIZZARD
+	db DRAGON_PULSE, SURF, HYPER_BEAM, BLIZZARD
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -4057,7 +4057,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db MINT_BERRY
-	db REST, SURF, BLIZZARD, DRAGONBREATH
+	db REST, SURF, BLIZZARD, DRAGON_PULSE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4159,7 +4159,7 @@ BattleTowerMons:
 	bigdw 225 ; SDef
 	db "RU-ZIyuRA@@"
 
-	db MANTINE
+	db GROUDON
 	db GOLD_BERRY
 	db SURF, CONFUSE_RAY, BLIZZARD, WING_ATTACK
 	dw 0 ; OT ID
@@ -4554,7 +4554,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db LEFTOVERS
-	db DRAGONBREATH, SURF, HYPER_BEAM, BLIZZARD
+	db DRAGON_PULSE, SURF, HYPER_BEAM, BLIZZARD
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -5465,7 +5465,7 @@ BattleTowerMons:
 	bigdw 406 ; SDef
 	db "RANTA-N@@@@"
 
-	db MEWTWO
+	db MEW2_OG
 	db MIRACLEBERRY
 	db PSYCHIC_M, ICE_BEAM, FLAMETHROWER, RECOVER
 	dw 0 ; OT ID

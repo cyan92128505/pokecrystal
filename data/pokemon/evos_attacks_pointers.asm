@@ -151,7 +151,7 @@ EvosAttacksPointers::
 	dw DratiniEvosAttacks
 	dw DragonairEvosAttacks
 	dw DragoniteEvosAttacks
-	dw MewtwoEvosAttacks
+	dw DarkraiEvosAttacks
 	dw MewEvosAttacks
 	dw ChikoritaEvosAttacks
 	dw BayleefEvosAttacks
@@ -224,10 +224,10 @@ EvosAttacksPointers::
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
 	dw CorsolaEvosAttacks
-	dw RemoraidEvosAttacks
-	dw OctilleryEvosAttacks
+	dw LatiosEvosAttacks
+	dw PalkiaEvosAttacks
 	dw KyogreEvosAttacks
-	dw MantineEvosAttacks
+	dw GroudonEvosAttacks
 	dw SkarmoryEvosAttacks
 	dw HoundourEvosAttacks
 	dw HoundoomEvosAttacks

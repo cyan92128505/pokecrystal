@@ -149,7 +149,7 @@ AnimationIdlePointers:
 	dw DratiniAnimationIdle
 	dw DragonairAnimationIdle
 	dw DragoniteAnimationIdle
-	dw MewtwoAnimationIdle
+	dw DarkraiAnimationIdle
 	dw MewAnimationIdle
 	dw ChikoritaAnimationIdle
 	dw BayleefAnimationIdle
@@ -222,10 +222,10 @@ AnimationIdlePointers:
 	dw SwinubAnimationIdle
 	dw PiloswineAnimationIdle
 	dw CorsolaAnimationIdle
-	dw RemoraidAnimationIdle
-	dw OctilleryAnimationIdle
+	dw LatiosAnimationIdle
+	dw PalkiaAnimationIdle
 	dw KyogreAnimationIdle
-	dw MantineAnimationIdle
+	dw GroudonAnimationIdle
 	dw SkarmoryAnimationIdle
 	dw HoundourAnimationIdle
 	dw HoundoomAnimationIdle

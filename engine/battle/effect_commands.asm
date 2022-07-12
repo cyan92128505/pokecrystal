@@ -4289,8 +4289,9 @@ MinimizeDropSub:
 .do_player
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp MINIMIZE
-	ret nz
+	ret
+	;cp MINIMIZE
+	;ret nz
 
 	ld a, $1
 	ld [bc], a

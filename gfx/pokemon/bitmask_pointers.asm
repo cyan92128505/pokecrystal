@@ -149,7 +149,7 @@ BitmasksPointers:
 	dw DratiniBitmasks
 	dw DragonairBitmasks
 	dw DragoniteBitmasks
-	dw MewtwoBitmasks
+	dw DarkraiBitmasks
 	dw MewBitmasks
 	dw ChikoritaBitmasks
 	dw BayleefBitmasks
@@ -222,10 +222,10 @@ BitmasksPointers:
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
 	dw CorsolaBitmasks
-	dw RemoraidBitmasks
-	dw OctilleryBitmasks
+	dw LatiosBitmasks
+	dw PalkiaBitmasks
 	dw KyogreBitmasks
-	dw MantineBitmasks
+	dw GroudonBitmasks
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks

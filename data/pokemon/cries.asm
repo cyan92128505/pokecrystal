@@ -155,7 +155,7 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI
 	mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR
 	mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE
-	mon_cry CRY_PARAS,       153,  383 ; MEWTWO
+	mon_cry CRY_PARAS,       153,  383 ; DARKRAI
 	mon_cry CRY_PARAS,       238,  383 ; MEW
 	mon_cry CRY_CHIKORITA,   -16,  176 ; CHIKORITA
 	mon_cry CRY_CHIKORITA,   -34,  288 ; BAYLEEF
@@ -228,8 +228,8 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   510,  320 ; SWINUB
 	mon_cry CRY_MAGCARGO,   -265,  256 ; PILOSWINE
 	mon_cry CRY_MAGCARGO,    161,  232 ; CORSOLA
-	mon_cry CRY_SUNFLORA,     13,  256 ; REMORAID
-	mon_cry CRY_TOTODILE,      0,  384 ; OCTILLERY
+	mon_cry CRY_SUNFLORA,     13,  256 ; LATIOS
+	mon_cry CRY_TOTODILE,      0,  384 ; PALKIA
 	mon_cry CRY_TEDDIURSA,     2,  106 ; KYOGRE
 	mon_cry CRY_MANTINE,    -190,  240 ; MANTINE
 	mon_cry CRY_AMPHAROS,   2217,  384 ; SKARMORY

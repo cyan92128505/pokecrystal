@@ -112,7 +112,7 @@
 	const DOUBLE_TEAM  ; 68
 	const RECOVER      ; 69
 	const HARDEN       ; 6a
-	const MINIMIZE     ; 6b
+	const DARK_VOID    ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
 	const WITHDRAW     ; 6e
@@ -122,7 +122,7 @@
 	const HAZE         ; 72
 	const REFLECT      ; 73
 	const FOCUS_ENERGY ; 74
-	const BIDE         ; 75
+	const AURA_SPHERE  ; 75
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
 	const SELFDESTRUCT ; 78
@@ -230,7 +230,7 @@
 	const MAGNITUDE    ; de
 	const DYNAMICPUNCH ; df
 	const MEGAHORN     ; e0
-	const DRAGONBREATH ; e1
+	const DRAGON_PULSE ; e1
 	const BATON_PASS   ; e2
 	const ENCORE       ; e3
 	const PURSUIT      ; e4

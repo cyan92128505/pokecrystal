@@ -149,7 +149,7 @@ FramesPointers:
 	dw DratiniFrames
 	dw DragonairFrames
 	dw DragoniteFrames
-	dw MewtwoFrames
+	dw DarkraiFrames
 	dw MewFrames
 	dw ChikoritaFrames
 	dw BayleefFrames
@@ -222,10 +222,10 @@ FramesPointers:
 	dw SwinubFrames
 	dw PiloswineFrames
 	dw CorsolaFrames
-	dw RemoraidFrames
-	dw OctilleryFrames
+	dw LatiosFrames
+	dw PalkiaFrames
 	dw KyogreFrames
-	dw MantineFrames
+	dw GroudonFrames
 	dw SkarmoryFrames
 	dw HoundourFrames
 	dw HoundoomFrames

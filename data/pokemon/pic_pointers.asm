@@ -301,8 +301,8 @@ PokemonPicPointers::
 	dba_pic DragonairBackpic
 	dba_pic DragoniteFrontpic
 	dba_pic DragoniteBackpic
-	dba_pic MewtwoFrontpic
-	dba_pic MewtwoBackpic
+	dba_pic DarkraiFrontpic
+	dba_pic DarkraiBackpic
 	dba_pic MewFrontpic
 	dba_pic MewBackpic
 	dba_pic ChikoritaFrontpic
@@ -450,14 +450,14 @@ PokemonPicPointers::
 	dba_pic PiloswineBackpic
 	dba_pic CorsolaFrontpic
 	dba_pic CorsolaBackpic
-	dba_pic RemoraidFrontpic
-	dba_pic RemoraidBackpic
-	dba_pic OctilleryFrontpic
-	dba_pic OctilleryBackpic
+	dba_pic LatiosFrontpic
+	dba_pic LatiosBackpic
+	dba_pic PalkiaFrontpic
+	dba_pic PalkiaBackpic
 	dba_pic KyogreFrontpic
 	dba_pic KyogreBackpic
-	dba_pic MantineFrontpic
-	dba_pic MantineBackpic
+	dba_pic GroudonFrontpic
+	dba_pic GroudonBackpic
 	dba_pic SkarmoryFrontpic
 	dba_pic SkarmoryBackpic
 	dba_pic HoundourFrontpic

@@ -1,4 +1,4 @@
-	db MEWTWO ; 252
+	db DARKRAI ; 252
 
 	db 106, 110,  90, 130, 154,  154
 	;   hp  atk  def  spd  sat  sdf

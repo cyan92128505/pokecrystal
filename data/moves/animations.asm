@@ -108,7 +108,7 @@ BattleAnimations::
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
 	dw BattleAnim_Harden
-	dw BattleAnim_Minimize
+	dw BattleAnim_DarkVoid
 	dw BattleAnim_Smokescreen
 	dw BattleAnim_ConfuseRay
 	dw BattleAnim_Withdraw
@@ -118,7 +118,7 @@ BattleAnimations::
 	dw BattleAnim_Haze
 	dw BattleAnim_Reflect
 	dw BattleAnim_FocusEnergy
-	dw BattleAnim_Bide
+	dw BattleAnim_AuraSphere
 	dw BattleAnim_Metronome
 	dw BattleAnim_MirrorMove
 	dw BattleAnim_Selfdestruct
@@ -2165,6 +2165,7 @@ BattleAnim_Whirlwind:
 .done
 	anim_ret
 
+BattleAnim_DarkVoid:
 BattleAnim_Hypnosis:
 	anim_1gfx ANIM_GFX_PSYCHIC
 .loop
@@ -4500,6 +4501,7 @@ BattleAnim_Ancientpower:
 	anim_wait 6
 	anim_ret
 
+BattleAnim_AuraSphere:
 BattleAnim_ShadowBall:
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE
 	anim_bgp $1b

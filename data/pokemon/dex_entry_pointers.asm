@@ -150,7 +150,7 @@ PokedexDataPointerTable:
 	dw DratiniPokedexEntry
 	dw DragonairPokedexEntry
 	dw DragonitePokedexEntry
-	dw MewtwoPokedexEntry
+	dw DarkraiPokedexEntry
 	dw MewPokedexEntry
 	dw ChikoritaPokedexEntry
 	dw BayleefPokedexEntry
@@ -223,10 +223,10 @@ PokedexDataPointerTable:
 	dw SwinubPokedexEntry
 	dw PiloswinePokedexEntry
 	dw CorsolaPokedexEntry
-	dw RemoraidPokedexEntry
-	dw OctilleryPokedexEntry
+	dw LatiosPokedexEntry
+	dw PalkiaPokedexEntry
 	dw KyogrePokedexEntry
-	dw MantinePokedexEntry
+	dw GroudonPokedexEntry
 	dw SkarmoryPokedexEntry
 	dw HoundourPokedexEntry
 	dw HoundoomPokedexEntry

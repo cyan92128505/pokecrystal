@@ -341,7 +341,7 @@ INCBIN "gfx/footprints/moltres.1bpp",    footprint_top
 INCBIN "gfx/footprints/dratini.1bpp",    footprint_top
 INCBIN "gfx/footprints/dragonair.1bpp",  footprint_top
 INCBIN "gfx/footprints/dragonite.1bpp",  footprint_top
-INCBIN "gfx/footprints/mewtwo.1bpp",     footprint_top
+INCBIN "gfx/footprints/darkrai.1bpp",     footprint_top
 INCBIN "gfx/footprints/mew.1bpp",        footprint_top
 INCBIN "gfx/footprints/chikorita.1bpp",  footprint_top
 ; 145-152 bottom halves
@@ -350,7 +350,7 @@ INCBIN "gfx/footprints/moltres.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/dratini.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/dragonair.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/dragonite.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/mewtwo.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/darkrai.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/mew.1bpp",        footprint_bottom
 INCBIN "gfx/footprints/chikorita.1bpp",  footprint_bottom
 ; 153-160 top halves
@@ -504,8 +504,8 @@ INCBIN "gfx/footprints/magcargo.1bpp",   footprint_top
 INCBIN "gfx/footprints/swinub.1bpp",     footprint_top
 INCBIN "gfx/footprints/piloswine.1bpp",  footprint_top
 INCBIN "gfx/footprints/corsola.1bpp",    footprint_top
-INCBIN "gfx/footprints/remoraid.1bpp",   footprint_top
-INCBIN "gfx/footprints/octillery.1bpp",  footprint_top
+INCBIN "gfx/footprints/latios.1bpp",   footprint_top
+INCBIN "gfx/footprints/palkia.1bpp",  footprint_top
 ; 217-224 bottom halves
 INCBIN "gfx/footprints/ursaring.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/slugma.1bpp",     footprint_bottom
@@ -513,11 +513,11 @@ INCBIN "gfx/footprints/magcargo.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/swinub.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/piloswine.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/corsola.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/remoraid.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/octillery.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/latios.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/palkia.1bpp",  footprint_bottom
 ; 225-232 top halves
 INCBIN "gfx/footprints/kyogre.1bpp",   footprint_top
-INCBIN "gfx/footprints/mantine.1bpp",    footprint_top
+INCBIN "gfx/footprints/groudon.1bpp",    footprint_top
 INCBIN "gfx/footprints/skarmory.1bpp",   footprint_top
 INCBIN "gfx/footprints/houndour.1bpp",   footprint_top
 INCBIN "gfx/footprints/houndoom.1bpp",   footprint_top
@@ -526,7 +526,7 @@ INCBIN "gfx/footprints/phanpy.1bpp",     footprint_top
 INCBIN "gfx/footprints/donphan.1bpp",    footprint_top
 ; 225-232 bottom halves
 INCBIN "gfx/footprints/kyogre.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/mantine.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/groudon.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/skarmory.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/houndour.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/houndoom.1bpp",   footprint_bottom

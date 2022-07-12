@@ -149,7 +149,7 @@ AnimationPointers:
 	dw DratiniAnimation
 	dw DragonairAnimation
 	dw DragoniteAnimation
-	dw MewtwoAnimation
+	dw DarkraiAnimation
 	dw MewAnimation
 	dw ChikoritaAnimation
 	dw BayleefAnimation
@@ -222,10 +222,10 @@ AnimationPointers:
 	dw SwinubAnimation
 	dw PiloswineAnimation
 	dw CorsolaAnimation
-	dw RemoraidAnimation
-	dw OctilleryAnimation
+	dw LatiosAnimation
+	dw PalkiaAnimation
 	dw KyogreAnimation
-	dw MantineAnimation
+	dw GroudonAnimation
 	dw SkarmoryAnimation
 	dw HoundourAnimation
 	dw HoundoomAnimation

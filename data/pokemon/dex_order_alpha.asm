@@ -38,6 +38,7 @@ AlphabeticalPokedexOrder:
 	db CROCONAW
 	db CUBONE
 	db CYNDAQUIL
+	db DARKRAI
 	db DEWGONG
 	db DIALGA
 	db DIGLETT
@@ -80,6 +81,7 @@ AlphabeticalPokedexOrder:
 	db GRANBULL
 	db GRAVELER
 	db GRIMER
+	db GROUDON
 	db GROWLITHE
 	db GYARADOS
 	db HAUNTER
@@ -113,6 +115,7 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
+	db LATIOS
 	db LEDIAN
 	db LEDYBA
 	db LICKITUNG
@@ -126,7 +129,6 @@ AlphabeticalPokedexOrder:
 	db MAGNEMITE
 	db MAGNETON
 	db MANKEY
-	db MANTINE
 	db MAREEP
 	db MARILL
 	db MAROWAK
@@ -134,7 +136,6 @@ AlphabeticalPokedexOrder:
 	db MEOWTH
 	db METAPOD
 	db MEW
-	db MEWTWO
 	db MEW2_OG
 	db MILTANK
 	db MISDREAVUS
@@ -151,11 +152,11 @@ AlphabeticalPokedexOrder:
 	db NIDORINO
 	db NINETALES
 	db NOCTOWL
-	db OCTILLERY
 	db ODDISH
 	db OMANYTE
 	db OMASTAR
 	db ONIX
+	db PALKIA
 	db PARAS
 	db PARASECT
 	db PERSIAN
@@ -187,7 +188,6 @@ AlphabeticalPokedexOrder:
 	db RATICATE
 	db RATTATA
 	db RAYQUAZA
-	db REMORAID
 	db RHYDON
 	db RHYHORN
 	db SANDSHREW

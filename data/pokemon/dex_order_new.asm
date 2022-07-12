@@ -168,8 +168,6 @@ NewPokedexOrder:
 	db SHELLDER
 	db CLOYSTER
 	db CORSOLA
-	db REMORAID
-	db OCTILLERY
 	db CHINCHOU
 	db LANTURN
 	db SEEL
@@ -192,7 +190,6 @@ NewPokedexOrder:
 	db URSARING
 	db PHANPY
 	db DONPHAN
-	db MANTINE
 	db SKARMORY
 	db DODUO
 	db DODRIO
@@ -244,12 +241,15 @@ NewPokedexOrder:
 	db TYRANITAR
 	db LUGIA
 	db HO_OH
-	db MEWTWO
 	db MEW
 	db CELEBI
+	db LATIOS
 	db KYOGRE
+	db GROUDON
 	db RAYQUAZA
+	db DARKRAI
 	db DIALGA
+	db PALKIA
 	db XERNEAS
 	db YVELTAL
 	db MEW2_OG

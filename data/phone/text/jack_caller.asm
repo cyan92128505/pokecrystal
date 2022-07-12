@@ -88,11 +88,8 @@ JackSolarbeamTriviaText:
 JackStompTriviaText:
 	text "Did you know…?"
 
-	para "If the opponent"
-	line "uses MINIMIZE,"
-
-	para "your STOMP becomes"
-	line "more powerful."
+	para "......"
+	line "never mind."
 	done
 
 JackGustTriviaText:

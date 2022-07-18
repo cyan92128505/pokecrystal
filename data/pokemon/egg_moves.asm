@@ -645,11 +645,10 @@ SnubbullEggMoves:
 	db LEER
 	db -1 ; end
 
-QwilfishEggMoves:
-	db FLAIL
-	db HAZE
-	db BUBBLEBEAM
-	db SUPERSONIC
+GarchompEggMoves:
+	db OUTRAGE
+	db SWORDS_DANCE
+	db EARTHQUAKE
 	db -1 ; end
 
 ShuckleEggMoves:
@@ -688,13 +687,6 @@ SwinubEggMoves:
 	db BODY_SLAM
 	db ROCK_SLIDE
 	db ANCIENTPOWER
-	db -1 ; end
-
-CorsolaEggMoves:
-	db ROCK_SLIDE
-	db SAFEGUARD
-	db SCREECH
-	db AMNESIA
 	db -1 ; end
 
 SkarmoryEggMoves:

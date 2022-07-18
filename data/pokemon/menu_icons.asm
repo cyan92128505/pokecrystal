@@ -212,7 +212,7 @@ MonMenuIcons:
 	db ICON_SERPENT     ; STEELIX
 	db ICON_MONSTER     ; SNUBBULL
 	db ICON_MONSTER     ; GRANBULL
-	db ICON_FISH        ; QWILFISH
+	db ICON_BIGMON      ; GARCHOMP
 	db ICON_BUG         ; SCIZOR
 	db ICON_BUG         ; SHUCKLE
 	db ICON_BUG         ; HERACROSS
@@ -223,7 +223,7 @@ MonMenuIcons:
 	db ICON_BLOB        ; MAGCARGO
 	db ICON_EQUINE      ; SWINUB
 	db ICON_EQUINE      ; PILOSWINE
-	db ICON_SHELL       ; CORSOLA
+	db ICON_GHOST       ; SPIRITOMB
 	db ICON_BIGMON      ; LATIOS
 	db ICON_BIGMON      ; PALKIA
 	db ICON_FISH        ; KYOGRE

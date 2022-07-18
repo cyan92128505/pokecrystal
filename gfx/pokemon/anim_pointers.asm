@@ -210,7 +210,7 @@ AnimationPointers:
 	dw SteelixAnimation
 	dw SnubbullAnimation
 	dw GranbullAnimation
-	dw QwilfishAnimation
+	dw GarchompAnimation
 	dw ScizorAnimation
 	dw ShuckleAnimation
 	dw HeracrossAnimation
@@ -221,7 +221,7 @@ AnimationPointers:
 	dw MagcargoAnimation
 	dw SwinubAnimation
 	dw PiloswineAnimation
-	dw CorsolaAnimation
+	dw SpiritombAnimation
 	dw LatiosAnimation
 	dw PalkiaAnimation
 	dw KyogreAnimation

@@ -101,11 +101,11 @@
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
-	const FARFETCH_D ; 53
+	const FARFETCH_D ; 53   magnezone
 	const DODUO      ; 54
 	const DODRIO     ; 55
-	const SEEL       ; 56
-	const DEWGONG    ; 57
+	const SEEL       ; 56   yanmega
+	const DEWGONG    ; 57   glisocr
 	const GRIMER     ; 58
 	const MUK        ; 59
 	const SHELLDER   ; 5a
@@ -116,8 +116,8 @@
 	const ONIX       ; 5f
 	const DROWZEE    ; 60
 	const HYPNO      ; 61
-	const KRABBY     ; 62
-	const KINGLER    ; 63
+	const KRABBY     ; 62   milotic
+	const KINGLER    ; 63   ryperior
 	const VOLTORB    ; 64
 	const ELECTRODE  ; 65
 	const EXEGGCUTE  ; 66
@@ -133,11 +133,11 @@
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
 	const TANGELA    ; 72
-	const KANGASKHAN ; 73
-	const HORSEA     ; 74
-	const SEADRA     ; 75
-	const GOLDEEN    ; 76
-	const SEAKING    ; 77
+	const KANGASKHAN ; 73   tangrowth
+	const HORSEA     ; 74   togekiss
+	const SEADRA     ; 75   elecivire
+	const GOLDEEN    ; 76   magmortar
+	const SEAKING    ; 77   mismagus
 	const STARYU     ; 78
 	const STARMIE    ; 79
 	const MR__MIME   ; 7a
@@ -171,29 +171,29 @@
 	const DARKRAI    ; 96
 	const MEW        ; 97
 JOHTO_POKEMON EQU const_value
-	const CHIKORITA  ; 98
-	const BAYLEEF    ; 99
-	const MEGANIUM   ; 9a
-	const CYNDAQUIL  ; 9b
-	const QUILAVA    ; 9c
-	const TYPHLOSION ; 9d
-	const TOTODILE   ; 9e
-	const CROCONAW   ; 9f
-	const FERALIGATR ; a0
-	const SENTRET    ; a1
-	const FURRET     ; a2
+	const CHIKORITA  ; 98   ...
+	const BAYLEEF    ; 99   ...
+	const MEGANIUM   ; 9a   septile
+	const CYNDAQUIL  ; 9b   ...
+	const QUILAVA    ; 9c   ...
+	const TYPHLOSION ; 9d   infernape
+	const TOTODILE   ; 9e   ...
+	const CROCONAW   ; 9f   ...
+	const FERALIGATR ; a0   gredinja
+	const SENTRET    ; a1   ...
+	const FURRET     ; a2   lucario
 	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
-	const LEDYBA     ; a5
-	const LEDIAN     ; a6
+	const LEDYBA     ; a5   ...
+	const LEDIAN     ; a6   excadrill
 	const SPINARAK   ; a7
 	const ARIADOS    ; a8
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const PICHU      ; ac
-	const CLEFFA     ; ad
-	const IGGLYBUFF  ; ae
+	const PICHU      ; ac   ...
+	const CLEFFA     ; ad   ...
+	const IGGLYBUFF  ; ae   chandelur
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
 	const NATU       ; b1
@@ -202,16 +202,16 @@ JOHTO_POKEMON EQU const_value
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
 	const BELLOSSOM  ; b6
-	const MARILL     ; b7
-	const AZUMARILL  ; b8
+	const MARILL     ; b7   hunchcrow
+	const AZUMARILL  ; b8   porygonz
 	const SUDOWOODO  ; b9
 	const POLITOED   ; ba
-	const HOPPIP     ; bb
-	const SKIPLOOM   ; bc
-	const JUMPLUFF   ; bd
-	const AIPOM      ; be
-	const SUNKERN    ; bf
-	const SUNFLORA   ; c0
+	const HOPPIP     ; bb   ...
+	const SKIPLOOM   ; bc   ...
+	const JUMPLUFF   ; bd   Staraptor
+	const AIPOM      ; be   ...
+	const SUNKERN    ; bf   ...
+	const SUNFLORA   ; c0   Metagross
 	const YANMA      ; c1
 	const WOOPER     ; c2
 	const QUAGSIRE   ; c3
@@ -222,26 +222,26 @@ JOHTO_POKEMON EQU const_value
 	const MISDREAVUS ; c8
 	const UNOWN      ; c9
 	const WOBBUFFET  ; ca
-	const GIRAFARIG  ; cb
-	const PINECO     ; cc
-	const FORRETRESS ; cd
+	const GIRAFARIG  ; cb   ...
+	const PINECO     ; cc   ...
+	const FORRETRESS ; cd   Salamence
 	const DUNSPARCE  ; ce
 	const GLIGAR     ; cf
 	const STEELIX    ; d0
-	const SNUBBULL   ; d1
-	const GRANBULL   ; d2
-	const QWILFISH   ; d3
+	const SNUBBULL   ; d1   ...
+	const GRANBULL   ; d2   ...
+	const GARCHOMP   ; d3   Garchomp
 	const SCIZOR     ; d4
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
-	const SLUGMA     ; da
-	const MAGCARGO   ; db
+	const SLUGMA     ; da   weevil
+	const MAGCARGO   ; db   mamoswine
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
-	const CORSOLA    ; de
+	const SPIRITOMB  ; de
 	const LATIOS     ; df
 	const PALKIA     ; e0
 	const KYOGRE     ; e1

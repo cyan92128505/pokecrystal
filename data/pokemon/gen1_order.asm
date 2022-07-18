@@ -78,7 +78,7 @@ Pokered_MonIndices:
 	db DITTO
 	db MEOWTH
 	db KRABBY
-	db CORSOLA ; MISSINGNO.
+	db SPIRITOMB ; MISSINGNO.
 	db LATIOS ; MISSINGNO.
 	db PALKIA ; MISSINGNO.
 	db VULPIX
@@ -250,7 +250,7 @@ Pokered_MonIndices:
 	db STEELIX
 	db SNUBBULL
 	db GRANBULL
-	db QWILFISH
+	db GARCHOMP
 	db WOBBUFFET
 	db WOBBUFFET
 	db MEW2_OG

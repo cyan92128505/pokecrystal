@@ -157,7 +157,6 @@ NewPokedexOrder:
 	db FARFETCH_D
 	db NATU
 	db XATU
-	db QWILFISH
 	db TENTACOOL
 	db TENTACRUEL
 	db KRABBY
@@ -167,7 +166,6 @@ NewPokedexOrder:
 	db STARMIE
 	db SHELLDER
 	db CLOYSTER
-	db CORSOLA
 	db CHINCHOU
 	db LANTURN
 	db SEEL
@@ -239,6 +237,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db GARCHOMP
 	db LUGIA
 	db HO_OH
 	db MEW
@@ -247,6 +246,7 @@ NewPokedexOrder:
 	db KYOGRE
 	db GROUDON
 	db RAYQUAZA
+	db SPIRITOMB
 	db DARKRAI
 	db DIALGA
 	db PALKIA

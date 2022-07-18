@@ -426,8 +426,8 @@ PokemonPicPointers::
 	dba_pic SnubbullBackpic
 	dba_pic GranbullFrontpic
 	dba_pic GranbullBackpic
-	dba_pic QwilfishFrontpic
-	dba_pic QwilfishBackpic
+	dba_pic GarchompFrontpic
+	dba_pic GarchompBackpic
 	dba_pic ScizorFrontpic
 	dba_pic ScizorBackpic
 	dba_pic ShuckleFrontpic
@@ -448,8 +448,8 @@ PokemonPicPointers::
 	dba_pic SwinubBackpic
 	dba_pic PiloswineFrontpic
 	dba_pic PiloswineBackpic
-	dba_pic CorsolaFrontpic
-	dba_pic CorsolaBackpic
+	dba_pic SpiritombFrontpic
+	dba_pic SpiritombBackpic
 	dba_pic LatiosFrontpic
 	dba_pic LatiosBackpic
 	dba_pic PalkiaFrontpic

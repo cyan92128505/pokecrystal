@@ -5475,6 +5475,22 @@ BattleCommand_CheckDeathImmunity:
     jr z, .immune
     cp YVELTAL
     jr z, .immune
+    cp XERNEAS
+    jr z, .immune
+    cp DIALGA
+    jr z, .immune
+    cp PALKIA
+    jr z, .immune
+    cp KYOGRE
+    jr z, .immune
+    cp GROUDON
+    jr z, .immune
+    cp RAYQUAZA
+    jr z, .immune
+    cp LUGIA
+    jr z, .immune
+    cp HO_OH
+    jr z, .immune
     ret
 .immune
     ld a, 1

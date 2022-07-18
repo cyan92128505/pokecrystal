@@ -1,7 +1,7 @@
 	db DARKRAI ; 150
 
 	db 70, 90,  90, 125, 135,  90
-	;   hp  atk  def  spd  sat  sdf
+	;  hp  atk  def  spd  sat  sdf
 
 	db DARK, DARK ; type
 	db 3 ; catch rate

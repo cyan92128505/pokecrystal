@@ -211,7 +211,7 @@ PokedexDataPointerTable:
 	dw SteelixPokedexEntry
 	dw SnubbullPokedexEntry
 	dw GranbullPokedexEntry
-	dw QwilfishPokedexEntry
+	dw GarchompPokedexEntry
 	dw ScizorPokedexEntry
 	dw ShucklePokedexEntry
 	dw HeracrossPokedexEntry
@@ -222,7 +222,7 @@ PokedexDataPointerTable:
 	dw MagcargoPokedexEntry
 	dw SwinubPokedexEntry
 	dw PiloswinePokedexEntry
-	dw CorsolaPokedexEntry
+	dw SpiritombPokedexEntry
 	dw LatiosPokedexEntry
 	dw PalkiaPokedexEntry
 	dw KyogrePokedexEntry

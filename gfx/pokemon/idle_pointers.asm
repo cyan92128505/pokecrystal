@@ -210,7 +210,7 @@ AnimationIdlePointers:
 	dw SteelixAnimationIdle
 	dw SnubbullAnimationIdle
 	dw GranbullAnimationIdle
-	dw QwilfishAnimationIdle
+	dw GarchompAnimationIdle
 	dw ScizorAnimationIdle
 	dw ShuckleAnimationIdle
 	dw HeracrossAnimationIdle
@@ -221,7 +221,7 @@ AnimationIdlePointers:
 	dw MagcargoAnimationIdle
 	dw SwinubAnimationIdle
 	dw PiloswineAnimationIdle
-	dw CorsolaAnimationIdle
+	dw SpiritombAnimationIdle
 	dw LatiosAnimationIdle
 	dw PalkiaAnimationIdle
 	dw KyogreAnimationIdle

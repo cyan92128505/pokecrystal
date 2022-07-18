@@ -14,7 +14,7 @@ BattleAnimations::
 	dw BattleAnim_Scratch
 	dw BattleAnim_DarkPulse
 	dw BattleAnim_Guillotine
-	dw BattleAnim_Fly
+	dw BattleAnim_SkyCleave
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
 	dw BattleAnim_Gust
@@ -122,9 +122,9 @@ BattleAnimations::
 	dw BattleAnim_Metronome
 	dw BattleAnim_MirrorMove
 	dw BattleAnim_Selfdestruct
-	dw BattleAnim_EggBomb
+	dw BattleAnim_BraveBird
 	dw BattleAnim_Lick
-	dw BattleAnim_Smog
+	dw BattleAnim_EarthPower
 	dw BattleAnim_Sludge
 	dw BattleAnim_BoneClub
 	dw BattleAnim_FireBlast
@@ -2110,6 +2110,7 @@ BattleAnim_TakeDown:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_BraveBird:
 BattleAnim_DoubleEdge:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
@@ -3494,6 +3495,7 @@ BattleAnim_SludgeBomb:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_EarthPower:
 BattleAnim_MudSlap:
 	anim_1gfx ANIM_GFX_SAND
 	anim_obp0 $fc
@@ -4455,6 +4457,7 @@ BattleAnim_PsychUp:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_SkyCleave:
 BattleAnim_Extremespeed:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0

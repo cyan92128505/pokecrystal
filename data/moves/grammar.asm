@@ -11,8 +11,6 @@ MoveGrammar:
 	db SMOKESCREEN
 	db WITHDRAW
 	db DEFENSE_CURL
-	db EGG_BOMB
-	db SMOG
 	db BONE_CLUB
 	db FLASH
 	db SPLASH

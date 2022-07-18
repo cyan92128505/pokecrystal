@@ -212,7 +212,7 @@ EvosAttacksPointers::
 	dw SteelixEvosAttacks
 	dw SnubbullEvosAttacks
 	dw GranbullEvosAttacks
-	dw QwilfishEvosAttacks
+	dw GarchompEvosAttacks
 	dw ScizorEvosAttacks
 	dw ShuckleEvosAttacks
 	dw HeracrossEvosAttacks
@@ -223,7 +223,7 @@ EvosAttacksPointers::
 	dw MagcargoEvosAttacks
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
-	dw CorsolaEvosAttacks
+	dw SpiritombEvosAttacks
 	dw LatiosEvosAttacks
 	dw PalkiaEvosAttacks
 	dw KyogreEvosAttacks

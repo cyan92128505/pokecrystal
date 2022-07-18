@@ -19,7 +19,6 @@ StallMoves:
 	db HARDEN
 	db WITHDRAW
 	db DEFENSE_CURL
-	db BARRIER
 	db LIGHT_SCREEN
 	db HAZE
 	db REFLECT
@@ -33,8 +32,8 @@ StallMoves:
 	db CONVERSION
 	db SUBSTITUTE
 	db FLAME_WHEEL
-	db HOLY_ARMOUR
-	db FURIOUS_WILL
 	db CALM_MIND
 	db NASTY_PLOT
+	db GEOMANCY
+	db FURIOUS_WILL
 	db -1 ; end

@@ -210,7 +210,7 @@ FramesPointers:
 	dw SteelixFrames
 	dw SnubbullFrames
 	dw GranbullFrames
-	dw QwilfishFrames
+	dw GarchompFrames
 	dw ScizorFrames
 	dw ShuckleFrames
 	dw HeracrossFrames
@@ -221,7 +221,7 @@ FramesPointers:
 	dw MagcargoFrames
 	dw SwinubFrames
 	dw PiloswineFrames
-	dw CorsolaFrames
+	dw SpiritombFrames
 	dw LatiosFrames
 	dw PalkiaFrames
 	dw KyogreFrames

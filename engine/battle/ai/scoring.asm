@@ -544,6 +544,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
 	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
 	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
+	dbw EFFECT_CALM_MIND,        AI_Smart_CalmMind
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -2028,6 +2029,15 @@ AI_Smart_Curse:
 ; don't go past +4
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
+	jr c, .continue
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+.continue
+; don't use if player has boosted special attack
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage
 
 ; encourage to +1, strongly encourage to +2 if player has boosted Atk
@@ -2923,11 +2933,55 @@ AI_Smart_FuriousWill:
     cp BASE_STAT_LEVEL + 2
     jr nc, .checkToxic ;
 	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .strongEncourage
 	jr .encourage
 
 ; discourage after +2 if afflicted with toxic
+.checkToxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
+.strongEncourage
+    dec [hl]
+.encourage
+    dec [hl]
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_CalmMind:
+; don't go past +4
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .continue
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+.continue
+; don't use if player has boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage
+
+; encourage to +1, strongly encourage if player has boosted SpAtk
+    cp BASE_STAT_LEVEL + 1
+    jr nc, .checkToxic ;
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .strongEncourage
+	jr .encourage
+
+; discourage after +1 if afflicted with toxic
 .checkToxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
@@ -2979,7 +3033,7 @@ AI_Smart_SwordsDance:
 
 AI_Smart_Barrier:
 ; don't go past +4
-    ld a, [wEnemySDefLevel]
+    ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
@@ -3000,7 +3054,7 @@ AI_Smart_Barrier:
 	jr nc, .strongEncourage
 
 ; otherwise encourage to +2
-    ld a, [wEnemySDefLevel]
+    ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
@@ -3017,6 +3071,7 @@ AI_Smart_Barrier:
 	inc [hl]
 	ret
 
+AI_Smart_Geomancy:
 AI_Smart_NastyPlot:
 ; don't go past +4
     ld a, [wEnemySAtkLevel]
@@ -3035,8 +3090,6 @@ AI_Smart_NastyPlot:
     jr nz, .discourage
 
     ret
-.strongEncourage
-    dec [hl]
 .encourage
     dec [hl]
 	dec [hl]
@@ -3046,24 +3099,6 @@ AI_Smart_NastyPlot:
 	inc [hl]
 	inc [hl]
 	inc [hl]
-	ret
-
-AI_Smart_Geomancy:
-; strongly encourage to +2
-    cp BASE_STAT_LEVEL + 2
-    jr nc, .encourage ;
-
-; discourage after +2
-    inc [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
-
-.encourage
-    dec [hl]
-    dec [hl]
-	dec [hl]
 	ret
 
 AICompareSpeed:
@@ -3308,6 +3343,7 @@ AI_Opportunist:
 	pop hl
 	jr nc, .checkmove
 
+	inc [hl]
 	inc [hl]
 	jr .checkmove
 

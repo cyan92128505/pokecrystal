@@ -14,14 +14,14 @@ FishGroups:
 	fishgroup 50 percent + 1, .Lake_Old,             .Lake_Good,             .Lake_Super
 	fishgroup 50 percent + 1, .Pond_Old,             .Pond_Good,             .Pond_Super
 	fishgroup 50 percent + 1, .Dratini_Old,          .Dratini_Good,          .Dratini_Super
-	fishgroup 50 percent + 1, .Qwilfish_Swarm_Old,   .Qwilfish_Swarm_Good,   .Qwilfish_Swarm_Super
+	fishgroup 50 percent + 1, .Garchomp_Swarm_Old,   .Garchomp_Swarm_Good,   .Garchomp_Swarm_Super
 	fishgroup 50 percent + 1, .Latios_Swarm_Old,   .Latios_Swarm_Good,   .Latios_Swarm_Super
 	fishgroup 50 percent + 1, .Gyarados_Old,         .Gyarados_Good,         .Gyarados_Super
 	fishgroup 50 percent + 1, .Dratini_2_Old,        .Dratini_2_Good,        .Dratini_2_Super
 	fishgroup 50 percent + 1, .WhirlIslands_Old,     .WhirlIslands_Good,     .WhirlIslands_Super
-	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
+	fishgroup 50 percent + 1, .Garchomp_Old,         .Garchomp_Good,         .Garchomp_Super
 	fishgroup 50 percent + 1, .Latios_Old,         .Latios_Good,         .Latios_Super
-	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+	fishgroup 50 percent + 1, .Garchomp_NoSwarm_Old, .Garchomp_NoSwarm_Good, .Garchomp_NoSwarm_Super
 	assert_table_length NUM_FISHGROUPS
 
 .Shore_Old:
@@ -99,20 +99,20 @@ FishGroups:
 	db  90 percent + 1, MAGIKARP,   40
 	db 100 percent,     DRAGONAIR,  40
 
-.Qwilfish_Swarm_Old:
+.Garchomp_Swarm_Old:
 	db  70 percent + 1, MAGIKARP,   5
 	db  85 percent + 1, MAGIKARP,   5
-	db 100 percent,     QWILFISH,   5
-.Qwilfish_Swarm_Good:
+	db 100 percent,     GARCHOMP,   5
+.Garchomp_Swarm_Good:
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     QWILFISH,   20
-	db  90 percent + 1, QWILFISH,   20
+	db  70 percent,     GARCHOMP,   20
+	db  90 percent + 1, GARCHOMP,   20
 	db 100 percent,     time_group 10
-.Qwilfish_Swarm_Super:
-	db  40 percent,     QWILFISH,   40
+.Garchomp_Swarm_Super:
+	db  40 percent,     GARCHOMP,   40
 	db  70 percent,     time_group 11
-	db  90 percent + 1, QWILFISH,   40
-	db 100 percent,     QWILFISH,   40
+	db  90 percent + 1, GARCHOMP,   40
+	db 100 percent,     GARCHOMP,   40
 
 .Latios_Swarm_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -174,23 +174,23 @@ FishGroups:
 	db  90 percent + 1, KINGLER,    40
 	db 100 percent,     SEADRA,     40
 
-.Qwilfish_NoSwarm_Old:
-.Qwilfish_Old:
+.Garchomp_NoSwarm_Old:
+.Garchomp_Old:
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     TENTACOOL,  10
-.Qwilfish_NoSwarm_Good:
-.Qwilfish_Good:
+.Garchomp_NoSwarm_Good:
+.Garchomp_Good:
 	db  35 percent,     MAGIKARP,   20
 	db  70 percent,     TENTACOOL,  20
 	db  90 percent + 1, TENTACOOL,  20
 	db 100 percent,     time_group 20
-.Qwilfish_NoSwarm_Super:
-.Qwilfish_Super:
+.Garchomp_NoSwarm_Super:
+.Garchomp_Super:
 	db  40 percent,     TENTACOOL,  40
 	db  70 percent,     time_group 21
 	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     QWILFISH,   40
+	db 100 percent,     GARCHOMP,   40
 
 .Latios_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -209,8 +209,8 @@ FishGroups:
 
 TimeFishGroups:
 	;  day              nite
-	db CORSOLA,    20,  STARYU,     20 ; 0
-	db CORSOLA,    40,  STARYU,     40 ; 1
+	db SPIRITOMB,    20,  STARYU,     20 ; 0
+	db SPIRITOMB,    40,  STARYU,     40 ; 1
 	db SHELLDER,   20,  SHELLDER,   20 ; 2
 	db SHELLDER,   40,  SHELLDER,   40 ; 3
 	db GOLDEEN,    20,  GOLDEEN,    20 ; 4
@@ -219,8 +219,8 @@ TimeFishGroups:
 	db POLIWAG,    40,  POLIWAG,    40 ; 7
 	db DRATINI,    20,  DRATINI,    20 ; 8
 	db DRATINI,    40,  DRATINI,    40 ; 9
-	db QWILFISH,   20,  QWILFISH,   20 ; 10
-	db QWILFISH,   40,  QWILFISH,   40 ; 11
+	db GARCHOMP,   20,  GARCHOMP,   20 ; 10
+	db GARCHOMP,   40,  GARCHOMP,   40 ; 11
 	db LATIOS,   20,  LATIOS,   20 ; 12
 	db LATIOS,   40,  LATIOS,   40 ; 13
 	db GYARADOS,   20,  GYARADOS,   20 ; 14

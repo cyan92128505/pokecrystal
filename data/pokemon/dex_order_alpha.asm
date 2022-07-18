@@ -33,7 +33,6 @@ AlphabeticalPokedexOrder:
 	db CLEFAIRY
 	db CLEFFA
 	db CLOYSTER
-	db CORSOLA
 	db CROBAT
 	db CROCONAW
 	db CUBONE
@@ -67,6 +66,7 @@ AlphabeticalPokedexOrder:
 	db FLAREON
 	db FORRETRESS
 	db FURRET
+	db GARCHOMP
 	db GASTLY
 	db GENGAR
 	db GEODUDE
@@ -181,7 +181,6 @@ AlphabeticalPokedexOrder:
 	db PUPITAR
 	db QUAGSIRE
 	db QUILAVA
-	db QWILFISH
 	db RAICHU
 	db RAIKOU
 	db RAPIDASH
@@ -212,6 +211,7 @@ AlphabeticalPokedexOrder:
 	db SNUBBULL
 	db SPEAROW
 	db SPINARAK
+	db SPIRITOMB
 	db SQUIRTLE
 	db STARMIE
 	db STARYU

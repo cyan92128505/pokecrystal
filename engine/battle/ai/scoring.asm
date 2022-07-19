@@ -97,7 +97,7 @@ INCLUDE "data/battle/ai/status_only_effects.asm"
 
 AI_Smart_Switch:
 ; Enemies can switch intelligently under certain conditions
-; 80% chance to switch if unboosted enemy is SLP or FRZ and player sets up
+; switch if unboosted enemy is SLP or FRZ and player sets up
 ; don't switch if enemy is weakened, just let it die
 ; switch if enemy accuracy at -2 or lower
 ; switch if enemy is cursed
@@ -132,8 +132,8 @@ AI_Smart_Switch:
 	bit SUBSTATUS_TOXIC, a
     jr z, .checkLeechSeed
 	call AICheckEnemyHalfHP
-	jr nc, .switch
-	jr .checkSetUpAndSwitch50
+	jp nc, .switch
+	jp .checkSetUpAndSwitch50
 
 .checkLeechSeed
 ; 50% chance to switch per turn if enemy afflicted with leech seed
@@ -159,18 +159,24 @@ AI_Smart_Switch:
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
-; 80% chance to switch if player attempts to set up
+; switch if player attempts to set up
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_ATTACK_UP_2
-	jr z, .switch80
+	jr z, .switch
 	cp EFFECT_SP_ATK_UP
-	jr z, .switch80
+	jr z, .switch
+	cp EFFECT_SP_ATK_UP_2
+	jr z, .switch
 	cp EFFECT_SUBSTITUTE
-	jr z, .switch80
+	jr z, .switch
 	cp EFFECT_CURSE
-	jr z, .switch80
+	jr z, .switch
 	cp EFFECT_FURIOUS_WILL
-	jr z, .switch80
+	jr z, .switch
+	cp EFFECT_GEOMANCY
+	jr z, .switch
+	cp EFFECT_CALM_MIND
+	jr z, .switch
 	ret
 
 .checkSetUpAndSwitch
@@ -551,6 +557,20 @@ AI_Smart_Sleep:
 ; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
+; if faster then continue
+	call AICompareSpeed
+	jr c, .continue
+
+; discourage if faster player has picked substitute
+	ld a, [wCurPlayerMove]
+	cp SUBSTITUTE
+	jr nc, .continue
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+.continue
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
 	jr c, .encourage
@@ -1370,6 +1390,17 @@ AI_Smart_Paralyze:
 ; if enemy is slower than player and its HP is above 25%.
 	call AICompareSpeed
 	ret c
+
+; discourage if faster player has picked substitute
+	ld a, [wCurPlayerMove]
+	cp SUBSTITUTE
+	jr nc, .continue
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+.continue
 	call AICheckEnemyQuarterHP
 	ret nc
 	dec [hl]
@@ -1823,6 +1854,7 @@ AI_Smart_HealBell:
 
 
 AI_Smart_PriorityHit:
+; if faster than the player then do nothing
 	call AICompareSpeed
 	ret c
 
@@ -1831,6 +1863,13 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
+; slightly encourage if below half health
+	call AICheckEnemyHalfHP
+	jr c, .continue
+	dec [hl]
+	dec [hl]
+
+.continue
 ; Greatly encourage this move if it will KO the player.
 	ld a, 1
 	ldh [hBattleTurn], a
@@ -2036,11 +2075,12 @@ AI_Smart_Curse:
 
 .continue
 ; don't use if player has boosted special attack
-    ld a, [wEnemySAtkLevel]
+    ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage
 
 ; encourage to +1, strongly encourage to +2 if player has boosted Atk
+    ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 1
     jr nc, .checkToxic ;
 	ld a, [wPlayerAtkLevel]
@@ -2974,6 +3014,7 @@ AI_Smart_CalmMind:
 	jr nc, .discourage
 
 ; encourage to +1, strongly encourage if player has boosted SpAtk
+    ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 1
     jr nc, .checkToxic ;
 	ld a, [wPlayerSAtkLevel]

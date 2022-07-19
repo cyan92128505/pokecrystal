@@ -2777,16 +2777,12 @@ SnubbullEvosAttacks:
 	db 0 ; no more level-up moves
 
 GranbullEvosAttacks:
+	db EVOLVE_LEVEL, 48, GARCHOMP
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SCARY_FACE
-	db 4, TAIL_WHIP
-	db 8, CHARM
-	db 13, BITE
-	db 19, LICK
-	db 28, ROAR
-	db 38, RAGE
-	db 51, TAKE_DOWN
+	db 1, DRAGON_CLAW
+	db 51, EARTHQUAKE
+	db 60, SWORDS_DANCE
+	db 65, OUTRAGE
 	db 0 ; no more level-up moves
 
 GarchompEvosAttacks:

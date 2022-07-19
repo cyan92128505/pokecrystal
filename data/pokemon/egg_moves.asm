@@ -660,6 +660,7 @@ HeracrossEggMoves:
 	db FLAIL
 	db -1 ; end
 
+
 SneaselEggMoves:
 	db COUNTER
 	db SPITE

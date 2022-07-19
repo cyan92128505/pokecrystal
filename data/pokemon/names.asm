@@ -209,7 +209,7 @@ PokemonNames::
 	db "GLIGAR@@@@"
 	db "STEELIX@@@"
 	db "SNUBBULL@@"
-	db "GRANBULL@@"
+	db "GABITE@@@@"
 	db "GARCHOMP@@"
 	db "SCIZOR@@@@"
 	db "SHUCKLE@@@"

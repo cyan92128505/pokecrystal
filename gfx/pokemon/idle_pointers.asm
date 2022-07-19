@@ -209,7 +209,7 @@ AnimationIdlePointers:
 	dw GligarAnimationIdle
 	dw SteelixAnimationIdle
 	dw SnubbullAnimationIdle
-	dw GranbullAnimationIdle
+	dw GabiteAnimationIdle
 	dw GarchompAnimationIdle
 	dw ScizorAnimationIdle
 	dw ShuckleAnimationIdle

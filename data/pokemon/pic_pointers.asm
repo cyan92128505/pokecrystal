@@ -424,8 +424,8 @@ PokemonPicPointers::
 	dba_pic SteelixBackpic
 	dba_pic SnubbullFrontpic
 	dba_pic SnubbullBackpic
-	dba_pic GranbullFrontpic
-	dba_pic GranbullBackpic
+	dba_pic GabiteFrontpic
+	dba_pic GabiteBackpic
 	dba_pic GarchompFrontpic
 	dba_pic GarchompBackpic
 	dba_pic ScizorFrontpic

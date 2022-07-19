@@ -2776,7 +2776,7 @@ SnubbullEvosAttacks:
 	db 43, TAKE_DOWN
 	db 0 ; no more level-up moves
 
-GranbullEvosAttacks:
+GabiteEvosAttacks:
 	db EVOLVE_LEVEL, 48, GARCHOMP
 	db 0 ; no more evolutions
 	db 1, DRAGON_CLAW

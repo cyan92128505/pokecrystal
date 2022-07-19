@@ -209,7 +209,7 @@ FramesPointers:
 	dw GligarFrames
 	dw SteelixFrames
 	dw SnubbullFrames
-	dw GranbullFrames
+	dw GabiteFrames
 	dw GarchompFrames
 	dw ScizorFrames
 	dw ShuckleFrames

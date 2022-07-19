@@ -209,7 +209,7 @@ BitmasksPointers:
 	dw GligarBitmasks
 	dw SteelixBitmasks
 	dw SnubbullBitmasks
-	dw GranbullBitmasks
+	dw GabiteBitmasks
 	dw GarchompBitmasks
 	dw ScizorBitmasks
 	dw ShuckleBitmasks

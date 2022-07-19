@@ -209,7 +209,7 @@ AnimationPointers:
 	dw GligarAnimation
 	dw SteelixAnimation
 	dw SnubbullAnimation
-	dw GranbullAnimation
+	dw GabiteAnimation
 	dw GarchompAnimation
 	dw ScizorAnimation
 	dw ShuckleAnimation

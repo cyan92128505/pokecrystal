@@ -318,16 +318,16 @@ KantoGrassWildMons:
 	db 14, MAGNEMITE
 	db 15, RATICATE
 	db 12, JIGGLYPUFF
-	db 15, GRANBULL
-	db 15, GRANBULL
+	db 15, GABITE
+	db 15, GABITE
 	; day
 	db 13, RATTATA
 	db 13, SNUBBULL
 	db 14, MAGNEMITE
 	db 15, RATICATE
 	db 12, JIGGLYPUFF
-	db 15, GRANBULL
-	db 15, GRANBULL
+	db 15, GABITE
+	db 15, GABITE
 	; nite
 	db 13, MEOWTH
 	db 13, DROWZEE

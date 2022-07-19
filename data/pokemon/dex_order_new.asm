@@ -125,7 +125,7 @@ NewPokedexOrder:
 	db ELECTRODE
 	db AIPOM
 	db SNUBBULL
-	db GRANBULL
+	db GABITE
 	db VULPIX
 	db NINETALES
 	db GROWLITHE

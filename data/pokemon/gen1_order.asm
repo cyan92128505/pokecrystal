@@ -249,7 +249,7 @@ Pokered_MonIndices:
 	db GLIGAR
 	db STEELIX
 	db SNUBBULL
-	db GRANBULL
+	db GABITE
 	db GARCHOMP
 	db WOBBUFFET
 	db WOBBUFFET

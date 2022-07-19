@@ -2763,7 +2763,7 @@ SteelixEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
-	db EVOLVE_LEVEL, 23, GRANBULL
+	db EVOLVE_LEVEL, 23, GABITE
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCARY_FACE

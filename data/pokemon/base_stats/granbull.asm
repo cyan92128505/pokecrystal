@@ -1,4 +1,4 @@
-	db GRANBULL ; 210
+	db GABITE ; 210
 
 	db  68, 90,  65,  82,  50,  55
 	;   hp  atk  def  spd  sat  sdf

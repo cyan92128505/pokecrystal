@@ -38,6 +38,7 @@ AlphabeticalPokedexOrder:
 	db CUBONE
 	db CYNDAQUIL
 	db DARKRAI
+	db DEOXYS
 	db DEWGONG
 	db DIALGA
 	db DIGLETT
@@ -66,6 +67,7 @@ AlphabeticalPokedexOrder:
 	db FLAREON
 	db FORRETRESS
 	db FURRET
+	db GABITE
 	db GARCHOMP
 	db GASTLY
 	db GENGAR
@@ -78,7 +80,6 @@ AlphabeticalPokedexOrder:
 	db GOLDEEN
 	db GOLDUCK
 	db GOLEM
-	db GABITE
 	db GRAVELER
 	db GRIMER
 	db GROUDON
@@ -123,7 +124,6 @@ AlphabeticalPokedexOrder:
 	db MACHAMP
 	db MACHOKE
 	db MACHOP
-	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
 	db MAGNEMITE

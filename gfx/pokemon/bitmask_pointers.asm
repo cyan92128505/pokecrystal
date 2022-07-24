@@ -218,7 +218,7 @@ BitmasksPointers:
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
 	dw SlugmaBitmasks
-	dw MagcargoBitmasks
+	dw DeoxysBitmasks
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
 	dw SpiritombBitmasks

@@ -218,7 +218,7 @@ FramesPointers:
 	dw TeddiursaFrames
 	dw UrsaringFrames
 	dw SlugmaFrames
-	dw MagcargoFrames
+	dw DeoxysFrames
 	dw SwinubFrames
 	dw PiloswineFrames
 	dw SpiritombFrames

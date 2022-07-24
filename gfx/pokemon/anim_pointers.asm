@@ -218,7 +218,7 @@ AnimationPointers:
 	dw TeddiursaAnimation
 	dw UrsaringAnimation
 	dw SlugmaAnimation
-	dw MagcargoAnimation
+	dw DeoxysAnimation
 	dw SwinubAnimation
 	dw PiloswineAnimation
 	dw SpiritombAnimation

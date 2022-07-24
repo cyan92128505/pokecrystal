@@ -125,7 +125,6 @@ NewPokedexOrder:
 	db ELECTRODE
 	db AIPOM
 	db SNUBBULL
-	db GABITE
 	db VULPIX
 	db NINETALES
 	db GROWLITHE
@@ -202,7 +201,6 @@ NewPokedexOrder:
 	db HOUNDOUR
 	db HOUNDOOM
 	db SLUGMA
-	db MAGCARGO
 	db SNEASEL
 	db MISDREAVUS
 	db PORYGON
@@ -237,6 +235,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db GABITE
 	db GARCHOMP
 	db LUGIA
 	db HO_OH
@@ -246,6 +245,7 @@ NewPokedexOrder:
 	db KYOGRE
 	db GROUDON
 	db RAYQUAZA
+	db DEOXYS
 	db SPIRITOMB
 	db DARKRAI
 	db DIALGA

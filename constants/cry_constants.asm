@@ -67,7 +67,7 @@
 	const CRY_TEDDIURSA
 	const CRY_SUNFLORA
 	const CRY_AMPHAROS
-	const CRY_MAGCARGO
+	const CRY_DEOXYS
 	const CRY_PICHU
 	const CRY_AIPOM
 	const CRY_DUNSPARCE

@@ -220,7 +220,7 @@ EvosAttacksPointers::
 	dw TeddiursaEvosAttacks
 	dw UrsaringEvosAttacks
 	dw SlugmaEvosAttacks
-	dw MagcargoEvosAttacks
+	dw DeoxysEvosAttacks
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
 	dw SpiritombEvosAttacks

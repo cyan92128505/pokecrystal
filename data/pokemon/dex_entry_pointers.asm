@@ -219,7 +219,7 @@ PokedexDataPointerTable:
 	dw TeddiursaPokedexEntry
 	dw UrsaringPokedexEntry
 	dw SlugmaPokedexEntry
-	dw MagcargoPokedexEntry
+	dw DeoxysPokedexEntry
 	dw SwinubPokedexEntry
 	dw PiloswinePokedexEntry
 	dw SpiritombPokedexEntry

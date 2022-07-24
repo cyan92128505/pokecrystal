@@ -1398,7 +1398,7 @@ CuboneEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 5, TAIL_WHIP
-	db 9, BONE_CLUB
+	db 9, DIG
 	db 13, HEADBUTT
 	db 17, LEER
 	db 21, FOCUS_ENERGY
@@ -1413,10 +1413,10 @@ MarowakEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, TAIL_WHIP
-	db 1, BONE_CLUB
+	db 1, DIG
 	db 1, HEADBUTT
 	db 5, TAIL_WHIP
-	db 9, BONE_CLUB
+	db 9, DIG
 	db 13, HEADBUTT
 	db 17, LEER
 	db 21, FOCUS_ENERGY
@@ -2874,7 +2874,7 @@ UrsaringEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:
-	db EVOLVE_LEVEL, 38, MAGCARGO
+	db EVOLVE_LEVEL, 38, DEOXYS
 	db 0 ; no more evolutions
 	db 8, EMBER
 	db 15, ROCK_THROW
@@ -2885,18 +2885,12 @@ SlugmaEvosAttacks:
 	db 50, BODY_SLAM
 	db 0 ; no more level-up moves
 
-MagcargoEvosAttacks:
+DeoxysEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POISON_GAS
-	db 1, EMBER
-	db 1, ROCK_THROW
-	db 8, EMBER
-	db 15, ROCK_THROW
-	db 22, HARDEN
-	db 29, AMNESIA
-	db 36, FLAMETHROWER
-	db 48, ROCK_SLIDE
-	db 60, BODY_SLAM
+	db 1, PSYCHIC_M
+	db 1, THUNDERBOLT
+	db 1, ICE_BEAM
+	db 1, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:

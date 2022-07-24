@@ -126,7 +126,7 @@ BattleAnimations::
 	dw BattleAnim_Lick
 	dw BattleAnim_EarthPower
 	dw BattleAnim_Sludge
-	dw BattleAnim_BoneClub
+	dw BattleAnim_CloseCombat
 	dw BattleAnim_FireBlast
 	dw BattleAnim_Waterfall
 	dw BattleAnim_Clamp
@@ -4063,6 +4063,7 @@ BattleAnim_Magnitude:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_CloseCombat:
 BattleAnim_Dynamicpunch:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_EXPLOSION
 	anim_sound 0, 1, SFX_COMET_PUNCH

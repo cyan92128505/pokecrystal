@@ -22,19 +22,19 @@ AI_Basic:
 	ld de, wEnemyMonMoves
 	ld b, NUM_MOVES + 1
 .checkmove
-	dec b
-	ret z
+	dec b ; b is num moves on 1st pass
+	ret z ; if b os 0 return we are done
 
-	inc hl
-	ld a, [de]
+	inc hl ; increment score to next move score
+	ld a, [de] ; load the move struct
 	and a
-	ret z
+	ret z ; return if no move
 
-	inc de
+	inc de ; increment to next move
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	ld c, a
+	ld c, a ; load move effect into c
 
 ; Dismiss moves with special effects if they are
 ; useless or not a good choice right now.
@@ -46,7 +46,7 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr nz, .discourage
+	jr nz, .discourage ; discourage if AI_Redundant - loop bck to check move
 
 ; Dismiss status-only moves if the player can't be statused.
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
@@ -55,16 +55,16 @@ AI_Basic:
 	push bc
 	ld hl, StatusOnlyEffects
 	ld de, 1
-	call IsInArray
+	call IsInArray ; is the move status only
 
 	pop bc
 	pop de
 	pop hl
-	jr nc, .checkSub
+	jr nc, .checkSub ; if not skip following
 
 	ld a, [wBattleMonStatus]
 	and a
-	jr nz, .discourage
+	jr nz, .discourage ; discourage if the player is already statused - loop back to check move
 
 .checkSub
 ; dismiss moves blocked by sub if sub is up
@@ -81,17 +81,44 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr c, .discourage
+	jr c, .discourage ; discourage if sub is up and blocks move - loop back to check move
 
 .checkSafeguard
 ; Dismiss Safeguard if it's already active.
-	ld a, [wPlayerScreens]
-	bit SCREENS_SAFEGUARD, a
-	jr z, .checkmove
+;	ld a, [wPlayerScreens]
+;	bit SCREENS_SAFEGUARD, a
+;	jr nz, .discourage
+
+; Greatly encourage a move if it will KO the player
+    ld a, 1
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar EnemyAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wBattleMonHP + 1]
+	cp c ; compare upper
+	ld a, [wBattleMonHP]
+	sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .checkmove
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    jp .checkmove
 
 .discourage
 	call AIDiscourageMove
-	jr .checkmove
+	jp .checkmove
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
@@ -1120,6 +1147,39 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
+; don't use if we are at risk of being KOd by boosted player, just attack them
+; physical
+; does player have boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .special
+; does enemy have non-boosted defense
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .special
+    jr .dontBoost
+.special
+; does player have boosted special attack
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .continue
+; does enemy have non-boosted special defense
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .continue
+.dontBoost
+; is player SLP or FRZ
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr nz, .continue
+	;bit FRZ, a
+	;jr nz, .continue
+; is player attacking
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .discourage
+
+.continue
 ; don't use when above 50% hp
 	call AICheckEnemyHalfHP
 	jr c, .discourage
@@ -1863,7 +1923,7 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; slightly encourage if below half health
+; encourage if below half health
 	call AICheckEnemyHalfHP
 	jr c, .continue
 	dec [hl]
@@ -2074,11 +2134,42 @@ AI_Smart_Curse:
 	jr nc, .discourage
 
 .continue
-; don't use if player has boosted special attack
+; don't use if we are at risk of being KOd by boosted player, just attack them
+; physical
+; does player have boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .special
+; does enemy have non-boosted defense
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .special
+; only discourage curse if enemy is slower than player
+    call AICompareSpeed
+    jr c, .special
+    jr .dontBoost
+.special
+; does player have boosted special attack
     ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
+	jr c, .continue2
+; does enemy have non-boosted special defense
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .continue2
+.dontBoost
+; is player SLP or FRZ
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr nz, .continue2
+	;bit FRZ, a
+	;jr nz, .continue2
+; is player attacking
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .discourage
 
+.continue2
 ; encourage to +1, strongly encourage to +2 if player has boosted Atk
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 1
@@ -2939,6 +3030,11 @@ AI_Smart_HolyArmour:
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
+; strongly encourage to +1
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr c, .strongEncourage
+
 ; strongly encourage if player has boosted offenses
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -2947,8 +3043,10 @@ AI_Smart_HolyArmour:
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
 
-; otherwise encourage
-	jr .encourage
+; otherwise encourage to +3
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr c, .encourage
 
 .strongEncourage
     dec [hl]
@@ -3008,11 +3106,42 @@ AI_Smart_CalmMind:
 	jr nc, .discourage
 
 .continue
-; don't use if player has boosted attack
+; don't use if we are at risk of being KOd by boosted player, just attack them
+; physical
+; does player have boosted attack
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
+	jr c, .special
+; does enemy have non-boosted defense
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .special
+    jr .dontBoost
+.special
+; does player have boosted special attack
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr c, .continue2
+; does enemy have non-boosted special defense
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .continue2
+; only discourage calm mind if enemy is slower than player
+    call AICompareSpeed
+    jr c, .continue2
+.dontBoost
+; is player SLP or FRZ
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr nz, .continue2
+	;bit FRZ, a
+	;jr nz, .continue2
+; is player attacking
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .discourage
 
+.continue2
 ; encourage to +1, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 1
@@ -3049,7 +3178,45 @@ AI_Smart_SwordsDance:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
+; don't use if we are at risk of being KOd by boosted player, just attack them
+; physical
+; does player have boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .special
+; does enemy have non-boosted defense
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .special
+    jr .dontBoost
+.special
+; does player have boosted special attack
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .continue
+; does enemy have non-boosted special defense
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .continue
+.dontBoost
+; is player SLP or FRZ
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr nz, .continue
+	;bit FRZ, a
+	;jr nz, .continue
+; is player attacking
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .discourage
+; if already at +2, 80% chance to discourage
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage80
+
+.continue
 ; encourage to get to +2
+	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
@@ -3065,6 +3232,9 @@ AI_Smart_SwordsDance:
 	dec [hl]
 	dec [hl]
 	ret
+.discourage80
+    call AI_80_20
+    ret c
 .discourage
 	inc [hl]
 	inc [hl]
@@ -3119,7 +3289,45 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
+; don't use if we are at risk of being KOd by boosted player, just attack them
+; physical
+; does player have boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .special
+; does enemy have non-boosted defense
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .special
+    jr .dontBoost
+.special
+; does player have boosted special attack
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .continue
+; does enemy have non-boosted special defense
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .continue
+.dontBoost
+; is player SLP or FRZ
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr nz, .continue
+	;bit FRZ, a
+	;jr nz, .continue
+; is player attacking
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .discourage
+; if already at +2, 80% chance to discourage
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage80
+
+.continue
 ; encourage to get to +2
+    ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
@@ -3135,6 +3343,9 @@ AI_Smart_NastyPlot:
     dec [hl]
 	dec [hl]
 	ret
+.discourage80
+    call AI_80_20
+    ret c
 .discourage
     inc [hl]
 	inc [hl]
@@ -3346,12 +3557,6 @@ AIHasMoveInArray:
 INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Opportunist:
-; Discourage stall moves when the enemy or players HP is low.
-
-; Discourage stall moves if Players HP is below 1/4.
-    call AICheckPlayerQuarterHP
-	jr nc, .lowhp
-
 ; Discourage stall moves if enemy's HP is below 1/2.
     call AICheckEnemyHalfHP
 	jr nc, .lowhp
@@ -3384,6 +3589,7 @@ AI_Opportunist:
 	pop hl
 	jr nc, .checkmove
 
+	inc [hl]
 	inc [hl]
 	inc [hl]
 	jr .checkmove

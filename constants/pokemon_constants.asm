@@ -229,7 +229,7 @@ JOHTO_POKEMON EQU const_value
 	const GLIGAR     ; cf
 	const STEELIX    ; d0
 	const SNUBBULL   ; d1   ...
-	const GABITE   ; d2   ...
+	const GABITE     ; d2   ...
 	const GARCHOMP   ; d3   Garchomp
 	const SCIZOR     ; d4
 	const SHUCKLE    ; d5
@@ -238,7 +238,7 @@ JOHTO_POKEMON EQU const_value
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const SLUGMA     ; da   weevil
-	const MAGCARGO   ; db   mamoswine
+	const DEOXYS     ; db   deoxys
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
 	const SPIRITOMB  ; de

@@ -4971,9 +4971,9 @@ BattleTowerMons:
 	bigdw 258 ; SDef
 	db "RANTA-N@@@@"
 
-    db STARMIE
-	db MIRACLEBERRY
-	db SURF, ICE_BEAM, THUNDERBOLT, RECOVER
+    db DEOXYS
+	db TWISTEDSPOON
+	db PSYCHIC_M, THUNDERBOLT, ICE_BEAM, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4983,18 +4983,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 24, 15 ; PP
+	db 24, 24, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 248 ; Atk
-	bigdw 268 ; Def
-	bigdw 328 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 268 ; SDef
+	bigdw 303 ; HP
+	bigdw 303 ; Max HP
+	bigdw 458 ; Atk
+	bigdw 138 ; Def
+	bigdw 398 ; Spd
+	bigdw 458 ; SAtk
+	bigdw 138 ; SDef
 	db "RANTA-N@@@@"
 
     db HERACROSS
@@ -5465,9 +5465,9 @@ BattleTowerMons:
 	bigdw 406 ; SDef
 	db "RANTA-N@@@@"
 
-	db BLISSEY
+	db GARCHOMP
 	db LEFTOVERS
-	db CALM_MIND, TRI_ATTACK, SHADOW_BALL, SOFTBOILED
+	db SWORDS_DANCE, OUTRAGE, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5477,18 +5477,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 24, 24, 10 ; PP
+	db 30, 24, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 713 ; HP
-	bigdw 713 ; Max HP
-	bigdw 118 ; Atk
-	bigdw 118 ; Def
-	bigdw 208 ; Spd
-	bigdw 248 ; SAtk
-	bigdw 368 ; SDef
+	bigdw 419 ; HP
+	bigdw 419 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 288 ; Def
+	bigdw 302 ; Spd
+	bigdw 258 ; SAtk
+	bigdw 268 ; SDef
 	db "RANTA-N@@@@"
 
 	;;;====================================

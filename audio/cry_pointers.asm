@@ -64,7 +64,7 @@ Cries:
 	dba Cry_Teddiursa
 	dba Cry_Sunflora
 	dba Cry_Ampharos
-	dba Cry_Magcargo
+	dba Cry_Deoxys
 	dba Cry_Pichu
 	dba Cry_Aipom
 	dba Cry_Dunsparce

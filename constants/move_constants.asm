@@ -130,7 +130,7 @@
 	const LICK         ; 7a
 	const EARTH_POWER  ; 7b
 	const SLUDGE       ; 7c
-	const BONE_CLUB    ; 7d
+	const CLOSE_COMBAT ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
 	const CLAMP        ; 80

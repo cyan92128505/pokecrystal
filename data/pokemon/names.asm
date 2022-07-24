@@ -218,7 +218,7 @@ PokemonNames::
 	db "TEDDIURSA@"
 	db "URSARING@@"
 	db "SLUGMA@@@@"
-	db "MAGCARGO@@"
+	db "DEOXYS@@@@"
 	db "SWINUB@@@@"
 	db "PILOSWINE@"
 	db "SPIRITOMB@"

@@ -124,7 +124,6 @@ NewPokedexOrder:
 	db VOLTORB
 	db ELECTRODE
 	db AIPOM
-	db SNUBBULL
 	db VULPIX
 	db NINETALES
 	db GROWLITHE
@@ -235,6 +234,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db SNUBBULL
 	db GABITE
 	db GARCHOMP
 	db LUGIA

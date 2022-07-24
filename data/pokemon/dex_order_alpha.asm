@@ -72,6 +72,7 @@ AlphabeticalPokedexOrder:
 	db GASTLY
 	db GENGAR
 	db GEODUDE
+	db SNUBBULL
 	db GIRAFARIG
 	db GIRATINA
 	db GLIGAR
@@ -208,7 +209,6 @@ AlphabeticalPokedexOrder:
 	db SMEARGLE
 	db SNEASEL
 	db SNORLAX
-	db SNUBBULL
 	db SPEAROW
 	db SPINARAK
 	db SPIRITOMB

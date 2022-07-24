@@ -645,7 +645,7 @@ SnubbullEggMoves:
 	db LEER
 	db -1 ; end
 
-GarchompEggMoves:
+GibleEggMoves:
 	db OUTRAGE
 	db SWORDS_DANCE
 	db EARTHQUAKE

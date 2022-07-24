@@ -2763,34 +2763,46 @@ SteelixEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
-	db EVOLVE_LEVEL, 23, GABITE
+	db EVOLVE_LEVEL, 24, GABITE
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SCARY_FACE
-	db 4, TAIL_WHIP
-	db 8, CHARM
-	db 13, BITE
-	db 19, LICK
-	db 26, ROAR
-	db 34, RAGE
-	db 43, TAKE_DOWN
+	db 1, BITE
+	db 1, SAND_ATTACK
+	db 10, DRAGON_RAGE
+	db 14, SANDSTORM
+	db 18, CRUNCH
+	db 23, SLASH
+	db 30, DRAGON_CLAW
+	db 35, DIG
+	db 40, EARTHQUAKE
+	db 50, OUTRAGE
+	db 60, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 GabiteEvosAttacks:
 	db EVOLVE_LEVEL, 48, GARCHOMP
 	db 0 ; no more evolutions
-	db 1, DRAGON_CLAW
-	db 51, EARTHQUAKE
+	db 1, BITE
+	db 1, SAND_ATTACK
+	db 10, DRAGON_RAGE
+	db 14, SANDSTORM
+	db 18, CRUNCH
+	db 23, SLASH
+	db 30, DRAGON_CLAW
+	db 35, DIG
+	db 40, EARTHQUAKE
+	db 50, OUTRAGE
 	db 60, SWORDS_DANCE
-	db 65, OUTRAGE
 	db 0 ; no more level-up moves
 
 GarchompEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DRAGON_CLAW
-	db 51, EARTHQUAKE
+	db 1, EARTHQUAKE
+	db 1, SWORDS_DANCE
+	db 1, OUTRAGE
+	db 50, EARTHQUAKE
+	db 55, OUTRAGE
 	db 60, SWORDS_DANCE
-	db 65, OUTRAGE
 	db 0 ; no more level-up moves
 
 ScizorEvosAttacks:

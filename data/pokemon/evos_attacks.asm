@@ -129,7 +129,7 @@ SquirtleEvosAttacks:
 	db 23, RAPID_SPIN
 	db 28, PROTECT
 	db 33, RAIN_DANCE
-	db 40, SKULL_BASH
+	db 40, HEADBUTT
 	db 47, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -147,7 +147,7 @@ WartortleEvosAttacks:
 	db 25, RAPID_SPIN
 	db 31, PROTECT
 	db 37, RAIN_DANCE
-	db 45, SKULL_BASH
+	db 45, HEADBUTT
 	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -165,7 +165,7 @@ BlastoiseEvosAttacks:
 	db 25, RAPID_SPIN
 	db 31, PROTECT
 	db 42, RAIN_DANCE
-	db 55, SKULL_BASH
+	db 55, HEADBUTT
 	db 68, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2886,7 +2886,6 @@ UrsaringEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:
-	db EVOLVE_LEVEL, 38, DEOXYS
 	db 0 ; no more evolutions
 	db 8, EMBER
 	db 15, ROCK_THROW
@@ -2899,9 +2898,9 @@ SlugmaEvosAttacks:
 
 DeoxysEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PSYCHIC_M
-	db 1, THUNDERBOLT
-	db 1, ICE_BEAM
+	db 1, NASTY_PLOT
+	db 1, PSYCHO_BOOST
+	db 1, SHADOW_BALL
 	db 1, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 

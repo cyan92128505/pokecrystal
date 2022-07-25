@@ -1084,7 +1084,6 @@ BattleCommand_DoTurn:
 
 .continuousmoves
 	db EFFECT_SKY_ATTACK
-	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
@@ -1914,8 +1913,6 @@ BattleCommand_LowerSub:
 	call GetBattleVar
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
-	cp EFFECT_SKULL_BASH
-	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
@@ -2156,9 +2153,17 @@ BattleCommand_ApplyDamage:
 	ld b, 0
 	jr nz, .damage
 
-	call BattleRandom
-	cp c
-	jr nc, .damage
+ ; AndrewNote - this is actually focus sash
+ 	ldh a, [hBattleTurn]
+ 	and a
+ 	jr z, .player
+ 	farcall ItemCheckEnemyMaxHP
+ 	jr nc, .damage
+ 	jr .continue
+.player
+    farcall ItemCheckPlayerMaxHP
+    jr nc, .damage
+.continue
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
@@ -5669,10 +5674,6 @@ BattleCommand_Charge:
 
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
-	jr z, .done
-
-	cp SKULL_BASH
-	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
 	cp SKY_ATTACK

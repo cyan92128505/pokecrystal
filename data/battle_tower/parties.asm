@@ -4972,8 +4972,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db DEOXYS
-	db TWISTEDSPOON
-	db PSYCHIC_M, THUNDERBOLT, ICE_BEAM, CLOSE_COMBAT
+	db FOCUS_BAND
+	db NASTY_PLOT, PSYCHO_BOOST, ICE_BEAM, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4983,7 +4983,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 16, 16 ; PP
+	db 20, 16, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -4999,7 +4999,7 @@ BattleTowerMons:
 
     db HERACROSS
 	db LEFTOVERS
-	db MEGAHORN, EARTHQUAKE, REST, SWORDS_DANCE
+	db MEGAHORN, EARTHQUAKE, CLOSE_COMBAT, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

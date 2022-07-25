@@ -131,7 +131,7 @@ BattleAnimations::
 	dw BattleAnim_Waterfall
 	dw BattleAnim_Clamp
 	dw BattleAnim_Swift
-	dw BattleAnim_SkullBash
+	dw BattleAnim_PsychoBoost
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_Constrict
 	dw BattleAnim_Amnesia
@@ -4516,6 +4516,7 @@ BattleAnim_ShadowBall:
 	anim_wait 24
 	anim_ret
 
+BattleAnim_PsychoBoost:
 BattleAnim_FutureSight:
 	anim_1gfx ANIM_GFX_WIND
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

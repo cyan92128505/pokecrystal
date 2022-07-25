@@ -129,7 +129,7 @@ MoveNames::
 	li "WATERFALL"
 	li "CLAMP"
 	li "SWIFT"
-	li "SKULL BASH"
+	li "PSYCHO BOOST"
 	li "SPIKE CANNON"
 	li "CONSTRICT"
 	li "AMNESIA"

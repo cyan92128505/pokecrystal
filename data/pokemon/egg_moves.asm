@@ -15,7 +15,6 @@ INCLUDE "data/pokemon/egg_move_pointers.asm"
 
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
-	db SKULL_BASH
 	db SAFEGUARD
 	db PETAL_DANCE
 	db -1 ; end
@@ -310,7 +309,7 @@ CuboneEggMoves:
 	db ANCIENTPOWER
 	db BELLY_DRUM
 	db SCREECH
-	db SKULL_BASH
+	db HEADBUTT
 	db PERISH_SONG
 	db SWORDS_DANCE
 	db -1 ; end

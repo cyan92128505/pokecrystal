@@ -248,7 +248,7 @@ Pokered_MonIndices:
 	db DUNSPARCE
 	db GLIGAR
 	db STEELIX
-	db SNUBBULL
+	db GIBLE
 	db GABITE
 	db GARCHOMP
 	db WOBBUFFET

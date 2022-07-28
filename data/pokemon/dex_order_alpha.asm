@@ -72,7 +72,7 @@ AlphabeticalPokedexOrder:
 	db GASTLY
 	db GENGAR
 	db GEODUDE
-	db SNUBBULL
+	db GIBLE
 	db GIRAFARIG
 	db GIRATINA
 	db GLIGAR

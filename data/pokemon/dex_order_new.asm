@@ -234,7 +234,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
-	db SNUBBULL
+	db GIBLE
 	db GABITE
 	db GARCHOMP
 	db LUGIA

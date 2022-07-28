@@ -65,7 +65,6 @@ AlphabeticalPokedexOrder:
 	db FERALIGATR
 	db FLAAFFY
 	db FLAREON
-	db FORRETRESS
 	db FURRET
 	db GABITE
 	db GARCHOMP
@@ -190,6 +189,7 @@ AlphabeticalPokedexOrder:
 	db RAYQUAZA
 	db RHYDON
 	db RHYHORN
+	db FORRETRESS
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR

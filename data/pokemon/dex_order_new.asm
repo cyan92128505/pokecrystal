@@ -95,7 +95,6 @@ NewPokedexOrder:
 	db ALAKAZAM
 	db DITTO
 	db PINECO
-	db FORRETRESS
 	db NIDORAN_F
 	db NIDORINA
 	db NIDOQUEEN
@@ -234,6 +233,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db FORRETRESS
 	db GIBLE
 	db GABITE
 	db GARCHOMP

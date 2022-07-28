@@ -2690,7 +2690,6 @@ GirafarigEvosAttacks:
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
-	db EVOLVE_LEVEL, 31, FORRETRESS
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, PROTECT
@@ -2704,15 +2703,10 @@ PinecoEvosAttacks:
 
 ForretressEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, PROTECT
-	db 1, SELFDESTRUCT
-	db 8, SELFDESTRUCT
-	db 15, TAKE_DOWN
-	db 22, RAPID_SPIN
-	db 39, EXPLOSION
-	db 49, SPIKES
-	db 59, DOUBLE_EDGE
+	db 1, DRAGON_DANCE
+	db 1, OUTRAGE
+	db 1, EARTHQUAKE
+	db 1, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:

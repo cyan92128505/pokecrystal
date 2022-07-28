@@ -1,10 +1,10 @@
-	db "BAGWORM@" ; species name
-	dw 311, 2770 ; height, weight
+	db "DRAKE@" ; species name
+	dw 411, 2262 ; height, weight
 
-	db   "Usually found"
-	next "hanging on to a"
-	next "fat tree trunk. It"
+	db   "Easily angered"
+	next "and merciless"
+	next "in its assault."
 
-	page "shoots out bits of"
-	next "its shell when it"
-	next "sees action.@"
+	page "I rains down"
+	next "fire and death"
+	next "from the sky.@"

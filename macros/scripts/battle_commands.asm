@@ -34,7 +34,7 @@ ENDM
 	command mirrormove              ; 1b
 	command statup                  ; 1c
 	command statdown                ; 1d
-	command payday                  ; 1e
+	command dragondance             ; 1e
 	command resetstats              ; 20
 	command storeenergy             ; 21
 	command unleashenergy           ; 22

@@ -159,8 +159,8 @@ MoveDescriptions::
 	dw RestDescription
 	dw RockSlideDescription
 	dw HyperFangDescription
-	dw SharpenDescription
-	dw ConversionDescription
+	dw BulletPunchDescription
+	dw XScissorDescription
 	dw TriAttackDescription
 	dw SuperFangDescription
 	dw SlashDescription
@@ -899,13 +899,13 @@ HyperFangDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
 
-SharpenDescription:
-	db   "A move that raises"
-	next "the user's ATTACK.@"
+BulletPunchDescription:
+	db   "A fast, lethal hit"
+	next "with a steel fist.@"
 
-ConversionDescription:
-	db   "Change user's type"
-	next "to a move's type.@"
+XScissorDescription:
+	db   "Savage attack with"
+	next "sharp pincers.@"
 
 TriAttackDescription:
 	db   "Fires three kinds"

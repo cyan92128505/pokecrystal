@@ -133,7 +133,7 @@ BattleAnimations::
 	dw BattleAnim_Swift
 	dw BattleAnim_PsychoBoost
 	dw BattleAnim_SpikeCannon
-	dw BattleAnim_Constrict
+	dw BattleAnim_DragonDance
 	dw BattleAnim_Amnesia
 	dw BattleAnim_Kinesis
 	dw BattleAnim_Softboiled
@@ -160,8 +160,8 @@ BattleAnimations::
 	dw BattleAnim_Rest
 	dw BattleAnim_RockSlide
 	dw BattleAnim_HyperFang
-	dw BattleAnim_Sharpen
-	dw BattleAnim_Conversion
+	dw BattleAnim_BulletPunch
+	dw BattleAnim_XScissor
 	dw BattleAnim_TriAttack
 	dw BattleAnim_SuperFang
 	dw BattleAnim_Slash
@@ -1482,13 +1482,14 @@ BattleAnim_AuroraBeam:
 	anim_wait 64
 	anim_ret
 
-;BattleAnim_Vicegrip:
-;	anim_1gfx ANIM_GFX_CUT
-;	anim_sound 0, 1, SFX_VICEGRIP
-;	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 152, 40, $0
-;	anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 72, $0
-;	anim_wait 32
-;	anim_ret
+BattleAnim_XScissor:
+BattleAnim_Vicegrip:
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_VICEGRIP
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 152, 40, $0
+	anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 72, $0
+	anim_wait 32
+	anim_ret
 
 BattleAnim_Scratch:
 	anim_1gfx ANIM_GFX_CUT
@@ -3386,6 +3387,7 @@ BattleAnim_Protect:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_BulletPunch:
 BattleAnim_MachPunch:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
@@ -4308,6 +4310,7 @@ BattleAnim_Moonlight:
 	anim_call BattleAnimSub_Glimmer2
 	anim_ret
 
+BattleAnim_DragonDance:
 BattleAnim_HiddenPower:
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_1Row

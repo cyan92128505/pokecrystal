@@ -137,7 +137,7 @@
 	const SWIFT        ; 81
 	const PSYCHO_BOOST ; 82
 	const SPIKE_CANNON ; 83
-	const CONSTRICT    ; 84
+	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
 	const KINESIS      ; 86
 	const SOFTBOILED   ; 87
@@ -164,8 +164,8 @@
 	const REST         ; 9c
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
-	const SHARPEN      ; 9f
-	const CONVERSION   ; a0
+	const BULLET_PUNCH ; 9f
+	const X_SCISSOR    ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3

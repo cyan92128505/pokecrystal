@@ -110,8 +110,12 @@ AI_Basic:
 	pop de
 	pop hl
     jp nc, .checkmove
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .lesserEncouragement
     dec [hl]
     dec [hl]
+.lesserEncouragement
     dec [hl]
     dec [hl]
     jp .checkmove
@@ -144,6 +148,7 @@ AI_Smart_Switch:
     ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
 	jp c, .switch
+
 
 ; switch if enemy is cursed
 	ld a, BATTLE_VARS_SUBSTATUS1
@@ -578,6 +583,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
 	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
 	dbw EFFECT_CALM_MIND,        AI_Smart_CalmMind
+	dbw EFFECT_DRAGON_DANCE,     AI_Smart_DragonDance
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -767,21 +773,36 @@ AI_Smart_Selfdestruct:
 	jr nz, .discourage
 
 .notlastmon
-; Greatly discourage this move if enemy's HP is above 50%.
-	call AICheckEnemyHalfHP
-	jr c, .discourage
-
 ; Do nothing if enemy's HP is below 25%.
 	call AICheckEnemyQuarterHP
 	ret nc
 
-; If enemy's HP is between 25% and 50%,
-; over 90% chance to greatly discourage this move.
-	call Random
-	cp 8 percent
-	ret c
+; Do nothing if player has highly boosted stats
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	ret nc
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	ret nc
+
+; Do nothing if player is faster and has boosted stats
+    call AICompareSpeed
+    jr c, .continue
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	ret nc
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	ret nc
+
+.continue
+; Greatly discourage this move if enemy's HP is above 50%.
+	call AICheckEnemyHalfHP
+	jr c, .discourage
 
 .discourage
+	inc [hl]
+	inc [hl]
 	inc [hl]
 	inc [hl]
 	inc [hl]
@@ -1151,17 +1172,16 @@ AI_Smart_Moonlight:
 ; physical
 ; does player have boosted attack
     ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 3
 	jr c, .special
 ; does enemy have non-boosted defense
     ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 1
-	jr nc, .special
-    jr .dontBoost
+	jr c, .dontBoost
 .special
 ; does player have boosted special attack
     ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 3
 	jr c, .continue
 ; does enemy have non-boosted special defense
     ld a, [wEnemySDefLevel]
@@ -1214,6 +1234,7 @@ AI_Smart_Moonlight:
 
 ; fall through
 .encourage
+	dec [hl]
 	dec [hl]
 	dec [hl]
 	ret
@@ -3172,6 +3193,7 @@ AI_Smart_CalmMind:
 	inc [hl]
 	ret
 
+AI_Smart_DragonDance:
 AI_Smart_SwordsDance:
 ; don't go past +4
 	ld a, [wEnemyAtkLevel]
@@ -3211,16 +3233,16 @@ AI_Smart_SwordsDance:
 	jr nz, .discourage
 ; if already at +2, 80% chance to discourage
     ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .discourage80
 
 .continue
-; encourage to get to +2
+; encourage to get to +1
 	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr c, .encourage
 
-; discourage after +2 if afflicted with toxic
+; discourage after +1 if afflicted with toxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -3288,6 +3310,11 @@ AI_Smart_NastyPlot:
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
+
+; deoxys should always boost once if it can - it is probably holding focus_sash
+    ld a, [wEnemyMonSpecies]
+    cp DEOXYS
+    jr z, .continue
 
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical

@@ -755,25 +755,11 @@ AllUpHit:
 	allstatsup
 	endmove
 
-PayDay:
+DragonDance:
 	checkobedience
 	usedmovetext
 	doturn
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	payday
-	checkfaint
-	buildopponentrage
-	kingsrock
+	dragondance
 	endmove
 
 ResetStats:

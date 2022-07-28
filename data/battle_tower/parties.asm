@@ -1965,7 +1965,7 @@ BattleTowerMons:
 
 	db PORYGON2
 	db NO_ITEM
-	db CONVERSION2, CONVERSION, PSYBEAM, THIEF
+	db CONVERSION2, RECOVER, PSYBEAM, THIEF
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -5025,7 +5025,7 @@ BattleTowerMons:
 
     db KYOGRE
 	db LEFTOVERS
-	db SURF, CALM_MIND, REST, SLEEP_TALK
+	db SURF, CALM_MIND, REST, ICE_BEAM
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5076,8 +5076,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db RAYQUAZA
-	db LEFTOVERS
-	db SKY_CLEAVE, EARTHQUAKE, EXTREMESPEED, SWORDS_DANCE
+	db SHARP_BEAK
+	db SKY_CLEAVE, EARTHQUAKE, EXTREMESPEED, DRAGON_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5102,7 +5102,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db PALKIA
-	db LEFTOVERS
+	db MYSTIC_WATER
 	db SURF, THUNDERBOLT, ICE_BEAM, CALM_MIND
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5206,7 +5206,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db XERNEAS
-	db LEFTOVERS
+	db PINK_BOW
 	db GEOMANCY, MOON_BLAST, AURA_SPHERE, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5232,7 +5232,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db YVELTAL
-	db LEFTOVERS
+	db SHARP_BEAK
 	db OBLIVION, DARK_PULSE, NASTY_PLOT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5259,7 +5259,7 @@ BattleTowerMons:
 
     db TYRANITAR
 	db LEFTOVERS
-	db SLEEP_TALK, CURSE, CRUNCH, REST
+	db DRAGON_DANCE, ROCK_SLIDE, CRUNCH, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5284,7 +5284,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db LATIOS
-	db LEFTOVERS
+	db FOCUS_BAND
 	db THUNDERBOLT, DRAGON_PULSE, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5310,7 +5310,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db DARKRAI
-	db LEFTOVERS
+	db FOCUS_BAND
 	db DARK_VOID, DARK_PULSE, AURA_SPHERE, NASTY_PLOT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5388,8 +5388,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db MEW
-	db MIRACLEBERRY
-	db SWORDS_DANCE, EARTHQUAKE, RETURN, EXPLOSION
+	db PINK_BOW
+	db SWORDS_DANCE, CRUNCH, DOUBLE_EDGE, EXPLOSION
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5399,7 +5399,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 16, 32, 5 ; PP
+	db 20, 16, 32, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5414,7 +5414,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db HO_OH
-	db LEFTOVERS
+	db SHARP_BEAK
 	db BRAVE_BIRD, EARTHQUAKE, SACRED_FIRE, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp

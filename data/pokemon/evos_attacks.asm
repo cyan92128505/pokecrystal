@@ -951,7 +951,6 @@ TentacoolEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 6, SUPERSONIC
-	db 12, CONSTRICT
 	db 19, ACID
 	db 25, BUBBLEBEAM
 	db 30, WRAP
@@ -964,9 +963,7 @@ TentacruelEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, SUPERSONIC
-	db 1, CONSTRICT
 	db 6, SUPERSONIC
-	db 12, CONSTRICT
 	db 19, ACID
 	db 25, BUBBLEBEAM
 	db 30, WRAP
@@ -1536,7 +1533,6 @@ ChanseyEvosAttacks:
 
 TangelaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONSTRICT
 	db 4, SLEEP_POWDER
 	db 10, ABSORB
 	db 13, POISONPOWDER
@@ -1840,11 +1836,9 @@ PorygonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CONVERSION2
 	db 1, TACKLE
-	db 1, CONVERSION
 	db 9, AGILITY
 	db 12, PSYBEAM
 	db 20, RECOVER
-	db 24, SHARPEN
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
 	db 44, ZAP_CANNON
@@ -1853,7 +1847,6 @@ PorygonEvosAttacks:
 OmanyteEvosAttacks:
 	db EVOLVE_LEVEL, 40, OMASTAR
 	db 0 ; no more evolutions
-	db 1, CONSTRICT
 	db 1, WITHDRAW
 	db 13, BITE
 	db 19, WATER_GUN
@@ -1865,7 +1858,6 @@ OmanyteEvosAttacks:
 
 OmastarEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONSTRICT
 	db 1, WITHDRAW
 	db 1, BITE
 	db 13, BITE
@@ -1999,17 +1991,17 @@ DragonairEvosAttacks:
 
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WRAP
-	db 1, LEER
-	db 1, THUNDER_WAVE
-	db 1, TWISTER
+	db 1, DRAGON_DANCE
+	db 1, OUTRAGE
+	db 1, EARTHQUAKE
+	db 1, FIRE_PUNCH
 	db 8, THUNDER_WAVE
 	db 15, TWISTER
 	db 22, DRAGON_RAGE
 	db 29, SLAM
 	db 38, AGILITY
 	db 47, SAFEGUARD
-	db 55, WING_ATTACK
+	db 55, DRAGON_DANCE
 	db 61, OUTRAGE
 	db 75, HYPER_BEAM
 	db 0 ; no more level-up moves
@@ -2252,7 +2244,6 @@ SpinarakEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 6, SCARY_FACE
-	db 11, CONSTRICT
 	db 17, NIGHT_SHADE
 	db 23, LEECH_LIFE
 	db 30, FURY_SWIPES
@@ -2265,9 +2256,7 @@ AriadosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, SCARY_FACE
-	db 1, CONSTRICT
 	db 6, SCARY_FACE
-	db 11, CONSTRICT
 	db 17, NIGHT_SHADE
 	db 25, LEECH_LIFE
 	db 34, FURY_SWIPES
@@ -2807,21 +2796,21 @@ GarchompEvosAttacks:
 
 ScizorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, QUICK_ATTACK
-	db 1, LEER
+	db 1, BULLET_PUNCH
+	db 1, X_SCISSOR
+	db 1, SWORDS_DANCE
+	db 1, REST
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT
 	db 18, FALSE_SWIPE
 	db 24, AGILITY
-	db 30, METAL_CLAW
-	db 36, SLASH
+	db 30, BULLET_PUNCH
+	db 36, X_SCISSOR
 	db 42, SWORDS_DANCE
-	db 48, DOUBLE_TEAM
 	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONSTRICT
 	db 1, WITHDRAW
 	db 9, WRAP
 	db 14, ENCORE
@@ -3047,7 +3036,6 @@ Porygon2EvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CONVERSION2
 	db 1, TACKLE
-	db 1, CONVERSION
 	db 9, AGILITY
 	db 12, PSYBEAM
 	db 20, RECOVER
@@ -3070,10 +3058,11 @@ StantlerEvosAttacks:
 
 RayquazaEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SWORDS_DANCE
 	db 1, SKY_CLEAVE
 	db 1, EARTHQUAKE
 	db 1, EXTREMESPEED
-	db 1, SWORDS_DANCE
+	db 80, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:

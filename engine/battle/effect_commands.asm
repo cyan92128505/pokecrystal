@@ -2156,12 +2156,12 @@ BattleCommand_ApplyDamage:
  ; AndrewNote - this is actually focus sash
  	ldh a, [hBattleTurn]
  	and a
- 	jr z, .player
- 	farcall ItemCheckEnemyMaxHP
+ 	jr z, .enemy
+ 	farcall ItemCheckPlayerMaxHP
  	jr nc, .damage
  	jr .continue
-.player
-    farcall ItemCheckPlayerMaxHP
+.enemy
+    farcall ItemCheckEnemyMaxHP
     jr nc, .damage
 .continue
 	call BattleCommand_FalseSwipe
@@ -6110,8 +6110,6 @@ INCLUDE "engine/battle/move_effects/splash.asm"
 
 INCLUDE "engine/battle/move_effects/disable.asm"
 
-INCLUDE "engine/battle/move_effects/pay_day.asm"
-
 BattleCommand_ResetStats:
 ; resetstats
 
@@ -6478,6 +6476,8 @@ INCLUDE "engine/battle/move_effects/holyarmour.asm"
 INCLUDE "engine/battle/move_effects/furiouswill.asm"
 
 INCLUDE "engine/battle/move_effects/calmmind.asm"
+
+INCLUDE "engine/battle/move_effects/dragondance.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
 

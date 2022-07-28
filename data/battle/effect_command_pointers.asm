@@ -34,7 +34,7 @@ BattleCommandPointers:
 	dw BattleCommand_MirrorMove
 	dw BattleCommand_StatUp
 	dw BattleCommand_StatDown
-	dw BattleCommand_PayDay
+	dw BattleCommand_DragonDance
 	dw BattleCommand_ResetStats
 	dw BattleCommand_StoreEnergy
 	dw BattleCommand_UnleashEnergy

@@ -13,6 +13,7 @@ AlphabeticalPokedexOrder:
 	db ARIADOS
 	db ARTICUNO
 	db AZUMARILL
+	db GIRAFARIG
 	db BAYLEEF
 	db BEEDRILL
 	db BELLOSSOM
@@ -72,7 +73,6 @@ AlphabeticalPokedexOrder:
 	db GENGAR
 	db GEODUDE
 	db GIBLE
-	db GIRAFARIG
 	db GIRATINA
 	db GLIGAR
 	db GLOOM
@@ -167,7 +167,6 @@ AlphabeticalPokedexOrder:
 	db PIDGEY
 	db PIKACHU
 	db PILOSWINE
-	db PINECO
 	db PINSIR
 	db POLITOED
 	db POLIWAG
@@ -189,7 +188,7 @@ AlphabeticalPokedexOrder:
 	db RAYQUAZA
 	db RHYDON
 	db RHYHORN
-	db FORRETRESS
+	db SALAMENCE
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR
@@ -198,6 +197,7 @@ AlphabeticalPokedexOrder:
 	db SEAKING
 	db SEEL
 	db SENTRET
+    db PINECO
 	db SHELLDER
 	db SHUCKLE
 	db SKARMORY

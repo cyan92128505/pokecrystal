@@ -1590,6 +1590,22 @@ BattleCommand_CheckHit:
 	cp EFFECT_JUDGEMENT
 	ret z
 
+; AndrewNote make dynamic punch always hit for Machamp
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp DYNAMICPUNCH
+	jr nz, .notDynamicPunch
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkMachamp
+	ld a, [wBattleMonSpecies]
+.checkMachamp
+	cp MACHAMP
+	ret z
+
+.notDynamicPunch
 	call .StatModifiers
 
 	ld a, [wPlayerMoveStruct + MOVE_ACC]

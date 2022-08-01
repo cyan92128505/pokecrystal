@@ -2015,7 +2015,7 @@ BattleTowerMons:
 	bigdw 99 ; SDef
 	db "UINDEi@@@@@"
 
-	db FORRETRESS
+	db SALAMENCE
 	db LEFTOVERS
 	db RAPID_SPIN, PROTECT, TOXIC, SANDSTORM
 	dw 0 ; OT ID
@@ -2616,7 +2616,7 @@ BattleTowerMons:
 	bigdw 113 ; SDef
 	db "EA-MUDO@@@@"
 
-	db FORRETRESS
+	db SALAMENCE
 	db LEFTOVERS
 	db SANDSTORM, TOXIC, EXPLOSION, SWAGGER
 	dw 0 ; OT ID
@@ -4029,7 +4029,7 @@ BattleTowerMons:
 	bigdw 189 ; SDef
 	db "GENGA-@@@@@"
 
-	db FORRETRESS
+	db SALAMENCE
 	db LEFTOVERS
 	db EXPLOSION, TOXIC, SOLARBEAM, SWAGGER
 	dw 0 ; OT ID
@@ -4945,29 +4945,29 @@ BattleTowerMons:
 
 ; BattleTowerMons group 10
 
-    db MAROWAK
-	db THICK_CLUB
-	db SWORDS_DANCE, EARTHQUAKE, RETURN, ROCK_SLIDE
+    db SCIZOR
+	db LEFTOVERS
+	db SWORDS_DANCE, BULLET_PUNCH, X_SCISSOR, ROCK_SMASH
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65500
 	bigdw 65500
 	bigdw 65500
 	bigdw 65500
 	bigdw 65500
-	dn 13, 13, 13, 13 ; DVs
-	db 30, 16, 32, 16 ; PP
+	dn 15, 15, 15, 15 ; DVs
+	db 20, 32, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 323 ; HP
 	bigdw 323 ; Max HP
-	bigdw 248 ; Atk
-	bigdw 318 ; Def
-	bigdw 188 ; Spd
-	bigdw 198 ; SAtk
+	bigdw 358 ; Atk
+	bigdw 298 ; Def
+	bigdw 228 ; Spd
+	bigdw 208 ; SAtk
 	bigdw 258 ; SDef
 	db "RANTA-N@@@@"
 
@@ -4997,8 +4997,8 @@ BattleTowerMons:
 	bigdw 138 ; SDef
 	db "RANTA-N@@@@"
 
-    db HERACROSS
-	db LEFTOVERS
+    db HERACROSS  ; could be removed
+	db SILVERPOWDER
 	db MEGAHORN, EARTHQUAKE, CLOSE_COMBAT, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5051,7 +5051,7 @@ BattleTowerMons:
 
     db GROUDON
 	db LEFTOVERS
-	db EARTHQUAKE, RETURN, ROCK_SLIDE, SWORDS_DANCE
+	db EARTHQUAKE, DOUBLE_EDGE, ROCK_SLIDE, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5153,11 +5153,11 @@ BattleTowerMons:
 	bigdw 298 ; SDef
 	db "RANTA-N@@@@"
 
-    db CELEBI
-	db LEFTOVERS
-	db PSYCHIC_M, THUNDER_WAVE, LEECH_SEED, RECOVER
+    db SALAMENCE
+	db FOCUS_BAND
+	db DRAGON_DANCE, OUTRAGE, EARTHQUAKE, FIRE_BLAST
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65500
 	bigdw 65500
@@ -5165,18 +5165,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 20, 10, 15 ; PP
+	db 20, 16, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 403 ; HP
-	bigdw 403 ; Max HP
-	bigdw 298 ; Atk
-	bigdw 298 ; Def
+	bigdw 393 ; HP
+	bigdw 393 ; Max HP
+	bigdw 368 ; Atk
+	bigdw 258 ; Def
 	bigdw 298 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 298 ; SDef
+	bigdw 318 ; SAtk
+	bigdw 258 ; SDef
 	db "RANTA-N@@@@"
 
     db GIRATINA
@@ -5284,7 +5284,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db LATIOS
-	db FOCUS_BAND
+	db DRAGON_SCALE
 	db THUNDERBOLT, DRAGON_PULSE, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5361,9 +5361,9 @@ BattleTowerMons:
 	bigdw 318 ; SDef
 	db "RANTA-N@@@@"
 
-    db SNORLAX
-	db LEFTOVERS
-	db RETURN, CURSE, REST, CRUNCH
+    db MACHAMP  ; could be removed
+	db BLACKBELT_I
+	db DYNAMICPUNCH, ICE_PUNCH, ROCK_SLIDE, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5373,18 +5373,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 10, 10, 24 ; PP
+	db 16, 24, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 523 ; HP
-	bigdw 523 ; Max HP
-	bigdw 318 ; Atk
-	bigdw 228 ; Def
-	bigdw 158 ; Spd
+	bigdw 383 ; HP
+	bigdw 383 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 258 ; Def
+	bigdw 208 ; Spd
 	bigdw 228 ; SAtk
-	bigdw 318 ; SDef
+	bigdw 268 ; SDef
 	db "RANTA-N@@@@"
 
     db MEW

@@ -2676,29 +2676,37 @@ WobbuffetEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
+	db EVOLVE_LEVEL, 30, PINECO
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 1, CONFUSION
-	db 1, STOMP
-	db 7, CONFUSION
-	db 13, STOMP
-	db 20, AGILITY
-	db 30, BATON_PASS
-	db 41, PSYBEAM
-	db 54, CRUNCH
+	db 1, BITE
+	db 1, LEER
+	db 1, HEADBUTT
+	db 1, RAGE
+	db 16, HEADBUTT
+	db 25, EMBER
+	db 32, CRUNCH
+	db 38, DRAGON_PULSE
+	db 45, DRAGON_CLAW
+	db 53, FIRE_BLAST
+	db 55, DRAGON_DANCE
+	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
+	db EVOLVE_LEVEL, 50, SALAMENCE
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, PROTECT
-	db 8, SELFDESTRUCT
-	db 15, TAKE_DOWN
-	db 22, RAPID_SPIN
-	db 36, EXPLOSION
-	db 43, SPIKES
-	db 50, DOUBLE_EDGE
+	db 1, BITE
+	db 1, LEER
+	db 1, HEADBUTT
+	db 1, RAGE
+	db 16, HEADBUTT
+	db 25, EMBER
+	db 32, CRUNCH
+	db 38, DRAGON_PULSE
+	db 45, DRAGON_CLAW
+	db 53, FIRE_BLAST
+	db 55, DRAGON_DANCE
+	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
 ForretressEvosAttacks:
@@ -2707,6 +2715,11 @@ ForretressEvosAttacks:
 	db 1, OUTRAGE
 	db 1, EARTHQUAKE
 	db 1, FIRE_BLAST
+	db 51, DRAGON_CLAW
+	db 52, FLY
+	db 53, FIRE_BLAST
+	db 55, DRAGON_DANCE
+	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:
@@ -2793,7 +2806,7 @@ ScizorEvosAttacks:
 	db 1, BULLET_PUNCH
 	db 1, X_SCISSOR
 	db 1, SWORDS_DANCE
-	db 1, REST
+	db 1, ROCK_SMASH
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT
 	db 18, FALSE_SWIPE

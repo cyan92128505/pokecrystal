@@ -46,7 +46,7 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr nz, .discourage ; discourage if AI_Redundant - loop bck to check move
+	jp nz, .discourage ; discourage if AI_Redundant - loop bck to check move
 
 ; Dismiss status-only moves if the player can't be statused.
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
@@ -89,7 +89,18 @@ AI_Basic:
 ;	bit SCREENS_SAFEGUARD, a
 ;	jr nz, .discourage
 
+
 ; Greatly encourage a move if it will KO the player
+; skip if enemy is slower and weakened and has priority
+    call AICompareSpeed
+    jr c, .checkKO
+    call AICheckEnemyHalfHP
+    jr c, .checkKO
+	ld a, EFFECT_PRIORITY_HIT
+	call AIHasMoveEffect
+	ret c
+
+.checkKO
     ld a, 1
 	ldh [hBattleTurn], a
 	push hl
@@ -149,7 +160,6 @@ AI_Smart_Switch:
 	cp BASE_STAT_LEVEL - 1
 	jp c, .switch
 
-
 ; switch if enemy is cursed
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
@@ -208,6 +218,8 @@ AI_Smart_Switch:
 	cp EFFECT_GEOMANCY
 	jr z, .switch
 	cp EFFECT_CALM_MIND
+	jr z, .switch
+	cp EFFECT_DRAGON_DANCE
 	jr z, .switch
 	ret
 
@@ -773,19 +785,21 @@ AI_Smart_Selfdestruct:
 	jr nz, .discourage
 
 .notlastmon
-; Do nothing if enemy's HP is below 25%.
+; Explosion does not need encouraged as AI_Aggressive will favour it
+; so here when we mean to use Explosion we don't discourage, do nothing
+; if enemy's HP is below 25% just boom
 	call AICheckEnemyQuarterHP
 	ret nc
 
-; Do nothing if player has highly boosted stats
+; if player has highly boosted stats just boom
     ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 2
 	ret nc
     ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 2
 	ret nc
 
-; Do nothing if player is faster and has boosted stats
+; if player is faster and has slightly boosted stats just boom
     call AICompareSpeed
     jr c, .continue
     ld a, [wPlayerAtkLevel]
@@ -799,6 +813,10 @@ AI_Smart_Selfdestruct:
 ; Greatly discourage this move if enemy's HP is above 50%.
 	call AICheckEnemyHalfHP
 	jr c, .discourage
+
+; if we are here we are below 1/2 hp and player is non boosted
+; if we have no other move that can ko the player just boom
+	ret
 
 .discourage
 	inc [hl]
@@ -2154,6 +2172,10 @@ AI_Smart_Curse:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
+; Don't use if weak, AI_Opportunist should also handle this
+	call AICheckEnemyQuarterHP
+	jr nc, .discourage
+
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
@@ -3126,6 +3148,10 @@ AI_Smart_CalmMind:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
+; Don't use if weak, AI_Opportunist should also handle this
+	call AICheckEnemyQuarterHP
+	jr nc, .discourage
+
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
@@ -3198,6 +3224,10 @@ AI_Smart_SwordsDance:
 ; don't go past +4
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; Don't use if weak, AI_Opportunist should also handle this
+	call AICheckEnemyQuarterHP
 	jr nc, .discourage
 
 ; don't use if we are at risk of being KOd by boosted player, just attack them
@@ -3311,11 +3341,21 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; deoxys should always boost once if it can - it is probably holding focus_sash
+; Don't use if weak, AI_Opportunist should also handle this
+	call AICheckEnemyQuarterHP
+	jr nc, .discourage
+
+; deoxys should always boost once and no more
     ld a, [wEnemyMonSpecies]
     cp DEOXYS
-    jr z, .continue
+    jr nz, .notDeoxys
+; encourage to get to +2 and discourage thereafter
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr c, .encourage
+    jr .discourage
 
+.notDeoxys
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
 ; does player have boosted attack

@@ -94,7 +94,6 @@ NewPokedexOrder:
 	db KADABRA
 	db ALAKAZAM
 	db DITTO
-	db PINECO
 	db NIDORAN_F
 	db NIDORINA
 	db NIDOQUEEN
@@ -143,7 +142,6 @@ NewPokedexOrder:
 	db HITMONLEE
 	db HITMONCHAN
 	db HITMONTOP
-	db GIRAFARIG
 	db TAUROS
 	db MILTANK
 	db MAGMAR
@@ -233,7 +231,9 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
-	db FORRETRESS
+	db GIRAFARIG
+	db PINECO
+	db SALAMENCE
 	db GIBLE
 	db GABITE
 	db GARCHOMP

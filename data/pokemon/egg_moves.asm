@@ -605,12 +605,10 @@ MisdreavusEggMoves:
 	db DESTINY_BOND
 	db -1 ; end
 
-GirafarigEggMoves:
-	db TAKE_DOWN
-	db AMNESIA
-	db FORESIGHT
-	db FUTURE_SIGHT
-	db BEAT_UP
+BagonEggMoves:
+	db DRAGON_DANCE
+	db OUTRAGE
+	db FLAMETHROWER
 	db -1 ; end
 
 PinecoEggMoves:

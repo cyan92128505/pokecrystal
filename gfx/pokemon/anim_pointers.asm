@@ -204,7 +204,7 @@ AnimationPointers:
 	dw WobbuffetAnimation
 	dw GirafarigAnimation
 	dw PinecoAnimation
-	dw ForretressAnimation
+	dw SalamenceAnimation
 	dw DunsparceAnimation
 	dw GligarAnimation
 	dw SteelixAnimation

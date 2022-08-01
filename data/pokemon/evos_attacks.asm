@@ -2709,7 +2709,7 @@ PinecoEvosAttacks:
 	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
-ForretressEvosAttacks:
+SalamenceEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DRAGON_DANCE
 	db 1, OUTRAGE

@@ -206,7 +206,7 @@ EvosAttacksPointers::
 	dw WobbuffetEvosAttacks
 	dw GirafarigEvosAttacks
 	dw PinecoEvosAttacks
-	dw ForretressEvosAttacks
+	dw SalamenceEvosAttacks
 	dw DunsparceEvosAttacks
 	dw GligarEvosAttacks
 	dw SteelixEvosAttacks

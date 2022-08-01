@@ -204,7 +204,7 @@ BitmasksPointers:
 	dw WobbuffetBitmasks
 	dw GirafarigBitmasks
 	dw PinecoBitmasks
-	dw ForretressBitmasks
+	dw SalamenceBitmasks
 	dw DunsparceBitmasks
 	dw GligarBitmasks
 	dw SteelixBitmasks

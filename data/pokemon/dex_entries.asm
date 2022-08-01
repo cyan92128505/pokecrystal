@@ -202,7 +202,7 @@ SkiploomPokedexEntry::   INCLUDE "data/pokemon/dex_entries/skiploom.asm"
 JumpluffPokedexEntry::   INCLUDE "data/pokemon/dex_entries/jumpluff.asm"
 AipomPokedexEntry::      INCLUDE "data/pokemon/dex_entries/aipom.asm"
 SunkernPokedexEntry::    INCLUDE "data/pokemon/dex_entries/sunkern.asm"
-SunfloraPokedexEntry::   INCLUDE "data/pokemon/dex_entries/sunflora.asm"
+MetagrossPokedexEntry::   INCLUDE "data/pokemon/dex_entries/metagross.asm"
 
 
 SECTION "Pokedex Entries 193-251", ROMX

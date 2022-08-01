@@ -134,6 +134,7 @@ AlphabeticalPokedexOrder:
 	db MAROWAK
 	db MEGANIUM
 	db MEOWTH
+	db METAGROSS
 	db METAPOD
 	db MEW
 	db MEW2_OG
@@ -218,7 +219,6 @@ AlphabeticalPokedexOrder:
 	db STEELIX
 	db SUDOWOODO
 	db SUICUNE
-	db SUNFLORA
 	db SUNKERN
 	db SWINUB
 	db TANGELA

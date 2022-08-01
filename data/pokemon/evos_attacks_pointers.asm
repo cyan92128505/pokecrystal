@@ -193,7 +193,7 @@ EvosAttacksPointers::
 	dw JumpluffEvosAttacks
 	dw AipomEvosAttacks
 	dw SunkernEvosAttacks
-	dw SunfloraEvosAttacks
+	dw MetagrossEvosAttacks
 	dw YanmaEvosAttacks
 	dw WooperEvosAttacks
 	dw QuagsireEvosAttacks

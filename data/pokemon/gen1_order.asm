@@ -231,7 +231,7 @@ Pokered_MonIndices:
 	db JUMPLUFF
 	db AIPOM
 	db SUNKERN
-	db SUNFLORA
+	db METAGROSS
 	db YANMA
 	db WOOPER
 	db QUAGSIRE

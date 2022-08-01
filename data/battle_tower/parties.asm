@@ -4997,9 +4997,9 @@ BattleTowerMons:
 	bigdw 138 ; SDef
 	db "RANTA-N@@@@"
 
-    db HERACROSS  ; could be removed
-	db SILVERPOWDER
-	db MEGAHORN, EARTHQUAKE, CLOSE_COMBAT, SWORDS_DANCE
+    db METAGROSS  ; could be removed
+	db QUICK_CLAW
+	db METEOR_MASH, EARTHQUAKE, ROCK_SLIDE, EXPLOSION
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5009,18 +5009,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 10, 30 ; PP
+	db 16, 16, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 363 ; HP
 	bigdw 363 ; Max HP
-	bigdw 348 ; Atk
-	bigdw 248 ; Def
-	bigdw 268 ; Spd
-	bigdw 178 ; SAtk
-	bigdw 288 ; SDef
+	bigdw 368 ; Atk
+	bigdw 358 ; Def
+	bigdw 138 ; Spd
+	bigdw 288 ; SAtk
+	bigdw 278 ; SDef
 	db "RANTA-N@@@@"
 
     db KYOGRE

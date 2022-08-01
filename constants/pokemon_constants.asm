@@ -211,7 +211,7 @@ JOHTO_POKEMON EQU const_value
 	const JUMPLUFF   ; bd   Conkeldur
 	const AIPOM      ; be   ...
 	const SUNKERN    ; bf   ...
-	const SUNFLORA   ; c0   Metagross
+	const METAGROSS  ; c0   Metagross
 	const YANMA      ; c1
 	const WOOPER     ; c2
 	const QUAGSIRE   ; c3

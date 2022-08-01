@@ -191,7 +191,7 @@ FramesPointers:
 	dw JumpluffFrames
 	dw AipomFrames
 	dw SunkernFrames
-	dw SunfloraFrames
+	dw MetagrossFrames
 	dw YanmaFrames
 	dw WooperFrames
 	dw QuagsireFrames

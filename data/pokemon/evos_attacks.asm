@@ -2543,7 +2543,7 @@ AipomEvosAttacks:
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:
-	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
+	db EVOLVE_LEVEL, 45, METAGROSS
 	db 0 ; no more evolutions
 	db 1, METEOR_MASH
 	db 1, EARTHQUAKE
@@ -2551,7 +2551,7 @@ SunkernEvosAttacks:
 	db 1, EXPLOSION
 	db 0 ; no more level-up moves
 
-SunfloraEvosAttacks:
+MetagrossEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, METEOR_MASH
 	db 1, EARTHQUAKE

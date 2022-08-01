@@ -191,7 +191,7 @@ AnimationPointers:
 	dw JumpluffAnimation
 	dw AipomAnimation
 	dw SunkernAnimation
-	dw SunfloraAnimation
+	dw MetagrossAnimation
 	dw YanmaAnimation
 	dw WooperAnimation
 	dw QuagsireAnimation

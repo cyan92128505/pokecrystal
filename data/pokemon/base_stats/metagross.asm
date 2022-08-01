@@ -1,4 +1,4 @@
-	db SUNFLORA ; 192
+	db METAGROSS ; 192
 
 	db  80,  135,  130,  70, 95,  90
 	;   hp  atk  def  spd  sat  sdf

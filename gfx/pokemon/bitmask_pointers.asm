@@ -191,7 +191,7 @@ BitmasksPointers:
 	dw JumpluffBitmasks
 	dw AipomBitmasks
 	dw SunkernBitmasks
-	dw SunfloraBitmasks
+	dw MetagrossBitmasks
 	dw YanmaBitmasks
 	dw WooperBitmasks
 	dw QuagsireBitmasks

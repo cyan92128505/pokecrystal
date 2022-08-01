@@ -191,7 +191,7 @@ AnimationIdlePointers:
 	dw JumpluffAnimationIdle
 	dw AipomAnimationIdle
 	dw SunkernAnimationIdle
-	dw SunfloraAnimationIdle
+	dw MetagrossAnimationIdle
 	dw YanmaAnimationIdle
 	dw WooperAnimationIdle
 	dw QuagsireAnimationIdle

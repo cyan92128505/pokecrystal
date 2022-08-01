@@ -102,7 +102,6 @@ NewPokedexOrder:
 	db NIDOKING
 	db YANMA
 	db SUNKERN
-	db SUNFLORA
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db SUDOWOODO
@@ -231,6 +230,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db METAGROSS
 	db BAGON
 	db SHELGON
 	db SALAMENCE

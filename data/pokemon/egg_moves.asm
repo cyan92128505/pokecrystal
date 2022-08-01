@@ -631,17 +631,6 @@ GligarEggMoves:
 	db COUNTER
 	db -1 ; end
 
-SnubbullEggMoves:
-	db METRONOME
-	db FAINT_ATTACK
-	db REFLECT
-	db PRESENT
-	db CRUNCH
-	db HEAL_BELL
-	db LICK
-	db LEER
-	db -1 ; end
-
 GibleEggMoves:
 	db OUTRAGE
 	db SWORDS_DANCE

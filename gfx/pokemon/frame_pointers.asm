@@ -208,7 +208,7 @@ FramesPointers:
 	dw DunsparceFrames
 	dw GligarFrames
 	dw SteelixFrames
-	dw SnubbullFrames
+	dw GibleFrames
 	dw GabiteFrames
 	dw GarchompFrames
 	dw ScizorFrames

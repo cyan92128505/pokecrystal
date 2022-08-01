@@ -208,7 +208,7 @@ AnimationPointers:
 	dw DunsparceAnimation
 	dw GligarAnimation
 	dw SteelixAnimation
-	dw SnubbullAnimation
+	dw GibleAnimation
 	dw GabiteAnimation
 	dw GarchompAnimation
 	dw ScizorAnimation

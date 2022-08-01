@@ -233,7 +233,7 @@ MoveDescriptions::
 	dw SweetScentDescription
 	dw IronTailDescription
 	dw MetalClawDescription
-	dw VitalThrowDescription
+	dw MeteorMashDescription
 	dw MorningSunDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
@@ -1195,9 +1195,9 @@ MetalClawDescription:
 	db   "An attack that may"
 	next "up user's ATTACK.@"
 
-VitalThrowDescription:
-	db   "A 2nd-strike move"
-	next "that never misses.@"
+MeteorMashDescription:
+	db   "Planet shaking blow"
+	next "May raise attack.@"
 
 MorningSunDescription:
 	db   "Restores HP"

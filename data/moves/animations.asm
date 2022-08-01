@@ -234,7 +234,7 @@ BattleAnimations::
 	dw BattleAnim_SweetScent
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
-	dw BattleAnim_VitalThrow
+	dw BattleAnim_MeteorMash
 	dw BattleAnim_MorningSun
 	dw BattleAnim_Synthesis
 	dw BattleAnim_Moonlight
@@ -4065,6 +4065,7 @@ BattleAnim_Magnitude:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_MeteorMash:
 BattleAnim_CloseCombat:
 BattleAnim_Dynamicpunch:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_EXPLOSION

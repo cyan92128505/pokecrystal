@@ -4658,7 +4658,7 @@ BattleTowerMons:
 
 	db MACHAMP
 	db QUICK_CLAW
-	db CROSS_CHOP, VITAL_THROW, FIRE_BLAST, EARTHQUAKE
+	db ICE_PUNCH, DYNAMICPUNCH, FIRE_BLAST, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -5362,7 +5362,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db MACHAMP  ; could be removed
-	db BLACKBELT_I
+	db QUICK_CLAW
 	db DYNAMICPUNCH, ICE_PUNCH, ROCK_SLIDE, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp

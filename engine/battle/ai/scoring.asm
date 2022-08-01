@@ -3227,7 +3227,7 @@ AI_Smart_SwordsDance:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-	call AICheckEnemyQuarterHP
+	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
 ; don't use if we are at risk of being KOd by boosted player, just attack them
@@ -3342,7 +3342,7 @@ AI_Smart_NastyPlot:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-	call AICheckEnemyQuarterHP
+	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
 ; deoxys should always boost once and no more

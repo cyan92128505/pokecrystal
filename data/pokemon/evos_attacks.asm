@@ -869,7 +869,7 @@ MachopEvosAttacks:
 	db 13, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
-	db 31, VITAL_THROW
+	db 31, ROCK_SMASH
 	db 37, CROSS_CHOP
 	db 43, SCARY_FACE
 	db 49, SUBMISSION
@@ -885,7 +885,7 @@ MachokeEvosAttacks:
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
-	db 34, VITAL_THROW
+	db 34, ROCK_SMASH
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
@@ -900,7 +900,7 @@ MachampEvosAttacks:
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
-	db 34, VITAL_THROW
+	db 34, ROCK_SMASH
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
@@ -2545,23 +2545,18 @@ AipomEvosAttacks:
 SunkernEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 4, GROWTH
-	db 10, MEGA_DRAIN
-	db 19, SUNNY_DAY
-	db 31, SYNTHESIS
-	db 46, GIGA_DRAIN
+	db 1, METEOR_MASH
+	db 1, EARTHQUAKE
+	db 1, PSYCHIC_M
+	db 1, EXPLOSION
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 1, POUND
-	db 4, GROWTH
-	db 10, RAZOR_LEAF
-	db 19, SUNNY_DAY
-	db 31, PETAL_DANCE
-	db 46, SOLARBEAM
+	db 1, METEOR_MASH
+	db 1, EARTHQUAKE
+	db 1, PSYCHIC_M
+	db 1, EXPLOSION
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:

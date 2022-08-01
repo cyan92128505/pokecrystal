@@ -208,7 +208,7 @@ JOHTO_POKEMON EQU const_value
 	const POLITOED   ; ba
 	const HOPPIP     ; bb   ...
 	const SKIPLOOM   ; bc   ...
-	const JUMPLUFF   ; bd   Staraptor
+	const JUMPLUFF   ; bd   Conkeldur
 	const AIPOM      ; be   ...
 	const SUNKERN    ; bf   ...
 	const SUNFLORA   ; c0   Metagross
@@ -222,15 +222,15 @@ JOHTO_POKEMON EQU const_value
 	const MISDREAVUS ; c8
 	const UNOWN      ; c9
 	const WOBBUFFET  ; ca
-	const BAGON      ; cb   ...
-	const SHELGON    ; cc   ...
-	const SALAMENCE  ; cd   Salamence
+	const BAGON      ; cb
+	const SHELGON    ; cc
+	const SALAMENCE  ; cd
 	const DUNSPARCE  ; ce
 	const GLIGAR     ; cf
 	const STEELIX    ; d0
-	const GIBLE      ; d1   ...
-	const GABITE     ; d2   ...
-	const GARCHOMP   ; d3   Garchomp
+	const GIBLE      ; d1
+	const GABITE     ; d2
+	const GARCHOMP   ; d3
 	const SCIZOR     ; d4
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
@@ -238,7 +238,7 @@ JOHTO_POKEMON EQU const_value
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const SLUGMA     ; da   weevil
-	const DEOXYS     ; db   deoxys
+	const DEOXYS     ; db
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
 	const SPIRITOMB  ; de

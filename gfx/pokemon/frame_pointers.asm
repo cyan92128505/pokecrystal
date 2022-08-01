@@ -203,7 +203,7 @@ FramesPointers:
 	dw UnownFrames
 	dw WobbuffetFrames
 	dw GirafarigFrames
-	dw PinecoFrames
+	dw ShelgonFrames
 	dw SalamenceFrames
 	dw DunsparceFrames
 	dw GligarFrames

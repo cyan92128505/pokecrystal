@@ -611,13 +611,6 @@ BagonEggMoves:
 	db FLAMETHROWER
 	db -1 ; end
 
-PinecoEggMoves:
-	db REFLECT
-	db PIN_MISSILE
-	db FLAIL
-	db SWIFT
-	db -1 ; end
-
 DunsparceEggMoves:
 	db ANCIENTPOWER
 	db ROCK_SLIDE

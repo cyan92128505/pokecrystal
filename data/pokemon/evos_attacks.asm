@@ -2676,7 +2676,7 @@ WobbuffetEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
-	db EVOLVE_LEVEL, 30, PINECO
+	db EVOLVE_LEVEL, 30, SHELGON
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
@@ -2692,7 +2692,7 @@ GirafarigEvosAttacks:
 	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
-PinecoEvosAttacks:
+ShelgonEvosAttacks:
 	db EVOLVE_LEVEL, 50, SALAMENCE
 	db 0 ; no more evolutions
 	db 1, BITE

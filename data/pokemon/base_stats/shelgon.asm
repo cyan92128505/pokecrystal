@@ -1,4 +1,4 @@
-	db PINECO ; 204
+	db SHELGON ; 204
 
 	db  65,  95,  100,  50,  60,  60
 	;   hp  atk  def  spd  sat  sdf

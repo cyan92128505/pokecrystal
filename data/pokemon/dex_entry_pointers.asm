@@ -204,7 +204,7 @@ PokedexDataPointerTable:
 	dw UnownPokedexEntry
 	dw WobbuffetPokedexEntry
 	dw GirafarigPokedexEntry
-	dw PinecoPokedexEntry
+	dw ShelgonPokedexEntry
 	dw SalamencePokedexEntry
 	dw DunsparcePokedexEntry
 	dw GligarPokedexEntry

@@ -243,7 +243,7 @@ Pokered_MonIndices:
 	db UNOWN
 	db WOBBUFFET
 	db GIRAFARIG
-	db PINECO
+	db SHELGON
 	db SALAMENCE
 	db DUNSPARCE
 	db GLIGAR

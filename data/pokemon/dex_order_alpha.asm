@@ -197,7 +197,7 @@ AlphabeticalPokedexOrder:
 	db SEAKING
 	db SEEL
 	db SENTRET
-    db PINECO
+    db SHELGON
 	db SHELLDER
 	db SHUCKLE
 	db SKARMORY

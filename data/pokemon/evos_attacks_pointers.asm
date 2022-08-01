@@ -205,7 +205,7 @@ EvosAttacksPointers::
 	dw UnownEvosAttacks
 	dw WobbuffetEvosAttacks
 	dw GirafarigEvosAttacks
-	dw PinecoEvosAttacks
+	dw ShelgonEvosAttacks
 	dw SalamenceEvosAttacks
 	dw DunsparceEvosAttacks
 	dw GligarEvosAttacks

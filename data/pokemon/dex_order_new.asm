@@ -232,7 +232,7 @@ NewPokedexOrder:
 	db PUPITAR
 	db TYRANITAR
 	db GIRAFARIG
-	db PINECO
+	db SHELGON
 	db SALAMENCE
 	db GIBLE
 	db GABITE

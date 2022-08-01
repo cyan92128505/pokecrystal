@@ -2787,7 +2787,7 @@ ExecutiveMGroup:
 PsychicGroup:
 	; PSYCHIC_T (1)
 	db "NATHAN@", TRAINERTYPE_NORMAL
-	db 26, GIRAFARIG
+	db 26, BAGON
 	db -1 ; end
 
 	; PSYCHIC_T (2)
@@ -2874,7 +2874,7 @@ PsychicGroup:
 	db "GILBERT@", TRAINERTYPE_NORMAL
 	db 30, STARMIE
 	db 30, EXEGGCUTE
-	db 34, GIRAFARIG
+	db 34, BAGON
 	db -1 ; end
 
 	; PSYCHIC_T (11)

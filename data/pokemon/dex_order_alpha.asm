@@ -13,7 +13,7 @@ AlphabeticalPokedexOrder:
 	db ARIADOS
 	db ARTICUNO
 	db AZUMARILL
-	db GIRAFARIG
+	db BAGON
 	db BAYLEEF
 	db BEEDRILL
 	db BELLOSSOM

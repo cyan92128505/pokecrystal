@@ -203,7 +203,7 @@ PokedexDataPointerTable:
 	dw MisdreavusPokedexEntry
 	dw UnownPokedexEntry
 	dw WobbuffetPokedexEntry
-	dw GirafarigPokedexEntry
+	dw BagonPokedexEntry
 	dw ShelgonPokedexEntry
 	dw SalamencePokedexEntry
 	dw DunsparcePokedexEntry

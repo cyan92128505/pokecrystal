@@ -1,4 +1,4 @@
-	db GIRAFARIG ; 203
+	db BAGON ; 203
 
 	db  45,  75,  60,  50,  40,  30
 	;   hp  atk  def  spd  sat  sdf

@@ -202,7 +202,7 @@ FramesPointers:
 	dw MisdreavusFrames
 	dw UnownFrames
 	dw WobbuffetFrames
-	dw GirafarigFrames
+	dw BagonFrames
 	dw ShelgonFrames
 	dw SalamenceFrames
 	dw DunsparceFrames

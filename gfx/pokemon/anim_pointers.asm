@@ -202,7 +202,7 @@ AnimationPointers:
 	dw MisdreavusAnimation
 	dw UnownAnimation
 	dw WobbuffetAnimation
-	dw GirafarigAnimation
+	dw BagonAnimation
 	dw ShelgonAnimation
 	dw SalamenceAnimation
 	dw DunsparceAnimation

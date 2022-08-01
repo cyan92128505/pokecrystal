@@ -464,7 +464,7 @@ INCBIN "gfx/footprints/misdreavus.1bpp", footprint_bottom
 ; 201-208 top halves
 INCBIN "gfx/footprints/unown.1bpp",      footprint_top
 INCBIN "gfx/footprints/wobbuffet.1bpp",  footprint_top
-INCBIN "gfx/footprints/girafarig.1bpp",  footprint_top
+INCBIN "gfx/footprints/bagon.1bpp",  footprint_top
 INCBIN "gfx/footprints/shelgon.1bpp",     footprint_top
 INCBIN "gfx/footprints/salamence.1bpp", footprint_top
 INCBIN "gfx/footprints/dunsparce.1bpp",  footprint_top
@@ -473,7 +473,7 @@ INCBIN "gfx/footprints/steelix.1bpp",    footprint_top
 ; 201-208 bottom halves
 INCBIN "gfx/footprints/unown.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/wobbuffet.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/girafarig.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/bagon.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/shelgon.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/salamence.1bpp", footprint_bottom
 INCBIN "gfx/footprints/dunsparce.1bpp",  footprint_bottom

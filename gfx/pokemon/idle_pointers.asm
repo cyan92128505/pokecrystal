@@ -202,7 +202,7 @@ AnimationIdlePointers:
 	dw MisdreavusAnimationIdle
 	dw UnownAnimationIdle
 	dw WobbuffetAnimationIdle
-	dw GirafarigAnimationIdle
+	dw BagonAnimationIdle
 	dw ShelgonAnimationIdle
 	dw SalamenceAnimationIdle
 	dw DunsparceAnimationIdle

@@ -231,7 +231,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
-	db GIRAFARIG
+	db BAGON
 	db SHELGON
 	db SALAMENCE
 	db GIBLE

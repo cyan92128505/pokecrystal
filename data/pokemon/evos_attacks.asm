@@ -2675,7 +2675,7 @@ WobbuffetEvosAttacks:
 	db 1, DESTINY_BOND
 	db 0 ; no more level-up moves
 
-GirafarigEvosAttacks:
+BagonEvosAttacks:
 	db EVOLVE_LEVEL, 30, SHELGON
 	db 0 ; no more evolutions
 	db 1, BITE

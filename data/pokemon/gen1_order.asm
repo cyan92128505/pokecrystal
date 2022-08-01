@@ -242,7 +242,7 @@ Pokered_MonIndices:
 	db MISDREAVUS
 	db UNOWN
 	db WOBBUFFET
-	db GIRAFARIG
+	db BAGON
 	db SHELGON
 	db SALAMENCE
 	db DUNSPARCE

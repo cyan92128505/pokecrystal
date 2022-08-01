@@ -410,8 +410,8 @@ PokemonPicPointers::
 
 	dba_pic WobbuffetFrontpic
 	dba_pic WobbuffetBackpic
-	dba_pic GirafarigFrontpic
-	dba_pic GirafarigBackpic
+	dba_pic BagonFrontpic
+	dba_pic BagonBackpic
 	dba_pic ShelgonFrontpic
 	dba_pic ShelgonBackpic
 	dba_pic SalamenceFrontpic

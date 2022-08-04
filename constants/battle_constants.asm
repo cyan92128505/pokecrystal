@@ -96,6 +96,8 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_FORCEITEM
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_SUICUNE
+    const BATTLETYPE_SET
+	const BATTLETYPE_SETNOITEMS
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def
@@ -154,8 +156,7 @@ assert const_value % 2 == 0
 NUM_BATTLE_VAR_LOCATION_PAIRS EQU const_value / 2
 
 ; status condition bit flags
-;SLP EQU %111 ; 0-7 turns - AndrewNote - reduce sleep turns to 4
-SLP EQU %011 ; 0-3 turns
+SLP EQU %011 ; 0-3 turns - AndrewNote - reduce sleep turns to 3
 	const_def 3
 	const PSN
 	const BRN

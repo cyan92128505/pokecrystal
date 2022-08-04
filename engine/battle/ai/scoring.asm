@@ -3316,10 +3316,35 @@ AI_Smart_Barrier:
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
 
-; otherwise encourage to +2
+; strongly encourage to +2 if player mon has higher attack than special attack
+; otherwise discourage
     ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr c, .encourage
+	ret nc
+	push hl
+	push bc
+	push de
+; Get the pointer for the player's Pokémon's base Attack
+	ld a, [wBattleMonSpecies]
+	ld hl, BaseData + BASE_ATK
+	ld bc, BASE_DATA_SIZE
+	call AddNTimes
+; Get the Pokémon's base Attack
+	ld a, BANK(BaseData)
+	call GetFarByte
+	ld d, a
+; Get the pointer for the player's Pokémon's base Special Attack
+	ld bc, BASE_SAT - BASE_ATK
+	add hl, bc
+; Get the Pokémon's base Special Attack
+	ld a, BANK(BaseData)
+	call GetFarByte
+	pop de
+	pop bc
+	pop hl
+; If its base Attack is not greater than its base Special Attack, discourage.
+	cp d
+	jr nc, .discourage
 
 .strongEncourage
     dec [hl]

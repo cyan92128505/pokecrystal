@@ -1192,10 +1192,18 @@ VitaminEffect:
 	call GetPartyParamLocation
 
 	add hl, bc
+
+    ;ld b, EVENT_BEAT_ELITE_FOUR
+	;call EventFlagAction
+	;ld a, c
+	;and a
+	;jr nz, .continue
+
 	ld a, [hl]
 	cp 100
 	jr nc, NoEffectMessage
 
+.continue
 	add 10
 	ld [hl], a
 	call UpdateStatsAfterItem

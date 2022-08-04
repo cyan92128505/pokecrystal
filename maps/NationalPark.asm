@@ -74,6 +74,7 @@ TrainerSchoolboyJack1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	endifjustbattled
 	opentext
 	checkflag ENGINE_JACK_READY_FOR_REMATCH
@@ -190,6 +191,7 @@ TrainerPokefanmWilliam:
 	trainer POKEFANM, WILLIAM, EVENT_BEAT_POKEFANM_WILLIAM, PokefanmWilliamSeenText, PokefanmWilliamBeatenText, 0, .Script
 
 .Script:
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	endifjustbattled
 	opentext
 	writetext PokefanmWilliamAfterBattleText
@@ -202,6 +204,7 @@ TrainerPokefanfBeverly1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	endifjustbattled
 	opentext
 	checkflag ENGINE_BEVERLY_HAS_NUGGET
@@ -280,6 +283,7 @@ TrainerLassKrise:
 	trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script
 
 .Script:
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	endifjustbattled
 	opentext
 	writetext LassKriseAfterBattleText

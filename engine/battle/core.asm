@@ -94,6 +94,7 @@ DoBattle:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+	call StartPermanentWeather
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -108,6 +109,7 @@ DoBattle:
 	call EnemySwitch
 	call SetEnemyTurn
 	call SpikesDamage
+	call StartPermanentWeather
 
 .not_linked_2
 	jp BattleTurn
@@ -470,6 +472,7 @@ DetermineMoveOrder:
 	callfar AI_Switch
 	call SetEnemyTurn
 	call SpikesDamage
+	call StartPermanentWeather
 	jp .enemy_first
 
 .use_move
@@ -2351,6 +2354,7 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	call SpikesDamage
+	call StartPermanentWeather
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2787,6 +2791,7 @@ ForcePlayerMonChoice:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+	call StartPermanentWeather
 	ld a, $1
 	and a
 	ld c, a
@@ -2807,7 +2812,8 @@ PlayerPartyMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp StartPermanentWeather
 
 CheckMobileBattleError:
 	ld a, [wLinkMode]
@@ -3284,7 +3290,7 @@ FindMonInOTPartyToSwitchIntoBattle:
 	ld a, [hl]
 	and 1 << FRZ | SLP
 	pop bc
-	jr nz, .discourage
+	jr nz, .discourage ; AndrewNote - discourage switch to a SLP or FRZ mon
 
 	call LookUpTheEffectivenessOfEveryMove ; consider how good enemy mon is against player mon
 	call IsThePlayerMonTypesEffectiveAgainstOTMon ; consider how good player mon is against enemy mon
@@ -3494,6 +3500,11 @@ CheckWhetherToAskSwitch:
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc
+	ld a, [wBattleType]
+    cp BATTLETYPE_SET
+    jr z, .return_nc
+    cp BATTLETYPE_SETNOITEMS
+    jr z, .return_nc
 	ld a, [wCurPartyMon]
 	push af
 	ld a, [wCurBattleMon]
@@ -4173,6 +4184,49 @@ SpikesDamage:
 
 .hl
 	jp hl
+
+; AndrewNote - function for Pokemon to start permanent weather
+StartPermanentWeather:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkSpecies
+	ld a, [wBattleMonSpecies]
+.checkSpecies
+    cp KYOGRE
+    jr z, .rain
+    cp GROUDON
+    jr z, .sun
+    cp TYRANITAR
+    jr z,  .sand
+    ret
+.rain
+	ld a, WEATHER_RAIN
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	ld de, RAIN_DANCE
+    call Call_PlayBattleAnim
+	ld hl, DownpourText
+	jp StdBattleTextbox
+.sun
+    ld a, WEATHER_SUN
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	ld de, SUNNY_DAY
+    call Call_PlayBattleAnim
+	ld hl, SunGotBrightText
+	jp StdBattleTextbox
+.sand
+    ld a, WEATHER_SANDSTORM
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	ld de, SANDSTORM
+    call Call_PlayBattleAnim
+	ld hl, SandstormBrewedText
+	jp StdBattleTextbox
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE
@@ -4979,6 +5033,10 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
+    ld a, [wBattleType]
+    cp BATTLETYPE_SETNOITEMS
+    jp z, .ItemsCantBeUsed
+
 	ld a, [wInBattleTowerBattle]
 	and a
 	jp nz, .ItemsCantBeUsed
@@ -5261,7 +5319,8 @@ PlayerSwitch:
 EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp StartPermanentWeather
 
 BattleMonEntrance:
 	call WithdrawMonText
@@ -5295,6 +5354,7 @@ BattleMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+	call StartPermanentWeather
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5318,7 +5378,8 @@ PassedBattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp StartPermanentWeather
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap

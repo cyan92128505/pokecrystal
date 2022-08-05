@@ -707,7 +707,7 @@ AI_Switch:
 	farcall EnemySwitch
 	farcall ResetBattleParticipants
 	farcall SpikesDamage
-	farcall StartPermanentWeather
+	farcall SwitchInEffects
 	xor a
 	ld [wBattleHasJustStarted], a
 	ld a, [wLinkMode]

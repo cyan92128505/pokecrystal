@@ -149,6 +149,7 @@ AI_Smart_Switch:
 ; possibly switch if enemy is setup bait
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
+	;and 1 << FRZ
 	jr nz, .checkSetUpAndSwitchIfPlayerSetsUp
 
 ; don't switch if enemy is weakened, just let it die
@@ -223,22 +224,6 @@ AI_Smart_Switch:
 	jr z, .switch
 	ret
 
-.checkSetUpAndSwitch
-; don't switch if enemy mon is already set up
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-	jr .switch
-
 .checkSetUpAndSwitch50
 ; don't switch if enemy mon is already set up
     ld a, [wEnemyAtkLevel]
@@ -255,10 +240,6 @@ AI_Smart_Switch:
 	ret nc
 	jr .switch50
 
-.switch80
-    call AI_80_20
-	jr nc, .switch
-	ret
 .switch50
     call AI_50_50
 	ret c
@@ -1238,12 +1219,15 @@ AI_Smart_Moonlight:
     ld [wEnemyIsSwitching], a
     jr .healBelowHalfHp
 
-; for rest heal below 1/4 HP if faster than player
+; for rest heal below 1/4 HP if faster than player, discourage otherwise
+; if slower than player 50% chance to heal below 1/2 HP and guaranteed below 1/4 HP
 .restHeal
-	call AICompareSpeed
-	jr c, .healBelowHalfHp
     call AICheckEnemyQuarterHP
     jr c, .encourage
+	call AICompareSpeed
+	jr nc, .discourage
+ 	call AI_50_50
+ 	ret c
 
 ; otherwise encourage heal when under 1/2 hp
 .healBelowHalfHp
@@ -2229,6 +2213,11 @@ AI_Smart_Curse:
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
+; discourage after +1 if player has boosted special attack
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .discourage
+
     ret
 
 .approve
@@ -3205,7 +3194,13 @@ AI_Smart_CalmMind:
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
+; discourage after +1 if player has boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .discourage
+
     ret
+
 .strongEncourage
     dec [hl]
 .encourage

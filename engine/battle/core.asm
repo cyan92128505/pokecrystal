@@ -40,6 +40,7 @@ DoBattle:
 	call ResetEnemyStatLevels
 	call BreakAttraction
 	call EnemySwitch
+	farcall SwitchInEffects
 
 .wild
 	ld c, 40
@@ -94,7 +95,7 @@ DoBattle:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
-	call StartPermanentWeather
+	call SwitchInEffects
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -109,7 +110,7 @@ DoBattle:
 	call EnemySwitch
 	call SetEnemyTurn
 	call SpikesDamage
-	call StartPermanentWeather
+	call SwitchInEffects
 
 .not_linked_2
 	jp BattleTurn
@@ -472,7 +473,7 @@ DetermineMoveOrder:
 	callfar AI_Switch
 	call SetEnemyTurn
 	call SpikesDamage
-	call StartPermanentWeather
+	call SwitchInEffects
 	jp .enemy_first
 
 .use_move
@@ -873,7 +874,10 @@ Battle_EnemyFirst:
     call SetEnemyTurn
 	ld a, $1
 	ld [wEnemyGoesFirst], a
-
+; AndrewNote - logic for ai switching
+	ld a, [wLinkMode]
+	and a
+	jr nz, .noSwitch
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .noSwitch
@@ -919,6 +923,11 @@ Battle_EnemyFirst:
 	ret
 
 Battle_PlayerFirst:
+; AndrewNote - add logic around enemy switching
+	ld a, [wLinkMode]
+	and a
+	jr nz, .noSwitch
+
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .noSwitch
@@ -2354,7 +2363,7 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	call SpikesDamage
-	call StartPermanentWeather
+	call SwitchInEffects
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2791,7 +2800,7 @@ ForcePlayerMonChoice:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
-	call StartPermanentWeather
+	call SwitchInEffects
 	ld a, $1
 	and a
 	ld c, a
@@ -2813,7 +2822,7 @@ PlayerPartyMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
-	jp StartPermanentWeather
+	jp SwitchInEffects
 
 CheckMobileBattleError:
 	ld a, [wLinkMode]
@@ -4186,7 +4195,7 @@ SpikesDamage:
 	jp hl
 
 ; AndrewNote - function for Pokemon to start permanent weather
-StartPermanentWeather:
+SwitchInEffects:
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -4199,34 +4208,56 @@ StartPermanentWeather:
     jr z, .sun
     cp TYRANITAR
     jr z,  .sand
+    cp RAYQUAZA
+    jr z, .clear
     ret
+
 .rain
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
+	ld a, [wBattleHasJustStarted]
+	and a
+	jr nz, .skipRainAnim
 	ld de, RAIN_DANCE
     call Call_PlayBattleAnim
+.skipRainAnim
 	ld hl, DownpourText
 	jp StdBattleTextbox
+
 .sun
     ld a, WEATHER_SUN
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
+	ld a, [wBattleHasJustStarted]
+	and a
+	jr nz, .skipSunAnim
 	ld de, SUNNY_DAY
     call Call_PlayBattleAnim
+.skipSunAnim
 	ld hl, SunGotBrightText
 	jp StdBattleTextbox
+
 .sand
     ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
+	ld a, [wBattleHasJustStarted]
+	and a
+	jr nz, .skipSandAnim
 	ld de, SANDSTORM
     call Call_PlayBattleAnim
+.skipSandAnim
 	ld hl, SandstormBrewedText
 	jp StdBattleTextbox
+
+.clear
+	ld a, 1
+	ld [wWeatherCount], a
+	ret
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE
@@ -5320,7 +5351,7 @@ EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
 	call SpikesDamage
-	jp StartPermanentWeather
+	jp SwitchInEffects
 
 BattleMonEntrance:
 	call WithdrawMonText
@@ -5354,7 +5385,7 @@ BattleMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
-	call StartPermanentWeather
+	call SwitchInEffects
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5379,7 +5410,7 @@ PassedBattleMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
-	jp StartPermanentWeather
+	jp SwitchInEffects
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap

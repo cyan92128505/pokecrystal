@@ -351,7 +351,7 @@ JohtoGrassWildMons:
 	; day
 	db 12, NIDORAN_F
 	db 12, NIDORAN_M
-	db 14, SUNKERN
+	db 14, PIDGEY
 	db 13, PIDGEY
 	db 10, CATERPIE
 	db 10, WEEDLE

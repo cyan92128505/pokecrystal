@@ -190,7 +190,7 @@ AnimationPointers:
 	dw SkiploomAnimation
 	dw JumpluffAnimation
 	dw AipomAnimation
-	dw SunkernAnimation
+	dw MetangAnimation
 	dw MetagrossAnimation
 	dw YanmaAnimation
 	dw WooperAnimation

@@ -190,7 +190,7 @@ PokemonNames::
 	db "SKIPLOOM@@"
 	db "JUMPLUFF@@"
 	db "AIPOM@@@@@"
-	db "SUNKERN@@@"
+	db "METANG@@@@"
 	db "METAGROSS@"
 	db "YANMA@@@@@"
 	db "WOOPER@@@@"

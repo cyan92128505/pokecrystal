@@ -383,8 +383,8 @@ PokemonPicPointers::
 	dba_pic JumpluffBackpic
 	dba_pic AipomFrontpic
 	dba_pic AipomBackpic
-	dba_pic SunkernFrontpic
-	dba_pic SunkernBackpic
+	dba_pic MetangFrontpic
+	dba_pic MetangBackpic
 	dba_pic MetagrossFrontpic
 	dba_pic MetagrossBackpic
 	dba_pic YanmaFrontpic

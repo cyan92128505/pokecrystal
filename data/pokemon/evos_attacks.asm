@@ -2542,13 +2542,22 @@ AipomEvosAttacks:
 	db 46, AGILITY
 	db 0 ; no more level-up moves
 
-SunkernEvosAttacks:
+MetangEvosAttacks:
 	db EVOLVE_LEVEL, 45, METAGROSS
 	db 0 ; no more evolutions
-	db 1, METEOR_MASH
-	db 1, EARTHQUAKE
-	db 1, PSYCHIC_M
-	db 1, EXPLOSION
+	db 1, CONFUSION
+	db 1, METAL_CLAW
+	db 1, TAKE_DOWN
+	db 20, CONFUSION
+	db 20, METAL_CLAW
+	db 28, PURSUIT
+	db 32, BULLET_PUNCH
+	db 36, PSYCHIC_M
+	db 40, BARRIER
+	db 44, AGILITY
+	db 48, METEOR_MASH
+	db 56, HYPER_BEAM
+	db 65, EXPLOSION
 	db 0 ; no more level-up moves
 
 MetagrossEvosAttacks:
@@ -2557,6 +2566,10 @@ MetagrossEvosAttacks:
 	db 1, EARTHQUAKE
 	db 1, PSYCHIC_M
 	db 1, EXPLOSION
+	db 46, AGILITY
+	db 50, METEOR_MASH
+	db 56, HYPER_BEAM
+	db 65, EXPLOSION
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:

@@ -135,6 +135,7 @@ AlphabeticalPokedexOrder:
 	db MEGANIUM
 	db MEOWTH
 	db METAGROSS
+	db METANG
 	db METAPOD
 	db MEW
 	db MEW2_OG
@@ -219,7 +220,6 @@ AlphabeticalPokedexOrder:
 	db STEELIX
 	db SUDOWOODO
 	db SUICUNE
-	db SUNKERN
 	db SWINUB
 	db TANGELA
 	db TAUROS

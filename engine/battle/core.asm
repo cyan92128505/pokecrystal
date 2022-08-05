@@ -4194,7 +4194,7 @@ SpikesDamage:
 .hl
 	jp hl
 
-; AndrewNote - function for Pokemon to start permanent weather
+; AndrewNote - function for Pokemon with effects on switching in
 SwitchInEffects:
 	ldh a, [hBattleTurn]
 	and a

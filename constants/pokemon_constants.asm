@@ -133,7 +133,7 @@
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
 	const TANGELA    ; 72
-	const KANGASKHAN ; 73   tangrowth
+	const KANGASKHAN ; 73
 	const HORSEA     ; 74   togekiss
 	const SEADRA     ; 75   elecivire
 	const GOLDEEN    ; 76   magmortar
@@ -210,7 +210,7 @@ JOHTO_POKEMON EQU const_value
 	const SKIPLOOM   ; bc   ...
 	const JUMPLUFF   ; bd   Conkeldur
 	const AIPOM      ; be   ...
-	const SUNKERN    ; bf   ...
+	const METANG     ; bf   ...
 	const METAGROSS  ; c0   Metagross
 	const YANMA      ; c1
 	const WOOPER     ; c2

@@ -2530,16 +2530,22 @@ JumpluffEvosAttacks:
 	db 44, MEGA_DRAIN
 	db 0 ; no more level-up moves
 
-AipomEvosAttacks:
+BeldumEvosAttacks:
+	db EVOLVE_LEVEL, 20, METANG
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, TAIL_WHIP
-	db 6, SAND_ATTACK
-	db 12, BATON_PASS
-	db 19, FURY_SWIPES
-	db 27, SWIFT
-	db 36, SCREECH
-	db 46, AGILITY
+	db 1, CONFUSION
+	db 1, METAL_CLAW
+	db 1, TAKE_DOWN
+	db 20, CONFUSION
+	db 20, METAL_CLAW
+	db 28, PURSUIT
+	db 32, BULLET_PUNCH
+	db 36, PSYCHIC_M
+	db 40, BARRIER
+	db 44, AGILITY
+	db 48, METEOR_MASH
+	db 56, HYPER_BEAM
+	db 65, EXPLOSION
 	db 0 ; no more level-up moves
 
 MetangEvosAttacks:

@@ -195,7 +195,7 @@ PokemonCries::
 	mon_cry CRY_CLEFFA,       59,  200 ; HOPPIP
 	mon_cry CRY_CLEFFA,       39,  312 ; SKIPLOOM
 	mon_cry CRY_CLEFFA,        0,  384 ; JUMPLUFF
-	mon_cry CRY_AIPOM,       -81,  232 ; AIPOM
+	mon_cry CRY_AIPOM,       100,  100 ; BELDUM
 	mon_cry CRY_TYPHLOSION,  200,  150 ; METANG
 	mon_cry CRY_TYPHLOSION,  300,  100 ; METAGROSS
 	mon_cry CRY_TOTODILE,     49,  200 ; YANMA

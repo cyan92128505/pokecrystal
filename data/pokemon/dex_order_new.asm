@@ -119,7 +119,6 @@ NewPokedexOrder:
 	db MAGNETON
 	db VOLTORB
 	db ELECTRODE
-	db AIPOM
 	db VULPIX
 	db NINETALES
 	db GROWLITHE
@@ -229,6 +228,7 @@ NewPokedexOrder:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db BELDUM
 	db METANG
 	db METAGROSS
 	db BAGON

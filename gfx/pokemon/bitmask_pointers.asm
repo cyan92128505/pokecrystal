@@ -189,7 +189,7 @@ BitmasksPointers:
 	dw HoppipBitmasks
 	dw SkiploomBitmasks
 	dw JumpluffBitmasks
-	dw AipomBitmasks
+	dw BeldumBitmasks
 	dw MetangBitmasks
 	dw MetagrossBitmasks
 	dw YanmaBitmasks

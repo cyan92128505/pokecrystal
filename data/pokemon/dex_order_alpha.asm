@@ -4,7 +4,6 @@ AlphabeticalPokedexOrder:
 	table_width 1, AlphabeticalPokedexOrder
 	db ABRA
 	db AERODACTYL
-	db AIPOM
 	db ALAKAZAM
 	db AMPHAROS
 	db ARBOK
@@ -16,6 +15,7 @@ AlphabeticalPokedexOrder:
 	db BAGON
 	db BAYLEEF
 	db BEEDRILL
+	db BELDUM
 	db BELLOSSOM
 	db BELLSPROUT
 	db BLASTOISE

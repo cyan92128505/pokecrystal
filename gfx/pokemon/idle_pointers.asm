@@ -189,7 +189,7 @@ AnimationIdlePointers:
 	dw HoppipAnimationIdle
 	dw SkiploomAnimationIdle
 	dw JumpluffAnimationIdle
-	dw AipomAnimationIdle
+	dw BeldumAnimationIdle
 	dw MetangAnimationIdle
 	dw MetagrossAnimationIdle
 	dw YanmaAnimationIdle

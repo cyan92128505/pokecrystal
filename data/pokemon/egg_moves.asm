@@ -568,17 +568,6 @@ HoppipEggMoves:
 	db AMNESIA
 	db -1 ; end
 
-AipomEggMoves:
-	db COUNTER
-	db SCREECH
-	db PURSUIT
-	db AGILITY
-	db SPITE
-	db SLAM
-	db DOUBLESLAP
-	db BEAT_UP
-	db -1 ; end
-
 YanmaEggMoves:
 	db WHIRLWIND
 	db REVERSAL

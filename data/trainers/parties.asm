@@ -550,7 +550,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (12)
 	db "RICKY@", TRAINERTYPE_NORMAL
-	db 32, AIPOM
+	db 32, BELDUM
 	db 32, DITTO
 	db -1 ; end
 
@@ -1571,7 +1571,7 @@ TeacherGroup:
 
 	; TEACHER (2)
 	db "HILLARY@", TRAINERTYPE_NORMAL
-	db 32, AIPOM
+	db 32, BELDUM
 	db 36, CUBONE
 	db -1 ; end
 

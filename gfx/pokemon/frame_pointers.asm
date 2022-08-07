@@ -189,7 +189,7 @@ FramesPointers:
 	dw HoppipFrames
 	dw SkiploomFrames
 	dw JumpluffFrames
-	dw AipomFrames
+	dw BeldumFrames
 	dw MetangFrames
 	dw MetagrossFrames
 	dw YanmaFrames

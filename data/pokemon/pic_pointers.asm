@@ -381,8 +381,8 @@ PokemonPicPointers::
 	dba_pic SkiploomBackpic
 	dba_pic JumpluffFrontpic
 	dba_pic JumpluffBackpic
-	dba_pic AipomFrontpic
-	dba_pic AipomBackpic
+	dba_pic BeldumFrontpic
+	dba_pic BeldumBackpic
 	dba_pic MetangFrontpic
 	dba_pic MetangBackpic
 	dba_pic MetagrossFrontpic

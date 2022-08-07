@@ -83,7 +83,7 @@ BattleTowerMons:
 	db "BURAtuKI-@@"
 
 	db WOBBUFFET
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -291,7 +291,7 @@ BattleTowerMons:
 	db "PORIGON2@@@"
 
 	db MISDREAVUS
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db PERISH_SONG, MEAN_LOOK, PAIN_SPLIT, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -710,7 +710,7 @@ BattleTowerMons:
 	db "UINDEi@@@@@"
 
 	db HERACROSS
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db ENDURE, REVERSAL, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -866,7 +866,7 @@ BattleTowerMons:
 	db "PIKATIyuU@@"
 
 	db SCIZOR
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db STEEL_WING, SLASH, TOXIC, SANDSTORM
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1860,7 +1860,7 @@ BattleTowerMons:
 	db "SO-NANSU@@@"
 
 	db GOLEM
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db EXPLOSION, EARTHQUAKE, MEGA_PUNCH, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -3114,7 +3114,7 @@ BattleTowerMons:
 	db "KABIGON@@@@"
 
 	db HERACROSS
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db REVERSAL, MEGAHORN, EARTHQUAKE, COUNTER
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3715,7 +3715,7 @@ BattleTowerMons:
 	db "KIRINRIKI@@"
 
 	db HITMONLEE
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db REVERSAL, ENDURE, BODY_SLAM, MEGA_KICK
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -4972,7 +4972,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db DEOXYS
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db NASTY_PLOT, PSYCHO_BOOST, ICE_BEAM, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5154,7 +5154,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db SALAMENCE
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db DRAGON_DANCE, OUTRAGE, EARTHQUAKE, FIRE_BLAST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5310,7 +5310,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db DARKRAI
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db DARK_VOID, DARK_PULSE, AURA_SPHERE, NASTY_PLOT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5361,9 +5361,9 @@ BattleTowerMons:
 	bigdw 318 ; SDef
 	db "RANTA-N@@@@"
 
-    db MACHAMP  ; could be removed
-	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, ROCK_SLIDE, EARTHQUAKE
+    db LUCARIO
+	db FOCUS_SASH
+	db SWORDS_DANCE, CLOSE_COMBAT, BULLET_PUNCH, CRUNCH
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5373,18 +5373,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 16 ; PP
+	db 20, 16, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 383 ; HP
-	bigdw 383 ; Max HP
-	bigdw 358 ; Atk
-	bigdw 258 ; Def
-	bigdw 208 ; Spd
-	bigdw 228 ; SAtk
-	bigdw 268 ; SDef
+	bigdw 343 ; HP
+	bigdw 343 ; Max HP
+	bigdw 318 ; Atk
+	bigdw 238 ; Def
+	bigdw 278 ; Spd
+	bigdw 328 ; SAtk
+	bigdw 238 ; SDef
 	db "RANTA-N@@@@"
 
     db MEW
@@ -5572,7 +5572,7 @@ db JOLTEON
 	db "BURAtuKI-@@"
 
 	db WOBBUFFET
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -5780,7 +5780,7 @@ db JOLTEON
 	db "PORIGON2@@@"
 
 	db MISDREAVUS
-	db FOCUS_BAND
+	db FOCUS_SASH
 	db PERISH_SONG, MEAN_LOOK, PAIN_SPLIT, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 1000 ; Exp

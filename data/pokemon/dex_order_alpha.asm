@@ -66,7 +66,6 @@ AlphabeticalPokedexOrder:
 	db FERALIGATR
 	db FLAAFFY
 	db FLAREON
-	db FURRET
 	db GABITE
 	db GARCHOMP
 	db GASTLY
@@ -120,6 +119,7 @@ AlphabeticalPokedexOrder:
 	db LEDIAN
 	db LEDYBA
 	db LICKITUNG
+	db LUCARIO
 	db LUGIA
 	db MACHAMP
 	db MACHOKE

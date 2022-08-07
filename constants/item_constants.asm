@@ -124,7 +124,7 @@
 	const BLUE_CARD    ; 74
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
-	const FOCUS_BAND   ; 77
+	const FOCUS_SASH   ; 77
 	const ITEM_78      ; 78
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a

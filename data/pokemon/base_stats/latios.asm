@@ -7,7 +7,7 @@
     db 3 ; catch rate
 	db 255 ; base exp
 	db NO_ITEM, DRAGON_SCALE ; items
-	db GENDER_UNKNOWN ; gender ratio
+	db GENDER_F0 ; gender ratio
 	db 100 ; unknown 1
 	db 40 ; step cycles to hatch
 	db 5 ; unknown 2

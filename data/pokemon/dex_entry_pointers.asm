@@ -162,7 +162,7 @@ PokedexDataPointerTable:
 	dw CroconawPokedexEntry
 	dw FeraligatrPokedexEntry
 	dw SentretPokedexEntry
-	dw FurretPokedexEntry
+	dw LucarioPokedexEntry
 	dw HoothootPokedexEntry
 	dw NoctowlPokedexEntry
 	dw LedybaPokedexEntry

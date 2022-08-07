@@ -1,5 +1,5 @@
-	db "LONG TAIL@" ; species name
-	dw 207, 250 ; height, weight
+	db "IRON BALL@" ; species name
+	dw 200, 2500 ; height, weight
 
 	db   "It uses magnetic"
 	next "pulses to converse"

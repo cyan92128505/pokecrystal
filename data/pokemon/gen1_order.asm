@@ -201,7 +201,7 @@ Pokered_MonIndices:
 	db CROCONAW
 	db FERALIGATR
 	db SENTRET
-	db FURRET
+	db LUCARIO
 	db HOOTHOOT
 	db NOCTOWL
 	db LEDYBA

@@ -161,7 +161,7 @@ AnimationPointers:
 	dw CroconawAnimation
 	dw FeraligatrAnimation
 	dw SentretAnimation
-	dw FurretAnimation
+	dw LucarioAnimation
 	dw HoothootAnimation
 	dw NoctowlAnimation
 	dw LedybaAnimation

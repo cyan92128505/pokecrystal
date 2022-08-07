@@ -132,7 +132,7 @@ ItemEffects:
 	dw BlueCardEffect      ; BLUE_CARD
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
-	dw NoEffect            ; FOCUS_BAND
+	dw NoEffect            ; FOCUS_SASH
 	dw NoEffect            ; ITEM_78
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT

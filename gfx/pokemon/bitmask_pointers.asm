@@ -161,7 +161,7 @@ BitmasksPointers:
 	dw CroconawBitmasks
 	dw FeraligatrBitmasks
 	dw SentretBitmasks
-	dw FurretBitmasks
+	dw LucarioBitmasks
 	dw HoothootBitmasks
 	dw NoctowlBitmasks
 	dw LedybaBitmasks

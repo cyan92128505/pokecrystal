@@ -2158,7 +2158,7 @@ FeraligatrEvosAttacks:
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
-	db EVOLVE_LEVEL, 15, FURRET
+	db EVOLVE_LEVEL, 15, LUCARIO
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 5, DEFENSE_CURL
@@ -2169,17 +2169,12 @@ SentretEvosAttacks:
 	db 41, AMNESIA
 	db 0 ; no more level-up moves
 
-FurretEvosAttacks:
+LucarioEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, DEFENSE_CURL
-	db 1, QUICK_ATTACK
-	db 5, DEFENSE_CURL
-	db 11, QUICK_ATTACK
-	db 18, FURY_SWIPES
-	db 28, SLAM
-	db 38, REST
-	db 48, AMNESIA
+	db 1, SWORDS_DANCE
+	db 1, CLOSE_COMBAT
+	db 1, CRUNCH
+	db 1, BULLET_PUNCH
 	db 0 ; no more level-up moves
 
 HoothootEvosAttacks:

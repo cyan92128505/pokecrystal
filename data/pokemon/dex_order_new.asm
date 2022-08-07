@@ -21,7 +21,6 @@ NewPokedexOrder:
 	db RATTATA
 	db RATICATE
 	db SENTRET
-	db FURRET
 	db PICHU
 	db PIKACHU
 	db RAICHU
@@ -234,6 +233,7 @@ NewPokedexOrder:
 	db BAGON
 	db SHELGON
 	db SALAMENCE
+	db LUCARIO
 	db GIBLE
 	db GABITE
 	db GARCHOMP

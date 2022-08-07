@@ -373,7 +373,7 @@ INCBIN "gfx/footprints/croconaw.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/feraligatr.1bpp", footprint_bottom
 ; 161-168 top halves
 INCBIN "gfx/footprints/sentret.1bpp",    footprint_top
-INCBIN "gfx/footprints/furret.1bpp",     footprint_top
+INCBIN "gfx/footprints/lucario.1bpp",     footprint_top
 INCBIN "gfx/footprints/hoothoot.1bpp",   footprint_top
 INCBIN "gfx/footprints/noctowl.1bpp",    footprint_top
 INCBIN "gfx/footprints/ledyba.1bpp",     footprint_top
@@ -382,7 +382,7 @@ INCBIN "gfx/footprints/spinarak.1bpp",   footprint_top
 INCBIN "gfx/footprints/ariados.1bpp",    footprint_top
 ; 161-168 bottom halves
 INCBIN "gfx/footprints/sentret.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/furret.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/lucario.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/hoothoot.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/noctowl.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/ledyba.1bpp",     footprint_bottom

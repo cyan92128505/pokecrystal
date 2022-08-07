@@ -1,10 +1,10 @@
-	db "DELIVERY@" ; species name
-	dw 211, 350 ; height, weight
+	db "SEA BASIN@" ; species name
+	dw 2000, 55000 ; height, weight
 
-	db   "It always carries"
-	next "its food with it,"
-	next "wherever it goes."
+	db   "Said to have"
+	next "expanded the sea"
+	next "by sinking the"
 
-	page "If attacked, it"
-	next "throws its food at"
-	next "the opponent.@"
+	page "continents. It"
+	next "wages war with"
+	next "GROUDON.@"

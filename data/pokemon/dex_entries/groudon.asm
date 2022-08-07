@@ -1,10 +1,10 @@
-	db "KITE@" ; species name
-	dw 611, 4850 ; height, weight
+	db "CONTINENT@" ; species name
+	dw 2000, 55000 ; height, weight
 
-	db   "It swims along"
-	next "freely, eating"
-	next "things that swim"
+	db   "Said to have"
+	next "expanded the land"
+	next "by evaporating"
 
-	page "into its mouth."
-	next "Its whole body is"
-	next "very coarse.@"
+	page "the sea. It"
+	next "wages war with"
+	next "KYOGRE.@"

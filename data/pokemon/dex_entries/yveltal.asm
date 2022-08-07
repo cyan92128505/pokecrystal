@@ -1,10 +1,10 @@
-	db "ELECTRIC@" ; species name
-	dw 200, 520 ; height, weight
+	db "DEATH@" ; species name
+	dw 1900, 6666 ; height, weight
 
-	db   "It loves violent"
-	next "thunder. The space"
-	next "between its horns"
+	db   "Lord of death."
+	next "It steals the"
+	next "life force of"
 
-	page "flickers bluish-"
-	next "white when it is"
-	next "charging energy.@"
+	page "other living"
+	next "things to extend"
+	next "its own life.@"

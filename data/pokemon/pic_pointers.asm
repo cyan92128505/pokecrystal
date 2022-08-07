@@ -508,8 +508,8 @@ PokemonPicPointers::
 	dba_pic HoOhBackpic
 	dba_pic CelebiFrontpic
 	dba_pic CelebiBackpic
-	dba_pic Mew2OGFrontpic
-	dba_pic Mew2OGBackpic
+	dba_pic MewtwoFrontpic
+	dba_pic MewtwoBackpic
 	dba_pic ArceusFrontpic
 	dba_pic ArceusBackpic
 	assert_table_length NUM_POKEMON

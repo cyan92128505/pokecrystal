@@ -253,6 +253,6 @@ MonMenuIcons:
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HO_OH       ; HO_OH
 	db ICON_HUMANSHAPE  ; CELEBI
-	db ICON_HUMANSHAPE  ; MEW2_OG
+	db ICON_HUMANSHAPE  ; MEWTWO
 	db ICON_EQUINE      ; ARCEUS
 	assert_table_length NUM_POKEMON

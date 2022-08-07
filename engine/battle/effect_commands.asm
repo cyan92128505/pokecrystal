@@ -5490,7 +5490,7 @@ BattleCommand_CheckDeathImmunity:
 .checkSpecies
     cp ARCEUS
     jr z, .immune
-    cp MEW2_OG
+    cp MEWTWO
     jr z, .immune
     cp GIRATINA
     jr z, .immune

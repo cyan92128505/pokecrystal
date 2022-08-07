@@ -250,9 +250,9 @@ NewPokedexOrder:
 	db DARKRAI
 	db DIALGA
 	db PALKIA
+	db GIRATINA
 	db XERNEAS
 	db YVELTAL
-	db MEW2_OG
-	db GIRATINA
+	db MEWTWO
 	db ARCEUS
 	assert_table_length NUM_POKEMON

@@ -125,8 +125,8 @@ AI_Basic:
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
     dec [hl]
-    dec [hl]
 .lesserEncouragement
+    dec [hl]
     dec [hl]
     dec [hl]
     jp .checkmove
@@ -577,6 +577,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
 	dbw EFFECT_CALM_MIND,        AI_Smart_CalmMind
 	dbw EFFECT_DRAGON_DANCE,     AI_Smart_DragonDance
+	dbw EFFECT_CONFUSE_HIT,      AI_Smart_DynamicPunch
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -766,11 +767,9 @@ AI_Smart_Selfdestruct:
 	jr nz, .discourage
 
 .notlastmon
-; Explosion does not need encouraged as AI_Aggressive will favour it
-; so here when we mean to use Explosion we don't discourage, do nothing
 ; if enemy's HP is below 25% just boom
 	call AICheckEnemyQuarterHP
-	ret nc
+	jr nc, .encourage
 
 ; if player has highly boosted stats just boom
     ld a, [wPlayerAtkLevel]
@@ -778,17 +777,17 @@ AI_Smart_Selfdestruct:
 	ret nc
     ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	ret nc
+	jr nc, .encourage
 
 ; if player is faster and has slightly boosted stats just boom
     call AICompareSpeed
     jr c, .continue
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 1
-	ret nc
+	jr nc, .encourage
     ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 1
-	ret nc
+	jr nc, .encourage
 
 .continue
 ; Greatly discourage this move if enemy's HP is above 50%.
@@ -797,8 +796,12 @@ AI_Smart_Selfdestruct:
 
 ; if we are here we are below 1/2 hp and player is non boosted
 ; if we have no other move that can ko the player just boom
-	ret
 
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 .discourage
 	inc [hl]
 	inc [hl]
@@ -1787,6 +1790,9 @@ AI_Smart_SleepTalk:
 	cp 1
 	jr z, .discourage
 
+	dec [hl]
+	dec [hl]
+	dec [hl]
 	dec [hl]
 	dec [hl]
 	dec [hl]
@@ -3138,7 +3144,13 @@ AI_Smart_CalmMind:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-	call AICheckEnemyQuarterHP
+    call AICompareSpeed
+    jr nc, .slower
+   	call AICheckEnemyQuarterHP
+   	jr nc, .discourage
+   	jr .continue
+.slower
+	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
 .continue
@@ -3440,6 +3452,15 @@ AI_Smart_NastyPlot:
 	inc [hl]
 	ret
 
+AI_Smart_DynamicPunch:
+; encourage dynamic punch for machamp
+    ld a, [wEnemyMonSpecies]
+    cp MACHAMP
+    ret nz
+    dec [hl]
+    dec [hl]
+    ret
+
 AICompareSpeed:
 ; Return carry if enemy is faster than player.
 
@@ -3717,6 +3738,11 @@ AI_Aggressive:
 	pop hl
 
 ; Update current move if damage is highest so far
+; don't encourage explosion
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+
 	ld a, [wCurDamage + 1]
 	cp e
 	ld a, [wCurDamage]

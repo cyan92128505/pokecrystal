@@ -1,10 +1,10 @@
-	db "SCUFFLE@" ; species name
-	dw 204, 460 ; height, weight
+	db "TEMPORAL@" ; species name
+	dw 1709, 50000 ; height, weight
 
-	db   "To brush up on its"
-	next "fighting skills,"
-	next "it will challenge"
+	db   "Its total control"
+	next "over the flow of"
+	next "time enable it to"
 
-	page "anyone. It has a"
-	next "very strong com-"
-	next "petitive spirit.@"
+	page "travel at will"
+	next "through the past"
+	next "and future.@"

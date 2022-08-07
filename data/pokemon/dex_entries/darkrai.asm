@@ -1,10 +1,10 @@
-	db "GENETIC@" ; species name
-	dw 607, 2690 ; height, weight
+	db "NIGHTMARE@" ; species name
+	dw 511, 1111 ; height, weight
 
-	db   "Said to rest qui-"
-	next "etly in an"
-	next "undiscovered cave,"
+	db   "It sends its"
+	next "victims into an"
+	next "eternal sleep."
 
-	page "this #MON was"
-	next "created solely for"
-	next "battling.@"
+	page "A sleep filled"
+	next "with horrible"
+	next "nightmares.@"

@@ -257,7 +257,7 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
-	mon_cry CRY_PARAS,       153,  383 ; MEW2_OG
+	mon_cry CRY_PARAS,       153,  383 ; MEWTWO
 	mon_cry CRY_RAIKOU,      350,  500 ; ARCEUS
 	assert_table_length NUM_POKEMON
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 254

@@ -3279,7 +3279,7 @@ CelebiEvosAttacks:
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
 
-Mew2OGEvosAttacks:
+MewtwoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PSYBLAST
 	db 1, FURIOUS_WILL

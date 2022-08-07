@@ -708,8 +708,8 @@ SECTION "Pics 19", ROMX
 
 ; Seems to be an accidental copy of the previous bank
 
-Mew2OGFrontpic: INCBIN "gfx/pokemon/mew2_og/front.animated.2bpp.lz"
-Mew2OGBackpic:  INCBIN "gfx/pokemon/mew2_og/back.2bpp.lz"
+MewtwoFrontpic: INCBIN "gfx/pokemon/mewtwo/front.animated.2bpp.lz"
+MewtwoBackpic:  INCBIN "gfx/pokemon/mewtwo/back.2bpp.lz"
 ArceusFrontpic: INCBIN "gfx/pokemon/arceus/front.animated.2bpp.lz"
 ArceusBackpic:  INCBIN "gfx/pokemon/arceus/back.2bpp.lz"
 GiratinaFrontpic:   INCBIN "gfx/pokemon/giratina/front.animated.2bpp.lz"

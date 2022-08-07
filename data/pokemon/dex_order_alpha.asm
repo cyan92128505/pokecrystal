@@ -138,7 +138,7 @@ AlphabeticalPokedexOrder:
 	db METANG
 	db METAPOD
 	db MEW
-	db MEW2_OG
+	db MEWTWO
 	db MILTANK
 	db MISDREAVUS
 	db MOLTRES

@@ -1,10 +1,10 @@
-	db "SUN@" ; species name
-	dw 207, 190 ; height, weight
+	db "IRON LEG@" ; species name
+	dw 503, 12125 ; height, weight
 
-	db   "As the hot season"
-	next "approaches, the"
-	next "petals on this"
+	db   "An advanced war"
+	next "machine with four"
+	next "super computer"
 
-	page "#MON's face"
-	next "become more vivid"
-	next "and lively.@"
+	page "brains, thick"
+	next "armour and"
+	next "strong claws.@"

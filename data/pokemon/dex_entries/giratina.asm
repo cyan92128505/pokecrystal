@@ -1,10 +1,10 @@
-	db "LIVE COAL@" ; species name
-	dw 204, 470 ; height, weight
+	db "SATANIC@" ; species name
+	dw 1409, 40000 ; height, weight
 
-	db   "It naturally spits"
-	next "an 1100-degree"
-	next "flame. It is said"
+	db   "Banished by"
+	next "ARCEUS for its"
+	next "violent ways."
 
-	page "when many appear,"
-	next "it heralds a"
-	next "volcanic eruption.@"
+	page "From its world"
+	next "it plots its"
+	next "revenge.@"

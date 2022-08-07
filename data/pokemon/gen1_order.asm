@@ -253,6 +253,6 @@ Pokered_MonIndices:
 	db GARCHOMP
 	db WOBBUFFET
 	db WOBBUFFET
-	db MEW2_OG
+	db MEWTWO
 	db ARCEUS
 	assert_table_length NUM_POKEMON + 1

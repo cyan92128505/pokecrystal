@@ -698,6 +698,7 @@ AI_Switch:
 	call PrintText
 
 .skiptext
+; AndrewNote - commented out - this assumed the ai will not switch during battle
 	;ld a, 1
 	;ld [wBattleHasJustStarted], a
 	callfar NewEnemyMonStatus
@@ -706,8 +707,14 @@ AI_Switch:
 	res SUBSTATUS_IN_LOVE, [hl]
 	farcall EnemySwitch
 	farcall ResetBattleParticipants
+
+; AndrewNote switch in effects for ai switching
+	ld a, [wLinkMode]
+	and a
+	jr nz, .linked
 	farcall SpikesDamage
 	farcall SwitchInEffects
+.linked
 	xor a
 	ld [wBattleHasJustStarted], a
 	ld a, [wLinkMode]

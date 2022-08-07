@@ -573,7 +573,7 @@ INCBIN "gfx/footprints/tyranitar.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/lugia.1bpp",      footprint_top
 INCBIN "gfx/footprints/ho_oh.1bpp",      footprint_top
 INCBIN "gfx/footprints/celebi.1bpp",     footprint_top
-INCBIN "gfx/footprints/mew2_og.1bpp",  footprint_top
+INCBIN "gfx/footprints/mewtwo.1bpp",  footprint_top
 INCBIN "gfx/footprints/arceus.1bpp",     footprint_top
 INCBIN "gfx/footprints/254.1bpp",        footprint_top
 INCBIN "gfx/footprints/255.1bpp",        footprint_top
@@ -582,7 +582,7 @@ INCBIN "gfx/footprints/256.1bpp",        footprint_top
 INCBIN "gfx/footprints/lugia.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/ho_oh.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/celebi.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/mew2_og.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/mewtwo.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/arceus.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/254.1bpp",        footprint_bottom
 INCBIN "gfx/footprints/255.1bpp",        footprint_bottom

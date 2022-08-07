@@ -1,10 +1,10 @@
 	db "JET@" ; species name
-	dw 200, 260 ; height, weight
+	dw 607, 1323 ; height, weight
 
-	db   "To escape from an"
-	next "attacker, it may"
-	next "shoot water out of"
+	db   "As fast as a Jet."
+	next "It is intelligent"
+	next "and dislikes"
 
-	page "its mouth, then"
-	next "use that force to"
-	next "swim backward.@"
+	page "fighting. But"
+	next "has great power"
+	next "in battle.@"

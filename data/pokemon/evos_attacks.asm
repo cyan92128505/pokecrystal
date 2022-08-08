@@ -2157,16 +2157,19 @@ FeraligatrEvosAttacks:
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-SentretEvosAttacks:
-	db EVOLVE_LEVEL, 15, LUCARIO
+RioluEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 5, DEFENSE_CURL
-	db 11, QUICK_ATTACK
-	db 17, FURY_SWIPES
-	db 25, SLAM
-	db 33, REST
-	db 41, AMNESIA
+	db 1, QUICK_ATTACK
+	db 1, ENDURE
+	db 6, COUNTER
+	db 11, KARATE_CHOP
+	db 15, HEADBUTT
+	db 20, CRUNCH
+	db 30, AURA_SPHERE
+	db 40, BULLET_PUNCH
+	db 50, CLOSE_COMBAT
+	db 60, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 LucarioEvosAttacks:
@@ -2175,6 +2178,11 @@ LucarioEvosAttacks:
 	db 1, CLOSE_COMBAT
 	db 1, CRUNCH
 	db 1, BULLET_PUNCH
+    db 20, CRUNCH
+	db 30, AURA_SPHERE
+	db 40, BULLET_PUNCH
+	db 50, CLOSE_COMBAT
+	db 60, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 HoothootEvosAttacks:

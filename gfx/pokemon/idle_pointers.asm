@@ -160,7 +160,7 @@ AnimationIdlePointers:
 	dw TotodileAnimationIdle
 	dw CroconawAnimationIdle
 	dw FeraligatrAnimationIdle
-	dw SentretAnimationIdle
+	dw RioluAnimationIdle
 	dw LucarioAnimationIdle
 	dw HoothootAnimationIdle
 	dw NoctowlAnimationIdle

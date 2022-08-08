@@ -20,7 +20,6 @@ NewPokedexOrder:
 	db NOCTOWL
 	db RATTATA
 	db RATICATE
-	db SENTRET
 	db PICHU
 	db PIKACHU
 	db RAICHU
@@ -232,6 +231,7 @@ NewPokedexOrder:
 	db BAGON
 	db SHELGON
 	db SALAMENCE
+	db RIOLU
 	db LUCARIO
 	db GIBLE
 	db GABITE

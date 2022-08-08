@@ -175,7 +175,7 @@ KantoGrassWildMons:
 	; morn
 	db 2, PIDGEY
 	db 2, RATTATA
-	db 3, SENTRET
+	db 3, PIDGEY
 	db 3, PIDGEY
 	db 6, RATICATE
 	db 4, PIDGEY
@@ -183,7 +183,7 @@ KantoGrassWildMons:
 	; day
 	db 2, PIDGEY
 	db 2, RATTATA
-	db 3, SENTRET
+	db 3, PIDGEY
 	db 3, PIDGEY
 	db 6, RATICATE
 	db 4, PIDGEY

@@ -200,7 +200,7 @@ Pokered_MonIndices:
 	db TOTODILE
 	db CROCONAW
 	db FERALIGATR
-	db SENTRET
+	db RIOLU
 	db LUCARIO
 	db HOOTHOOT
 	db NOCTOWL

@@ -162,7 +162,7 @@ EvosAttacksPointers::
 	dw TotodileEvosAttacks
 	dw CroconawEvosAttacks
 	dw FeraligatrEvosAttacks
-	dw SentretEvosAttacks
+	dw RioluEvosAttacks
 	dw LucarioEvosAttacks
 	dw HoothootEvosAttacks
 	dw NoctowlEvosAttacks

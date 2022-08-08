@@ -191,6 +191,7 @@ AlphabeticalPokedexOrder:
 	db RAYQUAZA
 	db RHYDON
 	db RHYHORN
+	db RIOLU
 	db SALAMENCE
 	db SANDSHREW
 	db SANDSLASH
@@ -199,7 +200,6 @@ AlphabeticalPokedexOrder:
 	db SEADRA
 	db SEAKING
 	db SEEL
-	db SENTRET
     db SHELGON
 	db SHELLDER
 	db SHUCKLE

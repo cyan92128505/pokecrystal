@@ -162,8 +162,8 @@ MonMenuIcons:
 	db ICON_MONSTER     ; TOTODILE
 	db ICON_MONSTER     ; CROCONAW
 	db ICON_MONSTER     ; FERALIGATR
-	db ICON_FOX         ; SENTRET
-	db ICON_HUMANSHAPE  ; LUCARIO
+	db ICON_FOX         ; RIOLU
+	db ICON_FOX         ; LUCARIO
 	db ICON_BIRD        ; HOOTHOOT
 	db ICON_BIRD        ; NOCTOWL
 	db ICON_BUG         ; LEDYBA

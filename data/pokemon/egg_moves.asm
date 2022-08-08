@@ -461,12 +461,11 @@ TotodileEggMoves:
 	db ROCK_SLIDE
 	db -1 ; end
 
-SentretEggMoves:
-	db DOUBLE_EDGE
-	db PURSUIT
-	db SLASH
-	db FOCUS_ENERGY
-	db REVERSAL
+RioluEggMoves:
+	db NASTY_PLOT
+	db SWORDS_DANCE
+	db CLOSE_COMBAT
+	db AURA_SPHERE
 	db -1 ; end
 
 HoothootEggMoves:

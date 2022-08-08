@@ -440,8 +440,8 @@ PokemonPicPointers::
 	dba_pic TeddiursaBackpic
 	dba_pic UrsaringFrontpic
 	dba_pic UrsaringBackpic
-	dba_pic SlugmaFrontpic
-	dba_pic SlugmaBackpic
+	dba_pic LatiasFrontpic
+	dba_pic LatiasBackpic
 	dba_pic DeoxysFrontpic
 	dba_pic DeoxysBackpic
 	dba_pic SwinubFrontpic

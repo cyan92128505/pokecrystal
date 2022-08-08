@@ -192,7 +192,6 @@ NewPokedexOrder:
 	db MURKROW
 	db HOUNDOUR
 	db HOUNDOOM
-	db SLUGMA
 	db SNEASEL
 	db MISDREAVUS
 	db PORYGON
@@ -241,6 +240,7 @@ NewPokedexOrder:
 	db HO_OH
 	db MEW
 	db CELEBI
+	db LATIAS
 	db LATIOS
 	db KYOGRE
 	db GROUDON

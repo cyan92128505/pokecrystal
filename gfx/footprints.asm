@@ -499,7 +499,7 @@ INCBIN "gfx/footprints/sneasel.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/teddiursa.1bpp",  footprint_bottom
 ; 217-224 top halves
 INCBIN "gfx/footprints/ursaring.1bpp",   footprint_top
-INCBIN "gfx/footprints/slugma.1bpp",     footprint_top
+INCBIN "gfx/footprints/latias.1bpp",     footprint_top
 INCBIN "gfx/footprints/deoxys.1bpp",   footprint_top
 INCBIN "gfx/footprints/swinub.1bpp",     footprint_top
 INCBIN "gfx/footprints/piloswine.1bpp",  footprint_top
@@ -508,7 +508,7 @@ INCBIN "gfx/footprints/latios.1bpp",   footprint_top
 INCBIN "gfx/footprints/palkia.1bpp",  footprint_top
 ; 217-224 bottom halves
 INCBIN "gfx/footprints/ursaring.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/slugma.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/latias.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/deoxys.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/swinub.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/piloswine.1bpp",  footprint_bottom

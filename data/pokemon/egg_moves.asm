@@ -646,7 +646,7 @@ TeddiursaEggMoves:
 	db METAL_CLAW
 	db -1 ; end
 
-SlugmaEggMoves:
+LatiasEggMoves:
 	db ACID_ARMOR
 	db -1 ; end
 

@@ -2890,15 +2890,12 @@ UrsaringEvosAttacks:
 	db 59, THRASH
 	db 0 ; no more level-up moves
 
-SlugmaEvosAttacks:
+LatiasEvosAttacks:
 	db 0 ; no more evolutions
-	db 8, EMBER
-	db 15, ROCK_THROW
-	db 22, HARDEN
-	db 29, AMNESIA
-	db 36, FLAMETHROWER
-	db 43, ROCK_SLIDE
-	db 50, BODY_SLAM
+	db 1, DRAGON_PULSE
+	db 1, THUNDERBOLT
+	db 1, CALM_MIND
+	db 1, RECOVER
 	db 0 ; no more level-up moves
 
 DeoxysEvosAttacks:

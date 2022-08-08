@@ -217,7 +217,7 @@ FramesPointers:
 	dw SneaselFrames
 	dw TeddiursaFrames
 	dw UrsaringFrames
-	dw SlugmaFrames
+	dw LatiasFrames
 	dw DeoxysFrames
 	dw SwinubFrames
 	dw PiloswineFrames

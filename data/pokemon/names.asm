@@ -217,7 +217,7 @@ PokemonNames::
 	db "SNEASEL@@@"
 	db "TEDDIURSA@"
 	db "URSARING@@"
-	db "SLUGMA@@@@"
+	db "LATIAS@@@@"
 	db "DEOXYS@@@@"
 	db "SWINUB@@@@"
 	db "PILOSWINE@"

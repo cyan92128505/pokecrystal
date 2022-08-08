@@ -223,7 +223,7 @@ PokemonCries::
 	mon_cry CRY_WOOPER,       83,  175 ; SNEASEL
 	mon_cry CRY_TEDDIURSA,  1954,  110 ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,  1600,  216 ; URSARING
-	mon_cry CRY_SLUGMA,     -472,  320 ; SLUGMA
+	mon_cry CRY_SLUGMA,     -472,  320 ; LATIAS
 	mon_cry CRY_DEOXYS,   -525,  448 ; DEOXYS
 	mon_cry CRY_CYNDAQUIL,   510,  320 ; SWINUB
 	mon_cry CRY_DEOXYS,   -265,  256 ; PILOSWINE

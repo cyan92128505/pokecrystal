@@ -2621,7 +2621,7 @@ FirebreatherGroup:
 	; FIREBREATHER (4)
 	db "BURT@", TRAINERTYPE_NORMAL
 	db 32, KOFFING
-	db 32, SLUGMA
+	db 32, LATIAS
 	db -1 ; end
 
 	; FIREBREATHER (5)
@@ -3198,7 +3198,7 @@ CamperGroup:
 	db "TODD@", TRAINERTYPE_NORMAL
 	db 30, GRAVELER
 	db 30, GRAVELER
-	db 30, SLUGMA
+	db 30, LATIAS
 	db 32, PSYDUCK
 	db -1 ; end
 

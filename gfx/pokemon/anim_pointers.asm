@@ -217,7 +217,7 @@ AnimationPointers:
 	dw SneaselAnimation
 	dw TeddiursaAnimation
 	dw UrsaringAnimation
-	dw SlugmaAnimation
+	dw LatiasAnimation
 	dw DeoxysAnimation
 	dw SwinubAnimation
 	dw PiloswineAnimation

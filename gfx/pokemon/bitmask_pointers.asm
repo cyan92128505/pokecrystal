@@ -217,7 +217,7 @@ BitmasksPointers:
 	dw SneaselBitmasks
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
-	dw SlugmaBitmasks
+	dw LatiasBitmasks
 	dw DeoxysBitmasks
 	dw SwinubBitmasks
 	dw PiloswineBitmasks

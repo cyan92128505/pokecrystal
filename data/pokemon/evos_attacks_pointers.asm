@@ -219,7 +219,7 @@ EvosAttacksPointers::
 	dw SneaselEvosAttacks
 	dw TeddiursaEvosAttacks
 	dw UrsaringEvosAttacks
-	dw SlugmaEvosAttacks
+	dw LatiasEvosAttacks
 	dw DeoxysEvosAttacks
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks

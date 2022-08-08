@@ -217,7 +217,7 @@ AnimationIdlePointers:
 	dw SneaselAnimationIdle
 	dw TeddiursaAnimationIdle
 	dw UrsaringAnimationIdle
-	dw SlugmaAnimationIdle
+	dw LatiasAnimationIdle
 	dw DeoxysAnimationIdle
 	dw SwinubAnimationIdle
 	dw PiloswineAnimationIdle

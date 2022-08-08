@@ -218,7 +218,7 @@ PokedexDataPointerTable:
 	dw SneaselPokedexEntry
 	dw TeddiursaPokedexEntry
 	dw UrsaringPokedexEntry
-	dw SlugmaPokedexEntry
+	dw LatiasPokedexEntry
 	dw DeoxysPokedexEntry
 	dw SwinubPokedexEntry
 	dw PiloswinePokedexEntry

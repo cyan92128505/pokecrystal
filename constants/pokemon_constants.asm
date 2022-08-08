@@ -237,7 +237,7 @@ JOHTO_POKEMON EQU const_value
 	const SNEASEL    ; d7
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
-	const SLUGMA     ; da   weevil
+	const LATIAS     ; da   latias (need weevile)
 	const DEOXYS     ; db
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd

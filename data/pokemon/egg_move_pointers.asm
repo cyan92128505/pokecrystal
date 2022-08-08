@@ -217,7 +217,7 @@ EggMovePointers::
 	dw SneaselEggMoves
 	dw TeddiursaEggMoves
 	dw NoEggMoves
-	dw SlugmaEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw SwinubEggMoves
 	dw NoEggMoves

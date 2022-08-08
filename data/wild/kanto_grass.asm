@@ -577,7 +577,7 @@ KantoGrassWildMons:
 	db 27, FEAROW
 	db 28, GRIMER
 	db 29, FEAROW
-	db 29, SLUGMA
+	db 29, FEAROW
 	db 30, MUK
 	db 30, MUK
 	; nite
@@ -602,10 +602,10 @@ KantoGrassWildMons:
 	db 33, MUK
 	; day
 	db 30, FEAROW
-	db 29, SLUGMA
+	db 29, FEAROW
 	db 29, GRIMER
 	db 32, FEAROW
-	db 32, SLUGMA
+	db 32, FEAROW
 	db 33, MUK
 	db 33, MUK
 	; nite
@@ -633,7 +633,7 @@ KantoGrassWildMons:
 	db 27, FEAROW
 	db 28, GRIMER
 	db 29, FEAROW
-	db 29, SLUGMA
+	db 29, FEAROW
 	db 30, MUK
 	db 30, MUK
 	; nite

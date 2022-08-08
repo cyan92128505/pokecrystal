@@ -115,6 +115,7 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
+	db LATIAS
 	db LATIOS
 	db LEDIAN
 	db LEDYBA
@@ -207,7 +208,6 @@ AlphabeticalPokedexOrder:
 	db SLOWBRO
 	db SLOWKING
 	db SLOWPOKE
-	db SLUGMA
 	db SMEARGLE
 	db SNEASEL
 	db SNORLAX

@@ -50,6 +50,7 @@ AlphabeticalPokedexOrder:
 	db DRAGONAIR
 	db DRAGONITE
 	db DRATINI
+	db DRILBUR
 	db DROWZEE
 	db DUGTRIO
 	db DUNSPARCE
@@ -118,7 +119,6 @@ AlphabeticalPokedexOrder:
 	db LARVITAR
 	db LATIAS
 	db LATIOS
-	db LEDYBA
 	db LICKITUNG
 	db LUCARIO
 	db LUGIA

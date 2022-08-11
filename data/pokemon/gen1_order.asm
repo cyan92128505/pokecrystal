@@ -204,7 +204,7 @@ Pokered_MonIndices:
 	db LUCARIO
 	db HOOTHOOT
 	db NOCTOWL
-	db LEDYBA
+	db DRILBUR
 	db EXCADRILL
 	db SPINARAK
 	db ARIADOS

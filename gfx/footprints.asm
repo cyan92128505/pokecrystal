@@ -376,7 +376,7 @@ INCBIN "gfx/footprints/riolu.1bpp",    footprint_top
 INCBIN "gfx/footprints/lucario.1bpp",     footprint_top
 INCBIN "gfx/footprints/hoothoot.1bpp",   footprint_top
 INCBIN "gfx/footprints/noctowl.1bpp",    footprint_top
-INCBIN "gfx/footprints/ledyba.1bpp",     footprint_top
+INCBIN "gfx/footprints/drilbur.1bpp",     footprint_top
 INCBIN "gfx/footprints/excadrill.1bpp",     footprint_top
 INCBIN "gfx/footprints/spinarak.1bpp",   footprint_top
 INCBIN "gfx/footprints/ariados.1bpp",    footprint_top
@@ -385,7 +385,7 @@ INCBIN "gfx/footprints/riolu.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/lucario.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/hoothoot.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/noctowl.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/ledyba.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/drilbur.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/excadrill.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/spinarak.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/ariados.1bpp",    footprint_bottom

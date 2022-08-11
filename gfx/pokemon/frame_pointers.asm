@@ -164,7 +164,7 @@ FramesPointers:
 	dw LucarioFrames
 	dw HoothootFrames
 	dw NoctowlFrames
-	dw LedybaFrames
+	dw DrilburFrames
 	dw ExcadrillFrames
 	dw SpinarakFrames
 	dw AriadosFrames

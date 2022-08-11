@@ -165,7 +165,7 @@ PokedexDataPointerTable:
 	dw LucarioPokedexEntry
 	dw HoothootPokedexEntry
 	dw NoctowlPokedexEntry
-	dw LedybaPokedexEntry
+	dw DrilburPokedexEntry
 	dw ExcadrillPokedexEntry
 	dw SpinarakPokedexEntry
 	dw AriadosPokedexEntry

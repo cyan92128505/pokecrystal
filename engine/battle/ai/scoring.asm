@@ -125,8 +125,8 @@ AI_Basic:
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
     dec [hl]
-.lesserEncouragement
     dec [hl]
+.lesserEncouragement
     dec [hl]
     dec [hl]
     jp .checkmove
@@ -806,8 +806,6 @@ AI_Smart_Selfdestruct:
 ; if we have no other move that can ko the player just boom
 
 .encourage
-    dec [hl]
-    dec [hl]
     dec [hl]
     ret
 .discourage
@@ -3241,10 +3239,6 @@ AI_Smart_SwordsDance:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; Don't use if weak, AI_Opportunist should also handle this
-;	call AICheckEnemyHalfHP
-;	jr nc, .discourage
-
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
 ; does player have boosted attack
@@ -3278,10 +3272,18 @@ AI_Smart_SwordsDance:
 	jr nz, .discourage
 ; if already at +2, 80% chance to discourage
     ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage80
 
 .continue
+; if already at +2 and player is faster, 80% chance to discourage
+    call AICompareSpeed
+    jr c, .continue2
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .discourage80
+
+.continue2
 ; encourage to get to +1
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 1
@@ -3381,10 +3383,6 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; Don't use if weak, AI_Opportunist should also handle this
-;	call AICheckEnemyHalfHP
-;	jr nc, .discourage
-
 ; deoxys should always boost once and no more
     ld a, [wEnemyMonSpecies]
     cp DEOXYS
@@ -3433,6 +3431,14 @@ AI_Smart_NastyPlot:
 	jr nc, .discourage80
 
 .continue
+; if already at +2 and player is faster, 80% chance to discourage
+    call AICompareSpeed
+    jr c, .continue2
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage80
+
+.continue2
 ; encourage to get to +2
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2

@@ -164,7 +164,7 @@ BitmasksPointers:
 	dw LucarioBitmasks
 	dw HoothootBitmasks
 	dw NoctowlBitmasks
-	dw LedybaBitmasks
+	dw DrilburBitmasks
 	dw ExcadrillBitmasks
 	dw SpinarakBitmasks
 	dw AriadosBitmasks

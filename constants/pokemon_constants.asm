@@ -184,7 +184,7 @@ JOHTO_POKEMON EQU const_value
 	const LUCARIO    ; a2
 	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
-	const LEDYBA     ; a5   ...
+	const DRILBUR    ; a5   ...
 	const EXCADRILL  ; a6
 	const SPINARAK   ; a7
 	const ARIADOS    ; a8

@@ -2214,18 +2214,20 @@ NoctowlEvosAttacks:
 	db 57, DREAM_EATER
 	db 0 ; no more level-up moves
 
-LedybaEvosAttacks:
-	db EVOLVE_LEVEL, 18, EXCADRILL
+DrilburEvosAttacks:
+	db EVOLVE_LEVEL, 31, EXCADRILL
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 8, SUPERSONIC
-	db 22, LIGHT_SCREEN
-	db 22, REFLECT
-	db 22, SAFEGUARD
-	db 29, BATON_PASS
-	db 36, SWIFT
-	db 43, AGILITY
-	db 50, DOUBLE_EDGE
+	db 1, SCRATCH
+	db 1, RAPID_SPIN
+	db 8, MUD_SLAP
+	db 12, FURY_SWIPES
+	db 15, METAL_CLAW
+	db 19, DIG
+	db 26, SLASH
+	db 32, ROCK_SLIDE
+	db 37, IRON_HEAD
+	db 41, EARTHQUAKE
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ExcadrillEvosAttacks:
@@ -2234,6 +2236,15 @@ ExcadrillEvosAttacks:
 	db 1, EARTHQUAKE
 	db 1, ROCK_SLIDE
 	db 1, IRON_HEAD
+	db 8, MUD_SLAP
+	db 12, FURY_SWIPES
+	db 15, METAL_CLAW
+	db 19, DIG
+	db 26, SLASH
+	db 32, ROCK_SLIDE
+	db 37, IRON_HEAD
+	db 41, EARTHQUAKE
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:

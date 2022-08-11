@@ -164,7 +164,7 @@ AnimationPointers:
 	dw LucarioAnimation
 	dw HoothootAnimation
 	dw NoctowlAnimation
-	dw LedybaAnimation
+	dw DrilburAnimation
 	dw ExcadrillAnimation
 	dw SpinarakAnimation
 	dw AriadosAnimation

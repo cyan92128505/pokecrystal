@@ -170,7 +170,7 @@ PokemonCries::
 	mon_cry CRY_RAIKOU,      558,  288 ; LUCARIO
 	mon_cry CRY_HOOTHOOT,    145,  216 ; HOOTHOOT
 	mon_cry CRY_HOOTHOOT,      0,  416 ; NOCTOWL
-	mon_cry CRY_LEDYBA,        0,  222 ; LEDYBA
+	mon_cry CRY_LEDYBA,        0,  222 ; DRILBUR
 	mon_cry CRY_LEDYBA,     -150,  312 ; EXCADRILL
 	mon_cry CRY_SPINARAK,     17,  512 ; SPINARAK
 	mon_cry CRY_SPINARAK,   -174,  482 ; ARIADOS

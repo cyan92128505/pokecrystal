@@ -164,7 +164,7 @@ AnimationIdlePointers:
 	dw LucarioAnimationIdle
 	dw HoothootAnimationIdle
 	dw NoctowlAnimationIdle
-	dw LedybaAnimationIdle
+	dw DrilburAnimationIdle
 	dw ExcadrillAnimationIdle
 	dw SpinarakAnimationIdle
 	dw AriadosAnimationIdle

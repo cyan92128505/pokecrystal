@@ -166,7 +166,7 @@ EvosAttacksPointers::
 	dw LucarioEvosAttacks
 	dw HoothootEvosAttacks
 	dw NoctowlEvosAttacks
-	dw LedybaEvosAttacks
+	dw DrilburEvosAttacks
 	dw ExcadrillEvosAttacks
 	dw SpinarakEvosAttacks
 	dw AriadosEvosAttacks

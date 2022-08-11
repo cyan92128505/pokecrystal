@@ -477,9 +477,10 @@ HoothootEggMoves:
 	db SKY_ATTACK
 	db -1 ; end
 
-LedybaEggMoves:
-	db PSYBEAM
-	db LIGHT_SCREEN
+DrilburEggMoves:
+	db SWORDS_DANCE
+	db EARTHQUAKE
+	db FISSURE
 	db -1 ; end
 
 SpinarakEggMoves:

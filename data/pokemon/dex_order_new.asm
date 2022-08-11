@@ -29,7 +29,6 @@ NewPokedexOrder:
 	db WEEDLE
 	db KAKUNA
 	db BEEDRILL
-	db LEDYBA
 	db SPINARAK
 	db ARIADOS
 	db GEODUDE
@@ -235,6 +234,7 @@ NewPokedexOrder:
 	db GIBLE
 	db GABITE
 	db GARCHOMP
+	db DRILBUR
 	db EXCADRILL
 	db LUGIA
 	db HO_OH

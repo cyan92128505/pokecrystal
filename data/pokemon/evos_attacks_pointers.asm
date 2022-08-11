@@ -167,7 +167,7 @@ EvosAttacksPointers::
 	dw HoothootEvosAttacks
 	dw NoctowlEvosAttacks
 	dw LedybaEvosAttacks
-	dw LedianEvosAttacks
+	dw ExcadrillEvosAttacks
 	dw SpinarakEvosAttacks
 	dw AriadosEvosAttacks
 	dw CrobatEvosAttacks
@@ -184,7 +184,7 @@ EvosAttacksPointers::
 	dw FlaaffyEvosAttacks
 	dw AmpharosEvosAttacks
 	dw BellossomEvosAttacks
-	dw MarillEvosAttacks
+	dw MismagiusEvosAttacks
 	dw AzumarillEvosAttacks
 	dw SudowoodoEvosAttacks
 	dw PolitoedEvosAttacks

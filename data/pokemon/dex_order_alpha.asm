@@ -59,6 +59,7 @@ AlphabeticalPokedexOrder:
 	db ELECTRODE
 	db ENTEI
 	db ESPEON
+	db EXCADRILL
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db FARFETCH_D
@@ -117,7 +118,6 @@ AlphabeticalPokedexOrder:
 	db LARVITAR
 	db LATIAS
 	db LATIOS
-	db LEDIAN
 	db LEDYBA
 	db LICKITUNG
 	db LUCARIO
@@ -131,7 +131,6 @@ AlphabeticalPokedexOrder:
 	db MAGNETON
 	db MANKEY
 	db MAREEP
-	db MARILL
 	db MAROWAK
 	db MEGANIUM
 	db MEOWTH
@@ -142,6 +141,7 @@ AlphabeticalPokedexOrder:
 	db MEWTWO
 	db MILTANK
 	db MISDREAVUS
+	db MISMAGIUS
 	db MOLTRES
 	db MR__MIME
 	db MUK

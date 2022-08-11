@@ -165,7 +165,7 @@ BitmasksPointers:
 	dw HoothootBitmasks
 	dw NoctowlBitmasks
 	dw LedybaBitmasks
-	dw LedianBitmasks
+	dw ExcadrillBitmasks
 	dw SpinarakBitmasks
 	dw AriadosBitmasks
 	dw CrobatBitmasks
@@ -182,7 +182,7 @@ BitmasksPointers:
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
 	dw BellossomBitmasks
-	dw MarillBitmasks
+	dw MismagiusBitmasks
 	dw AzumarillBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks

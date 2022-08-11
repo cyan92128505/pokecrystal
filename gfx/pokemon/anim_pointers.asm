@@ -165,7 +165,7 @@ AnimationPointers:
 	dw HoothootAnimation
 	dw NoctowlAnimation
 	dw LedybaAnimation
-	dw LedianAnimation
+	dw ExcadrillAnimation
 	dw SpinarakAnimation
 	dw AriadosAnimation
 	dw CrobatAnimation
@@ -182,7 +182,7 @@ AnimationPointers:
 	dw FlaaffyAnimation
 	dw AmpharosAnimation
 	dw BellossomAnimation
-	dw MarillAnimation
+	dw MismagiusAnimation
 	dw AzumarillAnimation
 	dw SudowoodoAnimation
 	dw PolitoedAnimation

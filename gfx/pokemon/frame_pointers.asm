@@ -165,7 +165,7 @@ FramesPointers:
 	dw HoothootFrames
 	dw NoctowlFrames
 	dw LedybaFrames
-	dw LedianFrames
+	dw ExcadrillFrames
 	dw SpinarakFrames
 	dw AriadosFrames
 	dw CrobatFrames
@@ -182,7 +182,7 @@ FramesPointers:
 	dw FlaaffyFrames
 	dw AmpharosFrames
 	dw BellossomFrames
-	dw MarillFrames
+	dw MismagiusFrames
 	dw AzumarillFrames
 	dw SudowoodoFrames
 	dw PolitoedFrames

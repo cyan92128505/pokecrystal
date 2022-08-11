@@ -205,7 +205,7 @@ Pokered_MonIndices:
 	db HOOTHOOT
 	db NOCTOWL
 	db LEDYBA
-	db LEDIAN
+	db EXCADRILL
 	db SPINARAK
 	db ARIADOS
 	db CROBAT
@@ -222,7 +222,7 @@ Pokered_MonIndices:
 	db FLAAFFY
 	db AMPHAROS
 	db BELLOSSOM
-	db MARILL
+	db MISMAGIUS
 	db AZUMARILL
 	db SUDOWOODO
 	db POLITOED

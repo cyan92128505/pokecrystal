@@ -333,8 +333,8 @@ PokemonPicPointers::
 	dba_pic NoctowlBackpic
 	dba_pic LedybaFrontpic
 	dba_pic LedybaBackpic
-	dba_pic LedianFrontpic
-	dba_pic LedianBackpic
+	dba_pic ExcadrillFrontpic
+	dba_pic ExcadrillBackpic
 	dba_pic SpinarakFrontpic
 	dba_pic SpinarakBackpic
 	dba_pic AriadosFrontpic
@@ -367,8 +367,8 @@ PokemonPicPointers::
 	dba_pic AmpharosBackpic
 	dba_pic BellossomFrontpic
 	dba_pic BellossomBackpic
-	dba_pic MarillFrontpic
-	dba_pic MarillBackpic
+	dba_pic MismagiusFrontpic
+	dba_pic MismagiusBackpic
 	dba_pic AzumarillFrontpic
 	dba_pic AzumarillBackpic
 	dba_pic SudowoodoFrontpic

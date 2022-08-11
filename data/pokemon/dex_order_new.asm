@@ -30,7 +30,6 @@ NewPokedexOrder:
 	db KAKUNA
 	db BEEDRILL
 	db LEDYBA
-	db LEDIAN
 	db SPINARAK
 	db ARIADOS
 	db GEODUDE
@@ -121,7 +120,6 @@ NewPokedexOrder:
 	db NINETALES
 	db GROWLITHE
 	db ARCANINE
-	db MARILL
 	db AZUMARILL
 	db DIGLETT
 	db DUGTRIO
@@ -193,6 +191,7 @@ NewPokedexOrder:
 	db HOUNDOOM
 	db SNEASEL
 	db MISDREAVUS
+	db MISMAGIUS
 	db PORYGON
 	db PORYGON2
 	db CHANSEY
@@ -236,6 +235,7 @@ NewPokedexOrder:
 	db GIBLE
 	db GABITE
 	db GARCHOMP
+	db EXCADRILL
 	db LUGIA
 	db HO_OH
 	db MEW

@@ -166,7 +166,7 @@ PokedexDataPointerTable:
 	dw HoothootPokedexEntry
 	dw NoctowlPokedexEntry
 	dw LedybaPokedexEntry
-	dw LedianPokedexEntry
+	dw ExcadrillPokedexEntry
 	dw SpinarakPokedexEntry
 	dw AriadosPokedexEntry
 	dw CrobatPokedexEntry
@@ -183,7 +183,7 @@ PokedexDataPointerTable:
 	dw FlaaffyPokedexEntry
 	dw AmpharosPokedexEntry
 	dw BellossomPokedexEntry
-	dw MarillPokedexEntry
+	dw MismagiusPokedexEntry
 	dw AzumarillPokedexEntry
 	dw SudowoodoPokedexEntry
 	dw PolitoedPokedexEntry

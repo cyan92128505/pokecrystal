@@ -240,7 +240,7 @@ TM01 EQU const_value
 	add_tm ENDURE       ; d3
 	add_tm FRUSTRATION  ; d4
 	add_tm SOLARBEAM    ; d5
-	add_tm IRON_TAIL    ; d6
+	add_tm IRON_HEAD    ; d6
 	add_tm DRAGON_PULSE ; d7
 	add_tm THUNDER      ; d8
 	add_tm EARTHQUAKE   ; d9

@@ -611,7 +611,7 @@ JohtoGrassWildMons:
 	; nite
 	db 14, RATTATA
 	db 13, ZUBAT
-	db 14, MARILL
+	db 14, WOOPER
 	db 13, GOLBAT
 	db 14, GEODUDE
 	db 16, RATICATE
@@ -641,7 +641,7 @@ JohtoGrassWildMons:
 	db 14, RATTATA
 	db 15, RATICATE
 	db 14, ZUBAT
-	db 15, MARILL
+	db 15, WOOPER
 	db 15, GOLBAT
 	db 15, GOLBAT
 	end_grass_wildmons
@@ -669,7 +669,7 @@ JohtoGrassWildMons:
 	db 31, GEODUDE
 	db 30, RATICATE
 	db 30, GOLBAT
-	db 28, MARILL
+	db 28, WOOPER
 	db 32, GOLBAT
 	db 32, GOLBAT
 	end_grass_wildmons
@@ -696,7 +696,7 @@ JohtoGrassWildMons:
 	db 15, ZUBAT
 	db 17, ZUBAT
 	db 17, GOLBAT
-	db 16, MARILL
+	db 16, WOOPER
 	db 16, GEODUDE
 	db 18, RATICATE
 	db 18, RATICATE
@@ -1466,8 +1466,8 @@ JohtoGrassWildMons:
 	db 15, PIDGEY
 	db 16, GROWLITHE
 	db 15, PIDGEOTTO
-	db 15, LEDIAN
-	db 15, LEDIAN
+	db 15, PIDGEOTTO
+	db 15, PIDGEOTTO
 	; day
 	db 13, PIDGEY
 	db 14, GROWLITHE
@@ -1565,7 +1565,7 @@ JohtoGrassWildMons:
 	db 14, ZUBAT
 	db 15, RATICATE
 	db 16, GOLBAT
-	db 15, MARILL
+	db 15, WOOPER
 	db 16, GOLBAT
 	db 16, GOLBAT
 	end_grass_wildmons

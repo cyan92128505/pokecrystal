@@ -165,7 +165,7 @@ AnimationIdlePointers:
 	dw HoothootAnimationIdle
 	dw NoctowlAnimationIdle
 	dw LedybaAnimationIdle
-	dw LedianAnimationIdle
+	dw ExcadrillAnimationIdle
 	dw SpinarakAnimationIdle
 	dw AriadosAnimationIdle
 	dw CrobatAnimationIdle
@@ -182,7 +182,7 @@ AnimationIdlePointers:
 	dw FlaaffyAnimationIdle
 	dw AmpharosAnimationIdle
 	dw BellossomAnimationIdle
-	dw MarillAnimationIdle
+	dw MismagiusAnimationIdle
 	dw AzumarillAnimationIdle
 	dw SudowoodoAnimationIdle
 	dw PolitoedAnimationIdle

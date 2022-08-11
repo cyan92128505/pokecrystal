@@ -231,7 +231,7 @@ MoveDescriptions::
 	dw PursuitDescription
 	dw RapidSpinDescription
 	dw SweetScentDescription
-	dw IronTailDescription
+	dw IronHeadDescription
 	dw MetalClawDescription
 	dw MeteorMashDescription
 	dw MorningSunDescription
@@ -1187,9 +1187,9 @@ SweetScentDescription:
 	db   "Reduces the foe's"
 	next "evasiveness.@"
 
-IronTailDescription:
+IronHeadDescription:
 	db   "An attack that may"
-	next "reduce DEFENSE.@"
+	next "flinch target.@"
 
 MetalClawDescription:
 	db   "An attack that may"

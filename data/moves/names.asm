@@ -230,7 +230,7 @@ MoveNames::
 	li "PURSUIT"
 	li "RAPID SPIN"
 	li "SWEET SCENT"
-	li "IRON TAIL"
+	li "IRON HEAD"
 	li "METAL CLAW"
 	li "METEOR MASH"
 	li "MORNING SUN"

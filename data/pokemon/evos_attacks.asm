@@ -2215,7 +2215,7 @@ NoctowlEvosAttacks:
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:
-	db EVOLVE_LEVEL, 18, LEDIAN
+	db EVOLVE_LEVEL, 18, EXCADRILL
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 8, SUPERSONIC
@@ -2228,18 +2228,12 @@ LedybaEvosAttacks:
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
-LedianEvosAttacks:
+ExcadrillEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SUPERSONIC
-	db 8, SUPERSONIC
-	db 24, LIGHT_SCREEN
-	db 24, REFLECT
-	db 24, SAFEGUARD
-	db 33, BATON_PASS
-	db 42, SWIFT
-	db 51, AGILITY
-	db 60, DOUBLE_EDGE
+	db 1, SWORDS_DANCE
+	db 1, EARTHQUAKE
+	db 1, ROCK_SLIDE
+	db 1, IRON_HEAD
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:
@@ -2434,17 +2428,12 @@ BellossomEvosAttacks:
 	db 55, SOLARBEAM
 	db 0 ; no more level-up moves
 
-MarillEvosAttacks:
-	db EVOLVE_LEVEL, 18, AZUMARILL
+MismagiusEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 3, DEFENSE_CURL
-	db 6, TAIL_WHIP
-	db 10, WATER_GUN
-	db 15, ROLLOUT
-	db 21, BUBBLEBEAM
-	db 28, DOUBLE_EDGE
-	db 36, RAIN_DANCE
+	db 1, NASTY_PLOT
+	db 1, SHADOW_BALL
+	db 1, THUNDERBOLT
+	db 1, ICY_WIND
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
@@ -2669,6 +2658,7 @@ SlowkingEvosAttacks:
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
+    db EVOLVE_ITEM, MOON_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 6, SPITE

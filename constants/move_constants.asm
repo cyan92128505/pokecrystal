@@ -236,7 +236,7 @@
 	const PURSUIT      ; e4
 	const RAPID_SPIN   ; e5
 	const SWEET_SCENT  ; e6
-	const IRON_TAIL    ; e7
+	const IRON_HEAD    ; e7
 	const METAL_CLAW   ; e8
 	const METEOR_MASH  ; e9
 	const MORNING_SUN  ; ea

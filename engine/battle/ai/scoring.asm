@@ -754,6 +754,14 @@ AI_Smart_LockOn:
 AI_Smart_Selfdestruct:
 ; Selfdestruct, Explosion
 
+; never use against ghost types
+    ld a, [wBattleMonType1]
+	cp GHOST
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jr z, .discourage
+
 ; Unless this is the enemy's last Pokemon...
 	push hl
 	farcall FindAliveEnemyMons
@@ -774,7 +782,7 @@ AI_Smart_Selfdestruct:
 ; if player has highly boosted stats just boom
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	ret nc
+	jr nc, .encourage
     ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .encourage
@@ -2163,8 +2171,8 @@ AI_Smart_Curse:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-	call AICheckEnemyQuarterHP
-	jr nc, .discourage
+;	call AICheckEnemyQuarterHP
+;	jr nc, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
@@ -3144,14 +3152,14 @@ AI_Smart_CalmMind:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-    call AICompareSpeed
-    jr nc, .slower
-   	call AICheckEnemyQuarterHP
-   	jr nc, .discourage
-   	jr .continue
-.slower
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
+;    call AICompareSpeed
+;    jr nc, .slower
+;   	call AICheckEnemyQuarterHP
+;   	jr nc, .discourage
+;   	jr .continue
+;.slower
+;	call AICheckEnemyHalfHP
+;	jr nc, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
@@ -3234,8 +3242,8 @@ AI_Smart_SwordsDance:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
+;	call AICheckEnemyHalfHP
+;	jr nc, .discourage
 
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
@@ -3320,7 +3328,7 @@ AI_Smart_Barrier:
 
 ; strongly encourage if player has boosted attack
 	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .strongEncourage
 
 ; strongly encourage to +2 if player mon has higher attack than special attack
@@ -3374,8 +3382,8 @@ AI_Smart_NastyPlot:
 	jr nc, .discourage
 
 ; Don't use if weak, AI_Opportunist should also handle this
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
+;	call AICheckEnemyHalfHP
+;	jr nc, .discourage
 
 ; deoxys should always boost once and no more
     ld a, [wEnemyMonSpecies]

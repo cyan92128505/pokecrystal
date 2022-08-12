@@ -34,4 +34,5 @@ StallMoves:
 	db GEOMANCY
 	db FURIOUS_WILL
 	db DRAGON_DANCE
+	db QUIVER_DANCE
 	db -1 ; end

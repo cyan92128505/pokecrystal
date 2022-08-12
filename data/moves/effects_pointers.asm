@@ -103,7 +103,7 @@ MoveEffectsPointers:
 	dw FalseSwipe
 	dw HealBell
 	dw NormalHit
-	dw TripleKick
+	dw QuiverDance
 	dw Thief
 	dw MeanLook
 	dw Nightmare

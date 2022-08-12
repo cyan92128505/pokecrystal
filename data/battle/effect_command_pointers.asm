@@ -81,7 +81,7 @@ BattleCommandPointers:
 	dw BattleCommand_FalseSwipe
 	dw BattleCommand_HealBell
 	dw BattleCommand_HeldFlinch
-	dw BattleCommand_TripleKick
+	dw BattleCommand_QuiverDance
 	dw BattleCommand_KickCounter
 	dw BattleCommand_Thief
 	dw BattleCommand_ArenaTrap

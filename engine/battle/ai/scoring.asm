@@ -222,6 +222,8 @@ AI_Smart_Switch:
 	jr z, .switch
 	cp EFFECT_DRAGON_DANCE
 	jr z, .switch
+	cp EFFECT_QUIVER_DANCE
+	jr z, .switch
 	ret
 
 .checkSetUpAndSwitch50
@@ -532,7 +534,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPITE,            AI_Smart_Spite
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
-	dbw EFFECT_THIEF,            AI_Smart_Thief
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
@@ -578,6 +579,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_CALM_MIND,        AI_Smart_CalmMind
 	dbw EFFECT_DRAGON_DANCE,     AI_Smart_DragonDance
 	dbw EFFECT_CONFUSE_HIT,      AI_Smart_DynamicPunch
+    dbw EFFECT_QUIVER_DANCE,     AI_Smart_QuiverDance
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -3140,6 +3142,7 @@ AI_Smart_FuriousWill:
 	inc [hl]
 	ret
 
+AI_Smart_QuiverDance:
 AI_Smart_CalmMind:
 ; don't go past +4
     ld a, [wEnemySAtkLevel]
@@ -3148,16 +3151,6 @@ AI_Smart_CalmMind:
     ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
-
-; Don't use if weak, AI_Opportunist should also handle this
-;    call AICompareSpeed
-;    jr nc, .slower
-;   	call AICheckEnemyQuarterHP
-;   	jr nc, .discourage
-;   	jr .continue
-;.slower
-;	call AICheckEnemyHalfHP
-;	jr nc, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them

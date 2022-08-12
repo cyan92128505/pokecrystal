@@ -168,8 +168,8 @@ BattleAnimations::
 	dw BattleAnim_Substitute
 	dw BattleAnim_Struggle
 	dw BattleAnim_Sketch
-	dw BattleAnim_TripleKick
-	dw BattleAnim_Thief
+	dw BattleAnim_QuiverDance
+	dw BattleAnim_BugBuzz
 	dw BattleAnim_SpiderWeb
 	dw BattleAnim_MindReader
 	dw BattleAnim_Nightmare
@@ -1857,6 +1857,7 @@ BattleAnim_Roar:
 .done
 	anim_ret
 
+BattleAnim_BugBuzz:
 BattleAnim_Supersonic:
 	anim_1gfx ANIM_GFX_PSYCHIC
 .loop
@@ -3182,6 +3183,7 @@ BattleAnim_Nightmare:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_QuiverDance:
 BattleAnim_FlameWheel:
 	anim_1gfx ANIM_GFX_FIRE
 .loop

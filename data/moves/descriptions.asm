@@ -167,8 +167,8 @@ MoveDescriptions::
 	dw SubstituteDescription
 	dw StruggleDescription
 	dw SketchDescription
-	dw TripleKickDescription
-	dw ThiefDescription
+	dw QuiverDanceDescription
+	dw BugBuzzDescription
 	dw SpiderWebDescription
 	dw MindReaderDescription
 	dw NightmareDescription
@@ -931,13 +931,13 @@ SketchDescription:
 	db   "Copies the foe's"
 	next "move permanently.@"
 
-TripleKickDescription:
-	db   "Hits three times"
-	next "with rising power.@"
+QuiverDanceDescription:
+	db   "raises special"
+	next "stats and speed.@"
 
-ThiefDescription:
+BugBuzzDescription:
 	db   "An attack that may"
-	next "steal a held item.@"
+	next "lower special def.@"
 
 SpiderWebDescription:
 	db   "Prevents fleeing"

@@ -1382,32 +1382,11 @@ HealBell:
 	healbell
 	endmove
 
-TripleKick:
+QuiverDance:
 	checkobedience
 	usedmovetext
 	doturn
-	startloop
-	lowersub
-	checkhit
-	critical
-	damagestats
-	damagecalc
-	triplekick
-	stab
-	damagevariation
-	clearmissdamage
-	moveanimnosub
-	failuretext
-	applydamage
-	criticaltext
-	cleartext
-	supereffectivelooptext
-	checkfaint
-	buildopponentrage
-	kickcounter
-	endloop
-	raisesub
-	kingsrock
+	quiverdance
 	endmove
 
 Thief:

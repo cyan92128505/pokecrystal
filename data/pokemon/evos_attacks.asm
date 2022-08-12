@@ -3119,7 +3119,7 @@ HitmontopEvosAttacks:
 	db 31, COUNTER
 	db 37, AGILITY
 	db 43, DETECT
-	db 49, TRIPLE_KICK
+	db 49, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 XerneasEvosAttacks:

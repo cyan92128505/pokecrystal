@@ -166,7 +166,7 @@ MoveNames::
 	li "SUBSTITUTE"
 	li "STRUGGLE"
 	li "SKETCH"
-	li "TRIPLE KICK"
+	li "QUIVER DANCE"
 	li "BUG BUZZ"
 	li "SPIDER WEB"
 	li "MIND READER"

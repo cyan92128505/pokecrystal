@@ -235,11 +235,11 @@ AlphabeticalPokedexOrder:
 	db UNOWN
 	db URSARING
 	db VAPOREON
-	db VENOMOTH
 	db VENONAT
 	db VENUSAUR
 	db VICTREEBEL
 	db VILEPLUME
+	db VOLCARONA
 	db VOLTORB
 	db VULPIX
 	db WARTORTLE

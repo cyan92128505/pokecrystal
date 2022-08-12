@@ -48,7 +48,7 @@ AnimationPointers:
 	dw ParasAnimation
 	dw ParasectAnimation
 	dw VenonatAnimation
-	dw VenomothAnimation
+	dw VolcaronaAnimation
 	dw DiglettAnimation
 	dw DugtrioAnimation
 	dw MeowthAnimation

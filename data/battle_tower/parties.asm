@@ -5232,7 +5232,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db YVELTAL
-	db SHARP_BEAK
+	db LEFTOVERS
 	db OBLIVION, DARK_PULSE, NASTY_PLOT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5387,9 +5387,35 @@ BattleTowerMons:
 	bigdw 238 ; SDef
 	db "RANTA-N@@@@"
 
-    db MEW
-	db PINK_BOW
-	db SWORDS_DANCE, CRUNCH, DOUBLE_EDGE, EXPLOSION
+;   db MEW
+;	db PINK_BOW
+;	db SWORDS_DANCE, CRUNCH, DOUBLE_EDGE, EXPLOSION
+;	dw 0 ; OT ID
+;	dt 1250000 ; Exp
+;	; Stat exp
+;	bigdw 65500
+;	bigdw 65500
+;	bigdw 65500
+;	bigdw 65500
+;	bigdw 65500
+;	dn 15, 15, 15, 15 ; DVs
+;	db 20, 16, 32, 8 ; PP
+;	db 255 ; Happiness
+;	db 0, 0, 0 ; Pokerus, Caught data
+;	db 100 ; Level
+;	db 0, 0 ; Status
+;	bigdw 403 ; HP
+;	bigdw 403 ; Max HP
+;	bigdw 298 ; Atk
+;	bigdw 298 ; Def
+;	bigdw 298 ; Spd
+;	bigdw 298 ; SAtk
+;	bigdw 298 ; SDef
+;	db "RANTA-N@@@@"
+
+    db VOLCARONA
+	db FOCUS_SASH
+	db QUIVER_DANCE, BUG_BUZZ, FIRE_BLAST, ANCIENTPOWER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5399,18 +5425,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 16, 32, 8 ; PP
+	db 15, 16, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 403 ; HP
-	bigdw 403 ; Max HP
-	bigdw 298 ; Atk
-	bigdw 298 ; Def
+	bigdw 373 ; HP
+	bigdw 373 ; Max HP
+	bigdw 208 ; Atk
+	bigdw 228 ; Def
 	bigdw 298 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 298 ; SDef
+	bigdw 368 ; SAtk
+	bigdw 308 ; SDef
 	db "RANTA-N@@@@"
 
     db HO_OH

@@ -1594,8 +1594,8 @@ JohtoGrassWildMons:
 	db 16, RATICATE
 	db 17, VENONAT
 	db 17, RATICATE
-	db 17, VENOMOTH
-	db 17, VENOMOTH
+	db 17, RATICATE
+	db 17, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_44

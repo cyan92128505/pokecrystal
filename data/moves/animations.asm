@@ -3183,7 +3183,7 @@ BattleAnim_Nightmare:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_QuiverDance:
+BattleAnim_DragonDance:
 BattleAnim_FlameWheel:
 	anim_1gfx ANIM_GFX_FIRE
 .loop
@@ -4313,7 +4313,7 @@ BattleAnim_Moonlight:
 	anim_call BattleAnimSub_Glimmer2
 	anim_ret
 
-BattleAnim_DragonDance:
+BattleAnim_QuiverDance:
 BattleAnim_HiddenPower:
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_1Row

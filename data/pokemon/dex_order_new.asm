@@ -102,7 +102,6 @@ NewPokedexOrder:
 	db SUDOWOODO
 	db WOBBUFFET
 	db VENONAT
-	db VENOMOTH
 	db SCYTHER
 	db SCIZOR
 	db PINSIR
@@ -236,6 +235,7 @@ NewPokedexOrder:
 	db GARCHOMP
 	db DRILBUR
 	db EXCADRILL
+	db VOLCARONA
 	db LUGIA
 	db HO_OH
 	db MEW

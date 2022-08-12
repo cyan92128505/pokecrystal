@@ -48,7 +48,7 @@ PokemonNames::
 	db "PARAS@@@@@"
 	db "PARASECT@@"
 	db "VENONAT@@@"
-	db "VENOMOTH@@"
+	db "VOLCARONA@"
 	db "DIGLETT@@@"
 	db "DUGTRIO@@@"
 	db "MEOWTH@@@@"

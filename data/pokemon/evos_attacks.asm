@@ -619,20 +619,16 @@ ParasectEvosAttacks:
 	db 55, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
-VenonatEvosAttacks:
+LarvestaEvosAttacks:
 	db EVOLVE_LEVEL, 50, VOLCARONA
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, DISABLE
-	db 1, FORESIGHT
-	db 9, SUPERSONIC
-	db 17, CONFUSION
-	db 20, POISONPOWDER
-	db 25, LEECH_LIFE
-	db 28, STUN_SPORE
-	db 33, PSYBEAM
-	db 36, SLEEP_POWDER
-	db 41, PSYCHIC_M
+	db 1, EMBER
+	db 1, LEECH_LIFE
+	db 20, ANCIENTPOWER
+	db 30, FLAME_WHEEL
+	db 40, X_SCISSOR
+	db 50, BUG_BUZZ
+	db 60, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 VolcaronaEvosAttacks:
@@ -641,6 +637,10 @@ VolcaronaEvosAttacks:
 	db 1, BUG_BUZZ
 	db 1, FIRE_BLAST
 	db 1, ANCIENTPOWER
+	db 51, QUIVER_DANCE
+	db 53, BUG_BUZZ
+	db 57, FIRE_BLAST
+	db 60, MORNING_SUN
 	db 0 ; no more level-up moves
 
 DiglettEvosAttacks:

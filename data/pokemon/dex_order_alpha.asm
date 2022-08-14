@@ -235,7 +235,7 @@ AlphabeticalPokedexOrder:
 	db UNOWN
 	db URSARING
 	db VAPOREON
-	db VENONAT
+	db LARVESTA
 	db VENUSAUR
 	db VICTREEBEL
 	db VILEPLUME

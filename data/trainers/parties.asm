@@ -1419,8 +1419,8 @@ GruntMGroup:
 
 	; GRUNTM (19)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 18, VENONAT
-	db 18, VENONAT
+	db 18, LARVESTA
+	db 18, LARVESTA
 	db -1 ; end
 
 	; GRUNTM (20)
@@ -1606,7 +1606,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (8)
 	db "ARNIE@", TRAINERTYPE_NORMAL
-	db 15, VENONAT
+	db 15, LARVESTA
 	db -1 ; end
 
 	; BUG_CATCHER (9)
@@ -1638,7 +1638,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (13)
 	db "ARNIE@", TRAINERTYPE_NORMAL
-	db 19, VENONAT
+	db 19, LARVESTA
 	db -1 ; end
 
 	; BUG_CATCHER (14)
@@ -2969,8 +2969,8 @@ PicnickerGroup:
 	db -1 ; end
 
 	; PICNICKER (4)
-	db "KIM@", TRAINERTYPE_NORMAL
-	db 15, VULPIX
+    db "KIM@", TRAINERTYPE_ITEM_MOVES
+	db 30, SKARMORY, LEFTOVERS, DRILL_PECK, SPIKES, WHIRLWIND, REST
 	db -1 ; end
 
 	; PICNICKER (5)

@@ -47,7 +47,7 @@ AnimationIdlePointers:
 	dw VileplumeAnimationIdle
 	dw ParasAnimationIdle
 	dw ParasectAnimationIdle
-	dw VenonatAnimationIdle
+	dw LarvestaAnimationIdle
 	dw VolcaronaAnimationIdle
 	dw DiglettAnimationIdle
 	dw DugtrioAnimationIdle

@@ -3179,9 +3179,11 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	and a
 	ret z
 
-; x2
+; AndrewNote - crits now deal x1.5 damage rather than x2
 	ldh a, [hQuotient + 3]
-	add a
+	rl a ; 1/2 damage
+	add a ; 2/2 damage
+	add a ; 3/2 damage
 	ldh [hQuotient + 3], a
 
 	ldh a, [hQuotient + 2]

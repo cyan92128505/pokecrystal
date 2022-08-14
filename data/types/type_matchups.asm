@@ -108,6 +108,8 @@ TypeMatchups:
 	db STEEL,        ICE,          SUPER_EFFECTIVE
 	db STEEL,        ROCK,         SUPER_EFFECTIVE
 	db STEEL,        STEEL,        NOT_VERY_EFFECTIVE
+	db DRAGON,         ICE,        NOT_VERY_EFFECTIVE
+	;db UBER,          UBER,        NOT_VERY_EFFECTIVE
 
 	db -2 ; end (with Foresight)
 

@@ -47,7 +47,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw ParasEggMoves
 	dw NoEggMoves
-	dw VenonatEggMoves
+	dw LarvestaEggMoves
 	dw NoEggMoves
 	dw DiglettEggMoves
 	dw NoEggMoves

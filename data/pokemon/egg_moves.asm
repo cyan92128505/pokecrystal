@@ -128,10 +128,10 @@ ParasEggMoves:
 	db PURSUIT
 	db -1 ; end
 
-VenonatEggMoves:
-	db BATON_PASS
-	db SCREECH
-	db GIGA_DRAIN
+LarvestaEggMoves:
+	db MORNING_SUN
+	db FIRE_BLAST
+	db BUG_BUZZ
 	db -1 ; end
 
 DiglettEggMoves:

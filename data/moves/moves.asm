@@ -265,5 +265,5 @@ Moves: ; 41afb
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
 	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,        0, UBER,           STATUS, 100, 20,   0
-   	move JUDGEMENT,    EFFECT_JUDGEMENT,          100, UBER,         PHYSICAL, 100, 20,   0
+   	move JUDGEMENT,    EFFECT_JUDGEMENT,          100, UBER,         PHYSICAL, 100, 40,   0
    	move FURIOUS_WILL, EFFECT_FURIOUS_WILL,       0, UBER,           STATUS, 100, 20,   0

@@ -1772,7 +1772,9 @@ HandleWeather:
 	ld de, ANIM_IN_SANDSTORM
 	call Call_PlayBattleAnim
 	call SwitchTurnCore
-	call GetEighthMaxHP
+	;call GetEighthMaxHP
+	; AndrewNote - reduce sandstorm to 16th
+	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
 	ld hl, SandstormHitsText

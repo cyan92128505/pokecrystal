@@ -502,7 +502,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
-	dbw EFFECT_BIDE,             AI_Smart_Bide ; this can be removed
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
 	dbw EFFECT_HEAL,             AI_Smart_Heal
 	dbw EFFECT_TOXIC,            AI_Smart_Toxic
@@ -517,7 +516,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
-	dbw EFFECT_RAGE,             AI_Smart_Rage
 	dbw EFFECT_MIMIC,            AI_Smart_Mimic
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,          AI_Smart_Disable
@@ -525,9 +523,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ENCORE,           AI_Smart_Encore
 	dbw EFFECT_PAIN_SPLIT,       AI_Smart_PainSplit
 	dbw EFFECT_SNORE,            AI_Smart_Snore
-	dbw EFFECT_CONVERSION2,      AI_Smart_Conversion2
 	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
-	dbw EFFECT_DEFROST_OPPONENT, AI_Smart_DefrostOpponent
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
@@ -561,7 +557,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
-	dbw EFFECT_SKULL_BASH,       AI_Smart_SkullBash
 	dbw EFFECT_TWISTER,          AI_Smart_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
@@ -580,6 +575,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DRAGON_DANCE,     AI_Smart_DragonDance
 	dbw EFFECT_CONFUSE_HIT,      AI_Smart_DynamicPunch
     dbw EFFECT_QUIVER_DANCE,     AI_Smart_QuiverDance
+    dbw EFFECT_SPIKES,           AI_Smart_Spikes
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1147,32 +1143,52 @@ AI_Smart_ResetStats:
 	inc [hl]
 	ret
 
-AI_Smart_Bide:
-; 90% chance to discourage this move unless enemy's HP is full.
-
-	call AICheckEnemyMaxHP
-	ret c
-	call Random
-	cp 10 percent
-	ret c
-	inc [hl]
+AI_Smart_Spikes:
+; discourage if player has spikes on the field, otherwise encourage
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	jr nz, .discourage
+	dec [hl]
+	dec [hl]
+	dec [hl]
 	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
-
-; Discourage this move if the player has not shown
-; a super-effective move against the enemy.
-; Consider player's type(s) if its moves are unknown.
-
+; don't use if player has only one pokemon left
 	push hl
-	callfar CheckPlayerMoveTypeMatchups
-	ld a, [wEnemyAISwitchScore]
-	cp BASE_AI_SWITCH_SCORE
+	call AICheckLastPlayerMon
 	pop hl
-	ret c
-	inc [hl]
+	jr z, .discourage
+; encourage if player has spikes on the field
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	jr nz, .encourage
+; encourage this move if any of player's stat levels are boosted.
+	ld hl, wPlayerAtkLevel
+	ld c, NUM_LEVEL_STATS
+.playerstatsloop
+	dec c
+	jr z, .discourage
+	ld a, [hli]
+	cp BASE_STAT_LEVEL + 1
+	jr c, .playerstatsloop
+	dec [hl]
+	dec [hl]
+.encourage
+	dec [hl]
 	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_Heal:
 AI_Smart_MorningSun:
@@ -1562,44 +1578,6 @@ AI_Smart_HyperBeam:
 	inc [hl]
 	ret
 
-AI_Smart_Rage:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_RAGE, a
-	jr z, .notbuilding
-
-; If enemy's Rage is building, 50% chance to encourage this move.
-	call AI_50_50
-	jr c, .skipencourage
-
-	dec [hl]
-
-; Encourage this move based on Rage's counter.
-.skipencourage
-	ld a, [wEnemyRageCounter]
-	cp 2
-	ret c
-	dec [hl]
-	ld a, [wEnemyRageCounter]
-	cp 3
-	ret c
-	dec [hl]
-	ret
-
-.notbuilding
-; If enemy's Rage is not building, discourage this move if enemy's HP is below 50%.
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
-
-; 50% chance to encourage this move otherwise.
-	call AI_80_20
-	ret nc
-	dec [hl]
-	ret
-
-.discourage
-	inc [hl]
-	ret
-
 AI_Smart_Mimic:
 ; Discourage this move if the player did not use any move last turn.
 	ld a, [wLastPlayerCounterMove]
@@ -1812,18 +1790,6 @@ AI_Smart_SleepTalk:
 	inc [hl]
 	ret
 
-AI_Smart_DefrostOpponent:
-; Greatly encourage this move if enemy is frozen.
-; No move has EFFECT_DEFROST_OPPONENT, so this layer is unused.
-
-	ld a, [wEnemyMonStatus]
-	and 1 << FRZ
-	ret z
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
 AI_Smart_Spite:
 	ld a, [wLastPlayerCounterMove]
 	and a
@@ -1885,7 +1851,6 @@ AI_Smart_Spite:
 
 AI_Smart_DestinyBond:
 AI_Smart_Reversal:
-AI_Smart_SkullBash:
 ; Discourage this move if enemy's HP is above 25%.
 
 	call AICheckEnemyQuarterHP
@@ -1960,9 +1925,12 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; encourage if below half health
+; encourage if below half health and player is attacking
 	call AICheckEnemyHalfHP
 	jr c, .continue
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr z, .continue
 	dec [hl]
 	dec [hl]
 
@@ -1987,53 +1955,6 @@ AI_Smart_PriorityHit:
 	dec [hl]
 	dec [hl]
 	dec [hl]
-	ret
-
-AI_Smart_Thief:
-; Don't use Thief unless it's the only move available.
-
-	ld a, [hl]
-	add $1e
-	ld [hl], a
-	ret
-
-AI_Smart_Conversion2:
-	ld a, [wLastPlayerMove]
-	and a
-	jr nz, .discourage ; should be jr z
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-
-	ld a, BANK(Moves)
-	call GetFarByte
-	ld [wPlayerMoveStruct + MOVE_TYPE], a
-
-	xor a
-	ldh [hBattleTurn], a
-
-	callfar BattleCheckTypeMatchup
-
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	pop hl
-	jr c, .discourage
-	ret z
-
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	ret
-
-.discourage
-	call Random
-	cp 10 percent
-	ret c
-	inc [hl]
 	ret
 
 AI_Smart_Disable:
@@ -3076,18 +2997,18 @@ AI_Smart_HolyArmour:
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
-; strongly encourage to +1
+; strongly encourage to +2
     ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr c, .strongEncourage
 
 ; strongly encourage if player has boosted offenses
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .strongEncourage
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .strongEncourage
+;	ld a, [wPlayerSAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jr nc, .strongEncourage
+;	ld a, [wPlayerAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jr nc, .strongEncourage
 
 ; otherwise encourage to +3
     ld a, [wEnemySDefLevel]
@@ -3269,7 +3190,10 @@ AI_Smart_SwordsDance:
 	jr nc, .discourage80
 
 .continue
-; if already at +2 and player is faster, 80% chance to discourage
+; if already at +2 and player is faster, 80% chance to discourage, unless Arceus
+    ld a, [wEnemyMonSpecies]
+    cp ARCEUS
+    jr nz, .continue2
     call AICompareSpeed
     jr c, .continue2
     ld a, [wEnemyAtkLevel]

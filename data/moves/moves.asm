@@ -161,7 +161,7 @@ Moves: ; 41afb
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,        PHYSICAL, 100, 10,  20
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,         STATUS,   100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,    70, 20,   0
-	move PSYBLAST,     EFFECT_SP_DEF_DOWN_HIT,   120, UBER,          SPECIAL,  100, 20,  20
+	move PSYBLAST,     EFFECT_SP_DEF_DOWN_HIT,   130, UBER,          SPECIAL,  100, 30,  30
 	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,        STATUS,   100, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,        STATUS,   100, 40,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,         90, WATER,         PHYSICAL,  85, 10,   0
@@ -169,7 +169,7 @@ Moves: ; 41afb
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0
 	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,        PHYSICAL,  90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100, 10,   0
-	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         75, ROCK,          PHYSICAL,  90, 10,  30
+	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,          PHYSICAL,  90, 10,  30
 	move HYPER_FANG,   EFFECT_FLINCH_HIT,         80, NORMAL,        PHYSICAL,  90, 15,  10
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       60, STEEL,         PHYSICAL, 100, 20,   0
 	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,           PHYSICAL, 100, 15,   0
@@ -265,5 +265,5 @@ Moves: ; 41afb
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
 	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,        0, UBER,           STATUS, 100, 20,   0
-   	move JUDGEMENT,    EFFECT_JUDGEMENT,          100, UBER,         PHYSICAL, 100, 40,   0
+   	move JUDGEMENT,    EFFECT_JUDGEMENT,          100, UBER,         PHYSICAL, 100, 30,   0
    	move FURIOUS_WILL, EFFECT_FURIOUS_WILL,       0, UBER,           STATUS, 100, 20,   0

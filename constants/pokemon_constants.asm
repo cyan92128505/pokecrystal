@@ -101,7 +101,7 @@
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
-	const FARFETCH_D ; 53   magnezone
+	const FARFETCH_D ; 53
 	const DODUO      ; 54
 	const DODRIO     ; 55
 	const SEEL       ; 56   yanmega
@@ -184,7 +184,7 @@ JOHTO_POKEMON EQU const_value
 	const LUCARIO    ; a2
 	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
-	const DRILBUR    ; a5   ...
+	const DRILBUR    ; a5
 	const EXCADRILL  ; a6
 	const SPINARAK   ; a7
 	const ARIADOS    ; a8
@@ -202,9 +202,9 @@ JOHTO_POKEMON EQU const_value
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
 	const BELLOSSOM  ; b6
-	const MISMAGIUS  ; b7   mismagus
+	const MISMAGIUS  ; b7
 	const AZUMARILL  ; b8   porygonz
-	const SUDOWOODO  ; b9
+	const SUDOWOODO  ; b9   magnezone
 	const POLITOED   ; ba
 	const HOPPIP     ; bb   ...
 	const SKIPLOOM   ; bc   ...

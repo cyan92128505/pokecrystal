@@ -124,9 +124,10 @@ AI_Basic:
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
-    dec [hl]
+	dec [hl]
     dec [hl]
 .lesserEncouragement
+    dec [hl]
     dec [hl]
     dec [hl]
     jp .checkmove
@@ -1263,6 +1264,7 @@ AI_Smart_Moonlight:
 
 ; fall through
 .encourage
+	dec [hl]
 	dec [hl]
 	dec [hl]
 	dec [hl]
@@ -3003,12 +3005,12 @@ AI_Smart_HolyArmour:
 	jr c, .strongEncourage
 
 ; strongly encourage if player has boosted offenses
-;	ld a, [wPlayerSAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jr nc, .strongEncourage
-;	ld a, [wPlayerAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jr nc, .strongEncourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage
 
 ; otherwise encourage to +3
     ld a, [wEnemySDefLevel]
@@ -3193,7 +3195,7 @@ AI_Smart_SwordsDance:
 ; if already at +2 and player is faster, 80% chance to discourage, unless Arceus
     ld a, [wEnemyMonSpecies]
     cp ARCEUS
-    jr nz, .continue2
+    jr z, .continue2
     call AICompareSpeed
     jr c, .continue2
     ld a, [wEnemyAtkLevel]

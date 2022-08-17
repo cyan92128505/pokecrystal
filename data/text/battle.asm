@@ -93,10 +93,11 @@ PerishCountText:
 
 BattleText_TargetRecoveredWithItem:
 	text "<TARGET>"
-	line "recovered with"
-	cont "@"
-	text_ram wStringBuffer1
-	text "."
+	line "recovered."
+	;line "recovered with"
+	;cont "@"
+	;text_ram wStringBuffer1
+	;text "."
 	prompt
 
 BattleText_UserRecoveredPPUsing:

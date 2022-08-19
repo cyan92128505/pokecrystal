@@ -350,12 +350,11 @@ PikachuEvosAttacks:
 	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
-	db 15, DOUBLE_TEAM
 	db 20, SLAM
 	db 26, THUNDERBOLT
 	db 33, AGILITY
 	db 41, THUNDER
-	db 50, LIGHT_SCREEN
+	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 RaichuEvosAttacks:
@@ -1653,7 +1652,6 @@ ScytherEvosAttacks:
 	db 30, WING_ATTACK
 	db 36, SLASH
 	db 42, SWORDS_DANCE
-	db 48, DOUBLE_TEAM
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
@@ -2285,9 +2283,9 @@ ChinchouEvosAttacks:
 	db 5, SUPERSONIC
 	db 13, FLAIL
 	db 17, WATER_GUN
-	db 25, SPARK
+	db 25, TAKE_DOWN
 	db 29, CONFUSE_RAY
-	db 37, TAKE_DOWN
+	db 37, THUNDERBOLT
 	db 41, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2299,9 +2297,9 @@ LanturnEvosAttacks:
 	db 5, SUPERSONIC
 	db 13, FLAIL
 	db 17, WATER_GUN
-	db 25, SPARK
+	db 25, TAKE_DOWN
 	db 33, CONFUSE_RAY
-	db 45, TAKE_DOWN
+	db 45, THUNDERBOLT
 	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2577,7 +2575,6 @@ YanmaEvosAttacks:
 	db 1, TACKLE
 	db 1, FORESIGHT
 	db 7, QUICK_ATTACK
-	db 13, DOUBLE_TEAM
 	db 19, SONICBOOM
 	db 25, DETECT
 	db 31, SUPERSONIC
@@ -3169,7 +3166,7 @@ RaikouEvosAttacks:
 	db 11, THUNDERSHOCK
 	db 21, ROAR
 	db 31, QUICK_ATTACK
-	db 41, SPARK
+	db 41, THUNDERBOLT
 	db 51, REFLECT
 	db 61, CRUNCH
 	db 71, THUNDER

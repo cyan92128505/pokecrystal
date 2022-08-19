@@ -92,15 +92,12 @@ AI_Basic:
 
 ; Greatly encourage a move if it will KO the player
 ; skip if enemy is slower and weakened and has priority
-    call AICompareSpeed
-    jr c, .checkKO
-    call AICheckEnemyHalfHP
-    jr c, .checkKO
-	ld a, EFFECT_PRIORITY_HIT
-	call AIHasMoveEffect
-	ret c
 
 .checkKO
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .checkmove
+
     ld a, 1
 	ldh [hBattleTurn], a
 	push hl
@@ -121,6 +118,7 @@ AI_Basic:
 	pop de
 	pop hl
     jp nc, .checkmove
+
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
@@ -1487,43 +1485,50 @@ AI_Smart_Fly:
 
 AI_Smart_SuperFang:
 ; Discourage this move if player's HP is below 25%.
-
 	call AICheckPlayerQuarterHP
 	ret c
 	inc [hl]
 	ret
 
 AI_Smart_Paralyze:
-; 50% chance to discourage this move if player's HP is below 25%.
-	call AICheckPlayerQuarterHP
-	jr nc, .discourage
+; never use thunderwave against ground types
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp THUNDER_WAVE
+	jr nz, .notThunderwave
+    ld a, [wBattleMonType1]
+	cp GROUND
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp GROUND
+	jr z, .discourage
 
-; greatly encourage this move
-; if enemy is slower than player and its HP is above 25%.
+.notThunderwave
+; always use against Mewtwo or Arceus
+    ld a, [wBattleMonSpecies]
+    cp MEWTWO
+    jr z, .encourage
+    cp ARCEUS
+    jr z, .encourage
+
+; encourage if enemy is slower than player.
+; 50% chance to discourage otherwise
 	call AICompareSpeed
-	ret c
+	jr c, .discourage50
 
-; discourage if faster player has picked substitute
-	ld a, [wCurPlayerMove]
-	cp SUBSTITUTE
-	jr nc, .continue
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
-
-.continue
-	call AICheckEnemyQuarterHP
-	ret nc
-	dec [hl]
-	dec [hl]
-	ret
-
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
+.discourage50
+    call AI_50_50
+    ret c
 .discourage
-	call AI_50_50
-	ret c
-	inc [hl]
-	ret
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_SpeedDownHit:
 ; Icy Wind
@@ -1927,12 +1932,18 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; encourage if below half health and player is attacking
+; massive encourage if below half health and player is attacking
+; this needs to overcome encouragement from other moves which do more damage and can KO
 	call AICheckEnemyHalfHP
 	jr c, .continue
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr z, .continue
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	dec [hl]
 	dec [hl]
 	dec [hl]
 
@@ -2093,10 +2104,6 @@ AI_Smart_Curse:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; Don't use if weak, AI_Opportunist should also handle this
-;	call AICheckEnemyQuarterHP
-;	jr nc, .discourage
-
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
@@ -2128,18 +2135,22 @@ AI_Smart_Curse:
 	jr nz, .continue2
 	;bit FRZ, a
 	;jr nz, .continue2
+; is the player behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
 ; is player attacking
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr nz, .discourage
 
 .continue2
-; encourage to +1, strongly encourage to +2 if player has boosted Atk
+; encourage to +1, strongly encourage if player has boosted Atk
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 1
     jr nc, .checkToxic ;
 	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .greatly_encourage
 	jr .encourage
 
@@ -2988,9 +2999,9 @@ AI_Smart_Thunder:
 	ret
 
 AI_Smart_HolyArmour:
-; don't go past +4
+; don't go past +3
     ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 4
+	cp BASE_STAT_LEVEL + 3
 	jr nc, .discourage
 
 ; discourage if afflicted with toxic
@@ -3000,16 +3011,19 @@ AI_Smart_HolyArmour:
     jr nz, .discourage
 
 ; strongly encourage to +2
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .strongEncourage
     ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .strongEncourage
 
 ; strongly encourage if player has boosted offenses
 	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .strongEncourage
 	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .strongEncourage
 
 ; otherwise encourage to +3
@@ -3036,22 +3050,27 @@ AI_Smart_FuriousWill:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; encourage to +2, strongly encourage if player has boosted SpAtk
-    cp BASE_STAT_LEVEL + 2
-    jr nc, .checkToxic ;
+; strongly encourage if player has boosted SpAtk
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .strongEncourage
-	jr .encourage
+
+; encourage to +2
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr c, .encourage
+	ld a, [wEnemySDefLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr c, .encourage
 
 ; discourage after +2 if afflicted with toxic
-.checkToxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
     ret
+
 .strongEncourage
     dec [hl]
 .encourage
@@ -3106,6 +3125,10 @@ AI_Smart_CalmMind:
 	jr nz, .continue2
 	;bit FRZ, a
 	;jr nz, .continue2
+; is the player behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
 ; is player attacking
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
@@ -3157,7 +3180,7 @@ AI_Smart_SwordsDance:
 
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
-; does player have boosted attack
+; does player have boosted  attack
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .special
@@ -3185,6 +3208,10 @@ AI_Smart_SwordsDance:
 ; is player attacking
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
+	jr nz, .discourage
+; is the player behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jr nz, .discourage
 ; if already at +2, 80% chance to discourage
     ld a, [wEnemyAtkLevel]
@@ -3302,10 +3329,14 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; deoxys should always boost once and no more
+; deoxys should always boost once and no more, unless player has sub
     ld a, [wEnemyMonSpecies]
     cp DEOXYS
     jr nz, .notDeoxys
+; is the player behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
 ; encourage to get to +2 and discourage thereafter
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
@@ -3340,6 +3371,10 @@ AI_Smart_NastyPlot:
 	jr nz, .continue
 	;bit FRZ, a
 	;jr nz, .continue
+; is the player behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
 ; is player attacking
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
@@ -3630,6 +3665,7 @@ AI_Opportunist:
 	pop hl
 	jr nc, .checkmove
 
+	inc [hl]
 	inc [hl]
 	inc [hl]
 	inc [hl]

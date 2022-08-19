@@ -208,7 +208,7 @@ MoveNames::
 	li "FALSE SWIPE"
 	li "SWAGGER"
 	li "MILK DRINK"
-	li "SPARK"
+	li "VOLT TACKLE"
 	li "FURY CUTTER"
 	li "STEEL WING"
 	li "MEAN LOOK"

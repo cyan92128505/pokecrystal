@@ -209,7 +209,7 @@ MoveDescriptions::
 	dw FalseSwipeDescription
 	dw SwaggerDescription
 	dw MilkDrinkDescription
-	dw SparkDescription
+	dw VoltTackleDescription
 	dw FuryCutterDescription
 	dw SteelWingDescription
 	dw MeanLookDescription
@@ -1099,9 +1099,9 @@ MilkDrinkDescription:
 	db   "Restores HP by 1/2"
 	next "the max HP.@"
 
-SparkDescription:
-	db   "An attack that may"
-	next "cause paralysis.@"
+VoltTackleDescription:
+	db   "A life risking"
+	next "wild charge.@"
 
 FuryCutterDescription:
 	db   "Successive hits"

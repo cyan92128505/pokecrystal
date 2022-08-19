@@ -226,11 +226,11 @@ TM01 EQU const_value
 	add_tm TOXIC        ; c5
 	add_tm ZAP_CANNON   ; c6
 	add_tm ROCK_SMASH   ; c7
-	add_tm PSYCH_UP     ; c8
+	add_tm PSYCH_UP     ; c8  thunderwave
 	add_tm HIDDEN_POWER ; c9
 	add_tm SUNNY_DAY    ; ca
-	add_tm SWEET_SCENT  ; cb
-	add_tm SNORE        ; cc
+	add_tm SWEET_SCENT  ; cb  selfdestruct
+	add_tm SNORE        ; cc  explosion
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce
 	add_tm ICY_WIND     ; cf
@@ -249,10 +249,10 @@ TM01 EQU const_value
 	const ITEM_DC       ; dc
 	add_tm PSYCHIC_M    ; dd
 	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df
-	add_tm DOUBLE_TEAM  ; e0
+	add_tm MUD_SLAP     ; df  thunderbolt
+	add_tm DOUBLE_TEAM  ; e0  flamethrower
 	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2
+	add_tm SWAGGER      ; e2   ice beam
 	add_tm SLEEP_TALK   ; e3
 	add_tm SLUDGE_BOMB  ; e4
 	add_tm SANDSTORM    ; e5
@@ -261,14 +261,14 @@ TM01 EQU const_value
 	add_tm DEFENSE_CURL ; e8
 	add_tm THUNDERPUNCH ; e9
 	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb
+	add_tm DETECT       ; eb  swords dance
 	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed
+	add_tm ATTRACT      ; ed  .....
 	add_tm ROCK_SLIDE   ; ee
-	add_tm STEEL_WING   ; ef
+	add_tm STEEL_WING   ; ef  .....
 	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
-	add_tm NIGHTMARE    ; f2
+	add_tm FURY_CUTTER  ; f1  .....
+	add_tm NIGHTMARE    ; f2  .....
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO

@@ -139,13 +139,13 @@
 	const SPIKE_CANNON ; 83
 	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
-	const KINESIS      ; 86
+	const KINESIS      ; 86    .....
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c
+	const BARRAGE      ; 8c     ......
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
@@ -181,12 +181,12 @@
 	const SNORE        ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
-	const CONVERSION2  ; b0
+	const CONVERSION2  ; b0    stone edge
 	const AEROBLAST    ; b1
-	const COTTON_SPORE ; b2
+	const COTTON_SPORE ; b2    zen headbutt
 	const REVERSAL     ; b3
 	const SPITE        ; b4
-	const POWDER_SNOW  ; b5
+	const POWDER_SNOW  ; b5    poison jab
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
@@ -194,16 +194,16 @@
 	const SWEET_KISS   ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
-	const MUD_SLAP     ; bd
-	const OCTAZOOKA    ; be
+	const MUD_SLAP     ; bd     avelance
+	const OCTAZOOKA    ; be     flare blitz
 	const SPIKES       ; bf
 	const ZAP_CANNON   ; c0
 	const FORESIGHT    ; c1
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
-	const DETECT       ; c5
-	const BONE_RUSH    ; c6
+	const DETECT       ; c5     energy ball
+	const BONE_RUSH    ; c6     shadow  punch
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
@@ -214,15 +214,15 @@
 	const FALSE_SWIPE  ; ce
 	const SWAGGER      ; cf
 	const MILK_DRINK   ; d0
-	const SPARK        ; d1
+	const VOLT_TACKLE  ; d1
 	const FURY_CUTTER  ; d2
-	const STEEL_WING   ; d3
+	const STEEL_WING   ; d3    flash canon
 	const MEAN_LOOK    ; d4
 	const ATTRACT      ; d5
 	const SLEEP_TALK   ; d6
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
-	const PRESENT      ; d9
+	const PRESENT      ; d9   seed bomb
 	const FRUSTRATION  ; da
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
@@ -235,7 +235,7 @@
 	const ENCORE       ; e3
 	const PURSUIT      ; e4
 	const RAPID_SPIN   ; e5
-	const SWEET_SCENT  ; e6
+	const SWEET_SCENT  ; e6   air slash
 	const IRON_HEAD    ; e7
 	const METAL_CLAW   ; e8
 	const METEOR_MASH  ; e9
@@ -256,7 +256,7 @@
 	const FUTURE_SIGHT ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
-	const BEAT_UP      ; fb
+	const BEAT_UP      ; fb   drain punch
 	const HOLY_ARMOUR  ; fc
 	const JUDGEMENT    ; fd
 	const FURIOUS_WILL ; fe

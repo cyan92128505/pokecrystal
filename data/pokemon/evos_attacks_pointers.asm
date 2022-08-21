@@ -190,7 +190,7 @@ EvosAttacksPointers::
 	dw PolitoedEvosAttacks
 	dw HoppipEvosAttacks
 	dw SkiploomEvosAttacks
-	dw JumpluffEvosAttacks
+	dw ConkeldurrEvosAttacks
 	dw BeldumEvosAttacks
 	dw MetangEvosAttacks
 	dw MetagrossEvosAttacks

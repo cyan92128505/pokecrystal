@@ -188,7 +188,7 @@ AnimationIdlePointers:
 	dw PolitoedAnimationIdle
 	dw HoppipAnimationIdle
 	dw SkiploomAnimationIdle
-	dw JumpluffAnimationIdle
+	dw ConkeldurrAnimationIdle
 	dw BeldumAnimationIdle
 	dw MetangAnimationIdle
 	dw MetagrossAnimationIdle

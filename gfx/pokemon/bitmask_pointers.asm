@@ -188,7 +188,7 @@ BitmasksPointers:
 	dw PolitoedBitmasks
 	dw HoppipBitmasks
 	dw SkiploomBitmasks
-	dw JumpluffBitmasks
+	dw ConkeldurrBitmasks
 	dw BeldumBitmasks
 	dw MetangBitmasks
 	dw MetagrossBitmasks

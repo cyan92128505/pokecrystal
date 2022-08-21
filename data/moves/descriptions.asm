@@ -251,7 +251,7 @@ MoveDescriptions::
 	dw FutureSightDescription
 	dw RockSmashDescription
 	dw WhirlpoolDescription
-	dw BeatUpDescription
+	dw DrainPunchDescription
 	dw HolyArmourDescription
 	dw JudgementDescription
 	dw FuriousWillDescription
@@ -1267,9 +1267,9 @@ WhirlpoolDescription:
 	db   "Traps the foe for"
 	next "2-5 turns.@"
 
-BeatUpDescription:
-	db   "Party #MON join"
-	next "in the attack.@"
+DrainPunchDescription:
+	db   "A punch that saps"
+	next "the foes energy.@"
 
 HolyArmourDescription:
     db "Greatly raise"

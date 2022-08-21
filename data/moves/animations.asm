@@ -252,7 +252,7 @@ BattleAnimations::
 	dw BattleAnim_FutureSight
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
-	dw BattleAnim_BeatUp
+	dw BattleAnim_DrainPunch
 	dw BattleAnim_HolyArmour
 	dw BattleAnim_Judgement
 	dw BattleAnim_FuriousWill
@@ -697,6 +697,7 @@ BattleAnim_Doubleslap:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_DrainPunch:
 BattleAnim_MegaPunch:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $2, $0

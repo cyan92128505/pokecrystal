@@ -91,5 +91,5 @@ EZChat_SortedPokemon:
 .ru:       db JYNX, LUGIA, -1
 .re:       db MAGNETON, EXCADRILL, DRILBUR, -1
 .ro:       db VULPIX, -1
-.wa:       db JUMPLUFF, TOTODILE, MACHOP ;, -1
+.wa:       db CONKELDURR, TOTODILE, MACHOP ;, -1
 .end:      db -1

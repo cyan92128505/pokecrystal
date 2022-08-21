@@ -188,7 +188,7 @@ FramesPointers:
 	dw PolitoedFrames
 	dw HoppipFrames
 	dw SkiploomFrames
-	dw JumpluffFrames
+	dw ConkeldurrFrames
 	dw BeldumFrames
 	dw MetangFrames
 	dw MetagrossFrames

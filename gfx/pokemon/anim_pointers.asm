@@ -188,7 +188,7 @@ AnimationPointers:
 	dw PolitoedAnimation
 	dw HoppipAnimation
 	dw SkiploomAnimation
-	dw JumpluffAnimation
+	dw ConkeldurrAnimation
 	dw BeldumAnimation
 	dw MetangAnimation
 	dw MetagrossAnimation

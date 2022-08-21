@@ -250,7 +250,7 @@ MoveNames::
 	li "FUTURE SIGHT"
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
-	li "BEAT UP"
+	li "DRAIN PUNCH"
 	li "HOLY ARMOUR"
 	li "JUDGEMENT"
 	li "FURIOUS WILL"

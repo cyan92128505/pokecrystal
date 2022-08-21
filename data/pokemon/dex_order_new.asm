@@ -66,7 +66,6 @@ NewPokedexOrder:
 	db VICTREEBEL
 	db HOPPIP
 	db SKIPLOOM
-	db JUMPLUFF
 	db PARAS
 	db PARASECT
 	db POLIWAG
@@ -232,6 +231,8 @@ NewPokedexOrder:
 	db GIBLE
 	db GABITE
 	db GARCHOMP
+	db SPIRITOMB
+	db CONKELDURR
 	db DRILBUR
 	db EXCADRILL
 	db LARVESTA
@@ -246,7 +247,6 @@ NewPokedexOrder:
 	db GROUDON
 	db RAYQUAZA
 	db DEOXYS
-	db SPIRITOMB
 	db DARKRAI
 	db DIALGA
 	db PALKIA

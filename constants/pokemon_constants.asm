@@ -208,7 +208,7 @@ JOHTO_POKEMON EQU const_value
 	const POLITOED   ; ba
 	const HOPPIP     ; bb   ...
 	const SKIPLOOM   ; bc   ...
-	const JUMPLUFF   ; bd   Conkeldur
+	const CONKELDURR ; bd   Conkeldur
 	const BELDUM     ; be
 	const METANG     ; bf
 	const METAGROSS  ; c0

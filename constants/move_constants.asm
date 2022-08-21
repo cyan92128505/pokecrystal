@@ -256,7 +256,7 @@
 	const FUTURE_SIGHT ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
-	const BEAT_UP      ; fb   drain punch
+	const DRAIN_PUNCH  ; fb
 	const HOLY_ARMOUR  ; fc
 	const JUDGEMENT    ; fd
 	const FURIOUS_WILL ; fe

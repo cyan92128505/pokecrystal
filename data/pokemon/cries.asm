@@ -194,7 +194,7 @@ PokemonCries::
 	mon_cry CRY_CLEFFA,     -675,  456 ; POLITOED
 	mon_cry CRY_CLEFFA,       59,  200 ; HOPPIP
 	mon_cry CRY_CLEFFA,       39,  312 ; SKIPLOOM
-	mon_cry CRY_CLEFFA,        0,  384 ; JUMPLUFF
+	mon_cry CRY_CLEFFA,        0,  384 ; CONKELDURR
 	mon_cry CRY_AIPOM,       100,  100 ; BELDUM
 	mon_cry CRY_TYPHLOSION,  200,  150 ; METANG
 	mon_cry CRY_TYPHLOSION,  300,  100 ; METAGROSS

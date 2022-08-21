@@ -430,7 +430,7 @@ INCBIN "gfx/footprints/sudowoodo.1bpp",  footprint_top
 INCBIN "gfx/footprints/politoed.1bpp",   footprint_top
 INCBIN "gfx/footprints/hoppip.1bpp",     footprint_top
 INCBIN "gfx/footprints/skiploom.1bpp",   footprint_top
-INCBIN "gfx/footprints/jumpluff.1bpp",   footprint_top
+INCBIN "gfx/footprints/conkeldurr.1bpp",   footprint_top
 INCBIN "gfx/footprints/beldum.1bpp",      footprint_top
 INCBIN "gfx/footprints/metang.1bpp",    footprint_top
 INCBIN "gfx/footprints/metagross.1bpp",   footprint_top
@@ -439,7 +439,7 @@ INCBIN "gfx/footprints/sudowoodo.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/politoed.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/hoppip.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/skiploom.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/jumpluff.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/conkeldurr.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/beldum.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/metang.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/metagross.1bpp",   footprint_bottom

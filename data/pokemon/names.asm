@@ -188,7 +188,7 @@ PokemonNames::
 	db "POLITOED@@"
 	db "HOPPIP@@@@"
 	db "SKIPLOOM@@"
-	db "JUMPLUFF@@"
+	db "CONKELDURR"
 	db "BELDUM@@@@"
 	db "METANG@@@@"
 	db "METAGROSS@"

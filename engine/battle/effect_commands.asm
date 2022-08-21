@@ -1728,10 +1728,10 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 
-	cp EFFECT_LEECH_HIT
-	ret z
-	cp EFFECT_DREAM_EATER
-	ret z
+	;cp EFFECT_LEECH_HIT
+	;ret z
+	;cp EFFECT_DREAM_EATER
+	;ret z
 
 .not_draining_sub
 	ld a, 1

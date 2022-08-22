@@ -188,8 +188,8 @@ EvosAttacksPointers::
 	dw AzumarillEvosAttacks
 	dw SudowoodoEvosAttacks
 	dw PolitoedEvosAttacks
-	dw HoppipEvosAttacks
-	dw SkiploomEvosAttacks
+	dw TimburrEvosAttacks
+	dw GurdurrEvosAttacks
 	dw ConkeldurrEvosAttacks
 	dw BeldumEvosAttacks
 	dw MetangEvosAttacks

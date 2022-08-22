@@ -64,8 +64,6 @@ NewPokedexOrder:
 	db BELLSPROUT
 	db WEEPINBELL
 	db VICTREEBEL
-	db HOPPIP
-	db SKIPLOOM
 	db PARAS
 	db PARASECT
 	db POLIWAG
@@ -232,6 +230,8 @@ NewPokedexOrder:
 	db GABITE
 	db GARCHOMP
 	db SPIRITOMB
+	db TIMBURR
+	db GURDURR
 	db CONKELDURR
 	db DRILBUR
 	db EXCADRILL

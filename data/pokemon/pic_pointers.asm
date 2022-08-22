@@ -375,10 +375,10 @@ PokemonPicPointers::
 	dba_pic SudowoodoBackpic
 	dba_pic PolitoedFrontpic
 	dba_pic PolitoedBackpic
-	dba_pic HoppipFrontpic
-	dba_pic HoppipBackpic
-	dba_pic SkiploomFrontpic
-	dba_pic SkiploomBackpic
+	dba_pic TimburrFrontpic
+	dba_pic TimburrBackpic
+	dba_pic GurdurrFrontpic
+	dba_pic GurdurrBackpic
 	dba_pic ConkeldurrFrontpic
 	dba_pic ConkeldurrBackpic
 	dba_pic BeldumFrontpic

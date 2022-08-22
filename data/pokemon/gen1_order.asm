@@ -226,8 +226,8 @@ Pokered_MonIndices:
 	db AZUMARILL
 	db SUDOWOODO
 	db POLITOED
-	db HOPPIP
-	db SKIPLOOM
+	db TIMBURR
+	db GURDURR
 	db CONKELDURR
 	db BELDUM
 	db METANG

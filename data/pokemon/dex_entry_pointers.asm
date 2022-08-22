@@ -187,8 +187,8 @@ PokedexDataPointerTable:
 	dw AzumarillPokedexEntry
 	dw SudowoodoPokedexEntry
 	dw PolitoedPokedexEntry
-	dw HoppipPokedexEntry
-	dw SkiploomPokedexEntry
+	dw TimburrPokedexEntry
+	dw GurdurrPokedexEntry
 	dw ConkeldurrPokedexEntry
 	dw BeldumPokedexEntry
 	dw MetangPokedexEntry

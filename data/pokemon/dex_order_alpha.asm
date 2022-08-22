@@ -86,6 +86,7 @@ AlphabeticalPokedexOrder:
 	db GRIMER
 	db GROUDON
 	db GROWLITHE
+	db GURDURR
 	db GYARADOS
 	db HAUNTER
 	db HERACROSS
@@ -94,7 +95,6 @@ AlphabeticalPokedexOrder:
 	db HITMONTOP
 	db HO_OH
 	db HOOTHOOT
-	db HOPPIP
 	db HORSEA
 	db HOUNDOOM
 	db HOUNDOUR
@@ -204,7 +204,6 @@ AlphabeticalPokedexOrder:
 	db SHELLDER
 	db SHUCKLE
 	db SKARMORY
-	db SKIPLOOM
 	db SLOWBRO
 	db SLOWKING
 	db SLOWPOKE
@@ -226,6 +225,7 @@ AlphabeticalPokedexOrder:
 	db TEDDIURSA
 	db TENTACOOL
 	db TENTACRUEL
+	db TIMBURR
 	db TOGEPI
 	db TOGETIC
 	db TOTODILE

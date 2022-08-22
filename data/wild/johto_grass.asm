@@ -1242,16 +1242,16 @@ JohtoGrassWildMons:
 	db 3, PIDGEY
 	db 3, PIDGEY
 	db 2, RATTATA
-	db 3, HOPPIP
-	db 3, HOPPIP
+	db 3, TIMBURR
+	db 3, TIMBURR
 	; day
 	db 2, PIDGEY
 	db 2, PIDGEY
 	db 3, PIDGEY
 	db 3, PIDGEY
 	db 2, RATTATA
-	db 3, HOPPIP
-	db 3, HOPPIP
+	db 3, TIMBURR
+	db 3, TIMBURR
 	; nite
 	db 2, HOOTHOOT
 	db 2, RATTATA
@@ -1270,16 +1270,16 @@ JohtoGrassWildMons:
 	db 4, CATERPIE
 	db 4, PIDGEY
 	db 3, WEEDLE
-	db 4, HOPPIP
-	db 4, HOPPIP
+	db 4, TIMBURR
+	db 4, TIMBURR
 	; day
 	db 3, PIDGEY
 	db 3, CATERPIE
 	db 4, CATERPIE
 	db 4, PIDGEY
 	db 3, WEEDLE
-	db 4, HOPPIP
-	db 4, HOPPIP
+	db 4, TIMBURR
+	db 4, TIMBURR
 	; nite
 	db 3, SPINARAK
 	db 3, HOOTHOOT
@@ -1298,16 +1298,16 @@ JohtoGrassWildMons:
 	db 5, BELLSPROUT
 	db 5, PIDGEY
 	db 4, WEEDLE
-	db 5, HOPPIP
-	db 5, HOPPIP
+	db 5, TIMBURR
+	db 5, TIMBURR
 	; day
 	db 4, PIDGEY
 	db 4, CATERPIE
 	db 5, BELLSPROUT
 	db 5, PIDGEY
 	db 4, WEEDLE
-	db 5, HOPPIP
-	db 5, HOPPIP
+	db 5, TIMBURR
+	db 5, TIMBURR
 	; nite
 	db 4, SPINARAK
 	db 4, POLIWAG
@@ -1324,18 +1324,18 @@ JohtoGrassWildMons:
 	db 4, EKANS
 	db 5, RATTATA
 	db 7, BELLSPROUT
-	db 6, HOPPIP
+	db 6, TIMBURR
 	db 7, PIDGEY
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 7, TIMBURR
+	db 7, TIMBURR
 	; day
 	db 4, EKANS
 	db 5, RATTATA
 	db 7, BELLSPROUT
-	db 6, HOPPIP
+	db 6, TIMBURR
 	db 7, PIDGEY
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 7, TIMBURR
+	db 7, TIMBURR
 	; nite
 	db 4, WOOPER
 	db 5, RATTATA
@@ -1352,18 +1352,18 @@ JohtoGrassWildMons:
 	db 6, RATTATA
 	db 6, SPEAROW
 	db 6, GEODUDE
-	db 6, HOPPIP
+	db 6, TIMBURR
 	db 7, EKANS
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 7, TIMBURR
+	db 7, TIMBURR
 	; day
 	db 6, RATTATA
 	db 6, SPEAROW
 	db 6, GEODUDE
-	db 6, HOPPIP
+	db 6, TIMBURR
 	db 7, EKANS
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 7, TIMBURR
+	db 7, TIMBURR
 	; nite
 	db 6, RATTATA
 	db 6, ZUBAT

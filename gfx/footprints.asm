@@ -428,8 +428,8 @@ INCBIN "gfx/footprints/azumarill.1bpp",  footprint_bottom
 ; 185-192 top halves
 INCBIN "gfx/footprints/sudowoodo.1bpp",  footprint_top
 INCBIN "gfx/footprints/politoed.1bpp",   footprint_top
-INCBIN "gfx/footprints/hoppip.1bpp",     footprint_top
-INCBIN "gfx/footprints/skiploom.1bpp",   footprint_top
+INCBIN "gfx/footprints/timburr.1bpp",     footprint_top
+INCBIN "gfx/footprints/gurdurr.1bpp",   footprint_top
 INCBIN "gfx/footprints/conkeldurr.1bpp",   footprint_top
 INCBIN "gfx/footprints/beldum.1bpp",      footprint_top
 INCBIN "gfx/footprints/metang.1bpp",    footprint_top
@@ -437,8 +437,8 @@ INCBIN "gfx/footprints/metagross.1bpp",   footprint_top
 ; 185-192 bottom halves
 INCBIN "gfx/footprints/sudowoodo.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/politoed.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/hoppip.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/skiploom.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/timburr.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/gurdurr.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/conkeldurr.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/beldum.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/metang.1bpp",    footprint_bottom

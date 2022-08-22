@@ -553,13 +553,10 @@ SudowoodoEggMoves:
 	db SELFDESTRUCT
 	db -1 ; end
 
-HoppipEggMoves:
-	db CONFUSION
-	db GROWL
-	db ENCORE
-	db DOUBLE_EDGE
-	db REFLECT
-	db AMNESIA
+TimburrEggMoves:
+	db MACH_PUNCH
+	db CLOSE_COMBAT
+	db COUNTER
 	db -1 ; end
 
 YanmaEggMoves:

@@ -186,8 +186,8 @@ BitmasksPointers:
 	dw AzumarillBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
-	dw HoppipBitmasks
-	dw SkiploomBitmasks
+	dw TimburrBitmasks
+	dw GurdurrBitmasks
 	dw ConkeldurrBitmasks
 	dw BeldumBitmasks
 	dw MetangBitmasks

@@ -206,9 +206,9 @@ JOHTO_POKEMON EQU const_value
 	const AZUMARILL  ; b8   porygonz
 	const SUDOWOODO  ; b9   magnezone
 	const POLITOED   ; ba
-	const HOPPIP     ; bb   ...
-	const SKIPLOOM   ; bc   ...
-	const CONKELDURR ; bd   Conkeldur
+	const TIMBURR    ; bb
+	const GURDURR    ; bc
+	const CONKELDURR ; bd
 	const BELDUM     ; be
 	const METANG     ; bf
 	const METAGROSS  ; c0

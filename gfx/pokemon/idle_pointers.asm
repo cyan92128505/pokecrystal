@@ -186,8 +186,8 @@ AnimationIdlePointers:
 	dw AzumarillAnimationIdle
 	dw SudowoodoAnimationIdle
 	dw PolitoedAnimationIdle
-	dw HoppipAnimationIdle
-	dw SkiploomAnimationIdle
+	dw TimburrAnimationIdle
+	dw GurdurrAnimationIdle
 	dw ConkeldurrAnimationIdle
 	dw BeldumAnimationIdle
 	dw MetangAnimationIdle

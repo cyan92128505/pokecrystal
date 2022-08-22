@@ -186,8 +186,8 @@ FramesPointers:
 	dw AzumarillFrames
 	dw SudowoodoFrames
 	dw PolitoedFrames
-	dw HoppipFrames
-	dw SkiploomFrames
+	dw TimburrFrames
+	dw GurdurrFrames
 	dw ConkeldurrFrames
 	dw BeldumFrames
 	dw MetangFrames

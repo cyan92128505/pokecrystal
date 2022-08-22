@@ -186,8 +186,8 @@ AnimationPointers:
 	dw AzumarillAnimation
 	dw SudowoodoAnimation
 	dw PolitoedAnimation
-	dw HoppipAnimation
-	dw SkiploomAnimation
+	dw TimburrAnimation
+	dw GurdurrAnimation
 	dw ConkeldurrAnimation
 	dw BeldumAnimation
 	dw MetangAnimation

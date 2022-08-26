@@ -184,7 +184,7 @@ FramesPointers:
 	dw BellossomFrames
 	dw MismagiusFrames
 	dw AzumarillFrames
-	dw SudowoodoFrames
+	dw GenesectFrames
 	dw PolitoedFrames
 	dw TimburrFrames
 	dw GurdurrFrames

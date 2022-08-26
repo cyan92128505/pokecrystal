@@ -184,7 +184,7 @@ AnimationPointers:
 	dw BellossomAnimation
 	dw MismagiusAnimation
 	dw AzumarillAnimation
-	dw SudowoodoAnimation
+	dw GenesectAnimation
 	dw PolitoedAnimation
 	dw TimburrAnimation
 	dw GurdurrAnimation

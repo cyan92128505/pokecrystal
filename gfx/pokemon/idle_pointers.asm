@@ -184,7 +184,7 @@ AnimationIdlePointers:
 	dw BellossomAnimationIdle
 	dw MismagiusAnimationIdle
 	dw AzumarillAnimationIdle
-	dw SudowoodoAnimationIdle
+	dw GenesectAnimationIdle
 	dw PolitoedAnimationIdle
 	dw TimburrAnimationIdle
 	dw GurdurrAnimationIdle

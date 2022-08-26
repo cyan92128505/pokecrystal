@@ -96,7 +96,6 @@ NewPokedexOrder:
 	db YANMA
 	db EXEGGCUTE
 	db EXEGGUTOR
-	db SUDOWOODO
 	db WOBBUFFET
 	db SCYTHER
 	db SCIZOR
@@ -237,6 +236,7 @@ NewPokedexOrder:
 	db EXCADRILL
 	db LARVESTA
 	db VOLCARONA
+	db GENESECT
 	db LUGIA
 	db HO_OH
 	db MEW

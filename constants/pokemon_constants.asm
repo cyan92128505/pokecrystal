@@ -133,7 +133,7 @@
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
 	const TANGELA    ; 72   weevil
-	const KANGASKHAN ; 73
+	const KANGASKHAN ; 73   magnezone
 	const HORSEA     ; 74   togekiss
 	const SEADRA     ; 75   elecivire
 	const GOLDEEN    ; 76   magmortar
@@ -204,7 +204,7 @@ JOHTO_POKEMON EQU const_value
 	const BELLOSSOM  ; b6
 	const MISMAGIUS  ; b7
 	const AZUMARILL  ; b8   porygonz
-	const SUDOWOODO  ; b9   magnezone
+	const GENESECT   ; b9   genesect
 	const POLITOED   ; ba
 	const TIMBURR    ; bb
 	const GURDURR    ; bc

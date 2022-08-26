@@ -371,8 +371,8 @@ PokemonPicPointers::
 	dba_pic MismagiusBackpic
 	dba_pic AzumarillFrontpic
 	dba_pic AzumarillBackpic
-	dba_pic SudowoodoFrontpic
-	dba_pic SudowoodoBackpic
+	dba_pic GenesectFrontpic
+	dba_pic GenesectBackpic
 	dba_pic PolitoedFrontpic
 	dba_pic PolitoedBackpic
 	dba_pic TimburrFrontpic

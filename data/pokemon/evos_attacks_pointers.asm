@@ -186,7 +186,7 @@ EvosAttacksPointers::
 	dw BellossomEvosAttacks
 	dw MismagiusEvosAttacks
 	dw AzumarillEvosAttacks
-	dw SudowoodoEvosAttacks
+	dw GenesectEvosAttacks
 	dw PolitoedEvosAttacks
 	dw TimburrEvosAttacks
 	dw GurdurrEvosAttacks

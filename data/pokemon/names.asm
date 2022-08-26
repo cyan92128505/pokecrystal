@@ -184,7 +184,7 @@ PokemonNames::
 	db "BELLOSSOM@"
 	db "MISMAGIUS@"
 	db "AZUMARILL@"
-	db "SUDOWOODO@"
+	db "GENESECT@@"
 	db "POLITOED@@"
 	db "TIMBURR@@@"
 	db "GURDURR@@@"

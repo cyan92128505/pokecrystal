@@ -1169,6 +1169,7 @@ RandomEncounter::
 	scf
 	ret
 
+;AndrewNote - here a wild battle occurs
 WildBattleScript:
 	randomwildmon
 	startbattle

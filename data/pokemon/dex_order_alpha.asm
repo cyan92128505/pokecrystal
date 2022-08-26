@@ -72,6 +72,7 @@ AlphabeticalPokedexOrder:
 	db GABITE
 	db GARCHOMP
 	db GASTLY
+	db GENESECT
 	db GENGAR
 	db GEODUDE
 	db GIBLE
@@ -217,7 +218,6 @@ AlphabeticalPokedexOrder:
 	db STARMIE
 	db STARYU
 	db STEELIX
-	db SUDOWOODO
 	db SUICUNE
 	db SWINUB
 	db TANGELA

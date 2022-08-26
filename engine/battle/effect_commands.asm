@@ -6720,12 +6720,12 @@ SandstormSpDefBoost:
 .ok
 	ld a, [hli]
 	cp ROCK
-	jr z, .start_boost
+	jr z, .stat_boost
 	ld a, [hl]
 	cp ROCK
 	ret nz
 
-.start_boost
+.stat_boost
 	ld h, b
 	ld l, c
 	srl b

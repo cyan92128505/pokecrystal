@@ -184,7 +184,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw SudowoodoEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw TimburrEggMoves
 	dw NoEggMoves

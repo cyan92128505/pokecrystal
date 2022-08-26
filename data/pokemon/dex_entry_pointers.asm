@@ -185,7 +185,7 @@ PokedexDataPointerTable:
 	dw BellossomPokedexEntry
 	dw MismagiusPokedexEntry
 	dw AzumarillPokedexEntry
-	dw SudowoodoPokedexEntry
+	dw GenesectPokedexEntry
 	dw PolitoedPokedexEntry
 	dw TimburrPokedexEntry
 	dw GurdurrPokedexEntry

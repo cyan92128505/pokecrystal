@@ -2451,15 +2451,22 @@ AzumarillEvosAttacks:
 	db 48, RAIN_DANCE
 	db 0 ; no more level-up moves
 
-SudowoodoEvosAttacks:
+GenesectEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ROCK_THROW
-	db 1, MIMIC
-	db 10, FLAIL
-	db 19, LOW_KICK
-	db 28, ROCK_SLIDE
-	db 37, FAINT_ATTACK
-	db 46, SLAM
+	;db 1, FURY_CUTTER
+	;db 1, QUICK_ATTACK
+	db 1, BUG_BUZZ
+	db 1, THUNDERBOLT
+	db 1, ICE_BEAM
+	db 1, FLAMETHROWER
+	db 7, SCREECH
+	db 14, METAL_CLAW
+	db 20, TRI_ATTACK
+	db 25, ANCIENTPOWER
+	db 30, X_SCISSOR
+	db 35, IRON_HEAD
+	db 40, ZAP_CANNON
+	db 45, BUG_BUZZ
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:

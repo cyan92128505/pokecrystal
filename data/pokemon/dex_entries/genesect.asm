@@ -1,10 +1,10 @@
-	db "CYBORG@" ; species name
+	db "TERMINATOR@" ; species name
 	dw 511, 3638 ; height, weight
 
 	db   "An ancient predator"
-	next "turned cyborg. It"
-	next "is the ultimate"
+	next "cyborg from the"
+	next "future! As it"
 
-	page "hunter. It gains"
-	next "power as it enters"
-	next "battle mode.@"
+	page "enters battle it"
+	next "powers up into"
+	next "killing mode.@"

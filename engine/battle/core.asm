@@ -4212,6 +4212,8 @@ SwitchInEffects:
     jr z,  .sand
     cp RAYQUAZA
     jr z, .clear
+    cp GENESECT
+    jr z, .spAtkUp
     ret
 
 .rain
@@ -4259,6 +4261,15 @@ SwitchInEffects:
 .clear
 	ld a, 1
 	ld [wWeatherCount], a
+	ret
+
+.spAtkUp
+	xor a
+	ld [wFailedMessage], a
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a
+    farcall BattleCommand_SpecialAttackUp
+	farcall BattleCommand_StatUpMessage
 	ret
 
 PursuitSwitch:

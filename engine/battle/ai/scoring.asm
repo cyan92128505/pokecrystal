@@ -119,9 +119,18 @@ AI_Basic:
 	pop hl
     jp nc, .checkmove
 
+; don't encourage explosion as much
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
+
+; encourage more accurate moves of they can kill
+	ld a, [wEnemyMoveStruct + MOVE_ACC]
+	cp 100 percent
+	jr c, .notAcc
+	dec [hl]
+	dec [hl]
+.notAcc
 	dec [hl]
     dec [hl]
 .lesserEncouragement
@@ -1946,6 +1955,8 @@ AI_Smart_PriorityHit:
 	dec [hl]
 	dec [hl]
 	dec [hl]
+	dec [hl]
+	dec [hl]
 
 .continue
 ; Greatly encourage this move if it will KO the player.
@@ -2091,7 +2102,7 @@ endr
 AI_Smart_Curse:
 	ld a, [wEnemyMonType1]
 	cp GHOST
-	jr z, .ghost_curse
+	jp z, .ghost_curse
 	ld a, [wEnemyMonType2]
 	cp GHOST
 	jr z, .ghost_curse
@@ -2107,17 +2118,23 @@ AI_Smart_Curse:
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; physical
+    call AICompareSpeed
+    jr nc, .slower
+; does player have boosted attack
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .special
+	jr .checkDef
+.slower
 ; does player have boosted attack
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .special
+.checkDef
 ; does enemy have non-boosted defense
     ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .special
-; only discourage curse if enemy is slower than player
-    call AICompareSpeed
-    jr c, .special
     jr .dontBoost
 .special
 ; does player have boosted special attack
@@ -2133,8 +2150,8 @@ AI_Smart_Curse:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue2
-	;bit FRZ, a
-	;jr nz, .continue2
+	bit FRZ, a
+	jr nz, .continue2
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3092,14 +3109,13 @@ AI_Smart_CalmMind:
 	jr c, .continue
     ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	jp nc, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
-; physical
 ; does player have boosted attack
     ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr c, .special
 ; does enemy have non-boosted defense
     ld a, [wEnemyDefLevel]
@@ -3107,24 +3123,30 @@ AI_Smart_CalmMind:
 	jr nc, .special
     jr .dontBoost
 .special
-; does player have boosted special attack
+    call AICompareSpeed
+    jr nc, .slower
+; does player have boosted special attack and enemy faster
     ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 4
 	jr c, .continue2
+	jr .checkSDef
+.slower
+; does player have boosted special attack and enemy slower
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .continue2
+.checkSDef
 ; does enemy have non-boosted special defense
     ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .continue2
-; only discourage calm mind if enemy is slower than player
-    call AICompareSpeed
-    jr c, .continue2
 .dontBoost
 ; is player SLP or FRZ
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue2
-	;bit FRZ, a
-	;jr nz, .continue2
+	bit FRZ, a
+	jr nz, .continue2
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3171,6 +3193,42 @@ AI_Smart_CalmMind:
 	inc [hl]
 	ret
 
+;CanPlayerKO:
+;    ld de, wEnemyMonMoves
+;	ld b, NUM_MOVES + 1
+;.checkmove
+;	dec b ; b is num moves on 1st pass
+;	ret z ; if b os 0 return we are done
+;	ld a, [de] ; load the move struct
+;	and a
+;	ret z ; return if no move
+;	inc de ; increment to next move
+;	call AIGetEnemyMove
+;	ld a, [wPlayerMoveStruct + MOVE_POWER]
+;	and a
+;	jr z, .checkmove
+;   ld a, 0
+;	ldh [hBattleTurn], a
+;	push hl
+;	push de
+;	push bc
+;	callfar PlayerAttackDamage
+;	callfar BattleCommand_DamageCalc
+;	callfar BattleCommand_Stab
+;	ld a, [wCurDamage + 1]
+;	ld c, a ; c is curDamage upper
+;	ld a, [wCurDamage]
+;	ld b, a ; b is curDamage lower
+;	ld a, [wEnemyMonHP + 1]
+;	cp c ; compare upper
+;	ld a, [wEnemyMonHP]
+;	sbc b ; compare lower and set flag
+;	pop bc
+;	pop de
+;	pop hl
+;   jp nc, .checkmove
+;   ret
+
 AI_Smart_DragonDance:
 AI_Smart_SwordsDance:
 ; don't go past +4
@@ -3203,8 +3261,8 @@ AI_Smart_SwordsDance:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue
-	;bit FRZ, a
-	;jr nz, .continue
+	bit FRZ, a
+	jr nz, .continue
 ; is player attacking
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
@@ -3369,8 +3427,8 @@ AI_Smart_NastyPlot:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue
-	;bit FRZ, a
-	;jr nz, .continue
+	bit FRZ, a
+	jr nz, .continue
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3425,6 +3483,9 @@ AI_Smart_DynamicPunch:
     ld a, [wEnemyMonSpecies]
     cp MACHAMP
     ret nz
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_CONFUSED, a
+	ret nz ; don't encourage if already confused
     dec [hl]
     dec [hl]
     ret

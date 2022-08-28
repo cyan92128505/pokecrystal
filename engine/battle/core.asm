@@ -3303,6 +3303,21 @@ FindMonInOTPartyToSwitchIntoBattle:
 	pop bc
 	jr nz, .discourage ; AndrewNote - discourage switch to a SLP or FRZ mon
 
+    ;ld hl, wOTPartyMon1Speed
+	;push bc
+	;ld a, b
+	;call GetPartyLocation
+	;ld a, [hli]
+	;ld b, a
+	;ld a, [wBattleMonSpeed + 1]
+	;cp b
+	;ld a, [hl]
+	;ld b, a
+	;ld a, [wBattleMonSpeed]
+	;cp b
+	;pop bc
+	;jr c, .discourage
+
 	call LookUpTheEffectivenessOfEveryMove ; consider how good enemy mon is against player mon
 	call IsThePlayerMonTypesEffectiveAgainstOTMon ; consider how good player mon is against enemy mon
 	jr .loop
@@ -4198,6 +4213,10 @@ SpikesDamage:
 
 ; AndrewNote - function for Pokemon with effects on switching in
 SwitchInEffects:
+	xor a
+	ld [wFailedMessage], a
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -4214,8 +4233,13 @@ SwitchInEffects:
     jr z, .clear
     cp GENESECT
     jr z, .spAtkUp
+    cp SUICUNE
+    jr z, .defUp
+    cp RAIKOU
+    jr z, .spdUp
+    cp ENTEI
+    jp z, .atkUp
     ret
-
 .rain
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
@@ -4229,7 +4253,6 @@ SwitchInEffects:
 .skipRainAnim
 	ld hl, DownpourText
 	jp StdBattleTextbox
-
 .sun
     ld a, WEATHER_SUN
 	ld [wBattleWeather], a
@@ -4243,7 +4266,6 @@ SwitchInEffects:
 .skipSunAnim
 	ld hl, SunGotBrightText
 	jp StdBattleTextbox
-
 .sand
     ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
@@ -4257,18 +4279,24 @@ SwitchInEffects:
 .skipSandAnim
 	ld hl, SandstormBrewedText
 	jp StdBattleTextbox
-
 .clear
 	ld a, 1
 	ld [wWeatherCount], a
 	ret
-
 .spAtkUp
-	xor a
-	ld [wFailedMessage], a
-	ld [wEffectFailed], a
-	ld [wAttackMissed], a
     farcall BattleCommand_SpecialAttackUp
+	farcall BattleCommand_StatUpMessage
+	ret
+.defUp
+    farcall BattleCommand_DefenseUp
+	farcall BattleCommand_StatUpMessage
+	ret
+.spdUp
+    farcall BattleCommand_SpeedUp
+	farcall BattleCommand_StatUpMessage
+	ret
+.atkUp
+    farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
 	ret
 

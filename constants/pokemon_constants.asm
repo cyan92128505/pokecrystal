@@ -204,7 +204,7 @@ JOHTO_POKEMON EQU const_value
 	const BELLOSSOM  ; b6
 	const MISMAGIUS  ; b7
 	const AZUMARILL  ; b8   porygonz
-	const GENESECT   ; b9   genesect
+	const GENESECT   ; b9
 	const POLITOED   ; ba
 	const TIMBURR    ; bb
 	const GURDURR    ; bc

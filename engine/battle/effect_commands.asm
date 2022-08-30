@@ -1305,7 +1305,7 @@ BattleCommand_Stab:
 	ld a, [hli]
 
 	cp -1
-	jr z, .end
+	jp z, .end
 
 	; foresight
 	cp -2
@@ -1313,7 +1313,7 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
-	jr nz, .end
+	jp nz, .end
 
 	jr .TypesLoop
 
@@ -1355,7 +1355,7 @@ BattleCommand_Stab:
 	ld a, [hld]
 	ldh [hMultiplicand + 2], a
 
-	call Multiply
+	call Multiply ; AndrewNote - is this where SE/NE is handled
 
 	ldh a, [hProduct + 1]
 	ld b, a
@@ -1366,6 +1366,29 @@ BattleCommand_Stab:
 	or b
 	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
 
+; AndrewNote - expert belt - x1.2 damage on SE hits
+    push bc
+    push de
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_EXPERT_BELT
+	pop hl
+	pop de
+	pop bc
+	jr nz, .continue
+	ld a, [wTypeModifier]
+	cp EFFECTIVE + 1
+	jr c, .continue
+    ld a, 6
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 5
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.continue
 ; Take the product and divide it by 10.
 	ld a, 10
 	ldh [hDivisor], a
@@ -1391,7 +1414,7 @@ BattleCommand_Stab:
 .SkipType:
 	inc hl
 	inc hl
-	jr .TypesLoop
+	jp .TypesLoop
 
 .end
 	call BattleCheckTypeMatchup
@@ -1407,8 +1430,12 @@ BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, CheckTypeMatchup
+	jr z, .get_type
 	ld hl, wBattleMonType1
+.get_type
+    ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
+; fallthrough
 CheckTypeMatchup:
 ; There is an incorrect assumption about this function made in the AI related code: when
 ; the AI calls CheckTypeMatchup (not BattleCheckTypeMatchup), it assumes that placing the
@@ -1419,8 +1446,6 @@ CheckTypeMatchup:
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
 	and TYPE_MASK
 	ld d, a
 	ld b, [hl]
@@ -3180,12 +3205,12 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	ret z
 
 ; AndrewNote - crits now deal x1.5 damage rather than x2
-; multiply by 15 then divide by 10 to get x1.5
-    ld a, 15
+; multiply by 3 then divide by 2 to get x1.5
+    ld a, 3
 	ldh [hMultiplier], a
 	call Multiply
 
-	ld a, 10
+	ld a, 2
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide

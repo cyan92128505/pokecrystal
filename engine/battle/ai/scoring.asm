@@ -2150,8 +2150,8 @@ AI_Smart_Curse:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue2
-	bit FRZ, a
-	jr nz, .continue2
+	;bit FRZ, a
+	;jr nz, .continue2
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3145,8 +3145,8 @@ AI_Smart_CalmMind:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue2
-	bit FRZ, a
-	jr nz, .continue2
+	;bit FRZ, a
+	;jr nz, .continue2
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3261,8 +3261,8 @@ AI_Smart_SwordsDance:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue
-	bit FRZ, a
-	jr nz, .continue
+	;bit FRZ, a
+	;jr nz, .continue
 ; is player attacking
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
@@ -3427,8 +3427,8 @@ AI_Smart_NastyPlot:
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr nz, .continue
-	bit FRZ, a
-	jr nz, .continue
+	;bit FRZ, a
+	;jr nz, .continue
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit

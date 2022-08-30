@@ -140,7 +140,7 @@
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
-	const ITEM_87      ; 87
+	const EXPERT_BELT  ; 87
 	const ITEM_88      ; 88
 	const ITEM_89      ; 89
 	const CHARCOAL     ; 8a
@@ -237,7 +237,7 @@ TM01 EQU const_value
 	add_tm PROTECT      ; d0
 	add_tm RAIN_DANCE   ; d1
 	add_tm GIGA_DRAIN   ; d2
-	add_tm ENDURE       ; d3
+	add_tm ENDURE       ; d3  energy ball
 	add_tm FRUSTRATION  ; d4
 	add_tm SOLARBEAM    ; d5
 	add_tm IRON_HEAD    ; d6
@@ -258,17 +258,17 @@ TM01 EQU const_value
 	add_tm SANDSTORM    ; e5
 	add_tm FIRE_BLAST   ; e6
 	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8
+	add_tm DEFENSE_CURL ; e8  double edge
 	add_tm THUNDERPUNCH ; e9
 	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb  swords dance
+	add_tm DETECT       ; eb  swords dance / earth power
 	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed  .....
+	add_tm ATTRACT      ; ed  nasty plot / air slash
 	add_tm ROCK_SLIDE   ; ee
-	add_tm STEEL_WING   ; ef  .....
+	add_tm STEEL_WING   ; ef  calm mind / roost
 	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1  .....
-	add_tm NIGHTMARE    ; f2  .....
+	add_tm FURY_CUTTER  ; f1  focus blast
+	add_tm NIGHTMARE    ; f2  dark pulse
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO

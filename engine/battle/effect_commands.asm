@@ -958,6 +958,30 @@ CheckUserIsCharging:
 	ret
 
 BattleCommand_DoTurn:
+; AndrewNote - lock into choice item move here
+	call GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BAND
+	jr z, .lock
+	cp HELD_CHOICE_SPECS
+	jr z, .lock
+	jr .continue
+.lock
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	bit SUBSTATUS_ENCORED, [hl]
+	set SUBSTATUS_ENCORED, [hl]
+    ldh a, [hBattleTurn]
+  	and a
+  	jr nz, .enemy
+	ld a, 255
+	ld [wPlayerEncoreCount], a
+	jr .continue
+.enemy
+	ld a, 255
+	ld [wEnemyEncoreCount], a
+.continue
+
 	call CheckUserIsCharging
 	ret nz
 
@@ -1319,13 +1343,13 @@ BattleCommand_Stab:
 
 .SkipForesightCheck:
 	cp b
-	jr nz, .SkipType
+	jp nz, .SkipType
 	ld a, [hl]
 	cp d
 	jr z, .GotMatchup
 	cp e
 	jr z, .GotMatchup
-	jr .SkipType
+	jp .SkipType
 
 .GotMatchup:
 	push hl
@@ -1355,7 +1379,7 @@ BattleCommand_Stab:
 	ld a, [hld]
 	ldh [hMultiplicand + 2], a
 
-	call Multiply ; AndrewNote - is this where SE/NE is handled
+	call Multiply
 
 	ldh a, [hProduct + 1]
 	ld b, a
@@ -1367,19 +1391,17 @@ BattleCommand_Stab:
 	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
 
 ; AndrewNote - expert belt - x1.2 damage on SE hits
-    push bc
-    push de
     push hl
 	call GetUserItem
 	ld a, b
 	cp HELD_EXPERT_BELT
 	pop hl
-	pop de
-	pop bc
 	jr nz, .continue
+
 	ld a, [wTypeModifier]
 	cp EFFECTIVE + 1
 	jr c, .continue
+
     ld a, 6
 	ldh [hMultiplier], a
 	call Multiply
@@ -1532,6 +1554,8 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
+
+    ret ; revert this
 ; damagevariation
 
 ; Modify the damage spread between 85% and 100%.
@@ -2418,6 +2442,16 @@ BattleCommand_SuperEffectiveText:
 	jp StdBattleTextbox
 
 BattleCommand_CheckFaint:
+; AndrewNote - right here we first apply life orb recoil
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_LIFE_ORB
+	pop hl
+	jr nz, .noLifeOrb
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromUser
+.noLifeOrb
 ; checkfaint
 
 ; Faint the opponent if its HP reached zero
@@ -2494,8 +2528,6 @@ BattleCommand_CheckFaint:
 	cp EFFECT_DOUBLE_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_BEAT_UP
 	jr nz, .finish
 
 .multiple_hit_raise_sub
@@ -2574,41 +2606,41 @@ EndMoveEffect:
 	ld [hl], a
 	ret
 
-DittoMetalPowder:
-	ld a, MON_SPECIES
-	call BattlePartyAttr
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr nz, .got_species
-	ld a, [wTempEnemyMonSpecies]
+;DittoMetalPowder:
+;	ld a, MON_SPECIES
+;	call BattlePartyAttr
+;	ldh a, [hBattleTurn]
+;	and a
+;	ld a, [hl]
+;	jr nz, .got_species
+;	ld a, [wTempEnemyMonSpecies]
 
-.got_species
-	cp DITTO
-	ret nz
+;.got_species
+;	cp DITTO
+;	ret nz
 
-	push bc
-	call GetOpponentItem
-	ld a, [hl]
-	cp METAL_POWDER
-	pop bc
-	ret nz
+;	push bc
+;	call GetOpponentItem
+;	ld a, [hl]
+;	cp METAL_POWDER
+;	pop bc
+;	ret nz
 
-	ld a, c
-	srl a
-	add c
-	ld c, a
-	ret nc
+;	ld a, c
+;	srl a
+;	add c
+;	ld c, a
+;	ret nc
 
-	srl b
-	ld a, b
-	and a
-	jr nz, .done
-	inc b
-.done
-	scf
-	rr c
-	ret
+;	srl b
+;	ld a, b
+;	and a
+;	jr nz, .done
+;	inc b
+;.done
+;	scf
+;	rr c
+;	ret
 
 BattleCommand_DamageStats:
 ; damagestats
@@ -2647,6 +2679,7 @@ PlayerAttackDamage:
 	rl b
 
 .physicalcrit
+
 	ld hl, wBattleMonAttack
 	call CheckDamageStatsCritical
 	jr c, .thickclub
@@ -2697,7 +2730,7 @@ PlayerAttackDamage:
 
 	ld a, [wBattleMonLevel]
 	ld e, a
-	call DittoMetalPowder
+	;call DittoMetalPowder
 
 	ld a, 1
 	and a
@@ -2938,13 +2971,11 @@ EnemyAttackDamage:
 
 	ld a, [wEnemyMonLevel]
 	ld e, a
-	call DittoMetalPowder
+	;call DittoMetalPowder
 
 	ld a, 1
 	and a
 	ret
-
-INCLUDE "engine/battle/move_effects/beat_up.asm"
 
 BattleCommand_ClearMissDamage:
 ; clearmissdamage
@@ -3113,6 +3144,61 @@ BattleCommand_DamageCalc:
 	call Divide
 
 .DoneItem:
+
+; AndrewNote - Life Orb - x1.3 damage but take recoil (dealt with in CheckFaint)
+    push hl
+    call GetUserItem
+	ld a, b
+	cp HELD_LIFE_ORB
+	pop hl
+	jr nz, .choiceBand
+    ld a, 13
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.choiceBand
+; AndrewNote - choice band - x1.5 damage but permanent encore
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_CHOICE_BAND
+	pop hl
+	jr nz, .choiceSpecs
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	cp SPECIAL
+	jr nc, .choiceSpecs
+    ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.choiceSpecs
+; AndrewNote - choice specs - x1.5 damage but permanent encore
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_CHOICE_SPECS
+	pop hl
+	jr nz, .continue
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	cp SPECIAL
+	jr c, .continue
+    ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.continue
 ; Critical hits
 	call .CriticalMultiplier
 
@@ -3639,8 +3725,6 @@ DoSubstituteDamage:
 	cp EFFECT_DOUBLE_HIT
 	jr z, .ok
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .ok
-	cp EFFECT_BEAT_UP
 	jr z, .ok
 	xor a
 	ld [hl], a
@@ -5316,38 +5400,7 @@ BattleCommand_EndLoop:
 	ld a, 1
 	jr z, .double_hit
 	ld a, [hl]
-	cp EFFECT_BEAT_UP
-	jr z, .beat_up
-	jr .not_triple_kick
 
-.beat_up
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .check_ot_beat_up
-	ld a, [wPartyCount]
-	cp 1
-	jp z, .only_one_beatup
-	dec a
-	jr .double_hit
-
-.check_ot_beat_up
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	jp z, .only_one_beatup
-	ld a, [wOTPartyCount]
-	cp 1
-	jp z, .only_one_beatup
-	dec a
-	jr .double_hit
-
-.only_one_beatup
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	res SUBSTATUS_IN_LOOP, [hl]
-	call BattleCommand_BeatUpFailText
-	jp EndMoveEffect
-
-.not_triple_kick
 	call BattleRandom
 	and $3
 	cp 2
@@ -5386,15 +5439,7 @@ BattleCommand_EndLoop:
 	push bc
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_BEAT_UP
-	jr z, .beat_up_2
 	call StdBattleTextbox
-.beat_up_2
-
-	pop bc
-	xor a
-	ld [bc], a
-	ret
 
 .loop_back_to_critical
 	ld a, [wBattleScriptBufferAddress + 1]
@@ -5535,6 +5580,10 @@ BattleCommand_CheckDeathImmunity:
     ld [wEffectFailed], a
 	ld hl, PowerTooGreatText
 	jp StdBattleTextbox
+
+BattleCommand_BeatUp:
+BattleCommand_BeatUpFailText:
+    ret ; this is removed
 
 BattleCommand_OHKO:
 ; ohko

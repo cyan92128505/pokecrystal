@@ -4946,7 +4946,7 @@ BattleTowerMons:
 ; BattleTowerMons group 10
 
     db SCIZOR
-	db LEFTOVERS
+	db METAL_COAT
 	db SWORDS_DANCE, BULLET_PUNCH, X_SCISSOR, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5024,7 +5024,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db KYOGRE
-	db LEFTOVERS
+	db EXPERT_BELT
 	db SURF, CALM_MIND, ICE_BEAM, THUNDER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5050,7 +5050,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db GROUDON
-	db LEFTOVERS
+	db LIFE_ORB
 	db EARTHQUAKE, FIRE_PUNCH, ROCK_SLIDE, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5076,7 +5076,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db RAYQUAZA
-	db SHARP_BEAK
+	db LIFE_ORB
 	db SKY_CLEAVE, EARTHQUAKE, EXTREMESPEED, DRAGON_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5102,7 +5102,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db PALKIA
-	db MYSTIC_WATER
+	db LIFE_ORB
 	db SURF, THUNDERBOLT, ICE_BEAM, CALM_MIND
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5232,7 +5232,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db YVELTAL
-	db LEFTOVERS
+	db LIFE_ORB
 	db OBLIVION, DARK_PULSE, NASTY_PLOT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5284,8 +5284,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db LATIOS
-	db DRAGON_SCALE
-	db THUNDERBOLT, DRAGON_PULSE, CALM_MIND, RECOVER
+	db CHOICE_SPECS
+	db THUNDERBOLT, DRAGON_PULSE, SURF, ICE_BEAM
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5310,7 +5310,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db DARKRAI
-	db FOCUS_SASH
+	db LIFE_ORB
 	db DARK_VOID, DARK_PULSE, AURA_SPHERE, NASTY_PLOT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5362,7 +5362,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db GENESECT
-	db FOCUS_SASH
+	db EXPERT_BELT
 	db BUG_BUZZ, THUNDERBOLT, ICE_BEAM, FLAMETHROWER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5414,7 +5414,7 @@ BattleTowerMons:
 ;	db "RANTA-N@@@@"
 
     db VOLCARONA
-	db FOCUS_SASH
+	db CHARCOAL
 	db QUIVER_DANCE, BUG_BUZZ, FIRE_BLAST, ANCIENTPOWER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5440,7 +5440,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db HO_OH
-	db SHARP_BEAK
+	db LIFE_ORB
 	db BRAVE_BIRD, EARTHQUAKE, SACRED_FIRE, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5492,7 +5492,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db GARCHOMP
-	db LEFTOVERS
+	db LIFE_ORB
 	db SWORDS_DANCE, OUTRAGE, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp

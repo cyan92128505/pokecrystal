@@ -132,7 +132,7 @@ Moves: ; 41afb
 	move AURA_SPHERE,  EFFECT_ALWAYS_HIT,         80, FIGHTING,      SPECIAL,  100, 20,   0
 	move METRONOME,    EFFECT_METRONOME,           0, NORMAL,        STATUS,   100, 10,   0
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, FLYING,        STATUS,   100, 20,   0
-	move SELFDESTRUCT, EFFECT_SELFDESTRUCT,      200, NORMAL,        PHYSICAL, 100,  5,   0
+	move SELFDESTRUCT, EFFECT_SELFDESTRUCT,      150, NORMAL,        PHYSICAL, 100,  5,   0
 	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        120, FLYING,        PHYSICAL, 100, 15,   0
 	move LICK,         EFFECT_PARALYZE_HIT,       20, GHOST,         PHYSICAL, 100, 30,  30
 	move EARTH_POWER,  EFFECT_NORMAL_HIT,         90, GROUND,        SPECIAL,  100, 10,   0
@@ -165,7 +165,7 @@ Moves: ; 41afb
 	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,        STATUS,   100, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,        STATUS,   100, 40,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,         90, WATER,         PHYSICAL,  85, 10,   0
-	move EXPLOSION,    EFFECT_SELFDESTRUCT,      250, NORMAL,        PHYSICAL, 100,  5,   0
+	move EXPLOSION,    EFFECT_SELFDESTRUCT,      200, NORMAL,        PHYSICAL, 100,  5,   0
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0
 	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,        PHYSICAL,  90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100, 10,   0

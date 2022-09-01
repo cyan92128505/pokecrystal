@@ -62,11 +62,10 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const_def
 	const HELD_NONE
 	const HELD_BERRY
-	const HELD_2
+	const HELD_CHOICE_BAND
 	const HELD_LEFTOVERS
-	;const_skip
 	const HELD_EXPERT_BELT
-	const HELD_5
+	const HELD_LIFE_ORB
 	const HELD_RESTORE_PP
 	const_skip
 	const HELD_CLEANSE_TAG
@@ -102,7 +101,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const_next 40
 	const_skip
 	const_skip
-	const HELD_METAL_POWDER
+	const HELD_CHOICE_SPECS
 
 	const_next 50
 	const HELD_NORMAL_BOOST

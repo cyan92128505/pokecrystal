@@ -35,7 +35,7 @@ ItemDescriptions:
 	dw RareCandyDesc
 	dw XAccuracyDesc
 	dw LeafStoneDesc
-	dw MetalPowderDesc
+	dw ChoiceSpecsDesc
 	dw NuggetDesc
 	dw PokeDollDesc
 	dw FullHealDesc
@@ -136,8 +136,8 @@ ItemDescriptions:
 	dw BasementKeyDesc
 	dw PassDesc
 	dw ExpertBeltDesc
-	dw TeruSama10Desc
-	dw TeruSama11Desc
+	dw LifeOrbDesc
+	dw ChoiceBandDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -393,9 +393,9 @@ LeafStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-MetalPowderDesc:
-	db   "Raises DEFENSE of"
-	next "DITTO. (HOLD)@"
+ChoiceSpecsDesc:
+	db   "Boost Spc.Atk"
+	next "but lock moves@"
 
 NuggetDesc:
 	db   "Made of pure gold."
@@ -785,11 +785,13 @@ ExpertBeltDesc:
 	db   "Powers up super"
 	next "effective moves.@"
 
-TeruSama10Desc:
-	db   "?@"
+LifeOrbDesc:
+	db   "Convert life to"
+	next "boost power.@"
 
-TeruSama11Desc:
-	db   "?@"
+ChoiceBandDesc:
+	db   "Boost Atk"
+	next "but lock moves@"
 
 CharcoalDesc:
 	db   "Powers up fire-"

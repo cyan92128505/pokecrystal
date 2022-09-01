@@ -40,7 +40,7 @@
 	const RARE_CANDY   ; 20
 	const X_ACCURACY   ; 21
 	const LEAF_STONE   ; 22
-	const METAL_POWDER ; 23
+	const CHOICE_SPECS ; 23
 	const NUGGET       ; 24
 	const POKE_DOLL    ; 25
 	const FULL_HEAL    ; 26
@@ -141,8 +141,8 @@
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
 	const EXPERT_BELT  ; 87
-	const ITEM_88      ; 88
-	const ITEM_89      ; 89
+	const LIFE_ORB     ; 88
+	const CHOICE_BAND  ; 89
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c

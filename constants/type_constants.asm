@@ -12,7 +12,7 @@
 	const POISON
 	const GROUND
 	const ROCK
-	const HOLY
+	const FAIRY
 	const BUG
 	const GHOST
 	const STEEL

@@ -293,7 +293,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
-	call HandleStatBoostingHeldItems
+;	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTilemapToTempTilemap
@@ -1028,6 +1028,19 @@ CheckIfHPIsZero:
 	ret
 
 ResidualDamage:
+; Pokemon who are immune to residual damage (magic guard)
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkSpecies
+	ld a, [wBattleMonSpecies]
+.checkSpecies
+    cp CLEFABLE
+    jp z, .check_fainted
+    cp ARCEUS
+    jp z, .check_fainted
+    cp ALAKAZAM
+    jp z, .check_fainted
 ; Return z if the user fainted before
 ; or as a result of residual damage.
 ; For Sandstorm damage, see HandleWeather.
@@ -4177,11 +4190,20 @@ SpikesDamage:
 	ld bc, UpdatePlayerHUD
 	ldh a, [hBattleTurn]
 	and a
+	ld a, [wBattleMonSpecies]
 	jr z, .ok
 	ld hl, wEnemyScreens
 	ld de, wEnemyMonType
 	ld bc, UpdateEnemyHUD
+	ld a, [wEnemyMonSpecies]
 .ok
+; Pokemon who are immune to residual damage (magic guard)
+    cp CLEFABLE
+    ret z
+    cp ARCEUS
+    ret z
+    cp ALAKAZAM
+    ret z
 
 	bit SCREENS_SPIKES, [hl]
 	ret z
@@ -4624,73 +4646,73 @@ UseConfusionHealingItem:
 
 HandleStatBoostingHeldItems:
 ; The effects handled here are not used in-game.
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
-	call .DoPlayer
-	jp .DoEnemy
+;	ldh a, [hSerialConnectionStatus]
+;	cp USING_EXTERNAL_CLOCK
+;	jr z, .player_1
+;	call .DoPlayer
+;	jp .DoEnemy
 
-.player_1
-	call .DoEnemy
-	jp .DoPlayer
+;.player_1
+;	call .DoEnemy
+;	jp .DoPlayer
 
-.DoPlayer:
-	call GetPartymonItem
-	ld a, $0
-	jp .HandleItem
+;.DoPlayer:
+;	call GetPartymonItem
+;	ld a, $0
+;	jp .HandleItem
 
-.DoEnemy:
-	call GetOTPartymonItem
-	ld a, $1
-.HandleItem:
-	ldh [hBattleTurn], a
-	ld d, h
-	ld e, l
-	push de
-	push bc
-	ld a, [bc]
-	ld b, a
-	callfar GetItemHeldEffect
-	ld hl, HeldStatUpItems
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .finish
-	inc hl
-	inc hl
-	cp b
-	jr nz, .loop
-	pop bc
-	ld a, [bc]
-	ld [wNamedObjectIndex], a
-	push bc
-	dec hl
-	dec hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, BANK(BattleCommand_AttackUp)
-	rst FarCall
-	pop bc
-	pop de
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	xor a
-	ld [bc], a
-	ld [de], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextbox
-	callfar BattleCommand_StatUpMessage
-	ret
+;.DoEnemy:
+;	call GetOTPartymonItem
+;	ld a, $1
+;.HandleItem:
+;	ldh [hBattleTurn], a
+;	ld d, h
+;	ld e, l
+;	push de
+;	push bc
+;	ld a, [bc]
+;	ld b, a
+;	callfar GetItemHeldEffect
+;	ld hl, HandleStatBoostingHeldItems
+;.loop
+;	ld a, [hli]
+;	cp -1
+;	jr z, .finish
+;	inc hl
+;	inc hl
+;	cp b
+;	jr nz, .loop
+;	pop bc
+;	ld a, [bc]
+;	ld [wNamedObjectIndex], a
+;	push bc
+;	dec hl
+;	dec hl
+;	ld a, [hli]
+;	ld h, [hl]
+;	ld l, a
+;	ld a, BANK(BattleCommand_AttackUp)
+;	rst FarCall
+;	pop bc
+;	pop de
+;	ld a, [wFailedMessage]
+;	and a
+;	ret nz
+;	xor a
+;	ld [bc], a
+;	ld [de], a
+;	call GetItemName
+;	ld hl, BattleText_UsersStringBuffer1Activated
+;	call StdBattleTextbox
+;	callfar BattleCommand_StatUpMessage
+;	ret
 
-.finish
-	pop bc
-	pop de
-	ret
+;.finish
+;	pop bc
+;	pop de
+;	ret
 
-INCLUDE "data/battle/held_stat_up.asm"
+;INCLUDE "data/battle/held_stat_up.asm"
 
 GetPartymonItem:
 	ld hl, wPartyMon1Item

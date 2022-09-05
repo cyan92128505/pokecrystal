@@ -7,7 +7,7 @@ TypeNames:
 	dw Poison
 	dw Ground
 	dw Rock
-	dw Holy
+	dw Fairy
 	dw Bug
 	dw Ghost
 	dw Steel
@@ -47,7 +47,7 @@ Psychic:   db "PSYCHIC@"
 Ice:       db "ICE@"
 Ground:    db "GROUND@"
 Rock:      db "ROCK@"
-Holy:      db "HOLY@"
+Fairy:     db "FAIRY@"
 Bug:       db "BUG@"
 Ghost:     db "GHOST@"
 Steel:     db "STEEL@"

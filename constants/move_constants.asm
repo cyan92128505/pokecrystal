@@ -244,7 +244,7 @@
 	const MOONLIGHT    ; ec
 	const HIDDEN_POWER ; ed
 	const CROSS_CHOP   ; ee
-	const TWISTER      ; ef
+	const DRACO_METEOR ; ef
 	const RAIN_DANCE   ; f0
 	const SUNNY_DAY    ; f1
 	const CRUNCH       ; f2

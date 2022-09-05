@@ -1,10 +1,10 @@
-	db "BALLOON@" ; species name
-	dw 100, 20 ; height, weight
+	db "LURING@" ; species name
+	dw 303, 756 ; height, weight
 
-	db   "Instead of walking"
-	next "with its short"
-	next "legs, it moves"
+	db   "It burns the soul"
+	next "of its victim in"
+	next "its flames."
 
-	page "around by bouncing"
-	next "on its soft,"
-	next "tender body.@"
+	page "These souls lose"
+	next "their way and"
+	next "wander forever.@"

@@ -1554,8 +1554,7 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
-
-    ret ; revert this
+    ret ; - revert this
 ; damagevariation
 
 ; Modify the damage spread between 85% and 100%.
@@ -1808,7 +1807,6 @@ BattleCommand_CheckHit:
 	ret z
 	cp THUNDER
 	ret z
-	cp TWISTER
 	ret
 
 .DigMoves:
@@ -2449,6 +2447,22 @@ BattleCommand_CheckFaint:
 	cp HELD_LIFE_ORB
 	pop hl
 	jr nz, .noLifeOrb
+
+; Pokemon who are immune to residual damage (magic guard) should not take recoil
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkSpecies
+	ld a, [wBattleMonSpecies]
+.checkSpecies
+    cp CLEFABLE
+    jp z, .noLifeOrb
+    cp ARCEUS
+    jp z, .noLifeOrb
+    cp ALAKAZAM
+    jp z, .noLifeOrb
+
+; apply recoil
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 .noLifeOrb
@@ -3201,6 +3215,31 @@ BattleCommand_DamageCalc:
 .continue
 ; Critical hits
 	call .CriticalMultiplier
+
+; half damage at full health for Dragonite and Lugia (multi scale)
+ 	ldh a, [hBattleTurn]
+ 	and a
+ 	jr z, .enemy
+ 	farcall ItemCheckPlayerMaxHP
+ 	jr nc, .finishDamage
+ 	ld a, [wBattleMonSpecies]
+ 	jr .checkSpecies
+.enemy
+    farcall ItemCheckEnemyMaxHP
+    jr nc, .finishDamage
+    ld a, [wEnemyMonSpecies]
+.checkSpecies
+    cp DRAGONITE
+    jp z, .halfDamage
+    cp LUGIA
+    jp z, .halfDamage
+    jr .finishDamage
+.halfDamage
+	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+.finishDamage
 
 ; Update wCurDamage. Max 999 (capped at 997, then add 2).
 MAX_DAMAGE EQU 999
@@ -5876,10 +5915,20 @@ BattleCommand_Recoil:
 
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
+	ld a, [wBattleMonSpecies]
 	and a
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
+	ld a, [wEnemyMonSpecies]
 .got_hp
+; Pokemon who are immune to residual damage (magic guard)
+    cp CLEFABLE
+    ret z
+    cp ARCEUS
+    ret z
+    cp ALAKAZAM
+    ret z
+
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a

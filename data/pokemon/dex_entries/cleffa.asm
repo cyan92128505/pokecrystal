@@ -1,10 +1,9 @@
-	db "STARSHAPE@" ; species name
-	dw 100, 70 ; height, weight
+	db "LAMP@" ; species name
+	dw 200, 287 ; height, weight
 
-	db   "If the impact site"
-	next "of a meteorite is"
-	next "found, this"
+	db   "It arrives near"
+	next "the moment of"
+	next "death and steals"
 
-	page "#MON is certain"
-	next "to be within the"
-	next "immediate area.@"
+	page "the spirit from"
+	next "the body.@"

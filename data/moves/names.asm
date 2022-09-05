@@ -238,7 +238,7 @@ MoveNames::
 	li "MOONLIGHT"
 	li "HIDDEN POWER"
 	li "CROSS CHOP"
-	li "TWISTER"
+	li "DRACO METEOR"
 	li "RAIN DANCE"
 	li "SUNNY DAY"
 	li "CRUNCH"

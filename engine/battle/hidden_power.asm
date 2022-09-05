@@ -79,11 +79,6 @@ HiddenPowerDamage:
 ; Skip Normal
 	inc a
 
-; Skip Holy
-	cp HOLY
-	jr c, .done
-	inc a
-
 ; Skip Uber
 	cp UBER
 	jr c, .done

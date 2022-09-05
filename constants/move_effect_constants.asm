@@ -144,7 +144,7 @@
 	const EFFECT_PSYCH_UP
 	const EFFECT_MIRROR_COAT
 	const EFFECT_SKULL_BASH    ; can be removed
-	const EFFECT_TWISTER
+	const EFFECT_TWISTER ; can be removed
 	const EFFECT_EARTHQUAKE
 	const EFFECT_FUTURE_SIGHT
 	const EFFECT_GUST
@@ -152,7 +152,7 @@
 	const EFFECT_SOLARBEAM
 	const EFFECT_THUNDER
 	const EFFECT_TELEPORT
-	const EFFECT_BEAT_UP ; can be removed
+	const EFFECT_BEAT_UP ; removed
 	const EFFECT_FLY
 	const EFFECT_DEFENSE_CURL
 	const EFFECT_FURIOUS_WILL

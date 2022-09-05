@@ -108,8 +108,8 @@ JackTwisterTriviaText:
 	para "If your opponent"
 	line "is FLYing, your"
 
-	para "TWISTER becomes"
-	line "more powerful."
+	para "THUNDER can"
+	line "still hit."
 	done
 
 JackEarthquakeTriviaText:

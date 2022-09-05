@@ -239,7 +239,7 @@ MoveDescriptions::
 	dw MoonlightDescription
 	dw HiddenPowerDescription
 	dw CrossChopDescription
-	dw TwisterDescription
+	dw DracoMeteorDescription
 	dw RainDanceDescription
 	dw SunnyDayDescription
 	dw CrunchDescription
@@ -1219,9 +1219,9 @@ CrossChopDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
-TwisterDescription:
-	db   "Whips up a tornado"
-	next "to attack.@"
+DracoMeteorDescription:
+	db   "Meteors rain on"
+	next "both #MON.@"
 
 RainDanceDescription:
 	db   "Boosts water-type"

@@ -240,7 +240,7 @@ BattleAnimations::
 	dw BattleAnim_Moonlight
 	dw BattleAnim_HiddenPower
 	dw BattleAnim_CrossChop
-	dw BattleAnim_Twister
+	dw BattleAnim_DracoMeteor
 	dw BattleAnim_RainDance
 	dw BattleAnim_SunnyDay
 	dw BattleAnim_Crunch
@@ -4523,6 +4523,7 @@ BattleAnim_ShadowBall:
 	anim_wait 24
 	anim_ret
 
+BattleAnim_DracoMeteor:
 BattleAnim_PsychoBoost:
 BattleAnim_FutureSight:
 	anim_1gfx ANIM_GFX_WIND

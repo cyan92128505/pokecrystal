@@ -492,25 +492,7 @@ ChinchouEggMoves:
 	db -1 ; end
 
 PichuEggMoves:
-	db REVERSAL
-	db PRESENT
-	db ENCORE
-	db DOUBLESLAP
-	db -1 ; end
-
-CleffaEggMoves:
-	db PRESENT
-	db METRONOME
-	db AMNESIA
-	db BELLY_DRUM
-	db SPLASH
-	db MIMIC
-	db -1 ; end
-
-IgglybuffEggMoves:
-	db PERISH_SONG
-	db PRESENT
-	db FAINT_ATTACK
+	db CALM_MIND
 	db -1 ; end
 
 TogepiEggMoves:

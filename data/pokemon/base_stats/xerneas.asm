@@ -3,7 +3,7 @@
 	db  126,  131,  95,  99,  131,  98
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db FAIRY, FAIRY ; type
     db 3 ; catch rate
 	db 220 ; base exp
 	db NO_ITEM, PINK_BOW ; items

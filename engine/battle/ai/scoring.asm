@@ -169,6 +169,15 @@ AI_Smart_Switch:
 	cp BASE_STAT_LEVEL - 1
 	jp c, .switch
 
+; Pokemon who are immune to residual damage (magic guard) should not continue
+    ld a, [wEnemyMonSpecies]
+    cp CLEFABLE
+    ret z
+    cp ARCEUS
+    ret z
+    cp ALAKAZAM
+    ret z
+
 ; switch if enemy is cursed
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
@@ -2105,7 +2114,7 @@ AI_Smart_Curse:
 	jp z, .ghost_curse
 	ld a, [wEnemyMonType2]
 	cp GHOST
-	jr z, .ghost_curse
+	jp z, .ghost_curse
 
 ; don't go past +4
     ld a, [wEnemyAtkLevel]
@@ -3021,12 +3030,6 @@ AI_Smart_HolyArmour:
 	cp BASE_STAT_LEVEL + 3
 	jr nc, .discourage
 
-; discourage if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
-	bit SUBSTATUS_TOXIC, a
-    jr nz, .discourage
-
 ; strongly encourage to +2
     ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -3168,6 +3171,14 @@ AI_Smart_CalmMind:
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
+; Pokemon who are immune to residual damage (magic guard) should not act different
+    ld a, [wEnemyMonSpecies]
+    cp CLEFABLE
+    ret z
+    cp ARCEUS
+    ret z
+    cp ALAKAZAM
+    ret z
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -3294,6 +3305,10 @@ AI_Smart_SwordsDance:
 	jr c, .encourage
 
 ; discourage after +1 if afflicted with toxic
+; Pokemon who are immune to residual damage (magic guard) should not act different
+    ld a, [wEnemyMonSpecies]
+    cp ARCEUS
+    ret z
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -3385,7 +3400,7 @@ AI_Smart_NastyPlot:
 ; don't go past +4
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	jp nc, .discourage
 
 ; deoxys should always boost once and no more, unless player has sub
     ld a, [wEnemyMonSpecies]

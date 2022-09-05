@@ -472,8 +472,9 @@ ClefairyEvosAttacks:
 	db 13, DOUBLESLAP
 	db 26, DEFENSE_CURL
 	db 34, METRONOME
-	db 43, MOONLIGHT
-	db 53, LIGHT_SCREEN
+	db 40, MOON_BLAST
+	db 45, SOFTBOILED
+	db 55, CALM_MIND
 	db 0 ; no more level-up moves
 
 ClefableEvosAttacks:
@@ -482,6 +483,9 @@ ClefableEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, METRONOME
 	db 1, MOONLIGHT
+	db 40, MOON_BLAST
+	db 45, SOFTBOILED
+	db 55, CALM_MIND
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:
@@ -518,6 +522,7 @@ JigglypuffEvosAttacks:
 	db 29, REST
 	db 34, BODY_SLAM
 	db 39, DOUBLE_EDGE
+	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
@@ -526,6 +531,7 @@ WigglytuffEvosAttacks:
 	db 1, DISABLE
 	db 1, DEFENSE_CURL
 	db 1, DOUBLESLAP
+	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -1554,7 +1560,7 @@ HorseaEvosAttacks:
 	db 8, SMOKESCREEN
 	db 15, LEER
 	db 22, WATER_GUN
-	db 29, TWISTER
+	db 29, DRAGON_PULSE
 	db 36, AGILITY
 	db 43, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1569,7 +1575,7 @@ SeadraEvosAttacks:
 	db 8, SMOKESCREEN
 	db 15, LEER
 	db 22, WATER_GUN
-	db 29, TWISTER
+	db 29, DRAGON_PULSE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1637,7 +1643,8 @@ MrMimeEvosAttacks:
 	db 31, ENCORE
 	db 36, PSYBEAM
 	db 41, BATON_PASS
-	db 46, SAFEGUARD
+	db 46, PSYCHIC_M
+	db 50, MOON_BLAST
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
@@ -1737,7 +1744,7 @@ GyaradosEvosAttacks:
 	db 20, BITE
 	db 25, DRAGON_RAGE
 	db 30, LEER
-	db 35, TWISTER
+	db 35, DRAGON_PULSE
 	db 40, HYDRO_PUMP
 	db 45, RAIN_DANCE
 	db 50, HYPER_BEAM
@@ -1952,11 +1959,10 @@ DratiniEvosAttacks:
 	db 1, WRAP
 	db 1, LEER
 	db 8, THUNDER_WAVE
-	db 15, TWISTER
-	db 22, DRAGON_RAGE
+	db 18, DRAGON_RAGE
 	db 29, SLAM
 	db 36, AGILITY
-	db 43, SAFEGUARD
+	db 43, DRAGON_PULSE
 	db 50, OUTRAGE
 	db 57, HYPER_BEAM
 	db 0 ; no more level-up moves
@@ -1967,13 +1973,12 @@ DragonairEvosAttacks:
 	db 1, WRAP
 	db 1, LEER
 	db 1, THUNDER_WAVE
-	db 1, TWISTER
+	db 1, DRAGON_PULSE
 	db 8, THUNDER_WAVE
-	db 15, TWISTER
 	db 22, DRAGON_RAGE
 	db 29, SLAM
 	db 38, AGILITY
-	db 47, SAFEGUARD
+	db 47, DRAGON_PULSE
 	db 56, OUTRAGE
 	db 65, HYPER_BEAM
 	db 0 ; no more level-up moves
@@ -1985,11 +1990,10 @@ DragoniteEvosAttacks:
 	db 1, EARTHQUAKE
 	db 1, FIRE_PUNCH
 	db 8, THUNDER_WAVE
-	db 15, TWISTER
 	db 22, DRAGON_RAGE
 	db 29, SLAM
 	db 38, AGILITY
-	db 47, SAFEGUARD
+	db 47, DRAGON_PULSE
 	db 55, DRAGON_DANCE
 	db 61, OUTRAGE
 	db 75, HYPER_BEAM
@@ -2304,33 +2308,37 @@ LanturnEvosAttacks:
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
+    db EVOLVE_LEVEL, 30, CLEFFA
 	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
-	db 1, CHARM
-	db 6, TAIL_WHIP
-	db 8, THUNDER_WAVE
-	db 11, SWEET_KISS
+	db 1, EMBER
+	db 1, LICK
+	db 12, CONFUSE_RAY
+	db 18, FIRE_SPIN
+	db 24, NIGHT_SHADE
+	db 28, PAIN_SPLIT
+	db 32, FLAMETHROWER
+	db 36, SHADOW_BALL
+	db 40, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 CleffaEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
+    db EVOLVE_LEVEL, 45, IGGLYBUFF
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 1, CHARM
-	db 4, ENCORE
-	db 8, SING
-	db 13, SWEET_KISS
+	db 1, CONFUSE_RAY
+	db 1, FIRE_SPIN
+	db 1, NIGHT_SHADE
+	db 1, PAIN_SPLIT
+	db 32, FLAMETHROWER
+	db 36, SHADOW_BALL
+	db 45, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
 	db 0 ; no more evolutions
-	db 1, SING
-	db 1, CHARM
-	db 4, DEFENSE_CURL
-	db 9, POUND
-	db 14, SWEET_KISS
+	db 1, PAIN_SPLIT
+	db 1, FLAMETHROWER
+	db 1, SHADOW_BALL
+	db 1, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:
@@ -2354,6 +2362,7 @@ TogeticEvosAttacks:
 	db 25, ENCORE
 	db 31, SAFEGUARD
 	db 38, DOUBLE_EDGE
+	db 40, MOON_BLAST
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
@@ -3013,7 +3022,7 @@ KingdraEvosAttacks:
 	db 8, SMOKESCREEN
 	db 15, LEER
 	db 22, WATER_GUN
-	db 29, TWISTER
+	db 29, DRAGON_PULSE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves

@@ -18,6 +18,5 @@ PokedexTypeSearchStrings:
 	db " DRAGON @"
 	db "  DARK  @"
 	db " STEEL  @"
-	db "  HOLY  @"
-	db "  UBER  @"
-	assert_table_length NUM_TYPES + 1
+	db " FAIRY  @"
+	assert_table_length NUM_TYPES

@@ -37,10 +37,10 @@
 	const PIDGEY     ; 10
 	const PIDGEOTTO  ; 11
 	const PIDGEOT    ; 12
-	const RATTATA    ; 13
-	const RATICATE   ; 14
-	const SPEAROW    ; 15
-	const FEAROW     ; 16
+	const RATTATA    ; 13  ....
+	const RATICATE   ; 14  lopunny
+	const SPEAROW    ; 15  ....
+	const FEAROW     ; 16  whimsicott
 	const EKANS      ; 17
 	const ARBOK      ; 18
 	const PIKACHU    ; 19
@@ -61,9 +61,9 @@
 	const WIGGLYTUFF ; 28
 	const ZUBAT      ; 29
 	const GOLBAT     ; 2a
-	const ODDISH     ; 2b
-	const GLOOM      ; 2c
-	const VILEPLUME  ; 2d
+	const ODDISH     ; 2b  ....
+	const GLOOM      ; 2c  ....
+	const VILEPLUME  ; 2d  florges
 	const PARAS      ; 2e
 	const PARASECT   ; 2f
 	const LARVESTA   ; 30
@@ -74,8 +74,8 @@
 	const PERSIAN    ; 35
 	const PSYDUCK    ; 36
 	const GOLDUCK    ; 37
-	const MANKEY     ; 38
-	const PRIMEAPE   ; 39
+	const MANKEY     ; 38  ....
+	const PRIMEAPE   ; 39  breloom
 	const GROWLITHE  ; 3a
 	const ARCANINE   ; 3b
 	const POLIWAG    ; 3c
@@ -87,9 +87,9 @@
 	const MACHOP     ; 42
 	const MACHOKE    ; 43
 	const MACHAMP    ; 44
-	const BELLSPROUT ; 45
-	const WEEPINBELL ; 46
-	const VICTREEBEL ; 47
+	const BELLSPROUT ; 45  budew
+	const WEEPINBELL ; 46  roselia
+	const VICTREEBEL ; 47  rosarade
 	const TENTACOOL  ; 48
 	const TENTACRUEL ; 49
 	const GEODUDE    ; 4a
@@ -101,13 +101,13 @@
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
-	const FARFETCH_D ; 53
+	const FARFETCH_D ; 53  magnezone
 	const DODUO      ; 54
 	const DODRIO     ; 55
 	const SEEL       ; 56   yanmega
 	const DEWGONG    ; 57   glisocr
-	const GRIMER     ; 58
-	const MUK        ; 59
+	const GRIMER     ; 58   ....
+	const MUK        ; 59   ferrothorn
 	const SHELLDER   ; 5a
 	const CLOYSTER   ; 5b
 	const GASTLY     ; 5c
@@ -116,24 +116,24 @@
 	const ONIX       ; 5f
 	const DROWZEE    ; 60
 	const HYPNO      ; 61
-	const KRABBY     ; 62   milotic
-	const KINGLER    ; 63   ryperior
+	const KRABBY     ; 62   feebass
+	const KINGLER    ; 63   milotic
 	const VOLTORB    ; 64
 	const ELECTRODE  ; 65
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67
 	const CUBONE     ; 68
 	const MAROWAK    ; 69
-	const HITMONLEE  ; 6a
-	const HITMONCHAN ; 6b
-	const LICKITUNG  ; 6c
+	const HITMONLEE  ; 6a  ....
+	const HITMONCHAN ; 6b  ....
+	const LICKITUNG  ; 6c  runiculas
 	const KOFFING    ; 6d
 	const WEEZING    ; 6e
 	const RHYHORN    ; 6f
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
 	const TANGELA    ; 72   weevil
-	const KANGASKHAN ; 73   magnezone
+	const KANGASKHAN ; 73   ryperior
 	const HORSEA     ; 74   togekiss
 	const SEADRA     ; 75   elecivire
 	const GOLDEEN    ; 76   magmortar
@@ -156,10 +156,10 @@
 	const JOLTEON    ; 87
 	const FLAREON    ; 88
 	const PORYGON    ; 89
-	const OMANYTE    ; 8a
-	const OMASTAR    ; 8b
-	const KABUTO     ; 8c
-	const KABUTOPS   ; 8d
+	const OMANYTE    ; 8a  ....
+	const OMASTAR    ; 8b  ....
+	const KABUTO     ; 8c  guardevoir
+	const KABUTOPS   ; 8d  galade
 	const AERODACTYL ; 8e
 	const SNORLAX    ; 8f
 	const ARTICUNO   ; 90
@@ -196,12 +196,12 @@ JOHTO_POKEMON EQU const_value
 	const IGGLYBUFF  ; ae   chandelur
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
-	const NATU       ; b1
-	const XATU       ; b2
+	const NATU       ; b1  ....
+	const XATU       ; b2  sigiliph
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
-	const BELLOSSOM  ; b6
+	const BELLOSSOM  ; b6  sylveon
 	const MISMAGIUS  ; b7
 	const AZUMARILL  ; b8   porygonz
 	const GENESECT   ; b9
@@ -213,8 +213,8 @@ JOHTO_POKEMON EQU const_value
 	const METANG     ; bf
 	const METAGROSS  ; c0
 	const YANMA      ; c1
-	const WOOPER     ; c2
-	const QUAGSIRE   ; c3
+	const WOOPER     ; c2  shelgon
+	const QUAGSIRE   ; c3  gastrodon
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6
@@ -232,7 +232,7 @@ JOHTO_POKEMON EQU const_value
 	const GABITE     ; d2
 	const GARCHOMP   ; d3
 	const SCIZOR     ; d4
-	const SHUCKLE    ; d5
+	const SHUCKLE    ; d5  ....
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
 	const TEDDIURSA  ; d8
@@ -250,8 +250,8 @@ JOHTO_POKEMON EQU const_value
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
 	const KINGDRA    ; e6
-	const PHANPY     ; e7
-	const DONPHAN    ; e8
+	const PHANPY     ; e7  ....
+	const DONPHAN    ; e8  ....
 	const PORYGON2   ; e9
 	const RAYQUAZA   ; ea
 	const SMEARGLE   ; eb

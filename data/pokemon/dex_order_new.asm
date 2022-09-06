@@ -37,7 +37,7 @@ NewPokedexOrder:
 	db ZUBAT
 	db GOLBAT
 	db CROBAT
-	db CLEFFA
+	db LAMPENT
 	db CLEFAIRY
 	db CLEFABLE
 	db CHANDELURE

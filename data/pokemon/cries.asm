@@ -178,7 +178,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
 	mon_cry CRY_HOOTHOOT,    400,  100 ; PICHU
-	mon_cry CRY_HOOTHOOT,    300,  150 ; CLEFFA
+	mon_cry CRY_HOOTHOOT,    300,  150 ; LAMPENT
 	mon_cry CRY_HOOTHOOT,    100,  200 ; CHANDELURE
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC

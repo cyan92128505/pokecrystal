@@ -174,7 +174,7 @@ EvosAttacksPointers::
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
 	dw PichuEvosAttacks
-	dw CleffaEvosAttacks
+	dw LampentEvosAttacks
 	dw ChandelureEvosAttacks
 	dw TogepiEvosAttacks
 	dw TogeticEvosAttacks

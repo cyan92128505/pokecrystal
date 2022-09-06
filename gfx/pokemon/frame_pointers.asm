@@ -172,7 +172,7 @@ FramesPointers:
 	dw ChinchouFrames
 	dw LanturnFrames
 	dw PichuFrames
-	dw CleffaFrames
+	dw LampentFrames
 	dw ChandelureFrames
 	dw TogepiFrames
 	dw TogeticFrames

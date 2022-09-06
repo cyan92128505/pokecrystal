@@ -2308,7 +2308,7 @@ LanturnEvosAttacks:
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
-    db EVOLVE_LEVEL, 30, CLEFFA
+    db EVOLVE_LEVEL, 30, LAMPENT
 	db 0 ; no more evolutions
 	db 1, EMBER
 	db 1, LICK
@@ -2321,7 +2321,7 @@ PichuEvosAttacks:
 	db 40, FIRE_BLAST
 	db 0 ; no more level-up moves
 
-CleffaEvosAttacks:
+LampentEvosAttacks:
     db EVOLVE_LEVEL, 45, CHANDELURE
 	db 0 ; no more evolutions
 	db 1, CONFUSE_RAY

@@ -12,7 +12,7 @@ prob_total = 0
 ; Pichu
 	prob 8
 	prob 1
-; Cleffa
+; Lampent
 	prob 16
 	prob 3
 ; Chandelure
@@ -88,7 +88,7 @@ OddEggs:
 	bigdw 9 ; SDef
 	db "EGG@@@@@@@@"
 
-	db CLEFFA
+	db LAMPENT
 	db NO_ITEM
 	db POUND, CHARM, DIZZY_PUNCH, 0
 	dw 04096 ; OT ID
@@ -114,7 +114,7 @@ OddEggs:
 	bigdw 10 ; SDef
 	db "EGG@@@@@@@@"
 
-	db CLEFFA
+	db LAMPENT
 	db NO_ITEM
 	db POUND, CHARM, DIZZY_PUNCH, 0
 	dw 00768 ; OT ID

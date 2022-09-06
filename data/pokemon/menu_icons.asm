@@ -174,7 +174,7 @@ MonMenuIcons:
 	db ICON_FISH        ; CHINCHOU
 	db ICON_FISH        ; LANTURN
 	db ICON_GHOST       ; PICHU
-	db ICON_GHOST       ; CLEFFA
+	db ICON_GHOST       ; LAMPENT
 	db ICON_GHOST       ; CHANDELURE
 	db ICON_CLEFAIRY    ; TOGEPI
 	db ICON_BIRD        ; TOGETIC

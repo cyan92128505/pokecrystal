@@ -172,7 +172,7 @@ AnimationPointers:
 	dw ChinchouAnimation
 	dw LanturnAnimation
 	dw PichuAnimation
-	dw CleffaAnimation
+	dw LampentAnimation
 	dw ChandelureAnimation
 	dw TogepiAnimation
 	dw TogeticAnimation

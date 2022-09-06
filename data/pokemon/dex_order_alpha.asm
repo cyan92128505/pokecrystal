@@ -32,7 +32,7 @@ AlphabeticalPokedexOrder:
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
-	db CLEFFA
+	db LAMPENT
 	db CLOYSTER
 	db CONKELDURR
 	db CROBAT

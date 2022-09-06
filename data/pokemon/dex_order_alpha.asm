@@ -24,6 +24,7 @@ AlphabeticalPokedexOrder:
 	db BUTTERFREE
 	db CATERPIE
 	db CELEBI
+	db CHANDELURE
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -32,7 +33,6 @@ AlphabeticalPokedexOrder:
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
-	db LAMPENT
 	db CLOYSTER
 	db CONKELDURR
 	db CROBAT
@@ -100,7 +100,6 @@ AlphabeticalPokedexOrder:
 	db HOUNDOOM
 	db HOUNDOUR
 	db HYPNO
-	db CHANDELURE
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON
@@ -115,12 +114,14 @@ AlphabeticalPokedexOrder:
 	db KOFFING
 	db KRABBY
 	db KYOGRE
+	db LAMPENT
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
 	db LATIAS
 	db LATIOS
 	db LICKITUNG
+	db LITWICK
 	db LUCARIO
 	db LUGIA
 	db MACHAMP
@@ -165,7 +166,6 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PICHU
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY

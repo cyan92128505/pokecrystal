@@ -211,7 +211,7 @@ Pokered_MonIndices:
 	db CROBAT
 	db CHINCHOU
 	db LANTURN
-	db PICHU
+	db LITWICK
 	db LAMPENT
 	db CHANDELURE
 	db TOGEPI

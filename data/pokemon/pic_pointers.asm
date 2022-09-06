@@ -345,8 +345,8 @@ PokemonPicPointers::
 	dba_pic ChinchouBackpic
 	dba_pic LanturnFrontpic
 	dba_pic LanturnBackpic
-	dba_pic PichuFrontpic
-	dba_pic PichuBackpic
+	dba_pic LitwickFrontpic
+	dba_pic LitwickBackpic
 	dba_pic LampentFrontpic
 	dba_pic LampentBackpic
 	dba_pic ChandelureFrontpic

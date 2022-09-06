@@ -1,4 +1,4 @@
-	db PICHU ; 172
+	db LITWICK ; 172
 
 	db  50,  30,  55,  20,  65,  55
 	;   hp  atk  def  spd  sat  sdf

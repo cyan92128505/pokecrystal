@@ -491,7 +491,7 @@ ChinchouEggMoves:
 	db SCREECH
 	db -1 ; end
 
-PichuEggMoves:
+LitwickEggMoves:
 	db CALM_MIND
 	db -1 ; end
 

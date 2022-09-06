@@ -2307,7 +2307,7 @@ LanturnEvosAttacks:
 	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-PichuEvosAttacks:
+LitwickEvosAttacks:
     db EVOLVE_LEVEL, 30, LAMPENT
 	db 0 ; no more evolutions
 	db 1, EMBER

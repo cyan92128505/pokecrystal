@@ -171,7 +171,7 @@ BitmasksPointers:
 	dw CrobatBitmasks
 	dw ChinchouBitmasks
 	dw LanturnBitmasks
-	dw PichuBitmasks
+	dw LitwickBitmasks
 	dw LampentBitmasks
 	dw ChandelureBitmasks
 	dw TogepiBitmasks

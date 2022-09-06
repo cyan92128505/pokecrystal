@@ -20,7 +20,6 @@ NewPokedexOrder:
 	db NOCTOWL
 	db RATTATA
 	db RATICATE
-	db PICHU
 	db PIKACHU
 	db RAICHU
 	db CATERPIE
@@ -37,10 +36,8 @@ NewPokedexOrder:
 	db ZUBAT
 	db GOLBAT
 	db CROBAT
-	db LAMPENT
 	db CLEFAIRY
 	db CLEFABLE
-	db CHANDELURE
 	db JIGGLYPUFF
 	db WIGGLYTUFF
 	db TOGEPI
@@ -234,6 +231,9 @@ NewPokedexOrder:
 	db CONKELDURR
 	db DRILBUR
 	db EXCADRILL
+	db LITWICK
+	db LAMPENT
+	db CHANDELURE
 	db LARVESTA
 	db VOLCARONA
 	db GENESECT

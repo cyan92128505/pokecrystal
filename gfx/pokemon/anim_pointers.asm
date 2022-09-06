@@ -171,7 +171,7 @@ AnimationPointers:
 	dw CrobatAnimation
 	dw ChinchouAnimation
 	dw LanturnAnimation
-	dw PichuAnimation
+	dw LitwickAnimation
 	dw LampentAnimation
 	dw ChandelureAnimation
 	dw TogepiAnimation

@@ -173,7 +173,7 @@ AnimationPointers:
 	dw LanturnAnimation
 	dw PichuAnimation
 	dw CleffaAnimation
-	dw IgglybuffAnimation
+	dw ChandelureAnimation
 	dw TogepiAnimation
 	dw TogeticAnimation
 	dw NatuAnimation

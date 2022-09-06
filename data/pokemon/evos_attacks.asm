@@ -2322,7 +2322,7 @@ PichuEvosAttacks:
 	db 0 ; no more level-up moves
 
 CleffaEvosAttacks:
-    db EVOLVE_LEVEL, 45, IGGLYBUFF
+    db EVOLVE_LEVEL, 45, CHANDELURE
 	db 0 ; no more evolutions
 	db 1, CONFUSE_RAY
 	db 1, FIRE_SPIN
@@ -2333,7 +2333,7 @@ CleffaEvosAttacks:
 	db 45, FIRE_BLAST
 	db 0 ; no more level-up moves
 
-IgglybuffEvosAttacks:
+ChandelureEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PAIN_SPLIT
 	db 1, FLAMETHROWER

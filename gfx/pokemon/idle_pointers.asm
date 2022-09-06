@@ -173,7 +173,7 @@ AnimationIdlePointers:
 	dw LanturnAnimationIdle
 	dw PichuAnimationIdle
 	dw CleffaAnimationIdle
-	dw IgglybuffAnimationIdle
+	dw ChandelureAnimationIdle
 	dw TogepiAnimationIdle
 	dw TogeticAnimationIdle
 	dw NatuAnimationIdle

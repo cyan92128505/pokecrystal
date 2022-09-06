@@ -395,7 +395,7 @@ INCBIN "gfx/footprints/chinchou.1bpp",   footprint_top
 INCBIN "gfx/footprints/lanturn.1bpp",    footprint_top
 INCBIN "gfx/footprints/pichu.1bpp",      footprint_top
 INCBIN "gfx/footprints/cleffa.1bpp",     footprint_top
-INCBIN "gfx/footprints/igglybuff.1bpp",  footprint_top
+INCBIN "gfx/footprints/chandelure.1bpp",  footprint_top
 INCBIN "gfx/footprints/togepi.1bpp",     footprint_top
 INCBIN "gfx/footprints/togetic.1bpp",    footprint_top
 ; 169-176 bottom halves
@@ -404,7 +404,7 @@ INCBIN "gfx/footprints/chinchou.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/lanturn.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/pichu.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/cleffa.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/igglybuff.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/chandelure.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/togepi.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/togetic.1bpp",    footprint_bottom
 ; 177-184 top halves

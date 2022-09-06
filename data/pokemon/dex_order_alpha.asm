@@ -100,7 +100,7 @@ AlphabeticalPokedexOrder:
 	db HOUNDOOM
 	db HOUNDOUR
 	db HYPNO
-	db IGGLYBUFF
+	db CHANDELURE
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON

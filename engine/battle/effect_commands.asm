@@ -2448,7 +2448,7 @@ BattleCommand_CheckFaint:
 	pop hl
 	jr nz, .noLifeOrb
 
-; Pokemon who are immune to residual damage (magic guard) should not take recoil
+; Pokemon who are immune to residual damage (magic guard) should not take recoil (except Arceus)
     ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -2456,8 +2456,6 @@ BattleCommand_CheckFaint:
 	ld a, [wBattleMonSpecies]
 .checkSpecies
     cp CLEFABLE
-    jp z, .noLifeOrb
-    cp ARCEUS
     jp z, .noLifeOrb
     cp ALAKAZAM
     jp z, .noLifeOrb

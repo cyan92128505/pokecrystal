@@ -3331,9 +3331,9 @@ AI_Smart_SwordsDance:
 	ret
 
 AI_Smart_Barrier:
-; don't go past +4
+; don't go past +5
     ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 4
+	cp BASE_STAT_LEVEL + 5
 	jr nc, .discourage
 
 ; discourage if player has boosted SpAtk

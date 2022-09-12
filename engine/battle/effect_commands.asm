@@ -1554,9 +1554,8 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
-    ret ; - revert this
+    ;ret ; - revert this
 ; damagevariation
-
 ; Modify the damage spread between 85% and 100%.
 
 ; Because of the method of division the probability distribution
@@ -2448,17 +2447,19 @@ BattleCommand_CheckFaint:
 	pop hl
 	jr nz, .noLifeOrb
 
-; Pokemon who are immune to residual damage (magic guard) should not take recoil (except Arceus)
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wBattleMonSpecies]
-.checkSpecies
-    cp CLEFABLE
-    jp z, .noLifeOrb
-    cp ALAKAZAM
-    jp z, .noLifeOrb
+; Pokemon who are immune to residual damage (magic guard) take no recoil
+;    ldh a, [hBattleTurn]
+;	and a
+;	ld a, [wEnemyMonSpecies]
+;	jr nz, .checkSpecies
+;	ld a, [wBattleMonSpecies]
+;.checkSpecies
+;    cp CLEFABLE
+;    jp z, .noLifeOrb
+;    cp ARCEUS
+;    jp z, .noLifeOrb
+;    cp ALAKAZAM
+;    jp z, .noLifeOrb
 
 ; apply recoil
 	farcall GetEighthMaxHP
@@ -3214,6 +3215,13 @@ BattleCommand_DamageCalc:
 ; Critical hits
 	call .CriticalMultiplier
 
+; ===========================================================
+; ================ Damage Altering Abilities ================
+; ===========================================================
+
+; ===============================
+; ========= Multi Scale =========
+; ===============================
 ; half damage at full health for Dragonite and Lugia (multi scale)
  	ldh a, [hBattleTurn]
  	and a
@@ -3238,6 +3246,50 @@ BattleCommand_DamageCalc:
 	ld b, 4
 	call Divide
 .finishDamage
+
+; =================================
+; ========== Technician ===========
+; =================================
+	ldh a, [hBattleTurn]
+	and a
+    ld a, [wBattleMonSpecies]
+	jr z, .technician
+	ld a, [wEnemyMonSpecies]
+.technician
+    cp SCYTHER
+    jr z, .loadMovePower
+    cp SCIZOR
+    jr z, .loadMovePower
+    cp MEOWTH
+    jr z, .loadMovePower
+    cp PERSIAN
+    jr z, .loadMovePower
+    cp MR__MIME
+    jr z, .loadMovePower
+    cp SMEARGLE
+    jr z, .loadMovePower
+    cp HITMONTOP
+    jr z, .loadMovePower
+    jr .finishTechnician
+.loadMovePower
+	ldh a, [hBattleTurn]
+	and a
+    ld a, [wPlayerMoveStruct + MOVE_POWER]
+	jr z, .checkPower
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+.checkPower
+    cp $3D ; is power larger than 60
+    jr nc, .finishTechnician
+; 50% boost
+    ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+.finishTechnician
+
 
 ; Update wCurDamage. Max 999 (capped at 997, then add 2).
 MAX_DAMAGE EQU 999
@@ -4552,8 +4604,35 @@ BattleCommand_StatDown:
 	ld hl, wEnemyStatLevels
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .GetStatLevel
+	ld a, [wEnemyMonSpecies]
+	jr z, .checkClearBody
 	ld hl, wPlayerStatLevels
+	ld a, [wBattleMonSpecies]
+
+.checkClearBody
+; ===============================
+; ======== Clear Body ===========
+; ===============================
+; Pokemon whos stats can't be lowered
+	cp TENTACOOL
+	jp z, .clearBody
+	cp TENTACRUEL
+	jp z, .clearBody
+	cp BELDUM
+	jr z, .clearBody
+	cp METANG
+	jr z, .clearBody
+	cp METAGROSS
+	jr z, .clearBody
+; the rest are added for balance
+	cp ENTEI
+	jr z, .clearBody
+	cp MACHAMP
+	jr z, .clearBody
+	cp DIALGA
+	jr z, .clearBody
+	cp ARCEUS
+	jr z, .clearBody
 
 .GetStatLevel:
 ; Attempt to lower the stat.
@@ -4627,6 +4706,11 @@ BattleCommand_StatDown:
 	ld [wFailedMessage], a
 	ld [wAttackMissed], a
 	ret
+
+.clearBody:
+	ld hl, ClearBodyText
+	call StdBattleTextbox
+	; fallthrough
 
 .Mist:
 	ld a, 2
@@ -5913,19 +5997,19 @@ BattleCommand_Recoil:
 
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
-	ld a, [wBattleMonSpecies]
 	and a
+;    ld a, [wBattleMonSpecies]
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
-	ld a, [wEnemyMonSpecies]
+;	ld a, [wBattleMonSpecies]
 .got_hp
-; Pokemon who are immune to residual damage (magic guard)
-    cp CLEFABLE
-    ret z
-    cp ARCEUS
-    ret z
-    cp ALAKAZAM
-    ret z
+; Pokemon who are immune to residual damage (magic guard) take no recoil
+;    cp CLEFABLE
+;    ret z
+;    cp ARCEUS
+;    ret z
+;    cp ALAKAZAM
+;    ret z
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar

@@ -1028,18 +1028,24 @@ CheckIfHPIsZero:
 	ret
 
 ResidualDamage:
-; Pokemon who are immune to residual damage (magic guard)
+; Pokemon who are immune to residual damage (magic guard) take no damage
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
+    cp CLEFAIRY
+    jp z, .check_fainted
     cp CLEFABLE
     jp z, .check_fainted
-    cp ARCEUS
+    cp ABRA
+    jp z, .check_fainted
+    cp KADABRA
     jp z, .check_fainted
     cp ALAKAZAM
+    jp z, .check_fainted
+    cp ARCEUS
     jp z, .check_fainted
 ; Return z if the user fainted before
 ; or as a result of residual damage.
@@ -1727,7 +1733,7 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jr z, .ended
+	jp z, .ended
 
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
@@ -1752,6 +1758,26 @@ HandleWeather:
 	call SetPlayerTurn
 
 .SandstormDamage:
+; Pokemon who are immune to residual damage (magic guard) take no damage
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkSpecies
+	ld a, [wBattleMonSpecies]
+.checkSpecies
+    cp CLEFAIRY
+    ret z
+    cp CLEFABLE
+    ret z
+    cp ABRA
+    ret z
+    cp KADABRA
+    ret z
+    cp ALAKAZAM
+    ret z
+    cp ARCEUS
+    ret z
+
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
@@ -4197,12 +4223,18 @@ SpikesDamage:
 	ld bc, UpdateEnemyHUD
 	ld a, [wEnemyMonSpecies]
 .ok
-; Pokemon who are immune to residual damage (magic guard)
+; Pokemon who are immune to residual damage (magic guard) take no damage
+    cp CLEFAIRY
+    ret z
     cp CLEFABLE
     ret z
-    cp ARCEUS
+    cp ABRA
+    ret z
+    cp KADABRA
     ret z
     cp ALAKAZAM
+    ret z
+    cp ARCEUS
     ret z
 
 	bit SCREENS_SPIKES, [hl]
@@ -4252,15 +4284,25 @@ SwitchInEffects:
     cp TYRANITAR
     jr z,  .sand
     cp RAYQUAZA
-    jr z, .clear
+    jp z, .clear
     cp GENESECT
-    jr z, .spAtkUp
+    jp z, .spAtkUp
     cp SUICUNE
-    jr z, .defUp
+    jp z, .defUp
     cp RAIKOU
-    jr z, .spdUp
+    jp z, .spdUp
     cp ENTEI
     jp z, .atkUp
+    cp SALAMENCE
+    jp z, .atkDown
+    cp GYARADOS
+    jp z, .atkDown
+    cp GROWLITHE
+    jp z, .atkDown
+    cp ARCANINE
+    jp z, .atkDown
+    cp TAUROS
+    jp z, .atkDown
     ret
 .rain
 	ld a, WEATHER_RAIN
@@ -4320,6 +4362,13 @@ SwitchInEffects:
 .atkUp
     farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
+	ret
+.atkDown
+    farcall BattleCommand_AttackDown
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz ; printing the message before enemy sends out mon causes visual glitches
+	farcall BattleCommand_StatDownMessage
 	ret
 
 PursuitSwitch:

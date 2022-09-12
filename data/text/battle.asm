@@ -901,6 +901,11 @@ ButItFailedText:
 	text "But it failed!"
 	prompt
 
+ClearBodyText:
+	text "<TARGET>'s"
+	line "stats can't fall!"
+	prompt
+
 ItFailedText:
 	text "It failed!"
 	prompt

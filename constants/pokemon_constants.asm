@@ -191,9 +191,9 @@ JOHTO_POKEMON EQU const_value
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const LITWICK      ; ac   ...
-	const LAMPENT     ; ad   ...
-	const CHANDELURE  ; ae   chandelur
+	const LITWICK    ; ac
+	const LAMPENT    ; ad
+	const CHANDELURE ; ae
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
 	const NATU       ; b1  ....
@@ -203,7 +203,7 @@ JOHTO_POKEMON EQU const_value
 	const AMPHAROS   ; b5
 	const BELLOSSOM  ; b6  sylveon
 	const MISMAGIUS  ; b7
-	const AZUMARILL  ; b8   porygonz
+	const AZUMARILL  ; b8  porygonz
 	const GENESECT   ; b9
 	const POLITOED   ; ba
 	const TIMBURR    ; bb

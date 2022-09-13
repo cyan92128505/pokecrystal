@@ -496,6 +496,12 @@ EnduredText:
 	line "ENDURED the hit!"
 	prompt
 
+SturdyText:
+	text "<TARGET>"
+	line "held on with"
+	cont "STURDY!"
+	prompt
+
 InLoveWithText:
 	text "<USER>"
 	line "is in love with"

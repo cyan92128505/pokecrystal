@@ -289,7 +289,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
-	call HandleMysteryberry
+;	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
@@ -1035,18 +1035,10 @@ ResidualDamage:
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
-    cp CLEFAIRY
-    jp z, .check_fainted
-    cp CLEFABLE
-    jp z, .check_fainted
-    cp ABRA
-    jp z, .check_fainted
-    cp KADABRA
-    jp z, .check_fainted
-    cp ALAKAZAM
-    jp z, .check_fainted
-    cp ARCEUS
-    jp z, .check_fainted
+	ld hl, MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	jp nc, .check_fainted
 ; Return z if the user fainted before
 ; or as a result of residual damage.
 ; For Sandstorm damage, see HandleWeather.
@@ -1369,143 +1361,143 @@ HandleLeftovers:
 	ld hl, BattleText_TargetRecoveredWithItem
 	jp StdBattleTextbox
 
-HandleMysteryberry:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .DoEnemyFirst
-	call SetPlayerTurn
-	call .do_it
-	call SetEnemyTurn
-	jp .do_it
+;HandleMysteryberry:
+;	ldh a, [hSerialConnectionStatus]
+;	cp USING_EXTERNAL_CLOCK
+;	jr z, .DoEnemyFirst
+;	call SetPlayerTurn
+;	call .do_it
+;	call SetEnemyTurn
+;	jp .do_it
 
-.DoEnemyFirst:
-	call SetEnemyTurn
-	call .do_it
-	call SetPlayerTurn
+;.DoEnemyFirst:
+;	call SetEnemyTurn
+;	call .do_it
+;	call SetPlayerTurn
 
-.do_it
-	callfar GetUserItem
-	ld a, b
-	cp HELD_RESTORE_PP
-	jr nz, .quit
-	ld hl, wPartyMon1PP
-	ld a, [wCurBattleMon]
-	call GetPartyLocation
-	ld d, h
-	ld e, l
-	ld hl, wPartyMon1Moves
-	ld a, [wCurBattleMon]
-	call GetPartyLocation
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .wild
-	ld de, wWildMonPP
-	ld hl, wWildMonMoves
-	ld a, [wBattleMode]
-	dec a
-	jr z, .wild
-	ld hl, wOTPartyMon1PP
-	ld a, [wCurOTMon]
-	call GetPartyLocation
-	ld d, h
-	ld e, l
-	ld hl, wOTPartyMon1Moves
-	ld a, [wCurOTMon]
-	call GetPartyLocation
+;.do_it
+;	callfar GetUserItem
+;	ld a, b
+;	cp HELD_RESTORE_PP
+;	jr nz, .quit
+;	ld hl, wPartyMon1PP
+;	ld a, [wCurBattleMon]
+;	call GetPartyLocation
+;	ld d, h
+;	ld e, l
+;	ld hl, wPartyMon1Moves
+;	ld a, [wCurBattleMon]
+;	call GetPartyLocation
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .wild
+;	ld de, wWildMonPP
+;	ld hl, wWildMonMoves
+;	ld a, [wBattleMode]
+;	dec a
+;	jr z, .wild
+;	ld hl, wOTPartyMon1PP
+;	ld a, [wCurOTMon]
+;	call GetPartyLocation
+;	ld d, h
+;	ld e, l
+;	ld hl, wOTPartyMon1Moves
+;	ld a, [wCurOTMon]
+;	call GetPartyLocation
 
-.wild
-	ld c, $0
-.loop
-	ld a, [hl]
-	and a
-	jr z, .quit
-	ld a, [de]
-	and PP_MASK
-	jr z, .restore
-	inc hl
-	inc de
-	inc c
-	ld a, c
-	cp NUM_MOVES
-	jr nz, .loop
+;.wild
+;	ld c, $0
+;.loop
+;	ld a, [hl]
+;	and a
+;	jr z, .quit
+;	ld a, [de]
+;	and PP_MASK
+;	jr z, .restore
+;	inc hl
+;	inc de
+;	inc c
+;	ld a, c
+;	cp NUM_MOVES
+;	jr nz, .loop
 
-.quit
-	ret
+;.quit
+;	ret
 
-.restore
+;.restore
 	; lousy hack
-	ld a, [hl]
-	cp SKETCH
-	ld b, 1
-	jr z, .sketch
-	ld b, 5
-.sketch
-	ld a, [de]
-	add b
-	ld [de], a
-	push bc
-	push bc
-	ld a, [hl]
-	ld [wTempByteValue], a
-	ld de, wBattleMonMoves - 1
-	ld hl, wBattleMonPP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .player_pp
-	ld de, wEnemyMonMoves - 1
-	ld hl, wEnemyMonPP
-.player_pp
-	inc de
-	pop bc
-	ld b, 0
-	add hl, bc
-	push hl
-	ld h, d
-	ld l, e
-	add hl, bc
-	pop de
-	pop bc
+;	ld a, [hl]
+;	cp SKETCH
+;	ld b, 1
+;	jr z, .sketch
+;	ld b, 5
+;.sketch
+;	ld a, [de]
+;	add b
+;	ld [de], a
+;	push bc
+;	push bc
+;	ld a, [hl]
+;	ld [wTempByteValue], a
+;	ld de, wBattleMonMoves - 1
+;	ld hl, wBattleMonPP
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .player_pp
+;	ld de, wEnemyMonMoves - 1
+;	ld hl, wEnemyMonPP
+;.player_pp
+;	inc de
+;	pop bc
+;	ld b, 0
+;	add hl, bc
+;	push hl
+;	ld h, d
+;	ld l, e
+;	add hl, bc
+;	pop de
+;	pop bc
 
-	ld a, [wTempByteValue]
-	cp [hl]
-	jr nz, .skip_checks
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wPlayerSubStatus5]
-	jr z, .check_transform
-	ld a, [wEnemySubStatus5]
-.check_transform
-	bit SUBSTATUS_TRANSFORMED, a
-	jr nz, .skip_checks
-	ld a, [de]
-	add b
-	ld [de], a
-.skip_checks
-	callfar GetUserItem
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	xor a
-	ld [hl], a
-	call GetPartymonItem
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .consume_item
-	ld a, [wBattleMode]
-	dec a
-	jr z, .skip_consumption
-	call GetOTPartymonItem
+;	ld a, [wTempByteValue]
+;	cp [hl]
+;	jr nz, .skip_checks
+;	ldh a, [hBattleTurn]
+;	and a
+;	ld a, [wPlayerSubStatus5]
+;	jr z, .check_transform
+;	ld a, [wEnemySubStatus5]
+;.check_transform
+;	bit SUBSTATUS_TRANSFORMED, a
+;	jr nz, .skip_checks
+;	ld a, [de]
+;	add b
+;	ld [de], a
+;.skip_checks
+;	callfar GetUserItem
+;	ld a, [hl]
+;	ld [wNamedObjectIndex], a
+;	xor a
+;	ld [hl], a
+;	call GetPartymonItem
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .consume_item
+;	ld a, [wBattleMode]
+;	dec a
+;	jr z, .skip_consumption
+;	call GetOTPartymonItem
 
-.consume_item
-	xor a
-	ld [hl], a
+;.consume_item
+;	xor a
+;	ld [hl], a
 
-.skip_consumption
-	call GetItemName
-	call SwitchTurnCore
-	call ItemRecoveryAnim
-	call SwitchTurnCore
-	ld hl, BattleText_UserRecoveredPPUsing
-	jp StdBattleTextbox
+;.skip_consumption
+;	call GetItemName
+;	call SwitchTurnCore
+;	call ItemRecoveryAnim
+;	call SwitchTurnCore
+;	ld hl, BattleText_UserRecoveredPPUsing
+;	jp StdBattleTextbox
 
 HandleFutureSight:
 	ldh a, [hSerialConnectionStatus]
@@ -1765,18 +1757,10 @@ HandleWeather:
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
-    cp CLEFAIRY
-    ret z
-    cp CLEFABLE
-    ret z
-    cp ABRA
-    ret z
-    cp KADABRA
-    ret z
-    cp ALAKAZAM
-    ret z
-    cp ARCEUS
-    ret z
+	ld hl, MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	ret nc
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
@@ -4224,18 +4208,16 @@ SpikesDamage:
 	ld a, [wEnemyMonSpecies]
 .ok
 ; Pokemon who are immune to residual damage (magic guard) take no damage
-    cp CLEFAIRY
-    ret z
-    cp CLEFABLE
-    ret z
-    cp ABRA
-    ret z
-    cp KADABRA
-    ret z
-    cp ALAKAZAM
-    ret z
-    cp ARCEUS
-    ret z
+    push hl
+    push de
+	push bc
+	ld hl, MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret nc
 
 	bit SCREENS_SPIKES, [hl]
 	ret z
@@ -4277,6 +4259,7 @@ SwitchInEffects:
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
+; AndrewNote - one off abilities
     cp KYOGRE
     jr z, .rain
     cp GROUDON
@@ -4293,16 +4276,11 @@ SwitchInEffects:
     jp z, .spdUp
     cp ENTEI
     jp z, .atkUp
-    cp SALAMENCE
-    jp z, .atkDown
-    cp GYARADOS
-    jp z, .atkDown
-    cp GROWLITHE
-    jp z, .atkDown
-    cp ARCANINE
-    jp z, .atkDown
-    cp TAUROS
-    jp z, .atkDown
+
+	ld hl, IntimidatePokemon
+	ld de, 1
+	call IsInArray
+	jp c, .atkDown
     ret
 .rain
 	ld a, WEATHER_RAIN

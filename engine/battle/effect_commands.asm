@@ -2212,8 +2212,27 @@ BattleCommand_ApplyDamage:
 	ld a, b
 	cp HELD_FOCUS_BAND
 	ld b, 0
-	jr nz, .damage
+	jr z, .focusSash
 
+; =================================
+; ========== Sturdy ===============
+; =================================
+; Pokemon with sturdy can't be killed from full HP
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .checkSpecies
+	ld a, [wBattleMonSpecies]
+.checkSpecies
+	push bc
+	ld hl, SturdyPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	jr c, .focusSash
+    jr .damage
+
+.focusSash
  ; AndrewNote - this is actually focus sash
  	ldh a, [hBattleTurn]
  	and a
@@ -2256,10 +2275,19 @@ BattleCommand_ApplyDamage:
 
 .focus_band_text
 	call GetOpponentItem
+    ld a, b
+	cp HELD_FOCUS_BAND
+	ld b, 0
+	jr nz, .sturdy
+
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	ld hl, HungOnText
+	jp StdBattleTextbox
+
+.sturdy
+	ld hl, SturdyText
 	jp StdBattleTextbox
 
 .update_damage_taken
@@ -3235,10 +3263,14 @@ BattleCommand_DamageCalc:
     jr nc, .finishDamage
     ld a, [wEnemyMonSpecies]
 .checkSpecies
-    cp DRAGONITE
-    jp z, .halfDamage
-    cp LUGIA
-    jp z, .halfDamage
+    push de
+	push bc
+	ld hl, MultiScalePokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	jr c, .halfDamage
     jr .finishDamage
 .halfDamage
 	ld a, 2
@@ -3560,6 +3592,8 @@ BattleCommand_ConstantDamage:
 	ret
 
 INCLUDE "data/moves/flail_reversal_power.asm"
+
+INCLUDE "engine/battle/abilities.asm"
 
 INCLUDE "engine/battle/move_effects/counter.asm"
 
@@ -4614,25 +4648,16 @@ BattleCommand_StatDown:
 ; ======== Clear Body ===========
 ; ===============================
 ; Pokemon whos stats can't be lowered
-	cp TENTACOOL
-	jp z, .clearBody
-	cp TENTACRUEL
-	jp z, .clearBody
-	cp BELDUM
-	jr z, .clearBody
-	cp METANG
-	jr z, .clearBody
-	cp METAGROSS
-	jr z, .clearBody
-; the rest are added for balance
-	cp ENTEI
-	jr z, .clearBody
-	cp MACHAMP
-	jr z, .clearBody
-	cp DIALGA
-	jr z, .clearBody
-	cp ARCEUS
-	jr z, .clearBody
+    push hl
+    push de
+	push bc
+	ld hl, ClearBodyPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .clearBody
 
 .GetStatLevel:
 ; Attempt to lower the stat.
@@ -5670,30 +5695,10 @@ BattleCommand_CheckDeathImmunity:
 	jr nz, .checkSpecies
 	ld a, [wEnemyMonSpecies]
 .checkSpecies
-    cp ARCEUS
-    jr z, .immune
-    cp MEWTWO
-    jr z, .immune
-    cp GIRATINA
-    jr z, .immune
-    cp YVELTAL
-    jr z, .immune
-    cp XERNEAS
-    jr z, .immune
-    cp DIALGA
-    jr z, .immune
-    cp PALKIA
-    jr z, .immune
-    cp KYOGRE
-    jr z, .immune
-    cp GROUDON
-    jr z, .immune
-    cp RAYQUAZA
-    jr z, .immune
-    cp LUGIA
-    jr z, .immune
-    cp HO_OH
-    jr z, .immune
+	ld hl, UberImmunePokemon
+	ld de, 1
+	call IsInArray
+	jr c, .immune
     ret
 .immune
     ld a, 1

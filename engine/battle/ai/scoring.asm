@@ -169,20 +169,27 @@ AI_Smart_Switch:
 	cp BASE_STAT_LEVEL - 1
 	jp c, .switch
 
+; switch if enemy attack at -2 or lower and unboosted special attack
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 1
+    jr nc, .magicGuard
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL - 1
+	jp c, .switch
+
+.magicGuard
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
-    cp CLEFAIRY
-    ret z
-    cp CLEFABLE
-    ret z
-    cp ABRA
-    ret z
-    cp KADABRA
-    ret z
-    cp ALAKAZAM
-    ret z
-    cp ARCEUS
-    ret z
+    push hl
+    push de
+	push bc
+	ld hl, MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret nc
 
 ; switch if enemy is cursed
 	ld a, BATTLE_VARS_SUBSTATUS1
@@ -3179,18 +3186,16 @@ AI_Smart_CalmMind:
 .checkToxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
-    cp CLEFAIRY
-    ret z
-    cp CLEFABLE
-    ret z
-    cp ABRA
-    ret z
-    cp KADABRA
-    ret z
-    cp ALAKAZAM
-    ret z
-    cp ARCEUS
-    ret z
+    push hl
+    push de
+   	push bc
+   	ld hl, MagicGuardPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	ret nc
 
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
@@ -3320,8 +3325,17 @@ AI_Smart_SwordsDance:
 ; discourage after +1 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
-    cp ARCEUS
-    ret z
+    push hl
+    push de
+	push bc
+	ld hl, MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret nc
+
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a

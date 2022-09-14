@@ -4276,11 +4276,16 @@ SwitchInEffects:
     jp z, .spdUp
     cp ENTEI
     jp z, .atkUp
-
-	ld hl, IntimidatePokemon
-	ld de, 1
-	call IsInArray
-	jp c, .atkDown
+    cp GYARADOS
+    jp z, .atkDown
+    cp SALAMENCE
+    jp z, .atkDown
+    cp ARCANINE
+    jp z, .atkDown
+    cp ARBOK
+    jp z, .atkDown
+    cp TAUROS
+    jp z, .atkDown
     ret
 .rain
 	ld a, WEATHER_RAIN

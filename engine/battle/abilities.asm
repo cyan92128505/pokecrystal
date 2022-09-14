@@ -37,14 +37,6 @@ ClearBodyPokemon:
     db ARCEUS
     db -1
 
-IntimidatePokemon:
-    db SALAMENCE
-    db GYARADOS
-    db ARCANINE
-    db TAUROS
-    db ARBOK
-    db -1
-
 UberImmunePokemon:
     db ARCEUS
     db MEWTWO

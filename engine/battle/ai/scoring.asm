@@ -13,6 +13,28 @@ SubstituteImmuneEffects:	;joenote - added this table to track for substitute imm
 	db EFFECT_ATTACK_DOWN
 	db $FF
 
+AI_MagicGuardPokemon:
+    db CLEFAIRY
+    db CLEFABLE
+    db ABRA
+    db KADABRA
+    db ALAKAZAM
+    db ARCEUS
+    db $FF
+
+AI_LevitatePokemon:
+    db GASTLY
+    db HAUNTER
+    db GENGAR
+    db MISDREAVUS
+    db MISMAGIUS
+    db KOFFING
+    db WEEZING
+    db LATIAS
+    db LATIOS
+    db UNOWN
+    db $FF
+
 AI_Basic:
 ; Don't do anything redundant:
 ;  -Using status-only moves if the player can't be statused
@@ -56,7 +78,6 @@ AI_Basic:
 	ld hl, StatusOnlyEffects
 	ld de, 1
 	call IsInArray ; is the move status only
-
 	pop bc
 	pop de
 	pop hl
@@ -64,13 +85,13 @@ AI_Basic:
 
 	ld a, [wBattleMonStatus]
 	and a
-	jr nz, .discourage ; discourage if the player is already statused - loop back to check move
+	jp nz, .discourage ; discourage if the player is already statused - loop back to check move
 
 .checkSub
 ; dismiss moves blocked by sub if sub is up
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr z, .checkSafeguard	;if the substitute bit is not set, then skip out of this block
+	jr z, .checkLevitate	;if the substitute bit is not set, then skip out of this block
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	push hl
 	push de
@@ -83,11 +104,29 @@ AI_Basic:
 	pop hl
 	jr c, .discourage ; discourage if sub is up and blocks move - loop back to check move
 
+.checkLevitate
+; Dismiss ground move if the player has levitate
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp GROUND
+	jr nz, .checkSafeguard
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_LevitatePokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jr c, .discourage
+
 .checkSafeguard
 ; Dismiss Safeguard if it's already active.
 ;	ld a, [wPlayerScreens]
 ;	bit SCREENS_SAFEGUARD, a
-;	jr nz, .discourage
+;	jr z, .discourage
 
 
 ; Greatly encourage a move if it will KO the player
@@ -124,7 +163,7 @@ AI_Basic:
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
 
-; encourage more accurate moves of they can kill
+; encourage more accurate moves if they can kill
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
 	cp 100 percent
 	jr c, .notAcc
@@ -183,7 +222,7 @@ AI_Smart_Switch:
     push hl
     push de
 	push bc
-	ld hl, MagicGuardPokemon
+	ld hl, AI_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
 	pop bc
@@ -3189,7 +3228,7 @@ AI_Smart_CalmMind:
     push hl
     push de
    	push bc
-   	ld hl, MagicGuardPokemon
+   	ld hl, AI_MagicGuardPokemon
    	ld de, 1
    	call IsInArray
    	pop bc
@@ -3328,7 +3367,7 @@ AI_Smart_SwordsDance:
     push hl
     push de
 	push bc
-	ld hl, MagicGuardPokemon
+	ld hl, AI_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
 	pop bc
@@ -3810,11 +3849,31 @@ AI_Aggressive:
 	pop hl
 
 ; Update current move if damage is highest so far
+
 ; don't encourage explosion
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .checkmove
 
+; don't encourage ground moves vs levitate Pokemon
+; Dismiss ground move if the player has levitate
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	cp GROUND
+	jr nz, .continue
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_LevitatePokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .checkmove
+
+.continue
 	ld a, [wCurDamage + 1]
 	cp e
 	ld a, [wCurDamage]

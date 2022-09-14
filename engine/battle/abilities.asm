@@ -37,6 +37,19 @@ ClearBodyPokemon:
     db ARCEUS
     db -1
 
+LevitatePokemon:
+    db GASTLY
+    db HAUNTER
+    db GENGAR
+    db MISDREAVUS
+    db MISMAGIUS
+    db KOFFING
+    db WEEZING
+    db LATIAS
+    db LATIOS
+    db UNOWN
+    db -1
+
 UberImmunePokemon:
     db ARCEUS
     db MEWTWO

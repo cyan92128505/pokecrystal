@@ -1608,6 +1608,9 @@ BattleCommand_DamageVariation:
 BattleCommand_CheckHit:
 ; checkhit
 
+	call .Levitate
+	jp z, .Miss
+
 	call .DreamEater
 	jp z, .Miss
 
@@ -1784,6 +1787,34 @@ BattleCommand_CheckHit:
 	ld a, 1
 	and a
 	ret
+
+.Levitate:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	jr nz, .checkType
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+.checkType
+	and TYPE_MASK
+	cp GROUND
+	jr z, .getPokemon
+	ret
+.getPokemon
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .checkLevitate
+	ld a, [wBattleMonSpecies]
+.checkLevitate
+	ld hl, LevitatePokemon
+	ld de, 1
+	call IsInArray
+    jr c, .found
+    ret
+.found
+	ld hl, LevitateText
+	call StdBattleTextbox
+    ret z
 
 .FlyDigMoves:
 ; Check for moves that can hit underground/flying opponents.

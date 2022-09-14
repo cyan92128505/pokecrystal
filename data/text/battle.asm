@@ -912,6 +912,11 @@ ClearBodyText:
 	line "stats can't fall!"
 	prompt
 
+LevitateText:
+	text "<TARGET>"
+	line "is levitating."
+	prompt
+
 ItFailedText:
 	text "It failed!"
 	prompt

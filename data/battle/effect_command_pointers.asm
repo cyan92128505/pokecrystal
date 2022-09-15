@@ -180,6 +180,6 @@ BattleCommandPointers:
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
 	dw BattleCommand_Judgement
-	dw BattleCommand_FuriousWill
+	dw BattleCommand_Serenity
 	dw BattleCommand_CalmMind
 	assert_table_length NUM_EFFECT_COMMANDS

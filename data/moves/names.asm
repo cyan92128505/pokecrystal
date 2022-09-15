@@ -253,5 +253,5 @@ MoveNames::
 	li "DRAIN PUNCH"
 	li "HOLY ARMOUR"
 	li "JUDGEMENT"
-	li "FURIOUS WILL"
+	li "SERENITY"
 	assert_list_length NUM_ATTACKS

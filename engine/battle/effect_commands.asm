@@ -1200,6 +1200,27 @@ BattleCommand_Critical:
 	inc c
 
 .CheckCritical:
+; AndrewNote - Persians Slash always crits
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkHighCritMon
+	ld a, [wBattleMonSpecies]
+.checkHighCritMon
+    cp PERSIAN
+    jr z, .checkSlash
+    jr .continue
+.checkSlash
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp SLASH
+	jr nz, .continue
+	ld a, 1
+	ld [wCriticalHit], a
+	ret
+
+
+.continue
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld de, 1
@@ -1962,7 +1983,6 @@ INCLUDE "data/battle/accuracy_multipliers.asm"
 
 BattleCommand_EffectChance:
 ; effectchance
-
 	xor a
 	ld [wEffectFailed], a
 	call CheckSubstituteOpp
@@ -1972,9 +1992,24 @@ BattleCommand_EffectChance:
 	ld hl, wPlayerMoveStruct + MOVE_CHANCE
 	ldh a, [hBattleTurn]
 	and a
+	ld a, [wBattleMonSpecies]
 	jr z, .got_move_chance
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
+	ld a, [wEnemyMonSpecies]
 .got_move_chance
+; ==============================
+; ====== Serene Grace ==========
+; ==============================
+    cp CHANSEY
+    jr z, .sereneGrace
+    cp BLISSEY
+    jr z, .sereneGrace
+    jr .continue
+.sereneGrace
+    ld a, [hl]
+    sla a
+    ld [hl], a
+.continue
     ld a, [hl]
 	sub 100 percent
 	; If chance was 100%, RNG won't be called (carry not set)
@@ -3216,7 +3251,9 @@ BattleCommand_DamageCalc:
 	call Divide
 
 .DoneItem:
-
+; =====================
+; ==== Life Orb =======
+; =====================
 ; AndrewNote - Life Orb - x1.3 damage but take recoil (dealt with in CheckFaint)
     push hl
     call GetUserItem
@@ -3233,6 +3270,9 @@ BattleCommand_DamageCalc:
 	call Divide
 
 .choiceBand
+; ========================
+; ===== Choice Band ======
+; ========================
 ; AndrewNote - choice band - x1.5 damage but permanent encore
     push hl
 	call GetUserItem
@@ -3243,15 +3283,12 @@ BattleCommand_DamageCalc:
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
 	jr nc, .choiceSpecs
-    ld a, 3
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 2
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+	call FiftyPercentBoost
 
 .choiceSpecs
+; =========================
+; ===== Choice Specs ======
+; =========================
 ; AndrewNote - choice specs - x1.5 damage but permanent encore
     push hl
 	call GetUserItem
@@ -3262,21 +3299,11 @@ BattleCommand_DamageCalc:
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
 	jr c, .continue
-    ld a, 3
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 2
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+    call FiftyPercentBoost
 
 .continue
 ; Critical hits
 	call .CriticalMultiplier
-
-; ===========================================================
-; ================ Damage Altering Abilities ================
-; ===========================================================
 
 ; ===============================
 ; ========= Multi Scale =========
@@ -3301,14 +3328,37 @@ BattleCommand_DamageCalc:
 	call IsInArray
 	pop bc
 	pop de
-	jr c, .halfDamage
+	jr c, .multiscaleReduction
     jr .finishDamage
-.halfDamage
-	ld a, 2
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+.multiscaleReduction
+	call HalfDamage
 .finishDamage
+
+; ==================================
+; ========= Thick Fat ==============
+; ==================================
+; half damage from fire and ice attacks
+	ldh a, [hBattleTurn]
+	and a
+    ld a, [wBattleMonSpecies]
+	jr nz, .thickFat
+	ld a, [wEnemyMonSpecies]
+.thickFat
+    cp SNORLAX
+    jr z, .checkType
+    jr .finishThickFat
+.checkType
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	cp FIRE
+    jr z, .thickFatReduction
+    cp ICE
+    jr z, .thickFatReduction
+    jr .finishThickFat
+.thickFatReduction
+	call HalfDamage
+.finishThickFat
 
 ; =================================
 ; ========== Technician ===========
@@ -3319,40 +3369,23 @@ BattleCommand_DamageCalc:
 	jr z, .technician
 	ld a, [wEnemyMonSpecies]
 .technician
-    cp SCYTHER
-    jr z, .loadMovePower
-    cp SCIZOR
-    jr z, .loadMovePower
-    cp MEOWTH
-    jr z, .loadMovePower
-    cp PERSIAN
-    jr z, .loadMovePower
-    cp MR__MIME
-    jr z, .loadMovePower
-    cp SMEARGLE
-    jr z, .loadMovePower
-    cp HITMONTOP
-    jr z, .loadMovePower
+    push de
+	push bc
+	ld hl, TechnicianPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	jr c, .loadMovePower
     jr .finishTechnician
 .loadMovePower
-	ldh a, [hBattleTurn]
-	and a
-    ld a, [wPlayerMoveStruct + MOVE_POWER]
-	jr z, .checkPower
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-.checkPower
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
     cp $3D ; is power larger than 60
     jr nc, .finishTechnician
 ; 50% boost
-    ld a, 3
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 2
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+    call FiftyPercentBoost
 .finishTechnician
-
 
 ; Update wCurDamage. Max 999 (capped at 997, then add 2).
 MAX_DAMAGE EQU 999
@@ -3443,15 +3476,7 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	ret z
 
 ; AndrewNote - crits now deal x1.5 damage rather than x2
-; multiply by 3 then divide by 2 to get x1.5
-    ld a, 3
-	ldh [hMultiplier], a
-	call Multiply
-
-	ld a, 2
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+    call FiftyPercentBoost
 
 ; Cap at $ffff.
 	ret nc
@@ -3459,7 +3484,18 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	ld a, $ff
 	ldh [hQuotient + 2], a
 	ldh [hQuotient + 3], a
+	ret
 
+FiftyPercentBoost:
+    ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+; fallthrough
+HalfDamage:
+	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
 	ret
 
 INCLUDE "data/types/type_boost_items.asm"
@@ -3481,11 +3517,6 @@ BattleCommand_ConstantDamage:
 	ld a, 0
 	jr z, .got_power
 
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_PSYWAVE
-	jr z, .psywave
-
 	cp EFFECT_SUPER_FANG
 	jr z, .super_fang
 
@@ -3496,21 +3527,6 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	ld b, a
 	ld a, $0
-	jr .got_power
-
-.psywave
-	ld a, b
-	srl a
-	add b
-	ld b, a
-.psywave_loop
-	call BattleRandom
-	and a
-	jr z, .psywave_loop
-	cp b
-	jr nc, .psywave_loop
-	ld b, a
-	ld a, 0
 	jr .got_power
 
 .super_fang
@@ -3640,31 +3656,12 @@ INCLUDE "engine/battle/move_effects/lock_on.asm"
 
 INCLUDE "engine/battle/move_effects/sketch.asm"
 
+; AndrewNote - this is not used
 BattleCommand_DefrostOpponent:
 ; defrostopponent
 ; Thaw the opponent if frozen, and
 ; raise the user's Attack one stage.
-
-	call AnimateCurrentMove
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	call Defrost
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVarAddr
-	ld a, [hl]
-	push hl
-	push af
-
-	ld a, EFFECT_ATTACK_UP
-	ld [hl], a
-	call BattleCommand_StatUp
-
-	pop af
-	pop hl
-	ld [hl], a
-	ret
+    ret
 
 INCLUDE "engine/battle/move_effects/sleep_talk.asm"
 
@@ -3905,19 +3902,17 @@ UpdateMoveData:
 
 BattleCommand_SleepTarget:
 ; sleeptarget
-
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_SLEEP
-	jr nz, .not_protected_by_item
-
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	call GetItemName
-	ld hl, ProtectedByText
-	jr .fail
-
-.not_protected_by_item
+; AndrewNote - there is no item with HELD_PREVENT_SLEEP
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_SLEEP
+	;jr nz, .not_protected_by_item
+	;ld a, [hl]
+	;ld [wNamedObjectIndex], a
+	;call GetItemName
+	;ld hl, ProtectedByText
+	;jr .fail
+;.not_protected_by_item
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -3986,10 +3981,11 @@ BattleCommand_PoisonTarget:
 	ret z
 	call CheckIfTargetIsPoisonType
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	ret z
+	; there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_POISON
+	;ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4025,17 +4021,17 @@ BattleCommand_Poison:
 	and 1 << PSN
 	jp nz, .failed
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	jr nz, .do_poison
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	call GetItemName
-	ld hl, ProtectedByText
-	jr .failed
-
-.do_poison
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_POISON
+	;jr nz, .do_poison
+	;ld a, [hl]
+	;ld [wNamedObjectIndex], a
+	;call GetItemName
+	;ld hl, ProtectedByText
+	;jr .failed
+;.do_poison
 	ld hl, DidntAffect1Text
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
@@ -4248,10 +4244,11 @@ BattleCommand_BurnTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_BURN
-	ret z
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_BURN
+	;ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4317,10 +4314,11 @@ BattleCommand_FreezeTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_FREEZE
-	ret z
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_FREEZE
+	;ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4365,10 +4363,11 @@ BattleCommand_ParalyzeTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
-	ret z
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_PARALYZE
+	;ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -5069,7 +5068,6 @@ LowerStat:
 
 BattleCommand_TriStatusChance:
 ; tristatuschance
-
 	call BattleCommand_EffectChance
 .loop
 	; 1/3 chance of each status
@@ -6030,23 +6028,21 @@ INCLUDE "engine/battle/move_effects/focus_energy.asm"
 
 BattleCommand_Recoil:
 ; recoil
-
+; AndrewNote - Struggle always does 1/4 hp as recoil
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp STRUGGLE
+	jr nz, .begin
+	farcall GetQuarterMaxHP
+    farcall SubtractHPFromUser
+    ret
+.begin
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
 	and a
-;    ld a, [wBattleMonSpecies]
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
-;	ld a, [wBattleMonSpecies]
 .got_hp
-; Pokemon who are immune to residual damage (magic guard) take no recoil
-;    cp CLEFABLE
-;    ret z
-;    cp ARCEUS
-;    ret z
-;    cp ALAKAZAM
-;    ret z
-
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a
@@ -6104,11 +6100,11 @@ BattleCommand_Recoil:
 
 BattleCommand_ConfuseTarget:
 ; confusetarget
-
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	ret z
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_CONFUSE
+	;ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -6124,19 +6120,18 @@ BattleCommand_ConfuseTarget:
 
 BattleCommand_Confuse:
 ; confuse
-
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextbox
-
-.no_item_protection
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_CONFUSE
+	;jr nz, .no_item_protection
+	;ld a, [hl]
+	;ld [wNamedObjectIndex], a
+	;call GetItemName
+	;call AnimateFailedMove
+	;ld hl, ProtectedByText
+	;jp StdBattleTextbox
+;.no_item_protection
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CONFUSED, [hl]
@@ -6215,18 +6210,18 @@ BattleCommand_Paralyze:
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextbox
-
-.no_item_protection
+; AndrewNote - there is no such item
+	;call GetOpponentItem
+	;ld a, b
+	;cp HELD_PREVENT_PARALYZE
+	;jr nz, .no_item_protection
+	;ld a, [hl]
+	;ld [wNamedObjectIndex], a
+	;call GetItemName
+	;call AnimateFailedMove
+	;ld hl, ProtectedByText
+	;jp StdBattleTextbox
+;.no_item_protection
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -6722,7 +6717,7 @@ INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/holyarmour.asm"
 
-INCLUDE "engine/battle/move_effects/furiouswill.asm"
+INCLUDE "engine/battle/move_effects/serenity.asm"
 
 INCLUDE "engine/battle/move_effects/calmmind.asm"
 

@@ -73,7 +73,7 @@ Moves: ; 41afb
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,           SPECIAL,  100, 10,  10
 	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           SPECIAL,   70,  5,  10
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE,  SPECIAL,  100, 20,  10
-	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     65, WATER,         SPECIAL,  100, 20,  10
+	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     60, WATER,         SPECIAL,  100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,           SPECIAL,  100, 20,  10
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        PHYSICAL,   90,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         35, FLYING,        PHYSICAL, 100, 35,   0
@@ -175,7 +175,7 @@ Moves: ; 41afb
 	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,           PHYSICAL, 100, 15,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,        SPECIAL,  100, 10,  20
 	move SUPER_FANG,   EFFECT_SUPER_FANG,          1, NORMAL,        PHYSICAL,  90, 10,   0
-	move SLASH,        EFFECT_NORMAL_HIT,         70, NORMAL,        PHYSICAL, 100, 20,   0
+	move SLASH,        EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 20,   0
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,        STATUS,   100, 10,   0
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,        STATUS,   100,  1,   0
@@ -266,4 +266,4 @@ Moves: ; 41afb
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          75, FIGHTING,      PHYSICAL, 100, 15,   0
 	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,        0, UBER,           STATUS, 100, 20,   0
    	move JUDGEMENT,    EFFECT_JUDGEMENT,          100, UBER,         PHYSICAL, 100, 30,   0
-   	move FURIOUS_WILL, EFFECT_FURIOUS_WILL,       0, UBER,           STATUS, 100, 20,   0
+   	move SERENITY,     EFFECT_SERENITY,       0, UBER,           STATUS, 100, 20,   0

@@ -1,5 +1,5 @@
-BattleCommand_FuriousWill:
-; furiouswill
+BattleCommand_Serenity:
+; serenity
 	ld bc, wPlayerStatLevels
 	ldh a, [hBattleTurn]
 	and a

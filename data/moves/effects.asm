@@ -2070,11 +2070,11 @@ Judgement:
 	judgement
 	endmove
 
-FuriousWill:
+Serenity:
 	checkobedience
 	usedmovetext
 	doturn
-	furiouswill
+	serenity
 	endmove
 
 CalmMind:

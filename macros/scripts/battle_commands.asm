@@ -180,7 +180,7 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command judgement               ; b0
-	command furiouswill             ; b1
+	command serenity                ; b1
 	command calmmind                ; b2
 NUM_EFFECT_COMMANDS EQU const_value - 1
 

@@ -255,7 +255,7 @@ BattleAnimations::
 	dw BattleAnim_DrainPunch
 	dw BattleAnim_HolyArmour
 	dw BattleAnim_Judgement
-	dw BattleAnim_FuriousWill
+	dw BattleAnim_Serenity
 	assert_table_length NUM_ATTACKS + 1
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
@@ -3222,6 +3222,7 @@ BattleAnim_Snore:
 	anim_ret
 
 BattleAnim_Geomancy:
+BattleAnim_Serenity:
 BattleAnim_Curse:
 	anim_if_param_equal $1, .NotGhost
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
@@ -4449,7 +4450,6 @@ BattleAnim_MirrorCoat:
 	anim_ret
 
 BattleAnim_NastyPlot:
-BattleAnim_FuriousWill:
 BattleAnim_PsychUp:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row

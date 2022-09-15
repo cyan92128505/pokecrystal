@@ -16,6 +16,20 @@ MultiScalePokemon:
     db LUGIA
     db -1
 
+ThickFatPokemon:
+    db SNORLAX
+    db -1
+
+TechnicianPokemon:
+    db SCYTHER
+    db SCIZOR
+    db MEOWTH
+    db PERSIAN
+    db HITMONTOP
+    db MR__MIME
+    db SMEARGLE
+    db -1
+
 MagicGuardPokemon:
     db CLEFAIRY
     db CLEFABLE

@@ -283,7 +283,7 @@ AI_Smart_Switch:
 	jr z, .switch
 	cp EFFECT_CURSE
 	jr z, .switch
-	cp EFFECT_FURIOUS_WILL
+	cp EFFECT_SERENITY
 	jr z, .switch
 	cp EFFECT_GEOMANCY
 	jr z, .switch
@@ -635,7 +635,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HOLY_ARMOUR,      AI_Smart_HolyArmour
-	dbw EFFECT_FURIOUS_WILL,     AI_Smart_FuriousWill
+	dbw EFFECT_SERENITY,         AI_Smart_Serenity
 	dbw EFFECT_ATTACK_UP_2,      AI_Smart_SwordsDance
 	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
 	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
@@ -3116,7 +3116,7 @@ AI_Smart_HolyArmour:
 	inc [hl]
 	ret
 
-AI_Smart_FuriousWill:
+AI_Smart_Serenity:
 ; don't go past +4
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 4
@@ -3168,6 +3168,10 @@ AI_Smart_CalmMind:
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
+; unless using lugia, who is bulky and has multi scale so doesn't care
+    ld a, [wEnemyMonSpecies]
+    cp LUGIA
+    jr z, .continue2
 ; does player have boosted attack
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 1

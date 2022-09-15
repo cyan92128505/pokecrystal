@@ -3287,7 +3287,7 @@ CelebiEvosAttacks:
 MewtwoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PSYBLAST
-	db 1, FURIOUS_WILL
+	db 1, SERENITY
 	db 1, BARRIER
 	db 1, RECOVER
 	db 0 ; no more level-up moves

@@ -259,7 +259,7 @@
 	const DRAIN_PUNCH  ; fb
 	const HOLY_ARMOUR  ; fc
 	const JUDGEMENT    ; fd
-	const FURIOUS_WILL ; fe
+	const SERENITY     ; fe
 NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point

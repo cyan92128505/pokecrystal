@@ -254,7 +254,7 @@ MoveDescriptions::
 	dw DrainPunchDescription
 	dw HolyArmourDescription
 	dw JudgementDescription
-	dw FuriousWillDescription
+	dw SerenityDescription
 	assert_table_length NUM_ATTACKS
 	dw MoveFFDescription
 	dw Move00Description
@@ -1279,6 +1279,6 @@ JudgementDescription:
     db "Always hits and"
     next "may KO target.@"
 
-FuriousWillDescription:
+SerenityDescription:
     db "Greatly raises"
     next "special stats.@"

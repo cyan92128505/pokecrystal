@@ -28,7 +28,17 @@ BattleCommand_ShellSmash:
     ld a, $1
 	ld [wBattleAnimParam], a
 	call AnimateCurrentMove
+    ld a, DEFENSE
+	call LowerStat
 	call BattleCommand_SwitchTurn
+	call BattleCommand_StatDownMessage
+; =======================================
+    call BattleCommand_SwitchTurn
+    ld a, SP_DEFENSE
+	call LowerStat
+    call BattleCommand_SwitchTurn
+	call BattleCommand_StatDownMessage
+; ======================================
 	call ResetMiss
 	call BattleCommand_SwitchTurn
 	call BattleCommand_AttackUp2
@@ -40,19 +50,8 @@ BattleCommand_ShellSmash:
 ; ========================================
 	call ResetMiss
 	call BattleCommand_SpeedUp2
-	call BattleCommand_StatUpMessage
+	jp BattleCommand_StatUpMessage
 ; =======================================
-	call ResetMiss
-    ld a, DEFENSE
-	call LowerStat
-	call BattleCommand_SwitchTurn
-	call BattleCommand_StatDownMessage
-; =======================================
-	call ResetMiss
-    ld a, SP_DEFENSE
-	call LowerStat
-	jp BattleCommand_StatDownMessage
-; ======================================
 .cantraise
 ; Can't raise either stat.
 	ld b, ABILITY + 1

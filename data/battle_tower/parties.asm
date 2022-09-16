@@ -5024,7 +5024,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db KYOGRE
-	db EXPERT_BELT
+	db LEFTOVERS
 	db SURF, CALM_MIND, ICE_BEAM, THUNDER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp

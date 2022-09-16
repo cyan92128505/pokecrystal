@@ -3344,8 +3344,14 @@ BattleCommand_DamageCalc:
 	jr nz, .thickFat
 	ld a, [wEnemyMonSpecies]
 .thickFat
-    cp SNORLAX
-    jr z, .checkType
+    push de
+	push bc
+	ld hl, ThickFatPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	jr c, .checkType
     jr .finishThickFat
 .checkType
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -4779,16 +4785,10 @@ CheckMist:
 	call GetBattleVar
 	cp EFFECT_ATTACK_DOWN
 	jr c, .dont_check_mist
-	cp EFFECT_EVASION_DOWN + 1
-	jr c, .check_mist
 	cp EFFECT_ATTACK_DOWN_2
 	jr c, .dont_check_mist
-	cp EFFECT_EVASION_DOWN_2 + 1
-	jr c, .check_mist
 	cp EFFECT_ATTACK_DOWN_HIT
 	jr c, .dont_check_mist
-	cp EFFECT_EVASION_DOWN_HIT + 1
-	jr c, .check_mist
 .dont_check_mist
 	xor a
 	ret
@@ -6025,6 +6025,8 @@ BattleCommand_TrapTarget:
 INCLUDE "engine/battle/move_effects/geomancy.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
+
+INCLUDE "engine/battle/move_effects/shell_smash.asm"
 
 BattleCommand_Recoil:
 ; recoil

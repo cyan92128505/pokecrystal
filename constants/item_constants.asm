@@ -229,7 +229,7 @@ TM01 EQU const_value
 	add_tm PSYCH_UP     ; c8  thunderwave
 	add_tm HIDDEN_POWER ; c9
 	add_tm SUNNY_DAY    ; ca
-	add_tm SWEET_SCENT  ; cb  selfdestruct
+	add_tm SELFDESTRUCT ; cb  selfdestruct
 	add_tm SNORE        ; cc  explosion
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce

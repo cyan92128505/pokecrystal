@@ -135,7 +135,7 @@ BattleCommandPointers:
 	dw BattleCommand_SpecialAttackDown
 	dw BattleCommand_SpecialDefenseDown
 	dw BattleCommand_AccuracyDown
-	dw BattleCommand_EvasionDown
+	dw BattleCommand_ShellSmash
 	dw BattleCommand_AttackDown2
 	dw BattleCommand_DefenseDown2
 	dw BattleCommand_SpeedDown2

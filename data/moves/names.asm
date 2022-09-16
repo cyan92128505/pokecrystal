@@ -229,7 +229,7 @@ MoveNames::
 	li "ENCORE"
 	li "PURSUIT"
 	li "RAPID SPIN"
-	li "SWEET SCENT"
+	li "SHELL SMASH"
 	li "IRON HEAD"
 	li "METAL CLAW"
 	li "METEOR MASH"

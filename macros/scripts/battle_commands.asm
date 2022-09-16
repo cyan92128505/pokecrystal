@@ -135,7 +135,7 @@ ENDM
 	command specialattackdown       ; 81
 	command specialdefensedown      ; 82
 	command accuracydown            ; 83
-	command evasiondown             ; 84
+	command shellsmash              ; 84
 	command attackdown2             ; 85
 	command defensedown2            ; 86
 	command speeddown2              ; 87

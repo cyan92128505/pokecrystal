@@ -231,7 +231,7 @@ BattleAnimations::
 	dw BattleAnim_Encore
 	dw BattleAnim_Pursuit
 	dw BattleAnim_RapidSpin
-	dw BattleAnim_SweetScent
+	dw BattleAnim_ShellSmash
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
 	dw BattleAnim_MeteorMash
@@ -2639,6 +2639,7 @@ BattleAnim_TriAttack:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_ShellSmash:
 BattleAnim_Withdraw:
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_call BattleAnim_TargetObj_2Row

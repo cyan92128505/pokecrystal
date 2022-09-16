@@ -431,17 +431,11 @@ AccuracyDown:
 	statdownfailtext
 	endmove
 
-EvasionDown:
+ShellSmash:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
-	evasiondown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	shellsmash
 	endmove
 
 AttackDown2:
@@ -685,7 +679,8 @@ EvasionDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	evasiondown
+	;evasiondown
+	attackdown
 	statdownmessage
 	endmove
 

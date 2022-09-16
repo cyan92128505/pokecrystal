@@ -230,7 +230,7 @@ MoveDescriptions::
 	dw EncoreDescription
 	dw PursuitDescription
 	dw RapidSpinDescription
-	dw SweetScentDescription
+	dw ShellSmashDescription
 	dw IronHeadDescription
 	dw MetalClawDescription
 	dw MeteorMashDescription
@@ -1183,9 +1183,9 @@ RapidSpinDescription:
 	db   "A high-speed"
 	next "spinning attack.@"
 
-SweetScentDescription:
-	db   "Reduces the foe's"
-	next "evasiveness.@"
+ShellSmashDescription:
+	db   "Shatter ones shell"
+	next "and unleash power.@"
 
 IronHeadDescription:
 	db   "An attack that may"

@@ -27,7 +27,6 @@ BulbasaurEvosAttacks:
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 20, RAZOR_LEAF
-	db 25, SWEET_SCENT
 	db 32, GROWTH
 	db 39, SYNTHESIS
 	db 46, SOLARBEAM
@@ -45,7 +44,6 @@ IvysaurEvosAttacks:
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
-	db 29, SWEET_SCENT
 	db 38, GROWTH
 	db 47, SYNTHESIS
 	db 56, SOLARBEAM
@@ -63,7 +61,6 @@ VenusaurEvosAttacks:
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
-	db 29, SWEET_SCENT
 	db 41, GROWTH
 	db 53, SYNTHESIS
 	db 65, SOLARBEAM
@@ -131,6 +128,7 @@ SquirtleEvosAttacks:
 	db 33, RAIN_DANCE
 	db 40, HEADBUTT
 	db 47, HYDRO_PUMP
+	db 50, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
@@ -149,6 +147,7 @@ WartortleEvosAttacks:
 	db 37, RAIN_DANCE
 	db 45, HEADBUTT
 	db 53, HYDRO_PUMP
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 BlastoiseEvosAttacks:
@@ -167,6 +166,7 @@ BlastoiseEvosAttacks:
 	db 42, RAIN_DANCE
 	db 55, HEADBUTT
 	db 68, HYDRO_PUMP
+	db 70, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 CaterpieEvosAttacks:
@@ -564,7 +564,6 @@ OddishEvosAttacks:
 	db EVOLVE_LEVEL, 21, GLOOM
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 7, SWEET_SCENT
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
@@ -578,9 +577,6 @@ GloomEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 1, SWEET_SCENT
-	db 1, POISONPOWDER
-	db 7, SWEET_SCENT
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
@@ -592,7 +588,6 @@ GloomEvosAttacks:
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -912,7 +907,6 @@ BellsproutEvosAttacks:
 	db 17, POISONPOWDER
 	db 19, STUN_SPORE
 	db 23, ACID
-	db 30, SWEET_SCENT
 	db 37, RAZOR_LEAF
 	db 45, SLAM
 	db 0 ; no more level-up moves
@@ -929,7 +923,6 @@ WeepinbellEvosAttacks:
 	db 17, POISONPOWDER
 	db 19, STUN_SPORE
 	db 24, ACID
-	db 33, SWEET_SCENT
 	db 42, RAZOR_LEAF
 	db 54, SLAM
 	db 0 ; no more level-up moves
@@ -938,7 +931,6 @@ VictreebelEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
 	db 1, SLEEP_POWDER
-	db 1, SWEET_SCENT
 	db 1, RAZOR_LEAF
 	db 0 ; no more level-up moves
 
@@ -1207,7 +1199,9 @@ ShellderEvosAttacks:
 	db 25, PROTECT
 	db 33, LEER
 	db 41, CLAMP
-	db 49, ICE_BEAM
+	db 45, ICE_BEAM
+	db 50, HYDRO_PUMP
+	db 55, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 CloysterEvosAttacks:
@@ -1218,6 +1212,9 @@ CloysterEvosAttacks:
 	db 1, PROTECT
 	db 33, SPIKES
 	db 41, SPIKE_CANNON
+	db 45, ICE_BEAM
+	db 50, HYDRO_PUMP
+	db 65, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 GastlyEvosAttacks:
@@ -1850,6 +1847,7 @@ OmanyteEvosAttacks:
 	db 37, PROTECT
 	db 49, ANCIENTPOWER
 	db 55, HYDRO_PUMP
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 OmastarEvosAttacks:
@@ -1863,6 +1861,7 @@ OmastarEvosAttacks:
 	db 40, SPIKE_CANNON
 	db 54, ANCIENTPOWER
 	db 65, HYDRO_PUMP
+	db 70, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 KabutoEvosAttacks:
@@ -2431,7 +2430,6 @@ AmpharosEvosAttacks:
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
 	db 55, SOLARBEAM

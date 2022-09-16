@@ -235,7 +235,7 @@
 	const ENCORE       ; e3
 	const PURSUIT      ; e4
 	const RAPID_SPIN   ; e5
-	const SWEET_SCENT  ; e6   air slash
+	const SHELL_SMASH  ; e6
 	const IRON_HEAD    ; e7
 	const METAL_CLAW   ; e8
 	const METEOR_MASH  ; e9

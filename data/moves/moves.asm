@@ -242,7 +242,7 @@ Moves: ; 41afb
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,        STATUS,   100,  5,   0
 	move PURSUIT,      EFFECT_PURSUIT,            40, DARK,          PHYSICAL, 100, 20,   0
 	move RAPID_SPIN,   EFFECT_RAPID_SPIN,         20, NORMAL,        PHYSICAL, 100, 40,   0
-	move SWEET_SCENT,  EFFECT_EVASION_DOWN,        0, NORMAL,        STATUS,   100, 20,   0
+	move SHELL_SMASH,  EFFECT_SHELL_SMASH,        0, WATER,          STATUS,   100, 10,   0
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, STEEL,         PHYSICAL, 100, 15,  30
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,         PHYSICAL,  95, 35,  10
 	move METEOR_MASH,  EFFECT_ATTACK_UP_HIT,     120, STEEL,         PHYSICAL,  85, 10,  20

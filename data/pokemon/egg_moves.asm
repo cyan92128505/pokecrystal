@@ -593,7 +593,7 @@ GibleEggMoves:
 	db -1 ; end
 
 ShuckleEggMoves:
-	db SWEET_SCENT
+	db HARDEN
 	db -1 ; end
 
 HeracrossEggMoves:

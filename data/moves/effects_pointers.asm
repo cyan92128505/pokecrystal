@@ -25,7 +25,7 @@ MoveEffectsPointers:
 	dw SpecialAttackDown
 	dw SpecialDefenseDown
 	dw AccuracyDown
-	dw EvasionDown
+	dw ShellSmash
 	dw ResetStats
 	dw Bide
 	dw Rampage

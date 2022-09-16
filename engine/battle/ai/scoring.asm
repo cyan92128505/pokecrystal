@@ -349,9 +349,9 @@ AI_Setup:
 	jr c, .statup
 
 ;	cp EFFECT_ATTACK_DOWN - 1
-	jr z, .checkmove
-	cp EFFECT_EVASION_DOWN + 1
-	jr c, .statdown
+;	jr z, .checkmove
+;	cp EFFECT_EVASION_DOWN + 1
+;	jr c, .statdown
 
 	cp EFFECT_ATTACK_UP_2
 	jr c, .checkmove
@@ -359,9 +359,9 @@ AI_Setup:
 	jr c, .statup
 
 ;	cp EFFECT_ATTACK_DOWN_2 - 1
-	jr z, .checkmove
-	cp EFFECT_EVASION_DOWN_2 + 1
-	jr c, .statdown
+;	jr z, .checkmove
+;	cp EFFECT_EVASION_DOWN_2 + 1
+;	jr c, .statdown
 
 	jr .checkmove
 
@@ -645,6 +645,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_CONFUSE_HIT,      AI_Smart_DynamicPunch
     dbw EFFECT_QUIVER_DANCE,     AI_Smart_QuiverDance
     dbw EFFECT_SPIKES,           AI_Smart_Spikes
+    dbw EFFECT_SHELL_SMASH,      AI_Smart_ShellSmash
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -3574,6 +3575,38 @@ AI_Smart_DynamicPunch:
     dec [hl]
     dec [hl]
     ret
+
+AI_Smart_ShellSmash:
+; don't go past +4
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jp nc, .discourage
+
+; is the player behind a sub, then don't use
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
+
+; encourage to get to +2
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .encourage
+
+; discourage after +2 if not at max hp
+    call AICheckEnemyMaxHP
+    jr nc, .discourage
+
+    ret
+.encourage
+    dec [hl]
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
 
 AICompareSpeed:
 ; Return carry if enemy is faster than player.

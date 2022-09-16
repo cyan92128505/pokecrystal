@@ -18,6 +18,9 @@ MultiScalePokemon:
 
 ThickFatPokemon:
     db SNORLAX
+    db MILTANK
+    db URSARING
+    db LAPRAS
     db -1
 
 TechnicianPokemon:

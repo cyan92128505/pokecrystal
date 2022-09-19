@@ -182,6 +182,7 @@ ENDM
 	command judgement               ; b0
 	command serenity                ; b1
 	command calmmind                ; b2
+	command checkstatusimmunity     ; b3
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

@@ -28,6 +28,7 @@ DoSleep:
 	doturn
 	checkhit
 	checksafeguard
+	checkstatusimmunity
 	sleeptarget
 	endmove
 
@@ -49,6 +50,7 @@ PoisonHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	poisontarget
 	endmove
 
@@ -91,6 +93,7 @@ BurnHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	burntarget
 	endmove
 
@@ -112,6 +115,7 @@ FreezeHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+    checkstatusimmunity
 	freezetarget
 	endmove
 
@@ -133,6 +137,7 @@ ParalyzeHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	paralyzetarget
 	endmove
 
@@ -863,6 +868,7 @@ PoisonMultiHit:
 	endloop
 	raisesub
 	kingsrock
+	checkstatusimmunity
 	poisontarget
 	endmove
 
@@ -946,6 +952,7 @@ DoConfuse:
 	doturn
 	checkhit
 	checksafeguard
+	checkstatusimmunity
 	confuse
 	endmove
 
@@ -967,6 +974,7 @@ ConfuseHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	confusetarget
 	endmove
 
@@ -1020,6 +1028,7 @@ DoPoison:
 	checkhit
 	stab
 	checksafeguard
+	checkstatusimmunity
 	poison
 	endmove
 
@@ -1030,6 +1039,7 @@ DoParalyze:
 	stab
 	checkhit
 	checksafeguard
+	checkstatusimmunity
 	paralyze
 	endmove
 
@@ -1439,6 +1449,7 @@ FlameWheel:
 	defrost
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	burntarget
 	endmove
 
@@ -1531,6 +1542,7 @@ Swagger:
 	switchturn
 	statupmessage
 	switchturn
+	checkstatusimmunity
 	confusetarget
 	endmove
 
@@ -1652,6 +1664,7 @@ SacredFire:
 	defrost
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	burntarget
 	endmove
 
@@ -1987,6 +2000,7 @@ Thunder:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	paralyzetarget
 	endmove
 

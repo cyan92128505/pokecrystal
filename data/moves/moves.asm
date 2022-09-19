@@ -68,14 +68,14 @@ Moves: ; 41afb
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,          SPECIAL,  100, 15,  10
 	move GEOMANCY,     EFFECT_GEOMANCY,            0, NORMAL,        STATUS,   100, 10,   0
 	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,         SPECIAL,  100, 25,   0
-	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   80,  5,   0
+	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   80, 10,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,         SPECIAL,  100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,           SPECIAL,  100, 10,  10
 	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           SPECIAL,   70,  5,  10
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE,  SPECIAL,  100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     60, WATER,         SPECIAL,  100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,           SPECIAL,  100, 20,  10
-	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        PHYSICAL,   90,  5,   0
+	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        PHYSICAL,  90,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         35, FLYING,        PHYSICAL, 100, 35,   0
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL,  80, 25,   0
@@ -138,7 +138,7 @@ Moves: ; 41afb
 	move EARTH_POWER,  EFFECT_NORMAL_HIT,         90, GROUND,        SPECIAL,  100, 10,   0
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,        SPECIAL,  100, 20,  30
 	move CLOSE_COMBAT, EFFECT_NORMAL_HIT,        100, FIGHTING,      PHYSICAL, 100, 10,   0
-	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,          SPECIAL,   85,  5,  10
+	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,          SPECIAL,   85, 10,  10
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,         PHYSICAL, 100, 15,  20
 	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0

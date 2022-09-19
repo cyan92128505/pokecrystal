@@ -3908,7 +3908,7 @@ UpdateMoveData:
 
 BattleCommand_SleepTarget:
 ; sleeptarget
-; AndrewNote - there is no item with HELD_PREVENT_SLEEP
+; AndrewNote - there is no such item with HELD_PREVENT_SLEEP
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_SLEEP
@@ -3931,6 +3931,9 @@ BattleCommand_SleepTarget:
 	ld a, [wAttackMissed]
 	and a
 	jp nz, PrintDidntAffect2
+	ld a, [wEffectFailed]
+	and a
+	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
 
@@ -3943,10 +3946,10 @@ BattleCommand_SleepTarget:
 
 	call AnimateCurrentMove
 	ld b, SLP
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr z, .random_loop
-	ld b, %011
+	;ld a, [wInBattleTowerBattle]
+	;and a
+	;jr z, .random_loop
+	;ld b, %011 ; I think this means enemies in battle tower can only sleep for 3 turns max, not 7
 
 .random_loop
 	call BattleRandom
@@ -3954,7 +3957,10 @@ BattleCommand_SleepTarget:
 	jr z, .random_loop
 	cp SLP
 	jr z, .random_loop
-	inc a
+; AndrewNote - Sleep turns hard set to 3
+; This means a Pokemon always sleeps for 2 turns if put to sleep (same as rest)
+	;inc a
+	ld a, 3
 	ld [de], a
 	call UpdateOpponentInParty
 	call RefreshBattleHuds
@@ -4047,6 +4053,9 @@ BattleCommand_Poison:
 	call CheckSubstituteOpp
 	jr nz, .failed
 	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	ld a, [wEffectFailed]
 	and a
 	jr nz, .failed
 	call .check_toxic
@@ -4255,6 +4264,7 @@ BattleCommand_BurnTarget:
 	;ld a, b
 	;cp HELD_PREVENT_BURN
 	;ret z
+
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4325,6 +4335,7 @@ BattleCommand_FreezeTarget:
 	;ld a, b
 	;cp HELD_PREVENT_FREEZE
 	;ret z
+
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -4374,6 +4385,7 @@ BattleCommand_ParalyzeTarget:
 	;ld a, b
 	;cp HELD_PREVENT_PARALYZE
 	;ret z
+
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -6107,6 +6119,7 @@ BattleCommand_ConfuseTarget:
 	;ld a, b
 	;cp HELD_PREVENT_CONFUSE
 	;ret z
+
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -6146,6 +6159,9 @@ BattleCommand_Confuse:
 	call CheckSubstituteOpp
 	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
 	ld a, [wAttackMissed]
+	and a
+	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
+	ld a, [wEffectFailed]
 	and a
 	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
 BattleCommand_FinishConfusingTarget:
@@ -6229,6 +6245,9 @@ BattleCommand_Paralyze:
 	and a
 	jr nz, .failed
 	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	ld a, [wEffectFailed]
 	and a
 	jr nz, .failed
 	call CheckSubstituteOpp
@@ -7203,3 +7222,18 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+BattleCommand_CheckStatusImmunity:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .checkSpecies
+	ld a, [wEnemyMonSpecies]
+.checkSpecies
+    cp ARCEUS
+    jr z, .immune
+.immune
+    ld a, 1
+    ld [wEffectFailed], a
+	ld hl, StatusImmunityText
+	jp StdBattleTextbox

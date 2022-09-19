@@ -1,7 +1,7 @@
 ; significant level values
 MAX_LEVEL EQU 100
-MIN_LEVEL EQU 2
-EGG_LEVEL EQU 5
+MIN_LEVEL EQU 1
+EGG_LEVEL EQU 1
 
 ; maximum moves known per mon
 NUM_MOVES EQU 4
@@ -156,7 +156,7 @@ assert const_value % 2 == 0
 NUM_BATTLE_VAR_LOCATION_PAIRS EQU const_value / 2
 
 ; status condition bit flags
-SLP EQU %011 ; 0-3 turns - AndrewNote - reduce sleep turns to 3
+SLP EQU %111
 	const_def 3
 	const PSN
 	const BRN

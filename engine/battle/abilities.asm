@@ -8,7 +8,6 @@ SturdyPokemon:
     db ONIX
     db STEELIX
     db BLASTOISE
-    db CLOYSTER
     db -1
 
 MultiScalePokemon:

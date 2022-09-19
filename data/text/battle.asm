@@ -618,6 +618,11 @@ PowerTooGreatText:
     line "is too powerful!"
     prompt
 
+StatusImmunityText:
+    text "<TARGET>"
+    line "is status immune"
+    prompt
+
 CriticalHitText:
 	text "A critical hit!"
 	prompt

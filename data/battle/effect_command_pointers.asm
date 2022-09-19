@@ -182,4 +182,5 @@ BattleCommandPointers:
 	dw BattleCommand_Judgement
 	dw BattleCommand_Serenity
 	dw BattleCommand_CalmMind
+	dw BattleCommand_CheckStatusImmunity
 	assert_table_length NUM_EFFECT_COMMANDS

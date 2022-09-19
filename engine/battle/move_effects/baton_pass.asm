@@ -62,8 +62,36 @@ BattleCommand_BatonPass:
 	jp c, EndMoveEffect
 
 ; Passed enemy PartyMon entrance
+; clean this crap up
+	ld a, [wOTPartyCount]
+	ld c, a
+	ld hl, wOTPartyMon1HP
+	ld d, 0
+.SwitchLoop:
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	or b
+	jr z, .fainted
+	inc d
+.fainted
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .SwitchLoop
+
+	ld a, d
+	cp 6
+	jr nc, .continue
+    xor a
+    ld [wEnemySwitchMonIndex], a ; zero this if any mons are fainted, assumes enemy has 6 mons
+; AndrewNote - the above is awful! Please clean it! We just want to reset if th mon at index 2 is fainted
+
+.continue
 	xor a
-	ld [wEnemySwitchMonIndex], a
+	;ld [wEnemySwitchMonIndex], a ; this is removed so a dedicated recipient can be used - see AI_Smart_BatonPass
 	ld hl, EnemySwitch_SetMode
 	call CallBattleCore
 	ld hl, ResetBattleParticipants
@@ -74,6 +102,10 @@ BattleCommand_BatonPass:
 	call CallBattleCore
 
 	ld hl, SpikesDamage
+	call CallBattleCore
+
+; AndrewNote - switch in effects on baton pass
+	ld hl, SwitchInEffects
 	call CallBattleCore
 
 	jr ResetBatonPassStatus

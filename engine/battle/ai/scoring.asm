@@ -652,6 +652,49 @@ AI_Smart_Sleep:
 ; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
+; don't use against Arceus as it is immune to status
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jr z, .discourage
+
+; is the player behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
+
+; does player have a held item that would heal sleep
+	push hl
+	push de
+	ld a, [wBattleMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_HEAL_SLEEP
+	pop de
+	pop hl
+	jr z, .discourage
+
+; does player have a held item that would heal sleep
+	push hl
+	push de
+	ld a, [wBattleMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_HEAL_STATUS
+	pop de
+	pop hl
+	jr z, .discourage
+
+; check if the move is Spore
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp SPORE
+	jr nz, .notSpore
+	jr .useMove
+
+.notSpore
 ; if faster then continue
 	call AICompareSpeed
 	jr c, .continue
@@ -680,6 +723,21 @@ AI_Smart_Sleep:
 	dec [hl]
 	dec [hl]
 	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    ret
+.useMove
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 
 AI_Smart_LeechHit:
 	push hl
@@ -1347,8 +1405,16 @@ AI_Smart_Moonlight:
 
 AI_Smart_Toxic:
 AI_Smart_LeechSeed:
-; Discourage this move if player's HP is below 50%.
+; don't use against Arceus since it is immune to status
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jr nz, .continue
+    inc [hl]
+    inc [hl]
+    ret
 
+.continue
+; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
 	ret c
 	inc [hl]
@@ -1472,6 +1538,15 @@ AI_Smart_RazorWind:
 	ret
 
 AI_Smart_Confuse:
+; don't use against Arceus since it is immune to status
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jr nz, .continue
+    inc [hl]
+    inc [hl]
+    ret
+
+.continue
 ; 90% chance to discourage this move if player's HP is between 25% and 50%.
 	call AICheckPlayerHalfHP
 	ret c
@@ -1574,12 +1649,13 @@ AI_Smart_Paralyze:
 	jr z, .discourage
 
 .notThunderwave
-; always use against Mewtwo or Arceus
+; don't use against Arceus since it is immune to status
+; always use against Mewtwo
     ld a, [wBattleMonSpecies]
     cp MEWTWO
     jr z, .encourage
     cp ARCEUS
-    jr z, .encourage
+    jr z, .discourage
 
 ; encourage if enemy is slower than player.
 ; 50% chance to discourage otherwise
@@ -2654,15 +2730,45 @@ AI_Smart_Earthquake:
 AI_Smart_BatonPass:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
+; AndrewNote - WTF, why would you do this, baton pass is not to escape an enemy!!
+; encourage if we have good stat boosts to pass
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
+    ld a, [wEnemySpdLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
+	jr .continue
+.encourage
+	dec [hl]
+	dec [hl]
+.continue
+; We hard code the recipient to be the second mon
+; this allows for a dedicated baton pass strategy
+; except for in the battle tower - normal switch logic here is fine
+    ld a, [wInBattleTowerBattle]
+	and a
+	jr z, .notBattleTower
+    xor a
+    ld [wEnemySwitchMonIndex], a
+    ret
 
-	push hl
-	callfar CheckPlayerMoveTypeMatchups
-	ld a, [wEnemyAISwitchScore]
-	cp BASE_AI_SWITCH_SCORE
-	pop hl
-	ret c
-	inc [hl]
-	ret
+.notBattleTower
+    ld a, 2
+    ld [wEnemySwitchMonIndex], a
+    ret
+
+	;push hl
+	;callfar CheckPlayerMoveTypeMatchups
+	;ld a, [wEnemyAISwitchScore]
+	;cp BASE_AI_SWITCH_SCORE
+	;pop hlc
+	;ret c
+	;inc [hl]
+	;ret
 
 AI_Smart_Pursuit:
 ; 50% chance to greatly encourage this move if player's HP is below 25%.
@@ -3582,6 +3688,16 @@ AI_Smart_ShellSmash:
 	cp BASE_STAT_LEVEL + 4
 	jp nc, .discourage
 
+; Smeargle should use once and not again
+    ld a, [wEnemyMonSpecies]
+    cp SMEARGLE
+    jr nz, .notSmeargle
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr c, .encourage
+    jr .discourage
+
+.notSmeargle
 ; is the player behind a sub, then don't use
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3598,6 +3714,13 @@ AI_Smart_ShellSmash:
 
     ret
 .encourage
+; this needs to be enough to overcome encouragement from having a move that can KO
+    dec [hl]
+	dec [hl]
+    dec [hl]
+	dec [hl]
+    dec [hl]
+	dec [hl]
     dec [hl]
 	dec [hl]
 	ret

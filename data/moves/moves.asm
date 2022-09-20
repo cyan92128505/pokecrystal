@@ -68,7 +68,7 @@ Moves: ; 41afb
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,          SPECIAL,  100, 15,  10
 	move GEOMANCY,     EFFECT_GEOMANCY,            0, NORMAL,        STATUS,   100, 10,   0
 	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,         SPECIAL,  100, 25,   0
-	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   80, 10,   0
+	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   85, 10,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,         SPECIAL,  100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,           SPECIAL,  100, 10,  10
 	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           SPECIAL,   70,  5,  10
@@ -258,12 +258,12 @@ Moves: ; 41afb
 	move MIRROR_COAT,  EFFECT_MIRROR_COAT,         1, PSYCHIC_TYPE,  SPECIAL,  100, 20,   0
 	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,        STATUS,   100, 10,   0
 	move EXTREMESPEED, EFFECT_PRIORITY_HIT,       80, NORMAL,        PHYSICAL, 100, 10,   0
-	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,          SPECIAL,  100,  5,  10
+	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,          SPECIAL,  100, 10,  10
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,       80, PSYCHIC_TYPE,  SPECIAL,   90, 15,   0
-	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   75, FIGHTING,      PHYSICAL, 100, 15,  50
+	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING,      PHYSICAL, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          75, FIGHTING,      PHYSICAL, 100, 15,   0
-	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,        0, UBER,           STATUS, 100, 20,   0
-   	move JUDGEMENT,    EFFECT_JUDGEMENT,          100, UBER,         PHYSICAL, 100, 30,   0
-   	move SERENITY,     EFFECT_SERENITY,       0, UBER,           STATUS, 100, 20,   0
+	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,         0, UBER,          STATUS,   100, 20,   0
+   	move JUDGEMENT,    EFFECT_JUDGEMENT,         100, UBER,          PHYSICAL, 100, 30,   0
+   	move SERENITY,     EFFECT_SERENITY,            0, UBER,          STATUS,   100, 20,   0

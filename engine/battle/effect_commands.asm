@@ -1305,12 +1305,6 @@ BattleCommand_Stab:
 	pop de
 	pop hl
 
-	push de
-	push bc
-	farcall DoBadgeTypeBoosts
-	pop bc
-	pop de
-
 	ld a, [wCurType]
 	cp b
 	jr z, .stab
@@ -5135,9 +5129,6 @@ CalcPlayerStats:
 
 	ld a, 5
 	call CalcBattleStats
-
-	ld hl, BadgeStatBoosts
-	call CallBattleCore
 
 	call BattleCommand_SwitchTurn
 

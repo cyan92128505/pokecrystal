@@ -536,7 +536,7 @@ DetermineMoveOrder:
 	ld de, wBattleMonSpeed
 	ld hl, wEnemyMonSpeed
 
-; AndrewNote - here add speed boosting abilities
+; AndrewNote - here add weather speed boosting abilities
 ; this is pretty messy, can it be cleaned up
 ; ==============================
 ; ========= Swift Swim =========
@@ -546,29 +546,18 @@ DetermineMoveOrder:
     jr nz, .checkSun
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
-    jr z, .doubleEnemySpeedInRain
+    call z, DoubleHL
     cp GOLDUCK
-    jr z, .doubleEnemySpeedInRain
+    call z, DoubleHL
     cp POLIWRATH
-    jr z, .doubleEnemySpeedInRain
-    jr .checkPlayerInRain
-.doubleEnemySpeedInRain
-    ld a, [hl]
-    sla a
-    ld [hl], a
-.checkPlayerInRain
+    call z, DoubleHL
     ld a, [wBattleMonSpecies]
     cp KINGDRA
-    jr z, .doublePlayerSpeedInRain
+    call z, DoubleDE
     cp GOLDUCK
-    jr z, .doublePlayerSpeedInRain
+    call z, DoubleDE
     cp POLIWRATH
-    jr z, .doublePlayerSpeedInRain
-    jr nz, .checkSun
-.doublePlayerSpeedInRain
-    ld a, [de]
-    sla a
-    ld [de], a
+    call z, DoubleDE
 
 .checkSun
 ; ===============================
@@ -579,29 +568,18 @@ DetermineMoveOrder:
     jr nz, .checkSand
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
-    jr z, .doubleEnemySpeedInSun
+    call z, DoubleHL
     cp VICTREEBEL
-    jr z, .doubleEnemySpeedInSun
+    call z, DoubleHL
     cp EXEGGUTOR
-    jr z, .doubleEnemySpeedInSun
-    jr .checkPlayerInSun
-.doubleEnemySpeedInSun
-    ld a, [hl]
-    sla a
-    ld [hl], a
-.checkPlayerInSun
+    call z, DoubleHL
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
-    jr z, .doublePlayerSpeedInSun
+    call z, DoubleDE
     cp VICTREEBEL
-    jr z, .doublePlayerSpeedInSun
+    call z, DoubleDE
     cp EXEGGUTOR
-    jr z, .doublePlayerSpeedInSun
-    jr .checkSand
-.doublePlayerSpeedInSun
-    ld a, [de]
-    sla a
-    ld [de], a
+    call z, DoubleDE
 
 .checkSand
 ; ==============================
@@ -612,25 +590,14 @@ DetermineMoveOrder:
     jr nz, .continue
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
-    jr z, .doubleEnemySpeedInSand
+    call z, DoubleHL
     cp SANDSLASH
-    jr z, .doubleEnemySpeedInSand
-    jr .checkPlayerInSand
-.doubleEnemySpeedInSand
-    ld a, [hl]
-    sla a
-    ld [hl], a
-.checkPlayerInSand
+    call z, DoubleHL
     ld a, [wBattleMonSpecies]
     cp EXCADRILL
-    jr z, .doublePlayerSpeedInSand
+    call z, DoubleDE
     cp SANDSLASH
-    jr z, .doublePlayerSpeedInSand
-    jr .continue
-.doublePlayerSpeedInSand
-    ld a, [de]
-    sla a
-    ld [de], a
+    call z, DoubleDE
 
 .continue
 	ld c, 2
@@ -659,6 +626,18 @@ DetermineMoveOrder:
 .enemy_first
 	and a
 	ret
+
+DoubleHL:
+    ld a, [hl]
+    sla a
+    ld [hl], a
+    ret
+
+DoubleDE:
+    ld a, [de]
+    sla a
+    ld [de], a
+    ret
 
 CheckContestBattleOver:
 	ld a, [wBattleType]
@@ -1125,6 +1104,15 @@ CheckIfHPIsZero:
 	or [hl]
 	ret
 
+Core_MagicGuardPokemon:
+    db CLEFAIRY
+    db CLEFABLE
+    db ABRA
+    db KADABRA
+    db ALAKAZAM
+    db ARCEUS
+    db -1
+
 ResidualDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
 	ldh a, [hBattleTurn]
@@ -1133,10 +1121,10 @@ ResidualDamage:
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
-	ld hl, MagicGuardPokemon
+	ld hl, Core_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
-	jp nc, .check_fainted
+	jp c, .check_fainted
 ; Return z if the user fainted before
 ; or as a result of residual damage.
 ; For Sandstorm damage, see HandleWeather.
@@ -1855,10 +1843,10 @@ HandleWeather:
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
-	ld hl, MagicGuardPokemon
+	ld hl, Core_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
-	ret nc
+	ret c
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
@@ -4308,13 +4296,13 @@ SpikesDamage:
     push hl
     push de
 	push bc
-	ld hl, MagicGuardPokemon
+	ld hl, Core_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
 	pop bc
 	pop de
 	pop hl
-	ret nc
+	ret c
 
 	bit SCREENS_SPIKES, [hl]
 	ret z

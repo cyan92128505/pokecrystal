@@ -1326,15 +1326,10 @@ AI_Smart_Moonlight:
     call CanPlayer2HKOMaxHP
     jr c, .discourage
 
-.continue
-; don't use when above 50% hp
-	call AICheckEnemyHalfHP
-	jr c, .discourage
-
 ; check if the move is Rest
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp REST
-	jr nz, .healBelowHalfHp
+	jr nz, .nonRestHeal
 
 ; if it is Rest check if the enemy is afflicted with toxic
     ld a, BATTLE_VARS_SUBSTATUS5
@@ -1345,7 +1340,7 @@ AI_Smart_Moonlight:
 ; if enemy knows Rest and is afflicted with toxic cancel any switching and heal below 1/2 HP
     ld a, $0
     ld [wEnemyIsSwitching], a
-    jr .healBelowHalfHp
+    jr .nonRestHeal
 
 ; for rest heal below 1/4 HP if faster than player, discourage otherwise
 ; if slower than player 50% chance to heal below 1/2 HP and guaranteed below 1/4 HP
@@ -1358,9 +1353,27 @@ AI_Smart_Moonlight:
  	ret c
 
 ; otherwise encourage heal when under 1/2 hp
-.healBelowHalfHp
-    call AICheckEnemyHalfHP
-    ret c
+.nonRestHeal
+; don't use when at max hp
+	call AICheckEnemyMaxHP
+	jr c, .discourage
+
+; use if we can avoid a ko, unless we are mewtwo, he must focus on set up
+    ld a, [wEnemyMonSpecies]
+    cp MEWTWO
+    jr z, .skip
+    call AICompareSpeed
+    jr nc, .playerMovesFirst
+    call CanPlayerKO
+    jr c, .encourage
+.playerMovesFirst
+    call CanPlayer2HKO
+    jr c, .encourage
+.skip
+
+; don't use when above 50% hp
+	call AICheckEnemyHalfHP
+	jr c, .discourage
 
 ; fall through
 .encourage
@@ -3271,17 +3284,17 @@ AI_Smart_SwordsDance:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; don't use if we are at risk of being KOd by boosted player, just attack them
+; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jr nc, .discourage
 
 .continue
-; if already at +2 and player is faster, 80% chance to discourage, unless Arceus
+; if already at +2, 80% chance to discourage, unless Arceus
     ld a, [wEnemyMonSpecies]
     cp ARCEUS
     jr z, .continue2
     ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage80
 
 .continue2
@@ -3326,9 +3339,9 @@ AI_Smart_SwordsDance:
 	ret
 
 AI_Smart_Barrier:
-; don't go past +5
+; don't go past +4
     ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 5
+	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
 ; discourage if player has boosted SpAtk
@@ -3419,20 +3432,17 @@ AI_Smart_NastyPlot:
     call ShouldAIBoost
     jr nc, .discourage
 
-.continue
 ; if already at +2 80% chance to discourage
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage80
 
-.continue2
 ; encourage to get to +2
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
 ; discourage after +2 if afflicted with toxic
-.checkToxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -3522,11 +3532,11 @@ ShouldAIBoost:
     call AICompareSpeed
     jr nc, .playerMovesFirst
 
-    call CanPlayer2HKO
+    call CanPlayerKO
     jr c, .decideNotToBoost
     jr .boost
 .playerMovesFirst
-    call CanPlayerKO
+    call CanPlayer2HKO
     jr c, .decideNotToBoost
     jr .boost
 
@@ -3542,6 +3552,7 @@ ShouldAIBoost:
 ; is player attacking
 	;ld a, [wPlayerMoveStruct + MOVE_POWER]
 	;and a
+	;jr z, .dontBoost
 	jr .dontBoost
 
 .boost
@@ -3616,15 +3627,24 @@ CanPlayer2HKO:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+; double current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+; continue
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
 	ld a, [wEnemyMonHP + 1]
-	srl a
 	cp c ; compare upper
 	ld a, [wEnemyMonHP]
-	srl a
     sbc b ; compare lower and set flag
 	pop bc
 	pop de
@@ -3659,15 +3679,24 @@ CanPlayer2HKOMaxHP:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+; double current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+; continue
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
 	ld a, [wEnemyMonMaxHP + 1]
-	srl a
 	cp c ; compare upper
 	ld a, [wEnemyMonMaxHP]
-	srl a
     sbc b ; compare lower and set flag
 	pop bc
 	pop de

@@ -5820,11 +5820,11 @@ BattleCommand_OHKO:
 	ld [wAttackMissed], a
 	ret
 
-; AndrewNote - JUDGEMENT has 7% chance to instant KO enemy
+; AndrewNote - JUDGEMENT has 6% chance to instant KO enemy
 BattleCommand_Judgement:
 ; judgement
 	call BattleRandom
-	cp 7 percent ; 7% chance of instant death
+	cp 6 percent ; 6% chance of instant death
 	jr nc, .done
 	call ResetDamage
 	call BattleCommand_CheckHit

@@ -183,7 +183,7 @@ AnimationPointers:
 	dw AmpharosAnimation
 	dw BellossomAnimation
 	dw MismagiusAnimation
-	dw AzumarillAnimation
+	dw PorygonzAnimation
 	dw GenesectAnimation
 	dw PolitoedAnimation
 	dw TimburrAnimation

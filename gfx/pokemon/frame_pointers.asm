@@ -183,7 +183,7 @@ FramesPointers:
 	dw AmpharosFrames
 	dw BellossomFrames
 	dw MismagiusFrames
-	dw AzumarillFrames
+	dw PorygonzFrames
 	dw GenesectFrames
 	dw PolitoedFrames
 	dw TimburrFrames

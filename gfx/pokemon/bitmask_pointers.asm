@@ -183,7 +183,7 @@ BitmasksPointers:
 	dw AmpharosBitmasks
 	dw BellossomBitmasks
 	dw MismagiusBitmasks
-	dw AzumarillBitmasks
+	dw PorygonzBitmasks
 	dw GenesectBitmasks
 	dw PolitoedBitmasks
 	dw TimburrBitmasks

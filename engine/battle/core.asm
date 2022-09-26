@@ -537,13 +537,13 @@ DetermineMoveOrder:
 	ld hl, wEnemyMonSpeed
 
 ; AndrewNote - here add weather speed boosting abilities
-; this is pretty messy, can it be cleaned up
 ; ==============================
 ; ========= Swift Swim =========
 ; ==============================
     ld a, [wBattleWeather]
     cp WEATHER_RAIN
     jr nz, .checkSun
+
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
     call z, DoubleHL
@@ -551,6 +551,7 @@ DetermineMoveOrder:
     call z, DoubleHL
     cp POLIWRATH
     call z, DoubleHL
+
     ld a, [wBattleMonSpecies]
     cp KINGDRA
     call z, DoubleDE
@@ -566,6 +567,7 @@ DetermineMoveOrder:
     ld a, [wBattleWeather]
     cp WEATHER_SUN
     jr nz, .checkSand
+
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
     call z, DoubleHL
@@ -573,6 +575,7 @@ DetermineMoveOrder:
     call z, DoubleHL
     cp EXEGGUTOR
     call z, DoubleHL
+
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
     call z, DoubleDE
@@ -588,11 +591,13 @@ DetermineMoveOrder:
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
     jr nz, .continue
+
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
     call z, DoubleHL
     cp SANDSLASH
     call z, DoubleHL
+
     ld a, [wBattleMonSpecies]
     cp EXCADRILL
     call z, DoubleDE
@@ -4354,6 +4359,8 @@ SwitchInEffects:
     cp RAYQUAZA
     jp z, .clear
     cp GENESECT
+    jp z, .spAtkUp
+    cp PORYGONZ
     jp z, .spAtkUp
     cp SUICUNE
     jp z, .defUp

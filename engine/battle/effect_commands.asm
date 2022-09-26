@@ -1406,6 +1406,9 @@ BattleCommand_Stab:
 	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
 
 ; AndrewNote - expert belt - x1.2 damage on SE hits
+; ============================
+; ======= Expert Belt ========
+; ============================
     push hl
 	call GetUserItem
 	ld a, b
@@ -1883,16 +1886,28 @@ BattleCommand_CheckHit:
 	ret
 
 .StatModifiers:
-	ldh a, [hBattleTurn]
-	and a
-
 	; load the user's accuracy into b and the opponent's evasion into c.
 	ld hl, wPlayerMoveStruct + MOVE_ACC
 	ld a, [wPlayerAccLevel]
 	ld b, a
 	ld a, [wEnemyEvaLevel]
-	ld c, a
+    ld c, a
+; AndrewNote - sand veil to go here
+; ===========================
+; ======= Sand Veil =========
+; ===========================
+    ld a, [wBattleWeather]
+    cp WEATHER_SANDSTORM
+    jr nz, .doneEnemySandVeil
+    ld a, [wEnemyMonSpecies]
+    cp GARCHOMP
+    call z, IncrementC
+    cp DUGTRIO
+    call z, IncrementC
+.doneEnemySandVeil
 
+	ldh a, [hBattleTurn]
+	and a
 	jr z, .got_acc_eva
 
 	ld hl, wEnemyMoveStruct + MOVE_ACC
@@ -1900,6 +1915,18 @@ BattleCommand_CheckHit:
 	ld b, a
 	ld a, [wPlayerEvaLevel]
 	ld c, a
+; ===========================
+; ======= Sand Veil =========
+; ===========================
+    ld a, [wBattleWeather]
+    cp WEATHER_SANDSTORM
+    jr nz, .donePlayerSandVeil
+    ld a, [wBattleMonSpecies]
+    cp GARCHOMP
+    call z, IncrementC
+    cp DUGTRIO
+    call z, IncrementC
+.donePlayerSandVeil
 
 .got_acc_eva
 	cp b
@@ -1972,6 +1999,10 @@ BattleCommand_CheckHit:
 	pop hl
 	ld [hl], a
 	ret
+
+IncrementC:
+    inc c
+    ret
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
 
@@ -6628,23 +6659,23 @@ INCLUDE "engine/battle/move_effects/metronome.asm"
 
 CheckUserMove:
 ; Return z if the user has move a.
-	ld b, a
-	ld de, wBattleMonMoves
+	ld b, a ; the move we want to check for
+	ld de, wBattleMonMoves ; get all player moves
 	ldh a, [hBattleTurn]
-	and a
+	and a ; check whos turn it is
 	jr z, .ok
-	ld de, wEnemyMonMoves
+	ld de, wEnemyMonMoves ; get all enemy moves
 .ok
 
-	ld c, NUM_MOVES
+	ld c, NUM_MOVES ; get the number of moves
 .loop
-	ld a, [de]
-	inc de
-	cp b
-	ret z
+	ld a, [de] ; load the first move into a
+	inc de ; increment moves to the next move
+	cp b ; check if this is the move we check for
+	ret z ; return z if it is
 
-	dec c
-	jr nz, .loop
+	dec c ; decrement the number of moves
+	jr nz, .loop ; if any moves left repeat
 
 	ld a, 1
 	and a

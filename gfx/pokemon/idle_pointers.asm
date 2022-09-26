@@ -183,7 +183,7 @@ AnimationIdlePointers:
 	dw AmpharosAnimationIdle
 	dw BellossomAnimationIdle
 	dw MismagiusAnimationIdle
-	dw AzumarillAnimationIdle
+	dw PorygonzAnimationIdle
 	dw GenesectAnimationIdle
 	dw PolitoedAnimationIdle
 	dw TimburrAnimationIdle

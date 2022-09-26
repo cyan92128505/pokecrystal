@@ -183,7 +183,7 @@ PokemonNames::
 	db "AMPHAROS@@"
 	db "BELLOSSOM@"
 	db "MISMAGIUS@"
-	db "AZUMARILL@"
+	db "PORYGON-Z@"
 	db "GENESECT@@"
 	db "POLITOED@@"
 	db "TIMBURR@@@"

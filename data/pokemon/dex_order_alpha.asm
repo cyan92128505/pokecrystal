@@ -11,7 +11,7 @@ AlphabeticalPokedexOrder:
 	db ARCEUS
 	db ARIADOS
 	db ARTICUNO
-	db AZUMARILL
+	db PORYGONZ
 	db BAGON
 	db BAYLEEF
 	db BEEDRILL

@@ -223,7 +223,7 @@ Pokered_MonIndices:
 	db AMPHAROS
 	db BELLOSSOM
 	db MISMAGIUS
-	db AZUMARILL
+	db PORYGONZ
 	db GENESECT
 	db POLITOED
 	db TIMBURR

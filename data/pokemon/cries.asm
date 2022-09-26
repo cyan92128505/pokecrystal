@@ -189,7 +189,7 @@ PokemonCries::
 	mon_cry CRY_AMPHAROS,   -124,  232 ; AMPHAROS
 	mon_cry CRY_CLEFFA,      132,  336 ; BELLOSSOM
 	mon_cry CRY_MARILL,      283,  288 ; MARILL
-	mon_cry CRY_MARILL,      182,  384 ; AZUMARILL
+	mon_cry CRY_GIRAFARIG,   150,  500 ; PORYGONZ
 	mon_cry CRY_CLEFFA,     3904,  384 ; GENESECT
 	mon_cry CRY_CLEFFA,     -675,  456 ; POLITOED
 	mon_cry CRY_CLEFFA,       59,  200 ; TIMBURR

@@ -18,8 +18,8 @@ BattleCommand_Encore:
 	call GetBattleVar
 	and a
 	jp z, .failed ; if there was no last move encore fails
-	cp STRUGGLE
-	jp z, .failed
+	;cp STRUGGLE
+	;jp z, .failed
 	cp ENCORE
 	jp z, .failed
 	cp MIRROR_MOVE

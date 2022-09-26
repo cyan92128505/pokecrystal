@@ -110,7 +110,7 @@ NewPokedexOrder:
 	db NINETALES
 	db GROWLITHE
 	db ARCANINE
-	db AZUMARILL
+	db PORYGONZ
 	db DIGLETT
 	db DUGTRIO
 	db MANKEY

@@ -39,8 +39,8 @@
 	const PIDGEOT    ; 12
 	const RATTATA    ; 13  ....
 	const RATICATE   ; 14  lopunny
-	const SPEAROW    ; 15  ....
-	const FEAROW     ; 16  whimsicott
+	const SPEAROW    ; 15
+	const FEAROW     ; 16
 	const EKANS      ; 17
 	const ARBOK      ; 18
 	const PIKACHU    ; 19
@@ -87,9 +87,9 @@
 	const MACHOP     ; 42
 	const MACHOKE    ; 43
 	const MACHAMP    ; 44
-	const BELLSPROUT ; 45  budew
-	const WEEPINBELL ; 46  roselia
-	const VICTREEBEL ; 47  rosarade
+	const BELLSPROUT ; 45
+	const WEEPINBELL ; 46
+	const VICTREEBEL ; 47
 	const TENTACOOL  ; 48
 	const TENTACRUEL ; 49
 	const GEODUDE    ; 4a
@@ -134,8 +134,8 @@
 	const CHANSEY    ; 71
 	const TANGELA    ; 72   weevil
 	const KANGASKHAN ; 73   ryperior
-	const HORSEA     ; 74   togekiss
-	const SEADRA     ; 75   elecivire
+	const HORSEA     ; 74
+	const SEADRA     ; 75
 	const GOLDEEN    ; 76   magmortar
 	const SEAKING    ; 77   hunchcrow
 	const STARYU     ; 78
@@ -196,14 +196,14 @@ JOHTO_POKEMON EQU const_value
 	const CHANDELURE ; ae
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
-	const NATU       ; b1  ....
+	const NATU       ; b1  togekiss
 	const XATU       ; b2  sigiliph
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
 	const BELLOSSOM  ; b6  sylveon
 	const MISMAGIUS  ; b7
-	const AZUMARILL  ; b8  porygonz
+	const PORYGONZ  ; b8  porygonz
 	const GENESECT   ; b9
 	const POLITOED   ; ba
 	const TIMBURR    ; bb
@@ -213,8 +213,8 @@ JOHTO_POKEMON EQU const_value
 	const METANG     ; bf
 	const METAGROSS  ; c0
 	const YANMA      ; c1
-	const WOOPER     ; c2  shelgon
-	const QUAGSIRE   ; c3  gastrodon
+	const WOOPER     ; c2
+	const QUAGSIRE   ; c3
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6
@@ -232,7 +232,7 @@ JOHTO_POKEMON EQU const_value
 	const GABITE     ; d2
 	const GARCHOMP   ; d3
 	const SCIZOR     ; d4
-	const SHUCKLE    ; d5  ....
+	const SHUCKLE    ; d5  electrivire
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
 	const TEDDIURSA  ; d8

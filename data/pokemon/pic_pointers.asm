@@ -369,8 +369,8 @@ PokemonPicPointers::
 	dba_pic BellossomBackpic
 	dba_pic MismagiusFrontpic
 	dba_pic MismagiusBackpic
-	dba_pic AzumarillFrontpic
-	dba_pic AzumarillBackpic
+	dba_pic PorygonzFrontpic
+	dba_pic PorygonzBackpic
 	dba_pic GenesectFrontpic
 	dba_pic GenesectBackpic
 	dba_pic PolitoedFrontpic

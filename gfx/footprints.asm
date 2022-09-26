@@ -415,7 +415,7 @@ INCBIN "gfx/footprints/flaaffy.1bpp",    footprint_top
 INCBIN "gfx/footprints/ampharos.1bpp",   footprint_top
 INCBIN "gfx/footprints/bellossom.1bpp",  footprint_top
 INCBIN "gfx/footprints/mismagius.1bpp",     footprint_top
-INCBIN "gfx/footprints/azumarill.1bpp",  footprint_top
+INCBIN "gfx/footprints/porygonz.1bpp",  footprint_top
 ; 177-184 bottom halves
 INCBIN "gfx/footprints/natu.1bpp",       footprint_bottom
 INCBIN "gfx/footprints/xatu.1bpp",       footprint_bottom
@@ -424,7 +424,7 @@ INCBIN "gfx/footprints/flaaffy.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/ampharos.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/bellossom.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/mismagius.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/azumarill.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/porygonz.1bpp",  footprint_bottom
 ; 185-192 top halves
 INCBIN "gfx/footprints/genesect.1bpp",  footprint_top
 INCBIN "gfx/footprints/politoed.1bpp",   footprint_top

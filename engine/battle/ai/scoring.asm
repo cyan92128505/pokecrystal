@@ -1322,36 +1322,9 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
-; don't use if we are at risk of being KOd by boosted player, just attack them
-; physical
-; does player have boosted attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 3
-	jr c, .special
-; does enemy have non-boosted defense
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr c, .dontBoost
-.special
-; does player have boosted special attack
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 3
-	jr c, .continue
-; does enemy have non-boosted special defense
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .continue
-.dontBoost
-; is player SLP or FRZ
-	ld a, [wBattleMonStatus]
-	and SLP
-	jr nz, .continue
-	;bit FRZ, a
-	;jr nz, .continue
-; is player attacking
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .discourage
+; don't heal if player can 2 shot from max hp, no point
+    call CanPlayer2HKOMaxHP
+    jr c, .discourage
 
 .continue
 ; don't use when above 50% hp
@@ -2079,10 +2052,10 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; massive encourage if below half health and player is attacking
+; massive encourage if player can KO and player is attacking
 ; this needs to overcome encouragement from other moves which do more damage and can KO
-	call AICheckEnemyHalfHP
-	jr c, .continue
+	call CanPlayerKO
+	jr nc, .continue
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr z, .continue
@@ -2254,50 +2227,9 @@ AI_Smart_Curse:
 	jr nc, .discourage
 
 .continue
-; don't use if we are at risk of being KOd by boosted player, just attack them
-; physical
-    call AICompareSpeed
-    jr nc, .slower
-; does player have boosted attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .special
-	jr .checkDef
-.slower
-; does player have boosted attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .special
-.checkDef
-; does enemy have non-boosted defense
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .special
-    jr .dontBoost
-.special
-; does player have boosted special attack
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .continue2
-; does enemy have non-boosted special defense
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .continue2
-.dontBoost
-; is player SLP or FRZ
-	ld a, [wBattleMonStatus]
-	and SLP
-	jr nz, .continue2
-	;bit FRZ, a
-	;jr nz, .continue2
-; is the player behind a sub
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .discourage
-; is player attacking
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .discourage
+; don't use if we are at risk of being KOd, just attack them
+    call ShouldAIBoost
+    jr nc, .discourage
 
 .continue2
 ; encourage to +1, strongly encourage if player has boosted Atk
@@ -3279,48 +3211,8 @@ AI_Smart_CalmMind:
     ld a, [wEnemyMonSpecies]
     cp LUGIA
     jr z, .continue2
-; does player have boosted attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr c, .special
-; does enemy have non-boosted defense
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .special
-    jr .dontBoost
-.special
-    call AICompareSpeed
-    jr nc, .slower
-; does player have boosted special attack and enemy faster
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .continue2
-	jr .checkSDef
-.slower
-; does player have boosted special attack and enemy slower
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .continue2
-.checkSDef
-; does enemy have non-boosted special defense
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .continue2
-.dontBoost
-; is player SLP or FRZ
-	ld a, [wBattleMonStatus]
-	and SLP
-	jr nz, .continue2
-	;bit FRZ, a
-	;jr nz, .continue2
-; is the player behind a sub
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .discourage
-; is player attacking
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .discourage
+    call ShouldAIBoost
+    jr nc, .discourage
 
 .continue2
 ; encourage to +1, strongly encourage if player has boosted SpAtk
@@ -3372,42 +3264,6 @@ AI_Smart_CalmMind:
 	inc [hl]
 	ret
 
-;CanPlayerKO:
-;    ld de, wEnemyMonMoves
-;	ld b, NUM_MOVES + 1
-;.checkmove
-;	dec b ; b is num moves on 1st pass
-;	ret z ; if b os 0 return we are done
-;	ld a, [de] ; load the move struct
-;	and a
-;	ret z ; return if no move
-;	inc de ; increment to next move
-;	call AIGetEnemyMove
-;	ld a, [wPlayerMoveStruct + MOVE_POWER]
-;	and a
-;	jr z, .checkmove
-;   ld a, 0
-;	ldh [hBattleTurn], a
-;	push hl
-;	push de
-;	push bc
-;	callfar PlayerAttackDamage
-;	callfar BattleCommand_DamageCalc
-;	callfar BattleCommand_Stab
-;	ld a, [wCurDamage + 1]
-;	ld c, a ; c is curDamage upper
-;	ld a, [wCurDamage]
-;	ld b, a ; b is curDamage lower
-;	ld a, [wEnemyMonHP + 1]
-;	cp c ; compare upper
-;	ld a, [wEnemyMonHP]
-;	sbc b ; compare lower and set flag
-;	pop bc
-;	pop de
-;	pop hl
-;   jp nc, .checkmove
-;   ret
-
 AI_Smart_DragonDance:
 AI_Smart_SwordsDance:
 ; don't go past +4
@@ -3416,52 +3272,14 @@ AI_Smart_SwordsDance:
 	jr nc, .discourage
 
 ; don't use if we are at risk of being KOd by boosted player, just attack them
-; physical
-; does player have boosted  attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .special
-; does enemy have non-boosted defense
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .special
-    jr .dontBoost
-.special
-; does player have boosted special attack
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .continue
-; does enemy have non-boosted special defense
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .continue
-.dontBoost
-; is player SLP or FRZ
-	ld a, [wBattleMonStatus]
-	and SLP
-	jr nz, .continue
-	;bit FRZ, a
-	;jr nz, .continue
-; is player attacking
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .discourage
-; is the player behind a sub
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .discourage
-; if already at +2, 80% chance to discourage
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage80
+    call ShouldAIBoost
+    jr nc, .discourage
 
 .continue
 ; if already at +2 and player is faster, 80% chance to discourage, unless Arceus
     ld a, [wEnemyMonSpecies]
     cp ARCEUS
     jr z, .continue2
-    call AICompareSpeed
-    jr c, .continue2
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .discourage80
@@ -3574,15 +3392,18 @@ AI_Smart_Barrier:
 
 AI_Smart_Geomancy:
 AI_Smart_NastyPlot:
-; don't go past +4
+; don't go past +3
     ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
+	cp BASE_STAT_LEVEL + 3
 	jp nc, .discourage
 
 ; deoxys should always boost once and no more, unless player has sub
     ld a, [wEnemyMonSpecies]
     cp DEOXYS
     jr nz, .notDeoxys
+; is player faster, discourage if so
+    call AICompareSpeed
+    jr nc, .discourage
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
@@ -3594,50 +3415,12 @@ AI_Smart_NastyPlot:
     jr .discourage
 
 .notDeoxys
-; don't use if we are at risk of being KOd by boosted player, just attack them
-; physical
-; does player have boosted attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .special
-; does enemy have non-boosted defense
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .special
-    jr .dontBoost
-.special
-; does player have boosted special attack
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .continue
-; does enemy have non-boosted special defense
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .continue
-.dontBoost
-; is player SLP or FRZ
-	ld a, [wBattleMonStatus]
-	and SLP
-	jr nz, .continue
-	;bit FRZ, a
-	;jr nz, .continue
-; is the player behind a sub
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .discourage
-; is player attacking
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .discourage
-; if already at +2, 80% chance to discourage
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage80
+; don't use if we are at risk of being KOd, just attack them
+    call ShouldAIBoost
+    jr nc, .discourage
 
 .continue
-; if already at +2 and player is faster, 80% chance to discourage
-    call AICompareSpeed
-    jr c, .continue2
+; if already at +2 80% chance to discourage
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .discourage80
@@ -3730,6 +3513,170 @@ AI_Smart_ShellSmash:
 	inc [hl]
 	inc [hl]
 	ret
+
+; AndrewNote - functions which check if the player can KO the AI
+
+; decide if AI should use boosting moves
+; don't boost if player will just KO anyway
+ShouldAIBoost:
+    call AICompareSpeed
+    jr nc, .playerMovesFirst
+
+    call CanPlayer2HKO
+    jr c, .decideNotToBoost
+    jr .boost
+.playerMovesFirst
+    call CanPlayerKO
+    jr c, .decideNotToBoost
+    jr .boost
+
+.decideNotToBoost
+; is player SLP or FRZ, if so we can boost
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr nz, .boost
+; is the player behind a sub, if so don't boost, just attack
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .dontBoost
+; is player attacking
+	;ld a, [wPlayerMoveStruct + MOVE_POWER]
+	;and a
+	jr .dontBoost
+
+.boost
+    scf
+    ret
+.dontBoost
+    xor a ; clear carry flag
+    ret
+
+; check all player moves to see if any of them can 1HKO the AI Pokemon from current HP
+; used to decide if the AI should use setup moves
+CanPlayerKO:
+    ld de, wBattleMonMoves ; load player moves
+	ld b, NUM_MOVES + 1
+.checkmove
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr z, .checkmove ; skip moves with 0 power
+    ld a, 0
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar PlayerAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wEnemyMonHP + 1]
+	cp c ; compare upper
+	ld a, [wEnemyMonHP]
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .checkmove
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; check all player moves to see if any of them can 2HKO the AI Pokemon from current HP
+; used to decide if the AI should use setup moves
+CanPlayer2HKO:
+    ld de, wBattleMonMoves ; load player moves
+	ld b, NUM_MOVES + 1
+.checkmove
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr z, .checkmove ; skip moves with 0 power
+    ld a, 0
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar PlayerAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wEnemyMonHP + 1]
+	srl a
+	cp c ; compare upper
+	ld a, [wEnemyMonHP]
+	srl a
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .checkmove
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; check all player moves to see if any of them can 2HKO the AI Pokemon from Max HP
+; used to decide if the AI should use recovery moves
+CanPlayer2HKOMaxHP:
+    ld de, wBattleMonMoves ; load player moves
+	ld b, NUM_MOVES + 1
+.checkmove
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr z, .checkmove ; skip moves with 0 power
+    ld a, 0
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar PlayerAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wEnemyMonMaxHP + 1]
+	srl a
+	cp c ; compare upper
+	ld a, [wEnemyMonMaxHP]
+	srl a
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .checkmove
+    ret
+.done
+    xor a ; clear carry flag
+    ret
 
 AICompareSpeed:
 ; Return carry if enemy is faster than player.
@@ -4320,6 +4267,26 @@ AIGetEnemyMove:
 	call AddNTimes
 
 	ld de, wEnemyMoveStruct
+	ld a, BANK(Moves)
+	call FarCopyBytes
+
+	pop bc
+	pop de
+	pop hl
+	ret
+
+AIGetPlayerMove:
+; Load attributes of move a into ram
+
+	push hl
+	push de
+	push bc
+	dec a
+	ld hl, Moves
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+
+	ld de, wPlayerMoveStruct
 	ld a, BANK(Moves)
 	call FarCopyBytes
 

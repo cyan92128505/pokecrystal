@@ -2443,19 +2443,17 @@ MismagiusEvosAttacks:
 	db 1, ICY_WIND
 	db 0 ; no more level-up moves
 
-AzumarillEvosAttacks:
+PorygonzEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, CONVERSION2
 	db 1, TACKLE
-	db 1, DEFENSE_CURL
-	db 1, TAIL_WHIP
-	db 1, WATER_GUN
-	db 3, DEFENSE_CURL
-	db 6, TAIL_WHIP
-	db 10, WATER_GUN
-	db 15, ROLLOUT
-	db 25, BUBBLEBEAM
-	db 36, DOUBLE_EDGE
-	db 48, RAIN_DANCE
+	db 9, AGILITY
+	db 12, PSYBEAM
+	db 20, RECOVER
+	db 24, DEFENSE_CURL
+	db 32, LOCK_ON
+	db 36, TRI_ATTACK
+	db 44, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 GenesectEvosAttacks:
@@ -3051,6 +3049,7 @@ DonphanEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
+    db EVOLVE_LEVEL, 40, PORYGONZ
 	db 0 ; no more evolutions
 	db 1, CONVERSION2
 	db 1, TACKLE

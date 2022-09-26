@@ -184,7 +184,7 @@ PokedexDataPointerTable:
 	dw AmpharosPokedexEntry
 	dw BellossomPokedexEntry
 	dw MismagiusPokedexEntry
-	dw AzumarillPokedexEntry
+	dw PorygonzPokedexEntry
 	dw GenesectPokedexEntry
 	dw PolitoedPokedexEntry
 	dw TimburrPokedexEntry

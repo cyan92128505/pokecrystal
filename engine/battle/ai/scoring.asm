@@ -3663,6 +3663,7 @@ AI_Smart_ShellSmash:
 
 ; decide if AI should use boosting moves
 ; don't boost if player will just KO anyway
+; returns carry if the AI can boost
 ShouldAIBoost:
 ; who moves first
     call AICompareSpeed
@@ -3733,7 +3734,7 @@ ShouldAIBoost:
     xor a ; clear carry flag
     ret
 
-; check all player moves to see if any of them can 1HKO the AI Pokemon from current HP
+; return carry if the player has a move that can 1HKO the AI Pokemon from current HP
 ; used to decide if the AI should use setup moves
 CanPlayerKO:
     ld de, wBattleMonMoves ; load player moves
@@ -3769,9 +3770,15 @@ CanPlayerKO:
 	pop de
 	pop hl
     jp nc, .checkmove
-; skip selfdestruct and explosion
+; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+	cp EFFECT_HYPER_BEAM
+	jr z, .checkmove
+	cp EFFECT_SKY_ATTACK
+	jr z, .checkmove
+	cp EFFECT_SOLARBEAM
 	jr z, .checkmove
     scf
     ret
@@ -3779,7 +3786,7 @@ CanPlayerKO:
     xor a ; clear carry flag
     ret
 
-; check all player moves to see if any of them can 2HKO the AI Pokemon from current HP
+; return carry if the player has a move that can 2HKO the AI Pokemon from current HP
 ; used to decide if the AI should use setup moves
 CanPlayer2HKO:
     ld de, wBattleMonMoves ; load player moves
@@ -3826,9 +3833,15 @@ CanPlayer2HKO:
 	pop de
 	pop hl
     jp nc, .checkmove
-; skip selfdestruct and explosion
+; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+	cp EFFECT_HYPER_BEAM
+	jr z, .checkmove
+	cp EFFECT_SKY_ATTACK
+	jr z, .checkmove
+	cp EFFECT_SOLARBEAM
 	jr z, .checkmove
 	scf
     ret
@@ -3836,7 +3849,7 @@ CanPlayer2HKO:
     xor a ; clear carry flag
     ret
 
-; check all player moves to see if any of them can 2HKO the AI Pokemon from Max HP
+; return carry if the player has a move that can 2HKO the AI Pokemon from Max HP
 ; used to decide if the AI should use recovery moves
 CanPlayer2HKOMaxHP:
     ld de, wBattleMonMoves ; load player moves
@@ -3883,9 +3896,15 @@ CanPlayer2HKOMaxHP:
 	pop de
 	pop hl
     jp nc, .checkmove
-; skip selfdestruct and explosion
+; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-    cp EFFECT_SELFDESTRUCT
+	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+	cp EFFECT_HYPER_BEAM
+	jr z, .checkmove
+	cp EFFECT_SKY_ATTACK
+	jr z, .checkmove
+	cp EFFECT_SOLARBEAM
 	jr z, .checkmove
     scf
     ret
@@ -3893,7 +3912,7 @@ CanPlayer2HKOMaxHP:
     xor a ; clear carry flag
     ret
 
-; check all player moves to see if any of them can 3HKO the AI Pokemon from Max HP
+; return carry if the player has a move that can 3HKO the AI Pokemon from Max HP
 ; used to decide if the AI should use rest
 CanPlayer3HKOMaxHP:
     ld de, wBattleMonMoves ; load player moves
@@ -3943,9 +3962,15 @@ CanPlayer3HKOMaxHP:
 	pop de
 	pop hl
     jp nc, .checkmove
-; skip selfdestruct and explosion
+; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+	cp EFFECT_HYPER_BEAM
+	jr z, .checkmove
+	cp EFFECT_SKY_ATTACK
+	jr z, .checkmove
+	cp EFFECT_SOLARBEAM
 	jr z, .checkmove
 	scf
     ret

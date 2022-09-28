@@ -44,6 +44,7 @@ DontSwitch:
 	call AI_TryItem
 	ret
 
+; AndrewNote - this switches with probabilities - 50%, 80%, 96% depending on switch score
 SwitchOften:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
@@ -79,6 +80,7 @@ SwitchOften:
 	ld [wEnemySwitchMonIndex], a
 	jp AI_TrySwitch
 
+; AndrewNote - this switches with probabilities - 8%, 12%, 80% depending on switch score
 SwitchRarely:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
@@ -113,6 +115,7 @@ SwitchRarely:
 	ld [wEnemySwitchMonIndex], a
 	jp AI_TrySwitch
 
+; AndrewNote - this switches with probabilities - 20%, 50%, 80% depending on switch score
 SwitchSometimes:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]

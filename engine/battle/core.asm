@@ -3490,11 +3490,6 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	ld a, [hl]
 	dec a ; wtf is all this
 
-; AndrewNote - try to not switch in something that will just die
-; don't think this works but would be nice
-;	callfar CanPlayerKO
-;	jr c, .super_effective
-
 	ld hl, BaseData + BASE_TYPES
 	ld bc, BASE_DATA_SIZE
 	call AddNTimes

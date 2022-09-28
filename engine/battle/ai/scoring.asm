@@ -35,6 +35,18 @@ AI_LevitatePokemon:
     db UNOWN
     db $FF
 
+AI_SturdyPokemon:
+    db SKARMORY
+    db GEODUDE
+    db GRAVELER
+    db GOLEM
+    db MAGNEMITE
+    db MAGNETON
+    db ONIX
+    db STEELIX
+    db BLASTOISE
+    db $FF
+
 AI_Basic:
 ; Don't do anything redundant:
 ;  -Using status-only moves if the player can't be statused
@@ -1297,69 +1309,60 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
-; don't heal if player can 2 shot from max hp, no point
-    call CanPlayer2HKOMaxHP
-    jr c, .discourage
-
-; check if the move is Rest
+; check if the move is Rest, it must be handled differently
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp REST
 	jr nz, .nonRestHeal
 
 ; if it is Rest check if the enemy is afflicted with toxic
+; if so cancel any switching and heal below 1/2 hp
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr z, .restHeal
-
-; if enemy knows Rest and is afflicted with toxic cancel any switching and heal below 1/2 HP
     ld a, $0
     ld [wEnemyIsSwitching], a
     jr .nonRestHeal
 
-; for rest don't heal if player can 3hko from max hp, unless AI also knows sleep talk
-; heal below 1/4 HP if faster than player, discourage otherwise
-; if slower than player 50% chance to heal below 1/2 HP and guaranteed below 1/4 HP
 .restHeal
+; for rest don't heal if player can 3hko from max hp, unless AI also knows sleep talk
 	ld b, EFFECT_SLEEP_TALK
 	call AIHasMoveEffect
-	jr c, .hasSleepTalk
+	jr c, .heal
     call CanPlayer3HKOMaxHP
     jr c, .discourage
-.hasSleepTalk
 
-    call AICheckEnemyQuarterHP
-    jr c, .encourage
-	call AICompareSpeed
-	jr nc, .discourage
- 	call AI_50_50
- 	ret c
-
-; otherwise encourage heal when under 1/2 hp
 .nonRestHeal
-; don't use when at max hp
-	call AICheckEnemyMaxHP
-	jr c, .discourage
+; don't heal if player can 2 shot from max hp, no point
+    call CanPlayer2HKOMaxHP
+    jr c, .discourage
 
-; use if we can avoid a ko, unless we are mewtwo, he must focus on set up
+.heal
+; Arceus and Mewtwo are fast and bulky enough to focus on set up and only heal below half
     ld a, [wEnemyMonSpecies]
     cp MEWTWO
-    jr z, .skip
+    jr z, .healBelowHalf
+    cp ARCEUS
+    jr z, .healBelowHalf
 
+; if faster than the player, heal if the player can 1hko
     call AICompareSpeed
     jr nc, .playerMovesFirst
     call CanPlayerKO
     jr c, .encourage
+    jr .discourage
+
+; if slower than the player, heal if player can 2hko
 .playerMovesFirst
     call CanPlayer2HKO
     jr c, .encourage
-.skip
+    jr .discourage
 
-; don't use when above 50% hp
-	call AICheckEnemyHalfHP
-	jr c, .discourage
+.healBelowHalf
+    call AICheckEnemyHalfHP
+    jr c, .discourage
+    ; fallthrough
 
-; fall through
 .encourage
 	dec [hl]
 	dec [hl]
@@ -2411,20 +2414,20 @@ AI_Smart_PerishSong:
 	push hl
 	callfar FindAliveEnemyMons
 	pop hl
-	jr c, .no
+	jr c, .no ; if this is the last enemy mon dont use
 
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
-	jr nz, .yes
+	jr nz, .yes ; if player is trapped then 50% chance to encourage
 
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
-	cp BASE_AI_SWITCH_SCORE
+	cp BASE_AI_SWITCH_SCORE ; scores >= base NVE or neutral
 	pop hl
-	ret c
+	ret c ; don't do anything if the player has no shown any SE moves
 
-	call AI_50_50
+	call AI_50_50 ; otherwise 50% chance to discourage
 	ret c
 
 	inc [hl]
@@ -3113,9 +3116,9 @@ AI_Smart_Thunder:
 	ret
 
 AI_Smart_HolyArmour:
-; don't go past +3
+; don't go past +4
     ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
 ; strongly encourage to +2
@@ -3134,9 +3137,9 @@ AI_Smart_HolyArmour:
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .strongEncourage
 
-; otherwise encourage to +3
+; otherwise encourage to +4
     ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 4
 	jr c, .encourage
 
 .strongEncourage
@@ -3176,7 +3179,6 @@ AI_Smart_Serenity:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
     ret
 
 .strongEncourage
@@ -3204,6 +3206,9 @@ AI_Smart_QuiverDance:
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; only care about being OHKOd as qd increases speed
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .continue
+
     call CanPlayerKO
     jr c, .discourage
 
@@ -3235,12 +3240,6 @@ AI_Smart_QuiverDance:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
-; discourage after +1 if player has boosted attack
-;    ld a, [wPlayerAtkLevel]
-;	cp BASE_STAT_LEVEL + 1
-;	jr nc, .discourage
-
     ret
 
 .strongEncourage
@@ -3265,16 +3264,11 @@ AI_Smart_CalmMind:
 	cp BASE_STAT_LEVEL + 4
 	jp nc, .discourage
 
+; don't use if we are at risk of being KOd, just attack them
 .continue
-; don't use if we are at risk of being KOd by boosted player, just attack them
-; unless using lugia, who is bulky and has multi scale so doesn't care
-;    ld a, [wEnemyMonSpecies]
-;    cp LUGIA
-;    jr z, .continue2
     call ShouldAIBoost
     jr nc, .discourage
 
-;.continue2
 ; encourage to +2, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
@@ -3303,12 +3297,6 @@ AI_Smart_CalmMind:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
-; discourage after +1 if player has boosted attack
-;    ld a, [wPlayerAtkLevel]
-;	cp BASE_STAT_LEVEL + 1
-;	jr nc, .discourage
-
     ret
 
 .strongEncourage
@@ -3332,8 +3320,59 @@ AI_Smart_DragonDance:
 
 ; don't use if we are at risk of being KOd, just attack them
 ; only care about being OHKOd as dd increases speed
+; unless we have an intact sash or sturdy, then can boost
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .continue
+
     call CanPlayerKO
     jr c, .discourage
+
+.continue
+; encourage to get to +2
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .encourage
+
+; discourage after +1 if afflicted with toxic
+; Pokemon who are immune to residual damage (magic guard) should not be considered
+    ld a, [wEnemyMonSpecies]
+    push hl
+    push de
+	push bc
+	ld hl, AI_MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret nc
+
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+    ret
+
+.encourage
+	dec [hl]
+	dec [hl]
+	ret
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_SwordsDance:
+; don't go past +4
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; don't use if we are at risk of being KOd, just attack them
+    call ShouldAIBoost
+    jr nc, .discourage
 
 ; encourage to get to +2
 	ld a, [wEnemyAtkLevel]
@@ -3358,74 +3397,12 @@ AI_Smart_DragonDance:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
     ret
 
 .encourage
 	dec [hl]
 	dec [hl]
 	ret
-.discourage80
-    call AI_80_20
-    ret c
-.discourage
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
-
-AI_Smart_SwordsDance:
-; don't go past +4
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
-
-; don't use if we are at risk of being KOd, just attack them
-    call ShouldAIBoost
-    jr nc, .discourage
-
-; if already at +2, 80% chance to discourage, unless Arceus
-;    ld a, [wEnemyMonSpecies]
-;    cp ARCEUS
-;    jr z, .continue2
-;    ld a, [wEnemyAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jr nc, .discourage80
-
-; encourage to get to +1
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr c, .encourage
-
-; discourage after +1 if afflicted with toxic
-; Pokemon who are immune to residual damage (magic guard) should not be considered
-    ld a, [wEnemyMonSpecies]
-    push hl
-    push de
-	push bc
-	ld hl, AI_MagicGuardPokemon
-	ld de, 1
-	call IsInArray
-	pop bc
-	pop de
-	pop hl
-	ret nc
-
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
-	bit SUBSTATUS_TOXIC, a
-    jr nz, .discourage
-
-    ret
-
-.encourage
-	dec [hl]
-	dec [hl]
-	ret
-.discourage80
-    call AI_80_20
-    ret c
 .discourage
 	inc [hl]
 	inc [hl]
@@ -3505,13 +3482,9 @@ AI_Smart_Geomancy:
 	jp nc, .discourage
 
 ; don't use if we are at risk of being KOd, just attack them
+; as a two turn move we care about being 2HKOd
     call CanPlayer2HKO
     jr c, .discourage
-
-; if already at +2 80% chance to discourage
-;    ld a, [wEnemyAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jr nc, .discourage80
 
 ; encourage to get to +2
     ld a, [wEnemySAtkLevel]
@@ -3523,15 +3496,12 @@ AI_Smart_Geomancy:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
     ret
+
 .encourage
     dec [hl]
 	dec [hl]
 	ret
-.discourage80
-    call AI_80_20
-    ret c
 .discourage
     inc [hl]
 	inc [hl]
@@ -3545,32 +3515,9 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 4
 	jp nc, .discourage
 
-; deoxys should always boost once and no more, unless player has sub
-    ld a, [wEnemyMonSpecies]
-    cp DEOXYS
-    jr nz, .notDeoxys
-; is player faster, discourage if so
-    call AICompareSpeed
-    jr nc, .discourage
-; is the player behind a sub
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .discourage
-; encourage to get to +2 and discourage thereafter
-    ld a, [wEnemySAtkLevel]
-    cp BASE_STAT_LEVEL + 2
-    jr c, .encourage
-    jr .discourage
-
-.notDeoxys
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jr nc, .discourage
-
-; if already at +2 80% chance to discourage
-;    ld a, [wEnemyAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jr nc, .discourage80
 
 ; encourage to get to +2
     ld a, [wEnemySAtkLevel]
@@ -3578,12 +3525,25 @@ AI_Smart_NastyPlot:
 	jr c, .encourage
 
 ; discourage after +2 if afflicted with toxic
+; Pokemon who are immune to residual damage (magic guard) should not be considered
+    ld a, [wEnemyMonSpecies]
+    push hl
+    push de
+	push bc
+	ld hl, AI_MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret nc
+
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
     ret
+
 .encourage
     dec [hl]
 	dec [hl]
@@ -3639,8 +3599,8 @@ AI_Smart_ShellSmash:
 ; discourage after +2 if not at max hp
     call AICheckEnemyMaxHP
     jr nc, .discourage
-
     ret
+
 .encourage
 ; this needs to be enough to overcome encouragement from having a move that can KO
     dec [hl]
@@ -3671,37 +3631,9 @@ ShouldAIBoost:
 
 ; if AI moves first consider if player can 1HKO
 ; first if the AI has an intact focus sash or sturdy it can boost, unless player has priority move
-; does player have priority move
-	ld b, EFFECT_PRIORITY_HIT
-	call PlayerHasMoveEffect
-	jr c, .skipFocusSash
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .boost
 
-; Is the AI at full HP
-    call AICheckEnemyMaxHP
-    jr nz, .skipFocusSash
-
-; focus sash
-	push hl
-	push de
-	ld a, [wEnemyMonItem]
-	ld [wNamedObjectIndex], a
-	ld b, a
-	callfar GetItemHeldEffect
-	ld a, b
-	cp HELD_FOCUS_BAND
-	pop de
-	pop hl
-	jr z, .boost
-
-; sturdy
-    push bc
-	ld hl, SturdyPokemon
-	ld de, 1
-	call IsInArray
-	pop bc
-	jr c, .boost
-
-.skipFocusSash
     call CanPlayerKO
     jr c, .decideNotToBoost
     jr .boost
@@ -3718,9 +3650,9 @@ ShouldAIBoost:
 	and SLP
 	jr nz, .boost
 ; is the player behind a sub, if so don't boost, just attack
-    ;ld a, [wPlayerSubStatus4]
-	;bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	;jr nz, .dontBoost
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .dontBoost
 ; is player attacking, if not we can boost
 	;ld a, [wPlayerMoveStruct + MOVE_POWER]
     ;and a
@@ -3733,6 +3665,49 @@ ShouldAIBoost:
 .dontBoost
     xor a ; clear carry flag
     ret
+
+DoesEnemyHaveIntactFocusSashOrSturdy:
+; does player have priority move
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr c, .no
+
+; Is the AI at full HP
+    call AICheckEnemyMaxHP
+    jr nz, .no
+
+; focus sash
+	push hl
+	push de
+	ld a, [wEnemyMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_FOCUS_BAND
+	pop de
+	pop hl
+	jr z, .yes
+
+; sturdy
+    push bc
+    push hl
+    push de
+	ld hl, AI_SturdyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	jr c, .yes
+
+.no
+    xor a ; clear carry flag
+    ret
+.yes
+    scf
+    ret
+
 
 ; return carry if the player has a move that can 1HKO the AI Pokemon from current HP
 ; used to decide if the AI should use setup moves
@@ -3770,11 +3745,9 @@ CanPlayerKO:
 	pop de
 	pop hl
     jp nc, .checkmove
-; skip moves that can't be used on consecutive turns
+; skip moves that can't be used on consecutive turns, except hyper beam
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .checkmove
-	cp EFFECT_HYPER_BEAM
 	jr z, .checkmove
 	cp EFFECT_SKY_ATTACK
 	jr z, .checkmove
@@ -4212,14 +4185,15 @@ AIHasMoveInArray:
 
 INCLUDE "data/battle/ai/useful_moves.asm"
 
-AI_Opportunist:
-; Discourage stall moves if enemy's HP is below 1/2.
-    call AICheckEnemyHalfHP
-	jr nc, .lowhp
+; AndrewNote - this used to be AI_Opportunist
+; this used to discourage 0 power moves if the player is below 1/4 hp
+; that is no longer needed as AI_Basic now encourages any attack once it can KO the player
+; this no discourages most 0 power moves if the player can KO the AI
+AI_Final_Attack:
+; Discourage stall moves if the player can KO us
+    call ShouldAIBoost
+    ret nc
 
-	ret
-
-.lowhp
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1

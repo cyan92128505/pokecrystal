@@ -3432,8 +3432,8 @@ FindMonInOTPartyToSwitchIntoBattle:
 	;pop bc
 	;jr c, .discourage
 
-	call LookUpTheEffectivenessOfEveryMove ; consider how good enemy mon is against player mon
-	call IsThePlayerMonTypesEffectiveAgainstOTMon ; consider how good player mon is against enemy mon
+	call LookUpTheEffectivenessOfEveryMove ; find which enemy mons have SE moves against player
+	call IsThePlayerMonTypesEffectiveAgainstOTMon ; are player types SE against enemy
 	jr .loop
 .discourage
 	ld hl, wPlayerEffectivenessVsEnemyMons
@@ -3481,14 +3481,20 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 ; Calculates the effectiveness of the types of the PlayerMon
 ; against the OTMon
 	push bc
-	ld hl, wOTPartyCount
+	ld hl, wOTPartyCount ; how many enemy mon are there
 	ld a, b
 	inc a
 	ld c, a
-	ld b, 0
+	ld b, 0 ; bc is now 0a?
 	add hl, bc
 	ld a, [hl]
-	dec a
+	dec a ; wtf is all this
+
+; AndrewNote - try to not switch in something that will just die
+; don't think this works but would be nice
+;	callfar CanPlayerKO
+;	jr c, .super_effective
+
 	ld hl, BaseData + BASE_TYPES
 	ld bc, BASE_DATA_SIZE
 	call AddNTimes
@@ -3496,6 +3502,29 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	ld bc, BASE_CATCH_RATE - BASE_TYPES
 	ld a, BANK(BaseData)
 	call FarCopyBytes
+
+;   ld hl, wBattleMonMoves ; load player moves
+;	ld b, NUM_MOVES + 1
+;.checkmove
+;	dec b ; b is num moves on 1st pass
+;	jr z, .done ; if b is 0 return we are done
+;	ld a, [hl] ; load the move
+;	and a
+;	jr z, .done ; return if no move
+;	inc hl ; increment to next move
+;	callfar AIGetPlayerMove
+;	ld a, [wPlayerMoveStruct + MOVE_POWER]
+;	and a
+;	jr z, .checkmove ; skip moves with 0 power
+;   ld [wPlayerMoveStruct + MOVE_TYPE], a
+;	call SetPlayerTurn
+;	callfar BattleCheckTypeMatchup
+;	ld a, [wTypeMatchup]
+;	cp EFFECTIVE + 1
+;	jr nc, .super_effective
+;	jr .checkmove
+;   jr .done
+
 	ld a, [wBattleMonType1]
 	ld [wPlayerMoveStruct + MOVE_TYPE], a
 	call SetPlayerTurn
@@ -3503,6 +3532,7 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, .super_effective
+
 	ld a, [wBattleMonType2]
 	ld [wPlayerMoveStruct + MOVE_TYPE], a
 	callfar BattleCheckTypeMatchup
@@ -3520,10 +3550,12 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	inc hl ; wPlayerEffectivenessVsEnemyMons
 	set 0, [hl]
 	ret
-
 .reset
 	res 0, [hl]
 	ret
+;.done
+;    pop bc
+;    ret
 
 ScoreMonTypeMatchups:
 .loop1

@@ -1658,7 +1658,7 @@ BattleCommand_CheckHit:
 	cp EFFECT_JUDGEMENT
 	ret z
 
-; AndrewNote make dynamic punch always hit for Machamp
+; AndrewNote - make dynamic punch always hit for Machamp
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp DYNAMICPUNCH

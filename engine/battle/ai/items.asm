@@ -708,7 +708,7 @@ AI_Switch:
 	farcall EnemySwitch
 	farcall ResetBattleParticipants
 
-; AndrewNote switch in effects for ai switching
+; AndrewNote - switch in effects for ai switching
 	ld a, [wLinkMode]
 	and a
 	jr nz, .linked

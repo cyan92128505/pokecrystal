@@ -184,6 +184,20 @@ AI_Basic:
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
+BoostingMoveEffects:
+	db EFFECT_ATTACK_UP_2
+	db EFFECT_SP_ATK_UP
+	db EFFECT_SP_ATK_UP_2
+	db EFFECT_SUBSTITUTE
+	db EFFECT_CURSE
+	db EFFECT_SERENITY
+	db EFFECT_GEOMANCY
+	db EFFECT_CALM_MIND
+	db EFFECT_DRAGON_DANCE
+	db EFFECT_QUIVER_DANCE
+	db EFFECT_SHELL_SMASH
+	db -1
+
 AI_Smart_Switch:
 ; Enemies can switch intelligently under certain conditions
 ; switch if unboosted enemy is SLP or FRZ and player sets up
@@ -273,26 +287,16 @@ AI_Smart_Switch:
 
 ; switch if player attempts to set up
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-	cp EFFECT_ATTACK_UP_2
-	jr z, .switch
-	cp EFFECT_SP_ATK_UP
-	jr z, .switch
-	cp EFFECT_SP_ATK_UP_2
-	jr z, .switch
-	cp EFFECT_SUBSTITUTE
-	jr z, .switch
-	cp EFFECT_CURSE
-	jr z, .switch
-	cp EFFECT_SERENITY
-	jr z, .switch
-	cp EFFECT_GEOMANCY
-	jr z, .switch
-	cp EFFECT_CALM_MIND
-	jr z, .switch
-	cp EFFECT_DRAGON_DANCE
-	jr z, .switch
-	cp EFFECT_QUIVER_DANCE
-	jr z, .switch
+    push hl
+    push de
+	push bc
+	ld hl, BoostingMoveEffects
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .switch
 	ret
 
 .checkSetUpAndSwitch50
@@ -319,199 +323,170 @@ AI_Smart_Switch:
     ld [wEnemyIsSwitching], a
 	ret
 
+; AndrewNote - this is commented out because this is stupid and will not be used
 AI_Setup:
+    ret
 ; Use stat-modifying moves on turn 1.
-
 ; 50% chance to greatly encourage stat-up moves during the first turn of enemy's Pokemon.
 ; 50% chance to greatly encourage stat-down moves during the first turn of player's Pokemon.
 ; Almost 90% chance to greatly discourage stat-modifying moves otherwise.
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-.checkmove
-	dec b
-	ret z
-
-	inc hl
-	ld a, [de]
-	and a
-	ret z
-
-	inc de
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-
-	cp EFFECT_ATTACK_UP
-	jr c, .checkmove
-	cp EFFECT_EVASION_UP + 1
-	jr c, .statup
-
+;	ld hl, wEnemyAIMoveScores - 1
+;	ld de, wEnemyMonMoves
+;	ld b, NUM_MOVES + 1
+;.checkmove
+;	dec b
+;	ret z
+;	inc hl
+;	ld a, [de]
+;	and a
+;	ret z
+;	inc de
+;	call AIGetEnemyMove
+;	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+;	cp EFFECT_ATTACK_UP
+;	jr c, .checkmove
+;	cp EFFECT_EVASION_UP + 1
+;	jr c, .statup
 ;	cp EFFECT_ATTACK_DOWN - 1
 ;	jr z, .checkmove
 ;	cp EFFECT_EVASION_DOWN + 1
 ;	jr c, .statdown
-
-	cp EFFECT_ATTACK_UP_2
-	jr c, .checkmove
-	cp EFFECT_EVASION_UP_2 + 1
-	jr c, .statup
-
+;	cp EFFECT_ATTACK_UP_2
+;	jr c, .checkmove
+;	cp EFFECT_EVASION_UP_2 + 1
+;	jr c, .statup
 ;	cp EFFECT_ATTACK_DOWN_2 - 1
 ;	jr z, .checkmove
 ;	cp EFFECT_EVASION_DOWN_2 + 1
 ;	jr c, .statdown
+;	jr .checkmove
+;.statup
+;	ld a, [wEnemyTurnsTaken]
+;	and a
+;	jr nz, .discourage
+;	jr .encourage
+;.statdown
+;	ld a, [wPlayerTurnsTaken]
+;	and a
+;	jr nz, .discourage
+;.encourage
+;	call AI_50_50
+;	jr c, .checkmove
+;	dec [hl]
+;	dec [hl]
+;	jr .checkmove
+;.discourage
+;	call Random
+;	cp 12 percent
+;	jr c, .checkmove
+;	inc [hl]
+;	inc [hl]
+;	jr .checkmove
 
-	jr .checkmove
-
-.statup
-	ld a, [wEnemyTurnsTaken]
-	and a
-	jr nz, .discourage
-
-	jr .encourage
-
-.statdown
-	ld a, [wPlayerTurnsTaken]
-	and a
-	jr nz, .discourage
-
-.encourage
-	call AI_50_50
-	jr c, .checkmove
-
-	dec [hl]
-	dec [hl]
-	jr .checkmove
-
-.discourage
-	call Random
-	cp 12 percent
-	jr c, .checkmove
-	inc [hl]
-	inc [hl]
-	jr .checkmove
-
-
+; AndrewNote - this is commented out because this is made redundant by AI_Aggressive
 AI_Types:
+    ret
 ; Dismiss any move that the player is immune to.
 ; Encourage super-effective moves.
 ; Discourage not very effective moves unless
 ; all damaging moves are of the same type.
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-.checkmove
-	dec b
-	ret z
-
-	inc hl
-	ld a, [de]
-	and a
-	ret z
-
-	inc de
-	call AIGetEnemyMove
-
-	push hl
-	push bc
-	push de
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-	pop de
-	pop bc
-	pop hl
-
-	ld a, [wTypeMatchup]
-	and a
-	jr z, .immune
-	cp EFFECTIVE
-	jr z, .checkmove
-	jr c, .noteffective
-
+;	ld hl, wEnemyAIMoveScores - 1
+;	ld de, wEnemyMonMoves
+;	ld b, NUM_MOVES + 1
+;.checkmove
+;	dec b
+;	ret z
+;	inc hl
+;	ld a, [de]
+;	and a
+;	ret z
+;	inc de
+;	call AIGetEnemyMove
+;	push hl
+;	push bc
+;	push de
+;	ld a, 1
+;	ldh [hBattleTurn], a
+;	callfar BattleCheckTypeMatchup
+;	pop de
+;	pop bc
+;	pop hl
+;	ld a, [wTypeMatchup]
+;	and a
+;	jr z, .immune
+;	cp EFFECTIVE
+;	jr z, .checkmove
+;	jr c, .noteffective
 ; effective
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .checkmove
-	dec [hl]
-	jr .checkmove
-
-.noteffective
+;	ld a, [wEnemyMoveStruct + MOVE_POWER]
+;	and a
+;	jr z, .checkmove
+;	dec [hl]
+;	jr .checkmove
+;.noteffective
 ; Discourage this move if there are any moves
 ; that do damage of a different type.
-	push hl
-	push de
-	push bc
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	ld d, a
-	ld hl, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-	ld c, 0
-.checkmove2
-	dec b
-	jr z, .movesdone
+;	push hl
+;	push de
+;	push bc
+;	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+;	and TYPE_MASK
+;	ld d, a
+;	ld hl, wEnemyMonMoves
+;	ld b, NUM_MOVES + 1
+;	ld c, 0
+;.checkmove2
+;	dec b
+;	jr z, .movesdone
+;	ld a, [hli]
+;	and a
+;	jr z, .movesdone
+;	call AIGetEnemyMove
+;	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+;	and TYPE_MASK
+;	cp d
+;	jr z, .checkmove2
+;	ld a, [wEnemyMoveStruct + MOVE_POWER]
+;	and a
+;	jr nz, .damaging
+;	jr .checkmove2
+;.damaging
+;	ld c, a
+;.movesdone
+;	ld a, c
+;	pop bc
+;	pop de
+;	pop hl
+;	and a
+;	jr z, .checkmove
+;	inc [hl]
+;	jr .checkmove
+;.immune
+;	call AIDiscourageMove
+;	jr .checkmove
 
-	ld a, [hli]
-	and a
-	jr z, .movesdone
-
-	call AIGetEnemyMove
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	cp d
-	jr z, .checkmove2
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .damaging
-	jr .checkmove2
-
-.damaging
-	ld c, a
-.movesdone
-	ld a, c
-	pop bc
-	pop de
-	pop hl
-	and a
-	jr z, .checkmove
-	inc [hl]
-	jr .checkmove
-
-.immune
-	call AIDiscourageMove
-	jr .checkmove
-
-
+; AndrewNote - this is commented out because it is stupid and wont be used
 AI_Offensive:
+    ret
 ; Greatly discourage non-damaging moves.
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-.checkmove
-	dec b
-	ret z
-
-	inc hl
-	ld a, [de]
-	and a
-	ret z
-
-	inc de
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr nz, .checkmove
-
-	inc [hl]
-	inc [hl]
-	jr .checkmove
-
+;	ld hl, wEnemyAIMoveScores - 1
+;	ld de, wEnemyMonMoves
+;	ld b, NUM_MOVES + 1
+;.checkmove
+;	dec b
+;	ret z
+;	inc hl
+;	ld a, [de]
+;	and a
+;	ret z
+;	inc de
+;	call AIGetEnemyMove
+;	ld a, [wEnemyMoveStruct + MOVE_POWER]
+;	and a
+;	jr nz, .checkmove
+;	inc [hl]
+;	inc [hl]
+;	jr .checkmove
 
 AI_Smart:
 ; Context-specific scoring.
@@ -1342,9 +1317,17 @@ AI_Smart_Moonlight:
     ld [wEnemyIsSwitching], a
     jr .nonRestHeal
 
-; for rest heal below 1/4 HP if faster than player, discourage otherwise
+; for rest don't heal if player can 3hko from max hp, unless AI also knows sleep talk
+; heal below 1/4 HP if faster than player, discourage otherwise
 ; if slower than player 50% chance to heal below 1/2 HP and guaranteed below 1/4 HP
 .restHeal
+	ld b, EFFECT_SLEEP_TALK
+	call AIHasMoveEffect
+	jr c, .hasSleepTalk
+    call CanPlayer3HKOMaxHP
+    jr c, .discourage
+.hasSleepTalk
+
     call AICheckEnemyQuarterHP
     jr c, .encourage
 	call AICompareSpeed
@@ -1362,6 +1345,7 @@ AI_Smart_Moonlight:
     ld a, [wEnemyMonSpecies]
     cp MEWTWO
     jr z, .skip
+
     call AICompareSpeed
     jr nc, .playerMovesFirst
     call CanPlayerKO
@@ -2245,12 +2229,12 @@ AI_Smart_Curse:
     jr nc, .discourage
 
 .continue2
-; encourage to +1, strongly encourage if player has boosted Atk
+; encourage to +2, strongly encourage if player has boosted Atk
     ld a, [wEnemyAtkLevel]
-    cp BASE_STAT_LEVEL + 1
+    cp BASE_STAT_LEVEL + 2
     jr nc, .checkToxic ;
 	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .greatly_encourage
 	jr .encourage
 
@@ -3209,7 +3193,6 @@ AI_Smart_Serenity:
 	ret
 
 AI_Smart_QuiverDance:
-AI_Smart_CalmMind:
 ; don't go past +4
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 4
@@ -3220,20 +3203,16 @@ AI_Smart_CalmMind:
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
-; unless using lugia, who is bulky and has multi scale so doesn't care
-    ld a, [wEnemyMonSpecies]
-    cp LUGIA
-    jr z, .continue2
-    call ShouldAIBoost
-    jr nc, .discourage
+; only care about being OHKOd as qd increases speed
+    call CanPlayerKO
+    jr c, .discourage
 
-.continue2
-; encourage to +1, strongly encourage if player has boosted SpAtk
+; encourage to +2, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
-    cp BASE_STAT_LEVEL + 1
+    cp BASE_STAT_LEVEL + 2
     jr nc, .checkToxic ;
 	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
 	jr .encourage
 
@@ -3258,9 +3237,77 @@ AI_Smart_CalmMind:
     jr nz, .discourage
 
 ; discourage after +1 if player has boosted attack
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .discourage
+;    ld a, [wPlayerAtkLevel]
+;	cp BASE_STAT_LEVEL + 1
+;	jr nc, .discourage
+
+    ret
+
+.strongEncourage
+    dec [hl]
+.encourage
+    dec [hl]
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_CalmMind:
+; don't go past +4
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .continue
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jp nc, .discourage
+
+.continue
+; don't use if we are at risk of being KOd by boosted player, just attack them
+; unless using lugia, who is bulky and has multi scale so doesn't care
+;    ld a, [wEnemyMonSpecies]
+;    cp LUGIA
+;    jr z, .continue2
+    call ShouldAIBoost
+    jr nc, .discourage
+
+;.continue2
+; encourage to +2, strongly encourage if player has boosted SpAtk
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .checkToxic ;
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .strongEncourage
+	jr .encourage
+
+; discourage after +1 if afflicted with toxic
+.checkToxic
+; Pokemon who are immune to residual damage (magic guard) should not be considered
+    ld a, [wEnemyMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_MagicGuardPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	ret nc
+
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+; discourage after +1 if player has boosted attack
+;    ld a, [wPlayerAtkLevel]
+;	cp BASE_STAT_LEVEL + 1
+;	jr nc, .discourage
 
     ret
 
@@ -3278,6 +3325,56 @@ AI_Smart_CalmMind:
 	ret
 
 AI_Smart_DragonDance:
+; don't go past +4
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; don't use if we are at risk of being KOd, just attack them
+; only care about being OHKOd as dd increases speed
+    call CanPlayerKO
+    jr c, .discourage
+
+; encourage to get to +2
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .encourage
+
+; discourage after +1 if afflicted with toxic
+; Pokemon who are immune to residual damage (magic guard) should not be considered
+    ld a, [wEnemyMonSpecies]
+    push hl
+    push de
+	push bc
+	ld hl, AI_MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret nc
+
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
+
+.encourage
+	dec [hl]
+	dec [hl]
+	ret
+.discourage80
+    call AI_80_20
+    ret c
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
 AI_Smart_SwordsDance:
 ; don't go past +4
 	ld a, [wEnemyAtkLevel]
@@ -3288,16 +3385,14 @@ AI_Smart_SwordsDance:
     call ShouldAIBoost
     jr nc, .discourage
 
-.continue
 ; if already at +2, 80% chance to discourage, unless Arceus
-    ld a, [wEnemyMonSpecies]
-    cp ARCEUS
-    jr z, .continue2
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage80
+;    ld a, [wEnemyMonSpecies]
+;    cp ARCEUS
+;    jr z, .continue2
+;    ld a, [wEnemyAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jr nc, .discourage80
 
-.continue2
 ; encourage to get to +1
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 1
@@ -3404,10 +3499,50 @@ AI_Smart_Barrier:
 	ret
 
 AI_Smart_Geomancy:
-AI_Smart_NastyPlot:
-; don't go past +3
+; don't go past +4
     ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 4
+	jp nc, .discourage
+
+; don't use if we are at risk of being KOd, just attack them
+    call CanPlayer2HKO
+    jr c, .discourage
+
+; if already at +2 80% chance to discourage
+;    ld a, [wEnemyAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jr nc, .discourage80
+
+; encourage to get to +2
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .encourage
+
+; discourage after +2 if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+    ret
+.encourage
+    dec [hl]
+	dec [hl]
+	ret
+.discourage80
+    call AI_80_20
+    ret c
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_NastyPlot:
+; don't go past +4
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
 	jp nc, .discourage
 
 ; deoxys should always boost once and no more, unless player has sub
@@ -3433,9 +3568,9 @@ AI_Smart_NastyPlot:
     jr nc, .discourage
 
 ; if already at +2 80% chance to discourage
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage80
+;    ld a, [wEnemyAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jr nc, .discourage80
 
 ; encourage to get to +2
     ld a, [wEnemySAtkLevel]
@@ -3546,13 +3681,13 @@ ShouldAIBoost:
 	and SLP
 	jr nz, .boost
 ; is the player behind a sub, if so don't boost, just attack
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .dontBoost
-; is player attacking
+    ;ld a, [wPlayerSubStatus4]
+	;bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	;jr nz, .dontBoost
+; is player attacking, if not we can boost
 	;ld a, [wPlayerMoveStruct + MOVE_POWER]
-	;and a
-	;jr z, .dontBoost
+    ;and a
+	;jr nz, .boost
 	jr .dontBoost
 
 .boost
@@ -3598,6 +3733,11 @@ CanPlayerKO:
 	pop de
 	pop hl
     jp nc, .checkmove
+; skip selfdestruct and explosion
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+    scf
     ret
 .done
     xor a ; clear carry flag
@@ -3650,6 +3790,11 @@ CanPlayer2HKO:
 	pop de
 	pop hl
     jp nc, .checkmove
+; skip selfdestruct and explosion
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+	scf
     ret
 .done
     xor a ; clear carry flag
@@ -3702,6 +3847,71 @@ CanPlayer2HKOMaxHP:
 	pop de
 	pop hl
     jp nc, .checkmove
+; skip selfdestruct and explosion
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+    scf
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; check all player moves to see if any of them can 3HKO the AI Pokemon from Max HP
+; used to decide if the AI should use rest
+CanPlayer3HKOMaxHP:
+    ld de, wBattleMonMoves ; load player moves
+	ld b, NUM_MOVES + 1
+.checkmove
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr z, .checkmove ; skip moves with 0 power
+    ld a, 0
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar PlayerAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+; triple current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	ld b, h
+	ld c, l
+	add hl, hl
+	add hl, bc
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+; continue
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wEnemyMonMaxHP + 1]
+	cp c ; compare upper
+	ld a, [wEnemyMonMaxHP]
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .checkmove
+; skip selfdestruct and explosion
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .checkmove
+	scf
     ret
 .done
     xor a ; clear carry flag

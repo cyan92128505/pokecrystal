@@ -3664,13 +3664,49 @@ AI_Smart_ShellSmash:
 ; decide if AI should use boosting moves
 ; don't boost if player will just KO anyway
 ShouldAIBoost:
+; who moves first
     call AICompareSpeed
     jr nc, .playerMovesFirst
 
+; if AI moves first consider if player can 1HKO
+; first if the AI has an intact focus sash or sturdy it can boost, unless player has priority move
+; does player have priority move
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr c, .skipFocusSash
+
+; Is the AI at full HP
+    call AICheckEnemyMaxHP
+    jr nz, .skipFocusSash
+
+; focus sash
+	push hl
+	push de
+	ld a, [wEnemyMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_FOCUS_BAND
+	pop de
+	pop hl
+	jr z, .boost
+
+; sturdy
+    push bc
+	ld hl, SturdyPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	jr c, .boost
+
+.skipFocusSash
     call CanPlayerKO
     jr c, .decideNotToBoost
     jr .boost
+
 .playerMovesFirst
+; if player moves first consider if they can 2HKO
     call CanPlayer2HKO
     jr c, .decideNotToBoost
     jr .boost
@@ -4069,6 +4105,37 @@ AIHasMoveEffect:
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp b
+	jr z, .yes
+
+	dec c
+	jr nz, .checkmove
+
+.no
+	pop hl
+	and a
+	ret
+
+.yes
+	pop hl
+	scf
+	ret
+
+PlayerHasMoveEffect:
+; Return carry if the player has move b.
+
+	push hl
+	ld hl, wBattleMonMoves
+	ld c, NUM_MOVES
+
+.checkmove
+	ld a, [hli]
+	and a
+	jr z, .no
+
+	call AIGetPlayerMove
+
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp b
 	jr z, .yes
 

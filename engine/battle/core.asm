@@ -3382,7 +3382,7 @@ FindMonInOTPartyToSwitchIntoBattle:
 	ld a, %000001
 	ld [wEnemyEffectivenessVsPlayerMons], a
 	ld [wPlayerEffectivenessVsEnemyMons], a
-.loop
+.loop ; this loops through enemy pokemon
 	ld hl, wEnemyEffectivenessVsPlayerMons
 	sla [hl]
 	inc hl ; wPlayerEffectivenessVsEnemyMons
@@ -3395,7 +3395,7 @@ FindMonInOTPartyToSwitchIntoBattle:
 
 	ld a, [wCurOTMon]
 	cp b
-	jr z, .discourage ; dont switch to the poke already out
+	jr z, .discourage ; don't switch to the poke already out
 
 	ld hl, wOTPartyMon1HP
 	push bc
@@ -3417,40 +3417,25 @@ FindMonInOTPartyToSwitchIntoBattle:
 	pop bc
 	jr nz, .discourage ; AndrewNote - discourage switch to a SLP or FRZ mon
 
-    ;ld hl, wOTPartyMon1Speed
-	;push bc
-	;ld a, b
-	;call GetPartyLocation
-	;ld a, [hli]
-	;ld b, a
-	;ld a, [wBattleMonSpeed + 1]
-	;cp b
-	;ld a, [hl]
-	;ld b, a
-	;ld a, [wBattleMonSpeed]
-	;cp b
-	;pop bc
-	;jr c, .discourage
-
-	call LookUpTheEffectivenessOfEveryMove ; find which enemy mons have SE moves against player
-	call IsThePlayerMonTypesEffectiveAgainstOTMon ; are player types SE against enemy
+	call LookUpTheEffectivenessOfEveryEnemyMove ; does the current AI mon have a SE move on the player
+	call AreThePlayerMonMovesEffectiveAgainstOTMon ; Does the player have a SE move on the current AI mon
 	jr .loop
 .discourage
 	ld hl, wPlayerEffectivenessVsEnemyMons
 	set 0, [hl]
 	jr .loop
 
-LookUpTheEffectivenessOfEveryMove:
+LookUpTheEffectivenessOfEveryEnemyMove:
 	push bc
 	ld hl, wOTPartyMon1Moves
-	ld a, b
-	call GetPartyLocation
+	ld a, b ; b is index of current enemy mon in the loop, now in a
+	call GetPartyLocation ; increments hl so we have the current enemy mon moves
 	pop bc
 	ld e, NUM_MOVES + 1
 .loop
 	dec e
-	jr z, .done
-	ld a, [hli]
+	jr z, .done ; done when we are out of moves
+	ld a, [hli] ; a is the current move
 	and a
 	jr z, .done
 	push hl
@@ -3477,67 +3462,52 @@ LookUpTheEffectivenessOfEveryMove:
 .done
 	ret
 
-IsThePlayerMonTypesEffectiveAgainstOTMon:
+AreThePlayerMonMovesEffectiveAgainstOTMon:
 ; Calculates the effectiveness of the types of the PlayerMon
 ; against the OTMon
 	push bc
 	ld hl, wOTPartyCount ; how many enemy mon are there
-	ld a, b
+	ld a, b ; a is now current enemy poke index
 	inc a
-	ld c, a
-	ld b, 0 ; bc is now 0a?
-	add hl, bc
-	ld a, [hl]
-	dec a ; wtf is all this
-
+	ld c, a ; c is index of the next enemy mon
+	ld b, 0
+	add hl, bc ; increment hl to to current enemy mon in the loop
+	ld a, [hl] ; a is the current enemy mon
+	dec a
 	ld hl, BaseData + BASE_TYPES
 	ld bc, BASE_DATA_SIZE
-	call AddNTimes
+	call AddNTimes ; increment hl to the current enemy mon type
 	ld de, wEnemyMonType
 	ld bc, BASE_CATCH_RATE - BASE_TYPES
 	ld a, BANK(BaseData)
+	call FarCopyBytes ; at this point wEnemyMonType contains both enemy types in de
+    ld hl, wBattleMonMoves ; load player moves
+	ld e, NUM_MOVES + 1 ; didn't have much choice but to override e
+.checkmove
+	dec e ; e is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [hl] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc hl ; increment to next move
+	push hl
+	push de
+	dec a
+	ld hl, Moves
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld de, wPlayerMoveStruct
+	ld a, BANK(Moves)
 	call FarCopyBytes
-
-;   ld hl, wBattleMonMoves ; load player moves
-;	ld b, NUM_MOVES + 1
-;.checkmove
-;	dec b ; b is num moves on 1st pass
-;	jr z, .done ; if b is 0 return we are done
-;	ld a, [hl] ; load the move
-;	and a
-;	jr z, .done ; return if no move
-;	inc hl ; increment to next move
-;	callfar AIGetPlayerMove
-;	ld a, [wPlayerMoveStruct + MOVE_POWER]
-;	and a
-;	jr z, .checkmove ; skip moves with 0 power
-;   ld [wPlayerMoveStruct + MOVE_TYPE], a
-;	call SetPlayerTurn
-;	callfar BattleCheckTypeMatchup
-;	ld a, [wTypeMatchup]
-;	cp EFFECTIVE + 1
-;	jr nc, .super_effective
-;	jr .checkmove
-;   jr .done
-
-	ld a, [wBattleMonType1]
-	ld [wPlayerMoveStruct + MOVE_TYPE], a
 	call SetPlayerTurn
-	callfar BattleCheckTypeMatchup
+	callfar BattleCheckTypeMatchup ; consider type matchup
+	pop de
+	pop hl
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, .super_effective
-
-	ld a, [wBattleMonType2]
-	ld [wPlayerMoveStruct + MOVE_TYPE], a
-	callfar BattleCheckTypeMatchup
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1
-	jr nc, .super_effective
-	pop bc
-	ret
-
-.super_effective
+	jr .checkmove
+.super_effective ; here the current enemy mon is discouraged due to being weak to player type
 	pop bc
 	ld hl, wEnemyEffectivenessVsPlayerMons
 	bit 0, [hl]
@@ -3548,9 +3518,9 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 .reset
 	res 0, [hl]
 	ret
-;.done
-;    pop bc
-;    ret
+.done
+	pop bc
+	ret
 
 ScoreMonTypeMatchups:
 .loop1

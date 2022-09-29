@@ -3674,7 +3674,7 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
 
 ; Is the AI at full HP
     call AICheckEnemyMaxHP
-    jr nz, .no
+    jr nc, .no
 
 ; focus sash
 	push hl

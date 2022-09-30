@@ -177,7 +177,7 @@ BitmasksPointers:
 	dw TogepiBitmasks
 	dw TogeticBitmasks
 	dw TogekissBitmasks
-	dw XatuBitmasks
+	dw SigilyphBitmasks
 	dw MareepBitmasks
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks

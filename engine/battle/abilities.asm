@@ -38,6 +38,7 @@ MagicGuardPokemon:
     db ABRA
     db KADABRA
     db ALAKAZAM
+    db SIGILYPH
     db ARCEUS
     db -1
 

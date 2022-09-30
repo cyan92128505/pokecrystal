@@ -179,7 +179,7 @@ MonMenuIcons:
 	db ICON_CLEFAIRY    ; TOGEPI
 	db ICON_BIRD        ; TOGETIC
 	db ICON_BIRD        ; TOGEKISS
-	db ICON_BIRD        ; XATU
+	db ICON_BIRD        ; SIGILYPH
 	db ICON_FOX         ; MAREEP
 	db ICON_MONSTER     ; FLAAFFY
 	db ICON_MONSTER     ; AMPHAROS

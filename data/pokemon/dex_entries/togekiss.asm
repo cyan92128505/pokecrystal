@@ -1,5 +1,5 @@
-	db "LITTLE BIRD@" ; species name
-	dw 8, 40 ; height, weight
+	db "JUBILEE@" ; species name
+	dw 411, 838 ; height, weight
 
 	db   "It brings peace"
 	next "and happiness"

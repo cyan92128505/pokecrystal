@@ -203,6 +203,7 @@ AlphabeticalPokedexOrder:
     db SHELGON
 	db SHELLDER
 	db SHUCKLE
+	db SIGILYPH
 	db SKARMORY
 	db SLOWBRO
 	db SLOWKING
@@ -249,7 +250,6 @@ AlphabeticalPokedexOrder:
 	db WIGGLYTUFF
 	db WOBBUFFET
 	db WOOPER
-	db XATU
 	db XERNEAS
 	db YANMA
 	db YVELTAL

@@ -177,7 +177,7 @@ PokemonNames::
 	db "TOGEPI@@@@"
 	db "TOGETIC@@@"
 	db "TOGEKISS@@"
-	db "XATU@@@@@@"
+	db "SIGILYPH@@"
 	db "MAREEP@@@@"
 	db "FLAAFFY@@@"
 	db "AMPHAROS@@"

@@ -183,7 +183,7 @@ PokemonCries::
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
 	mon_cry CRY_TOGETIC,     150,  150 ; TOGEKISS
-	mon_cry CRY_NATU,       -167,  360 ; XATU
+	mon_cry CRY_NATU,       -167,  360 ; SIGILYPH
 	mon_cry CRY_MAREEP,       34,  216 ; MAREEP
 	mon_cry CRY_MAREEP,       -7,  384 ; FLAAFFY
 	mon_cry CRY_AMPHAROS,   -124,  232 ; AMPHAROS

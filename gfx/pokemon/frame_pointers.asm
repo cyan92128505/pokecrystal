@@ -177,7 +177,7 @@ FramesPointers:
 	dw TogepiFrames
 	dw TogeticFrames
 	dw TogekissFrames
-	dw XatuFrames
+	dw SigilyphFrames
 	dw MareepFrames
 	dw FlaaffyFrames
 	dw AmpharosFrames

@@ -197,7 +197,7 @@ JOHTO_POKEMON EQU const_value
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
 	const TOGEKISS       ; b1  togekiss
-	const XATU       ; b2  sigiliph
+	const SIGILYPH       ; b2  sigiliph
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5

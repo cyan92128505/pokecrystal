@@ -133,7 +133,6 @@ NewPokedexOrder:
 	db MR__MIME
 	db SMEARGLE
 	db FARFETCH_D
-	db XATU
 	db TENTACOOL
 	db TENTACRUEL
 	db KRABBY
@@ -231,6 +230,7 @@ NewPokedexOrder:
 	db CONKELDURR
 	db DRILBUR
 	db EXCADRILL
+	db SIGILYPH
 	db LITWICK
 	db LAMPENT
 	db CHANDELURE

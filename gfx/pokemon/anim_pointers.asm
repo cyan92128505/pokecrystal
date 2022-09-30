@@ -177,7 +177,7 @@ AnimationPointers:
 	dw TogepiAnimation
 	dw TogeticAnimation
 	dw TogekissAnimation
-	dw XatuAnimation
+	dw SigilyphAnimation
 	dw MareepAnimation
 	dw FlaaffyAnimation
 	dw AmpharosAnimation

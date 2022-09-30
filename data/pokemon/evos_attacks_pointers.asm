@@ -179,7 +179,7 @@ EvosAttacksPointers::
 	dw TogepiEvosAttacks
 	dw TogeticEvosAttacks
 	dw TogekissEvosAttacks
-	dw XatuEvosAttacks
+	dw SigilyphEvosAttacks
 	dw MareepEvosAttacks
 	dw FlaaffyEvosAttacks
 	dw AmpharosEvosAttacks

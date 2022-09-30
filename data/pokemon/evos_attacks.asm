@@ -2384,16 +2384,18 @@ TogekissEvosAttacks:
 	db 44, MOON_BLAST
 	db 0 ; no more level-up moves
 
-XatuEvosAttacks:
+SigilyphEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, LEER
+	db 1, GUST
+	db 1, CONFUSION
 	db 1, NIGHT_SHADE
-	db 10, NIGHT_SHADE
-	db 20, TELEPORT
-	db 35, FUTURE_SIGHT
-	db 50, CONFUSE_RAY
-	db 65, PSYCHIC_M
+	db 10, HYPNOSIS
+	db 20, PSYBEAM
+	db 25, WHIRLWIND
+	db 30, AIR_SLASH
+	db 35, PSYCHIC_M
+	db 40, RECOVER
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
 MareepEvosAttacks:

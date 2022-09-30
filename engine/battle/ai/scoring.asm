@@ -19,6 +19,7 @@ AI_MagicGuardPokemon:
     db ABRA
     db KADABRA
     db ALAKAZAM
+    db SIGILYPH
     db ARCEUS
     db $FF
 
@@ -2052,10 +2053,12 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; massive encourage if player can KO and player is attacking
+; massive encourage if player can KO and player is attacking, unless we have sash
 ; this needs to overcome encouragement from other moves which do more damage and can KO
 	call CanPlayerKO
 	jr nc, .continue
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .continue
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr z, .continue

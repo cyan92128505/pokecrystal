@@ -178,7 +178,7 @@ PokedexDataPointerTable:
 	dw TogepiPokedexEntry
 	dw TogeticPokedexEntry
 	dw TogekissPokedexEntry
-	dw XatuPokedexEntry
+	dw SigilyphPokedexEntry
 	dw MareepPokedexEntry
 	dw FlaaffyPokedexEntry
 	dw AmpharosPokedexEntry

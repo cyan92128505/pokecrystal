@@ -355,8 +355,8 @@ PokemonPicPointers::
 	dba_pic TogepiBackpic
 	dba_pic TogeticFrontpic
 	dba_pic TogeticBackpic
-	dba_pic NatuFrontpic
-	dba_pic NatuBackpic
+	dba_pic TogekissFrontpic
+	dba_pic TogekissBackpic
 	dba_pic XatuFrontpic
 	dba_pic XatuBackpic
 	dba_pic MareepFrontpic

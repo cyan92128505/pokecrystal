@@ -369,26 +369,26 @@ JohtoGrassWildMons:
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, NATU
-	db 22, NATU
-	db 18, NATU
-	db 24, NATU
+	db 20, TOGEKISS
+	db 22, TOGEKISS
+	db 18, TOGEKISS
+	db 24, TOGEKISS
 	db 20, SMEARGLE
 	db 22, SMEARGLE
 	db 22, SMEARGLE
 	; day
-	db 20, NATU
-	db 22, NATU
-	db 18, NATU
-	db 24, NATU
+	db 20, TOGEKISS
+	db 22, TOGEKISS
+	db 18, TOGEKISS
+	db 24, TOGEKISS
 	db 20, SMEARGLE
 	db 22, SMEARGLE
 	db 22, SMEARGLE
 	; nite
-	db 20, NATU
-	db 22, NATU
-	db 18, NATU
-	db 24, NATU
+	db 20, TOGEKISS
+	db 22, TOGEKISS
+	db 18, TOGEKISS
+	db 24, TOGEKISS
 	db 22, WOOPER
 	db 22, QUAGSIRE
 	db 22, QUAGSIRE

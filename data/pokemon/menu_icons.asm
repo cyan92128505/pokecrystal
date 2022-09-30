@@ -178,7 +178,7 @@ MonMenuIcons:
 	db ICON_GHOST       ; CHANDELURE
 	db ICON_CLEFAIRY    ; TOGEPI
 	db ICON_BIRD        ; TOGETIC
-	db ICON_BIRD        ; NATU
+	db ICON_BIRD        ; TOGEKISS
 	db ICON_BIRD        ; XATU
 	db ICON_FOX         ; MAREEP
 	db ICON_MONSTER     ; FLAAFFY

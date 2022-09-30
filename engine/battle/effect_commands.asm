@@ -2025,9 +2025,9 @@ BattleCommand_EffectChance:
 ; ==============================
 ; ====== Serene Grace ==========
 ; ==============================
-    cp CHANSEY
-    jr z, .sereneGrace
     cp BLISSEY
+    jr z, .sereneGrace
+    cp TOGEKISS
     jr z, .sereneGrace
     jr .continue
 .sereneGrace

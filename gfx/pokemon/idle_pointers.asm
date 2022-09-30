@@ -176,7 +176,7 @@ AnimationIdlePointers:
 	dw ChandelureAnimationIdle
 	dw TogepiAnimationIdle
 	dw TogeticAnimationIdle
-	dw NatuAnimationIdle
+	dw TogekissAnimationIdle
 	dw XatuAnimationIdle
 	dw MareepAnimationIdle
 	dw FlaaffyAnimationIdle

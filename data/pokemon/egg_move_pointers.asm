@@ -176,7 +176,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw TogepiEggMoves
 	dw NoEggMoves
-	dw NatuEggMoves
+	dw TogekissEggMoves
 	dw NoEggMoves
 	dw MareepEggMoves
 	dw NoEggMoves

@@ -408,7 +408,7 @@ INCBIN "gfx/footprints/chandelure.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/togepi.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/togetic.1bpp",    footprint_bottom
 ; 177-184 top halves
-INCBIN "gfx/footprints/natu.1bpp",       footprint_top
+INCBIN "gfx/footprints/togekiss.1bpp",       footprint_top
 INCBIN "gfx/footprints/xatu.1bpp",       footprint_top
 INCBIN "gfx/footprints/mareep.1bpp",     footprint_top
 INCBIN "gfx/footprints/flaaffy.1bpp",    footprint_top
@@ -417,7 +417,7 @@ INCBIN "gfx/footprints/bellossom.1bpp",  footprint_top
 INCBIN "gfx/footprints/mismagius.1bpp",     footprint_top
 INCBIN "gfx/footprints/porygonz.1bpp",  footprint_top
 ; 177-184 bottom halves
-INCBIN "gfx/footprints/natu.1bpp",       footprint_bottom
+INCBIN "gfx/footprints/togekiss.1bpp",       footprint_bottom
 INCBIN "gfx/footprints/xatu.1bpp",       footprint_bottom
 INCBIN "gfx/footprints/mareep.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/flaaffy.1bpp",    footprint_bottom

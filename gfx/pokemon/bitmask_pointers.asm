@@ -176,7 +176,7 @@ BitmasksPointers:
 	dw ChandelureBitmasks
 	dw TogepiBitmasks
 	dw TogeticBitmasks
-	dw NatuBitmasks
+	dw TogekissBitmasks
 	dw XatuBitmasks
 	dw MareepBitmasks
 	dw FlaaffyBitmasks

@@ -196,7 +196,7 @@ JOHTO_POKEMON EQU const_value
 	const CHANDELURE ; ae
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
-	const NATU       ; b1  togekiss
+	const TOGEKISS       ; b1  togekiss
 	const XATU       ; b2  sigiliph
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4

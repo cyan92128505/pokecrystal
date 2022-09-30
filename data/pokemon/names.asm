@@ -176,7 +176,7 @@ PokemonNames::
 	db "CHANDELURE"
 	db "TOGEPI@@@@"
 	db "TOGETIC@@@"
-	db "NATU@@@@@@"
+	db "TOGEKISS@@"
 	db "XATU@@@@@@"
 	db "MAREEP@@@@"
 	db "FLAAFFY@@@"

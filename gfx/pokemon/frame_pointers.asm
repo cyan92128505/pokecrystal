@@ -176,7 +176,7 @@ FramesPointers:
 	dw ChandelureFrames
 	dw TogepiFrames
 	dw TogeticFrames
-	dw NatuFrames
+	dw TogekissFrames
 	dw XatuFrames
 	dw MareepFrames
 	dw FlaaffyFrames

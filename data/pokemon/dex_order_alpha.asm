@@ -11,7 +11,6 @@ AlphabeticalPokedexOrder:
 	db ARCEUS
 	db ARIADOS
 	db ARTICUNO
-	db PORYGONZ
 	db BAGON
 	db BAYLEEF
 	db BEEDRILL
@@ -148,7 +147,6 @@ AlphabeticalPokedexOrder:
 	db MR__MIME
 	db MUK
 	db MURKROW
-	db NATU
 	db NIDOKING
 	db NIDOQUEEN
 	db NIDORAN_F
@@ -179,6 +177,7 @@ AlphabeticalPokedexOrder:
 	db PONYTA
 	db PORYGON
 	db PORYGON2
+	db PORYGONZ
 	db PRIMEAPE
 	db PSYDUCK
 	db PUPITAR
@@ -226,6 +225,7 @@ AlphabeticalPokedexOrder:
 	db TENTACOOL
 	db TENTACRUEL
 	db TIMBURR
+	db TOGEKISS
 	db TOGEPI
 	db TOGETIC
 	db TOTODILE

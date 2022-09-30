@@ -42,6 +42,7 @@ NewPokedexOrder:
 	db WIGGLYTUFF
 	db TOGEPI
 	db TOGETIC
+	db TOGEKISS
 	db SANDSHREW
 	db SANDSLASH
 	db EKANS
@@ -110,7 +111,6 @@ NewPokedexOrder:
 	db NINETALES
 	db GROWLITHE
 	db ARCANINE
-	db PORYGONZ
 	db DIGLETT
 	db DUGTRIO
 	db MANKEY
@@ -133,7 +133,6 @@ NewPokedexOrder:
 	db MR__MIME
 	db SMEARGLE
 	db FARFETCH_D
-	db NATU
 	db XATU
 	db TENTACOOL
 	db TENTACRUEL
@@ -184,6 +183,7 @@ NewPokedexOrder:
 	db MISMAGIUS
 	db PORYGON
 	db PORYGON2
+	db PORYGONZ
 	db CHANSEY
 	db BLISSEY
 	db LAPRAS

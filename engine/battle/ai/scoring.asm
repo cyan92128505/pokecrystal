@@ -213,23 +213,42 @@ BoostingMoveEffects:
 
 AI_Smart_Switch:
 ; Enemies can switch intelligently under certain conditions
-; switch if unboosted enemy is SLP or FRZ and player sets up
+; switch if unboosted enemy is FRZ and player sets up
+; 50% chance to switch if unboosted enemy is SLP and player sets up
 ; don't switch if enemy is weakened, just let it die
+; switch if enemy is choice locked into a NVE move
 ; switch if enemy accuracy at -2 or lower
+; switch if enemy attack at -2 or lower and has unboosted special attack
 ; switch if enemy is cursed
-; 50% chance to switch per turn if enemy afflicted with toxic
-; 50% chance to switch per turn if enemy afflicted with leech seed
+; 50% chance to switch if enemy afflicted with toxic
+; 50% chance to switch if enemy afflicted with leech seed
 
 ; possibly switch if enemy is setup bait
 	ld a, [wEnemyMonStatus]
-	and 1 << FRZ | SLP
-	;and 1 << FRZ
+	and 1 << FRZ
 	jr nz, .checkSetUpAndSwitchIfPlayerSetsUp
+    ld a, [wEnemyMonStatus]
+	and SLP
+	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
 ; don't switch if enemy is weakened, just let it die
 	call AICheckEnemyQuarterHP
 	ret nc
 
+; switch if choice locked into a NVE move
+	ld hl, wEnemySubStatus5
+	bit SUBSTATUS_ENCORED, [hl]
+	jr z, .not_encored
+    push hl
+	ld a, 1
+	ldh [hBattleTurn], a
+	callfar BattleCheckTypeMatchup
+	pop hl
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	jp c, .switch
+
+.not_encored
 ; switch if enemy accuracy at -2 or lower
     ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
@@ -310,6 +329,35 @@ AI_Smart_Switch:
 	pop de
 	pop hl
 	jr c, .switch
+	ret
+
+.checkSetUpAndSwitchIfPlayerSetsUp50
+; don't switch if enemy mon is already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+
+; switch if player attempts to set up
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    push hl
+    push de
+	push bc
+	ld hl, BoostingMoveEffects
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .switch50
 	ret
 
 .checkSetUpAndSwitch50
@@ -644,6 +692,8 @@ AI_Smart_Sleep:
     ld a, [wBattleMonSpecies]
     cp ARCEUS
     jr z, .discourage
+    cp SYLVEON
+    jr z, .discourage
 
 ; is the player behind a sub
     ld a, [wPlayerSubStatus4]
@@ -893,23 +943,9 @@ AI_Smart_Selfdestruct:
 	call AICheckEnemyQuarterHP
 	jr nc, .encourage
 
-; if player has highly boosted stats just boom
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .encourage
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .encourage
-
-; if player is faster and has slightly boosted stats just boom
-    call AICompareSpeed
-    jr c, .continue
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .encourage
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .encourage
+; use if we are about to be KOd
+    call ShouldAIBoost
+    jr nc, .encourage
 
 .continue
 ; Greatly discourage this move if enemy's HP is above 50%.
@@ -1383,6 +1419,8 @@ AI_Smart_LeechSeed:
     ld a, [wBattleMonSpecies]
     cp ARCEUS
     jr nz, .continue
+    cp SYLVEON
+    jr nz, .continue
     inc [hl]
     inc [hl]
     ret
@@ -1516,6 +1554,8 @@ AI_Smart_Confuse:
     ld a, [wBattleMonSpecies]
     cp ARCEUS
     jr nz, .continue
+    cp SYLVEON
+    jr nz, .continue
     inc [hl]
     inc [hl]
     ret
@@ -1629,6 +1669,8 @@ AI_Smart_Paralyze:
     cp MEWTWO
     jr z, .encourage
     cp ARCEUS
+    jr z, .discourage
+    cp SYLVEON
     jr z, .discourage
 
 ; encourage if enemy is slower than player.
@@ -3518,6 +3560,18 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 4
 	jp nc, .discourage
 
+; Deoxys should not use Nasty Plot against dark types
+    ld a, [wEnemyMonSpecies]
+    cp DEOXYS
+    jr nz, .notDeoxys
+    ld a, [wBattleMonType1]
+    cp DARK
+    jr z, .discourage
+    ld a, [wBattleMonType2]
+    cp DARK
+    jr z, .discourage
+
+.notDeoxys
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jr nc, .discourage
@@ -3650,7 +3704,7 @@ ShouldAIBoost:
 .decideNotToBoost
 ; is player SLP or FRZ, if so we can boost
 	ld a, [wBattleMonStatus]
-	and SLP
+	and 1 << FRZ | SLP
 	jr nz, .boost
 ; is the player behind a sub, if so don't boost, just attack
     ld a, [wPlayerSubStatus4]

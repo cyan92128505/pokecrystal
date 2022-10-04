@@ -7253,7 +7253,10 @@ BattleCommand_CheckStatusImmunity:
 	ld a, [wEnemyMonSpecies]
 .checkSpecies
     cp ARCEUS
-    ret nz
+    jr z, .immune
+    cp SYLVEON
+    jr z, .immune
+    ret
 .immune
     ld a, 1
     ld [wEffectFailed], a

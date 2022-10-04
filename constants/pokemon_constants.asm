@@ -37,10 +37,10 @@
 	const PIDGEY     ; 10
 	const PIDGEOTTO  ; 11
 	const PIDGEOT    ; 12
-	const RATTATA    ; 13  ....
-	const RATICATE   ; 14  lopunny
-	const SPEAROW    ; 15
-	const FEAROW     ; 16
+	const RATTATA    ; 13
+	const RATICATE   ; 14
+	const SPEAROW    ; 15  ....
+	const FEAROW     ; 16  lopunny
 	const EKANS      ; 17
 	const ARBOK      ; 18
 	const PIKACHU    ; 19
@@ -101,9 +101,9 @@
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
-	const FARFETCH_D ; 53  magnezone
-	const DODUO      ; 54
-	const DODRIO     ; 55
+	const FARFETCH_D ; 53
+	const DODUO      ; 54   electivire
+	const DODRIO     ; 55   magnezone
 	const SEEL       ; 56   yanmega
 	const DEWGONG    ; 57   glisocr
 	const GRIMER     ; 58   ....
@@ -196,14 +196,14 @@ JOHTO_POKEMON EQU const_value
 	const CHANDELURE ; ae
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
-	const TOGEKISS       ; b1  togekiss
-	const SIGILYPH       ; b2  sigiliph
+	const TOGEKISS   ; b1
+	const SIGILYPH   ; b2
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
-	const BELLOSSOM  ; b6  sylveon
+	const SYLVEON    ; b6
 	const MISMAGIUS  ; b7
-	const PORYGONZ  ; b8  porygonz
+	const PORYGONZ   ; b8
 	const GENESECT   ; b9
 	const POLITOED   ; ba
 	const TIMBURR    ; bb
@@ -232,7 +232,7 @@ JOHTO_POKEMON EQU const_value
 	const GABITE     ; d2
 	const GARCHOMP   ; d3
 	const SCIZOR     ; d4
-	const SHUCKLE    ; d5  electrivire
+	const SHUCKLE    ; d5  skymin
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
 	const TEDDIURSA  ; d8

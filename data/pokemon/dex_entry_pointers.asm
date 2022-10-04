@@ -182,7 +182,7 @@ PokedexDataPointerTable:
 	dw MareepPokedexEntry
 	dw FlaaffyPokedexEntry
 	dw AmpharosPokedexEntry
-	dw BellossomPokedexEntry
+	dw SylveonPokedexEntry
 	dw MismagiusPokedexEntry
 	dw PorygonzPokedexEntry
 	dw GenesectPokedexEntry

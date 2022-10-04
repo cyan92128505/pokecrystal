@@ -183,7 +183,7 @@ EvosAttacksPointers::
 	dw MareepEvosAttacks
 	dw FlaaffyEvosAttacks
 	dw AmpharosEvosAttacks
-	dw BellossomEvosAttacks
+	dw SylveonEvosAttacks
 	dw MismagiusEvosAttacks
 	dw PorygonzEvosAttacks
 	dw GenesectEvosAttacks

@@ -574,7 +574,6 @@ OddishEvosAttacks:
 
 GloomEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VILEPLUME
-	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 14, POISONPOWDER
@@ -1770,8 +1769,9 @@ EeveeEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, JOLTEON
 	db EVOLVE_ITEM, WATER_STONE, VAPOREON
 	db EVOLVE_ITEM, FIRE_STONE, FLAREON
-	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
-	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
+	db EVOLVE_ITEM, SUN_STONE, ESPEON
+	db EVOLVE_ITEM, MOON_STONE, UMBREON
+	db EVOLVE_HAPPINESS, TR_ANYTIME, SYLVEON
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -2437,12 +2437,12 @@ AmpharosEvosAttacks:
 	db 57, THUNDER
 	db 0 ; no more level-up moves
 
-BellossomEvosAttacks:
+SylveonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 1, STUN_SPORE
-	db 1, PETAL_DANCE
-	db 55, SOLARBEAM
+	db 1, REST
+	db 1, REFLECT
+	db 1, LIGHT_SCREEN
+	db 40, MOON_BLAST
 	db 0 ; no more level-up moves
 
 MismagiusEvosAttacks:

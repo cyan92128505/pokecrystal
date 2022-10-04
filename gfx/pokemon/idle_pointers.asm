@@ -181,7 +181,7 @@ AnimationIdlePointers:
 	dw MareepAnimationIdle
 	dw FlaaffyAnimationIdle
 	dw AmpharosAnimationIdle
-	dw BellossomAnimationIdle
+	dw SylveonAnimationIdle
 	dw MismagiusAnimationIdle
 	dw PorygonzAnimationIdle
 	dw GenesectAnimationIdle

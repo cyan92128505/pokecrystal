@@ -365,8 +365,8 @@ PokemonPicPointers::
 	dba_pic FlaaffyBackpic
 	dba_pic AmpharosFrontpic
 	dba_pic AmpharosBackpic
-	dba_pic BellossomFrontpic
-	dba_pic BellossomBackpic
+	dba_pic SylveonFrontpic
+	dba_pic SylveonBackpic
 	dba_pic MismagiusFrontpic
 	dba_pic MismagiusBackpic
 	dba_pic PorygonzFrontpic

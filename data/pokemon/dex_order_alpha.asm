@@ -15,7 +15,6 @@ AlphabeticalPokedexOrder:
 	db BAYLEEF
 	db BEEDRILL
 	db BELDUM
-	db BELLOSSOM
 	db BELLSPROUT
 	db BLASTOISE
 	db BLISSEY
@@ -220,6 +219,7 @@ AlphabeticalPokedexOrder:
 	db STEELIX
 	db SUICUNE
 	db SWINUB
+	db SYLVEON
 	db TANGELA
 	db TAUROS
 	db TEDDIURSA

@@ -181,7 +181,7 @@ BitmasksPointers:
 	dw MareepBitmasks
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
-	dw BellossomBitmasks
+	dw SylveonBitmasks
 	dw MismagiusBitmasks
 	dw PorygonzBitmasks
 	dw GenesectBitmasks

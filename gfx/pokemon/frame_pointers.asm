@@ -181,7 +181,7 @@ FramesPointers:
 	dw MareepFrames
 	dw FlaaffyFrames
 	dw AmpharosFrames
-	dw BellossomFrames
+	dw SylveonFrames
 	dw MismagiusFrames
 	dw PorygonzFrames
 	dw GenesectFrames

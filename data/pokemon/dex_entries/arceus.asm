@@ -5,5 +5,6 @@
 	next "Creator of all"
 	next "the universe."
 
-	page "Its power is"
-	next "absolute.@"
+	page "AB Immune to all"
+	next "status and"
+	next "enemy effects.@"

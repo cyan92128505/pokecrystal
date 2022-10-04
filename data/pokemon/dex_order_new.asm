@@ -78,7 +78,6 @@ NewPokedexOrder:
 	db ODDISH
 	db GLOOM
 	db VILEPLUME
-	db BELLOSSOM
 	db DROWZEE
 	db HYPNO
 	db ABRA
@@ -224,6 +223,7 @@ NewPokedexOrder:
 	db GIBLE
 	db GABITE
 	db GARCHOMP
+	db SYLVEON
 	db SPIRITOMB
 	db TIMBURR
 	db GURDURR

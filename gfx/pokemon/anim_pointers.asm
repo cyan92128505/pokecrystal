@@ -181,7 +181,7 @@ AnimationPointers:
 	dw MareepAnimation
 	dw FlaaffyAnimation
 	dw AmpharosAnimation
-	dw BellossomAnimation
+	dw SylveonAnimation
 	dw MismagiusAnimation
 	dw PorygonzAnimation
 	dw GenesectAnimation

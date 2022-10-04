@@ -181,7 +181,7 @@ PokemonNames::
 	db "MAREEP@@@@"
 	db "FLAAFFY@@@"
 	db "AMPHAROS@@"
-	db "BELLOSSOM@"
+	db "SYLVEON@@@"
 	db "MISMAGIUS@"
 	db "PORYGON-Z@"
 	db "GENESECT@@"

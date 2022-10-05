@@ -239,7 +239,7 @@ BattleAnimations::
 	dw BattleAnim_Synthesis
 	dw BattleAnim_Moonlight
 	dw BattleAnim_HiddenPower
-	dw BattleAnim_CrossChop
+	dw BattleAnim_SeedFlare
 	dw BattleAnim_DracoMeteor
 	dw BattleAnim_RainDance
 	dw BattleAnim_SunnyDay
@@ -1339,6 +1339,7 @@ BattleAnim_Sonicboom:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_SeedFlare:
 BattleAnim_Selfdestruct:
 	anim_1gfx ANIM_GFX_EXPLOSION
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $24

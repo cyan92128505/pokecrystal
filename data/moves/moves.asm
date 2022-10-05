@@ -229,7 +229,7 @@ Moves: ; 41afb
 	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,        STATUS,   100, 10,   0
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, NORMAL,        STATUS,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, NORMAL,        PHYSICAL, 100, 20,   0
-	move AIR_SLASH,    EFFECT_FLINCH_HIT,         80, FLYING,        SPECIAL,   95, 15,  30
+	move AIR_SLASH,    EFFECT_FLINCH_HIT,         80, FLYING,        SPECIAL,  100, 15,  30
 	move FRUSTRATION,  EFFECT_FRUSTRATION,         1, NORMAL,        PHYSICAL, 100, 20,   0
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,        STATUS,   100, 25,   0
 	move PAIN_SPLIT,   EFFECT_PAIN_SPLIT,          0, NORMAL,        STATUS,   100, 20,   0
@@ -246,11 +246,11 @@ Moves: ; 41afb
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, STEEL,         PHYSICAL, 100, 15,  30
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,         PHYSICAL,  95, 35,  10
 	move METEOR_MASH,  EFFECT_ATTACK_UP_HIT,     120, STEEL,         PHYSICAL,  85, 10,  20
-	move MORNING_SUN,  EFFECT_MORNING_SUN,         0, NORMAL,        STATUS,   100,  5,   0
-	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,         STATUS,   100,  5,   0
-	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,         STATUS,   100,  5,   0
+	move MORNING_SUN,  EFFECT_MORNING_SUN,         0, NORMAL,        STATUS,   100, 10,   0
+	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,         STATUS,   100, 10,   0
+	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,         STATUS,   100, 10,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,        1, NORMAL,        SPECIAL,  100, 15,   0
-	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,      PHYSICAL,  80,  5,   0
+	move SEED_FLARE,   EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,         SPECIAL,  85,  10,  50
 	move DRACO_METEOR, EFFECT_RECOIL_HIT,        120, DRAGON,        SPECIAL,  100, 10,   0
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,    90,  5,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,    90,  5,   0

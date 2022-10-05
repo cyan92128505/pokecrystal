@@ -212,7 +212,7 @@ FramesPointers:
 	dw GabiteFrames
 	dw GarchompFrames
 	dw ScizorFrames
-	dw ShuckleFrames
+	dw ShayminFrames
 	dw HeracrossFrames
 	dw SneaselFrames
 	dw TeddiursaFrames

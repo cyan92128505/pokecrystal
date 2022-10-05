@@ -212,7 +212,7 @@ AnimationIdlePointers:
 	dw GabiteAnimationIdle
 	dw GarchompAnimationIdle
 	dw ScizorAnimationIdle
-	dw ShuckleAnimationIdle
+	dw ShayminAnimationIdle
 	dw HeracrossAnimationIdle
 	dw SneaselAnimationIdle
 	dw TeddiursaAnimationIdle

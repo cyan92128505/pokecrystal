@@ -238,7 +238,7 @@ MoveDescriptions::
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
-	dw CrossChopDescription
+	dw SeedFlareDescription
 	dw DracoMeteorDescription
 	dw RainDanceDescription
 	dw SunnyDayDescription
@@ -1215,9 +1215,9 @@ HiddenPowerDescription:
 	db   "The power varies"
 	next "with the #MON.@"
 
-CrossChopDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+SeedFlareDescription:
+	db   "Powerful flare,"
+	next "lowers SPCL.DEF.@"
 
 DracoMeteorDescription:
 	db   "Meteors rain on"

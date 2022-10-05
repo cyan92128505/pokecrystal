@@ -214,7 +214,7 @@ EvosAttacksPointers::
 	dw GabiteEvosAttacks
 	dw GarchompEvosAttacks
 	dw ScizorEvosAttacks
-	dw ShuckleEvosAttacks
+	dw ShayminEvosAttacks
 	dw HeracrossEvosAttacks
 	dw SneaselEvosAttacks
 	dw TeddiursaEvosAttacks

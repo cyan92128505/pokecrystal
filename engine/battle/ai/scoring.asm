@@ -674,6 +674,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SERENITY,         AI_Smart_Serenity
 	dbw EFFECT_ATTACK_UP_2,      AI_Smart_SwordsDance
 	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
+	dbw EFFECT_SP_ATK_UP,        AI_Smart_Growth
 	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
 	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
 	dbw EFFECT_CALM_MIND,        AI_Smart_CalmMind
@@ -3554,6 +3555,39 @@ AI_Smart_Geomancy:
 	inc [hl]
 	ret
 
+AI_Smart_Growth:
+; don't go past +4
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jp nc, .discourage
+
+; don't use if we are at risk of being KOd, just attack them
+    call ShouldAIBoost
+    jr nc, .discourage
+
+; encourage to get to +1
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr c, .encourage
+
+; discourage after +1 if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+    ret
+
+.encourage
+    dec [hl]
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
 AI_Smart_NastyPlot:
 ; don't go past +4
     ld a, [wEnemySAtkLevel]
@@ -3605,9 +3639,6 @@ AI_Smart_NastyPlot:
     dec [hl]
 	dec [hl]
 	ret
-.discourage80
-    call AI_80_20
-    ret c
 .discourage
     inc [hl]
 	inc [hl]

@@ -212,7 +212,7 @@ PokemonNames::
 	db "GABITE@@@@"
 	db "GARCHOMP@@"
 	db "SCIZOR@@@@"
-	db "SHUCKLE@@@"
+	db "SHAYMIN@@@"
 	db "HERACROSS@"
 	db "SNEASEL@@@"
 	db "TEDDIURSA@"

@@ -732,7 +732,6 @@ MankeyEvosAttacks:
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
 	db 33, SEISMIC_TOSS
-	db 39, CROSS_CHOP
 	db 45, SCREECH
 	db 51, THRASH
 	db 0 ; no more level-up moves
@@ -749,7 +748,6 @@ PrimeapeEvosAttacks:
 	db 27, FOCUS_ENERGY
 	db 28, RAGE
 	db 36, SEISMIC_TOSS
-	db 45, CROSS_CHOP
 	db 54, SCREECH
 	db 63, THRASH
 	db 0 ; no more level-up moves
@@ -860,7 +858,6 @@ MachopEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 31, ROCK_SMASH
-	db 37, CROSS_CHOP
 	db 43, SCARY_FACE
 	db 49, SUBMISSION
 	db 0 ; no more level-up moves
@@ -876,7 +873,6 @@ MachokeEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 34, ROCK_SMASH
-	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
 	db 0 ; no more level-up moves
@@ -891,7 +887,6 @@ MachampEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 34, ROCK_SMASH
-	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
 	db 0 ; no more level-up moves
@@ -2442,7 +2437,8 @@ SylveonEvosAttacks:
 	db 1, REST
 	db 1, REFLECT
 	db 1, LIGHT_SCREEN
-	db 40, MOON_BLAST
+	db 40, MOONLIGHT
+	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
 MismagiusEvosAttacks:
@@ -2838,13 +2834,17 @@ ScizorEvosAttacks:
 	db 42, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
-ShuckleEvosAttacks:
+ShayminEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WITHDRAW
-	db 9, WRAP
-	db 14, ENCORE
-	db 23, SAFEGUARD
-	db 37, REST
+	db 1, AIR_SLASH
+	db 1, SEED_FLARE
+	db 1, EARTH_POWER
+	db 1, GROWTH
+	db 25, SYNTHESIS
+	db 35, LEECH_SEED
+	db 40, AIR_SLASH
+	db 50, SEED_FLARE
+	db 55, GROWTH
 	db 0 ; no more level-up moves
 
 HeracrossEvosAttacks:

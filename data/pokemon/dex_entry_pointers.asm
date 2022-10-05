@@ -213,7 +213,7 @@ PokedexDataPointerTable:
 	dw GabitePokedexEntry
 	dw GarchompPokedexEntry
 	dw ScizorPokedexEntry
-	dw ShucklePokedexEntry
+	dw ShayminPokedexEntry
 	dw HeracrossPokedexEntry
 	dw SneaselPokedexEntry
 	dw TeddiursaPokedexEntry

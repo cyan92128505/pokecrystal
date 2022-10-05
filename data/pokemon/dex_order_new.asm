@@ -136,7 +136,6 @@ NewPokedexOrder:
 	db TENTACRUEL
 	db KRABBY
 	db KINGLER
-	db SHUCKLE
 	db STARYU
 	db STARMIE
 	db SHELLDER
@@ -251,6 +250,7 @@ NewPokedexOrder:
 	db DIALGA
 	db PALKIA
 	db GIRATINA
+	db SHAYMIN
 	db XERNEAS
 	db YVELTAL
 	db MEWTWO

@@ -183,7 +183,7 @@ MonMenuIcons:
 	db ICON_FOX         ; MAREEP
 	db ICON_MONSTER     ; FLAAFFY
 	db ICON_MONSTER     ; AMPHAROS
-	db ICON_ODDISH      ; SYLVEON
+	db ICON_MONSTER     ; SYLVEON
 	db ICON_GHOST       ; MISMAGIUS
 	db ICON_VOLTORB     ; PORYGONZ
 	db ICON_BUG         ; GENESECT
@@ -214,7 +214,7 @@ MonMenuIcons:
 	db ICON_MONSTER     ; GABITE
 	db ICON_MONSTER     ; GARCHOMP
 	db ICON_BUG         ; SCIZOR
-	db ICON_BUG         ; SHUCKLE
+	db ICON_ODDISH      ; SHAYMIN
 	db ICON_BUG         ; HERACROSS
 	db ICON_FOX         ; SNEASEL
 	db ICON_MONSTER     ; TEDDIURSA

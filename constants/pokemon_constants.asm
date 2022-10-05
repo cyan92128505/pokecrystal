@@ -101,7 +101,7 @@
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
-	const FARFETCH_D ; 53
+	const FARFETCH_D ; 53   mamoswine
 	const DODUO      ; 54   electivire
 	const DODRIO     ; 55   magnezone
 	const SEEL       ; 56   yanmega
@@ -232,7 +232,7 @@ JOHTO_POKEMON EQU const_value
 	const GABITE     ; d2
 	const GARCHOMP   ; d3
 	const SCIZOR     ; d4
-	const SHUCKLE    ; d5  skymin
+	const SHAYMIN    ; d5
 	const HERACROSS  ; d6
 	const SNEASEL    ; d7
 	const TEDDIURSA  ; d8

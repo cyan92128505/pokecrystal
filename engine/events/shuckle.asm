@@ -6,7 +6,7 @@ GiveShuckle:
 	ld [wMonType], a
 
 ; Level 15 Shuckle.
-	ld a, SHUCKLE
+	ld a, DEOXYS
 	ld [wCurPartySpecies], a
 	ld a, 15
 	ld [wCurPartyLevel], a
@@ -76,7 +76,7 @@ ReturnShuckie:
 	jr c, .refused
 
 	ld a, [wCurPartySpecies]
-	cp SHUCKLE
+	cp DEOXYS
 	jr nz, .DontReturn
 
 	ld a, [wCurPartyMon]

@@ -199,9 +199,9 @@ AlphabeticalPokedexOrder:
 	db SEADRA
 	db SEAKING
 	db SEEL
+	db SHAYMIN
     db SHELGON
 	db SHELLDER
-	db SHUCKLE
 	db SIGILYPH
 	db SKARMORY
 	db SLOWBRO

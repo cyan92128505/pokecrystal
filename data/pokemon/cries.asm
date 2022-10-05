@@ -218,7 +218,7 @@ PokemonCries::
 	mon_cry CRY_DUNSPARCE,     0,  384 ; GABITE
 	mon_cry CRY_SLOWKING,    352,  224 ; GARCHOMP
 	mon_cry CRY_AMPHAROS,      0,  352 ; SCIZOR
-	mon_cry CRY_DUNSPARCE,   656,  168 ; SHUCKLE
+	mon_cry CRY_DUNSPARCE,   656,  168 ; SHAYMIN
 	mon_cry CRY_AMPHAROS,     53,  224 ; HERACROSS
 	mon_cry CRY_WOOPER,       83,  175 ; SNEASEL
 	mon_cry CRY_TEDDIURSA,  1954,  110 ; TEDDIURSA

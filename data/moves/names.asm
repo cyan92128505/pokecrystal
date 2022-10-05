@@ -237,7 +237,7 @@ MoveNames::
 	li "SYNTHESIS"
 	li "MOONLIGHT"
 	li "HIDDEN POWER"
-	li "CROSS CHOP"
+	li "SEED FLARE"
 	li "DRACO METEOR"
 	li "RAIN DANCE"
 	li "SUNNY DAY"

@@ -152,7 +152,6 @@ PsyduckEggMoves:
 	db LIGHT_SCREEN
 	db FUTURE_SIGHT
 	db PSYCHIC_M
-	db CROSS_CHOP
 	db -1 ; end
 
 MankeyEggMoves:
@@ -589,7 +588,7 @@ GibleEggMoves:
 	db EARTHQUAKE
 	db -1 ; end
 
-ShuckleEggMoves:
+ShayminEggMoves:
 	db HARDEN
 	db -1 ; end
 

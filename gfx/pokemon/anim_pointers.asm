@@ -212,7 +212,7 @@ AnimationPointers:
 	dw GabiteAnimation
 	dw GarchompAnimation
 	dw ScizorAnimation
-	dw ShuckleAnimation
+	dw ShayminAnimation
 	dw HeracrossAnimation
 	dw SneaselAnimation
 	dw TeddiursaAnimation

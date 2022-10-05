@@ -2029,6 +2029,8 @@ BattleCommand_EffectChance:
     jr z, .sereneGrace
     cp TOGEKISS
     jr z, .sereneGrace
+    cp SHAYMIN
+    jr z, .sereneGrace
     jr .continue
 .sereneGrace
     ld a, [hl]

@@ -139,13 +139,13 @@
 	const SPIKE_CANNON ; 83
 	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
-	const KINESIS      ; 86    .....
+	const KINESIS      ; 86    draining kiss
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c     ......
+	const BARRAGE      ; 8c     roost
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
@@ -183,7 +183,7 @@
 	const FLAIL        ; af
 	const CONVERSION2  ; b0    stone edge
 	const AEROBLAST    ; b1
-	const COTTON_SPORE ; b2    zen headbutt
+	const COTTON_SPORE ; b2     focus blast
 	const REVERSAL     ; b3
 	const SPITE        ; b4
 	const POWDER_SNOW  ; b5    poison jab
@@ -203,7 +203,7 @@
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
 	const DETECT       ; c5     energy ball
-	const BONE_RUSH    ; c6     shadow  punch
+	const BONE_RUSH    ; c6
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
@@ -222,7 +222,7 @@
 	const SLEEP_TALK   ; d6
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
-	const AIR_SLASH    ; d9   air slash
+	const AIR_SLASH    ; d9
 	const FRUSTRATION  ; da
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
@@ -243,7 +243,7 @@
 	const SYNTHESIS    ; eb
 	const MOONLIGHT    ; ec
 	const HIDDEN_POWER ; ed
-	const CROSS_CHOP   ; ee
+	const SEED_FLARE   ; ee
 	const DRACO_METEOR ; ef
 	const RAIN_DANCE   ; f0
 	const SUNNY_DAY    ; f1

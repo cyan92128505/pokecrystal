@@ -5705,6 +5705,20 @@ BattleCommand_FlinchTarget:
 	and a
 	ret nz
 
+; =============================
+; ======== Inner Focus ========
+; =============================
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .checkSpecies
+	ld a, [wEnemyMonSpecies]
+.checkSpecies
+	ld hl, InnerFocusPokemon
+	ld de, 1
+	call IsInArray
+	ret c
+
 	; fallthrough
 
 FlinchTarget:
@@ -6078,9 +6092,21 @@ BattleCommand_Recoil:
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
 	and a
+	ld a, [wBattleMonSpecies]
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
+	ld a, [wEnemyMonSpecies]
 .got_hp
+; ========================
+; ===== Rock Head ========
+; ========================
+    cp AERODACTYL
+    ret z
+    cp MAROWAK
+    ret z
+    cp RHYDON
+    ret z
+; ========================
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a

@@ -67,6 +67,15 @@ LevitatePokemon:
     db UNOWN
     db -1
 
+InnerFocusPokemon:
+    db LUCARIO
+    db SMEARGLE
+    db HYPNO
+    db CROBAT
+    db UMBREON
+    db ARCEUS
+    db -1
+
 UberImmunePokemon:
     db ARCEUS
     db MEWTWO

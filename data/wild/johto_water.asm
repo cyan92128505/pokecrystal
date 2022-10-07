@@ -55,21 +55,21 @@ JohtoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 15, GOLDEEN
 	db 20, WOOPER
-	db 20, SEAKING
+	db 20, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_2F_INSIDE
 	db 2 percent ; encounter rate
 	db 20, GOLDEEN
 	db 25, WOOPER
-	db 25, SEAKING
+	db 25, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_B1F
 	db 2 percent ; encounter rate
 	db 15, GOLDEEN
 	db 20, WOOPER
-	db 20, SEAKING
+	db 20, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons WHIRL_ISLAND_SW
@@ -95,7 +95,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 35, SEAKING
+	db 35, POLIWAG
 	db 35, GOLDUCK
 	db 35, GOLDEEN
 	end_water_wildmons
@@ -181,7 +181,7 @@ JohtoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 20, GOLDEEN
 	db 15, GOLDEEN
-	db 20, SEAKING
+	db 20, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43

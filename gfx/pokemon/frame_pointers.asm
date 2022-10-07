@@ -118,7 +118,7 @@ FramesPointers:
 	dw HorseaFrames
 	dw SeadraFrames
 	dw GoldeenFrames
-	dw SeakingFrames
+	dw HonchkrowFrames
 	dw StaryuFrames
 	dw StarmieFrames
 	dw MrMimeFrames

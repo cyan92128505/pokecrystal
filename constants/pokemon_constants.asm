@@ -137,7 +137,7 @@
 	const HORSEA     ; 74
 	const SEADRA     ; 75
 	const GOLDEEN    ; 76   magmortar
-	const SEAKING    ; 77   hunchcrow
+	const HONCHKROW  ; 77
 	const STARYU     ; 78
 	const STARMIE    ; 79
 	const MR__MIME   ; 7a

@@ -118,7 +118,7 @@ PokemonNames::
 	db "HORSEA@@@@"
 	db "SEADRA@@@@"
 	db "GOLDEEN@@@"
-	db "SEAKING@@@"
+	db "HONCHKROW@"
 	db "STARYU@@@@"
 	db "STARMIE@@@"
 	db "MR.MIME@@@"

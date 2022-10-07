@@ -118,7 +118,7 @@ AnimationIdlePointers:
 	dw HorseaAnimationIdle
 	dw SeadraAnimationIdle
 	dw GoldeenAnimationIdle
-	dw SeakingAnimationIdle
+	dw HonchkrowAnimationIdle
 	dw StaryuAnimationIdle
 	dw StarmieAnimationIdle
 	dw MrMimeAnimationIdle

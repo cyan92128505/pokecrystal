@@ -676,22 +676,21 @@ MeowthEvosAttacks:
 	db 1, SCRATCH
 	db 1, GROWL
 	db 11, BITE
-	db 28, FAINT_ATTACK
-	db 35, SCREECH
-	db 41, FURY_SWIPES
-	db 46, SLASH
+	db 20, SWIFT
+	db 24, SCREECH
+	db 28, BUBBLEBEAM
+	db 35, SLASH
 	db 0 ; no more level-up moves
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 1, BITE
 	db 11, BITE
-	db 29, FAINT_ATTACK
-	db 38, SCREECH
-	db 46, FURY_SWIPES
-	db 53, SLASH
+	db 20, SWIFT
+	db 24, SCREECH
+	db 28, BUBBLEBEAM
+	db 35, SLASH
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
@@ -1572,7 +1571,6 @@ SeadraEvosAttacks:
 	db 0 ; no more level-up moves
 
 GoldeenEvosAttacks:
-	db EVOLVE_LEVEL, 33, SEAKING
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, TAIL_WHIP
@@ -1585,18 +1583,19 @@ GoldeenEvosAttacks:
 	db 52, AGILITY
 	db 0 ; no more level-up moves
 
-SeakingEvosAttacks:
+HonchkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 1, TAIL_WHIP
-	db 1, TAIL_WHIP
-	db 10, SUPERSONIC
-	db 15, HORN_ATTACK
-	db 24, FLAIL
-	db 29, FURY_ATTACK
-	db 41, WATERFALL
-	db 49, HORN_DRILL
-	db 61, AGILITY
+	db 1, NIGHT_SHADE
+	db 1, MEAN_LOOK
+	db 1, PURSUIT
+	db 16, HAZE
+	db 21, WING_ATTACK
+	db 26, AIR_SLASH
+	db 31, NIGHT_SLASH
+	db 36, DARK_PULSE
+	db 46, NASTY_PLOT
+	db 51, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 StaryuEvosAttacks:
@@ -2639,20 +2638,26 @@ UmbreonEvosAttacks:
 	db 16, PURSUIT
 	db 23, QUICK_ATTACK
 	db 30, CONFUSE_RAY
-	db 36, FAINT_ATTACK
+	db 36, NIGHT_SLASH
 	db 42, MEAN_LOOK
 	db 47, SCREECH
 	db 52, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
+	db EVOLVE_LEVEL, 37, HONCHKROW
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 11, PURSUIT
+	db 1, NIGHT_SHADE
+	db 1, MEAN_LOOK
+	db 1, PURSUIT
 	db 16, HAZE
-	db 26, NIGHT_SHADE
-	db 31, FAINT_ATTACK
-	db 41, MEAN_LOOK
+	db 21, WING_ATTACK
+	db 26, AIR_SLASH
+	db 31, NIGHT_SLASH
+	db 36, DARK_PULSE
+	db 46, NASTY_PLOT
+	db 51, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 SlowkingEvosAttacks:
@@ -2757,7 +2762,7 @@ GligarEvosAttacks:
 	db 6, SAND_ATTACK
 	db 13, HARDEN
 	db 20, QUICK_ATTACK
-	db 28, FAINT_ATTACK
+	db 28, NIGHT_SLASH
 	db 36, SLASH
 	db 44, SCREECH
 	db 52, GUILLOTINE
@@ -2866,7 +2871,7 @@ SneaselEvosAttacks:
 	db 1, LEER
 	db 9, QUICK_ATTACK
 	db 17, SCREECH
-	db 25, FAINT_ATTACK
+	db 25, NIGHT_SLASH
 	db 33, FURY_SWIPES
 	db 41, AGILITY
 	db 49, SLASH
@@ -2881,7 +2886,7 @@ TeddiursaEvosAttacks:
 	db 1, LEER
 	db 8, LICK
 	db 15, FURY_SWIPES
-	db 22, FAINT_ATTACK
+	db 22, NIGHT_SLASH
 	db 29, REST
 	db 36, SLASH
 	db 43, SNORE
@@ -2896,7 +2901,7 @@ UrsaringEvosAttacks:
 	db 1, FURY_SWIPES
 	db 8, LICK
 	db 15, FURY_SWIPES
-	db 22, FAINT_ATTACK
+	db 22, NIGHT_SLASH
 	db 29, REST
 	db 39, SLASH
 	db 49, SNORE
@@ -3002,7 +3007,7 @@ HoundourEvosAttacks:
 	db 7, ROAR
 	db 13, POISON_GAS
 	db 20, BITE
-	db 27, FAINT_ATTACK
+	db 27, NIGHT_SLASH
 	db 35, FLAMETHROWER
 	db 43, CRUNCH
 	db 0 ; no more level-up moves
@@ -3014,7 +3019,7 @@ HoundoomEvosAttacks:
 	db 7, ROAR
 	db 13, POISON_GAS
 	db 20, BITE
-	db 30, FAINT_ATTACK
+	db 30, NIGHT_SLASH
 	db 41, FLAMETHROWER
 	db 52, CRUNCH
 	db 0 ; no more level-up moves

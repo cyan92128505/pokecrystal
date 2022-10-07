@@ -239,8 +239,8 @@ PokemonPicPointers::
 	dba_pic SeadraBackpic
 	dba_pic GoldeenFrontpic
 	dba_pic GoldeenBackpic
-	dba_pic SeakingFrontpic
-	dba_pic SeakingBackpic
+	dba_pic HonchkrowFrontpic
+	dba_pic HonchkrowBackpic
 	dba_pic StaryuFrontpic
 	dba_pic StaryuBackpic
 	dba_pic StarmieFrontpic

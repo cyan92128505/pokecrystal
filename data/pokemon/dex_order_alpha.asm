@@ -93,6 +93,7 @@ AlphabeticalPokedexOrder:
 	db HITMONLEE
 	db HITMONTOP
 	db HO_OH
+	db HONCHKROW
 	db HOOTHOOT
 	db HORSEA
 	db HOUNDOOM
@@ -197,7 +198,6 @@ AlphabeticalPokedexOrder:
 	db SCIZOR
 	db SCYTHER
 	db SEADRA
-	db SEAKING
 	db SEEL
 	db SHAYMIN
     db SHELGON

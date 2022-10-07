@@ -37,7 +37,7 @@ SquirtleEggMoves:
 
 PidgeyEggMoves:
 	db PURSUIT
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db FORESIGHT
 	db -1 ; end
 
@@ -51,7 +51,7 @@ RattataEggMoves:
 	db -1 ; end
 
 SpearowEggMoves:
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db FALSE_SWIPE
 	db SCARY_FACE
 	db QUICK_ATTACK
@@ -92,7 +92,7 @@ NidoranMEggMoves:
 	db -1 ; end
 
 VulpixEggMoves:
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db HYPNOSIS
 	db FLAIL
 	db SPITE
@@ -102,7 +102,7 @@ VulpixEggMoves:
 ZubatEggMoves:
 	db QUICK_ATTACK
 	db PURSUIT
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db GUST
 	db WHIRLWIND
 	db -1 ; end
@@ -131,7 +131,7 @@ LarvestaEggMoves:
 	db -1 ; end
 
 DiglettEggMoves:
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db SCREECH
 	db ANCIENTPOWER
 	db PURSUIT
@@ -239,7 +239,7 @@ DoduoEggMoves:
 	db QUICK_ATTACK
 	db SUPERSONIC
 	db HAZE
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db FLAIL
 	db -1 ; end
 
@@ -463,7 +463,7 @@ RioluEggMoves:
 HoothootEggMoves:
 	db MIRROR_MOVE
 	db SUPERSONIC
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db WING_ATTACK
 	db WHIRLWIND
 	db SKY_ATTACK
@@ -504,7 +504,7 @@ TogekissEggMoves:
 	db HAZE
 	db DRILL_PECK
 	db QUICK_ATTACK
-	db FAINT_ATTACK
+	db NIGHT_SLASH
 	db STEEL_WING
 	db -1 ; end
 

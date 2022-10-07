@@ -185,7 +185,7 @@ MoveDescriptions::
 	dw ProtectDescription
 	dw MachPunchDescription
 	dw ScaryFaceDescription
-	dw FaintAttackDescription
+	dw NightSlashDescription
 	dw SweetKissDescription
 	dw BellyDrumDescription
 	dw SludgeBombDescription
@@ -1003,9 +1003,9 @@ ScaryFaceDescription:
 	db   "Sharply reduces"
 	next "the foe's SPEED.@"
 
-FaintAttackDescription:
-	db   "An attack that"
-	next "never misses.@"
+NightSlashDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 SweetKissDescription:
 	db   "A move that causes"

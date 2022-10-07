@@ -124,7 +124,7 @@ PokemonCries::
 	mon_cry CRY_CLEFAIRY,    153,  144 ; HORSEA
 	mon_cry CRY_CLEFAIRY,     60,  129 ; SEADRA
 	mon_cry CRY_CATERPIE,    128,  192 ; GOLDEEN
-	mon_cry CRY_CATERPIE,     16,  383 ; SEAKING
+	mon_cry CRY_MARILL,     -100,  400 ; HONCHCROW
 	mon_cry CRY_PARAS,         2,  160 ; STARYU
 	mon_cry CRY_PARAS,         0,  256 ; STARMIE
 	mon_cry CRY_KRABBY,        8,  192 ; MR__MIME

@@ -1209,6 +1209,8 @@ BattleCommand_Critical:
 .checkHighCritMon
     cp PERSIAN
     jr z, .checkSlash
+    cp HONCHKROW
+    jr z, .increaseCritical
     jr .continue
 .checkSlash
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1218,7 +1220,9 @@ BattleCommand_Critical:
 	ld a, 1
 	ld [wCriticalHit], a
 	ret
-
+.increaseCritical
+    inc c
+    inc c
 
 .continue
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -5717,9 +5721,10 @@ BattleCommand_FlinchTarget:
 	ld hl, InnerFocusPokemon
 	ld de, 1
 	call IsInArray
-	ret c
-
-	; fallthrough
+	jr nc, FlinchTarget
+	ld hl, CantFlinchText
+	jp StdBattleTextbox
+	ret
 
 FlinchTarget:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
@@ -6101,11 +6106,16 @@ BattleCommand_Recoil:
 ; ===== Rock Head ========
 ; ========================
     cp AERODACTYL
-    ret z
+    jr nz, .endRockHead
     cp MAROWAK
-    ret z
+    jr nz, .endRockHead
     cp RHYDON
-    ret z
+    jr nz, .endRockHead
+	ld hl, RockHeadText
+	jp StdBattleTextbox
+	ret
+
+.endRockHead
 ; ========================
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar

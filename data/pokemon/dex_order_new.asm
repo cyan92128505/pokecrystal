@@ -71,7 +71,6 @@ NewPokedexOrder:
 	db MAGIKARP
 	db GYARADOS
 	db GOLDEEN
-	db SEAKING
 	db SLOWPOKE
 	db SLOWBRO
 	db SLOWKING
@@ -173,6 +172,7 @@ NewPokedexOrder:
 	db RHYHORN
 	db RHYDON
 	db MURKROW
+	db HONCHKROW
 	db HOUNDOUR
 	db HOUNDOOM
 	db SNEASEL

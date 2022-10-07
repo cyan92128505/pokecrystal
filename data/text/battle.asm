@@ -623,6 +623,16 @@ StatusImmunityText:
     line "is status immune"
     prompt
 
+CantFlinchText:
+    text "<TARGET>"
+    line "can not flinch"
+    prompt
+
+RockHeadText:
+    text "<TARGET>"
+    line "takes no recoil"
+    prompt
+
 CriticalHitText:
 	text "A critical hit!"
 	prompt

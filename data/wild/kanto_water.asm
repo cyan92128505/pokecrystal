@@ -6,7 +6,7 @@ KantoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 20, GOLDEEN
 	db 20, SLOWPOKE
-	db 20, SEAKING
+	db 20, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_PORT
@@ -20,7 +20,7 @@ KantoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 10, GOLDEEN
 	db 5, GOLDEEN
-	db 10, SEAKING
+	db 10, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_6
@@ -34,14 +34,14 @@ KantoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 15, GOLDEEN
 	db 10, GOLDEEN
-	db 15, SEAKING
+	db 15, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_10_NORTH
 	db 4 percent ; encounter rate
 	db 15, GOLDEEN
 	db 10, GOLDEEN
-	db 15, SEAKING
+	db 15, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_12
@@ -90,14 +90,14 @@ KantoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 10, GOLDEEN
 	db 5, GOLDEEN
-	db 10, SEAKING
+	db 10, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_25
 	db 4 percent ; encounter rate
 	db 10, GOLDEEN
 	db 5, GOLDEEN
-	db 10, SEAKING
+	db 10, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_26
@@ -139,7 +139,7 @@ KantoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 10, GOLDEEN
 	db 5, GOLDEEN
-	db 10, SEAKING
+	db 10, POLIWAG
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_CITY

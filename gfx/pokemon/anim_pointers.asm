@@ -118,7 +118,7 @@ AnimationPointers:
 	dw HorseaAnimation
 	dw SeadraAnimation
 	dw GoldeenAnimation
-	dw SeakingAnimation
+	dw HonchkrowAnimation
 	dw StaryuAnimation
 	dw StarmieAnimation
 	dw MrMimeAnimation

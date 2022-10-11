@@ -2292,95 +2292,39 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
 	ld [wBattleResult], a ; WIN
-	call IsAnyMonHoldingExpShare
-	jr z, .skip_exp
-	ld hl, wEnemyMonBaseStats
-	ld b, wEnemyMonEnd - wEnemyMonBaseStats
-.loop
-	srl [hl]
-	inc hl
-	dec b
-	jr nz, .loop
-
-.skip_exp
-	ld hl, wEnemyMonBaseStats
-	ld de, wBackupEnemyMonBaseStats
-	ld bc, wEnemyMonEnd - wEnemyMonBaseStats
-	call CopyBytes
-	xor a
-	ld [wGivingExperienceToExpShareHolders], a
+; Preserve bits of non-fainted participants
+	ld a, [wBattleParticipantsNotFainted]
+	ld d, a
+	push de
 	call GiveExperiencePoints
-	call IsAnyMonHoldingExpShare
-	ret z
+	pop de
 
+; If Exp. Share is ON, give 50% EXP to non-participants
+	;ld a, [wExpShareToggle]
+	;and a
+	;ret z
+
+; AndrewNote - ExpShare eventually use toggle instead of this
+	ld a, EXP_SHARE
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	ret nc ; don't have exp share
+
+	ld hl, wEnemyMonBaseExp
+; after access to mt silver don't half exp
+    call CheckAccessToMtSilver
+    jr c, .dontHalf
+	srl [hl]
+.dontHalf
 	ld a, [wBattleParticipantsNotFainted]
 	push af
 	ld a, d
+	xor %00111111
 	ld [wBattleParticipantsNotFainted], a
-	ld hl, wBackupEnemyMonBaseStats
-	ld de, wEnemyMonBaseStats
-	ld bc, wEnemyMonEnd - wEnemyMonBaseStats
-	call CopyBytes
-	ld a, $1
-	ld [wGivingExperienceToExpShareHolders], a
 	call GiveExperiencePoints
 	pop af
 	ld [wBattleParticipantsNotFainted], a
-	ret
-
-IsAnyMonHoldingExpShare:
-	ld a, [wPartyCount]
-	ld b, a
-	ld hl, wPartyMon1
-	ld c, 1
-	ld d, 0
-.loop
-	push hl
-	push bc
-	ld bc, MON_HP
-	add hl, bc
-	ld a, [hli]
-	or [hl]
-	pop bc
-	pop hl
-	jr z, .next
-
-	push hl
-	push bc
-	ld bc, MON_ITEM
-	add hl, bc
-	pop bc
-	ld a, [hl]
-	pop hl
-
-	cp EXP_SHARE
-	jr nz, .next
-	ld a, d
-	or c
-	ld d, a
-
-.next
-	sla c
-	push de
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	pop de
-	dec b
-	jr nz, .loop
-
-	ld a, d
-	ld e, 0
-	ld b, PARTY_LENGTH
-.loop2
-	srl a
-	jr nc, .okay
-	inc e
-
-.okay
-	dec b
-	jr nz, .loop2
-	ld a, e
-	and a
 	ret
 
 StopDangerSound:
@@ -2700,10 +2644,6 @@ PlayVictoryMusic:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer_victory
-	push de
-	call IsAnyMonHoldingExpShare
-	pop de
-	jr nz, .play_music
 	ld hl, wPayDayMoney
 	ld a, [hli]
 	or [hl]
@@ -3641,6 +3581,8 @@ CheckWhetherToAskSwitch:
     cp BATTLETYPE_SET
     jr z, .return_nc
     cp BATTLETYPE_SETNOITEMS
+    jr z, .return_nc
+    cp BATTLETYPE_REMATCH
     jr z, .return_nc
 	ld a, [wCurPartyMon]
 	push af
@@ -5250,6 +5192,8 @@ BattleMenu_Pack:
 
     ld a, [wBattleType]
     cp BATTLETYPE_SETNOITEMS
+    jp z, .ItemsCantBeUsed
+    cp BATTLETYPE_REMATCH
     jp z, .ItemsCantBeUsed
 
 	ld a, [wInBattleTowerBattle]
@@ -7232,7 +7176,6 @@ GiveExperiencePoints:
 	bit 0, a
 	ret nz
 
-	call .EvenlyDivideExpAmongParticipants
 	xor a
 	ld [wCurPartyMon], a
 	ld bc, wPartyMon1Species
@@ -7313,7 +7256,8 @@ GiveExperiencePoints:
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
-	ld a, [wEnemyMonBaseExp]
+    ld a, [wEnemyMonBaseExp]
+	ld b, a
 	ldh [hMultiplicand + 2], a
 	ld a, [wEnemyMonLevel]
 	ldh [hMultiplier], a
@@ -7322,8 +7266,8 @@ GiveExperiencePoints:
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
-; Boost Experience for traded Pokemon
 	pop bc
+; Boost Experience for traded Pokemon
 	ld hl, MON_ID
 	add hl, bc
 	ld a, [wPlayerID]
@@ -7345,6 +7289,13 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
+; AndrewNote - half exp for rematches until access to mt silver
+    call CheckAccessToMtSilver
+    jr c, .dontHalf
+    ld a, [wBattleType]
+    cp BATTLETYPE_REMATCH
+    call z, HalfExp
+.dontHalf
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM
@@ -7600,40 +7551,6 @@ GiveExperiencePoints:
 .done
 	jp ResetBattleParticipants
 
-.EvenlyDivideExpAmongParticipants:
-; count number of battle participants
-	ld a, [wBattleParticipantsNotFainted]
-	ld b, a
-	ld c, PARTY_LENGTH
-	ld d, 0
-.count_loop
-	xor a
-	srl b
-	adc d
-	ld d, a
-	dec c
-	jr nz, .count_loop
-	cp 2
-	ret c
-
-	ld [wTempByteValue], a
-	ld hl, wEnemyMonBaseStats
-	ld c, wEnemyMonEnd - wEnemyMonBaseStats
-.base_stat_division_loop
-	xor a
-	ldh [hDividend + 0], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld a, [wTempByteValue]
-	ldh [hDivisor], a
-	ld b, 2
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld [hli], a
-	dec c
-	jr nz, .base_stat_division_loop
-	ret
-
 BoostExp:
 ; Multiply experience by 1.5x
 	push bc
@@ -7653,6 +7570,41 @@ BoostExp:
 	ldh [hProduct + 2], a
 	pop bc
 	ret
+
+HalfExp:
+	push bc
+; load experience value
+	ldh a, [hProduct + 2]
+	ld b, a
+	ldh a, [hProduct + 3]
+	ld c, a
+; halve it
+	srl b
+	rr c
+; load it back to the exp value
+    ld a, c
+	ldh [hProduct + 3], a
+	ld a, b
+	ldh [hProduct + 2], a
+	pop bc
+	ret
+
+CheckAccessToMtSilver:
+    push de
+    push bc
+	ld de, EVENT_OPENED_MT_SILVER
+	ld b, CHECK_FLAG
+	farcall EngineFlagAction
+	pop bc
+	pop de
+	ld a, c
+	and a
+	jr nz, .yes
+	xor a
+	ret
+.yes
+    scf
+    ret
 
 Text_MonGainedExpPoint:
 	text_far Text_Gained

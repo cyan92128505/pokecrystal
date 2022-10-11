@@ -37,6 +37,7 @@ RematchScript:
 	writetext RematchText
 	yesorno
 	iffalse .refused
+    loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
     loadtemptrainer
 	encountermusic
 	sjump StartBattleWithMapTrainerScript

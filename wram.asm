@@ -3000,6 +3000,7 @@ wPlayerState:: db
 
 wHallOfFameCount:: db
 	ds 1
+;wExpShareToggle:: db
 wTradeFlags:: flag_array NUM_NPC_TRADES
 	ds 1
 wMooMooBerries:: db

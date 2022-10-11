@@ -2300,17 +2300,9 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	pop de
 
 ; If Exp. Share is ON, give 50% EXP to non-participants
-	;ld a, [wExpShareToggle]
-	;and a
-	;ret z
-
-; AndrewNote - ExpShare eventually use toggle instead of this
-	ld a, EXP_SHARE
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	ret nc ; don't have exp share
-
+	ld a, [wExpShareToggle]
+	and a
+	ret z
 	ld hl, wEnemyMonBaseExp
 ; after access to mt silver don't half exp
     call CheckAccessToMtSilver

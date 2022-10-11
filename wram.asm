@@ -589,6 +589,7 @@ wEnemyFutureSightCount:: db
 
 wGivingExperienceToExpShareHolders:: db
 
+; these three can also be removed/changed
 wBackupEnemyMonBaseStats:: ds NUM_EXP_STATS
 wBackupEnemyMonCatchRate:: db
 wBackupEnemyMonBaseExp:: db
@@ -2991,7 +2992,8 @@ wPokegearFlags::
 ; bit 7: on/off
 	db
 wRadioTuningKnob:: db
-wLastDexMode:: db
+wExpShareToggle:: db
+;wLastDexMode:: db
 	ds 1
 wWhichRegisteredItem:: db
 wRegisteredItem:: db

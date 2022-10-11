@@ -59,7 +59,7 @@ Pokedex:
 	call WaitSFX
 	call ClearSprites
 	ld a, [wCurDexMode]
-	ld [wLastDexMode], a
+	;ld [wLastDexMode], a
 
 	pop af
 	ldh [hInMenu], a
@@ -95,8 +95,8 @@ InitPokedex:
 
 	call Pokedex_CheckUnlockedUnownMode
 
-	ld a, [wLastDexMode]
-	ld [wCurDexMode], a
+	;ld a, [wLastDexMode]
+	;ld [wCurDexMode], a
 
 	call Pokedex_OrderMonsByMode
 	call Pokedex_InitCursorPosition

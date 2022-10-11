@@ -1920,15 +1920,15 @@ LoadCurHPIntoBuffer3:
 	ret
 
 ExpShareEffect:
-	;ld a, [wExpShareToggle]
-	;xor 1
-	;ld [wExpShareToggle], a
-	;and a
+	ld a, [wExpShareToggle]
+	xor 1
+	ld [wExpShareToggle], a
+	and a
 	ld hl, ExpShareToggleOn
 	jp nz, PrintText
 
-	;ld hl, ExpShareToggleOff
-	;jp PrintText
+	ld hl, ExpShareToggleOff
+	jp PrintText
 
 LoadCurHPIntoBuffer2:
 	ld a, MON_HP

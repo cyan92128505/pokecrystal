@@ -221,15 +221,19 @@ Text_ReceivedTM24:
 
 ClairText_DescribeDragonbreathDragonDen:
 	text "That contains"
-	line "DRAGONBREATH."
+	line "DRAGON PULSE."
 
-	para "No, it doesn't"
-	line "have anything to"
-	cont "do with my breath."
+	para "PROF.OAK has told"
+	line "me to inform you"
+	cont "that he has sent."
+	cont "a software update"
+	cont "to your EXP.SHARE"
+	cont "so it now gives"
+	cont "more EXP."
 
-	para "If you don't want"
-	line "it, you don't have"
-	cont "to take it."
+	para "I don't know what"
+	line "that means but it"
+	cont "sounds important."
 	done
 
 ClairText_NoRoom:
@@ -241,6 +245,20 @@ ClairText_NoRoom:
 
 	para "room, then come"
 	line "see me there."
+
+	para "Oh, by the way."
+
+	para "PROF.OAK has told"
+	line "me to inform you"
+	cont "that he has sent."
+	cont "a software update"
+	cont "to your EXP.SHARE"
+	cont "so it now gives"
+	cont "more EXP."
+
+	para "I don't know what"
+	line "that means but it"
+	cont "sounds important."
 	done
 
 ClairText_WhatsTheMatterDragonDen:

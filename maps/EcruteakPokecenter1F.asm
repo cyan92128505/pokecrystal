@@ -43,6 +43,13 @@ EcruteakPokecenter1F_MapScripts:
 
 .PointlessJump:
 	writetext EcruteakPokecenter1F_BillText2
+
+	giveitem EXP_SHARE
+	writetext EcruteakPokecenter1F_GotExpShare
+	playsound SFX_KEY_ITEM
+	waitsfx
+	itemnotify
+
 	waitbutton
 	closetext
 	turnobject PLAYER, DOWN
@@ -109,55 +116,75 @@ EcruteakPokecenter1F_BillText1:
 EcruteakPokecenter1F_BillText2:
 	text "I just finished"
 	line "adjustments on my"
-	cont "TIME CAPSULE."
+	cont "EXP SHARE."
 
-	para "You know that"
-	line "#MON can be"
-	cont "traded, right?"
+	para "It is a new"
+	line "powerful device."
 
-	para "My TIME CAPSULE"
-	line "was developed to"
+	para "I have created"
+	line "it with help from"
+	cont "PROF.OAK."
 
-	para "enable trades with"
-	line "the past."
+	para "I am looking"
+	line "for the right"
+	cont "person to test"
+	cont "it."
 
-	para "But you can't send"
-	line "anything that"
+	para "But I must be"
+	line "careful."
 
-	para "didn't exist in"
-	line "the past."
+	para "This device can"
+	line "make a trainer"
+	cont "far more"
+	cont "powerful!"
 
-	para "If you did, the PC"
-	line "in the past would"
-	cont "have a breakdown."
+	para "I think you are"
+	line "the right person."
 
-	para "So you have to"
-	line "remove anything"
+	para "You have to turn"
+	line "the EXP.SHARE on."
+	cont "When you do all"
+	cont "your #MON will"
+	cont "gain EXP in"
+	cont "battle."
 
-	para "that wasn't around"
-	line "in the past."
+	para "Even ones that"
+	line "didn't fight!"
 
-	para "Put simply, no"
-	line "sending new moves"
+	para "Right now they"
+	line "will gain a"
+	cont "quarter of the"
+	cont "full EXP."
 
-	para "or new #MON in"
-	line "the TIME CAPSULE."
+	para "But PROF.OAK"
+	line "and I are working"
+	cont "on updates to"
+	cont "increase that."
 
-	para "Don't you worry."
-	line "I'm done with the"
-	cont "adjustments."
+	para "We will learn"
+	line "a lot from you"
+	cont "using it."
 
-	para "Tomorrow, TIME"
-	line "CAPSULES will be"
+	para "Of course you can"
+	line "turn it off if"
+	cont "you want."
 
-	para "running at all"
-	line "#MON CENTERS."
+	para "But why would"
+	line "you!"
+
+	para "Here I entrust"
+	line "this to you."
 
 	para "I have to hurry on"
 	line "back to GOLDENROD"
 	cont "and see my folks."
 
 	para "Buh-bye!"
+	done
+
+EcruteakPokecenter1F_GotExpShare:
+	text "<PLAYER> received"
+	line "EXP.SHARE."
 	done
 
 EcruteakPokecenter1FPokefanMText:

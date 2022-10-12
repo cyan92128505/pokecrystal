@@ -2299,16 +2299,25 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	call GiveExperiencePoints
 	pop de
 
-; If Exp. Share is ON, give 50% EXP to non-participants
+; ExpShare is on, give exp to non-participants
 	ld a, [wExpShareToggle]
 	and a
 	ret z
 	ld hl, wEnemyMonBaseExp
-; after access to mt silver don't half exp
-    call CheckAccessToMtSilver
-    jr c, .dontHalf
-	srl [hl]
-.dontHalf
+
+; AndrewNote - ExpShare
+; gives 1/4 exp to all bench Pokemon until all Johto badges obtained
+; then gives 1/2 exp to all bench Pokemon until all Kanto badges obtained
+; then gives full exp to all bench Pokemon
+	ld a, [wKantoBadges]
+	cp %11111111 ; all badges
+    jr z, .continue
+    srl [hl] ; halve exp
+	ld a, [wJohtoBadges]
+	cp %11111111 ; all badges
+	jr z, .continue
+	srl [hl] ; halve exp
+.continue
 	ld a, [wBattleParticipantsNotFainted]
 	push af
 	ld a, d
@@ -7245,6 +7254,13 @@ GiveExperiencePoints:
 	inc de
 	dec c
 	jr nz, .stat_exp_loop
+    pop bc
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	cp MAX_LEVEL
+	jp nc, .next_mon
+	push bc
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
@@ -7281,9 +7297,10 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
-; AndrewNote - half exp for rematches until access to mt silver
-    call CheckAccessToMtSilver
-    jr c, .dontHalf
+; AndrewNote - rematch exp halved until all Kanto badges are obtained
+   	ld a, [wKantoBadges]
+   	cp %11111111 ; all badges
+    jr z, .dontHalf
     ld a, [wBattleType]
     cp BATTLETYPE_REMATCH
     call z, HalfExp
@@ -7580,23 +7597,6 @@ HalfExp:
 	ldh [hProduct + 2], a
 	pop bc
 	ret
-
-CheckAccessToMtSilver:
-    push de
-    push bc
-	ld de, EVENT_OPENED_MT_SILVER
-	ld b, CHECK_FLAG
-	farcall EngineFlagAction
-	pop bc
-	pop de
-	ld a, c
-	and a
-	jr nz, .yes
-	xor a
-	ret
-.yes
-    scf
-    ret
 
 Text_MonGainedExpPoint:
 	text_far Text_Gained

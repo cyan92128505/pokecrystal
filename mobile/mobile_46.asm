@@ -3963,7 +3963,7 @@ BattleTower_UbersCheck:
 .uber
 	ld a, [hl]
 	cp 70
-	jr c, .uber_under_70
+	;jr c, .uber_under_70
 .next
 	add hl, bc
 	inc de
@@ -3977,20 +3977,22 @@ BattleTower_UbersCheck:
 	ret
 
 .uber_under_70
-	pop af
-	ld a, [de]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	ld hl, wStringBuffer1
-	ld de, wcd49
-	ld bc, MON_NAME_LENGTH
-	call CopyBytes
-	ld a, $a
-	ld [wBattleTowerRoomMenuJumptableIndex], a
-	pop af
-	ldh [rSVBK], a
-	scf
-	ret
+    ret ; AndrewNote - battle tower lvl 70 restriction
+
+	;pop af
+	;ld a, [de]
+	;ld [wNamedObjectIndex], a
+	;call GetPokemonName
+	;ld hl, wStringBuffer1
+	;ld de, wcd49
+	;ld bc, MON_NAME_LENGTH
+	;call CopyBytes
+	;ld a, $a
+	;ld [wBattleTowerRoomMenuJumptableIndex], a
+	;pop af
+	;ldh [rSVBK], a
+	;scf
+	;ret
 
 Function119e2b:
 	call Function3e32

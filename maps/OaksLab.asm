@@ -89,6 +89,10 @@ OakWelcomeKantoText:
 
 	para "out here?"
 	line "Pretty tough, huh?"
+
+	para "Come see me if"
+	line "you beat them"
+	line "all."
 	done
 
 OakLabDexCheckText:
@@ -115,11 +119,28 @@ OakOpenMtSilverText:
 	para "I was right in my"
 	line "assessment of you."
 
-	para "Tell you what,"
-	line "<PLAY_G>. I'll make"
+	para "You are a true"
+	line "CHAMPION!"
 
-	para "arrangements so"
-	line "that you can go to"
+	para "Here let me give"
+	line "your EXP.SHARE"
+	cont "my final upgrade."
+
+	para "There!"
+
+	para "Now all #MON"
+	line "gain full EXP."
+
+	para "Not only that."
+
+	para "But you will"
+	line "now gain full"
+	cont "EXP from"
+	cont "rematches!"
+
+    para "I have also made"
+	line "arrangements so"
+	cont "that you can go to"
 	cont "MT.SILVER."
 
 	para "MT.SILVER is a big"

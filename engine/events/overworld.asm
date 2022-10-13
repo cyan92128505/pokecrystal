@@ -1841,6 +1841,48 @@ UnusedNothingHereText: ; unreferenced
 	text_far _UnusedNothingHereText
 	text_end
 
+PocketPCFunction:
+	call .LoadPocketPC
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+.LoadPocketPC:
+	call .CheckEnvironment
+	jr c, .CannotUsePocketPC
+	ld a, [wPlayerState]
+	ld hl, Script_LoadPocketPC
+	ld de, Script_LoadPocketPC_Register
+	call .CheckIfRegistered
+	call QueueScript
+	ld a, TRUE
+	ret
+.CheckIfRegistered:
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	ld h, d
+	ld l, e
+	ret
+.CheckEnvironment:
+	call GetMapEnvironment
+    cp DUNGEON
+    jr z, .nope
+    cp CAVE
+    jr z, .nope
+	jr .ok
+.ok
+	call GetPlayerStandingTile
+	and $f ; lo nybble only
+	jr nz, .nope ; not FLOOR_TILE
+	xor a
+	ret
+.nope
+	scf
+	ret
+.CannotUsePocketPC:
+	ld a, $0
+	ret
+
 BikeFunction:
 	call .TryBike
 	and $7f
@@ -1926,6 +1968,18 @@ BikeFunction:
 .nope
 	scf
 	ret
+
+Script_LoadPocketPC:
+	reloadmappart
+	special UpdateTimePals
+	special PokemonCenterPC
+	reloadmappart
+	end
+
+Script_LoadPocketPC_Register:
+	special PokemonCenterPC
+	reloadmappart
+	end
 
 Script_GetOnBike:
 	reloadmappart

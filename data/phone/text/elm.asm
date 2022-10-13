@@ -188,6 +188,22 @@ ElmPhoneRadioTowerRocketTakeoverText:
 ElmPhoneGiftText:
 	text "Hello, <PLAY_G>?"
 
+	para "You have obtained"
+	line "all Johto badges!"
+
+	para "Well done!"
+
+	para "PROF.OAK has told"
+	line "me to inform you"
+	cont "that he has sent."
+	cont "a software update"
+	cont "to your EXP.SHARE"
+
+	para "so it now gives"
+	line "double EXP."
+
+	para "Also"
+
 	para "I have something"
 	line "here for you."
 

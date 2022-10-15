@@ -138,8 +138,9 @@ wSpriteUpdatesEnabled:: db
 wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
+wBattleTimeOfDay:: db
 
-	ds 3
+	ds 2
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
@@ -3233,7 +3234,7 @@ wPhoneList:: ds CONTACT_LIST_SIZE + 1
 	ds 22
 
 wLuckyNumberShowFlag:: db
-	ds 1
+wRepelType::db
 wLuckyIDNumber:: dw
 
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active

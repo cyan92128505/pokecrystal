@@ -11,6 +11,8 @@ SubstituteImmuneEffects:	;joenote - added this table to track for substitute imm
 	db EFFECT_DEFENSE_DOWN
 	db EFFECT_DEFENSE_DOWN_2
 	db EFFECT_ATTACK_DOWN
+	db EFFECT_SPEED_DOWN_2
+	db EFFECT_TRANSFORM
 	db $FF
 
 AI_MagicGuardPokemon:
@@ -46,6 +48,18 @@ AI_SturdyPokemon:
     db ONIX
     db STEELIX
     db BLASTOISE
+    db $FF
+
+AI_ClearBodyPokemon:
+    db TENTACOOL
+    db TENTACRUEL
+    db BELDUM
+    db METANG
+    db METAGROSS
+    db MACHAMP
+    db ENTEI
+    db DIALGA
+    db ARCEUS
     db $FF
 
 AI_Basic:
@@ -100,6 +114,13 @@ AI_Basic:
 	and a
 	jp nz, .discourage ; discourage if the player is already statused - loop back to check move
 
+; don't use if enemy is immune to status
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jp z, .discourage
+    cp SYLVEON
+    jp z, .discourage
+
 .checkSub
 ; dismiss moves blocked by sub if sub is up
     ld a, [wPlayerSubStatus4]
@@ -148,7 +169,7 @@ AI_Basic:
 .checkKO
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove
+	jp z, .checkmove
 
     ld a, 1
 	ldh [hBattleTurn], a
@@ -606,6 +627,11 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
+    dbw EFFECT_ATTACK_DOWN,      AI_Smart_StatDown
+    dbw EFFECT_ATTACK_DOWN_2,    AI_Smart_StatDown
+    dbw EFFECT_DEFENSE_DOWN,     AI_Smart_StatDown
+    dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_StatDown
+    dbw EFFECT_SPEED_DOWN_2,     AI_Smart_StatDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
 	dbw EFFECT_HEAL,             AI_Smart_Heal
@@ -683,6 +709,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_QUIVER_DANCE,     AI_Smart_QuiverDance
     dbw EFFECT_SPIKES,           AI_Smart_Spikes
     dbw EFFECT_SHELL_SMASH,      AI_Smart_ShellSmash
+    dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1152,6 +1179,25 @@ AI_Smart_MirrorMove:
 	ret
 
 AI_Smart_AccuracyDown:
+; discourage if enemy is immune to stat drops
+    push bc
+    push hl
+    push de
+	ld hl, AI_ClearBodyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	jr nc, .continue
+
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+.continue
 ; If player's HP is full...
 	call AICheckPlayerMaxHP
 	jr nc, .hp_mismatch_1
@@ -1255,6 +1301,26 @@ AI_Smart_AccuracyDown:
 
 	dec [hl]
 	ret
+
+AI_Smart_StatDown:
+; discourage if enemy is immune to stat drops
+    push bc
+    push hl
+    push de
+	ld hl, AI_ClearBodyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	ret nc
+
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
 
 AI_Smart_ResetStats:
 ; 85% chance to encourage this move if any of enemy's stat levels is lower than -2.
@@ -3706,6 +3772,31 @@ AI_Smart_ShellSmash:
 	inc [hl]
 	inc [hl]
 	ret
+
+AI_Smart_Flinch:
+; do nothing if slower than player
+    call AICompareSpeed
+    ret nc
+
+; encourage if enemy is paralyzed
+    ld a, [wBattleMonStatus]
+	and 1 << PAR
+	jr z, .encourage
+
+; encourage if we have serene grace
+    ld a, [wEnemyMonSpecies]
+    cp SHAYMIN
+    jr z, .encourage
+    cp TOGEKISS
+    jr z, .encourage
+
+    ret
+.encourage
+    dec [hl]
+    dec [hl]
+    ret
+
+
 
 ; AndrewNote - functions which check if the player can KO the AI
 

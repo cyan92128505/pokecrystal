@@ -185,7 +185,7 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	line "Take care!"
 	done
 
-ElmPhoneGiftText:
+ElmExpShareGiftText:
 	text "Hello, <PLAY_G>?"
 
 	para "You have obtained"
@@ -205,6 +205,18 @@ ElmPhoneGiftText:
 	para "Also"
 
 	para "I have something"
+	line "here for you."
+
+	para "Could you swing by"
+	line "my LAB?"
+
+	para "See you later!"
+	done
+
+ElmPhoneGiftText:
+	text "Hello, <PLAY_G>?"
+
+    para "I have something"
 	line "here for you."
 
 	para "Could you swing by"

@@ -3781,7 +3781,7 @@ AI_Smart_Flinch:
 ; encourage if enemy is paralyzed
     ld a, [wBattleMonStatus]
 	and 1 << PAR
-	jr z, .encourage
+	jr nz, .encourage
 
 ; encourage if we have serene grace
     ld a, [wEnemyMonSpecies]

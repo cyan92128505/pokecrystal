@@ -105,7 +105,16 @@ TextboxPalette::
 	inc b
 	inc c
 	inc c
+
+    ; AndrewNote - palette for battle text bg
+	ld a, [wBattleMode]
+	and a
+	jr nz, .battle
 	ld a, PAL_BG_TEXT
+	jr .col
+.battle
+    ld a, PAL_BATTLE_BG_PLAYER
+
 .col
 	push bc
 	push hl

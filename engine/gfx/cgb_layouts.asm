@@ -140,9 +140,10 @@ _CGB_FinishBattleScreenLayout:
 	call FillBoxCGB
 	hlcoord 0, 12, wAttrmap
 	ld bc, 6 * SCREEN_WIDTH
+
 	; AndrewNote - palette for battle text bg
-	;ld a, PAL_BATTLE_BG_TEXT
 	ld a, PAL_BATTLE_BG_PLAYER
+
 	call ByteFill
 	ld hl, BattleObjectPals
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY

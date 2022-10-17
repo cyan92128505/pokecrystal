@@ -38,23 +38,23 @@ _CheckForBattleTowerRules:
 
 .PointerTables:
     ;db 4
-	db 2
+	db 1
 	dw .Functions
 	dw .TextPointers
 
 ; AndrewNote - battle tower rules reduction
 .Functions:
-	dw CheckBTRule_PartyCountEq3
+	;dw CheckBTRule_PartyCountEq3
 	;dw CheckBTRule_PartySpeciesAreUnique
 	;dw CheckBTRule_PartyItemsAreUnique
 	dw CheckBTRule_HasPartyAnEgg
 
 .TextPointers:
 	dw ExcuseMeYoureNotReadyText
-	dw OnlyThreeMonMayBeEnteredText
+	;dw OnlyThreeMonMayBeEnteredText
 	;dw TheMonMustAllBeDifferentKindsText
 	;dw TheMonMustNotHoldTheSameItemsText
-	;dw YouCantTakeAnEggText
+	dw YouCantTakeAnEggText
 
 ExcuseMeYoureNotReadyText:
 	text_far _ExcuseMeYoureNotReadyText

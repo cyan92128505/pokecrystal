@@ -252,10 +252,6 @@ AI_Smart_Switch:
 	and SLP
 	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
-; don't switch if enemy is weakened, just let it die
-	call AICheckEnemyQuarterHP
-	ret nc
-
 ; switch if choice locked into a NVE move
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
@@ -268,8 +264,12 @@ AI_Smart_Switch:
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	jp c, .switch
-
 .not_encored
+
+; don't switch if enemy is weakened, just let it die
+	call AICheckEnemyQuarterHP
+	ret nc
+
 ; switch if enemy accuracy at -2 or lower
     ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1

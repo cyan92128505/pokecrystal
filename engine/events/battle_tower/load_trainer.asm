@@ -92,7 +92,9 @@ endc
 	ret
 
 LoadRandomBattleTowerMon:
-	ld c, BATTLETOWER_PARTY_LENGTH
+	;ld c, BATTLETOWER_PARTY_LENGTH
+	ld a, 6
+	ld c, a
 .loop
 	push bc
 	ld a, BANK(sBTMonOfTrainers)
@@ -101,11 +103,11 @@ LoadRandomBattleTowerMon:
 .FindARandomBattleTowerMon:
 	; From Which LevelGroup are the mon loaded
 	; a = 1..10
-	ld a, [wBTChoiceOfLvlGroup]
-	dec a
+	ld a, [wBTChoiceOfLvlGroup] ; get level group choice
+	dec a ; group choice is 0 - 9
 	ld hl, BattleTowerMons
 	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
-	call AddNTimes
+	call AddNTimes ; increment hl by a * bc, so we are at the right mon
 
 	ldh a, [hRandomAdd]
 	ld b, a
@@ -113,12 +115,22 @@ LoadRandomBattleTowerMon:
 	call Random
 	ldh a, [hRandomAdd]
 	add b
-	ld b, a
+	ld b, a ; b is the number of mon to go forward
+
+	ld a, [wBTChoiceOfLvlGroup]
+	cp 10
+	jr z, .level100
+
 	maskbits BATTLETOWER_NUM_UNIQUE_MON
 	cp BATTLETOWER_NUM_UNIQUE_MON
-	jr nc, .resample
-	; in register 'a' is the chosen mon of the LevelGroup
+	jr nc, .resample ; here we loop around if we have jumped a level group
 
+.level100
+    ld a, b
+    cp 35
+    jr nc, .resample
+
+	; in register 'a' is the chosen mon of the LevelGroup
 	; Check if mon was already loaded before
 	; Check current and the 2 previous teams
 	; includes check if item is double at the current team
@@ -128,9 +140,13 @@ LoadRandomBattleTowerMon:
 	ld b, a
 	ld a, [hld]
 	ld c, a
-	;ld a, [wBT_OTMon1]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
+
+	; Andrew - battle tower ensure enemy mon are unique species
+	; but comment out all other restrictions
+	ld a, [wBT_OTMon1]
+	cp b
+	jr z, .FindARandomBattleTowerMon
+
 	;ld a, [wBT_OTMon1Item]
 	;cp c
 	;jr z, .FindARandomBattleTowerMon

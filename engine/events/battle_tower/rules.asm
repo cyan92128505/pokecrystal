@@ -1,14 +1,10 @@
 CheckForMobileBattleRules:
-
-    ; there are no rules!
-    ret
-
-	;ld de, .PointerTables
-	;call BattleTower_ExecuteJumptable
-	;ret z
-	;call BattleTower_PleaseReturnWhenReady
-	;scf
-	;ret
+	ld de, .PointerTables
+	call BattleTower_ExecuteJumptable
+	ret z
+	call BattleTower_PleaseReturnWhenReady
+	scf
+	ret
 
 .PointerTables:
 	db 2
@@ -29,9 +25,6 @@ CheckForMobileBattleRules:
 	text_end
 
 _CheckForBattleTowerRules:
-    ; no rules!
-    ret
-
 	ld hl, wStringBuffer2
 	ld [hl], "3"
 	inc hl
@@ -44,22 +37,24 @@ _CheckForBattleTowerRules:
 	ret
 
 .PointerTables:
-	db 4
+    ;db 4
+	db 2
 	dw .Functions
 	dw .TextPointers
 
+; AndrewNote - battle tower rules reduction
 .Functions:
 	dw CheckBTRule_PartyCountEq3
-	dw CheckBTRule_PartySpeciesAreUnique
-	dw CheckBTRule_PartyItemsAreUnique
+	;dw CheckBTRule_PartySpeciesAreUnique
+	;dw CheckBTRule_PartyItemsAreUnique
 	dw CheckBTRule_HasPartyAnEgg
 
 .TextPointers:
 	dw ExcuseMeYoureNotReadyText
 	dw OnlyThreeMonMayBeEnteredText
-	dw TheMonMustAllBeDifferentKindsText
-	dw TheMonMustNotHoldTheSameItemsText
-	dw YouCantTakeAnEggText
+	;dw TheMonMustAllBeDifferentKindsText
+	;dw TheMonMustNotHoldTheSameItemsText
+	;dw YouCantTakeAnEggText
 
 ExcuseMeYoureNotReadyText:
 	text_far _ExcuseMeYoureNotReadyText
@@ -218,9 +213,6 @@ CheckBTRule_PartyCountEq3:
 	ret
 
 CheckBTRule_PartySpeciesAreUnique:
-    ; no rules
-    ret
-
 	ld hl, wPartyMon1Species
 	call CheckPartyValueIsUnique
 	ret
@@ -287,9 +279,6 @@ CheckPartyValueIsUnique:
 	ret
 
 CheckBTRule_PartyItemsAreUnique:
-    ; no rules
-    ret
-
 	ld hl, wPartyMon1Item
 	call CheckPartyValueIsUnique
 	ret

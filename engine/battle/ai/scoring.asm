@@ -247,7 +247,7 @@ AI_Smart_Switch:
 ; possibly switch if enemy is setup bait
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ
-	jr nz, .checkSetUpAndSwitchIfPlayerSetsUp
+	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp
     ld a, [wEnemyMonStatus]
 	and SLP
 	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
@@ -2559,6 +2559,12 @@ AI_Smart_PerishSong:
 	ret
 
 AI_Smart_Sandstorm:
+; encourage if AI is a sand rush mon
+    ld a, [wEnemyMonSpecies]
+    cp EXCADRILL
+    jr z, .encourage
+    cp SANDSLASH
+    jr z, .encourage
 ; Greatly discourage this move if the player is immune to Sandstorm damage.
 	ld a, [wBattleMonType1]
 	push hl
@@ -2592,6 +2598,11 @@ AI_Smart_Sandstorm:
 .discourage
 	inc [hl]
 	ret
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 
 .SandstormImmuneTypes:
 	db ROCK
@@ -2895,6 +2906,14 @@ AI_Smart_HiddenPower:
 	ret
 
 AI_Smart_RainDance:
+; encourage the move if AI is a swift swim mon
+    ld a, [wEnemyMonSpecies]
+    cp KINGDRA
+    jr z, .encourage
+    cp GOLDUCK
+    jr z, .encourage
+    cp POLIWRATH
+    jr z, .encourage
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Water-type.
 	ld a, [wBattleMonType1]
@@ -2912,10 +2931,23 @@ AI_Smart_RainDance:
 	push hl
 	ld hl, RainDanceMoves
 	jr AI_Smart_WeatherMove
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
 AI_Smart_SunnyDay:
+; encourage if AI is a Chlorophyll mon
+    ld a, [wEnemyMonSpecies]
+    cp VENUSAUR
+    jr z, .encourage
+    cp VICTREEBEL
+    jr z, .encourage
+    cp EXEGGUTOR
+    jr z, .encourage
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Fire-type.
 	ld a, [wBattleMonType1]
@@ -2932,8 +2964,12 @@ AI_Smart_SunnyDay:
 
 	push hl
 	ld hl, SunnyDayMoves
-
-	; fallthrough
+	jp AI_Smart_WeatherMove
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 
 AI_Smart_WeatherMove:
 ; Rain Dance, Sunny Day

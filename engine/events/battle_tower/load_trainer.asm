@@ -127,7 +127,7 @@ LoadRandomBattleTowerMon:
 
 .level100
     ld a, b
-    cp 42
+    cp 50 ; lvl 100 has a pool of 50 Pokemon rather than 21
     jr nc, .resample
 
 	; in register 'a' is the chosen mon of the LevelGroup

@@ -629,7 +629,7 @@ CantFlinchText:
     prompt
 
 RockHeadText:
-    text "<TARGET>"
+    text "<USER>"
     line "takes no recoil"
     prompt
 

@@ -6111,15 +6111,15 @@ BattleCommand_Recoil:
 ; ===== Rock Head ========
 ; ========================
     cp AERODACTYL
-    jr nz, .endRockHead
+    jr z, .rockHead
     cp MAROWAK
-    jr nz, .endRockHead
+    jr z, .rockHead
     cp RHYDON
-    jr nz, .endRockHead
+    jr z, .rockHead
+    jr .endRockHead
+.rockHead
 	ld hl, RockHeadText
 	jp StdBattleTextbox
-	ret
-
 .endRockHead
 ; ========================
 	ld a, BATTLE_VARS_MOVE_ANIM

@@ -127,7 +127,7 @@ LoadRandomBattleTowerMon:
 
 .level100
     ld a, b
-    cp 35
+    cp 42
     jr nc, .resample
 
 	; in register 'a' is the chosen mon of the LevelGroup
@@ -142,7 +142,7 @@ LoadRandomBattleTowerMon:
 	ld c, a
 
 	; Andrew - battle tower ensure enemy mon are unique species
-	; but comment out all other restrictions
+	; but comment out item restrictions
 	ld a, [wBT_OTMon1]
 	cp b
 	jr z, .FindARandomBattleTowerMon
@@ -150,36 +150,36 @@ LoadRandomBattleTowerMon:
 	;ld a, [wBT_OTMon1Item]
 	;cp c
 	;jr z, .FindARandomBattleTowerMon
-	;ld a, [wBT_OTMon2]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
+	ld a, [wBT_OTMon2]
+	cp b
+	jr z, .FindARandomBattleTowerMon
 	;ld a, [wBT_OTMon2Item]
 	;cp c
 	;jr z, .FindARandomBattleTowerMon
-	;ld a, [wBT_OTMon3]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
+	ld a, [wBT_OTMon3]
+	cp b
+	jr z, .FindARandomBattleTowerMon
 	;ld a, [wBT_OTMon3Item]
 	;cp c
 	;jr z, .FindARandomBattleTowerMon
-	;ld a, [sBTMonPrevTrainer1]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
-	;ld a, [sBTMonPrevTrainer2]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
-	;ld a, [sBTMonPrevTrainer3]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
-	;ld a, [sBTMonPrevPrevTrainer1]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
-	;ld a, [sBTMonPrevPrevTrainer2]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
-	;ld a, [sBTMonPrevPrevTrainer3]
-	;cp b
-	;jr z, .FindARandomBattleTowerMon
+	ld a, [sBTMonPrevTrainer1]
+	cp b
+	jr z, .FindARandomBattleTowerMon
+	ld a, [sBTMonPrevTrainer2]
+	cp b
+	jr z, .FindARandomBattleTowerMon
+    ld a, [sBTMonPrevTrainer3]
+	cp b
+	jr z, .FindARandomBattleTowerMon
+	ld a, [sBTMonPrevPrevTrainer1]
+	cp b
+	jr z, .FindARandomBattleTowerMon
+	ld a, [sBTMonPrevPrevTrainer2]
+	cp b
+	jr z, .FindARandomBattleTowerMon
+	ld a, [sBTMonPrevPrevTrainer3]
+	cp b
+	jr z, .FindARandomBattleTowerMon
 
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH
 	call CopyBytes

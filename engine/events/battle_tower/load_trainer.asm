@@ -124,6 +124,7 @@ LoadRandomBattleTowerMon:
 	maskbits BATTLETOWER_NUM_UNIQUE_MON
 	cp BATTLETOWER_NUM_UNIQUE_MON
 	jr nc, .resample ; here we loop around if we have jumped a level group
+	jr .continue
 
 ; AndrewNote - BT lvl 100 specific logic here
 .level100

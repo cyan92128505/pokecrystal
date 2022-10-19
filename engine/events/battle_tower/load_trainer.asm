@@ -121,6 +121,7 @@ LoadRandomBattleTowerMon:
 	cp 10
 	jr z, .level100
 
+    ld a, b
 	maskbits BATTLETOWER_NUM_UNIQUE_MON
 	cp BATTLETOWER_NUM_UNIQUE_MON
 	jr nc, .resample ; here we loop around if we have jumped a level group
@@ -134,7 +135,7 @@ LoadRandomBattleTowerMon:
     ld a, b
     cp 50 ; lvl 100 has a pool of 50 Pokemon rather than 21
     jr nc, .resample
-    cp 1
+    and a
     jr z, .resample ; only the last trainer can have mewtwo
     jr .continue
 .lastTrainer

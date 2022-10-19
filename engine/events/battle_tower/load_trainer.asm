@@ -125,11 +125,23 @@ LoadRandomBattleTowerMon:
 	cp BATTLETOWER_NUM_UNIQUE_MON
 	jr nc, .resample ; here we loop around if we have jumped a level group
 
+; AndrewNote - BT lvl 100 specific logic here
 .level100
+    ld a, [wNrOfBeatenBattleTowerTrainers]
+    cp BATTLETOWER_STREAK_LENGTH - 1
+    jr z, .lastTrainer
     ld a, b
     cp 50 ; lvl 100 has a pool of 50 Pokemon rather than 21
     jr nc, .resample
+    cp 1
+    jr z, .resample ; only the last trainer can have mewtwo
+    jr .continue
+.lastTrainer
+    ld a, b
+    cp 30 ; last trainer only uses strongest mons, can pick mewtwo
+    jr nc, .resample
 
+.continue
 	; in register 'a' is the chosen mon of the LevelGroup
 	; Check if mon was already loaded before
 	; Check current and the 2 previous teams

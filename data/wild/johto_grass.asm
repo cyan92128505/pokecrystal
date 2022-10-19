@@ -1601,7 +1601,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, TANGELA
+	db 23, GLOOM
 	db 22, LICKITUNG
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
@@ -1609,7 +1609,7 @@ JohtoGrassWildMons:
 	db 26, LICKITUNG
 	db 26, LICKITUNG
 	; day
-	db 23, TANGELA
+	db 23, GLOOM
 	db 22, LICKITUNG
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
@@ -1617,7 +1617,7 @@ JohtoGrassWildMons:
 	db 26, LICKITUNG
 	db 26, LICKITUNG
 	; nite
-	db 23, TANGELA
+	db 23, GLOOM
 	db 22, POLIWAG
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
@@ -1685,23 +1685,23 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 41, TANGELA
+	db 41, GLOOM
 	db 42, PONYTA
 	db 42, ARBOK
 	db 44, RAPIDASH
 	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
+	db 43, PIDGEOT
+	db 43, PIDGEOT
 	; day
-	db 41, TANGELA
+	db 41, GLOOM
 	db 42, PONYTA
 	db 42, ARBOK
 	db 44, RAPIDASH
 	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
+	db 43, PIDGEOT
+	db 43, PIDGEOT
 	; nite
-	db 41, TANGELA
+	db 41, GLOOM
 	db 42, POLIWHIRL
 	db 42, GOLBAT
 	db 44, POLIWHIRL

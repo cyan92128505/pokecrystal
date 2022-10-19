@@ -84,7 +84,7 @@ BitmasksPointers:
 	dw MagnetonBitmasks
 	dw FarfetchDBitmasks
 	dw DoduoBitmasks
-	dw DodrioBitmasks
+	dw MagnezoneBitmasks
 	dw SeelBitmasks
 	dw DewgongBitmasks
 	dw GrimerBitmasks
@@ -113,7 +113,7 @@ BitmasksPointers:
 	dw RhyhornBitmasks
 	dw RhydonBitmasks
 	dw ChanseyBitmasks
-	dw TangelaBitmasks
+	dw WeavileBitmasks
 	dw KangaskhanBitmasks
 	dw HorseaBitmasks
 	dw SeadraBitmasks

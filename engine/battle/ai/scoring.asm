@@ -45,6 +45,7 @@ AI_SturdyPokemon:
     db GOLEM
     db MAGNEMITE
     db MAGNETON
+    db MAGNEZONE
     db ONIX
     db STEELIX
     db BLASTOISE
@@ -1430,9 +1431,10 @@ AI_Smart_Moonlight:
 
 .restHeal
 ; for rest don't heal if player can 3hko from max hp, unless AI also knows sleep talk
+; then don't use if player can 2hko from max hp
 	ld b, EFFECT_SLEEP_TALK
 	call AIHasMoveEffect
-	jr c, .heal
+	jr c, .nonRestHeal
     call CanPlayer3HKOMaxHP
     jr c, .discourage
 
@@ -1441,7 +1443,6 @@ AI_Smart_Moonlight:
     call CanPlayer2HKOMaxHP
     jr c, .discourage
 
-.heal
 ; Arceus and Mewtwo are fast and bulky enough to focus on set up and only heal below half
     ld a, [wEnemyMonSpecies]
     cp MEWTWO

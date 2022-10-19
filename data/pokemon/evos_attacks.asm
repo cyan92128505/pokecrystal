@@ -1065,17 +1065,23 @@ MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 1, SONICBOOM
 	db 6, THUNDERSHOCK
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
 	db 21, THUNDER_WAVE
-	db 27, LOCK_ON
-	db 33, SWIFT
-	db 39, SCREECH
+	db 27, SCREECH
+	db 30, TRI_ATTACK
+	db 40, THUNDERBOLT
+	db 43, LOCK_ON
 	db 45, ZAP_CANNON
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
+    db EVOLVE_ITEM, THUNDERSTONE, MAGNEZONE
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, THUNDERSHOCK
@@ -1085,10 +1091,12 @@ MagnetonEvosAttacks:
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
 	db 21, THUNDER_WAVE
-	db 27, LOCK_ON
-	db 35, TRI_ATTACK
-	db 43, SCREECH
-	db 53, ZAP_CANNON
+	db 27, SCREECH
+	db 30, TRI_ATTACK
+	db 40, THUNDERBOLT
+	db 43, LOCK_ON
+	db 45, ZAP_CANNON
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1104,7 +1112,6 @@ FarfetchDEvosAttacks:
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
-	db EVOLVE_LEVEL, 31, DODRIO
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, GROWL
@@ -1116,18 +1123,22 @@ DoduoEvosAttacks:
 	db 37, AGILITY
 	db 0 ; no more level-up moves
 
-DodrioEvosAttacks:
+MagnezoneEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, GROWL
-	db 1, PURSUIT
-	db 1, FURY_ATTACK
-	db 9, PURSUIT
-	db 13, FURY_ATTACK
-	db 21, TRI_ATTACK
-	db 25, RAGE
-	db 38, DRILL_PECK
-	db 47, AGILITY
+	db 1, TACKLE
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 1, SONICBOOM
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 16, SONICBOOM
+	db 21, THUNDER_WAVE
+	db 27, SCREECH
+	db 30, TRI_ATTACK
+	db 40, THUNDERBOLT
+	db 43, LOCK_ON
+	db 45, ZAP_CANNON
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
@@ -1517,17 +1528,20 @@ ChanseyEvosAttacks:
 	db 57, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
-TangelaEvosAttacks:
+WeavileEvosAttacks:
 	db 0 ; no more evolutions
-	db 4, SLEEP_POWDER
-	db 10, ABSORB
-	db 13, POISONPOWDER
-	db 19, VINE_WHIP
-	db 25, WRAP
-	db 31, MEGA_DRAIN
-	db 34, STUN_SPORE
-	db 40, SLAM
-	db 46, GROWTH
+	db 1, QUICK_ATTACK
+	db 1, SCRATCH
+	db 1, LEER
+	db 14, ICY_WIND
+	db 18, FURY_SWIPES
+	db 22, PURSUIT
+	db 25, SLASH
+	db 30, ICE_PUNCH
+	db 32, SCREECH
+	db 35, NASTY_PLOT
+	db 40, DARK_PULSE
+	db 45, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 KangaskhanEvosAttacks:
@@ -2645,7 +2659,7 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
-	db EVOLVE_LEVEL, 37, HONCHKROW
+	db EVOLVE_ITEM, MOON_STONE, HONCHKROW
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, NIGHT_SHADE
@@ -2866,17 +2880,20 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
+	db EVOLVE_ITEM, MOON_STONE, WEAVILE
 	db 0 ; no more evolutions
+	db 1, QUICK_ATTACK
 	db 1, SCRATCH
 	db 1, LEER
-	db 9, QUICK_ATTACK
-	db 17, SCREECH
-	db 25, NIGHT_SLASH
-	db 33, FURY_SWIPES
-	db 41, AGILITY
-	db 49, SLASH
-	db 57, CRUNCH
-	db 65, METAL_CLAW
+	db 14, ICY_WIND
+	db 18, FURY_SWIPES
+	db 22, PURSUIT
+	db 25, SLASH
+	db 30, ICE_PUNCH
+	db 32, SCREECH
+	db 35, NASTY_PLOT
+	db 40, DARK_PULSE
+	db 44, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:

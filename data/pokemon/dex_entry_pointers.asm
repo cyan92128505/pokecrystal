@@ -85,7 +85,7 @@ PokedexDataPointerTable:
 	dw MagnetonPokedexEntry
 	dw FarfetchDPokedexEntry
 	dw DoduoPokedexEntry
-	dw DodrioPokedexEntry
+	dw MagnezonePokedexEntry
 	dw SeelPokedexEntry
 	dw DewgongPokedexEntry
 	dw GrimerPokedexEntry
@@ -114,7 +114,7 @@ PokedexDataPointerTable:
 	dw RhyhornPokedexEntry
 	dw RhydonPokedexEntry
 	dw ChanseyPokedexEntry
-	dw TangelaPokedexEntry
+	dw WeavilePokedexEntry
 	dw KangaskhanPokedexEntry
 	dw HorseaPokedexEntry
 	dw SeadraPokedexEntry

@@ -86,7 +86,7 @@ MonMenuIcons:
 	db ICON_VOLTORB     ; MAGNETON
 	db ICON_BIRD        ; FARFETCH_D
 	db ICON_BIRD        ; DODUO
-	db ICON_BIRD        ; DODRIO
+	db ICON_VOLTORB     ; MAGNEZONE
 	db ICON_LAPRAS      ; SEEL
 	db ICON_LAPRAS      ; DEWGONG
 	db ICON_BLOB        ; GRIMER
@@ -115,7 +115,7 @@ MonMenuIcons:
 	db ICON_EQUINE      ; RHYHORN
 	db ICON_MONSTER     ; RHYDON
 	db ICON_CLEFAIRY    ; CHANSEY
-	db ICON_ODDISH      ; TANGELA
+	db ICON_FOX         ; WEAVILE
 	db ICON_MONSTER     ; KANGASKHAN
 	db ICON_FISH        ; HORSEA
 	db ICON_FISH        ; SEADRA

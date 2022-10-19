@@ -43,7 +43,6 @@ AlphabeticalPokedexOrder:
 	db DIALGA
 	db DIGLETT
 	db DITTO
-	db DODRIO
 	db DODUO
 	db DONPHAN
 	db DRAGONAIR
@@ -130,6 +129,7 @@ AlphabeticalPokedexOrder:
 	db MAGMAR
 	db MAGNEMITE
 	db MAGNETON
+	db MAGNEZONE
 	db MANKEY
 	db MAREEP
 	db MAROWAK
@@ -220,7 +220,6 @@ AlphabeticalPokedexOrder:
 	db SUICUNE
 	db SWINUB
 	db SYLVEON
-	db TANGELA
 	db TAUROS
 	db TEDDIURSA
 	db TENTACOOL
@@ -244,6 +243,7 @@ AlphabeticalPokedexOrder:
 	db VOLTORB
 	db VULPIX
 	db WARTORTLE
+	db WEAVILE
 	db WEEDLE
 	db WEEPINBELL
 	db WEEZING

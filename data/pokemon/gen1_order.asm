@@ -29,7 +29,7 @@ Pokered_MonIndices:
 	db STARYU
 	db BLASTOISE
 	db PINSIR
-	db TANGELA
+	db WEAVILE
 	db SCIZOR ; MISSINGNO.
 	db SHAYMIN ; MISSINGNO.
 	db GROWLITHE
@@ -115,7 +115,7 @@ Pokered_MonIndices:
 	db KAKUNA
 	db BEEDRILL
 	db HOUNDOOM ; MISSINGNO.
-	db DODRIO
+	db MAGNEZONE
 	db PRIMEAPE
 	db DUGTRIO
 	db VOLCARONA

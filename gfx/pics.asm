@@ -81,7 +81,7 @@ OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 
 SECTION "Pics 4", ROMX
 
-DodrioFrontpic:      INCBIN "gfx/pokemon/dodrio/front.animated.2bpp.lz"
+MagnezoneFrontpic:      INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
 SlowkingFrontpic:    INCBIN "gfx/pokemon/slowking/front.animated.2bpp.lz"
 HitmontopFrontpic:   INCBIN "gfx/pokemon/hitmontop/front.animated.2bpp.lz"
 OnixFrontpic:        INCBIN "gfx/pokemon/onix/front.animated.2bpp.lz"
@@ -189,7 +189,7 @@ SECTION "Pics 8", ROMX
 SeelFrontpic:        INCBIN "gfx/pokemon/seel/front.animated.2bpp.lz"
 CrobatFrontpic:      INCBIN "gfx/pokemon/crobat/front.animated.2bpp.lz"
 ChanseyFrontpic:     INCBIN "gfx/pokemon/chansey/front.animated.2bpp.lz"
-TangelaFrontpic:     INCBIN "gfx/pokemon/tangela/front.animated.2bpp.lz"
+WeavileFrontpic:     INCBIN "gfx/pokemon/weavile/front.animated.2bpp.lz"
 GibleFrontpic:    INCBIN "gfx/pokemon/gible/front.animated.2bpp.lz"
 GabiteFrontpic:    INCBIN "gfx/pokemon/gabite/front.animated.2bpp.lz"
 MiltankFrontpic:     INCBIN "gfx/pokemon/miltank/front.animated.2bpp.lz"
@@ -289,7 +289,7 @@ UnownFBackpic:       INCBIN "gfx/pokemon/unown_f/back.2bpp.lz"
 
 SECTION "Pics 11", ROMX
 
-DodrioBackpic:       INCBIN "gfx/pokemon/dodrio/back.2bpp.lz"
+MagnezoneBackpic:       INCBIN "gfx/pokemon/magnezone/back.2bpp.lz"
 ClefairyFrontpic:    INCBIN "gfx/pokemon/clefairy/front.animated.2bpp.lz"
 LatiasFrontpic:      INCBIN "gfx/pokemon/latias/front.animated.2bpp.lz"
 GrowlitheFrontpic:   INCBIN "gfx/pokemon/growlithe/front.animated.2bpp.lz"
@@ -657,7 +657,7 @@ WooperBackpic:       INCBIN "gfx/pokemon/wooper/back.2bpp.lz"
 TaurosBackpic:       INCBIN "gfx/pokemon/tauros/back.2bpp.lz"
 UnownXFrontpic:      INCBIN "gfx/pokemon/unown_x/front.animated.2bpp.lz"
 UnownNFrontpic:      INCBIN "gfx/pokemon/unown_n/front.animated.2bpp.lz"
-TangelaBackpic:      INCBIN "gfx/pokemon/tangela/back.2bpp.lz"
+WeavileBackpic:      INCBIN "gfx/pokemon/weavile/back.2bpp.lz"
 VoltorbBackpic:      INCBIN "gfx/pokemon/voltorb/back.2bpp.lz"
 UnownJFrontpic:      INCBIN "gfx/pokemon/unown_j/front.animated.2bpp.lz"
 GroudonBackpic:      INCBIN "gfx/pokemon/groudon/back.2bpp.lz"

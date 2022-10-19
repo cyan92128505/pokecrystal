@@ -84,7 +84,7 @@ FramesPointers:
 	dw MagnetonFrames
 	dw FarfetchDFrames
 	dw DoduoFrames
-	dw DodrioFrames
+	dw MagnezoneFrames
 	dw SeelFrames
 	dw DewgongFrames
 	dw GrimerFrames
@@ -113,7 +113,7 @@ FramesPointers:
 	dw RhyhornFrames
 	dw RhydonFrames
 	dw ChanseyFrames
-	dw TangelaFrames
+	dw WeavileFrames
 	dw KangaskhanFrames
 	dw HorseaFrames
 	dw SeadraFrames

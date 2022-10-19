@@ -86,7 +86,7 @@ EvosAttacksPointers::
 	dw MagnetonEvosAttacks
 	dw FarfetchDEvosAttacks
 	dw DoduoEvosAttacks
-	dw DodrioEvosAttacks
+	dw MagnezoneEvosAttacks
 	dw SeelEvosAttacks
 	dw DewgongEvosAttacks
 	dw GrimerEvosAttacks
@@ -115,7 +115,7 @@ EvosAttacksPointers::
 	dw RhyhornEvosAttacks
 	dw RhydonEvosAttacks
 	dw ChanseyEvosAttacks
-	dw TangelaEvosAttacks
+	dw WeavileEvosAttacks
 	dw KangaskhanEvosAttacks
 	dw HorseaEvosAttacks
 	dw SeadraEvosAttacks

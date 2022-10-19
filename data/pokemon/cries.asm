@@ -90,7 +90,7 @@ PokemonCries::
 	mon_cry CRY_METAPOD,      32,  320 ; MAGNETON
 	mon_cry CRY_SPEAROW,     221,  129 ; FARFETCH_D
 	mon_cry CRY_DIGLETT,     187,  129 ; DODUO
-	mon_cry CRY_DIGLETT,     153,  160 ; DODRIO
+	mon_cry CRY_PARAS,       250,  350 ; MAGNEZONE
 	mon_cry CRY_SEEL,        136,  320 ; SEEL
 	mon_cry CRY_SEEL,         35,  383 ; DEWGONG
 	mon_cry CRY_GRIMER,        0,  256 ; GRIMER
@@ -119,7 +119,7 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,    0,  256 ; RHYHORN
 	mon_cry CRY_RHYDON,        0,  256 ; RHYDON
 	mon_cry CRY_PIDGEOTTO,    10,  320 ; CHANSEY
-	mon_cry CRY_GOLEM,         0,  256 ; TANGELA
+	mon_cry CRY_WOOPER,       120, 220 ; WEAVILE
 	mon_cry CRY_KANGASKHAN,    0,  256 ; KANGASKHAN
 	mon_cry CRY_CLEFAIRY,    153,  144 ; HORSEA
 	mon_cry CRY_CLEFAIRY,     60,  129 ; SEADRA

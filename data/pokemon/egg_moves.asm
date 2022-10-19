@@ -335,7 +335,7 @@ ChanseyEggMoves:
 	db HEAL_BELL
 	db -1 ; end
 
-TangelaEggMoves:
+WeavileEggMoves:
 	db FLAIL
 	db CONFUSION
 	db MEGA_DRAIN

@@ -103,6 +103,7 @@ NewPokedexOrder:
 	db MUK
 	db MAGNEMITE
 	db MAGNETON
+	db MAGNEZONE
 	db VOLTORB
 	db ELECTRODE
 	db VULPIX
@@ -144,7 +145,6 @@ NewPokedexOrder:
 	db SEEL
 	db DEWGONG
 	db LICKITUNG
-	db TANGELA
 	db EEVEE
 	db VAPOREON
 	db JOLTEON
@@ -163,7 +163,6 @@ NewPokedexOrder:
 	db DONPHAN
 	db SKARMORY
 	db DODUO
-	db DODRIO
 	db PONYTA
 	db RAPIDASH
 	db CUBONE
@@ -176,6 +175,7 @@ NewPokedexOrder:
 	db HOUNDOUR
 	db HOUNDOOM
 	db SNEASEL
+	db WEAVILE
 	db MISDREAVUS
 	db MISMAGIUS
 	db PORYGON

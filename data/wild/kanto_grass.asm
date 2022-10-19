@@ -649,29 +649,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_21
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, TANGELA
+	db 30, GLOOM
 	db 25, RATTATA
-	db 35, TANGELA
+	db 35, GLOOM
 	db 20, RATICATE
 	db 30, MR__MIME
 	db 28, MR__MIME
 	db 28, MR__MIME
 	; day
-	db 30, TANGELA
+	db 30, GLOOM
 	db 25, RATTATA
-	db 35, TANGELA
+	db 35, GLOOM
 	db 20, RATICATE
 	db 28, MR__MIME
 	db 30, MR__MIME
 	db 30, MR__MIME
 	; nite
-	db 30, TANGELA
+	db 30, GLOOM
 	db 25, RATTATA
-	db 35, TANGELA
+	db 35, GLOOM
 	db 20, RATICATE
-	db 30, TANGELA
-	db 28, TANGELA
-	db 28, TANGELA
+	db 30, GLOOM
+	db 28, GLOOM
+	db 28, GLOOM
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_22
@@ -794,16 +794,16 @@ KantoGrassWildMons:
 	db 30, RATICATE
 	db 30, DODUO
 	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 30, PIDGEOT
+	db 30, PIDGEOT
 	; day
 	db 28, DODUO
 	db 28, ARBOK
 	db 30, RATICATE
 	db 30, DODUO
 	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 30, PIDGEOT
+	db 30, PIDGEOT
 	; nite
 	db 28, QUAGSIRE
 	db 28, NOCTOWL
@@ -817,23 +817,23 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, TANGELA
+	db 39, GLOOM
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
 	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
+	db 43, PIDGEOT
+	db 43, PIDGEOT
 	; day
-	db 39, TANGELA
+	db 39, GLOOM
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
 	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
+	db 43, PIDGEOT
+	db 43, PIDGEOT
 	; nite
-	db 39, TANGELA
+	db 39, GLOOM
 	db 40, POLIWHIRL
 	db 40, GOLBAT
 	db 40, POLIWHIRL

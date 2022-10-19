@@ -5440,8 +5440,6 @@ BattleTowerMons:
 	bigdw 188 ; SDef
 	db "RANTA-N@@@@"
 
-; ============ Below are considered not Uber ===============
-
     db GENESECT
 	db EXPERT_BELT
 	db BUG_BUZZ, THUNDERBOLT, ICE_BEAM, FLAMETHROWER
@@ -5836,7 +5834,7 @@ BattleTowerMons:
 
 	db PERSIAN
 	db CHOICE_BAND
-	db SLASH, NO_MOVE, NO_MOVE, NO_MOVE
+	db SLASH, BITE, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -6094,32 +6092,6 @@ BattleTowerMons:
 	bigdw 228 ; SDef
 	db "RANTA-N@@@@"
 
-	db PIKACHU
-	db LIGHT_BALL
-	db VOLT_TACKLE, THUNDERBOLT, SURF, HIDDEN_POWER ; ice
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 13, 15, 15 ; DVs
-	db 16, 24, 24, 24 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 273 ; HP
-	bigdw 273 ; Max HP
-	bigdw 208 ; Atk
-	bigdw 154 ; Def
-	bigdw 278 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 178 ; SDef
-	db "RANTA-N@@@@"
-
 	db TOGEKISS
 	db LEFTOVERS
 	db THUNDER_WAVE, AIR_SLASH, NASTY_PLOT, SOFTBOILED
@@ -6224,9 +6196,9 @@ BattleTowerMons:
 	bigdw 228 ; SDef
 	db "RANTA-N@@@@"
 
-	db CHANDELURE
-	db LIFE_ORB
-	db FIRE_BLAST, SHADOW_BALL, GIGA_DRAIN, AURA_SPHERE
+	db WEAVILE
+	db FOCUS_SASH
+	db SWORDS_DANCE, ICE_PUNCH, NIGHT_SLASH, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -6236,18 +6208,96 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
+	db 32, 24, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 343 ; HP
+	bigdw 343 ; Max HP
+	bigdw 338 ; Atk
+	bigdw 228 ; Def
+	bigdw 348 ; Spd
+	bigdw 188 ; SAtk
+	bigdw 268 ; SDef
+	db "RANTA-N@@@@"
+
+	db MAGNEZONE
+	db MAGNET
+	db THUNDERBOLT, THUNDER_WAVE, EXPLOSION, HIDDEN_POWER ; ice
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 13, 15, 15 ; DVs
 	db 16, 24, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 413 ; HP
+	bigdw 413 ; Max HP
+	bigdw 378 ; Atk
+	bigdw 284 ; Def
+	bigdw 188 ; Spd
+	bigdw 208 ; SAtk
+	bigdw 228 ; SDef
+	db "RANTA-N@@@@"
+
+	db HERACROSS
+	db LEFTOVERS
+	db SWORDS_DANCE, MEGAHORN, CLOSE_COMBAT, ROCK_SLIDE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 16, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 363 ; HP
+	bigdw 363 ; Max HP
+	bigdw 348 ; Atk
+	bigdw 248 ; Def
+	bigdw 268 ; Spd
+	bigdw 178 ; SAtk
+	bigdw 288 ; SDef
+	db "RANTA-N@@@@"
+
+	db MISMAGIUS
+	db FOCUS_SASH
+	db NASTY_PLOT, SHADOW_BALL, THUNDERBOLT, GIGA_DRAIN
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 323 ; HP
 	bigdw 323 ; Max HP
-	bigdw 208 ; Atk
-	bigdw 278 ; Def
-	bigdw 258 ; Spd
-	bigdw 388 ; SAtk
-	bigdw 278 ; SDef
+	bigdw 218 ; Atk
+	bigdw 218 ; Def
+	bigdw 308 ; Spd
+	bigdw 308 ; SAtk
+	bigdw 308 ; SDef
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

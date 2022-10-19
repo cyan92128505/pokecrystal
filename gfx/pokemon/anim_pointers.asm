@@ -84,7 +84,7 @@ AnimationPointers:
 	dw MagnetonAnimation
 	dw FarfetchDAnimation
 	dw DoduoAnimation
-	dw DodrioAnimation
+	dw MagnezoneAnimation
 	dw SeelAnimation
 	dw DewgongAnimation
 	dw GrimerAnimation
@@ -113,7 +113,7 @@ AnimationPointers:
 	dw RhyhornAnimation
 	dw RhydonAnimation
 	dw ChanseyAnimation
-	dw TangelaAnimation
+	dw WeavileAnimation
 	dw KangaskhanAnimation
 	dw HorseaAnimation
 	dw SeadraAnimation

@@ -86,7 +86,7 @@ KantoMonSpecials:
 	db 120 ; MAGNETON
 	db  58 ; FARFETCH_D
 	db  35 ; DODUO
-	db  60 ; DODRIO
+	db  60 ; MAGNEZONE
 	db  70 ; SEEL
 	db  95 ; DEWGONG
 	db  40 ; GRIMER
@@ -115,7 +115,7 @@ KantoMonSpecials:
 	db  30 ; RHYHORN
 	db  45 ; RHYDON
 	db 105 ; CHANSEY
-	db 100 ; TANGELA
+	db 100 ; WEAVILE
 	db  40 ; KANGASKHAN
 	db  70 ; HORSEA
 	db  95 ; SEADRA

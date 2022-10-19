@@ -171,8 +171,8 @@ PokemonPicPointers::
 	dba_pic FarfetchDBackpic
 	dba_pic DoduoFrontpic
 	dba_pic DoduoBackpic
-	dba_pic DodrioFrontpic
-	dba_pic DodrioBackpic
+	dba_pic MagnezoneFrontpic
+	dba_pic MagnezoneBackpic
 	dba_pic SeelFrontpic
 	dba_pic SeelBackpic
 	dba_pic DewgongFrontpic
@@ -229,8 +229,8 @@ PokemonPicPointers::
 	dba_pic RhydonBackpic
 	dba_pic ChanseyFrontpic
 	dba_pic ChanseyBackpic
-	dba_pic TangelaFrontpic
-	dba_pic TangelaBackpic
+	dba_pic WeavileFrontpic
+	dba_pic WeavileBackpic
 	dba_pic KangaskhanFrontpic
 	dba_pic KangaskhanBackpic
 	dba_pic HorseaFrontpic

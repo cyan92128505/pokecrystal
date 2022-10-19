@@ -5,6 +5,7 @@ SturdyPokemon:
     db GOLEM
     db MAGNEMITE
     db MAGNETON
+    db MAGNEZONE
     db ONIX
     db STEELIX
     db BLASTOISE

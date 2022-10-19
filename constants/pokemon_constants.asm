@@ -103,7 +103,7 @@
 	const MAGNETON   ; 52
 	const FARFETCH_D ; 53   mamoswine
 	const DODUO      ; 54   electivire
-	const DODRIO     ; 55   magnezone
+	const MAGNEZONE     ; 55   magnezone
 	const SEEL       ; 56   yanmega
 	const DEWGONG    ; 57   glisocr
 	const GRIMER     ; 58   ....
@@ -132,7 +132,7 @@
 	const RHYHORN    ; 6f
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
-	const TANGELA    ; 72   weevil
+	const WEAVILE    ; 72
 	const KANGASKHAN ; 73   ryperior
 	const HORSEA     ; 74
 	const SEADRA     ; 75

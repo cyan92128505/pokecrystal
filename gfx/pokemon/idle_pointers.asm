@@ -84,7 +84,7 @@ AnimationIdlePointers:
 	dw MagnetonAnimationIdle
 	dw FarfetchDAnimationIdle
 	dw DoduoAnimationIdle
-	dw DodrioAnimationIdle
+	dw MagnezoneAnimationIdle
 	dw SeelAnimationIdle
 	dw DewgongAnimationIdle
 	dw GrimerAnimationIdle
@@ -113,7 +113,7 @@ AnimationIdlePointers:
 	dw RhyhornAnimationIdle
 	dw RhydonAnimationIdle
 	dw ChanseyAnimationIdle
-	dw TangelaAnimationIdle
+	dw WeavileAnimationIdle
 	dw KangaskhanAnimationIdle
 	dw HorseaAnimationIdle
 	dw SeadraAnimationIdle

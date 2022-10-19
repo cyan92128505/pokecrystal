@@ -196,7 +196,7 @@ INCBIN "gfx/footprints/magnemite.1bpp",  footprint_top
 INCBIN "gfx/footprints/magneton.1bpp",   footprint_top
 INCBIN "gfx/footprints/farfetch_d.1bpp", footprint_top
 INCBIN "gfx/footprints/doduo.1bpp",      footprint_top
-INCBIN "gfx/footprints/dodrio.1bpp",     footprint_top
+INCBIN "gfx/footprints/magnezone.1bpp",     footprint_top
 INCBIN "gfx/footprints/seel.1bpp",       footprint_top
 INCBIN "gfx/footprints/dewgong.1bpp",    footprint_top
 INCBIN "gfx/footprints/grimer.1bpp",     footprint_top
@@ -205,7 +205,7 @@ INCBIN "gfx/footprints/magnemite.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/magneton.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/farfetch_d.1bpp", footprint_bottom
 INCBIN "gfx/footprints/doduo.1bpp",      footprint_bottom
-INCBIN "gfx/footprints/dodrio.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/magnezone.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/seel.1bpp",       footprint_bottom
 INCBIN "gfx/footprints/dewgong.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/grimer.1bpp",     footprint_bottom
@@ -265,7 +265,7 @@ INCBIN "gfx/footprints/rhyhorn.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/rhydon.1bpp",     footprint_bottom
 ; 113-120 top halves
 INCBIN "gfx/footprints/chansey.1bpp",    footprint_top
-INCBIN "gfx/footprints/tangela.1bpp",    footprint_top
+INCBIN "gfx/footprints/weavile.1bpp",    footprint_top
 INCBIN "gfx/footprints/kangaskhan.1bpp", footprint_top
 INCBIN "gfx/footprints/horsea.1bpp",     footprint_top
 INCBIN "gfx/footprints/seadra.1bpp",     footprint_top
@@ -274,7 +274,7 @@ INCBIN "gfx/footprints/honchkrow.1bpp",    footprint_top
 INCBIN "gfx/footprints/staryu.1bpp",     footprint_top
 ; 113-120 bottom halves
 INCBIN "gfx/footprints/chansey.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/tangela.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/weavile.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/kangaskhan.1bpp", footprint_bottom
 INCBIN "gfx/footprints/horsea.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/seadra.1bpp",     footprint_bottom

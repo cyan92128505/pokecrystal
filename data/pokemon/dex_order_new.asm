@@ -143,7 +143,6 @@ NewPokedexOrder:
 	db CHINCHOU
 	db LANTURN
 	db SEEL
-	db DEWGONG
 	db LICKITUNG
 	db EEVEE
 	db VAPOREON
@@ -155,6 +154,7 @@ NewPokedexOrder:
 	db SEADRA
 	db KINGDRA
 	db GLIGAR
+	db GLISCOR
 	db SWINUB
 	db PILOSWINE
 	db TEDDIURSA

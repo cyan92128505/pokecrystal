@@ -1906,6 +1906,8 @@ BattleCommand_CheckHit:
     ld a, [wEnemyMonSpecies]
     cp GARCHOMP
     call z, IncrementC
+    cp GLISCOR
+    call z, IncrementC
     cp DUGTRIO
     call z, IncrementC
 .doneEnemySandVeil
@@ -1927,6 +1929,8 @@ BattleCommand_CheckHit:
     jr nz, .donePlayerSandVeil
     ld a, [wBattleMonSpecies]
     cp GARCHOMP
+    call z, IncrementC
+    cp GLISCOR
     call z, IncrementC
     cp DUGTRIO
     call z, IncrementC

@@ -39,7 +39,6 @@ AlphabeticalPokedexOrder:
 	db CYNDAQUIL
 	db DARKRAI
 	db DEOXYS
-	db DEWGONG
 	db DIALGA
 	db DIGLETT
 	db DITTO
@@ -75,6 +74,7 @@ AlphabeticalPokedexOrder:
 	db GIBLE
 	db GIRATINA
 	db GLIGAR
+	db GLISCOR
 	db GLOOM
 	db GOLBAT
 	db GOLDEEN

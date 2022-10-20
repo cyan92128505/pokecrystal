@@ -175,8 +175,8 @@ PokemonPicPointers::
 	dba_pic MagnezoneBackpic
 	dba_pic SeelFrontpic
 	dba_pic SeelBackpic
-	dba_pic DewgongFrontpic
-	dba_pic DewgongBackpic
+	dba_pic GliscorFrontpic
+	dba_pic GliscorBackpic
 	dba_pic GrimerFrontpic
 	dba_pic GrimerBackpic
 	dba_pic MukFrontpic

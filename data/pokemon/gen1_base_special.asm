@@ -88,7 +88,7 @@ KantoMonSpecials:
 	db  35 ; DODUO
 	db  60 ; MAGNEZONE
 	db  70 ; SEEL
-	db  95 ; DEWGONG
+	db  95 ; GLISCOR
 	db  40 ; GRIMER
 	db  65 ; MUK
 	db  45 ; SHELLDER

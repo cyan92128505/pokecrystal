@@ -86,7 +86,7 @@ PokemonNames::
 	db "DODUO@@@@@"
 	db "MAGNEZONE@"
 	db "SEEL@@@@@@"
-	db "DEWGONG@@@"
+	db "GLISCOR@@@"
 	db "GRIMER@@@@"
 	db "MUK@@@@@@@"
 	db "SHELLDER@@"

@@ -86,7 +86,7 @@ AnimationPointers:
 	dw DoduoAnimation
 	dw MagnezoneAnimation
 	dw SeelAnimation
-	dw DewgongAnimation
+	dw GliscorAnimation
 	dw GrimerAnimation
 	dw MukAnimation
 	dw ShellderAnimation

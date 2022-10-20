@@ -1145,7 +1145,6 @@ MagnezoneEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
-	db EVOLVE_LEVEL, 34, DEWGONG
 	db 0 ; no more evolutions
 	db 1, HEADBUTT
 	db 5, GROWL
@@ -1156,17 +1155,20 @@ SeelEvosAttacks:
 	db 48, SAFEGUARD
 	db 0 ; no more level-up moves
 
-DewgongEvosAttacks:
+GliscorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HEADBUTT
-	db 1, GROWL
-	db 1, AURORA_BEAM
-	db 5, GROWL
-	db 16, AURORA_BEAM
-	db 21, REST
-	db 32, TAKE_DOWN
-	db 43, ICE_BEAM
-	db 60, SAFEGUARD
+	db 1, POISON_STING
+	db 6, SAND_ATTACK
+	db 9, HARDEN
+	db 14, FURY_CUTTER
+	db 18, MUD_SLAP
+	db 24, NIGHT_SLASH
+	db 28, SLASH
+	db 33, SANDSTORM
+	db 37, X_SCISSOR
+	db 42, EARTHQUAKE
+	db 50, SWORDS_DANCE
+	db 55, GUILLOTINE
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
@@ -2774,15 +2776,20 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
+	db EVOLVE_LEVEL, 37, GLISCOR
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
-	db 13, HARDEN
-	db 20, QUICK_ATTACK
-	db 28, NIGHT_SLASH
-	db 36, SLASH
-	db 44, SCREECH
-	db 52, GUILLOTINE
+	db 9, HARDEN
+	db 14, FURY_CUTTER
+	db 18, MUD_SLAP
+	db 24, NIGHT_SLASH
+	db 28, SLASH
+	db 33, SANDSTORM
+	db 37, X_SCISSOR
+	db 42, EARTHQUAKE
+	db 50, SWORDS_DANCE
+	db 55, GUILLOTINE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:

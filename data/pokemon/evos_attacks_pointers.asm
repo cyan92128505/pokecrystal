@@ -88,7 +88,7 @@ EvosAttacksPointers::
 	dw DoduoEvosAttacks
 	dw MagnezoneEvosAttacks
 	dw SeelEvosAttacks
-	dw DewgongEvosAttacks
+	dw GliscorEvosAttacks
 	dw GrimerEvosAttacks
 	dw MukEvosAttacks
 	dw ShellderEvosAttacks

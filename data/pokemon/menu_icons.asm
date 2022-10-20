@@ -88,7 +88,7 @@ MonMenuIcons:
 	db ICON_BIRD        ; DODUO
 	db ICON_VOLTORB     ; MAGNEZONE
 	db ICON_LAPRAS      ; SEEL
-	db ICON_LAPRAS      ; DEWGONG
+	db ICON_BUG         ; GLISCOR
 	db ICON_BLOB        ; GRIMER
 	db ICON_BLOB        ; MUK
 	db ICON_SHELL       ; SHELLDER

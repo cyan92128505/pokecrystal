@@ -5981,4 +5981,30 @@ BattleTowerMons:
 	bigdw 278 ; SDef
 	db "RANTA-N@@@@"
 
+	db GLISCOR
+	db LEFTOVERS
+	db SWORDS_DANCE, EARTHQUAKE, FLY, ROCK_SLIDE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 24, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 413 ; HP
+	bigdw 413 ; Max HP
+	bigdw 378 ; Atk
+	bigdw 288 ; Def
+	bigdw 188 ; Spd
+	bigdw 208 ; SAtk
+	bigdw 228 ; SDef
+	db "RANTA-N@@@@"
+
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

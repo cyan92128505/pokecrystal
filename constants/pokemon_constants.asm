@@ -105,7 +105,7 @@
 	const DODUO      ; 54   electivire
 	const MAGNEZONE  ; 55
 	const SEEL       ; 56   yanmega
-	const DEWGONG    ; 57   glisocr
+	const GLISCOR    ; 57   glisocr
 	const GRIMER     ; 58   ....
 	const MUK        ; 59   ferrothorn
 	const SHELLDER   ; 5a

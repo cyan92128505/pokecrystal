@@ -1,10 +1,10 @@
-	db "BALLOON@" ; species name
-	dw 108, 90 ; height, weight
+	db "MACH@" ; species name
+	dw 603, 4094 ; height, weight
 
-	db   "When faced with a"
-	next "larger opponent,"
-	next "it swallows as"
+	db   "It can fly at"
+	next "speeds equal to"
+	next "a jet plane."
 
-	page "much water as it"
-	next "can to match the"
-	next "opponent's size.@"
+	page "AB Becomes more"
+	next "evasive when in"
+	next "a sandstorm.@"

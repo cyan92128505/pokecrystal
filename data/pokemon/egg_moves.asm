@@ -505,7 +505,6 @@ TogekissEggMoves:
 	db DRILL_PECK
 	db QUICK_ATTACK
 	db NIGHT_SLASH
-	db STEEL_WING
 	db -1 ; end
 
 MareepEggMoves:

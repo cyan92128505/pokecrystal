@@ -210,7 +210,7 @@ MoveNames::
 	li "MILK DRINK"
 	li "VOLT TACKLE"
 	li "FURY CUTTER"
-	li "STEEL WING"
+	li "FLASH CANNON"
 	li "MEAN LOOK"
 	li "ATTRACT"
 	li "SLEEP TALK"

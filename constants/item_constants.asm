@@ -265,7 +265,7 @@ TM01 EQU const_value
 	add_tm REST         ; ec
 	add_tm ATTRACT      ; ed  nasty plot / air slash
 	add_tm ROCK_SLIDE   ; ee
-	add_tm STEEL_WING   ; ef  calm mind / roost
+	add_tm THUNDER_WAVE ; ef  calm mind / roost
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1  focus blast
 	add_tm NIGHTMARE    ; f2  dark pulse

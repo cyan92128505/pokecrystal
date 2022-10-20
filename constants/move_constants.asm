@@ -216,7 +216,7 @@
 	const MILK_DRINK   ; d0
 	const VOLT_TACKLE  ; d1
 	const FURY_CUTTER  ; d2
-	const STEEL_WING   ; d3    flash canon
+	const FLASH_CANNON ; d3    flash canon
 	const MEAN_LOOK    ; d4
 	const ATTRACT      ; d5
 	const SLEEP_TALK   ; d6

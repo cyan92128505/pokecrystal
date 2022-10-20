@@ -211,7 +211,7 @@ MoveDescriptions::
 	dw MilkDrinkDescription
 	dw VoltTackleDescription
 	dw FuryCutterDescription
-	dw SteelWingDescription
+	dw FlashCannonDescription
 	dw MeanLookDescription
 	dw AttractDescription
 	dw SleepTalkDescription
@@ -1107,9 +1107,9 @@ FuryCutterDescription:
 	db   "Successive hits"
 	next "raise power.@"
 
-SteelWingDescription:
-	db   "Stiff wings strike"
-	next "the foe.@"
+FlashCannonDescription:
+	db   "A blast of light"
+	next "can lower SPDef.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"

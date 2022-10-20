@@ -1074,6 +1074,7 @@ MagnemiteEvosAttacks:
 	db 21, THUNDER_WAVE
 	db 27, SCREECH
 	db 30, TRI_ATTACK
+    db 36, FLASH_CANNON
 	db 40, THUNDERBOLT
 	db 43, LOCK_ON
 	db 45, ZAP_CANNON
@@ -1093,6 +1094,7 @@ MagnetonEvosAttacks:
 	db 21, THUNDER_WAVE
 	db 27, SCREECH
 	db 30, TRI_ATTACK
+    db 36, FLASH_CANNON
 	db 40, THUNDERBOLT
 	db 43, LOCK_ON
 	db 45, ZAP_CANNON
@@ -1135,6 +1137,7 @@ MagnezoneEvosAttacks:
 	db 21, THUNDER_WAVE
 	db 27, SCREECH
 	db 30, TRI_ATTACK
+	db 36, FLASH_CANNON
 	db 40, THUNDERBOLT
 	db 43, LOCK_ON
 	db 45, ZAP_CANNON
@@ -2477,8 +2480,6 @@ PorygonzEvosAttacks:
 
 GenesectEvosAttacks:
 	db 0 ; no more evolutions
-	;db 1, FURY_CUTTER
-	;db 1, QUICK_ATTACK
 	db 1, BUG_BUZZ
 	db 1, THUNDERBOLT
 	db 1, ICE_BEAM
@@ -2489,8 +2490,10 @@ GenesectEvosAttacks:
 	db 25, ANCIENTPOWER
 	db 30, X_SCISSOR
 	db 35, IRON_HEAD
-	db 40, ZAP_CANNON
+	db 38, ZAP_CANNON
+	db 42, FLASH_CANNON
 	db 45, BUG_BUZZ
+	db 48, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -3013,7 +3016,7 @@ SkarmoryEvosAttacks:
 	db 19, SWIFT
 	db 25, AGILITY
 	db 37, FURY_ATTACK
-	db 49, STEEL_WING
+	db 49, IRON_HEAD
 	db 0 ; no more level-up moves
 
 HoundourEvosAttacks:

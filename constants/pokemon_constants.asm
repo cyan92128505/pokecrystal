@@ -103,7 +103,7 @@
 	const MAGNETON   ; 52
 	const FARFETCH_D ; 53   mamoswine
 	const DODUO      ; 54   electivire
-	const MAGNEZONE     ; 55   magnezone
+	const MAGNEZONE  ; 55
 	const SEEL       ; 56   yanmega
 	const DEWGONG    ; 57   glisocr
 	const GRIMER     ; 58   ....

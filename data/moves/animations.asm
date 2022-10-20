@@ -212,7 +212,7 @@ BattleAnimations::
 	dw BattleAnim_MilkDrink
 	dw BattleAnim_Spark
 	dw BattleAnim_FuryCutter
-	dw BattleAnim_SteelWing
+	dw BattleAnim_FlashCannon
 	dw BattleAnim_MeanLook
 	dw BattleAnim_Attract
 	dw BattleAnim_SleepTalk
@@ -3512,6 +3512,7 @@ BattleAnim_MudSlap:
 	anim_call BattleAnimSub_SandOrMud
 	anim_ret
 
+BattleAnim_FlashCannon:
 BattleAnim_Octazooka:
 	anim_3gfx ANIM_GFX_HAZE, ANIM_GFX_EGG, ANIM_GFX_SMOKE
 	anim_sound 6, 2, SFX_SLUDGE_BOMB

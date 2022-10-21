@@ -197,7 +197,7 @@ INCBIN "gfx/footprints/magneton.1bpp",   footprint_top
 INCBIN "gfx/footprints/farfetch_d.1bpp", footprint_top
 INCBIN "gfx/footprints/doduo.1bpp",      footprint_top
 INCBIN "gfx/footprints/magnezone.1bpp",     footprint_top
-INCBIN "gfx/footprints/seel.1bpp",       footprint_top
+INCBIN "gfx/footprints/yanmega.1bpp",       footprint_top
 INCBIN "gfx/footprints/gliscor.1bpp",    footprint_top
 INCBIN "gfx/footprints/grimer.1bpp",     footprint_top
 ; 081-088 bottom halves
@@ -206,7 +206,7 @@ INCBIN "gfx/footprints/magneton.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/farfetch_d.1bpp", footprint_bottom
 INCBIN "gfx/footprints/doduo.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/magnezone.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/seel.1bpp",       footprint_bottom
+INCBIN "gfx/footprints/yanmega.1bpp",       footprint_bottom
 INCBIN "gfx/footprints/gliscor.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/grimer.1bpp",     footprint_bottom
 ; 089-096 top halves

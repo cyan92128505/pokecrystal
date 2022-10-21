@@ -173,8 +173,8 @@ PokemonPicPointers::
 	dba_pic DoduoBackpic
 	dba_pic MagnezoneFrontpic
 	dba_pic MagnezoneBackpic
-	dba_pic SeelFrontpic
-	dba_pic SeelBackpic
+	dba_pic YanmegaFrontpic
+	dba_pic YanmegaBackpic
 	dba_pic GliscorFrontpic
 	dba_pic GliscorBackpic
 	dba_pic GrimerFrontpic

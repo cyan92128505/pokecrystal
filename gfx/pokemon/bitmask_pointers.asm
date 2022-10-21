@@ -85,7 +85,7 @@ BitmasksPointers:
 	dw FarfetchDBitmasks
 	dw DoduoBitmasks
 	dw MagnezoneBitmasks
-	dw SeelBitmasks
+	dw YanmegaBitmasks
 	dw GliscorBitmasks
 	dw GrimerBitmasks
 	dw MukBitmasks

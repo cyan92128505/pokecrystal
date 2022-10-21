@@ -87,7 +87,7 @@ KantoMonSpecials:
 	db  58 ; FARFETCH_D
 	db  35 ; DODUO
 	db  60 ; MAGNEZONE
-	db  70 ; SEEL
+	db  70 ; YANMEGA
 	db  95 ; GLISCOR
 	db  40 ; GRIMER
 	db  65 ; MUK

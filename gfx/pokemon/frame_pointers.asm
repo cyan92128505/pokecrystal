@@ -85,7 +85,7 @@ FramesPointers:
 	dw FarfetchDFrames
 	dw DoduoFrames
 	dw MagnezoneFrames
-	dw SeelFrames
+	dw YanmegaFrames
 	dw GliscorFrames
 	dw GrimerFrames
 	dw MukFrames

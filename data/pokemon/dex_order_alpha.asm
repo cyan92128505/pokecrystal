@@ -198,7 +198,6 @@ AlphabeticalPokedexOrder:
 	db SCIZOR
 	db SCYTHER
 	db SEADRA
-	db SEEL
 	db SHAYMIN
     db SHELGON
 	db SHELLDER
@@ -252,6 +251,7 @@ AlphabeticalPokedexOrder:
 	db WOOPER
 	db XERNEAS
 	db YANMA
+	db YANMEGA
 	db YVELTAL
 	db ZAPDOS
 	db ZUBAT

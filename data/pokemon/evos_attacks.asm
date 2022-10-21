@@ -1144,15 +1144,19 @@ MagnezoneEvosAttacks:
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
-SeelEvosAttacks:
+YanmegaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HEADBUTT
-	db 5, GROWL
-	db 16, AURORA_BEAM
-	db 21, REST
-	db 32, TAKE_DOWN
-	db 37, ICE_BEAM
-	db 48, SAFEGUARD
+	db 1, TACKLE
+	db 1, FORESIGHT
+	db 7, QUICK_ATTACK
+	db 13, BITE
+	db 18, LEECH_LIFE
+	db 21, SUPERSONIC
+	db 26, WING_ATTACK
+	db 32, HYPNOSIS
+	db 37, ANCIENTPOWER
+	db 40, AIR_SLASH
+	db 44, BUG_BUZZ
 	db 0 ; no more level-up moves
 
 GliscorEvosAttacks:
@@ -2601,15 +2605,19 @@ MetagrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
+	db EVOLVE_LEVEL, 37, YANMEGA
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FORESIGHT
 	db 7, QUICK_ATTACK
-	db 19, SONICBOOM
-	db 25, DETECT
-	db 31, SUPERSONIC
-	db 37, WING_ATTACK
-	db 43, SCREECH
+	db 13, BITE
+	db 18, LEECH_LIFE
+	db 21, SUPERSONIC
+	db 26, WING_ATTACK
+	db 32, HYPNOSIS
+	db 37, ANCIENTPOWER
+	db 40, AIR_SLASH
+	db 44, BUG_BUZZ
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:

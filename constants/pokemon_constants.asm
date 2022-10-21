@@ -104,8 +104,8 @@
 	const FARFETCH_D ; 53   mamoswine
 	const DODUO      ; 54   electivire
 	const MAGNEZONE  ; 55
-	const SEEL       ; 56   yanmega
-	const GLISCOR    ; 57   glisocr
+	const YANMEGA    ; 56
+	const GLISCOR    ; 57
 	const GRIMER     ; 58   ....
 	const MUK        ; 59   ferrothorn
 	const SHELLDER   ; 5a

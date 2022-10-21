@@ -86,7 +86,7 @@ PokedexDataPointerTable:
 	dw FarfetchDPokedexEntry
 	dw DoduoPokedexEntry
 	dw MagnezonePokedexEntry
-	dw SeelPokedexEntry
+	dw YanmegaPokedexEntry
 	dw GliscorPokedexEntry
 	dw GrimerPokedexEntry
 	dw MukPokedexEntry

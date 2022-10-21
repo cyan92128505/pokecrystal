@@ -90,6 +90,7 @@ NewPokedexOrder:
 	db NIDORINO
 	db NIDOKING
 	db YANMA
+	db YANMEGA
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db WOBBUFFET
@@ -142,7 +143,6 @@ NewPokedexOrder:
 	db CLOYSTER
 	db CHINCHOU
 	db LANTURN
-	db SEEL
 	db LICKITUNG
 	db EEVEE
 	db VAPOREON

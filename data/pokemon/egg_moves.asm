@@ -243,7 +243,7 @@ DoduoEggMoves:
 	db FLAIL
 	db -1 ; end
 
-SeelEggMoves:
+YanmegaEggMoves:
 	db LICK
 	db PERISH_SONG
 	db DISABLE

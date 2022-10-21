@@ -85,7 +85,7 @@ AnimationPointers:
 	dw FarfetchDAnimation
 	dw DoduoAnimation
 	dw MagnezoneAnimation
-	dw SeelAnimation
+	dw YanmegaAnimation
 	dw GliscorAnimation
 	dw GrimerAnimation
 	dw MukAnimation

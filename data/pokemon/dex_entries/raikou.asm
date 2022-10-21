@@ -5,6 +5,6 @@
 	next "stores energy"
 	next "inside its body,"
 
-	page "then sweeps across"
-	next "the land, shooting"
-	next "off electricity.@"
+	page "AB Its speed"
+	next "increases as it"
+	next "enters battle.@"

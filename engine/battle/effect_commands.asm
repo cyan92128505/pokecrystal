@@ -3986,16 +3986,22 @@ BattleCommand_SleepTarget:
 	;jr z, .random_loop
 	;ld b, %011 ; I think this means enemies in battle tower can only sleep for 3 turns max, not 7
 
-.random_loop
-	call BattleRandom
-	and b
-	jr z, .random_loop
-	cp SLP
-	jr z, .random_loop
-; AndrewNote - Sleep turns hard set to 3
-; This means a Pokemon always sleeps for 2 turns if put to sleep (same as rest)
+;.random_loop
+	;call BattleRandom
+	;and b
+	;jr z, .random_loop
+	;cp SLP
+	;jr z, .random_loop
+; AndrewNote - Sleep now lasts 2 or 3 turns
 	;inc a
+	call BattleRandom
+	cp 50 percent
+	jr c, .twoTurns
+	ld a, 4
+	jr .turnsSet
+.twoTurns
 	ld a, 3
+.turnsSet
 	ld [de], a
 	call UpdateOpponentInParty
 	call RefreshBattleHuds

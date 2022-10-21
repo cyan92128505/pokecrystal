@@ -140,8 +140,14 @@ LoadRandomBattleTowerMon:
     jr .continue
 .lastTrainer
     ld a, b
-    cp 30 ; last trainer only uses strongest mons, can pick mewtwo
+    cp 25 ; last trainer only uses 25 strongest mons, can pick mewtwo
     jr nc, .resample
+    and a
+    jr nz, .continue
+	call Random     ; decrease mewtwo odds for last trainer
+	cp 50 percent
+	jr c, .resample
+	ld a, b
 
 .continue
 	; in register 'a' is the chosen mon of the LevelGroup
@@ -190,10 +196,10 @@ LoadRandomBattleTowerMon:
 	jr z, .FindARandomBattleTowerMon
 	ld a, [sBTMonPrevPrevTrainer2]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 	ld a, [sBTMonPrevPrevTrainer3]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH
 	call CopyBytes

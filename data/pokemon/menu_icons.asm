@@ -87,7 +87,7 @@ MonMenuIcons:
 	db ICON_BIRD        ; FARFETCH_D
 	db ICON_BIRD        ; DODUO
 	db ICON_VOLTORB     ; MAGNEZONE
-	db ICON_LAPRAS      ; SEEL
+	db ICON_BUG         ; YANMEGA
 	db ICON_BUG         ; GLISCOR
 	db ICON_BLOB        ; GRIMER
 	db ICON_BLOB        ; MUK

@@ -4289,7 +4289,7 @@ SwitchInEffects:
 	jr nz, .checkSpecies
 	ld a, [wBattleMonSpecies]
 .checkSpecies
-; AndrewNote - one off abilities
+; AndrewNote - abilities that activate on switching in
     cp KYOGRE
     jr z, .rain
     cp GROUDON
@@ -4305,6 +4305,10 @@ SwitchInEffects:
     cp SUICUNE
     jp z, .defUp
     cp RAIKOU
+    jp z, .spdUp
+    cp YANMA
+    jp z, .spdUp
+    cp YANMEGA
     jp z, .spdUp
     cp ENTEI
     jp z, .atkUp

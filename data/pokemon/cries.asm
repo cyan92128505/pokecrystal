@@ -91,7 +91,7 @@ PokemonCries::
 	mon_cry CRY_SPEAROW,     221,  129 ; FARFETCH_D
 	mon_cry CRY_DIGLETT,     187,  129 ; DODUO
 	mon_cry CRY_PARAS,       250,  350 ; MAGNEZONE
-	mon_cry CRY_SEEL,        136,  320 ; SEEL
+	mon_cry CRY_TOTODILE,    -50,  150 ; YANMEGA
 	mon_cry CRY_GLIGAR,     -150,  300 ; GLISCOR
 	mon_cry CRY_GRIMER,        0,  256 ; GRIMER
 	mon_cry CRY_MUK,         239,  383 ; MUK

@@ -85,7 +85,7 @@ AnimationIdlePointers:
 	dw FarfetchDAnimationIdle
 	dw DoduoAnimationIdle
 	dw MagnezoneAnimationIdle
-	dw SeelAnimationIdle
+	dw YanmegaAnimationIdle
 	dw GliscorAnimationIdle
 	dw GrimerAnimationIdle
 	dw MukAnimationIdle

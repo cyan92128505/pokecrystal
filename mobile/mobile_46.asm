@@ -1157,12 +1157,14 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
 	jr nz, .asm_11896b
 	ld hl, Strings_Ll0ToL40 ; Address to list of strings with the choosable levels
-	ld a, 5                 ; 4 levels to choose from, including 'Cancel'-option
+	ld a, 3                 ; 2 levels to choose from, including 'Cancel'-option
 	jr .asm_118970
 
+; AndrewNote - BT define a for level select
 .asm_11896b
 	ld hl, Strings_L10ToL100 ; Address to list of strings with the choosable levels
-	ld a, 11                 ; 10 levels to choose from, including 'Cancel'-option
+	;ld a, 11                 ; 5 levels to choose from, including 'Cancel'-option
+	ld a, 6
 
 .asm_118970
 	ld [wcd4a], a
@@ -1255,6 +1257,7 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	ld [hl], a
 	jr .asm_1189e5
 
+; AndrewNote - BT level choice done here
 .a_button
 	call PlayClickSFX
 	ld a, [wcd4f]
@@ -3855,6 +3858,7 @@ BattleTowerRoomMenu_UpdateYesNoMenu:
 	ld [wBattleTowerRoomMenuJumptableIndex], a
 	ret
 
+; AndrewNote - adjest level selection box
 MenuHeader_119cf7:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 12, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
@@ -3870,17 +3874,23 @@ MenuData_119cff: ; unreferenced
 String_119d07:
 	db "   ▼@"
 
+; AndrewNote - BT level menu strings
 Strings_L10ToL100:
-	db " L:10 @@"
-	db " L:20 @@"
-	db " L:30 @@"
-	db " L:40 @@"
-	db " L:50 @@"
-	db " L:60 @@"
-	db " L:70 @@"
-	db " L:80 @@"
-	db " L:90 @@"
-	db " L:100@@"
+;	db " L:10 @@"
+;	db " L:20 @@"
+;	db " L:30 @@"
+;	db " L:40 @@"
+;	db " L:50 @@"
+;	db " L:60 @@"
+;	db " L:70 @@"
+;	db " L:80 @@"
+;	db " L:90 @@"
+;	db " L:100@@"
+    db "NOVICE@@"
+    db "LEADER@@"
+    db "ELITE @@"
+    db "CHAMP @@"
+    db "MASTER@@"
 	db "CANCEL@@"
 
 Strings_Ll0ToL40:
@@ -3894,12 +3904,18 @@ BattleTowerCancelString: ; unreferenced
 	db "CANCEL@"
 
 BattleTower_LevelCheck:
+; AndrewNote just for now lets not have a level check
+    ret
+
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wPartyMons)
 	ldh [rSVBK], a
+; AndrewNote - BT level choice calulated here
+; [wcd4f] is the level choice a = 1...5
 	ld a, [wcd4f]
-	ld c, 10
+;	ld c, 10
+    ld c, 20
 	call SimpleMultiply
 	ld hl, wcd50
 	ld [hl], a

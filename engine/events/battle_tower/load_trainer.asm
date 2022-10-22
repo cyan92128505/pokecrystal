@@ -102,9 +102,9 @@ LoadRandomBattleTowerMon:
 
 .FindARandomBattleTowerMon:
 	; From Which LevelGroup are the mon loaded
-	; a = 1..10
+	; a = 1..10 - not anymore, is now 1-5
 	ld a, [wBTChoiceOfLvlGroup] ; get level group choice
-	dec a ; group choice is 0 - 9
+	dec a ; group choice is 0 - 4
 	ld hl, BattleTowerMons
 	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
 	call AddNTimes ; increment hl by a * bc, so we are at the right mon
@@ -118,7 +118,8 @@ LoadRandomBattleTowerMon:
 	ld b, a ; b is the number of mon to go forward
 
 	ld a, [wBTChoiceOfLvlGroup]
-	cp 10
+	;cp 10
+	cp 5 ; 5 is now lvl 100
 	jr z, .level100
 
     ld a, b
@@ -133,7 +134,7 @@ LoadRandomBattleTowerMon:
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainer
     ld a, b
-    cp 59 ; lvl 100 has a pool of 59 Pokemon rather than 21
+    cp 60 ; lvl 100 has a pool of 60 Pokemon rather than 21
     jr nc, .resample
     and a
     jr z, .resample ; only the last trainer can have mewtwo

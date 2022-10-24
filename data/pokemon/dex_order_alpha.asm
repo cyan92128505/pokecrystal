@@ -60,7 +60,6 @@ AlphabeticalPokedexOrder:
 	db EXCADRILL
 	db EXEGGCUTE
 	db EXEGGUTOR
-	db MAMOSWINE
 	db FEAROW
 	db FERALIGATR
 	db FLAAFFY
@@ -130,6 +129,7 @@ AlphabeticalPokedexOrder:
 	db MAGNEMITE
 	db MAGNETON
 	db MAGNEZONE
+	db MAMOSWINE
 	db MANKEY
 	db MAREEP
 	db MAROWAK

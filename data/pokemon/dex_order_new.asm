@@ -132,7 +132,6 @@ NewPokedexOrder:
 	db ELECTABUZZ
 	db MR__MIME
 	db SMEARGLE
-	db MAMOSWINE
 	db TENTACOOL
 	db TENTACRUEL
 	db KRABBY
@@ -157,6 +156,7 @@ NewPokedexOrder:
 	db GLISCOR
 	db SWINUB
 	db PILOSWINE
+	db MAMOSWINE
 	db TEDDIURSA
 	db URSARING
 	db PHANPY

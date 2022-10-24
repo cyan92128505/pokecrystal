@@ -1017,6 +1017,7 @@ TriAttack:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	checkstatusimmunity
 	tristatuschance
 	endmove
 

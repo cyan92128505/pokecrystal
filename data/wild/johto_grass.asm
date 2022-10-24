@@ -1575,7 +1575,7 @@ JohtoGrassWildMons:
 	; morn
 	db 15, PIDGEY
 	db 16, PIDGEOTTO
-	db 16, FARFETCH_D
+	db 16, PIDGEOTTO
 	db 15, RATICATE
 	db 17, RATICATE
 	db 17, RATICATE
@@ -1583,7 +1583,7 @@ JohtoGrassWildMons:
 	; day
 	db 15, PIDGEY
 	db 16, PIDGEOTTO
-	db 16, FARFETCH_D
+	db 16, PIDGEOTTO
 	db 15, RATICATE
 	db 17, RATICATE
 	db 17, RATICATE

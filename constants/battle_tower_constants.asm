@@ -1,7 +1,7 @@
 BATTLETOWER_PARTY_LENGTH EQU 3 ; AndrewNote - this is not used anymore, 6 is hard coded
 BATTLETOWER_STREAK_LENGTH EQU 4
 
-BATTLETOWER_NUM_UNIQUE_MON EQU 38 ; AndrewNote - lvl 100 has 70 unique mon, others have 19
+BATTLETOWER_NUM_UNIQUE_MON EQU 38 ; AndrewNote - lvl 100 has 80 unique mon, others have 40
 BATTLETOWER_NUM_UNIQUE_TRAINERS EQU 70
 
 BATTLETOWER_TRAINERDATALENGTH EQU 18 * 2 ; $24

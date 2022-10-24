@@ -194,7 +194,7 @@
 	const SWEET_KISS   ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
-	const MUD_SLAP     ; bd     avelance
+	const AVALANCHE    ; bd     avelance
 	const OCTAZOOKA    ; be     flare blitz
 	const SPIKES       ; bf
 	const ZAP_CANNON   ; c0

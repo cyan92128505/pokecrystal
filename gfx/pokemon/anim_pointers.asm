@@ -82,7 +82,7 @@ AnimationPointers:
 	dw SlowbroAnimation
 	dw MagnemiteAnimation
 	dw MagnetonAnimation
-	dw FarfetchDAnimation
+	dw MamoswineAnimation
 	dw DoduoAnimation
 	dw MagnezoneAnimation
 	dw YanmegaAnimation

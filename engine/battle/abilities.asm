@@ -21,6 +21,8 @@ ThickFatPokemon:
     db MILTANK
     db URSARING
     db LAPRAS
+    db PILOSWINE
+    db MAMOSWINE
     db -1
 
 TechnicianPokemon:

@@ -190,7 +190,7 @@ BattleAnimations::
 	dw BattleAnim_SweetKiss
 	dw BattleAnim_BellyDrum
 	dw BattleAnim_SludgeBomb
-	dw BattleAnim_MudSlap
+	dw BattleAnim_Avalanche
 	dw BattleAnim_Octazooka
 	dw BattleAnim_Spikes
 	dw BattleAnim_ZapCannon
@@ -1399,6 +1399,7 @@ BattleAnim_RockThrow:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_Avalanche:
 BattleAnim_RockSlide:
 	anim_1gfx ANIM_GFX_ROCKS
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c0, $1, $0

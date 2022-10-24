@@ -118,7 +118,6 @@ LoadRandomBattleTowerMon:
 	ld b, a ; b is the number of mon to go forward
 
 	ld a, [wBTChoiceOfLvlGroup]
-	;cp 10
 	cp 5 ; 5 is now lvl 100
 	jr z, .level100
 
@@ -134,14 +133,14 @@ LoadRandomBattleTowerMon:
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainer
     ld a, b
-    cp 60 ; lvl 100 has a pool of 60 Pokemon rather than 21
+    cp 61 ; lvl 100 has a pool of 61 Pokemon rather than 21
     jr nc, .resample
     and a
     jr z, .resample ; only the last trainer can have mewtwo
     jr .continue
 .lastTrainer
     ld a, b
-    cp 25 ; last trainer only uses 25 strongest mons, can pick mewtwo
+    cp 20 ; last trainer only uses 20 strongest mons, can pick mewtwo
     jr nc, .resample
     and a
     jr nz, .continue
@@ -162,42 +161,40 @@ LoadRandomBattleTowerMon:
 	ld a, [hld]
 	ld c, a
 
-	; Andrew - battle tower ensure enemy mon are unique species
-	; but comment out item restrictions
+	; AndrewNote - battle tower ensure enemy mon are unique species
+	; no item restrictions
 	ld a, [wBT_OTMon1]
 	cp b
 	jr z, .FindARandomBattleTowerMon
 
-	;ld a, [wBT_OTMon1Item]
-	;cp c
-	;jr z, .FindARandomBattleTowerMon
 	ld a, [wBT_OTMon2]
 	cp b
 	jr z, .FindARandomBattleTowerMon
-	;ld a, [wBT_OTMon2Item]
-	;cp c
-	;jr z, .FindARandomBattleTowerMon
+
 	ld a, [wBT_OTMon3]
 	cp b
 	jr z, .FindARandomBattleTowerMon
-	;ld a, [wBT_OTMon3Item]
-	;cp c
-	;jr z, .FindARandomBattleTowerMon
+
 	ld a, [sBTMonPrevTrainer1]
 	cp b
 	jr z, .FindARandomBattleTowerMon
+
 	ld a, [sBTMonPrevTrainer2]
 	cp b
 	jr z, .FindARandomBattleTowerMon
+
     ld a, [sBTMonPrevTrainer3]
 	cp b
 	jr z, .FindARandomBattleTowerMon
+
 	ld a, [sBTMonPrevPrevTrainer1]
 	cp b
 	jr z, .FindARandomBattleTowerMon
+
 	ld a, [sBTMonPrevPrevTrainer2]
 	cp b
 	jp z, .FindARandomBattleTowerMon
+
 	ld a, [sBTMonPrevPrevTrainer3]
 	cp b
 	jp z, .FindARandomBattleTowerMon

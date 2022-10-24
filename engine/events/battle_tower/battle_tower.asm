@@ -923,7 +923,7 @@ BattleTower_GiveReward:
 	cp c
 	jr nz, .next
 	ld a, [hl]
-	cp 95
+	cp 1
 	ret c
 .next
 	inc hl
@@ -955,17 +955,42 @@ BattleTower_SaveOptions:
 
 BattleTower_RandomlyChooseReward:
 ; Generate a random stat boosting item.
-.loop
-	call Random
-	ldh a, [hRandomAdd]
-	and $7
-	cp 6
-	jr c, .okay
-	sub 6
-.okay
-	add HP_UP
-	cp LUCKY_PUNCH
-	jr z, .loop
+    ld a, [wcd4f] ; load level group
+    cp 2
+    jr z, .leader
+    cp 3
+    jr z, .elite
+    cp 4
+    jr z, .champ
+    cp 5
+    jr z, .master
+.novice
+    ld a, GOLD_BERRY
+    jr .give
+.leader
+    ld a, HP_UP
+    jr .give
+.elite
+    ld a, PP_UP
+    jr .give
+.champ
+    ld a, MASTER_BALL
+    jr .give
+.master
+    ld a, RARE_CANDY
+    jr .give
+;.loop
+;	call Random
+;	ldh a, [hRandomAdd]
+;	and $7
+;	cp 6
+;	jr c, .okay
+;	sub 6
+;.okay
+;	add HP_UP
+;	cp LUCKY_PUNCH
+;	jr z, .loop
+.give
 	push af
 	ld a, BANK(sBattleTowerReward)
 	call OpenSRAM

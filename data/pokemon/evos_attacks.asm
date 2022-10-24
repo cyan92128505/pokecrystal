@@ -1101,16 +1101,19 @@ MagnetonEvosAttacks:
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
-FarfetchDEvosAttacks:
+MamoswineEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 7, SAND_ATTACK
-	db 13, LEER
-	db 19, FURY_ATTACK
-	db 25, SWORDS_DANCE
-	db 31, AGILITY
-	db 37, SLASH
-	db 44, FALSE_SWIPE
+	db 1, HORN_ATTACK
+	db 1, POWDER_SNOW
+	db 1, ENDURE
+	db 10, POWDER_SNOW
+	db 19, MAGNITUDE
+	db 25, ICY_WIND
+	db 30, BODY_SLAM
+	db 37, AMNESIA
+	db 42, BLIZZARD
+	db 46, EARTHQUAKE
+	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
@@ -1165,7 +1168,7 @@ GliscorEvosAttacks:
 	db 6, SAND_ATTACK
 	db 9, HARDEN
 	db 14, FURY_CUTTER
-	db 18, MUD_SLAP
+	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
 	db 33, SANDSTORM
@@ -2228,7 +2231,7 @@ DrilburEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, RAPID_SPIN
-	db 8, MUD_SLAP
+	db 8, MAGNITUDE
 	db 12, FURY_SWIPES
 	db 15, METAL_CLAW
 	db 19, DIG
@@ -2245,7 +2248,7 @@ ExcadrillEvosAttacks:
 	db 1, EARTHQUAKE
 	db 1, ROCK_SLIDE
 	db 1, IRON_HEAD
-	db 8, MUD_SLAP
+	db 8, MAGNITUDE
 	db 12, FURY_SWIPES
 	db 15, METAL_CLAW
 	db 19, DIG
@@ -2790,7 +2793,7 @@ GligarEvosAttacks:
 	db 6, SAND_ATTACK
 	db 9, HARDEN
 	db 14, FURY_CUTTER
-	db 18, MUD_SLAP
+	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
 	db 33, SANDSTORM
@@ -2960,27 +2963,35 @@ DeoxysEvosAttacks:
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:
-	db EVOLVE_LEVEL, 33, PILOSWINE
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 10, POWDER_SNOW
-	db 19, ENDURE
-	db 28, TAKE_DOWN
-	db 46, BLIZZARD
-	db 55, AMNESIA
-	db 0 ; no more level-up moves
-
-PiloswineEvosAttacks:
+	db EVOLVE_LEVEL, 30, PILOSWINE
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, POWDER_SNOW
 	db 1, ENDURE
 	db 10, POWDER_SNOW
-	db 19, ENDURE
-	db 28, TAKE_DOWN
-	db 33, FURY_ATTACK
-	db 56, BLIZZARD
-	db 70, AMNESIA
+	db 19, MAGNITUDE
+	db 25, ICY_WIND
+	db 30, BODY_SLAM
+	db 37, AMNESIA
+	db 42, BLIZZARD
+	db 46, EARTHQUAKE
+	db 50, AVALANCHE
+	db 0 ; no more level-up moves
+
+PiloswineEvosAttacks:
+    db EVOLVE_LEVEL, 42, MAMOSWINE
+	db 0 ; no more evolutions
+	db 1, HORN_ATTACK
+	db 1, POWDER_SNOW
+	db 1, ENDURE
+	db 10, POWDER_SNOW
+	db 19, MAGNITUDE
+	db 25, ICY_WIND
+	db 30, BODY_SLAM
+    db 37, AMNESIA
+	db 42, BLIZZARD
+	db 46, EARTHQUAKE
+	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
 SpiritombEvosAttacks:

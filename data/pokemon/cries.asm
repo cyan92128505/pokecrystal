@@ -88,7 +88,7 @@ PokemonCries::
 	mon_cry CRY_GROWLITHE,     0,  256 ; SLOWBRO
 	mon_cry CRY_METAPOD,     128,  224 ; MAGNEMITE
 	mon_cry CRY_METAPOD,      32,  320 ; MAGNETON
-	mon_cry CRY_SPEAROW,     221,  129 ; FARFETCH_D
+	mon_cry CRY_DEOXYS,     -400,  300 ; MAMOSWINE
 	mon_cry CRY_DIGLETT,     187,  129 ; DODUO
 	mon_cry CRY_PARAS,       250,  350 ; MAGNEZONE
 	mon_cry CRY_TOTODILE,    -50,  150 ; YANMEGA

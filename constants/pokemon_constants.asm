@@ -101,7 +101,7 @@
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
-	const FARFETCH_D ; 53   mamoswine
+	const MAMOSWINE  ; 53
 	const DODUO      ; 54   electivire
 	const MAGNEZONE  ; 55
 	const YANMEGA    ; 56

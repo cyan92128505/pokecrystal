@@ -3904,14 +3904,18 @@ BattleTowerCancelString: ; unreferenced
 	db "CANCEL@"
 
 BattleTower_LevelCheck:
-; AndrewNote just for now lets not have a level check
-    ret
+; AndrewNote - BT level check is skipped after 16 badges
+    push af
+    ld a, [wKantoBadges]
+    cp %11111111
+    pop af
+    ret z
 
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wPartyMons)
 	ldh [rSVBK], a
-; AndrewNote - BT level choice calulated here
+; AndrewNote - BT level choice calculated here
 ; [wcd4f] is the level choice a = 1...5
 	ld a, [wcd4f]
 ;	ld c, 10

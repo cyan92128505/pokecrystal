@@ -189,7 +189,7 @@ MoveDescriptions::
 	dw SweetKissDescription
 	dw BellyDrumDescription
 	dw SludgeBombDescription
-	dw MudSlapDescription
+	dw AvalancheDescription
 	dw OctazookaDescription
 	dw SpikesDescription
 	dw ZapCannonDescription
@@ -1019,9 +1019,9 @@ SludgeBombDescription:
 	db   "An attack that may"
 	next "poison the foe.@"
 
-MudSlapDescription:
-	db   "Reduces the foe's"
-	next "accuracy.@"
+AvalancheDescription:
+	db   "Crush foe with"
+	next "ice boulders.@"
 
 OctazookaDescription:
 	db   "An attack that may"

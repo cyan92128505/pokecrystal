@@ -82,7 +82,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw FarfetchDEggMoves
+	dw NoEggMoves
 	dw DoduoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves

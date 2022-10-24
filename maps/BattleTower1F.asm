@@ -118,14 +118,30 @@ Script_WalkToBattleTowerElevator:
 	end
 
 Script_GivePlayerHisPrize:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iftrue .beatE4
+
 	setval BATTLETOWERACTION_1C
 	special BattleTowerAction
 	setval BATTLETOWERACTION_GIVEREWARD
 	special BattleTowerAction
 	ifequal POTION, Script_YourPackIsStuffedFull
 	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
-	giveitem ITEM_FROM_MEM, 5
-	writetext Text_PlayerGotFive
+	giveitem ITEM_FROM_MEM, 10
+	writetext Text_PlayerGotTen
+	jr .continueReward
+
+.beatE4
+	setval BATTLETOWERACTION_1C
+	special BattleTowerAction
+	setval BATTLETOWERACTION_GIVEREWARD
+	special BattleTowerAction
+	ifequal POTION, Script_YourPackIsStuffedFull
+	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
+    giveitem ITEM_FROM_MEM, 99
+    writetext Text_PlayerGotMax
+
+.continueReward
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
 	closetext
@@ -522,8 +538,17 @@ Text_AskRegisterRecord_Mobile: ; unreferenced
 	line "CENTER?"
 	done
 
-Text_PlayerGotFive:
-	text "<PLAYER> got five"
+Text_PlayerGotTen:
+	text "<PLAYER> got 10"
+	line "@"
+	text_ram wStringBuffer4
+	text "!@"
+	sound_item
+	text_promptbutton
+	text_end
+
+Text_PlayerGotMax:
+	text "<PLAYER> got 99"
 	line "@"
 	text_ram wStringBuffer4
 	text "!@"

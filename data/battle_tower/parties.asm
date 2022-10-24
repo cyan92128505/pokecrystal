@@ -7,7 +7,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db LEFTOVERS
-	db PROTECT, TOXIC, MUD_SLAP, ATTRACT
+	db PROTECT, TOXIC, SAND_ATTACK, ATTRACT
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -504,7 +504,7 @@ BattleTowerMons:
 
 	db JOLTEON
 	db MIRACLEBERRY
-	db THUNDERBOLT, THUNDER_WAVE, ROAR, MUD_SLAP
+	db THUNDERBOLT, THUNDER_WAVE, ROAR, SAND_ATTACK
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -608,7 +608,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db KINGS_ROCK
-	db EARTHQUAKE, SLUDGE_BOMB, SLASH, MUD_SLAP
+	db EARTHQUAKE, SLUDGE_BOMB, SLASH, SAND_ATTACK
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1260,7 +1260,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db KINGS_ROCK
-	db EARTHQUAKE, HYPER_BEAM, SLUDGE_BOMB, MUD_SLAP
+	db EARTHQUAKE, HYPER_BEAM, SLUDGE_BOMB, SAND_ATTACK
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2226,7 +2226,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db GOLD_BERRY
-	db MUD_SLAP, MOONLIGHT, PSYCHIC_M, NIGHT_SLASH
+	db SAND_ATTACK, MOONLIGHT, PSYCHIC_M, NIGHT_SLASH
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -2514,7 +2514,7 @@ BattleTowerMons:
 
 	db VAPOREON
 	db LEFTOVERS
-	db BLIZZARD, SHADOW_BALL, SURF, MUD_SLAP
+	db BLIZZARD, SHADOW_BALL, SURF, SAND_ATTACK
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3322,7 +3322,7 @@ BattleTowerMons:
 
 	db SKARMORY
 	db QUICK_CLAW
-	db IRON_HEAD, FLY, MUD_SLAP, TOXIC
+	db IRON_HEAD, FLY, SAND_ATTACK, TOXIC
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -3426,7 +3426,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db SCOPE_LENS
-	db SLASH, EARTHQUAKE, SHADOW_BALL, MUD_SLAP
+	db SLASH, EARTHQUAKE, SHADOW_BALL, SAND_ATTACK
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -3480,7 +3480,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db KINGS_ROCK
-	db NIGHT_SLASH, MUD_SLAP, MOONLIGHT, CONFUSE_RAY
+	db NIGHT_SLASH, SAND_ATTACK, MOONLIGHT, CONFUSE_RAY
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4494,6 +4494,8 @@ BattleTowerMons:
 	bigdw 308 ; SDef
 	db "RANTA-N@@@@"
 
+; ============ Final Trainer End ==============
+
     db LATIOS
 	db CHOICE_SPECS
 	;db THUNDERBOLT, DRAGON_PULSE, SURF, ICE_BEAM
@@ -4624,8 +4626,6 @@ BattleTowerMons:
 	bigdw 328 ; SAtk
 	bigdw 298 ; SDef
 	db "RANTA-N@@@@"
-
-; ============ Final Trainer End ==============
 
 	db GARCHOMP
 	db LIFE_ORB
@@ -5535,6 +5535,32 @@ BattleTowerMons:
 	bigdw 288 ; Spd
 	bigdw 330 ; SAtk
 	bigdw 210 ; SDef
+	db "RANTA-N@@@@"
+
+	db MAMOSWINE
+	db LEFTOVERS
+	db EARTHQUAKE, AVALANCHE, REST, CURSE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 16, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 423 ; HP
+	bigdw 423 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 258 ; Def
+	bigdw 258 ; Spd
+	bigdw 238 ; SAtk
+	bigdw 218 ; SDef
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

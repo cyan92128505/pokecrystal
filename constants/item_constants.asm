@@ -249,7 +249,7 @@ TM01 EQU const_value
 	const ITEM_DC       ; dc
 	add_tm PSYCHIC_M    ; dd
 	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df  thunderbolt
+	add_tm THUNDERBOLT  ; df  thunderbolt
 	add_tm DOUBLE_TEAM  ; e0  flamethrower
 	add_tm ICE_PUNCH    ; e1
 	add_tm SWAGGER      ; e2   ice beam
@@ -303,7 +303,7 @@ ENDM
 
 MT01 EQU const_value
 	add_mt FLAMETHROWER
-	add_mt THUNDERBOLT
+	add_mt NASTY_PLOT
 	add_mt ICE_BEAM
 NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 

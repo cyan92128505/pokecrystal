@@ -227,7 +227,7 @@ SlowpokeEggMoves:
 	db STOMP
 	db -1 ; end
 
-FarfetchDEggMoves:
+MamoswineEggMoves:
 	db FORESIGHT
 	db MIRROR_MOVE
 	db GUST

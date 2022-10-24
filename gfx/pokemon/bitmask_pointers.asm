@@ -82,7 +82,7 @@ BitmasksPointers:
 	dw SlowbroBitmasks
 	dw MagnemiteBitmasks
 	dw MagnetonBitmasks
-	dw FarfetchDBitmasks
+	dw MamoswineBitmasks
 	dw DoduoBitmasks
 	dw MagnezoneBitmasks
 	dw YanmegaBitmasks

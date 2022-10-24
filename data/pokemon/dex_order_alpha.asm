@@ -60,7 +60,7 @@ AlphabeticalPokedexOrder:
 	db EXCADRILL
 	db EXEGGCUTE
 	db EXEGGUTOR
-	db FARFETCH_D
+	db MAMOSWINE
 	db FEAROW
 	db FERALIGATR
 	db FLAAFFY

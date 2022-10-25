@@ -83,7 +83,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw DoduoEggMoves
+	dw ElectivireEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
@@ -114,10 +114,10 @@ EggMovePointers::
 	dw NoEggMoves
 	dw ChanseyEggMoves
 	dw NoEggMoves
-	dw KangaskhanEggMoves
+	dw RhyperiorEggMoves
 	dw HorseaEggMoves
 	dw NoEggMoves
-	dw GoldeenEggMoves
+	dw MagmortarEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves

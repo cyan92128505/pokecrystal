@@ -42,7 +42,7 @@ AlphabeticalPokedexOrder:
 	db DIALGA
 	db DIGLETT
 	db DITTO
-	db DODUO
+	db ELECTIVIRE
 	db DONPHAN
 	db DRAGONAIR
 	db DRAGONITE
@@ -76,7 +76,7 @@ AlphabeticalPokedexOrder:
 	db GLISCOR
 	db GLOOM
 	db GOLBAT
-	db GOLDEEN
+	db MAGMORTAR
 	db GOLDUCK
 	db GOLEM
 	db GRAVELER
@@ -105,7 +105,7 @@ AlphabeticalPokedexOrder:
 	db KABUTOPS
 	db KADABRA
 	db KAKUNA
-	db KANGASKHAN
+	db RHYPERIOR
 	db KINGDRA
 	db KINGLER
 	db KOFFING

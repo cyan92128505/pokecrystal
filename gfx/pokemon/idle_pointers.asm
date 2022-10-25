@@ -83,7 +83,7 @@ AnimationIdlePointers:
 	dw MagnemiteAnimationIdle
 	dw MagnetonAnimationIdle
 	dw MamoswineAnimationIdle
-	dw DoduoAnimationIdle
+	dw ElectivireAnimationIdle
 	dw MagnezoneAnimationIdle
 	dw YanmegaAnimationIdle
 	dw GliscorAnimationIdle
@@ -114,10 +114,10 @@ AnimationIdlePointers:
 	dw RhydonAnimationIdle
 	dw ChanseyAnimationIdle
 	dw WeavileAnimationIdle
-	dw KangaskhanAnimationIdle
+	dw RhyperiorAnimationIdle
 	dw HorseaAnimationIdle
 	dw SeadraAnimationIdle
-	dw GoldeenAnimationIdle
+	dw MagmortarAnimationIdle
 	dw HonchkrowAnimationIdle
 	dw StaryuAnimationIdle
 	dw StarmieAnimationIdle

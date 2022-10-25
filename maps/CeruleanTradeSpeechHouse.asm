@@ -18,7 +18,7 @@ CeruleanTradeSpeechHouseGrampsScript:
 CeruleanTradeSpeechHouseRhydonScript:
 	opentext
 	writetext CeruleanTradeSpeechHouseRhydonText
-	cry KANGASKHAN
+	cry RHYPERIOR
 	waitbutton
 	closetext
 	end
@@ -43,7 +43,7 @@ CeruleanTradeSpeechHouseGrampsText:
 	done
 
 CeruleanTradeSpeechHouseRhydonText:
-	text "KANGASKHAN: Garu"
+	text "RHYPERIOR: Garu"
 	line "garuu."
 	done
 

@@ -1,7 +1,7 @@
 Pokered_MonIndices:
 	table_width 1, Pokered_MonIndices
 	db RHYDON
-	db KANGASKHAN
+	db RHYPERIOR
 	db NIDORAN_M
 	db CLEFAIRY
 	db SPEAROW
@@ -69,7 +69,7 @@ Pokered_MonIndices:
 	db DEOXYS ; MISSINGNO.
 	db SWINUB ; MISSINGNO.
 	db PILOSWINE ; MISSINGNO.
-	db DODUO
+	db ELECTIVIRE
 	db POLIWAG
 	db JYNX
 	db MOLTRES
@@ -156,7 +156,7 @@ Pokered_MonIndices:
 	db VENUSAUR
 	db TENTACRUEL
 	db XERNEAS ; MISSINGNO.
-	db GOLDEEN
+	db MAGMORTAR
 	db HONCHKROW
 	db YVELTAL ; MISSINGNO.
 	db GIRATINA ; MISSINGNO.

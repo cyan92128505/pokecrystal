@@ -94,16 +94,16 @@ KantoGrassWildMons:
 	db 16, ONIX
 	db 12, ZUBAT
 	db 15, MAROWAK
-	db 15, KANGASKHAN
-	db 15, KANGASKHAN
+	db 15, RHYHORN
+	db 15, RHYHORN
 	; day
 	db 12, CUBONE
 	db 14, GEODUDE
 	db 16, ONIX
 	db 12, ZUBAT
 	db 15, MAROWAK
-	db 15, KANGASKHAN
-	db 15, KANGASKHAN
+	db 15, RHYHORN
+	db 15, RHYHORN
 	; nite
 	db 12, ZUBAT
 	db 14, GEODUDE
@@ -680,7 +680,7 @@ KantoGrassWildMons:
 	db 3, RATTATA
 	db 3, SPEAROW
 	db 5, SPEAROW
-	db 4, DODUO
+	db 4, SPEAROW
 	db 6, PONYTA
 	db 7, FEAROW
 	db 7, FEAROW
@@ -688,7 +688,7 @@ KantoGrassWildMons:
 	db 3, RATTATA
 	db 3, SPEAROW
 	db 5, SPEAROW
-	db 4, DODUO
+	db 4, SPEAROW
 	db 6, PONYTA
 	db 7, FEAROW
 	db 7, FEAROW
@@ -761,19 +761,19 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
+	db 28, SPEAROW
 	db 28, SANDSLASH
 	db 32, PONYTA
 	db 30, RATICATE
-	db 30, DODUO
+	db 30, SPEAROW
 	db 30, ARBOK
 	db 30, ARBOK
 	; day
-	db 28, DODUO
+	db 28, SPEAROW
 	db 28, SANDSLASH
 	db 32, PONYTA
 	db 30, RATICATE
-	db 30, DODUO
+	db 30, SPEAROW
 	db 30, ARBOK
 	db 30, ARBOK
 	; nite
@@ -789,18 +789,18 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
+	db 28, SPEAROW
 	db 28, ARBOK
 	db 30, RATICATE
-	db 30, DODUO
+	db 30, SPEAROW
 	db 32, PONYTA
 	db 30, PIDGEOT
 	db 30, PIDGEOT
 	; day
-	db 28, DODUO
+	db 28, SPEAROW
 	db 28, ARBOK
 	db 30, RATICATE
-	db 30, DODUO
+	db 30, SPEAROW
 	db 32, PONYTA
 	db 30, PIDGEOT
 	db 30, PIDGEOT
@@ -821,7 +821,7 @@ KantoGrassWildMons:
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
-	db 41, DODUO
+	db 41, SPEAROW
 	db 43, PIDGEOT
 	db 43, PIDGEOT
 	; day
@@ -829,7 +829,7 @@ KantoGrassWildMons:
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
-	db 41, DODUO
+	db 41, SPEAROW
 	db 43, PIDGEOT
 	db 43, PIDGEOT
 	; nite

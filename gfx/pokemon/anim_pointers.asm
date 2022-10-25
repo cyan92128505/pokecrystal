@@ -83,7 +83,7 @@ AnimationPointers:
 	dw MagnemiteAnimation
 	dw MagnetonAnimation
 	dw MamoswineAnimation
-	dw DoduoAnimation
+	dw ElectivireAnimation
 	dw MagnezoneAnimation
 	dw YanmegaAnimation
 	dw GliscorAnimation
@@ -114,10 +114,10 @@ AnimationPointers:
 	dw RhydonAnimation
 	dw ChanseyAnimation
 	dw WeavileAnimation
-	dw KangaskhanAnimation
+	dw RhyperiorAnimation
 	dw HorseaAnimation
 	dw SeadraAnimation
-	dw GoldeenAnimation
+	dw MagmortarAnimation
 	dw HonchkrowAnimation
 	dw StaryuAnimation
 	dw StarmieAnimation

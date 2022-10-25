@@ -85,7 +85,7 @@ EvosAttacksPointers::
 	dw MagnemiteEvosAttacks
 	dw MagnetonEvosAttacks
 	dw MamoswineEvosAttacks
-	dw DoduoEvosAttacks
+	dw ElectivireEvosAttacks
 	dw MagnezoneEvosAttacks
 	dw YanmegaEvosAttacks
 	dw GliscorEvosAttacks
@@ -116,10 +116,10 @@ EvosAttacksPointers::
 	dw RhydonEvosAttacks
 	dw ChanseyEvosAttacks
 	dw WeavileEvosAttacks
-	dw KangaskhanEvosAttacks
+	dw RhyperiorEvosAttacks
 	dw HorseaEvosAttacks
 	dw SeadraEvosAttacks
-	dw GoldeenEvosAttacks
+	dw MagmortarEvosAttacks
 	dw HonchkrowEvosAttacks
 	dw StaryuEvosAttacks
 	dw StarmieEvosAttacks

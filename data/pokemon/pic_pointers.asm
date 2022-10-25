@@ -169,8 +169,8 @@ PokemonPicPointers::
 	dba_pic MagnetonBackpic
 	dba_pic MamoswineFrontpic
 	dba_pic MamoswineBackpic
-	dba_pic DoduoFrontpic
-	dba_pic DoduoBackpic
+	dba_pic ElectivireFrontpic
+	dba_pic ElectivireBackpic
 	dba_pic MagnezoneFrontpic
 	dba_pic MagnezoneBackpic
 	dba_pic YanmegaFrontpic
@@ -231,14 +231,14 @@ PokemonPicPointers::
 	dba_pic ChanseyBackpic
 	dba_pic WeavileFrontpic
 	dba_pic WeavileBackpic
-	dba_pic KangaskhanFrontpic
-	dba_pic KangaskhanBackpic
+	dba_pic RhyperiorFrontpic
+	dba_pic RhyperiorBackpic
 	dba_pic HorseaFrontpic
 	dba_pic HorseaBackpic
 	dba_pic SeadraFrontpic
 	dba_pic SeadraBackpic
-	dba_pic GoldeenFrontpic
-	dba_pic GoldeenBackpic
+	dba_pic MagmortarFrontpic
+	dba_pic MagmortarBackpic
 	dba_pic HonchkrowFrontpic
 	dba_pic HonchkrowBackpic
 	dba_pic StaryuFrontpic

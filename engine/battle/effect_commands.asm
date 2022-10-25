@@ -1407,16 +1407,48 @@ BattleCommand_Stab:
 	ld a, b
 	cp HELD_EXPERT_BELT
 	pop hl
-	jr nz, .continue
+	jr nz, .solidRock
 
 	ld a, [wTypeModifier]
 	cp EFFECTIVE + 1
-	jr c, .continue
+	jr c, .solidRock
 
     ld a, 6
 	ldh [hMultiplier], a
 	call Multiply
 	ld a, 5
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+.solidRock
+; ==============================
+; ======= Solid Rock ===========
+; ==============================
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .checkSpeciesSolidRock
+	ld a, [wEnemyMonSpecies]
+.checkSpeciesSolidRock
+	cp RHYHORN
+	jr z, .checkSolidRock
+	cp RHYDON
+	jr z, .checkSolidRock
+	cp RHYPERIOR
+	jr z, .checkSolidRock
+	jr .continue
+
+.checkSolidRock
+    ld a, [wTypeModifier]
+	cp EFFECTIVE + 1
+	jr c, .continue
+
+; SE hits do x1.5 damage rather than x2
+    ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 4
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide

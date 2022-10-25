@@ -133,7 +133,7 @@ LoadRandomBattleTowerMon:
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainer
     ld a, b
-    cp 61 ; lvl 100 has a pool of 61 Pokemon rather than 21
+    cp 64 ; lvl 100 has a pool of 64 Pokemon rather than 21
     jr nc, .resample
     and a
     jr z, .resample ; only the last trainer can have mewtwo

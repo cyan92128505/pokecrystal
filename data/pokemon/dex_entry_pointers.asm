@@ -84,7 +84,7 @@ PokedexDataPointerTable:
 	dw MagnemitePokedexEntry
 	dw MagnetonPokedexEntry
 	dw MamoswinePokedexEntry
-	dw DoduoPokedexEntry
+	dw ElectivirePokedexEntry
 	dw MagnezonePokedexEntry
 	dw YanmegaPokedexEntry
 	dw GliscorPokedexEntry
@@ -115,10 +115,10 @@ PokedexDataPointerTable:
 	dw RhydonPokedexEntry
 	dw ChanseyPokedexEntry
 	dw WeavilePokedexEntry
-	dw KangaskhanPokedexEntry
+	dw RhyperiorPokedexEntry
 	dw HorseaPokedexEntry
 	dw SeadraPokedexEntry
-	dw GoldeenPokedexEntry
+	dw MagmortarPokedexEntry
 	dw HonchkrowPokedexEntry
 	dw StaryuPokedexEntry
 	dw StarmiePokedexEntry

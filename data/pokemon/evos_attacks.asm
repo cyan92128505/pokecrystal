@@ -1116,16 +1116,19 @@ MamoswineEvosAttacks:
 	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
-DoduoEvosAttacks:
+ElectivireEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, GROWL
-	db 9, PURSUIT
-	db 13, FURY_ATTACK
-	db 21, TRI_ATTACK
-	db 25, RAGE
-	db 33, DRILL_PECK
-	db 37, AGILITY
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 1, THUNDERSHOCK
+	db 12, SWIFT
+	db 16, LIGHT_SCREEN
+	db 20, THUNDER_WAVE
+	db 25, THUNDERPUNCH
+	db 34, THUNDERBOLT
+	db 40, THUNDER
+	db 45, DRAIN_PUNCH
+	db 55, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 MagnezoneEvosAttacks:
@@ -1500,30 +1503,33 @@ WeezingEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhyhornEvosAttacks:
-	db EVOLVE_LEVEL, 42, RHYDON
+	db EVOLVE_LEVEL, 37, RHYDON
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
 	db 13, STOMP
-	db 19, FURY_ATTACK
-	db 31, SCARY_FACE
+	db 16, SCARY_FACE
+	db 19, MAGNITUDE
+	db 25, TAKE_DOWN
+	db 31, ROCK_SLIDE
 	db 37, HORN_DRILL
-	db 49, TAKE_DOWN
-	db 55, EARTHQUAKE
+	db 44, MEGAHORN
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
+	db EVOLVE_LEVEL, 50, RHYPERIOR
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
-	db 1, STOMP
-	db 1, FURY_ATTACK
 	db 13, STOMP
-	db 19, FURY_ATTACK
-	db 31, SCARY_FACE
+	db 16, SCARY_FACE
+	db 19, MAGNITUDE
+	db 25, TAKE_DOWN
+	db 31, ROCK_SLIDE
 	db 37, HORN_DRILL
-	db 54, TAKE_DOWN
-	db 65, EARTHQUAKE
+	db 44, MEGAHORN
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
@@ -1556,17 +1562,18 @@ WeavileEvosAttacks:
 	db 45, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
-KangaskhanEvosAttacks:
+RhyperiorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, MEGA_PUNCH
-	db 7, LEER
-	db 13, BITE
-	db 19, TAIL_WHIP
-	db 25, MEGA_PUNCH
-	db 31, RAGE
-	db 37, ENDURE
-	db 43, DIZZY_PUNCH
-	db 49, REVERSAL
+	db 1, HORN_ATTACK
+	db 1, TAIL_WHIP
+	db 13, STOMP
+	db 16, SCARY_FACE
+	db 19, MAGNITUDE
+	db 25, TAKE_DOWN
+	db 31, ROCK_SLIDE
+	db 37, HORN_DRILL
+	db 44, MEGAHORN
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
@@ -1596,17 +1603,20 @@ SeadraEvosAttacks:
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-GoldeenEvosAttacks:
+MagmortarEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, TAIL_WHIP
-	db 10, SUPERSONIC
-	db 15, HORN_ATTACK
-	db 24, FLAIL
-	db 29, FURY_ATTACK
-	db 38, WATERFALL
-	db 43, HORN_DRILL
-	db 52, AGILITY
+	db 1, EMBER
+	db 1, LEER
+	db 1, POISON_GAS
+	db 1, EMBER
+	db 7, LEER
+	db 14, FLAME_WHEEL
+	db 19, CONFUSE_RAY
+	db 24, FIRE_PUNCH
+	db 30, LOW_KICK
+	db 36, SUNNY_DAY
+	db 40, FLAMETHROWER
+	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 HonchkrowEvosAttacks:
@@ -1694,31 +1704,36 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
+	db EVOLVE_LEVEL, 40, ELECTIVIRE
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
-	db 1, THUNDERPUNCH
-	db 9, THUNDERPUNCH
-	db 17, LIGHT_SCREEN
-	db 25, SWIFT
-	db 36, SCREECH
-	db 47, THUNDERBOLT
-	db 58, THUNDER
+	db 1, THUNDERSHOCK
+	db 12, SWIFT
+	db 16, LIGHT_SCREEN
+	db 20, THUNDER_WAVE
+	db 25, THUNDERPUNCH
+	db 34, THUNDERBOLT
+	db 40, THUNDER
+	db 45, DRAIN_PUNCH
+	db 55, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
+	db EVOLVE_LEVEL, 40, MAGMORTAR
 	db 0 ; no more evolutions
 	db 1, EMBER
 	db 1, LEER
 	db 1, POISON_GAS
-	db 1, FIRE_PUNCH
+	db 1, EMBER
 	db 7, LEER
-	db 19, FIRE_PUNCH
-	db 25, SMOKESCREEN
-	db 33, SUNNY_DAY
-	db 41, FLAMETHROWER
-	db 49, CONFUSE_RAY
-	db 57, FIRE_BLAST
+	db 14, FLAME_WHEEL
+	db 19, CONFUSE_RAY
+	db 24, FIRE_PUNCH
+	db 30, LOW_KICK
+	db 36, SUNNY_DAY
+	db 40, FLAMETHROWER
+	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:

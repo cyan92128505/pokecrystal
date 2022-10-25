@@ -5563,4 +5563,82 @@ BattleTowerMons:
 	bigdw 218 ; SDef
 	db "RANTA-N@@@@"
 
+	db ELECTIVIRE
+	db EXPERT_BELT
+	db VOLT_TACKLE, EARTHQUAKE, ICE_PUNCH, DRAIN_PUNCH
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 16, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 353 ; HP
+	bigdw 353 ; Max HP
+	bigdw 344 ; Atk
+	bigdw 232 ; Def
+	bigdw 288 ; Spd
+	bigdw 288 ; SAtk
+	bigdw 268 ; SDef
+	db "RANTA-N@@@@"
+
+	db MAGMORTAR
+	db LIFE_ORB
+	db FIRE_BLAST, THUNDERBOLT, EARTHQUAKE, GIGA_DRAIN
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 24, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 353 ; HP
+	bigdw 353 ; Max HP
+	bigdw 288 ; Atk
+	bigdw 232 ; Def
+	bigdw 264 ; Spd
+	bigdw 348 ; SAtk
+	bigdw 288 ; SDef
+	db "RANTA-N@@@@"
+
+	db RHYPERIOR
+	db LEFTOVERS
+	db EARTHQUAKE, ROCK_SLIDE, MEGAHORN, SWORDS_DANCE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 16, 16, 32 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 433 ; HP
+	bigdw 433 ; Max HP
+	bigdw 378 ; Atk
+	bigdw 358 ; Def
+	bigdw 178 ; Spd
+	bigdw 208 ; SAtk
+	bigdw 208 ; SDef
+	db "RANTA-N@@@@"
+
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

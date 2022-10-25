@@ -235,7 +235,7 @@ MamoswineEggMoves:
 	db FLAIL
 	db -1 ; end
 
-DoduoEggMoves:
+ElectivireEggMoves:
 	db QUICK_ATTACK
 	db SUPERSONIC
 	db HAZE
@@ -343,7 +343,7 @@ WeavileEggMoves:
 	db AMNESIA
 	db -1 ; end
 
-KangaskhanEggMoves:
+RhyperiorEggMoves:
 	db STOMP
 	db FORESIGHT
 	db FOCUS_ENERGY
@@ -360,7 +360,7 @@ HorseaEggMoves:
 	db DRAGON_RAGE
 	db -1 ; end
 
-GoldeenEggMoves:
+MagmortarEggMoves:
 	db PSYBEAM
 	db HAZE
 	db HYDRO_PUMP

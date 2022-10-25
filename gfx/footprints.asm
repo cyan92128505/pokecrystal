@@ -195,7 +195,7 @@ INCBIN "gfx/footprints/slowbro.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/magnemite.1bpp",  footprint_top
 INCBIN "gfx/footprints/magneton.1bpp",   footprint_top
 INCBIN "gfx/footprints/mamoswine.1bpp", footprint_top
-INCBIN "gfx/footprints/doduo.1bpp",      footprint_top
+INCBIN "gfx/footprints/electivire.1bpp",      footprint_top
 INCBIN "gfx/footprints/magnezone.1bpp",     footprint_top
 INCBIN "gfx/footprints/yanmega.1bpp",       footprint_top
 INCBIN "gfx/footprints/gliscor.1bpp",    footprint_top
@@ -204,7 +204,7 @@ INCBIN "gfx/footprints/grimer.1bpp",     footprint_top
 INCBIN "gfx/footprints/magnemite.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/magneton.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/mamoswine.1bpp", footprint_bottom
-INCBIN "gfx/footprints/doduo.1bpp",      footprint_bottom
+INCBIN "gfx/footprints/electivire.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/magnezone.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/yanmega.1bpp",       footprint_bottom
 INCBIN "gfx/footprints/gliscor.1bpp",    footprint_bottom
@@ -266,19 +266,19 @@ INCBIN "gfx/footprints/rhydon.1bpp",     footprint_bottom
 ; 113-120 top halves
 INCBIN "gfx/footprints/chansey.1bpp",    footprint_top
 INCBIN "gfx/footprints/weavile.1bpp",    footprint_top
-INCBIN "gfx/footprints/kangaskhan.1bpp", footprint_top
+INCBIN "gfx/footprints/rhyperior.1bpp", footprint_top
 INCBIN "gfx/footprints/horsea.1bpp",     footprint_top
 INCBIN "gfx/footprints/seadra.1bpp",     footprint_top
-INCBIN "gfx/footprints/goldeen.1bpp",    footprint_top
+INCBIN "gfx/footprints/magmortar.1bpp",    footprint_top
 INCBIN "gfx/footprints/honchkrow.1bpp",    footprint_top
 INCBIN "gfx/footprints/staryu.1bpp",     footprint_top
 ; 113-120 bottom halves
 INCBIN "gfx/footprints/chansey.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/weavile.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/kangaskhan.1bpp", footprint_bottom
+INCBIN "gfx/footprints/rhyperior.1bpp", footprint_bottom
 INCBIN "gfx/footprints/horsea.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/seadra.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/goldeen.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/magmortar.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/honchkrow.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/staryu.1bpp",     footprint_bottom
 ; 121-128 top halves

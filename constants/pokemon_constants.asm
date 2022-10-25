@@ -102,7 +102,7 @@
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
 	const MAMOSWINE  ; 53
-	const DODUO      ; 54   electivire
+	const ELECTIVIRE      ; 54   electivire
 	const MAGNEZONE  ; 55
 	const YANMEGA    ; 56
 	const GLISCOR    ; 57
@@ -133,10 +133,10 @@
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
 	const WEAVILE    ; 72
-	const KANGASKHAN ; 73   ryperior
+	const RHYPERIOR ; 73   ryperior
 	const HORSEA     ; 74
 	const SEADRA     ; 75
-	const GOLDEEN    ; 76   magmortar
+	const MAGMORTAR    ; 76   magmortar
 	const HONCHKROW  ; 77
 	const STARYU     ; 78
 	const STARMIE    ; 79

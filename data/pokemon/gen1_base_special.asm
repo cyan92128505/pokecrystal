@@ -85,7 +85,7 @@ KantoMonSpecials:
 	db  95 ; MAGNEMITE
 	db 120 ; MAGNETON
 	db  58 ; MAMOSWINE
-	db  35 ; DODUO
+	db  35 ; ELECTIVIRE
 	db  60 ; MAGNEZONE
 	db  70 ; YANMEGA
 	db  95 ; GLISCOR
@@ -116,10 +116,10 @@ KantoMonSpecials:
 	db  45 ; RHYDON
 	db 105 ; CHANSEY
 	db 100 ; WEAVILE
-	db  40 ; KANGASKHAN
+	db  40 ; RHYPERIOR
 	db  70 ; HORSEA
 	db  95 ; SEADRA
-	db  50 ; GOLDEEN
+	db  50 ; MAGMORTAR
 	db  80 ; HONCHKROW
 	db  70 ; STARYU
 	db 100 ; STARMIE

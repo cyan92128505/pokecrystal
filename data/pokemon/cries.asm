@@ -89,7 +89,7 @@ PokemonCries::
 	mon_cry CRY_METAPOD,     128,  224 ; MAGNEMITE
 	mon_cry CRY_METAPOD,      32,  320 ; MAGNETON
 	mon_cry CRY_DEOXYS,     -400,  300 ; MAMOSWINE
-	mon_cry CRY_DIGLETT,     187,  129 ; DODUO
+	mon_cry CRY_VOLTORB,     100,  400 ; ELECTIVIRE
 	mon_cry CRY_PARAS,       250,  350 ; MAGNEZONE
 	mon_cry CRY_TOTODILE,    -50,  150 ; YANMEGA
 	mon_cry CRY_GLIGAR,     -150,  300 ; GLISCOR
@@ -120,10 +120,10 @@ PokemonCries::
 	mon_cry CRY_RHYDON,        0,  256 ; RHYDON
 	mon_cry CRY_PIDGEOTTO,    10,  320 ; CHANSEY
 	mon_cry CRY_WOOPER,       120, 220 ; WEAVILE
-	mon_cry CRY_KANGASKHAN,    0,  256 ; KANGASKHAN
+	mon_cry CRY_RHYDON,     -100,  300 ; RHYPERIOR
 	mon_cry CRY_CLEFAIRY,    153,  144 ; HORSEA
 	mon_cry CRY_CLEFAIRY,     60,  129 ; SEADRA
-	mon_cry CRY_CATERPIE,    128,  192 ; GOLDEEN
+	mon_cry CRY_CHARMANDER,  200,  200 ; MAGMORTAR
 	mon_cry CRY_MARILL,     -100,  400 ; HONCHCROW
 	mon_cry CRY_PARAS,         2,  160 ; STARYU
 	mon_cry CRY_PARAS,         0,  256 ; STARMIE

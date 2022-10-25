@@ -83,7 +83,7 @@ FramesPointers:
 	dw MagnemiteFrames
 	dw MagnetonFrames
 	dw MamoswineFrames
-	dw DoduoFrames
+	dw ElectivireFrames
 	dw MagnezoneFrames
 	dw YanmegaFrames
 	dw GliscorFrames
@@ -114,10 +114,10 @@ FramesPointers:
 	dw RhydonFrames
 	dw ChanseyFrames
 	dw WeavileFrames
-	dw KangaskhanFrames
+	dw RhyperiorFrames
 	dw HorseaFrames
 	dw SeadraFrames
-	dw GoldeenFrames
+	dw MagmortarFrames
 	dw HonchkrowFrames
 	dw StaryuFrames
 	dw StarmieFrames

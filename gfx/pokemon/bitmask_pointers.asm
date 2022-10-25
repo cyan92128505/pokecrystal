@@ -83,7 +83,7 @@ BitmasksPointers:
 	dw MagnemiteBitmasks
 	dw MagnetonBitmasks
 	dw MamoswineBitmasks
-	dw DoduoBitmasks
+	dw ElectivireBitmasks
 	dw MagnezoneBitmasks
 	dw YanmegaBitmasks
 	dw GliscorBitmasks
@@ -114,10 +114,10 @@ BitmasksPointers:
 	dw RhydonBitmasks
 	dw ChanseyBitmasks
 	dw WeavileBitmasks
-	dw KangaskhanBitmasks
+	dw RhyperiorBitmasks
 	dw HorseaBitmasks
 	dw SeadraBitmasks
-	dw GoldeenBitmasks
+	dw MagmortarBitmasks
 	dw HonchkrowBitmasks
 	dw StaryuBitmasks
 	dw StarmieBitmasks

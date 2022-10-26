@@ -57,8 +57,8 @@ KantoMonSpecials:
 	db  65 ; PERSIAN
 	db  50 ; PSYDUCK
 	db  80 ; GOLDUCK
-	db  35 ; MANKEY
-	db  60 ; PRIMEAPE
+	db  35 ; SHROOMISH
+	db  60 ; BRELOOM
 	db  50 ; GROWLITHE
 	db  80 ; ARCANINE
 	db  40 ; POLIWAG

@@ -57,8 +57,8 @@ EvosAttacksPointers::
 	dw PersianEvosAttacks
 	dw PsyduckEvosAttacks
 	dw GolduckEvosAttacks
-	dw MankeyEvosAttacks
-	dw PrimeapeEvosAttacks
+	dw ShroomishEvosAttacks
+	dw BreloomEvosAttacks
 	dw GrowlitheEvosAttacks
 	dw ArcanineEvosAttacks
 	dw PoliwagEvosAttacks

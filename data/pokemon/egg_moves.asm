@@ -154,7 +154,7 @@ PsyduckEggMoves:
 	db PSYCHIC_M
 	db -1 ; end
 
-MankeyEggMoves:
+ShroomishEggMoves:
 	db ROCK_SLIDE
 	db FORESIGHT
 	db MEDITATE

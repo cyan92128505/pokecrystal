@@ -721,34 +721,33 @@ GolduckEvosAttacks:
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-MankeyEvosAttacks:
-	db EVOLVE_LEVEL, 28, PRIMEAPE
+ShroomishEvosAttacks:
+	db EVOLVE_LEVEL, 23, BRELOOM
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, LEER
-	db 9, LOW_KICK
-	db 15, KARATE_CHOP
-	db 21, FURY_SWIPES
-	db 27, FOCUS_ENERGY
-	db 33, SEISMIC_TOSS
-	db 45, SCREECH
-	db 51, THRASH
+	db 1, TACKLE
+	db 5, STUN_SPORE
+	db 8, LEECH_SEED
+	db 12, MEGA_DRAIN
+	db 15, HEADBUTT
+	db 19, POISONPOWDER
+	db 26, GIGA_DRAIN
+	db 41, SEED_BOMB
+	db 45, SPORE
 	db 0 ; no more level-up moves
 
-PrimeapeEvosAttacks:
+BreloomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, LEER
-	db 1, LOW_KICK
-	db 1, RAGE
-	db 9, LOW_KICK
-	db 15, KARATE_CHOP
-	db 21, FURY_SWIPES
-	db 27, FOCUS_ENERGY
-	db 28, RAGE
-	db 36, SEISMIC_TOSS
-	db 54, SCREECH
-	db 63, THRASH
+	db 1, TACKLE
+	db 5, STUN_SPORE
+	db 8, LEECH_SEED
+	db 12, MEGA_DRAIN
+	db 15, HEADBUTT
+	db 19, POISONPOWDER
+	db 26, GIGA_DRAIN
+	db 33, MACH_PUNCH
+	db 37, DRAIN_PUNCH
+	db 41, SEED_BOMB
+	db 45, SPORE
 	db 0 ; no more level-up moves
 
 GrowlitheEvosAttacks:
@@ -1460,7 +1459,6 @@ HitmonchanEvosAttacks:
 	db 26, FIRE_PUNCH
 	db 32, MACH_PUNCH
 	db 38, MEGA_PUNCH
-	db 44, DETECT
 	db 50, COUNTER
 	db 0 ; no more level-up moves
 
@@ -1969,7 +1967,6 @@ ZapdosEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 13, THUNDER_WAVE
 	db 25, AGILITY
-	db 37, DETECT
 	db 49, DRILL_PECK
 	db 61, LIGHT_SCREEN
 	db 73, THUNDER
@@ -3189,7 +3186,6 @@ HitmontopEvosAttacks:
 	db 25, RAPID_SPIN
 	db 31, COUNTER
 	db 37, AGILITY
-	db 43, DETECT
 	db 49, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 

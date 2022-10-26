@@ -70,7 +70,6 @@ NewPokedexOrder:
 	db POLITOED
 	db MAGIKARP
 	db GYARADOS
-	db MAGMORTAR
 	db SLOWPOKE
 	db SLOWBRO
 	db SLOWKING
@@ -113,8 +112,8 @@ NewPokedexOrder:
 	db ARCANINE
 	db DIGLETT
 	db DUGTRIO
-	db MANKEY
-	db PRIMEAPE
+	db SHROOMISH
+	db BRELOOM
 	db MEOWTH
 	db PERSIAN
 	db PSYDUCK
@@ -128,8 +127,10 @@ NewPokedexOrder:
 	db TAUROS
 	db MILTANK
 	db MAGMAR
+	db MAGMORTAR
 	db JYNX
 	db ELECTABUZZ
+    db ELECTIVIRE
 	db MR__MIME
 	db SMEARGLE
 	db TENTACOOL
@@ -162,14 +163,13 @@ NewPokedexOrder:
 	db PHANPY
 	db DONPHAN
 	db SKARMORY
-	db ELECTIVIRE
 	db PONYTA
 	db RAPIDASH
 	db CUBONE
 	db MAROWAK
-	db RHYPERIOR
 	db RHYHORN
 	db RHYDON
+	db RHYPERIOR
 	db MURKROW
 	db HONCHKROW
 	db HOUNDOUR

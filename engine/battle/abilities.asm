@@ -33,6 +33,8 @@ TechnicianPokemon:
     db HITMONTOP
     db MR__MIME
     db SMEARGLE
+    db SHROOMISH
+    db BRELOOM
     db -1
 
 MagicGuardPokemon:

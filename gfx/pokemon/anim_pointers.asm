@@ -55,8 +55,8 @@ AnimationPointers:
 	dw PersianAnimation
 	dw PsyduckAnimation
 	dw GolduckAnimation
-	dw MankeyAnimation
-	dw PrimeapeAnimation
+	dw ShroomishAnimation
+	dw BreloomAnimation
 	dw GrowlitheAnimation
 	dw ArcanineAnimation
 	dw PoliwagAnimation

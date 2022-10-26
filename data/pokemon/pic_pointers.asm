@@ -113,10 +113,10 @@ PokemonPicPointers::
 	dba_pic PsyduckBackpic
 	dba_pic GolduckFrontpic
 	dba_pic GolduckBackpic
-	dba_pic MankeyFrontpic
-	dba_pic MankeyBackpic
-	dba_pic PrimeapeFrontpic
-	dba_pic PrimeapeBackpic
+	dba_pic ShroomishFrontpic
+	dba_pic ShroomishBackpic
+	dba_pic BreloomFrontpic
+	dba_pic BreloomBackpic
 	dba_pic GrowlitheFrontpic
 	dba_pic GrowlitheBackpic
 	dba_pic ArcanineFrontpic

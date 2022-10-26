@@ -55,8 +55,8 @@ FramesPointers:
 	dw PersianFrames
 	dw PsyduckFrames
 	dw GolduckFrames
-	dw MankeyFrames
-	dw PrimeapeFrames
+	dw ShroomishFrames
+	dw BreloomFrames
 	dw GrowlitheFrames
 	dw ArcanineFrames
 	dw PoliwagFrames

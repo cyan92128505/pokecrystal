@@ -130,7 +130,7 @@ AlphabeticalPokedexOrder:
 	db MAGNETON
 	db MAGNEZONE
 	db MAMOSWINE
-	db MANKEY
+	db SHROOMISH
 	db MAREEP
 	db MAROWAK
 	db MEGANIUM
@@ -178,7 +178,7 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PORYGONZ
-	db PRIMEAPE
+	db BRELOOM
 	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE

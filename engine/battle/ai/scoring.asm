@@ -250,8 +250,8 @@ AI_Smart_Switch:
 	and 1 << FRZ
 	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp
     ld a, [wEnemyMonStatus]
-	and SLP
-	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
+	;and SLP
+	;jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
 ; switch if choice locked into a NVE move
 	ld hl, wEnemySubStatus5
@@ -353,34 +353,34 @@ AI_Smart_Switch:
 	jr c, .switch
 	ret
 
-.checkSetUpAndSwitchIfPlayerSetsUp50
+;.checkSetUpAndSwitchIfPlayerSetsUp50
 ; don't switch if enemy mon is already set up
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
+;    ld a, [wEnemyAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	ret nc
+;   ld a, [wEnemySAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	ret nc
+;   ld a, [wEnemyDefLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	ret nc
+;   ld a, [wEnemySDefLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	ret nc
 
 ; switch if player attempts to set up
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-    push hl
-    push de
-	push bc
-	ld hl, BoostingMoveEffects
-	ld de, 1
-	call IsInArray
-	pop bc
-	pop de
-	pop hl
-	jr c, .switch50
-	ret
+;	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+;   push hl
+;   push de
+;	push bc
+;	ld hl, BoostingMoveEffects
+;	ld de, 1
+;	call IsInArray
+;	pop bc
+;	pop de
+;	pop hl
+;	jr c, .switch50
+;	ret
 
 .checkSetUpAndSwitch50
 ; don't switch if enemy mon is already set up
@@ -3818,7 +3818,7 @@ AI_Smart_Flinch:
 ; encourage if enemy is paralyzed
     ld a, [wBattleMonStatus]
 	and 1 << PAR
-	jr nz, .encourage
+	jr nz, .smallEncourage
 
 ; encourage if we have serene grace
     ld a, [wEnemyMonSpecies]
@@ -3830,6 +3830,7 @@ AI_Smart_Flinch:
     ret
 .encourage
     dec [hl]
+.smallEncourage
     dec [hl]
     ret
 

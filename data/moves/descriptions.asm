@@ -197,7 +197,7 @@ MoveDescriptions::
 	dw DestinyBondDescription
 	dw PerishSongDescription
 	dw IcyWindDescription
-	dw DetectDescription
+	dw SeedBombDescription
 	dw BoneRushDescription
 	dw LockOnDescription
 	dw OutrageDescription
@@ -1051,9 +1051,9 @@ IcyWindDescription:
 	db   "An icy attack that"
 	next "lowers SPEED.@"
 
-DetectDescription:
-	db   "Evades attack that"
-	next "turn. It may fail.@"
+SeedBombDescription:
+	db   "An explosion of"
+	next "seeds.@"
 
 BoneRushDescription:
 	db   "An attack that"

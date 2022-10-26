@@ -2850,7 +2850,7 @@ BattleTowerMons:
 	bigdw 226 ; SDef
 	db "BARIYA-DO@@"
 
-	db PRIMEAPE
+	db BRELOOM
 	db QUICK_CLAW
 	db DYNAMICPUNCH, ICE_PUNCH, THUNDERPUNCH, ROCK_SLIDE
 	dw 0 ; OT ID
@@ -5590,7 +5590,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db MAGMORTAR
-	db LIFE_ORB
+	db EXPERT_BELT
 	db FIRE_BLAST, THUNDERBOLT, EARTHQUAKE, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -5628,6 +5628,32 @@ BattleTowerMons:
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
 	db 16, 16, 16, 32 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 433 ; HP
+	bigdw 433 ; Max HP
+	bigdw 378 ; Atk
+	bigdw 358 ; Def
+	bigdw 178 ; Spd
+	bigdw 208 ; SAtk
+	bigdw 208 ; SDef
+	db "RANTA-N@@@@"
+
+	db BRELOOM
+	db FOCUS_SASH
+	db SPORE, SWORDS_DANCE, DRAIN_PUNCH, SEED_BOMB
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 30, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

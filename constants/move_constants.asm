@@ -194,7 +194,7 @@
 	const SWEET_KISS   ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
-	const AVALANCHE    ; bd     avelance
+	const AVALANCHE    ; bd
 	const OCTAZOOKA    ; be     flare blitz
 	const SPIKES       ; bf
 	const ZAP_CANNON   ; c0
@@ -202,8 +202,8 @@
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
-	const DETECT       ; c5     energy ball
-	const BONE_RUSH    ; c6
+	const SEED_BOMB    ; c5     energy ball
+	const BONE_RUSH    ; c6     hello, why is this still here!
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9

@@ -74,8 +74,8 @@
 	const PERSIAN    ; 35
 	const PSYDUCK    ; 36
 	const GOLDUCK    ; 37
-	const MANKEY     ; 38  ....
-	const PRIMEAPE   ; 39  breloom
+	const SHROOMISH     ; 38  ....
+	const BRELOOM   ; 39  breloom
 	const GROWLITHE  ; 3a
 	const ARCANINE   ; 3b
 	const POLIWAG    ; 3c

@@ -198,7 +198,7 @@ BattleAnimations::
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
 	dw BattleAnim_IcyWind
-	dw BattleAnim_Detect
+	dw BattleAnim_SeedBomb
 	dw BattleAnim_BoneRush
 	dw BattleAnim_LockOn
 	dw BattleAnim_Outrage
@@ -2362,6 +2362,7 @@ BattleAnim_PetalDance:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_SeedBomb:
 BattleAnim_Barrage:
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
 	anim_sound 6, 2, SFX_THROW_BALL

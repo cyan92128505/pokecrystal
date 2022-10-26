@@ -261,7 +261,7 @@ TM01 EQU const_value
 	add_tm DEFENSE_CURL ; e8  double edge
 	add_tm THUNDERPUNCH ; e9
 	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb  swords dance / earth power
+	add_tm ICE_BEAM     ; eb  swords dance / earth power
 	add_tm REST         ; ec
 	add_tm ATTRACT      ; ed  nasty plot / air slash
 	add_tm ROCK_SLIDE   ; ee
@@ -304,7 +304,7 @@ ENDM
 MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt NASTY_PLOT
-	add_mt ICE_BEAM
+	add_mt SWORDS_DANCE
 NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS

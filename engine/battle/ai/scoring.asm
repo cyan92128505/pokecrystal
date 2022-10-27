@@ -23,6 +23,9 @@ AI_MagicGuardPokemon:
     db ALAKAZAM
     db SIGILYPH
     db ARCEUS
+    db SOLOSIS
+    db DUOSION
+    db REUNICLUS
     db $FF
 
 AI_LevitatePokemon:

@@ -106,9 +106,9 @@ PokedexDataPointerTable:
 	dw ExeggutorPokedexEntry
 	dw CubonePokedexEntry
 	dw MarowakPokedexEntry
-	dw HitmonleePokedexEntry
-	dw HitmonchanPokedexEntry
-	dw LickitungPokedexEntry
+	dw SolosisPokedexEntry
+	dw DuosionPokedexEntry
+	dw ReuniclusPokedexEntry
 	dw KoffingPokedexEntry
 	dw WeezingPokedexEntry
 	dw RhyhornPokedexEntry

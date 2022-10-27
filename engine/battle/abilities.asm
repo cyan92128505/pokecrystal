@@ -45,6 +45,9 @@ MagicGuardPokemon:
     db ALAKAZAM
     db SIGILYPH
     db ARCEUS
+    db SOLOSIS
+    db DUOSION
+    db REUNICLUS
     db -1
 
 ClearBodyPokemon:

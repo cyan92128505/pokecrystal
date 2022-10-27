@@ -10,7 +10,7 @@ Pokered_MonIndices:
 	db SLOWBRO
 	db IVYSAUR
 	db EXEGGUTOR
-	db LICKITUNG
+	db REUNICLUS
 	db EXEGGCUTE
 	db GRIMER
 	db GENGAR
@@ -42,8 +42,8 @@ Pokered_MonIndices:
 	db CHANSEY
 	db MACHOKE
 	db MR__MIME
-	db HITMONLEE
-	db HITMONCHAN
+	db SOLOSIS
+	db DUOSION
 	db ARBOK
 	db PARASECT
 	db PSYDUCK

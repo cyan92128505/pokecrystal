@@ -18,6 +18,7 @@ AlphabeticalPokedexOrder:
 	db BELLSPROUT
 	db BLASTOISE
 	db BLISSEY
+	db BRELOOM
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
@@ -50,6 +51,7 @@ AlphabeticalPokedexOrder:
 	db DRILBUR
 	db DROWZEE
 	db DUGTRIO
+	db DUOSION
 	db DUNSPARCE
 	db EEVEE
 	db EKANS
@@ -87,8 +89,6 @@ AlphabeticalPokedexOrder:
 	db GYARADOS
 	db HAUNTER
 	db HERACROSS
-	db HITMONCHAN
-	db HITMONLEE
 	db HITMONTOP
 	db HO_OH
 	db HONCHKROW
@@ -117,7 +117,6 @@ AlphabeticalPokedexOrder:
 	db LARVITAR
 	db LATIAS
 	db LATIOS
-	db LICKITUNG
 	db LITWICK
 	db LUCARIO
 	db LUGIA
@@ -130,7 +129,6 @@ AlphabeticalPokedexOrder:
 	db MAGNETON
 	db MAGNEZONE
 	db MAMOSWINE
-	db SHROOMISH
 	db MAREEP
 	db MAROWAK
 	db MEGANIUM
@@ -178,7 +176,6 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PORYGONZ
-	db BRELOOM
 	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE
@@ -189,6 +186,7 @@ AlphabeticalPokedexOrder:
 	db RATICATE
 	db RATTATA
 	db RAYQUAZA
+	db REUNICLUS
 	db RHYDON
 	db RHYHORN
 	db RIOLU
@@ -201,6 +199,7 @@ AlphabeticalPokedexOrder:
 	db SHAYMIN
     db SHELGON
 	db SHELLDER
+	db SHROOMISH
 	db SIGILYPH
 	db SKARMORY
 	db SLOWBRO
@@ -209,6 +208,7 @@ AlphabeticalPokedexOrder:
 	db SMEARGLE
 	db SNEASEL
 	db SNORLAX
+	db SOLOSIS
 	db SPEAROW
 	db SPINARAK
 	db SPIRITOMB

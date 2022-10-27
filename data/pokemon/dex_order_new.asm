@@ -121,8 +121,9 @@ NewPokedexOrder:
 	db MACHOP
 	db MACHOKE
 	db MACHAMP
-	db HITMONLEE
-	db HITMONCHAN
+	db SOLOSIS
+	db DUOSION
+    db REUNICLUS
 	db HITMONTOP
 	db TAUROS
 	db MILTANK
@@ -143,7 +144,6 @@ NewPokedexOrder:
 	db CLOYSTER
 	db CHINCHOU
 	db LANTURN
-	db LICKITUNG
 	db EEVEE
 	db VAPOREON
 	db JOLTEON

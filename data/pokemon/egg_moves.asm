@@ -307,7 +307,7 @@ CuboneEggMoves:
 	db SWORDS_DANCE
 	db -1 ; end
 
-LickitungEggMoves:
+ReuniclusEggMoves:
 	db BELLY_DRUM
 	db MAGNITUDE
 	db BODY_SLAM

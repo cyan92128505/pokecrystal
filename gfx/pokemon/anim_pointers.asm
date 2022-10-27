@@ -105,9 +105,9 @@ AnimationPointers:
 	dw ExeggutorAnimation
 	dw CuboneAnimation
 	dw MarowakAnimation
-	dw HitmonleeAnimation
-	dw HitmonchanAnimation
-	dw LickitungAnimation
+	dw SolosisAnimation
+	dw DuosionAnimation
+	dw ReuniclusAnimation
 	dw KoffingAnimation
 	dw WeezingAnimation
 	dw RhyhornAnimation

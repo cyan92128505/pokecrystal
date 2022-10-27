@@ -105,9 +105,9 @@ FramesPointers:
 	dw ExeggutorFrames
 	dw CuboneFrames
 	dw MarowakFrames
-	dw HitmonleeFrames
-	dw HitmonchanFrames
-	dw LickitungFrames
+	dw SolosisFrames
+	dw DuosionFrames
+	dw ReuniclusFrames
 	dw KoffingFrames
 	dw WeezingFrames
 	dw RhyhornFrames

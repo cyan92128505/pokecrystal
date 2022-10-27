@@ -1435,43 +1435,51 @@ MarowakEvosAttacks:
 	db 53, BONE_RUSH
 	db 0 ; no more level-up moves
 
-HitmonleeEvosAttacks:
+SolosisEvosAttacks:
+    db EVOLVE_LEVEL, 32, DUOSION
 	db 0 ; no more evolutions
-	db 1, DOUBLE_KICK
-	db 6, MEDITATE
-	db 11, ROLLING_KICK
-	db 16, FOCUS_ENERGY
-	db 21, HI_JUMP_KICK
-	db 31, MIND_READER
-	db 36, FORESIGHT
-	db 41, ENDURE
-	db 46, MEGA_KICK
-	db 51, REVERSAL
+	db 1, CONFUSION
+	db 1, PROTECT
+	db 12, CHARM
+	db 16, PSYBEAM
+	db 20, LIGHT_SCREEN
+	db 21, REFLECT
+	db 26, PAIN_SPLIT
+	db 32, RECOVER
+	db 41, PSYCHIC_M
+	db 46, FUTURE_SIGHT
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
-HitmonchanEvosAttacks:
+DuosionEvosAttacks:
+    db EVOLVE_LEVEL, 41, REUNICLUS
 	db 0 ; no more evolutions
-	db 1, MEGA_PUNCH
-	db 7, AGILITY
-	db 13, PURSUIT
-	db 26, THUNDERPUNCH
-	db 26, ICE_PUNCH
-	db 26, FIRE_PUNCH
-	db 32, MACH_PUNCH
-	db 38, MEGA_PUNCH
-	db 50, COUNTER
+	db 1, CONFUSION
+	db 1, PROTECT
+	db 12, CHARM
+	db 16, PSYBEAM
+	db 20, LIGHT_SCREEN
+	db 21, REFLECT
+	db 26, PAIN_SPLIT
+	db 32, RECOVER
+	db 41, PSYCHIC_M
+	db 46, FUTURE_SIGHT
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
-LickitungEvosAttacks:
+ReuniclusEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LICK
-	db 7, SUPERSONIC
-	db 13, DEFENSE_CURL
-	db 19, STOMP
-	db 25, WRAP
-	db 31, DISABLE
-	db 37, SLAM
-	db 43, SCREECH
+	db 1, CONFUSION
+	db 1, PROTECT
+	db 12, CHARM
+	db 16, PSYBEAM
+	db 20, LIGHT_SCREEN
+	db 21, REFLECT
+	db 26, PAIN_SPLIT
+	db 32, RECOVER
+	db 42, PSYCHIC_M
+	db 46, FUTURE_SIGHT
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:

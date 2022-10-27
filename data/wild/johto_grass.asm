@@ -1602,20 +1602,20 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 23, GLOOM
-	db 22, LICKITUNG
+	db 22, SOLOSIS
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
-	db 24, LICKITUNG
-	db 26, LICKITUNG
-	db 26, LICKITUNG
+	db 24, SOLOSIS
+	db 26, SOLOSIS
+	db 26, SOLOSIS
 	; day
 	db 23, GLOOM
-	db 22, LICKITUNG
+	db 22, SOLOSIS
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
-	db 24, LICKITUNG
-	db 26, LICKITUNG
-	db 26, LICKITUNG
+	db 24, SOLOSIS
+	db 26, SOLOSIS
+	db 26, SOLOSIS
 	; nite
 	db 23, GLOOM
 	db 22, POLIWAG

@@ -74,8 +74,8 @@
 	const PERSIAN    ; 35
 	const PSYDUCK    ; 36
 	const GOLDUCK    ; 37
-	const SHROOMISH     ; 38  ....
-	const BRELOOM   ; 39  breloom
+	const SHROOMISH  ; 38
+	const BRELOOM    ; 39
 	const GROWLITHE  ; 3a
 	const ARCANINE   ; 3b
 	const POLIWAG    ; 3c
@@ -102,7 +102,7 @@
 	const MAGNEMITE  ; 51
 	const MAGNETON   ; 52
 	const MAMOSWINE  ; 53
-	const ELECTIVIRE      ; 54   electivire
+	const ELECTIVIRE ; 54
 	const MAGNEZONE  ; 55
 	const YANMEGA    ; 56
 	const GLISCOR    ; 57
@@ -124,19 +124,19 @@
 	const EXEGGUTOR  ; 67
 	const CUBONE     ; 68
 	const MAROWAK    ; 69
-	const HITMONLEE  ; 6a  ....
-	const HITMONCHAN ; 6b  ....
-	const LICKITUNG  ; 6c  runiculas
+	const SOLOSIS  ; 6a  ....
+	const DUOSION ; 6b  ....
+	const REUNICLUS  ; 6c  runiculas
 	const KOFFING    ; 6d
 	const WEEZING    ; 6e
 	const RHYHORN    ; 6f
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
 	const WEAVILE    ; 72
-	const RHYPERIOR ; 73   ryperior
+	const RHYPERIOR  ; 73
 	const HORSEA     ; 74
 	const SEADRA     ; 75
-	const MAGMORTAR    ; 76   magmortar
+	const MAGMORTAR  ; 76
 	const HONCHKROW  ; 77
 	const STARYU     ; 78
 	const STARMIE    ; 79

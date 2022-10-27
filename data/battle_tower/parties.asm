@@ -317,7 +317,7 @@ BattleTowerMons:
 	bigdw 53 ; SDef
 	db "HAtuSAMU@@@"
 
-	db HITMONCHAN
+	db DUOSION
 	db GOLD_BERRY
 	db THUNDERPUNCH, ICE_PUNCH, FIRE_PUNCH, MEGA_PUNCH
 	dw 0 ; OT ID
@@ -2902,7 +2902,7 @@ BattleTowerMons:
 	bigdw 152 ; SDef
 	db "KIRINRIKI@@"
 
-	db HITMONLEE
+	db SOLOSIS
 	db FOCUS_SASH
 	db REVERSAL, ENDURE, BODY_SLAM, MEGA_KICK
 	dw 0 ; OT ID
@@ -5665,6 +5665,32 @@ BattleTowerMons:
 	bigdw 178 ; Spd
 	bigdw 208 ; SAtk
 	bigdw 208 ; SDef
+	db "RANTA-N@@@@"
+
+	db REUNICLUS
+	db LEFTOVERS
+	db CALM_MIND, RECOVER, PSYCHIC_M, THUNDERBOLT
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 15, 16, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 423 ; HP
+	bigdw 423 ; Max HP
+	bigdw 228 ; Atk
+	bigdw 248 ; Def
+	bigdw 158 ; Spd
+	bigdw 348 ; SAtk
+	bigdw 268 ; SDef
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

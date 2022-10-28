@@ -139,10 +139,10 @@ KantoMonSpecials:
 	db 110 ; JOLTEON
 	db 110 ; FLAREON
 	db  75 ; PORYGON
-	db  90 ; OMANYTE
-	db 115 ; OMASTAR
-	db  45 ; KABUTO
-	db  70 ; KABUTOPS
+	db  90 ; RALTS
+	db 115 ; KIRLIA
+	db  45 ; GARDEVOIR
+	db  70 ; GALADE
 	db  60 ; AERODACTYL
 	db  65 ; SNORLAX
 	db 125 ; ARTICUNO

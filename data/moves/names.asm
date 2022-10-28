@@ -197,7 +197,7 @@ MoveNames::
 	li "PERISH SONG"
 	li "ICY WIND"
 	li "SEED BOMB"
-	li "BONE RUSH"
+	li "PSYCHO SLASH"
 	li "LOCK-ON"
 	li "OUTRAGE"
 	li "SANDSTORM"

@@ -202,8 +202,8 @@
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
-	const SEED_BOMB    ; c5     energy ball
-	const BONE_RUSH    ; c6     hello, why is this still here!
+	const SEED_BOMB    ; c5
+	const PSYCHO_SLASH ; c6
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9

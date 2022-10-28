@@ -277,14 +277,14 @@ PokemonPicPointers::
 	dba_pic FlareonBackpic
 	dba_pic PorygonFrontpic
 	dba_pic PorygonBackpic
-	dba_pic OmanyteFrontpic
-	dba_pic OmanyteBackpic
-	dba_pic OmastarFrontpic
-	dba_pic OmastarBackpic
-	dba_pic KabutoFrontpic
-	dba_pic KabutoBackpic
-	dba_pic KabutopsFrontpic
-	dba_pic KabutopsBackpic
+	dba_pic RaltsFrontpic
+	dba_pic RaltsBackpic
+	dba_pic KirliaFrontpic
+	dba_pic KirliaBackpic
+	dba_pic GardevoirFrontpic
+	dba_pic GardevoirBackpic
+	dba_pic GaladeFrontpic
+	dba_pic GaladeBackpic
 	dba_pic AerodactylFrontpic
 	dba_pic AerodactylBackpic
 	dba_pic SnorlaxFrontpic

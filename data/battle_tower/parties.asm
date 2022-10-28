@@ -1388,7 +1388,7 @@ BattleTowerMons:
 	bigdw 87 ; SDef
 	db "HUoRETOSU@@"
 
-	db OMASTAR
+	db KIRLIA
 	db GOLD_BERRY
 	db CURSE, WATER_GUN, ANCIENTPOWER, ROCK_SMASH
 	dw 0 ; OT ID
@@ -5691,6 +5691,58 @@ BattleTowerMons:
 	bigdw 158 ; Spd
 	bigdw 348 ; SAtk
 	bigdw 268 ; SDef
+	db "RANTA-N@@@@"
+
+	db GARDEVOIR
+	db LEFTOVERS
+	db CALM_MIND, MOON_BLAST, PSYCHIC_M, THUNDERBOLT
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 16, 16, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 339 ; HP
+	bigdw 339 ; Max HP
+	bigdw 228 ; Atk
+	bigdw 228 ; Def
+	bigdw 258 ; Spd
+	bigdw 348 ; SAtk
+	bigdw 328 ; SDef
+	db "RANTA-N@@@@"
+
+	db GALADE
+	db LIFE_ORB
+	db SWORDS_DANCE, CLOSE_COMBAT, PSYCHO_SLASH, ICE_PUNCH
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 16, 32, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 339 ; HP
+	bigdw 339 ; Max HP
+	bigdw 348 ; Atk
+	bigdw 228 ; Def
+	bigdw 258 ; Spd
+	bigdw 228 ; SAtk
+	bigdw 328 ; SDef
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

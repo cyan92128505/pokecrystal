@@ -1414,7 +1414,6 @@ CuboneEvosAttacks:
 	db 29, RAGE
 	db 33, FALSE_SWIPE
 	db 37, THRASH
-	db 41, BONE_RUSH
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
@@ -1432,7 +1431,6 @@ MarowakEvosAttacks:
 	db 32, RAGE
 	db 39, FALSE_SWIPE
 	db 46, THRASH
-	db 53, BONE_RUSH
 	db 0 ; no more level-up moves
 
 SolosisEvosAttacks:
@@ -1878,58 +1876,64 @@ PorygonEvosAttacks:
 	db 44, ZAP_CANNON
 	db 0 ; no more level-up moves
 
-OmanyteEvosAttacks:
-	db EVOLVE_LEVEL, 40, OMASTAR
+RaltsEvosAttacks:
+	db EVOLVE_LEVEL, 20, KIRLIA
 	db 0 ; no more evolutions
-	db 1, WITHDRAW
-	db 13, BITE
-	db 19, WATER_GUN
-	db 31, LEER
-	db 37, PROTECT
-	db 49, ANCIENTPOWER
-	db 55, HYDRO_PUMP
-	db 60, SHELL_SMASH
+	db 1, GROWL
+	db 1, CONFUSION
+	db 9, HYPNOSIS
+	db 12, TELEPORT
+	db 20, PSYBEAM
+	db 24, CHARM
+	db 30, PSYCHIC_M
+	db 34, DREAM_EATER
+	db 38, MOON_BLAST
+	db 44, CALM_MIND
 	db 0 ; no more level-up moves
 
-OmastarEvosAttacks:
+KirliaEvosAttacks:
+    db EVOLVE_ITEM, MOON_STONE, GARDEVOIR
+    db EVOLVE_ITEM, SUN_STONE, GALADE
 	db 0 ; no more evolutions
-	db 1, WITHDRAW
-	db 1, BITE
-	db 13, BITE
-	db 19, WATER_GUN
-	db 31, LEER
-	db 37, PROTECT
-	db 40, SPIKE_CANNON
-	db 54, ANCIENTPOWER
-	db 65, HYDRO_PUMP
-	db 70, SHELL_SMASH
+	db 1, GROWL
+	db 1, CONFUSION
+	db 9, HYPNOSIS
+	db 12, TELEPORT
+	db 20, PSYBEAM
+	db 24, CHARM
+	db 30, PSYCHIC_M
+	db 34, DREAM_EATER
+	db 38, MOON_BLAST
+	db 44, CALM_MIND
 	db 0 ; no more level-up moves
 
-KabutoEvosAttacks:
-	db EVOLVE_LEVEL, 40, KABUTOPS
+GardevoirEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, HARDEN
-	db 10, ABSORB
-	db 19, LEER
-	db 28, SAND_ATTACK
-	db 37, ENDURE
-	db 46, MEGA_DRAIN
-	db 55, ANCIENTPOWER
+	db 1, GROWL
+	db 1, CONFUSION
+	db 9, HYPNOSIS
+	db 12, TELEPORT
+	db 20, PSYBEAM
+	db 24, CHARM
+	db 30, PSYCHIC_M
+	db 34, DREAM_EATER
+	db 38, MOON_BLAST
+	db 44, CALM_MIND
 	db 0 ; no more level-up moves
 
-KabutopsEvosAttacks:
+GaladeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, HARDEN
-	db 1, ABSORB
-	db 10, ABSORB
-	db 19, LEER
-	db 28, SAND_ATTACK
-	db 37, ENDURE
-	db 40, SLASH
-	db 51, MEGA_DRAIN
-	db 65, ANCIENTPOWER
+	db 1, GROWL
+	db 1, CONFUSION
+	db 9, HYPNOSIS
+	db 12, TELEPORT
+	db 20, PSYBEAM
+	db 24, CHARM
+	db 30, PSYCHIC_M
+	db 35, DRAIN_PUNCH
+	db 40, PSYCHO_SLASH
+	db 45, CLOSE_COMBAT
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 AerodactylEvosAttacks:
@@ -2976,10 +2980,13 @@ LatiasEvosAttacks:
 
 DeoxysEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, NASTY_PLOT
-	db 1, PSYCHO_BOOST
-	db 1, SHADOW_BALL
-	db 1, CLOSE_COMBAT
+	db 1, PSYCHIC_M
+	db 1, PSYCHO_SLASH
+	db 1, EXTREMESPEED
+	db 1, RECOVER
+	db 60, CLOSE_COMBAT
+	db 70, PSYCHO_BOOST
+	db 80, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:

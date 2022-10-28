@@ -67,7 +67,9 @@ AlphabeticalPokedexOrder:
 	db FLAAFFY
 	db FLAREON
 	db GABITE
+	db GALADE
 	db GARCHOMP
+	db GARDEVOIR
 	db GASTLY
 	db GENESECT
 	db GENGAR
@@ -101,13 +103,12 @@ AlphabeticalPokedexOrder:
 	db JIGGLYPUFF
 	db JOLTEON
 	db JYNX
-	db KABUTO
-	db KABUTOPS
 	db KADABRA
 	db KAKUNA
 	db RHYPERIOR
 	db KINGDRA
 	db KINGLER
+	db KIRLIA
 	db KOFFING
 	db KRABBY
 	db KYOGRE
@@ -154,8 +155,6 @@ AlphabeticalPokedexOrder:
 	db NINETALES
 	db NOCTOWL
 	db ODDISH
-	db OMANYTE
-	db OMASTAR
 	db ONIX
 	db PALKIA
 	db PARAS
@@ -182,6 +181,7 @@ AlphabeticalPokedexOrder:
 	db QUILAVA
 	db RAICHU
 	db RAIKOU
+	db RALTS
 	db RAPIDASH
 	db RATICATE
 	db RATTATA

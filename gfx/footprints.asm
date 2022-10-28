@@ -319,19 +319,19 @@ INCBIN "gfx/footprints/jolteon.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/flareon.1bpp",    footprint_bottom
 ; 137-144 top halves
 INCBIN "gfx/footprints/porygon.1bpp",    footprint_top
-INCBIN "gfx/footprints/omanyte.1bpp",    footprint_top
-INCBIN "gfx/footprints/omastar.1bpp",    footprint_top
-INCBIN "gfx/footprints/kabuto.1bpp",     footprint_top
-INCBIN "gfx/footprints/kabutops.1bpp",   footprint_top
+INCBIN "gfx/footprints/ralts.1bpp",    footprint_top
+INCBIN "gfx/footprints/kirlia.1bpp",    footprint_top
+INCBIN "gfx/footprints/gardevoir.1bpp",     footprint_top
+INCBIN "gfx/footprints/galade.1bpp",   footprint_top
 INCBIN "gfx/footprints/aerodactyl.1bpp", footprint_top
 INCBIN "gfx/footprints/snorlax.1bpp",    footprint_top
 INCBIN "gfx/footprints/articuno.1bpp",   footprint_top
 ; 137-144 bottom halves
 INCBIN "gfx/footprints/porygon.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/omanyte.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/omastar.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/kabuto.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/kabutops.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/ralts.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/kirlia.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/gardevoir.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/galade.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/aerodactyl.1bpp", footprint_bottom
 INCBIN "gfx/footprints/snorlax.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/articuno.1bpp",   footprint_bottom

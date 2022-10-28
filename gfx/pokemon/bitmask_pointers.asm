@@ -137,10 +137,10 @@ BitmasksPointers:
 	dw JolteonBitmasks
 	dw FlareonBitmasks
 	dw PorygonBitmasks
-	dw OmanyteBitmasks
-	dw OmastarBitmasks
-	dw KabutoBitmasks
-	dw KabutopsBitmasks
+	dw RaltsBitmasks
+	dw KirliaBitmasks
+	dw GardevoirBitmasks
+	dw GaladeBitmasks
 	dw AerodactylBitmasks
 	dw SnorlaxBitmasks
 	dw ArticunoBitmasks

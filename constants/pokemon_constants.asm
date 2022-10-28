@@ -156,10 +156,10 @@
 	const JOLTEON    ; 87
 	const FLAREON    ; 88
 	const PORYGON    ; 89
-	const OMANYTE    ; 8a  ....
-	const OMASTAR    ; 8b  ....
-	const KABUTO     ; 8c  guardevoir
-	const KABUTOPS   ; 8d  galade
+	const RALTS    ; 8a  ....
+	const KIRLIA    ; 8b  ....
+	const GARDEVOIR     ; 8c  guardevoir
+	const GALADE   ; 8d  galade
 	const AERODACTYL ; 8e
 	const SNORLAX    ; 8f
 	const ARTICUNO   ; 90

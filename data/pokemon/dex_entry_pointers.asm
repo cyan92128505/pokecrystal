@@ -138,10 +138,10 @@ PokedexDataPointerTable:
 	dw JolteonPokedexEntry
 	dw FlareonPokedexEntry
 	dw PorygonPokedexEntry
-	dw OmanytePokedexEntry
-	dw OmastarPokedexEntry
-	dw KabutoPokedexEntry
-	dw KabutopsPokedexEntry
+	dw RaltsPokedexEntry
+	dw KirliaPokedexEntry
+	dw GardevoirPokedexEntry
+	dw GaladePokedexEntry
 	dw AerodactylPokedexEntry
 	dw SnorlaxPokedexEntry
 	dw ArticunoPokedexEntry

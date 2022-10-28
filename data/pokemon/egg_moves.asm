@@ -395,15 +395,15 @@ EeveeEggMoves:
 	db CHARM
 	db -1 ; end
 
-OmanyteEggMoves:
-	db BUBBLEBEAM
-	db AURORA_BEAM
-	db SLAM
-	db SUPERSONIC
-	db HAZE
+RaltsEggMoves:
+	db CONFUSE_RAY
+	db DESTINY_BOND
+	db DISABLE
+	db SPITE
+	db MEAN_LOOK
 	db -1 ; end
 
-KabutoEggMoves:
+GardevoirEggMoves:
 	db BUBBLEBEAM
 	db AURORA_BEAM
 	db RAPID_SPIN

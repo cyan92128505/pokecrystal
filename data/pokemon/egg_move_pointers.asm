@@ -137,9 +137,9 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw OmanyteEggMoves
+	dw RaltsEggMoves
 	dw NoEggMoves
-	dw KabutoEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw AerodactylEggMoves
 	dw SnorlaxEggMoves

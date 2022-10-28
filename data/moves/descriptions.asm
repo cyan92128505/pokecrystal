@@ -198,7 +198,7 @@ MoveDescriptions::
 	dw PerishSongDescription
 	dw IcyWindDescription
 	dw SeedBombDescription
-	dw BoneRushDescription
+	dw PsychoSlashDescription
 	dw LockOnDescription
 	dw OutrageDescription
 	dw SandstormDescription
@@ -1055,9 +1055,9 @@ SeedBombDescription:
 	db   "An explosion of"
 	next "seeds.@"
 
-BoneRushDescription:
-	db   "An attack that"
-	next "hits 2-5 times.@"
+PsychoSlashDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 LockOnDescription:
 	db   "Ensures the next"

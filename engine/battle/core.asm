@@ -1116,6 +1116,9 @@ Core_MagicGuardPokemon:
     db KADABRA
     db ALAKAZAM
     db ARCEUS
+    db SOLOSIS
+    db DUOSION
+    db REUNICLUS
     db -1
 
 ResidualDamage:

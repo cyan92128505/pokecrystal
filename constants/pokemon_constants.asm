@@ -124,9 +124,9 @@
 	const EXEGGUTOR  ; 67
 	const CUBONE     ; 68
 	const MAROWAK    ; 69
-	const SOLOSIS  ; 6a  ....
-	const DUOSION ; 6b  ....
-	const REUNICLUS  ; 6c  runiculas
+	const SOLOSIS    ; 6a
+	const DUOSION    ; 6b
+	const REUNICLUS  ; 6c
 	const KOFFING    ; 6d
 	const WEEZING    ; 6e
 	const RHYHORN    ; 6f

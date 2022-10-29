@@ -343,7 +343,7 @@ INCBIN "gfx/footprints/dragonair.1bpp",  footprint_top
 INCBIN "gfx/footprints/dragonite.1bpp",  footprint_top
 INCBIN "gfx/footprints/darkrai.1bpp",     footprint_top
 INCBIN "gfx/footprints/mew.1bpp",        footprint_top
-INCBIN "gfx/footprints/chikorita.1bpp",  footprint_top
+INCBIN "gfx/footprints/treecko.1bpp",  footprint_top
 ; 145-152 bottom halves
 INCBIN "gfx/footprints/zapdos.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/moltres.1bpp",    footprint_bottom
@@ -352,25 +352,25 @@ INCBIN "gfx/footprints/dragonair.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/dragonite.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/darkrai.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/mew.1bpp",        footprint_bottom
-INCBIN "gfx/footprints/chikorita.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/treecko.1bpp",  footprint_bottom
 ; 153-160 top halves
-INCBIN "gfx/footprints/bayleef.1bpp",    footprint_top
-INCBIN "gfx/footprints/meganium.1bpp",   footprint_top
-INCBIN "gfx/footprints/cyndaquil.1bpp",  footprint_top
-INCBIN "gfx/footprints/quilava.1bpp",    footprint_top
-INCBIN "gfx/footprints/typhlosion.1bpp", footprint_top
-INCBIN "gfx/footprints/totodile.1bpp",   footprint_top
-INCBIN "gfx/footprints/croconaw.1bpp",   footprint_top
-INCBIN "gfx/footprints/feraligatr.1bpp", footprint_top
+INCBIN "gfx/footprints/grovyle.1bpp",    footprint_top
+INCBIN "gfx/footprints/sceptile.1bpp",   footprint_top
+INCBIN "gfx/footprints/chimchar.1bpp",  footprint_top
+INCBIN "gfx/footprints/monferno.1bpp",    footprint_top
+INCBIN "gfx/footprints/infernape.1bpp", footprint_top
+INCBIN "gfx/footprints/froakie.1bpp",   footprint_top
+INCBIN "gfx/footprints/frogadier.1bpp",   footprint_top
+INCBIN "gfx/footprints/greninja.1bpp", footprint_top
 ; 153-160 bottom halves
-INCBIN "gfx/footprints/bayleef.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/meganium.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/cyndaquil.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/quilava.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/typhlosion.1bpp", footprint_bottom
-INCBIN "gfx/footprints/totodile.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/croconaw.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/feraligatr.1bpp", footprint_bottom
+INCBIN "gfx/footprints/grovyle.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/sceptile.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/chimchar.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/monferno.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/infernape.1bpp", footprint_bottom
+INCBIN "gfx/footprints/froakie.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/frogadier.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/greninja.1bpp", footprint_bottom
 ; 161-168 top halves
 INCBIN "gfx/footprints/riolu.1bpp",    footprint_top
 INCBIN "gfx/footprints/lucario.1bpp",     footprint_top

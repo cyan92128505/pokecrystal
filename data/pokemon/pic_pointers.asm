@@ -305,24 +305,24 @@ PokemonPicPointers::
 	dba_pic DarkraiBackpic
 	dba_pic MewFrontpic
 	dba_pic MewBackpic
-	dba_pic ChikoritaFrontpic
-	dba_pic ChikoritaBackpic
-	dba_pic BayleefFrontpic
-	dba_pic BayleefBackpic
-	dba_pic MeganiumFrontpic
-	dba_pic MeganiumBackpic
-	dba_pic CyndaquilFrontpic
-	dba_pic CyndaquilBackpic
-	dba_pic QuilavaFrontpic
-	dba_pic QuilavaBackpic
-	dba_pic TyphlosionFrontpic
-	dba_pic TyphlosionBackpic
-	dba_pic TotodileFrontpic
-	dba_pic TotodileBackpic
-	dba_pic CroconawFrontpic
-	dba_pic CroconawBackpic
-	dba_pic FeraligatrFrontpic
-	dba_pic FeraligatrBackpic
+	dba_pic TreeckoFrontpic
+	dba_pic TreeckoBackpic
+	dba_pic GrovyleFrontpic
+	dba_pic GrovyleBackpic
+	dba_pic SceptileFrontpic
+	dba_pic SceptileBackpic
+	dba_pic ChimcharFrontpic
+	dba_pic ChimcharBackpic
+	dba_pic MonfernoFrontpic
+	dba_pic MonfernoBackpic
+	dba_pic InfernapeFrontpic
+	dba_pic InfernapeBackpic
+	dba_pic FroakieFrontpic
+	dba_pic FroakieBackpic
+	dba_pic FrogadierFrontpic
+	dba_pic FrogadierBackpic
+	dba_pic GreninjaFrontpic
+	dba_pic GreninjaBackpic
 	dba_pic RioluFrontpic
 	dba_pic RioluBackpic
 	dba_pic LucarioFrontpic

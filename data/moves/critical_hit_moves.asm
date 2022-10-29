@@ -6,4 +6,6 @@ CriticalHitMoves:
 	db SLASH
 	db AEROBLAST
 	db NIGHT_SLASH
+	db PSYCHO_SLASH
+	db LEAF_BLADE
 	db -1

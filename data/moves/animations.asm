@@ -198,7 +198,7 @@ BattleAnimations::
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
 	dw BattleAnim_IcyWind
-	dw BattleAnim_SeedBomb
+	dw BattleAnim_LeafBlade
 	dw BattleAnim_PsychoSlash
 	dw BattleAnim_LockOn
 	dw BattleAnim_Outrage
@@ -1146,6 +1146,7 @@ BattleAnim_LeechSeed:
 	anim_wait 128
 	anim_ret
 
+BattleAnim_LeafBlade:
 BattleAnim_RazorLeaf:
 	anim_1gfx ANIM_GFX_PLANT
 	anim_sound 0, 0, SFX_VINE_WHIP
@@ -2362,7 +2363,6 @@ BattleAnim_PetalDance:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_SeedBomb:
 BattleAnim_Barrage:
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
 	anim_sound 6, 2, SFX_THROW_BALL

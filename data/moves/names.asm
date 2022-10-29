@@ -196,7 +196,7 @@ MoveNames::
 	li "DESTINY BOND"
 	li "PERISH SONG"
 	li "ICY WIND"
-	li "SEED BOMB"
+	li "LEAF BLADE"
 	li "PSYCHO SLASH"
 	li "LOCK-ON"
 	li "OUTRAGE"

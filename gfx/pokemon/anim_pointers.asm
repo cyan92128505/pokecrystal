@@ -151,15 +151,15 @@ AnimationPointers:
 	dw DragoniteAnimation
 	dw DarkraiAnimation
 	dw MewAnimation
-	dw ChikoritaAnimation
-	dw BayleefAnimation
-	dw MeganiumAnimation
-	dw CyndaquilAnimation
-	dw QuilavaAnimation
-	dw TyphlosionAnimation
-	dw TotodileAnimation
-	dw CroconawAnimation
-	dw FeraligatrAnimation
+	dw TreeckoAnimation
+	dw GrovyleAnimation
+	dw SceptileAnimation
+	dw ChimcharAnimation
+	dw MonfernoAnimation
+	dw InfernapeAnimation
+	dw FroakieAnimation
+	dw FrogadierAnimation
+	dw GreninjaAnimation
 	dw RioluAnimation
 	dw LucarioAnimation
 	dw HoothootAnimation

@@ -107,7 +107,7 @@ PokemonFanClubClefairyDollScript:
 PokemonFanClubBayleefScript:
 	opentext
 	writetext PokemonFanClubBayleefText
-	cry BAYLEEF
+	cry GROVYLE
 	waitbutton
 	closetext
 	end
@@ -264,7 +264,7 @@ PokemonFanClubClefairyGuyPackIsJammedFullText:
 
 PokemonFanClubTeacherText:
 	text "Look at my darling"
-	line "BAYLEEF!"
+	line "GROVYLE!"
 
 	para "The leaf on its"
 	line "head is so cute!"
@@ -280,7 +280,7 @@ PokemonFanClubClefairyDollText:
 	done
 
 PokemonFanClubBayleefText:
-	text "BAYLEEF: Li liif!"
+	text "GROVYLE: Li liif!"
 	done
 
 PokemonFanClubListenSignText:

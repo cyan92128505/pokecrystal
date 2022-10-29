@@ -5086,13 +5086,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 363 ; HP
-	bigdw 363 ; Max HP
-	bigdw 262 ; Atk
-	bigdw 264 ; Def
-	bigdw 258 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 298 ; SDef
+	bigdw 359 ; HP
+	bigdw 359 ; Max HP
+	bigdw 266 ; Atk
+	bigdw 254 ; Def
+	bigdw 298 ; Spd
+	bigdw 316 ; SAtk
+	bigdw 268 ; SDef
 	db "RANTA-N@@@@"
 
 	db EXCADRILL
@@ -5643,7 +5643,7 @@ BattleTowerMons:
 
 	db BRELOOM
 	db FOCUS_SASH
-	db SPORE, SWORDS_DANCE, DRAIN_PUNCH, SEED_BOMB
+	db SPORE, SWORDS_DANCE, DRAIN_PUNCH, LEAF_BLADE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5743,6 +5743,84 @@ BattleTowerMons:
 	bigdw 258 ; Spd
 	bigdw 228 ; SAtk
 	bigdw 328 ; SDef
+	db "RANTA-N@@@@"
+
+	db SCEPTILE
+	db LIFE_ORB
+	db SWORDS_DANCE, LEAF_BLADE, EARTHQUAKE, ICE_PUNCH
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 24, 16, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 343 ; HP
+	bigdw 343 ; Max HP
+	bigdw 268 ; Atk
+	bigdw 228 ; Def
+	bigdw 338 ; Spd
+	bigdw 308 ; SAtk
+	bigdw 268 ; SDef
+	db "RANTA-N@@@@"
+
+	db INFERNAPE
+	db FOCUS_SASH
+	db NASTY_PLOT, CLOSE_COMBAT, FIRE_BLAST, GIGA_DRAIN
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 16, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 355 ; HP
+	bigdw 355 ; Max HP
+	bigdw 306 ; Atk
+	bigdw 240 ; Def
+	bigdw 314 ; Spd
+	bigdw 306 ; SAtk
+	bigdw 240 ; SDef
+	db "RANTA-N@@@@"
+
+	db GRENINJA
+	db LIFE_ORB
+	db NASTY_PLOT, HYDRO_PUMP, DARK_PULSE, ICE_BEAM
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 16, 24, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 347 ; HP
+	bigdw 347 ; Max HP
+	bigdw 288 ; Atk
+	bigdw 232 ; Def
+	bigdw 342 ; Spd
+	bigdw 304 ; SAtk
+	bigdw 240 ; SDef
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

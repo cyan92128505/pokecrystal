@@ -153,15 +153,15 @@ EvosAttacksPointers::
 	dw DragoniteEvosAttacks
 	dw DarkraiEvosAttacks
 	dw MewEvosAttacks
-	dw ChikoritaEvosAttacks
-	dw BayleefEvosAttacks
-	dw MeganiumEvosAttacks
-	dw CyndaquilEvosAttacks
-	dw QuilavaEvosAttacks
-	dw TyphlosionEvosAttacks
-	dw TotodileEvosAttacks
-	dw CroconawEvosAttacks
-	dw FeraligatrEvosAttacks
+	dw TreeckoEvosAttacks
+	dw GrovyleEvosAttacks
+	dw SceptileEvosAttacks
+	dw ChimcharEvosAttacks
+	dw MonfernoEvosAttacks
+	dw InfernapeEvosAttacks
+	dw FroakieEvosAttacks
+	dw FrogadierEvosAttacks
+	dw GreninjaEvosAttacks
 	dw RioluEvosAttacks
 	dw LucarioEvosAttacks
 	dw HoothootEvosAttacks

@@ -197,7 +197,7 @@ MoveDescriptions::
 	dw DestinyBondDescription
 	dw PerishSongDescription
 	dw IcyWindDescription
-	dw SeedBombDescription
+	dw LeafBladeDescription
 	dw PsychoSlashDescription
 	dw LockOnDescription
 	dw OutrageDescription
@@ -1051,9 +1051,9 @@ IcyWindDescription:
 	db   "An icy attack that"
 	next "lowers SPEED.@"
 
-SeedBombDescription:
-	db   "An explosion of"
-	next "seeds.@"
+LeafBladeDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 PsychoSlashDescription:
 	db   "Has a high criti-"

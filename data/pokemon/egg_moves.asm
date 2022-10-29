@@ -427,7 +427,7 @@ DratiniEggMoves:
 	db SUPERSONIC
 	db -1 ; end
 
-ChikoritaEggMoves:
+TreeckoEggMoves:
 	db VINE_WHIP
 	db LEECH_SEED
 	db COUNTER
@@ -436,7 +436,7 @@ ChikoritaEggMoves:
 	db SWORDS_DANCE
 	db -1 ; end
 
-CyndaquilEggMoves:
+ChimcharEggMoves:
 	db FURY_SWIPES
 	db QUICK_ATTACK
 	db REVERSAL
@@ -445,7 +445,7 @@ CyndaquilEggMoves:
 	db SUBMISSION
 	db -1 ; end
 
-TotodileEggMoves:
+FroakieEggMoves:
 	db CRUNCH
 	db THRASH
 	db HYDRO_PUMP

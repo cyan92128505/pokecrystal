@@ -71,7 +71,7 @@ ENDM
 	command encore                  ; 41
 	command painsplit               ; 42
 	command snore                   ; 43
-	command conversion2             ; 44
+	command kingsshield             ; 44
 	command lockon                  ; 45
 	command sketch                  ; 46
 	command defrostopponent         ; 47

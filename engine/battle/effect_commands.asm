@@ -943,6 +943,48 @@ IgnoreSleepOnly:
 	ret
 
 BattleCommand_UsedMoveText:
+; AndrewNote - Aegislash attack stance change
+    push hl
+    push bc
+    ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerMoveStruct + MOVE_POWER
+	ld bc, wPlayerDefLevel
+	ld a, [wBattleMonSpecies]
+	jr z, .checkAegislash
+	ld hl, wEnemyMoveStruct + MOVE_POWER
+	ld bc, wEnemyDefLevel
+	ld a, [wEnemyMonSpecies]
+
+; is this Aigeslash
+.checkAegislash
+    cp AEGISLASH
+    jr nz, .noStance
+
+; is defense already at base
+; don't reapply drop if attacking twice
+    ld a, [bc]
+    cp BASE_STAT_LEVEL + 1
+    jr c, .noStance
+
+; is this an attacking move
+    ld a, [hl]
+    and a
+    jr z, .noStance
+
+; lower defenses
+    call BattleCommand_SwitchTurn
+    call BattleCommand_DefenseDown2
+    call BattleCommand_SpecialDefenseDown2
+    call BattleCommand_SwitchTurn
+
+; print text
+	ld hl, AttackModeText
+	call StdBattleTextbox
+.noStance
+    pop bc
+    pop hl
+
 ; usedmovetext
 	farcall DisplayUsedMoveText
 	ret
@@ -2317,7 +2359,6 @@ BattleCommand_FailureText:
 
 BattleCommand_ApplyDamage:
 ; applydamage
-
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
@@ -2612,6 +2653,8 @@ BattleCommand_CheckFaint:
 ;    jp z, .noLifeOrb
 
 ; apply recoil
+	ld hl, LifeOrbRecoilText
+	call StdBattleTextbox
 	farcall GetEighthMaxHP
 	farcall SubtractHPFromUser
 .noLifeOrb
@@ -3712,7 +3755,7 @@ INCLUDE "engine/battle/move_effects/pain_split.asm"
 
 INCLUDE "engine/battle/move_effects/snore.asm"
 
-INCLUDE "engine/battle/move_effects/conversion2.asm"
+INCLUDE "engine/battle/move_effects/kingsshield.asm"
 
 INCLUDE "engine/battle/move_effects/lock_on.asm"
 
@@ -6145,8 +6188,6 @@ BattleCommand_Recoil:
     jr z, .rockHead
     cp MAROWAK
     jr z, .rockHead
-    cp RHYDON
-    jr z, .rockHead
     jr .endRockHead
 .rockHead
 	ld hl, RockHeadText
@@ -7019,25 +7060,26 @@ INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
 BattleCommand_DoubleMinimizeDamage:
 ; doubleminimizedamage
+    ret
 
-	ld hl, wEnemyMinimized
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wPlayerMinimized
-.ok
-	ld a, [hl]
-	and a
-	ret z
-	ld hl, wCurDamage + 1
-	sla [hl]
-	dec hl
-	rl [hl]
-	ret nc
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-	ret
+;	ld hl, wEnemyMinimized
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .ok
+;	ld hl, wPlayerMinimized
+;.ok
+;	ld a, [hl]
+;	and a
+;	ret z
+;	ld hl, wCurDamage + 1
+;	sla [hl]
+;	dec hl
+;	rl [hl]
+;	ret nc
+;	ld a, $ff
+;	ld [hli], a
+;	ld [hl], a
+;	ret
 
 BattleCommand_SkipSunCharge:
 ; mimicsuncharge

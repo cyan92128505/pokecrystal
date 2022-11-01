@@ -181,9 +181,9 @@
 	const SNORE        ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
-	const CONVERSION2  ; b0    stone edge
+	const KINGS_SHIELD ; b0
 	const AEROBLAST    ; b1
-	const COTTON_SPORE ; b2     focus blast
+	const SHADOW_CLAW  ; b2     focus blast
 	const REVERSAL     ; b3
 	const SPITE        ; b4
 	const POWDER_SNOW  ; b5    poison jab

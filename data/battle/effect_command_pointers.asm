@@ -71,10 +71,10 @@ BattleCommandPointers:
 	dw BattleCommand_Encore
 	dw BattleCommand_PainSplit
 	dw BattleCommand_Snore
-	dw BattleCommand_Conversion2
+	dw BattleCommand_KingsShield
 	dw BattleCommand_LockOn
 	dw BattleCommand_Sketch
-	dw BattleCommand_DefrostOpponent
+	dw BattleCommand_DefrostOpponent ; this is gone
 	dw BattleCommand_SleepTalk
 	dw BattleCommand_DestinyBond
 	dw BattleCommand_Spite
@@ -160,11 +160,11 @@ BattleCommandPointers:
 	dw BattleCommand_MirrorCoat
 	dw BattleCommand_CheckFutureSight
 	dw BattleCommand_FutureSight
-	dw BattleCommand_DoubleMinimizeDamage
+	dw BattleCommand_DoubleMinimizeDamage ; this is gone
 	dw BattleCommand_SkipSunCharge
 	dw BattleCommand_ThunderAccuracy
 	dw BattleCommand_Teleport
-	dw BattleCommand_BeatUp
+	dw BattleCommand_BeatUp ; this is gone
 	dw BattleCommand_RageDamage
 	dw BattleCommand_ResetTypeMatchup
 	dw BattleCommand_AllStatsUp

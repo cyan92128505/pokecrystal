@@ -12,9 +12,9 @@ BitmasksPointers:
 	dw CaterpieBitmasks
 	dw MetapodBitmasks
 	dw ButterfreeBitmasks
-	dw WeedleBitmasks
-	dw KakunaBitmasks
-	dw BeedrillBitmasks
+	dw HonedgeBitmasks
+	dw DoubladeBitmasks
+	dw AegislashBitmasks
 	dw PidgeyBitmasks
 	dw PidgeottoBitmasks
 	dw PidgeotBitmasks

@@ -31,12 +31,12 @@
 	const CATERPIE   ; 0a
 	const METAPOD    ; 0b
 	const BUTTERFREE ; 0c
-	const WEEDLE     ; 0d
-	const KAKUNA     ; 0e
-	const BEEDRILL   ; 0f
-	const PIDGEY     ; 10
-	const PIDGEOTTO  ; 11
-	const PIDGEOT    ; 12
+	const HONEDGE    ; 0d
+	const DOUBLADE   ; 0e
+	const AEGISLASH  ; 0f
+	const PIDGEY     ; 10 ....
+	const PIDGEOTTO  ; 11 ....
+	const PIDGEOT    ; 12 staraptor
 	const RATTATA    ; 13
 	const RATICATE   ; 14
 	const SPEAROW    ; 15  ....
@@ -156,10 +156,10 @@
 	const JOLTEON    ; 87
 	const FLAREON    ; 88
 	const PORYGON    ; 89
-	const RALTS    ; 8a  ....
-	const KIRLIA    ; 8b  ....
-	const GARDEVOIR     ; 8c  guardevoir
-	const GALADE   ; 8d  galade
+	const RALTS      ; 8a
+	const KIRLIA     ; 8b
+	const GARDEVOIR  ; 8c
+	const GALADE     ; 8d
 	const AERODACTYL ; 8e
 	const SNORLAX    ; 8f
 	const ARTICUNO   ; 90
@@ -171,23 +171,23 @@
 	const DARKRAI    ; 96
 	const MEW        ; 97
 JOHTO_POKEMON EQU const_value
-	const TREECKO  ; 98   ...
-	const GROVYLE    ; 99   ...
-	const SCEPTILE   ; 9a   septile
-	const CHIMCHAR  ; 9b   ...
-	const MONFERNO    ; 9c   ...
-	const INFERNAPE ; 9d   infernape
-	const FROAKIE   ; 9e   ...
-	const FROGADIER   ; 9f   ...
-	const GRENINJA ; a0   gredinja
+	const TREECKO    ; 98
+	const GROVYLE    ; 99
+	const SCEPTILE   ; 9a
+	const CHIMCHAR   ; 9b
+	const MONFERNO   ; 9c
+	const INFERNAPE  ; 9d
+	const FROAKIE    ; 9e
+	const FROGADIER  ; 9f
+	const GRENINJA   ; a0
 	const RIOLU      ; a1
 	const LUCARIO    ; a2
 	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
 	const DRILBUR    ; a5
 	const EXCADRILL  ; a6
-	const SPINARAK   ; a7
-	const ARIADOS    ; a8
+	const SPINARAK   ; a7   ....
+	const ARIADOS    ; a8   Galvantula
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
@@ -251,12 +251,12 @@ JOHTO_POKEMON EQU const_value
 	const HOUNDOOM   ; e5
 	const KINGDRA    ; e6
 	const PHANPY     ; e7  ....
-	const DONPHAN    ; e8  ....
+	const DONPHAN    ; e8  whimsicott
 	const PORYGON2   ; e9
 	const RAYQUAZA   ; ea
 	const SMEARGLE   ; eb
 	const DIALGA     ; ec
-	const HITMONTOP  ; ed
+	const HITMONTOP  ; ed  kefkle
 	const XERNEAS    ; ee
 	const YVELTAL    ; ef
 	const GIRATINA   ; f0

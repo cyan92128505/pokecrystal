@@ -14,9 +14,9 @@ KantoMonSpecials:
 	db  20 ; CATERPIE
 	db  25 ; METAPOD
 	db  80 ; BUTTERFREE
-	db  20 ; WEEDLE
-	db  25 ; KAKUNA
-	db  45 ; BEEDRILL
+	db  20 ; HONEDGE
+	db  25 ; DOUBLADE
+	db  45 ; AEGISLASH
 	db  35 ; PIDGEY
 	db  50 ; PIDGEOTTO
 	db  70 ; PIDGEOT

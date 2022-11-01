@@ -1312,7 +1312,7 @@ BattleTowerMons:
 
 	db PORYGON2
 	db NO_ITEM
-	db CONVERSION2, RECOVER, PSYBEAM, SHADOW_BALL
+	db TRI_ATTACK, RECOVER, PSYBEAM, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -5821,6 +5821,32 @@ BattleTowerMons:
 	bigdw 342 ; Spd
 	bigdw 304 ; SAtk
 	bigdw 240 ; SDef
+	db "RANTA-N@@@@"
+
+	db AEGISLASH
+	db LEFTOVERS
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_CLAW, IRON_HEAD
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 30, 30, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 398 ; Atk
+	bigdw 198 ; Def
+	bigdw 218 ; Spd
+	bigdw 398 ; SAtk
+	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

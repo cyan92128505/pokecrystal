@@ -92,7 +92,7 @@ MoveEffectsPointers:
 	dw Encore
 	dw PainSplit
 	dw Snore
-	dw Conversion2
+	dw KingsShield
 	dw LockOn
 	dw Sketch
 	dw DefrostOpponent

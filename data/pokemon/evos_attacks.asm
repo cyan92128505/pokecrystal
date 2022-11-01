@@ -196,29 +196,62 @@ ButterfreeEvosAttacks:
 	db 40, SAFEGUARD
 	db 0 ; no more level-up moves
 
-WeedleEvosAttacks:
-	db EVOLVE_LEVEL, 7, KAKUNA
+HonedgeEvosAttacks:
+	db EVOLVE_LEVEL, 30, DOUBLADE
 	db 0 ; no more evolutions
-	db 1, POISON_STING
+	db 1, SCRATCH
+	db 1, FURY_CUTTER
+	db 1, NIGHT_SHADE
+	db 12, METAL_CLAW
+	db 20, SLASH
+	db 24, NIGHT_SLASH
+	db 28, SHADOW_BALL
+	db 32, IRON_HEAD
+	db 36, SHADOW_CLAW
+	db 39, FLASH_CANNON
+	db 45, CLOSE_COMBAT
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
-KakunaEvosAttacks:
-	db EVOLVE_LEVEL, 10, BEEDRILL
+DoubladeEvosAttacks:
+	db EVOLVE_LEVEL, 40, AEGISLASH
 	db 0 ; no more evolutions
-	db 1, HARDEN
-	db 7, HARDEN
+	db 1, SCRATCH
+	db 1, FURY_CUTTER
+	db 1, NIGHT_SHADE
+	db 12, METAL_CLAW
+	db 20, SLASH
+	db 24, NIGHT_SLASH
+	db 28, SHADOW_BALL
+	db 32, IRON_HEAD
+	db 36, SHADOW_CLAW
+	db 39, FLASH_CANNON
+	db 40, KINGS_SHIELD
+	db 45, CLOSE_COMBAT
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
-BeedrillEvosAttacks:
+AegislashEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_ATTACK
-	db 10, FURY_ATTACK
-	db 15, FOCUS_ENERGY
-	db 20, TWINEEDLE
-	db 25, RAGE
-	db 30, PURSUIT
-	db 35, PIN_MISSILE
-	db 40, AGILITY
+	db 1, SCRATCH
+	db 1, FURY_CUTTER
+	db 1, NIGHT_SHADE
+	db 12, METAL_CLAW
+	db 20, SLASH
+	db 24, NIGHT_SLASH
+	db 28, SHADOW_BALL
+	db 32, IRON_HEAD
+	db 36, SHADOW_CLAW
+	db 39, FLASH_CANNON
+	db 40, KINGS_SHIELD
+	db 45, CLOSE_COMBAT
+	db 48, KINGS_SHIELD
+	db 50, SWORDS_DANCE
+	db 60, KINGS_SHIELD
+	db 70, KINGS_SHIELD
+	db 80, KINGS_SHIELD
+	db 90, KINGS_SHIELD
+	db 100, KINGS_SHIELD
 	db 0 ; no more level-up moves
 
 PidgeyEvosAttacks:
@@ -1866,7 +1899,6 @@ FlareonEvosAttacks:
 PorygonEvosAttacks:
 	db EVOLVE_TRADE, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
-	db 1, CONVERSION2
 	db 1, TACKLE
 	db 9, AGILITY
 	db 12, PSYBEAM
@@ -2463,7 +2495,6 @@ MareepEvosAttacks:
 	db 1, GROWL
 	db 9, THUNDERSHOCK
 	db 16, THUNDER_WAVE
-	db 23, COTTON_SPORE
 	db 30, LIGHT_SCREEN
 	db 37, THUNDER
 	db 0 ; no more level-up moves
@@ -2476,7 +2507,6 @@ FlaaffyEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 9, THUNDERSHOCK
 	db 18, THUNDER_WAVE
-	db 27, COTTON_SPORE
 	db 36, LIGHT_SCREEN
 	db 45, THUNDER
 	db 0 ; no more level-up moves
@@ -2489,7 +2519,6 @@ AmpharosEvosAttacks:
 	db 1, THUNDER_WAVE
 	db 9, THUNDERSHOCK
 	db 18, THUNDER_WAVE
-	db 27, COTTON_SPORE
 	db 30, THUNDERPUNCH
 	db 42, LIGHT_SCREEN
 	db 57, THUNDER
@@ -2514,7 +2543,6 @@ MismagiusEvosAttacks:
 
 PorygonzEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONVERSION2
 	db 1, TACKLE
 	db 9, AGILITY
 	db 12, PSYBEAM
@@ -3153,7 +3181,6 @@ DonphanEvosAttacks:
 Porygon2EvosAttacks:
     db EVOLVE_LEVEL, 40, PORYGONZ
 	db 0 ; no more evolutions
-	db 1, CONVERSION2
 	db 1, TACKLE
 	db 9, AGILITY
 	db 12, PSYBEAM

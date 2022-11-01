@@ -900,24 +900,69 @@ CompareMovePriority:
 ; Return carry if the player goes first, or z if they match.
 
 	ld a, [wCurPlayerMove]
-	call GetMovePriority
+	call GetPlayerMovePriority
 	ld b, a
 	push bc
 	ld a, [wCurEnemyMove]
-	call GetMovePriority
+	call GetEnemyMovePriority
 	pop bc
 	cp b
 	ret
 
-GetMovePriority:
+GetPlayerMovePriority:
 ; Return the priority (0-3) of move a.
 
 	ld b, a
 
-	; Vital Throw goes last.
-;	cp VITAL_THROW
-;	ld a, 0
-;	ret z
+; AndrewNote - prankster
+; ===== Prankster =======
+    ld a, [wBattleMonSpecies]
+    ;cp NOCTOWL
+    ;jr z, .prankster
+    jr .noPrankster
+.prankster
+    call GetMovePower
+    and a
+    jr nz, .noPrankster
+    ld a, 2
+    ret
+.noPrankster
+
+	call GetMoveEffect
+	ld hl, MoveEffectPriorities
+.loop
+	ld a, [hli]
+	cp b
+	jr z, .done
+	inc hl
+	cp -1
+	jr nz, .loop
+
+	ld a, BASE_PRIORITY
+	ret
+
+.done
+	ld a, [hl]
+	ret
+
+GetEnemyMovePriority:
+; Return the priority (0-3) of move a.
+
+	ld b, a
+
+; AndrewNote - prankster
+; ===== Prankster =======
+    ld a, [wEnemyMonSpecies]
+    ;cp NOCTOWL
+    ;jr z, .prankster
+    jr .noPrankster
+.prankster
+    call GetMovePower
+    and a
+    jr nz, .noPrankster
+    ld a, 2
+    ret
+.noPrankster
 
 	call GetMoveEffect
 	ld hl, MoveEffectPriorities
@@ -942,6 +987,17 @@ GetMoveEffect:
 	ld a, b
 	dec a
 	ld hl, Moves + MOVE_EFFECT
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld b, a
+	ret
+
+GetMovePower:
+	ld a, b
+	dec a
+	ld hl, Moves + MOVE_POWER
 	ld bc, MOVE_LENGTH
 	call AddNTimes
 	ld a, BANK(Moves)
@@ -4325,6 +4381,8 @@ SwitchInEffects:
     jp z, .atkDown
     cp TAUROS
     jp z, .atkDown
+    cp AEGISLASH
+    jp z, .defenseMode
     ret
 .rain
 	ld a, WEATHER_RAIN
@@ -4392,6 +4450,12 @@ SwitchInEffects:
     ret nz ; printing the message before enemy sends out mon causes visual glitches
 	farcall BattleCommand_StatDownMessage
 	ret
+.defenseMode
+    farcall BattleCommand_DefenseUp2
+    farcall BattleCommand_SpecialDefenseUp2
+	ld hl, DefenseModeText
+	jp StdBattleTextbox
+    ret
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE

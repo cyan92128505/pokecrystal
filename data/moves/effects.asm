@@ -1307,12 +1307,12 @@ Snore:
 	kingsrock
 	endmove
 
-Conversion2:
+KingsShield:
 	checkobedience
 	usedmovetext
 	doturn
 	checkhit
-	conversion2
+	kingsshield
 	endmove
 
 LockOn:

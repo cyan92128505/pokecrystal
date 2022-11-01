@@ -22,17 +22,17 @@ TreeMonSet_Canyon:
 	db 50, SPEAROW,    10
 	db 15, SPEAROW,    10
 	db 15, SPEAROW,    10
-	db 10, KAKUNA,      10
-	db  5, KAKUNA,      10
-	db  5, KAKUNA,      10
+	db 10, METAPOD,      10
+	db  5, METAPOD,      10
+	db  5, METAPOD,      10
 	db -1
 ; rare
 	db 50, SPEAROW,    10
 	db 15, HERACROSS,  10
 	db 15, HERACROSS,  10
-	db 10, KAKUNA,      10
-	db  5, KAKUNA,      10
-	db  5, KAKUNA,      10
+	db 10, METAPOD,      10
+	db  5, METAPOD,      10
+	db  5, METAPOD,      10
 	db -1
 
 TreeMonSet_Town:
@@ -40,17 +40,17 @@ TreeMonSet_Town:
 	db 50, SPEAROW,    10
 	db 15, EKANS,      10
 	db 15, SPEAROW,    10
-	db 10, KAKUNA,      10
-	db  5, KAKUNA,      10
-	db  5, KAKUNA,      10
+	db 10, METAPOD,      10
+	db  5, METAPOD,      10
+	db  5, METAPOD,      10
 	db -1
 ; rare
 	db 50, SPEAROW,    10
 	db 15, HERACROSS,  10
 	db 15, HERACROSS,  10
-	db 10, KAKUNA,      10
-	db  5, KAKUNA,      10
-	db  5, KAKUNA,      10
+	db 10, METAPOD,      10
+	db  5, METAPOD,      10
+	db  5, METAPOD,      10
 	db -1
 
 TreeMonSet_Route:
@@ -114,15 +114,15 @@ TreeMonSet_Forest:
 	db 15, HOOTHOOT,     10
 	db 10, NOCTOWL,    10
 	db  5, BUTTERFREE, 10
-	db  5, BEEDRILL,   10
+	db  5, HERACROSS,   10
 	db -1
 ; rare
 	db 50, HOOTHOOT,   10
 	db 15, CATERPIE,   10
-	db 15, WEEDLE,     10
+	db 15, CATERPIE,     10
 	db 10, HOOTHOOT,   10
 	db  5, METAPOD,    10
-	db  5, KAKUNA,     10
+	db  5, METAPOD,     10
 	db -1
 
 TreeMonSet_Rock:

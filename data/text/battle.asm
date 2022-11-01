@@ -633,6 +633,21 @@ RockHeadText:
     line "takes no recoil"
     prompt
 
+LifeOrbRecoilText:
+    text "<USER>"
+    line "life orb recoil"
+    prompt
+
+DefenseModeText:
+    text "<USER>"
+    line "Defense stance"
+    prompt
+
+AttackModeText:
+    text "<USER>"
+    line "Attack stance"
+    prompt
+
 CriticalHitText:
 	text "A critical hit!"
 	prompt

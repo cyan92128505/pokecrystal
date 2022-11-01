@@ -12,9 +12,9 @@ FramesPointers:
 	dw CaterpieFrames
 	dw MetapodFrames
 	dw ButterfreeFrames
-	dw WeedleFrames
-	dw KakunaFrames
-	dw BeedrillFrames
+	dw HonedgeFrames
+	dw DoubladeFrames
+	dw AegislashFrames
 	dw PidgeyFrames
 	dw PidgeottoFrames
 	dw PidgeotFrames

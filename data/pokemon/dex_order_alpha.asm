@@ -13,7 +13,7 @@ AlphabeticalPokedexOrder:
 	db ARTICUNO
 	db BAGON
 	db GROVYLE
-	db BEEDRILL
+	db AEGISLASH
 	db BELDUM
 	db BELLSPROUT
 	db BLASTOISE
@@ -104,7 +104,7 @@ AlphabeticalPokedexOrder:
 	db JOLTEON
 	db JYNX
 	db KADABRA
-	db KAKUNA
+	db DOUBLADE
 	db RHYPERIOR
 	db KINGDRA
 	db KINGLER
@@ -243,7 +243,7 @@ AlphabeticalPokedexOrder:
 	db VULPIX
 	db WARTORTLE
 	db WEAVILE
-	db WEEDLE
+	db HONEDGE
 	db WEEPINBELL
 	db WEEZING
 	db WIGGLYTUFF

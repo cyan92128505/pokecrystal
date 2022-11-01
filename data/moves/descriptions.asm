@@ -176,9 +176,9 @@ MoveDescriptions::
 	dw SnoreDescription
 	dw CurseDescription
 	dw FlailDescription
-	dw Conversion2Description
+	dw KingsShieldDescription
 	dw AeroblastDescription
-	dw CottonSporeDescription
+	dw ShadowClawDescription
 	dw ReversalDescription
 	dw SpiteDescription
 	dw PowderSnowDescription
@@ -967,17 +967,17 @@ FlailDescription:
 	db   "Stronger if the"
 	next "user's HP is low.@"
 
-Conversion2Description:
-	db   "The user's type is"
-	next "made resistant.@"
+KingsShieldDescription:
+	db   "Switch into"
+	next "defense stance.@"
 
 AeroblastDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
-CottonSporeDescription:
-	db   "Sharply reduces"
-	next "the foe's SPEED.@"
+ShadowClawDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 ReversalDescription:
 	db   "Stronger if the"

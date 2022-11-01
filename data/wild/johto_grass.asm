@@ -346,16 +346,16 @@ JohtoGrassWildMons:
 	db 14, PIDGEY
 	db 13, PIDGEY
 	db 10, CATERPIE
-	db 10, WEEDLE
-	db 10, WEEDLE
+	db 10, CATERPIE
+	db 10, CATERPIE
 	; day
 	db 12, NIDORAN_F
 	db 12, NIDORAN_M
 	db 14, PIDGEY
 	db 13, PIDGEY
 	db 10, CATERPIE
-	db 10, WEEDLE
-	db 10, WEEDLE
+	db 10, CATERPIE
+	db 10, CATERPIE
 	; nite
 	db 12, PSYDUCK
 	db 13, HOOTHOOT
@@ -566,17 +566,17 @@ JohtoGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 5, CATERPIE
-	db 5, WEEDLE
+	db 5, CATERPIE
 	db 7, METAPOD
-	db 7, KAKUNA
+	db 7, METAPOD
 	db 7, PIDGEY
 	db 6, PARAS
 	db 6, PARAS
 	; day
 	db 5, CATERPIE
-	db 5, WEEDLE
+	db 5, CATERPIE
 	db 7, METAPOD
-	db 7, KAKUNA
+	db 7, METAPOD
 	db 7, PIDGEY
 	db 6, PARAS
 	db 6, PARAS
@@ -1269,7 +1269,7 @@ JohtoGrassWildMons:
 	db 3, CATERPIE
 	db 4, CATERPIE
 	db 4, PIDGEY
-	db 3, WEEDLE
+	db 3, CATERPIE
 	db 4, TIMBURR
 	db 4, TIMBURR
 	; day
@@ -1277,7 +1277,7 @@ JohtoGrassWildMons:
 	db 3, CATERPIE
 	db 4, CATERPIE
 	db 4, PIDGEY
-	db 3, WEEDLE
+	db 3, CATERPIE
 	db 4, TIMBURR
 	db 4, TIMBURR
 	; nite
@@ -1297,7 +1297,7 @@ JohtoGrassWildMons:
 	db 4, CATERPIE
 	db 5, BELLSPROUT
 	db 5, PIDGEY
-	db 4, WEEDLE
+	db 4, CATERPIE
 	db 5, TIMBURR
 	db 5, TIMBURR
 	; day
@@ -1305,7 +1305,7 @@ JohtoGrassWildMons:
 	db 4, CATERPIE
 	db 5, BELLSPROUT
 	db 5, PIDGEY
-	db 4, WEEDLE
+	db 4, CATERPIE
 	db 5, TIMBURR
 	db 5, TIMBURR
 	; nite

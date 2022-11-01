@@ -177,9 +177,9 @@ BattleAnimations::
 	dw BattleAnim_Snore
 	dw BattleAnim_Curse
 	dw BattleAnim_Flail
-	dw BattleAnim_Conversion2
+	dw BattleAnim_KingsShield
 	dw BattleAnim_Aeroblast
-	dw BattleAnim_CottonSpore
+	dw BattleAnim_ShadowClaw
 	dw BattleAnim_Reversal
 	dw BattleAnim_Spite
 	dw BattleAnim_PowderSnow
@@ -2503,6 +2503,7 @@ BattleAnim_DrillPeck:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_ShadowClaw:
 BattleAnim_PsychoSlash:
 BattleAnim_Guillotine:
 	anim_1gfx ANIM_GFX_CUT
@@ -3192,6 +3193,15 @@ BattleAnim_Nightmare:
 	anim_ret
 
 BattleAnim_DragonDance:
+	anim_1gfx ANIM_GFX_FIRE
+.loop
+	anim_sound 0, 0, SFX_EMBER
+	anim_obj ANIM_OBJ_FLAME_WHEEL, 48, 96, $0
+	anim_wait 6
+	anim_loop 8, .loop
+	anim_wait 8
+    anim_ret
+
 BattleAnim_FlameWheel:
 	anim_1gfx ANIM_GFX_FIRE
 .loop
@@ -3386,6 +3396,7 @@ BattleAnim_PowderSnow:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_KingsShield:
 BattleAnim_Protect:
 	anim_1gfx ANIM_GFX_OBJECTS
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

@@ -714,6 +714,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_SPIKES,           AI_Smart_Spikes
     dbw EFFECT_SHELL_SMASH,      AI_Smart_ShellSmash
     dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
+    dbw EFFECT_KINGS_SHIELD,     AI_Smart_KingsShield
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -2430,6 +2431,37 @@ AI_Smart_Curse:
 	dec [hl]
 	dec [hl]
 	ret
+
+AI_Smart_KingsShield:
+; discourage if the enemy already used Protecting move
+	ld a, [wEnemyProtectCount]
+	and a
+	jr nz, .discourage
+
+; discourage if already in defense mode
+    ld a, [wEnemyDefLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .discourage
+
+; if we are here we are in attack stance, encourage
+; this must overcome encouragement from a potential ko
+    dec [hl]
+	dec [hl]
+    dec [hl]
+	dec [hl]
+    dec [hl]
+	dec [hl]
+    dec [hl]
+	dec [hl]
+    ret
+
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
+
+
 
 AI_Smart_Protect:
 ; Greatly discourage this move if the enemy already used Protect.

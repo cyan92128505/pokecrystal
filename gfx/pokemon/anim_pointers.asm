@@ -12,9 +12,9 @@ AnimationPointers:
 	dw CaterpieAnimation
 	dw MetapodAnimation
 	dw ButterfreeAnimation
-	dw WeedleAnimation
-	dw KakunaAnimation
-	dw BeedrillAnimation
+	dw HonedgeAnimation
+	dw DoubladeAnimation
+	dw AegislashAnimation
 	dw PidgeyAnimation
 	dw PidgeottoAnimation
 	dw PidgeotAnimation

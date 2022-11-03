@@ -1,10 +1,10 @@
-	db "ARMOR@" ; species name
-	dw 307, 2650 ; height, weight
+	db "WINDVEILED@" ; species name
+	dw 204, 146 ; height, weight
 
-	db   "Because this"
-	next "#MON's skin is"
-	next "so tough, a normal"
+	db   "It travels on"
+	next "whirlwinds and"
+	next "loves pranks."
 
-	page "attack won't even"
-	next "leave a scratch on"
-	next "it.@"
+	page "AB Status moves"
+	next "always land"
+	next "first.@"

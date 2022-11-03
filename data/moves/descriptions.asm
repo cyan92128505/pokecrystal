@@ -152,7 +152,7 @@ MoveDescriptions::
 	dw PsyblastDescription
 	dw SplashDescription
 	dw AcidArmorDescription
-	dw CrabhammerDescription
+	dw DrainKissDescription
 	dw ExplosionDescription
 	dw FurySwipesDescription
 	dw BonemerangDescription
@@ -871,9 +871,9 @@ AcidArmorDescription:
 	db   "Sharply raises the"
 	next "user's DEFENSE.@"
 
-CrabhammerDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+DrainKissDescription:
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 ExplosionDescription:
 	db   "Very powerful but"

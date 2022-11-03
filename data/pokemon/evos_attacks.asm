@@ -244,14 +244,11 @@ AegislashEvosAttacks:
 	db 36, SHADOW_CLAW
 	db 39, FLASH_CANNON
 	db 40, KINGS_SHIELD
-	db 45, CLOSE_COMBAT
+	db 42, BULLET_PUNCH
+	db 46, CLOSE_COMBAT
 	db 48, KINGS_SHIELD
 	db 50, SWORDS_DANCE
 	db 60, KINGS_SHIELD
-	db 70, KINGS_SHIELD
-	db 80, KINGS_SHIELD
-	db 90, KINGS_SHIELD
-	db 100, KINGS_SHIELD
 	db 0 ; no more level-up moves
 
 PidgeyEvosAttacks:
@@ -503,6 +500,7 @@ ClefairyEvosAttacks:
 	db 4, ENCORE
 	db 8, SING
 	db 13, DOUBLESLAP
+	db 16, DRAIN_KISS
 	db 26, DEFENSE_CURL
 	db 34, METRONOME
 	db 40, MOON_BLAST
@@ -516,6 +514,7 @@ ClefableEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, METRONOME
 	db 1, MOONLIGHT
+	db 30, DRAIN_KISS
 	db 40, MOON_BLAST
 	db 45, SOFTBOILED
 	db 55, CALM_MIND
@@ -550,7 +549,7 @@ JigglypuffEvosAttacks:
 	db 4, DEFENSE_CURL
 	db 9, POUND
 	db 14, DISABLE
-	db 19, ROLLOUT
+	db 19, DRAIN_KISS
 	db 24, DOUBLESLAP
 	db 29, REST
 	db 34, BODY_SLAM
@@ -564,6 +563,7 @@ WigglytuffEvosAttacks:
 	db 1, DISABLE
 	db 1, DEFENSE_CURL
 	db 1, DOUBLESLAP
+	db 30, DRAIN_KISS
 	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
@@ -1365,7 +1365,6 @@ KrabbyEvosAttacks:
 	db 23, STOMP
 	db 27, GUILLOTINE
 	db 34, PROTECT
-	db 41, CRABHAMMER
 	db 0 ; no more level-up moves
 
 KinglerEvosAttacks:
@@ -1379,7 +1378,6 @@ KinglerEvosAttacks:
 	db 23, STOMP
 	db 27, GUILLOTINE
 	db 38, PROTECT
-	db 49, CRABHAMMER
 	db 0 ; no more level-up moves
 
 VoltorbEvosAttacks:
@@ -1700,7 +1698,7 @@ MrMimeEvosAttacks:
 	db 6, CONFUSION
 	db 11, SUBSTITUTE
 	db 16, MEDITATE
-	db 21, DOUBLESLAP
+	db 21, DRAIN_KISS
 	db 26, LIGHT_SCREEN
 	db 26, REFLECT
 	db 31, ENCORE
@@ -1915,6 +1913,7 @@ RaltsEvosAttacks:
 	db 1, CONFUSION
 	db 9, HYPNOSIS
 	db 12, TELEPORT
+	db 16, DRAIN_KISS
 	db 20, PSYBEAM
 	db 24, CHARM
 	db 30, PSYCHIC_M
@@ -1931,6 +1930,7 @@ KirliaEvosAttacks:
 	db 1, CONFUSION
 	db 9, HYPNOSIS
 	db 12, TELEPORT
+	db 16, DRAIN_KISS
 	db 20, PSYBEAM
 	db 24, CHARM
 	db 30, PSYCHIC_M
@@ -1945,6 +1945,7 @@ GardevoirEvosAttacks:
 	db 1, CONFUSION
 	db 9, HYPNOSIS
 	db 12, TELEPORT
+	db 16, DRAIN_KISS
 	db 20, PSYBEAM
 	db 24, CHARM
 	db 30, PSYCHIC_M
@@ -2437,6 +2438,7 @@ TogepiEvosAttacks:
 	db 1, CHARM
 	db 7, METRONOME
 	db 18, ANCIENTPOWER
+	db 22, DRAIN_KISS
 	db 25, ENCORE
 	db 30, EXTREMESPEED
 	db 32, AURA_SPHERE
@@ -2452,6 +2454,7 @@ TogeticEvosAttacks:
 	db 1, CHARM
 	db 7, METRONOME
 	db 18, ANCIENTPOWER
+	db 22, DRAIN_KISS
 	db 25, ENCORE
 	db 30, EXTREMESPEED
 	db 32, AURA_SPHERE
@@ -2466,6 +2469,7 @@ TogekissEvosAttacks:
 	db 1, CHARM
 	db 7, METRONOME
 	db 18, ANCIENTPOWER
+	db 22, DRAIN_KISS
 	db 25, ENCORE
 	db 30, EXTREMESPEED
 	db 32, SAFEGUARD
@@ -2529,6 +2533,7 @@ SylveonEvosAttacks:
 	db 1, REST
 	db 1, REFLECT
 	db 1, LIGHT_SCREEN
+	db 30, DRAIN_KISS
 	db 40, MOONLIGHT
 	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
@@ -3154,28 +3159,34 @@ KingdraEvosAttacks:
 	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:
-	db EVOLVE_LEVEL, 25, DONPHAN
+	db EVOLVE_ITEM, SUN_STONE, DONPHAN
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, ABSORB
 	db 1, GROWL
-	db 9, DEFENSE_CURL
-	db 17, FLAIL
-	db 25, TAKE_DOWN
-	db 33, ROLLOUT
-	db 41, ENDURE
-	db 49, DOUBLE_EDGE
+	db 12, MEGA_DRAIN
+	db 15, LEECH_SEED
+	db 18, DRAIN_KISS
+	db 21, STUN_SPORE
+	db 24, GIGA_DRAIN
+	db 27, CHARM
+	db 30, SUNNY_DAY
+	db 35, MOON_BLAST
+	db 40, SOLARBEAM
 	db 0 ; no more level-up moves
 
 DonphanEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HORN_ATTACK
+	db 1, ABSORB
 	db 1, GROWL
-	db 9, DEFENSE_CURL
-	db 17, FLAIL
-	db 25, FURY_ATTACK
-	db 33, ROLLOUT
-	db 41, RAPID_SPIN
-	db 49, EARTHQUAKE
+	db 12, MEGA_DRAIN
+	db 15, LEECH_SEED
+	db 18, DRAIN_KISS
+	db 21, STUN_SPORE
+	db 24, GIGA_DRAIN
+	db 27, CHARM
+	db 30, SUNNY_DAY
+	db 35, MOON_BLAST
+	db 40, SOLARBEAM
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
@@ -3235,14 +3246,16 @@ DialgaEvosAttacks:
 
 HitmontopEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ROLLING_KICK
-	db 7, FOCUS_ENERGY
-	db 13, PURSUIT
-	db 19, QUICK_ATTACK
-	db 25, RAPID_SPIN
-	db 31, COUNTER
-	db 37, AGILITY
-	db 49, CLOSE_COMBAT
+	db 1, TACKLE
+	db 8, METRONOME
+	db 12, SCREECH
+	db 16, REFLECT
+	db 18, LIGHT_SCREEN
+	db 20, DRAIN_KISS
+	db 24, CONFUSE_RAY
+	db 30, IRON_HEAD
+	db 35, FLASH_CANNON
+	db 40, MOON_BLAST
 	db 0 ; no more level-up moves
 
 XerneasEvosAttacks:

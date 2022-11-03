@@ -133,21 +133,21 @@ LoadRandomBattleTowerMon:
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainer
     ld a, b
-    cp 72 ; lvl 100 has a pool of 72 Pokemon rather than 21
+    cp 74 ; lvl 100 has a pool of 74 Pokemon rather than 21
     jr nc, .resample
     and a
     jr z, .resample ; only the last trainer can have mewtwo
     jr .continue
 .lastTrainer
     ld a, b
-    cp 20 ; last trainer only uses 20 strongest mons, can pick mewtwo
+    cp 30 ; last trainer only uses 30 strongest mons, can pick mewtwo
     jr nc, .resample
-    and a
-    jr nz, .continue
-	call Random     ; decrease mewtwo odds for last trainer
-	cp 50 percent
-	jr c, .resample
-	ld a, b
+    ;and a
+    ;jr nz, .continue
+	;call Random     ; decrease mewtwo odds for last trainer
+	;cp 50 percent
+	;jr c, .resample
+	;ld a, b
 
 .continue
 	; in register 'a' is the chosen mon of the LevelGroup

@@ -157,7 +157,7 @@
 	const PSYBLAST     ; 95
 	const SPLASH       ; 96
 	const ACID_ARMOR   ; 97
-	const CRABHAMMER   ; 98
+	const DRAIN_KISS   ; 98
 	const EXPLOSION    ; 99
 	const FURY_SWIPES  ; 9a
 	const BONEMERANG   ; 9b

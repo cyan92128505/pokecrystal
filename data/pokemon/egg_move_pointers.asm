@@ -230,7 +230,7 @@ EggMovePointers::
 	dw HoundourEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw PhanpyEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves

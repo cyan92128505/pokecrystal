@@ -917,8 +917,12 @@ GetPlayerMovePriority:
 ; AndrewNote - prankster
 ; ===== Prankster =======
     ld a, [wBattleMonSpecies]
-    ;cp NOCTOWL
-    ;jr z, .prankster
+    cp PHANPY
+    jr z, .prankster
+    cp DONPHAN
+    jr z, .prankster
+    cp HITMONTOP
+    jr z, .prankster
     jr .noPrankster
 .prankster
     call GetMovePower
@@ -953,8 +957,12 @@ GetEnemyMovePriority:
 ; AndrewNote - prankster
 ; ===== Prankster =======
     ld a, [wEnemyMonSpecies]
-    ;cp NOCTOWL
-    ;jr z, .prankster
+    cp PHANPY
+    jr z, .prankster
+    cp DONPHAN
+    jr z, .prankster
+    cp HITMONTOP
+    jr z, .prankster
     jr .noPrankster
 .prankster
     call GetMovePower

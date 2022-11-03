@@ -2173,9 +2173,9 @@ AI_Smart_PriorityHit:
 	jr nc, .continue
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr z, .continue
+	;ld a, [wPlayerMoveStruct + MOVE_POWER]
+	;and a
+	;jr z, .continue
 	dec [hl]
 	dec [hl]
 	dec [hl]
@@ -2445,6 +2445,8 @@ AI_Smart_KingsShield:
 
 ; if we are here we are in attack stance, encourage
 ; this must overcome encouragement from a potential ko
+    dec [hl]
+	dec [hl]
     dec [hl]
 	dec [hl]
     dec [hl]
@@ -2757,7 +2759,6 @@ AI_Smart_Rollout:
 	inc [hl]
 	ret
 
-AI_Smart_Swagger:
 AI_Smart_Attract:
 ; 80% chance to encourage this move during the first turn of player's Pokemon.
 ; 80% chance to discourage this move otherwise.
@@ -3789,9 +3790,20 @@ AI_Smart_DynamicPunch:
     ld a, [wEnemyMonSpecies]
     cp MACHAMP
     ret nz
+
+; never use against ghost types
+    ld a, [wBattleMonType1]
+	cp GHOST
+	ret z
+	ld a, [wBattleMonType2]
+	cp GHOST
+	ret z
+
+; don't encourage if already confused
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
-	ret nz ; don't encourage if already confused
+	ret nz
+
     dec [hl]
     dec [hl]
     ret
@@ -3867,6 +3879,25 @@ AI_Smart_Flinch:
     dec [hl]
 .smallEncourage
     dec [hl]
+    ret
+
+AI_Smart_Swagger:
+; discourage if already confused
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_CONFUSED, a
+	jr nz, .discourage
+
+; encourage if enemy is paralyzed
+    ld a, [wBattleMonStatus]
+	and 1 << PAR
+	ret z
+
+	dec [hl]
+	dec [hl]
+    ret
+.discourage
+    inc [hl]
+    inc [hl]
     ret
 
 

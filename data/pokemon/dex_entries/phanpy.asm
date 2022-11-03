@@ -1,10 +1,10 @@
-	db "LONG NOSE@" ; species name
-	dw 108, 740 ; height, weight
+	db "COTTON PUFF@" ; species name
+	dw 100, 13 ; height, weight
 
-	db   "During the desert-"
-	next "ed morning hours,"
-	next "it comes ashore"
+	db   "They stick to"
+	next "each other to"
+	next "form a ball."
 
-	page "where it deftly"
-	next "uses its trunk to"
-	next "take a shower.@"
+	page "AB Status moves"
+	next "always land"
+	next "first.@"

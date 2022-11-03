@@ -1214,6 +1214,16 @@ _BallSoCloseText::
 	line "close too!"
 	prompt
 
+_LevelTooHighText::
+    text "Enemy level is"
+    line "too high!"
+    prompt
+
+_MoreBadgesText::
+    text "More badges are"
+    line "needed!"
+    prompt
+
 Text_BallCaught::
 	text "Gotcha! @"
 	text_ram wEnemyMonNickname

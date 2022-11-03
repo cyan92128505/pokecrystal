@@ -18,9 +18,9 @@ PokemonCries::
 	mon_cry CRY_CATERPIE,    128,  160 ; CATERPIE
 	mon_cry CRY_METAPOD,     204,  129 ; METAPOD
 	mon_cry CRY_CATERPIE,    119,  192 ; BUTTERFREE
-	mon_cry CRY_SPINARAK,     0,  200 ; HONEDGE
-	mon_cry CRY_SPINARAK,   -50,  200 ; DOUBLADE
-	mon_cry CRY_SPINARAK,   -150,  150 ; AEGISLASH
+	mon_cry CRY_SPINARAK,      0,  500 ; HONEDGE
+	mon_cry CRY_SPINARAK,    -50,  450 ; DOUBLADE
+	mon_cry CRY_SPINARAK,   -150,  400 ; AEGISLASH
 	mon_cry CRY_PIDGEY,      223,  132 ; PIDGEY
 	mon_cry CRY_PIDGEOTTO,    40,  320 ; PIDGEOTTO
 	mon_cry CRY_PIDGEOTTO,    17,  383 ; PIDGEOT
@@ -236,8 +236,8 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,    57,  320 ; HOUNDOUR
 	mon_cry CRY_TOTODILE,   -266,  256 ; HOUNDOOM
 	mon_cry CRY_SLUGMA,      763,  256 ; KINGDRA
-	mon_cry CRY_SENTRET,      72,  560 ; PHANPY
-	mon_cry CRY_DONPHAN,       0,  416 ; DONPHAN
+	mon_cry CRY_SENTRET,     300,  560 ; PHANPY
+	mon_cry CRY_DONPHAN,     300,  416 ; DONPHAN
 	mon_cry CRY_GIRAFARIG,   115,  576 ; PORYGON2
 	mon_cry CRY_BULBASAUR,   250,  500 ; RAYQUAZA
 	mon_cry CRY_PICHU,      -538,  496 ; SMEARGLE

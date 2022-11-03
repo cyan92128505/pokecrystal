@@ -1,21 +1,21 @@
 	db HITMONTOP ; 237
 
-	db  50,  95,  95,  70,  35, 110
+	db  57,  80,  91,  87,  80, 87
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIGHTING, FIGHTING ; type
-	db 45 ; catch rate
-	db 138 ; base exp
+	db STEEL, FAIRY ; type
+	db 75 ; catch rate
+	db 165 ; base exp
 	db NO_ITEM, NO_ITEM ; items
-	db GENDER_F0 ; gender ratio
+	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 25 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/hitmontop/front.dimensions"
+	INCBIN "gfx/pokemon/dragonite/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
+	db GROWTH_FAST ; growth rate
+	dn EGG_MINERAL, EGG_MINERAL ; egg groups
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, ENDURE, FRUSTRATION, RETURN, DIG, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, REST, ATTRACT, ROCK_SLIDE, STRENGTH
+	tmhm HEADBUTT, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, ENDURE, FRUSTRATION, RETURN, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, REST, ATTRACT, THUNDER_WAVE
 	; end

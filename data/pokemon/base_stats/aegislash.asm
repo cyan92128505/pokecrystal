@@ -1,6 +1,6 @@
 	db AEGISLASH ; 015
 
-	db  60,  150,  50,  60,  150,  50
+	db  60,  150,  60,  40,  150,  60
 	;   hp  atk  def  spd  sat  sdf
 
 	db STEEL, GHOST ; type

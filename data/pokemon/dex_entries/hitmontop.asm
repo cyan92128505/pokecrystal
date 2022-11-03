@@ -1,10 +1,10 @@
-	db "HANDSTAND@" ; species name
-	dw 407, 1060 ; height, weight
+	db "KEY RING@" ; species name
+	dw 108, 166 ; height, weight
 
-	db   "After doing a"
-	next "handstand to"
-	next "throw off the"
+	db   "It collects keys"
+	next "and nobody knows"
+	next "what for."
 
-	page "opponent's timing,"
-	next "it presents its"
-	next "fancy kick moves.@"
+	page "AB Status moves"
+	next "always land"
+	next "first.@"

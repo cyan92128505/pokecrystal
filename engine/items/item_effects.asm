@@ -214,6 +214,65 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
+; AndrewNote - capture level restrictions
+    ld hl, wJohtoBadges
+    ld a, [wEnemyMonLevel]
+    cp 71
+    jr c, .checkKantoBadges
+    cp 51
+    jr c, .checkRisingBadge
+    cp 41
+    jr c, .checkStormBadge
+    cp 31
+    jr c, .checkFogBadge
+    cp 21
+    jr c, .checkHiveBadge
+
+.checkKantoBadges
+	ld a, [wKantoBadges]
+	cp %11111111 ; all badges
+    jr nz, .levelTooHigh
+    jr .continue
+
+.checkRisingBadge
+	bit RISINGBADGE, [hl]
+	jr nz, .levelTooHigh
+	jr .continue
+
+.checkStormBadge
+	bit STORMBADGE, [hl]
+	jr nz, .levelTooHigh
+	jr .continue
+
+.checkFogBadge
+	bit FOGBADGE, [hl]
+	jr nz, .levelTooHigh
+	jr .continue
+
+.checkHiveBadge
+	bit HIVEBADGE, [hl]
+	jr nz, .levelTooHigh
+	jr .continue
+
+.levelTooHigh
+    call ReturnToBattle_UseBall
+	ld de, ANIM_THROW_POKE_BALL
+	ld a, e
+	ld [wFXAnimID], a
+	ld a, d
+	ld [wFXAnimID + 1], a
+	xor a
+	ld [wBattleAnimParam], a
+	ldh [hBattleTurn], a
+	ld [wNumHits], a
+	predef PlayBattleAnim
+	ld hl, LevelTooHighText
+	call PrintText
+	ld hl, MoreBadgesText
+	call PrintText
+	jp UseDisposableItem
+
+.continue
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
@@ -1103,6 +1162,14 @@ BallAlmostHadItText:
 BallSoCloseText:
 	text_far _BallSoCloseText
 	text_end
+
+LevelTooHighText:
+    text_far _LevelTooHighText
+    text_end
+
+MoreBadgesText:
+    text_far _MoreBadgesText
+    text_end
 
 Text_GotchaMonWasCaught:
 	; Gotcha! @ was caught!@ @

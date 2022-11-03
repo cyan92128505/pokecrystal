@@ -153,7 +153,7 @@ BattleAnimations::
 	dw BattleAnim_Psyblast
 	dw BattleAnim_Splash
 	dw BattleAnim_AcidArmor
-	dw BattleAnim_Crabhammer
+	dw BattleAnim_DrainKiss
 	dw BattleAnim_Explosion
 	dw BattleAnim_FurySwipes
 	dw BattleAnim_Bonemerang
@@ -2399,6 +2399,7 @@ BattleAnim_Mimic:
 	anim_wait 48
 	anim_ret
 
+BattleAnim_DrainKiss:
 BattleAnim_LovelyKiss:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

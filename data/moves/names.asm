@@ -151,7 +151,7 @@ MoveNames::
 	li "PSYBLAST"
 	li "SPLASH"
 	li "ACID ARMOR"
-	li "CRABHAMMER"
+	li "DRAIN KISS"
 	li "EXPLOSION"
 	li "FURY SWIPES"
 	li "BONEMERANG"

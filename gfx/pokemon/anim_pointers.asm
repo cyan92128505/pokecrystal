@@ -230,13 +230,13 @@ AnimationPointers:
 	dw HoundourAnimation
 	dw HoundoomAnimation
 	dw KingdraAnimation
-	dw PhanpyAnimation
-	dw DonphanAnimation
+	dw CottoneeAnimation
+	dw WhimsicottAnimation
 	dw Porygon2Animation
 	dw RayquazaAnimation
 	dw SmeargleAnimation
 	dw DialgaAnimation
-	dw HitmontopAnimation
+	dw KlefkiAnimation
 	dw XerneasAnimation
 	dw YveltalAnimation
 	dw GiratinaAnimation

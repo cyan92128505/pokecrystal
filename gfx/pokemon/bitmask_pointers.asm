@@ -230,13 +230,13 @@ BitmasksPointers:
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
 	dw KingdraBitmasks
-	dw PhanpyBitmasks
-	dw DonphanBitmasks
+	dw CottoneeBitmasks
+	dw WhimsicottBitmasks
 	dw Porygon2Bitmasks
 	dw RayquazaBitmasks
 	dw SmeargleBitmasks
 	dw DialgaBitmasks
-	dw HitmontopBitmasks
+	dw KlefkiBitmasks
 	dw XerneasBitmasks
 	dw YveltalBitmasks
 	dw GiratinaBitmasks

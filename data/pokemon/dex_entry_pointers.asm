@@ -231,13 +231,13 @@ PokedexDataPointerTable:
 	dw HoundourPokedexEntry
 	dw HoundoomPokedexEntry
 	dw KingdraPokedexEntry
-	dw PhanpyPokedexEntry
-	dw DonphanPokedexEntry
+	dw CottoneePokedexEntry
+	dw WhimsicottPokedexEntry
 	dw Porygon2PokedexEntry
 	dw RayquazaPokedexEntry
 	dw SmearglePokedexEntry
 	dw DialgaPokedexEntry
-	dw HitmontopPokedexEntry
+	dw KlefkiPokedexEntry
 	dw XerneasPokedexEntry
 	dw YveltalPokedexEntry
 	dw GiratinaPokedexEntry

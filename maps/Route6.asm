@@ -52,18 +52,18 @@ Route6UndergroundPathSignText:
 	done
 
 PokefanmRexSeenText:
-	text "My PHANPY is the"
+	text "My COTTONEE is the"
 	line "cutest in the"
 	cont "world."
 	done
 
 PokefanmRexBeatenText:
-	text "My PHANPY!"
+	text "My COTTONEE!"
 	done
 
 PokefanmRexAfterBattleText:
 	text "Look how adorable"
-	line "my PHANPY acts!"
+	line "my COTTONEE acts!"
 
 	para "Isn't it cute"
 	line "enough to make"

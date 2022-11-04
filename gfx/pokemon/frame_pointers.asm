@@ -230,13 +230,13 @@ FramesPointers:
 	dw HoundourFrames
 	dw HoundoomFrames
 	dw KingdraFrames
-	dw PhanpyFrames
-	dw DonphanFrames
+	dw CottoneeFrames
+	dw WhimsicottFrames
 	dw Porygon2Frames
 	dw RayquazaFrames
 	dw SmeargleFrames
 	dw DialgaFrames
-	dw HitmontopFrames
+	dw KlefkiFrames
 	dw XerneasFrames
 	dw YveltalFrames
 	dw GiratinaFrames

@@ -642,7 +642,7 @@ HoundourEggMoves:
 	db REVERSAL
 	db -1 ; end
 
-PhanpyEggMoves:
+CottoneeEggMoves:
 	db FOCUS_ENERGY
 	db BODY_SLAM
 	db ANCIENTPOWER

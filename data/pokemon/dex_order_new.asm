@@ -124,7 +124,7 @@ NewPokedexOrder:
 	db SOLOSIS
 	db DUOSION
     db REUNICLUS
-	db HITMONTOP
+	db KLEFKI
 	db TAUROS
 	db MILTANK
 	db MAGMAR
@@ -160,8 +160,8 @@ NewPokedexOrder:
 	db MAMOSWINE
 	db TEDDIURSA
 	db URSARING
-	db PHANPY
-	db DONPHAN
+	db COTTONEE
+	db WHIMSICOTT
 	db SKARMORY
 	db PONYTA
 	db RAPIDASH

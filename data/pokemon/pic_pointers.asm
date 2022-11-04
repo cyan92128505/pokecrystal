@@ -466,10 +466,10 @@ PokemonPicPointers::
 	dba_pic HoundoomBackpic
 	dba_pic KingdraFrontpic
 	dba_pic KingdraBackpic
-	dba_pic PhanpyFrontpic
-	dba_pic PhanpyBackpic
-	dba_pic DonphanFrontpic
-	dba_pic DonphanBackpic
+	dba_pic CottoneeFrontpic
+	dba_pic CottoneeBackpic
+	dba_pic WhimsicottFrontpic
+	dba_pic WhimsicottBackpic
 	dba_pic Porygon2Frontpic
 	dba_pic Porygon2Backpic
 	dba_pic RayquazaFrontpic
@@ -478,8 +478,8 @@ PokemonPicPointers::
 	dba_pic SmeargleBackpic
 	dba_pic DialgaFrontpic
 	dba_pic DialgaBackpic
-	dba_pic HitmontopFrontpic
-	dba_pic HitmontopBackpic
+	dba_pic KlefkiFrontpic
+	dba_pic KlefkiBackpic
 	dba_pic XerneasFrontpic
 	dba_pic XerneasBackpic
 	dba_pic YveltalFrontpic

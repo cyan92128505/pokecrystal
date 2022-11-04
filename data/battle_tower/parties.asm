@@ -4728,7 +4728,7 @@ BattleTowerMons:
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
-	db HITMONTOP
+	db KLEFKI
 	db LEFTOVERS
 	db THUNDER_WAVE, SWAGGER, FLASH, IRON_HEAD
 	dw 0 ; OT ID
@@ -5901,7 +5901,7 @@ BattleTowerMons:
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
-	db HITMONTOP
+	db KLEFKI
 	db LEFTOVERS
 	db THUNDER_WAVE, SWAGGER, FLASH, IRON_HEAD
 	dw 0 ; OT ID
@@ -5927,7 +5927,7 @@ BattleTowerMons:
 	bigdw 272 ; SDef
 	db "RANTA-N@@@@"
 
-	db DONPHAN
+	db WHIMSICOTT
 	db LEFTOVERS
 	db STUN_SPORE, LEECH_SEED, SWAGGER, GIGA_DRAIN
 	dw 0 ; OT ID

@@ -1632,16 +1632,16 @@ JohtoGrassWildMons:
 	db 23, GEODUDE
 	db 23, GRAVELER
 	db 24, GLIGAR
-	db 25, DONPHAN
-	db 20, PHANPY
+	db 25, WHIMSICOTT
+	db 20, COTTONEE
 	db 27, SKARMORY
 	db 27, SKARMORY
 	; day
 	db 23, GEODUDE
 	db 23, GRAVELER
 	db 24, GLIGAR
-	db 25, DONPHAN
-	db 30, DONPHAN
+	db 25, WHIMSICOTT
+	db 30, WHIMSICOTT
 	db 27, SKARMORY
 	db 27, SKARMORY
 	; nite
@@ -1661,7 +1661,7 @@ JohtoGrassWildMons:
 	db 2, SPEAROW
 	db 3, GEODUDE
 	db 3, RATTATA
-	db 2, PHANPY
+	db 2, COTTONEE
 	db 2, RATTATA
 	db 2, RATTATA
 	; day

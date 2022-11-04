@@ -3158,8 +3158,8 @@ KingdraEvosAttacks:
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-PhanpyEvosAttacks:
-	db EVOLVE_ITEM, SUN_STONE, DONPHAN
+CottoneeEvosAttacks:
+	db EVOLVE_ITEM, SUN_STONE, WHIMSICOTT
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 1, GROWL
@@ -3174,7 +3174,7 @@ PhanpyEvosAttacks:
 	db 40, SOLARBEAM
 	db 0 ; no more level-up moves
 
-DonphanEvosAttacks:
+WhimsicottEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 1, GROWL
@@ -3244,7 +3244,7 @@ DialgaEvosAttacks:
 	db 1, REST
 	db 0 ; no more level-up moves
 
-HitmontopEvosAttacks:
+KlefkiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 8, METRONOME

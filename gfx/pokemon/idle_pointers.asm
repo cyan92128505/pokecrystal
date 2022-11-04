@@ -230,13 +230,13 @@ AnimationIdlePointers:
 	dw HoundourAnimationIdle
 	dw HoundoomAnimationIdle
 	dw KingdraAnimationIdle
-	dw PhanpyAnimationIdle
-	dw DonphanAnimationIdle
+	dw CottoneeAnimationIdle
+	dw WhimsicottAnimationIdle
 	dw Porygon2AnimationIdle
 	dw RayquazaAnimationIdle
 	dw SmeargleAnimationIdle
 	dw DialgaAnimationIdle
-	dw HitmontopAnimationIdle
+	dw KlefkiAnimationIdle
 	dw XerneasAnimationIdle
 	dw YveltalAnimationIdle
 	dw GiratinaAnimationIdle

@@ -1,4 +1,4 @@
-	db DONPHAN ; 232
+	db WHIMSICOTT ; 232
 
 	db  60, 67, 85,  116,  77,  75
 	;   hp  atk  def  spd  sat  sdf

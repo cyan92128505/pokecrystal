@@ -236,13 +236,13 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,    57,  320 ; HOUNDOUR
 	mon_cry CRY_TOTODILE,   -266,  256 ; HOUNDOOM
 	mon_cry CRY_SLUGMA,      763,  256 ; KINGDRA
-	mon_cry CRY_SENTRET,     300,  560 ; PHANPY
-	mon_cry CRY_DONPHAN,     300,  416 ; DONPHAN
+	mon_cry CRY_SENTRET,     300,  560 ; COTTONEE
+	mon_cry CRY_DONPHAN,     300,  416 ; WHIMSICOTT
 	mon_cry CRY_GIRAFARIG,   115,  576 ; PORYGON2
 	mon_cry CRY_BULBASAUR,   250,  500 ; RAYQUAZA
 	mon_cry CRY_PICHU,      -538,  496 ; SMEARGLE
 	mon_cry CRY_AIPOM,        44,  264 ; DIALGA
-	mon_cry CRY_SLUGMA,        0,  256 ; HITMONTOP
+	mon_cry CRY_SLUGMA,        0,  256 ; KLEFKI
 	mon_cry CRY_MARILL,      104,  256 ; XERNEAS
 	mon_cry CRY_SUNFLORA,   -728,  180 ; YVELTAL
 	mon_cry CRY_TEDDIURSA,   374,   58 ; GIRATINA

@@ -30,7 +30,7 @@ TechnicianPokemon:
     db SCIZOR
     db MEOWTH
     db PERSIAN
-    db HITMONTOP
+    db KLEFKI
     db MR__MIME
     db SMEARGLE
     db SHROOMISH

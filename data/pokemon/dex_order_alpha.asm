@@ -44,7 +44,7 @@ AlphabeticalPokedexOrder:
 	db DIGLETT
 	db DITTO
 	db ELECTIVIRE
-	db DONPHAN
+	db WHIMSICOTT
 	db DRAGONAIR
 	db DRAGONITE
 	db DRATINI
@@ -91,7 +91,7 @@ AlphabeticalPokedexOrder:
 	db GYARADOS
 	db HAUNTER
 	db HERACROSS
-	db HITMONTOP
+	db KLEFKI
 	db HO_OH
 	db HONCHKROW
 	db HOOTHOOT
@@ -160,7 +160,7 @@ AlphabeticalPokedexOrder:
 	db PARAS
 	db PARASECT
 	db PERSIAN
-	db PHANPY
+	db COTTONEE
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY

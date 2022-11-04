@@ -232,13 +232,13 @@ EvosAttacksPointers::
 	dw HoundourEvosAttacks
 	dw HoundoomEvosAttacks
 	dw KingdraEvosAttacks
-	dw PhanpyEvosAttacks
-	dw DonphanEvosAttacks
+	dw CottoneeEvosAttacks
+	dw WhimsicottEvosAttacks
 	dw Porygon2EvosAttacks
 	dw RayquazaEvosAttacks
 	dw SmeargleEvosAttacks
 	dw DialgaEvosAttacks
-	dw HitmontopEvosAttacks
+	dw KlefkiEvosAttacks
 	dw XerneasEvosAttacks
 	dw YveltalEvosAttacks
 	dw GiratinaEvosAttacks

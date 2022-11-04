@@ -1,4 +1,4 @@
-	db HITMONTOP ; 237
+	db KLEFKI ; 237
 
 	db  57,  80,  91,  87,  80, 87
 	;   hp  atk  def  spd  sat  sdf

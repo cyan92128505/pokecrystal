@@ -227,6 +227,7 @@ PokeBallEffect:
     jr c, .checkFogBadge
     cp 21
     jr c, .checkHiveBadge
+    jr .continue
 
 .checkKantoBadges
 	ld a, [wKantoBadges]

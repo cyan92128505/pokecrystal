@@ -41,12 +41,12 @@
 	const RATICATE   ; 14
 	const SPEAROW    ; 15  ....
 	const FEAROW     ; 16  lopunny
-	const EKANS      ; 17
-	const ARBOK      ; 18
+	const EKANS      ; 17 *
+	const ARBOK      ; 18 *
 	const PIKACHU    ; 19
 	const RAICHU     ; 1a
-	const SANDSHREW  ; 1b
-	const SANDSLASH  ; 1c
+	const SANDSHREW  ; 1b *
+	const SANDSLASH  ; 1c *
 	const NIDORAN_F  ; 1d
 	const NIDORINA   ; 1e
 	const NIDOQUEEN  ; 1f
@@ -68,19 +68,19 @@
 	const PARASECT   ; 2f
 	const LARVESTA   ; 30
 	const VOLCARONA  ; 31
-	const DIGLETT    ; 32
-	const DUGTRIO    ; 33
+	const DIGLETT    ; 32 *
+	const DUGTRIO    ; 33 *
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
-	const PSYDUCK    ; 36
-	const GOLDUCK    ; 37
+	const PSYDUCK    ; 36 *
+	const GOLDUCK    ; 37 *
 	const SHROOMISH  ; 38
 	const BRELOOM    ; 39
 	const GROWLITHE  ; 3a
 	const ARCANINE   ; 3b
-	const POLIWAG    ; 3c
-	const POLIWHIRL  ; 3d
-	const POLIWRATH  ; 3e
+	const POLIWAG    ; 3c *
+	const POLIWHIRL  ; 3d *
+	const POLIWRATH  ; 3e *
 	const ABRA       ; 3f
 	const KADABRA    ; 40
 	const ALAKAZAM   ; 41
@@ -95,8 +95,8 @@
 	const GEODUDE    ; 4a
 	const GRAVELER   ; 4b
 	const GOLEM      ; 4c
-	const PONYTA     ; 4d
-	const RAPIDASH   ; 4e
+	const PONYTA     ; 4d *
+	const RAPIDASH   ; 4e *
 	const SLOWPOKE   ; 4f
 	const SLOWBRO    ; 50
 	const MAGNEMITE  ; 51
@@ -127,8 +127,8 @@
 	const SOLOSIS    ; 6a
 	const DUOSION    ; 6b
 	const REUNICLUS  ; 6c
-	const KOFFING    ; 6d
-	const WEEZING    ; 6e
+	const KOFFING    ; 6d *
+	const WEEZING    ; 6e *
 	const RHYHORN    ; 6f
 	const RHYDON     ; 70
 	const CHANSEY    ; 71
@@ -181,8 +181,8 @@ JOHTO_POKEMON EQU const_value
 	const FROGADIER  ; 9f
 	const GRENINJA   ; a0
 	const RIOLU      ; a1
-	const LUCARIO    ; a2
-	const HOOTHOOT   ; a3
+	const LUCARIO    ; a2 *
+	const HOOTHOOT   ; a3 *
 	const NOCTOWL    ; a4
 	const DRILBUR    ; a5
 	const EXCADRILL  ; a6
@@ -213,8 +213,8 @@ JOHTO_POKEMON EQU const_value
 	const METANG     ; bf
 	const METAGROSS  ; c0
 	const YANMA      ; c1
-	const WOOPER     ; c2
-	const QUAGSIRE   ; c3
+	const WOOPER     ; c2 *
+	const QUAGSIRE   ; c3 *
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6
@@ -250,13 +250,13 @@ JOHTO_POKEMON EQU const_value
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
 	const KINGDRA    ; e6
-	const PHANPY     ; e7  ....
-	const DONPHAN    ; e8  whimsicott
+	const COTTONEE     ; e7  ....
+	const WHIMSICOTT    ; e8  whimsicott
 	const PORYGON2   ; e9
 	const RAYQUAZA   ; ea
 	const SMEARGLE   ; eb
 	const DIALGA     ; ec
-	const HITMONTOP  ; ed  kefkle
+	const KLEFKI  ; ed  kefkle
 	const XERNEAS    ; ee
 	const YVELTAL    ; ef
 	const GIRATINA   ; f0

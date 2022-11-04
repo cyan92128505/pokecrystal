@@ -917,11 +917,11 @@ GetPlayerMovePriority:
 ; AndrewNote - prankster
 ; ===== Prankster =======
     ld a, [wBattleMonSpecies]
-    cp PHANPY
+    cp COTTONEE
     jr z, .prankster
-    cp DONPHAN
+    cp WHIMSICOTT
     jr z, .prankster
-    cp HITMONTOP
+    cp KLEFKI
     jr z, .prankster
     jr .noPrankster
 .prankster
@@ -957,11 +957,11 @@ GetEnemyMovePriority:
 ; AndrewNote - prankster
 ; ===== Prankster =======
     ld a, [wEnemyMonSpecies]
-    cp PHANPY
+    cp COTTONEE
     jr z, .prankster
-    cp DONPHAN
+    cp WHIMSICOTT
     jr z, .prankster
-    cp HITMONTOP
+    cp KLEFKI
     jr z, .prankster
     jr .noPrankster
 .prankster

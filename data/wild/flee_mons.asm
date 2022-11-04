@@ -23,7 +23,7 @@ OftenFleeMons:
 	db MOLTRES
 	db QUAGSIRE
 	db KYOGRE
-	db PHANPY
+	db COTTONEE
 	db TEDDIURSA
 	db -1
 

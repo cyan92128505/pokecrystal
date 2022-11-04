@@ -1,4 +1,4 @@
-	db PHANPY ; 231
+	db COTTONEE ; 231
 
 	db  40,  27,  60,  66,  37,  50
 	;   hp  atk  def  spd  sat  sdf

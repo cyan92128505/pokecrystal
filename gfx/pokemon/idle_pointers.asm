@@ -15,9 +15,9 @@ AnimationIdlePointers:
 	dw HonedgeAnimationIdle
 	dw DoubladeAnimationIdle
 	dw AegislashAnimationIdle
-	dw PidgeyAnimationIdle
-	dw PidgeottoAnimationIdle
-	dw PidgeotAnimationIdle
+	dw StarlyAnimationIdle
+	dw StaraviaAnimationIdle
+	dw StaraptorAnimationIdle
 	dw RattataAnimationIdle
 	dw RaticateAnimationIdle
 	dw SpearowAnimationIdle

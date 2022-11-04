@@ -251,47 +251,54 @@ AegislashEvosAttacks:
 	db 60, KINGS_SHIELD
 	db 0 ; no more level-up moves
 
-PidgeyEvosAttacks:
-	db EVOLVE_LEVEL, 18, PIDGEOTTO
+StarlyEvosAttacks:
+	db EVOLVE_LEVEL, 14, STARAVIA
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 21, WHIRLWIND
-	db 29, WING_ATTACK
-	db 37, AGILITY
-	db 47, MIRROR_MOVE
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 9, PECK
+	db 14, CUT
+	db 20, WING_ATTACK
+	db 28, SLASH
+	db 34, FLY
+	db 40, EXTREMESPEED
+	db 45, DOUBLE_EDGE
+	db 50, CLOSE_COMBAT
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
-PidgeottoEvosAttacks:
-	db EVOLVE_LEVEL, 36, PIDGEOT
+StaraviaEvosAttacks:
+	db EVOLVE_LEVEL, 34, STARAPTOR
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, SAND_ATTACK
-	db 1, GUST
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 23, WHIRLWIND
-	db 33, WING_ATTACK
-	db 43, AGILITY
-	db 55, MIRROR_MOVE
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 9, PECK
+	db 14, CUT
+	db 20, WING_ATTACK
+	db 28, SLASH
+	db 34, FLY
+	db 40, EXTREMESPEED
+	db 45, DOUBLE_EDGE
+	db 50, CLOSE_COMBAT
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
-PidgeotEvosAttacks:
+StaraptorEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, SAND_ATTACK
-	db 1, GUST
-	db 1, QUICK_ATTACK
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 23, WHIRLWIND
-	db 33, WING_ATTACK
-	db 46, AGILITY
-	db 61, MIRROR_MOVE
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 9, PECK
+	db 14, CUT
+	db 20, WING_ATTACK
+	db 28, SLASH
+	db 34, FLY
+	db 40, EXTREMESPEED
+	db 45, DOUBLE_EDGE
+	db 50, CLOSE_COMBAT
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 RattataEvosAttacks:

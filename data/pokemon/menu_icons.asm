@@ -17,9 +17,9 @@ MonMenuIcons:
 	db ICON_GHOST       ; HONEDGE
 	db ICON_GHOST       ; DOUBLADE
 	db ICON_GHOST       ; AEGISLASH
-	db ICON_BIRD        ; PIDGEY
-	db ICON_BIRD        ; PIDGEOTTO
-	db ICON_BIRD        ; PIDGEOT
+	db ICON_BIRD        ; STARLY
+	db ICON_BIRD        ; STARAVIA
+	db ICON_BIRD        ; STARAPTOR
 	db ICON_FOX         ; RATTATA
 	db ICON_FOX         ; RATICATE
 	db ICON_BIRD        ; SPEAROW

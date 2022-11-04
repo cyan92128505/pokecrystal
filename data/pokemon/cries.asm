@@ -19,11 +19,11 @@ PokemonCries::
 	mon_cry CRY_METAPOD,     204,  129 ; METAPOD
 	mon_cry CRY_CATERPIE,    119,  192 ; BUTTERFREE
 	mon_cry CRY_SPINARAK,      0,  500 ; HONEDGE
-	mon_cry CRY_SPINARAK,    -50,  450 ; DOUBLADE
-	mon_cry CRY_SPINARAK,   -150,  400 ; AEGISLASH
-	mon_cry CRY_PIDGEY,      223,  132 ; PIDGEY
-	mon_cry CRY_PIDGEOTTO,    40,  320 ; PIDGEOTTO
-	mon_cry CRY_PIDGEOTTO,    17,  383 ; PIDGEOT
+	mon_cry CRY_SPINARAK,    -150,  450 ; DOUBLADE
+	mon_cry CRY_SPINARAK,   -300,  400 ; AEGISLASH
+	mon_cry CRY_PIDGEY,      120,  132 ; STARLY
+	mon_cry CRY_PIDGEOTTO,   -100,  320 ; STARAVIA
+	mon_cry CRY_PIDGEOTTO,   -150,  380 ; STARAPTOR
 	mon_cry CRY_RATTATA,       0,  256 ; RATTATA
 	mon_cry CRY_RATTATA,      32,  383 ; RATICATE
 	mon_cry CRY_SPEAROW,       0,  256 ; SPEAROW

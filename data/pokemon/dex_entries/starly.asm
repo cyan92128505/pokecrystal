@@ -1,5 +1,5 @@
-	db "TINY BIRD@" ; species name
-	dw 100, 40 ; height, weight
+	db "STARLING@" ; species name
+	dw 100, 44 ; height, weight
 
 	db   "It rapidly flaps"
 	next "its wings in the"

@@ -37,7 +37,7 @@ INCBIN "gfx/footprints/butterfree.1bpp", footprint_top
 INCBIN "gfx/footprints/honedge.1bpp",     footprint_top
 INCBIN "gfx/footprints/doublade.1bpp",     footprint_top
 INCBIN "gfx/footprints/aegislash.1bpp",   footprint_top
-INCBIN "gfx/footprints/pidgey.1bpp",     footprint_top
+INCBIN "gfx/footprints/starly.1bpp",     footprint_top
 ; 009-016 bottom halves
 INCBIN "gfx/footprints/blastoise.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/caterpie.1bpp",   footprint_bottom
@@ -46,10 +46,10 @@ INCBIN "gfx/footprints/butterfree.1bpp", footprint_bottom
 INCBIN "gfx/footprints/honedge.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/doublade.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/aegislash.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/pidgey.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/starly.1bpp",     footprint_bottom
 ; 017-024 top halves
-INCBIN "gfx/footprints/pidgeotto.1bpp",  footprint_top
-INCBIN "gfx/footprints/pidgeot.1bpp",    footprint_top
+INCBIN "gfx/footprints/staravia.1bpp",  footprint_top
+INCBIN "gfx/footprints/staraptor.1bpp",    footprint_top
 INCBIN "gfx/footprints/rattata.1bpp",    footprint_top
 INCBIN "gfx/footprints/raticate.1bpp",   footprint_top
 INCBIN "gfx/footprints/spearow.1bpp",    footprint_top
@@ -57,8 +57,8 @@ INCBIN "gfx/footprints/fearow.1bpp",     footprint_top
 INCBIN "gfx/footprints/ekans.1bpp",      footprint_top
 INCBIN "gfx/footprints/arbok.1bpp",      footprint_top
 ; 017-024 bottom halves
-INCBIN "gfx/footprints/pidgeotto.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/pidgeot.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/staravia.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/staraptor.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/rattata.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/raticate.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/spearow.1bpp",    footprint_bottom

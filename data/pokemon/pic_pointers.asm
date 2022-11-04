@@ -33,12 +33,12 @@ PokemonPicPointers::
 	dba_pic DoubladeBackpic
 	dba_pic AegislashFrontpic
 	dba_pic AegislashBackpic
-	dba_pic PidgeyFrontpic
-	dba_pic PidgeyBackpic
-	dba_pic PidgeottoFrontpic
-	dba_pic PidgeottoBackpic
-	dba_pic PidgeotFrontpic
-	dba_pic PidgeotBackpic
+	dba_pic StarlyFrontpic
+	dba_pic StarlyBackpic
+	dba_pic StaraviaFrontpic
+	dba_pic StaraviaBackpic
+	dba_pic StaraptorFrontpic
+	dba_pic StaraptorBackpic
 	dba_pic RattataFrontpic
 	dba_pic RattataBackpic
 	dba_pic RaticateFrontpic

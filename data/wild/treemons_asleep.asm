@@ -10,7 +10,7 @@ AsleepTreeMonsNite:
 	db SPEAROW
 	db EKANS
 	db EXEGGCUTE
-	db PIDGEY
+	db STARLY
 	db BELDUM
 	db -1 ; end
 

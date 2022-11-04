@@ -15,9 +15,9 @@ AnimationPointers:
 	dw HonedgeAnimation
 	dw DoubladeAnimation
 	dw AegislashAnimation
-	dw PidgeyAnimation
-	dw PidgeottoAnimation
-	dw PidgeotAnimation
+	dw StarlyAnimation
+	dw StaraviaAnimation
+	dw StaraptorAnimation
 	dw RattataAnimation
 	dw RaticateAnimation
 	dw SpearowAnimation

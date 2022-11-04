@@ -64,7 +64,7 @@ CharcoalKilnFarfetchd:
 	faceplayer
 	opentext
 	writetext FarfetchdText
-	cry PIDGEY
+	cry STARLY
 	waitbutton
 	closetext
 	end

@@ -3,6 +3,7 @@
 AlphabeticalPokedexOrder:
 	table_width 1, AlphabeticalPokedexOrder
 	db ABRA
+	db AEGISLASH
 	db AERODACTYL
 	db ALAKAZAM
 	db AMPHAROS
@@ -12,8 +13,6 @@ AlphabeticalPokedexOrder:
 	db ARIADOS
 	db ARTICUNO
 	db BAGON
-	db GROVYLE
-	db AEGISLASH
 	db BELDUM
 	db BELLSPROUT
 	db BLASTOISE
@@ -28,23 +27,21 @@ AlphabeticalPokedexOrder:
 	db CHARIZARD
 	db CHARMANDER
 	db CHARMELEON
-	db TREECKO
+	db CHIMCHAR
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
 	db CLOYSTER
 	db CONKELDURR
+	db COTTONEE
 	db CROBAT
-	db FROGADIER
 	db CUBONE
-	db CHIMCHAR
 	db DARKRAI
 	db DEOXYS
 	db DIALGA
 	db DIGLETT
 	db DITTO
-	db ELECTIVIRE
-	db WHIMSICOTT
+	db DOUBLADE
 	db DRAGONAIR
 	db DRAGONITE
 	db DRATINI
@@ -56,6 +53,7 @@ AlphabeticalPokedexOrder:
 	db EEVEE
 	db EKANS
 	db ELECTABUZZ
+	db ELECTIVIRE
 	db ELECTRODE
 	db ENTEI
 	db ESPEON
@@ -63,9 +61,10 @@ AlphabeticalPokedexOrder:
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db FEAROW
-	db GRENINJA
 	db FLAAFFY
 	db FLAREON
+	db FROAKIE
+	db FROGADIER
 	db GABITE
 	db GALADE
 	db GARCHOMP
@@ -80,35 +79,36 @@ AlphabeticalPokedexOrder:
 	db GLISCOR
 	db GLOOM
 	db GOLBAT
-	db MAGMORTAR
 	db GOLDUCK
 	db GOLEM
 	db GRAVELER
+	db GRENINJA
 	db GRIMER
 	db GROUDON
+	db GROVYLE
 	db GROWLITHE
 	db GURDURR
 	db GYARADOS
 	db HAUNTER
 	db HERACROSS
-	db KLEFKI
 	db HO_OH
 	db HONCHKROW
+	db HONEDGE
 	db HOOTHOOT
 	db HORSEA
 	db HOUNDOOM
 	db HOUNDOUR
 	db HYPNO
+	db INFERNAPE
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON
 	db JYNX
 	db KADABRA
-	db DOUBLADE
-	db RHYPERIOR
 	db KINGDRA
 	db KINGLER
 	db KIRLIA
+	db KLEFKI
 	db KOFFING
 	db KRABBY
 	db KYOGRE
@@ -126,13 +126,13 @@ AlphabeticalPokedexOrder:
 	db MACHOP
 	db MAGIKARP
 	db MAGMAR
+	db MAGMORTAR
 	db MAGNEMITE
 	db MAGNETON
 	db MAGNEZONE
 	db MAMOSWINE
 	db MAREEP
 	db MAROWAK
-	db SCEPTILE
 	db MEOWTH
 	db METAGROSS
 	db METANG
@@ -143,6 +143,7 @@ AlphabeticalPokedexOrder:
 	db MISDREAVUS
 	db MISMAGIUS
 	db MOLTRES
+	db MONFERNO
 	db MR__MIME
 	db MUK
 	db MURKROW
@@ -160,10 +161,6 @@ AlphabeticalPokedexOrder:
 	db PARAS
 	db PARASECT
 	db PERSIAN
-	db COTTONEE
-	db PIDGEOT
-	db PIDGEOTTO
-	db PIDGEY
 	db PIKACHU
 	db PILOSWINE
 	db PINSIR
@@ -178,7 +175,6 @@ AlphabeticalPokedexOrder:
 	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE
-	db MONFERNO
 	db RAICHU
 	db RAIKOU
 	db RALTS
@@ -189,10 +185,12 @@ AlphabeticalPokedexOrder:
 	db REUNICLUS
 	db RHYDON
 	db RHYHORN
+	db RHYPERIOR
 	db RIOLU
 	db SALAMENCE
 	db SANDSHREW
 	db SANDSLASH
+	db SCEPTILE
 	db SCIZOR
 	db SCYTHER
 	db SEADRA
@@ -213,6 +211,9 @@ AlphabeticalPokedexOrder:
 	db SPINARAK
 	db SPIRITOMB
 	db SQUIRTLE
+	db STARAPTOR
+	db STARAVIA
+	db STARLY
 	db STARMIE
 	db STARYU
 	db STEELIX
@@ -227,8 +228,7 @@ AlphabeticalPokedexOrder:
 	db TOGEKISS
 	db TOGEPI
 	db TOGETIC
-	db FROAKIE
-	db INFERNAPE
+	db TREECKO
 	db TYRANITAR
 	db UMBREON
 	db UNOWN
@@ -243,9 +243,9 @@ AlphabeticalPokedexOrder:
 	db VULPIX
 	db WARTORTLE
 	db WEAVILE
-	db HONEDGE
 	db WEEPINBELL
 	db WEEZING
+	db WHIMSICOTT
 	db WIGGLYTUFF
 	db WOBBUFFET
 	db WOOPER

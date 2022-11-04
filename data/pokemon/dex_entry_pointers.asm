@@ -16,9 +16,9 @@ PokedexDataPointerTable:
 	dw HonedgePokedexEntry
 	dw DoubladePokedexEntry
 	dw AegislashPokedexEntry
-	dw PidgeyPokedexEntry
-	dw PidgeottoPokedexEntry
-	dw PidgeotPokedexEntry
+	dw StarlyPokedexEntry
+	dw StaraviaPokedexEntry
+	dw StaraptorPokedexEntry
 	dw RattataPokedexEntry
 	dw RaticatePokedexEntry
 	dw SpearowPokedexEntry

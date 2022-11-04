@@ -173,7 +173,7 @@ Copycat:
 CopycatsDodrio:
 	opentext
 	writetext CopycatsDodrioText1
-	cry PIDGEOT
+	cry STARAPTOR
 	promptbutton
 	writetext CopycatsDodrioText2
 	waitbutton
@@ -340,7 +340,7 @@ CopycatText_Female_3:
 	done
 
 CopycatsDodrioText1:
-	text "PIDGEOT: Gii giii!"
+	text "STARAPTOR: Gii giii!"
 	done
 
 CopycatsDodrioText2:

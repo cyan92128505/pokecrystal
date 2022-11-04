@@ -15,9 +15,9 @@ BitmasksPointers:
 	dw HonedgeBitmasks
 	dw DoubladeBitmasks
 	dw AegislashBitmasks
-	dw PidgeyBitmasks
-	dw PidgeottoBitmasks
-	dw PidgeotBitmasks
+	dw StarlyBitmasks
+	dw StaraviaBitmasks
+	dw StaraptorBitmasks
 	dw RattataBitmasks
 	dw RaticateBitmasks
 	dw SpearowBitmasks

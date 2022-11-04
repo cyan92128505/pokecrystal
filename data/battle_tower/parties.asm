@@ -5953,4 +5953,30 @@ BattleTowerMons:
 	bigdw 248 ; SDef
 	db "RANTA-N@@@@"
 
+	db STARAPTOR
+	db LIFE_ORB
+	db BRAVE_BIRD, DOUBLE_EDGE, CLOSE_COMBAT, EXTREMESPEED
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 24, 24, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 373 ; HP
+	bigdw 373 ; Max HP
+	bigdw 338 ; Atk
+	bigdw 238 ; Def
+	bigdw 298 ; Spd
+	bigdw 198 ; SAtk
+	bigdw 218 ; SDef
+	db "RANTA-N@@@@"
+
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

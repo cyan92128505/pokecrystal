@@ -35,7 +35,7 @@ SquirtleEggMoves:
 	db FLAIL
 	db -1 ; end
 
-PidgeyEggMoves:
+StarlyEggMoves:
 	db PURSUIT
 	db NIGHT_SLASH
 	db FORESIGHT

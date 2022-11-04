@@ -17,9 +17,9 @@ KantoMonSpecials:
 	db  20 ; HONEDGE
 	db  25 ; DOUBLADE
 	db  45 ; AEGISLASH
-	db  35 ; PIDGEY
-	db  50 ; PIDGEOTTO
-	db  70 ; PIDGEOT
+	db  35 ; STARLY
+	db  50 ; STARAVIA
+	db  70 ; STARAPTOR
 	db  25 ; RATTATA
 	db  50 ; RATICATE
 	db  31 ; SPEAROW

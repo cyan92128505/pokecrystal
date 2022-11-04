@@ -343,16 +343,16 @@ JohtoGrassWildMons:
 	; morn
 	db 12, NIDORAN_M
 	db 12, NIDORAN_F
-	db 14, PIDGEY
-	db 13, PIDGEY
+	db 14, STARLY
+	db 13, STARLY
 	db 10, CATERPIE
 	db 10, CATERPIE
 	db 10, CATERPIE
 	; day
 	db 12, NIDORAN_F
 	db 12, NIDORAN_M
-	db 14, PIDGEY
-	db 13, PIDGEY
+	db 14, STARLY
+	db 13, STARLY
 	db 10, CATERPIE
 	db 10, CATERPIE
 	db 10, CATERPIE
@@ -569,7 +569,7 @@ JohtoGrassWildMons:
 	db 5, CATERPIE
 	db 7, METAPOD
 	db 7, METAPOD
-	db 7, PIDGEY
+	db 7, STARLY
 	db 6, PARAS
 	db 6, PARAS
 	; day
@@ -577,7 +577,7 @@ JohtoGrassWildMons:
 	db 5, CATERPIE
 	db 7, METAPOD
 	db 7, METAPOD
-	db 7, PIDGEY
+	db 7, STARLY
 	db 6, PARAS
 	db 6, PARAS
 	; nite
@@ -1237,18 +1237,18 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
-	db 2, PIDGEY
-	db 3, PIDGEY
-	db 3, PIDGEY
+	db 2, STARLY
+	db 2, STARLY
+	db 3, STARLY
+	db 3, STARLY
 	db 2, RATTATA
 	db 3, TIMBURR
 	db 3, TIMBURR
 	; day
-	db 2, PIDGEY
-	db 2, PIDGEY
-	db 3, PIDGEY
-	db 3, PIDGEY
+	db 2, STARLY
+	db 2, STARLY
+	db 3, STARLY
+	db 3, STARLY
 	db 2, RATTATA
 	db 3, TIMBURR
 	db 3, TIMBURR
@@ -1265,18 +1265,18 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, PIDGEY
+	db 3, STARLY
 	db 3, CATERPIE
 	db 4, CATERPIE
-	db 4, PIDGEY
+	db 4, STARLY
 	db 3, CATERPIE
 	db 4, TIMBURR
 	db 4, TIMBURR
 	; day
-	db 3, PIDGEY
+	db 3, STARLY
 	db 3, CATERPIE
 	db 4, CATERPIE
-	db 4, PIDGEY
+	db 4, STARLY
 	db 3, CATERPIE
 	db 4, TIMBURR
 	db 4, TIMBURR
@@ -1293,18 +1293,18 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_31
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, PIDGEY
+	db 4, STARLY
 	db 4, CATERPIE
 	db 5, BELLSPROUT
-	db 5, PIDGEY
+	db 5, STARLY
 	db 4, CATERPIE
 	db 5, TIMBURR
 	db 5, TIMBURR
 	; day
-	db 4, PIDGEY
+	db 4, STARLY
 	db 4, CATERPIE
 	db 5, BELLSPROUT
-	db 5, PIDGEY
+	db 5, STARLY
 	db 4, CATERPIE
 	db 5, TIMBURR
 	db 5, TIMBURR
@@ -1325,7 +1325,7 @@ JohtoGrassWildMons:
 	db 5, RATTATA
 	db 7, BELLSPROUT
 	db 6, TIMBURR
-	db 7, PIDGEY
+	db 7, STARLY
 	db 7, TIMBURR
 	db 7, TIMBURR
 	; day
@@ -1333,7 +1333,7 @@ JohtoGrassWildMons:
 	db 5, RATTATA
 	db 7, BELLSPROUT
 	db 6, TIMBURR
-	db 7, PIDGEY
+	db 7, STARLY
 	db 7, TIMBURR
 	db 7, TIMBURR
 	; nite
@@ -1379,7 +1379,7 @@ JohtoGrassWildMons:
 	; morn
 	db 10, RATTATA
 	db 11, RATTATA
-	db 12, PIDGEY
+	db 12, STARLY
 	db 10, ABRA
 	db 12, JIGGLYPUFF
 	db 10, DITTO
@@ -1387,7 +1387,7 @@ JohtoGrassWildMons:
 	; day
 	db 10, RATTATA
 	db 11, RATTATA
-	db 12, PIDGEY
+	db 12, STARLY
 	db 10, ABRA
 	db 12, JIGGLYPUFF
 	db 10, DITTO
@@ -1406,7 +1406,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 12, RATTATA
-	db 14, PIDGEY
+	db 14, STARLY
 	db 13, GROWLITHE
 	db 10, ABRA
 	db 12, JIGGLYPUFF
@@ -1414,7 +1414,7 @@ JohtoGrassWildMons:
 	db 12, YANMA
 	; day
 	db 12, RATTATA
-	db 14, PIDGEY
+	db 14, STARLY
 	db 13, GROWLITHE
 	db 10, ABRA
 	db 12, JIGGLYPUFF
@@ -1433,21 +1433,21 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_36
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, STARLY
+	db 4, STARLY
 	db 5, BELLSPROUT
 	db 5, GROWLITHE
-	db 5, PIDGEY
-	db 6, PIDGEY
-	db 6, PIDGEY
+	db 5, STARLY
+	db 6, STARLY
+	db 6, STARLY
 	; day
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, STARLY
+	db 4, STARLY
 	db 5, BELLSPROUT
 	db 5, GROWLITHE
-	db 5, PIDGEY
-	db 6, PIDGEY
-	db 6, PIDGEY
+	db 5, STARLY
+	db 6, STARLY
+	db 6, STARLY
 	; nite
 	db 4, SPINARAK
 	db 4, HOOTHOOT
@@ -1461,21 +1461,21 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_37
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, PIDGEY
+	db 13, STARLY
 	db 14, GROWLITHE
-	db 15, PIDGEY
+	db 15, STARLY
 	db 16, GROWLITHE
-	db 15, PIDGEOTTO
-	db 15, PIDGEOTTO
-	db 15, PIDGEOTTO
+	db 15, STARAVIA
+	db 15, STARAVIA
+	db 15, STARAVIA
 	; day
-	db 13, PIDGEY
+	db 13, STARLY
 	db 14, GROWLITHE
-	db 15, PIDGEY
+	db 15, STARLY
 	db 16, GROWLITHE
-	db 15, PIDGEOTTO
-	db 15, PIDGEY
-	db 15, PIDGEY
+	db 15, STARAVIA
+	db 15, STARLY
+	db 15, STARLY
 	; nite
 	db 13, SPINARAK
 	db 14, HOOTHOOT
@@ -1492,7 +1492,7 @@ JohtoGrassWildMons:
 	db 16, RATTATA
 	db 16, RATICATE
 	db 16, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, STARAVIA
 	db 13, TAUROS
 	db 13, MILTANK
 	db 13, MILTANK
@@ -1500,7 +1500,7 @@ JohtoGrassWildMons:
 	db 16, RATTATA
 	db 16, RATICATE
 	db 16, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, STARAVIA
 	db 13, TAUROS
 	db 13, MILTANK
 	db 13, MILTANK
@@ -1520,7 +1520,7 @@ JohtoGrassWildMons:
 	db 16, RATTATA
 	db 16, RATICATE
 	db 16, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, STARAVIA
 	db 15, MILTANK
 	db 15, TAUROS
 	db 15, TAUROS
@@ -1528,7 +1528,7 @@ JohtoGrassWildMons:
 	db 16, RATTATA
 	db 16, RATICATE
 	db 16, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, STARAVIA
 	db 15, MILTANK
 	db 15, TAUROS
 	db 15, TAUROS
@@ -1573,17 +1573,17 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, PIDGEY
-	db 16, PIDGEOTTO
-	db 16, PIDGEOTTO
+	db 15, STARLY
+	db 16, STARAVIA
+	db 16, STARAVIA
 	db 15, RATICATE
 	db 17, RATICATE
 	db 17, RATICATE
 	db 17, RATICATE
 	; day
-	db 15, PIDGEY
-	db 16, PIDGEOTTO
-	db 16, PIDGEOTTO
+	db 15, STARLY
+	db 16, STARAVIA
+	db 16, STARAVIA
 	db 15, RATICATE
 	db 17, RATICATE
 	db 17, RATICATE
@@ -1689,17 +1689,17 @@ JohtoGrassWildMons:
 	db 42, PONYTA
 	db 42, ARBOK
 	db 44, RAPIDASH
-	db 41, PIDGEOT
-	db 43, PIDGEOT
-	db 43, PIDGEOT
+	db 41, STARAPTOR
+	db 43, STARAPTOR
+	db 43, STARAPTOR
 	; day
 	db 41, GLOOM
 	db 42, PONYTA
 	db 42, ARBOK
 	db 44, RAPIDASH
-	db 41, PIDGEOT
-	db 43, PIDGEOT
-	db 43, PIDGEOT
+	db 41, STARAPTOR
+	db 43, STARAPTOR
+	db 43, STARAPTOR
 	; nite
 	db 41, GLOOM
 	db 42, POLIWHIRL

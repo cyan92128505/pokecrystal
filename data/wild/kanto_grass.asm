@@ -173,21 +173,21 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
+	db 2, STARLY
 	db 2, RATTATA
-	db 3, PIDGEY
-	db 3, PIDGEY
+	db 3, STARLY
+	db 3, STARLY
 	db 6, RATICATE
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, STARLY
+	db 4, STARLY
 	; day
-	db 2, PIDGEY
+	db 2, STARLY
 	db 2, RATTATA
-	db 3, PIDGEY
-	db 3, PIDGEY
+	db 3, STARLY
+	db 3, STARLY
 	db 6, RATICATE
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, STARLY
+	db 4, STARLY
 	; nite
 	db 2, HOOTHOOT
 	db 2, RATTATA
@@ -202,18 +202,18 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, CATERPIE
-	db 3, PIDGEY
-	db 5, PIDGEY
+	db 3, STARLY
+	db 5, STARLY
 	db 7, BUTTERFREE
-	db 7, PIDGEOTTO
+	db 7, STARAVIA
 	db 4, PIKACHU
 	db 4, PIKACHU
 	; day
 	db 3, CATERPIE
-	db 3, PIDGEY
-	db 5, PIDGEY
+	db 3, STARLY
+	db 5, STARLY
 	db 7, BUTTERFREE
-	db 7, PIDGEOTTO
+	db 7, STARAVIA
 	db 4, PIKACHU
 	db 4, PIKACHU
 	; nite
@@ -285,17 +285,17 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_5
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, PIDGEY
+	db 13, STARLY
 	db 13, RATTATA
-	db 15, PIDGEOTTO
+	db 15, STARAVIA
 	db 12, ABRA
 	db 14, JIGGLYPUFF
 	db 14, ABRA
 	db 14, ABRA
 	; day
-	db 13, PIDGEY
+	db 13, STARLY
 	db 13, RATTATA
-	db 15, PIDGEOTTO
+	db 15, STARAVIA
 	db 12, ABRA
 	db 14, JIGGLYPUFF
 	db 14, ABRA
@@ -370,7 +370,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 17, RATTATA
-	db 19, PIDGEOTTO
+	db 19, STARAVIA
 	db 16, ABRA
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
@@ -378,7 +378,7 @@ KantoGrassWildMons:
 	db 18, KADABRA
 	; day
 	db 17, RATTATA
-	db 19, PIDGEOTTO
+	db 19, STARAVIA
 	db 16, ABRA
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
@@ -456,7 +456,7 @@ KantoGrassWildMons:
 	db 14, TIMBURR
 	db 13, RATICATE
 	db 15, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, STARAVIA
 	db 16, RATTATA
 	db 16, TIMBURR
 	db 16, TIMBURR
@@ -464,7 +464,7 @@ KantoGrassWildMons:
 	db 14, TIMBURR
 	db 13, RATICATE
 	db 15, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, STARAVIA
 	db 16, RATTATA
 	db 16, TIMBURR
 	db 16, TIMBURR
@@ -483,7 +483,7 @@ KantoGrassWildMons:
 	; morn
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, STARAVIA
 	db 25, TIMBURR
 	db 27, TIMBURR
 	db 27, TIMBURR
@@ -491,7 +491,7 @@ KantoGrassWildMons:
 	; day
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, STARAVIA
 	db 25, TIMBURR
 	db 27, TIMBURR
 	db 27, TIMBURR
@@ -511,7 +511,7 @@ KantoGrassWildMons:
 	; morn
 	db 26, NIDORINO
 	db 26, NIDORINA
-	db 28, PIDGEOTTO
+	db 28, STARAVIA
 	db 28, TIMBURR
 	db 30, GURDURR
 	db 30, GURDURR
@@ -519,7 +519,7 @@ KantoGrassWildMons:
 	; day
 	db 26, NIDORINO
 	db 26, NIDORINA
-	db 28, PIDGEOTTO
+	db 28, STARAVIA
 	db 28, TIMBURR
 	db 30, GURDURR
 	db 30, GURDURR
@@ -539,7 +539,7 @@ KantoGrassWildMons:
 	; morn
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, STARAVIA
 	db 25, TIMBURR
 	db 27, TIMBURR
 	db 27, TIMBURR
@@ -547,7 +547,7 @@ KantoGrassWildMons:
 	; day
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, STARAVIA
 	db 25, TIMBURR
 	db 27, TIMBURR
 	db 27, TIMBURR
@@ -714,7 +714,7 @@ KantoGrassWildMons:
 	db 14, BUTTERFREE
 	; day
 	db 8, CATERPIE
-	db 12, PIDGEY
+	db 12, STARLY
 	db 10, CATERPIE
 	db 12, ABRA
 	db 10, BELLSPROUT
@@ -734,16 +734,16 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, CATERPIE
-	db 10, PIDGEY
-	db 12, PIDGEOTTO
+	db 10, STARLY
+	db 12, STARAVIA
 	db 12, METAPOD
 	db 10, BELLSPROUT
 	db 14, BUTTERFREE
 	db 14, BUTTERFREE
 	; day
 	db 10, CATERPIE
-	db 10, PIDGEY
-	db 12, PIDGEOTTO
+	db 10, STARLY
+	db 12, STARAVIA
 	db 12, METAPOD
 	db 10, BELLSPROUT
 	db 14, BUTTERFREE
@@ -794,16 +794,16 @@ KantoGrassWildMons:
 	db 30, RATICATE
 	db 30, SPEAROW
 	db 32, PONYTA
-	db 30, PIDGEOT
-	db 30, PIDGEOT
+	db 30, STARAPTOR
+	db 30, STARAPTOR
 	; day
 	db 28, SPEAROW
 	db 28, ARBOK
 	db 30, RATICATE
 	db 30, SPEAROW
 	db 32, PONYTA
-	db 30, PIDGEOT
-	db 30, PIDGEOT
+	db 30, STARAPTOR
+	db 30, STARAPTOR
 	; nite
 	db 28, QUAGSIRE
 	db 28, NOCTOWL
@@ -822,16 +822,16 @@ KantoGrassWildMons:
 	db 40, RAPIDASH
 	db 42, ARBOK
 	db 41, SPEAROW
-	db 43, PIDGEOT
-	db 43, PIDGEOT
+	db 43, STARAPTOR
+	db 43, STARAPTOR
 	; day
 	db 39, GLOOM
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
 	db 41, SPEAROW
-	db 43, PIDGEOT
-	db 43, PIDGEOT
+	db 43, STARAPTOR
+	db 43, STARAPTOR
 	; nite
 	db 39, GLOOM
 	db 40, POLIWHIRL

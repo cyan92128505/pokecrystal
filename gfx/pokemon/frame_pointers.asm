@@ -15,9 +15,9 @@ FramesPointers:
 	dw HonedgeFrames
 	dw DoubladeFrames
 	dw AegislashFrames
-	dw PidgeyFrames
-	dw PidgeottoFrames
-	dw PidgeotFrames
+	dw StarlyFrames
+	dw StaraviaFrames
+	dw StaraptorFrames
 	dw RattataFrames
 	dw RaticateFrames
 	dw SpearowFrames

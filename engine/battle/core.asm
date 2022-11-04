@@ -4362,7 +4362,7 @@ SwitchInEffects:
     cp GROUDON
     jr z, .sun
     cp TYRANITAR
-    jr z,  .sand
+    jp z,  .sand
     cp RAYQUAZA
     jp z, .clear
     cp GENESECT
@@ -4388,6 +4388,8 @@ SwitchInEffects:
     cp ARBOK
     jp z, .atkDown
     cp TAUROS
+    jp z, .atkDown
+    cp STARAPTOR
     jp z, .atkDown
     cp AEGISLASH
     jp z, .defenseMode

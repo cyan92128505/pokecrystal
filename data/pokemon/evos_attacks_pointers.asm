@@ -17,9 +17,9 @@ EvosAttacksPointers::
 	dw HonedgeEvosAttacks
 	dw DoubladeEvosAttacks
 	dw AegislashEvosAttacks
-	dw PidgeyEvosAttacks
-	dw PidgeottoEvosAttacks
-	dw PidgeotEvosAttacks
+	dw StarlyEvosAttacks
+	dw StaraviaEvosAttacks
+	dw StaraptorEvosAttacks
 	dw RattataEvosAttacks
 	dw RaticateEvosAttacks
 	dw SpearowEvosAttacks

@@ -249,7 +249,7 @@ KarenGroup:
 KogaGroup:
 	; KOGA (1)
 	db "KOGA@", TRAINERTYPE_MOVES
-	db 40, ARIADOS,    DOUBLE_TEAM, SPIDER_WEB, BATON_PASS, GIGA_DRAIN
+	db 40, GALVANTULA,    DOUBLE_TEAM, SPIDER_WEB, BATON_PASS, GIGA_DRAIN
 	db 41, VOLCARONA,   SUPERSONIC, GUST, PSYCHIC_M, TOXIC
 	db 43, SALAMENCE, PROTECT, SWIFT, EXPLOSION, SPIKES
 	db 42, MUK,        HARDEN, ACID_ARMOR, SLUDGE_BOMB, TOXIC
@@ -363,8 +363,8 @@ YoungsterGroup:
 	db "SAMUEL@", TRAINERTYPE_NORMAL
 	db  7, RATTATA
 	db 10, SANDSHREW
-	db  8, SPEAROW
-	db  8, SPEAROW
+	db  8, BUNEARY
+	db  8, BUNEARY
 	db -1 ; end
 
 	; YOUNGSTER (6)
@@ -385,7 +385,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (9)
 	db "WARREN@", TRAINERTYPE_NORMAL
-	db 35, FEAROW
+	db 35, LOPUNNY
 	db -1 ; end
 
 	; YOUNGSTER (10)
@@ -611,7 +611,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (2)
 	db "ABE@", TRAINERTYPE_NORMAL
-	db  9, SPEAROW
+	db  9, BUNEARY
 	db -1 ; end
 
 	; BIRD_KEEPER (3)
@@ -638,9 +638,9 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (6)
 	db "DENIS@", TRAINERTYPE_NORMAL
-	db 18, SPEAROW
-	db 20, FEAROW
-	db 18, SPEAROW
+	db 18, BUNEARY
+	db 20, LOPUNNY
+	db 18, BUNEARY
 	db -1 ; end
 
 	; BIRD_KEEPER (7)
@@ -657,8 +657,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (9)
 	db "ROY@", TRAINERTYPE_NORMAL
-	db 29, FEAROW
-	db 35, FEAROW
+	db 29, LOPUNNY
+	db 35, LOPUNNY
 	db -1 ; end
 
 	; BIRD_KEEPER (10)
@@ -682,7 +682,7 @@ BirdKeeperGroup:
 	db "PETER@", TRAINERTYPE_NORMAL
 	db  6, STARLY
 	db  6, STARLY
-	db  8, SPEAROW
+	db  8, BUNEARY
 	db -1 ; end
 
 	; BIRD_KEEPER (14)
@@ -698,7 +698,7 @@ BirdKeeperGroup:
 	; BIRD_KEEPER (16)
 	db "BRET@", TRAINERTYPE_NORMAL
 	db 32, STARAVIA
-	db 32, FEAROW
+	db 32, LOPUNNY
 	db -1 ; end
 
 	; BIRD_KEEPER (17)
@@ -860,7 +860,7 @@ JanineGroup:
 	db 36, CROBAT,     SCREECH, SUPERSONIC, CONFUSE_RAY, WING_ATTACK
 	db 36, WEEZING,    POISON_GAS, SLUDGE_BOMB, TOXIC, EXPLOSION
 	db 36, WEEZING,    POISON_GAS, SLUDGE_BOMB, TOXIC, EXPLOSION
-	db 33, ARIADOS,    SCARY_FACE, GIGA_DRAIN, BATON_PASS, NIGHT_SHADE
+	db 33, GALVANTULA,    SCARY_FACE, GIGA_DRAIN, BATON_PASS, NIGHT_SHADE
 	db 39, VOLCARONA,   FORESIGHT, DOUBLE_TEAM, GUST, PSYCHIC_M
 	db -1 ; end
 
@@ -1611,7 +1611,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (9)
 	db "KEN@", TRAINERTYPE_NORMAL
-	db 30, ARIADOS
+	db 30, GALVANTULA
 	db 32, PINSIR
 	db -1 ; end
 
@@ -1633,7 +1633,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (12)
 	db "DOUG@", TRAINERTYPE_NORMAL
-	db 34, ARIADOS
+	db 34, GALVANTULA
 	db -1 ; end
 
 	; BUG_CATCHER (13)
@@ -3337,7 +3337,7 @@ CamperGroup:
 
 	; CAMPER (22)
 	db "QUENTIN@", TRAINERTYPE_NORMAL
-	db 30, FEAROW
+	db 30, LOPUNNY
 	db 30, BRELOOM
 	db 30, TAUROS
 	db -1 ; end
@@ -3645,7 +3645,7 @@ KimonoGirlGroup:
 TwinsGroup:
 	; TWINS (1)
 	db "AMY & MAY@", TRAINERTYPE_NORMAL
-	db 10, SPINARAK
+	db 10, VOLTIK
 	db 10, DRILBUR
 	db -1 ; end
 
@@ -3664,7 +3664,7 @@ TwinsGroup:
 	; TWINS (4)
 	db "AMY & MAY@", TRAINERTYPE_NORMAL
 	db 10, DRILBUR
-	db 10, SPINARAK
+	db 10, VOLTIK
 	db -1 ; end
 
 	; TWINS (5)

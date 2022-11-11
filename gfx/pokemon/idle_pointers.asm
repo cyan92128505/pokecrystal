@@ -20,8 +20,8 @@ AnimationIdlePointers:
 	dw StaraptorAnimationIdle
 	dw RattataAnimationIdle
 	dw RaticateAnimationIdle
-	dw SpearowAnimationIdle
-	dw FearowAnimationIdle
+	dw BunearyAnimationIdle
+	dw LopunnyAnimationIdle
 	dw EkansAnimationIdle
 	dw ArbokAnimationIdle
 	dw PikachuAnimationIdle
@@ -166,8 +166,8 @@ AnimationIdlePointers:
 	dw NoctowlAnimationIdle
 	dw DrilburAnimationIdle
 	dw ExcadrillAnimationIdle
-	dw SpinarakAnimationIdle
-	dw AriadosAnimationIdle
+	dw VoltikAnimationIdle
+	dw GalvantulaAnimationIdle
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle

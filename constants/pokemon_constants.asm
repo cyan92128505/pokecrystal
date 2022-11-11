@@ -34,13 +34,13 @@
 	const HONEDGE    ; 0d
 	const DOUBLADE   ; 0e
 	const AEGISLASH  ; 0f
-	const STARLY     ; 10 ....
-	const STARAVIA  ; 11 ....
-	const STARAPTOR    ; 12 staraptor
+	const STARLY     ; 10
+	const STARAVIA   ; 11
+	const STARAPTOR  ; 12
 	const RATTATA    ; 13
 	const RATICATE   ; 14
-	const SPEAROW    ; 15  ....
-	const FEAROW     ; 16  lopunny
+	const BUNEARY    ; 15  ....
+	const LOPUNNY     ; 16  lopunny
 	const EKANS      ; 17 *
 	const ARBOK      ; 18 *
 	const PIKACHU    ; 19
@@ -78,9 +78,9 @@
 	const BRELOOM    ; 39
 	const GROWLITHE  ; 3a
 	const ARCANINE   ; 3b
-	const POLIWAG    ; 3c *
-	const POLIWHIRL  ; 3d *
-	const POLIWRATH  ; 3e *
+	const POLIWAG    ; 3c
+	const POLIWHIRL  ; 3d
+	const POLIWRATH  ; 3e
 	const ABRA       ; 3f
 	const KADABRA    ; 40
 	const ALAKAZAM   ; 41
@@ -181,13 +181,13 @@ JOHTO_POKEMON EQU const_value
 	const FROGADIER  ; 9f
 	const GRENINJA   ; a0
 	const RIOLU      ; a1
-	const LUCARIO    ; a2 *
-	const HOOTHOOT   ; a3 *
+	const LUCARIO    ; a2
+	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
 	const DRILBUR    ; a5
 	const EXCADRILL  ; a6
-	const SPINARAK   ; a7   ....
-	const ARIADOS    ; a8   Galvantula
+	const VOLTIK   ; a7   ....
+	const GALVANTULA    ; a8   Galvantula
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab

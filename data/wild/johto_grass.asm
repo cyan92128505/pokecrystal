@@ -359,7 +359,7 @@ JohtoGrassWildMons:
 	; nite
 	db 12, PSYDUCK
 	db 13, HOOTHOOT
-	db 14, SPINARAK
+	db 14, VOLTIK
 	db 15, HOOTHOOT
 	db 10, LARVESTA
 	db 12, LARVESTA
@@ -1281,7 +1281,7 @@ JohtoGrassWildMons:
 	db 4, TIMBURR
 	db 4, TIMBURR
 	; nite
-	db 3, SPINARAK
+	db 3, VOLTIK
 	db 3, HOOTHOOT
 	db 4, POLIWAG
 	db 4, HOOTHOOT
@@ -1309,7 +1309,7 @@ JohtoGrassWildMons:
 	db 5, TIMBURR
 	db 5, TIMBURR
 	; nite
-	db 4, SPINARAK
+	db 4, VOLTIK
 	db 4, POLIWAG
 	db 5, BELLSPROUT
 	db 5, HOOTHOOT
@@ -1350,7 +1350,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 6, RATTATA
-	db 6, SPEAROW
+	db 6, BUNEARY
 	db 6, GEODUDE
 	db 6, TIMBURR
 	db 7, EKANS
@@ -1358,7 +1358,7 @@ JohtoGrassWildMons:
 	db 7, TIMBURR
 	; day
 	db 6, RATTATA
-	db 6, SPEAROW
+	db 6, BUNEARY
 	db 6, GEODUDE
 	db 6, TIMBURR
 	db 7, EKANS
@@ -1449,7 +1449,7 @@ JohtoGrassWildMons:
 	db 6, STARLY
 	db 6, STARLY
 	; nite
-	db 4, SPINARAK
+	db 4, VOLTIK
 	db 4, HOOTHOOT
 	db 5, BELLSPROUT
 	db 5, HOOTHOOT
@@ -1477,13 +1477,13 @@ JohtoGrassWildMons:
 	db 15, STARLY
 	db 15, STARLY
 	; nite
-	db 13, SPINARAK
+	db 13, VOLTIK
 	db 14, HOOTHOOT
 	db 15, HOOTHOOT
 	db 16, NOCTOWL
 	db 15, NOCTOWL
-	db 15, ARIADOS
-	db 15, ARIADOS
+	db 15, GALVANTULA
+	db 15, GALVANTULA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_38
@@ -1546,20 +1546,20 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 13, EKANS
-	db 14, SPEAROW
+	db 14, BUNEARY
 	db 15, RATTATA
 	db 16, RATICATE
 	db 15, ARBOK
-	db 16, FEAROW
-	db 16, FEAROW
+	db 16, LOPUNNY
+	db 16, LOPUNNY
 	; day
 	db 13, EKANS
-	db 14, SPEAROW
+	db 14, BUNEARY
 	db 15, RATTATA
 	db 16, RATICATE
 	db 15, ARBOK
-	db 16, FEAROW
-	db 16, FEAROW
+	db 16, LOPUNNY
+	db 16, LOPUNNY
 	; nite
 	db 13, RATTATA
 	db 14, ZUBAT
@@ -1658,7 +1658,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, GEODUDE
-	db 2, SPEAROW
+	db 2, BUNEARY
 	db 3, GEODUDE
 	db 3, RATTATA
 	db 2, COTTONEE
@@ -1666,7 +1666,7 @@ JohtoGrassWildMons:
 	db 2, RATTATA
 	; day
 	db 2, GEODUDE
-	db 2, SPEAROW
+	db 2, BUNEARY
 	db 3, GEODUDE
 	db 3, RATTATA
 	db 2, RATTATA

@@ -1730,7 +1730,6 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	cp DYNAMICPUNCH
 	jr nz, .notDynamicPunch
-
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -1739,8 +1738,25 @@ BattleCommand_CheckHit:
 .checkMachamp
 	cp MACHAMP
 	ret z
-
 .notDynamicPunch
+
+; AndrewNote - make thunder always hit for galvantula and joltik
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp THUNDER
+	jr nz, .notThunder
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkGalvantula
+	ld a, [wBattleMonSpecies]
+.checkGalvantula
+    cp VOLTIK
+    ret z
+	cp GALVANTULA
+	ret z
+.notThunder
+
 	call .StatModifiers
 
 	ld a, [wPlayerMoveStruct + MOVE_ACC]

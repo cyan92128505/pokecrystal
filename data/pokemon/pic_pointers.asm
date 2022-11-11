@@ -43,10 +43,10 @@ PokemonPicPointers::
 	dba_pic RattataBackpic
 	dba_pic RaticateFrontpic
 	dba_pic RaticateBackpic
-	dba_pic SpearowFrontpic
-	dba_pic SpearowBackpic
-	dba_pic FearowFrontpic
-	dba_pic FearowBackpic
+	dba_pic BunearyFrontpic
+	dba_pic BunearyBackpic
+	dba_pic LopunnyFrontpic
+	dba_pic LopunnyBackpic
 	dba_pic EkansFrontpic
 	dba_pic EkansBackpic
 	dba_pic ArbokFrontpic
@@ -335,10 +335,10 @@ PokemonPicPointers::
 	dba_pic DrilburBackpic
 	dba_pic ExcadrillFrontpic
 	dba_pic ExcadrillBackpic
-	dba_pic SpinarakFrontpic
-	dba_pic SpinarakBackpic
-	dba_pic AriadosFrontpic
-	dba_pic AriadosBackpic
+	dba_pic VoltikFrontpic
+	dba_pic VoltikBackpic
+	dba_pic GalvantulaFrontpic
+	dba_pic GalvantulaBackpic
 	dba_pic CrobatFrontpic
 	dba_pic CrobatBackpic
 	dba_pic ChinchouFrontpic

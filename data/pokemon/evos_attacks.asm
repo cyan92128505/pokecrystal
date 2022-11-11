@@ -325,31 +325,36 @@ RaticateEvosAttacks:
 	db 40, SUPER_FANG
 	db 0 ; no more level-up moves
 
-SpearowEvosAttacks:
-	db EVOLVE_LEVEL, 20, FEAROW
+BunearyEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_ANYTIME, LOPUNNY
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, GROWL
-	db 7, LEER
-	db 13, FURY_ATTACK
-	db 25, PURSUIT
-	db 31, MIRROR_MOVE
-	db 37, DRILL_PECK
-	db 43, AGILITY
+	db 1, POUND
+	db 1, SPLASH
+	db 1, DEFENSE_CURL
+	db 12, QUICK_ATTACK
+	db 16, CHARM
+	db 20, DOUBLE_KICK
+	db 24, AGILITY
+	db 28, BATON_PASS
+	db 32, HEADBUTT
+	db 36, HI_JUMP_KICK
+	db 40, MEGA_KICK
 	db 0 ; no more level-up moves
 
-FearowEvosAttacks:
+LopunnyEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, GROWL
-	db 1, LEER
-	db 1, FURY_ATTACK
-	db 7, LEER
-	db 13, FURY_ATTACK
-	db 26, PURSUIT
-	db 32, MIRROR_MOVE
-	db 40, DRILL_PECK
-	db 47, AGILITY
+	db 1, POUND
+	db 1, SPLASH
+	db 1, DEFENSE_CURL
+	db 12, QUICK_ATTACK
+	db 16, CHARM
+	db 20, DOUBLE_KICK
+	db 24, AGILITY
+	db 28, BATON_PASS
+	db 32, HEADBUTT
+	db 36, HI_JUMP_KICK
+	db 40, MEGA_KICK
+	db 44, ENCORE
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
@@ -2337,30 +2342,37 @@ ExcadrillEvosAttacks:
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
-SpinarakEvosAttacks:
-	db EVOLVE_LEVEL, 22, ARIADOS
+VoltikEvosAttacks:
+	db EVOLVE_LEVEL, 36, GALVANTULA
 	db 0 ; no more evolutions
-	db 1, POISON_STING
-	db 6, SCARY_FACE
-	db 17, NIGHT_SHADE
-	db 23, LEECH_LIFE
-	db 30, FURY_SWIPES
-	db 37, SPIDER_WEB
-	db 45, AGILITY
-	db 53, PSYCHIC_M
+	db 1, LEECH_LIFE
+	db 1, THUNDERSHOCK
+	db 8, ABSORB
+	db 12, FURY_CUTTER
+	db 16, THUNDER_WAVE
+	db 20, AGILITY
+	db 24, SLASH
+	db 28, X_SCISSOR
+	db 32, MEGA_DRAIN
+	db 36, BUG_BUZZ
+	db 40, THUNDERBOLT
+	db 50, THUNDER
 	db 0 ; no more level-up moves
 
-AriadosEvosAttacks:
+GalvantulaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POISON_STING
-	db 1, SCARY_FACE
-	db 6, SCARY_FACE
-	db 17, NIGHT_SHADE
-	db 25, LEECH_LIFE
-	db 34, FURY_SWIPES
-	db 43, SPIDER_WEB
-	db 53, AGILITY
-	db 63, PSYCHIC_M
+	db 1, LEECH_LIFE
+	db 1, THUNDERSHOCK
+	db 8, ABSORB
+	db 12, FURY_CUTTER
+	db 16, THUNDER_WAVE
+	db 20, AGILITY
+	db 24, SLASH
+	db 28, X_SCISSOR
+	db 32, MEGA_DRAIN
+	db 36, BUG_BUZZ
+	db 40, THUNDERBOLT
+	db 50, THUNDER
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:

@@ -82,8 +82,8 @@ Moves: ; 41afb
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,      PHYSICAL, 100, 20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      PHYSICAL, 100, 20,   0
 	move STRENGTH,     EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 15,   0
-	move ABSORB,       EFFECT_LEECH_HIT,          20, GRASS,         SPECIAL,  100, 30,   0
-	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          40, GRASS,         SPECIAL,  100, 20,   0
+	move ABSORB,       EFFECT_LEECH_HIT,          30, GRASS,         SPECIAL,  100, 30,   0
+	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          50, GRASS,         SPECIAL,  100, 20,   0
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,         STATUS,    90, 10,   0
 	move GROWTH,       EFFECT_SP_ATK_UP,           0, NORMAL,        STATUS,   100, 40,   0
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,         PHYSICAL,  95, 25,   0

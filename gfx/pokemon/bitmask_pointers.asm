@@ -20,8 +20,8 @@ BitmasksPointers:
 	dw StaraptorBitmasks
 	dw RattataBitmasks
 	dw RaticateBitmasks
-	dw SpearowBitmasks
-	dw FearowBitmasks
+	dw BunearyBitmasks
+	dw LopunnyBitmasks
 	dw EkansBitmasks
 	dw ArbokBitmasks
 	dw PikachuBitmasks
@@ -166,8 +166,8 @@ BitmasksPointers:
 	dw NoctowlBitmasks
 	dw DrilburBitmasks
 	dw ExcadrillBitmasks
-	dw SpinarakBitmasks
-	dw AriadosBitmasks
+	dw VoltikBitmasks
+	dw GalvantulaBitmasks
 	dw CrobatBitmasks
 	dw ChinchouBitmasks
 	dw LanturnBitmasks

@@ -18,7 +18,7 @@ ViridianNicknameSpeechHouseLassScript:
 Speary:
 	opentext
 	writetext SpearyText
-	cry SPEAROW
+	cry BUNEARY
 	waitbutton
 	closetext
 	end
@@ -47,7 +47,7 @@ ViridianNicknameSpeechHousePokefanMText:
 
 ViridianNicknameSpeechHouseLassText:
 	text "They're SPEARY--"
-	line "a SPEAROW--and"
+	line "a BUNEARY--and"
 	cont "RATTEY--a RATTATA."
 	done
 

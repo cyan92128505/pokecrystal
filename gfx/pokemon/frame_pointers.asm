@@ -20,8 +20,8 @@ FramesPointers:
 	dw StaraptorFrames
 	dw RattataFrames
 	dw RaticateFrames
-	dw SpearowFrames
-	dw FearowFrames
+	dw BunearyFrames
+	dw LopunnyFrames
 	dw EkansFrames
 	dw ArbokFrames
 	dw PikachuFrames
@@ -166,8 +166,8 @@ FramesPointers:
 	dw NoctowlFrames
 	dw DrilburFrames
 	dw ExcadrillFrames
-	dw SpinarakFrames
-	dw AriadosFrames
+	dw VoltikFrames
+	dw GalvantulaFrames
 	dw CrobatFrames
 	dw ChinchouFrames
 	dw LanturnFrames

@@ -22,8 +22,8 @@ MonMenuIcons:
 	db ICON_BIRD        ; STARAPTOR
 	db ICON_FOX         ; RATTATA
 	db ICON_FOX         ; RATICATE
-	db ICON_BIRD        ; SPEAROW
-	db ICON_BIRD        ; FEAROW
+	db ICON_FOX         ; BUNEARY
+	db ICON_FOX         ; LOPUNNY
 	db ICON_SERPENT     ; EKANS
 	db ICON_SERPENT     ; ARBOK
 	db ICON_PIKACHU     ; PIKACHU
@@ -168,8 +168,8 @@ MonMenuIcons:
 	db ICON_BIRD        ; NOCTOWL
 	db ICON_MONSTER     ; DRILBUR
 	db ICON_MONSTER     ; EXCADRILL
-	db ICON_BUG         ; SPINARAK
-	db ICON_BUG         ; ARIADOS
+	db ICON_BUG         ; VOLTIK
+	db ICON_BUG         ; GALVANTULA
 	db ICON_BAT         ; CROBAT
 	db ICON_FISH        ; CHINCHOU
 	db ICON_FISH        ; LANTURN

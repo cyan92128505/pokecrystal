@@ -52,8 +52,8 @@ INCBIN "gfx/footprints/staravia.1bpp",  footprint_top
 INCBIN "gfx/footprints/staraptor.1bpp",    footprint_top
 INCBIN "gfx/footprints/rattata.1bpp",    footprint_top
 INCBIN "gfx/footprints/raticate.1bpp",   footprint_top
-INCBIN "gfx/footprints/spearow.1bpp",    footprint_top
-INCBIN "gfx/footprints/fearow.1bpp",     footprint_top
+INCBIN "gfx/footprints/buneary.1bpp",    footprint_top
+INCBIN "gfx/footprints/lopunny.1bpp",     footprint_top
 INCBIN "gfx/footprints/ekans.1bpp",      footprint_top
 INCBIN "gfx/footprints/arbok.1bpp",      footprint_top
 ; 017-024 bottom halves
@@ -61,8 +61,8 @@ INCBIN "gfx/footprints/staravia.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/staraptor.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/rattata.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/raticate.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/spearow.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/fearow.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/buneary.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/lopunny.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/ekans.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/arbok.1bpp",      footprint_bottom
 ; 025-032 top halves
@@ -378,8 +378,8 @@ INCBIN "gfx/footprints/hoothoot.1bpp",   footprint_top
 INCBIN "gfx/footprints/noctowl.1bpp",    footprint_top
 INCBIN "gfx/footprints/drilbur.1bpp",     footprint_top
 INCBIN "gfx/footprints/excadrill.1bpp",     footprint_top
-INCBIN "gfx/footprints/spinarak.1bpp",   footprint_top
-INCBIN "gfx/footprints/ariados.1bpp",    footprint_top
+INCBIN "gfx/footprints/voltik.1bpp",   footprint_top
+INCBIN "gfx/footprints/galvantula.1bpp",    footprint_top
 ; 161-168 bottom halves
 INCBIN "gfx/footprints/riolu.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/lucario.1bpp",     footprint_bottom
@@ -387,8 +387,8 @@ INCBIN "gfx/footprints/hoothoot.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/noctowl.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/drilbur.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/excadrill.1bpp",     footprint_bottom
-INCBIN "gfx/footprints/spinarak.1bpp",   footprint_bottom
-INCBIN "gfx/footprints/ariados.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/voltik.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/galvantula.1bpp",    footprint_bottom
 ; 169-176 top halves
 INCBIN "gfx/footprints/crobat.1bpp",     footprint_top
 INCBIN "gfx/footprints/chinchou.1bpp",   footprint_top

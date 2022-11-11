@@ -10,7 +10,7 @@ AlphabeticalPokedexOrder:
 	db ARBOK
 	db ARCANINE
 	db ARCEUS
-	db ARIADOS
+	db GALVANTULA
 	db ARTICUNO
 	db BAGON
 	db BELDUM
@@ -60,7 +60,7 @@ AlphabeticalPokedexOrder:
 	db EXCADRILL
 	db EXEGGCUTE
 	db EXEGGUTOR
-	db FEAROW
+	db LOPUNNY
 	db FLAAFFY
 	db FLAREON
 	db FROAKIE
@@ -207,8 +207,8 @@ AlphabeticalPokedexOrder:
 	db SNEASEL
 	db SNORLAX
 	db SOLOSIS
-	db SPEAROW
-	db SPINARAK
+	db BUNEARY
+	db VOLTIK
 	db SPIRITOMB
 	db SQUIRTLE
 	db STARAPTOR

@@ -218,10 +218,10 @@ KantoGrassWildMons:
 	db 4, PIKACHU
 	; nite
 	db 3, HOOTHOOT
-	db 3, SPINARAK
+	db 3, VOLTIK
 	db 5, HOOTHOOT
 	db 7, NOCTOWL
-	db 7, ARIADOS
+	db 7, GALVANTULA
 	db 4, NOCTOWL
 	db 4, NOCTOWL
 	end_grass_wildmons
@@ -229,7 +229,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
+	db 5, BUNEARY
 	db 5, RATTATA
 	db 8, EKANS
 	db 10, RATICATE
@@ -237,7 +237,7 @@ KantoGrassWildMons:
 	db 10, SANDSHREW
 	db 10, SANDSHREW
 	; day
-	db 5, SPEAROW
+	db 5, BUNEARY
 	db 5, RATTATA
 	db 8, EKANS
 	db 10, RATICATE
@@ -257,7 +257,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
+	db 5, BUNEARY
 	db 5, RATTATA
 	db 8, EKANS
 	db 10, RATICATE
@@ -265,7 +265,7 @@ KantoGrassWildMons:
 	db 10, SANDSHREW
 	db 10, SANDSHREW
 	; day
-	db 5, SPEAROW
+	db 5, BUNEARY
 	db 5, RATTATA
 	db 8, EKANS
 	db 10, RATICATE
@@ -342,7 +342,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 17, RATTATA
-	db 17, SPEAROW
+	db 17, BUNEARY
 	db 18, RATTATA
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
@@ -350,7 +350,7 @@ KantoGrassWildMons:
 	db 16, ABRA
 	; day
 	db 17, RATTATA
-	db 17, SPEAROW
+	db 17, BUNEARY
 	db 18, RATTATA
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
@@ -398,18 +398,18 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 15, RATTATA
-	db 15, SPEAROW
+	db 15, BUNEARY
 	db 15, RATICATE
-	db 15, FEAROW
-	db 15, FEAROW
+	db 15, LOPUNNY
+	db 15, LOPUNNY
 	db 18, MAROWAK
 	db 18, MAROWAK
 	; day
 	db 15, RATTATA
-	db 15, SPEAROW
+	db 15, BUNEARY
 	db 15, RATICATE
-	db 15, FEAROW
-	db 15, FEAROW
+	db 15, LOPUNNY
+	db 15, LOPUNNY
 	db 18, MAROWAK
 	db 18, MAROWAK
 	; nite
@@ -425,18 +425,18 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, SPEAROW
+	db 15, BUNEARY
 	db 17, VOLTORB
 	db 15, RATICATE
-	db 15, FEAROW
+	db 15, LOPUNNY
 	db 15, MAROWAK
 	db 16, ELECTABUZZ
 	db 16, ELECTABUZZ
 	; day
-	db 15, SPEAROW
+	db 15, BUNEARY
 	db 17, VOLTORB
 	db 15, RATICATE
-	db 15, FEAROW
+	db 15, LOPUNNY
 	db 15, MAROWAK
 	db 18, ELECTABUZZ
 	db 18, ELECTABUZZ
@@ -566,18 +566,18 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, LOPUNNY
 	db 28, GRIMER
-	db 29, FEAROW
-	db 29, FEAROW
+	db 29, LOPUNNY
+	db 29, LOPUNNY
 	db 30, MUK
 	db 30, MUK
 	; day
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, LOPUNNY
 	db 28, GRIMER
-	db 29, FEAROW
-	db 29, FEAROW
+	db 29, LOPUNNY
+	db 29, LOPUNNY
 	db 30, MUK
 	db 30, MUK
 	; nite
@@ -593,19 +593,19 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, FEAROW
+	db 30, LOPUNNY
 	db 29, GRIMER
 	db 31, GRIMER
-	db 32, FEAROW
+	db 32, LOPUNNY
 	db 33, GRIMER
 	db 33, MUK
 	db 33, MUK
 	; day
-	db 30, FEAROW
-	db 29, FEAROW
+	db 30, LOPUNNY
+	db 29, LOPUNNY
 	db 29, GRIMER
-	db 32, FEAROW
-	db 32, FEAROW
+	db 32, LOPUNNY
+	db 32, LOPUNNY
 	db 33, MUK
 	db 33, MUK
 	; nite
@@ -622,18 +622,18 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, LOPUNNY
 	db 28, GRIMER
-	db 29, FEAROW
-	db 29, FEAROW
+	db 29, LOPUNNY
+	db 29, LOPUNNY
 	db 30, MUK
 	db 30, MUK
 	; day
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, LOPUNNY
 	db 28, GRIMER
-	db 29, FEAROW
-	db 29, FEAROW
+	db 29, LOPUNNY
+	db 29, LOPUNNY
 	db 30, MUK
 	db 30, MUK
 	; nite
@@ -678,20 +678,20 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, RATTATA
-	db 3, SPEAROW
-	db 5, SPEAROW
-	db 4, SPEAROW
+	db 3, BUNEARY
+	db 5, BUNEARY
+	db 4, BUNEARY
 	db 6, PONYTA
-	db 7, FEAROW
-	db 7, FEAROW
+	db 7, LOPUNNY
+	db 7, LOPUNNY
 	; day
 	db 3, RATTATA
-	db 3, SPEAROW
-	db 5, SPEAROW
-	db 4, SPEAROW
+	db 3, BUNEARY
+	db 5, BUNEARY
+	db 4, BUNEARY
 	db 6, PONYTA
-	db 7, FEAROW
-	db 7, FEAROW
+	db 7, LOPUNNY
+	db 7, LOPUNNY
 	; nite
 	db 3, RATTATA
 	db 3, POLIWAG
@@ -761,19 +761,19 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, SPEAROW
+	db 28, BUNEARY
 	db 28, SANDSLASH
 	db 32, PONYTA
 	db 30, RATICATE
-	db 30, SPEAROW
+	db 30, BUNEARY
 	db 30, ARBOK
 	db 30, ARBOK
 	; day
-	db 28, SPEAROW
+	db 28, BUNEARY
 	db 28, SANDSLASH
 	db 32, PONYTA
 	db 30, RATICATE
-	db 30, SPEAROW
+	db 30, BUNEARY
 	db 30, ARBOK
 	db 30, ARBOK
 	; nite
@@ -789,18 +789,18 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, SPEAROW
+	db 28, BUNEARY
 	db 28, ARBOK
 	db 30, RATICATE
-	db 30, SPEAROW
+	db 30, BUNEARY
 	db 32, PONYTA
 	db 30, STARAPTOR
 	db 30, STARAPTOR
 	; day
-	db 28, SPEAROW
+	db 28, BUNEARY
 	db 28, ARBOK
 	db 30, RATICATE
-	db 30, SPEAROW
+	db 30, BUNEARY
 	db 32, PONYTA
 	db 30, STARAPTOR
 	db 30, STARAPTOR
@@ -821,7 +821,7 @@ KantoGrassWildMons:
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
-	db 41, SPEAROW
+	db 41, BUNEARY
 	db 43, STARAPTOR
 	db 43, STARAPTOR
 	; day
@@ -829,7 +829,7 @@ KantoGrassWildMons:
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
-	db 41, SPEAROW
+	db 41, BUNEARY
 	db 43, STARAPTOR
 	db 43, STARAPTOR
 	; nite

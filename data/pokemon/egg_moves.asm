@@ -50,7 +50,7 @@ RattataEggMoves:
 	db REVERSAL
 	db -1 ; end
 
-SpearowEggMoves:
+BunearyEggMoves:
 	db NIGHT_SLASH
 	db FALSE_SWIPE
 	db SCARY_FACE
@@ -475,7 +475,7 @@ DrilburEggMoves:
 	db FISSURE
 	db -1 ; end
 
-SpinarakEggMoves:
+VoltikEggMoves:
 	db PSYBEAM
 	db DISABLE
 	db SONICBOOM

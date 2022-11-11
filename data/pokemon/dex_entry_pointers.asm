@@ -21,8 +21,8 @@ PokedexDataPointerTable:
 	dw StaraptorPokedexEntry
 	dw RattataPokedexEntry
 	dw RaticatePokedexEntry
-	dw SpearowPokedexEntry
-	dw FearowPokedexEntry
+	dw BunearyPokedexEntry
+	dw LopunnyPokedexEntry
 	dw EkansPokedexEntry
 	dw ArbokPokedexEntry
 	dw PikachuPokedexEntry
@@ -167,8 +167,8 @@ PokedexDataPointerTable:
 	dw NoctowlPokedexEntry
 	dw DrilburPokedexEntry
 	dw ExcadrillPokedexEntry
-	dw SpinarakPokedexEntry
-	dw AriadosPokedexEntry
+	dw VoltikPokedexEntry
+	dw GalvantulaPokedexEntry
 	dw CrobatPokedexEntry
 	dw ChinchouPokedexEntry
 	dw LanturnPokedexEntry

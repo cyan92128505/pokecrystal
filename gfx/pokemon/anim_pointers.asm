@@ -20,8 +20,8 @@ AnimationPointers:
 	dw StaraptorAnimation
 	dw RattataAnimation
 	dw RaticateAnimation
-	dw SpearowAnimation
-	dw FearowAnimation
+	dw BunearyAnimation
+	dw LopunnyAnimation
 	dw EkansAnimation
 	dw ArbokAnimation
 	dw PikachuAnimation
@@ -166,8 +166,8 @@ AnimationPointers:
 	dw NoctowlAnimation
 	dw DrilburAnimation
 	dw ExcadrillAnimation
-	dw SpinarakAnimation
-	dw AriadosAnimation
+	dw VoltikAnimation
+	dw GalvantulaAnimation
 	dw CrobatAnimation
 	dw ChinchouAnimation
 	dw LanturnAnimation

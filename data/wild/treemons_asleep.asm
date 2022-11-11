@@ -7,7 +7,7 @@ AsleepTreeMonsNite:
 	db CATERPIE
 	db METAPOD
 	db HERACROSS
-	db SPEAROW
+	db STARLY
 	db EKANS
 	db EXEGGCUTE
 	db STARLY
@@ -18,7 +18,7 @@ AsleepTreeMonsDay:
 	db MURKROW
 	db HOOTHOOT
 	db NOCTOWL
-	db SPINARAK
+	db VOLTIK
 	db HERACROSS
 	db -1 ; end
 
@@ -26,6 +26,6 @@ AsleepTreeMonsMorn:
 	db MURKROW
 	db HOOTHOOT
 	db NOCTOWL
-	db SPINARAK
+	db VOLTIK
 	db HERACROSS
 	db -1 ; end

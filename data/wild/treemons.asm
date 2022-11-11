@@ -19,15 +19,15 @@ TreeMons:
 TreeMonSet_City:
 TreeMonSet_Canyon:
 ; common
-	db 50, SPEAROW,    10
-	db 15, SPEAROW,    10
-	db 15, SPEAROW,    10
+	db 50, STARLY,    10
+	db 15, STARLY,    10
+	db 15, STARLY,    10
 	db 10, METAPOD,      10
 	db  5, METAPOD,      10
 	db  5, METAPOD,      10
 	db -1
 ; rare
-	db 50, SPEAROW,    10
+	db 50, STARLY,    10
 	db 15, HERACROSS,  10
 	db 15, HERACROSS,  10
 	db 10, METAPOD,      10
@@ -37,15 +37,15 @@ TreeMonSet_Canyon:
 
 TreeMonSet_Town:
 ; common
-	db 50, SPEAROW,    10
+	db 50, STARLY,    10
 	db 15, EKANS,      10
-	db 15, SPEAROW,    10
+	db 15, STARLY,    10
 	db 10, METAPOD,      10
 	db  5, METAPOD,      10
 	db  5, METAPOD,      10
 	db -1
 ; rare
-	db 50, SPEAROW,    10
+	db 50, STARLY,    10
 	db 15, HERACROSS,  10
 	db 15, HERACROSS,  10
 	db 10, METAPOD,      10
@@ -56,7 +56,7 @@ TreeMonSet_Town:
 TreeMonSet_Route:
 ; common
 	db 50, HOOTHOOT,   10
-	db 15, SPINARAK,   10
+	db 15, VOLTIK,   10
 	db 15, STARLY,     10
 	db 10, EXEGGCUTE,  10
 	db  5, EXEGGCUTE,  10

@@ -1195,7 +1195,6 @@ AI_Smart_AccuracyDown:
 	pop hl
 	pop bc
 	jr nc, .continue
-
 	inc [hl]
 	inc [hl]
 	inc [hl]
@@ -1203,109 +1202,12 @@ AI_Smart_AccuracyDown:
 	ret
 
 .continue
-; If player's HP is full...
-	call AICheckPlayerMaxHP
-	jr nc, .hp_mismatch_1
-
-; ...and enemy's HP is above 50%...
-	call AICheckEnemyHalfHP
-	jr nc, .hp_mismatch_1
-
-; ...greatly encourage this move if player is badly poisoned.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr nz, .greatly_encourage
-
-; ...70% chance to greatly encourage this move if player is not badly poisoned.
-	call Random
-	cp 70 percent
-	jr nc, .not_encouraged
-
-.greatly_encourage
-	dec [hl]
-	dec [hl]
-	ret
-
-.hp_mismatch_1
-
-; Greatly discourage this move if player's HP is below 25%.
-	call AICheckPlayerQuarterHP
-	jr nc, .hp_mismatch_2
-
-; If player's HP is above 25% but not full, 4% chance to greatly encourage this move.
-	call Random
-	cp 4 percent
-	jr c, .greatly_encourage
-
-; If player's HP is between 25% and 50%,...
-	call AICheckPlayerHalfHP
-	jr nc, .hp_mismatch_3
-
-; If player's HP is above 50% but not full, 20% chance to greatly encourage this move.
-	call AI_80_20
-	jr c, .greatly_encourage
-	jr .not_encouraged
-
-; ...50% chance to greatly discourage this move.
-.hp_mismatch_3
-	call AI_50_50
-	jr c, .not_encouraged
-
-.hp_mismatch_2
-	inc [hl]
-	inc [hl]
-
-; We only end up here if the move has not been already encouraged.
-.not_encouraged
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr nz, .maybe_greatly_encourage
-
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_LEECH_SEED, a
-	jr nz, .encourage
-
-; Discourage this move if enemy's evasion level is higher than player's accuracy level.
-	ld a, [wEnemyEvaLevel]
-	ld b, a
-	ld a, [wPlayerAccLevel]
-	cp b
-	jr c, .discourage
-
-; Greatly encourage this move if the player is in the middle of Fury Cutter or Rollout.
-	ld a, [wPlayerFuryCutterCount]
-	and a
-	jr nz, .greatly_encourage
-
-	ld a, [wPlayerSubStatus1]
-	bit SUBSTATUS_ROLLOUT, a
-	jr nz, .greatly_encourage
-
-.discourage
-	inc [hl]
-	ret
-
-; Player is badly poisoned.
-; 70% chance to greatly encourage this move.
-; This would counter any previous discouragement.
-.maybe_greatly_encourage
-	call Random
-	cp 31 percent + 1
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-; Player is seeded.
-; 50% chance to encourage this move.
-; This would partly counter any previous discouragement.
-.encourage
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	ret
+; encourage slightly if player has full accuracy
+    ld a, [wPlayerAccLevel]
+    cp BASE_STAT_LEVEL
+    ret c
+    dec [hl]
+    ret
 
 AI_Smart_StatDown:
 ; discourage if enemy is immune to stat drops
@@ -1619,33 +1521,6 @@ AI_Smart_RazorWind:
 	ld a, [hl]
 	add 6
 	ld [hl], a
-	ret
-
-AI_Smart_Confuse:
-; don't use against Arceus since it is immune to status
-    ld a, [wBattleMonSpecies]
-    cp ARCEUS
-    jr nz, .continue
-    cp SYLVEON
-    jr nz, .continue
-    inc [hl]
-    inc [hl]
-    ret
-
-.continue
-; 90% chance to discourage this move if player's HP is between 25% and 50%.
-	call AICheckPlayerHalfHP
-	ret c
-	call Random
-	cp 10 percent
-	jr c, .skipdiscourage
-	inc [hl]
-
-.skipdiscourage
-; Discourage again if player's HP is below 25%.
-	call AICheckPlayerQuarterHP
-	ret c
-	inc [hl]
 	ret
 
 AI_Smart_SpDefenseUp2:
@@ -3881,7 +3756,19 @@ AI_Smart_Flinch:
     dec [hl]
     ret
 
+AI_Smart_Confuse:
 AI_Smart_Swagger:
+; don't use against Arceus since it is immune to status
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jr nz, .continue
+    cp SYLVEON
+    jr nz, .continue
+    inc [hl]
+    inc [hl]
+    ret
+
+.continue
 ; discourage if already confused
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
@@ -3899,8 +3786,6 @@ AI_Smart_Swagger:
     inc [hl]
     inc [hl]
     ret
-
-
 
 ; AndrewNote - functions which check if the player can KO the AI
 

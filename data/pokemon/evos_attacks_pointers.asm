@@ -22,8 +22,8 @@ EvosAttacksPointers::
 	dw StaraptorEvosAttacks
 	dw RattataEvosAttacks
 	dw RaticateEvosAttacks
-	dw SpearowEvosAttacks
-	dw FearowEvosAttacks
+	dw BunearyEvosAttacks
+	dw LopunnyEvosAttacks
 	dw EkansEvosAttacks
 	dw ArbokEvosAttacks
 	dw PikachuEvosAttacks
@@ -168,8 +168,8 @@ EvosAttacksPointers::
 	dw NoctowlEvosAttacks
 	dw DrilburEvosAttacks
 	dw ExcadrillEvosAttacks
-	dw SpinarakEvosAttacks
-	dw AriadosEvosAttacks
+	dw VoltikEvosAttacks
+	dw GalvantulaEvosAttacks
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks

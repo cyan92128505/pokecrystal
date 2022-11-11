@@ -4,7 +4,7 @@ Pokered_MonIndices:
 	db RHYPERIOR
 	db NIDORAN_M
 	db CLEFAIRY
-	db SPEAROW
+	db BUNEARY
 	db VOLTORB
 	db NIDOKING
 	db SLOWBRO
@@ -34,7 +34,7 @@ Pokered_MonIndices:
 	db SHAYMIN ; MISSINGNO.
 	db GROWLITHE
 	db ONIX
-	db FEAROW
+	db LOPUNNY
 	db STARLY
 	db SLOWPOKE
 	db KADABRA
@@ -206,8 +206,8 @@ Pokered_MonIndices:
 	db NOCTOWL
 	db DRILBUR
 	db EXCADRILL
-	db SPINARAK
-	db ARIADOS
+	db VOLTIK
+	db GALVANTULA
 	db CROBAT
 	db CHINCHOU
 	db LANTURN

@@ -14,8 +14,8 @@ NewPokedexOrder:
 	db STARLY
 	db STARAVIA
 	db STARAPTOR
-	db SPEAROW
-	db FEAROW
+	db BUNEARY
+	db LOPUNNY
 	db HOOTHOOT
 	db NOCTOWL
 	db RATTATA
@@ -28,8 +28,8 @@ NewPokedexOrder:
 	db HONEDGE
 	db DOUBLADE
 	db AEGISLASH
-	db SPINARAK
-	db ARIADOS
+	db VOLTIK
+	db GALVANTULA
 	db GEODUDE
 	db GRAVELER
 	db GOLEM

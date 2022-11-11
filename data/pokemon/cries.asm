@@ -26,8 +26,8 @@ PokemonCries::
 	mon_cry CRY_PIDGEOTTO,   -150,  380 ; STARAPTOR
 	mon_cry CRY_RATTATA,       0,  256 ; RATTATA
 	mon_cry CRY_RATTATA,      32,  383 ; RATICATE
-	mon_cry CRY_SPEAROW,       0,  256 ; SPEAROW
-	mon_cry CRY_FEAROW,       64,  288 ; FEAROW
+	mon_cry CRY_CATERPIE,    200,  200 ; BUNEARY
+	mon_cry CRY_CATERPIE,    150,  250 ; LOPUNNY
 	mon_cry CRY_EKANS,        18,  192 ; EKANS
 	mon_cry CRY_EKANS,       224,  144 ; ARBOK
 	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
@@ -172,8 +172,8 @@ PokemonCries::
 	mon_cry CRY_HOOTHOOT,      0,  416 ; NOCTOWL
 	mon_cry CRY_LEDYBA,        0,  222 ; DRILBUR
 	mon_cry CRY_LEDYBA,     -150,  312 ; EXCADRILL
-	mon_cry CRY_SPINARAK,     17,  512 ; SPINARAK
-	mon_cry CRY_SPINARAK,   -174,  482 ; ARIADOS
+	mon_cry CRY_SPINARAK,     17,  512 ; VOLTIK
+	mon_cry CRY_SPINARAK,   -174,  482 ; GALVANTULA
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN

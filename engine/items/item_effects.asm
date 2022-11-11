@@ -218,15 +218,15 @@ PokeBallEffect:
     ld hl, wJohtoBadges
     ld a, [wEnemyMonLevel]
     cp 71
-    jr c, .checkKantoBadges
+    jr nc, .checkKantoBadges
     cp 51
-    jr c, .checkRisingBadge
+    jr nc, .checkRisingBadge
     cp 41
-    jr c, .checkStormBadge
+    jr nc, .checkStormBadge
     cp 31
-    jr c, .checkFogBadge
+    jr nc, .checkFogBadge
     cp 21
-    jr c, .checkHiveBadge
+    jr nc, .checkHiveBadge
     jr .continue
 
 .checkKantoBadges

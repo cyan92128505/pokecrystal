@@ -4730,7 +4730,7 @@ BattleTowerMons:
 
 	db KLEFKI
 	db LEFTOVERS
-	db THUNDER_WAVE, SWAGGER, FLASH, IRON_HEAD
+	db THUNDER_WAVE, CONFUSE_RAY, FLASH, IRON_HEAD
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5976,6 +5976,32 @@ BattleTowerMons:
 	bigdw 238 ; Def
 	bigdw 298 ; Spd
 	bigdw 198 ; SAtk
+	bigdw 218 ; SDef
+	db "RANTA-N@@@@"
+
+	db GALVANTULA
+	db MAGNET
+	db THUNDER, BUG_BUZZ, GIGA_DRAIN, SLUDGE_BOMB
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 24, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 343 ; HP
+	bigdw 343 ; Max HP
+	bigdw 252 ; Atk
+	bigdw 218 ; Def
+	bigdw 314 ; Spd
+	bigdw 292 ; SAtk
 	bigdw 218 ; SDef
 	db "RANTA-N@@@@"
 

@@ -33,7 +33,7 @@ Celebrity:
 CelebritysFearow:
 	opentext
 	writetext CelebritysFearowText
-	cry FEAROW
+	cry LOPUNNY
 	waitbutton
 	closetext
 	end
@@ -65,7 +65,7 @@ CelebrityText2:
 	done
 
 CelebritysFearowText:
-	text "FEAROW: Feero!"
+	text "PIDGEOT: Feero!"
 	done
 
 Route28SteelWingHouse_MapEvents:

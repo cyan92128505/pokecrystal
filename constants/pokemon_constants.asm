@@ -39,8 +39,8 @@
 	const STARAPTOR  ; 12
 	const RATTATA    ; 13
 	const RATICATE   ; 14
-	const BUNEARY    ; 15  ....
-	const LOPUNNY     ; 16  lopunny
+	const BUNEARY    ; 15
+	const LOPUNNY    ; 16
 	const EKANS      ; 17 *
 	const ARBOK      ; 18 *
 	const PIKACHU    ; 19
@@ -186,8 +186,8 @@ JOHTO_POKEMON EQU const_value
 	const NOCTOWL    ; a4
 	const DRILBUR    ; a5
 	const EXCADRILL  ; a6
-	const VOLTIK   ; a7   ....
-	const GALVANTULA    ; a8   Galvantula
+	const VOLTIK     ; a7
+	const GALVANTULA ; a8
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
@@ -250,13 +250,13 @@ JOHTO_POKEMON EQU const_value
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
 	const KINGDRA    ; e6
-	const COTTONEE     ; e7  ....
-	const WHIMSICOTT    ; e8  whimsicott
+	const COTTONEE   ; e7
+	const WHIMSICOTT ; e8
 	const PORYGON2   ; e9
 	const RAYQUAZA   ; ea
 	const SMEARGLE   ; eb
 	const DIALGA     ; ec
-	const KLEFKI  ; ed  kefkle
+	const KLEFKI     ; ed
 	const XERNEAS    ; ee
 	const YVELTAL    ; ef
 	const GIRATINA   ; f0

@@ -6005,4 +6005,108 @@ BattleTowerMons:
 	bigdw 218 ; SDef
 	db "RANTA-N@@@@"
 
+	db MUK
+	db LEFTOVERS
+	db LEECH_SEED, THUNDER_WAVE, SPIKES, IRON_HEAD
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 32, 16, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 351 ; HP
+	bigdw 351 ; Max HP
+	bigdw 286 ; Atk
+	bigdw 360 ; Def
+	bigdw 138 ; Spd
+	bigdw 206 ; SAtk
+	bigdw 330 ; SDef
+	db "RANTA-N@@@@"
+
+	db KINGLER
+	db LEFTOVERS
+	db SURF, ICE_BEAM, CALM_MIND, RECOVER
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 16, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 393 ; HP
+	bigdw 393 ; Max HP
+	bigdw 218 ; Atk
+	bigdw 256 ; Def
+	bigdw 260 ; Spd
+	bigdw 298 ; SAtk
+	bigdw 348 ; SDef
+	db "RANTA-N@@@@"
+
+	db STARMIE
+	db LIFE_ORB
+	db HYDRO_PUMP, THUNDERBOLT, ICE_BEAM, PSYCHIC_M
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 24, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 248 ; Atk
+	bigdw 268 ; Def
+	bigdw 324 ; Spd
+	bigdw 298 ; SAtk
+	bigdw 268 ; SDef
+	db "RANTA-N@@@@"
+
+	db PIKACHU
+	db LIGHT_BALL
+	db THUNDERBOLT, SURF, ICE_PUNCH, VOLT_TACKLE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 24, 24, 24, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 125 ; Level
+	db 0, 0 ; Status
+	bigdw 338 ; HP
+	bigdw 338 ; Max HP
+	bigdw 258 ; Atk
+	bigdw 221 ; Def
+	bigdw 346 ; Spd
+	bigdw 246 ; SAtk
+	bigdw 246 ; SDef
+	db "RANTA-N@@@@"
+
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

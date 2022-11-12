@@ -3395,7 +3395,8 @@ BattleCommand_DamageCalc:
 	cp HELD_CHOICE_BAND
 	pop hl
 	jr nz, .choiceSpecs
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+    ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
 	cp SPECIAL
 	jr nc, .choiceSpecs
 	call FiftyPercentBoost
@@ -3411,7 +3412,8 @@ BattleCommand_DamageCalc:
 	cp HELD_CHOICE_SPECS
 	pop hl
 	jr nz, .continue
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+    ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
 	cp SPECIAL
 	jr c, .continue
     call FiftyPercentBoost

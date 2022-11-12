@@ -1226,30 +1226,37 @@ GliscorEvosAttacks:
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
-	db EVOLVE_LEVEL, 38, MUK
+	db EVOLVE_LEVEL, 35, MUK
 	db 0 ; no more evolutions
-	db 1, POISON_GAS
-	db 1, POUND
-	db 5, HARDEN
-	db 10, DISABLE
-	db 16, SLUDGE
-	db 31, SCREECH
-	db 40, ACID_ARMOR
-	db 50, SLUDGE_BOMB
+	db 1, TACKLE
+	db 1, HARDEN
+	db 5, METAL_CLAW
+	db 10, PIN_MISSILE
+	db 15, LEECH_SEED
+	db 20, FLASH_CANNON
+	db 25, IRON_HEAD
+	db 30, SELFDESTRUCT
+	db 35, LEAF_BLADE
+	db 40, CURSE
+	db 45, SPIKES
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 MukEvosAttacks:
 	db 0 ; no more evolutions
 	; moves are not sorted by level
-	db 1, POISON_GAS
-	db 1, POUND
+	db 1, TACKLE
 	db 1, HARDEN
-	db 33, HARDEN
-	db 37, DISABLE
-	db 45, SLUDGE
-	db 31, SCREECH
-	db 45, ACID_ARMOR
-	db 60, SLUDGE_BOMB
+	db 5, METAL_CLAW
+	db 10, PIN_MISSILE
+	db 15, LEECH_SEED
+	db 20, FLASH_CANNON
+	db 25, IRON_HEAD
+	db 30, SELFDESTRUCT
+	db 35, LEAF_BLADE
+	db 40, CURSE
+	db 45, SPIKES
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 ShellderEvosAttacks:
@@ -1370,26 +1377,23 @@ HypnoEvosAttacks:
 KrabbyEvosAttacks:
 	db EVOLVE_LEVEL, 28, KINGLER
 	db 0 ; no more evolutions
-	db 1, BUBBLE
-	db 5, LEER
-	db 12, SCRATCH
-	db 16, HARDEN
-	db 23, STOMP
-	db 27, GUILLOTINE
-	db 34, PROTECT
+	db 1, SPLASH
+	db 15, TACKLE
+	db 30, FLAIL
 	db 0 ; no more level-up moves
 
 KinglerEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BUBBLE
-	db 1, LEER
-	db 1, SCRATCH
-	db 5, LEER
-	db 12, SCRATCH
-	db 16, HARDEN
-	db 23, STOMP
-	db 27, GUILLOTINE
-	db 38, PROTECT
+	db 1, ATTRACT
+	db 1, SURF
+	db 1, RECOVER
+	db 25, ATTRACT
+	db 30, RECOVER
+	db 36, AURORA_BEAM
+	db 40, SURF
+	db 44, RAIN_DANCE
+	db 50, HYDRO_PUMP
+	db 55, CALM_MIND
 	db 0 ; no more level-up moves
 
 VoltorbEvosAttacks:

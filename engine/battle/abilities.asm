@@ -14,6 +14,7 @@ SturdyPokemon:
 MultiScalePokemon:
     db DRAGONITE
     db LUGIA
+    db KINGLER
     db -1
 
 ThickFatPokemon:

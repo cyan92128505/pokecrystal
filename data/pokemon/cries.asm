@@ -93,8 +93,8 @@ PokemonCries::
 	mon_cry CRY_PARAS,       250,  350 ; MAGNEZONE
 	mon_cry CRY_TOTODILE,    -50,  150 ; YANMEGA
 	mon_cry CRY_GLIGAR,     -150,  300 ; GLISCOR
-	mon_cry CRY_GRIMER,        0,  256 ; GRIMER
-	mon_cry CRY_MUK,         239,  383 ; MUK
+	mon_cry CRY_MUK,         100,  383 ; GRIMER
+	mon_cry CRY_GRIMER,     -100,  256 ; MUK
 	mon_cry CRY_FEAROW,        0,  256 ; SHELLDER
 	mon_cry CRY_FEAROW,      111,  352 ; CLOYSTER
 	mon_cry CRY_METAPOD,       0,  256 ; GASTLY
@@ -103,8 +103,8 @@ PokemonCries::
 	mon_cry CRY_EKANS,       255,  320 ; ONIX
 	mon_cry CRY_DROWZEE,     136,  160 ; DROWZEE
 	mon_cry CRY_DROWZEE,     238,  192 ; HYPNO
-	mon_cry CRY_KRABBY,       32,  352 ; KRABBY
-	mon_cry CRY_KRABBY,      238,  352 ; KINGLER
+	mon_cry CRY_KRABBY,      200,  400 ; KRABBY
+	mon_cry CRY_VENONAT,     100,  150 ; KINGLER
 	mon_cry CRY_VOLTORB,     237,  256 ; VOLTORB
 	mon_cry CRY_VOLTORB,     168,  272 ; ELECTRODE
 	mon_cry CRY_DIGLETT,       0,  256 ; EXEGGCUTE

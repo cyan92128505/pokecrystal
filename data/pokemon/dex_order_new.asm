@@ -99,8 +99,8 @@ NewPokedexOrder:
 	db HERACROSS
 	db KOFFING
 	db WEEZING
-	db GRIMER
-	db MUK
+	db FERROSEED
+	db FERROTHORN
 	db MAGNEMITE
 	db MAGNETON
 	db MAGNEZONE
@@ -136,8 +136,8 @@ NewPokedexOrder:
 	db SMEARGLE
 	db TENTACOOL
 	db TENTACRUEL
-	db KRABBY
-	db KINGLER
+	db FEEBAS
+	db MILOTIC
 	db STARYU
 	db STARMIE
 	db SHELLDER

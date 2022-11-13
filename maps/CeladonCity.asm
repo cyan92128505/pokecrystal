@@ -106,13 +106,13 @@ else
 endc
 
 CeladonCityGramps1Text:
-	text "GRIMER have been"
+	text "TENTACOOL have been"
 	line "appearing lately."
 
 	para "See that pond out"
 	line "in front of the"
 
-	para "house? GRIMER live"
+	para "house? TENTACOOL live"
 	line "there now."
 
 	para "Where did they"

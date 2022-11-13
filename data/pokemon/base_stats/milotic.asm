@@ -1,4 +1,4 @@
-	db KINGLER ; 099
+	db MILOTIC ; 099
 
 	db  95, 60, 79,  81,  100,  125
 	;   hp  atk  def  spd  sat  sdf

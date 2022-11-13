@@ -83,7 +83,7 @@ AlphabeticalPokedexOrder:
 	db GOLEM
 	db GRAVELER
 	db GRENINJA
-	db GRIMER
+	db FERROSEED
 	db GROUDON
 	db GROVYLE
 	db GROWLITHE
@@ -106,11 +106,11 @@ AlphabeticalPokedexOrder:
 	db JYNX
 	db KADABRA
 	db KINGDRA
-	db KINGLER
+	db MILOTIC
 	db KIRLIA
 	db KLEFKI
 	db KOFFING
-	db KRABBY
+	db FEEBAS
 	db KYOGRE
 	db LAMPENT
 	db LANTURN
@@ -145,7 +145,7 @@ AlphabeticalPokedexOrder:
 	db MOLTRES
 	db MONFERNO
 	db MR__MIME
-	db MUK
+	db FERROTHORN
 	db MURKROW
 	db NIDOKING
 	db NIDOQUEEN

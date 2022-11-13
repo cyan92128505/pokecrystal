@@ -9,12 +9,14 @@ SturdyPokemon:
     db ONIX
     db STEELIX
     db BLASTOISE
+    db FERROSEED
+    db FERROTHORN
     db -1
 
 MultiScalePokemon:
     db DRAGONITE
     db LUGIA
-    db KINGLER
+    db MILOTIC
     db -1
 
 ThickFatPokemon:

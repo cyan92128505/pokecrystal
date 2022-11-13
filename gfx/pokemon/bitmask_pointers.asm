@@ -87,8 +87,8 @@ BitmasksPointers:
 	dw MagnezoneBitmasks
 	dw YanmegaBitmasks
 	dw GliscorBitmasks
-	dw GrimerBitmasks
-	dw MukBitmasks
+	dw FerroseedBitmasks
+	dw FerrothornBitmasks
 	dw ShellderBitmasks
 	dw CloysterBitmasks
 	dw GastlyBitmasks
@@ -97,8 +97,8 @@ BitmasksPointers:
 	dw OnixBitmasks
 	dw DrowzeeBitmasks
 	dw HypnoBitmasks
-	dw KrabbyBitmasks
-	dw KinglerBitmasks
+	dw FeebasBitmasks
+	dw MiloticBitmasks
 	dw VoltorbBitmasks
 	dw ElectrodeBitmasks
 	dw ExeggcuteBitmasks

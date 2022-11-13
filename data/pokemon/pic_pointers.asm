@@ -177,10 +177,10 @@ PokemonPicPointers::
 	dba_pic YanmegaBackpic
 	dba_pic GliscorFrontpic
 	dba_pic GliscorBackpic
-	dba_pic GrimerFrontpic
-	dba_pic GrimerBackpic
-	dba_pic MukFrontpic
-	dba_pic MukBackpic
+	dba_pic FerroseedFrontpic
+	dba_pic FerroseedBackpic
+	dba_pic FerrothornFrontpic
+	dba_pic FerrothornBackpic
 	dba_pic ShellderFrontpic
 	dba_pic ShellderBackpic
 	dba_pic CloysterFrontpic
@@ -197,10 +197,10 @@ PokemonPicPointers::
 	dba_pic DrowzeeBackpic
 	dba_pic HypnoFrontpic
 	dba_pic HypnoBackpic
-	dba_pic KrabbyFrontpic
-	dba_pic KrabbyBackpic
-	dba_pic KinglerFrontpic
-	dba_pic KinglerBackpic
+	dba_pic FeebasFrontpic
+	dba_pic FeebasBackpic
+	dba_pic MiloticFrontpic
+	dba_pic MiloticBackpic
 	dba_pic VoltorbFrontpic
 	dba_pic VoltorbBackpic
 	dba_pic ElectrodeFrontpic

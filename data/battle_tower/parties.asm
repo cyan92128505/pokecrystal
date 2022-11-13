@@ -6005,7 +6005,7 @@ BattleTowerMons:
 	bigdw 218 ; SDef
 	db "RANTA-N@@@@"
 
-	db MUK
+	db FERROTHORN
 	db LEFTOVERS
 	db LEECH_SEED, THUNDER_WAVE, SPIKES, IRON_HEAD
 	dw 0 ; OT ID
@@ -6031,7 +6031,7 @@ BattleTowerMons:
 	bigdw 330 ; SDef
 	db "RANTA-N@@@@"
 
-	db KINGLER
+	db MILOTIC
 	db LEFTOVERS
 	db SURF, ICE_BEAM, CALM_MIND, RECOVER
 	dw 0 ; OT ID

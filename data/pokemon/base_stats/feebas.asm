@@ -1,4 +1,4 @@
-	db KRABBY ; 098
+	db FEEBAS ; 098
 
 	db  20, 15,  20,  80,  10,  55
 	;   hp  atk  def  spd  sat  sdf

@@ -87,8 +87,8 @@ AnimationIdlePointers:
 	dw MagnezoneAnimationIdle
 	dw YanmegaAnimationIdle
 	dw GliscorAnimationIdle
-	dw GrimerAnimationIdle
-	dw MukAnimationIdle
+	dw FerroseedAnimationIdle
+	dw FerrothornAnimationIdle
 	dw ShellderAnimationIdle
 	dw CloysterAnimationIdle
 	dw GastlyAnimationIdle
@@ -97,8 +97,8 @@ AnimationIdlePointers:
 	dw OnixAnimationIdle
 	dw DrowzeeAnimationIdle
 	dw HypnoAnimationIdle
-	dw KrabbyAnimationIdle
-	dw KinglerAnimationIdle
+	dw FeebasAnimationIdle
+	dw MiloticAnimationIdle
 	dw VoltorbAnimationIdle
 	dw ElectrodeAnimationIdle
 	dw ExeggcuteAnimationIdle

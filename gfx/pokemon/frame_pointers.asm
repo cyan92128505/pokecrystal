@@ -87,8 +87,8 @@ FramesPointers:
 	dw MagnezoneFrames
 	dw YanmegaFrames
 	dw GliscorFrames
-	dw GrimerFrames
-	dw MukFrames
+	dw FerroseedFrames
+	dw FerrothornFrames
 	dw ShellderFrames
 	dw CloysterFrames
 	dw GastlyFrames
@@ -97,8 +97,8 @@ FramesPointers:
 	dw OnixFrames
 	dw DrowzeeFrames
 	dw HypnoFrames
-	dw KrabbyFrames
-	dw KinglerFrames
+	dw FeebasFrames
+	dw MiloticFrames
 	dw VoltorbFrames
 	dw ElectrodeFrames
 	dw ExeggcuteFrames

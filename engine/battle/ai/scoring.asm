@@ -52,6 +52,8 @@ AI_SturdyPokemon:
     db ONIX
     db STEELIX
     db BLASTOISE
+    db FERROSEED
+    db FERROTHORN
     db $FF
 
 AI_ClearBodyPokemon:

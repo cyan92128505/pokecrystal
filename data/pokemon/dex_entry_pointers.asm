@@ -88,8 +88,8 @@ PokedexDataPointerTable:
 	dw MagnezonePokedexEntry
 	dw YanmegaPokedexEntry
 	dw GliscorPokedexEntry
-	dw GrimerPokedexEntry
-	dw MukPokedexEntry
+	dw FerroseedPokedexEntry
+	dw FerrothornPokedexEntry
 	dw ShellderPokedexEntry
 	dw CloysterPokedexEntry
 	dw GastlyPokedexEntry
@@ -98,8 +98,8 @@ PokedexDataPointerTable:
 	dw OnixPokedexEntry
 	dw DrowzeePokedexEntry
 	dw HypnoPokedexEntry
-	dw KrabbyPokedexEntry
-	dw KinglerPokedexEntry
+	dw FeebasPokedexEntry
+	dw MiloticPokedexEntry
 	dw VoltorbPokedexEntry
 	dw ElectrodePokedexEntry
 	dw ExeggcutePokedexEntry

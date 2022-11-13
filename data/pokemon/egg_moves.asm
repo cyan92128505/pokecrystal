@@ -252,7 +252,7 @@ YanmegaEggMoves:
 	db ENCORE
 	db -1 ; end
 
-GrimerEggMoves:
+FerroseedEggMoves:
 	db HAZE
 	db MEAN_LOOK
 	db LICK
@@ -281,7 +281,7 @@ DrowzeeEggMoves:
 	db BARRIER
 	db -1 ; end
 
-KrabbyEggMoves:
+FeebasEggMoves:
 	db DIG
 	db HAZE
 	db AMNESIA

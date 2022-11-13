@@ -89,8 +89,8 @@ EvosAttacksPointers::
 	dw MagnezoneEvosAttacks
 	dw YanmegaEvosAttacks
 	dw GliscorEvosAttacks
-	dw GrimerEvosAttacks
-	dw MukEvosAttacks
+	dw FerroseedEvosAttacks
+	dw FerrothornEvosAttacks
 	dw ShellderEvosAttacks
 	dw CloysterEvosAttacks
 	dw GastlyEvosAttacks
@@ -99,8 +99,8 @@ EvosAttacksPointers::
 	dw OnixEvosAttacks
 	dw DrowzeeEvosAttacks
 	dw HypnoEvosAttacks
-	dw KrabbyEvosAttacks
-	dw KinglerEvosAttacks
+	dw FeebasEvosAttacks
+	dw MiloticEvosAttacks
 	dw VoltorbEvosAttacks
 	dw ElectrodeEvosAttacks
 	dw ExeggcuteEvosAttacks

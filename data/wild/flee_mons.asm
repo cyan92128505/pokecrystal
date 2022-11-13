@@ -3,7 +3,7 @@ FleeMons:
 
 SometimesFleeMons:
 	db MAGNEMITE
-	db GRIMER
+	db FERROSEED
 	db WEAVILE
 	db MR__MIME
 	db EEVEE

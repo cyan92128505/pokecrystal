@@ -565,85 +565,85 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_16
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 26, GRIMER
+	db 26, FERROSEED
 	db 27, LOPUNNY
-	db 28, GRIMER
+	db 28, FERROSEED
 	db 29, LOPUNNY
 	db 29, LOPUNNY
-	db 30, MUK
-	db 30, MUK
+	db 30, FERROTHORN
+	db 30, FERROTHORN
 	; day
-	db 26, GRIMER
+	db 26, FERROSEED
 	db 27, LOPUNNY
-	db 28, GRIMER
+	db 28, FERROSEED
 	db 29, LOPUNNY
 	db 29, LOPUNNY
-	db 30, MUK
-	db 30, MUK
+	db 30, FERROTHORN
+	db 30, FERROTHORN
 	; nite
-	db 26, GRIMER
-	db 27, GRIMER
-	db 28, GRIMER
+	db 26, FERROSEED
+	db 27, FERROSEED
+	db 28, FERROSEED
 	db 29, MURKROW
 	db 29, MURKROW
-	db 30, MUK
-	db 30, MUK
+	db 30, FERROTHORN
+	db 30, FERROTHORN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, LOPUNNY
-	db 29, GRIMER
-	db 31, GRIMER
+	db 29, FERROSEED
+	db 31, FERROSEED
 	db 32, LOPUNNY
-	db 33, GRIMER
-	db 33, MUK
-	db 33, MUK
+	db 33, FERROSEED
+	db 33, FERROTHORN
+	db 33, FERROTHORN
 	; day
 	db 30, LOPUNNY
 	db 29, LOPUNNY
-	db 29, GRIMER
+	db 29, FERROSEED
 	db 32, LOPUNNY
 	db 32, LOPUNNY
-	db 33, MUK
-	db 33, MUK
+	db 33, FERROTHORN
+	db 33, FERROTHORN
 	; nite
-	db 30, GRIMER
-	db 29, GRIMER
-	db 31, GRIMER
-	db 32, GRIMER
-	db 33, GRIMER
-	db 33, MUK
-	db 33, MUK
+	db 30, FERROSEED
+	db 29, FERROSEED
+	db 31, FERROSEED
+	db 32, FERROSEED
+	db 33, FERROSEED
+	db 33, FERROTHORN
+	db 33, FERROTHORN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 26, GRIMER
+	db 26, FERROSEED
 	db 27, LOPUNNY
-	db 28, GRIMER
+	db 28, FERROSEED
 	db 29, LOPUNNY
 	db 29, LOPUNNY
-	db 30, MUK
-	db 30, MUK
+	db 30, FERROTHORN
+	db 30, FERROTHORN
 	; day
-	db 26, GRIMER
+	db 26, FERROSEED
 	db 27, LOPUNNY
-	db 28, GRIMER
+	db 28, FERROSEED
 	db 29, LOPUNNY
 	db 29, LOPUNNY
-	db 30, MUK
-	db 30, MUK
+	db 30, FERROTHORN
+	db 30, FERROTHORN
 	; nite
-	db 26, GRIMER
-	db 27, GRIMER
-	db 28, GRIMER
-	db 29, GRIMER
-	db 29, GRIMER
-	db 30, MUK
-	db 30, MUK
+	db 26, FERROSEED
+	db 27, FERROSEED
+	db 28, FERROSEED
+	db 29, FERROSEED
+	db 29, FERROSEED
+	db 30, FERROTHORN
+	db 30, FERROTHORN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_21

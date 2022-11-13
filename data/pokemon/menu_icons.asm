@@ -89,8 +89,8 @@ MonMenuIcons:
 	db ICON_VOLTORB     ; MAGNEZONE
 	db ICON_BUG         ; YANMEGA
 	db ICON_BUG         ; GLISCOR
-	db ICON_BLOB        ; GRIMER
-	db ICON_BLOB        ; MUK
+	db ICON_BLOB        ; FERROSEED
+	db ICON_BLOB        ; FERROTHORN
 	db ICON_SHELL       ; SHELLDER
 	db ICON_SHELL       ; CLOYSTER
 	db ICON_GHOST       ; GASTLY
@@ -99,8 +99,8 @@ MonMenuIcons:
 	db ICON_SERPENT     ; ONIX
 	db ICON_HUMANSHAPE  ; DROWZEE
 	db ICON_HUMANSHAPE  ; HYPNO
-	db ICON_SHELL       ; KRABBY
-	db ICON_SHELL       ; KINGLER
+	db ICON_SHELL       ; FEEBAS
+	db ICON_SHELL       ; MILOTIC
 	db ICON_VOLTORB     ; VOLTORB
 	db ICON_VOLTORB     ; ELECTRODE
 	db ICON_ODDISH      ; EXEGGCUTE

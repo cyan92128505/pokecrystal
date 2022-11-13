@@ -1225,8 +1225,8 @@ GliscorEvosAttacks:
 	db 55, GUILLOTINE
 	db 0 ; no more level-up moves
 
-GrimerEvosAttacks:
-	db EVOLVE_LEVEL, 35, MUK
+FerroseedEvosAttacks:
+	db EVOLVE_LEVEL, 35, FERROTHORN
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
@@ -1242,7 +1242,7 @@ GrimerEvosAttacks:
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
-MukEvosAttacks:
+FerrothornEvosAttacks:
 	db 0 ; no more evolutions
 	; moves are not sorted by level
 	db 1, TACKLE
@@ -1374,15 +1374,15 @@ HypnoEvosAttacks:
 	db 60, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-KrabbyEvosAttacks:
-	db EVOLVE_LEVEL, 28, KINGLER
+FeebasEvosAttacks:
+	db EVOLVE_LEVEL, 28, MILOTIC
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 15, TACKLE
 	db 30, FLAIL
 	db 0 ; no more level-up moves
 
-KinglerEvosAttacks:
+MiloticEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ATTRACT
 	db 1, SURF

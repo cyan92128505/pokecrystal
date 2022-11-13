@@ -89,8 +89,8 @@ KantoMonSpecials:
 	db  60 ; MAGNEZONE
 	db  70 ; YANMEGA
 	db  95 ; GLISCOR
-	db  40 ; GRIMER
-	db  65 ; MUK
+	db  40 ; FERROSEED
+	db  65 ; FERROTHORN
 	db  45 ; SHELLDER
 	db  85 ; CLOYSTER
 	db 100 ; GASTLY
@@ -99,8 +99,8 @@ KantoMonSpecials:
 	db  30 ; ONIX
 	db  90 ; DROWZEE
 	db 115 ; HYPNO
-	db  25 ; KRABBY
-	db  50 ; KINGLER
+	db  25 ; FEEBAS
+	db  50 ; MILOTIC
 	db  55 ; VOLTORB
 	db  80 ; ELECTRODE
 	db  60 ; EXEGGCUTE

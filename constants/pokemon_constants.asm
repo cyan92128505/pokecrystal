@@ -106,8 +106,8 @@
 	const MAGNEZONE  ; 55
 	const YANMEGA    ; 56
 	const GLISCOR    ; 57
-	const GRIMER     ; 58   ....
-	const MUK        ; 59   ferrothorn
+	const FERROSEED     ; 58   ....
+	const FERROTHORN        ; 59   ferrothorn
 	const SHELLDER   ; 5a
 	const CLOYSTER   ; 5b
 	const GASTLY     ; 5c
@@ -116,8 +116,8 @@
 	const ONIX       ; 5f
 	const DROWZEE    ; 60
 	const HYPNO      ; 61
-	const KRABBY     ; 62   feebass
-	const KINGLER    ; 63   milotic
+	const FEEBAS     ; 62   feebass
+	const MILOTIC    ; 63   milotic
 	const VOLTORB    ; 64
 	const ELECTRODE  ; 65
 	const EXEGGCUTE  ; 66

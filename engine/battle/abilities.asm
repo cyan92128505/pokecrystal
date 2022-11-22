@@ -1,3 +1,9 @@
+; there are other abilities not mentioned in this file
+; see battle/core SwitchInEffects for
+; drizzle, drought, air lock, sandstream, intimidate, download, intrepid sword, speed boost, prankster, swift swim, chlorophyl, sand rush
+; see effect_commands for
+; solid rock, serene grace, rock head, sand veil
+
 SturdyPokemon:
     db SKARMORY
     db GEODUDE
@@ -26,6 +32,7 @@ ThickFatPokemon:
     db LAPRAS
     db PILOSWINE
     db MAMOSWINE
+    db PALKIA
     db -1
 
 TechnicianPokemon:
@@ -33,7 +40,6 @@ TechnicianPokemon:
     db SCIZOR
     db MEOWTH
     db PERSIAN
-    db KLEFKI
     db MR__MIME
     db SMEARGLE
     db SHROOMISH
@@ -51,6 +57,9 @@ MagicGuardPokemon:
     db SOLOSIS
     db DUOSION
     db REUNICLUS
+    db ESPEON
+    db XERNEAS
+    db YVELTAL
     db -1
 
 ClearBodyPokemon:
@@ -60,7 +69,6 @@ ClearBodyPokemon:
     db METANG
     db METAGROSS
     db MACHAMP
-    db ENTEI
     db DIALGA
     db ARCEUS
     db -1

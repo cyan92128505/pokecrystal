@@ -2,9 +2,8 @@
 	dw 100, 130 ; height, weight
 
 	db   "The electricity"
-	next "emitted by the"
-	next "units on each side"
+	next "it emits creates"
+	next "strong magnetism."
 
-	page "of its body cause"
-	next "it to become a"
-	next "strong magnet.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

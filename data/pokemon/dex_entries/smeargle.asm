@@ -1,10 +1,10 @@
 	db "PAINTER@" ; species name
 	dw 311, 1280 ; height, weight
 
-	db   "The color of the"
-	next "mysterious fluid"
-	next "secreted from its"
+	db   "Can copy any move"
+	next "and use it with"
+	next "mastery."
 
-	page "tail is predeter-"
-	next "mined for each"
-	next "SMEARGLE.@"
+	page "AB Can't flinch."
+	next "Makes weaker"
+	next "moves stronger.@"

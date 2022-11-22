@@ -5,6 +5,6 @@
 	next "and happiness"
 	next "to loved ones."
 
-	page "Moves effects"
-	next "are twice as"
-	next "likely.@"
+	page "AB move effects"
+	next "are more likely"
+	next "to occur.@"

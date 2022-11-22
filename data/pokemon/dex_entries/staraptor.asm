@@ -6,5 +6,5 @@
 	next "without fear."
 
 	page "AB lowers foes"
-	next "ATK upon switch"
-	next "in.@"
+	next "ATTACK upon"
+	next "switch in.@"

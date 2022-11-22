@@ -2,9 +2,8 @@
 	dw 104, 90 ; height, weight
 
 	db   "It loves things"
-	next "that sparkle. When"
-	next "it sees a shiny"
+	next "that sparkle and"
+	next "collects them."
 
-	page "object, the gold"
-	next "coin on its head"
-	next "shines too.@"
+	page "AB Makes weaker"
+	next "moves stronger.@"

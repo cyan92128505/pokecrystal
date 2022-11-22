@@ -1,10 +1,9 @@
 	db "TEMPORAL@" ; species name
 	dw 1709, 50000 ; height, weight
 
-	db   "Its total control"
+	db   "Has total control"
 	next "over the flow of"
-	next "time enable it to"
+	next "time itself."
 
-	page "travel at will"
-	next "through the past"
-	next "and future.@"
+	page "AB Immune to"
+	next "stat drops.@"

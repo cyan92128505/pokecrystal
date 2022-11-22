@@ -3,8 +3,8 @@
 
 	db   "It can see in all"
 	next "directions without"
-	next "moving its big"
+	next "moving."
 
-	page "eyes, helping it"
-	next "spot attackers and"
-	next "food right away.@"
+	page "AB SPEED"
+	next "increases upon"
+	next "entering battle.@"

@@ -1,10 +1,10 @@
 	db "TERMINATOR@" ; species name
 	dw 511, 3638 ; height, weight
 
-	db   "An ancient predator"
+	db   "Ancient predator"
 	next "cyborg from the"
-	next "future! As it"
+	next "future!"
 
-	page "enters battle it"
-	next "powers up into"
-	next "killing mode.@"
+	page "AB SPEC ATTACK"
+	next "increases upon"
+	next "entering battle.@"

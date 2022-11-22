@@ -110,7 +110,7 @@ MoveDescriptions::
 	dw MinimizeDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
-	dw WithdrawDescription
+	dw ZenHeadbuttDescription
 	dw DefenseCurlDescription
 	dw BarrierDescription
 	dw LightScreenDescription
@@ -134,13 +134,13 @@ MoveDescriptions::
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
-	dw KinesisDescription
+	dw PoisonJabDescription
 	dw SoftboiledDescription
 	dw HiJumpKickDescription
 	dw GlareDescription
 	dw DreamEaterDescription
 	dw PoisonGasDescription
-	dw BarrageDescription
+	dw RoostDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
 	dw SkyAttackDescription
@@ -173,7 +173,7 @@ MoveDescriptions::
 	dw MindReaderDescription
 	dw NightmareDescription
 	dw FlameWheelDescription
-	dw SnoreDescription
+	dw HurricaneDescription
 	dw CurseDescription
 	dw FlailDescription
 	dw KingsShieldDescription
@@ -190,7 +190,7 @@ MoveDescriptions::
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw AvalancheDescription
-	dw OctazookaDescription
+	dw FlareBlitzDescription
 	dw SpikesDescription
 	dw ZapCannonDescription
 	dw ForesightDescription
@@ -280,7 +280,7 @@ DoubleslapDescription:
 	next "2-5 times.@"
 
 CalmMindDescription:
-	db   "Focus mind to raise"
+	db   "Focus to raise"
 	next "special stats.@"
 
 MegaPunchDescription:
@@ -379,6 +379,7 @@ SandAttackDescription:
 	db   "Reduces accuracy"
 	next "by throwing sand.@"
 
+ZenHeadbuttDescription:
 HeadbuttDescription:
 	db   "An attack that may"
 	next "make foe flinch.@"
@@ -423,6 +424,7 @@ TailWhipDescription:
 	db   "Lowers the foe's"
 	next "DEFENSE.@"
 
+PoisonJabDescription:
 PoisonStingDescription:
 	db   "An attack that may"
 	next "poison the target.@"
@@ -732,8 +734,8 @@ FocusEnergyDescription:
 	next "cal hit ratio.@"
 
 BideDescription:
-	db   "Waits 2-3 turns &"
-	next "hits back double.@"
+	db   "An attack that"
+	next "never misses.@"
 
 MetronomeDescription:
 	db   "Randomly uses any"
@@ -823,9 +825,9 @@ PoisonGasDescription:
 	db   "A move that may"
 	next "poison the foe.@"
 
-BarrageDescription:
-	db   "Throws orbs to hit"
-	next "2-5 times.@"
+RoostDescription:
+	db   "Restores HP by 1/2"
+	next "the max HP.@"
 
 LeechLifeDescription:
 	db   "Steals 1/2 of the"
@@ -955,9 +957,9 @@ FlameWheelDescription:
 	db   "An attack that may"
 	next "cause a burn.@"
 
-SnoreDescription:
-	db   "An attack useable"
-	next "only while asleep.@"
+HurricaneDescription:
+	db   "An attack that may"
+	next "cause confusion.@"
 
 CurseDescription:
 	db   "Works differently"
@@ -1023,9 +1025,9 @@ AvalancheDescription:
 	db   "Crush foe with"
 	next "ice boulders.@"
 
-OctazookaDescription:
-	db   "An attack that may"
-	next "reduce accuracy.@"
+FlareBlitzDescription:
+	db   "A super charged"
+	next "blazing tackle.@"
 
 SpikesDescription:
 	db   "Hurts foes when"

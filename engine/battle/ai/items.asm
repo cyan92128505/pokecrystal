@@ -46,6 +46,8 @@ DontSwitch:
 
 ; AndrewNote - this switches with probabilities - 50%, 80%, 96% depending on switch score
 SwitchOften:
+    call CheckSetUp
+    jp c, DontSwitch
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
@@ -82,6 +84,8 @@ SwitchOften:
 
 ; AndrewNote - this switches with probabilities - 8%, 12%, 80% depending on switch score
 SwitchRarely:
+    call CheckSetUp
+    jp c, DontSwitch
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
@@ -117,6 +121,8 @@ SwitchRarely:
 
 ; AndrewNote - this switches with probabilities - 20%, 50%, 80% depending on switch score
 SwitchSometimes:
+    call CheckSetUp
+    jp c, DontSwitch
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
@@ -154,6 +160,22 @@ CheckSubstatusCantRun: ; unreferenced
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	ret
+
+CheckSetUp:
+; return carry if enemy mon has set up
+; don't switch if enemy mon is already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .setup
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .setup
+; not set up
+    xor a
+    ret
+.setup
+    scf
+    ret
 
 AI_TryItem:
 	; items are not allowed in the Battle Tower

@@ -26,6 +26,9 @@ AI_MagicGuardPokemon:
     db SOLOSIS
     db DUOSION
     db REUNICLUS
+    db ESPEON
+    db XERNEAS
+    db YVELTAL
     db $FF
 
 AI_LevitatePokemon:

@@ -3,8 +3,8 @@
 
 	db   "It hides in the"
 	next "dark, planning to"
-	next "take the life of"
+	next "take ones life."
 
-	page "the next living"
-	next "thing that wanders"
-	next "close by.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

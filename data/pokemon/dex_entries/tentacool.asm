@@ -3,8 +3,7 @@
 
 	db   "As it floats along"
 	next "on the waves, it"
-	next "uses its toxic"
+	next "spreads toxins."
 
-	page "feelers to stab"
-	next "anything it"
-	next "touches.@"
+	page "AB Immune to"
+	next "stat drops.@"

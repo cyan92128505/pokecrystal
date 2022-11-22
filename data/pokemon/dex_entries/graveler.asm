@@ -3,8 +3,7 @@
 
 	db   "It travels by rol-"
 	next "ling on mountain"
-	next "paths. If it gains"
+	next "paths."
 
-	page "too much speed, it"
-	next "stops by running"
-	next "into huge rocks.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

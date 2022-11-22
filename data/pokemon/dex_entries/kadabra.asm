@@ -2,9 +2,9 @@
 	dw 403, 1250 ; height, weight
 
 	db   "When it closes its"
-	next "eyes, twice as"
-	next "many alpha parti-"
+	next "eyes, its mind can"
+	next "move objects."
 
-	page "cles come out of"
-	next "the surface of its"
-	next "body.@"
+	page "AB Immune to"
+	next "all passive"
+	next "damage.@"

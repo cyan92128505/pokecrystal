@@ -2,9 +2,9 @@
 	dw 1900, 6666 ; height, weight
 
 	db   "Lord of death."
-	next "It steals the"
-	next "life force of"
+	next "It steals life"
+	next "from its foes."
 
-	page "other living"
-	next "things to extend"
-	next "its own life.@"
+	page "AB Immune to"
+	next "all passive"
+	next "damage.@"

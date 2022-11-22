@@ -94,10 +94,20 @@ PerishCountText:
 BattleText_TargetRecoveredWithItem:
 	text "<TARGET>"
 	line "recovered."
-	;line "recovered with"
-	;cont "@"
-	;text_ram wStringBuffer1
-	;text "."
+	line "recovered with"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
+
+BattleText_TargetRecoveredWithLeftovers:
+	text "<TARGET>"
+	line "leftovers heal."
+	prompt
+
+BattleText_TargetRegenerates:
+	text "<TARGET>"
+	line "regenerates."
 	prompt
 
 BattleText_UserRecoveredPPUsing:
@@ -747,13 +757,8 @@ AlreadyPoisonedText:
 	prompt
 
 SuckedHealthText:
-	text "Sucked health from"
+	text "Drained life from"
 	line "<TARGET>!"
-	prompt
-
-DreamEatenText:
-	text "<TARGET>'s"
-	line "dream was eaten!"
 	prompt
 
 WasBurnedText:

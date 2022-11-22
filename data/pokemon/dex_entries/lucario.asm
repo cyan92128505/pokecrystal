@@ -5,6 +5,5 @@
 	next "the life force and"
 	next "feelings of others"
 
-	page "This lets it see"
-	next "its enemies and"
-	next "react with force.@"
+	page "AB Immune to"
+	next "flinching.@"

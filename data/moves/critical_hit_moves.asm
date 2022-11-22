@@ -1,6 +1,5 @@
 CriticalHitMoves:
 	db KARATE_CHOP
-	db PSYBLAST
 	db RAZOR_LEAF
 	db SLASH
 	db AEROBLAST

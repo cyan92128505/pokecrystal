@@ -1,10 +1,10 @@
 	db "LEGENDARY@" ; species name
 	dw 603, 3420 ; height, weight
 
-	db   "An ancient picture"
-	next "scroll shows that"
-	next "people were"
+	db   "Ancient people"
+	next "idolised this"
+	next "might #MON."
 
-	page "attracted to its"
-	next "movement as it ran"
-	next "through prairies.@"
+	page "AB lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

@@ -2,9 +2,8 @@
 	dw 403, 1200 ; height, weight
 
 	db   "It uses the"
-	next "mysterious"
-	next "power it has in"
+	next "mysterious power"
+	next "in its fingers."
 
-	page "its fingers to"
-	next "solidify air into"
-	next "an invisible wall.@"
+	page "AB Makes weaker"
+	next "moves stronger.@"

@@ -1,5 +1,5 @@
 	db "GOD@" ; species name
-	dw 1006, 7055 ; height, weight
+	dw 1000, 10000 ; height, weight
 
 	db   "The original one."
 	next "Creator of all"

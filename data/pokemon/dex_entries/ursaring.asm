@@ -1,10 +1,10 @@
 	db "HIBERNANT@" ; species name
-	dw 511, 2770 ; height, weight
+	dw 511, 5770 ; height, weight
 
-	db   "Although it has a"
-	next "large body, it is"
-	next "quite skilled at"
+	db   "Able to crush its"
+	next "foe with its huge"
+	next "muscular body."
 
-	page "climbing trees. It"
-	next "eats and sleeps in"
-	next "the treetops.@"
+	page "AB Takes half"
+	next "damage from FIRE"
+	next "and ICE moves.@"

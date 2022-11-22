@@ -1,10 +1,9 @@
 	db "IRON BALL@" ; species name
 	dw 200, 2500 ; height, weight
 
-	db   "It uses magnetic"
-	next "pulses to converse"
-	next "with others of its"
+	db   "It is used as"
+	next "a scout droid by"
+	next "the military.@"
 
-	page "kind. It is used"
-	next "as a scout droid"
-	next "by the military.@"
+	page "AB Immune to"
+	next "stat drops.@"

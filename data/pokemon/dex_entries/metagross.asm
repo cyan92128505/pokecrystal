@@ -3,8 +3,7 @@
 
 	db   "An advanced war"
 	next "machine with four"
-	next "super computer"
+	next "super brains."
 
-	page "brains, thick"
-	next "armour and"
-	next "strong claws.@"
+	page "AB Immune to"
+	next "stat drops.@"

@@ -104,7 +104,7 @@ VictoryRoadFullRestore:
 	itemball FULL_RESTORE
 
 VictoryRoadFullHeal:
-	itemball FULL_HEAL
+	itemball TM_FLAMETHROWER
 
 VictoryRoadHPUp:
 	itemball HP_UP

@@ -5,6 +5,6 @@
 	next "ARCEUS for its"
 	next "violent ways."
 
-	page "From its world"
-	next "it plots its"
-	next "revenge.@"
+	page "AB Takes no"
+	next "recoil damage"
+	next "from attacks.@"

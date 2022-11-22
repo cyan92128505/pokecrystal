@@ -3,8 +3,8 @@
 
 	db   "It can use its"
 	next "well-developed"
-	next "arms and legs to"
+	next "arms and legs."
 
-	page "run on the surface"
-	next "of the water for a"
-	next "split second.@"
+	page "AB SPEED"
+	next "increases in"
+	next "the rain.@"

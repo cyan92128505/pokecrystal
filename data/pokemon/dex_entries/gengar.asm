@@ -3,8 +3,8 @@
 
 	db   "Hiding in people's"
 	next "shadows at night,"
-	next "it absorbs their"
+	next "it absorbs souls."
 
-	page "heat. The chill it"
-	next "causes makes the"
-	next "victims shake.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

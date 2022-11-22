@@ -85,7 +85,7 @@ BattleTowerMons:
 
 	db STEELIX
 	db GOLD_BERRY
-	db ROAR, IRON_HEAD, SWAGGER, EARTHQUAKE
+	db ROAR, IRON_HEAD, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -111,7 +111,7 @@ BattleTowerMons:
 
 	db ALAKAZAM
 	db BERRY_JUICE
-	db PSYCHIC_M, PSYCH_UP, TOXIC, THUNDERPUNCH
+	db PSYCHIC_M, TOXIC, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -371,7 +371,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db MYSTIC_WATER
-	db SURF, BLIZZARD, ATTRACT, RAIN_DANCE
+	db SURF, BLIZZARD, RAIN_DANCE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -397,7 +397,7 @@ BattleTowerMons:
 
 	db MILTANK
 	db KINGS_ROCK
-	db EARTHQUAKE, THUNDER, ATTRACT, SURF
+	db EARTHQUAKE, THUNDER, SURF
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -1052,7 +1052,7 @@ BattleTowerMons:
 
 	db SNORLAX
 	db QUICK_CLAW
-	db ATTRACT, BODY_SLAM, PSYCH_UP, EARTHQUAKE
+	db ATTRACT, BODY_SLAM, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -1442,7 +1442,7 @@ BattleTowerMons:
 
 	db EXEGGUTOR
 	db BRIGHTPOWDER
-	db STUN_SPORE, STOMP, PSYCH_UP, CONFUSION
+	db STUN_SPORE, STOMP, CONFUSION
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -1834,7 +1834,7 @@ BattleTowerMons:
 
 	db CROBAT
 	db LEFTOVERS
-	db CONFUSE_RAY, ATTRACT, HYPER_BEAM, TOXIC
+	db CONFUSE_RAY, HYPER_BEAM, TOXIC
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2460,7 +2460,7 @@ BattleTowerMons:
 
 	db SANDSLASH
 	db SCOPE_LENS
-	db EARTHQUAKE, SLASH, HYPER_BEAM, SNORE
+	db EARTHQUAKE, SLASH, HYPER_BEAM, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -2540,7 +2540,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db GOLD_BERRY
-	db NIGHT_SLASH, MOONLIGHT, PSYCH_UP, TOXIC
+	db NIGHT_SLASH, MOONLIGHT, TOXIC
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3010,7 +3010,7 @@ BattleTowerMons:
 
 	db SNORLAX
 	db LEFTOVERS
-	db REST, BELLY_DRUM, SNORE, EARTHQUAKE
+	db REST, BELLY_DRUM, SLEEP_TALK, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -3948,7 +3948,7 @@ BattleTowerMons:
 
 	db MILTANK
 	db LEFTOVERS
-	db MILK_DRINK, EARTHQUAKE, ATTRACT, BODY_SLAM
+	db MILK_DRINK, EARTHQUAKE, BODY_SLAM
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -3986,7 +3986,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 48, 48, 24 ; PP
+	db 32, 48, 30, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -4001,8 +4001,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db HO_OH
-	db LIFE_ORB
-	db BRAVE_BIRD, EARTHQUAKE, SACRED_FIRE, RECOVER
+	db LEFTOVERS
+	db BRAVE_BIRD, CURSE, SACRED_FIRE, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4261,8 +4261,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db YVELTAL
-	db LIFE_ORB
-	db OBLIVION, DARK_PULSE, NASTY_PLOT, RECOVER
+	db SHARP_BEAK
+	db DARK_PULSE, OBLIVION, NASTY_PLOT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4600,7 +4600,7 @@ BattleTowerMons:
 
     db METAGROSS
 	db QUICK_CLAW
-	db METEOR_MASH, EARTHQUAKE, THUNDERPUNCH, EXPLOSION
+	db METEOR_MASH, EARTHQUAKE, ZEN_HEADBUTT, EXPLOSION
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4966,8 +4966,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db DRAGONITE
-	db DRAGON_SCALE
-	db DRAGON_DANCE, OUTRAGE, EARTHQUAKE, IRON_HEAD
+	db LEFTOVERS
+	db DRAGON_DANCE, DRAGON_CLAW, FIRE_PUNCH, ROOST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4977,7 +4977,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 16, 24 ; PP
+	db 24, 24, 24, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5123,7 +5123,7 @@ BattleTowerMons:
 
 	db CHARIZARD
 	db LIFE_ORB
-	db DRAGON_DANCE, BRAVE_BIRD, SACRED_FIRE, EARTHQUAKE
+	db DRAGON_DANCE, FLARE_BLITZ, FLY, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5133,7 +5133,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 16, 16 ; PP
+	db 16, 24, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5227,7 +5227,7 @@ BattleTowerMons:
 
 	db ZAPDOS
 	db LEFTOVERS
-	db THUNDERBOLT, ICY_WIND, AIR_SLASH, THUNDER_WAVE
+	db THUNDER, HURRICANE, RAIN_DANCE, ROOST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5253,7 +5253,7 @@ BattleTowerMons:
 
 	db ARTICUNO
 	db LEFTOVERS
-	db ICE_BEAM, TOXIC, REST, SLEEP_TALK
+	db ICE_BEAM, TOXIC, AIR_SLASH, ROOST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5279,7 +5279,7 @@ BattleTowerMons:
 
 	db MOLTRES
 	db LIFE_ORB
-	db FIRE_BLAST, BRAVE_BIRD, REST, SLEEP_TALK
+	db FIRE_BLAST, BRAVE_BIRD, FLARE_BLITZ, ROOST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5825,7 +5825,7 @@ BattleTowerMons:
 
 	db INFERNAPE
 	db FOCUS_SASH
-	db NASTY_PLOT, CLOSE_COMBAT, FIRE_BLAST, GIGA_DRAIN
+	db SWORDS_DANCE, CLOSE_COMBAT, FLARE_BLITZ, ICE_PUNCH
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5903,7 +5903,7 @@ BattleTowerMons:
 
 	db KLEFKI
 	db LEFTOVERS
-	db THUNDER_WAVE, SWAGGER, FLASH, IRON_HEAD
+	db THUNDER_WAVE, FLASH, IRON_HEAD
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5929,7 +5929,7 @@ BattleTowerMons:
 
 	db WHIMSICOTT
 	db LEFTOVERS
-	db STUN_SPORE, LEECH_SEED, SWAGGER, GIGA_DRAIN
+	db STUN_SPORE, LEECH_SEED, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5955,7 +5955,7 @@ BattleTowerMons:
 
 	db STARAPTOR
 	db LIFE_ORB
-	db BRAVE_BIRD, DOUBLE_EDGE, CLOSE_COMBAT, EXTREMESPEED
+	db BRAVE_BIRD, ROOST, CLOSE_COMBAT, EXTREMESPEED
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -6057,35 +6057,9 @@ BattleTowerMons:
 	bigdw 348 ; SDef
 	db "RANTA-N@@@@"
 
-	db STARMIE
-	db LIFE_ORB
-	db HYDRO_PUMP, THUNDERBOLT, ICE_BEAM, PSYCHIC_M
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 16 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 248 ; Atk
-	bigdw 268 ; Def
-	bigdw 324 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 268 ; SDef
-	db "RANTA-N@@@@"
-
 	db PIKACHU
 	db LIGHT_BALL
-	db THUNDERBOLT, SURF, ICE_PUNCH, VOLT_TACKLE
+	db THUNDERBOLT, SURF, EXTREMESPEED, VOLT_TACKLE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

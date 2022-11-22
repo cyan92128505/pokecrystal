@@ -2,9 +2,8 @@
 	dw 311, 4464 ; height, weight
 
 	db   "When two Beldum"
-	next "fuse together a"
-	next "magnetic nervous"
+	next "utilizing their"
+	next "brains in union."
 
-	page "system places"
-	next "their brains in"
-	next "union.@"
+	page "AB Immune to"
+	next "stat drops.@"

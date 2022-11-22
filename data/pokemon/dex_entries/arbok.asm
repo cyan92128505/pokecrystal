@@ -3,8 +3,8 @@
 
 	db   "To intimidate"
 	next "foes, it spreads"
-	next "its chest wide and"
+	next "its chest wide."
 
-	page "makes eerie sounds"
-	next "by expelling air"
-	next "from its mouth.@"
+	page "AB lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

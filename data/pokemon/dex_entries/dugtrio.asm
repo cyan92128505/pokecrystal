@@ -3,8 +3,8 @@
 
 	db   "These DIGLETT"
 	next "triplets dig over"
-	next "60 miles below sea"
+	next "60 miles a day."
 
-	page "level. No one"
-	next "knows what it's"
-	next "like underground.@"
+	page "AB Becomes more"
+	next "evasive when in"
+	next "a sandstorm.@"

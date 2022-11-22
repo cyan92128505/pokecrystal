@@ -1,10 +1,10 @@
 	db "SWINE@" ; species name
-	dw 307, 1230 ; height, weight
+	dw 507, 5230 ; height, weight
 
 	db   "Although its legs"
-	next "are short, its"
-	next "rugged hooves"
+	next "are short, they"
+	next "are sturdy."
 
-	page "prevent it from"
-	next "slipping, even on"
-	next "icy ground.@"
+	page "AB Takes half"
+	next "damage from FIRE"
+	next "and ICE moves.@"

@@ -3,8 +3,8 @@
 
 	db   "It wraps its op-"
 	next "ponent in its gas-"
-	next "like body, slowly"
+	next "like body."
 
-	page "weakening its prey"
-	next "by poisoning it"
-	next "through the skin.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

@@ -1,10 +1,9 @@
 	db "IRON SNAKE@" ; species name
-	dw 3002, 8820 ; height, weight
+	dw 3002, 58200 ; height, weight
 
-	db   "The many small"
-	next "metal particles"
-	next "that cover this"
+	db   "An indestructible"
+	next "monster that can"
+	next "destroy tanks."
 
-	page "#MON's body"
-	next "reflect bright"
-	next "light well.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

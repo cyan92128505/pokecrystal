@@ -1,10 +1,9 @@
 	db "RAINBOW@" ; species name
-	dw 1206, 4390 ; height, weight
+	dw 1206, 13900 ; height, weight
 
-	db   "It will reveal"
-	next "itself before a"
-	next "pure-hearted"
+	db   "The phoenix king"
+	next "of life and the"
+	next "pure of heart."
 
-	page "trainer by shining"
-	next "its bright rain-"
-	next "bow-colored wings.@"
+	page "AB Regenerates"
+	next "HP every turn.@"

@@ -1,10 +1,10 @@
 	db "SEA BASIN@" ; species name
 	dw 2000, 55000 ; height, weight
 
-	db   "Said to have"
-	next "expanded the sea"
-	next "by sinking the"
+	db   "Ruler of the"
+	next "sea. It seeks"
+	next "global flood."
 
-	page "continents. It"
-	next "wages war with"
-	next "GROUDON.@"
+	page "AB Summons a"
+	next "rain storm upon"
+	next "entering battle.@"

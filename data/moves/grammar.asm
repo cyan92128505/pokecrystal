@@ -9,7 +9,6 @@ MoveGrammar:
 	db STRENGTH
 	db HARDEN
 	db SMOKESCREEN
-	db WITHDRAW
 	db DEFENSE_CURL
 	db FLASH
 	db SPLASH
@@ -18,7 +17,6 @@ MoveGrammar:
 	db REST
 	db SUBSTITUTE
 	db MIND_READER
-	db SNORE
 	db PROTECT
 	db SPIKES
 	db ENDURE
@@ -43,7 +41,6 @@ MoveGrammar:
 	db AGILITY
 	db MIMIC
 	db DOUBLE_TEAM
-	db BARRAGE
 	db TRANSFORM
 	db STRUGGLE
 	db SCARY_FACE

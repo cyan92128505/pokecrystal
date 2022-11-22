@@ -1,10 +1,10 @@
 	db "FLYCATCHER@" ; species name
 	dw 507, 340 ; height, weight
 
-	db   "Once ingested into"
-	next "this #MON's"
-	next "body, even the"
+	db   "Able to ingest"
+	next "and dissolve"
+	next "anything."
 
-	page "hardest object"
-	next "will melt into"
-	next "nothing.@"
+	page "AB SPEED"
+	next "increases in"
+	next "the sun.@"

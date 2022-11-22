@@ -3,8 +3,8 @@
 
 	db   "Behind its lithe,"
 	next "elegant appearance"
-	next "lies a barbaric"
+	next "lies a monster."
 
-	page "side. It will tear"
-	next "apart its prey on"
-	next "a mere whim.@"
+	page "AB Slash always"
+	next "crits. Makes weak"
+	next "moves stronger.@"

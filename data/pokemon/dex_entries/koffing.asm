@@ -1,10 +1,10 @@
 	db "POISON GAS@" ; species name
 	dw 200, 20 ; height, weight
 
-	db   "If one gets close"
-	next "enough to it when"
-	next "it expels poison-"
+	db   "Never get close"
+	next "to it when it"
+	next "expels poison."
 
-	page "ous gas, the gas"
-	next "swirling inside it"
-	next "can be seen.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

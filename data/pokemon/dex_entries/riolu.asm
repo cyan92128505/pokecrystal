@@ -5,6 +5,6 @@
 	next "communicate with"
 	next "others."
 
-	page "It can run all"
-	next "through the day"
-	next "and night.@"
+	page "AB Status moves"
+	next "always land"
+	next "first.@"

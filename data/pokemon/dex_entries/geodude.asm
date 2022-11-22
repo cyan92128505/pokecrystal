@@ -2,9 +2,8 @@
 	dw 104, 440 ; height, weight
 
 	db   "Proud of their"
-	next "sturdy bodies,"
-	next "they bash against"
+	next "sturdy and hard"
+	next "bodies."
 
-	page "each other in a"
-	next "contest to prove"
-	next "whose is harder.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

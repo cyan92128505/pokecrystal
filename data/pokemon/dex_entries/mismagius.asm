@@ -3,8 +3,8 @@
 
 	db   "Its cries sound"
 	next "like incantations"
-	next "to torment the"
+	next "tormenting all."
 
-	page "foe. It appears"
-	next "when you least"
-	next "expect it.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

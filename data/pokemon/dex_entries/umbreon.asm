@@ -2,9 +2,8 @@
 	dw 303, 600 ; height, weight
 
 	db   "On the night of a"
-	next "full moon, or when"
-	next "it gets excited,"
+	next "full moon, it"
+	next "glows with power"
 
-	page "the ring patterns"
-	next "on its body glow"
-	next "yellow.@"
+	page "AB Immune to"
+	next "flinching.@"

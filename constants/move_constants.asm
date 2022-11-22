@@ -16,7 +16,7 @@
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
 	const SCRATCH      ; 0a
-	const DARK_PULSE     ; 0b
+	const DARK_PULSE   ; 0b
 	const GUILLOTINE   ; 0c
 	const SKY_CLEAVE   ; 0d
 	const SWORDS_DANCE ; 0e
@@ -115,7 +115,7 @@
 	const DARK_VOID    ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
-	const WITHDRAW     ; 6e
+	const ZEN_HEADBUTT ; 6e
 	const DEFENSE_CURL ; 6f
 	const BARRIER      ; 70
 	const LIGHT_SCREEN ; 71
@@ -139,13 +139,13 @@
 	const SPIKE_CANNON ; 83
 	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
-	const KINESIS      ; 86    draining kiss
+	const POISON_JAB   ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c     roost
+	const ROOST        ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
@@ -178,15 +178,15 @@
 	const MIND_READER  ; aa
 	const NIGHTMARE    ; ab
 	const FLAME_WHEEL  ; ac
-	const SNORE        ; ad
+	const HURRICANE    ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
 	const KINGS_SHIELD ; b0
 	const AEROBLAST    ; b1
-	const SHADOW_CLAW  ; b2     focus blast
+	const SHADOW_CLAW  ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
-	const POWDER_SNOW  ; b5    poison jab
+	const POWDER_SNOW  ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
@@ -195,7 +195,7 @@
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const AVALANCHE    ; bd
-	const OCTAZOOKA    ; be     flare blitz
+	const FLARE_BLITZ  ; be
 	const SPIKES       ; bf
 	const ZAP_CANNON   ; c0
 	const FORESIGHT    ; c1

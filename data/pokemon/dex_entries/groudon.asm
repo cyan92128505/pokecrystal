@@ -1,10 +1,10 @@
 	db "CONTINENT@" ; species name
 	dw 2000, 55000 ; height, weight
 
-	db   "Said to have"
-	next "expanded the land"
-	next "by evaporating"
+	db   "Ruler of the"
+	next "land. It seeks"
+	next "global drought."
 
-	page "the sea. It"
-	next "wages war with"
-	next "KYOGRE.@"
+	page "AB Summons"
+	next "harsh sun upon"
+	next "entering battle.@"

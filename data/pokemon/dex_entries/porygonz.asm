@@ -5,5 +5,6 @@
 	next "to travel alien"
 	next "dimensions."
 
-	page "It did not go"
-	next "as planned.@"
+	page "AB SPEC ATTACK"
+	next "increases upon"
+	next "entering battle.@"

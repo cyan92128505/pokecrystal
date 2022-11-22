@@ -15,7 +15,6 @@ StallMoves:
 	db MIMIC
 	db SCREECH
 	db HARDEN
-	db WITHDRAW
 	db DEFENSE_CURL
 	db LIGHT_SCREEN
 	db HAZE

@@ -5,6 +5,6 @@
 	next "eternal life with"
 	next "the worthy."
 
-	page "Mortal creatures"
-	next "are jealous of"
-	next "its powers.@"
+	page "AB Immune to"
+	next "all passive"
+	next "damage.@"

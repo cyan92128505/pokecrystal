@@ -1,10 +1,9 @@
 	db "SHELLFISH@" ; species name
-	dw 503, 1890 ; height, weight
+	dw 503, 4890 ; height, weight
 
-	db   "It firmly plants"
-	next "its feet on the"
-	next "ground before"
+	db   "Used as powerful"
+	next "naval weapons of"
+	next "war."
 
-	page "shooting water"
-	next "from the jets on"
-	next "its back.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

@@ -226,11 +226,11 @@ TM01 EQU const_value
 	add_tm TOXIC        ; c5
 	add_tm ZAP_CANNON   ; c6
 	add_tm ROCK_SMASH   ; c7
-	add_tm PSYCH_UP     ; c8  thunderwave
+	add_tm ROOST        ; c8
 	add_tm HIDDEN_POWER ; c9
 	add_tm SUNNY_DAY    ; ca
-	add_tm SELFDESTRUCT ; cb  selfdestruct
-	add_tm SNORE        ; cc  explosion
+	add_tm SELFDESTRUCT ; cb
+	add_tm EXPLOSION    ; cc
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce
 	add_tm ICY_WIND     ; cf
@@ -249,26 +249,26 @@ TM01 EQU const_value
 	const ITEM_DC       ; dc
 	add_tm PSYCHIC_M    ; dd
 	add_tm SHADOW_BALL  ; de
-	add_tm THUNDERBOLT  ; df  thunderbolt
-	add_tm DOUBLE_TEAM  ; e0  flamethrower
+	add_tm THUNDERBOLT  ; df
+	add_tm FLAMETHROWER ; e0
 	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2   ice beam
+	add_tm EARTH_POWER  ; e2
 	add_tm SLEEP_TALK   ; e3
 	add_tm SLUDGE_BOMB  ; e4
 	add_tm SANDSTORM    ; e5
 	add_tm FIRE_BLAST   ; e6
 	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8  double edge
+	add_tm DOUBLE_EDGE  ; e8
 	add_tm THUNDERPUNCH ; e9
 	add_tm DREAM_EATER  ; ea
-	add_tm ICE_BEAM     ; eb  swords dance / earth power
+	add_tm ICE_BEAM     ; eb
 	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed  nasty plot / air slash
+	add_tm AIR_SLASH    ; ed
 	add_tm ROCK_SLIDE   ; ee
-	add_tm THUNDER_WAVE ; ef  calm mind / roost
+	add_tm THUNDER_WAVE ; ef
 	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1  focus blast
-	add_tm NIGHTMARE    ; f2  dark pulse
+	add_tm FURY_CUTTER  ; f1
+	add_tm DARK_PULSE   ; f2
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
@@ -302,7 +302,7 @@ MT{02d:MT_VALUE}_MOVE = \1
 ENDM
 
 MT01 EQU const_value
-	add_mt FLAMETHROWER
+	add_mt CALM_MIND
 	add_mt NASTY_PLOT
 	add_mt SWORDS_DANCE
 NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1

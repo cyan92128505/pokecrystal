@@ -1,10 +1,9 @@
 	db "MAGNET@" ; species name
 	dw 303, 1320 ; height, weight
 
-	db   "When many"
-	next "MAGNETON gather"
-	next "together, the"
+	db   "Many MAGNETON can"
+	next "work together to"
+	next "pull down planes."
 
-	page "resulting magnetic"
-	next "storm disrupts"
-	next "radio waves.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

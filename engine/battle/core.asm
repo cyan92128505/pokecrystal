@@ -288,6 +288,7 @@ HandleBetweenTurnEffects:
 	ret c
 
 .NoMoreFaintingConditions:
+    call HandleRegenerator
 	call HandleLeftovers
 ;	call HandleMysteryberry
 	call HandleDefrost
@@ -923,6 +924,8 @@ GetPlayerMovePriority:
     jr z, .prankster
     cp KLEFKI
     jr z, .prankster
+    cp RIOLU
+    jr z, .prankster
     jr .noPrankster
 .prankster
     call GetMovePower
@@ -1470,6 +1473,55 @@ SwitchTurnCore:
 	ldh [hBattleTurn], a
 	ret
 
+HandleRegenerator:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+	call SetPlayerTurn
+    ld a, [wBattleMonSpecies]
+	call .do_it
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	jp .do_it
+.DoEnemyFirst:
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	call .do_it
+	call SetPlayerTurn
+	ld a, [wBattleMonSpecies]
+.do_it
+    cp HO_OH
+    jr z, .regen
+    cp SLOWBRO
+    jr z, .regen
+    cp SLOWKING
+    jr z, .regen
+    ret
+.regen
+    ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+.restore
+	call GetSixteenthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	ld hl, BattleText_TargetRegenerates
+	jp StdBattleTextbox
+
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -1516,7 +1568,7 @@ HandleLeftovers:
 	call GetSixteenthMaxHP
 	call SwitchTurnCore
 	call RestoreHP
-	ld hl, BattleText_TargetRecoveredWithItem
+	ld hl, BattleText_TargetRecoveredWithLeftovers
 	jp StdBattleTextbox
 
 ;HandleMysteryberry:
@@ -4359,7 +4411,11 @@ SwitchInEffects:
 ; AndrewNote - abilities that activate on switching in
     cp KYOGRE
     jr z, .rain
+    cp POLITOED
+    jr z, .rain
     cp GROUDON
+    jr z, .sun
+    cp CHARIZARD
     jr z, .sun
     cp TYRANITAR
     jp z,  .sand

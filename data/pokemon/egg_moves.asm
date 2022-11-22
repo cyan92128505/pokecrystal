@@ -354,7 +354,7 @@ RhyperiorEggMoves:
 HorseaEggMoves:
 	db FLAIL
 	db AURORA_BEAM
-	db OCTAZOOKA
+	db DRAGON_DANCE
 	db DISABLE
 	db SPLASH
 	db DRAGON_RAGE

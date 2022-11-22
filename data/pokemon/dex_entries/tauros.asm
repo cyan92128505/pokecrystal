@@ -1,10 +1,10 @@
 	db "WILD BULL@" ; species name
-	dw 407, 1950 ; height, weight
+	dw 507, 8950 ; height, weight
 
 	db   "These violent"
 	next "#MON fight"
-	next "with other mem-"
+	next "with anything."
 
-	page "bers of their herd"
-	next "in order to prove"
-	next "their strength.@"
+	page "AB lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

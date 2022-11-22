@@ -63,7 +63,7 @@
 	const GOLBAT     ; 2a
 	const ODDISH     ; 2b  ....
 	const GLOOM      ; 2c  ....
-	const VILEPLUME  ; 2d  florges
+	const VILEPLUME  ; 2d  ....
 	const PARAS      ; 2e
 	const PARASECT   ; 2f
 	const LARVESTA   ; 30
@@ -106,8 +106,8 @@
 	const MAGNEZONE  ; 55
 	const YANMEGA    ; 56
 	const GLISCOR    ; 57
-	const FERROSEED     ; 58   ....
-	const FERROTHORN        ; 59   ferrothorn
+	const FERROSEED  ; 58
+	const FERROTHORN ; 59
 	const SHELLDER   ; 5a
 	const CLOYSTER   ; 5b
 	const GASTLY     ; 5c
@@ -116,8 +116,8 @@
 	const ONIX       ; 5f
 	const DROWZEE    ; 60
 	const HYPNO      ; 61
-	const FEEBAS     ; 62   feebass
-	const MILOTIC    ; 63   milotic
+	const FEEBAS     ; 62
+	const MILOTIC    ; 63
 	const VOLTORB    ; 64
 	const ELECTRODE  ; 65
 	const EXEGGCUTE  ; 66

@@ -1,10 +1,9 @@
 	db "HYPNOSIS@" ; species name
 	dw 503, 1670 ; height, weight
 
-	db   "The longer it"
-	next "swings its"
-	next "pendulum, the"
+	db   "Lures away"
+	next "children at"
+	next "night."
 
-	page "longer the effects"
-	next "of its hypnosis"
-	next "last.@"
+	page "AB Immune to"
+	next "flinching.@"

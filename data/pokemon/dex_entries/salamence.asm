@@ -5,6 +5,6 @@
 	next "and merciless"
 	next "in its assault."
 
-	page "I rains down"
-	next "fire and death"
-	next "from the sky.@"
+	page "AB lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

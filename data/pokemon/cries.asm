@@ -214,9 +214,9 @@ PokemonCries::
 	mon_cry CRY_DUNSPARCE,   452,  256 ; DUNSPARCE
 	mon_cry CRY_GLIGAR,     -258,  256 ; GLIGAR
 	mon_cry CRY_TYPHLOSION,  239,  247 ; STEELIX
-	mon_cry CRY_DUNSPARCE,   274,  232 ; GIBLE
-	mon_cry CRY_DUNSPARCE,     0,  384 ; GABITE
-	mon_cry CRY_SLOWKING,    352,  224 ; GARCHOMP
+	mon_cry CRY_WOOPER,      100,  150 ; GIBLE
+	mon_cry CRY_WOOPER,        0,  200 ; GABITE
+	mon_cry CRY_WOOPER,     -100,  250 ; GARCHOMP
 	mon_cry CRY_AMPHAROS,      0,  352 ; SCIZOR
 	mon_cry CRY_DUNSPARCE,   656,  168 ; SHAYMIN
 	mon_cry CRY_AMPHAROS,     53,  224 ; HERACROSS

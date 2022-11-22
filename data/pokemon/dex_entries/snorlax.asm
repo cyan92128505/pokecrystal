@@ -1,10 +1,10 @@
 	db "SLEEPING@" ; species name
 	dw 611, 10140 ; height, weight
 
-	db   "This #MON's"
-	next "stomach is so"
-	next "strong, even"
+	db   "A huge, mighty"
+	next "#MON with a"
+	next "big appetite."
 
-	page "eating moldy or"
-	next "rotten food will"
-	next "not affect it.@"
+	page "AB Takes half"
+	next "damage from FIRE"
+	next "and ICE moves.@"

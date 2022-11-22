@@ -2,8 +2,9 @@
 	dw 7000, 4553 ; height, weight
 
 	db   "The great dragon."
-	next "It soars into the"
-	next "ozone layer,"
+	next "It cleaves the"
+	next "skies apart"
 
-	page "then cleaves the"
-	next "skies apart.@"
+	page "AB Has reduced"
+	next "weaknesses."
+	next "Clears weather.@"

@@ -3,8 +3,8 @@
 
 	db   "It appears when-"
 	next "ever there is"
-	next "world conflict,"
+	next "world conflict."
 
-	page "burning down any"
-	next "place it travels"
-	next "through.@"
+	page "AB lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

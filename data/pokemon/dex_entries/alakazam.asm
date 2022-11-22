@@ -2,9 +2,9 @@
 	dw 411, 1060 ; height, weight
 
 	db   "It has an IQ of"
-	next "5000. It calcu-"
-	next "lates many things"
+	next "5000. It can best"
+	next "any opponent."
 
-	page "in order to gain"
-	next "the edge in every"
-	next "battle.@"
+	page "AB Immune to"
+	next "all passive"
+	next "damage.@"

@@ -1,9 +1,10 @@
 	db "SPATIAL@" ; species name
 	dw 1309, 21000 ; height, weight
 
-	db   "Its total control"
+	db   "Has total control"
 	next "over the boundaries"
-	next "of space enable it"
+	next "of space."
 
-	page "to travel anywhere"
-	next "in the universe.@"
+	page "AB Takes half"
+	next "damage from FIRE"
+	next "and ICE moves.@"

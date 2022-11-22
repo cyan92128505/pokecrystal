@@ -9,6 +9,5 @@ RainDanceMoves:
 	db WATERFALL
 	db CLAMP
 	db BUBBLE
-	db OCTAZOOKA
 	db WHIRLPOOL
 	db -1 ; end

@@ -3,8 +3,8 @@
 
 	db   "This brawny"
 	next "#MON courses"
-	next "around the earth,"
+	next "around the earth."
 
-	page "spouting flames"
-	next "hotter than a"
-	next "volcano's magma.@"
+	page "AB ATTACK"
+	next "increases upon"
+	next "entering battle.@"

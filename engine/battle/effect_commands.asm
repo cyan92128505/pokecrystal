@@ -180,10 +180,8 @@ BattleCommand_CheckTurn:
 	ld hl, FastAsleepText
 	call StdBattleTextbox
 
-	; Snore and Sleep Talk bypass sleep.
+	; Sleep Talk bypass sleep.
 	ld a, [wCurPlayerMove]
-	cp SNORE
-	jr z, .not_asleep
 	cp SLEEP_TALK
 	jr z, .not_asleep
 
@@ -409,10 +407,8 @@ CheckEnemyTurn:
 	jr .not_asleep
 
 .fast_asleep
-	; Snore and Sleep Talk bypass sleep.
+	; Sleep Talk bypass sleep.
 	ld a, [wCurEnemyMove]
-	cp SNORE
-	jr z, .not_asleep
 	cp SLEEP_TALK
 	jr z, .not_asleep
 	call CantMove
@@ -919,9 +915,7 @@ IgnoreSleepOnly:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 
-	; Snore and Sleep Talk bypass sleep.
-	cp SNORE
-	jr z, .CheckSleep
+	; Sleep Talk bypass sleep.
 	cp SLEEP_TALK
 	jr z, .CheckSleep
 	and a
@@ -1240,6 +1234,9 @@ BattleCommand_Critical:
 .checkHighCritMon
     cp PERSIAN
     jr z, .checkSlash
+; ===== Super Luck =====
+    cp MEWTWO
+    jr z, .increaseCritical
     cp HONCHKROW
     jr z, .increaseCritical
     jr .continue
@@ -1479,6 +1476,8 @@ BattleCommand_Stab:
 	jr z, .checkSolidRock
 	cp RHYPERIOR
 	jr z, .checkSolidRock
+	cp RAYQUAZA
+	jr z, .checkSolidRock
 	jr .continue
 
 .checkSolidRock
@@ -1639,7 +1638,7 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
-    ;ret ; - revert this
+    ret ; - revert this
 ; damagevariation
 ; Modify the damage spread between 85% and 100%.
 
@@ -1956,8 +1955,12 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_THUNDER
-	ret nz
+	jr z, .checkRain
+	cp EFFECT_HURRICANE
+	jr z, .checkRain
+	ret
 
+.checkRain
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret
@@ -4248,47 +4251,28 @@ PoisonOpponent:
 	set PSN, [hl]
 	jp UpdateOpponentInParty
 
+BattleCommand_EatDream:
 BattleCommand_DrainTarget:
 ; draintarget
 	call SapHealth
 	ld hl, SuckedHealthText
 	jp StdBattleTextbox
 
-BattleCommand_EatDream:
-; eatdream
-	call SapHealth
-	ld hl, DreamEatenText
-	jp StdBattleTextbox
-
 SapHealth:
-	; Divide damage by 2, store it in hDividend
-	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-    cp AEROBLAST
-    jr nz, .halfDrain
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-    srl a ; a is 1/4 damage
-    add a ; 1/2 damage
-    add a ; 3/4 damage
-	ldh [hDividend], a
-	jr .continueDrain
-.halfDrain
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-	ldh [hDividend], a
-.continueDrain
-	ld b, a
-	ld a, [hl]
-	rr a
-	ldh [hDividend + 1], a
-	or b
-	jr nz, .at_least_one
+    ld hl, wCurDamage
+	ld a, [hli]            ; a is CurDamage and hl is now CurDamage + 1
+	srl a                  ; a is half CurDamage
+	ldh [hDividend], a     ; hDividend is half CurDamage
+	ld b, a                ; b is half CurDamage
+	ld a, [hl]             ; a is CurDamage + 1
+	rr a                   ; a is half CurDamage + 1
+	ldh [hDividend + 1], a ; hDividend+1 is half CurDamage+1
+	or b                   ; is CurDamage+1 > CurDamage
+	jr nz, .at_least_one   ; if so we drain hp
 	ld a, 1
-	ldh [hDividend + 1], a
-.at_least_one
+	ldh [hDividend + 1], a ; otherwise hDividend+1 = 1
 
+.at_least_one
 	ld hl, wBattleMonHP
 	ld de, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
@@ -6205,6 +6189,8 @@ BattleCommand_Recoil:
     cp AERODACTYL
     jr z, .rockHead
     cp MAROWAK
+    jr z, .rockHead
+    cp GIRATINA
     jr z, .rockHead
     jr .endRockHead
 .rockHead

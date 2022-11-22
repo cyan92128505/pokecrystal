@@ -3,8 +3,7 @@
 
 	db   "As it digs through"
 	next "the ground, it"
-	next "absorbs many hard"
+	next "absorbs rocks."
 
-	page "objects. This is"
-	next "what makes its"
-	next "body so solid.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

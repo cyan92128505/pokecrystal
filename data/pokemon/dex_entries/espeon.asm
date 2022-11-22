@@ -1,10 +1,10 @@
 	db "SUN@" ; species name
 	dw 211, 580 ; height, weight
 
-	db   "The tip of its"
-	next "forked tail"
-	next "quivers when it is"
+	db   "When it thinks"
+	next "its forked tail"
+	next "quivers."
 
-	page "predicting its"
-	next "opponent's next"
-	next "move.@"
+	page "AB Immune to"
+	next "all passive"
+	next "damage.@"

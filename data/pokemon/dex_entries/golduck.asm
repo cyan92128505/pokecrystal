@@ -3,8 +3,8 @@
 
 	db   "It swims grace-"
 	next "fully along on the"
-	next "quiet, slow-moving"
+	next "quiet rivers."
 
-	page "rivers and lakes"
-	next "of which it is so"
-	next "fond.@"
+	page "AB SPEED"
+	next "increases in"
+	next "the rain.@"

@@ -1,10 +1,10 @@
 	db "SEED@" ; species name
 	dw 607, 2210 ; height, weight
 
-	db   "As it warms it-"
-	next "self and absorbs"
-	next "the sunlight, its"
+	db   "A might creature"
+	next "that embodies the"
+	next "ancient forest."
 
-	page "flower petals"
-	next "release a pleasant"
-	next "fragrance.@"
+	page "AB SPEED"
+	next "increases in"
+	next "the sun.@"

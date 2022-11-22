@@ -1,10 +1,10 @@
 	db "FLAME@" ; species name
-	dw 507, 2000 ; height, weight
+	dw 507, 3000 ; height, weight
 
-	db   "It uses its wings"
-	next "to fly high. The"
-	next "temperature of its"
+	db   "A powerful and"
+	next "proud fire drake"
+	next "that loves battle."
 
-	page "fire increases as"
-	next "it gains exper-"
-	next "ience in battle.@"
+	page "AB Summons"
+	next "harsh sun upon"
+	next "entering battle.@"

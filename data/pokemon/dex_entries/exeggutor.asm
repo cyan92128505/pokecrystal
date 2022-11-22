@@ -3,8 +3,8 @@
 
 	db   "Living in a good"
 	next "environment makes"
-	next "it grow lots of"
+	next "it grow heads."
 
-	page "heads. A head that"
-	next "drops off becomes"
-	next "an EXEGGCUTE.@"
+	page "AB SPEED"
+	next "increases in"
+	next "the sun.@"

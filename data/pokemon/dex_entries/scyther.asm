@@ -2,9 +2,8 @@
 	dw 411, 1230 ; height, weight
 
 	db   "It's very proud of"
-	next "its speed. It"
-	next "moves so fast that"
+	next "its speed. Moves"
+	next "too fast to see."
 
-	page "its opponent does"
-	next "not even know what"
-	next "knocked it down.@"
+	page "AB Makes weaker"
+	next "moves stronger.@"

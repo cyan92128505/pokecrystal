@@ -1,10 +1,9 @@
 	db "DIVING@" ; species name
-	dw 1701, 4760 ; height, weight
+	dw 1701, 27600 ; height, weight
 
-	db   "It has an incred-"
-	next "ible ability to"
-	next "calm raging sto-"
+	db   "The mother of the"
+	next "sea and sky. It"
+	next "brings peace."
 
-	page "rms. It is said"
-	next "that LUGIA appears"
-	next "when storms start.@"
+	page "AB Gains armour"
+	next "when at full hp.@"

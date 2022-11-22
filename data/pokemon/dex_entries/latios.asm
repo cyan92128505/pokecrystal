@@ -3,8 +3,8 @@
 
 	db   "As fast as a Jet."
 	next "It is intelligent"
-	next "and dislikes"
+	next "and powerful."
 
-	page "fighting. But"
-	next "has great power"
-	next "in battle.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

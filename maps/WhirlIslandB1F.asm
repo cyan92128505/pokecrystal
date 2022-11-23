@@ -21,7 +21,7 @@ WhirlIslandB1FCalcium:
 	itemball CALCIUM
 
 WhirlIslandB1FNugget:
-	itemball NUGGET
+	itemball TM_ICE_BEAM
 
 WhirlIslandB1FEscapeRope:
 	itemball ESCAPE_ROPE

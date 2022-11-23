@@ -34,21 +34,19 @@ GoldenrodCity_MapScripts:
 .MoveTutor:
 	;checkevent EVENT_BEAT_ELITE_FOUR
 	;iffalse .MoveTutorDone
-	checkitem COIN_CASE
-	iffalse .MoveTutorDisappear
-	sjump .MoveTutorAppear
+	;checkitem COIN_CASE
+	;iffalse .MoveTutorDisappear
 	;readvar VAR_WEEKDAY
 	;ifequal WEDNESDAY, .MoveTutorAppear
 	;ifequal SATURDAY, .MoveTutorAppear
-.MoveTutorDisappear:
-	disappear GOLDENRODCITY_MOVETUTOR
-	endcallback
-
-.MoveTutorAppear:
-	checkflag ENGINE_DAILY_MOVE_TUTOR
-	iftrue .MoveTutorDone
+;.MoveTutorDisappear:
+;	disappear GOLDENRODCITY_MOVETUTOR
+;	endcallback
+;.MoveTutorAppear:
+;	checkflag ENGINE_DAILY_MOVE_TUTOR
+;	iftrue .MoveTutorDone
 	appear GOLDENRODCITY_MOVETUTOR
-.MoveTutorDone:
+;.MoveTutorDone:
 	endcallback
 
 MoveTutorScript:

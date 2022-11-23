@@ -28,21 +28,19 @@ GoldenrodGameCorner_MapScripts:
 .MoveTutor:
 	;checkevent EVENT_BEAT_ELITE_FOUR
 	;iffalse .finish
-	checkitem COIN_CASE
-	iffalse .move_tutor_inside
-	sjump .move_tutor_outside
+	;checkitem COIN_CASE
+	;iffalse .move_tutor_inside
 	;readvar VAR_WEEKDAY
 	;ifequal WEDNESDAY, .move_tutor_outside
 	;ifequal SATURDAY, .move_tutor_outside
-.move_tutor_inside
-	appear GOLDENRODGAMECORNER_MOVETUTOR
-	endcallback
-
-.move_tutor_outside
-	checkflag ENGINE_DAILY_MOVE_TUTOR
-	iftrue .finish
+;.move_tutor_inside
+;	appear GOLDENRODGAMECORNER_MOVETUTOR
+;	endcallback
+;.move_tutor_outside
+;	checkflag ENGINE_DAILY_MOVE_TUTOR
+;	iftrue .finish
 	disappear GOLDENRODGAMECORNER_MOVETUTOR
-.finish
+;.finish
 	endcallback
 
 MoveTutorInsideScript:

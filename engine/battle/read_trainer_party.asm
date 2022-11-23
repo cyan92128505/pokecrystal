@@ -177,7 +177,7 @@ ReadTrainerPartyPieces:
 ; stat exp?
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_STAT_EXP_F, a
-	jr z, .no_stat_exp
+	jr z, .default_stat_exp ; is the trainer defined as one with stat exp, if not skip to default
 
 	push hl
 	ld a, [wOTPartyCount]
@@ -186,38 +186,122 @@ ReadTrainerPartyPieces:
 	call GetPartyLocation
 	ld d, h
 	ld e, l
-	pop hl
+	pop hl ; de is now wOTPartyMon1StatExp
 
-	ld c, NUM_EXP_STATS
+	ld c, NUM_EXP_STATS ; c is how many stats have stat exp
+
 .stat_exp_loop
 ; When reading stat experience, treat PERFECT_STAT_EXP as $FFFF
-	call GetNextTrainerDataByte
+	call GetNextTrainerDataByte ; this is used to allow trainers to be defined in different banks
    	dec hl
 	cp LOW(PERFECT_STAT_EXP)
-	jr nz, .not_perfect_stat_exp
+	jr nz, .not_perfect_stat_exp ; jump if the stat exp is not max
 	inc hl
 	call GetNextTrainerDataByte
     dec hl
 	cp HIGH(PERFECT_STAT_EXP)
 	dec hl
-	jr nz, .not_perfect_stat_exp
-	ld a, $ff
+	jr nz, .not_perfect_stat_exp ; jump if the stat exp is not max
+	ld a, $ff ; a is 255 for max stat exp
 rept 2
 	ld [de], a
 	inc de
 	inc hl
-endr
-	jr .continue_stat_exp
+endr ; above sets both parts of de to 255 and increments hl in turn
+	jr .continue_stat_exp ; jump to next stat if we used perfect stat exp
 
 .not_perfect_stat_exp
 rept 2
     call GetNextTrainerDataByte
-	ld [de], a
+	ld [de], a ; set de to the defined stat exp
 	inc de
 endr
 .continue_stat_exp
-	dec c
-	jr nz, .stat_exp_loop
+	dec c ; decrease c, the count of stats to do this for
+	jr nz, .stat_exp_loop ; loop back around for next stat
+	jp .no_stat_exp
+
+.default_stat_exp
+    push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1StatExp
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	pop hl ; de is now wOTPartyMon1StatExp
+
+; AndrewNote - trainers to have a default amount of stat exp based on badges
+; 0-1 badges = 0
+; 2-3 badges = $1000 = 4096 stat exp = 16/64 extra stat at lvl 100
+; 4-7 badges = $4000 = 16384 stat exp = 32/64 extra stat at lvl 100
+; 8-15 badges = $9000 = 36864 stat exp = 48/64 extra stat at lvl 100
+; 16 badges = $FFFF = 65536 stat exp = 64/64 extra stat at lvl 100
+    push hl
+    ld hl, wKantoBadges
+    bit VOLCANOBADGE, [hl]
+	jr nz, .fullStatExp
+
+    ld hl, wJohtoBadges
+    bit RISINGBADGE, [hl]
+    jr nz, .highStatExp
+
+    bit FOGBADGE, [hl]
+    jr nz, .mediumStatExp
+
+    bit HIVEBADGE, [hl]
+    jp nz, .lowStatExp
+
+    pop hl
+    jp .no_stat_exp
+
+.fullStatExp
+rept 6
+    ld a, $ff
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jp .no_stat_exp
+
+.highStatExp
+rept 6
+    ld a, $90
+	ld [de], a
+	inc de
+	ld a, $00
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jr .no_stat_exp
+
+.mediumStatExp
+rept 6
+    ld a, $40
+	ld [de], a
+	inc de
+	ld a, $00
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jr .no_stat_exp
+
+.lowStatExp
+rept 6
+    ld a, $10
+	ld [de], a
+	inc de
+	ld a, $00
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jr .no_stat_exp
+
 .no_stat_exp
 
 ; item?
@@ -304,9 +388,9 @@ endr
 
 ; Custom DVs and state exp affect stats,
 ; so recalculate them after TryAddMonToParty
-	ld a, [wOtherTrainerType]
-	and TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP
-	jr z, .no_stat_recalc
+	;ld a, [wOtherTrainerType]
+	;and TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP
+	;jr z, .no_stat_recalc
 
 	push hl
 

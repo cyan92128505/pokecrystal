@@ -32,13 +32,14 @@ GoldenrodCity_MapScripts:
 	endcallback
 
 .MoveTutor:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MoveTutorDone
+	;checkevent EVENT_BEAT_ELITE_FOUR
+	;iffalse .MoveTutorDone
 	checkitem COIN_CASE
 	iffalse .MoveTutorDisappear
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MoveTutorAppear
-	ifequal SATURDAY, .MoveTutorAppear
+	sjump .MoveTutorAppear
+	;readvar VAR_WEEKDAY
+	;ifequal WEDNESDAY, .MoveTutorAppear
+	;ifequal SATURDAY, .MoveTutorAppear
 .MoveTutorDisappear:
 	disappear GOLDENRODCITY_MOVETUTOR
 	endcallback
@@ -53,15 +54,16 @@ GoldenrodCity_MapScripts:
 MoveTutorScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .notYet
 	writetext GoldenrodCityMoveTutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused
-	special DisplayCoinCaseBalance
 	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
 	yesorno
 	iffalse .Refused2
-	checkcoins 4000
-	ifequal HAVE_LESS, .NotEnoughMoney
+	checkmoney YOUR_MONEY, 20000
+    ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -92,6 +94,12 @@ MoveTutorScript:
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
+.notYet
+    writetext GoldenrodCityMoveTutorNotYetText
+    waitbutton
+	closetext
+	end
+
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 2, 15, TEXTBOX_Y - 1
@@ -101,9 +109,9 @@ MoveTutorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FLAMETHROWER@"
-	db "THUNDERBOLT@"
-	db "ICE BEAM@"
+	db "CALM MIND@"
+	db "NASTY PLOT@"
+	db "SWORDS DANCE@"
 	db "CANCEL@"
 
 .Refused:
@@ -121,27 +129,27 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takecoins 4000
+	takemoney YOUR_MONEY, 20000
 	waitsfx
 	playsound SFX_TRANSACTION
-	special DisplayCoinCaseBalance
 	writetext GoldenrodCityMoveTutorFarewellKidText
 	waitbutton
 	closetext
-	readvar VAR_FACING
-	ifequal LEFT, .WalkAroundPlayer
-	applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorEnterGameCornerMovement
-	sjump .GoInside
-
-.WalkAroundPlayer:
-	applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement
-.GoInside:
-	playsound SFX_ENTER_DOOR
-	disappear GOLDENRODCITY_MOVETUTOR
-	clearevent EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
-	setflag ENGINE_DAILY_MOVE_TUTOR
-	waitsfx
 	end
+	;readvar VAR_FACING
+	;ifequal LEFT, .WalkAroundPlayer
+	;applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorEnterGameCornerMovement
+	;sjump .GoInside
+
+;.WalkAroundPlayer:
+;	applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement
+;.GoInside:
+;	playsound SFX_ENTER_DOOR
+;	disappear GOLDENRODCITY_MOVETUTOR
+;	clearevent EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
+;	setflag ENGINE_DAILY_MOVE_TUTOR
+;	waitsfx
+;	end
 
 .Incompatible:
 	writetext GoldenrodCityMoveTutorBButText
@@ -487,19 +495,40 @@ GoldenrodCityFlowerShopSignText:
 	done
 
 GoldenrodCityMoveTutorAskTeachAMoveText:
+    text "You are worthy!"
+
+	para "I can teach your"
+	line "#MON amazing"
+
+	para "moves!"
+
+    para "Moves that can"
+    line "win battles!"
+
+    para "Do you accept?"
+	done
+
+GoldenrodCityMoveTutorNotYetText:
 	text "I can teach your"
 	line "#MON amazing"
 
-	para "moves if you'd"
-	line "like."
+	para "moves!"
 
-	para "Should I teach a"
-	line "new move?"
+    para "Moves that can"
+    line "win battles!"
+
+	para "But only to"
+	line "those who have"
+	cont "8 badges!"
+
+	para "Come back and"
+	line "see me when you"
+	cont "are ready!"
 	done
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "4000 coins. Okay?"
+	line "20000 Okay?"
 	done
 
 GoldenrodCityMoveTutorAwwButTheyreAmazingText:

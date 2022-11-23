@@ -58,7 +58,7 @@ CianwoodGymChuckScript:
 	setevent EVENT_BEAT_BLACKBELT_LUNG
 	writetext ChuckExplainBadgeText
 	promptbutton
-	verbosegiveitem TM_DYNAMICPUNCH
+	verbosegiveitem TM_DRAIN_PUNCH
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetext ChuckExplainTMText

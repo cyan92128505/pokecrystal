@@ -10,16 +10,16 @@ RuinsOfAlphHoOhItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphHoOhItemRoomGoldBerry:
-	itemball GOLD_BERRY
+	itemball CHOICE_SPECS
 
 RuinsOfAlphHoOhItemRoomMysteryberry:
-	itemball MYSTERYBERRY
+	itemball CHOICE_BAND
 
 RuinsOfAlphHoOhItemRoomRevivalHerb:
-	itemball REVIVAL_HERB
+	itemball LIFE_ORB
 
 RuinsOfAlphHoOhItemRoomCharcoal:
-	itemball CHARCOAL
+	itemball LEFTOVERS
 
 RuinsOfAlphHoOhItemRoomAncientReplica:
 	jumptext RuinsOfAlphHoOhItemRoomAncientReplicaText

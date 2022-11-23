@@ -217,10 +217,10 @@ ENDM
 
 ; see data/moves/tmhm_moves.asm for moves
 TM01 EQU const_value
-	add_tm DYNAMICPUNCH ; bf
+	add_tm DRAIN_PUNCH  ; bf
 	add_tm HEADBUTT     ; c0
 	add_tm CURSE        ; c1
-	add_tm ROLLOUT      ; c2
+	add_tm AURA_SPHERE  ; c2
 	const ITEM_C3       ; c3
 	add_tm ROAR         ; c4
 	add_tm TOXIC        ; c5

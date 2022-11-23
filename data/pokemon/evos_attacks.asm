@@ -230,7 +230,6 @@ DoubladeEvosAttacks:
 	db 32, IRON_HEAD
 	db 36, SHADOW_CLAW
 	db 39, FLASH_CANNON
-	db 40, KINGS_SHIELD
 	db 45, CLOSE_COMBAT
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -248,10 +247,13 @@ AegislashEvosAttacks:
 	db 36, SHADOW_CLAW
 	db 39, FLASH_CANNON
 	db 40, KINGS_SHIELD
+	db 41, KINGS_SHIELD
 	db 42, BULLET_PUNCH
+	db 42, KINGS_SHIELD
 	db 46, CLOSE_COMBAT
 	db 48, KINGS_SHIELD
 	db 50, SWORDS_DANCE
+    db 51, KINGS_SHIELD
 	db 60, KINGS_SHIELD
 	db 0 ; no more level-up moves
 

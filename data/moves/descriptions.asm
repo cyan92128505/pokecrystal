@@ -121,9 +121,9 @@ MoveDescriptions::
 	dw MetronomeDescription
 	dw MirrorMoveDescription
 	dw SelfdestructDescription
-	dw EggBombDescription
+	dw BraveBirdDescription
 	dw LickDescription
-	dw SmogDescription
+	dw EarthPowerDescription
 	dw SludgeDescription
 	dw CloseCombatDescription
 	dw FireBlastDescription
@@ -749,17 +749,17 @@ SelfdestructDescription:
 	db   "Powerful but makes"
 	next "the user faint.@"
 
-EggBombDescription:
-	db   "Eggs are hurled at"
-	next "the foe.@"
+BraveBirdDescription:
+	db   "A tackle that also"
+	next "hurts the user.@"
 
 LickDescription:
 	db   "An attack that may"
 	next "cause paralysis.@"
 
-SmogDescription:
-	db   "An attack that may"
-	next "poison the foe.@"
+EarthPowerDescription:
+	db   "A powerful wave"
+	next "of earth.@"
 
 SludgeDescription:
 	db   "An attack that may"

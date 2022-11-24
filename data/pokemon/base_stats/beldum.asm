@@ -6,7 +6,7 @@
     db STEEL, PSYCHIC_TYPE ; type
     db 45 ; catch rate
 	db 144 ; base exp
-	db NO_ITEM, METAL_COAT ; items
+	db METAL_COAT, NO_ITEM ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch

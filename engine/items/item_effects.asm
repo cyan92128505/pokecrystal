@@ -232,27 +232,27 @@ PokeBallEffect:
 .checkKantoBadges
 	ld a, [wKantoBadges]
 	cp %11111111 ; all badges
-    jr nz, .levelTooHigh
+    jr z, .levelTooHigh
     jr .continue
 
 .checkRisingBadge
 	bit RISINGBADGE, [hl]
-	jr nz, .levelTooHigh
+	jr z, .levelTooHigh
 	jr .continue
 
 .checkStormBadge
 	bit STORMBADGE, [hl]
-	jr nz, .levelTooHigh
+	jr z, .levelTooHigh
 	jr .continue
 
 .checkFogBadge
 	bit FOGBADGE, [hl]
-	jr nz, .levelTooHigh
+	jr z, .levelTooHigh
 	jr .continue
 
 .checkHiveBadge
 	bit HIVEBADGE, [hl]
-	jr nz, .levelTooHigh
+	jr z, .levelTooHigh
 	jr .continue
 
 .levelTooHigh

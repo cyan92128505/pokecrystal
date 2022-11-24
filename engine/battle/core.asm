@@ -3923,6 +3923,8 @@ TryToRunAwayFromBattle:
 	jp z, .cant_escape
 	cp BATTLETYPE_SUICUNE
 	jp z, .cant_escape
+	cp BATTLETYPE_PERFECT
+	jp z, .cant_escape
 
 	ld a, [wLinkMode]
 	and a
@@ -3952,6 +3954,11 @@ TryToRunAwayFromBattle:
 	pop hl
 	jr nz, .no_flee_item
 
+	; AndrewNote - smoke ball 20% chance to fail
+	call Random
+	cp 20 percent
+	jr c, .no_flee_item
+
 	call SetPlayerTurn
 	call GetItemName
 	ld hl, BattleText_UserFledUsingAStringBuffer1
@@ -3959,6 +3966,12 @@ TryToRunAwayFromBattle:
 	jp .can_escape
 
 .no_flee_item
+
+    ; AndrewNote - always have 30% chance to flee
+	call Random
+	cp 30 percent
+	jp c, .can_escape
+
 	ld a, [wNumFleeAttempts]
 	inc a
 	ld [wNumFleeAttempts], a
@@ -6388,10 +6401,10 @@ LoadEnemyMon:
 
 ; Force Item1
 ; Used for Ho-Oh, Lugia and Snorlax encounters
-	ld a, [wBattleType]
-	cp BATTLETYPE_FORCEITEM
-	ld a, [wBaseItem1]
-	jr z, .UpdateItem
+;	ld a, [wBattleType]
+;	cp BATTLETYPE_FORCEITEM
+;	ld a, [wBaseItem1]
+;	jr z, .UpdateItem
 
 ; Failing that, it's all up to chance
 ;  Effective chances:
@@ -6399,18 +6412,26 @@ LoadEnemyMon:
 ;    23% Item1
 ;     2% Item2
 
+; AndrewNote - wild items are redone
+; if item 2 is defined then 100% to have it
+; otherwise 75% for no item, 25% for item 1
+    ld a, [wBaseItem2]
+    cp NO_ITEM
+    jr nz, .UpdateItem
+
 ; 25% chance of getting an item
 	call BattleRandom
 	cp 75 percent + 1
 	ld a, NO_ITEM
 	jr c, .UpdateItem
+	ld a, [wBaseItem1]
 
 ; From there, an 8% chance for Item2
-	call BattleRandom
-	cp 8 percent ; 8% of 25% = 2% Item2
-	ld a, [wBaseItem1]
-	jr nc, .UpdateItem
-	ld a, [wBaseItem2]
+;	call BattleRandom
+;	cp 8 percent ; 8% of 25% = 2% Item2
+;	ld a, [wBaseItem1]
+;	jr nc, .UpdateItem
+;	ld a, [wBaseItem2]
 
 .UpdateItem:
 	ld [wEnemyMonItem], a
@@ -6501,18 +6522,45 @@ LoadEnemyMon:
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_SHINY
-	jr nz, .GenerateDVs
+	jr z, .GenerateShinyDVs
+	cp BATTLETYPE_PERFECT
+	jr z, .GeneratePerfectDVs
+	jr .GenerateDVs
 
+.GenerateShinyDVs
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
 
+.GeneratePerfectDVs
+	ld b, $ff
+	ld c, $ff
+	jr .UpdateDVs
+
 .GenerateDVs:
 ; Generate new random DVs
+; AndrewNote - once all johto badges obtained all wild pokes have at least 10 dv
+    ld a, [wJohtoBadges]
+    cp %11111111 ; all badges
+    jr z, .forceHighDVs
+
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
+	jr .UpdateDVs
+
+.forceHighDVs
+.loop1
+    call BattleRandom
+    cp $AA
+    jr c, .loop1
+    ld b, a
+.loop2
+    call BattleRandom
+    cp $AA
+    jr c, .loop2
+    ld c, a
 
 .UpdateDVs:
 ; Input DVs in register bc
@@ -6609,7 +6657,7 @@ LoadEnemyMon:
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
 	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
-	jr c, .GenerateDVs ; try again
+	jp c, .GenerateDVs ; try again
 
 ; Finally done with DVs
 

@@ -6,7 +6,7 @@
 	db UBER, UBER ; type
 	db 45 ; catch rate
 	db 255 ; base exp
-	db NO_ITEM, MIRACLEBERRY ; items
+	db NO_ITEM, LEFTOVERS ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 120 ; step cycles to hatch

@@ -6,7 +6,7 @@
     db DARK, ICE ; type
 	db 45 ; catch rate
 	db 179 ; base exp
-	db NO_ITEM, QUICK_CLAW ; items
+	db QUICK_CLAW, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch

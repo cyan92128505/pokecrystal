@@ -195,13 +195,6 @@ GetGender:
 	call z, CloseSRAM
 
 ; We need the gender ratio to do anything with this.
-    ld a, [wJohtoBadges]
-    cp %11111111 ; all badges
-    jr nz, .normalDVs
-    ld a, GENDER_F82
-    jr .checkRatio
-
-.normalDVs
 	push bc
 	ld a, [wCurPartySpecies]
 	dec a

@@ -6525,6 +6525,18 @@ LoadEnemyMon:
 	jr z, .GenerateShinyDVs
 	cp BATTLETYPE_PERFECT
 	jr z, .GeneratePerfectDVs
+
+; AndrewNote - Silver cave has max dvs
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_SILVER_CAVE
+    jr z, .GeneratePerfectDVs
+	cp LANDMARK_ROUTE_28
+    jr z, .GeneratePerfectDVs
+
 	jr .GenerateDVs
 
 .GenerateShinyDVs
@@ -6539,28 +6551,11 @@ LoadEnemyMon:
 
 .GenerateDVs:
 ; Generate new random DVs
-; AndrewNote - once all johto badges obtained all wild pokes have at least 10 dv
-    ld a, [wJohtoBadges]
-    cp %11111111 ; all badges
-    jr z, .forceHighDVs
-
 	call BattleRandom
 	ld b, a
 	call BattleRandom
 	ld c, a
 	jr .UpdateDVs
-
-.forceHighDVs
-.loop1
-    call BattleRandom
-    cp $AA
-    jr c, .loop1
-    ld b, a
-.loop2
-    call BattleRandom
-    cp $AA
-    jr c, .loop2
-    ld c, a
 
 .UpdateDVs:
 ; Input DVs in register bc

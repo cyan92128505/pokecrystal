@@ -290,7 +290,7 @@ JohtoGrassWildMons:
 	db 24, KOFFING
 	db 26, GROWLITHE
 	db 27, HAUNTER
-	db 35, WEEZING
+	db 28, WEEZING
 	db 42, NIDOQUEEN
 	; day
 	db 22, RATICATE
@@ -298,7 +298,7 @@ JohtoGrassWildMons:
 	db 24, KOFFING
 	db 26, GROWLITHE
 	db 27, HAUNTER
-	db 35, WEEZING
+	db 28, WEEZING
 	db 42, NIDOQUEEN
 	; nite
 	db 22, RATICATE
@@ -306,35 +306,35 @@ JohtoGrassWildMons:
 	db 24, KOFFING
 	db 26, GROWLITHE
 	db 27, HAUNTER
-	db 35, WEEZING
+	db 28, WEEZING
 	db 42, NIDOQUEEN
 	end_grass_wildmons
 
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, RATICATE
+	db 22, DIGLETT
 	db 24, GOLBAT
 	db 24, KOFFING
 	db 26, GROWLITHE
 	db 27, HAUNTER
-	db 35, WEEZING
+	db 28, WEEZING
 	db 42, NIDOKING
 	; day
-	db 22, RATICATE
+	db 22, DIGLETT
 	db 24, GOLBAT
 	db 24, KOFFING
 	db 26, GROWLITHE
 	db 27, HAUNTER
-	db 35, WEEZING
+	db 28, WEEZING
 	db 42, NIDOKING
 	; nite
-	db 22, RATICATE
+	db 22, DIGLETT
 	db 24, GOLBAT
 	db 24, KOFFING
 	db 26, GROWLITHE
 	db 27, HAUNTER
-	db 35, WEEZING
+	db 26, WEEZING
 	db 42, NIDOKING
 	end_grass_wildmons
 
@@ -373,7 +373,7 @@ JohtoGrassWildMons:
 	db 20, SMEARGLE
 	db 25, IVYSAUR
 	db 32, MR__MIME
-	db 32, SHELGON
+	db 32, WOBBUFFET
 	db 32, METANG
 	db 51, ALAKAZAM
 	; day
@@ -381,7 +381,7 @@ JohtoGrassWildMons:
 	db 20, SMEARGLE
 	db 25, CHARMELEON
 	db 32, WIGGLYTUFF
-	db 32, SHELGON
+	db 32, WOBBUFFET
 	db 32, METANG
 	db 51, ALAKAZAM
 	; nite
@@ -389,7 +389,7 @@ JohtoGrassWildMons:
 	db 20, SMEARGLE
 	db 25, WARTORTLE
 	db 32, CLEFABLE
-	db 32, SHELGON
+	db 32, WOBBUFFET
 	db 32, METANG
 	db 51, ALAKAZAM
 	end_grass_wildmons
@@ -570,7 +570,7 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, SCYTHER
+	db 15, PINSIR
 	db 34, BUTTERFREE
 	; day
 	db 12, SHROOMISH
@@ -578,7 +578,7 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, SCYTHER
+	db 15, PINSIR
 	db 37, YANMEGA
 	; nite
 	db 12, HOOTHOOT
@@ -586,7 +586,7 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 14, LARVESTA
-	db 15, SCYTHER
+	db 15, PINSIR
 	db 43, HONCHKROW
 	end_grass_wildmons
 
@@ -597,24 +597,24 @@ JohtoGrassWildMons:
 	db 26, ARBOK
 	db 27, GLIGAR
 	db 27, SWINUB
-	db 28, RIOLU
-	db 28, BAGON
+	db 28, VULPIX
+	db 28, PONYTA
 	db 53, STARAPTOR
 	; day
 	db 26, LOPUNNY
 	db 26, ARBOK
 	db 27, GLIGAR
 	db 27, SWINUB
-	db 28, RIOLU
-	db 28, BAGON
+	db 28, VULPIX
+	db 28, PONYTA
 	db 53, STARAPTOR
 	; nite
 	db 26, SNEASEL
 	db 26, ARBOK
 	db 27, GLIGAR
 	db 27, HOUNDOOM
-	db 28, RIOLU
-	db 28, BAGON
+	db 28, VULPIX
+	db 28, PONYTA
 	db 53, WEAVILE
 	end_grass_wildmons
 
@@ -987,7 +987,7 @@ JohtoGrassWildMons:
 	; morn
 	db 34, GABITE
 	db 34, DRAGONAIR
-	db 37, SLOWBRO
+	db 37, PUPITAR
 	db 37, TENTACRUEL
 	db 42, MILOTIC
 	db 42, GYARADOS
@@ -995,7 +995,7 @@ JohtoGrassWildMons:
 	; day
 	db 34, GABITE
 	db 34, DRAGONAIR
-	db 37, SLOWBRO
+	db 37, PUPITAR
 	db 37, TENTACRUEL
 	db 42, MILOTIC
 	db 42, GYARADOS
@@ -1003,7 +1003,7 @@ JohtoGrassWildMons:
 	; nite
 	db 34, GABITE
 	db 34, DRAGONAIR
-	db 37, SLOWBRO
+	db 37, PUPITAR
 	db 37, TENTACRUEL
 	db 42, MILOTIC
 	db 42, GYARADOS
@@ -1015,7 +1015,7 @@ JohtoGrassWildMons:
 	; morn
 	db 34, GABITE
 	db 34, DRAGONAIR
-	db 37, SLOWBRO
+	db 37, PUPITAR
 	db 37, TENTACRUEL
 	db 42, MILOTIC
 	db 42, GYARADOS
@@ -1023,7 +1023,7 @@ JohtoGrassWildMons:
 	; day
 	db 34, GABITE
 	db 34, DRAGONAIR
-	db 37, SLOWBRO
+	db 37, PUPITAR
 	db 37, TENTACRUEL
 	db 42, MILOTIC
 	db 42, GYARADOS
@@ -1031,7 +1031,7 @@ JohtoGrassWildMons:
 	; nite
 	db 34, GABITE
 	db 34, DRAGONAIR
-	db 37, SLOWBRO
+	db 37, PUPITAR
 	db 37, TENTACRUEL
 	db 42, MILOTIC
 	db 42, GYARADOS
@@ -1185,7 +1185,7 @@ JohtoGrassWildMons:
 	db 8, DUNSPARCE
 	db 10, HOUNDOUR
 	db 10, SNEASEL
-	db 12, CLEFAIRY
+	db 12, DIGLETT
 	db 12, LARVITAR
 	db 76, TYRANITAR
 	; day
@@ -1193,7 +1193,7 @@ JohtoGrassWildMons:
 	db 8, DUNSPARCE
 	db 10, HOUNDOUR
 	db 10, SNEASEL
-	db 12, CLEFAIRY
+	db 12, DIGLETT
 	db 12, LARVITAR
 	db 76, TYRANITAR
 	; nite
@@ -1201,7 +1201,7 @@ JohtoGrassWildMons:
 	db 8, DUNSPARCE
 	db 10, HOUNDOUR
 	db 10, SNEASEL
-	db 12, CLEFAIRY
+	db 12, DIGLETT
 	db 12, LARVITAR
 	db 76, TYRANITAR
 	end_grass_wildmons
@@ -1257,7 +1257,7 @@ JohtoGrassWildMons:
 	db 3, HOOTHOOT
 	db 4, MEOWTH
 	db 4, CLEFAIRY
-	db 5, HOUNDOUR
+	db 5, VULPIX
 	db 5, MURKROW
 	db 21, RATICATE
 	end_grass_wildmons
@@ -1296,7 +1296,7 @@ JohtoGrassWildMons:
 	db 5, BELLSPROUT
 	db 6, STARLY
 	db 7, MEOWTH
-	db 7, METAPOD
+	db 7, VULPIX
 	db 9, VOLTIK
 	db 9, PIKACHU
 	db 25, GROWLITHE
@@ -1304,15 +1304,15 @@ JohtoGrassWildMons:
 	db 5, BELLSPROUT
 	db 6, STARLY
 	db 7, MEOWTH
-	db 7, METAPOD
+	db 7, VULPIX
 	db 9, VOLTIK
 	db 9, PIKACHU
 	db 25, GROWLITHE
 	; nite
 	db 5, HOOTHOOT
 	db 6, GASTLY
-	db 7, ZUBAT
 	db 7, MEOWTH
+	db 7, VULPIX
 	db 8, CLEFAIRY
 	db 6, LITWICK
 	db 25, HAUNTER
@@ -1351,24 +1351,24 @@ JohtoGrassWildMons:
 	; morn
 	db 9, WOOPER
 	db 9, POLIWAG
-	db 10, MACHOP
-	db 11, STARLY
+	db 10, CHINCHOU
+	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
 	db 31, QUAGSIRE
 	; day
 	db 9, WOOPER
 	db 9, POLIWAG
-	db 10, MACHOP
-	db 11, STARLY
+	db 10, CHINCHOU
+	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
 	db 31, QUAGSIRE
 	; nite
 	db 9, WOOPER
 	db 9, POLIWAG
-	db 11, CLEFAIRY
-	db 11, ZUBAT
+	db 11, CHINCHOU
+	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
 	db 31, GOLBAT
@@ -1406,7 +1406,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, STARAVIA
-	db 16, DROWZEE
+	db 16, VOLTORB
 	db 12, RALTS
 	db 12, ABRA
     db 18, GROWLITHE
@@ -1414,7 +1414,7 @@ JohtoGrassWildMons:
 	db 42, YANMEGA
 	; day
 	db 16, STARAVIA
-	db 16, DROWZEE
+	db 16, VOLTORB
 	db 12, RALTS
 	db 12, ABRA
     db 18, GROWLITHE
@@ -1422,7 +1422,7 @@ JohtoGrassWildMons:
 	db 42, YANMEGA
 	; nite
 	db 16, MURKROW
-	db 16, DROWZEE
+	db 16, VOLTORB
 	db 12, RALTS
 	db 12, ABRA
     db 18, PSYDUCK
@@ -1602,24 +1602,24 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, DRATINI
-	db 27, FEEBAS
-	db 33, GOLDUCK
+	db 4, TOGEPI
+	db 33, LANTURN
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
 	db 71, MILOTIC
 	; day
 	db 27, DRATINI
-	db 27, FEEBAS
-	db 33, GOLDUCK
+	db 4, TOGEPI
+	db 33, LANTURN
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
 	db 71, MILOTIC
 	; nite
 	db 27, DRATINI
-	db 27, FEEBAS
-	db 33, GOLDUCK
+	db 27, GOLDUCK
+	db 33, LANTURN
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
@@ -1662,7 +1662,7 @@ JohtoGrassWildMons:
 	db 8, GEODUDE
 	db 8, JIGGLYPUFF
 	db 9, CLEFAIRY
-	db 9, LARVITAR
+	db 9, DRATINI
 	db 25, GRAVELER
 	; day
     db 5, RATTATA
@@ -1670,7 +1670,7 @@ JohtoGrassWildMons:
 	db 8, GEODUDE
 	db 8, JIGGLYPUFF
 	db 9, CLEFAIRY
-	db 9, LARVITAR
+	db 9, DRATINI
 	db 25, GRAVELER
 	; nite
     db 5, RATTATA
@@ -1678,7 +1678,7 @@ JohtoGrassWildMons:
 	db 8, GEODUDE
 	db 8, JIGGLYPUFF
 	db 9, CLEFAIRY
-	db 9, LARVITAR
+	db 9, DRATINI
 	db 25, GRAVELER
 	end_grass_wildmons
 
@@ -1691,7 +1691,7 @@ JohtoGrassWildMons:
 	db 62, VOLCARONA
 	db 65, VENUSAUR
 	db 65, SCEPTILE
-	db 80, DRAGONITE
+	db 80, GENESECT
 	; day
 	db 60, SKARMORY
 	db 60, SMEARGLE
@@ -1699,7 +1699,7 @@ JohtoGrassWildMons:
 	db 62, SNORLAX
 	db 65, CHARIZARD
 	db 65, INFERNAPE
-	db 80, DRAGONITE
+	db 80, GENESECT
 	; nite
 	db 60, POLITOED
 	db 60, STARMIE
@@ -1707,7 +1707,7 @@ JohtoGrassWildMons:
 	db 62, ARCANINE
 	db 65, BLASTOISE
 	db 65, GRENINJA
-	db 80, DRAGONITE
+	db 80, GENESECT
 	end_grass_wildmons
 
 	db -1 ; end

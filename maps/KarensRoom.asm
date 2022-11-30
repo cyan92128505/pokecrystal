@@ -136,8 +136,10 @@ KarensRoom_MapEvents:
 	def_warp_events
 	warp_event  4, 17, BRUNOS_ROOM, 3
 	warp_event  5, 17, BRUNOS_ROOM, 4
-	warp_event  4,  2, LANCES_ROOM, 1
-	warp_event  5,  2, LANCES_ROOM, 2
+	;warp_event  4,  2, LANCES_ROOM, 1
+	;warp_event  5,  2, LANCES_ROOM, 2
+	warp_event  4,  2, KOGAS_ROOM, 1
+	warp_event  5,  2, KOGAS_ROOM, 2
 
 	def_coord_events
 

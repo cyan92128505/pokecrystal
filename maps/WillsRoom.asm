@@ -131,8 +131,10 @@ WillsRoom_MapEvents:
 
 	def_warp_events
 	warp_event  5, 17, INDIGO_PLATEAU_POKECENTER_1F, 4
-	warp_event  4,  2, KOGAS_ROOM, 1
-	warp_event  5,  2, KOGAS_ROOM, 2
+	;warp_event  4,  2, KOGAS_ROOM, 1
+	;warp_event  5,  2, KOGAS_ROOM, 2
+	warp_event  4,  2, BRUNOS_ROOM, 1
+	warp_event  5,  2, BRUNOS_ROOM, 2
 
 	def_coord_events
 

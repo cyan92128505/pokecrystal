@@ -126,8 +126,10 @@ BrunosRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, KOGAS_ROOM, 3
-	warp_event  5, 17, KOGAS_ROOM, 4
+	;warp_event  4, 17, KOGAS_ROOM, 3
+	;warp_event  5, 17, KOGAS_ROOM, 4
+	warp_event  4, 17, WILLS_ROOM, 2
+	warp_event  5, 17, WILLS_ROOM, 3
 	warp_event  4,  2, KARENS_ROOM, 1
 	warp_event  5,  2, KARENS_ROOM, 2
 

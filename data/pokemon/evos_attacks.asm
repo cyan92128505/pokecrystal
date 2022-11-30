@@ -349,6 +349,7 @@ BunearyEvosAttacks:
 	db 20, DOUBLE_KICK
 	db 24, AGILITY
 	db 28, BATON_PASS
+	db 30, ATTRACT
 	db 32, HEADBUTT
 	db 36, HI_JUMP_KICK
 	db 40, MEGA_KICK
@@ -542,7 +543,7 @@ ClefairyEvosAttacks:
 	db 13, DOUBLESLAP
 	db 16, DRAIN_KISS
 	db 26, DEFENSE_CURL
-	db 34, METRONOME
+	db 35, ATTRACT
 	db 40, MOON_BLAST
 	db 45, SOFTBOILED
 	db 55, CALM_MIND
@@ -555,6 +556,7 @@ ClefableEvosAttacks:
 	db 1, METRONOME
 	db 1, MOONLIGHT
 	db 30, DRAIN_KISS
+	db 35, ATTRACT
 	db 40, MOON_BLAST
 	db 45, SOFTBOILED
 	db 55, CALM_MIND
@@ -956,7 +958,7 @@ MachokeEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 31, DRAIN_PUNCH
-	db 40, DYNAMICPUNCH
+	db 38, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
 MachampEvosAttacks:
@@ -1801,7 +1803,7 @@ ScytherEvosAttacks:
 	db 12, PURSUIT
 	db 18, FALSE_SWIPE
 	db 24, AGILITY
-	db 30, WING_ATTACK
+	db 32, WING_ATTACK
 	db 36, SLASH
 	db 42, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -3087,12 +3089,13 @@ HeracrossEvosAttacks:
 	db 1, LEER
 	db 6, HORN_ATTACK
 	db 12, ENDURE
-	db 19, FURY_ATTACK
+	db 19, PIN_MISSILE
 	db 27, COUNTER
-	db 35, TAKE_DOWN
-	db 44, REVERSAL
-	db 50, CLOSE_COMBAT
-	db 54, MEGAHORN
+	db 30, ROCK_SMASH
+	db 35, REVERSAL
+	db 45, CLOSE_COMBAT
+	db 50, MEGAHORN
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
@@ -3503,7 +3506,6 @@ PupitarEvosAttacks:
 	db 22, ROCK_SLIDE
 	db 34, CRUNCH
 	db 40, EARTHQUAKE
-	db 55, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 TyranitarEvosAttacks:

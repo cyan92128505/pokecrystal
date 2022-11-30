@@ -1,6 +1,6 @@
 AIScoring: ; used only for BANK(AIScoring)
 
-SubstituteImmuneEffects:	;joenote - added this table to track for substitute immunities
+SubstituteImmuneEffects:
 	db $01 ; unused sleep effect
 	db EFFECT_SLEEP
 	db EFFECT_POISON
@@ -1190,6 +1190,7 @@ AI_Smart_MirrorMove:
 
 AI_Smart_AccuracyDown:
 ; discourage if enemy is immune to stat drops
+    ld a, [wBattleMonSpecies]
     push bc
     push hl
     push de
@@ -1199,23 +1200,29 @@ AI_Smart_AccuracyDown:
 	pop de
 	pop hl
 	pop bc
-	jr nc, .continue
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
+	jr c, .discourage
 
-.continue
+; discourage after player is at -3
+    ld a, [wPlayerAccLevel]
+    cp BASE_STAT_LEVEL - 2
+    jr c, .discourage
+
 ; encourage slightly if player has full accuracy
     ld a, [wPlayerAccLevel]
     cp BASE_STAT_LEVEL
     ret c
     dec [hl]
     ret
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
 
 AI_Smart_StatDown:
 ; discourage if enemy is immune to stat drops
+    ld a, [wBattleMonSpecies]
     push bc
     push hl
     push de

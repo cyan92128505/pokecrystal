@@ -1281,12 +1281,12 @@ JohtoGrassWildMons:
 	db 7, PIKACHU
 	db 24, STARAVIA
 	; nite
-	db 5, HOOTHOOT
-	db 6, MEOWTH
-	db 7, CLEFAIRY
-	db 7, POLIWAG
-	db 8, MURKROW
-	db 6, SNEASEL
+	db 4, HOOTHOOT
+	db 5, MEOWTH
+	db 6, CLEFAIRY
+	db 6, POLIWAG
+	db 7, MURKROW
+	db 7, SNEASEL
 	db 24, PERSIAN
 	end_grass_wildmons
 
@@ -1297,16 +1297,16 @@ JohtoGrassWildMons:
 	db 6, STARLY
 	db 7, MEOWTH
 	db 7, VULPIX
-	db 9, VOLTIK
-	db 9, PIKACHU
+	db 8, VOLTIK
+	db 8, PIKACHU
 	db 25, GROWLITHE
 	; day
 	db 5, BELLSPROUT
 	db 6, STARLY
 	db 7, MEOWTH
 	db 7, VULPIX
-	db 9, VOLTIK
-	db 9, PIKACHU
+	db 8, VOLTIK
+	db 8, PIKACHU
 	db 25, GROWLITHE
 	; nite
 	db 5, HOOTHOOT
@@ -1314,7 +1314,7 @@ JohtoGrassWildMons:
 	db 7, MEOWTH
 	db 7, VULPIX
 	db 8, CLEFAIRY
-	db 6, LITWICK
+	db 8, LITWICK
 	db 25, HAUNTER
 	end_grass_wildmons
 
@@ -1433,26 +1433,26 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_36
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, STARAVIA
-	db 18, CUBONE
-	db 20, NIDORINO
-	db 20, NIDORINA
+	db 14, STARAVIA
+	db 14, CUBONE
+	db 16, NIDORINO
+	db 16, NIDORINA
 	db 21, SOLOSIS
 	db 21, KADABRA
 	db 42, ALAKAZAM
 	; day
-	db 18, STARAVIA
-	db 18, CUBONE
-	db 20, NIDORINO
-	db 20, NIDORINA
+	db 14, STARAVIA
+	db 14, CUBONE
+	db 16, NIDORINO
+	db 16, NIDORINA
 	db 21, SOLOSIS
 	db 21, KADABRA
 	db 42, ALAKAZAM
 	; nite
-	db 20, NOCTOWL
-	db 20, SANDSHREW
-	db 20, NIDORINO
-	db 20, NIDORINA
+	db 16, NOCTOWL
+	db 16, SANDSHREW
+	db 17, NIDORINO
+	db 17, NIDORINA
 	db 21, SOLOSIS
 	db 21, KADABRA
 	db 42, ALAKAZAM

@@ -3954,9 +3954,9 @@ TryToRunAwayFromBattle:
 	pop hl
 	jr nz, .no_flee_item
 
-	; AndrewNote - smoke ball 20% chance to fail
+	; AndrewNote - smoke ball 30% chance to fail
 	call Random
-	cp 20 percent
+	cp 30 percent
 	jr c, .no_flee_item
 
 	call SetPlayerTurn
@@ -3966,11 +3966,6 @@ TryToRunAwayFromBattle:
 	jp .can_escape
 
 .no_flee_item
-
-    ; AndrewNote - always have 30% chance to flee
-	call Random
-	cp 30 percent
-	jp c, .can_escape
 
 	ld a, [wNumFleeAttempts]
 	inc a

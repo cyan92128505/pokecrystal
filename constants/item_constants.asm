@@ -267,7 +267,7 @@ TM01 EQU const_value
 	add_tm ROCK_SLIDE   ; ee
 	add_tm THUNDER_WAVE ; ef
 	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
+	add_tm X_SCISSOR    ; f1
 	add_tm DARK_PULSE   ; f2
 NUM_TMS EQU __tmhm_value__ - 1
 

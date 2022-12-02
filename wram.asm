@@ -416,7 +416,7 @@ wPlayerToxicCount:: db
 wPlayerDisableCount:: db
 wPlayerEncoreCount:: db
 wPlayerPerishCount:: db
-wPlayerFuryCutterCount:: db
+wPlayerFuryCutterCount:: db ; AndrewNote - this is not used
 wPlayerProtectCount:: db
 
 wEnemyRolloutCount:: db

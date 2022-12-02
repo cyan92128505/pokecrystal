@@ -205,8 +205,7 @@ ButterfreeEvosAttacks:
 HonedgeEvosAttacks:
 	db EVOLVE_LEVEL, 30, DOUBLADE
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, FURY_CUTTER
+	db 1, CUT
 	db 1, NIGHT_SHADE
 	db 12, METAL_CLAW
 	db 20, SLASH
@@ -222,8 +221,7 @@ HonedgeEvosAttacks:
 DoubladeEvosAttacks:
 	db EVOLVE_LEVEL, 40, AEGISLASH
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, FURY_CUTTER
+	db 1, CUT
 	db 1, NIGHT_SHADE
 	db 12, METAL_CLAW
 	db 20, SLASH
@@ -238,8 +236,7 @@ DoubladeEvosAttacks:
 
 AegislashEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, FURY_CUTTER
+	db 1, CUT
 	db 1, NIGHT_SHADE
 	db 12, METAL_CLAW
 	db 20, SLASH
@@ -267,8 +264,8 @@ StarlyEvosAttacks:
 	db 1, SAND_ATTACK
 	db 5, QUICK_ATTACK
 	db 9, PECK
-	db 20, WING_ATTACK
-	db 28, SLASH
+	db 14, WING_ATTACK
+	db 24, SLASH
 	db 32, FLY
 	db 36, ROOST
 	db 40, EXTREMESPEED
@@ -285,9 +282,8 @@ StaraviaEvosAttacks:
     db 1, SAND_ATTACK
 	db 5, QUICK_ATTACK
 	db 9, PECK
-	db 14, CUT
-	db 20, WING_ATTACK
-	db 28, SLASH
+	db 14, WING_ATTACK
+	db 24, SLASH
 	db 32, FLY
 	db 36, ROOST
 	db 40, EXTREMESPEED
@@ -303,9 +299,8 @@ StaraptorEvosAttacks:
 	db 1, SAND_ATTACK
 	db 5, QUICK_ATTACK
 	db 9, PECK
-	db 14, CUT
-	db 20, WING_ATTACK
-	db 28, SLASH
+	db 14, WING_ATTACK
+	db 24, SLASH
 	db 32, FLY
 	db 36, ROOST
 	db 40, EXTREMESPEED
@@ -1268,7 +1263,7 @@ GliscorEvosAttacks:
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
 	db 9, HARDEN
-	db 14, FURY_CUTTER
+	db 14, CUT
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
@@ -1801,10 +1796,9 @@ ScytherEvosAttacks:
 	db 1, LEER
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT
-	db 18, FALSE_SWIPE
-	db 24, AGILITY
-	db 32, WING_ATTACK
-	db 36, SLASH
+	db 18, WING_ATTACK
+	db 24, SLASH
+    db 30, X_SCISSOR
 	db 42, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -2135,7 +2129,7 @@ DratiniEvosAttacks:
 	db 1, WRAP
 	db 1, LEER
 	db 8, THUNDER_WAVE
-	db 18, DRAGON_RAGE
+	db 25, DRAGON_RAGE
 	db 29, SLAM
 	db 38, DRAGON_CLAW
 	db 42, DRAGON_PULSE
@@ -2152,7 +2146,7 @@ DragonairEvosAttacks:
 	db 1, THUNDER_WAVE
 	db 1, DRAGON_PULSE
 	db 8, THUNDER_WAVE
-	db 22, DRAGON_RAGE
+	db 25, DRAGON_RAGE
 	db 29, SLAM
 	db 38, DRAGON_CLAW
 	db 42, DRAGON_PULSE
@@ -2168,7 +2162,7 @@ DragoniteEvosAttacks:
 	db 1, EARTHQUAKE
 	db 1, FIRE_PUNCH
 	db 8, THUNDER_WAVE
-	db 22, DRAGON_RAGE
+	db 25, DRAGON_RAGE
 	db 29, SLAM
 	db 38, DRAGON_CLAW
 	db 42, DRAGON_PULSE
@@ -2204,9 +2198,9 @@ TreeckoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, LEER
-	db 8, RAZOR_LEAF
+	db 8, ABSORB
 	db 12, QUICK_ATTACK
-	db 16, FURY_CUTTER
+	db 16, RAZOR_LEAF
 	db 20, SLASH
 	db 25, GIGA_DRAIN
 	db 36, LEAF_BLADE
@@ -2219,9 +2213,9 @@ GrovyleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, LEER
-	db 8, RAZOR_LEAF
+	db 8, ABSORB
 	db 12, QUICK_ATTACK
-	db 16, FURY_CUTTER
+	db 16, RAZOR_LEAF
 	db 20, SLASH
 	db 25, GIGA_DRAIN
 	db 36, LEAF_BLADE
@@ -2233,9 +2227,9 @@ SceptileEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, LEER
-	db 8, RAZOR_LEAF
+	db 8, ABSORB
 	db 12, QUICK_ATTACK
-	db 16, FURY_CUTTER
+	db 16, RAZOR_LEAF
 	db 20, SLASH
 	db 25, GIGA_DRAIN
 	db 36, LEAF_BLADE
@@ -2248,7 +2242,7 @@ ChimcharEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 12, EMBER
+	db 8, EMBER
 	db 16, KARATE_CHOP
 	db 20, FLAME_WHEEL
 	db 26, MACH_PUNCH
@@ -2441,12 +2435,12 @@ VoltikEvosAttacks:
 	db 1, LEECH_LIFE
 	db 1, THUNDERSHOCK
 	db 8, ABSORB
-	db 12, FURY_CUTTER
+	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
 	db 20, AGILITY
 	db 24, SLASH
 	db 28, X_SCISSOR
-	db 32, MEGA_DRAIN
+	db 32, GIGA_DRAIN
 	db 36, BUG_BUZZ
 	db 40, THUNDERBOLT
 	db 50, THUNDER
@@ -2457,12 +2451,12 @@ GalvantulaEvosAttacks:
 	db 1, LEECH_LIFE
 	db 1, THUNDERSHOCK
 	db 8, ABSORB
-	db 12, FURY_CUTTER
+	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
 	db 20, AGILITY
 	db 24, SLASH
 	db 28, X_SCISSOR
-	db 32, MEGA_DRAIN
+	db 32, GIGA_DRAIN
 	db 36, BUG_BUZZ
 	db 40, THUNDERBOLT
 	db 50, THUNDER
@@ -2804,13 +2798,15 @@ YanmaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FORESIGHT
+	db 1, GUST
 	db 7, QUICK_ATTACK
-	db 13, BITE
-	db 18, LEECH_LIFE
+	db 10, BITE
+	db 14, LEECH_LIFE
+	db 18, WING_ATTACK
 	db 21, SUPERSONIC
-	db 26, WING_ATTACK
-	db 32, HYPNOSIS
-	db 37, ANCIENTPOWER
+	db 26, HYPNOSIS
+	db 30, ANCIENTPOWER
+	db 35, SCREECH
 	db 40, AIR_SLASH
 	db 44, BUG_BUZZ
 	db 0 ; no more level-up moves
@@ -2987,7 +2983,7 @@ GligarEvosAttacks:
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
 	db 9, HARDEN
-	db 14, FURY_CUTTER
+	db 14, CUT
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
@@ -3017,10 +3013,10 @@ GibleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SAND_ATTACK
-	db 10, DRAGON_RAGE
-	db 14, SANDSTORM
-	db 18, CRUNCH
-	db 23, SLASH
+	db 10, SANDSTORM
+	db 14, CRUNCH
+	db 18, SLASH
+	db 25, DRAGON_RAGE
 	db 30, DRAGON_CLAW
 	db 35, DIG
 	db 40, EARTHQUAKE
@@ -3033,10 +3029,10 @@ GabiteEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SAND_ATTACK
-	db 10, DRAGON_RAGE
-	db 14, SANDSTORM
-	db 18, CRUNCH
-	db 23, SLASH
+	db 10, SANDSTORM
+	db 14, CRUNCH
+	db 18, SLASH
+	db 25, DRAGON_RAGE
 	db 30, DRAGON_CLAW
 	db 35, DIG
 	db 40, EARTHQUAKE
@@ -3089,9 +3085,10 @@ HeracrossEvosAttacks:
 	db 1, LEER
 	db 6, HORN_ATTACK
 	db 12, ENDURE
-	db 19, PIN_MISSILE
-	db 27, COUNTER
-	db 30, ROCK_SMASH
+	db 18, LEECH_LIFE
+	db 22, COUNTER
+	db 26, ROCK_SMASH
+	db 30, X_SCISSOR
 	db 35, REVERSAL
 	db 45, CLOSE_COMBAT
 	db 50, MEGAHORN

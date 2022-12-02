@@ -731,20 +731,20 @@ ParsePlayerAction:
 	callfar UpdateMoveData
 	xor a
 	ld [wPlayerCharging], a
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-	cp EFFECT_FURY_CUTTER
-	jr z, .continue_fury_cutter
-	xor a
-	ld [wPlayerFuryCutterCount], a
+	;ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	;cp EFFECT_FURY_CUTTER
+	;jr z, .continue_fury_cutter
+	;xor a
+	;ld [wPlayerFuryCutterCount], a
 
-.continue_fury_cutter
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-	cp EFFECT_RAGE
-	jr z, .continue_rage
-	ld hl, wPlayerSubStatus4
-	res SUBSTATUS_RAGE, [hl]
-	xor a
-	ld [wPlayerRageCounter], a
+;.continue_fury_cutter
+;	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+;	cp EFFECT_RAGE
+;	jr z, .continue_rage
+;	ld hl, wPlayerSubStatus4
+;	res SUBSTATUS_RAGE, [hl]
+;	xor a
+;	ld [wPlayerRageCounter], a
 
 .continue_rage
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -762,7 +762,7 @@ ParsePlayerAction:
 
 .locked_in
 	xor a
-	ld [wPlayerFuryCutterCount], a
+;	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -775,7 +775,7 @@ ParsePlayerAction:
 
 .reset_rage
 	xor a
-	ld [wPlayerFuryCutterCount], a
+;	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -4332,7 +4332,7 @@ endr
 	ld [hli], a
 	ld [hl], a
 	ld [wPlayerDisableCount], a
-	ld [wPlayerFuryCutterCount], a
+;	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld [wDisabledMove], a
@@ -6454,20 +6454,21 @@ LoadEnemyMon:
 
 .InitDVs:
 
+    farcall GetTrainerDVs
 	ld a, [wBattleMode]
 	dec a
-	jr z, .WildDVs
+	jr nz, .UpdateDVs
 
+;	jr z, .WildDVs
 ; Trainer DVs
-	ld a, [wCurPartyMon]
-	ld hl, wOTPartyMon1DVs
-	call GetPartyLocation
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	jr .UpdateDVs
-
-.WildDVs:
+;	ld a, [wCurPartyMon]
+;	ld hl, wOTPartyMon1DVs
+;	call GetPartyLocation
+;	ld b, [hl]
+;	inc hl
+;	ld c, [hl]
+;	jr .UpdateDVs
+;.WildDVs:
 
 ; Wild DVs
 ; Here's where the fun starts

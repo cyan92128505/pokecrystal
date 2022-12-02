@@ -109,7 +109,7 @@
 	const NIGHT_SHADE  ; 65
 	const MIMIC        ; 66
 	const SCREECH      ; 67
-	const DOUBLE_TEAM  ; 68
+	const DOUBLE_TEAM  ; 68   AndrewNote - this is not used
 	const RECOVER      ; 69
 	const HARDEN       ; 6a
 	const DARK_VOID    ; 6b
@@ -215,7 +215,7 @@
 	const SWAGGER      ; cf
 	const MILK_DRINK   ; d0
 	const VOLT_TACKLE  ; d1
-	const FURY_CUTTER  ; d2
+	const FURY_CUTTER  ; d2  AndrewNote - This is not used
 	const FLASH_CANNON ; d3
 	const MEAN_LOOK    ; d4
 	const ATTRACT      ; d5

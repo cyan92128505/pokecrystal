@@ -68,5 +68,5 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; BLUE
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
-	dn 12, 12, 12, 12 ; MYSTICALMAN
+	dn 10, 10, 10, 10 ; MYSTICALMAN
 	assert_table_length NUM_TRAINER_CLASSES

@@ -1092,9 +1092,9 @@ AI_Smart_EvasionUp:
 	jr c, .discourage
 
 ; Greatly encourage this move if the player is in the middle of Fury Cutter or Rollout.
-	ld a, [wPlayerFuryCutterCount]
-	and a
-	jr nz, .greatly_encourage
+;	ld a, [wPlayerFuryCutterCount]
+;	and a
+;	jr nz, .greatly_encourage
 
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_ROLLOUT, a
@@ -2364,9 +2364,9 @@ AI_Smart_Protect:
 	jr nz, .discourage
 
 ; Encourage this move if the player's Fury Cutter is boosted enough.
-	ld a, [wPlayerFuryCutterCount]
-	cp 3
-	jr nc, .encourage
+;	ld a, [wPlayerFuryCutterCount]
+;	cp 3
+;	jr nc, .encourage
 
 ; Encourage this move if the player has charged a two-turn move.
 	ld a, [wPlayerSubStatus3]

@@ -57,6 +57,7 @@ LancesRoomLanceScript:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CHAMPION, LANCE
 	startbattle
 	dontrestartmapmusic

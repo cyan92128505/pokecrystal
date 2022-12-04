@@ -75,7 +75,7 @@ MartAzalea:
 	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db FLOWER_MAIL
+	db FRIEND_BALL
 	db -1 ; end
 
 MartCianwood:

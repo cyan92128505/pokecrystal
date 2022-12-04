@@ -16,6 +16,7 @@ ViridianGymBlueScript:
 	waitbutton
 	closetext
 	winlosstext LeaderBlueWinText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BLUE, BLUE1
 	startbattle
 	reloadmapafterbattle
@@ -34,6 +35,7 @@ ViridianGymBlueScript:
 	waitbutton
 	closetext
 	winlosstext LeaderBlueWinText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer BLUE, BLUE1
 	startbattle
 	reloadmapafterbattle

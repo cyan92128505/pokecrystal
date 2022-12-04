@@ -151,7 +151,7 @@ Moves: ; 41afb
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,        STATUS,    75, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE,  SPECIAL,  100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,        STATUS,    55, 40,   0
-	move ROOST,        EFFECT_HEAL,                0, FLYING,        STATUS,   100, 15,   0
+	move ROOST,        EFFECT_HEAL,                0, FLYING,        STATUS,   100, 10,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,           PHYSICAL, 100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        STATUS,    75, 10,   0
 	move SKY_ATTACK,   EFFECT_SKY_ATTACK,        140, FLYING,        PHYSICAL,  90,  5,   0
@@ -196,7 +196,7 @@ Moves: ; 41afb
 	move PROTECT,      EFFECT_PROTECT,             0, NORMAL,        STATUS,   100, 10,   0
 	move MACH_PUNCH,   EFFECT_PRIORITY_HIT,       40, FIGHTING,      PHYSICAL, 100, 30,   0
 	move SCARY_FACE,   EFFECT_SPEED_DOWN_2,        0, NORMAL,        STATUS,    90, 10,   0
-	move NIGHT_SLASH,  EFFECT_NORMAL_HIT,         70, DARK,          PHYSICAL, 100, 15,   0
+	move NIGHT_SLASH,  EFFECT_NORMAL_HIT,         80, DARK,          PHYSICAL, 100, 20,   0
 	move SWEET_KISS,   EFFECT_CONFUSE,             0, FAIRY,         STATUS,    75, 10,   0
 	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0
 	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 10,  30
@@ -208,7 +208,7 @@ Moves: ; 41afb
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     70, ICE,           SPECIAL,  100, 15, 100
-	move LEAF_BLADE,   EFFECT_NORMAL_HIT,         90, GRASS,         PHYSICAL, 100, 15,   0
+	move LEAF_BLADE,   EFFECT_NORMAL_HIT,         80, GRASS,         PHYSICAL, 100, 20,   0
 	move PSYCHO_SLASH, EFFECT_NORMAL_HIT,         80, PSYCHIC_TYPE,  PHYSICAL, 100, 20,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,           100, DRAGON,        PHYSICAL, 100, 15,   0

@@ -20,6 +20,7 @@ SaffronGymSabrinaScript:
 	waitbutton
 	closetext
 	winlosstext SabrinaWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer SABRINA, SABRINA1
 	startbattle
 	reloadmapafterbattle
@@ -42,6 +43,7 @@ SaffronGymSabrinaScript:
 	waitbutton
 	closetext
 	winlosstext SabrinaWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer SABRINA, SABRINA1
 	startbattle
 	reloadmapafterbattle

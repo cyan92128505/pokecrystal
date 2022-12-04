@@ -28,6 +28,7 @@ GoldenrodGymWhitneyScript:
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer WHITNEY, WHITNEY1
 	startbattle
 	reloadmapafterbattle
@@ -51,6 +52,7 @@ GoldenrodGymWhitneyScript:
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer WHITNEY, WHITNEY1
 	startbattle
 	reloadmapafterbattle

@@ -49,6 +49,7 @@ BrunoScript_Battle:
 	waitbutton
 	closetext
 	winlosstext BrunoScript_BrunoBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BRUNO, BRUNO1
 	startbattle
 	reloadmapafterbattle

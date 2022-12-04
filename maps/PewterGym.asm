@@ -17,6 +17,7 @@ PewterGymBrockScript:
 	waitbutton
 	closetext
 	winlosstext BrockWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BROCK, BROCK1
 	startbattle
 	reloadmapafterbattle
@@ -36,6 +37,7 @@ PewterGymBrockScript:
 	waitbutton
 	closetext
 	winlosstext BrockWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer BROCK, BROCK1
 	startbattle
 	reloadmapafterbattle

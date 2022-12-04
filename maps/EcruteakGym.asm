@@ -30,6 +30,7 @@ EcruteakGymMortyScript:
 	waitbutton
 	closetext
 	winlosstext MortyWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MORTY, MORTY1
 	startbattle
 	reloadmapafterbattle
@@ -65,6 +66,7 @@ EcruteakGymMortyScript:
 	waitbutton
 	closetext
 	winlosstext MortyWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer MORTY, MORTY1
 	startbattle
 	reloadmapafterbattle

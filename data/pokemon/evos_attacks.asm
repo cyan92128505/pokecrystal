@@ -195,8 +195,8 @@ ButterfreeEvosAttacks:
 	db 15, SLEEP_POWDER
 	db 18, SUPERSONIC
 	db 23, PSYBEAM
-	db 28, AIR_SLASH
-	db 32, PSYCHIC_M
+	db 28, PSYCHIC_M
+	db 32, AIR_SLASH
 	db 36, BUG_BUZZ
 	db 40, QUIVER_DANCE
 	db 50, BATON_PASS
@@ -604,6 +604,8 @@ WigglytuffEvosAttacks:
 	db 1, DEFENSE_CURL
 	db 1, DOUBLESLAP
 	db 30, DRAIN_KISS
+	db 35, BODY_SLAM
+	db 40, MOONLIGHT
 	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
@@ -794,9 +796,11 @@ GolduckEvosAttacks:
 	db 5, TAIL_WHIP
 	db 10, DISABLE
 	db 16, CONFUSION
+	db 20, BUBBLEBEAM
 	db 23, SCREECH
 	db 31, PSYCH_UP
 	db 33, ZEN_HEADBUTT
+	db 37, PSYCHIC_M
 	db 44, FURY_SWIPES
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2608,6 +2612,7 @@ MareepEvosAttacks:
 	db 1, GROWL
 	db 9, THUNDERSHOCK
 	db 16, THUNDER_WAVE
+	db 28, THUNDERBOLT
 	db 30, LIGHT_SCREEN
 	db 37, THUNDER
 	db 0 ; no more level-up moves
@@ -2620,6 +2625,7 @@ FlaaffyEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 9, THUNDERSHOCK
 	db 18, THUNDER_WAVE
+	db 28, THUNDERBOLT
 	db 36, LIGHT_SCREEN
 	db 45, THUNDER
 	db 0 ; no more level-up moves
@@ -3016,7 +3022,7 @@ GibleEvosAttacks:
 	db 10, SANDSTORM
 	db 14, CRUNCH
 	db 18, SLASH
-	db 25, DRAGON_RAGE
+	db 22, DRAGON_RAGE
 	db 30, DRAGON_CLAW
 	db 35, DIG
 	db 40, EARTHQUAKE

@@ -20,6 +20,7 @@ SeafoamGymBlaineScript:
 	waitbutton
 	closetext
 	winlosstext BlaineWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BLAINE, BLAINE1
 	startbattle
 	iftrue .ReturnAfterBattle   ; AndrewNote - is this how you make something happen after victory?
@@ -41,6 +42,7 @@ SeafoamGymBlaineScript:
 	waitbutton
 	closetext
 	winlosstext BlaineWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer BLAINE, BLAINE1
 	startbattle
 	reloadmapafterbattle

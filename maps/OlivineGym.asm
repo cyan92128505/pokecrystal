@@ -16,6 +16,7 @@ OlivineGymJasmineScript:
 	waitbutton
 	closetext
 	winlosstext Jasmine_BetterTrainer, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer JASMINE, JASMINE1
 	startbattle
 	reloadmapafterbattle
@@ -44,6 +45,7 @@ OlivineGymJasmineScript:
 	waitbutton
 	closetext
 	winlosstext Jasmine_BetterTrainer, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer JASMINE, JASMINE1
 	startbattle
 	reloadmapafterbattle

@@ -2710,6 +2710,16 @@ AI_Smart_BatonPass:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 ; AndrewNote - WTF, why would you do this, baton pass is not to escape an enemy!!
+
+; discourage if we don't have any other mons to pass to
+	push hl
+	farcall FindAliveEnemyMons
+	pop hl
+	jr nc, .notlastmon
+	inc [hl]
+	inc [hl]
+
+.notlastmon
 ; encourage if we have good stat boosts to pass
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2

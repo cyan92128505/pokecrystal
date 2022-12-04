@@ -38,6 +38,7 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	winlosstext ChuckLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CHUCK, CHUCK1
 	startbattle
 	reloadmapafterbattle
@@ -85,6 +86,7 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	winlosstext ChuckLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer CHUCK, CHUCK1
 	startbattle
 	reloadmapafterbattle

@@ -21,6 +21,7 @@ FuchsiaGymJanineScript:
 	waitbutton
 	closetext
 	winlosstext JanineText_ToughOne, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer JANINE, JANINE1
 	startbattle
 	reloadmapafterbattle
@@ -45,6 +46,7 @@ FuchsiaGymJanineScript:
 	waitbutton
 	closetext
 	winlosstext JanineText_ToughOne, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer JANINE, JANINE1
 	startbattle
 	reloadmapafterbattle

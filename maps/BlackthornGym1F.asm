@@ -37,6 +37,7 @@ BlackthornGymClairScript:
 	waitbutton
 	closetext
 	winlosstext ClairWinText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CLAIR, CLAIR1
 	startbattle
 	reloadmapafterbattle
@@ -59,6 +60,7 @@ BlackthornGymClairScript:
 	waitbutton
 	closetext
 	winlosstext ClairWinText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer CLAIR, CLAIR1
 	startbattle
 	reloadmapafterbattle

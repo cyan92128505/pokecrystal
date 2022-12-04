@@ -21,6 +21,7 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	winlosstext PryceText_Impressed, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer PRYCE, PRYCE1
 	startbattle
 	reloadmapafterbattle
@@ -67,6 +68,7 @@ PryceScript_Defeat:
 	waitbutton
 	closetext
 	winlosstext PryceText_Impressed, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer PRYCE, PRYCE1
 	startbattle
 	reloadmapafterbattle

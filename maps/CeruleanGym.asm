@@ -65,6 +65,7 @@ CeruleanGymMistyScript:
 	waitbutton
 	closetext
 	winlosstext MistyWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MISTY, MISTY1
 	startbattle
 	reloadmapafterbattle
@@ -94,6 +95,7 @@ CeruleanGymMistyScript:
 	waitbutton
 	closetext
 	winlosstext MistyWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer MISTY, MISTY1
 	startbattle
 	reloadmapafterbattle

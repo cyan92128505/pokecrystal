@@ -18,6 +18,7 @@ VioletGymFalknerScript:
 	waitbutton
 	closetext
 	winlosstext FalknerWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer FALKNER, FALKNER1
 	startbattle
 	reloadmapafterbattle
@@ -50,6 +51,7 @@ VioletGymFalknerScript:
 	waitbutton
 	closetext
 	winlosstext FalknerWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer FALKNER, FALKNER1
 	startbattle
 	reloadmapafterbattle

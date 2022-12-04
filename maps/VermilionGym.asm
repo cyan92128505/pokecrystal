@@ -19,6 +19,7 @@ VermilionGymSurgeScript:
 	waitbutton
 	closetext
 	winlosstext LtSurgeWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle
@@ -40,6 +41,7 @@ VermilionGymSurgeScript:
 	waitbutton
 	closetext
 	winlosstext LtSurgeWinLossText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle

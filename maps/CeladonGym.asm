@@ -20,6 +20,7 @@ CeladonGymErikaScript:
 	waitbutton
 	closetext
 	winlosstext ErikaBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
@@ -46,6 +47,7 @@ CeladonGymErikaScript:
 	waitbutton
 	closetext
 	winlosstext ErikaBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle

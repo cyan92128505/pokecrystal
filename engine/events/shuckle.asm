@@ -8,7 +8,7 @@ GiveShuckle:
 ; Level 15 Shuckle.
 	ld a, DEOXYS
 	ld [wCurPartySpecies], a
-	ld a, 15
+	ld a, 70
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty

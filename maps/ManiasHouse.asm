@@ -16,6 +16,8 @@ ManiaScript:
 	writetext ManiaText_AskLookAfterShuckle
 	yesorno
 	iffalse .refusetotakeshuckie
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .onlythestrongest
 	special GiveShuckle
 	iffalse .partyfull
 	writetext ManiaText_TakeCareOfShuckle
@@ -44,6 +46,12 @@ ManiaScript:
 
 .refusetotakeshuckie
 	writetext ManiaText_IfHeComesBack
+	waitbutton
+	closetext
+	end
+
+.onlythestrongest
+	writetext ManiaText_OnlyMtSilver
 	waitbutton
 	closetext
 	end
@@ -143,6 +151,15 @@ ManiaText_IfHeComesBack:
 	text "Oh, no… What'll"
 	line "I do if he comes"
 	cont "back?"
+	done
+
+ManiaText_OnlyMtSilver:
+	text "I will only give"
+	line "this to the"
+	cont "strongest!"
+	cont "Only to those"
+	cont "who have reached"
+	cont "Mt.Silver!"
 	done
 
 ManiaText_CanIHaveMyMonBack:

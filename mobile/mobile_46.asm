@@ -1154,17 +1154,16 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld a, $1
 	ldh [rSVBK], a
 	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
+	bit STATUSFLAGS_HALL_OF_FAME_F, a ; AndrewNote - here is how to check for having defeated E4 in engine code
 	jr nz, .asm_11896b
 	ld hl, Strings_Ll0ToL40 ; Address to list of strings with the choosable levels
-	ld a, 3                 ; 2 levels to choose from, including 'Cancel'-option
+	ld a, 4                 ; 3 levels to choose from, including 'Cancel'-option
 	jr .asm_118970
 
 ; AndrewNote - BT define a for level select
 .asm_11896b
 	ld hl, Strings_L10ToL100 ; Address to list of strings with the choosable levels
-	;ld a, 11                 ; 5 levels to choose from, including 'Cancel'-option
-	ld a, 6
+    ld a, 6                  ; 5 levels to choose from, including 'Cancel'-option
 
 .asm_118970
 	ld [wcd4a], a
@@ -3894,10 +3893,9 @@ Strings_L10ToL100:
 	db "CANCEL@@"
 
 Strings_Ll0ToL40:
-	db " L:10 @@"
-	db " L:20 @@"
-	db " L:30 @@"
-	db " L:40 @@"
+    db "NOVICE@@"
+    db "LEADER@@"
+    db "ELITE @@"
 	db "CANCEL@@"
 
 BattleTowerCancelString: ; unreferenced

@@ -74,7 +74,7 @@ Moves: ; 41afb
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE,  SPECIAL,  100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     60, WATER,         SPECIAL,  100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,           SPECIAL,  100, 20,  10
-	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        PHYSICAL,  90,  5,   0
+	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        SPECIAL,  100,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         35, FLYING,        PHYSICAL, 100, 35,   0
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL,  80, 25,   0
@@ -86,10 +86,10 @@ Moves: ; 41afb
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          50, GRASS,         SPECIAL,  100, 20,   0
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,         STATUS,    90, 10,   0
 	move GROWTH,       EFFECT_SP_ATK_UP,           0, NORMAL,        STATUS,   100, 40,   0
-	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,         PHYSICAL,  95, 25,   0
+	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,         PHYSICAL, 100, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,         SPECIAL,  100, 10,   0
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0
-	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,         STATUS,    75, 30,   0
+	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,         STATUS,    85, 30,   0
 	move SLEEP_POWDER, EFFECT_SLEEP,               0, GRASS,         STATUS,    75, 15,   0
 	move PETAL_DANCE,  EFFECT_RAMPAGE,            70, GRASS,         SPECIAL,  100, 20,   0
 	move DRAGON_CLAW,  EFFECT_NORMAL_HIT,         80, DRAGON,        PHYSICAL, 100, 15,   0
@@ -102,7 +102,7 @@ Moves: ; 41afb
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,          PHYSICAL,  90, 15,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,        PHYSICAL, 100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                1, GROUND,        PHYSICAL,  30,  5,   0
-	move DIG,          EFFECT_FLY,                80, GROUND,        PHYSICAL, 100, 10,   0
+	move DIG,          EFFECT_FLY,                70, GROUND,        PHYSICAL, 100, 10,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,        STATUS,    85, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE,  SPECIAL,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE,  SPECIAL,  100, 10,  10

@@ -128,11 +128,11 @@ SquirtleEvosAttacks:
 	db 13, WATER_GUN
 	db 18, BITE
 	db 23, RAPID_SPIN
-	db 28, PROTECT
-	db 33, RAIN_DANCE
-	db 40, HEADBUTT
-	db 47, HYDRO_PUMP
-	db 50, SHELL_SMASH
+	db 31, BODY_SLAM
+	db 37, RAIN_DANCE
+	db 40, SURF
+	db 50, HYDRO_PUMP
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
@@ -147,10 +147,10 @@ WartortleEvosAttacks:
 	db 13, WATER_GUN
 	db 19, BITE
 	db 25, RAPID_SPIN
-	db 31, PROTECT
+	db 31, BODY_SLAM
 	db 37, RAIN_DANCE
-	db 45, HEADBUTT
-	db 53, HYDRO_PUMP
+	db 40, SURF
+	db 50, HYDRO_PUMP
 	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
@@ -166,11 +166,11 @@ BlastoiseEvosAttacks:
 	db 13, WATER_GUN
 	db 19, BITE
 	db 25, RAPID_SPIN
-	db 31, PROTECT
-	db 42, RAIN_DANCE
-	db 55, HEADBUTT
-	db 68, HYDRO_PUMP
-	db 70, SHELL_SMASH
+	db 31, BODY_SLAM
+	db 37, RAIN_DANCE
+	db 40, SURF
+	db 50, HYDRO_PUMP
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 CaterpieEvosAttacks:
@@ -1745,6 +1745,7 @@ HonchkrowEvosAttacks:
 	db 26, AIR_SLASH
 	db 31, NIGHT_SLASH
 	db 36, DARK_PULSE
+	db 40, CLOSE_COMBAT
 	db 46, NASTY_PLOT
 	db 51, BRAVE_BIRD
 	db 0 ; no more level-up moves
@@ -1803,7 +1804,7 @@ ScytherEvosAttacks:
 	db 18, WING_ATTACK
 	db 24, SLASH
     db 30, X_SCISSOR
-	db 42, SWORDS_DANCE
+	db 45, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
@@ -1864,7 +1865,7 @@ PinsirEvosAttacks:
 	db 25, HARDEN
 	db 31, GUILLOTINE
 	db 37, SUBMISSION
-	db 43, SWORDS_DANCE
+	db 45, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 TaurosEvosAttacks:
@@ -2353,7 +2354,7 @@ RioluEvosAttacks:
 	db 30, AURA_SPHERE
 	db 40, BULLET_PUNCH
 	db 50, CLOSE_COMBAT
-	db 60, SWORDS_DANCE
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 LucarioEvosAttacks:
@@ -2366,7 +2367,7 @@ LucarioEvosAttacks:
 	db 30, AURA_SPHERE
 	db 40, BULLET_PUNCH
 	db 50, CLOSE_COMBAT
-	db 60, SWORDS_DANCE
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 HoothootEvosAttacks:
@@ -2878,7 +2879,7 @@ MurkrowEvosAttacks:
 	db 1, NIGHT_SHADE
 	db 1, MEAN_LOOK
 	db 1, PURSUIT
-	db 16, HAZE
+	db 16, CONFUSE_RAY
 	db 21, WING_ATTACK
 	db 26, AIR_SLASH
 	db 31, NIGHT_SLASH
@@ -3070,7 +3071,7 @@ ScizorEvosAttacks:
 	db 24, AGILITY
 	db 30, BULLET_PUNCH
 	db 36, X_SCISSOR
-	db 42, SWORDS_DANCE
+	db 45, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ShayminEvosAttacks:

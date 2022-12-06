@@ -64,15 +64,16 @@ MoomooScript:
 	writetext Route39BarnAskGiveBerryText
 	yesorno
 	iffalse .Refused
-	checkitem BERRY
+	checkitem GOLD_BERRY
 	iffalse .NoBerriesInBag
-	takeitem BERRY
-	readmem wMooMooBerries
-	addval 1
-	writemem wMooMooBerries
-	ifequal 3, .ThreeBerries
-	ifequal 5, .FiveBerries
-	ifequal 7, .SevenBerries
+	takeitem GOLD_BERRY
+	scall .SevenBerries
+	;readmem wMooMooBerries
+	;addval 1
+	;writemem wMooMooBerries
+	;ifequal 3, .ThreeBerries
+	;ifequal 5, .FiveBerries
+	;ifequal 7, .SevenBerries
 	writetext Route39BarnGaveBerryText
 	waitbutton
 	closetext

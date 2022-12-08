@@ -120,13 +120,47 @@ RadioTower5FRocketBossScene:
 	opentext
 	writetext RadioTower5FDirectorThankYouText
 	promptbutton
-	verbosegiveitem CLEAR_BELL
-	writetext RadioTower5FDirectorDescribeClearBellText
+
+.whatColourIsThis
+	writetext WhatColourIsThisWingText ; does this look silver
+	promptbutton
+	yesorno
+    iftrue .youSureItsSilver
+    writetext SoItIsRainbowColourText ; so its rainbow then
+    promptbutton
+    yesorno
+    iffalse .whatColourIsThis
+    sjump .RainbowItIs
+.youSureItsSilver
+    writetext SoItIsSilverColourText ; you sure its silver
+    promptbutton
+    yesorno
+    iffalse .whatColourIsThis
+    sjump .SilverItIs
+
+.RainbowItIs
+    verbosegiveitem RAINBOW_WING
+    setevent EVENT_GOT_RAINBOW_WING
+    writetext RainbowWingTipsText
+    sjump .continue
+
+.SilverItIs
+    verbosegiveitem SILVER_WING
+    setevent EVENT_GOT_SILVER_WING
+    writetext SilverWingTipsText
+
+	;verbosegiveitem CLEAR_BELL
+	;writetext RadioTower5FDirectorDescribeClearBellText
+	;waitbutton
+	;closetext
+	;setscene SCENE_RADIOTOWER5F_NOTHING
+	;setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
+	;setevent EVENT_GOT_CLEAR_BELL
+
+.continue
 	waitbutton
 	closetext
 	setscene SCENE_RADIOTOWER5F_NOTHING
-	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
-	setevent EVENT_GOT_CLEAR_BELL
 	setevent EVENT_TEAM_ROCKET_DISBANDED
 	sjump .UselessJump
 
@@ -334,6 +368,112 @@ RadioTower5FDirectorThankYouText:
 	line "much, but please"
 	cont "take this."
 	done
+
+WhatColourIsThisWingText:
+    text "Years ago I found"
+    line "this on my journey"
+    cont "and I want you to"
+    cont "have it."
+
+    para "It is a magical"
+    line "feather."
+
+    para "I don't know what"
+    line "colour to call it."
+
+    para "Sometimes it looks"
+    line "SILVER."
+
+    para "Sometimes it looks"
+    line "RAINBOW."
+
+    para "What would you say"
+    line "does this look"
+    cont "SILVER to you?"
+    done
+
+SoItIsRainbowColourText:
+    text "So you would say"
+    line "it is RAINBOW in"
+    cont "colour?"
+    done
+
+SoItIsSilverColourText:
+    text "So you would say"
+    line "it is SILVER in"
+    cont "colour?"
+    done
+
+RainbowWingTipsText:
+    text "There used to be a"
+	line "tower right here"
+	cont "in GOLDENROD CITY."
+
+	para "But it was old and"
+	line "creaky."
+
+	para "So we replaced it"
+	line "with our RADIO"
+	cont "TOWER."
+
+	para "We dug up that"
+	line "wing during"
+	cont "construction."
+
+	para "I heard that all"
+	line "sorts of #MON"
+
+	para "lived in GOLDENROD"
+	line "in the past."
+
+	para "Perhaps…"
+
+	para "That wing has some"
+	line "connection to the"
+
+	para "TIN TOWER in"
+	line "ECRUTEAK CITY…"
+	done
+
+SilverWingTipsText:
+    text "I found that when"
+    line "traveling the sea"
+    cont "near OLIVINE."
+
+    para "There was a storm"
+    line "that day."
+
+    para "It was the worst"
+    line "storm I had ever"
+    cont "seen."
+
+    para "Everyone was in"
+    line "panic."
+
+    para "Then the sun"
+    line "pierced the clouds"
+    cont "and the storm just"
+    cont "disappeared."
+
+    para "A huge #MON"
+    line "flew over me!"
+
+    para "It filled the"
+    line "sky."
+
+    para "I know it must have"
+    line "saved us."
+
+    para "I followed it out"
+    line "to the WHIRL"
+    cont "ISLANDS."
+
+    para "But all I found"
+    line "was this feather."
+
+    para "Maybe you will be"
+    line "the one to find it."
+    done
 
 RadioTower5FDirectorDescribeClearBellText:
 	text "There used to be a"

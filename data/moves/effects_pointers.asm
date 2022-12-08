@@ -118,7 +118,7 @@ MoveEffectsPointers:
 	dw Endure
 	dw Rollout
 	dw Swagger
-	dw FuryCutter
+	dw BulkUp
 	dw Attract
 	dw Return
 	dw Present

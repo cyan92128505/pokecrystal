@@ -236,6 +236,7 @@ BoostingMoveEffects:
 	db EFFECT_SERENITY
 	db EFFECT_GEOMANCY
 	db EFFECT_CALM_MIND
+	db EFFECT_BULK_UP
 	db EFFECT_DRAGON_DANCE
 	db EFFECT_QUIVER_DANCE
 	db EFFECT_SHELL_SMASH
@@ -681,7 +682,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ENDURE,           AI_Smart_Endure
 	dbw EFFECT_ROLLOUT,          AI_Smart_Rollout
 	dbw EFFECT_SWAGGER,          AI_Smart_Swagger
-	dbw EFFECT_FURY_CUTTER,      AI_Smart_FuryCutter
+	dbw EFFECT_BULK_UP,          AI_Smart_BulkUp
 	dbw EFFECT_ATTRACT,          AI_Smart_Attract
 	dbw EFFECT_SAFEGUARD,        AI_Smart_Safeguard
 	dbw EFFECT_MAGNITUDE,        AI_Smart_Magnitude
@@ -2213,6 +2214,58 @@ rept 5
 	dec [hl]
 endr
 	ret
+
+AI_Smart_BulkUp:
+; don't go past +4
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr c, .continue
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+.continue
+; don't use if we are at risk of being KOd, just attack them
+    call ShouldAIBoost
+    jr nc, .discourage
+
+.continue2
+; encourage to +2, strongly encourage if player has boosted Atk
+    ld a, [wEnemyAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .checkToxic ;
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .greatly_encourage
+	jr .encourage
+
+; discourage after +1 if afflicted with toxic
+.checkToxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+; discourage after +1 if player has boosted special attack
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .discourage
+    ret
+
+.approve
+	dec [hl]
+	dec [hl]
+.greatly_encourage
+	dec [hl]
+.encourage
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_Curse:
 	ld a, [wEnemyMonType1]

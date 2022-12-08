@@ -21,9 +21,10 @@ PewterCityCooltrainerFScript:
 PewterCityBugCatcherScript:
 	jumptextfaceplayer PewterCityBugCatcherText
 
-PewterCityGrampsScript:
+PewterCityGrampsScript: ; AndrewNote - here is how to make an npc give an item
 	faceplayer
 	opentext
+	sjump .GotSilverWing ; player now gets silver wing by other means
 	checkevent EVENT_GOT_SILVER_WING
 	iftrue .GotSilverWing
 	writetext PewterCityGrampsText

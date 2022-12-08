@@ -209,7 +209,7 @@ MoveNames::
 	li "SWAGGER"
 	li "MILK DRINK"
 	li "VOLT TACKLE"
-	li "FURY CUTTER"
+	li "BULK UP"
 	li "FLASH CANNON"
 	li "MEAN LOOK"
 	li "ATTRACT"

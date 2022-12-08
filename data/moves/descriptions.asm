@@ -132,7 +132,7 @@ MoveDescriptions::
 	dw SwiftDescription
 	dw PsychoBoostDescription
 	dw SpikeCannonDescription
-	dw ConstrictDescription
+	dw DragonDanceDescription
 	dw AmnesiaDescription
 	dw PoisonJabDescription
 	dw SoftboiledDescription
@@ -210,7 +210,7 @@ MoveDescriptions::
 	dw SwaggerDescription
 	dw MilkDrinkDescription
 	dw VoltTackleDescription
-	dw FuryCutterDescription
+	dw BulkUpDescription
 	dw FlashCannonDescription
 	dw MeanLookDescription
 	dw AttractDescription
@@ -793,9 +793,9 @@ SpikeCannonDescription:
 	db   "Fires spikes to"
 	next "hit 2-5 times.@"
 
-ConstrictDescription:
-	db   "An attack that may"
-	next "lower SPEED.@"
+DragonDanceDescription:
+	db   "Increases ATK"
+	next "and SPEED.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
@@ -1105,9 +1105,9 @@ VoltTackleDescription:
 	db   "A life risking"
 	next "wild charge.@"
 
-FuryCutterDescription:
-	db   "Successive hits"
-	next "raise power.@"
+BulkUpDescription:
+	db   "Increases ATK"
+	next "and DEF.@"
 
 FlashCannonDescription:
 	db   "A blast of light"

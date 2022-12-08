@@ -30,8 +30,16 @@ TinTowerHoOh:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_HO_OH
+
+	checkitem SILVER_WING
+	iffalse .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon HO_OH, 60
+	sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon HO_OH, 45
+.begin
 	startbattle
 	disappear TINTOWERROOF_HO_OH
 	reloadmapafterbattle

@@ -19,6 +19,7 @@ EcruteakTinTowerEntrance_MapScripts:
 	end
 
 .InitializeSages:
+    sjump .DontBlockTower
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .DontBlockTower
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER

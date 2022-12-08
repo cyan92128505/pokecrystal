@@ -97,7 +97,7 @@ BattleCommandPointers:
 	dw BattleCommand_CheckCurl
 	dw BattleCommand_RolloutPower
 	dw BattleCommand_HolyArmour
-	dw BattleCommand_FuryCutter
+	dw BattleCommand_BulkUp
 	dw BattleCommand_Attract
 	dw BattleCommand_HappinessPower
 	dw BattleCommand_Present ; this can be removed

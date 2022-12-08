@@ -6885,6 +6885,8 @@ INCLUDE "engine/battle/move_effects/serenity.asm"
 
 INCLUDE "engine/battle/move_effects/calmmind.asm"
 
+INCLUDE "engine/battle/move_effects/bulk_up.asm"
+
 INCLUDE "engine/battle/move_effects/dragondance.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"

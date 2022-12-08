@@ -211,7 +211,7 @@ BattleAnimations::
 	dw BattleAnim_Swagger
 	dw BattleAnim_MilkDrink
 	dw BattleAnim_Spark
-	dw BattleAnim_FuryCutter
+	dw BattleAnim_BulkUp
 	dw BattleAnim_FlashCannon
 	dw BattleAnim_MeanLook
 	dw BattleAnim_Attract
@@ -3679,6 +3679,17 @@ BattleAnim_LockOn:
 	anim_wait 16
 	anim_loop 2, .loop
 	anim_wait 32
+	anim_ret
+
+BattleAnim_BulkUp:
+    anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_wait 72
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_call BattleAnim_ShowMon_0
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 	anim_ret
 
 BattleAnim_Outrage:

@@ -303,6 +303,7 @@ ENDM
 
 MT01 EQU const_value
 	add_mt CALM_MIND
+	add_mt BULK_UP
 	add_mt NASTY_PLOT
 	add_mt SWORDS_DANCE
 NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1

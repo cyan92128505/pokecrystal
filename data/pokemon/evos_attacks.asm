@@ -882,8 +882,9 @@ PoliwhirlEvosAttacks:
 	db 19, DOUBLESLAP
 	db 27, RAIN_DANCE
 	db 35, BODY_SLAM
-	db 43, BELLY_DRUM
-	db 51, HYDRO_PUMP
+	db 40, BULK_UP
+	db 45, HYDRO_PUMP
+	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves
 
 PoliwrathEvosAttacks:
@@ -944,6 +945,7 @@ MachopEvosAttacks:
 	db 25, FORESIGHT
 	db 31, DRAIN_PUNCH
 	db 40, DYNAMICPUNCH
+	db 45, BULK_UP
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
@@ -957,7 +959,8 @@ MachokeEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 31, DRAIN_PUNCH
-	db 38, DYNAMICPUNCH
+	db 40, DYNAMICPUNCH
+	db 45, BULK_UP
 	db 0 ; no more level-up moves
 
 MachampEvosAttacks:
@@ -971,6 +974,7 @@ MachampEvosAttacks:
 	db 25, FORESIGHT
 	db 31, DRAIN_PUNCH
 	db 40, DYNAMICPUNCH
+	db 45, BULK_UP
 	db 0 ; no more level-up moves
 
 BellsproutEvosAttacks:
@@ -2353,6 +2357,7 @@ RioluEvosAttacks:
 	db 20, CRUNCH
 	db 30, AURA_SPHERE
 	db 40, BULLET_PUNCH
+	db 45, BULK_UP
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2366,6 +2371,7 @@ LucarioEvosAttacks:
     db 20, CRUNCH
 	db 30, AURA_SPHERE
 	db 40, BULLET_PUNCH
+	db 45, BULK_UP
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2721,7 +2727,7 @@ TimburrEvosAttacks:
 	db 24, ROCK_SLIDE
 	db 28, MACH_PUNCH
 	db 32, DRAIN_PUNCH
-	db 40, CURSE
+	db 40, BULK_UP
 	db 0 ; no more level-up moves
 
 GurdurrEvosAttacks:
@@ -2736,7 +2742,7 @@ GurdurrEvosAttacks:
 	db 24, ROCK_SLIDE
 	db 28, MACH_PUNCH
 	db 32, DRAIN_PUNCH
-	db 40, CURSE
+	db 40, BULK_UP
 	db 0 ; no more level-up moves
 
 ConkeldurrEvosAttacks:
@@ -2750,7 +2756,7 @@ ConkeldurrEvosAttacks:
 	db 24, ROCK_SLIDE
 	db 28, MACH_PUNCH
 	db 32, DRAIN_PUNCH
-	db 40, CURSE
+	db 40, BULK_UP
 	db 0 ; no more level-up moves
 
 BeldumEvosAttacks:
@@ -3530,20 +3536,21 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-    db 1, AIR_SLASH
+    db 1, ANCIENTPOWER
     db 1, PSYCHIC_M
-    db 50, AEROBLAST
-    db 60, RECOVER
+    db 1, AEROBLAST
+    db 1, RECOVER
     db 65, HURRICANE
     db 70, CALM_MIND
 	db 0 ; no more level-up moves
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FIRE_BLAST
+	db 1, ANCIENTPOWER
 	db 1, FLY
-	db 50, SACRED_FIRE
-	db 60, RECOVER
+	db 1, SACRED_FIRE
+	db 1, RECOVER
+	db 65, FIRE_BLAST
 	db 70, BRAVE_BIRD
 	db 0 ; no more level-up moves
 

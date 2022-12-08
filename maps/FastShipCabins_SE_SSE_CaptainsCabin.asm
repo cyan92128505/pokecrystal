@@ -98,10 +98,19 @@ SSAquaGrandpa:
 SSAquaMetalCoatAndDocking:
 	writetext SSAquaGrandpaHaveThisText
 	promptbutton
-	verbosegiveitem METAL_COAT
-	iffalse .NoRoom
+
+	checkitem RAINBOW_WING
+	iffalse .giveRainbowWing
+	verbosegiveitem SILVER_WING
+	setevent EVENT_GOT_SILVER_WING
+	writetext SSAquaGrandpaHaveThisSilverWingText
+	sjump .continue
+.giveRainbowWing
+	verbosegiveitem RAINBOW_WING
+	setevent EVENT_GOT_RAINBOW_WING
+	writetext SSAquaGrandpaHaveThisRainbowWingText
+.continue
 	setevent EVENT_GOT_METAL_COAT_FROM_GRANDPA_ON_SS_AQUA
-.NoRoom:
 	closetext
 	waitsfx
 	playsound SFX_ELEVATOR_END
@@ -117,10 +126,17 @@ SSAquaMetalCoatAndDocking:
 SSAquaFoundGranddaughter:
 	writetext SSAquaGrandpaHaveThisText
 	promptbutton
-	verbosegiveitem METAL_COAT
-	iffalse .NoRoom
-	setevent EVENT_GOT_METAL_COAT_FROM_GRANDPA_ON_SS_AQUA
-.NoRoom:
+	checkitem RAINBOW_WING
+	iffalse .giveRainbowWing
+	verbosegiveitem SILVER_WING
+	setevent EVENT_GOT_SILVER_WING
+	writetext SSAquaGrandpaHaveThisSilverWingText
+	sjump .continue
+.giveRainbowWing
+	verbosegiveitem RAINBOW_WING
+	setevent EVENT_GOT_RAINBOW_WING
+	writetext SSAquaGrandpaHaveThisRainbowWingText
+.continue
 	closetext
 	end
 
@@ -283,8 +299,78 @@ SSAquaEntertainedGranddaughterText:
 	done
 
 SSAquaGrandpaHaveThisText:
-	text "I know! I'd like"
-	line "you to have this!"
+    text "I want you to"
+    line "have this!"
+
+SSAquaGrandpaHaveThisRainbowWingText:
+    text "There used to be a"
+	line "tower in"
+	cont "GOLDENROD CITY."
+
+	para "But it was old and"
+	line "creaky."
+
+	para "So it was replaced"
+	line "with the RADIO"
+	cont "TOWER."
+
+	para "I dug up that"
+	line "wing during"
+	cont "construction."
+
+	para "I heard that all"
+	line "sorts of #MON"
+
+	para "lived in GOLDENROD"
+	line "in the past."
+
+	para "Perhaps…"
+
+	para "That wing has some"
+	line "connection to the"
+
+	para "TIN TOWER in"
+	line "ECRUTEAK CITY…"
+
+
+SSAquaGrandpaHaveThisSilverWingText:
+    text "I found that when"
+    line "traveling the sea"
+    cont "near OLIVINE."
+
+    para "There was a storm"
+    line "that day."
+
+    para "It was the worst"
+    line "storm I had ever"
+    cont "seen."
+
+    para "Everyone was in"
+    line "panic."
+
+    para "Then the sun"
+    line "pierced the clouds"
+    cont "and the storm just"
+    cont "disappeared."
+
+    para "A huge #MON"
+    line "flew over me!"
+
+    para "It filled the"
+    line "sky."
+
+    para "I know it must have"
+    line "saved us."
+
+    para "I followed it out"
+    line "to the WHIRL"
+    cont "ISLANDS."
+
+    para "But all I found"
+    line "was this feather."
+
+    para "Maybe you will be"
+    line "the one to find it."
 	done
 
 SSAquaGrandpaTravellingText:

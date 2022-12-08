@@ -21,6 +21,7 @@ WiseTriosRoom_MapScripts:
 	end
 
 .WiseTrioCallback:
+    sjump .NoWiseTrio
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .NoWiseTrio
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
@@ -351,7 +352,7 @@ WiseTriosRoom_MapEvents:
 	warp_event  1,  4, ECRUTEAK_TIN_TOWER_ENTRANCE, 5
 
 	def_coord_events
-	coord_event  7,  4, SCENE_DEFAULT, WiseTriosRoom_CannotEnterTinTowerScript
+	;coord_event  7,  4, SCENE_DEFAULT, WiseTriosRoom_CannotEnterTinTowerScript ; AndrewNote - here is how to make an event happen on a map coord
 
 	def_bg_events
 

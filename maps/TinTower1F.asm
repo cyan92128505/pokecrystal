@@ -20,29 +20,47 @@ TinTower1F_MapScripts:
 	callback MAPCALLBACK_TILES, .StairsCallback
 
 .FaceSuicune:
+    checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
+    iffalse .end
 	sdefer .SuicuneBattle
+.end
 	end
 
 .DummyScene:
 	end
 
+; if player has rainbow wing and has not fought ho-oh then nothing happens with eusine or suicune
+; if player does not have rainbow wing player will fight suicune if they have not caught all beasts
 .NPCsCallback:
-	checkevent EVENT_GOT_RAINBOW_WING
+    checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
+    iffalse .NoClearBell
+	checkevent EVENT_GOT_RAINBOW_WING ; having rainbow wing takes priority
 	iftrue .GotRainbowWing
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .FaceBeasts
+	iffalse .FaceBeasts ; face beasts if the player has not beat the elite 4
 	special BeastsCheck
-	iffalse .FaceBeasts
+	iffalse .FaceBeasts ; face beasts if the player has not caught all beasts
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
 .GotRainbowWing:
 	checkevent EVENT_FOUGHT_HO_OH
 	iffalse .Done
 	appear TINTOWER1F_EUSINE
+    ; if player has rainbow wing eusine will only appear if player has fought ho-oh
 .Done:
 	endcallback
+.NoClearBell
+	disappear TINTOWER1F_SUICUNE
+	disappear TINTOWER1F_RAIKOU
+	disappear TINTOWER1F_ENTEI
+    endcallback
 
 .FaceBeasts:
+; if player has not fought suicune and has not caught raikou then both appear
+	appear TINTOWER1F_SUICUNE
+	appear TINTOWER1F_RAIKOU
+	appear TINTOWER1F_ENTEI
+
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .FoughtSuicune
 	appear TINTOWER1F_SUICUNE
@@ -52,6 +70,8 @@ TinTower1F_MapScripts:
 	appear TINTOWER1F_RAIKOU
 	sjump .CheckEntei
 
+; if the player has caught raikou
+; and has not fought entei then entai appears
 .NoRaikou:
 	disappear TINTOWER1F_RAIKOU
 .CheckEntei:
@@ -61,11 +81,13 @@ TinTower1F_MapScripts:
 	appear TINTOWER1F_ENTEI
 	sjump .BeastsDone
 
+; if player has caught entei then it does not appear
 .NoEntei:
 	disappear TINTOWER1F_ENTEI
 .BeastsDone:
 	endcallback
 
+; if player has fought suicune then nothing appears and all is cleared
 .FoughtSuicune:
 	disappear TINTOWER1F_SUICUNE
 	disappear TINTOWER1F_RAIKOU
@@ -74,13 +96,15 @@ TinTower1F_MapScripts:
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	endcallback
 
+ ; if player has rainbow wing then shoe stairs
 .StairsCallback:
 	checkevent EVENT_GOT_RAINBOW_WING
 	iftrue .DontHideStairs
-	changeblock 10, 2, $09 ; floor
+	changeblock 10, 2, $09 ; change stairs to floor
 .DontHideStairs:
 	endcallback
 
+; handles the beasts interaction with player
 .SuicuneBattle:
 	applymovement PLAYER, TinTower1FPlayerEntersMovement
 	pause 15
@@ -116,7 +140,7 @@ TinTower1F_MapScripts:
 	applymovement TINTOWER1F_SUICUNE, TinTower1FSuicuneApproachesMovement
 	cry SUICUNE
 	pause 20
-	loadwildmon SUICUNE, 40
+	loadwildmon SUICUNE, 50
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	startbattle
 	dontrestartmapmusic

@@ -413,8 +413,12 @@ ElmGiveTicketScript:
 	verbosegiveitem S_S_TICKET
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
+	verbosegiveitem CLEAR_BELL
+	writetext ClearBellTips
 	waitbutton
 	closetext
+	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
+	setevent EVENT_GOT_CLEAR_BELL
 	end
 
 ElmJumpBackScript1:
@@ -1218,7 +1222,27 @@ ElmGiveTicketText2:
 
 	para "Give my regards to"
 	line "PROF.OAK in KANTO!"
+
+	para "I have one more"
+	line "thing for you!"
+
+	para "This was enrusted"
+	line "to me by a strange"
+	cont "man whos"
+	cont "#MON had"
+	cont "an amazing shine."
 	done
+
+ClearBellTips:
+    text "It is in some"
+    line "way connected to"
+    cont "the TIN TOWER in"
+    cont "ECRUTEAK CITY."
+
+    para "You should go"
+    line "there and check"
+    cont "it out."
+    done
 
 ElmsLabMonEggText: ; unreferenced
 	text "It's the #MON"

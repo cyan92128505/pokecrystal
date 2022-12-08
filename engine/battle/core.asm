@@ -6289,13 +6289,13 @@ ParseEnemyAction:
 	ld [wEnemyCharging], a
 
 .raging
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_FURY_CUTTER
-	jr z, .fury_cutter
-	xor a
-	ld [wEnemyFuryCutterCount], a
+	;ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	;cp EFFECT_FURY_CUTTER
+	;jr z, .fury_cutter
+	;xor a
+	;ld [wEnemyFuryCutterCount], a
 
-.fury_cutter
+;.fury_cutter
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .no_rage

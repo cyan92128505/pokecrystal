@@ -215,7 +215,7 @@
 	const SWAGGER      ; cf
 	const MILK_DRINK   ; d0
 	const VOLT_TACKLE  ; d1
-	const FURY_CUTTER  ; d2  AndrewNote - This is not used
+	const BULK_UP      ; d2
 	const FLASH_CANNON ; d3
 	const MEAN_LOOK    ; d4
 	const ATTRACT      ; d5

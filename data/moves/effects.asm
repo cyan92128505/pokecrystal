@@ -1547,25 +1547,11 @@ Swagger:
 	confusetarget
 	endmove
 
-FuryCutter:
+BulkUp:
 	checkobedience
 	usedmovetext
 	doturn
-	critical
-	damagestats
-	damagecalc
-	stab
-	checkhit
-	furycutter
-	damagevariation
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
+	bulkup
 	endmove
 
 Attract:

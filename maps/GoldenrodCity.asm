@@ -66,27 +66,35 @@ MoveTutorScript:
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
-	ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower
-	ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt
-	ifequal MOVETUTOR_ICE_BEAM, .IceBeam
+	ifequal MOVETUTOR_CALM_MIND, .CalmMind
+	ifequal MOVETUTOR_BULK_UP, .BulkUp
+	ifequal MOVETUTOR_NASTY_PLOT, .NastyPlot
+	ifequal MOVETUTOR_SWORDS_DANCE, .SwordsDance
 	sjump .Incompatible
 
-.Flamethrower:
+.CalmMind:
 	setval MT01_MOVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
-.Thunderbolt:
+.BulkUp:
 	setval MT02_MOVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
-.IceBeam:
+.NastyPlot:
 	setval MT03_MOVE
+	writetext GoldenrodCityMoveTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.SwordsDance:
+	setval MT04_MOVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
@@ -100,7 +108,7 @@ MoveTutorScript:
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	menu_coords 0, 0, 15, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 

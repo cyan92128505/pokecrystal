@@ -317,6 +317,7 @@ NUM_UNOWN_PUZZLES EQU const_value
 
 ; MoveTutor setval arguments
 	const_def 1
-	const MOVETUTOR_FLAMETHROWER ; 1
-	const MOVETUTOR_THUNDERBOLT  ; 2
-	const MOVETUTOR_ICE_BEAM     ; 3
+	const MOVETUTOR_CALM_MIND    ; 1
+	const MOVETUTOR_BULK_UP      ; 2
+	const MOVETUTOR_NASTY_PLOT   ; 3
+	const MOVETUTOR_SWORDS_DANCE ; 4

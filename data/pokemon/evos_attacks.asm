@@ -1140,10 +1140,10 @@ SlowpokeEvosAttacks:
 	db 6, GROWL
 	db 15, WATER_GUN
 	db 20, CONFUSION
-	db 29, DISABLE
-	db 34, ZEN_HEADBUTT
-	db 43, AMNESIA
-	db 48, PSYCHIC_M
+	db 25, ZEN_HEADBUTT
+	db 30, BUBBLEBEAM
+	db 35, PSYCHIC_M
+	db 40, CALM_MIND
 	db 0 ; no more level-up moves
 
 SlowbroEvosAttacks:
@@ -1155,11 +1155,10 @@ SlowbroEvosAttacks:
 	db 6, GROWL
 	db 15, WATER_GUN
 	db 20, CONFUSION
-	db 29, DISABLE
-	db 34, ZEN_HEADBUTT
-	db 37, DEFENSE_CURL
-	db 46, AMNESIA
-	db 54, PSYCHIC_M
+	db 25, ZEN_HEADBUTT
+	db 30, BUBBLEBEAM
+	db 35, PSYCHIC_M
+	db 40, CALM_MIND
 	db 0 ; no more level-up moves
 
 MagnemiteEvosAttacks:
@@ -1496,11 +1495,14 @@ ExeggcuteEvosAttacks:
 	db 1, HYPNOSIS
 	db 7, REFLECT
 	db 13, LEECH_SEED
-	db 19, CONFUSION
+	db 19, POISONPOWDER
 	db 25, STUN_SPORE
-	db 31, POISONPOWDER
+	db 31, LEECH_SEED
+	db 34, GIGA_DRAIN
 	db 37, SLEEP_POWDER
+	db 40, PSYCHIC_M
 	db 43, SOLARBEAM
+	db 48, SUNNY_DAY
 	db 0 ; no more level-up moves
 
 ExeggutorEvosAttacks:
@@ -1508,7 +1510,17 @@ ExeggutorEvosAttacks:
 	db 1, PSYCHIC_M
 	db 1, HYPNOSIS
 	db 1, CONFUSION
-	db 19, STOMP
+	db 7, REFLECT
+	db 10, STOMP
+	db 13, LEECH_SEED
+	db 19, POISONPOWDER
+	db 25, STUN_SPORE
+	db 31, LEECH_SEED
+	db 34, GIGA_DRAIN
+	db 37, SLEEP_POWDER
+	db 40, PSYCHIC_M
+	db 43, SOLARBEAM
+	db 48, SUNNY_DAY
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
@@ -2593,6 +2605,7 @@ TogekissEvosAttacks:
 	db 25, ENCORE
 	db 30, EXTREMESPEED
 	db 32, SAFEGUARD
+	db 34, DRAIN_KISS
 	db 36, ROOST
 	db 40, AIR_SLASH
 	db 44, MOON_BLAST
@@ -2901,10 +2914,10 @@ SlowkingEvosAttacks:
 	db 6, GROWL
 	db 15, WATER_GUN
 	db 20, CONFUSION
-	db 29, DISABLE
-	db 34, ZEN_HEADBUTT
-	db 43, SWAGGER
-	db 48, PSYCHIC_M
+	db 25, ZEN_HEADBUTT
+	db 30, BUBBLEBEAM
+	db 35, PSYCHIC_M
+	db 40, CALM_MIND
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
@@ -3550,8 +3563,8 @@ HoOhEvosAttacks:
 	db 1, FLY
 	db 1, SACRED_FIRE
 	db 1, RECOVER
-	db 65, FIRE_BLAST
-	db 70, BRAVE_BIRD
+	db 65, BRAVE_BIRD
+	db 70, BULK_UP
 	db 0 ; no more level-up moves
 
 CelebiEvosAttacks:

@@ -1639,9 +1639,11 @@ AI_Smart_Paralyze:
 	jr c, .discourage50
 
 .encourage
+; needs to overcome encouragement to attack
+; no good reason not to paralyze
+rept 8
     dec [hl]
-    dec [hl]
-    dec [hl]
+endr
     ret
 .discourage50
     call AI_50_50
@@ -3461,6 +3463,11 @@ AI_Smart_DragonDance:
 
     call CanPlayerKO
     jr c, .discourage
+
+; discourage if enemy is paralyzed
+    ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	jr nz, .discourage
 
 .continue
 ; encourage to get to +2

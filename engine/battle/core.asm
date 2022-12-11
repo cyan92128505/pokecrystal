@@ -547,19 +547,19 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
     cp GOLDUCK
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
     cp POLIWRATH
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
 
     ld a, [wBattleMonSpecies]
     cp KINGDRA
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
     cp GOLDUCK
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
     cp POLIWRATH
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
 
 .checkSun
 ; ===============================
@@ -571,19 +571,19 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
     cp VICTREEBEL
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
     cp EXEGGUTOR
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
 
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
     cp VICTREEBEL
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
     cp EXEGGUTOR
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
 
 .checkSand
 ; ==============================
@@ -595,15 +595,11 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
-    call z, DoubleHL
-    cp SANDSLASH
-    call z, DoubleHL
+    call z, DoubleEnemySpeedInHL
 
     ld a, [wBattleMonSpecies]
     cp EXCADRILL
-    call z, DoubleDE
-    cp SANDSLASH
-    call z, DoubleDE
+    call z, DoublePlayerSpeedInDE
 
 .continue
 	ld c, 2
@@ -633,16 +629,33 @@ DetermineMoveOrder:
 	and a
 	ret
 
-DoubleHL:
-    ld a, [hl]
-    sla a
-    ld [hl], a
+DoubleEnemySpeedInHL:
+    push bc
+	ld hl, wEnemyMonSpeed + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	sla a
+	rl b
+	ld [hli], a
+	ld [hl], b
+	pop bc
     ret
 
-DoubleDE:
-    ld a, [de]
-    sla a
-    ld [de], a
+DoublePlayerSpeedInDE:
+    push bc
+	ld de, wBattleMonSpeed + 1
+	ld a, [de]
+	dec de
+	ld b, a
+	ld a, [de]
+	sla a
+	rl b
+	ld [de], a
+	inc de
+	ld a, b
+	ld [de], a
+	pop bc
     ret
 
 CheckContestBattleOver:

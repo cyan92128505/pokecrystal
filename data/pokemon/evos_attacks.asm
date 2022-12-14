@@ -1696,9 +1696,9 @@ RhyperiorEvosAttacks:
 	db 13, STOMP
 	db 16, SCARY_FACE
 	db 19, MAGNITUDE
-	db 25, TAKE_DOWN
+	db 25, HORN_DRILL
 	db 31, ROCK_SLIDE
-	db 37, HORN_DRILL
+	db 37, POISON_JAB
 	db 44, MEGAHORN
 	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -1961,13 +1961,15 @@ VaporeonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
+	db 12, QUICK_ATTACK
 	db 16, WATER_GUN
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, AURORA_BEAM
+	db 20, BITE
+	db 24, BUBBLEBEAM
+	db 30, AURORA_BEAM
+	db 36, ACID_ARMOR
 	db 42, HAZE
-	db 47, ACID_ARMOR
-	db 52, HYDRO_PUMP
+	db 46, HYDRO_PUMP
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
 JolteonEvosAttacks:
@@ -1975,14 +1977,14 @@ JolteonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
+	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
-	db 23, QUICK_ATTACK
-	db 30, DOUBLE_KICK
-	db 33, PIN_MISSILE
-	db 37, THUNDERBOLT
-	db 42, THUNDER_WAVE
-	db 47, AGILITY
-	db 52, THUNDER
+	db 24, DOUBLE_KICK
+	db 30, PIN_MISSILE
+	db 34, THUNDERBOLT
+	db 38, THUNDER_WAVE
+	db 42, AGILITY
+	db 50, THUNDER
 	db 0 ; no more level-up moves
 
 FlareonEvosAttacks:
@@ -1990,13 +1992,13 @@ FlareonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
+	db 12, QUICK_ATTACK
 	db 16, EMBER
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, FIRE_SPIN
-	db 45, FLAMETHROWER
-	db 50, FIRE_BLAST
-	db 55, FLARE_BLITZ
+	db 24, BITE
+	db 28, FIRE_SPIN
+	db 36, FLAMETHROWER
+	db 45, FIRE_BLAST
+	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
@@ -2359,7 +2361,7 @@ GreninjaEvosAttacks:
 	db 0 ; no more level-up moves
 
 RioluEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
+	db EVOLVE_HAPPINESS, TR_ANYTIME, LUCARIO
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, ENDURE
@@ -2868,13 +2870,13 @@ EspeonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
+	db 12, QUICK_ATTACK
 	db 16, CONFUSION
-	db 23, QUICK_ATTACK
-	db 30, SWIFT
-	db 36, PSYBEAM
-	db 42, CALM_MIND
-	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 20, SWIFT
+	db 24, PSYBEAM
+	db 35, PSYCHIC_M
+	db 40, CALM_MIND
+	db 45, MORNING_SUN
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -2882,13 +2884,13 @@ UmbreonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
+	db 12, QUICK_ATTACK
 	db 16, PURSUIT
-	db 23, QUICK_ATTACK
-	db 30, CONFUSE_RAY
-	db 36, NIGHT_SLASH
-	db 42, MEAN_LOOK
-	db 47, SCREECH
-	db 52, MOONLIGHT
+	db 20, CONFUSE_RAY
+	db 24, BITE
+	db 32, MEAN_LOOK
+	db 36, DARK_PULSE
+	db 40, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -3028,8 +3030,8 @@ SteelixEvosAttacks:
 	db 1, SCREECH
 	db 10, WRAP
 	db 14, ROCK_THROW
-	db 23, HARDEN
-	db 27, RAGE
+	db 23, RAGE
+	db 27, ROCK_SLIDE
 	db 30, IRON_HEAD
 	db 35, CRUNCH
 	db 40, EARTHQUAKE

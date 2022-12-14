@@ -10,10 +10,13 @@ Route24RocketScript:
 	faceplayer
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
+	checkevent EVENT_ROUTE_24_ROCKET
+	iftrue .FightDone
 	writetext Route24RocketSeenText
 	waitbutton
 	closetext
 	winlosstext Route24RocketBeatenText, -1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer GRUNTM, GRUNTM_31
 	startbattle
 	dontrestartmapmusic
@@ -26,13 +29,46 @@ Route24RocketScript:
 	writetext Route24RocketDisappearsText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	disappear ROUTE24_ROCKET
-	pause 25
-	special FadeInQuickly
+	;special FadeBlackQuickly
+	;special ReloadSpritesNoPalettes
+	;disappear ROUTE24_ROCKET
+	;pause 25
+	;special FadeInQuickly
+    setevent EVENT_ROUTE_24_ROCKET
 	playmapmusic
 	end
+.rematch
+    writetext Route24RocketSeenText
+	waitbutton
+	closetext
+	winlosstext Route24RocketBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
+	loadtrainer GRUNTM, GRUNTM_31
+	startbattle
+	reloadmapafterbattle
+	end
+
+.FightDone:
+	writetext Route24RocketDisappearsText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextRocket
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextRocket
+	waitbutton
+	closetext
+	end
+
+RematchTextRocket:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextRocket:
+    text "Maybe next time."
+    done
 
 Route24RocketSeenText:
 	text "Hey, kid! Me am a"
@@ -126,4 +162,4 @@ Route24_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, EVENT_ROUTE_24_ROCKET
+	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, -1

@@ -301,6 +301,7 @@ SSAquaEntertainedGranddaughterText:
 SSAquaGrandpaHaveThisText:
     text "I want you to"
     line "have this!"
+    done
 
 SSAquaGrandpaHaveThisRainbowWingText:
     text "There used to be a"
@@ -331,7 +332,7 @@ SSAquaGrandpaHaveThisRainbowWingText:
 
 	para "TIN TOWER in"
 	line "ECRUTEAK CITY…"
-
+	done
 
 SSAquaGrandpaHaveThisSilverWingText:
     text "I found that when"

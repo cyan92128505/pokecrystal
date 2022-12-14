@@ -42,6 +42,9 @@ CeladonGymErikaScript:
 	verbosegiveitem TM_GIGA_DRAIN
 	iffalse .GotGigaDrain
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
+	waitbutton
+	closetext
+	end
 .rematch
 	writetext ErikaBeforeBattleText
 	waitbutton

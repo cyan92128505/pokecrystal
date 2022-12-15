@@ -8,7 +8,8 @@ TinTowerRoof_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .HoOh
 
 .HoOh:
-	checkevent EVENT_FOUGHT_HO_OH
+	setval HO_OH
+	special MonCheck
 	iftrue .NoAppear
 	checkitem RAINBOW_WING
 	iftrue .Appear

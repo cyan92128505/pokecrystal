@@ -1,13 +1,13 @@
 	object_const_def
 	const DRAGONSDENB1F_POKE_BALL1
 	const DRAGONSDENB1F_CLAIR
-	const DRAGONSDENB1F_SILVER
 	const DRAGONSDENB1F_COOLTRAINER_M
 	const DRAGONSDENB1F_COOLTRAINER_F
 	const DRAGONSDENB1F_TWIN1
 	const DRAGONSDENB1F_TWIN2
 	const DRAGONSDENB1F_POKE_BALL2
 	const DRAGONSDENB1F_POKE_BALL3
+	const DRAGONSDENB1F_RAYQUAZA
 
 DragonsDenB1F_MapScripts:
 	def_scene_scripts
@@ -15,7 +15,7 @@ DragonsDenB1F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckSilver
+	callback MAPCALLBACK_OBJECTS, .Rayquaza
 
 .DummyScene0:
 	end
@@ -23,22 +23,108 @@ DragonsDenB1F_MapScripts:
 .DummyScene1:
 	end
 
-.CheckSilver:
-	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
-	iftrue .CheckDay
-	disappear DRAGONSDENB1F_SILVER
+.Rayquaza
+    setval RAYQUAZA
+	special MonCheck
+	iftrue .NoAppear
+	sjump .Appear
+
+.Appear:
+	appear DRAGONSDENB1F_RAYQUAZA
 	endcallback
 
-.CheckDay:
-	readvar VAR_WEEKDAY
-	ifequal TUESDAY, .AppearSilver
-	ifequal THURSDAY, .AppearSilver
-	disappear DRAGONSDENB1F_SILVER
+.NoAppear:
+	disappear DRAGONSDENB1F_RAYQUAZA
 	endcallback
 
-.AppearSilver:
-	appear DRAGONSDENB1F_SILVER
-	endcallback
+RayquazaScript:
+	faceplayer
+	opentext
+
+    setval DRAGONITE
+	special MonCheck
+	iffalse .notWorthy
+    setval SALAMENCE
+	special MonCheck
+	iffalse .notWorthy
+    setval GARCHOMP
+	special MonCheck
+	iffalse .notWorthy
+
+	writetext RayquazaWorthyText
+	cry RAYQUAZA
+	pause 15
+	closetext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon RAYQUAZA, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon RAYQUAZA, 50
+.begin
+	startbattle
+	disappear DRAGONSDENB1F_RAYQUAZA
+	reloadmapafterbattle
+	end
+.notWorthy
+    writetext RayquazaNotWorthyText
+    waitbutton
+    closetext
+    end
+
+RayquazaNotWorthyText:
+	text "I AM RAYQUAZA!"
+
+	para "THE DRAGON LORD!"
+
+	para "TINY HUMAN..."
+
+	para "I SENSE IN YOU"
+	line "THE HEART OF A"
+	cont "DRAGON!"
+
+	para "PROVE TO ME"
+	line "YOUR KINSHIP."
+
+	para "BECOME A DRAGON"
+	line "CHAMPION BY"
+	cont "MASTERING MY"
+	cont "DRAGONS."
+
+	para "DRAGONITE!"
+
+	para "SALAMENCE!"
+
+	para "AND"
+	line "GARCHOMP!"
+
+	para "THEN RETURN TO ME!"
+	done
+
+RayquazaWorthyText:
+	text "AHHHHH..."
+
+	para "YOU ARE A TRUE"
+	line "DRAGON CHAMPION!"
+
+	para "BUT IS YOUR HEART"
+	line "STRONG ENOUGH.."
+
+	para "TO MASTER ME!"
+
+	para "THE DRAGON LORD!"
+
+	para "SO THAT TOGETHER"
+	line "WE MIGHT CONQUER"
+	cont "THE DARK ONE.."
+
+	para "GIRATINA!"
+
+	para "SHOW ME YOUR"
+	line "STRENGTH!"
+	done
 
 DragonsDenB1F_ClairScene:
 	appear DRAGONSDENB1F_CLAIR
@@ -150,26 +236,6 @@ DragonsDenB1FDragonFangScript:
 	closetext
 	end
 
-DragonsDenB1FSilverScript:
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	faceplayer
-	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .SilverTalkAgain
-	writetext SilverText_Training1
-	waitbutton
-	closetext
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	special RestartMapMusic
-	end
-
-.SilverTalkAgain:
-	writetext SilverText_Training2
-	waitbutton
-	closetext
-	special RestartMapMusic
-	end
-
 DragonShrineSignpost:
 	jumptext DragonShrineSignpostText
 
@@ -276,35 +342,6 @@ DragonShrineSignpostText:
 
 	para "said to have lived"
 	line "in DRAGON'S DEN."
-	done
-
-SilverText_Training1:
-	text "…"
-	line "What? <PLAYER>?"
-
-	para "…No, I won't"
-	line "battle you now…"
-
-	para "My #MON aren't"
-	line "ready to beat you."
-
-	para "I can't push them"
-	line "too hard now."
-
-	para "I have to be dis-"
-	line "ciplined to become"
-
-	para "the greatest #-"
-	line "MON trainer…"
-	done
-
-SilverText_Training2:
-	text "…"
-
-	para "Whew…"
-
-	para "Learn to stay out"
-	line "of my way…"
 	done
 
 CooltrainermDarinSeenText:
@@ -414,10 +451,10 @@ DragonsDenB1F_MapEvents:
 	def_object_events
 	object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
 	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
-	object_event 20, 23, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FSilverScript, EVENT_RIVAL_DRAGONS_DEN
 	object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1
 	object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1
 	object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1
 	object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
 	object_event 30,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM
 	object_event  5, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER
+	object_event 20, 23, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_DUMMY

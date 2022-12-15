@@ -8,7 +8,8 @@ WhirlIslandLugiaChamber_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Lugia
 
 .Lugia:
-	checkevent EVENT_FOUGHT_LUGIA
+	setval LUGIA
+	special MonCheck
 	iftrue .NoAppear
 	checkitem SILVER_WING
 	iftrue .Appear

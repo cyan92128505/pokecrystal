@@ -2,7 +2,6 @@
 	const INDIGOPLATEAUPOKECENTER1F_NURSE
 	const INDIGOPLATEAUPOKECENTER1F_CLERK
 	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M
-	const INDIGOPLATEAUPOKECENTER1F_SILVER
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
 
@@ -40,99 +39,6 @@ IndigoPlateauPokecenter1F_MapScripts:
 	clearevent EVENT_BEAT_CHAMPION_LANCE
 	setevent EVENT_LANCES_ROOM_OAK_AND_MARY
 	endcallback
-
-PlateauRivalBattle1:
-	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
-	iffalse PlateauRivalScriptDone
-	checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
-	iftrue PlateauRivalScriptDone
-	readvar VAR_WEEKDAY
-	ifequal SUNDAY, PlateauRivalScriptDone
-	ifequal TUESDAY, PlateauRivalScriptDone
-	ifequal THURSDAY, PlateauRivalScriptDone
-	ifequal FRIDAY, PlateauRivalScriptDone
-	ifequal SATURDAY, PlateauRivalScriptDone
-	moveobject INDIGOPLATEAUPOKECENTER1F_SILVER, 17, 9
-	appear INDIGOPLATEAUPOKECENTER1F_SILVER
-	turnobject PLAYER, DOWN
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	applymovement INDIGOPLATEAUPOKECENTER1F_SILVER, PlateauRivalMovement1
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	turnobject PLAYER, RIGHT
-	sjump PlateauRivalBattleCommon
-
-PlateauRivalBattle2:
-	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
-	iffalse PlateauRivalScriptDone
-	checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
-	iftrue PlateauRivalScriptDone
-	readvar VAR_WEEKDAY
-	ifequal SUNDAY, PlateauRivalScriptDone
-	ifequal TUESDAY, PlateauRivalScriptDone
-	ifequal THURSDAY, PlateauRivalScriptDone
-	ifequal FRIDAY, PlateauRivalScriptDone
-	ifequal SATURDAY, PlateauRivalScriptDone
-	appear INDIGOPLATEAUPOKECENTER1F_SILVER
-	turnobject PLAYER, DOWN
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	applymovement INDIGOPLATEAUPOKECENTER1F_SILVER, PlateauRivalMovement2
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	turnobject PLAYER, LEFT
-PlateauRivalBattleCommon:
-	opentext
-	writetext PlateauRivalText1
-	waitbutton
-	closetext
-	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
-	; Cyndaquil
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
-	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
-	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump PlateauRivalPostBattle
-
-.Totodile:
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
-	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
-	loadtrainer RIVAL2, RIVAL2_2_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump PlateauRivalPostBattle
-
-.Chikorita:
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
-	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
-	loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump PlateauRivalPostBattle
-
-PlateauRivalPostBattle:
-	playmusic MUSIC_RIVAL_AFTER
-	opentext
-	writetext PlateauRivalText2
-	waitbutton
-	closetext
-	turnobject PLAYER, DOWN
-	applymovement INDIGOPLATEAUPOKECENTER1F_SILVER, PlateauRivalLeavesMovement
-	disappear INDIGOPLATEAUPOKECENTER1F_SILVER
-	setscene SCENE_DEFAULT
-	playmapmusic
-	setflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
-PlateauRivalScriptDone:
-	end
 
 IndigoPlateauPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -310,8 +216,6 @@ IndigoPlateauPokecenter1F_MapEvents:
 	warp_event 14,  3, WILLS_ROOM, 1
 
 	def_coord_events
-	coord_event 16,  4, SCENE_DEFAULT, PlateauRivalBattle1
-	coord_event 17,  4, SCENE_DEFAULT, PlateauRivalBattle2
 
 	def_bg_events
 
@@ -319,6 +223,5 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
 	object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
 	object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
-	object_event 16,  9, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
 	object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY

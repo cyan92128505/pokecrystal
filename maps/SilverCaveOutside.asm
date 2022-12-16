@@ -80,6 +80,55 @@ SilverCaveRivalAfterBattleText:
     line "one of them."
     done
 
+SilverCaveEusine:
+	trainer MYSTICALMAN, EUSINE_SILVER_CAVE, EVENT_BEAT_SILVER_CAVE_EUSINE, SilverCaveEusineSeenText, SilverCaveEusineBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SilverCaveEusineAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SilverCaveEusineSeenText:
+    text "I have been"
+    line "chosen!"
+
+    para "Thanks to you."
+
+    para "SUICUNE has seen"
+    line "my true value."
+
+    para "Our bond grows"
+    line "stronger through"
+    cont "battle."
+
+    para "Help me fortify"
+    line "our bond further!"
+    done
+
+SilverCaveEusineBeatenText:
+    text "We learn more"
+    line "from defeat."
+    done
+
+SilverCaveEusineAfterBattleText:
+    text "There is a"
+    line "trainer in the"
+    cont "cave."
+
+    para "He defeated me"
+    line "with just one"
+    cont "#MON!"
+
+    para "A PIKACHU of"
+    line "all things."
+
+    para "Be careful my"
+    line "friend."
+    done
+
 SilverCaveOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -96,4 +145,5 @@ SilverCaveOutside_MapEvents:
 
 	def_object_events
 	object_event 25, 20, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SilverCaveRival, -1
+	object_event 16, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, SilverCaveEusine, -1
 

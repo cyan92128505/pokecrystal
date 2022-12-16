@@ -698,5 +698,6 @@ KRIS EQU __trainer_class__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
+	const EUSINE_SILVER_CAVE
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

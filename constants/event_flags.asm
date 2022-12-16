@@ -1457,9 +1457,11 @@
 	const EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
 	const EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 
+; Unused: next 48 events
+
 	const EVENT_DUMMY
 	const EVENT_BEAT_SILVER_CAVE_RIVAL
-; Unused: next 48 events
+	const EVENT_BEAT_SILVER_CAVE_EUSINE
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

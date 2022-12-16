@@ -1199,6 +1199,9 @@ Core_MagicGuardPokemon:
     db SOLOSIS
     db DUOSION
     db REUNICLUS
+    db ESPEON
+    db XERNEAS
+    db YVELTAL
     db -1
 
 ResidualDamage:

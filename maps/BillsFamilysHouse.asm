@@ -13,6 +13,8 @@ BillScript:
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .GotEevee
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .notBeatE4
 	writetext BillTakeThisEeveeText
 	yesorno
 	iffalse .Refused
@@ -24,7 +26,13 @@ BillScript:
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke EEVEE, 20
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+    givepoke SHAYMIN, 70
+    sjump .given
+.midLevel
+	givepoke SHAYMIN, 50
+.given
 	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
 	waitbutton
@@ -45,6 +53,12 @@ BillScript:
 
 .GotEevee:
 	writetext BillPopWontWorkText
+	waitbutton
+	closetext
+	end
+
+.notBeatE4:
+	writetext BillMustBeatEliteFourText
 	waitbutton
 	closetext
 	end
@@ -106,20 +120,32 @@ BillsHouseBookshelf2:
 BillsHouseRadio:
 	jumpstd Radio2Script
 
+BillMustBeatEliteFourText:
+    text "BILL: Hi, <PLAYER>!"
+    line "I have a #MON"
+    cont "that needs a"
+    cont "good trainer."
+
+    para "But it must be"
+    line "a strong trainer."
+
+    para "If you ever"
+    line "beat the ELITE"
+    cont "FOUR do come"
+    cont "back and see"
+    cont "me."
+    done
+
 BillTakeThisEeveeText:
 	text "BILL: Hi, <PLAYER>!"
-	line "Do us a favor and"
-	cont "take this EEVEE."
 
-	para "It came over when"
-	line "I was adjusting"
-	cont "the TIME CAPSULE."
+	para "You are the"
+	line "CHAMPION!"
 
-	para "Someone has to"
-	line "take care of it,"
-
-	para "but I don't like"
-	line "being outside."
+	para "Here you would"
+	line "be perfect to"
+	cont "look after this"
+	cont "SHAYMIN."
 
 	para "Can I count on you"
 	line "to play with it,"

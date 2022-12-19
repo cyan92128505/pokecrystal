@@ -78,6 +78,11 @@ CeruleanGymMistyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
+	writetext MistyFightDoneText
+    waitbutton
+    closetext
+    end
+
 .FightDone:
 	writetext MistyFightDoneText
 	waitbutton

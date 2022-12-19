@@ -1,15 +1,49 @@
 	object_const_def
 	const CINNABARISLAND_BLUE
+	const CINNABARISLAND_GROUDON
 
 CinnabarIsland_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Groudon
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_CINNABAR
 	endcallback
+
+.Groudon
+    setval GROUDON
+	special MonCheck
+	iftrue .NoAppear
+	checkevent EVENT_BEAT_HOEN_ARMY
+	iffalse .NoAppear
+	sjump .Appear
+.Appear:
+	appear CINNABARISLAND_GROUDON
+	endcallback
+.NoAppear:
+	disappear CINNABARISLAND_GROUDON
+	endcallback
+
+GroudonScript:
+	faceplayer
+	opentext
+	writetext GroudonCry
+	cry GROUDON
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon GROUDON, 70
+	startbattle
+	disappear CINNABARISLAND_GROUDON
+	reloadmapafterbattle
+	end
+
+GroudonCry:
+    text "Groudon!"
+    done
 
 CinnabarIslandBlue:
 	faceplayer
@@ -141,3 +175,5 @@ CinnabarIsland_MapEvents:
 
 	def_object_events
 	object_event  9,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	object_event 8, 1, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GroudonScript, EVENT_DUMMY
+

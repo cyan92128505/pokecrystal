@@ -34,6 +34,12 @@ TinTowerHoOh:
 
 	checkitem SILVER_WING
 	iffalse .lowerLevel
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon HO_OH, 70
+    sjump .begin
+.midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon HO_OH, 60
 	sjump .begin

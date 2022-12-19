@@ -28,11 +28,9 @@ DragonsDenB1F_MapScripts:
 	special MonCheck
 	iftrue .NoAppear
 	sjump .Appear
-
 .Appear:
 	appear DRAGONSDENB1F_RAYQUAZA
 	endcallback
-
 .NoAppear:
 	disappear DRAGONSDENB1F_RAYQUAZA
 	endcallback
@@ -55,6 +53,12 @@ RayquazaScript:
 	cry RAYQUAZA
 	pause 15
 	closetext
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon RAYQUAZA, 70
+    sjump .begin
+.midLevel
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
@@ -457,4 +461,4 @@ DragonsDenB1F_MapEvents:
 	object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
 	object_event 30,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM
 	object_event  5, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER
-	object_event 20, 23, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_DUMMY
+	object_event 20, 23, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_DUMMY

@@ -1,5 +1,6 @@
 	object_const_def
 	const MOUNTMOON_SILVER
+	const MOUNTMOON_DARKRAI
 
 MountMoon_MapScripts:
 	def_scene_scripts
@@ -7,6 +8,19 @@ MountMoon_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .Darkrai
+
+.Darkrai
+    setval DARKRAI
+	special MonCheck
+	iftrue .NoAppear
+	sjump .Appear
+.Appear:
+	appear MOUNTMOON_DARKRAI
+	endcallback
+.NoAppear:
+	disappear MOUNTMOON_DARKRAI
+	endcallback
 
 .RivalEncounter:
 	sdefer .RivalBattle
@@ -43,6 +57,34 @@ MountMoon_MapScripts:
 	setevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	playmapmusic
 	end
+
+DarkraiScript:
+	opentext
+	writetext DarkraiCry
+	waitbutton
+	cry DARKRAI
+	pause 15
+	closetext
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DARKRAI, 70
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DARKRAI, 60
+.begin
+	startbattle
+	disappear MOUNTMOON_DARKRAI
+	reloadmapafterbattle
+	end
+DarkraiCry:
+    text "The next time"
+    line "you sleep."
+
+    para "You shall"
+    line "never awake."
+    done
 
 MountMoonSilverMovementBefore:
 	step LEFT
@@ -152,3 +194,5 @@ MountMoon_MapEvents:
 
 	def_object_events
 	object_event  7,  3, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
+	object_event  13, 11, SPRITE_GENGAR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DarkraiScript, EVENT_DUMMY
+

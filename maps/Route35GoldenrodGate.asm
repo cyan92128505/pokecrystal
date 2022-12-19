@@ -28,8 +28,8 @@ RandyScript:
 	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
 	playsound SFX_KEY_ITEM
 	waitsfx
-	givepoke CLEFAIRY, 20, NO_ITEM, GiftSpearowName, GiftSpearowOTName
-	givepokemail GiftSpearowMail
+	givepoke PIKACHU, 25, LIGHT_BALL, GiftSpearowName, GiftSpearowOTName
+	;givepokemail GiftSpearowMail
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
@@ -68,10 +68,10 @@ GiftSpearowMail:
 	next "to another road@"
 
 GiftSpearowName:
-	db "KENYA@"
+	db "PIKACHU@"
 
 GiftSpearowOTName:
-	db "RANDY@"
+	db "ASH@"
 
 	db 0 ; unused
 

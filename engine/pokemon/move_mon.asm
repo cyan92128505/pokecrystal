@@ -202,6 +202,25 @@ endr
 	and a
 	jr nz, .copywildmonDVs
 
+; this part is for non wild pokes, so gift mon
+; after having 8 badges all gift pokemon have max dvs
+; pikachu always has max dvs
+	ld a, [wJohtoBadges]
+	cp %11111111 ; all badges
+	jr nz, .checkPikachu
+	ld b, $FF
+	ld c, $FF
+	jr .initializeDVs
+
+.checkPikachu
+    ld a, [wCurPartySpecies]
+    cp PIKACHU
+    jr nz, .random
+   	ld b, $FF
+   	ld c, $FF
+   	jr .initializeDVs
+
+.random
 	call Random
 	ld b, a
 	call Random

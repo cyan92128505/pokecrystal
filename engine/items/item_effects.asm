@@ -217,7 +217,7 @@ PokeBallEffect:
 ; AndrewNote - capture level restrictions
     ld hl, wJohtoBadges
     ld a, [wEnemyMonLevel]
-    cp 71
+    cp 61
     jr nc, .checkKantoBadges
     cp 51
     jr nc, .checkRisingBadge
@@ -232,7 +232,7 @@ PokeBallEffect:
 .checkKantoBadges
 	ld a, [wKantoBadges]
 	cp %11111111 ; all badges
-    jr z, .levelTooHigh
+    jr nz, .levelTooHigh
     jr .continue
 
 .checkRisingBadge

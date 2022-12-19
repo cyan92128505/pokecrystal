@@ -1,5 +1,5 @@
 	object_const_def
-	const DARKCAVEBLACKTHORNENTRANCE_PHARMACIST
+	const DARKCAVEBLACKTHORNENTRANCE_GIRATINA
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL1
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL2
 
@@ -7,6 +7,146 @@ DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Giratina
+
+.Giratina
+    setval GIRATINA
+	special MonCheck
+	iftrue .NoAppear
+	sjump .Appear
+.Appear:
+	appear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
+	endcallback
+.NoAppear:
+	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
+	endcallback
+
+GiratinaScript:
+	opentext
+    setval RAYQUAZA
+	special MonCheck
+	iffalse .noRayquaza
+	writetext GiratinaPlayerHasRayquazaText
+	waitbutton
+	cry GIRATINA
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon GIRATINA, 70
+	startbattle
+	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
+	reloadmapafterbattle
+	end
+.noRayquaza
+	writetext GiratinaIntroText
+	waitbutton
+	closetext
+    end
+
+GiratinaIntroText:
+    text "I have waited"
+    line "for you young"
+    cont "lord."
+
+    para "The darkness"
+    line "embraces you"
+    cont "as its saviour."
+
+    para "Once I sat"
+    line "warm and full"
+    cont "in the hall of"
+    cont "light."
+
+    para "The place where"
+    line "all that is came"
+    cont "to be."
+
+    para "Then the cruel"
+    line "ruler banished"
+    cont "me for daring"
+    cont "to question his"
+    cont "devine morality."
+
+    para "We are all"
+    line "fallen beings"
+    cont "in his eyes."
+
+    para "You poor humans"
+    line "especially."
+
+    para "You and only"
+    line "you can save"
+    cont "us all."
+
+    para "Not far from"
+    line "here lies the"
+    cont "den a great"
+    cont "hieratic!"
+
+    para "The dragon lord"
+    line "they call him."
+
+    para "If those poor"
+    line "humans only"
+    cont "knew..."
+
+    para "He uses them!"
+
+    para "Commands them to"
+    line "raise for him an"
+    cont "army of dragons."
+
+    para "You must bring"
+    line "him to me my"
+    cont "dear disciple."
+
+    para "Entrust thine"
+    line "flesh and soul"
+    cont "to me."
+
+    para "Bring me"
+    line "RAYQUAZA!"
+    done
+
+GiratinaPlayerHasRayquazaText:
+    text "Thou hast done"
+    line "well..."
+
+    para "My dear, dear"
+    line "disciple."
+
+    para "ARCEUS!"
+
+    para "Watch and"
+    line "mark you well."
+
+    para "Your child shall"
+    line "receive true"
+    cont "love."
+
+    para "I will inflict"
+    line "death upon you"
+    cont "a thousand"
+    cont "times..."
+    cont "RAYQUAZA!"
+
+    para "I shall savour"
+    line "each drop of"
+    cont "of your blood!"
+
+    para "And you my"
+    line "sweet disciple,"
+    cont "you can be part"
+    cont "of me forever."
+
+    para "I shall devour"
+    line "you, slowly..."
+
+    para "Lovingly..."
+
+    para "RRAAUUOORR!"
+    done
+
 
 DarkCaveBlackthornEntrancePharmacistScript:
 	faceplayer
@@ -71,6 +211,6 @@ DarkCaveBlackthornEntrance_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  7,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntrancePharmacistScript, -1
+	object_event  7,  2, SPRITE_GENGAR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_DUMMY
 	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE

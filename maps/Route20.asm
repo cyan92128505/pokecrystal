@@ -2,16 +2,50 @@
 	const ROUTE20_SWIMMER_GIRL1
 	const ROUTE20_SWIMMER_GIRL2
 	const ROUTE20_SWIMMER_GUY
+	const ROUTE20_KYOGRE
 
 Route20_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .ClearRocks
+	callback MAPCALLBACK_OBJECTS, .Kyogre
 
 .ClearRocks:
 	setevent EVENT_CINNABAR_ROCKS_CLEARED
 	endcallback
+
+.Kyogre
+    setval KYOGRE
+	special MonCheck
+	iftrue .NoAppear
+	checkevent EVENT_BEAT_HOEN_ARMY
+	iffalse .NoAppear
+	sjump .Appear
+.Appear:
+	appear ROUTE20_KYOGRE
+	endcallback
+.NoAppear:
+	disappear ROUTE20_KYOGRE
+	endcallback
+
+KyogreScript:
+	faceplayer
+	opentext
+	writetext KyogreCry
+	cry KYOGRE
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon KYOGRE, 70
+	startbattle
+	disappear ROUTE20_KYOGRE
+	reloadmapafterbattle
+	end
+
+KyogreCry:
+    text "Kyogre!"
+    done
 
 TrainerSwimmerfNicole:
 	trainer SWIMMERF, NICOLE, EVENT_BEAT_SWIMMERF_NICOLE, SwimmerfNicoleSeenText, SwimmerfNicoleBeatenText, 0, .Script
@@ -125,3 +159,4 @@ Route20_MapEvents:
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
+	object_event 55, 12, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KyogreScript, EVENT_DUMMY

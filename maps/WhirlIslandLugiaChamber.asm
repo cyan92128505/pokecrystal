@@ -34,6 +34,12 @@ Lugia:
 
 	checkitem RAINBOW_WING
 	iffalse .lowerLevel
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LUGIA, 70
+    sjump .begin
+.midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LUGIA, 60
     sjump .begin

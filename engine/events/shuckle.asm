@@ -5,7 +5,7 @@ GiveShuckle:
 	xor a ; PARTYMON
 	ld [wMonType], a
 
-; Level 15 Shuckle.
+; Level 70 deoxys.
 	ld a, DEOXYS
 	ld [wCurPartySpecies], a
 	ld a, 70
@@ -18,7 +18,7 @@ GiveShuckle:
 	ld b, CAUGHT_BY_UNKNOWN
 	farcall SetGiftPartyMonCaughtData
 
-; Holding a Berry.
+; Holding a star piece.
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wPartyCount]
 	dec a
@@ -26,7 +26,7 @@ GiveShuckle:
 	push bc
 	ld hl, wPartyMon1Item
 	call AddNTimes
-	ld [hl], BERRY
+	ld [hl], STAR_PIECE
 	pop bc
 	pop af
 
@@ -69,7 +69,7 @@ SpecialShuckleOT:
 	db "MANIA@"
 
 SpecialShuckleNickname:
-	db "SHUCKIE@"
+	db "DEOXYS@"
 
 ReturnShuckie:
 	farcall SelectMonFromParty

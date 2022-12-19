@@ -8,347 +8,130 @@ BillsHouse_MapScripts:
 
 BillsGrandpa:
 	faceplayer
-	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .JustShowedSomething
-	checkevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
-	iftrue .GotThunderstone
-	checkevent EVENT_MET_BILLS_GRANDPA
-	iftrue .MetGrandpa
-	writetext BillsGrandpaIntroText
-	promptbutton
-	setevent EVENT_MET_BILLS_GRANDPA
-.MetGrandpa:
-	checkevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	iftrue .ShowedPichu
-	checkevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	iftrue .ShowedGrowlitheVulpix
-	checkevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
-	iftrue .ShowedStaryu
-	checkevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
-	iftrue .ShowedOddish
-	checkevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	iftrue .ShowedLickitung
-	writetext BillsGrandpaLickitungText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal SNORLAX, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
-	sjump .ShowedLickitung
+    opentext
+    checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
+    iftrue .gotMew
+    writetext BillGrampsTakeThisMewText
+    yesorno
+    iffalse .refused
+    writetext BillGrampsImCountingOnYouText
+    promptbutton
+    waitsfx
+    readvar VAR_PARTYCOUNT
+    ifequal PARTY_LENGTH, .noRoom
+    writetext ReceivedMewText
+    playsound SFX_CAUGHT_MON
+    waitsfx
+    checkflag ENGINE_EARTHBADGE
+    iffalse .midLevel
+    givepoke MEW, 70
+    sjump .given
+.midLevel
+    givepoke MEW, 50
+.given
+    setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
+    writetext BillGrampsMewExplain
+    waitbutton
+    closetext
+    end
+.gotMew
+    writetext BillGrampsGotMew
+    waitbutton
+    closetext
+    end
+.refused
+    writetext BillGrampsTooBad
+    waitbutton
+    closetext
+    end
+.noRoom
+    writetext BillGrampsNoRoom
+    waitbutton
+    closetext
+    end
 
-.GotEverstone:
-	writetext BillsGrandpaOddishText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal ODDISH, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_ODDISH_TO_BILLS_GRANDPA
-	sjump .ShowedOddish
-
-.GotLeafStone:
-	writetext BillsGrandpaStaryuText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal STARYU, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_STARYU_TO_BILLS_GRANDPA
-	sjump .ShowedStaryu
-
-.GotWaterStone:
-	checkver
-	iftrue .AskVulpix
-	writetext BillsGrandpaGrowlitheText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal GROWLITHE, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	sjump .ShowedGrowlitheVulpix
-
-.AskVulpix:
-	writetext BillsGrandpaVulpixText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal VULPIX, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	sjump .ShowedGrowlitheVulpix
-
-.GotFireStone:
-	writetext BillsGrandpaPichuText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal LITWICK, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
-	sjump .ShowedPichu
-
-.ShowedLickitung:
-	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	iftrue .GotEverstone
-	scall .ReceiveItem
-	verbosegiveitem EVERSTONE
-	iffalse .BagFull
-	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedOddish:
-	checkevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	iftrue .GotLeafStone
-	scall .ReceiveItem
-	verbosegiveitem LEAF_STONE
-	iffalse .BagFull
-	setevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedStaryu:
-	checkevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	iftrue .GotWaterStone
-	scall .ReceiveItem
-	verbosegiveitem WATER_STONE
-	iffalse .BagFull
-	setevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedGrowlitheVulpix:
-	checkevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	iftrue .GotFireStone
-	scall .ReceiveItem
-	verbosegiveitem FIRE_STONE
-	iffalse .BagFull
-	setevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
-
-.ShowedPichu:
-	scall .ReceiveItem
-	verbosegiveitem THUNDERSTONE
-	iffalse .BagFull
-	setevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
-	closetext
-	end
-
-.ExcitedToSee:
-	writetext BillsGrandpaExcitedToSeeText
-	promptbutton
-	end
-
-.SaidNo:
-	writetext BillsGrandpaYouDontHaveItTextText
-	waitbutton
-	closetext
-	end
-
-.CorrectPokemon:
-	writetext BillsGrandpaShownPokemonText
-	promptbutton
-	end
-
-.ReceiveItem:
-	writetext BillsGrandpaTokenOfAppreciationText
-	promptbutton
-	end
-
-.JustShowedSomething:
-	writetext BillsGrandpaComeAgainText
-	waitbutton
-	closetext
-	end
-
-.GotThunderstone:
-	writetext BillsGrandpaShownAllThePokemonText
-	waitbutton
-	closetext
-	end
-
-.WrongPokemon:
-	writetext BillsGrandpaWrongPokemonText
-	waitbutton
-	closetext
-	end
-
-.BagFull:
-	closetext
-	end
-
-BillsGrandpaIntroText:
+BillGrampsTakeThisMewText:
 	text "Hm? You know BILL?"
 	line "He's my grandson."
 
-	para "He's in JOHTO. He"
-	line "does something"
+	para "I shouldn't tell"
+	line "you this..."
 
-	para "with PCs, so I'm"
-	line "house-sitting."
+	para "Bill has found"
+	line "an extremely"
+	cont "rare and ancient"
+	cont "#MON!"
+
+	para "Apparently He"
+	line "found it in a"
+	cont "truck at the"
+	cont "harbour."
+
+	para "He has entrusted"
+	line "it to me..."
+
+	para "Oh my..."
+
+	para "It seems to"
+	line "like you."
+
+	para "Hmmm..."
+
+	para "Yes I can see"
+	line "why."
+
+	para "You are a"
+	line "special trainer."
+
+	para "Would you like"
+	line "to take this"
+	cont "#MON on"
+	cont "your journey?"
 	done
 
-BillsGrandpaAskToSeeMonText:
-	text "If you have that"
-	line "#MON, may I see"
-	cont "it, please?"
+BillGrampsImCountingOnYouText:
+	text "I know it will"
+	line "help you reach"
+	cont "your goals!"
 	done
 
-BillsGrandpaExcitedToSeeText:
-	text "You will show me?"
-	line "How good of you!"
+BillGrampsMewExplain:
+	text "BILL tells me"
+	line "this is a very"
+	cont "powerful #MON."
+
+	para "It can learn"
+	line "any move!"
 	done
 
-BillsGrandpaYouDontHaveItTextText:
-	text "You don't have it?"
-	line "That's too bad…"
-	done
-
-BillsGrandpaShownPokemonText:
-	text "Ah, so that is"
-	line "@"
-	text_ram wStringBuffer3
-	text "?"
-
-	para "Isn't it cute!"
-	line "That's so kind of"
+BillGrampsGotMew:
+	text "I know BILL will"
+	line "understand that"
+	cont "MEW will only"
+	cont "reach its full"
+	cont "potential with"
 	cont "you."
 	done
 
-BillsGrandpaTokenOfAppreciationText:
-	text "Thanks!"
+BillGrampsTooBad:
+    text "Aw that is"
+    line "a real shame."
 
-	para "This is a token of"
-	line "my appreciation."
-	done
+    para "This #MON"
+    line "is powerful"
+    cont "and really seems"
+    cont "to like you."
+    done
 
-BillsGrandpaComeAgainText:
-	text "Come visit again"
-	line "sometime."
-	done
+BillGrampsNoRoom:
+    text "Please make"
+    line "room in your"
+    cont "party."
+    done
 
-BillsGrandpaShownAllThePokemonText:
-	text "Thanks for showing"
-	line "me so many cute"
-	cont "#MON."
-
-	para "I really enjoyed"
-	line "myself. I'm glad"
-
-	para "I've lived such a"
-	line "long life."
-	done
-
-BillsGrandpaWrongPokemonText:
-	text "Hm?"
-
-	para "That's not the"
-	line "#MON that I was"
-	cont "told about."
-	done
-
-BillsGrandpaLickitungText:
-	text "My grandson BILL"
-	line "told me about a"
-
-	para "#MON that has a"
-	line "long tongue."
-	done
-
-BillsGrandpaOddishText:
-	text "Ah, my grandson"
-	line "mentioned a round,"
-
-	para "green #MON that"
-	line "has leaves growing"
-	cont "on its head."
-	done
-
-BillsGrandpaStaryuText:
-	text "Do you know of a"
-	line "sea #MON that"
-
-	para "has a red sphere"
-	line "in its body?"
-
-	para "You know, the one"
-	line "that's shaped like"
-	cont "a star?"
-
-	para "I heard that it"
-	line "appears at night."
-
-	para "I would surely"
-	line "like to see it."
-	done
-
-BillsGrandpaGrowlitheText:
-	text "BILL told me about"
-	line "a #MON that is"
-
-	para "very loyal to its"
-	line "trainer."
-
-	para "It's supposed to"
-	line "ROAR well."
-	done
-
-BillsGrandpaVulpixText:
-	text "I heard about a"
-	line "cute #MON that"
-	cont "has six tails."
-
-	para "I would love to"
-	line "hug a cute #MON"
-	cont "like that."
-	done
-
-BillsGrandpaPichuText:
-	text "Do you know that"
-	line "hugely popular"
-	cont "#MON?"
-
-	para "The #MON that"
-	line "has a yellow body"
-	cont "and red cheeks."
-
-	para "I would love to"
-	line "see what it looks"
-
-	para "like before it"
-	line "evolves."
+ReceivedMewText:
+	text "<PLAYER> received"
+	line "MEW!"
 	done
 
 BillsHouse_MapEvents:

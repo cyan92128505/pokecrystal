@@ -313,7 +313,12 @@ ChooseWildEncounter:
 	inc b
 ; Store the level
 .ok
+; AndrewNote - wild levels truncated at 100
 	ld a, b
+	cp 101
+	jr z, .gotLevel
+	ld a, 100
+.gotLevel
 	ld [wCurPartyLevel], a
 	ld b, [hl]
 	; ld a, b

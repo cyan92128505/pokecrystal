@@ -37,7 +37,7 @@ MountMortarB1FKiyoScript:
 	writetext MountMortarB1FReceiveMonText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke DIALGA, 10
+	givepoke LUCARIO, 30
 	setevent EVENT_GOT_DIALGA_FROM_KIYO
 .GotDialga:
 	writetext MountMortarB1FKiyoGotDialgaText

@@ -268,4 +268,11 @@ JohtoWaterWildMons:
 	db 65, KINGDRA
 	end_water_wildmons
 
+	def_water_wildmons HALL_OF_ORIGIN_1
+	db 2 percent ; encounter rate
+	db 100, LUGIA
+	db 100, PALKIA
+	db 100, KYOGRE
+	end_water_wildmons
+
 	db -1 ; end

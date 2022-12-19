@@ -54,6 +54,7 @@ Landmarks:
 	landmark 112,  72, DarkCaveName
 	landmark 124,  88, Route46Name
 	landmark 148,  68, SilverCaveName
+	landmark 148,  30, HallOfOriginName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -118,6 +119,7 @@ MahoganyTownName:    db "MAHOGANY¯TOWN@"
 BlackthornCityName:  db "BLACKTHORN¯CITY@"
 LakeOfRageName:      db "LAKE OF¯RAGE@"
 SilverCaveName:      db "SILVER CAVE@"
+HallOfOriginName:    db "HALL OF ORIGIN@"
 SproutTowerName:     db "SPROUT¯TOWER@"
 RuinsOfAlphName:     db "RUINS¯OF ALPH@"
 UnionCaveName:       db "UNION CAVE@"

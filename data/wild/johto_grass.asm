@@ -1709,7 +1709,7 @@ JohtoGrassWildMons:
 	db 65, GRENINJA
 	db 80, GENESECT
 
-    def_grass_wildmons HALL_OF_ORIGIN_1
+    def_grass_wildmons HALL_OF_ORIGIN
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 100, HO_OH

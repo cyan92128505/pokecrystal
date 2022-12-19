@@ -2,6 +2,11 @@ HallOfOrigin1_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.FlyPoint:
+	setflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
+	endcallback
 
 HallOfOrigin1_MapEvents:
 	db 0, 0 ; filler

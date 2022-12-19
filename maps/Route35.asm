@@ -176,8 +176,8 @@ TrainerBugCatcherArnie:
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
 	iftrue .LoadFight2
 .Fight1:
-	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftrue .LoadFight1
+	;checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
+	;iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer BUG_CATCHER, ARNIE1
 	startbattle

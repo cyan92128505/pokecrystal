@@ -6548,6 +6548,8 @@ LoadEnemyMon:
     jr z, .GeneratePerfectDVs
 	cp LANDMARK_ROUTE_28
     jr z, .GeneratePerfectDVs
+	cp LANDMARK_HALL_OF_ORIGIN
+    jr z, .GeneratePerfectDVs
 
 	jr .GenerateDVs
 

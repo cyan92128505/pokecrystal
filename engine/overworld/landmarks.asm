@@ -56,6 +56,8 @@ RegionCheck:
 	call GetWorldMapLocation
 	cp LANDMARK_FAST_SHIP ; S.S. Aqua
 	jr z, .johto
+	;cp LANDMARK_HALL_OF_ORIGIN
+	;jr z, .johto
 	cp LANDMARK_SPECIAL
 	jr nz, .checkagain
 

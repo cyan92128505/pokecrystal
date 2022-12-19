@@ -18,7 +18,7 @@ LakeOfRage_MapScripts:
 	scene_script .DummyScene1 ; unusable
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	;callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .Wesley
 
 .DummyScene0:
@@ -28,7 +28,7 @@ LakeOfRage_MapScripts:
 	end
 
 .FlyPoint:
-	setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
+	;setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
 	endcallback
 
 .Wesley:

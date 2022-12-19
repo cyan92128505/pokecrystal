@@ -502,7 +502,7 @@ ENDM
 	endgroup
 
     newgroup HALL_OF_ORIGIN                                     ; 27
-	map_const HALL_OF_ORIGIN_1,                             12, 20 ;  1
+	map_const HALL_OF_ORIGIN,                             12, 20 ;  1
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 27

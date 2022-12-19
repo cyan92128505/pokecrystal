@@ -54,7 +54,7 @@ SilverCaveRoom3_MapEvents:
 
 	def_warp_events
 	warp_event  9, 33, SILVER_CAVE_ROOM_2, 2
-	warp_event  9, 3, HALL_OF_ORIGIN_1, 1
+	warp_event  9, 3, HALL_OF_ORIGIN, 1
 
 	def_coord_events
 

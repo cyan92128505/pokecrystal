@@ -96,10 +96,11 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_OLIVINE
 	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK
 	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
-	engine_flag wVisitedSpawns, SPAWN_LAKE_OF_RAGE
+	;engine_flag wVisitedSpawns, SPAWN_LAKE_OF_RAGE
 	engine_flag wVisitedSpawns, SPAWN_BLACKTHORN
+	engine_flag wVisitedSpawns, SPAWN_HALL_OF_ORIGIN
 	engine_flag wVisitedSpawns, SPAWN_MT_SILVER
-	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused
+    engine_flag wVisitedSpawns, NUM_SPAWNS ; unused
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
 

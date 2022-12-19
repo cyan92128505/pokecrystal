@@ -210,8 +210,8 @@ TrainerFisherRalph1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
 .Fight2:
-	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftrue .LoadFight2
+	;checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
+	;iftrue .LoadFight2
 .Fight1:
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .LoadFight1

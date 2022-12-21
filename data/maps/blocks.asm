@@ -1048,8 +1048,8 @@ GoldenrodDeptStoreRoof_Blocks:
 
 SECTION "Map Blocks 4", ROMX
 
-HallOfOrigin1_Blocks:
-	INCBIN "maps/HallOFOrigin1.blk"
+HallOfOrigin_Blocks:
+	INCBIN "maps/HallOFOrigin.blk"
 
 OriginRoad_Blocks:
 	INCBIN "maps/OriginRoad.blk"

@@ -374,11 +374,11 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
-	map_attributes HallOfOrigin1, HALL_OF_ORIGIN, $00, SOUTH
+	map_attributes HallOfOrigin, HALL_OF_ORIGIN, $00, SOUTH
 	connection south, OriginRoad, ORIGIN_ROAD, 4
 
 	map_attributes OriginRoad, ORIGIN_ROAD, $00, NORTH | SOUTH
-	connection north, HallOfOrigin1, HALL_OF_ORIGIN, -4
+	connection north, HallOfOrigin, HALL_OF_ORIGIN, -4
 	connection south, OriginRoadSouth, ORIGIN_ROAD_SOUTH, 0
 
 	map_attributes OriginRoadSouth, ORIGIN_ROAD_SOUTH, $00, NORTH

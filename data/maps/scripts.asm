@@ -484,7 +484,7 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
-INCLUDE "maps/HallOfOrigin1.asm"
+INCLUDE "maps/HallOfOrigin.asm"
 
 SECTION "Map Scripts 26", ROMX
 

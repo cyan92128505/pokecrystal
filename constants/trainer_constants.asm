@@ -70,6 +70,7 @@ KRIS EQU __trainer_class__
 	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
+	const MASTER_OAK
 
 	trainerclass WILL ; b
 	const WILL1
@@ -90,6 +91,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass CHAMPION ; 10
 	const LANCE
+	const MASTER_LANCE
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -681,9 +683,11 @@ KRIS EQU __trainer_class__
 
 	trainerclass RED ; 3f
 	const RED1
+	const MASTER_RED
 
 	trainerclass BLUE ; 40
 	const BLUE1
+	const MASTER_BLUE
 
 	trainerclass OFFICER ; 41
 	const KEITH

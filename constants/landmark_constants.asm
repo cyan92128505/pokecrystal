@@ -48,6 +48,7 @@
 	const LANDMARK_DARK_CAVE         ; 2c
 	const LANDMARK_ROUTE_46          ; 2d
     const LANDMARK_HALL_OF_ORIGIN
+    const LANDMARK_DESTINY_TOWER
 	const LANDMARK_SILVER_CAVE       ; 2e
 KANTO_LANDMARK EQU const_value
 	const LANDMARK_PALLET_TOWN       ; 2f

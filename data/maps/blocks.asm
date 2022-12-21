@@ -1050,3 +1050,15 @@ SECTION "Map Blocks 4", ROMX
 
 HallOfOrigin1_Blocks:
 	INCBIN "maps/HallOFOrigin1.blk"
+
+OriginRoad_Blocks:
+	INCBIN "maps/OriginRoad.blk"
+
+OriginRoadSouth_Blocks:
+	INCBIN "maps/OriginRoadSouth.blk"
+
+DestinyPark_Blocks:
+	INCBIN "maps/DestinyPark.blk"
+
+DestinySquare_Blocks:
+	INCBIN "maps/DestinySquare.blk"

@@ -13,6 +13,15 @@ ShowLinkBattleParticipants:
 	ret
 
 FindFirstAliveMonAndStartBattle:
+; AndrewNote - Battle Palette decided here
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+    call GetWorldMapLocation
+	cp LANDMARK_HALL_OF_ORIGIN
+    jr z, .daypal
+
     call GetMapEnvironment
     cp CAVE
     jr z, .nightpal

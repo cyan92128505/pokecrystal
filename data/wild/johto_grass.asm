@@ -1737,4 +1737,60 @@ JohtoGrassWildMons:
 	db 100, GIRATINA
 	end_grass_wildmons
 
+    def_grass_wildmons ORIGIN_ROAD
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 100, DEOXYS
+	db 100, LATIAS
+	db 100, LATIOS
+	db 100, SUICUNE
+	db 100, RAIKOU
+	db 100, ENTEI
+	db 100, DARKRAI
+	; day
+	db 100, DEOXYS
+	db 100, LATIAS
+	db 100, LATIOS
+	db 100, SUICUNE
+	db 100, RAIKOU
+	db 100, ENTEI
+	db 100, DARKRAI
+	; nite
+	db 100, DEOXYS
+	db 100, LATIAS
+	db 100, LATIOS
+	db 100, SUICUNE
+	db 100, RAIKOU
+	db 100, ENTEI
+	db 100, DARKRAI
+	end_grass_wildmons
+
+    def_grass_wildmons ORIGIN_ROAD_SOUTH
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 100, MEW
+	db 100, CELEBI
+	db 100, SHAYMIN
+	db 100, ARTICUNO
+	db 100, ZAPDOS
+	db 100, MOLTRES
+	db 100, DARKRAI
+	; day
+	db 100, MEW
+	db 100, CELEBI
+	db 100, SHAYMIN
+	db 100, ARTICUNO
+	db 100, ZAPDOS
+	db 100, MOLTRES
+	db 100, DARKRAI
+	; nite
+	db 100, MEW
+	db 100, CELEBI
+	db 100, SHAYMIN
+	db 100, ARTICUNO
+	db 100, ZAPDOS
+	db 100, MOLTRES
+	db 100, DARKRAI
+	end_grass_wildmons
+
 	db -1 ; end

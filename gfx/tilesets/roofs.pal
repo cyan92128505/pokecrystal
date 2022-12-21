@@ -106,6 +106,10 @@
 	RGB 31,14,28, 31,05,21 ; morn/day
 	RGB 14,07,17, 13,00,08 ; nite
 
-; group 27 (Hall of Origin)
+; group 27 (Destiny Tower)
+	RGB 16,23,28, 03,15,21 ; morn/day
+	RGB 08,11,21, 02,08,16 ; nite
+
+; group 28 (Hall of Origin)
 	RGB 16,23,28, 03,15,21 ; morn/day
 	RGB 08,11,21, 02,08,16 ; nite

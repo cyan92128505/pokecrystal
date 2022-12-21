@@ -135,6 +135,7 @@ SilverCaveOutside_MapEvents:
 	def_warp_events
 	warp_event 23, 19, SILVER_CAVE_POKECENTER_1F, 1
 	warp_event 18, 11, SILVER_CAVE_ROOM_1, 1
+	warp_event 31, 5, DESTINY_PARK, 1
 
 	def_coord_events
 
@@ -144,6 +145,6 @@ SilverCaveOutside_MapEvents:
 	bg_event  9, 25, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
 
 	def_object_events
-	object_event 25, 20, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SilverCaveRival, -1
+	object_event 26, 19, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SilverCaveRival, -1
 	object_event 16, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, SilverCaveEusine, -1
 

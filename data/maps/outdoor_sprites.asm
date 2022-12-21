@@ -31,6 +31,7 @@ OutdoorSprites:
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
 	dw HallOfOriginSprites
+	dw DestinyTowerSprites
 	assert_table_length NUM_MAP_GROUPS
 
 PalletGroupSprites:
@@ -359,6 +360,7 @@ CherrygroveGroupSprites:
 	db SPRITE_FRUIT_TREE
 
 HallOfOriginSprites:
+DestinyTowerSprites:
 SilverGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_SILVER_TROPHY

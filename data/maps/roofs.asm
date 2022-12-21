@@ -38,7 +38,8 @@ MapGroupRoofs:
 	db ROOF_NEW_BARK  ; 24 (New Bark)
 	db -1             ; 25
 	db ROOF_NEW_BARK  ; 26 (Cherrygrove)
-	db ROOF_GOLDENROD ; 27 (Hall of Origin)
+	db ROOF_GOLDENROD ; 28 (Destiny Tower)
+	db ROOF_GOLDENROD ; 28 (Hall of Origin)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:

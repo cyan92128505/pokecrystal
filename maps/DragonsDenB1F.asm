@@ -36,7 +36,6 @@ DragonsDenB1F_MapScripts:
 	endcallback
 
 RayquazaScript:
-	faceplayer
 	opentext
 
     setval DRAGONITE

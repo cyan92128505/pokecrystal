@@ -6,10 +6,14 @@
 
 HallOfOrigin_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene ; SCENE_DEFAULT
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .ArceusAndOak
+
+.DummyScene:
+	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
@@ -164,7 +168,7 @@ MewtwoPokeBallScript:
 TakeMewtwoText:
     text "You choose"
     line "MEWTWO."
-    para "The weapon"
+    para "The Weapon"
     line "#MON"
     done
 ReceivedMewtwoText:
@@ -208,6 +212,7 @@ MasterOakScript:
 	writetext MasterOakOfferPrizeText
 	waitbutton
 	closetext
+	special HealParty
 	end
 .FightDone:
 	writetext MasterOakAfterBattleText
@@ -300,6 +305,269 @@ MasterOakAfterBattleText:
     cont "do."
     done
 
+MasterRedScript:
+	faceplayer
+    checkevent EVENT_BEAT_MASTER_LANCE
+    iffalse .beatOthersFirst
+    checkevent EVENT_BEAT_MASTER_BLUE
+    iffalse .beatOthersFirst
+	opentext
+	checkevent EVENT_BEAT_MASTER_RED
+	iftrue .FightDone
+.fight
+	writetext MasterRedSeenText
+	waitbutton
+	closetext
+	winlosstext MasterRedBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RED, MASTER_RED
+	startbattle
+	setevent EVENT_BEAT_MASTER_RED
+	reloadmapafterbattle
+	opentext
+	writetext MasterRedAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.FightDone:
+	writetext MasterRedAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHallOfOrigin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+.beatOthersFirst
+    opentext
+	writetext BeatOthersFirstText
+	waitbutton
+	closetext
+	end
+
+MasterRedSeenText:
+    text "Since I was"
+    line "a boy."
+
+    para "My dream has"
+    line "never changed."
+
+    para "To be the very"
+    line "best."
+
+    para "Like no one"
+    line "ever was."
+
+    para "I am closer"
+    line "to achieving"
+    cont "that now than"
+    cont "ever."
+
+    para "Out battle"
+    line "will help us"
+    cont "both reach"
+    cont "our goals."
+    done
+
+MasterRedBeatenText:
+    text "You love"
+    line "#MON."
+    done
+
+MasterRedAfterBattleText:
+    text "You must go"
+    line "forward and let"
+    cont "nobody tell you"
+    cont "it's impossible!"
+    done
+
+BeatOthersFirstText:
+    text "Hello <PLAYER>."
+
+    para "This is the"
+    line "HALL OF ORIGIN."
+
+    para "ARCEUS waits to"
+    line "present itself"
+    cont "to whichever"
+    cont "one of us is"
+    cont "the strongest."
+
+    para "First you must"
+    line "defeat the"
+    cont "others."
+
+    para "Then I will"
+    line "fight you."
+
+    para "We are all at"
+    line "our very"
+    cont "strongest!"
+
+    para "Let's have fun!"
+    done
+
+MasterLanceScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_LANCE
+	iftrue .FightDone
+.fight
+	writetext MasterLanceSeenText
+	waitbutton
+	closetext
+	winlosstext MasterLanceBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CHAMPION, MASTER_LANCE
+	startbattle
+	setevent EVENT_BEAT_MASTER_LANCE
+	reloadmapafterbattle
+	opentext
+	writetext MasterLanceAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.FightDone:
+	writetext MasterLanceAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHallOfOrigin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+
+MasterLanceSeenText:
+    text "An eternal"
+    line "tempest swells"
+    cont "within mine"
+    cont "heart."
+
+    para "I must set"
+    line "aside thy ire."
+
+    para "I must temper"
+    line "thy ambitions."
+
+    para "Tis our destiny"
+    line "to meet here."
+
+    para "To claim the"
+    line "strength to"
+    cont "shape the world."
+
+    para "There can be"
+    line "only one!"
+    done
+
+MasterLanceBeatenText:
+    text "I yield!"
+    done
+
+MasterLanceAfterBattleText:
+    text "My dragons and"
+    line "I are content"
+    cont "with who and"
+    cont "what we are."
+
+    para "But you are"
+    line "meant to peirce"
+    cont "the heavens and"
+    cont "raise above all."
+    done
+
+MasterBlueScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_BLUE
+	iftrue .FightDone
+.fight
+	writetext MasterBlueSeenText
+	waitbutton
+	closetext
+	winlosstext MasterBlueBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer BLUE, MASTER_BLUE
+	startbattle
+	setevent EVENT_BEAT_MASTER_BLUE
+	reloadmapafterbattle
+	opentext
+	writetext MasterBlueAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.FightDone:
+	writetext MasterBlueAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHallOfOrigin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+
+MasterBlueSeenText:
+    text "When I was young"
+    line "I was arrogant."
+
+    para "I knew I was"
+    line "right and I"
+    cont "I was better"
+    cont "than any other."
+
+    para "I was such a"
+    line "child."
+
+    para "Now I know my"
+    line "place in the"
+    cont "world."
+
+    para "Now I see my"
+    line "weaknesses and"
+    cont "that makes me"
+    cont "stronger."
+
+    para "Still, part of"
+    line "me wishes I"
+    cont "could have that"
+    cont "old confidence"
+    cont "again."
+
+    para "Maybe you can"
+    line "help me find"
+    cont "it."
+    done
+
+MasterBlueBeatenText:
+    text "Not bad kid."
+    done
+
+MasterBlueAfterBattleText:
+    text "Our battle gave"
+    line "me focus."
+
+    para "It helped me"
+    line "feel like my"
+    cont "old self."
+
+    para "what was it I"
+    line "used to say..."
+
+    para "Smell ya later!"
+    done
+
 RematchTextHallOfOrigin:
     text "Shall we have"
     line "another match?"
@@ -310,17 +578,48 @@ RematchRefuseTextHallOfOrigin:
     line "be here."
     done
 
+MustBeatMasterRedScript:
+    checkevent EVENT_BEAT_MASTER_RED
+    iftrue .end
+    turnobject PLAYER, DOWN
+	opentext
+	writetext MustBeatMasterRedScriptText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_HallOfOriginTurnBack
+.end
+    end
+
+MustBeatMasterRedScriptText:
+    text "Only the"
+    line "strongest one"
+    cont "of us can go."
+    done
+
+Movement_HallOfOriginTurnBack:
+	step DOWN
+	step_end
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 
 	def_coord_events
+	coord_event  11,  12, SCENE_ALWAYS, MustBeatMasterRedScript
+	coord_event  12,  12, SCENE_ALWAYS, MustBeatMasterRedScript
+	coord_event  13,  12, SCENE_ALWAYS, MustBeatMasterRedScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  11, 0, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_DUMMY
-	object_event  11, 0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
-	object_event  12, 0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-	object_event  13, 0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	object_event  11,  0, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_DUMMY
+	object_event  11,  0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
+	object_event  12,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
+	object_event  13,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	object_event  10, 13, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
+	object_event  8, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
+	object_event  15, 14, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
+
+
+

@@ -6,14 +6,10 @@
 
 HallOfOrigin_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; SCENE_DEFAULT
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .ArceusAndOak
-
-.DummyScene:
-	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
@@ -600,6 +596,11 @@ Movement_HallOfOriginTurnBack:
 	step DOWN
 	step_end
 
+ReloadMapScript:
+	special HealParty
+	reloadmap
+    end
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
@@ -609,6 +610,10 @@ HallOfOrigin_MapEvents:
 	coord_event  11,  12, SCENE_ALWAYS, MustBeatMasterRedScript
 	coord_event  12,  12, SCENE_ALWAYS, MustBeatMasterRedScript
 	coord_event  13,  12, SCENE_ALWAYS, MustBeatMasterRedScript
+    coord_event  10,  39, SCENE_ALWAYS, ReloadMapScript
+	coord_event  11,  39, SCENE_ALWAYS, ReloadMapScript
+	coord_event  12,  39, SCENE_ALWAYS, ReloadMapScript
+	coord_event  13,  39, SCENE_ALWAYS, ReloadMapScript
 
 	def_bg_events
 
@@ -620,6 +625,3 @@ HallOfOrigin_MapEvents:
 	object_event  10, 13, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
 	object_event  8, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
 	object_event  15, 14, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
-
-
-

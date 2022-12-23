@@ -1365,18 +1365,18 @@ BattleCommand_Stab:
 	ld hl, wTypeModifier
 	set 7, [hl]
 
-.SkipStab:
-	ld a, BATTLE_VARS_MOVE_TYPE
+.SkipStab: ; AndrewNote - now we try to aply type matchup
+	ld a, BATTLE_VARS_MOVE_TYPE ; get move type
 	call GetBattleVar
 	and TYPE_MASK
-	ld b, a
-	ld hl, TypeMatchups
+	ld b, a ; b is now the move type
+	ld hl, TypeMatchups ; load the type matchups in hl
 
-.TypesLoop:
+.TypesLoop: ; we loop through type matchups
 	ld a, [hli]
 
 	cp -1
-	jp z, .end
+	jp z, .end ; reached end of type matchup file
 
 	; foresight
 	cp -2
@@ -1384,21 +1384,21 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
-	jp nz, .end
+	jp nz, .end ; if forsight has been used ignore type matchup
 
 	jr .TypesLoop
 
 .SkipForesightCheck:
-	cp b
-	jp nz, .SkipType
-	ld a, [hl]
-	cp d
+	cp b ; is the current type the same as the move type
+	jp nz, .SkipType ; if not we dont care
+	ld a, [hl] ; load the type matchup
+	cp d ; compare to the enemy types
 	jr z, .GotMatchup
 	cp e
 	jr z, .GotMatchup
 	jp .SkipType
 
-.GotMatchup:
+.GotMatchup: ; here we know the attacking type b and the defending type d/e
 	push hl
 	push bc
 	inc hl
@@ -1407,20 +1407,20 @@ BattleCommand_Stab:
 	ld b, a
 ; If the target is immune to the move, treat it as a miss and calculate the damage as 0
 	ld a, [hl]
-	and a
+	and a ; looks like a is the matchup multiplyer, 0 for immune
 	jr nz, .NotImmune
 	inc a
-	ld [wAttackMissed], a
+	ld [wAttackMissed], a ; if defender is immune it is treated as a miss
 	xor a
 .NotImmune:
-	ldh [hMultiplier], a
+	ldh [hMultiplier], a ; hMultiplier is now type multiplyer
 	add b
 	ld [wTypeModifier], a
 
 	xor a
 	ldh [hMultiplicand + 0], a
 
-	ld hl, wCurDamage
+	ld hl, wCurDamage ; here we multiple damage based on effectivness
 	ld a, [hli]
 	ldh [hMultiplicand + 1], a
 	ld a, [hld]
@@ -1438,6 +1438,12 @@ BattleCommand_Stab:
 	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
 
 ; AndrewNote - expert belt - x1.2 damage on SE hits
+; AndrewNote - Fix this!!
+; The problem with ExpertBelt / SolidRock is this
+; we are right now in a loop that goes through enemy types
+; if we are SE against one we boost
+; so we sometimes boost even if damage is neutral, eg thunderbolt vs dragon/flying
+; and if we are SE against both we get a double boost 1.2*1.2 = 1.44
 ; ============================
 ; ======= Expert Belt ========
 ; ============================
@@ -1449,9 +1455,12 @@ BattleCommand_Stab:
 	jr nz, .solidRock
 
 	ld a, [wTypeModifier]
-	cp EFFECTIVE + 1
-	jr c, .solidRock
+	and $7f
+    cp EFFECTIVE
+	jr nc, .applyExpertBelt
+	jr .solidRock
 
+.applyExpertBelt
     ld a, 6
 	ldh [hMultiplier], a
 	call Multiply
@@ -1470,21 +1479,25 @@ BattleCommand_Stab:
 	jr nz, .checkSpeciesSolidRock
 	ld a, [wEnemyMonSpecies]
 .checkSpeciesSolidRock
-	cp RHYHORN
-	jr z, .checkSolidRock
-	cp RHYDON
-	jr z, .checkSolidRock
-	cp RHYPERIOR
-	jr z, .checkSolidRock
-	cp RAYQUAZA
-	jr z, .checkSolidRock
+; AndrewNote - commented out since this is broken
+	;cp RHYHORN
+	;jr z, .checkSolidRock
+	;cp RHYDON
+	;jr z, .checkSolidRock
+	;cp RHYPERIOR
+	;jr z, .checkSolidRock
+	;cp RAYQUAZA
+	;jr z, .checkSolidRock
 	jr .continue
 
 .checkSolidRock
     ld a, [wTypeModifier]
-	cp EFFECTIVE + 1
-	jr c, .continue
+	and $7f
+    cp EFFECTIVE
+	jr nc, .applySolidRock
+	jr .continue
 
+.applySolidRock
 ; SE hits do x1.5 damage rather than x2
     ld a, 3
 	ldh [hMultiplier], a

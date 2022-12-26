@@ -58,9 +58,9 @@ TrainerClassAttributes:
 
 ; Pokemon Prof
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
-	dw AI_BASIC | AI_AGGRESSIVE | AI_STATUS
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	db 255 ; base reward
+	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
+	dw CONTEXT_USE
 
 ; Will
 	db NO_ITEM, NO_ITEM ; items
@@ -95,7 +95,7 @@ TrainerClassAttributes:
 
 ; Champion
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 200 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -417,13 +417,13 @@ TrainerClassAttributes:
 
 ; Red
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 200 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Blue
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 200 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 

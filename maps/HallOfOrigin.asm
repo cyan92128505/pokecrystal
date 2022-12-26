@@ -198,12 +198,15 @@ MasterOakScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer POKEMON_PROF, MASTER_OAK
 	startbattle
+	reloadmapafterbattle
 	appear HALLOFORIGIN_ARCEUS_POKEBALL
 	clearevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	appear HALLOFORIGIN_MEWTWO_POKEBALL
 	clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
 	setevent EVENT_BEAT_MASTER_OAK
-	reloadmapafterbattle
+	setval 1
+	writemem wBeatenMasterOak
+	reloadmap
 	opentext
 	writetext MasterOakOfferPrizeText
 	waitbutton
@@ -318,8 +321,8 @@ MasterRedScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RED, MASTER_RED
 	startbattle
-	setevent EVENT_BEAT_MASTER_RED
 	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_RED
 	opentext
 	writetext MasterRedAfterBattleText
 	waitbutton
@@ -420,8 +423,8 @@ MasterLanceScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CHAMPION, MASTER_LANCE
 	startbattle
-	setevent EVENT_BEAT_MASTER_LANCE
 	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_LANCE
 	opentext
 	writetext MasterLanceAfterBattleText
 	waitbutton
@@ -493,8 +496,8 @@ MasterBlueScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BLUE, MASTER_BLUE
 	startbattle
-	setevent EVENT_BEAT_MASTER_BLUE
 	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_BLUE
 	opentext
 	writetext MasterBlueAfterBattleText
 	waitbutton
@@ -607,21 +610,21 @@ HallOfOrigin_MapEvents:
 	def_warp_events
 
 	def_coord_events
-	coord_event  11,  12, SCENE_ALWAYS, MustBeatMasterRedScript
-	coord_event  12,  12, SCENE_ALWAYS, MustBeatMasterRedScript
-	coord_event  13,  12, SCENE_ALWAYS, MustBeatMasterRedScript
-    coord_event  10,  39, SCENE_ALWAYS, ReloadMapScript
-	coord_event  11,  39, SCENE_ALWAYS, ReloadMapScript
-	coord_event  12,  39, SCENE_ALWAYS, ReloadMapScript
-	coord_event  13,  39, SCENE_ALWAYS, ReloadMapScript
+	coord_event 11, 18, SCENE_ALWAYS, MustBeatMasterRedScript
+	coord_event 12, 18, SCENE_ALWAYS, MustBeatMasterRedScript
+	coord_event 13, 18, SCENE_ALWAYS, MustBeatMasterRedScript
+	coord_event 10, 45, SCENE_ALWAYS, ReloadMapScript
+	coord_event 11, 45, SCENE_ALWAYS, ReloadMapScript
+	coord_event 12, 45, SCENE_ALWAYS, ReloadMapScript
+	coord_event 13, 45, SCENE_ALWAYS, ReloadMapScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  11,  0, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_DUMMY
-	object_event  11,  0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
-	object_event  12,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-	object_event  13,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-	object_event  10, 13, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
-	object_event  8, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
-	object_event  15, 14, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
+	object_event 11,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_DUMMY
+	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
+	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
+	object_event 13,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	object_event 10, 19, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
+	object_event  8, 20, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
+	object_event 15, 20, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1

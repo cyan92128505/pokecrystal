@@ -7,10 +7,10 @@ DestinyPark_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  10, 35, SILVER_CAVE_OUTSIDE, 3
-	warp_event  11, 35, SILVER_CAVE_OUTSIDE, 3
-	warp_event  10,  9, DESTINY_SQUARE, 1
-	warp_event  11,  9, DESTINY_SQUARE, 1
+	warp_event  6, 43, SILVER_CAVE_OUTSIDE, 3
+	warp_event  7, 43, SILVER_CAVE_OUTSIDE, 3
+	warp_event  6,  9, DESTINY_SQUARE, 1
+	warp_event  7,  9, DESTINY_SQUARE, 1
 
 	def_coord_events
 

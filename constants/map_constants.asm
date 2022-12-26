@@ -502,14 +502,14 @@ ENDM
 	endgroup
 
 	newgroup DESTINY_TOWER                                      ; 27
-	map_const DESTINY_PARK,                                11, 20 ; 1
+	map_const DESTINY_PARK,                                7, 24 ; 1
 	map_const DESTINY_SQUARE,                               6, 10 ; 2
 	endgroup
 
     newgroup HALL_OF_ORIGIN                                     ; 28
-	map_const HALL_OF_ORIGIN,                             12, 20 ;  1
-	map_const ORIGIN_ROAD,                                  4, 20 ; 2
-	map_const ORIGIN_ROAD_SOUTH,                            4, 20 ; 3
+	map_const HALL_OF_ORIGIN,                             12, 23 ;  1
+	map_const ORIGIN_ROAD,                                  6, 20 ; 2
+	map_const ORIGIN_ROAD_SOUTH,                            6, 20 ; 3
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 27

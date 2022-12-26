@@ -1460,11 +1460,12 @@ BattleCommand_Stab:
 	jr nc, .applyExpertBelt
 	jr .solidRock
 
+; add 15% damage
 .applyExpertBelt
-    ld a, 6
+    ld a, 23
 	ldh [hMultiplier], a
 	call Multiply
-	ld a, 5
+	ld a, 20
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
@@ -1480,14 +1481,14 @@ BattleCommand_Stab:
 	ld a, [wEnemyMonSpecies]
 .checkSpeciesSolidRock
 ; AndrewNote - commented out since this is broken
-	;cp RHYHORN
-	;jr z, .checkSolidRock
-	;cp RHYDON
-	;jr z, .checkSolidRock
-	;cp RHYPERIOR
-	;jr z, .checkSolidRock
-	;cp RAYQUAZA
-	;jr z, .checkSolidRock
+	cp RHYHORN
+	jr z, .checkSolidRock
+	cp RHYDON
+	jr z, .checkSolidRock
+	cp RHYPERIOR
+	jr z, .checkSolidRock
+	cp RAYQUAZA
+	jr z, .checkSolidRock
 	jr .continue
 
 .checkSolidRock
@@ -1498,11 +1499,11 @@ BattleCommand_Stab:
 	jr .continue
 
 .applySolidRock
-; SE hits do x1.5 damage rather than x2
-    ld a, 3
+; SE hits do 80% normal damage
+    ld a, 4
 	ldh [hMultiplier], a
 	call Multiply
-	ld a, 4
+	ld a, 5
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide

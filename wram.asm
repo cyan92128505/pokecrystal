@@ -2909,11 +2909,11 @@ endr
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 40
+	ds 6
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
-; wMap1Object - wMap15Object
+; wMap1Object - wMap17Object
 for n, 1, NUM_OBJECTS
 wMap{d:n}Object:: map_object wMap{d:n}
 endr
@@ -2995,7 +2995,8 @@ wPokegearFlags::
 wRadioTuningKnob:: db
 wExpShareToggle:: db
 ;wLastDexMode:: db
-	ds 1
+;	ds 1
+wBeatenMasterOak:: db
 wWhichRegisteredItem:: db
 wRegisteredItem:: db
 
@@ -3003,7 +3004,6 @@ wPlayerState:: db
 
 wHallOfFameCount:: db
 	ds 1
-;wExpShareToggle:: db
 wTradeFlags:: flag_array NUM_NPC_TRADES
 	ds 1
 wMooMooBerries:: db

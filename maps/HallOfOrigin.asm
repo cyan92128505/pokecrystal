@@ -206,7 +206,11 @@ MasterOakScript:
 	setevent EVENT_BEAT_MASTER_OAK
 	setval 1
 	writemem wBeatenMasterOak
-	reloadmap
+	special FadeOutPalettes
+	special HealParty
+	pause 15
+	warp HALL_OF_ORIGIN, 11, 3
+	turnobject PLAYER, UP
 	opentext
 	writetext MasterOakOfferPrizeText
 	waitbutton
@@ -227,7 +231,7 @@ MasterOakScript:
 	end
 
 MasterOakIntroText:
-    text "Hello <PLAYER>"
+    text "Hello <PLAYER>!"
 
     para "I am not the"
     line "Professor OAK"
@@ -276,9 +280,18 @@ MasterOakBeatenText:
     done
 
 MasterOakOfferPrizeText:
-    text "Having beaten"
-    line "me I present"
-    cont "you with a"
+    text "You have done"
+    line "it!"
+
+    para "I am defeated."
+
+    para "You have now"
+    line "ascended and"
+    cont "surpassed"
+    cont "mortal limits."
+
+    para "I present"
+    line "you with a"
     cont "fragment of"
     cont "my knowledge."
 
@@ -306,8 +319,6 @@ MasterOakAfterBattleText:
 
 MasterRedScript:
 	faceplayer
-    checkevent EVENT_BEAT_MASTER_LANCE
-    iffalse .beatOthersFirst
     checkevent EVENT_BEAT_MASTER_BLUE
     iffalse .beatOthersFirst
 	opentext
@@ -393,15 +404,22 @@ BeatOthersFirstText:
     para "ARCEUS waits to"
     line "present itself"
     cont "to whichever"
-    cont "one of us is"
+    cont "one of you is"
     cont "the strongest."
 
     para "First you must"
     line "defeat the"
     cont "others."
 
-    para "Then I will"
-    line "fight you."
+    para "Then if you"
+    line "can defeat"
+    cont "BLUE I will"
+    cont "test you."
+
+    para "Should you pass"
+    line "you are worthy"
+    cont "to speak with"
+    cont "ARCEUS."
 
     para "We are all at"
     line "our very"
@@ -485,6 +503,8 @@ MasterLanceAfterBattleText:
 
 MasterBlueScript:
 	faceplayer
+    checkevent EVENT_BEAT_MASTER_LANCE
+    iffalse .beatOthersFirst
 	opentext
 	checkevent EVENT_BEAT_MASTER_BLUE
 	iftrue .FightDone
@@ -513,6 +533,12 @@ MasterBlueScript:
 	yesorno
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+.beatOthersFirst
+    opentext
+	writetext BeatOthersFirstBlueText
 	waitbutton
 	closetext
 	end
@@ -567,6 +593,106 @@ MasterBlueAfterBattleText:
     para "Smell ya later!"
     done
 
+BeatOthersFirstBlueText:
+    text "Hey challenger!"
+
+    para "I you think you"
+    line "are worthy to"
+    cont "have an audience"
+    cont "with ARCEUS."
+
+    para "You must prove"
+    line "yourself the"
+    cont "strongest."
+
+    para "Then I will"
+    line "test you."
+
+    para "RED wont even"
+    line "get the chance"
+    cont "to fight you."
+    done
+
+MasterGreenScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_GREEN
+	iftrue .FightDone
+.fight
+	writetext MasterGreenSeenText
+	waitbutton
+	closetext
+	winlosstext MasterGreenBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer LASS, GREEN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_GREEN
+	opentext
+	writetext MasterGreenAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.FightDone:
+	writetext MasterLanceAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHallOfOrigin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+
+MasterGreenSeenText:
+    text "Many years ago"
+    line "I started my"
+    cont "journey from"
+    cont "PALLET TOWN."
+
+    para "A few months"
+    line "later two more"
+    cont "trainers begun."
+
+    para "RED and BLUE."
+
+    para "They had"
+    line "unnatural talent."
+
+    para "Now they are"
+    line "IMMORTALS."
+
+    para "With their"
+    line "silver aura."
+
+    para "I am here to"
+    line "prove I can"
+    cont "do it too!"
+    done
+
+MasterGreenBeatenText:
+    text "Well done!"
+    done
+
+MasterGreenAfterBattleText:
+    text "You really are"
+    line "the strongest."
+
+    para "I want you to"
+    line "march in there"
+    cont "and beat RED"
+    cont "and BLUE!"
+
+    para "They think too"
+    line "highly of"
+    cont "themselves now"
+    cont "that they are"
+    cont "IMMORTALS."
+    done
+
 RematchTextHallOfOrigin:
     text "Shall we have"
     line "another match?"
@@ -591,8 +717,8 @@ MustBeatMasterRedScript:
 
 MustBeatMasterRedScriptText:
     text "Only the"
-    line "strongest one"
-    cont "of us can go."
+    line "strongest"
+    cont "may pass."
     done
 
 Movement_HallOfOriginTurnBack:
@@ -612,7 +738,6 @@ HallOfOrigin_MapEvents:
 	def_coord_events
 	coord_event 11, 18, SCENE_ALWAYS, MustBeatMasterRedScript
 	coord_event 12, 18, SCENE_ALWAYS, MustBeatMasterRedScript
-	coord_event 13, 18, SCENE_ALWAYS, MustBeatMasterRedScript
 	coord_event 10, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 11, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 12, 45, SCENE_ALWAYS, ReloadMapScript
@@ -625,6 +750,7 @@ HallOfOrigin_MapEvents:
 	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
 	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	object_event 13,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-	object_event 10, 19, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
-	object_event  8, 20, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
-	object_event 15, 20, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
+	object_event 10, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
+	object_event  8, 20, SPRITE_LANCE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
+	object_event 15, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
+	object_event 13, 18, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1

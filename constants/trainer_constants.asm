@@ -30,27 +30,35 @@ NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
+	const MASTER_FALKNER
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
+	const MASTER_WHITNEY
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
+	const MASTER_BUGSY
 
 	trainerclass MORTY ; 4
 	const MORTY1
+	const MASTER_MORTY
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
+	const MASTER_PRYCE
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
+	const MASTER_JASMINE
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
+	const MASTER_CHUCK
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
+	const MASTER_CLAIR
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -74,6 +82,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass WILL ; b
 	const WILL1
+	const MASTER_WILL
 
 	trainerclass CAL ; c
 	const CAL1 ; unused
@@ -82,12 +91,15 @@ KRIS EQU __trainer_class__
 
 	trainerclass BRUNO ; d
 	const BRUNO1
+	const MASTER_BRUNO
 
 	trainerclass KAREN ; e
 	const KAREN1
+	const MASTER_KAREN
 
 	trainerclass KOGA ; f
 	const KOGA1
+	const MASTER_KOGA
 
 	trainerclass CHAMPION ; 10
 	const LANCE
@@ -95,12 +107,15 @@ KRIS EQU __trainer_class__
 
 	trainerclass BROCK ; 11
 	const BROCK1
+	const MASTER_BROCK
 
 	trainerclass MISTY ; 12
 	const MISTY1
+	const MASTER_MISTY
 
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
+	const MASTER_SURGE
 
 	trainerclass SCIENTIST ; 14
 	const ROSS
@@ -111,6 +126,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
+	const MASTER_ERIKA
 
 	trainerclass YOUNGSTER ; 16
 	const JOEY1
@@ -175,7 +191,7 @@ KRIS EQU __trainer_class__
 	const VANCE2
 	const VANCE3
 
-	trainerclass LASS ; 19
+	trainerclass LASS ; 20
 	const CARRIE
 	const BRIDGET
 	const ALICE
@@ -193,9 +209,11 @@ KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
+	const GREEN
 
 	trainerclass JANINE ; 1a
 	const JANINE1
+	const MASTER_JANINE
 
 	trainerclass COOLTRAINERM ; 1b
 	const NICK
@@ -329,6 +347,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
+	const MASTER_SABRINA
 
 	trainerclass BUG_CATCHER ; 24
 	const DON
@@ -456,6 +475,7 @@ KRIS EQU __trainer_class__
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_MT_MOON
 	const RIVAL2_SILVER_CAVE
+	const MASTER_RIVAL
 
 	trainerclass GUITARIST ; 2b
 	const CLYDE
@@ -498,6 +518,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
+	const MASTER_BLAINE
 
 	trainerclass BURGLAR ; 2f
 	const DUNCAN

@@ -4,11 +4,166 @@
 	const VIOLETPOKECENTER1F_GENTLEMAN
 	const VIOLETPOKECENTER1F_YOUNGSTER
 	const VIOLETPOKECENTER1F_ELMS_AIDE
+	const VIOLETPOKECENTER1F_BILL
 
 VioletPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Bill
+
+.Bill
+    disappear VIOLETPOKECENTER1F_BILL
+    endcallback
+	
+BillExpShareScript:
+    checkevent EVENT_GOT_EXP_SHARE
+    iftrue .finish
+	pause 30
+	playsound SFX_EXIT_BUILDING
+	appear VIOLETPOKECENTER1F_BILL
+	waitsfx
+	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement1
+	applymovement PLAYER, VioletPokecenter1FPlayerMovement1
+	turnobject VIOLETPOKECENTER1F_NURSE, UP
+	pause 10
+	turnobject VIOLETPOKECENTER1F_NURSE, DOWN
+	pause 30
+	turnobject VIOLETPOKECENTER1F_NURSE, UP
+	pause 10
+	turnobject VIOLETPOKECENTER1F_NURSE, DOWN
+	pause 20
+	turnobject VIOLETPOKECENTER1F_BILL, DOWN
+	pause 10
+	opentext
+	writetext VioletPokecenter1F_BillText1
+	promptbutton
+	writetext VioletPokecenter1F_BillText2
+	giveitem EXP_SHARE
+	writetext VioletPokecenter1F_GotExpShare
+	playsound SFX_KEY_ITEM
+	waitsfx
+	itemnotify
+	waitbutton
+	closetext
+	turnobject PLAYER, DOWN
+	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement2
+	playsound SFX_EXIT_BUILDING
+	disappear VIOLETPOKECENTER1F_BILL
+	clearevent EVENT_MET_BILL
+	setflag ENGINE_TIME_CAPSULE
+	setevent EVENT_GOT_EXP_SHARE
+	waitsfx
+.finish
+	end
+
+VioletPokecenter1FBillMovement1:
+	step UP
+	step UP
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	turn_head UP
+	step_end
+
+VioletPokecenter1FBillMovement2:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+VioletPokecenter1FPlayerMovement1:
+	step UP
+	step UP
+	step UP
+	step_end
+
+VioletPokecenter1F_BillText1:
+	text "Hi, I'm BILL. And"
+	line "who are you?"
+
+	para "Hmm, <PLAYER>, huh?"
+	line "You've come at the"
+	cont "right time."
+	done
+
+VioletPokecenter1F_BillText2:
+	text "I just finished"
+	line "adjustments on my"
+	cont "EXP SHARE."
+
+	para "It is a new"
+	line "powerful device."
+
+	para "I have created"
+	line "it with help from"
+	cont "PROF.OAK."
+
+	para "I am looking"
+	line "for the right"
+	cont "person to test"
+	cont "it."
+
+	para "But I must be"
+	line "careful."
+
+	para "This device can"
+	line "make a trainer"
+	cont "far more"
+	cont "powerful!"
+
+	para "I think you are"
+	line "the right person."
+
+	para "You have to turn"
+	line "the EXP.SHARE on."
+	cont "When you do all"
+	cont "your #MON will"
+	cont "gain EXP in"
+	cont "battle."
+
+	para "Even ones that"
+	line "didn't fight!"
+
+	para "Right now they"
+	line "will gain a"
+	cont "quarter of the"
+	cont "full EXP."
+
+	para "But PROF.OAK"
+	line "and I are working"
+	cont "on updates to"
+	cont "increase that."
+
+	para "We will learn"
+	line "a lot from you"
+	cont "using it."
+
+	para "Of course you can"
+	line "turn it off if"
+	cont "you want."
+
+	para "But why would"
+	line "you!"
+
+	para "Here I entrust"
+	line "this to you."
+
+	para "I have to hurry on"
+	line "back to GOLDENROD"
+	cont "and see my folks."
+
+	para "Buh-bye!"
+	done
+
+VioletPokecenter1F_GotExpShare:
+	text "<PLAYER> received"
+	line "EXP.SHARE."
+	done
 
 VioletPokecenterNurse:
 	jumpstd PokecenterNurseScript
@@ -222,6 +377,7 @@ VioletPokecenter1F_MapEvents:
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
+	coord_event 3, 7, SCENE_ALWAYS, BillExpShareScript
 
 	def_bg_events
 
@@ -231,3 +387,4 @@ VioletPokecenter1F_MapEvents:
 	object_event  1,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGentlemanScript, -1
 	object_event  8,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FYoungsterScript, -1
 	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1F_ElmsAideScript, EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
+	object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BILL_APPEARS_IN_VIOLET

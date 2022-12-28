@@ -7,24 +7,10 @@ DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Giratina
-
-.Giratina
-    setval GIRATINA
-	special MonCheck
-	iftrue .NoAppear
-	sjump .Appear
-.Appear:
-	appear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
-	endcallback
-.NoAppear:
-	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
-	endcallback
 
 GiratinaScript:
 	opentext
-    setval RAYQUAZA
-	special MonCheck
+    checkevent EVENT_CAUGHT_RAYQUAZA
 	iffalse .noRayquaza
 	writetext GiratinaPlayerHasRayquazaText
 	waitbutton
@@ -34,8 +20,14 @@ GiratinaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GIRATINA, 70
 	startbattle
-	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
 	reloadmapafterbattle
+    setval GIRATINA
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_GIRATINA
+	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
 	end
 .noRayquaza
 	writetext GiratinaIntroText
@@ -211,6 +203,6 @@ DarkCaveBlackthornEntrance_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  7,  2, SPRITE_GENGAR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_DUMMY
+	object_event  7,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_CAUGHT_GIRATINA
 	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE

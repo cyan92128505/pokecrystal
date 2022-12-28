@@ -539,8 +539,8 @@ DestinyPark_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6, 43, SILVER_CAVE_OUTSIDE, 3
 	warp_event  7, 43, SILVER_CAVE_OUTSIDE, 3
+	warp_event  6, 43, SILVER_CAVE_OUTSIDE, 3
 	warp_event  6,  9, DESTINY_SQUARE, 1
 	warp_event  7,  9, DESTINY_SQUARE, 1
 
@@ -554,7 +554,7 @@ DestinyPark_MapEvents:
 	object_event 2, 34, SPRITE_SURGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSurgeScript, -1
 	object_event 0, 30, SPRITE_ERIKA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterErikaScript, -1
 	object_event 3, 26, SPRITE_JANINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJanineScript, -1
-	object_event 6, 21, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
+	object_event 6, 21, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
 	object_event 9, 16, SPRITE_BLAINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBlaineScript, -1
 	object_event 6, 37, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterFalknerScript, -1
 	object_event 11, 40, SPRITE_BUGSY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBugsyScript, -1

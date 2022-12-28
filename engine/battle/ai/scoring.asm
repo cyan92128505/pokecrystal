@@ -13,6 +13,7 @@ SubstituteImmuneEffects:
 	db EFFECT_ATTACK_DOWN
 	db EFFECT_SPEED_DOWN_2
 	db EFFECT_TRANSFORM
+	db EFFECT_TOXIC
 	db $FF
 
 AI_MagicGuardPokemon:
@@ -69,6 +70,21 @@ AI_ClearBodyPokemon:
     db ENTEI
     db DIALGA
     db ARCEUS
+    db $FF
+
+AI_UberImmunePokemon:
+    db ARCEUS
+    db MEWTWO
+    db GIRATINA
+    db YVELTAL
+    db XERNEAS
+    db DIALGA
+    db PALKIA
+    db KYOGRE
+    db GROUDON
+    db RAYQUAZA
+    db LUGIA
+    db HO_OH
     db $FF
 
 AI_Basic:
@@ -1300,6 +1316,18 @@ AI_Smart_Spikes:
 
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
+; don't use on Uber Pokemon as they are immune
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
 ; don't use if player has only one pokemon left
 	push hl
 	call AICheckLastPlayerMon
@@ -1401,23 +1429,86 @@ AI_Smart_Moonlight:
     ret
 
 AI_Smart_Toxic:
-AI_Smart_LeechSeed:
-; don't use against Arceus since it is immune to status
+; never use against steel types
+    ld a, [wBattleMonType1]
+	cp STEEL
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp STEEL
+	jr z, .discourage
+
+; never use against poison types
+    ld a, [wBattleMonType1]
+	cp POISON
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp POISON
+	jr z, .discourage
+
+; never use against Pokemon immune to status
     ld a, [wBattleMonSpecies]
     cp ARCEUS
-    jr nz, .continue
+    jr z, .discourage
     cp SYLVEON
-    jr nz, .continue
+    jr z, .discourage
+
+; never use against Pokemon with magic guard
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_MagicGuardPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
+
+; don't use if player below 50% HP
+    call AICheckPlayerHalfHP
+    jr nc, .discourage
+
+	ret
+
+.discourage
     inc [hl]
     inc [hl]
     ret
 
-.continue
+
+AI_Smart_LeechSeed:
+; never use against grass types
+    ld a, [wBattleMonType1]
+	cp GRASS
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp GRASS
+	jr z, .discourage
+
+; never use against Pokemon with magic guard
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_MagicGuardPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
+
 ; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
+	jr nc, .discourage
+
 	ret
+
+.discourage
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_LightScreen:
 AI_Smart_Reflect:
@@ -1434,6 +1525,18 @@ AI_Smart_Reflect:
 AI_Smart_Ohko:
 ; Dismiss this move if player's level is higher than enemy's level.
 ; Else, discourage this move is player's HP is below 50%.
+; don't use on Uber Pokemon as they are immune
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
 
 	ld a, [wBattleMonLevel]
 	ld b, a
@@ -1442,6 +1545,7 @@ AI_Smart_Ohko:
 	jp c, AIDiscourageMove
 	call AICheckPlayerHalfHP
 	ret c
+.discourage
 	inc [hl]
 	ret
 
@@ -3344,11 +3448,12 @@ AI_Smart_QuiverDance:
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; only care about being OHKOd as qd increases speed
     call DoesEnemyHaveIntactFocusSashOrSturdy
-    jr c, .continue
+    jr c, .skip
 
     call CanPlayerKO
     jr c, .discourage
 
+.skip
 ; encourage to +2, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2

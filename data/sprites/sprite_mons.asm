@@ -38,4 +38,5 @@ SpriteMons:
 	db HO_OH
 	db DRAGONITE
 	db ARCEUS
+	db MEWTWO
 	assert_table_length NUM_POKEMON_SPRITES

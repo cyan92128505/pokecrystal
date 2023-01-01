@@ -56,6 +56,7 @@ Landmarks:
     landmark 148,  24, HallOfOriginName
     landmark 150,  60, DestinyTowerName
 	landmark 148,  68, SilverCaveName
+	landmark  80,  80, AncientRuinName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -99,6 +100,7 @@ Landmarks:
 	landmark  52, 120, Route21Name
 	landmark  36,  68, Route22Name
 	landmark  28,  52, VictoryRoadName
+	landmark  59, 132, ElementCaveName
 	landmark  28,  44, Route23Name
 	landmark  28,  36, IndigoPlateauName
 	landmark  28,  92, Route26Name
@@ -146,6 +148,7 @@ FuchsiaCityName:     db "FUCHSIA¯CITY@"
 CinnabarIslandName:  db "CINNABAR¯ISLAND@"
 IndigoPlateauName:   db "INDIGO¯PLATEAU@"
 VictoryRoadName:     db "VICTORY¯ROAD@"
+ElementCaveName:     db "ELEMENT¯CAVE@"
 MtMoonName:          db "MT.MOON@"
 RockTunnelName:      db "ROCK TUNNEL@"
 LavRadioTowerName:   db "LAV¯RADIO TOWER@"
@@ -212,3 +215,4 @@ BattleTowerName:     db "BATTLE¯TOWER@"
 SpecialMapName:      db "SPECIAL@"
 HallOfOriginName:    db "HALL OF¯ORIGIN@"
 DestinyTowerName:    db "DESTINY¯PLAZA@"
+AncientRuinName:     db "ANCIENT¯RUIN@"

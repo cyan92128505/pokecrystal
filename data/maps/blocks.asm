@@ -493,6 +493,9 @@ RuinsOfAlphAerodactylChamber_Blocks:
 SproutTower1F_Blocks:
 	INCBIN "maps/SproutTower1F.blk"
 
+SproutTowerB1F_Blocks:
+	INCBIN "maps/SproutTowerB1F.blk"
+
 BetaSproutTowerCutOut1_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSproutTowerCutOut1.blk"
 
@@ -943,6 +946,9 @@ MrPokemonsHouse_Blocks:
 VictoryRoadGate_Blocks:
 	INCBIN "maps/VictoryRoadGate.blk"
 
+ElementCave_Blocks:
+	INCBIN "maps/ElementCave.blk"
+
 OlivinePortPassage_Blocks:
 VermilionPortPassage_Blocks:
 	INCBIN "maps/PortPassage.blk"
@@ -1062,3 +1068,9 @@ DestinyPark_Blocks:
 
 DestinySquare_Blocks:
 	INCBIN "maps/DestinySquare.blk"
+
+AncientRuinPresent_Blocks:
+	INCBIN "maps/AncientRuinPresent.blk"
+
+AncientRuinPast_Blocks:
+	INCBIN "maps/AncientRuinPast.blk"

@@ -59,13 +59,13 @@ SilverCaveItemRooms_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13,  3, SILVER_CAVE_ROOM_2, 3
-	warp_event  7, 15, SILVER_CAVE_ROOM_2, 4
+	warp_event 43,  5, SILVER_CAVE_ROOM_2, 3
+	warp_event  5, 15, SILVER_CAVE_ROOM_2, 4
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  6,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, PalkiaScript, EVENT_CAUGHT_PALKIA
-	object_event 15, 10, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DialgaScript, EVENT_CAUGHT_DIALGA
+	object_event 17,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, PalkiaScript, EVENT_CAUGHT_PALKIA
+	object_event 30,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DialgaScript, EVENT_CAUGHT_DIALGA

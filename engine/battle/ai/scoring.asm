@@ -161,7 +161,7 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr c, .discourage ; discourage if sub is up and blocks move - loop back to check move
+	jp c, .discourage ; discourage if sub is up and blocks move - loop back to check move
 
 .checkLevitate
 ; Dismiss ground move if the player has levitate
@@ -186,6 +186,36 @@ AI_Basic:
 ;	ld a, [wPlayerScreens]
 ;	bit SCREENS_SAFEGUARD, a
 ;	jr z, .discourage
+
+; switch if current move is
+; JUDGEMENT, PSYBLAST or DRACO_METEOR (common mono-attackers)
+; and its pp is 0
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+    cp JUDGEMENT
+    jr z, .checkPP
+    cp PSYBLAST
+    jr z, .checkPP
+    cp DRACO_METEOR
+    jr z, .checkPP
+    jr .checkKO
+.checkPP
+    push hl
+    push bc
+    ld hl, wEnemyMonPP
+    ld a, [wCurEnemyMoveNum]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
+	pop bc
+	pop hl
+	jp nz, .checkKO
+
+; switch since pp is 0
+    ld a, $1
+    ld [wEnemyIsSwitching], a
+	ret
 
 
 ; Greatly encourage a move if it will KO the player
@@ -274,10 +304,11 @@ AI_Smart_Switch:
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ
 	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp
-    ld a, [wEnemyMonStatus]
+    ;ld a, [wEnemyMonStatus]
 	;and SLP
 	;jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
+.noPPCheck
 ; switch if choice locked into a NVE move
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]

@@ -50,6 +50,7 @@
     const LANDMARK_HALL_OF_ORIGIN
     const LANDMARK_DESTINY_TOWER
 	const LANDMARK_SILVER_CAVE       ; 2e
+	const LANDMARK_ANCIENT_RUIN
 KANTO_LANDMARK EQU const_value
 	const LANDMARK_PALLET_TOWN       ; 2f
 	const LANDMARK_ROUTE_1           ; 30
@@ -93,6 +94,7 @@ KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_21          ; 56
 	const LANDMARK_ROUTE_22          ; 57
 	const LANDMARK_VICTORY_ROAD      ; 58
+	const LANDMARK_ELEMENT_CAVE
 	const LANDMARK_ROUTE_23          ; 59
 	const LANDMARK_INDIGO_PLATEAU    ; 5a
 	const LANDMARK_ROUTE_26          ; 5b

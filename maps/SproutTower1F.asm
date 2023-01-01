@@ -109,6 +109,7 @@ SproutTower1F_MapEvents:
 	warp_event  6,  4, SPROUT_TOWER_2F, 1
 	warp_event  2,  6, SPROUT_TOWER_2F, 2
 	warp_event 17,  3, SPROUT_TOWER_2F, 3
+    warp_event 13,  9, SPROUT_TOWER_B1F, 3
 
 	def_coord_events
 

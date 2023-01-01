@@ -66,6 +66,7 @@ ENDM
 	map_const SPROUT_TOWER_1F,                             10,  8 ;  1
 	map_const SPROUT_TOWER_2F,                             10,  8 ;  2
 	map_const SPROUT_TOWER_3F,                             10,  8 ;  3
+	map_const SPROUT_TOWER_B1F,                            10,  8 ;  3
 	map_const TIN_TOWER_1F,                                10,  9 ;  4
 	map_const TIN_TOWER_2F,                                10,  9 ;  5
 	map_const TIN_TOWER_3F,                                10,  9 ;  6
@@ -84,7 +85,7 @@ ENDM
 	map_const RADIO_TOWER_3F,                               9,  4 ; 19
 	map_const RADIO_TOWER_4F,                               9,  4 ; 20
 	map_const RADIO_TOWER_5F,                               9,  4 ; 21
-	map_const RUINS_OF_ALPH_OUTSIDE,                       10, 18 ; 22
+	map_const RUINS_OF_ALPH_OUTSIDE,                       13, 18 ; 22
 	map_const RUINS_OF_ALPH_HO_OH_CHAMBER,                  4,  5 ; 23
 	map_const RUINS_OF_ALPH_KABUTO_CHAMBER,                 4,  5 ; 24
 	map_const RUINS_OF_ALPH_OMANYTE_CHAMBER,                4,  5 ; 25
@@ -139,7 +140,7 @@ ENDM
 	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 74
 	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 75
 	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 76
-	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 77
+	map_const SILVER_CAVE_ITEM_ROOMS,                      24, 10 ; 77
 	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
 	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ; 79
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
@@ -154,6 +155,7 @@ ENDM
 	;map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 89    unimportant
 	;map_const SAFARI_ZONE_BETA,                            10, 18 ; 90    unimportant
 	map_const VICTORY_ROAD,                                10, 36 ; 91
+	map_const ELEMENT_CAVE,                                24, 12 ; 92
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -510,6 +512,11 @@ ENDM
 	map_const HALL_OF_ORIGIN,                             12, 23 ;  1
 	map_const ORIGIN_ROAD,                                  6, 20 ; 2
 	map_const ORIGIN_ROAD_SOUTH,                            6, 20 ; 3
+	endgroup
+
+    newgroup ANCIENT_RUIN                                     ; 29
+	map_const ANCIENT_RUIN_PRESENT,                         20, 20 ;  1
+    map_const ANCIENT_RUIN_PAST,                            20, 20 ;  2
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 27

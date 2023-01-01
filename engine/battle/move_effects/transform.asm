@@ -17,7 +17,8 @@ BattleCommand_Transform:
 	call GetBattleVarAddr
 	bit SUBSTATUS_SUBSTITUTE, [hl]
 	push af
-	jr z, .mimic_substitute
+	jp z, BattleEffect_ButItFailed
+	;jr z, .mimic_substitute
 	call CheckUserIsCharging
 	jr nz, .mimic_substitute
 	ld a, SUBSTITUTE

@@ -388,6 +388,7 @@ ENDM
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
 	map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0
+	map_attributes SproutTowerB1F, SPROUT_TOWER_B1F, $00, 0
 	map_attributes TinTower1F, TIN_TOWER_1F, $00, 0
 	map_attributes TinTower2F, TIN_TOWER_2F, $00, 0
 	map_attributes TinTower3F, TIN_TOWER_3F, $00, 0
@@ -460,8 +461,8 @@ ENDM
 	map_attributes WhirlIslandLugiaChamber, WHIRL_ISLAND_LUGIA_CHAMBER, $0f, 0
 	map_attributes SilverCaveRoom1, SILVER_CAVE_ROOM_1, $09, 0
 	map_attributes SilverCaveRoom2, SILVER_CAVE_ROOM_2, $09, 0
-	map_attributes SilverCaveRoom3, SILVER_CAVE_ROOM_3, $09, 0
-	map_attributes SilverCaveItemRooms, SILVER_CAVE_ITEM_ROOMS, $09, 0
+	map_attributes SilverCaveRoom3, SILVER_CAVE_ROOM_3, $00, 0
+	map_attributes SilverCaveItemRooms, SILVER_CAVE_ITEM_ROOMS, $00, 0
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $09, 0
@@ -491,6 +492,7 @@ ENDM
 	;map_attributes SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $00, 0
 	;map_attributes SafariZoneBeta, SAFARI_ZONE_BETA, $13, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
+    map_attributes ElementCave, ELEMENT_CAVE, $1d, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
@@ -706,4 +708,5 @@ ENDM
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
 	map_attributes DestinyPark, DESTINY_PARK, $05, 0
 	map_attributes DestinySquare, DESTINY_SQUARE, $00, 0
-
+	map_attributes AncientRuinPresent, ANCIENT_RUIN_PRESENT, $0A, 0
+	map_attributes AncientRuinPast, ANCIENT_RUIN_PAST, $05, 0

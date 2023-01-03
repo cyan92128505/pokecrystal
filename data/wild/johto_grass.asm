@@ -30,6 +30,34 @@ JohtoGrassWildMons:
     db 21, BELLSPROUT
 	end_grass_wildmons
 
+    def_grass_wildmons SPROUT_TOWER_B1F
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 25, HAUNTER
+	db 25, PERSIAN
+	db 26, SOLOSIS
+	db 26, WOBBUFFET
+	db 31, LAMPENT
+	db 31, DOUBLADE
+    db 51, GENGAR
+	; day
+	db 25, HAUNTER
+	db 25, PERSIAN
+	db 26, SOLOSIS
+	db 26, WOBBUFFET
+	db 31, LAMPENT
+	db 31, DOUBLADE
+    db 51, GENGAR
+	; nite
+	db 25, HAUNTER
+	db 25, PERSIAN
+	db 26, SOLOSIS
+	db 26, WOBBUFFET
+	db 31, LAMPENT
+	db 31, DOUBLADE
+    db 51, GENGAR
+	end_grass_wildmons
+
 	def_grass_wildmons SPROUT_TOWER_3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1793,4 +1821,62 @@ JohtoGrassWildMons:
 	db 100, DARKRAI
 	end_grass_wildmons
 
+    def_grass_wildmons ANCIENT_RUIN_PRESENT
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 51, GENGAR
+	db 51, WEAVILE
+	db 53, GOLEM
+	db 53, MAGNEZONE
+	db 65, GARCHOMP
+	db 65, METAGROSS
+	db 70, DARKRAI
+	; day
+	db 51, GENGAR
+	db 51, WEAVILE
+	db 53, GOLEM
+	db 53, MAGNEZONE
+	db 65, GARCHOMP
+	db 65, METAGROSS
+	db 80, DARKRAI
+	; nite
+	db 51, GENGAR
+	db 51, WEAVILE
+	db 53, GOLEM
+	db 53, MAGNEZONE
+	db 65, GARCHOMP
+	db 65, METAGROSS
+	db 70, DARKRAI
+	end_grass_wildmons
+
+    def_grass_wildmons ANCIENT_RUIN_PAST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 55, LUCARIO
+	db 55, VENUSAUR
+	db 58, SIGILYPH
+	db 58, REUNICLUS
+	db 65, CHARIZARD
+	db 65, SNORLAX
+	db 70, MEW
+	; day
+	db 55, LUCARIO
+	db 55, VENUSAUR
+	db 58, SIGILYPH
+	db 58, REUNICLUS
+	db 65, CHARIZARD
+	db 65, SNORLAX
+	db 70, MEW
+	; nite
+	db 55, LUCARIO
+	db 55, VENUSAUR
+	db 58, SIGILYPH
+	db 58, REUNICLUS
+	db 65, CHARIZARD
+	db 65, SNORLAX
+	db 70, MEW
+	end_grass_wildmons
+
 	db -1 ; end
+
+

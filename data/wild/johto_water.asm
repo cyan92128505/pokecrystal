@@ -275,4 +275,18 @@ JohtoWaterWildMons:
 	db 100, KYOGRE
 	end_water_wildmons
 
+	def_water_wildmons ANCIENT_RUIN_PRESENT
+	db 2 percent ; encounter rate
+	db 55, TENTACRUEL
+	db 55, GYARADOS
+	db 65, SLOWKING
+	end_water_wildmons
+
+	def_water_wildmons ANCIENT_RUIN_PAST
+	db 2 percent ; encounter rate
+	db 55, BLASTOISE
+	db 55, MILOTIC
+	db 65, SLOWKING
+	end_water_wildmons
+
 	db -1 ; end

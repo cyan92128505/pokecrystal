@@ -32,13 +32,23 @@ YveltalScript:
 	end
 
 YveltalCry:
-    text "Everything dies."
+    text "Nothing is more"
+    line "valuable than"
+    cont "time."
 
-    para "Whether it"
-    line "takes decades"
-    cont "or moments."
+    para "You are young."
 
-    para "matters not."
+    para "You have a lot"
+    line "of time left.."
+
+    para "For a human."
+
+    para "I shall take"
+    line "every second"
+    cont "from you."
+
+    para "And add it to"
+    line "my own!"
     done
 
 AncientRuinPresent_MapEvents:

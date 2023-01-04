@@ -85,10 +85,15 @@ ArceusText:
 
     para "Let thine faith"
     line "guide thee."
+
+    para "Wield my power"
+    line "unmatched and"
+    cont "thou shalt do"
+    cont "my wonders."
     done
 
 CaughtArceusText:
-    text "Amen..."
+    text "Amen."
     done
 
 ArceusPokeBallScript:

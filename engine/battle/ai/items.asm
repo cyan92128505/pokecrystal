@@ -164,16 +164,20 @@ CheckSubstatusCantRun: ; unreferenced
 CheckSetUp:
 ; return carry if enemy mon has set up
 ; don't switch if enemy mon is already set up
+; also dont switch if enemy mon low on health
+	farcall AICheckEnemyQuarterHP
+	jr nc, .dontSwitch
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .setup
+	jr nc, .switch
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .setup
+	jr nc, .switch
+.dontSwitch
 ; not set up
     xor a
     ret
-.setup
+.switch
     scf
     ret
 

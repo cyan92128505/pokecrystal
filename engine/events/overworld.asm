@@ -1869,6 +1869,13 @@ PocketPCFunction:
     jr z, .nope
     cp CAVE
     jr z, .nope
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_ANCIENT_RUIN
+	jr z, .nope
 	jr .ok
 .ok
 	call GetPlayerStandingTile

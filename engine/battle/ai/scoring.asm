@@ -308,7 +308,6 @@ AI_Smart_Switch:
 	;and SLP
 	;jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
-.noPPCheck
 ; switch if choice locked into a NVE move
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]

@@ -890,11 +890,12 @@ PoliwhirlEvosAttacks:
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
+	db 1, HYPNOSIS
 	db 1, SUBMISSION
-	db 35, SUBMISSION
-	db 51, MIND_READER
+	db 30, SUBMISSION
+	db 35, WATERFALL
+	db 40, CLOSE_COMBAT
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
@@ -1337,6 +1338,7 @@ CloysterEvosAttacks:
 	db 1, AURORA_BEAM
 	db 1, PROTECT
 	db 33, SPIKES
+	db 36, CLAMP
 	db 41, SPIKE_CANNON
 	db 45, ICE_BEAM
 	db 50, HYDRO_PUMP
@@ -1831,12 +1833,13 @@ JynxEvosAttacks:
 	db 1, POWDER_SNOW
 	db 9, LOVELY_KISS
 	db 13, POWDER_SNOW
-	db 21, DOUBLESLAP
+	db 21, BODY_SLAM
 	db 25, ICE_PUNCH
-	db 35, MEAN_LOOK
-	db 41, BODY_SLAM
-	db 51, PERISH_SONG
-	db 57, BLIZZARD
+	db 30, MEAN_LOOK
+	db 33, PSYCHIC_M
+	db 40, ICE_BEAM
+	db 45, PERISH_SONG
+	db 50, BLIZZARD
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
@@ -1965,8 +1968,8 @@ VaporeonEvosAttacks:
 	db 16, WATER_GUN
 	db 20, BITE
 	db 24, BUBBLEBEAM
-	db 30, AURORA_BEAM
-	db 36, ACID_ARMOR
+	db 28, ACID_ARMOR
+	db 32, AURORA_BEAM
 	db 42, HAZE
 	db 46, HYDRO_PUMP
 	db 50, CALM_MIND
@@ -2524,9 +2527,10 @@ LanturnEvosAttacks:
 	db 5, SUPERSONIC
 	db 13, FLAIL
 	db 17, WATER_GUN
-	db 25, RAIN_DANCE
+	db 21, RAIN_DANCE
+	db 25, BUBBLEBEAM
 	db 29, CONFUSE_RAY
-	db 37, THUNDERBOLT
+	db 35, THUNDERBOLT
 	db 41, HYDRO_PUMP
 	db 45, THUNDER
 	db 0 ; no more level-up moves
@@ -2847,8 +2851,9 @@ WooperEvosAttacks:
 	db 1, TAIL_WHIP
 	db 11, SLAM
 	db 21, AMNESIA
-	db 31, EARTHQUAKE
-	db 36, RECOVER
+	db 25, BUBBLEBEAM
+	db 31, RECOVER
+	db 36, EARTHQUAKE
 	db 41, RAIN_DANCE
 	db 51, HAZE
 	db 0 ; no more level-up moves
@@ -2859,8 +2864,9 @@ QuagsireEvosAttacks:
 	db 1, TAIL_WHIP
 	db 11, SLAM
 	db 21, AMNESIA
-	db 31, EARTHQUAKE
-	db 36, RECOVER
+	db 25, BUBBLEBEAM
+	db 31, RECOVER
+	db 36, EARTHQUAKE
 	db 41, RAIN_DANCE
 	db 51, HAZE
 	db 0 ; no more level-up moves

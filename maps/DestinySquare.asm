@@ -6,10 +6,10 @@ DestinySquare_MapScripts:
 
 	def_callbacks
 
-MasterWillScript:
+MasterSabrinaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_WILL
+	checkevent EVENT_BEAT_MASTER_SABRINA
 	iftrue .FightDone
 .fight
 	writetext DefaultSeenTextDS
@@ -17,10 +17,10 @@ MasterWillScript:
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer WILL, MASTER_WILL
+	loadtrainer SABRINA, MASTER_SABRINA
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_WILL
+	setevent EVENT_BEAT_MASTER_SABRINA
 	;opentext
 	;writetext DefaultAfterBattleTextDS
 	;waitbutton
@@ -276,7 +276,7 @@ DestinySquare_MapEvents:
 	def_bg_events
 
 	def_object_events
-    object_event 8, 14, SPRITE_SABRINA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterWillScript, -1
+    object_event 8, 14, SPRITE_SABRINA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
 	object_event 3, 16, SPRITE_BRUNO, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrunoScript, -1
 	object_event 8, 10, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterKarenScript, -1
 	object_event 4, 12, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1

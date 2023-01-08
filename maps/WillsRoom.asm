@@ -50,7 +50,7 @@ WillScript_Battle:
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer WILL, WILL1
+	loadtrainer SABRINA, SABRINA1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_WILL

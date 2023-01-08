@@ -173,10 +173,10 @@ MasterJanineScript:
 	closetext
 	end
 
-MasterSabrinaScript:
+MasterWillScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_SABRINA
+	checkevent EVENT_BEAT_MASTER_WILL
 	iftrue .FightDone
 .fight
 	writetext DefaultSeenText
@@ -184,10 +184,10 @@ MasterSabrinaScript:
 	closetext
 	winlosstext DefaultBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer SABRINA, MASTER_SABRINA
+	loadtrainer WILL, MASTER_WILL
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_SABRINA
+	setevent EVENT_BEAT_MASTER_WILL
 	;opentext
 	;writetext DefaultAfterBattleText
 	;waitbutton

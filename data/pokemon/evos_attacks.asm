@@ -405,6 +405,7 @@ PikachuEvosAttacks:
 	db 26, THUNDERBOLT
 	db 33, AGILITY
 	db 41, THUNDER
+	db 45, EXTREMESPEED
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
@@ -417,7 +418,6 @@ RaichuEvosAttacks:
 	db 11, QUICK_ATTACK
 	db 20, SLAM
 	db 26, THUNDERBOLT
-	db 33, AGILITY
 	db 41, THUNDER
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
@@ -827,6 +827,7 @@ BreloomEvosAttacks:
 	db 12, MEGA_DRAIN
 	db 15, HEADBUTT
 	db 19, POISONPOWDER
+	db 23, ROCK_SMASH
 	db 26, GIGA_DRAIN
 	db 33, MACH_PUNCH
 	db 37, DRAIN_PUNCH
@@ -958,6 +959,7 @@ MachokeEvosAttacks:
 	db 8, FOCUS_ENERGY
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
+	db 28, STRENGTH
 	db 25, FORESIGHT
 	db 31, DRAIN_PUNCH
 	db 40, DYNAMICPUNCH
@@ -973,6 +975,7 @@ MachampEvosAttacks:
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
+	db 28, STRENGTH
 	db 31, DRAIN_PUNCH
 	db 40, DYNAMICPUNCH
 	db 45, BULK_UP
@@ -1715,8 +1718,9 @@ HorseaEvosAttacks:
 	db 29, DRAGON_PULSE
 	db 32, DRAGON_CLAW
 	db 38, WATERFALL
+	db 42, RAIN_DANCE
+	db 45, HYDRO_PUMP
 	db 50, DRAGON_DANCE
-	db 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
@@ -1732,8 +1736,10 @@ SeadraEvosAttacks:
 	db 29, DRAGON_PULSE
 	db 32, DRAGON_CLAW
 	db 38, WATERFALL
+	db 42, RAIN_DANCE
+	db 45, HYDRO_PUMP
 	db 50, DRAGON_DANCE
-	db 55, HYDRO_PUMP
+	db 55, OUTRAGE
 	db 0 ; no more level-up moves
 
 MagmortarEvosAttacks:
@@ -3320,8 +3326,10 @@ KingdraEvosAttacks:
 	db 29, DRAGON_PULSE
 	db 32, DRAGON_CLAW
 	db 38, WATERFALL
+	db 42, RAIN_DANCE
+	db 45, HYDRO_PUMP
 	db 50, DRAGON_DANCE
-	db 55, HYDRO_PUMP
+	db 55, OUTRAGE
 	db 0 ; no more level-up moves
 
 CottoneeEvosAttacks:

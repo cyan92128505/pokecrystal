@@ -74,7 +74,7 @@ MasterMistyScript:
 MasterSurgeScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_GREEN
+	checkevent EVENT_BEAT_MASTER_SURGE
 	iftrue .FightDone
 .fight
 	writetext DefaultSeenText

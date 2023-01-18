@@ -640,7 +640,7 @@ MasterGreenScript:
 	special HealParty
 	end
 .FightDone:
-	writetext MasterLanceAfterBattleText
+	writetext MasterGreenAfterBattleText
 	waitbutton
     closetext
 	opentext

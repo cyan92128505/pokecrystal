@@ -357,9 +357,11 @@ LopunnyEvosAttacks:
 	db 1, DEFENSE_CURL
 	db 12, QUICK_ATTACK
 	db 16, CHARM
+	db 18, ATTRACT
 	db 20, DOUBLE_KICK
 	db 24, AGILITY
 	db 28, BATON_PASS
+	db 30, ATTRACT
 	db 32, HEADBUTT
 	db 36, HI_JUMP_KICK
 	db 40, MEGA_KICK
@@ -732,9 +734,9 @@ DiglettEvosAttacks:
 	db 9, MAGNITUDE
 	db 17, DIG
 	db 25, SAND_ATTACK
-	db 33, SLASH
-	db 41, EARTHQUAKE
-	db 49, FISSURE
+	db 30, SLASH
+	db 40, EARTHQUAKE
+	db 55, FISSURE
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
@@ -747,9 +749,9 @@ DugtrioEvosAttacks:
 	db 9, MAGNITUDE
 	db 17, DIG
 	db 25, SAND_ATTACK
-	db 37, SLASH
-	db 49, EARTHQUAKE
-	db 61, FISSURE
+	db 30, SLASH
+	db 40, EARTHQUAKE
+	db 55, FISSURE
 	db 0 ; no more level-up moves
 
 MeowthEvosAttacks:
@@ -1967,6 +1969,7 @@ EeveeEvosAttacks:
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
 	db 16, GROWL
+	db 20, GROWTH
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, BATON_PASS

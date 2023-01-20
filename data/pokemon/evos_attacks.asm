@@ -205,7 +205,7 @@ ButterfreeEvosAttacks:
 HonedgeEvosAttacks:
 	db EVOLVE_LEVEL, 30, DOUBLADE
 	db 0 ; no more evolutions
-	db 1, CUT
+	db 1, SCRATCH
 	db 1, NIGHT_SHADE
 	db 12, METAL_CLAW
 	db 20, SLASH

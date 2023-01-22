@@ -426,31 +426,27 @@ RaichuEvosAttacks:
 	db 0 ; no more level-up moves
 
 SandshrewEvosAttacks:
-	db EVOLVE_LEVEL, 22, SANDSLASH
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 6, DEFENSE_CURL
-	db 11, SAND_ATTACK
-	db 17, POISON_STING
-	db 23, SLASH
-	db 30, SWIFT
-	db 37, FURY_SWIPES
-	db 45, SANDSTORM
+	db 1, THUNDERSHOCK
+	db 1, WATER_GUN
+	db 10, CONFUSE_RAY
+	db 15, THUNDER_WAVE
+	db 25, PAIN_SPLIT
+	db 30, SHADOW_BALL
+	db 35, THUNDERBOLT
+	db 40, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SandslashEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
 	db 1, DEFENSE_CURL
-	db 1, SAND_ATTACK
-	db 6, DEFENSE_CURL
-	db 11, SAND_ATTACK
-	db 17, POISON_STING
-	db 24, SLASH
-	db 30, POISON_JAB
-	db 33, SWIFT
-	db 42, FURY_SWIPES
-	db 52, SANDSTORM
+	db 1, MEGA_DRAIN
+	db 10, LICK
+	db 30, SHADOW_BALL
+	db 35, GIGA_DRAIN
+	db 45, NASTY_PLOT
+	db 60, SHELL_SMASH
+	db 70, BATON_PASS
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:
@@ -641,34 +637,47 @@ GolbatEvosAttacks:
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
-	db EVOLVE_LEVEL, 21, GLOOM
+	db EVOLVE_LEVEL, 30, GLOOM
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 14, POISONPOWDER
-	db 16, STUN_SPORE
-	db 18, SLEEP_POWDER
-	db 23, ACID
-	db 32, MOONLIGHT
-	db 39, PETAL_DANCE
+	db 1, SCRATCH
+	db 1, LEER
+	db 10, METAL_CLAW
+	db 15, PURSUIT
+	db 20, SCARY_FACE
+	db 30, SLASH
+	db 35, ACID_ARMOR
+	db 40, NIGHT_SLASH
+	db 45, IRON_HEAD
+	db 50, SWORDS_DANCE
+	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
 
 GloomEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, VILEPLUME
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 14, POISONPOWDER
-	db 16, STUN_SPORE
-	db 18, SLEEP_POWDER
-	db 24, ACID
-	db 35, MOONLIGHT
-	db 44, PETAL_DANCE
+	db 1, SCRATCH
+	db 1, LEER
+	db 10, METAL_CLAW
+	db 15, PURSUIT
+	db 20, SCARY_FACE
+	db 30, SLASH
+	db 35, ACID_ARMOR
+	db 40, NIGHT_SLASH
+	db 45, IRON_HEAD
+	db 50, SWORDS_DANCE
+	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
 
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 1, STUN_SPORE
-	db 1, PETAL_DANCE
+	db 1, POUND
+	db 1, CONFUSE_RAY
+	db 18, STOMP
+	db 24, PROTECT
+	db 30, BODY_SLAM
+	db 40, ZEN_HEADBUTT
+	db 50, SHADOW_CLAW
+	db 60, DYNAMICPUNCH
+	db 70, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 ParasEvosAttacks:
@@ -727,31 +736,33 @@ VolcaronaEvosAttacks:
 	db 0 ; no more level-up moves
 
 DiglettEvosAttacks:
-	db EVOLVE_LEVEL, 26, DUGTRIO
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 5, GROWL
-	db 9, MAGNITUDE
-	db 17, DIG
-	db 25, SAND_ATTACK
-	db 30, SLASH
-	db 40, EARTHQUAKE
-	db 55, FISSURE
+	db 1, POWDER_SNOW
+	db 1, THUNDERSHOCK
+	db 12, BITE
+	db 21, ANCIENTPOWER
+	db 28, THUNDERPUNCH
+	db 30, ICE_PUNCH
+	db 35, BODY_SLAM
+	db 40, THUNDERBOLT
+	db 42, ICE_BEAM
+	db 45, AVALANCHE
+	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TRI_ATTACK
-	db 1, SCRATCH
-	db 1, GROWL
-	db 1, MAGNITUDE
-	db 5, GROWL
-	db 9, MAGNITUDE
-	db 17, DIG
-	db 25, SAND_ATTACK
-	db 30, SLASH
-	db 40, EARTHQUAKE
-	db 55, FISSURE
+	db 1, POWDER_SNOW
+	db 1, WATER_GUN
+	db 12, BITE
+	db 21, ANCIENTPOWER
+	db 28, BUBBLEBEAM
+	db 30, ICY_WIND
+	db 35, CRUNCH
+	db 40, SURF
+	db 42, ICE_BEAM
+	db 45, AVALANCHE
+	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 MeowthEvosAttacks:

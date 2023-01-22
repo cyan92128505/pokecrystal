@@ -2004,8 +2004,6 @@ BattleCommand_CheckHit:
     call z, IncrementC
     cp GLISCOR
     call z, IncrementC
-    cp DUGTRIO
-    call z, IncrementC
 .doneEnemySandVeil
 
 	ldh a, [hBattleTurn]
@@ -2027,8 +2025,6 @@ BattleCommand_CheckHit:
     cp GARCHOMP
     call z, IncrementC
     cp GLISCOR
-    call z, IncrementC
-    cp DUGTRIO
     call z, IncrementC
 .donePlayerSandVeil
 

@@ -2677,8 +2677,6 @@ AI_Smart_Sandstorm:
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
     jr z, .encourage
-    cp SANDSLASH
-    jr z, .encourage
 ; Greatly discourage this move if the player is immune to Sandstorm damage.
 	ld a, [wBattleMonType1]
 	push hl
@@ -2907,6 +2905,7 @@ AI_Smart_BatonPass:
 	jr nc, .notlastmon
 	inc [hl]
 	inc [hl]
+	ret
 
 .notlastmon
 ; encourage if we have good stat boosts to pass

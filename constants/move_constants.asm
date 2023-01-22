@@ -32,7 +32,7 @@
 	const DOUBLE_KICK  ; 18
 	const MEGA_KICK    ; 19
 	const MOON_BLAST   ; 1a
-	const ROLLING_KICK ; 1b
+	const ROLLING_KICK ; 1b  replace
 	const SAND_ATTACK  ; 1c
 	const HEADBUTT     ; 1d
 	const HORN_ATTACK  ; 1e
@@ -111,7 +111,7 @@
 	const SCREECH      ; 67
 	const DOUBLE_TEAM  ; 68   AndrewNote - this is not used
 	const RECOVER      ; 69
-	const HARDEN       ; 6a
+	const HARDEN       ; 6a   replace, use defense curl instead
 	const DARK_VOID    ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
@@ -174,7 +174,7 @@
 	const SKETCH       ; a6
 	const QUIVER_DANCE ; a7
 	const BUG_BUZZ     ; a8
-	const SPIDER_WEB   ; a9
+	const SPIDER_WEB   ; a9   replace
 	const MIND_READER  ; aa
 	const NIGHTMARE    ; ab
 	const FLAME_WHEEL  ; ac
@@ -191,7 +191,7 @@
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
 	const NIGHT_SLASH  ; b9
-	const SWEET_KISS   ; ba
+	const SWEET_KISS   ; ba   this is not used
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const AVALANCHE    ; bd
@@ -223,7 +223,7 @@
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
 	const AIR_SLASH    ; d9
-	const FRUSTRATION  ; da
+	const FRUSTRATION  ; da   make this an enemy ai return
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
 	const SACRED_FIRE  ; dd

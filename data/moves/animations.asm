@@ -1531,7 +1531,6 @@ BattleAnim_Cut:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_NightSlash:
 BattleAnim_Slash:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
@@ -2506,6 +2505,7 @@ BattleAnim_DrillPeck:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_NightSlash:
 BattleAnim_ShadowClaw:
 BattleAnim_PsychoSlash:
 BattleAnim_Guillotine:
@@ -3529,6 +3529,7 @@ BattleAnim_MudSlap:
 	anim_call BattleAnimSub_SandOrMud
 	anim_ret
 
+BattleAnim_AuraSphere:
 BattleAnim_FlashCannon:
 BattleAnim_Octazooka:
 	anim_3gfx ANIM_GFX_HAZE, ANIM_GFX_EGG, ANIM_GFX_SMOKE
@@ -4548,7 +4549,6 @@ BattleAnim_Ancientpower:
 	anim_wait 6
 	anim_ret
 
-BattleAnim_AuraSphere:
 BattleAnim_ShadowBall:
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE
 	anim_bgp $1b

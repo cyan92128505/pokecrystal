@@ -1,21 +1,21 @@
 	db SANDSHREW ; 027
 
-	db  50,  75,  85,  40,  20,  30
+	db  50,  65, 107,  86, 105, 107
 	;   hp  atk  def  spd  sat  sdf
 
-	db GROUND, GROUND ; type
-	db 255 ; catch rate
-	db 93 ; base exp
+	db ELECTRIC, GHOST ; type
+	db 45 ; catch rate
+	db 154 ; base exp
 	db NO_ITEM, NO_ITEM ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/sandshrew/front.dimensions"
+	INCBIN "gfx/pokemon/dragonite/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_GROUND, EGG_GROUND ; egg groups
+	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
-	tmhm DRAIN_PUNCH, HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, PROTECT, ENDURE, FRUSTRATION, IRON_HEAD, EARTHQUAKE, EARTH_POWER, ROCK_SLIDE, RETURN, DIG, SLEEP_TALK, SANDSTORM, SWIFT, REST, ROCK_SLIDE, X_SCISSOR, CUT, STRENGTH, SWORDS_DANCE
+	tmhm HEADBUTT, CURSE, TOXIC, ZAP_CANNON, HIDDEN_POWER, SUNNY_DAY, PROTECT, RAIN_DANCE, ENDURE, FRUSTRATION, THUNDER, RETURN, PSYCHIC_M, CALM_MIND, SHADOW_BALL, DARK_PULSE, SLEEP_TALK, SWIFT, REST, FLASH, THUNDERBOLT, NASTY_PLOT, SURF, THUNDER_WAVE
 	; end

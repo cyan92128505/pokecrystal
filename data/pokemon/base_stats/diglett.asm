@@ -1,21 +1,21 @@
 	db DIGLETT ; 050
 
-	db  10,  55,  25,  95,  35,  45
+	db  90, 100,  90,  55,  90,  80
 	;   hp  atk  def  spd  sat  sdf
 
-	db GROUND, GROUND ; type
-	db 255 ; catch rate
-	db 81 ; base exp
+	db ELECTRIC, ICE ; type
+	db 45 ; catch rate
+	db 177 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/diglett/front.dimensions"
+	INCBIN "gfx/pokemon/DRAGONITE/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_GROUND, EGG_GROUND ; egg groups
+	db GROWTH_SLOW ; growth rate
+	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
 
 	; tm/hm learnset
-	tmhm CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, PROTECT, ENDURE, FRUSTRATION, EARTHQUAKE, EARTH_POWER, ROCK_SLIDE, RETURN, DIG, SLEEP_TALK, SLUDGE_BOMB, REST, ROCK_SLIDE, CUT
+	tmhm CURSE, TOXIC, ZAP_CANNON, HIDDEN_POWER, HYPER_BEAM, PROTECT, ENDURE, FRUSTRATION, THUNDER, RETURN, SLEEP_TALK, REST, FLASH, THUNDERBOLT, THUNDER_WAVE, ICE_BEAM, BLIZZARD, THUNDERPUNCH, ICE_PUNCH
 	; end

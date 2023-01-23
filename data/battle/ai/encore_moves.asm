@@ -21,9 +21,7 @@ EncoreMoves:
 	db SPLASH
 	db SUPER_FANG
 	db SUBSTITUTE
-	db SPIDER_WEB
 	db MIND_READER
 	db FLAME_WHEEL
-	db AEROBLAST
 	db POWDER_SNOW
 	db -1 ; end

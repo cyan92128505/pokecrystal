@@ -170,7 +170,7 @@ BattleAnimations::
 	dw BattleAnim_Sketch
 	dw BattleAnim_QuiverDance
 	dw BattleAnim_BugBuzz
-	dw BattleAnim_SpiderWeb
+	dw BattleAnim_SavageRend
 	dw BattleAnim_MindReader
 	dw BattleAnim_Nightmare
 	dw BattleAnim_FlameWheel
@@ -187,7 +187,7 @@ BattleAnimations::
 	dw BattleAnim_MachPunch
 	dw BattleAnim_ScaryFace
 	dw BattleAnim_NightSlash
-	dw BattleAnim_SweetKiss
+	dw BattleAnim_BoltBreak
 	dw BattleAnim_BellyDrum
 	dw BattleAnim_SludgeBomb
 	dw BattleAnim_Avalanche
@@ -219,7 +219,7 @@ BattleAnimations::
 	dw BattleAnim_HealBell
 	dw BattleAnim_Return
 	dw BattleAnim_AirSlash
-	dw BattleAnim_Frustration
+	dw BattleAnim_AiReturn
 	dw BattleAnim_Safeguard
 	dw BattleAnim_PainSplit
 	dw BattleAnim_SacredFire
@@ -1816,6 +1816,7 @@ BattleAnim_Earthquake:
 	anim_loop 4, .loop
 	anim_ret
 
+BattleAnim_SavageRend:
 BattleAnim_Fissure:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $0
@@ -2256,6 +2257,7 @@ BattleAnim_FuryAttack:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_BoltBreak:
 BattleAnim_HornDrill:
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
@@ -3968,6 +3970,7 @@ BattleAnim_HealBell:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_AiReturn:
 BattleAnim_Return:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row

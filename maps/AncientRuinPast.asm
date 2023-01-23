@@ -1,5 +1,6 @@
     object_const_def
     const ANCIENTRUINPAST_XERNEAS
+    const ANCIENTRUINPAST_REGIGIGAS
 
 AncientRuinPast_MapScripts:
 	def_scene_scripts
@@ -54,6 +55,35 @@ XerneasCry:
     line "such power."
     done
 
+RegigigasScript:
+	opentext
+	writetext RegigigasCry
+	waitbutton
+	cry VILEPLUME
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon VILEPLUME, 70
+	startbattle
+	reloadmapafterbattle
+    setval VILEPLUME
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_REGIGIGAS
+	disappear ANCIENTRUINPAST_REGIGIGAS
+	pause 15
+	special FadeInQuickly
+	pause 30
+	special HealParty
+	refreshscreen
+	end
+
+RegigigasCry:
+    text "REGI!!!"
+    done
+
 AncientRuinPast_MapEvents:
 	db 0, 0 ; filler
 
@@ -68,3 +98,5 @@ AncientRuinPast_MapEvents:
 
 	def_object_events
 	object_event 19, 9, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, XerneasScript, EVENT_CAUGHT_XERNEAS
+	object_event 19, 14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, RegigigasScript, EVENT_CAUGHT_REGIGIGAS
+

@@ -1501,7 +1501,8 @@
 	const EVENT_BEAT_MASTER_KAREN
 	const EVENT_BEAT_MASTER_RIVAL
 	const EVENT_BEAT_MASTER_KOGA
+	const EVENT_CAUGHT_REGIGIGAS
 
-    ; 7 left
+    ; 6 left
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

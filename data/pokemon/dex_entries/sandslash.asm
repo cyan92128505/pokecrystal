@@ -1,10 +1,10 @@
-	db "MOUSE@" ; species name
-	dw 303, 650 ; height, weight
+	db "TEA@" ; species name
+	dw 008, 10 ; height, weight
 
-	db   "Adept at climbing"
-	next "trees, it rolls"
-	next "into a spiny ball."
+	db   "A ghost that"
+	next "lives inside"
+	next "teapots."
 
-	page "AB SPEED"
-	next "increases in"
-	next "a sandstorm.@"
+	page "It prefers"
+	next "authentic"
+	next "antique pots.@"

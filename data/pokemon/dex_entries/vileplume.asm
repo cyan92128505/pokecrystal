@@ -1,10 +1,10 @@
-	db "FLOWER@" ; species name
-	dw 311, 410 ; height, weight
+	db "COLOSSAL@" ; species name
+	dw 2506, 50000 ; height, weight
 
-	db   "By shaking its big"
-	next "petals, it scat-"
-	next "ters toxic pollen"
+	db   "Strong enough to"
+	next "pull entire land"
+	next "masses."
 
-	page "into the air,"
-	next "turning the air"
-	next "yellow.@"
+	page "This ancient"
+	next "being is at"
+	next "full power.@"

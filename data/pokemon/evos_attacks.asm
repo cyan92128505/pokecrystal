@@ -747,7 +747,7 @@ DiglettEvosAttacks:
 	db 40, THUNDERBOLT
 	db 42, ICE_BEAM
 	db 45, AVALANCHE
-	db 50, VOLT_TACKLE
+	db 50, BOLT_BREAK
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
@@ -762,7 +762,7 @@ DugtrioEvosAttacks:
 	db 40, SURF
 	db 42, ICE_BEAM
 	db 45, AVALANCHE
-	db 50, HYDRO_PUMP
+	db 50, SAVAGE_REND
 	db 0 ; no more level-up moves
 
 MeowthEvosAttacks:
@@ -1439,7 +1439,7 @@ DrowzeeEvosAttacks:
 	db 31, ZEN_HEADBUTT
 	db 36, MEDITATE
 	db 40, PSYCHIC_M
-	db 45, FUTURE_SIGHT
+	db 45, DREAM_EATER
 	db 0 ; no more level-up moves
 
 HypnoEvosAttacks:
@@ -1455,7 +1455,7 @@ HypnoEvosAttacks:
 	db 33, ZEN_HEADBUTT
 	db 36, MEDITATE
 	db 40, PSYCHIC_M
-	db 45, FUTURE_SIGHT
+	db 45, DREAM_EATER
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
@@ -2652,7 +2652,7 @@ SigilyphEvosAttacks:
 	db 1, NIGHT_SHADE
 	db 10, HYPNOSIS
 	db 20, PSYBEAM
-	db 25, WHIRLWIND
+	db 25, DREAM_EATER
 	db 30, AIR_SLASH
 	db 35, PSYCHIC_M
 	db 40, RECOVER

@@ -117,7 +117,7 @@ BurnedTowerB1FEusine:
 	end
 
 BurnedTowerB1FTMEndure:
-	itemball TM_ENDURE
+	itemball MAX_REVIVE
 
 BurnedTowerB1FBoulder:
 	jumpstd StrengthBoulderScript

@@ -4314,7 +4314,7 @@ BattleTowerMons:
 
     db SNORLAX
 	db LEFTOVERS
-	db DOUBLE_EDGE, CURSE, REST, CRUNCH
+	db AI_RETURN, CURSE, REST, CRUNCH
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4728,9 +4728,9 @@ BattleTowerMons:
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
-	db KLEFKI
+	db VILEPLUME
 	db LEFTOVERS
-	db THUNDER_WAVE, CONFUSE_RAY, FLASH, IRON_HEAD
+	db AI_RETURN, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4740,18 +4740,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 30, 30, 16, 24 ; PP
+	db 32, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 317 ; HP
-	bigdw 317 ; Max HP
-	bigdw 258 ; Atk
-	bigdw 280 ; Def
-	bigdw 248 ; Spd
+	bigdw 423 ; HP
+	bigdw 423 ; Max HP
+	bigdw 418 ; Atk
+	bigdw 318 ; Def
+	bigdw 298 ; Spd
 	bigdw 258 ; SAtk
-	bigdw 272 ; SDef
+	bigdw 318 ; SDef
 	db "RANTA-N@@@@"
 
 ; ============ Final Trainer End ==============
@@ -5901,7 +5901,7 @@ BattleTowerMons:
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
-	db KLEFKI
+	db KLEFKI   ; AndrewNote - this is a duplicate
 	db LEFTOVERS
 	db THUNDER_WAVE, CONFUSE_RAY, FLASH, IRON_HEAD
 	dw 0 ; OT ID

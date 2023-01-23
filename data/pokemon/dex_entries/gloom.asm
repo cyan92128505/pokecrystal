@@ -1,10 +1,9 @@
-	db "WEED@" ; species name
-	dw 207, 190 ; height, weight
+	db "SWORD BLADE@" ; species name
+	dw 503, 2543 ; height, weight
 
-	db   "The smell from its"
-	next "drool-like syrup"
-	next "and the pollen on"
+	db   "Leader of the"
+	next "PAWNIARD, it is"
+	next "truly merciless."
 
-	page "its petals is so"
-	next "bad, it may make"
-	next "opponents faint.@"
+	page "AB Immune to"
+	next "flinching.@"

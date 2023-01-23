@@ -1,10 +1,9 @@
-	db "MOLE@" ; species name
-	dw 8, 20 ; height, weight
+	db "FOSSIL@" ; species name
+	dw 707, 4307 ; height, weight
 
-	db   "It digs under-"
-	next "ground and chews"
-	next "on tree roots,"
+	db   "A prehistoric"
+	next "predator that"
+	next "can utilise a"
 
-	page "sticking its head"
-	next "out only when the"
-	next "sun isn't bright.@"
+	page "lethal special"
+	next "technique.@"

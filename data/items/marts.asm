@@ -285,12 +285,14 @@ MartCeladon2F2:
 	db -1 ; end
 
 MartCeladon3F:
-	db 5 ; # items
+	db 7 ; # items
+	db TM_SUNNY_DAY
+	db TM_RAIN_DANCE
+	db TM_SANDSTORM
     db TM_SELFDESTRUCT
-	db TM_PROTECT
-	db TM_THUNDERPUNCH
-    db TM_FIRE_PUNCH
-    db TM_ICE_PUNCH
+	db TM_EXPLOSION
+	db TM_RETURN
+    db TM_HYPER_BEAM
 	db -1 ; end
 
 MartCeladon4F:

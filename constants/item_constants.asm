@@ -237,8 +237,8 @@ TM01 EQU const_value
 	add_tm PROTECT      ; d0
 	add_tm RAIN_DANCE   ; d1
 	add_tm GIGA_DRAIN   ; d2
-	add_tm ENDURE       ; d3  energy ball
-	add_tm FRUSTRATION  ; d4
+	add_tm HORN_DRILL   ; d3  energy ball
+	add_tm FISSURE      ; d4
 	add_tm SOLARBEAM    ; d5
 	add_tm IRON_HEAD    ; d6
 	add_tm DRAGON_PULSE ; d7
@@ -260,7 +260,7 @@ TM01 EQU const_value
 	add_tm SWIFT        ; e7
 	add_tm DOUBLE_EDGE  ; e8
 	add_tm THUNDERPUNCH ; e9
-	add_tm DREAM_EATER  ; ea
+	add_tm SUBSTITUTE   ; ea
 	add_tm ICE_BEAM     ; eb
 	add_tm REST         ; ec
 	add_tm AIR_SLASH    ; ed

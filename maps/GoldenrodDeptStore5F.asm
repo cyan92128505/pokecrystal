@@ -62,11 +62,11 @@ GoldenrodDeptStore5FReceptionistScript:
 .NotVeryHappy:
 	writetext GoldenrodDeptStore5FReceptionistItLooksEvilHowAboutThisTMText
 	promptbutton
-	checkitem TM_FRUSTRATION
-    iftrue .AlreadyGotTM
-	verbosegiveitem TM_FRUSTRATION
-	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
-	closetext
+	;checkitem TM_FRUSTRATION
+    ;iftrue .AlreadyGotTM
+	;verbosegiveitem TM_FRUSTRATION
+	;setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
+	;closetext
 	end
 
 .AlreadyGotTM:
@@ -141,9 +141,7 @@ GoldenrodDeptStore5FReceptionistItsAdorableText:
 	done
 
 GoldenrodDeptStore5FReceptionistItLooksEvilHowAboutThisTMText:
-	text "It looks evil. How"
-	line "about this TM for"
-	cont "it?"
+	text "It looks evil."
 	done
 
 GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText:

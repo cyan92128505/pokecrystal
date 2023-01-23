@@ -1,10 +1,8 @@
-	db "WEED@" ; species name
-	dw 108, 120 ; height, weight
+	db "SHARP BLADE@" ; species name
+	dw 108, 225 ; height, weight
 
-	db   "During the day, it"
-	next "stays in the cold"
-	next "underground to"
+	db   "Blades comprise"
+	next "its entire body."
 
-	page "avoid the sun."
-	next "It grows by bath-"
-	next "ing in moonlight.@"
+	page "AB Immune to"
+	next "flinching.@"

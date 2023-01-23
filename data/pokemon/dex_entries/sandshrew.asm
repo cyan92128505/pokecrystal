@@ -1,10 +1,10 @@
-	db "MOUSE@" ; species name
-	dw 200, 260 ; height, weight
+	db "PLASMA@" ; species name
+	dw 300, 1500 ; height, weight
 
-	db   "It prefers dry,"
-	next "sandy places"
-	next "because it uses"
+	db   "A ghost that"
+	next "can possess"
+	next "machines."
 
-	page "the sand to"
-	next "protect itself"
-	next "when threatened.@"
+	page "AB Immune to"
+	next "GROUND type"
+	next "moves.@"

@@ -169,7 +169,7 @@ MoveDescriptions::
 	dw SketchDescription
 	dw QuiverDanceDescription
 	dw BugBuzzDescription
-	dw SpiderWebDescription
+	dw SavageRendDescription
 	dw MindReaderDescription
 	dw NightmareDescription
 	dw FlameWheelDescription
@@ -186,7 +186,7 @@ MoveDescriptions::
 	dw MachPunchDescription
 	dw ScaryFaceDescription
 	dw NightSlashDescription
-	dw SweetKissDescription
+	dw BoltBreakDescription
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw AvalancheDescription
@@ -218,7 +218,7 @@ MoveDescriptions::
 	dw HealBellDescription
 	dw ReturnDescription
 	dw AirSlashDescription
-	dw FrustrationDescription
+	dw AiReturnDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
 	dw SacredFireDescription
@@ -941,9 +941,9 @@ BugBuzzDescription:
 	db   "An attack that may"
 	next "lower special def.@"
 
-SpiderWebDescription:
-	db   "Prevents fleeing"
-	next "or switching.@"
+SavageRendDescription:
+	db   "Jaws of death"
+	next "sunder the foe.@"
 
 MindReaderDescription:
 	db   "Ensures the next"
@@ -1009,9 +1009,9 @@ NightSlashDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
-SweetKissDescription:
-	db   "A move that causes"
-	next "confusion.@"
+BoltBreakDescription:
+	db   "A bolt of death"
+	next "impales the foe.@"
 
 BellyDrumDescription:
 	db   "Reduces own HP to"
@@ -1137,9 +1137,9 @@ AirSlashDescription:
 	db   "A lethal slash"
 	next "that can flinch.@"
 
-FrustrationDescription:
-	db   "An attack based on"
-	next "lack of loyalty.@"
+AiReturnDescription:
+	db   "Max power RETURN"
+	next "used by AI.@"
 
 SafeguardDescription:
 	db   "Prevents all"

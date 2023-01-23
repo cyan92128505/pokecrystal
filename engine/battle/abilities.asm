@@ -84,6 +84,7 @@ LevitatePokemon:
     db LATIAS
     db LATIOS
     db UNOWN
+    db SANDSHREW
     db -1
 
 InnerFocusPokemon:
@@ -93,6 +94,7 @@ InnerFocusPokemon:
     db CROBAT
     db UMBREON
     db ARCEUS
+    db GLOOM
     db -1
 
 UberImmunePokemon:
@@ -108,4 +110,5 @@ UberImmunePokemon:
     db RAYQUAZA
     db LUGIA
     db HO_OH
+    db VILEPLUME
     db -1

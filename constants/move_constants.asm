@@ -174,7 +174,7 @@
 	const SKETCH       ; a6
 	const QUIVER_DANCE ; a7
 	const BUG_BUZZ     ; a8
-	const SPIDER_WEB   ; a9   replace
+	const SAVAGE_REND  ; a9
 	const MIND_READER  ; aa
 	const NIGHTMARE    ; ab
 	const FLAME_WHEEL  ; ac
@@ -191,7 +191,7 @@
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
 	const NIGHT_SLASH  ; b9
-	const SWEET_KISS   ; ba   this is not used
+	const BOLT_BREAK   ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const AVALANCHE    ; bd
@@ -223,7 +223,7 @@
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
 	const AIR_SLASH    ; d9
-	const FRUSTRATION  ; da   make this an enemy ai return
+	const AI_RETURN    ; da
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
 	const SACRED_FIRE  ; dd

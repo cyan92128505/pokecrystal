@@ -1,10 +1,9 @@
-	db "MOLE@" ; species name
-	dw 204, 730 ; height, weight
+	db "FOSSIL@" ; species name
+	dw 607, 4807 ; height, weight
 
-	db   "These DIGLETT"
-	next "triplets dig over"
-	next "60 miles a day."
+	db   "A prehistoric"
+	next "predator that"
+	next "can utilise a"
 
-	page "AB Becomes more"
-	next "evasive when in"
-	next "a sandstorm.@"
+	page "lethal special"
+	next "technique.@"

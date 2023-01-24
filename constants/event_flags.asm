@@ -1502,7 +1502,9 @@
 	const EVENT_BEAT_MASTER_RIVAL
 	const EVENT_BEAT_MASTER_KOGA
 	const EVENT_CAUGHT_REGIGIGAS
+	const EVENT_BEAT_MASTER_GIOVANNI
+	const EVENT_BEAT_HENSHIN
 
-    ; 6 left
+    ; 4 left
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

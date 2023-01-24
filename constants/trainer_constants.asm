@@ -326,8 +326,9 @@ KRIS EQU __trainer_class__
 	const GRUNTM_27 ; unused
 	const GRUNTM_28
 	const GRUNTM_29
-	const GRUNTM_30 ; unused
+	const GRUNTM_30
 	const GRUNTM_31
+	const MASTER_GIOVANNI
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON
@@ -643,6 +644,7 @@ KRIS EQU __trainer_class__
 	const GAKU
 	const MASA
 	const KOJI
+	const HENSHIN
 
 	trainerclass MEDIUM ; 39
 	const MARTHA

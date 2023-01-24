@@ -513,6 +513,40 @@ MasterClairScript:
 	closetext
 	end
 
+MasterGiovanniScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_GIOVANNI
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenText
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer GRUNTM, MASTER_GIOVANNI
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_GIOVANNI
+	;opentext
+	;writetext DefaultAfterBattleText
+	;waitbutton
+	;closetext
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyPark
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyPark
+	waitbutton
+	closetext
+	end
+
 DefaultSeenText:
     text "Let's fight!"
     done
@@ -563,6 +597,5 @@ DestinyPark_MapEvents:
 	object_event 11, 22, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterChuckScript, -1
 	object_event 13, 26, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJasmineScript, -1
 	object_event 2, 15, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterPryceScript, -1
-	object_event 6, 12, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
-
-
+	object_event 5, 14, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
+	object_event 6, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterGiovanniScript, -1

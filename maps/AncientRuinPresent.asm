@@ -51,6 +51,67 @@ YveltalCry:
     line "my own!"
     done
 
+HenshinScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_HENSHIN
+	iftrue .FightDone
+.fight
+	writetext HenshinSeenText
+	waitbutton
+	closetext
+	winlosstext HenshinBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer SAGE, HENSHIN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_HENSHIN
+	;opentext
+	;writetext HenshinBeatenText
+	;waitbutton
+	;closetext
+	special HealParty
+	end
+.FightDone:
+	writetext HenshinAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHenshin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHenshin
+	waitbutton
+	closetext
+	end
+
+HenshinSeenText:
+    text "Foolish child!"
+
+    para "The power of"
+    line "death shall"
+    cont "belong to"
+    cont "HENSHIN!"
+    done
+
+HenshinBeatenText:
+    text "NOOOOOOO!"
+    done
+
+HenshinAfterBattleText:
+    text "It can not"
+    line "be!!"
+    done
+
+RematchTextHenshin:
+    text "One more"
+    line "duel?"
+    done
+
+RematchRefuseTextHenshin:
+    text "I insist!"
+    done
+
 AncientRuinPresent_MapEvents:
 	db 0, 0 ; filler
 
@@ -65,3 +126,4 @@ AncientRuinPresent_MapEvents:
 
 	def_object_events
 	object_event 19, 9, SPRITE_HO_OH, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, YveltalScript, EVENT_CAUGHT_YVELTAL
+	object_event 21, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, HenshinScript, -1

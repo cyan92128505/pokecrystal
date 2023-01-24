@@ -606,7 +606,7 @@ BattleTowerMons:
 	bigdw 86 ; SDef
 	db "RU-ZIyuRA@@"
 
-	db DUGTRIO
+	db ARCTOVISH
 	db KINGS_ROCK
 	db EARTHQUAKE, SLUDGE_BOMB, SLASH, SAND_ATTACK
 	dw 0 ; OT ID
@@ -1258,7 +1258,7 @@ BattleTowerMons:
 	bigdw 102 ; SDef
 	db "HAtuSAMU@@@"
 
-	db DUGTRIO
+	db ARCTOVISH
 	db KINGS_ROCK
 	db EARTHQUAKE, HYPER_BEAM, SLUDGE_BOMB, SAND_ATTACK
 	dw 0 ; OT ID
@@ -1754,7 +1754,7 @@ BattleTowerMons:
 	bigdw 130 ; SDef
 	db "SUTA-MI-@@@"
 
-	db DUGTRIO
+	db ARCTOVISH
 	db KINGS_ROCK
 	db EARTHQUAKE, SLASH, HYPER_BEAM, SLUDGE_BOMB
 	dw 0 ; OT ID
@@ -2458,7 +2458,7 @@ BattleTowerMons:
 	bigdw 104 ; SDef
 	db "SAIDON@@@@@"
 
-	db SANDSLASH
+	db POLTEGEIST
 	db SCOPE_LENS
 	db EARTHQUAKE, SLASH, HYPER_BEAM, ROCK_SLIDE
 	dw 0 ; OT ID
@@ -3424,7 +3424,7 @@ BattleTowerMons:
 	bigdw 201 ; SDef
 	db "MARUMAIN@@@"
 
-	db DUGTRIO
+	db ARCTOVISH
 	db SCOPE_LENS
 	db SLASH, EARTHQUAKE, SHADOW_BALL, SAND_ATTACK
 	dw 0 ; OT ID
@@ -4728,7 +4728,7 @@ BattleTowerMons:
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
-	db VILEPLUME
+	db REGIGIGAS
 	db LEFTOVERS
 	db AI_RETURN, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
 	dw 0 ; OT ID

@@ -59,14 +59,14 @@ RegigigasScript:
 	opentext
 	writetext RegigigasCry
 	waitbutton
-	cry VILEPLUME
+	cry REGIGIGAS
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon VILEPLUME, 70
+	loadwildmon REGIGIGAS, 70
 	startbattle
 	reloadmapafterbattle
-    setval VILEPLUME
+    setval REGIGIGAS
 	special MonCheck
 	iftrue .caught
 	end

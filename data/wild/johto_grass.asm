@@ -90,24 +90,24 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 62, BELLSPROUT
 	; day
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 52, AEGISLASH
 	; nite
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
@@ -118,24 +118,24 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 62, BELLSPROUT
 	; day
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 52, AEGISLASH
 	; nite
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
@@ -146,24 +146,24 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 62, BELLSPROUT
 	; day
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 52, AEGISLASH
 	; nite
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
@@ -174,24 +174,24 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 62, BELLSPROUT
 	; day
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 52, AEGISLASH
 	; nite
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
@@ -202,24 +202,24 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 62, BELLSPROUT
 	; day
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 52, AEGISLASH
 	; nite
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
@@ -230,24 +230,24 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 62, BELLSPROUT
 	; day
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
 	db 52, AEGISLASH
 	; nite
 	db 30, PERSIAN
-	db 33, SANDSHREW
-	db 33, SANDSLASH
+	db 33, ROTOM
+	db 33, POLTEGEIST
 	db 37, LAMPENT
 	db 41, MISMAGIUS
 	db 41, DOUBLADE
@@ -257,24 +257,24 @@ JohtoGrassWildMons:
 	def_grass_wildmons TIN_TOWER_8F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 42, SANDSHREW
-	db 42, SANDSLASH
+	db 42, ROTOM
+	db 42, POLTEGEIST
 	db 43, GENGAR
 	db 45, CHANDELURE
 	db 46, MISMAGIUS
 	db 52, AEGISLASH
 	db 80, BELLSPROUT
 	; day
-	db 42, SANDSHREW
-	db 42, SANDSLASH
+	db 42, ROTOM
+	db 42, POLTEGEIST
 	db 43, GENGAR
 	db 45, CHANDELURE
 	db 46, MISMAGIUS
 	db 52, AEGISLASH
 	db 80, BELLSPROUT
 	; nite
-	db 42, SANDSHREW
-	db 42, SANDSLASH
+	db 42, ROTOM
+	db 42, POLTEGEIST
 	db 43, GENGAR
 	db 45, CHANDELURE
 	db 46, MISMAGIUS
@@ -285,24 +285,24 @@ JohtoGrassWildMons:
 	def_grass_wildmons TIN_TOWER_9F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 42, SANDSHREW
-	db 42, SANDSLASH
+	db 42, ROTOM
+	db 42, POLTEGEIST
 	db 43, GENGAR
 	db 45, CHANDELURE
 	db 46, MISMAGIUS
 	db 52, AEGISLASH
 	db 80, BELLSPROUT
 	; day
-	db 42, SANDSHREW
-	db 42, SANDSLASH
+	db 42, ROTOM
+	db 42, POLTEGEIST
 	db 43, GENGAR
 	db 45, CHANDELURE
 	db 46, MISMAGIUS
 	db 52, AEGISLASH
 	db 80, BELLSPROUT
 	; nite
-	db 42, SANDSHREW
-	db 42, SANDSLASH
+	db 42, ROTOM
+	db 42, POLTEGEIST
 	db 43, GENGAR
 	db 45, CHANDELURE
 	db 46, MISMAGIUS
@@ -793,24 +793,24 @@ JohtoGrassWildMons:
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 62, MAMOSWINE
 	; day
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 62, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 62, MAMOSWINE
 	end_grass_wildmons
 
@@ -821,24 +821,24 @@ JohtoGrassWildMons:
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 62, MAMOSWINE
 	; day
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 62, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 62, MAMOSWINE
 	end_grass_wildmons
 
@@ -849,24 +849,24 @@ JohtoGrassWildMons:
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 66, MAMOSWINE
 	; day
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 66, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
 	db 38, WEAVILE
-	db 40, DIGLETT
-	db 40, DUGTRIO
+	db 40, ARCTOZOLT
+	db 40, ARCTOVISH
 	db 66, MAMOSWINE
 	end_grass_wildmons
 
@@ -1017,24 +1017,24 @@ JohtoGrassWildMons:
 	db 34, DRAGONAIR
 	db 37, PUPITAR
 	db 37, SLOWBRO
-	db 42, DIGLETT
-	db 42, DUGTRIO
+	db 42, ARCTOZOLT
+	db 42, ARCTOVISH
 	db 62, GARCHOMP
 	; day
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
 	db 37, SLOWBRO
-	db 42, DIGLETT
-	db 42, DUGTRIO
+	db 42, ARCTOZOLT
+	db 42, ARCTOVISH
 	db 62, GARCHOMP
 	; nite
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
 	db 37, SLOWBRO
-	db 42, DIGLETT
-	db 42, DUGTRIO
+	db 42, ARCTOZOLT
+	db 42, ARCTOVISH
 	db 62, GARCHOMP
 	end_grass_wildmons
 
@@ -1045,24 +1045,24 @@ JohtoGrassWildMons:
 	db 34, DRAGONAIR
 	db 37, PUPITAR
 	db 37, SLOWBRO
-	db 42, DIGLETT
-	db 42, DUGTRIO
+	db 42, ARCTOZOLT
+	db 42, ARCTOVISH
 	db 62, GARCHOMP
 	; day
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
 	db 37, SLOWBRO
-	db 42, DIGLETT
-	db 42, DUGTRIO
+	db 42, ARCTOZOLT
+	db 42, ARCTOVISH
 	db 62, GARCHOMP
 	; nite
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
 	db 37, SLOWBRO
-	db 42, DIGLETT
-	db 42, DUGTRIO
+	db 42, ARCTOZOLT
+	db 42, ARCTOVISH
 	db 62, GARCHOMP
 	end_grass_wildmons
 
@@ -1213,7 +1213,7 @@ JohtoGrassWildMons:
 	db 8, DUNSPARCE
 	db 10, HOUNDOUR
 	db 10, SNEASEL
-	db 12, ODDISH
+	db 12, PAWNIARD
 	db 12, LARVITAR
 	db 66, TYRANITAR
 	; day
@@ -1221,7 +1221,7 @@ JohtoGrassWildMons:
 	db 8, DUNSPARCE
 	db 10, HOUNDOUR
 	db 10, SNEASEL
-	db 12, ODDISH
+	db 12, PAWNIARD
 	db 12, LARVITAR
 	db 66, TYRANITAR
 	; nite
@@ -1229,7 +1229,7 @@ JohtoGrassWildMons:
 	db 8, DUNSPARCE
 	db 10, HOUNDOUR
 	db 10, SNEASEL
-	db 12, ODDISH
+	db 12, PAWNIARD
 	db 12, LARVITAR
 	db 66, TYRANITAR
 	end_grass_wildmons
@@ -1241,7 +1241,7 @@ JohtoGrassWildMons:
 	db 40, HONCHKROW
 	db 41, WEAVILE
 	db 42, HOUNDOOM
-	db 44, GLOOM
+	db 44, BISHARP
 	db 46, SPIRITOMB
 	db 66, TYRANITAR
 	; day
@@ -1249,7 +1249,7 @@ JohtoGrassWildMons:
 	db 40, HONCHKROW
 	db 41, WEAVILE
 	db 42, HOUNDOOM
-	db 44, GLOOM
+	db 44, BISHARP
 	db 46, SPIRITOMB
 	db 66, TYRANITAR
 	; nite
@@ -1257,7 +1257,7 @@ JohtoGrassWildMons:
 	db 45, HONCHKROW
 	db 46, WEAVILE
 	db 47, HOUNDOOM
-	db 49, GLOOM
+	db 49, BISHARP
 	db 51, SPIRITOMB
 	db 64, TYRANITAR
 	end_grass_wildmons

@@ -107,11 +107,7 @@ ZubatEggMoves:
 	db WHIRLWIND
 	db -1 ; end
 
-OddishEggMoves:
-	db SWORDS_DANCE
-	db RAZOR_LEAF
-	db FLAIL
-	db SYNTHESIS
+PawniardEggMoves:
 	db -1 ; end
 
 ParasEggMoves:
@@ -130,11 +126,7 @@ LarvestaEggMoves:
 	db BUG_BUZZ
 	db -1 ; end
 
-DiglettEggMoves:
-	db NIGHT_SLASH
-	db SCREECH
-	db ANCIENTPOWER
-	db PURSUIT
+ArctozoltEggMoves:
 	db -1 ; end
 
 MeowthEggMoves:

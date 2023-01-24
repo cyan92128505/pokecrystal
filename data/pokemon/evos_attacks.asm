@@ -425,7 +425,7 @@ RaichuEvosAttacks:
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
-SandshrewEvosAttacks:
+RotomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, WATER_GUN
@@ -437,7 +437,7 @@ SandshrewEvosAttacks:
 	db 40, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-SandslashEvosAttacks:
+PoltegeistEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFENSE_CURL
 	db 1, MEGA_DRAIN
@@ -636,8 +636,8 @@ GolbatEvosAttacks:
 	db 55, HAZE
 	db 0 ; no more level-up moves
 
-OddishEvosAttacks:
-	db EVOLVE_LEVEL, 30, GLOOM
+PawniardEvosAttacks:
+	db EVOLVE_LEVEL, 30, BISHARP
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -652,7 +652,7 @@ OddishEvosAttacks:
 	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
 
-GloomEvosAttacks:
+BisharpEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -667,7 +667,7 @@ GloomEvosAttacks:
 	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
 
-VileplumeEvosAttacks:
+RegigigasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, CONFUSE_RAY
@@ -735,7 +735,7 @@ VolcaronaEvosAttacks:
 	db 64, MORNING_SUN
 	db 0 ; no more level-up moves
 
-DiglettEvosAttacks:
+ArctozoltEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POWDER_SNOW
 	db 1, THUNDERSHOCK
@@ -750,7 +750,7 @@ DiglettEvosAttacks:
 	db 50, BOLT_BREAK
 	db 0 ; no more level-up moves
 
-DugtrioEvosAttacks:
+ArctovishEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POWDER_SNOW
 	db 1, WATER_GUN

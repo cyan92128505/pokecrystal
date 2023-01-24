@@ -1,4 +1,4 @@
-	db SANDSHREW ; 027
+	db ROTOM ; 027
 
 	db  50,  65, 107,  86, 105, 107
 	;   hp  atk  def  spd  sat  sdf

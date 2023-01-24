@@ -26,7 +26,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw SandshrewEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw NidoranFEggMoves
 	dw NoEggMoves
@@ -42,14 +42,14 @@ EggMovePointers::
 	dw NoEggMoves
 	dw ZubatEggMoves
 	dw NoEggMoves
-	dw OddishEggMoves
+	dw PawniardEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw ParasEggMoves
 	dw NoEggMoves
 	dw LarvestaEggMoves
 	dw NoEggMoves
-	dw DiglettEggMoves
+	dw ArctozoltEggMoves
 	dw NoEggMoves
 	dw MeowthEggMoves
 	dw NoEggMoves

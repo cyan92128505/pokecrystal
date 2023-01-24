@@ -26,8 +26,8 @@ FramesPointers:
 	dw ArbokFrames
 	dw PikachuFrames
 	dw RaichuFrames
-	dw SandshrewFrames
-	dw SandslashFrames
+	dw RotomFrames
+	dw PoltegeistFrames
 	dw NidoranFFrames
 	dw NidorinaFrames
 	dw NidoqueenFrames
@@ -42,15 +42,15 @@ FramesPointers:
 	dw WigglytuffFrames
 	dw ZubatFrames
 	dw GolbatFrames
-	dw OddishFrames
-	dw GloomFrames
-	dw VileplumeFrames
+	dw PawniardFrames
+	dw BisharpFrames
+	dw RegigigasFrames
 	dw ParasFrames
 	dw ParasectFrames
 	dw LarvestaFrames
 	dw VolcaronaFrames
-	dw DiglettFrames
-	dw DugtrioFrames
+	dw ArctozoltFrames
+	dw ArctovishFrames
 	dw MeowthFrames
 	dw PersianFrames
 	dw PsyduckFrames

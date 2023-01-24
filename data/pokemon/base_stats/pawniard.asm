@@ -1,4 +1,4 @@
-	db ODDISH ; 043
+	db PAWNIARD ; 043
 
 	db  45,  85,  70,  60,  40,  40
 	;   hp  atk  def  spd  sat  sdf

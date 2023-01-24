@@ -26,8 +26,8 @@ AnimationIdlePointers:
 	dw ArbokAnimationIdle
 	dw PikachuAnimationIdle
 	dw RaichuAnimationIdle
-	dw SandshrewAnimationIdle
-	dw SandslashAnimationIdle
+	dw RotomAnimationIdle
+	dw PoltegeistAnimationIdle
 	dw NidoranFAnimationIdle
 	dw NidorinaAnimationIdle
 	dw NidoqueenAnimationIdle
@@ -42,15 +42,15 @@ AnimationIdlePointers:
 	dw WigglytuffAnimationIdle
 	dw ZubatAnimationIdle
 	dw GolbatAnimationIdle
-	dw OddishAnimationIdle
-	dw GloomAnimationIdle
-	dw VileplumeAnimationIdle
+	dw PawniardAnimationIdle
+	dw BisharpAnimationIdle
+	dw RegigigasAnimationIdle
 	dw ParasAnimationIdle
 	dw ParasectAnimationIdle
 	dw LarvestaAnimationIdle
 	dw VolcaronaAnimationIdle
-	dw DiglettAnimationIdle
-	dw DugtrioAnimationIdle
+	dw ArctozoltAnimationIdle
+	dw ArctovishAnimationIdle
 	dw MeowthAnimationIdle
 	dw PersianAnimationIdle
 	dw PsyduckAnimationIdle

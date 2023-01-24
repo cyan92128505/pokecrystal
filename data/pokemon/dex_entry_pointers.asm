@@ -27,8 +27,8 @@ PokedexDataPointerTable:
 	dw ArbokPokedexEntry
 	dw PikachuPokedexEntry
 	dw RaichuPokedexEntry
-	dw SandshrewPokedexEntry
-	dw SandslashPokedexEntry
+	dw RotomPokedexEntry
+	dw PoltegeistPokedexEntry
 	dw NidoranFPokedexEntry
 	dw NidorinaPokedexEntry
 	dw NidoqueenPokedexEntry
@@ -43,15 +43,15 @@ PokedexDataPointerTable:
 	dw WigglytuffPokedexEntry
 	dw ZubatPokedexEntry
 	dw GolbatPokedexEntry
-	dw OddishPokedexEntry
-	dw GloomPokedexEntry
-	dw VileplumePokedexEntry
+	dw PawniardPokedexEntry
+	dw BisharpPokedexEntry
+	dw RegigigasPokedexEntry
 	dw ParasPokedexEntry
 	dw ParasectPokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
-	dw DiglettPokedexEntry
-	dw DugtrioPokedexEntry
+	dw ArctozoltPokedexEntry
+	dw ArctovishPokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
 	dw PsyduckPokedexEntry

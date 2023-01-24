@@ -28,8 +28,8 @@ EvosAttacksPointers::
 	dw ArbokEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks
-	dw SandshrewEvosAttacks
-	dw SandslashEvosAttacks
+	dw RotomEvosAttacks
+	dw PoltegeistEvosAttacks
 	dw NidoranFEvosAttacks
 	dw NidorinaEvosAttacks
 	dw NidoqueenEvosAttacks
@@ -44,15 +44,15 @@ EvosAttacksPointers::
 	dw WigglytuffEvosAttacks
 	dw ZubatEvosAttacks
 	dw GolbatEvosAttacks
-	dw OddishEvosAttacks
-	dw GloomEvosAttacks
-	dw VileplumeEvosAttacks
+	dw PawniardEvosAttacks
+	dw BisharpEvosAttacks
+	dw RegigigasEvosAttacks
 	dw ParasEvosAttacks
 	dw ParasectEvosAttacks
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
-	dw DiglettEvosAttacks
-	dw DugtrioEvosAttacks
+	dw ArctozoltEvosAttacks
+	dw ArctovishEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
 	dw PsyduckEvosAttacks

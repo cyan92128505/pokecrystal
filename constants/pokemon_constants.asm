@@ -45,8 +45,8 @@
 	const ARBOK      ; 18 *
 	const PIKACHU    ; 19
 	const RAICHU     ; 1a
-	const SANDSHREW  ; 1b *
-	const SANDSLASH  ; 1c *
+	const ROTOM  ; 1b *
+	const POLTEGEIST  ; 1c *
 	const NIDORAN_F  ; 1d
 	const NIDORINA   ; 1e
 	const NIDOQUEEN  ; 1f
@@ -61,15 +61,15 @@
 	const WIGGLYTUFF ; 28
 	const ZUBAT      ; 29
 	const GOLBAT     ; 2a
-	const ODDISH     ; 2b  ....
-	const GLOOM      ; 2c  ....
-	const VILEPLUME  ; 2d  ....
+	const PAWNIARD     ; 2b  ....
+	const BISHARP      ; 2c  ....
+	const REGIGIGAS  ; 2d  ....
 	const PARAS      ; 2e
 	const PARASECT   ; 2f
 	const LARVESTA   ; 30
 	const VOLCARONA  ; 31
-	const DIGLETT    ; 32 *
-	const DUGTRIO    ; 33 *
+	const ARCTOZOLT    ; 32 *
+	const ARCTOVISH    ; 33 *
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
 	const PSYDUCK    ; 36 *

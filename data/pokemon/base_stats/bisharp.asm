@@ -1,4 +1,4 @@
-	db GLOOM ; 044
+	db BISHARP ; 044
 
 	db  65, 125, 100,  70,  60,  70
 	;   hp  atk  def  spd  sat  sdf

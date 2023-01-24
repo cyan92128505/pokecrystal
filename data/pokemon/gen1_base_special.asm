@@ -28,8 +28,8 @@ KantoMonSpecials:
 	db  65 ; ARBOK
 	db  50 ; PIKACHU
 	db  90 ; RAICHU
-	db  30 ; SANDSHREW
-	db  55 ; SANDSLASH
+	db  30 ; ROTOM
+	db  55 ; POLTEGEIST
 	db  40 ; NIDORAN_F
 	db  55 ; NIDORINA
 	db  75 ; NIDOQUEEN
@@ -44,15 +44,15 @@ KantoMonSpecials:
 	db  50 ; WIGGLYTUFF
 	db  40 ; ZUBAT
 	db  75 ; GOLBAT
-	db  75 ; ODDISH
-	db  85 ; GLOOM
-	db 100 ; VILEPLUME
+	db  75 ; PAWNIARD
+	db  85 ; BISHARP
+	db 100 ; REGIGIGAS
 	db  55 ; PARAS
 	db  80 ; PARASECT
 	db  40 ; LARVESTA
 	db  90 ; VOLCARONA
-	db  45 ; DIGLETT
-	db  70 ; DUGTRIO
+	db  45 ; ARCTOZOLT
+	db  70 ; ARCTOVISH
 	db  40 ; MEOWTH
 	db  65 ; PERSIAN
 	db  50 ; PSYDUCK

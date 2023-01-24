@@ -5,29 +5,29 @@ KantoGrassWildMons:
 	def_grass_wildmons DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, DIGLETT
-	db 6, DIGLETT
-	db 12, DIGLETT
-	db 24, DIGLETT
-	db 24, DUGTRIO
-	db 24, DUGTRIO
-	db 24, DUGTRIO
+	db 3, ARCTOZOLT
+	db 6, ARCTOZOLT
+	db 12, ARCTOZOLT
+	db 24, ARCTOZOLT
+	db 24, ARCTOVISH
+	db 24, ARCTOVISH
+	db 24, ARCTOVISH
 	; day
-	db 2, DIGLETT
-	db 4, DIGLETT
-	db 8, DIGLETT
-	db 16, DIGLETT
-	db 16, DUGTRIO
-	db 16, DUGTRIO
-	db 16, DUGTRIO
+	db 2, ARCTOZOLT
+	db 4, ARCTOZOLT
+	db 8, ARCTOZOLT
+	db 16, ARCTOZOLT
+	db 16, ARCTOVISH
+	db 16, ARCTOVISH
+	db 16, ARCTOVISH
 	; nite
-	db 4, DIGLETT
-	db 8, DIGLETT
-	db 16, DIGLETT
-	db 32, DIGLETT
-	db 32, DUGTRIO
-	db 32, DUGTRIO
-	db 32, DUGTRIO
+	db 4, ARCTOZOLT
+	db 8, ARCTOZOLT
+	db 16, ARCTOZOLT
+	db 32, ARCTOZOLT
+	db 32, ARCTOVISH
+	db 32, ARCTOVISH
+	db 32, ARCTOVISH
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON
@@ -35,7 +35,7 @@ KantoGrassWildMons:
 	; morn
 	db 6, ZUBAT
 	db 8, GEODUDE
-	db 8, SANDSHREW
+	db 8, ROTOM
 	db 12, PARAS
 	db 10, GEODUDE
 	db 8, CLEFAIRY
@@ -43,7 +43,7 @@ KantoGrassWildMons:
 	; day
 	db 6, ZUBAT
 	db 8, GEODUDE
-	db 8, SANDSHREW
+	db 8, ROTOM
 	db 12, PARAS
 	db 10, GEODUDE
 	db 8, CLEFAIRY
@@ -121,7 +121,7 @@ KantoGrassWildMons:
 	db 32, RHYHORN
 	db 33, ONIX
 	db 34, GOLBAT
-	db 35, SANDSLASH
+	db 35, POLTEGEIST
 	db 35, RHYDON
 	db 35, RHYDON
 	; day
@@ -129,7 +129,7 @@ KantoGrassWildMons:
 	db 32, RHYHORN
 	db 33, ONIX
 	db 34, GOLBAT
-	db 35, SANDSLASH
+	db 35, POLTEGEIST
 	db 35, RHYDON
 	db 35, RHYDON
 	; nite
@@ -234,16 +234,16 @@ KantoGrassWildMons:
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
-	db 10, SANDSHREW
+	db 10, ROTOM
+	db 10, ROTOM
 	; day
 	db 5, BUNEARY
 	db 5, RATTATA
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
-	db 10, SANDSHREW
+	db 10, ROTOM
+	db 10, ROTOM
 	; nite
 	db 5, RATTATA
 	db 10, RATTATA
@@ -262,16 +262,16 @@ KantoGrassWildMons:
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
-	db 10, SANDSHREW
+	db 10, ROTOM
+	db 10, ROTOM
 	; day
 	db 5, BUNEARY
 	db 5, RATTATA
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
-	db 10, SANDSHREW
+	db 10, ROTOM
+	db 10, ROTOM
 	; nite
 	db 5, RATTATA
 	db 10, RATTATA
@@ -649,29 +649,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_21
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, GLOOM
+	db 30, BISHARP
 	db 25, RATTATA
-	db 35, GLOOM
+	db 35, BISHARP
 	db 20, RATICATE
 	db 30, MR__MIME
 	db 28, MR__MIME
 	db 28, MR__MIME
 	; day
-	db 30, GLOOM
+	db 30, BISHARP
 	db 25, RATTATA
-	db 35, GLOOM
+	db 35, BISHARP
 	db 20, RATICATE
 	db 28, MR__MIME
 	db 30, MR__MIME
 	db 30, MR__MIME
 	; nite
-	db 30, GLOOM
+	db 30, BISHARP
 	db 25, RATTATA
-	db 35, GLOOM
+	db 35, BISHARP
 	db 20, RATICATE
-	db 30, GLOOM
-	db 28, GLOOM
-	db 28, GLOOM
+	db 30, BISHARP
+	db 28, BISHARP
+	db 28, BISHARP
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_22
@@ -722,12 +722,12 @@ KantoGrassWildMons:
 	db 14, BUTTERFREE
 	; nite
 	db 10, RATTATA
-	db 10, ODDISH
-	db 12, ODDISH
+	db 10, PAWNIARD
+	db 12, PAWNIARD
 	db 12, ABRA
 	db 10, BELLSPROUT
-	db 14, GLOOM
-	db 14, GLOOM
+	db 14, BISHARP
+	db 14, BISHARP
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_25
@@ -749,7 +749,7 @@ KantoGrassWildMons:
 	db 14, BUTTERFREE
 	db 14, BUTTERFREE
 	; nite
-	db 10, ODDISH
+	db 10, PAWNIARD
 	db 10, HOOTHOOT
 	db 10, RATTATA
 	db 12, NOCTOWL
@@ -762,7 +762,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 28, BUNEARY
-	db 28, SANDSLASH
+	db 28, POLTEGEIST
 	db 32, PONYTA
 	db 30, RATICATE
 	db 30, BUNEARY
@@ -770,7 +770,7 @@ KantoGrassWildMons:
 	db 30, ARBOK
 	; day
 	db 28, BUNEARY
-	db 28, SANDSLASH
+	db 28, POLTEGEIST
 	db 32, PONYTA
 	db 30, RATICATE
 	db 30, BUNEARY
@@ -817,7 +817,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, GLOOM
+	db 39, BISHARP
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
@@ -825,7 +825,7 @@ KantoGrassWildMons:
 	db 43, STARAPTOR
 	db 43, STARAPTOR
 	; day
-	db 39, GLOOM
+	db 39, BISHARP
 	db 40, PONYTA
 	db 40, RAPIDASH
 	db 42, ARBOK
@@ -833,7 +833,7 @@ KantoGrassWildMons:
 	db 43, STARAPTOR
 	db 43, STARAPTOR
 	; nite
-	db 39, GLOOM
+	db 39, BISHARP
 	db 40, POLIWHIRL
 	db 40, GOLBAT
 	db 40, POLIWHIRL

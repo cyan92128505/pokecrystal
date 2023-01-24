@@ -32,8 +32,8 @@ PokemonCries::
 	mon_cry CRY_EKANS,       224,  144 ; ARBOK
 	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
 	mon_cry CRY_RAICHU,      238,  136 ; RAICHU
-	mon_cry CRY_AIPOM,       100,  200 ; SANDSHREW
-	mon_cry CRY_HOOTHOOT,    320,  240 ; SANDSLASH
+	mon_cry CRY_AIPOM,       100,  200 ; ROTOM
+	mon_cry CRY_HOOTHOOT,    320,  240 ; POLTEGEIST
 	mon_cry CRY_NIDORAN_F,     0,  256 ; NIDORAN_F
 	mon_cry CRY_NIDORAN_F,    44,  352 ; NIDORINA
 	mon_cry CRY_NIDOQUEEN,     0,  256 ; NIDOQUEEN
@@ -48,15 +48,15 @@ PokemonCries::
 	mon_cry CRY_PIDGEY,      104,  224 ; WIGGLYTUFF
 	mon_cry CRY_SQUIRTLE,    224,  256 ; ZUBAT
 	mon_cry CRY_SQUIRTLE,    250,  256 ; GOLBAT
-	mon_cry CRY_ODDISH,       50,  100 ; ODDISH
-	mon_cry CRY_ODDISH,       20,  150 ; GLOOM
-	mon_cry CRY_TYPHLOSION,  200,  400 ; VILEPLUME
+	mon_cry CRY_ODDISH,       50,  100 ; PAWNIARD
+	mon_cry CRY_ODDISH,       20,  150 ; BISHARP
+	mon_cry CRY_TYPHLOSION,  200,  400 ; REGIGIGAS
 	mon_cry CRY_PARAS,        32,  352 ; PARAS
 	mon_cry CRY_PARAS,        66,  383 ; PARASECT
 	mon_cry CRY_VENONAT,      68,  192 ; LARVESTA
 	mon_cry CRY_VENONAT,      41,  256 ; VOLCARONA
-	mon_cry CRY_RAICHU,       50,  150 ; DIGLETT
-	mon_cry CRY_LAPRAS,      -50,  200 ; DUGTRIO
+	mon_cry CRY_RAICHU,       50,  150 ; ARCTOZOLT
+	mon_cry CRY_LAPRAS,      -50,  200 ; ARCTOVISH
 	mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH
 	mon_cry CRY_CLEFAIRY,    153,  383 ; PERSIAN
 	mon_cry CRY_PSYDUCK,      32,  224 ; PSYDUCK
@@ -147,7 +147,7 @@ PokemonCries::
 	mon_cry CRY_METAPOD,    -40,  200 ; KIRLIA
 	mon_cry CRY_METAPOD,     100,  200 ; GARDEVOIR
 	mon_cry CRY_METAPOD,    -255,  150 ; GALADE
-	mon_cry CRY_VILEPLUME,    32,  368 ; AERODACTYL
+	mon_cry CRY_REGIGIGAS,    32,  368 ; AERODACTYL
 	mon_cry CRY_GRIMER,       85,  129 ; SNORLAX
 	mon_cry CRY_RAICHU,      128,  192 ; ARTICUNO
 	mon_cry CRY_FEAROW,      255,  256 ; ZAPDOS

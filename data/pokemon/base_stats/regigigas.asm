@@ -1,4 +1,4 @@
-	db VILEPLUME ; 045
+	db REGIGIGAS ; 045
 
 	db  110, 160, 110, 100, 80, 110
 	;   hp  atk  def  spd  sat  sdf

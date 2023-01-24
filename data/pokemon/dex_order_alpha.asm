@@ -10,15 +10,18 @@ AlphabeticalPokedexOrder:
 	db ARBOK
 	db ARCANINE
 	db ARCEUS
-	db GALVANTULA
+	db ARCTOVISH
+	db ARCTOZOLT
 	db ARTICUNO
 	db BAGON
 	db BELDUM
 	db BELLSPROUT
+	db BISHARP
 	db BLASTOISE
 	db BLISSEY
 	db BRELOOM
 	db BULBASAUR
+	db BUNEARY
 	db BUTTERFREE
 	db CATERPIE
 	db CELEBI
@@ -39,7 +42,6 @@ AlphabeticalPokedexOrder:
 	db DARKRAI
 	db DEOXYS
 	db DIALGA
-	db DIGLETT
 	db DITTO
 	db DOUBLADE
 	db DRAGONAIR
@@ -47,7 +49,6 @@ AlphabeticalPokedexOrder:
 	db DRATINI
 	db DRILBUR
 	db DROWZEE
-	db DUGTRIO
 	db DUOSION
 	db DUNSPARCE
 	db EEVEE
@@ -60,13 +61,16 @@ AlphabeticalPokedexOrder:
 	db EXCADRILL
 	db EXEGGCUTE
 	db EXEGGUTOR
-	db LOPUNNY
+	db FEEBAS
+	db FERROSEED
+	db FERROTHORN
 	db FLAAFFY
 	db FLAREON
 	db FROAKIE
 	db FROGADIER
 	db GABITE
 	db GALADE
+	db GALVANTULA
 	db GARCHOMP
 	db GARDEVOIR
 	db GASTLY
@@ -77,13 +81,11 @@ AlphabeticalPokedexOrder:
 	db GIRATINA
 	db GLIGAR
 	db GLISCOR
-	db GLOOM
 	db GOLBAT
 	db GOLDUCK
 	db GOLEM
 	db GRAVELER
 	db GRENINJA
-	db FERROSEED
 	db GROUDON
 	db GROVYLE
 	db GROWLITHE
@@ -106,19 +108,19 @@ AlphabeticalPokedexOrder:
 	db JYNX
 	db KADABRA
 	db KINGDRA
-	db MILOTIC
 	db KIRLIA
 	db KLEFKI
 	db KOFFING
-	db FEEBAS
 	db KYOGRE
 	db LAMPENT
 	db LANTURN
 	db LAPRAS
+	db LARVESTA
 	db LARVITAR
 	db LATIAS
 	db LATIOS
 	db LITWICK
+	db LOPUNNY
 	db LUCARIO
 	db LUGIA
 	db MACHAMP
@@ -139,13 +141,13 @@ AlphabeticalPokedexOrder:
 	db METAPOD
 	db MEW
 	db MEWTWO
+	db MILOTIC
 	db MILTANK
 	db MISDREAVUS
 	db MISMAGIUS
 	db MOLTRES
 	db MONFERNO
 	db MR__MIME
-	db FERROTHORN
 	db MURKROW
 	db NIDOKING
 	db NIDOQUEEN
@@ -155,11 +157,11 @@ AlphabeticalPokedexOrder:
 	db NIDORINO
 	db NINETALES
 	db NOCTOWL
-	db ODDISH
 	db ONIX
 	db PALKIA
 	db PARAS
 	db PARASECT
+	db PAWNIARD
 	db PERSIAN
 	db PIKACHU
 	db PILOSWINE
@@ -168,6 +170,7 @@ AlphabeticalPokedexOrder:
 	db POLIWAG
 	db POLIWHIRL
 	db POLIWRATH
+	db POLTEGEIST
 	db PONYTA
 	db PORYGON
 	db PORYGON2
@@ -182,14 +185,14 @@ AlphabeticalPokedexOrder:
 	db RATICATE
 	db RATTATA
 	db RAYQUAZA
+	db REGIGIGAS
 	db REUNICLUS
 	db RHYDON
 	db RHYHORN
 	db RHYPERIOR
 	db RIOLU
+	db ROTOM
 	db SALAMENCE
-	db SANDSHREW
-	db SANDSLASH
 	db SCEPTILE
 	db SCIZOR
 	db SCYTHER
@@ -207,8 +210,6 @@ AlphabeticalPokedexOrder:
 	db SNEASEL
 	db SNORLAX
 	db SOLOSIS
-	db BUNEARY
-	db VOLTIK
 	db SPIRITOMB
 	db SQUIRTLE
 	db STARAPTOR
@@ -234,11 +235,10 @@ AlphabeticalPokedexOrder:
 	db UNOWN
 	db URSARING
 	db VAPOREON
-	db LARVESTA
 	db VENUSAUR
 	db VICTREEBEL
-	db VILEPLUME
 	db VOLCARONA
+	db VOLTIK
 	db VOLTORB
 	db VULPIX
 	db WARTORTLE

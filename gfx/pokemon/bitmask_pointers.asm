@@ -26,8 +26,8 @@ BitmasksPointers:
 	dw ArbokBitmasks
 	dw PikachuBitmasks
 	dw RaichuBitmasks
-	dw SandshrewBitmasks
-	dw SandslashBitmasks
+	dw RotomBitmasks
+	dw PoltegeistBitmasks
 	dw NidoranFBitmasks
 	dw NidorinaBitmasks
 	dw NidoqueenBitmasks
@@ -42,15 +42,15 @@ BitmasksPointers:
 	dw WigglytuffBitmasks
 	dw ZubatBitmasks
 	dw GolbatBitmasks
-	dw OddishBitmasks
-	dw GloomBitmasks
-	dw VileplumeBitmasks
+	dw PawniardBitmasks
+	dw BisharpBitmasks
+	dw RegigigasBitmasks
 	dw ParasBitmasks
 	dw ParasectBitmasks
 	dw LarvestaBitmasks
 	dw VolcaronaBitmasks
-	dw DiglettBitmasks
-	dw DugtrioBitmasks
+	dw ArctozoltBitmasks
+	dw ArctovishBitmasks
 	dw MeowthBitmasks
 	dw PersianBitmasks
 	dw PsyduckBitmasks

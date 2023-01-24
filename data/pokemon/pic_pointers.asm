@@ -55,10 +55,10 @@ PokemonPicPointers::
 	dba_pic PikachuBackpic
 	dba_pic RaichuFrontpic
 	dba_pic RaichuBackpic
-	dba_pic SandshrewFrontpic
-	dba_pic SandshrewBackpic
-	dba_pic SandslashFrontpic
-	dba_pic SandslashBackpic
+	dba_pic RotomFrontpic
+	dba_pic RotomBackpic
+	dba_pic PoltegeistFrontpic
+	dba_pic PoltegeistBackpic
 	dba_pic NidoranFFrontpic
 	dba_pic NidoranFBackpic
 	dba_pic NidorinaFrontpic
@@ -87,12 +87,12 @@ PokemonPicPointers::
 	dba_pic ZubatBackpic
 	dba_pic GolbatFrontpic
 	dba_pic GolbatBackpic
-	dba_pic OddishFrontpic
-	dba_pic OddishBackpic
-	dba_pic GloomFrontpic
-	dba_pic GloomBackpic
-	dba_pic VileplumeFrontpic
-	dba_pic VileplumeBackpic
+	dba_pic PawniardFrontpic
+	dba_pic PawniardBackpic
+	dba_pic BisharpFrontpic
+	dba_pic BisharpBackpic
+	dba_pic RegigigasFrontpic
+	dba_pic RegigigasBackpic
 	dba_pic ParasFrontpic
 	dba_pic ParasBackpic
 	dba_pic ParasectFrontpic
@@ -101,10 +101,10 @@ PokemonPicPointers::
 	dba_pic LarvestaBackpic
 	dba_pic VolcaronaFrontpic
 	dba_pic VolcaronaBackpic
-	dba_pic DiglettFrontpic
-	dba_pic DiglettBackpic
-	dba_pic DugtrioFrontpic
-	dba_pic DugtrioBackpic
+	dba_pic ArctozoltFrontpic
+	dba_pic ArctozoltBackpic
+	dba_pic ArctovishFrontpic
+	dba_pic ArctovishBackpic
 	dba_pic MeowthFrontpic
 	dba_pic MeowthBackpic
 	dba_pic PersianFrontpic

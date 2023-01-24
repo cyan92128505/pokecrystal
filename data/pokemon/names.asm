@@ -27,7 +27,7 @@ PokemonNames::
 	db "PIKACHU@@@"
 	db "RAICHU@@@@"
 	db "ROTOM@@@@@"
-	db "POLTEAGIST"
+	db "POLTEGEIST"
 	db "NIDORAN♀@@"
 	db "NIDORINA@@"
 	db "NIDOQUEEN@"

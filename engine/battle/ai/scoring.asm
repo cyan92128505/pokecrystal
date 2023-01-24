@@ -43,7 +43,7 @@ AI_LevitatePokemon:
     db LATIAS
     db LATIOS
     db UNOWN
-    db SANDSHREW
+    db ROTOM
     db $FF
 
 AI_SturdyPokemon:
@@ -86,7 +86,7 @@ AI_UberImmunePokemon:
     db RAYQUAZA
     db LUGIA
     db HO_OH
-    db VILEPLUME
+    db REGIGIGAS
     db $FF
 
 AI_Basic:

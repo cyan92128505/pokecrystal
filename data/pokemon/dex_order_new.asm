@@ -43,8 +43,8 @@ NewPokedexOrder:
 	db TOGEPI
 	db TOGETIC
 	db TOGEKISS
-	db SANDSHREW
-	db SANDSLASH
+	db ROTOM
+	db POLTEGEIST
 	db EKANS
 	db ARBOK
 	db DUNSPARCE
@@ -73,9 +73,9 @@ NewPokedexOrder:
 	db SLOWPOKE
 	db SLOWBRO
 	db SLOWKING
-	db ODDISH
-	db GLOOM
-	db VILEPLUME
+	db PAWNIARD
+	db BISHARP
+	db REGIGIGAS
 	db DROWZEE
 	db HYPNO
 	db ABRA
@@ -110,8 +110,8 @@ NewPokedexOrder:
 	db NINETALES
 	db GROWLITHE
 	db ARCANINE
-	db DIGLETT
-	db DUGTRIO
+	db ARCTOZOLT
+	db ARCTOVISH
 	db SHROOMISH
 	db BRELOOM
 	db MEOWTH

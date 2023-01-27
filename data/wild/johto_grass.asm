@@ -31,7 +31,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
     def_grass_wildmons SPROUT_TOWER_B1F
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 25, HAUNTER
 	db 25, PERSIAN
@@ -1105,12 +1105,12 @@ JohtoGrassWildMons:
 	db 65, EXCADRILL
 	db 80, AERODACTYL
 	; day
-	db 60, MISMAGIUS
-	db 60, HONCHKROW
-	db 62, EXCADRILL
+	db 60, CHANDELURE
+	db 60, HOUNDOOM
+	db 62, SCIZOR
 	db 62, AEGISLASH
-	db 65, ELECTIVIRE
-	db 65, RHYPERIOR
+	db 65, MAGMORTAR
+	db 65, EXCADRILL
 	db 80, AERODACTYL
 	; nite
 	db 60, GENGAR
@@ -1133,12 +1133,12 @@ JohtoGrassWildMons:
 	db 62, TOGEKISS
 	db 80, SNORLAX
 	; day
-	db 60, LUCARIO
-	db 60, ALAKAZAM
-	db 62, MACHAMP
+	db 60, BRELOOM
+	db 60, REUNICLUS
+	db 62, HERACROSS
 	db 62, CONKELDURR
-	db 60, MAGNEZONE
-	db 62, SYLVEON
+	db 60, KLEFKI
+	db 62, TOGEKISS
 	db 80, SNORLAX
 	; nite
 	db 60, GALADE
@@ -1181,29 +1181,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 100, KYOGRE
-	db 100, GROUDON
-	db 100, RAYQUAZA
-	db 100, DEOXYS
-	db 100, LATIOS
-	db 100, MEWTWO
-	db 100, ARCEUS
+	db 60, LUCARIO
+	db 60, ALAKAZAM
+	db 62, MACHAMP
+	db 62, CONKELDURR
+	db 60, MAGNEZONE
+	db 62, SYLVEON
+	db 80, ARCTOZOLT
 	; day
-	db 100, PALKIA
-	db 100, DIALGA
-	db 100, GIRATINA
-	db 100, DARKRAI
-	db 100, SHAYMIN
-	db 100, MEWTWO
-	db 100, ARCEUS
+	db 60, LUCARIO
+	db 60, ALAKAZAM
+	db 62, MACHAMP
+	db 62, CONKELDURR
+	db 60, MAGNEZONE
+	db 62, SYLVEON
+	db 80, ARCTOZOLT
 	; nite
-	db 100, XERNEAS
-	db 100, YVELTAL
-	db 100, HO_OH
-	db 100, LUGIA
-	db 100, MEW
-	db 100, MEWTWO
-	db 100, ARCEUS
+	db 60, MISMAGIUS
+	db 60, HONCHKROW
+	db 62, EXCADRILL
+	db 62, AEGISLASH
+	db 65, ELECTIVIRE
+	db 65, RHYPERIOR
+	db 80, ARCTOZOLT
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1721,10 +1721,10 @@ JohtoGrassWildMons:
 	db 65, SCEPTILE
 	db 80, GENESECT
 	; day
-	db 60, SKARMORY
-	db 60, SMEARGLE
-	db 62, BLISSEY
-	db 62, SNORLAX
+	db 30, EEVEE
+	db 60, STARAPTOR
+	db 62, GALVANTULA
+	db 62, VOLCARONA
 	db 65, CHARIZARD
 	db 65, INFERNAPE
 	db 80, GENESECT
@@ -1740,29 +1740,29 @@ JohtoGrassWildMons:
     def_grass_wildmons HALL_OF_ORIGIN
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 100, HO_OH
-	db 100, GROUDON
-	db 100, RAYQUAZA
-	db 100, DIALGA
-	db 100, XERNEAS
-	db 100, YVELTAL
-	db 100, GIRATINA
+	db 80, HO_OH
+	db 80, GROUDON
+	db 80, RAYQUAZA
+	db 80, DIALGA
+	db 80, XERNEAS
+	db 80, YVELTAL
+	db 80, GIRATINA
 	; day
-	db 100, HO_OH
-	db 100, GROUDON
-	db 100, RAYQUAZA
-	db 100, DIALGA
-	db 100, XERNEAS
-	db 100, YVELTAL
-	db 100, GIRATINA
+	db 80, HO_OH
+	db 80, GROUDON
+	db 80, RAYQUAZA
+	db 80, DIALGA
+	db 80, XERNEAS
+	db 80, YVELTAL
+	db 80, GIRATINA
 	; nite
-	db 100, HO_OH
-	db 100, GROUDON
-	db 100, RAYQUAZA
-	db 100, DIALGA
-	db 100, XERNEAS
-	db 100, YVELTAL
-	db 100, GIRATINA
+	db 80, HO_OH
+	db 80, GROUDON
+	db 80, RAYQUAZA
+	db 80, DIALGA
+	db 80, XERNEAS
+	db 80, YVELTAL
+	db 80, GIRATINA
 	end_grass_wildmons
 
     def_grass_wildmons ORIGIN_ROAD
@@ -1774,51 +1774,51 @@ JohtoGrassWildMons:
 	db 100, SUICUNE
 	db 100, RAIKOU
 	db 100, ENTEI
-	db 100, DARKRAI
+	db 100, REGIGIGAS
 	; day
-	db 100, DEOXYS
-	db 100, LATIAS
-	db 100, LATIOS
-	db 100, SUICUNE
-	db 100, RAIKOU
-	db 100, ENTEI
-	db 100, DARKRAI
+	db 80, DEOXYS
+	db 80, LATIAS
+	db 80, LATIOS
+	db 80, SUICUNE
+	db 80, RAIKOU
+	db 80, ENTEI
+	db 80, REGIGIGAS
 	; nite
-	db 100, DEOXYS
-	db 100, LATIAS
-	db 100, LATIOS
-	db 100, SUICUNE
-	db 100, RAIKOU
-	db 100, ENTEI
-	db 100, DARKRAI
+	db 80, DEOXYS
+	db 80, LATIAS
+	db 80, LATIOS
+	db 80, SUICUNE
+	db 80, RAIKOU
+	db 80, ENTEI
+	db 80, REGIGIGAS
 	end_grass_wildmons
 
     def_grass_wildmons ORIGIN_ROAD_SOUTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 100, MEW
-	db 100, CELEBI
-	db 100, SHAYMIN
-	db 100, ARTICUNO
-	db 100, ZAPDOS
-	db 100, MOLTRES
-	db 100, DARKRAI
+	db 80, MEW
+	db 80, CELEBI
+	db 80, SHAYMIN
+	db 80, ARTICUNO
+	db 80, ZAPDOS
+	db 80, MOLTRES
+	db 80, DARKRAI
 	; day
-	db 100, MEW
-	db 100, CELEBI
-	db 100, SHAYMIN
-	db 100, ARTICUNO
-	db 100, ZAPDOS
-	db 100, MOLTRES
-	db 100, DARKRAI
+	db 80, MEW
+	db 80, CELEBI
+	db 80, SHAYMIN
+	db 80, ARTICUNO
+	db 80, ZAPDOS
+	db 80, MOLTRES
+	db 80, DARKRAI
 	; nite
-	db 100, MEW
-	db 100, CELEBI
-	db 100, SHAYMIN
-	db 100, ARTICUNO
-	db 100, ZAPDOS
-	db 100, MOLTRES
-	db 100, DARKRAI
+	db 80, MEW
+	db 80, CELEBI
+	db 80, SHAYMIN
+	db 80, ARTICUNO
+	db 80, ZAPDOS
+	db 80, MOLTRES
+	db 80, DARKRAI
 	end_grass_wildmons
 
     def_grass_wildmons ANCIENT_RUIN_PRESENT

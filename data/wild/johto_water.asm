@@ -95,9 +95,16 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 65, KINGDRA
-	db 65, GYARADOS
-	db 65, MILOTIC
+	db 65, ARCTOVISH
+	db 65, CLOYSTER
+	db 65, LAPRAS
+	end_water_wildmons
+
+	def_water_wildmons SILVER_CAVE_ITEM_ROOMS
+	db 2 percent ; encounter rate
+	db 65, STARMIE
+	db 65, SLOWBRO
+	db 65, SLOWKING
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -270,9 +277,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons HALL_OF_ORIGIN
 	db 2 percent ; encounter rate
-	db 100, LUGIA
-	db 100, PALKIA
-	db 100, KYOGRE
+	db 80, LUGIA
+	db 80, PALKIA
+	db 80, KYOGRE
 	end_water_wildmons
 
 	def_water_wildmons ANCIENT_RUIN_PRESENT

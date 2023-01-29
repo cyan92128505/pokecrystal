@@ -3,8 +3,8 @@
 
 	db   "When two"
 	next "ELECTABUZZ touch,"
-	next "they control the"
+	next "a current flows."
 
-	page "electric currents"
-	next "to communicate"
-	next "their feelings.@"
+	page "AB Immune to"
+	next "ELECTRIC"
+	next "attacks.@"

@@ -1,5 +1,5 @@
 	db "DRAKE@" ; species name
-	dw 411, 2262 ; height, weight
+	dw 511, 3262 ; height, weight
 
 	db   "Easily angered"
 	next "and merciless"

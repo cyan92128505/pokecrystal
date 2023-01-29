@@ -1,9 +1,9 @@
 	db "LAMP@" ; species name
 	dw 200, 287 ; height, weight
 
-	db   "It arrives near"
-	next "the moment of"
-	next "death and steals"
+	db   "It arrives the"
+	next "moment of death"
+	next "to steal souls."
 
-	page "the spirit from"
-	next "the body.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

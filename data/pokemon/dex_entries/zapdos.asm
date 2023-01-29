@@ -2,9 +2,9 @@
 	dw 503, 1160 ; height, weight
 
 	db   "Legendary bird"
-	next "#MON. They say"
-	next "lightning caused"
+	next "#MON that"
+	next "causes storms."
 
-	page "by the flapping of"
-	next "its wings causes"
-	next "summer storms.@"
+	page "AB Immune to"
+	next "ELECTRIC"
+	next "attacks.@"

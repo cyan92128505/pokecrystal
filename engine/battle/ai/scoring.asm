@@ -46,6 +46,40 @@ AI_LevitatePokemon:
     db ROTOM
     db $FF
 
+AI_WaterAbsorbPokemon:
+    db WOOPER
+    db QUAGSIRE
+    db VAPOREON
+    db LAPRAS
+    db ARCTOVISH
+    db $FF
+
+AI_VoltAbsorbPokemon:
+    db CHINCHOU
+    db LANTURN
+    db ELECTABUZZ
+    db ELECTIVIRE
+    db ZAPDOS
+    db JOLTEON
+    db ARCTOZOLT
+    db $FF
+
+AI_FireAbsorbPokemon:
+    db MAGMAR
+    db MAGMORTAR
+    db FLAREON
+    db MOLTRES
+    db VULPIX
+    db NINETALES
+    db PONYTA
+    db RAPIDASH
+    db HOUNDOUR
+    db HOUNDOOM
+    db LITWICK
+    db LAMPENT
+    db CHANDELURE
+    db $FF
+
 AI_SturdyPokemon:
     db SKARMORY
     db GEODUDE
@@ -170,12 +204,57 @@ AI_Basic:
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	and TYPE_MASK
 	cp GROUND
-	jr nz, .checkSafeguard
+	jr nz, .checkWaterAbsorb
 	ld a, [wBattleMonSpecies]
 	push hl
 	push de
 	push bc
 	ld hl, AI_LevitatePokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .discourage
+
+.checkWaterAbsorb
+    cp WATER
+	jr nz, .checkVoltAbsorb
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_WaterAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .discourage
+
+.checkVoltAbsorb
+    cp ELECTRIC
+	jr nz, .checkFireAbsorb
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_VoltAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .discourage
+
+.checkFireAbsorb
+    cp FIRE
+	jr nz, .checkSafeguard
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_FireAbsorbPokemon
 	ld de, 1
 	call IsInArray
     pop bc
@@ -4628,11 +4707,11 @@ AI_Aggressive:
 	inc b
 	ld a, b
 	cp NUM_MOVES + 1
-	jr z, .gotstrongestmove
+	jp z, .gotstrongestmove
 
 	ld a, [hli]
 	and a
-	jr z, .gotstrongestmove
+	jp z, .gotstrongestmove
 
 	push hl
 	push de
@@ -4640,7 +4719,7 @@ AI_Aggressive:
 	call AIGetEnemyMove
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .nodamage
+	jp z, .nodamage
 	call AIDamageCalc
 	pop bc
 	pop de
@@ -4658,7 +4737,7 @@ AI_Aggressive:
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	and TYPE_MASK
 	cp GROUND
-	jr nz, .continue
+	jr nz, .waterAbsorb
 	ld a, [wBattleMonSpecies]
 	push hl
 	push de
@@ -4671,25 +4750,70 @@ AI_Aggressive:
 	pop hl
     jp c, .checkmove
 
+.waterAbsorb
+    cp WATER
+	jr nz, .voltAbsorb
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_WaterAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .checkmove
+
+.voltAbsorb
+    cp ELECTRIC
+	jr nz, .fireAbsorb
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_VoltAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .checkmove
+
+.fireAbsorb
+    cp ELECTRIC
+	jr nz, .continue
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_FireAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .checkmove
+
 .continue
 	ld a, [wCurDamage + 1]
 	cp e
 	ld a, [wCurDamage]
 	sbc d
-	jr c, .checkmove
+	jp c, .checkmove
 
 	ld a, [wCurDamage + 1]
 	ld e, a
 	ld a, [wCurDamage]
 	ld d, a
 	ld c, b
-	jr .checkmove
+	jp .checkmove
 
 .nodamage
 	pop bc
 	pop de
 	pop hl
-	jr .checkmove
+	jp .checkmove
 
 .gotstrongestmove
 ; Nothing we can do if no attacks did damage.
@@ -4995,3 +5119,119 @@ AI_50_50:
 	call Random
 	cp 50 percent + 1
 	ret
+
+; ====== EFFECT COMMAND EXCESS FUNCTIONS =====
+; These are functions used in effect_commands.asm
+; they are defined here as that file is out of space
+
+Levitate:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	jr nz, .checkType
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+.checkType
+	and TYPE_MASK
+	cp GROUND
+	jr z, .getPokemon
+	ret
+.getPokemon
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .checkLevitate
+	ld a, [wBattleMonSpecies]
+.checkLevitate
+	ld hl, AI_LevitatePokemon
+	ld de, 1
+	call IsInArray
+    jr c, .found
+    ret
+.found
+	ld hl, LevitateText
+	call StdBattleTextbox
+    ret z
+
+WaterAbsorb:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	jr nz, .checkType
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+.checkType
+	and TYPE_MASK
+	cp WATER
+	jr z, .getPokemon
+	ret
+.getPokemon
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .check
+	ld a, [wBattleMonSpecies]
+.check
+	ld hl, AI_WaterAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    jr c, .found
+    ret
+.found
+	ld hl, ElementAbsorbText
+	call StdBattleTextbox
+    ret z
+
+VoltAbsorb:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	jr nz, .checkType
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+.checkType
+	and TYPE_MASK
+	cp ELECTRIC
+	jr z, .getPokemon
+	ret
+.getPokemon
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .check
+	ld a, [wBattleMonSpecies]
+.check
+	ld hl, AI_VoltAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    jr c, .found
+    ret
+.found
+	ld hl, ElementAbsorbText
+	call StdBattleTextbox
+    ret z
+
+FireAbsorb:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	jr nz, .checkType
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+.checkType
+	and TYPE_MASK
+	cp FIRE
+	jr z, .getPokemon
+	ret
+.getPokemon
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .check
+	ld a, [wBattleMonSpecies]
+.check
+	ld hl, AI_FireAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    jr c, .found
+    ret
+.found
+	ld hl, ElementAbsorbText
+	call StdBattleTextbox
+    ret z

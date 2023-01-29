@@ -73,20 +73,6 @@ ClearBodyPokemon:
     db ARCEUS
     db -1
 
-LevitatePokemon:
-    db GASTLY
-    db HAUNTER
-    db GENGAR
-    db MISDREAVUS
-    db MISMAGIUS
-    db KOFFING
-    db WEEZING
-    db LATIAS
-    db LATIOS
-    db UNOWN
-    db ROTOM
-    db -1
-
 InnerFocusPokemon:
     db LUCARIO
     db SMEARGLE
@@ -94,7 +80,16 @@ InnerFocusPokemon:
     db CROBAT
     db UMBREON
     db ARCEUS
+    db PAWNIARD
     db BISHARP
+    db -1
+
+SolidRockPokemon:
+    db RHYHORN
+    db RHYDON
+    db RHYPERIOR
+    db RAYQUAZA
+    db ARTICUNO
     db -1
 
 UberImmunePokemon:
@@ -112,3 +107,57 @@ UberImmunePokemon:
     db HO_OH
     db REGIGIGAS
     db -1
+
+; ======== NOT USED HERE ===========
+
+; the following abilities are here for reference
+; but the are actually defined in scoring.asm with prefix AI_
+; make changes there if you want to change these, but keep this in sync
+
+;LevitatePokemon:
+;    db GASTLY
+;    db HAUNTER
+;    db GENGAR
+;    db MISDREAVUS
+;    db MISMAGIUS
+;    db KOFFING
+;    db WEEZING
+;    db LATIAS
+;    db LATIOS
+;    db UNOWN
+;    db ROTOM
+;    db -1
+
+;WaterAbsorbPokemon:
+;    db WOOPER
+;    db QUAGSIRE
+;    db VAPOREON
+;    db LAPRAS
+;    db ARCTOVISH
+;    db -1
+
+;VoltAbsorbPokemon:
+;    db CHINCHOU
+;    db LANTURN
+;    db ELECTABUZZ
+;    db ELECTIVIRE
+;    db ZAPDOS
+;    db JOLTEON
+;    db ARCTOZOLT
+;    db -1
+
+;FireAbsorbPokemon:
+;    db MAGMAR
+;    db MAGMORTAR
+;    db FLAREON
+;    db MOLTRES
+;    db VULPIX
+;    db NINETALES
+;    db PONYTA
+;    db RAPIDASH
+;    db HOUNDOUR
+;    db HOUNDOOM
+;    db LITWICK
+;    db LAMPENT
+;    db CHANDELURE
+;    db -1

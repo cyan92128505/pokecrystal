@@ -1480,15 +1480,16 @@ BattleCommand_Stab:
 	jr nz, .checkSpeciesSolidRock
 	ld a, [wEnemyMonSpecies]
 .checkSpeciesSolidRock
-; AndrewNote - commented out since this is broken
-	cp RHYHORN
-	jr z, .checkSolidRock
-	cp RHYDON
-	jr z, .checkSolidRock
-	cp RHYPERIOR
-	jr z, .checkSolidRock
-	cp RAYQUAZA
-	jr z, .checkSolidRock
+	push bc
+	push de
+	push hl
+	ld hl, SolidRockPokemon
+	ld de, 1
+	call IsInArray
+	pop hl
+	pop de
+	pop bc
+	jr c, .checkSolidRock
 	jr .continue
 
 .checkSolidRock
@@ -1706,8 +1707,19 @@ BattleCommand_DamageVariation:
 BattleCommand_CheckHit:
 ; checkhit
 
-	call .Levitate
+    ; AndrewNote - levitate, water absorb, volt absorb, fire absorb here
+    ; note these functions are defined in scoring.asm as this file is out of space
+	farcall Levitate
 	jp z, .Miss
+
+	farcall WaterAbsorb
+	jp z, .Miss
+
+	farcall VoltAbsorb
+    jp z, .Miss
+
+	farcall FireAbsorb
+    jp z, .Miss
 
 	call .DreamEater
 	jp z, .Miss
@@ -1901,34 +1913,6 @@ BattleCommand_CheckHit:
 	ld a, 1
 	and a
 	ret
-
-.Levitate:
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	jr nz, .checkType
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-.checkType
-	and TYPE_MASK
-	cp GROUND
-	jr z, .getPokemon
-	ret
-.getPokemon
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr z, .checkLevitate
-	ld a, [wBattleMonSpecies]
-.checkLevitate
-	ld hl, LevitatePokemon
-	ld de, 1
-	call IsInArray
-    jr c, .found
-    ret
-.found
-	ld hl, LevitateText
-	call StdBattleTextbox
-    ret z
 
 .FlyDigMoves:
 ; Check for moves that can hit underground/flying opponents.
@@ -6203,6 +6187,10 @@ BattleCommand_Recoil:
     cp MAROWAK
     jr z, .rockHead
     cp GIRATINA
+    jr z, .rockHead
+    cp BAGON
+    jr z, .rockHead
+    cp SHELGON
     jr z, .rockHead
     jr .endRockHead
 .rockHead

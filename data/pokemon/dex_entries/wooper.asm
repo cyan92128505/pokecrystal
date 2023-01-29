@@ -3,8 +3,7 @@
 
 	db   "A mucous"
 	next "membrane covers"
-	next "its body. Touching"
+	next "its body."
 
-	page "it barehanded will"
-	next "cause a shooting"
-	next "pain.@"
+	page "AB Immune to"
+	next "WATER attacks.@"

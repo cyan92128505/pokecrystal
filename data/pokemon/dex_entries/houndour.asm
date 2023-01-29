@@ -3,8 +3,7 @@
 
 	db   "Around dawn, its"
 	next "ominous howl"
-	next "echoes through the"
+	next "echoes all over."
 
-	page "area to announce"
-	next "that this is its"
-	next "territory.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

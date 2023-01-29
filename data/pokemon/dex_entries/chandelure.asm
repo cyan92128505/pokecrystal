@@ -5,6 +5,5 @@
 	next "of its victim in"
 	next "its flames."
 
-	page "These souls lose"
-	next "their way and"
-	next "wander forever.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

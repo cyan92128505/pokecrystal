@@ -1,10 +1,9 @@
 	db "CANDLE@" ; species name
 	dw 100, 68 ; height, weight
 
-	db   "Its flame is often"
-	next "out, but it starts"
-	next "to shine when it"
+	db   "It absorbs the"
+	next "life force from"
+	next "nearby people."
 
-	page "absorbs the life"
-	next "force from nearby"
-	next "people.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

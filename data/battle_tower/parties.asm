@@ -5277,7 +5277,7 @@ BattleTowerMons:
 	bigdw 248 ; SDef
 	db "RANTA-N@@@@"
 
-	db ZAPDOS
+	db ZAPDOS ; 50 mons
 	db LEFTOVERS
 	db THUNDER, HURRICANE, RAIN_DANCE, ROOST
 	dw 0 ; OT ID
@@ -5875,7 +5875,7 @@ BattleTowerMons:
 	bigdw 268 ; SDef
 	db "RANTA-N@@@@"
 
-	db INFERNAPE
+	db INFERNAPE ; 70 - mons
 	db FOCUS_SASH
 	db SWORDS_DANCE, CLOSE_COMBAT, FLARE_BLITZ, ICE_PUNCH
 	dw 0 ; OT ID

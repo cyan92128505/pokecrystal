@@ -1,10 +1,9 @@
 	db "FLAME@" ; species name
 	dw 211, 550 ; height, weight
 
-	db   "Once it has stored"
-	next "up enough heat,"
-	next "this #MON's"
-
-	page "body temperature"
+	db   "Its body temp"
 	next "can reach up to"
-	next "1700 degrees.@"
+	next "1700 degrees."
+
+	page "AB Immune to"
+	next "FIRE attacks.@"

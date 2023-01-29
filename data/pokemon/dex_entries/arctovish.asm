@@ -2,8 +2,8 @@
 	dw 607, 4807 ; height, weight
 
 	db   "A prehistoric"
-	next "predator that"
-	next "can utilise a"
+	next "predator with"
+	next "a lethal move."
 
-	page "lethal special"
-	next "technique.@"
+	page "AB Immune to"
+	next "WATER attacks.@"

@@ -1,10 +1,10 @@
 	db "THUNERBOLT@" ; species name
 	dw 607, 3806 ; height, weight
 
-	db   "It presses its"
-	next "long tails onto"
-	next "the foe then"
-
-	page "unleashes over"
+	db   "Can release over"
 	next "20000 volts of"
-	next "wild power.@"
+	next "wild power."
+
+	page "AB Immune to"
+	next "ELECTRIC"
+	next "attacks.@"

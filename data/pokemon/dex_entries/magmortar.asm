@@ -3,8 +3,7 @@
 
 	db   "It can blast fire"
 	next "balls of over"
-	next "3600 degree heat"
+	next "3600 degree heat."
 
-	page "from its arms."
-	next "It lives in"
-	next "volcanoes.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

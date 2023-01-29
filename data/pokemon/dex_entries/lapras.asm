@@ -5,6 +5,5 @@
 	next "#MON loves to"
 	next "ferry people."
 
-	page "AB Takes half"
-	next "damage from FIRE"
-	next "and ICE moves.@"
+	page "AB Immune to"
+	next "WATER attacks.@"

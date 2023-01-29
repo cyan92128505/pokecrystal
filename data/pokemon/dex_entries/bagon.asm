@@ -1,10 +1,10 @@
-	db "LONG NECK@" ; species name
-	dw 411, 910 ; height, weight
+	db "ROCK HEAD@" ; species name
+	dw 200, 928 ; height, weight
 
-	db   "When it is in"
-	next "danger, its tail"
-	next "uses some sort of"
+	db   "Its steel-hard"
+	next "head can shatter"
+	next "large boulders."
 
-	page "mysterious powers"
-	next "to drive away the"
-	next "enemy.@"
+	page "AB Takes no"
+	next "recoil damage"
+	next "from attacks.@"

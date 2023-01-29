@@ -2,9 +2,8 @@
 	dw 507, 2090 ; height, weight
 
 	db   "It just loves to"
-	next "gallop. The faster"
-	next "it goes, the long-"
+	next "gallop and run at"
+	next "blistering speed."
 
-	page "er the swaying"
-	next "flames of its mane"
-	next "will become.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

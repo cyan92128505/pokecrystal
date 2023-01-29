@@ -1,10 +1,8 @@
 	db "FIRE HORSE@" ; species name
 	dw 303, 660 ; height, weight
 
-	db   "Training by"
-	next "jumping over grass"
-	next "that grows longer"
+	db   "It is a world"
+	next "class jumper."
 
-	page "every day has made"
-	next "it a world-class"
-	next "jumper.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

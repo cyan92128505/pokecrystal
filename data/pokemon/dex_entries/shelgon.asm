@@ -1,10 +1,10 @@
-	db "BAGWORM@" ; species name
-	dw 200, 160 ; height, weight
+	db "ENDURANCE@" ; species name
+	dw 307, 2436 ; height, weight
 
-	db   "It spits out a"
-	next "fluid that it uses"
-	next "to glue tree bark"
+	db   "All attacks bounce"
+	next "off its heavy"
+	next "armoured body."
 
-	page "to its body. The"
-	next "fluid hardens when"
-	next "it touches air.@"
+	page "AB Takes no"
+	next "recoil damage"
+	next "from attacks.@"

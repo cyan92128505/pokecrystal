@@ -952,6 +952,11 @@ LevitateText:
 	line "is levitating."
 	prompt
 
+ElementAbsorbText:
+	text "<TARGET>"
+	line "is unaffected."
+	prompt
+
 ItFailedText:
 	text "It failed!"
 	prompt

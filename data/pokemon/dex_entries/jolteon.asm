@@ -3,8 +3,8 @@
 
 	db   "The negatively"
 	next "charged ions"
-	next "generated in its"
+	next "flow through it."
 
-	page "fur create a"
-	next "constant sparking"
-	next "noise.@"
+	page "AB Immune to"
+	next "ELECTRIC"
+	next "attacks.@"

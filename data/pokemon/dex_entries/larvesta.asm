@@ -1,10 +1,8 @@
 	db "TORCH@" ; species name
 	dw 307, 635 ; height, weight
 
-	db   "Said to be born"
-	next "from the sun."
-	next "During evolution"
+	db   "Evolves from a"
+	next "cacoon of fire."
 
-	page "it encases itself"
-	next "in a cacoon of"
-	next "fire.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

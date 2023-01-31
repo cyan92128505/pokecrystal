@@ -118,36 +118,39 @@ LoadRandomBattleTowerMon:
 	ld b, a ; b is the number of mon to go forward
 
 	ld a, [wBTChoiceOfLvlGroup]
-	cp 5 ; 5 is now lvl 100
-	jr z, .level100
+	cp 5 ; 5 is master level
+	jr z, .masterLevel
 
-    ld a, b
-	maskbits BATTLETOWER_NUM_UNIQUE_MON
-	cp BATTLETOWER_NUM_UNIQUE_MON
-	jr nc, .resample ; here we loop around if we have jumped a level group
-	jr .continue
-
-; AndrewNote - BT lvl 100 specific logic here
-.level100
     ld a, [wNrOfBeatenBattleTowerTrainers]
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainer
     ld a, b
-    cp 80 ; AndrewNote - lvl 100 has a pool of 80 Pokemon rather than 21
+	maskbits BATTLETOWER_NUM_UNIQUE_MON
+	cp BATTLETOWER_NUM_UNIQUE_MON
+	jr nc, .resample ; here we loop around if we have jumped a level group
+    and a
+    jr z, .resample ; only the last trainer can have the runkiller
+	jr .continue
+.lastTrainer
+    ld a, b
+    cp 20 ; last trainer only uses 20 strongest mons, can pick the runkiller
+    jr nc, .resample
+
+; AndrewNote - BT master level specific logic here
+.masterLevel
+    ld a, [wNrOfBeatenBattleTowerTrainers]
+    cp BATTLETOWER_STREAK_LENGTH - 1
+    jr z, .lastTrainerMaster
+    ld a, b
+    cp 80 ; AndrewNote - master has a pool of 80 Pokemon rather than 40
     jr nc, .resample
     and a
     jr z, .resample ; only the last trainer can have mewtwo
     jr .continue
-.lastTrainer
+.lastTrainerMaster
     ld a, b
     cp 30 ; last trainer only uses 30 strongest mons, can pick mewtwo
     jr nc, .resample
-    ;and a
-    ;jr nz, .continue
-	;call Random     ; decrease mewtwo odds for last trainer
-	;cp 50 percent
-	;jr c, .resample
-	;ld a, b
 
 .continue
 	; in register 'a' is the chosen mon of the LevelGroup

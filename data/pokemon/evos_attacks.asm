@@ -2112,6 +2112,7 @@ AerodactylEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WING_ATTACK
 	db 8, AGILITY
+	db 10, DRAGON_RAGE
 	db 15, BITE
 	db 22, SUPERSONIC
 	db 29, ANCIENTPOWER
@@ -2242,8 +2243,8 @@ MewEvosAttacks:
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
 	db 30, RECOVER
-	db 40, PSYCHIC_M
-	db 50, ANCIENTPOWER
+	db 40, ZEN_HEADBUTT
+	db 50, PSYCHIC_M
 	db 60, BATON_PASS
 	db 0 ; no more level-up moves
 

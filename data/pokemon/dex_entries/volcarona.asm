@@ -1,10 +1,9 @@
 	db "SUN@" ; species name
 	dw 503, 1014 ; height, weight
 
-	db   "The embodiment"
-	next "of the sun. It"
-	next "saves others"
+	db   "The grossly"
+	next "incandescent"
+	next "embodiment of sun."
 
-	page "from freezing. It"
-	next "is grossly"
-	next "incandescent.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

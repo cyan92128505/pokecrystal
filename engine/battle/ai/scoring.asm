@@ -62,6 +62,8 @@ AI_VoltAbsorbPokemon:
     db ZAPDOS
     db JOLTEON
     db ARCTOZOLT
+    db PIKACHU
+    db RAICHU
     db $FF
 
 AI_FireAbsorbPokemon:
@@ -78,6 +80,8 @@ AI_FireAbsorbPokemon:
     db LITWICK
     db LAMPENT
     db CHANDELURE
+    db LARVESTA
+    db VOLCARONA
     db $FF
 
 AI_SturdyPokemon:

@@ -62,8 +62,8 @@ VenusaurEvosAttacks:
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
 	db 41, GROWTH
-	db 53, SYNTHESIS
-	db 65, SOLARBEAM
+	db 46, SYNTHESIS
+	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
 CharmanderEvosAttacks:
@@ -847,7 +847,7 @@ BreloomEvosAttacks:
 	db 26, GIGA_DRAIN
 	db 33, MACH_PUNCH
 	db 37, DRAIN_PUNCH
-	db 41, LEAF_BLADE
+	db 40, LEAF_BLADE
 	db 45, SPORE
 	db 0 ; no more level-up moves
 
@@ -1622,7 +1622,7 @@ ReuniclusEvosAttacks:
 	db 21, REFLECT
 	db 26, PAIN_SPLIT
 	db 32, RECOVER
-	db 42, PSYCHIC_M
+	db 41, PSYCHIC_M
 	db 46, FUTURE_SIGHT
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
@@ -2756,11 +2756,11 @@ GenesectEvosAttacks:
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
+	db 1, HYPNOSIS
 	db 1, PERISH_SONG
-	db 35, PERISH_SONG
-	db 51, SWAGGER
+	db 35, SURF
+	db 40, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 TimburrEvosAttacks:

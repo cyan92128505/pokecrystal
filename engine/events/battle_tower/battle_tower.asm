@@ -954,7 +954,7 @@ BattleTower_SaveOptions:
 	ret
 
 BattleTower_RandomlyChooseReward:
-; Generate a random stat boosting item.
+; AndrewNote - BT rewards
     ld a, [wcd4f] ; load level group
     cp 2
     jr z, .leader
@@ -968,10 +968,10 @@ BattleTower_RandomlyChooseReward:
     ld a, GOLD_BERRY
     jr .give
 .leader
-    ld a, HP_UP
+    ld a, PP_UP
     jr .give
 .elite
-    ld a, PP_UP
+    ld a, NUGGET
     jr .give
 .champ
     ld a, MASTER_BALL

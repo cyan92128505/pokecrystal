@@ -65,7 +65,7 @@ SageLiScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_HM05_FLASH
-	iftrue .GotFlash
+	iftrue .FightDone
 	writetext SageLiSeenText
 	waitbutton
 	closetext
@@ -84,11 +84,37 @@ SageLiScript:
 	closetext
 	end
 
-.GotFlash:
+.FightDone:
 	writetext SageLiAfterBattleText
 	waitbutton
 	closetext
+    opentext
+	writetext RematchTextLi
+	yesorno
+	iftrue .rematch
+	writetext RematchRefuseTextLi
+	waitbutton
+	closetext
 	end
+.rematch
+    writetext SageLiSeenText
+	waitbutton
+	closetext
+	winlosstext SageLiBeatenText, 0
+    loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
+	loadtrainer SAGE, LI
+	startbattle
+	reloadmapafterbattle
+	end
+
+RematchTextLi:
+    text "How about a"
+    line "rematch?"
+    prompt
+
+RematchRefuseTextLi:
+    text "Maybe next time."
+    done
 
 TrainerSageJin:
 	trainer SAGE, JIN, EVENT_BEAT_SAGE_JIN, SageJinSeenText, SageJinBeatenText, 0, .Script

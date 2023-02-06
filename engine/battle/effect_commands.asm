@@ -1194,34 +1194,30 @@ BattleCommand_Critical:
 	and a
 	ret z
 
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wEnemyMonItem
-	ld a, [wEnemyMonSpecies]
-	jr nz, .Item
-	ld hl, wBattleMonItem
-	ld a, [wBattleMonSpecies]
-
-.Item:
+;	ldh a, [hBattleTurn]
+;	and a
+;	ld hl, wEnemyMonItem
+;	ld a, [wEnemyMonSpecies]
+;	jr nz, .Item
+;	ld hl, wBattleMonItem
+;	ld a, [wBattleMonSpecies]
+;.Item:
 	ld c, 0
 
-	cp CHANSEY
-	jr nz, .FocusEnergy
-	ld a, [hl]
-	cp LUCKY_PUNCH
-	jr nz, .FocusEnergy
-
+;   cp CHANSEY
+;   jr nz, .FocusEnergy
+;   ld a, [hl]
+;   cp LUCKY_PUNCH
+;   jr nz, .FocusEnergy
 ; +2 critical level
-	ld c, 2
-	jr .Tally
-
-.FocusEnergy:
+;	ld c, 2
+;.FocusEnergy:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
 	bit SUBSTATUS_FOCUS_ENERGY, a
 	jr z, .CheckCritical
 
-; +1 critical level
+; +1 critical level - focus energy gives +1 level
 	inc c
 
 .CheckCritical:
@@ -1239,6 +1235,8 @@ BattleCommand_Critical:
     jr z, .increaseCritical
     cp HONCHKROW
     jr z, .increaseCritical
+    cp BISHARP
+    jr z, .increaseCritical
     jr .continue
 .checkSlash
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1248,7 +1246,7 @@ BattleCommand_Critical:
 	ld a, 1
 	ld [wCriticalHit], a
 	ret
-.increaseCritical
+.increaseCritical ; - super luck gives +2 levels
     inc c
     inc c
 
@@ -1262,7 +1260,7 @@ BattleCommand_Critical:
 	pop bc
 	jr nc, .ScopeLens
 
-; +2 critical level
+; +2 critical level - high crit ratio moves have +2 levels
 	inc c
 	inc c
 
@@ -1274,7 +1272,7 @@ BattleCommand_Critical:
 	pop bc
 	jr nz, .Tally
 
-; +1 critical level
+; +1 critical level - +1 level for scope lens
 	inc c
 
 .Tally:
@@ -3408,12 +3406,46 @@ BattleCommand_DamageCalc:
 	ld a, b
 	cp HELD_CHOICE_SPECS
 	pop hl
+	jr nz, .muscleBand
+    ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	jr c, .muscleBand
+    call FiftyPercentBoost
+
+.muscleBand
+; ========================
+; ===== Muscle Band ======
+; ========================
+; AndrewNote - muscel band - x1.1 damage
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_MUSCLE_BAND
+	pop hl
+	jr nz, .wiseGlasses
+    ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp SPECIAL
+	jr nc, .wiseGlasses
+	call TenPercentBoost
+
+.wiseGlasses
+; =========================
+; ===== Wise Glasses ======
+; =========================
+; AndrewNote - muscel band - x1.1 damage
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_WISE_GLASSES
+	pop hl
 	jr nz, .continue
     ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	cp SPECIAL
 	jr c, .continue
-    call FiftyPercentBoost
+	call TenPercentBoost
 
 .continue
 ; Critical hits
@@ -3595,9 +3627,35 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	and a
 	ret z
 
+; ==== Berserk Gene Mewtwo ======
+    ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyMonItem
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkMewtwoBerserkGene
+	ld hl, wBattleMonItem
+	ld a, [wBattleMonSpecies]
+.checkMewtwoBerserkGene
+    cp MEWTWO
+    jr nz, .FiftyPercent
+    ld a, [hl]
+    cp BERSERK_GENE
+    jr nz, .FiftyPercent
+
+; berserk gene mewtwo deals x2 damage on crits
+	ldh a, [hQuotient + 3]
+	add a
+	ldh [hQuotient + 3], a
+	ldh a, [hQuotient + 2]
+	rl a
+	ldh [hQuotient + 2], a
+	jr .cap
+
 ; AndrewNote - crits now deal x1.5 damage rather than x2
+.FiftyPercent
     call FiftyPercentBoost
 
+.cap
 ; Cap at $ffff.
 	ret nc
 
@@ -3613,6 +3671,16 @@ FiftyPercentBoost:
 ; fallthrough
 HalfDamage:
 	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+TenPercentBoost:
+    ld a, 11
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide

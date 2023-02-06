@@ -105,7 +105,7 @@ ItemDescriptions:
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
-	dw StickDesc
+	dw MuscleBandDesc
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
@@ -172,7 +172,7 @@ ItemDescriptions:
 	dw SunStoneDesc
 	dw PolkadotBowDesc
 	dw TeruSama22Desc
-	dw UpGradeDesc
+	dw WiseGlassesDesc
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
@@ -664,9 +664,9 @@ PinkBowDesc:
 	db   "Powers up normal-"
 	next "type moves. (HOLD)@"
 
-StickDesc:
-	db   "An ordinary stick."
-	next "Sell low.@"
+MuscleBandDesc:
+	db   "Slightly boosts"
+	next "physical moves.@"
 
 SmokeBallDesc:
 	db   "Escape from wild"
@@ -845,8 +845,8 @@ DragonScaleDesc:
 	next "item.@"
 
 BerserkGeneDesc:
-	db   "Boosts ATTACK but"
-	next "causes confusion.@"
+	db   "Boosts critical"
+	next "damage for MEWTWO.@"
 
 TeruSama18Desc:
 	db   "?@"
@@ -919,9 +919,9 @@ PolkadotBowDesc:
 TeruSama22Desc:
 	db   "?@"
 
-UpGradeDesc:
-	db   "A mysterious box"
-	next "made by SILPH CO.@"
+WiseGlassesDesc:
+	db   "Slightly boosts"
+	next "special moves.@"
 
 BerryDesc:
 	db   "A self-restore"

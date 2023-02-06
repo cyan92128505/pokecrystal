@@ -675,6 +675,20 @@ EnemyPotionFinish:
 AI_TrySwitch:
 ; Determine whether the AI can switch based on how many Pokemon are still alive.
 ; If it can switch, it will.
+; AndrewNote - switch, don't switch if already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+    ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+
 	ld a, [wOTPartyCount]
 	ld c, a
 	ld hl, wOTPartyMon1HP

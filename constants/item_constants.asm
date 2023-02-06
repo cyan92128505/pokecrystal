@@ -35,7 +35,7 @@
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
 	const CARBOS       ; 1d
-	const LUCKY_PUNCH  ; 1e
+	const LUCKY_PUNCH  ; 1e  Andrew - can get rid of this!
 	const CALCIUM      ; 1f
 	const RARE_CANDY   ; 20
 	const X_ACCURACY   ; 21
@@ -49,7 +49,7 @@
 	const GUARD_SPEC   ; 29
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
-	const DIRE_HIT     ; 2c
+	const DIRE_HIT     ; 2c Andrew - can get rid of this!
 	const ITEM_2D      ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
@@ -65,7 +65,7 @@
 	const EXP_SHARE    ; 39
 	const OLD_ROD      ; 3a
 	const GOOD_ROD     ; 3b
-	const SILVER_LEAF  ; 3c
+	const SILVER_LEAF  ; 3c  Andrew - find a use for this?
 	const SUPER_ROD    ; 3d
 	const PP_UP        ; 3e
 	const ETHER        ; 3f
@@ -77,10 +77,10 @@
 	const MYSTERY_EGG  ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
-	const MOOMOO_MILK  ; 48
+	const MOOMOO_MILK  ; 48  Andrew - this can be changed?
 	const QUICK_CLAW   ; 49
 	const PSNCUREBERRY ; 4a
-	const GOLD_LEAF    ; 4b
+	const GOLD_LEAF    ; 4b  Andrew - find a use for this
 	const SOFT_SAND    ; 4c
 	const SHARP_BEAK   ; 4d
 	const PRZCUREBERRY ; 4e
@@ -110,7 +110,7 @@
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
 	const PINK_BOW     ; 68
-	const STICK        ; 69
+	const MUSCLE_BAND  ; 69
 	const SMOKE_BALL   ; 6a
 	const NEVERMELTICE ; 6b
 	const MAGNET       ; 6c
@@ -144,7 +144,7 @@
 	const LIFE_ORB     ; 88
 	const CHOICE_BAND  ; 89
 	const CHARCOAL     ; 8a
-	const BERRY_JUICE  ; 8b
+	const BERRY_JUICE  ; 8b ; Andrew - this is not used
 	const SCOPE_LENS   ; 8c
 	const ITEM_8D      ; 8d
 	const ITEM_8E      ; 8e
@@ -177,7 +177,7 @@
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
 	const ITEM_AB      ; ab
-	const UP_GRADE     ; ac
+	const WISE_GLASSES ; ac
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
 	const SQUIRTBOTTLE ; af

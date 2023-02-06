@@ -67,7 +67,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_EXPERT_BELT
 	const HELD_LIFE_ORB
 	const HELD_RESTORE_PP
-	const_skip
+	const HELD_MUSCLE_BAND
 	const HELD_CLEANSE_TAG
 
 	const_next 10
@@ -100,7 +100,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 
 	const_next 40
 	const_skip
-	const_skip
+	const HELD_WISE_GLASSES
 	const HELD_CHOICE_SPECS
 
 	const_next 50

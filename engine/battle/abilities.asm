@@ -19,6 +19,18 @@ SturdyPokemon:
     db FERROTHORN
     db -1
 
+GutsPokemon:
+    db RATICATE
+    db HERACROSS
+    db MACHOP
+    db MACHOKE
+    db MACHAMP
+    db TIMBURR
+    db GURDURR
+    db CONKELDURR
+    db URSARING
+    db -1
+
 MultiScalePokemon:
     db DRAGONITE
     db LUGIA
@@ -68,7 +80,6 @@ ClearBodyPokemon:
     db BELDUM
     db METANG
     db METAGROSS
-    db MACHAMP
     db DIALGA
     db ARCEUS
     db -1

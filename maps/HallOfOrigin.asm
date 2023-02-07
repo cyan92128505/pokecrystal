@@ -116,7 +116,7 @@ ArceusPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke ARCEUS, 100, NO_ITEM
+	givepoke ARCEUS, 100, HOLY_CROWN
 .Refused
 	closetext
 	end
@@ -156,7 +156,7 @@ MewtwoPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke MEWTWO, 100, NO_ITEM
+	givepoke MEWTWO, 100, BERSERK_GENE
 .Refused
 	closetext
 	end

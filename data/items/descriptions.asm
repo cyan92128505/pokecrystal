@@ -30,7 +30,7 @@ ItemDescriptions:
 	dw ProteinDesc
 	dw IronDesc
 	dw CarbosDesc
-	dw LuckyPunchDesc
+	dw HolyCrownDesc
 	dw CalciumDesc
 	dw RareCandyDesc
 	dw XAccuracyDesc
@@ -374,9 +374,9 @@ CarbosDesc:
 	db   "Raises SPEED of"
 	next "one #MON.@"
 
-LuckyPunchDesc:
-	db   "Ups critical hit"
-	next "ratio of CHANSEY.@"
+HolyCrownDesc:
+	db   "Eternal HP and PP"
+	next "for ARCEUS.@"
 
 CalciumDesc:
 	db   "Ups SPECIAL stats"

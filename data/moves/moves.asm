@@ -25,7 +25,7 @@ Moves: ; 41afb
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20
 	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,        PHYSICAL,  30,  5,   0
 	move SKY_CLEAVE,   EFFECT_NORMAL_HIT,        100, FLYING,        PHYSICAL, 100, 10,   0
-	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 30,   0
+	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
 	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        PHYSICAL,  95, 30,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0
@@ -264,5 +264,5 @@ Moves: ; 41afb
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          80, FIGHTING,      PHYSICAL, 100, 15,   0
 	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,         0, UBER,          STATUS,   100, 20,   0
-   	move JUDGEMENT,    EFFECT_JUDGEMENT,         100, UBER,          PHYSICAL, 100, 30,   0
+   	move JUDGEMENT,    EFFECT_JUDGEMENT,         100, UBER,          PHYSICAL, 100, 20,   0
    	move SERENITY,     EFFECT_SERENITY,            0, UBER,          STATUS,   100, 20,   0

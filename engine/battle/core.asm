@@ -1552,14 +1552,28 @@ HandleLeftovers:
 	call GetItemName
 	ld a, b
 	cp HELD_LEFTOVERS
-	ret nz
+	jr z, .recover
+	cp HELD_HOLY_CROWN
+	jr z, .checkArceus
+	ret
 
+.checkArceus
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .check
+	ld a, [wEnemyMonSpecies]
+.check
+    cp ARCEUS
+    jr z, .recover
+    ret
+
+.recover
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .got_hp
 	ld hl, wEnemyMonHP
-
 .got_hp
 ; Don't restore if we're already at max HP
 	ld a, [hli]
@@ -1572,12 +1586,11 @@ HandleLeftovers:
 	ld a, [hl]
 	cp c
 	ret z
-
 .restore
 	call GetSixteenthMaxHP
 	call SwitchTurnCore
 	call RestoreHP
-	ld hl, BattleText_TargetRecoveredWithLeftovers
+	ld hl, BattleText_TargetRecoveredWithHeldItem
 	jp StdBattleTextbox
 
 ;HandleMysteryberry:
@@ -4427,13 +4440,13 @@ SwitchInEffects:
 .checkSpecies
 ; AndrewNote - abilities that activate on switching in
     cp KYOGRE
-    jr z, .rain
+    jp z, .rain
     cp POLITOED
-    jr z, .rain
+    jp z, .rain
     cp GROUDON
-    jr z, .sun
+    jp z, .sun
     cp CHARIZARD
-    jr z, .sun
+    jp z, .sun
     cp TYRANITAR
     jp z,  .sand
     cp RAYQUAZA
@@ -4466,6 +4479,20 @@ SwitchInEffects:
     jp z, .atkDown
     cp AEGISLASH
     jp z, .defenseMode
+    cp WIGGLYTUFF
+    jp z, .spDefUp
+    cp LOPUNNY
+    jp z, .evasionUp
+    cp WEAVILE
+    jp z, .evasionUp
+    cp CELEBI
+    jp z, .evasionUp
+    cp DUNSPARCE
+    jp z, .randomStatUp
+    cp SMEARGLE
+    jp z, .randomStatUp
+    cp MEW
+    jp z, .randomStatUp
     ret
 .rain
 	ld a, WEATHER_RAIN
@@ -4514,6 +4541,10 @@ SwitchInEffects:
     farcall BattleCommand_SpecialAttackUp
 	farcall BattleCommand_StatUpMessage
 	ret
+.spDefUp
+    farcall BattleCommand_SpecialDefenseUp
+	farcall BattleCommand_StatUpMessage
+	ret
 .defUp
     farcall BattleCommand_DefenseUp
 	farcall BattleCommand_StatUpMessage
@@ -4526,6 +4557,25 @@ SwitchInEffects:
     farcall BattleCommand_AttackUp
 	farcall BattleCommand_StatUpMessage
 	ret
+.evasionUp
+    farcall BattleCommand_EvasionUp
+	farcall BattleCommand_StatUpMessage
+	ret
+.randomStatUp
+    call BattleRandom
+    cp 43
+    jr c, .atkUp
+    cp 86
+    jr c, .defUp
+    cp 129
+    jr c, .spAtkUp
+    cp 172
+    jr c, .spDefUp
+    cp 215
+    jr c, .spdUp
+    cp 255
+    jr c, .evasionUp
+    ret
 .atkDown
     farcall BattleCommand_AttackDown
     ld a, [wBattleHasJustStarted]

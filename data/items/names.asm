@@ -29,7 +29,7 @@ ItemNames::
 	li "PROTEIN"
 	li "IRON"
 	li "CARBOS"
-	li "LUCKY PUNCH"
+	li "HOLY CROWN"
 	li "CALCIUM"
 	li "RARE CANDY"
 	li "X ACCURACY"

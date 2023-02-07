@@ -100,9 +100,9 @@ BattleText_TargetRecoveredWithItem:
 	text "."
 	prompt
 
-BattleText_TargetRecoveredWithLeftovers:
+BattleText_TargetRecoveredWithHeldItem:
 	text "<TARGET>"
-	line "leftovers heal."
+	line "held item heal."
 	prompt
 
 BattleText_TargetRegenerates:

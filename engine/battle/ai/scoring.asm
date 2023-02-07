@@ -5239,3 +5239,105 @@ FireAbsorb:
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
     ret z
+
+DreamEaterMiss:
+; Return z if we're trying to eat the dream of
+; a monster that isn't sleeping.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_DREAM_EATER
+	ret nz
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and SLP
+	ret
+
+ProtectMiss:
+; Return nz if the opponent is protected.
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_PROTECT, a
+	ret z
+	ld c, 40
+	call DelayFrames
+; 'protecting itself!'
+	ld hl, ProtectingItselfText
+	call StdBattleTextbox
+	ld c, 40
+	call DelayFrames
+	ld a, 1
+	and a
+	ret
+
+LockOnMiss:
+; Return nz if we are locked-on and aren't trying to use Earthquake,
+; Fissure or Magnitude on a monster that is flying.
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_LOCK_ON, [hl]
+	res SUBSTATUS_LOCK_ON, [hl]
+	ret z
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_FLYING, a
+	jr z, .LockedOn
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp EARTHQUAKE
+	ret z
+	cp FISSURE
+	ret z
+	cp MAGNITUDE
+	ret z
+.LockedOn:
+	ld a, 1
+	and a
+	ret
+
+FlyDigMovesMiss:
+; Check for moves that can hit underground/flying opponents.
+; Return z if the current move can hit the opponent.
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	ret z
+	bit SUBSTATUS_FLYING, a
+	jr z, .DigMoves
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp GUST
+	ret z
+	cp WHIRLWIND
+	ret z
+	cp THUNDER
+	ret z
+	ret
+.DigMoves:
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp EARTHQUAKE
+	ret z
+	cp FISSURE
+	ret z
+	cp MAGNITUDE
+	ret
+
+ThunderRain:
+; Return z if the current move always hits in rain, and it is raining.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_THUNDER
+	jr z, .checkRain
+	cp EFFECT_HURRICANE
+	jr z, .checkRain
+	ret
+.checkRain
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret
+
+XAccuracy:
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVar
+	bit SUBSTATUS_X_ACCURACY, a
+	ret

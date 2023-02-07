@@ -979,17 +979,6 @@ BattleTower_RandomlyChooseReward:
 .master
     ld a, RARE_CANDY
     jr .give
-;.loop
-;	call Random
-;	ldh a, [hRandomAdd]
-;	and $7
-;	cp 6
-;	jr c, .okay
-;	sub 6
-;.okay
-;	add HP_UP
-;	cp LUCKY_PUNCH
-;	jr z, .loop
 .give
 	push af
 	ld a, BANK(sBattleTowerReward)

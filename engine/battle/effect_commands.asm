@@ -1084,6 +1084,7 @@ BattleCommand_DoTurn:
 	pop hl
 	ret c
 
+; AndrewNote - here we consume pp
 .consume_pp
 	ldh a, [hBattleTurn]
 	and a
@@ -1098,7 +1099,20 @@ BattleCommand_DoTurn:
 	ld a, [hl]
 	and PP_MASK
 	jr z, .out_of_pp
+
+    call GetCurrentMon
+    cp ARCEUS
+    jr nz, .consumePP
+    push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_HOLY_CROWN
+	pop hl
+	jr z, .skipPP
+
+.consumePP
 	dec [hl]
+.skipPP
 	ld b, 0
 	ret
 
@@ -1194,24 +1208,7 @@ BattleCommand_Critical:
 	and a
 	ret z
 
-;	ldh a, [hBattleTurn]
-;	and a
-;	ld hl, wEnemyMonItem
-;	ld a, [wEnemyMonSpecies]
-;	jr nz, .Item
-;	ld hl, wBattleMonItem
-;	ld a, [wBattleMonSpecies]
-;.Item:
 	ld c, 0
-
-;   cp CHANSEY
-;   jr nz, .FocusEnergy
-;   ld a, [hl]
-;   cp LUCKY_PUNCH
-;   jr nz, .FocusEnergy
-; +2 critical level
-;	ld c, 2
-;.FocusEnergy:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
 	bit SUBSTATUS_FOCUS_ENERGY, a
@@ -1222,12 +1219,7 @@ BattleCommand_Critical:
 
 .CheckCritical:
 ; AndrewNote - Persians Slash always crits
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkHighCritMon
-	ld a, [wBattleMonSpecies]
-.checkHighCritMon
+    call GetCurrentMon
     cp PERSIAN
     jr z, .checkSlash
 ; ===== Super Luck =====
@@ -1472,12 +1464,7 @@ BattleCommand_Stab:
 ; ==============================
 ; ======= Solid Rock ===========
 ; ==============================
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr nz, .checkSpeciesSolidRock
-	ld a, [wEnemyMonSpecies]
-.checkSpeciesSolidRock
+    call GetOpposingMon
 	push bc
 	push de
 	push hl
@@ -1651,7 +1638,7 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
-    ;ret ; - revert this
+    ret ; - revert this
 ; damagevariation
 ; Modify the damage spread between 85% and 100%.
 
@@ -1719,25 +1706,22 @@ BattleCommand_CheckHit:
 	farcall FireAbsorb
     jp z, .Miss
 
-	call .DreamEater
+	farcall DreamEaterMiss
 	jp z, .Miss
 
-	call .Protect
+	farcall ProtectMiss
 	jp nz, .Miss
 
-	call .DrainSub
-	jp z, .Miss
-
-	call .LockOn
+	farcall LockOnMiss
 	ret nz
 
-	call .FlyDigMoves
+	farcall FlyDigMovesMiss
 	jp nz, .Miss
 
-	call .ThunderRain
+	farcall ThunderRain
 	ret z
 
-	call .XAccuracy
+	farcall XAccuracy
 	ret nz
 
 	; Perfect-accuracy moves
@@ -1753,12 +1737,7 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	cp DYNAMICPUNCH
 	jr nz, .notDynamicPunch
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkMachamp
-	ld a, [wBattleMonSpecies]
-.checkMachamp
+    call GetCurrentMon
 	cp MACHAMP
 	ret z
 .notDynamicPunch
@@ -1768,12 +1747,7 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	cp THUNDER
 	jr nz, .notThunder
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkGalvantula
-	ld a, [wBattleMonSpecies]
-.checkGalvantula
+    call GetCurrentMon
     cp VOLTIK
     ret z
 	cp GALVANTULA
@@ -1831,142 +1805,6 @@ BattleCommand_CheckHit:
 	ld [wAttackMissed], a
 	ret
 
-.DreamEater:
-; Return z if we're trying to eat the dream of
-; a monster that isn't sleeping.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_DREAM_EATER
-	ret nz
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and SLP
-	ret
-
-.Protect:
-; Return nz if the opponent is protected.
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_PROTECT, a
-	ret z
-
-	ld c, 40
-	call DelayFrames
-
-; 'protecting itself!'
-	ld hl, ProtectingItselfText
-	call StdBattleTextbox
-
-	ld c, 40
-	call DelayFrames
-
-	ld a, 1
-	and a
-	ret
-
-.LockOn:
-; Return nz if we are locked-on and aren't trying to use Earthquake,
-; Fissure or Magnitude on a monster that is flying.
-	ld a, BATTLE_VARS_SUBSTATUS5_OPP
-	call GetBattleVarAddr
-	bit SUBSTATUS_LOCK_ON, [hl]
-	res SUBSTATUS_LOCK_ON, [hl]
-	ret z
-
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	bit SUBSTATUS_FLYING, a
-	jr z, .LockedOn
-
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-
-	cp EARTHQUAKE
-	ret z
-	cp FISSURE
-	ret z
-	cp MAGNITUDE
-	ret z
-
-.LockedOn:
-	ld a, 1
-	and a
-	ret
-
-.DrainSub:
-; Return z if using an HP drain move on a substitute.
-	call CheckSubstituteOpp
-	jr z, .not_draining_sub
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-
-	;cp EFFECT_LEECH_HIT
-	;ret z
-	;cp EFFECT_DREAM_EATER
-	;ret z
-
-.not_draining_sub
-	ld a, 1
-	and a
-	ret
-
-.FlyDigMoves:
-; Check for moves that can hit underground/flying opponents.
-; Return z if the current move can hit the opponent.
-
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	ret z
-
-	bit SUBSTATUS_FLYING, a
-	jr z, .DigMoves
-
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-
-	cp GUST
-	ret z
-	cp WHIRLWIND
-	ret z
-	cp THUNDER
-	ret z
-	ret
-
-.DigMoves:
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-
-	cp EARTHQUAKE
-	ret z
-	cp FISSURE
-	ret z
-	cp MAGNITUDE
-	ret
-
-.ThunderRain:
-; Return z if the current move always hits in rain, and it is raining.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_THUNDER
-	jr z, .checkRain
-	cp EFFECT_HURRICANE
-	jr z, .checkRain
-	ret
-
-.checkRain
-	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
-	ret
-
-.XAccuracy:
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVar
-	bit SUBSTATUS_X_ACCURACY, a
-	ret
-
 .StatModifiers:
 	; load the user's accuracy into b and the opponent's evasion into c.
 	ld hl, wPlayerMoveStruct + MOVE_ACC
@@ -1987,6 +1825,14 @@ BattleCommand_CheckHit:
     cp GLISCOR
     call z, IncrementC
 .doneEnemySandVeil
+; ================================
+; ======= Compound Eyes ==========
+; ================================
+    ld a, [wBattleMonSpecies]
+    cp BUTTERFREE
+    call z, IncrementA
+    cp STARMIE
+    call z, IncrementA
 
 	ldh a, [hBattleTurn]
 	and a
@@ -2009,6 +1855,14 @@ BattleCommand_CheckHit:
     cp GLISCOR
     call z, IncrementC
 .donePlayerSandVeil
+; ================================
+; ======= Compound Eyes ==========
+; ================================
+    ld a, [wEnemyMonSpecies]
+    cp BUTTERFREE
+    call z, IncrementA
+    cp STARMIE
+    call z, IncrementA
 
 .got_acc_eva
 	cp b
@@ -2084,6 +1938,10 @@ BattleCommand_CheckHit:
 
 IncrementC:
     inc c
+    ret
+
+IncrementA:
+    inc a
     ret
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
@@ -2392,12 +2250,7 @@ BattleCommand_ApplyDamage:
 ; ========== Sturdy ===============
 ; =================================
 ; Pokemon with sturdy can't be killed from full HP
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr z, .checkSpecies
-	ld a, [wBattleMonSpecies]
-.checkSpecies
+    call GetOpposingMon
 	push bc
 	ld hl, SturdyPokemon
 	ld de, 1
@@ -2650,12 +2503,7 @@ BattleCommand_CheckFaint:
 	jr nz, .noLifeOrb
 
 ; Pokemon who are immune to residual damage (magic guard) take no recoil
-;    ldh a, [hBattleTurn]
-;	and a
-;	ld a, [wEnemyMonSpecies]
-;	jr nz, .checkSpecies
-;	ld a, [wBattleMonSpecies]
-;.checkSpecies
+;    call GetCurrentMon
 ;    cp CLEFABLE
 ;    jp z, .noLifeOrb
 ;    cp ARCEUS
@@ -3370,7 +3218,7 @@ BattleCommand_DamageCalc:
 	ld a, b
 	cp HELD_LIFE_ORB
 	pop hl
-	jr nz, .choiceBand
+	jr nz, .lowHpBoost
     ld a, 13
 	ldh [hMultiplier], a
 	call Multiply
@@ -3378,6 +3226,24 @@ BattleCommand_DamageCalc:
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
+
+.lowHpBoost
+; =====================
+; ======= Guts ========
+; =====================
+    call CheckGutsMon
+    jr c, .getStatus
+	jr .choiceBand
+.getStatus
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonStatus]
+	jr z, .checkStatus
+	ld a, [wEnemyMonStatus]
+.checkStatus
+	and a
+	jr z, .choiceBand
+    call FiftyPercentBoost
 
 .choiceBand
 ; ========================
@@ -3484,12 +3350,7 @@ BattleCommand_DamageCalc:
 ; ========= Thick Fat ==============
 ; ==================================
 ; half damage from fire and ice attacks
-	ldh a, [hBattleTurn]
-	and a
-    ld a, [wBattleMonSpecies]
-	jr nz, .thickFat
-	ld a, [wEnemyMonSpecies]
-.thickFat
+    call GetOpposingMon
     push de
 	push bc
 	ld hl, ThickFatPokemon
@@ -3515,12 +3376,7 @@ BattleCommand_DamageCalc:
 ; =================================
 ; ========== Technician ===========
 ; =================================
-	ldh a, [hBattleTurn]
-	and a
-    ld a, [wBattleMonSpecies]
-	jr z, .technician
-	ld a, [wEnemyMonSpecies]
-.technician
+    call GetCurrentMon
     push de
 	push bc
 	ld hl, TechnicianPokemon
@@ -3685,6 +3541,22 @@ TenPercentBoost:
 	ld b, 4
 	call Divide
 	ret
+
+CheckGutsMon:
+    call GetCurrentMon
+    push de
+	push bc
+	ld hl, GutsPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	jr nc, .noCarry
+	scf
+	ret
+.noCarry
+    xor a
+    ret
 
 INCLUDE "data/types/type_boost_items.asm"
 
@@ -5311,9 +5183,12 @@ CalcPlayerStats:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
+    call CheckGutsMon
+    jr c, .skipBurn
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
+.skipBurn
 	jp BattleCommand_SwitchTurn
 
 CalcEnemyStats:
@@ -5329,9 +5204,12 @@ CalcEnemyStats:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
+    call CheckGutsMon
+    jr c, .skipBurn
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
+.skipBurn
 	jp BattleCommand_SwitchTurn
 
 CalcBattleStats:
@@ -5857,12 +5735,7 @@ BattleCommand_FlinchTarget:
 ; =============================
 ; ======== Inner Focus ========
 ; =============================
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wEnemyMonSpecies]
-.checkSpecies
+    call GetOpposingMon
 	ld hl, InnerFocusPokemon
 	ld de, 1
 	call IsInArray
@@ -5918,12 +5791,7 @@ BattleCommand_HeldFlinch:
 
 BattleCommand_CheckDeathImmunity:
 ; checkDeathImmunity
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wEnemyMonSpecies]
-.checkSpecies
+    call GetOpposingMon
 	ld hl, UberImmunePokemon
 	ld de, 1
 	call IsInArray
@@ -7204,6 +7072,24 @@ SandstormSpDefBoost:
 	ld c, l
 	ret
 
+GetCurrentMon:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .done
+	ld a, [wEnemyMonSpecies]
+.done
+    ret
+
+GetOpposingMon:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .done
+	ld a, [wEnemyMonSpecies]
+.done
+    ret
+
 GetUserItem:
 ; Return the effect of the user's item in bc, and its id at hl.
 	ld hl, wBattleMonItem
@@ -7436,12 +7322,7 @@ _CheckBattleScene:
 	ret
 
 BattleCommand_CheckStatusImmunity:
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wEnemyMonSpecies]
-.checkSpecies
+    call GetOpposingMon
     cp ARCEUS
     jr z, .immune
     cp SYLVEON

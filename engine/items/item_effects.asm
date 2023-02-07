@@ -43,7 +43,7 @@ ItemEffects:
 	dw VitaminEffect       ; PROTEIN
 	dw VitaminEffect       ; IRON
 	dw VitaminEffect       ; CARBOS
-	dw NoEffect            ; LUCKY_PUNCH
+	dw NoEffect            ; HOLY_CROWN
 	dw VitaminEffect       ; CALCIUM
 	dw RareCandyEffect     ; RARE_CANDY
 	dw XAccuracyEffect     ; X_ACCURACY
@@ -2110,7 +2110,6 @@ ItemCheckEnemyMaxHP:
 	pop hl
 	and a
 	ret
-
 
 GetHealingItemAmount:
 	push hl

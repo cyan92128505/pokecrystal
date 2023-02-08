@@ -722,7 +722,7 @@ AI_Switch:
 	res SUBSTATUS_RAGE, [hl]
 	xor a
 	ldh [hBattleTurn], a
-	callfar PursuitSwitch
+	;callfar PursuitSwitch
 
 	push af
 	ld a, [wCurOTMon]

@@ -1223,12 +1223,10 @@ BattleCommand_Critical:
     cp PERSIAN
     jr z, .checkSlash
 ; ===== Super Luck =====
-    cp MEWTWO
-    jr z, .increaseCritical
-    cp HONCHKROW
-    jr z, .increaseCritical
-    cp BISHARP
-    jr z, .increaseCritical
+	cp MEWTWO
+	jr z, .increaseCritical
+	cp HONCHKROW
+	jr z, .increaseCritical
     jr .continue
 .checkSlash
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1638,7 +1636,7 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
-    ret ; - revert this
+    ;ret ; - revert this
 ; damagevariation
 ; Modify the damage spread between 85% and 100%.
 
@@ -1830,9 +1828,19 @@ BattleCommand_CheckHit:
 ; ================================
     ld a, [wBattleMonSpecies]
     cp BUTTERFREE
-    call z, IncrementA
+    call z, IncrementB
     cp STARMIE
-    call z, IncrementA
+    call z, IncrementB
+    cp HOOTHOOT
+    call z, IncrementB
+    cp NOCTOWL
+    call z, IncrementB
+    cp FROAKIE
+    call z, IncrementB
+    cp FROGADIER
+    call z, IncrementB
+    cp GRENINJA
+    call z, IncrementB
 
 	ldh a, [hBattleTurn]
 	and a
@@ -1860,9 +1868,19 @@ BattleCommand_CheckHit:
 ; ================================
     ld a, [wEnemyMonSpecies]
     cp BUTTERFREE
-    call z, IncrementA
+    call z, IncrementB
     cp STARMIE
-    call z, IncrementA
+    call z, IncrementB
+    cp HOOTHOOT
+    call z, IncrementB
+    cp NOCTOWL
+    call z, IncrementB
+    cp FROAKIE
+    call z, IncrementB
+    cp FROGADIER
+    call z, IncrementB
+    cp GRENINJA
+    call z, IncrementB
 
 .got_acc_eva
 	cp b
@@ -1940,8 +1958,8 @@ IncrementC:
     inc c
     ret
 
-IncrementA:
-    inc a
+IncrementB:
+    inc b
     ret
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
@@ -1965,12 +1983,16 @@ BattleCommand_EffectChance:
 ; ==============================
 ; ====== Serene Grace ==========
 ; ==============================
-    cp BLISSEY
-    jr z, .sereneGrace
-    cp TOGEKISS
-    jr z, .sereneGrace
-    cp SHAYMIN
-    jr z, .sereneGrace
+	push bc
+	push de
+	push hl
+	ld hl, SereneGracePokemon
+	ld de, 1
+	call IsInArray
+	pop hl
+	pop de
+	pop bc
+    jr c, .sereneGrace
     jr .continue
 .sereneGrace
     ld a, [hl]
@@ -3218,7 +3240,7 @@ BattleCommand_DamageCalc:
 	ld a, b
 	cp HELD_LIFE_ORB
 	pop hl
-	jr nz, .lowHpBoost
+	jr nz, .gatsu
     ld a, 13
 	ldh [hMultiplier], a
 	call Multiply
@@ -3227,7 +3249,7 @@ BattleCommand_DamageCalc:
 	ld b, 4
 	call Divide
 
-.lowHpBoost
+.gatsu
 ; =====================
 ; ======= Guts ========
 ; =====================
@@ -3306,12 +3328,35 @@ BattleCommand_DamageCalc:
 	ld a, b
 	cp HELD_WISE_GLASSES
 	pop hl
-	jr nz, .continue
+	jr nz, .rivalry
     ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	cp SPECIAL
-	jr c, .continue
+	jr c, .rivalry
 	call TenPercentBoost
+
+.rivalry
+; =============================
+; ======= Rivalry =============
+; =============================
+	call GetCurrentMon
+    push de
+	push bc
+	ld hl, RivalryPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	jr nc, .continue
+	call CheckOppositeGender
+	jr c, .continue
+    ld a, 6
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 5
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
 
 .continue
 ; Critical hits
@@ -3488,17 +3533,26 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	and a
 	ld hl, wEnemyMonItem
 	ld a, [wEnemyMonSpecies]
-	jr nz, .checkMewtwoBerserkGene
+	jr nz, .checkMon
 	ld hl, wBattleMonItem
 	ld a, [wBattleMonSpecies]
-.checkMewtwoBerserkGene
+.checkMon
     cp MEWTWO
-    jr nz, .FiftyPercent
+    jr z, .checkBerserkGene
+    cp TREECKO
+    jr z, .doubleDamage
+    cp GROVYLE
+    jr z, .doubleDamage
+    cp SCEPTILE
+    jr z, .doubleDamage
+    cp BISHARP
+    jr z, .doubleDamage
+.checkBerserkGene
     ld a, [hl]
     cp BERSERK_GENE
     jr nz, .FiftyPercent
 
-; berserk gene mewtwo deals x2 damage on crits
+.doubleDamage
 	ldh a, [hQuotient + 3]
 	add a
 	ldh [hQuotient + 3], a
@@ -6118,16 +6172,16 @@ BattleCommand_Recoil:
 ; ========================
 ; ===== Rock Head ========
 ; ========================
-    cp AERODACTYL
-    jr z, .rockHead
-    cp MAROWAK
-    jr z, .rockHead
-    cp GIRATINA
-    jr z, .rockHead
-    cp BAGON
-    jr z, .rockHead
-    cp SHELGON
-    jr z, .rockHead
+	push bc
+	push de
+	push hl
+	ld hl, RockHeadPokemon
+	ld de, 1
+	call IsInArray
+	pop hl
+	pop de
+	pop bc
+	jr c, .rockHead
     jr .endRockHead
 .rockHead
 	ld hl, RockHeadText
@@ -7003,25 +7057,6 @@ INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 BattleCommand_DoubleMinimizeDamage:
 ; doubleminimizedamage
     ret
-
-;	ld hl, wEnemyMinimized
-;	ldh a, [hBattleTurn]
-;	and a
-;	jr z, .ok
-;	ld hl, wPlayerMinimized
-;.ok
-;	ld a, [hl]
-;	and a
-;	ret z
-;	ld hl, wCurDamage + 1
-;	sla [hl]
-;	dec hl
-;	rl [hl]
-;	ret nc
-;	ld a, $ff
-;	ld [hli], a
-;	ld [hl], a
-;	ret
 
 BattleCommand_SkipSunCharge:
 ; mimicsuncharge

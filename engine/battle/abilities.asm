@@ -1,8 +1,8 @@
 ; there are other abilities not mentioned in this file
 ; see battle/core SwitchInEffects for
-; drizzle, drought, air lock, sandstream, intimidate, download, intrepid sword, speed boost, prankster, swift swim, chlorophyl, sand rush
+; drizzle, drought, air lock, sandstream, intimidate, download, intrepid sword, speed boost, prankster, swift swim, chlorophyl, sand rush, more...
 ; see effect_commands for
-; solid rock, serene grace, rock head, sand veil
+; sand veil, super luck, berserk gene
 
 SturdyPokemon:
     db SKARMORY
@@ -19,6 +19,26 @@ SturdyPokemon:
     db FERROTHORN
     db -1
 
+SereneGracePokemon:
+    db CHANSEY
+    db BLISSEY
+    db TOGEPI
+    db TOGETIC
+    db TOGEKISS
+    db SHAYMIN
+    db -1
+
+RockHeadPokemon:
+    db AERODACTYL
+    db MAROWAK
+    db GIRATINA
+    db BAGON
+    db SHELGON
+    db CHIMCHAR
+    db MONFERNO
+    db INFERNAPE
+    db -1
+
 GutsPokemon:
     db RATICATE
     db HERACROSS
@@ -29,9 +49,25 @@ GutsPokemon:
     db GURDURR
     db CONKELDURR
     db URSARING
+    db PINSIR
+    db -1
+
+RivalryPokemon:
+    db NIDORAN_M
+    db NIDORINO
+    db NIDOKING
+    db NIDORAN_F
+    db NIDORINA
+    db NIDOQUEEN
+    db RALTS
+    db KIRLIA
+    db GARDEVOIR
+    db GALADE
     db -1
 
 MultiScalePokemon:
+    db DRATINI
+    db DRAGONAIR
     db DRAGONITE
     db LUGIA
     db MILOTIC
@@ -40,7 +76,6 @@ MultiScalePokemon:
 ThickFatPokemon:
     db SNORLAX
     db MILTANK
-    db URSARING
     db LAPRAS
     db PILOSWINE
     db MAMOSWINE
@@ -53,7 +88,6 @@ TechnicianPokemon:
     db MEOWTH
     db PERSIAN
     db MR__MIME
-    db SMEARGLE
     db SHROOMISH
     db BRELOOM
     db -1
@@ -86,13 +120,10 @@ ClearBodyPokemon:
 
 InnerFocusPokemon:
     db LUCARIO
-    db SMEARGLE
-    db HYPNO
     db CROBAT
     db UMBREON
     db ARCEUS
     db PAWNIARD
-    db BISHARP
     db -1
 
 SolidRockPokemon:
@@ -155,6 +186,11 @@ UberImmunePokemon:
 ;    db ZAPDOS
 ;    db JOLTEON
 ;    db ARCTOZOLT
+;    db PIKACHU
+;    db RAICHU
+;    db MAREEP
+;    db FLAAFFY
+;    db AMPHAROS
 ;    db -1
 
 ;FireAbsorbPokemon:

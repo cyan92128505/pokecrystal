@@ -174,7 +174,6 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
-	;call HandleBerserkGene
 	call UpdateBattleMonInParty
 
 	farcall AIChooseMove
@@ -348,75 +347,6 @@ CheckFaint_EnemyThenPlayer:
 	scf
 	ret
 
-;HandleBerserkGene:
-;	ldh a, [hSerialConnectionStatus]
-;	cp USING_EXTERNAL_CLOCK
-;	jr z, .reverse
-;	call .player
-;	jr .enemy
-;.reverse
-;	call .enemy
-;	; fallthrough
-;.player
-;	call SetPlayerTurn
-;	ld de, wPartyMon1Item
-;	ld a, [wCurBattleMon]
-;	ld b, a
-;	jr .go
-;.enemy
-;	call SetEnemyTurn
-;	ld de, wOTPartyMon1Item
-;	ld a, [wCurOTMon]
-;	ld b, a
-;	; fallthrough
-;.go
-;	push de
-;	push bc
-;	callfar GetUserItem
-;	ld a, [hl]
-;	ld [wNamedObjectIndex], a
-;	sub BERSERK_GENE
-;	pop bc
-;	pop de
-;	ret nz
-;	ld [hl], a
-;	ld h, d
-;	ld l, e
-;	ld a, b
-;	call GetPartyLocation
-;	xor a
-;	ld [hl], a
-;	ld a, BATTLE_VARS_SUBSTATUS3
-;	call GetBattleVarAddr
-;	push af
-;	set SUBSTATUS_CONFUSED, [hl]
-;	ld a, BATTLE_VARS_MOVE_ANIM
-;	call GetBattleVarAddr
-;	push hl
-;	push af
-;	xor a
-;	ld [hl], a
-;	ld [wAttackMissed], a
-;	ld [wEffectFailed], a
-;	farcall BattleCommand_AttackUp2
-;	pop af
-;	pop hl
-;	ld [hl], a
-;	call GetItemName
-;	ld hl, BattleText_UsersStringBuffer1Activated
-;	call StdBattleTextbox
-;	callfar BattleCommand_StatUpMessage
-;	pop af
-;	bit SUBSTATUS_CONFUSED, a
-;	ret nz
-;	xor a
-;	ld [wNumHits], a
-;	ld de, ANIM_CONFUSED
-;	call Call_PlayBattleAnim_OnlyIfVisible
-;	call SwitchTurnCore
-;	ld hl, BecameConfusedText
-;	jp StdBattleTextbox
-
 EnemyTriesToFlee:
 	ld a, [wLinkMode]
 	and a
@@ -541,15 +471,11 @@ DetermineMoveOrder:
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
     call z, DoubleEnemySpeedInHL
-    cp GOLDUCK
-    call z, DoubleEnemySpeedInHL
     cp POLIWRATH
     call z, DoubleEnemySpeedInHL
 
     ld a, [wBattleMonSpecies]
     cp KINGDRA
-    call z, DoublePlayerSpeedInDE
-    cp GOLDUCK
     call z, DoublePlayerSpeedInDE
     cp POLIWRATH
     call z, DoublePlayerSpeedInDE
@@ -972,6 +898,8 @@ GetEnemyMovePriority:
     jr z, .prankster
     cp KLEFKI
     jr z, .prankster
+    cp RIOLU
+    jr z, .prankster
     jr .noPrankster
 .prankster
     call GetMovePower
@@ -1297,7 +1225,28 @@ ResidualDamage:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	bit SUBSTATUS_NIGHTMARE, [hl]
-	jr z, .not_nightmare
+	jr nz, .nightmare
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .checkNightmareMon
+	ld a, [wEnemyMonSpecies]
+.checkNightmareMon
+    cp DARKRAI
+    jr nz, .not_nightmare
+    cp HYPNO
+    jr nz, .not_nightmare
+    cp JYNX
+    jr nz, .not_nightmare
+    cp SPIRITOMB
+    jr nz, .not_nightmare
+
+    ld a, [wBattleMonStatus]
+    and a
+    jr z, .not_nightmare
+
+.nightmare
 	xor a
 	ld [wNumHits], a
 	ld de, ANIM_IN_NIGHTMARE
@@ -4443,28 +4392,40 @@ SwitchInEffects:
     jp z, .rain
     cp POLITOED
     jp z, .rain
+
     cp GROUDON
     jp z, .sun
     cp CHARIZARD
     jp z, .sun
+
     cp TYRANITAR
     jp z,  .sand
+
     cp RAYQUAZA
     jp z, .clear
+    cp GOLDUCK
+    jp z, .clear
+
     cp GENESECT
     jp z, .spAtkUp
     cp PORYGONZ
     jp z, .spAtkUp
+
     cp SUICUNE
     jp z, .defUp
+    cp PORYGON2
+    jp z, .defUp
+
     cp RAIKOU
     jp z, .spdUp
     cp YANMA
     jp z, .spdUp
     cp YANMEGA
     jp z, .spdUp
+
     cp ENTEI
     jp z, .atkUp
+
     cp GYARADOS
     jp z, .atkDown
     cp SALAMENCE
@@ -4477,16 +4438,32 @@ SwitchInEffects:
     jp z, .atkDown
     cp STARAPTOR
     jp z, .atkDown
+
     cp AEGISLASH
     jp z, .defenseMode
+
     cp WIGGLYTUFF
     jp z, .spDefUp
+
+    cp BUNEARY
+    jp z, .evasionUp
     cp LOPUNNY
+    jp z, .evasionUp
+    cp SNEASEL
     jp z, .evasionUp
     cp WEAVILE
     jp z, .evasionUp
+    cp ZUBAT
+    jp z, .evasionUp
+    cp GOLBAT
+    jp z, .evasionUp
+    cp CROBAT
+    jp z, .evasionUp
     cp CELEBI
     jp z, .evasionUp
+
+    cp EEVEE
+    jp z, .randomStatUp
     cp DUNSPARCE
     jp z, .randomStatUp
     cp SMEARGLE
@@ -4590,84 +4567,73 @@ SwitchInEffects:
 	jp StdBattleTextbox
     ret
 
-PursuitSwitch:
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	ld b, a
-	call GetMoveEffect
-	ld a, b
-	cp EFFECT_PURSUIT
-	jr nz, .done
-
-	ld a, [wCurBattleMon]
-	push af
-
-	ld hl, DoPlayerTurn
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .do_turn
-	ld hl, DoEnemyTurn
-	ld a, [wLastPlayerMon]
-	ld [wCurBattleMon], a
-.do_turn
-	ld a, BANK(DoPlayerTurn) ; aka BANK(DoEnemyTurn)
-	rst FarCall
-
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVarAddr
-	ld a, $ff
-	ld [hl], a
-
-	pop af
-	ld [wCurBattleMon], a
-
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .check_enemy_fainted
-
-	ld a, [wLastPlayerMon]
-	call UpdateBattleMon
-	ld hl, wBattleMonHP
-	ld a, [hli]
-	or [hl]
-	jr nz, .done
-
-	ld a, $f0
-	ld [wCryTracks], a
-	ld a, [wBattleMonSpecies]
-	call PlayStereoCry
-	ld a, [wLastPlayerMon]
-	ld c, a
-	ld hl, wBattleParticipantsNotFainted
-	ld b, RESET_FLAG
-	predef SmallFarFlagAction
-	call PlayerMonFaintedAnimation
-	ld hl, BattleText_MonFainted
-	jr .done_fainted
-
-.check_enemy_fainted
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	or [hl]
-	jr nz, .done
-
-	ld de, SFX_KINESIS
-	call PlaySFX
-	call WaitSFX
-	ld de, SFX_FAINT
-	call PlaySFX
-	call WaitSFX
-	call EnemyMonFaintedAnimation
-	ld hl, BattleText_EnemyMonFainted
-
-.done_fainted
-	call StdBattleTextbox
-	scf
-	ret
-
-.done
-	and a
-	ret
+;PursuitSwitch:
+;	ld a, BATTLE_VARS_MOVE
+;	call GetBattleVar
+;	ld b, a
+;	call GetMoveEffect
+;	ld a, b
+;	cp EFFECT_PURSUIT
+;	jr nz, .done
+;	ld a, [wCurBattleMon]
+;	push af
+;	ld hl, DoPlayerTurn
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .do_turn
+;	ld hl, DoEnemyTurn
+;	ld a, [wLastPlayerMon]
+;	ld [wCurBattleMon], a
+;.do_turn
+;	ld a, BANK(DoPlayerTurn) ; aka BANK(DoEnemyTurn)
+;	rst FarCall
+;	ld a, BATTLE_VARS_MOVE
+;	call GetBattleVarAddr
+;	ld a, $ff
+;	ld [hl], a
+;	pop af
+;	ld [wCurBattleMon], a
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .check_enemy_fainted
+;	ld a, [wLastPlayerMon]
+;	call UpdateBattleMon
+;	ld hl, wBattleMonHP
+;	ld a, [hli]
+;	or [hl]
+;	jr nz, .done
+;	ld a, $f0
+;	ld [wCryTracks], a
+;	ld a, [wBattleMonSpecies]
+;	call PlayStereoCry
+;	ld a, [wLastPlayerMon]
+;	ld c, a
+;	ld hl, wBattleParticipantsNotFainted
+;	ld b, RESET_FLAG
+;	predef SmallFarFlagAction
+;	call PlayerMonFaintedAnimation
+;	ld hl, BattleText_MonFainted
+;	jr .done_fainted
+;.check_enemy_fainted
+;	ld hl, wEnemyMonHP
+;	ld a, [hli]
+;	or [hl]
+;	jr nz, .done
+;	ld de, SFX_KINESIS
+;	call PlaySFX
+;	call WaitSFX
+;	ld de, SFX_FAINT
+;	call PlaySFX
+;	call WaitSFX
+;	call EnemyMonFaintedAnimation
+;	ld hl, BattleText_EnemyMonFainted
+;.done_fainted
+;	call StdBattleTextbox
+;	scf
+;	ret
+;.done
+;	and a
+;	ret
 
 RecallPlayerMon:
 	ldh a, [hBattleTurn]
@@ -5696,7 +5662,7 @@ BattleMonEntrance:
 	res SUBSTATUS_RAGE, [hl]
 
 	call SetEnemyTurn
-	call PursuitSwitch
+	;call PursuitSwitch
 	jr c, .ok
 	call RecallPlayerMon
 .ok

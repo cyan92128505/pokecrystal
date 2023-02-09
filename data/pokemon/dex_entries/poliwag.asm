@@ -3,8 +3,7 @@
 
 	db   "The swirl on its"
 	next "belly is its"
-	next "insides showing"
+	next "insides showing."
 
-	page "through the skin."
-	next "It looks clearer"
-	next "after it eats.@"
+	page "AB Immune to"
+	next "WATER attacks.@"

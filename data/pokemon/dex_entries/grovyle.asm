@@ -1,10 +1,10 @@
-	db "LEAF@" ; species name
-	dw 311, 350 ; height, weight
+	db "WOOD GECKO@" ; species name
+	dw 311, 650 ; height, weight
 
-	db   "The scent that"
-	next "wafts from the"
-	next "leaves on its neck"
+	db   "Strong thighs give"
+	next "it great agility"
+	next "and jump height."
 
-	page "causes anyone who"
-	next "smells it to"
-	next "become energetic.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

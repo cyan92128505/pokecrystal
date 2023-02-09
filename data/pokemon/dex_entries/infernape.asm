@@ -1,10 +1,10 @@
-	db "VOLCANO@" ; species name
-	dw 507, 1750 ; height, weight
+	db "FLAME@" ; species name
+	dw 311, 1213 ; height, weight
 
-	db   "When heat from its"
-	next "body causes the"
-	next "air around it to"
+	db   "Will savagely"
+	next "attack any foe"
+	next "with fire fists."
 
-	page "shimmer, this is a"
-	next "sign that it is"
-	next "ready to battle.@"
+	page "AB Takes no"
+	next "recoil damage"
+	next "from attacks.@"

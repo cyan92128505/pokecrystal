@@ -52,6 +52,10 @@ AI_WaterAbsorbPokemon:
     db VAPOREON
     db LAPRAS
     db ARCTOVISH
+    db PARAS
+    db PARASECT
+    db POLIWAG
+    db POLIWHIRL
     db $FF
 
 AI_VoltAbsorbPokemon:
@@ -85,6 +89,8 @@ AI_FireAbsorbPokemon:
     db CHANDELURE
     db LARVESTA
     db VOLCARONA
+    db GROWLITHE
+    db ARCANINE
     db $FF
 
 AI_SturdyPokemon:

@@ -2,9 +2,9 @@
 	dw 100, 44 ; height, weight
 
 	db   "It rapidly flaps"
-	next "its wings in the"
-	next "grass, stirring up"
+	next "its wings to drive"
+	next "out prey."
 
-	page "a dust cloud that"
-	next "drives insect prey"
-	next "out into the open.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

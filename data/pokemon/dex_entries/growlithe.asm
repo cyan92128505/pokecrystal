@@ -2,9 +2,8 @@
 	dw 204, 420 ; height, weight
 
 	db   "It controls a big"
-	next "territory. If it"
-	next "detects an unknown"
+	next "territory. It will"
+	next "defend it."
 
-	page "smell, it roars"
-	next "loudly to force"
-	next "out the intruder.@"
+	page "AB Immune to"
+	next "FIRE attacks.@"

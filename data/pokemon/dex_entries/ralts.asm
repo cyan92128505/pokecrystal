@@ -5,5 +5,6 @@
 	next "emotions of"
 	next "others."
 
-	page "It hides if it"
-	next "senses anger.@"
+	page "AB Boosted damage"
+	next "against opposite"
+	next "gender foes.@"

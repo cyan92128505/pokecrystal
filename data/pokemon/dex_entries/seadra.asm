@@ -1,10 +1,10 @@
 	db "DRAGON@" ; species name
 	dw 311, 550 ; height, weight
 
-	db   "The male raises"
-	next "the young. If it"
-	next "is approached, it"
+	db   "The male births"
+	next "and raises the"
+	next "young."
 
-	page "uses its toxic"
-	next "spikes to fend off"
-	next "the intruder.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

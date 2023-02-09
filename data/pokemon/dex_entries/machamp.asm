@@ -5,5 +5,6 @@
 	next "move faster than"
 	next "can be seen."
 
-	page "AB Immune to"
-	next "stat drops.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

@@ -5,6 +5,6 @@
 	next "lives inside"
 	next "teapots."
 
-	page "It prefers"
-	next "authentic"
-	next "antique pots.@"
+	page "AB Unleashes a"
+	next "final attack upon"
+	next "being defeated.@"

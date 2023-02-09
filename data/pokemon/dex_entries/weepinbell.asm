@@ -1,10 +1,9 @@
 	db "FLYCATCHER@" ; species name
 	dw 303, 140 ; height, weight
 
-	db   "When it's hungry,"
-	next "it swings its"
-	next "razor-sharp"
+	db   "When hungry it"
+	next "cuts with razor"
+	next "sharp leaves."
 
-	page "leaves, slicing up"
-	next "any unlucky object"
-	next "nearby for food.@"
+	page "AB Gets critical"
+	next "hits often.@"

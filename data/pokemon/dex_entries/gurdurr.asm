@@ -3,8 +3,8 @@
 
 	db   "Built of pure"
 	next "muscle. They wield"
-	next "steel beams with"
+	next "steel beams."
 
-	page "skill. They like"
-	next "to show off their"
-	next "muscles.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

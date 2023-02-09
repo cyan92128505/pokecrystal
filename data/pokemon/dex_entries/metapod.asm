@@ -1,10 +1,9 @@
 	db "COCOON@" ; species name
 	dw 204, 220 ; height, weight
 
-	db   "This is its pre-"
-	next "evolved form. At"
-	next "this stage, it can"
+	db   "Inside the cocoon"
+	next "it awaits its"
+	next "evolution."
 
-	page "only harden, so it"
-	next "remains motionless"
-	next "to avoid attack.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

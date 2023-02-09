@@ -1,10 +1,10 @@
 	db "EVOLUTION@" ; species name
 	dw 100, 140 ; height, weight
 
-	db   "Its ability to"
-	next "evolve into many"
-	next "forms allows it to"
+	db   "Evolves via any"
+	next "stone, or with"
+	next "friendship."
 
-	page "adapt smoothly"
-	next "and perfectly to"
-	next "any environment.@"
+	page "AB Random stat"
+	next "increase upon"
+	next "entering battle.@"

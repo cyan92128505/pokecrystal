@@ -3,8 +3,8 @@
 
 	db   "The rich, fluffy"
 	next "fur that covers"
-	next "its body feels so"
+	next "it feels good."
 
-	page "good that anyone"
-	next "who feels it can't"
-	next "stop touching it.@"
+	page "AB SPEC DEFENSE"
+	next "increases upon"
+	next "entering battle.@"

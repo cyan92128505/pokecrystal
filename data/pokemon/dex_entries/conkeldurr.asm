@@ -2,9 +2,9 @@
 	dw 507, 3218 ; height, weight
 
 	db   "Fights with two"
-	next "concrete pillars."
-	next "It can move them"
+	next "concrete pillars"
+	next "like sticks."
 
-	page "as easily as"
-	next "sticks and crush"
-	next "its foes.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

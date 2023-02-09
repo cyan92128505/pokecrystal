@@ -1,10 +1,9 @@
 	db "ROYAL@" ; species name
 	dw 607, 1750 ; height, weight
 
-	db   "Every time it ya-"
-	next "wns, SHELLDER"
-	next "injects more poi-"
+	db   "Intelligent king"
+	next "of the slowbro"
+	next "and slowpoke."
 
-	page "son into it. The"
-	next "poison makes it"
-	next "more intelligent.@"
+	page "AB Regenerates"
+	next "HP every turn.@"

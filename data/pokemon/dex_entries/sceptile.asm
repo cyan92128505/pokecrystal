@@ -1,10 +1,10 @@
-	db "HERB@" ; species name
-	dw 511, 2220 ; height, weight
+	db "FOREST@" ; species name
+	dw 603, 1850 ; height, weight
 
-	db   "Anyone who stands"
-	next "beside it becomes"
-	next "refreshed, just as"
+	db   "The leaves on its"
+	next "body are a sharp"
+	next "as swords."
 
-	page "if they were"
-	next "relaxing in a"
-	next "sunny forest.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

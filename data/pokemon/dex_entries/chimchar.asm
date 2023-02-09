@@ -1,10 +1,10 @@
-	db "FIRE MOUSE@" ; species name
-	dw 108, 170 ; height, weight
+	db "CHIMP@" ; species name
+	dw 108, 137 ; height, weight
 
-	db   "The fire that"
-	next "spouts from its"
-	next "back burns hottest"
+	db   "It puts its fire"
+	next "out when it sleeps"
+	next "to prevent fires."
 
-	page "when it is angry."
-	next "The flaring flames"
-	next "intimidate foes.@"
+	page "AB Takes no"
+	next "recoil damage"
+	next "from attacks.@"

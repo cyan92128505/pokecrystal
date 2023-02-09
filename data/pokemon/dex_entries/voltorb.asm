@@ -1,10 +1,10 @@
 	db "BALL@" ; species name
 	dw 108, 230 ; height, weight
 
-	db   "During the study"
+	db   "The components"
 	next "of this #MON,"
-	next "it was discovered"
+	next "are unnatural."
 
-	page "that its compo-"
-	next "nents are not"
-	next "found in nature.@"
+	page "AB Unleashes a"
+	next "final attack upon"
+	next "being defeated.@"

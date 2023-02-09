@@ -3,8 +3,7 @@
 
 	db   "An artificial"
 	next "#MON created"
-	next "due to extensive"
+	next "due to research."
 
-	page "research, it can"
-	next "perform only what"
-	next "is in its program.@"
+	page "AB Makes weaker"
+	next "moves stronger.@"

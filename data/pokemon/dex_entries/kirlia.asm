@@ -5,6 +5,6 @@
 	next "from the emotions"
 	next "of its trainer."
 
-	page "It likes to"
-	next "dance as it looks"
-	next "into the future.@"
+	page "AB Boosted damage"
+	next "against opposite"
+	next "gender foes.@"

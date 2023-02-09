@@ -3,8 +3,8 @@
 
 	db   "People try to"
 	next "catch it for its"
-	next "extremely"
+	next "nutritious egg."
 
-	page "nutritious eggs,"
-	next "but it rarely can"
-	next "be found.@"
+	page "AB move effects"
+	next "are more likely"
+	next "to occur.@"

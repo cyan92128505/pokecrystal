@@ -3,8 +3,7 @@
 
 	db   "An attached"
 	next "SHELLDER won't let"
-	next "go because of the"
+	next "go."
 
-	page "tasty flavor that"
-	next "oozes out of its"
-	next "tail.@"
+	page "AB Regenerates"
+	next "HP every turn.@"

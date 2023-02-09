@@ -5,5 +5,6 @@
 	next "fields restrain its"
 	next "immense energy."
 
-	page "AB Can not be KOd"
-	next "from full HP.@"
+	page "AB Unleashes a"
+	next "final attack upon"
+	next "being defeated.@"

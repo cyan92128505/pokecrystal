@@ -3619,11 +3619,10 @@ CelebiEvosAttacks:
 	db 1, CONFUSION
 	db 1, RECOVER
 	db 1, HEAL_BELL
-	db 10, SAFEGUARD
 	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+	db 30, BATON_PASS
+	db 55, ZEN_HEADBUTT
+	db 60, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 MewtwoEvosAttacks:

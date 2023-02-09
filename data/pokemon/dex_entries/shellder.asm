@@ -3,8 +3,8 @@
 
 	db   "Clamping on to an"
 	next "opponent reveals"
-	next "its vulnerable"
+	next "its weak parts."
 
-	page "parts, so it uses"
-	next "this move only as"
-	next "a last resort.@"
+	page "AB DEFENSE"
+	next "increases upon"
+	next "entering battle.@"

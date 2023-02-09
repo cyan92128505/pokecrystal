@@ -2,9 +2,9 @@
 	dw 407, 1360 ; height, weight
 
 	db   "When it gets dark,"
-	next "the light from its"
-	next "bright, shiny tail"
+	next "it light can be"
+	next "seen for miles."
 
-	page "can be seen from"
-	next "far away on the"
-	next "ocean's surface.@"
+	page "AB Immune to"
+	next "ELECTRIC"
+	next "attacks.@"

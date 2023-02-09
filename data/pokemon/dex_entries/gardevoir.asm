@@ -3,8 +3,8 @@
 
 	db   "It looks always"
 	next "into the future."
-	next "If it sees danger"
+	next "It sees danger."
 
-	page "to its trainer"
-	next "its power grows"
-	next "to its maximum.@"
+	page "AB Boosted damage"
+	next "against opposite"
+	next "gender foes.@"

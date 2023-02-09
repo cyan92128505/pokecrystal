@@ -5,5 +5,6 @@
 	next "PAWNIARD, it is"
 	next "truly merciless."
 
-	page "AB Immune to"
-	next "flinching.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

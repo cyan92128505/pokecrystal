@@ -3,8 +3,7 @@
 
 	db   "Its long, furry"
 	next "tail is a symbol"
-	next "of longevity,"
+	next "of longevity."
 
-	page "making it quite"
-	next "popular among"
-	next "older people.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

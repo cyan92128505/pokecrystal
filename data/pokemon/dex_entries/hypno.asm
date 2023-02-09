@@ -5,5 +5,6 @@
 	next "children at"
 	next "night."
 
-	page "AB Immune to"
-	next "flinching.@"
+	page "AB Gives"
+	next "nightmares to"
+	next "sleeping foes.@"

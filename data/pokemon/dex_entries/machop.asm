@@ -3,8 +3,8 @@
 
 	db   "It trains by"
 	next "lifting rocks in"
-	next "the mountains. It"
+	next "the mountains."
 
-	page "can even pick up a"
-	next "GRAVELER with"
-	next "ease.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

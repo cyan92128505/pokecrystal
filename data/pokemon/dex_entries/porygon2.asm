@@ -3,8 +3,8 @@
 
 	db   "This manmade"
 	next "#MON evolved"
-	next "from the latest"
+	next "from software."
 
-	page "technology. It"
-	next "may have unprog-"
-	next "rammed reactions.@"
+	page "AB DEFENSE"
+	next "increases upon"
+	next "entering battle.@"

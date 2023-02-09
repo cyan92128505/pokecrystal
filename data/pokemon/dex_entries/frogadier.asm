@@ -1,10 +1,9 @@
-	db "BIG JAW@" ; species name
-	dw 307, 550 ; height, weight
+	db "BUBBLE FROG@" ; species name
+	dw 200, 350 ; height, weight
 
-	db   "The tips of its"
-	next "fangs are slanted"
-	next "backward. Once"
+	db   "Its swiftness is"
+	next "unmatched. it can"
+	next "scale buildings."
 
-	page "those fangs clamp"
-	next "down, the prey has"
-	next "no hope of escape.@"
+	page "AB Has increased"
+	next "accuracy.@"

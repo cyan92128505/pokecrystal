@@ -3,8 +3,8 @@
 
 	db   "Revered as a"
 	next "guardian of the"
-	next "forest, CELEBI"
+	next "forest."
 
-	page "appears wherever"
-	next "beautiful forests"
-	next "exist.@"
+	page "AB SPEC DEFENSE"
+	next "increases upon"
+	next "entering battle.@"

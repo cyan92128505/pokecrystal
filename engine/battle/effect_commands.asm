@@ -1223,10 +1223,16 @@ BattleCommand_Critical:
     cp PERSIAN
     jr z, .checkSlash
 ; ===== Super Luck =====
-	cp MEWTWO
-	jr z, .increaseCritical
-	cp HONCHKROW
-	jr z, .increaseCritical
+    push hl
+    push de
+	push bc
+    ld hl, SuperLuckPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+	jr c, .increaseCritical
     jr .continue
 .checkSlash
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1810,37 +1816,15 @@ BattleCommand_CheckHit:
 	ld b, a
 	ld a, [wEnemyEvaLevel]
     ld c, a
-; AndrewNote - sand veil to go here
-; ===========================
-; ======= Sand Veil =========
-; ===========================
+
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
     jr nz, .doneEnemySandVeil
     ld a, [wEnemyMonSpecies]
-    cp GARCHOMP
-    call z, IncrementC
-    cp GLISCOR
-    call z, IncrementC
+    call Sandveil
 .doneEnemySandVeil
-; ================================
-; ======= Compound Eyes ==========
-; ================================
     ld a, [wBattleMonSpecies]
-    cp BUTTERFREE
-    call z, IncrementB
-    cp STARMIE
-    call z, IncrementB
-    cp HOOTHOOT
-    call z, IncrementB
-    cp NOCTOWL
-    call z, IncrementB
-    cp FROAKIE
-    call z, IncrementB
-    cp FROGADIER
-    call z, IncrementB
-    cp GRENINJA
-    call z, IncrementB
+    call CompoundEyes
 
 	ldh a, [hBattleTurn]
 	and a
@@ -1851,36 +1835,15 @@ BattleCommand_CheckHit:
 	ld b, a
 	ld a, [wPlayerEvaLevel]
 	ld c, a
-; ===========================
-; ======= Sand Veil =========
-; ===========================
+
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
     jr nz, .donePlayerSandVeil
     ld a, [wBattleMonSpecies]
-    cp GARCHOMP
-    call z, IncrementC
-    cp GLISCOR
-    call z, IncrementC
+    call Sandveil
 .donePlayerSandVeil
-; ================================
-; ======= Compound Eyes ==========
-; ================================
     ld a, [wEnemyMonSpecies]
-    cp BUTTERFREE
-    call z, IncrementB
-    cp STARMIE
-    call z, IncrementB
-    cp HOOTHOOT
-    call z, IncrementB
-    cp NOCTOWL
-    call z, IncrementB
-    cp FROAKIE
-    call z, IncrementB
-    cp FROGADIER
-    call z, IncrementB
-    cp GRENINJA
-    call z, IncrementB
+    call CompoundEyes
 
 .got_acc_eva
 	cp b
@@ -3539,14 +3502,17 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 .checkMon
     cp MEWTWO
     jr z, .checkBerserkGene
-    cp TREECKO
-    jr z, .doubleDamage
-    cp GROVYLE
-    jr z, .doubleDamage
-    cp SCEPTILE
-    jr z, .doubleDamage
-    cp BISHARP
-    jr z, .doubleDamage
+    push hl
+    push de
+	push bc
+    ld hl, BerserkPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+	jr c, .doubleDamage
+	jr .FiftyPercent
 .checkBerserkGene
     ld a, [hl]
     cp BERSERK_GENE
@@ -5790,10 +5756,12 @@ BattleCommand_FlinchTarget:
 ; ======== Inner Focus ========
 ; =============================
     call GetOpposingMon
-	ld hl, InnerFocusPokemon
-	ld de, 1
-	call IsInArray
-	jr nc, FlinchTarget
+    cp ARCEUS
+    jr z, .noFlinch
+    cp UMBREON
+    jr z, .noFlinch
+    jr FlinchTarget
+.noFlinch
 	ld hl, CantFlinchText
 	jp StdBattleTextbox
 	ret
@@ -7368,3 +7336,39 @@ BattleCommand_CheckStatusImmunity:
     ld [wEffectFailed], a
 	ld hl, StatusImmunityText
 	jp StdBattleTextbox
+
+; ===========================
+; ======= Sand Veil =========
+; ===========================
+Sandveil:
+    cp GARCHOMP
+    call z, IncrementC
+    cp GLIGAR
+    call z, IncrementC
+    cp GLISCOR
+    call z, IncrementC
+    ret
+
+; ================================
+; ======= Compound Eyes ==========
+; ================================
+CompoundEyes:
+    cp CATERPIE
+    call z, IncrementB
+    cp BUTTERFREE
+    call z, IncrementB
+    cp STARYU
+    call z, IncrementB
+    cp STARMIE
+    call z, IncrementB
+    cp HOOTHOOT
+    call z, IncrementB
+    cp NOCTOWL
+    call z, IncrementB
+    cp FROAKIE
+    call z, IncrementB
+    cp FROGADIER
+    call z, IncrementB
+    cp GRENINJA
+    call z, IncrementB
+    ret

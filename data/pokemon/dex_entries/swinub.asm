@@ -3,8 +3,8 @@
 
 	db   "It uses the tip of"
 	next "its nose to dig"
-	next "for food. Its nose"
+	next "for food."
 
-	page "is so tough that"
-	next "even frozen ground"
-	next "poses no problem.@"
+	page "AB Takes half"
+	next "damage from FIRE"
+	next "and ICE moves.@"

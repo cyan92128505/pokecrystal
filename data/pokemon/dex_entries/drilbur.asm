@@ -3,7 +3,8 @@
 
 	db   "It can spin like"
 	next "a drill, allowing"
-	next "it to travel"
+	next "it to travel fast."
 
-	page "through the earth"
-	next "at up to 30 mph.@"
+	page "AB SPEED"
+	next "increases in"
+	next "a sandstorm.@"

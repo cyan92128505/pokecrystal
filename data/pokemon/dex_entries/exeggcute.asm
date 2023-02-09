@@ -1,10 +1,10 @@
 	db "EGG@" ; species name
 	dw 104, 60 ; height, weight
 
-	db   "If even one is"
-	next "separated from the"
-	next "group, the energy"
+	db   "Can rejoin in an"
+	next "instant if they"
+	next "separate."
 
-	page "bond between the"
-	next "six will make them"
-	next "rejoin instantly.@"
+	page "AB SPEED"
+	next "increases in"
+	next "the sun.@"

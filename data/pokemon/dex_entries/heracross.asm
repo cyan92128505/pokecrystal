@@ -3,8 +3,8 @@
 
 	db   "With its Herculean"
 	next "powers, it can"
-	next "easily throw arou-"
+	next "lift anything."
 
-	page "nd an object that"
-	next "is 100 times its"
-	next "own weight.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

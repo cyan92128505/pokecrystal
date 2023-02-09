@@ -1,10 +1,9 @@
-	db "BIG JAW@" ; species name
-	dw 707, 1960 ; height, weight
+	db "NINJA@" ; species name
+	dw 510, 980 ; height, weight
 
-	db   "Although it has a"
-	next "massive body, its"
-	next "powerful hind legs"
+	db   "It vanishes like"
+	next "a ninja, leaving"
+	next "defeated foes."
 
-	page "enable it to move"
-	next "quickly, even on"
-	next "the ground.@"
+	page "AB Has increased"
+	next "accuracy.@"

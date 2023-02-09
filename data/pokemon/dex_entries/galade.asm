@@ -5,6 +5,6 @@
 	next "and fierce guard"
 	next "of its trainer."
 
-	page "When protecting"
-	next "someone its arms"
-	next "become swords.@"
+	page "AB Boosted damage"
+	next "against opposite"
+	next "gender foes.@"

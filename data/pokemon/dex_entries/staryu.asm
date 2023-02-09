@@ -3,8 +3,7 @@
 
 	db   "When the stars"
 	next "twinkle at night,"
-	next "it floats up from"
+	next "it floats up."
 
-	page "the sea floor, and"
-	next "its body's center"
-	next "core flickers.@"
+	page "AB Has increased"
+	next "accuracy.@"

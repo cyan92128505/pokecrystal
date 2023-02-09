@@ -3,8 +3,8 @@
 
 	db   "When it twitches"
 	next "its nose, it can"
-	next "tell where someone"
+	next "see dreams."
 
-	page "is sleeping and"
-	next "what that person"
-	next "is dreaming about.@"
+	page "AB Gives"
+	next "nightmares to"
+	next "sleeping foes.@"

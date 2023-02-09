@@ -5,5 +5,6 @@
 	next "it fly faster,"
 	next "yet more silent."
 
-	page "AB Immune to"
-	next "flinching.@"
+	page "AB EVASION"
+	next "increases upon"
+	next "entering battle.@"

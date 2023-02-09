@@ -3,8 +3,8 @@
 
 	db   "It always licks"
 	next "honey. Its palm"
-	next "tastes sweet"
+	next "tastes sweet."
 
-	page "because of all the"
-	next "honey it has"
-	next "absorbed.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

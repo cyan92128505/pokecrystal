@@ -3,8 +3,8 @@
 
 	db   "It flutters the"
 	next "tip of its tongue"
-	next "to seek out the"
+	next "to seek prey."
 
-	page "scent of prey,"
-	next "then swallows the"
-	next "prey whole.@"
+	page "AB lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

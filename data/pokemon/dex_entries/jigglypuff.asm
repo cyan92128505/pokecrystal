@@ -5,6 +5,6 @@
 	next "eyes as it sings a"
 	next "soothing lullaby."
 
-	page "Its gentle song"
-	next "puts anyone who"
-	next "hears it to sleep.@"
+	page "AB SPEC DEFENSE"
+	next "increases upon"
+	next "entering battle.@"

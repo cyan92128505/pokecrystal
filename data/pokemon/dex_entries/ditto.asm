@@ -1,10 +1,10 @@
 	db "TRANSFORM@" ; species name
 	dw 100, 90 ; height, weight
 
-	db   "When it encount-"
-	next "ers another DITTO,"
-	next "it will move"
+	db   "Can copy almost"
+	next "every aspect of"
+	next "its opponent."
 
-	page "faster than normal"
-	next "to duplicate that"
-	next "opponent exactly.@"
+	page "AB Status moves"
+	next "always land"
+	next "first.@"

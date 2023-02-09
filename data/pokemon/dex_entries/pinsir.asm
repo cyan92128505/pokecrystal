@@ -1,10 +1,10 @@
 	db "STAGBEETLE@" ; species name
 	dw 411, 1210 ; height, weight
 
-	db   "When the tempera-"
-	next "ture drops at"
-	next "night, it sleeps"
+	db   "Uses its lethal"
+	next "pincers to crush"
+	next "its foe in half."
 
-	page "on treetops or"
-	next "among roots where"
-	next "it is well hidden.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

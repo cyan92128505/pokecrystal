@@ -3,8 +3,6 @@
 
 	db   "It is called the"
 	next "divine #MON."
-	next "When its entire"
 
-	page "body brightens"
-	next "slightly, the"
-	next "weather changes.@"
+	page "AB Gains armour"
+	next "when at full hp.@"

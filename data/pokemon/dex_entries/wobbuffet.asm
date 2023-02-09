@@ -1,10 +1,9 @@
 	db "PATIENT@" ; species name
 	dw 403, 630 ; height, weight
 
-	db   "In order to con-"
-	next "ceal its black"
-	next "tail, it lives in"
+	db   "Its tail is its"
+	next "true self. The"
+	next "rest is a decoy."
 
-	page "a dark cave and"
-	next "only moves about"
-	next "at night.@"
+	page "AB Regenerates"
+	next "HP every turn.@"

@@ -493,6 +493,8 @@ DetermineMoveOrder:
     call z, DoubleEnemySpeedInHL
     cp VICTREEBEL
     call z, DoubleEnemySpeedInHL
+    cp EXEGGCUTE
+    call z, DoubleEnemySpeedInHL
     cp EXEGGUTOR
     call z, DoubleEnemySpeedInHL
 
@@ -500,6 +502,8 @@ DetermineMoveOrder:
     cp VENUSAUR
     call z, DoublePlayerSpeedInDE
     cp VICTREEBEL
+    call z, DoublePlayerSpeedInDE
+    cp EXEGGCUTE
     call z, DoublePlayerSpeedInDE
     cp EXEGGUTOR
     call z, DoublePlayerSpeedInDE
@@ -513,10 +517,14 @@ DetermineMoveOrder:
     jr nz, .continue
 
     ld a, [wEnemyMonSpecies]
+    cp DRILBUR
+    call z, DoubleEnemySpeedInHL
     cp EXCADRILL
     call z, DoubleEnemySpeedInHL
 
     ld a, [wBattleMonSpecies]
+    cp DRILBUR
+    call z, DoublePlayerSpeedInDE
     cp EXCADRILL
     call z, DoublePlayerSpeedInDE
 
@@ -858,6 +866,8 @@ GetPlayerMovePriority:
     jr z, .prankster
     cp RIOLU
     jr z, .prankster
+    cp DITTO
+    jr z, .prankster
     jr .noPrankster
 .prankster
     call GetMovePower
@@ -1127,12 +1137,7 @@ Core_MagicGuardPokemon:
 
 ResidualDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wBattleMonSpecies]
-.checkSpecies
+    call GetCurrentMonCore
 	ld hl, Core_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
@@ -1227,13 +1232,10 @@ ResidualDamage:
 	bit SUBSTATUS_NIGHTMARE, [hl]
 	jr nz, .nightmare
 
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr nz, .checkNightmareMon
-	ld a, [wEnemyMonSpecies]
-.checkNightmareMon
+    call GetOpposingMonCore
     cp DARKRAI
+    jr nz, .not_nightmare
+    cp DROWZEE
     jr nz, .not_nightmare
     cp HYPNO
     jr nz, .not_nightmare
@@ -1450,9 +1452,13 @@ HandleRegenerator:
 .do_it
     cp HO_OH
     jr z, .regen
+    cp SLOWPOKE
+    jr z, .regen
     cp SLOWBRO
     jr z, .regen
     cp SLOWKING
+    jr z, .regen
+    cp WOBBUFFET
     jr z, .regen
     ret
 .regen
@@ -1507,12 +1513,7 @@ HandleLeftovers:
 	ret
 
 .checkArceus
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .check
-	ld a, [wEnemyMonSpecies]
-.check
+    call GetCurrentMonCore
     cp ARCEUS
     jr z, .recover
     ret
@@ -1932,12 +1933,7 @@ HandleWeather:
 
 .SandstormDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wBattleMonSpecies]
-.checkSpecies
+    call GetCurrentMonCore
 	ld hl, Core_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
@@ -2423,7 +2419,12 @@ StopDangerSound:
 	ld [wLowHealthAlarm], a
 	ret
 
+; =====================
+; ==== Aftermath ======
+; =====================
 FaintYourPokemon:
+    call GetCurrentMonCore
+    call CheckAftermath
 	call StopDangerSound
 	call WaitSFX
 	ld a, $f0
@@ -2438,6 +2439,8 @@ FaintYourPokemon:
 	jp StdBattleTextbox
 
 FaintEnemyPokemon:
+    call GetOpposingMonCore
+    call CheckAftermath
 	call WaitSFX
 	ld de, SFX_KINESIS
 	call PlaySFX
@@ -2449,6 +2452,23 @@ FaintEnemyPokemon:
 	call ClearBox
 	ld hl, BattleText_EnemyMonFainted
 	jp StdBattleTextbox
+
+CheckAftermath:
+    cp VOLTORB
+    jr z, .aftermath
+    cp ELECTRODE
+    jr z, .aftermath
+    cp MAGNEZONE
+    jr z, .aftermath
+    cp POLTEGEIST
+    jr z, .aftermath
+    ret
+.aftermath
+	ld hl, BattleText_Aftermath
+	call StdBattleTextbox
+    call GetQuarterMaxHP
+    call SubtractHPFromUser
+    ret
 
 CheckEnemyTrainerDefeated:
 	ld a, [wOTPartyCount]
@@ -4381,12 +4401,7 @@ SwitchInEffects:
 	ld [wFailedMessage], a
 	ld [wEffectFailed], a
 	ld [wAttackMissed], a
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkSpecies
-	ld a, [wBattleMonSpecies]
-.checkSpecies
+    call GetCurrentMonCore
 ; AndrewNote - abilities that activate on switching in
     cp KYOGRE
     jp z, .rain
@@ -4415,6 +4430,10 @@ SwitchInEffects:
     jp z, .defUp
     cp PORYGON2
     jp z, .defUp
+    cp SHELLDER
+    jp z, .defUp
+    cp CLOYSTER
+    jp z, .defUp
 
     cp RAIKOU
     jp z, .spdUp
@@ -4425,12 +4444,16 @@ SwitchInEffects:
 
     cp ENTEI
     jp z, .atkUp
+    cp LUCARIO
+    jp z, .atkUp
 
     cp GYARADOS
     jp z, .atkDown
     cp SALAMENCE
     jp z, .atkDown
     cp ARCANINE
+    jp z, .atkDown
+    cp EKANS
     jp z, .atkDown
     cp ARBOK
     jp z, .atkDown
@@ -4442,7 +4465,11 @@ SwitchInEffects:
     cp AEGISLASH
     jp z, .defenseMode
 
+    cp JIGGLYPUFF
+    jp z, .spDefUp
     cp WIGGLYTUFF
+    jp z, .spDefUp
+    cp CELEBI
     jp z, .spDefUp
 
     cp BUNEARY
@@ -4458,8 +4485,6 @@ SwitchInEffects:
     cp GOLBAT
     jp z, .evasionUp
     cp CROBAT
-    jp z, .evasionUp
-    cp CELEBI
     jp z, .evasionUp
 
     cp EEVEE
@@ -9576,3 +9601,21 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+GetCurrentMonCore:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .done
+	ld a, [wEnemyMonSpecies]
+.done
+    ret
+
+GetOpposingMonCore:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .done
+	ld a, [wEnemyMonSpecies]
+.done
+    ret

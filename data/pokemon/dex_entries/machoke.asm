@@ -3,8 +3,8 @@
 
 	db   "This tough #MON"
 	next "always stays in"
-	next "the zone. Its"
+	next "the zone."
 
-	page "muscles become"
-	next "thicker after"
-	next "every battle.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

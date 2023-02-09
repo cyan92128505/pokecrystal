@@ -222,6 +222,13 @@ BattleText_MonFainted:
 	line "fainted!"
 	prompt
 
+BattleText_Aftermath:
+	text "Enemy @"
+	text_ram wEnemyMonNickname
+	text_start
+	line "unleashed energy!"
+	prompt
+
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done

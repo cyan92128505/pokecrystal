@@ -5,6 +5,6 @@
 	next "and use it with"
 	next "mastery."
 
-	page "AB Can't flinch."
-	next "Makes weaker"
-	next "moves stronger.@"
+	page "AB Random stat"
+	next "increase upon"
+	next "entering battle.@"

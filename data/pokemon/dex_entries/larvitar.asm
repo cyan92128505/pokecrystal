@@ -3,8 +3,7 @@
 
 	db   "Born deep under-"
 	next "ground, this"
-	next "#MON becomes a"
+	next "#MON eats dirt."
 
-	page "pupa after eating"
-	next "enough dirt to"
-	next "make a mountain.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

@@ -2,9 +2,9 @@
 	dw 100, 80 ; height, weight
 
 	db   "This #MON's"
-	next "impressive vital-"
-	next "ity allows it to"
+	next "vitality allows it"
+	next "to live anywhere."
 
-	page "live anywhere. It"
-	next "also multiplies"
-	next "very quickly.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

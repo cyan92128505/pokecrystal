@@ -3,8 +3,8 @@
 
 	db   "This cunning"
 	next "#MON hides"
-	next "under the cover"
+	next "in the dark."
 
-	page "of darkness,"
-	next "waiting to attack"
-	next "its prey.@"
+	page "AB EVASION"
+	next "increases upon"
+	next "entering battle.@"

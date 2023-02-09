@@ -3,8 +3,8 @@
 
 	db   "It hides deep"
 	next "inside caves where"
-	next "no light ever"
+	next "no light reaches."
 
-	page "reaches it and"
-	next "remains virtually"
-	next "motionless there.@"
+	page "AB Random stat"
+	next "increase upon"
+	next "entering battle.@"

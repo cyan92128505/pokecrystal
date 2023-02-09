@@ -5,6 +5,6 @@
 	next "logs and help"
 	next "with construction."
 
-	page "As they grow they"
-	next "can carry larger"
-	next "logs.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

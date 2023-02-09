@@ -3,8 +3,7 @@
 
 	db   "It crawls into"
 	next "foliage where it"
-	next "camouflages itself"
+	next "camouflages itself."
 
-	page "among leaves that"
-	next "are the same color"
-	next "as its body.@"
+	page "AB Has increased"
+	next "accuracy.@"

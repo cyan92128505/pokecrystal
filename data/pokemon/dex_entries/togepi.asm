@@ -3,8 +3,8 @@
 
 	db   "It is considered"
 	next "to be a symbol of"
-	next "good luck. Its"
+	next "good luck."
 
-	page "shell is said to"
-	next "be filled with"
-	next "happiness.@"
+	page "AB move effects"
+	next "are more likely"
+	next "to occur.@"

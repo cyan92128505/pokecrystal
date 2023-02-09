@@ -5,6 +5,6 @@
 	next "fluffy. It is very"
 	next "aware of danger."
 
-	page "It will only allow"
-	next "its trainer to"
-	next "touch its ears.@"
+	page "AB EVASION"
+	next "increases upon"
+	next "entering battle.@"

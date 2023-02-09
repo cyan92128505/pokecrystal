@@ -5,6 +5,6 @@
 	next "foe with its huge"
 	next "muscular body."
 
-	page "AB Takes half"
-	next "damage from FIRE"
-	next "and ICE moves.@"
+	page "AB Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

@@ -1,10 +1,9 @@
-	db "BIG JAW@" ; species name
-	dw 200, 210 ; height, weight
+	db "BUBBLE FROG@" ; species name
+	dw 100, 154 ; height, weight
 
-	db   "This rough critter"
-	next "chomps at any"
-	next "moving object it"
+	db   "It protects its"
+	next "body by covering"
+	next "itself in bubbles."
 
-	page "sees. Turning your"
-	next "back on it is not"
-	next "recommended.@"
+	page "AB Has increased"
+	next "accuracy.@"

@@ -5,5 +5,6 @@
 	next "the life force and"
 	next "feelings of others"
 
-	page "AB Immune to"
-	next "flinching.@"
+	page "AB ATTACK"
+	next "increases upon"
+	next "entering battle.@"

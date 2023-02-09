@@ -3,8 +3,8 @@
 
 	db   "During the day, it"
 	next "gathers with"
-	next "others and hangs"
+	next "others."
 
-	page "from the ceilings"
-	next "of old buildings"
-	next "and caves.@"
+	page "AB EVASION"
+	next "increases upon"
+	next "entering battle.@"

@@ -3,8 +3,7 @@
 
 	db   "It will not stay"
 	next "still, even while"
-	next "it's a pupa. It"
+	next "it's a pupa."
 
-	page "already has arms"
-	next "and legs under its"
-	next "solid shell.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

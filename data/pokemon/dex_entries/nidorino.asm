@@ -3,8 +3,8 @@
 
 	db   "It is easily"
 	next "agitated and uses"
-	next "its horn for"
+	next "its horn."
 
-	page "offense as soon as"
-	next "it notices an"
-	next "attacker.@"
+	page "AB Boosted damage"
+	next "against opposite"
+	next "gender foes.@"

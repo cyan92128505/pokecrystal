@@ -3,8 +3,8 @@
 
 	db   "It constantly"
 	next "moves its large"
-	next "ears in many"
+	next "ears."
 
-	page "directions in"
-	next "order to detect"
-	next "danger right away.@"
+	page "AB Boosted damage"
+	next "against opposite"
+	next "gender foes.@"

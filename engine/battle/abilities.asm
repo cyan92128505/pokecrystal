@@ -2,7 +2,7 @@
 ; see battle/core SwitchInEffects for
 ; drizzle, drought, air lock, sandstream, intimidate, download, intrepid sword, speed boost, prankster, swift swim, chlorophyl, sand rush, more...
 ; see effect_commands for
-; sand veil, super luck, berserk gene
+; sand veil, compound eyes, inner focus
 
 SturdyPokemon:
     db SKARMORY
@@ -14,9 +14,36 @@ SturdyPokemon:
     db MAGNEZONE
     db ONIX
     db STEELIX
+    db SQUIRTLE
+    db WARTORTLE
     db BLASTOISE
     db FERROSEED
     db FERROTHORN
+    db METAPOD
+    db LARVITAR
+    db PUPITAR
+    db -1
+
+BerserkPokemon:
+    db TREECKO
+    db GROVYLE
+    db SCEPTILE
+    db PAWNIARD
+    db BISHARP
+    db HORSEA
+    db SEADRA
+    db KINGDRA
+    db -1
+
+SuperLuckPokemon:
+    db MEWTWO
+    db HONCHKROW
+    db BELLSPROUT
+    db WEEPINBELL
+    db VICTREEBEL
+    db CHARMANDER
+    db CHARMELEON
+    db CHARIZARD
     db -1
 
 SereneGracePokemon:
@@ -40,6 +67,9 @@ RockHeadPokemon:
     db -1
 
 GutsPokemon:
+    db STARLY
+    db STARAVIA
+    db RATTATA
     db RATICATE
     db HERACROSS
     db MACHOP
@@ -48,6 +78,7 @@ GutsPokemon:
     db TIMBURR
     db GURDURR
     db CONKELDURR
+    db TEDDIURSA
     db URSARING
     db PINSIR
     db -1
@@ -77,6 +108,7 @@ ThickFatPokemon:
     db SNORLAX
     db MILTANK
     db LAPRAS
+    db SWINUB
     db PILOSWINE
     db MAMOSWINE
     db PALKIA
@@ -90,6 +122,10 @@ TechnicianPokemon:
     db MR__MIME
     db SHROOMISH
     db BRELOOM
+    db PSYDUCK
+    db PORYGON
+    db BULBASAUR
+    db IVYSAUR
     db -1
 
 MagicGuardPokemon:
@@ -116,14 +152,7 @@ ClearBodyPokemon:
     db METAGROSS
     db DIALGA
     db ARCEUS
-    db -1
-
-InnerFocusPokemon:
-    db LUCARIO
-    db CROBAT
-    db UMBREON
-    db ARCEUS
-    db PAWNIARD
+    db REGIGIGAS
     db -1
 
 SolidRockPokemon:
@@ -176,6 +205,10 @@ UberImmunePokemon:
 ;    db VAPOREON
 ;    db LAPRAS
 ;    db ARCTOVISH
+;    db PARAS
+;    db PARASECT
+;    db POLIWAG
+;    db POLIWHIRL
 ;    db -1
 
 ;VoltAbsorbPokemon:
@@ -207,4 +240,6 @@ UberImmunePokemon:
 ;    db LITWICK
 ;    db LAMPENT
 ;    db CHANDELURE
+;    db GROWLITHE
+;    db ARCANINE
 ;    db -1

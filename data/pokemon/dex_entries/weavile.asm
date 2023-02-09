@@ -3,8 +3,8 @@
 
 	db   "A wickedly fast"
 	next "and viciously"
-	next "devious #MON"
+	next "devious #MON."
 
-	page "They hunt in"
-	next "groups with keen"
-	next "coordination.@"
+	page "AB EVASION"
+	next "increases upon"
+	next "entering battle.@"

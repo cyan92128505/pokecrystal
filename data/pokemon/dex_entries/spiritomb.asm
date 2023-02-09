@@ -1,10 +1,10 @@
-	db "CORAL@" ; species name
-	dw 200, 110 ; height, weight
+	db "FORBIDDEN@" ; species name
+	dw 303, 2381 ; height, weight
 
-	db   "The points on its"
-	next "head absorb"
-	next "nutrients from"
+	db   "Spirits bound to"
+	next "a keystone for"
+	next "their misdeeds."
 
-	page "clean water. They"
-	next "cannot survive in"
-	next "polluted water.@"
+	page "AB Gives"
+	next "nightmares to"
+	next "sleeping foes.@"

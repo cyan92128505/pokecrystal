@@ -1,10 +1,10 @@
 	db "NEW SPECIE@" ; species name
 	dw 104, 90 ; height, weight
 
-	db   "Because it can"
-	next "learn any move,"
-	next "some people began"
+	db   "May be the father"
+	next "of all #MON."
+	next "Learns any move."
 
-	page "research to see if"
-	next "it is the ancestor"
-	next "of all #MON.@"
+	page "AB Random stat"
+	next "increase upon"
+	next "entering battle.@"

@@ -3,8 +3,7 @@
 
 	db   "It sheds many lay-"
 	next "ers of skin as it"
-	next "grows larger. Dur-"
+	next "grows larger."
 
-	page "ing this process,"
-	next "it is protected by"
-	next "a rapid waterfall.@"
+	page "AB Gains armour"
+	next "when at full hp.@"

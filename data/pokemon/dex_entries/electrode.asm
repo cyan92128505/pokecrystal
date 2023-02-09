@@ -5,6 +5,6 @@
 	next "charges up, the"
 	next "faster it gets."
 
-	page "But this also"
-	next "makes it more"
-	next "likely to explode.@"
+	page "AB Unleashes a"
+	next "final attack upon"
+	next "being defeated.@"

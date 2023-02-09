@@ -1,10 +1,10 @@
-	db "VOLCANO@" ; species name
-	dw 211, 420 ; height, weight
+	db "PLAYFUL@" ; species name
+	dw 211, 485 ; height, weight
 
-	db   "Before battle, it"
-	next "turns its back on"
-	next "its opponent to"
+	db   "Its social rank"
+	next "is shown by the"
+	next "size of its tail."
 
-	page "demonstrate how"
-	next "ferociously its"
-	next "fire blazes.@"
+	page "AB Takes no"
+	next "recoil damage"
+	next "from attacks.@"

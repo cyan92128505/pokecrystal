@@ -5,6 +5,5 @@
 	next "pull entire land"
 	next "masses."
 
-	page "This ancient"
-	next "being is at"
-	next "full power.@"
+	page "AB Immune to"
+	next "stat drops.@"

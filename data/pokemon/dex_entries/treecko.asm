@@ -1,10 +1,10 @@
-	db "LEAF@" ; species name
-	dw 211, 140 ; height, weight
+	db "WOOD GECKO@" ; species name
+	dw 108, 110 ; height, weight
 
-	db   "It loves to bask"
-	next "in the sunlight."
-	next "It uses the leaf"
+	db   "It never panics."
+	next "It can climb"
+	next "vertical walls."
 
-	page "on its head to"
-	next "seek out warm"
-	next "places.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

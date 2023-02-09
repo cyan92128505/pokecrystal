@@ -4,5 +4,6 @@
 	db   "Blades comprise"
 	next "its entire body."
 
-	page "AB Immune to"
-	next "flinching.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

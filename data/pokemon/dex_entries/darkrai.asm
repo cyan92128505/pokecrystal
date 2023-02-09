@@ -5,6 +5,6 @@
 	next "victims into an"
 	next "eternal sleep."
 
-	page "A sleep filled"
-	next "with horrible"
-	next "nightmares.@"
+	page "AB Gives"
+	next "nightmares to"
+	next "sleeping foes.@"

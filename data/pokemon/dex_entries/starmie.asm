@@ -1,10 +1,9 @@
 	db "MYSTERIOUS@" ; species name
 	dw 307, 1760 ; height, weight
 
-	db   "It is said that it"
-	next "uses the seven-"
-	next "colored core of"
+	db   "It uses its core"
+	next "to send messages"
+	next "into space."
 
-	page "its body to send"
-	next "electric waves"
-	next "into outer space.@"
+	page "AB Has increased"
+	next "accuracy.@"

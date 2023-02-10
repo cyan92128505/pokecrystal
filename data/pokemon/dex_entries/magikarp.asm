@@ -3,8 +3,8 @@
 
 	db   "This weak and"
 	next "pathetic #MON"
-	next "gets easily pushed"
+	next "has hidden might."
 
-	page "along rivers when"
-	next "there are strong"
-	next "currents.@"
+	page "AB Uses SPLASH"
+	next "with true and"
+	next "honest vigor.@"

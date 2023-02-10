@@ -2,9 +2,9 @@
 	dw 200, 163 ; height, weight
 
 	db   "An ugly and weak"
-	next "#MON that is of"
-	next "little use."
+	next "#MON that seeks"
+	next "friendship."
 
-	page "It evolves when"
-	next "it comes to love"
-	next "its trainer.@"
+	page "AB Uses SPLASH"
+	next "with true and"
+	next "honest vigor.@"

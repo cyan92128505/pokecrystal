@@ -588,6 +588,13 @@ HasNoPPLeftText:
 	text "!"
 	prompt
 
+VigorousSplashText:
+	text "<USER>"
+	line "moves vigorously"
+	para "<TARGET>"
+	line "is unimpressed!"
+	prompt
+
 WentToSleepText:
 	text "<USER>"
 	line "went to sleep!"

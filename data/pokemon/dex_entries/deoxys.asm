@@ -5,6 +5,5 @@
 	next "of DNA mutated by"
 	next "space radiation."
 
-	page "It is as savage"
-	next "and resilient as"
-	next "a virus.@"
+	page "AB Immune to"
+	next "stat drops.@"

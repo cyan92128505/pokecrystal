@@ -3,7 +3,7 @@
 
 	db   "Born when a soul"
 	next "inhabits a sword."
-	next "It hides a mighty"
+	next "Has hidden might."
 
-	page "potential within"
-	next "its blade.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"

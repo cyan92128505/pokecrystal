@@ -1456,13 +1456,7 @@ BattleCommand_Stab:
 
 ; add 15% damage
 .applyExpertBelt
-    ld a, 23
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 20
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+    call FifteenPercentBoost
 
 .solidRock
 ; ==============================
@@ -3313,13 +3307,7 @@ BattleCommand_DamageCalc:
 	jr nc, .continue
 	call CheckOppositeGender
 	jr c, .continue
-    ld a, 6
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 5
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+    call FifteenPercentBoost
 
 .continue
 ; Critical hits
@@ -3505,7 +3493,7 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
     push hl
     push de
 	push bc
-    ld hl, BerserkPokemon
+    ld hl, SniperPokemon
 	ld de, 1
 	call IsInArray
     pop bc
@@ -3547,6 +3535,16 @@ FiftyPercentBoost:
 ; fallthrough
 HalfDamage:
 	ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+FifteenPercentBoost:
+    ld a, 23
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 20
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide

@@ -22,9 +22,11 @@ SturdyPokemon:
     db METAPOD
     db LARVITAR
     db PUPITAR
+    db HONEDGE
+    db DOUBLADE
     db -1
 
-BerserkPokemon:
+SniperPokemon:
     db TREECKO
     db GROVYLE
     db SCEPTILE
@@ -57,6 +59,7 @@ SereneGracePokemon:
 
 RockHeadPokemon:
     db AERODACTYL
+    db CUBONE
     db MAROWAK
     db GIRATINA
     db BAGON
@@ -153,6 +156,7 @@ ClearBodyPokemon:
     db DIALGA
     db ARCEUS
     db REGIGIGAS
+    db DEOXYS
     db -1
 
 SolidRockPokemon:

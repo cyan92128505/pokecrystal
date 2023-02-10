@@ -532,15 +532,15 @@ ClefairyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, GROWL
-	db 4, ENCORE
+	db 4, SPLASH
 	db 8, SING
 	db 13, DOUBLESLAP
 	db 16, DRAIN_KISS
-	db 26, DEFENSE_CURL
+	db 20, ENCORE
+	db 26, SOFTBOILED
 	db 35, ATTRACT
 	db 40, MOON_BLAST
-	db 45, SOFTBOILED
-	db 55, CALM_MIND
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
 ClefableEvosAttacks:

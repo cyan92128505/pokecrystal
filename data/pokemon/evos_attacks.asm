@@ -613,12 +613,19 @@ WigglytuffEvosAttacks:
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
+	db 1, SCREECH
 	db 1, LEECH_LIFE
+	db 1, SUPERSONIC
 	db 6, SUPERSONIC
 	db 12, BITE
+	db 15, HYPNOSIS
 	db 19, CONFUSE_RAY
-	db 27, WING_ATTACK
-	db 36, MEAN_LOOK
+	db 24, WING_ATTACK
+	db 30, AIR_SLASH
+	db 35, MEAN_LOOK
+	db 40, SLUDGE_BOMB
+	db 45, POISON_JAB
+	db 50, BRAVE_BIRD
 	db 55, HAZE
 	db 0 ; no more level-up moves
 
@@ -630,9 +637,14 @@ GolbatEvosAttacks:
 	db 1, SUPERSONIC
 	db 6, SUPERSONIC
 	db 12, BITE
+	db 15, HYPNOSIS
 	db 19, CONFUSE_RAY
-	db 30, WING_ATTACK
-	db 42, MEAN_LOOK
+	db 24, WING_ATTACK
+	db 30, AIR_SLASH
+	db 35, MEAN_LOOK
+	db 40, SLUDGE_BOMB
+	db 45, POISON_JAB
+	db 50, BRAVE_BIRD
 	db 55, HAZE
 	db 0 ; no more level-up moves
 
@@ -2343,12 +2355,11 @@ FroakieEvosAttacks:
 	db EVOLVE_LEVEL, 16, FROGADIER
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 1, GROWL
+	db 1, SMOKESCREEN
 	db 7, BUBBLE
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 14, SMOKESCREEN
 	db 16, HYPNOSIS
 	db 20, BUBBLEBEAM
 	db 25, NIGHT_SHADE
@@ -2363,12 +2374,11 @@ FrogadierEvosAttacks:
 	db EVOLVE_LEVEL, 36, GRENINJA
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 1, GROWL
+	db 1, SMOKESCREEN
 	db 7, BUBBLE
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 14, SMOKESCREEN
 	db 16, HYPNOSIS
 	db 20, BUBBLEBEAM
 	db 25, NIGHT_SHADE
@@ -2382,12 +2392,11 @@ FrogadierEvosAttacks:
 GreninjaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 1, GROWL
+	db 1, SMOKESCREEN
 	db 7, BUBBLE
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 14, SMOKESCREEN
 	db 16, HYPNOSIS
 	db 20, BUBBLEBEAM
 	db 25, NIGHT_SHADE
@@ -2532,9 +2541,13 @@ CrobatEvosAttacks:
 	db 1, SUPERSONIC
 	db 6, SUPERSONIC
 	db 12, BITE
+	db 15, HYPNOSIS
 	db 19, CONFUSE_RAY
-	db 30, WING_ATTACK
-	db 42, MEAN_LOOK
+	db 24, WING_ATTACK
+	db 30, AIR_SLASH
+	db 35, MEAN_LOOK
+	db 40, SLUDGE_BOMB
+	db 45, POISON_JAB
 	db 50, BRAVE_BIRD
 	db 55, HAZE
 	db 0 ; no more level-up moves
@@ -2710,6 +2723,7 @@ SylveonEvosAttacks:
 	db 1, REST
 	db 1, REFLECT
 	db 1, LIGHT_SCREEN
+    db 21, DRAIN_KISS
 	db 30, DRAIN_KISS
 	db 40, MOONLIGHT
 	db 45, MOON_BLAST

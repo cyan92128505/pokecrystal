@@ -35,6 +35,9 @@ SniperPokemon:
     db HORSEA
     db SEADRA
     db KINGDRA
+    db GIBLE
+    db GABITE
+    db GARCHOMP
     db -1
 
 SuperLuckPokemon:

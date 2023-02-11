@@ -5,6 +5,6 @@
 	next "object it finds in"
 	next "a secret location."
 
-	page "MURKROW and"
-	next "MEOWTH loot one"
-	next "another's stashes.@"
+	page "AB Status moves"
+	next "always land"
+	next "first.@"

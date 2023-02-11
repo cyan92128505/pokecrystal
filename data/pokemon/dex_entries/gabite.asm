@@ -2,9 +2,9 @@
 	dw 407, 1070 ; height, weight
 
 	db   "It can make most"
-	next "any #MON run"
-	next "away simply by"
+	next "#MON run away"
+	next "by showing fangs."
 
-	page "opening its mouth"
-	next "wide to reveal its"
-	next "big fangs.@"
+	page "AB Deals extra"
+	next "critical hit"
+	next "damage.@"

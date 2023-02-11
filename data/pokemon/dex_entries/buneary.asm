@@ -3,7 +3,7 @@
 
 	db   "It evolves when"
 	next "it loves its"
-	next "trainer.@"
+	next "trainer."
 
 	page "AB EVASION"
 	next "increases upon"

@@ -5,6 +5,6 @@
 	next "ancient lost"
 	next "city."
 
-	page "Immune to"
+	page "AB Immune to"
 	next "all passive"
 	next "damage.@"

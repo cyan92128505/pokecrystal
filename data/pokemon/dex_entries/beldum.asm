@@ -3,7 +3,7 @@
 
 	db   "It is used as"
 	next "a scout droid by"
-	next "the military.@"
+	next "the military."
 
 	page "AB Immune to"
 	next "stat drops.@"

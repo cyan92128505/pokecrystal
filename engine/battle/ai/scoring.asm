@@ -445,19 +445,17 @@ AI_Smart_Switch:
 	pop bc
 	pop de
 	pop hl
-	ret nc
+	ret c
 
 ; switch if enemy is cursed
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
+    ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_CURSE, a
 	jp nz, .switch
 
 ; if enemy afflicted with toxic
 ; 50% chance to switch when above 50% hp if not set up
 ; switch when below 50% hp
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr z, .checkLeechSeed
 	call AICheckEnemyHalfHP
@@ -466,8 +464,7 @@ AI_Smart_Switch:
 
 .checkLeechSeed
 ; 50% chance to switch per turn if enemy afflicted with leech seed
-    ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVarAddr
+    ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
 	jr nz, .switch50
 
@@ -1490,8 +1487,7 @@ AI_Smart_Moonlight:
 
 ; if it is Rest check if the enemy is afflicted with toxic
 ; if so cancel any switching and heal below 1/2 hp
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr z, .restHeal
     ld a, $0
@@ -1503,6 +1499,7 @@ AI_Smart_Moonlight:
 ; then don't use if player can 2hko from max hp
 	ld b, EFFECT_SLEEP_TALK
 	call AIHasMoveEffect
+	jr c, .nonRestHeal
 	jr c, .nonRestHeal
     call CanPlayer3HKOMaxHP
     jr c, .discourage
@@ -3597,10 +3594,9 @@ AI_Smart_QuiverDance:
    	pop bc
    	pop de
    	pop hl
-   	ret nc
+   	ret c
 
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -3641,7 +3637,7 @@ AI_Smart_CalmMind:
 	jr nc, .strongEncourage
 	jr .encourage
 
-; discourage after +1 if afflicted with toxic
+; discourage after +2 if afflicted with toxic
 .checkToxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
@@ -3654,10 +3650,9 @@ AI_Smart_CalmMind:
    	pop bc
    	pop de
    	pop hl
-   	ret nc
+   	ret c
 
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -3713,10 +3708,9 @@ AI_Smart_DragonDance:
 	pop bc
 	pop de
 	pop hl
-	ret nc
+	ret c
 
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -3759,10 +3753,9 @@ AI_Smart_SwordsDance:
 	pop bc
 	pop de
 	pop hl
-	ret nc
+	ret c
 
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -3949,10 +3942,9 @@ AI_Smart_NastyPlot:
 	pop bc
 	pop de
 	pop hl
-	ret nc
+	ret c
 
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret

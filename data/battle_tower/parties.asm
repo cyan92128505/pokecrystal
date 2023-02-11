@@ -4385,7 +4385,7 @@ BattleTowerMons:
 
     db DIALGA
 	db LEFTOVERS
-	db OUTRAGE, BULK_UP, REST, SLEEP_TALK
+	db OUTRAGE, BULK_UP, REST, IRON_HEAD
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

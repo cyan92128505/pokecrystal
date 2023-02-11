@@ -2419,12 +2419,8 @@ StopDangerSound:
 	ld [wLowHealthAlarm], a
 	ret
 
-; =====================
-; ==== Aftermath ======
-; =====================
 FaintYourPokemon:
-    call GetCurrentMonCore
-    call CheckAftermath
+    call Aftermath
 	call StopDangerSound
 	call WaitSFX
 	ld a, $f0
@@ -2439,8 +2435,7 @@ FaintYourPokemon:
 	jp StdBattleTextbox
 
 FaintEnemyPokemon:
-    call GetOpposingMonCore
-    call CheckAftermath
+    call Aftermath
 	call WaitSFX
 	ld de, SFX_KINESIS
 	call PlaySFX
@@ -2453,7 +2448,11 @@ FaintEnemyPokemon:
 	ld hl, BattleText_EnemyMonFainted
 	jp StdBattleTextbox
 
-CheckAftermath:
+; =====================
+; ==== Aftermath ======
+; =====================
+Aftermath:
+    call GetOpposingMonCore
     cp VOLTORB
     jr z, .aftermath
     cp ELECTRODE

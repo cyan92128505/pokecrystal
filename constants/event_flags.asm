@@ -1504,7 +1504,8 @@
 	const EVENT_CAUGHT_REGIGIGAS
 	const EVENT_BEAT_MASTER_GIOVANNI
 	const EVENT_BEAT_HENSHIN
+	const EVENT_BEAT_RED
 
-    ; 4 left
+    ; 3 left
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

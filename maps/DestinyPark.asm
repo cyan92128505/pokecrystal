@@ -569,6 +569,138 @@ RematchRefuseTextDestinyPark:
     line "be here."
     done
 
+HoohLugiaBlockScript:
+    checkevent EVENT_FOUGHT_HO_OH
+    iffalse .block
+    checkevent EVENT_FOUGHT_LUGIA
+    iffalse .block
+    checkevent EVENT_BEAT_MASTER_FALKNER
+    iffalse .fight
+    end
+.block
+    turnobject PLAYER, LEFT
+	opentext
+	writetext HoohLugiaBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyParkTurnBack
+    end
+.fight
+    turnobject PLAYER, LEFT
+    sjump MasterFalknerScript
+
+HoohLugiaBlockText:
+    text "Only those who"
+    line "who have mastered"
+    cont "the powers of"
+    cont "fire and wind."
+
+    para "HO OH and"
+    line "LUGIA"
+
+    para "May pass."
+    done
+
+GroudonKyogreBlockScript:
+    checkevent EVENT_CAUGHT_GROUDON
+    iffalse .block
+    checkevent EVENT_CAUGHT_KYOGRE
+    iffalse .block
+    checkevent EVENT_BEAT_MASTER_WHITNEY
+    iffalse .fight
+    end
+.block
+    turnobject PLAYER, LEFT
+	opentext
+	writetext GroudonKyogreBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyParkTurnBack
+    end
+.fight
+    turnobject PLAYER, LEFT
+    sjump MasterWhitneyScript
+
+GroudonKyogreBlockText:
+    text "Only those who"
+    line "who have mastered"
+    cont "the powers of"
+    cont "earth and water."
+
+    para "GROUDON and"
+    line "KYOGRE"
+
+    para "May pass."
+    done
+
+PalkiaDialgaBlockScript:
+    checkevent EVENT_CAUGHT_PALKIA
+    iffalse .block
+    checkevent EVENT_CAUGHT_DIALGA
+    iffalse .block
+    checkevent EVENT_BEAT_MASTER_WILL
+    iffalse .fight
+    end
+.block
+    turnobject PLAYER, LEFT
+	opentext
+	writetext PalkiaDialgaBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyParkTurnBack
+    end
+.fight
+    turnobject PLAYER, LEFT
+    sjump MasterWillScript
+
+PalkiaDialgaBlockText:
+    text "Only those who"
+    line "who have mastered"
+    cont "the powers of"
+    cont "space and time."
+
+    para "PALKIA and"
+    line "DIALGA"
+
+    para "May pass."
+    done
+
+RayquazaGiratinaBlockScript:
+    checkevent EVENT_CAUGHT_RAYQUAZA
+    iffalse .block
+    checkevent EVENT_CAUGHT_GIRATINA
+    iffalse .block
+    checkevent EVENT_BEAT_MASTER_CLAIR
+    iffalse .fight
+    end
+.block
+    turnobject PLAYER, LEFT
+	opentext
+	writetext RayquazaGiratinaBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyParkTurnBack
+    end
+.fight
+    turnobject PLAYER, LEFT
+    sjump MasterClairScript
+
+RayquazaGiratinaBlockText:
+    text "Only those who"
+    line "who have mastered"
+    cont "the powers of"
+    cont "good and evil."
+
+    para "RAYQUAZA and"
+    line "GIRATINA"
+
+    para "May pass."
+    done
+
+Movement_DestinyParkTurnBack:
+	step DOWN
+	step_end
+
 DestinyPark_MapEvents:
 	db 0, 0 ; filler
 
@@ -579,6 +711,10 @@ DestinyPark_MapEvents:
 	warp_event  7,  9, DESTINY_SQUARE, 1
 
 	def_coord_events
+	coord_event 7, 37, SCENE_ALWAYS, HoohLugiaBlockScript
+	coord_event 7, 29, SCENE_ALWAYS, GroudonKyogreBlockScript
+	coord_event 7, 21, SCENE_ALWAYS, PalkiaDialgaBlockScript
+	coord_event 7, 13, SCENE_ALWAYS, RayquazaGiratinaBlockScript
 
 	def_bg_events
 
@@ -597,5 +733,5 @@ DestinyPark_MapEvents:
 	object_event 11, 22, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterChuckScript, -1
 	object_event 13, 26, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJasmineScript, -1
 	object_event 2, 15, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterPryceScript, -1
-	object_event 5, 14, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
+	object_event 6, 13, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
 	object_event 6, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterGiovanniScript, -1

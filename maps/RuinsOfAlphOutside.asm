@@ -278,6 +278,37 @@ RuinsOfAlphOutsideYoungster2Text:
 	line "message!"
 	done
 
+RuinsOfAlphBlockScript:
+    checkevent ENGINE_UNLOCKED_UNOWNS_A_TO_K
+    iffalse .block
+    checkevent ENGINE_UNLOCKED_UNOWNS_L_TO_R
+    iffalse .block
+    checkevent ENGINE_UNLOCKED_UNOWNS_S_TO_W
+    iffalse .block
+    checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext RuinsOfAlphBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_RuinsOfAlphTurnBack
+    end
+
+RuinsOfAlphBlockText:
+    text "The door is"
+    line "locked by some"
+    cont "contraption."
+    para "Perhaps related"
+    line "to the puzzles."
+    done
+
+Movement_RuinsOfAlphTurnBack:
+	step DOWN
+	step_end
+
 RuinsOfAlphOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -298,6 +329,7 @@ RuinsOfAlphOutside_MapEvents:
 	def_coord_events
 	coord_event 17, 14, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1
 	coord_event 16, 15, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene2
+	coord_event 1, 20, SCENE_ALWAYS, RuinsOfAlphBlockScript
 
 	def_bg_events
 	bg_event 22,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign

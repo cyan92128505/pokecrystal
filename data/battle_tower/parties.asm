@@ -3262,8 +3262,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db MEW
-	db PINK_BOW
-	db SWORDS_DANCE, ZEN_HEADBUTT, EARTHQUAKE, EXPLOSION
+	db LEFTOVERS
+	db HORN_DRILL, FISSURE, REST, SLEEP_TALK
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -3273,7 +3273,7 @@ BattleTowerMons:
     bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 16, 32, 8 ; PP
+	db 8, 8, 10, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 84 ; Level

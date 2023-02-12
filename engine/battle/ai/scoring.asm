@@ -882,19 +882,6 @@ AI_Smart_Sleep:
 	ld b, a
 	callfar GetItemHeldEffect
 	ld a, b
-	cp HELD_HEAL_SLEEP
-	pop de
-	pop hl
-	jr z, .discourage
-
-; does player have a held item that would heal sleep
-	push hl
-	push de
-	ld a, [wBattleMonItem]
-	ld [wNamedObjectIndex], a
-	ld b, a
-	callfar GetItemHeldEffect
-	ld a, b
 	cp HELD_HEAL_STATUS
 	pop de
 	pop hl
@@ -928,6 +915,17 @@ AI_Smart_Sleep:
 	ld b, EFFECT_NIGHTMARE
 	call AIHasMoveEffect
 	ret nc
+
+; Pokemon with Bad Dreams ability should prioritise sleep more
+    ld a, [wEnemyMonSpecies]
+    cp DARKRAI
+    jr z, .encourage
+    cp HYPNO
+    jr z, .encourage
+    cp SPIRITOMB
+    jr z, .encourage
+    cp JYNX
+    jr z, .encourage
 
 .encourage
 	call AI_50_50

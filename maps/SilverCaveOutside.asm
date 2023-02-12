@@ -129,6 +129,32 @@ SilverCaveEusineAfterBattleText:
     line "friend."
     done
 
+SilverCaveOutsideBlockScript:
+    checkevent EVENT_BEAT_RED
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext SilverCaveOutsideBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_SilverCaveOutsideTurnBack
+    end
+
+SilverCaveOutsideBlockText:
+    text "The door is"
+    line "locked."
+    para "It says only"
+    line "the strongest"
+    cont "trainers are"
+    cont "allowed."
+    done
+
+Movement_SilverCaveOutsideTurnBack:
+	step DOWN
+	step_end
+
 SilverCaveOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -138,6 +164,7 @@ SilverCaveOutside_MapEvents:
 	warp_event 31, 5, DESTINY_PARK, 1
 
 	def_coord_events
+	coord_event 31, 6, SCENE_ALWAYS, SilverCaveOutsideBlockScript
 
 	def_bg_events
 	bg_event 24, 19, BGEVENT_READ, MtSilverPokecenterSign

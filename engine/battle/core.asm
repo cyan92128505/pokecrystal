@@ -1232,6 +1232,9 @@ ResidualDamage:
 	bit SUBSTATUS_NIGHTMARE, [hl]
 	jr nz, .nightmare
 
+; ================================
+; ======= Bad Dreams =============
+; ================================
     call GetOpposingMonCore
     cp DARKRAI
     jr nz, .not_nightmare

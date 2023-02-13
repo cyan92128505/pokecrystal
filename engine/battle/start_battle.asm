@@ -74,11 +74,30 @@ FindFirstAliveMonAndStartBattle:
 	ldh [hMapAnims], a
 	ret
 
+; AndrewNote - battle music stuff here
 PlayBattleMusic:
 	push hl
 	push de
 	push bc
 
+	ld a, [wOtherTrainerClass]
+	and a
+	jr nz, .fade
+
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+    call GetWorldMapLocation
+	cp LANDMARK_HALL_OF_ORIGIN
+	jp z, .skip
+	cp LANDMARK_SILVER_CAVE
+	jp z, .skip
+	cp LANDMARK_ANCIENT_RUIN
+	jp z, .skip
+
+.fade
+    ; fade out current music
 	xor a
 	ld [wMusicFade], a
 	ld de, MUSIC_NONE
@@ -86,6 +105,12 @@ PlayBattleMusic:
 	call DelayFrame
 	call MaxVolume
 
+	; Are we fighting a trainer?
+	ld a, [wOtherTrainerClass]
+	and a
+	jr nz, .trainermusic
+
+    ; is this suicune battle
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
 	ld de, MUSIC_SUICUNE_BATTLE
@@ -93,16 +118,13 @@ PlayBattleMusic:
 	cp BATTLETYPE_ROAMING
 	jp z, .done
 
-	; Are we fighting a trainer?
-	ld a, [wOtherTrainerClass]
-	and a
-	jr nz, .trainermusic
-
+    ; is this kanto
 	farcall RegionCheck
 	ld a, e
 	and a
 	jr nz, .kantowild
 
+    ; play johto music, depending on time of day
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
@@ -110,15 +132,19 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
 	jr .done
 
+; play kanto music
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
 	jr .done
 
 .trainermusic
+    ; champoin music
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jr z, .done
 	cp RED
+	jr z, .done
+	cp POKEMON_PROF
 	jr z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
@@ -127,8 +153,14 @@ PlayBattleMusic:
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
+	cp EXECUTIVEM
+	jr z, .done
+	cp EXECUTIVEF
+	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	cp INVADER
+	jr z, .done
 	farcall IsKantoGymLeader
 	jr c, .done
 
@@ -171,6 +203,7 @@ PlayBattleMusic:
 .done
 	call PlayMusic
 
+.skip
 	pop bc
 	pop de
 	pop hl

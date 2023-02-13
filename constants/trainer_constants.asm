@@ -727,4 +727,7 @@ KRIS EQU __trainer_class__
 	const EUSINE
 	const EUSINE_SILVER_CAVE
 
+    trainerclass INVADER ; 44
+    const INVADER_1
+
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

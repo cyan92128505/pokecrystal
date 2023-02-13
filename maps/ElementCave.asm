@@ -73,7 +73,7 @@ ElementCave_MapEvents:
 
 	def_warp_events
 	warp_event 5, 3, CINNABAR_ISLAND, 2
-	warp_event 43, 19, ROUTE_20, 2
+	warp_event 43, 21, ROUTE_20, 2
 
 	def_coord_events
 

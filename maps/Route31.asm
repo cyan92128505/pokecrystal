@@ -415,6 +415,59 @@ DarkCaveSignText:
 	text "DARK CAVE"
 	done
 
+InvaderGiantDad:
+	trainer INVADER, INVADER_1, EVENT_BEAT_INVADER_1, GiantDadSeenText, GiantDadBeatenText, GiantDadWinsText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GiantDadAfterBattleText
+	waitbutton
+	closetext
+	end
+
+GiantDadSeenText:
+    text "I have found"
+    line "you host!"
+
+    para "I have invaded"
+    line "your world!"
+
+    para "Some people"
+    line "have honor.."
+
+    para "Hmph!"
+
+    para "I have no need"
+    line "for that!"
+
+    para "I'm here to"
+    line "crush noobs in"
+    cont "the starting"
+    cont "area."
+
+    para "Because I"
+    line "love it!"
+    done
+
+GiantDadBeatenText:
+    text "This isn't"
+    line "your first"
+    cont "playthrough!"
+    done
+
+GiantDadWinsText:
+    text "Welcome"
+    line "to #MON!"
+    done
+
+GiantDadAfterBattleText:
+    text "Hey, I gave"
+    line "you a memorable"
+    cont "experience did"
+    cont "I not!"
+    done
+
 Route31_MapEvents:
 	db 0, 0 ; filler
 
@@ -431,9 +484,10 @@ Route31_MapEvents:
 
 	def_object_events
 	object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
-	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
+	object_event 11,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
 	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
 	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
 	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
+	object_event  9,  6,  SPRITE_CHRIS, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, InvaderGiantDad, -1

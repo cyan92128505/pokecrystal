@@ -720,6 +720,7 @@ LatiosFrontpic:    INCBIN "gfx/pokemon/latios/front.animated.2bpp.lz"
 LatiosBackpic:     INCBIN "gfx/pokemon/latios/back.2bpp.lz"
 TogekissFrontpic:        INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
 TogekissBackpic:         INCBIN "gfx/pokemon/togekiss/back.2bpp.lz"
+InvaderPic:        INCBIN "gfx/trainers/invader.2bpp.lz"
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).

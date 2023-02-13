@@ -856,6 +856,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_SHELL_SMASH,      AI_Smart_ShellSmash
     dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
     dbw EFFECT_KINGS_SHIELD,     AI_Smart_KingsShield
+    dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1665,6 +1666,24 @@ AI_Smart_Ohko:
 .discourage
 	inc [hl]
 	ret
+
+AI_Smart_StaticDamage:
+; don't use on Uber Pokemon as they are immune
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	ret nc
+   	inc [hl]
+   	inc [hl]
+   	inc [hl]
+   	ret
 
 AI_Smart_TrapTarget:
 ; Wrap, Fire Spin, Clamp

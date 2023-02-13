@@ -261,11 +261,11 @@ MartVermilion:
 
 MartCeladon2F1:
 	db 7 ; # items
-	db POTION
-	db SUPER_POTION
-	db HYPER_POTION
 	db MAX_POTION
+	db FULL_RESTORE
 	db REVIVE
+	db MAX_REVIVE
+	db MAX_ELIXER
 	db SUPER_REPEL
 	db MAX_REPEL
 	db -1 ; end
@@ -303,23 +303,25 @@ MartCeladon4F:
 	db -1 ; end
 
 MartCeladon5F1:
-	db 5 ; # items
+	db 6 ; # items
 	db HP_UP
 	db PROTEIN
 	db IRON
 	db CARBOS
 	db CALCIUM
+	db PP_UP
 	db -1 ; end
 
 MartCeladon5F2:
-	db 7 ; # items
-	db X_ACCURACY
-	db GUARD_SPEC
-	db DIRE_HIT
-	db X_ATTACK
-	db X_DEFEND
-	db X_SPEED
-	db X_SPECIAL
+	db 8 ; # items
+	db LEFTOVERS
+	db LIFE_ORB
+	db CHOICE_BAND
+	db CHOICE_SPECS
+	db FOCUS_SASH
+	db EXPERT_BELT
+	db MUSCLE_BAND
+	db WISE_GLASSES
 	db -1 ; end
 
 MartFuchsia:

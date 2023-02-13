@@ -269,6 +269,8 @@
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
 ; Unused: next 339 events
+; here we add some new trainers
+    const EVENT_BEAT_INVADER_1
 
 	const_next 600
 ; Kurt Apricorn events

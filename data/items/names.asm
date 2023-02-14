@@ -105,7 +105,7 @@ ItemNames::
 	li "SLOWPOKETAIL"
 	li "PINK BOW"
 	li "MUSCLE BAND"
-	li "SMOKE BALL"
+	li "RED EYE ORB"
 	li "NEVERMELTICE"
 	li "MAGNET"
 	li "MIRACLEBERRY"

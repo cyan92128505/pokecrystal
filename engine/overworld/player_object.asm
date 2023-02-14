@@ -29,6 +29,12 @@ SpawnPlayer:
 	call GetMapObject
 	ld hl, MAPOBJECT_COLOR
 	add hl, bc
+	ld a, [wInvading]
+	and a
+	jr z, .checkMasterOakMale
+	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
+	jr .continueMale
+.checkMasterOakMale
 	ld a, [wBeatenMasterOak]
 	and a
 	jr z, .normalColourMale
@@ -40,9 +46,18 @@ SpawnPlayer:
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .ok
+
+; ========== Female ===========
+
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .ok
+	ld a, [wInvading]
+	and a
+	jr z, .checkMasterOakFemale
+	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
+	jr .ok
+.checkMasterOakFemale
 	ld a, [wBeatenMasterOak]
 	and a
 	jr z, .normalColourFemale

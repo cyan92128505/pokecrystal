@@ -1425,6 +1425,16 @@ _ExpShareToggleOff::
 	line "turned off."
 	prompt
 
+_InvadingAnotherWorld::
+    text "Invading another"
+    line "world."
+    prompt
+
+_ReturningToYourWorld::
+    text "Returning to"
+    line "your world."
+    prompt
+
 _KnowsMoveText::
 	text_ram wStringBuffer1
 	text " knows"

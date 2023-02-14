@@ -3941,30 +3941,27 @@ TryToRunAwayFromBattle:
 	and a
 	jp nz, .cant_escape
 
-	push hl
-	push de
-	ld a, [wBattleMonItem]
-	ld [wNamedObjectIndex], a
-	ld b, a
-	callfar GetItemHeldEffect
-	ld a, b
-	cp HELD_ESCAPE
-	pop de
-	pop hl
-	jr nz, .no_flee_item
-
-	; AndrewNote - smoke ball 30% chance to fail
-	call Random
-	cp 30 percent
-	jr c, .no_flee_item
-
-	call SetPlayerTurn
-	call GetItemName
-	ld hl, BattleText_UserFledUsingAStringBuffer1
-	call StdBattleTextbox
-	jp .can_escape
-
-.no_flee_item
+;	push hl
+;	push de
+;	ld a, [wBattleMonItem]
+;	ld [wNamedObjectIndex], a
+;	ld b, a
+;	callfar GetItemHeldEffect
+;	ld a, b
+;	cp HELD_ESCAPE
+;	pop de
+;	pop hl
+;	jr nz, .no_flee_item
+; AndrewNote - smoke ball 30% chance to fail
+;	call Random
+;	cp 30 percent
+;	jr c, .no_flee_item
+;	call SetPlayerTurn
+;	call GetItemName
+;	ld hl, BattleText_UserFledUsingAStringBuffer1
+;	call StdBattleTextbox
+;	jp .can_escape
+;.no_flee_item
 
 	ld a, [wNumFleeAttempts]
 	inc a

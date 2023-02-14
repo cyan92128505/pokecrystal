@@ -442,6 +442,7 @@ endr
 
 	jp .loop
 
+; AndrewNote - reward money here
 ComputeTrainerReward:
 	ld hl, hProduct
 	xor a
@@ -453,6 +454,13 @@ ComputeTrainerReward:
 	ld a, [wCurPartyLevel]
 	ld [hl], a ; hMultiplier
 	call Multiply
+	ld a, [wInvading]
+	and a
+	jr z, .notInvading
+	ld a, 2
+	ld [hl], a ; hMultiplier
+	call Multiply
+.notInvading
 	ld hl, wBattleReward
 	xor a
 	ld [hli], a

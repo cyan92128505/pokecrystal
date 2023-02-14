@@ -624,7 +624,7 @@ GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors:
 	end
 
 GoldenrodUndergroundSwitchRoomEntrancesSmokeBall:
-	itemball SMOKE_BALL
+	itemball CHOICE_BAND
 
 GoldenrodUndergroundSwitchRoomEntrancesFullHeal:
 	itemball FULL_HEAL

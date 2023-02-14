@@ -111,7 +111,7 @@
 	const SLOWPOKETAIL ; 67
 	const PINK_BOW     ; 68
 	const MUSCLE_BAND  ; 69
-	const SMOKE_BALL   ; 6a
+	const RED_EYE_ORB  ; 6a
 	const NEVERMELTICE ; 6b
 	const MAGNET       ; 6c
 	const MIRACLEBERRY ; 6d

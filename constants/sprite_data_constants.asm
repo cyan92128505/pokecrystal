@@ -27,11 +27,11 @@ NUM_SPRITEDATA_FIELDS EQU _RS
 ; object_events set bit 3 so as not to use the sprite's default palette
 ; MapObjectPals indexes (see gfx/overworld/npc_sprites.pal)
 	const_def 1 << 3
-	const PAL_NPC_RED    ; 8
-	const PAL_NPC_BLUE   ; 9
-	const PAL_NPC_GREEN  ; a
-	const PAL_NPC_BROWN  ; b
-	const PAL_NPC_PINK   ; c
-	const PAL_NPC_SILVER ; d
-	const PAL_NPC_TREE   ; e
-	const PAL_NPC_ROCK   ; f
+	const PAL_NPC_RED       ; 8
+	const PAL_NPC_BLUE      ; 9
+	const PAL_NPC_GREEN     ; a
+	const PAL_NPC_BROWN     ; b
+	const PAL_NPC_PINK      ; c only used for Palkia
+	const PAL_NPC_SILVER    ; d
+	const PAL_NPC_DEEP_RED  ; e only used for invaders
+	const PAL_NPC_ROCK      ; f only used for some legendary sprites

@@ -209,6 +209,8 @@ MasterOakScript:
 	appear HALLOFORIGIN_MEWTWO_POKEBALL
 	clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
 	setevent EVENT_BEAT_MASTER_OAK
+	setval 0
+	writemem wInvading
 	setval 1
 	writemem wBeatenMasterOak
 	special FadeOutPalettes

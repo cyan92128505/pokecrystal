@@ -25,6 +25,8 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
+	setval 0
+	writemem wInvading
 	callasm GetWhiteoutSpawn
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
@@ -73,7 +75,7 @@ LoseWhiteOutMoney:
 	or [hl]
 	inc hl
 	or [hl]
-	jr z, .done
+	jp z, .done
 ; Count your badges (capped at 8)
 	ld hl, wBadges
 	ld b, 2
@@ -110,6 +112,26 @@ LoseWhiteOutMoney:
 	ldh [hMultiplicand + 2], a
 	call Multiply
 ; Save the amount (capped at your total) in hMoneyTemp to print
+; AndrewNote - lose no money if immortal
+    ld a, [wBeatenMasterOak]
+    and a
+    jr z, .notImmortal
+    jr .take
+.notImmortal
+; AndrewNote - lose all money if invading
+    ld a, [wInvading]
+    and a
+    jr z, .notInvading
+    ld de, wMoney
+    ld hl, wMoney
+	ld a, [hli]
+	ldh [hMoneyTemp], a
+	ld a, [hli]
+	ldh [hMoneyTemp + 1], a
+	ld a, [hli]
+	ldh [hMoneyTemp + 2], a
+    jr .take
+.notInvading
 	ld de, hMoneyTemp
 	ld hl, hProduct + 1
 	ld bc, 3
@@ -127,6 +149,7 @@ LoseWhiteOutMoney:
 .not_enough
 	pop de
 	pop bc
+.take
 	farcall TakeMoney
 ; Return TRUE in [wScriptVar] if you had any money to lose
 	ld a, TRUE

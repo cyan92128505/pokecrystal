@@ -1841,6 +1841,38 @@ UnusedNothingHereText: ; unreferenced
 	text_far _UnusedNothingHereText
 	text_end
 
+RedEyeOrbFunction:
+	call .InvadeWorld
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+.InvadeWorld:
+	ld a, [wInvading]
+	xor 1
+	ld [wInvading], a
+	and a
+	ld hl, InvadingAnotherWorld
+	jr nz, .done
+	ld hl, ReturningToYourWorld
+.done
+	call PrintText
+	ld hl, Script_InvadeWorld
+	call QueueScript
+	ld a, TRUE
+	ret
+
+Script_InvadeWorld:
+	warp NONE, 0, 0
+	end
+
+InvadingAnotherWorld:
+	text_far _InvadingAnotherWorld
+	text_end
+
+ReturningToYourWorld:
+	text_far _ReturningToYourWorld
+	text_end
+
 PocketPCFunction:
 	call .LoadPocketPC
 	and $7f

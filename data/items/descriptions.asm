@@ -106,7 +106,7 @@ ItemDescriptions:
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
 	dw MuscleBandDesc
-	dw SmokeBallDesc
+	dw RedEyeOrbDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
 	dw MiracleBerryDesc
@@ -668,9 +668,9 @@ MuscleBandDesc:
 	db   "Slightly boosts"
 	next "physical moves.@"
 
-SmokeBallDesc:
-	db   "Escape from wild"
-	next "#MON. (HOLD)@"
+RedEyeOrbDesc:
+	db   "Become an"
+	next "Invader.@"
 
 NeverMeltIceDesc:
 	db   "Powers up ice-type"

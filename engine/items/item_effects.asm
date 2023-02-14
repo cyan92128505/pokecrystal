@@ -119,7 +119,7 @@ ItemEffects:
 	dw NoEffect            ; SLOWPOKETAIL
 	dw NoEffect            ; PINK_BOW
 	dw NoEffect            ; MUSCLE_BAND
-	dw NoEffect            ; SMOKE_BALL
+	dw RedEyeOrbEffect     ; RED_EYE_ORB
 	dw NoEffect            ; NEVERMELTICE
 	dw NoEffect            ; MAGNET
 	dw StatusHealingEffect ; MIRACLEBERRY
@@ -2443,6 +2443,10 @@ ItemfinderEffect:
 PocketPCEffect:
 	farcall PocketPCFunction
 	ret
+
+RedEyeOrbEffect:
+    farcall RedEyeOrbFunction
+    ret
 
 RestorePPEffect:
 	ld a, [wCurItem]

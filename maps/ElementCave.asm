@@ -11,10 +11,19 @@ ElementCave_MapScripts:
 .GroudonAndKyogre
 	checkevent EVENT_BEAT_HOEN_ARMY
 	iffalse .NoAppear
-.Appear:
+    checkevent EVENT_CAUGHT_GROUDON
+    iftrue .NoGroudon
+    checkevent EVENT_CAUGHT_KYOGRE
+    iftrue .NoKyogre
 	appear ELEMENTCAVE_GROUDON
 	appear ELEMENTCAVE_KYOGRE
 	endcallback
+.NoGroudon:
+    disappear ELEMENTCAVE_GROUDON
+    endcallback
+.NoKyogre:
+    disappear ELEMENTCAVE_KYOGRE
+    endcallback
 .NoAppear:
 	disappear ELEMENTCAVE_GROUDON
 	disappear ELEMENTCAVE_KYOGRE

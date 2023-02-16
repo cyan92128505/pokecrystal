@@ -438,13 +438,13 @@ TrainerYoungsterGordon:
 	closetext
 	end
 
-TrainerBirdKeeperPeter:
-	trainer BIRD_KEEPER, PETER, EVENT_BEAT_BIRD_KEEPER_PETER, BirdKeeperPeterSeenText, BirdKeeperPeterBeatenText, 0, .Script
+InvaderSiegmeyer:
+	trainer INVADER, SIEGMEYER, EVENT_BEAT_BIRD_KEEPER_PETER, InvaderSiegmeyerSeenText, InvaderSiegmeyerBeatenText, InvaderSiegmeyerVictoryText, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperPeterAfterText
+	writetext InvaderSiegmeyerAfterText
 	waitbutton
 	closetext
 	end
@@ -812,22 +812,42 @@ PicnickerLiz1AfterText:
 	line "nice chat too."
 	done
 
-BirdKeeperPeterSeenText:
-	text "That BADGE! It's"
-	line "from VIOLET CITY!"
+InvaderSiegmeyerSeenText:
+	text "Hmmmmm"
 
-	para "You beat FALKNER?"
+	para "......."
+
+	para "I knew you would"
+	line "come my way."
+
+	para "This armour"
+	line "gives me"
+	cont "unbreakable"
+	cont "poise."
+
+	para "Have at me!"
+
+	para "I can"
+	line "withstand"
+	cont "and counter."
 	done
 
-BirdKeeperPeterBeatenText:
-	text "I know what my"
-	line "weaknesses are."
+InvaderSiegmeyerBeatenText:
+	text "I just couldn't"
+	line "land a hit."
 	done
 
-BirdKeeperPeterAfterText:
-	text "I should train"
-	line "again at the GYM"
-	cont "in VIOLET CITY."
+InvaderSiegmeyerVictoryText:
+	text "Good Game"
+	line "my friend!"
+	done
+
+InvaderSiegmeyerAfterText:
+	text "You done well"
+	line "hohohoho!"
+
+	para "You would make"
+	line "a fine knight."
 	done
 
 Route32UnusedText: ; unreferenced
@@ -950,7 +970,7 @@ Route32_MapEvents:
 	object_event  3, 45, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
 	object_event 10, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
-	object_event 11, 82, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperPeter, -1
+	object_event 11, 82, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderSiegmeyer, -1
 	object_event  7, 70, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
 	object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1

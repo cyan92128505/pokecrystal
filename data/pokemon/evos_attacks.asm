@@ -3462,6 +3462,7 @@ KlefkiEvosAttacks:
 	db 12, SCREECH
 	db 16, REFLECT
 	db 18, LIGHT_SCREEN
+	db 20, SPIKES
 	db 20, DRAIN_KISS
 	db 24, CONFUSE_RAY
 	db 30, IRON_HEAD

@@ -270,7 +270,7 @@
 	const EVENT_TIFFANY_GAVE_PINK_BOW
 ; Unused: next 339 events
 ; here we add some new trainers
-    const EVENT_BEAT_INVADER_1
+    const EVENT_BEAT_GIANT_DAD
 
 	const_next 600
 ; Kurt Apricorn events
@@ -1507,7 +1507,8 @@
 	const EVENT_BEAT_MASTER_GIOVANNI
 	const EVENT_BEAT_HENSHIN
 	const EVENT_BEAT_RED
+	const EVENT_BEAT_MASTER_PATCHES
 
-    ; 3 left
+    ; 2 left
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

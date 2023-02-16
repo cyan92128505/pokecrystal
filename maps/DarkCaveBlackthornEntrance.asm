@@ -127,9 +127,14 @@ GiratinaPlayerHasRayquazaText:
     cont "of your blood!"
 
     para "And you my"
-    line "sweet disciple,"
-    cont "you can be part"
-    cont "of me forever."
+    line "sweet disciple."
+
+    para "Your devotion"
+    line "shalt not go"
+    cont "unrewarded."
+
+    para "You can be part"
+    line "of me forever."
 
     para "I shall devour"
     line "you, slowly..."

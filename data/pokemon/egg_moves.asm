@@ -245,9 +245,8 @@ YanmegaEggMoves:
 	db -1 ; end
 
 FerroseedEggMoves:
-	db HAZE
-	db MEAN_LOOK
-	db LICK
+	db SPIKES
+	db ACID_ARMOR
 	db -1 ; end
 
 ShellderEggMoves:

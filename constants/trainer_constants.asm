@@ -728,6 +728,14 @@ KRIS EQU __trainer_class__
 	const EUSINE_SILVER_CAVE
 
     trainerclass INVADER ; 44
-    const INVADER_1
+    const GIANT_DAD
+    const SIEGMEYER
+    const LAUTREC
+    const PARRY_KING
+    const PATCHES
+    const JACK
+    const HAVEL
+    const OROBORO
+    const MASTER_PATCHES
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

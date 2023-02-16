@@ -416,7 +416,7 @@ DarkCaveSignText:
 	done
 
 InvaderGiantDad:
-	trainer INVADER, INVADER_1, EVENT_BEAT_INVADER_1, GiantDadSeenText, GiantDadBeatenText, GiantDadWinsText, .Script
+	trainer INVADER, GIANT_DAD, EVENT_BEAT_GIANT_DAD, GiantDadSeenText, GiantDadBeatenText, GiantDadWinsText, .Script
 
 .Script:
 	endifjustbattled

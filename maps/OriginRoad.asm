@@ -15,15 +15,18 @@ InvaderMasterPatches:
 	end
 
 InvaderMasterPatchesSeenText:
-	text "Oh hello"
-	line "again friend."
+	text "What you again?"
+	line "Well, well!"
+
+	para "You've been a"
+	line "stranger."
 
 	para "You must be"
 	line "searching for"
 	cont "the ultimate"
 	cont "treasure!"
 
-	para "Its just up"
+	para "It's just up"
 	line "ahead."
 
 	para "But don't"
@@ -32,38 +35,40 @@ InvaderMasterPatchesSeenText:
 
 	para "There is a"
 	line "group of max"
-	cont "level trainers"
-	cont "up ahead."
+	cont "level trainers."
 
 	para "I could not"
 	line "defeat them."
 
 	para "Even with my"
-	line "special"
-	cont "techniques!"
+	line "cheat codes!"
 
-	para "Say..."
+	para "Oh, you caught"
+	line "me!"
 
-	para "You have some"
-	line "powerful souls"
-	cont "on you."
+	para "Heh heh, this"
+	line "is what I do"
+	cont "my friend."
 
-	para "Would be a"
-	line "shame if they"
-	cont "were to go to"
-	cont "waste."
+	para "The #MON"
+	line "I'll be taking"
+	cont "from you."
+
+	para "That's the"
+	line "real treasure!"
 	done
 
 InvaderMasterPatchesBeatenText:
-	text "Alright!"
-	line "Alright!"
-	cont "Calm down"
-	cont "friend."
+	text "...Oh"
+	line "You, I..."
+	cont "Let's just"
+	cont "calm down."
 	done
 
 InvaderMasterPatchesVictoryText:
-	text "Good Game"
-	line "my friend!"
+	text "Phew."
+	para "The righteous"
+	line "prevail again."
 	done
 
 InvaderMasterPatchesAfterText:
@@ -75,11 +80,10 @@ InvaderMasterPatchesAfterText:
 	cont "the phantoms"
 	cont "ahead."
 
-	para "I'll always"
-	line "be here for"
-	cont "you."
+	para "I'm glad we're"
+	line "friends again."
 
-	para "My friend."
+	para "Heh, heh, heh..."
 	done
 
 OriginRoad_MapEvents:

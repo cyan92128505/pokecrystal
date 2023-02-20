@@ -82,13 +82,13 @@ Route35RematchM:
 	jumpstd RematchMScript
 	end
 
-TrainerCamperIvan:
-	trainer CAMPER, IVAN, EVENT_BEAT_CAMPER_IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
+InvaderLautrecScript:
+	trainer INVADER, LAUTREC, EVENT_BEAT_INVADER_LAUTREC, InvaderLautrecSeenText, InvaderLautrecBeatenText, InvaderLautrecVictoryText, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperIvanAfterBattleText
+	writetext InvaderLautrecAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -274,22 +274,45 @@ Route35TMRollout:
 Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35
 
-CamperIvanSeenText:
-	text "I've been getting"
-	line "#MON data off"
+InvaderLautrecSeenText:
+	text "Well look at"
+	line "you."
 
-	para "my radio. I think"
-	line "I'm good."
+	para "I thought you"
+	line "were wiser."
+
+	para "I thought wrong!"
+
+	para "Tis a terrible"
+	line "pity."
+
+	para "Like a moth"
+	line "flittering to"
+	cont "a flame."
 	done
 
-CamperIvanBeatenText:
-	text "I give!"
+InvaderLautrecBeatenText:
+	text "You despicable"
+	line "...Curses..."
+	cont "How could I..."
 	done
 
-CamperIvanAfterBattleText:
-	text "Music on the radio"
-	line "changes the moods"
-	cont "of wild #MON."
+InvaderLautrecVictoryText:
+	text "Hmmm... Your"
+	line "humanity is"
+	cont "really slipping."
+	done
+
+InvaderLautrecAfterBattleText:
+	text "Beware the one"
+	line "known as PATCHES"
+
+	para "He might seen"
+	line "an unassuming"
+	cont "fool."
+
+	para "But he is"
+	line "very dangerous"
 	done
 
 CamperElliotSeenText:
@@ -475,7 +498,7 @@ Route35_MapEvents:
 	bg_event 11, 31, BGEVENT_READ, Route35Sign
 
 	def_object_events
-	object_event  4, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperIvan, -1
+	object_event  4, 19, SPRITE_CHRIS, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderLautrecScript, -1
 	object_event  8, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperElliot, -1
 	object_event  7, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerKim, -1

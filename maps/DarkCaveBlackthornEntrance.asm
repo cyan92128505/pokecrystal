@@ -196,6 +196,51 @@ DarkCaveBlackthornEntrancePharmacistText2:
 	cont "type moves."
 	done
 
+InvaderJackScript:
+	trainer INVADER, JACK, EVENT_BEAT_INVADER_JACK, InvaderJackSeenText, InvaderJackBeatenText, InvaderJackVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderJackAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderJackSeenText:
+    text "I knew you were"
+    line "a special one."
+
+    para "Lord GIRATINA"
+    line "is the creator"
+    cont "of all invaders."
+
+    para "There is only"
+    line "the weak and"
+    cont "the strong."
+
+    para "The weak must"
+    line "perish!"
+	done
+
+InvaderJackVictoryText:
+	text "How disappointing."
+	done
+
+InvaderJackBeatenText:
+	text "You are strong!"
+	done
+
+InvaderJackAfterBattleText:
+	text "Go on dear child."
+
+	para "Aid Lord GIRATINA"
+	line "and you shall be"
+	cont "rewarded."
+
+	para "Heh heh heh."
+	done
+
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -211,3 +256,5 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event  7,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_CAUGHT_GIRATINA
 	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
+	object_event 5, 6, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderJackScript, -1
+

@@ -113,13 +113,13 @@ TrainerPokefanfRuth:
 	closetext
 	end
 
-TrainerSailorEugene:
-	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorEugeneSeenText, SailorEugeneBeatenText, 0, .Script
+InvaderParryKingScript:
+	trainer INVADER, PARRY_KING, EVENT_BEAT_SAILOR_EUGENE, InvaderParryKingSeenText, InvaderParryKingBeatenText, InvaderParryKingVictoryText, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorEugeneAfterBattleText
+	writetext InvaderParryKingAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -184,26 +184,30 @@ Route39MiltankText:
 	text "MILTANK: Mooo!"
 	done
 
-SailorEugeneSeenText:
-	text "I just got back to"
-	line "OLIVINE."
+InvaderParryKingSeenText:
+	text "You might think"
+	line "that wining every"
+	cont "match in one hit"
+	cont "would get boring."
 
-	para "So how about a"
-	line "#MON battle?"
+	para "But you'd be wrong."
 	done
 
-SailorEugeneBeatenText:
-	text "Awaaargh!"
+InvaderParryKingVictoryText:
+	text "I had fun!"
 	done
 
-SailorEugeneAfterBattleText:
-	text "My #MON were"
-	line "caught and raised"
-	cont "overseas."
+InvaderParryKingBeatenText:
+	text "You jus got"
+	line "lucky."
+	done
 
-	para "They're my compan-"
-	line "ions on those long"
-	cont "voyages."
+InvaderParryKingAfterBattleText:
+	text "And I spent so"
+	line "much time grinding"
+	cont "coins in CELADON"
+	cont "to get these"
+	cont "weapons!"
 	done
 
 PokefanmDerekSeenText:
@@ -357,7 +361,7 @@ Route39_MapEvents:
 	bg_event  5, 13, BGEVENT_ITEM, Route39HiddenNugget
 
 	def_object_events
-	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorEugene, -1
+	object_event 13, 29, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderParryKingScript, -1
 	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, -1
 	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, -1
 	object_event  3, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1

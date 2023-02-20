@@ -1515,9 +1515,12 @@ AI_Smart_Toxic:
     call AICheckPlayerHalfHP
     jr nc, .discourage
 
+; encourage slightly if we get here
+    dec [hl]
 	ret
 
 .discourage
+    inc [hl]
     inc [hl]
     inc [hl]
     ret
@@ -1782,7 +1785,7 @@ AI_Smart_Paralyze:
 ; never use thunderwave against ground types
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp THUNDER_WAVE
-	jr nz, .notThunderwave
+	jr nz, .glare
     ld a, [wBattleMonType1]
 	cp GROUND
 	jr z, .discourage
@@ -1790,7 +1793,18 @@ AI_Smart_Paralyze:
 	cp GROUND
 	jr z, .discourage
 
-.notThunderwave
+.glare
+; never use glare against ghost types
+	cp GLARE
+	jr nz, .notGlare
+    ld a, [wBattleMonType1]
+	cp GHOST
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jr z, .discourage
+
+.notGlare
 ; don't use against Arceus since it is immune to status
 ; always use against Mewtwo
     ld a, [wBattleMonSpecies]
@@ -2293,17 +2307,34 @@ AI_Smart_Disable:
 	ret
 
 AI_Smart_MeanLook:
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
+; discourage if player is already trapped
+    ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	jr nz, .discourage
 
+; discourage if this is the players last mon
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
 	jp z, AIDiscourageMove
 
+; if we are Wobbuffet just encourage at this point
+	ld a, [wEnemyMonSpecies]
+	cp WOBBUFFET
+	jr nz, .notWobbuffet
+rept 5
+	dec [hl]
+endr
+	ret
+.notWobbuffet
+
+; discourage if below half health
+	call AICheckEnemyHalfHP
+	jr nc, .discourage
+
 ; 80% chance to greatly encourage this move if the enemy is badly poisoned (buggy).
 ; Should check wPlayerSubStatus5 instead.
-	ld a, [wEnemySubStatus5]
+	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 

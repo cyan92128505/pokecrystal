@@ -151,13 +151,13 @@ TrainerPokemaniacBrent:
 	jumpstd RematchMScript
 	end
 
-TrainerPokemaniacRon:
-	trainer POKEMANIAC, RON, EVENT_BEAT_POKEMANIAC_RON, PokemaniacRonSeenText, PokemaniacRonBeatenText, 0, .Script
+InvaderPatchesScript:
+	trainer INVADER, PATCHES, EVENT_BEAT_INVADER_PATCHES, InvaderPatchesSeenText, InvaderPatchesBeatenText, InvaderPatchesVictoryText, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacRonAfterBattleText
+	writetext InvaderPatchesAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -362,33 +362,62 @@ PokemaniacBrentAfterBattleText:
 	cont "rare #MON."
 	done
 
-PokemaniacRonSeenText:
-	text "Would you get"
-	line "this?"
+InvaderPatchesSeenText:
+	text "Good day!"
+	line "You look"
+	cont "reasonably sane."
 
-	para "Some <RIVAL> guy"
-	line "made fun of my"
-	cont "#MON!"
+	para "You must be"
+	line "looking for"
+	cont "treasure!"
 
-	para "Darn it! My #-"
-	line "MON's great!"
+	para "The is a rare"
+	line "treasure just"
+	cont "ahead."
+
+	para "But that's"
+	line "nothing."
+
+	para "I've been to"
+	line "the core of this"
+	cont "world."
+
+	para "A horrible place"
+	line "of pure logic."
+
+	para "There I found a"
+	line "a treasure hidden"
+	cont "away by the maker."
+
+	para "Have a look."
+
+	para "It'll shimmer"
+	line "you blind!"
 	done
 
-PokemaniacRonBeatenText:
-	text "My NIDOKING did"
-	line "pretty right on!"
+InvaderPatchesBeatenText:
+	text "Curses..."
+	line "I'm finished.."
+	cont "What did I ever.."
 	done
 
-PokemaniacRonAfterBattleText:
-	text "It's okay for"
-	line "people to like"
+InvaderPatchesVictoryText:
+	text "Hey, don't blame"
+	line "me, old darling."
+	done
 
-	para "different types"
-	line "of #MON."
+InvaderPatchesAfterBattleText:
+	text "I did you wrong."
 
-	para "#MON isn't just"
-	line "about having the"
-	cont "most powerful one."
+	para "But, I didn't"
+	line "mean it!"
+
+	para "Please forgive"
+	line "me?"
+
+	para "You and me, we're"
+	line "jolly adventurers"
+	cont "aren't we?"
 	done
 
 FisherMarvinSeenText:
@@ -516,9 +545,9 @@ Route43_MapEvents:
 	bg_event 16, 38, BGEVENT_READ, Route43TrainerTips
 
 	def_object_events
-	object_event 13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacBen, -1
+	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacBen, -1
 	object_event 13, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacBrent, -1
-	object_event 14,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacRon, -1
+	object_event 11,  4, SPRITE_CHRIS, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderPatchesScript, -1
 	object_event  4, 16, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerFisherMarvin, -1
 	object_event  9, 25, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
 	object_event 13, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1

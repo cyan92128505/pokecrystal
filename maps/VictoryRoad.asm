@@ -236,6 +236,42 @@ VictoryRoadRivalVictoryText:
 	line "thing else."
 	done
 
+InvaderOroboroScript:
+	trainer INVADER, OROBORO, EVENT_BEAT_INVADER_OROBORO, InvaderOroboroSeenText, InvaderOroboroBeatenText, InvaderOroboroVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderOroboroAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderOroboroSeenText:
+    text "Oh Hi!"
+
+    para "Hang on let me"
+    line "get my buffs up."
+	done
+
+InvaderOroboroVictoryText:
+	text "Hahahaha!"
+	line "get recked dude"
+	done
+
+InvaderOroboroBeatenText:
+	text "No way!"
+	line "Good game."
+	done
+
+InvaderOroboroAfterBattleText:
+	text "There was some"
+	line "lag."
+
+	para "That's the only"
+	line "reason you won!"
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -266,3 +302,4 @@ VictoryRoad_MapEvents:
 	object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullRestore, EVENT_VICTORY_ROAD_FULL_RESTORE
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
+	object_event 12, 38, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1

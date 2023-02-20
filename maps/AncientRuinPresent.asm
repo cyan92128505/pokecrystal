@@ -112,6 +112,41 @@ RematchRefuseTextHenshin:
     text "I insist!"
     done
 
+DialgaBlockScript:
+    checkevent EVENT_CAUGHT_DIALGA
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext DialgaBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_AncientRuinsPresentTurnBack
+    end
+
+DialgaBlockText:
+    text "Only the power of"
+    line "the master of time"
+
+    para "DIALGA!"
+
+    para "Can activate this"
+    line "doorway."
+    done
+
+Movement_AncientRuinsPresentTurnBack:
+	step DOWN
+	step_end
+
+FightHenshinScript:
+    checkevent EVENT_BEAT_HENSHIN
+    iffalse .fight
+    end
+.fight
+    turnobject PLAYER, RIGHT
+    sjump HenshinScript
+
 AncientRuinPresent_MapEvents:
 	db 0, 0 ; filler
 
@@ -121,6 +156,8 @@ AncientRuinPresent_MapEvents:
 	warp_event 19,  5, ANCIENT_RUIN_PAST, 1
 
 	def_coord_events
+	coord_event 19, 6, SCENE_ALWAYS, DialgaBlockScript
+	coord_event 20, 22, SCENE_ALWAYS, FightHenshinScript
 
 	def_bg_events
 

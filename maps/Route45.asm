@@ -122,13 +122,13 @@ Route45RematchGiftM:
 	jumpstd RematchGiftMScript
 	end
 
-TrainerHikerErik:
-	trainer HIKER, ERIK, EVENT_BEAT_HIKER_ERIK, HikerErikSeenText, HikerErikBeatenText, 0, .Script
+InvaderHavelScript:
+	trainer INVADER, HAVEL, EVENT_BEAT_INVADER_HAVEL, InvaderHavelSeenText, InvaderHavelBeatenText, InvaderHavelVictoryText, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerErikAfterBattleText
+	writetext InvaderHavelAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -312,25 +312,37 @@ Route45MaxPotion:
 Route45HiddenPpUp:
 	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
 
-HikerErikSeenText:
-	text "Be prepared for"
-	line "anything!"
+InvaderHavelSeenText:
+    text "A war will come."
 
-	para "Let me see if your"
-	line "#MON have been"
-	cont "raised properly!"
+    para "Us against the"
+    line "dragons."
+
+    para "I am the rock"
+    line "that will protect"
+    cont "humanity."
+
+    para "Crash upon me"
+    line "and break."
 	done
 
-HikerErikBeatenText:
-	text "Oh, I lost that!"
+InvaderHavelVictoryText:
+	text "Crash upon me"
+	line "and break."
 	done
 
-HikerErikAfterBattleText:
-	text "I'll head back to"
-	line "BLACKTHORN's ICE"
+InvaderHavelBeatenText:
+	text "My shield is"
+	line "shattered!"
+	done
 
-	para "PATH and train"
-	line "some more."
+InvaderHavelAfterBattleText:
+	text "The people here"
+	line "revere dragons"
+
+	para "Once they realise"
+	line "their folly it"
+	cont "will be too late."
 	done
 
 HikerMichaelSeenText:
@@ -538,11 +550,11 @@ Route45_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 10,  4, BGEVENT_READ, Route45Sign
+	bg_event  6,  4, BGEVENT_READ, Route45Sign
 	bg_event 13, 80, BGEVENT_ITEM, Route45HiddenPpUp
 
 	def_object_events
-	object_event 10, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerErik, -1
+	object_event 10, 4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderHavelScript, -1
 	object_event 15, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerMichael, -1
 	object_event  5, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
 	object_event  9, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerTimothy, -1

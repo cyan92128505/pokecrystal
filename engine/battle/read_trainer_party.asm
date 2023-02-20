@@ -454,6 +454,8 @@ ComputeTrainerReward:
 	ld a, [wCurPartyLevel]
 	ld [hl], a ; hMultiplier
 	call Multiply
+
+; double money as an invader
 	ld a, [wInvading]
 	and a
 	jr z, .notInvading
@@ -461,6 +463,26 @@ ComputeTrainerReward:
 	ld [hl], a ; hMultiplier
 	call Multiply
 .notInvading
+
+; half money if fighting parry_king
+    ld a, [wOtherTrainerID]
+    cp PARRY_KING
+    jr nz, .notParryKing
+    ld a, 2
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+.notParryKing
+
+; x10 money if fighting master oak
+    ld a, [wOtherTrainerClass]
+    cp POKEMON_PROF
+    jr nz, .notOak
+	ld a, 10
+	ld [hl], a ; hMultiplier
+	call Multiply
+.notOak
+
 	ld hl, wBattleReward
 	xor a
 	ld [hli], a

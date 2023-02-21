@@ -23,7 +23,7 @@ Moves: ; 41afb
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       75, ELECTRIC,      PHYSICAL, 100, 15,  10
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20
-	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,        PHYSICAL,  30, 10,   0
+	move GUILLOTINE,   EFFECT_OHKO,                0, BUG,           PHYSICAL,  30, 10,   0
 	move SKY_CLEAVE,   EFFECT_NORMAL_HIT,        100, FLYING,        PHYSICAL, 100, 10,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
 	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        PHYSICAL,  95, 30,   0
@@ -43,7 +43,7 @@ Moves: ; 41afb
 	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,        PHYSICAL, 100, 15,  30
 	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0
 	move FURY_ATTACK,  EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0
-	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30, 10,   0
+	move HORN_DRILL,   EFFECT_OHKO,                1, STEEL,         PHYSICAL,  30, 10,   0
 	move TACKLE,       EFFECT_NORMAL_HIT,         35, NORMAL,        PHYSICAL,  95, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  85, 20,   0

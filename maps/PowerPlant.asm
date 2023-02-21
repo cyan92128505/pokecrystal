@@ -6,6 +6,7 @@
 	const POWERPLANT_GYM_GUIDE3
 	const POWERPLANT_MANAGER
 	const POWERPLANT_FOREST
+	const POWERPLANT_ZAPDOS
 
 PowerPlant_MapScripts:
 	def_scene_scripts
@@ -19,6 +20,30 @@ PowerPlant_MapScripts:
 
 .DummyScene1:
 	end
+
+ZapdosScript:
+	faceplayer
+	opentext
+	writetext ZapdosCry
+	cry ZAPDOS
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ZAPDOS, 60
+	startbattle
+	reloadmapafterbattle
+    setval ZAPDOS
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_ZAPDOS
+	disappear POWERPLANT_ZAPDOS
+	end
+
+ZapdosCry:
+    text "Zapdos!"
+    done
 
 PowerPlantGuardPhoneScript:
 	playsound SFX_CALL
@@ -408,3 +433,4 @@ PowerPlant_MapEvents:
 	object_event  7,  2, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide4Script, -1
 	object_event 14, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
 	object_event  5,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Forest, -1
+	object_event 17, 17, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ZapdosScript, EVENT_CAUGHT_ZAPDOS

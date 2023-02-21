@@ -1,6 +1,7 @@
 	object_const_def
 	const SEAFOAMGYM_BLAINE
 	const SEAFOAMGYM_GYM_GUIDE
+	const SEAFOAMGYM_ARTICUNO
 
 SeafoamGym_MapScripts:
 	def_scene_scripts
@@ -10,6 +11,30 @@ SeafoamGym_MapScripts:
 
 .DummyScene:
 	end
+
+ArticunoScript:
+	faceplayer
+	opentext
+	writetext ArticunoCry
+	cry ARTICUNO
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ARTICUNO, 60
+	startbattle
+	reloadmapafterbattle
+    setval ARTICUNO
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_ARTICUNO
+	disappear SEAFOAMGYM_ARTICUNO
+	end
+
+ArticunoCry:
+    text "Articuno!"
+    done
 
 SeafoamGymBlaineScript:
 	faceplayer
@@ -186,12 +211,14 @@ SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  5, ROUTE_20, 1
+	warp_event  15,  15, ROUTE_20, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  5,  2, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
-	object_event  6,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
+	object_event 15,  12, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
+	object_event 16,  15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
+	object_event  2,   2, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ArticunoScript, EVENT_CAUGHT_ARTICUNO
+

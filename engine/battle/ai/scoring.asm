@@ -1574,6 +1574,19 @@ AI_Smart_Reflect:
 AI_Smart_Ohko:
 ; Dismiss this move if player's level is higher than enemy's level.
 ; Else, discourage this move is player's HP is below 50%.
+
+; don't use Fissure against a flying type
+    ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp FISSURE
+	jr nz, .notFissure
+    ld a, [wBattleMonType1]
+	cp FLYING
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp FLYING
+	jr z, .discourage
+
+.notFissure
 ; don't use on Uber Pokemon as they are immune
     ld a, [wBattleMonSpecies]
     push hl

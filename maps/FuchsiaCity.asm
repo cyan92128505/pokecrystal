@@ -3,6 +3,7 @@
 	const FUCHSIACITY_POKEFAN_M
 	const FUCHSIACITY_TEACHER
 	const FUCHSIACITY_FRUIT_TREE
+	const FUCHSIACITY_LATIAS
 
 FuchsiaCity_MapScripts:
 	def_scene_scripts
@@ -13,6 +14,34 @@ FuchsiaCity_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	endcallback
+
+LatiasScript:
+	faceplayer
+	opentext
+	writetext LatiasCry
+	cry LATIAS
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LATIAS, 60
+	startbattle
+	reloadmapafterbattle
+    setval LATIAS
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_LATIAS
+	disappear FUCHSIACITY_LATIAS
+	end
+
+LatiasCry:
+    text "...."
+
+    para "...."
+
+    para "...."
+    done
 
 FuchsiaCityYoungster:
 	jumptextfaceplayer FuchsiaCityYoungsterText
@@ -131,6 +160,8 @@ FuchsiaCity_MapEvents:
 	warp_event  8, 27, FUCHSIA_GYM, 1
 	warp_event 11, 27, BILLS_BROTHERS_HOUSE, 1
 	warp_event 19, 27, FUCHSIA_POKECENTER_1F, 1
+	warp_event 19, 27, FUCHSIA_POKECENTER_1F, 1
+	warp_event 19, 27, FUCHSIA_POKECENTER_1F, 1
 	;warp_event 27, 27, SAFARI_ZONE_WARDENS_HOME, 1
 	;warp_event 18,  3, SAFARI_ZONE_FUCHSIA_GATE_BETA, 3 ; inaccessible
 	warp_event 37, 22, ROUTE_15_FUCHSIA_GATE, 1
@@ -155,3 +186,4 @@ FuchsiaCity_MapEvents:
 	object_event 13,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityPokefanM, -1
 	object_event 16, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
 	object_event  8,  1, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFruitTree, -1
+	object_event 30,  2, SPRITE_KRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LatiasScript, EVENT_CAUGHT_LATIAS

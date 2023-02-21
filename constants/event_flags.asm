@@ -272,6 +272,11 @@
 ; AndrewNote - events, lets add more here
     const EVENT_BEAT_GIANT_DAD
     const EVENT_BEAT_INVADER_JACK
+    const EVENT_CAUGHT_ZAPDOS
+    const EVENT_CAUGHT_ARTICUNO
+    const EVENT_CAUGHT_MOLTRES
+    const EVENT_CAUGHT_LATIAS
+    const EVENT_CAUGHT_LATIOS
 
 	const_next 600
 ; Kurt Apricorn events

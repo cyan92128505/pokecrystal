@@ -2,6 +2,7 @@
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_SILVER
+	const NEWBARKTOWN_FIELDMON_1
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -10,6 +11,7 @@ NewBarkTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .NewBarkTownFieldMon
 
 .DummyScene0:
 	end
@@ -21,6 +23,10 @@ NewBarkTown_MapScripts:
 	setflag ENGINE_FLYPOINT_NEW_BARK
 	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	endcallback
+
+.NewBarkTownFieldMon
+    appear NEWBARKTOWN_FIELDMON_1
+    endcallback
 
 NewBarkTown_TeacherStopsYouScene1:
 	playmusic MUSIC_MOM
@@ -279,26 +285,39 @@ NewBarkTownElmsHouseSignText:
 	text "ELM'S HOUSE"
 	done
 
+NewBarkFieldMon1Script:
+	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, PokemonAttacksText, 25, NEWBARKTOWN_FIELDMON_1, .script
+.script
+    disappear NEWBARKTOWN_FIELDMON_1
+    end
+
+
+PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  3, ELMS_LAB, 1
-	warp_event 13,  5, PLAYERS_HOUSE_1F, 1
-	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
-	warp_event 11, 13, ELMS_HOUSE, 1
+	warp_event  6, 15, ELMS_LAB, 1
+	warp_event 13, 17, PLAYERS_HOUSE_1F, 1
+	warp_event  3, 23, PLAYERS_NEIGHBORS_HOUSE, 1
+	warp_event 11, 25, ELMS_HOUSE, 1
 
 	def_coord_events
-	coord_event  1,  8, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
-	coord_event  1,  9, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
+	coord_event  1, 20, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
+	coord_event  1, 21, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 
 	def_bg_events
-	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
-	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
-	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
-	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
+	bg_event  8, 20, BGEVENT_READ, NewBarkTownSign
+	bg_event 11, 17, BGEVENT_READ, NewBarkTownPlayersHouseSign
+	bg_event  3, 15, BGEVENT_READ, NewBarkTownElmsLabSign
+	bg_event  9, 25, BGEVENT_READ, NewBarkTownElmsHouseSign
 
 	def_object_events
-	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
-	object_event  3,  2, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event  6, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
+	object_event 12, 21, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event 10, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, NewBarkFieldMon1Script, EVENT_FIELD_MON_1

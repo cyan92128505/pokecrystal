@@ -3479,7 +3479,7 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	and a
 	ret z
 
-; ==== Berserk Gene Mewtwo ======
+; ==== Berserk Gene ======
     ldh a, [hBattleTurn]
 	and a
 	ld hl, wEnemyMonItem
@@ -3499,21 +3499,16 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
     pop bc
 	pop de
 	pop hl
-	jr c, .doubleDamage
+	jr c, .extraDamage
 	jr .FiftyPercent
 .checkBerserkGene
     ld a, [hl]
     cp BERSERK_GENE
     jr nz, .FiftyPercent
 
-.doubleDamage
-	ldh a, [hQuotient + 3]
-	add a
-	ldh [hQuotient + 3], a
-	ldh a, [hQuotient + 2]
-	rl a
-	ldh [hQuotient + 2], a
-	jr .cap
+; extra damage crits deal 1.5 x 1.5 = 2.25 x base damage
+.extraDamage
+    call FiftyPercentBoost
 
 ; AndrewNote - crits now deal x1.5 damage rather than x2
 .FiftyPercent

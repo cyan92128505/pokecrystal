@@ -8541,20 +8541,44 @@ BattleIntro:
 	ret
 
 LoadTrainerOrWildMonPic:
+; AndrewNote - Field Mon, check if this is a field mon
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jr z, .field_mon
+
 	ld a, [wOtherTrainerClass]
 	and a
 	jr nz, .Trainer
 	ld a, [wTempWildMonSpecies]
 	ld [wCurPartySpecies], a
+	jr .Trainer
+
+; AndrewNote - Field Mon, here we swap trainer and wild mon variables
+.field_mon
+    ld a, [wWinTextPointer]
+    ld [wCurPartyLevel], a
+    ld a, BATTLETYPE_PERFECT
+    ld [wBattleType], a
+    ld a, [wOtherTrainerClass]
+    ld [wTempWildMonSpecies], a
+    ld [wCurPartySpecies], a
 
 .Trainer:
 	ld [wTempEnemyMonSpecies], a
 	ret
 
 InitEnemy:
+; AndrewNote - Field Mon, check if this is a field mon
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jr z, .wild
+
 	ld a, [wOtherTrainerClass]
 	and a
 	jp nz, InitEnemyTrainer ; trainer
+.wild
+    xor a
+    ld [wOtherTrainerID], a
 	jp InitEnemyWildmon ; wild
 
 BackUpBGMap2:

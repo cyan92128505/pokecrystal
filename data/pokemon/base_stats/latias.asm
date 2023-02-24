@@ -6,7 +6,7 @@
 	db DRAGON, PSYCHIC_TYPE ; type
     db 3 ; catch rate
 	db 255 ; base exp
-	db NO_ITEM, LIFE_ORB ; items
+	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F100 ; gender ratio
 	db 100 ; unknown 1
 	db 40 ; step cycles to hatch

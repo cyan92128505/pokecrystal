@@ -277,6 +277,7 @@
     const EVENT_CAUGHT_MOLTRES
     const EVENT_CAUGHT_LATIAS
     const EVENT_CAUGHT_LATIOS
+    const EVENT_FIELD_MON_1
 
 	const_next 600
 ; Kurt Apricorn events

@@ -474,15 +474,6 @@ ComputeTrainerReward:
 	call Divide
 .notParryKing
 
-; x10 money if fighting master oak
-    ld a, [wOtherTrainerClass]
-    cp POKEMON_PROF
-    jr nz, .notOak
-	ld a, 10
-	ld [hl], a ; hMultiplier
-	call Multiply
-.notOak
-
 	ld hl, wBattleReward
 	xor a
 	ld [hli], a

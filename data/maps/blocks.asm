@@ -440,6 +440,8 @@ TradeCenter_Blocks:
 TimeCapsule_Blocks:
 	INCBIN "maps/TradeCenter.blk"
 
+SECTION "Map Blocks 3", ROMX
+
 EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
@@ -780,7 +782,7 @@ OlivineLighthouse6F_Blocks:
 	INCBIN "maps/OlivineLighthouse6F.blk"
 
 
-SECTION "Map Blocks 3", ROMX
+SECTION "Map Blocks 4", ROMX
 
 BetaSlowpokeWell1F_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSlowpokeWell1F.blk"
@@ -1052,7 +1054,7 @@ BetaBlank_Blocks: ; unreferenced
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
 
-SECTION "Map Blocks 4", ROMX
+SECTION "Map Blocks 5", ROMX
 
 HallOfOrigin_Blocks:
 	INCBIN "maps/HallOFOrigin.blk"

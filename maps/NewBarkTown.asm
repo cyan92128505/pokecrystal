@@ -3,6 +3,10 @@
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_SILVER
 	const NEWBARKTOWN_FIELDMON_1
+	const NEWBARKTOWN_FIELDMON_2
+	const NEWBARKTOWN_FIELDMON_4
+	const NEWBARKTOWN_FIELDMON_5
+	const NEWBARKTOWN_FIELDMON_6
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -26,6 +30,25 @@ NewBarkTown_MapScripts:
 
 .NewBarkTownFieldMon
     appear NEWBARKTOWN_FIELDMON_1
+    appear NEWBARKTOWN_FIELDMON_4
+    appear NEWBARKTOWN_FIELDMON_5
+
+    random 2
+    ifequal 1, .noMon2
+    appear NEWBARKTOWN_FIELDMON_2
+    sjump .mon6
+.noMon2
+    disappear NEWBARKTOWN_FIELDMON_2
+
+.mon6
+    random 2
+    ifequal 1, .noMon6
+    appear NEWBARKTOWN_FIELDMON_6
+    sjump .end
+.noMon6
+    disappear NEWBARKTOWN_FIELDMON_6
+
+.end
     endcallback
 
 NewBarkTown_TeacherStopsYouScene1:
@@ -286,9 +309,15 @@ NewBarkTownElmsHouseSignText:
 	done
 
 NewBarkFieldMon1Script:
-	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, PokemonAttacksText, 25, NEWBARKTOWN_FIELDMON_1, .script
+	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, PokemonAttacksText, 22, 0, .script
 .script
     disappear NEWBARKTOWN_FIELDMON_1
+    end
+
+NewBarkFieldMon2Script:
+	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_2, PokemonAttacksText, 21, 0, .script
+.script
+    disappear NEWBARKTOWN_FIELDMON_2
     end
 
 
@@ -296,6 +325,62 @@ PokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
 	done
+
+NeedToGetAPokemon:
+    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, DOWN
+	opentext
+	writetext NewBarkTownBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_NewBarkTownTurnBack
+    end
+
+NewBarkTownBlockText:
+    text "I need to get"
+    line "a #MON from"
+    cont "PROF.ELM!"
+    done
+
+Movement_NewBarkTownTurnBack:
+	step DOWN
+	step_end
+
+NewBarkFieldMon4Script:
+	faceplayer
+	cry MEOWTH
+	pause 15
+	loadwildmon MEOWTH, 4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear NEWBARKTOWN_FIELDMON_4
+	end
+
+NewBarkFieldMon5Script:
+	faceplayer
+	cry JIGGLYPUFF
+	pause 15
+	loadwildmon JIGGLYPUFF, 3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear NEWBARKTOWN_FIELDMON_5
+	end
+
+NewBarkFieldMon6Script:
+	faceplayer
+	cry STARLY
+	pause 15
+	loadwildmon STARLY, 3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear NEWBARKTOWN_FIELDMON_6
+	end
 
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
@@ -309,6 +394,8 @@ NewBarkTown_MapEvents:
 	def_coord_events
 	coord_event  1, 20, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
 	coord_event  1, 21, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
+	coord_event  10, 11, SCENE_DEFAULT, NeedToGetAPokemon
+	coord_event  11, 11, SCENE_DEFAULT, NeedToGetAPokemon
 
 	def_bg_events
 	bg_event  8, 20, BGEVENT_READ, NewBarkTownSign
@@ -320,4 +407,8 @@ NewBarkTown_MapEvents:
 	object_event  6, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12, 21, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
-	object_event 10, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, NewBarkFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 13, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, NewBarkFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 8, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, NewBarkFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 12,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_5
+	object_event 13,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_6

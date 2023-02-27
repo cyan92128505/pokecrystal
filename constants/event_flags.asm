@@ -278,6 +278,15 @@
     const EVENT_CAUGHT_LATIAS
     const EVENT_CAUGHT_LATIOS
     const EVENT_FIELD_MON_1
+    const EVENT_FIELD_MON_2
+    const EVENT_FIELD_MON_3
+    const EVENT_FIELD_MON_4
+    const EVENT_FIELD_MON_5
+    const EVENT_FIELD_MON_6
+    const EVENT_FIELD_MON_7
+    const EVENT_FIELD_MON_8
+    const EVENT_FIELD_MON_9
+    const EVENT_FIELD_MON_10
 
 	const_next 600
 ; Kurt Apricorn events

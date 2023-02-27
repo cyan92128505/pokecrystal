@@ -38,7 +38,7 @@ SpawnPlayer:
 	ld a, [wBeatenMasterOak]
 	and a
 	jr z, .normalColourMale
-	ln e, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT
+	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT
 	jr .continueMale
 .normalColourMale
 	ln e, PAL_NPC_RED, OBJECTTYPE_SCRIPT
@@ -61,7 +61,7 @@ SpawnPlayer:
 	ld a, [wBeatenMasterOak]
 	and a
 	jr z, .normalColourFemale
-	ln e, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT
+	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT
 	jr .ok
 .normalColourFemale
 	ln e, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT

@@ -119,6 +119,12 @@ endc
 ENDM
 
 trainer: MACRO
+; AndrewNote - trainer macro is used in two ways now
+; to define trainers that aggro on the player
+; to define wild pokemon in the field that aggro on the player
+; the arguments mean different things in each case
+
+; for a trainer they are
 ;\1: trainer group
 ;\2: trainer id
 ;\3: flag: an EVENT_BEAT_* constant
@@ -126,6 +132,15 @@ trainer: MACRO
 ;\5: win text
 ;\6: loss text
 ;\7: after-battle text
+
+; for a wild aggressive mon they are
+;\1: Pokemon species
+;\2: FIELD_MON - this constant acts as a flag to indicate this should be a wild Pokemon
+;\3: flag: an EVENT_BEAT_FIELD_MON_* constant
+;\4: seen text
+;\5: Pokemon level
+;\6: unimportant
+;\7: script that causes the Pokemon sprite to disappear
 	dw \3
 	db \1, \2
 	dw \4, \5, \6, \7

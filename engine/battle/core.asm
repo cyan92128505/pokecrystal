@@ -4140,10 +4140,27 @@ InitBattleMon:
 	ret
 
 BattleCheckPlayerShininess:
+; AndrewNote - Shiny Pokemon for player when immortal
+	ld a, [wLinkMode] ; don't make shiny in link battle
+	and a
+	jr nz, .normal
+    ld a, [wBeatenMasterOak]
+    and a
+    jr z, .normal
+    scf
+    ret
+.normal
 	call GetPartyMonDVs
 	jr BattleCheckShininess
 
 BattleCheckEnemyShininess:
+; AndrewNote - Master Oaks Pokemon are shiny regardless of stats
+    ld a, [wOtherTrainerClass]
+    cp POKEMON_PROF
+    jr nz, .normal
+    scf
+    ret
+.normal
 	call GetEnemyMonDVs
 
 BattleCheckShininess:
@@ -6647,66 +6664,57 @@ LoadEnemyMon:
 ; by targeting those 1600 mm (= 5'3") or larger.
 ; After the conversion to feet, it is unable to target any,
 ; since the largest possible Magikarp is 5'3", and $0503 = 1283 mm.
-	ld a, [wTempEnemyMonSpecies]
-	cp MAGIKARP
-	jr nz, .Happiness
-
+;	ld a, [wTempEnemyMonSpecies]
+;	cp MAGIKARP
+;	jr nz, .Happiness
 ; Get Magikarp's length
-	ld de, wEnemyMonDVs
-	ld bc, wPlayerID
-	callfar CalcMagikarpLength
-
+;	ld de, wEnemyMonDVs
+;	ld bc, wPlayerID
+;	callfar CalcMagikarpLength
 ; No reason to keep going if length > 1536 mm (i.e. if HIGH(length) > 6 feet)
-	ld a, [wMagikarpLength]
-	cp HIGH(1536) ; should be "cp 5", since 1536 mm = 5'0", but HIGH(1536) = 6
-	jr nz, .CheckMagikarpArea
-
+;	ld a, [wMagikarpLength]
+;	cp HIGH(1536) ; should be "cp 5", since 1536 mm = 5'0", but HIGH(1536) = 6
+;	jr nz, .CheckMagikarpArea
 ; 5% chance of skipping both size checks
-	call Random
-	cp 5 percent
-	jr c, .CheckMagikarpArea
+;	call Random
+;	cp 5 percent
+;	jr c, .CheckMagikarpArea
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
-	ld a, [wMagikarpLength + 1]
-	cp LOW(1616) ; should be "cp 4", since 1616 mm = 5'4", but LOW(1616) = 80
-	jr nc, .GenerateDVs
-
+;	ld a, [wMagikarpLength + 1]
+;	cp LOW(1616) ; should be "cp 4", since 1616 mm = 5'4", but LOW(1616) = 80
+;	jr nc, .GenerateDVs
 ; 20% chance of skipping this check
-	call Random
-	cp 20 percent - 1
-	jr c, .CheckMagikarpArea
+;	call Random
+;	cp 20 percent - 1
+;	jr c, .CheckMagikarpArea
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
-	ld a, [wMagikarpLength + 1]
-	cp LOW(1600) ; should be "cp 3", since 1600 mm = 5'3", but LOW(1600) = 64
-	jr nc, .GenerateDVs
-
-.CheckMagikarpArea:
+;	ld a, [wMagikarpLength + 1]
+;	cp LOW(1600) ; should be "cp 3", since 1600 mm = 5'3", but LOW(1600) = 64
+;	jr nc, .GenerateDVs
+;.CheckMagikarpArea:
 ; The "jr z" checks are supposed to be "jr nz".
-
 ; Instead, all maps in GROUP_LAKE_OF_RAGE (Mahogany area)
 ; and Routes 20 and 44 are treated as Lake of Rage.
-
 ; This also means Lake of Rage Magikarp can be smaller than ones
 ; caught elsewhere rather than the other way around.
-
 ; Intended behavior enforces a minimum size at Lake of Rage.
 ; The real behavior prevents a minimum size in the Lake of Rage area.
-
 ; Moreover, due to the check not being translated to feet+inches, all Magikarp
 ; smaller than 4'0" may be caught by the filter, a lot more than intended.
-	ld a, [wMapGroup]
-	cp GROUP_LAKE_OF_RAGE
-	jr z, .Happiness
-	ld a, [wMapNumber]
-	cp MAP_LAKE_OF_RAGE
-	jr z, .Happiness
+;	ld a, [wMapGroup]
+;	cp GROUP_LAKE_OF_RAGE
+;	jr z, .Happiness
+;	ld a, [wMapNumber]
+;	cp MAP_LAKE_OF_RAGE
+;	jr z, .Happiness
 ; 40% chance of not flooring
-	call Random
-	cp 39 percent + 1
-	jr c, .Happiness
+;	call Random
+;	cp 39 percent + 1
+;	jr c, .Happiness
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
-	ld a, [wMagikarpLength]
-	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
-	jp c, .GenerateDVs ; try again
+;	ld a, [wMagikarpLength]
+;	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
+;	jp c, .GenerateDVs ; try again
 
 ; Finally done with DVs
 

@@ -8,7 +8,6 @@ SHINY_SPC_VAL EQU 10
 CheckShininess:
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
-
 	ld l, c
 	ld h, b
 
@@ -806,7 +805,7 @@ GetPlayerOrMonPalettePointer:
 
 GetFrontpicPalettePointer:
 	and a
-	jp nz, GetMonNormalOrShinyPalettePointer
+	jp nz, GetEnemyMonNormalOrShinyPalettePointer
 	ld a, [wTrainerClass]
 
 GetTrainerPalettePointer:
@@ -885,11 +884,40 @@ GetMonNormalOrShinyPalettePointer:
 	push hl
 	call CheckShininess
 	pop hl
-	ret nc
+	jr nc, .checkImmortal
+.shiny
 rept 4
 	inc hl
 endr
 	ret
+.checkImmortal
+	ld a, [wLinkMode] ; don't make shiny in link battle
+	and a
+	ret nz
+    ld a, [wBeatenMasterOak]
+    and a
+    jr nz, .shiny
+    ret
+
+GetEnemyMonNormalOrShinyPalettePointer:
+	push bc
+	call _GetMonPalettePointer
+	pop bc
+	push hl
+	call CheckShininess
+	pop hl
+	jr nc, .checkOak
+.shiny
+rept 4
+	inc hl
+endr
+	ret
+; AndrewNote - Master Oaks Pokemon are shiny regardless of stats
+.checkOak
+    ld a, [wOtherTrainerClass]
+    cp POKEMON_PROF
+    jr z, .shiny
+    ret
 
 PushSGBPals:
 	ld a, [wJoypadDisable]

@@ -59,3 +59,5 @@ TRAINERTYPE_STAT_EXP   EQU 1 << TRAINERTYPE_STAT_EXP_F
 
 PERFECT_DV EQU $11 ; treated as $FF in enemy party data
 PERFECT_STAT_EXP EQU $1337 ; treated as $FFFF in enemy party data
+
+FIELD_MON EQU $FF ; Flag to indicate a trainer object should behave as a wild Pokemon encounter

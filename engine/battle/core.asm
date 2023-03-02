@@ -2375,7 +2375,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ret z
 	ld a, [wBattleMode]
 	dec a
-	call z, PlayVictoryMusic
+	;call z, PlayVictoryMusic
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	ld a, [wBattleResult]
@@ -2748,6 +2748,7 @@ AddBattleMoneyToAccount:
 	ld [hl], LOW(MAX_MONEY)
 	ret
 
+; AndrewNote - music - victory music
 PlayVictoryMusic:
 	push de
 	ld de, MUSIC_NONE
@@ -7577,14 +7578,16 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
-; AndrewNote - rematch exp halved until all Kanto badges are obtained
+; AndrewNote - exp reduced until all Kanto badges are obtained
+; all exp halved and halved again for rematches
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
-    jr z, .dontHalf
+    jr z, .noReduction
+    call HalfExp ; AndrewNote - exp, half all exp for balance reasons
     ld a, [wBattleType]
     cp BATTLETYPE_REMATCH
     call z, HalfExp
-.dontHalf
+.noReduction
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM
@@ -8621,13 +8624,12 @@ InitEnemyTrainer:
 	callfar ReadTrainerParty
 
 	; RIVAL1's first mon has no held item
-	ld a, [wTrainerClass]
-	cp RIVAL1
-	jr nz, .ok
-	xor a
-	ld [wOTPartyMon1Item], a
-
-.ok
+	;ld a, [wTrainerClass]
+	;cp RIVAL1
+	;jr nz, .ok
+	;xor a
+	;ld [wOTPartyMon1Item], a
+;.ok
 	ld de, vTiles2
 	callfar GetTrainerPic
 	xor a

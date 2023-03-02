@@ -208,15 +208,15 @@ PokemonCries::
 	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
 	mon_cry CRY_HOOTHOOT,    354,  256 ; UNOWN
 	mon_cry CRY_AMPHAROS,    635,  324 ; WOBBUFFET
-	mon_cry CRY_GIRAFARIG,    65,  512 ; GIRAFARIG
+	mon_cry CRY_GIRAFARIG,    65,  512 ; BAGON
 	mon_cry CRY_SLOWKING,    128,  256 ; SHELGON
-	mon_cry CRY_TYPHLOSION,  150,  300 ; SALAMENCE
+	mon_cry CRY_TYPHLOSION,  300,  150 ; SALAMENCE
 	mon_cry CRY_DUNSPARCE,   452,  256 ; DUNSPARCE
 	mon_cry CRY_GLIGAR,     -258,  256 ; GLIGAR
 	mon_cry CRY_TYPHLOSION,  239,  247 ; STEELIX
-	mon_cry CRY_WOOPER,      100,  150 ; GIBLE
-	mon_cry CRY_WOOPER,        0,  200 ; GABITE
-	mon_cry CRY_WOOPER,     -100,  250 ; GARCHOMP
+	mon_cry CRY_WOOPER,        0,  150 ; GIBLE
+	mon_cry CRY_WOOPER,     -100,  200 ; GABITE
+	mon_cry CRY_WOOPER,     -300,  250 ; GARCHOMP
 	mon_cry CRY_AMPHAROS,      0,  352 ; SCIZOR
 	mon_cry CRY_DUNSPARCE,   656,  168 ; SHAYMIN
 	mon_cry CRY_AMPHAROS,     53,  224 ; HERACROSS
@@ -224,11 +224,11 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,  1954,  110 ; TEDDIURSA
 	mon_cry CRY_TEDDIURSA,  1600,  216 ; URSARING
 	mon_cry CRY_SLUGMA,     -472,  320 ; LATIAS
-	mon_cry CRY_DEOXYS,   -525,  448 ; DEOXYS
+	mon_cry CRY_DEOXYS,        0,  300 ; DEOXYS
 	mon_cry CRY_CYNDAQUIL,   510,  320 ; SWINUB
 	mon_cry CRY_DEOXYS,   -265,  256 ; PILOSWINE
 	mon_cry CRY_DEOXYS,    161,  232 ; SPIRITOMB
-	mon_cry CRY_SUNFLORA,     13,  256 ; LATIOS
+	mon_cry CRY_SUNFLORA,   -50,  180 ; LATIOS
 	mon_cry CRY_TOTODILE,      0,  384 ; PALKIA
 	mon_cry CRY_TEDDIURSA,     2,  106 ; KYOGRE
 	mon_cry CRY_MANTINE,    -190,  240 ; MANTINE

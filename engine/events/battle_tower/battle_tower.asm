@@ -968,7 +968,7 @@ BattleTower_RandomlyChooseReward:
     ld a, GOLD_BERRY
     jr .give
 .leader
-    ld a, PP_UP
+    ld a, HP_UP
     jr .give
 .elite
     ld a, NUGGET

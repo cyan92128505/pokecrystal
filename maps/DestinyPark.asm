@@ -14,7 +14,9 @@ MasterBrockScript:
 	closetext
 	winlosstext DefaultBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	;callasm SetUpCal
 	loadtrainer BROCK, MASTER_BROCK
+	;loadtrainer CAL, CAL2
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_BROCK
@@ -700,6 +702,58 @@ RayquazaGiratinaBlockText:
 Movement_DestinyParkTurnBack:
 	step DOWN
 	step_end
+
+SetUpCal:
+    ld a, BANK(sPokemonData)
+	call OpenSRAM
+	xor a
+	ld d, a
+	ld e, a
+	;ld de, wMysteryGiftStaging
+	;ld de, wMysteryGiftTrainer
+	ld bc, sPokemonData + wPartyMons - wPokemonData
+	ld hl, sPokemonData + wPartySpecies - wPokemonData
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .party_end
+	cp EGG
+	jr z, .next
+	push hl
+	; copy level
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	ld [de], a
+	inc de
+	; copy species
+	ld hl, MON_SPECIES
+	add hl, bc
+	ld a, [hl]
+	ld [de], a
+	inc de
+	; copy moves
+	ld hl, MON_MOVES
+	add hl, bc
+	push bc
+	ld bc, NUM_MOVES
+	call CopyBytes
+	pop bc
+	pop hl
+.next
+	push hl
+	ld hl, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	ld b, h
+	ld c, l
+	pop hl
+	jr .loop
+.party_end
+	ld a, -1
+	ld [de], a
+	;ld a, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
+	;ld [wUnusedMysteryGiftStagedDataLength], a
+	ret
 
 DestinyPark_MapEvents:
 	db 0, 0 ; filler

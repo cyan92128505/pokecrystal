@@ -2268,10 +2268,11 @@ TreeckoEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 20, SLASH
-	db 25, GIGA_DRAIN
-	db 36, LEAF_BLADE
-	db 40, X_SCISSOR
+	db 22, MEGA_DRAIN
+	db 28, SLASH
+	db 32, X_SCISSOR
+	db 36, GIGA_DRAIN
+	db 40, LEAF_BLADE
 	db 45, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -2283,10 +2284,11 @@ GrovyleEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 20, SLASH
-	db 25, GIGA_DRAIN
-	db 36, LEAF_BLADE
-	db 40, X_SCISSOR
+	db 22, MEGA_DRAIN
+	db 28, SLASH
+	db 32, X_SCISSOR
+	db 36, GIGA_DRAIN
+	db 40, LEAF_BLADE
 	db 45, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -2297,10 +2299,11 @@ SceptileEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 20, SLASH
-	db 25, GIGA_DRAIN
-	db 36, LEAF_BLADE
-	db 40, X_SCISSOR
+	db 22, MEGA_DRAIN
+	db 28, SLASH
+	db 32, X_SCISSOR
+	db 36, GIGA_DRAIN
+	db 40, LEAF_BLADE
 	db 45, SOLARBEAM
 	db 0 ; no more level-up moves
 

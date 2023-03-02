@@ -1364,7 +1364,7 @@ RestoreMysteryGift:
 	jp CloseSRAM
 
 ClearMysteryGiftTrainer:
-	ld hl, wMysteryGiftTrainer
+	ld hl, wMysteryGiftTrainer ; wMysteryGiftTrainer stores the trainer that CAL2 will load
 	xor a
 	ld b, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
 .loop

@@ -54,6 +54,8 @@ BetaBlackthornCity_Blocks: ; unreferenced
 Route10South_Blocks:
 	INCBIN "maps/Route10South.blk"
 
+SECTION "Map Blocks 2", ROMX
+
 Pokecenter2F_Blocks:
 CinnabarPokecenter2FBeta_Blocks:
 CeruleanPokecenter2FBeta_Blocks:
@@ -147,6 +149,8 @@ Route38_Blocks:
 
 BetaCianwoodCity_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaCianwoodCity.blk"
+
+SECTION "Map Blocks 3", ROMX
 
 OlivineTimsHouse_Blocks:
 OlivineHouseBeta_Blocks:
@@ -268,6 +272,8 @@ Route39_Blocks:
 PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.blk"
 
+SECTION "Map Blocks 4", ROMX
+
 Route38EcruteakGate_Blocks:
 Route42EcruteakGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
@@ -311,7 +317,7 @@ Route22_Blocks:
 	INCBIN "maps/Route22.blk"
 
 
-SECTION "Map Blocks 2", ROMX
+SECTION "Map Blocks 5", ROMX
 
 Route14_Blocks:
 	INCBIN "maps/Route14.blk"
@@ -440,7 +446,7 @@ TradeCenter_Blocks:
 TimeCapsule_Blocks:
 	INCBIN "maps/TradeCenter.blk"
 
-SECTION "Map Blocks 3", ROMX
+SECTION "Map Blocks 6", ROMX
 
 EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
@@ -576,6 +582,8 @@ Route16_Blocks:
 Route18_Blocks:
 	INCBIN "maps/Route18.blk"
 
+SECTION "Map Blocks 7", ROMX
+
 GoldenrodUnderground_Blocks:
 	INCBIN "maps/GoldenrodUnderground.blk"
 
@@ -702,6 +710,8 @@ BetaRocketHideout1F_Blocks: ; unreferenced
 BetaRocketHideoutB3F_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaRocketHideoutB3F.blk"
 
+SECTION "Map Blocks 8", ROMX
+
 MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.blk"
@@ -782,7 +792,7 @@ OlivineLighthouse6F_Blocks:
 	INCBIN "maps/OlivineLighthouse6F.blk"
 
 
-SECTION "Map Blocks 4", ROMX
+SECTION "Map Blocks 9", ROMX
 
 BetaSlowpokeWell1F_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSlowpokeWell1F.blk"
@@ -918,6 +928,8 @@ PewterGym_Blocks:
 CeladonGym_Blocks:
 	INCBIN "maps/CeladonGym.blk"
 
+SECTION "Map Blocks 10", ROMX
+
 BetaCeladonMansion1F_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaCeladonMansion1F.blk"
 
@@ -1003,6 +1015,8 @@ DragonsDenB1F_Blocks:
 TohjoFalls_Blocks:
 	INCBIN "maps/TohjoFalls.blk"
 
+SECTION "Map Blocks 11", ROMX
+
 RuinsOfAlphHoOhItemRoom_Blocks:
 RuinsOfAlphKabutoItemRoom_Blocks:
 RuinsOfAlphOmanyteItemRoom_Blocks:
@@ -1053,8 +1067,6 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
-
-SECTION "Map Blocks 5", ROMX
 
 HallOfOrigin_Blocks:
 	INCBIN "maps/HallOFOrigin.blk"

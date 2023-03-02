@@ -58,4 +58,4 @@ Route28_MapEvents:
 	bg_event 25,  2, BGEVENT_ITEM, Route28HiddenRareCandy
 
 	def_object_events
-	object_event 17,  6, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LatiosScript, EVENT_CAUGHT_LATIOS
+	object_event 17,  6, SPRITE_RED, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LatiosScript, EVENT_CAUGHT_LATIOS

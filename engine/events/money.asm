@@ -26,6 +26,11 @@ MaxMoney:
 	dt MAX_MONEY
 
 TakeMoney::
+    ld a, [wBeatenMasterOak]
+    and a
+    jr z, .take
+    ret
+ .take
 	ld a, 3
 	call SubtractMoney
 	jr nc, .okay

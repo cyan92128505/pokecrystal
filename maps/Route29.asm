@@ -7,6 +7,14 @@
 	const ROUTE29_COOLTRAINER_M2
 	const ROUTE29_TUSCANY
 	const ROUTE29_POKE_BALL
+	const ROUTE29_FIELDMON_1
+	const ROUTE29_FIELDMON_2
+	const ROUTE29_FIELDMON_3
+	const ROUTE29_FIELDMON_4
+	const ROUTE29_FIELDMON_5
+	const ROUTE29_FIELDMON_6
+	const ROUTE29_FIELDMON_7
+	const ROUTE29_FIELDMON_8
 
 Route29_MapScripts:
 	def_scene_scripts
@@ -15,6 +23,7 @@ Route29_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .Tuscany
+	callback MAPCALLBACK_OBJECTS, .Route29TownFieldMon
 
 .DummyScene0:
 	end
@@ -35,6 +44,53 @@ Route29_MapScripts:
 	ifnotequal TUESDAY, .TuscanyDisappears
 	appear ROUTE29_TUSCANY
 	endcallback
+
+.Route29TownFieldMon
+    appear ROUTE29_FIELDMON_1
+    appear ROUTE29_FIELDMON_4
+    appear ROUTE29_FIELDMON_5
+
+    random 2
+    ifequal 1, .noMon2
+    appear ROUTE29_FIELDMON_2
+    sjump .mon3
+.noMon2
+    disappear ROUTE29_FIELDMON_2
+
+.mon3
+    random 3
+    ifequal 1, .noMon3
+    appear ROUTE29_FIELDMON_3
+    sjump .mon6
+.noMon3
+    disappear ROUTE29_FIELDMON_3
+    
+.mon6
+    random 2
+    ifequal 1, .noMon6
+    appear ROUTE29_FIELDMON_6
+    sjump .mon7
+.noMon6
+    disappear ROUTE29_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .noMon7
+    appear ROUTE29_FIELDMON_7
+    sjump .mon8
+.noMon7
+    disappear ROUTE29_FIELDMON_7
+    
+.mon8
+    random 10
+    ifequal 1, .noMon8
+    appear ROUTE29_FIELDMON_8
+    sjump .end
+.noMon8
+    disappear ROUTE29_FIELDMON_8
+
+.end
+    endcallback
 
 Route29Tutorial1:
 	turnobject ROUTE29_COOLTRAINER_M1, UP
@@ -411,6 +467,85 @@ Route29Sign2Text:
 	para "CHERRYGROVE CITY -"
 	line "NEW BARK TOWN"
 	done
+	
+Route29FieldMon1Script:
+	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route29PokemonAttacksText, 22, 0, .script
+.script
+    disappear ROUTE29_FIELDMON_1
+    end
+
+Route29FieldMon2Script:
+	trainer STARAVIA, FIELD_MON, EVENT_FIELD_MON_2, Route29PokemonAttacksText, 24, 0, .script
+.script
+    disappear ROUTE29_FIELDMON_2
+    end
+    
+Route29FieldMon3Script:
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route29PokemonAttacksText, 41, 0, .script
+.script
+    disappear ROUTE29_FIELDMON_3
+    end
+    
+Route29PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+Route29FieldMon4Script:
+	faceplayer
+	cry STARLY
+	pause 15
+	loadwildmon STARLY, 6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE29_FIELDMON_4
+	end
+
+Route29FieldMon5Script:
+	faceplayer
+	cry NIDORAN_M
+	pause 15
+	loadwildmon NIDORAN_M, 6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE29_FIELDMON_5
+	end
+
+Route29FieldMon6Script:
+	faceplayer
+	cry EKANS
+	pause 15
+	loadwildmon EKANS, 7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE29_FIELDMON_6
+	end
+	
+Route29FieldMon7Script:
+	faceplayer
+	cry PIKACHU
+	pause 15
+	loadwildmon PIKACHU, 7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE29_FIELDMON_7
+	end
+
+Route29FieldMon8Script:
+	faceplayer
+	cry RIOLU
+	pause 15
+	loadwildmon RIOLU, 8
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE29_FIELDMON_8
+	end
 
 Route29_MapEvents:
 	db 0, 0 ; filler
@@ -419,19 +554,28 @@ Route29_MapEvents:
 	warp_event 27,  1, ROUTE_29_ROUTE_46_GATE, 3
 
 	def_coord_events
-	coord_event 53,  8, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial1
-	coord_event 53,  9, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial2
+	coord_event 53, 16, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial1
+	coord_event 53, 17, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial2
 
 	def_bg_events
-	bg_event 51,  7, BGEVENT_READ, Route29Sign1
-	bg_event  3,  5, BGEVENT_READ, Route29Sign2
+	bg_event 51, 15, BGEVENT_READ, Route29Sign1
+	bg_event  5,  3, BGEVENT_READ, Route29Sign2
 
 	def_object_events
-	object_event 50, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
-	object_event 27, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
-	object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1
-	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
-	object_event 25,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FisherScript, -1
-	object_event 13,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29CooltrainerMScript, -1
-	object_event 29, 12, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY
-	object_event 48,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION
+	object_event 50, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
+	object_event 27, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
+	object_event 15, 19, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1
+	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
+	object_event 24,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FisherScript, -1
+	object_event 26, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29CooltrainerMScript, -1
+	object_event 29, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY
+	object_event 52,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION
+
+	object_event 38, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 18,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 27,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 21,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 46,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 6,  17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 55,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route29FieldMon8Script, EVENT_FIELD_MON_8

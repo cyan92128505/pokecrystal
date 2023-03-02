@@ -7583,7 +7583,7 @@ GiveExperiencePoints:
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
     jr z, .noReduction
-    call HalfExp ; AndrewNote - exp, half all exp for balance reasons
+    call ReducedExp ; AndrewNote - exp reduced to 9/16 for balance reasons
     ld a, [wBattleType]
     cp BATTLETYPE_REMATCH
     call z, HalfExp
@@ -7880,6 +7880,14 @@ HalfExp:
 	ldh [hProduct + 2], a
 	pop bc
 	ret
+
+; Reduces Exp gain to 9/16 - used for game balancing
+ReducedExp:
+    call BoostExp
+    call BoostExp
+    call HalfExp
+    call HalfExp
+    ret
 
 Text_MonGainedExpPoint:
 	text_far Text_Gained

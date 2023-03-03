@@ -14,8 +14,8 @@ NewBarkTown_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .NewBarkTownFieldMon
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
 	end
@@ -28,7 +28,7 @@ NewBarkTown_MapScripts:
 	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	endcallback
 
-.NewBarkTownFieldMon
+.NewBarkTownFieldMon:
     appear NEWBARKTOWN_FIELDMON_1
     appear NEWBARKTOWN_FIELDMON_4
     appear NEWBARKTOWN_FIELDMON_5
@@ -382,6 +382,68 @@ NewBarkFieldMon6Script:
 	disappear NEWBARKTOWN_FIELDMON_6
 	end
 
+NewBarkTownRepelScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_NEWBARKTOWN_REPEL
+	iftrue .GotRepels
+	writetext NewBarkTownRepelsText
+	promptbutton
+	giveitem REPEL, 5
+	writetext GotRepelsText
+	promptbutton
+	iffalse .NoRoom
+	setevent EVENT_GOT_NEWBARKTOWN_REPEL
+.GotRepels:
+	writetext NewBarkTownGotRepelsText
+	waitbutton
+.NoRoom:
+	closetext
+	end
+
+GotRepelsText:
+    text "<PLAYER>"
+    line "got 5 REPEL"
+    done
+
+NewBarkTownRepelsText:
+    text "#MON are"
+    line "friends."
+
+    para "They will often"
+    line "come up to greet"
+    cont "you even if"
+    cont "you're in a"
+    cont "hurry."
+
+    para "These will"
+    line "help with that."
+    done
+
+    text "#MON are"
+    line "friends."
+
+    para "They will often"
+    line "come up to greet"
+    cont "you even if"
+    cont "you're in a"
+    cont "hurry."
+
+    para "These will"
+    line "help with that."
+    done
+
+NewBarkTownGotRepelsText:
+    text "#MON are"
+    line "friends."
+
+    para "But some can be"
+    line "dangerous."
+
+    para "You should always"
+    line "be prepared."
+    done
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -407,8 +469,9 @@ NewBarkTown_MapEvents:
 	object_event  6, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12, 21, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
-	object_event 13, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, NewBarkFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 8, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, NewBarkFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 13, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NewBarkFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 8, 6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NewBarkFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 12,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_5
-	object_event 13,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_6
+	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 13,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 10,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1

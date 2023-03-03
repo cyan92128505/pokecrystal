@@ -22,8 +22,8 @@ Route29_MapScripts:
 	scene_script .DummyScene1 ; SCENE_ROUTE29_CATCH_TUTORIAL
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route29FieldMon
 	callback MAPCALLBACK_OBJECTS, .Tuscany
-	callback MAPCALLBACK_OBJECTS, .Route29TownFieldMon
 
 .DummyScene0:
 	end
@@ -45,49 +45,59 @@ Route29_MapScripts:
 	appear ROUTE29_TUSCANY
 	endcallback
 
-.Route29TownFieldMon
+.Route29FieldMon:
+; Pokemon which always appear
     appear ROUTE29_FIELDMON_1
     appear ROUTE29_FIELDMON_4
     appear ROUTE29_FIELDMON_5
 
-    random 2
-    ifequal 1, .noMon2
-    appear ROUTE29_FIELDMON_2
-    sjump .mon3
-.noMon2
-    disappear ROUTE29_FIELDMON_2
-
-.mon3
-    random 3
-    ifequal 1, .noMon3
-    appear ROUTE29_FIELDMON_3
-    sjump .mon6
-.noMon3
-    disappear ROUTE29_FIELDMON_3
-    
+; Pokemon that sometimes appear
 .mon6
     random 2
-    ifequal 1, .noMon6
-    appear ROUTE29_FIELDMON_6
-    sjump .mon7
-.noMon6
+    ifequal 1, .spawn6
     disappear ROUTE29_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear ROUTE29_FIELDMON_6
 
 .mon7
     random 2
-    ifequal 1, .noMon7
-    appear ROUTE29_FIELDMON_7
-    sjump .mon8
-.noMon7
+    ifequal 1, .spawn7
     disappear ROUTE29_FIELDMON_7
-    
+    sjump .mon8
+.spawn7
+    appear ROUTE29_FIELDMON_7
+
 .mon8
-    random 10
-    ifequal 1, .noMon8
-    appear ROUTE29_FIELDMON_8
-    sjump .end
-.noMon8
+    random 8
+    ifequal 1, .spawn8
     disappear ROUTE29_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE29_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+	iffalse .end
+
+    random 2
+    ifequal 1, .spawn2
+    disappear ROUTE29_FIELDMON_2
+    sjump .mon3
+.spawn2
+    appear ROUTE29_FIELDMON_2
+
+.mon3
+    random 3
+    ifequal 1, .spawn3
+    disappear ROUTE29_FIELDMON_3
+    sjump .end
+.spawn3
+    appear ROUTE29_FIELDMON_3
+
+; Pokemon that don't appear at night
+    disappear ROUTE29_FIELDMON_7
 
 .end
     endcallback
@@ -571,9 +581,9 @@ Route29_MapEvents:
 	object_event 29, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY
 	object_event 52,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION
 
-	object_event 38, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon1Script, EVENT_FIELD_MON_1
-	object_event 18,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon2Script, EVENT_FIELD_MON_2
-	object_event 27,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 38, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route29FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 19,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route29FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 27,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 21,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 46,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 6,  17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon6Script, EVENT_FIELD_MON_6

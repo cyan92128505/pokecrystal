@@ -287,6 +287,7 @@
     const EVENT_FIELD_MON_8
     const EVENT_FIELD_MON_9
     const EVENT_FIELD_MON_10
+    const EVENT_GOT_NEWBARKTOWN_REPEL
 
 	const_next 600
 ; Kurt Apricorn events

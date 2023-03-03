@@ -854,6 +854,14 @@ GetPlayerMovePriority:
 ; Return the priority (0-3) of move a.
 
 	ld b, a
+	cp COUNTER
+	jr z, .noPrankster
+	cp MIRROR_COAT
+	jr z, .noPrankster
+	cp ROAR
+	jr z, .noPrankster
+	cp WHIRLWIND
+	jr z, .noPrankster
 
 ; AndrewNote - prankster
 ; ===== Prankster =======
@@ -868,14 +876,19 @@ GetPlayerMovePriority:
     jr z, .prankster
     cp DITTO
     jr z, .prankster
+    cp MURKROW
+    jr z, .prankster
     jr .noPrankster
 .prankster
+    push bc
     call GetMovePower
+    pop bc
     and a
     jr nz, .noPrankster
     ld a, 2
     ret
 .noPrankster
+    ld a, b
 
 	call GetMoveEffect
 	ld hl, MoveEffectPriorities
@@ -898,6 +911,14 @@ GetEnemyMovePriority:
 ; Return the priority (0-3) of move a.
 
 	ld b, a
+	cp COUNTER
+	jr z, .noPrankster
+	cp MIRROR_COAT
+	jr z, .noPrankster
+	cp ROAR
+	jr z, .noPrankster
+	cp WHIRLWIND
+	jr z, .noPrankster
 
 ; AndrewNote - prankster
 ; ===== Prankster =======
@@ -910,14 +931,21 @@ GetEnemyMovePriority:
     jr z, .prankster
     cp RIOLU
     jr z, .prankster
+    cp DITTO
+    jr z, .prankster
+    cp MURKROW
+    jr z, .prankster
     jr .noPrankster
 .prankster
+    push bc
     call GetMovePower
+    pop bc
     and a
     jr nz, .noPrankster
     ld a, 2
     ret
 .noPrankster
+    ld a, b
 
 	call GetMoveEffect
 	ld hl, MoveEffectPriorities
@@ -7583,7 +7611,7 @@ GiveExperiencePoints:
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
     jr z, .noReduction
-    call ReducedExp ; AndrewNote - exp reduced to 9/16 for balance reasons
+    call ReducedExp ; AndrewNote - exp reduced to 3/4 for balance reasons
     ld a, [wBattleType]
     cp BATTLETYPE_REMATCH
     call z, HalfExp
@@ -7881,11 +7909,11 @@ HalfExp:
 	pop bc
 	ret
 
-; Reduces Exp gain to 9/16 - used for game balancing
+; Reduces Exp gain to 3/4 - used for game balancing
 ReducedExp:
     call BoostExp
-    call BoostExp
-    call HalfExp
+    ;call BoostExp
+    ;call HalfExp
     call HalfExp
     ret
 

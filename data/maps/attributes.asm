@@ -100,7 +100,7 @@ ENDM
 	connection west, Route29, ROUTE_29, 2
 	connection east, Route27, ROUTE_27, 6
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, NORTH | EAST
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 1
 

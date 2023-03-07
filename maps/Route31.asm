@@ -6,11 +6,17 @@
 	const ROUTE31_FRUIT_TREE
 	const ROUTE31_POKE_BALL1
 	const ROUTE31_POKE_BALL2
+    const ROUTE31_INVADER
+	const ROUTE31_FIELDMON_1
+	const ROUTE31_FIELDMON_2
+	const ROUTE31_FIELDMON_3
+	const ROUTE31_FIELDMON_4
 
 Route31_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .Route31FieldMon
 	callback MAPCALLBACK_NEWMAP, .CheckMomCall
 
 .CheckMomCall:
@@ -21,6 +27,32 @@ Route31_MapScripts:
 .DoMomCall:
 	specialphonecall SPECIALCALL_WORRIED
 	endcallback
+	
+.Route31FieldMon:
+; Pokemon which always appear
+    appear ROUTE31_FIELDMON_1
+    appear ROUTE31_FIELDMON_3
+    appear ROUTE31_FIELDMON_4
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+	iffalse .end
+
+.mon3
+    random 3
+    ifequal 1, .spawn2
+    disappear ROUTE31_FIELDMON_2
+    sjump .despawn
+.spawn2
+    appear ROUTE31_FIELDMON_2
+
+.despawn
+; Pokemon that don't appear at night
+    disappear ROUTE31_FIELDMON_3
+
+.end
+    endcallback
 
 TrainerBugCatcherWade1:
 	trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script
@@ -467,6 +499,45 @@ GiantDadAfterBattleText:
     cont "experience did"
     cont "I not!"
     done
+    
+Route31FieldMon1Script:
+	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, Route31PokemonAttacksText, 21, 0, .script
+.script
+    disappear ROUTE31_FIELDMON_1
+    end
+
+Route31FieldMon2Script:
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route31PokemonAttacksText, 43, 0, .script
+.script
+    disappear ROUTE31_FIELDMON_2
+    end
+    
+Route31PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route31FieldMon3Script:
+	faceplayer
+	cry MAREEP
+	pause 15
+	loadwildmon MAREEP, 10
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE31_FIELDMON_3
+	end
+	
+Route31FieldMon4Script:
+	faceplayer
+	cry TIMBURR
+	pause 15
+	loadwildmon TIMBURR, 11
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE31_FIELDMON_4
+    end
 
 Route31_MapEvents:
 	db 0, 0 ; filler
@@ -474,7 +545,7 @@ Route31_MapEvents:
 	def_warp_events
 	warp_event  4,  6, ROUTE_31_VIOLET_GATE, 3
 	warp_event  4,  7, ROUTE_31_VIOLET_GATE, 4
-	warp_event 34,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
+	warp_event 38,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 
 	def_coord_events
 
@@ -490,4 +561,9 @@ Route31_MapEvents:
 	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
-	object_event 11,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderGiantDad, -1
+	object_event 11,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderGiantDad, -1
+
+	object_event 40, 8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route31FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 29, 2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route31FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 9,  12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route31FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 18, 9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route31FieldMon4Script, EVENT_FIELD_MON_4

@@ -7,14 +7,81 @@
 	const ROUTE30_MONSTER1
 	const ROUTE30_MONSTER2
 	const ROUTE30_FRUIT_TREE1
-	const ROUTE30_FRUIT_TREE2
-	const ROUTE30_COOLTRAINER_F
-	const ROUTE30_POKE_BALL
+	;const ROUTE30_FRUIT_TREE2
+	;const ROUTE30_COOLTRAINER_F
+	;const ROUTE30_POKE_BALL
+	const ROUTE30_FIELDMON_1
+	const ROUTE30_FIELDMON_2
+	const ROUTE30_FIELDMON_3
+	const ROUTE30_FIELDMON_4
+	const ROUTE30_FIELDMON_5
+	const ROUTE30_FIELDMON_6
+	const ROUTE30_FIELDMON_7
+	const ROUTE30_FIELDMON_8
 
 Route30_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route30FieldMon
+	
+.Route30FieldMon:
+; Pokemon which always appear
+    appear ROUTE30_FIELDMON_1
+    appear ROUTE30_FIELDMON_4
+    appear ROUTE30_FIELDMON_5
+
+; Pokemon that sometimes appear
+.mon6
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE30_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear ROUTE30_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE30_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear ROUTE30_FIELDMON_7
+
+.mon8
+    random 8
+    ifequal 1, .spawn8
+    disappear ROUTE30_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE30_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+	iffalse .end
+
+    random 2
+    ifequal 1, .spawn2
+    disappear ROUTE30_FIELDMON_2
+    sjump .mon3
+.spawn2
+    appear ROUTE30_FIELDMON_2
+
+.mon3
+    random 3
+    ifequal 1, .spawn3
+    disappear ROUTE30_FIELDMON_3
+    sjump .despawn
+.spawn3
+    appear ROUTE30_FIELDMON_3
+
+.despawn
+; Pokemon that don't appear at night
+    disappear ROUTE30_FIELDMON_7
+
+.end
+    endcallback
 
 YoungsterJoey_ImportantBattleScript:
 	waitsfx
@@ -403,6 +470,85 @@ YoungsterJoeyText_GiveHPUpAfterBattle:
 	para "I'm going to get"
 	line "tougher too."
 	done
+	
+Route30FieldMon1Script:
+	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_1, Route30PokemonAttacksText, 24, 0, .script
+.script
+    disappear ROUTE30_FIELDMON_1
+    end
+
+Route30FieldMon2Script:
+	trainer NOCTOWL, FIELD_MON, EVENT_FIELD_MON_2, Route30PokemonAttacksText, 24, 0, .script
+.script
+    disappear ROUTE30_FIELDMON_2
+    end
+    
+Route30FieldMon3Script:
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_3, Route30PokemonAttacksText, 42, 0, .script
+.script
+    disappear ROUTE30_FIELDMON_3
+    end
+    
+Route30PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+Route30FieldMon4Script:
+	faceplayer
+	cry STARLY
+	pause 15
+	loadwildmon STARLY, 9
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE30_FIELDMON_4
+	end
+
+Route30FieldMon5Script:
+	faceplayer
+	cry VULPIX
+	pause 15
+	loadwildmon VULPIX, 8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE30_FIELDMON_5
+	end
+
+Route30FieldMon6Script:
+	faceplayer
+	cry GROWLITHE
+	pause 15
+	loadwildmon GROWLITHE, 9
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE30_FIELDMON_6
+	end
+	
+Route30FieldMon7Script:
+	faceplayer
+	cry BUTTERFREE
+	pause 15
+	loadwildmon BUTTERFREE, 10
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE30_FIELDMON_7
+	end
+
+Route30FieldMon8Script:
+	faceplayer
+	cry RALTS
+	pause 15
+	loadwildmon RALTS, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE30_FIELDMON_8
+	end
 
 Route30_MapEvents:
 	db 0, 0 ; filler
@@ -429,6 +575,15 @@ Route30_MapEvents:
 	object_event  5, 24, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 25, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
-	object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
-	object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
-	object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
+	;object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
+	;object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
+	;object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
+	
+	object_event 12, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route30FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 13,  3, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route30FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 18,  40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 7,  42, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 16, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 4,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 18, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 13,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route30FieldMon8Script, EVENT_FIELD_MON_8

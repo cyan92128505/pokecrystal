@@ -2268,7 +2268,7 @@ TreeckoEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 22, MEGA_DRAIN
+	db 24, MEGA_DRAIN
 	db 28, SLASH
 	db 32, X_SCISSOR
 	db 36, GIGA_DRAIN
@@ -2284,7 +2284,7 @@ GrovyleEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 22, MEGA_DRAIN
+	db 24, MEGA_DRAIN
 	db 28, SLASH
 	db 32, X_SCISSOR
 	db 36, GIGA_DRAIN
@@ -2299,7 +2299,7 @@ SceptileEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 22, MEGA_DRAIN
+	db 24, MEGA_DRAIN
 	db 28, SLASH
 	db 32, X_SCISSOR
 	db 36, GIGA_DRAIN
@@ -2314,11 +2314,11 @@ ChimcharEvosAttacks:
 	db 1, LEER
 	db 8, EMBER
 	db 16, KARATE_CHOP
-	db 20, FLAME_WHEEL
-	db 26, MACH_PUNCH
-	db 28, FIRE_PUNCH
-	db 32, SUBMISSION
-	db 36, FLAMETHROWER
+	db 20, MACH_PUNCH
+	db 26, FLAME_WHEEL
+	db 30, SUBMISSION
+	db 34, FIRE_PUNCH
+	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -2328,13 +2328,13 @@ MonfernoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 12, EMBER
+	db 8, EMBER
 	db 16, KARATE_CHOP
-	db 20, FLAME_WHEEL
-	db 26, MACH_PUNCH
-	db 28, FIRE_PUNCH
-	db 32, SUBMISSION
-	db 36, FLAMETHROWER
+	db 20, MACH_PUNCH
+	db 26, FLAME_WHEEL
+	db 30, SUBMISSION
+	db 34, FIRE_PUNCH
+	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -2343,13 +2343,13 @@ InfernapeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 12, EMBER
+	db 8, EMBER
 	db 16, KARATE_CHOP
-	db 20, FLAME_WHEEL
-	db 26, MACH_PUNCH
-	db 28, FIRE_PUNCH
-	db 32, SUBMISSION
-	db 36, FLAMETHROWER
+	db 20, MACH_PUNCH
+	db 26, FLAME_WHEEL
+	db 30, SUBMISSION
+	db 34, FIRE_PUNCH
+	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -2364,8 +2364,8 @@ FroakieEvosAttacks:
 	db 10, LICK
 	db 12, WATER_GUN
 	db 16, HYPNOSIS
-	db 20, BUBBLEBEAM
-	db 25, NIGHT_SHADE
+	db 20, NIGHT_SHADE
+	db 26, BUBBLEBEAM
 	db 30, PSYCHIC_M
 	db 36, NIGHT_SLASH
 	db 40, DARK_PULSE
@@ -2383,8 +2383,8 @@ FrogadierEvosAttacks:
 	db 10, LICK
 	db 12, WATER_GUN
 	db 16, HYPNOSIS
-	db 20, BUBBLEBEAM
-	db 25, NIGHT_SHADE
+	db 20, NIGHT_SHADE
+	db 26, BUBBLEBEAM
 	db 30, PSYCHIC_M
 	db 36, NIGHT_SLASH
 	db 40, DARK_PULSE
@@ -2401,8 +2401,8 @@ GreninjaEvosAttacks:
 	db 10, LICK
 	db 12, WATER_GUN
 	db 16, HYPNOSIS
-	db 20, BUBBLEBEAM
-	db 25, NIGHT_SHADE
+	db 20, NIGHT_SHADE
+	db 26, BUBBLEBEAM
 	db 30, PSYCHIC_M
 	db 36, NIGHT_SLASH
 	db 40, DARK_PULSE

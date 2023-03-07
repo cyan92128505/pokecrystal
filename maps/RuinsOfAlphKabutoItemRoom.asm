@@ -13,13 +13,13 @@ RuinsOfAlphKabutoItemRoomBerry:
 	itemball GOLD_BERRY
 
 RuinsOfAlphKabutoItemRoomPsncureberry:
-	itemball HARD_STONE
-
-RuinsOfAlphKabutoItemRoomHealPowder:
 	itemball TM_ROCK_SMASH
 
+RuinsOfAlphKabutoItemRoomHealPowder:
+	itemball MUSCLE_BAND
+
 RuinsOfAlphKabutoItemRoomEnergypowder:
-	itemball KINGS_ROCK
+	itemball WISE_GLASSES
 
 RuinsOfAlphKabutoItemRoomAncientReplica:
 	jumptext RuinsOfAlphKabutoItemRoomAncientReplicaText

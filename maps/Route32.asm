@@ -1,5 +1,5 @@
 	object_const_def
-	const ROUTE32_FISHER1
+	;const ROUTE32_FISHER1
 	const ROUTE32_FISHER2
 	const ROUTE32_FISHER3
 	const ROUTE32_YOUNGSTER1
@@ -7,12 +7,20 @@
 	const ROUTE32_YOUNGSTER3
 	const ROUTE32_LASS1
 	const ROUTE32_COOLTRAINER_M
-	const ROUTE32_YOUNGSTER4
-	const ROUTE32_FISHER4
-	const ROUTE32_POKE_BALL1
-	const ROUTE32_FISHER5
+	const ROUTE32_INVADER
+	;const ROUTE32_FISHER4
+	;const ROUTE32_POKE_BALL1
+	;const ROUTE32_FISHER5
 	const ROUTE32_FRIEDA
-	const ROUTE32_POKE_BALL2
+	;const ROUTE32_POKE_BALL2
+    const ROUTE32_FIELDMON_1
+	const ROUTE32_FIELDMON_2
+	const ROUTE32_FIELDMON_3
+	const ROUTE32_FIELDMON_4
+	const ROUTE32_FIELDMON_5
+	const ROUTE32_FIELDMON_6
+	const ROUTE32_FIELDMON_7
+	const ROUTE32_FIELDMON_8
 
 Route32_MapScripts:
 	def_scene_scripts
@@ -21,6 +29,7 @@ Route32_MapScripts:
 	scene_script .DummyScene2 ; SCENE_ROUTE32_NOTHING
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route32FieldMon
 	callback MAPCALLBACK_OBJECTS, .Frieda
 
 .DummyScene0:
@@ -31,6 +40,64 @@ Route32_MapScripts:
 
 .DummyScene2:
 	end
+	
+.Route32FieldMon:
+; Pokemon which always appear
+    appear ROUTE32_FIELDMON_1
+    appear ROUTE32_FIELDMON_4
+    appear ROUTE32_FIELDMON_5
+
+; Pokemon that sometimes appear
+.mon6
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE32_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear ROUTE32_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE32_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear ROUTE32_FIELDMON_7
+
+.mon8
+    random 8
+    ifequal 1, .spawn8
+    disappear ROUTE32_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE32_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+	iffalse .end
+
+    random 2
+    ifequal 1, .spawn2
+    disappear ROUTE32_FIELDMON_2
+    sjump .mon3
+.spawn2
+    appear ROUTE32_FIELDMON_2
+
+.mon3
+    random 3
+    ifequal 1, .spawn3
+    disappear ROUTE32_FIELDMON_3
+    sjump .despawn
+.spawn3
+    appear ROUTE32_FIELDMON_3
+
+.despawn
+; Pokemon that don't appear at night
+    disappear ROUTE32_FIELDMON_7
+
+.end
+    endcallback
 
 .Frieda:
 	readvar VAR_WEEKDAY
@@ -100,46 +167,46 @@ Route32CooltrainerMStopsYouScene:
 	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset2
 	end
 
-Route32RoarTMGuyScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM05_ROAR
-	iftrue .AlreadyHaveRoar
-	writetext Text_RoarIntro
-	promptbutton
-	verbosegiveitem TM_ROAR
-	iffalse .Finish
-	setevent EVENT_GOT_TM05_ROAR
-.AlreadyHaveRoar:
-	writetext Text_RoarOutro
-	waitbutton
-.Finish:
-	closetext
-	end
+;Route32RoarTMGuyScript:
+;	faceplayer
+;	opentext
+;	checkevent EVENT_GOT_TM05_ROAR
+;	iftrue .AlreadyHaveRoar
+;	writetext Text_RoarIntro
+;	promptbutton
+;	verbosegiveitem TM_ROAR
+;	iffalse .Finish
+;	setevent EVENT_GOT_TM05_ROAR
+;.AlreadyHaveRoar:
+;	writetext Text_RoarOutro
+;	waitbutton
+;.Finish:
+;	closetext
+;	end
 
-Route32WannaBuyASlowpokeTailScript:
-	turnobject ROUTE32_FISHER4, DOWN
-	turnobject PLAYER, UP
-	sjump _OfferToSellSlowpokeTail
+;Route32WannaBuyASlowpokeTailScript:
+;	turnobject ROUTE32_FISHER4, DOWN
+;	turnobject PLAYER, UP
+;	sjump _OfferToSellSlowpokeTail
 
-SlowpokeTailSalesmanScript:
-	faceplayer
-_OfferToSellSlowpokeTail:
-	setscene SCENE_ROUTE32_NOTHING
-	opentext
-	writetext Text_MillionDollarSlowpokeTail
-	yesorno
-	iffalse .refused
-	writetext Text_ThoughtKidsWereLoaded
-	waitbutton
-	closetext
-	end
+;SlowpokeTailSalesmanScript:
+;	faceplayer
+;_OfferToSellSlowpokeTail:
+;	setscene SCENE_ROUTE32_NOTHING
+;	opentext
+;	writetext Text_MillionDollarSlowpokeTail
+;	yesorno
+;	iffalse .refused
+;	writetext Text_ThoughtKidsWereLoaded
+;	waitbutton
+;	closetext
+;	end
 
-.refused
-	writetext Text_RefusedToBuySlowpokeTail
-	waitbutton
-	closetext
-	end
+;.refused
+;	writetext Text_RefusedToBuySlowpokeTail
+;	waitbutton
+;	closetext
+;	end
 
 TrainerCamperRoland:
 	trainer CAMPER, ROLAND, EVENT_BEAT_CAMPER_ROLAND, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
@@ -152,16 +219,16 @@ TrainerCamperRoland:
 	closetext
 	end
 
-TrainerFisherJustin:
-	trainer FISHER, JUSTIN, EVENT_BEAT_FISHER_JUSTIN, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
+;TrainerFisherJustin:
+;	trainer FISHER, JUSTIN, EVENT_BEAT_FISHER_JUSTIN, FisherJustinSeenText, FisherJustinBeatenText, 0, .Script
 
-.Script:
-	endifjustbattled
-	opentext
-	writetext FisherJustinAfterText
-	waitbutton
-	closetext
-	end
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext FisherJustinAfterText
+;	waitbutton
+;	closetext
+;	end
 
 TrainerFisherRalph1:
 	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
@@ -485,11 +552,11 @@ FriedaScript:
 	closetext
 	end
 
-Route32GreatBall:
-	itemball GREAT_BALL
+;Route32GreatBall:
+;	itemball GREAT_BALL
 
-Route32Repel:
-	itemball REPEL
+;Route32Repel:
+;	itemball REPEL
 
 Route32Sign:
 	jumptext Route32SignText
@@ -939,6 +1006,85 @@ Route32UnionCaveSignText:
 	text "UNION CAVE"
 	line "AHEAD"
 	done
+	
+Route32FieldMon1Script:
+	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 34, 0, .script
+.script
+    disappear ROUTE32_FIELDMON_1
+    end
+
+Route32FieldMon2Script:
+	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 36, 0, .script
+.script
+    disappear ROUTE32_FIELDMON_2
+    end
+    
+Route32FieldMon3Script:
+	trainer REUNICLUS, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 46, 0, .script
+.script
+    disappear ROUTE32_FIELDMON_3
+    end
+    
+Route32PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+Route32FieldMon4Script:
+	faceplayer
+	cry CLEFAIRY
+	pause 15
+	loadwildmon CLEFAIRY, 14
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE32_FIELDMON_4
+	end
+
+Route32FieldMon5Script:
+	faceplayer
+	cry CHINCHOU
+	pause 15
+	loadwildmon CHINCHOU, 14
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE32_FIELDMON_5
+	end
+
+Route32FieldMon6Script:
+	faceplayer
+	cry MACHOP
+	pause 15
+	loadwildmon MACHOP, 15
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE32_FIELDMON_6
+	end
+	
+Route32FieldMon7Script:
+	faceplayer
+	cry RIOLU
+	pause 15
+	loadwildmon RIOLU, 15
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE32_FIELDMON_7
+	end
+
+Route32FieldMon8Script:
+	faceplayer
+	cry SOLOSIS
+	pause 15
+	loadwildmon SOLOSIS, 16
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE32_FIELDMON_8
+	end
 
 Route32_MapEvents:
 	db 0, 0 ; filler
@@ -951,7 +1097,7 @@ Route32_MapEvents:
 
 	def_coord_events
 	coord_event 18,  8, SCENE_DEFAULT, Route32CooltrainerMStopsYouScene
-	coord_event  7, 71, SCENE_ROUTE32_OFFER_SLOWPOKETAIL, Route32WannaBuyASlowpokeTailScript
+	;coord_event  7, 71, SCENE_ROUTE32_OFFER_SLOWPOKETAIL, Route32WannaBuyASlowpokeTailScript
 
 	def_bg_events
 	bg_event 13,  5, BGEVENT_READ, Route32Sign
@@ -962,7 +1108,7 @@ Route32_MapEvents:
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
 
 	def_object_events
-	object_event  8, 49, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherJustin, -1
+	;object_event  8, 49, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherJustin, -1
 	object_event 12, 56, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherRalph1, -1
 	object_event  6, 48, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherHenry, -1
 	object_event 12, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterAlbert, -1
@@ -971,8 +1117,17 @@ Route32_MapEvents:
 	object_event 10, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
 	object_event 11, 82, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderSiegmeyer, -1
-	object_event  7, 70, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
-	object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
+	;object_event  7, 70, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
+	;object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
+	;object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
-	object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
+	;object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
+
+	object_event 5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 6, Route32FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 8, 38, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 4, 68, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 14, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 4, 35, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 8,  74, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8

@@ -11,7 +11,7 @@ TrainerClassDVs:
 	dn 12, 12, 12, 12 ; CHUCK
 	dn  7, 15, 15, 15 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
-	dn  9,  8,  8,  8 ; POKEMON_PROF
+	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 15, 15, 15, 15 ; WILL
 	dn 15, 15, 15, 15 ; CAL
 	dn 15, 15, 15, 15 ; BRUNO
@@ -60,14 +60,14 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
-	dn  9,  8,  8,  8 ; POKEFANM
+	dn  10, 10, 10, 10 ; POKEFANM
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
-	dn  6, 13,  8,  8 ; POKEFANF
+	dn  10, 10,  10,  10 ; POKEFANF
 	dn 15, 15, 15, 15 ; RED
 	dn 15, 15, 15, 15 ; BLUE
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
-	dn 10, 10, 10, 10 ; MYSTICALMAN
+	dn 15, 15, 15, 15 ; MYSTICALMAN
 	dn 15, 15, 15, 15 ; INVADER
 	assert_table_length NUM_TRAINER_CLASSES

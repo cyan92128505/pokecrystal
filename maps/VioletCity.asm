@@ -7,16 +7,37 @@
 	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_POKE_BALL1
 	const VIOLETCITY_POKE_BALL2
+	const VIOLETCITY_FIELDMON_1
+	const VIOLETCITY_FIELDMON_2
+	const VIOLETCITY_FIELDMON_3
+	const VIOLETCITY_FIELDMON_4
 
 VioletCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .VioletCityFieldMon
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_VIOLET
 	endcallback
+
+.VioletCityFieldMon:
+; Pokemon which always appear
+    appear VIOLETCITY_FIELDMON_1
+    appear VIOLETCITY_FIELDMON_2
+    appear VIOLETCITY_FIELDMON_3
+
+    random 8
+    ifequal 1, .spawn
+    disappear VIOLETCITY_FIELDMON_4
+    sjump .end
+.spawn
+    appear VIOLETCITY_FIELDMON_4
+
+.end
+    endcallback
 
 VioletCityEarlScript:
 	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
@@ -86,8 +107,8 @@ VioletCityPokecenterSign:
 VioletCityMartSign:
 	jumpstd MartSignScript
 
-VioletCityPPUp:
-	itemball PP_UP
+VioletCityChoiceBand:
+	itemball CHOICE_BAND
 
 VioletCityRareCandy:
 	itemball RARE_CANDY
@@ -276,6 +297,51 @@ EarlsPokemonAcademySignText:
 	line "ACADEMY"
 	done
 
+VioletCityFieldMon1Script:
+	faceplayer
+	cry MURKROW
+	pause 15
+	loadwildmon MURKROW, 10
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear VIOLETCITY_FIELDMON_1
+	end
+
+VioletCityFieldMon2Script:
+	faceplayer
+	cry HOOTHOOT
+	pause 15
+	loadwildmon HOOTHOOT, 11
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear VIOLETCITY_FIELDMON_2
+    end
+
+VioletCityFieldMon3Script:
+	faceplayer
+	cry STARAPTOR
+	pause 15
+	loadwildmon STARAPTOR, 44
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear VIOLETCITY_FIELDMON_3
+	end
+
+VioletCityFieldMon4Script:
+	faceplayer
+	cry STARLY
+	pause 15
+	loadwildmon STARLY, 12
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear VIOLETCITY_FIELDMON_4
+    end
+
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -308,5 +374,10 @@ VioletCity_MapEvents:
 	object_event 17, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1
 	object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1
 	object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
-	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
+	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityChoiceBand, EVENT_VIOLET_CITY_CHOICE_BAND
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+
+	object_event 7, 27, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 4, 28, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 4, 26, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 1, 24, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon4Script, EVENT_FIELD_MON_4

@@ -544,6 +544,86 @@ GuideGentsHouseSignText:
 	text "GUIDE GENT'S HOUSE"
 	done
 
+EvilOldManScript:
+	faceplayer
+	opentext
+	checkevent EVENT_DARK_CAVE_RED_EYE_ORB
+	iftrue .GotRedEyeOrb
+	writetext GoGetRedEyeOrbText
+	waitbutton
+	closetext
+	end
+.GotRedEyeOrb:
+	writetext GotRedEyeOrbText
+	waitbutton
+	closetext
+	end
+
+GoGetRedEyeOrbText:
+    text "Lovely day isn't"
+    line "it."
+
+    para "It is always"
+    line "nice here."
+
+    para "I have had"
+    line "a fine life."
+
+    para "I have seen"
+    line "many things."
+
+    para "But one thing"
+    line "eludes me..."
+
+    para "North of here"
+    line "there is a cave."
+
+    para "A place of pure"
+    line "evil."
+
+    para "In this cave it"
+    line "rest."
+
+    para "The RED EYE ORB."
+
+    para "If you could"
+    line "bring it to me."
+
+    para "If I could see"
+    line "it."
+
+    para "I would be"
+    line "complete."
+    done
+
+GotRedEyeOrbText:
+    text "You have done it!"
+
+    para "That's it, the"
+    line "RED EYE ORB!"
+
+    para "Using it makes"
+    line "one an invader."
+
+    para "As an invader you"
+    line "will take double"
+    cont "money from your"
+    cont "victims."
+
+    para "But if you lose"
+    line "you lose all"
+    cont "your money."
+
+    para "Doesn't sound"
+    line "fair does it."
+
+    para "But life wouldn't"
+    line "be fun if it was"
+    cont "fair."
+
+    para "Heh heh heh heh."
+    done
+
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -570,3 +650,4 @@ CherrygroveCity_MapEvents:
 	object_event 27, 12, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1
 	object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
 	object_event  5, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MysticWaterGuy, -1
+	object_event 7,  21, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EvilOldManScript, -1

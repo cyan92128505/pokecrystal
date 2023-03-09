@@ -921,7 +921,7 @@ PoliwrathEvosAttacks:
 	db 1, WATER_GUN
 	db 1, DOUBLESLAP
 	db 1, HYPNOSIS
-	db 1, SUBMISSION
+	db 1, SURF
 	db 30, DRAIN_PUNCH
 	db 35, WATERFALL
 	db 40, CLOSE_COMBAT
@@ -1800,7 +1800,8 @@ HonchkrowEvosAttacks:
 	db 16, HAZE
 	db 21, WING_ATTACK
 	db 26, AIR_SLASH
-	db 31, NIGHT_SLASH
+	db 30, FLY
+	db 33, NIGHT_SLASH
 	db 36, DARK_PULSE
 	db 40, CLOSE_COMBAT
 	db 46, NASTY_PLOT
@@ -2738,6 +2739,7 @@ MismagiusEvosAttacks:
 	db 6, SPITE
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
+	db 23, HYPNOSIS
 	db 27, PSYBEAM
 	db 32, SHADOW_BALL
 	db 36, PAIN_SPLIT
@@ -2988,6 +2990,7 @@ MisdreavusEvosAttacks:
 	db 6, SPITE
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
+	db 23, HYPNOSIS
 	db 27, PSYBEAM
 	db 32, SHADOW_BALL
 	db 36, PAIN_SPLIT

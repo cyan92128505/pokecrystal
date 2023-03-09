@@ -8,11 +8,24 @@
 	const UNIONCAVE1F_POKE_BALL2
 	const UNIONCAVE1F_POKE_BALL3
 	const UNIONCAVE1F_POKE_BALL4
+	const UNIONCAVE1F_FIELDMON_1
+	const UNIONCAVE1F_FIELDMON_2
+	const UNIONCAVE1F_FIELDMON_3
+	const UNIONCAVE1F_FIELDMON_4
 
 UnionCave1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .UnionCave1FFieldMon
+	
+.UnionCave1FFieldMon:
+; Pokemon which always appear
+    appear UNIONCAVE1F_FIELDMON_1
+    appear UNIONCAVE1F_FIELDMON_2
+    appear UNIONCAVE1F_FIELDMON_3
+    appear UNIONCAVE1F_FIELDMON_4
+    endcallback
 
 TrainerPokemaniacLarry:
 	trainer POKEMANIAC, LARRY, EVENT_BEAT_POKEMANIAC_LARRY, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
@@ -196,6 +209,50 @@ FirebreatherRayAfterBattleText:
 UnionCave1FUnusedSignText:
 	text "UNION CAVE"
 	done
+	
+UnionCave1FFieldMon1Script:
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, UnionCave1FPokemonAttacksText, 37, 0, .script
+.script
+    disappear UNIONCAVE1F_FIELDMON_1
+    end
+    
+UnionCave1FPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+UnionCave1FFieldMon2Script:
+	faceplayer
+	cry DRILBUR
+	pause 15
+	loadwildmon DRILBUR, 14
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear UNIONCAVE1F_FIELDMON_2
+	end
+
+UnionCave1FFieldMon3Script:
+	faceplayer
+	cry ONIX
+	pause 15
+	loadwildmon ONIX, 15
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear UNIONCAVE1F_FIELDMON_3
+	end
+	
+UnionCave1FFieldMon4Script:
+	faceplayer
+	cry GRAVELER
+	pause 15
+	loadwildmon GRAVELER, 25
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear UNIONCAVE1F_FIELDMON_4
+    end
 
 UnionCave1F_MapEvents:
 	db 0, 0 ; filler
@@ -211,12 +268,17 @@ UnionCave1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
+	object_event  5, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
 	object_event  4, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacLarry, -1
 	object_event 11,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerRussell, -1
-	object_event 15, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
+	object_event 16, 27, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
 	object_event 14, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBill, -1
 	object_event 17, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
 	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
-	object_event  4, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
+	object_event  4,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
 	object_event 12, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FAwakening, EVENT_UNION_CAVE_1F_AWAKENING
+	
+	object_event 11, 30, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, UnionCave1FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 5, 7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCave1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 14, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCave1FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 7, 27, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCave1FFieldMon4Script, EVENT_FIELD_MON_4

@@ -233,11 +233,11 @@ endr
 	pop hl ; de is now wOTPartyMon1StatExp
 
 ; AndrewNote - stat exp, trainers to have a default amount of stat exp based on badges
-; 0-1 badges = 0
-; 2-3 badges = $1000 = 4096 stat exp = 16/64 extra stat at lvl 100
-; 4-7 badges = $4000 = 16384 stat exp = 32/64 extra stat at lvl 100
-; 8-15 badges = $9000 = 36864 stat exp = 48/64 extra stat at lvl 100
-; 16 badges = $FFFF = 65536 stat exp = 64/64 extra stat at lvl 100
+; 0 badges = 0
+; 1-2 badges = $1000 = 4096 stat exp = 16/64 extra stat at lvl 100
+; 3-4 badges = $4000 = 16384 stat exp = 32/64 extra stat at lvl 100
+; 5-7 badges = $9000 = 36864 stat exp = 48/64 extra stat at lvl 100
+; 8+ badges = $FFFF = 65536 stat exp = 64/64 extra stat at lvl 100
     push hl
 
     ; trainer classes which always have max stat exp
@@ -254,18 +254,17 @@ endr
 	jr z, .fullStatExp
 
 	; decide stat exp based on badges
-    ld hl, wKantoBadges
-    bit VOLCANOBADGE, [hl]
-	jr nz, .fullStatExp
-
     ld hl, wJohtoBadges
     bit RISINGBADGE, [hl]
+	jr nz, .fullStatExp
+
+    bit STORMBADGE, [hl]
     jr nz, .highStatExp
 
-    bit FOGBADGE, [hl]
+    bit PLAINBADGE, [hl]
     jr nz, .mediumStatExp
 
-    bit HIVEBADGE, [hl]
+    bit ZEPHYRBADGE, [hl]
     jp nz, .lowStatExp
 
     pop hl

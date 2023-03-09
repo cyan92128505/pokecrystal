@@ -857,9 +857,23 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
     dbw EFFECT_KINGS_SHIELD,     AI_Smart_KingsShield
     dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage
+    dbw EFFECT_ATTACK_DOWN,      AI_Smart_LesserStatChange
+    dbw EFFECT_DEFENSE_UP,       AI_Smart_LesserStatChange
+    dbw EFFECT_DEFENSE_DOWN,     AI_Smart_LesserStatChange
+    dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
 	db -1 ; end
 
 AI_Smart_Sleep:
+; never use if player has substitute
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .discourage
+
+; never use if player has safeguard
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jr nz, .discourage
+
 ; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
@@ -1475,6 +1489,16 @@ AI_Smart_Moonlight:
     ret
 
 AI_Smart_Toxic:
+; never use if player has substitute
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .discourage
+
+; never use if player has safeguard
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jr nz, .discourage
+
 ; never use against steel types
     ld a, [wBattleMonType1]
 	cp STEEL
@@ -1561,15 +1585,12 @@ AI_Smart_LeechSeed:
 
 AI_Smart_LightScreen:
 AI_Smart_Reflect:
-; Over 90% chance to discourage this move unless enemy's HP is full.
-
-	call AICheckEnemyMaxHP
-	ret c
-	call Random
-	cp 8 percent
-	ret c
-	inc [hl]
-	ret
+; discourage if we will be koed
+    call ShouldAIBoost
+    ret c
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_Ohko:
 ; Dismiss this move if player's level is higher than enemy's level.
@@ -1795,6 +1816,16 @@ AI_Smart_SuperFang:
 	ret
 
 AI_Smart_Paralyze:
+; never use if player has substitute
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .discourage
+
+; never use if player has safeguard
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jr nz, .discourage
+
 ; never use thunderwave against ground types
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp THUNDER_WAVE
@@ -3108,6 +3139,9 @@ AI_Smart_RainDance:
     jr z, .encourage
     cp POLIWRATH
     jr z, .encourage
+; discourage if we will be koed
+    call ShouldAIBoost
+    jr nc, .discourage
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Water-type.
 	ld a, [wBattleMonType1]
@@ -3130,6 +3164,11 @@ AI_Smart_RainDance:
     dec [hl]
     dec [hl]
     ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
@@ -3142,6 +3181,9 @@ AI_Smart_SunnyDay:
     jr z, .encourage
     cp EXEGGUTOR
     jr z, .encourage
+; discourage if we will be koed
+    call ShouldAIBoost
+    jr nc, .discourage
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Fire-type.
 	ld a, [wBattleMonType1]
@@ -3163,6 +3205,11 @@ AI_Smart_SunnyDay:
     dec [hl]
     dec [hl]
     dec [hl]
+    ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
     ret
 
 AI_Smart_WeatherMove:
@@ -4036,6 +4083,16 @@ AI_Smart_Flinch:
 
 AI_Smart_Confuse:
 AI_Smart_Swagger:
+; never use if player has substitute
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .discourage
+
+; never use if player has safeguard
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jr nz, .discourage
+
 ; don't use against Arceus since it is immune to status
     ld a, [wBattleMonSpecies]
     cp ARCEUS
@@ -4061,6 +4118,18 @@ AI_Smart_Swagger:
 	dec [hl]
     ret
 .discourage
+    inc [hl]
+    inc [hl]
+    ret
+
+AI_Smart_LesserStatChange:
+    call AICheckEnemyMaxHP
+    jr nc, .discourage
+    call ShouldAIBoost
+    jr nc, .discourage
+    ret
+.discourage
+    inc [hl]
     inc [hl]
     inc [hl]
     ret

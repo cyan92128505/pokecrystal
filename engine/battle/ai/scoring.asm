@@ -820,7 +820,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SWAGGER,          AI_Smart_Swagger
 	dbw EFFECT_BULK_UP,          AI_Smart_BulkUp
 	dbw EFFECT_ATTRACT,          AI_Smart_Attract
-	dbw EFFECT_SAFEGUARD,        AI_Smart_Safeguard
 	dbw EFFECT_MAGNITUDE,        AI_Smart_Magnitude
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
@@ -860,7 +859,9 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_ATTACK_DOWN,      AI_Smart_LesserStatChange
     dbw EFFECT_DEFENSE_UP,       AI_Smart_LesserStatChange
     dbw EFFECT_DEFENSE_DOWN,     AI_Smart_LesserStatChange
+    dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_LesserStatChange
     dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
+    dbw EFFECT_SAFEGUARD,        AI_Smart_LesserStatChange
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -4473,7 +4474,6 @@ CanPlayer3HKOMaxHP:
 
 AICompareSpeed:
 ; Return carry if enemy is faster than player.
-
 	push bc
 	ld a, [wEnemyMonSpeed + 1]
 	ld b, a

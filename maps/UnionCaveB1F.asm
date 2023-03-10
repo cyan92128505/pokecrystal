@@ -6,11 +6,30 @@
 	const UNIONCAVEB1F_POKE_BALL1
 	const UNIONCAVEB1F_BOULDER
 	const UNIONCAVEB1F_POKE_BALL2
+	const UNIONCAVEB1F_FIELDMON_1
+	const UNIONCAVEB1F_FIELDMON_2
+	const UNIONCAVEB1F_FIELDMON_3
+	const UNIONCAVEB1F_FIELDMON_4
 
 UnionCaveB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .UnionCaveB1FFieldMon
+    
+.UnionCaveB1FFieldMon:
+    appear UNIONCAVEB1F_FIELDMON_1
+    appear UNIONCAVEB1F_FIELDMON_2
+    appear UNIONCAVEB1F_FIELDMON_3
+
+    random 4
+    ifequal 1, .spawn
+    disappear UNIONCAVEB1F_FIELDMON_4
+    sjump .end
+.spawn
+    appear UNIONCAVEB1F_FIELDMON_4
+.end
+    endcallback
 
 TrainerPokemaniacAndrew:
 	trainer POKEMANIAC, ANDREW, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
@@ -149,6 +168,41 @@ PokemaniacCalvinAfterBattleText:
 	line "come famous like"
 	cont "PROF.ELM."
 	done
+	
+UnionCaveB1FFieldMon1Script:
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_1, UnionCaveB1FPokemonAttacksText, 40, 0, .script
+.script
+    disappear UNIONCAVEB1F_FIELDMON_1
+    end
+    
+UnionCaveB1FFieldMon2Script:
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB1FPokemonAttacksText, 50, 0, .script
+.script
+    disappear UNIONCAVEB1F_FIELDMON_2
+    end
+    
+UnionCaveB1FFieldMon3Script:
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, UnionCaveB1FPokemonAttacksText, 43, 0, .script
+.script
+    disappear UNIONCAVEB1F_FIELDMON_3
+    end
+    
+UnionCaveB1FPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+UnionCaveB1FFieldMon4Script:
+	faceplayer
+	cry GIBLE
+	pause 15
+	loadwildmon GIBLE, 18
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear UNIONCAVEB1F_FIELDMON_4
+    end
 
 UnionCaveB1F_MapEvents:
 	db 0, 0 ; filler
@@ -172,3 +226,8 @@ UnionCaveB1F_MapEvents:
 	object_event  2, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FTMSwift, EVENT_UNION_CAVE_B1F_TM_SWIFT
 	object_event  7, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBoulder, -1
 	object_event 17, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FXDefend, EVENT_UNION_CAVE_B1F_X_DEFEND
+	
+	object_event 11, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, UnionCaveB1FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 10, 9, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, UnionCaveB1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 8, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 0, UnionCaveB1FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 4, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FFieldMon4Script, EVENT_FIELD_MON_4

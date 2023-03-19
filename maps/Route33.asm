@@ -2,11 +2,36 @@
 	const ROUTE33_POKEFAN_M
 	const ROUTE33_LASS
 	const ROUTE33_FRUIT_TREE
+	const ROUTE33_FIELDMON_1
+	const ROUTE33_FIELDMON_2
+	const ROUTE33_FIELDMON_3
+	const ROUTE33_FIELDMON_4
 
 Route33_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .Route33FieldMon
+    
+.Route33FieldMon:
+    appear ROUTE33_FIELDMON_1
+    appear ROUTE33_FIELDMON_2
+
+    random 8
+    ifequal 1, .spawn
+    disappear ROUTE33_FIELDMON_4
+    sjump .checkNight
+.spawn
+    appear ROUTE33_FIELDMON_4
+    
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+	iffalse .end
+    appear ROUTE33_FIELDMON_3
+    disappear ROUTE33_FIELDMON_1
+.end
+    endcallback
 
 Route33LassScript:
 	jumptextfaceplayer Route33LassText
@@ -191,19 +216,70 @@ Route33LassText:
 Route33SignText:
 	text "ROUTE 33"
 	done
+	
+Route33FieldMon3Script:
+	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_3, Route33PokemonAttacksText, 33, 0, .script
+.script
+    disappear ROUTE33_FIELDMON_3
+    end
+    
+Route33PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route33FieldMon1Script:
+	faceplayer
+	cry COTTONEE
+	pause 15
+	loadwildmon COTTONEE, 15
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear ROUTE33_FIELDMON_1
+	end
+	
+Route33FieldMon2Script:
+	faceplayer
+	cry DROWZEE
+	pause 15
+	loadwildmon DROWZEE, 16
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE33_FIELDMON_2
+    end
+
+Route33FieldMon4Script:
+	faceplayer
+	cry MACHOP
+	pause 15
+	loadwildmon MACHOP, 16
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE33_FIELDMON_4
+	end
 
 Route33_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11,  9, UNION_CAVE_1F, 3
+	warp_event 11,  3, UNION_CAVE_1F, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 11, 11, BGEVENT_READ, Route33Sign
+	bg_event 12,  5, BGEVENT_READ, Route33Sign
 
 	def_object_events
 	object_event  6, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAnthony, -1
 	object_event 13, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1
 	object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33FruitTree, -1
+	
+	object_event 13, 7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  5, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 6, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route33FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 9, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route33FieldMon4Script, EVENT_FIELD_MON_4
+

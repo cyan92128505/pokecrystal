@@ -213,9 +213,9 @@ MasterOakScript:
 	writemem wInvading
 	setval 1
 	writemem wBeatenMasterOak
-	special FadeOutPalettes
+	;special FadeOutPalettes
 	special HealParty
-	pause 15
+	;pause 15
 	warp HALL_OF_ORIGIN, 11, 3
 	turnobject PLAYER, UP
 	opentext
@@ -227,12 +227,42 @@ MasterOakScript:
 .FightDone:
 	writetext MasterOakAfterBattleText
 	waitbutton
+	readmem wBeatenMasterOak
+	ifequal 1, .revertImmortal
+	ifequal 0, .becomeImmortal
+.continueFightDone
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
 	yesorno
 	iftrue .Fight
 	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+.becomeImmortal
+    writetext MasterOakBecomeImmortalText
+    yesorno
+    iffalse .continueFightDone
+    closetext
+    setval 1
+    writemem wBeatenMasterOak
+    warp HALL_OF_ORIGIN, 11, 3
+    opentext
+    writetext MasterOakBecomeImmortalAfterText
+	waitbutton
+	closetext
+	end
+.revertImmortal
+    writetext MasterOakBecomeMortalText
+    yesorno
+    iftrue .continueFightDone
+    closetext
+    setval 0
+    writemem wBeatenMasterOak
+    warp HALL_OF_ORIGIN, 11, 3
+    opentext
+    writetext MasterOakBecomeMortalAfterText
 	waitbutton
 	closetext
 	end
@@ -297,7 +327,23 @@ MasterOakOfferPrizeText:
     cont "surpassed"
     cont "mortal limits."
 
-    para "I present"
+    para "I bestow upon"
+    line "you all my power!"
+
+    para "Your body is now"
+    line "indestructible"
+    cont "and immortal."
+
+    para "All your #MON"
+    line "will appear shiny"
+    cont "regardless of"
+    cont "their stats."
+
+    para "You also now"
+    line "have unlimited"
+    cont "wealth."
+
+    para "I also present"
     line "you with a"
     cont "fragment of"
     cont "my knowledge."
@@ -322,6 +368,36 @@ MasterOakAfterBattleText:
     line "will know the"
     cont "peace that we"
     cont "do."
+    done
+
+MasterOakBecomeMortalText:
+    text "Do you wish to"
+    line "remain in your"
+    cont "immortal form?"
+    done
+
+MasterOakBecomeMortalAfterText:
+    text "You are mortal"
+    line "once again."
+    para "Speak to me if"
+    line "wish me to restore"
+    cont "your true golden"
+    cont "form."
+    done
+
+MasterOakBecomeImmortalText:
+    text "Do you wish to"
+    line "reclaim in your"
+    cont "immortal form?"
+    done
+
+MasterOakBecomeImmortalAfterText:
+    text "You are immortal"
+    line "once again."
+    para "Speak to me if"
+    line "wish me to return"
+    cont "to your mortal"
+    cont "form."
     done
 
 MasterRedScript:

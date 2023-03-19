@@ -5,11 +5,16 @@
 	const UNIONCAVEB2F_POKE_BALL1
 	const UNIONCAVEB2F_POKE_BALL2
 	const UNIONCAVEB2F_LAPRAS
+	const UNIONCAVEB2F_FIELDMON_1
+	const UNIONCAVEB2F_FIELDMON_2
+	const UNIONCAVEB2F_FIELDMON_3
+	const UNIONCAVEB2F_FIELDMON_4
 
 UnionCaveB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .UnionCaveB2FFieldMon
 	callback MAPCALLBACK_OBJECTS, .Lapras
 
 .Lapras:
@@ -24,6 +29,20 @@ UnionCaveB2F_MapScripts:
 .Appear:
 	appear UNIONCAVEB2F_LAPRAS
 	endcallback
+	
+.UnionCaveB2FFieldMon:
+    appear UNIONCAVEB2F_FIELDMON_4
+    appear UNIONCAVEB2F_FIELDMON_2
+    appear UNIONCAVEB2F_FIELDMON_3
+
+    random 3
+    ifequal 1, .spawn
+    disappear UNIONCAVEB2F_FIELDMON_1
+    sjump .end
+.spawn
+    appear UNIONCAVEB2F_FIELDMON_1
+.end
+    endcallback
 
 UnionCaveLapras:
 	faceplayer
@@ -138,6 +157,45 @@ CooltrainerfEmmaAfterBattleText:
 	para "I wanted to see"
 	line "that #MON…"
 	done
+	
+UnionCaveB2FFieldMon1Script:
+	trainer MILOTIC, FIELD_MON, EVENT_FIELD_MON_1, UnionCaveB2FPokemonAttacksText, 53, 0, .script
+.script
+    disappear UNIONCAVEB2F_FIELDMON_1
+    end
+    
+UnionCaveB2FFieldMon2Script:
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB2FPokemonAttacksText, 41, 0, .script
+.script
+    disappear UNIONCAVEB2F_FIELDMON_2
+    end
+    
+UnionCaveB2FPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+UnionCaveB2FFieldMon3Script:
+	faceplayer
+	cry GABITE
+	pause 15
+	loadwildmon GABITE, 32
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear UNIONCAVEB2F_FIELDMON_3
+    end
+	
+UnionCaveB2FFieldMon4Script:
+	faceplayer
+	cry GIBLE
+	pause 15
+	loadwildmon STEELIX, 42
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear UNIONCAVEB2F_FIELDMON_4
+    end
 
 UnionCaveB2F_MapEvents:
 	db 0, 0 ; filler
@@ -156,3 +214,8 @@ UnionCaveB2F_MapEvents:
 	object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER
 	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION
 	object_event 11, 31, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS
+	
+	object_event 15, 29, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, UnionCaveB2FFieldMon1Script, EVENT_FIELD_MON_1
+   	object_event  9, 32, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, UnionCaveB2FFieldMon2Script, EVENT_FIELD_MON_2
+   	object_event  8, 4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCaveB2FFieldMon3Script, EVENT_FIELD_MON_3
+   	object_event  2, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCaveB2FFieldMon4Script, EVENT_FIELD_MON_4

@@ -184,6 +184,11 @@ GotMoneyForWinningText:
 	line "for winning!"
 	prompt
 
+GotMaxMoneyForWinningText:
+	text "<PLAYER> got ¥999999"
+	line "for winning!"
+	prompt
+
 BattleText_EnemyWasDefeated:
 	text "<ENEMY>"
 	line "was defeated!"

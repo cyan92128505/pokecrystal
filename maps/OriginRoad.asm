@@ -11,6 +11,7 @@ InvaderMasterPatches:
 	opentext
 	writetext InvaderMasterPatchesAfterText
 	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_PATCHES
 	closetext
 	end
 
@@ -75,13 +76,15 @@ InvaderMasterPatchesAfterText:
 	text "No hard"
 	line "feelings!"
 
-	para "You might be"
-	line "able to beat"
-	cont "the phantoms"
-	cont "ahead."
+	para "I'm but a "
+	line "humble merchant"
+	cont "now."
 
-	para "I'm glad we're"
-	line "friends again."
+	para "Go on take a"
+	line "look."
+
+	para "It'll shimmer"
+	line "you blind."
 
 	para "Heh, heh, heh..."
 	done

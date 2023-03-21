@@ -248,6 +248,7 @@ MasterOakScript:
     setval 1
     writemem wBeatenMasterOak
     warp HALL_OF_ORIGIN, 11, 3
+    turnobject PLAYER, UP
     opentext
     writetext MasterOakBecomeImmortalAfterText
 	waitbutton
@@ -261,6 +262,7 @@ MasterOakScript:
     setval 0
     writemem wBeatenMasterOak
     warp HALL_OF_ORIGIN, 11, 3
+    turnobject PLAYER, UP
     opentext
     writetext MasterOakBecomeMortalAfterText
 	waitbutton

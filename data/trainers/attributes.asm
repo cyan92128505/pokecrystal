@@ -58,7 +58,7 @@ TrainerClassAttributes:
 
 ; Pokemon Prof
 	db NO_ITEM, NO_ITEM ; items
-	db 250 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE
 

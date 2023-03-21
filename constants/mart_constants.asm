@@ -39,4 +39,5 @@
 	const MART_MT_MOON
 	const MART_INDIGO_PLATEAU
 	const MART_UNDERGROUND
+	const MART_PATCHES
 NUM_MARTS EQU const_value

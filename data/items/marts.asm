@@ -32,6 +32,7 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartPatches
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -375,6 +376,26 @@ MartUnderground:
 	db HEAL_POWDER
 	db REVIVAL_HERB
 	db -1 ; end
+
+MartPatches:
+    db 16 ; # items
+    db RARE_CANDY
+    db MASTER_BALL
+    db LEFTOVERS
+    db LIFE_ORB
+    db CHOICE_BAND
+    db CHOICE_SPECS
+    db FOCUS_SASH
+    db MUSCLE_BAND
+    db WISE_GLASSES
+    db EXPERT_BELT
+    db HP_UP
+    db PROTEIN
+    db IRON
+    db CALCIUM
+    db PP_UP
+    db SACRED_ASH
+    db -1
 
 DefaultMart:
 	db 2 ; # items

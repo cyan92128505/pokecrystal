@@ -45,7 +45,7 @@ TinTowerHoOh:
 	sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon HO_OH, 45
+	loadwildmon HO_OH, 50
 .begin
 	startbattle
 	disappear TINTOWERROOF_HO_OH

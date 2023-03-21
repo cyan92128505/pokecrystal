@@ -2694,6 +2694,11 @@ WinTrainerBattle:
 
 .KeepItAll:
 	ld hl, GotMoneyForWinningText
+	ld a, [wOtherTrainerClass]
+	cp POKEMON_PROF
+	jr nz, .writeText
+	ld hl, GotMaxMoneyForWinningText
+.writeText
 	jp StdBattleTextbox
 
 .AddMoneyToMom:
@@ -2706,7 +2711,15 @@ WinTrainerBattle:
 
 .AddMoneyToWallet:
 	push bc
+; AndrewNote - beating master oak always maxes money
+    ld a, [wOtherTrainerClass]
+    cp POKEMON_PROF
+    jr nz, .notOak
+    ld hl, MaxMoneyCore
+    jr .cont
+.notOak
 	ld hl, wBattleReward + 2
+.cont
 	ld de, wMoney + 2
 	call AddBattleMoneyToAccount
 	pop bc
@@ -9694,3 +9707,6 @@ GetOpposingMonCore:
 	ld a, [wEnemyMonSpecies]
 .done
     ret
+
+MaxMoneyCore:
+	dt MAX_MONEY

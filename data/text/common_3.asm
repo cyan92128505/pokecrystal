@@ -1277,6 +1277,14 @@ _AmbrosiaText::
     line "Awakened!"
     prompt
 
+_RepulsorTurnOffText::
+	text "REPULSOR is off."
+	prompt
+
+_RepulsorTurnOnText::
+	text "REPULSOR is on."
+	prompt
+
 _ItemCantUseOnMonText::
 	text "That can't be used"
 	line "on this #MON."

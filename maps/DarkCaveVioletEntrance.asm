@@ -29,7 +29,7 @@ DarkCaveVioletEntranceHyperPotion:
 	itemball HYPER_POTION
 
 DarkCaveVioletEntranceDireHit:
-	itemball DIRE_HIT
+	itemball RARE_CANDY
 
 DarkCaveVioletEntranceRock:
 	jumpstd SmashRockScript

@@ -939,6 +939,10 @@ CountStep:
 	ret
 
 DoRepelStep:
+	ld a, [wRepulsorToggle]
+	and a
+	ret nz
+
 	ld a, [wRepelEffect]
 	and a
 	ret z

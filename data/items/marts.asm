@@ -49,7 +49,8 @@ MartCherrygroveDex:
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db AWAKENING
+	;db AWAKENING
+	db REPULSOR
 	db -1 ; end
 
 MartViolet:
@@ -224,7 +225,7 @@ MartPewter:
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
@@ -232,7 +233,6 @@ MartCerulean:
 	db FULL_HEAL
 	db X_DEFEND
 	db X_ATTACK
-	db DIRE_HIT
 	db SURF_MAIL
 	db -1 ; end
 

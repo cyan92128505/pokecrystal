@@ -307,7 +307,6 @@ AI_Items:
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
 	dbw GUARD_SPEC,   .GuardSpec
-	dbw DIRE_HIT,     .DireHit
 	dbw X_ATTACK,     .XAttack
 	dbw X_DEFEND,     .XDefend
 	dbw X_SPEED,      .XSpeed
@@ -486,12 +485,6 @@ AI_Items:
 	call .XItem
 	jp c, .DontUse
 	call EnemyUsedGuardSpec
-	jp .Use
-
-.DireHit:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedDireHit
 	jp .Use
 
 .XAttack:
@@ -808,13 +801,6 @@ EnemyUsedGuardSpec:
 	ld hl, wEnemySubStatus4
 	set SUBSTATUS_MIST, [hl]
 	ld a, GUARD_SPEC
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-EnemyUsedDireHit:
-	call AIUsedItemSound
-	ld hl, wEnemySubStatus4
-	set SUBSTATUS_FOCUS_ENERGY, [hl]
-	ld a, DIRE_HIT
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
 AICheckEnemyFractionMaxHP: ; unreferenced

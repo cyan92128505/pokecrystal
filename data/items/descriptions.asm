@@ -44,7 +44,7 @@ ItemDescriptions:
 	dw GuardSpecDesc
 	dw SuperRepelDesc
 	dw MaxRepelDesc
-	dw DireHitDesc
+	dw RepulsorDesc
 	dw TeruSama3Desc
 	dw FreshWaterDesc
 	dw SodaPopDesc
@@ -430,9 +430,9 @@ MaxRepelDesc:
 	db   "Repels weak #-"
 	next "MON for 250 steps.@"
 
-DireHitDesc:
-	db   "Ups critical hit"
-	next "ratio. (1 BTL)@"
+RepulsorDesc:
+	db   "Repels wild"
+	next "#MON@"
 
 TeruSama3Desc:
 	db   "?@"

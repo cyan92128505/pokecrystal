@@ -43,7 +43,7 @@ ItemNames::
 	li "GUARD SPEC."
 	li "SUPER REPEL"
 	li "MAX REPEL"
-	li "DIRE HIT"
+	li "REPULSOR"
 	li "TERU-SAMA"
 	li "FRESH WATER"
 	li "SODA POP"

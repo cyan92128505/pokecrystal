@@ -2990,8 +2990,6 @@ wPokegearFlags::
 	db
 wRadioTuningKnob:: db
 wExpShareToggle:: db
-;wLastDexMode:: db
-;	ds 1
 wBeatenMasterOak:: db
 wWhichRegisteredItem:: db
 wRegisteredItem:: db
@@ -2999,7 +2997,7 @@ wRegisteredItem:: db
 wPlayerState:: db
 
 wHallOfFameCount:: db
-	ds 1
+wRepulsorToggle:: db
 wTradeFlags:: flag_array NUM_NPC_TRADES
 	ds 1
 wMooMooBerries:: db

@@ -57,7 +57,7 @@ ItemEffects:
 	dw GuardSpecEffect     ; GUARD_SPEC
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
-	dw DireHitEffect       ; DIRE_HIT
+	dw RepulsorEffect      ; REPULSOR
 	dw NoEffect            ; ITEM_2D
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
@@ -2319,12 +2319,29 @@ GuardSpecEffect:
 	set SUBSTATUS_MIST, [hl]
 	jp UseItemText
 
-DireHitEffect:
-	ld hl, wPlayerSubStatus4
-	bit SUBSTATUS_FOCUS_ENERGY, [hl]
-	jp nz, WontHaveAnyEffect_NotUsedMessage
-	set SUBSTATUS_FOCUS_ENERGY, [hl]
-	jp UseItemText
+RepulsorEffect:
+	ld a, [wRepulsorToggle]
+	xor 1
+	ld [wRepulsorToggle], a
+	and a
+	jr nz, .turnOn
+	ld [wRepelEffect], a
+	ld hl, RepulsorTurnOffText
+	jp PrintText
+.turnOn
+    ld b, 1
+    ld a, b
+    ld [wRepelEffect], a
+	ld hl, RepulsorTurnOnText
+	jp nz, PrintText
+
+RepulsorTurnOffText:
+	text_far _RepulsorTurnOffText
+	text_end
+
+RepulsorTurnOnText:
+	text_far _RepulsorTurnOnText
+	text_end
 
 XItemEffect:
 	call UseItemText

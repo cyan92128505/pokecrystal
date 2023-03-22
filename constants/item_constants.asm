@@ -144,7 +144,7 @@
 	const LIFE_ORB     ; 88
 	const CHOICE_BAND  ; 89
 	const CHARCOAL     ; 8a
-	const BERRY_JUICE  ; 8b ; Andrew - this is not used
+	const AMBROSIA     ; 8b
 	const SCOPE_LENS   ; 8c
 	const ITEM_8D      ; 8d
 	const ITEM_8E      ; 8e

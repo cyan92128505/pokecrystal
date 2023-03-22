@@ -1272,6 +1272,11 @@ _ItemStatRoseText::
 	text " rose."
 	prompt
 
+_AmbrosiaText::
+    text "Full Potential"
+    line "Awakened!"
+    prompt
+
 _ItemCantUseOnMonText::
 	text "That can't be used"
 	line "on this #MON."

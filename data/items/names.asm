@@ -138,7 +138,7 @@ ItemNames::
 	li "LIFE ORB"
 	li "CHOICE BAND"
 	li "CHARCOAL"
-	li "BERRY JUICE"
+	li "AMBROSIA"
 	li "SCOPE LENS"
 	li "TERU-SAMA"
 	li "TERU-SAMA"

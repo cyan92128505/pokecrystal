@@ -152,7 +152,7 @@ ItemEffects:
 	dw NoEffect            ; LIFE_ORB
 	dw NoEffect            ; CHOICE_BAND
 	dw NoEffect            ; CHARCOAL
-	dw RestoreHPEffect     ; BERRY_JUICE
+	dw AmbrosiaEffect      ; AMBROSIA
 	dw NoEffect            ; SCOPE_LENS
 	dw NoEffect            ; ITEM_8D
 	dw NoEffect            ; ITEM_8E
@@ -1258,13 +1258,12 @@ VitaminEffect:
 
 	ld a, MON_STAT_EXP
 	call GetPartyParamLocation
-
 	add hl, bc
 
 ; AndrewNote - Vitamins have no limit
-;	ld a, [hl]
-;	cp 100
-;	jr nc, NoEffectMessage
+	ld a, [hl]
+	cp 255
+	jp nc, NoEffectMessage
 
 	add 10
 	ld [hl], a
@@ -1291,6 +1290,54 @@ VitaminEffect:
 
 	jp UseDisposableItem
 
+AmbrosiaEffect:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	call RareCandy_StatBooster_GetParameters
+
+    ld a, HP_UP
+    ld [wCurItem], a
+	call AmbrosiaIncreaseStat
+
+    ld a, PROTEIN
+    ld [wCurItem], a
+	call AmbrosiaIncreaseStat
+
+    ld a, IRON
+    ld [wCurItem], a
+	call AmbrosiaIncreaseStat
+
+    ld a, CARBOS
+    ld [wCurItem], a
+	call AmbrosiaIncreaseStat
+
+    ld a, CALCIUM
+    ld [wCurItem], a
+	call AmbrosiaIncreaseStat
+
+	call Play_SFX_FULL_HEAL
+	ld hl, AmbrosiaText
+	call PrintText
+
+	ld c, HAPPINESS_AMBROSIA
+	farcall ChangeHappiness
+
+    ld a, AMBROSIA
+    ld [wCurItem], a
+	jp UseDisposableItem
+
+AmbrosiaIncreaseStat:
+    call GetStatExpRelativePointer
+	ld a, MON_STAT_EXP
+	call GetPartyParamLocation
+	add hl, bc
+	ld a, 255
+	ld [hl], a
+	call UpdateStatsAfterItem
+	ret
+
 NoEffectMessage:
 	ld hl, ItemWontHaveEffectText
 	call PrintText
@@ -1314,6 +1361,11 @@ RareCandy_StatBooster_ExitMenu:
 ItemStatRoseText:
 	text_far _ItemStatRoseText
 	text_end
+
+AmbrosiaText:
+	text_far _AmbrosiaText
+	text_end
+    done
 
 StatStrings:
 	dw .health

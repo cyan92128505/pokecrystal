@@ -1,6 +1,7 @@
 	object_const_def
 	const SLOWPOKEWELLB2F_GYM_GUIDE
 	const SLOWPOKEWELLB2F_POKE_BALL
+	const SLOWPOKEWELLB2F_POKE_BALL_2
 	const SLOWPOKEWELLB2F_FIELDMON_1
 	const SLOWPOKEWELLB2F_FIELDMON_2
 	const SLOWPOKEWELLB2F_FIELDMON_3
@@ -24,25 +25,28 @@ SlowpokeWellB2F_MapScripts:
 SlowpokeWellB2FGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_KINGS_ROCK_IN_SLOWPOKE_WELL
-	iftrue .GotKingsRock
+	checkevent EVENT_GOT_LEFTOVERS_IN_SLOWPOKE_WELL
+	iftrue .GotLeftovers
 	writetext SlowpokeWellB2FGymGuideText
 	promptbutton
-	verbosegiveitem KINGS_ROCK
+	verbosegiveitem LEFTOVERS
 	iffalse .NoRoom
-	setevent EVENT_GOT_KINGS_ROCK_IN_SLOWPOKE_WELL
+	setevent EVENT_GOT_LEFTOVERS_IN_SLOWPOKE_WELL
 .NoRoom:
 	closetext
 	end
 
-.GotKingsRock:
-	writetext SlowpokeWellB2FGymGuideText_GotKingsRock
+.GotLeftovers:
+	writetext SlowpokeWellB2FGymGuideText_GotLeftovers
 	waitbutton
 	closetext
 	end
 
 SlowpokeWellB2FTMRainDance:
 	itemball TM_RAIN_DANCE
+
+SlowpokeWellB2FKingsRock:
+	itemball KINGS_ROCK
 
 SlowpokeWellB2FGymGuideText:
 	text "I'm waiting to see"
@@ -64,7 +68,7 @@ SlowpokeWellB2FGymGuideText:
 	cont "you."
 	done
 
-SlowpokeWellB2FGymGuideText_GotKingsRock:
+SlowpokeWellB2FGymGuideText_GotLeftovers:
 	text "I'm going to be"
 	line "like SLOWPOKE."
 
@@ -78,6 +82,7 @@ SlowpokeWellB2FFieldMon1Script:
 	cry SLOWKING
 	pause 15
 	loadwildmon SLOWKING, 80
+    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -137,6 +142,7 @@ SlowpokeWellB2F_MapEvents:
 	def_object_events
 	object_event 12,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SlowpokeWellB2FGymGuideScript, -1
 	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FTMRainDance, EVENT_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE
+	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FKingsRock, EVENT_SLOWPOKE_WELL_B2F_KINGS_ROCK
 	
 	object_event 5, 2, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB2FFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 4, 4, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB2FFieldMon2Script, EVENT_FIELD_MON_2

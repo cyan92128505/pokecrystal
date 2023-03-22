@@ -378,7 +378,8 @@ MartUnderground:
 	db -1 ; end
 
 MartPatches:
-    db 16 ; # items
+    db 13 ; # items
+    db AMBROSIA
     db RARE_CANDY
     db MASTER_BALL
     db LEFTOVERS
@@ -389,10 +390,6 @@ MartPatches:
     db MUSCLE_BAND
     db WISE_GLASSES
     db EXPERT_BELT
-    db HP_UP
-    db PROTEIN
-    db IRON
-    db CALCIUM
     db PP_UP
     db SACRED_ASH
     db -1

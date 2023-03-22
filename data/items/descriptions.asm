@@ -139,7 +139,7 @@ ItemDescriptions:
 	dw LifeOrbDesc
 	dw ChoiceBandDesc
 	dw CharcoalDesc
-	dw BerryJuiceDesc
+	dw AmbrosiaDesc
 	dw ScopeLensDesc
 	dw TeruSama12Desc
 	dw TeruSama13Desc
@@ -798,9 +798,9 @@ CharcoalDesc:
 	db   "Powers up fire-"
 	next "type moves. (HOLD)@"
 
-BerryJuiceDesc:
-	db   "Restores #MON"
-	next "HP by 20.@"
+AmbrosiaDesc:
+	db   "Max stats and"
+	next "happiness.@"
 
 ScopeLensDesc:
 	db   "Raises critical"

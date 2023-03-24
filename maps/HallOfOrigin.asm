@@ -336,6 +336,10 @@ MasterOakOfferPrizeText:
     line "indestructible"
     cont "and immortal."
 
+    para "There are many"
+    line "perks in this"
+    cont "form."
+
     para "All your #MON"
     line "will appear shiny"
     cont "regardless of"
@@ -343,7 +347,12 @@ MasterOakOfferPrizeText:
 
     para "You also now"
     line "have unlimited"
-    cont "wealth."
+    cont "money."
+
+    para "And no aggressive"
+    line "trainer or #MON"
+    cont "will dare to"
+    cont "challenge you."
 
     para "I also present"
     line "you with a"

@@ -23,6 +23,11 @@ _CheckTrainerBattle::
 	push af
 	push de
 
+; AndrewNote - don't agress an immortal player
+	ld a, [wBeatenMasterOak]
+	and a
+	jr nz, .next
+
 ; Has a sprite
 	ld hl, MAPOBJECT_SPRITE
 	add hl, de

@@ -3237,7 +3237,7 @@ BattleTowerMons:
 
     db CELEBI
 	db LEFTOVERS
-	db NASTY_PLOT, RECOVER, EARTH_POWER, GIGA_DRAIN
+	db SWORDS_DANCE, RECOVER, PSYCHO_SLASH, LEAF_BLADE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -3247,7 +3247,7 @@ BattleTowerMons:
     bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 15, 16, 16 ; PP
+	db 20, 15, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 84 ; Level
@@ -4541,7 +4541,7 @@ BattleTowerMons:
 
     db MEW
 	db PINK_BOW
-	db SWORDS_DANCE, ZEN_HEADBUTT, EARTHQUAKE, EXPLOSION
+	db SWORDS_DANCE, PSYCHO_SLASH, EARTHQUAKE, EXPLOSION
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

@@ -4141,11 +4141,31 @@ AI_Smart_LesserStatChange:
 ; don't boost if player will just KO anyway
 ; returns carry if the AI can boost
 ShouldAIBoost:
-; patches can boost evasion, go for the boost in this case
+; if evasion is >= +4 then go for the boost - only used by Patches
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .boost
 
+; if the player has roar/whirlwind and we aren't immune to it then 50% to not boost
+    ld a, [wEnemyMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .noForceSwitch
+    ld b, EFFECT_FORCE_SWITCH
+	call PlayerHasMoveEffect
+	jr c, .noForceSwitch
+	call Random
+	cp 50 percent
+	jr c, .dontBoost
+
+.noForceSwitch
 ; who moves first
     call AICompareSpeed
     jr nc, .playerMovesFirst

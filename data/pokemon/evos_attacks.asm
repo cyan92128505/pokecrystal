@@ -2256,7 +2256,7 @@ MewEvosAttacks:
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
 	db 30, RECOVER
-	db 40, ZEN_HEADBUTT
+	db 40, PSYCHO_SLASH
 	db 50, PSYCHIC_M
 	db 60, BATON_PASS
 	db 0 ; no more level-up moves
@@ -3643,7 +3643,7 @@ CelebiEvosAttacks:
 	db 1, HEAL_BELL
 	db 20, ANCIENTPOWER
 	db 30, BATON_PASS
-	db 55, ZEN_HEADBUTT
+	db 55, PSYCHO_SLASH
 	db 60, LEAF_BLADE
 	db 0 ; no more level-up moves
 

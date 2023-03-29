@@ -279,13 +279,13 @@ RuinsOfAlphOutsideYoungster2Text:
 	done
 
 RuinsOfAlphBlockScript:
-    checkevent ENGINE_UNLOCKED_UNOWNS_A_TO_K
+    checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
     iffalse .block
-    checkevent ENGINE_UNLOCKED_UNOWNS_L_TO_R
+    checkevent EVENT_SOLVED_KABUTO_PUZZLE
     iffalse .block
-    checkevent ENGINE_UNLOCKED_UNOWNS_S_TO_W
+    checkevent EVENT_SOLVED_OMANYTE_PUZZLE
     iffalse .block
-    checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+    checkevent EVENT_SOLVED_HO_OH_PUZZLE
     iffalse .block
     end
 .block

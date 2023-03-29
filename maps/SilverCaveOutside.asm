@@ -132,6 +132,8 @@ SilverCaveEusineAfterBattleText:
 SilverCaveOutsideBlockScript:
     checkevent EVENT_BEAT_RED
     iffalse .block
+    checkevent EVENT_BEAT_ASH
+    iffalse .block
     end
 .block
     turnobject PLAYER, UP
@@ -145,10 +147,15 @@ SilverCaveOutsideBlockScript:
 SilverCaveOutsideBlockText:
     text "The door is"
     line "locked."
-    para "It says only"
-    line "the strongest"
-    cont "trainers are"
-    cont "allowed."
+
+    para "Some kind of"
+    line "tournament is"
+    cont "happening."
+
+    para "Only the"
+    line "strongest"
+    cont "trainer in the"
+    cont "world may pass."
     done
 
 Movement_SilverCaveOutsideTurnBack:

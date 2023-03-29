@@ -198,14 +198,16 @@ MewtwoScript:
 	writetext MewtwoAfterText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
 	disappear DESTINYSQUARE_MEWTWO
-	pause 15
-	special FadeInQuickly
-	pause 30
-	special HealParty
-	refreshscreen
+	;special FadeBlackQuickly
+	;disappear DESTINYSQUARE_MEWTWO
+	;special ReloadSpritesNoPalettes
+	;pause 15
+	;special FadeInQuickly
+	;pause 30
+	;special HealParty
+	warp DESTINY_PARK, 7, 10
+	;refreshscreen
 	end
 
 MewtwoCry:
@@ -240,6 +242,14 @@ MewtwoAfterText:
 
     para "I know you"
     line "understand."
+
+    para "Now go!"
+
+    para "Upon the peak of"
+    line "MT SILVER..."
+
+    para "Your destiny"
+    line "awaits."
     done
 
 DefaultSeenTextDS:
@@ -302,7 +312,7 @@ FightAdamScript:
     end
 .fight
     turnobject PLAYER, LEFT
-    sjump MasterRivalScript
+    sjump MasterKogaScript
 
 Movement_DestinySquareTurnBack:
 	step DOWN

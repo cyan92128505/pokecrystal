@@ -289,6 +289,7 @@
     const EVENT_FIELD_MON_10
     const EVENT_GOT_NEWBARKTOWN_REPEL
     const EVENT_SLOWPOKE_WELL_B2F_KINGS_ROCK
+    const EVENT_BEAT_ASH
 
 	const_next 600
 ; Kurt Apricorn events

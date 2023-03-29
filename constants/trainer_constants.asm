@@ -706,6 +706,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass RED ; 3f
 	const RED1
+	const ASH
 	const MASTER_RED
 
 	trainerclass BLUE ; 40

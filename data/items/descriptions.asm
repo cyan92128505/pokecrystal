@@ -19,7 +19,7 @@ ItemDescriptions:
 	dw HyperPotionDesc
 	dw SuperPotionDesc
 	dw PotionDesc
-	dw EscapeRopeDesc
+	dw WarpBeaconDesc
 	dw RepelDesc
 	dw MaxElixerDesc
 	dw FireStoneDesc
@@ -330,7 +330,7 @@ PotionDesc:
 	db   "Restores #MON"
 	next "HP by 20.@"
 
-EscapeRopeDesc:
+WarpBeaconDesc:
 	db   "Use for escaping"
 	next "from caves, etc.@"
 

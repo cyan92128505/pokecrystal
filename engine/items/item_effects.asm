@@ -32,7 +32,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; HYPER_POTION
 	dw RestoreHPEffect     ; SUPER_POTION
 	dw RestoreHPEffect     ; POTION
-	dw EscapeRopeEffect    ; ESCAPE_ROPE
+	dw WarpBeaconEffect    ; WARP_BEACON
 	dw RepelEffect         ; REPEL
 	dw RestorePPEffect     ; MAX_ELIXER
 	dw EvoStoneEffect      ; FIRE_STONE
@@ -2251,14 +2251,10 @@ Softboiled_MilkDrinkFunction:
 	text_far _ItemCantUseOnMonText
 	text_end
 
-EscapeRopeEffect:
+WarpBeaconEffect:
 	xor a
 	ld [wItemEffectSucceeded], a
 	farcall EscapeRopeFunction
-
-	ld a, [wItemEffectSucceeded]
-	cp 1
-	call z, UseDisposableItem
 	ret
 
 SuperRepelEffect:

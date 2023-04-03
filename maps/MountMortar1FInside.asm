@@ -41,7 +41,7 @@ MountMortar1FBoulder:
 	jumpstd StrengthBoulderScript
 
 MountMortar1FInsideEscapeRope:
-	itemball ESCAPE_ROPE
+	itemball HP_UP
 
 MountMortar1FInsideMaxRevive:
 	itemball MAX_REVIVE

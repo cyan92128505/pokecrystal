@@ -159,7 +159,7 @@ SproutTower3FPotion:
 	itemball POTION
 
 SproutTower3FEscapeRope:
-	itemball ESCAPE_ROPE
+	itemball GOLD_BERRY
 
 SproutTower3FPlayerApproachesRivalMovement:
 	step UP
@@ -225,8 +225,8 @@ SproutTowerRivalOnlyCareAboutStrongText:
 	done
 
 SproutTowerRivalUsedEscapeRopeText:
-	text "<RIVAL> used an"
-	line "ESCAPE ROPE!"
+	text "<RIVAL> used"
+	line "WARP BEACON!"
 	done
 
 SageLiSeenText:

@@ -363,8 +363,8 @@ _UseDigText::
 	done
 
 _UseEscapeRopeText::
-	text "<PLAYER> used an"
-	line "ESCAPE ROPE."
+	text "<PLAYER> used"
+	line "WARP BEACON."
 	done
 
 _CantUseDigText::

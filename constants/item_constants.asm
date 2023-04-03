@@ -24,7 +24,7 @@
 	const HYPER_POTION ; 10
 	const SUPER_POTION ; 11
 	const POTION       ; 12
-	const ESCAPE_ROPE  ; 13
+	const WARP_BEACON  ; 13
 	const REPEL        ; 14
 	const MAX_ELIXER   ; 15
 	const FIRE_STONE   ; 16

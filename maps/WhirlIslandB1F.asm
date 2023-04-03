@@ -24,7 +24,7 @@ WhirlIslandB1FNugget:
 	itemball TM_ICE_BEAM
 
 WhirlIslandB1FEscapeRope:
-	itemball ESCAPE_ROPE
+	itemball RARE_CANDY
 
 WhirlIslandB1FBoulder:
 	jumpstd StrengthBoulderScript

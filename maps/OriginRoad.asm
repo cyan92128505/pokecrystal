@@ -3,17 +3,64 @@ OriginRoad_MapScripts:
 
 	def_callbacks
 
-InvaderMasterPatches:
-	trainer INVADER, MASTER_PATCHES, EVENT_BEAT_MASTER_PATCHES, InvaderMasterPatchesSeenText, InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText, .Script
+;InvaderMasterPatches:
+;	trainer INVADER, MASTER_PATCHES, EVENT_BEAT_MASTER_PATCHES, InvaderMasterPatchesSeenText, InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText, .Script
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext InvaderMasterPatchesAfterText
+;	waitbutton
+;	pokemart MARTTYPE_STANDARD, MART_PATCHES
+;	closetext
+;	end
 
-.Script:
-	endifjustbattled
+InvaderMasterPatches:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_PATCHES
+	iftrue .FightDone
+.fight
+	writetext InvaderMasterPatchesSeenText
+	waitbutton
+	closetext
+	winlosstext InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText
+	loadtrainer INVADER, MASTER_PATCHES
+	startbattle
+	reloadmapafterbattle
+	checkevent EVENT_BEAT_MASTER_PATCHES
+	iftrue .finish
+	setevent EVENT_BEAT_MASTER_PATCHES
 	opentext
 	writetext InvaderMasterPatchesAfterText
 	waitbutton
 	pokemart MARTTYPE_STANDARD, MART_PATCHES
 	closetext
+.finish
+	special HealParty
 	end
+.FightDone:
+	writetext InvaderMasterPatchesAfterText
+	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_PATCHES
+    closetext
+	opentext
+	writetext RematchTextPatches
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextPatches
+	waitbutton
+	closetext
+	end
+
+RematchTextPatches:
+    text "How about a"
+    line "match friend?"
+    done
+
+RematchRefuseTextPatches:
+    text "Stop by"
+    line "anytime."
+    done
 
 InvaderMasterPatchesSeenText:
 	text "What you again?"
@@ -89,15 +136,26 @@ InvaderMasterPatchesAfterText:
 	para "Heh, heh, heh..."
 	done
 
+PatchesAttacks:
+    checkevent EVENT_BEAT_MASTER_PATCHES
+    iffalse .fight
+    end
+.fight
+    turnobject PLAYER, RIGHT
+    sjump InvaderMasterPatches
+
 OriginRoad_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 
 	def_coord_events
+	coord_event  4,  3, SCENE_ALWAYS, PatchesAttacks
+	coord_event  5,  3, SCENE_ALWAYS, PatchesAttacks
+	coord_event  6,  3, SCENE_ALWAYS, PatchesAttacks
 
 	def_bg_events
 
 	def_object_events
-	object_event 8, 0, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderMasterPatches, -1
+	object_event  7,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderMasterPatches, -1
 

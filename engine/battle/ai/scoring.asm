@@ -2049,6 +2049,24 @@ AI_Smart_Encore:
 	call AICompareSpeed
 	jr nc, .discourage
 
+; don't use if player already encored
+	ld hl, wPlayerSubStatus5
+	bit SUBSTATUS_ENCORED, [hl]
+	jr nz, .discourage
+
+; don't use on Uber Pokemon as they are immune
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
+
 	ld a, [wLastPlayerMove]
 	and a
 	jp z, AIDiscourageMove
@@ -2084,9 +2102,7 @@ AI_Smart_Encore:
 	jr nc, .discourage
 
 .encourage
-	call Random
-	cp 28 percent - 1
-	ret c
+	dec [hl]
 	dec [hl]
 	dec [hl]
 	ret
@@ -3027,7 +3043,7 @@ AI_Smart_BatonPass:
 	dec [hl]
 	dec [hl]
 .continue
-; We hard code the recipient to be the second mon
+; I hard code the recipient to be the second mon
 ; this allows for a dedicated baton pass strategy
 ; except for in the battle tower - normal switch logic here is fine
     ld a, [wInBattleTowerBattle]

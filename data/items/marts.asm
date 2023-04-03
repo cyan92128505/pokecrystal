@@ -44,20 +44,22 @@ MartCherrygrove:
 	db -1 ; end
 
 MartCherrygroveDex:
-	db 5 ; # items
+	db 7 ; # items
 	db POKE_BALL
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	;db AWAKENING
 	db REPULSOR
+	db WARP_BEACON
+	db POCKET_PC
+	db RED_EYE_ORB
 	db -1 ; end
 
 MartViolet:
-	db 10 ; # items
+	db 9 ; # items
 	db POKE_BALL
 	db POTION
-	db ESCAPE_ROPE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
@@ -68,13 +70,11 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 9 ; # items
+	db 7 ; # items
 	db CHARCOAL
 	db POKE_BALL
 	db POTION
 	db SUPER_POTION
-	db ESCAPE_ROPE
-	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db FRIEND_BALL
@@ -101,11 +101,9 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 8 ; # items
+	db 6 ; # items
 	db POKE_BALL
 	db GREAT_BALL
-	db ESCAPE_ROPE
-	db REPEL
 	db REVIVE
 	db FULL_HEAL
 	db POKE_DOLL
@@ -272,11 +270,10 @@ MartCeladon2F1:
 	db -1 ; end
 
 MartCeladon2F2:
-	db 10 ; # items
+	db 9 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
-	db ESCAPE_ROPE
 	db FULL_HEAL
 	db ANTIDOTE
 	db BURN_HEAL

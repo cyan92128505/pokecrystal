@@ -14,6 +14,7 @@
 	const GOLDENRODCITY_ROCKET5
 	const GOLDENRODCITY_ROCKET6
 	const GOLDENRODCITY_MOVETUTOR
+	const GOLDENRODCITY_FIELDMON_1
 
 GoldenrodCity_MapScripts:
 	def_scene_scripts
@@ -32,21 +33,17 @@ GoldenrodCity_MapScripts:
 	endcallback
 
 .MoveTutor:
-	;checkevent EVENT_BEAT_ELITE_FOUR
-	;iffalse .MoveTutorDone
-	;checkitem COIN_CASE
-	;iffalse .MoveTutorDisappear
-	;readvar VAR_WEEKDAY
-	;ifequal WEDNESDAY, .MoveTutorAppear
-	;ifequal SATURDAY, .MoveTutorAppear
-;.MoveTutorDisappear:
-;	disappear GOLDENRODCITY_MOVETUTOR
-;	endcallback
-;.MoveTutorAppear:
-;	checkflag ENGINE_DAILY_MOVE_TUTOR
-;	iftrue .MoveTutorDone
+    checktime NITE
+    iffalse .tutor
+
+    random 3
+    ifequal 1, .spawn1
+    disappear GOLDENRODCITY_FIELDMON_1
+    sjump .tutor
+.spawn1
+    appear GOLDENRODCITY_FIELDMON_1
+.tutor
 	appear GOLDENRODCITY_MOVETUTOR
-;.MoveTutorDone:
 	endcallback
 
 MoveTutorScript:
@@ -584,6 +581,17 @@ GoldenrodCityMoveTutorMoveText:
 	text_start
 	done
 
+GoldenrodCityFieldMon1Script:
+	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_1, GoldenrodCityPokemonAttacksText, 33, 0, .script
+.script
+    disappear GOLDENRODCITY_FIELDMON_1
+    end
+
+GoldenrodCityPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -623,8 +631,8 @@ GoldenrodCity_MapEvents:
 	def_object_events
 	object_event  7, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityPokefanMScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 30, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster1Script, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event 12, 16, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF1Script, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event 20, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF2Script, EVENT_GOLDENROD_CITY_CIVILIANS
+	object_event 12, 16, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF1Script, EVENT_GOLDENROD_CITY_CIVILIANS
+	object_event 20, 26, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF2Script, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 19, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster2Script, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 17, 10, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityLassScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 11, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityGrampsScript, EVENT_GOLDENROD_CITY_CIVILIANS
@@ -636,3 +644,6 @@ GoldenrodCity_MapEvents:
 	object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
+
+	object_event 24, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, GoldenrodCityFieldMon1Script, EVENT_FIELD_MON_1
+

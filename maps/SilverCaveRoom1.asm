@@ -16,7 +16,7 @@ SilverCaveRoom1Protein:
 	itemball PROTEIN
 
 SilverCaveRoom1EscapeRope:
-	itemball ESCAPE_ROPE
+	itemball NUGGET
 
 SilverCaveRoom1UltraBall:
 	itemball ULTRA_BALL

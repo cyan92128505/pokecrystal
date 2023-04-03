@@ -9,12 +9,42 @@
 	const ROUTE35_SUPER_NERD
 	const ROUTE35_OFFICER
 	const ROUTE35_FRUIT_TREE
-	const ROUTE35_POKE_BALL
+    const ROUTE35_FIELDMON_1
+    const ROUTE35_FIELDMON_2
+    const ROUTE35_FIELDMON_3
+    const ROUTE35_FIELDMON_4
 
 Route35_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route35FieldMon
+
+.Route35FieldMon:
+; Pokemon which always appear
+    appear ROUTE35_FIELDMON_2
+    appear ROUTE35_FIELDMON_3
+
+    random 8
+    ifequal 1, .spawn4
+    disappear ROUTE35_FIELDMON_4
+    sjump .checkNight
+.spawn4
+    appear ROUTE35_FIELDMON_4
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    random 2
+    ifequal 1, .spawn1
+    disappear ROUTE35_FIELDMON_1
+    sjump .end
+.spawn1
+    appear ROUTE35_FIELDMON_1
+.end
+    endcallback
 
 TrainerBirdKeeperBryan:
 	trainer BIRD_KEEPER, BRYAN, EVENT_BEAT_BIRD_KEEPER_BRYAN, BirdKeeperBryanSeenText, BirdKeeperBryanBeatenText, 0, .Script
@@ -483,6 +513,51 @@ Route35SignText:
 	text "ROUTE 35"
 	done
 
+Route35FieldMon1Script:
+	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_1, Route35PokemonAttacksText, 34, 0, .script
+.script
+    disappear ROUTE35_FIELDMON_1
+    end
+
+Route35PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route35FieldMon2Script:
+	faceplayer
+	cry VULPIX
+	pause 15
+	loadwildmon VULPIX, 25
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE35_FIELDMON_2
+	end
+
+Route35FieldMon3Script:
+	faceplayer
+	cry MR__MIME
+	pause 15
+	loadwildmon MR__MIME, 41
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE35_FIELDMON_3
+	end
+
+Route35FieldMon4Script:
+	faceplayer
+	cry JIGGLYPUFF
+	pause 15
+	loadwildmon JIGGLYPUFF, 27
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE35_FIELDMON_4
+	end
+
 Route35_MapEvents:
 	db 0, 0 ; filler
 
@@ -498,14 +573,18 @@ Route35_MapEvents:
 	bg_event 11, 31, BGEVENT_READ, Route35Sign
 
 	def_object_events
-	object_event  4, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderLautrecScript, -1
+	object_event  4, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderLautrecScript, -1
 	object_event  8, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperElliot, -1
 	object_event  7, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
 	object_event 10, 26, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerKim, -1
 	object_event 14, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBirdKeeperBryan, -1
 	object_event  2, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherWalt, -1
 	object_event 16,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherArnie, -1
-	object_event  5, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
+	object_event  5, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
 	object_event  5,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerDirk, -1
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1
-	object_event 13, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route35TMRollout, EVENT_ROUTE_35_TM_ROLLOUT
+
+	object_event 0,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route35FieldMon1Script, EVENT_FIELD_MON_1
+   	object_event 10, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route35FieldMon2Script, EVENT_FIELD_MON_2
+   	object_event 0, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35FieldMon3Script, EVENT_FIELD_MON_3
+   	object_event 8, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route35FieldMon4Script, EVENT_FIELD_MON_4

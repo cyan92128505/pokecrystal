@@ -18,7 +18,7 @@ ItemNames::
 	li "HYPER POTION"
 	li "SUPER POTION"
 	li "POTION"
-	li "ESCAPE ROPE"
+	li "WARP BEACON"
 	li "REPEL"
 	li "MAX ELIXER"
 	li "FIRE STONE"

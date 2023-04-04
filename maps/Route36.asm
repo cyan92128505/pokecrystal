@@ -8,6 +8,12 @@
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
 	const ROUTE36_SUICUNE
+	const ROUTE36_FIELDMON_1
+    const ROUTE36_FIELDMON_2
+    const ROUTE36_FIELDMON_3
+    const ROUTE36_FIELDMON_4
+    const ROUTE36_FIELDMON_5
+    const ROUTE36_FIELDMON_6
 
 Route36_MapScripts:
 	def_scene_scripts
@@ -24,6 +30,37 @@ Route36_MapScripts:
 	end
 
 .ArthurCallback:
+; Pokemon which always appear
+    appear ROUTE36_FIELDMON_3
+    appear ROUTE36_FIELDMON_6
+
+    random 2
+    ifequal 1, .spawn4
+    disappear ROUTE36_FIELDMON_4
+    sjump .mon5
+.spawn4
+    appear ROUTE36_FIELDMON_4
+
+.mon5
+    random 2
+    ifequal 1, .spawn5
+    disappear ROUTE36_FIELDMON_5
+    sjump .checkNight
+.spawn5
+    appear ROUTE36_FIELDMON_5
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .arthur
+
+    appear ROUTE36_FIELDMON_1
+    appear ROUTE36_FIELDMON_2
+
+; Pokemon that don't appear at night
+    disappear ROUTE36_FIELDMON_6
+
+.arthur
 	readvar VAR_WEEKDAY
 	ifequal THURSDAY, .ArthurAppears
 	disappear ROUTE36_ARTHUR
@@ -656,6 +693,67 @@ Route36TrainerTips2Text:
 	para "caves and other"
 	line "landmarks."
 	done
+	
+Route36FieldMon1Script:
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_1, Route36PokemonAttacksText, 28, 0, .script
+.script
+    disappear ROUTE36_FIELDMON_1
+    end
+
+Route36FieldMon2Script:
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route36PokemonAttacksText, 34, 0, .script
+.script
+    disappear ROUTE36_FIELDMON_2
+    end
+
+Route36PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route36FieldMon3Script:
+	faceplayer
+	cry HOUNDOUR
+	pause 15
+	loadwildmon HOUNDOUR, 22
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE36_FIELDMON_3
+	end
+
+Route36FieldMon4Script:
+	faceplayer
+	cry NIDOQUEEN
+	pause 15
+	loadwildmon NIDOQUEEN, 25
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE36_FIELDMON_4
+	end
+
+Route36FieldMon5Script:
+	faceplayer
+	cry NIDOKING
+	pause 15
+	loadwildmon NIDOKING, 25
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE36_FIELDMON_5
+	end
+
+Route36FieldMon6Script:
+	faceplayer
+	cry CUBONE
+	pause 15
+	loadwildmon TEDDIURSA, 26
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE36_FIELDMON_6
+	end
 
 Route36_MapEvents:
 	db 0, 0 ; filler
@@ -679,10 +777,17 @@ Route36_MapEvents:
 	def_object_events
 	object_event 14,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 35,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
+	object_event 35,  9, SPRITE_GENGAR, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
+	
+    object_event 10,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 17,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 17,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 31,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 26,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 26, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6

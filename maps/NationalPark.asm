@@ -1,8 +1,6 @@
 	object_const_def
 	const NATIONALPARK_LASS1
-	const NATIONALPARK_POKEFAN_F1
 	const NATIONALPARK_TEACHER1
-	const NATIONALPARK_YOUNGSTER1
 	const NATIONALPARK_YOUNGSTER2
 	const NATIONALPARK_TEACHER2
 	const NATIONALPARK_PERSIAN
@@ -10,14 +8,53 @@
 	const NATIONALPARK_POKEFAN_F2
 	const NATIONALPARK_POKEFAN_M
 	const NATIONALPARK_LASS2
-	const NATIONALPARK_POKE_BALL1
-	const NATIONALPARK_GAMEBOY_KID
 	const NATIONALPARK_POKE_BALL2
+	const NATIONALPARK_FIELDMON_1
+    const NATIONALPARK_FIELDMON_2
+    const NATIONALPARK_FIELDMON_3
+    const NATIONALPARK_FIELDMON_4
+    const NATIONALPARK_FIELDMON_5
+    const NATIONALPARK_FIELDMON_6
 
 NationalPark_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .NationalParkFieldMon
+
+.NationalParkFieldMon:
+; Pokemon which always appear
+    appear NATIONALPARK_FIELDMON_1
+    appear NATIONALPARK_FIELDMON_3
+    appear NATIONALPARK_FIELDMON_4
+    appear NATIONALPARK_FIELDMON_5
+
+; Pokemon that sometimes appear
+    random 8 ; shiny
+    ifequal 1, .spawn6
+    disappear NATIONALPARK_FIELDMON_6
+    sjump .checkNight
+.spawn6
+    appear NATIONALPARK_FIELDMON_6
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    random 2
+    ifequal 1, .spawn2
+    disappear NATIONALPARK_FIELDMON_2
+    sjump .disappear
+.spawn2
+    appear NATIONALPARK_FIELDMON_2
+
+.disappear
+; Pokemon that don't appear at night
+    disappear NATIONALPARK_FIELDMON_5
+
+.end
+    endcallback
 
 NationalParkLassScript:
 	jumptextfaceplayer NationalParkLassText
@@ -58,15 +95,6 @@ NationalParkPersian:
 	cry PERSIAN
 	waitbutton
 	closetext
-	end
-
-NationalParkGameboyKidScript:
-	faceplayer
-	opentext
-	writetext NationalParkGameboyKidText
-	waitbutton
-	closetext
-	turnobject NATIONALPARK_GAMEBOY_KID, DOWN
 	end
 
 TrainerSchoolboyJack1:
@@ -515,6 +543,68 @@ NationalParkTrainerTipsText:
 	cont "pressing START."
 	done
 
+NationalParkFieldMon1Script:
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, NationalParkPokemonAttacksText, 43, 0, .script
+.script
+    disappear NATIONALPARK_FIELDMON_1
+    end
+
+NationalParkFieldMon2Script:
+	trainer GARDEVOIR, FIELD_MON, EVENT_FIELD_MON_2, NationalParkPokemonAttacksText, 26, 0, .script
+.script
+    disappear NATIONALPARK_FIELDMON_2
+    end
+
+NationalParkPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+NationalParkFieldMon3Script:
+	faceplayer
+	cry KADABRA
+	pause 15
+	loadwildmon KADABRA, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear NATIONALPARK_FIELDMON_3
+	end
+
+NationalParkFieldMon4Script:
+	faceplayer
+	cry KIRLIA
+	pause 15
+	loadwildmon KIRLIA, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear NATIONALPARK_FIELDMON_4
+	end
+
+NationalParkFieldMon5Script:
+	faceplayer
+	cry HERACROSS
+	pause 15
+	loadwildmon HERACROSS, 25
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear NATIONALPARK_FIELDMON_5
+	end
+
+NationalParkFieldMon6Script:
+	faceplayer
+	cry TEDDIURSA
+	pause 15
+	loadwildmon TEDDIURSA, 24
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear NATIONALPARK_FIELDMON_6
+	end
+
 NationalPark_MapEvents:
 	db 0, 0 ; filler
 
@@ -534,16 +624,18 @@ NationalPark_MapEvents:
 
 	def_object_events
 	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
-	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanFScript, -1
 	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
-	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
 	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
-	object_event 26, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
+	object_event 26, 40, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
 	object_event 27, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
 	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
 	object_event  8, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
-	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
-	object_event 26,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
+    object_event 19,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 17, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 15, 41, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 27, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 27, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 18, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon6Script, EVENT_FIELD_MON_6

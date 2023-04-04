@@ -6,6 +6,14 @@
 	const ROUTE37_SUNNY
 	const ROUTE37_FRUIT_TREE2
 	const ROUTE37_FRUIT_TREE3
+	const ROUTE37_FIELDMON_1
+    const ROUTE37_FIELDMON_2
+    const ROUTE37_FIELDMON_3
+    const ROUTE37_FIELDMON_4
+    const ROUTE37_FIELDMON_5
+    const ROUTE37_FIELDMON_6
+    const ROUTE37_FIELDMON_7
+    const ROUTE37_FIELDMON_8
 
 Route37_MapScripts:
 	def_scene_scripts
@@ -14,6 +22,38 @@ Route37_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Sunny
 
 .Sunny:
+; Pokemon which always appear
+    appear ROUTE37_FIELDMON_1
+    appear ROUTE37_FIELDMON_2
+    appear ROUTE37_FIELDMON_3
+    appear ROUTE37_FIELDMON_4
+    appear ROUTE37_FIELDMON_7
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn5
+    disappear ROUTE37_FIELDMON_5
+    sjump .mon6
+.spawn5
+    appear ROUTE37_FIELDMON_5
+
+.mon6
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE37_FIELDMON_6
+    sjump .mon8
+.spawn6
+    appear ROUTE37_FIELDMON_6
+
+.mon8
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE37_FIELDMON_8
+    sjump .sun
+.spawn8
+    appear ROUTE37_FIELDMON_8
+
+.sun
 	readvar VAR_WEEKDAY
 	ifequal SUNDAY, .SunnyAppears
 	disappear ROUTE37_SUNNY
@@ -235,6 +275,80 @@ Route37SignText:
 	text "ROUTE 37"
 	done
 
+Route37FieldMon1Script:
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, Route37PokemonAttacksText, 41, 0, .script
+.script
+    disappear ROUTE37_FIELDMON_1
+    end
+
+Route37FieldMon2Script:
+	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_2, Route37PokemonAttacksText, 34, 0, .script
+.script
+    disappear ROUTE37_FIELDMON_2
+    end
+
+Route37FieldMon3Script:
+	trainer LAMPENT, FIELD_MON, EVENT_FIELD_MON_3, Route37PokemonAttacksText, 30, 0, .script
+.script
+    disappear ROUTE37_FIELDMON_3
+    end
+
+Route37FieldMon4Script:
+	trainer DOUBLADE, FIELD_MON, EVENT_FIELD_MON_4, Route37PokemonAttacksText, 30, 0, .script
+.script
+    disappear ROUTE37_FIELDMON_4
+    end
+
+Route37PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route37FieldMon5Script:
+	faceplayer
+	cry ROTOM
+	pause 15
+	loadwildmon ROTOM, 26
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE37_FIELDMON_5
+	end
+
+Route37FieldMon6Script:
+	faceplayer
+	cry POLTEGEIST
+	pause 15
+	loadwildmon POLTEGEIST, 26
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE37_FIELDMON_6
+	end
+
+Route37FieldMon7Script:
+	faceplayer
+	cry MISDREAVUS
+	pause 15
+	loadwildmon MISDREAVUS, 24
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE37_FIELDMON_7
+	end
+
+Route37FieldMon8Script:
+	faceplayer
+	cry HAUNTER
+	pause 15
+	loadwildmon HAUNTER, 24
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE37_FIELDMON_8
+	end
+
 Route37_MapEvents:
 	db 0, 0 ; filler
 
@@ -243,14 +357,23 @@ Route37_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  5,  3, BGEVENT_READ, Route37Sign
-	bg_event  4,  2, BGEVENT_ITEM, Route37HiddenEther
+	bg_event  9,  3, BGEVENT_READ, Route37Sign
+	bg_event  8, 12, BGEVENT_ITEM, Route37HiddenEther
 
 	def_object_events
-	object_event  6, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1
-	object_event  7, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne2, -1
-	object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicGreg, -1
-	object_event 13,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree1, -1
-	object_event 16,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY
-	object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1
-	object_event 15,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree3, -1
+	object_event 10, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1
+	object_event 11, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne2, -1
+	object_event 10,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicGreg, -1
+	object_event 17,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree1, -1
+	object_event 20,  7, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY
+	object_event 20,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1
+	object_event 19,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree3, -1
+	
+    object_event 23, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 27, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 8,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 18,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 4,   5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route37FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 1,   9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route37FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 15, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route37FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 2,  19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route37FieldMon8Script, EVENT_FIELD_MON_8

@@ -748,12 +748,19 @@ Route36FieldMon6Script:
 	faceplayer
 	cry CUBONE
 	pause 15
-	loadwildmon TEDDIURSA, 26
+	loadwildmon CUBONE, 26
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
 	disappear ROUTE36_FIELDMON_6
 	end
+
+ReloadMapRoute36Script:
+    checktime NITE
+    iftrue .end
+	reloadmap
+.end
+    end
 
 Route36_MapEvents:
 	db 0, 0 ; filler
@@ -765,11 +772,13 @@ Route36_MapEvents:
 	warp_event 48, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 2
 
 	def_coord_events
+	coord_event 30, 0, SCENE_ALWAYS, ReloadMapRoute36Script
+	coord_event 31, 0, SCENE_ALWAYS, ReloadMapRoute36Script
 	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 
 	def_bg_events
-	bg_event 29,  1, BGEVENT_READ, Route36TrainerTips2
+	bg_event 29,  3, BGEVENT_READ, Route36TrainerTips2
 	bg_event 45, 11, BGEVENT_READ, RuinsOfAlphNorthSign
 	bg_event 55,  7, BGEVENT_READ, Route36Sign
 	bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1
@@ -785,9 +794,9 @@ Route36_MapEvents:
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
 	
-    object_event 10,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 10,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 17,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 17,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 31,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 26,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon5Script, EVENT_FIELD_MON_5
-	object_event 26, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 26, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6

@@ -1487,7 +1487,7 @@ MiloticEvosAttacks:
 	db 30, RECOVER
 	db 36, AURORA_BEAM
 	db 40, SURF
-	db 44, RAIN_DANCE
+	db 44, RECOVER
 	db 50, HYDRO_PUMP
 	db 55, CALM_MIND
 	db 0 ; no more level-up moves

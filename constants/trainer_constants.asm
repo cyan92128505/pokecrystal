@@ -31,6 +31,7 @@ KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 	const MASTER_FALKNER
+	const STEVEN
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
@@ -51,6 +52,7 @@ KRIS EQU __trainer_class__
 	trainerclass JASMINE ; 6
 	const JASMINE1
 	const MASTER_JASMINE
+	const CYNTHIA
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -727,6 +729,7 @@ KRIS EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 	const EUSINE_SILVER_CAVE
+	const WALLACE
 
     trainerclass INVADER ; 44
     const GIANT_DAD

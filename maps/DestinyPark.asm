@@ -699,6 +699,14 @@ RayquazaGiratinaBlockText:
     para "May pass."
     done
 
+GiovanniBlockScript:
+    checkevent EVENT_BEAT_MASTER_GIOVANNI
+    iffalse .fight
+    end
+.fight
+    turnobject PLAYER, LEFT
+    sjump MasterGiovanniScript
+
 Movement_DestinyParkTurnBack:
 	step DOWN
 	step_end
@@ -769,6 +777,8 @@ DestinyPark_MapEvents:
 	coord_event 7, 29, SCENE_ALWAYS, GroudonKyogreBlockScript
 	coord_event 7, 21, SCENE_ALWAYS, PalkiaDialgaBlockScript
 	coord_event 7, 13, SCENE_ALWAYS, RayquazaGiratinaBlockScript
+	coord_event 6, 10, SCENE_ALWAYS, GiovanniBlockScript
+	coord_event 7, 10, SCENE_ALWAYS, GiovanniBlockScript
 
 	def_bg_events
 
@@ -788,4 +798,4 @@ DestinyPark_MapEvents:
 	object_event 13, 26, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJasmineScript, -1
 	object_event 2, 15, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterPryceScript, -1
 	object_event 6, 13, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
-	object_event 6, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterGiovanniScript, -1
+	object_event  5, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterGiovanniScript, -1

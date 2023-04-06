@@ -256,6 +256,13 @@ BurnedTowerSignText:
 	line "as it is unsafe."
 	done
 
+ReloadMapEcruteakScript:
+    checktime NITE
+    iftrue .end
+	reloadmap
+.end
+    end
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -277,6 +284,8 @@ EcruteakCity_MapEvents:
 	warp_event  0, 19, ROUTE_38_ECRUTEAK_GATE, 4
 
 	def_coord_events
+	coord_event 17, 35, SCENE_ALWAYS, ReloadMapEcruteakScript
+	coord_event 18, 35, SCENE_ALWAYS, ReloadMapEcruteakScript
 
 	def_bg_events
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign

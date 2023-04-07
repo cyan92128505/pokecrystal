@@ -15,8 +15,8 @@ MountMortarB1F_MapScripts:
 MountMortarB1FKiyoScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_DIALGA_FROM_KIYO
-	iftrue .GotDialga
+	checkevent EVENT_GOT_LUCARIO_FROM_KIYO
+	iftrue .GotLucario
 	checkevent EVENT_BEAT_BLACKBELT_KIYO
 	iftrue .BeatKiyo
 	writetext MountMortarB1FKiyoIntroText
@@ -29,24 +29,16 @@ MountMortarB1FKiyoScript:
 	setevent EVENT_BEAT_BLACKBELT_KIYO
 	opentext
 .BeatKiyo:
-	writetext MountMortarB1FDialgaRewardText
+	writetext MountMortarB1FLucarioRewardText
 	promptbutton
 	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
 	writetext MountMortarB1FReceiveMonText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke LUCARIO, 30
-	setevent EVENT_GOT_DIALGA_FROM_KIYO
-.GotDialga:
-	writetext MountMortarB1FKiyoGotDialgaText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext MountMortarB1FKiyoFullPartyText
+	givepoke LUCARIO, 50
+	setevent EVENT_GOT_LUCARIO_FROM_KIYO
+.GotLucario:
+	writetext MountMortarB1FKiyoGotLucarioText
 	waitbutton
 	closetext
 	end
@@ -92,7 +84,7 @@ MountMortarB1FKiyoWinText:
 	line "I'm beaten!"
 	done
 
-MountMortarB1FDialgaRewardText:
+MountMortarB1FLucarioRewardText:
 	text "I… I'm crushed…"
 
 	para "My training is"
@@ -110,19 +102,18 @@ MountMortarB1FDialgaRewardText:
 
 MountMortarB1FReceiveMonText:
 	text "<PLAYER> received"
-	line "DIALGA."
+	line "LUCARIO."
 	done
 
-MountMortarB1FKiyoGotDialgaText:
-	text "DIALGA is a"
+MountMortarB1FKiyoGotLucarioText:
+	text "Lucario is a"
 	line "fighting-type."
 
-	para "It evolves into a"
-	line "tougher #MON."
+	para "It is a"
+	line "strong #MON."
 
-	para "Keep up the hard"
-	line "work. I'll keep"
-	cont "training too."
+	para "It will take you"
+	line "to greatness!"
 
 	para "Farewell!"
 	done

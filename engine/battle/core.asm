@@ -690,6 +690,8 @@ ParsePlayerAction:
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_PROTECT
 	jr z, .continue_protect
+	cp EFFECT_KINGS_SHIELD
+	jr z, .continue_protect
 	cp EFFECT_ENDURE
 	jr z, .continue_protect
 	xor a
@@ -860,8 +862,6 @@ GetPlayerMovePriority:
 	jr z, .noPrankster
 	cp ROAR
 	jr z, .noPrankster
-	cp WHIRLWIND
-	jr z, .noPrankster
 
 ; AndrewNote - prankster
 ; ===== Prankster =======
@@ -916,8 +916,6 @@ GetEnemyMovePriority:
 	cp MIRROR_COAT
 	jr z, .noPrankster
 	cp ROAR
-	jr z, .noPrankster
-	cp WHIRLWIND
 	jr z, .noPrankster
 
 ; AndrewNote - prankster

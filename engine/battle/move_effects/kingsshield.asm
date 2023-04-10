@@ -1,5 +1,6 @@
 BattleCommand_KingsShield:
     call BattleCommand_Protect
+    ret c
     ldh a, [hBattleTurn]
 	and a
 	ld a, [wPlayerSDefLevel]

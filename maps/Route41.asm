@@ -9,11 +9,42 @@
 	const ROUTE41_SWIMMER_GIRL3
 	const ROUTE41_SWIMMER_GIRL4
 	const ROUTE41_SWIMMER_GIRL5
+	const ROUTE41_FIELDMON_1
+    const ROUTE41_FIELDMON_2
+    const ROUTE41_FIELDMON_3
+    const ROUTE41_FIELDMON_4
+    const ROUTE41_FIELDMON_5
+    const ROUTE41_FIELDMON_6
 
 Route41_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route41FieldMon
+
+.Route41FieldMon:
+; Pokemon which always appear
+    appear ROUTE41_FIELDMON_1
+    appear ROUTE41_FIELDMON_2
+    appear ROUTE41_FIELDMON_3
+    appear ROUTE41_FIELDMON_4
+
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE41_FIELDMON_5
+    sjump .mon8
+.spawn7
+    appear ROUTE41_FIELDMON_5
+
+.mon8
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE41_FIELDMON_6
+    sjump .end
+.spawn8
+    appear ROUTE41_FIELDMON_6
+.end
+    endcallback
 
 TrainerSwimmerfKaylee:
 	trainer SWIMMERF, KAYLEE, EVENT_BEAT_SWIMMERF_KAYLEE, SwimmerfKayleeSeenText, SwimmerfKayleeBeatenText, 0, .Script
@@ -338,6 +369,58 @@ SwimmerfWendyAfterBattleText:
 	line "it's scary."
 	done
 
+Route41FieldMon1Script:
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, Route41PokemonAttacksText, 46, 0, .script
+.script
+    disappear ROUTE41_FIELDMON_1
+    end
+
+Route41FieldMon2Script:
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, Route41PokemonAttacksText, 48, 0, .script
+.script
+    disappear ROUTE41_FIELDMON_2
+    end
+
+Route41FieldMon3Script:
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, Route41PokemonAttacksText, 48, 0, .script
+.script
+    disappear ROUTE41_FIELDMON_3
+    end
+
+Route41FieldMon4Script:
+	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_4, Route41PokemonAttacksText, 65, 0, .script
+.script
+    disappear ROUTE41_FIELDMON_4
+    end
+
+Route41PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route41FieldMon5Script:
+	faceplayer
+	cry MILOTIC
+	pause 15
+	loadwildmon MILOTIC, 55
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE41_FIELDMON_5
+	end
+
+Route41FieldMon6Script:
+	faceplayer
+	cry LAPRAS
+	pause 15
+	loadwildmon LAPRAS, 40
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE41_FIELDMON_6
+	end
+
 Route41_MapEvents:
 	db 0, 0 ; filler
 
@@ -363,3 +446,9 @@ Route41_MapEvents:
 	object_event 27, 34, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDenise, -1
 	object_event 44, 28, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfKara, -1
 	object_event  9, 50, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSwimmerfWendy, -1
+	object_event 40,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route41FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  7,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route41FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 47,  26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route41FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 22,  27, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route41FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 26,  50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route41FieldMon5Script, EVENT_FIELD_MON_5
+	object_event  4, 38, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route41FieldMon6Script, EVENT_FIELD_MON_6

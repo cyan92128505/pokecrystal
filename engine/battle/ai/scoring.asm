@@ -1398,25 +1398,23 @@ AI_Smart_ForceSwitch:
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
 	jr nz, .encourage
-; encourage this move if any of player's stat levels are boosted.
-	ld hl, wPlayerAtkLevel
-	ld c, NUM_LEVEL_STATS
-.playerstatsloop
-	dec c
-	jr z, .discourage
-	ld a, [hli]
-	cp BASE_STAT_LEVEL + 1
-	jr c, .playerstatsloop
-	dec [hl]
-	dec [hl]
-.encourage
-	dec [hl]
-	ret
+; encourage this move if the player's attack levels are boosted.
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
+
 .discourage
     inc [hl]
     inc [hl]
     inc [hl]
     ret
+.encourage
+	dec [hl]
+	ret
+
 
 AI_Smart_Heal:
 AI_Smart_MorningSun:
@@ -4159,7 +4157,7 @@ AI_Smart_LesserStatChange:
 ShouldAIBoost:
 ; if evasion is >= +4 then go for the boost - only used by Patches
 	ld a, [wEnemyEvaLevel]
-	cp BASE_STAT_LEVEL + 4
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .boost
 
 ; if the player has roar/whirlwind and we aren't immune to it then 50% to not boost

@@ -11,6 +11,10 @@
 	const ROUTE40_POKEFAN_M
 	const ROUTE40_LASS2
 	const ROUTE40_STANDING_YOUNGSTER
+    const AREA_FIELDMON_1
+    const AREA_FIELDMON_2
+    const AREA_FIELDMON_3
+    const AREA_FIELDMON_4
 
 Route40_MapScripts:
 	def_scene_scripts
@@ -19,6 +23,12 @@ Route40_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .MonicaCallback
 
 .MonicaCallback:
+; Pokemon which always appear
+    appear AREA_FIELDMON_1
+    appear AREA_FIELDMON_2
+    appear AREA_FIELDMON_3
+    appear AREA_FIELDMON_4
+
 	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .MonicaAppears
@@ -335,6 +345,40 @@ Route40SignText:
 	line "OLIVINE CITY"
 	done
 
+AreaFieldMon1Script:
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, AreaPokemonAttacksText, 37, 0, .script
+.script
+    disappear AREA_FIELDMON_1
+    end
+
+AreaFieldMon2Script:
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, AreaPokemonAttacksText, 45, 0, .script
+.script
+    disappear AREA_FIELDMON_2
+    end
+
+AreaFieldMon3Script:
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_3, AreaPokemonAttacksText, 44, 0, .script
+.script
+    disappear AREA_FIELDMON_3
+    end
+
+AreaPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+AreaFieldMon4Script:
+	faceplayer
+	cry GOLDUCK
+	pause 15
+	loadwildmon GOLDUCK, 30
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear AREA_FIELDMON_4
+	end
+
 Route40_MapEvents:
 	db 0, 0 ; filler
 
@@ -360,3 +404,7 @@ Route40_MapEvents:
 	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40PokefanMScript, -1
 	object_event 13,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40Lass2Script, -1
 	object_event 16,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event 10, 21, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, AreaFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  3, 30, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, AreaFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 14, 32, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, AreaFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 13, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AreaFieldMon4Script, EVENT_FIELD_MON_4

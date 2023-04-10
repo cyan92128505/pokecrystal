@@ -114,7 +114,7 @@ ENDM
 	connection east, Route33, ROUTE_33, 0
 
 	map_attributes CianwoodCity, CIANWOOD_CITY, $35, EAST
-	connection east, Route41, ROUTE_41, 0
+	connection east, Route41, ROUTE_41, 4
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $35, NORTH | SOUTH
 	connection north, Route35, ROUTE_35, 5
@@ -206,7 +206,7 @@ ENDM
 
 	map_attributes Route41, ROUTE_41, $35, NORTH | WEST
 	connection north, Route40, ROUTE_40, 15
-	connection west, CianwoodCity, CIANWOOD_CITY, 0
+	connection west, CianwoodCity, CIANWOOD_CITY, -4
 
 	map_attributes Route42, ROUTE_42, $05, WEST | EAST
 	connection west, EcruteakCity, ECRUTEAK_CITY, -9

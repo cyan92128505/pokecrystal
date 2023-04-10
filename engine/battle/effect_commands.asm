@@ -2396,14 +2396,15 @@ FailText_CheckOpponentProtect:
 	jp StdBattleTextbox
 
 BattleCommand_BideFailText:
-	ld a, [wAttackMissed]
-	and a
-	ret z
+    ret
+	;ld a, [wAttackMissed]
+	;and a
+	;ret z
 
-	ld a, [wTypeModifier]
-	and $7f
-	jp z, PrintDoesntAffect
-	jp PrintButItFailed
+	;ld a, [wTypeModifier]
+	;and $7f
+	;jp z, PrintDoesntAffect
+	;jp PrintButItFailed
 
 BattleCommand_CriticalText:
 ; criticaltext

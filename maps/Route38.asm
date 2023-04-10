@@ -6,11 +6,71 @@
 	const ROUTE38_SAILOR
 	const ROUTE38_FRUIT_TREE
 	const ROUTE38_BEAUTY2
+	const ROUTE38_FIELDMON_1
+    const ROUTE38_FIELDMON_2
+    const ROUTE38_FIELDMON_3
+    const ROUTE38_FIELDMON_4
+    const ROUTE38_FIELDMON_5
+    const ROUTE38_FIELDMON_6
+    const ROUTE38_FIELDMON_7
+    const ROUTE38_FIELDMON_8
 
 Route38_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route38FieldMon
+
+.Route38FieldMon:
+; Pokemon which always appear
+    appear ROUTE38_FIELDMON_1
+    appear ROUTE38_FIELDMON_3
+    appear ROUTE38_FIELDMON_4
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn5
+    disappear ROUTE38_FIELDMON_5
+    sjump .mon6
+.spawn5
+    appear ROUTE38_FIELDMON_5
+
+.mon6
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE38_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear ROUTE38_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE38_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear ROUTE38_FIELDMON_7
+
+.mon8
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE38_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE38_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    appear ROUTE38_FIELDMON_2
+
+; Pokemon that don't appear at night
+    disappear ROUTE38_FIELDMON_7
+
+.end
+    endcallback
 
 TrainerBirdKeeperToby:
 	trainer BIRD_KEEPER, TOBY, EVENT_BEAT_BIRD_KEEPER_TOBY, BirdKeeperTobySeenText, BirdKeeperTobyBeatenText, 0, .Script
@@ -470,6 +530,90 @@ Route38TrainerTipsText:
 	cont "its evolution."
 	done
 
+Route38FieldMon1Script:
+	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 44, 0, .script
+.script
+    disappear ROUTE38_FIELDMON_1
+    end
+
+Route38FieldMon2Script:
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route38PokemonAttacksText, 46, 0, .script
+.script
+    disappear ROUTE38_FIELDMON_2
+    end
+
+Route38PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route38FieldMon3Script:
+	faceplayer
+	cry MILTANK
+	pause 15
+	loadwildmon MILTANK, 28
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE38_FIELDMON_3
+	end
+
+Route38FieldMon4Script:
+	faceplayer
+	cry MAGNETON
+	pause 15
+	loadwildmon MAGNETON, 27
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE38_FIELDMON_4
+	end
+
+Route38FieldMon5Script:
+	faceplayer
+	cry KLEFKI
+	pause 15
+	loadwildmon KLEFKI, 25
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE38_FIELDMON_5
+	end
+
+Route38FieldMon6Script:
+	faceplayer
+	cry METANG
+	pause 15
+	loadwildmon METANG, 28
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE38_FIELDMON_6
+	end
+
+Route38FieldMon7Script:
+	faceplayer
+	cry FERROTHORN
+	pause 15
+	loadwildmon FERROTHORN, 30
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE38_FIELDMON_7
+	end
+
+Route38FieldMon8Script:
+	faceplayer
+	cry BELDUM
+	pause 15
+	loadwildmon BELDUM, 24
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE38_FIELDMON_8
+	end
+
 Route38_MapEvents:
 	db 0, 0 ; filler
 
@@ -491,3 +635,11 @@ Route38_MapEvents:
 	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
 	object_event  5,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
+    object_event 31, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route38FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 11,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route38FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 6,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route38FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 27,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route38FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 14,  10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route38FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 10,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route38FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 19, 2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route38FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 8,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route38FieldMon8Script, EVENT_FIELD_MON_8

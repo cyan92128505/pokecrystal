@@ -2,18 +2,55 @@
 	const ROUTE39_SAILOR
 	const ROUTE39_POKEFAN_M
 	const ROUTE39_POKEFAN_F1
-	const ROUTE39_MILTANK1
-	const ROUTE39_MILTANK2
-	const ROUTE39_MILTANK3
-	const ROUTE39_MILTANK4
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
+	const ROUTE39_FIELDMON_1
+    const ROUTE39_FIELDMON_2
+    const ROUTE39_FIELDMON_3
+    const ROUTE39_FIELDMON_4
+    const ROUTE39_FIELDMON_5
+    const ROUTE39_FIELDMON_6
+    const ROUTE39_FIELDMON_7
+    const ROUTE39_FIELDMON_8
 
 Route39_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route39FieldMon
+
+.Route39FieldMon:
+; Pokemon which always appear
+    appear ROUTE39_FIELDMON_1
+    appear ROUTE39_FIELDMON_3
+    appear ROUTE39_FIELDMON_5
+    appear ROUTE39_FIELDMON_6
+    appear ROUTE39_FIELDMON_7
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE39_FIELDMON_4
+    sjump .mon7
+.spawn6
+    appear ROUTE39_FIELDMON_4
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE39_FIELDMON_8
+    sjump .checkNight
+.spawn7
+    appear ROUTE39_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+    appear ROUTE39_FIELDMON_2
+.end
+    endcallback
 
 Route39Miltank:
 	opentext
@@ -345,6 +382,80 @@ Route39TrainerTipsText:
 	line "any tree you see!"
 	done
 
+Route39FieldMon1Script:
+	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route39PokemonAttacksText, 35, 0, .script
+.script
+    disappear ROUTE39_FIELDMON_1
+    end
+
+Route39FieldMon2Script:
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route39PokemonAttacksText, 43, 0, .script
+.script
+    disappear ROUTE39_FIELDMON_2
+    end
+
+Route39FieldMon3Script:
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route39PokemonAttacksText, 36, 0, .script
+.script
+    disappear ROUTE39_FIELDMON_3
+    end
+
+Route39FieldMon4Script:
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_4, Route39PokemonAttacksText, 42, 0, .script
+.script
+    disappear ROUTE39_FIELDMON_4
+    end
+
+Route39PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route39FieldMon5Script:
+	faceplayer
+	cry ARCANINE
+	pause 15
+	loadwildmon ARCANINE, 51
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE39_FIELDMON_5
+	end
+
+Route39FieldMon6Script:
+	faceplayer
+	cry MILTANK
+	pause 15
+	loadwildmon MILTANK, 28
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE39_FIELDMON_6
+	end
+
+Route39FieldMon7Script:
+	faceplayer
+	cry MILTANK
+	pause 15
+	loadwildmon MILTANK, 30
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE39_FIELDMON_7
+	end
+
+Route39FieldMon8Script:
+	faceplayer
+	cry SKARMORY
+	pause 15
+	loadwildmon SKARMORY, 27
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE39_FIELDMON_8
+	end
+
+
 Route39_MapEvents:
 	db 0, 0 ; filler
 
@@ -364,10 +475,18 @@ Route39_MapEvents:
 	object_event 19, 29, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderParryKingScript, -1
 	object_event 16, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, -1
 	object_event 17, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, -1
-	object_event  9, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 12, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 10, 15, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 14, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
+	;object_event  9, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
+	;object_event 12, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
+	;object_event 10, 15, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
+	;object_event 14, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event 19,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
 	object_event 15,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event 10, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+	object_event 2, 11, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 2,  20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 4,  22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 13, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route39FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 3,  14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 9,  12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 13, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 10, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39FieldMon8Script, EVENT_FIELD_MON_8

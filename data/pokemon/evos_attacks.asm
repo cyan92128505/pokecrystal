@@ -1315,7 +1315,7 @@ GliscorEvosAttacks:
 	db 0 ; no more level-up moves
 
 FerroseedEvosAttacks:
-	db EVOLVE_LEVEL, 35, FERROTHORN
+	db EVOLVE_LEVEL, 30, FERROTHORN
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
@@ -2453,23 +2453,23 @@ HoothootEvosAttacks:
 	db 26, TAKE_DOWN
 	db 30, ZEN_HEADBUTT
 	db 34, PSYCHIC_M
-	db 48, DREAM_EATER
+	db 40, DREAM_EATER
+	db 45, HURRICANE
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, FORESIGHT
-	db 1, PECK
 	db 6, FORESIGHT
 	db 11, PECK
 	db 16, HYPNOSIS
-	db 25, REFLECT
-	db 27, TAKE_DOWN
+	db 22, REFLECT
+	db 26, TAKE_DOWN
 	db 30, ZEN_HEADBUTT
-	db 41, PSYCHIC_M
-	db 57, DREAM_EATER
+	db 34, PSYCHIC_M
+	db 40, DREAM_EATER
+	db 45, HURRICANE
 	db 0 ; no more level-up moves
 
 DrilburEvosAttacks:

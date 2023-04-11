@@ -16,6 +16,9 @@ HallOfOrigin_MapScripts:
 	endcallback
 
 .ArceusAndOak
+	setval WEATHER_NONE
+	writemem wFieldWeather
+
     setval ARCEUS
 	special MonCheck
 	iftrue .hasArceus

@@ -2,6 +2,12 @@ OriginRoad_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Weather
+
+.Weather:
+	setval WEATHER_NONE
+	writemem wFieldWeather
+	endcallback
 
 ;InvaderMasterPatches:
 ;	trainer INVADER, MASTER_PATCHES, EVENT_BEAT_MASTER_PATCHES, InvaderMasterPatchesSeenText, InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText, .Script

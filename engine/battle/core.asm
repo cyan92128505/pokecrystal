@@ -113,6 +113,7 @@ DoBattle:
 	call SwitchInEffects
 
 .not_linked_2
+    call FieldWeather
 	jp BattleTurn
 
 .tutorial_debug
@@ -1938,6 +1939,28 @@ HandleWeather:
 	dec [hl]
 	jp z, .ended
 
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr z, .rain
+	cp WEATHER_SUN
+	jr z, .sun
+	cp WEATHER_SANDSTORM
+	jr z, .sand
+	ret
+
+.sand
+    ld de, ANIM_IN_SANDSTORM
+    jr .playAnim
+.rain
+	ld de, RAIN_DANCE
+	jr .playAnim
+.sun
+    ld de, SUNNY_DAY
+.playAnim
+    xor a
+	ld [wNumHits], a
+	call Call_PlayBattleAnim
+
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
@@ -2160,24 +2183,24 @@ GetMaxHP:
 	ld c, a
 	ret
 
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
-	ret
+;GetHalfHP: ; unreferenced
+;	ld hl, wBattleMonHP
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .ok
+;	ld hl, wEnemyMonHP
+;.ok
+;	ld a, [hli]
+;	ld b, a
+;	ld a, [hli]
+;	ld c, a
+;	srl b
+;	rr c
+;	ld a, [hli]
+;	ld [wHPBuffer1 + 1], a
+;	ld a, [hl]
+;	ld [wHPBuffer1], a
+;	ret
 
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
@@ -4457,6 +4480,43 @@ SpikesDamage:
 .hl
 	jp hl
 
+FieldWeather:
+; is weather already set up
+    ld a, [wBattleWeather]
+	cp WEATHER_NONE
+	jr nz, .doWeather
+
+; set weather and count to 255 turns
+    ld a, 255
+	ld [wWeatherCount], a
+	ld a, [wFieldWeather]
+    ld [wBattleWeather], a
+.doWeather
+    cp WEATHER_RAIN
+    jr z, .rain
+    cp WEATHER_SUN
+    jr z, .sun
+    cp WEATHER_SANDSTORM
+    jr z, .sand
+    ret
+
+.sand
+	ld de, ANIM_IN_SANDSTORM
+	call Call_PlayBattleAnim
+	ld hl, SandstormBrewedText
+	jp StdBattleTextbox
+
+.rain
+	ld de, RAIN_DANCE
+	call Call_PlayBattleAnim
+	ld hl, DownpourText
+	jp StdBattleTextbox
+.sun
+	ld de, SUNNY_DAY
+	call Call_PlayBattleAnim
+	ld hl, SunGotBrightText
+	jp StdBattleTextbox
+
 ; AndrewNote - function for Pokemon with effects on switching in
 SwitchInEffects:
 	xor a
@@ -4563,40 +4623,22 @@ SwitchInEffects:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ld a, [wBattleHasJustStarted]
-	and a
-	jr nz, .skipRainAnim
-	ld de, RAIN_DANCE
-    call Call_PlayBattleAnim
-.skipRainAnim
-	ld hl, DownpourText
-	jp StdBattleTextbox
+	ret
+
 .sun
     ld a, WEATHER_SUN
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ld a, [wBattleHasJustStarted]
-	and a
-	jr nz, .skipSunAnim
-	ld de, SUNNY_DAY
-    call Call_PlayBattleAnim
-.skipSunAnim
-	ld hl, SunGotBrightText
-	jp StdBattleTextbox
+	ret
+
 .sand
     ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ld a, [wBattleHasJustStarted]
-	and a
-	jr nz, .skipSandAnim
-	ld de, SANDSTORM
-    call Call_PlayBattleAnim
-.skipSandAnim
-	ld hl, SandstormBrewedText
-	jp StdBattleTextbox
+	ret
+
 .clear
 	ld a, 1
 	ld [wWeatherCount], a
@@ -7057,16 +7099,16 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
+;SwapBattlerLevels: ; unreferenced ; AndrewNote - WFT would this be used for
+;	push bc
+;	ld a, [wBattleMonLevel]
+;	ld b, a
+;	ld a, [wEnemyMonLevel]
+;	ld [wBattleMonLevel], a
+;	ld a, b
+;	ld [wEnemyMonLevel], a
+;	pop bc
+;	ret
 
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
@@ -7330,19 +7372,19 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
+;LoadHPExpBarGFX: ; unreferenced
+;	ld de, EnemyHPBarBorderGFX
+;	ld hl, vTiles2 tile $6c
+;	lb bc, BANK(EnemyHPBarBorderGFX), 4
+;	call Get1bpp
+;	ld de, HPExpBarBorderGFX
+;	ld hl, vTiles2 tile $73
+;	lb bc, BANK(HPExpBarBorderGFX), 6
+;	call Get1bpp
+;	ld de, ExpBarGFX
+;	ld hl, vTiles2 tile $55
+;	lb bc, BANK(ExpBarGFX), 8
+;	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -8288,45 +8330,43 @@ GoodComeBackText:
 	text_far _GoodComeBackText
 	text_end
 
-TextJump_ComeBack: ; unreferenced
-	ld hl, ComeBackText
-	ret
+;TextJump_ComeBack: ; unreferenced
+;	ld hl, ComeBackText
+;	ret
 
 ComeBackText:
 	text_far _ComeBackText
 	text_end
 
-HandleSafariAngerEatingStatus: ; unreferenced
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl
-	assert wSafariMonEating - 1 == wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call SafeLoadTempTilemapToTilemap
-	pop hl
-	jp StdBattleTextbox
+;HandleSafariAngerEatingStatus: ; unreferenced
+;	ld hl, wSafariMonEating
+;	ld a, [hl]
+;	and a
+;	jr z, .angry
+;	dec [hl]
+;	ld hl, BattleText_WildMonIsEating
+;	jr .finish
+;.angry
+;	dec hl
+;	assert wSafariMonEating - 1 == wSafariMonAngerCount
+;	ld a, [hl]
+;	and a
+;	ret z
+;	dec [hl]
+;	ld hl, BattleText_WildMonIsAngry
+;	jr nz, .finish
+;	push hl
+;	ld a, [wEnemyMonSpecies]
+;	ld [wCurSpecies], a
+;	call GetBaseData
+;	ld a, [wBaseCatchRate]
+;	ld [wEnemyMonCatchRate], a
+;	pop hl
+;.finish
+;	push hl
+;	call SafeLoadTempTilemapToTilemap
+;	pop hl
+;	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl
@@ -8554,9 +8594,9 @@ StartBattle:
 	scf
 	ret
 
-CallDoBattle: ; unreferenced
-	call DoBattle
-	ret
+;CallDoBattle: ; unreferenced
+;	call DoBattle
+;	ret
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
@@ -8750,39 +8790,34 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_PP
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
+;FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
+;	ld hl, wEnemyMonMoves
+;	ld de, wListMoves_MoveIndicesBuffer
+;	ld b, NUM_MOVES
+;.loop
+;	ld a, [de]
+;	inc de
+;	ld [hli], a
+;	and a
+;	jr z, .clearpp
+;	push bc
+;	push hl
+;	push hl
+;	dec a
+;	ld hl, Moves + MOVE_PP
+;	ld bc, MOVE_LENGTH
+;	call AddNTimes
+;	ld a, BANK(Moves)
+;	call GetFarByte
+;	pop hl
+;	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
+;	add hl, bc
+;	ld [hl], a
+;	pop hl
+;	pop bc
+;	dec b
+;	jr nz, .loop
+;	ret
 
 .clear
 	xor a

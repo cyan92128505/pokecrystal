@@ -23,6 +23,12 @@ NationalPark_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .NationalParkFieldMon
 
 .NationalParkFieldMon:
+    checktime NITE
+    iftrue .skipWeather
+	setval WEATHER_SUN
+	writemem wFieldWeather
+.skipWeather
+
 ; Pokemon which always appear
     appear NATIONALPARK_FIELDMON_1
     appear NATIONALPARK_FIELDMON_3

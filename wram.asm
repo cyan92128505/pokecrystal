@@ -3000,7 +3000,15 @@ wHallOfFameCount:: db
 wRepulsorToggle:: db
 wTradeFlags:: flag_array NUM_NPC_TRADES
 	ds 1
-wMooMooBerries:: db
+;wMooMooBerries:: db
+
+wFieldWeather::
+; 00 normal
+; 01 rain
+; 02 sun
+; 03 sandstorm
+	db
+
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 

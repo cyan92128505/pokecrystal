@@ -8,6 +8,7 @@ KogasRoom_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .KogasRoomDoors
+	callback MAPCALLBACK_OBJECTS, .Weather
 
 .LockDoor:
 	sdefer .KogasDoorLocksBehindYou
@@ -40,7 +41,12 @@ KogasRoom_MapScripts:
 	waitsfx
 	end
 
-KogaScript_Battle:
+.Weather:
+	setval WEATHER_RAIN
+	writemem wFieldWeather
+	endcallback
+
+AdamScript_Battle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_KOGA
@@ -147,4 +153,4 @@ KogasRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogaScript_Battle, -1
+	object_event  5,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AdamScript_Battle, -1

@@ -8,6 +8,12 @@ TinTowerRoof_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .HoOh
 
 .HoOh:
+    checktime NITE
+    iftrue .skipWeather
+	setval WEATHER_SUN
+	writemem wFieldWeather
+.skipWeather
+
 	setval HO_OH
 	special MonCheck
 	iftrue .NoAppear

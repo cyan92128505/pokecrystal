@@ -13,6 +13,12 @@ Route43_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .CheckIfRockets
+	callback MAPCALLBACK_OBJECTS, .Weather
+
+.Weather:
+	setval WEATHER_RAIN
+	writemem wFieldWeather
+	endcallback
 
 .CheckIfRockets:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT

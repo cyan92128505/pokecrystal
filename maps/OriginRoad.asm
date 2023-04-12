@@ -9,17 +9,6 @@ OriginRoad_MapScripts:
 	writemem wFieldWeather
 	endcallback
 
-;InvaderMasterPatches:
-;	trainer INVADER, MASTER_PATCHES, EVENT_BEAT_MASTER_PATCHES, InvaderMasterPatchesSeenText, InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText, .Script
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext InvaderMasterPatchesAfterText
-;	waitbutton
-;	pokemart MARTTYPE_STANDARD, MART_PATCHES
-;	closetext
-;	end
-
 InvaderMasterPatches:
 	faceplayer
 	opentext

@@ -4505,7 +4505,6 @@ FieldWeather:
 	call Call_PlayBattleAnim
 	ld hl, SandstormBrewedText
 	jp StdBattleTextbox
-
 .rain
 	ld de, RAIN_DANCE
 	call Call_PlayBattleAnim
@@ -4623,21 +4622,39 @@ SwitchInEffects:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ret
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, RAIN_DANCE
+	call Call_PlayBattleAnim
+	ld hl, DownpourText
+	jp StdBattleTextbox
 
 .sun
     ld a, WEATHER_SUN
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ret
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, SUNNY_DAY
+	call Call_PlayBattleAnim
+	ld hl, SunGotBrightText
+	jp StdBattleTextbox
 
 .sand
     ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ret
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, ANIM_IN_SANDSTORM
+	call Call_PlayBattleAnim
+	ld hl, SandstormBrewedText
+	jp StdBattleTextbox
 
 .clear
 	ld a, 1

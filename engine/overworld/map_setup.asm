@@ -99,11 +99,12 @@ HandleMapDefaultWeather:
 	jr .noWeather
 .outdoor
     call Random
-    cp 25 percent
+    cp 25 percent ; total 1/4 for rain
     jr c, .rain
-    cp 50 percent
+    call Random
+    cp 33 percent ; total 3/4 x 1/3 = 1/4 for sun
     jr c, .sun
-.noWeather
+.noWeather ; total 3/4 x 2/3 = 1/2 for no weather
     ld a, WEATHER_NONE
     jr .done
 .rain

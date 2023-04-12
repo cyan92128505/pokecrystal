@@ -5494,7 +5494,7 @@ ReflectSwitch:
 	ld bc, wEnemyReflectCount
 .got_screens_pointer
 	set SCREENS_REFLECT, [hl]
-	ld a, 5
+	ld a, 8
 	ld [bc], a
     ld a, [wBattleHasJustStarted]
     and a
@@ -5515,7 +5515,7 @@ LightScreenSwitch:
 	ld bc, wEnemyLightScreenCount
 .got_screens_pointer
 	set SCREENS_LIGHT_SCREEN, [hl]
-	ld a, 5
+	ld a, 8
 	ld [bc], a
     ld a, [wBattleHasJustStarted]
     and a
@@ -5536,7 +5536,7 @@ SafeguardSwitch:
 	ld bc, wEnemySafeguardCount
 .got_screens_pointer
 	set SCREENS_SAFEGUARD, [hl]
-	ld a, 5
+	ld a, 8
 	ld [bc], a
     ld a, [wBattleHasJustStarted]
     and a

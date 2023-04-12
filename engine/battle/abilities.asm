@@ -163,6 +163,7 @@ SolidRockPokemon:
     db RHYDON
     db RHYPERIOR
     db RAYQUAZA
+    db GIRATINA
     db -1
 
 UberImmunePokemon:

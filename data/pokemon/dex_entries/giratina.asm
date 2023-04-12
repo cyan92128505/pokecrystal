@@ -5,6 +5,6 @@
 	next "ARCEUS for its"
 	next "violent ways."
 
-	page "AB Takes no"
-	next "recoil damage"
-	next "from attacks.@"
+	page "AB Has reduced"
+	next "weaknesses and"
+	next "recoil immunity.@"

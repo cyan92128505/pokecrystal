@@ -1960,8 +1960,8 @@ HandleWeather:
 	ld [wNumHits], a
 	call Call_PlayBattleAnim
 
-	ld hl, .WeatherMessages
-	call .PrintWeatherMessage
+	;ld hl, .WeatherMessages
+	;call .PrintWeatherMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -2050,11 +2050,11 @@ HandleWeather:
 	ld l, a
 	jp StdBattleTextbox
 
-.WeatherMessages:
+;.WeatherMessages:
 ; entries correspond to WEATHER_* constants
-	dw BattleText_RainContinuesToFall
-	dw BattleText_TheSunlightIsStrong
-	dw BattleText_TheSandstormRages
+;	dw BattleText_RainContinuesToFall
+;	dw BattleText_TheSunlightIsStrong
+;	dw BattleText_TheSandstormRages
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
@@ -4535,9 +4535,9 @@ SwitchInEffects:
     jp z,  .sand
 
     cp RAYQUAZA
-    jp z, .clear
+    jp z, .clearField
     cp GOLDUCK
-    jp z, .clear
+    jp z, .clearWeather
 
     cp GENESECT
     jp z, .spAtkUp
@@ -4620,6 +4620,8 @@ SwitchInEffects:
     jp z, .spikes
     cp STEELIX
     jp z, .spikes
+    cp DIALGA
+    jp z, .spikes
 
     cp MR__MIME
     jp z, .reflect
@@ -4629,6 +4631,8 @@ SwitchInEffects:
     jp z, .reflect
     cp GALADE
     jp z, .reflect
+    cp LATIOS
+    jp z, .reflect
 
     cp AMPHAROS
     jp z, .lightScreen
@@ -4637,6 +4641,8 @@ SwitchInEffects:
     cp ZAPDOS
     jp z, .lightScreen
     cp GARDEVOIR
+    jp z, .lightScreen
+    cp LATIAS
     jp z, .lightScreen
 
     cp MOLTRES
@@ -4648,6 +4654,8 @@ SwitchInEffects:
     cp SIGILYPH
     jp z, .safeguard
     cp POLTEGEIST
+    jp z, .safeguard
+    cp PALKIA
     jp z, .safeguard
     ret
 
@@ -4672,9 +4680,12 @@ SwitchInEffects:
 .safeguard
     farcall SafeguardSwitch
     ret
-.clear
+.clearWeather
 	ld a, 1
 	ld [wWeatherCount], a
+	ret
+.clearField
+	farcall ClearField
 	ret
 .spAtkUp
     farcall BattleCommand_SpecialAttackUp

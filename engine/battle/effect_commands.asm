@@ -6644,7 +6644,7 @@ BattleCommand_Screen:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
-	ld a, 5
+	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
@@ -6657,7 +6657,7 @@ BattleCommand_Screen:
 	; LightScreenCount -> ReflectCount
 	inc bc
 
-	ld a, 5
+	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
 	ld hl, ReflectEffectText
 

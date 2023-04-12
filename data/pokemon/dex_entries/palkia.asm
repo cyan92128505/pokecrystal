@@ -5,6 +5,6 @@
 	next "over the boundaries"
 	next "of space."
 
-	page "AB Takes half"
-	next "damage from FIRE"
-	next "and ICE moves.@"
+	page "AB Resists FIRE/"
+	next "ICE and raises"
+	next "SAFEGUARD.@"

@@ -6,5 +6,5 @@
 	next "and powerful."
 
 	page "AB Immune to"
-	next "GROUND type"
-	next "moves.@"
+	next "GROUND and lays"
+	next "REFLECT.@"

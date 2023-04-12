@@ -229,7 +229,7 @@ ENDM
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,                  4,  4 ;  2
 	map_const ROUTE_43_MAHOGANY_GATE,                       5,  4 ;  3
 	map_const ROUTE_43_GATE,                                5,  4 ;  4
-	map_const ROUTE_43,                                    10, 27 ;  5
+	map_const ROUTE_43,                                    13, 27 ;  5
 	map_const LAKE_OF_RAGE,                                20, 18 ;  6
 	endgroup
 

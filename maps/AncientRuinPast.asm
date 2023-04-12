@@ -6,6 +6,12 @@ AncientRuinPast_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Weather
+
+.Weather:
+	setval WEATHER_SUN
+	writemem wFieldWeather
+    endcallback
 
 XerneasScript:
 	opentext

@@ -8,6 +8,12 @@
 	const ROUTE42_POKE_BALL1
 	const ROUTE42_POKE_BALL2
 	const ROUTE42_SUICUNE
+	const ROUTE42_FIELDMON_1
+    const ROUTE42_FIELDMON_2
+    const ROUTE42_FIELDMON_3
+    const ROUTE42_FIELDMON_4
+    const ROUTE42_FIELDMON_5
+    const ROUTE42_FIELDMON_6
 
 Route42_MapScripts:
 	def_scene_scripts
@@ -15,12 +21,41 @@ Route42_MapScripts:
 	scene_script .DummyScene1 ; SCENE_ROUTE42_SUICUNE
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route42FieldMon
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.Route42FieldMon:
+; Pokemon which always appear
+    appear ROUTE42_FIELDMON_1
+    appear ROUTE42_FIELDMON_3
+    appear ROUTE42_FIELDMON_4
+    appear ROUTE42_FIELDMON_5
+
+; Pokemon that sometimes appear
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE42_FIELDMON_6
+    sjump .checkNight
+.spawn8
+    appear ROUTE42_FIELDMON_6
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    appear ROUTE42_FIELDMON_2
+
+; Pokemon that don't appear at night
+    disappear ROUTE42_FIELDMON_4
+
+.end
+    endcallback
 
 Route42SuicuneScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -316,6 +351,68 @@ Route42Sign2Text:
 	line "MAHOGANY TOWN"
 	done
 
+Route42FieldMon1Script:
+	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_1, Route42PokemonAttacksText, 44, 0, .script
+.script
+    disappear ROUTE42_FIELDMON_1
+    end
+
+Route42FieldMon2Script:
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, Route42PokemonAttacksText, 42, 0, .script
+.script
+    disappear ROUTE42_FIELDMON_2
+    end
+
+Route42PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route42FieldMon3Script:
+	faceplayer
+	cry LOPUNNY
+	pause 15
+	loadwildmon LOPUNNY, 31
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE42_FIELDMON_3
+	end
+
+Route42FieldMon4Script:
+	faceplayer
+	cry BRELOOM
+	pause 15
+	loadwildmon BRELOOM, 33
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE42_FIELDMON_4
+	end
+
+Route42FieldMon5Script:
+	faceplayer
+	cry ARBOK
+	pause 15
+	loadwildmon ARBOK, 34
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE42_FIELDMON_5
+	end
+
+Route42FieldMon6Script:
+	faceplayer
+	cry MAGMAR
+	pause 15
+	loadwildmon MAGMAR, 30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE42_FIELDMON_6
+	end
+
 Route42_MapEvents:
 	db 0, 0 ; filler
 
@@ -347,3 +444,9 @@ Route42_MapEvents:
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION
 	object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42
+	object_event 48, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route42FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 53,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route42FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 6,  12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route42FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 22,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route42FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 38,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route42FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 5,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route42FieldMon6Script, EVENT_FIELD_MON_6

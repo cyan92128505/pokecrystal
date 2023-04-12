@@ -1133,6 +1133,11 @@ BlewSpikesText:
 	line "blew away SPIKES!"
 	prompt
 
+ClearFieldText:
+	text "<USER>"
+	line "swept its field!"
+	prompt
+
 DownpourText:
 	text "A downpour"
 	line "started!"

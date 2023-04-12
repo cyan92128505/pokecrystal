@@ -1388,15 +1388,13 @@ AI_Smart_ForceSwitch:
    	pop de
    	pop hl
    	jr c, .discourage
+
 ; don't use if player has only one pokemon left
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
 	jr z, .discourage
-; encourage if player has spikes on the field
-	ld a, [wPlayerScreens]
-	bit SCREENS_SPIKES, a
-	jr nz, .encourage
+
 ; encourage this move if the player's attack levels are boosted.
 	ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -1404,6 +1402,15 @@ AI_Smart_ForceSwitch:
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .encourage
+
+; discourage if non-boosted player can 2HKO from current HP
+    call CanPlayer2HKO
+    jr c, .discourage
+
+; encourage if player has spikes on the field
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	jr nz, .encourage
 
 .discourage
     inc [hl]
@@ -5494,7 +5501,7 @@ ReflectSwitch:
 	ld bc, wEnemyReflectCount
 .got_screens_pointer
 	set SCREENS_REFLECT, [hl]
-	ld a, 8
+	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
     ld a, [wBattleHasJustStarted]
     and a
@@ -5515,7 +5522,7 @@ LightScreenSwitch:
 	ld bc, wEnemyLightScreenCount
 .got_screens_pointer
 	set SCREENS_LIGHT_SCREEN, [hl]
-	ld a, 8
+	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
     ld a, [wBattleHasJustStarted]
     and a
@@ -5536,7 +5543,7 @@ SafeguardSwitch:
 	ld bc, wEnemySafeguardCount
 .got_screens_pointer
 	set SCREENS_SAFEGUARD, [hl]
-	ld a, 8
+	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
     ld a, [wBattleHasJustStarted]
     and a
@@ -5545,4 +5552,25 @@ SafeguardSwitch:
 	farcall Call_PlayBattleAnim
 .skipAnim
     ld hl, CoveredByVeilText
+	jp StdBattleTextbox
+
+ClearField:
+	ld a, 1
+	ld [wWeatherCount], a
+	ld hl, wPlayerScreens
+	ld bc, wPlayerSafeguardCount
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .gotScreens
+	ld hl, wEnemyScreens
+	ld bc, wEnemySafeguardCount
+.gotScreens
+	ld a, 1
+	ld [bc], a
+	inc bc
+	ld [bc], a
+	inc bc
+	ld [bc], a
+	res SCREENS_SPIKES, [hl]
+	ld hl, ClearFieldText
 	jp StdBattleTextbox

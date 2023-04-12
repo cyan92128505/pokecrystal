@@ -4614,8 +4614,6 @@ SwitchInEffects:
     cp MEW
     jp z, .randomStatUp
 
-    cp FERROSEED
-    jp z, .spikes
     cp FERROTHORN
     jp z, .spikes
     cp SKARMORY
@@ -4632,11 +4630,11 @@ SwitchInEffects:
     cp GALADE
     jp z, .reflect
 
+    cp AMPHAROS
+    jp z, .lightScreen
     cp ESPEON
     jp z, .lightScreen
     cp ZAPDOS
-    jp z, .lightScreen
-    cp AMPHAROS
     jp z, .lightScreen
     cp GARDEVOIR
     jp z, .lightScreen

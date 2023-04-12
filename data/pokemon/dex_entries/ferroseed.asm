@@ -5,8 +5,7 @@
 	next "from rocks or"
 	next "even its foes."
 
-	page "AB Lays SPIKES"
-	next "and can't be"
-	next "KOd at full HP.@"
+	page "AB Can not be KOd"
+	next "from full HP.@"
 
 

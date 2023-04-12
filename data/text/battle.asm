@@ -228,9 +228,8 @@ BattleText_MonFainted:
 	prompt
 
 BattleText_Aftermath:
-	text_start
-	line "final attack!"
-	cont "energy unleashed!"
+	text "final attack!"
+	line "energy unleashed!"
 	prompt
 
 BattleText_UseNextMon:

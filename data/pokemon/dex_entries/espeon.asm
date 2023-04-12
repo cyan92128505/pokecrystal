@@ -5,6 +5,6 @@
 	next "its forked tail"
 	next "quivers."
 
-	page "AB Immune to"
-	next "all passive"
-	next "damage.@"
+	page "AB Raises"
+	next "LIGHT SCREEN on"
+	next "entering battle.@"

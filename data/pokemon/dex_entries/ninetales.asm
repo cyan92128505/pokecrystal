@@ -6,4 +6,5 @@
 	next "for each tail."
 
 	page "AB Immune to"
-	next "FIRE attacks.@"
+	next "FIRE and raises"
+	next "SAFEGUARD.@"

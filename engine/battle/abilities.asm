@@ -98,8 +98,6 @@ RivalryPokemon:
     db NIDOQUEEN
     db RALTS
     db KIRLIA
-    db GARDEVOIR
-    db GALADE
     db -1
 
 MultiScalePokemon:
@@ -125,7 +123,6 @@ TechnicianPokemon:
     db SCIZOR
     db MEOWTH
     db PERSIAN
-    db MR__MIME
     db SHROOMISH
     db BRELOOM
     db PSYDUCK
@@ -145,7 +142,6 @@ MagicGuardPokemon:
     db SOLOSIS
     db DUOSION
     db REUNICLUS
-    db ESPEON
     db XERNEAS
     db YVELTAL
     db -1
@@ -167,7 +163,6 @@ SolidRockPokemon:
     db RHYDON
     db RHYPERIOR
     db RAYQUAZA
-    db ARTICUNO
     db -1
 
 UberImmunePokemon:

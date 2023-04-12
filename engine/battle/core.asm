@@ -1157,7 +1157,6 @@ Core_MagicGuardPokemon:
     db SOLOSIS
     db DUOSION
     db REUNICLUS
-    db ESPEON
     db XERNEAS
     db YVELTAL
     db -1
@@ -2510,8 +2509,6 @@ Aftermath:
     cp ELECTRODE
     jr z, .aftermath
     cp MAGNEZONE
-    jr z, .aftermath
-    cp POLTEGEIST
     jr z, .aftermath
     ret
 .aftermath
@@ -4616,46 +4613,67 @@ SwitchInEffects:
     jp z, .randomStatUp
     cp MEW
     jp z, .randomStatUp
+
+    cp FERROSEED
+    jp z, .spikes
+    cp FERROTHORN
+    jp z, .spikes
+    cp SKARMORY
+    jp z, .spikes
+    cp STEELIX
+    jp z, .spikes
+
+    cp MR__MIME
+    jp z, .reflect
+    cp UMBREON
+    jp z, .reflect
+    cp ARTICUNO
+    jp z, .reflect
+    cp GALADE
+    jp z, .reflect
+
+    cp ESPEON
+    jp z, .lightScreen
+    cp ZAPDOS
+    jp z, .lightScreen
+    cp AMPHAROS
+    jp z, .lightScreen
+    cp GARDEVOIR
+    jp z, .lightScreen
+
+    cp MOLTRES
+    jp z, .safeguard
+    cp VULPIX
+    jp z, .safeguard
+    cp NINETALES
+    jp z, .safeguard
+    cp SIGILYPH
+    jp z, .safeguard
+    cp POLTEGEIST
+    jp z, .safeguard
     ret
+
 .rain
-	ld a, WEATHER_RAIN
-	ld [wBattleWeather], a
-	ld a, 255
-	ld [wWeatherCount], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz
-    ld de, RAIN_DANCE
-	call Call_PlayBattleAnim
-	ld hl, DownpourText
-	jp StdBattleTextbox
-
+    farcall RainSwitch
+    ret
 .sun
-    ld a, WEATHER_SUN
-	ld [wBattleWeather], a
-	ld a, 255
-	ld [wWeatherCount], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz
-    ld de, SUNNY_DAY
-	call Call_PlayBattleAnim
-	ld hl, SunGotBrightText
-	jp StdBattleTextbox
-
+    farcall SunSwitch
+    ret
 .sand
-    ld a, WEATHER_SANDSTORM
-	ld [wBattleWeather], a
-	ld a, 255
-	ld [wWeatherCount], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz
-    ld de, ANIM_IN_SANDSTORM
-	call Call_PlayBattleAnim
-	ld hl, SandstormBrewedText
-	jp StdBattleTextbox
-
+    farcall SandSwitch
+    ret
+.spikes
+    farcall SpikesSwitch
+    ret
+.reflect
+    farcall ReflectSwitch
+    ret
+.lightScreen
+    farcall LightScreenSwitch
+    ret
+.safeguard
+    farcall SafeguardSwitch
+    ret
 .clear
 	ld a, 1
 	ld [wWeatherCount], a

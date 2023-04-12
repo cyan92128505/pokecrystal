@@ -5,5 +5,6 @@
 	next "mysterious power"
 	next "in its fingers."
 
-	page "AB Makes weaker"
-	next "moves stronger.@"
+	page "AB Raises"
+	next "REFLECT upon"
+	next "entering battle.@"

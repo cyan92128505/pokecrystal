@@ -5,6 +5,6 @@
 	next "lives inside"
 	next "teapots."
 
-	page "AB Unleashes a"
-	next "final attack upon"
-	next "being defeated.@"
+	page "AB Raises"
+	next "SAFEGUARD upon"
+	next "entering battle.@"

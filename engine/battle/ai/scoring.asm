@@ -27,7 +27,6 @@ AI_MagicGuardPokemon:
     db SOLOSIS
     db DUOSION
     db REUNICLUS
-    db ESPEON
     db XERNEAS
     db YVELTAL
     db $FF
@@ -5209,7 +5208,9 @@ AI_50_50:
 	cp 50 percent + 1
 	ret
 
+; ============================================
 ; ====== EFFECT COMMAND EXCESS FUNCTIONS =====
+; ============================================
 ; These are functions used in effect_commands.asm
 ; they are defined here as that file is out of space
 
@@ -5426,3 +5427,122 @@ XAccuracy:
 	call GetBattleVar
 	bit SUBSTATUS_X_ACCURACY, a
 	ret
+
+RainSwitch:
+	ld a, WEATHER_RAIN
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, RAIN_DANCE
+	farcall Call_PlayBattleAnim
+	ld hl, DownpourText
+	jp StdBattleTextbox
+
+SunSwitch:
+    ld a, WEATHER_SUN
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, SUNNY_DAY
+	farcall Call_PlayBattleAnim
+	ld hl, SunGotBrightText
+	jp StdBattleTextbox
+
+SandSwitch:
+    ld a, WEATHER_SANDSTORM
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, ANIM_IN_SANDSTORM
+	farcall Call_PlayBattleAnim
+	ld hl, SandstormBrewedText
+	jp StdBattleTextbox
+
+SpikesSwitch:
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens
+	ld hl, wPlayerScreens
+.got_screens
+	set SCREENS_SPIKES, [hl]
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
+    ld de, SPIKES
+	farcall Call_PlayBattleAnim
+.skipAnim
+	ld hl, SpikesText
+	jp StdBattleTextbox
+
+ReflectSwitch:
+    ld hl, wPlayerScreens
+	ld bc, wPlayerReflectCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens_pointer
+	ld hl, wEnemyScreens
+	ld bc, wEnemyReflectCount
+.got_screens_pointer
+	set SCREENS_REFLECT, [hl]
+	ld a, 5
+	ld [bc], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
+    ld de, REFLECT
+	farcall Call_PlayBattleAnim
+.skipAnim
+    ld hl, ReflectEffectText
+	jp StdBattleTextbox
+
+LightScreenSwitch:
+    ld hl, wPlayerScreens
+	ld bc, wPlayerLightScreenCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens_pointer
+	ld hl, wEnemyScreens
+	ld bc, wEnemyLightScreenCount
+.got_screens_pointer
+	set SCREENS_LIGHT_SCREEN, [hl]
+	ld a, 5
+	ld [bc], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
+    ld de, LIGHT_SCREEN
+	farcall Call_PlayBattleAnim
+.skipAnim
+    ld hl, LightScreenEffectText
+	jp StdBattleTextbox
+
+SafeguardSwitch:
+    ld hl, wPlayerScreens
+	ld bc, wPlayerSafeguardCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens_pointer
+	ld hl, wEnemyScreens
+	ld bc, wEnemySafeguardCount
+.got_screens_pointer
+	set SCREENS_SAFEGUARD, [hl]
+	ld a, 5
+	ld [bc], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
+    ld de, SAFEGUARD
+	farcall Call_PlayBattleAnim
+.skipAnim
+    ld hl, CoveredByVeilText
+	jp StdBattleTextbox

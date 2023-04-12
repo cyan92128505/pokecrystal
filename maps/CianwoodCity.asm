@@ -2,15 +2,16 @@
 	const CIANWOODCITY_STANDING_YOUNGSTER
 	const CIANWOODCITY_POKEFAN_M
 	const CIANWOODCITY_LASS
-	const CIANWOODCITY_ROCK1
-	const CIANWOODCITY_ROCK2
 	const CIANWOODCITY_ROCK3
-	const CIANWOODCITY_ROCK4
 	const CIANWOODCITY_ROCK5
-	const CIANWOODCITY_ROCK6
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
+    const CIANWOODCITY_FIELDMON_1
+    const CIANWOODCITY_FIELDMON_2
+    const CIANWOODCITY_FIELDMON_3
+    const CIANWOODCITY_FIELDMON_4
+    const CIANWOODCITY_FIELDMON_5
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -19,12 +20,30 @@ CianwoodCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
+	callback MAPCALLBACK_OBJECTS, .CianwoodCityFieldMon
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.CianwoodCityFieldMon:
+; Pokemon which always appear
+    appear CIANWOODCITY_FIELDMON_2
+    appear CIANWOODCITY_FIELDMON_3
+    appear CIANWOODCITY_FIELDMON_4
+    appear CIANWOODCITY_FIELDMON_5
+
+    random 2
+    ifequal 1, .spawn1
+    disappear CIANWOODCITY_FIELDMON_1
+    sjump .end
+.spawn1
+    appear CIANWOODCITY_FIELDMON_1
+
+.end
+    endcallback
 
 .FlyPointAndSuicune:
 	setflag ENGINE_FLYPOINT_CIANWOOD
@@ -135,6 +154,9 @@ CianwoodPhotoStudioSign:
 
 CianwoodPokeSeerSign:
 	jumptext CianwoodPokeSeerSignText
+
+CianwoodBeachSign:
+	jumptext CianwoodBeachSignText
 
 CianwoodPokecenterSign:
 	jumpstd PokecenterSignScript
@@ -377,6 +399,66 @@ CianwoodPokeSeerSignText:
 	line "AHEAD"
 	done
 
+CianwoodBeachSignText:
+	text "CIANWOOD"
+	line "BEACH"
+	done
+
+CianwoodCityFieldMon1Script:
+	trainer POLIWRATH, FIELD_MON, EVENT_FIELD_MON_1, CianwoodCityPokemonAttacksText, 44, 0, .script
+.script
+    disappear CIANWOODCITY_FIELDMON_1
+    end
+
+CianwoodCityPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+CianwoodCityFieldMon2Script:
+	faceplayer
+	cry MACHOKE
+	pause 15
+	loadwildmon MACHOKE, 32
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear CIANWOODCITY_FIELDMON_2
+	end
+
+CianwoodCityFieldMon3Script:
+	faceplayer
+	cry GURDURR
+	pause 15
+	loadwildmon GURDURR, 33
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear CIANWOODCITY_FIELDMON_3
+	end
+
+CianwoodCityFieldMon4Script:
+	faceplayer
+	cry POLIWHIRL
+	pause 15
+	loadwildmon POLIWHIRL, 31
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear CIANWOODCITY_FIELDMON_4
+	end
+	
+CianwoodCityFieldMon5Script:
+	faceplayer
+	cry STARAPTOR
+	pause 15
+	loadwildmon STARAPTOR, 32
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear CIANWOODCITY_FIELDMON_5
+	end
+
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -399,6 +481,7 @@ CianwoodCity_MapEvents:
 	bg_event 19, 59, BGEVENT_READ, CianwoodPharmacySign
 	bg_event  8, 44, BGEVENT_READ, CianwoodPhotoStudioSign
 	bg_event  8, 36, BGEVENT_READ, CianwoodPokeSeerSign
+	bg_event 12, 22, BGEVENT_READ, CianwoodBeachSign
 	bg_event  4, 31, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 41, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
 
@@ -406,12 +489,14 @@ CianwoodCity_MapEvents:
 	object_event 21, 49, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 45, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 54, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
-	object_event  8, 28, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  9, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 37, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  5, 41, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 39, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  4, 31, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 58, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 33, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 26, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	object_event 15, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, CianwoodCityFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 12, 8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, CianwoodCityFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 7,  38, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 25, 46, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 7, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon5Script, EVENT_FIELD_MON_5
+

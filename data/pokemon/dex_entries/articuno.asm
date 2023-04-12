@@ -5,6 +5,6 @@
 	next "#MON that"
 	next "causes hailstorms."
 
-	page "AB Takes reduced"
-	next "damage from super"
-	next "effective moves.@"
+	page "AB Raises"
+	next "REFLECT upon"
+	next "entering battle.@"

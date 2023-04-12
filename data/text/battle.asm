@@ -942,13 +942,13 @@ TransformedText:
 	prompt
 
 LightScreenEffectText:
-	text "<USER>'s"
-	line "SPCL.DEF rose!"
+	text "A LIGHT SCREEN"
+	line "was raised."
 	prompt
 
 ReflectEffectText:
-	text "<USER>'s"
-	line "DEFENSE rose!"
+	text "A REFLECT"
+	line "was raised."
 	prompt
 
 NothingHappenedText:
@@ -1073,7 +1073,6 @@ ProtectingItselfText:
 SpikesText:
 	text "SPIKES scattered"
 	line "all around"
-	cont "<TARGET>!"
 	prompt
 
 IdentifiedText:
@@ -1103,8 +1102,8 @@ FellInLoveText:
 	prompt
 
 CoveredByVeilText:
-	text "<USER>'s"
-	line "covered by a veil!"
+	text "A SAFEGUARD"
+	line "was raised."
 	prompt
 
 SafeguardProtectText:

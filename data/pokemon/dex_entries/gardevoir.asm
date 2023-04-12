@@ -5,6 +5,6 @@
 	next "into the future."
 	next "It sees danger."
 
-	page "AB Boosted damage"
-	next "against opposite"
-	next "gender foes.@"
+	page "AB Raises"
+	next "LIGHT SCREEN on"
+	next "entering battle.@"

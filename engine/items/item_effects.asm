@@ -218,15 +218,15 @@ PokeBallEffect:
     ld hl, wJohtoBadges
     ld a, [wEnemyMonLevel]
     cp 61
-    jr nc, .checkKantoBadges
+    jr nc, .checkKantoBadges ; beat blue to capture >L60
     cp 51
-    jr nc, .checkRisingBadge
+    jr nc, .checkRisingBadge ; beat clair to capture L51-60
     cp 41
-    jr nc, .checkStormBadge
+    jr nc, .checkMineralBadge ; beat jasmine to capture L41-50
     cp 31
-    jr nc, .checkFogBadge
+    jr nc, .checkFogBadge ; beat morty to capture L31-40
     cp 21
-    jr nc, .checkHiveBadge
+    jr nc, .checkHiveBadge ; beat bugsy to capture L21-30
     jr .continue
 
 .checkKantoBadges
@@ -240,8 +240,8 @@ PokeBallEffect:
 	jr z, .levelTooHigh
 	jr .continue
 
-.checkStormBadge
-	bit STORMBADGE, [hl]
+.checkMineralBadge
+	bit MINERALBADGE, [hl]
 	jr z, .levelTooHigh
 	jr .continue
 

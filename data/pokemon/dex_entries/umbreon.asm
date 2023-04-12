@@ -5,5 +5,6 @@
 	next "full moon, it"
 	next "glows with power"
 
-	page "AB Immune to"
-	next "flinching.@"
+	page "AB Raises"
+	next "REFLECT upon"
+	next "entering battle.@"

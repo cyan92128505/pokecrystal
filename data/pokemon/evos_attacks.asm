@@ -3004,9 +3004,9 @@ UnownEvosAttacks:
 
 WobbuffetEvosAttacks:
 	db 0 ; no more evolutions
+    db 1, SAFEGUARD
 	db 1, COUNTER
 	db 1, MIRROR_COAT
-	db 1, SAFEGUARD
 	db 1, DESTINY_BOND
 	db 16, MEAN_LOOK
 	db 0 ; no more level-up moves

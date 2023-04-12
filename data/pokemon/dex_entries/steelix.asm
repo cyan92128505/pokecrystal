@@ -5,5 +5,6 @@
 	next "monster that can"
 	next "destroy tanks."
 
-	page "AB Can not be KOd"
-	next "from full HP.@"
+	page "AB Lays SPIKES"
+	next "and can't be"
+	next "KOd at full HP.@"

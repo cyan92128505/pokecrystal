@@ -5,6 +5,6 @@
 	next "and fierce guard"
 	next "of its trainer."
 
-	page "AB Boosted damage"
-	next "against opposite"
-	next "gender foes.@"
+	page "AB Raises"
+	next "REFLECT upon"
+	next "entering battle.@"

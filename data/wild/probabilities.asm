@@ -3,20 +3,21 @@ mon_prob: MACRO
 	db \1, \2 * 2
 ENDM
 
+; AndrewNote - Encounter probabilities
 GrassMonProbTable:
 	table_width 2, GrassMonProbTable
-	mon_prob 20,  0 ; 20% chance
-	mon_prob 40,  1 ; 20% chance
-	mon_prob 56,  2 ; 16% chance
-	mon_prob 72,  3 ; 16% chance
-	mon_prob 84,  4 ; 12% chance
-	mon_prob 96,  5 ; 12% chance
-	mon_prob 100, 6 ;  4% chance
+	mon_prob 25,  0 ; 25% chance
+	mon_prob 50,  1 ; 25% chance
+	mon_prob 64,  2 ; 14% chance
+	mon_prob 78,  3 ; 14% chance
+	mon_prob 88,  4 ; 10% chance
+	mon_prob 98,  5 ; 10% chance
+	mon_prob 100, 6 ;  2% chance
 	assert_table_length NUM_GRASSMON
 
 WaterMonProbTable:
 	table_width 2, WaterMonProbTable
-	mon_prob 40,  0 ; 40% chance
-	mon_prob 70,  1 ; 30% chance
-	mon_prob 100, 2 ; 30% chance
+	mon_prob 50,  0 ; 50% chance
+	mon_prob 80,  1 ; 30% chance
+	mon_prob 100, 2 ; 20% chance
 	assert_table_length NUM_WATERMON

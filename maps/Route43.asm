@@ -7,18 +7,60 @@
 	const ROUTE43_YOUNGSTER
 	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
+	const ROUTE43_FIELDMON_1
+    const ROUTE43_FIELDMON_2
+    const ROUTE43_FIELDMON_3
+    const ROUTE43_FIELDMON_4
+    const ROUTE43_FIELDMON_5
+    const ROUTE43_FIELDMON_6
+    const ROUTE43_FIELDMON_7
+    const ROUTE43_FIELDMON_8
 
 Route43_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .CheckIfRockets
-	callback MAPCALLBACK_OBJECTS, .Weather
+	callback MAPCALLBACK_OBJECTS, .WeatherAndFieldMon
 
-.Weather:
+.WeatherAndFieldMon:
 	setval WEATHER_RAIN
 	writemem wFieldWeather
-	endcallback
+
+    appear ROUTE43_FIELDMON_1
+    appear ROUTE43_FIELDMON_3
+    appear ROUTE43_FIELDMON_4
+    appear ROUTE43_FIELDMON_5
+    appear ROUTE43_FIELDMON_6
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE43_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear ROUTE43_FIELDMON_7
+
+.mon8
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE43_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE43_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    appear ROUTE43_FIELDMON_2
+
+; Pokemon that don't appear at night
+    disappear ROUTE43_FIELDMON_7
+
+.end
+    endcallback
 
 .CheckIfRockets:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
@@ -533,6 +575,90 @@ Route43TrainerTipsText:
 	line "#MON's type."
 	done
 
+Route43FieldMon1Script:
+	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_1, Route43PokemonAttacksText, 53, 0, .script
+.script
+    disappear ROUTE43_FIELDMON_1
+    end
+
+Route43FieldMon2Script:
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_2, Route43PokemonAttacksText, 51, 0, .script
+.script
+    disappear ROUTE43_FIELDMON_2
+    end
+
+Route43PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route43FieldMon3Script:
+	faceplayer
+	cry GOLDUCK
+	pause 15
+	loadwildmon GOLDUCK, 31
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE43_FIELDMON_3
+	end
+
+Route43FieldMon4Script:
+	faceplayer
+	cry AMPHAROS
+	pause 15
+	loadwildmon AMPHAROS, 32
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE43_FIELDMON_4
+	end
+
+Route43FieldMon5Script:
+	faceplayer
+	cry QUAGSIRE
+	pause 15
+	loadwildmon QUAGSIRE, 33
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE43_FIELDMON_5
+	end
+
+Route43FieldMon6Script:
+	faceplayer
+	cry POLITOED
+	pause 15
+	loadwildmon POLITOED, 32
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE43_FIELDMON_6
+	end
+
+Route43FieldMon7Script:
+	faceplayer
+	cry EXEGGUTOR
+	pause 15
+	loadwildmon EXEGGUTOR, 34
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE43_FIELDMON_7
+	end
+
+Route43FieldMon8Script:
+	faceplayer
+	cry SHELGON
+	pause 15
+	loadwildmon SHELGON, 30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE43_FIELDMON_8
+	end
+
 Route43_MapEvents:
 	db 0, 0 ; filler
 
@@ -555,7 +681,15 @@ Route43_MapEvents:
 	object_event 13, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacBrent, -1
 	object_event 11,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderPatchesScript, -1
 	object_event  4, 16, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerFisherMarvin, -1
-	object_event  9, 25, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
-	object_event 13, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
+	object_event  9, 25, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
+	object_event 13, 40, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
 	object_event  1, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route43FruitTree, -1
 	object_event 12, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
+	object_event 11, 8, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route43FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 10, 7, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route43FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 3,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 19,  28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 13,  18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 21,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 24, 44, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 24,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route43FieldMon8Script, EVENT_FIELD_MON_8

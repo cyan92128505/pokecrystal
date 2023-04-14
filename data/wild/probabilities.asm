@@ -6,10 +6,10 @@ ENDM
 ; AndrewNote - Encounter probabilities
 GrassMonProbTable:
 	table_width 2, GrassMonProbTable
-	mon_prob 25,  0 ; 25% chance
-	mon_prob 50,  1 ; 25% chance
-	mon_prob 64,  2 ; 14% chance
-	mon_prob 78,  3 ; 14% chance
+	mon_prob 24,  0 ; 24% chance
+	mon_prob 48,  1 ; 24% chance
+	mon_prob 63,  2 ; 15% chance
+	mon_prob 78,  3 ; 15% chance
 	mon_prob 88,  4 ; 10% chance
 	mon_prob 98,  5 ; 10% chance
 	mon_prob 100, 6 ;  2% chance

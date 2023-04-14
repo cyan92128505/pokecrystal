@@ -2,19 +2,70 @@
 	const ROUTE44_FISHER1
 	const ROUTE44_FISHER2
 	const ROUTE44_YOUNGSTER1
-	const ROUTE44_SUPER_NERD
+	const ROUTE44_POKEBALL
 	const ROUTE44_YOUNGSTER2
 	const ROUTE44_COOLTRAINER_M
 	const ROUTE44_COOLTRAINER_F
 	const ROUTE44_FRUIT_TREE
-	const ROUTE44_POKE_BALL1
-	const ROUTE44_POKE_BALL2
-	const ROUTE44_POKE_BALL3
+	const ROUTE44_FIELDMON_1
+    const ROUTE44_FIELDMON_2
+    const ROUTE44_FIELDMON_3
+    const ROUTE44_FIELDMON_4
+    const ROUTE44_FIELDMON_5
+    const ROUTE44_FIELDMON_6
+    const ROUTE44_FIELDMON_7
+    const ROUTE44_FIELDMON_8
 
 Route44_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .Route44FieldMon
+
+.Route44FieldMon:
+; Pokemon which always appear
+    appear ROUTE44_FIELDMON_1
+    appear ROUTE44_FIELDMON_6
+    appear ROUTE44_FIELDMON_4
+    appear ROUTE44_FIELDMON_7
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE44_FIELDMON_5
+    sjump .mon7
+.spawn6
+    appear ROUTE44_FIELDMON_5
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE44_FIELDMON_3
+    sjump .mon8
+.spawn7
+    appear ROUTE44_FIELDMON_3
+
+.mon8
+    random 2 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE44_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE44_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    appear ROUTE44_FIELDMON_2
+
+; Pokemon that don't appear at night
+    disappear ROUTE44_FIELDMON_7
+    disappear ROUTE44_FIELDMON_8
+
+.end
+    endcallback
 
 TrainerBirdKeeperVance1:
 	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
@@ -306,17 +357,11 @@ Route44Sign2:
 Route44FruitTree:
 	fruittree FRUITTREE_ROUTE_44
 
-Route44MaxRevive:
-	itemball MAX_REVIVE
+Route44LifeOrb:
+	itemball LIFE_ORB
 
-Route44UltraBall:
-	itemball TM_AIR_SLASH
-
-Route44MaxRepel:
-	itemball MAX_REPEL
-
-Route44HiddenElixer:
-	hiddenitem ELIXER, EVENT_ROUTE_44_HIDDEN_ELIXER
+Route44HiddenAmbrosia:
+	hiddenitem AMBROSIA, EVENT_ROUTE_44_HIDDEN_AMBROSIA
 
 FisherWilton1SeenText:
 	text "Aack! You made me"
@@ -504,6 +549,91 @@ Route44Sign2Text:
 	line "BLACKTHORN CITY"
 	done
 
+Route44FieldMon1Script:
+	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_1, Route44PokemonAttacksText, 55, 0, .script
+.script
+    disappear ROUTE44_FIELDMON_1
+    end
+
+Route44FieldMon2Script:
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, Route44PokemonAttacksText, 44, 0, .script
+.script
+    disappear ROUTE44_FIELDMON_2
+    end
+
+Route44PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route44FieldMon3Script:
+	faceplayer
+	cry CHANSEY
+	pause 15
+	loadwildmon CHANSEY, 35
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE44_FIELDMON_3
+	end
+
+Route44FieldMon4Script:
+	faceplayer
+	cry LANTURN
+	pause 15
+	loadwildmon LANTURN, 38
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE44_FIELDMON_4
+	end
+
+Route44FieldMon5Script:
+	faceplayer
+	cry MILOTIC
+	pause 15
+	loadwildmon MILOTIC, 51
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE44_FIELDMON_5
+	end
+
+Route44FieldMon6Script:
+	faceplayer
+	cry TOGEKISS
+	pause 15
+	loadwildmon TOGEKISS, 60
+    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE44_FIELDMON_6
+	end
+
+Route44FieldMon7Script:
+	faceplayer
+	cry TOGEPI
+	pause 15
+	loadwildmon TOGEPI, 5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE44_FIELDMON_7
+	end
+
+Route44FieldMon8Script:
+	faceplayer
+	cry TOGEPI
+	pause 15
+	loadwildmon TOGEPI, 5
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE44_FIELDMON_8
+	end
+
 Route44_MapEvents:
 	db 0, 0 ; filler
 
@@ -515,17 +645,22 @@ Route44_MapEvents:
 	def_bg_events
 	bg_event 53,  7, BGEVENT_READ, Route44Sign1
 	bg_event  6, 10, BGEVENT_READ, Route44Sign2
-	bg_event 32,  9, BGEVENT_ITEM, Route44HiddenElixer
+	bg_event 32,  9, BGEVENT_ITEM, Route44HiddenAmbrosia
 
 	def_object_events
 	object_event 35,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
 	object_event 19, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
 	object_event 10,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
-	object_event 43,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacZach, -1
+	object_event 6, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44LifeOrb, EVENT_ROUTE_44_LIFE_ORB
 	object_event 51,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
-	object_event 41, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
-	object_event 31, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
+	object_event 41, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
+	object_event 31, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
-	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
-	object_event 45,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
-	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
+	object_event 45, 4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route44FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 48, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route44FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 29,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route44FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 27,  16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 22,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 37,  9, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route44FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 33, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route44FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 35,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route44FieldMon8Script, EVENT_FIELD_MON_8

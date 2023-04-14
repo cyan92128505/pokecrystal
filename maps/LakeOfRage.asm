@@ -1,7 +1,6 @@
 	object_const_def
 	const LAKEOFRAGE_LANCE
 	const LAKEOFRAGE_GRAMPS
-	const LAKEOFRAGE_SUPER_NERD1
 	const LAKEOFRAGE_COOLTRAINER_F1
 	const LAKEOFRAGE_FISHER1
 	const LAKEOFRAGE_FISHER2
@@ -9,8 +8,13 @@
 	const LAKEOFRAGE_COOLTRAINER_F2
 	const LAKEOFRAGE_GYARADOS
 	const LAKEOFRAGE_WESLEY
-	const LAKEOFRAGE_POKE_BALL1
 	const LAKEOFRAGE_POKE_BALL2
+	const LAKEOFRAGE_FIELDMON_1
+    const LAKEOFRAGE_FIELDMON_2
+    const LAKEOFRAGE_FIELDMON_3
+    const LAKEOFRAGE_FIELDMON_4
+    const LAKEOFRAGE_FIELDMON_5
+    const LAKEOFRAGE_FIELDMON_6
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
@@ -35,6 +39,18 @@ LakeOfRage_MapScripts:
 	setval WEATHER_RAIN
 	writemem wFieldWeather
 
+    appear LAKEOFRAGE_FIELDMON_1
+    appear LAKEOFRAGE_FIELDMON_3
+    appear LAKEOFRAGE_FIELDMON_4
+    appear LAKEOFRAGE_FIELDMON_5
+    appear LAKEOFRAGE_FIELDMON_6
+
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .wesley
+    appear LAKEOFRAGE_FIELDMON_2
+
+.wesley
 	readvar VAR_WEEKDAY
 	ifequal WEDNESDAY, .WesleyAppears
 	disappear LAKEOFRAGE_WESLEY
@@ -122,8 +138,8 @@ LakeOfRageGrampsScript:
 	closetext
 	end
 
-LakeOfRageSuperNerdScript:
-	jumptextfaceplayer LakeOfRageSuperNerdText
+;LakeOfRageSuperNerdScript:
+;	jumptextfaceplayer LakeOfRageSuperNerdText
 
 LakeOfRageCooltrainerFScript:
 	jumptextfaceplayer LakeOfRageCooltrainerFText
@@ -226,8 +242,8 @@ WesleyNotWednesdayScript:
 	closetext
 	end
 
-LakeOfRageElixer:
-	itemball ELIXER
+;LakeOfRageElixer:
+;	itemball ELIXER
 
 LakeOfRageChoiceSpecs:
 	itemball CHOICE_SPECS
@@ -494,6 +510,70 @@ FishingGurusHouseSignText:
 	line "HOUSE"
 	done
 
+LakeOfRageFieldMon1Script:
+	cry GYARADOS
+	pause 15
+	loadwildmon GYARADOS, 36
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear LAKEOFRAGE_FIELDMON_1
+	end
+
+LakeOfRageFieldMon2Script:
+	trainer GRENINJA, FIELD_MON, EVENT_FIELD_MON_2, LakeOfRagePokemonAttacksText, 52, 0, .script
+.script
+    disappear LAKEOFRAGE_FIELDMON_2
+    end
+
+LakeOfRageFieldMon3Script:
+	cry GYARADOS
+	pause 15
+	loadwildmon GYARADOS, 37
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear LAKEOFRAGE_FIELDMON_3
+	end
+
+LakeOfRageFieldMon4Script:
+	cry GYARADOS
+	pause 15
+	loadwildmon GYARADOS, 38
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear LAKEOFRAGE_FIELDMON_4
+	end
+
+LakeOfRagePokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+LakeOfRageFieldMon5Script:
+	faceplayer
+	cry SHELGON
+	pause 15
+	loadwildmon SHELGON, 35
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear LAKEOFRAGE_FIELDMON_5
+	end
+
+LakeOfRageFieldMon6Script:
+	faceplayer
+	cry SALAMENCE
+	pause 15
+	loadwildmon SALAMENCE, 70
+    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear LAKEOFRAGE_FIELDMON_6
+	end
+
 LakeOfRage_MapEvents:
 	db 0, 0 ; filler
 
@@ -513,7 +593,6 @@ LakeOfRage_MapEvents:
 	def_object_events
 	object_event 21, 28, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageLanceScript, EVENT_LAKE_OF_RAGE_LANCE
 	object_event 20, 26, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, -1
-	object_event 36, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageSuperNerdScript, -1
 	object_event 25, 29, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1
 	object_event 30, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAndre, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event 24, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherRaymond, EVENT_LAKE_OF_RAGE_CIVILIANS
@@ -521,5 +600,10 @@ LakeOfRage_MapEvents:
 	object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerCooltrainerfLois, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS
 	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
-	object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
 	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageChoiceSpecs, EVENT_LAKE_OF_RAGE_CHOICE_SPECS
+	object_event 15, 24, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 29,  26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, LakeOfRageFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 24, 17, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 31, 10, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 7,  10, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 28,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon6Script, EVENT_FIELD_MON_6

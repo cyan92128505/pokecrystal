@@ -2293,6 +2293,18 @@ AI_Smart_PriorityHit:
 	call AICompareSpeed
 	ret c
 
+; never use extremespeed against a ghost type
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp EXTREMESPEED
+	jr nz, .notESpeed
+    ld a, [wBattleMonType1]
+	cp GHOST
+	jp z, AIDiscourageMove
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jp z, AIDiscourageMove
+
+.notESpeed
 ; Dismiss this move if the player is flying or underground.
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
@@ -2304,18 +2316,18 @@ AI_Smart_PriorityHit:
 	jr nc, .continue
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
-	;ld a, [wPlayerMoveStruct + MOVE_POWER]
-	;and a
-	;jr z, .continue
+
+; has player picked a damaging move, if not then don't encourage.
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	jr z, .continue
+
+.encourage
+rept 9
 	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
+endr
 
 .continue
 ; Greatly encourage this move if it will KO the player.
@@ -2643,18 +2655,22 @@ AI_Smart_KingsShield:
     cp BASE_STAT_LEVEL + 2
     jr nc, .discourage
 
-; if we are here we are in attack stance, encourage
+; if we are here we are in attack stance
+
+; if the player can OHKO then massive encourage
+    call CanPlayerKO
+    jr c, .massiveEncourage
+
+; here we are in attack mode and the player can't OHKO, 30% to not use Kings Shield
+    call Random
+    cp 30 percent
+    ret c
+
+.massiveEncourage
 ; this must overcome encouragement from a potential ko
-    dec [hl]
+rept 10
 	dec [hl]
-    dec [hl]
-	dec [hl]
-    dec [hl]
-	dec [hl]
-    dec [hl]
-	dec [hl]
-    dec [hl]
-	dec [hl]
+endr
     ret
 
 .discourage
@@ -2662,8 +2678,6 @@ AI_Smart_KingsShield:
     inc [hl]
     inc [hl]
     ret
-
-
 
 AI_Smart_Protect:
 ; Greatly discourage this move if the enemy already used Protect.
@@ -2797,10 +2811,19 @@ AI_Smart_PerishSong:
 	ret
 
 AI_Smart_Sandstorm:
-; encourage if AI is a sand rush mon
+; encourage if AI benefits from ability
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
     jr z, .encourage
+    cp GARCHOMP
+    jr z, .encourage
+    cp GLISCOR
+    jr z, .encourage
+
+; discourage if we will be koed
+    call ShouldAIBoost
+    jr nc, .discourage
+
 ; Greatly discourage this move if the player is immune to Sandstorm damage.
 	ld a, [wBattleMonType1]
 	push hl
@@ -3614,6 +3637,17 @@ AI_Smart_QuiverDance:
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skip
 
+; if the player has not picked a damaging move then 50% to boost regardless
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	jr nz, .checkKO
+	call Random
+	cp 50 percent
+	jr c, .skip
+
+.checkKO
     call CanPlayerKO
     jr c, .discourage
 
@@ -3728,15 +3762,26 @@ AI_Smart_DragonDance:
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
 
+; if the player has not picked a damaging move then 50% to boost regardless
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	jr nz, .checkKO
+	call Random
+	cp 50 percent
+	jr c, .continue
+
+.checkKO
     call CanPlayerKO
     jr c, .discourage
 
+.continue
 ; discourage if enemy is paralyzed
     ld a, [wEnemyMonStatus]
 	and 1 << PAR
 	jr nz, .discourage
 
-.continue
 ; encourage to get to +2
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -4180,7 +4225,7 @@ ShouldAIBoost:
    	jr c, .noForceSwitch
     ld b, EFFECT_FORCE_SWITCH
 	call PlayerHasMoveEffect
-	jr c, .noForceSwitch
+	jr nc, .noForceSwitch
 	call Random
 	cp 50 percent
 	jr c, .dontBoost
@@ -4214,11 +4259,15 @@ ShouldAIBoost:
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jr nz, .dontBoost
-; is player attacking, if not we can boost
-	;ld a, [wPlayerMoveStruct + MOVE_POWER]
-    ;and a
-	;jr nz, .boost
-	jr .dontBoost
+; has player picked a damaging move, if so then don't boost, if not then 50% to not boost.
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	jr nz, .dontBoost
+	Call Random
+	cp 50 percent
+	jr c, .dontBoost
 
 .boost
     scf

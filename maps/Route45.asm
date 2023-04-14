@@ -557,7 +557,7 @@ Route45_MapEvents:
 
 	def_bg_events
 	bg_event  6,  4, BGEVENT_READ, Route45Sign
-	bg_event 13, 80, BGEVENT_ITEM, Route45HiddenPpUp
+	bg_event 13, 82, BGEVENT_ITEM, Route45HiddenPpUp
 
 	def_object_events
 	object_event 10, 4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderHavelScript, -1

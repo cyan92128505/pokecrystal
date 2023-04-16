@@ -2162,6 +2162,7 @@ ArticunoEvosAttacks:
 	db 50, ICE_BEAM
 	db 55, HURRICANE
 	db 60, BLIZZARD
+	db 65, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 ZapdosEvosAttacks:
@@ -2175,6 +2176,7 @@ ZapdosEvosAttacks:
 	db 50, THUNDERBOLT
 	db 55, HURRICANE
 	db 60, THUNDER
+	db 65, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 MoltresEvosAttacks:

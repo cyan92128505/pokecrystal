@@ -272,7 +272,7 @@ AI_Basic:
     pop bc
 	pop de
 	pop hl
-    jr c, .discourage
+    jp c, .discourage
 
 .checkSafeguard
 ; Dismiss Safeguard if it's already active.
@@ -345,6 +345,14 @@ AI_Basic:
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
 
+; if we are below 1/4 hp and have a healing move then lesser encourage so we can use it
+    call AICheckEnemyQuarterHP
+    jr c, .checkAcc
+	ld b, EFFECT_HEAL
+	call AIHasMoveEffect
+	jr c, .lesserEncouragement
+
+.checkAcc
 ; encourage more accurate moves if they can kill
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
 	cp 100 percent
@@ -401,7 +409,9 @@ AI_Smart_Switch:
 	;and SLP
 	;jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
-; switch if choice locked into a NVE move
+; switch if choice locked into a NVE move that cant 3hko (assumes ai only has the one move)
+    call CanAI3HKO
+    jr c, .not_encored
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .not_encored
@@ -413,6 +423,8 @@ AI_Smart_Switch:
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	jp c, .switch
+	and a
+	jp z, .switch
 .not_encored
 
 ; don't switch if enemy is weakened, just let it die
@@ -1461,6 +1473,10 @@ AI_Smart_Moonlight:
     jr z, .healBelowHalf
     cp ARCEUS
     jr z, .healBelowHalf
+
+; always heal when below 1/4 hp
+    call AICheckEnemyQuarterHP
+    jr nc, .encourage
 
 ; if faster than the player, heal if the player can 1hko
     call AICompareSpeed
@@ -2657,14 +2673,25 @@ AI_Smart_KingsShield:
 
 ; if we are here we are in attack stance
 
-; if the player can OHKO then massive encourage
-    call CanPlayerKO
-    jr c, .massiveEncourage
+; can we ko the player, if not use kings shield
+    call CanAIKO
+    jr nc, .massiveEncourage
 
-; here we are in attack mode and the player can't OHKO, 30% to not use Kings Shield
+; if player can't 2HKO then just attack
+    call CanPlayer2HKO
+    jr nc, .discourage
+
+; here we are in attack stance, can ko the player, but player can at least 2hko us
+; if the players last move was non-damaging, 50% chance to not use kings shield
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	jr nz, .massiveEncourage
+
     call Random
-    cp 30 percent
-    ret c
+    cp 50 percent
+    jr c, .discourage
 
 .massiveEncourage
 ; this must overcome encouragement from a potential ko
@@ -3637,15 +3664,14 @@ AI_Smart_QuiverDance:
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skip
 
-; if the player has not picked a damaging move then 50% to boost regardless
+; if the player has not picked a damaging move then boost if we cant 3hko
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
     and a
 	jr nz, .checkKO
-	call Random
-	cp 50 percent
-	jr c, .skip
+	call CanAI2HKO
+	jr nc, .skip
 
 .checkKO
     call CanPlayerKO
@@ -3762,15 +3788,14 @@ AI_Smart_DragonDance:
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
 
-; if the player has not picked a damaging move then 50% to boost regardless
+; if the player has not picked a damaging move then boost if we can't 3HKO already
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
     and a
 	jr nz, .checkKO
-	call Random
-	cp 50 percent
-	jr c, .continue
+	call CanAI2HKO
+	jr nc, .continue
 
 .checkKO
     call CanPlayerKO
@@ -4255,18 +4280,20 @@ ShouldAIBoost:
 	ld a, [wBattleMonStatus]
 	and 1 << FRZ | SLP
 	jr nz, .boost
+
 ; is the player behind a sub, if so don't boost, just attack
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jr nz, .dontBoost
-; has player picked a damaging move, if so then don't boost, if not then 50% to not boost.
+
+; was the players last move a damaging one, if so don't boost
+; if so the player may be setting up, if we are not currently able to 3HKO then boost
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
     and a
 	jr nz, .dontBoost
-	Call Random
-	cp 50 percent
+	call CanAI2HKO
 	jr c, .dontBoost
 
 .boost
@@ -4324,7 +4351,7 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
 CanPlayerKO:
     ld de, wBattleMonMoves ; load player moves
 	ld b, NUM_MOVES + 1
-.checkmove
+.loopPlayerKOMoves
 	dec b ; b is num moves on 1st pass
 	jr z, .done ; if b is 0 return we are done
 	ld a, [de] ; load the move
@@ -4334,7 +4361,7 @@ CanPlayerKO:
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove ; skip moves with 0 power
+	jr z, .loopPlayerKOMoves ; skip moves with 0 power
     ld a, 0
 	ldh [hBattleTurn], a
 	push hl
@@ -4354,15 +4381,15 @@ CanPlayerKO:
 	pop bc
 	pop de
 	pop hl
-    jp nc, .checkmove
+    jp nc, .loopPlayerKOMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .checkmove
+	jr z, .loopPlayerKOMoves
 	cp EFFECT_SKY_ATTACK
-	jr z, .checkmove
+	jr z, .loopPlayerKOMoves
 	cp EFFECT_SOLARBEAM
-	jr z, .checkmove
+	jr z, .loopPlayerKOMoves
     scf
     ret
 .done
@@ -4374,7 +4401,7 @@ CanPlayerKO:
 CanPlayer2HKO:
     ld de, wBattleMonMoves ; load player moves
 	ld b, NUM_MOVES + 1
-.checkmove
+.loopPlayer2HKOMoves
 	dec b ; b is num moves on 1st pass
 	jr z, .done ; if b is 0 return we are done
 	ld a, [de] ; load the move
@@ -4384,7 +4411,7 @@ CanPlayer2HKO:
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove ; skip moves with 0 power
+	jr z, .loopPlayer2HKOMoves ; skip moves with 0 power
     ld a, 0
 	ldh [hBattleTurn], a
 	push hl
@@ -4415,17 +4442,17 @@ CanPlayer2HKO:
 	pop bc
 	pop de
 	pop hl
-    jp nc, .checkmove
+    jp nc, .loopPlayer2HKOMoves
 ; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMoves
 	cp EFFECT_HYPER_BEAM
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMoves
 	cp EFFECT_SKY_ATTACK
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMoves
 	cp EFFECT_SOLARBEAM
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMoves
 	scf
     ret
 .done
@@ -4437,7 +4464,7 @@ CanPlayer2HKO:
 CanPlayer2HKOMaxHP:
     ld de, wBattleMonMoves ; load player moves
 	ld b, NUM_MOVES + 1
-.checkmove
+.loopPlayer2HKOMaxHPMoves
 	dec b ; b is num moves on 1st pass
 	jr z, .done ; if b is 0 return we are done
 	ld a, [de] ; load the move
@@ -4447,7 +4474,7 @@ CanPlayer2HKOMaxHP:
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove ; skip moves with 0 power
+	jr z, .loopPlayer2HKOMaxHPMoves ; skip moves with 0 power
     ld a, 0
 	ldh [hBattleTurn], a
 	push hl
@@ -4478,17 +4505,17 @@ CanPlayer2HKOMaxHP:
 	pop bc
 	pop de
 	pop hl
-    jp nc, .checkmove
+    jp nc, .loopPlayer2HKOMaxHPMoves
 ; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMaxHPMoves
 	cp EFFECT_HYPER_BEAM
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMaxHPMoves
 	cp EFFECT_SKY_ATTACK
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMaxHPMoves
 	cp EFFECT_SOLARBEAM
-	jr z, .checkmove
+	jr z, .loopPlayer2HKOMaxHPMoves
     scf
     ret
 .done
@@ -4500,7 +4527,7 @@ CanPlayer2HKOMaxHP:
 CanPlayer3HKOMaxHP:
     ld de, wBattleMonMoves ; load player moves
 	ld b, NUM_MOVES + 1
-.checkmove
+.loopPlayer3HKOMaxHPMoves
 	dec b ; b is num moves on 1st pass
 	jr z, .done ; if b is 0 return we are done
 	ld a, [de] ; load the move
@@ -4510,7 +4537,7 @@ CanPlayer3HKOMaxHP:
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
-	jr z, .checkmove ; skip moves with 0 power
+	jr z, .loopPlayer3HKOMaxHPMoves ; skip moves with 0 power
     ld a, 0
 	ldh [hBattleTurn], a
 	push hl
@@ -4544,18 +4571,197 @@ CanPlayer3HKOMaxHP:
 	pop bc
 	pop de
 	pop hl
-    jp nc, .checkmove
+    jp nc, .loopPlayer3HKOMaxHPMoves
 ; skip moves that can't be used on consecutive turns
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .checkmove
+	jr z, .loopPlayer3HKOMaxHPMoves
 	cp EFFECT_HYPER_BEAM
-	jr z, .checkmove
+	jr z, .loopPlayer3HKOMaxHPMoves
 	cp EFFECT_SKY_ATTACK
-	jr z, .checkmove
+	jr z, .loopPlayer3HKOMaxHPMoves
 	cp EFFECT_SOLARBEAM
-	jr z, .checkmove
+	jr z, .loopPlayer3HKOMaxHPMoves
 	scf
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; return carry if the AI has a move that can 1HKO the player Pokemon from current HP
+CanAIKO:
+    ld de, wEnemyMonMoves ; load player moves
+	ld b, NUM_MOVES + 1
+.loopAIKOMoves
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetEnemyMove
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .loopAIKOMoves ; skip moves with 0 power
+
+    ld a, 1
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar EnemyAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wBattleMonHP + 1]
+	cp c ; compare upper
+	ld a, [wBattleMonHP]
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .loopAIKOMoves
+; skip moves that can't be used on consecutive turns, except hyper beam
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .loopAIKOMoves
+	cp EFFECT_SKY_ATTACK
+	jr z, .loopAIKOMoves
+	cp EFFECT_SOLARBEAM
+	jr z, .loopAIKOMoves
+    scf
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; return carry if the AI has a move that can 2HKO the player Pokemon from current HP
+CanAI2HKO:
+    ld de, wEnemyMonMoves ; load AI moves
+	ld b, NUM_MOVES + 1
+.loopAI3HKOMoves
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetEnemyMove
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .loopAI3HKOMoves ; skip moves with 0 power
+
+    ld a, 1
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar EnemyAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+; double current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+; continue
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wBattleMonHP + 1]
+	cp c ; compare upper
+	ld a, [wBattleMonHP]
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .loopAI3HKOMoves
+; skip moves that can't be used on consecutive turns, except hyper beam
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .loopAI3HKOMoves
+	cp EFFECT_HYPER_BEAM
+	jr z, .loopAI3HKOMoves
+	cp EFFECT_SKY_ATTACK
+	jr z, .loopAI3HKOMoves
+	cp EFFECT_SOLARBEAM
+	jr z, .loopAI3HKOMoves
+    scf
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; return carry if the AI has a move that can 3HKO the player Pokemon from current HP
+CanAI3HKO:
+    ld de, wEnemyMonMoves ; load AI moves
+	ld b, NUM_MOVES + 1
+.loopAI3HKOMoves
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetEnemyMove
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .loopAI3HKOMoves ; skip moves with 0 power
+
+    ld a, 1
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar EnemyAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+; triple current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	ld b, h
+	ld c, l
+	add hl, hl
+	add hl, bc
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+; continue
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wBattleMonHP + 1]
+	cp c ; compare upper
+	ld a, [wBattleMonHP]
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .loopAI3HKOMoves
+; skip moves that can't be used on consecutive turns, except hyper beam
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .loopAI3HKOMoves
+	cp EFFECT_HYPER_BEAM
+	jr z, .loopAI3HKOMoves
+	cp EFFECT_SKY_ATTACK
+	jr z, .loopAI3HKOMoves
+	cp EFFECT_SOLARBEAM
+	jr z, .loopAI3HKOMoves
+    scf
     ret
 .done
     xor a ; clear carry flag
@@ -5033,174 +5239,149 @@ AIDamageCalc:
 INCLUDE "data/battle/ai/constant_damage_effects.asm"
 
 AI_Cautious:
+    ret
 ; 90% chance to discourage moves with residual effects after the first turn.
-
-	ld a, [wEnemyTurnsTaken]
-	and a
-	ret z
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.loop
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	push hl
-	push de
-	push bc
-	ld hl, ResidualMoves
-	ld de, 1
-	call IsInArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .loop
-
-	call Random
-	cp 90 percent + 1
-	ret nc
-
-	inc [hl]
-	jr .loop
+;	ld a, [wEnemyTurnsTaken]
+;	and a
+;	ret z
+;	ld hl, wEnemyAIMoveScores - 1
+;	ld de, wEnemyMonMoves
+;	ld c, NUM_MOVES + 1
+;.loop
+;	inc hl
+;	dec c
+;	ret z
+;	ld a, [de]
+;	inc de
+;	and a
+;	ret z
+;	push hl
+;	push de
+;	push bc
+;	ld hl, ResidualMoves
+;	ld de, 1
+;	call IsInArray
+;	pop bc
+;	pop de
+;	pop hl
+;	jr nc, .loop
+;	call Random
+;	cp 90 percent + 1
+;	ret nc
+;	inc [hl]
+;	jr .loop
 
 INCLUDE "data/battle/ai/residual_moves.asm"
 
 
 AI_Status:
+    ret
 ; Dismiss status moves that don't affect the player.
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-.checkmove
-	dec b
-	ret z
-
-	inc hl
-	ld a, [de]
-	and a
-	ret z
-
-	inc de
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_TOXIC
-	jr z, .poisonimmunity
-	cp EFFECT_POISON
-	jr z, .poisonimmunity
-	cp EFFECT_SLEEP
-	jr z, .typeimmunity
-	cp EFFECT_PARALYZE
-	jr z, .typeimmunity
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .checkmove
-
-	jr .typeimmunity
-
-.poisonimmunity
-	ld a, [wBattleMonType1]
-	cp POISON
-	jr z, .immune
-	ld a, [wBattleMonType2]
-	cp POISON
-	jr z, .immune
-
-.typeimmunity
-	push hl
-	push bc
-	push de
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-	pop de
-	pop bc
-	pop hl
-
-	ld a, [wTypeMatchup]
-	and a
-	jr nz, .checkmove
-
-.immune
-	call AIDiscourageMove
-	jr .checkmove
+;	ld hl, wEnemyAIMoveScores - 1
+;	ld de, wEnemyMonMoves
+;	ld b, NUM_MOVES + 1
+;.checkmove
+;	dec b
+;	ret z
+;	inc hl
+;	ld a, [de]
+;	and a
+;	ret z
+;	inc de
+;	call AIGetEnemyMove
+;	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+;	cp EFFECT_TOXIC
+;	jr z, .poisonimmunity
+;	cp EFFECT_POISON
+;	jr z, .poisonimmunity
+;	cp EFFECT_SLEEP
+;	jr z, .typeimmunity
+;	cp EFFECT_PARALYZE
+;	jr z, .typeimmunity
+;	ld a, [wEnemyMoveStruct + MOVE_POWER]
+;	and a
+;	jr z, .checkmove
+;	jr .typeimmunity
+;.poisonimmunity
+;	ld a, [wBattleMonType1]
+;	cp POISON
+;	jr z, .immune
+;	ld a, [wBattleMonType2]
+;	cp POISON
+;	jr z, .immune
+;.typeimmunity
+;	push hl
+;	push bc
+;	push de
+;	ld a, 1
+;	ldh [hBattleTurn], a
+;	callfar BattleCheckTypeMatchup
+;	pop de
+;	pop bc
+;	pop hl
+;	ld a, [wTypeMatchup]
+;	and a
+;	jr nz, .checkmove
+;.immune
+;	call AIDiscourageMove
+;	jr .checkmove
 
 
 AI_Risky:
+    ret
 ; Use any move that will KO the target.
 ; Risky moves will often be an exception (see below).
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	push de
-	push bc
-	push hl
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .nextmove
-
+;	ld hl, wEnemyAIMoveScores - 1
+;	ld de, wEnemyMonMoves
+;	ld c, NUM_MOVES + 1
+;.checkmove
+;	inc hl
+;	dec c
+;	ret z
+;	ld a, [de]
+;	inc de
+;	and a
+;	ret z
+;	push de
+;	push bc
+;	push hl
+;	call AIGetEnemyMove
+;	ld a, [wEnemyMoveStruct + MOVE_POWER]
+;	and a
+;	jr z, .nextmove
 ; Don't use risky moves at max hp.
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	ld de, 1
-	ld hl, RiskyEffects
-	call IsInArray
-	jr nc, .checkko
-
-	call AICheckEnemyMaxHP
-	jr c, .nextmove
-
+;	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+;	ld de, 1
+;	ld hl, RiskyEffects
+;	call IsInArray
+;	jr nc, .checkko
+;	call AICheckEnemyMaxHP
+;	jr c, .nextmove
 ; Else, 80% chance to exclude them.
-	call Random
-	cp 79 percent - 1
-	jr c, .nextmove
-
-.checkko
-	call AIDamageCalc
-
-	ld a, [wCurDamage + 1]
-	ld e, a
-	ld a, [wCurDamage]
-	ld d, a
-	ld a, [wBattleMonHP + 1]
-	cp e
-	ld a, [wBattleMonHP]
-	sbc d
-	jr nc, .nextmove
-
-	pop hl
-rept 5
-	dec [hl]
-endr
-	push hl
-
-.nextmove
-	pop hl
-	pop bc
-	pop de
-	jr .checkmove
+;	call Random
+;	cp 79 percent - 1
+;	jr c, .nextmove
+;.checkko
+;	call AIDamageCalc
+;	ld a, [wCurDamage + 1]
+;	ld e, a
+;	ld a, [wCurDamage]
+;	ld d, a
+;	ld a, [wBattleMonHP + 1]
+;	cp e
+;	ld a, [wBattleMonHP]
+;	sbc d
+;	jr nc, .nextmove
+;	pop hl
+;rept 5
+;	dec [hl]
+;endr
+;	push hl
+;.nextmove
+;	pop hl
+;	pop bc
+;	pop de
+;	jr .checkmove
 
 INCLUDE "data/battle/ai/risky_effects.asm"
 

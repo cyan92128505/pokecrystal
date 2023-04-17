@@ -1,7 +1,7 @@
 MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 300
 
 	object_const_def
-	const MAHOGANYTOWN_POKEFAN_M
+	;const MAHOGANYTOWN_POKEFAN_M
 	const MAHOGANYTOWN_GRAMPS
 	const MAHOGANYTOWN_FISHER
 	const MAHOGANYTOWN_LASS
@@ -24,24 +24,24 @@ MahoganyTown_MapScripts:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	endcallback
 
-MahoganyTownTryARageCandyBarScript:
-	showemote EMOTE_SHOCK, MAHOGANYTOWN_POKEFAN_M, 15
-	applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantBlocksYouMovement
-	follow PLAYER, MAHOGANYTOWN_POKEFAN_M
-	applymovement PLAYER, MahoganyTownPlayerStepLeftMovement
-	stopfollow
-	turnobject PLAYER, RIGHT
-	scall RageCandyBarMerchantScript
-	applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantReturnsMovement
-	end
+;MahoganyTownTryARageCandyBarScript:
+;	showemote EMOTE_SHOCK, MAHOGANYTOWN_POKEFAN_M, 15
+;	applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantBlocksYouMovement
+;	follow PLAYER, MAHOGANYTOWN_POKEFAN_M
+;	applymovement PLAYER, MahoganyTownPlayerStepLeftMovement
+;	stopfollow
+;	turnobject PLAYER, RIGHT
+;	scall RageCandyBarMerchantScript
+;	applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantReturnsMovement
+;	end
 
-MahoganyTownPokefanMScript:
-	faceplayer
-RageCandyBarMerchantScript:
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .ClearedRocketHideout
-	scall .SellRageCandyBars
-	end
+;MahoganyTownPokefanMScript:
+;	faceplayer
+;RageCandyBarMerchantScript:
+;	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
+;	iftrue .ClearedRocketHideout
+;	scall .SellRageCandyBars
+;	end
 
 .ClearedRocketHideout:
 	opentext
@@ -255,8 +255,8 @@ MahoganyTown_MapEvents:
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
 
 	def_coord_events
-	coord_event 19,  8, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
-	coord_event 19,  9, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
+	;coord_event 19,  8, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
+	;coord_event 19,  9, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
 
 	def_bg_events
 	bg_event  1,  5, BGEVENT_READ, MahoganyTownSign
@@ -265,7 +265,7 @@ MahoganyTown_MapEvents:
 	bg_event 16, 13, BGEVENT_READ, MahoganyTownPokecenterSign
 
 	def_object_events
-	object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+	;object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
 	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1
 	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
 	object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS

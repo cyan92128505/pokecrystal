@@ -16,8 +16,9 @@ SaffronMagnetTrainStation_MapScripts:
 SaffronMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .MagnetTrainToGoldenrod
+	;checkevent EVENT_RESTORED_POWER_TO_KANTO
+	;iftrue .MagnetTrainToGoldenrod
+	sjump .MagnetTrainToGoldenrod
 	writetext SaffronMagnetTrainStationOfficerTrainIsntOperatingText
 	waitbutton
 	closetext
@@ -27,8 +28,8 @@ SaffronMagnetTrainStationOfficerScript:
 	writetext SaffronMagnetTrainStationOfficerAreYouComingOnBoardText
 	yesorno
 	iffalse .DecidedNotToRide
-	checkitem PASS
-	iffalse .PassNotInBag
+	;checkitem PASS
+	;iffalse .PassNotInBag
 	writetext SaffronMagnetTrainStationOfficerRightThisWayText
 	waitbutton
 	closetext

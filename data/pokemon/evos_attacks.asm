@@ -1971,8 +1971,9 @@ LaprasEvosAttacks:
 	db 22, CONFUSE_RAY
 	db 29, PERISH_SONG
 	db 36, ICE_BEAM
-	db 43, RAIN_DANCE
-	db 50, SAFEGUARD
+	db 40, AVALANCHE
+	db 45, RAIN_DANCE
+	db 50, DRAGON_DANCE
 	db 57, HYDRO_PUMP
 	db 0 ; no more level-up moves
 

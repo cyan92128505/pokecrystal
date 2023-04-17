@@ -6,12 +6,15 @@
 	const ROUTE45_BLACK_BELT
 	const ROUTE45_COOLTRAINER_M
 	const ROUTE45_COOLTRAINER_F
-	const ROUTE45_FRUIT_TREE
 	const ROUTE45_POKE_BALL1
 	const ROUTE45_POKE_BALL2
-	const ROUTE45_POKE_BALL3
-	const ROUTE45_POKE_BALL4
 	const ROUTE45_YOUNGSTER
+	const ROUTE45_FIELDMON_1
+    const ROUTE45_FIELDMON_2
+    const ROUTE45_FIELDMON_3
+    const ROUTE45_FIELDMON_4
+    const ROUTE45_FIELDMON_5
+    const ROUTE45_FIELDMON_6
 
 Route45_MapScripts:
 	def_scene_scripts
@@ -22,7 +25,15 @@ Route45_MapScripts:
 .Weather:
 	setval WEATHER_SANDSTORM
 	writemem wFieldWeather
-	endcallback
+
+; Pokemon which always appear
+    appear ROUTE45_FIELDMON_1
+    appear ROUTE45_FIELDMON_2
+    appear ROUTE45_FIELDMON_3
+    appear ROUTE45_FIELDMON_4
+    appear ROUTE45_FIELDMON_5
+    appear ROUTE45_FIELDMON_6
+    endcallback
 
 TrainerBlackbeltKenji:
 	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
@@ -306,14 +317,14 @@ Route45FruitTree:
 Route45Nugget:
 	itemball NUGGET
 
-Route45Revive:
-	itemball REVIVE
+Route45RockSlide:
+	itemball TM_ROCK_SLIDE
 
 Route45Elixer:
 	itemball ELIXER
 
-Route45MaxPotion:
-	itemball MAX_POTION
+Route45DoubleEdge:
+	itemball TM_DOUBLE_EDGE
 
 Route45HiddenPpUp:
 	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
@@ -547,6 +558,47 @@ Route45SignText:
 	line "MOUNTAIN RD. AHEAD"
 	done
 
+Route45FieldMon1Script:
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, Route45PokemonAttacksText, 44, 0, .script
+.script
+    disappear ROUTE45_FIELDMON_1
+    end
+
+Route45FieldMon2Script:
+	trainer FERROTHORN, FIELD_MON, EVENT_FIELD_MON_2, Route45PokemonAttacksText, 44, 0, .script
+.script
+    disappear ROUTE45_FIELDMON_2
+    end
+
+Route45FieldMon3Script:
+	trainer SKARMORY, FIELD_MON, EVENT_FIELD_MON_3, Route45PokemonAttacksText, 45, 0, .script
+.script
+    disappear ROUTE45_FIELDMON_3
+    end
+
+Route45FieldMon4Script:
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_4, Route45PokemonAttacksText, 46, 0, .script
+.script
+    disappear ROUTE45_FIELDMON_4
+    end
+
+Route45FieldMon5Script:
+	trainer GLISCOR, FIELD_MON, EVENT_FIELD_MON_5, Route45PokemonAttacksText, 48, 0, .script
+.script
+    disappear ROUTE45_FIELDMON_5
+    end
+
+Route45FieldMon6Script:
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_6, Route45PokemonAttacksText, 70, 0, .script
+.script
+    disappear ROUTE45_FIELDMON_6
+    end
+
+Route45PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
 Route45_MapEvents:
 	db 0, 0 ; filler
 
@@ -565,11 +617,14 @@ Route45_MapEvents:
 	object_event  5, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
 	object_event  9, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerTimothy, -1
 	object_event 11, 50, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltKenji, -1
-	object_event 17, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermRyan, -1
+	object_event 16, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermRyan, -1
 	object_event  5, 36, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfKelly, -1
-	object_event 16, 82, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route45FruitTree, -1
-	object_event  6, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Nugget, EVENT_ROUTE_45_NUGGET
-	object_event  5, 66, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Revive, EVENT_ROUTE_45_REVIVE
-	object_event  6, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Elixer, EVENT_ROUTE_45_ELIXER
-	object_event  7, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45MaxPotion, EVENT_ROUTE_45_MAX_POTION
+	object_event 10, 84, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45RockSlide, EVENT_ROUTE_45_ROCK_SLIDE
+	object_event 16, 41, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45DoubleEdge, EVENT_ROUTE_45_DOUBLE_EDGE
 	object_event  4, 70, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerCamperQuentin, -1
+	object_event  4, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 11, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 10, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route45FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 12, 56, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 6,  72, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 14, 82, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon6Script, EVENT_FIELD_MON_6

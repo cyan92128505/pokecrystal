@@ -14,8 +14,9 @@ GoldenrodMagnetTrainStation_MapScripts:
 GoldenrodMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .MagnetTrainToSaffron
+	;checkevent EVENT_RESTORED_POWER_TO_KANTO
+	;iftrue .MagnetTrainToSaffron
+	sjump .MagnetTrainToSaffron
 	writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText
 	waitbutton
 	closetext

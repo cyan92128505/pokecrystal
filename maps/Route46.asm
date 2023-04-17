@@ -5,17 +5,17 @@
 	const ROUTE46_FRUIT_TREE1
 	const ROUTE46_FRUIT_TREE2
 	const ROUTE46_POKE_BALL
+	const ROUTE46_FIELDMON_1
 
 Route46_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Weather
+	callback MAPCALLBACK_OBJECTS, .FieldMon
 
-.Weather:
-	setval WEATHER_SANDSTORM
-	writemem wFieldWeather
-	endcallback
+.FieldMon:
+    appear ROUTE46_FIELDMON_1
+    endcallback
 
 TrainerCamperTed:
 	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
@@ -254,6 +254,17 @@ Route46SignText:
 	line "MOUNTAIN RD. AHEAD"
 	done
 
+Route46FieldMon1Script:
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route46PokemonAttacksText, 43, 0, .script
+.script
+    disappear ROUTE46_FIELDMON_1
+    end
+
+Route46PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
 Route46_MapEvents:
 	db 0, 0 ; filler
 
@@ -274,3 +285,4 @@ Route46_MapEvents:
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
 	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED
+	object_event  7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route46FieldMon1Script, EVENT_FIELD_MON_1

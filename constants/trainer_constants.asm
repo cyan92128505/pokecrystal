@@ -737,7 +737,7 @@ KRIS EQU __trainer_class__
     const LAUTREC
     const PARRY_KING
     const PATCHES
-    const JACK
+    const CRESTFALLEN
     const HAVEL
     const OROBORO
     const MASTER_PATCHES

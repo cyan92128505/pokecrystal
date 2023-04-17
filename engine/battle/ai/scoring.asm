@@ -2661,7 +2661,7 @@ AI_Smart_Curse:
 	ret
 
 AI_Smart_KingsShield:
-; discourage if the enemy already used Protecting move
+; discourage if the we already used Protecting move
 	ld a, [wEnemyProtectCount]
 	and a
 	jr nz, .discourage
@@ -2672,16 +2672,21 @@ AI_Smart_KingsShield:
     jr nc, .discourage
 
 ; if we are here we are in attack stance
-
-; can we ko the player, if not use kings shield
+; can we ko the player, if not continue
     call CanAIKO
-    jr nc, .massiveEncourage
+    jr nc, .checkSubstitute
 
-; if player can't 2HKO then just attack
-    call CanPlayer2HKO
-    jr nc, .discourage
+; if we outspeed then just attack
+    call AICompareSpeed
+    jr c, .discourage
 
-; here we are in attack stance, can ko the player, but player can at least 2hko us
+.checkSubstitute
+; if the player has Substitute in their moves then 50% chance to not use kings shield
+    ld b, EFFECT_SUBSTITUTE
+	call PlayerHasMoveEffect
+	jr c, .50PercentDiscourage
+
+.checkAttacking
 ; if the players last move was non-damaging, 50% chance to not use kings shield
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
@@ -2689,6 +2694,7 @@ AI_Smart_KingsShield:
     and a
 	jr nz, .massiveEncourage
 
+.50PercentDiscourage
     call Random
     cp 50 percent
     jr c, .discourage

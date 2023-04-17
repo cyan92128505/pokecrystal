@@ -2,11 +2,23 @@
 	const DARKCAVEBLACKTHORNENTRANCE_GIRATINA
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL1
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL2
+	const DARKCAVEBLACKTHORNENTRANCE_INVADER_CRESTFALLEN
+	const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
+    const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
+    const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
 
 DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .AreaFieldMon
+
+.AreaFieldMon:
+; Pokemon which always appear
+    appear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
+    appear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
+    appear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
+    endcallback
 
 GiratinaScript:
 	opentext
@@ -162,8 +174,8 @@ DarkCaveBlackthornEntrancePharmacistScript:
 	closetext
 	end
 
-DarkCaveBlackthornEntranceRevive:
-	itemball REVIVE
+DarkCaveBlackthornEntranceTMCurse:
+	itemball TM_CURSE
 
 DarkCaveBlackthornEntranceTMSnore:
 	itemball TM_DARK_PULSE
@@ -197,7 +209,7 @@ DarkCaveBlackthornEntrancePharmacistText2:
 	done
 
 InvaderJackScript:
-	trainer INVADER, JACK, EVENT_BEAT_INVADER_JACK, InvaderJackSeenText, InvaderJackBeatenText, InvaderJackVictoryText, .Script
+	trainer INVADER, CRESTFALLEN, EVENT_BEAT_INVADER_CRESTFALLEN, InvaderJackSeenText, InvaderJackBeatenText, InvaderJackVictoryText, .Script
 
 .Script:
 	endifjustbattled
@@ -241,6 +253,29 @@ InvaderJackAfterBattleText:
 	para "Heh heh heh."
 	done
 
+DarkCaveBlackthornEntranceFieldMon1Script:
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_1, DarkCaveBlackthornEntrancePokemonAttacksText, 70, 0, .script
+.script
+    disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
+    end
+
+DarkCaveBlackthornEntranceFieldMon2Script:
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveBlackthornEntrancePokemonAttacksText, 52, 0, .script
+.script
+    disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
+    end
+
+DarkCaveBlackthornEntranceFieldMon3Script:
+	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 51, 0, .script
+.script
+    disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
+    end
+
+DarkCaveBlackthornEntrancePokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -254,7 +289,10 @@ DarkCaveBlackthornEntrance_MapEvents:
 
 	def_object_events
 	object_event  6,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_CAUGHT_GIRATINA
-	object_event 39, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
-	object_event 25, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
+	object_event 25,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMCurse, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
+	object_event 39, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
 	object_event  8, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderJackScript, -1
+	object_event 21, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 21, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 40,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3
 

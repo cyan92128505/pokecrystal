@@ -57,7 +57,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
 	yesorno
 	iffalse .Refused2
-	checkmoney YOUR_MONEY, 20000
+	checkmoney YOUR_MONEY, 50000
     ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
@@ -133,7 +133,7 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takemoney YOUR_MONEY, 20000
+	takemoney YOUR_MONEY, 50000
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodCityMoveTutorFarewellKidText
@@ -532,7 +532,7 @@ GoldenrodCityMoveTutorNotYetText:
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "20000 Okay?"
+	line "50000 Okay?"
 	done
 
 GoldenrodCityMoveTutorAwwButTheyreAmazingText:

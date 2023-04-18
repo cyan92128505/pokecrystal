@@ -293,6 +293,7 @@
     const EVENT_BEAT_MASTER_CYNTHIA
     const EVENT_BEAT_MASTER_STEVEN
     const EVENT_BEAT_MASTER_WALLACE
+    const EVENT_GOT_SPELLTAG_FROM_SAGE
 
 	const_next 600
 ; Kurt Apricorn events

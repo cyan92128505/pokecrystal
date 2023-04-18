@@ -6,6 +6,8 @@
 	const SPROUTTOWER3F_POKE_BALL1
 	const SPROUTTOWER3F_POKE_BALL2
 	const SPROUTTOWER3F_SILVER
+	const SPROUTTOWER3F_FIELDMON_1
+    const SPROUTTOWER3F_FIELDMON_2
 
 SproutTower3F_MapScripts:
 	def_scene_scripts
@@ -13,6 +15,18 @@ SproutTower3F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .SproutTower3FFieldMon
+
+.SproutTower3FFieldMon:
+    appear SPROUTTOWER3F_FIELDMON_1
+    random 2
+    ifequal 1, .spawn
+    disappear AREA_FIELDMON_2
+    sjump .end
+.spawn
+    appear AREA_FIELDMON_2
+.end
+    endcallback
 
 .DummyScene0:
 	end
@@ -353,6 +367,29 @@ SproutTower3FStatueText:
 	line "distinguished."
 	done
 
+SproutTower3FFieldMon1Script:
+	faceplayer
+	cry HOOTHOOT
+	pause 15
+	loadwildmon HOOTHOOT, 11
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear SPROUTTOWER3F_FIELDMON_1
+	end
+
+SproutTower3FFieldMon2Script:
+	faceplayer
+	cry BELLSPROUT
+	pause 15
+	loadwildmon BELLSPROUT, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear SPROUTTOWER3F_FIELDMON_2
+	end
+
 SproutTower3F_MapEvents:
 	db 0, 0 ; filler
 
@@ -378,3 +415,5 @@ SproutTower3F_MapEvents:
 	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FPotion, EVENT_SPROUT_TOWER_3F_POTION
 	object_event 14,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRope, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
 	object_event 10,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_SPROUT_TOWER
+	object_event  8, 11, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, SproutTower3FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  5,  1, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, SproutTower3FFieldMon2Script, EVENT_FIELD_MON_2

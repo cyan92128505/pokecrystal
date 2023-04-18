@@ -5,6 +5,7 @@
 	const SPROUTTOWER1F_TEACHER
 	const SPROUTTOWER1F_SAGE3
 	const SPROUTTOWER1F_POKE_BALL
+	const SPROUTTOWER1F_SAGE4
 
 SproutTower1F_MapScripts:
 	def_scene_scripts
@@ -16,6 +17,9 @@ SproutTower1FSage1Script:
 
 SproutTower1FSage2Script:
 	jumptextfaceplayer SproutTower1FSage2Text
+
+SproutTower1FSage4Script:
+	jumptextfaceplayer SproutTower1FSage4Text
 
 SproutTower1FGrannyScript:
 	jumptextfaceplayer SproutTower1FGrannyText
@@ -76,6 +80,35 @@ SproutTower1FSage2Text:
 	line "#MON training."
 	done
 
+SproutTower1FSage4Text:
+	text "We never knew"
+	line "there was a lower"
+	cont "level to this"
+	cont "place."
+
+	para "My brother went"
+	line "down days ago."
+
+	para "He has not"
+	line "returned."
+
+	para "Master LI has"
+	line "forbidden entry."
+
+	para "Only with FLASH"
+	line "can one see"
+	cont "down there."
+
+	para "Oh my dear"
+	line "brother."
+
+	para "I am sorry."
+	done
+
+	para "as a place for"
+	line "#MON training."
+	done
+
 SproutTower1FGrannyText:
 	text "A BELLSPROUT over"
 	line "100 feet tall…"
@@ -124,3 +157,5 @@ SproutTower1F_MapEvents:
 	object_event  9,  9, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FTeacherScript, -1
 	object_event  3,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSageChow, -1
 	object_event 16,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower1FParlyzHeal, EVENT_SPROUT_TOWER_1F_PARLYZ_HEAL
+	object_event 12,  9, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage4Script, -1
+

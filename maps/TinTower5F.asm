@@ -1,10 +1,40 @@
 	object_const_def
 	const TINTOWER5F_POKE_BALL
+	const TINTOWER5F_FIELDMON_1
+    const TINTOWER5F_FIELDMON_2
 
 TinTower5F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .TinTower5FFieldMon
+	
+.TinTower5FFieldMon:
+    appear TINTOWER5F_FIELDMON_1
+    appear TINTOWER5F_FIELDMON_2
+    endcallback
+    
+TinTower5FFieldMon1Script:
+	faceplayer
+	cry MISMAGIUS
+	pause 15
+	loadwildmon MISMAGIUS, 43
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear TINTOWER5F_FIELDMON_1
+	end
+
+TinTower5FFieldMon2Script:
+	faceplayer
+	cry ROTOM
+	pause 15
+	loadwildmon ROTOM, 41
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear TINTOWER5F_FIELDMON_2
+	end
 
 TinTower5FRareCandy:
 	itemball RARE_CANDY
@@ -31,4 +61,6 @@ TinTower5F_MapEvents:
 	bg_event  3, 15, BGEVENT_ITEM, TinTower5FHiddenCarbos
 
 	def_object_events
-	object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower5FRareCandy, EVENT_TIN_TOWER_5F_RARE_CANDY
+	object_event  8,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower5FRareCandy, EVENT_TIN_TOWER_5F_RARE_CANDY
+	object_event  2,  0, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TinTower5FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 10,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TinTower5FFieldMon2Script, EVENT_FIELD_MON_2

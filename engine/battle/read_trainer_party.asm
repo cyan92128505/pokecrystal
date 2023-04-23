@@ -77,8 +77,7 @@ ReadTrainerParty:
 	call OpenSRAM
 	ld a, TRAINERTYPE_MOVES
 	ld [wOtherTrainerType], a
-	;ld de, sMysteryGiftTrainer
-	;ld de, wMysteryGiftTrainer
+	ld de, sMysteryGiftTrainer ; AndrewNote - sMysteryGiftTrainer is trainer cal2 loads
 	call ReadTrainerPartyPieces
 	call CloseSRAM
 	jr .done

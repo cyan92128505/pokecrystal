@@ -4,6 +4,9 @@
 	const ICEPATHB1F_BOULDER3
 	const ICEPATHB1F_BOULDER4
 	const ICEPATHB1F_POKE_BALL
+	const ICEPATHB1F_FIELDMON_1
+    const ICEPATHB1F_FIELDMON_2
+    const ICEPATHB1F_FIELDMON_3
 
 IcePathB1F_MapScripts:
 	def_scene_scripts
@@ -13,6 +16,9 @@ IcePathB1F_MapScripts:
 
 .SetUpStoneTable:
 	writecmdqueue .CommandQueue
+	appear ICEPATHB1F_FIELDMON_1
+    appear ICEPATHB1F_FIELDMON_2
+    appear ICEPATHB1F_FIELDMON_3
 	endcallback
 
 .CommandQueue:
@@ -62,8 +68,8 @@ IcePathB1F_MapScripts:
 IcePathB1FBoulder:
 	jumpstd StrengthBoulderScript
 
-IcePathB1FIron:
-	itemball IRON
+IcePathB1FLeftovers:
+	itemball LEFTOVERS
 
 IcePathB1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ICE_PATH_B1F_HIDDEN_MAX_POTION
@@ -72,6 +78,34 @@ IcePathBoulderFellThroughText:
 	text "The boulder fell"
 	line "through."
 	done
+
+IcePathB1FieldMon1Script:
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_1, IcePathB1PokemonAttacksText, 42, 0, .script
+.script
+    disappear ICEPATHB1F_FIELDMON_1
+    end
+
+IcePathB1FieldMon2Script:
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_2, IcePathB1PokemonAttacksText, 44, 0, .script
+.script
+    disappear ICEPATHB1F_FIELDMON_2
+    end
+
+IcePathB1PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+IcePathB1FieldMon3Script:
+	faceplayer
+	cry LAPRAS
+	pause 15
+	loadwildmon LAPRAS, 44
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ICEPATHB1F_FIELDMON_3
+	end
 
 IcePathB1F_MapEvents:
 	db 0, 0 ; filler
@@ -96,4 +130,7 @@ IcePathB1F_MapEvents:
 	object_event  7,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_2
 	object_event  8,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_3
 	object_event 17,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB1FBoulder, EVENT_BOULDER_IN_ICE_PATH_4
-	object_event  5, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB1FIron, EVENT_ICE_PATH_B1F_IRON
+	object_event  5, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB1FLeftovers, EVENT_ICE_PATH_B1F_LEFTOVERS
+	object_event  8, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, IcePathB1FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 17, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, IcePathB1FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 15, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IcePathB1FieldMon3Script, EVENT_FIELD_MON_3

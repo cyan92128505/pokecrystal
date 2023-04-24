@@ -7,13 +7,56 @@
 	const MOUNTMORTAR1FINSIDE_POKE_BALL5
 	const MOUNTMORTAR1FINSIDE_SUPER_NERD1
 	const MOUNTMORTAR1FINSIDE_SUPER_NERD2
-	const MOUNTMORTAR1FINSIDE_POKE_BALL6
-	const MOUNTMORTAR1FINSIDE_POKE_BALL7
+	const MOUNTMORTAR1FINSIDE_FIELDMON_1
+    const MOUNTMORTAR1FINSIDE_FIELDMON_2
+    const MOUNTMORTAR1FINSIDE_FIELDMON_3
+    const MOUNTMORTAR1FINSIDE_FIELDMON_4
+    const MOUNTMORTAR1FINSIDE_FIELDMON_5
+    const MOUNTMORTAR1FINSIDE_FIELDMON_6
+    const MOUNTMORTAR1FINSIDE_FIELDMON_7
+    const MOUNTMORTAR1FINSIDE_FIELDMON_8
+
 
 MountMortar1FInside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .MountMortar1FInsideFieldMon
+
+.MountMortar1FInsideFieldMon:
+; Pokemon which always appear
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_1
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_2
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_3
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_4
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_5
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn6
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_7
+
+.mon8
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_8
+    sjump .end
+.spawn8
+    appear MOUNTMORTAR1FINSIDE_FIELDMON_8
+
+.end
+    endcallback
 
 TrainerPokemaniacMiller:
 	trainer POKEMANIAC, MILLER, EVENT_BEAT_POKEMANIAC_MILLER, PokemaniacMillerSeenText, PokemaniacMillerBeatenText, 0, .Script
@@ -114,6 +157,75 @@ SupernerdMarkusAfterBattleText:
 	line "WATERFALL?"
 	done
 
+MountMortar1FInsideFieldMon1Script:
+	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_1, MountMortar1FInsidePokemonAttacksText, 30, 0, .script
+.script
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_1
+    end
+
+MountMortar1FInsideFieldMon2Script:
+	trainer GRAVELER, FIELD_MON, EVENT_FIELD_MON_2, MountMortar1FInsidePokemonAttacksText, 32, 0, .script
+.script
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_2
+    end
+
+MountMortar1FInsideFieldMon3Script:
+	trainer MACHOKE, FIELD_MON, EVENT_FIELD_MON_3, MountMortar1FInsidePokemonAttacksText, 31, 0, .script
+.script
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_3
+    end
+
+MountMortar1FInsideFieldMon4Script:
+	trainer GURDURR, FIELD_MON, EVENT_FIELD_MON_4, MountMortar1FInsidePokemonAttacksText, 31, 0, .script
+.script
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_4
+    end
+
+MountMortar1FInsideFieldMon5Script:
+	trainer ONIX, FIELD_MON, EVENT_FIELD_MON_5, MountMortar1FInsidePokemonAttacksText, 33, 0, .script
+.script
+    disappear MOUNTMORTAR1FINSIDE_FIELDMON_5
+    end
+
+MountMortar1FInsidePokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+MountMortar1FInsideFieldMon6Script:
+	faceplayer
+	cry CONKELDURR
+	pause 15
+	loadwildmon CONKELDURR, 52
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear MOUNTMORTAR1FINSIDE_FIELDMON_6
+	end
+
+MountMortar1FInsideFieldMon7Script:
+	faceplayer
+	cry MACHAMP
+	pause 15
+	loadwildmon MACHAMP, 52
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear MOUNTMORTAR1FINSIDE_FIELDMON_7
+	end
+
+MountMortar1FInsideFieldMon8Script:
+	faceplayer
+	cry MAGMAR
+	pause 15
+	loadwildmon MAGMAR, 30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear MOUNTMORTAR1FINSIDE_FIELDMON_8
+	end
+
 MountMortar1FInside_MapEvents:
 	db 0, 0 ; filler
 
@@ -139,5 +251,11 @@ MountMortar1FInside_MapEvents:
 	object_event 35, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideNugget, EVENT_MOUNT_MORTAR_1F_INSIDE_NUGGET
 	object_event 33, 43, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacMiller, -1
 	object_event 24, 28, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdMarkus, -1
-	object_event  8, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideIron, EVENT_MOUNT_MORTAR_1F_INSIDE_IRON
-	object_event 17, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FInsideUltraBall, EVENT_MOUNT_MORTAR_1F_INSIDE_ULTRA_BALL
+	object_event 20, 45, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortar1FInsideFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 16, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortar1FInsideFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 27, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortar1FInsideFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 21, 27, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortar1FInsideFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 12, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortar1FInsideFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 16, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 31, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideFieldMon7Script, EVENT_FIELD_MON_7
+	object_event 31, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideFieldMon8Script, EVENT_FIELD_MON_8

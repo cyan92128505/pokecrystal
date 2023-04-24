@@ -621,21 +621,21 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 26, LOPUNNY
+	db 26, SNEASEL
 	db 26, ARBOK
 	db 27, GLIGAR
 	db 27, SWINUB
 	db 28, VULPIX
 	db 28, PONYTA
-	db 53, STARAPTOR
+	db 53, GOLEM
 	; day
-	db 26, LOPUNNY
+	db 26, SNEASEL
 	db 26, ARBOK
 	db 27, GLIGAR
 	db 27, SWINUB
 	db 28, VULPIX
 	db 28, PONYTA
-	db 53, STARAPTOR
+	db 53, GOLEM
 	; nite
 	db 26, SNEASEL
 	db 26, ARBOK
@@ -643,7 +643,7 @@ JohtoGrassWildMons:
 	db 27, HOUNDOOM
 	db 28, VULPIX
 	db 28, PONYTA
-	db 53, WEAVILE
+	db 53, GOLEM
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
@@ -677,29 +677,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 25, GRAVELER
-	db 25, RHYHORN
-	db 26, MACHOKE
-	db 26, GURDURR
-	db 27, DRILBUR
-	db 27, METANG
-	db 54, MACHAMP
+	db 47, GOLEM
+	db 48, RHYDON
+	db 47, MACHAMP
+	db 47, CONKELDURR
+	db 46, EXCADRILL
+	db 48, CROBAT
+	db 68, METAGROSS
 	; day
-	db 25, GRAVELER
-	db 25, RHYHORN
-	db 26, MACHOKE
-	db 26, GURDURR
-	db 27, DRILBUR
-	db 27, METANG
-	db 54, MACHAMP
+	db 47, GOLEM
+	db 48, RHYDON
+	db 47, MACHAMP
+	db 47, CONKELDURR
+	db 46, EXCADRILL
+	db 48, CROBAT
+	db 68, METAGROSS
 	; nite
-	db 25, GRAVELER
-	db 25, RHYHORN
-	db 26, MACHOKE
-	db 26, GURDURR
-	db 27, DRILBUR
-	db 27, METANG
-	db 54, MACHAMP
+	db 47, GOLEM
+	db 48, RHYDON
+	db 47, MACHAMP
+	db 47, CONKELDURR
+	db 46, EXCADRILL
+	db 48, CROBAT
+	db 68, METAGROSS
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_B1F

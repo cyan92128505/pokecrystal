@@ -531,7 +531,7 @@ Route38TrainerTipsText:
 	done
 
 Route38FieldMon1Script:
-	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 44, 0, .script
+	trainer PORYGONZ, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 44, 0, .script
 .script
     disappear ROUTE38_FIELDMON_1
     end

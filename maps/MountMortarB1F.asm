@@ -6,11 +6,64 @@
 	const MOUNTMORTARB1F_POKE_BALL3
 	const MOUNTMORTARB1F_POKE_BALL4
 	const MOUNTMORTARB1F_POKE_BALL5
+	const MOUNTMORTARB1F_FIELDMON_1
+    const MOUNTMORTARB1F_FIELDMON_2
+    const MOUNTMORTARB1F_FIELDMON_3
+    const MOUNTMORTARB1F_FIELDMON_4
 
 MountMortarB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .MountMortarB1FFieldMon
+
+.MountMortarB1FFieldMon:
+; Pokemon which always appear
+    appear MOUNTMORTARB1F_FIELDMON_1
+    appear MOUNTMORTARB1F_FIELDMON_2
+    appear MOUNTMORTARB1F_FIELDMON_3
+    appear MOUNTMORTARB1F_FIELDMON_4
+    endcallback
+
+MountMortarB1FFieldMon1Script:
+	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_1, MountMortarB1FPokemonAttacksText, 42, 0, .script
+.script
+    disappear MOUNTMORTARB1F_FIELDMON_1
+    end
+
+MountMortarB1FFieldMon2Script:
+	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_2, MountMortarB1FPokemonAttacksText, 42, 0, .script
+.script
+    disappear MOUNTMORTARB1F_FIELDMON_2
+    end
+
+MountMortarB1FPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+MountMortarB1FFieldMon3Script:
+	faceplayer
+	cry POLIWRATH
+	pause 15
+	loadwildmon POLIWRATH, 40
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear MOUNTMORTARB1F_FIELDMON_3
+	end
+
+MountMortarB1FFieldMon4Script:
+	faceplayer
+	cry METAGROSS
+	pause 15
+	loadwildmon METAGROSS, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear MOUNTMORTARB1F_FIELDMON_4
+	end
 
 MountMortarB1FKiyoScript:
 	faceplayer
@@ -136,10 +189,14 @@ MountMortarB1F_MapEvents:
 	bg_event  4,  6, BGEVENT_ITEM, MountMortarB1FHiddenMaxRevive
 
 	def_object_events
-	object_event 29, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FHyperPotion, EVENT_MOUNT_MORTAR_B1F_HYPER_POTION
+	object_event 35, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FHyperPotion, EVENT_MOUNT_MORTAR_B1F_HYPER_POTION
 	object_event  4, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FCarbos, EVENT_MOUNT_MORTAR_B1F_CARBOS
 	object_event  9, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortarB1FBoulder, -1
 	object_event 16,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MountMortarB1FKiyoScript, -1
-	object_event 34, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FFullRestore, EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE
+	object_event 21, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FFullRestore, EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE
 	object_event 32,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FMaxEther, EVENT_MOUNT_MORTAR_B1F_MAX_ETHER
-	object_event 21, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FPPUp, EVENT_MOUNT_MORTAR_B1F_PP_UP
+	object_event 28, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FPPUp, EVENT_MOUNT_MORTAR_B1F_PP_UP
+	object_event 30, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortarB1FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  2, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MountMortarB1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 33,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MountMortarB1FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  5,  2, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MountMortarB1FFieldMon4Script, EVENT_FIELD_MON_4

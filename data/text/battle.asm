@@ -1134,8 +1134,8 @@ BlewSpikesText:
 	prompt
 
 ClearFieldText:
-	text "<USER>"
-	line "swept its field!"
+	text "The field was"
+	line "swept clear!"
 	prompt
 
 DownpourText:

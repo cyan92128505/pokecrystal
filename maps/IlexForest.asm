@@ -1007,7 +1007,7 @@ IlexForestFieldMon3Script:
 	faceplayer
 	cry VOLCARONA
 	pause 15
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	loadwildmon VOLCARONA, 60
 	startbattle
 	reloadmapafterbattle

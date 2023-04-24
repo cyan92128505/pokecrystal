@@ -100,6 +100,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_SETNOITEMS
 	const BATTLETYPE_REMATCH
 	const BATTLETYPE_PERFECT
+	const BATTLETYPE_PERFECT_ESCAPE
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def

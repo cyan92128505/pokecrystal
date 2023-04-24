@@ -1,7 +1,39 @@
+    object_const_def
+	const WHIRLISLANDSE_FIELDMON_1
+    const WHIRLISLANDSE_FIELDMON_2
+
 WhirlIslandSE_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .WhirlIslandSEFieldMon
+	
+.WhirlIslandSEFieldMon:
+    appear WHIRLISLANDSE_FIELDMON_1
+    appear WHIRLISLANDSE_FIELDMON_2
+    endcallback
+    
+WhirlIslandSEFieldMon1Script:
+	faceplayer
+	cry DUNSPARCE
+	pause 15
+	loadwildmon DUNSPARCE, 33
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear WHIRLISLANDSE_FIELDMON_1
+	end
+
+WhirlIslandSEFieldMon2Script:
+	faceplayer
+	cry GABITE
+	pause 15
+	loadwildmon GABITE, 34
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear WHIRLISLANDSE_FIELDMON_2
+	end
 
 WhirlIslandSE_MapEvents:
 	db 0, 0 ; filler
@@ -15,3 +47,6 @@ WhirlIslandSE_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event  4, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, WhirlIslandSEFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 3,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, WhirlIslandSEFieldMon2Script, EVENT_FIELD_MON_2
+

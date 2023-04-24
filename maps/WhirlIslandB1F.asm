@@ -5,11 +5,55 @@
 	const WHIRLISLANDB1F_POKE_BALL4
 	const WHIRLISLANDB1F_POKE_BALL5
 	const WHIRLISLANDB1F_BOULDER
+    const WHIRLISLANDB1F_FIELDMON_1
+    const WHIRLISLANDB1F_FIELDMON_2
+    const WHIRLISLANDB1F_FIELDMON_3
+    const WHIRLISLANDB1F_FIELDMON_4
+    const WHIRLISLANDB1F_FIELDMON_5
+    const WHIRLISLANDB1F_FIELDMON_6
+    const WHIRLISLANDB1F_FIELDMON_7
+    const WHIRLISLANDB1F_FIELDMON_8
 
 WhirlIslandB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .WhirlIslandB1FFieldMon
+
+.WhirlIslandB1FFieldMon:
+; Pokemon which always appear
+    appear WHIRLISLANDB1F_FIELDMON_1
+    appear WHIRLISLANDB1F_FIELDMON_2
+    appear WHIRLISLANDB1F_FIELDMON_3
+    appear WHIRLISLANDB1F_FIELDMON_4
+    appear WHIRLISLANDB1F_FIELDMON_5
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn6
+    disappear WHIRLISLANDB1F_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear WHIRLISLANDB1F_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear WHIRLISLANDB1F_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear WHIRLISLANDB1F_FIELDMON_7
+
+.mon8
+    random 8 ; shiny
+    ifequal 1, .spawn8
+    disappear WHIRLISLANDB1F_FIELDMON_8
+    sjump .end
+.spawn8
+    appear WHIRLISLANDB1F_FIELDMON_8
+
+.end
+    endcallback
 
 WhirlIslandB1FFullRestore:
 	itemball FULL_RESTORE
@@ -37,6 +81,77 @@ WhirlIslandB1FHiddenUltraBall:
 
 WhirlIslandB1FHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_WHIRL_ISLAND_B1F_HIDDEN_FULL_RESTORE
+
+WhirlIslandB1FFieldMon1Script:
+	trainer GABITE, FIELD_MON, EVENT_FIELD_MON_1, WhirlIslandB1FPokemonAttacksText, 43, 0, .script
+.script
+    disappear WHIRLISLANDB1F_FIELDMON_1
+    end
+
+WhirlIslandB1FFieldMon2Script:
+	trainer SHELGON, FIELD_MON, EVENT_FIELD_MON_2, WhirlIslandB1FPokemonAttacksText, 43, 0, .script
+.script
+    disappear WHIRLISLANDB1F_FIELDMON_2
+    end
+
+WhirlIslandB1FFieldMon3Script:
+	trainer DRAGONAIR, FIELD_MON, EVENT_FIELD_MON_3, WhirlIslandB1FPokemonAttacksText, 43, 0, .script
+.script
+    disappear WHIRLISLANDB1F_FIELDMON_3
+    end
+
+WhirlIslandB1FFieldMon4Script:
+	trainer ARCTOZOLT, FIELD_MON, EVENT_FIELD_MON_4, WhirlIslandB1FPokemonAttacksText, 45, 0, .script
+.script
+    disappear WHIRLISLANDB1F_FIELDMON_4
+    end
+
+WhirlIslandB1FFieldMon5Script:
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, WhirlIslandB1FPokemonAttacksText, 45, 0, .script
+.script
+    disappear WHIRLISLANDB1F_FIELDMON_5
+    end
+
+WhirlIslandB1FPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+WhirlIslandB1FFieldMon6Script:
+	faceplayer
+	cry SLOWKING
+	pause 15
+	loadwildmon SLOWKING, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear WHIRLISLANDB1F_FIELDMON_6
+	end
+
+WhirlIslandB1FFieldMon7Script:
+	faceplayer
+	cry MILOTIC
+	pause 15
+	loadwildmon MILOTIC, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear WHIRLISLANDB1F_FIELDMON_7
+	end
+
+WhirlIslandB1FFieldMon8Script:
+	faceplayer
+	cry FEEBAS
+	pause 15
+	loadwildmon FEEBAS, 30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear WHIRLISLANDB1F_FIELDMON_8
+	end
 
 WhirlIslandB1F_MapEvents:
 	db 0, 0 ; filler
@@ -66,3 +181,11 @@ WhirlIslandB1F_MapEvents:
 	object_event 17,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB1FNugget, EVENT_WHIRL_ISLAND_B1F_NUGGET
 	object_event 19, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB1FEscapeRope, EVENT_WHIRL_ISLAND_B1F_ESCAPE_ROPE
 	object_event 23, 26, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhirlIslandB1FBoulder, -1
+	object_event 28, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, WhirlIslandB1FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 10, 21, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, WhirlIslandB1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 13, 30, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, WhirlIslandB1FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  6, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, WhirlIslandB1FFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 29, 28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, WhirlIslandB1FFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 33,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WhirlIslandB1FFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 20, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WhirlIslandB1FFieldMon7Script, EVENT_FIELD_MON_7
+	object_event 25, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, WhirlIslandB1FFieldMon8Script, EVENT_FIELD_MON_8

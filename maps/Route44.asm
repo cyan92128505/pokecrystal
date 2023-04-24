@@ -604,7 +604,7 @@ Route44FieldMon6Script:
 	cry TOGEKISS
 	pause 15
 	loadwildmon TOGEKISS, 60
-    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

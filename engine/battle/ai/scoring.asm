@@ -5810,3 +5810,94 @@ ClearField:
 	res SCREENS_SPIKES, [hl]
 	ld hl, ClearFieldText
 	jp StdBattleTextbox
+
+HasWildBattleBegun:
+    ld a, [wBattleMode]
+	dec a
+	jr nz, .no
+	ld a, [wBattleMonSpecies]
+	and a
+	jr nz, .no
+	scf
+	ret
+.no
+    xor a
+    ret
+
+PrintAttackUpMessage:
+    call HasWildBattleBegun
+    jr c, .wild
+	farcall BattleCommand_StatUpMessage
+	ret
+.wild
+    ld hl, WildAttackUpText
+    jp BattleTextbox
+WildAttackUpText:
+    text "Enemy ATTACK"
+    line "went up!"
+    prompt
+
+PrintDefenseUpMessage:
+    call HasWildBattleBegun
+    jr c, .wild
+	farcall BattleCommand_StatUpMessage
+	ret
+.wild
+    ld hl, WildDefenseUpText
+    jp BattleTextbox
+WildDefenseUpText:
+    text "Enemy DEFENSE"
+    line "went up!"
+    prompt
+
+PrintSpeedUpMessage:
+    call HasWildBattleBegun
+    jr c, .wild
+	farcall BattleCommand_StatUpMessage
+	ret
+.wild
+    ld hl, WildSpeedUpText
+    jp BattleTextbox
+WildSpeedUpText:
+    text "Enemy SPEED"
+    line "went up!"
+    prompt
+
+PrintSpecialAttackUpMessage:
+    call HasWildBattleBegun
+    jr c, .wild
+	farcall BattleCommand_StatUpMessage
+	ret
+.wild
+    ld hl, WildSpecialAttackUpText
+    jp BattleTextbox
+WildSpecialAttackUpText:
+    text "Enemy SPCl.ATK"
+    line "went up!"
+    prompt
+
+PrintSpecialDefenseUpMessage:
+    call HasWildBattleBegun
+    jr c, .wild
+	farcall BattleCommand_StatUpMessage
+	ret
+.wild
+    ld hl, WildSpecialDefenseUpText
+    jp BattleTextbox
+WildSpecialDefenseUpText:
+    text "Enemy SPCL.DEF"
+    line "went up!"
+    prompt
+
+PrintEvasionUpMessage:
+    call HasWildBattleBegun
+    jr c, .wild
+	farcall BattleCommand_StatUpMessage
+	ret
+.wild
+    ld hl, WildEvasionUpText
+    jp BattleTextbox
+WildEvasionUpText:
+    text "Enemy EVASION"
+    line "went up!"
+    prompt

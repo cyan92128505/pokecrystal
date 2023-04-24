@@ -567,7 +567,7 @@ LakeOfRageFieldMon6Script:
 	cry SALAMENCE
 	pause 15
 	loadwildmon SALAMENCE, 70
-    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

@@ -1,10 +1,40 @@
 	object_const_def
 	const WHIRLISLANDSW_POKE_BALL
+	const WHIRLISLANDSW_FIELDMON_1
+    const WHIRLISLANDSW_FIELDMON_2
 
 WhirlIslandSW_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .WhirlIslandSWFieldMon
+	
+.WhirlIslandSWFieldMon:
+    appear WHIRLISLANDSW_FIELDMON_1
+    appear WHIRLISLANDSW_FIELDMON_2
+    endcallback
+    
+WhirlIslandSWFieldMon1Script:
+	faceplayer
+	cry DUNSPARCE
+	pause 15
+	loadwildmon DUNSPARCE, 33
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear WHIRLISLANDSW_FIELDMON_1
+	end
+
+WhirlIslandSWFieldMon2Script:
+	faceplayer
+	cry TENTACRUEL
+	pause 15
+	loadwildmon TENTACRUEL, 34
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear WHIRLISLANDSW_FIELDMON_2
+	end
 
 WhirlIslandSWUltraBall:
 	itemball ULTRA_BALL
@@ -25,3 +55,5 @@ WhirlIslandSW_MapEvents:
 
 	def_object_events
 	object_event 15,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandSWUltraBall, EVENT_WHIRL_ISLAND_SW_ULTRA_BALL
+	object_event  5,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, WhirlIslandSWFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 15, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, WhirlIslandSWFieldMon2Script, EVENT_FIELD_MON_2

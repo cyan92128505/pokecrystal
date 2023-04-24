@@ -30,7 +30,7 @@ TinTower9FFieldMon2Script:
 	cry BELLSPROUT
 	pause 15
 	loadwildmon BELLSPROUT, 100
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

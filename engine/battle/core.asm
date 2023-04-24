@@ -40,9 +40,9 @@ DoBattle:
 	call ResetEnemyStatLevels
 	call BreakAttraction
 	call EnemySwitch
-	farcall SwitchInEffects
 
 .wild
+    call SwitchInEffects
 	ld c, 40
 	call DelayFrames
 
@@ -4689,27 +4689,27 @@ SwitchInEffects:
 	ret
 .spAtkUp
     farcall BattleCommand_SpecialAttackUp
-	farcall BattleCommand_StatUpMessage
+	farcall PrintSpecialAttackUpMessage
 	ret
 .spDefUp
     farcall BattleCommand_SpecialDefenseUp
-	farcall BattleCommand_StatUpMessage
+	farcall PrintSpecialDefenseUpMessage
 	ret
 .defUp
     farcall BattleCommand_DefenseUp
-	farcall BattleCommand_StatUpMessage
+	farcall PrintDefenseUpMessage
 	ret
 .spdUp
     farcall BattleCommand_SpeedUp
-	farcall BattleCommand_StatUpMessage
+	farcall PrintSpeedUpMessage
 	ret
 .atkUp
     farcall BattleCommand_AttackUp
-	farcall BattleCommand_StatUpMessage
+    farcall PrintAttackUpMessage
 	ret
 .evasionUp
     farcall BattleCommand_EvasionUp
-	farcall BattleCommand_StatUpMessage
+	farcall PrintEvasionUpMessage
 	ret
 .randomStatUp
     call BattleRandom
@@ -6719,6 +6719,8 @@ LoadEnemyMon:
 	cp BATTLETYPE_SHINY
 	jr z, .GenerateShinyDVs
 	cp BATTLETYPE_PERFECT
+	jr z, .GeneratePerfectDVs
+	cp BATTLETYPE_PERFECT_ESCAPE
 	jr z, .GeneratePerfectDVs
 
 ; AndrewNote - Silver cave has max dvs
@@ -9768,6 +9770,11 @@ BattleStartMessage:
 	ret
 
 GetCurrentMonCore:
+    farcall HasWildBattleBegun
+    jr nc, .trainer
+	ld a, [wTempWildMonSpecies]
+	ret
+.trainer
     ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]

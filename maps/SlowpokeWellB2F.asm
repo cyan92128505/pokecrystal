@@ -82,7 +82,7 @@ SlowpokeWellB2FFieldMon1Script:
 	cry SLOWKING
 	pause 15
 	loadwildmon SLOWKING, 80
-    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+    loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

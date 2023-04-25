@@ -103,7 +103,7 @@ MoveNames::
 	li "NIGHT SHADE"
 	li "MIMIC"
 	li "SCREECH"
-	li "DOUBLE TEAM"
+	li "TRIPLE TEAM"
 	li "RECOVER"
 	li "HARDEN"
 	li "DARK VOID"

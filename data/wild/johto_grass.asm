@@ -1825,27 +1825,27 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 51, GENGAR
-	db 51, WEAVILE
-	db 53, GOLEM
-	db 53, MAGNEZONE
-	db 65, GARCHOMP
-	db 65, METAGROSS
+	db 53, BISHARP
+	db 53, RHYPERIOR
+	db 63, METAGROSS
+	db 64, GARCHOMP
+	db 65, GENESECT
 	db 70, DARKRAI
 	; day
 	db 51, GENGAR
-	db 51, WEAVILE
-	db 53, GOLEM
-	db 53, MAGNEZONE
-	db 65, GARCHOMP
-	db 65, METAGROSS
-	db 80, DARKRAI
+	db 53, BISHARP
+	db 53, RHYPERIOR
+	db 63, METAGROSS
+	db 64, GARCHOMP
+	db 65, GENESECT
+	db 70, DARKRAI
 	; nite
 	db 51, GENGAR
-	db 51, WEAVILE
-	db 53, GOLEM
-	db 53, MAGNEZONE
-	db 65, GARCHOMP
-	db 65, METAGROSS
+	db 53, BISHARP
+	db 53, RHYPERIOR
+	db 63, METAGROSS
+	db 64, GARCHOMP
+	db 65, GENESECT
 	db 70, DARKRAI
 	end_grass_wildmons
 

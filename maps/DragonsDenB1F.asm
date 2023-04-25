@@ -6,8 +6,15 @@
 	const DRAGONSDENB1F_TWIN1
 	const DRAGONSDENB1F_TWIN2
 	const DRAGONSDENB1F_POKE_BALL2
-	const DRAGONSDENB1F_POKE_BALL3
 	const DRAGONSDENB1F_RAYQUAZA
+	const DRAGONSDENB1F_FIELDMON_1
+    const DRAGONSDENB1F_FIELDMON_2
+    const DRAGONSDENB1F_FIELDMON_3
+    const DRAGONSDENB1F_FIELDMON_4
+    const DRAGONSDENB1F_FIELDMON_5
+    const DRAGONSDENB1F_FIELDMON_6
+    const DRAGONSDENB1F_FIELDMON_7
+    const DRAGONSDENB1F_FIELDMON_8
 
 DragonsDenB1F_MapScripts:
 	def_scene_scripts
@@ -15,11 +22,112 @@ DragonsDenB1F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .DragonsDenB1FieldMon
 
 .DummyScene0:
 	end
 
 .DummyScene1:
+	end
+
+.DragonsDenB1FieldMon:
+; Pokemon which always appear
+    appear DRAGONSDENB1F_FIELDMON_1
+    appear DRAGONSDENB1F_FIELDMON_2
+    appear DRAGONSDENB1F_FIELDMON_3
+    appear DRAGONSDENB1F_FIELDMON_4
+    appear DRAGONSDENB1F_FIELDMON_5
+    appear DRAGONSDENB1F_FIELDMON_6
+    appear DRAGONSDENB1F_FIELDMON_7
+    appear DRAGONSDENB1F_FIELDMON_8
+    endcallback
+
+DragonsDenB1FieldMon1Script:
+	cry DRAGONAIR
+	pause 15
+	loadwildmon DRAGONAIR, 46
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear DRAGONSDENB1F_FIELDMON_1
+	end
+
+DragonsDenB1FieldMon2Script:
+	cry MILOTIC
+	pause 15
+	loadwildmon MILOTIC, 48
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear DRAGONSDENB1F_FIELDMON_2
+	end
+
+DragonsDenB1FieldMon3Script:
+	cry GYARADOS
+	pause 15
+	loadwildmon GYARADOS, 48
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear DRAGONSDENB1F_FIELDMON_3
+	end
+
+DragonsDenB1FieldMon4Script:
+	cry KINGDRA
+	pause 15
+	loadwildmon KINGDRA, 50
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear DRAGONSDENB1F_FIELDMON_4
+	end
+
+DragonsDenB1FieldMon5Script:
+	faceplayer
+	cry DRAGONITE
+	pause 15
+	loadwildmon DRAGONITE, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear DRAGONSDENB1F_FIELDMON_5
+	end
+
+DragonsDenB1FieldMon6Script:
+	faceplayer
+	cry DRATINI
+	pause 15
+	loadwildmon DRATINI, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear DRAGONSDENB1F_FIELDMON_6
+	end
+
+DragonsDenB1FieldMon7Script:
+	faceplayer
+	cry BAGON
+	pause 15
+	loadwildmon BAGON, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear DRAGONSDENB1F_FIELDMON_7
+	end
+
+DragonsDenB1FieldMon8Script:
+	faceplayer
+	cry GIBLE
+	pause 15
+	loadwildmon GIBLE, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear DRAGONSDENB1F_FIELDMON_8
 	end
 
 RayquazaScript:
@@ -445,12 +553,19 @@ DragonsDenB1F_MapEvents:
 	bg_event 31, 15, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
 
 	def_object_events
-	object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
+	object_event 35, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
 	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
 	object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1
 	object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1
 	object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1
 	object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
 	object_event 30,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM
-	object_event  5, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER
-	object_event 20, 23, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_CAUGHT_RAYQUAZA
+	object_event 20, 15, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_CAUGHT_RAYQUAZA
+	object_event 24, 11, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 13, 15, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 10, 26, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 28, 25, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 34, 10, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 34, 12, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 34, 15, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 36, 13, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon8Script, EVENT_FIELD_MON_8

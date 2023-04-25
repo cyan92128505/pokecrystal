@@ -1,15 +1,37 @@
     object_const_def
     const ANCIENTRUINPRESENT_YVELTAL
+    const ANCIENTRUINPRESENT_HENSHIN
+    const ANCIENTRUINPRESENT_POKEBALL
+    const ANCIENTRUINPRESENT_FIELDMON_1
+    const ANCIENTRUINPRESENT_FIELDMON_2
+    const ANCIENTRUINPRESENT_FIELDMON_3
+    const ANCIENTRUINPRESENT_FIELDMON_4
+    const ANCIENTRUINPRESENT_FIELDMON_5
+    const ANCIENTRUINPRESENT_FIELDMON_6
+    const ANCIENTRUINPRESENT_FIELDMON_7
+    const ANCIENTRUINPRESENT_FIELDMON_8
+    const ANCIENTRUINPRESENT_FIELDMON_9
+    const ANCIENTRUINPRESENT_FIELDMON_10
 
 AncientRuinPresent_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Weather
+	callback MAPCALLBACK_OBJECTS, .FieldMonAndWeather
 
-.Weather:
+.FieldMonAndWeather:
 	setval WEATHER_SANDSTORM
 	writemem wFieldWeather
+	appear ANCIENTRUINPRESENT_FIELDMON_1
+	appear ANCIENTRUINPRESENT_FIELDMON_2
+	appear ANCIENTRUINPRESENT_FIELDMON_3
+	appear ANCIENTRUINPRESENT_FIELDMON_4
+	appear ANCIENTRUINPRESENT_FIELDMON_5
+	appear ANCIENTRUINPRESENT_FIELDMON_6
+	appear ANCIENTRUINPRESENT_FIELDMON_7
+	appear ANCIENTRUINPRESENT_FIELDMON_8
+	appear ANCIENTRUINPRESENT_FIELDMON_9
+	appear ANCIENTRUINPRESENT_FIELDMON_10
     endcallback
 
 YveltalScript:
@@ -153,6 +175,74 @@ FightHenshinScript:
     turnobject PLAYER, RIGHT
     sjump HenshinScript
 
+AncientRuinsPresentAmbrosia:
+    itemball AMBROSIA
+
+AncientRuinsPresentFieldMon1Script:
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, AncientRuinsPresentPokemonAttacksText, 52, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_1
+    end
+
+AncientRuinsPresentFieldMon2Script:
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 53, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_2
+    end
+
+AncientRuinsPresentFieldMon3Script:
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 55, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_3
+    end
+
+AncientRuinsPresentFieldMon4Script:
+	trainer GENESECT, FIELD_MON, EVENT_FIELD_MON_4, AncientRuinsPresentPokemonAttacksText, 65, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_4
+    end
+
+AncientRuinsPresentFieldMon5Script:
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 53, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_5
+    end
+
+AncientRuinsPresentFieldMon6Script:
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, AncientRuinsPresentPokemonAttacksText, 54, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_6
+    end
+
+AncientRuinsPresentFieldMon7Script:
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientRuinsPresentPokemonAttacksText, 64, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_7
+    end
+
+AncientRuinsPresentFieldMon8Script:
+	trainer METAGROSS, FIELD_MON, EVENT_FIELD_MON_8, AncientRuinsPresentPokemonAttacksText, 63, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_8
+    end
+
+AncientRuinsPresentFieldMon9Script:
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_9, AncientRuinsPresentPokemonAttacksText, 55, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_9
+    end
+
+AncientRuinsPresentFieldMon10Script:
+	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 70, 0, .script
+.script
+    disappear ANCIENTRUINPRESENT_FIELDMON_10
+    end
+
+AncientRuinsPresentPokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
 AncientRuinPresent_MapEvents:
 	db 0, 0 ; filler
 
@@ -168,5 +258,16 @@ AncientRuinPresent_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 19, 9, SPRITE_HO_OH, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, YveltalScript, EVENT_CAUGHT_YVELTAL
+	object_event 19,  9, SPRITE_HO_OH, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, YveltalScript, EVENT_CAUGHT_YVELTAL
 	object_event 21, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, HenshinScript, -1
+	object_event 26, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientRuinsPresentAmbrosia, EVENT_ANCIENT_RUINS_PRESENT_AMBROSIA
+	object_event 36, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 33, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon2Script, EVENT_FIELD_MON_2
+	object_event  5, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 32, 34, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon4Script, EVENT_FIELD_MON_4
+	object_event  6, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon5Script, EVENT_FIELD_MON_5
+	object_event  3, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 34, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon7Script, EVENT_FIELD_MON_7
+	object_event  6, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 17, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon9Script, EVENT_FIELD_MON_9
+	object_event 20, 27, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, AncientRuinsPresentFieldMon10Script, EVENT_FIELD_MON_10

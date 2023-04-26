@@ -3648,6 +3648,7 @@ CelebiEvosAttacks:
 	db 30, BATON_PASS
 	db 55, PSYCHO_SLASH
 	db 60, LEAF_BLADE
+	db 65, SYNTHESIS
 	db 0 ; no more level-up moves
 
 MewtwoEvosAttacks:

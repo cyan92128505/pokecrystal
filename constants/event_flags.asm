@@ -297,6 +297,7 @@
     const EVENT_ANCIENT_RUINS_PRESENT_AMBROSIA
     const EVENT_ANCIENT_RUINS_PAST_AMBROSIA
     const EVENT_BEAT_YAMI
+    const EVENT_BEAT_SETO
 
 	const_next 600
 ; Kurt Apricorn events

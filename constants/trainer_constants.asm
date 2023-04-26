@@ -715,6 +715,7 @@ KRIS EQU __trainer_class__
 	trainerclass BLUE ; 40
 	const BLUE1
 	const MASTER_BLUE
+	const SETO
 
 	trainerclass OFFICER ; 41
 	const KEITH

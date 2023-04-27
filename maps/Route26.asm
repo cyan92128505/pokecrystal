@@ -499,9 +499,9 @@ Route26FieldMon3Script:
 
 Route26FieldMon4Script:
 	faceplayer
-	cry SCIZOR
+	cry GALVANTULA
 	pause 15
-	loadwildmon SCIZOR, 48
+	loadwildmon GALVANTULA, 48
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

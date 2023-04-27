@@ -8,6 +8,8 @@
 	const ROUTE27_POKE_BALL1
 	const ROUTE27_POKE_BALL2
 	const ROUTE27_FISHER
+	const ROUTE27_FIELDMON_1
+    const ROUTE27_FIELDMON_2
 
 Route27_MapScripts:
 	def_scene_scripts
@@ -15,11 +17,40 @@ Route27_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route27FieldMon
 
 .DummyScene0:
 	end
 
 .DummyScene1:
+	end
+
+.Route27FieldMon:
+; Pokemon which always appear
+    appear ROUTE27_FIELDMON_1
+    appear ROUTE27_FIELDMON_2
+    endcallback
+
+Route27FieldMon1Script:
+	faceplayer
+	cry HERACROSS
+	pause 15
+	loadwildmon HERACROSS, 46
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear ROUTE27_FIELDMON_1
+	end
+
+Route27FieldMon2Script:
+	faceplayer
+	cry STARMIE
+	pause 15
+	loadwildmon QUAGSIRE, 47
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE27_FIELDMON_2
 	end
 
 FirstStepIntoKantoLeftScene:
@@ -490,3 +521,6 @@ Route27_MapEvents:
 	object_event 60, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27TMSolarbeam, EVENT_ROUTE_27_TM_SOLARBEAM
 	object_event 53, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27RareCandy, EVENT_ROUTE_27_RARE_CANDY
 	object_event 21, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route27FisherScript, -1
+	object_event 28,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route27FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 70,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route27FieldMon2Script, EVENT_FIELD_MON_2
+	

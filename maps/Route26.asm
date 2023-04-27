@@ -7,11 +7,70 @@
 	const ROUTE26_FISHER
 	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
+    const ROUTE26_FIELDMON_1
+    const ROUTE26_FIELDMON_2
+    const ROUTE26_FIELDMON_3
+    const ROUTE26_FIELDMON_4
+    const ROUTE26_FIELDMON_5
+    const ROUTE26_FIELDMON_6
+    const ROUTE26_FIELDMON_7
+    const ROUTE26_FIELDMON_8
 
 Route26_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route26FieldMon
+
+.Route26FieldMon:
+; Pokemon which always appear
+    appear ROUTE26_FIELDMON_1
+    appear ROUTE26_FIELDMON_3
+    appear ROUTE26_FIELDMON_4
+    appear ROUTE26_FIELDMON_5
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE26_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear ROUTE26_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE26_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear ROUTE26_FIELDMON_7
+
+.mon8
+    random 2 ; shiny
+    ifequal 1, .spawn8
+    disappear ROUTE26_FIELDMON_8
+    sjump .checkNight
+.spawn8
+    appear ROUTE26_FIELDMON_8
+
+.checkNight
+; Pokemon that only appear at night
+    checktime NITE
+    iffalse .end
+
+    random 2
+    ifequal 1, .spawn2
+    disappear ROUTE26_FIELDMON_2
+    sjump .despawn
+.spawn2
+    appear ROUTE26_FIELDMON_2
+
+.despawn
+; Pokemon that don't appear at night
+    disappear ROUTE26_FIELDMON_5
+
+.end
+    endcallback
 
 TrainerCooltrainermJake:
 	trainer COOLTRAINERM, JAKE, EVENT_BEAT_COOLTRAINERM_JAKE, CooltrainermJakeSeenText, CooltrainermJakeBeatenText, 0, .Script
@@ -410,6 +469,89 @@ Route26SignText:
 	line "RECEPTION GATE"
 	done
 
+Route26FieldMon1Script:
+	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_1, Route26PokemonAttacksText, 55, 0, .script
+.script
+    disappear ROUTE26_FIELDMON_1
+    end
+
+Route26FieldMon2Script:
+	trainer ARCANINE, FIELD_MON, EVENT_FIELD_MON_2, Route26PokemonAttacksText, 67, 0, .script
+.script
+    disappear ROUTE26_FIELDMON_2
+    end
+
+Route26PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route26FieldMon3Script:
+	faceplayer
+	cry SKARMORY
+	pause 15
+	loadwildmon SKARMORY, 51
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE26_FIELDMON_3
+	end
+
+Route26FieldMon4Script:
+	faceplayer
+	cry SCIZOR
+	pause 15
+	loadwildmon SCIZOR, 48
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE26_FIELDMON_4
+	end
+
+Route26FieldMon5Script:
+	faceplayer
+	cry EXEGGUTOR
+	pause 15
+	loadwildmon EXEGGUTOR, 48
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE26_FIELDMON_5
+	end
+
+Route26FieldMon6Script:
+	faceplayer
+	cry STARMIE
+	pause 15
+	loadwildmon STARMIE, 47
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE26_FIELDMON_6
+	end
+
+Route26FieldMon7Script:
+	faceplayer
+	cry BLISSEY
+	pause 15
+	loadwildmon BLISSEY, 49
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE26_FIELDMON_7
+	end
+
+Route26FieldMon8Script:
+	faceplayer
+	cry VOLCARONA
+	pause 15
+	loadwildmon VOLCARONA, 66
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE26_FIELDMON_8
+	end
+
 Route26_MapEvents:
 	db 0, 0 ; filler
 
@@ -432,3 +574,12 @@ Route26_MapEvents:
 	object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	object_event  8, 51, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route26FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 15, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route26FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  6, 26, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 15, 67, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  3, 95, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route26FieldMon5Script, EVENT_FIELD_MON_5
+	object_event  9, 101, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26FieldMon6Script, EVENT_FIELD_MON_6
+	object_event  7, 68, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route26FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 13,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26FieldMon8Script, EVENT_FIELD_MON_8
+	

@@ -821,7 +821,7 @@ KantoGrassWildMons:
 	db 60, SMEARGLE
 	db 62, BLISSEY
 	db 62, SNORLAX
-	db 65, VENUSAUR
+	db 65, GRENINJA
 	db 65, SCEPTILE
 	db 80, GENESECT
 	; day
@@ -829,7 +829,7 @@ KantoGrassWildMons:
 	db 60, SMEARGLE
 	db 62, BLISSEY
 	db 62, SNORLAX
-	db 65, CHARIZARD
+	db 65, SCEPTILE
 	db 65, INFERNAPE
 	db 80, GENESECT
 	; nite
@@ -837,7 +837,7 @@ KantoGrassWildMons:
 	db 60, POLTEGEIST
 	db 62, BISHARP
 	db 62, NINETALES
-	db 65, BLASTOISE
+	db 65, INFERNAPE
 	db 65, GRENINJA
 	db 80, GENESECT
 	end_grass_wildmons

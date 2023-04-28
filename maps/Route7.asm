@@ -1,7 +1,40 @@
+    object_const_def
+    const ROUTE7_FIELDMON_1
+    const ROUTE7_FIELDMON_2
+
 Route7_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route7FieldMon
+
+.Route7FieldMon:
+; Pokemon which always appear
+    appear ROUTE7_FIELDMON_1
+    appear ROUTE7_FIELDMON_2
+    endcallback
+
+Route7FieldMon1Script:
+	faceplayer
+	cry GARDEVOIR
+	pause 15
+	loadwildmon GARDEVOIR, 43
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear ROUTE7_FIELDMON_1
+	end
+
+Route7FieldMon2Script:
+	faceplayer
+	cry GALADE
+	pause 15
+	loadwildmon GALADE, 43
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE7_FIELDMON_2
+	end
 
 Route7UndergroundPathSign:
 	jumptext Route7UndergroundPathSignText
@@ -46,3 +79,5 @@ Route7_MapEvents:
 	bg_event  6,  9, BGEVENT_READ, Route7LockedDoor
 
 	def_object_events
+	object_event  7,  0, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route7FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  9,  0, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route7FieldMon2Script, EVENT_FIELD_MON_2

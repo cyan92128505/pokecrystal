@@ -974,10 +974,10 @@ BattleTower_RandomlyChooseReward:
     ld a, NUGGET
     jr .give
 .champ
-    ld a, MASTER_BALL
+    ld a, RARE_CANDY
     jr .give
 .master
-    ld a, RARE_CANDY
+    ld a, AMBROSIA
     jr .give
 .give
 	push af

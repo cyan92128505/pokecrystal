@@ -731,6 +731,7 @@ KRIS EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 	const EUSINE_SILVER_CAVE
+	const MASTER_EUSINE
 	const WALLACE
 
     trainerclass INVADER ; 44

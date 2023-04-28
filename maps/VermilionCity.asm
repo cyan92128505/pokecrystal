@@ -63,7 +63,7 @@ VermilionSnorlax:
 VermilionGymBadgeGuy:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HP_UP_FROM_VERMILION_GUY
+	checkevent EVENT_GOT_AMBROSIA_FROM_VERMILION_GUY
 	iftrue .AlreadyGotItem
 	readvar VAR_BADGES
 	ifequal NUM_BADGES, .AllBadges
@@ -89,9 +89,9 @@ VermilionGymBadgeGuy:
 .AllBadges:
 	writetext VermilionCityBadgeGuyAllBadgesText
 	promptbutton
-	verbosegiveitem HP_UP
+	verbosegiveitem AMBROSIA
 	iffalse .Done
-	setevent EVENT_GOT_HP_UP_FROM_VERMILION_GUY
+	setevent EVENT_GOT_AMBROSIA_FROM_VERMILION_GUY
 .AlreadyGotItem:
 	writetext VermilionCityBadgeGuyBattleEdgeText
 	waitbutton
@@ -296,6 +296,6 @@ VermilionCity_MapEvents:
 	object_event 18,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
 	object_event 23,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
 	object_event 26,  7, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
-	object_event 14, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
+	object_event 14, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
 	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_VERMILION_CITY_SNORLAX
 	object_event 31, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1

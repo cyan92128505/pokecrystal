@@ -1,10 +1,41 @@
 	object_const_def
 	const ROUTE5_POKEFAN_M
+	const ROUTE5_FIELDMON_1
+    const ROUTE5_FIELDMON_2
 
 Route5_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route5FieldMon
+
+.Route5FieldMon:
+; Pokemon which always appear
+    appear ROUTE5_FIELDMON_1
+    appear ROUTE5_FIELDMON_2
+    endcallback
+
+Route5FieldMon1Script:
+	faceplayer
+	cry WIGGLYTUFF
+	pause 15
+	loadwildmon WIGGLYTUFF, 38
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear ROUTE5_FIELDMON_1
+	end
+
+Route5FieldMon2Script:
+	faceplayer
+	cry LOPUNNY
+	pause 15
+	loadwildmon LOPUNNY, 37
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE5_FIELDMON_2
+	end
 
 Route5PokefanMScript:
 	jumptextfaceplayer Route5PokefanMText
@@ -54,3 +85,5 @@ Route5_MapEvents:
 
 	def_object_events
 	object_event 17, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	object_event  8,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route5FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 11,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route5FieldMon2Script, EVENT_FIELD_MON_2

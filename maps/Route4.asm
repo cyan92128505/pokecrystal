@@ -3,11 +3,71 @@
 	const ROUTE4_LASS1
 	const ROUTE4_LASS2
 	const ROUTE4_POKE_BALL
+	const ROUTE4_FIELDMON_1
+    const ROUTE4_FIELDMON_2
+    const ROUTE4_FIELDMON_3
+    const ROUTE4_FIELDMON_4
 
 Route4_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route4FieldMon
+
+.Route4FieldMon:
+; Pokemon which always appear
+    appear ROUTE4_FIELDMON_1
+    appear ROUTE4_FIELDMON_2
+    appear ROUTE4_FIELDMON_3
+
+    random 2
+    ifequal 1, .spawn1
+    disappear ROUTE4_FIELDMON_4
+    sjump .end
+.spawn1
+    appear ROUTE4_FIELDMON_4
+.end
+    endcallback
+
+Route4FieldMon1Script:
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, Route4PokemonAttacksText, 38, 0, .script
+.script
+    disappear ROUTE4_FIELDMON_1
+    end
+
+Route4FieldMon2Script:
+	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_2, Route4PokemonAttacksText, 45, 0, .script
+.script
+    disappear ROUTE4_FIELDMON_2
+    end
+
+Route4PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route4FieldMon3Script:
+	faceplayer
+	cry KADABRA
+	pause 15
+	loadwildmon KADABRA, 36
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE4_FIELDMON_3
+	end
+
+Route4FieldMon4Script:
+	faceplayer
+	cry BLASTOISE
+	pause 15
+	loadwildmon BLASTOISE, 64
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE4_FIELDMON_4
+	end
 
 TrainerBirdKeeperHank:
 	trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
@@ -132,6 +192,10 @@ Route4_MapEvents:
 
 	def_object_events
 	object_event 17,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
-	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	object_event 21,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
+	object_event  9,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
+	object_event 21,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
 	object_event 26,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event 18, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route4FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 27, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route4FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 29, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route4FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 29,  2, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route4FieldMon4Script, EVENT_FIELD_MON_4

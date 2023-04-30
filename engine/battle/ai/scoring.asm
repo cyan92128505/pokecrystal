@@ -389,6 +389,13 @@ BoostingMoveEffects:
 	db EFFECT_SHELL_SMASH
 	db -1
 
+HealingMoveEffects:
+	db EFFECT_HEAL
+	db EFFECT_MOONLIGHT
+	db EFFECT_MORNING_SUN
+	db EFFECT_SYNTHESIS
+	db -1
+
 AI_Smart_Switch:
 ; Enemies can switch intelligently under certain conditions
 ; switch if unboosted enemy is FRZ and player sets up
@@ -4231,18 +4238,18 @@ AI_Smart_LesserStatChange:
     inc [hl]
     ret
 
-; AndrewNote - functions which check if the player can KO the AI
+; AndrewNote - functions which check if the player can KO the AI and decide to use boosting moves
 
 ; decide if AI should use boosting moves
-; don't boost if player will just KO anyway
+; generally don't boost if player will just KO anyway
 ; returns carry if the AI can boost
 ShouldAIBoost:
-; if evasion is >= +4 then go for the boost - only used by Patches
+; if AI evasion is >= +2 then go for the boost - only used by Patches
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .boost
 
-; if the player has roar/whirlwind and we aren't immune to it then 50% to not boost
+; if the player has roar/whirlwind/haze and we aren't immune to it then 50% to not boost
     ld a, [wEnemyMonSpecies]
     push hl
     push de
@@ -4256,7 +4263,12 @@ ShouldAIBoost:
    	jr c, .noForceSwitch
     ld b, EFFECT_FORCE_SWITCH
 	call PlayerHasMoveEffect
-	jr nc, .noForceSwitch
+	jr c, .maybeDontBoost
+    ld b, EFFECT_RESET_STATS
+	call PlayerHasMoveEffect
+	jr c, .maybeDontBoost
+	jr .noForceSwitch
+.maybeDontBoost
 	call Random
 	cp 50 percent
 	jr c, .dontBoost
@@ -4292,18 +4304,28 @@ ShouldAIBoost:
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jr nz, .dontBoost
 
-; was the players last move a damaging one, if so don't boost
-; if so the player may be setting up, if we are not currently able to 3HKO then boost
+; is the player setting up - if so we may want to boost to force them to stop and attack
+; if the players last move was a healing move we may set up if we can't already 2HKO
+; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_HEAL
+    jr z, .check2HKO
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
-    and a
-	jr nz, .dontBoost
+	and a
+	jr z, .check3HKO
+	jr .dontBoost
+.check3HKO
+	call CanAI3HKO
+	jr c, .dontBoost
+	jr .boost
+.check2HKO
 	call CanAI2HKO
 	jr c, .dontBoost
 
 .boost
-    scf
+    scf ; set carry flag
     ret
 .dontBoost
     xor a ; clear carry flag

@@ -1,11 +1,37 @@
 	object_const_def
 	const ROUTE18_YOUNGSTER1
 	const ROUTE18_YOUNGSTER2
+	const ROUTE18_FIELDMON_1
+    const ROUTE18_FIELDMON_2
 
 Route18_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .Route18FieldMon
+
+.Route18FieldMon:
+; Pokemon which always appear
+    appear ROUTE18_FIELDMON_1
+    appear ROUTE18_FIELDMON_2
+    endcallback
+
+Route18FieldMon1Script:
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route18PokemonAttacksText, 51, 0, .script
+.script
+    disappear ROUTE18_FIELDMON_1
+    end
+
+Route18FieldMon2Script:
+	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_2, Route18PokemonAttacksText, 52, 0, .script
+.script
+    disappear ROUTE18_FIELDMON_2
+    end
+
+Route18PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
 
 TrainerBirdKeeperBoris:
 	trainer BIRD_KEEPER, BORIS, EVENT_BEAT_BIRD_KEEPER_BORIS, BirdKeeperBorisSeenText, BirdKeeperBorisBeatenText, 0, .Script
@@ -90,3 +116,5 @@ Route18_MapEvents:
 	def_object_events
 	object_event  9, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBoris, -1
 	object_event 13,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperBob, -1
+	object_event  7, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route18FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 12, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route18FieldMon2Script, EVENT_FIELD_MON_2

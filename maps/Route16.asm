@@ -1,3 +1,11 @@
+    object_const_def
+	const ROUTE16_FIELDMON_1
+    const ROUTE16_FIELDMON_2
+    const ROUTE16_FIELDMON_3
+    const ROUTE16_FIELDMON_4
+    const ROUTE16_FIELDMON_5
+    const ROUTE16_FIELDMON_6
+
 Route16_MapScripts:
 	def_scene_scripts
 
@@ -5,6 +13,18 @@ Route16_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .AlwaysOnBike
 
 .AlwaysOnBike:
+    appear ROUTE16_FIELDMON_1
+    appear ROUTE16_FIELDMON_2
+    appear ROUTE16_FIELDMON_3
+    appear ROUTE16_FIELDMON_4
+    appear ROUTE16_FIELDMON_5
+    
+    checktime NITE
+    iffalse .bikeStuff
+    appear ROUTE16_FIELDMON_6
+    disappear ROUTE16_FIELDMON_5
+    
+.bikeStuff
 	readvar VAR_YCOORD
 	ifless 5, .CanWalk
 	readvar VAR_XCOORD
@@ -25,6 +45,57 @@ CyclingRoadSignText:
 	para "DOWNHILL COASTING"
 	line "ALL THE WAY!"
 	done
+	
+Route16FieldMon1Script:
+	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_1, Route16PokemonAttacksText, 46, 0, .script
+.script
+    disappear ROUTE16_FIELDMON_1
+    end
+    
+Route16FieldMon2Script:
+	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_2, Route16PokemonAttacksText, 44, 0, .script
+.script
+    disappear ROUTE16_FIELDMON_2
+    end
+    
+Route16FieldMon3Script:
+	trainer SCIZOR, FIELD_MON, EVENT_FIELD_MON_3, Route16PokemonAttacksText, 45, 0, .script
+.script
+    disappear ROUTE16_FIELDMON_3
+    end
+    
+Route16FieldMon4Script:
+	trainer BRELOOM, FIELD_MON, EVENT_FIELD_MON_4, Route16PokemonAttacksText, 43, 0, .script
+.script
+    disappear ROUTE16_FIELDMON_4
+    end
+    
+Route16PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+	
+Route16FieldMon5Script:
+	faceplayer
+	cry ESPEON
+	pause 15
+	loadwildmon ESPEON, 42
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE16_FIELDMON_5
+	end
+
+Route16FieldMon6Script:
+	faceplayer
+	cry UMBREON
+	pause 15
+	loadwildmon UMBREON, 42
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE16_FIELDMON_6
+	end
 
 Route16_MapEvents:
 	db 0, 0 ; filler
@@ -42,3 +113,11 @@ Route16_MapEvents:
 	bg_event  5,  5, BGEVENT_READ, CyclingRoadSign
 
 	def_object_events
+	object_event  5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route16FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  8, 15, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route16FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  5, 16, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route16FieldMon3Script, EVENT_FIELD_MON_3
+	object_event  8, 17, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route16FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 12,  0, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route16FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 12,  0, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route16FieldMon6Script, EVENT_FIELD_MON_6
+
+

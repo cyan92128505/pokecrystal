@@ -4305,8 +4305,8 @@ ShouldAIBoost:
 	jr nz, .dontBoost
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
-; if the players last move was a healing move we may set up if we can't already 2HKO
-; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO
+; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
+; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -4321,7 +4321,7 @@ ShouldAIBoost:
 	jr c, .dontBoost
 	jr .boost
 .check2HKO
-	call CanAI2HKO
+	call CanAI2HKOMaxHP
 	jr c, .dontBoost
 
 .boost
@@ -4670,7 +4670,7 @@ CanAIKO:
 CanAI2HKO:
     ld de, wEnemyMonMoves ; load AI moves
 	ld b, NUM_MOVES + 1
-.loopAI3HKOMoves
+.loopMoves
 	dec b ; b is num moves on 1st pass
 	jr z, .done ; if b is 0 return we are done
 	ld a, [de] ; load the move
@@ -4680,7 +4680,7 @@ CanAI2HKO:
 	call AIGetEnemyMove
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .loopAI3HKOMoves ; skip moves with 0 power
+	jr z, .loopMoves ; skip moves with 0 power
 
     ld a, 1
 	ldh [hBattleTurn], a
@@ -4712,17 +4712,80 @@ CanAI2HKO:
 	pop bc
 	pop de
 	pop hl
-    jp nc, .loopAI3HKOMoves
+    jp nc, .loopMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .loopAI3HKOMoves
+	jr z, .loopMoves
 	cp EFFECT_HYPER_BEAM
-	jr z, .loopAI3HKOMoves
+	jr z, .loopMoves
 	cp EFFECT_SKY_ATTACK
-	jr z, .loopAI3HKOMoves
+	jr z, .loopMoves
 	cp EFFECT_SOLARBEAM
-	jr z, .loopAI3HKOMoves
+	jr z, .loopMoves
+    scf
+    ret
+.done
+    xor a ; clear carry flag
+    ret
+
+; return carry if the AI has a move that can 2HKO the player Pokemon from current HP
+CanAI2HKOMaxHP:
+    ld de, wEnemyMonMoves ; load AI moves
+	ld b, NUM_MOVES + 1
+.loopMoves
+	dec b ; b is num moves on 1st pass
+	jr z, .done ; if b is 0 return we are done
+	ld a, [de] ; load the move
+	and a
+	jr z, .done ; return if no move
+	inc de ; increment to next move
+	call AIGetEnemyMove
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .loopMoves ; skip moves with 0 power
+
+    ld a, 1
+	ldh [hBattleTurn], a
+	push hl
+	push de
+	push bc
+	callfar EnemyAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+; double current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+; continue
+	ld a, [wCurDamage + 1]
+	ld c, a ; c is curDamage upper
+	ld a, [wCurDamage]
+	ld b, a ; b is curDamage lower
+	ld a, [wBattleMonMaxHP + 1]
+	cp c ; compare upper
+	ld a, [wBattleMonMaxHP]
+    sbc b ; compare lower and set flag
+	pop bc
+	pop de
+	pop hl
+    jp nc, .loopMoves
+; skip moves that can't be used on consecutive turns, except hyper beam
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr z, .loopMoves
+	cp EFFECT_HYPER_BEAM
+	jr z, .loopMoves
+	cp EFFECT_SKY_ATTACK
+	jr z, .loopMoves
+	cp EFFECT_SOLARBEAM
+	jr z, .loopMoves
     scf
     ret
 .done

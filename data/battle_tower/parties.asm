@@ -4436,7 +4436,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db XERNEAS
-	db PINK_BOW
+	db LEFTOVERS
 	db GEOMANCY, MOON_BLAST, AURA_SPHERE, THUNDERBOLT
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -4462,7 +4462,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db YVELTAL
-	db SHARP_BEAK
+	db LEFTOVERS
 	db OBLIVION, DARK_PULSE, NASTY_PLOT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp

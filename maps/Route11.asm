@@ -143,7 +143,6 @@ Route11FieldMon8Script:
 	disappear ROUTE11_FIELDMON_8
 	end
 
-
 TrainerYoungsterOwen:
 	trainer YOUNGSTER, OWEN, EVENT_BEAT_YOUNGSTER_OWEN, YoungsterOwenSeenText, YoungsterOwenBeatenText, 0, .Script
 

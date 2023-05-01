@@ -6,6 +6,10 @@
 	const ROUTE19_FISHER1
 	const ROUTE19_FISHER2
 	const ROUTE19_HOENRULER
+	const ROUTE19_FIELDMON_1
+    const ROUTE19_FIELDMON_2
+    const ROUTE19_FIELDMON_3
+    const ROUTE19_FIELDMON_4
 
 Route19_MapScripts:
 	def_scene_scripts
@@ -27,6 +31,11 @@ Route19_MapScripts:
 	endcallback
 
 .HoenRuler
+    appear ROUTE19_FIELDMON_1
+    appear ROUTE19_FIELDMON_2
+    appear ROUTE19_FIELDMON_3
+    appear ROUTE19_FIELDMON_4
+
     checkflag ENGINE_VOLCANOBADGE
     iftrue .Appear
 	sjump .NoAppear
@@ -36,6 +45,45 @@ Route19_MapScripts:
 .NoAppear:
 	disappear ROUTE19_HOENRULER
 	endcallback
+
+Route19FieldMon1Script:
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_1, Route19PokemonAttacksText, 50, 0, .script
+.script
+    disappear ROUTE19_FIELDMON_1
+    end
+
+Route19FieldMon2Script:
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, Route19PokemonAttacksText, 52, 0, .script
+.script
+    disappear ROUTE19_FIELDMON_2
+    end
+
+Route19PokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
+	done
+
+Route19FieldMon3Script:
+	faceplayer
+	cry GYARADOS
+	pause 15
+	loadwildmon GYARADOS, 52
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE19_FIELDMON_3
+	end
+
+Route19FieldMon4Script:
+	faceplayer
+	cry BLASTOISE
+	pause 15
+	loadwildmon BLASTOISE, 53
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE19_FIELDMON_4
+	end
 
 TrainerSwimmerfDawn:
 	trainer SWIMMERF, DAWN, EVENT_BEAT_SWIMMERF_DAWN, SwimmerfDawnSeenText, SwimmerfDawnBeatenText, 0, .Script
@@ -288,5 +336,8 @@ Route19_MapEvents:
 	object_event  8, 23, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
 	object_event  9,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
 	object_event 11,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1
-	object_event  4, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, HoenRulerScript, -1
-
+	object_event  4, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, HoenRulerScript, -1
+	object_event  5, 20, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route19FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 14, 22, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route19FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  6, 29, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route19FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 14, 32, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route19FieldMon4Script, EVENT_FIELD_MON_4

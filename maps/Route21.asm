@@ -2,11 +2,146 @@
 	const ROUTE21_SWIMMER_GIRL
 	const ROUTE21_SWIMMER_GUY
 	const ROUTE21_FISHER
+	const ROUTE21_FIELDMON_1
+    const ROUTE21_FIELDMON_2
+    const ROUTE21_FIELDMON_3
+    const ROUTE21_FIELDMON_4
+    const ROUTE21_FIELDMON_5
+    const ROUTE21_FIELDMON_6
+    const ROUTE21_FIELDMON_7
+    const ROUTE21_FIELDMON_8
 
 Route21_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .Route21FieldMon
+
+.Route21FieldMon:
+; Pokemon which always appear
+    appear ROUTE21_FIELDMON_1
+    appear ROUTE21_FIELDMON_2
+    appear ROUTE21_FIELDMON_3
+    appear ROUTE21_FIELDMON_4
+    appear ROUTE21_FIELDMON_5
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn6
+    disappear ROUTE21_FIELDMON_6
+    sjump .mon7
+.spawn6
+    appear ROUTE21_FIELDMON_6
+
+.mon7
+    random 2
+    ifequal 1, .spawn7
+    disappear ROUTE21_FIELDMON_7
+    sjump .mon8
+.spawn7
+    appear ROUTE21_FIELDMON_7
+
+.mon8
+    random 2
+    ifequal 1, .spawn8
+    disappear ROUTE21_FIELDMON_8
+    sjump .end
+.spawn8
+    appear ROUTE21_FIELDMON_8
+
+.end
+    endcallback
+
+Route21FieldMon1Script:
+	faceplayer
+	cry STARMIE
+	pause 15
+	loadwildmon STARMIE, 46
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear ROUTE21_FIELDMON_1
+	end
+
+Route21FieldMon2Script:
+	faceplayer
+	cry MILOTIC
+	pause 15
+	loadwildmon MILOTIC, 47
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE21_FIELDMON_2
+	end
+
+Route21FieldMon3Script:
+	faceplayer
+	cry KINGDRA
+	pause 15
+	loadwildmon KINGDRA, 54
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE21_FIELDMON_3
+	end
+
+Route21FieldMon4Script:
+	faceplayer
+	cry LANTURN
+	pause 15
+	loadwildmon LANTURN, 48
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE21_FIELDMON_4
+	end
+
+Route21FieldMon5Script:
+	faceplayer
+	cry GOLDUCK
+	pause 15
+	loadwildmon GOLDUCK, 44
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE21_FIELDMON_5
+	end
+
+Route21FieldMon6Script:
+	faceplayer
+	cry CHARMANDER
+	pause 15
+	loadwildmon CHARMANDER, 5
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE21_FIELDMON_6
+	end
+
+Route21FieldMon7Script:
+	faceplayer
+	cry BULBASAUR
+	pause 15
+	loadwildmon BULBASAUR, 5
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE21_FIELDMON_7
+	end
+
+Route21FieldMon8Script:
+	faceplayer
+	cry SQUIRTLE
+	pause 15
+	loadwildmon SQUIRTLE, 5
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE21_FIELDMON_8
+	end
 
 TrainerSwimmermSeth:
 	trainer SWIMMERM, SETH, EVENT_BEAT_SWIMMERM_SETH, SwimmermSethSeenText, SwimmermSethBeatenText, 0, .Script
@@ -100,3 +235,11 @@ Route21_MapEvents:
 	object_event 11, 16, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNikki, -1
 	object_event  2, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSeth, -1
 	object_event 14, 22, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherArnold, -1
+	object_event  4, 20, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route21FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 14, 19, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route21FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  7, 25, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 12, 29, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  7, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 10,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route21FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 12,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route21FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 13,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route21FieldMon8Script, EVENT_FIELD_MON_8

@@ -2528,11 +2528,21 @@ AI_Smart_BulkUp:
 ; encourage to +2, strongly encourage if player has boosted Atk
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .checkToxic ;
+    jr nc, .check2HKO ;
 	ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .greatly_encourage
 	jr .encourage
+
+.check2HKO
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .checkToxic
+    call CanAI2HKO
+    jr nc, .checkToxic
+    call Random
+    cp 50 percent
+    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -2587,11 +2597,21 @@ AI_Smart_Curse:
 ; encourage to +2, strongly encourage if player has boosted Atk
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .checkToxic ;
+    jr nc, .check2HKO ;
 	ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .greatly_encourage
 	jr .encourage
+
+.check2HKO
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .checkToxic
+    call CanAI2HKO
+    jr nc, .checkToxic
+    call Random
+    cp 50 percent
+    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -3677,14 +3697,25 @@ AI_Smart_QuiverDance:
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skip
 
-; if the player has not picked a damaging move then boost if we cant 3hko
+; is the player setting up - if so we may want to boost to force them to stop and attack
+; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
+; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_HEAL
+    jr z, .check2HKO
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
-    and a
-	jr nz, .checkKO
-	call CanAI2HKO
-	jr nc, .skip
+	and a
+	jr z, .check3HKO
+	jr .checkKO
+.check3HKO
+	call CanAI3HKO
+	jr c, .discourage
+	jr .continue
+.check2HKO
+	call CanAI2HKOMaxHP
+	jr c, .discourage
 
 .checkKO
     call CanPlayerKO
@@ -3694,11 +3725,21 @@ AI_Smart_QuiverDance:
 ; encourage to +2, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .checkToxic ;
+    jr nc, .checkMutual2HKO ;
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
 	jr .encourage
+
+.checkMutual2HKO
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .checkToxic
+    call CanAI2HKO
+    jr nc, .checkToxic
+    call Random
+    cp 50 percent
+    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -3750,11 +3791,21 @@ AI_Smart_CalmMind:
 ; encourage to +2, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .checkToxic ;
+    jr nc, .check2HKO ;
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
 	jr .encourage
+
+.check2HKO
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .checkToxic
+    call CanAI2HKO
+    jr nc, .checkToxic
+    call Random
+    cp 50 percent
+    jr c, .discourage
 
 ; discourage after +2 if afflicted with toxic
 .checkToxic
@@ -3801,14 +3852,25 @@ AI_Smart_DragonDance:
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
 
-; if the player has not picked a damaging move then boost if we can't 3HKO already
+; is the player setting up - if so we may want to boost to force them to stop and attack
+; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
+; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_HEAL
+    jr z, .check2HKO
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
-    and a
-	jr nz, .checkKO
-	call CanAI2HKO
-	jr nc, .continue
+	and a
+	jr z, .check3HKO
+	jr .checkKO
+.check3HKO
+	call CanAI3HKO
+	jr c, .discourage
+	jr .continue
+.check2HKO
+	call CanAI2HKOMaxHP
+	jr c, .discourage
 
 .checkKO
     call CanPlayerKO
@@ -3824,6 +3886,16 @@ AI_Smart_DragonDance:
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
+
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .continueChecks
+    call CanAI2HKO
+    jr nc, .continueChecks
+    call Random
+    cp 50 percent
+    jr c, .discourage
+.continueChecks
 
 ; discourage after +1 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -3869,6 +3941,16 @@ AI_Smart_SwordsDance:
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
+
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .continueChecks
+    call CanAI2HKO
+    jr nc, .continueChecks
+    call Random
+    cp 50 percent
+    jr c, .discourage
+.continueChecks
 
 ; discourage after +1 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -3981,6 +4063,16 @@ AI_Smart_Geomancy:
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .continueChecks
+    call CanAI2HKO
+    jr nc, .continueChecks
+    call Random
+    cp 50 percent
+    jr c, .discourage
+.continueChecks
+
 ; discourage after +2 if afflicted with toxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
@@ -4058,6 +4150,16 @@ AI_Smart_NastyPlot:
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
+
+; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+    call CanPlayer2HKO
+    jr nc, .continueChecks
+    call CanAI2HKO
+    jr nc, .continueChecks
+    call Random
+    cp 50 percent
+    jr c, .discourage
+.continueChecks
 
 ; discourage after +2 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -4247,8 +4349,9 @@ ShouldAIBoost:
 ; if AI evasion is >= +2 then go for the boost - only used by Patches
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .boost
+	jp nc, .boost
 
+.checkHaze
 ; if the player has roar/whirlwind/haze and we aren't immune to it then 50% to not boost
     ld a, [wEnemyMonSpecies]
     push hl

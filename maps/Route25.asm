@@ -10,6 +10,11 @@
 	const ROUTE25_SUPER_NERD
 	const ROUTE25_COOLTRAINER_M2
 	const ROUTE25_POKE_BALL
+	const ROUTE25_FIELDMON_1
+    const ROUTE25_FIELDMON_2
+    const ROUTE25_FIELDMON_3
+    const ROUTE25_FIELDMON_4
+    const ROUTE25_FIELDMON_5
 
 Route25_MapScripts:
 	def_scene_scripts
@@ -17,12 +22,30 @@ Route25_MapScripts:
 	scene_script .DummyScene1 ; SCENE_ROUTE25_MISTYS_DATE
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Route25FieldMon
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.Route25FieldMon:
+; Pokemon which always appear
+    appear ROUTE25_FIELDMON_1
+    appear ROUTE25_FIELDMON_2
+    appear ROUTE25_FIELDMON_3
+    appear ROUTE25_FIELDMON_4
+
+; Pokemon that sometimes appear
+    random 2
+    ifequal 1, .spawn
+    disappear ROUTE25_FIELDMON_5
+    sjump .end
+.spawn
+    appear ROUTE25_FIELDMON_5
+.end
+    endcallback
 
 Route25MistyDate1Script:
 	showemote EMOTE_HEART, ROUTE25_MISTY, 15
@@ -427,6 +450,61 @@ UnusedBillsHouseSignText: ; unreferenced
 	text "BILL'S HOUSE"
 	done
 
+Route25FieldMon1Script:
+	faceplayer
+	cry PERSIAN
+	pause 15
+	loadwildmon PERSIAN, 39
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear ROUTE25_FIELDMON_1
+	end
+
+Route25FieldMon2Script:
+	faceplayer
+	cry VICTREEBEL
+	pause 15
+	loadwildmon VICTREEBEL, 38
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE25_FIELDMON_2
+	end
+
+Route25FieldMon3Script:
+	faceplayer
+	cry POLIWRATH
+	pause 15
+	loadwildmon POLIWRATH, 40
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE25_FIELDMON_3
+	end
+
+Route25FieldMon4Script:
+	faceplayer
+	cry NINETALES
+	pause 15
+	loadwildmon NINETALES, 41
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE25_FIELDMON_4
+	end
+
+Route25FieldMon5Script:
+	faceplayer
+	cry ALAKAZAM
+	pause 15
+	loadwildmon ALAKAZAM, 65
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE25_FIELDMON_5
+	end
+
 Route25_MapEvents:
 	db 0, 0 ; filler
 
@@ -453,3 +531,8 @@ Route25_MapEvents:
 	object_event 31,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSupernerdPat, -1
 	object_event 37,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainermKevin, -1
 	object_event 32,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Protein, EVENT_ROUTE_25_PROTEIN
+	object_event  5, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 2, Route25FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 38,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route25FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 49,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route25FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 15,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route25FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  5,  4, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route25FieldMon5Script, EVENT_FIELD_MON_5

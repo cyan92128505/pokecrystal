@@ -1,6 +1,7 @@
 	object_const_def
 	const MOUNTMOON_SILVER
-	const MOUNTMOON_DARKRAI
+	const MOUNTMOON_FIELDMON_1
+    const MOUNTMOON_FIELDMON_2
 
 MountMoon_MapScripts:
 	def_scene_scripts
@@ -8,19 +9,13 @@ MountMoon_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
-    callback MAPCALLBACK_OBJECTS, .Darkrai
+    callback MAPCALLBACK_OBJECTS, .MountMoonFieldMon
 
-.Darkrai
-    setval DARKRAI
-	special MonCheck
-	iftrue .NoAppear
-	sjump .Appear
-.Appear:
-	appear MOUNTMOON_DARKRAI
-	endcallback
-.NoAppear:
-	disappear MOUNTMOON_DARKRAI
-	endcallback
+.MountMoonFieldMon:
+; Pokemon which always appear
+    appear MOUNTMOON_FIELDMON_1
+    appear MOUNTMOON_FIELDMON_2
+    endcallback
 
 .RivalEncounter:
 	sdefer .RivalBattle
@@ -57,34 +52,6 @@ MountMoon_MapScripts:
 	setevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	playmapmusic
 	end
-
-DarkraiScript:
-	opentext
-	writetext DarkraiCry
-	waitbutton
-	cry DARKRAI
-	pause 15
-	closetext
-	checkflag ENGINE_EARTHBADGE
-	iffalse .midLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 70
-    sjump .begin
-.midLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 60
-.begin
-	startbattle
-	disappear MOUNTMOON_DARKRAI
-	reloadmapafterbattle
-	end
-DarkraiCry:
-    text "The next time"
-    line "you sleep."
-
-    para "You shall"
-    line "never awake."
-    done
 
 MountMoonSilverMovementBefore:
 	step LEFT
@@ -175,6 +142,29 @@ MountMoonSilverTextLoss:
 	cont "greatest trainer."
 	done
 
+MountMoonFieldMon3Script:
+	faceplayer
+	cry WIGGLYTUFF
+	pause 15
+	loadwildmon WIGGLYTUFF, 41
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear MOUNTMOON_FIELDMON_1
+	end
+
+MountMoonFieldMon4Script:
+	faceplayer
+	cry CLEFABLE
+	pause 15
+	loadwildmon CLEFABLE, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear MOUNTMOON_FIELDMON_2
+	end
+
 MountMoon_MapEvents:
 	db 0, 0 ; filler
 
@@ -194,5 +184,5 @@ MountMoon_MapEvents:
 
 	def_object_events
 	object_event  7,  3, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
-	object_event  13, 11, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, DarkraiScript, EVENT_CAUGHT_DARKRAI
-
+	object_event 11,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MountMoonFieldMon3Script, EVENT_FIELD_MON_1
+	object_event 13, 11, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MountMoonFieldMon4Script, EVENT_FIELD_MON_2

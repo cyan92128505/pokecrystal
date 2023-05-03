@@ -1,10 +1,27 @@
 	object_const_def
 	const DIGLETTSCAVE_POKEFAN_M
+	const DIGLETTSCAVE_FIELDMON_1
+    const DIGLETTSCAVE_FIELDMON_2
+    const DIGLETTSCAVE_FIELDMON_3
+    const DIGLETTSCAVE_FIELDMON_4
+    const DIGLETTSCAVE_FIELDMON_5
+    const DIGLETTSCAVE_FIELDMON_6
 
 DiglettsCave_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .DiglettsCaveFieldMon
+
+.DiglettsCaveFieldMon:
+; Pokemon which always appear
+    appear DIGLETTSCAVE_FIELDMON_1
+    appear DIGLETTSCAVE_FIELDMON_2
+    appear DIGLETTSCAVE_FIELDMON_3
+    appear DIGLETTSCAVE_FIELDMON_4
+    appear DIGLETTSCAVE_FIELDMON_5
+    appear DIGLETTSCAVE_FIELDMON_6
+    endcallback
 
 DiglettsCavePokefanMScript:
 	jumptextfaceplayer DiglettsCavePokefanMText
@@ -18,6 +35,53 @@ DiglettsCavePokefanMText:
 
 	para "ground! That was"
 	line "shocking."
+	done
+	
+DiglettsCaveFieldMon1Script:
+	trainer ONIX, FIELD_MON, EVENT_FIELD_MON_1, DiglettsCavePokemonAttacksText, 34, 0, .script
+.script
+    disappear DIGLETTSCAVE_FIELDMON_1
+    end
+
+DiglettsCaveFieldMon2Script:
+	trainer PUPITAR, FIELD_MON, EVENT_FIELD_MON_2, DiglettsCavePokemonAttacksText, 36, 0, .script
+.script
+    disappear DIGLETTSCAVE_FIELDMON_2
+    end
+
+DiglettsCaveFieldMon3Script:
+	trainer GABITE, FIELD_MON, EVENT_FIELD_MON_3, DiglettsCavePokemonAttacksText, 36, 0, .script
+.script
+    disappear DIGLETTSCAVE_FIELDMON_3
+    end
+
+DiglettsCaveFieldMon4Script:
+	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_4, DiglettsCavePokemonAttacksText, 37, 0, .script
+.script
+    disappear DIGLETTSCAVE_FIELDMON_4
+    end
+
+DiglettsCaveFieldMon5Script:
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, DiglettsCavePokemonAttacksText, 38, 0, .script
+.script
+    disappear DIGLETTSCAVE_FIELDMON_5
+    end
+    
+DiglettsCaveFieldMon6Script:
+	faceplayer
+	cry STEELIX
+	pause 15
+	loadwildmon STEELIX, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear DIGLETTSCAVE_FIELDMON_6
+	end
+
+DiglettsCavePokemonAttacksText:
+	text "Wild #MON"
+	line "attacks!"
 	done
 
 DiglettsCave_MapEvents:
@@ -38,3 +102,9 @@ DiglettsCave_MapEvents:
 
 	def_object_events
 	object_event  3, 31, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCavePokefanMScript, -1
+	object_event 12, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 15, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon2Script, EVENT_FIELD_MON_2
+	object_event  2,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  6, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 14, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon5Script, EVENT_FIELD_MON_5
+	object_event  9, 17, SPRITE_BIG_ONIX, SPRITEMOVEDATA_BIGDOLLSYM, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, DiglettsCaveFieldMon6Script, EVENT_FIELD_MON_6

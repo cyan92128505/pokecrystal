@@ -666,12 +666,12 @@ LifeOrbRecoilText:
     prompt
 
 DefenseModeText:
-    text "<USER>"
+    text "AEGISLASH"
     line "Defense stance"
     prompt
 
 AttackModeText:
-    text "<USER>"
+    text "AEGISLASH"
     line "Attack stance"
     prompt
 

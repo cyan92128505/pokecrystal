@@ -1,11 +1,155 @@
 	object_const_def
 	const SILVERCAVEITEMROOMS_PALKIA
 	const SILVERCAVEITEMROOMS_DIALGA
+    const SILVERCAVEITEMROOMS_FIELDMON_1
+    const SILVERCAVEITEMROOMS_FIELDMON_2
+    const SILVERCAVEITEMROOMS_FIELDMON_3
+    const SILVERCAVEITEMROOMS_FIELDMON_4
+    const SILVERCAVEITEMROOMS_FIELDMON_5
+    const SILVERCAVEITEMROOMS_FIELDMON_6
+    const SILVERCAVEITEMROOMS_FIELDMON_7
+    const SILVERCAVEITEMROOMS_FIELDMON_8
+    const SILVERCAVEITEMROOMS_FIELDMON_9
+    const SILVERCAVEITEMROOMS_FIELDMON_10
 
 SilverCaveItemRooms_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .FieldMon
+
+.FieldMon:
+	appear SILVERCAVEITEMROOMS_FIELDMON_1
+	appear SILVERCAVEITEMROOMS_FIELDMON_2
+	appear SILVERCAVEITEMROOMS_FIELDMON_3
+	appear SILVERCAVEITEMROOMS_FIELDMON_4
+	appear SILVERCAVEITEMROOMS_FIELDMON_5
+	appear SILVERCAVEITEMROOMS_FIELDMON_6
+	appear SILVERCAVEITEMROOMS_FIELDMON_7
+	appear SILVERCAVEITEMROOMS_FIELDMON_8
+	appear SILVERCAVEITEMROOMS_FIELDMON_9
+	appear SILVERCAVEITEMROOMS_FIELDMON_10
+	endcallback
+
+SilverCaveItemRoomFieldMon1Script:
+	faceplayer
+	cry LUCARIO
+	pause 15
+	loadwildmon LUCARIO, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear SILVERCAVEITEMROOMS_FIELDMON_1
+	end
+
+SilverCaveItemRoomFieldMon2Script:
+	faceplayer
+	cry ALAKAZAM
+	pause 15
+	loadwildmon ALAKAZAM, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear SILVERCAVEITEMROOMS_FIELDMON_2
+	end
+
+SilverCaveItemRoomFieldMon3Script:
+	faceplayer
+	cry MAGNEZONE
+	pause 15
+	loadwildmon MAGNEZONE, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear SILVERCAVEITEMROOMS_FIELDMON_3
+	end
+
+SilverCaveItemRoomFieldMon4Script:
+	faceplayer
+	cry MISMAGIUS
+	pause 15
+	loadwildmon MISMAGIUS, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear SILVERCAVEITEMROOMS_FIELDMON_4
+	end
+
+SilverCaveItemRoomFieldMon5Script:
+	faceplayer
+	cry HONCHKROW
+	pause 15
+	loadwildmon HONCHKROW, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear SILVERCAVEITEMROOMS_FIELDMON_5
+	end
+
+SilverCaveItemRoomFieldMon6Script:
+	faceplayer
+	cry RHYPERIOR
+	pause 15
+	loadwildmon RHYPERIOR, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear SILVERCAVEITEMROOMS_FIELDMON_6
+	end
+
+SilverCaveItemRoomFieldMon7Script:
+	faceplayer
+	cry GYARADOS
+	pause 15
+	loadwildmon GYARADOS, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear SILVERCAVEITEMROOMS_FIELDMON_7
+	end
+
+SilverCaveItemRoomFieldMon8Script:
+	faceplayer
+	cry MILOTIC
+	pause 15
+	loadwildmon MILOTIC, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear SILVERCAVEITEMROOMS_FIELDMON_8
+	end
+
+SilverCaveItemRoomFieldMon9Script:
+	faceplayer
+	cry ARCTOVISH
+	pause 15
+	loadwildmon ARCTOVISH, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_9
+	disappear SILVERCAVEITEMROOMS_FIELDMON_9
+	end
+
+SilverCaveItemRoomFieldMon10Script:
+	faceplayer
+	cry ARCTOZOLT
+	pause 15
+	loadwildmon ARCTOZOLT, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_10
+	disappear SILVERCAVEITEMROOMS_FIELDMON_10
+	end
 
 PalkiaScript:
 	faceplayer
@@ -69,3 +213,14 @@ SilverCaveItemRooms_MapEvents:
 	def_object_events
 	object_event 17,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PalkiaScript, EVENT_CAUGHT_PALKIA
 	object_event 30,  2, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DialgaScript, EVENT_CAUGHT_DIALGA
+	object_event 29,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 18,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 35, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 39,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 28, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 41, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 10, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon7Script, EVENT_FIELD_MON_7
+	object_event  7,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon8Script, EVENT_FIELD_MON_8
+	object_event  9, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon9Script, EVENT_FIELD_MON_9
+	object_event 17, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, SilverCaveItemRoomFieldMon10Script, EVENT_FIELD_MON_10
+	

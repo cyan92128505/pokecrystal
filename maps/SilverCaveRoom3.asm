@@ -1,10 +1,101 @@
 	object_const_def
 	const SILVERCAVEROOM3_RED
+	const SILVERCAVEROOM3_ASH
+	const SILVERCAVEROOM3_RED_PIKACHU
+	const SILVERCAVEROOM3_ASH_PIKACHU
+    const SILVERCAVEROOM3_FIELDMON_1
+    const SILVERCAVEROOM3_FIELDMON_2
+    const SILVERCAVEROOM3_FIELDMON_3
+    const SILVERCAVEROOM3_FIELDMON_4
+    const SILVERCAVEROOM3_FIELDMON_5
+    const SILVERCAVEROOM3_FIELDMON_6
 
 SilverCaveRoom3_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .FieldMon
+
+.FieldMon:
+	appear SILVERCAVEROOM3_FIELDMON_1
+	appear SILVERCAVEROOM3_FIELDMON_2
+	appear SILVERCAVEROOM3_FIELDMON_3
+	appear SILVERCAVEROOM3_FIELDMON_4
+	appear SILVERCAVEROOM3_FIELDMON_5
+	appear SILVERCAVEROOM3_FIELDMON_6
+	endcallback
+
+SilverCaveRoom3FieldMon1Script:
+	faceplayer
+	cry DRAGONITE
+	pause 15
+	loadwildmon DRAGONITE, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear SILVERCAVEROOM3_FIELDMON_1
+	end
+
+SilverCaveRoom3FieldMon2Script:
+	faceplayer
+	cry TYRANITAR
+	pause 15
+	loadwildmon TYRANITAR, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear SILVERCAVEROOM3_FIELDMON_2
+	end
+
+SilverCaveRoom3FieldMon3Script:
+	faceplayer
+	cry SALAMENCE
+	pause 15
+	loadwildmon SALAMENCE, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear SILVERCAVEROOM3_FIELDMON_3
+	end
+
+SilverCaveRoom3FieldMon4Script:
+	faceplayer
+	cry METAGROSS
+	pause 15
+	loadwildmon METAGROSS, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear SILVERCAVEROOM3_FIELDMON_4
+	end
+
+SilverCaveRoom3FieldMon5Script:
+	faceplayer
+	cry GARCHOMP
+	pause 15
+	loadwildmon GARCHOMP, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear SILVERCAVEROOM3_FIELDMON_5
+	end
+
+SilverCaveRoom3FieldMon6Script:
+	faceplayer
+	cry GENESECT
+	pause 15
+	loadwildmon GENESECT, 70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear SILVERCAVEROOM3_FIELDMON_6
+	end
 
 Red:
 	special FadeOutMusic
@@ -318,6 +409,12 @@ SilverCaveRoom3_MapEvents:
 
 	def_object_events
 	object_event  8, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, -1
-    object_event 11, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_LEFT,  0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ash, -1
-    object_event  8, 9, SPRITE_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Pikachu, -1
-    object_event 11, 9, SPRITE_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Pikachu, -1
+	object_event 11, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_LEFT,  0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ash, -1
+	object_event  8, 9, SPRITE_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Pikachu, -1
+	object_event 11, 9, SPRITE_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Pikachu, -1
+	object_event 14, 11, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  5, 11, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 14, 13, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon3Script, EVENT_FIELD_MON_3
+	object_event  5, 13, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 11, 32, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon5Script, EVENT_FIELD_MON_5
+	object_event  8, 32, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon6Script, EVENT_FIELD_MON_6

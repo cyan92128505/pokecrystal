@@ -814,6 +814,34 @@ KantoGrassWildMons:
 	db 66, VOLCARONA
 	end_grass_wildmons
 
+	def_grass_wildmons ELEMENT_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 50, CHARIZARD
+	db 50, NINETALES
+	db 52, FLAREON
+	db 52, ARCANINE
+	db 55, GOLEM
+	db 55, RHYPERIOR
+	db 62, TYRANITAR
+	; day
+	db 50, CHARIZARD
+	db 50, NINETALES
+	db 52, FLAREON
+	db 52, ARCANINE
+	db 55, GOLEM
+	db 55, RHYPERIOR
+	db 62, TYRANITAR
+	; nite
+	db 50, CHARIZARD
+	db 50, NINETALES
+	db 52, FLAREON
+	db 52, ARCANINE
+	db 55, GOLEM
+	db 55, RHYPERIOR
+	db 62, TYRANITAR
+	end_grass_wildmons
+
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

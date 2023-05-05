@@ -170,4 +170,11 @@ KantoWaterWildMons:
 	db 50, LAPRAS
 	end_water_wildmons
 
+	def_water_wildmons ELEMENT_CAVE
+	db 6 percent ; encounter rate
+	db 50, POLITOED
+	db 52, GYARADOS
+	db 55, KINGDRA
+	end_water_wildmons
+
 	db -1 ; end

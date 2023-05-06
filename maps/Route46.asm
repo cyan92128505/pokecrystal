@@ -255,7 +255,7 @@ Route46SignText:
 	done
 
 Route46FieldMon1Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route46PokemonAttacksText, 43, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route46PokemonAttacksText, 31, 0, .script
 .script
     disappear ROUTE46_FIELDMON_1
     end

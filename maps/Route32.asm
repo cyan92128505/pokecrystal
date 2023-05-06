@@ -29,7 +29,6 @@ Route32_MapScripts:
 	scene_script .DummyScene2 ; SCENE_ROUTE32_NOTHING
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route32FieldMon
 	callback MAPCALLBACK_OBJECTS, .Frieda
 
 .DummyScene0:
@@ -40,29 +39,28 @@ Route32_MapScripts:
 
 .DummyScene2:
 	end
-	
-.Route32FieldMon:
-; Pokemon which always appear
+
+.Frieda:
     appear ROUTE32_FIELDMON_1
     appear ROUTE32_FIELDMON_4
     appear ROUTE32_FIELDMON_5
-
-; Pokemon that sometimes appear
-.mon6
-    random 2
-    ifequal 1, .spawn6
-    disappear ROUTE32_FIELDMON_6
-    sjump .mon7
-.spawn6
     appear ROUTE32_FIELDMON_6
 
-.mon7
+; Pokemon that sometimes appear
     random 2
     ifequal 1, .spawn7
     disappear ROUTE32_FIELDMON_7
-    sjump .mon8
+    sjump .mon3
 .spawn7
     appear ROUTE32_FIELDMON_7
+
+.mon3
+    random 2
+    ifequal 1, .spawn3
+    disappear ROUTE32_FIELDMON_3
+    sjump .mon8
+.spawn3
+    appear ROUTE32_FIELDMON_3
 
 .mon8
     random 8
@@ -75,31 +73,14 @@ Route32_MapScripts:
 .checkNight
 ; Pokemon that only appear at night
     checktime NITE
-	iffalse .end
-
-    random 2
-    ifequal 1, .spawn2
-    disappear ROUTE32_FIELDMON_2
-    sjump .mon3
-.spawn2
+	iffalse .feieda
     appear ROUTE32_FIELDMON_2
-
-.mon3
-    random 3
-    ifequal 1, .spawn3
-    disappear ROUTE32_FIELDMON_3
-    sjump .despawn
-.spawn3
-    appear ROUTE32_FIELDMON_3
 
 .despawn
 ; Pokemon that don't appear at night
     disappear ROUTE32_FIELDMON_7
 
-.end
-    endcallback
-
-.Frieda:
+.feieda
 	readvar VAR_WEEKDAY
 	ifequal FRIDAY, .FriedaAppears
 	disappear ROUTE32_FRIEDA
@@ -1008,19 +989,19 @@ Route32UnionCaveSignText:
 	done
 	
 Route32FieldMon1Script:
-	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 34, 0, .script
+	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 31, 0, .script
 .script
     disappear ROUTE32_FIELDMON_1
     end
 
 Route32FieldMon2Script:
-	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 36, 0, .script
+	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 32, 0, .script
 .script
     disappear ROUTE32_FIELDMON_2
     end
     
 Route32FieldMon3Script:
-	trainer REUNICLUS, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 46, 0, .script
+	trainer DUOSION, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 34, 0, .script
 .script
     disappear ROUTE32_FIELDMON_3
     end
@@ -1124,10 +1105,10 @@ Route32_MapEvents:
 	;object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
 
 	object_event 5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 6, Route32FieldMon1Script, EVENT_FIELD_MON_1
-	object_event 8, 38, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  4, 36, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 4, 68, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 14, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
-	object_event 4, 35, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
+	object_event  7, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 8,  74, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8

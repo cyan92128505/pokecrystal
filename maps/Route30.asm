@@ -12,7 +12,7 @@
 	;const ROUTE30_POKE_BALL
 	const ROUTE30_FIELDMON_1
 	const ROUTE30_FIELDMON_2
-	const ROUTE30_FIELDMON_3
+	;const ROUTE30_FIELDMON_3
 	const ROUTE30_FIELDMON_4
 	const ROUTE30_FIELDMON_5
 	const ROUTE30_FIELDMON_6
@@ -64,17 +64,17 @@ Route30_MapScripts:
     random 2
     ifequal 1, .spawn2
     disappear ROUTE30_FIELDMON_2
-    sjump .mon3
+    sjump .despawn
 .spawn2
     appear ROUTE30_FIELDMON_2
 
-.mon3
-    random 3
-    ifequal 1, .spawn3
-    disappear ROUTE30_FIELDMON_3
-    sjump .despawn
-.spawn3
-    appear ROUTE30_FIELDMON_3
+;.mon3
+;    random 3
+;    ifequal 1, .spawn3
+;    disappear ROUTE30_FIELDMON_3
+;    sjump .despawn
+;.spawn3
+;    appear ROUTE30_FIELDMON_3
 
 .despawn
 ; Pokemon that don't appear at night
@@ -483,11 +483,11 @@ Route30FieldMon2Script:
     disappear ROUTE30_FIELDMON_2
     end
     
-Route30FieldMon3Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_3, Route30PokemonAttacksText, 42, 0, .script
-.script
-    disappear ROUTE30_FIELDMON_3
-    end
+;Route30FieldMon3Script:
+;	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_3, Route30PokemonAttacksText, 42, 0, .script
+;.script
+;    disappear ROUTE30_FIELDMON_3
+;    end
     
 Route30PokemonAttacksText:
 	text "Wild #MON"
@@ -582,7 +582,7 @@ Route30_MapEvents:
 	object_event 12, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route30FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13,  3, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route30FieldMon2Script, EVENT_FIELD_MON_2
 	;object_event 18,  40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon3Script, EVENT_FIELD_MON_3
-	object_event 7,  42, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 7,  42, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 16, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 4,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 18, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route30FieldMon7Script, EVENT_FIELD_MON_7

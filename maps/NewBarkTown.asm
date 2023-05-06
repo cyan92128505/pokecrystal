@@ -3,7 +3,7 @@
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_SILVER
 	;const NEWBARKTOWN_FIELDMON_1
-	const NEWBARKTOWN_FIELDMON_2
+	;const NEWBARKTOWN_FIELDMON_2
 	const NEWBARKTOWN_FIELDMON_4
 	const NEWBARKTOWN_FIELDMON_5
 	const NEWBARKTOWN_FIELDMON_6
@@ -15,7 +15,6 @@ NewBarkTown_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .NewBarkTownFieldMon
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
@@ -25,15 +24,12 @@ NewBarkTown_MapScripts:
 	end
 
 .FlyPoint:
-	setflag ENGINE_FLYPOINT_NEW_BARK
-	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-	endcallback
-
-.NewBarkTownFieldMon:
     appear NEWBARKTOWN_FIELDMON_4
     appear NEWBARKTOWN_FIELDMON_5
     appear NEWBARKTOWN_FIELDMON_6
-    endcallback
+	setflag ENGINE_FLYPOINT_NEW_BARK
+	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
+	endcallback
 
 NewBarkTown_TeacherStopsYouScene1:
 	playmusic MUSIC_MOM
@@ -298,11 +294,11 @@ NewBarkTownElmsHouseSignText:
 ;    disappear NEWBARKTOWN_FIELDMON_1
 ;    end
 
-NewBarkFieldMon2Script:
-	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_2, PokemonAttacksText, 21, 0, .script
-.script
-    disappear NEWBARKTOWN_FIELDMON_2
-    end
+;NewBarkFieldMon2Script:
+;	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_2, PokemonAttacksText, 21, 0, .script
+;.script
+;    disappear NEWBARKTOWN_FIELDMON_2
+;    end
 
 
 PokemonAttacksText:
@@ -374,7 +370,6 @@ NewBarkTownRepelScript:
 	writetext NewBarkTownRepelsText
 	promptbutton
 	verbosegiveitem REPULSOR
-	writetext GotRepelsText
 	promptbutton
 	iffalse .NoRoom
 	setevent EVENT_GOT_NEWBARKTOWN_REPEL
@@ -384,11 +379,6 @@ NewBarkTownRepelScript:
 .NoRoom:
 	closetext
 	end
-
-GotRepelsText:
-    text "<PLAYER>"
-    line "got REPULSOR"
-    done
 
 NewBarkTownRepelsText:
     text "#MON are"
@@ -448,7 +438,7 @@ NewBarkTown_MapEvents:
 	object_event  6, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12, 21, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
-	object_event 12,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon5Script, EVENT_FIELD_MON_5
-	object_event 13,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 12,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 13,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 10,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1

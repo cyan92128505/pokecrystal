@@ -8,7 +8,7 @@
 	const ROUTE29_TUSCANY
 	const ROUTE29_POKE_BALL
 	const ROUTE29_FIELDMON_1
-	const ROUTE29_FIELDMON_2
+	;const ROUTE29_FIELDMON_2
 	const ROUTE29_FIELDMON_3
 	const ROUTE29_FIELDMON_4
 	const ROUTE29_FIELDMON_5
@@ -22,7 +22,6 @@ Route29_MapScripts:
 	scene_script .DummyScene1 ; SCENE_ROUTE29_CATCH_TUTORIAL
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route29FieldMon
 	callback MAPCALLBACK_OBJECTS, .Tuscany
 
 .DummyScene0:
@@ -32,20 +31,6 @@ Route29_MapScripts:
 	end
 
 .Tuscany:
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .DoesTuscanyAppear
-
-.TuscanyDisappears:
-	disappear ROUTE29_TUSCANY
-	endcallback
-
-.DoesTuscanyAppear:
-	readvar VAR_WEEKDAY
-	ifnotequal TUESDAY, .TuscanyDisappears
-	appear ROUTE29_TUSCANY
-	endcallback
-
-.Route29FieldMon:
 ; Pokemon which always appear
     appear ROUTE29_FIELDMON_1
     appear ROUTE29_FIELDMON_4
@@ -79,28 +64,39 @@ Route29_MapScripts:
 .checkNight
 ; Pokemon that only appear at night
     checktime NITE
-	iffalse .end
+	iffalse .tuscany
 
-    random 2
-    ifequal 1, .spawn2
-    disappear ROUTE29_FIELDMON_2
-    sjump .mon3
-.spawn2
-    appear ROUTE29_FIELDMON_2
+;    random 2
+;    ifequal 1, .spawn2
+;    disappear ROUTE29_FIELDMON_2
+;    sjump .mon3
+;.spawn2
+;    appear ROUTE29_FIELDMON_2
 
 .mon3
     random 3
     ifequal 1, .spawn3
     disappear ROUTE29_FIELDMON_3
-    sjump .end
+    sjump .tuscany
 .spawn3
     appear ROUTE29_FIELDMON_3
 
 ; Pokemon that don't appear at night
     disappear ROUTE29_FIELDMON_7
 
-.end
-    endcallback
+.tuscany
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .DoesTuscanyAppear
+
+.TuscanyDisappears:
+	disappear ROUTE29_TUSCANY
+	endcallback
+
+.DoesTuscanyAppear:
+	readvar VAR_WEEKDAY
+	ifnotequal TUESDAY, .TuscanyDisappears
+	appear ROUTE29_TUSCANY
+	endcallback
 
 Route29Tutorial1:
 	turnobject ROUTE29_COOLTRAINER_M1, UP
@@ -484,14 +480,14 @@ Route29FieldMon1Script:
     disappear ROUTE29_FIELDMON_1
     end
 
-Route29FieldMon2Script:
-	trainer STARAVIA, FIELD_MON, EVENT_FIELD_MON_2, Route29PokemonAttacksText, 24, 0, .script
-.script
-    disappear ROUTE29_FIELDMON_2
-    end
+;Route29FieldMon2Script:
+;	trainer STARAVIA, FIELD_MON, EVENT_FIELD_MON_2, Route29PokemonAttacksText, 24, 0, .script
+;.script
+;    disappear ROUTE29_FIELDMON_2
+;    end
     
 Route29FieldMon3Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route29PokemonAttacksText, 41, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route29PokemonAttacksText, 31, 0, .script
 .script
     disappear ROUTE29_FIELDMON_3
     end
@@ -584,7 +580,7 @@ Route29_MapEvents:
 	object_event 38, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route29FieldMon1Script, EVENT_FIELD_MON_1
 	;object_event 19,  8, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route29FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 27,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route29FieldMon3Script, EVENT_FIELD_MON_3
-	object_event 21,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 21,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 46,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 6,  17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7

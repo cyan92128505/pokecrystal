@@ -49,19 +49,19 @@ DarkCaveVioletEntranceFieldMon1Script:
     end
 
 DarkCaveVioletEntranceFieldMon2Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveVioletEntrancePokemonAttacksText, 45, 0, .script
+	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveVioletEntrancePokemonAttacksText, 22, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_2
     end
 
 DarkCaveVioletEntranceFieldMon3Script:
-	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveVioletEntrancePokemonAttacksText, 41, 0, .script
+	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveVioletEntrancePokemonAttacksText, 24, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_3
     end
 
 DarkCaveVioletEntranceFieldMon4Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_4, DarkCaveVioletEntrancePokemonAttacksText, 44, 0, .script
+	trainer MISDREAVUS, FIELD_MON, EVENT_FIELD_MON_4, DarkCaveVioletEntrancePokemonAttacksText, 25, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_4
     end

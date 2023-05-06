@@ -6,6 +6,8 @@
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_SETO
+	const ECRUTEAKCITY_TELEPORT
 
 EcruteakCity_MapScripts:
 	def_scene_scripts
@@ -375,6 +377,76 @@ RematchRefuseTextSeto:
     text "You scared?"
     done
 
+EcruteakTeleportGuyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_WHITNEY
+	iftrue .welcome
+	writetext EcruteakTeleportGuyText1
+	yesorno
+	iffalse .no
+	writetext EcruteakTeleportGuyYesText
+	waitbutton
+	closetext
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
+	warp NEW_BARK_TOWN, 13, 18
+	end
+.welcome
+	writetext EcruteakTeleportGuyWelcomeText
+	waitbutton
+	closetext
+	end
+.no
+	writetext EcruteakTeleportGuyNoText
+	waitbutton
+	closetext
+	end
+
+EcruteakTeleportGuyWelcomeText:
+    text "Welcome to"
+    line "ECRUTEAK."
+
+    para "You must be quite"
+    line "the trainer to"
+    cont "make it through"
+    cont "the forest!"
+    done
+
+EcruteakTeleportGuyText1:
+	text "You seem a bit"
+	line "lost dear child."
+
+	para "It is dangerous"
+	line "around here."
+
+	para "I can TELEPORT"
+	line "you home."
+
+	para "Would you like to"
+	line "go home now?"
+	done
+
+EcruteakTeleportGuyYesText:
+	text "OK, OK. Picture"
+	line "your house in your"
+	cont "mind…"
+	done
+
+EcruteakTeleportGuyNoText:
+	text "OK, OK. The best"
+	line "of luck to you!"
+	done
+
+EcruteakTeleportGuyEncounterScript:
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .talk
+    end
+.talk
+    turnobject PLAYER, RIGHT
+    sjump EcruteakTeleportGuyScript
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -398,6 +470,7 @@ EcruteakCity_MapEvents:
 	def_coord_events
 	coord_event 17, 35, SCENE_ALWAYS, ReloadMapEcruteakScript
 	coord_event 18, 35, SCENE_ALWAYS, ReloadMapEcruteakScript
+	coord_event 17, 34, SCENE_ALWAYS, EcruteakTeleportGuyEncounterScript
 
 	def_bg_events
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
@@ -418,3 +491,4 @@ EcruteakCity_MapEvents:
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
 	object_event 29,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SetoScript, -1
+	object_event 18,  34, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakTeleportGuyScript, -1

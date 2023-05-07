@@ -17,156 +17,303 @@ Route46_MapScripts:
     appear ROUTE46_FIELDMON_1
     endcallback
 
-TrainerCamperTed:
-	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
+;TrainerCamperTed:
+;	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
 
-.Script:
-	endifjustbattled
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext CamperTedAfterBattleText
+;	waitbutton
+;	closetext
+;	end
+
+TrainerCamperTed:
+	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CAMPER_TED
+	iftrue .FightDone
+	checkevent EVENT_BEAT_WHITNEY
+	iffalse .Mercy
+.fight
+	writetext CamperTedSeenText
+	waitbutton
+	closetext
+	winlosstext CamperTedBeatenText, 0
+	loadtrainer CAMPER, TED
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CAMPER_TED
+	end
+.FightDone:
 	writetext CamperTedAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextRoute46
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextRoute46
+	waitbutton
+	closetext
+	end
+.Mercy:
+    writetext CamperTedMercyText
 	waitbutton
 	closetext
 	end
 
+CamperTedMercyText:
+    text "I think you have"
+    line "got a bit lost."
+
+    para "My girlfriend and"
+    line "I are strong"
+    cont "trainers."
+
+    para "I'm not going to"
+    line "bully a new kid."
+
+    para "Now please head"
+    line "back and leave"
+    cont "us alone."
+    done
+
+;TrainerPicnickerErin1:
+;	trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
+;.Script:
+;	loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
+;	endifjustbattled
+;	opentext
+;	checkflag ENGINE_ERIN_READY_FOR_REMATCH
+;	iftrue .WantsBattle
+;	checkcellnum PHONE_PICNICKER_ERIN
+;	iftrue Route46NumberAcceptedF
+;	checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
+;	iftrue .AskedAlready
+;	writetext PicnickerErinAfterBattleText
+;	promptbutton
+;	setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
+;	scall Route46AskNumber1F
+;	sjump .AskForNumber
+;.AskedAlready:
+;	scall Route46AskNumber2F
+;.AskForNumber:
+;	askforphonenumber PHONE_PICNICKER_ERIN
+;	ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF
+;	ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF
+;	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
+;	scall Route46RegisteredNumberF
+;	sjump Route46NumberAcceptedF
+;.WantsBattle:
+;	scall Route46RematchF
+;	winlosstext PicnickerErin1BeatenText, 0
+;	readmem wErinFightCount
+;	ifequal 2, .Fight2
+;	ifequal 1, .Fight1
+;	ifequal 0, .LoadFight0
+;.Fight2:
+;	checkevent EVENT_RESTORED_POWER_TO_KANTO
+;	iftrue .LoadFight2
+;.Fight1:
+;	checkevent EVENT_BEAT_ELITE_FOUR
+;	iftrue .LoadFight1
+;.LoadFight0:
+;	loadtrainer PICNICKER, ERIN1
+;	startbattle
+;	reloadmapafterbattle
+;	loadmem wErinFightCount, 1
+;	clearflag ENGINE_ERIN_READY_FOR_REMATCH
+;	end
+;.LoadFight1:
+;	loadtrainer PICNICKER, ERIN2
+;	startbattle
+;	reloadmapafterbattle
+;	loadmem wErinFightCount, 2
+;	clearflag ENGINE_ERIN_READY_FOR_REMATCH
+;	end
+;.LoadFight2:
+;	loadtrainer PICNICKER, ERIN3
+;	startbattle
+;	reloadmapafterbattle
+;	clearflag ENGINE_ERIN_READY_FOR_REMATCH
+;	checkevent EVENT_ERIN_CALCIUM
+;	iftrue .HasCalcium
+;	checkevent EVENT_GOT_CALCIUM_FROM_ERIN
+;	iftrue .GotCalciumAlready
+;	scall Route46RematchGiftF
+;	verbosegiveitem CALCIUM
+;	iffalse ErinNoRoomForCalcium
+;	setevent EVENT_GOT_CALCIUM_FROM_ERIN
+;	sjump Route46NumberAcceptedF
+;.GotCalciumAlready:
+;	end
+;.HasCalcium:
+;	opentext
+;	writetext PicnickerErin2BeatenText
+;	waitbutton
+;	verbosegiveitem CALCIUM
+;	iffalse ErinNoRoomForCalcium
+;	clearevent EVENT_ERIN_CALCIUM
+;	setevent EVENT_GOT_CALCIUM_FROM_ERIN
+;	sjump Route46NumberAcceptedF
+;Route46AskNumber1F:
+;	jumpstd AskNumber1FScript
+;	end
+;Route46AskNumber2F:
+;	jumpstd AskNumber2FScript
+;	end
+;Route46RegisteredNumberF:
+;	jumpstd RegisteredNumberFScript
+;	end
+;Route46NumberAcceptedF:
+;	jumpstd NumberAcceptedFScript
+;	end
+;Route46NumberDeclinedF:
+;	jumpstd NumberDeclinedFScript
+;	end
+;Route46PhoneFullF:
+;	jumpstd PhoneFullFScript
+;	end
+;Route46RematchF:
+;	jumpstd RematchFScript
+;	end
+;ErinNoRoomForCalcium:
+;	setevent EVENT_ERIN_CALCIUM
+;	jumpstd PackFullFScript
+;	end
+;Route46RematchGiftF:
+;	jumpstd RematchGiftFScript
+;	end
+
 TrainerPicnickerErin1:
-	trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
-	endifjustbattled
+	faceplayer
 	opentext
-	checkflag ENGINE_ERIN_READY_FOR_REMATCH
-	iftrue .WantsBattle
-	checkcellnum PHONE_PICNICKER_ERIN
-	iftrue Route46NumberAcceptedF
-	checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext PicnickerErinAfterBattleText
-	promptbutton
-	setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	scall Route46AskNumber1F
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route46AskNumber2F
-.AskForNumber:
-	askforphonenumber PHONE_PICNICKER_ERIN
-	ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF
-	ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF
-	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
-	scall Route46RegisteredNumberF
-	sjump Route46NumberAcceptedF
-
-.WantsBattle:
-	scall Route46RematchF
-	winlosstext PicnickerErin1BeatenText, 0
-	readmem wErinFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
+	checkevent EVENT_BEAT_PICNICKER_ERIN
+	iftrue .FightDone
+	checkevent EVENT_BEAT_WHITNEY
+	iffalse .Mercy
+.fight
+	writetext PicnickerErin1SeenText
+	waitbutton
+	closetext
+	winlosstext PicnickerErin1SeenText, 0
 	loadtrainer PICNICKER, ERIN1
 	startbattle
 	reloadmapafterbattle
-	loadmem wErinFightCount, 1
-	clearflag ENGINE_ERIN_READY_FOR_REMATCH
+	setevent EVENT_BEAT_PICNICKER_ERIN
 	end
-
-.LoadFight1:
-	loadtrainer PICNICKER, ERIN2
-	startbattle
-	reloadmapafterbattle
-	loadmem wErinFightCount, 2
-	clearflag ENGINE_ERIN_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
-	loadtrainer PICNICKER, ERIN3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ERIN_READY_FOR_REMATCH
-	checkevent EVENT_ERIN_CALCIUM
-	iftrue .HasCalcium
-	checkevent EVENT_GOT_CALCIUM_FROM_ERIN
-	iftrue .GotCalciumAlready
-	scall Route46RematchGiftF
-	verbosegiveitem CALCIUM
-	iffalse ErinNoRoomForCalcium
-	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	sjump Route46NumberAcceptedF
-
-.GotCalciumAlready:
-	end
-
-.HasCalcium:
-	opentext
-	writetext PicnickerErin2BeatenText
+.FightDone:
+	writetext PicnickerErinAfterBattleText
 	waitbutton
-	verbosegiveitem CALCIUM
-	iffalse ErinNoRoomForCalcium
-	clearevent EVENT_ERIN_CALCIUM
-	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	sjump Route46NumberAcceptedF
-
-Route46AskNumber1F:
-	jumpstd AskNumber1FScript
-	end
-
-Route46AskNumber2F:
-	jumpstd AskNumber2FScript
-	end
-
-Route46RegisteredNumberF:
-	jumpstd RegisteredNumberFScript
-	end
-
-Route46NumberAcceptedF:
-	jumpstd NumberAcceptedFScript
-	end
-
-Route46NumberDeclinedF:
-	jumpstd NumberDeclinedFScript
-	end
-
-Route46PhoneFullF:
-	jumpstd PhoneFullFScript
-	end
-
-Route46RematchF:
-	jumpstd RematchFScript
-	end
-
-ErinNoRoomForCalcium:
-	setevent EVENT_ERIN_CALCIUM
-	jumpstd PackFullFScript
-	end
-
-Route46RematchGiftF:
-	jumpstd RematchGiftFScript
-	end
-
-TrainerHikerBailey:
-	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+    closetext
 	opentext
-	writetext HikerBaileyAfterBattleText
+	writetext RematchTextRoute46
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextRoute46
 	waitbutton
 	closetext
 	end
+.Mercy:
+    writetext PicnickerErinMercyText
+	waitbutton
+	closetext
+	end
+
+PicnickerErinMercyText:
+    text "My boyfriend and"
+    line "I are hotshot"
+    cont "trainers."
+
+    para "We each have 7"
+    line "badges but have"
+    cont "not been able to"
+    cont "beat CLAIR for"
+    cont "the 8th badge."
+
+    para "You are lucky"
+    line "we are nice and"
+    cont "wont crush you."
+
+    para "Run along now."
+    done
+
+;TrainerHikerBailey:
+;	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext HikerBaileyAfterBattleText
+;	waitbutton
+;	closetext
+;	end
+
+TrainerHikerBailey:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_HIKER_BAILEY
+	iftrue .FightDone
+	checkevent EVENT_BEAT_WHITNEY
+	iffalse .Mercy
+.fight
+	writetext HikerBaileySeenText
+	waitbutton
+	closetext
+	winlosstext HikerBaileyBeatenText, 0
+	loadtrainer HIKER, BAILEY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_HIKER_BAILEY
+	end
+.FightDone:
+	writetext HikerBaileyAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextRoute46
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextRoute46
+	waitbutton
+	closetext
+	end
+.Mercy:
+    writetext HikerBaileyMercyText
+    yesorno
+    iftrue .fight
+	closetext
+	end
+
+HikerBaileyMercyText:
+    text "I got close but"
+    line "can't beat CLAIR!"
+
+    para "Oh you should"
+    line "not be here!"
+
+    para "This cave is too"
+    line "dangerous for"
+    cont "you!"
+
+    para "There are scary"
+    line "#MON in there."
+
+    para "Even if you get"
+    line "through somehow."
+
+    para "Other trainers"
+    line "will crush you."
+
+    para "Do you want me"
+    line "to show you?"
+    done
 
 Route46Sign:
 	jumptext Route46SignText
 
-Route46XSpeed:
-	itemball X_SPEED
+Route46Protein:
+	itemball PROTEIN
 
 Route46FruitTree1:
 	fruittree FRUITTREE_ROUTE_46_1
@@ -254,6 +401,15 @@ Route46SignText:
 	line "MOUNTAIN RD. AHEAD"
 	done
 
+RematchTextRoute46:
+    text "How about a"
+    line "rematch?"
+    done
+
+RematchRefuseTextRoute46:
+    text "Maybe next time."
+    done
+
 Route46FieldMon1Script:
 	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route46PokemonAttacksText, 31, 0, .script
 .script
@@ -279,10 +435,10 @@ Route46_MapEvents:
 	bg_event  9, 27, BGEVENT_READ, Route46Sign
 
 	def_object_events
-	object_event 17,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBailey, -1
-	object_event  4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
-	object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
+	object_event 15,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 3, TrainerHikerBailey, -1
+	object_event  2, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TrainerCamperTed, -1
+	object_event  1, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TrainerPicnickerErin1, -1
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
-	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED
+	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46Protein, EVENT_ROUTE_46_PROTEIN
 	object_event  7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route46FieldMon1Script, EVENT_FIELD_MON_1

@@ -365,22 +365,19 @@ NewBarkFieldMon6Script:
 NewBarkTownRepelScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_NEWBARKTOWN_REPEL
-	iftrue .GotRepels
-	writetext NewBarkTownRepelsText
+	checkitem REPULSOR
+	iftrue .GotRepulsor
+	writetext NewBarkTownRepulsorText
 	promptbutton
 	verbosegiveitem REPULSOR
 	promptbutton
-	iffalse .NoRoom
-	setevent EVENT_GOT_NEWBARKTOWN_REPEL
-.GotRepels:
+.GotRepulsor:
 	writetext NewBarkTownGotRepelsText
 	waitbutton
-.NoRoom:
 	closetext
 	end
 
-NewBarkTownRepelsText:
+NewBarkTownRepulsorText:
     text "#MON are"
     line "friends."
 

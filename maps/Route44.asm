@@ -67,136 +67,196 @@ Route44_MapScripts:
 .end
     endcallback
 
-TrainerBirdKeeperVance1:
-	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
-
-.Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
-	endifjustbattled
-	opentext
-	checkflag ENGINE_VANCE_READY_FOR_REMATCH
-	iftrue .WantsBattle
-	checkcellnum PHONE_BIRDKEEPER_VANCE
-	iftrue Route44NumberAcceptedM
-	checkevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext BirdKeeperVanceLegendaryBirdsText
-	promptbutton
-	setevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-	scall Route44AskNumber1M
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route44AskNumber2M
-.AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_VANCE
-	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
-	scall Route44RegisteredNumberM
-	sjump Route44NumberAcceptedM
-
-.WantsBattle:
-	scall Route44RematchM
-	winlosstext BirdKeeperVance1BeatenText, 0
-	readmem wVanceFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-.Fight1:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-.LoadFight0:
-	loadtrainer BIRD_KEEPER, VANCE1
-	startbattle
-	reloadmapafterbattle
-	loadmem wVanceFightCount, 1
-	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
-	loadtrainer BIRD_KEEPER, VANCE2
-	startbattle
-	reloadmapafterbattle
-	loadmem wVanceFightCount, 2
-	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
-	loadtrainer BIRD_KEEPER, VANCE3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-	checkevent EVENT_VANCE_CARBOS
-	iftrue .Carbos
-	checkevent EVENT_GOT_CARBOS_FROM_VANCE
-	iftrue .ReceivedCarbosBefore
-	scall Route44RematchGiftM
-	verbosegiveitem CARBOS
-	iffalse VancePackFull
-	setevent EVENT_GOT_CARBOS_FROM_VANCE
-	sjump Route44NumberAcceptedM
-
-.ReceivedCarbosBefore:
-	end
-
-.Carbos:
-	opentext
-	writetext BirdKeeperVance2BeatenText
-	waitbutton
-	verbosegiveitem CARBOS
-	iffalse VancePackFull
-	clearevent EVENT_VANCE_CARBOS
-	setevent EVENT_GOT_CARBOS_FROM_VANCE
-	sjump Route44NumberAcceptedM
-
+;TrainerBirdKeeperVance1:
+;	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
+;.Script:
+;	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
+;	endifjustbattled
+;	opentext
+;	checkflag ENGINE_VANCE_READY_FOR_REMATCH
+;	iftrue .WantsBattle
+;	checkcellnum PHONE_BIRDKEEPER_VANCE
+;	iftrue Route44NumberAcceptedM
+;	checkevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
+;	iftrue .AskedAlready
+;	writetext BirdKeeperVanceLegendaryBirdsText
+;	promptbutton
+;	setevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
+;	scall Route44AskNumber1M
+;	sjump .AskForNumber
+;.AskedAlready:
+;	scall Route44AskNumber2M
+;.AskForNumber:
+;	askforphonenumber PHONE_BIRDKEEPER_VANCE
+;	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
+;	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
+;	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
+;	scall Route44RegisteredNumberM
+;	sjump Route44NumberAcceptedM
+;.WantsBattle:
+;	scall Route44RematchM
+;	winlosstext BirdKeeperVance1BeatenText, 0
+;	readmem wVanceFightCount
+;	ifequal 2, .Fight2
+;	ifequal 1, .Fight1
+;	ifequal 0, .LoadFight0
+;.Fight2:
+;	checkevent EVENT_RESTORED_POWER_TO_KANTO
+;	iftrue .LoadFight2
+;.Fight1:
+;	checkevent EVENT_BEAT_ELITE_FOUR
+;	iftrue .LoadFight1
+;.LoadFight0:
+;	loadtrainer BIRD_KEEPER, VANCE1
+;	startbattle
+;	reloadmapafterbattle
+;	loadmem wVanceFightCount, 1
+;	clearflag ENGINE_VANCE_READY_FOR_REMATCH
+;	end
+;.LoadFight1:
+;	loadtrainer BIRD_KEEPER, VANCE2
+;	startbattle
+;	reloadmapafterbattle
+;	loadmem wVanceFightCount, 2
+;	clearflag ENGINE_VANCE_READY_FOR_REMATCH
+;	end
+;.LoadFight2:
+;	loadtrainer BIRD_KEEPER, VANCE3
+;	startbattle
+;	reloadmapafterbattle
+;	clearflag ENGINE_VANCE_READY_FOR_REMATCH
+;	checkevent EVENT_VANCE_CARBOS
+;	iftrue .Carbos
+;	checkevent EVENT_GOT_CARBOS_FROM_VANCE
+;	iftrue .ReceivedCarbosBefore
+;	scall Route44RematchGiftM
+;	verbosegiveitem CARBOS
+;	iffalse VancePackFull
+;	setevent EVENT_GOT_CARBOS_FROM_VANCE
+;	sjump Route44NumberAcceptedM
+;.ReceivedCarbosBefore:
+;	end
+;.Carbos:
+;	opentext
+;	writetext BirdKeeperVance2BeatenText
+;	waitbutton
+;	verbosegiveitem CARBOS
+;	iffalse VancePackFull
+;	clearevent EVENT_VANCE_CARBOS
+;	setevent EVENT_GOT_CARBOS_FROM_VANCE
+;	sjump Route44NumberAcceptedM
 Route44AskNumber1M:
 	jumpstd AskNumber1MScript
 	end
-
 Route44AskNumber2M:
 	jumpstd AskNumber2MScript
 	end
-
 Route44RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
 	end
-
 Route44NumberAcceptedM:
 	jumpstd NumberAcceptedMScript
 	end
-
 Route44NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 	end
-
 Route44PhoneFullM:
 	jumpstd PhoneFullMScript
 	end
-
 Route44RematchM:
 	jumpstd RematchMScript
 	end
-
 Route44GiftM:
 	jumpstd GiftMScript
 	end
-
 Route44PackFullM:
 	jumpstd PackFullMScript
 	end
+;VancePackFull:
+;	setevent EVENT_VANCE_CARBOS
+;	jumpstd PackFullMScript
+;	end
+;Route44RematchGiftM:
+;	jumpstd RematchGiftMScript
+;	end
 
-VancePackFull:
-	setevent EVENT_VANCE_CARBOS
-	jumpstd PackFullMScript
+TrainerBirdKeeperVance1:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_BIRD_KEEPER_VANCE
+	iftrue .FightDone
+	checkevent EVENT_GOT_HM04_STRENGTH
+	iffalse .Mercy
+.fight
+	writetext BirdKeeperVance1SeenText
+	waitbutton
+	closetext
+	winlosstext BirdKeeperVance1BeatenText, 0
+	loadtrainer BIRD_KEEPER, VANCE1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_HIKER_BAILEY
+	end
+.FightDone:
+	writetext BirdKeeperVanceLegendaryBirdsText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextRoute44
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextRoute44
+	waitbutton
+	closetext
+	end
+.Mercy:
+    writetext BirdKeeperVance1MercyText
+    waitbutton
+	closetext
 	end
 
-Route44RematchGiftM:
-	jumpstd RematchGiftMScript
-	end
+BirdKeeperVance1MercyText:
+    text "You came through"
+    line "from BLACKTHORN."
+
+    para "Oh I don't think"
+    line "you will be able"
+    cont "to get back"
+    cont "without STRENGTH."
+
+    para "You're in quite"
+    line "the pickle."
+
+    para "West of here is"
+    line "MAHOGANY town."
+
+    para "West of that is"
+    line "ECRUTEAK."
+
+    para "There is a man"
+    line "there who can"
+    cont "send you home."
+
+    para "It is possible"
+    line "to get there and"
+    cont "avoid other"
+    cont "trainers and"
+    cont "#MON."
+
+    para "But it will be"
+    line "difficult."
+
+    para "good luck!"
+    done
+
+RematchTextRoute44:
+    text "How about a"
+    line "rematch?"
+    done
+
+RematchRefuseTextRoute44:
+    text "Maybe next time."
+    done
 
 TrainerPsychicPhil:
 	trainer PSYCHIC_T, PHIL, EVENT_BEAT_PSYCHIC_PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
@@ -634,6 +694,14 @@ Route44FieldMon8Script:
 	disappear ROUTE44_FIELDMON_8
 	end
 
+VanceEncounterScript:
+    checkevent EVENT_GOT_HM04_STRENGTH
+    iffalse .talk
+    end
+.talk
+    turnobject PLAYER, RIGHT
+    sjump TrainerBirdKeeperVance1
+
 Route44_MapEvents:
 	db 0, 0 ; filler
 
@@ -641,6 +709,7 @@ Route44_MapEvents:
 	warp_event 56,  7, ICE_PATH_1F, 1
 
 	def_coord_events
+	coord_event 56, 8, SCENE_ALWAYS, VanceEncounterScript
 
 	def_bg_events
 	bg_event 53,  7, BGEVENT_READ, Route44Sign1
@@ -652,12 +721,12 @@ Route44_MapEvents:
 	object_event 19, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
 	object_event 10,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
 	object_event 6, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44LifeOrb, EVENT_ROUTE_44_LIFE_ORB
-	object_event 51,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
+	object_event 57,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TrainerBirdKeeperVance1, -1
 	object_event 41, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
 	object_event 31, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
 
-	object_event 45, 4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route44FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 49,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route44FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 48, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route44FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 29,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route44FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 27,  16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44FieldMon4Script, EVENT_FIELD_MON_4

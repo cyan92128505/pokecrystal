@@ -182,21 +182,38 @@ CatchingTutorialDudeScript:
 	opentext
 	writetext CatchingTutorialDebriefText
 	waitbutton
-	closetext
 	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	end
+	sjump .checkRepulsor
 
 .BoxFull:
 	writetext CatchingTutorialBoxFullText
-	waitbutton
-	closetext
-	end
+    sjump .checkRepulsor
 
 .Declined:
 	writetext CatchingTutorialDeclinedText
-	waitbutton
+
+.checkRepulsor:
+    checkitem REPULSOR
+    iftrue .end
+    waitbutton
+    writetext Route29RepulsorText
+    promptbutton
+	verbosegiveitem REPULSOR
+.end
+    waitbutton
 	closetext
 	end
+
+Route29RepulsorText:
+    text "Wild #MON"
+    line "can be seen in"
+    cont "the field or they"
+    cont "attack at random."
+
+    para "This will keep the"
+    line "weaker random"
+    cont "#MON away."
+    done
 
 Route29YoungsterScript:
 	jumptextfaceplayer Route29YoungsterText

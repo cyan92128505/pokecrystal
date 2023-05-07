@@ -470,7 +470,7 @@ EcruteakCity_MapEvents:
 	def_coord_events
 	coord_event 17, 35, SCENE_ALWAYS, ReloadMapEcruteakScript
 	coord_event 18, 35, SCENE_ALWAYS, ReloadMapEcruteakScript
-	coord_event 17, 34, SCENE_ALWAYS, EcruteakTeleportGuyEncounterScript
+	coord_event 17, 30, SCENE_ALWAYS, EcruteakTeleportGuyEncounterScript
 
 	def_bg_events
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
@@ -491,4 +491,4 @@ EcruteakCity_MapEvents:
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
 	object_event 29,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SetoScript, -1
-	object_event 18,  34, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakTeleportGuyScript, -1
+	object_event 18, 30, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakTeleportGuyScript, -1

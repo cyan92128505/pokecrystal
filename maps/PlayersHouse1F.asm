@@ -79,6 +79,9 @@ MeetMomScript:
 .FinishPhone:
 	writetext InstructionsNextText
 	waitbutton
+	writetext GiveWarpBeaconText
+	verbosegiveitem WARP_BEACON
+	writetext StaySafeText
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -102,6 +105,33 @@ MeetMomScript:
 MeetMomTalkedScript:
 	playmusic MUSIC_MOM
 	sjump MeetMomScript
+
+GiveWarpBeaconText:
+    text "It is dangerous"
+    line "out there."
+
+    para "If you get stuck"
+    line "or lost use this."
+
+    para "It will keep you"
+    line "safe."
+    prompt
+
+StaySafeText:
+    text "Stay safe out"
+    line "there <PLAYER>."
+
+    para "I know you want"
+    line "find your father."
+
+    para "But we need to"
+    line "accept he might"
+    cont "not be coming"
+    cont "back."
+
+    para "Make sure you"
+    line "come back to me!"
+    prompt
 
 PokegearName:
 	db "#GEAR@"

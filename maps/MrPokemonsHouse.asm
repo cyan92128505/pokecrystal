@@ -322,6 +322,27 @@ MrPokemonsHouse_OakText2:
 	line "GOLDENROD for my"
 	cont "usual radio show."
 
+	para "By the way <PLAY_G>"
+	line "I have send a good"
+	cont "friend of mine"
+	cont "named BILL to"
+	cont "VIOLET TOWN."
+
+	para "He has a special"
+	line "gift for you."
+
+	para "An EXP SHARE!"
+
+	para "It's a new device"
+	line "that can help you"
+	cont "become strong."
+
+	para "You will find him"
+	line "at the VIOLET"
+	cont "POKE CENTER."
+	cont "It's not far"
+	cont "from here."
+
 	para "<PLAY_G>, I'm"
 	line "counting on you!"
 	done

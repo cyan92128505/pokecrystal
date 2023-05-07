@@ -399,7 +399,6 @@ SECTION "Map Scripts 20", ROMX
 INCLUDE "maps/CherrygroveCity.asm"
 INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
-INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
@@ -496,3 +495,7 @@ INCLUDE "maps/DarkCaveVioletEntrance.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
 INCLUDE "maps/Route15.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
+
+SECTION "Map Scripts Overflow 2", ROMX
+
+INCLUDE "maps/Route44.asm"

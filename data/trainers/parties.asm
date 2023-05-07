@@ -3297,10 +3297,10 @@ CamperGroup:
 
 	; CAMPER (11)
 	db "TED@", TRAINERTYPE_NORMAL
-	db 57, HYPNO
-	db 57, JOLTEON
-	db 58, CONKELDURR
-	db 60, BLISSEY
+	db 52, HYPNO
+	db 52, JOLTEON
+	db 53, CONKELDURR
+	db 55, BLISSEY
 	db -1 ; end
 
 	; CAMPER (12)

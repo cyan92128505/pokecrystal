@@ -30,26 +30,19 @@ Route30_MapScripts:
     appear ROUTE30_FIELDMON_1
     appear ROUTE30_FIELDMON_4
     appear ROUTE30_FIELDMON_5
+    appear ROUTE30_FIELDMON_7
 
 ; Pokemon that sometimes appear
 .mon6
     random 2
     ifequal 1, .spawn6
     disappear ROUTE30_FIELDMON_6
-    sjump .mon7
+    sjump .mon8
 .spawn6
     appear ROUTE30_FIELDMON_6
 
-.mon7
-    random 2
-    ifequal 1, .spawn7
-    disappear ROUTE30_FIELDMON_7
-    sjump .mon8
-.spawn7
-    appear ROUTE30_FIELDMON_7
-
 .mon8
-    random 8
+    random 4
     ifequal 1, .spawn8
     disappear ROUTE30_FIELDMON_8
     sjump .checkNight
@@ -60,21 +53,7 @@ Route30_MapScripts:
 ; Pokemon that only appear at night
     checktime NITE
 	iffalse .end
-
-    random 2
-    ifequal 1, .spawn2
-    disappear ROUTE30_FIELDMON_2
-    sjump .despawn
-.spawn2
     appear ROUTE30_FIELDMON_2
-
-;.mon3
-;    random 3
-;    ifequal 1, .spawn3
-;    disappear ROUTE30_FIELDMON_3
-;    sjump .despawn
-;.spawn3
-;    appear ROUTE30_FIELDMON_3
 
 .despawn
 ; Pokemon that don't appear at night
@@ -585,5 +564,5 @@ Route30_MapEvents:
 	object_event 7,  42, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 16, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 4,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon6Script, EVENT_FIELD_MON_6
-	object_event 18, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route30FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 18, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route30FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 13,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route30FieldMon8Script, EVENT_FIELD_MON_8

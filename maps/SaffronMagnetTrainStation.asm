@@ -16,8 +16,10 @@ SaffronMagnetTrainStation_MapScripts:
 SaffronMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	;checkevent EVENT_RESTORED_POWER_TO_KANTO
-	;iftrue .MagnetTrainToGoldenrod
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .MagnetTrainToGoldenrod
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iftrue .MagnetTrainToGoldenrod
 	sjump .MagnetTrainToGoldenrod
 	writetext SaffronMagnetTrainStationOfficerTrainIsntOperatingText
 	waitbutton
@@ -129,6 +131,12 @@ SaffronMagnetTrainStationOfficerTrainIsntOperatingText:
 	text "I'm sorry, but the"
 	line "MAGNET TRAIN isn't"
 	cont "operating now."
+
+	para "We have lost our"
+	line "power supply."
+
+	para "This must be HOENs"
+	line "doing!"
 	done
 
 SaffronMagnetTrainStationOfficerAreYouComingOnBoardText:

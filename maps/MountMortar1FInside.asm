@@ -48,7 +48,7 @@ MountMortar1FInside_MapScripts:
     appear MOUNTMORTAR1FINSIDE_FIELDMON_7
 
 .mon8
-    random 8 ; shiny
+    random 4 ; shiny
     ifequal 1, .spawn8
     disappear MOUNTMORTAR1FINSIDE_FIELDMON_8
     sjump .end

@@ -17,7 +17,7 @@ Route33_MapScripts:
     appear ROUTE33_FIELDMON_1
     appear ROUTE33_FIELDMON_2
 
-    random 8
+    random 4
     ifequal 1, .spawn
     disappear ROUTE33_FIELDMON_4
     sjump .checkNight

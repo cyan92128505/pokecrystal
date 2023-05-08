@@ -244,6 +244,33 @@ CeladonCityTrainerTipsText:
 	cont "STORE!"
 	done
 
+CeladonGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext CeladonGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_CeladonGymTurnBack
+    end
+
+CeladonGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_CeladonGymTurnBack:
+	step DOWN
+	step_end
+
 CeladonCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -259,6 +286,7 @@ CeladonCity_MapEvents:
 	warp_event 25, 29, CELADON_CAFE, 1
 
 	def_coord_events
+	coord_event 10, 30, SCENE_ALWAYS, CeladonGymBlockScript
 
 	def_bg_events
 	bg_event 23, 21, BGEVENT_READ, CeladonCitySign

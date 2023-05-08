@@ -46,7 +46,7 @@ Route37_MapScripts:
     appear ROUTE37_FIELDMON_6
 
 .mon8
-    random 8 ; shiny
+    random 4 ; shiny
     ifequal 1, .spawn8
     disappear ROUTE37_FIELDMON_8
     sjump .sun

@@ -264,6 +264,33 @@ VermilionCityPortSignText:
 	text "VERMILION PORT"
 	line "ENTRANCE"
 	done
+	
+VermilionGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext VermilionGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_VermilionGymTurnBack
+    end
+
+VermilionGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_VermilionGymTurnBack:
+	step DOWN
+	step_end
 
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
@@ -281,6 +308,7 @@ VermilionCity_MapEvents:
 	warp_event 34,  7, DIGLETTS_CAVE, 1
 
 	def_coord_events
+	coord_event 10, 20, SCENE_ALWAYS, VermilionGymBlockScript
 
 	def_bg_events
 	bg_event 25,  3, BGEVENT_READ, VermilionCitySign

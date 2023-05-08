@@ -205,6 +205,33 @@ CinnabarGymSignText:
 	para "CINNABAR GYM"
 	line "LEADER: BLAINE"
 	done
+	
+CinnabarGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext CinnabarGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_CinnabarGymTurnBack
+    end
+
+CinnabarGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_CinnabarGymTurnBack:
+	step DOWN
+	step_end
 
 Route20_MapEvents:
 	db 0, 0 ; filler
@@ -214,6 +241,7 @@ Route20_MapEvents:
 	warp_event 42, 11, ELEMENT_CAVE, 2
 
 	def_coord_events
+	coord_event 38, 8, SCENE_ALWAYS, CinnabarGymBlockScript
 
 	def_bg_events
 	bg_event 37, 11, BGEVENT_READ, CinnabarGymSign

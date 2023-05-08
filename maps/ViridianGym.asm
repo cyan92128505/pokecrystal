@@ -12,6 +12,16 @@ ViridianGymBlueScript:
 	opentext
 	checkflag ENGINE_EARTHBADGE
 	iftrue .FightDone
+	checkevent EVENT_BEAT_HOEN_ARMY
+	iftrue .battle
+	writetext FalseIntroText
+	special FadeOutMusic
+	writetext WarHasBegunText
+	waitbutton
+    closetext
+	setevent EVENT_HOEN_INVASION_UNDERWAY
+	end
+.battle
 	writetext LeaderBlueBeforeText
 	waitbutton
 	closetext
@@ -78,6 +88,70 @@ ViridianGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, BLUE, BLUE1
 	jumpstd GymStatue2Script
+
+FalseIntroText:
+    text "Yo CHAMPION!"
+
+    para "You finally ready"
+    line "for a real test?"
+
+    para "I'm not like the"
+    line "weak trainers"
+    cont "you have faced"
+    cont "so far...."
+    prompt
+
+WarHasBegunText:
+    text "Hang on...."
+
+    para "....."
+
+    para "My uncle just"
+    line "messaged me..."
+
+    para "War has begun..."
+
+    para "The HOEN invasion"
+    line "forces have"
+    cont "established a"
+    cont "bridgehead at"
+    cont "FUCSIA and more"
+    cont "will land at"
+    cont "VERMILION soon."
+
+    para "You are one of"
+    line "the strongest"
+    cont "trainers in KANTO."
+
+    para "You must go to"
+    line "FUCHIA."
+
+    para "That's where their"
+    line "leader will land."
+
+    para "We may not stand"
+    line "a chance against"
+    cont "the HOEN Legendary"
+    cont "#MON."
+
+    para "But we must try."
+
+    para "Don't worry."
+
+    para "Even if we fail."
+
+    para "Even if LANCE"
+    line "fails."
+
+    para "RED will end"
+    line "them all."
+
+    para "Go now."
+
+    para "Good luck."
+    done
+
+
 
 LeaderBlueBeforeText:
 	text "BLUE: Yo! Finally"

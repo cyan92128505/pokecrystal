@@ -221,14 +221,18 @@ InvaderJackScript:
 
 InvaderJackSeenText:
     text "I knew you were"
-    line "a special one."
+    line "a special one"
+    cont "when I asked you"
+    cont "to bring me the"
+    cont "RED EYE ORB."
 
     para "Lord GIRATINA"
-    line "is the creator"
+    line "is the father"
     cont "of all invaders."
 
-    para "There is only"
-    line "the weak and"
+    para "There is no good"
+    line "and evil. Only"
+    cont "the weak and"
     cont "the strong."
 
     para "The weak must"
@@ -291,7 +295,7 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event  6,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_CAUGHT_GIRATINA
 	object_event 25,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMCurse, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event 39, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
-	object_event  8, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderJackScript, -1
+	object_event  8, 11, SPRITE_GRAMPS,    SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderJackScript, -1
 	object_event 21, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 21, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 40,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3

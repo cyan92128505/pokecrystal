@@ -37,7 +37,7 @@ Route42_MapScripts:
     appear ROUTE42_FIELDMON_5
 
 ; Pokemon that sometimes appear
-    random 8 ; shiny
+    random 4 ; shiny
     ifequal 1, .spawn8
     disappear ROUTE42_FIELDMON_6
     sjump .checkNight

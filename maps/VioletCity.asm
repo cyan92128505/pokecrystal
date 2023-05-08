@@ -29,7 +29,7 @@ VioletCity_MapScripts:
     appear VIOLETCITY_FIELDMON_2
     appear VIOLETCITY_FIELDMON_3
 
-    random 8
+    random 4
     ifequal 1, .spawn
     disappear VIOLETCITY_FIELDMON_4
     sjump .end

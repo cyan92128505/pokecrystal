@@ -263,6 +263,33 @@ SaffronCityMagnetTrainStationSignText:
 	cont "STATION"
 	done
 
+SaffronGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext SaffronGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_SaffronGymTurnBack
+    end
+
+SaffronGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_SaffronGymTurnBack:
+	step DOWN
+	step_end
+
 SaffronCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -284,6 +311,7 @@ SaffronCity_MapEvents:
 	warp_event 39, 23, ROUTE_8_SAFFRON_GATE, 2
 
 	def_coord_events
+	coord_event 34, 4, SCENE_ALWAYS, SaffronGymBlockScript
 
 	def_bg_events
 	bg_event 21,  5, BGEVENT_READ, SaffronCitySign

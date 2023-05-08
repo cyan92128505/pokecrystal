@@ -273,6 +273,33 @@ CeruleanLockedDoorText:
 	text "It's locked…"
 	done
 
+CeruleanGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext CeruleanGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_CeruleanGymTurnBack
+    end
+
+CeruleanGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_CeruleanGymTurnBack:
+	step DOWN
+	step_end
+
 CeruleanCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -285,6 +312,7 @@ CeruleanCity_MapEvents:
 	warp_event 25, 29, CERULEAN_MART, 2
 
 	def_coord_events
+	coord_event 30, 24, SCENE_ALWAYS, CeruleanGymBlockScript
 
 	def_bg_events
 	bg_event 23, 23, BGEVENT_READ, CeruleanCitySign

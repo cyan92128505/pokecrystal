@@ -42,6 +42,7 @@ Route32_MapScripts:
 
 .Frieda:
     appear ROUTE32_FIELDMON_1
+    appear ROUTE32_FIELDMON_3
     appear ROUTE32_FIELDMON_4
     appear ROUTE32_FIELDMON_5
     appear ROUTE32_FIELDMON_6
@@ -50,20 +51,12 @@ Route32_MapScripts:
     random 2
     ifequal 1, .spawn7
     disappear ROUTE32_FIELDMON_7
-    sjump .mon3
+    sjump .mon8
 .spawn7
     appear ROUTE32_FIELDMON_7
 
-.mon3
-    random 2
-    ifequal 1, .spawn3
-    disappear ROUTE32_FIELDMON_3
-    sjump .mon8
-.spawn3
-    appear ROUTE32_FIELDMON_3
-
 .mon8
-    random 8
+    random 4
     ifequal 1, .spawn8
     disappear ROUTE32_FIELDMON_8
     sjump .checkNight

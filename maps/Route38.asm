@@ -26,6 +26,7 @@ Route38_MapScripts:
     appear ROUTE38_FIELDMON_1
     appear ROUTE38_FIELDMON_3
     appear ROUTE38_FIELDMON_4
+    appear ROUTE38_FIELDMON_7
 
 ; Pokemon that sometimes appear
     random 2
@@ -39,20 +40,12 @@ Route38_MapScripts:
     random 2
     ifequal 1, .spawn6
     disappear ROUTE38_FIELDMON_6
-    sjump .mon7
+    sjump .mon8
 .spawn6
     appear ROUTE38_FIELDMON_6
 
-.mon7
-    random 2
-    ifequal 1, .spawn7
-    disappear ROUTE38_FIELDMON_7
-    sjump .mon8
-.spawn7
-    appear ROUTE38_FIELDMON_7
-
 .mon8
-    random 8 ; shiny
+    random 4 ; shiny
     ifequal 1, .spawn8
     disappear ROUTE38_FIELDMON_8
     sjump .checkNight

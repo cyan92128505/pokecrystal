@@ -35,26 +35,18 @@ Route29_MapScripts:
     appear ROUTE29_FIELDMON_1
     appear ROUTE29_FIELDMON_4
     appear ROUTE29_FIELDMON_5
+    appear ROUTE29_FIELDMON_7
 
 ; Pokemon that sometimes appear
-.mon6
     random 2
     ifequal 1, .spawn6
     disappear ROUTE29_FIELDMON_6
-    sjump .mon7
+    sjump .mon8
 .spawn6
     appear ROUTE29_FIELDMON_6
 
-.mon7
-    random 2
-    ifequal 1, .spawn7
-    disappear ROUTE29_FIELDMON_7
-    sjump .mon8
-.spawn7
-    appear ROUTE29_FIELDMON_7
-
 .mon8
-    random 8
+    random 4
     ifequal 1, .spawn8
     disappear ROUTE29_FIELDMON_8
     sjump .checkNight
@@ -549,9 +541,9 @@ Route29FieldMon6Script:
 	
 Route29FieldMon7Script:
 	faceplayer
-	cry PIKACHU
+	cry VOLTIK
 	pause 15
-	loadwildmon PIKACHU, 7
+	loadwildmon VOLTIK, 7
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -600,5 +592,5 @@ Route29_MapEvents:
 	object_event 21,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 46,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 6,  17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon6Script, EVENT_FIELD_MON_6
-	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 55,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route29FieldMon8Script, EVENT_FIELD_MON_8

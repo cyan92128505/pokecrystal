@@ -150,6 +150,33 @@ PewterCityWelcomeSignText:
 	text "WELCOME TO"
 	line "PEWTER CITY!"
 	done
+	
+PewterGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext PewterGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_PewterGymTurnBack
+    end
+
+PewterGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_PewterGymTurnBack:
+	step DOWN
+	step_end
 
 PewterCity_MapEvents:
 	db 0, 0 ; filler
@@ -162,6 +189,7 @@ PewterCity_MapEvents:
 	warp_event  7, 29, PEWTER_SNOOZE_SPEECH_HOUSE, 1
 
 	def_coord_events
+	coord_event 16, 18, SCENE_ALWAYS, PewterGymBlockScript
 
 	def_bg_events
 	bg_event 25, 23, BGEVENT_READ, PewterCitySign

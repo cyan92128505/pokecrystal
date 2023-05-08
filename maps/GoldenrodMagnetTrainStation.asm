@@ -14,9 +14,10 @@ GoldenrodMagnetTrainStation_MapScripts:
 GoldenrodMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	;checkevent EVENT_RESTORED_POWER_TO_KANTO
-	;iftrue .MagnetTrainToSaffron
-	sjump .MagnetTrainToSaffron
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .MagnetTrainToSaffron
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iftrue .MagnetTrainToSaffron
 	writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText
 	waitbutton
 	closetext
@@ -108,11 +109,15 @@ GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText:
 	text "The train hasn't"
 	line "come in…"
 
-	para "I know! I'll carry"
-	line "the passengers on"
-	cont "my back!"
+	para "There has been"
+	line "no communication"
+    cont "from KANTO."
 
-	para "That won't work."
+    para "Maybe the war has"
+    line "begun!"
+
+    para "ARCEUS help us"
+    line "all."
 	done
 
 GoldenrodMagnetTrainStationOfficerAreYouComingAboardText:

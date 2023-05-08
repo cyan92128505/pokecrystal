@@ -150,6 +150,33 @@ NoLitteringSignText:
 	para "Please take your"
 	line "waste with you."
 	done
+	
+FuchsiaGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext FuchsiaGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_FuchsiaGymTurnBack
+    end
+
+FuchsiaGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
+Movement_FuchsiaGymTurnBack:
+	step DOWN
+	step_end
 
 FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
@@ -170,6 +197,7 @@ FuchsiaCity_MapEvents:
 	warp_event  8, 35, ROUTE_19_FUCHSIA_GATE, 2
 
 	def_coord_events
+	coord_event 8, 28, SCENE_ALWAYS, FuchsiaGymBlockScript
 
 	def_bg_events
 	bg_event 21, 15, BGEVENT_READ, FuchsiaCitySign

@@ -555,9 +555,25 @@ EvilOldManScript:
 	end
 .GotRedEyeOrb:
 	writetext GotRedEyeOrbText
+	checkevent EVENT_GOT_SCOPE_LENS
+	iftrue .finish
+	waitbutton
+	writetext takeScopeLensText
+	verbosegiveitem SCOPE_LENS
+.finish
 	waitbutton
 	closetext
 	end
+
+takeScopeLensText:
+    text "Here take this for"
+    line "your trouble."
+
+    para "Luck will always"
+    line "beat skill."
+
+    para "Heh heh heh."
+    done
 
 GoGetRedEyeOrbText:
     text "Lovely day isn't"

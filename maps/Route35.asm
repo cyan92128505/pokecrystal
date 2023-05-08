@@ -25,7 +25,7 @@ Route35_MapScripts:
     appear ROUTE35_FIELDMON_2
     appear ROUTE35_FIELDMON_3
 
-    random 8
+    random 4
     ifequal 1, .spawn4
     disappear ROUTE35_FIELDMON_4
     sjump .checkNight
@@ -36,12 +36,6 @@ Route35_MapScripts:
 ; Pokemon that only appear at night
     checktime NITE
     iffalse .end
-
-    random 2
-    ifequal 1, .spawn1
-    disappear ROUTE35_FIELDMON_1
-    sjump .end
-.spawn1
     appear ROUTE35_FIELDMON_1
 .end
     endcallback

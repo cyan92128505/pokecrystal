@@ -1083,6 +1083,9 @@ DestinyPark_Blocks:
 DestinySquare_Blocks:
 	INCBIN "maps/DestinySquare.blk"
 
+DestinyFrontier_Blocks:
+	INCBIN "maps/DestinyFrontier.blk"
+
 AncientRuinPresent_Blocks:
 	INCBIN "maps/AncientRuinPresent.blk"
 

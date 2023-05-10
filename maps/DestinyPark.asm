@@ -521,10 +521,10 @@ MasterClairScript:
 	closetext
 	end
 
-MasterGiovanniScript:
+MasterEusineScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_GIOVANNI
+	checkevent EVENT_BEAT_MASTER_EUSINE
 	iftrue .FightDone
 .fight
 	writetext DefaultSeenText
@@ -532,10 +532,10 @@ MasterGiovanniScript:
 	closetext
 	winlosstext DefaultBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer GRUNTM, MASTER_GIOVANNI
+	loadtrainer MYSTICALMAN, MASTER_EUSINE
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_GIOVANNI
+	setevent EVENT_BEAT_MASTER_EUSINE
 	;opentext
 	;writetext DefaultAfterBattleText
 	;waitbutton
@@ -576,146 +576,6 @@ RematchRefuseTextDestinyPark:
     text "I will always"
     line "be here."
     done
-
-HoohLugiaBlockScript:
-    checkevent EVENT_FOUGHT_HO_OH
-    iffalse .block
-    checkevent EVENT_FOUGHT_LUGIA
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_FALKNER
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext HoohLugiaBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyParkTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterFalknerScript
-
-HoohLugiaBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "fire and wind."
-
-    para "HO OH and"
-    line "LUGIA"
-
-    para "May pass."
-    done
-
-GroudonKyogreBlockScript:
-    checkevent EVENT_CAUGHT_GROUDON
-    iffalse .block
-    checkevent EVENT_CAUGHT_KYOGRE
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_WHITNEY
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext GroudonKyogreBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyParkTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterWhitneyScript
-
-GroudonKyogreBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "earth and water."
-
-    para "GROUDON and"
-    line "KYOGRE"
-
-    para "May pass."
-    done
-
-PalkiaDialgaBlockScript:
-    checkevent EVENT_CAUGHT_PALKIA
-    iffalse .block
-    checkevent EVENT_CAUGHT_DIALGA
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_WILL
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext PalkiaDialgaBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyParkTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterWillScript
-
-PalkiaDialgaBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "space and time."
-
-    para "PALKIA and"
-    line "DIALGA"
-
-    para "May pass."
-    done
-
-RayquazaGiratinaBlockScript:
-    checkevent EVENT_CAUGHT_RAYQUAZA
-    iffalse .block
-    checkevent EVENT_CAUGHT_GIRATINA
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_CLAIR
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext RayquazaGiratinaBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyParkTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterClairScript
-
-RayquazaGiratinaBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "good and evil."
-
-    para "RAYQUAZA and"
-    line "GIRATINA"
-
-    para "May pass."
-    done
-
-GiovanniBlockScript:
-    checkevent EVENT_BEAT_MASTER_GIOVANNI
-    iffalse .fight
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterGiovanniScript
-
-Movement_DestinyParkTurnBack:
-	step DOWN
-	step_end
 
 SetUpCal:
     ld a, BANK(sPokemonData)
@@ -773,35 +633,41 @@ DestinyPark_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7, 43, SILVER_CAVE_OUTSIDE, 3
-	warp_event  6, 43, SILVER_CAVE_OUTSIDE, 3
-	warp_event  6,  9, DESTINY_SQUARE, 1
-	warp_event  7,  9, DESTINY_SQUARE, 1
+	warp_event  4, 15, DESTINY_FRONTIER, 3
+	warp_event  5, 15, DESTINY_FRONTIER, 3
+	warp_event  18, 15, DESTINY_FRONTIER, 4
+	warp_event  19, 15, DESTINY_FRONTIER, 4
+	warp_event  32, 15, DESTINY_FRONTIER, 5
+	warp_event  33, 15, DESTINY_FRONTIER, 5
+	warp_event  4, 35, DESTINY_FRONTIER, 6
+	warp_event  5, 35, DESTINY_FRONTIER, 6
+	warp_event  18, 35, DESTINY_FRONTIER, 7
+	warp_event  19, 35, DESTINY_FRONTIER, 7
+	warp_event  32, 35, DESTINY_FRONTIER, 8
+	warp_event  33, 35, DESTINY_FRONTIER, 8
+	warp_event  4, 55, DESTINY_FRONTIER, 9
+	warp_event  5, 55, DESTINY_FRONTIER, 9
+	warp_event  18, 55, DESTINY_FRONTIER, 10
+	warp_event  19, 55, DESTINY_FRONTIER, 10
 
 	def_coord_events
-	coord_event 7, 37, SCENE_ALWAYS, HoohLugiaBlockScript
-	coord_event 7, 29, SCENE_ALWAYS, GroudonKyogreBlockScript
-	coord_event 7, 21, SCENE_ALWAYS, PalkiaDialgaBlockScript
-	coord_event 7, 13, SCENE_ALWAYS, RayquazaGiratinaBlockScript
-	coord_event 6, 10, SCENE_ALWAYS, GiovanniBlockScript
-	coord_event 7, 10, SCENE_ALWAYS, GiovanniBlockScript
 
 	def_bg_events
 
 	def_object_events
-	object_event 4, 41, SPRITE_BROCK, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrockScript, -1
-	object_event 3, 38, SPRITE_MISTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterMistyScript, -1
-	object_event 2, 34, SPRITE_SURGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSurgeScript, -1
-	object_event 0, 30, SPRITE_ERIKA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterErikaScript, -1
-	object_event 3, 26, SPRITE_JANINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJanineScript, -1
-	object_event 6, 21, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterWillScript, -1
-	object_event 9, 16, SPRITE_BLAINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBlaineScript, -1
-	object_event 6, 37, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterFalknerScript, -1
-	object_event 11, 40, SPRITE_BUGSY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBugsyScript, -1
-	object_event 6, 29, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterWhitneyScript, -1
-	object_event 12, 32, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterMortyScript, -1
-	object_event 11, 22, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterChuckScript, -1
-	object_event 13, 26, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJasmineScript, -1
-	object_event 2, 15, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterPryceScript, -1
-	object_event 6, 13, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
-	object_event  5, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterGiovanniScript, -1
+	object_event  4,  9, SPRITE_BROCK, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrockScript, -1
+	object_event  4,  2, SPRITE_MISTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterMistyScript, -1
+	object_event 17,  5, SPRITE_SURGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSurgeScript, -1
+	object_event 33,  6, SPRITE_ERIKA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterErikaScript, -1
+	object_event 32, 21, SPRITE_JANINE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJanineScript, -1
+	object_event 18, 22, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterWillScript, -1
+	object_event  4, 48, SPRITE_BLAINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBlaineScript, -1
+	object_event  4, 22, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterFalknerScript, -1
+	object_event  5, 25, SPRITE_BUGSY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBugsyScript, -1
+	object_event 32,  2, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterWhitneyScript, -1
+	object_event 33, 21, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterMortyScript, -1
+	object_event 20,  5, SPRITE_CHUCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterChuckScript, -1
+	object_event 19, 22, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJasmineScript, -1
+	object_event  4, 42, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterPryceScript, -1
+	object_event 18, 42, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
+	object_event 19, 42, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterEusineScript, -1

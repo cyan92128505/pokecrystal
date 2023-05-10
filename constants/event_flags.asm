@@ -299,6 +299,7 @@
     const EVENT_BEAT_YAMI
     const EVENT_BEAT_SETO
     const EVENT_HOEN_INVASION_UNDERWAY
+    const EVENT_BEAT_MASTER_EUSINE
 
 	const_next 600
 ; Kurt Apricorn events

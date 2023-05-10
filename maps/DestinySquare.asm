@@ -384,38 +384,6 @@ RematchRefuseTextDestinySquare:
     line "be here."
     done
 
-XerneasYveltalBlockScript:
-    checkevent EVENT_CAUGHT_YVELTAL
-    iffalse .block
-    checkevent EVENT_CAUGHT_XERNEAS
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_RIVAL
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext XerneasYveltalBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinySquareTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterRivalScript
-
-XerneasYveltalBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "life and death."
-
-    para "XERNEAS and"
-    line "YVELTAL"
-
-    para "May pass."
-    done
-
 FightAdamScript:
     checkevent EVENT_BEAT_MASTER_KOGA
     iffalse .fight
@@ -432,11 +400,11 @@ DestinySquare_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 5, 19, DESTINY_PARK, 3
-	warp_event 6, 19, DESTINY_PARK, 4
+	warp_event 5, 19, DESTINY_FRONTIER, 15
+	warp_event 6, 19, DESTINY_FRONTIER, 16
 
 	def_coord_events
-	coord_event  6, 12, SCENE_ALWAYS, XerneasYveltalBlockScript
+	;coord_event  6, 12, SCENE_ALWAYS, XerneasYveltalBlockScript
 	coord_event  6,  6, SCENE_ALWAYS, FightAdamScript
 
 	def_bg_events

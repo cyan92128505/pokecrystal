@@ -706,7 +706,8 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
-	map_attributes DestinyPark, DESTINY_PARK, $05, 0
+	map_attributes DestinyPark, DESTINY_PARK, $00, 0
 	map_attributes DestinySquare, DESTINY_SQUARE, $00, 0
+	map_attributes DestinyFrontier, DESTINY_FRONTIER, $00, 0
 	map_attributes AncientRuinPresent, ANCIENT_RUIN_PRESENT, $0A, 0
 	map_attributes AncientRuinPast, ANCIENT_RUIN_PAST, $05, 0

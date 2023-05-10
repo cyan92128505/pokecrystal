@@ -481,21 +481,22 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/DestinyPark.asm"
+INCLUDE "maps/DestinySquare.asm"
+INCLUDE "maps/DestinyFrontier.asm"
+INCLUDE "maps/AncientRuinPresent.asm"
+INCLUDE "maps/AncientRuinPast.asm"
 
 SECTION "Map Scripts Overflow 1", ROMX
 
-INCLUDE "maps/DestinyPark.asm"
-INCLUDE "maps/DestinySquare.asm"
 INCLUDE "maps/OriginRoad.asm"
 INCLUDE "maps/OriginRoadSouth.asm"
 INCLUDE "maps/HallOfOrigin.asm"
-INCLUDE "maps/AncientRuinPresent.asm"
-INCLUDE "maps/AncientRuinPast.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
 INCLUDE "maps/Route15.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
 
-SECTION "Map Scripts Overflow 2", ROMX
+;SECTION "Map Scripts Overflow 2", ROMX
 
 INCLUDE "maps/Route44.asm"

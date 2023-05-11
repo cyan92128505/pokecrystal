@@ -709,5 +709,6 @@ ENDM
 	map_attributes DestinyPark, DESTINY_PARK, $00, 0
 	map_attributes DestinySquare, DESTINY_SQUARE, $00, 0
 	map_attributes DestinyFrontier, DESTINY_FRONTIER, $00, 0
+	map_attributes DestinyEliteFour, DESTINY_ELITE_FOUR, $00, 0
 	map_attributes AncientRuinPresent, ANCIENT_RUIN_PRESENT, $0A, 0
 	map_attributes AncientRuinPast, ANCIENT_RUIN_PAST, $05, 0

@@ -167,6 +167,298 @@ Movement_DestinyFrontierTurnBack:
 	step DOWN
 	step_end
 
+MasterChrisChanScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_CHRIS_CHAN
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer POKEFANM, MASTER_CHRIS_CHAN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_CHRIS_CHAN
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterYamiScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_YAMI
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RED, MASTER_YAMI
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_YAMI
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterSetoScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_SETO
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer BLUE, MASTER_SETO
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_SETO
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterExecutiveMScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_EXECUTIVEM
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer EXECUTIVEM, MASTER_EXECUTIVEM
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_EXECUTIVEM
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterExecutiveFScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_EXECUTIVEF
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer EXECUTIVEF, MASTER_EXECUTIVEF
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_EXECUTIVEF
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterTobiasScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_TOBIAS
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer COOLTRAINERM, MASTER_TOBIAS
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_TOBIAS
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterYunaScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_YUNA
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer LASS, MASTER_YUNA
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_YUNA
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterAizenScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_AIZEN
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer POKEMANIAC, MASTER_AIZEN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_AIZEN
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterXehanortScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_XEHANORT
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer SAGE, MASTER_XEHANORT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_XEHANORT
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+DefaultSeenTextDF:
+    text "Let's fight!"
+    done
+
+DefaultBeatenTextDF:
+    text "Well done!"
+    done
+
+DefaultAfterBattleTextDF:
+    text "You done well!"
+    done
+
+RematchTextDestinyFrontier:
+    text "Shall we have"
+    line "another match?"
+    done
+
+RematchRefuseTextDestinyFrontier:
+    text "I will always"
+    line "be here."
+    done
+
 DestinyFrontier_MapEvents:
 	db 0, 0 ; filler
 
@@ -180,16 +472,16 @@ DestinyFrontier_MapEvents:
 	warp_event  20, 31, DESTINY_PARK, 9
 	warp_event  52, 37, DESTINY_PARK, 11
 	warp_event  36, 13, DESTINY_PARK, 13
-	warp_event  8, 17, DESTINY_PARK, 15
+	warp_event  8,  5, DESTINY_PARK, 15
 
-	warp_event  22, 0, DESTINY_FRONTIER, 13
-	warp_event  23, 0, DESTINY_FRONTIER, 14
+	warp_event 26,  0, DESTINY_FRONTIER, 13
+	warp_event 27,  0, DESTINY_FRONTIER, 14
 
-	warp_event  52, 17, DESTINY_FRONTIER, 11
-	warp_event  53, 17, DESTINY_FRONTIER, 12
+	warp_event 52, 23, DESTINY_FRONTIER, 11
+	warp_event 53, 23, DESTINY_FRONTIER, 12
 
-	warp_event  52, 9, DESTINY_SQUARE, 1
-	warp_event  53, 9, DESTINY_SQUARE, 2
+	warp_event 52, 11, DESTINY_ELITE_FOUR, 1
+	warp_event 53, 11, DESTINY_ELITE_FOUR, 2
 
 
 	def_coord_events
@@ -203,3 +495,13 @@ DestinyFrontier_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 53, 50, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterChrisChanScript, -1
+	object_event 50, 14, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterYamiScript, -1
+	object_event  4,  4, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSetoScript, -1
+	object_event  9, 52, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterExecutiveMScript, -1
+	object_event 14, 44, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterExecutiveFScript, -1
+	object_event 31, 25, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterTobiasScript, -1
+	object_event  6, 18, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterYunaScript, -1
+	object_event 48, 35, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAizenScript, -1
+	object_event 55, 14, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterXehanortScript, -1
+

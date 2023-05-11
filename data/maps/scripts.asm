@@ -484,6 +484,7 @@ INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/DestinyPark.asm"
 INCLUDE "maps/DestinySquare.asm"
 INCLUDE "maps/DestinyFrontier.asm"
+INCLUDE "maps/DestinyEliteFour.asm"
 INCLUDE "maps/AncientRuinPresent.asm"
 INCLUDE "maps/AncientRuinPast.asm"
 

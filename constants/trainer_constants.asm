@@ -238,6 +238,8 @@ KRIS EQU __trainer_class__
 	const STEVE ; unused
 	const ALLEN
 	const DARIN
+	const TOBIAS
+	const MASTER_TOBIAS
 
 	trainerclass COOLTRAINERF ; 1c
 	const GWEN
@@ -261,6 +263,9 @@ KRIS EQU __trainer_class__
 	const REENA2
 	const REENA3
 	const CARA
+	const YUNA_1
+	const YUNA_2
+	const MASTER_YUNA
 
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
@@ -297,6 +302,8 @@ KRIS EQU __trainer_class__
 	const ZACH
 	const BRENT4
 	const MILLER
+	const AIZEN
+	const MASTER_AIZEN
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1
@@ -562,6 +569,7 @@ KRIS EQU __trainer_class__
 	const EXECUTIVEM_2
 	const EXECUTIVEM_3
 	const EXECUTIVEM_4
+	const MASTER_EXECUTIVEM
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
@@ -632,6 +640,7 @@ KRIS EQU __trainer_class__
 	trainerclass EXECUTIVEF ; 37
 	const EXECUTIVEF_1
 	const EXECUTIVEF_2
+	const MASTER_EXECUTIVEF
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -647,6 +656,8 @@ KRIS EQU __trainer_class__
 	const MASA
 	const KOJI
 	const HENSHIN
+	const XEHANORT
+	const MASTER_XEHANORT
 
 	trainerclass MEDIUM ; 39
 	const MARTHA
@@ -677,6 +688,8 @@ KRIS EQU __trainer_class__
 	const ALEX
 	const REX
 	const ALLAN
+	const CHRIS_CHAN
+	const MASTER_CHRIS_CHAN
 
 	trainerclass KIMONO_GIRL ; 3c
 	const NAOKO_UNUSED ; unused
@@ -711,11 +724,13 @@ KRIS EQU __trainer_class__
 	const ASH
 	const MASTER_RED
 	const YAMI
+	const MASTER_YAMI
 
 	trainerclass BLUE ; 40
 	const BLUE1
 	const MASTER_BLUE
 	const SETO
+	const MASTER_SETO
 
 	trainerclass OFFICER ; 41
 	const KEITH

@@ -1,7 +1,4 @@
     object_const_def
-    const DESTINYSQUARE_SABRINA
-    const DESTINYSQUARE_BRUNO
-    const DESTINYSQUARE_KAREN
     const DESTINYSQUARE_SILVER
     const DESTINYSQUARE_CYNTHIA
     const DESTINYSQUARE_STEVEN
@@ -13,108 +10,6 @@ DestinySquare_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-
-MasterSabrinaScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_SABRINA
-	iftrue .FightDone
-.fight
-	writetext DefaultSeenTextDS
-	waitbutton
-	closetext
-	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer SABRINA, MASTER_SABRINA
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_SABRINA
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
-	special HealParty
-	end
-.FightDone:
-	writetext DefaultAfterBattleTextDS
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinySquare
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinySquare
-	waitbutton
-	closetext
-	end
-
-MasterBrunoScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_BRUNO
-	iftrue .FightDone
-.fight
-	writetext DefaultSeenTextDS
-	waitbutton
-	closetext
-	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer BRUNO, MASTER_BRUNO
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_BRUNO
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
-	special HealParty
-	end
-.FightDone:
-	writetext DefaultAfterBattleTextDS
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinySquare
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinySquare
-	waitbutton
-	closetext
-	end
-
-MasterKarenScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_KAREN
-	iftrue .FightDone
-.fight
-	writetext DefaultSeenTextDS
-	waitbutton
-	closetext
-	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer KAREN, MASTER_KAREN
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_KAREN
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
-	special HealParty
-	end
-.FightDone:
-	writetext DefaultAfterBattleTextDS
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinySquare
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinySquare
-	waitbutton
-	closetext
-	end
 
 MasterRivalScript:
 	faceplayer
@@ -400,22 +295,24 @@ DestinySquare_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 5, 19, DESTINY_FRONTIER, 15
-	warp_event 6, 19, DESTINY_FRONTIER, 16
+	warp_event  6, 24, DESTINY_ELITE_FOUR, 15
+	warp_event  7, 24, DESTINY_ELITE_FOUR, 16
+
+	warp_event  6, 15, DESTINY_SQUARE, 5
+	warp_event  7, 15, DESTINY_SQUARE, 6
+	warp_event  6, 8, DESTINY_SQUARE, 3
+	warp_event  7, 8, DESTINY_SQUARE, 4
 
 	def_coord_events
 	;coord_event  6, 12, SCENE_ALWAYS, XerneasYveltalBlockScript
-	coord_event  6,  6, SCENE_ALWAYS, FightAdamScript
+	coord_event  7,  6, SCENE_ALWAYS, FightAdamScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  8, 17, SPRITE_SABRINA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
-	object_event 3, 16, SPRITE_BRUNO, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrunoScript, -1
-	object_event  8, 14, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterKarenScript, -1
-	object_event 5, 12, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1
-	object_event 9,  9, SPRITE_JASMINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterCynthiaScript, -1
-	object_event 3, 10, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
-	object_event 3,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
-	object_event 5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterAdamScript, -1
-	object_event 5,  3, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CAUGHT_MEWTWO
+	object_event  6, 17, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1
+	object_event  8, 20, SPRITE_JASMINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterCynthiaScript, -1
+	object_event  5, 22, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
+	object_event  4, 19, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
+	object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterAdamScript, -1
+	object_event  7,  3, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CAUGHT_MEWTWO

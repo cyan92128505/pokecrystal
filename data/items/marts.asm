@@ -33,6 +33,7 @@ Marts:
 	dw MartIndigoPlateau
 	dw MartUnderground
 	dw MartPatches
+	dw MartFrontier
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -313,15 +314,23 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 8 ; # items
-	db LEFTOVERS
-	db LIFE_ORB
-	db CHOICE_BAND
-	db CHOICE_SPECS
-	db FOCUS_SASH
-	db EXPERT_BELT
-	db MUSCLE_BAND
-	db WISE_GLASSES
+	db 16 ; # items
+	db PINK_BOW
+	db BLACKBELT_I
+	db SHARP_BEAK
+	db SOFT_SAND
+	db HARD_STONE
+	db SILVERPOWDER
+	db SPELL_TAG
+	db CHARCOAL
+	db MYSTIC_WATER
+	db MIRACLE_SEED
+	db MAGNET
+	db TWISTEDSPOON
+	db NEVERMELTICE
+	db DRAGON_SCALE
+	db BLACKGLASSES
+	db POLKADOT_BOW
 	db -1 ; end
 
 MartFuchsia:
@@ -391,6 +400,22 @@ MartPatches:
     db MIRACLEBERRY
     db PP_UP
     db SACRED_ASH
+    db -1
+
+MartFrontier:
+    db 12 ; # items
+    db FULL_RESTORE
+    db MAX_REVIVE
+    db MAX_ELIXER
+    db LEFTOVERS
+    db LIFE_ORB
+    db CHOICE_BAND
+    db CHOICE_SPECS
+    db FOCUS_SASH
+    db MUSCLE_BAND
+    db WISE_GLASSES
+    db EXPERT_BELT
+    db MIRACLEBERRY
     db -1
 
 DefaultMart:

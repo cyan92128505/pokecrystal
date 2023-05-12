@@ -1544,33 +1544,16 @@ HandleLeftovers:
 .checkArceus
     call GetCurrentMonCore
     cp ARCEUS
-    jr z, .recover
+    jr z, .recoverHolyCrown
     ret
 
 .recover
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_hp
-	ld hl, wEnemyMonHP
-.got_hp
-; Don't restore if we're already at max HP
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	ld a, [hli]
-	cp b
-	jr nz, .restore
-	ld a, [hl]
-	cp c
-	ret z
-.restore
-	call GetSixteenthMaxHP
-	call SwitchTurnCore
-	call RestoreHP
-	ld hl, BattleText_TargetRecoveredWithHeldItem
-	jp StdBattleTextbox
+    farcall RecoverLeftovers
+    ret
+
+.recoverHolyCrown
+    farcall RecoverHolyCrown
+    ret
 
 ;HandleMysteryberry:
 ;	ldh a, [hSerialConnectionStatus]

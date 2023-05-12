@@ -145,6 +145,7 @@ KRIS EQU __trainer_class__
 	const JASON
 	const JOEY4
 	const JOEY5
+	const MASTER_JOEY
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -263,9 +264,6 @@ KRIS EQU __trainer_class__
 	const REENA2
 	const REENA3
 	const CARA
-	const YUNA_1
-	const YUNA_2
-	const MASTER_YUNA
 
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
@@ -698,6 +696,10 @@ KRIS EQU __trainer_class__
 	const ZUKI
 	const KUNI
 	const MIKI
+	const YUNA_1
+	const YUNA_2
+	const MASTER_YUNA
+	const MASTER_AERITH
 
 	trainerclass TWINS ; 3d
 	const AMYANDMAY1

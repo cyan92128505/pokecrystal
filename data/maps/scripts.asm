@@ -479,8 +479,6 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 
 SECTION "Map Scripts 25", ROMX
 
-INCLUDE "maps/SilverCaveOutside.asm"
-INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/DestinyPark.asm"
 INCLUDE "maps/DestinySquare.asm"
 INCLUDE "maps/DestinyFrontier.asm"
@@ -497,6 +495,8 @@ INCLUDE "maps/DarkCaveVioletEntrance.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
 INCLUDE "maps/Route15.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
+INCLUDE "maps/SilverCaveOutside.asm"
+INCLUDE "maps/Route10North.asm"
 
 ;SECTION "Map Scripts Overflow 2", ROMX
 

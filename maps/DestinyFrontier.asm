@@ -2,6 +2,12 @@ DestinyFrontier_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_OBJECTS, .NoWeather
+
+.NoWeather
+	setval WEATHER_NONE
+	writemem wFieldWeather
+	endcallback
 
 HoohLugiaBlockScript:
     checkevent EVENT_FOUGHT_HO_OH
@@ -358,7 +364,7 @@ MasterYunaScript:
 	closetext
 	winlosstext DefaultBeatenTextDF, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer LASS, MASTER_YUNA
+	loadtrainer KIMONO_GIRL, MASTER_YUNA
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_YUNA
@@ -437,6 +443,108 @@ MasterXehanortScript:
 	closetext
 	end
 
+MasterAerithScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_AERITH
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer KIMONO_GIRL, MASTER_AERITH
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_AERITH
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+MasterJoeyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_JOEY
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDF
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDF, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer YOUNGSTER, MASTER_JOEY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_JOEY
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDF
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+
+NurseScript:
+    faceplayer
+	opentext
+	writetext ShouldIHealText
+	yesorno
+	iffalse .done
+	special HealParty
+	special FadeOutPalettes
+	reloadmap
+	writetext HealDoneText
+.done
+    writetext GoodbyeText
+    waitbutton
+    closetext
+    end
+
+ShouldIHealText:
+    text "Would you like me"
+    line "to heal your"
+    cont "#MON?"
+    prompt
+
+HealDoneText:
+    text "Your #MON"
+    line "are fully healed."
+    prompt
+
+GoodbyeText:
+    text "Remember your"
+    line "#MON heal after"
+    cont "every battle here."
+
+    para "Stay safe."
+    done
+
+MartScript:
+    faceplayer
+    opentext
+    pokemart MARTTYPE_STANDARD, MART_FRONTIER
+    closetext
+    end
+
 DefaultSeenTextDF:
     text "Let's fight!"
     done
@@ -495,13 +603,18 @@ DestinyFrontier_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 53, 50, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterChrisChanScript, -1
-	object_event 50, 14, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterYamiScript, -1
-	object_event  4,  4, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSetoScript, -1
-	object_event  9, 52, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterExecutiveMScript, -1
-	object_event 14, 44, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterExecutiveFScript, -1
-	object_event 31, 25, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterTobiasScript, -1
-	object_event  6, 18, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterYunaScript, -1
-	object_event 48, 35, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAizenScript, -1
-	object_event 55, 14, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterXehanortScript, -1
+	object_event 53, 50, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterChrisChanScript, -1
+	object_event 50, 14, SPRITE_RED, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterYamiScript, -1
+	object_event  4,  4, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterSetoScript, -1
+	object_event  9, 52, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterExecutiveMScript, -1
+	object_event 14, 44, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterExecutiveFScript, -1
+	object_event 29, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterTobiasScript, -1
+	object_event  6, 18, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterYunaScript, -1
+	object_event 48, 35, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAizenScript, -1
+	object_event 55, 14, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterXehanortScript, -1
+	object_event 28, 46, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAerithScript, -1
+	object_event 31, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1
+	object_event 29, 42, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript, -1
+	object_event 32, 42, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartScript, -1
+
 

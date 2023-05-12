@@ -6089,3 +6089,53 @@ WildEvasionUpText:
     text "Enemy EVASION"
     line "went up!"
     prompt
+
+RecoverLeftovers:
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+.restore
+	farcall GetSixteenthMaxHP
+	farcall SwitchTurnCore
+	farcall RestoreHP
+	ld hl, BattleText_TargetRecoveredWithLeftovers
+	jp StdBattleTextbox
+
+RecoverHolyCrown:
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+.restore
+	farcall GetSixteenthMaxHP
+	farcall SwitchTurnCore
+	farcall RestoreHP
+	ld hl, BattleText_TargetRecoveredWithHolyCrown
+	jp StdBattleTextbox

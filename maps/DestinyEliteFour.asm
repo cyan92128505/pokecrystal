@@ -19,7 +19,7 @@ MasterSabrinaScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDEF, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SABRINA, MASTER_SABRINA
 	startbattle
 	reloadmapafterbattle
@@ -53,7 +53,7 @@ MasterBrunoScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDEF, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BRUNO, MASTER_BRUNO
 	startbattle
 	reloadmapafterbattle
@@ -87,7 +87,7 @@ MasterKarenScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDEF, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KAREN, MASTER_KAREN
 	startbattle
 	reloadmapafterbattle
@@ -121,7 +121,7 @@ MasterGiovanniScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDEF, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer GRUNTM, MASTER_GIOVANNI
 	startbattle
 	reloadmapafterbattle
@@ -202,7 +202,7 @@ DestinyEliteFour_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 19,  7, SPRITE_SABRINA, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
-	object_event  5, 29, SPRITE_BRUNO, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrunoScript, -1
+	object_event 19,  7, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
+	object_event  5, 29, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrunoScript, -1
 	object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterKarenScript, -1
 	object_event 19, 29, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1

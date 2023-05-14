@@ -57,7 +57,7 @@ TrainerClassDVs:
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
 	dn  7, 14, 10,  8 ; EXECUTIVEF
-	dn  9,  8,  8,  8 ; SAGE
+	dn  11, 11, 11, 11 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
 	dn  10, 10, 10, 10 ; POKEFANM

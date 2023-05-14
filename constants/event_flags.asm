@@ -317,6 +317,7 @@
     const EVENT_BEAT_MASTER_SETO
     const EVENT_BEAT_MASTER_AERITH
     const EVENT_BEAT_MASTER_JOEY
+    const EVENT_FRONTIER_INTRO
 
 
 	const_next 600

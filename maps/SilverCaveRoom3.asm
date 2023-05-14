@@ -108,7 +108,7 @@ Red:
 	waitbutton
 	closetext
 	winlosstext RedWinLossText, RedWinLossText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, RED1
 	startbattle
 	dontrestartmapmusic
@@ -164,7 +164,7 @@ Ash:
 	waitbutton
 	closetext
 	winlosstext AshWinLossText, AshWinLossText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, ASH
 	startbattle
 	dontrestartmapmusic

@@ -1465,7 +1465,6 @@ AI_Smart_Moonlight:
 	ld b, EFFECT_SLEEP_TALK
 	call AIHasMoveEffect
 	jr c, .nonRestHeal
-	jr c, .nonRestHeal
     call CanPlayer3HKOMaxHP
     jr c, .discourage
 
@@ -1474,16 +1473,16 @@ AI_Smart_Moonlight:
     call CanPlayer2HKOMaxHP
     jr c, .discourage
 
+; always heal when below 1/4 hp
+    call AICheckEnemyQuarterHP
+    jr nc, .encourage
+
 ; Arceus and Mewtwo are fast and bulky enough to focus on set up and only heal below half
     ld a, [wEnemyMonSpecies]
     cp MEWTWO
     jr z, .healBelowHalf
     cp ARCEUS
     jr z, .healBelowHalf
-
-; always heal when below 1/4 hp
-    call AICheckEnemyQuarterHP
-    jr nc, .encourage
 
 ; if faster than the player, heal if the player can 1hko
     call AICompareSpeed
@@ -2540,9 +2539,10 @@ AI_Smart_BulkUp:
     jr nc, .checkToxic
     call CanAI2HKO
     jr nc, .checkToxic
-    call Random
-    cp 50 percent
-    jr c, .discourage
+    ;call Random
+    ;cp 50 percent
+    ;jr c, .discourage
+    jr .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -2609,9 +2609,10 @@ AI_Smart_Curse:
     jr nc, .checkToxic
     call CanAI2HKO
     jr nc, .checkToxic
-    call Random
-    cp 50 percent
-    jr c, .discourage
+    ;call Random
+    ;cp 50 percent
+    ;jr c, .discourage
+    jr .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -3698,8 +3699,16 @@ AI_Smart_QuiverDance:
     jr c, .skip
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
-; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
-; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
+; if the player already has +4 attack or special attack then they have already set up, just attack
+; if the players last move was a healing move then 50% chance to set up if we can't already 2HKO from max HP
+; otherwise if the players last move was non-damaging then 50% chance to set up if we can't already 3HKO from current HP
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .discourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .discourage
+
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -3712,10 +3721,16 @@ AI_Smart_QuiverDance:
 .check3HKO
 	call CanAI3HKO
 	jr c, .discourage
+    call Random
+    cp 50 percent
+    jr c, .discourage
 	jr .continue
 .check2HKO
 	call CanAI2HKOMaxHP
 	jr c, .discourage
+    call Random
+    cp 50 percent
+    jr c, .discourage
 
 .checkKO
     call CanPlayerKO
@@ -3733,13 +3748,13 @@ AI_Smart_QuiverDance:
 
 .checkMutual2HKO
 ; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
-    call CanPlayer2HKO
-    jr nc, .checkToxic
-    call CanAI2HKO
-    jr nc, .checkToxic
-    call Random
-    cp 50 percent
-    jr c, .discourage
+;    call CanPlayer2HKO
+;    jr nc, .checkToxic
+;    call CanAI2HKO
+;    jr nc, .checkToxic
+;    call Random
+;    cp 50 percent
+;    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -3803,9 +3818,10 @@ AI_Smart_CalmMind:
     jr nc, .checkToxic
     call CanAI2HKO
     jr nc, .checkToxic
-    call Random
-    cp 50 percent
-    jr c, .discourage
+    ;call Random
+    ;cp 50 percent
+    ;jr c, .discourage
+    jr .discourage
 
 ; discourage after +2 if afflicted with toxic
 .checkToxic
@@ -3853,8 +3869,16 @@ AI_Smart_DragonDance:
     jr c, .continue
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
+; if the player already has +4 attack or special attack then they have already set up, just attack
 ; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
 ; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .discourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .discourage
+
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -3867,10 +3891,16 @@ AI_Smart_DragonDance:
 .check3HKO
 	call CanAI3HKO
 	jr c, .discourage
+    call Random
+    cp 50 percent
+    jr c, .discourage
 	jr .continue
 .check2HKO
 	call CanAI2HKOMaxHP
 	jr c, .discourage
+    call Random
+    cp 50 percent
+    jr c, .discourage
 
 .checkKO
     call CanPlayerKO
@@ -3888,14 +3918,14 @@ AI_Smart_DragonDance:
 	jr c, .encourage
 
 ; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
-    call CanPlayer2HKO
-    jr nc, .continueChecks
-    call CanAI2HKO
-    jr nc, .continueChecks
-    call Random
-    cp 50 percent
-    jr c, .discourage
-.continueChecks
+;    call CanPlayer2HKO
+;    jr nc, .continueChecks
+;    call CanAI2HKO
+;    jr nc, .continueChecks
+;    call Random
+;    cp 50 percent
+;    jr c, .discourage
+;.continueChecks
 
 ; discourage after +1 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -3947,9 +3977,10 @@ AI_Smart_SwordsDance:
     jr nc, .continueChecks
     call CanAI2HKO
     jr nc, .continueChecks
-    call Random
-    cp 50 percent
-    jr c, .discourage
+    ;call Random
+    ;cp 50 percent
+    ;jr c, .discourage
+    jr .discourage
 .continueChecks
 
 ; discourage after +1 if afflicted with toxic
@@ -4068,9 +4099,10 @@ AI_Smart_Geomancy:
     jr nc, .continueChecks
     call CanAI2HKO
     jr nc, .continueChecks
-    call Random
-    cp 50 percent
-    jr c, .discourage
+    ;call Random
+    ;cp 50 percent
+    ;jr c, .discourage
+    jr .discourage
 .continueChecks
 
 ; discourage after +2 if afflicted with toxic
@@ -4156,9 +4188,10 @@ AI_Smart_NastyPlot:
     jr nc, .continueChecks
     call CanAI2HKO
     jr nc, .continueChecks
-    call Random
-    cp 50 percent
-    jr c, .discourage
+    ;call Random
+    ;cp 50 percent
+    ;jr c, .discourage
+    jr .discourage
 .continueChecks
 
 ; discourage after +2 if afflicted with toxic
@@ -4408,8 +4441,16 @@ ShouldAIBoost:
 	jr nz, .dontBoost
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
-; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
-; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
+; if the player already has +4 attack or special attack then they have already set up, just attack
+; if the players last move was a healing move 50% chance to set up if we can't already 2HKO from max HP
+; otherwise if the players last move was non-damaging 50% chance to set up if we can't already 3HKO from current HP
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .dontBoost
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .dontBoost
+
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -4422,10 +4463,16 @@ ShouldAIBoost:
 .check3HKO
 	call CanAI3HKO
 	jr c, .dontBoost
+    call Random
+    cp 50 percent
+    jr c, .dontBoost
 	jr .boost
 .check2HKO
 	call CanAI2HKOMaxHP
 	jr c, .dontBoost
+    call Random
+    cp 50 percent
+    jr c, .dontBoost
 
 .boost
     scf ; set carry flag

@@ -699,6 +699,7 @@ KRIS EQU __trainer_class__
 	const YUNA_1
 	const YUNA_2
 	const MASTER_YUNA
+	const AERITH
 	const MASTER_AERITH
 
 	trainerclass TWINS ; 3d

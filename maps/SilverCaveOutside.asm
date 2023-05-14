@@ -289,16 +289,17 @@ SilverCaveOutsideBlockScript:
     end
 
 SilverCaveOutsideBlockText:
-    text "The door is"
-    line "locked."
+    text "A voice speaks!"
 
-    para "Some kind of"
-    line "tournament is"
-    cont "happening."
+    para "This is a gateway"
+    line "to a tournament"
+    cont "for the greatest"
+    cont "trainers across"
+    cont "time and reality."
 
     para "Only the"
     line "strongest"
-    cont "trainer in the"
+    cont "trainers in the"
     cont "world may pass."
     done
 
@@ -312,10 +313,12 @@ SilverCaveOutside_MapEvents:
 	def_warp_events
 	warp_event 23, 19, SILVER_CAVE_POKECENTER_1F, 1
 	warp_event 18, 11, SILVER_CAVE_ROOM_1, 1
-	warp_event 31, 5, DESTINY_FRONTIER, 1
+	warp_event 31, 6, DESTINY_FRONTIER, 1
+	warp_event 32, 6, DESTINY_FRONTIER, 2
 
 	def_coord_events
-	coord_event 31, 6, SCENE_ALWAYS, SilverCaveOutsideBlockScript
+	coord_event 31, 7, SCENE_ALWAYS, SilverCaveOutsideBlockScript
+	coord_event 32, 7, SCENE_ALWAYS, SilverCaveOutsideBlockScript
 
 	def_bg_events
 	bg_event 24, 19, BGEVENT_READ, MtSilverPokecenterSign

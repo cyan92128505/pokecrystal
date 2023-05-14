@@ -89,7 +89,7 @@ HenshinScript:
 	waitbutton
 	closetext
 	winlosstext HenshinBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SAGE, HENSHIN
 	startbattle
 	reloadmapafterbattle

@@ -239,6 +239,11 @@ endr
 ; 8+ badges = $FFFF = 65536 stat exp = 64/64 extra stat at lvl 100
     push hl
 
+    ; boss battles have max stat exp
+    ld a, [wBattleType]
+    cp BATTLETYPE_BOSS_BATTLE
+    jr z, .fullStatExp
+
     ; trainer classes which always have max stat exp
 	ld a, [wTrainerClass]
 	cp POKEMON_PROF

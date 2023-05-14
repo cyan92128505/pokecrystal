@@ -3744,6 +3744,8 @@ CheckWhetherToAskSwitch:
     jr z, .return_nc
     cp BATTLETYPE_SETNOITEMS
     jr z, .return_nc
+    cp BATTLETYPE_BOSS_BATTLE
+    jr z, .return_nc
     cp BATTLETYPE_REMATCH
     jr z, .return_nc
 	ld a, [wCurPartyMon]
@@ -5519,6 +5521,8 @@ BattleMenu_Pack:
 
     ld a, [wBattleType]
     cp BATTLETYPE_SETNOITEMS
+    jp z, .ItemsCantBeUsed
+    cp BATTLETYPE_BOSS_BATTLE
     jp z, .ItemsCantBeUsed
     cp BATTLETYPE_REMATCH
     jp z, .ItemsCantBeUsed

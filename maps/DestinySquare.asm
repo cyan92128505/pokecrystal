@@ -21,7 +21,7 @@ MasterRivalScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, MASTER_RIVAL
 	startbattle
 	reloadmapafterbattle
@@ -55,7 +55,7 @@ MasterCynthiaScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer JASMINE, CYNTHIA
 	startbattle
 	reloadmapafterbattle
@@ -89,7 +89,7 @@ MasterStevenScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer FALKNER, STEVEN
 	startbattle
 	reloadmapafterbattle
@@ -123,7 +123,7 @@ MasterWallaceScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer MYSTICALMAN, WALLACE
 	startbattle
 	reloadmapafterbattle
@@ -157,7 +157,7 @@ MasterAdamScript:
 	waitbutton
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KOGA, MASTER_KOGA
 	startbattle
 	reloadmapafterbattle

@@ -16,7 +16,7 @@ Route24RocketScript:
 	waitbutton
 	closetext
 	winlosstext Route24RocketBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer GRUNTM, GRUNTM_31
 	startbattle
 	dontrestartmapmusic

@@ -203,7 +203,7 @@ MasterOakScript:
 	waitbutton
 	closetext
 	winlosstext MasterOakBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMON_PROF, MASTER_OAK
 	startbattle
 	reloadmapafterbattle
@@ -426,7 +426,7 @@ MasterRedScript:
 	waitbutton
 	closetext
 	winlosstext MasterRedBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, MASTER_RED
 	startbattle
 	reloadmapafterbattle
@@ -535,7 +535,7 @@ MasterLanceScript:
 	waitbutton
 	closetext
 	winlosstext MasterLanceBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CHAMPION, MASTER_LANCE
 	startbattle
 	reloadmapafterbattle
@@ -610,7 +610,7 @@ MasterBlueScript:
 	waitbutton
 	closetext
 	winlosstext MasterBlueBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BLUE, MASTER_BLUE
 	startbattle
 	reloadmapafterbattle
@@ -720,7 +720,7 @@ MasterGreenScript:
 	waitbutton
 	closetext
 	winlosstext MasterGreenBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LASS, GREEN
 	startbattle
 	reloadmapafterbattle

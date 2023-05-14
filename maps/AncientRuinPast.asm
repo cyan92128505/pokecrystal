@@ -238,7 +238,7 @@ YamiScript:
 	waitbutton
 	closetext
 	winlosstext YamiBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, YAMI
 	startbattle
 	reloadmapafterbattle

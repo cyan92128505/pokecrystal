@@ -2534,18 +2534,11 @@ AI_Smart_BulkUp:
 	jr .encourage
 
 .check2HKO
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+; If the player can 2HKO us then don't boost
     call CanPlayer2HKO
-    jr nc, .checkToxic
-    call CanAI2HKO
-    jr nc, .checkToxic
-    ;call Random
-    ;cp 50 percent
-    ;jr c, .discourage
-    jr .discourage
+    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
-.checkToxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -2604,18 +2597,11 @@ AI_Smart_Curse:
 	jr .encourage
 
 .check2HKO
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+; If the player can 2HKO us then don't boost
     call CanPlayer2HKO
-    jr nc, .checkToxic
-    call CanAI2HKO
-    jr nc, .checkToxic
-    ;call Random
-    ;cp 50 percent
-    ;jr c, .discourage
-    jr .discourage
+    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
-.checkToxic
     ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -3740,21 +3726,11 @@ AI_Smart_QuiverDance:
 ; encourage to +2, strongly encourage if player has boosted SpAtk
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .checkMutual2HKO ;
+    jr nc, .checkToxic ;
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .strongEncourage
 	jr .encourage
-
-.checkMutual2HKO
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
-;    call CanPlayer2HKO
-;    jr nc, .checkToxic
-;    call CanAI2HKO
-;    jr nc, .checkToxic
-;    call Random
-;    cp 50 percent
-;    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
 .checkToxic
@@ -3813,18 +3789,11 @@ AI_Smart_CalmMind:
 	jr .encourage
 
 .check2HKO
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+; If the player can 2HKO us then don't boost
     call CanPlayer2HKO
-    jr nc, .checkToxic
-    call CanAI2HKO
-    jr nc, .checkToxic
-    ;call Random
-    ;cp 50 percent
-    ;jr c, .discourage
-    jr .discourage
+    jr c, .discourage
 
 ; discourage after +2 if afflicted with toxic
-.checkToxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
     push hl
@@ -3917,16 +3886,6 @@ AI_Smart_DragonDance:
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
-;    call CanPlayer2HKO
-;    jr nc, .continueChecks
-;    call CanAI2HKO
-;    jr nc, .continueChecks
-;    call Random
-;    cp 50 percent
-;    jr c, .discourage
-;.continueChecks
-
 ; discourage after +1 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
@@ -3972,16 +3931,9 @@ AI_Smart_SwordsDance:
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+; If the player can 2HKO us then don't boost
     call CanPlayer2HKO
-    jr nc, .continueChecks
-    call CanAI2HKO
-    jr nc, .continueChecks
-    ;call Random
-    ;cp 50 percent
-    ;jr c, .discourage
-    jr .discourage
-.continueChecks
+    jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -4094,16 +4046,9 @@ AI_Smart_Geomancy:
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+; If the player can 2HKO us then don't boost
     call CanPlayer2HKO
-    jr nc, .continueChecks
-    call CanAI2HKO
-    jr nc, .continueChecks
-    ;call Random
-    ;cp 50 percent
-    ;jr c, .discourage
-    jr .discourage
-.continueChecks
+    jr c, .discourage
 
 ; discourage after +2 if afflicted with toxic
     ld a, BATTLE_VARS_SUBSTATUS5
@@ -4183,16 +4128,9 @@ AI_Smart_NastyPlot:
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
 
-; If the player can 2HKO us and we can 2HKO the player then 50% chance to not boost and just attack
+; If the player can 2HKO us then don't boost
     call CanPlayer2HKO
-    jr nc, .continueChecks
-    call CanAI2HKO
-    jr nc, .continueChecks
-    ;call Random
-    ;cp 50 percent
-    ;jr c, .discourage
-    jr .discourage
-.continueChecks
+    jr c, .discourage
 
 ; discourage after +2 if afflicted with toxic
 ; Pokemon who are immune to residual damage (magic guard) should not be considered

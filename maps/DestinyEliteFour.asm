@@ -171,6 +171,60 @@ Movement_DestinyEliteFourTurnBack:
 	step DOWN
 	step_end
 
+KarenBlockScript:
+    checkevent EVENT_BEAT_MASTER_KAREN
+    iffalse .block
+    end
+.block
+	opentext
+	writetext DefeatOpponentText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+    end
+
+BrunoBlockScript:
+    checkevent EVENT_BEAT_MASTER_BRUNO
+    iffalse .block
+    end
+.block
+	opentext
+	writetext DefeatOpponentText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+    end
+
+SabrinaBlockScript:
+    checkevent EVENT_BEAT_MASTER_SABRINA
+    iffalse .block
+    end
+.block
+	opentext
+	writetext DefeatOpponentText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+    end
+
+GiovanniBlockScript:
+    checkevent EVENT_BEAT_MASTER_GIOVANNI
+    iffalse .block
+    end
+.block
+	opentext
+	writetext DefeatOpponentText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+    end
+
+DefeatOpponentText:
+    text "You must defeat"
+    line "your opponent"
+    cont "to proceed!"
+    done
+
 DestinyEliteFour_MapEvents:
 	db 0, 0 ; filler
 
@@ -197,12 +251,19 @@ DestinyEliteFour_MapEvents:
 	warp_event  19, 24, DESTINY_SQUARE, 2
 
 	def_coord_events
-	;coord_event  6,  6, SCENE_ALWAYS, FightAdamScript
+	coord_event 18,  3, SCENE_ALWAYS, KarenBlockScript
+	coord_event 19,  3, SCENE_ALWAYS, KarenBlockScript
+	coord_event  4,  3, SCENE_ALWAYS, BrunoBlockScript
+	coord_event  5,  3, SCENE_ALWAYS, BrunoBlockScript
+	coord_event  4, 25, SCENE_ALWAYS, SabrinaBlockScript
+	coord_event  5, 25, SCENE_ALWAYS, SabrinaBlockScript
+	coord_event 18, 25, SCENE_ALWAYS, GiovanniBlockScript
+	coord_event 19, 25, SCENE_ALWAYS, GiovanniBlockScript
 
 	def_bg_events
 
 	def_object_events
-	object_event 19,  7, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
-	object_event  5, 29, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrunoScript, -1
-	object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterKarenScript, -1
+	object_event  5, 29, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterSabrinaScript, -1
+	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterBrunoScript, -1
+	object_event 19,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterKarenScript, -1
 	object_event 19, 29, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1

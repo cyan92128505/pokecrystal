@@ -757,8 +757,8 @@ DestinyFrontier_MapEvents:
 	coord_event 42, 54, SCENE_ALWAYS, GroudonKyogreBlockScript
 	coord_event 20, 32, SCENE_ALWAYS, PalkiaDialgaBlockScript
 	coord_event  8,  6, SCENE_ALWAYS, RayquazaGiratinaBlockScript
-	coord_event 52, 12, SCENE_ALWAYS, XerneasYveltalBlockScript
-	coord_event 53, 12, SCENE_ALWAYS, XerneasYveltalBlockScript
+	coord_event 26,  1, SCENE_ALWAYS, XerneasYveltalBlockScript
+	coord_event 27,  1, SCENE_ALWAYS, XerneasYveltalBlockScript
 	coord_event 30, 38, SCENE_ALWAYS, Guard1BlockScript
 	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript
 	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript

@@ -2,13 +2,13 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 2, TrainerClassDVs
 	;  atk,def,spd,spc
-	dn  12, 12, 12, 12 ; FALKNER
-	dn  7,  12, 12, 12 ; WHITNEY
-	dn  12, 12, 12, 12 ; BUGSY
-	dn  12, 12, 12, 12 ; MORTY
-	dn  12, 12, 12, 12 ; PRYCE
-	dn  7, 12, 12, 12 ; JASMINE
-	dn 12, 12, 12, 12 ; CHUCK
+	dn  15, 15, 15, 15 ; FALKNER
+	dn  7,  15, 15, 15 ; WHITNEY
+	dn  15, 15, 15, 15 ; BUGSY
+	dn  15, 15, 15, 15 ; MORTY
+	dn  15, 15, 15, 15 ; PRYCE
+	dn  7, 15, 15, 15 ; JASMINE
+	dn 15, 15, 15, 15 ; CHUCK
 	dn  7, 15, 15, 15 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
@@ -18,19 +18,19 @@ TrainerClassDVs:
 	dn  7, 15, 15, 15 ; KAREN
 	dn 15, 15, 15, 15 ; KOGA
 	dn 15, 15, 15, 15 ; CHAMPION
-	dn 12, 12, 12, 12 ; BROCK
-	dn  7, 12, 12, 12 ; MISTY
-	dn 12, 12, 12, 12 ; LT_SURGE
+	dn 15, 15, 15, 15 ; BROCK
+	dn  7, 15, 15, 15 ; MISTY
+	dn 15, 15, 15, 15 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
-	dn  7, 12, 12, 12 ; ERIKA
+	dn  7, 15, 15, 15 ; ERIKA
 	dn  9,  8,  8,  8 ; YOUNGSTER
 	dn  9,  8,  8,  8 ; SCHOOLBOY
 	dn  9,  8,  8,  8 ; BIRD_KEEPER
 	dn  5,  8,  8,  8 ; LASS
-	dn  7, 12, 12, 12 ; JANINE
+	dn  7, 15, 15, 15 ; JANINE
 	dn 12, 12, 12, 12 ; COOLTRAINERM
 	dn  7, 12, 12, 12 ; COOLTRAINERF
-	dn  6,  9, 12,  8 ; BEAUTY
+	dn  6,  15, 15, 15 ; BEAUTY
 	dn  9,  8,  8,  8 ; POKEMANIAC
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
@@ -45,23 +45,23 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; SUPER_NERD
 	dn 15, 15, 15, 15 ; RIVAL2
 	dn  9,  8,  8,  8 ; GUITARIST
-	dn 10,  8,  8,  8 ; HIKER
+	dn 12,  12,  12,  12 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
 	dn 15, 15, 15, 15 ; BLAINE
 	dn  9,  8,  8,  8 ; BURGLAR
 	dn  9,  8,  8,  8 ; FIREBREATHER
-	dn  9,  8,  8,  8 ; JUGGLER
+	dn  15, 15, 15, 15 ; JUGGLER
 	dn  9,  8,  8,  8 ; BLACKBELT_T
-	dn 13,  8, 10,  8 ; EXECUTIVEM
+	dn 15, 15, 15, 15 ; EXECUTIVEM
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
-	dn  7, 14, 10,  8 ; EXECUTIVEF
+	dn  7, 15, 15, 15 ; EXECUTIVEF
 	dn  11, 11, 11, 11 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
 	dn  10, 10, 10, 10 ; POKEFANM
-	dn  6,  8,  8, 10 ; KIMONO_GIRL
+	dn  6,  15, 15, 15 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
 	dn  10, 10,  10,  10 ; POKEFANF
 	dn 15, 15, 15, 15 ; RED

@@ -483,8 +483,6 @@ INCLUDE "maps/DestinyPark.asm"
 INCLUDE "maps/DestinySquare.asm"
 INCLUDE "maps/DestinyFrontier.asm"
 INCLUDE "maps/DestinyEliteFour.asm"
-INCLUDE "maps/AncientRuinPresent.asm"
-INCLUDE "maps/AncientRuinPast.asm"
 
 SECTION "Map Scripts Overflow 1", ROMX
 
@@ -501,3 +499,5 @@ INCLUDE "maps/Route10North.asm"
 ;SECTION "Map Scripts Overflow 2", ROMX
 
 INCLUDE "maps/Route44.asm"
+INCLUDE "maps/AncientRuinPresent.asm"
+INCLUDE "maps/AncientRuinPast.asm"

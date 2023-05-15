@@ -283,6 +283,7 @@ KRIS EQU __trainer_class__
 	const THERESA ; unused
 	const VALERIE
 	const OLIVIA
+	const MASTER_DIANTHA
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
@@ -512,6 +513,7 @@ KRIS EQU __trainer_class__
 	const PARRY3
 	const ANTHONY4
 	const ANTHONY5
+	const MASTER_ALDER
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; unused
@@ -550,6 +552,7 @@ KRIS EQU __trainer_class__
 	const IRWIN2 ; unused
 	const IRWIN3 ; unused
 	const IRWIN4 ; unused
+	const MASTER_LEON
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1 ; unused

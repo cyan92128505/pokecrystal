@@ -400,10 +400,12 @@ SilverCaveRoom3_MapEvents:
 
 	def_warp_events
 	warp_event 10, 33, SILVER_CAVE_ROOM_2, 2
-	warp_event  9, 3, ORIGIN_ROAD_SOUTH, 1
+	warp_event   9, 3, ORIGIN_ROAD_SOUTH, 1
+	warp_event  10, 3, ORIGIN_ROAD_SOUTH, 3
 
 	def_coord_events
 	coord_event 9, 4, SCENE_ALWAYS, SilverCave3BlockScript
+	coord_event 10, 4, SCENE_ALWAYS, SilverCave3BlockScript
 
 	def_bg_events
 

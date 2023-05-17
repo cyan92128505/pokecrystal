@@ -870,4 +870,32 @@ KantoGrassWildMons:
 	db 80, GENESECT
 	end_grass_wildmons
 
+	def_grass_wildmons CERULEAN_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 50, RAICHU
+	db 51, ELECTRODE
+	db 53, RHYPERIOR
+	db 53, WIGGLYTUFF
+	db 61, DITTO
+	db 64, CHANSEY
+	db 70, ALAKAZAM
+	; day
+	db 50, RAICHU
+	db 51, ELECTRODE
+	db 53, RHYPERIOR
+	db 53, WIGGLYTUFF
+	db 61, DITTO
+	db 64, CHANSEY
+	db 70, ALAKAZAM
+	; nite
+	db 50, RAICHU
+	db 51, ELECTRODE
+	db 53, RHYPERIOR
+	db 53, WIGGLYTUFF
+	db 61, DITTO
+	db 64, CHANSEY
+	db 70, ALAKAZAM
+	end_grass_wildmons
+
 	db -1 ; end

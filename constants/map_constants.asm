@@ -156,6 +156,7 @@ ENDM
 	;map_const SAFARI_ZONE_BETA,                            10, 18 ; 90    unimportant
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const ELEMENT_CAVE,                                24, 12 ; 92
+	map_const CERULEAN_CAVE,                               15, 31 ; 93
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

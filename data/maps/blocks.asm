@@ -1094,3 +1094,6 @@ AncientRuinPresent_Blocks:
 
 AncientRuinPast_Blocks:
 	INCBIN "maps/AncientRuinPast.blk"
+
+CeruleanCave_Blocks:
+	INCBIN "maps/CeruleanCave.blk"

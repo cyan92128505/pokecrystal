@@ -1,6 +1,5 @@
     object_const_def
     const ANCIENTRUINPAST_XERNEAS
-    const ANCIENTRUINPAST_REGIGIGAS
     const ANCIENTRUINPAST_FIELDMON_1
     const ANCIENTRUINPAST_FIELDMON_2
     const ANCIENTRUINPAST_FIELDMON_3
@@ -75,35 +74,6 @@ XerneasCry:
 
     para "You have found"
     line "such power."
-    done
-
-RegigigasScript:
-	opentext
-	writetext RegigigasCry
-	waitbutton
-	cry REGIGIGAS
-	pause 15
-	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon REGIGIGAS, 70
-	startbattle
-	reloadmapafterbattle
-    setval REGIGIGAS
-	special MonCheck
-	iftrue .caught
-	end
-.caught
-    setevent EVENT_CAUGHT_REGIGIGAS
-	disappear ANCIENTRUINPAST_REGIGIGAS
-	pause 15
-	special FadeInQuickly
-	pause 30
-	special HealParty
-	refreshscreen
-	end
-
-RegigigasCry:
-    text "REGI!!!"
     done
 
 AncientRuinPastFieldMon1Script:
@@ -396,7 +366,6 @@ AncientRuinPast_MapEvents:
 
 	def_object_events
 	object_event 19, 9, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, XerneasScript, EVENT_CAUGHT_XERNEAS
-	object_event 19, 14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, RegigigasScript, EVENT_CAUGHT_REGIGIGAS
 	object_event 31, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AncientRuinPastFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 36, 10, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinPastFieldMon2Script, EVENT_FIELD_MON_2
 	object_event  3, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AncientRuinPastFieldMon3Script, EVENT_FIELD_MON_3

@@ -177,4 +177,11 @@ KantoWaterWildMons:
 	db 55, KINGDRA
 	end_water_wildmons
 
+	def_water_wildmons CERULEAN_CAVE
+	db 6 percent ; encounter rate
+	db 52, SLOWBRO
+	db 55, GYARADOS
+	db 62, LAPRAS
+	end_water_wildmons
+
 	db -1 ; end

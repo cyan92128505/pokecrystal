@@ -495,9 +495,10 @@ INCLUDE "maps/Route15.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
-
-;SECTION "Map Scripts Overflow 2", ROMX
-
 INCLUDE "maps/Route44.asm"
 INCLUDE "maps/AncientRuinPresent.asm"
 INCLUDE "maps/AncientRuinPast.asm"
+
+SECTION "Map Scripts Overflow 2", ROMX
+
+INCLUDE "maps/CeruleanCave.asm"

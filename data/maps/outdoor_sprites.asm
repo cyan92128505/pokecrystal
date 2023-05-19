@@ -33,6 +33,7 @@ OutdoorSprites:
 	dw HallOfOriginSprites
 	dw DestinyTowerSprites
 	dw AncientRuinSprites
+	dw WarZoneSprites
 	assert_table_length NUM_MAP_GROUPS
 
 PalletGroupSprites:
@@ -363,6 +364,7 @@ CherrygroveGroupSprites:
 HallOfOriginSprites:
 DestinyTowerSprites:
 AncientRuinSprites:
+WarZoneSprites:
 SilverGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_SILVER_TROPHY

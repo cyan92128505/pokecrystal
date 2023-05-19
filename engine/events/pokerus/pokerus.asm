@@ -21,6 +21,7 @@ GivePokerusAndConvertBerries:
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
 	ret z
+	; AndrewNote - Pokerus chance here
 	call Random
 	ldh a, [hRandomAdd]
 	and a

@@ -475,7 +475,7 @@ ENDM
 	newgroup SAFFRON                                              ; 25
 	map_const ROUTE_5,                                     10,  9 ;  1
 	map_const SAFFRON_CITY,                                20, 18 ;  2
-	map_const FIGHTING_DOJO,                                5,  6 ;  3
+	;map_const FIGHTING_DOJO,                                5,  6 ;  3
 	map_const SAFFRON_GYM,                                 10,  9 ;  4
 	map_const SAFFRON_MART,                                 6,  4 ;  5
 	map_const SAFFRON_POKECENTER_1F,                        5,  4 ;  6
@@ -488,6 +488,7 @@ ENDM
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_SAFFRON_GATE,                         5,  4 ; 14
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
+	map_const GIOVANNI_GYM,                                 10, 9 ; 16
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26
@@ -520,6 +521,10 @@ ENDM
     newgroup ANCIENT_RUIN                                     ; 29
 	map_const ANCIENT_RUIN_PRESENT,                         20, 20 ;  1
     map_const ANCIENT_RUIN_PAST,                            20, 20 ;  2
+	endgroup
+
+    newgroup WAR_ZONE                                         ; 30
+	map_const WAR_ZONE,                                     20, 18 ;  1
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 29

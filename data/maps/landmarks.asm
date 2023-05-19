@@ -108,6 +108,8 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
+    landmark  92, 106, WarZoneName
+    landmark  90,  52, CeruleanCaveName
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK¯TOWN@"
@@ -216,3 +218,4 @@ SpecialMapName:      db "SPECIAL@"
 HallOfOriginName:    db "HALL OF¯ORIGIN@"
 DestinyTowerName:    db "FRONTIER@"
 AncientRuinName:     db "ANCIENT¯RUIN@"
+WarZoneName:         db "WAR¯ZONE@"

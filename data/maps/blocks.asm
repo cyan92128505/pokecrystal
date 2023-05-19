@@ -883,8 +883,8 @@ PokemonFanClub_Blocks:
 SafariZoneWardensHome_Blocks:
 	INCBIN "maps/PokemonFanClub.blk"
 
-FightingDojo_Blocks:
-	INCBIN "maps/FightingDojo.blk"
+;FightingDojo_Blocks:
+;	INCBIN "maps/FightingDojo.blk"
 
 SilphCo1F_Blocks:
 	INCBIN "maps/SilphCo1F.blk"
@@ -1097,3 +1097,9 @@ AncientRuinPast_Blocks:
 
 CeruleanCave_Blocks:
 	INCBIN "maps/CeruleanCave.blk"
+
+WarZone_Blocks:
+	INCBIN "maps/WarZone.blk"
+
+GiovanniGym_Blocks:
+	INCBIN "maps/GiovanniGym.blk"

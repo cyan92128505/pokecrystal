@@ -41,6 +41,7 @@ MapGroupRoofs:
 	db ROOF_GOLDENROD ; 28 (Destiny Tower)
 	db ROOF_GOLDENROD ; 29 (Hall of Origin)
 	db ROOF_VIOLET    ; 30 (Ancient Ruin)
+	db ROOF_VIOLET    ; 31 (WarZone)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:

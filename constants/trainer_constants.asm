@@ -86,7 +86,7 @@ KRIS EQU __trainer_class__
 	const WILL1
 	const MASTER_WILL
 
-	trainerclass CAL ; c
+	trainerclass CAL ; c ; Remove?
 	const CAL1 ; unused
 	const CAL2
 	const CAL3
@@ -213,6 +213,7 @@ KRIS EQU __trainer_class__
 	const DANA4
 	const DANA5
 	const GREEN
+	const EVE
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -275,7 +276,7 @@ KRIS EQU __trainer_class__
 	const CAROLINE ; unused
 	const CARLENE ; unused
 	const JESSICA ; unused
-	const RACHAEL ; unused
+	const RACHAEL ; giovanni gym
 	const ANGELICA ; unused
 	const KENDRA ; unused
 	const VERONICA ; unused
@@ -336,20 +337,21 @@ KRIS EQU __trainer_class__
 	const GRUNTM_29
 	const GRUNTM_30
 	const GRUNTM_31
+	const GIOVANNI
 	const MASTER_GIOVANNI
 
-	trainerclass GENTLEMAN ; 20
+	trainerclass GENTLEMAN ; 20 ; Remove?
 	const PRESTON
 	const EDWARD
 	const GREGORY
 	const VIRGIL ; unused
 	const ALFRED
 
-	trainerclass SKIER ; 21
+	trainerclass SKIER ; 21 ; Remove?
 	const ROXANNE
 	const CLARISSA
 
-	trainerclass TEACHER ; 22
+	trainerclass TEACHER ; 22 ; Remove?
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
@@ -486,7 +488,7 @@ KRIS EQU __trainer_class__
 	const RIVAL2_SILVER_CAVE
 	const MASTER_RIVAL
 
-	trainerclass GUITARIST ; 2b
+	trainerclass GUITARIST ; 2b ; Remove?
 	const CLYDE
 	const VINCENT
 
@@ -530,7 +532,7 @@ KRIS EQU __trainer_class__
 	const BLAINE1
 	const MASTER_BLAINE
 
-	trainerclass BURGLAR ; 2f
+	trainerclass BURGLAR ; 2f ; Remove?
 	const DUNCAN
 	const EDDIE
 	const COREY
@@ -545,7 +547,7 @@ KRIS EQU __trainer_class__
 	const RAY
 	const LYLE
 
-	trainerclass JUGGLER ; 31
+	trainerclass JUGGLER ; 31 ; Remove?
 	const IRWIN1
 	const FRITZ
 	const HORTON
@@ -564,6 +566,7 @@ KRIS EQU __trainer_class__
 	const LUNG
 	const KENJI3
 	const WAI
+	const JONNY
 
 	trainerclass EXECUTIVEM ; 33
 	const EXECUTIVEM_1
@@ -585,6 +588,7 @@ KRIS EQU __trainer_class__
 	const GILBERT
 	const JARED
 	const RODNEY
+	const JAMIE
 
 	trainerclass PICNICKER ; 35
 	const LIZ1
@@ -669,7 +673,7 @@ KRIS EQU __trainer_class__
 	const REBECCA
 	const DORIS
 
-	trainerclass BOARDER ; 3a
+	trainerclass BOARDER ; 3a ; Remove?
 	const RONALD
 	const BRAD
 	const DOUGLAS
@@ -738,7 +742,7 @@ KRIS EQU __trainer_class__
 	const SETO
 	const MASTER_SETO
 
-	trainerclass OFFICER ; 41
+	trainerclass OFFICER ; 41 ; Remove?
 	const KEITH
 	const DIRK
 

@@ -3515,10 +3515,11 @@ MiltankEvosAttacks:
 	db 13, STOMP
 	db 19, MILK_DRINK
 	db 23, HEADBUTT
-	db 28, ZEN_HEADBUTT
-	db 34, ROLLOUT
-	db 43, BODY_SLAM
-	db 53, HEAL_BELL
+	db 26, ROLLOUT
+	db 30, ZEN_HEADBUTT
+	db 35, BODY_SLAM
+	db 40, MILK_DRINK
+	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 
 BlisseyEvosAttacks:

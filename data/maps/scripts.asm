@@ -301,7 +301,6 @@ INCLUDE "maps/Route5CleanseTagHouse.asm"
 
 SECTION "Map Scripts 16", ROMX
 
-INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/WhirlIslandNW.asm"
 INCLUDE "maps/WhirlIslandNE.asm"
 INCLUDE "maps/WhirlIslandSW.asm"
@@ -504,3 +503,5 @@ SECTION "Map Scripts Overflow 2", ROMX
 INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
+INCLUDE "maps/PewterCity.asm"
+INCLUDE "maps/Museum.asm"

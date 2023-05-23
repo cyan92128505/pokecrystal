@@ -4,6 +4,7 @@
 	const PEWTERCITY_GRAMPS
 	const PEWTERCITY_FRUIT_TREE1
 	const PEWTERCITY_FRUIT_TREE2
+	const PEWTERCITY_MUSEUM_GUARD
 
 PewterCity_MapScripts:
 	def_scene_scripts
@@ -20,6 +21,9 @@ PewterCityCooltrainerFScript:
 
 PewterCityBugCatcherScript:
 	jumptextfaceplayer PewterCityBugCatcherText
+
+PewterCityMuseumGuardScript:
+	jumptextfaceplayer MuseumBlockText
 
 PewterCityGrampsScript: ; AndrewNote - here is how to make an npc give an item
 	faceplayer
@@ -164,6 +168,54 @@ PewterGymBlockScript:
     applymovement PLAYER, Movement_PewterGymTurnBack
     end
 
+MuseumBlockScript:
+    checkevent EVENT_BEAT_BLUE
+    iffalse .block
+    end
+.block
+    turnobject PEWTERCITY_MUSEUM_GUARD, LEFT
+    turnobject PLAYER, RIGHT
+	opentext
+	writetext MuseumBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_PewterGymTurnBack
+    turnobject PEWTERCITY_MUSEUM_GUARD, DOWN
+    end
+
+MuseumBlockText:
+    text "This used to be"
+    line "the PEWTER MUSEUM."
+
+    para "Two years ago a"
+    line "Pokerus outbreak"
+    cont "occurred here."
+
+    para "It was believed"
+    line "the space rocks"
+    cont "carried the"
+    cont "virus."
+
+    para "The effects were"
+    line "felt all over."
+
+    para "Many people and"
+    line "#MON died."
+
+    para "The #MON"
+    line "inside are very"
+    cont "contagious."
+
+    para "This place was"
+    line "sealed off by"
+    cont "CHAMPION BLUE."
+
+    para "Only those who"
+    line "have defeated"
+    cont "him are allowed"
+    cont "to enter."
+    done
+
 PewterGymBlockText:
     text "The door is"
     line "locked."
@@ -187,9 +239,11 @@ PewterCity_MapEvents:
 	warp_event 23, 17, PEWTER_MART, 2
 	warp_event 13, 25, PEWTER_POKECENTER_1F, 1
 	warp_event  7, 29, PEWTER_SNOOZE_SPEECH_HOUSE, 1
+	warp_event  13, 7, MUSEUM, 1
 
 	def_coord_events
 	coord_event 16, 18, SCENE_ALWAYS, PewterGymBlockScript
+	coord_event 13,  8, SCENE_ALWAYS, MuseumBlockScript
 
 	def_bg_events
 	bg_event 25, 23, BGEVENT_READ, PewterCitySign
@@ -206,3 +260,5 @@ PewterCity_MapEvents:
 	object_event 29, 17, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
 	object_event 32,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
 	object_event 30,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
+	object_event 14,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityMuseumGuardScript, -1
+

@@ -328,6 +328,7 @@
     const EVENT_BEAT_LASS_EVE
     const EVENT_BEAT_BLACKBELT_JONNY
     const EVENT_BEAT_PSYCHIC_JAMIE
+    const EVENT_CAUGHT_DEOXYS
 
 
 	const_next 600

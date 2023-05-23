@@ -21,7 +21,31 @@ GivePokerusAndConvertBerries:
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
 	ret z
-	; AndrewNote - Pokerus chance here
+
+	; ARCEUS can not get infected
+    ;ld a, [wBattleMonSpecies]
+    ;cp ARCEUS
+    ;ret z
+
+	; AndrewNote - Pokerus has different probability in the Museum
+	; In Museum 30% chance to contract after normal battle, 100% after Deoxys battle
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_MUSEUM
+    jr nz, .notMuseum
+
+    ld a, [wTempWildMonSpecies]
+    cp DEOXYS
+    jr z, .gotPokerus
+
+    call Random
+    cp 25 percent
+    jr c, .gotPokerus
+
+.notMuseum
 	call Random
 	ldh a, [hRandomAdd]
 	and a
@@ -29,6 +53,7 @@ GivePokerusAndConvertBerries:
 	ldh a, [hRandomSub]
 	cp 3
 	ret nc ; 3/65536 chance (00 00, 00 01 or 00 02)
+.gotPokerus
 	ld a, [wPartyCount]
 	ld b, a
 .randomMonSelectLoop

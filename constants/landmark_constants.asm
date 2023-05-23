@@ -103,6 +103,7 @@ KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_FAST_SHIP         ; 5f
 	const LANDMARK_WAR_ZONE
+	const LANDMARK_MUSEUM
 	const LANDMARK_CERULEAN_CAVE
 NUM_LANDMARKS EQU const_value
 

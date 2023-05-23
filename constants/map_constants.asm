@@ -527,4 +527,8 @@ ENDM
 	map_const WAR_ZONE,                                     20, 18 ;  1
 	endgroup
 
+    newgroup MUSEUM
+	map_const MUSEUM,                                     10, 16 ;  1
+	endgroup
+
 NUM_MAP_GROUPS EQU const_value ; 29

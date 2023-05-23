@@ -715,3 +715,4 @@ ENDM
 	map_attributes AncientRuinPast, ANCIENT_RUIN_PAST, $05, 0
 	map_attributes CeruleanCave, CERULEAN_CAVE, $00, 0
 	map_attributes WarZone, WAR_ZONE, $05, 0
+	map_attributes Museum, MUSEUM, $00, 0

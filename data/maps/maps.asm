@@ -47,6 +47,7 @@ MapGroupPointers::
 	dw MapGroup_HallOfOrigin ; 28
 	dw MapGroup_AncientRuin  ; 29
 	dw MapGroup_WarZone      ; 30
+	dw MapGroup_Museum       ; 31
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_Olivine:
@@ -570,3 +571,8 @@ MapGroup_WarZone:
     table_width MAP_LENGTH, MapGroup_WarZone
 	map WarZone, TILESET_JOHTO, ROUTE, LANDMARK_WAR_ZONE, MUSIC_INDIGO_PLATEAU, TRUE, PALETTE_AUTO, FISHGROUP_NONE
     assert_table_length NUM_WAR_ZONE_MAPS
+
+MapGroup_Museum:
+    table_width MAP_LENGTH, MapGroup_Museum
+	map Museum, TILESET_GATE, CAVE, LANDMARK_MUSEUM, MUSIC_RUINS_OF_ALPH_RADIO, TRUE, PALETTE_DARK, FISHGROUP_NONE
+    assert_table_length NUM_MUSEUM_MAPS

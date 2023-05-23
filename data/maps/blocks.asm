@@ -1103,3 +1103,6 @@ WarZone_Blocks:
 
 GiovanniGym_Blocks:
 	INCBIN "maps/GiovanniGym.blk"
+
+Museum_Blocks:
+	INCBIN "maps/Museum.blk"

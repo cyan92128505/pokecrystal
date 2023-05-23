@@ -95,6 +95,8 @@ PlayBattleMusic:
 	jp z, .skip
 	cp LANDMARK_ANCIENT_RUIN
 	jp z, .skip
+	cp LANDMARK_MUSEUM
+	jp z, .skip
 
 .fade
     ; fade out current music

@@ -1503,6 +1503,14 @@ AI_Smart_Moonlight:
     ; fallthrough
 
 .encourage
+; ARCEUS should play defensivly and prioritize healing above scoring KOs
+	ld a, [wEnemyMonSpecies]
+	cp ARCEUS
+	jr nz, .normalEncourage
+rept 5
+	dec [hl]
+endr
+.normalEncourage
 	dec [hl]
 	dec [hl]
 	dec [hl]
@@ -3596,32 +3604,29 @@ AI_Smart_HolyArmour:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; strongly encourage to +2
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .strongEncourage
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .strongEncourage
+; if we are faster than player and above 1/2 HP then use holy armour
+; if we are faster and below 1/2 HP then use if player can not KO us, discourage otherwise
+; if we are slower and player can not KO us then use, discourage otherwise
+	call AICompareSpeed
+	jr c, .playerFaster
+	call AICheckEnemyHalfHP
+	jr nc, .belowHalfHP
+    jr .encourage
+.belowHalfHP
+    call CanPlayerKO
+    jr c, .discourage
+    jr .encourage
 
-; strongly encourage if player has boosted offenses
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .strongEncourage
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .strongEncourage
+.playerFaster
+    call CanPlayerKO
+    jr c, .discourage
+    jr .encourage
 
-; otherwise encourage to +4
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .encourage
-
-.strongEncourage
-    dec [hl]
-    dec [hl]
+; encourage enough to overcome encouragement to score a KO
 .encourage
-	dec [hl]
+rept 9
+    dec [hl]
+endr
 	ret
 .discourage
 	inc [hl]

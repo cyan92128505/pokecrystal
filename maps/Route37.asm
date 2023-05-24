@@ -360,12 +360,12 @@ Route37_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event 10,  0, ECRUTEAK_CITY, 16
+	warp_event 11,  0, ECRUTEAK_CITY, 17
+	warp_event 10, 27, ROUTE_36, 5
+	warp_event 11, 27, ROUTE_36, 6
 
 	def_coord_events
-	coord_event 11, 0, SCENE_ALWAYS, ReloadMapRoute37Script
-	coord_event 12, 0, SCENE_ALWAYS, ReloadMapRoute37Script
-	coord_event 10, 27, SCENE_ALWAYS, ReloadMapRoute37Script
-	coord_event 11, 27, SCENE_ALWAYS, ReloadMapRoute37Script
 
 	def_bg_events
 	bg_event  9,  3, BGEVENT_READ, Route37Sign
@@ -380,7 +380,7 @@ Route37_MapEvents:
 	object_event 20,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1
 	object_event 19,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree3, -1
 	
-    object_event 23, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, Route37FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 23, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, Route37FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 27, 23, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, Route37FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 8,  13, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 18,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, Route37FieldMon4Script, EVENT_FIELD_MON_4

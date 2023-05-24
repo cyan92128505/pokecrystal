@@ -1106,3 +1106,6 @@ GiovanniGym_Blocks:
 
 Museum_Blocks:
 	INCBIN "maps/Museum.blk"
+
+LavenderForest_Blocks:
+	INCBIN "maps/LavenderForest.blk"

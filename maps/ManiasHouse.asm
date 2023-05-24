@@ -9,99 +9,99 @@ ManiasHouse_MapScripts:
 ManiaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	iftrue .default_postevent
-	checkevent EVENT_GOT_SHUCKIE
-	iftrue .alreadyhaveshuckie
+	;checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+	;iftrue .default_postevent
+	;checkevent EVENT_GOT_SHUCKIE
+	;iftrue .alreadyhaveshuckie
 	writetext ManiaText_AskLookAfterShuckle
-	yesorno
-	iffalse .refusetotakeshuckie
-	checkevent EVENT_OPENED_MT_SILVER
-	iffalse .onlythestrongest
-	special GiveShuckle
-	iffalse .partyfull
-	writetext ManiaText_TakeCareOfShuckle
-	promptbutton
-	waitsfx
-	writetext ManiaText_GotShuckle
-	playsound SFX_KEY_ITEM
-	waitsfx
+	;yesorno
+	;iffalse .refusetotakeshuckie
+	;checkevent EVENT_OPENED_MT_SILVER
+	;iffalse .onlythestrongest
+	;special GiveShuckle
+	;iffalse .partyfull
+	;writetext ManiaText_TakeCareOfShuckle
+	;promptbutton
+	;waitsfx
+	;writetext ManiaText_GotShuckle
+	;playsound SFX_KEY_ITEM
+	;waitsfx
 	closetext
-	setevent EVENT_GOT_SHUCKIE
+	;setevent EVENT_GOT_SHUCKIE
 	end
 
-.alreadyhaveshuckie
-	checkflag ENGINE_GOT_SHUCKIE_TODAY
-	iffalse .returnshuckie
-	writetext ManiaText_TakeCareOfShuckle
-	waitbutton
-	closetext
-	end
+;.alreadyhaveshuckie
+;	checkflag ENGINE_GOT_SHUCKIE_TODAY
+;	iffalse .returnshuckie
+;	writetext ManiaText_TakeCareOfShuckle
+;	waitbutton
+;	closetext
+;	end
 
-.partyfull
-	writetext ManiaText_PartyFull
-	waitbutton
-	closetext
-	end
+;.partyfull
+;	writetext ManiaText_PartyFull
+;	waitbutton
+;	closetext
+;	end
 
-.refusetotakeshuckie
-	writetext ManiaText_IfHeComesBack
-	waitbutton
-	closetext
-	end
+;.refusetotakeshuckie
+;	writetext ManiaText_IfHeComesBack
+;	waitbutton
+;	closetext
+;	end
 
-.onlythestrongest
-	writetext ManiaText_OnlyMtSilver
-	waitbutton
-	closetext
-	end
+;.onlythestrongest
+;	writetext ManiaText_OnlyMtSilver
+;	waitbutton
+;	closetext
+;	end
 
-.returnshuckie
-	writetext ManiaText_CanIHaveMyMonBack
-	yesorno
-	iffalse .refused
-	special ReturnShuckie
-	ifequal SHUCKIE_WRONG_MON, .wrong
-	ifequal SHUCKIE_REFUSED, .refused
-	ifequal SHUCKIE_HAPPY, .superhappy
-	ifequal SHUCKIE_FAINTED, .default_postevent
-	; SHUCKIE_RETURNED
-	writetext ManiaText_ThankYou
-	waitbutton
-	closetext
-	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	end
+;.returnshuckie
+;	writetext ManiaText_CanIHaveMyMonBack
+;	yesorno
+;	iffalse .refused
+;	special ReturnShuckie
+;	ifequal SHUCKIE_WRONG_MON, .wrong
+;	ifequal SHUCKIE_REFUSED, .refused
+;	ifequal SHUCKIE_HAPPY, .superhappy
+;	ifequal SHUCKIE_FAINTED, .default_postevent
+;	; SHUCKIE_RETURNED
+;	writetext ManiaText_ThankYou
+;	waitbutton
+;	closetext
+;	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+;	end
 
-.wrong
-	writetext ManiaText_ShuckleNotThere
-	waitbutton
-	closetext
-	end
+;.wrong
+;	writetext ManiaText_ShuckleNotThere
+;	waitbutton
+;	closetext
+;	end
 
-.superhappy
-	writetext ManiaText_ShuckleLikesYou
-	waitbutton
-	closetext
-	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	end
+;.superhappy
+;	writetext ManiaText_ShuckleLikesYou
+;	waitbutton
+;	closetext
+;	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+;	end
 
-.refused
-	writetext ManiaText_SameAsBeingRobbed
-	waitbutton
-	closetext
-	end
+;.refused
+;	writetext ManiaText_SameAsBeingRobbed
+;	waitbutton
+;	closetext
+;	end
 
-.nothingleft ; unreferenced
-	writetext ManiaText_ShuckleIsYourLastMon
-	waitbutton
-	closetext
-	end
+;.nothingleft ; unreferenced
+;	writetext ManiaText_ShuckleIsYourLastMon
+;	waitbutton
+;	closetext
+;	end
 
-.default_postevent
-	writetext ManiaText_HappinessSpeech
-	waitbutton
-	closetext
-	end
+;.default_postevent
+;	writetext ManiaText_HappinessSpeech
+;	waitbutton
+;	closetext
+;	end
 
 ManiasHouseUnusedBookshelf: ; unreferenced
 	jumpstd PictureBookshelfScript

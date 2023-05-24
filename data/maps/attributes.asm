@@ -124,8 +124,8 @@ ENDM
 	connection north, Route39, ROUTE_39, 2
 	connection west, Route40, ROUTE_40, 9
 
-	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, SOUTH | WEST | EAST
-	connection south, Route37, ROUTE_37, 3
+	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, WEST | EAST
+	;connection south, Route37, ROUTE_37, 3
 	connection west, Route38, ROUTE_38, 5
 	connection east, Route42, ROUTE_42, 9
 
@@ -183,14 +183,14 @@ ENDM
 	connection north, Route36, ROUTE_36, 0
 	connection south, GoldenrodCity, GOLDENROD_CITY, -5
 
-	map_attributes Route36, ROUTE_36, $05, NORTH | SOUTH | EAST
-	connection north, Route37, ROUTE_37, 10
+	map_attributes Route36, ROUTE_36, $05, SOUTH | EAST
+	;connection north, Route37, ROUTE_37, 10
 	connection south, Route35, ROUTE_35, 0
 	connection east, VioletCity, VIOLET_CITY, 0
 
-	map_attributes Route37, ROUTE_37, $05, NORTH | SOUTH
-	connection north, EcruteakCity, ECRUTEAK_CITY, -3
-	connection south, Route36, ROUTE_36, -10
+	map_attributes Route37, ROUTE_37, $05, 0
+	;connection north, EcruteakCity, ECRUTEAK_CITY, -3
+	;connection south, Route36, ROUTE_36, -10
 
 	map_attributes Route38, ROUTE_38, $05, WEST | EAST
 	connection west, Route39, ROUTE_39, 0
@@ -716,3 +716,4 @@ ENDM
 	map_attributes CeruleanCave, CERULEAN_CAVE, $00, 0
 	map_attributes WarZone, WAR_ZONE, $05, 0
 	map_attributes Museum, MUSEUM, $00, 0
+	map_attributes LavenderForest, LAVENDER_FOREST, $05, 0

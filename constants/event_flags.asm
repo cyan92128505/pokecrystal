@@ -329,7 +329,8 @@
     const EVENT_BEAT_BLACKBELT_JONNY
     const EVENT_BEAT_PSYCHIC_JAMIE
     const EVENT_CAUGHT_DEOXYS
-
+    const EVENT_CAUGHT_SHAYMIN
+    const EVENT_BEAT_ATHENA
 
 	const_next 600
 ; Kurt Apricorn events

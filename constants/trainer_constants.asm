@@ -672,6 +672,7 @@ KRIS EQU __trainer_class__
 	const ETHEL ; unused
 	const REBECCA
 	const DORIS
+	const ATHENA
 
 	trainerclass BOARDER ; 3a ; Remove?
 	const RONALD

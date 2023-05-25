@@ -89,7 +89,7 @@ MahoganyGymActivateRockets:
 	jumpstd RadioTowerRocketsScript
 
 TrainerSkierRoxanne:
-	trainer SKIER, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script
+	trainer COOLTRAINERF, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -100,7 +100,7 @@ TrainerSkierRoxanne:
 	end
 
 TrainerSkierClarissa:
-	trainer SKIER, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script
+	trainer COOLTRAINERF, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -111,7 +111,7 @@ TrainerSkierClarissa:
 	end
 
 TrainerBoarderRonald:
-	trainer BOARDER, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script
+	trainer COOLTRAINERM, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -122,7 +122,7 @@ TrainerBoarderRonald:
 	end
 
 TrainerBoarderBrad:
-	trainer BOARDER, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script
+	trainer COOLTRAINERM, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -133,7 +133,7 @@ TrainerBoarderBrad:
 	end
 
 TrainerBoarderDouglas:
-	trainer BOARDER, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script
+	trainer COOLTRAINERM, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

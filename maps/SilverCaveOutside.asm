@@ -166,15 +166,42 @@ MtSilverSignText:
 	done
 
 SilverCaveRival:
-	trainer RIVAL2, RIVAL2_SILVER_CAVE, EVENT_BEAT_SILVER_CAVE_RIVAL, SilverCaveRivalSeenText, SilverCaveRivalBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
 	opentext
+	checkevent EVENT_BEAT_SILVER_CAVE_RIVAL
+	iftrue .FightDone
+.fight
+	writetext SilverCaveRivalSeenText
+	waitbutton
+	closetext
+	winlosstext SilverCaveRivalBeatenText, SilverCaveRivalBeatenText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+	;loadtrainer BOARDER, SOLDIER_1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SILVER_CAVE_RIVAL
+	special HealParty
+	end
+.FightDone:
 	writetext SilverCaveRivalAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextSilverCave
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextSilverCave
 	waitbutton
 	closetext
 	end
+
+RematchTextSilverCave:
+    text "Shall we fight?"
+    done
+
+RematchRefuseTextSilverCave:
+    text "Anytime."
+    done
 
 SilverCaveRivalSeenText:
     text "Hello <PLAYER>"
@@ -326,7 +353,7 @@ SilverCaveOutside_MapEvents:
 	bg_event  9, 25, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
 
 	def_object_events
-	object_event 26, 19, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SilverCaveRival, -1
+	object_event 26, 19, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRival, -1
 	object_event 16, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, SilverCaveEusine, -1
 	object_event 27, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 17, 19, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon2Script, EVENT_FIELD_MON_2

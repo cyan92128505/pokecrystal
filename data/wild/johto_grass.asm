@@ -1768,13 +1768,13 @@ JohtoGrassWildMons:
     def_grass_wildmons ORIGIN_ROAD
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 100, DEOXYS
-	db 100, LATIAS
-	db 100, LATIOS
-	db 100, SUICUNE
-	db 100, RAIKOU
-	db 100, ENTEI
-	db 100, REGIGIGAS
+	db 80, DEOXYS
+	db 80, LATIAS
+	db 80, LATIOS
+	db 80, SUICUNE
+	db 80, RAIKOU
+	db 80, ENTEI
+	db 80, REGIGIGAS
 	; day
 	db 80, DEOXYS
 	db 80, LATIAS

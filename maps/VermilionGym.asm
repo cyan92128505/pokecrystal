@@ -72,7 +72,7 @@ TrainerGentlemanGregory:
 	end
 
 TrainerGuitaristVincent:
-	trainer GUITARIST, VINCENT, EVENT_BEAT_GUITARIST_VINCENT, GuitaristVincentSeenText, GuitaristVincentBeatenText, 0, .Script
+	trainer SUPER_NERD, VINCENT, EVENT_BEAT_GUITARIST_VINCENT, GuitaristVincentSeenText, GuitaristVincentBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

@@ -43,7 +43,7 @@ TrainerBeautyCassie:
 	end
 
 TrainerGuitaristClyde:
-	trainer GUITARIST, CLYDE, EVENT_BEAT_GUITARIST_CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, .Script
+	trainer SUPER_NERD, CLYDE, EVENT_BEAT_GUITARIST_CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

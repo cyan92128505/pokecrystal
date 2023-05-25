@@ -15,7 +15,7 @@ SaffronGymGiovanniScript:
 	closetext
 	winlosstext GiovanniLossText, GiovanniWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer GRUNTM, GIOVANNI
+	loadtrainer SKIER, GIOVANNI
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GIOVANNI
@@ -30,7 +30,7 @@ SaffronGymGiovanniScript:
 	closetext
 	winlosstext GiovanniLossText, GiovanniWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer GRUNTM, GIOVANNI
+	loadtrainer SKIER, GIOVANNI
 	startbattle
 	reloadmapafterbattle
 	end

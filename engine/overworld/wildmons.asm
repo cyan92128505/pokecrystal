@@ -500,8 +500,9 @@ InitRoamMons:
 	ld a, ENTEI
 	ld [wRoamMon2Species], a
 
+; AndrewNote - Roam mon level here
 ; level
-	ld a, 40
+	ld a, 60
 	ld [wRoamMon1Level], a
 	ld [wRoamMon2Level], a
 

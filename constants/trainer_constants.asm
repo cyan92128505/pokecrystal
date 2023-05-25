@@ -242,6 +242,9 @@ KRIS EQU __trainer_class__
 	const DARIN
 	const TOBIAS
 	const MASTER_TOBIAS
+	const RONALD
+	const BRAD
+	const DOUGLAS
 
 	trainerclass COOLTRAINERF ; 1c
 	const GWEN
@@ -265,6 +268,8 @@ KRIS EQU __trainer_class__
 	const REENA2
 	const REENA3
 	const CARA
+	const ROXANNE
+	const CLARISSA
 
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
@@ -337,8 +342,6 @@ KRIS EQU __trainer_class__
 	const GRUNTM_29
 	const GRUNTM_30
 	const GRUNTM_31
-	const GIOVANNI
-	const MASTER_GIOVANNI
 
 	trainerclass GENTLEMAN ; 20 ; Remove?
 	const PRESTON
@@ -348,8 +351,8 @@ KRIS EQU __trainer_class__
 	const ALFRED
 
 	trainerclass SKIER ; 21 ; Remove?
-	const ROXANNE
-	const CLARISSA
+	const GIOVANNI
+	const MASTER_GIOVANNI
 
 	trainerclass TEACHER ; 22 ; Remove?
 	const COLETTE
@@ -482,6 +485,8 @@ KRIS EQU __trainer_class__
 	const NORTON ; unused
 	const HUGH
 	const MARKUS
+	const CLYDE
+	const VINCENT
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_MT_MOON
@@ -489,8 +494,8 @@ KRIS EQU __trainer_class__
 	const MASTER_RIVAL
 
 	trainerclass GUITARIST ; 2b ; Remove?
-	const CLYDE
-	const VINCENT
+	const WALLACE
+	const MASTER_WALLACE
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -675,9 +680,8 @@ KRIS EQU __trainer_class__
 	const ATHENA
 
 	trainerclass BOARDER ; 3a ; Remove?
-	const RONALD
-	const BRAD
-	const DOUGLAS
+	const SOLDIER_1
+
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM
@@ -758,7 +762,6 @@ KRIS EQU __trainer_class__
 	const EUSINE
 	const EUSINE_SILVER_CAVE
 	const MASTER_EUSINE
-	const WALLACE
 
     trainerclass INVADER ; 44
     const GIANT_DAD

@@ -12,14 +12,13 @@ MaleTrainers:
 	db SWIMMERM
 	db SAILOR
 	db SUPER_NERD
-	db GUITARIST
 	db HIKER
 	db FIREBREATHER
 	db BLACKBELT_T
 	db PSYCHIC_T
 	db CAMPER
 	db COOLTRAINERM
-	db BOARDER
+	db SOLDIER
 	db JUGGLER
 	db POKEFANM
 	db OFFICER
@@ -32,7 +31,6 @@ FemaleTrainers:
 	db MEDIUM
 	db LASS
 	db BEAUTY
-	db SKIER
 	db TEACHER
 	db SWIMMERF
 	db PICNICKER

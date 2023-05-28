@@ -41,7 +41,7 @@ INCBIN "gfx/trainers/beauty.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokemaniac.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
-INCBIN "gfx/trainers/skier.gbcpal", middle_colors
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
 INCBIN "gfx/trainers/teacher.gbcpal", middle_colors
 INCBIN "gfx/trainers/sabrina.gbcpal", middle_colors
 INCBIN "gfx/trainers/bug_catcher.gbcpal", middle_colors
@@ -51,7 +51,7 @@ INCBIN "gfx/trainers/swimmer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/sailor.gbcpal", middle_colors
 INCBIN "gfx/trainers/super_nerd.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival2.gbcpal", middle_colors
-INCBIN "gfx/trainers/guitarist.gbcpal", middle_colors
+INCBIN "gfx/trainers/wallace.gbcpal", middle_colors
 INCBIN "gfx/trainers/hiker.gbcpal", middle_colors
 INCBIN "gfx/trainers/biker.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
@@ -66,7 +66,7 @@ INCBIN "gfx/trainers/camper.gbcpal", middle_colors
 INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/sage.gbcpal", middle_colors
 INCBIN "gfx/trainers/medium.gbcpal", middle_colors
-INCBIN "gfx/trainers/boarder.gbcpal", middle_colors
+INCBIN "gfx/trainers/soldier.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors
 INCBIN "gfx/trainers/twins.gbcpal", middle_colors

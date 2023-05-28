@@ -350,8 +350,8 @@ KRIS EQU __trainer_class__
 	const VIRGIL ; unused
 	const ALFRED
 
-	trainerclass SKIER ; 21 ; Remove?
-	const GIOVANNI
+	trainerclass GIOVANNI ; 21 ; Remove?
+	const LEADER_GIOVANNI
 	const MASTER_GIOVANNI
 
 	trainerclass TEACHER ; 22 ; Remove?
@@ -493,8 +493,8 @@ KRIS EQU __trainer_class__
 	const RIVAL2_SILVER_CAVE
 	const MASTER_RIVAL
 
-	trainerclass GUITARIST ; 2b ; Remove?
-	const WALLACE
+	trainerclass WALLACE ; 2b ; Remove?
+	const FUHRER_WALLACE
 	const MASTER_WALLACE
 
 	trainerclass HIKER ; 2c
@@ -679,7 +679,7 @@ KRIS EQU __trainer_class__
 	const DORIS
 	const ATHENA
 
-	trainerclass BOARDER ; 3a ; Remove?
+	trainerclass SOLDIER ; 3a ; Remove?
 	const SOLDIER_1
 
 

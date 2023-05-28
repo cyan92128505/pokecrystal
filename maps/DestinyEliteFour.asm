@@ -122,7 +122,7 @@ MasterGiovanniScript:
 	closetext
 	winlosstext DefaultBeatenTextDEF, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer SKIER, MASTER_GIOVANNI
+	loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_GIOVANNI

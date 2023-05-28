@@ -2531,18 +2531,13 @@ AI_Smart_BulkUp:
     call ShouldAIBoost
     jr nc, .discourage
 
-.continue2
-; encourage to +2, strongly encourage if player has boosted Atk
+; encourage to +2
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .check2HKO ;
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .greatly_encourage
-	jr .encourage
+    jr c, .encourage ;
 
-.check2HKO
 ; If the player can 2HKO us then don't boost
+; this is prevent ai from setting up until one hit away before attacking
     call CanPlayer2HKO
     jr c, .discourage
 
@@ -2551,19 +2546,10 @@ AI_Smart_BulkUp:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
-; discourage after +1 if player has boosted special attack
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .discourage
     ret
 
-.approve
-	dec [hl]
-	dec [hl]
-.greatly_encourage
-	dec [hl]
 .encourage
+	dec [hl]
 	dec [hl]
 	ret
 .discourage
@@ -2595,17 +2581,13 @@ AI_Smart_Curse:
     jr nc, .discourage
 
 .continue2
-; encourage to +2, strongly encourage if player has boosted Atk
+; encourage to +2
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .check2HKO ;
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .greatly_encourage
-	jr .encourage
+    jr c, .encourage
 
-.check2HKO
 ; If the player can 2HKO us then don't boost
+; this is prevent ai from setting up until one hit away before attacking
     call CanPlayer2HKO
     jr c, .discourage
 
@@ -2614,20 +2596,10 @@ AI_Smart_Curse:
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
-
-; discourage after +1 if player has boosted special attack
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .discourage
-
     ret
 
-.approve
-	dec [hl]
-	dec [hl]
-.greatly_encourage
-	dec [hl]
 .encourage
+	dec [hl]
 	dec [hl]
 	ret
 .discourage
@@ -2650,7 +2622,7 @@ AI_Smart_Curse:
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
-	jr nz, .approve
+	jr nz, .encourage
 
 	jr .ghost_continue
 
@@ -2662,10 +2634,10 @@ AI_Smart_Curse:
 
 .ghost_continue
 	call AICheckEnemyQuarterHP
-	jp nc, .approve
+	jp nc, .encourage
 
 	call AICheckEnemyHalfHP
-	jr nc, .greatly_encourage
+	jr nc, .encourage
 
 	call AICheckEnemyMaxHP
 	ret nc
@@ -3784,17 +3756,13 @@ AI_Smart_CalmMind:
     call ShouldAIBoost
     jr nc, .discourage
 
-; encourage to +2, strongly encourage if player has boosted SpAtk
+; encourage to +2
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr nc, .check2HKO ;
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .strongEncourage
-	jr .encourage
+    jr c, .encourage ;
 
-.check2HKO
 ; If the player can 2HKO us then don't boost
+; this is prevent ai from setting up until one hit away before attacking
     call CanPlayer2HKO
     jr c, .discourage
 
@@ -3817,11 +3785,9 @@ AI_Smart_CalmMind:
     jr nz, .discourage
     ret
 
-.strongEncourage
-    dec [hl]
 .encourage
     dec [hl]
-	dec [hl]
+    dec [hl]
 	ret
 .discourage
     inc [hl]
@@ -4050,16 +4016,6 @@ AI_Smart_Geomancy:
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr c, .encourage
-
-; If the player can 2HKO us then don't boost
-    call CanPlayer2HKO
-    jr c, .discourage
-
-; discourage after +2 if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
-	bit SUBSTATUS_TOXIC, a
-    jr nz, .discourage
     ret
 
 .encourage

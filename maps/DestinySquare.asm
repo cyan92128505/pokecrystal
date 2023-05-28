@@ -127,7 +127,7 @@ MasterWallaceScript:
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer GUITARIST, MASTER_WALLACE
+	loadtrainer WALLACE, MASTER_WALLACE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_WALLACE

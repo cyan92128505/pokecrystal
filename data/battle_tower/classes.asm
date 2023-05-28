@@ -6,7 +6,7 @@ BattleTowerTrainers:
 	; name, class
 	db "HANSON@@@@", FISHER
 	db "SAWYER@@@@", POKEMANIAC
-	db "MASUDA@@@@", GUITARIST
+	db "MASUDA@@@@", WALLACE
 	db "NICKEL@@@@", SCIENTIST
 	db "OLSON@@@@@", POKEFANM
 	db "ZABOROWSKI", LASS
@@ -15,7 +15,7 @@ BattleTowerTrainers:
 	db "KAWAKAMI@@", TEACHER
 	db "BICKETT@@@", POKEFANM
 	db "SAITO@@@@@", KIMONO_GIRL
-	db "CRAWFORD@@", BOARDER
+	db "CRAWFORD@@", SOLDIER
 	db "DIAZ@@@@@@", PICNICKER
 	db "ERICKSON@@", BIKER
 	db "FAIRFIELD@", JUGGLER
@@ -23,7 +23,7 @@ BattleTowerTrainers:
 	db "HILL@@@@@@", FIREBREATHER
 	db "JAVIER@@@@", SWIMMERF
 	db "KAUFMAN@@@", SWIMMERM
-	db "LANCASTER@", SKIER
+	db "LANCASTER@", GIOVANNI
 	db "McMAHILL@@", CAMPER
 	;assert_table_length BATTLETOWER_NUM_UNIQUE_MON
 ; The following can only be sampled in Crystal 1.1.
@@ -60,14 +60,14 @@ BattleTowerTrainers:
 	db "PARK@@@@@@", COOLTRAINERF
 	db "RAINE@@@@@", SWIMMERM
 	db "SELLS@@@@@", BIRD_KEEPER
-	db "ROCKWELL@@", BOARDER
+	db "ROCKWELL@@", SOLDIER
 	db "THORNTON@@", LASS
 	db "TURNER@@@@", OFFICER
-	db "VAN DYKE@@", SKIER
+	db "VAN DYKE@@", GIOVANNI
 	db "WALKER@@@@", SCHOOLBOY
 	db "MEYER@@@@@", SWIMMERF
 	db "JOHNSON@@@", YOUNGSTER
-	db "ADAMS@@@@@", GUITARIST
+	db "ADAMS@@@@@", WALLACE
 	db "SMITH@@@@@", BUG_CATCHER
 	db "TAJIRI@@@@", BUG_CATCHER
 	db "BAKER@@@@@", POKEMANIAC

@@ -35,7 +35,7 @@ TrainerPicPointers::
 	dba_pic PokemaniacPic
 	dba_pic GruntmPic
 	dba_pic GentlemanPic
-	dba_pic SkierPic
+	dba_pic GiovanniPic
 	dba_pic TeacherPic
 	dba_pic SabrinaPic
 	dba_pic BugCatcherPic
@@ -45,7 +45,7 @@ TrainerPicPointers::
 	dba_pic SailorPic
 	dba_pic SuperNerdPic
 	dba_pic Rival2Pic
-	dba_pic GuitaristPic
+	dba_pic WallacePic
 	dba_pic HikerPic
 	dba_pic BikerPic
 	dba_pic BlainePic
@@ -60,7 +60,7 @@ TrainerPicPointers::
 	dba_pic ExecutivefPic
 	dba_pic SagePic
 	dba_pic MediumPic
-	dba_pic BoarderPic
+	dba_pic SoldierPic
 	dba_pic PokefanmPic
 	dba_pic KimonoGirlPic
 	dba_pic TwinsPic

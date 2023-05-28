@@ -35,7 +35,7 @@ TrainerGroups:
 	dba PokemaniacGroup
 	dba GruntMGroup
 	dba GentlemanGroup
-	dba SkierGroup
+	dba GiovanniGroup
 	dba TeacherGroup
 	dba SabrinaGroup
 	dba BugCatcherGroup
@@ -45,7 +45,7 @@ TrainerGroups:
 	dba SailorGroup
 	dba SuperNerdGroup
 	dba Rival2Group
-	dba GuitaristGroup
+	dba WallaceGroup
 	dba HikerGroup
 	dba BikerGroup
 	dba BlaineGroup
@@ -60,7 +60,7 @@ TrainerGroups:
 	dba ExecutiveFGroup
 	dba SageGroup
 	dba MediumGroup
-	dba BoarderGroup
+	dba SoldierGroup
 	dba PokefanMGroup
 	dba KimonoGirlGroup
 	dba TwinsGroup

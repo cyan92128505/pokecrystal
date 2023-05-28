@@ -208,7 +208,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Skier
+; Giovanni
 	db NO_ITEM, NO_ITEM ; items
 	db 18 ; base reward
 	;dw AI_BASIC | AI_SETUP | AI_TYPES | AI_STATUS | AI_RISKY
@@ -276,7 +276,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Guitarist
+; Wallace
 	db NO_ITEM, NO_ITEM ; items
 	db 8 ; base reward
 	;dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS
@@ -381,7 +381,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Boarder
+; Soldier
 	db NO_ITEM, NO_ITEM ; items
 	db 18 ; base reward
 	;dw AI_BASIC | AI_TYPES | AI_FINAL_ATTACK | AI_STATUS

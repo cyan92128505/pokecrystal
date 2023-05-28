@@ -87,7 +87,7 @@ LizGossip:
 	sjump LizGossipScript
 
 .Skier:
-	gettrainerclassname STRING_BUFFER_4, SKIER
+	gettrainerclassname STRING_BUFFER_4, GIOVANNI
 	sjump LizGossipScript
 
 .Medium:

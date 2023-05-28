@@ -176,7 +176,7 @@ SilverCaveRival:
 	winlosstext SilverCaveRivalBeatenText, SilverCaveRivalBeatenText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
-	;loadtrainer BOARDER, SOLDIER_1
+	;loadtrainer SOLDIER, SOLDIER_1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SILVER_CAVE_RIVAL

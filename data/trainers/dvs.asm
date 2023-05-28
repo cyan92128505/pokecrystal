@@ -34,7 +34,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; POKEMANIAC
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
-	dn  9,  8,  8,  8 ; SKIER
+	dn 15, 15, 15, 15 ; GIOVANNI
 	dn  6,  8,  8,  8 ; TEACHER
 	dn  7, 15, 15, 15 ; SABRINA
 	dn  9,  8,  8,  8 ; BUG_CATCHER
@@ -44,7 +44,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; SAILOR
 	dn  9,  8,  8,  8 ; SUPER_NERD
 	dn 15, 15, 15, 15 ; RIVAL2
-	dn  9,  8,  8,  8 ; GUITARIST
+	dn 15, 15, 15, 15 ; WALLACE
 	dn 12,  12,  12,  12 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
 	dn 15, 15, 15, 15 ; BLAINE
@@ -59,7 +59,7 @@ TrainerClassDVs:
 	dn  7, 15, 15, 15 ; EXECUTIVEF
 	dn  11, 11, 11, 11 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
-	dn  9,  8,  8,  8 ; BOARDER
+	dn  12, 12, 12, 12 ; SOLDIER
 	dn  10, 10, 10, 10 ; POKEFANM
 	dn  6,  15, 15, 15 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS

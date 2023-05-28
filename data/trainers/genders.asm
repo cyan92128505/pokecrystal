@@ -35,7 +35,7 @@ BTTrainerClassGenders:
 	db MALE   ; POKEMANIAC
 	db MALE   ; GRUNTM
 	db MALE   ; GENTLEMAN
-	db FEMALE ; SKIER
+	db FEMALE ; GIOVANNI
 	db FEMALE ; TEACHER
 	db FEMALE ; SABRINA
 	db MALE   ; BUG_CATCHER
@@ -45,7 +45,7 @@ BTTrainerClassGenders:
 	db MALE   ; SAILOR
 	db MALE   ; SUPER_NERD
 	db MALE   ; RIVAL2
-	db MALE   ; GUITARIST
+	db MALE   ; WALLACE
 	db MALE   ; HIKER
 	db MALE   ; BIKER
 	db MALE   ; BLAINE
@@ -60,7 +60,7 @@ BTTrainerClassGenders:
 	db FEMALE ; EXECUTIVEF
 	db MALE   ; SAGE
 	db FEMALE ; MEDIUM
-	db MALE   ; BOARDER
+	db MALE   ; SOLDIER
 	db MALE   ; POKEFANM
 	db FEMALE ; KIMONO_GIRL
 	db FEMALE ; TWINS

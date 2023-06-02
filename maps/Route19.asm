@@ -5,7 +5,6 @@
 	const ROUTE19_SWIMMER_GUY3
 	const ROUTE19_FISHER1
 	const ROUTE19_FISHER2
-	const ROUTE19_HOENRULER
 	const ROUTE19_FIELDMON_1
     const ROUTE19_FIELDMON_2
     const ROUTE19_FIELDMON_3
@@ -16,7 +15,7 @@ Route19_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .ClearRocks
-	callback MAPCALLBACK_OBJECTS, .HoenRuler
+	callback MAPCALLBACK_OBJECTS, .FieldMon
 
 .ClearRocks:
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
@@ -30,20 +29,11 @@ Route19_MapScripts:
 .Done:
 	endcallback
 
-.HoenRuler
+.FieldMon
     appear ROUTE19_FIELDMON_1
     appear ROUTE19_FIELDMON_2
     appear ROUTE19_FIELDMON_3
     appear ROUTE19_FIELDMON_4
-
-    checkflag ENGINE_VOLCANOBADGE
-    iftrue .Appear
-	sjump .NoAppear
-.Appear:
-	appear ROUTE19_HOENRULER
-	endcallback
-.NoAppear:
-	disappear ROUTE19_HOENRULER
 	endcallback
 
 Route19FieldMon1Script:
@@ -293,30 +283,6 @@ CarefulSwimmingSignText:
 	para "FUCHSIA POLICE"
 	done
 
-HoenRulerScript:
-	trainer GRUNTM, GRUNTM_30, EVENT_BEAT_HOEN_ARMY, HoenRulerSeenText, HoenRulerBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext HoenRulerAfterBattleText
-	waitbutton
-	closetext
-	end
-
-HoenRulerSeenText:
-    text "Kanto shall die."
-    done
-
-HoenRulerBeatenText:
-    text "Impossible!"
-    done
-
-HoenRulerAfterBattleText:
-    text "We will never"
-    line "surrender!"
-    done
-
 Route19_MapEvents:
 	db 0, 0 ; filler
 
@@ -336,7 +302,6 @@ Route19_MapEvents:
 	object_event  8, 23, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
 	object_event  9,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
 	object_event 11,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1
-	object_event  4, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, HoenRulerScript, -1
 	object_event  5, 20, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route19FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 14, 22, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route19FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  6, 29, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route19FieldMon3Script, EVENT_FIELD_MON_3

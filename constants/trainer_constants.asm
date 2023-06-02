@@ -32,6 +32,7 @@ KRIS EQU __trainer_class__
 	const FALKNER1
 	const MASTER_FALKNER
 	const STEVEN
+	const MASTER_STEVEN
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
@@ -53,6 +54,7 @@ KRIS EQU __trainer_class__
 	const JASMINE1
 	const MASTER_JASMINE
 	const CYNTHIA
+	const MASTER_CYNTHIA
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -559,6 +561,7 @@ KRIS EQU __trainer_class__
 	const IRWIN2 ; unused
 	const IRWIN3 ; unused
 	const IRWIN4 ; unused
+	const LEON
 	const MASTER_LEON
 
 	trainerclass BLACKBELT_T ; 32
@@ -679,9 +682,12 @@ KRIS EQU __trainer_class__
 	const DORIS
 	const ATHENA
 
-	trainerclass SOLDIER ; 3a ; Remove?
+	trainerclass SOLDIER ; 3a
 	const SOLDIER_1
-
+	const SOLDIER_2
+	const SOLDIER_3
+	const SOLDIER_4
+	const SOLDIER_5
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM

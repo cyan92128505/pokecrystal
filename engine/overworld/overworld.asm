@@ -103,6 +103,8 @@ AddMapSprites:
     jr z, .indoor
     cp LANDMARK_DESTINY_TOWER
     jr z, .indoor
+    cp LANDMARK_WAR_ZONE
+    jr z, .indoor
 
 	call GetMapEnvironment
 	call CheckOutdoorMap

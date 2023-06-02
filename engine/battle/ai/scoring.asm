@@ -4363,14 +4363,14 @@ ShouldAIBoost:
 	call CanAI3HKO
 	jr c, .dontBoost
     call Random
-    cp 50 percent
+    cp 50 percent + 1
     jr c, .dontBoost
 	jr .boost
 .check2HKO
 	call CanAI2HKOMaxHP
 	jr c, .dontBoost
     call Random
-    cp 50 percent
+    cp 50 percent + 1
     jr c, .dontBoost
 
 .boost

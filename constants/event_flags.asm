@@ -331,6 +331,15 @@
     const EVENT_CAUGHT_DEOXYS
     const EVENT_CAUGHT_SHAYMIN
     const EVENT_BEAT_ATHENA
+    const EVENT_BEAT_WALLACE
+    const EVENT_BEAT_SOLDIER_1
+    const EVENT_BEAT_SOLDIER_2
+    const EVENT_BEAT_SOLDIER_3
+    const EVENT_BEAT_SOLDIER_4
+    const EVENT_BEAT_SOLDIER_5
+    const EVENT_BEAT_STEVEN
+    const EVENT_BEAT_LEON
+    const EVENT_BEAT_CYNTHIA
 
 	const_next 600
 ; Kurt Apricorn events

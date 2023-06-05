@@ -6,20 +6,46 @@ ViridianGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Blue
+
+.Blue
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iftrue .gone
+    checkevent EVENT_VIRIDIAN_GYM_BLUE
+    iftrue .gone
+    appear VIRIDIANGYM_BLUE
+    appear VIRIDIANGYM_GYM_GUIDE
+    sjump .end
+.gone
+    disappear VIRIDIANGYM_BLUE
+.end
+    endcallback
 
 ViridianGymBlueScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_EARTHBADGE
-	iftrue .FightDone
+;	iftrue .FightDone
 	checkevent EVENT_BEAT_HOEN_ARMY
-	iftrue .battle
+;	iftrue .battle
 	writetext FalseIntroText
 	special FadeOutMusic
+	showemote EMOTE_SHOCK, VIRIDIANGYM_BLUE, 15
+	writetext HangOnText
+	waitbutton
+	turnobject VIRIDIANGYM_BLUE, UP
+	pause 120
+	turnobject VIRIDIANGYM_BLUE, DOWN
+	playmusic MUSIC_INDIGO_PLATEAU
 	writetext WarHasBegunText
 	waitbutton
     closetext
+    applymovement VIRIDIANGYM_BLUE, Movement_BlueLeaves
+    disappear VIRIDIANGYM_BLUE
+
 	setevent EVENT_HOEN_INVASION_UNDERWAY
+	setval 1
+    writemem wHoenInvasionUnderway
 	end
 .battle
 	writetext LeaderBlueBeforeText
@@ -50,7 +76,6 @@ ViridianGymBlueScript:
 	startbattle
 	reloadmapafterbattle
 	end
-
 .FightDone:
 	writetext LeaderBlueEpilogueText
 	waitbutton
@@ -63,6 +88,18 @@ ViridianGymBlueScript:
 	waitbutton
 	closetext
 	end
+
+Movement_BlueLeaves:
+    step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+HangOnText:
+    text "Hang on there."
+    done
 
 ViridianGymGuideScript:
 	faceplayer
@@ -102,12 +139,8 @@ FalseIntroText:
     prompt
 
 WarHasBegunText:
-    text "Hang on...."
-
-    para "....."
-
-    para "My uncle just"
-    line "messaged me..."
+    text "My uncle just"
+    line "called me..."
 
     para "War has begun..."
 
@@ -115,43 +148,39 @@ WarHasBegunText:
     line "forces have"
     cont "established a"
     cont "bridgehead at"
-    cont "FUCSIA and more"
+    cont "VERMILION and more"
     cont "will land at"
-    cont "VERMILION soon."
+    cont "FUCHSIA soon."
 
     para "You are one of"
     line "the strongest"
     cont "trainers in KANTO."
 
     para "You must go to"
-    line "FUCHIA."
+    line "VERMILION."
 
-    para "That's where their"
-    line "leader will land."
+    para "I must contact"
+    line "the league and"
+    cont "convince them that"
+    cont "CHAMPIONS must be"
+    cont "allowed to take"
+    cont "action under these"
+    cont "circumstances."
 
-    para "We may not stand"
-    line "a chance against"
-    cont "the HOEN Legendary"
-    cont "#MON."
+    para "We will need their"
+    line "help."
 
-    para "But we must try."
+    para "Unless RED decides"
+    line "to show."
 
-    para "Don't worry."
+    para "But we can't count"
+    line "on that."
 
-    para "Even if we fail."
-
-    para "Even if LANCE"
-    line "fails."
-
-    para "RED will end"
-    line "them all."
-
-    para "Go now."
+    para "Head now to"
+    line "VERMILION."
 
     para "Good luck."
     done
-
-
 
 LeaderBlueBeforeText:
 	text "BLUE: Yo! Finally"
@@ -282,5 +311,5 @@ ViridianGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_FIELD_MON_1
+	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_FIELD_MON_2

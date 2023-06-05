@@ -422,7 +422,6 @@ INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 SECTION "Map Scripts 22", ROMX
 
 INCLUDE "maps/EcruteakCity.asm"
-INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/Route26.asm"
 INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route31.asm"
@@ -442,7 +441,6 @@ INCLUDE "maps/Route42.asm"
 INCLUDE "maps/Route46.asm"
 INCLUDE "maps/ViridianCity.asm"
 INCLUDE "maps/CeladonCity.asm"
-INCLUDE "maps/VermilionCity.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 ;INCLUDE "maps/CinnabarPokecenter2FBeta.asm"
@@ -500,9 +498,11 @@ INCLUDE "maps/AncientRuinPast.asm"
 
 SECTION "Map Scripts Overflow 2", ROMX
 
+INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
 INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/Museum.asm"
 INCLUDE "maps/LavenderForest.asm"
+INCLUDE "maps/VermilionCity.asm"

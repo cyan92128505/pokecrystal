@@ -640,6 +640,182 @@ GotRedEyeOrbText:
     para "Heh heh heh heh."
     done
 
+JuliusScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_JULIUS
+	iftrue .FightDone
+.fight
+	writetext JuliusSeenText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_JULIUS
+	iftrue .dontAsk
+	opentext
+	writetext JuliusOfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.dontAsk
+	winlosstext JuliusBeatenText, JuliusWinsText
+	loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_JULIUS
+	end
+.FightDone:
+	writetext JuliusAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextJulius
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextJulius
+	waitbutton
+	closetext
+	end
+JuliusSeenText:
+    text "These peasants are"
+    line "easily brushed"
+    cont "aside as expected."
+
+    para "My papa is a"
+    line "wealthy business"
+    cont "man in SAFFRON."
+
+    para "We can afford"
+    line "all the best items"
+    cont "and #MON."
+
+    para "Training is for"
+    line "the poor."
+    done
+JuliusBeatenText:
+    text "Papa I need"
+    line "more money!"
+    done
+JuliusWinsText:
+    text "As expected."
+    done
+JuliusOfferFightText:
+    text "You are another"
+    line "jealous peasant."
+
+    para "Would you like to"
+    line "see the difference"
+    cont "between our social"
+    cont "classes?"
+    done
+JuliusAfterBattleText:
+    text "I misjudged you."
+
+    para "Relish this meager"
+    line "victory while you"
+    cont "may."
+
+    para "Once I inherit my"
+    line "fathers fortune I"
+    cont "will simply buy"
+    cont "an ELITE FOUR"
+    cont "level team from"
+    cont "TEAM ROCKET."
+    done
+RematchTextJulius:
+    text "Might you be"
+    line "partial to"
+    cont "another bout?"
+    done
+RematchRefuseTextJulius:
+    text "Very well."
+    done
+
+Peasant1Script:
+    checkevent EVENT_BEAT_JULIUS
+    iftrue .beaten
+    jumptextfaceplayer PeasantHelp1
+.beaten
+    jumptextfaceplayer PeasantHappy1
+PeasantHelp1:
+    text "This snobby kid"
+    line "has beaten us"
+    cont "easily."
+
+    para "I just can't"
+    line "stand him."
+
+    para "I wish someone"
+    line "was strong enough"
+    cont "to beat him."
+    done
+PeasantHappy1:
+    text "You did it!"
+
+    para "Oh it felt so"
+    line "good seeing the"
+    cont "look on his face"
+    cont "when you beat him."
+
+    para "You are really"
+    line "strong."
+
+    para "...and cute too."
+    done
+
+Peasant2Script:
+    checkevent EVENT_BEAT_JULIUS
+    iftrue .beaten
+    jumptextfaceplayer PeasantHelp2
+.beaten
+    faceplayer
+    opentext
+    writetext PeasantHappy2
+    waitbutton
+    checkevent EVENT_GOT_JULIUS_NUGGET
+    iftrue .end
+    writetext TakeNuggetText
+    waitbutton
+    verbosegiveitem NUGGET
+    setevent EVENT_GOT_JULIUS_NUGGET
+.end
+    closetext
+    end
+PeasantHelp2:
+    text "This rich kid has"
+    line "beaten us silly"
+    cont "and bragged about"
+    cont "it all day."
+
+    para "I'd give a special"
+    line "gift to anyone who"
+    cont "shuts him up!"
+    done
+PeasantHappy2:
+    text "You are the best!"
+
+    para "I hope that kid"
+    line "learns not to"
+    cont "judge others not"
+    cont "as fortunate as"
+    cont "him."
+
+    para "But I know he"
+    line "wont."
+    done
+TakeNuggetText:
+    text "Here you can have"
+    line "this."
+
+    para "I found it in"
+    line "that kids backpack"
+    cont "when he wasn't"
+    cont "looking."
+
+    para "Heh heh."
+    done
+
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -667,3 +843,8 @@ CherrygroveCity_MapEvents:
 	object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
 	object_event  5, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MysticWaterGuy, -1
 	object_event 7,  21, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EvilOldManScript, -1
+	object_event 32, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, JuliusScript, -1
+	object_event 33, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant1Script, -1
+	object_event 30, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant2Script, -1
+
+

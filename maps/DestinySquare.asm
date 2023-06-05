@@ -59,7 +59,7 @@ MasterCynthiaScript:
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer JASMINE, CYNTHIA
+	loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CYNTHIA
@@ -93,7 +93,7 @@ MasterStevenScript:
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer FALKNER, MASTER_STEVEN
+	loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_STEVEN
@@ -229,7 +229,7 @@ MasterLeonScript:
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer JUGGLER, MASTER_LEON
+	loadtrainer LEON, MASTER_LEON
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_LEON

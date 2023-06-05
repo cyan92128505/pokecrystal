@@ -35,7 +35,7 @@ TrainerClassDVs:
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn 15, 15, 15, 15 ; GIOVANNI
-	dn  6,  8,  8,  8 ; TEACHER
+	dn 10, 15, 15, 15 ; CYNTHIA
 	dn  7, 15, 15, 15 ; SABRINA
 	dn  9,  8,  8,  8 ; BUG_CATCHER
 	dn  9,  8,  8,  8 ; FISHER
@@ -48,9 +48,9 @@ TrainerClassDVs:
 	dn 12,  12,  12,  12 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
 	dn 15, 15, 15, 15 ; BLAINE
-	dn  9,  8,  8,  8 ; BURGLAR
+	dn 15, 15, 15, 15 ; STEVEN
 	dn  9,  8,  8,  8 ; FIREBREATHER
-	dn  15, 15, 15, 15 ; JUGGLER
+	dn  15, 15, 15, 15 ; LEON
 	dn  9,  8,  8,  8 ; BLACKBELT_T
 	dn 15, 15, 15, 15 ; EXECUTIVEM
 	dn  9,  8,  8,  8 ; PSYCHIC_T

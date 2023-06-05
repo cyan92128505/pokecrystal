@@ -15,6 +15,16 @@ MountMoon_MapScripts:
 ; Pokemon which always appear
     appear MOUNTMOON_FIELDMON_1
     appear MOUNTMOON_FIELDMON_2
+    appear MOUNTMOON_SILVER
+
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .noRival
+    checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
+    iftrue .noRival
+    sjump .end
+.noRival
+    disappear MOUNTMOON_SILVER
+.end
     endcallback
 
 .RivalEncounter:
@@ -25,6 +35,11 @@ MountMoon_MapScripts:
 	end
 
 .RivalBattle:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .endRival
+    checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
+    iftrue .endRival
+
 	turnobject PLAYER, RIGHT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
@@ -51,6 +66,7 @@ MountMoon_MapScripts:
 	setscene SCENE_FINISHED
 	setevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	playmapmusic
+.endRival
 	end
 
 MountMoonSilverMovementBefore:
@@ -183,6 +199,6 @@ MountMoon_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  7,  3, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
+	object_event  7,  3, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3
 	object_event 11,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MountMoonFieldMon3Script, EVENT_FIELD_MON_1
 	object_event 13, 11, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MountMoonFieldMon4Script, EVENT_FIELD_MON_2

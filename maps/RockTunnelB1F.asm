@@ -49,6 +49,8 @@ DarkraiScript:
 	cry DARKRAI
 	pause 15
 	closetext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
@@ -57,6 +59,10 @@ DarkraiScript:
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon DARKRAI, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DARKRAI, 50
 .begin
 	startbattle
 	disappear ROCKTUNNELB1F_DARKRAI

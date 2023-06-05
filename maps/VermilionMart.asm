@@ -15,9 +15,17 @@ VermilionMartClerkScript:
 	end
 
 VermilionMartSuperNerdScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer InvadedVermilionMartSuperNerdText
+.normal
 	jumptextfaceplayer VermilionMartSuperNerdText
 
 VermilionMartBeautyScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer InvadedVermilionMartBeautyText
+.normal
 	jumptextfaceplayer VermilionMartBeautyText
 
 VermilionMartSuperNerdText:
@@ -28,10 +36,30 @@ VermilionMartSuperNerdText:
 	line "me happy."
 	done
 
+InvadedVermilionMartSuperNerdText:
+	text "Of course an"
+	line "ELECTRIC GYM on"
+	cont "the coast would"
+	cont "be a priority"
+	cont "target!"
+
+	para "Maybe I should"
+	line "run for it!"
+	done
+
 VermilionMartBeautyText:
 	text "I'm thinking about"
 	line "going shopping in"
 	cont "SAFFRON."
+	done
+
+InvadedVermilionMartBeautyText:
+	text "Their captain has"
+	line "#MON especially"
+	cont "for fighting"
+	cont "ELECTRIC types."
+
+	para "We are done for!"
 	done
 
 VermilionMart_MapEvents:

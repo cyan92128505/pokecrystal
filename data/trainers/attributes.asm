@@ -215,7 +215,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Teacher
+; Cynthia
 	db NO_ITEM, NO_ITEM ; items
 	db 18 ; base reward
 	;dw AI_BASIC | AI_FINAL_ATTACK | AI_AGGRESSIVE | AI_STATUS
@@ -303,7 +303,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Burglar
+; Steven
 	db NO_ITEM, NO_ITEM ; items
 	db 22 ; base reward
 	;dw AI_BASIC | AI_OFFENSIVE | AI_CAUTIOUS | AI_STATUS
@@ -317,7 +317,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Juggler
+; Leon
 	db NO_ITEM, NO_ITEM ; items
 	db 10 ; base reward
 	;dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS

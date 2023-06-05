@@ -37,7 +37,7 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntm
 	db MUSIC_HIKER_ENCOUNTER       ; gentleman
 	db MUSIC_OFFICER_ENCOUNTER     ; giovanni
-	db MUSIC_BEAUTY_ENCOUNTER      ; teacher
+	db MUSIC_BEAUTY_ENCOUNTER      ; cynthia
 	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bug_catcher
 	db MUSIC_HIKER_ENCOUNTER       ; fisher
@@ -50,9 +50,9 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; hiker
 	db MUSIC_HIKER_ENCOUNTER       ; biker
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; burglar
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; steven
 	db MUSIC_HIKER_ENCOUNTER       ; firebreather
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; juggler
+	db MUSIC_OFFICER_ENCOUNTER     ; leon
 	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
 	db MUSIC_ROCKET_ENCOUNTER      ; executivem
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t

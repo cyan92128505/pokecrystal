@@ -52,7 +52,7 @@ TrainerBirdKeeperBryan:
 	end
 
 TrainerJugglerIrwin:
-	trainer JUGGLER, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
+	trainer POKEMANIAC, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
@@ -74,7 +74,7 @@ TrainerJugglerIrwin:
 	askforphonenumber PHONE_JUGGLER_IRWIN
 	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
-	gettrainername STRING_BUFFER_3, JUGGLER, IRWIN1
+	gettrainername STRING_BUFFER_3, POKEMANIAC, IRWIN1
 	scall Route35RegisteredNumberM
 	sjump Route35NumberAcceptedM
 

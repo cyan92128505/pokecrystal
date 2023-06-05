@@ -36,7 +36,7 @@ TrainerPicPointers::
 	dba_pic GruntmPic
 	dba_pic GentlemanPic
 	dba_pic GiovanniPic
-	dba_pic TeacherPic
+	dba_pic CynthiaPic
 	dba_pic SabrinaPic
 	dba_pic BugCatcherPic
 	dba_pic FisherPic
@@ -49,7 +49,7 @@ TrainerPicPointers::
 	dba_pic HikerPic
 	dba_pic BikerPic
 	dba_pic BlainePic
-	dba_pic BurglarPic
+	dba_pic StevenPic
 	dba_pic FirebreatherPic
 	dba_pic JugglerPic
 	dba_pic BlackbeltTPic

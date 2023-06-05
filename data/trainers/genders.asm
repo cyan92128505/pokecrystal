@@ -36,7 +36,7 @@ BTTrainerClassGenders:
 	db MALE   ; GRUNTM
 	db MALE   ; GENTLEMAN
 	db FEMALE ; GIOVANNI
-	db FEMALE ; TEACHER
+	db FEMALE ; CYNTHIA
 	db FEMALE ; SABRINA
 	db MALE   ; BUG_CATCHER
 	db MALE   ; FISHER
@@ -49,9 +49,9 @@ BTTrainerClassGenders:
 	db MALE   ; HIKER
 	db MALE   ; BIKER
 	db MALE   ; BLAINE
-	db MALE   ; BURGLAR
+	db MALE   ; STEVEN
 	db MALE   ; FIREBREATHER
-	db MALE   ; JUGGLER
+	db MALE   ; LEON
 	db MALE   ; BLACKBELT_T
 	db MALE   ; EXECUTIVEM
 	db MALE   ; PSYCHIC_T

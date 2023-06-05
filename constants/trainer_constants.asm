@@ -31,8 +31,6 @@ KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 	const MASTER_FALKNER
-	const STEVEN
-	const MASTER_STEVEN
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
@@ -53,8 +51,6 @@ KRIS EQU __trainer_class__
 	trainerclass JASMINE ; 6
 	const JASMINE1
 	const MASTER_JASMINE
-	const CYNTHIA
-	const MASTER_CYNTHIA
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
@@ -148,6 +144,7 @@ KRIS EQU __trainer_class__
 	const JOEY4
 	const JOEY5
 	const MASTER_JOEY
+	const JULIUS
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -292,6 +289,9 @@ KRIS EQU __trainer_class__
 	const VALERIE
 	const OLIVIA
 	const MASTER_DIANTHA
+	const COLETTE
+	const HILLARY
+	const SHIRLEY
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
@@ -311,6 +311,9 @@ KRIS EQU __trainer_class__
 	const MILLER
 	const AIZEN
 	const MASTER_AIZEN
+	const IRWIN1
+	const FRITZ
+	const HORTON
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1
@@ -356,10 +359,9 @@ KRIS EQU __trainer_class__
 	const LEADER_GIOVANNI
 	const MASTER_GIOVANNI
 
-	trainerclass TEACHER ; 22 ; Remove?
-	const COLETTE
-	const HILLARY
-	const SHIRLEY
+	trainerclass CYNTHIA ; 22
+	const CHAMP_CYNTHIA
+	const MASTER_CYNTHIA
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -539,10 +541,9 @@ KRIS EQU __trainer_class__
 	const BLAINE1
 	const MASTER_BLAINE
 
-	trainerclass BURGLAR ; 2f ; Remove?
-	const DUNCAN
-	const EDDIE
-	const COREY
+	trainerclass STEVEN ; 2f ; Remove?
+	const CHAMP_STEVEN
+	const MASTER_STEVEN
 
 	trainerclass FIREBREATHER ; 30
 	const OTIS
@@ -553,15 +554,12 @@ KRIS EQU __trainer_class__
 	const WALT
 	const RAY
 	const LYLE
+	const DUNCAN
+	const EDDIE
+	const COREY
 
-	trainerclass JUGGLER ; 31 ; Remove?
-	const IRWIN1
-	const FRITZ
-	const HORTON
-	const IRWIN2 ; unused
-	const IRWIN3 ; unused
-	const IRWIN4 ; unused
-	const LEON
+	trainerclass LEON ; 31 ; Remove?
+	const CHAMP_LEON
 	const MASTER_LEON
 
 	trainerclass BLACKBELT_T ; 32
@@ -688,6 +686,10 @@ KRIS EQU __trainer_class__
 	const SOLDIER_3
 	const SOLDIER_4
 	const SOLDIER_5
+	const SOLDIER_6
+	const SOLDIER_7
+	const SOLDIER_8
+	const SOLDIER_9
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM
@@ -717,7 +719,8 @@ KRIS EQU __trainer_class__
 	const YUNA_1
 	const YUNA_2
 	const MASTER_YUNA
-	const AERITH
+	const AERITH_1
+	const AERITH_2
 	const MASTER_AERITH
 
 	trainerclass TWINS ; 3d

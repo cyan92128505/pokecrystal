@@ -3,6 +3,7 @@
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_OLIVINE_RIVAL
+	const OLIVINECITY_OLIVINE_YUNA
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -23,6 +24,8 @@ OlivineCity_MapScripts:
 	endcallback
 
 OlivineCityRivalSceneTop:
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .end
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
@@ -44,9 +47,12 @@ OlivineCityRivalSceneTop:
 	special RestartMapMusic
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
 	special LoadUsedSpritesGFX
+.end
 	end
 
 OlivineCityRivalSceneBottom:
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .end
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
@@ -68,6 +74,7 @@ OlivineCityRivalSceneBottom:
 	special RestartMapMusic
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
 	special LoadUsedSpritesGFX
+.end
 	end
 
 OlivineCitySailor1Script:
@@ -285,6 +292,100 @@ OlivineCityBattleTowerSignText_NotYetOpen: ; unreferenced
 ; originally shown when the Battle Tower was closed
 	text "BATTLE TOWER AHEAD"
 	done
+	
+YunaScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_YUNA_1
+	iftrue .FightDone
+.fight
+	writetext YunaSeenText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_YUNA_1
+	iftrue .dontAsk
+	opentext
+	writetext YunaOfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.dontAsk
+	winlosstext YunaBeatenText, YunaWinsText
+	loadtrainer KIMONO_GIRL, YUNA_1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_YUNA_1
+	end
+.FightDone:
+	writetext YunaAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextYuna
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextYuna
+	waitbutton
+	closetext
+	end
+YunaSeenText:
+    text "Hello."
+
+    para "I am YUNA."
+
+    para "I've heard that"
+    line "a war is coming."
+
+    para "I can see the"
+    line "suffering in"
+    cont "the faces of the"
+    cont "people."
+
+    para "I can tell you"
+    line "are hurting inside."
+
+    para "You miss your dad."
+
+    para "I miss mine too."
+
+    para "But as long as"
+    line "you remember him"
+    cont "he is never"
+    cont "really gone."
+    done
+YunaBeatenText:
+    text "Thank you"
+    done
+YunaWinsText:
+    text "Thank you"
+    done
+YunaOfferFightText:
+    text "Would you be"
+    line "willing to train"
+    cont "with me?"
+    done
+YunaAfterBattleText:
+    text "You are much"
+    line "stronger than me."
+
+    para "I wish you good"
+    line "luck on your"
+    cont "journey."
+
+    para "I hope one of us"
+    line "can bring the"
+    cont "calm to this"
+    cont "world."
+    done
+RematchTextYuna:
+    text "Would you like to"
+    line "train again?"
+    done
+RematchRefuseTextYuna:
+    text "Good luck."
+    done
 
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
@@ -320,3 +421,5 @@ OlivineCity_MapEvents:
 	object_event 20, 13, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event  6, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScript, -1
+

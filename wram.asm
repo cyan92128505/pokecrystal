@@ -2999,7 +2999,7 @@ wPlayerState:: db
 wHallOfFameCount:: db
 wRepulsorToggle:: db
 wTradeFlags:: flag_array NUM_NPC_TRADES
-	ds 1
+wHoenInvasionUnderway:: db
 ;wMooMooBerries:: db
 
 wFieldWeather::

@@ -28,8 +28,21 @@ ZapdosScript:
 	cry ZAPDOS
 	pause 15
 	closetext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ZAPDOS, 70
+    sjump .begin
+.midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ZAPDOS, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ZAPDOS, 50
+.begin
 	startbattle
 	reloadmapafterbattle
     setval ZAPDOS

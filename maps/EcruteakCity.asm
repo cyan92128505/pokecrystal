@@ -8,6 +8,7 @@
 	const ECRUTEAKCITY_GRAMPS3
 	const ECRUTEAKCITY_SETO
 	const ECRUTEAKCITY_TELEPORT
+	const ECRUTEAKCITY_AERITH
 
 EcruteakCity_MapScripts:
 	def_scene_scripts
@@ -447,6 +448,120 @@ EcruteakTeleportGuyEncounterScript:
     turnobject PLAYER, RIGHT
     sjump EcruteakTeleportGuyScript
 
+BurnedTowerBlockScript:
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .block
+    end
+.block
+	opentext
+	writetext BurnedTowerBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_BurnedTowerTurnBack
+    end
+
+Movement_BurnedTowerTurnBack:
+    step DOWN
+    step_end
+
+BurnedTowerBlockText:
+    text "The tower is off"
+    line "limits while it"
+    cont "is repaired."
+    done
+    
+Aerith1Script:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_AERITH_1
+	iftrue .FightDone
+.fight
+	writetext Aerith1SeenText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_AERITH_1
+	iftrue .dontAsk
+	opentext
+	writetext Aerith1OfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.dontAsk
+	winlosstext Aerith1BeatenText, Aerith1WinsText
+	loadtrainer KIMONO_GIRL, AERITH_1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_AERITH_1
+	end
+.FightDone:
+	writetext Aerith1AfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextAerith1
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextAerith1
+	waitbutton
+	closetext
+	end
+Aerith1SeenText:
+    text "This place is"
+    line "tranquil."
+
+    para "It's kind of"
+    line "boring!"
+
+    para "I am AERITH!"
+
+    para "My friends and"
+    line "I are committed"
+    cont "to protecting"
+    cont "the planet and"
+    cont "#MON from"
+    cont "all these human"
+    cont "conflicts."
+
+    para "I can tell you"
+    line "want the same"
+    cont "thing."
+
+    para "It's hard to know"
+    line "how to help."
+    done
+Aerith1BeatenText:
+    text "Well done"
+    done
+Aerith1WinsText:
+    text "Good try"
+    done
+Aerith1OfferFightText:
+    text "Maybe a good"
+    line "battle will"
+    cont "cheer us up?"
+    done
+Aerith1AfterBattleText:
+    text "Wow you're strong!"
+
+    para "We will both keep"
+    line "getting stronger."
+
+    para "We have to."
+
+    para "Nobody else can"
+    line "protect the"
+    cont "planet."
+    done
+RematchTextAerith1:
+    text "How about another"
+    line "Battle?"
+    done
+RematchRefuseTextAerith1:
+    text "That's fine!"
+    done
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -492,3 +607,5 @@ EcruteakCity_MapEvents:
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
 	object_event 29,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SetoScript, -1
 	object_event 17, 30, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakTeleportGuyScript, -1
+	object_event 23, 12, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Aerith1Script, -1
+

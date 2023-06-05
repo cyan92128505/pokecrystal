@@ -3296,9 +3296,9 @@ AI_Smart_WeatherMove:
 	call AICheckPlayerHalfHP
 	jr nc, AIBadWeatherType
 
-; 50% chance to encourage this move otherwise.
-	call AI_50_50
-	ret c
+; encourage this move otherwise.
+	;call AI_50_50
+	;ret c
 
 	dec [hl]
 	ret
@@ -3534,15 +3534,15 @@ AI_Smart_Solarbeam:
 ; 90% chance to discourage this move when it's raining.
 
 	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .encourage
+	;cp WEATHER_SUN
+	;jr z, .encourage
 
 	cp WEATHER_RAIN
 	ret nz
 
-	call Random
-	cp 10 percent
-	ret c
+	;call Random
+	;cp 10 percent
+	;ret c
 
 	inc [hl]
 	inc [hl]

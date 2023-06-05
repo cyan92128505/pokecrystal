@@ -63,8 +63,21 @@ MoltresScript:
 	cry MOLTRES
 	pause 15
 	closetext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MOLTRES, 70
+    sjump .begin
+.midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon MOLTRES, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MOLTRES, 50
+.begin
 	startbattle
 	reloadmapafterbattle
     setval MOLTRES
@@ -90,6 +103,27 @@ VictoryRoadEntranceSignText:
 	line "ENTRANCE"
 	done
 
+Route22HoenInvadedBlockScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iftrue .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext Route22BlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_Route22TurnBack
+    end
+
+Route22BlockText:
+    text "The door is locked"
+    done
+
+Movement_Route22TurnBack:
+	step DOWN
+	step_end
+
 Route22_MapEvents:
 	db 0, 0 ; filler
 
@@ -97,6 +131,7 @@ Route22_MapEvents:
 	warp_event 13,  5, VICTORY_ROAD_GATE, 1
 
 	def_coord_events
+	coord_event  13, 6, SCENE_ALWAYS, Route22HoenInvadedBlockScript
 
 	def_bg_events
 	bg_event 15,  7, BGEVENT_READ, VictoryRoadEntranceSign

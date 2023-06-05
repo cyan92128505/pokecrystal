@@ -1,7 +1,6 @@
 ; Used by GetMobileOTTrainerClass
 
 MaleTrainers:
-	db BURGLAR
 	db YOUNGSTER
 	db SCHOOLBOY
 	db BIRD_KEEPER
@@ -19,7 +18,7 @@ MaleTrainers:
 	db CAMPER
 	db COOLTRAINERM
 	db SOLDIER
-	db JUGGLER
+	db LEON
 	db POKEFANM
 	db OFFICER
 	db SAGE
@@ -31,7 +30,6 @@ FemaleTrainers:
 	db MEDIUM
 	db LASS
 	db BEAUTY
-	db TEACHER
 	db SWIMMERF
 	db PICNICKER
 	db KIMONO_GIRL

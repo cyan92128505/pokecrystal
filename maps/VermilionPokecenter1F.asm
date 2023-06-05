@@ -29,9 +29,17 @@ VermilionPokecenter1FFishingGuruScript:
 	end
 
 VermilionPokecenter1FSailorScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer InvadedVermilionPokecenter1FSailorText
+.normal
 	jumptextfaceplayer VermilionPokecenter1FSailorText
 
 VermilionPokecenter1FBugCatcherScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer InvadedVermilionPokecenter1FBugCatcherText
+.normal
 	jumptextfaceplayer VermilionPokecenter1FBugCatcherText
 
 VermilionPokecenter1FFishingGuruText:
@@ -65,6 +73,15 @@ VermilionPokecenter1FSailorText:
 	line "trainers."
 	done
 
+InvadedVermilionPokecenter1FSailorText:
+	text "Damn those HOEN"
+	line "soldiers!"
+
+	para "They have such"
+	line "strong WATER"
+	cont "#MON!"
+	done
+
 VermilionPokecenter1FBugCatcherText:
 	text "Oh? You have some"
 	line "BADGES I've never"
@@ -72,6 +89,14 @@ VermilionPokecenter1FBugCatcherText:
 
 	para "Oh, I get it. You"
 	line "got them in JOHTO."
+	done
+
+InvadedVermilionPokecenter1FBugCatcherText:
+	text "Aren't you the"
+	line "CHAMPION of JOHTO!"
+
+	para "Please can you"
+	line "help us!"
 	done
 
 VermilionPokecenter1F_MapEvents:

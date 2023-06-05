@@ -869,8 +869,8 @@ GrowlitheEvosAttacks:
 	db 1, BITE
 	db 9, EMBER
 	db 18, LEER
-	db 26, TAKE_DOWN
-	db 34, FLAME_WHEEL
+	db 24, FLAME_WHEEL
+	db 30, TAKE_DOWN
 	db 42, ROAR
 	db 50, FLAMETHROWER
 	db 0 ; no more level-up moves
@@ -880,6 +880,8 @@ ArcanineEvosAttacks:
 	db 1, LEER
 	db 1, TAKE_DOWN
 	db 1, FLAME_WHEEL
+	db 20, FLAME_WHEEL
+	db 30, MORNING_SUN
 	db 40, FLAMETHROWER
 	db 45, EXTREMESPEED
 	db 50, FIRE_BLAST
@@ -2731,6 +2733,7 @@ SylveonEvosAttacks:
 	db 1, REFLECT
 	db 1, LIGHT_SCREEN
     db 21, DRAIN_KISS
+    db 25, ATTRACT
 	db 30, DRAIN_KISS
 	db 40, MOONLIGHT
 	db 45, MOON_BLAST

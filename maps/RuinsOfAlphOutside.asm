@@ -4,6 +4,7 @@
 	const RUINSOFALPHOUTSIDE_FISHER
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
+	const RUINSOFALPHOUTSIDE_HENSHIN
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -20,6 +21,21 @@ RuinsOfAlphOutside_MapScripts:
 	end
 
 .ScientistCallback:
+    disappear RUINSOFALPHOUTSIDE_HENSHIN
+	checktime NITE
+	iffalse .continue
+    checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
+    iffalse .henshin
+    checkevent EVENT_SOLVED_KABUTO_PUZZLE
+    iffalse .henshin
+    checkevent EVENT_SOLVED_OMANYTE_PUZZLE
+    iffalse .henshin
+    checkevent EVENT_SOLVED_HO_OH_PUZZLE
+    iffalse .henshin
+    sjump .continue
+.henshin
+    appear RUINSOFALPHOUTSIDE_HENSHIN
+.continue
 	checkflag ENGINE_UNOWN_DEX
 	iftrue .NoScientist
 	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
@@ -309,6 +325,97 @@ Movement_RuinsOfAlphTurnBack:
 	step DOWN
 	step_end
 
+RuinsOfAlphOutsideHenshinScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_HENSHIN
+	iftrue .FightDone
+.fight
+	writetext AlphHenshinSeenText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_HENSHIN
+	iftrue .dontAsk
+	opentext
+	writetext AlphHenshinOfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.dontAsk
+	winlosstext AlphHenshinBeatenText, AlphHenshinWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SAGE, HENSHIN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_HENSHIN
+	end
+.FightDone:
+	writetext AlphHenshinAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextAlphHenshin
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextAlphHenshin
+	waitbutton
+	closetext
+	end
+AlphHenshinSeenText:
+    text "I am sure the"
+    line "entrance to the"
+    cont "ANCIENT CITY"
+    cont "is around here."
+
+    para "The darkness"
+    line "calls to me."
+
+    para "It must have some"
+    line "relation to these"
+    cont "puzzles."
+
+    para "The power of"
+    line "death will at"
+    cont "last belong to"
+    cont "me. HENSHIN!"
+
+    para "Then SETO and"
+    line "YAMI will kneel"
+    cont "before me!"
+    done
+AlphHenshinBeatenText:
+    text "IMPOSSIBLE!!"
+    done
+AlphHenshinWinsText:
+    text "Be gone!"
+    done
+AlphHenshinOfferFightText:
+    text "Pitiful child!"
+
+    para "You dare to"
+    line "question my"
+    cont "ambitions?"
+    done
+AlphHenshinAfterBattleText:
+    text "You are just"
+    line "another slave"
+    cont "destined to feed"
+    cont "my destiny."
+
+    para "If I could just"
+    line "solve these"
+    cont "puzzles."
+    done
+RematchTextAlphHenshin:
+    text "One more"
+    line "duel?"
+    done
+RematchRefuseTextAlphHenshin:
+    text "I insist!"
+    done
+
 RuinsOfAlphOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -342,3 +449,5 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 19, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 20, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 18,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event 15,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, RuinsOfAlphOutsideHenshinScript, EVENT_FIELD_MON_1
+

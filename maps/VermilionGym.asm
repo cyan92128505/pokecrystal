@@ -83,7 +83,7 @@ TrainerGuitaristVincent:
 	end
 
 TrainerJugglerHorton:
-	trainer JUGGLER, HORTON, EVENT_BEAT_JUGGLER_HORTON, JugglerHortonSeenText, JugglerHortonBeatenText, 0, .Script
+	trainer POKEMANIAC, HORTON, EVENT_BEAT_JUGGLER_HORTON, JugglerHortonSeenText, JugglerHortonBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

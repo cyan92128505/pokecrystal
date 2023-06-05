@@ -114,7 +114,7 @@ Route15FieldMon6Script:
 	end
 
 TrainerTeacherColette:
-	trainer TEACHER, COLETTE, EVENT_BEAT_TEACHER_COLETTE, TeacherColetteSeenText, TeacherColetteBeatenText, 0, .Script
+	trainer BEAUTY, COLETTE, EVENT_BEAT_TEACHER_COLETTE, TeacherColetteSeenText, TeacherColetteBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -125,7 +125,7 @@ TrainerTeacherColette:
 	end
 
 TrainerTeacherHillary:
-	trainer TEACHER, HILLARY, EVENT_BEAT_TEACHER_HILLARY, TeacherHillarySeenText, TeacherHillaryBeatenText, 0, .Script
+	trainer BEAUTY, HILLARY, EVENT_BEAT_TEACHER_HILLARY, TeacherHillarySeenText, TeacherHillaryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

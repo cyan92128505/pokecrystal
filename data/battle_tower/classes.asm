@@ -12,13 +12,13 @@ BattleTowerTrainers:
 	db "ZABOROWSKI", LASS
 	db "WRIGHT@@@@", YOUNGSTER
 	db "ALEXANDER@", HIKER
-	db "KAWAKAMI@@", TEACHER
+	db "KAWAKAMI@@", BEAUTY
 	db "BICKETT@@@", POKEFANM
 	db "SAITO@@@@@", KIMONO_GIRL
 	db "CRAWFORD@@", SOLDIER
 	db "DIAZ@@@@@@", PICNICKER
 	db "ERICKSON@@", BIKER
-	db "FAIRFIELD@", JUGGLER
+	db "FAIRFIELD@", POKEMANIAC
 	db "HUNTER@@@@", POKEFANF
 	db "HILL@@@@@@", FIREBREATHER
 	db "JAVIER@@@@", SWIMMERF
@@ -53,7 +53,7 @@ BattleTowerTrainers:
 	db "JACKSON@@@", POKEFANF
 	db "KAHN@@@@@@", POKEMANIAC
 	db "LEONG@@@@@", YOUNGSTER
-	db "MARINO@@@@", TEACHER
+	db "MARINO@@@@", BEAUTY
 	db "NEWMAN@@@@", SAILOR
 	db "NGUYEN@@@@", BLACKBELT_T
 	db "OGDEN@@@@@", SUPER_NERD

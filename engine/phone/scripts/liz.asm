@@ -55,7 +55,7 @@ LizGossip:
 	ifequal 0, .CoolTrainerM
 	ifequal 1, .Beauty
 	ifequal 2, .Grunt
-	ifequal 3, .Teacher
+	ifequal 3, .Cynthia
 	ifequal 4, .SwimmerF
 	ifequal 5, .KimonoGirl
 	ifequal 6, .Skier
@@ -74,8 +74,8 @@ LizGossip:
 	gettrainerclassname STRING_BUFFER_4, GRUNTM
 	sjump LizGossipScript
 
-.Teacher:
-	gettrainerclassname STRING_BUFFER_4, TEACHER
+.Cynthia:
+	gettrainerclassname STRING_BUFFER_4, CYNTHIA
 	sjump LizGossipScript
 
 .SwimmerF:

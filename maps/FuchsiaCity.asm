@@ -4,16 +4,31 @@
 	const FUCHSIACITY_TEACHER
 	const FUCHSIACITY_FRUIT_TREE
 	const FUCHSIACITY_LATIAS
+	const FUCHSIACITY_SOLDIER_1
+	const FUCHSIACITY_SOLDIER_2
 
 FuchsiaCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Invasion
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	endcallback
+
+.Invasion:
+    disappear FUCHSIACITY_SOLDIER_1
+    disappear FUCHSIACITY_SOLDIER_2
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .end
+    checkevent EVENT_BEAT_SOLDIER_9
+    iffalse .end
+    appear FUCHSIACITY_SOLDIER_1
+    appear FUCHSIACITY_SOLDIER_2
+.end
+    endcallback
 
 LatiasScript:
 	faceplayer
@@ -22,8 +37,35 @@ LatiasScript:
 	cry LATIAS
 	pause 15
 	closetext
+	;loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	;loadwildmon LATIAS, 60
+	checkevent EVENT_BEAT_MORTY
+	iffalse .tinyLevel
+	checkevent EVENT_BEAT_PRYCE
+	iffalse .smallLevel
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkflag ENGINE_EARTHBADGE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LATIAS, 70
+    sjump .begin
+.midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LATIAS, 50
+	sjump .begin
+.smallLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LATIAS, 40
+	sjump .begin
+.tinyLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LATIAS, 30
+.begin
 	startbattle
 	reloadmapafterbattle
     setval LATIAS
@@ -44,12 +86,24 @@ LatiasCry:
     done
 
 FuchsiaCityYoungster:
+    checkevent EVENT_BEAT_SOLDIER_9
+    iffalse .normal
+    jumptextfaceplayer InvadedFuchsiaCityYoungsterText
+.normal
 	jumptextfaceplayer FuchsiaCityYoungsterText
 
 FuchsiaCityPokefanM:
+    checkevent EVENT_BEAT_SOLDIER_9
+    iffalse .normal
+    jumptextfaceplayer InvadedFuchsiaCityPokefanMText
+.normal
 	jumptextfaceplayer FuchsiaCityPokefanMText
 
 FuchsiaCityTeacher:
+    checkevent EVENT_BEAT_SOLDIER_9
+    iffalse .normal
+    jumptextfaceplayer InvadedFuchsiaCityTeacherText
+.normal
 	jumptextfaceplayer FuchsiaCityTeacherText
 
 FuchsiaCitySign:
@@ -80,11 +134,23 @@ FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY
 
 FuchsiaCityYoungsterText:
-	text "One of the ELITE"
-	line "FOUR used to be"
+	text "The previous GYM"
+	line "LEADER here was"
+	cont "killed battling"
+	cont "HOEN."
 
-	para "the LEADER of"
-	line "FUCHSIA's GYM."
+	para "We will never"
+	line "forget you KOGA."
+	done
+
+InvadedFuchsiaCityYoungsterText:
+	text "We have fallen."
+
+	para "But I would"
+	line "rather go down"
+	cont "fighting!"
+
+	para "For KOGA!!!"
 	done
 
 FuchsiaCityPokefanMText:
@@ -92,17 +158,47 @@ FuchsiaCityPokefanMText:
 	line "succeeded him as"
 
 	para "the GYM LEADER"
-	line "after he joined"
-	cont "the ELITE FOUR."
+	line "after he fell"
+	cont "in battle."
+	done
+
+InvadedFuchsiaCityPokefanMText:
+	text "Janine tried to"
+	line "defend us."
+
+	para "WALLACE himself"
+	line "insisted on"
+	cont "fighting her."
+
+	para "his #MON!"
+
+	para "How can anyone"
+	line "withstand such"
+	cont "forces of nature."
+
+	para "We are doomed."
 	done
 
 FuchsiaCityTeacherText:
 	text "The SAFARI ZONE is"
 	line "closed… It's sad,"
 
-	para "considering it's"
-	line "FUCHSIA's main"
-	cont "attraction."
+	para "It is now used"
+	line "as military"
+	cont "training grounds."
+	done
+
+InvadedFuchsiaCityTeacherText:
+	text "WALLACE is in"
+	line "the training"
+	cont "grounds with his"
+	cont "troops."
+
+	para "His #MON!"
+
+	para "They are strong"
+	line "but are weak to"
+	cont "GRASS moves."
 	done
 
 FuchsiaCitySignText:
@@ -174,9 +270,72 @@ FuchsiaGymBlockText:
     cont "at this time."
     done
 
+WarZoneBlockScript:
+    checkevent EVENT_BEAT_SOLDIER_9
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext WarZoneBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_FuchsiaGymTurnBack
+    end
+
+WarZoneBlockText:
+    text "Training Grounds"
+    line "are off limits."
+    done
+
 Movement_FuchsiaGymTurnBack:
 	step DOWN
 	step_end
+
+BlockingSoldier1:
+    jumptextfaceplayer BlockingSoldier1Text
+
+BlockingSoldier2:
+    jumptextfaceplayer BlockingSoldier2Text
+
+BlockingSoldier1Text:
+    text "The LEADER tried"
+    line "to stop us."
+
+    para "Hahaha!"
+
+    para "WALLACE himself"
+    line "showed her the"
+    cont "power of HOEN."
+
+    para "He took mercy on"
+    line "the child and"
+    cont "spared her life."
+
+    para "I saw the fear"
+    line "and awe in the"
+    cont "peoples eyes at"
+    cont "the sight of"
+    cont "HOENs legendary"
+    cont "#MON."
+
+    para "ADMIRAL DRAKE made"
+    line "easy work of"
+    cont "everyone else."
+    done
+
+BlockingSoldier2Text:
+    text "I saw the FUHRER"
+    line "battle welding"
+    cont "the great forces"
+    cont "of HOEN."
+
+    para "It was beautiful"
+    line "watching the FIRE"
+    cont "GYM LEADER on"
+    cont "his knees before"
+    cont "our FUHRER."
+    done
 
 FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
@@ -197,6 +356,7 @@ FuchsiaCity_MapEvents:
 
 	def_coord_events
 	coord_event 8, 28, SCENE_ALWAYS, FuchsiaGymBlockScript
+	coord_event 18, 4, SCENE_ALWAYS, WarZoneBlockScript
 
 	def_bg_events
 	bg_event 21, 15, BGEVENT_READ, FuchsiaCitySign
@@ -214,3 +374,6 @@ FuchsiaCity_MapEvents:
 	object_event 16, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
 	object_event  8,  1, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFruitTree, -1
 	object_event 30,  2, SPRITE_KRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LatiasScript, EVENT_CAUGHT_LATIAS
+	object_event  8, 28, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier1, EVENT_FIELD_MON_1
+	object_event 22, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier2, EVENT_FIELD_MON_2
+

@@ -8,6 +8,8 @@ BillsHouse_MapScripts:
 
 BillsGrandpa:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .notBeatE4
     opentext
     checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
     iftrue .gotMew
@@ -27,7 +29,7 @@ BillsGrandpa:
     givepoke MEW, 70
     sjump .given
 .midLevel
-    givepoke MEW, 50
+    givepoke MEW, 60
 .given
     setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
     writetext BillGrampsMewExplain
@@ -49,10 +51,34 @@ BillsGrandpa:
     waitbutton
     closetext
     end
+.notBeatE4
+    opentext
+    writetext BillBeatE4
+    waitbutton
+    closetext
+    end
+
+BillBeatE4:
+	text "Hm? You know BILL?"
+	line "He's my grandson."
+
+	para "He is always out"
+	line "doing interesting"
+	cont "things and talking"
+	cont "with important"
+	cont "people."
+
+	para "I'd like to meet"
+	line "somebody important"
+	cont "like a CHAMPION."
+    done
 
 BillGrampsTakeThisMewText:
 	text "Hm? You know BILL?"
 	line "He's my grandson."
+
+	para "Oh you are a"
+	line "CHAMPION!"
 
 	para "I shouldn't tell"
 	line "you this..."

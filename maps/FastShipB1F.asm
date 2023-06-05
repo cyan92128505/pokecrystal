@@ -114,7 +114,7 @@ TrainerPicnickerDebra:
 	end
 
 TrainerJugglerFritz:
-	trainer JUGGLER, FRITZ, EVENT_BEAT_JUGGLER_FRITZ, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
+	trainer POKEMANIAC, FRITZ, EVENT_BEAT_JUGGLER_FRITZ, JugglerFritzSeenText, JugglerFritzBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -169,7 +169,7 @@ TrainerSailorKenneth:
 	end
 
 TrainerTeacherShirley:
-	trainer TEACHER, SHIRLEY, EVENT_BEAT_TEACHER_SHIRLEY, TeacherShirleySeenText, TeacherShirleyBeatenText, 0, .Script
+	trainer BEAUTY, SHIRLEY, EVENT_BEAT_TEACHER_SHIRLEY, TeacherShirleySeenText, TeacherShirleyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

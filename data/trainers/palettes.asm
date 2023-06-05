@@ -42,7 +42,7 @@ INCBIN "gfx/trainers/pokemaniac.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
 INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
-INCBIN "gfx/trainers/teacher.gbcpal", middle_colors
+INCBIN "gfx/trainers/cynthia.gbcpal", middle_colors
 INCBIN "gfx/trainers/sabrina.gbcpal", middle_colors
 INCBIN "gfx/trainers/bug_catcher.gbcpal", middle_colors
 INCBIN "gfx/trainers/fisher.gbcpal", middle_colors
@@ -55,9 +55,9 @@ INCBIN "gfx/trainers/wallace.gbcpal", middle_colors
 INCBIN "gfx/trainers/hiker.gbcpal", middle_colors
 INCBIN "gfx/trainers/biker.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
-INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
+INCBIN "gfx/trainers/steven.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
-INCBIN "gfx/trainers/juggler.gbcpal", middle_colors
+INCBIN "gfx/trainers/leon.gbcpal", middle_colors
 INCBIN "gfx/trainers/blackbelt_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/executive_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/psychic_t.gbcpal", middle_colors

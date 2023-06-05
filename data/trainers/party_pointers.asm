@@ -36,7 +36,7 @@ TrainerGroups:
 	dba GruntMGroup
 	dba GentlemanGroup
 	dba GiovanniGroup
-	dba TeacherGroup
+	dba CynthiaGroup
 	dba SabrinaGroup
 	dba BugCatcherGroup
 	dba FisherGroup
@@ -49,7 +49,7 @@ TrainerGroups:
 	dba HikerGroup
 	dba BikerGroup
 	dba BlaineGroup
-	dba BurglarGroup
+	dba StevenGroup
 	dba FirebreatherGroup
 	dba JugglerGroup
 	dba BlackbeltGroup

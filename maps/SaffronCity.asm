@@ -276,6 +276,24 @@ SaffronGymBlockScript:
     applymovement PLAYER, Movement_SaffronGymTurnBack
     end
 
+HoenInvadedBlockScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iftrue .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext TrainBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_SaffronGymTurnBack
+    end
+
+TrainBlockText:
+    text "The train is"
+    line "off line."
+    done
+
 SaffronGymBlockText:
     text "The door is"
     line "locked."
@@ -312,6 +330,7 @@ SaffronCity_MapEvents:
 
 	def_coord_events
 	coord_event 34, 4, SCENE_ALWAYS, SaffronGymBlockScript
+	coord_event  8, 4, SCENE_ALWAYS, HoenInvadedBlockScript
 
 	def_bg_events
 	bg_event 21,  5, BGEVENT_READ, SaffronCitySign

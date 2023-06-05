@@ -10,7 +10,7 @@ Gen1TrainerClassNames:
 	dw .SuperNerd
 	dw wOTClassName ; hiker
 	dw wOTClassName ; biker
-	dw .Burglar
+	dw .Steven
 	dw .Engineer
 	dw .Jack
 	dw wOTClassName ; fisher
@@ -20,7 +20,7 @@ Gen1TrainerClassNames:
 	dw .Beauty
 	dw wOTClassName ; psychic
 	dw .Rocker
-	dw .Juggler
+	dw .Leon
 	dw wOTClassName ; tamer
 	dw wOTClassName ; bird keeper
 	dw .Blackbelt
@@ -55,13 +55,13 @@ Gen1TrainerClassNames:
 .JrTrainerF:   db "ガール@"
 .Pokemaniac:   db "マニア@"
 .SuperNerd:    db "りかけい@"
-.Burglar:      db "どろぼう@"
+.Steven:      db "どろぼう@"
 .Engineer:     db "オヤジ@"
 .Jack:         db "ジャック@"
 .Swimmer:      db "かいパン@"
 .Beauty:       db "おねえさん@"
 .Rocker:       db "グループ@"
-.Juggler:      db "ジャグラー@"
+.Leon:      db "ジャグラー@"
 .Blackbelt:    db "からて@"
 .ProfOak:      db "オーキド@"
 .Chief:        db "チーフ@"

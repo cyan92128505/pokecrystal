@@ -68,7 +68,7 @@ TrainerGentlemanEdward:
 	end
 
 TrainerBurglarCorey:
-	trainer BURGLAR, COREY, EVENT_BEAT_BURGLAR_COREY, BurglarCoreySeenText, BurglarCoreyBeatenText, 0, .Script
+	trainer FIREBREATHER, COREY, EVENT_BEAT_BURGLAR_COREY, BurglarCoreySeenText, BurglarCoreyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

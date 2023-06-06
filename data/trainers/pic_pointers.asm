@@ -71,4 +71,5 @@ TrainerPicPointers::
 	dba_pic GruntfPic
 	dba_pic MysticalmanPic
 	dba_pic InvaderPic
+	dba_pic CrystalPic
 	assert_table_length NUM_TRAINER_CLASSES

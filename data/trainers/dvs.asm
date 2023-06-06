@@ -70,4 +70,5 @@ TrainerClassDVs:
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn 15, 15, 15, 15 ; MYSTICALMAN
 	dn 15, 15, 15, 15 ; INVADER
+    dn 10, 15, 15, 15 ; CRYSTAL
 	assert_table_length NUM_TRAINER_CLASSES

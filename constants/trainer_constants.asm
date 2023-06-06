@@ -116,6 +116,7 @@ KRIS EQU __trainer_class__
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
 	const MASTER_SURGE
+	const DAD
 
 	trainerclass SCIENTIST ; 14
 	const ROSS
@@ -783,5 +784,8 @@ KRIS EQU __trainer_class__
     const HAVEL
     const OROBORO
     const MASTER_PATCHES
+
+    trainerclass CRYSTAL ; 45
+    const CRYSTAL_1
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

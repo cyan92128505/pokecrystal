@@ -5,6 +5,9 @@
 	const ELMSLAB_POKE_BALL2
 	const ELMSLAB_POKE_BALL3
 	const ELMSLAB_OFFICER
+	const ELMSLAB_MUM
+	const ELMSLAB_DAD
+	const ELMSLAB_PARENTS_ELM
 
 ElmsLab_MapScripts:
 	def_scene_scripts
@@ -38,6 +41,9 @@ ElmsLab_MapScripts:
 	end
 
 .MoveElmCallback:
+    disappear ELMSLAB_MUM
+    disappear ELMSLAB_DAD
+    disappear ELMSLAB_PARENTS_ELM
 	checkscene
 	iftrue .Skip ; not SCENE_DEFAULT
 	moveobject ELMSLAB_ELM, 3, 4
@@ -1429,6 +1435,372 @@ AideText_PocketPCInfoText:
 	cont "enough signal."
 	done
 
+DadBattleScript2:
+    checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
+    iffalse .end
+    checkevent EVENT_BEAT_DAD
+    iftrue .end
+    applymovement PLAYER, ELmsLabMovement_PlayerLeftDown
+    sjump DadBattleScript
+.end
+    end
+
+DadBattleScript1:
+    checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
+    iffalse .end
+    checkevent EVENT_BEAT_DAD
+    iftrue .end
+    applymovement PLAYER, ELmsLabMovement_PlayerDown
+    sjump DadBattleScript
+.end
+    end
+
+DadBattleScript:
+    showemote EMOTE_SHOCK, PLAYER, 15
+    special FadeOutMusic
+    opentext
+    writetext DadHoldItText
+    waitbutton
+    closetext
+    appear ELMSLAB_DAD
+    applymovement ELMSLAB_DAD, ELmsLabMovement_DadEnters
+    applymovement PLAYER, ELmsLabMovement_PlayerFaceDad
+
+    opentext
+    writetext MumHangOnText
+    waitbutton
+    closetext
+    appear ELMSLAB_MUM
+    applymovement ELMSLAB_MUM, ELmsLabMovement_MumEnters
+    opentext
+    writetext MumStopThisText
+    waitbutton
+    closetext
+    turnobject ELMSLAB_DAD, UP
+    opentext
+    writetext ThisHasToHappenText
+    waitbutton
+    closetext
+
+    turnobject ELMSLAB_DAD, LEFT
+    opentext
+    writetext DadWontLetYouText
+    waitbutton
+    closetext
+
+    appear ELMSLAB_PARENTS_ELM
+    applymovement ELMSLAB_PARENTS_ELM, ELmsLabMovement_ElmApproaches
+    opentext
+    writetext ElmStopThisText
+    waitbutton
+    closetext
+
+    turnobject ELMSLAB_DAD, UP
+    pause 15
+    turnobject ELMSLAB_DAD, LEFT
+    opentext
+    writetext DadBattleBeginsText
+    waitbutton
+    closetext
+
+    winlosstext DadLosesText, DadWinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LT_SURGE, DAD
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	setevent EVENT_BEAT_DAD
+
+	applymovement ELMSLAB_MUM, ELmsLabMovement_MumToDad
+	opentext
+	writetext MumAreYouOKText
+	waitbutton
+	closetext
+
+	turnobject ELMSLAB_DAD, DOWN
+	pause 15
+	turnobject ELMSLAB_DAD, LEFT
+	opentext
+	writetext DadAcknowledgmentText
+	waitbutton
+	closetext
+	turnobject ELMSLAB_DAD, DOWN
+	opentext
+	writetext DadGoodbyeText
+	waitbutton
+	closetext
+	applymovement ELMSLAB_DAD, ELmsLabMovement_DadLeaves
+	disappear ELMSLAB_DAD
+
+	applymovement ELMSLAB_MUM, ELmsLabMovement_MumFacePlayer
+	opentext
+	writetext MumGoodbyeText
+	waitbutton
+	closetext
+	applymovement ELMSLAB_MUM, ELmsLabMovement_MumLeaves
+	disappear ELMSLAB_MUM
+
+	turnobject PLAYER, UP
+	opentext
+	writetext ElmsFinalWordsText
+	waitbutton
+	closetext
+	applymovement ELMSLAB_PARENTS_ELM, ELmsLabMovement_ElmLeaves
+	disappear ELMSLAB_PARENTS_ELM
+	turnobject PLAYER, DOWN
+.end
+	end
+
+ELmsLabMovement_PlayerLeftDown:
+    step LEFT
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+ELmsLabMovement_PlayerDown:
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+DadHoldItText:
+    text "<PLAYER>!"
+
+    para "Stop right there!"
+    done
+
+ELmsLabMovement_DadEnters:
+    step UP
+    step UP
+    step RIGHT
+    step RIGHT
+    turn_head LEFT
+    step_end
+
+ELmsLabMovement_PlayerFaceDad:
+    step DOWN
+    turn_head RIGHT
+    step_end
+
+MumHangOnText:
+    text "Wait you are"
+    line "going too far!"
+    done
+
+ELmsLabMovement_MumEnters:
+    step UP
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step UP
+    step UP
+    turn_head DOWN
+    step_end
+
+MumStopThisText:
+    text "We should talk"
+    line "about this as"
+    cont "a family."
+
+    para "You don't need"
+    line "to do this."
+    done
+
+ThisHasToHappenText:
+    text "I am not taking"
+    line "any chances with"
+    cont "our family."
+
+    para "We are finally"
+    line "back together."
+
+    para "This is the only"
+    line "way."
+    done
+
+DadWontLetYouText:
+    text "<PLAYER> you are"
+    line "being told you"
+    cont "need to go to"
+    cont "KANTO and fight."
+
+    para "I wont let that"
+    line "happen."
+
+    para "I know this is"
+    line "hypocritical of"
+    cont "me."
+
+    para "But I have learnt"
+    line "what is important."
+
+    para "I wont let you"
+    line "leave."
+    done
+
+ELmsLabMovement_ElmApproaches:
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+ELmsLabMovement_ElmLeaves:
+    step UP
+    step UP
+    step UP
+    step_end
+
+ElmStopThisText:
+    text "<PLAYER> is not"
+    line "a child anymore."
+
+    para "<PLAYER> is a"
+    line "CHAMPION!"
+
+    para "I don't think"
+    line "you realise the"
+    cont "gravity of that."
+
+    para "<PLAYER> has the"
+    line "power to save"
+    cont "people."
+
+    para "No one can tell"
+    line "<PLAYER> what to"
+    cont "do."
+    done
+
+DadBattleBeginsText:
+    text "CHAMPION..."
+
+    para "Hmph!"
+
+    para "I don't care"
+    line "what label you"
+    cont "use."
+
+    para "<PLAYER> you are"
+    line "my child and that"
+    cont "will never change."
+
+    para "Now you are not"
+    line "leaving."
+
+    para "If have to stop"
+    line "you by force then"
+    cont "I will!"
+    done
+
+DadLosesText:
+    text "...."
+    done
+
+DadWinsText:
+    text "Come home"
+    line "now."
+    done
+
+ELmsLabMovement_MumToDad:
+    step DOWN
+    turn_head LEFT
+    step_end
+
+MumAreYouOKText:
+    text "Oh my..."
+
+    para "Are you alright?"
+    done
+
+DadAcknowledgmentText:
+    text "...."
+
+    para "I've never seen"
+    line "a CHAMPION in"
+    cont "battle before."
+
+    para "...."
+
+    para "It give me hope."
+
+    para "That we can"
+    line "protect ourselves"
+    cont "from anyone."
+    done
+
+DadGoodbyeText:
+    text "I can't believe"
+    line "you are my <PLAYER>."
+
+    para "You are far beyond"
+    line "anyone I've ever"
+    cont "fought."
+
+    para "Forgive me!"
+
+    para "CHAMPION."
+    done
+
+ELmsLabMovement_DadLeaves:
+    step DOWN
+    step LEFT
+    step LEFT
+    step DOWN
+    step_end
+
+ELmsLabMovement_MumFacePlayer:
+    step LEFT
+    step LEFT
+    step_end
+
+MumGoodbyeText:
+    text "I am proud of"
+    line "you my dear"
+    cont "<PLAYER>."
+
+    para "I can't believe"
+    line "how strong you"
+    cont "have become."
+
+    para "thanks for taking"
+    line "it easy on your"
+    cont "father."
+
+    para "Now go and show"
+    line "HOEN that nobody"
+    cont "messes with us!"
+
+    para "I love you my"
+    line "CHAMPION."
+    done
+
+ELmsLabMovement_MumLeaves:
+    step DOWN
+    step DOWN
+    step_end
+
+ElmsFinalWordsText:
+    text "You done the"
+    line "right thing"
+    cont "<PLAYER>."
+
+    para "You father wants"
+    line "to protect you."
+
+    para "Now he knows it"
+    line "is you who will"
+    cont "protect him and"
+    cont "everyone else."
+
+    para "Now head to"
+    line "OLIVINE."
+
+    para "The ship is"
+    line "waiting."
+
+    para "Good luck."
+    done
+
 ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
@@ -1445,6 +1817,8 @@ ElmsLab_MapEvents:
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POTION, AideScript_WalkPotion2
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
+    coord_event  4,  5, SCENE_ALWAYS, DadBattleScript1
+	coord_event  5,  5, SCENE_ALWAYS, DadBattleScript2
 
 	def_bg_events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine
@@ -1471,3 +1845,8 @@ ElmsLab_MapEvents:
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
+	object_event  4, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
+	object_event  4, 11, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_2
+	object_event  5,  4, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3
+
+

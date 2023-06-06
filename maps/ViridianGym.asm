@@ -25,9 +25,9 @@ ViridianGymBlueScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_EARTHBADGE
-;	iftrue .FightDone
+	iftrue .FightDone
 	checkevent EVENT_BEAT_HOEN_ARMY
-;	iftrue .battle
+	iftrue .battle
 	writetext FalseIntroText
 	special FadeOutMusic
 	showemote EMOTE_SHOCK, VIRIDIANGYM_BLUE, 15

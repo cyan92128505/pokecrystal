@@ -69,4 +69,5 @@ TrainerClassNames::
 	li "ROCKET"
 	li "MYSTICALMAN"
 	li "INVADER"
+	li "<PKMN> TRAINER"
 	assert_list_length NUM_TRAINER_CLASSES

@@ -8,6 +8,7 @@
 	const NEWBARKTOWN_FIELDMON_5
 	const NEWBARKTOWN_FIELDMON_6
 	const NEWBARKTOWN_REPEL_WOMAN
+	const NEWBARKTOWN_CRYSTAL
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -16,12 +17,17 @@ NewBarkTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Crystal
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.Crystal
+    disappear NEWBARKTOWN_CRYSTAL
+    endcallback
 
 .FlyPoint:
     appear NEWBARKTOWN_FIELDMON_4
@@ -410,6 +416,169 @@ NewBarkTownGotRepelsText:
     cont "key items menu."
     done
 
+CrystalScript1:
+    checkevent EVENT_BEAT_CRYSTAL_1
+    iftrue .end
+    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+    iffalse .end
+    applymovement PLAYER, NewBarkTownMovement_PlayerRight
+    sjump CrystalScript
+.end
+    end
+
+CrystalScript2:
+    checkevent EVENT_BEAT_CRYSTAL_1
+    iftrue .end
+    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+    iffalse .end
+    applymovement PLAYER, NewBarkTownMovement_PlayerUpAndRight
+    sjump CrystalScript
+.end
+    end
+
+CrystalScript:
+    playmusic MUSIC_RIVAL_ENCOUNTER
+    showemote EMOTE_SHOCK, PLAYER, 15
+    opentext
+    writetext Crystal1_WaitUpText
+    waitbutton
+    closetext
+    turnobject PLAYER, RIGHT
+    appear NEWBARKTOWN_CRYSTAL
+    applymovement NEWBARKTOWN_CRYSTAL, NewBarkTownMovement_CrystalApproaches
+    opentext
+    writetext Crystal1_ChallengeText
+    waitbutton
+    closetext
+
+	winlosstext Crystal1LosesText, Crystal1WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	loadtrainer CRYSTAL, CRYSTAL_1
+	startbattle
+	setevent EVENT_BEAT_CRYSTAL_1
+	reloadmap
+
+	opentext
+	writetext Crystal1_WellDoneText
+	waitbutton
+	closetext
+	special FadeOutMusic
+	turnobject NEWBARKTOWN_CRYSTAL, DOWN
+	pause 20
+	opentext
+	writetext Crystal1_SorryText
+	waitbutton
+	playmusic MUSIC_NEW_BARK_TOWN
+	turnobject NEWBARKTOWN_CRYSTAL, LEFT
+	writetext Crystal1_GoodLuckText
+	waitbutton
+	closetext
+	turnobject PLAYER, LEFT
+	applymovement NEWBARKTOWN_CRYSTAL, NewBarkTownMovement_CrystalLeaves
+	disappear NEWBARKTOWN_CRYSTAL
+.end
+    end
+
+NewBarkTownMovement_PlayerRight:
+    step RIGHT
+    step_end
+
+NewBarkTownMovement_PlayerUpAndRight:
+    step UP
+    step RIGHT
+    step_end
+
+Crystal1_WaitUpText:
+    text "Hey!"
+
+    para "Wait up."
+    done
+
+NewBarkTownMovement_CrystalApproaches:
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    step_end
+
+Crystal1_ChallengeText:
+    text "You just got a"
+    line "#MON!"
+
+    para "I recently got"
+    line "my first #MON"
+    cont "too."
+
+    para "My dad gave it"
+    line "to me."
+
+    para "Well you know what"
+    line "we have to do now."
+
+    para "Let's battle?"
+    done
+
+Crystal1LosesText:
+    text "Aww you did"
+    line "well RIOLU."
+    done
+
+Crystal1WinsText:
+    text "You did really"
+    line "well."
+    done
+
+Crystal1_WellDoneText:
+    text "That was fun!"
+
+    para "Now we have to"
+    line "beat all GYM"
+    cont "LEADERS."
+
+    para "Beat all the ELITE"
+    line "FOUR and CHAMPION."
+
+    para "Crush the HOEN"
+    line "army and save all"
+    cont "JOHTO and KANTO!"
+
+    para "Race you!"
+    done
+
+Crystal1_SorryText:
+    text "I'm sorry."
+
+    para "I didn't mean to"
+    line "be flippant."
+
+    para "I know you dad is"
+    line "missing."
+
+    para "War is no joke."
+    done
+
+Crystal1_GoodLuckText:
+    text "I hope you find"
+    line "him."
+
+    para "I'm sure I'll see"
+    line "you along the way."
+
+    para "I'm serious about"
+    line "that race though!"
+
+    para "Good luck!"
+    done
+
+NewBarkTownMovement_CrystalLeaves:
+    big_step DOWN
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    step_end
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -424,6 +593,9 @@ NewBarkTown_MapEvents:
 	coord_event  1, 21, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 	coord_event  10, 11, SCENE_DEFAULT, NeedToGetAPokemon
 	coord_event  11, 11, SCENE_DEFAULT, NeedToGetAPokemon
+	coord_event  1, 20, SCENE_ALWAYS, CrystalScript1
+	coord_event  1, 21, SCENE_ALWAYS, CrystalScript2
+
 
 	def_bg_events
 	bg_event  8, 20, BGEVENT_READ, NewBarkTownSign
@@ -432,10 +604,12 @@ NewBarkTown_MapEvents:
 	bg_event  9, 25, BGEVENT_READ, NewBarkTownElmsHouseSign
 
 	def_object_events
-	object_event  6, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event 12, 21, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	object_event  6, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
+	object_event 10, 20, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
 	object_event 12,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 13,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 10,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
+	object_event  7, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
+

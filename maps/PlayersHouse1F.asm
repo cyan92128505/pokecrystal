@@ -4,6 +4,7 @@
 	const PLAYERSHOUSE1F_MOM3
 	const PLAYERSHOUSE1F_MOM4
 	const PLAYERSHOUSE1F_POKEFAN_F
+	const PLAYERSHOUSE1F_DAD
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
@@ -11,12 +12,21 @@ PlayersHouse1F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Dad
 
 .DummyScene0:
 	end
 
 .DummyScene1:
 	end
+
+.Dad:
+    disappear PLAYERSHOUSE1F_DAD
+    checkevent EVENT_BEAT_DAD
+    iffalse .end
+    appear PLAYERSHOUSE1F_DAD
+.end
+    endcallback
 
 MeetMomLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -413,6 +423,55 @@ PlayersHouse1FTVText:
 	line "rolling too!"
 	done
 
+DadScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .beatWallace
+    jumptextfaceplayer DadTalkText
+.beatWallace
+    jumptextfaceplayer DadPostWallaceText
+
+
+DadTalkText:
+    text "I am very proud"
+    line "of you <PLAYER>."
+
+    para "I am sorry for"
+    line "trying to stop"
+    cont "you."
+
+    para "I know you can"
+    line "help save us from"
+    cont "war."
+
+    para "You are the"
+    line "strongest trainer"
+    cont "I've ever seen."
+
+    para "Go and show them"
+    line "what we can do!"
+    done
+
+DadPostWallaceText:
+    text "You are a hero!"
+
+    para "I can't believe"
+    line "the great CHAMPION"
+    cont "you have become."
+
+    para "I take no credit"
+    line "for it."
+
+    para "I wasn't there"
+    line "for you when you"
+    cont "needed me."
+
+    para "And now you don't"
+    line "need anyone."
+
+    para "You are my kid"
+    line "and my hero."
+    done
+
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -437,3 +496,5 @@ PlayersHouse1F_MapEvents:
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  7,  3, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DadScript, EVENT_FIELD_MON_1
+

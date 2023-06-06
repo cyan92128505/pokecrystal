@@ -349,6 +349,8 @@
     const EVENT_BEAT_AERITH_1
     const EVENT_BEAT_AERITH_2
     const EVENT_BEAT_SOLDIER_10
+    const EVENT_BEAT_DAD
+    const EVENT_BEAT_CRYSTAL_1
 
 	const_next 600
 ; Kurt Apricorn events

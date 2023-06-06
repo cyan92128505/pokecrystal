@@ -35,4 +35,5 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db CRYSTAL
 .End

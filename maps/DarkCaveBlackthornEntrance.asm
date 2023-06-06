@@ -6,6 +6,7 @@
 	const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
+    const DARKCAVEBLACKTHORNENTRANCE_XEHANORT
 
 DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
@@ -279,6 +280,79 @@ DarkCaveBlackthornEntrancePokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
 	done
+	
+DarkCaveXehanortScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_XEHANORT
+	iftrue .FightDone
+.fight
+	writetext DarkCaveXehanortSeenText
+	waitbutton
+	closetext
+	winlosstext DarkCaveXehanortBeatenText, DarkCaveXehanortWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SAGE, XEHANORT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_XEHANORT
+	end
+.FightDone:
+	writetext DarkCaveXehanortAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDarkCaveXehanort
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextDarkCaveXehanort
+	waitbutton
+	closetext
+	end
+DarkCaveXehanortSeenText:
+    text "These worlds have"
+    line "been connected."
+
+    para "Tied to the"
+    line "darkness."
+
+    para "Soon to be"
+    line "completely"
+    cont "eclipsed."
+
+    para "There must be a"
+    line "balance."
+
+    para "You disturb this."
+
+    para "You will help me"
+    line "tear down this"
+    cont "tyranny of light."
+    done
+DarkCaveXehanortBeatenText:
+    text "Only now have I"
+    line "truly won."
+    done
+DarkCaveXehanortWinsText:
+    text "Open your heart."
+    done
+DarkCaveXehanortAfterBattleText:
+    text "All worlds begin"
+    line "in darkness."
+
+    para "And also end."
+
+    para "Your heart is"
+    line "no different."
+    done
+RematchTextDarkCaveXehanort:
+    text "Do you have more"
+    line "to learn?"
+    done
+RematchRefuseTextDarkCaveXehanort:
+    text "Open your heart."
+    done
 
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
@@ -296,7 +370,9 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event 25,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMCurse, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event 39, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
 	object_event  8, 11, SPRITE_GRAMPS,    SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderJackScript, -1
-	object_event 21, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 23, 11, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 21, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 40,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  7, 28, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveXehanortScript, -1
+
 

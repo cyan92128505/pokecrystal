@@ -6006,7 +6006,7 @@ PrintSpecialAttackUpMessage:
     ld hl, WildSpecialAttackUpText
     jp BattleTextbox
 WildSpecialAttackUpText:
-    text "Enemy SPCl.ATK"
+    text "Enemy SPCL.ATK"
     line "went up!"
     prompt
 

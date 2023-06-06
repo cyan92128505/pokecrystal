@@ -348,6 +348,7 @@
     const EVENT_GOT_JULIUS_NUGGET
     const EVENT_BEAT_AERITH_1
     const EVENT_BEAT_AERITH_2
+    const EVENT_BEAT_SOLDIER_10
 
 	const_next 600
 ; Kurt Apricorn events

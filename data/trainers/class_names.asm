@@ -58,7 +58,7 @@ TrainerClassNames::
 	li "ROCKET"
 	li "SAGE"
 	li "MEDIUM"
-	li "SOLDIER"
+	li "HOEN"
 	li "#FAN"
 	li "KIMONO GIRL"
 	li "TWINS"

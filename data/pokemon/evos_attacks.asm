@@ -1450,8 +1450,9 @@ DrowzeeEvosAttacks:
 	db 18, CONFUSION
 	db 25, HEADBUTT
 	db 28, PSYBEAM
-	db 31, ZEN_HEADBUTT
-	db 36, MEDITATE
+	db 30, MEDITATE
+	db 33, HYPNOSIS
+	db 36, ZEN_HEADBUTT
 	db 40, PSYCHIC_M
 	db 45, DREAM_EATER
 	db 0 ; no more level-up moves
@@ -1466,8 +1467,9 @@ HypnoEvosAttacks:
 	db 18, CONFUSION
 	db 25, HEADBUTT
 	db 28, PSYBEAM
-	db 33, ZEN_HEADBUTT
-	db 36, MEDITATE
+	db 30, MEDITATE
+	db 33, HYPNOSIS
+	db 36, ZEN_HEADBUTT
 	db 40, PSYCHIC_M
 	db 45, DREAM_EATER
 	db 0 ; no more level-up moves

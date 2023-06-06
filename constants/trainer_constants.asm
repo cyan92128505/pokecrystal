@@ -690,6 +690,7 @@ KRIS EQU __trainer_class__
 	const SOLDIER_7
 	const SOLDIER_8
 	const SOLDIER_9
+	const SOLDIER_SPY
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM

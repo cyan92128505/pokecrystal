@@ -12,6 +12,7 @@
     const CIANWOODCITY_FIELDMON_3
     const CIANWOODCITY_FIELDMON_4
     const CIANWOODCITY_FIELDMON_5
+    const CIANWOODCITY_HOEN_SPY
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -458,6 +459,79 @@ CianwoodCityFieldMon5Script:
 	setevent EVENT_FIELD_MON_5
 	disappear CIANWOODCITY_FIELDMON_5
 	end
+	
+HoenSpyScript:
+    faceplayer
+	opentext
+	writetext HoenSpySeenText
+	waitbutton
+	closetext
+	winlosstext HoenSpyBeatenText, HoenSpyWinsText
+	loadtrainer SOLDIER, SOLDIER_SPY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SOLDIER_10
+	opentext
+	writetext HoenSpyAfterBattleText
+	waitbutton
+    closetext
+    disappear CIANWOODCITY_HOEN_SPY
+    reloadmap
+	end
+HoenSpySeenText:
+    text "Oh um..."
+
+    para "Run along now"
+
+    para "I'm just a sailor"
+    line "making a map of"
+    cont "the JOHTO coast."
+
+    para "Shouldn't you be"
+    line "collecting your"
+    cont "badges."
+
+    para "There is a GYM"
+    line "LEADER here."
+
+    para "SURGE...."
+
+    para "I mean CHUCK!"
+
+    para "...."
+
+    para "Damn my cover is"
+    line "blown."
+
+    para "Sorry kid but I"
+    line "can't let anyone"
+    cont "suspect me."
+
+    para "You have to go!"
+    done
+HoenSpyBeatenText:
+    text "I'm a double"
+    line "agent!"
+    done
+HoenSpyWinsText:
+    text "You saw nothing."
+    done
+HoenSpyAfterBattleText:
+    text "I have already"
+    line "relayed the"
+    cont "relevant info."
+
+    para "We wont let you"
+    line "squander your"
+    cont "land and #MON"
+    cont "much longer."
+
+    para "Go home kid."
+
+    para "And stay out of"
+    line "our way or you"
+    cont "will suffer."
+    done
 
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
@@ -499,4 +573,5 @@ CianwoodCity_MapEvents:
 	object_event 7,  38, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 25, 46, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 7, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 23, 8, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, HoenSpyScript, EVENT_BEAT_SOLDIER_10
 

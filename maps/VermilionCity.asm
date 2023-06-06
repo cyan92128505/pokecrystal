@@ -612,6 +612,7 @@ YunaScriptVermilion:
 	closetext
 .dontAsk
 	winlosstext VermilionYunaBeatenText, VermilionYunaWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, YUNA_2
 	startbattle
 	reloadmapafterbattle

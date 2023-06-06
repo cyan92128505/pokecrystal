@@ -312,6 +312,7 @@ YunaScript:
 	closetext
 .dontAsk
 	winlosstext YunaBeatenText, YunaWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, YUNA_1
 	startbattle
 	reloadmapafterbattle

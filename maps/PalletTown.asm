@@ -96,6 +96,7 @@ Aerith2Script:
 	closetext
 .dontAsk
 	winlosstext Aerith2BeatenText, Aerith2WinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, AERITH_2
 	startbattle
 	reloadmapafterbattle

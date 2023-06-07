@@ -421,6 +421,7 @@ CrystalScript1:
     iftrue .end
     checkevent EVENT_GOT_A_POKEMON_FROM_ELM
     iffalse .end
+    showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, NewBarkTownMovement_PlayerRight
     sjump CrystalScript
 .end
@@ -431,6 +432,7 @@ CrystalScript2:
     iftrue .end
     checkevent EVENT_GOT_A_POKEMON_FROM_ELM
     iffalse .end
+    showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, NewBarkTownMovement_PlayerUpAndRight
     sjump CrystalScript
 .end
@@ -438,7 +440,6 @@ CrystalScript2:
 
 CrystalScript:
     playmusic MUSIC_RIVAL_ENCOUNTER
-    showemote EMOTE_SHOCK, PLAYER, 15
     opentext
     writetext Crystal1_WaitUpText
     waitbutton
@@ -498,6 +499,7 @@ NewBarkTownMovement_CrystalApproaches:
     big_step LEFT
     big_step LEFT
     big_step LEFT
+    big_step UP
     big_step LEFT
     step_end
 
@@ -604,12 +606,12 @@ NewBarkTown_MapEvents:
 	bg_event  9, 25, BGEVENT_READ, NewBarkTownElmsHouseSign
 
 	def_object_events
-	object_event  6, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
+	object_event  6, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 10, 20, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
 	object_event 12,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 13,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
-	object_event 10,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
-	object_event  7, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
+	object_event 10,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
+	object_event  7, 21, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
 

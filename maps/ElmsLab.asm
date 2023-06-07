@@ -1662,9 +1662,10 @@ ElmStopThisText:
     line "you realise the"
     cont "gravity of that."
 
-    para "<PLAYER> has the"
-    line "power to save"
-    cont "people."
+    para "<PLAYER> is one"
+    line "of the strongest"
+    cont "trainers in the"
+    cont "world."
 
     para "No one can tell"
     line "<PLAYER> what to"
@@ -1687,7 +1688,7 @@ DadBattleBeginsText:
     para "Now you are not"
     line "leaving."
 
-    para "If have to stop"
+    para "If I have to stop"
     line "you by force then"
     cont "I will!"
     done
@@ -1721,7 +1722,7 @@ DadAcknowledgmentText:
 
     para "...."
 
-    para "It give me hope."
+    para "It gives me hope."
 
     para "That we can"
     line "protect ourselves"
@@ -1729,16 +1730,13 @@ DadAcknowledgmentText:
     done
 
 DadGoodbyeText:
-    text "I can't believe"
-    line "you are my <PLAYER>."
+    text "<PLAYER> you have"
+    line "grown so much."
 
-    para "You are far beyond"
-    line "anyone I've ever"
-    cont "fought."
+    para "Unlike me..."
 
-    para "Forgive me!"
-
-    para "CHAMPION."
+    para "Forgive me"
+    line "CHAMPION!"
     done
 
 ELmsLabMovement_DadLeaves:

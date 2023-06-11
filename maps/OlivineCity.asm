@@ -4,6 +4,7 @@
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_OLIVINE_RIVAL
 	const OLIVINECITY_OLIVINE_YUNA
+	const OLIVINECITY_CRYSTAL
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,7 @@ OlivineCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Crystal
 
 .DummyScene0:
 	end
@@ -22,6 +24,22 @@ OlivineCity_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_OLIVINE
 	endcallback
+
+.Crystal
+    disappear OLIVINECITY_CRYSTAL
+    endcallback
+
+OlivineCityRivalSceneBottom:
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .end
+    applymovement PLAYER, OlivineCity_PlayerUp
+    sjump OlivineCityRivalSceneTop
+.end
+	end
+
+OlivineCity_PlayerUp:
+    step UP
+    step_end
 
 OlivineCityRivalSceneTop:
     checkevent EVENT_BEAT_WHITNEY
@@ -39,43 +57,189 @@ OlivineCityRivalSceneTop:
 	writetext OlivineCityRivalText
 	waitbutton
 	closetext
-	applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement
+
+	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesTopMovement
+	appear OLIVINECITY_CRYSTAL
+	applymovement OLIVINECITY_CRYSTAL, OlivineMovement_CrystalApproaches
+	opentext
+	writetext OlivineCrystalIntroText
+	waitbutton
+	closetext
+
+	showemote EMOTE_SHOCK, OLIVINECITY_CRYSTAL, 15
+	applymovement OLIVINECITY_CRYSTAL, OlivineMovement_CrystalConfrontSilver
+	turnobject PLAYER, DOWN
+	opentext
+	writetext OlivineCrystalConfrontSilver
+	waitbutton
+	closetext
+
+	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineMovement_SilverConfrontsCrystal
+	opentext
+	writetext OlivineSilverConfrontsCrystal
+	waitbutton
+	closetext
+
+	applymovement OLIVINECITY_CRYSTAL, OlivineMovement_CrystalToSilver
+	opentext
+	writetext OlivineCrystalChallengeSilver
+	waitbutton
+	closetext
+
+	opentext
+	writetext OlivineSilverFightCrystal
+	waitbutton
+	closetext
+
+	turnobject OLIVINECITY_CRYSTAL, UP
+	opentext
+	writetext OlivineCrystalGoodbye
+	waitbutton
+	closetext
+
+	turnobject PLAYER, RIGHT
+	follow OLIVINECITY_CRYSTAL, OLIVINECITY_OLIVINE_RIVAL
+	applymovement OLIVINECITY_CRYSTAL, OlivineMovement_CrystalLeaves
+
 	setscene SCENE_FINISHED
 	disappear OLIVINECITY_OLIVINE_RIVAL
+	disappear OLIVINECITY_CRYSTAL
 	special RestartMapMusic
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
 	special LoadUsedSpritesGFX
 .end
 	end
 
-OlivineCityRivalSceneBottom:
-    checkevent EVENT_BEAT_WHITNEY
-    iffalse .end
-	turnobject PLAYER, LEFT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
-	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
-	opentext
-	writetext OlivineCityRivalText
-	waitbutton
-	closetext
-	applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement
-	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesBottomMovement
-	disappear OLIVINECITY_OLIVINE_RIVAL
-	setscene SCENE_FINISHED
-	special RestartMapMusic
-	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
-	special LoadUsedSpritesGFX
-.end
-	end
+OlivineMovement_CrystalApproaches:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    step_end
+
+OlivineCrystalIntroText:
+    text "Hey <PLAYER>."
+
+    para "How are you"
+    line "doing?"
+
+    para "I got over my"
+    line "GHOST fear!"
+
+    para "I even caught a"
+    line "real cute GHOST"
+    cont "#MON."
+
+    para "It was all thanks"
+    line "to you."
+
+    para "Hey!"
+
+    para "I hear TEAM"
+    line "ROCKET have been"
+    cont "sighted about.."
+
+    para "Hang on!"
+    done
+
+OlivineMovement_CrystalConfrontSilver:
+    big_step DOWN
+    turn_head LEFT
+    step_end
+
+OlivineCrystalConfrontSilver:
+    text "I know you."
+
+    para "You stole a"
+    line "#MON from"
+    cont "PROF.ELM!"
+
+    para "You are a pathetic"
+    line "person. You don't"
+    cont "even deserve to be"
+    cont "called a trainer!"
+    done
+
+OlivineMovement_SilverConfrontsCrystal:
+    step DOWN
+    turn_head RIGHT
+    step_end
+
+OlivineSilverConfrontsCrystal:
+    text "Yeah I took the"
+    line "#MON."
+
+    para "It longed for a"
+    line "strong trainer."
+
+    para "It certinly would"
+    line "not have found one"
+    cont "in NEW BARK TOWN."
+
+    para "You two are proof"
+    line "of that."
+    done
+
+OlivineMovement_CrystalToSilver:
+    step LEFT
+    step_end
+
+OlivineCrystalChallengeSilver:
+    text "...."
+
+    para "Fight me then."
+
+    para "And the difference"
+    line "between our #MON"
+    cont "will be clear."
+
+    para "Yours will never"
+    line "fight to their"
+    cont "fullest for you."
+
+    para "Because you are"
+    line "a thief and a"
+    cont "coward."
+    done
+
+OlivineSilverFightCrystal:
+    text "How much can you"
+    line "really care about"
+    cont "your #MON."
+
+    para "If you did you"
+    line "wouldn't willingly"
+    cont "let me beat them."
+    done
+
+OlivineCrystalGoodbye:
+    text "<PLAYER> you take"
+    line "care."
+
+    para "I'm going to deal"
+    line "with this bully"
+    cont "once and for all!"
+    done
+
+OlivineMovement_CrystalLeaves:
+    step RIGHT
+    step RIGHT
+    step UP
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step_end
 
 OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
@@ -423,4 +587,6 @@ OlivineCity_MapEvents:
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event  6, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScript, -1
+	object_event 18,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+
 

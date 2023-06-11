@@ -5,11 +5,17 @@
 	const RADIOTOWER1F_ROCKET
 	const RADIOTOWER1F_LUCKYNUMBERMAN
 	const RADIOTOWER1F_CARD_WOMAN
+	const RADIOTOWER1F_CRYSTAL
 
 RadioTower1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Crystal
+
+.Crystal
+    disappear RADIOTOWER1F_CRYSTAL
+    endcallback
 
 RadioTower1FReceptionistScript:
 	faceplayer
@@ -470,6 +476,142 @@ RadioTower1FLuckyChannelSignText:
 	cont "ent ID numbers!"
 	done
 
+RadioTowerCrystalScript1:
+    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+    ;iffalse .end
+    checkevent EVENT_BEAT_CRYSTAL_4
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    applymovement PLAYER, RadioTowerMovement_PlayerDown
+    sjump RadioTowerCrystalScript
+.end
+    end
+
+RadioTowerCrystalScript2:
+    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+    iffalse .end
+    checkevent EVENT_BEAT_CRYSTAL_4
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    turnobject PLAYER, LEFT
+    sjump RadioTowerCrystalScript
+.end
+    end
+
+RadioTowerCrystalScript3:
+    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+    iffalse .end
+    checkevent EVENT_BEAT_CRYSTAL_4
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    applymovement PLAYER, RadioTowerMovement_PlayerUp
+    sjump RadioTowerCrystalScript
+.end
+    end
+
+RadioTowerCrystalScript:
+    playmusic MUSIC_KIMONO_ENCOUNTER
+    opentext
+    writetext RadioTowerCrystalWaitUp
+    waitbutton
+    closetext
+
+    playsound SFX_ENTER_DOOR
+    appear RADIOTOWER1F_CRYSTAL
+    applymovement RADIOTOWER1F_CRYSTAL, RadioTowerMovement_CrystalApproaches
+    opentext
+    writetext RadioTowerCrystalIntroText
+    waitbutton
+    closetext
+
+    special FadeOutMusic
+    showemote EMOTE_SHOCK, RADIOTOWER1F_CRYSTAL, 15
+    applymovement RADIOTOWER1F_CRYSTAL, RadioTowerMovement_CrystalLeft
+    pause 10
+    applymovement RADIOTOWER1F_CRYSTAL, RadioTowerMovement_CrystalRight
+
+    opentext
+    writetext RadioTowerCrystalDadText
+    waitbutton
+    closetext
+
+	winlosstext Crystal4LosesText, Crystal4WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CRYSTAL_4
+
+	opentext
+	writetext RadioTowerCrystalGoodbye
+	waitbutton
+	closetext
+
+	applymovement RADIOTOWER1F_CRYSTAL, RadioTowerMovement_CrystalLeaves
+	playsound SFX_EXIT_BUILDING
+	disappear RADIOTOWER1F_CRYSTAL
+	end
+
+RadioTowerMovement_PlayerDown:
+    step DOWN
+    turn_head LEFT
+    step_end
+
+RadioTowerMovement_PlayerUp:
+    step UP
+    turn_head LEFT
+    step_end
+
+RadioTowerCrystalWaitUp:
+    text "Hey <PLAYER>!"
+    done
+
+RadioTowerMovement_CrystalApproaches:
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step RIGHT
+    step_end
+
+RadioTowerCrystalIntroText:
+    text "...."
+    done
+
+RadioTowerMovement_CrystalLeft:
+    fix_facing
+    big_step LEFT
+    remove_fixed_facing
+    step_end
+
+RadioTowerMovement_CrystalRight:
+    big_step RIGHT
+    step_end
+
+RadioTowerCrystalDadText:
+    text "...."
+    done
+
+Crystal4LosesText:
+    text "...."
+    done
+
+Crystal4WinsText:
+    text "...."
+    done
+
+RadioTowerCrystalGoodbye:
+    text "...."
+    done
+
+RadioTowerMovement_CrystalLeaves:
+    big_step LEFT
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
 RadioTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -479,6 +621,9 @@ RadioTower1F_MapEvents:
 	warp_event 15,  0, RADIO_TOWER_2F, 2
 
 	def_coord_events
+	coord_event 5,  2, SCENE_ALWAYS, RadioTowerCrystalScript1
+	coord_event 5,  3, SCENE_ALWAYS, RadioTowerCrystalScript2
+	coord_event 5,  4, SCENE_ALWAYS, RadioTowerCrystalScript3
 
 	def_bg_events
 	bg_event  3,  0, BGEVENT_READ, RadioTower1FDirectory
@@ -491,3 +636,5 @@ RadioTower1F_MapEvents:
 	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FLuckyNumberManScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 12,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower1FRadioCardWomanScript, EVENT_GOLDENROD_CITY_CIVILIANS
+	object_event  3,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+

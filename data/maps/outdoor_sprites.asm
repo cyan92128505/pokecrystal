@@ -1,6 +1,20 @@
 ; Valid sprite IDs for each map group.
 ; Maps with environment ROUTE or TOWN can only use these sprites.
 
+; AndrewNote - outdoor spites, here is how this works
+; Maps are grouped into map groups
+; Each map group has a set of 23 outdoor sprites
+; Only the 9 sprites in positions 13 - 21 can have walking animations
+; the first 12 are unimportant padding, you can put any non-walking sprite in there
+; the last two are always pokeball and tree
+
+; IMPORTANT!
+; when you cross one mapgroup to another by a map connection the new set is not loaded
+; this means you need to keep such groups the same to avoid errors
+; this applies in two transitions, so ensure
+; NewBarkGroupSprites = CherrygroveGroupSprites
+; OlivineGroupSprites = CianwoodGroupSprites
+
 OutdoorSprites:
 ; entries correspond to MAPGROUP_* constants
 	table_width 2, OutdoorSprites
@@ -405,11 +419,11 @@ VioletGroupSprites:
 	db SPRITE_OLD_LINK_RECEPTIONIST
 	db SPRITE_BIG_LAPRAS
 	db SPRITE_BIG_ONIX
-	db SPRITE_SUDOWOODO
+	db SPRITE_OFFICER
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_FISHER
 	db SPRITE_LASS
-	db SPRITE_OFFICER
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_COOLTRAINER_M
@@ -509,7 +523,7 @@ CianwoodGroupSprites:
 	db SPRITE_BIG_LAPRAS
 	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_POKEFAN_M
-	db SPRITE_LASS
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_BEAUTY
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SAILOR
@@ -534,7 +548,7 @@ OlivineGroupSprites:
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_POKEFAN_M
-	db SPRITE_LASS
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_BEAUTY
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SAILOR

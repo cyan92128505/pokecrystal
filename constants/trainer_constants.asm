@@ -787,5 +787,12 @@ KRIS EQU __trainer_class__
 
     trainerclass CRYSTAL ; 45
     const CRYSTAL_1
+    const CRYSTAL_2
+    const CRYSTAL_3
+    const CRYSTAL_4
+    const CRYSTAL_5
+    const CRYSTAL_6
+    const CRYSTAL_7
+    const MASTER_CRYSTAL
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

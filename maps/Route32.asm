@@ -1,18 +1,12 @@
 	object_const_def
-	;const ROUTE32_FISHER1
 	const ROUTE32_FISHER2
 	const ROUTE32_FISHER3
-	const ROUTE32_YOUNGSTER1
 	const ROUTE32_YOUNGSTER2
 	const ROUTE32_YOUNGSTER3
 	const ROUTE32_LASS1
 	const ROUTE32_COOLTRAINER_M
 	const ROUTE32_INVADER
-	;const ROUTE32_FISHER4
-	;const ROUTE32_POKE_BALL1
-	;const ROUTE32_FISHER5
 	const ROUTE32_FRIEDA
-	;const ROUTE32_POKE_BALL2
     const ROUTE32_FIELDMON_1
 	const ROUTE32_FIELDMON_2
 	const ROUTE32_FIELDMON_3
@@ -21,6 +15,7 @@
 	const ROUTE32_FIELDMON_6
 	const ROUTE32_FIELDMON_7
 	const ROUTE32_FIELDMON_8
+	const ROUTE32_CRYSTAL
 
 Route32_MapScripts:
 	def_scene_scripts
@@ -46,6 +41,7 @@ Route32_MapScripts:
     appear ROUTE32_FIELDMON_4
     appear ROUTE32_FIELDMON_5
     appear ROUTE32_FIELDMON_6
+    disappear ROUTE32_CRYSTAL
 
 ; Pokemon that sometimes appear
     random 2
@@ -1058,6 +1054,189 @@ Route32FieldMon8Script:
 	disappear ROUTE32_FIELDMON_8
 	end
 
+Route32CrystalScript:
+    checkevent EVENT_BEAT_CRYSTAL_2
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    playmusic MUSIC_KIMONO_ENCOUNTER
+    opentext
+    writetext Route32CrystalText_WaitUp
+    waitbutton
+    closetext
+    appear ROUTE32_CRYSTAL
+    applymovement PLAYER, Route32Movement_PlayerUp
+    applymovement ROUTE32_CRYSTAL, Route32Movement_CrystalApproaches
+
+    opentext
+    writetext Route32CrystalText_GotBadge
+    waitbutton
+    closetext
+    showemote EMOTE_SHOCK, ROUTE32_CRYSTAL, 15
+    opentext
+    writetext Route32CrystalText_YouToo
+    waitbutton
+    closetext
+
+	winlosstext Crystal2LosesText, Crystal2WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CRYSTAL_2
+
+	opentext
+	writetext Route32CrystalText_KeepItUp
+	waitbutton
+	closetext
+	applymovement ROUTE32_CRYSTAL, Route32Movement_CrystalLeaves
+	disappear ROUTE32_CRYSTAL
+	turnobject PLAYER, DOWN
+.end
+	end
+
+Route32CrystalText_WaitUp:
+    text "Hey <PLAYER>"
+    line "wait there!"
+    done
+
+Route32Movement_PlayerUp:
+    step UP
+    step UP
+    step UP
+    step_end
+
+Route32Movement_CrystalApproaches:
+    big_step DOWN
+    big_step DOWN
+    big_step RIGHT
+    big_step DOWN
+    step_end
+
+Route32CrystalText_GotBadge:
+    text "How have you been"
+    line "doing?"
+
+    para "I found something"
+    line "unsettling about"
+    cont "VIOLET."
+
+    para "It has DARK CAVE"
+    line "to the east,"
+    cont "RUINS of ALPH"
+    cont "to the west and"
+    cont "there is a dark"
+    cont "underground to"
+    cont "the SPROUT TOWER."
+
+    para "It's like it's"
+    line "surrounded by"
+    cont "evil and the"
+    cont "people can't do"
+    cont "anything about it."
+
+    para "There was this one"
+    line "guy with red"
+    cont "hair who really"
+    cont "seemed to hate"
+    cont "everyone. Even his"
+    cont "own #MON."
+
+    para "Still I got the"
+    line "badge from the"
+    cont "GYM."
+
+    para "Though it was"
+    line "really tough!"
+
+    para "I suppose you are"
+    line "still trying to"
+    cont "get it?"
+    done
+
+Route32CrystalText_YouToo:
+    text "You already have"
+    line "it!"
+
+    para "And I thought I"
+    line "had taken a lead"
+    cont "in our race."
+
+    para "You must have got"
+    line "much stronger."
+
+    para "I haven't had"
+    line "much luck catching"
+    cont "more #MON but"
+    cont "the ones I have"
+    cont "are pretty good!"
+
+    para "Let me show you."
+    done
+
+Crystal2LosesText:
+    text "We will get"
+    line "much stronger."
+    done
+
+Crystal2WinsText:
+    text "I didn't think"
+    line "I'd actually win!"
+    done
+
+Route32CrystalText_KeepItUp:
+    text "You are really"
+    line "strong."
+
+    para "Next time we"
+    line "battle will be"
+    cont "different!"
+
+    para "I tried exploring"
+    line "NORTH of NEW BARK"
+    cont "town in the"
+    cont "DARK CAVE. But it"
+    cont "was too scary!"
+
+    para "I'm sure there is"
+    line "good stuff there."
+
+    para "Watch out for"
+    line "INVADERS!"
+
+    para "They are bright"
+    line "red and are really"
+    cont "strong."
+
+    para "Oh and don't go"
+    line "to RUINS OF"
+    cont "ALPH at night."
+
+    para "There is a"
+    line "scary guy there"
+    cont "you don't want"
+    cont "to mess with."
+
+    para "So much danger"
+    line "everywhere."
+
+    para "You stay safe"
+    line "until we meet"
+    cont "again."
+
+    para "Good luck!"
+    done
+
+Route32Movement_CrystalLeaves:
+    big_step RIGHT
+    big_step DOWN
+    big_step DOWN
+    big_step LEFT
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
 Route32_MapEvents:
 	db 0, 0 ; filler
 
@@ -1069,7 +1248,7 @@ Route32_MapEvents:
 
 	def_coord_events
 	coord_event 18,  8, SCENE_DEFAULT, Route32CooltrainerMStopsYouScene
-	;coord_event  7, 71, SCENE_ROUTE32_OFFER_SLOWPOKETAIL, Route32WannaBuyASlowpokeTailScript
+	coord_event 18,  9, SCENE_ALWAYS, Route32CrystalScript
 
 	def_bg_events
 	bg_event 13,  5, BGEVENT_READ, Route32Sign
@@ -1080,20 +1259,14 @@ Route32_MapEvents:
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
 
 	def_object_events
-	;object_event  8, 49, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherJustin, -1
 	object_event 12, 56, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherRalph1, -1
 	object_event  6, 48, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherHenry, -1
-	object_event 12, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterAlbert, -1
 	object_event  4, 63, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterGordon, -1
 	object_event  3, 45, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
 	object_event 10, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
 	object_event 11, 82, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderSiegmeyer, -1
-	;object_event  7, 70, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
-	;object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
-	;object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
-	;object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
 
 	object_event 5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 6, Route32FieldMon1Script, EVENT_FIELD_MON_1
 	object_event  4, 36, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon2Script, EVENT_FIELD_MON_2
@@ -1103,3 +1276,6 @@ Route32_MapEvents:
 	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 8,  74, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
+
+	object_event  17, 2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+

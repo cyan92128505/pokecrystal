@@ -1,5 +1,6 @@
     object_const_def
     const DESTINYSQUARE_SILVER
+    const DESTINYSQUARE_CRYSTAL
     const DESTINYSQUARE_CYNTHIA
     const DESTINYSQUARE_STEVEN
     const DESTINYSQUARE_WALLACE
@@ -29,6 +30,40 @@ MasterRivalScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_RIVAL
+	;opentext
+	;writetext DefaultAfterBattleTextDS
+	;waitbutton
+	;closetext
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDS
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinySquare
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinySquare
+	waitbutton
+	closetext
+	end
+
+MasterCrystalScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_CRYSTAL
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDS
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDS, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, MASTER_CRYSTAL
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_CRYSTAL
 	;opentext
 	;writetext DefaultAfterBattleTextDS
 	;waitbutton
@@ -395,6 +430,8 @@ FightAdamScript:
 ChampionsBlockScript:
     checkevent EVENT_BEAT_MASTER_RIVAL
     iffalse .block
+    checkevent EVENT_BEAT_MASTER_CRYSTAL
+    iffalse .block
     checkevent EVENT_BEAT_MASTER_STEVEN
     iffalse .block
     checkevent EVENT_BEAT_MASTER_WALLACE
@@ -440,17 +477,19 @@ DestinySquare_MapEvents:
 
 	def_coord_events
 	coord_event  6,  6, SCENE_ALWAYS, FightAdamScript
-	coord_event  6,  16, SCENE_ALWAYS, ChampionsBlockScript
+	coord_event  6,  17, SCENE_ALWAYS, ChampionsBlockScript
+	coord_event  7,  17, SCENE_ALWAYS, ChampionsBlockScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  7, 17, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1
+	object_event  5, 18, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1
+	object_event  8, 18, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCrystalScript, -1
 	object_event  8, 21, SPRITE_JASMINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCynthiaScript, -1
-	object_event  5, 23, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
-	object_event  4, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
-	object_event  5, 20, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterDianthaScript, -1
-	object_event 10, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterAlderScript, -1
-	object_event  9, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1
+	object_event  4, 24, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
+	object_event  4, 16, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
+	object_event  5, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterDianthaScript, -1
+	object_event  9, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterAlderScript, -1
+	object_event  9, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterAdamScript, -1
 	object_event  6,  3, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CAUGHT_MEWTWO

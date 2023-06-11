@@ -404,11 +404,11 @@ PikachuEvosAttacks:
 	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
-	db 20, SLAM
+	db 20, BODY_SLAM
 	db 26, THUNDERBOLT
-	db 33, AGILITY
-	db 41, THUNDER
-	db 45, EXTREMESPEED
+	db 30, AGILITY
+	db 35, EXTREMESPEED
+	db 40, THUNDER
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
@@ -419,9 +419,9 @@ RaichuEvosAttacks:
 	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
-	db 20, SLAM
+	db 20, BODY_SLAM
 	db 26, THUNDERBOLT
-	db 41, THUNDER
+	db 40, THUNDER
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
@@ -1438,7 +1438,7 @@ OnixEvosAttacks:
 	db 23, HARDEN
 	db 27, RAGE
 	db 36, SANDSTORM
-	db 40, SLAM
+	db 40, BODY_SLAM
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
@@ -2205,10 +2205,12 @@ DratiniEvosAttacks:
 	db 1, WRAP
 	db 1, LEER
 	db 8, THUNDER_WAVE
+	db 12, BUBBLEBEAM
+	db 20, BODY_SLAM
 	db 25, DRAGON_RAGE
-	db 29, SLAM
-	db 38, DRAGON_CLAW
-	db 42, DRAGON_PULSE
+	db 30, WATERFALL
+	db 35, DRAGON_CLAW
+	db 40, DRAGON_PULSE
 	db 50, OUTRAGE
 	db 55, DRAGON_DANCE
 	db 65, HYPER_BEAM
@@ -2221,11 +2223,11 @@ DragonairEvosAttacks:
 	db 1, LEER
 	db 1, THUNDER_WAVE
 	db 1, DRAGON_PULSE
-	db 8, THUNDER_WAVE
+	db 20, BODY_SLAM
 	db 25, DRAGON_RAGE
-	db 29, SLAM
-	db 38, DRAGON_CLAW
-	db 42, DRAGON_PULSE
+	db 30, WATERFALL
+	db 35, DRAGON_CLAW
+	db 40, DRAGON_PULSE
 	db 50, OUTRAGE
 	db 55, DRAGON_DANCE
 	db 65, HYPER_BEAM
@@ -2233,20 +2235,20 @@ DragonairEvosAttacks:
 
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DRAGON_DANCE
-	db 1, OUTRAGE
-	db 1, EARTHQUAKE
-	db 1, FIRE_PUNCH
-	db 8, THUNDER_WAVE
+	db 1, WRAP
+	db 1, LEER
+	db 1, THUNDER_WAVE
+	db 1, DRAGON_PULSE
+	db 20, BODY_SLAM
 	db 25, DRAGON_RAGE
-	db 29, SLAM
-	db 38, DRAGON_CLAW
-	db 42, DRAGON_PULSE
+	db 30, WATERFALL
+	db 35, DRAGON_CLAW
+	db 40, DRAGON_PULSE
 	db 50, HURRICANE
-	db 52, ROOST
+	db 50, ROOST
 	db 55, DRAGON_DANCE
-    db 60, OUTRAGE
-    db 70, HYPER_BEAM
+	db 60, OUTRAGE
+	db 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 DarkraiEvosAttacks:
@@ -2424,12 +2426,15 @@ RioluEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, ENDURE
 	db 6, COUNTER
+	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, HEADBUTT
 	db 20, CRUNCH
+    db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
-	db 40, BULLET_PUNCH
-	db 45, BULK_UP
+	db 33, DRAIN_PUNCH
+	db 36, IRON_HEAD
+	db 40, BULK_UP
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2441,9 +2446,11 @@ LucarioEvosAttacks:
 	db 1, CRUNCH
 	db 1, BULLET_PUNCH
     db 20, CRUNCH
+    db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
-	db 40, BULLET_PUNCH
-	db 45, BULK_UP
+	db 33, DRAIN_PUNCH
+	db 36, IRON_HEAD
+	db 40, BULK_UP
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2852,6 +2859,7 @@ BeldumEvosAttacks:
 	db 32, BULLET_PUNCH
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
+	db 40, IRON_HEAD
 	db 44, AGILITY
 	db 48, METEOR_MASH
 	db 56, HYPER_BEAM
@@ -2870,6 +2878,7 @@ MetangEvosAttacks:
 	db 32, BULLET_PUNCH
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
+	db 40, IRON_HEAD
 	db 44, AGILITY
 	db 48, METEOR_MASH
 	db 56, HYPER_BEAM
@@ -2911,8 +2920,8 @@ WooperEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
-	db 11, SLAM
-	db 21, AMNESIA
+	db 11, AMNESIA
+	db 21, BODY_SLAM
 	db 25, BUBBLEBEAM
 	db 31, RECOVER
 	db 36, EARTHQUAKE
@@ -2924,8 +2933,8 @@ QuagsireEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
-	db 11, SLAM
-	db 21, AMNESIA
+	db 11, AMNESIA
+	db 21, BODY_SLAM
 	db 25, BUBBLEBEAM
 	db 31, RECOVER
 	db 36, EARTHQUAKE

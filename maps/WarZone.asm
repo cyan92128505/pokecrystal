@@ -54,6 +54,7 @@ WallaceScript:
 	waitbutton
 	closetext
 
+    playsound SFX_FLY
 	appear WARZONE_STEVEN
 	opentext
 	writetext StevenIntroText
@@ -70,6 +71,7 @@ WallaceScript:
     waitbutton
     closetext
 
+    playsound SFX_FLY
     appear WARZONE_CYNTHIA
     opentext
     writetext CynthiaIntroText
@@ -80,6 +82,7 @@ WallaceScript:
     waitbutton
     closetext
 
+    playsound SFX_FLY
     appear WARZONE_LEON
     opentext
     writetext LeonIntroText

@@ -14,6 +14,7 @@
     const ROUTE36_FIELDMON_4
     const ROUTE36_FIELDMON_5
     const ROUTE36_FIELDMON_6
+    const ROUTE36_CRYSTAL
 
 Route36_MapScripts:
 	def_scene_scripts
@@ -33,6 +34,7 @@ Route36_MapScripts:
 ; Pokemon which always appear
     appear ROUTE36_FIELDMON_3
     appear ROUTE36_FIELDMON_6
+    disappear ROUTE36_CRYSTAL
 
     random 2
     ifequal 1, .spawn4
@@ -755,12 +757,127 @@ Route36FieldMon6Script:
 	disappear ROUTE36_FIELDMON_6
 	end
 
-ReloadMapRoute36Script:
-    checktime NITE
+Route36CrystalScript:
+    checkevent EVENT_BEAT_CRYSTAL_3
     iftrue .end
-	reloadmap
+    showemote EMOTE_SHOCK, PLAYER, 15
+    playmusic MUSIC_KIMONO_ENCOUNTER
+    appear ROUTE36_CRYSTAL
+    applymovement ROUTE36_CRYSTAL, Route36Movement_CrystalApproaches
+
+    opentext
+    writetext Route36CrystalText_Intro
+    waitbutton
+    closetext
+
+	winlosstext Crystal3LosesText, Crystal3WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CRYSTAL_3
+
+	opentext
+	writetext Route36CrystalText_KeepItUp
+	waitbutton
+	closetext
+	applymovement ROUTE36_CRYSTAL, Route36Movement_CrystalLeaves
+	disappear ROUTE36_CRYSTAL
 .end
-    end
+	end
+
+Route36Movement_CrystalApproaches:
+    big_step RIGHT
+    big_step RIGHT
+    big_step DOWN
+    big_step RIGHT
+    big_step RIGHT
+    step_end
+
+Route36CrystalText_Intro:
+    text "You cleared that"
+    line "GHOST #MON!"
+
+    para "Thank you!"
+
+    para "I thought I was"
+    line "stuck here."
+
+    para "I'll tell you a"
+    line "secret."
+
+    para "I'm actually a bit"
+    line "afraid of GHOST"
+    cont "#MON."
+
+    para "I think when I"
+    line "was little I got"
+    cont "burned by a"
+    cont "LITWICK."
+
+    para "I still have a"
+    line "scar on my arm"
+    cont "see..."
+
+    para "But I am working"
+    line "to face my fears."
+
+    para "I'm getting much"
+    line "stronger."
+
+    para "I beat WHITNEY"
+    line "and she was tough."
+
+    para "Have you got"
+    line "stronger too?"
+    done
+
+Crystal3LosesText:
+    text "You have got"
+    line "stronger."
+    done
+
+Crystal3WinsText:
+    text "You have got"
+    line "stronger."
+    done
+
+Route36CrystalText_KeepItUp:
+    text "Well done!"
+
+    para "We are both"
+    line "getting stronger."
+
+    para "Up ahead is a"
+    line "haunted forest"
+    cont "and I haven't"
+    cont "worked up the"
+    cont "courage to go"
+    cont "in yet."
+
+    para "But I'm feeling"
+    line "much more"
+    cont "confident after"
+    cont "our battle."
+
+    para "Thank you."
+
+    para "I'm going in!"
+
+    para "Get out of my"
+    line "way Ghosts!"
+
+    para "See you later"
+    line "<PLAYER>."
+    done
+
+Route36Movement_CrystalLeaves:
+    big_step LEFT
+    big_step LEFT
+    big_step UP
+    big_step LEFT
+    big_step LEFT
+    step_end
 
 Route36_MapEvents:
 	db 0, 0 ; filler
@@ -776,6 +893,7 @@ Route36_MapEvents:
 	def_coord_events
 	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 35,  9, SCENE_ALWAYS, Route36CrystalScript
 
 	def_bg_events
 	bg_event 29,  3, BGEVENT_READ, Route36TrainerTips2
@@ -800,3 +918,6 @@ Route36_MapEvents:
 	object_event 31,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 26,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route36FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 26, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6
+
+	object_event 30,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+

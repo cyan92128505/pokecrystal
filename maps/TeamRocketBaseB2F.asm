@@ -250,13 +250,9 @@ Movement_PlayerLeft:
 	remove_sliding
 	remove_fixed_facing
 	step_end
-    ;big_step LEFT
-    ;big_step LEFT
-    ;step_end
 
 Movement_DadDown:
     big_step DOWN
-    ;big_step LEFT
     step_end
 
 RocketBaseBossBattleMovement:

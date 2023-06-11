@@ -350,7 +350,15 @@
     const EVENT_BEAT_AERITH_2
     const EVENT_BEAT_SOLDIER_10
     const EVENT_BEAT_DAD
+    const EVENT_TEMP_EVENT_1
     const EVENT_BEAT_CRYSTAL_1
+    const EVENT_BEAT_CRYSTAL_2
+    const EVENT_BEAT_CRYSTAL_3
+    const EVENT_BEAT_CRYSTAL_4
+    const EVENT_BEAT_CRYSTAL_5
+    const EVENT_BEAT_CRYSTAL_6
+    const EVENT_BEAT_CRYSTAL_7
+    const EVENT_BEAT_MASTER_CRYSTAL
 
 	const_next 600
 ; Kurt Apricorn events

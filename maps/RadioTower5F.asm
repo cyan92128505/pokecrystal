@@ -4,6 +4,7 @@
 	const RADIOTOWER5F_ROCKET_GIRL
 	const RADIOTOWER5F_ROCKER
 	const RADIOTOWER5F_POKE_BALL
+	const RADIOTOWER5F_CRYSTAL
 
 RadioTower5F_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,7 @@ RadioTower5F_MapScripts:
 	scene_script .DummyScene2 ; SCENE_RADIOTOWER5F_NOTHING
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Crystal
 
 .DummyScene0:
 	end
@@ -21,6 +23,10 @@ RadioTower5F_MapScripts:
 
 .DummyScene2:
 	end
+
+.Crystal:
+    disappear RADIOTOWER5F_CRYSTAL
+    endcallback
 
 FakeDirectorScript:
 	turnobject RADIOTOWER5F_DIRECTOR, UP
@@ -112,11 +118,21 @@ RadioTower5FRocketBossScene:
 	setevent EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM
 	clearevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
 	special PlayMapMusic
+
+	appear RADIOTOWER5F_CRYSTAL
+	applymovement RADIOTOWER5F_CRYSTAL, RadioTower5Movement_CrystalApproaches
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext RadioTower5CrystalText
+	waitbutton
+	closetext
+	applymovement RADIOTOWER5F_CRYSTAL, RadioTower5Movement_CrystalLeaves
+	disappear RADIOTOWER5F_CRYSTAL
+
 	disappear RADIOTOWER5F_DIRECTOR
 	moveobject RADIOTOWER5F_DIRECTOR, 12, 0
 	appear RADIOTOWER5F_DIRECTOR
 	applymovement RADIOTOWER5F_DIRECTOR, RadioTower5FDirectorWalksIn
-	turnobject PLAYER, RIGHT
 	opentext
 	writetext RadioTower5FDirectorThankYouText
 	promptbutton
@@ -219,10 +235,71 @@ RadioTower5FDirectorWalksOut:
 	step UP
 	step_end
 
+RadioTower5Movement_CrystalApproaches:
+	big_step DOWN
+	big_step DOWN
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step LEFT
+	step_end
+
+RadioTower5Movement_CrystalLeaves:
+	big_step RIGHT
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step UP
+	big_step UP
+	step_end
+
 RadioTower5FPlayerTwoStepsLeftMovement:
 	step LEFT
 	step LEFT
 	step_end
+
+RadioTower5CrystalText:
+    text "You did it!"
+
+    para "You really showed"
+    line "TEAM ROCKET who's"
+    cont "boss."
+
+    para "Though that exec"
+    line "looked defeated"
+    cont "and sad."
+
+    para "I almost felt"
+    line "sorry for her."
+
+    para "I helped out as"
+    line "much as I could"
+    cont "but I'm not as"
+    cont "strong as you."
+
+    para "I think <RIVAL>"
+    line "was helping out"
+    cont "too. In his own"
+    cont "ignorant way."
+
+    para "Now we should"
+    line "head to"
+    cont "BLACKTHORN."
+
+    para "The GYM LEADER"
+    line "will be back."
+
+    para "Our race is still"
+    line "on don't forget!"
+    done
 
 FakeDirectorTextBefore1:
 	text "Y-you! You came to"
@@ -582,3 +659,5 @@ RadioTower5F_MapEvents:
 	object_event 17,  2, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerExecutivef1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL
+	object_event 12,  0, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+

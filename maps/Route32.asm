@@ -1058,7 +1058,7 @@ Route32CrystalScript:
     checkevent EVENT_BEAT_CRYSTAL_2
     iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
-    playmusic MUSIC_KIMONO_ENCOUNTER
+    playmusic MUSIC_SHOW_ME_AROUND
     opentext
     writetext Route32CrystalText_WaitUp
     waitbutton

@@ -16,6 +16,8 @@ WarZone_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Weather
 
 .Weather:
+	setval WEATHER_RAIN
+	writemem wFieldWeather
 	checkevent EVENT_BEAT_WALLACE
 	iffalse .war
 	appear WARZONE_STEVEN
@@ -23,8 +25,6 @@ WarZone_MapScripts:
 	appear WARZONE_LEON
 	sjump .end
 .war
-	setval WEATHER_RAIN
-	writemem wFieldWeather
 	disappear WARZONE_STEVEN
 	disappear WARZONE_CYNTHIA
 	disappear WARZONE_LEON

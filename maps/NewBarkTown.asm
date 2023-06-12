@@ -439,7 +439,7 @@ CrystalScript2:
     end
 
 CrystalScript:
-    playmusic MUSIC_KIMONO_ENCOUNTER
+    playmusic MUSIC_SHOW_ME_AROUND
     opentext
     writetext Crystal1_WaitUpText
     waitbutton

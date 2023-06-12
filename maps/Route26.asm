@@ -6,7 +6,7 @@
 	const ROUTE26_YOUNGSTER
 	const ROUTE26_FISHER
 	const ROUTE26_FRUIT_TREE
-	const ROUTE26_POKE_BALL
+	;const ROUTE26_POKE_BALL
     const ROUTE26_FIELDMON_1
     const ROUTE26_FIELDMON_2
     const ROUTE26_FIELDMON_3
@@ -15,6 +15,7 @@
     const ROUTE26_FIELDMON_6
     const ROUTE26_FIELDMON_7
     const ROUTE26_FIELDMON_8
+    const ROUTE26_CRYSTAL
 
 Route26_MapScripts:
 	def_scene_scripts
@@ -24,6 +25,12 @@ Route26_MapScripts:
 
 .Route26FieldMon:
 ; Pokemon which always appear
+    checkevent EVENT_BEAT_CRYSTAL_5
+    iftrue .skipWeather
+	setval WEATHER_NONE
+	writemem wFieldWeather
+.skipWeather
+    disappear ROUTE26_CRYSTAL
     appear ROUTE26_FIELDMON_1
     appear ROUTE26_FIELDMON_3
     appear ROUTE26_FIELDMON_4
@@ -551,6 +558,186 @@ Route26FieldMon8Script:
 	setevent EVENT_FIELD_MON_8
 	disappear ROUTE26_FIELDMON_8
 	end
+	
+Route26CrystalScript:
+    checkevent EVENT_BEAT_CRYSTAL_5
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    turnobject PLAYER, DOWN
+    playmusic MUSIC_SHOW_ME_AROUND
+    appear ROUTE26_CRYSTAL
+    applymovement ROUTE26_CRYSTAL, Route26Movement_CrystalApproaches
+
+    opentext
+    writetext Route26CrystalText_Intro
+    waitbutton
+    closetext
+
+    special FadeOutMusic
+    applymovement ROUTE26_CRYSTAL, Route26Movement_CrystalRight
+    opentext
+    writetext Route26CrystalText_Serious
+    waitbutton
+    closetext
+
+    applymovement ROUTE26_CRYSTAL, Route26Movement_CrystalLeft
+    playmusic MUSIC_INDIGO_PLATEAU
+    opentext
+    writetext Route26CrystalText_Battle
+    waitbutton
+    closetext
+
+	winlosstext Crystal5LosesText, Crystal5WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CRYSTAL_5
+
+    playmusic MUSIC_INDIGO_PLATEAU
+	opentext
+	writetext Route26CrystalText_KeepItUp
+	waitbutton
+	closetext
+	turnobject ROUTE26_CRYSTAL, DOWN
+	pause 10
+	opentext
+	writetext Route26CrystalText_IMeanIt
+	waitbutton
+	closetext
+	applymovement ROUTE26_CRYSTAL, Route26Movement_CrystalLeaves
+	disappear ROUTE26_CRYSTAL
+.end
+	end
+
+Route26Movement_CrystalApproaches:
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step LEFT
+    big_step UP
+    step_end
+
+Route26CrystalText_Intro:
+    text "You are going to"
+    line "challenge the"
+    cont "ELITE FOUR."
+
+    para "The final test."
+
+    para "If you win you"
+    line "earn the title of"
+    cont "CHAMPION."
+
+    para "Then you will"
+    line "have to head to"
+    cont "KANTO to fight"
+    cont "in the war..."
+    done
+
+Route26CrystalText_Serious:
+    text "It seems so long"
+    line "ago we were"
+    cont "leaving NEW"
+    cont "BARK together."
+
+    para "I didn't think"
+    line "it would get this"
+    cont "far."
+
+    para "Now that we are"
+    line "here."
+
+    para "I don't want to"
+    line "go on."
+
+    para "I don't want to"
+    line "be on the front"
+    cont "line against"
+    cont "the HOEN army."
+
+    para "I want us to"
+    line "just have fun"
+    cont "forever."
+
+    para "But that can't"
+    line "happen"
+    done
+
+Route26CrystalText_Battle:
+    text "I guess we are"
+    line "part of the big"
+    cont "bad world now."
+
+    para "You know what"
+    line "we have to do."
+    done
+
+Crystal5LosesText:
+    text "You win."
+    done
+
+Crystal5WinsText:
+    text "Can we just"
+    line "go home."
+    done
+
+Route26CrystalText_KeepItUp:
+    text "Well it seems"
+    line "you have won our"
+    cont "race."
+
+    para "I can't believe"
+    line "how strong you"
+    cont "have become."
+
+    para "If anyone can"
+    line "win the war. You"
+    cont "can."
+
+    para "And I'll be right"
+    line "there with you!"
+
+    para "I'm not letting"
+    line "you go alone."
+
+    para "But I need more"
+    line "training first."
+
+    para "Now you march in"
+    line "there and wipe"
+    cont "the floor with"
+    cont "the ELITE FOUR."
+
+    para "Good luck"
+    line "<PLAYER>."
+    done
+
+Route26CrystalText_IMeanIt:
+    text "I really mean"
+    line "that."
+    done
+
+Route26Movement_CrystalLeaves:
+    step DOWN
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step_end
+
+Route26Movement_CrystalRight:
+    slow_step RIGHT
+    step_end
+
+Route26Movement_CrystalLeft:
+    slow_step LEFT
+    turn_head UP
+    step_end
 
 Route26_MapEvents:
 	db 0, 0 ; filler
@@ -561,6 +748,7 @@ Route26_MapEvents:
 	warp_event  5, 71, DAY_OF_WEEK_SIBLINGS_HOUSE, 1
 
 	def_coord_events
+	coord_event 7,  6, SCENE_ALWAYS, Route26CrystalScript
 
 	def_bg_events
 	bg_event  8,  6, BGEVENT_READ, Route26Sign
@@ -573,7 +761,7 @@ Route26_MapEvents:
 	object_event 13, 79, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicRichard, -1
 	object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
-	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	;object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 
 	object_event  8, 51, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route26FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 15, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route26FieldMon2Script, EVENT_FIELD_MON_2
@@ -582,5 +770,8 @@ Route26_MapEvents:
 	object_event  3, 95, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route26FieldMon5Script, EVENT_FIELD_MON_5
 	object_event  9, 101, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26FieldMon6Script, EVENT_FIELD_MON_6
 	object_event  7, 68, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26FieldMon7Script, EVENT_FIELD_MON_7
-	object_event 13,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 13, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26FieldMon8Script, EVENT_FIELD_MON_8
+
+	object_event 13,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+
 	

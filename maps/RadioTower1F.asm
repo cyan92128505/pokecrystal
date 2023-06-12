@@ -478,7 +478,7 @@ RadioTower1FLuckyChannelSignText:
 
 RadioTowerCrystalScript1:
     checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-    ;iffalse .end
+    iffalse .end
     checkevent EVENT_BEAT_CRYSTAL_4
     iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
@@ -510,7 +510,7 @@ RadioTowerCrystalScript3:
     end
 
 RadioTowerCrystalScript:
-    playmusic MUSIC_KIMONO_ENCOUNTER
+    playmusic MUSIC_SHOW_ME_AROUND
     opentext
     writetext RadioTowerCrystalWaitUp
     waitbutton
@@ -575,7 +575,35 @@ RadioTowerMovement_CrystalApproaches:
     step_end
 
 RadioTowerCrystalIntroText:
-    text "...."
+    text "I got a call from"
+    line "PROF.ELM."
+
+    para "You're going to"
+    line "take on TEAM"
+    cont "ROCKET!"
+
+    para "We should work"
+    line "together."
+
+    para "That guy <RIVAL>"
+    line "will probably show"
+    cont "up at some point"
+    cont "too."
+
+    para "He narrowly beat"
+    line "me in our battle."
+
+    para "I was expecting"
+    line "him to gloat but"
+    cont "he actually"
+    cont "complemented me."
+
+    para "I don't even think"
+    line "it was sarcasm."
+
+    para "Have you fought"
+    line "TEAM ROCKET"
+    cont "before?"
     done
 
 RadioTowerMovement_CrystalLeft:
@@ -589,19 +617,66 @@ RadioTowerMovement_CrystalRight:
     step_end
 
 RadioTowerCrystalDadText:
-    text "...."
+    text "You found your"
+    line "Dad!"
+
+    para "Is he alright!?"
+
+    para "<PLAYER> I'm"
+    line "really happy"
+    cont "for you!"
+
+    para "He pursued the"
+    line "Rockets."
+
+    para "Maybe he will be"
+    line "here too."
+
+    para "We need to be"
+    line "strong so we can"
+    cont "keep everyone safe"
+    cont "including your"
+    cont "dad."
+
+    para "Before we get into"
+    line "this let's have a"
+    cont "battle so we can"
+    cont "learn everything"
+    cont "we can from"
+    cont "each other."
     done
 
 Crystal4LosesText:
-    text "...."
+    text "I think I"
+    line "learnt a lot."
     done
 
 Crystal4WinsText:
-    text "...."
+    text "I hope that"
+    line "helps you."
     done
 
 RadioTowerCrystalGoodbye:
-    text "...."
+    text "Alright let's"
+    line "do this!"
+
+    para "The people we care"
+    line "about have enough"
+    cont "reasons to worry."
+
+    para "We will give them"
+    line "one less reason."
+
+    para "I'm going for"
+    line "the underground."
+
+    para "You take the"
+    line "tower."
+
+    para "Let's take these"
+    line "guys down!"
+
+    para "Good luck."
     done
 
 RadioTowerMovement_CrystalLeaves:

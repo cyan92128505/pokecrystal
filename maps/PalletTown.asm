@@ -2,6 +2,7 @@
 	const PALLETTOWN_TEACHER
 	const PALLETTOWN_FISHER
 	const PALLETTOWN_AERITH
+	const PALLETTOWN_CRYSTAL
 
 PalletTown_MapScripts:
 	def_scene_scripts
@@ -15,6 +16,7 @@ PalletTown_MapScripts:
 	endcallback
 
 .Aerith:
+    disappear PALLETTOWN_CRYSTAL
     appear PALLETTOWN_AERITH
     checkevent EVENT_BEAT_AERITH_1
     iftrue .end
@@ -173,6 +175,152 @@ RematchRefuseTextAerith2:
     text "That's fine!"
     done
 
+PalletTownCrystalScript1:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .end
+    checkevent EVENT_BEAT_CRYSTAL_6
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    applymovement PLAYER, PalletTownMovement_PlayerRight
+    sjump PalletTownCrystalScript
+.end
+    end
+
+PalletTownCrystalScript2:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .end
+    checkevent EVENT_BEAT_CRYSTAL_6
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    turnobject PLAYER, DOWN
+    sjump PalletTownCrystalScript
+.end
+    end
+    
+PalletTownCrystalScript:
+    playmusic MUSIC_SHOW_ME_AROUND
+    appear PALLETTOWN_CRYSTAL
+    applymovement PALLETTOWN_CRYSTAL, PalletTownMovement_CrystalApproaches
+
+    opentext
+    writetext PalletTownCrystalText_Intro
+    waitbutton
+    closetext
+
+	winlosstext Crystal6LosesText, Crystal6WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CRYSTAL_6
+
+    special FadeOutMusic
+	opentext
+	writetext PalletTownCrystalText_KeepItUp
+	waitbutton
+	closetext
+	applymovement PALLETTOWN_CRYSTAL, PalletTownMovement_CrystalLeaves
+	disappear PALLETTOWN_CRYSTAL
+	special RestartMapMusic
+	end
+
+PalletTownMovement_PlayerRight:
+    step RIGHT
+    turn_head DOWN
+    step_end
+
+PalletTownMovement_CrystalApproaches:
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    step_end
+
+PalletTownCrystalText_Intro:
+    text "Hey there CHAMPION"
+    line "<PLAYER>!"
+
+    para "It's been a while!"
+
+    para "You know I always"
+    line "thought KANTO was"
+    cont "much more urban"
+    cont "and polluted than"
+    cont "JOHTO."
+
+    para "But this place is"
+    line "nice."
+
+    para "There is something"
+    line "about it."
+
+    para "It reminds me of"
+    line "home."
+
+    para "...."
+
+    para "I have heard that"
+    line "HOEN may invade"
+    cont "any day now."
+
+    para "I bet you have"
+    line "got even stronger"
+    cont "since we last"
+    cont "fought."
+
+    para "I want to be able"
+    line "to fight back and"
+    cont "protect these"
+    cont "people."
+
+    para "Help me become"
+    line "stronger."
+    done
+
+Crystal6LosesText:
+    text "I don't think"
+    line "I'll ever be as"
+    cont "strong as you."
+    done
+
+Crystal6WinsText:
+    text "I'm ready to"
+    line "fight."
+    done
+
+PalletTownCrystalText_KeepItUp:
+    text "The next time we"
+    line "see eachother we"
+    cont "might be fighting"
+    cont "not for fun, but"
+    cont "our lives."
+
+    para "For the lives of"
+    line "everyone."
+
+    para "I can't imagine"
+    line "anyone beating"
+    cont "you!"
+
+    para "When HOEN invade"
+    line "I know you will"
+    cont "defeat them."
+
+    para "I wont let you"
+    line "down!"
+    done
+
+PalletTownMovement_CrystalLeaves:
+    big_step LEFT
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    step_end
+
+
 PalletTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -182,6 +330,8 @@ PalletTown_MapEvents:
 	warp_event 12, 11, OAKS_LAB, 1
 
 	def_coord_events
+	coord_event 8,  2, SCENE_ALWAYS, PalletTownCrystalScript1
+	coord_event 9,  2, SCENE_ALWAYS, PalletTownCrystalScript2
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign
@@ -193,4 +343,5 @@ PalletTown_MapEvents:
 	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
 	object_event  6, 13, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Aerith2Script, EVENT_FIELD_MON_1
+	object_event 9,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 

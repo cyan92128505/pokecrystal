@@ -485,11 +485,9 @@ INCLUDE "maps/OriginRoadSouth.asm"
 INCLUDE "maps/HallOfOrigin.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
-INCLUDE "maps/Route15.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
-INCLUDE "maps/Route44.asm"
 INCLUDE "maps/AncientRuinPresent.asm"
 INCLUDE "maps/AncientRuinPast.asm"
 
@@ -506,3 +504,8 @@ INCLUDE "maps/VermilionCity.asm"
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"
 INCLUDE "maps/SeafoamGym.asm"
+
+SECTION "Map Scripts Overflow 3", ROMX
+
+INCLUDE "maps/Route15.asm"
+INCLUDE "maps/Route44.asm"

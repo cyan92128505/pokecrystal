@@ -130,14 +130,14 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr nz, .done
+	jp nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jr .done
+	jp .done
 
 ; play kanto music
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	jr .done
+	jp .done
 
 .trainermusic
     ; champoin music
@@ -177,10 +177,20 @@ PlayBattleMusic:
 	cp RIVAL1
 	jr z, .done
 	cp RIVAL2
-	jr nz, .othertrainer
+	jr nz, .checkCrystal
 
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_SILVER_CAVE ; Rival in Silver Cave
+	jr c, .done
+	ld de, MUSIC_CHAMPION_BATTLE
+	jr .done
+
+.checkCrystal
+    ld a, [wOtherTrainerClass]
+	cp CRYSTAL
+	jr nz, .othertrainer
+	ld a, [wOtherTrainerID]
+	cp CRYSTAL_7
 	jr c, .done
 	ld de, MUSIC_CHAMPION_BATTLE
 	jr .done

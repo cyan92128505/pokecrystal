@@ -373,6 +373,7 @@ SilverCaveRivalsScript:
     closetext
 
     turnobject PLAYER, LEFT
+    playmusic MUSIC_RIVAL_ENCOUNTER
     opentext
     writetext SilverCaveSilverBattleText
     waitbutton
@@ -418,6 +419,7 @@ SilverCaveRivalsScript:
     applymovement PLAYER, Movement_SilverCaveOutsideTurnBackSlow
     applymovement SILVERCAVEOUTSIDE_SILVER, Movement_SilverCaveOutsideTurnBackSlow
 
+    playmusic MUSIC_ECRUTEAK_CITY
     opentext
     writetext SilverCaveCrystalFriendshipText
     waitbutton
@@ -428,7 +430,6 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 
-    special RestartMapMusic
     applymovement SILVERCAVEOUTSIDE_CRYSTAL, Movement_SilverCaveOutsideTurnBack
     turnobject SILVERCAVEOUTSIDE_SILVER, DOWN
     opentext
@@ -468,8 +469,14 @@ SilverCaveRivalsScript:
     writetext SilverCaveCrystalGoodbyeText
     waitbutton
     closetext
+    turnobject SILVERCAVEOUTSIDE_CRYSTAL, DOWN
+    opentext
+    writetext SilverCaveCrystalForgetText
+    waitbutton
+    closetext
     applymovement SILVERCAVEOUTSIDE_CRYSTAL, SilverCaveOutsideMovement_CrystalLeaves
     disappear SILVERCAVEOUTSIDE_CRYSTAL
+    special RestartMapMusic
     end
 
 SilverCaveOutsideMovement_SilverApproaches:
@@ -512,83 +519,322 @@ SilverCaveOutsideMovement_CrystalGoodbye:
     step_end
 
 SilverCaveSilverIntroText:
-    text "...."
+    text "Wait up Hero."
+
+    para "Everyone's talking"
+    line "about the saviour"
+    cont "who defeated the"
+    cont "HOEN army."
+
+    para "All of those"
+    line "pretentious"
+    cont "CHAMPIONS who"
+    cont "did nothing to"
+    cont "help."
+
+    para "You made them all"
+    line "look like cowards."
+
+    para "OAK told us you"
+    line "would be coming"
+    cont "here."
     done
 
 SilverCaveCrystalIntroText:
-    text "...."
+    text "Hi <PLAYER>!"
+
+    para "So now that you"
+    line "have saved us"
+    cont "all you are here"
+    cont "to fight some very"
+    cont "strong trainers."
+
+    para "To see if you are"
+    line "the strongest"
+    cont "trainer in the"
+    cont "world."
+
+    para "And you didn't"
+    line "invite me along!"
     done
 
 SilverCaveSilverBattleText:
-    text "...."
+    text "Hmph!"
+
+    para "Strongest in"
+    line "the world."
+
+    para "Where were these"
+    line "other trainers"
+    cont "when the world"
+    cont "needed them."
+
+    para "Hiding away here."
+
+    para "You are stronger"
+    line "than any of them!"
+
+    para "But we have"
+    line "become much"
+    cont "stronger too on"
+    cont "our travels."
+
+    para "WALLACE wouldn't"
+    line "have a chance"
+    cont "against me now."
+
+    para "I'm sure you are"
+    line "still stronger."
+
+    para "Indulge me one"
+    line "last fight."
     done
 
 Silver7LosesText:
-    text "...."
+    text "Of course."
     done
 
 Silver7WinsText:
-    text "...."
+    text "I am only this"
+    line "strong because"
+    cont "of you."
     done
 
 SilverCaveSilverAfterBattleText:
-    text "...."
+    text "I would be"
+    line "surprised if it"
+    cont "ended any other"
+    cont "way."
     done
 
 SilverCaveCrystalBattleText:
-    text "...."
+    text "Well of course"
+    line "<PLAYER> won."
+
+    para "But like <RIVAL>"
+    line "said."
+
+    para "We have both got"
+    line "much stronger."
+
+    para "Now before you"
+    line "go off and beat"
+    cont "whoever awaits"
+    cont "you in there."
+
+    para "How about giving"
+    line "me one last"
+    cont "lesson."
+
+    para "I'll heal your"
+    line "#MON first of"
+    cont "course."
     done
 
 Crystal7LosesText:
-    text "...."
+    text "I've learnt"
+    line "a lot from you."
     done
 
 Crystal7WinsText:
-    text "...."
+    text "I've learnt"
+    line "a lot from you."
     done
 
 SilverCaveCrystalAfterBattleText:
-    text "...."
+    text "Haha.."
+
+    para "That was fun."
+
+    para "We have come such"
+    line "a long way since"
+    cont "we left home."
+
+    para "It all seemed"
+    line "to go by so"
+    cont "fast..."
     done
 
 SilverCaveCrystalSitDownText:
-    text "...."
+    text "It's calm here."
+
+    para "Maybe we can just"
+    line "sit here a while."
+
+    para "Before life"
+    line "races us along"
+    cont "again."
     done
 
 SilverCaveCrystalFriendshipText:
-    text "...."
+    text "Remember the first"
+    line "time all three of"
+    cont "us met?"
+
+    para "It was at OLIVINE."
+
+    para "<RIVAL> was"
+    line "expressing his"
+    cont "appreciation for"
+    cont "you in his"
+    cont "usual charismatic"
+    cont "way."
+
+    para "Then I got right"
+    line "up in his face"
+    cont "and I could see"
+    cont "he was secretly"
+    cont "terrified of me!"
+
+    para "I should have"
+    line "just let you two"
+    cont "fight and taken"
+    cont "the credit after"
+    cont "<PLAYER> thrashed"
+    cont "you."
+
+    para "I guess once"
+    line "you're a #MON"
+    cont "MASTER I wont"
+    cont "see you so much"
+    cont "anymore"
     done
 
 SilverCaveSilverFriendshipText:
-    text "...."
+    text "<PLAYER> would"
+    line "not have thrashed"
+    cont "me..."
+
+    para "OK you probably"
+    line "would have."
+
+    para "I nearly got"
+    line "thrashed by"
+    cont "CRYSTAL because"
+    cont "I didn't want"
+    cont "to invoke her"
+    cont "wrath by easily"
+    cont "winning."
+
+    para "Which I could"
+    line "have..."
+
+    para "I hear you found"
+    line "you lost father."
+
+    para "I was also"
+    line "looking for mine."
+
+    para "I found him and"
+    line "was intent on"
+    cont "telling him I"
+    cont "hated him."
+
+    para "But I didn't."
+
+    para "To my surprise"
+    line "we were really"
+    cont "happy to see"
+    cont "each other."
+
+    para "I think it was"
+    line "because of you"
+    cont "that I have"
+    cont "changed so much."
     done
 
 SilverCaveCrystalShouldGoText:
-    text "...."
+    text "Well..."
+
+    para "I think I'm going"
+    line "back home now."
+
+    para "All this fighting"
+    line "has made me"
+    cont "really home sick."
     done
 
 SilverCaveCrystalSilverComeTooText:
-    text "...."
+    text "You're coming too"
+    line "<RIVAL>."
     done
 
 SilverCaveSilverWhatYouMeanText:
-    text "...."
+    text "Why would I"
+    line "go!"
+
+    para "NEW BARK town"
+    line "isn't my home."
+
+    para "Would you miss"
+    line "me that much!"
     done
 
 SilverCaveCrystalYouStoleText:
-    text "...."
+    text "Yeah I really"
+    line "couldn't bear"
+    cont "to be apart"
+    cont "from you...."
+
+    para "No, you are"
+    line "coming back to"
+    cont "make up for"
+    cont "what you done."
+
+    para "You stole #MON"
+    line "from PROF.ELM."
+
+    para "The least you can"
+    line "do is apologise."
     done
 
 SilverCaveSilverYouRightText:
-    text "...."
+    text "I did do that."
+
+    para "...."
+
+    para "You are right."
+
+    para "I need to clear"
+    line "my name if I"
+    cont "can."
     done
 
 SilverCaveSilverGoodbyeText:
-    text "...."
+    text "You should go"
+    line "back too and see"
+    cont "your mum and dad."
+
+    para "But not before"
+    line "you waltz in there"
+    cont "and crush those"
+    cont "trainers the same"
+    cont "way you have done"
+    cont "with me everytime"
+    cont "we have fought."
+
+    para "Good luck Mr"
+    line "#MON MASTER."
     done
 
 SilverCaveCrystalGoodbyeText:
-    text "...."
+    text "They wont stand"
+    line "a chance against"
+    cont "you."
+
+    para "<PLAYER>..."
+
+    para "I want to thank"
+    line "you for saving"
+    cont "me."
+
+    para "And my family."
+
+    para "And everyone else."
+    done
+
+SilverCaveCrystalForgetText:
+    text "I wont forget it."
     done
 
 SilverCaveOutside_MapEvents:

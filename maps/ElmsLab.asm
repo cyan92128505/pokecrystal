@@ -1462,6 +1462,7 @@ DadBattleScript:
     writetext DadHoldItText
     waitbutton
     closetext
+    playmusic MUSIC_INDIGO_PLATEAU
     appear ELMSLAB_DAD
     applymovement ELMSLAB_DAD, ELmsLabMovement_DadEnters
     applymovement PLAYER, ELmsLabMovement_PlayerFaceDad

@@ -11,21 +11,21 @@ BillsFamilysHouse_MapScripts:
 BillScript:
 	faceplayer
 	opentext
-;	checkevent EVENT_GOT_EEVEE
-;	iftrue .GotEevee
+	checkevent EVENT_GOT_EEVEE
+	iftrue .GotEevee
 ;	checkevent EVENT_BEAT_ELITE_FOUR
 ;	iffalse .notBeatE4
-;	writetext BillTakeThisEeveeText
-;	yesorno
-;	iffalse .Refused
-;	writetext BillImCountingOnYouText
-;	promptbutton
-;	waitsfx
-;	readvar VAR_PARTYCOUNT
-;	ifequal PARTY_LENGTH, .NoRoom
-;	writetext ReceivedEeveeText
-;	playsound SFX_CAUGHT_MON
-;	waitsfx
+	writetext BillTakeThisEeveeText
+	yesorno
+	iffalse .Refused
+	writetext BillImCountingOnYouText
+	promptbutton
+	waitsfx
+	;readvar VAR_PARTYCOUNT
+	;ifequal PARTY_LENGTH, .NoRoom
+	writetext ReceivedEeveeText
+	playsound SFX_CAUGHT_MON
+	waitsfx
 ;	checkflag ENGINE_EARTHBADGE
 ;	iffalse .midLevel
 ;    givepoke SHAYMIN, 70
@@ -45,17 +45,17 @@ BillScript:
 ;	closetext
 ;	end
 
-;.Refused:
-;	writetext BillNoEeveeText
-;	waitbutton
-;	closetext
-;	end
+.Refused:
+	writetext BillNoEeveeText
+	waitbutton
+	closetext
+	end
 
-;.GotEevee:
-;	writetext BillPopWontWorkText
-;	waitbutton
-;	closetext
-;	end
+.GotEevee:
+	writetext BillPopWontWorkText
+	waitbutton
+	closetext
+	end
 
 ;.notBeatE4:
 ;	writetext BillMustBeatEliteFourText

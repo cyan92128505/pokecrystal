@@ -8,6 +8,9 @@
 	const WARZONE_SOLDIER_3
 	const WARZONE_SOLDIER_4
 	const WARZONE_SOLDIER_5
+	const WARZONE_BLUE
+	const WARZONE_SILVER
+	const WARZONE_CRYSTAL
 
 WarZone_MapScripts:
 	def_scene_scripts
@@ -16,6 +19,10 @@ WarZone_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Weather
 
 .Weather:
+    disappear WARZONE_BLUE
+    disappear WARZONE_SILVER
+    disappear WARZONE_CRYSTAL
+
 	setval WEATHER_RAIN
 	writemem wFieldWeather
 	checkevent EVENT_BEAT_WALLACE
@@ -93,6 +100,21 @@ WallaceScript:
     waitbutton
     closetext
 
+    turnobject WARZONE_WALLACE, DOWN
+    appear WARZONE_SILVER
+    applymovement WARZONE_SILVER, WarZoneMovement_SilverApproaches
+    opentext
+    writetext WarZoneSilverText
+    waitbutton
+    closetext
+
+    appear WARZONE_CRYSTAL
+    applymovement WARZONE_CRYSTAL, WarZoneMovement_CrystalApproaches
+    opentext
+    writetext WarZoneCrystalText
+    waitbutton
+    closetext
+
     turnobject WARZONE_WALLACE, LEFT
     pause 30
     turnobject WARZONE_WALLACE, RIGHT
@@ -112,7 +134,138 @@ WallaceScript:
     disappear WARZONE_SOLDIER_5
     reloadmap
     playmusic MUSIC_ECRUTEAK_CITY
+
+    turnobject WARZONE_SILVER, RIGHT
+    turnobject PLAYER, LEFT
+    opentext
+    writetext WarZoneSilverGoodbyeText
+    waitbutton
+    closetext
+    applymovement WARZONE_SILVER, WarZoneMovement_SilverLeaves
+    disappear WARZONE_SILVER
+
+    turnobject WARZONE_CRYSTAL, LEFT
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext WarZoneCrystalGoodbyeText
+    waitbutton
+    closetext
+    applymovement WARZONE_CRYSTAL, WarZoneMovement_CrystalLeaves
+    disappear WARZONE_CRYSTAL
 	end
+
+WarZoneMovement_SilverApproaches:
+    step UP
+    step UP
+    step UP
+    step LEFT
+    step UP
+    step UP
+    step_end
+
+WarZoneMovement_CrystalApproaches:
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    step_end
+
+WarZoneMovement_SilverLeaves:
+    step DOWN
+    step DOWN
+    step RIGHT
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+WarZoneMovement_CrystalLeaves:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
+WarZoneSilverText:
+    text "FUHRER WALLACE..."
+
+    para "Hmph!"
+
+    para "I expected more."
+
+    para "Just another"
+    line "weakling."
+    done
+
+WarZoneCrystalText:
+    text "You're people"
+    line "deserve better."
+
+    para "<PLAYER> has"
+    line "true strength."
+
+    para "You do not."
+    done
+
+WarZoneSilverGoodbyeText:
+    text "I don't know"
+    line "how you have"
+    cont "obtained such"
+    cont "power."
+
+    para "But don't get"
+    line "too far ahead of"
+    cont "yourself."
+
+    para "There are powerful"
+    line "#MON hidden in"
+    cont "remote places"
+    cont "of the world."
+
+    para "I will find them!"
+
+    para "And I will surpass"
+    line "you."
+    done
+
+WarZoneCrystalGoodbyeText:
+    text "You did it!"
+
+    para "You beat the whole"
+    line "HOEN army!"
+
+    para "You saved us!"
+
+    para "Thank you..."
+
+    para "I don't know"
+    line "what you do now."
+
+    para "You are a hero."
+
+    para "Your dad and mum"
+    line "will be so proud"
+    cont "of you."
+
+    para "I am."
+
+    para "I better go after"
+    line "<RIVAL>."
+
+    para "I think I know"
+    line "where he is going"
+    cont "and he will get"
+    cont "himself hurt."
+
+    para "I'll see you"
+    line "again."
+
+    para "And maybe we"
+    line "have a battle"
+    cont "for old time sake."
+    done
 
 WallaceSeenText:
     text "You are too late!"
@@ -686,6 +839,86 @@ Movement_FightWallace2:
 	step UP
 	step_end
 
+WarZoneBlueScript1:
+    checkevent EVENT_SPOKE_TO_WARZONE_BLUE
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    turnobject PLAYER, RIGHT
+    sjump WarZoneBlueScript
+.end
+    end
+
+WarZoneBlueScript2:
+    checkevent EVENT_SPOKE_TO_WARZONE_BLUE
+    iftrue .end
+    showemote EMOTE_SHOCK, PLAYER, 15
+    applymovement PLAYER, WarZoneMovement_PlayerUp
+    sjump WarZoneBlueScript
+.end
+    end
+
+WarZoneBlueScript:
+    appear WARZONE_BLUE
+    applymovement WARZONE_BLUE, WarZoneMovement_BlueApproaches
+    opentext
+    writetext WarZoneBlueText
+    waitbutton
+    closetext
+    applymovement WARZONE_BLUE, WarZoneMovement_BlueLeaves
+    disappear WARZONE_BLUE
+    turnobject PLAYER, LEFT
+    setevent EVENT_SPOKE_TO_WARZONE_BLUE
+    end
+
+WarZoneBlueText:
+    text "I've got through"
+    line "to the national"
+    cont "league."
+
+    para "I will argue that"
+    line "The CHAMPIONs"
+    cont "should be exempt"
+    cont "from political"
+    cont "neutrality."
+
+    para "I'll make an"
+    line "argument they"
+    cont "have to listen to."
+
+    para "Try to keep"
+    line "WALLACE and his"
+    cont "forces occupied"
+    cont "for a short while."
+
+    para "Don't get killed"
+    line "JOHTO CHAMPION."
+    done
+
+WarZoneMovement_PlayerUp:
+    step UP
+    turn_head RIGHT
+    step_end
+
+WarZoneMovement_BlueApproaches:
+    step UP
+    step UP
+    step UP
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    step_end
+
+WarZoneMovement_BlueLeaves:
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
 WarZone_MapEvents:
 	db 0, 0 ; filler
 
@@ -696,6 +929,8 @@ WarZone_MapEvents:
 	def_coord_events
 	coord_event  20,  7, SCENE_ALWAYS, FightWallaceScript1
 	coord_event  21,  7, SCENE_ALWAYS, FightWallaceScript2
+	coord_event  7,  32, SCENE_ALWAYS, WarZoneBlueScript1
+	coord_event  7,  33, SCENE_ALWAYS, WarZoneBlueScript2
 
 	def_bg_events
 
@@ -703,9 +938,13 @@ WarZone_MapEvents:
 	object_event 20,  4, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, WallaceScript, EVENT_BEAT_WALLACE
 	object_event 20,  0, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, StevenScript, EVENT_FIELD_MON_7
 	object_event 15,  4, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_8
-	object_event 26,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LeonScript, EVENT_FIELD_MON_9
+	object_event 26,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LeonScript, EVENT_FIELD_MON_9
 	object_event 10, 28, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier1, EVENT_BEAT_WALLACE
 	object_event  4,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
 	object_event 23, 26, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
 	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier4, EVENT_BEAT_WALLACE
 	object_event 32,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSoldier5, EVENT_BEAT_WALLACE
+
+	object_event 12, 35, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_3
+	object_event 20, 10, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 21, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2

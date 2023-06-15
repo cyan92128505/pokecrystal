@@ -1,7 +1,6 @@
     object_const_def
     const SILVERCAVEOUTSIDE_SILVER
     const SILVERCAVEOUTSIDE_CRYSTAL
-    ;const SILVERCAVEOUTSIDE_EUSINE
     const SILVERCAVEOUTSIDE_FIELDMON_1
     const SILVERCAVEOUTSIDE_FIELDMON_2
     const SILVERCAVEOUTSIDE_FIELDMON_3
@@ -25,9 +24,13 @@ SilverCaveOutside_MapScripts:
 	endcallback
 
 .Objects:
+    checkevent EVENT_BEAT_CRYSTAL_7
+    iftrue .skipWeather
+	setval WEATHER_NONE
+	writemem wFieldWeather
+.skipWeather
     disappear SILVERCAVEOUTSIDE_SILVER
     disappear SILVERCAVEOUTSIDE_CRYSTAL
-   ; disappear SILVERCAVEOUTSIDE_EUSINE
 	appear SILVERCAVEOUTSIDE_FIELDMON_1
 	appear SILVERCAVEOUTSIDE_FIELDMON_2
 	appear SILVERCAVEOUTSIDE_FIELDMON_3
@@ -476,7 +479,6 @@ SilverCaveRivalsScript:
     closetext
     applymovement SILVERCAVEOUTSIDE_CRYSTAL, SilverCaveOutsideMovement_CrystalLeaves
     disappear SILVERCAVEOUTSIDE_CRYSTAL
-    special RestartMapMusic
     end
 
 SilverCaveOutsideMovement_SilverApproaches:
@@ -720,7 +722,7 @@ SilverCaveSilverFriendshipText:
     line "have..."
 
     para "I hear you found"
-    line "you lost father."
+    line "your lost father."
 
     para "I was also"
     line "looking for mine."

@@ -2,13 +2,13 @@
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_SILVER
-	;const NEWBARKTOWN_FIELDMON_1
-	;const NEWBARKTOWN_FIELDMON_2
 	const NEWBARKTOWN_FIELDMON_4
 	const NEWBARKTOWN_FIELDMON_5
 	const NEWBARKTOWN_FIELDMON_6
 	const NEWBARKTOWN_REPEL_WOMAN
 	const NEWBARKTOWN_CRYSTAL
+	const NEWBARKTOWN_SILVER_FINAL
+	const NEWBARKTOWN_CRYSTAL_FINAL
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -17,7 +17,7 @@ NewBarkTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	callback MAPCALLBACK_OBJECTS, .Crystal
+	callback MAPCALLBACK_OBJECTS, .SilverAndCrystal
 
 .DummyScene0:
 	end
@@ -25,8 +25,16 @@ NewBarkTown_MapScripts:
 .DummyScene1:
 	end
 
-.Crystal
+.SilverAndCrystal
     disappear NEWBARKTOWN_CRYSTAL
+    disappear NEWBARKTOWN_CRYSTAL_FINAL
+    disappear NEWBARKTOWN_SILVER_FINAL
+
+    checkevent EVENT_BEAT_CRYSTAL_7
+    iffalse .end
+    appear NEWBARKTOWN_CRYSTAL_FINAL
+    appear NEWBARKTOWN_SILVER_FINAL
+.end
     endcallback
 
 .FlyPoint:
@@ -581,6 +589,211 @@ NewBarkTownMovement_CrystalLeaves:
     big_step LEFT
     step_end
 
+FinalSilverScript:
+    opentext
+	writetext SilverFinalGeneralText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextSilverFinal
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextSilverFinal
+	waitbutton
+	closetext
+	end
+.fight
+	writetext SilverFinalPreBattleText
+	waitbutton
+	closetext
+	winlosstext SilverFinalLossText, SilverFinalWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+	startbattle
+	reloadmapafterbattle
+	special HealParty
+	opentext
+	writetext SilverFinalAfterBattleText
+	waitbutton
+	closetext
+	end
+
+FinalCrystalScript:
+    opentext
+	writetext CrystalFinalGeneralText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextCrystalFinal
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextCrystalFinal
+	waitbutton
+	closetext
+	end
+.fight
+	writetext CrystalFinalPreBattleText
+	waitbutton
+	closetext
+	winlosstext CrystalFinalLossText, CrystalFinalWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, CRYSTAL_7
+	startbattle
+	reloadmapafterbattle
+	special HealParty
+	opentext
+	writetext CrystalFinalAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SilverFinalGeneralText:
+    text "This place is"
+    line "peaceful."
+
+    para "The rest of the"
+    line "world is frantic"
+    cont "and busy."
+
+    para "Like I used to"
+    line "be."
+
+    para "I'm glad CRYSTAL"
+    line "insisted I come"
+    cont "here and stay a"
+    cont "while."
+
+    para "I'm happier than"
+    line "I can remember"
+    cont "being before."
+    done
+
+RematchTextSilverFinal:
+    text "However I don't"
+    line "want you becoming"
+    cont "too complacent."
+
+    para "How about another"
+    line "battle?"
+    done
+
+RematchRefuseTextSilverFinal:
+    text "I guess we both"
+    line "know how it would"
+    cont "go."
+    done
+
+SilverFinalPreBattleText:
+    text "Don't you dare"
+    line "hold back!"
+    done
+
+SilverFinalLossText:
+    text "Some things never"
+    line "change."
+    done
+
+SilverFinalWinText:
+    text "You let me win!"
+    done
+
+SilverFinalAfterBattleText:
+    text "I don't even care"
+    line "that I will never"
+    cont "beat you."
+
+    para "I am happy with"
+    line "who I am and"
+    cont "what I have"
+    cont "achieved."
+
+    para "Losing to CRYSTAL"
+    line "however..."
+
+    para "That would be"
+    line "different."
+    done
+
+CrystalFinalGeneralText:
+    text "Hey <PLAYER>."
+
+    para "It's really good"
+    line "to see you again."
+
+    para "I think I've had"
+    line "enough"
+    cont "adventuring."
+
+    para "I'm happy here"
+    line "with my family."
+
+    para "Though I miss"
+    line "not seeing our"
+    cont "local hero more"
+    cont "often!"
+    done
+
+RematchTextCrystalFinal:
+    text "I can get a"
+    line "little boring"
+    cont "sometimes though."
+
+    para "I can battle"
+    line "<RIVAL> and it's"
+    cont "fun but I'd like"
+    cont "to battle you."
+
+    para "How about it?"
+    done
+
+RematchRefuseTextCrystalFinal:
+    text "Ah I see."
+
+    para "You don't want"
+    line "to embarrass me."
+
+    para "How gallant of"
+    line "you."
+    done
+
+CrystalFinalPreBattleText:
+    text "Let's have some"
+    line "fun!"
+    done
+
+CrystalFinalLossText:
+    text "What a surprising"
+    line "conclusion!"
+
+    para "That was fun!"
+    done
+
+CrystalFinalWinText:
+    text "You don't have"
+    line "let me win."
+    done
+
+CrystalFinalAfterBattleText:
+    text "You know I am"
+    line "still amazed at"
+    cont "the adventure we"
+    cont "had."
+
+    para "You are the hero"
+    line "who saved me and"
+    cont "all of us."
+
+    para "But you're also"
+    line "my friend."
+
+    para "And I miss you."
+
+    para "Now get out"
+    line "there and keep"
+    cont "changing the"
+    cont "world!"
+    done
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -614,4 +827,7 @@ NewBarkTown_MapEvents:
 	object_event 13,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 10,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
 	object_event  7, 21, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+
+	object_event 16, 20, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
+	object_event 14, 22, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
 

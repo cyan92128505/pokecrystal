@@ -361,6 +361,7 @@
     const EVENT_BEAT_CRYSTAL_6
     const EVENT_BEAT_CRYSTAL_7
     const EVENT_BEAT_MASTER_CRYSTAL
+    const EVENT_SPOKE_TO_WARZONE_BLUE
 
 	const_next 600
 ; Kurt Apricorn events

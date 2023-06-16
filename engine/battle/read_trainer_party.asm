@@ -467,17 +467,6 @@ ComputeTrainerReward:
 	ld [hl], a ; hMultiplier
 	call Multiply
 .notInvading
-
-; half money if fighting parry_king
-    ld a, [wOtherTrainerID]
-    cp PARRY_KING
-    jr nz, .notParryKing
-    ld a, 2
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
-.notParryKing
-
 	ld hl, wBattleReward
 	xor a
 	ld [hli], a

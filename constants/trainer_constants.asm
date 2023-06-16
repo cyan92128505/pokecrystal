@@ -778,11 +778,13 @@ KRIS EQU __trainer_class__
     const GIANT_DAD
     const SIEGMEYER
     const LAUTREC
-    const PARRY_KING
+    const BACKSTABER
     const PATCHES
     const CRESTFALLEN
+    const SOLAIRE
     const HAVEL
     const OROBORO
+    const MAX
     const MASTER_PATCHES
 
     trainerclass CRYSTAL ; 45

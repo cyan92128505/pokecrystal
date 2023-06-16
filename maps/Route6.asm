@@ -7,6 +7,7 @@
     const ROUTE6_FIELDMON_3
     const ROUTE6_FIELDMON_4
     const ROUTE6_FIELDMON_5
+    const ROUTE6_INVADER
 
 Route6_MapScripts:
 	def_scene_scripts
@@ -15,6 +16,11 @@ Route6_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Route6FieldMon
 
 .Route6FieldMon:
+    disappear ROUTE6_INVADER
+    checkevent EVENT_BEAT_INVADER_BACKSTABER
+    iffalse .fieldMon
+    ;appear ROUTE6_INVADER
+.fieldMon
 ; Pokemon which always appear
     appear ROUTE6_FIELDMON_1
     appear ROUTE6_FIELDMON_3
@@ -167,6 +173,80 @@ PokefanmAllanAfterBattleText:
 	cont "your heart melt?"
 	done
 
+InvaderBackstaberScript:
+	trainer INVADER, BACKSTABER, EVENT_BEAT_INVADER_BACKSTABER, InvaderBackstabberSeenText, InvaderBackstabberBeatenText, InvaderBackstabberVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderBackstabberAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderBackstabberSeenText:
+	text "You might think"
+	line "that wining every"
+	cont "match in one hit"
+	cont "would get boring."
+
+	para "But you'd be wrong."
+	done
+
+InvaderBackstabberVictoryText:
+	text "I had fun!"
+	done
+
+InvaderBackstabberBeatenText:
+	text "You jus got"
+	line "lucky."
+	done
+
+InvaderBackstabberAfterBattleText:
+	text "And I spent so"
+	line "much time grinding"
+	cont "coins in CELADON"
+	cont "to get these"
+	cont "weapons!"
+	done
+
+InvaderBackstaberScene:
+    checkevent EVENT_BEAT_INVADER_BACKSTABER
+   ; iftrue .end
+    appear ROUTE6_INVADER
+    applymovement ROUTE6_INVADER, BackstabberApproaches
+    showemote EMOTE_SHOCK, PLAYER, 15
+    opentext
+    writetext BackstabText
+    waitbutton
+    closetext
+    winlosstext InvaderBackstabberBeatenText, InvaderBackstabberVictoryText
+	loadtrainer INVADER, BACKSTABER
+	startbattle
+	reloadmapafterbattle
+	turnobject PLAYER, UP
+    applymovement ROUTE6_INVADER, BackstabberLeaves
+.end
+    end
+
+BackstabberApproaches:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
+BackstabberLeaves:
+    fix_facing
+    slow_step UP
+    slow_step UP
+    slow_step UP
+    remove_fixed_facing
+    step_end
+
+BackstabText:
+    text "BACKSTAB!"
+    done
+
 Route6_MapEvents:
 	db 0, 0 ; filler
 
@@ -175,6 +255,7 @@ Route6_MapEvents:
 	warp_event  6,  1, ROUTE_6_SAFFRON_GATE, 3
 
 	def_coord_events
+	coord_event  22, 7, SCENE_ALWAYS, InvaderBackstaberScene
 
 	def_bg_events
 	bg_event 19,  5, BGEVENT_READ, Route6UndergroundPathSign
@@ -188,3 +269,5 @@ Route6_MapEvents:
 	object_event  4,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  4, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  9,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route6FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 22,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderBackstaberScript, EVENT_FIELD_MON_6
+

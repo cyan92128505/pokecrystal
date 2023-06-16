@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE45_POKEFAN_M1
 	const ROUTE45_POKEFAN_M2
 	const ROUTE45_POKEFAN_M3
 	const ROUTE45_POKEFAN_M4
@@ -137,17 +136,6 @@ HikerParryHasIron:
 
 Route45RematchGiftM:
 	jumpstd RematchGiftMScript
-	end
-
-InvaderHavelScript:
-	trainer INVADER, HAVEL, EVENT_BEAT_INVADER_HAVEL, InvaderHavelSeenText, InvaderHavelBeatenText, InvaderHavelVictoryText, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext InvaderHavelAfterBattleText
-	waitbutton
-	closetext
 	end
 
 TrainerHikerMichael:
@@ -328,39 +316,6 @@ Route45DoubleEdge:
 
 Route45HiddenPpUp:
 	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
-
-InvaderHavelSeenText:
-    text "A war will come."
-
-    para "Us against the"
-    line "dragons."
-
-    para "I am the rock"
-    line "that will protect"
-    cont "humanity."
-
-    para "Crash upon me"
-    line "and break."
-	done
-
-InvaderHavelVictoryText:
-	text "Crash upon me"
-	line "and break."
-	done
-
-InvaderHavelBeatenText:
-	text "My shield is"
-	line "shattered!"
-	done
-
-InvaderHavelAfterBattleText:
-	text "The people here"
-	line "revere dragons"
-
-	para "Once they realise"
-	line "their folly it"
-	cont "will be too late."
-	done
 
 HikerMichaelSeenText:
 	text "Yo! You're spunky!"
@@ -612,7 +567,6 @@ Route45_MapEvents:
 	bg_event 13, 82, BGEVENT_ITEM, Route45HiddenPpUp
 
 	def_object_events
-	object_event 10, 4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderHavelScript, -1
 	object_event 15, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerMichael, -1
 	object_event  5, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
 	object_event  9, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerTimothy, -1

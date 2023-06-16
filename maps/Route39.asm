@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE39_SAILOR
 	const ROUTE39_POKEFAN_M
 	const ROUTE39_POKEFAN_F1
 	const ROUTE39_PSYCHIC_NORMAN
@@ -150,17 +149,6 @@ TrainerPokefanfRuth:
 	closetext
 	end
 
-InvaderParryKingScript:
-	trainer INVADER, PARRY_KING, EVENT_BEAT_SAILOR_EUGENE, InvaderParryKingSeenText, InvaderParryKingBeatenText, InvaderParryKingVictoryText, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext InvaderParryKingAfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerPsychicNorman:
 	trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
 
@@ -219,32 +207,6 @@ Route39HiddenNugget:
 
 Route39MiltankText:
 	text "MILTANK: Mooo!"
-	done
-
-InvaderParryKingSeenText:
-	text "You might think"
-	line "that wining every"
-	cont "match in one hit"
-	cont "would get boring."
-
-	para "But you'd be wrong."
-	done
-
-InvaderParryKingVictoryText:
-	text "I had fun!"
-	done
-
-InvaderParryKingBeatenText:
-	text "You jus got"
-	line "lucky."
-	done
-
-InvaderParryKingAfterBattleText:
-	text "And I spent so"
-	line "much time grinding"
-	cont "coins in CELADON"
-	cont "to get these"
-	cont "weapons!"
 	done
 
 PokefanmDerekSeenText:
@@ -472,7 +434,6 @@ Route39_MapEvents:
 	bg_event 11, 13, BGEVENT_ITEM, Route39HiddenNugget
 
 	def_object_events
-	object_event 19, 29, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderParryKingScript, -1
 	object_event 16, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, -1
 	object_event 17, 19, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, -1
 	;object_event  9, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1

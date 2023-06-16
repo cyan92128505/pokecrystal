@@ -9,6 +9,7 @@
     const ROUTE3_FIELDMON_4
     const ROUTE3_FIELDMON_5
     const ROUTE3_FIELDMON_6
+    const ROUTE3_INVADER
 
 Route3_MapScripts:
 	def_scene_scripts
@@ -226,6 +227,50 @@ Route3FieldMon6Script:
 	disappear ROUTE3_FIELDMON_6
 	end
 
+InvaderHavelScript:
+	trainer INVADER, HAVEL, EVENT_BEAT_INVADER_HAVEL, InvaderHavelSeenText, InvaderHavelBeatenText, InvaderHavelVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderHavelAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderHavelSeenText:
+    text "A war will come."
+
+    para "Us against the"
+    line "dragons."
+
+    para "I am the rock"
+    line "that will protect"
+    cont "humanity."
+
+    para "Crash upon me"
+    line "and break."
+	done
+
+InvaderHavelVictoryText:
+	text "Crash upon me"
+	line "and break."
+	done
+
+InvaderHavelBeatenText:
+	text "My shield is"
+	line "shattered!"
+	done
+
+InvaderHavelAfterBattleText:
+	text "The people here"
+	line "revere dragons"
+
+	para "Once they realise"
+	line "their folly it"
+	cont "will be too late."
+	done
+
 Route3_MapEvents:
 	db 0, 0 ; filler
 
@@ -241,10 +286,12 @@ Route3_MapEvents:
 	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1
 	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterWarren, -1
 	object_event 16,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJimmy, -1
-	object_event 49,  5, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
+	object_event 47, 15, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
 	object_event 28,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route3FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 39,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route3FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 10,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 23, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 37, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route3FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 50,  2, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 50,  5, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, InvaderHavelScript, -1
+

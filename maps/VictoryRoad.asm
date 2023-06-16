@@ -260,40 +260,47 @@ VictoryRoadRivalVictoryText:
 	line "thing else."
 	done
 
-InvaderOroboroScript:
-	trainer INVADER, OROBORO, EVENT_BEAT_INVADER_OROBORO, InvaderOroboroSeenText, InvaderOroboroBeatenText, InvaderOroboroVictoryText, .Script
+InvaderSolaireScript:
+	trainer INVADER, SOLAIRE, EVENT_BEAT_INVADER_SOLAIRE, InvaderSolaireSeenText, InvaderSolaireBeatenText, InvaderSolaireVictoryText, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext InvaderOroboroAfterBattleText
+	writetext InvaderSolaireAfterBattleText
 	waitbutton
 	closetext
 	end
 
-InvaderOroboroSeenText:
-    text "Oh Hi!"
+InvaderSolaireSeenText:
+    text "Oh hello."
 
-    para "Hang on let me"
-    line "get my buffs up."
+    para "The flow of time"
+    line "itself is"
+    cont "convoluted."
+
+    para "It is perfect"
+    line "for heroes from"
+    cont "all eras to"
+    cont "engage in"
+    cont "jolly cooperation."
+
+    para "Can you help"
+    line "me find my"
+    cont "Sun!"
 	done
 
-InvaderOroboroVictoryText:
-	text "Hahahaha!"
-	line "get recked dude"
+InvaderSolaireVictoryText:
+	text "Praise the Sun."
 	done
 
-InvaderOroboroBeatenText:
-	text "No way!"
-	line "Good game."
+InvaderSolaireBeatenText:
+	text "Praise the Sun."
 	done
 
-InvaderOroboroAfterBattleText:
-	text "There was some"
-	line "lag."
-
-	para "That's the only"
-	line "reason you won!"
+InvaderSolaireAfterBattleText:
+	text "If only I could"
+	line "be so grossly"
+	cont "incandescent."
 	done
 
 VictoryRoadFieldMon1Script:
@@ -385,7 +392,7 @@ VictoryRoad_MapEvents:
 	object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadLifeOrb, EVENT_VICTORY_ROAD_LIFE_ORB
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMFlamethrower, EVENT_VICTORY_ROAD_TM_FLAMETHROWER
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadAmbrosia, EVENT_VICTORY_ROAD_AMBROSIA
-	object_event 12, 38, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
+	object_event 12, 38, SPRITE_MORTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderSolaireScript, -1
 	object_event 19, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, VictoryRoadFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 12, 53, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER,3, VictoryRoadFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 12, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, VictoryRoadFieldMon3Script, EVENT_FIELD_MON_3

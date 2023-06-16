@@ -11,6 +11,7 @@
 	const WARZONE_BLUE
 	const WARZONE_SILVER
 	const WARZONE_CRYSTAL
+	const WARZONE_INVADER
 
 WarZone_MapScripts:
 	def_scene_scripts
@@ -919,6 +920,42 @@ WarZoneMovement_BlueLeaves:
     step DOWN
     step_end
 
+InvaderOroboroScript:
+	trainer INVADER, OROBORO, EVENT_BEAT_INVADER_OROBORO, InvaderOroboroSeenText, InvaderOroboroBeatenText, InvaderOroboroVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderOroboroAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderOroboroSeenText:
+    text "Oh Hi!"
+
+    para "Hang on let me"
+    line "get my buffs up."
+	done
+
+InvaderOroboroVictoryText:
+	text "Hahahaha!"
+	line "get recked dude"
+	done
+
+InvaderOroboroBeatenText:
+	text "No way!"
+	line "Good game."
+	done
+
+InvaderOroboroAfterBattleText:
+	text "There was some"
+	line "lag."
+
+	para "That's the only"
+	line "reason you won!"
+	done
+
 WarZone_MapEvents:
 	db 0, 0 ; filler
 
@@ -943,8 +980,10 @@ WarZone_MapEvents:
 	object_event  4,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
 	object_event 23, 26, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
 	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier4, EVENT_BEAT_WALLACE
-	object_event 32,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSoldier5, EVENT_BEAT_WALLACE
+	object_event 35,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSoldier5, EVENT_BEAT_WALLACE
 
 	object_event 12, 35, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_3
 	object_event 20, 10, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 21, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
+	object_event 26, 12, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
+

@@ -12,6 +12,7 @@
     const SILVERCAVEROOM2_FIELDMON_8
     const SILVERCAVEROOM2_FIELDMON_9
     const SILVERCAVEROOM2_FIELDMON_10
+    const SILVERCAVEROOM2_INVADER
 
 SilverCaveRoom2_MapScripts:
 	def_scene_scripts
@@ -153,16 +154,59 @@ SilverCaveRoom2FieldMon10Script:
 	end
 
 SilverCaveRoom2Calcium:
-	itemball CALCIUM
+	itemball RARE_CANDY
 
 SilverCaveRoom2UltraBall:
-	itemball ULTRA_BALL
+	itemball RARE_CANDY
 
 SilverCaveRoom2PPUp:
-	itemball PP_UP
+	itemball RARE_CANDY
 
 SilverCaveRoom2HiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
+	hiddenitem RARE_CANDY, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
+
+InvaderMaxScript:
+	trainer INVADER, MAX, EVENT_BEAT_INVADER_MAX, InvaderMaxSeenText, InvaderMaxBeatenText, InvaderMaxVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderMaxAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderMaxSeenText:
+    text "Welcome to"
+    line "MT SILVER."
+
+    para "You know what"
+    line "you being here"
+    cont "means?"
+
+    para "It means you're"
+    line "in the max level"
+    cont "tier!"
+	done
+
+InvaderMaxVictoryText:
+	text "Max SL fights"
+	line "are boring."
+	done
+
+InvaderMaxBeatenText:
+	text "What level"
+	line "are you!"
+	done
+
+InvaderMaxAfterBattleText:
+	text "If you need to"
+	line "level up fast."
+
+	para "Check out the"
+	line "BATTLE TOWER"
+	cont "CHAMP trial."
+	done
 
 SilverCaveRoom2_MapEvents:
 	db 0, 0 ; filler
@@ -182,7 +226,7 @@ SilverCaveRoom2_MapEvents:
 	object_event 24, 34, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2Calcium, EVENT_SILVER_CAVE_ROOM_2_CALCIUM
 	object_event 22, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2UltraBall, EVENT_SILVER_CAVE_ROOM_2_ULTRA_BALL
 	object_event  4, 44, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2PPUp, EVENT_SILVER_CAVE_ROOM_2_PP_UP
-	object_event 22, 52, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 16, 52, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 19, 44, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 14, 48, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  7, 39, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon4Script, EVENT_FIELD_MON_4
@@ -192,4 +236,6 @@ SilverCaveRoom2_MapEvents:
 	object_event  5, 32, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 10, 46, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon9Script, EVENT_FIELD_MON_9
 	object_event 19, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon10Script, EVENT_FIELD_MON_10
+	object_event 22, 52, SPRITE_WILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderMaxScript, -1
+
 	

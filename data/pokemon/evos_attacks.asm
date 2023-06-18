@@ -1384,12 +1384,11 @@ GastlyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 8, SPITE
+	db 8, CONFUSE_RAY
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 28, CONFUSE_RAY
-	db 35, SHADOW_BALL
+	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
@@ -1400,13 +1399,11 @@ HaunterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 1, SPITE
-	db 8, SPITE
+	db 8, CONFUSE_RAY
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 31, CONFUSE_RAY
-	db 35, SHADOW_BALL
+	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
@@ -1416,13 +1413,11 @@ GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 1, SPITE
-	db 8, SPITE
+	db 8, CONFUSE_RAY
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 31, CONFUSE_RAY
-	db 35, SHADOW_BALL
+	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
@@ -2751,14 +2746,15 @@ SylveonEvosAttacks:
 MismagiusEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 6, SPITE
+	db 6, LICK
+	db 10, CONFUSION
 	db 12, CONFUSE_RAY
-	db 19, MEAN_LOOK
-	db 23, HYPNOSIS
-	db 27, PSYBEAM
-	db 32, SHADOW_BALL
-	db 36, PAIN_SPLIT
-	db 46, PERISH_SONG
+	db 15, MEAN_LOOK
+	db 17, HYPNOSIS
+	db 20, PSYBEAM
+	db 25, PAIN_SPLIT
+	db 30, SHADOW_BALL
+	db 40, PERISH_SONG
 	db 0 ; no more level-up moves
 
 PorygonzEvosAttacks:
@@ -3004,14 +3000,15 @@ MisdreavusEvosAttacks:
     db EVOLVE_ITEM, MOON_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 6, SPITE
+	db 6, LICK
+	db 10, CONFUSION
 	db 12, CONFUSE_RAY
-	db 19, MEAN_LOOK
-	db 23, HYPNOSIS
-	db 27, PSYBEAM
-	db 32, SHADOW_BALL
-	db 36, PAIN_SPLIT
-	db 46, PERISH_SONG
+	db 15, MEAN_LOOK
+	db 17, HYPNOSIS
+	db 20, PSYBEAM
+	db 25, PAIN_SPLIT
+	db 30, SHADOW_BALL
+	db 40, PERISH_SONG
 	db 0 ; no more level-up moves
 
 UnownEvosAttacks:
@@ -3079,11 +3076,13 @@ DunsparceEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAGE
 	db 5, DEFENSE_CURL
-	db 13, GLARE
-	db 18, SPITE
-	db 26, PURSUIT
-	db 30, SCREECH
-	db 38, TAKE_DOWN
+	db 10, ROLLOUT
+	db 12, GLARE
+	db 20, ANCIENTPOWER
+	db 25, CRUNCH
+	db 30, ROOST
+	db 35, DRAGON_CLAW
+	db 40, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:

@@ -26,7 +26,7 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const OBLIVION     ; 14
-	const SLAM         ; 15
+	const SLAM         ; 15   AndrewNote - this is not used
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
@@ -185,7 +185,7 @@
 	const AEROBLAST    ; b1
 	const SHADOW_CLAW  ; b2
 	const REVERSAL     ; b3
-	const SPITE        ; b4
+	const SPITE        ; b4    AndrewNote - this is not used
 	const POWDER_SNOW  ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7

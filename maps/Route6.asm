@@ -212,7 +212,7 @@ InvaderBackstabberAfterBattleText:
 
 InvaderBackstaberScene:
     checkevent EVENT_BEAT_INVADER_BACKSTABER
-   ; iftrue .end
+    iftrue .end
     appear ROUTE6_INVADER
     applymovement ROUTE6_INVADER, BackstabberApproaches
     showemote EMOTE_SHOCK, PLAYER, 15

@@ -3076,12 +3076,8 @@ AI_Smart_BatonPass:
 	push hl
 	farcall FindAliveEnemyMons
 	pop hl
-	jr nc, .notlastmon
-	inc [hl]
-	inc [hl]
-	ret
+	jr c, .discourage
 
-.notlastmon
 ; encourage if we have good stat boosts to pass
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -3092,34 +3088,15 @@ AI_Smart_BatonPass:
     ld a, [wEnemySpdLevel]
 	cp BASE_STAT_LEVEL + 2
 	jr nc, .encourage
-	jr .continue
+	jr .discourage
 .encourage
 	dec [hl]
 	dec [hl]
-.continue
-; I hard code the recipient to be the second mon
-; this allows for a dedicated baton pass strategy
-; except for in the battle tower - normal switch logic here is fine
-    ld a, [wInBattleTowerBattle]
-	and a
-	jr z, .notBattleTower
-    xor a
-    ld [wEnemySwitchMonIndex], a
+	ret
+.discourage
+    inc [hl]
+    inc [hl]
     ret
-
-.notBattleTower
-    ld a, 2
-    ld [wEnemySwitchMonIndex], a
-    ret
-
-	;push hl
-	;callfar CheckPlayerMoveTypeMatchups
-	;ld a, [wEnemyAISwitchScore]
-	;cp BASE_AI_SWITCH_SCORE
-	;pop hlc
-	;ret c
-	;inc [hl]
-	;ret
 
 AI_Smart_Pursuit:
 ; 50% chance to greatly encourage this move if player's HP is below 25%.

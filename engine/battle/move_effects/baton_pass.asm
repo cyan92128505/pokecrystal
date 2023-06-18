@@ -61,37 +61,101 @@ BattleCommand_BatonPass:
 	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
 
-; Passed enemy PartyMon entrance
-; clean this crap up
-	ld a, [wOTPartyCount]
-	ld c, a
-	ld hl, wOTPartyMon1HP
-	ld d, 0
-.SwitchLoop:
-	ld a, [hli]
-	ld b, a
-	ld a, [hld]
-	or b
-	jr z, .fainted
-	inc d
-.fainted
-	push bc
+; AndrewNote - baton pass - logic for enemy ai revamped
+; enemy AI will treat Pokemon in index 2 as dedicated recipients, unless in battle tower
+
+; if in battle tower just clear recipient index
+    ld a, [wInBattleTowerBattle]
+	and a
+	jr z, .notBattleTower
+    xor a
+    ld [wEnemySwitchMonIndex], a
+    jr .skip
+
+.notBattleTower
+; default baton pass recipient to mon in index 2 (2nd mon in party)
+    ld a, 2
+    ld [wEnemySwitchMonIndex], a
+
+; Check if mon at index 2 is already fainted, clear recipient index if so
+    ld hl, wOTPartyMon1HP
+    push bc
 	ld bc, PARTYMON_STRUCT_LENGTH
 	add hl, bc
 	pop bc
-	dec c
-	jr nz, .SwitchLoop
-
-	ld a, d
-	cp 6
-	jr nc, .continue
+    ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	or b
+	jr nz, .skip
     xor a
-    ld [wEnemySwitchMonIndex], a ; zero this if any mons are fainted, assumes enemy has 6 mons
-; AndrewNote - the above is awful! Please clean it! We just want to reset if th mon at index 2 is fainted
+    ld [wEnemySwitchMonIndex], a
 
-.continue
-	xor a
-	;ld [wEnemySwitchMonIndex], a ; this is removed so a dedicated recipient can be used - see AI_Smart_BatonPass
+; =================== old code ===============
+; this was used to set mon at indices 2, 4, 6 as dedicated recipients
+; but while this works it wasn't very impactful in practice
+
+; loop through party and check for fainted mon
+;	ld a, [wOTPartyCount]
+;	ld c, a ; c is the party counter
+;	ld hl, wOTPartyMon1HP
+;	ld d, 0
+;.SwitchLoop:
+;    inc d ; d is the current mon index
+;	ld a, [hli]
+;	ld b, a
+;	ld a, [hld]
+;	or b
+;	jr nz, .continue
+; here the mon in index d is fainted
+; check if current Mon index 2
+;    ld a, d
+;    cp 2
+;    jr nz, .checkFour
+; check if recipient index is currently 2
+;    ld a, [wEnemySwitchMonIndex]
+;    cp 2
+;    jr nz, .checkFour
+; check if enemy party size is 4 or greater
+;    ld a, [wOTPartyCount]
+;    cp 4
+;    jr nc, .incrementRecipientIndex
+;    jr .clearRecipientIndex
+; check if current mon index is 4
+;.checkFour
+;    cp 4
+;    jr nz, .checkSix
+; check if recipient index is currently 4
+;    ld a, [wEnemySwitchMonIndex]
+;    cp 4
+;    jr nz, .checkSix
+; check if enemy party size is 6
+;    ld a, [wOTPartyCount]
+;    cp 6
+;    jr z, .incrementRecipientIndex
+;    jr .clearRecipientIndex
+;.incrementRecipientIndex
+;    ld a, [wEnemySwitchMonIndex]
+;    inc a
+;    inc a
+;    ld [wEnemySwitchMonIndex], a
+;    jr .continue
+;.checkSix
+;    cp 6
+;    jr nz, .continue
+;.clearRecipientIndex
+;    xor a
+;    ld [wEnemySwitchMonIndex], a
+;.continue
+;	push bc
+;	ld bc, PARTYMON_STRUCT_LENGTH
+;	add hl, bc
+;	pop bc
+;	dec c
+;	jr nz, .SwitchLoop
+; ==============================================
+
+.skip
 	ld hl, EnemySwitch_SetMode
 	call CallBattleCore
 	ld hl, ResetBattleParticipants

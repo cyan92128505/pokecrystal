@@ -364,6 +364,7 @@
     const EVENT_SPOKE_TO_WARZONE_BLUE
     const EVENT_BEAT_INVADER_SOLAIRE
     const EVENT_BEAT_INVADER_MAX
+    const EVENT_BEAT_INVADER_LOGAN
 
 	const_next 600
 ; Kurt Apricorn events

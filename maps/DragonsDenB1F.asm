@@ -5,7 +5,6 @@
 	const DRAGONSDENB1F_COOLTRAINER_F
 	const DRAGONSDENB1F_TWIN1
 	const DRAGONSDENB1F_TWIN2
-	const DRAGONSDENB1F_POKE_BALL2
 	const DRAGONSDENB1F_RAYQUAZA
 	const DRAGONSDENB1F_FIELDMON_1
     const DRAGONSDENB1F_FIELDMON_2
@@ -15,6 +14,7 @@
     const DRAGONSDENB1F_FIELDMON_6
     const DRAGONSDENB1F_FIELDMON_7
     const DRAGONSDENB1F_FIELDMON_8
+    const DRAGONSDENB1F_INVADER
 
 DragonsDenB1F_MapScripts:
 	def_scene_scripts
@@ -535,6 +535,66 @@ Text_NoRoomForDragonFang:
 	line "carry any more"
 	cont "items."
 	done
+	
+InvaderLoganScript:
+	trainer INVADER, LOGAN, EVENT_BEAT_INVADER_LOGAN, InvaderLoganSeenText, InvaderLoganBeatenText, InvaderLoganVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext InvaderLoganAfterBattleText
+	waitbutton
+	closetext
+	end
+
+InvaderLoganSeenText:
+    text "You seem quiet"
+    line "lucid."
+
+    para "This is DRAGONS"
+    line "DEN."
+
+    para "This place is a"
+    line "great pool of"
+    cont "knowledge."
+
+    para "Bearing the"
+    line "fruits of superior"
+    cont "wisdom and an"
+    cont "unquenchable"
+    cont "desire for truth."
+
+    para "Let us learn"
+    line "together."
+	done
+
+InvaderLoganVictoryText:
+	text "Heavens, the"
+	line "folly of youth."
+	done
+
+InvaderLoganBeatenText:
+	text "I fail to see"
+	line "your design."
+	done
+
+InvaderLoganAfterBattleText:
+	text "All progress"
+	line "demands sacrifice."
+
+	para "Far away in"
+	line "PEWTER CITY"
+	cont "there is a"
+	cont "knight named"
+	cont "HAVEL."
+
+	para "He seeks to end"
+	line "all dragons."
+
+	para "We must not let"
+	line "their knowledge"
+	cont "fade."
+	done
 
 DragonsDenB1F_MapEvents:
 	db 0, 0 ; filler
@@ -555,11 +615,10 @@ DragonsDenB1F_MapEvents:
 	def_object_events
 	object_event 35, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
 	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
-	object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1
+	object_event 21, 30, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermDarin, -1
 	object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1
 	object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1
 	object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
-	object_event 30,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM
 	object_event 20, 15, SPRITE_DRAGONITE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_CAUGHT_RAYQUAZA
 	object_event 24, 11, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13, 15, SPRITE_GYARADOS, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon2Script, EVENT_FIELD_MON_2
@@ -569,3 +628,5 @@ DragonsDenB1F_MapEvents:
 	object_event 34, 12, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 34, 15, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 36, 13, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 19,  7, SPRITE_WILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderLoganScript, -1
+

@@ -157,3 +157,15 @@ SECTION "Cries", ROMX
 INCLUDE "data/pokemon/cries.asm"
 
 INCLUDE "audio/cries.asm"
+
+
+SECTION "New Songs", ROMX
+
+INCLUDE "audio/music/zinniabattle.asm"
+INCLUDE "audio/music/alolaelitefour.asm"
+INCLUDE "audio/music/archietheme.asm"
+INCLUDE "audio/music/hoenchampion.asm"
+INCLUDE "audio/music/lugiasong.asm"
+INCLUDE "audio/music/guiletheme.asm"
+INCLUDE "audio/music/mistymountain.asm"
+

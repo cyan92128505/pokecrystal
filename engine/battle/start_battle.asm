@@ -143,10 +143,16 @@ PlayBattleMusic:
     ; champoin music
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
-	jr z, .done
+	jp z, .done
+
+	ld de, MUSIC_ZINNIA_BATTLE
 	cp RED
-	jr z, .done
+	jp z, .done
 	cp POKEMON_PROF
+	jr z, .done
+
+	ld de, MUSIC_HOEN_CHAMPION
+	cp WALLACE
 	jr z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
@@ -160,9 +166,11 @@ PlayBattleMusic:
 	cp EXECUTIVEF
 	jr z, .done
 
-	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_ARCHIE_BATTLE
 	cp INVADER
 	jr z, .done
+
+	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
 	jr c, .done
 
@@ -182,7 +190,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_SILVER_CAVE ; Rival in Silver Cave
 	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_ALOLA_ELITE_FOUR
 	jr .done
 
 .checkCrystal
@@ -192,7 +200,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp CRYSTAL_7
 	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_LUGIA_SONG
 	jr .done
 
 .othertrainer

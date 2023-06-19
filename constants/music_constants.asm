@@ -105,6 +105,14 @@
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
 	const MUSIC_MOBILE_CENTER                ; 66
+; new songs
+	const MUSIC_ZINNIA_BATTLE                ; 67
+	const MUSIC_ALOLA_ELITE_FOUR             ; 68
+	const MUSIC_ARCHIE_BATTLE                ; 69
+	const MUSIC_HOEN_CHAMPION                ; 70
+	const MUSIC_LUGIA_SONG                   ; 71
+	const MUSIC_GUILE_THEME                  ; 72
+	const MUSIC_MISTY_MOUNTAIN               ; 73
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

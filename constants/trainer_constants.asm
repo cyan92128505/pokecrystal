@@ -781,6 +781,7 @@ KRIS EQU __trainer_class__
     const BACKSTABER
     const PATCHES
     const CRESTFALLEN
+    const LOGAN
     const SOLAIRE
     const HAVEL
     const OROBORO

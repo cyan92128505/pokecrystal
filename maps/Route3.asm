@@ -242,11 +242,18 @@ InvaderHavelSeenText:
     text "A war will come."
 
     para "Us against the"
-    line "dragons."
+    line "dragons of"
+    cont "BLACKTHORN."
+
+    para "Victory is not"
+    line "important."
+
+    para "What matters is"
+    line "that we not lose."
 
     para "I am the rock"
     line "that will protect"
-    cont "humanity."
+    cont "the realm."
 
     para "Crash upon me"
     line "and break."
@@ -263,12 +270,11 @@ InvaderHavelBeatenText:
 	done
 
 InvaderHavelAfterBattleText:
-	text "The people here"
-	line "revere dragons"
+	text "I will protect"
+	line "the realm."
 
-	para "Once they realise"
-	line "their folly it"
-	cont "will be too late."
+	para "My shield shall"
+	line "hold strong."
 	done
 
 Route3_MapEvents:

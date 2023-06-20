@@ -114,4 +114,5 @@ Music:
 	dba Music_LugiasSong
 	dba Music_Guile
 	dba Music_Mountain
+	dba Music_MAGruntBattle
 	assert_table_length NUM_MUSIC_SONGS

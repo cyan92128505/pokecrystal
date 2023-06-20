@@ -168,4 +168,5 @@ INCLUDE "audio/music/hoenchampion.asm"
 INCLUDE "audio/music/lugiasong.asm"
 INCLUDE "audio/music/guiletheme.asm"
 INCLUDE "audio/music/mistymountain.asm"
+INCLUDE "audio/music/hoengruntbattle.asm"
 

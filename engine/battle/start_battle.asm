@@ -144,30 +144,58 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jp z, .done
+	cp CYNTHIA
+	jp z, .done
 
 	ld de, MUSIC_ZINNIA_BATTLE
 	cp RED
-	jp z, .done
+	jp nz, .checkOak
+    ld a, [wOtherTrainerID]
+	cp ASH
+	jp nz, .done
+	ld de, MUSIC_CHAMPION_BATTLE
+	jp .done
+.checkOak
 	cp POKEMON_PROF
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_HOEN_CHAMPION
 	cp WALLACE
-	jr z, .done
+	jp z, .done
+	cp STEVEN
+	jp z, .done
+	cp BLUE
+	jp z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
-	jr z, .done
+	jp z, .done
 	cp GRUNTF
+	jp z, .done
+
+	ld de, MUSIC_ALOLA_ELITE_FOUR
+	cp INVADER
+	jp z, .done
+
+	ld de, MUSIC_HOEN_GRUNT
+	cp SOLDIER
 	jr z, .done
 	cp EXECUTIVEM
 	jr z, .done
 	cp EXECUTIVEF
 	jr z, .done
 
+	ld de, MUSIC_GUILE_THEME
+	cp CHUCK
+	jr z, .done
+	cp LT_SURGE
+	jr z, .done
+	cp LEON
+	jr z, .done
+
 	ld de, MUSIC_ARCHIE_BATTLE
-	cp INVADER
+	cp KOGA
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
@@ -190,7 +218,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_SILVER_CAVE ; Rival in Silver Cave
 	jr c, .done
-	ld de, MUSIC_ALOLA_ELITE_FOUR
+	ld de, MUSIC_ARCHIE_BATTLE
 	jr .done
 
 .checkCrystal
@@ -200,7 +228,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp CRYSTAL_7
 	jr c, .done
-	ld de, MUSIC_LUGIA_SONG
+	ld de, MUSIC_SUICUNE_BATTLE
 	jr .done
 
 .othertrainer

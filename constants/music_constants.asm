@@ -113,6 +113,7 @@
 	const MUSIC_LUGIA_SONG                   ; 71
 	const MUSIC_GUILE_THEME                  ; 72
 	const MUSIC_MISTY_MOUNTAIN               ; 73
+	const MUSIC_HOEN_GRUNT                   ; 74
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

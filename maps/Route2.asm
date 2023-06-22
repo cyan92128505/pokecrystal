@@ -178,7 +178,7 @@ Route2DireHit:
 	itemball RARE_CANDY
 
 Route2MaxPotion:
-	itemball MAX_POTION
+	itemball QUICK_CLAW
 
 Route2Carbos:
 	itemball CARBOS
@@ -283,15 +283,15 @@ Route2_MapEvents:
 	bg_event 19,  9, BGEVENT_READ, Route2DiglettsCaveSign
 	bg_event 15, 23, BGEVENT_ITEM, Route2HiddenMaxEther
 	bg_event 12, 14, BGEVENT_ITEM, Route2HiddenFullHeal
-	bg_event 13, 32, BGEVENT_ITEM, Route2HiddenFullRestore
-	bg_event 17, 32, BGEVENT_ITEM, Route2HiddenRevive
+	;bg_event 13, 32, BGEVENT_ITEM, Route2HiddenFullRestore
+	;bg_event 17, 32, BGEVENT_ITEM, Route2HiddenRevive
 
 	def_object_events
 	object_event 18, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherRob, -1
 	object_event 14,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherEd, -1
 	object_event  8, 40, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDoug, -1
 	object_event  8, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2DireHit, EVENT_ROUTE_2_DIRE_HIT
-	object_event 10, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2MaxPotion, EVENT_ROUTE_2_MAX_POTION
+	object_event 17, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2MaxPotion, EVENT_ROUTE_2_MAX_POTION
 	object_event 27,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Carbos, EVENT_ROUTE_2_CARBOS
 	object_event 22, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
 	object_event 19, 13, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1

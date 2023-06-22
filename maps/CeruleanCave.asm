@@ -38,6 +38,24 @@ CeruleanCaveHiddenAmbrosia:
 
 CeruleanCaveHiddenMasterBall:
 	hiddenitem MASTER_BALL, EVENT_CERULEAN_CAVE_HIDDEN_MASTER_BALL
+
+CeruleanCaveHiddenExpertBelt:
+	hiddenitem EXPERT_BELT, EVENT_CERULEAN_CAVE_HIDDEN_EXPERT_BELT
+
+CeruleanCaveHiddenLifeOrb:
+	hiddenitem LIFE_ORB, EVENT_CERULEAN_CAVE_HIDDEN_LIFE_ORB
+
+CeruleanCaveHiddenLeftovers:
+	hiddenitem LEFTOVERS, EVENT_CERULEAN_CAVE_HIDDEN_LEFTOVERS
+
+CeruleanCaveHiddenFocusSash:
+	hiddenitem FOCUS_SASH, EVENT_CERULEAN_CAVE_HIDDEN_FOCUS_SASH
+
+CeruleanCaveHiddenChoiceBand:
+	hiddenitem CHOICE_BAND, EVENT_CERULEAN_CAVE_HIDDEN_CHOICE_BAND
+
+CeruleanCaveHiddenChoiceSpecs:
+	hiddenitem CHOICE_SPECS, EVENT_CERULEAN_CAVE_HIDDEN_CHOICE_SPECS
 	
 CeruleanCaveFieldMon1Script:
 	trainer RAICHU, FIELD_MON, EVENT_FIELD_MON_1, CeruleanCavePokemonAttacksText, 53, 0, .script
@@ -280,6 +298,12 @@ CeruleanCave_MapEvents:
 	def_bg_events
 	bg_event 19, 37, BGEVENT_ITEM, CeruleanCaveHiddenAmbrosia
 	bg_event 19, 45, BGEVENT_ITEM, CeruleanCaveHiddenMasterBall
+	bg_event 29, 31, BGEVENT_ITEM, CeruleanCaveHiddenExpertBelt
+	bg_event 21, 31, BGEVENT_ITEM, CeruleanCaveHiddenLifeOrb
+	bg_event 11, 29, BGEVENT_ITEM, CeruleanCaveHiddenLeftovers
+	bg_event 19,  3, BGEVENT_ITEM, CeruleanCaveHiddenFocusSash
+	bg_event 10, 34, BGEVENT_ITEM, CeruleanCaveHiddenChoiceBand
+	bg_event 19, 39, BGEVENT_ITEM, CeruleanCaveHiddenChoiceSpecs
 
 	def_object_events
 	object_event 28, 46, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCaveAizenScript, -1

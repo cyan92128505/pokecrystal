@@ -100,16 +100,16 @@ MountMortarB1FBoulder:
 	jumpstd StrengthBoulderScript
 
 MountMortarB1FHyperPotion:
-	itemball HYPER_POTION
+	itemball MAX_ELIXER
 
 MountMortarB1FCarbos:
 	itemball CARBOS
 
 MountMortarB1FFullRestore:
-	itemball FULL_RESTORE
+	itemball CHOICE_BAND
 
 MountMortarB1FMaxEther:
-	itemball MAX_ETHER
+	itemball MAX_REVIVE
 
 MountMortarB1FPPUp:
 	itemball PP_UP

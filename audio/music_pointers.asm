@@ -108,11 +108,15 @@ Music:
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
 	dba Music_ZinniaBattle
-	dba Music_AlolaEliteFourBattle
+	dba Music_XVZ
 	dba Music_MaxieArchieBattle
 	dba Music_HoennChampionBattle
 	dba Music_LugiasSong
 	dba Music_Guile
 	dba Music_Mountain
 	dba Music_MAGruntBattle
+	dba Music_MadWorld
+	dba Music_MayEncounter
+	dba Music_UnovaEliteFourBattle
+	dba Music_Tetris
 	assert_table_length NUM_MUSIC_SONGS

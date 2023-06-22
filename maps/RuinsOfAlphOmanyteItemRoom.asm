@@ -10,10 +10,10 @@ RuinsOfAlphOmanyteItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphOmanyteItemRoomMysteryberry:
-	itemball WISE_GLASSES
+	itemball SOFT_SAND
 
 RuinsOfAlphOmanyteItemRoomMysticWater:
-	itemball MUSCLE_BAND
+	itemball QUICK_CLAW
 
 RuinsOfAlphOmanyteItemRoomStardust:
 	itemball GOLD_BERRY

@@ -761,7 +761,7 @@ Route36CrystalScript:
     checkevent EVENT_BEAT_CRYSTAL_3
     iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
-    playmusic MUSIC_SHOW_ME_AROUND
+    playmusic MUSIC_CRYSTAL_ENCOUNTER
     appear ROUTE36_CRYSTAL
     applymovement ROUTE36_CRYSTAL, Route36Movement_CrystalApproaches
 

@@ -6,6 +6,7 @@
     const DIGLETTSCAVE_FIELDMON_4
     const DIGLETTSCAVE_FIELDMON_5
     const DIGLETTSCAVE_FIELDMON_6
+    const DIGLETTSCAVE_POKEBALL
 
 DiglettsCave_MapScripts:
 	def_scene_scripts
@@ -84,6 +85,9 @@ DiglettsCavePokemonAttacksText:
 	line "attacks!"
 	done
 
+DiglettsCaveMuscleBand:
+	itemball MUSCLE_BAND
+
 DiglettsCave_MapEvents:
 	db 0, 0 ; filler
 
@@ -108,3 +112,5 @@ DiglettsCave_MapEvents:
 	object_event  6, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 14, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DiglettsCaveFieldMon5Script, EVENT_FIELD_MON_5
 	object_event  9, 17, SPRITE_BIG_ONIX, SPRITEMOVEDATA_BIGDOLLSYM, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, DiglettsCaveFieldMon6Script, EVENT_FIELD_MON_6
+	object_event  3, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DiglettsCaveMuscleBand, EVENT_DIGLETTS_CAVE_MUSCLE_BAND
+

@@ -580,7 +580,6 @@ KRIS EQU __trainer_class__
 	const EXECUTIVEM_2
 	const EXECUTIVEM_3
 	const EXECUTIVEM_4
-	const MASTER_EXECUTIVEM
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
@@ -692,6 +691,7 @@ KRIS EQU __trainer_class__
 	const SOLDIER_8
 	const SOLDIER_9
 	const SOLDIER_SPY
+	const MASTER_DRAKE
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM

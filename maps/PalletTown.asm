@@ -3,6 +3,7 @@
 	const PALLETTOWN_FISHER
 	const PALLETTOWN_AERITH
 	const PALLETTOWN_CRYSTAL
+	const PALLETTOWN_POKEBALL
 
 PalletTown_MapScripts:
 	def_scene_scripts
@@ -198,7 +199,7 @@ PalletTownCrystalScript2:
     end
     
 PalletTownCrystalScript:
-    playmusic MUSIC_SHOW_ME_AROUND
+    playmusic MUSIC_CRYSTAL_ENCOUNTER
     appear PALLETTOWN_CRYSTAL
     applymovement PALLETTOWN_CRYSTAL, PalletTownMovement_CrystalApproaches
 
@@ -320,6 +321,8 @@ PalletTownMovement_CrystalLeaves:
     big_step UP
     step_end
 
+PalletTownFocusSash:
+	itemball FOCUS_SASH
 
 PalletTown_MapEvents:
 	db 0, 0 ; filler
@@ -344,4 +347,4 @@ PalletTown_MapEvents:
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
 	object_event  6, 13, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Aerith2Script, EVENT_FIELD_MON_1
 	object_event 9,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-
+	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalletTownFocusSash, EVENT_PALLET_TOWN_FOCUS_SASH

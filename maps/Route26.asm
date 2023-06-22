@@ -564,7 +564,7 @@ Route26CrystalScript:
     iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     turnobject PLAYER, DOWN
-    playmusic MUSIC_SHOW_ME_AROUND
+    playmusic MUSIC_CRYSTAL_ENCOUNTER
     appear ROUTE26_CRYSTAL
     applymovement ROUTE26_CRYSTAL, Route26Movement_CrystalApproaches
 

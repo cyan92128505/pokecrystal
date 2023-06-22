@@ -510,7 +510,7 @@ RadioTowerCrystalScript3:
     end
 
 RadioTowerCrystalScript:
-    playmusic MUSIC_SHOW_ME_AROUND
+    playmusic MUSIC_CRYSTAL_ENCOUNTER
     opentext
     writetext RadioTowerCrystalWaitUp
     waitbutton

@@ -162,11 +162,15 @@ INCLUDE "audio/cries.asm"
 SECTION "New Songs", ROMX
 
 INCLUDE "audio/music/zinniabattle.asm"
-INCLUDE "audio/music/alolaelitefour.asm"
+INCLUDE "audio/music/xvz.asm"
 INCLUDE "audio/music/archietheme.asm"
 INCLUDE "audio/music/hoenchampion.asm"
 INCLUDE "audio/music/lugiasong.asm"
 INCLUDE "audio/music/guiletheme.asm"
 INCLUDE "audio/music/mistymountain.asm"
 INCLUDE "audio/music/hoengruntbattle.asm"
+INCLUDE "audio/music/madworld.asm"
+INCLUDE "audio/music/maystheme.asm"
+INCLUDE "audio/music/unovaelitefour.asm"
+INCLUDE "audio/music/tetris.asm"
 

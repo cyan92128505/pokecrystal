@@ -56,10 +56,10 @@ WhirlIslandB1F_MapScripts:
     endcallback
 
 WhirlIslandB1FFullRestore:
-	itemball FULL_RESTORE
+	itemball SHARP_BEAK
 
 WhirlIslandB1FCarbos:
-	itemball CARBOS
+	itemball TWISTEDSPOON
 
 WhirlIslandB1FCalcium:
 	itemball CALCIUM

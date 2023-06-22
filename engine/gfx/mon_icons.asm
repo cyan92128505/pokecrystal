@@ -120,10 +120,17 @@ GetMenuMonIconPalette_PredeterminedShininess:
 	add hl, bc
 	ld e, [hl]
 	pop af
-	ld a, e
 	jr c, .shiny
+	ld a, [wBeatenMasterOak]
+	and a
+	jr nz, .shiny
+	ld a, e
 	swap a
+	and $f
+	ld e, a
+	ret
 .shiny
+    ld a, e
 	and $f
 	ld e, a
 	ret

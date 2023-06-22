@@ -11,6 +11,7 @@
     const LAVENDERFOREST_FIELDMON_8
     const LAVENDERFOREST_FIELDMON_9
     const LAVENDERFOREST_FIELDMON_10
+    const LAVENDERFOREST_POKEBALL
 
 LavenderForest_MapScripts:
 	def_scene_scripts
@@ -231,6 +232,9 @@ RematchRefuseTextAgatha:
     line "to you."
     done
 
+LavenderForestLifeOrb:
+	itemball LIFE_ORB
+
 LavenderForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -255,3 +259,5 @@ LavenderForest_MapEvents:
 	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 19,  4, SPRITE_GRANNY, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon9Script, EVENT_FIELD_MON_9
 	object_event  7, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon10Script, EVENT_FIELD_MON_10
+	object_event 20,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LavenderForestLifeOrb, EVENT_LAVENDER_FOREST_LIFE_ORB
+

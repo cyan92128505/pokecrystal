@@ -25,13 +25,13 @@ SlowpokeWellB2F_MapScripts:
 SlowpokeWellB2FGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_LEFTOVERS_IN_SLOWPOKE_WELL
+	checkevent EVENT_GOT_WISE_GLASSES_IN_SLOWPOKE_WELL
 	iftrue .GotLeftovers
 	writetext SlowpokeWellB2FGymGuideText
 	promptbutton
-	verbosegiveitem LEFTOVERS
+	verbosegiveitem WISE_GLASSES
 	iffalse .NoRoom
-	setevent EVENT_GOT_LEFTOVERS_IN_SLOWPOKE_WELL
+	setevent EVENT_GOT_WISE_GLASSES_IN_SLOWPOKE_WELL
 .NoRoom:
 	closetext
 	end

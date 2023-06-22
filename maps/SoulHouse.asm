@@ -3,6 +3,7 @@
 	const SOULHOUSE_TEACHER
 	const SOULHOUSE_LASS
 	const SOULHOUSE_GRANNY
+	const SOULHOUSE_POKEBALL
 
 SoulHouse_MapScripts:
 	def_scene_scripts
@@ -70,6 +71,36 @@ SoulHouseGrannyText:
 	line "my grandchildren…"
 	done
 
+SpiritHouseBlockScript:
+    checkevent EVENT_RESTORED_POWER_TO_KANTO
+    iffalse .block
+    end
+.block
+    turnobject SOULHOUSE_MRFUJI, RIGHT
+	opentext
+	writetext SoulHouseBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_SoulHouseLeft
+    turnobject SOULHOUSE_MRFUJI, DOWN
+    end
+
+Movement_SoulHouseLeft:
+    step LEFT
+    step_end
+
+SoulHouseBlockText:
+    text "MR FUJI: Excuse"
+    line "me."
+
+    para "That area is off"
+    line "limits to the"
+    cont "public."
+    done
+
+SoulHouseWiseGlasses:
+	itemball WISE_GLASSES
+
 SoulHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -83,6 +114,7 @@ SoulHouse_MapEvents:
 	warp_event 29,  5, LAVENDER_FOREST, 1
 
 	def_coord_events
+	coord_event 18, 4, SCENE_ALWAYS, SpiritHouseBlockScript
 
 	def_bg_events
 
@@ -91,3 +123,4 @@ SoulHouse_MapEvents:
 	object_event  7,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseTeacherScript, -1
 	object_event  2,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseLassScript, -1
 	object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseGrannyScript, -1
+	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SoulHouseWiseGlasses, EVENT_SOUL_HOUSE_WISE_GLASSES

@@ -122,7 +122,7 @@ VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
 
 VictoryRoadMaxRevive:
-	itemball MAX_REVIVE
+	itemball FOCUS_SASH
 
 VictoryRoadLifeOrb:
 	itemball LIFE_ORB

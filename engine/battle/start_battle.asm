@@ -140,6 +140,12 @@ PlayBattleMusic:
 	jp .done
 
 .trainermusic
+    ld de, MUSIC_EPIC_TETRIS
+    cp POKEMON_PROF
+    jp z, .done
+    cp KOGA
+    jp z, .done
+
     ; champoin music
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
@@ -149,16 +155,14 @@ PlayBattleMusic:
 
 	ld de, MUSIC_ZINNIA_BATTLE
 	cp RED
-	jp nz, .checkOak
+	jp nz, .checkWallace
     ld a, [wOtherTrainerID]
 	cp ASH
 	jp nz, .done
 	ld de, MUSIC_CHAMPION_BATTLE
 	jp .done
-.checkOak
-	cp POKEMON_PROF
-	jp z, .done
 
+.checkWallace
 	ld de, MUSIC_HOEN_CHAMPION
 	cp WALLACE
 	jp z, .done
@@ -174,17 +178,17 @@ PlayBattleMusic:
 	cp GRUNTF
 	jp z, .done
 
-	ld de, MUSIC_ALOLA_ELITE_FOUR
+	ld de, MUSIC_XVZ
 	cp INVADER
 	jp z, .done
 
 	ld de, MUSIC_HOEN_GRUNT
 	cp SOLDIER
-	jr z, .done
+	jp z, .done
 	cp EXECUTIVEM
-	jr z, .done
+	jp z, .done
 	cp EXECUTIVEF
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_GUILE_THEME
 	cp CHUCK
@@ -194,8 +198,16 @@ PlayBattleMusic:
 	cp LEON
 	jr z, .done
 
+	ld de, MUSIC_UNOVA_ELITE_FOUR
+	cp SABRINA
+	jr z, .done
+	cp BRUNO
+	jr z, .done
+	cp KAREN
+	jr z, .done
+
 	ld de, MUSIC_ARCHIE_BATTLE
-	cp KOGA
+	cp GIOVANNI
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE

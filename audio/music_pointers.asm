@@ -119,4 +119,7 @@ Music:
 	dba Music_MayEncounter
 	dba Music_UnovaEliteFourBattle
 	dba Music_Tetris
+	dba Music_FinalBattle
+	dba Music_RedIndigoPlateau
+	dba Music_RedLavender
 	assert_table_length NUM_MUSIC_SONGS

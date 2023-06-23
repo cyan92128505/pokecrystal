@@ -82,8 +82,12 @@ PlayBattleMusic:
 
 	ld a, [wOtherTrainerClass]
 	and a
+	jr z, .checkLocation
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
 	jr nz, .fade
 
+.checkLocation
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -168,6 +172,8 @@ PlayBattleMusic:
 	jp z, .done
 	cp STEVEN
 	jp z, .done
+
+	ld de, MUSIC_FINAL_BATTLE
 	cp BLUE
 	jp z, .done
 

@@ -173,4 +173,7 @@ INCLUDE "audio/music/madworld.asm"
 INCLUDE "audio/music/maystheme.asm"
 INCLUDE "audio/music/unovaelitefour.asm"
 INCLUDE "audio/music/tetris.asm"
+INCLUDE "audio/music/finalbattle.asm"
+INCLUDE "audio/music/redindigoplateau.asm"
+INCLUDE "audio/music/redlavender.asm"
 

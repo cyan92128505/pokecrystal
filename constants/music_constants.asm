@@ -107,7 +107,7 @@
 	const MUSIC_MOBILE_CENTER                ; 66
 ; new songs
 	const MUSIC_ZINNIA_BATTLE                ; 67
-	const MUSIC_XVZ             ; 68
+	const MUSIC_XVZ                          ; 68
 	const MUSIC_ARCHIE_BATTLE                ; 69
 	const MUSIC_HOEN_CHAMPION                ; 70
 	const MUSIC_LUGIA_SONG                   ; 71
@@ -118,6 +118,9 @@
 	const MUSIC_CRYSTAL_ENCOUNTER            ; 76
 	const MUSIC_UNOVA_ELITE_FOUR             ; 77
 	const MUSIC_EPIC_TETRIS                  ; 78
+	const MUSIC_FINAL_BATTLE                 ; 79
+	const MUSIC_RED_INDIGO_PLATEAU           ; 80
+	const MUSIC_RED_LAVENDER                 ; 81
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

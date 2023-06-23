@@ -2205,7 +2205,7 @@ GetMapMusic::
 	ld a, [wHoenInvasionUnderway]
 	and a
 	jr z, .normal
-	ld c, MUSIC_INDIGO_PLATEAU
+	ld c, MUSIC_RED_INDIGO_PLATEAU
 	jr .continue
 .normal
 	ld de, MAP_MUSIC

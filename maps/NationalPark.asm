@@ -7,7 +7,7 @@
 	const NATIONALPARK_YOUNGSTER3
 	const NATIONALPARK_POKEFAN_F2
 	const NATIONALPARK_POKEFAN_M
-	const NATIONALPARK_LASS2
+	const NATIONALPARK_LEON
 	const NATIONALPARK_POKE_BALL2
 	const NATIONALPARK_FIELDMON_1
     const NATIONALPARK_FIELDMON_2
@@ -29,6 +29,22 @@ NationalPark_MapScripts:
 	writemem wFieldWeather
 .skipWeather
 
+    disappear NATIONALPARK_LEON
+    checkevent EVENT_BEAT_MORTY
+    iffalse .appearLeon
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .appearLeon
+    sjump .fieldMon
+.appearLeon
+    appear NATIONALPARK_LEON
+    moveobject NATIONALPARK_TEACHER2, 16, 26
+    turnobject NATIONALPARK_TEACHER2, RIGHT
+    moveobject NATIONALPARK_LASS1, 20, 27
+    turnobject NATIONALPARK_LASS1, LEFT
+    moveobject NATIONALPARK_YOUNGSTER2, 17, 30
+    turnobject NATIONALPARK_YOUNGSTER2, UP
+
+.fieldMon
 ; Pokemon which always appear
     appear NATIONALPARK_FIELDMON_1
     appear NATIONALPARK_FIELDMON_3
@@ -63,7 +79,11 @@ NationalPark_MapScripts:
     endcallback
 
 NationalParkLassScript:
+    checkevent EVENT_TEMP_EVENT_1
+    iffalse .leon
 	jumptextfaceplayer NationalParkLassText
+.leon
+    jumptextfaceplayer NationalParkLassLeonText
 
 NationalParkPokefanFScript:
 	jumptextfaceplayer NationalParkPokefanFText
@@ -89,10 +109,18 @@ NationalParkYoungster1Script:
 	jumptextfaceplayer NationalParkYoungster1Text
 
 NationalParkYoungster2Script:
+    checkevent EVENT_TEMP_EVENT_1
+    iffalse .leon
 	jumptextfaceplayer NationalParkYoungster2Text
+.leon
+    jumptextfaceplayer NationalParkYoungster2LeonText
 
 NationalParkTeacher2Script:
+    checkevent EVENT_TEMP_EVENT_1
+    iffalse .leon
 	jumptextfaceplayer NationalParkTeacher2Text
+.leon
+    jumptextfaceplayer NationalParkTeacher2LeonText
 
 NationalParkPersian:
 	faceplayer
@@ -344,14 +372,31 @@ NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
 NationalParkLassText:
-	text "Look! Check out my"
-	line "bag!"
+	text "I hate waiting"
+	line "all week until"
+	cont "Saturday."
 
-	para "I printed out my"
-	line "favorites from my"
+	para "On Saturday"
+	line "LEON always"
+	cont "visits here!"
 
-	para "#DEX and stuck"
-	line "them on my bag."
+	para "He is the most"
+	line "powerful trainer"
+	cont "in the world."
+	done
+
+NationalParkLassLeonText:
+	text "I always feel so"
+	line "privileged when"
+	cont "I'm this close"
+	cont "to LEON!"
+
+	para "The strongest"
+	line "trainer!"
+
+	para "Oh..."
+
+	para "I feel faint."
 	done
 
 NationalParkPokefanFText:
@@ -396,20 +441,52 @@ NationalParkYoungster1Text:
 	done
 
 NationalParkYoungster2Text:
-	text "I get the other"
-	line "guy's #DEX"
-	cont "sticker if I win."
+	text "I wish there"
+	line "were more people"
+	cont "like LEON"
+
+	para "CHAMPION LEON."
+
+	para "The best in the"
+	line "world!"
+
+	para "He visits his"
+	line "fans here on"
+	cont "Saturday."
+	done
+
+NationalParkYoungster2LeonText:
+	text "Today is a big"
+	line "day!"
+
+	para "LEON is here"
+	line "visiting his fans."
+
+	para "He is the best"
+	line "trainer in the"
+	cont "world!"
 	done
 
 NationalParkTeacher2Text:
-	text "I take walks in"
-	line "the PARK, but I"
+	text "War is coming."
 
-	para "never go into the"
-	line "grass."
+	para "People need heroes"
+	line "that give them"
+	cont "hope."
 
-	para "Trainers always"
-	line "want to battle…"
+	para "LEON is my hero."
+	done
+
+NationalParkTeacher2LeonText:
+	text "LEON!"
+	para "I love you!!"
+
+	para "I feel safe"
+	line "with leon here."
+
+	para "He could take on"
+	line "the HOEN army by"
+	cont "himself."
 	done
 
 NationalParkPersianText:
@@ -611,6 +688,147 @@ NationalParkFieldMon6Script:
 	disappear NATIONALPARK_FIELDMON_6
 	end
 
+NationalParkLeonScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_LEON
+	iftrue .FightDone
+.fight
+	writetext NPLeonSeenText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_LEON
+	iftrue .dontAsk
+	opentext
+	writetext NPLeonOfferFightText
+    waitbutton
+	yesorno
+	iffalse .refused
+	writetext NPLeonOfferFightTextAgain
+    waitbutton
+	yesorno
+	iffalse .refused
+	writetext NPLeonPreFightText
+    waitbutton
+	closetext
+.dontAsk
+	winlosstext NPLeonBeatenText, NPLeonWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LEON, CHAMP_LEON
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_LEON
+	special HealParty
+	end
+.FightDone:
+	writetext NPLeonAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextLeon
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefusedTextLeon
+	waitbutton
+	closetext
+	end
+NPLeonSeenText:
+    text "Hey there kid!"
+
+    para "I'm CHAMPION LEON."
+
+    para "You may have"
+    line "heard of me."
+
+    para "These beautiful"
+    line "people certainly"
+    cont "have."
+
+    para "I am stronger"
+    line "than any other"
+    cont "CHAMPION."
+
+    para "That makes me"
+    line "the strongest"
+    cont "trainer in the"
+    cont "world."
+
+    para "It's a big"
+    line "responsibility."
+    done
+NPLeonBeatenText:
+    text "NO WAY!"
+    done
+NPLeonWinsText:
+    text "Don't feel bad."
+    done
+NPLeonOfferFightText:
+    text "Hmm..."
+
+    para "Ah you are a"
+    line "trainer."
+
+    para "I can tell you"
+    line "are serious."
+
+    para "This is your"
+    line "lucky day."
+
+    para "How would you"
+    line "like the honour"
+    cont "of a battle with"
+    cont "the top trainer"
+    cont "in the world?"
+    done
+NPLeonOfferFightTextAgain:
+    text "Do you really"
+    line "want to fight me?"
+
+    para "You know you"
+    line "wont win."
+    done
+NPLeonPreFightText:
+    text "That's the spirit!"
+
+    para "I'll do my best"
+    line "to take it easy"
+    cont "on you!"
+
+    para "You know what"
+    line "time it is..."
+
+    para "It's CHAMPION"
+    line "time!"
+    done
+NPLeonAfterBattleText:
+    text "Haha..."
+
+    para "You are a real"
+    line "Hero."
+
+    para "The world needs"
+    line "more Heroes."
+
+    para "Next time we"
+    line "battle I won't"
+    cont "hold back."
+    done
+RematchTextLeon:
+    text "Let's give these"
+    line "people another"
+    cont "spectacle!"
+
+    para "Let's have"
+    line "another fight?"
+    done
+RematchRefusedTextLeon:
+    text "Yes!"
+
+    para "Keep them hungry"
+    line "for more."
+    done
+
 NationalPark_MapEvents:
 	db 0, 0 ; filler
 
@@ -629,18 +847,18 @@ NationalPark_MapEvents:
 	bg_event 12,  4, BGEVENT_READ, NationalParkTrainerTipsSign
 
 	def_object_events
-	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
-	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
+	object_event 20, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
+	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
-	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
+	object_event 15, 30, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
 	object_event 26, 40, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
 	object_event 27, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
-	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
+	object_event  9, 14, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
-	object_event  8, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
+	object_event 18, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NationalParkLeonScript, EVENT_TEMP_EVENT_1
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
-    object_event 19,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 17, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 19,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 10, 21, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 15, 41, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 27, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 27, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon5Script, EVENT_FIELD_MON_5

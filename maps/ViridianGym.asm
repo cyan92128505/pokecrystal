@@ -9,6 +9,8 @@ ViridianGym_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Blue
 
 .Blue
+    checkevent EVENT_RESTORED_POWER_TO_KANTO
+    iffalse .gone
     checkevent EVENT_HOEN_INVASION_UNDERWAY
     iftrue .gone
     checkevent EVENT_VIRIDIAN_GYM_BLUE
@@ -36,7 +38,7 @@ ViridianGymBlueScript:
 	turnobject VIRIDIANGYM_BLUE, UP
 	pause 120
 	turnobject VIRIDIANGYM_BLUE, DOWN
-	playmusic MUSIC_INDIGO_PLATEAU
+	playmusic MUSIC_RED_INDIGO_PLATEAU
 	writetext WarHasBegunText
 	waitbutton
     closetext

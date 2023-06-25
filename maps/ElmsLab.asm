@@ -8,6 +8,7 @@
 	const ELMSLAB_MUM
 	const ELMSLAB_DAD
 	const ELMSLAB_PARENTS_ELM
+	const ELMSLAB_CYNTHIA
 
 ElmsLab_MapScripts:
 	def_scene_scripts
@@ -44,6 +45,7 @@ ElmsLab_MapScripts:
     disappear ELMSLAB_MUM
     disappear ELMSLAB_DAD
     disappear ELMSLAB_PARENTS_ELM
+    disappear ELMSLAB_CYNTHIA
 	checkscene
 	iftrue .Skip ; not SCENE_DEFAULT
 	moveobject ELMSLAB_ELM, 3, 4
@@ -1847,5 +1849,7 @@ ElmsLab_MapEvents:
 	object_event  4, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
 	object_event  4, 11, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_2
 	object_event  5,  4, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3
+	object_event 0, 0, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_4
+
 
 

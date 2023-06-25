@@ -36,6 +36,8 @@ NationalPark_MapScripts:
 	ifequal SATURDAY, .appearLeon
     sjump .fieldMon
 .appearLeon
+	setval WEATHER_NONE
+	writemem wFieldWeather
     appear NATIONALPARK_LEON
     moveobject NATIONALPARK_TEACHER2, 16, 26
     turnobject NATIONALPARK_TEACHER2, RIGHT

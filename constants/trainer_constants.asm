@@ -494,7 +494,7 @@ KRIS EQU __trainer_class__
 	const VINCENT
 
 	trainerclass RIVAL2 ; 2a
-	const RIVAL2_MT_MOON
+	const RIVAL2_SAFFRON
 	const RIVAL2_SILVER_CAVE
 	const MASTER_RIVAL
 

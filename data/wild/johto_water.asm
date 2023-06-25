@@ -123,9 +123,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons DRAGONS_DEN_B1F
 	db 4 percent ; encounter rate
-	db 42, GYARADOS
-	db 42, MILOTIC
-	db 42, KINGDRA
+	db 40, GYARADOS
+	db 40, DRAGONAIR
+	db 40, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_PORT

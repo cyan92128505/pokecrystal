@@ -7,16 +7,22 @@
 	const SAFFRONCITY_YOUNGSTER1
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
+	const SAFFRONCITY_SILVER
 
 SaffronCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Silver
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_SAFFRON
 	endcallback
+
+.Silver:
+    disappear SAFFRONCITY_SILVER
+    endcallback
 
 SaffronCityLass1Script:
 	faceplayer
@@ -266,6 +272,9 @@ SaffronCityMagnetTrainStationSignText:
 SaffronGymBlockScript:
     checkevent EVENT_BEAT_ELITE_FOUR
     iffalse .block
+    checkevent EVENT_BEAT_RIVAL_SAFFRON
+    iffalse .SaffronSilverScript
+    sjump .SaffronSilverScript
     end
 .block
     turnobject PLAYER, UP
@@ -275,6 +284,141 @@ SaffronGymBlockScript:
     closetext
     applymovement PLAYER, Movement_SaffronGymTurnBack
     end
+.SaffronSilverScript
+    showemote EMOTE_SHOCK, PLAYER, 15
+    turnobject PLAYER, LEFT
+    playmusic MUSIC_RIVAL_ENCOUNTER
+    appear SAFFRONCITY_SILVER
+    applymovement SAFFRONCITY_SILVER, SaffronMovement_SilverApproaches
+    opentext
+    writetext SaffronSilverText
+    waitbutton
+    closetext
+    special FadeOutMusic
+    turnobject SAFFRONCITY_SILVER, DOWN
+    pause 20
+    opentext
+    writetext SaffronSilverPokemonFreedText
+    waitbutton
+    closetext
+    pause 20
+    turnobject SAFFRONCITY_SILVER, RIGHT
+    opentext
+    writetext SaffronSilverRespectText
+    waitbutton
+    closetext
+    winlosstext Silver6LosesText, Silver6WinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL2, RIVAL2_SAFFRON
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_RIVAL_SAFFRON
+    opentext
+    writetext SaffronSilverAfterBattleText
+    waitbutton
+    closetext
+    applymovement SAFFRONCITY_SILVER, SaffronMovement_SilverLeaves
+    disappear SAFFRONCITY_SILVER
+    end
+
+SaffronMovement_SilverApproaches:
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step_end
+
+SaffronMovement_SilverLeaves:
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    step_end
+
+SaffronSilverText:
+    text "I thought I"
+    line "might run into"
+    cont "you here."
+
+    para "So you are going"
+    line "to challenge the"
+    cont "KANTO GYMS too."
+
+    para "I hope you don't"
+    line "expect me to"
+    cont "refer to you as"
+    cont "CHAMPION."
+
+    para "Look...."
+
+    para "I'm sorry for my"
+    line "attitude."
+    done
+
+SaffronSilverPokemonFreedText:
+    text "I was wrong to"
+    line "steal that #MON."
+
+    para "I gave all my"
+    line "#MON the choice"
+    cont "to leave me..."
+
+    para "They didn't all"
+    line "accept..."
+
+    para "I feel weaker"
+    line "now than I ever"
+    cont "have."
+    done
+
+SaffronSilverRespectText:
+    text "I must earn the"
+    line "respect of my"
+    cont "friends who have"
+    cont "stayed with me."
+
+    para "Help me do that."
+    done
+
+Silver6LosesText:
+    text "You are the"
+    line "strongest."
+
+    para "Thank you for"
+    line "helping me."
+    done
+
+Silver6WinsText:
+    text "Looks like I"
+    line "still got it!"
+
+    para "Thank you for"
+    line "helping me."
+    done
+
+SaffronSilverAfterBattleText:
+    text "I'm here looking"
+    line "for my father."
+
+    para "I think he is"
+    line "in this city"
+    cont "somewhere."
+
+    para "I'm sure it wont"
+    line "be difficult to"
+    cont "find him."
+
+    para "He was never good"
+    line "at being"
+    cont "inconspicuous."
+
+    para "You keep getting"
+    line "stronger."
+
+    para "All these people"
+    line "will need you"
+    cont "soon enough."
+    done
 
 HoenInvadedBlockScript:
     checkevent EVENT_HOEN_INVASION_UNDERWAY
@@ -343,11 +487,12 @@ SaffronCity_MapEvents:
 	bg_event 26, 11, BGEVENT_READ, SaffronCityMartSign
 
 	def_object_events
-	object_event  7, 14, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityLass1Script, -1
+	object_event  7, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityLass1Script, -1
 	object_event 19, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SaffronCityPokefanMScript, -1
 	object_event 32,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
 	object_event 20, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
 	object_event 27, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
 	object_event 15, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
-	object_event 19,  8, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event 19,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event 29,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

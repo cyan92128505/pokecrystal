@@ -2141,14 +2141,15 @@ SnorlaxEvosAttacks:
 	db 8, AMNESIA
 	db 15, DEFENSE_CURL
 	db 22, BELLY_DRUM
+	db 25, ROLLOUT
 	db 29, HEADBUTT
-	db 36, SLEEP_TALK
-	db 36, REST
-	db 40, ZEN_HEADBUTT
-	db 43, BODY_SLAM
-	db 50, ROLLOUT
+	db 33, BODY_SLAM
+	db 35, REST
+	db 38, AMNESIA
+	db 40, CRUNCH
+	db 45, DOUBLE_EDGE
+	db 50, BELLY_DRUM
 	db 55, CURSE
-	db 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ArticunoEvosAttacks:

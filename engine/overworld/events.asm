@@ -1281,7 +1281,7 @@ TryWildEncounter_BugContest:
 
 .ok
 	farcall ApplyMusicEffectOnEncounterRate
-	farcall ApplyCleanseTagEffectOnEncounterRate
+	;farcall ApplyCleanseTagEffectOnEncounterRate
 	call Random
 	ldh a, [hRandomAdd]
 	cp b

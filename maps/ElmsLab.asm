@@ -58,13 +58,58 @@ ElmsLab_MapScripts:
 	turnobject ELMSLAB_ELM, RIGHT
 	opentext
 	writetext ElmText_Intro
-.MustSayYes:
-	yesorno
-	iftrue .ElmGetsEmail
-	writetext ElmText_Refused
-	sjump .MustSayYes
+	waitbutton
+	closetext
 
-.ElmGetsEmail:
+;	applymovement ELMSLAB_ELM, ElmsLabMovement_ElmIntroduceCynthia
+;	opentext
+;	writetext ElmText_ThisIsCynthia
+;	waitbutton
+;	closetext
+
+;	applymovement ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaApproaches
+;	opentext
+;	writetext ElmsLabCynthiaIntroText
+;	waitbutton
+;	closetext
+
+;	turnobject ELMSLAB_CYNTHIA, LEFT
+;	turnobject ELMSLAB_ELM, RIGHT
+;	opentext
+;	writetext ElmsLabCynthiaByeElmText
+;	waitbutton
+;	closetext
+
+;	opentext
+;	writetext ElmsLabElmStevenText
+;	waitbutton
+;	closetext
+
+;	turnobject ELMSLAB_CYNTHIA, RIGHT
+;	opentext
+;	writetext ElmsLabCynthiaResolveText
+;	waitbutton
+;	closetext
+
+ ;   applymovement, ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaBesidePlayer
+;	opentext
+;	writetext ElmsLabCynthiaGoodluckText
+;	waitbutton
+;	closetext
+
+;	applymovement, ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaLeaves
+;	disappear ELMSLAB_CYNTHIA
+
+;	applymovement, ELMSLAB_ELM, ElmsLabMovement_ElmReturns
+
+;.MustSayYes:
+;	yesorno
+;	iftrue .ElmGetsEmail
+;	writetext ElmText_Refused
+;	sjump .MustSayYes
+;.ElmGetsEmail:
+
+    opentext
 	writetext ElmText_Accepted
 	promptbutton
 	writetext ElmText_ResearchAmbitions

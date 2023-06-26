@@ -116,6 +116,12 @@ PlayBattleMusic:
 	and a
 	jr nz, .trainermusic
 
+	; aggressive wild mon
+	ld de, MUSIC_RIVAL_BATTLE
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jp z, .done
+
     ; is this suicune battle
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE

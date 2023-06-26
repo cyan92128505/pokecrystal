@@ -2834,6 +2834,14 @@ ClearChannel:
 
 PlayTrainerEncounterMusic::
 ; input: e = trainer type
+    ld a, [wOtherTrainerID]
+    cp FIELD_MON
+    jr nz, .continue
+    call MusicOverride
+    ret c
+    ld de, MUSIC_ROCKET_ENCOUNTER
+    jr .done
+.continue
 	; turn fade off
 	xor a
 	ld [wMusicFade], a
@@ -2849,5 +2857,26 @@ PlayTrainerEncounterMusic::
 	ld hl, TrainerEncounterMusic
 	add hl, de
 	ld e, [hl]
+.done
 	call PlayMusic
 	ret
+
+MusicOverride:
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+    call GetWorldMapLocation
+	cp LANDMARK_HALL_OF_ORIGIN
+	jp z, .skip
+	cp LANDMARK_SILVER_CAVE
+	jp z, .skip
+	cp LANDMARK_ANCIENT_RUIN
+	jp z, .skip
+	cp LANDMARK_MUSEUM
+	jp z, .skip
+    xor a
+    ret
+.skip
+    scf
+    ret

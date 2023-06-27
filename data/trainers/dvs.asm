@@ -16,7 +16,7 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; CAL
 	dn 15, 15, 15, 15 ; BRUNO
 	dn  7, 15, 15, 15 ; KAREN
-	dn 15, 15, 15, 15 ; KOGA
+	dn 15, 15, 15, 15 ; ADAM
 	dn 15, 15, 15, 15 ; CHAMPION
 	dn 15, 15, 15, 15 ; BROCK
 	dn  7, 15, 15, 15 ; MISTY

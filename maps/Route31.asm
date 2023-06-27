@@ -424,16 +424,15 @@ Text_Route31CantTakeLastMon:
 	done
 
 Route31YoungsterText:
-	text "I found a good"
-	line "#MON in DARK"
-	cont "CAVE."
+	text "I think Invaders"
+	line "have some link"
+	cont "to DARK CAVE."
 
-	para "I'm going to raise"
-	line "it to take on"
-	cont "FALKNER."
+	para "There is something"
+	line "deep within that"
+	cont "place."
 
-	para "He's the leader of"
-	line "VIOLET CITY's GYM."
+	para "Something evil."
 	done
 
 Route31SignText:
@@ -539,6 +538,53 @@ Route31FieldMon4Script:
 	disappear ROUTE31_FIELDMON_4
     end
 
+InvaderWarningScript:
+    checkevent EVENT_INVADER_WARNING
+    iftrue .end
+    applymovement ROUTE31_YOUNGSTER, Route31Movement_YoungsterApproaches
+    opentext
+    writetext InvaderWarningText
+    waitbutton
+    closetext
+    applymovement ROUTE31_YOUNGSTER, Route31Movement_YoungsterLeaves
+    setevent EVENT_INVADER_WARNING
+.end
+    end
+
+Route31Movement_YoungsterApproaches:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
+Route31Movement_YoungsterLeaves:
+    big_step UP
+    big_step UP
+    big_step UP
+    turn_head DOWN
+    step_end
+
+InvaderWarningText:
+    text "Watch out!"
+
+    para "That bright red"
+    line "trainer is an"
+    cont "invader and he"
+    cont "is looking for"
+    cont "you!"
+
+    para "Invaders are very"
+    line "strong and use"
+    cont "unfair strategies."
+
+    para "You don't have to"
+    line "fight them."
+
+    para "You should"
+    line "definitely avoid"
+    cont "this one!!"
+    done
+
 Route31_MapEvents:
 	db 0, 0 ; filler
 
@@ -548,6 +594,7 @@ Route31_MapEvents:
 	warp_event 38,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 
 	def_coord_events
+	coord_event  9, 9, SCENE_ALWAYS, InvaderWarningScript
 
 	def_bg_events
 	bg_event  7,  5, BGEVENT_READ, Route31Sign
@@ -555,13 +602,13 @@ Route31_MapEvents:
 
 	def_object_events
 	object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
-	object_event 11,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
+	object_event 9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
 	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
 	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
 	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
-	object_event 11,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderGiantDad, -1
+	object_event 11,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderGiantDad, -1
 
 	object_event 40, 8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route31FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 29, 2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route31FieldMon2Script, EVENT_FIELD_MON_2

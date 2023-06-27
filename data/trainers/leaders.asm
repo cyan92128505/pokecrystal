@@ -16,7 +16,7 @@ GymLeaders:
 	db WILL
 	db BRUNO
 	db KAREN
-	db KOGA
+	db ADAM
 	db CHAMPION
 	db RED
 ; fallthrough

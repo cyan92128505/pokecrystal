@@ -298,7 +298,7 @@ MasterAdamScript:
 	closetext
 	winlosstext DefaultBeatenTextDS, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer KOGA, MASTER_KOGA
+	loadtrainer ADAM, MASTER_ADAM
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_KOGA

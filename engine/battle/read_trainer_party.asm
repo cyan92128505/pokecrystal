@@ -256,6 +256,14 @@ endr
 	jr z, .fullStatExp
 	cp INVADER
 	jr z, .fullStatExp
+	cp CYNTHIA
+	jr z, .fullStatExp
+	cp STEVEN
+	jr z, .fullStatExp
+	cp LEON
+	jr z, .fullStatExp
+	cp ADAM
+	jr z, .fullStatExp
 
 	; decide stat exp based on badges
     ld hl, wJohtoBadges

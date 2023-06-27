@@ -56,7 +56,7 @@ AdamScript_Battle:
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer KOGA, KOGA1
+	loadtrainer ADAM, ADAM_ELITE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KOGA
@@ -88,7 +88,7 @@ KogasRoom_EnterMovement:
 KogaScript_KogaBeforeText:
 	text "Fwahahahaha!"
 
-	para "I am KOGA of the"
+	para "I am ADAM of the"
 	line "ELITE FOUR."
 
 	para "I live in shadows,"

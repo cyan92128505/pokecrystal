@@ -376,6 +376,9 @@
     const EVENT_CERULEAN_CAVE_HIDDEN_CHOICE_SPECS
     const EVENT_PALLET_TOWN_FOCUS_SASH
     const EVENT_LAVENDER_FOREST_LIFE_ORB
+    const EVENT_INVADER_WARNING
+
+
 
 	const_next 600
 ; Kurt Apricorn events

@@ -561,7 +561,7 @@ Crystal1_SorryText:
     para "I didn't mean to"
     line "be flippant."
 
-    para "I know you dad is"
+    para "I know your dad is"
     line "missing."
 
     para "War is no joke."

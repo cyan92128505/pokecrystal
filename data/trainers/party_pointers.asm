@@ -17,7 +17,7 @@ TrainerGroups:
 	dba PKMNTrainerGroup
 	dba BrunoGroup
 	dba KarenGroup
-	dba KogaGroup
+	dba AdamGroup
 	dba ChampionGroup
 	dba BrockGroup
 	dba MistyGroup

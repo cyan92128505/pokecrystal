@@ -46,6 +46,10 @@ ElmsLab_MapScripts:
     disappear ELMSLAB_DAD
     disappear ELMSLAB_PARENTS_ELM
     disappear ELMSLAB_CYNTHIA
+    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+    iftrue .cont
+    appear ELMSLAB_CYNTHIA
+.cont
 	checkscene
 	iftrue .Skip ; not SCENE_DEFAULT
 	moveobject ELMSLAB_ELM, 3, 4
@@ -61,46 +65,50 @@ ElmsLab_MapScripts:
 	waitbutton
 	closetext
 
-;	applymovement ELMSLAB_ELM, ElmsLabMovement_ElmIntroduceCynthia
-;	opentext
-;	writetext ElmText_ThisIsCynthia
-;	waitbutton
-;	closetext
+	applymovement ELMSLAB_ELM, ElmsLabMovement_ElmIntroduceCynthia
+	turnobject PLAYER, UP
+	opentext
+	writetext ElmText_ThisIsCynthia
+	waitbutton
+	closetext
 
-;	applymovement ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaApproaches
-;	opentext
-;	writetext ElmsLabCynthiaIntroText
-;	waitbutton
-;	closetext
+    playmusic MUSIC_RED_INDIGO_PLATEAU
+	applymovement ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaApproaches
+	opentext
+	writetext ElmsLabCynthiaIntroText
+	waitbutton
+	closetext
 
-;	turnobject ELMSLAB_CYNTHIA, LEFT
-;	turnobject ELMSLAB_ELM, RIGHT
-;	opentext
-;	writetext ElmsLabCynthiaByeElmText
-;	waitbutton
-;	closetext
+	turnobject ELMSLAB_CYNTHIA, LEFT
+	turnobject ELMSLAB_ELM, RIGHT
+	opentext
+	writetext ElmsLabCynthiaByeElmText
+	waitbutton
+	closetext
 
-;	opentext
-;	writetext ElmsLabElmStevenText
-;	waitbutton
-;	closetext
+	opentext
+	writetext ElmsLabElmStevenText
+	waitbutton
+	closetext
 
-;	turnobject ELMSLAB_CYNTHIA, RIGHT
-;	opentext
-;	writetext ElmsLabCynthiaResolveText
-;	waitbutton
-;	closetext
+	turnobject ELMSLAB_CYNTHIA, RIGHT
+	opentext
+	writetext ElmsLabCynthiaResolveText
+	waitbutton
+	closetext
 
- ;   applymovement, ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaBesidePlayer
-;	opentext
-;	writetext ElmsLabCynthiaGoodluckText
-;	waitbutton
-;	closetext
+    applymovement ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaBesidePlayer
+    turnobject PLAYER, RIGHT
+	opentext
+	writetext ElmsLabCynthiaGoodluckText
+	waitbutton
+	closetext
 
-;	applymovement, ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaLeaves
-;	disappear ELMSLAB_CYNTHIA
+	applymovement ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaLeaves
+	disappear ELMSLAB_CYNTHIA
 
-;	applymovement, ELMSLAB_ELM, ElmsLabMovement_ElmReturns
+	applymovement ELMSLAB_ELM, ElmsLabMovement_ElmReturns
+	turnobject PLAYER, LEFT
 
 ;.MustSayYes:
 ;	yesorno
@@ -109,25 +117,12 @@ ElmsLab_MapScripts:
 ;	sjump .MustSayYes
 ;.ElmGetsEmail:
 
+    special FadeOutMusic
     opentext
-	writetext ElmText_Accepted
-	promptbutton
 	writetext ElmText_ResearchAmbitions
 	waitbutton
 	closetext
-	playsound SFX_GLASS_TING
-	pause 30
-	showemote EMOTE_SHOCK, ELMSLAB_ELM, 10
-	turnobject ELMSLAB_ELM, DOWN
-	opentext
-	writetext ElmText_GotAnEmail
-	waitbutton
-	closetext
-	opentext
-	turnobject ELMSLAB_ELM, RIGHT
-	writetext ElmText_MissionFromMrPokemon
-	waitbutton
-	closetext
+	special RestartMapMusic
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement1
 	turnobject PLAYER, UP
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement2
@@ -791,113 +786,180 @@ AfterChikoritaMovement:
 	turn_head UP
 	step_end
 
+ElmsLabMovement_ElmIntroduceCynthia:
+    step UP
+    turn_head DOWN
+    step_end
+
+ElmsLabMovement_CynthiaApproaches:
+    slow_step DOWN
+    step_end
+
+ElmsLabMovement_CynthiaBesidePlayer:
+    slow_step RIGHT
+    slow_step DOWN
+    turn_head LEFT
+    step_end
+
+ElmsLabMovement_CynthiaLeaves:
+    slow_step DOWN
+    slow_step DOWN
+    slow_step DOWN
+    slow_step DOWN
+    slow_step DOWN
+    step_end
+
+ElmsLabMovement_ElmReturns:
+    step DOWN
+    turn_head RIGHT
+    step_end
+
+ElmText_ThisIsCynthia:
+    text "Let me introduce"
+    line "you."
+
+    para "This is CYNTHIA."
+
+    para "She is CHAMPION"
+    line "of the SINNOH"
+    cont "region."
+    done
+
+ElmsLabCynthiaIntroText:
+    text "Hello <PLAYER>."
+
+    para "PROF ELM has told"
+    line "me today you have"
+    cont "chosen to begin"
+    cont "your #MON"
+    cont "training."
+
+    para "I envy you."
+
+    para "To experiance it"
+    line "all again for the"
+    cont "first time."
+
+    para "You have a great"
+    line "adventure ahead"
+    cont "of you."
+
+    para "And a big"
+    line "responsibility."
+
+    para "People need strong"
+    line "trainers to give"
+    cont "them hope in these"
+    cont "fractious times."
+    done
+
+ElmsLabCynthiaByeElmText:
+    text "I must take my"
+    line "leave now."
+
+    para "There is much"
+    line "to be done."
+
+    para "Thanks you for"
+    line "your help PROF."
+
+    para "There may be"
+    line "hope yet."
+    done
+
+ElmsLabElmStevenText:
+    text "Glad to be of"
+    line "help!"
+
+    para "The evidence is"
+    line "clear."
+
+    para "STEVEN may still"
+    line "be alive."
+
+    para "Many in HOENs army"
+    line "remain loyal to"
+    cont "him rather than"
+    cont "WALLACE."
+
+    para "We must try to"
+    line "find him."
+    done
+
+ElmsLabCynthiaResolveText:
+    text "I know he lives."
+
+    para "His aura is clear"
+    line "to us."
+
+    para "I will find him."
+    done
+
+ElmsLabCynthiaGoodluckText:
+    text "Try not to"
+    line "trouble yourself"
+    cont "with all the"
+    cont "problems of the"
+    cont "world."
+
+    para "Enjoy your"
+    line "adventure."
+
+    para "No matter which"
+    line "#MON you choose"
+    cont "it will serve you"
+    cont "well and become a"
+    cont "life long friend."
+
+    para "Good luck."
+    done
+
+
 ElmText_Intro:
-	text "ELM: <PLAY_G>!"
-	line "There you are!"
+	text "ELM: Ah <PLAYER>"
+	line "good to see you!"
 
-	para "I needed to ask"
-	line "you a favor."
+	para "Today is your big"
+	line "day!"
 
-	para "I'm conducting new"
-	line "#MON research"
-
-	para "right now. I was"
-	line "wondering if you"
-
-	para "could help me with"
-	line "it, <PLAY_G>."
-
-	para "You see…"
-
-	para "I'm writing a"
-	line "paper that I want"
-
-	para "to present at a"
-	line "conference."
-
-	para "But there are some"
-	line "things I don't"
-
-	para "quite understand"
-	line "yet."
-
-	para "So!"
-
-	para "I'd like you to"
-	line "raise a #MON"
-
-	para "that I recently"
-	line "caught."
-	done
-
-ElmText_Accepted:
-	text "Thanks, <PLAY_G>!"
-
-	para "You're a great"
-	line "help!"
-	done
-
-ElmText_Refused:
-	text "But… Please, I"
-	line "need your help!"
+	para "Sorry I'll was"
+	line "just finishing"
+	cont "up here."
 	done
 
 ElmText_ResearchAmbitions:
-	text "When I announce my"
-	line "findings, I'm sure"
+	text "There is a lot"
+	line "going on in the"
+	cont "world."
 
-	para "we'll delve a bit"
-	line "deeper into the"
+	para "As you know"
+	line "better than most."
 
-	para "many mysteries of"
-	line "#MON."
+	para "I'm sorry about"
+	line "your father."
 
-	para "You can count on"
-	line "it!"
+	para "it's no secret"
+	line "that the #MON"
+	cont "league want to"
+	cont "find strong"
+	cont "trainers to"
+	cont "fight in the"
+	cont "war with HOEN"
+	cont "which looks to be"
+	cont "inevitable now."
+
+	para "But CYNTHIA is"
+	line "right!"
+
+	para "You are about to"
+	line "start a great big"
+	cont "adventure."
+
+	para "Now let's choose"
+	line "you partner on"
+	cont "this journey."
 	done
 
-ElmText_GotAnEmail:
-	text "Oh, hey! I got an"
-	line "e-mail!"
-
-	para "<……><……><……>"
-	line "Hm… Uh-huh…"
-
-	para "Okay…"
-	done
-
-ElmText_MissionFromMrPokemon:
-	text "Hey, listen."
-
-	para "I have an acquain-"
-	line "tance called MR."
-	cont "#MON."
-
-	para "He keeps finding"
-	line "weird things and"
-
-	para "raving about his"
-	line "discoveries."
-
-	para "Anyway, I just got"
-	line "an e-mail from him"
-
-	para "saying that this"
-	line "time it's real."
-
-	para "It is intriguing,"
-	line "but we're busy"
-
-	para "with our #MON"
-	line "research…"
-
-	para "Wait!"
-
-	para "I know!"
-
-	para "<PLAY_G>, can you"
-	line "go in our place?"
-	done
 
 ElmText_ChooseAPokemon:
 	text "I want you to"
@@ -1894,7 +1956,7 @@ ElmsLab_MapEvents:
 	object_event  4, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
 	object_event  4, 11, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_2
 	object_event  5,  4, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3
-	object_event 0, 0, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_4
+	object_event 4, 2, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_4
 
 
 

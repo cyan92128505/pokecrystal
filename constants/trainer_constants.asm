@@ -97,9 +97,9 @@ KRIS EQU __trainer_class__
 	const KAREN1
 	const MASTER_KAREN
 
-	trainerclass KOGA ; f
-	const KOGA1
-	const MASTER_KOGA
+	trainerclass ADAM ; f
+	const ADAM_ELITE
+	const MASTER_ADAM
 
 	trainerclass CHAMPION ; 10
 	const LANCE

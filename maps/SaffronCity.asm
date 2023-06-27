@@ -361,7 +361,7 @@ SaffronSilverPokemonFreedText:
 
     para "I gave all my"
     line "#MON the choice"
-    cont "to leave me..."
+    cont "to stay with me..."
 
     para "They didn't all"
     line "accept..."

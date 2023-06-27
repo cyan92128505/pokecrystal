@@ -116,12 +116,6 @@ PlayBattleMusic:
 	and a
 	jr nz, .trainermusic
 
-	; aggressive wild mon
-	ld de, MUSIC_RIVAL_BATTLE
-	ld a, [wOtherTrainerID]
-	cp FIELD_MON
-	jp z, .done
-
     ; is this suicune battle
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
@@ -150,10 +144,16 @@ PlayBattleMusic:
 	jp .done
 
 .trainermusic
+	; aggressive wild mon
+	ld de, MUSIC_RIVAL_BATTLE
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jp z, .done
+
     ld de, MUSIC_EPIC_TETRIS
     cp POKEMON_PROF
     jp z, .done
-    cp KOGA
+    cp ADAM
     jp z, .done
 
     ; champoin music
@@ -246,7 +246,6 @@ PlayBattleMusic:
 	jr .done
 
 .checkCrystal
-    ld a, [wOtherTrainerClass]
 	cp CRYSTAL
 	jr nz, .othertrainer
 	ld a, [wOtherTrainerID]

@@ -17,7 +17,7 @@ BTTrainerClassGenders:
 	db MALE   ; CAL
 	db MALE   ; BRUNO
 	db FEMALE ; KAREN
-	db MALE   ; KOGA
+	db MALE   ; ADAM
 	db MALE   ; CHAMPION
 	db MALE   ; BROCK
 	db FEMALE ; MISTY

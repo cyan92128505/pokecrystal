@@ -8740,6 +8740,13 @@ InitEnemyTrainer:
 	farcall StubbedTrainerRankings_TrainerBattles
 	xor a
 	ld [wTempEnemyMonSpecies], a
+	ld a, [wOtherTrainerClass]
+	cp CAL
+	jr nz, .notCal
+	callfar GetTrainerAttributes
+	callfar ReadPlayerPartyAsTrainerParty
+	jr .ok
+.notCal
 	callfar GetTrainerAttributes
 	callfar ReadTrainerParty
 
@@ -8749,7 +8756,7 @@ InitEnemyTrainer:
 	;jr nz, .ok
 	;xor a
 	;ld [wOTPartyMon1Item], a
-;.ok
+.ok
 	ld de, vTiles2
 	callfar GetTrainerPic
 	xor a

@@ -451,7 +451,264 @@ endr
 
 	pop hl
 .no_stat_recalc
+	jp .loop
 
+ReadPlayerPartyAsTrainerParty:
+	ld hl, wOTPartyCount
+	xor a
+	ld [hli], a
+	dec a
+	ld [hl], a
+
+	ld hl, wOTPartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH * PARTY_LENGTH
+	xor a
+	call ByteFill
+
+	ld a, [wOtherTrainerClass]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, TrainerGroups
+	add hl, bc
+	add hl, bc
+    add hl, bc
+	ld a, [hli]
+	ld [wTrainerGroupBank], a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ld a, [wOtherTrainerID]
+	ld b, a
+.skip_trainer
+	dec b
+	jr z, .got_trainer
+.loop
+	call GetNextTrainerDataByte
+	cp -1
+	jr nz, .loop
+	jr .skip_trainer
+.got_trainer
+
+.skip_name
+	call GetNextTrainerDataByte
+	cp "@"
+	jr nz, .skip_name
+
+	call GetNextTrainerDataByte
+	ld [wOtherTrainerType], a
+	ld d, h
+	ld e, l
+	call ReadPlayerPartyAsTrainerPartyPieces
+
+.done
+	jp ComputeTrainerReward
+
+ReadPlayerPartyAsTrainerPartyPieces:
+	ld h, d
+	ld l, e
+
+.loop
+; end?
+	call GetNextTrainerDataByte
+	cp -1
+	ret z
+
+; level
+	;ld [wCurPartyLevel], a
+	ld a, [wPartyMon1Level]
+    ld [wCurPartyLevel], a
+
+; species
+	call GetNextTrainerDataByte
+	;ld [wCurPartySpecies], a
+	ld a, [wPartyMon1Species]
+	ld [wCurPartySpecies], a
+
+; add to party
+	ld a, OTPARTYMON
+	ld [wMonType], a
+	push hl
+	predef TryAddMonToParty
+	pop hl
+
+; stat exp?
+    push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1StatExp
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	pop hl ; de is now wOTPartyMon1StatExp
+
+    push hl
+	; decide stat exp based on badges
+    ld hl, wJohtoBadges
+    bit RISINGBADGE, [hl]
+	jr nz, .fullStatExp
+
+    bit STORMBADGE, [hl]
+    jr nz, .highStatExp
+
+    bit PLAINBADGE, [hl]
+    jr nz, .mediumStatExp
+
+    bit ZEPHYRBADGE, [hl]
+    jp nz, .lowStatExp
+
+    pop hl
+    jp .no_stat_exp
+
+.fullStatExp
+rept 6
+    ld a, $ff
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jp .no_stat_exp
+
+.highStatExp
+rept 6
+    ld a, $90
+	ld [de], a
+	inc de
+	ld a, $00
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jr .no_stat_exp
+
+.mediumStatExp
+rept 6
+    ld a, $40
+	ld [de], a
+	inc de
+	ld a, $00
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jr .no_stat_exp
+
+.lowStatExp
+rept 6
+    ld a, $10
+	ld [de], a
+	inc de
+	ld a, $00
+	ld [de], a
+	inc de
+endr
+	pop hl
+	jr .no_stat_exp
+
+.no_stat_exp
+
+; item?
+	call GetNextTrainerDataByte
+    ld a, [wPartyMon1Item]
+    ld [de], a
+
+; moves?
+	ld b, NUM_MOVES
+.copy_moves
+	call GetNextTrainerDataByte
+	dec b
+	jr nz, .copy_moves ; when no more moves we are done - moves are copied
+
+	ld b, NUM_MOVES
+	push hl
+	ld hl, wPartyMon1Moves
+.copy_copied_moves
+	ld a, [hl]
+	ld [de], a ; here a is the next move
+	inc hl
+	inc de
+	dec b
+	jr nz, .copy_copied_moves ; when no more moves we are done - moves are copied
+    pop hl
+
+    push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	ld hl, MON_PP
+	add hl, de
+
+	push hl
+	ld hl, MON_MOVES
+	add hl, de
+	pop de
+
+	ld b, NUM_MOVES
+.copy_pp
+	ld a, [hli]
+	and a
+	jr z, .copied_pp
+
+	push hl
+	push bc
+	dec a
+	ld hl, Moves + MOVE_PP
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	pop bc
+	pop hl
+
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .copy_pp
+.copied_pp
+
+	pop hl
+.no_moves
+
+; Custom DVs and state exp affect stats,
+; so recalculate them after TryAddMonToParty
+	push hl
+
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1MaxHP
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1StatExp - 1
+	call GetPartyLocation
+
+; recalculate stats
+	ld b, TRUE
+	push de
+	predef CalcMonStats
+	pop hl
+
+; copy max HP to current HP
+	inc hl
+	ld c, [hl]
+	dec hl
+	ld b, [hl]
+	dec hl
+	ld [hl], c
+	dec hl
+	ld [hl], b
+
+	pop hl
+.no_stat_recalc
 	jp .loop
 
 ; AndrewNote - reward money here

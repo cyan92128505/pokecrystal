@@ -20,9 +20,7 @@ MasterBrockScript:
 	closetext
 	winlosstext DefaultBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	;callasm SetUpCal
 	loadtrainer BROCK, MASTER_BROCK
-	;loadtrainer CAL, CAL2
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_BROCK

@@ -25,13 +25,6 @@ ReadTrainerParty:
 	call ByteFill
 
 	ld a, [wOtherTrainerClass]
-	cp CAL
-	jr nz, .not_cal2
-	ld a, [wOtherTrainerID]
-	cp CAL2
-	jr z, .cal2
-	ld a, [wOtherTrainerClass]
-.not_cal2
 
 	dec a
 	ld c, a
@@ -71,16 +64,6 @@ ReadTrainerParty:
 
 .done
 	jp ComputeTrainerReward
-
-.cal2
-	ld a, BANK(sMysteryGiftTrainer)
-	call OpenSRAM
-	ld a, TRAINERTYPE_MOVES
-	ld [wOtherTrainerType], a
-	ld de, sMysteryGiftTrainer ; AndrewNote - sMysteryGiftTrainer is trainer cal2 loads
-	call ReadTrainerPartyPieces
-	call CloseSRAM
-	jr .done
 
 ReadTrainerPartyPieces:
 	ld h, d
@@ -454,17 +437,20 @@ endr
 	jp .loop
 
 ReadPlayerPartyAsTrainerParty:
+    ; clear OT party count
 	ld hl, wOTPartyCount
 	xor a
 	ld [hli], a
 	dec a
 	ld [hl], a
 
+    ; clear OT party mons
 	ld hl, wOTPartyMons
 	ld bc, PARTYMON_STRUCT_LENGTH * PARTY_LENGTH
 	xor a
 	call ByteFill
 
+; now get the trainer class and id so we can get the trainer name
 	ld a, [wOtherTrainerClass]
 	dec a
 	ld c, a
@@ -478,7 +464,6 @@ ReadPlayerPartyAsTrainerParty:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
 	ld a, [wOtherTrainerID]
 	ld b, a
 .skip_trainer
@@ -496,8 +481,11 @@ ReadPlayerPartyAsTrainerParty:
 	cp "@"
 	jr nz, .skip_name
 
+; here a is the trainer type eg TRAINERTYPE_ITEM_MOVES
 	call GetNextTrainerDataByte
 	ld [wOtherTrainerType], a
+
+; hl is the trainer data from parties, copy it to de
 	ld d, h
 	ld e, l
 	call ReadPlayerPartyAsTrainerPartyPieces
@@ -506,32 +494,39 @@ ReadPlayerPartyAsTrainerParty:
 	jp ComputeTrainerReward
 
 ReadPlayerPartyAsTrainerPartyPieces:
+; copy de back to hl, why?
 	ld h, d
 	ld l, e
 
+	ld a, [wPartyCount]
+	ld c, a
+	ld b, 1
+
 .loop
 ; end?
-	call GetNextTrainerDataByte
-	cp -1
-	ret z
+; are we at the end of the trainer data, ret if so
+    push bc
 
 ; level
-	;ld [wCurPartyLevel], a
-	ld a, [wPartyMon1Level]
+    ld hl, wPartyMon1Level
+    pop bc
+    call IncrementToCurrentMon
+    push bc
+	ld a, [hl]
     ld [wCurPartyLevel], a
 
 ; species
-	call GetNextTrainerDataByte
-	;ld [wCurPartySpecies], a
-	ld a, [wPartyMon1Species]
+	ld hl, wPartyMon1Species
+    pop bc
+    call IncrementToCurrentMon
+    push bc
+	ld a, [hl]
 	ld [wCurPartySpecies], a
 
 ; add to party
 	ld a, OTPARTYMON
 	ld [wMonType], a
-	push hl
 	predef TryAddMonToParty
-	pop hl
 
 ; stat exp?
     push hl
@@ -611,20 +606,26 @@ endr
 .no_stat_exp
 
 ; item?
-	call GetNextTrainerDataByte
     ld a, [wPartyMon1Item]
-    ld [de], a
+    ld [wOTPartyMon1Item], a
+    ld a, [wPartyMon2Item]
+    ld [wOTPartyMon2Item], a
+    ld a, [wPartyMon3Item]
+    ld [wOTPartyMon3Item], a
+    ld a, [wPartyMon4Item]
+    ld [wOTPartyMon4Item], a
+    ld a, [wPartyMon5Item]
+    ld [wOTPartyMon5Item], a
+    ld a, [wPartyMon6Item]
+    ld [wOTPartyMon6Item], a
 
 ; moves?
-	ld b, NUM_MOVES
-.copy_moves
-	call GetNextTrainerDataByte
-	dec b
-	jr nz, .copy_moves ; when no more moves we are done - moves are copied
-
-	ld b, NUM_MOVES
 	push hl
 	ld hl, wPartyMon1Moves
+	pop bc
+	call IncrementToCurrentMon
+	push bc
+	ld b, NUM_MOVES
 .copy_copied_moves
 	ld a, [hl]
 	ld [de], a ; here a is the next move
@@ -706,10 +707,39 @@ endr
 	ld [hl], c
 	dec hl
 	ld [hl], b
-
 	pop hl
 .no_stat_recalc
+
+    pop bc
+    inc b
+	dec c
+	ret z
 	jp .loop
+
+IncrementToCurrentMon:
+    ld a, b
+.incrementLoop
+    dec a
+    jr z, .incrementDone
+rept 48
+    inc hl
+endr
+    jr .incrementLoop
+.incrementDone
+    ret
+
+IncrementMovesToCurrentMon:
+    ld a, b
+.incrementLoop
+    dec a
+    jr z, .incrementDone
+    inc hl
+    inc hl
+    inc hl
+    inc hl
+    jr .incrementLoop
+.incrementDone
+    ret
 
 ; AndrewNote - reward money here
 ComputeTrainerReward:
@@ -756,23 +786,6 @@ Battle_GetTrainerName::
 
 GetTrainerName::
 	ld a, c
-	cp CAL
-	jr nz, .not_cal2
-
-	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-	call OpenSRAM
-	ld a, [sMysteryGiftTrainerHouseFlag]
-	and a
-	call CloseSRAM
-	jr z, .not_cal2
-
-	ld a, BANK(sMysteryGiftPartnerName)
-	call OpenSRAM
-	ld hl, sMysteryGiftPartnerName
-	call CopyTrainerName
-	jp CloseSRAM
-
-.not_cal2
 	dec c
 	push bc
 	ld b, 0

@@ -85,9 +85,7 @@ KRIS EQU __trainer_class__
 	const MASTER_WILL
 
 	trainerclass CAL ; c ; Remove?
-	const CAL1 ; unused
-	const CAL2
-	const CAL3
+	const CAL1
 
 	trainerclass BRUNO ; d
 	const BRUNO1

@@ -326,24 +326,15 @@ WillGroup:
 
 PKMNTrainerGroup:
 	; CAL (1)
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 10, TREECKO
-	db 10, CHIMCHAR
-	db 10, FROAKIE
+	db "CAL@", TRAINERTYPE_ITEM_MOVES
 	db -1 ; end
 
 	; CAL (2)
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 30, GROVYLE
-	db 30, MONFERNO
-	db 30, FROGADIER
+	db "CAL@", TRAINERTYPE_ITEM_MOVES
 	db -1 ; end
 
 	; CAL (3)
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 50, SCEPTILE
-	db 50, INFERNAPE
-	db 50, GRENINJA
+	db "CAL@", TRAINERTYPE_ITEM_MOVES
 	db -1 ; end
 
 BrunoGroup:

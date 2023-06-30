@@ -24,7 +24,7 @@ SaffronGymSabrinaScript:
 	loadtrainer WILL, WILL1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_SABRINA
+	setevent EVENT_BEAT_WILL
 	setevent EVENT_BEAT_MEDIUM_REBECCA
 	setevent EVENT_BEAT_MEDIUM_DORIS
 	setevent EVENT_BEAT_PSYCHIC_FRANKLIN

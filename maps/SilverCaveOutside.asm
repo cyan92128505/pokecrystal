@@ -839,6 +839,88 @@ SilverCaveCrystalForgetText:
     text "I wont forget it."
     done
 
+SilverCaveOutsideSelfBattleScript:
+    faceplayer
+	opentext
+	writetext SilverCaveSelfBattleText
+	waitbutton
+	yesorno
+	iffalse .refused
+	writetext SilverCaveVisualiseText
+	waitbutton
+	closetext
+	winlosstext SelfVictoryText, SelfLossText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CAL, CAL1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext GreatThingsText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.refused
+	writetext SelfBattleRefusedText
+	waitbutton
+	closetext
+	end
+
+SilverCaveSelfBattleText:
+    text "You could achieve"
+    line "great things."
+
+    para "You could be a"
+    line "#MON MASTER."
+
+    para "Or perhaps even"
+    line "more."
+
+    para "The only person"
+    line "who can stop you"
+    cont "is you."
+
+    para "Would you like"
+    line "to face your"
+    cont "greatest foe?"
+    done
+
+SilverCaveVisualiseText:
+    text "Look within."
+
+    para "Find your center."
+
+    para "Now detach and"
+    line "observe your"
+    cont "inner self from"
+    cont "afar."
+    done
+
+SelfVictoryText:
+    text "You are master"
+    line "of your own fate."
+    done
+
+SelfLossText:
+    text "You must accept"
+    line "yourself to find"
+    cont "true strength."
+    done
+
+GreatThingsText:
+    text "You have learnt"
+    line "the hardest"
+    cont "lesson of all."
+
+    para "Nothing can"
+    line "stop you now!"
+    done
+
+SelfBattleRefusedText:
+    text "You can not live"
+    line "in doubt forever."
+    done
+
 SilverCaveOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -872,4 +954,5 @@ SilverCaveOutside_MapEvents:
 	object_event 10, 28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 13, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon9Script, EVENT_FIELD_MON_9
 	object_event  8, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon10Script, EVENT_FIELD_MON_10
+	object_event 26, 19, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideSelfBattleScript, -1
 

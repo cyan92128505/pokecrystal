@@ -150,6 +150,8 @@ PlayBattleMusic:
 	cp FIELD_MON
 	jp z, .done
 
+    ld a, [wOtherTrainerClass]
+
     ld de, MUSIC_EPIC_TETRIS
     cp POKEMON_PROF
     jp z, .done

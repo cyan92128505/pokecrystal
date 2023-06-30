@@ -290,7 +290,7 @@ MasterLeonScript:
 MasterAdamScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_KOGA
+	checkevent EVENT_BEAT_MASTER_ADAM
 	iftrue .FightDone
 .fight
 	writetext DefaultSeenTextDS
@@ -301,7 +301,7 @@ MasterAdamScript:
 	loadtrainer ADAM, MASTER_ADAM
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_KOGA
+	setevent EVENT_BEAT_MASTER_ADAM
 	;opentext
 	;writetext DefaultAfterBattleTextDS
 	;waitbutton
@@ -420,7 +420,7 @@ RematchRefuseTextDestinySquare:
     done
 
 FightAdamScript:
-    checkevent EVENT_BEAT_MASTER_KOGA
+    checkevent EVENT_BEAT_MASTER_ADAM
     iffalse .fight
     end
 .fight

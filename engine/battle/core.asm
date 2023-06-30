@@ -6639,7 +6639,6 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-
     farcall GetTrainerDVs
 	ld a, [wBattleMode]
 	dec a
@@ -6744,6 +6743,7 @@ LoadEnemyMon:
 	jr .UpdateDVs
 
 .UpdateDVs:
+    farcall SetUpSelfDVs
 ; Input DVs in register bc
 	ld hl, wEnemyMonDVs
 	ld a, b
@@ -8740,14 +8740,13 @@ InitEnemyTrainer:
 	farcall StubbedTrainerRankings_TrainerBattles
 	xor a
 	ld [wTempEnemyMonSpecies], a
+	callfar GetTrainerAttributes
 	ld a, [wOtherTrainerClass]
 	cp CAL
 	jr nz, .notCal
-	callfar GetTrainerAttributes
 	callfar ReadPlayerPartyAsTrainerParty
 	jr .ok
 .notCal
-	callfar GetTrainerAttributes
 	callfar ReadTrainerParty
 
 	; RIVAL1's first mon has no held item

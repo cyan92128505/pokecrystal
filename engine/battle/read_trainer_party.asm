@@ -528,154 +528,191 @@ ReadPlayerPartyAsTrainerPartyPieces:
 	ld [wMonType], a
 	predef TryAddMonToParty
 
-; stat exp?
-    push hl
-	ld a, [wOTPartyCount]
-	dec a
-	ld hl, wOTPartyMon1StatExp
-	call GetPartyLocation
-	ld d, h
-	ld e, l
-	pop hl ; de is now wOTPartyMon1StatExp
+; dvs and stat exp
+    pop bc
+    ld a, b
+    cp 1
+    push bc
+    jp z, .firstMon
+    cp 2
+    jp z, .secondMon
+    cp 3
+    jp z, .thirdMon
+    cp 4
+    jp z, .forthMon
+    cp 5
+    jp z, .fifthMon
+    cp 6
+    jp z, .sixthMon
 
-    push hl
-	; decide stat exp based on badges
-    ld hl, wJohtoBadges
-    bit RISINGBADGE, [hl]
-	jr nz, .fullStatExp
+.firstMon
+    ld a, [wPartyMon1DVs]
+    ld [wOTPartyMon1DVs], a
+    ld a, [wPartyMon1DVs + 1]
+    ld [wOTPartyMon1DVs + 1], a
 
-    bit STORMBADGE, [hl]
-    jr nz, .highStatExp
+    ld a, [wPartyMon1HPExp]
+    ld [wOTPartyMon1HPExp], a
+    ld a, [wPartyMon1HPExp + 1]
+    ld [wOTPartyMon1HPExp + 1], a
+    ld a, [wPartyMon1AtkExp]
+    ld [wOTPartyMon1AtkExp], a
+    ld a, [wPartyMon1AtkExp + 1]
+    ld [wOTPartyMon1AtkExp + 1], a
+    ld a, [wPartyMon1DefExp]
+    ld [wOTPartyMon1DefExp], a
+    ld a, [wPartyMon1DefExp + 1]
+    ld [wOTPartyMon1DefExp + 1], a
+    ld a, [wPartyMon1SpdExp]
+    ld [wOTPartyMon1SpdExp], a
+    ld a, [wPartyMon1SpdExp + 1]
+    ld [wOTPartyMon1SpdExp + 1], a
+    ld a, [wPartyMon1SpcExp]
+    ld [wOTPartyMon1SpcExp], a
+    ld a, [wPartyMon1SpcExp + 1]
+    ld [wOTPartyMon1SpcExp + 1], a
+    jp .recalc
 
-    bit PLAINBADGE, [hl]
-    jr nz, .mediumStatExp
+.secondMon
+    ld a, [wPartyMon2DVs]
+    ld [wOTPartyMon2DVs], a
+    ld a, [wPartyMon2DVs + 1]
+    ld [wOTPartyMon2DVs + 1], a
 
-    bit ZEPHYRBADGE, [hl]
-    jp nz, .lowStatExp
+    ld a, [wPartyMon2HPExp]
+    ld [wOTPartyMon2HPExp], a
+    ld a, [wPartyMon2HPExp + 1]
+    ld [wOTPartyMon2HPExp + 1], a
+    ld a, [wPartyMon2AtkExp]
+    ld [wOTPartyMon2AtkExp], a
+    ld a, [wPartyMon2AtkExp + 1]
+    ld [wOTPartyMon2AtkExp + 1], a
+    ld a, [wPartyMon2DefExp]
+    ld [wOTPartyMon2DefExp], a
+    ld a, [wPartyMon2DefExp + 1]
+    ld [wOTPartyMon2DefExp + 1], a
+    ld a, [wPartyMon2SpdExp]
+    ld [wOTPartyMon2SpdExp], a
+    ld a, [wPartyMon2SpdExp + 1]
+    ld [wOTPartyMon2SpdExp + 1], a
+    ld a, [wPartyMon2SpcExp]
+    ld [wOTPartyMon2SpcExp], a
+    ld a, [wPartyMon2SpcExp + 1]
+    ld [wOTPartyMon2SpcExp + 1], a
+    jp .recalc
 
-    pop hl
-    jp .no_stat_exp
+.thirdMon
+    ld a, [wPartyMon3DVs]
+    ld [wOTPartyMon3DVs], a
+    ld a, [wPartyMon3DVs + 1]
+    ld [wOTPartyMon3DVs + 1], a
 
-.fullStatExp
-rept 6
-    ld a, $ff
-	ld [de], a
-	inc de
-	ld [de], a
-	inc de
-endr
-	pop hl
-	jp .no_stat_exp
+    ld a, [wPartyMon3HPExp]
+    ld [wOTPartyMon3HPExp], a
+    ld a, [wPartyMon3HPExp + 1]
+    ld [wOTPartyMon3HPExp + 1], a
+    ld a, [wPartyMon3AtkExp]
+    ld [wOTPartyMon3AtkExp], a
+    ld a, [wPartyMon3AtkExp + 1]
+    ld [wOTPartyMon3AtkExp + 1], a
+    ld a, [wPartyMon3DefExp]
+    ld [wOTPartyMon3DefExp], a
+    ld a, [wPartyMon3DefExp + 1]
+    ld [wOTPartyMon3DefExp + 1], a
+    ld a, [wPartyMon3SpdExp]
+    ld [wOTPartyMon3SpdExp], a
+    ld a, [wPartyMon3SpdExp + 1]
+    ld [wOTPartyMon3SpdExp + 1], a
+    ld a, [wPartyMon3SpcExp]
+    ld [wOTPartyMon3SpcExp], a
+    ld a, [wPartyMon3SpcExp + 1]
+    ld [wOTPartyMon3SpcExp + 1], a
+    jp .recalc
 
-.highStatExp
-rept 6
-    ld a, $90
-	ld [de], a
-	inc de
-	ld a, $00
-	ld [de], a
-	inc de
-endr
-	pop hl
-	jr .no_stat_exp
+.forthMon
+    ld a, [wPartyMon4DVs]
+    ld [wOTPartyMon4DVs], a
+    ld a, [wPartyMon4DVs + 1]
+    ld [wOTPartyMon4DVs + 1], a
 
-.mediumStatExp
-rept 6
-    ld a, $40
-	ld [de], a
-	inc de
-	ld a, $00
-	ld [de], a
-	inc de
-endr
-	pop hl
-	jr .no_stat_exp
+    ld a, [wPartyMon4HPExp]
+    ld [wOTPartyMon4HPExp], a
+    ld a, [wPartyMon4HPExp + 1]
+    ld [wOTPartyMon4HPExp + 1], a
+    ld a, [wPartyMon4AtkExp]
+    ld [wOTPartyMon4AtkExp], a
+    ld a, [wPartyMon4AtkExp + 1]
+    ld [wOTPartyMon4AtkExp + 1], a
+    ld a, [wPartyMon4DefExp]
+    ld [wOTPartyMon4DefExp], a
+    ld a, [wPartyMon4DefExp + 1]
+    ld [wOTPartyMon4DefExp + 1], a
+    ld a, [wPartyMon4SpdExp]
+    ld [wOTPartyMon4SpdExp], a
+    ld a, [wPartyMon4SpdExp + 1]
+    ld [wOTPartyMon4SpdExp + 1], a
+    ld a, [wPartyMon4SpcExp]
+    ld [wOTPartyMon4SpcExp], a
+    ld a, [wPartyMon4SpcExp + 1]
+    ld [wOTPartyMon4SpcExp + 1], a
+    jp .recalc
 
-.lowStatExp
-rept 6
-    ld a, $10
-	ld [de], a
-	inc de
-	ld a, $00
-	ld [de], a
-	inc de
-endr
-	pop hl
-	jr .no_stat_exp
+.fifthMon
+    ld a, [wPartyMon5DVs]
+    ld [wOTPartyMon5DVs], a
+    ld a, [wPartyMon5DVs + 1]
+    ld [wOTPartyMon5DVs + 1], a
 
-.no_stat_exp
+    ld a, [wPartyMon5HPExp]
+    ld [wOTPartyMon5HPExp], a
+    ld a, [wPartyMon5HPExp + 1]
+    ld [wOTPartyMon5HPExp + 1], a
+    ld a, [wPartyMon5AtkExp]
+    ld [wOTPartyMon5AtkExp], a
+    ld a, [wPartyMon5AtkExp + 1]
+    ld [wOTPartyMon5AtkExp + 1], a
+    ld a, [wPartyMon5DefExp]
+    ld [wOTPartyMon5DefExp], a
+    ld a, [wPartyMon5DefExp + 1]
+    ld [wOTPartyMon5DefExp + 1], a
+    ld a, [wPartyMon5SpdExp]
+    ld [wOTPartyMon5SpdExp], a
+    ld a, [wPartyMon5SpdExp + 1]
+    ld [wOTPartyMon5SpdExp + 1], a
+    ld a, [wPartyMon5SpcExp]
+    ld [wOTPartyMon5SpcExp], a
+    ld a, [wPartyMon5SpcExp + 1]
+    ld [wOTPartyMon5SpcExp + 1], a
+    jp .recalc
 
-; item?
-    ld a, [wPartyMon1Item]
-    ld [wOTPartyMon1Item], a
-    ld a, [wPartyMon2Item]
-    ld [wOTPartyMon2Item], a
-    ld a, [wPartyMon3Item]
-    ld [wOTPartyMon3Item], a
-    ld a, [wPartyMon4Item]
-    ld [wOTPartyMon4Item], a
-    ld a, [wPartyMon5Item]
-    ld [wOTPartyMon5Item], a
-    ld a, [wPartyMon6Item]
-    ld [wOTPartyMon6Item], a
+.sixthMon
+    ld a, [wPartyMon6DVs]
+    ld [wOTPartyMon6DVs], a
+    ld a, [wPartyMon6DVs + 1]
+    ld [wOTPartyMon6DVs + 1], a
 
-; moves?
-	push hl
-	ld hl, wPartyMon1Moves
-	pop bc
-	call IncrementToCurrentMon
-	push bc
-	ld b, NUM_MOVES
-.copy_copied_moves
-	ld a, [hl]
-	ld [de], a ; here a is the next move
-	inc hl
-	inc de
-	dec b
-	jr nz, .copy_copied_moves ; when no more moves we are done - moves are copied
-    pop hl
+    ld a, [wPartyMon6HPExp]
+    ld [wOTPartyMon6HPExp], a
+    ld a, [wPartyMon6HPExp + 1]
+    ld [wOTPartyMon6HPExp + 1], a
+    ld a, [wPartyMon6AtkExp]
+    ld [wOTPartyMon6AtkExp], a
+    ld a, [wPartyMon6AtkExp + 1]
+    ld [wOTPartyMon6AtkExp + 1], a
+    ld a, [wPartyMon6DefExp]
+    ld [wOTPartyMon6DefExp], a
+    ld a, [wPartyMon6DefExp + 1]
+    ld [wOTPartyMon6DefExp + 1], a
+    ld a, [wPartyMon6SpdExp]
+    ld [wOTPartyMon6SpdExp], a
+    ld a, [wPartyMon6SpdExp + 1]
+    ld [wOTPartyMon6SpdExp + 1], a
+    ld a, [wPartyMon6SpcExp]
+    ld [wOTPartyMon6SpcExp], a
+    ld a, [wPartyMon6SpcExp + 1]
+    ld [wOTPartyMon6SpcExp + 1], a
 
-    push hl
-	ld a, [wOTPartyCount]
-	dec a
-	ld hl, wOTPartyMon1
-	call GetPartyLocation
-	ld d, h
-	ld e, l
-	ld hl, MON_PP
-	add hl, de
-
-	push hl
-	ld hl, MON_MOVES
-	add hl, de
-	pop de
-
-	ld b, NUM_MOVES
-.copy_pp
-	ld a, [hli]
-	and a
-	jr z, .copied_pp
-
-	push hl
-	push bc
-	dec a
-	ld hl, Moves + MOVE_PP
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop bc
-	pop hl
-
-	ld [de], a
-	inc de
-	dec b
-	jr nz, .copy_pp
-.copied_pp
-
-	pop hl
-.no_moves
-
+.recalc
 ; Custom DVs and state exp affect stats,
 ; so recalculate them after TryAddMonToParty
 	push hl
@@ -713,8 +750,133 @@ endr
     pop bc
     inc b
 	dec c
-	ret z
-	jp .loop
+    jp nz, .loop
+
+    ; items
+    ld a, [wPartyMon1Item]
+    ld [wOTPartyMon1Item], a
+    ld a, [wPartyMon2Item]
+    ld [wOTPartyMon2Item], a
+    ld a, [wPartyMon3Item]
+    ld [wOTPartyMon3Item], a
+    ld a, [wPartyMon4Item]
+    ld [wOTPartyMon4Item], a
+    ld a, [wPartyMon5Item]
+    ld [wOTPartyMon5Item], a
+    ld a, [wPartyMon6Item]
+    ld [wOTPartyMon6Item], a
+
+    ; moves
+    ld a, [wPartyMon1Moves]
+    ld [wOTPartyMon1Moves], a
+    ld a, [wPartyMon1Moves + 1]
+    ld [wOTPartyMon1Moves + 1], a
+    ld a, [wPartyMon1Moves + 2]
+    ld [wOTPartyMon1Moves + 2], a
+    ld a, [wPartyMon1Moves + 3]
+    ld [wOTPartyMon1Moves + 3], a
+
+    ld a, [wPartyMon2Moves]
+    ld [wOTPartyMon2Moves], a
+    ld a, [wPartyMon2Moves + 1]
+    ld [wOTPartyMon2Moves + 1], a
+    ld a, [wPartyMon2Moves + 2]
+    ld [wOTPartyMon2Moves + 2], a
+    ld a, [wPartyMon2Moves + 3]
+    ld [wOTPartyMon2Moves + 3], a
+
+    ld a, [wPartyMon3Moves]
+    ld [wOTPartyMon3Moves], a
+    ld a, [wPartyMon3Moves + 1]
+    ld [wOTPartyMon3Moves + 1], a
+    ld a, [wPartyMon3Moves + 2]
+    ld [wOTPartyMon3Moves + 2], a
+    ld a, [wPartyMon3Moves + 3]
+    ld [wOTPartyMon3Moves + 3], a
+
+    ld a, [wPartyMon4Moves]
+    ld [wOTPartyMon4Moves], a
+    ld a, [wPartyMon4Moves + 1]
+    ld [wOTPartyMon4Moves + 1], a
+    ld a, [wPartyMon4Moves + 2]
+    ld [wOTPartyMon4Moves + 2], a
+    ld a, [wPartyMon4Moves + 3]
+    ld [wOTPartyMon4Moves + 3], a
+
+    ld a, [wPartyMon5Moves]
+    ld [wOTPartyMon5Moves], a
+    ld a, [wPartyMon5Moves + 1]
+    ld [wOTPartyMon5Moves + 1], a
+    ld a, [wPartyMon5Moves + 2]
+    ld [wOTPartyMon5Moves + 2], a
+    ld a, [wPartyMon5Moves + 3]
+    ld [wOTPartyMon5Moves + 3], a
+
+    ld a, [wPartyMon6Moves]
+    ld [wOTPartyMon6Moves], a
+    ld a, [wPartyMon6Moves + 1]
+    ld [wOTPartyMon6Moves + 1], a
+    ld a, [wPartyMon6Moves + 2]
+    ld [wOTPartyMon6Moves + 2], a
+    ld a, [wPartyMon6Moves + 3]
+    ld [wOTPartyMon6Moves + 3], a
+
+    ; PP
+    ld a, [wPartyMon1PP]
+    ld [wOTPartyMon1PP], a
+    ld a, [wPartyMon1PP + 1]
+    ld [wOTPartyMon1PP + 1], a
+    ld a, [wPartyMon1PP + 2]
+    ld [wOTPartyMon1PP + 2], a
+    ld a, [wPartyMon1PP + 3]
+    ld [wOTPartyMon1PP + 3], a
+
+    ld a, [wPartyMon2PP]
+    ld [wOTPartyMon2PP], a
+    ld a, [wPartyMon2PP + 1]
+    ld [wOTPartyMon2PP + 1], a
+    ld a, [wPartyMon2PP + 2]
+    ld [wOTPartyMon2PP + 2], a
+    ld a, [wPartyMon2PP + 3]
+    ld [wOTPartyMon2PP + 3], a
+
+    ld a, [wPartyMon3PP]
+    ld [wOTPartyMon3PP], a
+    ld a, [wPartyMon3PP + 1]
+    ld [wOTPartyMon3PP + 1], a
+    ld a, [wPartyMon3PP + 2]
+    ld [wOTPartyMon3PP + 2], a
+    ld a, [wPartyMon3PP + 3]
+    ld [wOTPartyMon3PP + 3], a
+
+    ld a, [wPartyMon4PP]
+    ld [wOTPartyMon4PP], a
+    ld a, [wPartyMon4PP + 1]
+    ld [wOTPartyMon4PP + 1], a
+    ld a, [wPartyMon4PP + 2]
+    ld [wOTPartyMon4PP + 2], a
+    ld a, [wPartyMon4PP + 3]
+    ld [wOTPartyMon4PP + 3], a
+
+    ld a, [wPartyMon5PP]
+    ld [wOTPartyMon5PP], a
+    ld a, [wPartyMon5PP + 1]
+    ld [wOTPartyMon5PP + 1], a
+    ld a, [wPartyMon5PP + 2]
+    ld [wOTPartyMon5PP + 2], a
+    ld a, [wPartyMon5PP + 3]
+    ld [wOTPartyMon5PP + 3], a
+
+    ld a, [wPartyMon6PP]
+    ld [wOTPartyMon6PP], a
+    ld a, [wPartyMon6PP + 1]
+    ld [wOTPartyMon6PP + 1], a
+    ld a, [wPartyMon6PP + 2]
+    ld [wOTPartyMon6PP + 2], a
+    ld a, [wPartyMon6PP + 3]
+    ld [wOTPartyMon6PP + 3], a
+
+    ret
 
 IncrementToCurrentMon:
     ld a, b

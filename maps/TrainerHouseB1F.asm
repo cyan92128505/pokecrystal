@@ -14,11 +14,7 @@ TrainerHouseB1F_MapScripts:
 TrainerHouseReceptionistScript:
 	turnobject PLAYER, UP
 	opentext
-	;checkflag ENGINE_FOUGHT_IN_TRAINER_HALL_TODAY
-	;iftrue .FoughtTooManyTimes
 	writetext TrainerHouseB1FIntroText
-	promptbutton
-	writetext TrainerHouseB1FYourOpponentIsText
 	promptbutton
 	writetext TrainerHouseB1FAskWantToBattleText
 	yesorno
@@ -28,10 +24,10 @@ TrainerHouseReceptionistScript:
 	closetext
 	applymovement PLAYER, Movement_EnterTrainerHouseBattleRoom
 	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+    loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 
 .sample
-    random 30
+    random 46
     ifequal 0, .Brock
     ifequal 1, .Misty
     ifequal 2, .Surge
@@ -62,30 +58,30 @@ TrainerHouseReceptionistScript:
     ifequal 27, .Ash
     ifequal 28, .Red
     ifequal 29, .Patches
+    ifequal 30, .Alder
+    ifequal 31, .Diantha
+    ifequal 32, .Aerith
+    ifequal 33, .Yuna
+    ifequal 34, .Rocket
+    ifequal 35, .Tobias
+    ifequal 36, .Henshin
+    ifequal 37, .Seto
+    ifequal 38, .Yami
+    ifequal 39, .Aizen
+    ifequal 40, .Xehanort
+    ifequal 41, .ChrisChan
+    ifequal 42, .Green
+    ifequal 43, .Silver
+    ifequal 44, .Crystal
+    ifequal 45, .Dad
 
-    ;ifequal 16, .Silver
-    ;ifequal 17, .Crystal
-    ;ifequal 27, .Arden
-    ;ifequal 28, .Diantha
-    ;ifequal 33, .Aerith
-    ;ifequal 34, .Rocket
-    ;ifequal 35, .Yuna
-    ;ifequal 36, .Tobias
-    ;ifequal 37, .Henshin
-    ;ifequal 38, .Seto
-    ;ifequal 39, .Yami
-    ;ifequal 40, .Aizen
-    ;ifequal 41, .Eusine
-    ;ifequal 42, .ChrisChan
-    ;ifequal 43, .Green
-    ;ifequal 45, .RatKing
-    ;ifequal 46, .GiantDad
-    ;ifequal 47, .Agatha
+    loadtrainer LT_SURGE, DAD
 
 .finish
 	startbattle
 	reloadmapafterbattle
 	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
+	special HealParty
 	end
 
 .Brock
@@ -382,7 +378,7 @@ TrainerHouseReceptionistScript:
 
 .Leon
     checkevent EVENT_BEAT_MASTER_LEON
-    iffalse .Leon
+    iffalse .Leon1
     loadtrainer LEON, MASTER_LEON
     sjump .finish
 .Leon1
@@ -393,7 +389,7 @@ TrainerHouseReceptionistScript:
 
 .Wallace
     checkevent EVENT_BEAT_MASTER_WALLACE
-    iffalse .Wallace
+    iffalse .Wallace1
     loadtrainer WALLACE, MASTER_WALLACE
     sjump .finish
 .Wallace1
@@ -404,13 +400,225 @@ TrainerHouseReceptionistScript:
 
 .Patches
     checkevent EVENT_BEAT_MASTER_PATCHES
-    iffalse .Patches
+    iffalse .Patches1
     loadtrainer INVADER, MASTER_PATCHES
     sjump .finish
 .Patches1
     checkevent EVENT_BEAT_INVADER_PATCHES
     iffalse .sample
     loadtrainer INVADER, PATCHES
+    sjump .finish
+
+.Alder
+    checkevent EVENT_BEAT_MASTER_ALDER
+    iffalse .sample
+    loadtrainer HIKER, MASTER_ALDER
+    sjump .finish
+
+.Diantha
+    checkevent EVENT_BEAT_MASTER_DIANTHA
+    iffalse .sample
+    loadtrainer BEAUTY, MASTER_DIANTHA
+    sjump .finish
+
+.Aerith
+    checkevent EVENT_BEAT_MASTER_AERITH
+    iffalse .Aerith2
+    loadtrainer KIMONO_GIRL, MASTER_AERITH
+    sjump .finish
+.Aerith2
+    checkevent EVENT_BEAT_AERITH_2
+    iffalse .Aerith1
+    loadtrainer KIMONO_GIRL, AERITH_2
+    sjump .finish
+.Aerith1
+    checkevent EVENT_BEAT_AERITH_1
+    iffalse .sample
+    loadtrainer KIMONO_GIRL, AERITH_1
+    sjump .finish
+
+.Yuna
+    checkevent EVENT_BEAT_MASTER_YUNA
+    iffalse .Yuna2
+    loadtrainer KIMONO_GIRL, MASTER_YUNA
+    sjump .finish
+.Yuna2
+    checkevent EVENT_BEAT_YUNA_2
+    iffalse .Yuna1
+    loadtrainer KIMONO_GIRL, YUNA_2
+    sjump .finish
+.Yuna1
+    checkevent EVENT_BEAT_YUNA_1
+    iffalse .sample
+    loadtrainer KIMONO_GIRL, YUNA_1
+    sjump .finish
+
+.Rocket
+    checkevent EVENT_BEAT_MASTER_EXECUTIVEF
+    iffalse .Rocket2
+    loadtrainer EXECUTIVEF, MASTER_EXECUTIVEF
+    sjump .finish
+.Rocket2
+    checkevent EVENT_BEAT_ROCKET_EXECUTIVEM_1
+    iffalse .Rocket1
+    loadtrainer EXECUTIVEF, EXECUTIVEM_1
+    sjump .finish
+.Rocket1
+    checkevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
+    iffalse .sample
+    loadtrainer EXECUTIVEF, EXECUTIVEF_1
+    sjump .finish
+
+.Tobias
+    checkevent EVENT_BEAT_MASTER_TOBIAS
+    iffalse .Tobias1
+    loadtrainer COOLTRAINERM, MASTER_TOBIAS
+    sjump .finish
+.Tobias1
+    checkevent EVENT_BEAT_TOBIAS
+    iffalse .sample
+    loadtrainer COOLTRAINERM, TOBIAS
+    sjump .finish
+
+.Henshin
+    checkevent EVENT_BEAT_HENSHIN
+    iffalse .sample
+    loadtrainer SAGE, HENSHIN
+    sjump .finish
+
+.Seto
+    checkevent EVENT_BEAT_MASTER_SETO
+    iffalse .Seto1
+    loadtrainer BLUE, MASTER_SETO
+    sjump .finish
+.Seto1
+    checkevent EVENT_BEAT_SETO
+    iffalse .sample
+    loadtrainer BLUE, SETO
+    sjump .finish
+
+.Yami
+    checkevent EVENT_BEAT_MASTER_YAMI
+    iffalse .Yami1
+    loadtrainer RED, MASTER_YAMI
+    sjump .finish
+.Yami1
+    checkevent EVENT_BEAT_YAMI
+    iffalse .sample
+    loadtrainer RED, YAMI
+    sjump .finish
+
+.Aizen
+    checkevent EVENT_BEAT_MASTER_AIZEN
+    iffalse .Aizen1
+    loadtrainer POKEMANIAC, MASTER_AIZEN
+    sjump .finish
+.Aizen1
+    checkevent EVENT_BEAT_AIZEN
+    iffalse .sample
+    loadtrainer POKEMANIAC, AIZEN
+    sjump .finish
+
+.Xehanort
+    checkevent EVENT_BEAT_MASTER_XEHANORT
+    iffalse .Xehanort1
+    loadtrainer SAGE, MASTER_XEHANORT
+    sjump .finish
+.Xehanort1
+    checkevent EVENT_BEAT_XEHANORT
+    iffalse .sample
+    loadtrainer SAGE, XEHANORT
+    sjump .finish
+
+.Eusine
+    checkevent EVENT_BEAT_MASTER_EUSINE
+    iffalse .Eusine2
+    loadtrainer MYSTICALMAN, MASTER_EUSINE
+    sjump .finish
+.Eusine2
+    checkevent EVENT_BEAT_SILVER_CAVE_EUSINE
+    iffalse .Eusine1
+    loadtrainer MYSTICALMAN, EUSINE_SILVER_CAVE
+    sjump .finish
+.Eusine1
+    checkevent EVENT_FOUGHT_EUSINE
+    iffalse .sample
+    loadtrainer MYSTICALMAN, EUSINE
+    sjump .finish
+
+.ChrisChan
+    checkevent EVENT_BEAT_MASTER_CHRIS_CHAN
+    iffalse .sample
+    loadtrainer POKEFANM, MASTER_CHRIS_CHAN
+    sjump .finish
+
+.Green
+    checkevent EVENT_BEAT_MASTER_GREEN
+    iffalse .sample
+    loadtrainer LASS, GREEN
+    sjump .finish
+
+.Silver
+    checkevent EVENT_BEAT_MASTER_RIVAL
+    iffalse .Silver2
+    loadtrainer RIVAL2, MASTER_RIVAL
+    sjump .finish
+.Silver2
+    checkevent EVENT_BEAT_SILVER_CAVE_RIVAL
+    iffalse .Silver1
+    loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+    sjump .finish
+.Silver1
+    checkevent EVENT_BEAT_RIVAL_SAFFRON
+    iffalse .sample
+    loadtrainer RIVAL2, RIVAL2_SAFFRON
+    sjump .finish
+
+.Crystal
+    checkevent EVENT_BEAT_MASTER_CRYSTAL
+    iffalse .Crystal7
+    loadtrainer CRYSTAL, MASTER_CRYSTAL
+    sjump .finish
+.Crystal7
+    checkevent EVENT_BEAT_CRYSTAL_7
+    iffalse .Crystal6
+    loadtrainer CRYSTAL, CRYSTAL_7
+    sjump .finish
+.Crystal6
+    checkevent EVENT_BEAT_CRYSTAL_6
+    iffalse .Crystal5
+    loadtrainer CRYSTAL, CRYSTAL_6
+    sjump .finish
+.Crystal5
+    checkevent EVENT_BEAT_CRYSTAL_5
+    iffalse .Crystal4
+    loadtrainer CRYSTAL, CRYSTAL_5
+    sjump .finish
+.Crystal4
+    checkevent EVENT_BEAT_CRYSTAL_4
+    iffalse .Crystal3
+    loadtrainer CRYSTAL, CRYSTAL_4
+    sjump .finish
+.Crystal3
+    checkevent EVENT_BEAT_CRYSTAL_3
+    iffalse .Crystal2
+    loadtrainer CRYSTAL, CRYSTAL_3
+    sjump .finish
+.Crystal2
+    checkevent EVENT_BEAT_CRYSTAL_2
+    iffalse .Crystal1
+    loadtrainer CRYSTAL, CRYSTAL_2
+    sjump .finish
+.Crystal1
+    checkevent EVENT_BEAT_CRYSTAL_1
+    iffalse .sample
+    loadtrainer CRYSTAL, CRYSTAL_1
+    sjump .finish
+
+.Dad
+    checkevent EVENT_BEAT_DAD
+    iffalse .sample
+    loadtrainer LT_SURGE, DAD
     sjump .finish
 
 .Declined:
@@ -470,8 +678,9 @@ TrainerHouseB1FIntroText:
 	line "TRAINING HALL."
 
 	para "You may battle a"
-	line "trainer once per"
-	cont "day."
+	line "random strong"
+	cont "trainer from your"
+	cont "past."
 	done
 
 TrainerHouseB1FYourOpponentIsText:

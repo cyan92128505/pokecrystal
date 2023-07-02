@@ -1263,19 +1263,21 @@ ResidualDamage:
 ; ================================
     call GetOpposingMonCore
     cp DARKRAI
-    jr nz, .not_nightmare
+    jr z, .checkSleep
     cp DROWZEE
-    jr nz, .not_nightmare
+    jr z, .checkSleep
     cp HYPNO
-    jr nz, .not_nightmare
+    jr z, .checkSleep
     cp JYNX
-    jr nz, .not_nightmare
+    jr z, .checkSleep
     cp SPIRITOMB
     jr nz, .not_nightmare
 
-    ld a, [wBattleMonStatus]
-    and a
-    jr z, .not_nightmare
+.checkSleep
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	and SLP
+	jr z, .not_nightmare
 
 .nightmare
 	xor a

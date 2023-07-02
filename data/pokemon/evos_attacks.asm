@@ -318,7 +318,7 @@ RattataEvosAttacks:
 	db 13, HYPER_FANG
 	db 20, FOCUS_ENERGY
 	db 27, PURSUIT
-	db 34, SUPER_FANG
+	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
 RaticateEvosAttacks:
@@ -330,7 +330,7 @@ RaticateEvosAttacks:
 	db 13, HYPER_FANG
 	db 20, SCARY_FACE
 	db 30, PURSUIT
-	db 40, SUPER_FANG
+	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
 BunearyEvosAttacks:

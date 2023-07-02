@@ -3591,8 +3591,8 @@ BattleCommand_ConstantDamage:
 	ld a, 0
 	jr z, .got_power
 
-	cp EFFECT_SUPER_FANG
-	jr z, .super_fang
+	;cp EFFECT_SUPER_FANG
+	;jr z, .super_fang
 
 	cp EFFECT_REVERSAL
 	jr z, .reversal
@@ -3603,28 +3603,28 @@ BattleCommand_ConstantDamage:
 	ld a, $0
 	jr .got_power
 
-.super_fang
-	ld hl, wEnemyMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_hp
-	ld hl, wBattleMonHP
-.got_hp
-	ld a, [hli]
-	srl a
-	ld b, a
-	ld a, [hl]
-	rr a
-	push af
-	ld a, b
-	pop bc
-	and a
-	jr nz, .got_power
-	or b
-	ld a, 0
-	jr nz, .got_power
-	ld b, 1
-	jr .got_power
+;.super_fang
+;	ld hl, wEnemyMonHP
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .got_hp
+;	ld hl, wBattleMonHP
+;.got_hp
+;	ld a, [hli]
+;	srl a
+;	ld b, a
+;	ld a, [hl]
+;	rr a
+;	push af
+;	ld a, b
+;	pop bc
+;	and a
+;	jr nz, .got_power
+;	or b
+;	ld a, 0
+;	jr nz, .got_power
+;	ld b, 1
+;	jr .got_power
 
 .got_power
 	ld hl, wCurDamage

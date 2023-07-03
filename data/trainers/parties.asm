@@ -326,15 +326,7 @@ WillGroup:
 
 PKMNTrainerGroup:
 	; CAL (1)
-	db "CAL@", TRAINERTYPE_ITEM_MOVES
-	db -1 ; end
-
-	; CAL (2)
-	db "CAL@", TRAINERTYPE_ITEM_MOVES
-	db -1 ; end
-
-	; CAL (3)
-	db "CAL@", TRAINERTYPE_ITEM_MOVES
+	db "@", TRAINERTYPE_ITEM_MOVES
 	db -1 ; end
 
 BrunoGroup:

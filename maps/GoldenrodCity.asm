@@ -9,12 +9,12 @@
 	const GOLDENRODCITY_ROCKETSCOUT
 	const GOLDENRODCITY_ROCKET1
 	const GOLDENRODCITY_ROCKET2
-	const GOLDENRODCITY_ROCKET3
 	const GOLDENRODCITY_ROCKET4
 	const GOLDENRODCITY_ROCKET5
 	const GOLDENRODCITY_ROCKET6
 	const GOLDENRODCITY_MOVETUTOR
 	const GOLDENRODCITY_FIELDMON_1
+	const GOLDENRODCITY_SELF
 
 GoldenrodCity_MapScripts:
 	def_scene_scripts
@@ -591,6 +591,123 @@ GoldenrodCityPokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
 	done
+	
+GoldenrodCitySelfScript:
+    checkevent EVENT_RECEIVED_CARD_KEY
+    iffalse .end
+    checkevent EVENT_BEAT_GOLDENROD_SELF
+    iftrue .end
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    pause 20
+    appear GOLDENRODCITY_SELF
+    pause 5
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext GoldenrodSelfText1
+    waitbutton
+    closetext
+    disappear GOLDENRODCITY_SELF
+    moveobject GOLDENRODCITY_SELF, 3, 17
+    appear GOLDENRODCITY_SELF
+    turnobject GOLDENRODCITY_SELF, RIGHT
+    pause 5
+    turnobject PLAYER, LEFT
+    opentext
+    writetext GoldenrodSelfText2
+    waitbutton
+    closetext
+    disappear GOLDENRODCITY_SELF
+    moveobject GOLDENRODCITY_SELF, 5, 17
+    appear GOLDENRODCITY_SELF
+    turnobject GOLDENRODCITY_SELF, UP
+    pause 5
+    turnobject PLAYER, DOWN
+    opentext
+    writetext GoldenrodSelfText3
+    waitbutton
+    closetext
+    disappear GOLDENRODCITY_SELF
+    moveobject GOLDENRODCITY_SELF, 6, 16
+    appear GOLDENRODCITY_SELF
+    pause 5
+    turnobject GOLDENRODCITY_SELF, LEFT
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext GoldenrodSelfText4
+    waitbutton
+    closetext
+    winlosstext GoldenrodSelfVictoryText, GoldenrodSelfLossText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CAL, CAL1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	setevent EVENT_BEAT_GOLDENROD_SELF
+	opentext
+	writetext GoldenrodSelfText5
+	waitbutton
+	closetext
+	disappear GOLDENRODCITY_SELF
+	special RestartMapMusic
+.end
+	end
+
+GoldenrodSelfText1:
+    text "She was going"
+    line "to kill you."
+    done
+
+GoldenrodSelfText2:
+    text "You fought for"
+    line "your life."
+
+    para "For the lives"
+    line "of your #MON."
+
+    para "And you lost."
+    done
+
+GoldenrodSelfText3:
+    text "Dad begged for"
+    line "your life."
+
+    para "She would have"
+    line "killed him too."
+    done
+
+GoldenrodSelfText4:
+    text "This time LANCE"
+    line "isn't here to"
+    cont "save you."
+
+    para "You're going to"
+    line "get yourself"
+    cont "killed."
+    done
+
+GoldenrodSelfText5:
+    text "You can defeat me."
+
+    para "Because I'm just"
+    line "as weak as you."
+
+    para "Think how sad"
+    line "Mum will be."
+
+    para "Never getting to"
+    line "see you again."
+    done
+
+GoldenrodSelfLossText:
+    text "Put these foolish"
+    line "ambitions to"
+    cont "rest."
+    done
+
+GoldenrodSelfVictoryText:
+    text "We are both weak."
+    done
 
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
@@ -613,6 +730,7 @@ GoldenrodCity_MapEvents:
 	warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1
 
 	def_coord_events
+    coord_event 5, 16, SCENE_ALWAYS, GoldenrodCitySelfScript
 
 	def_bg_events
 	bg_event 10, 14, BGEVENT_READ, GoldenrodCityStationSign
@@ -638,12 +756,12 @@ GoldenrodCity_MapEvents:
 	object_event 11, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityGrampsScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event  4, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketScoutScript, EVENT_GOLDENROD_CITY_ROCKET_SCOUT
 	object_event 28, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket1Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
-	object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket2Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
 	object_event 16, 23, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket3Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 29, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket4Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
-
 	object_event 24, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, GoldenrodCityFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 7, 16, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+
 

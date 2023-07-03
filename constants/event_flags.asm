@@ -378,7 +378,13 @@
     const EVENT_LAVENDER_FOREST_LIFE_ORB
     const EVENT_INVADER_WARNING
     const EVENT_BEAT_WILL
+    const EVENT_BEAT_VIOLET_SELF
+    const EVENT_BEAT_MAHOGANY_SELF
+    const EVENT_BEAT_GOLDENROD_SELF
+    const EVENT_BEAT_FUCHSIA_SELF
 
+    ; ======================================
+    ; ======================================
 
 	const_next 600
 ; Kurt Apricorn events

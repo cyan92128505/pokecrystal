@@ -6,6 +6,7 @@
 	const FUCHSIACITY_LATIAS
 	const FUCHSIACITY_SOLDIER_1
 	const FUCHSIACITY_SOLDIER_2
+	const FUCHSIACITY_SELF
 
 FuchsiaCity_MapScripts:
 	def_scene_scripts
@@ -336,6 +337,259 @@ BlockingSoldier2Text:
     cont "his knees before"
     cont "our FUHRER."
     done
+    
+FuchsiaCitySelfScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .end
+    checkevent EVENT_BEAT_SOLDIER_9
+    iffalse .end
+    checkevent EVENT_BEAT_FUCHSIA_SELF
+    iftrue .end
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    pause 20
+    appear FUCHSIACITY_SELF
+    pause 5
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext FuchsiaSelfText1
+    waitbutton
+    closetext
+    disappear FUCHSIACITY_SELF
+    moveobject FUCHSIACITY_SELF, 17, 4
+    appear FUCHSIACITY_SELF
+    turnobject FUCHSIACITY_SELF, RIGHT
+    pause 5
+    turnobject PLAYER, LEFT
+    opentext
+    writetext FuchsiaSelfText2
+    waitbutton
+    closetext
+    disappear FUCHSIACITY_SELF
+    moveobject FUCHSIACITY_SELF, 18, 5
+    appear FUCHSIACITY_SELF
+    turnobject FUCHSIACITY_SELF, UP
+    pause 5
+    turnobject PLAYER, DOWN
+    opentext
+    writetext FuchsiaSelfText3
+    waitbutton
+    closetext
+    disappear FUCHSIACITY_SELF
+    moveobject FUCHSIACITY_SELF, 19, 4
+    appear FUCHSIACITY_SELF
+    pause 5
+    turnobject FUCHSIACITY_SELF, LEFT
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext FuchsiaSelfText4
+    waitbutton
+    closetext
+    winlosstext FuchsiaSelfVictoryText, FuchsiaSelfLossText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	;loadtrainer CAL, CAL1
+	loadtrainer CRYSTAL, CRYSTAL_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	setevent EVENT_BEAT_FUCHSIA_SELF
+	opentext
+	writetext FuchsiaSelfText5
+	waitbutton
+	closetext
+	special FadeOutMusic
+	turnobject FUCHSIACITY_SELF, RIGHT
+	opentext
+	writetext FuchsiaSelfConfidenceText1
+	waitbutton
+	closetext
+	turnobject FUCHSIACITY_SELF, DOWN
+	opentext
+	writetext FuchsiaSelfDefeatText1
+	waitbutton
+	closetext
+	turnobject FUCHSIACITY_SELF, RIGHT
+	opentext
+	writetext FuchsiaSelfConfidenceText2
+	waitbutton
+	closetext
+	turnobject FUCHSIACITY_SELF, DOWN
+	opentext
+	writetext FuchsiaSelfDefeatText2
+	waitbutton
+	closetext
+	turnobject FUCHSIACITY_SELF, RIGHT
+	opentext
+	writetext FuchsiaSelfConfidenceText3
+	waitbutton
+	closetext
+	turnobject FUCHSIACITY_SELF, DOWN
+	opentext
+	writetext FuchsiaSelfDefeatText3
+	waitbutton
+	closetext
+	playmusic MUSIC_DRAGONS_DEN
+    disappear FUCHSIACITY_SELF
+    moveobject FUCHSIACITY_SELF, 18, 5
+    appear FUCHSIACITY_SELF
+    turnobject FUCHSIACITY_SELF, UP
+    pause 5
+    turnobject PLAYER, DOWN
+    opentext
+    writetext FuchsiaSelfBelieveText
+    waitbutton
+    closetext
+	disappear FUCHSIACITY_SELF
+	playmusic MUSIC_RED_INDIGO_PLATEAU
+.end
+	end
+
+FuchsiaSelfText1:
+    text "Listen to me!"
+    done
+
+FuchsiaSelfText2:
+    text "Listen to me!"
+    line "Listen to me!!"
+    done
+
+FuchsiaSelfText3:
+    text "The HOEN army"
+    line "are not like"
+    cont "TEAM ROCKET."
+
+    para "They are killers."
+
+    para "WALLACE can"
+    line "kill CHAMPIONS."
+
+    para "He did with"
+    line "STEVEN."
+    done
+
+FuchsiaSelfText4:
+    text "WALLACE is in"
+    line "there with his"
+    cont "strongest troops."
+
+    para "You are nothing"
+    line "to them!"
+
+    para "No other CHAMPIONS"
+    line "are here."
+
+    para "They know it is"
+    line "suicide."
+
+    para "You will die."
+    done
+
+FuchsiaSelfText5:
+    text "You will take"
+    line "Mums only child"
+    cont "away from her."
+
+    para "She will never"
+    line "forgive you!"
+
+    para "ELM is sending"
+    line "you to your"
+    cont "death!"
+    done
+
+FuchsiaSelfConfidenceText1:
+    text "Mum and Dad need"
+    line "me!"
+
+    para "I will protect"
+    line "them!"
+    done
+
+FuchsiaSelfDefeatText1:
+    text "What was that!"
+
+    para "No we will die!"
+    done
+
+FuchsiaSelfConfidenceText2:
+    text "I have the power!"
+
+    para "I am the CHAMPION"
+    line "of HOEN!"
+
+    para "I must try!"
+    done
+
+FuchsiaSelfDefeatText2:
+    text "WALLACE kills"
+    line "CHAMPIONS."
+
+    para "We are another"
+    line "nameless victim"
+    cont "to him!"
+    done
+
+FuchsiaSelfConfidenceText3:
+    text "He may kill me."
+
+    para "My only purpose"
+    line "now is to stop"
+    cont "him."
+
+    para "I will show him"
+    line "we wont give up."
+
+    para "I will use all"
+    line "my might."
+    done
+
+FuchsiaSelfDefeatText3:
+    text "You will fail!!!"
+    done
+
+FuchsiaSelfBelieveText:
+    text "We are the only"
+    line "hope for everyone"
+    cont "we love."
+
+    para "We will stop this"
+    line "here and now!"
+
+    para "If we don't..."
+
+    para "No one will."
+
+    para "There is no more"
+    line "pain or fear."
+
+    para "Only purpose."
+
+    para "Go now and use"
+    line "all of your"
+    cont "power!"
+
+    para "All of your"
+    line "knowledge!"
+
+    para "Every breath!"
+
+    para "Every heartbeat!"
+
+    para "You and your"
+    line "#MON will"
+    cont "bring an end to"
+    cont "this war."
+    done
+
+FuchsiaSelfLossText:
+    text "Put these foolish"
+    line "ambitions to"
+    cont "rest."
+    done
+
+FuchsiaSelfVictoryText:
+    text "Please stop!"
+    done
 
 FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
@@ -357,6 +611,7 @@ FuchsiaCity_MapEvents:
 	def_coord_events
 	coord_event 8, 28, SCENE_ALWAYS, FuchsiaGymBlockScript
 	coord_event 18, 4, SCENE_ALWAYS, WarZoneBlockScript
+	coord_event 18, 4, SCENE_ALWAYS, FuchsiaCitySelfScript
 
 	def_bg_events
 	bg_event 21, 15, BGEVENT_READ, FuchsiaCitySign
@@ -376,4 +631,5 @@ FuchsiaCity_MapEvents:
 	object_event 30,  2, SPRITE_KRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LatiasScript, EVENT_CAUGHT_LATIAS
 	object_event  8, 28, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier1, EVENT_FIELD_MON_1
 	object_event 22, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier2, EVENT_FIELD_MON_2
+	object_event 19, 4, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 

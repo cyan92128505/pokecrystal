@@ -11,6 +11,7 @@
 	const VIOLETCITY_FIELDMON_2
 	const VIOLETCITY_FIELDMON_3
 	const VIOLETCITY_FIELDMON_4
+	const VIOLETCITY_SELF
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -342,6 +343,115 @@ VioletCityFieldMon4Script:
 	disappear VIOLETCITY_FIELDMON_4
     end
 
+VioletCitySelfScript:
+    checkevent EVENT_BEAT_VIOLET_SELF
+    iftrue .end
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    pause 20
+    appear VIOLETCITY_SELF
+    pause 5
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext VioletSelfText1
+    waitbutton
+    closetext
+    disappear VIOLETCITY_SELF
+    moveobject VIOLETCITY_SELF, 16, 18
+    appear VIOLETCITY_SELF
+    pause 5
+    turnobject PLAYER, LEFT
+    opentext
+    writetext VioletSelfText2
+    waitbutton
+    closetext
+    disappear VIOLETCITY_SELF
+    moveobject VIOLETCITY_SELF, 19, 19
+    appear VIOLETCITY_SELF
+    pause 5
+    turnobject PLAYER, DOWN
+    opentext
+    writetext VioletSelfText3
+    waitbutton
+    closetext
+    disappear VIOLETCITY_SELF
+    moveobject VIOLETCITY_SELF, 19, 18
+    appear VIOLETCITY_SELF
+    pause 5
+    turnobject VIOLETCITY_SELF, LEFT
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext VioletSelfText4
+    waitbutton
+    closetext
+    winlosstext VioletSelfVictoryText, VioletSelfLossText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CAL, CAL1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	setevent EVENT_BEAT_VIOLET_SELF
+	opentext
+	writetext VioletSelfText5
+	waitbutton
+	closetext
+	disappear VIOLETCITY_SELF
+	special RestartMapMusic
+.end
+	end
+
+VioletSelfText1:
+    text "You let him get"
+    line "away..."
+    done
+
+VioletSelfText2:
+    text "ELM was counting"
+    line "on you."
+
+    para "But you were too"
+    line "weak."
+    done
+
+VioletSelfText3:
+    text "People who need"
+    line "you are just"
+    cont "going to get"
+    cont "hurt."
+    done
+
+VioletSelfText4:
+    text "You are too weak"
+    line "to save anyone."
+
+    para "Especially"
+    line "yourself."
+    done
+
+VioletSelfText5:
+    text "You can ignore"
+    line "me for a time."
+
+    para "But I'm always"
+    line "there."
+
+    para "I keep you safe."
+
+    para "By reminding you"
+    line "how insignificant"
+    cont "you really are."
+    done
+
+VioletSelfLossText:
+    text "Put these foolish"
+    line "ambitions to"
+    cont "rest."
+    done
+
+VioletSelfVictoryText:
+    text "A hollow victory."
+    done
+
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -357,6 +467,7 @@ VioletCity_MapEvents:
 	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
 
 	def_coord_events
+    coord_event 18, 18, SCENE_ALWAYS, VioletCitySelfScript
 
 	def_bg_events
 	bg_event 24, 20, BGEVENT_READ, VioletCitySign
@@ -381,3 +492,5 @@ VioletCity_MapEvents:
 	object_event 4, 28, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 4, 26, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 1, 24, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 21, 18, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+

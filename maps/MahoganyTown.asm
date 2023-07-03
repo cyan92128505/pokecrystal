@@ -5,6 +5,7 @@ MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 300
 	const MAHOGANYTOWN_GRAMPS
 	const MAHOGANYTOWN_FISHER
 	const MAHOGANYTOWN_LASS
+	const MAHOGANYTOWN_SELF
 
 MahoganyTown_MapScripts:
 	def_scene_scripts
@@ -243,6 +244,123 @@ MahoganyGymSignText:
 	para "The Teacher of"
 	line "Winter's Harshness"
 	done
+	
+MahoganyTownSelfScript:
+    checkevent EVENT_DECIDED_TO_HELP_LANCE
+    iffalse .end
+    checkevent EVENT_BEAT_MAHOGANY_SELF
+    iftrue .end
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    pause 20
+    appear MAHOGANYTOWN_SELF
+    pause 5
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext MahoganySelfText1
+    waitbutton
+    closetext
+    disappear MAHOGANYTOWN_SELF
+    moveobject MAHOGANYTOWN_SELF, 9, 6
+    appear MAHOGANYTOWN_SELF
+    pause 5
+    turnobject PLAYER, LEFT
+    opentext
+    writetext MahoganySelfText2
+    waitbutton
+    closetext
+    disappear MAHOGANYTOWN_SELF
+    moveobject MAHOGANYTOWN_SELF, 9, 9
+    appear MAHOGANYTOWN_SELF
+    turnobject MAHOGANYTOWN_SELF, UP
+    pause 5
+    turnobject PLAYER, DOWN
+    opentext
+    writetext MahoganySelfText3
+    waitbutton
+    closetext
+    disappear MAHOGANYTOWN_SELF
+    moveobject MAHOGANYTOWN_SELF, 10, 8
+    appear MAHOGANYTOWN_SELF
+    pause 5
+    turnobject MAHOGANYTOWN_SELF, RIGHT
+    turnobject PLAYER, LEFT
+    opentext
+    writetext MahoganySelfText4
+    waitbutton
+    closetext
+    winlosstext MahoganySelfVictoryText, MahoganySelfLossText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CAL, CAL1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	setevent EVENT_BEAT_MAHOGANY_SELF
+	opentext
+	writetext MahoganySelfText5
+	waitbutton
+	closetext
+	disappear MAHOGANYTOWN_SELF
+	special RestartMapMusic
+.end
+	end
+
+MahoganySelfText1:
+    text "You can't fight"
+    line "TEAM ROCKET."
+
+    para "If you do..."
+    done
+
+MahoganySelfText2:
+    text "They will kill"
+    line "you."
+    done
+
+MahoganySelfText3:
+    text "You wont find"
+    line "your dad."
+
+    para "We both know"
+    line "he is already"
+    cont "dead."
+    done
+
+MahoganySelfText4:
+    text "Even if he"
+    line "weren't..."
+
+    para "You would get"
+    line "him killed."
+
+    para "That's why he"
+    line "left without"
+    cont "you."
+    done
+
+MahoganySelfText5:
+    text "You know what"
+    line "I said was true."
+
+    para "I know it hurts."
+
+    para "Only you can"
+    line "make the pain"
+    cont "stop."
+
+    para "Go home."
+    done
+
+MahoganySelfLossText:
+    text "Put these foolish"
+    line "ambitions to"
+    cont "rest."
+    done
+
+MahoganySelfVictoryText:
+    text "This proves"
+    line "nothing."
+    done
 
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
@@ -257,6 +375,8 @@ MahoganyTown_MapEvents:
 	def_coord_events
 	;coord_event 19,  8, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
 	;coord_event 19,  9, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
+    coord_event 11, 8, SCENE_ALWAYS, MahoganyTownSelfScript
+
 
 	def_bg_events
 	bg_event  1,  5, BGEVENT_READ, MahoganyTownSign
@@ -269,3 +389,4 @@ MahoganyTown_MapEvents:
 	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1
 	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
 	object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS
+	object_event 14,  9, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

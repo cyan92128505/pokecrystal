@@ -492,7 +492,6 @@ INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/Museum.asm"
 INCLUDE "maps/LavenderForest.asm"
 INCLUDE "maps/VermilionCity.asm"
-INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"
 
 SECTION "Map Scripts Overflow 3", ROMX
@@ -508,3 +507,7 @@ INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/AzaleaTown.asm"
 INCLUDE "maps/Route30BerryHouse.asm"
 INCLUDE "maps/MrPokemonsHouse.asm"
+
+SECTION "Map Scripts Overflow 4", ROMX
+
+INCLUDE "maps/ElmsHouse.asm"

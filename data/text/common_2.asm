@@ -673,8 +673,7 @@ Text_BattleEffectActivate::
 	text_end ; unreferenced
 
 _BattleStatWentWayUpText::
-	text_pause
-	text "<SCROLL>went way up!"
+	text " soared!"
 	prompt
 
 _BattleStatWentUpText::

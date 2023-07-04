@@ -269,52 +269,67 @@ WarZoneCrystalGoodbyeText:
     done
 
 WallaceSeenText:
-    text "You are too late!"
+    text "Ah just in time."
 
-    para "KANTO shall fall"
-    line "at last."
+    para "You must be the"
+    line "new CHAMPION of"
+    cont "JOHTO."
 
-    para "#MON shall"
-    line "be free."
+    para "Thank you for"
+    line "delivering"
+    cont "yourself to me."
 
-    para "And my people"
-    line "shall look"
-    cont "after this land"
-    cont "better than it"
-    cont "ever has been."
+    para "A young hero"
+    line "rose to CHAMPION"
+    cont "to conquer evil"
+    cont "and save their"
+    cont "people."
 
-    para "Nothing can stop"
-    line "it now."
+    para "Such a perfect"
+    line "story."
 
-    para "You should thank"
-    line "me."
+    para "You're great"
+    line "moment is now"
+    cont "upon you."
+
+    para "You'll accomplish"
+    line "more in death than"
+    cont "you ever would"
+    cont "have in life."
+
+    para "The people will"
+    line "mourn you."
+
+    para "They will see"
+    line "the futility of"
+    cont "heroes and the"
+    cont "inevitability of"
+    cont "my rule."
 
     para "You and your"
-    line "#MON will be"
-    cont "happier than"
-    cont "you ever dreamt."
+    line "#MON will truly"
+    cont "conquer this land"
+    cont "for me and for"
+    cont "all HOEN."
 
-    para "You don't seem"
-    line "pleased."
-
-    para "Then you shall"
-    line "be made an example"
-    cont "of."
-
-    para "You will suffer"
-    line "more than any"
-    cont "other!"
-
-    para "Behold my right"
-    line "to rule!"
+    para "Now let me help"
+    line "you complete your"
+    cont "destiny."
     done
 
 WallaceBeatenText:
-    text "Stop!"
+    text "It can not be!"
+
+    para "There must be a"
+    line "reason!"
     done
 
 WallaceWinsText:
-    text "So weak."
+    text "Let the light"
+    line "take you."
+
+    para "Your story is"
+    line "complete."
     done
 
 WallaceAfterBattleText1:
@@ -324,8 +339,16 @@ WallaceAfterBattleText1:
 
     para "They abandon me!"
 
-    para "Where did they"
-    line "go!"
+    para "How dare you do"
+    line "this to me."
+
+    para "My soldiers shall"
+    line "have new orders."
+
+    para "To kill on sight."
+
+    para "Starting with"
+    line "NEW BARK TOWN."
     done
 
 WallaceAfterBattleText2:
@@ -341,26 +364,33 @@ WallaceAfterBattleText2:
 
     para "They believe in"
     line "my vision of a"
-    cont "global utopia."
+    cont "great and strong"
+    cont "HOEN."
+
+    para "A jewel taking"
+    line "its rightful place"
+    cont "atop the world."
 
     para "That's why they"
     line "follow me!"
     done
 
 WallaceFinalText:
-    text "Don't think too"
-    line "much of yourself."
+    text "You may be the"
+    line "hero now."
 
-    para "In years to"
-    line "come you will"
-    cont "see."
+    para "But we were all"
+    line "heroes once."
 
-    para "The people will"
-    line "turn on you."
+    para "One day your"
+    line "people will turn"
+    cont "on you."
 
-    para "How long must"
-    line "your #MON"
-    cont "suffer..."
+    para "Then you will see"
+    line "that the only way"
+    cont "to survive is to"
+    cont "find the strength"
+    cont "I have."
     done
 
 StevenIntroText:
@@ -933,6 +963,10 @@ InvaderOroboroScript:
 
 InvaderOroboroSeenText:
     text "Oh Hi!"
+
+    para "Nope you're not"
+    line "making it to"
+    cont "boss fog."
 
     para "Hang on let me"
     line "get my buffs up."

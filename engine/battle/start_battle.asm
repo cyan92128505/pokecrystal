@@ -191,6 +191,8 @@ PlayBattleMusic:
 	jp z, .done
 	cp GRUNTF
 	jp z, .done
+	cp SCIENTIST
+	jp z, .done
 
 	ld de, MUSIC_XVZ
 	cp INVADER

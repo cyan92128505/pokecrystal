@@ -271,10 +271,10 @@ FuchsiaGymBlockText:
     cont "at this time."
     done
 
-WarZoneBlockScript:
+WarZoneAndSelfScript:
     checkevent EVENT_BEAT_SOLDIER_9
     iffalse .block
-    end
+    sjump FuchsiaCitySelfScript
 .block
     turnobject PLAYER, UP
 	opentext
@@ -339,10 +339,6 @@ BlockingSoldier2Text:
     done
     
 FuchsiaCitySelfScript:
-    checkevent EVENT_HOEN_INVASION_UNDERWAY
-    iffalse .end
-    checkevent EVENT_BEAT_SOLDIER_9
-    iffalse .end
     checkevent EVENT_BEAT_FUCHSIA_SELF
     iftrue .end
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
@@ -386,8 +382,7 @@ FuchsiaCitySelfScript:
     closetext
     winlosstext FuchsiaSelfVictoryText, FuchsiaSelfLossText
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	;loadtrainer CAL, CAL1
-	loadtrainer CRYSTAL, CRYSTAL_1
+	loadtrainer CAL, CAL1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -610,8 +605,7 @@ FuchsiaCity_MapEvents:
 
 	def_coord_events
 	coord_event 8, 28, SCENE_ALWAYS, FuchsiaGymBlockScript
-	coord_event 18, 4, SCENE_ALWAYS, WarZoneBlockScript
-	coord_event 18, 4, SCENE_ALWAYS, FuchsiaCitySelfScript
+	coord_event 18, 4, SCENE_ALWAYS, WarZoneAndSelfScript
 
 	def_bg_events
 	bg_event 21, 15, BGEVENT_READ, FuchsiaCitySign

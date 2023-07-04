@@ -171,7 +171,7 @@ PlayBattleMusic:
     ld a, [wOtherTrainerID]
 	cp ASH
 	jp nz, .done
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_FINAL_BATTLE
 	jp .done
 
 .checkWallace
@@ -194,6 +194,8 @@ PlayBattleMusic:
 
 	ld de, MUSIC_XVZ
 	cp INVADER
+	jp z, .done
+	cp CAL
 	jp z, .done
 
 	ld de, MUSIC_HOEN_GRUNT

@@ -94,7 +94,7 @@ VermilionSnorlax:
 	pause 15
 	cry SNORLAX
 	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 60
 	startbattle
 	disappear VERMILIONCITY_BIG_SNORLAX

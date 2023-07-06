@@ -303,6 +303,8 @@ PokeBallEffect:
 	cp BATTLETYPE_TUTORIAL
 	jp z, .catch_without_fail
 	ld a, [wCurItem]
+
+	; AndrewNote - master ball here
 	cp MASTER_BALL
 	jp z, .catch_without_fail
 	ld a, [wCurItem]
@@ -606,11 +608,11 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CONTEST
 	jp z, .catch_bug_contest_mon
-	cp BATTLETYPE_CELEBI
-	jr nz, .not_celebi
-	ld hl, wBattleResult
-	set BATTLERESULT_CAUGHT_CELEBI, [hl]
-.not_celebi
+;	cp BATTLETYPE_CELEBI
+;	jr nz, .not_celebi
+;	ld hl, wBattleResult
+;	set BATTLERESULT_CAUGHT_CELEBI, [hl]
+;.not_celebi
 
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
@@ -763,8 +765,8 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	ret z
-	cp BATTLETYPE_DEBUG
-	ret z
+;	cp BATTLETYPE_DEBUG
+;	ret z
 	cp BATTLETYPE_CONTEST
 	jr z, .used_park_ball
 

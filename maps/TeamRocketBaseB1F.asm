@@ -503,7 +503,7 @@ VoltorbExplodingTrap:
 	cry ELECTRODE
 	special FadeInPalettes
 	setlasttalked -1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ELECTRODE, 35
 	startbattle
 	end
@@ -513,7 +513,7 @@ GeodudeExplodingTrap:
 	cry GRAVELER
 	special FadeInPalettes
 	setlasttalked -1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GRAVELER, 35
 	startbattle
 	end
@@ -523,7 +523,7 @@ KoffingExplodingTrap:
 	cry WEEZING
 	special FadeInPalettes
 	setlasttalked -1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon WEEZING, 35
 	startbattle
 	end

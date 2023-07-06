@@ -5376,10 +5376,6 @@ BattleCommand_ForceSwitch:
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
 	jp z, .fail
-	cp BATTLETYPE_TRAP
-	jp z, .fail
-	cp BATTLETYPE_CELEBI
-	jp z, .fail
 	cp BATTLETYPE_SUICUNE
 	jp z, .fail
 	cp BATTLETYPE_PERFECT

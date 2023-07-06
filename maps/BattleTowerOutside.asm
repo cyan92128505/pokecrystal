@@ -135,6 +135,12 @@ BattleTowerOutside_MapEvents:
 	warp_event  9, 29, ROUTE_40_BATTLE_TOWER_GATE, 4
 	warp_event  8,  9, BATTLE_TOWER_1F, 1
 	warp_event  9,  9, BATTLE_TOWER_1F, 2
+	warp_event  2,  15, TRAINER_HOUSE_B1F, 1
+	warp_event  3,  15, TRAINER_HOUSE_B1F, 2
+	warp_event  8,  21, TRAINER_HOUSE_B1F, 3
+	warp_event  9,  21, TRAINER_HOUSE_B1F, 4
+	warp_event  14,  15, TRAINER_HOUSE_B1F, 5
+	warp_event  15,  15, TRAINER_HOUSE_B1F, 6
 
 	def_coord_events
 

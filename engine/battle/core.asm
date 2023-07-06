@@ -54,8 +54,8 @@ DoBattle:
 	jp z, LostBattle
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
+;	cp BATTLETYPE_DEBUG
+;	jp z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
 	jp z, .tutorial_debug
 	xor a
@@ -2604,7 +2604,11 @@ WinTrainerBattle:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_CANLOSE
-	jr nz, .skip_heal
+	jr z, .healParty
+	cp BATTLETYPE_BATTLE_FRONTIER
+	jr z, .healParty
+	jr .skip_heal
+.healParty
 	predef HealParty
 .skip_heal
 
@@ -2643,6 +2647,10 @@ WinTrainerBattle:
 	ret
 
 .give_money
+    ld a, [wBattleType]
+    cp BATTLETYPE_BATTLE_FRONTIER
+    ret z
+
 	ld a, [wAmuletCoin]
 	and a
 	call nz, .DoubleReward
@@ -3742,13 +3750,13 @@ CheckWhetherToAskSwitch:
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc
 	ld a, [wBattleType]
-    cp BATTLETYPE_SET
-    jr z, .return_nc
     cp BATTLETYPE_SETNOITEMS
     jr z, .return_nc
     cp BATTLETYPE_BOSS_BATTLE
     jr z, .return_nc
     cp BATTLETYPE_REMATCH
+    jr z, .return_nc
+    cp BATTLETYPE_BATTLE_FRONTIER
     jr z, .return_nc
 	ld a, [wCurPartyMon]
 	push af
@@ -3957,14 +3965,10 @@ CheckIfCurPartyMonIsFitToFight:
 TryToRunAwayFromBattle:
 ; Run away from battle, with or without item
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .can_escape
-	cp BATTLETYPE_CONTEST
-	jp z, .can_escape
-	cp BATTLETYPE_TRAP
-	jp z, .cant_escape
-	cp BATTLETYPE_CELEBI
-	jp z, .cant_escape
+;	cp BATTLETYPE_DEBUG
+;	jp z, .can_escape
+;	cp BATTLETYPE_CONTEST
+;	jp z, .can_escape
 	cp BATTLETYPE_SHINY
 	jp z, .cant_escape
 	cp BATTLETYPE_SUICUNE
@@ -5443,8 +5447,8 @@ BattleMenu:
 	call LoadTempTilemapToTilemap
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jr z, .ok
+;	cp BATTLETYPE_DEBUG
+;	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	call EmptyBattleTextbox
@@ -5527,6 +5531,8 @@ BattleMenu_Pack:
     cp BATTLETYPE_BOSS_BATTLE
     jp z, .ItemsCantBeUsed
     cp BATTLETYPE_REMATCH
+    jp z, .ItemsCantBeUsed
+    cp BATTLETYPE_BATTLE_FRONTIER
     jp z, .ItemsCantBeUsed
 
 	ld a, [wInBattleTowerBattle]
@@ -7568,6 +7574,10 @@ GiveExperiencePoints:
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
 	ret nz
+
+    ld a, [wBattleType]
+    cp BATTLETYPE_BATTLE_FRONTIER
+    ret z
 
     ld a, [wExpShareToggle]
 	and a
@@ -9744,9 +9754,6 @@ BattleStartMessage:
 .NotFishing:
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
-	jr z, .PlaceBattleStartText
-	ld hl, WildCelebiAppearedText
-	cp BATTLETYPE_CELEBI
 	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 

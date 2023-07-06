@@ -203,8 +203,6 @@ INCLUDE "maps/ViridianMart.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/Route2Gate.asm"
-INCLUDE "maps/VictoryRoadGate.asm"
-
 
 SECTION "Map Scripts 12", ROMX
 
@@ -511,3 +509,4 @@ INCLUDE "maps/MrPokemonsHouse.asm"
 SECTION "Map Scripts Overflow 4", ROMX
 
 INCLUDE "maps/ElmsHouse.asm"
+INCLUDE "maps/VictoryRoadGate.asm"

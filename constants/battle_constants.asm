@@ -83,25 +83,22 @@ SPDSPCDV_SHINY EQU $AA
 
 ; battle types (wBattleType values)
 	const_def
-	const BATTLETYPE_NORMAL
-	const BATTLETYPE_CANLOSE
-	const BATTLETYPE_DEBUG
-	const BATTLETYPE_TUTORIAL
-	const BATTLETYPE_FISH
-	const BATTLETYPE_ROAMING
-	const BATTLETYPE_CONTEST
-	const BATTLETYPE_SHINY
-	const BATTLETYPE_TREE
-	const BATTLETYPE_TRAP
-	const BATTLETYPE_FORCEITEM
-	const BATTLETYPE_CELEBI
-	const BATTLETYPE_SUICUNE
-    const BATTLETYPE_SET
-	const BATTLETYPE_SETNOITEMS
-	const BATTLETYPE_REMATCH
-	const BATTLETYPE_PERFECT
-	const BATTLETYPE_PERFECT_ESCAPE
-	const BATTLETYPE_BOSS_BATTLE
+;	const BATTLETYPE_DEBUG              ; not used
+	const BATTLETYPE_NORMAL             ; nothing special
+	const BATTLETYPE_CANLOSE            ; don't blackout on a loss
+	const BATTLETYPE_TUTORIAL           ; used for catching tutorial, a lot of code for this small part of game
+	const BATTLETYPE_FISH               ; lure ball works better against fished mon, hooked a mon text
+	const BATTLETYPE_ROAMING            ; roaming mon (Riakou, Entei) have different structs, keep hp and moves
+	const BATTLETYPE_CONTEST            ; use bug contest battle menu, park balls
+	const BATTLETYPE_SHINY              ; enemy has shiny dvs
+	const BATTLETYPE_TREE               ; enemies in trees, may be asleep at night
+	const BATTLETYPE_SUICUNE            ; Suicune plays right music
+	const BATTLETYPE_SETNOITEMS         ; can't use items or set mode - no set no items
+	const BATTLETYPE_REMATCH            ; enemy yields half normal exp + no set no items
+	const BATTLETYPE_PERFECT            ; enemy has max dvs and you can't escape
+	const BATTLETYPE_PERFECT_ESCAPE     ; enemy has max dvs and you can escape
+	const BATTLETYPE_BOSS_BATTLE        ; enemy has max stat exp + no set no items
+	const BATTLETYPE_BATTLE_FRONTIER    ; don't blackout on a loss, don't gain money/exp on a win + no set no items
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def

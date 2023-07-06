@@ -1,30 +1,33 @@
 	object_const_def
-	const TRAINERHOUSEB1F_RECEPTIONIST
-	;const TRAINERHOUSEB1F_CHRIS
+	const BATTLE_ROULETTE_RECEPTIONIST
+	const BATTLE_MIRROR_RECEPTIONIST
+	const BATTLE_TRIAL_RECEPTIONIST
+	const BATTLE_MIRROR_CHRIS
 
 TrainerHouseB1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; SCENE_DEFAULT
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Chris
 
-.DummyScene:
-	end
+.Chris
+    disappear BATTLE_MIRROR_CHRIS
+    endcallback
 
-TrainerHouseReceptionistScript:
-	turnobject PLAYER, UP
+BattleRouletteReceptionistScript:
 	opentext
-	writetext TrainerHouseB1FIntroText
+	writetext BattleRouletteIntroText
 	promptbutton
-	writetext TrainerHouseB1FAskWantToBattleText
+	writetext BattleRouletteAskWantToBattleText
 	yesorno
 	iffalse .Declined
-	writetext TrainerHouseB1FGoRightInText
+	writetext BattleGoRightInText
 	waitbutton
 	closetext
-	applymovement PLAYER, Movement_EnterTrainerHouseBattleRoom
+	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement PLAYER, Movement_EnterBattleRoom
 	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 
 .sample
     random 46
@@ -75,14 +78,28 @@ TrainerHouseReceptionistScript:
     ifequal 44, .Crystal
     ifequal 45, .Dad
 
-    loadtrainer LT_SURGE, DAD
-
 .finish
 	startbattle
-	reloadmapafterbattle
-	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
+	ifequal WIN, .win
+	reloadmap
+    warp TRAINER_HOUSE_B1F, 3, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleLoseText
+	waitbutton
+	closetext
 	special HealParty
 	end
+.win
+	reloadmapafterbattle
+    warp TRAINER_HOUSE_B1F, 3, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleWinText
+	waitbutton
+	closetext
+	special HealParty
+	sjump GivePrize
 
 .Brock
     checkevent EVENT_BEAT_MASTER_BROCK
@@ -622,11 +639,537 @@ TrainerHouseReceptionistScript:
     sjump .finish
 
 .Declined:
-	writetext TrainerHouseB1FPleaseComeAgainText
+	writetext PleaseComeAgainText
 	waitbutton
 	closetext
-	applymovement PLAYER, Movement_TrainerHouseTurnBack
 	end
+
+GivePrize:
+    opentext
+; 1% chance prizes
+    random 100
+    ifequal 0, .Ambrosia
+    ifequal 1, .Masterball
+    ifequal 2, .ChoiceSpecs
+    ifequal 3, .ChoiceBand
+    ifequal 4, .Leftovers
+    ifequal 5, .LifeOrb
+    ifequal 6, .FocusSash
+    ifequal 7, .ExpertBelt
+    ifequal 8, .MuscleBand
+    ifequal 9, .WiseGlasses
+    ifequal 10, .RareCandy
+
+; 2% prizes
+    ifequal 11, .PinkBow
+    ifequal 12, .PinkBow
+    ifequal 13, .Blackbelt
+    ifequal 14, .Blackbelt
+    ifequal 15, .SharpBeak
+    ifequal 16, .SharpBeak
+    ifequal 17, .PoisonBarb
+    ifequal 18, .PoisonBarb
+    ifequal 19, .SoftSand
+    ifequal 20, .SoftSand
+    ifequal 21, .HardStone
+    ifequal 22, .HardStone
+    ifequal 23, .SilverPowder
+    ifequal 24, .SilverPowder
+    ifequal 25, .SpellTag
+    ifequal 26, .SpellTag
+    ifequal 27, .Charcoal
+    ifequal 28, .Charcoal
+    ifequal 29, .MysticWater
+    ifequal 30, .MysticWater
+    ifequal 31, .MiracleSeed
+    ifequal 32, .MiracleSeed
+    ifequal 33, .Magnet
+    ifequal 34, .Magnet
+    ifequal 35, .TwistedSpoon
+    ifequal 36, .TwistedSpoon
+    ifequal 37, .NeverMeltIce
+    ifequal 38, .NeverMeltIce
+    ifequal 39, .DragonScale
+    ifequal 40, .DragonScale
+    ifequal 41, .BlackGlasses
+    ifequal 42, .BlackGlasses
+    ifequal 43, .MetalCoat
+    ifequal 44, .MetalCoat
+    ifequal 45, .PolkadotBow
+    ifequal 46, .PolkadotBow
+    ifequal 47, .MiracleBerry
+    ifequal 48, .MiracleBerry
+    ifequal 49, .Nugget
+    ifequal 50, .Nugget
+
+; 5% prizes
+    ifequal 51, .Protein
+    ifequal 52, .Protein
+    ifequal 53, .Protein
+    ifequal 54, .Protein
+    ifequal 55, .Protein
+    ifequal 56, .Iron
+    ifequal 57, .Iron
+    ifequal 58, .Iron
+    ifequal 59, .Iron
+    ifequal 60, .Iron
+    ifequal 61, .Carbos
+    ifequal 62, .Carbos
+    ifequal 63, .Carbos
+    ifequal 64, .Carbos
+    ifequal 65, .Carbos
+    ifequal 66, .Calcium
+    ifequal 67, .Calcium
+    ifequal 68, .Calcium
+    ifequal 69, .Calcium
+    ifequal 70, .Calcium
+    ifequal 71, .HpUp
+    ifequal 72, .HpUp
+    ifequal 73, .HpUp
+    ifequal 74, .HpUp
+    ifequal 75, .HpUp
+    ifequal 76, .PpUp
+    ifequal 77, .PpUp
+    ifequal 78, .PpUp
+    ifequal 79, .PpUp
+    ifequal 80, .PpUp
+
+; 10% prizes
+    ifequal 81, .MaxElixir
+    ifequal 82, .MaxElixir
+    ifequal 83, .MaxElixir
+    ifequal 84, .MaxElixir
+    ifequal 85, .MaxElixir
+    ifequal 86, .MaxElixir
+    ifequal 87, .MaxElixir
+    ifequal 88, .MaxElixir
+    ifequal 89, .MaxElixir
+    ifequal 90, .MaxElixir
+    ifequal 91, .MaxRevive
+    ifequal 92, .MaxRevive
+    ifequal 93, .MaxRevive
+    ifequal 94, .MaxRevive
+    ifequal 95, .MaxRevive
+    ifequal 96, .MaxRevive
+    ifequal 97, .MaxRevive
+    ifequal 98, .MaxRevive
+    ifequal 99, .MaxRevive
+    end
+
+.Ambrosia:
+    verbosegiveitem AMBROSIA
+    sjump .done
+.Masterball:
+    verbosegiveitem MASTER_BALL
+    sjump .done
+.ChoiceSpecs:
+    verbosegiveitem CHOICE_SPECS
+    sjump .done
+.ChoiceBand:
+    verbosegiveitem CHOICE_BAND
+    sjump .done
+.Leftovers:
+    verbosegiveitem LEFTOVERS
+    sjump .done
+.LifeOrb:
+    verbosegiveitem LIFE_ORB
+    sjump .done
+.FocusSash:
+    verbosegiveitem FOCUS_SASH
+    sjump .done
+.ExpertBelt:
+    verbosegiveitem EXPERT_BELT
+    sjump .done
+.MuscleBand:
+    verbosegiveitem MUSCLE_BAND
+    sjump .done
+.WiseGlasses:
+    verbosegiveitem WISE_GLASSES
+    sjump .done
+.RareCandy:
+    verbosegiveitem RARE_CANDY
+    sjump .done
+.PinkBow:
+    verbosegiveitem PINK_BOW
+    sjump .done
+.Blackbelt:
+    verbosegiveitem BLACKBELT_I
+    sjump .done
+.SharpBeak:
+    verbosegiveitem SHARP_BEAK
+    sjump .done
+.PoisonBarb:
+    verbosegiveitem POISON_BARB
+    sjump .done
+.SoftSand:
+    verbosegiveitem SOFT_SAND
+    sjump .done
+.HardStone:
+    verbosegiveitem HARD_STONE
+    sjump .done
+.SilverPowder:
+    verbosegiveitem SILVERPOWDER
+    sjump .done
+.SpellTag:
+    verbosegiveitem SPELL_TAG
+    sjump .done
+.Charcoal:
+    verbosegiveitem CHARCOAL
+    sjump .done
+.MysticWater:
+    verbosegiveitem MYSTIC_WATER
+    sjump .done
+.MiracleSeed:
+    verbosegiveitem MIRACLE_SEED
+    sjump .done
+.Magnet:
+    verbosegiveitem MAGNET
+    sjump .done
+.TwistedSpoon:
+    verbosegiveitem TWISTEDSPOON
+    sjump .done
+.NeverMeltIce:
+    verbosegiveitem NEVERMELTICE
+    sjump .done
+.DragonScale:
+    verbosegiveitem DRAGON_SCALE
+    sjump .done
+.BlackGlasses:
+    verbosegiveitem BLACKGLASSES
+    sjump .done
+.MetalCoat:
+    verbosegiveitem METAL_COAT
+    sjump .done
+.PolkadotBow:
+    verbosegiveitem POLKADOT_BOW
+    sjump .done
+.MiracleBerry:
+    verbosegiveitem MIRACLEBERRY
+    sjump .done
+.Nugget:
+    verbosegiveitem NUGGET
+    sjump .done
+.Protein:
+    verbosegiveitem PROTEIN
+    sjump .done
+.Iron:
+    verbosegiveitem IRON
+    sjump .done
+.Carbos:
+    verbosegiveitem CARBOS
+    sjump .done
+.Calcium:
+    verbosegiveitem CALCIUM
+    sjump .done
+.HpUp:
+    verbosegiveitem HP_UP
+    sjump .done
+.PpUp:
+    verbosegiveitem PP_UP
+    sjump .done
+.MaxElixir:
+    verbosegiveitem MAX_ELIXER
+    sjump .done
+.MaxRevive:
+    verbosegiveitem MAX_REVIVE
+.done
+	closetext
+	end
+	
+BattleMirrorReceptionistScript:
+    opentext
+    writetext BattleMirrorIntroText
+    waitbutton
+    yesorno
+    iffalse .Declined
+    writetext BattleGoRightInText
+    waitbutton
+    closetext
+	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement PLAYER, Movement_EnterBattleRoom
+	pause 15
+	appear BATTLE_MIRROR_CHRIS
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CAL, CAL1
+	startbattle
+	ifequal WIN, .Win
+	reloadmap
+    warp TRAINER_HOUSE_B1F, 15, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleLoseText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.Win
+	reloadmapafterbattle
+    warp TRAINER_HOUSE_B1F, 15, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleWinText
+	waitbutton
+	closetext
+	special HealParty
+	sjump GiveBattleMirrorPrize
+.Declined:
+	writetext PleaseComeAgainText
+	waitbutton
+	closetext
+	end
+
+GiveBattleMirrorPrize:
+    opentext
+    random 3
+    ifequal 0, .StarPiece
+    ifequal 1, .SilverLeaf
+    ifequal 2, .GoldLeaf
+.StarPiece
+    verbosegiveitem STAR_PIECE
+    closetext
+    end
+.SilverLeaf
+    verbosegiveitem SILVER_LEAF
+    closetext
+    end
+.GoldLeaf
+    verbosegiveitem GOLD_LEAF
+    closetext
+    end
+
+BattleTrialReceptionistScript:
+    opentext
+    writetext BattleTrialIntroText
+    waitbutton
+    yesorno
+    iffalse .Declined
+    checkevent EVENT_BEAT_BATTLE_TRIAL
+    iffalse .standard
+    writetext WantMasterDifficulty
+    yesorno
+    iftrue .master
+
+.standard
+    writetext BattleGoRightInText
+    waitbutton
+    closetext
+	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement PLAYER, Movement_EnterBattleRoom
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial2Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial3Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial4Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial5Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial6Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial7Text
+	waitbutton
+	closetext
+	sjump .Win
+
+.master
+    writetext BattleGoRightInText
+    waitbutton
+    closetext
+	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement PLAYER, Movement_EnterBattleRoom
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial2Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial3Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial4Text
+	waitbutton
+	closetext
+
+.Win
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BATTLE_TRIAL
+    warp TRAINER_HOUSE_B1F, 27, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleWinText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.Lose
+    warp TRAINER_HOUSE_B1F, 27, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleLoseText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.Declined:
+	writetext PleaseComeAgainText
+	waitbutton
+	closetext
+	end
+
+
+
+BattleTrialIntroText:
+    text "Welcome to the"
+    line "BATTLE TRIAL."
+
+    para "Here you can"
+    line "fight consecutive"
+    cont "opponents with"
+    cont "increasing"
+    cont "difficulty."
+
+    para "Your #MON"
+    line "will be healed"
+    cont "only every 3"
+    cont "fights."
+
+    para "There are 30"
+    line "battles total."
+
+    para "If you beat them"
+    line "all you unlock"
+    cont "MASTER difficulty"
+    cont "which has 10"
+    cont "battles."
+
+    para "Would you like to"
+    line "see how far you"
+    cont "can get?"
+    done
+
+WantMasterDifficulty:
+    text "Do you want to"
+    line "take the MASTER"
+    cont "challenge?"
+    done
+
+BattleMirrorIntroText:
+    text "Welcome to the"
+    line "BATTLE MIRROR."
+
+    para "Here you can"
+    line "fight a simulation"
+    cont "of yourself."
+
+    para "Would you like to"
+    line "battle?"
+    done
+
+NowHeal:
+    text "Your #MON will"
+    line "now be healed."
+    done
+
+Trial2Text:
+    text "Now for battle 2."
+    done
+
+Trial3Text:
+    text "Now for battle 3."
+    done
+
+Trial4Text:
+    text "Now for battle 4."
+    done
+
+Trial5Text:
+    text "Now for battle 5."
+    done
+
+Trial6Text:
+    text "Now for battle 6."
+    done
+
+Trial7Text:
+    text "Now for battle 7."
+    done
 
 victoryText:
     text "Victory!"
@@ -636,65 +1179,58 @@ defeatText:
     text "Defeat!"
     done
 
-Movement_EnterTrainerHouseBattleRoom:
-	step LEFT
-	step LEFT
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step LEFT
+Movement_MoveReceptionistOut:
+    step UP
+    step LEFT
+    turn_head RIGHT
+    step_end
+
+Movement_EnterBattleRoom:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
 	turn_head RIGHT
 	step_end
 
-Movement_ExitTrainerHouseBattleRoom:
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
+BattleLoseText:
+    text "Better luck"
+    line "next time."
+    done
 
-Movement_TrainerHouseTurnBack:
-	step RIGHT
-	turn_head LEFT
-	step_end
+BattleWinText:
+    text "Well done!"
 
-TrainerHouseB1FIntroText:
-	text "Hi. Welcome to our"
-	line "TRAINING HALL."
+    para "Please accept"
+    line "this prize."
+    done
 
-	para "You may battle a"
-	line "random strong"
-	cont "trainer from your"
-	cont "past."
-	done
+BattleRouletteIntroText:
+	text "Welcome to the"
+	line "BATTLE ROULETTE."
 
-TrainerHouseB1FYourOpponentIsText:
-	text "Here you face"
-	line "a random enemy"
+	para "Here you can"
+	line "battle a random"
+	cont "memorable enemy"
 	cont "you have beaten."
+
+	para "You will receive"
+	line "a random prize"
+	cont "if you win."
 	done
 
-TrainerHouseB1FAskWantToBattleText:
+BattleRouletteAskWantToBattleText:
 	text "Would you like to"
 	line "battle?"
 	done
 
-TrainerHouseB1FGoRightInText:
+BattleGoRightInText:
 	text "Please go right"
 	line "through."
 
@@ -702,7 +1238,7 @@ TrainerHouseB1FGoRightInText:
 	line "right away."
 	done
 
-TrainerHouseB1FPleaseComeAgainText:
+PleaseComeAgainText:
 	text "Sorry. Only those"
 	line "trainers who will"
 
@@ -710,7 +1246,7 @@ TrainerHouseB1FPleaseComeAgainText:
 	line "allowed to go in."
 	done
 
-TrainerHouseB1FSecondChallengeDeniedText:
+BattleRouletteSecondChallengeDeniedText:
 	text "I'm sorry."
 	line "This would be your"
 
@@ -721,12 +1257,12 @@ TrainerHouseB1FSecondChallengeDeniedText:
 	line "a day."
 	done
 
-TrainerHouseB1FCalBeatenText:
+BattleRouletteCalBeatenText:
 	text "I lost…"
 	line "Darn…"
 	done
 
-TrainerHouseB1FCalBeforeText:
+BattleRouletteCalBeforeText:
 	text "I traveled out"
 	line "here just so I"
 	cont "could battle you."
@@ -736,13 +1272,19 @@ TrainerHouseB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  4, TRAINER_HOUSE_1F, 3
+	warp_event  3, 15, BATTLE_TOWER_OUTSIDE, 5
+	warp_event  4, 15, BATTLE_TOWER_OUTSIDE, 6
+	warp_event  15, 15, BATTLE_TOWER_OUTSIDE, 7
+	warp_event  16, 15, BATTLE_TOWER_OUTSIDE, 8
+	warp_event  27, 15, BATTLE_TOWER_OUTSIDE, 9
+	warp_event  28, 15, BATTLE_TOWER_OUTSIDE, 10
 
 	def_coord_events
-	coord_event  7,  3, SCENE_DEFAULT, TrainerHouseReceptionistScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  7,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	;object_event  6, 11, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleRouletteReceptionistScript, -1
+	object_event  15, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
+	object_event  27, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
+	object_event  16, 3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

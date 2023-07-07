@@ -10,7 +10,7 @@ RuinsOfAlphOmanyteItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphOmanyteItemRoomMysteryberry:
-	itemball HARD_STONE
+	itemball BRIGHTPOWDER
 
 RuinsOfAlphOmanyteItemRoomMysticWater:
 	itemball QUICK_CLAW

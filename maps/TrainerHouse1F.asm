@@ -141,7 +141,6 @@ TrainerHouse1F_MapEvents:
 	def_warp_events
 	warp_event  2, 13, VIRIDIAN_CITY, 3
 	warp_event  3, 13, VIRIDIAN_CITY, 3
-	warp_event  8,  2, TRAINER_HOUSE_B1F, 1
 
 	def_coord_events
 

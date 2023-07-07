@@ -659,6 +659,8 @@ GivePrize:
     ifequal 8, .MuscleBand
     ifequal 9, .WiseGlasses
     ifequal 10, .RareCandy
+    ifequal 69, .QuickClaw
+    ifequal 70, .BrightPowder
 
 ; 2% prizes
     ifequal 11, .PinkBow
@@ -702,58 +704,56 @@ GivePrize:
     ifequal 49, .Nugget
     ifequal 50, .Nugget
 
-; 5% prizes
+; 3% prizes
     ifequal 51, .Protein
     ifequal 52, .Protein
     ifequal 53, .Protein
-    ifequal 54, .Protein
-    ifequal 55, .Protein
+    ifequal 54, .Iron
+    ifequal 55, .Iron
     ifequal 56, .Iron
-    ifequal 57, .Iron
-    ifequal 58, .Iron
-    ifequal 59, .Iron
-    ifequal 60, .Iron
-    ifequal 61, .Carbos
-    ifequal 62, .Carbos
-    ifequal 63, .Carbos
-    ifequal 64, .Carbos
-    ifequal 65, .Carbos
-    ifequal 66, .Calcium
-    ifequal 67, .Calcium
-    ifequal 68, .Calcium
-    ifequal 69, .Calcium
-    ifequal 70, .Calcium
-    ifequal 71, .HpUp
-    ifequal 72, .HpUp
-    ifequal 73, .HpUp
-    ifequal 74, .HpUp
-    ifequal 75, .HpUp
-    ifequal 76, .PpUp
-    ifequal 77, .PpUp
-    ifequal 78, .PpUp
-    ifequal 79, .PpUp
-    ifequal 80, .PpUp
+    ifequal 57, .Carbos
+    ifequal 58, .Carbos
+    ifequal 59, .Carbos
+    ifequal 60, .Calcium
+    ifequal 61, .Calcium
+    ifequal 62, .Calcium
+    ifequal 63, .HpUp
+    ifequal 64, .HpUp
+    ifequal 65, .HpUp
+    ifequal 66, .PpUp
+    ifequal 67, .PpUp
+    ifequal 68, .PpUp
 
-; 10% prizes
-    ifequal 81, .MaxElixir
-    ifequal 82, .MaxElixir
-    ifequal 83, .MaxElixir
-    ifequal 84, .MaxElixir
-    ifequal 85, .MaxElixir
-    ifequal 86, .MaxElixir
-    ifequal 87, .MaxElixir
-    ifequal 88, .MaxElixir
-    ifequal 89, .MaxElixir
-    ifequal 90, .MaxElixir
+; 5% prizes
+    ifequal 71, .FullRestore
+    ifequal 72, .FullRestore
+    ifequal 73, .FullRestore
+    ifequal 74, .FullRestore
+    ifequal 75, .FullRestore
+    ifequal 76, .PokeBall
+    ifequal 77, .PokeBall
+    ifequal 78, .PokeBall
+    ifequal 79, .PokeBall
+    ifequal 80, .PokeBall
+    ifequal 81, .GreatBall
+    ifequal 82, .GreatBall
+    ifequal 83, .GreatBall
+    ifequal 84, .GreatBall
+    ifequal 85, .GreatBall
+    ifequal 86, .UltraBall
+    ifequal 87, .UltraBall
+    ifequal 88, .UltraBall
+    ifequal 89, .UltraBall
+    ifequal 90, .UltraBall
     ifequal 91, .MaxRevive
     ifequal 92, .MaxRevive
     ifequal 93, .MaxRevive
     ifequal 94, .MaxRevive
     ifequal 95, .MaxRevive
-    ifequal 96, .MaxRevive
-    ifequal 97, .MaxRevive
-    ifequal 98, .MaxRevive
-    ifequal 99, .MaxRevive
+    ifequal 96, .MaxElixer
+    ifequal 97, .MaxElixer
+    ifequal 98, .MaxElixer
+    ifequal 99, .MaxElixer
     end
 
 .Ambrosia:
@@ -867,8 +867,26 @@ GivePrize:
 .PpUp:
     verbosegiveitem PP_UP
     sjump .done
-.MaxElixir:
+.MaxElixer:
     verbosegiveitem MAX_ELIXER
+    sjump .done
+.QuickClaw:
+    verbosegiveitem QUICK_CLAW
+    sjump .done
+.BrightPowder:
+    verbosegiveitem BRIGHTPOWDER
+    sjump .done
+.FullRestore:
+    verbosegiveitem FULL_RESTORE
+    sjump .done
+.PokeBall:
+    verbosegiveitem POKE_BALL
+    sjump .done
+.GreatBall:
+    verbosegiveitem GREAT_BALL
+    sjump .done
+.UltraBall:
+    verbosegiveitem ULTRA_BALL
     sjump .done
 .MaxRevive:
     verbosegiveitem MAX_REVIVE
@@ -921,10 +939,23 @@ BattleMirrorReceptionistScript:
 
 GiveBattleMirrorPrize:
     opentext
-    random 3
+    random 16
     ifequal 0, .StarPiece
     ifequal 1, .SilverLeaf
     ifequal 2, .GoldLeaf
+    ifequal 3, .TeruSama
+    ifequal 4, .BigMushroom
+    ifequal 5, .CleanseTag
+    ifequal 6, .SlowpokeTail
+    ifequal 7, .BigPearl
+    ifequal 8, .RageCandyBar
+    ifequal 9, .LuckyEgg
+    ifequal 10, .SacredAsh
+    ifequal 11, .GorgeousBox
+    ifequal 12, .BrickPiece
+    ifequal 13, .MirageMail
+    ifequal 14, .MusicMail
+    ifequal 14, .MiracleBerry
 .StarPiece
     verbosegiveitem STAR_PIECE
     closetext
@@ -937,6 +968,58 @@ GiveBattleMirrorPrize:
     verbosegiveitem GOLD_LEAF
     closetext
     end
+.TeruSama
+    verbosegiveitem ITEM_BE
+    closetext
+    end
+.BigMushroom
+    verbosegiveitem BIG_MUSHROOM
+    closetext
+    end
+.CleanseTag
+    verbosegiveitem CLEANSE_TAG
+    closetext
+    end
+.SlowpokeTail
+    verbosegiveitem SLOWPOKETAIL
+    closetext
+    end
+.BigPearl
+    verbosegiveitem BIG_PEARL
+    closetext
+    end
+.RageCandyBar
+    verbosegiveitem RAGECANDYBAR
+    closetext
+    end
+.LuckyEgg
+    verbosegiveitem LUCKY_EGG
+    closetext
+    end
+.SacredAsh
+    verbosegiveitem SACRED_ASH
+    closetext
+    end
+.GorgeousBox
+    verbosegiveitem GORGEOUS_BOX
+    closetext
+    end
+.BrickPiece
+    verbosegiveitem BRICK_PIECE
+    closetext
+    end
+.MirageMail
+    verbosegiveitem MIRAGE_MAIL
+    closetext
+    end
+.MusicMail
+    verbosegiveitem MUSIC_MAIL
+    closetext
+    end
+.MiracleBerry
+    verbosegiveitem MIRACLEBERRY
+    closetext
+    end
 
 BattleTrialReceptionistScript:
     opentext
@@ -944,13 +1027,19 @@ BattleTrialReceptionistScript:
     waitbutton
     yesorno
     iffalse .Declined
+    checkevent EVENT_BEAT_BATTLE_TRIAL_MASTER
+   ; iffalse .masterCheck
+    writetext WantImpossibleDifficulty
+    yesorno
+    iftrue .Impossible
+.masterCheck
     checkevent EVENT_BEAT_BATTLE_TRIAL
-    iffalse .standard
+   ; iffalse .Standard
     writetext WantMasterDifficulty
     yesorno
-    iftrue .master
+    iftrue .Master
 
-.standard
+.Standard
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -969,7 +1058,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer INVADER, GIANT_DAD
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -979,7 +1068,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer FALKNER, FALKNER1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -993,7 +1082,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer INVADER, SIEGMEYER
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1003,7 +1092,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer GRUNTM, GRUNTM_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1013,7 +1102,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer BUGSY, BUGSY1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1024,9 +1113,279 @@ BattleTrialReceptionistScript:
 	writetext Trial7Text
 	waitbutton
 	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer POKEFANM, BRANDON
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial8Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer INVADER, LAUTREC
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial9Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer WHITNEY, WHITNEY1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial10Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer KIMONO_GIRL, AERITH_1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial11Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer MORTY, MORTY1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial12Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer KIMONO_GIRL, YUNA_1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial13Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer MYSTICALMAN, EUSINE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial14Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CHUCK, CHUCK1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial15Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer SOLDIER, SOLDIER_SPY
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial16Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer EXECUTIVEF, EXECUTIVEF_2
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial17Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer JASMINE, JASMINE1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial18Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer PRYCE, PRYCE1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial19Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer INVADER, LOGAN
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial20Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer INVADER, CRESTFALLEN
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial21Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CLAIR, CLAIR1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial22Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer SABRINA, SABRINA1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial23Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer BRUNO, BRUNO1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial24Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer KAREN, KAREN1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial25Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer INVADER, SOLAIRE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial26Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer ADAM, ADAM_ELITE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial27Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CHAMPION, LANCE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial28Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer GIOVANNI, LEADER_GIOVANNI
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial29Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer SOLDIER, SOLDIER_5
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial30Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer WALLACE, FUHRER_WALLACE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	setevent EVENT_BEAT_BATTLE_TRIAL
+	opentext
+	writetext TrialUnlockMasterText
+	waitbutton
+	closetext
 	sjump .Win
 
-.master
+.Master
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -1035,7 +1394,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer SAGE, HENSHIN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1045,7 +1404,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer BLUE, SETO
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1055,7 +1414,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer YOUNGSTER, JULIUS
+    loadtrainer RED, YAMI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1064,6 +1423,165 @@ BattleTrialReceptionistScript:
 	waitbutton
 	special HealParty
 	writetext Trial4Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer RED, ASH
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial5Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer RED, RED1
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial6Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer INVADER, MAX
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial7Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer STEVEN, MASTER_STEVEN
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial8Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial9Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer LEON, MASTER_LEON
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial10Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer RIVAL2, MASTER_RIVAL
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial11Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CRYSTAL, MASTER_CRYSTAL
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial12Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer MYSTICALMAN, MASTER_EUSINE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	setevent EVENT_BEAT_BATTLE_TRIAL_MASTER
+	opentext
+	writetext TrialUnlockImpossibleText
+	waitbutton
+	closetext
+	sjump .Win
+
+.Impossible
+    writetext BattleGoRightInText
+    waitbutton
+    closetext
+	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement PLAYER, Movement_EnterBattleRoom
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer INVADER, MASTER_PATCHES
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial2Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer SAGE, MASTER_XEHANORT
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial3Text
+	waitbutton
+	closetext
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer RED, MASTER_YAMI
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial4Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer WALLACE, MASTER_WALLACE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial5Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CHAMPION, MASTER_LANCE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext TrialCongratsText
 	waitbutton
 	closetext
 
@@ -1110,24 +1628,32 @@ BattleTrialIntroText:
     cont "only every 3"
     cont "fights."
 
-    para "There are 30"
-    line "battles total."
+    para "The standard trial"
+    line "has 30 battles"
+    cont "in total"
 
-    para "If you beat them"
-    line "all you unlock"
-    cont "MASTER difficulty"
-    cont "which has 10"
-    cont "battles."
+    para "When you clear a"
+    line "trial you unlock"
+    cont "the next"
+    cont "difficulty."
 
-    para "Would you like to"
-    line "see how far you"
-    cont "can get?"
+    para "Would you like"
+    line "to see how far"
+    cont "you can get?"
     done
 
 WantMasterDifficulty:
     text "Do you want to"
-    line "take the MASTER"
-    cont "challenge?"
+    line "take the..."
+
+    para "MASTER TRIAL?"
+    done
+
+WantImpossibleDifficulty:
+    text "Do you want to"
+    line "take the..."
+
+    para "IMPOSSIBLE TRIAL?"
     done
 
 BattleMirrorIntroText:
@@ -1143,7 +1669,9 @@ BattleMirrorIntroText:
     done
 
 NowHeal:
-    text "Your #MON will"
+    text "Well done!"
+
+    para "Your #MON will"
     line "now be healed."
     done
 
@@ -1169,6 +1697,136 @@ Trial6Text:
 
 Trial7Text:
     text "Now for battle 7."
+    done
+
+Trial8Text:
+    text "Now for battle 8."
+    done
+
+Trial9Text:
+    text "Now for battle 9."
+    done
+
+Trial10Text:
+    text "Now for battle 10."
+    done
+
+Trial11Text:
+    text "Now for battle 11."
+    done
+
+Trial12Text:
+    text "Now for battle 12."
+    done
+
+Trial13Text:
+    text "Now for battle 13."
+    done
+
+Trial14Text:
+    text "Now for battle 14."
+    done
+
+Trial15Text:
+    text "Now for battle 15."
+    done
+
+Trial16Text:
+    text "Now for battle 16."
+    done
+
+Trial17Text:
+    text "Now for battle 17."
+    done
+
+Trial18Text:
+    text "Now for battle 18."
+    done
+
+Trial19Text:
+    text "Now for battle 19."
+    done
+
+Trial20Text:
+    text "Now for battle 20."
+    done
+
+Trial21Text:
+    text "Now for battle 21."
+    done
+
+Trial22Text:
+    text "Now for battle 22."
+    done
+
+Trial23Text:
+    text "Now for battle 23."
+    done
+
+Trial24Text:
+    text "Now for battle 24."
+    done
+
+Trial25Text:
+    text "Now for battle 25."
+    done
+
+Trial26Text:
+    text "Now for battle 26."
+    done
+
+Trial27Text:
+    text "Now for battle 27."
+    done
+
+Trial28Text:
+    text "Now for battle 28."
+    done
+
+Trial29Text:
+    text "Now for battle 29."
+    done
+
+Trial30Text:
+    text "Now for battle 30."
+    done
+
+TrialUnlockMasterText:
+    text "Congratulations!"
+
+    para "You have now"
+    line "unlocked the"
+    cont "MASTER TRIAL!"
+
+    para "A more difficult"
+    line "trial with a"
+    cont "total of 12"
+    cont "Battles."
+    done
+
+TrialUnlockImpossibleText:
+    text "Congratulations!"
+
+    para "You have now"
+    line "unlocked the"
+    cont "IMPOSSIBLE TRIAL!"
+
+    para "An insane trial"
+    line "with 5 straight"
+    cont "battles without"
+    cont "healing."
+    done
+
+TrialCongratsText:
+    text "Congratulations!"
+
+    para "I can't believe"
+    line "what I just"
+    cont "witnessed!"
+
+    para "You are the"
+    line "greatest trainer"
+    cont "in all existence!"
     done
 
 victoryText:
@@ -1274,10 +1932,10 @@ TrainerHouseB1F_MapEvents:
 	def_warp_events
 	warp_event  3, 15, BATTLE_TOWER_OUTSIDE, 5
 	warp_event  4, 15, BATTLE_TOWER_OUTSIDE, 6
-	warp_event  15, 15, BATTLE_TOWER_OUTSIDE, 7
-	warp_event  16, 15, BATTLE_TOWER_OUTSIDE, 8
-	warp_event  27, 15, BATTLE_TOWER_OUTSIDE, 9
-	warp_event  28, 15, BATTLE_TOWER_OUTSIDE, 10
+	warp_event 17, 15, BATTLE_TOWER_OUTSIDE, 7
+	warp_event 18, 15, BATTLE_TOWER_OUTSIDE, 8
+	warp_event 31, 15, BATTLE_TOWER_OUTSIDE, 9
+	warp_event 32, 15, BATTLE_TOWER_OUTSIDE, 10
 
 	def_coord_events
 
@@ -1285,6 +1943,6 @@ TrainerHouseB1F_MapEvents:
 
 	def_object_events
 	object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleRouletteReceptionistScript, -1
-	object_event  15, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
-	object_event  27, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
-	object_event  16, 3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 17, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
+	object_event 31, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
+	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

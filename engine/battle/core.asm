@@ -2604,12 +2604,8 @@ WinTrainerBattle:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_CANLOSE
-	jr z, .healParty
-	cp BATTLETYPE_BATTLE_FRONTIER
-	jr z, .healParty
-	jr .skip_heal
-.healParty
-	predef HealParty
+	jr nz, .skip_heal
+	predef HealParty  ; this isn't strictly needed, just ensures healthy party after loss
 .skip_heal
 
 	ld a, [wDebugFlags]

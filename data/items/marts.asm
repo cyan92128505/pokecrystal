@@ -386,7 +386,7 @@ MartUnderground:
 	db -1 ; end
 
 MartPatches:
-    db 13 ; # items
+    db 15 ; # items
     db RARE_CANDY
     db MASTER_BALL
     db LEFTOVERS
@@ -398,6 +398,8 @@ MartPatches:
     db WISE_GLASSES
     db EXPERT_BELT
     db MIRACLEBERRY
+    db QUICK_CLAW
+    db BRIGHTPOWDER
     db PP_UP
     db SACRED_ASH
     db -1

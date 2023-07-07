@@ -187,6 +187,10 @@ AI_TryItem:
 	and a
 	ret nz
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_BATTLE_FRONTIER
+	ret z
+
 	ld a, [wEnemyTrainerItem1]
 	ld b, a
 	ld a, [wEnemyTrainerItem2]

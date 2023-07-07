@@ -197,12 +197,7 @@ INCLUDE "maps/DanceTheatre.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
-INCLUDE "maps/TrainerHouse1F.asm"
 INCLUDE "maps/TrainerHouseB1F.asm"
-INCLUDE "maps/ViridianMart.asm"
-INCLUDE "maps/ViridianPokecenter1F.asm"
-INCLUDE "maps/Route2NuggetHouse.asm"
-INCLUDE "maps/Route2Gate.asm"
 
 SECTION "Map Scripts 12", ROMX
 
@@ -510,3 +505,8 @@ SECTION "Map Scripts Overflow 4", ROMX
 
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
+INCLUDE "maps/Route2Gate.asm"
+INCLUDE "maps/Route2NuggetHouse.asm"
+INCLUDE "maps/ViridianPokecenter1F.asm"
+INCLUDE "maps/ViridianMart.asm"
+INCLUDE "maps/TrainerHouse1F.asm"

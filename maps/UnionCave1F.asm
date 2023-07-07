@@ -86,7 +86,7 @@ UnionCave1FGreatBall:
 	itemball GREAT_BALL
 
 UnionCave1FXAttack:
-	itemball X_ATTACK
+	itemball HARD_STONE
 
 UnionCave1FPotion:
 	itemball POTION

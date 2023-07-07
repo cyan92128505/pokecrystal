@@ -85,7 +85,7 @@ SPDSPCDV_SHINY EQU $AA
 	const_def
 ;	const BATTLETYPE_DEBUG              ; not used
 	const BATTLETYPE_NORMAL             ; nothing special
-	const BATTLETYPE_CANLOSE            ; don't blackout on a loss
+	const BATTLETYPE_CANLOSE            ; not strictly needed. using reloadmap rather than reloadmapafterbattle does this.
 	const BATTLETYPE_TUTORIAL           ; used for catching tutorial, a lot of code for this small part of game
 	const BATTLETYPE_FISH               ; lure ball works better against fished mon, hooked a mon text
 	const BATTLETYPE_ROAMING            ; roaming mon (Riakou, Entei) have different structs, keep hp and moves
@@ -98,7 +98,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_PERFECT            ; enemy has max dvs and you can't escape
 	const BATTLETYPE_PERFECT_ESCAPE     ; enemy has max dvs and you can escape
 	const BATTLETYPE_BOSS_BATTLE        ; enemy has max stat exp + no set no items
-	const BATTLETYPE_BATTLE_FRONTIER    ; don't blackout on a loss, don't gain money/exp on a win + no set no items
+	const BATTLETYPE_BATTLE_FRONTIER    ; don't gain money/exp on a win, max stat exp + no set no items
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def

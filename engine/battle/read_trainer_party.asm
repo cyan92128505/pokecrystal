@@ -226,6 +226,8 @@ endr
     ld a, [wBattleType]
     cp BATTLETYPE_BOSS_BATTLE
     jr z, .fullStatExp
+    cp BATTLETYPE_BATTLE_FRONTIER
+    jr z, .fullStatExp
 
     ; trainer classes which always have max stat exp
 	ld a, [wTrainerClass]

@@ -383,6 +383,7 @@
     const EVENT_BEAT_GOLDENROD_SELF
     const EVENT_BEAT_FUCHSIA_SELF
     const EVENT_BEAT_BATTLE_TRIAL
+    const EVENT_BEAT_BATTLE_TRIAL_MASTER
 
     ; ======================================
     ; ======================================

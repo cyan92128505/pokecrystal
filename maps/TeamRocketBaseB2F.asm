@@ -96,7 +96,7 @@ RocketBaseBossFScript:
 
 	winlosstext RocketBaseBossWinText, RocketBaseBossWinText
 	setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
-    loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer EXECUTIVEF, EXECUTIVEF_1
 	startbattle
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
@@ -105,6 +105,7 @@ RocketBaseBossFScript:
 	setevent EVENT_BEAT_ROCKET_EXECUTIVEF_2
 	reloadmap
 
+    special HealParty
     applymovement PLAYER, Movement_PlayerLeft
     turnobject PLAYER, RIGHT
     applymovement TEAMROCKETBASEB2F_DAD, Movement_DadDown

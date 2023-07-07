@@ -170,7 +170,7 @@ SproutTower3FStatue:
 	jumptext SproutTower3FStatueText
 
 SproutTower3FPotion:
-	itemball POTION
+	itemball BRIGHTPOWDER
 
 SproutTower3FEscapeRope:
 	itemball GOLD_BERRY

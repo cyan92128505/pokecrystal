@@ -1028,13 +1028,13 @@ BattleTrialReceptionistScript:
     yesorno
     iffalse .Declined
     checkevent EVENT_BEAT_BATTLE_TRIAL_MASTER
-   ; iffalse .masterCheck
+    iffalse .masterCheck
     writetext WantImpossibleDifficulty
     yesorno
     iftrue .Impossible
 .masterCheck
     checkevent EVENT_BEAT_BATTLE_TRIAL
-   ; iffalse .Standard
+    iffalse .Standard
     writetext WantMasterDifficulty
     yesorno
     iftrue .Master

@@ -903,7 +903,7 @@ BattleMirrorReceptionistScript:
     writetext BattleGoRightInText
     waitbutton
     closetext
-	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement BATTLE_MIRROR_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 	pause 15
 	appear BATTLE_MIRROR_CHRIS
@@ -913,7 +913,7 @@ BattleMirrorReceptionistScript:
 	startbattle
 	ifequal WIN, .Win
 	reloadmap
-    warp TRAINER_HOUSE_B1F, 15, 13
+    warp TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -923,7 +923,7 @@ BattleMirrorReceptionistScript:
 	end
 .Win
 	reloadmapafterbattle
-    warp TRAINER_HOUSE_B1F, 15, 13
+    warp TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleWinText
@@ -1043,7 +1043,7 @@ BattleTrialReceptionistScript:
     writetext BattleGoRightInText
     waitbutton
     closetext
-	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement BATTLE_TRIAL_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 
     winlosstext victoryText, defeatText
@@ -1073,6 +1073,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem POTION
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1107,6 +1110,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem GOLD_BERRY
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1141,6 +1147,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem WISE_GLASSES
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1175,6 +1184,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem MUSCLE_BAND
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1209,6 +1221,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem SCOPE_LENS
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1243,6 +1258,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem BRIGHTPOWDER
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1277,6 +1295,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem FOCUS_SASH
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1311,6 +1332,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem LEFTOVERS
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1345,6 +1369,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem LIFE_ORB
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1354,7 +1381,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer GIOVANNI, LEADER_GIOVANNI
+    loadtrainer COOLTRAINERM, TOBIAS
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1364,7 +1391,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer SOLDIER, SOLDIER_5
+    loadtrainer SAGE, HENSHIN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1380,6 +1407,9 @@ BattleTrialReceptionistScript:
 	reloadmap
 	setevent EVENT_BEAT_BATTLE_TRIAL
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem AMBROSIA
 	writetext TrialUnlockMasterText
 	waitbutton
 	closetext
@@ -1389,12 +1419,12 @@ BattleTrialReceptionistScript:
     writetext BattleGoRightInText
     waitbutton
     closetext
-	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement BATTLE_TRIAL_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer SAGE, HENSHIN
+    loadtrainer BLUE, BLUE1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1404,7 +1434,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer BLUE, SETO
+    loadtrainer RED, ASH
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1414,11 +1444,14 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, YAMI
+    loadtrainer RED, RED1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem MASTER_BALL
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1428,7 +1461,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, ASH
+    loadtrainer CLAIR, MASTER_CLAIR
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1438,7 +1471,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, RED1
+    loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1448,11 +1481,14 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer INVADER, MAX
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem AMBROSIA
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1462,7 +1498,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer STEVEN, MASTER_STEVEN
+    loadtrainer LEON, MASTER_LEON
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1472,7 +1508,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CYNTHIA, MASTER_CYNTHIA
+    loadtrainer BLUE, MASTER_SETO
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1482,11 +1518,14 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer LEON, MASTER_LEON
+    loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem AMBROSIA
 	writetext NowHeal
 	waitbutton
 	special HealParty
@@ -1522,6 +1561,9 @@ BattleTrialReceptionistScript:
 	reloadmap
 	setevent EVENT_BEAT_BATTLE_TRIAL_MASTER
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem NORMAL_BOX
 	writetext TrialUnlockImpossibleText
 	waitbutton
 	closetext
@@ -1531,7 +1573,7 @@ BattleTrialReceptionistScript:
     writetext BattleGoRightInText
     waitbutton
     closetext
-	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement BATTLE_TRIAL_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 
     winlosstext victoryText, defeatText
@@ -1546,7 +1588,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer SAGE, MASTER_XEHANORT
+    loadtrainer RED, MASTER_YAMI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1556,7 +1598,7 @@ BattleTrialReceptionistScript:
 	closetext
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, MASTER_YAMI
+    loadtrainer WALLACE, MASTER_WALLACE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1566,7 +1608,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer WALLACE, MASTER_WALLACE
+    loadtrainer LASS, GREEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1581,6 +1623,9 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem GORGEOUS_BOX
 	writetext TrialCongratsText
 	waitbutton
 	closetext
@@ -1588,7 +1633,7 @@ BattleTrialReceptionistScript:
 .Win
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BATTLE_TRIAL
-    warp TRAINER_HOUSE_B1F, 27, 13
+    warp TRAINER_HOUSE_B1F, 31, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleWinText
@@ -1597,7 +1642,7 @@ BattleTrialReceptionistScript:
 	special HealParty
 	end
 .Lose
-    warp TRAINER_HOUSE_B1F, 27, 13
+    warp TRAINER_HOUSE_B1F, 31, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -1668,10 +1713,15 @@ BattleMirrorIntroText:
     line "battle?"
     done
 
-NowHeal:
+AcceptPrize:
     text "Well done!"
 
-    para "Your #MON will"
+    para "Please accept"
+    line "this prize."
+    done
+
+NowHeal:
+    text "Your #MON will"
     line "now be healed."
     done
 

@@ -721,7 +721,7 @@ MasterGreenScript:
 	closetext
 	winlosstext MasterGreenBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer LASS, GREEN
+	loadtrainer LEAF, MASTER_GREEN
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_GREEN

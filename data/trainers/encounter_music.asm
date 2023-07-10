@@ -73,4 +73,5 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_ROCKET_ENCOUNTER      ; invader
 	db MUSIC_RIVAL_ENCOUNTER       ; crystal
+	db MUSIC_KIMONO_ENCOUNTER      ; green
 	assert_table_length NUM_TRAINER_CLASSES + 1

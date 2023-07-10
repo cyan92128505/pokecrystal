@@ -52,7 +52,7 @@ TrainerClassAttributes:
 
 ; Rival1
 	db NO_ITEM, NO_ITEM ; items
-	db 15 ; base reward
+	db 50 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -73,7 +73,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Bruno
 	db NO_ITEM, NO_ITEM ; items
@@ -272,13 +272,13 @@ TrainerClassAttributes:
 
 ; Rival2
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 50 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Wallace
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
+	db 250 ; base reward
 	;dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -457,7 +457,13 @@ TrainerClassAttributes:
 
 ; Crystal
 	db NO_ITEM, NO_ITEM ; items
-	db 25 ; base reward
+	db 50 ; base reward
+	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
+; Green
+	db NO_ITEM, NO_ITEM ; items
+	db 200 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 

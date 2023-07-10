@@ -1185,6 +1185,13 @@ AI_Smart_DreamEater:
 	ret
 
 AI_Smart_EvasionUp:
+; discourage if enemy is Arceus or Machamp
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jr z, .discourage
+    cp MACHAMP
+    jr z, .discourage
+
 ; encourage to +4 and discourage after
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 4
@@ -1942,10 +1949,11 @@ AI_Smart_SpeedDownHit:
 	ret
 
 AI_Smart_Substitute:
-; Dismiss this move if enemy's HP is below 50%.
-
+; Dismiss this move if enemy's HP is below 50% or player can 3HKO max hp.
 	call AICheckEnemyHalfHP
 	ret c
+    call CanPlayer3HKOMaxHP
+    ret nc
 	jp AIDiscourageMove
 
 AI_Smart_HyperBeam:
@@ -3984,11 +3992,47 @@ AI_Smart_Geomancy:
 	cp BASE_STAT_LEVEL + 4
 	jp nc, .discourage
 
+; is the player setting up - if so we may want to boost to force them to stop and attack
+; if the player already has +4 attack or special attack then they have already set up, just attack
+; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
+; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .discourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 3
+	jr nc, .discourage
+
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_HEAL
+    jr z, .check2HKO
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr z, .check3HKO
+	jr .checkKO
+.check3HKO
+	call CanAI3HKO
+	jr c, .discourage
+    call Random
+    cp 50 percent
+    jr c, .discourage
+	jr .continue
+.check2HKO
+	call CanAI2HKOMaxHP
+	jr c, .discourage
+    call Random
+    cp 50 percent
+    jr c, .discourage
+
+.checkKO
 ; don't use if we are at risk of being KOd, just attack them
 ; as a two turn move we care about being 2HKOd
     call CanPlayer2HKO
     jr c, .discourage
 
+.continue
 ; encourage to get to +2
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2

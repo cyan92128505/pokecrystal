@@ -184,6 +184,8 @@ PlayBattleMusic:
 	ld de, MUSIC_FINAL_BATTLE
 	cp BLUE
 	jp z, .done
+	cp LEAF
+	jp z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
 	ld de, MUSIC_ROCKET_BATTLE

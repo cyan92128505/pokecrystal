@@ -572,7 +572,7 @@ BattleRouletteReceptionistScript:
 .Green
     checkevent EVENT_BEAT_MASTER_GREEN
     iffalse .sample
-    loadtrainer LASS, GREEN
+    loadtrainer LEAF, MASTER_GREEN
     sjump .finish
 
 .Silver
@@ -939,7 +939,7 @@ BattleMirrorReceptionistScript:
 
 GiveBattleMirrorPrize:
     opentext
-    random 16
+    random 15
     ifequal 0, .StarPiece
     ifequal 1, .SilverLeaf
     ifequal 2, .GoldLeaf
@@ -951,10 +951,9 @@ GiveBattleMirrorPrize:
     ifequal 8, .RageCandyBar
     ifequal 9, .LuckyEgg
     ifequal 10, .SacredAsh
-    ifequal 11, .GorgeousBox
-    ifequal 12, .BrickPiece
-    ifequal 13, .MirageMail
-    ifequal 14, .MusicMail
+    ifequal 11, .BrickPiece
+    ifequal 12, .MirageMail
+    ifequal 13, .MusicMail
     ifequal 14, .MiracleBerry
 .StarPiece
     verbosegiveitem STAR_PIECE
@@ -998,10 +997,6 @@ GiveBattleMirrorPrize:
     end
 .SacredAsh
     verbosegiveitem SACRED_ASH
-    closetext
-    end
-.GorgeousBox
-    verbosegiveitem GORGEOUS_BOX
     closetext
     end
 .BrickPiece
@@ -1608,7 +1603,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer LASS, GREEN
+    loadtrainer LEAF, MASTER_GREEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap

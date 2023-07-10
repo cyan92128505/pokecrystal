@@ -210,7 +210,6 @@ KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
-	const GREEN
 	const EVE
 
 	trainerclass JANINE ; 1a
@@ -795,5 +794,9 @@ KRIS EQU __trainer_class__
     const CRYSTAL_6
     const CRYSTAL_7
     const MASTER_CRYSTAL
+
+    trainerclass LEAF ; 46
+    const GREEN1
+    const MASTER_GREEN
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

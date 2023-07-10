@@ -36,4 +36,5 @@ FemaleTrainers:
 	db POKEFANF
 	db COOLTRAINERF
 	db CRYSTAL
+	db LEAF
 .End

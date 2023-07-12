@@ -35,7 +35,35 @@ Oak:
 	writetext OakLabGoodbyeText
 	waitbutton
 	closetext
+
+	opentext
+	writetext OakBattleOffer
+	waitbutton
+	yesorno
+	iffalse .refuse
+	closetext
+    winlosstext OakWinText, OakWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer POKEMON_PROF, PROF_OAK
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	sjump .endbattle
+.lose
+    reloadmap
+.endbattle
+    special HealParty
+    opentext
+    writetext OakAfterBattleText
+    waitbutton
+    closetext
 	end
+.refuse
+    opentext
+    writetext OakRefusedText
+    waitbutton
+    closetext
+    end
 
 .OpenMtSilver:
 	writetext OakOpenMtSilverText
@@ -76,6 +104,68 @@ OaksLabTrashcan:
 
 OaksLabPC:
 	jumptext OaksLabPCText
+
+OakBattleOffer:
+    text "I used to be a"
+    line "trainer."
+
+    para "That feels like"
+    line "another life now."
+
+    para "I can appreciate"
+    line "how hard you work"
+    cont "and how gifted you"
+    cont "are."
+
+    para "I don't know when"
+    line "I became this old"
+    cont "man I am now."
+
+    para "Would you give me"
+    line "the honor of a"
+    cont "battle?"
+    done
+
+OakWinText:
+    text "I feel younger"
+    line "than ever!"
+    done
+
+OakAfterBattleText:
+    text "That takes me"
+    line "back."
+
+    para "You know there"
+    line "are many #MON"
+    cont "with amazing"
+    cont "abilities."
+
+    para "When I was your"
+    line "age I met one"
+    cont "that could travel"
+    cont "through time."
+
+    para "CELEBI it was"
+    line "called."
+
+    para "I think I want"
+    line "to find it again."
+
+    para "Not for study."
+
+    para "But for me."
+
+    para "Thanks again"
+    line "<PLAYER>."
+    done
+
+OakRefusedText:
+    text "Of course, I'm"
+    line "sorry."
+
+    para "It was a silly"
+    line "suggestion."
+    done
 
 OakWelcomeKantoText:
 	text "OAK: Ah, <PLAY_G>!"

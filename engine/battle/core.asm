@@ -2702,7 +2702,7 @@ WinTrainerBattle:
 .KeepItAll:
 	ld hl, GotMoneyForWinningText
 	ld a, [wOtherTrainerClass]
-	cp POKEMON_PROF
+	cp LORD_OAK
 	jr nz, .writeText
 	ld hl, GotMaxMoneyForWinningText
 .writeText
@@ -2720,7 +2720,7 @@ WinTrainerBattle:
 	push bc
 ; AndrewNote - beating master oak always maxes money
     ld a, [wOtherTrainerClass]
-    cp POKEMON_PROF
+    cp LORD_OAK
     jr nz, .notOak
     ld hl, MaxMoneyCore
     jr .cont
@@ -4203,7 +4203,7 @@ BattleCheckPlayerShininess:
 BattleCheckEnemyShininess:
 ; AndrewNote - Master Oaks Pokemon are shiny regardless of stats
     ld a, [wOtherTrainerClass]
-    cp POKEMON_PROF
+    cp LORD_OAK
     jr nz, .normal
     scf
     ret

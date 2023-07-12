@@ -153,9 +153,15 @@ PlayBattleMusic:
     ld a, [wOtherTrainerClass]
 
     ld de, MUSIC_EPIC_TETRIS
-    cp POKEMON_PROF
+    cp LORD_OAK
     jp z, .done
     cp ADAM
+    jp z, .done
+
+    ld de, MUSIC_RED_TRAINER_BATTLE
+    cp POKEMON_PROF
+    jp z, .done
+    cp LEAF
     jp z, .done
 
     ; champoin music
@@ -183,8 +189,6 @@ PlayBattleMusic:
 
 	ld de, MUSIC_FINAL_BATTLE
 	cp BLUE
-	jp z, .done
-	cp LEAF
 	jp z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...

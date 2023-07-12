@@ -2,6 +2,7 @@
 	const MOUNTMOONSQUARE_FAIRY1
 	const MOUNTMOONSQUARE_FAIRY2
 	const MOUNTMOONSQUARE_ROCK
+	const MOUNTMOONSQUARE_GREEN
 
 MountMoonSquare_MapScripts:
 	def_scene_scripts
@@ -20,6 +21,11 @@ MountMoonSquare_MapScripts:
 
 .DisappearRock:
 	disappear MOUNTMOONSQUARE_ROCK
+	appear MOUNTMOONSQUARE_GREEN
+	checkevent EVENT_HOEN_INVASION_UNDERWAY
+	iffalse .end
+	disappear MOUNTMOONSQUARE_GREEN
+.end
 	endcallback
 
 ClefairyDance:
@@ -129,6 +135,102 @@ DontLitterSignText:
 	text "MT.MOON SQUARE"
 	line "DON'T LITTER"
 	done
+	
+MtMoonGreenScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_GREEN
+	iftrue .FightDone
+.fight
+	writetext GreenSeenText
+	waitbutton
+	closetext
+	winlosstext GreenBeatenText, GreenWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LEAF, GREEN1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GREEN
+	end
+.FightDone:
+	writetext GreenAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextGreen
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextGreen
+	waitbutton
+	closetext
+	end
+GreenSeenText:
+    text "Hello!"
+
+    para "I see you're a"
+    line "trainer."
+
+    para "A skilled one"
+    line "too."
+
+    para "I've been a"
+    line "trainer for 5"
+    cont "years."
+
+    para "I'm from PALLET"
+    line "TOWN."
+
+    para "My name is GREEN."
+
+    para "I started my"
+    line "training a few"
+    cont "months before"
+    cont "RED and BLUE."
+
+    para "BLUE is a"
+    line "CHAMPION now."
+
+    para "And RED..."
+
+    para "He is beyond"
+    line "any of us."
+
+    para "But I am plenty"
+    line "strong too!"
+
+    para "Let me show you."
+    done
+GreenBeatenText:
+    text "That brings back"
+    line "some memories"
+    done
+GreenWinsText:
+    text "Told you I was"
+    line "good."
+    done
+GreenAfterBattleText:
+    text "I don't know"
+    line "where RED has"
+    cont "disappeared to."
+
+    para "He is like you."
+
+    para "Somehow just.."
+
+    para "Better than anyone"
+    line "else."
+
+    para "Everything comes"
+    line "so easy to him."
+    done
+RematchTextGreen:
+    text "Like another"
+    line "friendly match?"
+    done
+RematchRefuseTextGreen:
+    text "RED wouldn't"
+    line "refuse..."
+    done
 
 MountMoonSquare_MapEvents:
 	db 0, 0 ; filler
@@ -143,9 +245,11 @@ MountMoonSquare_MapEvents:
 
 	def_bg_events
 	bg_event  7,  7, BGEVENT_ITEM, MountMoonSquareHiddenMoonStone
-	bg_event 17,  7, BGEVENT_READ, DontLitterSign
+	bg_event 17,  4, BGEVENT_READ, DontLitterSign
 
 	def_object_events
 	object_event  6,  6, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_SQUARE_CLEFAIRY
 	object_event  7,  6, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_SQUARE_CLEFAIRY
 	object_event  7,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonSquareRock, EVENT_MT_MOON_SQUARE_ROCK
+	object_event  17,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MtMoonGreenScript, EVENT_FIELD_MON_1
+

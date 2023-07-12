@@ -3996,13 +3996,6 @@ AI_Smart_Geomancy:
 ; if the player already has +4 attack or special attack then they have already set up, just attack
 ; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
 ; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 3
-	jr nc, .discourage
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 3
-	jr nc, .discourage
-
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -4015,16 +4008,10 @@ AI_Smart_Geomancy:
 .check3HKO
 	call CanAI3HKO
 	jr c, .discourage
-    call Random
-    cp 50 percent
-    jr c, .discourage
 	jr .continue
 .check2HKO
 	call CanAI2HKOMaxHP
 	jr c, .discourage
-    call Random
-    cp 50 percent
-    jr c, .discourage
 
 .checkKO
 ; don't use if we are at risk of being KOd, just attack them

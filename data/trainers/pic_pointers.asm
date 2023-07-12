@@ -73,4 +73,5 @@ TrainerPicPointers::
 	dba_pic InvaderPic
 	dba_pic CrystalPic
 	dba_pic GreenPic
+	dba_pic LordOakPic
 	assert_table_length NUM_TRAINER_CLASSES

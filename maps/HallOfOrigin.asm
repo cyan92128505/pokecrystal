@@ -204,8 +204,9 @@ MasterOakScript:
 	closetext
 	winlosstext MasterOakBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer POKEMON_PROF, MASTER_OAK
+	loadtrainer LORD_OAK, OAK
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	appear HALLOFORIGIN_ARCEUS_POKEBALL
 	clearevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
@@ -227,6 +228,14 @@ MasterOakScript:
 	closetext
 	special HealParty
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext OakWinAfterBattleText
+    waitbutton
+    closetext
+    end
 .FightDone:
 	writetext MasterOakAfterBattleText
 	waitbutton
@@ -271,6 +280,15 @@ MasterOakScript:
 	waitbutton
 	closetext
 	end
+
+OakWinAfterBattleText:
+    text "I think you have"
+    line "the potential."
+
+    para "You just need to"
+    line "unlearn what you"
+    cont "think you know."
+    done
 
 MasterOakIntroText:
     text "Hello <PLAYER>!"
@@ -429,6 +447,7 @@ MasterRedScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, MASTER_RED
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_RED
 	opentext
@@ -455,6 +474,23 @@ MasterRedScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext RedWinAfterBattleText
+    waitbutton
+    closetext
+    end
+
+RedWinAfterBattleText:
+    text "You are very"
+    line "strong."
+
+    para "You must set up"
+    line "your strategy as"
+    cont "early as possible."
+    done
 
 MasterRedSeenText:
     text "Since I was"
@@ -538,6 +574,7 @@ MasterLanceScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CHAMPION, MASTER_LANCE
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_LANCE
 	opentext
@@ -558,6 +595,24 @@ MasterLanceScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext LanceWinAfterBattleText
+    waitbutton
+    closetext
+    end
+
+LanceWinAfterBattleText:
+    text "You fight with"
+    line "passion and"
+    cont "conviction."
+
+    para "You will defeat"
+    line "me I have no"
+    cont "doubt."
+    done
 
 MasterLanceSeenText:
     text "An eternal"
@@ -613,6 +668,7 @@ MasterBlueScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BLUE, MASTER_BLUE
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_BLUE
 	opentext
@@ -639,6 +695,26 @@ MasterBlueScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext BlueWinAfterBattleText
+    waitbutton
+    closetext
+    end
+
+BlueWinAfterBattleText:
+    text "I have to say."
+
+    para "That victory felt"
+    line "good."
+
+    para "I feel like my"
+    line "old self again."
+
+    para "Thanks."
+    done
 
 MasterBlueSeenText:
     text "When I was young"
@@ -723,6 +799,7 @@ MasterGreenScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LEAF, MASTER_GREEN
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_GREEN
 	opentext
@@ -743,6 +820,24 @@ MasterGreenScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext GreenWinAfterBattleText
+    waitbutton
+    closetext
+    end
+
+GreenWinAfterBattleText:
+    text "You remind me so"
+    line "much of RED."
+
+    para "Except I can't"
+    line "beat him."
+
+    para "Good battle!"
+    done
 
 MasterGreenSeenText:
     text "Many years ago"
@@ -849,5 +944,5 @@ HallOfOrigin_MapEvents:
 	object_event 13,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
 	object_event 10, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
 	object_event  8, 20, SPRITE_LANCE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
-	object_event 15, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
+	object_event 15, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
 	object_event 13, 18, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1

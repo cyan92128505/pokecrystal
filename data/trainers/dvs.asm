@@ -72,4 +72,5 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; INVADER
     dn 10, 15, 15, 15 ; CRYSTAL
     dn 10, 15, 15, 15 ; GREEN
+    dn 15, 15, 15, 15 ; LORD_OAK
 	assert_table_length NUM_TRAINER_CLASSES

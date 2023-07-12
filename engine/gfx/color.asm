@@ -915,7 +915,7 @@ endr
 ; AndrewNote - Master Oaks Pokemon are shiny regardless of stats
 .checkOak
     ld a, [wOtherTrainerClass]
-    cp POKEMON_PROF
+    cp LORD_OAK
     jr z, .shiny
     ret
 

@@ -73,4 +73,5 @@ TrainerGroups:
 	dba InvaderGroup
 	dba CrystalGroup
 	dba GreenGroup
+	dba LordOakGroup
 	assert_table_length NUM_TRAINER_CLASSES

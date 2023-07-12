@@ -3,6 +3,7 @@
 	const BATTLETOWEROUTSIDE_BEAUTY
 	const BATTLETOWEROUTSIDE_SAILOR
 	const BATTLETOWEROUTSIDE_LASS
+	const BATTLETOWEROUTSIDE_GRAMPS
 
 BattleTowerOutside_MapScripts:
 	def_scene_scripts
@@ -15,6 +16,7 @@ BattleTowerOutside_MapScripts:
 	endcallback
 
 .Callback2:
+    appear BATTLETOWEROUTSIDE_GRAMPS
 	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	endcallback
 
@@ -127,6 +129,247 @@ BattleTowerOutsideText_DoorsOpen: ; unreferenced
 	text "It's open!"
 	done
 
+BTGrampsScript:
+    opentext
+    writetext WelcomeToBattleTower
+    waitbutton
+    closetext
+    follow BATTLETOWEROUTSIDE_GRAMPS, PLAYER
+    applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleMirror
+    opentext
+    writetext BattleMirrorIntro
+    waitbutton
+    closetext
+    applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleRoulette
+    turnobject PLAYER, UP
+    opentext
+    writetext BattleRouletteIntro
+    waitbutton
+    closetext
+    applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleTrial
+    turnobject PLAYER, UP
+    opentext
+    writetext BattleTrialIntro
+    waitbutton
+    closetext
+    applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleTower
+    opentext
+    writetext BattleTowerIntro
+    waitbutton
+    closetext
+    stopfollow
+    applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GrampsLeaves
+    disappear BATTLETOWEROUTSIDE_GRAMPS
+    moveobject BATTLETOWEROUTSIDE_GRAMPS, 10, 28
+    appear BATTLETOWEROUTSIDE_GRAMPS
+    turnobject PLAYER, UP
+    end
+
+WelcomeToBattleTower:
+    text "Hello trainer!"
+
+    para "Welcome to the"
+    line "BATTLE FRONTIER."
+
+    para "Here you can"
+    line "fully test your"
+    cont "skills as a"
+    cont "trainer."
+
+    para "There are several"
+    line "challenges to pick"
+    cont "from."
+
+    para "Let me show you"
+    line "around."
+    done
+
+Movement_GoToBattleMirror:
+    step UP
+    step LEFT
+    step LEFT
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    turn_head DOWN
+    step_end
+
+BattleMirrorIntro:
+    text "This is the"
+    line "BATTLE MIRROR."
+
+    para "Here you can"
+    line "battle against an"
+    cont "exact copy of"
+    cont "yourself."
+
+    para "The prizes are"
+    line "random and often"
+    cont "useless trinkets."
+
+    para "Great if you want"
+    line "a guaranteed"
+    cont "challenge."
+    done
+
+Movement_GoToBattleRoulette:
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step LEFT
+    turn_head UP
+    step_end
+
+BattleRouletteIntro:
+    text "This is the"
+    line "BATTLE ROULETTE."
+
+    para "Here you can fight"
+    line "a random memorable"
+    cont "opponent you have"
+    cont "beaten before."
+
+    para "The prizes are"
+    line "also random."
+
+    para "This is the best"
+    line "for some quick"
+    cont "fun."
+    done
+
+Movement_GoToBattleTrial:
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    turn_head UP
+    step_end
+
+BattleTrialIntro:
+    text "This is the"
+    line "BATTLE TRIAL."
+
+    para "Here you fight"
+    line "consecutive fights"
+    cont "with enemies of"
+    cont "increasing"
+    cont "strength."
+
+    para "You only get"
+    line "healed every three"
+    cont "fights."
+
+    para "You also get fixed"
+    line "prizes."
+
+    para "If you make it"
+    line "through the normal"
+    cont "trial you unlock"
+    cont "the MASTER TRIAL."
+
+    para "I hear there is"
+    line "even another level"
+    cont "beyond that but"
+    cont "nobody has ever"
+    cont "reached it."
+
+    para "If you want to"
+    line "measure just how"
+    cont "strong you are"
+    cont "this is the"
+    cont "place."
+    done
+
+Movement_GoToBattleTower:
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    turn_head DOWN
+    step_end
+
+BattleTowerIntro:
+    text "Now this!"
+
+    para "This is the"
+    line "main event."
+
+    para "the BATTLE TOWER!"
+
+    para "Here you can have"
+    line "a series of fights"
+    cont "against enemies"
+    cont "random teams."
+
+    para "It's a different"
+    line "challenge every"
+    cont "time!"
+
+    para "You must complete"
+    line "four full fights"
+    cont "with no rules."
+
+    para "There are five"
+    line "difficulties to"
+    cont "pick from."
+
+    para "Two of which are"
+    line "only offered to"
+    cont "CHAMPION trainers."
+
+    para "The prizes are"
+    line "good."
+
+    para "Particularly for"
+    line "the top levels."
+
+    para "If you want a"
+    line "real challenge"
+    cont "this is the place"
+    cont "to be!"
+
+    para "Well that's all!"
+
+    para "I hope you spend"
+    line "hours here having"
+    cont "fun!"
+
+    para "Good luck!"
+    done
+
+Movement_GrampsLeaves:
+    step RIGHT
+    step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+
 BattleTowerOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -148,7 +391,9 @@ BattleTowerOutside_MapEvents:
 	bg_event 10, 12, BGEVENT_READ, BattleTowerOutsideSign
 
 	def_object_events
-	object_event  4, 22, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
-	object_event  6, 16, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
-	object_event 11, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event  2, 21, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
+	object_event  6, 10, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
+	object_event 13, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	object_event 12, 32, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 10, 28, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BTGrampsScript, EVENT_TEMP_EVENT_1
+

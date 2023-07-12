@@ -661,6 +661,7 @@ JuliusScript:
 	winlosstext JuliusBeatenText, JuliusWinsText
 	loadtrainer YOUNGSTER, JULIUS
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JULIUS
 	end
@@ -677,6 +678,23 @@ JuliusScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext JuliusWinAfterBattleText
+    waitbutton
+    closetext
+    end
+JuliusWinAfterBattleText:
+    text "Another easy"
+    line "victory."
+
+    para "When will you"
+    line "people learn"
+    cont "your place on"
+    cont "the social ladder."
+    done
 JuliusSeenText:
     text "These peasants are"
     line "easily brushed"
@@ -708,6 +726,11 @@ JuliusOfferFightText:
     line "see the difference"
     cont "between our social"
     cont "classes?"
+
+    para "I won't even take"
+    line "your pitiful"
+    cont "savings when I"
+    cont "win?"
     done
 JuliusAfterBattleText:
     text "I misjudged you."

@@ -78,6 +78,7 @@ KRIS EQU __trainer_class__
 	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
+	const PROF_OAK
 	const MASTER_OAK
 
 	trainerclass WILL ; b
@@ -798,5 +799,8 @@ KRIS EQU __trainer_class__
     trainerclass LEAF ; 46
     const GREEN1
     const MASTER_GREEN
+
+    trainerclass LORD_OAK ; 47
+    const OAK
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

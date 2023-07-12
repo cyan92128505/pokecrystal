@@ -24,6 +24,7 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
+	db LORD_OAK
 .End
 
 FemaleTrainers:

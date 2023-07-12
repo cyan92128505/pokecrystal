@@ -480,6 +480,7 @@ StevenScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer STEVEN, CHAMP_STEVEN
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_STEVEN
 	special HealParty
@@ -497,6 +498,21 @@ StevenScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext StevenWinsAfterBattleText
+    waitbutton
+    closetext
+    end
+StevenWinsAfterBattleText:
+    text "You are a strong"
+    line "CHAMPION."
+
+    para "You will be a"
+    line "great leader"
+    cont "one day."
 StevenSeenText:
     text "I am sorry..."
 
@@ -576,6 +592,7 @@ CynthiaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CYNTHIA, CHAMP_CYNTHIA
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CYNTHIA
 	special HealParty
@@ -593,6 +610,19 @@ CynthiaScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext CynthiaWinsAfterBattleText
+    waitbutton
+    closetext
+    end
+CynthiaWinsAfterBattleText:
+    text "You did well."
+
+    para "You are certainly"
+    line "a worthy CHAMPION."
 CynthiaSeenText:
     text "You have CHAMPION"
     line "BLUE to thank for"
@@ -662,6 +692,7 @@ LeonScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LEON, CHAMP_LEON
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LEON
 	special HealParty
@@ -679,6 +710,23 @@ LeonScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext LeonWinsAfterBattleText
+    waitbutton
+    closetext
+    end
+LeonWinsAfterBattleText:
+    text "Well Well."
+
+    para "You are pretty"
+    line "good."
+
+    para "But no shame in"
+    line "being beaten by"
+    cont "the best."
 LeonSeenText:
     text "It's a real shame"
     line "I didn't get here"

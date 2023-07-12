@@ -718,6 +718,7 @@ NationalParkLeonScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LEON, CHAMP_LEON
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LEON
 	special HealParty
@@ -735,6 +736,24 @@ NationalParkLeonScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext NPLeonWinAfterBattleText
+    waitbutton
+    closetext
+    end
+
+NPLeonWinAfterBattleText:
+    text "You did well kid."
+
+    para "Don't feel bad."
+
+    para "You were beaten"
+    line "by the best!"
+    done
+
 NPLeonSeenText:
     text "Hey there kid!"
 
@@ -789,6 +808,11 @@ NPLeonOfferFightTextAgain:
 
     para "You know you"
     line "wont win."
+
+    para "Though I won't"
+    line "take any money"
+    cont "or anything when"
+    cont "I win."
     done
 NPLeonPreFightText:
     text "That's the spirit!"

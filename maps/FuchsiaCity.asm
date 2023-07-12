@@ -7,6 +7,9 @@
 	const FUCHSIACITY_SOLDIER_1
 	const FUCHSIACITY_SOLDIER_2
 	const FUCHSIACITY_SELF
+	const FUCHSIACITY_SOLDIER_3
+	const FUCHSIACITY_SOLDIER_4
+	const FUCHSIACITY_GREEN
 
 FuchsiaCity_MapScripts:
 	def_scene_scripts

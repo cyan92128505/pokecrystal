@@ -10,7 +10,7 @@ TrainerClassNames::
 	li "LEADER"
 	li "LEADER"
 	li "RIVAL"
-	li "LORD"
+	li "PROFESSOR"
 	li "LEADER"
 	li "SELF"
 	li "ELITE FOUR"
@@ -71,4 +71,5 @@ TrainerClassNames::
 	li "INVADER"
 	li "<PKMN> TRAINER"
 	li "<PKMN> TRAINER"
+	li "LORD"
 	assert_list_length NUM_TRAINER_CLASSES

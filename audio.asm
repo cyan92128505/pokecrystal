@@ -177,3 +177,7 @@ INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/redindigoplateau.asm"
 INCLUDE "audio/music/redlavender.asm"
 
+SECTION "New Songs 2", ROMX
+
+INCLUDE "audio/music/redbattle.asm"
+

@@ -1,6 +1,7 @@
 	object_const_def
 	const VIRIDIANGYM_BLUE
 	const VIRIDIANGYM_GYM_GUIDE
+	const VIRIDIANGYM_GREEN
 
 ViridianGym_MapScripts:
 	def_scene_scripts
@@ -9,6 +10,7 @@ ViridianGym_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Blue
 
 .Blue
+    disappear VIRIDIANGYM_GREEN
     checkevent EVENT_RESTORED_POWER_TO_KANTO
     iffalse .gone
     checkevent EVENT_HOEN_INVASION_UNDERWAY
@@ -33,12 +35,25 @@ ViridianGymBlueScript:
 	writetext FalseIntroText
 	special FadeOutMusic
 	showemote EMOTE_SHOCK, VIRIDIANGYM_BLUE, 15
-	writetext HangOnText
-	waitbutton
-	turnobject VIRIDIANGYM_BLUE, UP
-	pause 120
 	turnobject VIRIDIANGYM_BLUE, DOWN
+	writetext GreenIntroText
+	waitbutton
+	closetext
+	appear VIRIDIANGYM_GREEN
+	applymovement VIRIDIANGYM_GREEN, Movement_GreenApproaches
+	opentext
+	writetext GreenTalkText
+	waitbutton
+	closetext
+	turnobject VIRIDIANGYM_GREEN, DOWN
+	opentext
+	writetext GreenRedText
+	waitbutton
+	closetext
+	applymovement VIRIDIANGYM_GREEN, Movement_BlueLeaves
+	disappear VIRIDIANGYM_GREEN
 	playmusic MUSIC_RED_INDIGO_PLATEAU
+	opentext
 	writetext WarHasBegunText
 	waitbutton
     closetext
@@ -99,6 +114,13 @@ Movement_BlueLeaves:
     step DOWN
     step_end
 
+Movement_GreenApproaches:
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    step_end
+
 HangOnText:
     text "Hang on there."
     done
@@ -141,10 +163,7 @@ FalseIntroText:
     prompt
 
 WarHasBegunText:
-    text "My uncle just"
-    line "called me..."
-
-    para "War has begun..."
+    text "War has begun..."
 
     para "The HOEN invasion"
     line "forces have"
@@ -259,6 +278,27 @@ LeaderBlueEpilogueText:
 	cont "you. Got it?"
 	done
 
+GreenIntroText:
+    text "BLUE!"
+    done
+
+GreenTalkText:
+    text "It is happening!"
+
+    para "They've gone"
+    line "after SURGE first."
+
+    para "We're going to"
+    line "need backup from"
+    cont "your #MON"
+    cont "LEAGUE friends!"
+    done
+
+GreenRedText:
+    text "I wish I knew"
+    line "where RED is."
+    done
+
 ViridianGymGuideText:
 	text "Yo, CHAMP in"
 	line "making!"
@@ -299,6 +339,46 @@ RematchRefuseTextBlue:
     text "Maybe next time."
     done
 
+ApproachBlueScript1:
+    checkevent EVENT_RESTORED_POWER_TO_KANTO
+    iffalse .end
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iftrue .end
+    checkevent EVENT_VIRIDIAN_GYM_BLUE
+    iftrue .end
+    applymovement PLAYER, Movement_ApproachBlue1
+    turnobject VIRIDIANGYM_BLUE, LEFT
+    sjump ViridianGymBlueScript
+.end
+    end
+
+ApproachBlueScript2:
+    checkevent EVENT_RESTORED_POWER_TO_KANTO
+    iffalse .end
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iftrue .end
+    checkevent EVENT_VIRIDIAN_GYM_BLUE
+    iftrue .end
+    applymovement PLAYER, Movement_ApproachBlue2
+    turnobject VIRIDIANGYM_BLUE, LEFT
+    sjump ViridianGymBlueScript
+.end
+    end
+
+Movement_ApproachBlue1:
+    step UP
+    step UP
+    turn_head RIGHT
+    step_end
+
+Movement_ApproachBlue2:
+    step LEFT
+    step UP
+    step UP
+    turn_head RIGHT
+    step_end
+
+
 ViridianGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -307,6 +387,8 @@ ViridianGym_MapEvents:
 	warp_event  5, 17, VIRIDIAN_CITY, 1
 
 	def_coord_events
+	coord_event 4, 5, SCENE_ALWAYS, ApproachBlueScript1
+	coord_event 5, 5, SCENE_ALWAYS, ApproachBlueScript2
 
 	def_bg_events
 	bg_event  3, 13, BGEVENT_READ, ViridianGymStatue
@@ -315,3 +397,4 @@ ViridianGym_MapEvents:
 	def_object_events
 	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_FIELD_MON_1
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_FIELD_MON_2
+	object_event  5,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3

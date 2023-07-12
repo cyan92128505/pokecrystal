@@ -231,7 +231,7 @@ endr
 
     ; trainer classes which always have max stat exp
 	ld a, [wTrainerClass]
-	cp POKEMON_PROF
+	cp LORD_OAK
 	jr z, .fullStatExp
 	cp RED
 	jr z, .fullStatExp

@@ -1550,7 +1550,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer MYSTICALMAN, MASTER_EUSINE
+    loadtrainer POKEMON_PROF, MASTER_OAK
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap

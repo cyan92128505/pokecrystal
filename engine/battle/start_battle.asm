@@ -158,13 +158,7 @@ PlayBattleMusic:
     cp ADAM
     jp z, .done
 
-    ld de, MUSIC_RED_TRAINER_BATTLE
-    cp POKEMON_PROF
-    jp z, .done
-    cp LEAF
-    jp z, .done
-
-    ; champoin music
+    ; champion music
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jp z, .done
@@ -189,6 +183,10 @@ PlayBattleMusic:
 
 	ld de, MUSIC_FINAL_BATTLE
 	cp BLUE
+	jp z, .done
+	cp LEAF
+	jp z, .done
+	cp POKEMON_PROF
 	jp z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...

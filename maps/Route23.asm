@@ -42,6 +42,7 @@ TobiasScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer COOLTRAINERM, TOBIAS
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_TOBIAS
 	end
@@ -58,6 +59,25 @@ TobiasScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext TobiasWinAfterBattleText
+    waitbutton
+    closetext
+    end
+
+TobiasWinAfterBattleText:
+    text "Another easy"
+    line "victory..."
+
+    para "I guess my"
+    line "#MON are just"
+    cont "too strong for"
+    cont "anyone to beat."
+    done
+
 TobiasSeenText:
     text "What do you want?"
 

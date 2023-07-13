@@ -492,6 +492,7 @@ Aerith1Script:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, AERITH_1
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_AERITH_1
 	end
@@ -508,6 +509,21 @@ Aerith1Script:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext AerithWinAfterBattleText
+    waitbutton
+    closetext
+    end
+AerithWinAfterBattleText:
+    text "You did well."
+
+    para "You just need"
+    line "to level up a"
+    cont "bit more."
+    done
 Aerith1SeenText:
     text "This place is"
     line "tranquil."
@@ -529,8 +545,9 @@ Aerith1SeenText:
     line "want the same"
     cont "thing."
 
-    para "It's hard to know"
-    line "how to help."
+    para "Let's help"
+    line "each other get"
+    cont "stronger"
     done
 Aerith1BeatenText:
     text "Well done"

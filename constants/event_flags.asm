@@ -385,6 +385,7 @@
     const EVENT_BEAT_BATTLE_TRIAL
     const EVENT_BEAT_BATTLE_TRIAL_MASTER
     const EVENT_BEAT_GREEN
+    const EVENT_TAKEN_BT_TOUR
 
     ; ======================================
     ; ======================================

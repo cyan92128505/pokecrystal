@@ -483,7 +483,6 @@ INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/Museum.asm"
 INCLUDE "maps/LavenderForest.asm"
 INCLUDE "maps/VermilionCity.asm"
-INCLUDE "maps/BlackthornEmysHouse.asm"
 
 SECTION "Map Scripts Overflow 3", ROMX
 
@@ -510,3 +509,4 @@ INCLUDE "maps/ViridianMart.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
 INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
+INCLUDE "maps/BlackthornEmysHouse.asm"

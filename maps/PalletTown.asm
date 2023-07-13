@@ -102,6 +102,7 @@ Aerith2Script:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, AERITH_2
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_AERITH_2
 	end
@@ -118,6 +119,23 @@ Aerith2Script:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext Aerith2WinAfterBattleText
+    waitbutton
+    closetext
+    end
+Aerith2WinAfterBattleText:
+    text "Not bad!"
+
+    para "You've gained"
+    line "levels."
+
+    para "Try looking for"
+    line "strong held items."
+    done
 Aerith2SeenText:
     text "Hey <PLAYER>!"
 

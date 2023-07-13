@@ -1466,7 +1466,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer STEVEN, MASTER_STEVEN
+    loadtrainer MYSTICALMAN, MASTER_EUSINE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1476,7 +1476,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CYNTHIA, MASTER_CYNTHIA
+    loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1493,7 +1493,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer LEON, MASTER_LEON
+    loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1503,7 +1503,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer BLUE, MASTER_SETO
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1513,7 +1513,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer GIOVANNI, MASTER_GIOVANNI
+    loadtrainer LEON, MASTER_LEON
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1530,7 +1530,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RIVAL2, MASTER_RIVAL
+    loadtrainer COOLTRAINERM, MASTER_TOBIAS
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1540,12 +1540,49 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CRYSTAL, MASTER_CRYSTAL
+    loadtrainer POKEFANM, CHRIS_CHAN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
 	writetext Trial12Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer BLUE, MASTER_SETO
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext AcceptPrize
+	waitbutton
+	verbosegiveitem AMBROSIA
+	writetext NowHeal
+	waitbutton
+	special HealParty
+	writetext Trial13Text
+	waitbutton
+	closetext
+
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer RIVAL2, MASTER_RIVAL
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial14Text
+	waitbutton
+	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CRYSTAL, MASTER_CRYSTAL
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext Trial15Text
 	waitbutton
 	closetext
 	winlosstext victoryText, defeatText

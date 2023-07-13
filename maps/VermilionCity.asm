@@ -615,6 +615,7 @@ YunaScriptVermilion:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, YUNA_2
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_YUNA_2
 	end
@@ -636,6 +637,23 @@ YunaScriptVermilion:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext Yuna2WinAfterBattleText
+    waitbutton
+    closetext
+    end
+Yuna2WinAfterBattleText:
+    text "You have got"
+    line "much stronger!"
+
+    para "When the time"
+    line "comes I know"
+    cont "these people can"
+    cont "count on you."
+    done
 YunaInvasionText:
     text "These people are"
     line "cruel and full"

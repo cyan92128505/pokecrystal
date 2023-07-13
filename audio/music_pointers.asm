@@ -122,5 +122,5 @@ Music:
 	dba Music_FinalBattle
 	dba Music_RedIndigoPlateau
 	dba Music_RedLavender
-	dba Music_Red_TrainerBattle
+	dba Music_Red_Dungeon
 	assert_table_length NUM_MUSIC_SONGS

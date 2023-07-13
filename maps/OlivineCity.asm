@@ -479,6 +479,7 @@ YunaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, YUNA_1
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_YUNA_1
 	end
@@ -495,6 +496,24 @@ YunaScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext YunaWinAfterBattleText
+    waitbutton
+    closetext
+    end
+YunaWinAfterBattleText:
+    text "Hey it's ok"
+
+    para "You just have"
+    line "to keep smiling."
+
+    para "even when it"
+    line "hurts inside."
+    done
+
 YunaSeenText:
     text "Hello."
 

@@ -179,5 +179,5 @@ INCLUDE "audio/music/redlavender.asm"
 
 SECTION "New Songs 2", ROMX
 
-INCLUDE "audio/music/redbattle.asm"
+INCLUDE "audio/music/reddungeon.asm"
 

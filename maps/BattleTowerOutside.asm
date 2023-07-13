@@ -130,6 +130,14 @@ BattleTowerOutsideText_DoorsOpen: ; unreferenced
 	done
 
 BTGrampsScript:
+    checkevent EVENT_TAKEN_BT_TOUR
+    iffalse .tour
+    opentext
+    writetext TakeTourAgain
+    yesorno
+    closetext
+    iffalse .end
+.tour
     opentext
     writetext WelcomeToBattleTower
     waitbutton
@@ -162,8 +170,19 @@ BTGrampsScript:
     disappear BATTLETOWEROUTSIDE_GRAMPS
     moveobject BATTLETOWEROUTSIDE_GRAMPS, 10, 28
     appear BATTLETOWEROUTSIDE_GRAMPS
+    setevent EVENT_TAKEN_BT_TOUR
     turnobject PLAYER, UP
+.end
     end
+
+TakeTourAgain:
+    text "I hope you are"
+    line "having fun!"
+
+    para "Would you like"
+    line "to take the"
+    cont "tour again?"
+    done
 
 WelcomeToBattleTower:
     text "Hello trainer!"
@@ -369,6 +388,26 @@ Movement_GrampsLeaves:
     step DOWN
     step_end
 
+BattleTowerTourScript1:
+    checkevent EVENT_TAKEN_BT_TOUR
+    iftrue .end
+    turnobject PLAYER, RIGHT
+    sjump BTGrampsScript
+.end
+    end
+
+BattleTowerTourScript2:
+    checkevent EVENT_TAKEN_BT_TOUR
+    iftrue .end
+    applymovement PLAYER, Movement_BTTour
+    turnobject PLAYER, RIGHT
+    sjump BTGrampsScript
+.end
+    end
+
+Movement_BTTour:
+    step RIGHT
+    step_end
 
 BattleTowerOutside_MapEvents:
 	db 0, 0 ; filler
@@ -386,6 +425,8 @@ BattleTowerOutside_MapEvents:
 	warp_event  15,  15, TRAINER_HOUSE_B1F, 6
 
 	def_coord_events
+	coord_event 8, 28, SCENE_ALWAYS, BattleTowerTourScript2
+	coord_event 9, 28, SCENE_ALWAYS, BattleTowerTourScript1
 
 	def_bg_events
 	bg_event 10, 12, BGEVENT_READ, BattleTowerOutsideSign

@@ -62,22 +62,55 @@ ArceusScript:
 .Credits
 	dontrestartmapmusic
 	reloadmapafterbattle
+	warp HALL_OF_ORIGIN, 11, 3
+	turnobject PLAYER, UP
 	setevent EVENT_CAUGHT_ARCEUS
     special FadeOutMusic
 	opentext
 	writetext CaughtArceusText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	;special FadeBlackQuickly
+	;special ReloadSpritesNoPalettes
 	disappear HALLOFORIGIN_ARCEUS
 	pause 15
-	special FadeInQuickly
-	pause 30
+	;special FadeInQuickly
+	;pause 30
+	appear HALLOFORIGIN_OAK
+	opentext
+	writetext OakBeatenArceusText
+	waitbutton
+	closetext
 	special HealParty
-	refreshscreen
+	;refreshscreen
 	credits
 	end
+OakBeatenArceusText:
+    text "<PLAYER>..."
+
+    para "You achieved the"
+    line "unprecedented."
+
+    para "You destiny is"
+    line "fulfilled beyond"
+    cont "your knowing."
+
+    para "Now contemplate"
+    line "the significance"
+    cont "of your great"
+    cont "achievement."
+
+    para "You approach"
+    line "the event"
+    cont "horizon of an"
+    cont "immortal rule."
+
+    para "Return to me"
+    line "when you are"
+    cont "ready to reach"
+    cont "the heights of"
+    cont "#MON LORD."
+    done
 ArceusText:
     text "<PLAYER>"
     line "Thine heart be"
@@ -333,9 +366,13 @@ MasterOakIntroText:
     cont "have passed my"
     cont "test."
 
+    para "None are destined"
+    line "to be a"
+    cont "#MON LORD."
+
     para "You however."
 
-    para "Perhaps you will."
+    para "Perhaps you are."
     done
 
 MasterOakBeatenText:
@@ -352,6 +389,9 @@ MasterOakOfferPrizeText:
     line "powers earned"
     cont "through life"
     cont "immortal."
+
+    para "You are a"
+    line "#MON LORD."
 
     para "Your body is now"
     line "indestructible"

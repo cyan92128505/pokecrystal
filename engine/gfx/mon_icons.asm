@@ -121,7 +121,7 @@ GetMenuMonIconPalette_PredeterminedShininess:
 	ld e, [hl]
 	pop af
 	jr c, .shiny
-	ld a, [wBeatenMasterOak]
+	ld a, [wBeatenLordOak]
 	and a
 	jr nz, .shiny
 	ld a, e

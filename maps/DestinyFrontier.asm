@@ -1,3 +1,21 @@
+    object_const_def
+    const DESTINYFRONTIER_CHRIS_CHAN
+    const DESTINYFRONTIER_YAMI
+    const DESTINYFRONTIER_SETO
+    const DESTINYFRONTIER_DRAKE
+    const DESTINYFRONTIER_ROCKET
+    const DESTINYFRONTIER_TOBIAS
+    const DESTINYFRONTIER_YUNA
+    const DESTINYFRONTIER_AIZEN
+    const DESTINYFRONTIER_XEHANORT
+    const DESTINYFRONTIER_AERITH
+    const DESTINYFRONTIER_RAT_GOD
+    const DESTINYFRONTIER_NURSE
+    const DESTINYFRONTIER_CLERK
+    const DESTINYFRONTIER_GUARD_1
+    const DESTINYFRONTIER_GUARD_2
+    const DESTINYFRONTIER_OAK
+
 DestinyFrontier_MapScripts:
 	def_scene_scripts
 
@@ -652,46 +670,93 @@ Guard2BlockText:
     cont "8 GYMS may pass."
     done
 
-GuideScript:
+OakScript:
     setevent EVENT_FRONTIER_INTRO
     faceplayer
     opentext
     checkevent EVENT_CAUGHT_MEWTWO
     iftrue .congrats
-    writetext IntroText
+    checkevent EVENT_BEAT_MASTER_OAK
+    iftrue .fightDone
+    writetext OakIntroText
+    yesorno
+    closetext
+    iffalse .refused
+.fight
+    winlosstext Oak2LoseText, Oak2WinText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+    loadtrainer POKEMON_PROF, MASTER_OAK
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	opentext
+	writetext Oak2AfterBattleText
+	waitbutton
+	closetext
+	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext Oak2AfterBattleText
     waitbutton
     closetext
     end
+.refused
+    opentext
+    writetext OakRefusedBattleText
+    waitbutton
+    closetext
+    end
+.fightDone
+    opentext
+    writetext Oak2AfterBattleText
+    waitbutton
+    closetext
+.offerRematch
+    opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+.end
+	end
 .congrats
     writetext CongratsText
     waitbutton
     closetext
-    end
+    sjump .offerRematch
 
-GuideEncounterScript:
+OakEncounterScript:
     checkevent EVENT_FRONTIER_INTRO
     iffalse .intro
     end
 .intro
     turnobject PLAYER, RIGHT
-    sjump GuideScript
+    turnobject DESTINYFRONTIER_OAK, LEFT
+    sjump OakScript
     end
 
-IntroText:
-    text "Welcome trainer!"
+OakIntroText:
+    text "Welcome <PLAYER>."
 
-    para "This is the great"
-    line "tournament!"
+    para "This is a place"
+    line "that exists outside"
+    cont "of your reality."
 
-    para "The strongest"
-    line "trainers from all"
-    cont "time and reality"
-    cont "are here."
+    para "Every person here"
+    line "is a #MON"
+    cont "MASTER in their"
+    cont "own right."
 
-    para "All battling for"
-    line "the prize of an"
-    cont "audience with the"
-    cont "organiser."
+    para "Even me if you"
+    line "would believe it."
+
+    para "All are battling"
+    line "to become the"
+    cont "GRAND MASTER."
 
     para "You will have to"
     line "beat eight GYMS."
@@ -714,17 +779,69 @@ IntroText:
 
     para "Finally moving on"
     line "to the current"
-    cont "winner."
+    cont "GRAND MASTER."
 
-    para "Good luck!"
+    para "Enemies here are"
+    line "strong."
+
+    para "Would you like"
+    line "me to show you"
+    cont "what I mean?"
     done
 
 CongratsText:
-    text "I knew you would"
-    line "do it!"
+    text "You have done it."
 
-    para "Um..."
-    line "Master <PLAYER>"
+    para "GRAND MASTER."
+
+    para "You must go now"
+    line "to the summit of"
+    cont "MT.SILVER."
+
+    para "There you can"
+    line "pass onto the"
+    cont "HALL OF ORIGIN."
+
+    para "I don't know"
+    line "what awaits you"
+    cont "there. But it"
+    cont "must be great"
+    cont "indeed."
+    done
+
+Oak2LoseText:
+    text "You are ready."
+    done
+
+Oak2WinText:
+    text "A great effort."
+    done
+
+Oak2AfterBattleText:
+    text "Well Done!"
+
+    para "In this place"
+    line "your party is"
+    cont "healed after every"
+    cont "fight win or"
+    cont "lose."
+
+    para "If you need to"
+    line "you can visit"
+    cont "BATTLE TOWER"
+    cont "to win"
+    cont "RARE CANDIES"
+    cont "and NUGGETS"
+    cont "to help you."
+
+    para "Good luck"
+    line "<PLAYER>!"
+    done
+
+OakRefusedBattleText:
+    text "You will find"
+    line "out for yourself"
+    cont "soon enough."
     done
 
 DestinyFrontier_MapEvents:
@@ -762,7 +879,7 @@ DestinyFrontier_MapEvents:
 	coord_event 30, 38, SCENE_ALWAYS, Guard1BlockScript
 	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript
 	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript
-	coord_event 30, 50, SCENE_ALWAYS, GuideEncounterScript
+	coord_event 30, 50, SCENE_ALWAYS, OakEncounterScript
 
 	def_bg_events
 
@@ -782,4 +899,4 @@ DestinyFrontier_MapEvents:
 	object_event 32, 42, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartScript, -1
 	object_event 31, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1
 	object_event 11,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1
-	object_event 31, 50, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideScript, -1
+	object_event 31, 50, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OakScript, -1

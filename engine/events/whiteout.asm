@@ -113,7 +113,7 @@ LoseWhiteOutMoney:
 	call Multiply
 ; Save the amount (capped at your total) in hMoneyTemp to print
 ; AndrewNote - lose no money if immortal
-    ld a, [wBeatenMasterOak]
+    ld a, [wBeatenLordOak]
     and a
     jr z, .notImmortal
     jr .take

@@ -3100,6 +3100,7 @@ AI_Smart_BatonPass:
 .encourage
 	dec [hl]
 	dec [hl]
+	dec [hl]
 	ret
 .discourage
     inc [hl]

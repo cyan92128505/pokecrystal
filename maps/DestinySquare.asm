@@ -9,11 +9,17 @@
     const DESTINYSQUARE_LEON
     const DESTINYSQUARE_ADAM
     const DESTINYSQUARE_MEWTWO
+   ; const DESTINYSQUARE_OAK
 
 DestinySquare_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+;	callback MAPCALLBACK_OBJECTS, .Oak
+
+;.Oak
+;    disappear DESTINYSQUARE_OAK
+;    endcallback
 
 MasterRivalScript:
 	faceplayer
@@ -344,16 +350,52 @@ MewtwoScript:
 	waitbutton
 	closetext
 	disappear DESTINYSQUARE_MEWTWO
-	;special FadeBlackQuickly
-	;disappear DESTINYSQUARE_MEWTWO
-	;special ReloadSpritesNoPalettes
-	;pause 15
-	;special FadeInQuickly
-	;pause 30
-	;special HealParty
-	warp DESTINY_PARK, 7, 10
-	;refreshscreen
+	;playsound SFX_ENTER_DOOR
+	;appear DESTINYSQUARE_OAK
+	;applymovement DESTINYSQUARE_OAK, Movement_OakApproaches
+	;opentext
+	;writetext DSOakText
+	;waitbutton
+	;closetext
+	special HealParty
+	warp DESTINY_FRONTIER, 30, 50
 	end
+
+;Movement_OakApproaches:
+;    step UP
+;    step UP
+;    step UP
+;    step UP
+;    step UP
+;    turn_head RIGHT
+;    step_end
+
+;Movement_PlayerFacesMewtwo:
+;    step UP
+;    step_end
+
+DSOakText:
+    text "You have done it!"
+
+    para "You are the"
+    line "GRAND MASTER."
+
+    para "Your ascension"
+    line "is not over yet."
+
+    para "Go now to the"
+    line "summit of"
+    cont "MT.SILVER."
+
+    para "There you can"
+    line "pass onto the"
+    cont "HALL OF ORIGIN."
+
+    para "I don't know"
+    line "what awaits you"
+    cont "there but it must"
+    cont "be great indeed."
+    done
 
 MewtwoCry:
     text "This world is"
@@ -463,6 +505,14 @@ Movement_DestinySquareTurnBack:
 	step DOWN
 	step_end
 
+;FightMewtwoScript:
+;    checkevent EVENT_CAUGHT_MEWTWO
+;    iftrue .end
+;    applymovement PLAYER, Movement_PlayerFacesMewtwo
+;    sjump MewtwoScript
+;.end
+;    end
+
 DestinySquare_MapEvents:
 	db 0, 0 ; filler
 
@@ -477,6 +527,7 @@ DestinySquare_MapEvents:
 
 	def_coord_events
 	coord_event  6,  6, SCENE_ALWAYS, FightAdamScript
+;	coord_event  6,  5, SCENE_ALWAYS, FightMewtwoScript
 	coord_event  6,  17, SCENE_ALWAYS, ChampionsBlockScript
 	coord_event  7,  17, SCENE_ALWAYS, ChampionsBlockScript
 
@@ -493,3 +544,4 @@ DestinySquare_MapEvents:
 	object_event  9, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterAdamScript, -1
 	object_event  6,  3, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CAUGHT_MEWTWO
+;	object_event  6,  8, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

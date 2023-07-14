@@ -894,7 +894,7 @@ endr
 	ld a, [wLinkMode] ; don't make shiny in link battle
 	and a
 	ret nz
-    ld a, [wBeatenMasterOak]
+    ld a, [wBeatenLordOak]
     and a
     jr nz, .shiny
     ret

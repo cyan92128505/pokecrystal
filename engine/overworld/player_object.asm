@@ -35,7 +35,7 @@ SpawnPlayer:
 	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
 	jr .continueMale
 .checkMasterOakMale
-	ld a, [wBeatenMasterOak]
+	ld a, [wBeatenLordOak]
 	and a
 	jr z, .normalColourMale
 	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT
@@ -58,7 +58,7 @@ SpawnPlayer:
 	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
 	jr .ok
 .checkMasterOakFemale
-	ld a, [wBeatenMasterOak]
+	ld a, [wBeatenLordOak]
 	and a
 	jr z, .normalColourFemale
 	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT

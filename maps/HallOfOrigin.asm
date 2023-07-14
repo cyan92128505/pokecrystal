@@ -32,7 +32,7 @@ HallOfOrigin_MapScripts:
 .hasArceus:
 	disappear HALLOFORIGIN_ARCEUS
 	appear HALLOFORIGIN_OAK
-	checkevent EVENT_BEAT_MASTER_OAK
+	checkevent EVENT_BEAT_LORD_OAK
 	iftrue .end
     appear HALLOFORIGIN_MEWTWO_POKEBALL
     clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
@@ -100,7 +100,7 @@ CaughtArceusText:
     done
 
 ArceusPokeBallScript:
-    checkevent EVENT_BEAT_MASTER_OAK
+    checkevent EVENT_BEAT_LORD_OAK
     iffalse .MustBeatOak
     checkevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
     iftrue .MustBeatOak
@@ -140,7 +140,7 @@ ReceivedArceusText:
 	done
 
 MewtwoPokeBallScript:
-    checkevent EVENT_BEAT_MASTER_OAK
+    checkevent EVENT_BEAT_LORD_OAK
     iffalse .MustBeatOak
     checkevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
     iftrue .MustBeatOak
@@ -188,7 +188,7 @@ MustBeatOakText:
 MasterOakScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_OAK
+	checkevent EVENT_BEAT_LORD_OAK
 	iffalse .Fight
     checkevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
     iftrue .FightDone
@@ -212,11 +212,11 @@ MasterOakScript:
 	clearevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	appear HALLOFORIGIN_MEWTWO_POKEBALL
 	clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-	setevent EVENT_BEAT_MASTER_OAK
+	setevent EVENT_BEAT_LORD_OAK
 	setval 0
 	writemem wInvading
 	setval 1
-	writemem wBeatenMasterOak
+	writemem wBeatenLordOak
 	;special FadeOutPalettes
 	special HealParty
 	;pause 15
@@ -239,7 +239,7 @@ MasterOakScript:
 .FightDone:
 	writetext MasterOakAfterBattleText
 	waitbutton
-	readmem wBeatenMasterOak
+	readmem wBeatenLordOak
 	ifequal 1, .revertImmortal
 	ifequal 0, .becomeImmortal
 .continueFightDone
@@ -258,7 +258,7 @@ MasterOakScript:
     iffalse .continueFightDone
     closetext
     setval 1
-    writemem wBeatenMasterOak
+    writemem wBeatenLordOak
     warp HALL_OF_ORIGIN, 11, 3
     turnobject PLAYER, UP
     opentext
@@ -272,7 +272,7 @@ MasterOakScript:
     iftrue .continueFightDone
     closetext
     setval 0
-    writemem wBeatenMasterOak
+    writemem wBeatenLordOak
     warp HALL_OF_ORIGIN, 11, 3
     turnobject PLAYER, UP
     opentext
@@ -293,46 +293,49 @@ OakWinAfterBattleText:
 MasterOakIntroText:
     text "Hello <PLAYER>!"
 
-    para "I am not the"
-    line "Professor OAK"
-    cont "you know."
+    para "I am one who once"
+    line "occupied a"
+    cont "configuration you"
+    cont "would know as"
+    cont "PROF OAK."
 
-    para "There are many"
-    line "#MON with"
-    cont "amazing powers"
-    cont "in this world."
+    para "Alas I have seen"
+    line "the birth and"
+    cont "demise of"
+    cont "universes beyond"
+    cont "count since then."
 
-    para "Some can grant"
-    line "eternal life."
+    para "I arrived in this"
+    line "state by way of"
+    cont "a relentless quest"
+    cont "for knowledge."
 
-    para "Some can command"
-    line "space, time and"
-    cont "reality."
+    para "There are #MON"
+    line "with great powers."
 
-    para "Near the end of"
-    line "my life I"
-    cont "sought these"
-    cont "#MON"
+    para "Command of time,"
+    line "space, reality,"
+    cont "life and death."
 
-    para "I lived now to"
-    line "see the end of"
-    cont "reality itself."
+    para "All these powers"
+    line "and more are now"
+    cont "exemplified"
+    cont "through me."
 
-    para "I have been to"
-    line "every possible"
-    cont "world."
+    para "I seek another."
 
-    para "I want to pass"
-    line "on my knowledge"
-    cont "to one who is"
-    cont "worthy."
+    para "One who might"
+    line "weld my great"
+    cont "powers."
 
-    para "I believe that"
-    line "person is you."
+    para "Some have come"
+    line "close but none"
+    cont "have passed my"
+    cont "test."
 
-    para "There is but"
-    line "one way to be"
-    cont "sure."
+    para "You however."
+
+    para "Perhaps you will."
     done
 
 MasterOakBeatenText:
@@ -340,66 +343,68 @@ MasterOakBeatenText:
     done
 
 MasterOakOfferPrizeText:
-    text "You have done"
-    line "it!"
+    text "You are"
+    line "victorious."
 
     para "I am defeated."
 
-    para "You have now"
-    line "ascended and"
-    cont "surpassed"
-    cont "mortal limits."
-
     para "I bestow upon"
-    line "you all my power!"
+    line "powers earned"
+    cont "through life"
+    cont "immortal."
 
     para "Your body is now"
     line "indestructible"
     cont "and immortal."
 
-    para "There are many"
-    line "perks in this"
-    cont "form."
-
     para "All your #MON"
-    line "will appear shiny"
+    line "shine with power"
     cont "regardless of"
     cont "their stats."
 
-    para "You also now"
-    line "have unlimited"
-    cont "money."
+    para "You have access"
+    line "to unlimited"
+    cont "resources."
 
     para "And no aggressive"
     line "trainer or #MON"
     cont "will dare to"
     cont "challenge you."
 
-    para "I also present"
+    para "Further I present"
     line "you with a"
     cont "fragment of"
-    cont "my knowledge."
+    cont "my power."
 
     para "I shall impart"
-    line "such knowledge"
-    cont "with every"
-    cont "defeat."
+    line "such power with"
+    cont "every defeat."
 
     para "Now choose."
     done
 
 MasterOakAfterBattleText:
-    text "Life is"
-    line "beautiful."
+    text "My existence has"
+    line "has found purpose"
+    cont "through you."
 
-    para "Together we"
-    line "shall shape"
-    cont "reality."
+    para "You shall live"
+    line "to view all"
+    cont "reality, all"
+    cont "space, time and"
+    cont "being as a"
+    cont "single, beautiful"
+    cont "instant."
 
-    para "All beings"
-    line "will know the"
-    cont "peace that we"
-    cont "do."
+    para "An instant that"
+    line "must be preserved"
+    cont "treasured and"
+    cont "protected."
+
+    para "You and you alone"
+    line "have the power to"
+    cont "actualise this"
+    cont "goal."
     done
 
 MasterOakBecomeMortalText:
@@ -554,11 +559,13 @@ BeatOthersFirstText:
     cont "to speak with"
     cont "ARCEUS."
 
-    para "We are all at"
-    line "our very"
-    cont "strongest!"
+    para "If you conquer"
+    line "ARCEUS..."
 
-    para "Let's have fun!"
+    para "The great one"
+    line "will no doubt"
+    cont "want to speak"
+    cont "to you."
     done
 
 MasterLanceScript:
@@ -615,16 +622,13 @@ LanceWinAfterBattleText:
     done
 
 MasterLanceSeenText:
-    text "An eternal"
-    line "tempest swells"
-    cont "within mine"
-    cont "heart."
+    text "You are strong"
+    line "<PLAYER>."
 
-    para "I must set"
-    line "aside thy ire."
-
-    para "I must temper"
-    line "thy ambitions."
+    para "With steadfast"
+    line "conviction I"
+    cont "knew you would"
+    cont "present yourself."
 
     para "Tis our destiny"
     line "to meet here."
@@ -642,13 +646,17 @@ MasterLanceBeatenText:
     done
 
 MasterLanceAfterBattleText:
-    text "My dragons and"
-    line "I are content"
-    cont "with who and"
-    cont "what we are."
+    text "The heart of a"
+    line "dragon knows no"
+    cont "fear, no worry,"
+    cont "no regret."
 
-    para "But you are"
-    line "meant to peirce"
+    para "You have the"
+    line "heart of a"
+    cont "dragon!"
+
+    para "You are destined"
+    line "to peirce through"
     cont "the heavens and"
     cont "raise above all."
     done
@@ -728,19 +736,17 @@ MasterBlueSeenText:
     para "I was such a"
     line "child."
 
-    para "Now I know my"
-    line "place in the"
-    cont "world."
+    para "Now I know the"
+    line "burden and the"
+    cont "power that comes"
+    cont "from a need to"
+    cont "protect those"
+    cont "who can not do"
+    cont "so themselves."
 
-    para "Now I see my"
-    line "weaknesses and"
-    cont "that makes me"
-    cont "stronger."
-
-    para "Still, part of"
-    line "me wishes I"
-    cont "could have that"
-    cont "old confidence"
+    para "Still, I yearn"
+    line "to be filled with"
+    cont "my old confidence"
     cont "again."
 
     para "Maybe you can"
@@ -764,6 +770,21 @@ MasterBlueAfterBattleText:
     line "used to say..."
 
     para "Smell ya later!"
+
+    para "Defeat RED!"
+
+    para "Then conquer"
+    line "ARCEUS."
+
+    para "Then he will"
+    line "appear."
+
+    para "And you will"
+    line "see how far all"
+    cont "of us still have"
+    cont "to go in our"
+    cont "quest to be the"
+    cont "best."
     done
 
 BeatOthersFirstBlueText:
@@ -840,29 +861,37 @@ GreenWinAfterBattleText:
     done
 
 MasterGreenSeenText:
-    text "Many years ago"
-    line "I started my"
-    cont "journey from"
-    cont "PALLET TOWN."
+    text "Always I have"
+    line "lived my life"
+    cont "in the shadow"
+    cont "of others."
 
-    para "A few months"
-    line "later two more"
-    cont "trainers begun."
+    para "Always chasing"
+    line "the success of"
+    cont "others."
 
-    para "RED and BLUE."
+    para "Coveting the"
+    line "destiny of"
+    cont "others."
 
-    para "They had"
-    line "unnatural talent."
+    para "I never stopped"
+    line "to consider my"
+    cont "destiny."
 
-    para "Now they are"
-    line "IMMORTALS."
+    para "Never allowed"
+    line "myself to be me"
+    cont "without guilt."
 
-    para "With their"
-    line "silver aura."
+    para "Now I know who"
+    line "I am."
 
-    para "I am here to"
-    line "prove I can"
-    cont "do it too!"
+    para "I will never be"
+    line "anyone else."
+
+    para "I am GREEN."
+
+    para "A trainer from"
+    line "PALLET TOWN."
     done
 
 MasterGreenBeatenText:
@@ -878,11 +907,16 @@ MasterGreenAfterBattleText:
     cont "and beat RED"
     cont "and BLUE!"
 
-    para "They think too"
-    line "highly of"
-    cont "themselves now"
-    cont "that they are"
-    cont "IMMORTALS."
+    para "Let them know"
+    line "the endless"
+    cont "struggle of"
+    cont "chasing the"
+    cont "destiny of"
+    cont "another."
+
+    para "Though I think"
+    line "they may already"
+    cont "do."
     done
 
 RematchTextHallOfOrigin:

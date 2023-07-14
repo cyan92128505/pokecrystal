@@ -26,7 +26,7 @@ MaxMoney:
 	dt MAX_MONEY
 
 TakeMoney::
-    ld a, [wBeatenMasterOak]
+    ld a, [wBeatenLordOak]
     and a
     jr z, .take
     ret

@@ -48,6 +48,7 @@ Oak:
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
+	setevent EVENT_BEAT_OAK
 	sjump .endbattle
 .lose
     reloadmap
@@ -254,6 +255,27 @@ OakOpenMtSilverText:
 
 	para "reach MT.SILVER"
 	line "from there."
+
+	para "In MT.SILVER you"
+	line "will find RED."
+
+	para "He is the most"
+	line "powerful trainer"
+	cont "in the world."
+
+	para "I recently sent"
+	line "another trainer"
+	cont "there to give"
+	cont "him a challenge."
+
+	para "But I think you"
+	line "might be stronger"
+	cont "than either of"
+	cont "them."
+
+	para "If you beat him"
+	line "you will be a"
+	cont "#MON MASTER."
 	done
 
 OakNoKantoBadgesText:

@@ -61,8 +61,11 @@ VenusaurEvosAttacks:
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
-	db 41, GROWTH
-	db 46, SYNTHESIS
+	db 30, LEAF_BLADE
+	db 33, SLUDGE_BOMB
+	db 37, POISON_JAB
+	db 40, GROWTH
+	db 45, SYNTHESIS
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -2128,10 +2131,11 @@ AerodactylEvosAttacks:
 	db 10, DRAGON_RAGE
 	db 15, BITE
 	db 22, SUPERSONIC
-	db 29, ANCIENTPOWER
-	db 36, SCARY_FACE
-	db 40, ROCK_SLIDE
-	db 43, DOUBLE_EDGE
+	db 27, SCARY_FACE
+	db 30, ANCIENTPOWER
+	db 33, CRUNCH
+	db 35, ROCK_SLIDE
+	db 40, DOUBLE_EDGE
 	db 50, BRAVE_BIRD
 	db 0 ; no more level-up moves
 

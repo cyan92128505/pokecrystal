@@ -4191,7 +4191,7 @@ BattleCheckPlayerShininess:
 	ld a, [wLinkMode] ; don't make shiny in link battle
 	and a
 	jr nz, .normal
-    ld a, [wBeatenMasterOak]
+    ld a, [wBeatenLordOak]
     and a
     jr z, .normal
     scf

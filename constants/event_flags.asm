@@ -386,6 +386,8 @@
     const EVENT_BEAT_BATTLE_TRIAL_MASTER
     const EVENT_BEAT_GREEN
     const EVENT_TAKEN_BT_TOUR
+    const EVENT_BEAT_MASTER_OAK
+    const EVENT_BEAT_OAK
 
     ; ======================================
     ; ======================================
@@ -1594,7 +1596,7 @@
 	const EVENT_BEAT_SILVER_CAVE_RIVAL
 	const EVENT_BEAT_SILVER_CAVE_EUSINE
 	const EVENT_BEAT_HOEN_ARMY
-	const EVENT_BEAT_MASTER_OAK
+	const EVENT_BEAT_LORD_OAK
 	const EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	const EVENT_MEWTWO_POKEBALL_NOT_PRESENT
 	const EVENT_BEAT_MASTER_RED

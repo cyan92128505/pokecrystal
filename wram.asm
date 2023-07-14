@@ -2990,7 +2990,7 @@ wPokegearFlags::
 	db
 wRadioTuningKnob:: db
 wExpShareToggle:: db
-wBeatenMasterOak:: db
+wBeatenLordOak:: db
 wWhichRegisteredItem:: db
 wRegisteredItem:: db
 

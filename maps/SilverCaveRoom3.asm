@@ -114,34 +114,35 @@ Red:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	special FadeOutMusic
-	checkevent EVENT_BEAT_ASH
-	iftrue .beatenAsh
 	opentext
-	writetext RedNotBeatenAshText
-.beatenAsh
-	opentext
-	writetext RedLeavesText
+	writetext RematchRefuseTextRed
 	waitbutton
 	closetext
 	special HealParty
-	refreshscreen
-	checkevent EVENT_BEAT_ASH
-	iffalse .skipCredits
 	checkevent EVENT_BEAT_RED
-	iftrue .skipCredits
+	iftrue .skip_credits
 	setevent EVENT_BEAT_RED
+	applymovement SILVERCAVEROOM3_ASH, Movement_AshFinalMove
+	opentext
+	writetext PokemonMasterText
+	waitbutton
+	closetext
+	turnobject SILVERCAVEROOM3_RED, DOWN
+	opentext
+	writetext PokemonMasterQuestText
+	waitbutton
+	closetext
+	refreshscreen
 	credits
-.skipCredits
 	end
-.FightDone:
-	checkevent EVENT_BEAT_ASH
-	iftrue .beatenAshFightDone
-	writetext RedNotBeatenAshText
+.skip_credits
+    opentext
+    writetext RematchRefuseTextRed
 	waitbutton
     closetext
     end
-.beatenAshFightDone
-	writetext RedLeavesText
+.FightDone:
+	writetext RematchRefuseTextRed
 	waitbutton
     closetext
 	opentext
@@ -160,7 +161,7 @@ Ash:
     checkevent EVENT_BEAT_ASH
     iftrue .FightDone
 .fight
-	writetext AshSeenText
+	writetext AshFightText
 	waitbutton
 	closetext
 	winlosstext AshWinLossText, AshWinLossText
@@ -170,38 +171,22 @@ Ash:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	special FadeOutMusic
-	checkevent EVENT_BEAT_RED
-	iftrue .beatenRed
-	opentext
-	writetext AshNotBeatenRedText
-	waitbutton
-	closetext
-	special HealParty
-	end
-.beatenRed
-	opentext
-	writetext AshLeavesText
-	waitbutton
-	closetext
-	special HealParty
-	refreshscreen
-	checkevent EVENT_BEAT_RED
-	iffalse .skipCredits
-	checkevent EVENT_BEAT_ASH
-	iftrue .skipCredits
 	setevent EVENT_BEAT_ASH
-	credits
-.skipCredits
+	opentext
+	writetext AshBeatenText
+	waitbutton
+	closetext
+	special HealParty
 	end
 .FightDone:
     checkevent EVENT_BEAT_RED
 	iftrue .beatenRedFightDone
-	writetext AshNotBeatenRedText
+	writetext AshLeavesText
 	waitbutton
 	closetext
 	end
 .beatenRedFightDone
-	writetext AshLeavesText
+	writetext AshFinalText
 	waitbutton
     closetext
 	opentext
@@ -240,39 +225,6 @@ RedWinWinText:
 	text "…"
 	done
 
-RedNotBeatenAshText:
-    text "<……>"
-
-    para "The other..."
-
-    para "Defeat him..."
-
-    para "Then you will be"
-    line "the strongest."
-    done
-
-RedLeavesText:
-	text "<……>"
-	line "You are the"
-	cont "strongest."
-
-	para "In this world."
-
-	para "But that's not"
-	line "enough."
-
-	para "Enter now the"
-	line "tournament at"
-	cont "MT SILVER."
-
-	para "Prove yourself"
-	line "the strongest"
-	cont "in all worlds."
-
-	para "The you can"
-	line "pass beyond."
-	done
-
 RematchTextRed:
     text "<……>"
 
@@ -283,35 +235,6 @@ RematchRefuseTextRed:
     text "<……>"
     done
 
-AshSeenText:
-	text "Hey I'm ASH from"
-	line "PALLET TOWN."
-
-	para "After I won the"
-	line "CHAMPIONS LEAGUE"
-	cont "I became the"
-	cont "strongest of all"
-	cont "trainers."
-
-	para "I came here to"
-	line "find a trainer"
-	cont "I could fight."
-
-	para "This guy is just"
-	line "like me."
-
-	para "We will battle"
-	line "and learn lots"
-	cont "from each other."
-
-	para "I think I could"
-	line "learn much from"
-	cont "battling you"
-	cont "too."
-
-	para "Let's go!"
-	done
-
 AshWinLossText:
 	text "You are really"
 	line "good!"
@@ -321,20 +244,6 @@ AshWinWinText:
 	text "You are really"
 	line "good!"
 	done
-
-AshNotBeatenRedText:
-    text "You are stronger"
-    line "than me!"
-
-    para "You may be the"
-    line "strongest of all"
-    cont "trainers!"
-
-    para "If you can beat"
-    line "that other guy"
-    cont "I think you will"
-    cont "be."
-    done
 
 AshLeavesText:
 	text "You have beaten"
@@ -395,6 +304,166 @@ Movement_SilverCave3TurnBack:
 	step DOWN
 	step_end
 
+FightAshScript1:
+    checkevent EVENT_BEAT_ASH
+    iftrue .end
+    applymovement PLAYER, Movement_PlayerToAsh1
+    sjump FightAshScript
+.end
+    end
+
+FightAshScript2:
+    checkevent EVENT_BEAT_ASH
+    iftrue .end
+    applymovement PLAYER, Movement_PlayerToAsh2
+    sjump FightAshScript
+.end
+    end
+
+FightAshScript:
+    pause 20
+    showemote EMOTE_SHOCK, SILVERCAVEROOM3_RED_PIKACHU, 15
+    turnobject SILVERCAVEROOM3_RED, DOWN
+    showemote EMOTE_SHOCK, SILVERCAVEROOM3_ASH_PIKACHU, 15
+    turnobject SILVERCAVEROOM3_ASH, DOWN
+    pause 10
+    applymovement SILVERCAVEROOM3_ASH, Movement_AshToPlayer
+    opentext
+    writetext AshFightText
+    waitbutton
+    closetext
+    winlosstext AshWinLossText, AshWinLossText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RED, ASH
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	special FadeOutMusic
+	opentext
+	writetext AshBeatenText
+	waitbutton
+	closetext
+	applymovement SILVERCAVEROOM3_ASH, Movement_AshBack
+	turnobject SILVERCAVEROOM3_RED, RIGHT
+	end
+
+Movement_AshToPlayer:
+    step LEFT
+    step DOWN
+    step_end
+
+ Movement_AshBack:
+     step UP
+     step RIGHT
+     turn_head LEFT
+     step_end
+
+AshFightText:
+    text "Hey I'm ASH"
+    line "from PALLET town."
+
+    para "Though not the"
+    line "same PALLET town"
+    cont "you know."
+
+    para "PROF OAK sent me"
+    line "here."
+
+    para "He said a trainer"
+    line "like me needed a"
+    cont "challenge."
+
+    para "Did he send you"
+    line "too?"
+
+    para "This guy RED seems"
+    line "tough."
+
+    para "Whoever beats him"
+    line "becomes the most"
+    cont "powerful trainer"
+    cont "in the world."
+
+    para "A #MON"
+    line "MASTER!"
+
+    para "Tell you what!"
+
+    para "How about we have"
+    line "a battle and the"
+    cont "winner faces RED."
+    done
+
+AshBeatenText:
+    text "Wow you are"
+    line "really strong!"
+
+    para "Go on and fight"
+    line "RED."
+
+    para "This is a battle"
+    line "I can't wait to"
+    cont "see!"
+    done
+
+AshFinalText:
+    text "You are a"
+    line "#MON MASTER!"
+
+    para "Well done!"
+
+    para "I hear there is"
+    line "a special event"
+    cont "full of #MON"
+    cont "MASTERS."
+
+    para "The greatest of"
+    line "MASTERS is called"
+    cont "the GRAND MASTER."
+
+    para "Maybe that could"
+    line "be you!"
+    done
+
+Movement_PlayerToAsh1:
+    step RIGHT
+Movement_PlayerToAsh2:
+    step UP
+    step UP
+    step_end
+
+Movement_AshFinalMove:
+    step LEFT
+    step_end
+
+PokemonMasterText:
+    text "You did it!!"
+
+    para "You are the"
+    line "strongest in"
+    cont "the world."
+
+    para "You are a"
+    line "#MON MASTER!"
+
+    para "Well done!"
+    done
+
+PokemonMasterQuestText:
+    text "There is a"
+    line "tournament."
+
+    para "Where everyone is"
+    line "a #MON MASTER."
+
+    para "The strongest of"
+    line "them is called the"
+    cont "GRAND MASTER."
+
+    para "That should be"
+    line "your next goal."
+    done
+
 SilverCaveRoom3_MapEvents:
 	db 0, 0 ; filler
 
@@ -404,6 +473,8 @@ SilverCaveRoom3_MapEvents:
 	warp_event  10, 3, ORIGIN_ROAD_SOUTH, 3
 
 	def_coord_events
+	coord_event 9, 14, SCENE_ALWAYS, FightAshScript1
+	coord_event 10, 14, SCENE_ALWAYS, FightAshScript2
 	coord_event 9, 4, SCENE_ALWAYS, SilverCave3BlockScript
 	coord_event 10, 4, SCENE_ALWAYS, SilverCave3BlockScript
 

@@ -328,16 +328,11 @@ SilverCaveOutsideBlockScript:
 SilverCaveOutsideBlockText:
     text "A voice speaks!"
 
-    para "This is a gateway"
-    line "to a tournament"
-    cont "for the greatest"
-    cont "trainers across"
-    cont "time and reality."
+    para "Only #MON"
+    line "MASTERS may enter."
 
-    para "Only the"
-    line "strongest"
-    cont "trainers in the"
-    cont "world may pass."
+    para "And become the"
+    line "GRAND MASTER."
     done
 
 Movement_SilverCaveOutsideTurnBack:
@@ -548,8 +543,8 @@ SilverCaveCrystalIntroText:
     para "So now that you"
     line "have saved us"
     cont "all you are here"
-    cont "to fight some very"
-    cont "strong trainers."
+    cont "to fight some guy"
+    cont "called RED."
 
     para "To see if you are"
     line "the strongest"
@@ -566,24 +561,19 @@ SilverCaveSilverBattleText:
     para "Strongest in"
     line "the world."
 
-    para "Where were these"
-    line "other trainers"
-    cont "when the world"
-    cont "needed them."
+    para "Where was he"
+    line "when the world"
+    cont "needed him."
 
     para "Hiding away here."
 
     para "You are stronger"
-    line "than any of them!"
+    line "than anyone!"
 
     para "But we have"
     line "become much"
     cont "stronger too on"
     cont "our travels."
-
-    para "WALLACE wouldn't"
-    line "have a chance"
-    cont "against me now."
 
     para "I'm sure you are"
     line "still stronger."
@@ -809,18 +799,18 @@ SilverCaveSilverGoodbyeText:
 
     para "But not before"
     line "you waltz in there"
-    cont "and crush those"
-    cont "trainers the same"
-    cont "way you have done"
-    cont "with me everytime"
-    cont "we have fought."
+    cont "and crush that"
+    cont "RED the same way"
+    cont "you have done with"
+    cont "me everytime we"
+    cont "have fought."
 
     para "Good luck Mr"
     line "#MON MASTER."
     done
 
 SilverCaveCrystalGoodbyeText:
-    text "They wont stand"
+    text "RED wont stand"
     line "a chance against"
     cont "you."
 

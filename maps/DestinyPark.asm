@@ -22,6 +22,7 @@ MasterBrockScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BROCK, MASTER_BROCK
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_BROCK
 	;opentext
@@ -42,6 +43,14 @@ MasterBrockScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterMistyScript:
 	faceplayer
@@ -56,6 +65,7 @@ MasterMistyScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer MISTY, MASTER_MISTY
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_MISTY
 	;opentext
@@ -76,6 +86,14 @@ MasterMistyScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterSurgeScript:
 	faceplayer
@@ -90,6 +108,7 @@ MasterSurgeScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LT_SURGE, MASTER_SURGE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_SURGE
 	;opentext
@@ -110,6 +129,14 @@ MasterSurgeScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterErikaScript:
 	faceplayer
@@ -124,6 +151,7 @@ MasterErikaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ERIKA, MASTER_ERIKA
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_ERIKA
 	;opentext
@@ -144,6 +172,14 @@ MasterErikaScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterJanineScript:
 	faceplayer
@@ -158,6 +194,7 @@ MasterJanineScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer JANINE, MASTER_JANINE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_JANINE
 	;opentext
@@ -178,6 +215,14 @@ MasterJanineScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterWillScript:
 	faceplayer
@@ -192,6 +237,7 @@ MasterWillScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer WILL, MASTER_WILL
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_WILL
 	;opentext
@@ -212,6 +258,14 @@ MasterWillScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterBlaineScript:
 	faceplayer
@@ -226,6 +280,7 @@ MasterBlaineScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BLAINE, MASTER_BLAINE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_BLAINE
 	;opentext
@@ -246,6 +301,14 @@ MasterBlaineScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterFalknerScript:
 	faceplayer
@@ -260,6 +323,7 @@ MasterFalknerScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer FALKNER, MASTER_FALKNER
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_FALKNER
 	;opentext
@@ -280,6 +344,14 @@ MasterFalknerScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterBugsyScript:
 	faceplayer
@@ -294,6 +366,7 @@ MasterBugsyScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BUGSY, MASTER_BUGSY
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_BUGSY
 	;opentext
@@ -314,6 +387,14 @@ MasterBugsyScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterWhitneyScript:
 	faceplayer
@@ -328,6 +409,7 @@ MasterWhitneyScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer WHITNEY, MASTER_WHITNEY
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_WHITNEY
 	;opentext
@@ -348,6 +430,14 @@ MasterWhitneyScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterMortyScript:
 	faceplayer
@@ -362,6 +452,7 @@ MasterMortyScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer MORTY, MASTER_MORTY
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_MORTY
 	;opentext
@@ -382,6 +473,14 @@ MasterMortyScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterChuckScript:
 	faceplayer
@@ -396,6 +495,7 @@ MasterChuckScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CHUCK, MASTER_CHUCK
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CHUCK
 	;opentext
@@ -416,6 +516,14 @@ MasterChuckScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterJasmineScript:
 	faceplayer
@@ -430,6 +538,7 @@ MasterJasmineScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer JASMINE, MASTER_JASMINE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_JASMINE
 	;opentext
@@ -450,6 +559,14 @@ MasterJasmineScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterPryceScript:
 	faceplayer
@@ -464,6 +581,7 @@ MasterPryceScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer PRYCE, MASTER_PRYCE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_PRYCE
 	;opentext
@@ -484,6 +602,14 @@ MasterPryceScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterClairScript:
 	faceplayer
@@ -498,6 +624,7 @@ MasterClairScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CLAIR, MASTER_CLAIR
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CLAIR
 	;opentext
@@ -518,6 +645,14 @@ MasterClairScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 MasterEusineScript:
 	faceplayer
@@ -532,6 +667,7 @@ MasterEusineScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer MYSTICALMAN, MASTER_EUSINE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_EUSINE
 	;opentext
@@ -552,6 +688,14 @@ MasterEusineScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleText
+    waitbutton
+    closetext
+    end
 
 DefaultSeenText:
     text "Let's fight!"
@@ -573,6 +717,11 @@ RematchTextDestinyPark:
 RematchRefuseTextDestinyPark:
     text "I will always"
     line "be here."
+    done
+
+DefaultLoseAfterBattleText:
+    text "Better luck"
+    line "next time."
     done
 
 SetUpCal:

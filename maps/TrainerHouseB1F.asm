@@ -673,6 +673,7 @@ GivePrize:
     ifequal 10, .RareCandy
     ifequal 69, .QuickClaw
     ifequal 70, .BrightPowder
+    ifequal 99, .LuckyEgg
 
 ; 2% prizes
     ifequal 11, .PinkBow
@@ -761,11 +762,10 @@ GivePrize:
     ifequal 92, .MaxRevive
     ifequal 93, .MaxRevive
     ifequal 94, .MaxRevive
-    ifequal 95, .MaxRevive
+    ifequal 95, .MaxElixer
     ifequal 96, .MaxElixer
     ifequal 97, .MaxElixer
     ifequal 98, .MaxElixer
-    ifequal 99, .MaxElixer
     end
 
 .Ambrosia:
@@ -888,6 +888,9 @@ GivePrize:
 .BrightPowder:
     verbosegiveitem BRIGHTPOWDER
     sjump .done
+.LuckyEgg:
+    verbosegiveitem LUCKY_EGG
+    sjump .done
 .FullRestore:
     verbosegiveitem FULL_RESTORE
     sjump .done
@@ -951,7 +954,7 @@ BattleMirrorReceptionistScript:
 
 GiveBattleMirrorPrize:
     opentext
-    random 15
+    random 14
     ifequal 0, .StarPiece
     ifequal 1, .SilverLeaf
     ifequal 2, .GoldLeaf
@@ -961,12 +964,11 @@ GiveBattleMirrorPrize:
     ifequal 6, .SlowpokeTail
     ifequal 7, .BigPearl
     ifequal 8, .RageCandyBar
-    ifequal 9, .LuckyEgg
-    ifequal 10, .SacredAsh
-    ifequal 11, .BrickPiece
-    ifequal 12, .MirageMail
-    ifequal 13, .MusicMail
-    ifequal 14, .MiracleBerry
+    ifequal 9, .SacredAsh
+    ifequal 10, .BrickPiece
+    ifequal 11, .MirageMail
+    ifequal 12, .MusicMail
+    ifequal 13, .MiracleBerry
 .StarPiece
     verbosegiveitem STAR_PIECE
     closetext
@@ -1001,10 +1003,6 @@ GiveBattleMirrorPrize:
     end
 .RageCandyBar
     verbosegiveitem RAGECANDYBAR
-    closetext
-    end
-.LuckyEgg
-    verbosegiveitem LUCKY_EGG
     closetext
     end
 .SacredAsh

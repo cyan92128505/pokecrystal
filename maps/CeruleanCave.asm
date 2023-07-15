@@ -56,6 +56,21 @@ CeruleanCaveHiddenChoiceBand:
 
 CeruleanCaveHiddenChoiceSpecs:
 	hiddenitem CHOICE_SPECS, EVENT_CERULEAN_CAVE_HIDDEN_CHOICE_SPECS
+
+CeruleanCaveHiddenLuckyEgg:
+	hiddenitem LUCKY_EGG, EVENT_CERULEAN_CAVE_HIDDEN_LUCKY_EGG
+
+CeruleanCaveHiddenBrightPowder:
+	hiddenitem BRIGHTPOWDER, EVENT_CERULEAN_CAVE_HIDDEN_BRIGHT_POWDER
+
+CeruleanCaveHiddenQuickClaw:
+	hiddenitem QUICK_CLAW, EVENT_CERULEAN_CAVE_HIDDEN_QUICK_CLAW
+
+CeruleanCaveHiddenScopeLens:
+	hiddenitem SCOPE_LENS, EVENT_CERULEAN_CAVE_HIDDEN_SCOPE_LENS
+
+CeruleanCaveHiddenKingsRock:
+	hiddenitem KINGS_ROCK, EVENT_CERULEAN_CAVE_HIDDEN_KINGS_ROCK
 	
 CeruleanCaveFieldMon1Script:
 	trainer RAICHU, FIELD_MON, EVENT_FIELD_MON_1, CeruleanCavePokemonAttacksText, 53, 0, .script
@@ -304,6 +319,11 @@ CeruleanCave_MapEvents:
 	bg_event 19,  3, BGEVENT_ITEM, CeruleanCaveHiddenFocusSash
 	bg_event 10, 34, BGEVENT_ITEM, CeruleanCaveHiddenChoiceBand
 	bg_event 19, 39, BGEVENT_ITEM, CeruleanCaveHiddenChoiceSpecs
+	bg_event  5, 37, BGEVENT_ITEM, CeruleanCaveHiddenLuckyEgg
+	bg_event  7, 27, BGEVENT_ITEM, CeruleanCaveHiddenBrightPowder
+	bg_event 24, 37, BGEVENT_ITEM, CeruleanCaveHiddenQuickClaw
+	bg_event 27, 26, BGEVENT_ITEM, CeruleanCaveHiddenScopeLens
+	bg_event 11, 25, BGEVENT_ITEM, CeruleanCaveHiddenKingsRock
 
 	def_object_events
 	object_event 28, 46, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCaveAizenScript, -1

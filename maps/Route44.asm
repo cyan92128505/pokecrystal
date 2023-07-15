@@ -421,7 +421,7 @@ Route44LifeOrb:
 	itemball LIFE_ORB
 
 Route44HiddenAmbrosia:
-	hiddenitem AMBROSIA, EVENT_ROUTE_44_HIDDEN_AMBROSIA
+	hiddenitem LUCKY_EGG, EVENT_ROUTE_44_HIDDEN_LUCKY_EGG
 
 FisherWilton1SeenText:
 	text "Aack! You made me"

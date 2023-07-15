@@ -34,10 +34,10 @@ SniperPokemon:
     db BISHARP
     db HORSEA
     db SEADRA
-    db KINGDRA
+   ; db KINGDRA
     db GIBLE
     db GABITE
-    db GARCHOMP
+    ;db GARCHOMP
     db -1
 
 SuperLuckPokemon:
@@ -45,10 +45,10 @@ SuperLuckPokemon:
     db HONCHKROW
     db BELLSPROUT
     db WEEPINBELL
-    db VICTREEBEL
+   ; db VICTREEBEL
     db CHARMANDER
     db CHARMELEON
-    db CHARIZARD
+   ; db CHARIZARD
     db -1
 
 SereneGracePokemon:

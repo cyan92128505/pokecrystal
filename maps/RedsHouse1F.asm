@@ -18,6 +18,7 @@ RedsMom:
 	writetext RedsMomText1
 	waitbutton
 	closetext
+	verbosegiveitem LUCKY_EGG
 	setevent EVENT_MET_REDS_MOM
 	end
 .MetAlready:

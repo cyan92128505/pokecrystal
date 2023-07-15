@@ -34,6 +34,7 @@ MasterRivalScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, MASTER_RIVAL
 	startbattle
+    ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_RIVAL
 	;opentext
@@ -54,6 +55,14 @@ MasterRivalScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterCrystalScript:
 	faceplayer
@@ -68,6 +77,7 @@ MasterCrystalScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, MASTER_CRYSTAL
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CRYSTAL
 	;opentext
@@ -88,6 +98,14 @@ MasterCrystalScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterCynthiaScript:
 	faceplayer
@@ -102,6 +120,7 @@ MasterCynthiaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CYNTHIA
 	;opentext
@@ -122,6 +141,14 @@ MasterCynthiaScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterStevenScript:
 	faceplayer
@@ -136,6 +163,7 @@ MasterStevenScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_STEVEN
 	;opentext
@@ -156,6 +184,14 @@ MasterStevenScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterWallaceScript:
 	faceplayer
@@ -170,6 +206,7 @@ MasterWallaceScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer WALLACE, MASTER_WALLACE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_WALLACE
 	;opentext
@@ -190,6 +227,14 @@ MasterWallaceScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterDianthaScript:
 	faceplayer
@@ -204,6 +249,7 @@ MasterDianthaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BEAUTY, MASTER_DIANTHA
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_DIANTHA
 	;opentext
@@ -224,6 +270,14 @@ MasterDianthaScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterAlderScript:
 	faceplayer
@@ -238,6 +292,7 @@ MasterAlderScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer HIKER, MASTER_ALDER
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_ALDER
 	;opentext
@@ -258,6 +313,14 @@ MasterAlderScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterLeonScript:
 	faceplayer
@@ -272,6 +335,7 @@ MasterLeonScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LEON, MASTER_LEON
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_LEON
 	;opentext
@@ -292,6 +356,14 @@ MasterLeonScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MasterAdamScript:
 	faceplayer
@@ -306,6 +378,7 @@ MasterAdamScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ADAM, MASTER_ADAM
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_ADAM
 	;opentext
@@ -326,6 +399,14 @@ MasterAdamScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MewtwoScript:
 	opentext
@@ -337,6 +418,7 @@ MewtwoScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon MEWTWO, 100
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
     setval MEWTWO
 	special MonCheck
@@ -360,6 +442,14 @@ MewtwoScript:
 	special HealParty
 	warp DESTINY_FRONTIER, 30, 50
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 ;Movement_OakApproaches:
 ;    step UP
@@ -459,6 +549,11 @@ RematchTextDestinySquare:
 RematchRefuseTextDestinySquare:
     text "I will always"
     line "be here."
+    done
+
+DefaultLoseAfterBattleTextDestinySquare:
+    text "Better luck"
+    line "next time."
     done
 
 FightAdamScript:

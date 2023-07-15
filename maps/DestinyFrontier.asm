@@ -208,6 +208,7 @@ MasterChrisChanScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEFANM, MASTER_CHRIS_CHAN
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CHRIS_CHAN
 	special HealParty
@@ -224,6 +225,14 @@ MasterChrisChanScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterYamiScript:
 	faceplayer
@@ -238,6 +247,7 @@ MasterYamiScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, MASTER_YAMI
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_YAMI
 	special HealParty
@@ -254,6 +264,14 @@ MasterYamiScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterSetoScript:
 	faceplayer
@@ -268,6 +286,7 @@ MasterSetoScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BLUE, MASTER_SETO
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_SETO
 	special HealParty
@@ -284,6 +303,14 @@ MasterSetoScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterDrakeScript:
 	faceplayer
@@ -298,6 +325,7 @@ MasterDrakeScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SOLDIER, MASTER_DRAKE
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_DRAKE
 	special HealParty
@@ -314,6 +342,14 @@ MasterDrakeScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterExecutiveFScript:
 	faceplayer
@@ -328,6 +364,7 @@ MasterExecutiveFScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer EXECUTIVEF, MASTER_EXECUTIVEF
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_EXECUTIVEF
 	special HealParty
@@ -344,6 +381,14 @@ MasterExecutiveFScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterTobiasScript:
 	faceplayer
@@ -358,6 +403,7 @@ MasterTobiasScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer COOLTRAINERM, MASTER_TOBIAS
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_TOBIAS
 	special HealParty
@@ -374,6 +420,14 @@ MasterTobiasScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterYunaScript:
 	faceplayer
@@ -388,6 +442,7 @@ MasterYunaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, MASTER_YUNA
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_YUNA
 	special HealParty
@@ -404,6 +459,14 @@ MasterYunaScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterAizenScript:
 	faceplayer
@@ -418,6 +481,7 @@ MasterAizenScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMANIAC, MASTER_AIZEN
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_AIZEN
 	special HealParty
@@ -434,6 +498,14 @@ MasterAizenScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterXehanortScript:
 	faceplayer
@@ -448,6 +520,7 @@ MasterXehanortScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SAGE, MASTER_XEHANORT
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_XEHANORT
 	special HealParty
@@ -464,6 +537,14 @@ MasterXehanortScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterAerithScript:
 	faceplayer
@@ -478,6 +559,7 @@ MasterAerithScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, MASTER_AERITH
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_AERITH
 	special HealParty
@@ -494,6 +576,14 @@ MasterAerithScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 MasterJoeyScript:
 	faceplayer
@@ -508,6 +598,7 @@ MasterJoeyScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer YOUNGSTER, MASTER_JOEY
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_JOEY
 	special HealParty
@@ -524,6 +615,14 @@ MasterJoeyScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    waitbutton
+    closetext
+    end
 
 NurseScript:
     faceplayer
@@ -587,6 +686,11 @@ RematchTextDestinyFrontier:
 RematchRefuseTextDestinyFrontier:
     text "I will always"
     line "be here."
+    done
+
+DefaultLoseAfterBattleTextDestinyFrontier:
+    text "Better luck"
+    line "next time."
     done
 
 GuardScript:
@@ -693,6 +797,7 @@ OakScript:
 	writetext Oak2AfterBattleText
 	waitbutton
 	closetext
+	special HealParty
 	end
 .lose
     special HealParty

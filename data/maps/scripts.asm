@@ -475,7 +475,6 @@ INCLUDE "maps/AncientRuinPast.asm"
 
 SECTION "Map Scripts Overflow 2", ROMX
 
-INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
@@ -509,4 +508,5 @@ INCLUDE "maps/ViridianMart.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
 INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
+INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"

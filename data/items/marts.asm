@@ -405,7 +405,7 @@ MartPatches:
     db -1
 
 MartFrontier:
-    db 12 ; # items
+    db 15 ; # items
     db FULL_RESTORE
     db MAX_REVIVE
     db MAX_ELIXER
@@ -418,6 +418,9 @@ MartFrontier:
     db WISE_GLASSES
     db EXPERT_BELT
     db MIRACLEBERRY
+    db SCOPE_LENS
+    db KINGS_ROCK
+    db LUCKY_EGG
     db -1
 
 DefaultMart:

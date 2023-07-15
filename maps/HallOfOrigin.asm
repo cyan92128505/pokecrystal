@@ -51,6 +51,7 @@ ArceusScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ARCEUS, 100
 	startbattle
+	ifequal LOSE, .lose
 
     setval ARCEUS
 	special MonCheck
@@ -58,7 +59,14 @@ ArceusScript:
 	disappear HALLOFORIGIN_ARCEUS
 	reloadmapafterbattle
 	end
-
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext ArceusWinAfterBattleText
+    waitbutton
+    closetext
+    end
 .Credits
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -85,6 +93,18 @@ ArceusScript:
 	;refreshscreen
 	credits
 	end
+ArceusWinAfterBattleText:
+    text "Dear child."
+
+    para "Strengthen thy"
+    line "resolve."
+
+    para "Take up thy sword"
+    line "and thy shield"
+
+    para "Let thy faith"
+    line "guide thee."
+    done
 OakBeatenArceusText:
     text "<PLAYER>..."
 

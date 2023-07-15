@@ -6597,16 +6597,16 @@ LoadEnemyMon:
 ;    23% Item1
 ;     2% Item2
 
-; AndrewNote - wild items are redone
+; AndrewNote - Items for wild Pokemon are redone
 ; if item 2 is defined then 100% to have it
-; otherwise 75% for no item, 25% for item 1
+; otherwise 10% for item 1
     ld a, [wBaseItem2]
     cp NO_ITEM
     jr nz, .UpdateItem
 
-; 25% chance of getting an item
+; 10% chance of getting an item
 	call BattleRandom
-	cp 75 percent + 1
+	cp 90 percent + 1
 	ld a, NO_ITEM
 	jr c, .UpdateItem
 	ld a, [wBaseItem1]

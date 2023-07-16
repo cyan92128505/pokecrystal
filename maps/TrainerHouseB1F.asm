@@ -1033,18 +1033,64 @@ BattleTrialReceptionistScript:
     yesorno
     iffalse .Declined
     checkevent EVENT_BEAT_BATTLE_TRIAL_MASTER
-    iffalse .masterCheck
-    writetext WantImpossibleDifficulty
-    yesorno
-    iftrue .Impossible
-.masterCheck
+    iftrue .ImpossibleUnlocked
     checkevent EVENT_BEAT_BATTLE_TRIAL
-    iffalse .Standard
-    writetext WantMasterDifficulty
-    yesorno
-    iftrue .Master
+    iftrue .MasterUnlocked
+    sjump .Standard
+
+.ImpossibleUnlocked:
+    writetext WhatTrialText
+	loadmenu .ImpossibleMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Standard
+	ifequal 2, .Master
+	ifequal 3, .Impossible
+	closetext
+	end
+.ImpossibleMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 12, 8
+	dw .ImpossibleMenuData
+	db 1 ; default option
+.ImpossibleMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 1 ; rows, columns
+	db 5 ; spacing
+	dba .ImpossibleText
+	dbw BANK(@), NULL
+.ImpossibleText:
+	db "NORMAL@"
+	db "MASTER@"
+	db "IMPOSSIBLE@"
+
+.MasterUnlocked:
+    writetext WhatTrialText
+	loadmenu .MasterMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Standard
+	ifequal 2, .Master
+	closetext
+	end
+.MasterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 9, 5
+	dw .MasterMenuData
+	db 1 ; default option
+.MasterMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .MasterText
+	dbw BANK(@), NULL
+.MasterText:
+	db "NORMAL@"
+	db "MASTER@"
 
 .Standard
+    writetext ExplainStandardTrialText
+    waitbutton
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -1421,6 +1467,8 @@ BattleTrialReceptionistScript:
 	sjump .Win
 
 .Master
+    writetext ExplainMasterTrialText
+    waitbutton
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -1575,6 +1623,8 @@ BattleTrialReceptionistScript:
 	sjump .Win
 
 .Impossible
+    writetext ExplainImpossibleTrialText
+    waitbutton
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -1661,8 +1711,6 @@ BattleTrialReceptionistScript:
 	closetext
 	end
 
-
-
 BattleTrialIntroText:
     text "Welcome to the"
     line "BATTLE TRIAL."
@@ -1672,15 +1720,6 @@ BattleTrialIntroText:
     cont "opponents with"
     cont "increasing"
     cont "difficulty."
-
-    para "Your #MON"
-    line "will be healed"
-    cont "only every 3"
-    cont "fights."
-
-    para "The standard trial"
-    line "has 30 battles"
-    cont "in total"
 
     para "When you clear a"
     line "trial you unlock"
@@ -1692,18 +1731,40 @@ BattleTrialIntroText:
     cont "you can get?"
     done
 
-WantMasterDifficulty:
-    text "Do you want to"
-    line "take the..."
+ExplainStandardTrialText:
+    text "The STANDARD TRIAL"
+    line "consists of 30"
+    cont "total battles."
 
-    para "MASTER TRIAL?"
+    para "With your #MON"
+    line "being healed every"
+    cont "3 battles."
     done
 
-WantImpossibleDifficulty:
-    text "Do you want to"
-    line "take the..."
+ExplainMasterTrialText:
+    text "The MASTER TRIAL"
+    line "consists of 12"
+    cont "total battles."
 
-    para "IMPOSSIBLE TRIAL?"
+    para "With your #MON"
+    line "being healed every"
+    cont "3 battles."
+    done
+
+ExplainImpossibleTrialText:
+    text "IMPOSSIBLE TRIAL!"
+
+    para "It consists of 5"
+    cont "total battles."
+
+    para "Your #MON are"
+    line "not healed during"
+    cont "the trial."
+    done
+
+WhatTrialText:
+    text "Which Trial do"
+    line "you want to take."
     done
 
 BattleMirrorIntroText:

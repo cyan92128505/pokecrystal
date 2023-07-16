@@ -232,6 +232,10 @@ PlayersHouse1FSinkScript:
 	jumptext PlayersHouse1FSinkText
 
 PlayersHouse1FFridgeScript:
+    checkevent EVENT_BEAT_DAD
+    iffalse .noDad
+    jumptext PlayerHouse1FFridgePostDadText
+.noDad
 	jumptext PlayersHouse1FFridgeText
 
 MomTurnsTowardPlayerMovement:
@@ -251,18 +255,23 @@ MomWalksBackMovement:
 	step_end
 
 ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
+	text "Oh <PLAYER>!"
 
-	para "ELM, was looking"
-	line "for you."
+	para "This is it."
 
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
+	para "Your big day is"
+	line "here."
 
-	para "Oh! I almost for-"
-	line "got! Your #MON"
+	para "I'm proud of you"
+	line "beginning your"
+	cont "#MON training."
+
+	para "I can't believe"
+	line "you are sixteen"
+	cont "already!"
+
+	para "Oh! Don't forget"
+	line "Your #MON"
 
 	para "GEAR is back from"
 	line "the repair shop."
@@ -271,18 +280,12 @@ ElmsLookingForYouText:
 	done
 
 MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
+	text "This devise has"
+	line "all sorts of"
+	cont "useful tools."
 
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
-
-	para "Oh, the day of the"
-	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
+	para "You should set the"
+	line "day on it."
 	done
 
 IsItDSTText:
@@ -297,98 +300,118 @@ ComeHomeForDSTText:
 	para "for Daylight"
 	line "Saving Time."
 
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
+	para "Did you forget"
+	line "your PHONE?"
 	done
 
 KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
+	text "Ah good."
 
-	para "on and select the"
-	line "PHONE icon?"
+	para "You will need"
+	line "it for me to"
+	cont "contact you."
 	done
 
 DontKnowTheInstructionsText:
-	text "I'll read the"
-	line "instructions."
+	text "Awk <PLAYER>."
 
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
+	para "This is why I"
+	line "worry."
+
+	para "You will need"
+	line "it for me to"
+	cont "contact you."
 	done
 
 InstructionsNextText:
-	text "Phone numbers are"
-	line "stored in memory."
-
-	para "Just choose a name"
-	line "you want to call."
-
-	para "Gee, isn't that"
-	line "convenient?"
+	text "Don't forget to"
+	line "call me and let"
+	cont "me know how you"
+	cont "are doing."
 	done
 
 HurryUpElmIsWaitingText:
 	text "PROF.ELM is wait-"
 	line "ing for you."
 
-	para "Hurry up, baby!"
+	para "Good luck my"
+	line "darling."
+
+	para "Mummy loves you."
 	done
 
 SoWhatWasProfElmsErrandText:
-	text "So, what was PROF."
-	line "ELM's errand?"
+	text "So your first"
+	line "task is to meet"
+	cont "PROF OAK."
 
-	para "…"
+	para "OAK is very well"
+	line "respected in"
+	cont "KANTO."
 
-	para "That does sound"
-	line "challenging."
+	para "He used to be a"
+	line "trainer also."
 
-	para "But, you should be"
-	line "proud that people"
-	cont "rely on you."
+	para "He understands us"
+	line "better than most"
+	cont "scientist types."
+
+	para "Be polite."
 	done
 
 ImBehindYouText:
-	text "<PLAYER>, do it!"
+	text "Go on <PLAYER>!"
 
-	para "I'm behind you all"
-	line "the way!"
+	para "Your Mum is fully"
+	line "behind you!"
 	done
 
 NeighborMornIntroText:
 	text "Good morning,"
 	line "<PLAY_G>!"
 
-	para "I'm visiting!"
+	para "I can't believe"
+	line "how much you've"
+	cont "grown."
+
+	para "Good luck with"
+	line "your #MON."
 	done
 
 NeighborDayIntroText:
 	text "Hello, <PLAY_G>!"
-	line "I'm visiting!"
+
+	para "I can't believe"
+	line "how much you've"
+	cont "grown."
+
+	para "Good luck with"
+	line "your #MON."
 	done
 
 NeighborNiteIntroText:
 	text "Good evening,"
 	line "<PLAY_G>!"
 
-	para "I'm visiting!"
+	para "I can't believe"
+	line "how much you've"
+	cont "grown."
+
+	para "Good luck with"
+	line "your #MON."
 	done
 
 NeighborText:
 	text "<PLAY_G>, have you"
 	line "heard?"
 
-	para "My daughter is"
-	line "adamant about"
+	para "My daughter"
+	line "CRYSTAL has also"
+	cont "started her #MON"
+	cont "training."
 
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
+	para "I'm sure you'll"
+	line "run into her."
 	done
 
 PlayersHouse1FStoveText:
@@ -400,27 +423,33 @@ PlayersHouse1FStoveText:
 
 PlayersHouse1FSinkText:
 	text "The sink is spot-"
-	line "less. Mom likes it"
-	cont "clean."
+	line "less. Mom runs a"
+	cont "tight ship."
 	done
+
+PlayerHouse1FFridgePostDadText:
+    text "Full of Dads"
+    line "food!"
+    done
 
 PlayersHouse1FFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 
-	para "FRESH WATER and"
-	line "tasty LEMONADE!"
+	para "There is an"
+	line "empty shelf"
+	cont "where Dads food"
+	cont "used to be."
 	done
 
 PlayersHouse1FTVText:
 	text "There's a movie on"
-	line "TV: Stars dot the"
+	line "TV"
 
-	para "sky as two boys"
-	line "ride on a train…"
-
-	para "I'd better get"
-	line "rolling too!"
+	para "A man with many"
+	line "personalities has"
+	cont "kidnapped three"
+	cont "girls."
 	done
 
 DadScript:
@@ -439,13 +468,13 @@ DadTalkText:
     line "trying to stop"
     cont "you."
 
-    para "I know you can"
-    line "help save us from"
-    cont "war."
-
     para "You are the"
     line "strongest trainer"
     cont "I've ever seen."
+
+    para "I was crazy to"
+    line "think I could"
+    cont "stop you."
 
     para "Go and show them"
     line "what we can do!"
@@ -458,8 +487,7 @@ DadPostWallaceText:
     line "the great CHAMPION"
     cont "you have become."
 
-    para "I take no credit"
-    line "for it."
+    para "...."
 
     para "I wasn't there"
     line "for you when you"

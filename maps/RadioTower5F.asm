@@ -137,22 +137,40 @@ RadioTower5FRocketBossScene:
 	writetext RadioTower5FDirectorThankYouText
 	promptbutton
 
-.whatColourIsThis
-	writetext WhatColourIsThisWingText ; does this look silver
-	promptbutton
-	yesorno
-    iftrue .youSureItsSilver
-    writetext SoItIsRainbowColourText ; so its rainbow then
-    promptbutton
+.whatWingDoYouWant
+    writetext WhichWingDoYouWantText
+	loadmenu .WingMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Silver
+	ifequal 2, .Rainbow
+	closetext
+	end
+.WingMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 5
+	dw .WingMenuData
+	db 1 ; default option
+.WingMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .WingText
+	dbw BANK(@), NULL
+.WingText:
+	db "SILVER@"
+	db "RAINBOW@"
+
+.Silver
+    writetext AreYouSure
     yesorno
-    iffalse .whatColourIsThis
-    sjump .RainbowItIs
-.youSureItsSilver
-    writetext SoItIsSilverColourText ; you sure its silver
-    promptbutton
-    yesorno
-    iffalse .whatColourIsThis
+    iffalse .whatWingDoYouWant
     sjump .SilverItIs
+
+.Rainbow
+    writetext AreYouSure
+    yesorno
+    iffalse .whatWingDoYouWant
 
 .RainbowItIs
     verbosegiveitem RAINBOW_WING
@@ -164,14 +182,6 @@ RadioTower5FRocketBossScene:
     verbosegiveitem SILVER_WING
     setevent EVENT_GOT_SILVER_WING
     writetext SilverWingTipsText
-
-	;verbosegiveitem CLEAR_BELL
-	;writetext RadioTower5FDirectorDescribeClearBellText
-	;waitbutton
-	;closetext
-	;setscene SCENE_RADIOTOWER5F_NOTHING
-	;setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
-	;setevent EVENT_GOT_CLEAR_BELL
 
 .continue
 	waitbutton
@@ -443,42 +453,23 @@ RadioTower5FDirectorThankYouText:
 
 	para "I know it's not"
 	line "much, but please"
-	cont "take this."
+	cont "take one of these"
+	cont "mystical feathers."
+
+	para "I found these many"
+	line "years ago."
+
+	para "Pick whichever"
+	line "colour you wish."
 	done
 
-WhatColourIsThisWingText:
-    text "Years ago I found"
-    line "this on my journey"
-    cont "and I want you to"
-    cont "have it."
-
-    para "It is a magical"
-    line "feather."
-
-    para "I don't know what"
-    line "colour to call it."
-
-    para "Sometimes it looks"
-    line "SILVER."
-
-    para "Sometimes it looks"
-    line "RAINBOW."
-
-    para "What would you say"
-    line "does this look"
-    cont "SILVER to you?"
+AreYouSure:
+    text "Are you sure?"
     done
 
-SoItIsRainbowColourText:
-    text "So you would say"
-    line "it is RAINBOW in"
-    cont "colour?"
-    done
-
-SoItIsSilverColourText:
-    text "So you would say"
-    line "it is SILVER in"
-    cont "colour?"
+WhichWingDoYouWantText:
+    text "Pick a mystical"
+    line "feather?"
     done
 
 RainbowWingTipsText:

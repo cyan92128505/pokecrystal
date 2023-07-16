@@ -92,24 +92,36 @@ PlayersHousePCScript:
 	warp NONE, 0, 0
 	end
 
+; On first time all 4 are played
+; After that only Text4 is played
+; After getting a mon normal radio is played
+
 PlayersRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
-	cont "in next time!"
-	done
+	text "Breaking news!"
+
+	para "The HOEN fleet"
+	line "have been seen"
+	cont "mobilising near"
+	cont "the coast."
 
 PlayersRadioText2:
-	text "#MON CHANNEL!"
+	para "Invasion of KANTO"
+	line "seems imminent."
 	done
 
 PlayersRadioText3:
-	text "This is DJ MARY,"
-	line "your co-host!"
+	text "FUHRER WALLACE"
+	line "has taken control"
+	cont "due to the"
+	cont "assassination of"
+	cont "CHAMPION STEVEN."
 	done
 
 PlayersRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
+	text "The HOEN war is"
+	line "inevitable."
+
+	para "ARCEUS help us!"
 	done
 
 PlayersHouse2F_MapEvents:

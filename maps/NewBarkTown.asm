@@ -210,11 +210,15 @@ NewBarkTown_SilverReturnsToTheShadowsMovement:
 	step_end
 
 Text_GearIsImpressive:
-	text "Wow, your #GEAR"
-	line "is impressive!"
+	text "I tried being a"
+	line "trainer once."
 
-	para "Did your mom get"
-	line "it for you?"
+	para "But I ran into"
+	line "an URSARING out"
+	cont "there."
+
+	para "I'm never leaving"
+	line "here again."
 	done
 
 Text_WaitPlayer:
@@ -230,17 +234,11 @@ Text_ItsDangerousToGoAlone:
 	text "It's dangerous to"
 	line "go out without a"
 	cont "#MON!"
-
-	para "Wild #MON"
-	line "jump out of the"
-
-	para "grass on the way"
-	line "to the next town."
 	done
 
 Text_YourMonIsAdorable:
 	text "Oh! Your #MON"
-	line "is adorable!"
+	line "looks strong!"
 	cont "I wish I had one!"
 	done
 
@@ -248,9 +246,9 @@ Text_TellMomIfLeaving:
 	text "Hi, <PLAY_G>!"
 	line "Leaving again?"
 
-	para "You should tell"
-	line "your mom if you"
-	cont "are leaving."
+	para "You should see"
+	line "your Mum one"
+	cont "last time."
 	done
 
 Text_CallMomOnGear:
@@ -264,22 +262,40 @@ Text_CallMomOnGear:
 Text_ElmDiscoveredNewMon:
 	text "Yo, <PLAYER>!"
 
-	para "I hear PROF.ELM"
-	line "discovered some"
-	cont "new #MON."
+	para "I remember when"
+	line "your dad left"
+	cont "for his #MON"
+	cont "training."
+
+	para "He was strong!"
+
+	para "He caught a"
+	line "raging URSARING."
+
+	para "I'm sure he is"
+	line "out there"
+	cont "somewhere."
 	done
 
 NewBarkTownRivalText1:
 	text "<……>"
 
-	para "So this is the"
-	line "famous ELM #MON"
-	cont "LAB…"
+	para "Look at those"
+	line "#MON!"
 	done
 
 NewBarkTownRivalText2:
-	text "…What are you"
-	line "staring at?"
+	text "Hey how would"
+	line "like to help me!"
+
+	para "Bring me one of"
+	line "those #MON."
+
+	para "Be sure to pick"
+	line "the one that looks"
+	cont "the strongest."
+
+	para "Now go!"
 	done
 
 NewBarkTownSignText:

@@ -1026,23 +1026,14 @@ ReceivedStarterText:
 	done
 
 ElmDirectionsText1:
-	text "MR.#MON lives a"
-	line "little bit beyond"
+	text "PROF OAK is"
+	line "visiting a friend"
+	cont "just NORTH of"
+	cont "CHERRYGROVE."
 
-	para "CHERRYGROVE, the"
-	line "next city over."
-
-	para "It's almost a"
-	line "direct route"
-
-	para "there, so you"
-	line "can't miss it."
-
-	para "But just in case,"
-	line "here's my phone"
-
-	para "number. Call me if"
-	line "anything comes up!"
+	para "He has sensitive"
+	line "information just"
+	cont "for you."
 	done
 
 ElmDirectionsText2:
@@ -1067,13 +1058,22 @@ GotElmsNumberText:
 	done
 
 ElmDescribesMrPokemonText:
-	text "MR.#MON goes"
-	line "everywhere and"
-	cont "finds rarities."
+	text "PROF OAK is a"
+	line "famous Professor"
+	cont "from KANTO."
 
-	para "Too bad they're"
-	line "just rare and"
-	cont "not very useful…"
+	para "He used to be a"
+	line "trainer and is"
+	cont "researching ways"
+	cont "to make trainers"
+	cont "stronger."
+
+	para "He is visiting"
+	line "MR.#MON who"
+	cont "is researching"
+	cont "the recently"
+	cont "discovered FAIRY"
+	cont "TYPE."
 	done
 
 ElmPokeBallText:
@@ -1108,45 +1108,57 @@ ElmAfterTheftText2:
 	done
 
 ElmAfterTheftText3:
-	text "ELM: This?"
+	text "ELM: This is"
+	line "an EGG of a"
+	cont "FAIRY #MON."
 	done
 
 ElmAfterTheftText4:
-	text "But… Is it a"
-	line "#MON EGG?"
+	text "FAIRY types have"
+	line "few weaknesses"
+	cont "and many good"
+	cont "resistances."
 
-	para "If it is, it is a"
-	line "great discovery!"
+	para "The #MON in"
+	line "this EGG may be"
+	cont "useful to you"
+	cont "one day."
 	done
 
 ElmAfterTheftText5:
-	text "ELM: What?!?"
-
-	para "PROF.OAK gave you"
+	text "PROF.OAK gave you"
 	line "a #DEX?"
 
-	para "<PLAY_G>, is that"
-	line "true? Th-that's"
-	cont "incredible!"
-
-	para "He is superb at"
-	line "seeing the poten-"
-	cont "tial of people as"
+	para "It is a vital"
+	line "tool for all"
 	cont "trainers."
 
-	para "Wow, <PLAY_G>. You"
-	line "may have what it"
+	para "It provides info"
+	line "on all #MON."
 
-	para "takes to become"
-	line "the CHAMPION."
+	para "Including their"
+	line "special ability"
+	cont "and location."
 
-	para "You seem to be"
-	line "getting on great"
-	cont "with #MON too."
+	para "You are ready now"
+	line "to start your"
+	cont "training."
 
-	para "You should take"
-	line "the #MON GYM"
-	cont "challenge."
+	para "You need to seek"
+	line "out #MON GYMS"
+	cont "and defeat the"
+	cont "GYM LEADER."
+
+	para "When you have"
+	line "beaten all 8"
+	cont "GYMS you can"
+	cont "take on the ELITE"
+	cont "FOUR."
+
+	para "If you defeat"
+	line "them you gain"
+	cont "the title of"
+	cont "CHAMPION."
 
 	para "The closest GYM"
 	line "would be the one"
@@ -1155,14 +1167,14 @@ ElmAfterTheftText5:
 
 ElmAfterTheftText6:
 	text "…<PLAY_G>. The"
-	line "road to the"
+	line "road to being"
 
-	para "championship will"
+	para "CHAMPION will"
 	line "be a long one."
 
 	para "Before you leave,"
 	line "make sure that you"
-	cont "talk to your mom."
+	cont "talk to your Mum."
 	done
 
 ElmStudyingEggText:
@@ -1214,15 +1226,12 @@ ShowElmTogepiText2:
 
 ShowElmTogepiText3:
 	text "The EGG hatched!"
-	line "So, #MON are"
-	cont "born from EGGS…"
+	line "Excellent."
 
-	para "No, perhaps not"
-	line "all #MON are."
-
-	para "Wow, there's still"
-	line "a lot of research"
-	cont "to be done."
+	para "I'm sure your"
+	line "new friend will"
+	cont "be a great help"
+	cont "to you."
 	done
 
 ElmGiveEverstoneText1:
@@ -1343,9 +1352,8 @@ ElmGiveTicketText2:
 
 	para "This was enrusted"
 	line "to me by a strange"
-	cont "man whos"
-	cont "#MON had"
-	cont "an amazing shine."
+	cont "man who seemed"
+	cont "obsessed with you."
 	done
 
 ClearBellTips:
@@ -1372,9 +1380,12 @@ AideText_GiveYouPotion:
 	done
 
 AideText_AlwaysBusy:
-	text "There are only two"
-	line "of us, so we're"
-	cont "always busy."
+	text "If there is"
+	line "some secret"
+	cont "weapon that can"
+	cont "win a war,"
+	cont "PROF OAK will find"
+	cont "it."
 	done
 
 AideText_TheftTestimony:

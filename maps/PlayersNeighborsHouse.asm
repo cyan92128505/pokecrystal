@@ -45,55 +45,76 @@ PlayersNeighborsHouseRadioScript:
 	end
 
 PlayersNeighborsDaughterText:
-	text "PIKACHU is an"
-	line "evolved #MON."
+	text "PROF ELM has"
+	line "conducted ground"
+	cont "breaking research"
+	cont "into #MON"
+	cont "abilities."
 
-	para "I was amazed by"
-	line "PROF.ELM's find-"
-	cont "ings."
+	para "Every #MON"
+	line "has some special"
+	cont "ability."
 
-	para "He's so famous for"
-	line "his research on"
-	cont "#MON evolution."
+	para "My little sister"
+	line "wants to be a"
+	cont "trainer."
 
-	para "…sigh…"
-
-	para "I wish I could be"
-	line "a researcher like"
-	cont "him…"
+	para "With the War"
+	line "looming I am"
+	cont "worried for her."
 	done
 
 PlayersNeighborText:
-	text "My daughter is"
-	line "adamant about"
+	text "CRYSTAL got her"
+	line "first #MON just"
+	cont "yesterday."
 
-	para "becoming PROF."
-	line "ELM's assistant."
+	para "She loves her"
+	line "RIOLU."
 
-	para "She really loves"
-	line "#MON!"
+	para "She is a sweet"
+	line "girl."
 
-	para "But then, so do I!"
+	para "And the world is"
+	line "a cruel place."
+
+	para "But I wont stop"
+	line "her following"
+	cont "her dreams."
+
+	para "After all"
+	line "CHAMPION BLUE"
+	cont "came from a"
+	cont "small town too."
 	done
 
 PlayerNeighborRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
-	cont "in next time!"
-	done
+	text "Breaking news!"
+
+	para "The HOEN fleet"
+	line "have been seen"
+	cont "mobilising near"
+	cont "the coast."
+
 
 PlayerNeighborRadioText2:
-	text "#MON CHANNEL!"
+	para "Invasion of KANTO"
+	line "seems imminent."
 	done
 
 PlayerNeighborRadioText3:
-	text "This is DJ MARY,"
-	line "your co-host!"
+	text "FUHRER WALLACE"
+	line "has taken control"
+	cont "due to the"
+	cont "assassination of"
+	cont "CHAMPION STEVEN."
 	done
 
 PlayerNeighborRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
+	text "The HOEN war is"
+	line "inevitable."
+
+	para "ARCEUS help us!"
 	done
 
 PlayersNeighborsHouse_MapEvents:

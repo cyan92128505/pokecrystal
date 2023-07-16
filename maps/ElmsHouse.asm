@@ -14,6 +14,10 @@ ElmsSon:
 	jumptextfaceplayer ElmsSonText
 
 ElmsHousePC:
+    checkevent EVENT_BEAT_WALLACE
+    iffalse .preWallace
+    jumptext ElmsHousePCPostWallaceText
+.preWallace
 	jumptext ElmsHousePCText
 
 ElmsHouseBookshelf:
@@ -43,40 +47,58 @@ ElmsSonText:
 	cont "professor!"
 	done
 
-ElmsHouseLabFoodText: ; unreferenced
-	text "There's some food"
-	line "here. It must be"
-	cont "for the LAB."
-	done
+ElmsHousePCPostWallaceText:
+    text "FUHRER WALLACE"
+    line "has abdicated"
+    cont "and his location"
+    cont "is unknown."
 
-ElmsHousePokemonFoodText: ; unreferenced
-	text "There's some food"
-	line "here. This must be"
-	cont "for #MON."
-	done
+    para "CHAMPION STEVEN"
+    line "lives and has"
+    cont "assumed command"
+    cont "of the HOEN army."
+
+    para "The war is over."
+
+    para "All thanks to an"
+    line "unknown young"
+    cont "trainer."
+
+    para "The new CHAMPION"
+    line "of JOHTO."
+
+    para "CHAMPION <PLAYER>!"
+
+    para "Long live"
+    line "CHAMPION <PLAYER>."
+    done
 
 ElmsHousePCText:
-	text "#MON. Where do"
-	line "they come from? "
+	text "Secret info from"
+	line "the #MON"
+	cont "LEAGUE."
 
-	para "Where are they"
-	line "going?"
+	para "Our spies report"
+	line "most disturbing"
+	cont "news."
 
-	para "Why has no one"
-	line "ever witnessed a"
-	cont "#MON's birth?"
+	para "It is believed"
+	line "FUHRER WALLACE"
+	cont "may now be in"
+	cont "command of the"
+	cont "HOEN LEGENDARY"
+	cont "#MON."
 
-	para "I want to know! I"
-	line "will dedicate my"
+	para "If he controls the"
+	line "three forces of"
+	cont "nature."
 
-	para "life to the study"
-	line "of #MON!"
-
-	para "…"
-
-	para "It's a part of"
-	line "PROF.ELM's re-"
-	cont "search papers."
+	para "There is little"
+	line "hope of stopping"
+	cont "him even if all"
+	cont "region CHAMPIONS"
+	cont "are permitted to"
+	cont "fight."
 	done
 
 ElmsHouse_MapEvents:

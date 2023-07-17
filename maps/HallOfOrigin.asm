@@ -411,7 +411,7 @@ MasterOakVictoryText:
 MarkOfGodText:
     para "I bestow upon you"
     line "control of these"
-    cont "new powers"
+    cont "new powers."
     done
 
 MasterOakOfferPrizeText:

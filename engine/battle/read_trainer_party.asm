@@ -1034,6 +1034,132 @@ ReadCopyOfTrainerParty:
     ld a, [wOTPartyMon6DVs + 1]
     ld [wPartyMon6DVs + 1], a
 
+    ; stat exp
+    ld a, [wOTPartyMon1HPExp]
+    ld [wPartyMon1HPExp], a
+    ld a, [wOTPartyMon1HPExp + 1]
+    ld [wPartyMon1HPExp + 1], a
+    ld a, [wOTPartyMon1AtkExp]
+    ld [wPartyMon1AtkExp], a
+    ld a, [wOTPartyMon1AtkExp + 1]
+    ld [wPartyMon1AtkExp + 1], a
+    ld a, [wOTPartyMon1DefExp]
+    ld [wPartyMon1DefExp], a
+    ld a, [wOTPartyMon1DefExp + 1]
+    ld [wPartyMon1DefExp + 1], a
+    ld a, [wOTPartyMon1SpdExp]
+    ld [wPartyMon1SpdExp], a
+    ld a, [wOTPartyMon1SpdExp + 1]
+    ld [wPartyMon1SpdExp + 1], a
+    ld a, [wOTPartyMon1SpcExp]
+    ld [wPartyMon1SpcExp], a
+    ld a, [wOTPartyMon1SpcExp + 1]
+    ld [wPartyMon1SpcExp + 1], a
+
+    ld a, [wOTPartyMon2HPExp]
+    ld [wPartyMon2HPExp], a
+    ld a, [wOTPartyMon2HPExp + 1]
+    ld [wPartyMon2HPExp + 1], a
+    ld a, [wOTPartyMon2AtkExp]
+    ld [wPartyMon2AtkExp], a
+    ld a, [wOTPartyMon2AtkExp + 1]
+    ld [wPartyMon2AtkExp + 1], a
+    ld a, [wOTPartyMon2DefExp]
+    ld [wPartyMon2DefExp], a
+    ld a, [wOTPartyMon2DefExp + 1]
+    ld [wPartyMon2DefExp + 1], a
+    ld a, [wOTPartyMon2SpdExp]
+    ld [wPartyMon2SpdExp], a
+    ld a, [wOTPartyMon2SpdExp + 1]
+    ld [wPartyMon2SpdExp + 1], a
+    ld a, [wOTPartyMon2SpcExp]
+    ld [wPartyMon2SpcExp], a
+    ld a, [wOTPartyMon2SpcExp + 1]
+
+    ld a, [wOTPartyMon3HPExp]
+    ld [wPartyMon3HPExp], a
+    ld a, [wOTPartyMon3HPExp + 1]
+    ld [wPartyMon3HPExp + 1], a
+    ld a, [wOTPartyMon3AtkExp]
+    ld [wPartyMon3AtkExp], a
+    ld a, [wOTPartyMon3AtkExp + 1]
+    ld [wPartyMon3AtkExp + 1], a
+    ld a, [wOTPartyMon3DefExp]
+    ld [wPartyMon3DefExp], a
+    ld a, [wOTPartyMon3DefExp + 1]
+    ld [wPartyMon3DefExp + 1], a
+    ld a, [wOTPartyMon3SpdExp]
+    ld [wPartyMon3SpdExp], a
+    ld a, [wOTPartyMon3SpdExp + 1]
+    ld [wPartyMon3SpdExp + 1], a
+    ld a, [wOTPartyMon3SpcExp]
+    ld [wPartyMon3SpcExp], a
+    ld a, [wOTPartyMon3SpcExp + 1]
+    ld [wPartyMon3SpcExp + 1], a
+
+    ld a, [wOTPartyMon4HPExp]
+    ld [wPartyMon4HPExp], a
+    ld a, [wOTPartyMon4HPExp + 1]
+    ld [wPartyMon4HPExp + 1], a
+    ld a, [wOTPartyMon4AtkExp]
+    ld [wPartyMon4AtkExp], a
+    ld a, [wOTPartyMon4AtkExp + 1]
+    ld [wPartyMon4AtkExp + 1], a
+    ld a, [wOTPartyMon4DefExp]
+    ld [wPartyMon4DefExp], a
+    ld a, [wOTPartyMon4DefExp + 1]
+    ld [wPartyMon4DefExp + 1], a
+    ld a, [wOTPartyMon4SpdExp]
+    ld [wPartyMon4SpdExp], a
+    ld a, [wOTPartyMon4SpdExp + 1]
+    ld [wPartyMon4SpdExp + 1], a
+    ld a, [wOTPartyMon4SpcExp]
+    ld [wPartyMon4SpcExp], a
+    ld a, [wOTPartyMon4SpcExp + 1]
+    ld [wPartyMon4SpcExp + 1], a
+
+    ld a, [wOTPartyMon5HPExp]
+    ld [wPartyMon5HPExp], a
+    ld a, [wOTPartyMon5HPExp + 1]
+    ld [wPartyMon5HPExp + 1], a
+    ld a, [wOTPartyMon5AtkExp]
+    ld [wPartyMon5AtkExp], a
+    ld a, [wOTPartyMon5AtkExp + 1]
+    ld [wPartyMon5AtkExp + 1], a
+    ld a, [wOTPartyMon5DefExp]
+    ld [wPartyMon5DefExp], a
+    ld a, [wOTPartyMon5DefExp + 1]
+    ld [wPartyMon5DefExp + 1], a
+    ld a, [wOTPartyMon5SpdExp]
+    ld [wPartyMon5SpdExp], a
+    ld a, [wOTPartyMon5SpdExp + 1]
+    ld [wPartyMon5SpdExp + 1], a
+    ld a, [wOTPartyMon5SpcExp]
+    ld [wPartyMon5SpcExp], a
+    ld a, [wOTPartyMon5SpcExp + 1]
+    ld [wPartyMon5SpcExp + 1], a
+
+    ld a, [wOTPartyMon6HPExp]
+    ld [wPartyMon6HPExp], a
+    ld a, [wOTPartyMon6HPExp + 1]
+    ld [wPartyMon6HPExp + 1], a
+    ld a, [wOTPartyMon6AtkExp]
+    ld [wPartyMon6AtkExp], a
+    ld a, [wOTPartyMon6AtkExp + 1]
+    ld [wPartyMon6AtkExp + 1], a
+    ld a, [wOTPartyMon6DefExp]
+    ld [wPartyMon6DefExp], a
+    ld a, [wOTPartyMon6DefExp + 1]
+    ld [wPartyMon6DefExp + 1], a
+    ld a, [wOTPartyMon6SpdExp]
+    ld [wPartyMon6SpdExp], a
+    ld a, [wOTPartyMon6SpdExp + 1]
+    ld [wPartyMon6SpdExp + 1], a
+    ld a, [wOTPartyMon6SpcExp]
+    ld [wPartyMon6SpcExp], a
+    ld a, [wOTPartyMon6SpcExp + 1]
+    ld [wPartyMon6SpcExp + 1], a
+
     ; stats
     ld a, [wOTPartyMon1MaxHP]
     ld [wPartyMon1MaxHP], a
@@ -1362,7 +1488,7 @@ ReadCopyOfTrainerParty:
     ld a, [wOTPartyMon6PP + 3]
     ld [wPartyMon6PP + 3], a
 
-
+    ret
 
 ; AndrewNote - reward money here
 ComputeTrainerReward:

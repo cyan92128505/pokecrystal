@@ -45,18 +45,14 @@ MartCherrygrove:
 	db -1 ; end
 
 MartCherrygroveDex:
-	db 5 ; # items
-	;db 9
+	db 7 ; # items
 	db POKE_BALL
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	; REPULSOR
-	;db WARP_BEACON
-	;db EXP_SHARE
-	;db POCKET_PC
-	;db RED_EYE_ORB
+    db HAND_OF_GOD
+    db MARK_OF_GOD
 	db -1 ; end
 
 MartViolet:

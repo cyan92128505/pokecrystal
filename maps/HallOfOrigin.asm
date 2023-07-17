@@ -265,16 +265,24 @@ MasterOakScript:
 	clearevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	appear HALLOFORIGIN_MEWTWO_POKEBALL
 	clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-	setevent EVENT_BEAT_LORD_OAK
 	setval 0
 	writemem wInvading
 	setval 1
 	writemem wBeatenLordOak
-	;special FadeOutPalettes
 	special HealParty
-	;pause 15
 	warp HALL_OF_ORIGIN, 11, 3
 	turnobject PLAYER, UP
+	opentext
+	writetext MasterOakVictoryText
+	waitbutton
+	checkevent EVENT_BEAT_LORD_OAK
+	iftrue .skipMarkOfGod
+	writetext MarkOfGodText
+	waitbutton
+	verbosegiveitem MARK_OF_GOD
+.skipMarkOfGod
+	closetext
+	setevent EVENT_BEAT_LORD_OAK
 	opentext
 	writetext MasterOakOfferPrizeText
 	waitbutton
@@ -292,44 +300,12 @@ MasterOakScript:
 .FightDone:
 	writetext MasterOakAfterBattleText
 	waitbutton
-	readmem wBeatenLordOak
-	ifequal 1, .revertImmortal
-	ifequal 0, .becomeImmortal
-.continueFightDone
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
 	yesorno
 	iftrue .Fight
 	writetext RematchRefuseTextHallOfOrigin
-	waitbutton
-	closetext
-	end
-.becomeImmortal
-    writetext MasterOakBecomeImmortalText
-    yesorno
-    iffalse .continueFightDone
-    closetext
-    setval 1
-    writemem wBeatenLordOak
-    warp HALL_OF_ORIGIN, 11, 3
-    turnobject PLAYER, UP
-    opentext
-    writetext MasterOakBecomeImmortalAfterText
-	waitbutton
-	closetext
-	end
-.revertImmortal
-    writetext MasterOakBecomeMortalText
-    yesorno
-    iftrue .continueFightDone
-    closetext
-    setval 0
-    writemem wBeatenLordOak
-    warp HALL_OF_ORIGIN, 11, 3
-    turnobject PLAYER, UP
-    opentext
-    writetext MasterOakBecomeMortalAfterText
 	waitbutton
 	closetext
 	end
@@ -399,7 +375,7 @@ MasterOakBeatenText:
     text "You are worthy."
     done
 
-MasterOakOfferPrizeText:
+MasterOakVictoryText:
     text "You are"
     line "victorious."
 
@@ -430,7 +406,15 @@ MasterOakOfferPrizeText:
     line "trainer or #MON"
     cont "will dare to"
     cont "challenge you."
+    done
 
+MarkOfGodText:
+    para "I bestow upon you"
+    line "control of these"
+    cont "new powers"
+    done
+
+MasterOakOfferPrizeText:
     para "Further I present"
     line "you with a"
     cont "fragment of"

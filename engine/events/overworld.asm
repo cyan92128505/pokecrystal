@@ -1858,12 +1858,32 @@ RedEyeOrbFunction:
 	ld hl, ReturningToYourWorld
 .done
 	call PrintText
-	ld hl, Script_InvadeWorld
+	ld hl, Script_ReloadMap
 	call QueueScript
 	ld a, TRUE
 	ret
 
-Script_InvadeWorld:
+MarkOfGodFunction:
+	call .Ascend
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+.Ascend:
+	ld a, [wBeatenLordOak]
+	xor 1
+	ld [wBeatenLordOak], a
+	and a
+	ld hl, MarkOfGodOn
+	jr nz, .done
+	ld hl, MarkOfGodOff
+.done
+	call PrintText
+	ld hl, Script_ReloadMap
+	call QueueScript
+	ld a, TRUE
+	ret
+
+Script_ReloadMap:
 	warp NONE, 0, 0
 	end
 
@@ -1873,6 +1893,14 @@ InvadingAnotherWorld:
 
 ReturningToYourWorld:
 	text_far _ReturningToYourWorld
+	text_end
+
+MarkOfGodOff:
+	text_far _MarkOfGodOff
+	text_end
+
+MarkOfGodOn:
+	text_far _MarkOfGodOn
 	text_end
 
 PocketPCFunction:

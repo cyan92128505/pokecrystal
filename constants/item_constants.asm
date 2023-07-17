@@ -50,12 +50,12 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const REPULSOR     ; 2c
-	const ITEM_2D      ; 2d
+	const MARK_OF_GOD  ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const ITEM_32      ; 32
+	const HAND_OF_GOD  ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SPECIAL    ; 35

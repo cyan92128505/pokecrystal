@@ -3012,7 +3012,11 @@ wFieldWeather::
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 13
+; AndreNote - wram 13 free slots
+
+wHandOfGod:: db
+
+	ds 12
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

@@ -8654,6 +8654,17 @@ BattleIntro:
 	farcall ClearBattleRAM
 	call InitEnemy
 	call BackUpBGMap2
+
+	; AndrewNote - Play as enemy probably goes here
+	ld a, [wOtherTrainerClass]
+	and a
+	jr z, .noCopy
+	ld a, [wHandOfGod]
+	and a
+	jr z, .noCopy
+    farcall ReadCopyOfTrainerParty
+.noCopy
+
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
 	ld hl, rLCDC

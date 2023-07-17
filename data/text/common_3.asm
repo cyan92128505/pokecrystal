@@ -1438,6 +1438,26 @@ _ExpShareToggleOff::
 	line "turned off."
 	prompt
 
+_HandOfGodOn::
+	text "Hand of God"
+	line "is at work."
+	prompt
+
+_HandOfGodOff::
+	text "Hand of God"
+	line "is at rest."
+	prompt
+
+_MarkOfGodOn::
+	text "Ascension to"
+	line "immortal form."
+	prompt
+
+_MarkOfGodOff::
+	text "assume mortal"
+	line "form once more."
+	prompt
+
 _InvadingAnotherWorld::
     text "Invading another"
     line "world."

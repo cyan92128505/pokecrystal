@@ -58,12 +58,12 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw RepulsorEffect      ; REPULSOR
-	dw NoEffect            ; ITEM_2D
+	dw MarkOfGodEffect     ; MARK_OF_GOD
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw HandOfGodEffect     ; HAND_OF_GOD
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -2046,6 +2046,21 @@ ExpShareEffect:
 	ld hl, ExpShareToggleOff
 	jp PrintText
 
+MarkOfGodEffect:
+    farcall MarkOfGodFunction
+    ret
+
+HandOfGodEffect:
+	ld a, [wHandOfGod]
+	xor 1
+	ld [wHandOfGod], a
+	and a
+	ld hl, HandOfGodOn
+	jp nz, PrintText
+
+	ld hl, HandOfGodOff
+	jp PrintText
+
 LoadCurHPIntoBuffer2:
 	ld a, MON_HP
 	call GetPartyParamLocation
@@ -2937,6 +2952,14 @@ ExpShareToggleOff:
 
 ExpShareToggleOn:
 	text_far _ExpShareToggleOn
+	text_end
+
+HandOfGodOff:
+	text_far _HandOfGodOff
+	text_end
+
+HandOfGodOn:
+	text_far _HandOfGodOn
 	text_end
 
 ApplyPPUp:

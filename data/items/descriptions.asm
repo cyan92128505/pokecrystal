@@ -45,12 +45,12 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw RepulsorDesc
-	dw TeruSama3Desc
+	dw MarkOfGodDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw TeruSama4Desc
+	dw HandOfGodDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
@@ -434,8 +434,9 @@ RepulsorDesc:
 	db   "Repels wild"
 	next "#MON@"
 
-TeruSama3Desc:
-	db   "?@"
+MarkOfGodDesc:
+	db   "Ascend to"
+	next "immortal form.@"
 
 FreshWaterDesc:
 	db   "Restores #MON"
@@ -453,8 +454,9 @@ XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
 
-TeruSama4Desc:
-	db   "?@"
+HandOfGodDesc:
+	db   "Copy and keep"
+	next "enemy teams.@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."

@@ -144,6 +144,7 @@ BTGrampsScript:
     closetext
     follow BATTLETOWEROUTSIDE_GRAMPS, PLAYER
     applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleMirror
+    turnobject PLAYER, UP
     opentext
     writetext BattleMirrorIntro
     waitbutton
@@ -152,6 +153,12 @@ BTGrampsScript:
     turnobject PLAYER, UP
     opentext
     writetext BattleRouletteIntro
+    waitbutton
+    closetext
+    applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleArcade
+    turnobject PLAYER, UP
+    opentext
+    writetext BattleArcadeIntro
     waitbutton
     closetext
     applymovement BATTLETOWEROUTSIDE_GRAMPS, Movement_GoToBattleTrial
@@ -205,14 +212,14 @@ WelcomeToBattleTower:
 
 Movement_GoToBattleMirror:
     step UP
-    step LEFT
-    step LEFT
     step UP
     step UP
     step UP
     step UP
     step UP
-    turn_head DOWN
+    step RIGHT
+    step RIGHT
+    turn_head UP
     step_end
 
 BattleMirrorIntro:
@@ -238,12 +245,9 @@ Movement_GoToBattleRoulette:
     step LEFT
     step LEFT
     step LEFT
-    step UP
-    step UP
-    step UP
-    step UP
-    step UP
-    step UP
+    step LEFT
+    step LEFT
+    step LEFT
     step LEFT
     turn_head UP
     step_end
@@ -263,6 +267,57 @@ BattleRouletteIntro:
     para "This is the best"
     line "for some quick"
     cont "fun."
+    done
+
+Movement_GoToBattleArcade:
+    step LEFT
+    step LEFT
+    step LEFT
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step RIGHT
+    step RIGHT
+    turn_head UP
+    step_end
+
+BattleArcadeIntro:
+    text "This is the"
+    line "BATTLE ARCADE."
+
+    para "This is my"
+    line "favorite!"
+
+    para "Here you can"
+    line "pick a trainer"
+    cont "to play as."
+
+    para "Then pick a"
+    line "trainer to fight"
+    cont "against."
+
+    para "All trainers are"
+    line "super powered!"
+
+    para "You can feel"
+    line "what it's like"
+    cont "to be super"
+    cont "strong!"
+
+    para "There are 6"
+    line "characters at"
+    cont "first."
+
+    para "You can unlock"
+    line "more in batches"
+    cont "as you progress"
+    cont "in the world."
+
+    para "Up to a maximum"
+    line "of 30 characters."
     done
 
 Movement_GoToBattleTrial:
@@ -417,12 +472,14 @@ BattleTowerOutside_MapEvents:
 	warp_event  9, 29, ROUTE_40_BATTLE_TOWER_GATE, 4
 	warp_event  8,  9, BATTLE_TOWER_1F, 1
 	warp_event  9,  9, BATTLE_TOWER_1F, 2
-	warp_event  2,  15, TRAINER_HOUSE_B1F, 1
-	warp_event  3,  15, TRAINER_HOUSE_B1F, 2
-	warp_event  8,  21, TRAINER_HOUSE_B1F, 3
-	warp_event  9,  21, TRAINER_HOUSE_B1F, 4
+	warp_event  4, 21, TRAINER_HOUSE_B1F, 1
+	warp_event  5, 21, TRAINER_HOUSE_B1F, 2
+	warp_event 12, 21, TRAINER_HOUSE_B1F, 3
+	warp_event 13, 21, TRAINER_HOUSE_B1F, 4
 	warp_event  14,  15, TRAINER_HOUSE_B1F, 5
 	warp_event  15,  15, TRAINER_HOUSE_B1F, 6
+	warp_event  2,  15, TRAINER_HOUSE_B1F, 7
+	warp_event  3,  15, TRAINER_HOUSE_B1F, 8
 
 	def_coord_events
 	coord_event 8, 28, SCENE_ALWAYS, BattleTowerTourScript2
@@ -432,9 +489,9 @@ BattleTowerOutside_MapEvents:
 	bg_event 10, 12, BGEVENT_READ, BattleTowerOutsideSign
 
 	def_object_events
-	object_event  2, 21, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
+	object_event  6, 24, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
 	object_event  6, 10, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
-	object_event 13, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event  8, 19, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	object_event 12, 32, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 10, 28, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BTGrampsScript, EVENT_TEMP_EVENT_1
 

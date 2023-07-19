@@ -2,6 +2,7 @@
 	const BATTLE_ROULETTE_RECEPTIONIST
 	const BATTLE_MIRROR_RECEPTIONIST
 	const BATTLE_TRIAL_RECEPTIONIST
+	const BATTLE_ARCADE_RECEPTIONIST
 	const BATTLE_MIRROR_CHRIS
 
 TrainerHouseB1F_MapScripts:
@@ -1719,7 +1720,7 @@ BattleTrialReceptionistScript:
     warp TRAINER_HOUSE_B1F, 31, 13
     turnobject PLAYER, UP
 	opentext
-	writetext BattleWinText
+	writetext BattleWinNoPrizeText
 	waitbutton
 	closetext
 	special LoadPokemonData
@@ -1743,33 +1744,34 @@ BattleTrialReceptionistScript:
 
 BattleArcadeReceptionistScript:
 	opentext
-	writetext BattleRouletteIntroText
-	promptbutton
-	writetext BattleRouletteAskWantToBattleText
+	writetext BattleArcadeIntroText
 	yesorno
 	iffalse .Declined
     writetext NeedToSaveText
     yesorno
     iffalse .Declined
     special TryQuickSave
-    ;writetext WantToPlayAsAnotherText
-    ;yesorno
-    ;iffalse, .pickEnemy
+    writetext WantToPlayAsAnotherText
+    yesorno
+    iffalse .pickEnemy
     sjump .ChoosePlayerCharacter
+.pickEnemy
+    writetext FineThenText
+    waitbutton
 .chooseEnemy
     sjump .ChooseEnemyCharacter
 .beginBattle
 	writetext BattleGoRightInText
 	waitbutton
 	closetext
-	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement BATTLE_ARCADE_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	startbattle
 	ifequal WIN, .win
 	reloadmap
-    warp TRAINER_HOUSE_B1F, 3, 13
+    warp TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -1780,10 +1782,10 @@ BattleArcadeReceptionistScript:
 	end
 .win
 	reloadmapafterbattle
-    warp TRAINER_HOUSE_B1F, 3, 13
+    warp TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP
 	opentext
-	writetext BattleWinText
+	writetext BattleWinNoPrizeText
 	waitbutton
 	closetext
 	special LoadPokemonData
@@ -1797,8 +1799,28 @@ BattleArcadeReceptionistScript:
 
 .ChoosePlayerCharacter:
     writetext PickYourPlayerText
-	loadmenu .ChooseCharacterMenuHeader
-	_2dmenu
+    checkevent EVENT_BEAT_RED
+    iffalse .notBeatRedPlayerMenu
+    loadmenu .PostRedCharacterMenuHeader
+    _2dmenu
+    sjump .donePlayerMenu
+.notBeatRedPlayerMenu
+    checkevent EVENT_BEAT_WALLACE
+    iffalse .notBeatWallacePlayerMenu
+    loadmenu .PostWallaceCharacterMenuHeader
+    _2dmenu
+    sjump .donePlayerMenu
+.notBeatWallacePlayerMenu
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .notBeatE4PlayerMenu
+    loadmenu .PostE4CharacterMenuHeader
+    _2dmenu
+    sjump .donePlayerMenu
+.notBeatE4PlayerMenu
+    loadmenu .DefaultCharacterMenuHeader
+    _2dmenu
+.donePlayerMenu
+
 	closewindow
 	ifequal 1, .FalknerPlayer
 	ifequal 2, .BugsyPlayer
@@ -1808,24 +1830,24 @@ BattleArcadeReceptionistScript:
 	ifequal 6, .JasminePlayer
 	ifequal 7, .PrycePlayer
 	ifequal 8, .ClairPlayer
-	ifequal 9, .BrockPlayer
-	ifequal 10, .MistyPlayer
-	ifequal 11, .SurgePlayer
-	ifequal 12, .ErikaPlayer
-	ifequal 13, .JaninePlayer
-	ifequal 14, .WillPlayer
-	ifequal 15, .BlainePlayer
-	ifequal 16, .GiovanniPlayer
-	ifequal 17, .SabrinaPlayer
-	ifequal 18, .BrunoPlayer
-	ifequal 19, .KarenPlayer
-	ifequal 20, .AdamPlayer
+	ifequal 9, .SabrinaPlayer
+	ifequal 10, .BrunoPlayer
+	ifequal 11, .KarenPlayer
+	ifequal 12, .OakPlayer
+	ifequal 13, .BrockPlayer
+	ifequal 14, .MistyPlayer
+	ifequal 15, .SurgePlayer
+	ifequal 16, .ErikaPlayer
+	ifequal 17, .JaninePlayer
+	ifequal 18, .WillPlayer
+	ifequal 19, .BlainePlayer
+	ifequal 20, .GiovanniPlayer
 	ifequal 21, .StevenPlayer
 	ifequal 22, .CynthiaPlayer
 	ifequal 23, .LeonPlayer
 	ifequal 24, .WallacePlayer
-    ifequal 25, .LancePlayer
-    ifequal 26, .OakPlayer
+    ifequal 25, .AdamPlayer
+    ifequal 26, .LancePlayer
     ifequal 27, .GreenPlayer
     ifequal 28, .BluePlayer
     ifequal 29, .RedPlayer
@@ -1835,8 +1857,31 @@ BattleArcadeReceptionistScript:
 
 .ChooseEnemyCharacter:
     writetext PickYourEnemyText
-	loadmenu .ChooseCharacterMenuHeader
-	_2dmenu
+
+    checkevent EVENT_BEAT_RED
+    iffalse .notBeatRedEnemyMenu
+    loadmenu .PostRedCharacterMenuHeader
+    _2dmenu
+    sjump .doneEnemyMenu
+.notBeatRedEnemyMenu
+    checkevent EVENT_BEAT_WALLACE
+    iffalse .notBeatWallaceEnemyMenu
+    loadmenu .PostWallaceCharacterMenuHeader
+    _2dmenu
+    sjump .doneEnemyMenu
+.notBeatWallaceEnemyMenu
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .notBeatE4EnemyMenu
+    loadmenu .PostE4CharacterMenuHeader
+    _2dmenu
+    sjump .doneEnemyMenu
+.notBeatE4EnemyMenu
+    loadmenu .DefaultCharacterMenuHeader
+    _2dmenu
+.doneEnemyMenu
+
+	;loadmenu .ChooseCharacterMenuHeader
+	;_2dmenu
 	closewindow
 	ifequal 1, .FalknerEnemy
 	ifequal 2, .BugsyEnemy
@@ -1846,24 +1891,24 @@ BattleArcadeReceptionistScript:
 	ifequal 6, .JasmineEnemy
 	ifequal 7, .PryceEnemy
 	ifequal 8, .ClairEnemy
-	ifequal 9, .BrockEnemy
-	ifequal 10, .MistyEnemy
-	ifequal 11, .SurgeEnemy
-	ifequal 12, .ErikaEnemy
-	ifequal 13, .JanineEnemy
-	ifequal 14, .WillEnemy
-	ifequal 15, .BlaineEnemy
-	ifequal 16, .GiovanniEnemy
-	ifequal 17, .SabrinaEnemy
-	ifequal 18, .BrunoEnemy
-	ifequal 19, .KarenEnemy
-	ifequal 20, .AdamEnemy
+	ifequal 9, .SabrinaEnemy
+	ifequal 10, .BrunoEnemy
+	ifequal 11, .KarenEnemy
+	ifequal 12, .OakEnemy
+	ifequal 13, .BrockEnemy
+	ifequal 14, .MistyEnemy
+	ifequal 15, .SurgeEnemy
+	ifequal 16, .ErikaEnemy
+	ifequal 17, .JanineEnemy
+	ifequal 18, .WillEnemy
+	ifequal 19, .BlaineEnemy
+	ifequal 20, .GiovanniEnemy
 	ifequal 21, .StevenEnemy
 	ifequal 22, .CynthiaEnemy
 	ifequal 23, .LeonEnemy
 	ifequal 24, .WallaceEnemy
-    ifequal 25, .LanceEnemy
-    ifequal 26, .OakEnemy
+    ifequal 25, .AdamEnemy
+    ifequal 26, .LanceEnemy
     ifequal 27, .GreenEnemy
     ifequal 28, .BlueEnemy
     ifequal 29, .RedEnemy
@@ -2201,18 +2246,18 @@ BattleArcadeReceptionistScript:
     loadtrainer INVADER, MASTER_PATCHES
     sjump .beginBattle
 
-.ChooseCharacterMenuHeader:
+.PostRedCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 19, 11
-	dw .ChooseCharacterMenuData
+	dw .PostRedCharacterMenuData
 	db 1 ; default option
-.ChooseCharacterMenuData:
+.PostRedCharacterMenuData:
 	db STATICMENU_CURSOR ; flags
 	dn 5, 6 ; rows, columns
 	db 3 ; spacing
-	dba .ChooseCharacterText
+	dba .PostRedCharacterText
 	dbw BANK(@), NULL
-.ChooseCharacterText:
+.PostRedCharacterText:
 	db "FK@"
 	db "BG@"
 	db "WH@"
@@ -2221,32 +2266,148 @@ BattleArcadeReceptionistScript:
 	db "JS@"
 	db "PY@"
 	db "CL@"
+	db "SB@"
+	db "BN@"
+	db "KN@"
+	db "OK@"
 	db "BR@"
 	db "MS@"
-	db "SG@"
+	db "SR@"
 	db "ER@"
-	db "JN@"
-	db "WL@"
-	db "BN@"
-	db "GV@"
-    db "SB@"
-    db "BO@"
-    db "KN@"
-    db "AD@"
+    db "JN@"
+    db "WL@"
+    db "BL@"
+    db "GV@"
     db "ST@"
     db "CY@"
     db "LE@"
     db "WC@"
+    db "AD@"
     db "LN@"
-    db "OK@"
     db "GR@"
-    db "BL@"
+    db "BU@"
     db "RD@"
     db "PT@"
+
+.PostWallaceCharacterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 9
+	dw .PostWallaceCharacterMenuData
+	db 1 ; default option
+.PostWallaceCharacterMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 4, 6 ; rows, columns
+	db 3 ; spacing
+	dba .PostWallaceCharacterText
+	dbw BANK(@), NULL
+.PostWallaceCharacterText:
+	db "FK@"
+	db "BG@"
+	db "WH@"
+	db "MT@"
+	db "CH@"
+	db "JS@"
+	db "PY@"
+	db "CL@"
+	db "SB@"
+	db "BN@"
+	db "KN@"
+	db "OK@"
+	db "BR@"
+	db "MS@"
+	db "SR@"
+	db "ER@"
+    db "JN@"
+    db "WL@"
+    db "BL@"
+    db "GV@"
+    db "ST@"
+    db "CY@"
+    db "LE@"
+    db "WC@"
+
+.PostE4CharacterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 5
+	dw .PostE4CharacterMenuData
+	db 1 ; default option
+.PostE4CharacterMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 6 ; rows, columns
+	db 3 ; spacing
+	dba .PostE4CharacterText
+	dbw BANK(@), NULL
+.PostE4CharacterText:
+	db "FK@"
+	db "BG@"
+	db "WH@"
+	db "MT@"
+	db "CH@"
+	db "JS@"
+	db "PY@"
+	db "CL@"
+	db "SB@"
+	db "BN@"
+	db "KN@"
+	db "OK@"
+
+.DefaultCharacterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 3
+	dw .DefaultCharacterMenuData
+	db 1 ; default option
+.DefaultCharacterMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 1, 6 ; rows, columns
+	db 3 ; spacing
+	dba .DefaultCharacterText
+	dbw BANK(@), NULL
+.DefaultCharacterText:
+	db "FK@"
+	db "BG@"
+	db "WH@"
+	db "MT@"
+	db "CH@"
+	db "JS@"
+
 NeedToSaveText:
     text "You will need to"
     line "save your game."
     cont "Is that alright?"
+    done
+
+BattleArcadeIntroText:
+    text "Welcome to the"
+    line "BATTLE ARCADE."
+
+    para "Here you can fight"
+    line "as a super powered"
+    cont "trainer of your"
+    cont "choosing."
+
+    para "And fight against"
+    line "super powered"
+    cont "trainers of"
+    cont "your choosing."
+
+    para "Do you want to"
+    line "fight?"
+    done
+
+WantToPlayAsAnotherText:
+    text "You can play as"
+    line "yourself if you"
+    cont "want..."
+
+    para "But you want to"
+    line "be a super"
+    cont "trainer!?"
+    done
+
+FineThenText:
+    text "Fine but you"
+    line "will probably"
+    cont "lose."
     done
 
 PickYourPlayerText:
@@ -2257,12 +2418,6 @@ PickYourPlayerText:
 PickYourEnemyText:
     text "Choose your"
     line "opponent."
-    done
-
-WantToPlayAsAnotherText:
-    text "Do you want to"
-    line "play as another"
-    cont "trainer?"
     done
 
 BattleTrialIntroText:
@@ -2539,6 +2694,10 @@ BattleWinText:
     line "this prize."
     done
 
+BattleWinNoPrizeText:
+    text "Well done!"
+    done
+
 BattleRouletteIntroText:
 	text "Welcome to the"
 	line "BATTLE ROULETTE."
@@ -2606,14 +2765,16 @@ TrainerHouseB1F_MapEvents:
 	warp_event 18, 15, BATTLE_TOWER_OUTSIDE, 8
 	warp_event 31, 15, BATTLE_TOWER_OUTSIDE, 9
 	warp_event 32, 15, BATTLE_TOWER_OUTSIDE, 10
+	warp_event 45, 15, BATTLE_TOWER_OUTSIDE, 11
+	warp_event 46, 15, BATTLE_TOWER_OUTSIDE, 12
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	;object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleRouletteReceptionistScript, -1
-	object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleArcadeReceptionistScript, -1
+	object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleRouletteReceptionistScript, -1
 	object_event 17, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
 	object_event 31, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
+	object_event 45, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleArcadeReceptionistScript, -1
 	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

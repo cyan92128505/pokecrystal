@@ -21,6 +21,10 @@ BattleRouletteReceptionistScript:
 	writetext BattleRouletteAskWantToBattleText
 	yesorno
 	iffalse .Declined
+    writetext NeedToSaveText
+    yesorno
+    iffalse .Declined
+    special TryQuickSave
 	writetext BattleGoRightInText
 	waitbutton
 	closetext
@@ -89,6 +93,7 @@ BattleRouletteReceptionistScript:
 	writetext BattleLoseText
 	waitbutton
 	closetext
+	special LoadPokemonData
 	special HealParty
 	end
 .win
@@ -99,6 +104,7 @@ BattleRouletteReceptionistScript:
 	writetext BattleWinText
 	waitbutton
 	closetext
+	special LoadPokemonData
 	special HealParty
 	sjump GivePrize
 
@@ -915,6 +921,10 @@ BattleMirrorReceptionistScript:
     waitbutton
     yesorno
     iffalse .Declined
+    writetext NeedToSaveText
+    yesorno
+    iffalse .Declined
+    special TryQuickSave
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -934,6 +944,7 @@ BattleMirrorReceptionistScript:
 	writetext BattleLoseText
 	waitbutton
 	closetext
+	special LoadPokemonData
 	special HealParty
 	end
 .Win
@@ -944,6 +955,7 @@ BattleMirrorReceptionistScript:
 	writetext BattleWinText
 	waitbutton
 	closetext
+	special LoadPokemonData
 	special HealParty
 	sjump GiveBattleMirrorPrize
 .Declined:
@@ -1032,6 +1044,10 @@ BattleTrialReceptionistScript:
     waitbutton
     yesorno
     iffalse .Declined
+    writetext NeedToSaveText
+    yesorno
+    iffalse .Declined
+    special TryQuickSave
     checkevent EVENT_BEAT_BATTLE_TRIAL_MASTER
     iftrue .ImpossibleUnlocked
     checkevent EVENT_BEAT_BATTLE_TRIAL
@@ -1109,7 +1125,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer INVADER, GIANT_DAD
+    loadtrainer SAGE, LI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1129,6 +1145,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem POTION
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial4Text
 	waitbutton
@@ -1166,6 +1183,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem GOLD_BERRY
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial7Text
 	waitbutton
@@ -1203,6 +1221,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem WISE_GLASSES
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial10Text
 	waitbutton
@@ -1240,6 +1259,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem MUSCLE_BAND
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial13Text
 	waitbutton
@@ -1277,6 +1297,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem SCOPE_LENS
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial16Text
 	waitbutton
@@ -1314,6 +1335,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem BRIGHTPOWDER
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial19Text
 	waitbutton
@@ -1351,6 +1373,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem FOCUS_SASH
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial22Text
 	waitbutton
@@ -1388,6 +1411,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem LEFTOVERS
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial25Text
 	waitbutton
@@ -1425,6 +1449,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem LIFE_ORB
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial28Text
 	waitbutton
@@ -1507,6 +1532,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem MASTER_BALL
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial4Text
 	waitbutton
@@ -1544,6 +1570,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem AMBROSIA
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial7Text
 	waitbutton
@@ -1581,6 +1608,7 @@ BattleTrialReceptionistScript:
 	verbosegiveitem AMBROSIA
 	writetext NowHeal
 	waitbutton
+	special LoadPokemonData
 	special HealParty
 	writetext Trial10Text
 	waitbutton
@@ -1694,6 +1722,7 @@ BattleTrialReceptionistScript:
 	writetext BattleWinText
 	waitbutton
 	closetext
+	special LoadPokemonData
 	special HealParty
 	end
 .Lose
@@ -1703,6 +1732,7 @@ BattleTrialReceptionistScript:
 	writetext BattleLoseText
 	waitbutton
 	closetext
+	special LoadPokemonData
 	special HealParty
 	end
 .Declined:
@@ -1710,6 +1740,530 @@ BattleTrialReceptionistScript:
 	waitbutton
 	closetext
 	end
+
+BattleArcadeReceptionistScript:
+	opentext
+	writetext BattleRouletteIntroText
+	promptbutton
+	writetext BattleRouletteAskWantToBattleText
+	yesorno
+	iffalse .Declined
+    writetext NeedToSaveText
+    yesorno
+    iffalse .Declined
+    special TryQuickSave
+    ;writetext WantToPlayAsAnotherText
+    ;yesorno
+    ;iffalse, .pickEnemy
+    sjump .ChoosePlayerCharacter
+.chooseEnemy
+    sjump .ChooseEnemyCharacter
+.beginBattle
+	writetext BattleGoRightInText
+	waitbutton
+	closetext
+	applymovement BATTLE_ROULETTE_RECEPTIONIST, Movement_MoveReceptionistOut
+	applymovement PLAYER, Movement_EnterBattleRoom
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	startbattle
+	ifequal WIN, .win
+	reloadmap
+    warp TRAINER_HOUSE_B1F, 3, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleLoseText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+.win
+	reloadmapafterbattle
+    warp TRAINER_HOUSE_B1F, 3, 13
+    turnobject PLAYER, UP
+	opentext
+	writetext BattleWinText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+.Declined:
+	writetext PleaseComeAgainText
+	waitbutton
+	closetext
+	end
+
+.ChoosePlayerCharacter:
+    writetext PickYourPlayerText
+	loadmenu .ChooseCharacterMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .FalknerPlayer
+	ifequal 2, .BugsyPlayer
+	ifequal 3, .WhitneyPlayer
+	ifequal 4, .MortyPlayer
+	ifequal 5, .ChuckPlayer
+	ifequal 6, .JasminePlayer
+	ifequal 7, .PrycePlayer
+	ifequal 8, .ClairPlayer
+	ifequal 9, .BrockPlayer
+	ifequal 10, .MistyPlayer
+	ifequal 11, .SurgePlayer
+	ifequal 12, .ErikaPlayer
+	ifequal 13, .JaninePlayer
+	ifequal 14, .WillPlayer
+	ifequal 15, .BlainePlayer
+	ifequal 16, .GiovanniPlayer
+	ifequal 17, .SabrinaPlayer
+	ifequal 18, .BrunoPlayer
+	ifequal 19, .KarenPlayer
+	ifequal 20, .AdamPlayer
+	ifequal 21, .StevenPlayer
+	ifequal 22, .CynthiaPlayer
+	ifequal 23, .LeonPlayer
+	ifequal 24, .WallacePlayer
+    ifequal 25, .LancePlayer
+    ifequal 26, .OakPlayer
+    ifequal 27, .GreenPlayer
+    ifequal 28, .BluePlayer
+    ifequal 29, .RedPlayer
+    ifequal 30, .PatchesPlayer
+	closetext
+	end
+
+.ChooseEnemyCharacter:
+    writetext PickYourEnemyText
+	loadmenu .ChooseCharacterMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .FalknerEnemy
+	ifequal 2, .BugsyEnemy
+	ifequal 3, .WhitneyEnemy
+	ifequal 4, .MortyEnemy
+	ifequal 5, .ChuckEnemy
+	ifequal 6, .JasmineEnemy
+	ifequal 7, .PryceEnemy
+	ifequal 8, .ClairEnemy
+	ifequal 9, .BrockEnemy
+	ifequal 10, .MistyEnemy
+	ifequal 11, .SurgeEnemy
+	ifequal 12, .ErikaEnemy
+	ifequal 13, .JanineEnemy
+	ifequal 14, .WillEnemy
+	ifequal 15, .BlaineEnemy
+	ifequal 16, .GiovanniEnemy
+	ifequal 17, .SabrinaEnemy
+	ifequal 18, .BrunoEnemy
+	ifequal 19, .KarenEnemy
+	ifequal 20, .AdamEnemy
+	ifequal 21, .StevenEnemy
+	ifequal 22, .CynthiaEnemy
+	ifequal 23, .LeonEnemy
+	ifequal 24, .WallaceEnemy
+    ifequal 25, .LanceEnemy
+    ifequal 26, .OakEnemy
+    ifequal 27, .GreenEnemy
+    ifequal 28, .BlueEnemy
+    ifequal 29, .RedEnemy
+    ifequal 30, .PatchesEnemy
+	closetext
+	end
+
+.FalknerPlayer
+	setval FALKNER
+	writemem wOtherTrainerClass
+	setval MASTER_FALKNER
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.FalknerEnemy
+    loadtrainer FALKNER, MASTER_FALKNER
+    sjump .beginBattle
+
+.BugsyPlayer
+	setval BUGSY
+	writemem wOtherTrainerClass
+	setval MASTER_BUGSY
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.BugsyEnemy
+    loadtrainer BUGSY, MASTER_BUGSY
+    sjump .beginBattle
+
+.WhitneyPlayer
+	setval WHITNEY
+	writemem wOtherTrainerClass
+	setval MASTER_WHITNEY
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.WhitneyEnemy
+    loadtrainer WHITNEY, MASTER_WHITNEY
+    sjump .beginBattle
+
+.MortyPlayer
+	setval MORTY
+	writemem wOtherTrainerClass
+	setval MASTER_MORTY
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.MortyEnemy
+    loadtrainer MORTY, MASTER_MORTY
+    sjump .beginBattle
+
+.ChuckPlayer
+	setval CHUCK
+	writemem wOtherTrainerClass
+	setval MASTER_CHUCK
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.ChuckEnemy
+    loadtrainer CHUCK, MASTER_CHUCK
+    sjump .beginBattle
+
+.JasminePlayer
+	setval JASMINE
+	writemem wOtherTrainerClass
+	setval MASTER_JASMINE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.JasmineEnemy
+    loadtrainer JASMINE, MASTER_JASMINE
+    sjump .beginBattle
+
+.PrycePlayer
+	setval PRYCE
+	writemem wOtherTrainerClass
+	setval MASTER_PRYCE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.PryceEnemy
+    loadtrainer PRYCE, MASTER_PRYCE
+    sjump .beginBattle
+
+.ClairPlayer
+	setval CLAIR
+	writemem wOtherTrainerClass
+	setval MASTER_CLAIR
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.ClairEnemy
+    loadtrainer CLAIR, MASTER_CLAIR
+    sjump .beginBattle
+
+.BrockPlayer
+	setval BROCK
+	writemem wOtherTrainerClass
+	setval MASTER_BROCK
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.BrockEnemy
+    loadtrainer BROCK, MASTER_BROCK
+    sjump .beginBattle
+
+.MistyPlayer
+	setval MISTY
+	writemem wOtherTrainerClass
+	setval MASTER_MISTY
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.MistyEnemy
+    loadtrainer MISTY, MASTER_MISTY
+    sjump .beginBattle
+
+.SurgePlayer
+	setval LT_SURGE
+	writemem wOtherTrainerClass
+	setval MASTER_SURGE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.SurgeEnemy
+    loadtrainer LT_SURGE, MASTER_SURGE
+    sjump .beginBattle
+
+.ErikaPlayer
+	setval ERIKA
+	writemem wOtherTrainerClass
+	setval MASTER_ERIKA
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.ErikaEnemy
+    loadtrainer ERIKA, MASTER_ERIKA
+    sjump .beginBattle
+
+.JaninePlayer
+	setval JANINE
+	writemem wOtherTrainerClass
+	setval MASTER_JANINE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.JanineEnemy
+    loadtrainer JANINE, MASTER_JANINE
+    sjump .beginBattle
+
+.WillPlayer
+	setval WILL
+	writemem wOtherTrainerClass
+	setval MASTER_WILL
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.WillEnemy
+    loadtrainer WILL, MASTER_WILL
+    sjump .beginBattle
+
+.BlainePlayer
+	setval BLAINE
+	writemem wOtherTrainerClass
+	setval MASTER_BLAINE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.BlaineEnemy
+    loadtrainer BLAINE, MASTER_BLAINE
+    sjump .beginBattle
+
+.GiovanniPlayer
+	setval GIOVANNI
+	writemem wOtherTrainerClass
+	setval MASTER_GIOVANNI
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.GiovanniEnemy
+    loadtrainer GIOVANNI, MASTER_GIOVANNI
+    sjump .beginBattle
+
+.SabrinaPlayer
+	setval SABRINA
+	writemem wOtherTrainerClass
+	setval MASTER_SABRINA
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.SabrinaEnemy
+    loadtrainer SABRINA, MASTER_SABRINA
+    sjump .beginBattle
+
+.BrunoPlayer
+	setval BRUNO
+	writemem wOtherTrainerClass
+	setval MASTER_BRUNO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.BrunoEnemy
+    loadtrainer BRUNO, MASTER_BRUNO
+    sjump .beginBattle
+
+.KarenPlayer
+	setval KAREN
+	writemem wOtherTrainerClass
+	setval MASTER_KAREN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.KarenEnemy
+    loadtrainer KAREN, MASTER_KAREN
+    sjump .beginBattle
+
+.AdamPlayer
+	setval ADAM
+	writemem wOtherTrainerClass
+	setval MASTER_ADAM
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.AdamEnemy
+    loadtrainer ADAM, MASTER_ADAM
+    sjump .beginBattle
+
+.StevenPlayer
+	setval STEVEN
+	writemem wOtherTrainerClass
+	setval MASTER_STEVEN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.StevenEnemy
+    loadtrainer STEVEN, MASTER_STEVEN
+    sjump .beginBattle
+
+.CynthiaPlayer
+	setval CYNTHIA
+	writemem wOtherTrainerClass
+	setval MASTER_CYNTHIA
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.CynthiaEnemy
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
+    sjump .beginBattle
+
+.LeonPlayer
+	setval LEON
+	writemem wOtherTrainerClass
+	setval MASTER_LEON
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.LeonEnemy
+    loadtrainer LEON, MASTER_LEON
+    sjump .beginBattle
+
+.WallacePlayer
+	setval WALLACE
+	writemem wOtherTrainerClass
+	setval MASTER_WALLACE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.WallaceEnemy
+    loadtrainer WALLACE, MASTER_WALLACE
+    sjump .beginBattle
+
+.LancePlayer
+	setval CHAMPION
+	writemem wOtherTrainerClass
+	setval MASTER_LANCE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.LanceEnemy
+    loadtrainer CHAMPION, MASTER_LANCE
+    sjump .beginBattle
+
+.BluePlayer
+	setval BLUE
+	writemem wOtherTrainerClass
+	setval MASTER_BLUE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.BlueEnemy
+    loadtrainer BLUE, MASTER_BLUE
+    sjump .beginBattle
+
+.RedPlayer
+	setval RED
+	writemem wOtherTrainerClass
+	setval MASTER_RED
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.RedEnemy
+    loadtrainer RED, MASTER_RED
+    sjump .beginBattle
+
+.GreenPlayer
+	setval LEAF
+	writemem wOtherTrainerClass
+	setval MASTER_GREEN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.GreenEnemy
+    loadtrainer LEAF, MASTER_GREEN
+    sjump .beginBattle
+
+.OakPlayer
+	setval POKEMON_PROF
+	writemem wOtherTrainerClass
+	setval MASTER_OAK
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.OakEnemy
+    loadtrainer POKEMON_PROF, MASTER_OAK
+    sjump .beginBattle
+
+.PatchesPlayer
+	setval INVADER
+	writemem wOtherTrainerClass
+	setval MASTER_PATCHES
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.PatchesEnemy
+    loadtrainer INVADER, MASTER_PATCHES
+    sjump .beginBattle
+
+.ChooseCharacterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 11
+	dw .ChooseCharacterMenuData
+	db 1 ; default option
+.ChooseCharacterMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 5, 6 ; rows, columns
+	db 3 ; spacing
+	dba .ChooseCharacterText
+	dbw BANK(@), NULL
+.ChooseCharacterText:
+	db "FK@"
+	db "BG@"
+	db "WH@"
+	db "MT@"
+	db "CH@"
+	db "JS@"
+	db "PY@"
+	db "CL@"
+	db "BR@"
+	db "MS@"
+	db "SG@"
+	db "ER@"
+	db "JN@"
+	db "WL@"
+	db "BN@"
+	db "GV@"
+    db "SB@"
+    db "BO@"
+    db "KN@"
+    db "AD@"
+    db "ST@"
+    db "CY@"
+    db "LE@"
+    db "WC@"
+    db "LN@"
+    db "OK@"
+    db "GR@"
+    db "BL@"
+    db "RD@"
+    db "PT@"
+NeedToSaveText:
+    text "You will need to"
+    line "save your game."
+    cont "Is that alright?"
+    done
+
+PickYourPlayerText:
+    text "Choose your"
+    line "character."
+    done
+
+PickYourEnemyText:
+    text "Choose your"
+    line "opponent."
+    done
+
+WantToPlayAsAnotherText:
+    text "Do you want to"
+    line "play as another"
+    cont "trainer?"
+    done
 
 BattleTrialIntroText:
     text "Welcome to the"
@@ -1788,7 +2342,7 @@ AcceptPrize:
 
 NowHeal:
     text "Your #MON will"
-    line "now be healed."
+    line "now be restored."
     done
 
 Trial2Text:
@@ -2058,7 +2612,8 @@ TrainerHouseB1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleRouletteReceptionistScript, -1
+	;object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleRouletteReceptionistScript, -1
+	object_event  3, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleArcadeReceptionistScript, -1
 	object_event 17, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
 	object_event 31, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
 	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

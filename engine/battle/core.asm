@@ -8655,7 +8655,7 @@ BattleIntro:
 	call InitEnemy
 	call BackUpBGMap2
 
-	; AndrewNote - Play as enemy probably goes here
+	; AndrewNote - Hand of God
 	ld a, [wOtherTrainerClass]
 	and a
 	jr z, .noCopy

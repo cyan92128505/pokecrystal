@@ -3015,8 +3015,9 @@ wFarfetchdPosition:: db
 ; AndreNote - wram 13 free slots
 
 wHandOfGod:: db
-
-	ds 12
+wPlayerTrainerClass:: db
+wPlayerTrainerId:: db
+	ds 10
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

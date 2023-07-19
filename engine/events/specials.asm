@@ -15,8 +15,9 @@ Special::
 
 INCLUDE "data/events/special_pointers.asm"
 
-UnusedDummySpecial:
-	ret
+;LoadPokemonDataSpecial:
+;    farcall LoadPokemonData
+;	ret
 
 SetPlayerPalette:
 	ld a, [wScriptVar]

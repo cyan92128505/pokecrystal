@@ -1453,6 +1453,11 @@ _MarkOfGodOn::
 	line "immortal form."
 	prompt
 
+_RestoreTeamText::
+    text "Restore team"
+    line "from last save."
+    done
+
 _MarkOfGodOff::
 	text "assume mortal"
 	line "form once more."

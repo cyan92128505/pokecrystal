@@ -905,6 +905,11 @@ IncrementMovesToCurrentMon:
 .incrementDone
     ret
 
+OverridePlayerParty:
+    call ReadTrainerParty
+    call ReadCopyOfTrainerParty
+    ret
+
 ReadCopyOfTrainerParty:
     xor a
     ld [wPartyCount], a
@@ -1488,6 +1493,19 @@ ReadCopyOfTrainerParty:
     ld a, [wOTPartyMon6PP + 3]
     ld [wPartyMon6PP + 3], a
 
+    ; status
+    ld a, [wOTPartyMon1Status]
+    ld [wPartyMon1Status], a
+    ld a, [wOTPartyMon2Status]
+    ld [wPartyMon2Status], a
+    ld a, [wOTPartyMon3Status]
+    ld [wPartyMon3Status], a
+    ld a, [wOTPartyMon4Status]
+    ld [wPartyMon4Status], a
+    ld a, [wOTPartyMon5Status]
+    ld [wPartyMon5Status], a
+    ld a, [wOTPartyMon6Status]
+    ld [wPartyMon6Status], a
     ret
 
 ; AndrewNote - reward money here

@@ -2058,6 +2058,13 @@ HandOfGodEffect:
 	ld hl, HandOfGodOn
 	jp nz, PrintText
 
+    ld hl, RestoreTeamText
+    call PrintText
+    call YesNoBox
+    jr c, .skipRestore
+    farcall LoadPokemonData
+    farcall HealParty
+.skipRestore
 	ld hl, HandOfGodOff
 	jp PrintText
 
@@ -2961,6 +2968,10 @@ HandOfGodOff:
 HandOfGodOn:
 	text_far _HandOfGodOn
 	text_end
+
+RestoreTeamText:
+    text_far _RestoreTeamText
+    text_end
 
 ApplyPPUp:
 	ld a, MON_MOVES

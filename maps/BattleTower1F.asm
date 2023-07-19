@@ -82,6 +82,17 @@ Script_ChooseChallenge:
 	setscene SCENE_DEFAULT
 	special TryQuickSave
 	iffalse Script_Menu_ChallengeExplanationCancel
+
+	writetext MirrorBattlesText
+    loadmenu .MirrorMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .normal
+	ifequal 2, .mirror
+.mirror
+	setval 1
+	writemem wHandOfGod
+.normal
 	setscene SCENE_FINISHED
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
 	special BattleTowerAction
@@ -96,6 +107,36 @@ Script_ChooseChallenge:
 	setval BATTLETOWERACTION_CHOOSEREWARD
 	special BattleTowerAction
 	sjump Script_WalkToBattleTowerElevator
+.MirrorMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 12, 5
+	dw .MirrorMenuData
+	db 1 ; default option
+.MirrorMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .MirrorText
+	dbw BANK(@), NULL
+.MirrorText:
+	db "NORMAL@"
+	db "MIRROR@"
+
+MirrorBattlesText:
+    text "You can play"
+    line "as yourself and"
+    cont "earn rewards."
+
+    para "Or you can play"
+    line "using a copy of"
+    cont "the enemy team"
+    cont "but you wont"
+    cont "earn rewards."
+
+    para "What kind of"
+    line "challenge would"
+    cont "you like?"
+    done
 
 Script_ResumeBattleTowerChallenge:
 	closetext
@@ -165,6 +206,8 @@ Script_BattleTowerSkipExplanation:
 	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_BattleTowerHopeToServeYouAgain:
+    setval 0
+    writemem wHandOfGod
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext

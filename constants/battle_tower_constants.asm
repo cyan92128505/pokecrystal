@@ -1,7 +1,7 @@
-BATTLETOWER_PARTY_LENGTH EQU 3 ; AndrewNote - this is not used anymore, 6 is hard coded
+BATTLETOWER_PARTY_LENGTH EQU 3 ; AndrewNote - Battle Tower - this is not used anymore, 6 is hard coded
 BATTLETOWER_STREAK_LENGTH EQU 4
 
-BATTLETOWER_NUM_UNIQUE_MON EQU 40 ; AndrewNote - lvl 100 has 80 unique mon, others have 40
+BATTLETOWER_NUM_UNIQUE_MON EQU 40 ; AndrewNote - Battle Tower - lvl 100 has 80 unique mon, others have 40
 BATTLETOWER_NUM_UNIQUE_TRAINERS EQU 70
 
 BATTLETOWER_TRAINERDATALENGTH EQU 18 * 2 ; $24

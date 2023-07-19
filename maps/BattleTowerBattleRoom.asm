@@ -90,6 +90,8 @@ Script_DontSaveAndEndTheSession:
 	sjump Script_BattleTowerHopeToServeYouAgain
 
 Script_FailedBattleTowerChallenge:
+    setval 0
+    writemem wHandOfGod
 	pause 60
 	special BattleTowerFade
 	warpfacing UP, BATTLE_TOWER_1F, 7, 7
@@ -108,6 +110,12 @@ Script_BeatenAllTrainers:
 Script_BeatenAllTrainers2:
 	opentext
 	writetext Text_CongratulationsYouveBeatenAllTheTrainers
+	readmem wHandOfGod
+    ifequal 0, .reward
+    setval 0
+    writemem wHandOfGod
+    end
+.reward
 	sjump Script_GivePlayerHisPrize
 
 Script_TooMuchTimeElapsedNoRegister: ; unreferenced

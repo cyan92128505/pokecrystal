@@ -136,13 +136,13 @@ LoadRandomBattleTowerMon:
     cp 20 ; last trainer only uses 20 strongest mons, can pick the runkiller
     jr nc, .resample
 
-; AndrewNote - BT master level specific logic here
+; AndrewNote - Battle Tower - master level specific logic here
 .masterLevel
     ld a, [wNrOfBeatenBattleTowerTrainers]
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainerMaster
     ld a, b
-    cp 80 ; AndrewNote - master has a pool of 80 Pokemon rather than 40
+    cp 80 ; AndrewNote - Battle Tower - master has a pool of 80 Pokemon rather than 40
     jr nc, .resample
     and a
     jr z, .resample ; only the last trainer can have mewtwo
@@ -164,7 +164,7 @@ LoadRandomBattleTowerMon:
 	ld a, [hld]
 	ld c, a
 
-	; AndrewNote - battle tower ensure enemy mon are unique species
+	; AndrewNote - Battle Tower - ensure enemy mon are unique species
 	; no item restrictions
 	ld a, [wBT_OTMon1]
 	cp b

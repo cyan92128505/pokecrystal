@@ -26,6 +26,7 @@ BattleRouletteReceptionistScript:
     yesorno
     iffalse .Declined
     special TryQuickSave
+    iffalse .Declined
 	writetext BattleGoRightInText
 	waitbutton
 	closetext
@@ -88,7 +89,7 @@ BattleRouletteReceptionistScript:
 	startbattle
 	ifequal WIN, .win
 	reloadmap
-    warp TRAINER_HOUSE_B1F, 3, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 3, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -99,7 +100,7 @@ BattleRouletteReceptionistScript:
 	end
 .win
 	reloadmapafterbattle
-    warp TRAINER_HOUSE_B1F, 3, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 3, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleWinText
@@ -926,6 +927,7 @@ BattleMirrorReceptionistScript:
     yesorno
     iffalse .Declined
     special TryQuickSave
+    iffalse .Declined
     writetext BattleGoRightInText
     waitbutton
     closetext
@@ -939,7 +941,7 @@ BattleMirrorReceptionistScript:
 	startbattle
 	ifequal WIN, .Win
 	reloadmap
-    warp TRAINER_HOUSE_B1F, 17, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -950,7 +952,7 @@ BattleMirrorReceptionistScript:
 	end
 .Win
 	reloadmapafterbattle
-    warp TRAINER_HOUSE_B1F, 17, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleWinText
@@ -1049,6 +1051,7 @@ BattleTrialReceptionistScript:
     yesorno
     iffalse .Declined
     special TryQuickSave
+    iffalse .Declined
     checkevent EVENT_BEAT_BATTLE_TRIAL_MASTER
     iftrue .ImpossibleUnlocked
     checkevent EVENT_BEAT_BATTLE_TRIAL
@@ -1717,7 +1720,7 @@ BattleTrialReceptionistScript:
 .Win
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BATTLE_TRIAL
-    warp TRAINER_HOUSE_B1F, 31, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 31, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleWinNoPrizeText
@@ -1727,7 +1730,7 @@ BattleTrialReceptionistScript:
 	special HealParty
 	end
 .Lose
-    warp TRAINER_HOUSE_B1F, 31, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 31, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -1751,6 +1754,7 @@ BattleArcadeReceptionistScript:
     yesorno
     iffalse .Declined
     special TryQuickSave
+    iffalse .Declined
     writetext WantToPlayAsAnotherText
     yesorno
     iffalse .pickEnemy
@@ -1771,7 +1775,7 @@ BattleArcadeReceptionistScript:
 	startbattle
 	ifequal WIN, .win
 	reloadmap
-    warp TRAINER_HOUSE_B1F, 45, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleLoseText
@@ -1782,7 +1786,7 @@ BattleArcadeReceptionistScript:
 	end
 .win
 	reloadmapafterbattle
-    warp TRAINER_HOUSE_B1F, 45, 13
+    warpfacing UP, TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP
 	opentext
 	writetext BattleWinNoPrizeText

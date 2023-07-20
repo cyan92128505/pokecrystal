@@ -114,6 +114,8 @@ Script_BeatenAllTrainers2:
     ifequal 0, .reward
     setval 0
     writemem wHandOfGod
+	setval BATTLETOWERACTION_CHALLENGECANCELED
+	special BattleTowerAction
     end
 .reward
 	sjump Script_GivePlayerHisPrize

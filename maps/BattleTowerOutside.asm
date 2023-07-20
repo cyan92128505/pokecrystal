@@ -420,6 +420,19 @@ BattleTowerIntro:
     para "Particularly for"
     line "the top levels."
 
+    para "There is also a"
+    line "MIRROR battle"
+    cont "mode."
+
+    para "This means you"
+    line "fight with a copy"
+    cont "of the enemy team."
+
+    para "Making for the"
+    line "ultimate test of"
+    cont "knowledge and"
+    cont "skill."
+
     para "If you want a"
     line "real challenge"
     cont "this is the place"

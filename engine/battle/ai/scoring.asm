@@ -6108,3 +6108,66 @@ SetUpSelfDVs:
 	ld c, [hl]
 .notSelf
     ret
+
+RuthlessClasses:
+    db WALLACE
+    db SOLDIER
+    db EXECUTIVEM
+    db EXECUTIVEF
+    db GRUNTM
+    db GRUNTF
+    db -1
+
+ForfeitMatch:
+    ld hl, ForfeitMatchText
+    call PrintText
+    call YesNoBox
+    jr c, .cantEscape
+    ld a, [wOtherTrainerClass]
+    ld hl, RuthlessClasses
+    ld de, 1
+    call IsInArray
+    jr c, .ruthless
+    xor a
+    ld [wBattleMonHP], a
+    ld [wBattleMonHP + 1], a
+    ld [wPartyMon1HP], a
+    ld [wPartyMon1HP + 1], a
+    ld [wPartyMon2HP], a
+    ld [wPartyMon2HP + 1], a
+    ld [wPartyMon3HP], a
+    ld [wPartyMon3HP + 1], a
+    ld [wPartyMon4HP], a
+    ld [wPartyMon4HP + 1], a
+    ld [wPartyMon5HP], a
+    ld [wPartyMon5HP + 1], a
+    ld [wPartyMon6HP], a
+    ld [wPartyMon6HP + 1], a
+    farcall HandlePlayerMonFaint
+    scf
+    ret
+.cantEscape
+    xor a
+    ld hl, BattleText_TheresNoEscapeFromTrainerBattle
+    ret
+.ruthless
+    xor a
+    ld hl, BattleText_DoesNotAccept
+    ret
+
+ForfeitMatchText:
+    text "Forfeit battle?"
+    done
+
+ShowLinkBattleParticipantsAfterEnd:
+	farcall StubbedTrainerRankings_LinkBattles
+	farcall BackupMobileEventIndex
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Status
+	call GetPartyLocation
+	ld a, [wEnemyMonStatus]
+	ld [hl], a
+	call ClearTilemap
+	farcall _ShowLinkBattleParticipants
+	ret
+

@@ -4081,7 +4081,8 @@ TryToRunAwayFromBattle:
 	jr .print_inescapable_text
 
 .cant_run_from_trainer
-	ld hl, BattleText_TheresNoEscapeFromTrainerBattle
+    farcall ForfeitMatch
+	jp c, SetEnemyTurn
 
 .print_inescapable_text
 	call StdBattleTextbox
@@ -8903,7 +8904,7 @@ ExitBattle:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
-	call ShowLinkBattleParticipantsAfterEnd
+	farcall ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
 	call DisplayLinkBattleResult
@@ -8986,18 +8987,6 @@ CheckPayDay:
 	ret z
 	call ClearTilemap
 	call ClearBGPalettes
-	ret
-
-ShowLinkBattleParticipantsAfterEnd:
-	farcall StubbedTrainerRankings_LinkBattles
-	farcall BackupMobileEventIndex
-	ld a, [wCurOTMon]
-	ld hl, wOTPartyMon1Status
-	call GetPartyLocation
-	ld a, [wEnemyMonStatus]
-	ld [hl], a
-	call ClearTilemap
-	farcall _ShowLinkBattleParticipants
 	ret
 
 DisplayLinkBattleResult:

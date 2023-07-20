@@ -2399,19 +2399,15 @@ BattleArcadeIntroText:
     done
 
 WantToPlayAsAnotherText:
-    text "You can play as"
-    line "yourself if you"
-    cont "want..."
-
-    para "But you want to"
-    line "be a super"
+    text "You want to"
+    line "play as a super"
     cont "trainer!?"
     done
 
 FineThenText:
-    text "Fine but you"
-    line "will probably"
-    cont "lose."
+    text "Fine, you can"
+    line "play as your"
+    cont "normal self."
     done
 
 PickYourPlayerText:

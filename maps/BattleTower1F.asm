@@ -123,19 +123,16 @@ Script_ChooseChallenge:
 	db "MIRROR@"
 
 MirrorBattlesText:
-    text "You can play"
-    line "as yourself and"
-    cont "earn rewards."
+    text "Which kind of"
+    line "battles do you"
+    cont "want."
 
-    para "Or you can play"
-    line "using a copy of"
-    cont "the enemy team"
-    cont "but you wont"
-    cont "earn rewards."
-
-    para "What kind of"
-    line "challenge would"
-    cont "you like?"
+    para "NORMAL battles"
+    line "or MIRROR where"
+    cont "you use a copy"
+    cont "of the enemy team"
+    cont "and don't earn"
+    cont "rewards?"
     done
 
 Script_ResumeBattleTowerChallenge:
@@ -859,6 +856,11 @@ Text_BattleTowerBugCatcher:
 	line "any fire #MON…"
 	done
 
+TurnOffHandOfGodScript:
+    setval 0
+    writemem wHandOfGod
+    end
+
 BattleTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -868,6 +870,8 @@ BattleTower1F_MapEvents:
 	warp_event  7,  0, BATTLE_TOWER_ELEVATOR, 1
 
 	def_coord_events
+	coord_event 7, 9, SCENE_ALWAYS, TurnOffHandOfGodScript
+	coord_event 7, 9, SCENE_ALWAYS, TurnOffHandOfGodScript
 
 	def_bg_events
 	bg_event  6,  6, BGEVENT_READ, BattleTower1FRulesSign

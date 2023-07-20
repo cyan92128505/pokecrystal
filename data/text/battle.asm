@@ -291,6 +291,11 @@ BattleText_TheresNoEscapeFromTrainerBattle:
 	cont "trainer battle!"
 	prompt
 
+BattleText_DoesNotAccept:
+    text "The opponent"
+    line "does not accept!"
+    prompt
+
 BattleText_GotAwaySafely:
 	text "Got away safely!"
 	prompt

@@ -1544,7 +1544,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CLAIR, MASTER_CLAIR
+    loadtrainer FALKNER, MASTER_FALKNER
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1554,7 +1554,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer GIOVANNI, MASTER_GIOVANNI
+    loadtrainer CLAIR, MASTER_CLAIR
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1564,7 +1564,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer STEVEN, MASTER_STEVEN
+    loadtrainer COOLTRAINERM, MASTER_TOBIAS
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1582,7 +1582,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CYNTHIA, MASTER_CYNTHIA
+    loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1592,7 +1592,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer LEON, MASTER_LEON
+    loadtrainer MYSTICALMAN, MASTER_EUSINE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1602,7 +1602,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer BLUE, MASTER_SETO
+    loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1620,7 +1620,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RIVAL2, MASTER_RIVAL
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1630,7 +1630,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CRYSTAL, MASTER_CRYSTAL
+    loadtrainer LEON, MASTER_LEON
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1665,7 +1665,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer INVADER, MASTER_PATCHES
+    loadtrainer WALLACE, MASTER_WALLACE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1675,7 +1675,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, MASTER_YAMI
+    loadtrainer BLUE, MASTER_SETO
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1685,7 +1685,7 @@ BattleTrialReceptionistScript:
 	closetext
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer WALLACE, MASTER_WALLACE
+    loadtrainer RED, MASTER_YAMI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap

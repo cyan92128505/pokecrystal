@@ -23,6 +23,7 @@ FuchsiaCity_MapScripts:
 	endcallback
 
 .Invasion:
+    disappear FUCHSIACITY_SELF
     disappear FUCHSIACITY_SOLDIER_1
     disappear FUCHSIACITY_SOLDIER_2
     checkevent EVENT_HOEN_INVASION_UNDERWAY

@@ -570,6 +570,16 @@ Text_CongratulationsYouveBeatenAllTheTrainers:
 	para ""
 	done
 
+Text_CongratulationsButNoReward:
+	text "Congratulations!"
+
+	para "You have proven"
+	line "your great skill."
+
+	para "That is reward"
+	line "enough."
+	done
+
 Text_AskRegisterRecord_Mobile: ; unreferenced
 	text "Would you like to"
 	line "register your"

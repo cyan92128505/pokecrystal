@@ -36,6 +36,8 @@ GoldenrodCity_MapScripts:
     checktime NITE
     iffalse .tutor
 
+    disappear GOLDENRODCITY_SELF
+
     random 3
     ifequal 1, .spawn1
     disappear GOLDENRODCITY_FIELDMON_1

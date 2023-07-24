@@ -385,7 +385,6 @@ INCLUDE "maps/RedsHouse1F.asm"
 SECTION "Map Scripts 21", ROMX
 
 INCLUDE "maps/CianwoodCity.asm"
-INCLUDE "maps/Route27.asm"
 INCLUDE "maps/Route29.asm"
 INCLUDE "maps/Route30.asm"
 INCLUDE "maps/Route38.asm"
@@ -394,7 +393,6 @@ INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/PewterGym.asm"
 INCLUDE "maps/PewterMart.asm"
 INCLUDE "maps/PewterPokecenter1F.asm"
-;INCLUDE "maps/PewterPokecenter2FBeta.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 
 
@@ -510,3 +508,4 @@ INCLUDE "maps/BlackthornEmysHouse.asm"
 INCLUDE "maps/AzaleaTown.asm"
 INCLUDE "maps/EcruteakTinTowerEntrance.asm"
 INCLUDE "maps/WiseTriosRoom.asm"
+INCLUDE "maps/Route27.asm"

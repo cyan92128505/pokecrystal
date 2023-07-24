@@ -2,8 +2,8 @@
 	const CIANWOODCITY_STANDING_YOUNGSTER
 	const CIANWOODCITY_POKEFAN_M
 	const CIANWOODCITY_LASS
-	const CIANWOODCITY_ROCK3
-	const CIANWOODCITY_ROCK5
+	;const CIANWOODCITY_ROCK3
+	;const CIANWOODCITY_ROCK5
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
@@ -13,6 +13,9 @@
     const CIANWOODCITY_FIELDMON_4
     const CIANWOODCITY_FIELDMON_5
     const CIANWOODCITY_HOEN_SPY
+    const CIANWOODCITY_GIRL_1
+    const CIANWOODCITY_GIRL_2
+    const CIANWOODCITY_MEWTWO
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -31,6 +34,15 @@ CianwoodCity_MapScripts:
 
 .CianwoodCityFieldMon:
 ; Pokemon which always appear
+    disappear CIANWOODCITY_GIRL_1
+    disappear CIANWOODCITY_GIRL_2
+    disappear CIANWOODCITY_MEWTWO
+
+    checkevent EVENT_BEAT_SOLDIER_10
+    iffalse .mons
+    appear CIANWOODCITY_GIRL_1
+
+.mons
     appear CIANWOODCITY_FIELDMON_2
     appear CIANWOODCITY_FIELDMON_3
     appear CIANWOODCITY_FIELDMON_4
@@ -162,8 +174,8 @@ CianwoodBeachSign:
 CianwoodPokecenterSign:
 	jumpstd PokecenterSignScript
 
-CianwoodCityRock:
-	jumpstd SmashRockScript
+;CianwoodCityRock:
+;	jumpstd SmashRockScript
 
 CianwoodCityHiddenRevive:
 	hiddenitem REVIVE, EVENT_CIANWOOD_CITY_HIDDEN_REVIVE
@@ -459,78 +471,579 @@ CianwoodCityFieldMon5Script:
 	setevent EVENT_FIELD_MON_5
 	disappear CIANWOODCITY_FIELDMON_5
 	end
-	
-HoenSpyScript:
+
+PsychicGirlScript1:
+    appear CIANWOODCITY_GIRL_1
+    playmusic MUSIC_SHOW_ME_AROUND
+    applymovement CIANWOODCITY_GIRL_1, Movement_PsychicGirlAppears
+    turnobject PLAYER, LEFT
+    opentext
+    writetext CameHereToGetMedicine
+    waitbutton
+    yesorno
+    iffalse .dontBelieve
+.again
+    writetext HoenSpyBelieve
+    waitbutton
+    yesorno
+    iffalse .dontBelieve
+    writetext SeeYouAtBeach
+    waitbutton
+    closetext
+    setevent EVENT_PSYCHIC_GIRL_WAITING
+    applymovement CIANWOODCITY_GIRL_1, Movement_PsychicGirlLeaves
+    disappear CIANWOODCITY_GIRL_1
+    special RestartMapMusic
+    end
+.dontBelieve
+    writetext JustLikeEveryoneElse
+    waitbutton
+    sjump .again
+
+PsychicGirlScript2:
+    appear CIANWOODCITY_GIRL_2
+    applymovement CIANWOODCITY_GIRL_2, Movement_PsychicGirlAppearsAgain
+PsychicGirlTalkScript:
     faceplayer
-	opentext
-	writetext HoenSpySeenText
-	waitbutton
-	closetext
+    opentext
+    writetext HeIsUpHere
+    waitbutton
+    yesorno
+    closetext
+    iffalse .noSave
+    opentext
+    special TryQuickSave
+    closetext
+    iffalse .noSave
+    follow CIANWOODCITY_GIRL_2, PLAYER
+    applymovement CIANWOODCITY_GIRL_2, Movement_PsychicGirlToShore
+    stopfollow
+    opentext
+    writetext HeIsOverThere
+    waitbutton
+    closetext
+    playsound SFX_WARP_TO
+    disappear CIANWOODCITY_GIRL_2
+    warpfacing RIGHT, CIANWOOD_CITY, 18, 8
+    moveobject CIANWOODCITY_GIRL_2, 18, 9
+    turnobject CIANWOODCITY_GIRL_2, RIGHT
+    appear CIANWOODCITY_GIRL_2
+    follow PLAYER, CIANWOODCITY_GIRL_2
+    applymovement PLAYER, Movement_ApproachSpy
+    stopfollow
+    applymovement CIANWOODCITY_GIRL_2, Movement_GirlBesidePlayerSpy
+    special FadeOutMusic
+    pause 15
+    turnobject CIANWOODCITY_HOEN_SPY, LEFT
+    opentext
+    writetext WhoAreYou
+    waitbutton
+    closetext
+    turnobject CIANWOODCITY_GIRL_2, UP
+    opentext
+    writetext HeIsASpy
+    waitbutton
+    closetext
+    opentext
+    writetext YesIAm
+    waitbutton
+    closetext
 	winlosstext HoenSpyBeatenText, HoenSpyWinsText
 	loadtrainer SOLDIER, SOLDIER_SPY
 	startbattle
-	reloadmapafterbattle
+	reloadmap
+	special FadeOutMusic
+	special HealParty
+	applymovement PLAYER, Movement_PlayerKnockedBackBySpy
+	applymovement CIANWOODCITY_GIRL_2, Movement_GirlBehindPlayer
+	opentext
+	writetext GreninjaDrownThem
+	waitbutton
+	closetext
+	turnobject CIANWOODCITY_GIRL_2, LEFT
+	opentext
+	writetext KittyHelp
+	waitbutton
+	closetext
+	pause 15
+	special FadeOutPalettes
+	playsound SFX_WARP_TO
+	appear CIANWOODCITY_MEWTWO
+	cry MEWTWO
+	turnobject CIANWOODCITY_GIRL_2, RIGHT
+	setval RED
+	writemem wOtherTrainerClass
+	setval RED_MEWTWO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	winlosstext HoenSpyBeatenText, HoenSpyWinsText
+	loadtrainer SOLDIER, SOLDIER_SPY
+	startbattle
+	reloadmap
+	playmusic MUSIC_RED_DUNGEON
+	special LoadPokemonData
+	special HealParty
 	setevent EVENT_BEAT_SOLDIER_10
 	opentext
-	writetext HoenSpyAfterBattleText
+	writetext HoenSpyBegs
 	waitbutton
+	closetext
+	cry MEWTWO
+	special FadeOutPalettes
+	disappear CIANWOODCITY_HOEN_SPY
+	special RestartMapMusic
+	opentext
+	writetext ThankYouKitty
+	waitbutton
+	closetext
+	playsound SFX_WARP_FROM
+	disappear CIANWOODCITY_MEWTWO
+	turnobject PLAYER, LEFT
+	opentext
+	writetext ThanksHereIsTm
+	waitbutton
+	verbosegiveitem TM_PSYCHIC_M
+	writetext MoveUsBack
+	closetext
+    disappear CIANWOODCITY_GIRL_2
+    warpfacing DOWN, CIANWOOD_CITY, 12, 10
+    moveobject CIANWOODCITY_GIRL_2, 12, 11
+    appear CIANWOODCITY_GIRL_2
+    turnobject CIANWOODCITY_GIRL_2, UP
+    opentext
+	writetext ByeBye
+	waitbutton
+	closetext
+    applymovement CIANWOODCITY_GIRL_2, Movement_PsychicGirlFinished
+    pause 10
+    disappear CIANWOODCITY_GIRL_2
+.end
+    end
+.noSave
+    opentext
+    writetext ComebackWhenReady
+    waitbutton
     closetext
-    disappear CIANWOODCITY_HOEN_SPY
-    reloadmap
-	end
-HoenSpySeenText:
-    text "Oh um..."
+    applymovement CIANWOODCITY_GIRL_2, Movement_NoSave
+    disappear CIANWOODCITY_GIRL_2
+    applymovement PLAYER, Movement_PlayerDownCianwood
+    end
+
+CameHereToGetMedicine:
+    text "Hey <PLAYER>!"
+
+    para "I'm AMBER."
+
+    para "Hang on don't"
+    line "tell me..."
+
+    para "You are here to"
+    line "get some special"
+    cont "medicine for a"
+    cont "sick #MON."
+
+    para "I can tell because"
+    line "I am psychic."
+
+    para "That's how I"
+    line "know your name."
+
+    para "I'm from SAFFRON"
+    line "which is full of"
+    cont "psychics."
+
+    para "My dad sent me"
+    line "here to escape"
+    cont "the war."
+
+    para "But a man showed"
+    line "up here a few days"
+    cont "ago and I am sure"
+    cont "he is a HOEN spy."
+
+    para "I can read his"
+    line "mind and I'm"
+    cont "sure!"
+
+    para "Do you believe"
+    line "me?"
+    done
+
+HoenSpyBelieve:
+    text "Really!"
+
+    para "Most people don't"
+    line "believe me."
+
+    para "Just like they"
+    line "don't believe in"
+    cont "KITTY my invisible"
+    cont "friend."
+
+    para "But you believe"
+    line "me right?"
+    done
+
+SeeYouAtBeach:
+    text "Together we will"
+    line "take this HOEN"
+    cont "spy down!"
+
+    para "Meet me at the"
+    line "beach to the"
+    cont "North."
+
+    para "The spy is"
+    line "by the lighthouse."
+    done
+
+JustLikeEveryoneElse:
+    text "No you are not"
+    line "just like all"
+    cont "the others."
+
+    para "Just be open"
+    line "minded!"
+    done
+
+Movement_PsychicGirlAppears:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step RIGHT
+    step_end
+
+Movement_PsychicGirlLeaves:
+    big_step LEFT
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    step_end
+
+HeIsUpHere:
+    text "I see you made"
+    line "it past that"
+    cont "weird guy!"
+
+    para "His mind is like"
+    line "a black hole of"
+    cont "obsession."
+
+    para "Anyway..."
+
+    para "The spy is right"
+    line "up here!"
+
+    para "This could get"
+    line "dangerous. You"
+    cont "should save your"
+    cont "progress."
+
+    para "Save your game?"
+    done
+
+HeIsOverThere:
+    text "He is right over"
+    line "there by the"
+    cont "lighthouse."
+
+    para "I'm sure he plans"
+    line "to use it to guide"
+    cont "other HOEN forces."
+
+    para "Hang on..."
+
+    para "If I concentrate"
+    line "I can move us"
+    cont "there with my"
+    cont "mind."
+    done
+
+WhoAreYou:
+    text "How did you sneak"
+    line "up on me!"
+
+    para "I am just a"
+    line "sailor waiting"
+    cont "for my ship to"
+    cont "arrive."
 
     para "Run along now"
+    line "children and"
+    cont "forget you saw"
+    cont "me."
+    done
 
-    para "I'm just a sailor"
-    line "making a map of"
-    cont "the JOHTO coast."
+HeIsASpy:
+    text "He is thinking"
+    line "about whether or"
+    cont "or not we know."
 
-    para "Shouldn't you be"
-    line "collecting your"
-    cont "badges."
+    para "Wondering if we"
+    line "might be a"
+    cont "distraction."
 
-    para "There is a GYM"
-    line "LEADER here."
+    para "Now he is"
+    line "thinking about"
+    cont "somewhere"
+    cont "called..."
 
-    para "SURGE...."
+    para "MOSSDEEP CITY."
 
-    para "I mean CHUCK!"
+    para "It has Psychics"
+    line "too."
 
     para "...."
 
-    para "Damn my cover is"
-    line "blown."
-
-    para "Sorry kid but I"
-    line "can't let anyone"
-    cont "suspect me."
-
-    para "You have to go!"
+    para "He is going to"
+    line "attack us!"
     done
+
+YesIAm:
+    text "Indeed I am."
+
+    para "I am going to"
+    line "enjoy this."
+
+    para "I am no mere"
+    line "spy."
+
+    para "I am a CAPTAIN"
+    line "of the HOEN"
+    cont "fleet."
+
+    para "I report directly"
+    line "to ADMIRAL DRAKE."
+
+    para "And he reports"
+    line "directly to"
+    cont "FUHRER WALLACE."
+
+    para "I am stronger"
+    line "than even your"
+    cont "pathetic ELITE"
+    cont "FOUR."
+
+    para "Let me show you!"
+    done
+
 HoenSpyBeatenText:
-    text "I'm a double"
-    line "agent!"
+    text "What are you!"
     done
+
 HoenSpyWinsText:
-    text "You saw nothing."
+    text "Long live"
+    line "FUHRER WALLACE!"
     done
-HoenSpyAfterBattleText:
-    text "I have already"
-    line "relayed the"
-    cont "relevant info."
 
-    para "We wont let you"
-    line "squander your"
-    cont "land and #MON"
-    cont "much longer."
+GreninjaDrownThem:
+    text "It is not safe"
+    line "for children to"
+    cont "play by this"
+    cont "lighthouse."
 
-    para "Go home kid."
+    para "The sea is a"
+    line "merciless force."
 
-    para "And stay out of"
-    line "our way or you"
-    cont "will suffer."
+    para "Today it has"
+    line "claimed two more"
+    cont "young victims."
+
+    para "POLIWRATH!"
+
+    para "...drown them."
+    done
+
+KittyHelp:
+    text "Ahhhhh!"
+
+    para "KITTY HELP!"
+    done
+
+HoenSpyBegs:
+    text "NO..."
+
+    para "What are you!"
+
+    para "No... Stop..."
+
+    para "AHHGGGHHHGAAA!!.."
+    done
+
+ThankYouKitty:
+    text "Thank you"
+    line "KITTY."
+
+    para "I knew you"
+    line "would come."
+
+    para "Thank you."
+    done
+
+ThanksHereIsTm:
+    text "Thank you"
+    line "<PLAYER>."
+
+    para "I could feel"
+    line "how desperate"
+    cont "you were to"
+    cont "protect me."
+
+    para "I think that"
+    line "is what really"
+    cont "called KITTY"
+    cont "here."
+
+    para "You might have"
+    line "latent Psychic"
+    cont "powers too."
+
+    para "This will help"
+    line "you unlock them."
+    done
+
+MoveUsBack:
+    text "Hang on..."
+
+    para "I can move us"
+    line "back if I"
+    cont "concentrate..."
+    done
+
+ByeBye:
+    text "Thank you"
+    line "again."
+
+    para "I can sense..."
+
+    para "This will not"
+    line "be the last"
+    cont "time you save"
+    cont "people from the"
+    cont "forces of HOEN."
+
+    para "Good luck"
+    line "<PLAYER>"
+    done
+
+Movement_PsychicGirlAppearsAgain:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
+Movement_PsychicGirlToShore:
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step RIGHT
+    step RIGHT
+    step_end
+
+Movement_PlayerKnockedBackBySpy:
+	fix_facing
+	set_sliding
+    big_step LEFT
+    remove_sliding
+    remove_fixed_facing
+    step_end
+
+Movement_GirlBehindPlayer:
+    big_step LEFT
+    big_step LEFT
+    big_step UP
+    turn_head RIGHT
+    step_end
+
+Movement_PsychicGirlFinished:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
+Movement_ApproachSpy:
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step RIGHT
+    step_end
+
+Movement_GirlBesidePlayerSpy:
+    step DOWN
+    step RIGHT
+    step_end
+
+ComebackWhenReady:
+    text "OK, come back"
+    line "when you are"
+    cont "ready."
+    done
+
+Movement_NoSave:
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    big_step UP
+    step_end
+
+Movement_PlayerDownCianwood:
+    step DOWN
+    step_end
+
+PsychicGirlFirstScene:
+    checkevent EVENT_PSYCHIC_GIRL_WAITING
+    iftrue .end
+    sjump PsychicGirlScript1
+.end
+    end
+
+PsychicGirlSecondScene:
+    checkevent EVENT_BEAT_SOLDIER_10
+    iftrue .end
+    checkevent EVENT_PSYCHIC_GIRL_WAITING
+    iffalse .end
+    sjump PsychicGirlScript2
+.end
+    end
+
+PsychicGirlPostScript:
+    jumptextfaceplayer PsychicGirlPostText
+
+PsychicGirlPostText:
+    text "Hey <PLAYER>!"
+
+    para "I know you will"
+    line "do great things."
+
+    para "And we will"
+    line "meet again."
+
+    para "For now I like"
+    line "just relaxing"
+    cont "here."
     done
 
 CianwoodCity_MapEvents:
@@ -547,6 +1060,9 @@ CianwoodCity_MapEvents:
 
 	def_coord_events
 	coord_event 11, 28, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
+	coord_event 15, 60, SCENE_ALWAYS, PsychicGirlFirstScene
+	coord_event 11, 27, SCENE_ALWAYS, PsychicGirlSecondScene
+
 
 	def_bg_events
 	bg_event 20, 46, BGEVENT_READ, CianwoodCitySign
@@ -563,9 +1079,7 @@ CianwoodCity_MapEvents:
 	object_event 21, 49, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 45, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 54, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
-	object_event  4, 37, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 39, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 58, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
+	object_event 10, 58, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 33, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 26, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	object_event 15, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, CianwoodCityFieldMon1Script, EVENT_FIELD_MON_1
@@ -573,5 +1087,7 @@ CianwoodCity_MapEvents:
 	object_event 7,  38, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 25, 46, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 7, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon5Script, EVENT_FIELD_MON_5
-	object_event 23, 8, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, HoenSpyScript, EVENT_BEAT_SOLDIER_10
-
+	object_event 23, 8, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, ObjectEvent, EVENT_BEAT_SOLDIER_10
+	object_event 13, 55, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PsychicGirlPostScript, EVENT_TEMP_EVENT_1
+	object_event 11, 22, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PsychicGirlTalkScript, EVENT_TEMP_EVENT_2
+	object_event 22,  8, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, ObjectEvent, EVENT_TEMP_EVENT_3

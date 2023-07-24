@@ -26,6 +26,7 @@ VioletCity_MapScripts:
 
 .VioletCityFieldMon:
 ; Pokemon which always appear
+    disappear VIOLETCITY_SELF
     appear VIOLETCITY_FIELDMON_1
     appear VIOLETCITY_FIELDMON_2
     appear VIOLETCITY_FIELDMON_3

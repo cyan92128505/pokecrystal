@@ -108,16 +108,20 @@ Script_BeatenAllTrainers:
 	special BattleTowerFade
 	warpfacing UP, BATTLE_TOWER_1F, 7, 7
 Script_BeatenAllTrainers2:
-	opentext
-	writetext Text_CongratulationsYouveBeatenAllTheTrainers
 	readmem wHandOfGod
     ifequal 0, .reward
     setval 0
     writemem wHandOfGod
+    opentext
+    writetext Text_CongratulationsButNoReward
+    waitbutton
+    closetext
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
     end
 .reward
+	opentext
+	writetext Text_CongratulationsYouveBeatenAllTheTrainers
 	sjump Script_GivePlayerHisPrize
 
 Script_TooMuchTimeElapsedNoRegister: ; unreferenced

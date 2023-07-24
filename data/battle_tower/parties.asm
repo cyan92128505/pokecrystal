@@ -145,7 +145,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 16 ; PP
+	db 16, 24, 24, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 24 ; Level
@@ -275,7 +275,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 24, 16 ; PP
+	db 16, 24, 16, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 23 ; Level
@@ -603,7 +603,7 @@ BattleTowerMons:
 
 	db LOPUNNY
 	db BRIGHTPOWDER
-	db HEADBUTT, DRAIN_PUNCH, ICE_PUNCH, THUNDERPUNCH
+	db AI_RETURN, DRAIN_PUNCH, ICE_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -613,7 +613,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 6, 15, 15, 15 ; DVs
-	db 24, 24, 24, 24 ; PP
+	db 32, 24, 24, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level

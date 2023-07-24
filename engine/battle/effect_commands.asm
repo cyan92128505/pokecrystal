@@ -5750,6 +5750,8 @@ BattleCommand_FlinchTarget:
     jr z, .noFlinch
     cp UMBREON
     jr z, .noFlinch
+    cp MEWTWO
+    jr z, .noFlinch
     jr FlinchTarget
 .noFlinch
 	ld hl, CantFlinchText

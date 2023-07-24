@@ -14,6 +14,7 @@ MahoganyTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Self
 
 .DummyScene0:
 	end
@@ -24,6 +25,10 @@ MahoganyTown_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	endcallback
+
+.Self
+    disappear MAHOGANYTOWN_SELF
+    endcallback
 
 ;MahoganyTownTryARageCandyBarScript:
 ;	showemote EMOTE_SHOCK, MAHOGANYTOWN_POKEFAN_M, 15

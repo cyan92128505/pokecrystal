@@ -3012,11 +3012,10 @@ wFieldWeather::
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-; AndreNote - wram 13 free slots
+; AndrewNote - wram 13 free slots
 
 wHandOfGod:: db
-wPlayerTrainerClass:: db
-wPlayerTrainerId:: db
+wBattleMusicOverride:: ds 2
 	ds 10
 
 ; map scene ids

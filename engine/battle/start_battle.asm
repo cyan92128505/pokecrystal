@@ -150,6 +150,21 @@ PlayBattleMusic:
 	cp FIELD_MON
 	jp z, .done
 
+	ld a, [wBattleMusicOverride]
+	and a
+	jr nz, .useOverride
+	ld a, [wBattleMusicOverride + 1]
+	and a
+	jr nz, .useOverride
+	jr .noOverride
+.useOverride
+	ld a, [wBattleMusicOverride + 1]
+	ld d, a
+	ld a, [wBattleMusicOverride]
+	ld e, a
+	jp .done
+
+.noOverride
     ld a, [wOtherTrainerClass]
 
     ld de, MUSIC_EPIC_TETRIS
@@ -282,6 +297,9 @@ PlayBattleMusic:
 	ld de, MUSIC_KANTO_TRAINER_BATTLE
 
 .done
+    xor a
+    ld [wBattleMusicOverride], a
+    ld [wBattleMusicOverride + 1], a
 	call PlayMusic
 
 .skip

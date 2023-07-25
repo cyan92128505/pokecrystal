@@ -3387,6 +3387,7 @@ EnemySwitch:
 	call FindMonInOTPartyToSwitchIntoBattle
 .skip
 	; 'b' contains the PartyNr of the mon the AI will switch to
+	; AndrewNote - Bug - there may be an issue here where stat effects of para/burn are lost on enemy switch
 	call LoadEnemyMonToSwitchTo
 	call OfferSwitch
 	push af

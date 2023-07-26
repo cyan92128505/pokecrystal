@@ -755,6 +755,7 @@ AI_Switch:
 	farcall SpikesDamage
 	farcall SetEnemyTurn
 	farcall SwitchInEffects
+	farcall ApplyStatusEffectOnEnemyStats
 .linked
 	xor a
 	ld [wBattleHasJustStarted], a

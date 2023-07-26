@@ -5465,6 +5465,9 @@ BattleCommand_ForceSwitch:
 	call StdBattleTextbox
 
 	ld hl, SpikesDamage
+	call CallBattleCore
+
+	ld hl, ApplyStatusEffectOnEnemyStats
 	jp CallBattleCore
 
 .switch_fail

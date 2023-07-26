@@ -2559,6 +2559,7 @@ EnemyPartyMonEntrance:
 	and a
 	jr nz, .set
 	call EnemySwitch
+	call ApplyStatusEffectOnEnemyStats
 	jr .done_switch
 
 .set

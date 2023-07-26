@@ -559,10 +559,9 @@ DetermineMoveOrder:
 
 DoubleEnemySpeedInHL:
     push bc
-	ld hl, wEnemyMonSpeed + 1
-	ld a, [hld]
+	ld a, [wEnemyMonSpeed]
 	ld b, a
-	ld a, [hl]
+	ld a, [wEnemyMonSpeed + 1]
 	sla a
 	rl b
 	ld [hli], a
@@ -572,11 +571,9 @@ DoubleEnemySpeedInHL:
 
 DoublePlayerSpeedInDE:
     push bc
-	ld de, wBattleMonSpeed + 1
-	ld a, [de]
-	dec de
+	ld a, [wBattleMonSpeed]
 	ld b, a
-	ld a, [de]
+	ld a, [wBattleMonSpeed + 1]
 	sla a
 	rl b
 	ld [de], a

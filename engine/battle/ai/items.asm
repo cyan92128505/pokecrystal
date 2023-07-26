@@ -753,6 +753,7 @@ AI_Switch:
 	and a
 	jr nz, .linked
 	farcall SpikesDamage
+	farcall SetEnemyTurn
 	farcall SwitchInEffects
 .linked
 	xor a

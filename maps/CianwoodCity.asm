@@ -550,6 +550,7 @@ PsychicGirlTalkScript:
     waitbutton
     closetext
 	winlosstext HoenSpyBeatenText, HoenSpyWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SOLDIER, SOLDIER_SPY
 	startbattle
 	reloadmap
@@ -587,6 +588,7 @@ PsychicGirlTalkScript:
 	setval MUSIC_FINAL_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext HoenSpyBeatenText, HoenSpyWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WEAK_BATTLE
 	loadtrainer SOLDIER, SOLDIER_SPY
 	startbattle
 	reloadmap

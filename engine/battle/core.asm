@@ -5530,6 +5530,8 @@ BattleMenu_Pack:
     jp z, .ItemsCantBeUsed
     cp BATTLETYPE_BATTLE_FRONTIER
     jp z, .ItemsCantBeUsed
+    cp BATTLETYPE_WEAK_BATTLE
+    jp z, .ItemsCantBeUsed
 
 	ld a, [wInBattleTowerBattle]
 	and a

@@ -99,6 +99,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_PERFECT_ESCAPE     ; enemy has max dvs and you can escape
 	const BATTLETYPE_BOSS_BATTLE        ; enemy has max stat exp + no set no items
 	const BATTLETYPE_BATTLE_FRONTIER    ; don't gain money/exp on a win, max stat exp + no set no items
+	const BATTLETYPE_WEAK_BATTLE        ; enemy has 0 stat exp
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def

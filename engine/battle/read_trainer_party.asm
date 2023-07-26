@@ -228,6 +228,8 @@ endr
     jr z, .fullStatExp
     cp BATTLETYPE_BATTLE_FRONTIER
     jr z, .fullStatExp
+    cp BATTLETYPE_WEAK_BATTLE
+    jp z, .zeroStatExp
 
     ; trainer classes which always have max stat exp
 	ld a, [wTrainerClass]
@@ -288,7 +290,7 @@ rept 6
 	inc de
 endr
 	pop hl
-	jr .no_stat_exp
+	jp .no_stat_exp
 
 .mediumStatExp
 rept 6
@@ -313,6 +315,16 @@ rept 6
 endr
 	pop hl
 	jr .no_stat_exp
+
+.zeroStatExp
+rept 6
+    xor a
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
+endr
+	pop hl
 
 .no_stat_exp
 

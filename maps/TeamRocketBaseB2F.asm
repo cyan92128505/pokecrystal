@@ -94,7 +94,7 @@ RocketBaseBossFScript:
 	applymovement TEAMROCKETBASEB2F_ROCKET1, RocketBaseBossBattleMovement
 	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, RocketBaseBossBattleMovement
 
-	winlosstext RocketBaseBossWinText, RocketBaseBossWinText
+	winlosstext RocketBaseBossLoseText, RocketBaseBossInitialWinText
 	setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
     loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer EXECUTIVEF, EXECUTIVEF_1
@@ -162,12 +162,39 @@ RocketBaseBossFScript:
 	closetext
 
 	applymovement TEAMROCKETBASEB2F_ROCKET1, RocketBaseGruntRunAwayMovement
-	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, RocketBaseGirlRunAwayMovement
+	;applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, RocketBaseGirlRunAwayMovement
 	opentext
 	writetext GetThemText
 	waitbutton
 	closetext
 	applymovement TEAMROCKETBASEB2F_DAD, RocketBaseDadRunAwayMovement
+
+	opentext
+	writetext YouWontGetAway
+	waitbutton
+	closetext
+	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, Movement_RocketBaseGirlBossFight
+	cry DRAGONITE
+	applymovement TEAMROCKETBASEB2F_DRAGON, Movement_DragoniteDefendsPlayer
+
+    setval CHAMPION
+	writemem wOtherTrainerClass
+	setval LANCE_DRAGONITE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_CHAMPION_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext RocketBaseBossWinText, RocketBaseBossWinText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_WEAK_BATTLE
+	loadtrainer EXECUTIVEF, EXECUTIVEF_1
+	startbattle
+	reloadmap
+
+	opentext
+	writetext ItsNotOverText
+	waitbutton
+	closetext
+	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, RocketBaseGirlRunAwayMovement
 	disappear TEAMROCKETBASEB2F_ROCKET1
 	disappear TEAMROCKETBASEB2F_ROCKET_GIRL
 	disappear TEAMROCKETBASEB2F_ROCKET2
@@ -204,6 +231,14 @@ RocketBaseBossFScript:
 	disappear TEAMROCKETBASEB2F_LANCE
 	end
 
+YouWontGetAway:
+    text "I don't care"
+    line "who you are!"
+
+    para "You wont get"
+    line "away with this!"
+    done
+
 RocketBaseGruntBacksUpMovement:
     big_step RIGHT
     big_step RIGHT
@@ -227,7 +262,7 @@ RocketBaseGruntRunAwayMovement:
 
 RocketBaseGirlRunAwayMovement:
     big_step RIGHT
-    big_step DOWN
+    big_step RIGHT
     big_step DOWN
     big_step DOWN
     big_step RIGHT
@@ -264,6 +299,29 @@ RocketBaseBossFallbackMovement:
     big_step RIGHT
     big_step RIGHT
     step_end
+
+Movement_RocketBaseGirlBossFight:
+    big_step DOWN
+    big_step LEFT
+    step_end
+
+Movement_DragoniteDefendsPlayer:
+    slow_step DOWN
+    turn_head RIGHT
+    step_end
+
+ItsNotOverText:
+    text "UGHHH!"
+
+    para "...."
+
+    para "It's..."
+
+    para "It's not over."
+
+    para "I'll see you"
+    line "again."
+    done
 
 DadRescueText:
     text "Get away from my"
@@ -331,23 +389,21 @@ RocketTauntText:
     cont "child they could"
     cont "not protect."
 
-    para "History has taught"
-    line "us that such pleas"
-    cont "never work."
-
-    para "We will not be"
-    line "defeated in any"
-    cont "way."
+    para "Making an enemy"
+    line "of us was the"
+    cont "last mistake you"
+    cont "two will ever"
+    cont "make."
     done
 
 LanceIntroText:
-    text "You proclaim your"
-    line "resolve without"
-    cont "weakness!"
+    text "You take great"
+    line "pride in your"
+    cont "lack of"
+    cont "compassion."
 
-    para "I shall scatter"
-    line "such conviction"
-    cont "to the wind!"
+    para "I shall crush"
+    line "that pride."
     done
 
 WhoIsThatText:
@@ -355,13 +411,14 @@ WhoIsThatText:
 
     para "Come and join"
     line "your friends in"
-    cont "defeat."
+    cont "their last"
+    cont "moments."
     done
 
 DragoniteAttackText:
     text "DRAGONITE!"
 
-    para "OUTRAGE!"
+    para "OBLITERATE!"
     done
 
 RocketBaseRocketsDefeatedText:
@@ -374,14 +431,14 @@ RocketBaseRocketsDefeatedText:
     done
 
 RocketBaseLanceTauntText:
-    text "You have been"
-    line "weighed."
+    text "Mark you the"
+    cont "folly of pride."
 
-    para "You have been"
-    line "measured."
+    para "It lies broken"
+    line "and helpless."
 
-    para "And you have been"
-    line "found wanting."
+    para "It reeks now"
+    line "of fear."
     done
 
 RocketBaseBossDefeatedText:
@@ -872,17 +929,30 @@ RocketBaseBossDontMeddleText:
 	line "with TEAM ROCKET!"
 	done
 
+RocketBaseBossLoseText:
+	text "Such a weak"
+	line "display on the"
+	cont "last battle of"
+	cont "your life."
+
+
+RocketBaseBossInitialWinText:
+	text "That is not"
+	line "meant to"
+	cont "happen!"
+	done
+
 RocketBaseBossWinText:
-	text "Tch, you really"
-	line "are strong."
+	text "If LANCE wasn't"
+	line "here to save"
+	cont "you."
 
-	para "It's too bad."
+	para "You would be"
+	line "dead right now!"
 
-	para "If you were to"
-	line "join TEAM ROCKET,"
-
-	para "you could become"
-	line "an EXECUTIVE."
+	para "LANCE wont be"
+	line "here next time"
+	cont "we meet."
 	done
 
 RocketBaseBossRetreatText:
@@ -898,33 +968,27 @@ RocketBaseBossRetreatText:
 	line "what happens to"
 	cont "this hideout now."
 
-	para "We have much big-"
-	line "ger plans."
-
-	para "You'll come to"
-	line "appreciate TEAM"
-
-	para "ROCKET's true"
-	line "power soon enough."
-
-	para "Enjoy yourself"
-	line "while you can…"
-
-	para "Fufufufu…"
+	para "Your victory"
+	line "means nothing."
 	done
 
 RocketBaseLancePostBattleText:
-	text "LANCE: That did"
-	line "it. We defeated"
+	text "I've never seen"
+	line "such a thing."
 
-	para "all the ROCKETS"
-	line "here."
+	para "DRAGONITE took"
+	line "you as its"
+	cont "trainer."
 
-	para "But I'm concerned"
-	line "about the young"
+	para "DARGONITE is a"
+	line "much better judge"
+	cont "of character than"
+	cont "I."
 
-	para "guy I battled in"
-	line "the process…"
+	para "If you have"
+	line "earned his respect"
+	cont "then you have mine"
+	cont "also."
 	done
 
 RocketBaseLancePowerOffText:

@@ -1878,6 +1878,7 @@ MarkOfGodFunction:
 	ld hl, MarkOfGodOff
 .done
 	call PrintText
+	farcall HealParty
 	ld hl, Script_ReloadMap
 	call QueueScript
 	ld a, TRUE

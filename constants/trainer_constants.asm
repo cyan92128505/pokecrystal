@@ -103,6 +103,7 @@ KRIS EQU __trainer_class__
 	trainerclass CHAMPION ; 10
 	const LANCE
 	const MASTER_LANCE
+	const LANCE_DRAGONITE
 
 	trainerclass BROCK ; 11
 	const BROCK1

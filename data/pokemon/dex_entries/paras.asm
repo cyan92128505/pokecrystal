@@ -1,9 +1,10 @@
-	db "MUSHROOM@" ; species name
-	dw 100, 120 ; height, weight
+	db "ORDER@" ; species name
+	dw 1500, 40000 ; height, weight
 
-	db   "A tochukaso"
-	next "grows on this"
-	next "#MON's back."
+	db   "An ancient force"
+	next "and bringer of"
+	next "order."
 
-	page "AB Immune to"
-	next "WATER attacks.@"
+	page "AB It is immune"
+	next "to all status"
+	next "changes.@"

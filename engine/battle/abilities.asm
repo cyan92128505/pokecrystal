@@ -179,6 +179,7 @@ UberImmunePokemon:
     db LUGIA
     db HO_OH
     db REGIGIGAS
+    db PARAS
     db -1
 
 ; ======== NOT USED HERE ===========
@@ -207,7 +208,6 @@ UberImmunePokemon:
 ;    db VAPOREON
 ;    db LAPRAS
 ;    db ARCTOVISH
-;    db PARAS
 ;    db PARASECT
 ;    db POLIWAG
 ;    db POLIWHIRL

@@ -159,7 +159,6 @@ AlphabeticalPokedexOrder:
 	db NOCTOWL
 	db ONIX
 	db PALKIA
-	db PARAS
 	db PARASECT
 	db PAWNIARD
 	db PERSIAN
@@ -255,4 +254,5 @@ AlphabeticalPokedexOrder:
 	db YVELTAL
 	db ZAPDOS
 	db ZUBAT
+	db PARAS
 	assert_table_length NUM_POKEMON

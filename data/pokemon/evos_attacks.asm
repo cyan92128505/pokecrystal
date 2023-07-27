@@ -696,17 +696,17 @@ RegigigasEvosAttacks:
 	db 0 ; no more level-up moves
 
 ParasEvosAttacks:
-	db EVOLVE_LEVEL, 24, PARASECT
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 7, STUN_SPORE
-	db 13, POISONPOWDER
-	db 19, LEECH_LIFE
-	db 25, SPORE
-	db 31, BUG_BUZZ
-	db 34, X_SCISSOR
-	db 37, GROWTH
-	db 43, GIGA_DRAIN
+	db 1, DIG
+	db 1, DRAGON_PULSE
+	db 1, EARTH_POWER
+	db 1, BITE
+	db 30, CRUNCH
+	db 40, DRAGON_CLAW
+	db 50, GLARE
+	db 60, DRAGON_DANCE
+	db 70, EARTHQUAKE
+	db 85, OUTRAGE
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:
@@ -3519,10 +3519,16 @@ YveltalEvosAttacks:
 
 GiratinaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SHADOW_BALL
-	db 1, DRAGON_PULSE
-	db 1, CALM_MIND
-	db 1, REST
+	db 1, SCARY_FACE
+	db 1, SLASH
+	db 1, NIGHT_SLASH
+	db 1, ANCIENTPOWER
+	db 40, DRAGON_CLAW
+	db 50, SHADOW_CLAW
+	db 60, SHADOW_BALL
+	db 70, RECOVER
+	db 80, DRACO_METEOR
+	db 90, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:

@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db UBER, UBER ; type
-	db 45 ; catch rate
+	db 3 ; catch rate
 	db 255 ; base exp
 	db HOLY_CROWN, HOLY_CROWN ; items
 	db GENDER_UNKNOWN ; gender ratio

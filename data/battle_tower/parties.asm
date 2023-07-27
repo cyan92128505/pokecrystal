@@ -6388,9 +6388,9 @@ BattleTowerMons:
 	bigdw 278 ; SDef
 	db "RANTA-N@@@@"
 
-	db PIKACHU
-	db LIGHT_BALL
-	db THUNDERBOLT, SURF, EXTREMESPEED, VOLT_TACKLE
+	db PARAS
+	db LEFTOVERS
+	db DRAGON_CLAW, EARTHQUAKE, BULK_UP, GLARE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -6400,18 +6400,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 16 ; PP
+	db 24, 16, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 273 ; HP
-	bigdw 273 ; Max HP
-	bigdw 208 ; Atk
-	bigdw 178 ; Def
-	bigdw 278 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+    bigdw 635
+    bigdw 635
+    bigdw 298
+    bigdw 340
+    bigdw 268
+    bigdw 280
+    bigdw 288
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

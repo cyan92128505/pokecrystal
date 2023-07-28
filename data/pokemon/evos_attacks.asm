@@ -695,7 +695,7 @@ RegigigasEvosAttacks:
 	db 70, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
-ParasEvosAttacks:
+ZygardeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DIG
 	db 1, DRAGON_PULSE
@@ -706,7 +706,7 @@ ParasEvosAttacks:
 	db 50, GLARE
 	db 60, DRAGON_DANCE
 	db 70, EARTHQUAKE
-	db 85, OUTRAGE
+	db 85, THOU_ARROWS
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:

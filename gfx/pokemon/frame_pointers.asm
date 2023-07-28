@@ -45,7 +45,7 @@ FramesPointers:
 	dw PawniardFrames
 	dw BisharpFrames
 	dw RegigigasFrames
-	dw ParasFrames
+	dw ZygardeFrames
 	dw ParasectFrames
 	dw LarvestaFrames
 	dw VolcaronaFrames

@@ -179,7 +179,7 @@ UberImmunePokemon:
     db LUGIA
     db HO_OH
     db REGIGIGAS
-    db PARAS
+    db ZYGARDE
     db -1
 
 ; ======== NOT USED HERE ===========

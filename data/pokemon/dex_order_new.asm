@@ -252,7 +252,7 @@ NewPokedexOrder:
 	db SHAYMIN
 	db XERNEAS
 	db YVELTAL
-	db PARAS
+	db ZYGARDE
 	db MEWTWO
 	db ARCEUS
 	assert_table_length NUM_POKEMON

@@ -132,7 +132,7 @@ AI_UberImmunePokemon:
     db LUGIA
     db HO_OH
     db REGIGIGAS
-    db PARAS
+    db ZYGARDE
     db $FF
 
 AI_Basic:
@@ -193,7 +193,7 @@ AI_Basic:
     jp z, .discourage
     cp SYLVEON
     jp z, .discourage
-    cp PARAS
+    cp ZYGARDE
     jp z, .discourage
 
 .checkSub
@@ -311,7 +311,6 @@ AI_Basic:
     ld a, $1
     ld [wEnemyIsSwitching], a
 	ret
-
 
 ; Greatly encourage a move if it will KO the player
 ; skip if enemy is slower and weakened and has priority
@@ -904,7 +903,7 @@ AI_Smart_Sleep:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp PARAS
+    cp ZYGARDE
     jr z, .discourage
 
 
@@ -1568,7 +1567,7 @@ AI_Smart_Toxic:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp PARAS
+    cp ZYGARDE
     jr z, .discourage
 
 ; never use against Pokemon with magic guard
@@ -1907,7 +1906,7 @@ AI_Smart_Paralyze:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp PARAS
+    cp ZYGARDE
     jr z, .discourage
 
 ; encourage if enemy is slower than player.
@@ -4255,7 +4254,7 @@ AI_Smart_Swagger:
     jr nz, .continue
     cp SYLVEON
     jr nz, .continue
-    cp PARAS
+    cp ZYGARDE
     jr nz, .continue
     inc [hl]
     inc [hl]
@@ -5793,6 +5792,8 @@ FlyDigMovesMiss:
 	cp WHIRLWIND
 	ret z
 	cp THUNDER
+	ret z
+	cp THOU_ARROWS
 	ret z
 	ret
 .DigMoves:

@@ -45,7 +45,7 @@ EggMovePointers::
 	dw PawniardEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw ParasEggMoves
+	dw ZygardeEggMoves
 	dw NoEggMoves
 	dw LarvestaEggMoves
 	dw NoEggMoves

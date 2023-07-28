@@ -50,7 +50,7 @@ MonMenuIconPals:
 	icon_pals RED,   BLUE     ; PAWNIARD
 	icon_pals RED,   BLUE     ; BISHARP
 	icon_pals SILVER,  GOLD     ; REGIGIGAS
-	icon_pals RED,  GREEN         ; PARAS
+	icon_pals RED,  GREEN         ; ZYGARDE
 	icon_pals RED,  GREEN         ; PARASECT
 	icon_pals RED,  GOLD ; LARVESTA
 	icon_pals RED,  GOLD        ; VOLCARONA

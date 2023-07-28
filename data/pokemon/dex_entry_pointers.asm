@@ -46,7 +46,7 @@ PokedexDataPointerTable:
 	dw PawniardPokedexEntry
 	dw BisharpPokedexEntry
 	dw RegigigasPokedexEntry
-	dw ParasPokedexEntry
+	dw ZygardePokedexEntry
 	dw ParasectPokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry

@@ -254,5 +254,5 @@ AlphabeticalPokedexOrder:
 	db YVELTAL
 	db ZAPDOS
 	db ZUBAT
-	db PARAS
+	db ZYGARDE
 	assert_table_length NUM_POKEMON

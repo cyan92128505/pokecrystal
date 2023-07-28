@@ -60,7 +60,6 @@ BunearyEggMoves:
 
 EkansEggMoves:
 	db PURSUIT
-	db SLAM
 	;db SPITE
 	db CRUNCH
 	db -1 ; end
@@ -110,14 +109,7 @@ ZubatEggMoves:
 PawniardEggMoves:
 	db -1 ; end
 
-ParasEggMoves:
-	db FALSE_SWIPE
-	db SCREECH
-	db COUNTER
-	db PSYBEAM
-	db FLAIL
-	db LIGHT_SCREEN
-	db PURSUIT
+ZygardeEggMoves:
 	db -1 ; end
 
 LarvestaEggMoves:
@@ -236,12 +228,6 @@ ElectivireEggMoves:
 	db -1 ; end
 
 YanmegaEggMoves:
-	db LICK
-	db PERISH_SONG
-	db DISABLE
-	db PECK
-	db SLAM
-	db ENCORE
 	db -1 ; end
 
 FerroseedEggMoves:
@@ -273,11 +259,6 @@ DrowzeeEggMoves:
 	db -1 ; end
 
 FeebasEggMoves:
-	db DIG
-	db HAZE
-	db AMNESIA
-	db FLAIL
-	db SLAM
 	db -1 ; end
 
 ExeggcuteEggMoves:

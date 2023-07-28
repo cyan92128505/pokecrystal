@@ -260,7 +260,7 @@ ShelgonFrontpic:      INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
 FeebasFrontpic:      INCBIN "gfx/pokemon/feebas/front.animated.2bpp.lz"
 FisherPic:           INCBIN "gfx/trainers/fisher.2bpp.lz"
 JigglypuffFrontpic:  INCBIN "gfx/pokemon/jigglypuff/front.animated.2bpp.lz"
-ParasFrontpic:       INCBIN "gfx/pokemon/paras/front.animated.2bpp.lz"
+ZygardeFrontpic:       INCBIN "gfx/pokemon/zygarde/front.animated.2bpp.lz"
 NidokingBackpic:     INCBIN "gfx/pokemon/nidoking/back.2bpp.lz"
 PokefanmPic:         INCBIN "gfx/trainers/pokefan_m.2bpp.lz"
 SoldierPic:          INCBIN "gfx/trainers/soldier.2bpp.lz"
@@ -578,7 +578,7 @@ UnownHBackpic:       INCBIN "gfx/pokemon/unown_h/back.2bpp.lz"
 
 SECTION "Pics 17", ROMX
 
-ParasBackpic:        INCBIN "gfx/pokemon/paras/back.2bpp.lz"
+ZygardeBackpic:        INCBIN "gfx/pokemon/zygarde/back.2bpp.lz"
 VaporeonBackpic:     INCBIN "gfx/pokemon/vaporeon/back.2bpp.lz"
 TentacoolBackpic:    INCBIN "gfx/pokemon/tentacool/back.2bpp.lz"
 ExecutivefPic:       INCBIN "gfx/trainers/executive_f.2bpp.lz"

@@ -6388,7 +6388,7 @@ BattleTowerMons:
 	bigdw 278 ; SDef
 	db "RANTA-N@@@@"
 
-	db PARAS
+	db ZYGARDE
 	db LEFTOVERS
 	db DRAGON_CLAW, EARTHQUAKE, BULK_UP, GLARE
 	dw 0 ; OT ID

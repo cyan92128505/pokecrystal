@@ -107,7 +107,7 @@ INCBIN "gfx/footprints/golbat.1bpp",     footprint_top
 INCBIN "gfx/footprints/pawniard.1bpp",     footprint_top
 INCBIN "gfx/footprints/bisharp.1bpp",      footprint_top
 INCBIN "gfx/footprints/regigigas.1bpp",  footprint_top
-INCBIN "gfx/footprints/paras.1bpp",      footprint_top
+INCBIN "gfx/footprints/zygarde.1bpp",      footprint_top
 INCBIN "gfx/footprints/parasect.1bpp",   footprint_top
 INCBIN "gfx/footprints/larvesta.1bpp",    footprint_top
 ; 041-048 bottom halves
@@ -116,7 +116,7 @@ INCBIN "gfx/footprints/golbat.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/pawniard.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/bisharp.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/regigigas.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/paras.1bpp",      footprint_bottom
+INCBIN "gfx/footprints/zygarde.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/parasect.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/larvesta.1bpp",    footprint_bottom
 ; 049-056 top halves

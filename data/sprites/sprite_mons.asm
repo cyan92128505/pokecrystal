@@ -24,7 +24,7 @@ SpriteMons:
 	db JIGGLYPUFF
 	db FERROSEED
 	db EKANS
-	db PARAS
+	db ZYGARDE
 	db TENTACOOL
 	db TAUROS
 	db MACHOP

@@ -45,7 +45,7 @@ BitmasksPointers:
 	dw PawniardBitmasks
 	dw BisharpBitmasks
 	dw RegigigasBitmasks
-	dw ParasBitmasks
+	dw ZygardeBitmasks
 	dw ParasectBitmasks
 	dw LarvestaBitmasks
 	dw VolcaronaBitmasks

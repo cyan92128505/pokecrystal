@@ -93,8 +93,8 @@ PokemonPicPointers::
 	dba_pic BisharpBackpic
 	dba_pic RegigigasFrontpic
 	dba_pic RegigigasBackpic
-	dba_pic ParasFrontpic
-	dba_pic ParasBackpic
+	dba_pic ZygardeFrontpic
+	dba_pic ZygardeBackpic
 	dba_pic ParasectFrontpic
 	dba_pic ParasectBackpic
 	dba_pic LarvestaFrontpic

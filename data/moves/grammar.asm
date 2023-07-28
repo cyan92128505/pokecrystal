@@ -52,7 +52,6 @@ MoveGrammar:
 	db DARK_PULSE
 	db WING_ATTACK
 	db FLY
-	db SLAM
 	db HORN_ATTACK
 	db WRAP
 	db THRASH

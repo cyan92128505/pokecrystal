@@ -26,7 +26,7 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const OBLIVION     ; 14
-	const SLAM         ; 15   AndrewNote - this is not used
+	const THOU_ARROWS  ; 15
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
@@ -109,7 +109,7 @@
 	const NIGHT_SHADE  ; 65
 	const MIMIC        ; 66
 	const SCREECH      ; 67
-	const DOUBLE_TEAM  ; 68   AndrewNote - this is not used
+	const DOUBLE_TEAM  ; 68
 	const RECOVER      ; 69
 	const HARDEN       ; 6a   replace, use defense curl instead
 	const DARK_VOID    ; 6b

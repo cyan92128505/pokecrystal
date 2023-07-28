@@ -22,7 +22,7 @@ BattleAnimations::
 	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
 	dw BattleAnim_Oblivion
-	dw BattleAnim_Slam
+	dw BattleAnim_ThouArrows
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
 	dw BattleAnim_DoubleKick
@@ -2258,6 +2258,7 @@ BattleAnim_FuryAttack:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_ThouArrows:
 BattleAnim_BoltBreak:
 BattleAnim_HornDrill:
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT

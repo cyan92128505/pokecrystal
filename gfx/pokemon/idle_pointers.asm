@@ -45,7 +45,7 @@ AnimationIdlePointers:
 	dw PawniardAnimationIdle
 	dw BisharpAnimationIdle
 	dw RegigigasAnimationIdle
-	dw ParasAnimationIdle
+	dw ZygardeAnimationIdle
 	dw ParasectAnimationIdle
 	dw LarvestaAnimationIdle
 	dw VolcaronaAnimationIdle

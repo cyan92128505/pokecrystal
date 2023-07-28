@@ -1,4 +1,4 @@
-	db PARAS ; 046
+	db ZYGARDE ; 046
 
 	db  216,  100,  121,  85,  91,  95
 	;   hp  atk  def  spd  sat  sdf

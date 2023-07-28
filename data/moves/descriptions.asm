@@ -21,7 +21,7 @@ MoveDescriptions::
 	dw WhirlwindDescription
 	dw FlyDescription
 	dw OblivionDescription
-	dw SlamDescription
+	dw ThouArrowsDescription
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
@@ -347,9 +347,9 @@ OblivionDescription:
 	db   "Drains life force"
 	next "from the victim.@"
 
-SlamDescription:
-	db   "Slams the foe with"
-	next "a tail, vine, etc.@"
+ThouArrowsDescription:
+	db   "A wave of arrows"
+	next "that always hits.@"
 
 VineWhipDescription:
 	db   "Whips the foe with"

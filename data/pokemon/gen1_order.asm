@@ -108,7 +108,7 @@ Pokered_MonIndices:
 	db MACHOP
 	db ZUBAT
 	db EKANS
-	db PARAS
+	db ZYGARDE
 	db POLIWHIRL
 	db POLIWRATH
 	db HONEDGE

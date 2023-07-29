@@ -1480,6 +1480,8 @@ HandleRegenerator:
 .do_it
     cp HO_OH
     jr z, .regen
+    cp ZYGARDE
+    jr z, .regen
     cp SLOWPOKE
     jr z, .regen
     cp SLOWBRO

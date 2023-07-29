@@ -7325,8 +7325,6 @@ BattleCommand_CheckStatusImmunity:
     jr z, .immune
     cp SYLVEON
     jr z, .immune
-    cp ZYGARDE
-    jr z, .immune
     ret
 .immune
     ld a, 1

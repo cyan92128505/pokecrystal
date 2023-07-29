@@ -1,5 +1,5 @@
 	db "COLOSSAL@" ; species name
-	dw 2506, 50000 ; height, weight
+	dw 2500, 50000 ; height, weight
 
 	db   "Strong enough to"
 	next "pull entire land"

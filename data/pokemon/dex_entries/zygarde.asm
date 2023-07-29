@@ -1,10 +1,9 @@
 	db "ORDER@" ; species name
-	dw 1500, 40000 ; height, weight
+	dw 3000, 60000 ; height, weight
 
-	db   "An ancient force"
-	next "and bringer of"
-	next "order."
+	db   "Protector of the"
+	next "planet. Bringer"
+	next "of order."
 
-	page "AB It is immune"
-	next "to all status"
-	next "changes.@"
+	page "AB Regenerates"
+	next "HP every turn.@"

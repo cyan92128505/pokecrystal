@@ -193,8 +193,6 @@ AI_Basic:
     jp z, .discourage
     cp SYLVEON
     jp z, .discourage
-    cp ZYGARDE
-    jp z, .discourage
 
 .checkSub
 ; dismiss moves blocked by sub if sub is up
@@ -903,8 +901,6 @@ AI_Smart_Sleep:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp ZYGARDE
-    jr z, .discourage
 
 
 ; is the player behind a sub
@@ -1567,8 +1563,6 @@ AI_Smart_Toxic:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp ZYGARDE
-    jr z, .discourage
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
@@ -1905,8 +1899,6 @@ AI_Smart_Paralyze:
     cp ARCEUS
     jr z, .discourage
     cp SYLVEON
-    jr z, .discourage
-    cp ZYGARDE
     jr z, .discourage
 
 ; encourage if enemy is slower than player.
@@ -4253,8 +4245,6 @@ AI_Smart_Swagger:
     cp ARCEUS
     jr nz, .continue
     cp SYLVEON
-    jr nz, .continue
-    cp ZYGARDE
     jr nz, .continue
     inc [hl]
     inc [hl]

@@ -2539,6 +2539,19 @@ AI_Smart_BulkUp:
     call ShouldAIBoost
     jr nc, .discourage
 
+; for Zygarde give extra encouragement after +1 speed
+; some Zygarde sets have both BULK_UP and DRAGON_DANCE - we want to DD to +1 speed the BU to + 2 defense after
+    ld a, [wEnemyMonSpecies]
+    cp ZYGARDE
+    jr nz, .notZygarde
+	ld a, [wEnemySpdLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr c, .notZygarde
+    ld a, [wEnemyDefLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr c, .extraEncourage ;
+
+.notZygarde
 ; encourage to +2
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
@@ -2556,6 +2569,8 @@ AI_Smart_BulkUp:
     jr nz, .discourage
     ret
 
+.extraEncourage
+    dec [hl]
 .encourage
 	dec [hl]
 	dec [hl]
@@ -3786,7 +3801,7 @@ AI_Smart_DragonDance:
 ; don't go past +4
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	jp nc, .discourage
 
 ; don't use if we are at risk of being KOd, just attack them
 ; only care about being OHKOd as dd increases speed
@@ -3838,6 +3853,16 @@ AI_Smart_DragonDance:
 	and 1 << PAR
 	jr nz, .discourage
 
+; for Zygarde give extra encouragement to +1 speed
+; some Zygarde sets have both BULK_UP and DRAGON_DANCE - we want to DD to +1 speed the BU to + 2 defense after
+    ld a, [wEnemyMonSpecies]
+    cp ZYGARDE
+    jr nz, .notZygarde
+	ld a, [wEnemySpdLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr c, .extraEncourage
+
+.notZygarde
 ; encourage to get to +2
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -3862,6 +3887,8 @@ AI_Smart_DragonDance:
     jr nz, .discourage
     ret
 
+.extraEncourage
+    dec [hl]
 .encourage
 	dec [hl]
 	dec [hl]

@@ -1109,3 +1109,9 @@ Museum_Blocks:
 
 LavenderForest_Blocks:
 	INCBIN "maps/LavenderForest.blk"
+
+AncientTemple_Blocks:
+	INCBIN "maps/AncientTemple.blk"
+
+AncientHall_Blocks:
+	INCBIN "maps/AncientHall.blk"

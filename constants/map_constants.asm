@@ -157,6 +157,8 @@ ENDM
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const ELEMENT_CAVE,                                24, 12 ; 92
 	map_const CERULEAN_CAVE,                               15, 31 ; 93
+	map_const ANCIENT_TEMPLE,                              20, 16 ; 94
+	map_const ANCIENT_HALL,                                 5, 20 ; 95
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

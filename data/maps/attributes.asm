@@ -717,3 +717,6 @@ ENDM
 	map_attributes WarZone, WAR_ZONE, $05, 0
 	map_attributes Museum, MUSEUM, $00, 0
 	map_attributes LavenderForest, LAVENDER_FOREST, $05, 0
+	map_attributes AncientTemple, ANCIENT_TEMPLE, $09, 0
+	map_attributes AncientHall, ANCIENT_HALL, $00, 0
+

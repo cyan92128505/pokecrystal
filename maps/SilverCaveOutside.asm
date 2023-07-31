@@ -837,6 +837,7 @@ SilverCaveOutside_MapEvents:
 	warp_event 18,  9, SILVER_CAVE_ROOM_1, 1
 	warp_event 31, 6, DESTINY_FRONTIER, 1
 	warp_event 32, 6, DESTINY_FRONTIER, 2
+	warp_event 8, 19, ANCIENT_TEMPLE, 1
 
 	def_coord_events
 	coord_event 31, 7, SCENE_ALWAYS, SilverCaveOutsideBlockScript

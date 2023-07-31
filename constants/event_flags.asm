@@ -394,6 +394,10 @@
     const EVENT_CERULEAN_CAVE_HIDDEN_SCOPE_LENS
     const EVENT_CERULEAN_CAVE_HIDDEN_KINGS_ROCK
     const EVENT_PSYCHIC_GIRL_WAITING
+    const EVENT_ANCIENT_TEMPLE_LEFTOVERS
+    const EVENT_ANCIENT_TEMPLE_LIFE_ORB
+    const EVENT_ANCIENT_TEMPLE_AMBROSIA
+    const EVENT_ANCIENT_TEMPLE_SACRED_ASH
 
     ; ======================================
     ; ======================================

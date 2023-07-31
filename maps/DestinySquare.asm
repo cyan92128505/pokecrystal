@@ -571,8 +571,8 @@ ChampionsBlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_STEVEN
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_WALLACE
-    iffalse .block
+    ;checkevent EVENT_BEAT_MASTER_WALLACE
+    ;iffalse .block
     checkevent EVENT_BEAT_MASTER_CYNTHIA
     iffalse .block
     checkevent EVENT_BEAT_MASTER_ALDER

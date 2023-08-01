@@ -128,11 +128,7 @@ MirrorBattlesText:
     cont "want."
 
     para "NORMAL battles"
-    line "or MIRROR where"
-    cont "you use a copy"
-    cont "of the enemy team"
-    cont "and don't earn"
-    cont "rewards?"
+    line "or MIRROR battles?"
     done
 
 Script_ResumeBattleTowerChallenge:

@@ -27,170 +27,6 @@ DestinyFrontier_MapScripts:
 	writemem wFieldWeather
 	endcallback
 
-HoohLugiaBlockScript:
-    checkevent EVENT_FOUGHT_HO_OH
-    iffalse .block
-    checkevent EVENT_FOUGHT_LUGIA
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_FALKNER
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext HoohLugiaBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyFrontierTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterFalknerScript
-
-HoohLugiaBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "fire and wind."
-
-    para "HO OH and"
-    line "LUGIA"
-
-    para "May pass."
-    done
-
-GroudonKyogreBlockScript:
-    checkevent EVENT_CAUGHT_GROUDON
-    iffalse .block
-    checkevent EVENT_CAUGHT_KYOGRE
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_WHITNEY
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext GroudonKyogreBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyFrontierTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterWhitneyScript
-
-GroudonKyogreBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "earth and water."
-
-    para "GROUDON and"
-    line "KYOGRE"
-
-    para "May pass."
-    done
-
-PalkiaDialgaBlockScript:
-    checkevent EVENT_CAUGHT_PALKIA
-    iffalse .block
-    checkevent EVENT_CAUGHT_DIALGA
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_WILL
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext PalkiaDialgaBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyFrontierTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterWillScript
-
-PalkiaDialgaBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "space and time."
-
-    para "PALKIA and"
-    line "DIALGA"
-
-    para "May pass."
-    done
-
-RayquazaGiratinaBlockScript:
-    checkevent EVENT_CAUGHT_RAYQUAZA
-    iffalse .block
-    checkevent EVENT_CAUGHT_GIRATINA
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_CLAIR
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext RayquazaGiratinaBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyFrontierTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterClairScript
-
-RayquazaGiratinaBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "good and evil."
-
-    para "RAYQUAZA and"
-    line "GIRATINA"
-
-    para "May pass."
-    done
-
-XerneasYveltalBlockScript:
-    checkevent EVENT_CAUGHT_YVELTAL
-    iffalse .block
-    checkevent EVENT_CAUGHT_XERNEAS
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_RIVAL
-    iffalse .fight
-    end
-.block
-    turnobject PLAYER, LEFT
-	opentext
-	writetext XerneasYveltalBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_DestinyFrontierTurnBack
-    end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterRivalScript
-
-XerneasYveltalBlockText:
-    text "Only those who"
-    line "who have mastered"
-    cont "the powers of"
-    cont "life and death."
-
-    para "XERNEAS and"
-    line "YVELTAL"
-
-    para "May pass."
-    done
-
-Movement_DestinyFrontierTurnBack:
-	step DOWN
-	step_end
-
 Movement_DestinyFrontierTurnLeft:
 	step LEFT
 	step_end
@@ -949,6 +785,10 @@ OakRefusedBattleText:
     cont "soon enough."
     done
 
+Movement_DestinyFrontierTurnBack:
+	step DOWN
+	step_end
+
 DestinyFrontier_MapEvents:
 	db 0, 0 ; filler
 
@@ -975,12 +815,6 @@ DestinyFrontier_MapEvents:
 
 
 	def_coord_events
-	coord_event  6, 38, SCENE_ALWAYS, HoohLugiaBlockScript
-	coord_event 42, 54, SCENE_ALWAYS, GroudonKyogreBlockScript
-	coord_event 20, 32, SCENE_ALWAYS, PalkiaDialgaBlockScript
-	coord_event  8,  6, SCENE_ALWAYS, RayquazaGiratinaBlockScript
-	coord_event 26,  1, SCENE_ALWAYS, XerneasYveltalBlockScript
-	coord_event 27,  1, SCENE_ALWAYS, XerneasYveltalBlockScript
 	coord_event 30, 38, SCENE_ALWAYS, Guard1BlockScript
 	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript
 	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript

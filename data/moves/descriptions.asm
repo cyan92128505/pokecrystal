@@ -348,7 +348,7 @@ OblivionDescription:
 	next "from the victim.@"
 
 ThouArrowsDescription:
-	db   "A wave of arrows"
+	db   "A piercing light"
 	next "that always hits.@"
 
 VineWhipDescription:

@@ -20,7 +20,7 @@ MoveNames::
 	li "WHIRLWIND"
 	li "FLY"
 	li "OBLIVION"
-	li "THOU ARROWS"
+	li "OBLITERATE"
 	li "VINE WHIP"
 	li "STOMP"
 	li "DOUBLE KICK"

@@ -5810,7 +5810,7 @@ FlyDigMovesMiss:
 	ret z
 	cp THUNDER
 	ret z
-	cp THOU_ARROWS
+	cp OBLITERATE
 	ret z
 	ret
 .DigMoves:

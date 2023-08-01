@@ -702,11 +702,11 @@ ZygardeEvosAttacks:
 	db 1, EARTH_POWER
 	db 1, BITE
 	db 30, CRUNCH
-	db 40, DRAGON_CLAW
-	db 50, GLARE
-	db 60, DRAGON_DANCE
-	db 70, EARTHQUAKE
-	db 85, THOU_ARROWS
+	db 40, EARTHQUAKE
+	db 50, DRAGON_CLAW
+	db 60, GLARE
+	db 70, DRAGON_DANCE
+	db 80, OBLITERATE
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:

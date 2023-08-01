@@ -4877,32 +4877,6 @@ BattleTowerMons:
 	bigdw 258 ; SDef
 	db "RANTA-N@@@@"
 
-    db SCIZOR
-	db METAL_COAT
-	db SWORDS_DANCE, BULLET_PUNCH, X_SCISSOR, ROCK_SMASH
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 20, 32, 24, 24 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 358 ; Atk
-	bigdw 298 ; Def
-	bigdw 228 ; Spd
-	bigdw 208 ; SAtk
-	bigdw 258 ; SDef
-	db "RANTA-N@@@@"
-
 	db AEGISLASH
 	db LEFTOVERS
 	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_CLAW, CLOSE_COMBAT
@@ -4953,9 +4927,60 @@ BattleTowerMons:
 	bigdw 298 ; Spd
 	bigdw 258 ; SAtk
 	bigdw 318 ; SDef
+
+	db ZYGARDE
+	db LEFTOVERS
+	db OBLITERATE, DRAGON_DANCE, BULK_UP, GLARE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 24, 24, 42 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+    bigdw 635
+    bigdw 635
+    bigdw 298
+    bigdw 340
+    bigdw 268
+    bigdw 280
+    bigdw 288
 	db "RANTA-N@@@@"
 
 ; ============ Final Trainer End - 30 mons ==============
+
+    db SCIZOR
+	db METAL_COAT
+	db SWORDS_DANCE, BULLET_PUNCH, X_SCISSOR, ROCK_SMASH
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 20, 32, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 298 ; Def
+	bigdw 228 ; Spd
+	bigdw 208 ; SAtk
+	bigdw 258 ; SDef
+	db "RANTA-N@@@@"
 
 	db ALAKAZAM
 	db FOCUS_SASH
@@ -6386,32 +6411,6 @@ BattleTowerMons:
 	bigdw 208 ; Spd
 	bigdw 258 ; SAtk
 	bigdw 278 ; SDef
-	db "RANTA-N@@@@"
-
-	db ZYGARDE
-	db LEFTOVERS
-	db DRAGON_CLAW, EARTHQUAKE, BULK_UP, GLARE
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 16, 16 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-    bigdw 635
-    bigdw 635
-    bigdw 298
-    bigdw 340
-    bigdw 268
-    bigdw 280
-    bigdw 288
 	db "RANTA-N@@@@"
 
 	;assert_table_length 11 * BATTLETOWER_NUM_UNIQUE_MON

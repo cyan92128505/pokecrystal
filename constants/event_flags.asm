@@ -398,6 +398,7 @@
     const EVENT_ANCIENT_TEMPLE_LIFE_ORB
     const EVENT_ANCIENT_TEMPLE_AMBROSIA
     const EVENT_ANCIENT_TEMPLE_SACRED_ASH
+    const EVENT_CAUGHT_ZYGARDE
 
     ; ======================================
     ; ======================================

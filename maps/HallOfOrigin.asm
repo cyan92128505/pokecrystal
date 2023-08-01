@@ -3,6 +3,8 @@
     const HALLOFORIGIN_OAK
     const HALLOFORIGIN_ARCEUS_POKEBALL
     const HALLOFORIGIN_MEWTWO_POKEBALL
+    const HALLOFORIGIN_ZYGARDE_1
+    const HALLOFORIGIN_ZYGARDE_2
 
 HallOfOrigin_MapScripts:
 	def_scene_scripts
@@ -16,6 +18,9 @@ HallOfOrigin_MapScripts:
 	endcallback
 
 .ArceusAndOak
+    appear HALLOFORIGIN_ZYGARDE_1
+    appear HALLOFORIGIN_ZYGARDE_2
+
 	setval WEATHER_NONE
 	writemem wFieldWeather
 
@@ -409,13 +414,13 @@ MasterOakVictoryText:
     done
 
 MarkOfGodText:
-    para "I bestow upon you"
+    text "I bestow upon you"
     line "control of these"
     cont "new powers."
     done
 
 MasterOakOfferPrizeText:
-    para "Further I present"
+    text "Further I present"
     line "you with a"
     cont "fragment of"
     cont "my power."
@@ -1000,6 +1005,131 @@ ReloadMapScript:
 	reloadmap
     end
 
+MasterWallaceScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_WALLACE
+	iftrue .FightDone
+.fight
+	writetext MasterWallaceSeenText
+	waitbutton
+	closetext
+	winlosstext MasterWallaceWinText, MasterWallaceLoseText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WALLACE, MASTER_WALLACE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_WALLACE
+	special HealParty
+	end
+.FightDone:
+	writetext MasterWallaceAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHallOfOrigin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext LoseAfterBattleTextMasterWallace
+    waitbutton
+    closetext
+    end
+
+MasterWallaceSeenText:
+    text "I loved my"
+    line "country."
+
+    para "I loved my"
+    line "people."
+
+    para "That has not"
+    line "changed."
+
+    para "I will show the"
+    line "world that the"
+    cont "power and beauty"
+    cont "of HOEN is enough"
+    cont "to conquer all."
+    done
+
+MasterWallaceWinText:
+    text "Do you now see"
+    line "the beauty of"
+    cont "HOEN."
+    done
+
+MasterWallaceLoseText:
+    text "I will never"
+    line "stop fighting"
+    cont "for HOEN."
+    done
+
+MasterWallaceAfterBattleText:
+    text "I am not"
+    line "ashamed of my"
+    cont "passion for my"
+    cont "home land."
+
+    para "But I have done"
+    line "horrible things."
+
+    para "I have ruined"
+    line "many lives."
+
+    para "I wish saw it"
+    line "earlier."
+
+    para "I don't deserve"
+    line "to live."
+
+    para "I dedicate the"
+    line "rest of my"
+    cont "life to making"
+    cont "HOEN the protector"
+    cont "of the world."
+    done
+
+LoseAfterBattleTextMasterWallace:
+    text "Do not fear"
+    line "your defeat."
+
+    para "HOEN shall protect"
+    line "you and everyone."
+    done
+
+Zygarde1Script:
+	faceplayer
+	cry ZYGARDE
+	pause 15
+	loadwildmon ZYGARDE, 80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear HALLOFORIGIN_ZYGARDE_1
+	end
+
+Zygarde2Script:
+	faceplayer
+	cry ZYGARDE
+	pause 15
+	loadwildmon ZYGARDE, 80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear HALLOFORIGIN_ZYGARDE_2
+	end
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
@@ -1020,7 +1150,10 @@ HallOfOrigin_MapEvents:
 	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
 	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	object_event 13,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	object_event 10, 13, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde1Script, EVENT_FIELD_MON_1
+	object_event 13, 13, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde2Script, EVENT_FIELD_MON_2
 	object_event 10, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
 	object_event  8, 20, SPRITE_LANCE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
 	object_event 15, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
 	object_event 13, 18, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
+	object_event  4, 16, SPRITE_KOGA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1

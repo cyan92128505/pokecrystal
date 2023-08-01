@@ -3,13 +3,11 @@
     const DESTINYSQUARE_CRYSTAL
     const DESTINYSQUARE_CYNTHIA
     const DESTINYSQUARE_STEVEN
-    const DESTINYSQUARE_WALLACE
     const DESTINYSQUARE_DIANTHA
     const DESTINYSQUARE_ALDER
     const DESTINYSQUARE_LEON
     const DESTINYSQUARE_ADAM
     const DESTINYSQUARE_MEWTWO
-   ; const DESTINYSQUARE_OAK
 
 DestinySquare_MapScripts:
 	def_scene_scripts
@@ -166,49 +164,6 @@ MasterStevenScript:
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_STEVEN
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
-	special HealParty
-	end
-.FightDone:
-	writetext DefaultAfterBattleTextDS
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinySquare
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinySquare
-	waitbutton
-	closetext
-	end
-.Lose
-    special HealParty
-    reloadmap
-    opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
-    waitbutton
-    closetext
-    end
-
-MasterWallaceScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_WALLACE
-	iftrue .FightDone
-.fight
-	writetext DefaultSeenTextDS
-	waitbutton
-	closetext
-	winlosstext DefaultBeatenTextDS, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WALLACE, MASTER_WALLACE
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_WALLACE
 	;opentext
 	;writetext DefaultAfterBattleTextDS
 	;waitbutton
@@ -587,7 +542,7 @@ ChampionsBlockScript:
 	writetext DefeatChampionsText
     waitbutton
     closetext
-    applymovement PLAYER, Movement_DestinyFrontierTurnBack
+    applymovement PLAYER, Movement_DestinySquareTurnBack
     end
 
 DefeatChampionsText:
@@ -633,7 +588,6 @@ DestinySquare_MapEvents:
 	object_event  8, 18, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCrystalScript, -1
 	object_event  8, 21, SPRITE_JASMINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCynthiaScript, -1
 	object_event  4, 24, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
-	object_event  4, 16, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
 	object_event  5, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterDianthaScript, -1
 	object_event  9, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterAlderScript, -1
 	object_event  9, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1

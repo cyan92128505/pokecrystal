@@ -4927,6 +4927,7 @@ BattleTowerMons:
 	bigdw 298 ; Spd
 	bigdw 258 ; SAtk
 	bigdw 318 ; SDef
+	db "RANTA-N@@@@"
 
 	db ZYGARDE
 	db LEFTOVERS

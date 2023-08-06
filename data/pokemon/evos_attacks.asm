@@ -709,19 +709,18 @@ ZygardeEvosAttacks:
 	db 80, OBLITERATE
 	db 0 ; no more level-up moves
 
-ParasectEvosAttacks:
+HawluchaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, STUN_SPORE
-	db 1, POISONPOWDER
-	db 7, STUN_SPORE
-	db 13, POISONPOWDER
-	db 19, LEECH_LIFE
-	db 28, SPORE
-	db 37, BUG_BUZZ
-	db 34, X_SCISSOR
-	db 46, GROWTH
-	db 55, GIGA_DRAIN
+	db 1, TACKLE
+	db 1, WING_ATTACK
+	db 8, PROTECT
+	db 12, LOW_KICK
+	db 16, ENCORE
+	db 24, SUBMISSION
+	db 30, ROOST
+	db 36, BULK_UP
+	db 40, BRAVE_BIRD
+	db 45, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 
 LarvestaEvosAttacks:

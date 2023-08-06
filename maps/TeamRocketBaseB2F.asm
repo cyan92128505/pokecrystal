@@ -47,14 +47,42 @@ TeamRocketBaseB2F_MapScripts:
 	endcallback
 
 RocketBaseBossFLeft:
+    opentext
+    writetext SaveGame_TRB
+    yesorno
+    closetext
+    iffalse .turnBack
+    opentext
+    special TryQuickSave
+    closetext
+    iffalse .turnBack
+
 	moveobject TEAMROCKETBASEB2F_LANCE, 9, 13
 	sjump RocketBaseBossFScript
+.turnBack
+    applymovement PLAYER, Movement_TRB_TurnBack
+    end
 
 RocketBaseBossFRight:
+    opentext
+    writetext SaveGame_TRB
+    yesorno
+    closetext
+    iffalse .turnBack
+    opentext
+    special TryQuickSave
+    closetext
+    iffalse .turnBack
+
 	moveobject TEAMROCKETBASEB2F_ROCKET_GIRL, 21, 16
 	moveobject TEAMROCKETBASEB2F_ROCKET1, 21, 16
 	moveobject TEAMROCKETBASEB2F_DRAGON, 10, 13
 	moveobject TEAMROCKETBASEB2F_LANCE, 10, 13
+	sjump RocketBaseBossFScript
+.turnBack
+    applymovement PLAYER, Movement_TRB_TurnBack
+    end
+
 RocketBaseBossFScript:
 	appear TEAMROCKETBASEB2F_ROCKET_GIRL
 	appear TEAMROCKETBASEB2F_ROCKET1
@@ -418,7 +446,7 @@ WhoIsThatText:
 DragoniteAttackText:
     text "DRAGONITE!"
 
-    para "OBLITERATE!"
+    para "ATTACK!"
     done
 
 RocketBaseRocketsDefeatedText:
@@ -881,6 +909,19 @@ RocketBasePlayerLeavesElectrodesMovement3:
 	step RIGHT
 	step_end
 
+SaveGame_TRB:
+    text "This could get"
+    line "dangerous."
+
+    para "Save your game"
+    line "to continue?"
+    done
+
+Movement_TRB_TurnBack:
+    step DOWN
+    turn_head UP
+    step_end
+
 RocketBaseExecutiveFHoldItText:
 	text "Hold it right"
 	line "there!"
@@ -1250,8 +1291,8 @@ TeamRocketBaseB2F_MapEvents:
 	def_coord_events
 	coord_event  5, 14, SCENE_DEFAULT, LanceHealsScript1
 	coord_event  4, 13, SCENE_DEFAULT, LanceHealsScript2
-	coord_event 14, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFLeft
-	;coord_event 14, 11, SCENE_ALWAYS, RocketBaseBossFLeft
+	;coord_event 14, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFLeft
+	coord_event 14, 11, SCENE_ALWAYS, RocketBaseBossFLeft
 	coord_event 15, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFRight
 	coord_event 14, 12, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseCantLeaveScript
 	coord_event 15, 12, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseCantLeaveScript

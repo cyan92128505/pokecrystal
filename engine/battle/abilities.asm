@@ -70,6 +70,7 @@ RockHeadPokemon:
     db CHIMCHAR
     db MONFERNO
     db INFERNAPE
+    db HAWLUCHA
     db -1
 
 GutsPokemon:
@@ -208,7 +209,6 @@ UberImmunePokemon:
 ;    db VAPOREON
 ;    db LAPRAS
 ;    db ARCTOVISH
-;    db PARASECT
 ;    db POLIWAG
 ;    db POLIWHIRL
 ;    db -1

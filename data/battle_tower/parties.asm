@@ -5192,9 +5192,9 @@ BattleTowerMons:
 	bigdw 298 ; SDef
 	db "RANTA-N@@@@"
 
-	db PERSIAN
-	db CHOICE_BAND
-	db SLASH, BITE, NO_MOVE, NO_MOVE
+	db HAWLUCHA
+	db FOCUS_SASH
+	db SWORDS_DANCE, BRAVE_BIRD, HI_JUMP_KICK, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5204,18 +5204,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 0, 0, 0 ; PP
+	db 32, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 333 ; HP
-	bigdw 333 ; Max HP
-	bigdw 238 ; Atk
-	bigdw 218 ; Def
-	bigdw 328 ; Spd
-	bigdw 228 ; SAtk
-	bigdw 228 ; SDef
+    bigdw 359
+    bigdw 359
+    bigdw 282
+    bigdw 248
+    bigdw 334
+    bigdw 246
+    bigdw 224
 	db "RANTA-N@@@@"
 
 	db AERODACTYL

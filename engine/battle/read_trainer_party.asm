@@ -890,6 +890,162 @@ ReadPlayerPartyAsTrainerPartyPieces:
     ld a, [wPartyMon6PP + 3]
     ld [wOTPartyMon6PP + 3], a
 
+    ; nickname
+    ld a, [wPartyMon1Nickname]
+    and a
+    jr z, .secondNick
+    ld [wOTPartyMon1Nickname], a
+    ld a, [wPartyMon1Nickname + 1]
+    ld [wOTPartyMon1Nickname + 1], a
+    ld a, [wPartyMon1Nickname + 2]
+    ld [wOTPartyMon1Nickname + 2], a
+    ld a, [wPartyMon1Nickname + 3]
+    ld [wOTPartyMon1Nickname + 3], a
+    ld a, [wPartyMon1Nickname + 4]
+    ld [wOTPartyMon1Nickname + 4], a
+    ld a, [wPartyMon1Nickname + 5]
+    ld [wOTPartyMon1Nickname + 5], a
+    ld a, [wPartyMon1Nickname + 6]
+    ld [wOTPartyMon1Nickname + 6], a
+    ld a, [wPartyMon1Nickname + 7]
+    ld [wOTPartyMon1Nickname + 7], a
+    ld a, [wPartyMon1Nickname + 8]
+    ld [wOTPartyMon1Nickname + 8], a
+    ld a, [wPartyMon1Nickname + 9]
+    ld [wOTPartyMon1Nickname + 9], a
+    ld a, [wPartyMon1Nickname + 10]
+    ld [wOTPartyMon1Nickname + 10], a
+
+.secondNick
+    ld a, [wPartyMon2Nickname]
+    and a
+    jr z, .thirdNick
+    ld [wOTPartyMon2Nickname], a
+    ld a, [wPartyMon2Nickname + 1]
+    ld [wOTPartyMon2Nickname + 1], a
+    ld a, [wPartyMon2Nickname + 2]
+    ld [wOTPartyMon2Nickname + 2], a
+    ld a, [wPartyMon2Nickname + 3]
+    ld [wOTPartyMon2Nickname + 3], a
+    ld a, [wPartyMon2Nickname + 4]
+    ld [wOTPartyMon2Nickname + 4], a
+    ld a, [wPartyMon2Nickname + 5]
+    ld [wOTPartyMon2Nickname + 5], a
+    ld a, [wPartyMon2Nickname + 6]
+    ld [wOTPartyMon2Nickname + 6], a
+    ld a, [wPartyMon2Nickname + 7]
+    ld [wOTPartyMon2Nickname + 7], a
+    ld a, [wPartyMon2Nickname + 8]
+    ld [wOTPartyMon2Nickname + 8], a
+    ld a, [wPartyMon2Nickname + 9]
+    ld [wOTPartyMon2Nickname + 9], a
+    ld a, [wPartyMon2Nickname + 10]
+    ld [wOTPartyMon2Nickname + 10], a
+
+.thirdNick
+    ld a, [wPartyMon3Nickname]
+    and a
+    jr z, .forthNick
+    ld [wOTPartyMon3Nickname], a
+    ld a, [wPartyMon3Nickname + 1]
+    ld [wOTPartyMon3Nickname + 1], a
+    ld a, [wPartyMon3Nickname + 2]
+    ld [wOTPartyMon3Nickname + 2], a
+    ld a, [wPartyMon3Nickname + 3]
+    ld [wOTPartyMon3Nickname + 3], a
+    ld a, [wPartyMon3Nickname + 4]
+    ld [wOTPartyMon3Nickname + 4], a
+    ld a, [wPartyMon3Nickname + 5]
+    ld [wOTPartyMon3Nickname + 5], a
+    ld a, [wPartyMon3Nickname + 6]
+    ld [wOTPartyMon3Nickname + 6], a
+    ld a, [wPartyMon3Nickname + 7]
+    ld [wOTPartyMon3Nickname + 7], a
+    ld a, [wPartyMon3Nickname + 8]
+    ld [wOTPartyMon3Nickname + 8], a
+    ld a, [wPartyMon3Nickname + 9]
+    ld [wOTPartyMon3Nickname + 9], a
+    ld a, [wPartyMon3Nickname + 10]
+    ld [wOTPartyMon3Nickname + 10], a
+
+.forthNick
+    ld a, [wPartyMon4Nickname]
+    and a
+    jr z, .fifthNick
+    ld [wOTPartyMon4Nickname], a
+    ld a, [wPartyMon4Nickname + 1]
+    ld [wOTPartyMon4Nickname + 1], a
+    ld a, [wPartyMon4Nickname + 2]
+    ld [wOTPartyMon4Nickname + 2], a
+    ld a, [wPartyMon4Nickname + 3]
+    ld [wOTPartyMon4Nickname + 3], a
+    ld a, [wPartyMon4Nickname + 4]
+    ld [wOTPartyMon4Nickname + 4], a
+    ld a, [wPartyMon4Nickname + 5]
+    ld [wOTPartyMon4Nickname + 5], a
+    ld a, [wPartyMon4Nickname + 6]
+    ld [wOTPartyMon4Nickname + 6], a
+    ld a, [wPartyMon4Nickname + 7]
+    ld [wOTPartyMon4Nickname + 7], a
+    ld a, [wPartyMon4Nickname + 8]
+    ld [wOTPartyMon4Nickname + 8], a
+    ld a, [wPartyMon4Nickname + 9]
+    ld [wOTPartyMon4Nickname + 9], a
+    ld a, [wPartyMon4Nickname + 10]
+    ld [wOTPartyMon4Nickname + 10], a
+
+.fifthNick
+    ld a, [wPartyMon5Nickname]
+    and a
+    jr z, .sixthNick
+    ld [wOTPartyMon5Nickname], a
+    ld a, [wPartyMon5Nickname + 1]
+    ld [wOTPartyMon5Nickname + 1], a
+    ld a, [wPartyMon5Nickname + 2]
+    ld [wOTPartyMon5Nickname + 2], a
+    ld a, [wPartyMon5Nickname + 3]
+    ld [wOTPartyMon5Nickname + 3], a
+    ld a, [wPartyMon5Nickname + 4]
+    ld [wOTPartyMon5Nickname + 4], a
+    ld a, [wPartyMon5Nickname + 5]
+    ld [wOTPartyMon5Nickname + 5], a
+    ld a, [wPartyMon5Nickname + 6]
+    ld [wOTPartyMon5Nickname + 6], a
+    ld a, [wPartyMon5Nickname + 7]
+    ld [wOTPartyMon5Nickname + 7], a
+    ld a, [wPartyMon5Nickname + 8]
+    ld [wOTPartyMon5Nickname + 8], a
+    ld a, [wPartyMon5Nickname + 9]
+    ld [wOTPartyMon5Nickname + 9], a
+    ld a, [wPartyMon5Nickname + 10]
+    ld [wOTPartyMon5Nickname + 10], a
+
+.sixthNick
+    ld a, [wPartyMon6Nickname]
+    and a
+    ret z
+    ld [wOTPartyMon6Nickname], a
+    ld a, [wPartyMon6Nickname + 1]
+    ld [wOTPartyMon6Nickname + 1], a
+    ld a, [wPartyMon6Nickname + 2]
+    ld [wOTPartyMon6Nickname + 2], a
+    ld a, [wPartyMon6Nickname + 3]
+    ld [wOTPartyMon6Nickname + 3], a
+    ld a, [wPartyMon6Nickname + 4]
+    ld [wOTPartyMon6Nickname + 4], a
+    ld a, [wPartyMon6Nickname + 5]
+    ld [wOTPartyMon6Nickname + 5], a
+    ld a, [wPartyMon6Nickname + 6]
+    ld [wOTPartyMon6Nickname + 6], a
+    ld a, [wPartyMon6Nickname + 7]
+    ld [wOTPartyMon6Nickname + 7], a
+    ld a, [wPartyMon6Nickname + 8]
+    ld [wOTPartyMon6Nickname + 8], a
+    ld a, [wPartyMon6Nickname + 9]
+    ld [wOTPartyMon6Nickname + 9], a
+    ld a, [wPartyMon6Nickname + 10]
+    ld [wOTPartyMon6Nickname + 10], a
+
     ret
 
 IncrementToCurrentMon:
@@ -1518,7 +1674,165 @@ ReadCopyOfTrainerParty:
     ld [wPartyMon5Status], a
     ld a, [wOTPartyMon6Status]
     ld [wPartyMon6Status], a
+
+    ; nickname
+    ld a, [wOTPartyMon1Nickname]
+    and a
+    jr z, .secondNick
+    ld [wPartyMon1Nickname], a
+    ld a, [wOTPartyMon1Nickname + 1]
+    ld [wPartyMon1Nickname + 1], a
+    ld a, [wOTPartyMon1Nickname + 2]
+    ld [wPartyMon1Nickname + 2], a
+    ld a, [wOTPartyMon1Nickname + 3]
+    ld [wPartyMon1Nickname + 3], a
+    ld a, [wOTPartyMon1Nickname + 4]
+    ld [wPartyMon1Nickname + 4], a
+    ld a, [wOTPartyMon1Nickname + 5]
+    ld [wPartyMon1Nickname + 5], a
+    ld a, [wOTPartyMon1Nickname + 6]
+    ld [wPartyMon1Nickname + 6], a
+    ld a, [wOTPartyMon1Nickname + 7]
+    ld [wPartyMon1Nickname + 7], a
+    ld a, [wOTPartyMon1Nickname + 8]
+    ld [wPartyMon1Nickname + 8], a
+    ld a, [wOTPartyMon1Nickname + 9]
+    ld [wPartyMon1Nickname + 9], a
+    ld a, [wOTPartyMon1Nickname + 10]
+    ld [wPartyMon1Nickname + 10], a
+
+.secondNick
+    ld a, [wOTPartyMon2Nickname]
+    and a
+    jr z, .thirdNick
+    ld [wPartyMon2Nickname], a
+    ld a, [wOTPartyMon2Nickname + 1]
+    ld [wPartyMon2Nickname + 1], a
+    ld a, [wOTPartyMon2Nickname + 2]
+    ld [wPartyMon2Nickname + 2], a
+    ld a, [wOTPartyMon2Nickname + 3]
+    ld [wPartyMon2Nickname + 3], a
+    ld a, [wOTPartyMon2Nickname + 4]
+    ld [wPartyMon2Nickname + 4], a
+    ld a, [wOTPartyMon2Nickname + 5]
+    ld [wPartyMon2Nickname + 5], a
+    ld a, [wOTPartyMon2Nickname + 6]
+    ld [wPartyMon2Nickname + 6], a
+    ld a, [wOTPartyMon2Nickname + 7]
+    ld [wPartyMon2Nickname + 7], a
+    ld a, [wOTPartyMon2Nickname + 8]
+    ld [wPartyMon2Nickname + 8], a
+    ld a, [wOTPartyMon2Nickname + 9]
+    ld [wPartyMon2Nickname + 9], a
+    ld a, [wOTPartyMon2Nickname + 10]
+    ld [wPartyMon2Nickname + 10], a
+
+.thirdNick
+    ld a, [wOTPartyMon3Nickname]
+    and a
+    jr z, .forthNick
+    ld [wPartyMon3Nickname], a
+    ld a, [wOTPartyMon3Nickname + 1]
+    ld [wPartyMon3Nickname + 1], a
+    ld a, [wOTPartyMon3Nickname + 2]
+    ld [wPartyMon3Nickname + 2], a
+    ld a, [wOTPartyMon3Nickname + 3]
+    ld [wPartyMon3Nickname + 3], a
+    ld a, [wOTPartyMon3Nickname + 4]
+    ld [wPartyMon3Nickname + 4], a
+    ld a, [wOTPartyMon3Nickname + 5]
+    ld [wPartyMon3Nickname + 5], a
+    ld a, [wOTPartyMon3Nickname + 6]
+    ld [wPartyMon3Nickname + 6], a
+    ld a, [wOTPartyMon3Nickname + 7]
+    ld [wPartyMon3Nickname + 7], a
+    ld a, [wOTPartyMon3Nickname + 8]
+    ld [wPartyMon3Nickname + 8], a
+    ld a, [wOTPartyMon3Nickname + 9]
+    ld [wPartyMon3Nickname + 9], a
+    ld a, [wOTPartyMon3Nickname + 10]
+    ld [wPartyMon3Nickname + 10], a
+
+.forthNick
+    ld a, [wOTPartyMon4Nickname]
+    and a
+    jr z, .fifthNick
+    ld [wPartyMon4Nickname], a
+    ld a, [wOTPartyMon4Nickname + 1]
+    ld [wPartyMon4Nickname + 1], a
+    ld a, [wOTPartyMon4Nickname + 2]
+    ld [wPartyMon4Nickname + 2], a
+    ld a, [wOTPartyMon4Nickname + 3]
+    ld [wPartyMon4Nickname + 3], a
+    ld a, [wOTPartyMon4Nickname + 4]
+    ld [wPartyMon4Nickname + 4], a
+    ld a, [wOTPartyMon4Nickname + 5]
+    ld [wPartyMon4Nickname + 5], a
+    ld a, [wOTPartyMon4Nickname + 6]
+    ld [wPartyMon4Nickname + 6], a
+    ld a, [wOTPartyMon4Nickname + 7]
+    ld [wPartyMon4Nickname + 7], a
+    ld a, [wOTPartyMon4Nickname + 8]
+    ld [wPartyMon4Nickname + 8], a
+    ld a, [wOTPartyMon4Nickname + 9]
+    ld [wPartyMon4Nickname + 9], a
+    ld a, [wOTPartyMon4Nickname + 10]
+    ld [wPartyMon4Nickname + 10], a
+
+.fifthNick
+    ld a, [wOTPartyMon5Nickname]
+    and a
+    jr z, .sixthNick
+    ld [wPartyMon5Nickname], a
+    ld a, [wOTPartyMon5Nickname + 1]
+    ld [wPartyMon5Nickname + 1], a
+    ld a, [wOTPartyMon5Nickname + 2]
+    ld [wPartyMon5Nickname + 2], a
+    ld a, [wOTPartyMon5Nickname + 3]
+    ld [wPartyMon5Nickname + 3], a
+    ld a, [wOTPartyMon5Nickname + 4]
+    ld [wPartyMon5Nickname + 4], a
+    ld a, [wOTPartyMon5Nickname + 5]
+    ld [wPartyMon5Nickname + 5], a
+    ld a, [wOTPartyMon5Nickname + 6]
+    ld [wPartyMon5Nickname + 6], a
+    ld a, [wOTPartyMon5Nickname + 7]
+    ld [wPartyMon5Nickname + 7], a
+    ld a, [wOTPartyMon5Nickname + 8]
+    ld [wPartyMon5Nickname + 8], a
+    ld a, [wOTPartyMon5Nickname + 9]
+    ld [wPartyMon5Nickname + 9], a
+    ld a, [wOTPartyMon5Nickname + 10]
+    ld [wPartyMon5Nickname + 10], a
+
+.sixthNick
+    ld a, [wOTPartyMon6Nickname]
+    and a
+    ret z
+    ld [wPartyMon6Nickname], a
+    ld a, [wOTPartyMon6Nickname + 1]
+    ld [wPartyMon6Nickname + 1], a
+    ld a, [wOTPartyMon6Nickname + 2]
+    ld [wPartyMon6Nickname + 2], a
+    ld a, [wOTPartyMon6Nickname + 3]
+    ld [wPartyMon6Nickname + 3], a
+    ld a, [wOTPartyMon6Nickname + 4]
+    ld [wPartyMon6Nickname + 4], a
+    ld a, [wOTPartyMon6Nickname + 5]
+    ld [wPartyMon6Nickname + 5], a
+    ld a, [wOTPartyMon6Nickname + 6]
+    ld [wPartyMon6Nickname + 6], a
+    ld a, [wOTPartyMon6Nickname + 7]
+    ld [wPartyMon6Nickname + 7], a
+    ld a, [wOTPartyMon6Nickname + 8]
+    ld [wPartyMon6Nickname + 8], a
+    ld a, [wOTPartyMon6Nickname + 9]
+    ld [wPartyMon6Nickname + 9], a
+    ld a, [wOTPartyMon6Nickname + 10]
+    ld [wPartyMon6Nickname + 10], a
+
     ret
+
 
 ; AndrewNote - reward money here
 ComputeTrainerReward:

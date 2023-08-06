@@ -91,7 +91,7 @@ MuseumFieldMon5Script:
     end
 
 MuseumFieldMon6Script:
-	trainer PARASECT, FIELD_MON, EVENT_FIELD_MON_6, MuseumPokemonAttacksText, 67, 0, .script
+	trainer BRELOOM, FIELD_MON, EVENT_FIELD_MON_6, MuseumPokemonAttacksText, 67, 0, .script
 .script
     disappear MUSEUM_FIELDMON_6
     end

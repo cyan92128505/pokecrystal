@@ -47,7 +47,7 @@ PokedexDataPointerTable:
 	dw BisharpPokedexEntry
 	dw RegigigasPokedexEntry
 	dw ZygardePokedexEntry
-	dw ParasectPokedexEntry
+	dw HawluchaPokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
 	dw ArctozoltPokedexEntry

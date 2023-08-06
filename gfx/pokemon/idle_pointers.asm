@@ -46,7 +46,7 @@ AnimationIdlePointers:
 	dw BisharpAnimationIdle
 	dw RegigigasAnimationIdle
 	dw ZygardeAnimationIdle
-	dw ParasectAnimationIdle
+	dw HawluchaAnimationIdle
 	dw LarvestaAnimationIdle
 	dw VolcaronaAnimationIdle
 	dw ArctozoltAnimationIdle

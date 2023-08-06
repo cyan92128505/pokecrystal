@@ -392,9 +392,9 @@ Route42FieldMon4Script:
 
 Route42FieldMon5Script:
 	faceplayer
-	cry ARBOK
+	cry HAWLUCHA
 	pause 15
-	loadwildmon ARBOK, 34
+	loadwildmon HAWLUCHA, 34
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

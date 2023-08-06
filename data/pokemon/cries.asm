@@ -52,7 +52,7 @@ PokemonCries::
 	mon_cry CRY_ODDISH,       20,  150 ; BISHARP
 	mon_cry CRY_TYPHLOSION,  200,  400 ; REGIGIGAS
 	mon_cry CRY_GOLEM,       200,  400 ; ZYGARDE
-	mon_cry CRY_PARAS,        66,  383 ; PARASECT
+	mon_cry CRY_PIDGEOTTO,    50,  250 ; HAWLUCHA
 	mon_cry CRY_VENONAT,      68,  192 ; LARVESTA
 	mon_cry CRY_VENONAT,      41,  256 ; VOLCARONA
 	mon_cry CRY_RAICHU,       50,  150 ; ARCTOZOLT

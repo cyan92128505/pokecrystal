@@ -46,7 +46,7 @@ AnimationPointers:
 	dw BisharpAnimation
 	dw RegigigasAnimation
 	dw ZygardeAnimation
-	dw ParasectAnimation
+	dw HawluchaAnimation
 	dw LarvestaAnimation
 	dw VolcaronaAnimation
 	dw ArctozoltAnimation

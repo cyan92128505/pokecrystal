@@ -45,7 +45,7 @@ Pokered_MonIndices:
 	db SOLOSIS
 	db DUOSION
 	db ARBOK
-	db PARASECT
+	db HAWLUCHA
 	db PSYDUCK
 	db DROWZEE
 	db GOLEM

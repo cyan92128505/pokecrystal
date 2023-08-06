@@ -46,7 +46,7 @@ PokemonNames::
 	db "BISHARP@@@"
 	db "REGIGIGAS@"
 	db "ZYGARDE@@@"
-	db "PARASECT@@"
+	db "HAWLUCHA@@"
 	db "LARVESTA@@"
 	db "VOLCARONA@"
 	db "ARCTOZOLT@"

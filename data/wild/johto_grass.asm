@@ -1577,7 +1577,7 @@ JohtoGrassWildMons:
 	db 25, STARAVIA
 	db 25, SWINUB
 	db 27, MACHOKE
-	db 27, BRELOOM
+	db 27, HAWLUCHA
 	db 28, MAGMAR
 	db 52, MAGMORTAR
 	; day
@@ -1585,7 +1585,7 @@ JohtoGrassWildMons:
 	db 25, STARAVIA
 	db 25, SWINUB
 	db 27, MACHOKE
-	db 27, BRELOOM
+	db 27, HAWLUCHA
 	db 28, MAGMAR
 	db 52, MAGMORTAR
 	; nite
@@ -1614,7 +1614,7 @@ JohtoGrassWildMons:
 	db 27, EXEGGCUTE
 	db 28, BAGON
 	db 30, AMPHAROS
-	db 32, STARAPTOR
+	db 32, HAWLUCHA
 	db 63, SALAMENCE
 	; nite
 	db 25, QUAGSIRE

@@ -65,7 +65,7 @@
 	const BISHARP      ; 2c  ....
 	const REGIGIGAS  ; 2d  ....
 	const ZYGARDE      ; 2e
-	const PARASECT   ; 2f
+	const HAWLUCHA   ; 2f
 	const LARVESTA   ; 30
 	const VOLCARONA  ; 31
 	const ARCTOZOLT    ; 32 *

@@ -48,7 +48,7 @@ EvosAttacksPointers::
 	dw BisharpEvosAttacks
 	dw RegigigasEvosAttacks
 	dw ZygardeEvosAttacks
-	dw ParasectEvosAttacks
+	dw HawluchaEvosAttacks
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
 	dw ArctozoltEvosAttacks

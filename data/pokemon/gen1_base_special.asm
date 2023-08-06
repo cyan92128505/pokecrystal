@@ -48,7 +48,7 @@ KantoMonSpecials:
 	db  85 ; BISHARP
 	db 100 ; REGIGIGAS
 	db  95 ; ZYGARDE
-	db  80 ; PARASECT
+	db  80 ; HAWLUCHA
 	db  40 ; LARVESTA
 	db  90 ; VOLCARONA
 	db  45 ; ARCTOZOLT

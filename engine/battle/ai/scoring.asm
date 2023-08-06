@@ -51,7 +51,6 @@ AI_WaterAbsorbPokemon:
     db VAPOREON
     db LAPRAS
     db ARCTOVISH
-    db PARASECT
     db POLIWAG
     db POLIWHIRL
     db $FF

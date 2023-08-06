@@ -159,7 +159,7 @@ AlphabeticalPokedexOrder:
 	db NOCTOWL
 	db ONIX
 	db PALKIA
-	db PARASECT
+	db HAWLUCHA
 	db PAWNIARD
 	db PERSIAN
 	db PIKACHU

@@ -51,7 +51,7 @@ MonMenuIconPals:
 	icon_pals RED,   BLUE     ; BISHARP
 	icon_pals SILVER,  GOLD     ; REGIGIGAS
 	icon_pals GREEN,  SILVER         ; ZYGARDE
-	icon_pals RED,  GREEN         ; PARASECT
+	icon_pals RED,  GREEN         ; HAWLUCHA
 	icon_pals RED,  GOLD ; LARVESTA
 	icon_pals RED,  GOLD        ; VOLCARONA
 	icon_pals BLUE,  SILVER     ; ARCTOZOLT

@@ -123,7 +123,7 @@ KadabraFrontpic:     INCBIN "gfx/pokemon/kadabra/front.animated.2bpp.lz"
 ExeggutorFrontpic:   INCBIN "gfx/pokemon/exeggutor/front.animated.2bpp.lz"
 GastlyFrontpic:      INCBIN "gfx/pokemon/gastly/front.animated.2bpp.lz"
 PorygonzFrontpic:   INCBIN "gfx/pokemon/porygonz/front.animated.2bpp.lz"
-ParasectFrontpic:    INCBIN "gfx/pokemon/parasect/front.animated.2bpp.lz"
+HawluchaFrontpic:    INCBIN "gfx/pokemon/hawlucha/front.animated.2bpp.lz"
 MrMimeFrontpic:      INCBIN "gfx/pokemon/mr__mime/front.animated.2bpp.lz"
 HeracrossFrontpic:   INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz"
 
@@ -246,7 +246,7 @@ Porygon2Frontpic:    INCBIN "gfx/pokemon/porygon2/front.animated.2bpp.lz"
 RotomFrontpic:   INCBIN "gfx/pokemon/rotom/front.animated.2bpp.lz"
 NidoranFFrontpic:    INCBIN "gfx/pokemon/nidoran_f/front.animated.2bpp.lz"
 StarlyFrontpic:      INCBIN "gfx/pokemon/starly/front.animated.2bpp.lz"
-ParasectBackpic:     INCBIN "gfx/pokemon/parasect/back.2bpp.lz"
+HawluchaBackpic:     INCBIN "gfx/pokemon/hawlucha/back.2bpp.lz"
 
 
 SECTION "Pics 10", ROMX

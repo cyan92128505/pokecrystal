@@ -463,9 +463,9 @@ CianwoodCityFieldMon4Script:
 	
 CianwoodCityFieldMon5Script:
 	faceplayer
-	cry STARAPTOR
+	cry HAWLUCHA
 	pause 15
-	loadwildmon STARAPTOR, 32
+	loadwildmon HAWLUCHA, 32
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

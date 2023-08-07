@@ -127,7 +127,7 @@ ReadTrainerPartyPieces:
 	pop de
 .no_nickname
 
-; dvs?
+; dvs? - this isn't used?
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_DVS_F, a
 	jr z, .no_dvs
@@ -1182,30 +1182,23 @@ ReadCopyOfTrainerParty:
     ld [wPartyMon6Item], a
 
     ; dvs
-    ld a, [wOTPartyMon1DVs]
+    push bc
+    farcall GetTrainerDVs
+    ld a, b
     ld [wPartyMon1DVs], a
-    ld a, [wOTPartyMon1DVs + 1]
-    ld [wPartyMon1DVs + 1], a
-    ld a, [wOTPartyMon2DVs]
     ld [wPartyMon2DVs], a
-    ld a, [wOTPartyMon2DVs + 1]
-    ld [wPartyMon2DVs + 1], a
-    ld a, [wOTPartyMon3DVs]
     ld [wPartyMon3DVs], a
-    ld a, [wOTPartyMon3DVs + 1]
-    ld [wPartyMon3DVs + 1], a
-    ld a, [wOTPartyMon4DVs]
     ld [wPartyMon4DVs], a
-    ld a, [wOTPartyMon4DVs + 1]
-    ld [wPartyMon4DVs + 1], a
-    ld a, [wOTPartyMon5DVs]
     ld [wPartyMon5DVs], a
-    ld a, [wOTPartyMon5DVs + 1]
-    ld [wPartyMon5DVs + 1], a
-    ld a, [wOTPartyMon6DVs]
     ld [wPartyMon6DVs], a
-    ld a, [wOTPartyMon6DVs + 1]
+    ld a, c
+    ld [wPartyMon1DVs + 1], a
+    ld [wPartyMon2DVs + 1], a
+    ld [wPartyMon3DVs + 1], a
+    ld [wPartyMon4DVs + 1], a
+    ld [wPartyMon5DVs + 1], a
     ld [wPartyMon6DVs + 1], a
+    pop bc
 
     ; stat exp
     ld a, [wOTPartyMon1HPExp]

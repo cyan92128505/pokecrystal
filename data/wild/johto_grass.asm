@@ -1126,7 +1126,7 @@ JohtoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 60, BRELOOM
-	db 60, REUNICLUS
+	db 60, HAWLUCHA
 	db 62, HERACROSS
 	db 62, CONKELDURR
 	db 60, KLEFKI
@@ -1134,7 +1134,7 @@ JohtoGrassWildMons:
 	db 80, SNORLAX
 	; day
 	db 60, BRELOOM
-	db 60, REUNICLUS
+	db 60, HAWLUCHA
 	db 62, HERACROSS
 	db 62, CONKELDURR
 	db 60, KLEFKI
@@ -1875,6 +1875,34 @@ JohtoGrassWildMons:
 	db 65, CHARIZARD
 	db 65, SNORLAX
 	db 70, MEW
+	end_grass_wildmons
+
+    def_grass_wildmons ANCIENT_TEMPLE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 71, REUNICLUS
+	db 71, CROBAT
+	db 73, RHYPERIOR
+	db 73, METAGROSS
+	db 75, TYRANITAR
+	db 75, GARCHOMP
+	db 90, DUNSPARCE
+	; day
+	db 71, REUNICLUS
+	db 71, CROBAT
+	db 73, RHYPERIOR
+	db 73, METAGROSS
+	db 75, TYRANITAR
+	db 75, GARCHOMP
+	db 90, DUNSPARCE
+	; nite
+	db 71, REUNICLUS
+	db 71, CROBAT
+	db 73, RHYPERIOR
+	db 73, METAGROSS
+	db 75, TYRANITAR
+	db 75, GARCHOMP
+	db 90, DUNSPARCE
 	end_grass_wildmons
 
 	db -1 ; end

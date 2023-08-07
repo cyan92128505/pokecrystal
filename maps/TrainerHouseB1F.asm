@@ -1864,7 +1864,8 @@ BattleArcadeReceptionistScript:
 
     checkevent EVENT_BEAT_RED
     iffalse .notBeatRedEnemyMenu
-    loadmenu .PostRedCharacterMenuHeader
+    ;loadmenu .PostRedCharacterMenuHeader
+    loadmenu .DefaultCharacterMenuHeader
     _2dmenu
     sjump .doneEnemyMenu
 .notBeatRedEnemyMenu
@@ -2295,7 +2296,7 @@ BattleArcadeReceptionistScript:
 
 .PostWallaceCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 9
+	menu_coords 0, 0, 19, 11
 	dw .PostWallaceCharacterMenuData
 	db 1 ; default option
 .PostWallaceCharacterMenuData:
@@ -2332,12 +2333,12 @@ BattleArcadeReceptionistScript:
 
 .PostE4CharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 5
+	menu_coords 0, 0, 19, 11
 	dw .PostE4CharacterMenuData
 	db 1 ; default option
 .PostE4CharacterMenuData:
 	db STATICMENU_CURSOR ; flags
-	dn 2, 6 ; rows, columns
+	dn 3, 6 ; rows, columns
 	db 3 ; spacing
 	dba .PostE4CharacterText
 	dbw BANK(@), NULL
@@ -2354,10 +2355,16 @@ BattleArcadeReceptionistScript:
 	db "BN@"
 	db "KN@"
 	db "OK@"
+	db "BR@"
+	db "MS@"
+	db "SR@"
+	db "ER@"
+    db "JN@"
+    db "WL@"
 
 .DefaultCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 3
+	menu_coords 0, 0, 19, 11
 	dw .DefaultCharacterMenuData
 	db 1 ; default option
 .DefaultCharacterMenuData:

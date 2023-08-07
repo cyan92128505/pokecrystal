@@ -418,7 +418,7 @@ CianwoodBeachSignText:
 	done
 
 CianwoodCityFieldMon1Script:
-	trainer POLIWRATH, FIELD_MON, EVENT_FIELD_MON_1, CianwoodCityPokemonAttacksText, 44, 0, .script
+	trainer HAWLUCHA, FIELD_MON, EVENT_FIELD_MON_1, CianwoodCityPokemonAttacksText, 44, 0, .script
 .script
     disappear CIANWOODCITY_FIELDMON_1
     end
@@ -463,9 +463,9 @@ CianwoodCityFieldMon4Script:
 	
 CianwoodCityFieldMon5Script:
 	faceplayer
-	cry HAWLUCHA
+	cry STARAPTOR
 	pause 15
-	loadwildmon HAWLUCHA, 32
+	loadwildmon STARAPTOR, 32
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

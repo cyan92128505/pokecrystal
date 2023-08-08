@@ -452,6 +452,645 @@ AzaleaTownIlexForestSignText:
 	line "gate."
 	done
 
+YuGiOhRolePlayScript:
+    faceplayer
+    opentext
+    writetext YuGiOhIntroText
+    yesorno
+    iffalse .refused
+    special TryQuickSave
+    iffalse .refused
+	setval WEATHER_NONE
+	writemem wFieldWeather
+    writetext YuGiOhCharacterChoiceText
+	loadmenu .YuGiOhCharacterMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Henshin
+	ifequal 2, .Seto
+	ifequal 3, .Yami
+	closetext
+	end
+.YuGiOhCharacterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 7
+	dw .YuGiOhCharacterMenuData
+	db 1 ; default option
+.YuGiOhCharacterMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 1 ; rows, columns
+	db 5 ; spacing
+	dba .YuGiOhCharacterText
+	dbw BANK(@), NULL
+.YuGiOhCharacterText:
+	db "HENSHIN@"
+	db "SETO@"
+	db "YAMI@"
+
+.Henshin
+    opentext
+    writetext YuGiOhHenshin1Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_HENSHIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_RIVAL_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_SETO
+	startbattle
+	reloadmap
+
+    opentext
+    writetext YuGiOhHenshin2Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_HENSHIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_GUILE_THEME
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_YAMI_WEAK
+	startbattle
+	reloadmap
+
+	sjump .endYuGiOh
+
+.Seto
+    opentext
+    writetext YuGiOhSeto1Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_SETO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_RIVAL_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_HENSHIN
+	startbattle
+	reloadmap
+
+    opentext
+    writetext YuGiOhSeto2Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_SETO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_CHAMPION_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_YAMI
+	startbattle
+	reloadmap
+
+    opentext
+    writetext YuGiOhSeto3Text
+    waitbutton
+    closetext
+
+	sjump .endYuGiOh
+
+.Yami
+    opentext
+    writetext YuGiOhYami1Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_YAMI
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_CHAMPION_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_SETO
+	startbattle
+	reloadmap
+
+    opentext
+    writetext YuGiOhYami2Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_YAMI_WEAK
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_GUILE_THEME
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_HENSHIN
+	startbattle
+	reloadmap
+
+.endYuGiOh
+	opentext
+	writetext YuGiOhRolePlayFinalText
+	waitbutton
+	closetext
+	opentext
+	writetext YuGiOhRolePlayEndText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
+.refused
+    opentext
+    writetext YuGiOhRolePlayRefusedText
+    waitbutton
+    closetext
+    end
+
+YuGiOhIntroText:
+    text "Hey!"
+
+    para "Did you visit"
+    line "the RUINS OF ALPH?"
+
+    para "We did and it got"
+    line "us in the mood"
+    cont "for a YUGIOH"
+    cont "role play."
+
+    para "Would you like"
+    line "to play?"
+
+    para "You'll have to"
+    line "Save your game?"
+    done
+
+YuGiOhCharacterChoiceText:
+    text "Great!"
+
+    para "Which ancient"
+    line "character would"
+    cont "you like to"
+    cont "play as?"
+    done
+
+YuGiOhHenshin1Text:
+    text "For decades you"
+    line "have been the"
+    cont "high priest of"
+    cont "a great dynasty."
+
+    para "You master is an"
+    line "arrogant young"
+    cont "man."
+
+    para "But he has a"
+    line "following that"
+    cont "might allow him"
+    cont "to overthrow"
+    cont "the young pharaoh."
+
+    para "The time has come."
+
+    para "You will now be"
+    line "master of your"
+    cont "own destiny."
+
+    para "You corner your"
+    line "master SETO and"
+    cont "tell him he shall"
+    cont "control you no"
+    cont "longer."
+
+    para "SETO fumes with"
+    line "rage."
+
+    para "He takes his"
+    line "cards from"
+    cont "which he can"
+    cont "summon monsters."
+
+    para "You fight back"
+    line "with your own"
+    cont "cards."
+
+    para "It's a duel."
+    done
+
+YuGiOhHenshin2Text:
+    text "Having narrowly"
+    line "escaped you"
+    cont "hide in the"
+    cont "palace."
+
+    para "SETO seems full"
+    line "confidence."
+
+    para "You watch as"
+    line "he marches into"
+    cont "the throne room."
+
+    para "He challenges the"
+    line "Pharaoh YAMI."
+
+    para "You are horrified"
+    line "by the immense"
+    cont "power of YAMIs"
+    cont "cards."
+
+    para "His monsters,"
+    line "more like gods."
+    cont "Make easy work"
+    cont "of SETO."
+
+    para "SETO lies on"
+    line "the floor."
+
+    para "Motionless."
+
+    para "This is your"
+    line "chance!"
+
+    para "You jump out"
+    line "and stab YAMI"
+    cont "in the back."
+
+    para "He reels to"
+    line "the side and"
+    cont "drops his godly"
+    cont "cards."
+
+    para "Now you reach"
+    line "for your own"
+    cont "cards to finish"
+    cont "the job."
+
+    para "But YAMI brings"
+    line "from his robe"
+    cont "some old and"
+    cont "shabby looking"
+    cont "cards to defend"
+    cont "himself with."
+
+    para "You wont be"
+    line "denied your"
+    cont "rightful place"
+    cont "in history."
+
+    para "You attack!"
+    done
+
+YuGiOhSeto1Text:
+    text "You are the lord"
+    line "of a powerful"
+    cont "dynasty."
+
+    para "Only the young"
+    line "Pharaoh YAMI"
+    cont "holds more"
+    cont "power than you."
+
+    para "You plan to"
+    line "overthrow him"
+    cont "soon."
+
+    para "The cards from"
+    line "which you can"
+    cont "summon monsters"
+    cont "are powerful."
+
+    para "Your high priest"
+    line "HENSHIN has asked"
+    cont "to speak with you."
+
+    para "As you walk"
+    line "into the chamber"
+    cont "you see him in"
+    cont "the shadows."
+
+    para "He says he shall"
+    line "now take your"
+    cont "place."
+
+    para "How dare he!"
+
+    para "He reaches for"
+    line "his cards."
+
+    para "You must show"
+    line "him the price of"
+    cont "betrayal."
+    done
+
+YuGiOhSeto2Text:
+    text "HENSHIN is"
+    line "defeated."
+
+    para "He was stronger"
+    line "than expected."
+
+    para "You are the"
+    line "strongest!"
+
+    para "None can defeat"
+    line "you!"
+
+    para "You decide now"
+    line "is the time to"
+    cont "overthrow YAMI."
+
+    para "You march proudly"
+    line "into the throne"
+    cont "room and proclaim"
+    cont "the kingdom as"
+    cont "your own."
+
+    para "YAMI says nothing."
+
+    para "YAMI looks at you"
+    line "and through you."
+
+    para "He takes from"
+    line "around his neck"
+    cont "several cards."
+
+    para "They seem to"
+    line "shine like made"
+    cont "of gold."
+
+    para "You have no"
+    line "fear."
+
+    para "Your kingdom"
+    line "awaits."
+
+    para "You ready your"
+    line "cards for battle!"
+    done
+
+YuGiOhSeto3Text:
+    text "You fall to"
+    line "the floor."
+
+    para "Every part of"
+    line "you numb."
+
+    para "Such power!"
+
+    para "You never had"
+    line "a chance."
+
+    para "As you vision"
+    line "fades you see.."
+
+    para "HENSHIN jump"
+    line "from the shadows."
+
+    para "He stabs YAMI in"
+    line "the back."
+
+    para "YAMI drops his"
+    line "cards..."
+
+    para "You lose your"
+    line "fight for"
+    cont "consciences."
+    done
+
+YuGiOhYami1Text:
+    text "You are the"
+    line "great and mighty"
+    cont "Pharaoh YAMI."
+
+    para "You rule your"
+    line "kingdom with"
+    cont "peace and"
+    cont "kindness."
+
+    para "But you show"
+    line "no quarter to"
+    cont "those who would"
+    cont "seek to hurt"
+    cont "you or your"
+    cont "people."
+
+    para "You command the"
+    line "god cards from"
+    cont "which you can"
+    cont "summon gods"
+    cont "to fight for"
+    cont "you."
+
+    para "Even the mightiest"
+    line "god EXODIA is at"
+    cont "your command."
+
+    para "None can challenge"
+    line "you."
+
+    para "Even the lord of"
+    line "the second house"
+    cont "SETO."
+
+    para "You know he will"
+    line "try to overthrow"
+    cont "you."
+
+    para "You have sensed"
+    line "it for some time."
+
+    para "Here he comes."
+
+    para "SETO marches in"
+    line "and predictably"
+    cont "proclaims the"
+    cont "throne his own."
+
+    para "You had hoped"
+    line "it wouldn't"
+    cont "come to this."
+
+    para "But an example"
+    line "must be made."
+
+    para "SETO is the next"
+    line "most powerful"
+    cont "duelist in the"
+    cont "kingdom."
+
+    para "But you know the"
+    line "gap between you"
+    cont "is like the gap"
+    cont "between earth"
+    cont "and heaven."
+
+    para "You take out"
+    line "your godly cards."
+
+    para "To do what must"
+    line "be done."
+    done
+
+YuGiOhYami2Text:
+    text "SETO falls to"
+    line "floor."
+
+    para "Utterly defeated"
+    line "but still alive."
+
+    para "You regret what"
+    line "you had to do."
+
+    para "But before you"
+    line "can form words"
+    cont "in your mouth"
+    cont "you feel an"
+    cont "intense pain"
+    cont "shooting all"
+    cont "over your body."
+
+    para "You find yourself"
+    line "on the ground."
+
+    para "You have been"
+    line "stabbed in the"
+    cont "back."
+
+    para "You have dropped"
+    line "the god cards"
+    cont "down to the"
+    cont "level below."
+
+    para "Standing over you"
+    line "is HENSHIN."
+
+    para "The high priest"
+    line "of SETOs house."
+
+    para "Was this his"
+    line "plan..."
+
+    para "HENSHIN holds"
+    line "cards in his"
+    cont "hand."
+
+    para "He means to kill"
+    line "you."
+
+    para "But he doesn't"
+    line "know you."
+
+    para "You didn't always"
+    line "command the power"
+    cont "of gods."
+
+    para "From your robes"
+    line "you take out"
+    cont "several old cards."
+
+    para "Your oldest"
+    line "friends."
+
+    para "Its been a long"
+    line "time since you"
+    cont "used them."
+
+    para "But your bond"
+    line "is stronger now"
+    cont "than it has ever"
+    cont "been."
+    done
+
+YuGiOhRolePlayFinalText:
+    text "After a frantic"
+    line "battle of life"
+    cont "and death."
+
+    para "YAMI triumphs."
+
+    para "YAMIS monsters"
+    line "banish HENSHIN"
+    cont "to the shadow"
+    cont "realm."
+
+    para "SETO awakens and"
+    line "sees the broken"
+    cont "YAMI."
+
+    para "It would be"
+    line "trivial to end"
+    cont "him is this"
+    cont "state."
+
+    para "SETO retrieves"
+    line "YAMIs god cards."
+
+    para "The power"
+    line "causing his hands"
+    cont "to tremble."
+
+    para "SETO uses their"
+    line "power to heal"
+    cont "YAMI."
+
+    para "SETO realising"
+    line "only YAMI can"
+    cont "truly protect"
+    cont "kingdom, asks"
+    cont "for forgiveness."
+
+    para "YAMI in his"
+    line "wisdom appoints"
+    cont "SETO as his"
+    cont "right HAND."
+
+    para "They rule"
+    line "together."
+
+    para "Until their"
+    line "time comes to"
+    cont "an end."
+    done
+
+YuGiOhRolePlayEndText:
+    text "That was great!"
+
+    para "Thanks for"
+    line "playing with us."
+
+    para "I'm sure we will"
+    line "meet again for"
+    cont "another game."
+    done
+
+YuGiOhRolePlayRefusedText:
+    text "It'll be fun."
+
+    para "I promise."
+    done
+
+YuGiOhVictoryText:
+    text "Victory!"
+    done
+
+YuGiOhDefeatText:
+    text "Defeat!"
+    done
+
 AzaleaTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -485,7 +1124,7 @@ AzaleaTown_MapEvents:
 	object_event 31,  9, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket1Script, EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET
 	object_event 21,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownGrampsScript, -1
 	object_event 15, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1
-	object_event  7,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1
+	object_event  7, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1
 	object_event  8, 17, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
 	object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES
@@ -494,3 +1133,5 @@ AzaleaTown_MapEvents:
 	object_event 11, 10, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 16, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT_OUTSIDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
+	object_event 6, 8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, YuGiOhRolePlayScript, -1
+	object_event 7, 8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, YuGiOhRolePlayScript, -1

@@ -819,6 +819,11 @@ KRIS EQU __trainer_class__
     const SW_CH6_HERO       ; obi wan, luke, leia, anikan
     const SW_CH6_VILLAIN    ; maul, grevious, vader, emperor
 
+    const YGO_HENSHIN       ; cosmo qe, mb dragon, pug moth, g guardian
+    const YGO_SETO          ; bew dragon, bew dragon, bew dragon, ult dragon
+    const YGO_YAMI          ; obilesk, slipher, ra, exodia
+    const YGO_YAMI_WEAK     ; kuribo, dark mag, dark mag g, chaos mag
+
     trainerclass ROLE_PLAYER_SHINY ; 48
     const DBZ_CH5_VEGITA
     const DBZ_CH5_GOKU

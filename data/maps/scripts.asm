@@ -500,7 +500,6 @@ INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
 INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"
-INCLUDE "maps/AzaleaTown.asm"
 INCLUDE "maps/EcruteakTinTowerEntrance.asm"
 INCLUDE "maps/WiseTriosRoom.asm"
 INCLUDE "maps/Route27.asm"
@@ -513,3 +512,4 @@ SECTION "Map Scripts Overflow 5", ROMX
 
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/Route19.asm"
+INCLUDE "maps/AzaleaTown.asm"

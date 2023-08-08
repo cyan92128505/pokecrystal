@@ -73,4 +73,6 @@ TrainerClassDVs:
     dn 10, 15, 15, 15 ; CRYSTAL
     dn 10, 15, 15, 15 ; GREEN
     dn 15, 15, 15, 15 ; LORD_OAK
+    dn 15, 15, 15, 15 ; ROLE_PLAYER_NORMAL
+    dn 10, 10, 10, 10 ; ROLE_PLAYER_SHINY
 	assert_table_length NUM_TRAINER_CLASSES

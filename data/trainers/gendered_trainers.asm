@@ -25,6 +25,8 @@ MaleTrainers:
 	db BIKER
 	db SCIENTIST
 	db LORD_OAK
+	db ROLE_PLAYER_NORMAL
+	db ROLE_PLAYER_SHINY
 .End
 
 FemaleTrainers:

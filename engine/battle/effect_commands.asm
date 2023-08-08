@@ -1740,6 +1740,16 @@ BattleCommand_CheckHit:
 	ret z
 .notDynamicPunch
 
+; AndrewNote - make Zap Cannon always hit for Magnezone
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp ZAP_CANNON
+	jr nz, .notZapCannon
+    call GetCurrentMon
+	cp MAGNEZONE
+	ret z
+.notZapCannon
+
 ; AndrewNote - make thunder always hit for galvantula and joltik
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar

@@ -4411,7 +4411,7 @@ BattleTowerMons:
 
     db GIRATINA
 	db LEFTOVERS
-	db SLEEP_TALK, DRACO_METEOR, NASTY_PLOT, REST
+	db DRACO_METEOR, SHADOW_BALL, NASTY_PLOT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4421,7 +4421,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 15, 10 ; PP
+	db 24, 24, 20, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

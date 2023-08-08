@@ -377,10 +377,6 @@ INCLUDE "maps/CherrygroveCity.asm"
 INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
 INCLUDE "maps/Route45.asm"
-INCLUDE "maps/Route19.asm"
-INCLUDE "maps/Route25.asm"
-INCLUDE "maps/RedsHouse1F.asm"
-
 
 SECTION "Map Scripts 21", ROMX
 
@@ -511,3 +507,9 @@ INCLUDE "maps/Route27.asm"
 INCLUDE "maps/AncientTemple.asm"
 INCLUDE "maps/AncientHall.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/RedsHouse1F.asm"
+
+SECTION "Map Scripts Overflow 5", ROMX
+
+INCLUDE "maps/Route25.asm"
+INCLUDE "maps/Route19.asm"

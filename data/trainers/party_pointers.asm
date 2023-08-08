@@ -74,4 +74,6 @@ TrainerGroups:
 	dba CrystalGroup
 	dba GreenGroup
 	dba LordOakGroup
+	dba RolePlayerNormalGroup
+	dba RolePlayerShinyGroup
 	assert_table_length NUM_TRAINER_CLASSES

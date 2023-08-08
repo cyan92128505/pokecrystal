@@ -805,4 +805,22 @@ KRIS EQU __trainer_class__
     trainerclass LORD_OAK ; 47
     const OAK
 
+    trainerclass ROLE_PLAYER_NORMAL ; 48
+    const SW_CH1_HERO       ; gui gon, obi wan, anikan
+    const SW_CH1_VILLAIN    ; maul
+    const SW_CH2_HERO       ; obi wan
+    const SW_CH2_VILLAIN    ; anikan
+    const SW_CH3_HERO       ; xwing, xwing, luke xwing, falcon
+    const SW_CH3_VILLAIN    ; tie fight, tie fight, tie adv, death star
+    const SW_CH4_HERO       ; luke
+    const SW_CH4_VILLAIN    ; vader, emperor
+    const SW_CH5_HERO       ; luke, vader
+    const SW_CH5_VILLAIN    ; emperor
+    const SW_CH6_HERO       ; obi wan, luke, leia, anikan
+    const SW_CH6_VILLAIN    ; maul, grevious, vader, emperor
+
+    trainerclass ROLE_PLAYER_SHINY ; 48
+    const DBZ_CH5_VEGITA
+    const DBZ_CH5_GOKU
+
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

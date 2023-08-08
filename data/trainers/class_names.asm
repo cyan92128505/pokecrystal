@@ -72,4 +72,6 @@ TrainerClassNames::
 	li "<PKMN> TRAINER"
 	li "<PKMN> TRAINER"
 	li "LORD"
+	li "ROLE PLAYER"
+	li "ROLE PLAYER"
 	assert_list_length NUM_TRAINER_CLASSES

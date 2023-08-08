@@ -1864,8 +1864,7 @@ BattleArcadeReceptionistScript:
 
     checkevent EVENT_BEAT_RED
     iffalse .notBeatRedEnemyMenu
-    ;loadmenu .PostRedCharacterMenuHeader
-    loadmenu .DefaultCharacterMenuHeader
+    loadmenu .PostRedCharacterMenuHeader
     _2dmenu
     sjump .doneEnemyMenu
 .notBeatRedEnemyMenu
@@ -2369,7 +2368,7 @@ BattleArcadeReceptionistScript:
 	db 1 ; default option
 .DefaultCharacterMenuData:
 	db STATICMENU_CURSOR ; flags
-	dn 1, 6 ; rows, columns
+	dn 2, 4 ; rows, columns
 	db 3 ; spacing
 	dba .DefaultCharacterText
 	dbw BANK(@), NULL
@@ -2380,6 +2379,8 @@ BattleArcadeReceptionistScript:
 	db "MT@"
 	db "CH@"
 	db "JS@"
+	db "PY@"
+	db "CL@"
 
 NeedToSaveText:
     text "You will need to"

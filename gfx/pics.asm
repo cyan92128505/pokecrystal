@@ -724,6 +724,7 @@ InvaderPic:        INCBIN "gfx/trainers/invader.2bpp.lz"
 CrystalPic:        INCBIN "gfx/trainers/crystal.2bpp.lz"
 GreenPic:        INCBIN "gfx/trainers/green.2bpp.lz"
 LordOakPic:          INCBIN "gfx/trainers/lord_oak.2bpp.lz"
+RolePlayerPic:       INCBIN "gfx/trainers/role_player.2bpp.lz"
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).

@@ -832,6 +832,19 @@ KRIS EQU __trainer_class__
     const DBZ_CH4_HERO      ; goku, vegita
     const DBZ_CH4_VILLAIN   ; freeza
 
+    const LOTR_CH1_HERO     ; frodo, sam
+    const LOTR_CH1_VILLAIN  ; witch king
+    const LOTR_CH2_HERO     ; aragon, legolas, gim, gandalf
+    const LOTR_CH2_VILLAIN  ; ork, worg, LURTZ, balrog
+    const LOTR_CH3_HERO     ; gandalf
+    const LOTR_CH3_VILLAIN  ; grima, saroman, witch king
+    const LOTR_CH4_HERO     ; aragon, undead
+    const LOTR_CH4_VILLAIN  ; nasgule, mumakil, gothmog
+    const LOTR_CH5_HERO     ; frodo, sam
+    const LOTR_CH5_VILLAIN  ; sauron
+    const LOTR_CH6_HERO     ; frodo, sam, legolas, gimli, aragorn, gandalf
+    const LOTR_CH6_VILLAIN  ; lurtz, gothmog, saruman, witch king, balrog, sauron
+
     trainerclass ROLE_PLAYER_SHINY ; 48
     const DBZ_CH5_VEGETA
     const DBZ_CH5_GOKU

@@ -491,12 +491,6 @@ INCLUDE "maps/Route39Farmhouse.asm"
 INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"
 INCLUDE "maps/EcruteakTinTowerEntrance.asm"
-INCLUDE "maps/WiseTriosRoom.asm"
-INCLUDE "maps/Route27.asm"
-INCLUDE "maps/AncientTemple.asm"
-INCLUDE "maps/AncientHall.asm"
-INCLUDE "maps/Route10North.asm"
-INCLUDE "maps/RedsHouse1F.asm"
 
 SECTION "Map Scripts Overflow 5", ROMX
 
@@ -514,3 +508,9 @@ SECTION "Map Scripts Overflow 6", ROMX
 INCLUDE "maps/Route42.asm"
 INCLUDE "maps/Route37.asm"
 INCLUDE "maps/VioletCity.asm"
+INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/RedsHouse1F.asm"
+INCLUDE "maps/AncientTemple.asm"
+INCLUDE "maps/AncientHall.asm"
+INCLUDE "maps/WiseTriosRoom.asm"
+INCLUDE "maps/Route27.asm"

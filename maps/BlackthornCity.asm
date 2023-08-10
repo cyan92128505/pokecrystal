@@ -309,6 +309,1006 @@ BlackthornCityTrainerTipsText:
 	line "of any status"
 	cont "problem."
 	done
+	
+LOTRRolePlayScript:
+    faceplayer
+    opentext
+    writetext LOTRIntroText
+    yesorno
+    iffalse .refused
+    special TryQuickSave
+    iffalse .refused
+	setval WEATHER_NONE
+	writemem wFieldWeather
+	special FadeOutMusic
+	playmusic MUSIC_MISTY_MOUNTAIN
+    writetext LOTRHeroOrVillainChoiceText
+	loadmenu .LOTRHeroOrVillainMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Hero
+	ifequal 2, .Villain
+	closetext
+	end
+.LOTRHeroOrVillainMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 5
+	dw .LOTRHeroOrVillainMenuData
+	db 1 ; default option
+.LOTRHeroOrVillainMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .LOTRHeroOrVillainText
+	dbw BANK(@), NULL
+.LOTRHeroOrVillainText:
+	db "HEROES@"
+	db "VILLAINS@"
+
+.Hero
+    opentext
+    writetext LOTRCh1HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH1_HERO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_KANTO_GYM_LEADER_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH1_VILLAIN
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh2HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH2_HERO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_MAD_WORLD
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH2_VILLAIN
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh3HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH3_HERO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_RED_INDIGO_PLATEAU
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH3_VILLAIN
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh4HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH4_HERO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_ARCHIE_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH4_VILLAIN
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh5HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH5_HERO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_XVZ
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH5_VILLAIN
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTREndText
+    waitbutton
+    closetext
+    opentext
+    writetext LOTRCh6Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH6_HERO
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_EPIC_TETRIS
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH6_VILLAIN
+	startbattle
+	reloadmap
+
+	sjump .end
+
+.Villain
+    opentext
+    writetext LOTRCh1VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH1_VILLAIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_KANTO_GYM_LEADER_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH1_HERO
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh2VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH2_VILLAIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_MAD_WORLD
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH2_HERO
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh3VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH3_VILLAIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_RED_INDIGO_PLATEAU
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH3_HERO
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh4VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH4_VILLAIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_ARCHIE_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH4_HERO
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRCh5VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH5_VILLAIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_XVZ
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH5_HERO
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTREndText
+    waitbutton
+    closetext
+    opentext
+    writetext LOTRCh6Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval LOTR_CH6_VILLAIN
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_EPIC_TETRIS
+	writemem wBattleMusicOverride
+	winlosstext LOTRVictoryText, LOTRDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, LOTR_CH6_HERO
+	startbattle
+	reloadmap
+
+.end
+    playmusic MUSIC_CHERRYGROVE_CITY
+	opentext
+	writetext LOTRRolePlayEndText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
+.refused
+    opentext
+    writetext LOTRRolePlayRefusedText
+    waitbutton
+    closetext
+    end
+
+LOTRIntroText:
+    text "It was quiet a"
+    line "journey but we"
+    cont "finally got here."
+
+    para "A mountain full"
+    line "of dragons!"
+
+    para "Puts me in the"
+    line "mood for a"
+    cont "LORD OF THE RINGS"
+    cont "role play."
+
+    para "Would you like to"
+    line "play? You'll need"
+    cont "to Save your game?"
+    done
+
+LOTRHeroOrVillainChoiceText:
+    text "Would you like to"
+    line "play as the Heroes"
+    cont "or the Villains?"
+    done
+
+LOTRCh1HeroText:
+    text "It's been so long"
+    line "since you left"
+    cont "the SHIRE."
+
+    para "You rarely think"
+    line "of how much you"
+    cont "miss home."
+
+    para "Here you are"
+    line "hiding atop a"
+    cont "stone tower with"
+    cont "your friend SAM."
+
+    para "You are being"
+    line "hunted by RING"
+    cont "WRAITHS."
+
+    para "They seek the ONE"
+    line "RING."
+
+    para "The ultimate"
+    line "weapon entrusted"
+    cont "to you alone."
+
+    para "What was that?"
+
+    para "A screech in"
+    line "the night."
+
+    para "Another!"
+
+    para "Closer this time."
+
+    para "He has found us."
+
+    para "The WITCH KING!"
+    done
+
+LOTRCh1VillainText:
+    text "You seek only"
+    line "one thing."
+
+    para "To return to"
+    line "your master and"
+    cont "creater."
+
+    para "Many have held"
+    line "you."
+
+    para "And all have had"
+    line "their wills bend"
+    cont "to your purpose."
+
+    para "The one who holds"
+    line "you now is strong."
+
+    para "But even FRODO will"
+    line "bend to you"
+    cont "eventually."
+
+    para "You are the ONE"
+    line "RING."
+
+    para "The ultimate"
+    line "weapon."
+
+    para "The RING WRAITHS"
+    line "are near."
+
+    para "They will return"
+    line "you to your master"
+    cont "SAURON."
+
+    para "You call out."
+
+    para "The WITCH KING has"
+    line "found you."
+
+    para "Now he will kill"
+    line "your kidnappers"
+    cont "and return you"
+    cont "home."
+    done
+
+LOTRCh2HeroText:
+    text "FRODO is badly"
+    line "injured by the"
+    cont "WITCH KING."
+
+    para "A stranger jumps"
+    line "in the battle."
+
+    para "He weilds a"
+    line "basic sword."
+
+    para "No match for the"
+    line "refined weapons"
+    cont "of the WITCH KING."
+
+    para "He works the KING"
+    line "high and low."
+
+    para "His deft strikes"
+    line "finding their mark"
+    cont "on every stroke."
+
+    para "The WITCH KING"
+    line "disappears into"
+    cont "the ether."
+
+    para "The stranger"
+    line "takes you to a"
+    cont "city of elves."
+
+    para "Your wizard friend"
+    line "GANDALF is there."
+
+    para "FRODO is healed."
+
+    para "You form a team."
+
+    para "A fellowship."
+
+    para "You and SAM will"
+    line "take the ring to"
+    cont "Mt DOOM to destroy"
+    cont "it."
+
+    para "ARAGORN, GANDALF"
+    line "and several other"
+    cont "warriors will"
+    cont "fight the evil"
+    cont "forces of SAURON."
+
+    para "They travel deep"
+    line "into the mine"
+    cont "of MORIA."
+
+    para "It is clear they"
+    line "are not alone."
+
+    para "There are swarms"
+    line "of ORCS and evil"
+    cont "creatures."
+
+    para "GANDALF senses"
+    line "something much"
+    cont "worse."
+
+    para "A Demon of the"
+    line "ancient world"
+    cont "awaits us here."
+    done
+
+LOTRCh2VillainText:
+    text "The WITCH KING"
+    line "has struck a"
+    cont "mortal blow to"
+    cont "this hobbit who"
+    cont "dares to claim"
+    cont "you."
+
+    para "A stranger has"
+    line "appeared."
+
+    para "No this is no"
+    line "normal man."
+
+    para "This is ARAGORN"
+    line "the true king of"
+    cont "GONDOR."
+
+    para "He defeats the"
+    line "WITCH KING!"
+
+    para "You are taken to"
+    line "an elven city."
+
+    para "You sense the"
+    line "presence of the"
+    cont "wizard GANDALF."
+
+    para "And the even"
+    line "GALADRIEL."
+
+    para "Such powerful"
+    line "potential hosts."
+
+    para "FRODO plans to"
+    line "take you to Mt"
+    cont "DOOM to destroy"
+    cont "you."
+
+    para "This is what you"
+    line "want."
+
+    para "For SAURON will"
+    line "surly find you"
+    cont "at Mt DOOM."
+
+    para "FRODO will be"
+    line "dead long before"
+    cont "he gets there."
+
+    para "GANDALF is going"
+    line "to the mine of"
+    cont "MORIA."
+
+    para "You reach out"
+    line "and take command"
+    cont "of an ancient"
+    cont "demon that lies"
+    cont "deep within MORIA."
+
+    para "Your body is a"
+    line "huge inferno."
+
+    para "You are a BALROG."
+
+    para "Lord of fire!"
+
+    para "GANDALF approaches."
+
+    para "The poor wizard"
+    line "shall die here"
+    cont "and now!"
+    done
+
+LOTRCh3HeroText:
+    text "The BALROG is"
+    line "too powerful."
+
+    para "It is intent on"
+    line "killing all who"
+    cont "oppose it."
+
+    para "GANDALF uses all"
+    line "his wizardly might"
+    cont "to restrain it."
+
+    para "ARAGORN and the"
+    line "party escape."
+
+    para "But GANDALF is"
+    line "no more."
+
+    para "The party presses"
+    line "on."
+
+    para "But GANDALFs valor"
+    line "has not gone"
+    cont "unnoticed."
+
+    para "GALARIEL resurrects"
+    line "him as GANDALF THE"
+    cont "WHITE."
+
+    para "The highest order"
+    line "of wizard."
+
+    para "He must make"
+    line "haste to catch"
+    cont "up with the party."
+
+    para "SARUMAN the former"
+    line "high wizard makes"
+    cont "sure GANDALF is"
+    cont "killed."
+
+    para "There can be only"
+    line "one WHITE wizard!"
+
+    para "GANDALF knows this."
+
+    para "But is unconcerned."
+
+    para "His new powers are"
+    line "great."
+    done
+
+LOTRCh3VillainText:
+    text "You lash out"
+    line "with your sword"
+    cont "of flame."
+
+    para "Only GANDALF has"
+    line "the power to hold"
+    cont "you off."
+
+    para "But you sense him"
+    line "weakening."
+
+    para "One last full"
+    line "power swing!"
+
+    para "GANDALFS shield"
+    line "is gone."
+
+    para "All that remains"
+    line "of him are chard"
+    cont "remnants of cloth."
+
+    para "Finally GANDALF"
+    line "is dead!"
+
+    para "Now to kill FRODO."
+
+    para "What is that."
+
+    para "A distant magic."
+
+    para "GANDALF?!"
+
+    para "It can't be."
+
+    para "He has inherited"
+    line "the mantel of"
+    cont "WHITE."
+
+    para "He has returned"
+    line "as GANDALF THE"
+    cont "WHITE."
+
+    para "The highest order"
+    line "of wizard."
+
+    para "On a distant tower"
+    line "SARUMAN the former"
+    cont "head of the wizard"
+    cont "order senses this."
+
+    para "You are most"
+    line "displeased."
+
+    para "You are SARUMAN"
+    line "THE WHITE."
+
+    para "You have been"
+    line "head of the order"
+    cont "for centuries."
+
+    para "You will not allow"
+    line "this insult!"
+
+    para "You gather your"
+    line "forces."
+
+    para "You must kill"
+    line "GANDALF!"
+
+    para "There can be only"
+    line "one WHITE wizard!"
+    done
+
+LOTRCh4HeroText:
+    text "GANDALFs new"
+    line "power is more"
+    cont "than enough to"
+    cont "defeat SARUMAN."
+
+    para "But ARAGORN faces"
+    line "enemies he can"
+    cont "not defeat."
+
+    para "GANDALF can not"
+    line "offer assistance"
+    cont "in time."
+
+    para "You sit on the"
+    line "eve of another"
+    cont "battle."
+
+    para "You know you don't"
+    line "have the strength"
+    cont "to win."
+
+    para "An elf ELROND"
+    line "enters."
+
+    para "He has something"
+    line "concealed in a"
+    cont "cloth."
+
+    para "It can not be."
+
+    para "The ancient sword"
+    line "of kings."
+
+    para "It was destroyed"
+    line "centuries ago."
+
+    para "ELROND puts the"
+    line "sword in your"
+    cont "hand."
+
+    para "It has been remade."
+
+    para "For the one true"
+    line "king."
+
+    para "You."
+
+    para "You feel the swords"
+    line "legacy and power"
+    cont "in your hand."
+
+    para "The battle horn"
+    line "sounds."
+
+    para "You feel nothing."
+
+    para "There is only"
+    line "purpose."
+
+    para "You fight for"
+    line "FRODO."
+
+    para "You fight for"
+    line "hope."
+    done
+
+LOTRCh4VillainText:
+    text "GANDALF is too"
+    line "strong!"
+
+    para "SARUMAN and his"
+    line "forces are swept"
+    cont "aside."
+
+    para "But you know the"
+    line "real battle is"
+    cont "already won."
+
+    para "Your forces have"
+    line "surrounded the"
+    cont "camp of ARAGORN."
+
+    para "He is exhausted."
+
+    para "As are his men."
+
+    para "With him gone"
+    line "SAROMANS forces will"
+    cont "be free to move as"
+    cont "they please."
+
+    para "And you will be"
+    line "reunited with"
+    cont "your master."
+
+    para "You take command"
+    line "of GOTHMOG the"
+    cont "commander of the"
+    cont "ORC forces."
+
+    para "The attack begins!"
+
+    para "There is ARAGORN."
+
+    para "Alone he walks"
+    line "towards us."
+
+    para "Fool, there will"
+    line "be no mercy."
+
+    para "First wave attack!"
+
+    para "With a flash"
+    line "a dozen Orcs and"
+    cont "their limbs rain"
+    cont "from the sky."
+
+    para "Did ARAGORN do"
+    line "that!"
+
+    para "That sword he wields."
+
+    para "I know it."
+
+    para "The sword of kings."
+
+    para "ARAGORN must die!"
+
+    para "Attack at will!"
+    done
+
+LOTRCh5HeroText:
+    text "Between GANDALF"
+    line "and ARAGORN all"
+    cont "SAURONS forces"
+    cont "are defeated."
+
+    para "FRODO is at"
+    line "MT DOOM!"
+
+    para "You take the RING."
+
+    para "Finally you will"
+    line "cast it into the"
+    cont "fire and be rid"
+    cont "of it!"
+
+    para "But why not keep"
+    line "it..."
+
+    para "What!"
+
+    para "I must destroy it!"
+
+    para "But it is mine."
+
+    para "SAM shouts for me"
+    line "to do it."
+
+    para "The RING..."
+
+    para "Where is it?"
+
+    para "A huge figure"
+    line "appears."
+
+    para "You feel the life"
+    line "leave you."
+
+    para "It is SAURON!"
+
+    para "He has the RING!"
+
+    para "But you and SAM"
+    line "wont give up."
+
+    para "You have grown"
+    line "so much."
+
+    para "Here at the end"
+    line "all things."
+
+    para "You will make a"
+    line "final stand."
+    done
+
+LOTRCh5VillainText:
+    text "Between GANDALF"
+    line "and ARAGORN all"
+    cont "SAURONS forces"
+    cont "are defeated."
+
+    para "FRODO means to"
+    line "cast you into"
+    cont "the fires of"
+    cont "MT DOOM."
+
+    para "You will be"
+    line "destroyed!"
+
+    para "You plead for"
+    line "your life."
+
+    para "You can help"
+    line "FRODO."
+
+    para "You can make him"
+    line "immortal."
+
+    para "Where am I?"
+
+    para "This finger."
+
+    para "I am home."
+
+    para "SAURON."
+
+    para "You awaken."
+
+    para "The world seem to"
+    line "warp and kneel"
+    cont "about you as you"
+    cont "rise."
+
+    para "Overflowing with"
+    line "power!"
+
+    para "You are whole"
+    line "again."
+
+    para "Look upon those"
+    line "two pitiful"
+    cont "hobbits."
+
+    para "The fear in their"
+    line "faces delights"
+    cont "you."
+
+    para "They look like"
+    line "they mean to fight."
+
+    para "Futile."
+
+    para "You are the lord"
+    line "of all things."
+
+    para "You are evil"
+    line "itself."
+
+    para "But their fear is"
+    line "gone..."
+
+    para "No matter."
+
+    para "Tis a trivial"
+    line "matter to kill"
+    cont "them now."
+    done
+
+LOTRCh6Text:
+    text "SAURON was"
+    line "defeated."
+
+    para "FRODO and SAM"
+    line "found themselves"
+    cont "sitting on a rock."
+
+    para "Lava flowing about"
+    line "them from the"
+    cont "crumbling mountain."
+
+    para "You are content."
+
+    para "You gave your life"
+    line "to save everyone."
+
+    para "You await the end."
+
+    para "A light from the"
+    line "sky comes."
+
+    para "It is GANDALF!"
+
+    para "He takes you away."
+
+    para "The world is safe."
+
+    para "You welcome your"
+    line "boring life in"
+    cont "shire."
+
+    para "For the rest of"
+    line "your days."
+
+    para "That was great."
+
+    para "Let's have one"
+    line "last bonus game."
+
+    para "All the heroes and"
+    line "all the villains"
+    cont "powered up to"
+    cont "their max in one"
+    cont "giant battle!"
+    done
+
+LOTRRolePlayEndText:
+    text "Thanks for"
+    line "playing with us."
+
+    para "We will see you"
+    line "around I'm sure."
+    done
+
+LOTRRolePlayRefusedText:
+    text "It'll be fun."
+
+    para "I promise."
+    done
+
+LOTRVictoryText:
+    text "...."
+    done
+
+LOTRDefeatText:
+    text "...."
+    done
+
+LOTREndText:
+    text "...."
+    done
 
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
@@ -344,5 +1344,5 @@ BlackthornCity_MapEvents:
 	object_event 13, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
 	object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
 	object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1
-	object_event 27, 28, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1
-	object_event 28, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1
+	object_event 26, 28, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1
+	object_event 27, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1

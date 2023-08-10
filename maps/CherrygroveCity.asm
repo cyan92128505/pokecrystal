@@ -1362,21 +1362,16 @@ StarWarsCh4VillainText:
     para "Or destroy us."
 
     para "He is brought"
-    line "before you and"
-    cont "your master."
+    line "before VADER"
+    cont "and you."
 
-    para "PALPATINE"
+    para "PALPATINE."
 
     para "Ruler of the"
     line "Galaxy."
 
-    para "Mentor."
-
-    para "Father."
-
     para "You feel something"
-    line "when you look at"
-    cont "LUKE."
+    line "stir within VADER."
 
     para "You don't know"
     line "what it is but"
@@ -1437,21 +1432,19 @@ StarWarsCh5VillainText:
     line "match for the"
     cont "two of you."
 
-    para "PALPATINE sets"
+    para "You sets"
     line "about slowly"
     cont "killing him as"
     cont "has so many in"
     cont "the past."
 
     para "LUKE asks for"
-    line "you to save him."
+    line "VADER to save him."
 
     para "What a pathetic"
     line "way to die."
 
     para "He pleas again."
-
-    para "PALPATINE laughs."
 
     para "He pleas again."
 
@@ -1465,18 +1458,34 @@ StarWarsCh5VillainText:
 
     para "LUKEs voice fades."
 
-    para "Involuntary you"
-    line "attack"
-    cont "PALPATINE."
+    para "Involuntary VADER"
+    line "attacks you!"
 
-    para "You stand between"
-    line "him and LUKE."
+    para "You stands between"
+    line "you and LUKE."
 
     para "Get up my son."
 
     para "Let us free the"
     line "galaxy as father"
     cont "and son."
+
+    para "You have waited"
+    line "too long for this."
+
+    para "For VADER to"
+    line "finally attempt"
+    cont "to overthrow"
+    cont "you."
+
+    para "But to do so"
+    line "out of love.."
+
+    para "How disgusting."
+
+    para "He must die."
+
+    para "As shall his son."
     done
 
 StarWarsEndText:

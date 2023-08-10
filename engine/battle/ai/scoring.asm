@@ -2326,10 +2326,21 @@ AI_Smart_HealBell:
 
 
 AI_Smart_PriorityHit:
+; does player have priority move and are we low on hp
+; if so skip speed check so we might use priority even if we are faster
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr nc, .speedCheck
+
+	call AICheckEnemyQuarterHP
+	jr nc, .skipSpeedCheck
+
+.speedCheck
 ; if faster than the player then do nothing
 	call AICompareSpeed
 	ret c
 
+.skipSpeedCheck
 ; never use extremespeed against a ghost type
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp EXTREMESPEED
@@ -2351,6 +2362,7 @@ AI_Smart_PriorityHit:
 ; this needs to overcome encouragement from other moves which do more damage and can KO
 	call CanPlayerKO
 	jr nc, .continue
+
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
 
@@ -3658,9 +3670,15 @@ AI_Smart_QuiverDance:
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
 ; only care about being OHKOd as qd increases speed
+; does player have priority move
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr c, .skipSturdySashCheck
+
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skip
 
+.skipSturdySashCheck
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack
 ; if the players last move was a healing move then 50% chance to set up if we can't already 2HKO from max HP
@@ -3805,9 +3823,15 @@ AI_Smart_DragonDance:
 ; don't use if we are at risk of being KOd, just attack them
 ; only care about being OHKOd as dd increases speed
 ; unless we have an intact sash or sturdy, then can boost
+; does player have priority move
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr c, .skipSturdySashCheck
+
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .continue
 
+.skipSturdySashCheck
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack
 ; if the players last move was a healing move we may set up if we can't already 2HKO from max HP
@@ -4350,9 +4374,15 @@ ShouldAIBoost:
 
 ; if AI moves first consider if player can 1HKO
 ; first if the AI has an intact focus sash or sturdy it can boost, unless player has priority move
+; does player have priority move
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr c, .skipSturdySashCheck
+
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .boost
 
+.skipSturdySashCheck
     call CanPlayerKO
     jr c, .decideNotToBoost
     jr .boost
@@ -4416,11 +4446,6 @@ ShouldAIBoost:
     ret
 
 DoesEnemyHaveIntactFocusSashOrSturdy:
-; does player have priority move
-	ld b, EFFECT_PRIORITY_HIT
-	call PlayerHasMoveEffect
-	jr c, .no
-
 ; Is the AI at full HP
     call AICheckEnemyMaxHP
     jr nc, .no

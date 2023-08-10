@@ -654,7 +654,7 @@ YuGiOhHenshin1Text:
     cont "high priest of"
     cont "a great dynasty."
 
-    para "You master is an"
+    para "Your master is an"
     line "arrogant young"
     cont "man."
 
@@ -662,7 +662,7 @@ YuGiOhHenshin1Text:
     line "following that"
     cont "might allow him"
     cont "to overthrow"
-    cont "the young pharaoh."
+    cont "the young Pharaoh."
 
     para "The time has come."
 
@@ -676,7 +676,7 @@ YuGiOhHenshin1Text:
     cont "control you no"
     cont "longer."
 
-    para "SETO fumes with"
+    para "SETO shakes with"
     line "rage."
 
     para "He takes his"
@@ -698,7 +698,7 @@ YuGiOhHenshin2Text:
     cont "palace."
 
     para "SETO seems full"
-    line "confidence."
+    line "of confidence."
 
     para "You watch as"
     line "he marches into"
@@ -829,8 +829,7 @@ YuGiOhSeto2Text:
     cont "several cards."
 
     para "They seem to"
-    line "shine like made"
-    cont "of gold."
+    line "shine like gold."
 
     para "You have no"
     line "fear."
@@ -854,10 +853,10 @@ YuGiOhSeto3Text:
     para "You never had"
     line "a chance."
 
-    para "As you vision"
+    para "As your vision"
     line "fades you see.."
 
-    para "HENSHIN jump"
+    para "HENSHIN jumps"
     line "from the shadows."
 
     para "He stabs YAMI in"
@@ -934,7 +933,7 @@ YuGiOhYami1Text:
 
     para "But you know the"
     line "gap between you"
-    cont "is like the gap"
+    cont "is like that"
     cont "between earth"
     cont "and heaven."
 
@@ -947,7 +946,7 @@ YuGiOhYami1Text:
 
 YuGiOhYami2Text:
     text "SETO falls to"
-    line "floor."
+    line "the floor."
 
     para "Utterly defeated"
     line "but still alive."
@@ -971,9 +970,7 @@ YuGiOhYami2Text:
     cont "back."
 
     para "You have dropped"
-    line "the god cards"
-    cont "down to the"
-    cont "level below."
+    line "the god cards."
 
     para "Standing over you"
     line "is HENSHIN."

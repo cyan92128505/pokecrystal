@@ -824,8 +824,16 @@ KRIS EQU __trainer_class__
     const YGO_YAMI          ; obilesk, slipher, ra, exodia
     const YGO_YAMI_WEAK     ; kuribo, dark mag, dark mag g, chaos mag
 
+    const DBZ_CH1_HERO      ; goku, picollo
+    const DBZ_CH1_VILLAIN   ; raddiz
+    const DBZ_CH2_HERO      ; yamcha, tein, krillin, picollo, gohan
+    const DBZ_CH2_VILLAIN   ; nappa, vegita
+    const DBZ_CH3_HERO      ; goku
+    const DBZ_CH4_HERO      ; goku, vegita
+    const DBZ_CH4_VILLAIN   ; freeza
+
     trainerclass ROLE_PLAYER_SHINY ; 48
-    const DBZ_CH5_VEGITA
+    const DBZ_CH5_VEGETA
     const DBZ_CH5_GOKU
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

@@ -407,17 +407,7 @@ INCLUDE "maps/Route12.asm"
 SECTION "Map Scripts 23", ROMX
 
 INCLUDE "maps/NewBarkTown.asm"
-INCLUDE "maps/VioletCity.asm"
 INCLUDE "maps/OlivineCity.asm"
-INCLUDE "maps/Route37.asm"
-INCLUDE "maps/Route42.asm"
-INCLUDE "maps/Route46.asm"
-INCLUDE "maps/ViridianCity.asm"
-INCLUDE "maps/CeladonCity.asm"
-INCLUDE "maps/CinnabarPokecenter1F.asm"
-;INCLUDE "maps/CinnabarPokecenter2FBeta.asm"
-INCLUDE "maps/Route19FuchsiaGate.asm"
-
 
 SECTION "Map Scripts 24", ROMX
 
@@ -513,3 +503,14 @@ SECTION "Map Scripts Overflow 5", ROMX
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/AzaleaTown.asm"
+INCLUDE "maps/Route19FuchsiaGate.asm"
+INCLUDE "maps/CinnabarPokecenter1F.asm"
+INCLUDE "maps/CeladonCity.asm"
+INCLUDE "maps/ViridianCity.asm"
+INCLUDE "maps/Route46.asm"
+
+SECTION "Map Scripts Overflow 6", ROMX
+
+INCLUDE "maps/Route42.asm"
+INCLUDE "maps/Route37.asm"
+INCLUDE "maps/VioletCity.asm"

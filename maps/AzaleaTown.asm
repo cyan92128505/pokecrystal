@@ -610,7 +610,7 @@ YuGiOhRolePlayScript:
 	reloadmap
 
 .endYuGiOh
-    special RestartMapMusic
+    playmusic MUSIC_AZALEA_TOWN
 	opentext
 	writetext YuGiOhRolePlayFinalText
 	waitbutton

@@ -1111,7 +1111,7 @@ StarWarsRolePlayScript:
 	reloadmap
 
 .end
-    special RestartMapMusic
+    playmusic MUSIC_CHERRYGROVE_CITY
 	opentext
 	writetext StarWarsRolePlayEndText
 	waitbutton

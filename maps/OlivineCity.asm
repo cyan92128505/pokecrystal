@@ -903,7 +903,7 @@ DBZRolePlayScript:
 	reloadmap
 
 .DBZEnd
-    special RestartMapMusic
+    playmusic MUSIC_VIOLET_CITY
 	opentext
 	writetext DBZRolePlayEndText
 	waitbutton

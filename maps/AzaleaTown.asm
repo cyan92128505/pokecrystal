@@ -462,6 +462,8 @@ YuGiOhRolePlayScript:
     iffalse .refused
 	setval WEATHER_NONE
 	writemem wFieldWeather
+	special FadeOutMusic
+	playmusic MUSIC_MISTY_MOUNTAIN
     writetext YuGiOhCharacterChoiceText
 	loadmenu .YuGiOhCharacterMenuHeader
 	_2dmenu
@@ -503,7 +505,9 @@ YuGiOhRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, YGO_SETO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext YuGiOhHenshin2Text
@@ -540,7 +544,9 @@ YuGiOhRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, YGO_HENSHIN
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext YuGiOhSeto2Text
@@ -582,7 +588,9 @@ YuGiOhRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, YGO_SETO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext YuGiOhYami2Text
@@ -602,6 +610,7 @@ YuGiOhRolePlayScript:
 	reloadmap
 
 .endYuGiOh
+    special RestartMapMusic
 	opentext
 	writetext YuGiOhRolePlayFinalText
 	waitbutton

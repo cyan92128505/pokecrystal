@@ -849,6 +849,8 @@ StarWarsRolePlayScript:
     iffalse .refused
 	setval WEATHER_NONE
 	writemem wFieldWeather
+	special FadeOutMusic
+	playmusic MUSIC_MISTY_MOUNTAIN
     writetext StarWarsHeroOrVillainChoiceText
 	loadmenu .StarWarsHeroOrVillainMenuHeader
 	_2dmenu
@@ -888,7 +890,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH1_VILLAIN
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh2HeroText
@@ -905,7 +909,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH2_VILLAIN
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh3HeroText
@@ -922,7 +928,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH3_VILLAIN
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh4HeroText
@@ -939,7 +947,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH4_VILLAIN
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh5HeroText
@@ -956,7 +966,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH5_VILLAIN
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsEndText
@@ -997,7 +1009,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH1_HERO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh2VillainText
@@ -1014,7 +1028,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH2_HERO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh3VillainText
@@ -1031,7 +1047,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH3_HERO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh4VillainText
@@ -1048,7 +1066,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH4_HERO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsCh5VillainText
@@ -1065,7 +1085,9 @@ StarWarsRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, SW_CH5_HERO
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext StarWarsEndText
@@ -1089,6 +1111,7 @@ StarWarsRolePlayScript:
 	reloadmap
 
 .end
+    special RestartMapMusic
 	opentext
 	writetext StarWarsRolePlayEndText
 	waitbutton

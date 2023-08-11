@@ -524,6 +524,25 @@ YuGiOhRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, YGO_YAMI_WEAK
 	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext YuGiOhHenshin3Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_NIGHTMARE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_SETO_YAMI
+	startbattle
 	reloadmap
 
 	sjump .endYuGiOh
@@ -563,12 +582,36 @@ YuGiOhRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, YGO_YAMI
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext YuGiOhSeto3Text
     waitbutton
     closetext
+
+    opentext
+    writetext YuGiOhRolePlayYamiSetoText
+    waitbutton
+    closetext
+
+    opentext
+    writetext YuGiOhSeto3Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_SETO_YAMI
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_NIGHTMARE
+	startbattle
+	reloadmap
 
 	sjump .endYuGiOh
 
@@ -606,6 +649,30 @@ YuGiOhRolePlayScript:
 	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, YGO_HENSHIN
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext YuGiOhRolePlayYamiSetoText
+    waitbutton
+    closetext
+
+    opentext
+    writetext YuGiOhYami3Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval YGO_SETO_YAMI
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, YGO_NIGHTMARE
 	startbattle
 	reloadmap
 
@@ -761,6 +828,57 @@ YuGiOhHenshin2Text:
     cont "in history."
 
     para "You attack!"
+    done
+
+YuGiOhHenshin3Text:
+    text "After a frantic"
+    line "battle of life"
+    cont "and death."
+
+    para "YAMI triumphs."
+
+    para "YAMIS monsters"
+    line "banish HENSHIN"
+    cont "to the shadow"
+    cont "realm."
+
+    para "Years pass."
+
+    para "A decade passes."
+
+    para "YAMI and SETO"
+    line "protect the"
+    cont "kingdom and fight"
+    cont "many hard battles."
+
+    para "They send many"
+    line "duelist to the"
+    cont "shadow realm."
+
+    para "MARIK."
+
+    para "DARTZ."
+
+    para "BAKURA."
+
+    para "In the shadow"
+    line "realm an ancient"
+    cont "entity consumes"
+    cont "their souls."
+
+    para "Onc you are"
+    line "strong enough you"
+    cont "pull YAMI and"
+    cont "SETO into the"
+    cont "shadow realm."
+
+    para "You are NIGHTMARE."
+
+    para "The greatest"
+    line "duelist."
+
+    para "YAMI and SETO"
+    line "belong to you."
     done
 
 YuGiOhSeto1Text:
@@ -1021,7 +1139,7 @@ YuGiOhYami2Text:
     cont "been."
     done
 
-YuGiOhRolePlayFinalText:
+YuGiOhRolePlayYamiSetoText:
     text "After a frantic"
     line "battle of life"
     cont "and death."
@@ -1063,6 +1181,58 @@ YuGiOhRolePlayFinalText:
     line "wisdom appoints"
     cont "SETO as his"
     cont "right HAND."
+    done
+
+YuGiOhYami3Text:
+    text "YAMI and SETO"
+    line "protect the"
+    cont "kingdom and fight"
+    cont "many hard battles."
+
+    para "They send many"
+    line "duelist to the"
+    cont "shadow realm."
+
+    para "MARIK."
+
+    para "DARTZ."
+
+    para "BAKURA."
+
+    para "In the shadow"
+    line "realm an ancient"
+    cont "entity consumes"
+    cont "their souls."
+
+    para "NIGHTMARE is born!"
+
+    para "He pulls you both"
+    line "into the shadow"
+    cont "realm to consume"
+    cont "your souls."
+
+    para "This foe is not"
+    line "like any before."
+
+    para "You fight together"
+    line "in a desperate"
+    cont "struggle."
+    done
+
+
+
+YuGiOhRolePlayFinalText:
+    text "The battle takes"
+    line "everything you"
+    cont "have."
+
+    para "In the end..."
+
+    text "NIGHTMARE was"
+    line "vanquished!"
+
+    para "YAMI and SETO"
+    line "return home."
 
     para "They rule"
     line "together."

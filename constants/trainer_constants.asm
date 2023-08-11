@@ -823,6 +823,8 @@ KRIS EQU __trainer_class__
     const YGO_SETO          ; bew dragon, bew dragon, bew dragon, ult dragon
     const YGO_YAMI          ; obilesk, slipher, ra, exodia
     const YGO_YAMI_WEAK     ; kuribo, dark mag, dark mag g, chaos mag
+    const YGO_SETO_YAMI     ; g guardian, ult dragon, yami
+    const YGO_NIGHTMARE     ; orichalcos, necrofiend, raigeki, draco jar, relinquish, div serpnt
 
     const DBZ_CH1_HERO      ; goku, picollo
     const DBZ_CH1_VILLAIN   ; raddiz

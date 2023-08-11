@@ -501,7 +501,6 @@ INCLUDE "maps/Route19FuchsiaGate.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/CeladonCity.asm"
 INCLUDE "maps/ViridianCity.asm"
-INCLUDE "maps/Route46.asm"
 
 SECTION "Map Scripts Overflow 6", ROMX
 
@@ -514,3 +513,4 @@ INCLUDE "maps/AncientTemple.asm"
 INCLUDE "maps/AncientHall.asm"
 INCLUDE "maps/WiseTriosRoom.asm"
 INCLUDE "maps/Route27.asm"
+INCLUDE "maps/Route46.asm"

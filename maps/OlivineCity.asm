@@ -1042,7 +1042,7 @@ DBZCh1VillainText:
     cont "projectile in"
     cont "your direction."
 
-    para "It moves so slow."
+    para "It moves slow."
 
     para "You catch it and"
     line "flick it back."
@@ -1100,8 +1100,8 @@ DBZCh2HeroText:
     cont "to train until"
     cont "your friends can"
     cont "resurrect you with"
-    cont "the magical dragon"
-    cont "balls."
+    cont "the magical DRAGON"
+    cont "BALLS."
 
     para "Over the next"
     line "year you and your"
@@ -1163,14 +1163,14 @@ DBZCh2VillainText:
     para "And destroyer"
     line "of planets."
 
-    para "You pod lands on"
+    para "Your pod lands on"
     line "earth."
 
     para "Your partner NAPPA"
     line "emerges first."
 
-    para "You are in a city."
-    line "people all over."
+    para "You are in a city"
+    line "full of people."
 
     para "Men, women and"
     line "children."
@@ -1182,8 +1182,7 @@ DBZCh2VillainText:
 
     para "With a flick of"
     line "your finger all"
-    cont "their lives end"
-    cont "in a flash."
+    cont "their lives end."
 
     para "Only a crater"
     line "remains."
@@ -1196,8 +1195,9 @@ DBZCh2VillainText:
     para "They mean to stop"
     line "you."
 
-    para "You will enjoy"
-    line "crushing them."
+    para "You will crush"
+    line "them without a"
+    cont "second thought."
     done
 
 DBZCh3HeroText:
@@ -1330,7 +1330,7 @@ DBZCh4HeroText:
     para "PICCOLO is dead."
 
     para "This means the"
-    line "dragon balls are"
+    line "DRAGON BALLS are"
     cont "gone and you"
     cont "can't wish your"
     cont "friends back."
@@ -1372,15 +1372,15 @@ DBZCh4HeroText:
 
     para "He is terrified."
 
-    para "His boss FRIEZA"
-    line "Emperor of the"
-    cont "universe is here."
+    para "FRIEZA Emporer"
+    line "of the universe"
+    cont "is here."
 
     para "He heard about the"
-    line "dragon balls."
+    line "DRAGON BALLS."
 
     para "VEGETA has stolen"
-    line "a dragon ball so"
+    line "a DRAGON BALL so"
     cont "FRIEZA can't make"
     cont "his wish."
 
@@ -1452,7 +1452,7 @@ DBZCh4VillainText:
 
     para "Then head to the"
     line "planet with these"
-    cont "balls."
+    cont "DRAGON BALLS."
 
     para "You waste no time"
     line "killing everything"
@@ -1670,7 +1670,7 @@ DBZCh5GokuVillainText:
 
     para "You need another."
 
-    para "KRILLIN falls dead."
+    para "KRILLIN explodes."
 
     para "that felt good."
 
@@ -1698,7 +1698,7 @@ DBZCh6Text:
     text "FRIEZA was at"
     line "last defeated."
 
-    para "The dragon balls"
+    para "The DRAGON BALLS"
     line "were used to"
     cont "revive everyone"
     cont "who was ever"

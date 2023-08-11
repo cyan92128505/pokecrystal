@@ -1625,12 +1625,69 @@ AI_Smart_LeechSeed:
     ret
 
 AI_Smart_LightScreen:
+; discourage if we will be koed
+    call ShouldAIBoost
+    jr nc, .discourage
+
+; discourage if player has boosted Atk
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage
+
+; discourage if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+; strongly encourage if player has boosted special attack
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .encourage
+    ret
+
+.discourage
+    inc [hl]
+    inc [hl]
+    ret
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
+
 AI_Smart_Reflect:
 ; discourage if we will be koed
     call ShouldAIBoost
-    ret c
+    jr nc, .discourage
+
+; discourage if player has boosted SpAtk
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .discourage
+
+; discourage if afflicted with toxic
+    ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_TOXIC, a
+    jr nz, .discourage
+
+; strongly encourage if player has boosted attack
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .encourage
+    ret
+
+.discourage
     inc [hl]
     inc [hl]
+    ret
+.encourage
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
     ret
 
 AI_Smart_Ohko:
@@ -2259,10 +2316,27 @@ AI_Smart_Spite:
 .dismiss ; unreferenced
 	jp AIDiscourageMove
 
+; If the player can KO and is using damaging moves then encourage
+; 50% chance to encourage if player can KO but isn't using damaging moves
 AI_Smart_DestinyBond:
+    call CanPlayerKO
+    ret nc
+
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	jr nz, .encourage
+	call AI_50_50
+	ret c
+
+.encourage
+    dec [hl]
+    dec [hl]
+    ret
+
 AI_Smart_Reversal:
 ; Discourage this move if enemy's HP is above 25%.
-
 	call AICheckEnemyQuarterHP
 	ret nc
 	inc [hl]
@@ -2326,21 +2400,6 @@ AI_Smart_HealBell:
 
 
 AI_Smart_PriorityHit:
-; does player have priority move and are we low on hp
-; if so skip speed check so we might use priority even if we are faster
-	ld b, EFFECT_PRIORITY_HIT
-	call PlayerHasMoveEffect
-	jr nc, .speedCheck
-
-	call AICheckEnemyQuarterHP
-	jr nc, .skipSpeedCheck
-
-.speedCheck
-; if faster than the player then do nothing
-	call AICompareSpeed
-	ret c
-
-.skipSpeedCheck
 ; never use extremespeed against a ghost type
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp EXTREMESPEED
@@ -2358,27 +2417,6 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; massive encourage if player can KO and player is attacking, unless we have sash
-; this needs to overcome encouragement from other moves which do more damage and can KO
-	call CanPlayerKO
-	jr nc, .continue
-
-    call DoesEnemyHaveIntactFocusSashOrSturdy
-    jr c, .continue
-
-; has player picked a damaging move, if not then don't encourage.
-    ld a, [wCurPlayerMove]
-	call AIGetPlayerMove
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-    and a
-	jr z, .continue
-
-.encourage
-rept 9
-	dec [hl]
-endr
-
-.continue
 ; Greatly encourage this move if it will KO the player.
 	ld a, 1
 	ldh [hBattleTurn], a
@@ -2395,10 +2433,46 @@ endr
 	cp c
 	ld a, [wBattleMonHP]
 	sbc b
+	jr nc, .noKO
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
+
+.noKO
+; does player have priority move and are we low on hp
+; if so skip speed check so we might use priority even if we are faster
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr nc, .speedCheck
+
+	call AICheckEnemyQuarterHP
+	jr nc, .skipSpeedCheck
+
+.speedCheck
+; if faster than the player then do nothing
+	call AICompareSpeed
+	ret c
+
+.skipSpeedCheck
+; massive encourage if player can KO and player is attacking, unless we have sash
+; this needs to overcome encouragement from other moves which do more damage and can KO
+	call CanPlayerKO
 	ret nc
+
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    ret c
+
+; has player picked a damaging move, if not then don't encourage.
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+    and a
+	ret z
+
+rept 9
 	dec [hl]
-	dec [hl]
-	dec [hl]
+endr
 	ret
 
 AI_Smart_Disable:

@@ -355,7 +355,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH1_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_KANTO_GYM_LEADER_BATTLE
+	setval MUSIC_RED_LAVENDER
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -374,7 +374,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH2_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_MAD_WORLD
+	setval MUSIC_ARCHIE_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -393,7 +393,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH3_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_RED_INDIGO_PLATEAU
+	setval MUSIC_XVZ
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -412,7 +412,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH4_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ARCHIE_BATTLE
+	setval MUSIC_HOEN_CHAMPION
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -431,7 +431,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH5_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_XVZ
+	setval MUSIC_RED_DUNGEON
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -454,7 +454,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH6_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_EPIC_TETRIS
+	setval MUSIC_ZINNIA_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -474,7 +474,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH1_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_KANTO_GYM_LEADER_BATTLE
+	setval MUSIC_RED_LAVENDER
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -493,7 +493,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH2_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_MAD_WORLD
+	setval MUSIC_ARCHIE_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -512,7 +512,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH3_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_RED_INDIGO_PLATEAU
+	setval MUSIC_XVZ
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -531,7 +531,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH4_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ARCHIE_BATTLE
+	setval MUSIC_HOEN_CHAMPION
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -550,7 +550,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH5_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_XVZ
+	setval MUSIC_RED_DUNGEON
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -573,7 +573,7 @@ LOTRRolePlayScript:
 	setval LOTR_CH6_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_EPIC_TETRIS
+	setval MUSIC_ZINNIA_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext LOTRVictoryText, LOTRDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -582,7 +582,7 @@ LOTRRolePlayScript:
 	reloadmap
 
 .end
-    playmusic MUSIC_CHERRYGROVE_CITY
+    playmusic MUSIC_AZALEA_TOWN
 	opentext
 	writetext LOTRRolePlayEndText
 	waitbutton

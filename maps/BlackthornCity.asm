@@ -599,7 +599,7 @@ LOTRRolePlayScript:
     end
 
 LOTRIntroText:
-    text "It was quiet a"
+    text "It was quite a"
     line "journey but we"
     cont "finally got here."
 

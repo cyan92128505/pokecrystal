@@ -665,6 +665,12 @@ DBZRolePlayScript:
 	playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
+    writetext DBZBreakText
+    yesorno
+    closetext
+    iffalse .stop
+
+    opentext
     writetext DBZCh4HeroText
     waitbutton
     closetext
@@ -713,6 +719,17 @@ DBZRolePlayScript:
 	reloadmap
 	playmusic MUSIC_MISTY_MOUNTAIN
 
+	opentext
+	writetext DBZConcText
+	waitbutton
+	closetext
+
+    opentext
+    writetext DBZBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
+
 	sjump .HeroEnd
 
 .VegetaHero
@@ -734,6 +751,17 @@ DBZRolePlayScript:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MISTY_MOUNTAIN
+
+	opentext
+	writetext DBZConcText
+	waitbutton
+	closetext
+
+    opentext
+    writetext DBZBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
 
 .HeroEnd
     opentext
@@ -814,6 +842,12 @@ DBZRolePlayScript:
 	playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
+    writetext DBZBreakText
+    yesorno
+    closetext
+    iffalse .stop
+
+    opentext
     writetext DBZCh4VillainText
     waitbutton
     closetext
@@ -825,7 +859,7 @@ DBZRolePlayScript:
 	setval MUSIC_RED_DUNGEON
 	writemem wBattleMusicOverride
 	winlosstext DBZVictoryText, DBZDefeatText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WEAK_BATTLE
 	loadtrainer ROLE_PLAYER_NORMAL, DBZ_CH4_HERO
 	startbattle
 	dontrestartmapmusic
@@ -862,6 +896,17 @@ DBZRolePlayScript:
 	reloadmap
 	playmusic MUSIC_MISTY_MOUNTAIN
 
+	opentext
+	writetext DBZConcText
+	waitbutton
+	closetext
+
+    opentext
+    writetext DBZBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
+
 	sjump .VillainEnd
 
 .VegetaVillain
@@ -883,6 +928,17 @@ DBZRolePlayScript:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MISTY_MOUNTAIN
+
+	opentext
+	writetext DBZConcText
+	waitbutton
+	closetext
+
+    opentext
+    writetext DBZBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
 
 .VillainEnd
     opentext
@@ -906,6 +962,16 @@ DBZRolePlayScript:
     playmusic MUSIC_VIOLET_CITY
 	opentext
 	writetext DBZRolePlayEndText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
+.stop
+    playmusic MUSIC_VIOLET_CITY
+	opentext
+	writetext DBZStopText
 	waitbutton
 	closetext
 	special LoadPokemonData
@@ -942,7 +1008,7 @@ DBZIntroText:
     line "GYM LEADER is a"
     cont "huge DBZ fan."
 
-    para "So we decided to"
+    para "So I decided to"
     line "have a DBZ role"
     cont "play to get in"
     cont "the mood."
@@ -1341,7 +1407,7 @@ DBZCh4HeroText:
     cont "more."
 
     para "You travel with"
-    line "GOHAN, KRILIAN"
+    line "GOHAN, KRILLIN"
     cont "and a scientist"
     cont "BULMA."
 
@@ -1484,18 +1550,15 @@ DBZCh4VillainText:
     done
 
 DBZGokuOrVegetaHeroText:
-    text "Whew this story"
-    line "is tense."
+    text "Things seem"
+    line "dire."
 
     para "Who are you"
     line "rooting for?"
     done
 
 DBZGokuOrVegetaVillainText:
-    text "This story is"
-    line "fun."
-
-    para "You will you"
+    text "You will you"
     line "kill first?"
     done
 
@@ -1694,7 +1757,7 @@ DBZCh5GokuVillainText:
     cont "universe!"
     done
 
-DBZCh6Text:
+DBZConcText:
     text "FRIEZA was at"
     line "last defeated."
 
@@ -1704,8 +1767,10 @@ DBZCh6Text:
     cont "who was ever"
     cont "killed by him"
     cont "and his army."
+    done
 
-    para "GOKU and VEGETA"
+DBZCh6Text:
+    text "GOKU and VEGETA"
     line "trained together"
     cont "and both reached"
     cont "SUPER SAIYAN."
@@ -1751,7 +1816,32 @@ DBZDefeatText:
     text "Defeat!"
     done
 
+DBZBreakText:
+    text "Do you need to"
+    line "go or would you"
+    cont "like to continue"
+    cont "to the second"
+    cont "half of the story?"
+    done
 
+DBZBonusRoundText:
+    text "That's the end"
+    line "of the story."
+
+    para "But would you"
+    line "like to have a"
+    cont "special bonus"
+    cont "round?"
+    done
+
+DBZStopText:
+    text "OK we will leave"
+    line "it there then."
+
+    para "Maybe we can do"
+    line "the whole story"
+    cont "next time."
+    done
 
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
@@ -1789,7 +1879,4 @@ OlivineCity_MapEvents:
 	object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event  6, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScript, EVENT_BEAT_ELITE_FOUR
 	object_event 18,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-	object_event 10, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, DBZRolePlayScript, -1
-	object_event 11, 22, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, DBZRolePlayScript, -1
-
-
+	object_event 10, 22, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, DBZRolePlayScript, -1

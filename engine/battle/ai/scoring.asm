@@ -3146,6 +3146,19 @@ AI_Smart_Safeguard:
 	ret
 
 AI_Smart_Magnitude:
+	push hl
+	ld a, 1
+	ldh [hBattleTurn], a
+	callfar BattleCheckTypeMatchup
+	pop hl
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	jr c, .fallthrough
+	jr z, .fallthrough
+; encourage if super effective
+    dec [hl]
+    ret
+.fallthrough
 AI_Smart_Earthquake:
 ; Greatly encourage this move if the player is underground and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
@@ -6061,6 +6074,7 @@ SafeguardSwitch:
 	jp StdBattleTextbox
 
 ClearField:
+; clear enemy field of screens
 	ld a, 1
 	ld [wWeatherCount], a
 	ld hl, wPlayerScreens
@@ -6077,7 +6091,17 @@ ClearField:
 	ld [bc], a
 	inc bc
 	ld [bc], a
+
+; clear user field of spikes
+	ld hl, wPlayerScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .gotSpikesScreen
+	ld hl, wEnemyScreens
+.gotSpikesScreen
 	res SCREENS_SPIKES, [hl]
+
+; print text
 	ld hl, ClearFieldText
 	jp StdBattleTextbox
 

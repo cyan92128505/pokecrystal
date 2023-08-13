@@ -933,6 +933,12 @@ StarWarsRolePlayScript:
     playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
+    writetext StarWarsBreakText
+    yesorno
+    closetext
+    iffalse .stop
+
+    opentext
     writetext StarWarsCh4HeroText
     waitbutton
     closetext
@@ -974,6 +980,13 @@ StarWarsRolePlayScript:
     writetext StarWarsEndText
     waitbutton
     closetext
+
+    opentext
+    writetext StarWarsBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
+
     opentext
     writetext StarWarsCh6Text
     waitbutton
@@ -1052,6 +1065,12 @@ StarWarsRolePlayScript:
     playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
+    writetext StarWarsBreakText
+    yesorno
+    closetext
+    iffalse .stop
+
+    opentext
     writetext StarWarsCh4VillainText
     waitbutton
     closetext
@@ -1093,6 +1112,13 @@ StarWarsRolePlayScript:
     writetext StarWarsEndText
     waitbutton
     closetext
+
+    opentext
+    writetext StarWarsBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
+
     opentext
     writetext StarWarsCh6Text
     waitbutton
@@ -1120,6 +1146,16 @@ StarWarsRolePlayScript:
 	special HealParty
 	end
 
+.stop
+    playmusic MUSIC_CHERRYGROVE_CITY
+	opentext
+	writetext StarWarsStopText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
 .refused
     opentext
     writetext StarWarsRolePlayRefusedText
@@ -1131,7 +1167,7 @@ StarWarsIntroText:
     text "Do you like Role"
     line "Play games?!"
 
-    para "We are starting"
+    para "I am starting"
     line "a STAR WARS theme"
     cont "RPG."
 
@@ -1575,6 +1611,33 @@ StarWarsDefeatText:
     text "Defeat!"
     done
 
+StarWarsBreakText:
+    text "Do you need to"
+    line "go or would you"
+    cont "like to continue"
+    cont "to the second"
+    cont "half of the story?"
+    done
+
+StarWarsBonusRoundText:
+    text "That's the end"
+    line "of the story."
+
+    para "But would you"
+    line "like to have a"
+    cont "special bonus"
+    cont "round?"
+    done
+
+StarWarsStopText:
+    text "OK we will leave"
+    line "it there then."
+
+    para "Maybe we can do"
+    line "the whole story"
+    cont "next time."
+    done
+
 
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
@@ -1606,8 +1669,6 @@ CherrygroveCity_MapEvents:
 	object_event 32, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, JuliusScript, -1
 	object_event 33, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant1Script, -1
 	object_event 30, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant2Script, -1
-	object_event 20, 4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, StarWarsRolePlayScript, -1
-	object_event 21, 4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, StarWarsRolePlayScript, -1
-
+	object_event 21, 4, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, StarWarsRolePlayScript, -1
 
 

@@ -385,6 +385,17 @@ LOTRRolePlayScript:
     playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
+    writetext LOTRHeroConcText
+    waitbutton
+    closetext
+
+    opentext
+    writetext LOTRBreakText
+    yesorno
+    closetext
+    iffalse .stop
+
+    opentext
     writetext LOTRCh3HeroText
     waitbutton
     closetext
@@ -445,6 +456,13 @@ LOTRRolePlayScript:
     writetext LOTREndText
     waitbutton
     closetext
+
+    opentext
+    writetext LOTRBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
+
     opentext
     writetext LOTRCh6Text
     waitbutton
@@ -502,6 +520,17 @@ LOTRRolePlayScript:
 	dontrestartmapmusic
 	reloadmap
     playmusic MUSIC_MISTY_MOUNTAIN
+
+    opentext
+    writetext LOTRVillainConcText
+    waitbutton
+    closetext
+
+    opentext
+    writetext LOTRBreakText
+    yesorno
+    closetext
+    iffalse .stop
 
     opentext
     writetext LOTRCh3VillainText
@@ -564,6 +593,13 @@ LOTRRolePlayScript:
     writetext LOTREndText
     waitbutton
     closetext
+
+    opentext
+    writetext LOTRBonusRoundText
+    yesorno
+    closetext
+    iffalse .stop
+
     opentext
     writetext LOTRCh6Text
     waitbutton
@@ -591,6 +627,16 @@ LOTRRolePlayScript:
 	special HealParty
 	end
 
+.stop
+    playmusic MUSIC_AZALEA_TOWN
+	opentext
+	writetext LOTRStopText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
 .refused
     opentext
     writetext LOTRRolePlayRefusedText
@@ -600,7 +646,7 @@ LOTRRolePlayScript:
 
 LOTRIntroText:
     text "It was quite a"
-    line "journey but we"
+    line "journey but I"
     cont "finally got here."
 
     para "A mountain full"
@@ -609,7 +655,7 @@ LOTRIntroText:
     para "Puts me in the"
     line "mood for a"
     cont "LORD OF THE RINGS"
-    cont "role play."
+    cont "roleplay."
 
     para "Would you like to"
     line "play? You'll need"
@@ -851,7 +897,7 @@ LOTRCh2VillainText:
     cont "and now!"
     done
 
-LOTRCh3HeroText:
+LOTRHeroConcText:
     text "The BALROG is"
     line "too powerful."
 
@@ -870,9 +916,12 @@ LOTRCh3HeroText:
     line "no more."
 
     para "The party presses"
-    line "on."
+    line "on through the"
+    cont "despair."
+    done
 
-    para "But GANDALFs valor"
+LOTRCh3HeroText:
+    text "But GANDALFs valor"
     line "has not gone"
     cont "unnoticed."
 
@@ -905,7 +954,7 @@ LOTRCh3HeroText:
     line "great."
     done
 
-LOTRCh3VillainText:
+LOTRVillainConcText:
     text "You lash out"
     line "with your sword"
     cont "of flame."
@@ -930,7 +979,14 @@ LOTRCh3VillainText:
     para "Finally GANDALF"
     line "is dead!"
 
-    para "Now to kill FRODO."
+    para "The rest of the"
+    line "party escape but"
+    cont "the damage is"
+    cont "done."
+    done
+
+LOTRCh3VillainText:
+    text "Now to kill FRODO."
 
     para "What is that."
 
@@ -1108,7 +1164,8 @@ LOTRCh4VillainText:
 
     para "I know it."
 
-    para "The sword of kings."
+    para "The sword of"
+    line "the great king!"
 
     para "ARAGORN must die!"
 
@@ -1315,6 +1372,33 @@ LOTREndText:
     para "For the rest of"
     line "your days."
     done
+    
+LOTRBreakText:
+    text "Do you need to"
+    line "go or would you"
+    cont "like to continue"
+    cont "to the second"
+    cont "half of the story?"
+    done
+
+LOTRBonusRoundText:
+    text "That's the end"
+    line "of the story."
+
+    para "But would you"
+    line "like to have a"
+    cont "special bonus"
+    cont "round?"
+    done
+
+LOTRStopText:
+    text "OK we will leave"
+    line "it there then."
+
+    para "Maybe we can do"
+    line "the whole story"
+    cont "next time."
+    done
 
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
@@ -1350,5 +1434,4 @@ BlackthornCity_MapEvents:
 	object_event 13, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
 	object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
 	object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1
-	object_event 26, 28, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1
-	object_event 27, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1
+	object_event 26, 28, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, LOTRRolePlayScript, -1

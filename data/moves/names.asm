@@ -12,7 +12,7 @@ MoveNames::
 	li "SCRATCH"
 	li "DARK PULSE"
 	li "GUILLOTINE"
-	li "DRACO ASSENT"
+	li "DRACO ASCENT"
 	li "SWORDS DANCE"
 	li "CUT"
 	li "GUST"

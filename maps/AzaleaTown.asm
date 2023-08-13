@@ -597,7 +597,7 @@ YuGiOhRolePlayScript:
     closetext
 
     opentext
-    writetext YuGiOhSeto3Text
+    writetext YuGiOhYami3Text
     waitbutton
     closetext
 	setval ROLE_PLAYER_NORMAL
@@ -703,10 +703,10 @@ YuGiOhIntroText:
     para "Did you visit"
     line "the RUINS OF ALPH?"
 
-    para "We did and it got"
-    line "us in the mood"
+    para "I did and it got"
+    line "me in the mood"
     cont "for a YUGIOH"
-    cont "role play."
+    cont "roleplay."
 
     para "Would you like"
     line "to play?"
@@ -852,8 +852,10 @@ YuGiOhHenshin3Text:
     cont "many hard battles."
 
     para "They send many"
-    line "duelist to the"
+    line "duelists to the"
     cont "shadow realm."
+
+    para "PEGASUS."
 
     para "MARIK."
 
@@ -866,7 +868,7 @@ YuGiOhHenshin3Text:
     cont "entity consumes"
     cont "their souls."
 
-    para "Onc you are"
+    para "Once you are"
     line "strong enough you"
     cont "pull YAMI and"
     cont "SETO into the"
@@ -994,7 +996,7 @@ YuGiOhSeto3Text:
 
     para "You lose your"
     line "fight for"
-    cont "consciences."
+    cont "conciseness."
     done
 
 YuGiOhYami1Text:
@@ -1190,8 +1192,10 @@ YuGiOhYami3Text:
     cont "many hard battles."
 
     para "They send many"
-    line "duelist to the"
+    line "duelists to the"
     cont "shadow realm."
+
+    para "PEGASUS."
 
     para "MARIK."
 
@@ -1228,7 +1232,7 @@ YuGiOhRolePlayFinalText:
 
     para "In the end..."
 
-    text "NIGHTMARE was"
+    para "NIGHTMARE was"
     line "vanquished!"
 
     para "YAMI and SETO"
@@ -1265,6 +1269,33 @@ YuGiOhVictoryText:
 
 YuGiOhDefeatText:
     text "Defeat!"
+    done
+    
+YuGiOhBreakText:
+    text "Do you need to"
+    line "go or would you"
+    cont "like to continue"
+    cont "to the second"
+    cont "half of the story?"
+    done
+
+YuGiOhBonusRoundText:
+    text "That's the end"
+    line "of the story."
+
+    para "But would you"
+    line "like to have a"
+    cont "special bonus"
+    cont "round?"
+    done
+
+YuGiOhStopText:
+    text "OK we will leave"
+    line "it there then."
+
+    para "Maybe we can do"
+    line "the whole story"
+    cont "next time."
     done
 
 AzaleaTown_MapEvents:
@@ -1309,5 +1340,4 @@ AzaleaTown_MapEvents:
 	object_event 11, 10, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 16, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT_OUTSIDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
-	object_event 6, 8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, YuGiOhRolePlayScript, -1
-	object_event 7, 8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, YuGiOhRolePlayScript, -1
+	object_event 6, 8, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, YuGiOhRolePlayScript, -1

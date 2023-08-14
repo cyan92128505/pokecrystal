@@ -1587,7 +1587,7 @@ StarWarsCh6Text:
 
 StarWarsRolePlayEndText:
     text "Thanks for"
-    line "playing with us."
+    line "playing with me."
 
     para "We travel about"
     line "playing different"

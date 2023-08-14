@@ -1306,7 +1306,7 @@ LOTRCh6Text:
 
 LOTRRolePlayEndText:
     text "Thanks for"
-    line "playing with us."
+    line "playing with me."
 
     para "We will see you"
     line "around I'm sure."

@@ -1250,7 +1250,7 @@ YuGiOhRolePlayEndText:
     text "That was great!"
 
     para "Thanks for"
-    line "playing with us."
+    line "playing with me."
 
     para "I'm sure we will"
     line "meet again for"

@@ -847,8 +847,17 @@ KRIS EQU __trainer_class__
     const LOTR_CH6_HERO     ; frodo, sam, legolas, gimli, aragorn, gandalf
     const LOTR_CH6_VILLAIN  ; lurtz, gothmog, saruman, witch king, balrog, sauron
 
+    const MERLIN_MERLIN     ; merlin
+    const MERLIN_ARTHUR    ; arthur
+    const MERLIN_MORGANA    ; morgana
+    const MERLIN_UTHER      ; uther
+    const MERLIN_MORDRED    ; mordred
+    const MERLIN_HEROES      ; arthur, merlin, gwen, uther, gaius, kilgharrah
+    const MERLIN_VILLAINS   ; mordred, morgana, aithusa
+
     trainerclass ROLE_PLAYER_SHINY ; 48
     const DBZ_CH5_VEGETA
     const DBZ_CH5_GOKU
+    const MERLIN_EMRYS
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

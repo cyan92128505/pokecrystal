@@ -423,7 +423,6 @@ INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route14.asm"
-INCLUDE "maps/LavenderTown.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route24.asm"
@@ -431,9 +430,6 @@ INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/Route23.asm"
-INCLUDE "maps/SilverCavePokecenter1F.asm"
-INCLUDE "maps/Route28SteelWingHouse.asm"
-
 
 SECTION "Map Scripts 25", ROMX
 
@@ -514,3 +510,9 @@ INCLUDE "maps/AncientHall.asm"
 INCLUDE "maps/WiseTriosRoom.asm"
 INCLUDE "maps/Route27.asm"
 INCLUDE "maps/Route46.asm"
+INCLUDE "maps/SilverCavePokecenter1F.asm"
+INCLUDE "maps/Route28SteelWingHouse.asm"
+
+SECTION "Map Scripts Overflow 7", ROMX
+
+INCLUDE "maps/LavenderTown.asm"

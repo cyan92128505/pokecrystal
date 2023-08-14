@@ -343,6 +343,11 @@ AI_Basic:
 	cp EFFECT_SELFDESTRUCT
 	jr z, .lesserEncouragement
 
+; don't encourage recoil moves as much
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_RECOIL_HIT
+	jr z, .lesserEncouragement
+
 ; if we are below 1/4 hp and have a healing move then lesser encourage so we can use it
     call AICheckEnemyQuarterHP
     jr c, .checkAcc
@@ -1840,8 +1845,7 @@ AI_Smart_RazorWind:
 	ret
 
 AI_Smart_SpDefenseUp2:
-; Discourage this move if enemy's HP is lower than 50%.
-	call AICheckEnemyHalfHP
+	call ShouldAIBoost
 	jr nc, .discourage
 
 ; Discourage this move if enemy's special defense level is higher than +3.
@@ -1849,43 +1853,22 @@ AI_Smart_SpDefenseUp2:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; 80% chance to greatly encourage this move if
+; greatly encourage this move if
 ; enemy's Special Defense level is lower than +2,
 ; and the player's Pokémon is Special-oriented.
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
-	push hl
-; Get the pointer for the player's Pokémon's base Attack
-	ld a, [wBattleMonSpecies]
-	ld hl, BaseData + BASE_ATK
-	ld bc, BASE_DATA_SIZE
-	call AddNTimes
-; Get the Pokémon's base Attack
-	ld a, BANK(BaseData)
-	call GetFarByte
-	ld d, a
-; Get the pointer for the player's Pokémon's base Special Attack
-	ld bc, BASE_SAT - BASE_ATK
-	add hl, bc
-; Get the Pokémon's base Special Attack
-	ld a, BANK(BaseData)
-	call GetFarByte
-	pop hl
-; If its base Attack is greater than its base Special Attack,
-; don't encourage this move.
-	cp d
-	ret c
-
-.encourage
-	call AI_80_20
-	ret c
-	dec [hl]
-	dec [hl]
+	call IsPlayerPhysicalOrSpecial
+	jr nc, .encourage
 	ret
 
 .discourage
 	inc [hl]
+	ret
+.encourage
+	dec [hl]
+	dec [hl]
 	ret
 
 AI_Smart_Fly:
@@ -4086,42 +4069,21 @@ AI_Smart_Barrier:
     ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 2
 	ret nc
-	push hl
-	push bc
-	push de
-; Get the pointer for the player's Pokémon's base Attack
-	ld a, [wBattleMonSpecies]
-	ld hl, BaseData + BASE_ATK
-	ld bc, BASE_DATA_SIZE
-	call AddNTimes
-; Get the Pokémon's base Attack
-	ld a, BANK(BaseData)
-	call GetFarByte
-	ld d, a
-; Get the pointer for the player's Pokémon's base Special Attack
-	ld bc, BASE_SAT - BASE_ATK
-	add hl, bc
-; Get the Pokémon's base Special Attack
-	ld a, BANK(BaseData)
-	call GetFarByte
-	pop de
-	pop bc
-	pop hl
-; If its base Attack is not greater than its base Special Attack, discourage.
-	cp d
-	jr nc, .discourage
 
-.strongEncourage
-    dec [hl]
-    dec [hl]
-.encourage
-	dec [hl]
-	ret
+	call IsPlayerPhysicalOrSpecial
+	jr c, .strongEncourage
+
 .discourage
 	inc [hl]
 	inc [hl]
 	inc [hl]
 	inc [hl]
+	ret
+.strongEncourage
+    dec [hl]
+    dec [hl]
+.encourage
+	dec [hl]
 	ret
 
 AI_Smart_Geomancy:
@@ -5721,6 +5683,34 @@ AIGetPlayerMove:
 	pop de
 	pop hl
 	ret
+
+; return carry if players Attack is higher than Special Attack
+IsPlayerPhysicalOrSpecial:
+    ; compare high bytes
+	push bc
+	ld a, [wBattleMonAttack]
+	ld b, a
+	ld a, [wBattleMonSpclAtk]
+	cp b
+	pop bc
+	jr c, .yes ; attack high byte is bigger
+	jr nz, .no ; spclAtk high byte is bigger
+
+    ; here both high bytes are the same so check low byte
+	push bc
+	ld a, [wBattleMonAttack + 1]
+	ld b, a
+	ld a, [wBattleMonSpclAtk + 1]
+	cp b
+	pop bc
+	jr c, .yes ; attack bigger than special attack
+
+.no
+    xor a
+    ret
+.yes
+    scf
+    ret
 
 AI_80_20:
 	call Random

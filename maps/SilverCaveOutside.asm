@@ -828,6 +828,272 @@ SilverCaveCrystalGoodbyeText:
 SilverCaveCrystalForgetText:
     text "I wont forget it."
     done
+    
+HoenWarRolePlayScript:
+    faceplayer
+    opentext
+    writetext HoenWarIntroText
+    yesorno
+    iffalse .refused
+    special TryQuickSave
+    iffalse .refused
+	setval WEATHER_NONE
+	writemem wFieldWeather
+    writetext HoenWarHeroOrVillainChoiceText
+	loadmenu .HoenWarHeroOrVillainMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Hero
+	ifequal 2, .Villain
+	closetext
+	end
+.HoenWarHeroOrVillainMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 5
+	dw .HoenWarHeroOrVillainMenuData
+	db 1 ; default option
+.HoenWarHeroOrVillainMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .HoenWarHeroOrVillainText
+	dbw BANK(@), NULL
+.HoenWarHeroOrVillainText:
+	db "HEROES@"
+	db "VILLAINS@"
+
+.Hero
+    opentext
+    writetext HoenWarCh1HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval HOEN_WAR_KOGA
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_HOEN_GRUNT
+	writemem wBattleMusicOverride
+	winlosstext HoenWarVictoryText, HoenWarDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, HOEN_WAR_DRAKE
+	startbattle
+	reloadmap
+
+    opentext
+    writetext HoenWarCh2HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval HOEN_WAR_JANINE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_HOEN_CHAMPION
+	writemem wBattleMusicOverride
+	winlosstext HoenWarVictoryText, HoenWarDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, HOEN_WAR_WALLACE
+	startbattle
+	reloadmap
+
+.choice
+	opentext
+    writetext HoenWarActionText
+	loadmenu .HoenWarActionMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Talk
+	ifequal 2, .Attack
+	ifequal 3, .Pray
+	closetext
+	end
+.HoenWarActionMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 7
+	dw .HoenWarActionMenuData
+	db 1 ; default option
+.HoenWarActionMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 1 ; rows, columns
+	db 5 ; spacing
+	dba .HoenWarActionMenuText
+	dbw BANK(@), NULL
+.HoenWarActionMenuText:
+	db "TALK@"
+	db "FIGHT@"
+	db "PRAY@"
+
+.Talk
+    opentext
+    writetext HoenWarTalkText
+    waitbutton
+    closetext
+    sjump .choice
+
+.Attack
+    opentext
+    writetext HoenWarAttackText
+    waitbutton
+    closetext
+    sjump .choice
+
+.Pray
+    opentext
+    writetext HoenWarCh3HeroText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_SHINY
+	writemem wOtherTrainerClass
+	setval HOEN_WAR_ARCEUS
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_LUGIA_SONG
+	writemem wBattleMusicOverride
+	winlosstext HoenWarVictoryText, HoenWarDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, HOEN_WAR_WALLACE
+	startbattle
+	reloadmap
+
+	sjump .end
+
+.Villain
+    opentext
+    writetext HoenWarCh1VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval HOEN_WAR_DRAKE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_HOEN_GRUNT
+	writemem wBattleMusicOverride
+	winlosstext HoenWarVictoryText, HoenWarDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, HOEN_WAR_KOGA
+	startbattle
+	reloadmap
+
+    opentext
+    writetext HoenWarCh2VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval HOEN_WAR_WALLACE
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_HOEN_CHAMPION
+	writemem wBattleMusicOverride
+	winlosstext HoenWarVictoryText, HoenWarDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, HOEN_WAR_JANINE
+	startbattle
+	reloadmap
+
+    opentext
+    writetext HoenWarCh3VillainText
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_SHINY
+	writemem wOtherTrainerClass
+	setval HOEN_WAR_ARCEUS
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_LUGIA_SONG
+	writemem wBattleMusicOverride
+	winlosstext HoenWarVictoryText, HoenWarDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, HOEN_WAR_WALLACE
+	startbattle
+	reloadmap
+
+.end
+	opentext
+	writetext HoenWarRolePlayEndText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
+.refused
+    opentext
+    writetext HoenWarRolePlayRefusedText
+    waitbutton
+    closetext
+    end
+
+HoenWarIntroText:
+    text "...."
+
+    para "Would you like to"
+    line "play?"
+
+    para "You'll need to"
+    line "Save your game?"
+    done
+
+HoenWarHeroOrVillainChoiceText:
+    text "Would you like to"
+    line "play as the Heroes"
+    cont "or the Villains?"
+    done
+
+HoenWarCh1HeroText:
+    text "...."
+    done
+
+HoenWarCh2HeroText:
+    text "...."
+    done
+
+HoenWarActionText:
+    text "What will you do?"
+    done
+
+HoenWarTalkText:
+    text "...."
+    done
+
+HoenWarAttackText:
+    text "...."
+    done
+
+HoenWarCh3HeroText:
+    text "...."
+    done
+
+HoenWarCh1VillainText:
+    text "...."
+    done
+
+HoenWarCh2VillainText:
+    text "...."
+    done
+
+HoenWarCh3VillainText:
+    text "...."
+
+HoenWarRolePlayEndText:
+    text "Thanks."
+    done
+
+HoenWarVictoryText:
+    text "Victory!"
+    done
+
+HoenWarDefeatText:
+    text "Defeat!"
+    done
+
+HoenWarRolePlayRefusedText:
+    text "It'll be fun."
+
+    para "I promise."
+    done
 
 SilverCaveOutside_MapEvents:
 	db 0, 0 ; filler
@@ -863,3 +1129,5 @@ SilverCaveOutside_MapEvents:
 	object_event  8, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 13, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon9Script, EVENT_FIELD_MON_9
 	object_event  5, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon10Script, EVENT_FIELD_MON_10
+	object_event 26, 19, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, HoenWarRolePlayScript, -1
+

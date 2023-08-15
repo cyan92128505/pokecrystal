@@ -1631,8 +1631,8 @@ AI_Smart_LeechSeed:
 
 AI_Smart_LightScreen:
 ; discourage if we will be koed
-    call ShouldAIBoost
-    jr nc, .discourage
+    call CanPlayerKO
+    jr c, .discourage
 
 ; discourage if player has boosted Atk
 	ld a, [wPlayerAtkLevel]
@@ -1640,8 +1640,7 @@ AI_Smart_LightScreen:
 	jr nc, .discourage
 
 ; discourage if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
@@ -1649,13 +1648,19 @@ AI_Smart_LightScreen:
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .encourage
-    ret
+
+; encourage if players attack is higher than special attack
+	call IsPlayerPhysicalOrSpecial
+	jr nc, .encourage
+
+; fallthrough
 
 .discourage
     inc [hl]
     inc [hl]
     ret
 .encourage
+    dec [hl]
     dec [hl]
     dec [hl]
     dec [hl]
@@ -1664,31 +1669,26 @@ AI_Smart_LightScreen:
 
 AI_Smart_Reflect:
 ; discourage if we will be koed
-    call ShouldAIBoost
-    jr nc, .discourage
-
-; discourage if player has boosted SpAtk
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .discourage
+    call CanPlayerKO
+    jr c, .discourage
 
 ; discourage if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
-; strongly encourage if player has boosted attack
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .encourage
-    ret
+; encourage if players attack is higher than special attack
+	call IsPlayerPhysicalOrSpecial
+	jr c, .encourage
+
+; fallthrough
 
 .discourage
     inc [hl]
     inc [hl]
     ret
 .encourage
+    dec [hl]
     dec [hl]
     dec [hl]
     dec [hl]
@@ -2631,8 +2631,7 @@ AI_Smart_BulkUp:
     jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -2683,8 +2682,7 @@ AI_Smart_Curse:
     jr c, .discourage
 
 ; discourage after +1 if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -3695,10 +3693,16 @@ AI_Smart_Serenity:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; strongly encourage if player has boosted SpAtk
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .strongEncourage
+; discourage if player is faster and can OHKO
+	call AICompareSpeed
+	jr nc, .skipKOCheck
+	call CanPlayerKO
+	jr c, .discourage
+.skipKOCheck
+
+; strongly encourage if player has higher SpAtk than Atk
+    call IsPlayerPhysicalOrSpecial
+    jr nc, .strongEncourage
 
 ; encourage to +2
     ld a, [wEnemySAtkLevel]
@@ -3709,8 +3713,7 @@ AI_Smart_Serenity:
     jr c, .encourage
 
 ; discourage after +2 if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret
@@ -4048,30 +4051,23 @@ AI_Smart_Barrier:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; discourage if player has boosted SpAtk
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
+; discourage if player is faster and can OHKO
+	call AICompareSpeed
+	jr nc, .skipKOCheck
+	call CanPlayerKO
+	jr c, .discourage
+.skipKOCheck
 
 ; discourage if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
 
-; strongly encourage if player has boosted attack
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .strongEncourage
-
-; strongly encourage to +2 if player mon has higher attack than special attack
-; otherwise discourage
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-
+; encourage if players attack is higher than special attack
 	call IsPlayerPhysicalOrSpecial
 	jr c, .strongEncourage
+
+; fallthrough
 
 .discourage
 	inc [hl]
@@ -4153,8 +4149,7 @@ AI_Smart_Growth:
 	jr c, .encourage
 
 ; discourage after +1 if afflicted with toxic
-    ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVar
+    ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr nz, .discourage
     ret

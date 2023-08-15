@@ -433,7 +433,7 @@ MerlinMorgana1Text:
     line "your father."
 
     para "His sword in his"
-    cont "hand."
+    line "hand."
 
     para "It all happened"
     line "so fast."
@@ -618,7 +618,7 @@ MerlinArthur1Text:
     para "He must not know"
     line "who you are."
 
-    para "He suggest some"
+    para "You suggest some"
     line "light sparing."
 
     para "The boy seems to"
@@ -631,14 +631,23 @@ MerlinArthur1Text:
     done
 
 MerlinArthur2Text:
-    text "A year passes."
+    text "You trip and"
+    line "fall into a pile"
+    cont "of horse manure."
 
-    para "That peasant boy"
-    line "MERLIN grew on"
-    cont "you."
+    para "Your knights draw"
+    line "their blades at"
+    cont "the boy as you"
+    cont "reveal who you"
+    cont "are."
 
-    para "He didn't treat"
-    line "you like a prince."
+    para "You like that the"
+    line "boy still doesn't"
+    cont "treat you like a"
+    cont "prince."
+
+    para "That was years"
+    line "ago."
 
     para "He is now your"
     line "servant and still"
@@ -742,6 +751,17 @@ MerlinArthur3Text:
 
     para "They are here."
 
+    para "MERLIN helps you"
+    line "with your armour."
+
+    para "You let him know"
+    line "he is an awful"
+    cont "servant."
+
+    para "And the bravest"
+    line "man you've ever"
+    cont "known."
+
     para "You lead your"
     line "family into the"
     cont "great battle for"
@@ -760,9 +780,10 @@ MerlinRolePlayMerlinArthurText:
 
     para "UTHER is dead."
 
-    para "Your body moves"
-
     para "Killed by MORGANA."
+
+    para "Your body moves"
+    line "on instinct."
 
     para "You cut down"
     line "MORDRED."
@@ -846,7 +867,7 @@ MerlinMerlin1Text:
     cont "should be the"
     cont "one apologising."
 
-    para "You suggests you"
+    para "He suggests you"
     line "settle this with"
     cont "a sparing match."
 
@@ -976,7 +997,8 @@ MerlinMerlin3Text:
     para "Killed by MORGANA."
 
     para "You feel the life"
-    line "of KILGHARRAH fade."
+    line "of KILGHARRAH"
+    cont "weakening."
 
     para "ARTHUR rushes"
     line "MORGANA but is"
@@ -1029,7 +1051,7 @@ MerlinMerlin4Text:
     para "You hear them all"
     line "clearly."
 
-    para "You are EMYRS."
+    para "You are EMRYS."
 
     para "You do not use"
     line "magic."
@@ -1040,8 +1062,8 @@ MerlinMerlin4Text:
     para "There is nothing"
     line "you can not do."
 
-    para "Nothing can stop"
-    line "you."
+    para "Nothing you can"
+    line "not conquer."
 
     para "Not AITHUSA."
 

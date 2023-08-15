@@ -446,7 +446,6 @@ INCLUDE "maps/HallOfOrigin.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
-INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/AncientRuinPresent.asm"
 INCLUDE "maps/AncientRuinPast.asm"
 
@@ -516,3 +515,4 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 SECTION "Map Scripts Overflow 7", ROMX
 
 INCLUDE "maps/LavenderTown.asm"
+INCLUDE "maps/SilverCaveOutside.asm"

@@ -855,9 +855,15 @@ KRIS EQU __trainer_class__
     const MERLIN_HEROES      ; arthur, merlin, gwen, uther, gaius, kilgharrah
     const MERLIN_VILLAINS   ; mordred, morgana, aithusa
 
+    const HOEN_WAR_KOGA
+    const HOEN_WAR_DRAKE
+    const HOEN_WAR_JANINE
+    const HOEN_WAR_WALLACE
+
     trainerclass ROLE_PLAYER_SHINY ; 48
     const DBZ_CH5_VEGETA
     const DBZ_CH5_GOKU
     const MERLIN_EMRYS
+    const HOEN_WAR_ARCEUS
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

@@ -460,8 +460,8 @@ ENDM
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24
-	map_const ROUTE_26,                                    10, 54 ;  1
-	map_const ROUTE_27,                                    40,  9 ;  2
+	map_const ROUTE_26,                                    10,  54 ;  1
+	map_const ROUTE_27,                                    40,  10 ;  2
 	map_const ROUTE_29,                                    30,  13 ;  3
 	map_const NEW_BARK_TOWN,                               10,  15 ;  4
 	map_const ELMS_LAB,                                     5,  6 ;  5

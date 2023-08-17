@@ -399,6 +399,12 @@
     const EVENT_ANCIENT_TEMPLE_AMBROSIA
     const EVENT_ANCIENT_TEMPLE_SACRED_ASH
     const EVENT_CAUGHT_ZYGARDE
+    const EVENT_BEAT_ROLEPLAY_1
+    const EVENT_BEAT_ROLEPLAY_2
+    const EVENT_BEAT_ROLEPLAY_3
+    const EVENT_BEAT_ROLEPLAY_4
+    const EVENT_BEAT_ROLEPLAY_5
+    const EVENT_BEAT_ROLEPLAY_6
 
     ; ======================================
     ; ======================================

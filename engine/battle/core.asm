@@ -2646,6 +2646,8 @@ WinTrainerBattle:
     ld a, [wBattleType]
     cp BATTLETYPE_BATTLE_FRONTIER
     ret z
+    cp BATTLETYPE_WEAK_BATTLE
+    ret z
 
 	ld a, [wAmuletCoin]
 	and a

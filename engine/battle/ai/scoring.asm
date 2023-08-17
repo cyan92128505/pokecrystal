@@ -1630,9 +1630,11 @@ AI_Smart_LeechSeed:
     ret
 
 AI_Smart_LightScreen:
-; discourage if we will be koed
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
     call CanPlayerKO
     jr c, .discourage
+.skipKOCheck
 
 ; discourage if player has boosted Atk
 	ld a, [wPlayerAtkLevel]
@@ -1668,9 +1670,12 @@ AI_Smart_LightScreen:
     ret
 
 AI_Smart_Reflect:
-; discourage if we will be koed
+; discourage if we will be koed unless we have a sash/sturdy
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
     call CanPlayerKO
     jr c, .discourage
+.skipKOCheck
 
 ; discourage if afflicted with toxic
     ld a, [wEnemySubStatus5]

@@ -619,6 +619,16 @@ LOTRRolePlayScript:
 
 .end
     playmusic MUSIC_AZALEA_TOWN
+
+    checkevent EVENT_BEAT_ROLEPLAY_1
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay1PrizeText
+    verbosegiveitem RARE_CANDY
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_1
+.skipPrize
+
 	opentext
 	writetext LOTRRolePlayEndText
 	waitbutton
@@ -643,6 +653,14 @@ LOTRRolePlayScript:
     waitbutton
     closetext
     end
+
+RolePlay4PrizeText:
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
+    done
 
 LOTRIntroText:
     text "It was quite a"

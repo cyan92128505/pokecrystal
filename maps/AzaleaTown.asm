@@ -678,6 +678,16 @@ YuGiOhRolePlayScript:
 
 .endYuGiOh
     playmusic MUSIC_AZALEA_TOWN
+
+    checkevent EVENT_BEAT_ROLEPLAY_2
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay2PrizeText
+    verbosegiveitem RARE_CANDY
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_2
+.skipPrize
+
 	opentext
 	writetext YuGiOhRolePlayFinalText
 	waitbutton
@@ -696,6 +706,14 @@ YuGiOhRolePlayScript:
     waitbutton
     closetext
     end
+
+RolePlay2PrizeText:
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
+    done
 
 YuGiOhIntroText:
     text "Hey!"

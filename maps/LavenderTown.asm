@@ -252,7 +252,9 @@ MerlinRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_NORMAL, MERLIN_VILLAINS
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
     opentext
     writetext MerlinRolePlayMerlinArthurText
@@ -316,17 +318,30 @@ MerlinRolePlayScript:
 	setval MUSIC_FINAL_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext MerlinVictoryText, MerlinDefeatText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WEAK_BATTLE
 	loadtrainer ROLE_PLAYER_NORMAL, MERLIN_VILLAINS
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
 .endMerlin
-    playmusic MUSIC_RED_LAVENDER
 	opentext
 	writetext MerlinRolePlayFinalText
 	waitbutton
 	closetext
+	special FadeOutMusic
+	playmusic MUSIC_RED_LAVENDER
+
+    checkevent EVENT_BEAT_ROLEPLAY_5
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay5PrizeText
+    verbosegiveitem RARE_CANDY
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_5
+.skipPrize
+
 	opentext
 	writetext MerlinRolePlayEndText
 	waitbutton
@@ -342,17 +357,24 @@ MerlinRolePlayScript:
     closetext
     end
 
+RolePlay5PrizeText:
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
+    done
+
 MerlinIntroText:
     text "Hey!"
 
     para "This big haunted"
     line "tower makes me"
     cont "think of a"
-    cont "magical castle."
+    cont "medieval castle."
 
-    para "I think I would"
-    line "like a MERLIN"
-    cont "roleplay."
+    para "Let's have a"
+    line "MERLIN roleplay."
 
     para "Would you like"
     line "to play?"
@@ -572,14 +594,16 @@ MerlinMorgana3Text:
     para "As it always was"
     line "meant to be."
 
-    para "AHWWWW."
+    para "AHGGGGHHH..."
 
-    para "Screams in your"
-    line "head."
+    para "Voices scream in"
+    line "your head."
 
     para "You turn to see"
-    line "MERLIN aflame with"
-    cont "fierce gold magic."
+    line "MERLIN."
+
+    para "A golden aura"
+    cont "surrounds him."
 
     para "ARTHUR is revived!"
 
@@ -606,7 +630,7 @@ MerlinArthur1Text:
 
     para "Walking through"
     line "the hamlet a"
-    cont "peasent boy"
+    cont "peasant boy"
     cont "bumps into you."
 
     para "You expect a"
@@ -828,7 +852,7 @@ MerlinRolePlayMerlinArthurText:
     para "MERLIN is there."
 
     para "He is clad in"
-    line "golden flame."
+    line "golden light."
 
     para "This is magic?!"
 
@@ -1086,16 +1110,16 @@ MerlinMerlin4Text:
     cont "again."
 
     para "AITHUSAs magic"
-    line "boils and evapor-"
-    cont "ates in your"
-    cont "presence."
+    line "evaporates in"
+    cont "your presence."
 
     para "You feel the life"
     line "return to him."
 
-    para "You stand and"
-    line "face your"
-    cont "enemies."
+    para "You turn to face"
+    line "your enemies."
+
+    para "They defile magic."
 
     para "They must exist"
     line "no more."
@@ -1128,16 +1152,13 @@ MerlinRolePlayFinalText:
     line "glow fades."
 
     para "He looks to"
-    line "ARTHUR with shame."
+    line "ARTHUR."
+
+    para "His eyes fall to"
+    line "the ground with"
+    cont "shame."
 
     para "Now you know!"
-
-    para "MERLIN looked at"
-    line "the floor in"
-    cont "anticipation of"
-    cont "the scolding he"
-    cont "will no doubt"
-    cont "recieve."
 
     para "ARTHUR places his"
     line "hand on MERLINS"
@@ -1161,7 +1182,7 @@ MerlinRolePlayFinalText:
     cont "sooner."
 
     para "MERLIN looks up"
-    line "and ARTHUR"
+    line "as ARTHUR"
     cont "continues."
 
     para "I am not my"
@@ -1172,9 +1193,9 @@ MerlinRolePlayFinalText:
     cont "be killed for how"
     cont "they were born."
 
-    para "You can be the"
-    line "first court"
-    cont "wizard."
+    para "You shall be the"
+    line "Camelots first"
+    cont "court wizard."
 
     para "But you'll still"
     line "have to make my"

@@ -374,7 +374,6 @@ INCLUDE "maps/OaksLab.asm"
 SECTION "Map Scripts 20", ROMX
 
 INCLUDE "maps/CherrygroveCity.asm"
-INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
 INCLUDE "maps/Route45.asm"
 
@@ -515,4 +514,8 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 SECTION "Map Scripts Overflow 7", ROMX
 
 INCLUDE "maps/LavenderTown.asm"
+INCLUDE "maps/Route35.asm"
+
+SECTION "Map Scripts Overflow 8", ROMX
+
 INCLUDE "maps/SilverCaveOutside.asm"

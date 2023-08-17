@@ -1138,6 +1138,16 @@ StarWarsRolePlayScript:
 
 .end
     playmusic MUSIC_CHERRYGROVE_CITY
+
+    checkevent EVENT_BEAT_ROLEPLAY_1
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay1PrizeText
+    verbosegiveitem RARE_CANDY
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_1
+.skipPrize
+
 	opentext
 	writetext StarWarsRolePlayEndText
 	waitbutton
@@ -1162,6 +1172,14 @@ StarWarsRolePlayScript:
     waitbutton
     closetext
     end
+
+RolePlay1PrizeText:
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
+    done
 
 StarWarsIntroText:
     text "Do you like Role"

@@ -960,6 +960,16 @@ DBZRolePlayScript:
 
 .DBZEnd
     playmusic MUSIC_VIOLET_CITY
+
+    checkevent EVENT_BEAT_ROLEPLAY_3
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay3PrizeText
+    verbosegiveitem RARE_CANDY
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_3
+.skipPrize
+
 	opentext
 	writetext DBZRolePlayEndText
 	waitbutton
@@ -999,6 +1009,14 @@ DBZRolePlayScript:
 .DBZGokuOrVegetaText:
 	db "GOKU@"
 	db "VEGETA@"
+
+RolePlay3PrizeText:
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
+    done
 
 DBZIntroText:
     text "Are you going to"

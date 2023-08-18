@@ -518,19 +518,23 @@ CherrygroveYoungsterText_HavePokedex:
 	done
 
 MysticWaterGuyTextBefore:
-	text "A #MON I caught"
-	line "had an item."
+	text "This is the secret"
+	line "of my power."
 
-	para "I think it's"
-	line "MYSTIC WATER."
-
-	para "I don't need it,"
-	line "so do you want it?"
+	para "Take it child!"
 	done
 
 MysticWaterGuyTextAfter:
-	text "Back to fishing"
-	line "for me, then."
+	text "I'll never stop"
+	line "fishing."
+
+	para "I'll catch every"
+	line "MAGIKARP in the"
+	cont "sea."
+
+	para "Then I'll end the"
+	line "war with an army"
+	cont "of GYARADOS!"
 	done
 
 CherrygroveCitySignText:
@@ -1143,7 +1147,8 @@ StarWarsRolePlayScript:
     iftrue .skipPrize
     opentext
     writetext RolePlay1PrizeText
-    verbosegiveitem RARE_CANDY
+    waitbutton
+    verbosegiveitem MUSCLE_BAND
     closetext
     setevent EVENT_BEAT_ROLEPLAY_1
 .skipPrize
@@ -1188,6 +1193,14 @@ StarWarsIntroText:
     para "I am starting"
     line "a STAR WARS theme"
     cont "RPG."
+
+    para "I balance the"
+    line "fights so usually"
+    cont "either side can"
+    cont "win. But it's"
+    cont "easier for the"
+    cont "side that is"
+    cont "meant to win."
 
     para "You can play too."
 
@@ -1251,24 +1264,24 @@ StarWarsCh1VillainText:
     cont "ther gifted child."
 
     para "They have found"
-    line "and are taking"
-    cont "him away."
+    line "him."
 
     para "But you will not"
-    line "let that happen!"
+    line "let them have"
+    cont "him."
     done
 
 StarWarsCh2HeroText:
     text "The battle was"
     line "fierce."
 
-    para "GUI GON falls"
+    para "QUI GON falls"
     line "and with his"
     cont "last breath asks"
     cont "OBI WAN to train"
     cont "ANIKAN."
 
-    para "20 years pass."
+    para "15 years pass."
 
     para "OBI WANs heart"
     line "sinks when he"
@@ -1300,11 +1313,12 @@ StarWarsCh2VillainText:
     cont "boy from their"
     cont "brainwashing."
 
-    para "20 years pass."
+    para "15 years pass."
 
-    para "Now finally ready"
-    line "ANIKAN has seen"
-    cont "the evil of the"
+    para "Now finally ready."
+
+    para "ANIKAN has seen"
+    line "the evil of the"
     cont "Jedi."
 
     para "Now he fights to"
@@ -1331,17 +1345,19 @@ StarWarsCh3HeroText:
     line "son, LUKE."
 
     para "OBI WAN protects"
-    line "him over the"
-    cont "next 20 years."
+    line "him."
 
-    para "LUKE grows into"
-    line "a great pilot."
+    para "Over the next 20"
+    line "years LUKE grows"
+    cont "into a great"
+    cont "pilot."
 
     para "He leads the"
-    line "assault on the"
-    cont "empire in a"
-    cont "violent space"
-    cont "battle."
+    line "final assault on"
+    cont "the DEATH STAR."
+
+    para "Only he can"
+    line "save the galaxy."
     done
 
 StarWarsCh3VillainText:
@@ -1494,7 +1510,7 @@ StarWarsCh5HeroText:
 
     para "He tells you.."
 
-    para "Get up my son"
+    para "Get up LUKE!"
 
     para "Let us free the"
     line "galaxy as father"
@@ -1509,11 +1525,13 @@ StarWarsCh5VillainText:
     line "match for the"
     cont "two of you."
 
-    para "You sets"
-    line "about slowly"
-    cont "killing him as"
-    cont "has so many in"
-    cont "the past."
+    para "You set about"
+    line "slowly killing"
+    cont "him."
+
+    para "You have much"
+    line "experience is"
+    cont "such slow deaths."
 
     para "LUKE asks for"
     line "VADER to save him."
@@ -1523,12 +1541,12 @@ StarWarsCh5VillainText:
 
     para "He pleas again."
 
-    para "He pleas again."
+    para "And again."
 
     para "You become aware"
     line "of an anger."
 
-    para "growing..."
+    para "Growing..."
 
     para "Unexplained and"
     line "uncontrollable."
@@ -1541,7 +1559,7 @@ StarWarsCh5VillainText:
     para "You stands between"
     line "you and LUKE."
 
-    para "Get up my son."
+    para "Get up LUKE!"
 
     para "Let us free the"
     line "galaxy as father"
@@ -1556,13 +1574,11 @@ StarWarsCh5VillainText:
     cont "you."
 
     para "But to do so"
-    line "out of love.."
+    line "out of love..."
 
     para "How disgusting."
 
-    para "He must die."
-
-    para "As shall his son."
+    para "They must die."
     done
 
 StarWarsEndText:
@@ -1582,9 +1598,9 @@ StarWarsEndText:
     para "In LUKES arms"
     line "his life ends."
 
-    para "Happy for the"
-    line "first time in"
-    cont "his life."
+    para "Finally content"
+    line "that he made the"
+    cont "right choice."
     done
 
 StarWarsCh6Text:
@@ -1599,7 +1615,7 @@ StarWarsCh6Text:
     cont "Heroes and"
     cont "Villains all"
     cont "powered up to"
-    cont "the max in a"
+    cont "their max in a"
     cont "big fight!"
     done
 
@@ -1607,11 +1623,11 @@ StarWarsRolePlayEndText:
     text "Thanks for"
     line "playing with me."
 
-    para "We travel about"
+    para "I travel about"
     line "playing different"
     cont "games."
 
-    para "We will see you"
+    para "I will see you"
     line "around I'm sure."
     done
 

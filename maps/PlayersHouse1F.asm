@@ -90,7 +90,7 @@ MeetMomScript:
 	writetext InstructionsNextText
 	waitbutton
 	writetext GiveWarpBeaconText
-	verbosegiveitem WARP_BEACON
+	verbosegiveitem ESCAPE_POD
 	writetext StaySafeText
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1

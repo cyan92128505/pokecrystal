@@ -1054,19 +1054,24 @@ HoenWarRolePlayScript:
 	reloadmap
 
 .end
-    checkevent EVENT_BEAT_ROLEPLAY_6
-    iftrue .skipPrize
-    opentext
-    writetext RolePlay6PrizeText
-    verbosegiveitem RARE_CANDY
-    closetext
-    setevent EVENT_BEAT_ROLEPLAY_6
-.skipPrize
-
 	opentext
 	writetext HoenWarRolePlayEndText
 	waitbutton
 	closetext
+
+    checkevent EVENT_BEAT_ROLEPLAY_6
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay6PrizeText
+    waitbutton
+    verbosegiveitem AMBROSIA
+    writetext GoldDicePrizeText
+    waitbutton
+    verbosegiveitem GOLD_DICE
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_6
+.skipPrize
+
 	opentext
 	writetext HoenWarRolePlayFinalText
 	waitbutton
@@ -1089,14 +1094,14 @@ RolePlay6PrizeText:
     cont "with me."
 
     para "You are my best"
-    line "game buddy."
+    line "gaming buddy."
 
     para "Here take this."
     done
 
 HoenWarIntroText:
     text "You are the"
-    line "CHAMPION thar"
+    line "CHAMPION that"
     cont "defeated WALLACE"
     cont "and saved us all."
 
@@ -1211,44 +1216,6 @@ HoenWarCh1HeroText:
     line "hint of fear."
     done
 
-HoenWarCh2HeroText:
-
-    para "...."
-
-    para "A CROBAT swoops"
-    line "into your room."
-    cont "You feel a bond"
-    cont "in your auras."
-
-    para "It warns you of"
-    line "an immanent threat."
-
-    para "You sense someones"
-    line "life end near by."
-
-    para "You understand."
-
-    para "The CROBAT leaves."
-
-    para "You fetch your"
-    line "Pokeballs just"
-    cont "as a group of"
-    cont "soldiers burst"
-    cont "in."
-
-    para "With your mighty"
-    line "#MON you"
-    cont "defeat them easily."
-
-    para "ADMIRAL DRAKE"
-    line "enters."
-
-    para "You decide to"
-    line "remind him why"
-    cont "you are the HOEN"
-    cont "CHAMPION."
-    done
-
 HoenWarCh3HeroText:
    text "This is no mere"
     line "soldier."
@@ -1347,7 +1314,7 @@ HoenWarCh3HeroText:
     cont "forming a lava"
     cont "filled crater"
     cont "that encircles"
-    cont "the whole town."
+    cont "the whole city."
 
     para "There is no more"
     line "escape."
@@ -1385,7 +1352,7 @@ HoenWarCh3HeroText:
     para "Looking down on"
     line "you from his"
     cont "living throne he"
-    cont "seems more a god"
+    cont "seems more a God"
     cont "than a man."
 
     para "You have to will"
@@ -1575,7 +1542,7 @@ HoenWarCh4HeroText:
     cont "this stop."
 
     para "All the noise"
-    line "suddenly stops."
+    line "abruptly ends."
 
     para "You feel warmth"
     line "on your face."
@@ -1665,8 +1632,8 @@ HoenWarCh1VillainText:
     cont "has faced death"
     cont "many times."
 
-    para "You kill such"
-    line "people routinely."
+    para "But to you he"
+    line "just another face."
     done
 
 HoenWarCh3VillainText:
@@ -1722,9 +1689,11 @@ HoenWarCh3VillainText:
     cont "with your noble"
     cont "ambitions."
 
-    para "You fly atop one"
-    line "of your three all"
-    cont "mighty weapons."
+    para "You fly atop"
+    line "AIR WEAPON."
+
+    para "One of your three"
+    line "legendary weapons."
 
     para "Within hours you"
     line "approach the"
@@ -1734,13 +1703,13 @@ HoenWarCh3VillainText:
     line "of FIRE tries to"
     cont "impede you."
 
-    para "WEAPON K makes"
+    para "SEA WEAPON makes"
     line "swift work of him."
 
     para "A tsunami crashes"
     line "on the shore."
 
-    para "WEAPON G splits"
+    para "GEO WEAPON splits"
     line "the earth and"
     cont "destroys any"
     cont "ground defenses."
@@ -1827,7 +1796,7 @@ HoenWarKillText:
     cont "making it fast."
 
     para "A blast of fire"
-    line "from WEAPON G"
+    line "from GEO WEAPON"
     cont "will do it."
     done
 
@@ -1852,12 +1821,12 @@ HoenWarCh4VillainText:
 
     para "You look up at"
     line "the monstrous face"
-    cont "of WEAPON G."
+    cont "of GEO WEAPON."
 
     para "It is contorted"
     line "in a way which..."
 
-    para "if you didn't"
+    para "If you didn't"
     line "know better..."
 
     para "You would say"
@@ -1872,6 +1841,11 @@ HoenWarCh4VillainText:
     para "An otherworldly"
     line "perfection."
 
+    para "You have never"
+    line "seen it before"
+    cont "but it feels"
+    cont "so familiar."
+
     para "Its appearance"
     line "strikes at a"
     cont "primal fear"
@@ -1879,10 +1853,6 @@ HoenWarCh4VillainText:
 
     para "You feel like a"
     line "child."
-
-    para "Could it be..."
-
-    para "ARCEUS!"
 
     para "It draws near!"
     done
@@ -1916,28 +1886,36 @@ HoenWarRolePlayEndText:
 
     para "...."
 
-    para "Then a stranger"
+    para "Nearby a stranger"
     line "enters the city."
 
     para "A CHAMPION."
 
-    para "CHAMPION"
-    line "<PLAYER>."
+    para "CHAMPION <PLAYER>!"
 
     para "The rest is"
     line "history."
     done
 
+GoldDicePrizeText:
+    text "I also want you"
+    line "to have this."
+
+    para "I only give it"
+    line "to my closest"
+    cont "friends."
+    done
+
 HoenWarRolePlayFinalText:
-    text "Thanks for"
-    line "playing with me."
+    text "You can use the"
+    line "GOLD DICE to"
+    cont "meet up with and"
+    cont "play games with"
+    cont "me anytime."
 
-    para "We travel about"
-    line "playing different"
-    cont "games."
-
-    para "We will see you"
-    line "around I'm sure."
+    para "I look forward"
+    line "to playing games"
+    cont "again with you."
     done
 
 HoenWarVictoryText:

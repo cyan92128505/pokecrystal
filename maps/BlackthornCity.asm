@@ -620,13 +620,14 @@ LOTRRolePlayScript:
 .end
     playmusic MUSIC_AZALEA_TOWN
 
-    checkevent EVENT_BEAT_ROLEPLAY_1
+    checkevent EVENT_BEAT_ROLEPLAY_4
     iftrue .skipPrize
     opentext
-    writetext RolePlay1PrizeText
-    verbosegiveitem RARE_CANDY
+    writetext RolePlay4PrizeText
+    waitbutton
+    verbosegiveitem CHOICE_BAND
     closetext
-    setevent EVENT_BEAT_ROLEPLAY_1
+    setevent EVENT_BEAT_ROLEPLAY_4
 .skipPrize
 
 	opentext
@@ -730,8 +731,8 @@ LOTRCh1VillainText:
     line "one thing."
 
     para "To return to"
-    line "your master and"
-    cont "creater."
+    line "your maker and"
+    cont "master."
 
     para "Many have held"
     line "you."
@@ -779,7 +780,7 @@ LOTRCh2HeroText:
     para "A stranger jumps"
     line "in the battle."
 
-    para "He weilds a"
+    para "He wields a"
     line "basic sword."
 
     para "No match for the"
@@ -829,7 +830,7 @@ LOTRCh2HeroText:
     line "are not alone."
 
     para "There are swarms"
-    line "of ORCS and evil"
+    line "of Orcs and evil"
     cont "creatures."
 
     para "GANDALF senses"
@@ -876,7 +877,7 @@ LOTRCh2VillainText:
     line "potential hosts."
 
     para "FRODO plans to"
-    line "take you to Mt"
+    line "take you to MT"
     cont "DOOM to destroy"
     cont "you."
 
@@ -1156,7 +1157,7 @@ LOTRCh4VillainText:
     para "You take command"
     line "of GOTHMOG the"
     cont "commander of the"
-    cont "ORC forces."
+    cont "Orc forces."
 
     para "The attack begins!"
 
@@ -1213,7 +1214,7 @@ LOTRCh5HeroText:
 
     para "I must destroy it!"
 
-    para "But it is mine."
+    para "But it is mine..."
 
     para "SAM shouts for me"
     line "to do it."
@@ -1384,7 +1385,7 @@ LOTREndText:
     para "The world is safe."
 
     para "You welcome your"
-    line "boring life in"
+    line "simple life in"
     cont "SHIRE."
 
     para "For the rest of"

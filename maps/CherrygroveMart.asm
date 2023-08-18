@@ -44,29 +44,30 @@ CherrygroveMartCooltrainerMText:
 	text "They're fresh out"
 	line "of # BALLS!"
 
-	para "When will they get"
-	line "more of them?"
+	para "If I have no"
+	line "balls how am"
+	cont "I meant to"
+	cont "catch #MON!"
 	done
 
 CherrygroveMartCooltrainerMText_PokeBallsInStock:
 	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
+	line "stock!"
+
+	para "I am full of"
+	line "balls now!"
+
+	para "#MON better"
+	line "watch out!"
 	done
 
 CherrygroveMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+	text "There is a creepy"
+	line "old man in the"
+	cont "park."
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
-
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "He keeps talking"
+	line "about red eyes."
 	done
 
 CherrygroveMart_MapEvents:

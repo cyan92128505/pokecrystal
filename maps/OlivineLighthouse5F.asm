@@ -36,7 +36,7 @@ OlivineLighthouse5FRareCandy:
 	itemball RARE_CANDY
 
 OlivineLighthouse5FSuperRepel:
-	itemball SUPER_REPEL
+	itemball CARBOS
 
 OlivineLighthouse5FTMSwagger:
 	itemball MAGNET

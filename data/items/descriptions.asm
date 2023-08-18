@@ -19,8 +19,8 @@ ItemDescriptions:
 	dw HyperPotionDesc
 	dw SuperPotionDesc
 	dw PotionDesc
-	dw WarpBeaconDesc
-	dw RepelDesc
+	dw EscapePodDesc
+	dw WarpDeviceDesc
 	dw MaxElixerDesc
 	dw FireStoneDesc
 	dw ThunderStoneDesc
@@ -42,7 +42,7 @@ ItemDescriptions:
 	dw ReviveDesc
 	dw MaxReviveDesc
 	dw GuardSpecDesc
-	dw SuperRepelDesc
+	dw GoldDiceDesc
 	dw MaxRepelDesc
 	dw RepulsorDesc
 	dw MarkOfGodDesc
@@ -330,13 +330,13 @@ PotionDesc:
 	db   "Restores #MON"
 	next "HP by 20.@"
 
-WarpBeaconDesc:
+EscapePodDesc:
 	db   "Use for escaping"
 	next "from caves, etc.@"
 
-RepelDesc:
-	db   "Repels weak #-"
-	next "MON for 100 steps.@"
+WarpDeviceDesc:
+	db   "Warp to important"
+	next "places.@"
 
 MaxElixerDesc:
 	db   "Fully restores the"
@@ -422,9 +422,9 @@ GuardSpecDesc:
 	db   "Prevents stats"
 	next "reduction. (1 BTL)@"
 
-SuperRepelDesc:
-	db   "Repels weak #-"
-	next "MON for 200 steps.@"
+GoldDiceDesc:
+	db   "Play any of the"
+	next "roleplay games.@"
 
 MaxRepelDesc:
 	db   "Repels weak #-"

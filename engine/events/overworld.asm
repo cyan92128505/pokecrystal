@@ -896,7 +896,172 @@ Script_AskWaterfall:
 EscapeRopeFunction:
 	call FieldMoveJumptableReset
 	ld a, $1
-	jr EscapeRopeOrDig
+	jp EscapeRopeOrDig
+
+WarpDeviceFunction:
+	call .WarpDevice
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.WarpDevice:
+	ld hl, WarpDeviceScript
+	call QueueScript
+	ld a, TRUE
+	ret
+
+WarpDeviceScript:
+    opentext
+    writetext WarpChoiceText
+
+    checkflag ENGINE_FLYPOINT_SILVER_CAVE
+    iffalse .defaultWarp
+
+	loadmenu .BattleTowerWarpMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .newBark
+	ifequal 2, .pallet
+	ifequal 3, .league
+	ifequal 4, .battleTower
+	ifequal 5, .silver
+	closetext
+	end
+.BattleTowerWarpMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 11, 11
+	dw .BattleTowerWarpMenuData
+	db 1 ; default option
+.BattleTowerWarpMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 5, 1 ; rows, columns
+	db 5 ; spacing
+	dba .BattleTowerWarpText
+	dbw BANK(@), NULL
+.BattleTowerWarpText:
+	db "NEWBARK@"
+	db "PALLET@"
+	db "LEAGUE@"
+	db "FRONTIER@"
+	db "SILVER@"
+
+.defaultWarp
+	loadmenu .HomeMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .newBark
+	ifequal 2, .pallet
+	ifequal 3, .league
+	ifequal 4, .battleTower
+	closetext
+	end
+.HomeMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 11, 9
+	dw .HomeMenuData
+	db 1 ; default option
+.HomeMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 4, 1 ; rows, columns
+	db 5 ; spacing
+	dba .HomeMenuText
+	dbw BANK(@), NULL
+.HomeMenuText:
+	db "NEWBARK@"
+	db "PALLET@"
+	db "LEAGUE@"
+	db "FRONTIER@"
+
+.newBark
+	warp NEW_BARK_TOWN, 13, 18
+	end
+.pallet
+	warp PALLET_TOWN, 5, 6
+	end
+.battleTower
+	warp BATTLE_TOWER_OUTSIDE, 9, 16
+	end
+.league
+    warp ROUTE_23, 8, 6
+    end
+.silver
+    warp SILVER_CAVE_OUTSIDE, 23, 20
+    end
+
+WarpChoiceText:
+    text "Where do you"
+    line "want to go?"
+    done
+
+GoldDiceFunction:
+	call .GoldDice
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.GoldDice:
+	ld hl, GoldDiceScript
+	call QueueScript
+	ld a, TRUE
+	ret
+
+GoldDiceScript:
+    opentext
+    writetext GoldDiceText
+
+	loadmenu .GoldDiceWarpMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .dbz
+	ifequal 2, .yugioh
+	ifequal 3, .merlin
+	ifequal 4, .starWars
+	ifequal 5, .lotr
+	ifequal 6, .hoenWar
+	closetext
+	end
+.GoldDiceWarpMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 7
+	dw .GoldDiceWarpMenuData
+	db 1 ; default option
+.GoldDiceWarpMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 2 ; rows, columns
+	db 8 ; spacing
+	dba .GoldDiceWarpText
+	dbw BANK(@), NULL
+.GoldDiceWarpText:
+	db "DBZ@"
+	db "YUGIOH@"
+	db "MERLIN@"
+	db "STAR WARS@"
+	db "LOTR@"
+	db "HOEN WAR@"
+
+.starWars
+	warpfacing UP, CHERRYGROVE_CITY, 21, 5
+	end
+.yugioh
+	warpfacing UP, AZALEA_TOWN, 6, 9
+	end
+.dbz
+	warpfacing UP, OLIVINE_CITY, 10, 23
+	end
+.lotr
+    warpfacing UP, BLACKTHORN_CITY, 26, 29
+    end
+.merlin
+    warpfacing UP, LAVENDER_TOWN, 11, 6
+    end
+.hoenWar
+    warpfacing UP, SILVER_CAVE_OUTSIDE, 26, 20
+    end
+
+GoldDiceText:
+    text "What game do you"
+    line "want to play?"
+    done
 
 DigFunction:
 	call FieldMoveJumptableReset
@@ -1848,6 +2013,7 @@ RedEyeOrbFunction:
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
+
 .InvadeWorld:
 	ld a, [wInvading]
 	xor 1

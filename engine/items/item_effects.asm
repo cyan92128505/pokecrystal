@@ -32,8 +32,8 @@ ItemEffects:
 	dw RestoreHPEffect     ; HYPER_POTION
 	dw RestoreHPEffect     ; SUPER_POTION
 	dw RestoreHPEffect     ; POTION
-	dw WarpBeaconEffect    ; WARP_BEACON
-	dw RepelEffect         ; REPEL
+	dw EscapePodEffect     ; ESCAPE_POD
+	dw WarpDeviceEffect    ; WARP_DEVICE
 	dw RestorePPEffect     ; MAX_ELIXER
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
@@ -55,7 +55,7 @@ ItemEffects:
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
 	dw GuardSpecEffect     ; GUARD_SPEC
-	dw SuperRepelEffect    ; SUPER_REPEL
+	dw GoldDiceEffect      ; GOLD_DICE
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw RepulsorEffect      ; REPULSOR
 	dw MarkOfGodEffect     ; MARK_OF_GOD
@@ -2275,15 +2275,15 @@ Softboiled_MilkDrinkFunction:
 	text_far _ItemCantUseOnMonText
 	text_end
 
-WarpBeaconEffect:
+EscapePodEffect:
 	xor a
 	ld [wItemEffectSucceeded], a
 	farcall EscapeRopeFunction
 	ret
 
-SuperRepelEffect:
-	ld b, 200
-	jr UseRepel
+GoldDiceEffect:
+    farcall GoldDiceFunction
+    ret
 
 MaxRepelEffect:
 	ld b, 250
@@ -2529,6 +2529,10 @@ PocketPCEffect:
 
 RedEyeOrbEffect:
     farcall RedEyeOrbFunction
+    ret
+
+WarpDeviceEffect:
+    farcall WarpDeviceFunction
     ret
 
 RestorePPEffect:

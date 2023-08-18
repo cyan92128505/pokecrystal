@@ -520,12 +520,6 @@ FriedaScript:
 	closetext
 	end
 
-;Route32GreatBall:
-;	itemball GREAT_BALL
-
-;Route32Repel:
-;	itemball REPEL
-
 Route32Sign:
 	jumptext Route32SignText
 

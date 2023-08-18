@@ -965,7 +965,8 @@ DBZRolePlayScript:
     iftrue .skipPrize
     opentext
     writetext RolePlay3PrizeText
-    verbosegiveitem RARE_CANDY
+    waitbutton
+    verbosegiveitem FOCUS_SASH
     closetext
     setevent EVENT_BEAT_ROLEPLAY_3
 .skipPrize
@@ -1020,7 +1021,7 @@ RolePlay3PrizeText:
 
 DBZIntroText:
     text "Are you going to"
-    line "CIANWOOD."
+    line "CIANWOOD?"
 
     para "Apparently the"
     line "GYM LEADER is a"
@@ -1179,7 +1180,7 @@ DBZCh2HeroText:
     para "You find yourself"
     line "in OTHERWORLD."
 
-    para "An afterlife were"
+    para "An afterlife where"
     line "you will continue"
     cont "to train until"
     cont "your friends can"
@@ -1311,8 +1312,9 @@ DBZCh3HeroText:
     para "As the larger"
     line "one prepares a"
     cont "lethal blow for"
-    cont "your son you"
-    cont "sweep in."
+    cont "your son."
+
+    para "You sweep in."
 
     para "Everyone is"
     line "shocked to see"
@@ -1576,7 +1578,7 @@ DBZGokuOrVegetaHeroText:
     done
 
 DBZGokuOrVegetaVillainText:
-    text "You will you"
+    text "Who will you"
     line "kill first?"
     done
 

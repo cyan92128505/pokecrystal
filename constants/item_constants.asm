@@ -24,8 +24,8 @@
 	const HYPER_POTION ; 10
 	const SUPER_POTION ; 11
 	const POTION       ; 12
-	const WARP_BEACON  ; 13
-	const REPEL        ; 14
+	const ESCAPE_POD   ; 13
+	const WARP_DEVICE  ; 14
 	const MAX_ELIXER   ; 15
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
@@ -47,7 +47,7 @@
 	const REVIVE       ; 27
 	const MAX_REVIVE   ; 28
 	const GUARD_SPEC   ; 29
-	const SUPER_REPEL  ; 2a
+	const GOLD_DICE    ; 2a
 	const MAX_REPEL    ; 2b
 	const REPULSOR     ; 2c
 	const MARK_OF_GOD  ; 2d

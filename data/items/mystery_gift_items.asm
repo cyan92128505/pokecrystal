@@ -18,7 +18,6 @@ MysteryGiftItems:
 	db GOLD_BERRY
 	db REVIVE
 	db GREAT_BALL
-	db SUPER_REPEL
 	db MAX_REPEL
 	db ELIXER
 	db ETHER

@@ -523,7 +523,7 @@ PsychicGirlTalkScript:
     writetext HeIsOverThere
     waitbutton
     closetext
-    playsound SFX_WARP_TO
+    playsound SFX_WARP_FROM
     disappear CIANWOODCITY_GIRL_2
     warpfacing RIGHT, CIANWOOD_CITY, 18, 8
     moveobject CIANWOODCITY_GIRL_2, 18, 9
@@ -576,7 +576,7 @@ PsychicGirlTalkScript:
 	closetext
 	pause 15
 	special FadeOutPalettes
-	playsound SFX_WARP_TO
+	playsound SFX_WARP_FROM
 	appear CIANWOODCITY_MEWTWO
 	cry MEWTWO
 	turnobject CIANWOODCITY_GIRL_2, RIGHT

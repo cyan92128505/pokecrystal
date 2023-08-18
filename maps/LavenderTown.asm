@@ -194,7 +194,9 @@ MerlinRolePlayScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer ROLE_PLAYER_SHINY, MERLIN_EMRYS
 	startbattle
+	dontrestartmapmusic
 	reloadmap
+    playmusic MUSIC_MISTY_MOUNTAIN
 
 	sjump .endMerlin
 
@@ -337,7 +339,8 @@ MerlinRolePlayScript:
     iftrue .skipPrize
     opentext
     writetext RolePlay5PrizeText
-    verbosegiveitem RARE_CANDY
+    waitbutton
+    verbosegiveitem LEFTOVERS
     closetext
     setevent EVENT_BEAT_ROLEPLAY_5
 .skipPrize
@@ -395,7 +398,7 @@ MerlinMorgana1Text:
     text "You are the"
     line "daughter of the"
     cont "the king of"
-    cont "Camelot."
+    cont "CAMELOT."
 
     para "In this kingdom"
     line "all magic is"
@@ -458,7 +461,7 @@ MerlinMorgana1Text:
     line "hand."
 
     para "It all happened"
-    line "so fast."
+    line "so fast!"
 
     para "You are forced to"
     line "defend yourself"
@@ -521,7 +524,9 @@ MerlinMorgana2Text:
     cont "your revenge!"
 
     para "You and MORDRED"
-    line "have become much"
+    line "have explored"
+    cont "your magic and"
+    cont "become much"
     cont "stronger."
 
     para "But pale in"
@@ -529,7 +534,7 @@ MerlinMorgana2Text:
     cont "the mighty"
     cont "AITHUSA."
 
-    para "Camelot will pay"
+    para "CAMELOT will pay"
     line "for their crimes"
     cont "against your"
     cont "people!"
@@ -556,8 +561,8 @@ MerlinMorgana3Text:
     line "the mistakes he"
     cont "has made."
 
-    para "He says he misses"
-    line "you."
+    para "He says he regrets"
+    line "his choices."
 
     para "No!"
 
@@ -585,11 +590,11 @@ MerlinMorgana3Text:
     cont "power of AITHUSA."
 
     para "His servant MERLIN"
-    line "and hos wife GWEN"
+    line "and his wife GWEN"
     cont "collapse beside"
     cont "him."
 
-    para "Camelot is yours!"
+    para "CAMELOT is yours!"
 
     para "As it always was"
     line "meant to be."
@@ -621,7 +626,7 @@ MerlinArthur1Text:
     text "You are prince"
     line "of the great"
     cont "kingdom of"
-    cont "Camelot."
+    cont "CAMELOT."
 
     para "You are ARTHUR"
     line "the greatest"
@@ -650,14 +655,14 @@ MerlinArthur1Text:
 
     para "But he accepts."
 
-    para "Lets show this"
-    line "guy who you are."
+    para "He will soon learn"
+    line "who you are."
     done
 
 MerlinArthur2Text:
     text "You trip and"
     line "fall into a pile"
-    cont "of horse manure."
+    cont "of manure."
 
     para "Your knights draw"
     line "their blades at"
@@ -751,7 +756,8 @@ MerlinArthur3Text:
 
     para "A dragon egg."
 
-    para "A year passes."
+    para "Several years"
+    line "pass."
 
     para "Everyone has"
     line "been training"
@@ -789,7 +795,7 @@ MerlinArthur3Text:
     para "You lead your"
     line "family into the"
     cont "great battle for"
-    cont "Camelot."
+    cont "CAMELOT."
     done
 
 MerlinRolePlayMerlinArthurText:
@@ -869,7 +875,7 @@ MerlinMerlin1Text:
     line "in a new village."
 
     para "The kingdom of"
-    line "Camelot awaits."
+    line "CAMELOT awaits."
 
     para "You must keep"
     line "your magic a"
@@ -916,13 +922,13 @@ MerlinMerlin2Text:
     cont "your throat."
 
     para "The KNIGHTS of"
-    line "Camelot!"
+    line "CAMELOT!"
 
     para "The man stands"
     line "and reveals"
     cont "himself as ARTHUR"
     cont "the prince of"
-    cont "Camelot."
+    cont "CAMELOT."
 
     para "A year has passed"
     line "since then."
@@ -1097,9 +1103,6 @@ MerlinMerlin4Text:
     para "You awaken back"
     line "in the court."
 
-    para "Time seeming"
-    line "frozen."
-
     para "Everything is"
     line "clear."
 
@@ -1194,8 +1197,8 @@ MerlinRolePlayFinalText:
     cont "they were born."
 
     para "You shall be the"
-    line "Camelots first"
-    cont "court wizard."
+    line "first court wizard"
+    cont "of CAMELOT."
 
     para "But you'll still"
     line "have to make my"
@@ -1235,18 +1238,6 @@ MerlinVictoryText:
 
 MerlinDefeatText:
     text "Defeat!"
-    done
-    
-MerlinBreakText:
-    text "...."
-    done
-
-MerlinBonusRoundText:
-    text "...."
-    done
-
-MerlinStopText:
-    text "...."
     done
 
 LavenderTown_MapEvents:

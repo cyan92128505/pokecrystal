@@ -683,7 +683,8 @@ YuGiOhRolePlayScript:
     iftrue .skipPrize
     opentext
     writetext RolePlay2PrizeText
-    verbosegiveitem RARE_CANDY
+    waitbutton
+    verbosegiveitem WISE_GLASSES
     closetext
     setevent EVENT_BEAT_ROLEPLAY_2
 .skipPrize
@@ -807,8 +808,8 @@ YuGiOhHenshin2Text:
     cont "cards."
 
     para "His monsters,"
-    line "more like gods."
-    cont "Make easy work"
+    line "more like Gods,"
+    cont "make easy work"
     cont "of SETO."
 
     para "SETO lies on"
@@ -972,11 +973,11 @@ YuGiOhSeto2Text:
     line "and through you."
 
     para "He takes from"
-    line "around his neck"
+    line "a golden box"
     cont "several cards."
 
     para "They seem to"
-    line "shine like gold."
+    line "glow with power."
 
     para "You have no"
     line "fear."
@@ -1001,7 +1002,7 @@ YuGiOhSeto3Text:
     line "a chance."
 
     para "As your vision"
-    line "fades you see.."
+    line "fades you see..."
 
     para "HENSHIN jumps"
     line "from the shadows."
@@ -1035,14 +1036,14 @@ YuGiOhYami1Text:
     cont "people."
 
     para "You command the"
-    line "god cards from"
+    line "God cards from"
     cont "which you can"
-    cont "summon gods"
+    cont "summon Gods"
     cont "to fight for"
     cont "you."
 
     para "Even the mightiest"
-    line "god EXODIA is at"
+    line "God EXODIA is at"
     cont "your command."
 
     para "None can challenge"
@@ -1117,7 +1118,7 @@ YuGiOhYami2Text:
     cont "back."
 
     para "You have dropped"
-    line "the god cards."
+    line "the God cards."
 
     para "Standing over you"
     line "is HENSHIN."
@@ -1140,7 +1141,7 @@ YuGiOhYami2Text:
 
     para "You didn't always"
     line "command the power"
-    cont "of gods."
+    cont "of Gods."
 
     para "From your robes"
     line "you take out"
@@ -1181,7 +1182,7 @@ YuGiOhRolePlayYamiSetoText:
     cont "state."
 
     para "SETO retrieves"
-    line "YAMIs god cards."
+    line "YAMIs God cards."
 
     para "The power"
     line "causing his hands"
@@ -1259,9 +1260,7 @@ YuGiOhRolePlayFinalText:
     para "They rule"
     line "together."
 
-    para "Until their"
-    line "time comes to"
-    cont "an end."
+    para "Forevermore."
     done
 
 YuGiOhRolePlayEndText:

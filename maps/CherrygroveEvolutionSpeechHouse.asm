@@ -26,17 +26,25 @@ CherrygroveEvolutionSpeechHouseBookshelf:
 
 CherrygroveEvolutionSpeechHouseYoungsterText:
 	text "#MON gain expe-"
-	line "rience in battle"
+	line "rience in battle."
 
-	para "and change their"
-	line "form."
+	para "When you REMATCH"
+	line "someone though"
+	cont "you only get"
+	cont "half the EXP you"
+	cont "got first time."
 	done
 
 CherrygroveEvolutionSpeechHouseLassText:
-	text "#MON change?"
+	text "When #MON"
+	line "gain enough EXP"
+	cont "they change form."
 
-	para "I would be shocked"
-	line "if one did that!"
+	para "One day I too"
+	line "may change form."
+
+	para "Then all will"
+	line "fear me...."
 	done
 
 CherrygroveEvolutionSpeechHouse_MapEvents:

@@ -338,7 +338,7 @@ CatchingTutorialIntroText:
 
 CatchingTutorialDebriefText:
 	text "That's how you do"
-	line "it."
+	line "it!"
 
 	para "If you weaken them"
 	line "first, #MON are"
@@ -346,13 +346,14 @@ CatchingTutorialDebriefText:
 	done
 
 CatchingTutorialDeclinedText:
-	text "Oh. Fine, then."
+	text "Oh I see."
 
-	para "Anyway, if you"
-	line "want to catch"
+	para "You got this all"
+	line "figured out eh."
 
-	para "#MON, you have"
-	line "to walk a lot."
+	para "No that's fine."
+
+	para "Good luck buddy."
 	done
 
 CatchingTutorialRepeatText:
@@ -362,26 +363,26 @@ CatchingTutorialRepeatText:
 	done
 
 Route29YoungsterText:
-	text "Yo. How are your"
-	line "#MON?"
+	text "Yo!"
 
-	para "If they're weak"
-	line "and not ready for"
+	para "How strong are"
+	line "your #MON?"
 
-	para "battle, keep out"
-	line "of the grass."
+	para "You can deposit"
+	line "them in the PC"
+	cont "to heal them."
 	done
 
 Route29TeacherText:
 	text "See those ledges?"
-	line "It's scary to jump"
-	cont "off them."
 
-	para "But you can go to"
-	line "NEW BARK without"
+    para "I used to be an"
+    line "adventurer like"
+    cont "you."
 
-	para "walking through"
-	line "the grass."
+    para "Then I feel over"
+    line "one and broke my"
+    cont "leg."
 	done
 
 Route29FisherText:
@@ -401,11 +402,12 @@ Route29CooltrainerMText_WaitingForDay: ; unreferenced
 	done
 
 Route29CooltrainerMText_WaitingForNight:
-	text "I'm waiting for"
-	line "#MON that"
+	text "At night a huge"
+	line "URSARING might"
+	cont "appear around"
+	cont "here."
 
-	para "appear only at"
-	line "night."
+	para "It will be mine!"
 	done
 
 Route29CooltrainerMText_WaitingForMorning:

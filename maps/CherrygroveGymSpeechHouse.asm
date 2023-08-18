@@ -17,17 +17,15 @@ CherrygroveGymSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 CherrygroveGymSpeechHousePokefanMText:
-	text "You're trying to"
-	line "see how good you"
+	text "You're looking"
+	line "f0r GYMS to"
+	cont "challenge."
 
-	para "are as a #MON"
-	line "trainer?"
+	para "War is coming."
 
-	para "You better visit"
-	line "the #MON GYMS"
-
-	para "all over JOHTO and"
-	line "collect BADGES."
+	para "You should stay"
+	line "at home with"
+	cont "your family."
 	done
 
 CherrygroveGymSpeechHouseBugCatcherText:
@@ -35,11 +33,10 @@ CherrygroveGymSpeechHouseBugCatcherText:
 	line "I'm going to be a"
 	cont "GYM LEADER!"
 
-	para "I make my #MON"
-	line "battle with my"
-
-	para "friend's to make"
-	line "them tougher!"
+	para "Im going to show"
+	line "that WALLACE not"
+	cont "to pick on my"
+	cont "family!"
 	done
 
 CherrygroveGymSpeechHouse_MapEvents:

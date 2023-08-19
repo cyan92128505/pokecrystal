@@ -122,19 +122,9 @@ GetMenuMonIconPalette_PredeterminedShininess:
 	pop af
 	jr c, .shiny
 
-	ld a, [wLinkMode] ; don't make shiny in link battle
-	and a
-	jr nz, .skipMarkOfGod
-	ld a, [wOtherTrainerClass]
-	cp ROLE_PLAYER_NORMAL
-	jr z, .skipMarkOfGod
-	cp ROLE_PLAYER_SHINY
-	jr z, .skipMarkOfGod
-	ld a, [wBeatenLordOak]
-	and a
-	jr nz, .shiny
+    farcall AllowShinyOverride
+    jr c, .shiny
 
-.skipMarkOfGod
 	ld a, e
 	swap a
 	and $f

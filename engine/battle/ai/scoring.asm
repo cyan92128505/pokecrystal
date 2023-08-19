@@ -6312,3 +6312,21 @@ ShowLinkBattleParticipantsAfterEnd:
 	farcall _ShowLinkBattleParticipants
 	ret
 
+AllowShinyOverride:
+	ld a, [wLinkMode]
+	and a
+	jr nz, .no
+	ld a, [wOtherTrainerClass]
+	cp ROLE_PLAYER_NORMAL
+	jr z, .no
+	cp ROLE_PLAYER_SHINY
+	jr z, .no
+    ld a, [wMarkOfGod]
+    and a
+    jr z, .no
+    scf
+    ret
+.no
+    xor a
+    ret
+

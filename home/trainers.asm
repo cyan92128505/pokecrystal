@@ -24,7 +24,7 @@ _CheckTrainerBattle::
 	push de
 
 ; AndrewNote - don't agress an immortal player
-	ld a, [wBeatenLordOak]
+	ld a, [wMarkOfGod]
 	and a
 	jr nz, .next
 

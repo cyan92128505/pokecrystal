@@ -275,7 +275,7 @@ MasterOakScript:
 	setval 0
 	writemem wInvading
 	setval 1
-	writemem wBeatenLordOak
+	writemem wMarkOfGod
 	special HealParty
 	warp HALL_OF_ORIGIN, 11, 3
 	turnobject PLAYER, UP

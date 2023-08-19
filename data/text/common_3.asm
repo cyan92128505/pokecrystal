@@ -1450,7 +1450,7 @@ _HandOfGodOff::
 
 _MarkOfGodOn::
 	text "Ascension to"
-	line "immortal form."
+	line "God form."
 	prompt
 
 _RestoreTeamText::

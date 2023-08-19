@@ -891,6 +891,8 @@ rept 4
 endr
 	ret
 .checkImmortal
+    ;farcall AllowShinyOverride
+    ;jr c, .shiny
 	ld a, [wLinkMode] ; don't make shiny in link battle
 	and a
 	ret nz
@@ -899,7 +901,7 @@ endr
 	ret z
 	cp ROLE_PLAYER_SHINY
 	ret z
-    ld a, [wBeatenLordOak]
+    ld a, [wMarkOfGod]
     and a
     jr nz, .shiny
     ret

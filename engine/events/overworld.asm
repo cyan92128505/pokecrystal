@@ -2035,9 +2035,9 @@ MarkOfGodFunction:
 	ld [wFieldMoveSucceeded], a
 	ret
 .Ascend:
-	ld a, [wBeatenLordOak]
+	ld a, [wMarkOfGod]
 	xor 1
-	ld [wBeatenLordOak], a
+	ld [wMarkOfGod], a
 	and a
 	ld hl, MarkOfGodOn
 	jr nz, .done

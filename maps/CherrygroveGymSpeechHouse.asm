@@ -18,7 +18,7 @@ CherrygroveGymSpeechHouseBookshelf:
 
 CherrygroveGymSpeechHousePokefanMText:
 	text "You're looking"
-	line "f0r GYMS to"
+	line "for GYMS to"
 	cont "challenge."
 
 	para "War is coming."

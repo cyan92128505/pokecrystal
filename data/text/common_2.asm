@@ -364,7 +364,7 @@ _UseDigText::
 
 _UseEscapeRopeText::
 	text "<PLAYER> used"
-	line "WARP BEACON."
+	line "ESCAPE POD."
 	done
 
 _CantUseDigText::

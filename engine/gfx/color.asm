@@ -894,6 +894,11 @@ endr
 	ld a, [wLinkMode] ; don't make shiny in link battle
 	and a
 	ret nz
+	ld a, [wOtherTrainerClass]
+	cp ROLE_PLAYER_NORMAL
+	ret z
+	cp ROLE_PLAYER_SHINY
+	ret z
     ld a, [wBeatenLordOak]
     and a
     jr nz, .shiny

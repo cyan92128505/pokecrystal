@@ -111,6 +111,8 @@ MerlinRolePlayScript:
     iffalse .refused
     special TryQuickSave
     iffalse .refused
+    setval 0
+    writemem wHandOfGod
 	setval WEATHER_NONE
 	writemem wFieldWeather
 	special FadeOutMusic

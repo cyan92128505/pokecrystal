@@ -851,6 +851,8 @@ StarWarsRolePlayScript:
     iffalse .refused
     special TryQuickSave
     iffalse .refused
+    setval 0
+    writemem wHandOfGod
 	setval WEATHER_NONE
 	writemem wFieldWeather
 	special FadeOutMusic
@@ -1468,8 +1470,7 @@ StarWarsCh4VillainText:
 
     para "You don't know"
     line "what it is but"
-    cont "you don't like"
-    cont "it."
+    cont "you don't like it."
     done
 
 StarWarsCh5HeroText:
@@ -1530,7 +1531,7 @@ StarWarsCh5VillainText:
     cont "him."
 
     para "You have much"
-    line "experience is"
+    line "experience in"
     cont "such slow deaths."
 
     para "LUKE asks for"
@@ -1556,7 +1557,7 @@ StarWarsCh5VillainText:
     para "Involuntary VADER"
     line "attacks you!"
 
-    para "You stands between"
+    para "He stands between"
     line "you and LUKE."
 
     para "Get up LUKE!"

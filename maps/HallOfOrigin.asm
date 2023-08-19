@@ -257,6 +257,8 @@ MasterOakScript:
 	closetext
 	end
 .Fight
+    setval 0
+    writemem wHandOfGod
 	writetext MasterOakIntroText
 	waitbutton
 	closetext

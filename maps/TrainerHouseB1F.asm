@@ -1755,6 +1755,8 @@ BattleArcadeReceptionistScript:
     iffalse .Declined
     special TryQuickSave
     iffalse .Declined
+    setval 0
+    writemem wHandOfGod
     writetext WantToPlayAsAnotherText
     yesorno
     iffalse .pickEnemy

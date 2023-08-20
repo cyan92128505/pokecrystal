@@ -481,7 +481,7 @@ YuGiOhRolePlayScript:
 	dw .YuGiOhCharacterMenuData
 	db 1 ; default option
 .YuGiOhCharacterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 3, 1 ; rows, columns
 	db 5 ; spacing
 	dba .YuGiOhCharacterText

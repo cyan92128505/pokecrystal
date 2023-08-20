@@ -132,7 +132,7 @@ MerlinRolePlayScript:
 	dw .MerlinCharacterMenuData
 	db 1 ; default option
 .MerlinCharacterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 3, 1 ; rows, columns
 	db 5 ; spacing
 	dba .MerlinCharacterText

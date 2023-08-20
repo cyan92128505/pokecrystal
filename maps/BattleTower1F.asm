@@ -92,6 +92,7 @@ Script_ChooseChallenge:
 .mirror
 	setval 1
 	writemem wHandOfGod
+	writemem wShinyOverride
 .normal
 	setscene SCENE_FINISHED
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
@@ -113,7 +114,7 @@ Script_ChooseChallenge:
 	dw .MirrorMenuData
 	db 1 ; default option
 .MirrorMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .MirrorText
@@ -201,6 +202,7 @@ Script_BattleTowerSkipExplanation:
 Script_BattleTowerHopeToServeYouAgain:
     setval 0
     writemem wHandOfGod
+    writemem wShinyOverride
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
@@ -865,6 +867,7 @@ Text_BattleTowerBugCatcher:
 TurnOffHandOfGodScript:
     setval 0
     writemem wHandOfGod
+    writemem wShinyOverride
     end
 
 BattleTower1F_MapEvents:

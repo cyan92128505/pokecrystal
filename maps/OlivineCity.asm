@@ -599,7 +599,7 @@ DBZRolePlayScript:
 	dw .DBZHeroOrVillainMenuData
 	db 1 ; default option
 .DBZHeroOrVillainMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .DBZHeroOrVillainText
@@ -1004,7 +1004,7 @@ DBZRolePlayScript:
 	dw .DBZGokuOrVegetaMenuData
 	db 1 ; default option
 .DBZGokuOrVegetaMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .DBZGokuOrVegetaText

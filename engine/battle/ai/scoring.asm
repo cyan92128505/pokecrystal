@@ -2612,19 +2612,6 @@ AI_Smart_BulkUp:
     call ShouldAIBoost
     jr nc, .discourage
 
-; for Zygarde give extra encouragement after +1 speed
-; some Zygarde sets have both BULK_UP and DRAGON_DANCE - we want to DD to +1 speed the BU to + 2 defense after
-    ld a, [wEnemyMonSpecies]
-    cp ZYGARDE
-    jr nz, .notZygarde
-	ld a, [wEnemySpdLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr c, .notZygarde
-    ld a, [wEnemyDefLevel]
-    cp BASE_STAT_LEVEL + 2
-    jr c, .extraEncourage ;
-
-.notZygarde
 ; encourage to +2
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
@@ -3561,7 +3548,7 @@ AI_Smart_Gust:
 	ld a, [wLastPlayerCounterMove]
 	cp FLY
 	ret nz
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	ret nz
 
 	ld a, [wPlayerSubStatus3]
@@ -3916,7 +3903,7 @@ AI_Smart_DragonDance:
 ; otherwise if the players last move was non-damaging we may set up if we can't already 3HKO from current HP
 	ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 3
-	jr nc, .discourage
+	jp nc, .discourage
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 3
 	jr nc, .discourage
@@ -3954,16 +3941,23 @@ AI_Smart_DragonDance:
 	and 1 << PAR
 	jr nz, .discourage
 
-; for Zygarde give extra encouragement to +1 speed
-; some Zygarde sets have both BULK_UP and DRAGON_DANCE - we want to DD to +1 speed the BU to + 2 defense after
-    ld a, [wEnemyMonSpecies]
-    cp ZYGARDE
-    jr nz, .notZygarde
+; Some Pokemon have double boost sets with DragonDance and BulkUp/SwordsDance
+; in such cases we want to use DragonDance first to get to +1 speed, then only use the other boost
+	ld b, EFFECT_BULK_UP
+	call AIHasMoveEffect
+	jr c, .useFirstAndNotAgain
+	ld b, EFFECT_ATTACK_UP_2
+	call AIHasMoveEffect
+	jr c, .useFirstAndNotAgain
+	jr .normalEncourage
+
+.useFirstAndNotAgain
 	ld a, [wEnemySpdLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr c, .extraEncourage
+	jr .discourage
 
-.notZygarde
+.normalEncourage
 ; encourage to get to +2
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -6313,6 +6307,9 @@ ShowLinkBattleParticipantsAfterEnd:
 	ret
 
 AllowShinyOverride:
+    ld a, [wShinyOverride]
+    and a
+    jr nz, .no
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no

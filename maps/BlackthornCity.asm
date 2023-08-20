@@ -324,12 +324,14 @@ LOTRRolePlayScript:
 	writemem wFieldWeather
 	special FadeOutMusic
 	playmusic MUSIC_MISTY_MOUNTAIN
+.HeroOrVillain
     writetext LOTRHeroOrVillainChoiceText
 	loadmenu .LOTRHeroOrVillainMenuHeader
 	_2dmenu
 	closewindow
 	ifequal 1, .Hero
 	ifequal 2, .Villain
+	sjump .HeroOrVillain
 	closetext
 	end
 .LOTRHeroOrVillainMenuHeader:
@@ -338,7 +340,7 @@ LOTRRolePlayScript:
 	dw .LOTRHeroOrVillainMenuData
 	db 1 ; default option
 .LOTRHeroOrVillainMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .LOTRHeroOrVillainText

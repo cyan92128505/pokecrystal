@@ -1,4 +1,4 @@
-	db "JET@" ; species name
+	db "EON@" ; species name
 	dw 507, 1223 ; height, weight
 
 	db   "A caring creature."

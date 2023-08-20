@@ -4332,8 +4332,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db RAYQUAZA
-	db FOCUS_SASH
-	db SKY_CLEAVE, EARTHQUAKE, EXTREMESPEED, DRAGON_DANCE
+	db SHARP_BEAK
+	db DRAGON_DANCE, SWORDS_DANCE, DRACO_ASCENT, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4343,7 +4343,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 16, 24, 30 ; PP
+	db 30, 30, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -4410,8 +4410,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db GIRATINA
-	db LEFTOVERS
-	db DRACO_METEOR, SHADOW_BALL, NASTY_PLOT, RECOVER
+	db DRAGON_SCALE
+	db NASTY_PLOT, DRACO_METEOR, THUNDER_WAVE, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4421,7 +4421,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 20, 15 ; PP
+	db 30, 24, 24, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

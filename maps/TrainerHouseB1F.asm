@@ -4,6 +4,7 @@
 	const BATTLE_TRIAL_RECEPTIONIST
 	const BATTLE_ARCADE_RECEPTIONIST
 	const BATTLE_MIRROR_CHRIS
+	const BATTLE_MIRROR_CHRIS_GOLD
 
 TrainerHouseB1F_MapScripts:
 	def_scene_scripts
@@ -13,6 +14,7 @@ TrainerHouseB1F_MapScripts:
 
 .Chris
     disappear BATTLE_MIRROR_CHRIS
+    disappear BATTLE_MIRROR_CHRIS_GOLD
     endcallback
 
 BattleRouletteReceptionistScript:
@@ -934,7 +936,13 @@ BattleMirrorReceptionistScript:
 	applymovement BATTLE_MIRROR_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 	pause 15
+	readmem wMarkOfGod
+	ifequal 0, .normalChris
+	appear BATTLE_MIRROR_CHRIS_GOLD
+	sjump .fightCal
+.normalChris
 	appear BATTLE_MIRROR_CHRIS
+.fightCal
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
     loadtrainer CAL, CAL1
@@ -1074,7 +1082,7 @@ BattleTrialReceptionistScript:
 	dw .ImpossibleMenuData
 	db 1 ; default option
 .ImpossibleMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 3, 1 ; rows, columns
 	db 5 ; spacing
 	dba .ImpossibleText
@@ -1099,7 +1107,7 @@ BattleTrialReceptionistScript:
 	dw .MasterMenuData
 	db 1 ; default option
 .MasterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .MasterText
@@ -1757,6 +1765,8 @@ BattleArcadeReceptionistScript:
     iffalse .Declined
     setval 0
     writemem wHandOfGod
+    setval 1
+    writemem wShinyOverride
     writetext WantToPlayAsAnotherText
     yesorno
     iffalse .pickEnemy
@@ -1785,6 +1795,8 @@ BattleArcadeReceptionistScript:
 	closetext
 	special LoadPokemonData
 	special HealParty
+    setval 0
+    writemem wShinyOverride
 	end
 .win
 	reloadmapafterbattle
@@ -1796,6 +1808,8 @@ BattleArcadeReceptionistScript:
 	closetext
 	special LoadPokemonData
 	special HealParty
+    setval 0
+    writemem wShinyOverride
 	end
 .Declined:
 	writetext PleaseComeAgainText
@@ -2258,7 +2272,7 @@ BattleArcadeReceptionistScript:
 	dw .PostRedCharacterMenuData
 	db 1 ; default option
 .PostRedCharacterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 5, 6 ; rows, columns
 	db 3 ; spacing
 	dba .PostRedCharacterText
@@ -2301,7 +2315,7 @@ BattleArcadeReceptionistScript:
 	dw .PostWallaceCharacterMenuData
 	db 1 ; default option
 .PostWallaceCharacterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 4, 6 ; rows, columns
 	db 3 ; spacing
 	dba .PostWallaceCharacterText
@@ -2338,7 +2352,7 @@ BattleArcadeReceptionistScript:
 	dw .PostE4CharacterMenuData
 	db 1 ; default option
 .PostE4CharacterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 3, 6 ; rows, columns
 	db 3 ; spacing
 	dba .PostE4CharacterText
@@ -2369,7 +2383,7 @@ BattleArcadeReceptionistScript:
 	dw .DefaultCharacterMenuData
 	db 1 ; default option
 .DefaultCharacterMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 4 ; rows, columns
 	db 3 ; spacing
 	dba .DefaultCharacterText
@@ -2787,4 +2801,6 @@ TrainerHouseB1F_MapEvents:
 	object_event 17, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
 	object_event 31, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
 	object_event 45, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleArcadeReceptionistScript, -1
-	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
+

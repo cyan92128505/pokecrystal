@@ -344,13 +344,16 @@ BunearyEvosAttacks:
 	db 1, DEFENSE_CURL
 	db 12, QUICK_ATTACK
 	db 16, CHARM
-	db 20, DOUBLE_KICK
-	db 24, AGILITY
-	db 28, BATON_PASS
-	db 30, ATTRACT
-	db 32, HEADBUTT
-	db 36, HI_JUMP_KICK
-	db 40, MEGA_KICK
+	db 20, ROLLING_KICK
+	db 24, HEADBUTT
+	db 28, DRAIN_PUNCH
+	db 30, AGILITY
+	db 34, BATON_PASS
+	db 36, ATTRACT
+	db 40, RETURN
+	db 43, ENCORE
+	db 46, MEGA_KICK
+	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 
 LopunnyEvosAttacks:
@@ -360,15 +363,16 @@ LopunnyEvosAttacks:
 	db 1, DEFENSE_CURL
 	db 12, QUICK_ATTACK
 	db 16, CHARM
-	db 18, ATTRACT
-	db 20, DOUBLE_KICK
-	db 24, AGILITY
-	db 28, BATON_PASS
-	db 30, ATTRACT
-	db 32, HEADBUTT
-	db 36, HI_JUMP_KICK
-	db 40, MEGA_KICK
-	db 44, ENCORE
+	db 20, ROLLING_KICK
+	db 24, HEADBUTT
+	db 28, DRAIN_PUNCH
+	db 30, AGILITY
+	db 34, BATON_PASS
+	db 36, ATTRACT
+	db 40, RETURN
+	db 43, ENCORE
+	db 46, MEGA_KICK
+	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
@@ -716,7 +720,8 @@ HawluchaEvosAttacks:
 	db 8, PROTECT
 	db 12, LOW_KICK
 	db 16, ENCORE
-	db 24, SUBMISSION
+	db 20, ROLLING_KICK
+	db 25, SUBMISSION
 	db 30, ROOST
 	db 36, BULK_UP
 	db 40, BRAVE_BIRD
@@ -2428,6 +2433,7 @@ RioluEvosAttacks:
 	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, HEADBUTT
+	db 18, DOUBLE_KICK
 	db 20, CRUNCH
     db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
@@ -3454,7 +3460,7 @@ RayquazaEvosAttacks:
 	db 55, EXTREMESPEED
 	db 60, OUTRAGE
 	db 65, DRAGON_DANCE
-	db 70, SKY_CLEAVE
+	db 70, DRACO_ASCENT
 	db 75, HURRICANE
 	db 80, DRACO_METEOR
 	db 85, HYPER_BEAM

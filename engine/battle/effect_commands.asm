@@ -347,7 +347,7 @@ CantMove:
 	call GetBattleVar
 	cp FLY
 	jr z, .fly_dig
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	jr z, .fly_dig
 	cp DIG
 	ret nz
@@ -2088,7 +2088,7 @@ BattleCommand_MoveAnimNoSub:
 	call GetBattleVar
 	cp FLY
 	jr z, .clear_sprite
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	jr z, .clear_sprite
 	cp DIG
 	ret nz
@@ -2186,7 +2186,7 @@ BattleCommand_FailureText:
 
 	cp FLY
 	jr z, .fly_dig
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	jr z, .fly_dig
 	cp DIG
 	jr z, .fly_dig
@@ -5948,7 +5948,7 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp FLY
 	jr z, .flying
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	jr z, .flying
 	cp DIG
 	jr z, .flying
@@ -5965,7 +5965,7 @@ BattleCommand_Charge:
 	ld b, a
 	cp FLY
 	jr z, .set_flying
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	jr z, .set_flying
 	cp DIG
 	jr nz, .dont_set_digging
@@ -6020,7 +6020,7 @@ BattleCommand_Charge:
 	ld hl, .BattleFlewText
 	jr z, .done
 
-	cp SKY_CLEAVE
+	cp DRACO_ASCENT
 	ld hl, .BattleSoarText
 	jr z, .done
 

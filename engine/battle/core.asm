@@ -4201,10 +4201,18 @@ BattleCheckPlayerShininess:
 	jr BattleCheckShininess
 
 BattleCheckEnemyShininess:
-; AndrewNote - Master Oaks Pokemon are shiny regardless of stats
+; AndrewNote - Lord Oaks Pokemon are shiny regardless of stats
+; CALs Pokemon are shiny if MarkOfGod is active
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
+    jr z, .shiny
+    cp CAL
     jr nz, .normal
+    ld a, [wMarkOfGod]
+    and a
+    jr nz, .shiny
+    jr .normal
+.shiny
     scf
     ret
 .normal

@@ -152,7 +152,7 @@ RadioTower5FRocketBossScene:
 	dw .WingMenuData
 	db 1 ; default option
 .WingMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .WingText

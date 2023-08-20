@@ -18,7 +18,7 @@
 	const SCRATCH      ; 0a
 	const DARK_PULSE   ; 0b
 	const GUILLOTINE   ; 0c
-	const SKY_CLEAVE   ; 0d
+	const DRACO_ASCENT   ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10

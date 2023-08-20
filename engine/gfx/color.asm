@@ -891,8 +891,9 @@ rept 4
 endr
 	ret
 .checkImmortal
-    ;farcall AllowShinyOverride
-    ;jr c, .shiny
+    ld a, [wShinyOverride]
+    and a
+    ret nz
 	ld a, [wLinkMode] ; don't make shiny in link battle
 	and a
 	ret nz
@@ -919,11 +920,18 @@ rept 4
 	inc hl
 endr
 	ret
-; AndrewNote - Master Oaks Pokemon are shiny regardless of stats
+; AndrewNote - Lord Oaks Pokemon are shiny regardless of stats
+; CALs Pokemon are shiny if MarkOfGod is active
 .checkOak
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
     jr z, .shiny
+    cp CAL
+    jr nz, .done
+    ld a, [wMarkOfGod]
+    and a
+    jr nz, .shiny
+.done
     ret
 
 PushSGBPals:

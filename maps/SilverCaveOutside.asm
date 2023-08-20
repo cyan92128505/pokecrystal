@@ -855,7 +855,7 @@ HoenWarRolePlayScript:
 	dw .HoenWarHeroOrVillainMenuData
 	db 1 ; default option
 .HoenWarHeroOrVillainMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .HoenWarHeroOrVillainText
@@ -921,7 +921,7 @@ HoenWarRolePlayScript:
 	dw .HoenWarActionMenuData
 	db 1 ; default option
 .HoenWarActionMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 3, 1 ; rows, columns
 	db 5 ; spacing
 	dba .HoenWarActionMenuText
@@ -1015,7 +1015,7 @@ HoenWarRolePlayScript:
 	dw .HoenWarMercyMenuData
 	db 1 ; default option
 .HoenWarMercyMenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 1 ; rows, columns
 	db 5 ; spacing
 	dba .HoenWarMercyMenuText

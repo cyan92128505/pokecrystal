@@ -27,43 +27,52 @@ CherrygroveCityGuideGent:
 	faceplayer
 	opentext
 	writetext GuideGentIntroText
-	yesorno
-	iffalse .No
-	sjump .Yes
-.Yes:
-	writetext GuideGentTourText1
 	waitbutton
 	closetext
 	playmusic MUSIC_SHOW_ME_AROUND
 	follow CHERRYGROVECITY_GRAMPS, PLAYER
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement1
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToPokecenter
 	opentext
 	writetext GuideGentPokecenterText
 	waitbutton
 	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement2
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToPokemart
 	turnobject PLAYER, UP
 	opentext
 	writetext GuideGentMartText
 	waitbutton
 	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement3
-	turnobject PLAYER, UP
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToRolePlay
+	turnobject PLAYER, LEFT
 	opentext
-	writetext GuideGentRoute30Text
+	writetext GuideGentRolePlayText
 	waitbutton
 	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement4
-	turnobject PLAYER, LEFT
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToExit
+	turnobject PLAYER, UP
+	opentext
+	writetext GuideGentExitText
+	waitbutton
+	closetext
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToBilly
 	opentext
 	writetext GuideGentSeaText
 	waitbutton
 	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement5
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToCrest
+	turnobject PLAYER, DOWN
+	opentext
+	writetext GuideGentCrestText
+	waitbutton
+	closetext
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToPark
+	turnobject PLAYER, DOWN
+	opentext
+	writetext GuideGentParkText
+	waitbutton
+	closetext
+	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovementToHome
 	turnobject PLAYER, UP
-	pause 60
-	turnobject CHERRYGROVECITY_GRAMPS, LEFT
-	turnobject PLAYER, RIGHT
 	opentext
 	writetext GuideGentGiftText
 	promptbutton
@@ -78,7 +87,8 @@ CherrygroveCityGuideGent:
 	stopfollow
 	special RestartMapMusic
 	turnobject PLAYER, UP
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement6
+	;applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement6
+	turnobject CHERRYGROVECITY_GRAMPS, UP
 	playsound SFX_ENTER_DOOR
 	disappear CHERRYGROVECITY_GRAMPS
 	clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
@@ -235,73 +245,117 @@ CherrygroveCityPokecenterSign:
 CherrygroveCityMartSign:
 	jumpstd MartSignScript
 
-GuideGentMovement1:
-	step LEFT
-	step LEFT
-	step UP
-	step LEFT
+GuideGentMovementToPokecenter:
+	big_step LEFT
+	big_step LEFT
+	big_step UP
+	big_step LEFT
 	turn_head UP
 	step_end
 
-GuideGentMovement2:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
+GuideGentMovementToPokemart:
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
 	turn_head UP
 	step_end
 
-GuideGentMovement3:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
+GuideGentMovementToRolePlay:
+	big_step LEFT
+	big_step LEFT
 	turn_head UP
 	step_end
 
-GuideGentMovement4:
-	step LEFT
-	step LEFT
-	step LEFT
-	step DOWN
-	step LEFT
-	step LEFT
-	step LEFT
-	step DOWN
-	turn_head LEFT
-	step_end
-
-GuideGentMovement5:
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
+GuideGentMovementToExit:
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
 	turn_head UP
 	step_end
 
-GuideGentMovement6:
-	step UP
-	step UP
+GuideGentMovementToBilly:
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+    big_step DOWN
+	step_end
+
+GuideGentMovementToCrest:
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step DOWN
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step DOWN
+	big_step DOWN
+	step_end
+
+GuideGentMovementToPark:
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step DOWN
+	big_step RIGHT
+	turn_head DOWN
+	step_end
+
+GuideGentMovementToHome:
+	big_step UP
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step UP
+	big_step UP
+	turn_head DOWN
 	step_end
 
 CherrygroveCity_RivalWalksToYou:
@@ -334,75 +388,128 @@ CherrygroveCity_RivalExitsStageLeft:
 	step_end
 
 GuideGentIntroText:
-	text "You're a rookie"
-	line "trainer, aren't"
-	cont "you? I can tell!"
+	text "Oh hello there!"
 
-	para "That's OK! Every-"
-	line "one is a rookie"
-	cont "at some point!"
+	para "You're starting"
+	line "a great adventure"
+	cont "aren't you."
 
-	para "If you'd like, I"
-	line "can teach you a"
-	cont "few things."
-	done
+	para "I was young"
+	line "once too..."
 
-GuideGentTourText1:
-	text "OK, then!"
-	line "Follow me!"
+	para "But this is my"
+	line "home now."
+
+	para "Let me show you"
+	line "around and teach"
+	cont "you a few things."
+
+	para "...."
+
+	para "Try to keep up!"
 	done
 
 GuideGentPokecenterText:
 	text "This is a #MON"
-	line "CENTER. They heal"
+	line "CENTER."
 
-	para "your #MON in no"
-	line "time at all."
-
-	para "You'll be relying"
-	line "on them a lot, so"
-
-	para "you better learn"
-	line "about them."
+	para "Here you can heal"
+	line "your #MON and"
+	cont "store them in"
+	cont "your PC."
 	done
 
 GuideGentMartText:
 	text "This is a #MON"
 	line "MART."
 
-	para "They sell BALLS"
-	line "for catching wild"
+	para "You can buy stuff"
+	line "from here."
 
-	para "#MON and other"
-	line "useful items."
+	para "But this one"
+	line "rarely has much."
+
+	para "The don't even"
+	line "have Pokeballs"
+	cont "right now."
 	done
 
-GuideGentRoute30Text:
-	text "ROUTE 30 is out"
-	line "this way."
+GuideGentRolePlayText:
+	text "This guy likes"
+	line "to play games."
 
-	para "Trainers will be"
-	line "battling their"
+	para "He gives out"
+	line "prizes to people"
+	cont "who sit through"
+	cont "his games."
 
-	para "prized #MON"
-	line "there."
+	para "Nobody would"
+	line "play the whole"
+	cont "things otherwise."
+	done
+
+GuideGentExitText:
+	text "This path leads"
+	line "to VIOLET city."
+
+	para "You will find"
+	line "other trainers"
+	cont "up there."
+
+	para "Watch out for"
+	line "DARK CAVE."
+
+	para "It is a place"
+	line "of infectious"
+	cont "evil."
 	done
 
 GuideGentSeaText:
-	text "This is the sea,"
-	line "as you can see."
+	text "This is BILLY"
 
-	para "Some #MON are"
-	line "found only in"
-	cont "water."
+	para "He never stops"
+	line "fishing."
+
+	para "I think he is"
+	line "looking for"
+	cont "meaning on the"
+	cont "end of that"
+	cont "hook."
+	done
+
+GuideGentCrestText:
+	text "Old CREST sits"
+	line "down here."
+
+	para "He has become"
+	line "rather obsessive"
+	cont "recently."
+
+	para "You best stay"
+	line "away from him."
+	done
+
+GuideGentParkText:
+	text "The band stand"
+	line "is down there."
+
+	para "Some young punks"
+	line "are having battles"
+	cont "today."
 	done
 
 GuideGentGiftText:
-	text "Here…"
-
-	para "It's my house!"
+	text "It's my house!"
 	line "Thanks for your"
 	cont "company."
+
+	para "Remember you can"
+	line "run by holding"
+	cont "B."
+
+	para "You never know"
+	line "when you might"
+	cont "need to run!"
 
 	para "Let me give you a"
 	line "small gift."
@@ -564,6 +671,7 @@ EvilOldManScript:
 	waitbutton
 	writetext takeScopeLensText
 	verbosegiveitem SCOPE_LENS
+	setevent EVENT_GOT_SCOPE_LENS
 .finish
 	waitbutton
 	closetext
@@ -1675,6 +1783,13 @@ StarWarsStopText:
     cont "next time."
     done
 
+CherrygroveGentScene:
+    checkevent EVENT_GUIDE_GENT_IN_HIS_HOUSE
+    iftrue .end
+    turnobject PLAYER, UP
+    sjump CherrygroveCityGuideGent
+.end
+    end
 
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
@@ -1689,6 +1804,8 @@ CherrygroveCity_MapEvents:
 	def_coord_events
 	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneNorth
 	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneSouth
+	coord_event 32,  7, SCENE_ALWAYS, CherrygroveGentScene
+
 
 	def_bg_events
 	bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign

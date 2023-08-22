@@ -386,19 +386,19 @@ Route29TeacherText:
 	done
 
 Route29FisherText:
-	text "I wanted to take a"
-	line "break, so I saved"
+	text "Some people talk"
+	line "so slowly!"
 
-	para "to record my"
-	line "progress."
-	done
+	para "You can change"
+	line "text speed in the"
+	cont "OPTIONS menu."
 
-Route29CooltrainerMText_WaitingForDay: ; unreferenced
-	text "I'm waiting for"
-	line "#MON that"
+	para "There is a new"
+	line "OPTION for instant"
+	cont "text called INST."
 
-	para "appear only in the"
-	line "daytime."
+	para "Great when you're"
+	line "impatient like me!"
 	done
 
 Route29CooltrainerMText_WaitingForNight:

@@ -14,15 +14,24 @@ Route31VioletGateCooltrainerFScript:
 	jumptextfaceplayer Route31VioletGateCooltrainerFText
 
 Route31VioletGateOfficerText:
-	text "Hi there!"
-	line "Did you visit"
-	cont "SPROUT TOWER?"
+	text "Welcome to VIOLET"
+	cont "CITY."
+
+	para "Be sure to visit"
+	line "SPROUT TOWER."
 	done
 
 Route31VioletGateCooltrainerFText:
-	text "I came too far"
-	line "out. I'd better"
-	cont "phone home!"
+	text "Be careful in"
+	line "SPROUT TOWER."
+
+	para "They recently"
+	line "discovered it"
+	cont "has a basement."
+
+	para "A SAGE has been"
+	line "missing for days"
+	cont "down there."
 	done
 
 Route31VioletGate_MapEvents:

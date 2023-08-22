@@ -273,29 +273,22 @@ VioletPokecenterElmsAideFavorText:
 	done
 
 VioletPokecenterElmsAideGiveEggText:
-	text "We discovered that"
-	line "a #MON will not"
+	text "If the egg is a"
+	line "FAIRY #MON"
+	cont "it may need to"
+	cont "form a strong bond"
+	cont "with it's trainer"
+	cont "to obtain its"
+	cont "full power."
 
-	para "hatch until it"
-	line "grows in the EGG."
-
-	para "It also has to be"
-	line "with other active"
-	cont "#MON to hatch."
-
-	para "<PLAY_G>, you're"
-	line "the only person"
-	cont "we can rely on."
-
-	para "Please call PROF."
-	line "ELM when that EGG"
-	cont "hatches!"
+	para "You would be a"
+	line "great choice for"
+	cont "such a trainer."
 	done
 
 VioletCityElmsAideFullPartyText:
-	text "Oh, no. You can't"
-	line "carry any more"
-	cont "#MON with you."
+	text "You have a full"
+	line "party of six."
 
 	para "I'll wait here"
 	line "while you make"
@@ -303,8 +296,13 @@ VioletCityElmsAideFullPartyText:
 	done
 
 VioletPokecenterElmsAideRefuseText:
-	text "B-but… PROF.ELM"
-	line "asked for you…"
+	text "Look if I go"
+	line "with this EGG"
+	cont "it's not going"
+	cont "to look good for"
+	cont "me."
+
+	para "Please take it."
 	done
 
 VioletPokecenterElmsAideAskEggText:
@@ -312,60 +310,54 @@ VioletPokecenterElmsAideAskEggText:
 	line "take the EGG?"
 	done
 
-VioletPokecenterFarawayLinkText: ; unreferenced
-	text "I've been thinking"
-	line "it'd be great to"
-
-	para "be able to link up"
-	line "and battle with my"
-
-	para "friends who live"
-	line "far away."
-	done
-
-VioletPokecenterMobileAdapterText: ; unreferenced
-	text "I just battled a"
-	line "friend in CIANWOOD"
-	cont "over a link."
-
-	para "If you connect a"
-	line "MOBILE ADAPTER,"
-
-	para "you can link with"
-	line "a friend far away."
-	done
-
 VioletPokecenter1FGameboyKidText:
-	text "A guy named BILL"
-	line "made the #MON"
-	cont "PC storage system."
+	text "The INVADER"
+	line "outside the city"
+	cont "is strong."
+
+	para "But his #MON"
+	line "only knows one"
+	cont "move that only"
+	cont "has 10 PP."
+
+	para "If I could just"
+	line "survive 10 hits"
+	cont "I'd win for sure."
 	done
 
 VioletPokecenter1FGentlemanText:
-	text "It was around"
-	line "three years ago."
+	text "Just SOUTH of"
+	line "here are the"
+	cont "RUINS OF ALPH."
 
-	para "TEAM ROCKET was up"
-	line "to no good with"
-	cont "#MON."
+	para "I traveled here to"
+	line "visit them."
 
-	para "But justice pre-"
-	line "vailed--a young"
-	cont "kid broke 'em up."
+	para "I went last night."
+
+	para "There was an odd"
+	line "fellow there."
+
+	para "Said he wanted"
+	line "power of DEATH."
+
+	para "I wouldn't go"
+	line "there at night"
+	cont "if I were you."
 	done
 
 VioletPokecenter1FYoungsterText:
-	text "#MON are smart."
-	line "They won't obey a"
+	text "You can trade"
+	line "#MON with others."
 
-	para "trainer they don't"
-	line "respect."
+	para "A traded #MON"
+	line "gains more EXP"
+	cont "in battle."
 
-	para "Without the right"
-	line "GYM BADGES, they"
-
-	para "will just do as"
-	line "they please."
+	para "I think there is"
+	line "someone around"
+	cont "here looking to"
+	cont "trade #MON."
 	done
 
 VioletPokecenter1F_MapEvents:

@@ -933,7 +933,7 @@ WarpDeviceScript:
 	dw .BattleTowerWarpMenuData
 	db 1 ; default option
 .BattleTowerWarpMenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db STATICMENU_CURSOR ; flags
 	dn 5, 1 ; rows, columns
 	db 5 ; spacing
 	dba .BattleTowerWarpText
@@ -1026,7 +1026,7 @@ GoldDiceScript:
 	dw .GoldDiceWarpMenuData
 	db 1 ; default option
 .GoldDiceWarpMenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db STATICMENU_CURSOR ; flags
 	dn 3, 2 ; rows, columns
 	db 8 ; spacing
 	dba .GoldDiceWarpText

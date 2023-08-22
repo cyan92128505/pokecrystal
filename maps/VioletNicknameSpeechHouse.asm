@@ -24,22 +24,33 @@ VioletNicknameSpeechHouseBirdScript:
 	end
 
 VioletNicknameSpeechHouseTeacherText:
-	text "She uses the names"
-	line "of her favorite"
-	cont "things to eat."
+	text "Some #MON have"
+	line "a different"
+	cont "colour than they"
+	cont "normally would."
 
-	para "For the nicknames"
-	line "she gives to her"
-	cont "#MON, I mean."
+	para "These are shiny"
+	line "#MON."
+
+	para "Sometimes they"
+	line "appear in the"
+	cont "field with a"
+	cont "gold colour."
+
+	para "But they don't"
+	line "always appear."
 	done
 
 VioletNicknameSpeechHouseLassText:
-	text "I call my STARLY"
-	line "STRAWBERRY!"
+	text "My STARLY is"
+	line "special."
 	done
 
 VioletNicknameSpeechHouseBirdText:
-	text "STRAWBERRY: Pijji!"
+	text "Pijji!"
+
+	para "It has some"
+	line "gold feathers."
 	done
 
 VioletNicknameSpeechHouse_MapEvents:

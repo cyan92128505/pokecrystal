@@ -11,13 +11,14 @@ Route30BerryHousePokefanMScript:
 	opentext
 	checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
 	iftrue .GotBerry
-	writetext Route30BerrySpeechHouseMonEatBerriesText
-	promptbutton
+	writetext Route30BerrySpeechHouseText
+	waitbutton
+	writetext Route30BerrySpeechHouseTakeBerryText
 	verbosegiveitem BERRY
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
 .GotBerry:
-	writetext Route30BerrySpeechHouseCheckTreesText
+	writetext Route30BerrySpeechHouseText
 	waitbutton
 .NoRoom:
 	closetext
@@ -26,22 +27,39 @@ Route30BerryHousePokefanMScript:
 Route30BerryHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
-Route30BerrySpeechHouseMonEatBerriesText:
-	text "You know, #MON"
-	line "eat BERRIES."
+Route30BerrySpeechHouseText:
+	text "I wanted to buy"
+	line "a house out in"
+	cont "the country."
 
-	para "Well, my #MON"
-	line "got healthier by"
-	cont "eating a BERRY."
+	para "Away from the"
+	line "stress of towns"
+	cont "and cities."
 
-	para "Here. I'll share"
-	line "one with you!"
+	para "But there's kid"
+	line "trainers and wild"
+	cont "#MON everywhere!"
+
+	para "It's even more"
+	line "stressful."
+
+	para "But I've found"
+	line "I forget all that"
+	cont "if I eat enough"
+	cont "BERRIES!"
 	done
 
-Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "BERRIES. They just"
-	cont "drop right off."
+Route30BerrySpeechHouseTakeBerryText:
+	text "Here for being"
+	line "so sympathetic you"
+	cont "can have one!"
+
+	para "They grow on"
+	line "trees but it"
+	cont "takes a day."
+
+	para "I can't wait"
+	line "that long!"
 	done
 
 Route30BerryHouse_MapEvents:

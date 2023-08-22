@@ -13,16 +13,21 @@ GuideGentsHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
 GuideGentsHouseGuideGentText:
-	text "When I was a wee"
-	line "lad, I was a hot-"
-	cont "shot trainer!"
+	text "My legs get sore"
+	line "from all that"
+	cont "running."
 
-	para "Here's a word of"
-	line "advice: Catch lots"
-	cont "of #MON!"
+	para "Remember you"
+	line "hold B to run."
 
-	para "Treat them all"
-	line "with kindness!"
+	para "Be sure to check"
+	line "all over and"
+	cont "explore on your"
+	cont "adventure."
+
+	para "There are many"
+	line "secrets to be"
+	cont "found!"
 	done
 
 GuideGentsHouse_MapEvents:

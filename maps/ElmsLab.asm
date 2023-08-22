@@ -1096,9 +1096,11 @@ ElmAfterTheftText1:
 	text "ELM: <PLAY_G>, this"
 	line "is terrible…"
 
-	para "Oh, yes, what was"
-	line "MR.#MON's big"
-	cont "discovery?"
+	para "So you met the"
+	line "secret AGENT."
+
+	para "Did he give you"
+	line "anything."
 	done
 
 ElmAfterTheftText2:
@@ -1121,8 +1123,7 @@ ElmAfterTheftText4:
 
 	para "The #MON in"
 	line "this EGG may be"
-	cont "useful to you"
-	cont "one day."
+	cont "useful."
 	done
 
 ElmAfterTheftText5:

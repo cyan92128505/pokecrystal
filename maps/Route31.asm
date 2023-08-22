@@ -213,68 +213,7 @@ TrainerBugCatcherWade1:
 	end
 
 Route31MailRecipientScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM50_NIGHTMARE
-	iftrue .DescribeNightmare
-	checkevent EVENT_GOT_KENYA
-	iftrue .TryGiveKenya
-	writetext Text_Route31SleepyMan
-	waitbutton
-	closetext
-	end
-
-.TryGiveKenya:
-	writetext Text_Route31SleepyManGotMail
-	promptbutton
-	checkpokemail ReceivedSpearowMailText
-	ifequal POKEMAIL_WRONG_MAIL, .WrongMail
-	ifequal POKEMAIL_REFUSED, .Refused
-	ifequal POKEMAIL_NO_MAIL, .NoMail
-	ifequal POKEMAIL_LAST_MON, .LastMon
-	; POKEMAIL_CORRECT
-	writetext Text_Route31HandOverMailMon
-	promptbutton
-	writetext Text_Route31ReadingMail
-	promptbutton
-	setevent EVENT_GAVE_KENYA
-	verbosegiveitem RARE_CANDY
-	iffalse .NoRoomForItems
-	setevent EVENT_GOT_TM50_NIGHTMARE
-.DescribeNightmare:
-	writetext Text_Route31DescribeNightmare
-	waitbutton
-.NoRoomForItems:
-	closetext
-	end
-
-.WrongMail:
-	writetext Text_Route31WrongMail
-	waitbutton
-	closetext
-	end
-
-.NoMail:
-	writetext Text_Route31MissingMail
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext Text_Route31DeclinedToHandOverMail
-	waitbutton
-	closetext
-	end
-
-.LastMon:
-	writetext Text_Route31CantTakeLastMon
-	waitbutton
-	closetext
-	end
-
-ReceivedSpearowMailText:
-	db   "DARK CAVE leads"
-	next "to another road@"
+    jumptextfaceplayer Text_Route31SleepyMan
 
 Route31YoungsterScript:
 	jumptextfaceplayer Route31YoungsterText
@@ -298,129 +237,52 @@ Route31PokeBall:
 	itemball POKE_BALL
 
 Route31CooltrainerMText:
-	text "DARK CAVE…"
+	text "I just barley"
+	line "managed to escape."
 
-	para "If #MON could"
-	line "light it up, I'd"
-	cont "explore it."
+	para "There is something"
+	line "terrifying in that"
+	cont "cave."
+
+	para "Blades in the"
+	line "dark..."
+
+	para "Don't go in there"
+	line "unless you have"
+	cont "FLASH."
 	done
 
 BugCatcherWade1SeenText:
-	text "I caught a bunch"
-	line "of #MON. Let me"
-	cont "battle with you!"
+	text "I'm not afraid"
+	line "of the dark."
+
+	para "Bugs live most"
+	line "of their lives"
+	cont "underground."
 	done
 
 BugCatcherWade1BeatenText:
-	text "Awwwww…"
+	text "You are strong!"
 	done
 
 BugCatcherWade1AfterText:
-	text "You can catch"
-	line "#MON even if"
-
-	para "you have six with"
-	line "you."
-
-	para "If you catch one,"
-	line "it'll go to your"
-	cont "BOX automatically."
+	text "You can have a"
+	line "variety of TYPES"
+	cont "while still using"
+	cont "your favorites."
 	done
 
 Text_Route31SleepyMan:
-	text "… Hnuurg… Huh?"
+	text "I found a really"
+	line "strong #MON in"
+	cont "DARK CAVE but"
+	cont "I don't have"
+	cont "enough BADGES to"
+	cont "catch it!"
 
-	para "I walked too far"
-	line "today looking for"
-	cont "#MON."
-
-	para "My feet hurt and"
-	line "I'm sleepy…"
-
-	para "If I were a wild"
-	line "#MON, I'd be"
-	cont "easy to catch…"
-
-	para "…Zzzz…"
-	done
-
-Text_Route31SleepyManGotMail:
-	text "…Zzzz… Huh?"
-
-	para "What's that? You"
-	line "have MAIL for me?"
-	done
-
-Text_Route31HandOverMailMon:
-	text "<PLAYER> handed"
-	line "over the #MON"
-	cont "holding the MAIL."
-	done
-
-Text_Route31ReadingMail:
-	text "Let's see…"
-
-	para "…DARK CAVE leads"
-	line "to another road…"
-
-	para "That's good to"
-	line "know."
-
-	para "Thanks for bring-"
-	line "ing this to me."
-
-	para "My friend's a good"
-	line "guy, and you're"
-	cont "swell too!"
-
-	para "I'd like to do"
-	line "something good in"
-	cont "return too!"
-
-	para "I know! I want you"
-	line "to have this!"
-	done
-
-Text_Route31DescribeNightmare:
-	text "TM50 is NIGHTMARE."
-
-	para "It's a wicked move"
-	line "that steadily cuts"
-
-	para "the HP of a sleep-"
-	line "ing enemy."
-
-	para "Ooooh…"
-	line "That's scary…"
-
-	para "I don't want to"
-	line "have bad dreams."
-	done
-
-Text_Route31WrongMail:
-	text "This MAIL isn't"
-	line "for me."
-	done
-
-Text_Route31MissingMail:
-	text "Why is this #-"
-	line "MON so special?"
-
-	para "It doesn't have"
-	line "any MAIL."
-	done
-
-Text_Route31DeclinedToHandOverMail:
-	text "What? You don't"
-	line "want anything?"
-	done
-
-Text_Route31CantTakeLastMon:
-	text "If I take that"
-	line "#MON from you,"
-
-	para "what are you going"
-	line "to use in battle?"
+	para "You need BADGES"
+	line "to catch high"
+	cont "level #MON."
 	done
 
 Route31YoungsterText:
@@ -609,7 +471,6 @@ Route31_MapEvents:
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
 	object_event 11,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderGiantDad, -1
-
 	object_event 40, 8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route31FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 29, 2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route31FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 9,  12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route31FieldMon3Script, EVENT_FIELD_MON_3

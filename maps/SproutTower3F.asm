@@ -192,50 +192,52 @@ SproutTower3FRivalLeavesElderMovement:
 	step_end
 
 SproutTowerElderLecturesRivalText:
-	text "ELDER: You are in-"
-	line "deed skilled as a"
-	cont "trainer."
+	text "ELDER: You are"
+	line "powerful."
 
-	para "As promised, here"
-	line "is your HM."
+	para "And though you"
+	line "may not know it"
+	cont "there is light"
+	cont "in your heart."
 
-	para "But let me say"
-	line "this: You should"
+	para "But your anger"
+	line "and arrogance"
+	cont "make you weak."
 
-	para "treat your"
-	line "#MON better."
-
-	para "The way you battle"
-	line "is far too harsh."
-
-	para "#MON are not"
-	line "tools of war…"
+	para "And susceptible"
+	line "to the darkness."
 	done
 
 SproutTowerRivalOnlyCareAboutStrongText:
 	text "…"
 	line "…Humph!"
 
-	para "He claims to be"
-	line "the ELDER but"
-	cont "he's weak."
+    para "The ELDER speaks"
+    line "of light and"
+    cont "dark like a child."
 
-	para "It stands to"
-	line "reason."
+    para "Nothing in the"
+    line "world is so clear."
 
-	para "I'd never lose to"
-	line "fools who babble"
+    para "One persons hero"
+    line "is another persons"
+    cont "oppressor."
 
-	para "about being nice"
-	line "to #MON."
+    para "There are only"
+    line "two kinds of"
+    cont "people."
 
-	para "I only care about"
-	line "strong #MON"
-	cont "that can win."
+    para "The strong and"
+    line "the weak."
 
-	para "I really couldn't"
-	line "care less about"
-	cont "weak #MON."
+    para "That is how it"
+    line "has always been."
+
+    para "I know which one"
+    line "you and him are."
+
+    para "Stay out of"
+    line "my way."
 	done
 
 SproutTowerRivalUsedEscapeRopeText:
@@ -244,114 +246,183 @@ SproutTowerRivalUsedEscapeRopeText:
 	done
 
 SageLiSeenText:
-	text "So good of you to"
-	line "come here!"
+	text "Ah it is good"
+	line "to see you."
 
-	para "SPROUT TOWER is a"
-	line "place of training."
+	para "There are in"
+	line "fact three types"
+	cont "of people."
 
-	para "People and #MON"
-	line "test their bonds"
+	para "Those that fight"
+	line "the darkness."
 
-	para "to build a bright"
-	line "future together."
+	para "Such as me."
 
-	para "I am the final"
-	line "test."
+	para "Those that are"
+	line "seduced by the"
+	cont "darkness."
 
-	para "Allow me to check"
-	line "the ties between"
+	para "Like a former"
+	line "brother of ours."
 
-	para "your #MON and"
-	line "you!"
+	para "And those like"
+	line "that poor man."
+
+	para "Caught in the"
+	line "middle."
+
+	para "Oblivious to"
+	line "the danger."
+
+	para "Let me see which"
+	line "you are."
 	done
 
 SageLiBeatenText:
-	text "Ah, excellent!"
+	text "Incredible!"
 	done
 
 SageLiTakeThisFlashText:
-	text "You and your #-"
-	line "MON should have"
+	text "You have within"
+	line "you a light."
 
-	para "no problem using"
-	line "this move."
+	para "Brighter than"
+	line "any I have ever"
+	cont "felt."
 
-	para "Take this FLASH"
-	line "HM."
+	para "A light that"
+	line "will cut through"
+	cont "any darkness."
+
+	para "You must take"
+	line "this."
 	done
 
 SageLiFlashExplanationText:
-	text "FLASH illuminates"
-	line "even the darkest"
-	cont "of all places."
+	text "FLASH is the"
+	line "manifestation of"
+	cont "ones will to"
+	cont "reject the"
+	cont "inevitability"
+	cont "of death."
 
-	para "But to use it out"
-	line "of battle, you"
+	para "It will shine in"
+	line "the darkest of"
+	cont "places."
 
-	para "need the BADGE"
-	line "from VIOLET's GYM."
+	para "You do not have"
+	line "to teach the move"
+	cont "for your #MON"
+	cont "to use it."
+
+	para "Check your"
+	line "#MON when in"
+	cont "a dark place to"
+	cont "see which can"
+	cont "use it."
 	done
 
 SageLiAfterBattleText:
-	text "I hope you learn"
-	line "and grow from your"
-	cont "journey."
+	text "I am but a"
+	line "candle trying"
+	cont "desperately to"
+	cont "stay alight."
+
+	para "You are a blazing"
+	line "star that erases"
+	cont "all darkness"
+
+	para "But even stars"
+	line "fade."
+
+	para "In the end all"
+	line "things return"
+	cont "to the dark."
+
+	para "We must make our"
+	line "peace with this."
 	done
 
 SageJinSeenText:
-	text "I train to find"
-	line "enlightenment in"
-	cont "#MON!"
+	text "You have done"
+	line "well dear child."
+
+	para "Now let your"
+	line "light shine"
+	cont "upon me."
 	done
 
 SageJinBeatenText:
-	text "My training is"
-	line "incomplete…"
+	text "I am humbled"
 	done
 
 SageJinAfterBattleText:
-	text "As #MON grow"
-	line "stronger, so does"
-	cont "the trainer."
-
-	para "No, wait. As the"
-	line "trainer grows"
-
-	para "stronger, so do"
-	line "the #MON."
+	text "It brings peace"
+	line "to my soul to"
+	cont "know there are"
+	cont "young people like"
+	cont "you."
 	done
 
 SageTroySeenText:
-	text "Let me see how"
-	line "much you trust"
-	cont "your #MON."
+	text "We do not speak"
+	line "his name."
+
+	para "But he was my"
+	line "friend."
 	done
 
 SageTroyBeatenText:
-	text "Yes, your trust is"
-	line "real!"
+	text "You remind me"
+	line "of him."
 	done
 
 SageTroyAfterBattleText:
-	text "It is not far to"
-	line "the ELDER."
+	text "XEHANORT."
+
+	para "He thought that"
+	line "light and dark"
+	cont "must exist in"
+	cont "balance."
+
+	para "And that we as"
+	line "being of pure"
+	cont "light disrupt"
+	cont "that balance."
+
+	para "He left for"
+	line "DARK CAVE."
+
+	para "We have not"
+	line "seen him since."
 	done
 
 SageNealSeenText:
-	text "The ELDER's HM"
-	line "lights even pitch-"
-	cont "black darkness."
+	text "HMs are special"
+	line "moves that change"
+	cont "the world around"
+	cont "you."
+
+	para "You don't need to"
+	line "teach them to"
+	cont "#MON to be"
+	cont "able to use them."
 	done
 
 SageNealBeatenText:
-	text "It is my head that"
-	line "is bright!"
+	text "FLASH shall no"
+	line "doubt be yours."
 	done
 
 SageNealAfterBattleText:
-	text "Let there be light"
-	line "on your journey."
+	text "A #MON can"
+	line "use an HM as"
+	cont "long as it is"
+	cont "able to learn it."
+
+	para "It doesn't"
+	line "actually need to"
+	cont "know it."
 	done
 
 SproutTower3FPaintingText:
@@ -363,8 +434,8 @@ SproutTower3FPaintingText:
 SproutTower3FStatueText:
 	text "A #MON statue…"
 
-	para "It looks very"
-	line "distinguished."
+	para "There is something"
+	line "eerie about it."
 	done
 
 SproutTower3FFieldMon1Script:

@@ -17,7 +17,16 @@ VioletGymFalknerScript:
 	writetext FalknerIntroText
 	waitbutton
 	closetext
-	winlosstext FalknerWinLossText, 0
+	yesorno
+	opentext
+	writetext FalknerHaikuText
+	waitbutton
+	closetext
+	opentext
+	writetext FalknerIntroText2
+	waitbutton
+	closetext
+	winlosstext FalknerLossText, FalknerWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer FALKNER, FALKNER1
 	startbattle
@@ -47,10 +56,19 @@ VioletGymFalknerScript:
 	closetext
 	end
 .rematch
-    writetext FalknerIntroText
+	writetext FalknerIntroText
 	waitbutton
 	closetext
-	winlosstext FalknerWinLossText, 0
+	yesorno
+	opentext
+	writetext FalknerHaikuText
+	waitbutton
+	closetext
+	opentext
+	writetext FalknerIntroText2
+	waitbutton
+	closetext
+	winlosstext FalknerLossText, FalknerWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer FALKNER, FALKNER1
 	startbattle
@@ -135,28 +153,46 @@ FalknerIntroText:
 	line "VIOLET #MON GYM"
 	cont "leader!"
 
-	para "People say you can"
-	line "clip flying-type"
-
-	para "#MON's wings"
-	line "with a jolt of"
-	cont "electricity…"
-
-	para "I won't allow such"
-	line "insults to bird"
-	cont "#MON!"
-
-	para "I'll show you the"
-	line "real power of the"
-
-	para "magnificent bird"
-	line "#MON!"
+	para "I wrote a haiku"
+	line "would you like"
+	cont "to hear it?"
 	done
 
-FalknerWinLossText:
-	text "…Darn! My dad's"
-	line "cherished bird"
-	cont "#MON…"
+FalknerHaikuText:
+    text "My feathers"
+    line "are black."
+
+    para "My blanket is"
+    line "the night sky."
+
+    para "Darkness my"
+    line "weapon."
+    done
+
+FalknerIntroText2:
+    text "I wont ask what"
+    line "you think."
+
+    para "For your opinion"
+    line "doesn't matter"
+    cont "to me."
+
+    para "You are here for"
+    line "a battle."
+
+    para "Just like all"
+    line "the rest."
+
+    para "Your #MON"
+    line "journey ends"
+    cont "here."
+    done
+
+FalknerLossText:
+	text "You are not"
+	line "like the rest."
+
+	para "You don't conform."
 
 	para "All right."
 	line "Take this."
@@ -166,6 +202,14 @@ FalknerWinLossText:
 	cont "ZEPHYRBADGE."
 	done
 
+FalknerWinText:
+	text "You did well."
+
+	para "Now fly through"
+	line "the night once"
+	cont "more."
+	done
+
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
 	line "ZEPHYRBADGE."
@@ -173,42 +217,36 @@ ReceivedZephyrBadgeText:
 
 FalknerZephyrBadgeText:
 	text "ZEPHYRBADGE"
-	line "raises the attack"
-	cont "power of #MON."
-
-	para "It also enables"
-	line "#MON to use"
-
-	para "FLASH, if they"
-	line "have it, anytime."
+	line "enables #MON"
+	line "to use FLASH."
 
 	para "Here--take this"
 	line "too."
 	done
 
 FalknerTMMudSlapText:
-	text "By using a TM, a"
-	line "#MON will"
+	text "A TM can teach"
+	line "your #MON a"
+	cont "new move."
 
-	para "instantly learn a"
-	line "new move."
+	para "You can use it"
+	line "as many times as"
+	cont "you like."
 
-	para "A TM can be used"
-    line "as many times as"
-    cont "you like."
+	para "But be careful"
+	line "what move you"
+	cont "delete for it."
 
-	para "TM31 contains"
-	line "MUD-SLAP."
+	para "This TM teaches"
+	line "SWIFT."
 
-	para "It reduces the"
-	line "enemy's accuracy"
+	para "SWIFT is a move"
+	line "which can never"
+	cont "miss."
 
-	para "while it causes"
-	line "damage."
-
-	para "In other words, it"
-	line "is both defensive"
-	cont "and offensive."
+	para "It offers security"
+	line "and certainty in"
+	cont "a troubled world."
 	done
 
 FalknerFightDoneText:
@@ -216,58 +254,86 @@ FalknerFightDoneText:
 	line "GYMS in cities and"
 	cont "towns ahead."
 
-	para "You should test"
-	line "your skills at"
-	cont "these GYMS."
+	para "You will face"
+	line "many challenges"
+	cont "along the way."
 
-	para "I'm going to train"
-	line "harder to become"
+	para "Many people will"
+	line "give you advise"
+	cont "and try to mold"
+	cont "you as they want."
 
-	para "the greatest bird"
-	line "master!"
+	para "You live your"
+	line "life the way you"
+	cont "see fit."
+
+	para "Nobody has the"
+	line "right to tell"
+	cont "you what to do!"
+
+	para "And I must be"
+	line "strong enough to"
+	cont "take my own"
+	cont "advise."
+
+	para "Good luck!"
 	done
 
 BirdKeeperRodSeenText:
-	text "The keyword is"
-	line "guts!"
+	text "I have my"
+	line "concerns about"
+	cont "FALKNER."
 
-	para "Those here are"
-	line "training night and"
-
-	para "day to become bird"
-	line "#MON masters."
-
-	para "Come on!"
+	para "The darkness may"
+	line "have hold of"
+	cont "him."
 	done
 
 BirdKeeperRodBeatenText:
-	text "Gaaah!"
+	text "My beautiful"
+	line "wings!"
 	done
 
 BirdKeeperRodAfterBattleText:
-	text "FALKNER's skills"
-	line "are for real!"
+	text "Even in his"
+	line "current state"
+	cont "FALKNER is far"
+	cont "stronger than I."
 
-	para "Don't get cocky"
-	line "just because you"
-	cont "beat me!"
+	para "But I wish I"
+	line "didn't have to"
+	cont "endure his"
+	cont "poetry..."
 	done
 
 BirdKeeperAbeSeenText:
-	text "Let me see if you"
-	line "are good enough to"
-	cont "face FALKNER!"
+	text "Here we soar"
+	line "above the clouds."
+
+	para "Above the petty"
+	line "problems of our"
+	cont "lives."
+
+	para "I am the STARAPTOR"
+	line "and there is"
+	cont "blood on my"
+	cont "feathers!"
 	done
 
 BirdKeeperAbeBeatenText:
-	text "This can't be"
-	line "true!"
+	text "I must FLY!"
 	done
 
 BirdKeeperAbeAfterBattleText:
-	text "This is pathetic,"
-	line "losing to some"
-	cont "rookie trainer…"
+	text "All those who"
+	line "see me."
+
+	para "And all who"
+	line "believe in me."
+
+	para "Share in the"
+	line "freedom I feel"
+	cont "when I FLY!"
 	done
 
 VioletGymGuideText:
@@ -275,28 +341,30 @@ VioletGymGuideText:
 	line "er but I can give"
 	cont "some advice!"
 
-	para "Believe me!"
-	line "If you believe, a"
+	para "This GYM utilizes"
+	line "FLYING type"
+	cont "#MON."
 
-	para "championship dream"
-	line "can come true."
+	para "These wont do"
+	line "much damage to"
+	cont "a good ROCK or"
+	cont "STEEL type."
 
-	para "You believe?"
-	line "Then listen."
-
-	para "The grass-type is"
-	line "weak against the"
-
-	para "flying-type. Keep"
-	line "this in mind."
+	para "DARK CAVE might"
+	line "have some such"
+	cont "#MON"
 	done
 
 VioletGymGuideWinText:
-	text "Nice battle! Keep"
-	line "it up, and you'll"
+	text "Nice battle!"
 
-	para "be the CHAMP in no"
-	line "time at all!"
+	para "My advise was"
+	line "solid."
+
+	para "Stick with me"
+	line "and I'll make a"
+	cont "CHAMPION out"
+	cont "of you."
 	done
 
 RematchText:

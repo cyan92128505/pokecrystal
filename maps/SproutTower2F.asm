@@ -45,49 +45,67 @@ SproutTower2FXAccuracy:
 	itemball CARBOS
 
 SageNicoSeenText:
-	text "However hard we"
-	line "battle, the TOWER"
-	cont "will stand strong."
+	text "You seek the"
+	line "power of light!"
+
+	para "I have trained"
+	line "for decades."
+
+	para "Countless hard"
+	line "winters and"
+	cont "dark days."
+
+	para "To master this"
+	line "power."
+
+	para "Behold!"
 	done
 
 SageNicoBeatenText:
-	text "I fought hard but"
-	line "I'm too weak."
+	text "Years..."
+
+	para "So many years..."
 	done
 
 SageNicoAfterBattleText:
-	text "The flexible pil-"
-	line "lar protects the"
+	text "You are in the"
+	line "spring of your"
+	cont "years."
 
-	para "TOWER, even from"
-	line "earthquakes."
+	para "Don't waste the"
+	line "time you have."
 	done
 
 SageEdmondSeenText:
-	text "…Sway like leaves"
-	line "in the wind…"
+	text "The darkness is"
+	line "not something to"
+	cont "be understood."
+
+	para "It must be stamped"
+	line "out."
 	done
 
 SageEdmondBeatenText:
-	text "Oh, I'm weak!"
+	text "My light is"
+	line "not strong"
+	cont "enough."
 	done
 
 SageEdmondAfterBattleText:
-	text "I tried to copy"
-	line "BELLSPROUT's"
+	text "A former brother"
+	line "of ours."
 
-	para "gentle movements"
-	line "for battle…"
+	para "XEHANORT."
 
-	para "But I didn't train"
-	line "well enough."
+	para "He did not see"
+	line "things as we do."
 	done
 
 SproutTower2FStatueText:
 	text "A #MON statue…"
 
-	para "It looks very"
-	line "distinguished."
+	para "There is something"
+	line "eerie about it."
 	done
 
 SproutTower2FFieldMon1Script:

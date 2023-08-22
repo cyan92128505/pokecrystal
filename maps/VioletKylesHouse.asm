@@ -19,15 +19,17 @@ Kyle:
 	end
 
 VioletKylesHousePokefanMText:
-	text "A #MON you get"
-	line "in a trade grows"
-	cont "quickly."
+	text "My son used to"
+	line "dream of being a"
+	cont "DRAGON trainer."
 
-	para "But if you don't"
-	line "have the right GYM"
+	para "But since moving"
+	line "here he has become"
+	cont "infatuated by"
+	cont "DARK types."
 
-	para "BADGE, they may"
-	line "disobey you."
+	para "I hope this is"
+	line "just a phase."
 	done
 
 VioletKylesHouse_MapEvents:

@@ -83,8 +83,6 @@ INCLUDE "maps/Route32Pokecenter1F.asm"
 INCLUDE "maps/Route35GoldenrodGate.asm"
 INCLUDE "maps/Route35NationalParkGate.asm"
 INCLUDE "maps/Route36RuinsOfAlphGate.asm"
-INCLUDE "maps/Route36NationalParkGate.asm"
-
 
 SECTION "Map Scripts 6", ROMX
 
@@ -515,6 +513,7 @@ SECTION "Map Scripts Overflow 7", ROMX
 
 INCLUDE "maps/LavenderTown.asm"
 INCLUDE "maps/Route35.asm"
+INCLUDE "maps/Route36NationalParkGate.asm"
 
 SECTION "Map Scripts Overflow 8", ROMX
 

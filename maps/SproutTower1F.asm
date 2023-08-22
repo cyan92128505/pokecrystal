@@ -45,39 +45,46 @@ SproutTower1FStatue:
 	jumptext SproutTower1FStatueText
 
 SageChowSeenText:
-	text "We stand guard in"
-	line "this tower."
-
-	para "Here, we express"
-	line "our gratitude to"
-	cont "honor all #MON."
+	text "For a thousand"
+	line "years this tower"
+	cont "has stood against"
+	cont "the darkness."
 	done
 
 SageChowBeatenText:
-	text "Th-Thank you!"
+	text "I am extinguished."
 	done
 
 SageChowAfterBattleText:
-	text "All living beings"
-	line "coexist through"
-	cont "cooperation."
+	text "This tower will"
+	line "be here long"
+	cont "after you and I"
+	cont "are no more."
 
-	para "We must always be"
-	line "thankful for this."
+	para "This brings me"
+	line "peace."
 	done
 
 SproutTower1FSage1Text:
-	text "Only if you reach"
-	line "the top will you"
-	cont "obtain an HM."
+	text "Our master is a"
+	line "lord of light."
+
+	para "He has the power"
+	line "to banish the"
+	cont "dark."
+
+	para "He will give you"
+	line "this power if"
+	cont "you defeat him."
 	done
 
 SproutTower1FSage2Text:
 	text "SPROUT TOWER was"
 	line "built long ago"
 
-	para "as a place for"
-	line "#MON training."
+	para "Here we train"
+	line "to fight the"
+	cont "darkness."
 	done
 
 SproutTower1FSage4Text:
@@ -105,10 +112,6 @@ SproutTower1FSage4Text:
 	para "I am sorry."
 	done
 
-	para "as a place for"
-	line "#MON training."
-	done
-
 SproutTower1FGrannyText:
 	text "A BELLSPROUT over"
 	line "100 feet tall…"
@@ -119,18 +122,19 @@ SproutTower1FGrannyText:
 	done
 
 SproutTower1FTeacherText:
-	text "See the pillar"
-	line "shaking?"
+	text "The pillar moves."
 
-	para "People are train-"
-	line "ing upstairs."
+	para "They say it moves"
+	line "with the shifting"
+	cont "tides of good"
+	cont "and evil."
 	done
 
 SproutTower1FStatueText:
 	text "A #MON statue…"
 
-	para "It looks very"
-	line "distinguished."
+	para "There is something"
+	line "eerie about it."
 	done
 
 SproutTower1F_MapEvents:

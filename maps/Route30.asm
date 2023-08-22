@@ -7,12 +7,8 @@
 	const ROUTE30_MONSTER1
 	const ROUTE30_MONSTER2
 	const ROUTE30_FRUIT_TREE1
-	;const ROUTE30_FRUIT_TREE2
-	;const ROUTE30_COOLTRAINER_F
-	;const ROUTE30_POKE_BALL
 	const ROUTE30_FIELDMON_1
 	const ROUTE30_FIELDMON_2
-	;const ROUTE30_FIELDMON_3
 	const ROUTE30_FIELDMON_4
 	const ROUTE30_FIELDMON_5
 	const ROUTE30_FIELDMON_6
@@ -306,51 +302,70 @@ Route30_MikeysRattataAttacksMovement:
 	big_step UP
 	step_end
 
-Text_UseTackle:
+Text_ThisIsABigBattle:
 	text "Go, RATTATA!"
 
 	para "TACKLE!"
 	done
 
-Text_ThisIsABigBattle:
-	text "What? This is a"
-	line "big battle!"
-	cont "Leave me alone!"
+Text_UseTackle:
+	text "Destiny!!"
+
+	para "You can not"
+	line "destroy..."
+
+	para "My destiny!"
+
+	para "RATTATA max"
+	line "power TACKLE!"
 	done
 
 YoungsterJoey1SeenText:
-	text "I just lost, so"
-	line "I'm trying to find"
-	cont "more #MON."
+	text "I could not win!"
 
-	para "Wait! You look"
-	line "weak! Come on,"
-	cont "let's battle!"
+	para "But you will see."
+
+	para "Everyone will see!"
+
+	para "One day we shall"
+	line "reach the peak"
+	cont "of power"
+
+	para "Come now!"
+
+	para "Face my ultimate"
+	line "RATTATA!!"
 	done
 
 YoungsterJoey1BeatenText:
-	text "Ack! I lost again!"
-	line "Doggone it!"
+	text "It's ok..."
+	line "It's ok..."
 	done
 
 YoungsterJoey1AfterText:
-	text "Do I have to have"
-	line "more #MON in"
+	text "I will never"
+	line "catch another"
+	cont "#MON."
 
-	para "order to battle"
-	line "better?"
+	para "I don't need more!"
 
-	para "No! I'm sticking"
-	line "with this one no"
-	cont "matter what!"
+	para "One day my RATTATA"
+	line "shall become..."
+
+	para "A RAT GOD!"
 	done
 
 YoungsterMikeySeenText:
-	text "You're a #MON"
-	line "trainer, right?"
+	text "That last guy"
+	line "never shuts up"
+	cont "about his weak"
+	cont "RATTATA."
 
-	para "Then you have to"
-	line "battle!"
+	para "You need more"
+	line "than just one"
+	cont "#MON."
+
+	para "I'll show you."
 	done
 
 YoungsterMikeyBeatenText:
@@ -359,53 +374,69 @@ YoungsterMikeyBeatenText:
 	done
 
 YoungsterMikeyAfterText:
-	text "Becoming a good"
-	line "trainer is really"
-	cont "tough."
+	text "You can rematch"
+	line "trainers by"
+	cont "talking to them"
+	cont "again."
 
-	para "I'm going to bat-"
-	line "tle other people"
-	cont "to get better."
+	para "But you don't"
+	line "get as much EXP."
 	done
 
 BugCatcherDonSeenText:
-	text "Instead of a bug"
-	line "#MON, I found"
-	cont "a trainer!"
+	text "BUG #MON are"
+	line "the strongest!"
+
+	para "They EVOLVE fast."
+	line "and swarm their"
+	cont "enemies."
 	done
 
 BugCatcherDonBeatenText:
-	text "Argh! You're too"
-	line "strong!"
+	text "I need more BUGS!"
 	done
 
 BugCatcherDonAfterText:
-	text "I ran out of #"
-	line "BALLS while I was"
-	cont "catching #MON."
+	text "If you see a"
+	line "bright red"
+	cont "trainer you"
+	cont "be sure to run!"
 
-	para "I should've bought"
-	line "some more…"
+	para "Don't let them"
+	line "see you."
 	done
 
 Route30YoungsterText_DirectionsToMrPokemonsHouse:
-	text "MR.#MON's"
-	line "house? It's a bit"
-	cont "farther ahead."
+	text "I saw PROF OAK"
+	line "entering a house"
+	cont "further up ahead."
 	done
 
 Route30YoungsterText_EveryoneIsBattling:
-	text "Everyone's having"
-	line "fun battling!"
-	cont "You should too!"
+	text "A guy back in town"
+	line "wanted to play a"
+	cont "game with me but"
+	cont "it took too long"
+	cont "and was so boring."
+
+	para "I left as soon"
+	line "as I could!"
 	done
 
 Route30CooltrainerFText:
-	text "I'm not a trainer."
+	text "There is a dark"
+	line "and scary cave"
+	cont "to the NORTH."
 
-	para "But if you look"
-	line "one in the eyes,"
-	cont "prepare to battle."
+	para "This is important"
+
+	para "...."
+
+	para "If you see a"
+	line "bright red trainer"
+	cont "you run away and"
+	cont "don't let them see"
+	cont "you!"
 	done
 
 Route30SignText:
@@ -416,38 +447,39 @@ Route30SignText:
 	done
 
 MrPokemonsHouseDirectionsSignText:
-	text "MR.#MON'S HOUSE"
+	text "AGENT HOUSE"
 	line "STRAIGHT AHEAD!"
 	done
 
 MrPokemonsHouseSignText:
-	text "MR.#MON'S HOUSE"
+	text "AGENT HOUSE"
 	done
 
 Route30TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "No stealing other"
-	line "people's #MON!"
+	para "You need BADGES"
+	line "to catch higher"
+	cont "level #MON."
 
-	para "# BALLS are to"
-	line "be thrown only at"
-	cont "wild #MON!"
+	para "With no BADGES"
+	line "the highest level"
+	cont "you can catch is"
+	cont "20."
 	done
 
 YoungsterJoeyText_GiveHPUpAfterBattle:
-	text "I lost again…"
-	line "Gee, you're tough!"
+	text "You too seek"
+	line "your own destiny."
 
-	para "Oh yeah, I almost"
-	line "forgot that I had"
-	cont "to give you this."
+	para "But there can be"
+	line "only one RAT GOD!"
 
-	para "Use it to get even"
-	line "tougher, OK?"
+	para "Take this!"
 
-	para "I'm going to get"
-	line "tougher too."
+	para "It will help"
+	line "you weather the"
+	cont "storms of life."
 	done
 	
 Route30FieldMon1Script:
@@ -461,12 +493,6 @@ Route30FieldMon2Script:
 .script
     disappear ROUTE30_FIELDMON_2
     end
-    
-;Route30FieldMon3Script:
-;	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_3, Route30PokemonAttacksText, 42, 0, .script
-;.script
-;    disappear ROUTE30_FIELDMON_3
-;    end
     
 Route30PokemonAttacksText:
 	text "Wild #MON"
@@ -554,13 +580,8 @@ Route30_MapEvents:
 	object_event  5, 24, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 25, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
-	;object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
-	;object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
-	;object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
-	
 	object_event 12, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route30FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13,  3, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route30FieldMon2Script, EVENT_FIELD_MON_2
-	;object_event 18,  40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 7,  42, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 16, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 4,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon6Script, EVENT_FIELD_MON_6

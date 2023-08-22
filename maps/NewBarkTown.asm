@@ -129,6 +129,13 @@ NewBarkTownFisherScript:
 
 NewBarkTownSilverScript:
 	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iffalse .noPokemon
+	writetext NewBarkTownRivalNotThatOneText
+	waitbutton
+	closetext
+	end
+.noPokemon
 	writetext NewBarkTownRivalText1
 	waitbutton
 	closetext
@@ -276,6 +283,19 @@ Text_ElmDiscoveredNewMon:
 	line "out there"
 	cont "somewhere."
 	done
+
+NewBarkTownRivalNotThatOneText:
+    text "You think that one"
+    line "was the strongest?"
+
+    para "You are as useless"
+    line "as that #MON."
+
+    para "I'll have to do"
+    line "this myself."
+
+    para "Get lost kid!"
+    done
 
 NewBarkTownRivalText1:
 	text "<……>"

@@ -21,29 +21,28 @@ VioletMartCooltrainerMScript:
 	jumptextfaceplayer VioletMartCooltrainerMText
 
 VioletMartGrannyText:
-	text "When you first"
-	line "catch a #MON,"
-	cont "it may be weak."
+	text "My son died in"
+	line "the POKERUS"
+	cont "outbreak at"
+	cont "PEWTER."
 
-	para "But it will even-"
-	line "tually grow to be"
-	cont "strong."
-
-	para "It's important to"
-	line "treat #MON with"
-	cont "love."
+	para "The MUSEUM it"
+	line "started in is"
+	cont "blocked up now."
 	done
 
 VioletMartCooltrainerMText:
-	text "#MON can hold"
-	line "items like POTION"
-	cont "and ANTIDOTE."
+	text "Some items need"
+	line "to be used in"
+	cont "battle."
 
-	para "But they don't"
-	line "appear to know how"
+	para "But some can be"
+	line "held by a #MON"
+	cont "and have passive"
+	cont "effects."
 
-	para "to use manmade"
-	line "items."
+	para "These are the"
+	line "ones you want."
 	done
 
 VioletMart_MapEvents:

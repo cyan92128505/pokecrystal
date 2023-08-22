@@ -102,12 +102,6 @@ CherrygroveCityGuideGent:
 .mapcardname
 	db "MAP CARD@"
 
-.No:
-	writetext GuideGentNoText
-	waitbutton
-	closetext
-	end
-
 CherrygroveSilverSceneSouth:
 	moveobject CHERRYGROVECITY_SILVER, 39, 7
 CherrygroveSilverSceneNorth:
@@ -162,7 +156,7 @@ CherrygroveSilverSceneNorth:
 .AfterVictorious:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
-	writetext CherrygroveRivalText_YouWon
+	writetext CherrygroveRivalText_YouLost
 	waitbutton
 	closetext
 	sjump .FinishRival
@@ -185,20 +179,7 @@ CherrygroveSilverSceneNorth:
 	end
 
 CherrygroveTeacherScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_MAP_CARD
-	iftrue .HaveMapCard
-	writetext CherrygroveTeacherText_NoMapCard
-	waitbutton
-	closetext
-	end
-
-.HaveMapCard:
-	writetext CherrygroveTeacherText_HaveMapCard
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer CherrygroveTeacherText
 
 CherrygroveYoungsterScript:
 	faceplayer
@@ -529,38 +510,31 @@ GuideGentPokegearText:
 	line "your journey!"
 	done
 
-GuideGentNoText:
-	text "Oh… It's something"
-	line "I enjoy doing…"
-
-	para "Fine. Come see me"
-	line "when you like."
-	done
-
 CherrygroveRivalText_Seen:
 	text "<……> <……> <……>"
 
-	para "You got a #MON"
-	line "at the LAB."
+	para "Ah it's you!"
 
-	para "What a waste."
-	line "A wimp like you."
+	para "How are you doing"
+	line "with your weak"
+	cont "#MON?"
 
-	para "<……> <……> <……>"
+	para "Perfectly matched"
+	line "I see."
 
-	para "Don't you get what"
-	line "I'm saying?"
+	para "I took care of"
+	line "business myself."
 
-	para "Well, I too, have"
-	line "a good #MON."
-
-	para "I'll show you"
-	line "what I mean!"
+	para "I'll show you a"
+	line "real #MON!"
 	done
 
 SilverCherrygroveWinText:
-	text "Humph. Are you"
-	line "happy you won?"
+	text "You've had a"
+	line "head start."
+
+	para "I'll crush you"
+	line "if we meet again!"
 	done
 
 CherrygroveRivalText_YouLost:
@@ -572,44 +546,46 @@ CherrygroveRivalText_YouLost:
 	line "the world's great-"
 	cont "est #MON"
 	cont "trainer."
+
+	para "You should go"
+	line "back home."
+
+	para "This world has no"
+	line "place for the"
+	cont "weak."
 	done
 
 SilverCherrygroveLossText:
-	text "Humph. That was a"
-	line "waste of time."
+	text "That was a waste"
+	line "of my time."
 	done
 
-CherrygroveRivalText_YouWon:
-	text "<……> <……> <……>"
+CherrygroveTeacherText:
+    text "Some #MON"
+    line "appear in the"
+    cont "field."
 
-	para "My name's ???."
+    para "Watch out for the"
+    line "dark red ones!"
 
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
-	done
+    para "They will attack"
+    line "you if they see"
+    cont "you!"
 
-CherrygroveTeacherText_NoMapCard:
-	text "Did you talk to"
-	line "the old man by the"
-	cont "#MON CENTER?"
-
-	para "He'll put a MAP of"
-	line "JOHTO on your"
-	cont "#GEAR."
-	done
-
-CherrygroveTeacherText_HaveMapCard:
-	text "When you're with"
-	line "#MON, going"
-	cont "anywhere is fun."
-	done
+    para "And you can't"
+    line "escape from them!"
+    done
 
 CherrygroveYoungsterText_NoPokedex:
-	text "MR.#MON's house"
-	line "is still farther"
-	cont "up ahead."
+	text "I saw PROF OAK"
+	line "come by earlier."
+
+	para "He went up NORTH."
+
+	para "There are trainers"
+	line "up there but I'm"
+	cont "sure OAK must have"
+	cont "some strong #MON."
 	done
 
 CherrygroveYoungsterText_HavePokedex:
@@ -617,11 +593,13 @@ CherrygroveYoungsterText_HavePokedex:
 	line "trainers on the"
 	cont "road."
 
-	para "My #MON lost."
-	line "They're a mess! I"
+	para "I knew I couldn't"
+	line "win!"
 
-	para "must take them to"
-	line "a #MON CENTER."
+	para "So rather than sit"
+	line "through the fight"
+	cont "I FORFEITED using"
+	cont "the RUN option."
 	done
 
 MysticWaterGuyTextBefore:

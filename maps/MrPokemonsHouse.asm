@@ -171,17 +171,27 @@ MrPokemonsHouse_OakExits:
 	step_end
 
 MrPokemonIntroText1:
-	text "Hello, hello! You"
-	line "must be <PLAY_G>."
+	text "Who are you!"
 
-	para "PROF.ELM said that"
-	line "you would visit."
+	para "A HOEN spy!"
+
+	para "A double agent!"
+
+	para "...."
+
+	para "Sorry I've just"
+	line "spent six months"
+	cont "in HOEN as a"
+	cont "spy."
+
+	para "It's is hard to"
+	line "switch off you"
+	cont "know."
 	done
 
 MrPokemonIntroText2:
-	text "This is what I"
-	line "want PROF.ELM to"
-	cont "examine."
+	text "Here I smuggled"
+	line "this out of HOEN."
 	done
 
 MrPokemonsHouse_GotEggText:
@@ -190,31 +200,32 @@ MrPokemonsHouse_GotEggText:
 	done
 
 MrPokemonIntroText3:
-	text "I know a couple"
-	line "who run a #MON"
-	cont "DAY-CARE service."
+	text "I believe it may"
+	line "contain a FAIRY"
+	cont "#MON."
 
-	para "They gave me that"
-	line "EGG."
+	para "FAIRY #MON are"
+	line "uniquely capable"
+	cont "of fighting DRAGON"
+	cont "#MON."
 
-	para "I was intrigued,"
-	line "so I sent mail to"
-	cont "PROF.ELM."
+	para "This makes them"
+	line "dangerous to the"
+	cont "leader of the HOEN"
+	cont "fleet."
 
-	para "For #MON evolu-"
-	line "tion, PROF.ELM is"
-	cont "the authority."
+	para "ADMIRAL DRAKE."
 	done
 
 MrPokemonIntroText4:
-	text "Even PROF.OAK here"
-	line "recognizes that."
+	text "But that's not"
+	line "why you're here."
 	done
 
 MrPokemonIntroText5:
-	text "If my assumption"
-	line "is correct, PROF."
-	cont "ELM will know it."
+	text "PROF OAK has"
+	line "been expecting"
+	cont "you."
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
@@ -232,11 +243,19 @@ MrPokemonText_ImDependingOnYou:
 	done
 
 MrPokemonText_AlwaysNewDiscoveries:
-	text "Life is delight-"
-	line "ful! Always, new"
+	text "People would not"
+	line "like me for"
+	cont "saying this."
 
-	para "discoveries to be"
-	line "made!"
+	para "But HOEN really"
+	line "is a beautiful"
+	cont "place."
+
+	para "It's easy to"
+	line "forget it's leader"
+	cont "wants to bring"
+	cont "pain and death"
+	cont "to so many."
 	done
 
 MrPokemonsHouse_OakText1:
@@ -246,50 +265,16 @@ MrPokemonsHouse_OakText1:
 	para "I'm OAK! A #MON"
 	line "researcher."
 
-	para "I was just visit-"
-	line "ing my old friend"
-	cont "MR.#MON."
+	para "PROF ELM speaks"
+	line "very highly of"
+	cont "you."
 
-	para "I heard you were"
-	line "running an errand"
+	para "He wants me to"
+	line "help you become"
+	cont "as strong as you"
+	cont "can."
 
-	para "for PROF.ELM, so I"
-	line "waited here."
-
-	para "Oh! What's this?"
-	line "A rare #MON!"
-
-	para "Let's see…"
-
-	para "Hm, I see!"
-
-	para "I understand why"
-	line "PROF.ELM gave you"
-
-	para "a #MON for this"
-	line "errand."
-
-	para "To researchers"
-	line "like PROF.ELM and"
-
-	para "I, #MON are our"
-	line "friends."
-
-	para "He saw that you"
-	line "would treat your"
-
-	para "#MON with love"
-	line "and care."
-
-	para "…Ah!"
-
-	para "You seem to be"
-	line "dependable."
-
-	para "How would you like"
-	line "to help me out?"
-
-	para "See? This is the"
+	para "Here this is the"
 	line "latest version of"
 	cont "#DEX."
 
@@ -309,42 +294,43 @@ MrPokemonsHouse_GetDexText:
 	done
 
 MrPokemonsHouse_OakText2:
-	text "Go meet many kinds"
-	line "of #MON and"
+	text "This will help"
+	line "you identify and"
+	cont "capture #MON."
 
-	para "complete that"
-	line "#DEX!"
+	para "But we don't have"
+	line "much time."
 
-	para "But I've stayed"
-	line "too long."
+	para "I have something"
+	line "else."
 
-	para "I have to get to"
-	line "GOLDENROD for my"
-	cont "usual radio show."
+	para "An experimental"
+	line "device that no"
+	cont "other trainer"
+	cont "has."
 
-	para "By the way <PLAY_G>"
-	line "I have send a good"
-	cont "friend of mine"
-	cont "named BILL to"
-	cont "VIOLET TOWN."
+	para "This device can"
+	line "greatly accelerate"
+	cont "a trainers"
+	cont "progression."
 
-	para "He has a special"
-	line "gift for you."
+	para "I have developed"
+	line "it with BILL."
 
-	para "An EXP SHARE!"
+	para "The inventor of"
+	line "the PC system."
 
-	para "It's a new device"
-	line "that can help you"
-	cont "become strong."
+	para "We call it the"
+	line "EXP SHARE."
 
-	para "You will find him"
-	line "at the VIOLET"
-	cont "POKE CENTER."
-	cont "It's not far"
-	cont "from here."
+	para "BILL has it and"
+	line "is waiting for"
+	cont "you at the VIOLET"
+	cont "#MON CENTER."
 
 	para "<PLAY_G>, I'm"
-	line "counting on you!"
+	line "putting my faith"
+	cont "in you!"
 	done
 
 MrPokemonText_GimmeTheScale:
@@ -352,8 +338,9 @@ MrPokemonText_GimmeTheScale:
 	line "What's that?"
 	cont "A red GYARADOS?"
 
-	para "That's rare! "
-	line "I, I want it…"
+	para "Such items are"
+	line "highly prized in"
+	cont "HOEN."
 
 	para "<PLAY_G>, would you"
 	line "care to trade it?"
@@ -373,8 +360,8 @@ MrPokemonsHouse_ForeignMagazinesText:
 	text "It's packed with"
 	line "foreign magazines."
 
-	para "Can't even read"
-	line "their titles…"
+	para "They must be"
+	line "from HOEN."
 	done
 
 MrPokemonsHouse_BrokenComputerText:
@@ -388,7 +375,7 @@ MrPokemonsHouse_StrangeCoinsText:
 	line "strange coins!"
 
 	para "Maybe they're from"
-	line "another country…"
+	line "HOEN."
 	done
 
 MrPokemonsHouse_MapEvents:

@@ -16,8 +16,8 @@ VioletGymFalknerScript:
 	iftrue .FightDone
 	writetext FalknerIntroText
 	waitbutton
-	closetext
 	yesorno
+	closetext
 	opentext
 	writetext FalknerHaikuText
 	waitbutton
@@ -58,8 +58,8 @@ VioletGymFalknerScript:
 .rematch
 	writetext FalknerIntroText
 	waitbutton
-	closetext
 	yesorno
+	closetext
 	opentext
 	writetext FalknerHaikuText
 	waitbutton

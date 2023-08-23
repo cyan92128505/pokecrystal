@@ -20,19 +20,26 @@ Route32RuinsOfAlphGateYoungsterScript:
 Route32RuinsOfAlphGateOfficerText:
 	text "RUINS OF ALPH"
 
-	para "A Look-and-Touch"
-	line "Tourist Site"
+	para "You are free to"
+	line "explore as you"
+	cont "wish."
 
-	para "Try the sliding"
-	line "stone panels!"
+	para "But be aware we"
+	line "have had reports"
+	cont "of a suspicious"
+	cont "figure appearing"
+	cont "at night."
 	done
 
 Route32RuinsOfAlphGatePokefanMText:
-	text "You're studying"
-	line "the RUINS?"
+	text "What a waste"
+	line "of money!"
 
-	para "I see a scientist"
-	line "in the making."
+	para "It's just one"
+	line "big empty room!"
+
+	para "Not a single"
+	line "UNOWN."
 	done
 
 Route32RuinsOfAlphGateYoungsterText:
@@ -40,8 +47,13 @@ Route32RuinsOfAlphGateYoungsterText:
 	line "on stone panels."
 
 	para "I tried moving"
-	line "them. I wonder"
-	cont "what they are."
+	line "them but I just"
+	cont "couldn't work"
+	cont "it out."
+
+	para "You'd need to be"
+	line "some kind of"
+	cont "genius to do it."
 	done
 
 Route32RuinsOfAlphGate_MapEvents:

@@ -5,6 +5,6 @@
 	next "represents a"
 	next "letter."
 
-	page "AB Immune to"
-	next "GROUND type"
-	next "moves.@"
+	page "AB HIDDEN POWER"
+	next "does double"
+	next "normal damage.@"

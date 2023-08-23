@@ -51,45 +51,58 @@ Route32Pokecenter1FFishingGuruText_Question:
 	line "fishing? How"
 	cont "about you?"
 
-	para "Would you like one"
-	line "of my RODS?"
+	para "My ROD may be"
+	line "old but it works"
+	cont "perfectly well!"
+
+	para "Do you like my"
+	line "ROD?"
 	done
 
 Route32Pokecenter1FFishingGuruText_Yes:
-	text "Heh, that's good"
-	line "to hear."
-
-	para "Now you're an"
-	line "angler too!"
+	text "You have made"
+	line "this old mans day!"
 	done
 
 Route32Pokecenter1FFishingGuruText_GiveOldRod:
-	text "Fishing is great!"
+	text "Here you go!"
 
-	para "If there's water,"
-	line "be it the sea or a"
-
-	para "stream, try out"
-	line "your ROD."
+	para "You can catch"
+	line "all sorts of"
+	cont "great MAGIKARP"
+	cont "with this!"
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
-	text "Oh. That's rather"
-	line "disappointing…"
+	text "Hey kid you just"
+	line "don't know a"
+	cont "quality instrument"
+	cont "when you see one."
 	done
 
 Route32Pokecenter1FFishingGuruText_After:
-	text "Yo, kid. How are"
-	line "they biting?"
+	text "Are you getting"
+	line "enjoyment from"
+	cont "my OLD ROD!"
+
+	para "You can catch"
+	line "all sorts of"
+	cont "great MAGIKARP"
+	cont "with it!"
 	done
 
 Route32Pokecenter1FCooltrainerFText:
-	text "What should I make"
-	line "my #MON hold?"
+	text "I went too deep"
+	line "into UNION CAVE."
 
-	para "Maybe an item that"
-	line "increases ATTACK"
-	cont "power…"
+	para "I needed a"
+	line "#MON that"
+	cont "can SURF."
+
+	para "I'm sure there's"
+	line "some secret path"
+	cont "hidden deep in"
+	cont "there."
 	done
 
 Route32Pokecenter1F_MapEvents:

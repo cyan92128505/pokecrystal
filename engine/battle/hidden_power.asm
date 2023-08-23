@@ -9,66 +9,39 @@ HiddenPowerDamage:
 .got_dvs
 
 ; Power:
-
-; Take the top bit from each stat
-
-	; Attack
-;	ld a, [hl]
-;	swap a
-;	and %1000
-
-	; Defense
-;	ld b, a
-;	ld a, [hli]
-;	and %1000
-;	srl a
-;	or b
-
-	; Speed
-;	ld b, a
-;	ld a, [hl]
-;	swap a
-;	and %1000
-;	srl a
-;	srl a
-;	or b
-
-	; Special
-;	ld b, a
-;	ld a, [hl]
-;	and %1000
-;	srl a
-;	srl a
-;	srl a
-;	or b
-
-; Multiply by 5
-;	ld b, a
-;	add a
-;	add a
-;	add b
-
-; Add Special & 3
-;	ld b, a
-;	ld a, [hld]
-;	and %0011
-;	add b
-
-; Divide by 2 and add 30 + 1
-;	srl a
-;	add 30
-;	inc a
-
-    ld a, 60
+; AndrewNote -Unown has 120 bp hidden power
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .gotUserSpecies
+	ld a, [wBattleMonSpecies]
+.gotUserSpecies
+    cp UNOWN
+    jr z, .unown
+    ld a, 60 ; 60 power usually
+    jr .gotPower
+.unown
+    ld a, 120 ; 120 power for UNOWN
+.gotPower
     ld d, a
 
+
 ; Type:
+; perfect dvs gives UBER hp type
+    ld a, [hli]
+    cp $FF
+    jr nz, .notPerfect
+    ld a, [hl]
+    cp $FF
+    jr nz, .notPerfect
+    ld a, UBER
+    jr .done
+.notPerfect
 
 	; Def & 3
 	ld a, [hl]
 	and %0011
 	ld b, a
-
 	; + (Atk & 3) << 2
 	ld a, [hl]
 	and %0011 << 4
@@ -76,20 +49,12 @@ HiddenPowerDamage:
 	add a
 	add a
 	or b
-
 ; Skip Normal
 	inc a
-
-; Skip Uber
-	cp UBER
-	jr c, .done
-	inc a
-
 ; Skip unused types
 	cp UNUSED_TYPES
 	jr c, .done
 	add UNUSED_TYPES_END - UNUSED_TYPES
-
 .done
 
 ; Overwrite the current move type.

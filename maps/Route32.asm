@@ -92,12 +92,6 @@ Route32CooltrainerMContinueScene:
 	closetext
 	end
 
-.GoToSproutTower: ; unreferenced
-	writetext Route32CooltrainerMText_UnusedSproutTower
-	waitbutton
-	closetext
-	end
-
 .GiveMiracleSeed:
 	writetext Route32CooltrainerMText_HaveThisSeed
 	promptbutton
@@ -134,47 +128,6 @@ Route32CooltrainerMStopsYouScene:
 	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset1
 	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset2
 	end
-
-;Route32RoarTMGuyScript:
-;	faceplayer
-;	opentext
-;	checkevent EVENT_GOT_TM05_ROAR
-;	iftrue .AlreadyHaveRoar
-;	writetext Text_RoarIntro
-;	promptbutton
-;	verbosegiveitem TM_ROAR
-;	iffalse .Finish
-;	setevent EVENT_GOT_TM05_ROAR
-;.AlreadyHaveRoar:
-;	writetext Text_RoarOutro
-;	waitbutton
-;.Finish:
-;	closetext
-;	end
-
-;Route32WannaBuyASlowpokeTailScript:
-;	turnobject ROUTE32_FISHER4, DOWN
-;	turnobject PLAYER, UP
-;	sjump _OfferToSellSlowpokeTail
-
-;SlowpokeTailSalesmanScript:
-;	faceplayer
-;_OfferToSellSlowpokeTail:
-;	setscene SCENE_ROUTE32_NOTHING
-;	opentext
-;	writetext Text_MillionDollarSlowpokeTail
-;	yesorno
-;	iffalse .refused
-;	writetext Text_ThoughtKidsWereLoaded
-;	waitbutton
-;	closetext
-;	end
-
-;.refused
-;	writetext Text_RefusedToBuySlowpokeTail
-;	waitbutton
-;	closetext
-;	end
 
 TrainerCamperRoland:
 	trainer CAMPER, ROLAND, EVENT_BEAT_CAMPER_ROLAND, CamperRolandSeenText, CamperRolandBeatenText, 0, .Script
@@ -451,19 +404,8 @@ TrainerPicnickerLiz1:
 	jumpstd RematchFScript
 	end
 
-TrainerYoungsterAlbert:
-	trainer YOUNGSTER, ALBERT, EVENT_BEAT_YOUNGSTER_ALBERT, YoungsterAlbertSeenText, YoungsterAlbertBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext YoungsterAlbertAfterText
-	waitbutton
-	closetext
-	end
-
 TrainerYoungsterGordon:
-	trainer YOUNGSTER, GORDON, EVENT_BEAT_YOUNGSTER_GORDON, YoungsterGordonSeenText, YoungsterGordonBeatenText, 0, .Script
+	trainer YOUNGSTER, GORDON, EVENT_BEAT_YOUNGSTER_GORDON, YoungsterGordonSeenText, YoungsterGordonBeatenText, YoungsterGordonWinsText, .Script
 
 .Script:
 	endifjustbattled
@@ -552,246 +494,185 @@ Movement_Route32CooltrainerMReset2:
 	step_end
 
 Route32CooltrainerMText_WhatsTheHurry:
-	text "Wait up!"
-	line "What's the hurry?"
+	text "Wait my friend!"
 	done
 
 Route32CooltrainerMText_AideIsWaiting:
 	text "<PLAYER>, right?"
-	line "Some guy wearing"
 
-	para "glasses was look-"
-	line "ing for you."
+    para "There is a"
+    line "scientific"
+    cont "looking man at"
+    cont "the Pokecenter"
+    cont "who has something"
+    cont "to give you."
 
-	para "See for yourself."
-	line "He's waiting for"
+    para "Hopefully it's"
+    line "better than the"
+    cont "paltry sum he"
+    cont "payed me for"
+    cont "stopping you."
 
-	para "you at the #MON"
-	line "CENTER."
+    para "I feel like a"
+    line "right DUNSPARCE."
 	done
 
-Route32CooltrainerMText_UnusedSproutTower:
-	text "Have you gone to"
-	line "SPROUT TOWER?"
-
-	para "If you ever visit"
-	line "VIOLET CITY, "
-
-	para "they'll expect you"
-	line "to train there."
-
-	para "That's basic for"
-	line "trainers. Go to"
-	cont "SPROUT TOWER!"
-	done
 
 Route32CooltrainerMText_VioletGym:
-	text "Have you gone to"
-	line "the #MON GYM?"
+	text "Listen buddy."
 
-	para "You can test your"
-	line "#MON and your-"
-	cont "self there."
+	para "I had a dear"
+	line "friend who went"
+	cont "this way."
 
-	para "It's a rite of"
-	line "passage for all"
-	cont "trainers!"
+	para "He left and I"
+	line "never saw him"
+	cont "again."
+
+	para "I am sure was"
+	line "attacked by a"
+	cont "rapid QUAGSIRE."
+
+	para "If only he"
+	line "had trained to"
+	cont "beat FALKNER!"
+
+	para "I will only let"
+	line "those who have"
+	cont "beaten FALKNER"
+	cont "pass."
 	done
 
 Route32CooltrainerMText_HaveThisSeed:
-	text "You have some good"
-	line "#MON there."
+	text "You have done it!"
 
-	para "It must be from"
-	line "the training you"
+	para "You have beaten"
+	line "FALKNER."
 
-	para "gave them around"
-	line "VIOLET CITY."
+	para "Take this!"
 
-	para "The training at"
-	line "the GYM must have"
-
-	para "been especially"
-	line "helpful."
-
-	para "As a souvenir of"
-	line "VIOLET CITY, take"
-	cont "this."
-
-	para "It increases the"
-	line "power of grass-"
-	cont "type moves."
+	para "It will protect"
+	line "you from the"
+	cont "QUAGSIRE."
 	done
 
 Route32CooltrainerMText_ExperiencesShouldBeUseful:
-	text "Your experiences"
-	line "in VIOLET CITY"
+	text "If only my old"
+	line "friend had not"
+	cont "of been such a"
+	cont "DUNSPARCE."
 
-	para "should be useful"
-	line "for your journey."
-	done
+	para "He left one day"
+	line "and never came"
+	cont "back!"
 
-Text_MillionDollarSlowpokeTail:
-	text "How would you like"
-	line "to have this"
-
-	para "tasty, nutritious"
-	line "SLOWPOKETAIL?"
-
-	para "For you right now,"
-	line "just ¥1,000,000!"
-
-	para "You'll want this!"
-	done
-
-Text_ThoughtKidsWereLoaded:
-	text "Tch! I thought"
-	line "kids these days"
-	cont "were loaded…"
-	done
-
-Text_RefusedToBuySlowpokeTail:
-	text "You don't want it?"
-	line "Then scram. Shoo!"
+	para "Damn those rapid"
+	line "QUAGSIRE."
 	done
 
 FisherJustinSeenText:
 	text "Whoa!"
 
-	para "You made me lose"
-	line "that fish!"
+	para "Hey kid you made"
+	line "me lose that"
+	cont "delicious"
+	cont "MAGIKARP!"
+
+	para "How will I"
+	line "feed my family"
+	cont "now!"
 	done
 
 FisherJustinBeatenText:
-	text "Sploosh!"
+	text "I'm off to"
+	line "the chippy."
 	done
 
 FisherJustinAfterText:
-	text "Calm, collected…"
-	line "The essence of"
+	text "There are many"
+	line "delicious"
+	cont "#MON in the"
+	cont "sea."
 
-	para "fishing and #-"
-	line "MON is the same."
+	para "I could fetch"
+	line "a fortune for"
+	cont "a FEEBAS."
 	done
 
 FisherRalph1SeenText:
-	text "I'm really good at"
-	line "both fishing and"
-	cont "#MON."
+	text "I'm so close"
 
-	para "I'm not about to"
-	line "lose to any kid!"
+	para "once my #MON"
+	line "evolve I shall"
+	cont "be the envy of"
+	cont "all fishers!"
 	done
 
 FisherRalph1BeatenText:
-	text "Tch! I tried to"
-	line "rush things…"
+	text "Just a little"
+	line "more."
 	done
 
 FisherRalphAfterText:
-	text "Fishing is a life-"
-	line "long passion."
-
-	para "#MON are life-"
-	line "long friends!"
+	text "JUSTIN over there"
+	line "will have a hard"
+	cont "time eating my"
+	cont "#MON once"
+	cont "they evolve."
 	done
 
 FisherRalphSwarmText:
-	text "One, two, three…"
-	line "Muahahaha, what a"
+	text "They are"
+	line "everywhere!"
 
-	para "great haul!"
-	line "I'm done! Go ahead"
+	para "Hold my legs."
 
-	para "and catch as many"
-	line "as you can, kid!"
-	done
-
-Route32UnusedFisher1SeenText: ; unreferenced
-	text "I keep catching"
-	line "the same #MON…"
-
-	para "Maybe a battle"
-	line "will turn things"
-	cont "around for me."
-	done
-
-Route32UnusedFisher1BeatenText: ; unreferenced
-	text "Nothing ever goes"
-	line "right for me now…"
-	done
-
-Route32UnusedFisher1AfterText: ; unreferenced
-	text "How come the guy"
-	line "next to me catches"
-	cont "good #MON?"
-	done
-
-Route32UnusedFisher2SeenText: ; unreferenced
-	text "Heh, I'm on a roll"
-	line "today. How about a"
-	cont "battle, kid?"
-	done
-
-Route32UnusedFisher2BeatenText: ; unreferenced
-	text "Oof. I wasn't"
-	line "lucky that time."
-	done
-
-Route32UnusedFisher2AfterText: ; unreferenced
-	text "You have to have a"
-	line "good ROD if you"
-
-	para "want to catch good"
-	line "#MON."
+	para "I'm going in!"
 	done
 
 FisherHenrySeenText:
-	text "My #MON?"
-	line "Freshly caught!"
+	text "All I can find"
+	line "are these damn"
+	cont "WOOPER!"
+
+	para "They are mocking"
+	line "me!"
 	done
 
 FisherHenryBeatenText:
-	text "SPLASH?"
+	text "Maybe I need"
+	line "a WOOPER."
 	done
 
 FisherHenryAfterText:
-	text "Freshly caught"
-	line "#MON are no"
+	text "Nearly all"
+	line "#MON can be"
+	cont "strong if raised"
+	cont "right."
 
-	para "match for properly"
-	line "raised ones."
-	done
-
-YoungsterAlbertSeenText:
-	text "I haven't seen you"
-	line "around before."
-
-	para "So you think you"
-	line "are pretty tough?"
-	done
-
-YoungsterAlbertBeatenText:
-	text "You're strong!"
-	done
-
-YoungsterAlbertAfterText:
-	text "I'm going to try"
-	line "to be the best"
-	cont "with my favorites."
-
-	para "I'm not using the"
-	line "same tough #MON"
-	cont "as everyone else."
+	para "I don't know"
+	line "about WOOPER"
+	cont "though."
 	done
 
 YoungsterGordonSeenText:
-	text "I found some good"
-	line "#MON in the"
-	cont "grass!"
+	text "Be careful!"
 
-	para "I think they'll do"
-	line "it for me!"
+	para "There is an"
+	line "INVADER down"
+	cont "there."
+
+	para "He seems like"
+	line "a bumbling fool"
+	cont "but it must be"
+	cont "a trick!"
+
+	para "You're still"
+	line "going."
+
+	para "I'll have to"
+	line "knock you out"
+	cont "to stop you."
 	done
 
 YoungsterGordonBeatenText:
@@ -799,14 +680,38 @@ YoungsterGordonBeatenText:
 	line "could win."
 	done
 
+YoungsterGordonWinsText:
+	text "I guess it's"
+	line "not that bad"
+	cont "after all!"
+	done
+
 YoungsterGordonAfterText:
-	text "The grass is full"
-	line "of clingy things."
+	text "He must be"
+	line "looking for"
+	cont "strong gear"
+	cont "at the"
+	cont "RUINS OF ALPH."
 	done
 
 CamperRolandSeenText:
-	text "That glance…"
-	line "It's intriguing."
+	text "I found a"
+	line "secret chamber"
+	cont "in the RUINS."
+
+	para "With secret"
+	line "#MON."
+
+	para "But there must"
+	line "be some mistake."
+
+	para "A secret"
+	line "#MON can't"
+	cont "be this weak!"
+
+	para "I must be"
+	line "missing"
+	cont "something."
 	done
 
 CamperRolandBeatenText:
@@ -815,30 +720,44 @@ CamperRolandBeatenText:
 	done
 
 CamperRolandAfterText:
-	text "If you don't want"
-	line "to battle, just"
-	cont "avoid eye contact."
+	text "Do these things"
+	line "evolve!?"
+
+	para "What kind of"
+	line "joke is this."
 	done
 
 PicnickerLiz1SeenText:
-	text "Uh-huh. Yeah, and"
-	line "you know…"
+	text "I only wanted"
+	line "to visit the"
+	cont "RUINS OF ALPH."
 
-	para "Pardon? Battle?"
-	line "I'm on the phone."
+	para "But I took a"
+	line "wrong turn and"
+	cont "now I'm hiding"
+	cont "from that crazy"
+	cont "flying death"
+	cont "machine!"
 
-	para "Oh, all right. But"
-	line "make it fast."
+	para "If I beat you"
+	line "maybe it will"
+	cont "stop targeting me."
 	done
 
 PicnickerLiz1BeatenText:
-	text "Oh! I've got to"
-	line "relieve my anger!"
+	text "I'm doomed."
 	done
 
 PicnickerLiz1AfterText:
-	text "I was having a"
-	line "nice chat too."
+	text "This would be a"
+	line "nice place for"
+	cont "a picnic or a"
+	cont "date."
+
+	para "You know if it"
+	line "wasn't for the"
+	cont "flying death"
+	cont "machines..."
 	done
 
 InvaderSiegmeyerSeenText:
@@ -879,34 +798,14 @@ InvaderSiegmeyerAfterText:
 	line "a fine knight."
 	done
 
-Route32UnusedText: ; unreferenced
-	text "The fishermen"
-	line "yelled at me for"
-	cont "bugging them…"
-	done
-
-Text_RoarIntro:
-	text "WROOOOAR!"
-	line "PEOPLE RUN WHEN I"
-
-	para "ROAR! BUT YOU"
-	line "CAME LOOKING!"
-
-	para "THAT PLEASES ME!"
-	line "NOW TAKE THIS!"
-	done
-
-Text_RoarOutro:
-	text "WROOOAR!"
-	line "IT'S ROAR!"
-
-	para "EVEN #MON RUN"
-	line "FROM A GOOD ROAR!"
-	done
-
 MeetFriedaText:
-	text "FRIEDA: Yahoo!"
-	line "It's Friday!"
+	text "FRIEDA: TGIF!"
+
+	para "It's Friday!"
+
+	para "We don't work"
+	line "four day weeks"
+	cont "over here."
 
 	para "I'm FRIEDA of"
 	line "Friday!"
@@ -915,8 +814,11 @@ MeetFriedaText:
 	done
 
 FriedaGivesGiftText:
-	text "Here's a POISON"
-	line "BARB for you!"
+	text "Here take this."
+
+	para "It will help"
+	line "you through the"
+	cont "9 to 5."
 	done
 
 FriedaGaveGiftText:
@@ -937,18 +839,23 @@ FriedaFridayText:
 	text "FRIEDA: Hiya! What"
 	line "day do you like?"
 
-	para "I love Friday. No"
-	line "doubt about it!"
+	para "I love Friday."
 
-	para "Don't you think"
-	line "it's great too?"
+	para "It means the"
+	line "weekend is"
+	cont "here!"
+
+	para "You know unless"
+	line "you're lazy and"
+	cont "have a four day"
+	cont "week."
 	done
 
 FriedaNotFridayText:
 	text "FRIEDA: Isn't it"
 	line "Friday today?"
 
-	para "It's so boring"
+	para "It's so awful"
 	line "when it's not!"
 	done
 

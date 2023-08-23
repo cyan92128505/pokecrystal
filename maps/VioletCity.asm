@@ -201,74 +201,112 @@ VioletCitySpinningEarl_MovementData:
 	step_end
 
 Text_EarlAsksIfYouBeatFalkner:
-	text "Hello!"
-	line "You are trainer?"
+	text "Ah a new trainer."
 
-	para "Battle GYM LEADER,"
-	line "win you did?"
+	para "Have you defeated"
+	line "GYM LEADER"
+	cont "FALKNER?"
 	done
 
 Text_VeryNiceIndeed:
-	text "Ooh, la la!"
-	line "Very indeed nice!"
+	text "I see..."
+
+	para "You must be a"
+	line "real prodigy."
 	done
 
 Text_FollowEarl:
-	text "Is that so? Then"
-	line "study shall you!"
-	cont "Follow me!"
+	text "There is much"
+	line "to learn."
+
+	para "Follow me."
+
+	para "I'll show a"
+	line "place where you"
+	cont "can find the"
+	cont "answers."
 	done
 
 Text_HereTeacherIAm:
-	text "Here, teacher I"
-	line "am. Good it is"
-	cont "you study here!"
+	text "This is a school"
+	line "for #MON"
+	cont "trainers."
+
+	para "I teach here."
+
+	para "FALKNER used to"
+	line "be a student of"
+	cont "mine."
+
+	para "I can teach"
+	line "you too."
 	done
 
 VioletCityLassText:
-	text "Ghosts are rumored"
-	line "to appear in"
-	cont "SPROUT TOWER."
+	text "SPROUT TOWER"
+	line "is full of GHOST"
+    cont "#MON."
 
-	para "They said normal-"
-	line "type #MON moves"
+    para "I think they"
+    line "came out from"
+    cont "the basement"
+    cont "they discovered."
 
-	para "had no effect on"
-	line "ghosts."
+    para "What other secrets"
+    line "are buried under"
+    cont "that tower."
 	done
 
 VioletCitySuperNerdText:
-	text "Hey, you're a"
-	line "#MON trainer?"
+	text "I tried being"
+	line "a #MON trainer"
+	cont "but I couldn't"
+	cont "beat FALKNER."
 
-	para "If you beat the"
-	line "GYM LEADER here,"
+	para "I don't mind."
 
-	para "you'll be ready"
-	line "for prime time!"
+	para "Everybody knows"
+	line "the LEAGUE wants"
+	cont "trainers so they"
+	cont "can send them"
+	cont "off to war."
 	done
 
 VioletCityGrampsText:
-	text "FALKNER, from the"
-	line "VIOLET #MON"
+	text "The SAGES at"
+	line "SPROUT TOWER"
+	cont "always talk of"
+	cont "fighting the"
+	cont "darkness."
 
-	para "GYM, is a fine"
-	line "trainer!"
+	para "But I saw one"
+	line "of them at DARK"
+	cont "CAVE."
 
-	para "He inherited his"
-	line "father's gym and"
-
-	para "has done a great"
-	line "job with it."
+	para "I think they"
+	line "nurturing the"
+	cont "darkness so"
+	cont "their beliefs"
+	cont "appear relevant."
 	done
 
 VioletCityYoungsterText:
-	text "I saw a wiggly"
-	line "tree up ahead!"
+	text "My friends have"
+	line "a secret hiding"
+	cont "place behind the"
+	cont "GYM."
 
-	para "If you touch it,"
-	line "it squirms and"
-	cont "dances! Cool!"
+	para "You need SURF"
+	line "to get there."
+
+	para "When the HOEN"
+	line "army comes for"
+	cont "us I'll hide"
+	cont "there."
+
+	para "I hope HOEN"
+	line "#MON can't"
+	cont "swim!"
 	done
 
 VioletCitySignText:

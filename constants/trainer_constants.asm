@@ -860,6 +860,10 @@ KRIS EQU __trainer_class__
     const HOEN_WAR_JANINE
     const HOEN_WAR_WALLACE
 
+    const MULTIVERSE_HEROES        ; luke, darkMagG, Goku, Aero, Gandalf, Merlin
+    const MULTIVERSE_VILLAINS      ; Freiza, Mordred, Necrofiend, Palp, GeoWeapon, Sauron
+    const MULTIVERSE_DEITIES       ; Force, Shenron, Exodia, Galadreil, Aithusa, Arceus
+
     trainerclass ROLE_PLAYER_SHINY ; 48
     const DBZ_CH5_VEGETA
     const DBZ_CH5_GOKU

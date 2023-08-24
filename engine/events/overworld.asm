@@ -1009,6 +1009,45 @@ GoldDiceScript:
     opentext
     writetext GoldDiceText
 
+    checkflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
+    iffalse .defaultGoldDice
+
+.finalGoldDice
+	loadmenu .FinalGoldDiceWarpMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .dbz
+	ifequal 2, .yugioh
+	ifequal 3, .merlin
+	ifequal 4, .starWars
+	ifequal 5, .lotr
+	ifequal 6, .hoenWar
+	ifequal 7, .multiverse
+	ifequal 8, .exit
+	closetext
+	end
+.FinalGoldDiceWarpMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 9
+	dw .FinalGoldDiceWarpMenuData
+	db 1 ; default option
+.FinalGoldDiceWarpMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 4, 2 ; rows, columns
+	db 8 ; spacing
+	dba .FinalGoldDiceWarpText
+	dbw BANK(@), NULL
+.FinalGoldDiceWarpText:
+	db "DBZ@"
+	db "YUGIOH@"
+	db "MERLIN@"
+	db "STAR WARS@"
+	db "LOTR@"
+	db "HOEN WAR@"
+	db "FINAL@"
+	db "EXIT@"
+
+.defaultGoldDice
 	loadmenu .GoldDiceWarpMenuHeader
 	_2dmenu
 	closewindow
@@ -1057,6 +1096,13 @@ GoldDiceScript:
 .hoenWar
     warpfacing UP, SILVER_CAVE_OUTSIDE, 26, 20
     end
+.multiverse
+    warpfacing UP, HALL_OF_ORIGIN, 2, 22
+    end
+.exit
+    closetext
+    end
+
 
 GoldDiceText:
     text "What game do you"

@@ -77,6 +77,11 @@ ReadTrainerPartyPieces:
 
 ; level
 	ld [wCurPartyLevel], a
+	and a
+	jr nz, .notZero
+	ld a, $FF ; level 0 is treated as 255
+	ld [wCurPartyLevel], a
+.notZero
 
 ; species
 	call GetNextTrainerDataByte

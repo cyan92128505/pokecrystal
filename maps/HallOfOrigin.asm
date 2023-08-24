@@ -5,6 +5,7 @@
     const HALLOFORIGIN_MEWTWO_POKEBALL
     const HALLOFORIGIN_ZYGARDE_1
     const HALLOFORIGIN_ZYGARDE_2
+    const HALLOFORIGIN_ROLEPLAYER
 
 HallOfOrigin_MapScripts:
 	def_scene_scripts
@@ -1131,6 +1132,257 @@ Zygarde2Script:
 	setevent EVENT_FIELD_MON_2
 	disappear HALLOFORIGIN_ZYGARDE_2
 	end
+	
+MultiverseRolePlayScript:
+    faceplayer
+    opentext
+    writetext MultiverseIntroText
+    yesorno
+    iffalse .refused
+    special TryQuickSave
+    iffalse .refused
+    setval 0
+    writemem wHandOfGod
+    writetext MultiverseCharacterChoiceText
+	loadmenu .MultiverseCharacterMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Heroes
+	ifequal 2, .Villains
+	ifequal 3, .Deities
+	closetext
+	end
+.MultiverseCharacterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 7
+	dw .MultiverseCharacterMenuData
+	db 1 ; default option
+.MultiverseCharacterMenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 3, 1 ; rows, columns
+	db 5 ; spacing
+	dba .MultiverseCharacterText
+	dbw BANK(@), NULL
+.MultiverseCharacterText:
+	db "HEROES@"
+	db "VILLAINS@"
+	db "DEITIES@"
+
+.Heroes
+    opentext
+    writetext MultiverseHeroes1Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval MULTIVERSE_HEROES
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext MultiverseVictoryText, MultiverseDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, MULTIVERSE_VILLAINS
+	startbattle
+	reloadmap
+
+    opentext
+    writetext MultiverseHeroes2Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval MULTIVERSE_HEROES
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_FINAL_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext MultiverseVictoryText, MultiverseDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, MULTIVERSE_DEITIES
+	startbattle
+	reloadmap
+
+	sjump .endMultiverse
+
+.Villains
+    opentext
+    writetext MultiverseVillains1Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval MULTIVERSE_VILLAINS
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_CHAMPION_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext MultiverseVictoryText, MultiverseDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, MULTIVERSE_DEITIES
+	startbattle
+	reloadmap
+
+    opentext
+    writetext MultiverseVillains2Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval MULTIVERSE_VILLAINS
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_FINAL_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext MultiverseVictoryText, MultiverseDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, MULTIVERSE_HEROES
+	startbattle
+	reloadmap
+
+	sjump .endMultiverse
+
+.Deities
+    opentext
+    writetext MultiverseDeities1Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval MULTIVERSE_DEITIES
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_CHAMPION_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext MultiverseVictoryText, MultiverseDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, MULTIVERSE_VILLAINS
+	startbattle
+	reloadmap
+
+    opentext
+    writetext MultiverseDeities2Text
+    waitbutton
+    closetext
+	setval ROLE_PLAYER_NORMAL
+	writemem wOtherTrainerClass
+	setval MULTIVERSE_DEITIES
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+	setval MUSIC_FINAL_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext MultiverseVictoryText, MultiverseDefeatText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer ROLE_PLAYER_NORMAL, MULTIVERSE_HEROES
+	startbattle
+	reloadmap
+
+.endMultiverse
+	opentext
+	writetext MultiverseRolePlayFinalText
+	waitbutton
+	closetext
+
+    checkevent EVENT_BEAT_ROLEPLAY_7
+    iftrue .skipPrize
+    opentext
+    writetext RolePlay7PrizeText
+    waitbutton
+    verbosegiveitem AMBROSIA
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_7
+.skipPrize
+
+	opentext
+	writetext MultiverseRolePlayEndText
+	waitbutton
+	closetext
+	special LoadPokemonData
+	special HealParty
+	end
+
+.refused
+    opentext
+    writetext MultiverseRolePlayRefusedText
+    waitbutton
+    closetext
+    end
+
+RolePlay7PrizeText:
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
+    done
+
+MultiverseIntroText:
+    text "...."
+
+    para "Would you like"
+    line "to play?"
+
+    para "You'll have to"
+    line "Save your game?"
+    done
+
+MultiverseCharacterChoiceText:
+    text "Great!"
+
+    para "Which group"
+    line "would you like"
+    cont "to play as?"
+    done
+
+MultiverseHeroes1Text:
+    text "...."
+    done
+
+MultiverseHeroes2Text:
+    text "...."
+    done
+
+MultiverseVillains1Text:
+    text "...."
+    done
+
+MultiverseVillains2Text:
+    text "...."
+    done
+
+MultiverseRolePlayMultiverseVillainsText:
+    text "...."
+    done
+
+MultiverseDeities1Text:
+    text "...."
+    done
+
+MultiverseDeities2Text:
+    text "...."
+    done
+
+MultiverseRolePlayFinalText:
+    text "...."
+    done
+
+MultiverseRolePlayEndText:
+    text "...."
+    done
+
+MultiverseRolePlayRefusedText:
+    text "It'll be fun."
+
+    para "I promise."
+    done
+
+MultiverseVictoryText:
+    text "Victory!"
+    done
+
+MultiverseDefeatText:
+    text "Defeat!"
+    done
 
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
@@ -1159,3 +1411,5 @@ HallOfOrigin_MapEvents:
 	object_event 15, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
 	object_event 13, 18, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
 	object_event 11, 22, SPRITE_KOGA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
+	object_event 2, 21, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, MultiverseRolePlayScript, -1
+

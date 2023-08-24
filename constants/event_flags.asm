@@ -405,6 +405,7 @@
     const EVENT_BEAT_ROLEPLAY_4
     const EVENT_BEAT_ROLEPLAY_5
     const EVENT_BEAT_ROLEPLAY_6
+    const EVENT_BEAT_ROLEPLAY_7
 
     ; ======================================
     ; ======================================

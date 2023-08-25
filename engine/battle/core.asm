@@ -1944,8 +1944,8 @@ HandleWeather:
 	ld [wNumHits], a
 	call Call_PlayBattleAnim
 
-	;ld hl, .WeatherMessages
-	;call .PrintWeatherMessage
+   ; farcall MaybePrintWeatherMessages
+   ; call c, .printWeatherMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -2033,12 +2033,6 @@ HandleWeather:
 	ld h, [hl]
 	ld l, a
 	jp StdBattleTextbox
-
-;.WeatherMessages:
-; entries correspond to WEATHER_* constants
-;	dw BattleText_RainContinuesToFall
-;	dw BattleText_TheSunlightIsStrong
-;	dw BattleText_TheSandstormRages
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants

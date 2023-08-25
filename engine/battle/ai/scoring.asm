@@ -896,9 +896,6 @@ AI_Smart_Sleep:
 	bit SCREENS_SAFEGUARD, a
 	jr nz, .discourage
 
-; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
-; 50% chance to greatly encourage sleep inducing moves otherwise.
-
 ; don't use against Arceus as it is immune to status
     ld a, [wBattleMonSpecies]
     cp ARCEUS
@@ -906,13 +903,7 @@ AI_Smart_Sleep:
     cp SYLVEON
     jr z, .discourage
 
-
-; is the player behind a sub
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
-	jr nz, .discourage
-
-; does player have a held item that would heal sleep
+; discourage if player have a held item that would heal sleep
 	push hl
 	push de
 	ld a, [wBattleMonItem]
@@ -948,7 +939,7 @@ AI_Smart_Sleep:
 .continue
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
-	jr c, .encourage
+	jr c, .encourage50
 
 	ld b, EFFECT_NIGHTMARE
 	call AIHasMoveEffect
@@ -957,29 +948,22 @@ AI_Smart_Sleep:
 ; Pokemon with Bad Dreams ability should prioritise sleep more
     ld a, [wEnemyMonSpecies]
     cp DARKRAI
-    jr z, .encourage
+    jr z, .encourage50
     cp HYPNO
-    jr z, .encourage
+    jr z, .encourage50
     cp SPIRITOMB
-    jr z, .encourage
+    jr z, .encourage50
     cp JYNX
-    jr z, .encourage
+    jr z, .encourage50
 
-.encourage
-	call AI_50_50
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
 .discourage
     inc [hl]
     inc [hl]
     ret
+.encourage50
+	call AI_50_50
+	ret c
 .useMove
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
     dec [hl]
     dec [hl]
     dec [hl]
@@ -1314,10 +1298,12 @@ AI_Smart_AccuracyDown:
     cp BASE_STAT_LEVEL - 2
     jr c, .discourage
 
-; encourage slightly if player has full accuracy
+; 50% chance to encourage slightly if player has full accuracy
+    call AI_50_50
+    jr c, .discourage
     ld a, [wPlayerAccLevel]
     cp BASE_STAT_LEVEL
-    ret c
+    jr c, .discourage
     dec [hl]
     ret
 .discourage
@@ -1950,6 +1936,11 @@ AI_Smart_Paralyze:
 	call AICompareSpeed
 	jr c, .discourage50
 
+;50% to discourage if player knows sub
+	ld b, EFFECT_SUBSTITUTE
+	call PlayerHasMoveEffect
+	jr c, .discourage50
+
 .encourage
 ; needs to overcome encouragement to attack
 ; no good reason not to paralyze
@@ -1993,12 +1984,48 @@ AI_Smart_SpeedDownHit:
 	ret
 
 AI_Smart_Substitute:
-; Dismiss this move if enemy's HP is below 50% or player can 3HKO max hp.
-	call AICheckEnemyHalfHP
-	ret c
+; discourage if Player will move first
+    call AICompareSpeed
+    jr nc, .discourage
+
+; if player has status moves then don't consider player damage
+	ld b, EFFECT_PARALYZE
+	call PlayerHasMoveEffect
+	jr c, .skipDamageCheck
+	ld b, EFFECT_SLEEP
+	call PlayerHasMoveEffect
+	jr c, .skipDamageCheck
+	ld b, EFFECT_TOXIC
+	call PlayerHasMoveEffect
+	jr c, .skipDamageCheck
+
+; if player can 3HKO from max hp the discourage sub
     call CanPlayer3HKOMaxHP
-    ret nc
-	jp AIDiscourageMove
+    jr c, .discourage
+
+.skipDamageCheck
+; encourage at full hp
+    call AICheckEnemyMaxHP
+    jr c, .encourage
+
+; 50% to encourage if above half hp, discourage otherwise
+	call AICheckEnemyHalfHP
+	jr c, .discourage
+	call AI_50_50
+	jr c, .discourage
+.encourage
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_HyperBeam:
 	call AICheckEnemyHalfHP

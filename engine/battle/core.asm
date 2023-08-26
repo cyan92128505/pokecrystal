@@ -1945,8 +1945,12 @@ HandleWeather:
 	ld [wNumHits], a
 	call Call_PlayBattleAnim
 
-    farcall MaybePrintWeatherMessages
-    call c, .PrintWeatherMessage
+	ld a, [wOptions]
+	bit BATTLE_SCENE, a
+	jr z, .skipMessage
+	ld hl, .WeatherMessages
+    call .PrintWeatherMessage
+.skipMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -2022,6 +2026,12 @@ HandleWeather:
 	xor a
 	ld [wBattleWeather], a
 	ret
+
+.WeatherMessages:
+; entries correspond to WEATHER_* constants
+	dw BattleText_RainContinuesToFall
+	dw BattleText_TheSunlightIsStrong
+	dw BattleText_TheSandstormRages
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]

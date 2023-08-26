@@ -40,7 +40,7 @@ MoveGrammar:
 	db MEDITATE
 	db AGILITY
 	db MIMIC
-	db DOUBLE_TEAM
+	db AFTER_IMAGE
 	db TRANSFORM
 	db STRUGGLE
 	db SCARY_FACE

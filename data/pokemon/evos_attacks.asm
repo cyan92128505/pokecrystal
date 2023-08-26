@@ -2573,6 +2573,7 @@ CrobatEvosAttacks:
 	db 45, POISON_JAB
 	db 50, BRAVE_BIRD
 	db 55, HAZE
+	db 60, AFTER_IMAGE
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
@@ -3093,6 +3094,7 @@ DunsparceEvosAttacks:
 	db 30, ROOST
 	db 35, DRAGON_CLAW
 	db 40, DOUBLE_EDGE
+	db 60, AFTER_IMAGE
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
@@ -3683,6 +3685,7 @@ CelebiEvosAttacks:
 
 MewtwoEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TELEPORT
 	db 1, PSYBLAST
 	db 1, SERENITY
 	db 1, BARRIER
@@ -3691,6 +3694,7 @@ MewtwoEvosAttacks:
 
 ArceusEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TELEPORT
 	db 1, JUDGEMENT
 	db 1, RECOVER
 	db 1, HOLY_ARMOUR

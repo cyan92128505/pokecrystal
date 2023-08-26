@@ -6464,21 +6464,3 @@ GetRoamMonSpecies:
 	ret z
 	ld hl, wRoamMon3Species
 	ret
-
-MaybePrintWeatherMessages:
-	ld a, [wOptions]
-	bit BATTLE_SCENE, a
-	jr z, .no
-	ld hl, .WeatherMessages
-    scf
-    ret
-.no
-    xor a
-    ret
-.WeatherMessages:
-; entries correspond to WEATHER_* constants
-	dw BattleText_RainContinuesToFall
-	dw BattleText_TheSunlightIsStrong
-	dw BattleText_TheSandstormRages
-
-

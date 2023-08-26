@@ -109,7 +109,7 @@
 	const NIGHT_SHADE  ; 65
 	const MIMIC        ; 66
 	const SCREECH      ; 67
-	const DOUBLE_TEAM  ; 68
+	const AFTER_IMAGE  ; 68
 	const RECOVER      ; 69
 	const HARDEN       ; 6a   replace, use defense curl instead
 	const DARK_VOID    ; 6b

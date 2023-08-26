@@ -2008,9 +2008,19 @@ AI_Smart_Substitute:
     call AICheckEnemyMaxHP
     jr c, .encourage
 
-; 50% to encourage if above half hp, discourage otherwise
+; if above 1/4 hp encourage if player is asleep/frozen or user has boosted evasion
+    call AICheckEnemyQuarterHP
+    jr nc, .discourage
+	ld a, [wBattleMonStatus]
+	and 1 << FRZ | SLP
+	jr nz, .encourage
+	ld a, [wEnemyEvaLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp nc, .encourage
+
+; otherwise 50% to encourage if above half hp, discourage otherwise
 	call AICheckEnemyHalfHP
-	jr c, .discourage
+	jr nc, .discourage
 	call AI_50_50
 	jr c, .discourage
 .encourage

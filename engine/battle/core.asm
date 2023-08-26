@@ -1281,7 +1281,8 @@ ResidualDamage:
 	ld [wNumHits], a
 	ld de, ANIM_IN_NIGHTMARE
 	call Call_PlayBattleAnim_OnlyIfVisible
-	call GetQuarterMaxHP
+	;call GetQuarterMaxHP
+	call GetEighthMaxHP ; Nightmare now does 1/8 th hp, to balance Darkrai
 	call SubtractHPFromUser
 	ld hl, HasANightmareText
 	call StdBattleTextbox

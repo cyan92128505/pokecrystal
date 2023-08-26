@@ -1945,8 +1945,8 @@ HandleWeather:
 	ld [wNumHits], a
 	call Call_PlayBattleAnim
 
-   ; farcall MaybePrintWeatherMessages
-   ; call c, .printWeatherMessage
+    farcall MaybePrintWeatherMessages
+    call c, .PrintWeatherMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -6674,7 +6674,7 @@ LoadEnemyMon:
 	jr nz, .NotRoaming
 
 ; Grab HP
-	call GetRoamMonHP
+	farcall GetRoamMonHP
 	ld a, [hl]
 ; Check if the HP has been initialized
 	and a
@@ -6682,7 +6682,7 @@ LoadEnemyMon:
 	push af
 
 ; Grab DVs
-	call GetRoamMonDVs
+	farcall GetRoamMonDVs
 	inc hl
 	ld a, [hld]
 	ld c, a
@@ -6695,7 +6695,7 @@ LoadEnemyMon:
 
 ; If it hasn't, we need to initialize the DVs
 ; (HP is initialized at the end of the battle)
-	call GetRoamMonDVs
+	farcall GetRoamMonDVs
 	inc hl
 	call BattleRandom
 	ld [hld], a
@@ -6905,7 +6905,7 @@ LoadEnemyMon:
 	jr nz, .Moves
 
 ; Grab HP
-	call GetRoamMonHP
+	farcall GetRoamMonHP
 	ld a, [hl]
 ; Check if it's been initialized again
 	and a
@@ -9237,19 +9237,19 @@ BattleEnd_HandleRoamMons:
 	ld a, [wBattleResult]
 	and $f
 	jr z, .caught_or_defeated_roam_mon ; WIN
-	call GetRoamMonHP
+	farcall GetRoamMonHP
 	ld a, [wEnemyMonHP + 1]
 	ld [hl], a
 	jr .update_roam_mons
 
 .caught_or_defeated_roam_mon
-	call GetRoamMonHP
+	farcall GetRoamMonHP
 	ld [hl], 0
-	call GetRoamMonMapGroup
+	farcall GetRoamMonMapGroup
 	ld [hl], GROUP_N_A
-	call GetRoamMonMapNumber
+	farcall GetRoamMonMapNumber
 	ld [hl], MAP_N_A
-	call GetRoamMonSpecies
+	farcall GetRoamMonSpecies
 	ld [hl], 0
 	ret
 
@@ -9260,75 +9260,6 @@ BattleEnd_HandleRoamMons:
 
 .update_roam_mons
 	callfar UpdateRoamMons
-	ret
-
-GetRoamMonMapGroup:
-	ld a, [wTempEnemyMonSpecies]
-	ld b, a
-	ld a, [wRoamMon1Species]
-	cp b
-	ld hl, wRoamMon1MapGroup
-	ret z
-	ld a, [wRoamMon2Species]
-	cp b
-	ld hl, wRoamMon2MapGroup
-	ret z
-	ld hl, wRoamMon3MapGroup
-	ret
-
-GetRoamMonMapNumber:
-	ld a, [wTempEnemyMonSpecies]
-	ld b, a
-	ld a, [wRoamMon1Species]
-	cp b
-	ld hl, wRoamMon1MapNumber
-	ret z
-	ld a, [wRoamMon2Species]
-	cp b
-	ld hl, wRoamMon2MapNumber
-	ret z
-	ld hl, wRoamMon3MapNumber
-	ret
-
-GetRoamMonHP:
-; output: hl = wRoamMonHP
-	ld a, [wTempEnemyMonSpecies]
-	ld b, a
-	ld a, [wRoamMon1Species]
-	cp b
-	ld hl, wRoamMon1HP
-	ret z
-	ld a, [wRoamMon2Species]
-	cp b
-	ld hl, wRoamMon2HP
-	ret z
-	ld hl, wRoamMon3HP
-	ret
-
-GetRoamMonDVs:
-; output: hl = wRoamMonDVs
-	ld a, [wTempEnemyMonSpecies]
-	ld b, a
-	ld a, [wRoamMon1Species]
-	cp b
-	ld hl, wRoamMon1DVs
-	ret z
-	ld a, [wRoamMon2Species]
-	cp b
-	ld hl, wRoamMon2DVs
-	ret z
-	ld hl, wRoamMon3DVs
-	ret
-
-GetRoamMonSpecies:
-	ld a, [wTempEnemyMonSpecies]
-	ld hl, wRoamMon1Species
-	cp [hl]
-	ret z
-	ld hl, wRoamMon2Species
-	cp [hl]
-	ret z
-	ld hl, wRoamMon3Species
 	ret
 
 AddLastLinkBattleToLinkRecord:

@@ -2636,13 +2636,10 @@ endr
 	ret
 
 AI_Smart_BulkUp:
-; don't go past +4
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .continue
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	call IsAttackMaxed
+	jr nc, .continue
+	call IsDefenseMaxed
+	jr c, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd, just attack them
@@ -2686,13 +2683,10 @@ AI_Smart_Curse:
 	cp GHOST
 	jp z, .ghost_curse
 
-; don't go past +4
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .continue
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	call IsAttackMaxed
+	jr nc, .continue
+	call IsDefenseMaxed
+	jr c, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd, just attack them
@@ -3680,11 +3674,12 @@ AI_Smart_Thunder:
 	ret
 
 AI_Smart_HolyArmour:
-; don't go past +4
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	call IsDefenseMaxed
+	jr nc, .continue
+	call IsSpecialDefenseMaxed
+	jr c, .discourage
 
+.continue
 ; if we are faster than player and above 1/2 HP then use holy armour
 ; if we are faster and below 1/2 HP then use if player can not KO us, discourage otherwise
 ; if we are slower and player can not KO us then use, discourage otherwise
@@ -3717,11 +3712,12 @@ endr
 	ret
 
 AI_Smart_Serenity:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	call IsSpecialAttackMaxed
+	jr nc, .continue
+	call IsSpecialDefenseMaxed
+	jr c, .discourage
 
+.continue
 ; discourage if player is faster and can OHKO
 	call AICompareSpeed
 	jr nc, .skipKOCheck
@@ -3761,13 +3757,10 @@ AI_Smart_Serenity:
 	ret
 
 AI_Smart_QuiverDance:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .continue
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsSpecialAttackMaxed
+	jr nc, .continue
+	call IsSpecialDefenseMaxed
+	jr c, .discourage
 
 .continue
 ; don't use if we are at risk of being KOd by boosted player, just attack them
@@ -3863,16 +3856,13 @@ AI_Smart_QuiverDance:
 	ret
 
 AI_Smart_CalmMind:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr c, .continue
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsSpecialAttackMaxed
+	jr nc, .continue
+	call IsSpecialDefenseMaxed
+	jr c, .discourage
 
-; don't use if we are at risk of being KOd, just attack them
 .continue
+; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jr nc, .discourage
 
@@ -3917,10 +3907,8 @@ AI_Smart_CalmMind:
 	ret
 
 AI_Smart_DragonDance:
-; don't go past +4
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsAttackMaxed
+	jp c, .discourage
 
 ; don't use if we are at risk of being KOd, just attack them
 ; only care about being OHKOd as dd increases speed
@@ -4033,10 +4021,8 @@ AI_Smart_DragonDance:
 	ret
 
 AI_Smart_SwordsDance:
-; don't go past +4
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+    call IsAttackMaxed
+    jr c, .discourage
 
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
@@ -4082,10 +4068,8 @@ AI_Smart_SwordsDance:
 	ret
 
 AI_Smart_Barrier:
-; don't go past +4
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	call IsDefenseMaxed
+	jr c, .discourage
 
 ; discourage if player is faster and can OHKO
 	call AICompareSpeed
@@ -4119,10 +4103,8 @@ AI_Smart_Barrier:
 	ret
 
 AI_Smart_Geomancy:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsSpecialAttackMaxed
+	jr c, .discourage
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack
@@ -4170,10 +4152,8 @@ AI_Smart_Geomancy:
 	ret
 
 AI_Smart_Growth:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsSpecialAttackMaxed
+	jr c, .discourage
 
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
@@ -4202,10 +4182,8 @@ AI_Smart_Growth:
 	ret
 
 AI_Smart_NastyPlot:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsSpecialAttackMaxed
+	jr c, .discourage
 
 ; Deoxys should not use Nasty Plot against dark types
     ld a, [wEnemyMonSpecies]
@@ -4286,10 +4264,8 @@ AI_Smart_DynamicPunch:
     ret
 
 AI_Smart_ShellSmash:
-; don't go past +4
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 4
-	jp nc, .discourage
+	call IsSpecialAttackMaxed
+	jr c, .discourage
 
 ; Smeargle should use once and not again
     ld a, [wEnemyMonSpecies]
@@ -5743,6 +5719,62 @@ IsPlayerPhysicalOrSpecial:
     scf
     ret
 
+IsAttackMaxed:
+    ld a, [wEnemyMonAttack + 1]
+    sub LOW(MAX_STAT_VALUE)
+	jr nz, .no
+	ld a, [wEnemyMonAttack]
+	sbc HIGH(MAX_STAT_VALUE)
+	jp z, .yes
+.no
+    xor a
+    ret
+.yes
+    scf
+    ret
+
+IsDefenseMaxed:
+    ld a, [wEnemyMonDefense + 1]
+    sub LOW(MAX_STAT_VALUE)
+	jr nz, .no
+	ld a, [wEnemyMonDefense]
+	sbc HIGH(MAX_STAT_VALUE)
+	jp z, .yes
+.no
+    xor a
+    ret
+.yes
+    scf
+    ret
+
+IsSpecialAttackMaxed:
+    ld a, [wEnemyMonSpclAtk + 1]
+    sub LOW(MAX_STAT_VALUE)
+	jr nz, .no
+	ld a, [wEnemyMonSpclAtk]
+	sbc HIGH(MAX_STAT_VALUE)
+	jp z, .yes
+.no
+    xor a
+    ret
+.yes
+    scf
+    ret
+
+IsSpecialDefenseMaxed:
+    ld a, [wEnemyMonSpclDef + 1]
+    sub LOW(MAX_STAT_VALUE)
+	jr nz, .no
+	ld a, [wEnemyMonSpclDef]
+	sbc HIGH(MAX_STAT_VALUE)
+	jp z, .yes
+.no
+    xor a
+    ret
+.yes
+    scf
+    ret
+
 AI_80_20:
 	call Random
 	cp 20 percent - 1
@@ -6363,6 +6395,75 @@ AllowShinyOverride:
 .no
     xor a
     ret
+
+GetRoamMonMapGroup:
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld a, [wRoamMon1Species]
+	cp b
+	ld hl, wRoamMon1MapGroup
+	ret z
+	ld a, [wRoamMon2Species]
+	cp b
+	ld hl, wRoamMon2MapGroup
+	ret z
+	ld hl, wRoamMon3MapGroup
+	ret
+
+GetRoamMonMapNumber:
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld a, [wRoamMon1Species]
+	cp b
+	ld hl, wRoamMon1MapNumber
+	ret z
+	ld a, [wRoamMon2Species]
+	cp b
+	ld hl, wRoamMon2MapNumber
+	ret z
+	ld hl, wRoamMon3MapNumber
+	ret
+
+GetRoamMonHP:
+; output: hl = wRoamMonHP
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld a, [wRoamMon1Species]
+	cp b
+	ld hl, wRoamMon1HP
+	ret z
+	ld a, [wRoamMon2Species]
+	cp b
+	ld hl, wRoamMon2HP
+	ret z
+	ld hl, wRoamMon3HP
+	ret
+
+GetRoamMonDVs:
+; output: hl = wRoamMonDVs
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld a, [wRoamMon1Species]
+	cp b
+	ld hl, wRoamMon1DVs
+	ret z
+	ld a, [wRoamMon2Species]
+	cp b
+	ld hl, wRoamMon2DVs
+	ret z
+	ld hl, wRoamMon3DVs
+	ret
+
+GetRoamMonSpecies:
+	ld a, [wTempEnemyMonSpecies]
+	ld hl, wRoamMon1Species
+	cp [hl]
+	ret z
+	ld hl, wRoamMon2Species
+	cp [hl]
+	ret z
+	ld hl, wRoamMon3Species
+	ret
 
 MaybePrintWeatherMessages:
 	ld a, [wOptions]

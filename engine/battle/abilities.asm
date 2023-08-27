@@ -71,6 +71,7 @@ RockHeadPokemon:
     db MONFERNO
     db INFERNAPE
     db HAWLUCHA
+    db REGIGIGAS
     db -1
 
 GutsPokemon:

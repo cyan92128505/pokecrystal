@@ -192,6 +192,8 @@ AI_Basic:
     jp z, .discourage
     cp SYLVEON
     jp z, .discourage
+    cp GIRATINA
+    jp z, .discourage
 
 .checkSub
 ; dismiss moves blocked by sub if sub is up
@@ -883,6 +885,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_LesserStatChange
     dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
     dbw EFFECT_SAFEGUARD,        AI_Smart_LesserStatChange
+    dbw EFFECT_JUDGEMENT,        AI_Smart_Judgement
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -902,6 +905,8 @@ AI_Smart_Sleep:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp GIRATINA
+    jp z, .discourage
 
 ; discourage if player have a held item that would heal sleep
 	push hl
@@ -1217,24 +1222,17 @@ AI_Smart_EvasionUp:
 	dec [hl]
 	ret
 
+AI_Smart_Judgement:
 AI_Smart_AlwaysHit:
-; 80% chance to greatly encourage this move if either...
-
-; ...enemy's accuracy level has been lowered three or more stages
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 2
 	jr c, .encourage
 
-; ...or player's evasion level has been raised three or more stages.
 	ld a, [wPlayerEvaLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 2
 	ret c
 
 .encourage
-	call AI_80_20
-	ret c
-
-	dec [hl]
 	dec [hl]
 	ret
 
@@ -1500,11 +1498,11 @@ AI_Smart_Moonlight:
     ; fallthrough
 
 .encourage
-; ARCEUS should play defensivly and prioritize healing above scoring KOs
+; ARCEUS should play defensively and prioritize healing above scoring KOs
 	ld a, [wEnemyMonSpecies]
 	cp ARCEUS
 	jr nz, .normalEncourage
-rept 5
+rept 6
 	dec [hl]
 endr
 .normalEncourage
@@ -1553,6 +1551,8 @@ AI_Smart_Toxic:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp GIRATINA
+    jp z, .discourage
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
@@ -1922,14 +1922,13 @@ AI_Smart_Paralyze:
 
 .notGlare
 ; don't use against Arceus since it is immune to status
-; always use against Mewtwo
     ld a, [wBattleMonSpecies]
-    cp MEWTWO
-    jr z, .encourage
     cp ARCEUS
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp GIRATINA
+    jp z, .discourage
 
 ; encourage if enemy is slower than player.
 ; 50% chance to discourage otherwise
@@ -1941,10 +1940,22 @@ AI_Smart_Paralyze:
 	call PlayerHasMoveEffect
 	jr c, .discourage50
 
+; if player is evasive and we know an always hit move then discourage so we just attack
+    ld a, [wPlayerEvaLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr c, .encourage
+
+	ld b, EFFECT_ALWAYS_HIT
+	call AIHasMoveEffect
+	jr c, .discourage
+	ld b, EFFECT_JUDGEMENT
+	call AIHasMoveEffect
+	jr c, .discourage
+
 .encourage
 ; needs to overcome encouragement to attack
 ; no good reason not to paralyze
-rept 8
+rept 7
     dec [hl]
 endr
     ret
@@ -4349,11 +4360,11 @@ AI_Smart_Swagger:
 ; don't use against Arceus since it is immune to status
     ld a, [wBattleMonSpecies]
     cp ARCEUS
-    jr nz, .continue
+    jr z, .discourage
     cp SYLVEON
-    jr nz, .continue
-    inc [hl]
-    inc [hl]
+    jr z, .discourage
+    cp GIRATINA
+    jr z, .discourage
     ret
 
 .continue

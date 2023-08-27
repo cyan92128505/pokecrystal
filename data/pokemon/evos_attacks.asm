@@ -3261,10 +3261,14 @@ UrsaringEvosAttacks:
 
 LatiasEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DRAGON_PULSE
-	db 1, THUNDERBOLT
-	db 1, CALM_MIND
-	db 1, RECOVER
+	db 1, CONFUSION
+	db 1, CHARM
+	db 1, REFLECT
+	db 30, PSYCHIC_M
+	db 40, RECOVER
+	db 50, DRAGON_PULSE
+    db 60, CALM_MIND
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DeoxysEvosAttacks:
@@ -3323,34 +3327,56 @@ SpiritombEvosAttacks:
 
 LatiosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DRAGON_PULSE
-	db 1, THUNDERBOLT
-	db 1, CALM_MIND
-	db 1, RECOVER
+	db 1, PSYBEAM
+	db 1, DRAGON_CLAW
+	db 1, LIGHT_SCREEN
+	db 30, PSYCHIC_M
+	db 40, RECOVER
+	db 50, DRAGON_PULSE
+    db 60, CALM_MIND
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 PalkiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SURF
-	db 1, ICE_BEAM
-	db 1, THUNDERBOLT
-	db 1, CALM_MIND
+	db 1, SCARY_FACE
+	db 1, BUBBLEBEAM
+	db 10, ANCIENTPOWER
+	db 20, SLASH
+	db 30, SURF
+	db 40, AURA_SPHERE
+	db 50, DRAGON_CLAW
+	db 60, DRAGON_PULSE
+	db 70, HYDRO_PUMP
+	db 80, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 KyogreEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SCARY_FACE
 	db 1, SURF
-	db 1, CALM_MIND
-	db 1, REST
-	db 1, SLEEP_TALK
+	db 1, ANCIENTPOWER
+	db 20, WATERFALL
+	db 30, BODY_SLAM
+	db 40, REST
+	db 50, DOUBLE_EDGE
+	db 60, CALM_MIND
+	db 70, ICE_BEAM
+	db 80, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 GroudonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, EARTHQUAKE
-	db 1, ROCK_SLIDE
-	db 1, SWORDS_DANCE
-	db 1, REST
+	db 1, SCARY_FACE
+	db 1, EARTH_POWER
+	db 1, ANCIENTPOWER
+	db 20, FLAME_WHEEL
+	db 30, SOLARBEAM
+	db 40, REST
+	db 50, FISSURE
+	db 60, BULK_UP
+	db 70, EARTHQUAKE
+	db 80, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 SkarmoryEvosAttacks:
@@ -3466,6 +3492,19 @@ RayquazaEvosAttacks:
 	db 75, HURRICANE
 	db 80, DRACO_METEOR
 	db 85, HYPER_BEAM
+
+	db 1, SCARY_FACE
+	db 1, FLY
+	db 1, ANCIENTPOWER
+	db 20, CRUNCH
+	db 30, DRAGON_PULSE
+	db 40, REST
+	db 45, EXTREMESPEED
+	db 50, DRAGON_CLAW
+	db 60, DRAGON_DANCE
+	db 70, DRACO_ASCENT
+	db 75, OUTRAGE
+	db 80, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
@@ -3484,10 +3523,16 @@ SmeargleEvosAttacks:
 
 DialgaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DRAGON_CLAW
-	db 1, EARTHQUAKE
-	db 1, CURSE
-	db 1, REST
+	db 1, SCARY_FACE
+	db 1, METAL_CLAW
+	db 10, ANCIENTPOWER
+	db 20, SLASH
+	db 30, FLASH_CANNON
+	db 40, AURA_SPHERE
+	db 50, DRAGON_PULSE
+	db 60, EARTHQUAKE
+	db 70, DRAGON_CLAW
+	db 80, METEOR_MASH
 	db 0 ; no more level-up moves
 
 KlefkiEvosAttacks:
@@ -3507,10 +3552,12 @@ KlefkiEvosAttacks:
 
 XerneasEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GEOMANCY
-	db 1, MOON_BLAST
-	db 1, SHADOW_BALL
-	db 1, AURA_SPHERE
+	db 1, GROWTH
+	db 1, DRAIN_KISS
+	db 50, CLOSE_COMBAT
+	db 60, MEGAHORN
+	db 70, MOON_BLAST
+	db 81, GEOMANCY
 	db 0 ; no more level-up moves
 
 YveltalEvosAttacks:
@@ -3521,7 +3568,7 @@ YveltalEvosAttacks:
 	db 60, DARK_PULSE
 	db 70, OBLIVION
 	db 75, HURRICANE
-	db 80, NASTY_PLOT
+	db 81, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 GiratinaEvosAttacks:

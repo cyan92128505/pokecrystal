@@ -3,8 +3,8 @@
 
 	db   "Banished by"
 	next "ARCEUS for its"
-	next "violent ways."
+	next "violent power."
 
-	page "AB Takes no"
-	next "recoil damage"
-	next "from attacks.@"
+	page "AB Immune to"
+	next "status changes"
+	next "and recoil.@"

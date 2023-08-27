@@ -6,4 +6,5 @@
 	next "masses."
 
 	page "AB Immune to"
-	next "stat drops.@"
+	next "stat drops and"
+	next "recoil.@"

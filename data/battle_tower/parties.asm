@@ -4385,7 +4385,7 @@ BattleTowerMons:
 
     db DIALGA
 	db LEFTOVERS
-	db DRAGON_CLAW, BULK_UP, THUNDER_WAVE, IRON_HEAD
+	db METEOR_MASH, EARTHQUAKE, BULK_UP, THUNDER_WAVE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4410,7 +4410,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db GIRATINA
-	db DRAGON_SCALE
+	db LEFTOVERS
 	db NASTY_PLOT, DRACO_METEOR, THUNDER_WAVE, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -4905,7 +4905,7 @@ BattleTowerMons:
 
 	db REGIGIGAS
 	db LEFTOVERS
-	db AI_RETURN, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
+	db DOUBLE_EDGE, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4915,7 +4915,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 24, 24, 16 ; PP
+	db 24, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

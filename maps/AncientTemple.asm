@@ -187,7 +187,7 @@ AncientTemple_MapEvents:
 	def_warp_events
 	warp_event  3,  3, SILVER_CAVE_OUTSIDE, 5
 	warp_event  5,  3, ANCIENT_TEMPLE, 3
-	warp_event 13, 29, SILVER_CAVE_OUTSIDE, 2
+	warp_event 13, 29, ANCIENT_TEMPLE, 2
 	warp_event 13, 3, ANCIENT_TEMPLE, 5
 	warp_event 34,  3, ANCIENT_TEMPLE, 4
 	warp_event 25,  1, ANCIENT_HALL, 1

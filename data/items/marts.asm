@@ -51,7 +51,7 @@ MartCherrygroveDex:
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-    db WARP_DEVICE
+    db RUNNING_SHOES
 	db -1 ; end
 
 MartViolet:

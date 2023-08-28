@@ -406,6 +406,9 @@
     const EVENT_BEAT_ROLEPLAY_5
     const EVENT_BEAT_ROLEPLAY_6
     const EVENT_BEAT_ROLEPLAY_7
+    const EVENT_DIALGA_BARRIER_CLEARED
+    const EVENT_PALKIA_BARRIER_CLEARED
+    const EVENT_GIRATINA_BARRIER_CLEARED
 
     ; ======================================
     ; ======================================

@@ -1,8 +1,15 @@
 HoOhChamber:
+    ld a, [wPartyCount]
+    ld b, a
 	ld hl, wPartySpecies
-	ld a, [hl]
-	cp HO_OH ; is Ho-oh the first Pokémon in the party?
-	jr nz, .done ; if not, we're done
+.loop
+	ld a, [hli]
+	cp HO_OH
+	jr z, .found
+	dec b
+	jr z, .done
+	jr .loop
+.found
 	call GetMapAttributesPointer ; pointless?
 	ld de, EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	ld b, SET_FLAG

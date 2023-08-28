@@ -3012,12 +3012,13 @@ wFieldWeather::
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-; AndrewNote - wram 9 free slots
+; AndrewNote - wram 8 free slots
 
 wHandOfGod:: db
 wBattleMusicOverride:: ds 2
 wShinyOverride:: db
-	ds 9
+wRunningShoesOn:: db
+	ds 8
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

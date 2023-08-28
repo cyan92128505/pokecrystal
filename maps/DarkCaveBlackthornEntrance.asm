@@ -158,56 +158,11 @@ GiratinaPlayerHasRayquazaText:
     done
 
 
-DarkCaveBlackthornEntrancePharmacistScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE
-	iftrue .GotBlackglasses
-	writetext DarkCaveBlackthornEntrancePharmacistText1
-	promptbutton
-	verbosegiveitem BLACKGLASSES
-	iffalse .PackFull
-	setevent EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE
-.GotBlackglasses:
-	writetext DarkCaveBlackthornEntrancePharmacistText2
-	waitbutton
-.PackFull:
-	closetext
-	end
-
 DarkCaveBlackthornEntranceTMCurse:
 	itemball TM_CURSE
 
 DarkCaveBlackthornEntranceTMSnore:
 	itemball TM_DARK_PULSE
-
-DarkCaveBlackthornEntrancePharmacistText1:
-	text "Whoa! You startled"
-	line "me there!"
-
-	para "I had my BLACK-"
-	line "GLASSES on, so I"
-
-	para "didn't notice you"
-	line "at all."
-
-	para "What am I doing"
-	line "here?"
-
-	para "Hey, don't you"
-	line "worry about it."
-
-	para "I'll give you a"
-	line "pair of BLACK-"
-	cont "GLASSES, so forget"
-	cont "you saw me, OK?"
-	done
-
-DarkCaveBlackthornEntrancePharmacistText2:
-	text "BLACKGLASSES ups"
-	line "the power of dark-"
-	cont "type moves."
-	done
 
 InvaderJackScript:
 	trainer INVADER, CRESTFALLEN, EVENT_BEAT_INVADER_CRESTFALLEN, InvaderJackSeenText, InvaderJackBeatenText, InvaderJackVictoryText, .Script
@@ -354,6 +309,66 @@ RematchRefuseTextDarkCaveXehanort:
     text "Open your heart."
     done
 
+GiratinaBarrierScript:
+    callasm IsDarkraiInParty
+    iftrue .unblock
+    opentext
+    writetext BeGoneText
+    waitbutton
+    closetext
+    warp DARK_CAVE_VIOLET_ENTRANCE, 17, 2
+    opentext
+    writetext DarkraiNeededText
+    waitbutton
+    closetext
+    sjump .end
+.unblock
+    opentext
+    writetext DarkraiUnblocksText
+    waitbutton
+    closetext
+.end
+    end
+
+IsDarkraiInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp DARKRAI
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
+BeGoneText:
+    text "A powerful"
+    line "darkness overcomes"
+    cont "and expels you."
+    done
+
+DarkraiNeededText:
+    text "It will take a"
+    line "DARK #MON"
+    cont "that can cross"
+    cont "the dream world"
+    cont "to allow passage."
+    done
+
+DarkraiUnblocksText:
+    text "DARKRAI reveals"
+    line "the path!"
+    done
+
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -362,6 +377,7 @@ DarkCaveBlackthornEntrance_MapEvents:
 	warp_event 21, 25, DARK_CAVE_VIOLET_ENTRANCE, 2
 
 	def_coord_events
+	coord_event 15, 13, SCENE_ALWAYS, GiratinaBarrierScript
 
 	def_bg_events
 

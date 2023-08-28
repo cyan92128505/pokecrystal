@@ -257,9 +257,9 @@ DoPlayerMovement::
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
-	jr z, .TrySurf
+	jp z, .TrySurf
 	cp PLAYER_SURF_PIKA
-	jr z, .TrySurf
+	jp z, .TrySurf
 
 	call .CheckLandPerms
 	jr c, .bump
@@ -275,11 +275,8 @@ DoPlayerMovement::
 	jr nc, .ice
 
 ; Downhill riding is slower when not moving down.
-    call .RunCheck
-    jr z, .fast
-
 	call .BikeCheck
-	jr nz, .walk
+	jr nz, .HandleWalkAndRun
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_DOWNHILL_F, [hl]
@@ -319,6 +316,36 @@ DoPlayerMovement::
 .bump
 	xor a
 	ret
+
+.HandleWalkAndRun
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .ensurewalk
+	ld a, [wRunningShoesOn]
+	and a
+	jr z, .runningShoesOff
+	jr .runningShoesOn
+.runningShoesOn
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jr nz, .ensurerun
+	jr .ensurewalk
+.runningShoesOff
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jr nz, .ensurewalk
+.ensurerun
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	call nz, .StartRunning
+	jr .fast
+.ensurewalk
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
+	call nz, .StartWalking
+	jr .walk
 
 .TrySurf:
 	call .CheckSurfPerms
@@ -740,15 +767,6 @@ ENDM
 	cp PLAYER_SKATE
 	ret
 
-.RunCheck:
-	ld a, [wPlayerState]
-	cp PLAYER_NORMAL
-	ret nz
-	ldh a, [hJoypadDown]
-	and B_BUTTON
-	cp B_BUTTON
-	ret
-
 .CheckWalkable:
 ; Return 0 if tile a is land. Otherwise, return carry.
 
@@ -797,6 +815,22 @@ ENDM
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call UpdatePlayerSprite ; UpdateSprites
+	pop bc
+	ret
+
+.StartRunning:
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	push bc
+	farcall UpdatePlayerSprite
+	pop bc
+	ret
+
+.StartWalking:
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	push bc
+	farcall UpdatePlayerSprite
 	pop bc
 	ret
 

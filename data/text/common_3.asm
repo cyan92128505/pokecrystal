@@ -1438,6 +1438,16 @@ _ExpShareToggleOff::
 	line "turned off."
 	prompt
 
+_RunningShoesOn::
+	text "RUNNING SHOES"
+	line "are put on."
+	prompt
+
+_RunningShoesOff::
+	text "RUNNING SHOES"
+	line "are taken off."
+	prompt
+
 _HandOfGodOn::
 	text "Hand of God"
 	line "is at work."

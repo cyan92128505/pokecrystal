@@ -16,6 +16,7 @@ SilverCaveItemRooms_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .Barriers
     callback MAPCALLBACK_OBJECTS, .FieldMon
 
 .FieldMon:
@@ -30,6 +31,19 @@ SilverCaveItemRooms_MapScripts:
 	appear SILVERCAVEITEMROOMS_FIELDMON_9
 	appear SILVERCAVEITEMROOMS_FIELDMON_10
 	endcallback
+
+.Barriers:
+    checkevent EVENT_DIALGA_BARRIER_CLEARED
+    iftrue .checkPalkia
+    changeblock 28, 4, $31 ; closed wall
+    changeblock 30, 4, $31 ; closed wall
+.checkPalkia
+    checkevent EVENT_PALKIA_BARRIER_CLEARED
+    iftrue .end
+    changeblock 16, 4, $56 ; closed wall
+    changeblock 18, 4, $56 ; closed wall
+.end
+    endcallback
 
 SilverCaveItemRoomFieldMon1Script:
 	faceplayer
@@ -199,6 +213,122 @@ DialgaCry:
     text "Dialga!"
     done
 
+DialgaBarrierScript:
+    checkevent EVENT_DIALGA_BARRIER_CLEARED
+    iftrue .end
+    callasm IsRegigigasInParty
+    iftrue .unblock
+    opentext
+    writetext RegigigasNeededText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_SCIR_Down
+    sjump .end
+.unblock
+    opentext
+    writetext RegigigasUnblocksText
+    waitbutton
+    closetext
+    playsound SFX_STRENGTH
+    changeblock 28, 4, $29
+    changeblock 30, 4, $2B
+    setevent EVENT_DIALGA_BARRIER_CLEARED
+    reloadmap
+.end
+    end
+
+PalkiaBarrierScript:
+    checkevent EVENT_PALKIA_BARRIER_CLEARED
+    iftrue .end
+    callasm IsDeoxysInParty
+    iftrue .unblock
+    opentext
+    writetext DeoxysNeededText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_SCIR_Down
+    sjump .end
+.unblock
+    opentext
+    writetext DeoxysUnblocksText
+    waitbutton
+    closetext
+    playsound SFX_STRENGTH
+    changeblock 16, 4, $29
+    changeblock 18, 4, $2B
+    setevent EVENT_PALKIA_BARRIER_CLEARED
+    reloadmap
+.end
+    end
+
+IsRegigigasInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp REGIGIGAS
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
+IsDeoxysInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp DEOXYS
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
+Movement_SCIR_Down:
+    step DOWN
+    step_end
+
+RegigigasNeededText:
+    text "It will take a"
+    line "titan of a"
+    cont "#MON to"
+    cont "unblock this."
+    done
+
+RegigigasUnblocksText:
+    text "REGIGIGAS crushes"
+    line "the boulders!"
+    done
+
+DeoxysNeededText:
+    text "It will take an"
+    line "otherworldly"
+    cont "PSYCHIC power"
+    cont "to unblock this."
+    done
+
+DeoxysUnblocksText:
+    text "DEOXYS dispels"
+    line "the barrier!"
+    done
+
 SilverCaveItemRooms_MapEvents:
 	db 0, 0 ; filler
 
@@ -207,6 +337,10 @@ SilverCaveItemRooms_MapEvents:
 	warp_event  5, 15, SILVER_CAVE_ROOM_2, 3
 
 	def_coord_events
+	coord_event 29, 6, SCENE_ALWAYS, DialgaBarrierScript
+	coord_event 30, 6, SCENE_ALWAYS, DialgaBarrierScript
+	coord_event 17, 6, SCENE_ALWAYS, PalkiaBarrierScript
+	coord_event 18, 6, SCENE_ALWAYS, PalkiaBarrierScript
 
 	def_bg_events
 

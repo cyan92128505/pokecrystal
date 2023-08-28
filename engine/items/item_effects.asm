@@ -56,7 +56,8 @@ ItemEffects:
 	dw ReviveEffect        ; MAX_REVIVE
 	dw GuardSpecEffect     ; GUARD_SPEC
 	dw GoldDiceEffect      ; GOLD_DICE
-	dw MaxRepelEffect      ; MAX_REPEL
+	;dw MaxRepelEffect      ; MAX_REPEL
+    dw RunningShoesEffect  ; RUNNING_SHOES
 	dw RepulsorEffect      ; REPULSOR
 	dw MarkOfGodEffect     ; MARK_OF_GOD
 	dw RestoreHPEffect     ; FRESH_WATER
@@ -2046,6 +2047,17 @@ ExpShareEffect:
 	ld hl, ExpShareToggleOff
 	jp PrintText
 
+RunningShoesEffect:
+	ld a, [wRunningShoesOn]
+	xor 1
+	ld [wRunningShoesOn], a
+	and a
+	ld hl, RunningShoesOn
+	jp nz, PrintText
+
+	ld hl, RunningShoesOff
+	jp PrintText
+
 MarkOfGodEffect:
     farcall MarkOfGodFunction
     ret
@@ -2963,6 +2975,14 @@ ExpShareToggleOff:
 
 ExpShareToggleOn:
 	text_far _ExpShareToggleOn
+	text_end
+
+RunningShoesOff:
+	text_far _RunningShoesOff
+	text_end
+
+RunningShoesOn:
+	text_far _RunningShoesOn
 	text_end
 
 HandOfGodOff:

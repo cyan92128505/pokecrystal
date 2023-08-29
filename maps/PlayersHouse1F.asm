@@ -3,7 +3,6 @@
 	const PLAYERSHOUSE1F_MOM2
 	const PLAYERSHOUSE1F_MOM3
 	const PLAYERSHOUSE1F_MOM4
-	const PLAYERSHOUSE1F_POKEFAN_F
 	const PLAYERSHOUSE1F_DAD
 
 PlayersHouse1F_MapScripts:
@@ -190,53 +189,6 @@ MomScript:
 	closetext
 	end
 
-NeighborScript:
-	faceplayer
-	opentext
-	checktime MORN
-	iftrue .MornScript
-	checktime DAY
-	iftrue .DayScript
-	checktime NITE
-	iftrue .NiteScript
-
-.MornScript:
-	writetext NeighborMornIntroText
-	promptbutton
-	sjump .Main
-
-.DayScript:
-	writetext NeighborDayIntroText
-	promptbutton
-	sjump .Main
-
-.NiteScript:
-	writetext NeighborNiteIntroText
-	promptbutton
-	sjump .Main
-
-.Main:
-	writetext NeighborText
-	waitbutton
-	closetext
-	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
-	end
-
-PlayersHouse1FTVScript:
-	jumptext PlayersHouse1FTVText
-
-PlayersHouse1FStoveScript:
-	jumptext PlayersHouse1FStoveText
-
-PlayersHouse1FSinkScript:
-	jumptext PlayersHouse1FSinkText
-
-PlayersHouse1FFridgeScript:
-    checkevent EVENT_BEAT_DAD
-    iffalse .noDad
-    jumptext PlayerHouse1FFridgePostDadText
-.noDad
-	jumptext PlayersHouse1FFridgeText
 
 MomTurnsTowardPlayerMovement:
 	turn_head RIGHT
@@ -366,54 +318,6 @@ ImBehindYouText:
 	line "behind you!"
 	done
 
-NeighborMornIntroText:
-	text "Good morning,"
-	line "<PLAY_G>!"
-
-	para "I can't believe"
-	line "how much you've"
-	cont "grown."
-
-	para "Good luck with"
-	line "your #MON."
-	done
-
-NeighborDayIntroText:
-	text "Hello, <PLAY_G>!"
-
-	para "I can't believe"
-	line "how much you've"
-	cont "grown."
-
-	para "Good luck with"
-	line "your #MON."
-	done
-
-NeighborNiteIntroText:
-	text "Good evening,"
-	line "<PLAY_G>!"
-
-	para "I can't believe"
-	line "how much you've"
-	cont "grown."
-
-	para "Good luck with"
-	line "your #MON."
-	done
-
-NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
-
-	para "My daughter"
-	line "CRYSTAL has also"
-	cont "started her #MON"
-	cont "training."
-
-	para "I'm sure you'll"
-	line "run into her."
-	done
-
 PlayersHouse1FStoveText:
 	text "Mom's specialty!"
 
@@ -452,13 +356,28 @@ PlayersHouse1FTVText:
 	cont "girls."
 	done
 
+PlayersHouse1FTVScript:
+	jumptext PlayersHouse1FTVText
+
+PlayersHouse1FStoveScript:
+	jumptext PlayersHouse1FStoveText
+
+PlayersHouse1FSinkScript:
+	jumptext PlayersHouse1FSinkText
+
+PlayersHouse1FFridgeScript:
+    checkevent EVENT_BEAT_DAD
+    iffalse .noDad
+    jumptext PlayerHouse1FFridgePostDadText
+.noDad
+	jumptext PlayersHouse1FFridgeText
+
 DadScript:
     checkevent EVENT_BEAT_WALLACE
     iftrue .beatWallace
     jumptextfaceplayer DadTalkText
 .beatWallace
     jumptextfaceplayer DadPostWallaceText
-
 
 DadTalkText:
     text "I am very proud"
@@ -523,6 +442,4 @@ PlayersHouse1F_MapEvents:
 	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	object_event  7,  3, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DadScript, EVENT_FIELD_MON_1
-

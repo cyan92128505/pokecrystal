@@ -369,6 +369,19 @@ NeedToGetAPokemon:
     applymovement PLAYER, Movement_NewBarkTownTurnBack
     end
 
+NeedToGetAPokemon2:
+    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, DOWN
+	opentext
+	writetext NewBarkTownBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_NewBarkTownTurnLeft
+    end
+
 NewBarkTownBlockText:
     text "I need to get"
     line "a #MON from"
@@ -377,6 +390,10 @@ NewBarkTownBlockText:
 
 Movement_NewBarkTownTurnBack:
 	step DOWN
+	step_end
+
+Movement_NewBarkTownTurnLeft:
+	step LEFT
 	step_end
 
 NewBarkFieldMon4Script:
@@ -844,6 +861,8 @@ NewBarkTown_MapEvents:
 	coord_event  1, 21, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 	coord_event  10, 11, SCENE_DEFAULT, NeedToGetAPokemon
 	coord_event  11, 11, SCENE_DEFAULT, NeedToGetAPokemon
+	coord_event  18, 17, SCENE_DEFAULT, NeedToGetAPokemon2
+	coord_event  18, 18, SCENE_DEFAULT, NeedToGetAPokemon2
 	coord_event  1, 20, SCENE_ALWAYS, CrystalScript1
 	coord_event  1, 21, SCENE_ALWAYS, CrystalScript2
 

@@ -1335,7 +1335,126 @@ MultiverseCharacterChoiceText:
     done
 
 MultiverseHeroes1Text:
-    text "...."
+    text "You find yourself"
+    line "suddenly in a"
+    cont "strange place."
+
+    para "A desolate land"
+    line "with a single"
+    cont "huge tower in"
+    cont "the distance"
+    cont "piercing a red"
+    cont "orange sky."
+
+    para "You are LUKE"
+    line "SKYWALKER, the"
+    cont "hero of your"
+    cont "galaxy."
+
+    para "There are others"
+    line "with you."
+
+    para "A young woman"
+    line "wearing odd"
+    cont "clothes."
+
+    para "The force tells"
+    line "you she has"
+    cont "dark magic but"
+    cont "her heart is"
+    cont "pure."
+
+    para "She walks to an"
+    line "old man and talks."
+
+    para "The man is no"
+    line "doubt a wizard."
+
+    para "His bright white"
+    line "cloak a symbol of"
+    cont "his high rank."
+
+    para "Two other men"
+    line "converse together."
+
+    para "One looks very"
+    line "serious."
+
+    para "He is clad in"
+    line "silver armour."
+
+    para "His mind is oddly"
+    line "singular."
+
+    para "He has immense"
+    line "courage but that"
+    cont "is all."
+
+    para "...."
+
+    para "That is the hero"
+    line "from our HOEN"
+    cont "WAR story."
+
+    para "Courage"
+    line "personified."
+
+    para "...."
+
+    para "The other man is"
+    line "also quite single"
+    cont "minded."
+
+    para "He is happy and"
+    line "seeks challenge."
+
+    para "You can tell he"
+    line "contains a great"
+    cont "instinctive power."
+
+    para "One more arrives."
+
+    para "It is a young"
+    line "man."
+
+    para "The wizard is"
+    line "shaken by him"
+    cont "you can tell."
+
+    para "He looks like a"
+    line "simple peasant."
+
+    para "The permanent"
+    line "firey glow in"
+    cont "his eyes is the"
+    cont "only odd thing."
+
+    para "But there is no"
+    line "doubt his power"
+    cont "exceeds everyone"
+    cont "else."
+
+    para "As a group you"
+    line "make your way"
+    cont "toward the tower."
+
+    para "You encounter"
+    line "another group."
+
+    para "You only recognise"
+    line "one of them."
+
+    para "PALPATINE."
+
+    para "You sense similar"
+    line "malice from most"
+    cont "of the others."
+
+    para "They look have"
+    line "clearly been in"
+    cont "a fight already."
+
+    para "They attack!"
     done
 
 MultiverseHeroes2Text:
@@ -1343,7 +1462,25 @@ MultiverseHeroes2Text:
     done
 
 MultiverseVillains1Text:
-    text "...."
+    text "You find yourself"
+    line "suddenly in a"
+    cont "strange place."
+
+    para "A large dark"
+    line "room within"
+    cont "what appears"
+    cont "to be a tower."
+
+    para "You are used to"
+    line "such places."
+
+    para "You are MORGANA"
+    line "the liberator and"
+    cont "ruler of your"
+    cont "magical people."
+
+    para "You are not"
+    line "alone."
     done
 
 MultiverseVillains2Text:

@@ -321,6 +321,11 @@ DoPlayerMovement::
 	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .ensurewalk
+
+    call GetMapEnvironment
+    cp INDOOR
+    jr z, .runningShoesOff
+
 	ld a, [wRunningShoesOn]
 	and a
 	jr z, .runningShoesOff

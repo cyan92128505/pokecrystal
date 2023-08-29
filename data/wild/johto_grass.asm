@@ -1880,7 +1880,7 @@ JohtoGrassWildMons:
     def_grass_wildmons ANCIENT_TEMPLE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 71, REUNICLUS
+	db 71, UNOWN
 	db 71, CROBAT
 	db 73, RHYPERIOR
 	db 73, METAGROSS
@@ -1888,7 +1888,7 @@ JohtoGrassWildMons:
 	db 75, GARCHOMP
 	db 90, DUNSPARCE
 	; day
-	db 71, REUNICLUS
+	db 71, UNOWN
 	db 71, CROBAT
 	db 73, RHYPERIOR
 	db 73, METAGROSS
@@ -1896,7 +1896,7 @@ JohtoGrassWildMons:
 	db 75, GARCHOMP
 	db 90, DUNSPARCE
 	; nite
-	db 71, REUNICLUS
+	db 71, UNOWN
 	db 71, CROBAT
 	db 73, RHYPERIOR
 	db 73, METAGROSS

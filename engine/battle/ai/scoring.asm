@@ -1604,6 +1604,15 @@ AI_Smart_LeechSeed:
    	pop hl
    	jr c, .discourage
 
+; if Cottonee encourage slightly
+    ld a, [wEnemyMonSpecies]
+    cp COTTONEE
+    jr nz, .checkHP
+    dec [hl]
+    dec [hl]
+    ret
+
+.checkHP
 ; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
 	jr nc, .discourage
@@ -2779,9 +2788,13 @@ AI_Smart_Curse:
 
 AI_Smart_KingsShield:
 ; discourage if the we already used Protecting move
-	ld a, [wEnemyProtectCount]
-	and a
-	jr nz, .discourage
+	ld a, [wCurEnemyMove]
+	cp PROTECT
+	jr z, .discourage
+	cp ENDURE
+	jr z, .discourage
+    cp KINGS_SHIELD
+	jr z, .discourage
 
 ; discourage if already in defense mode
     ld a, [wEnemyDefLevel]
@@ -2831,19 +2844,18 @@ endr
 
 AI_Smart_Protect:
 ; Greatly discourage this move if the enemy already used Protect.
-	ld a, [wEnemyProtectCount]
-	and a
-	jr nz, .greatly_discourage
+	ld a, [wCurEnemyMove]
+	cp PROTECT
+	jr z, .greatly_discourage
+	cp ENDURE
+	jr z, .greatly_discourage
+    cp KINGS_SHIELD
+	jr z, .greatly_discourage
 
 ; Discourage this move if the player is locked on.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, .discourage
-
-; Encourage this move if the player's Fury Cutter is boosted enough.
-;	ld a, [wPlayerFuryCutterCount]
-;	cp 3
-;	jr nc, .encourage
 
 ; Encourage this move if the player has charged a two-turn move.
 	ld a, [wPlayerSubStatus3]
@@ -2877,6 +2889,8 @@ AI_Smart_Protect:
 	ret
 
 .greatly_discourage
+	inc [hl]
+	inc [hl]
 	inc [hl]
 
 .discourage

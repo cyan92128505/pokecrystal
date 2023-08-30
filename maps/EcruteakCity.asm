@@ -441,10 +441,6 @@ EcruteakTeleportGuyNoText:
 	done
 
 EcruteakTeleportGuyEncounterScript:
-    checkevent EVENT_BEAT_WHITNEY
-    iffalse .talk
-    end
-.talk
     turnobject PLAYER, RIGHT
     sjump EcruteakTeleportGuyScript
 
@@ -603,7 +599,7 @@ EcruteakCity_MapEvents:
 	warp_event 17, 35, ROUTE_37, 2
 
 	def_coord_events
-	coord_event 16, 30, SCENE_ALWAYS, EcruteakTeleportGuyEncounterScript
+	coord_event 16, 30, SCENE_DEFAULT, EcruteakTeleportGuyEncounterScript
 
 	def_bg_events
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign

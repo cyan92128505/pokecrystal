@@ -3100,8 +3100,9 @@ wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
+wEcruteakCitySceneID::                            db
 
-	ds 49
+	ds 48
 
 ; fight counts
 wJackFightCount::    db

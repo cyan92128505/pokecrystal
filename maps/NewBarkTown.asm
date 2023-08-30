@@ -357,10 +357,6 @@ PokemonAttacksText:
 	done
 
 NeedToGetAPokemon:
-    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-    iffalse .block
-    end
-.block
     turnobject PLAYER, DOWN
 	opentext
 	writetext NewBarkTownBlockText
@@ -370,10 +366,6 @@ NeedToGetAPokemon:
     end
 
 NeedToGetAPokemon2:
-    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-    iffalse .block
-    end
-.block
     turnobject PLAYER, DOWN
 	opentext
 	writetext NewBarkTownBlockText
@@ -478,25 +470,15 @@ NewBarkTownGotRepelsText:
     done
 
 CrystalScript1:
-    checkevent EVENT_BEAT_CRYSTAL_1
-    iftrue .end
-    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-    iffalse .end
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, NewBarkTownMovement_PlayerRight
     sjump CrystalScript
-.end
     end
 
 CrystalScript2:
-    checkevent EVENT_BEAT_CRYSTAL_1
-    iftrue .end
-    checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-    iffalse .end
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, NewBarkTownMovement_PlayerUpAndRight
     sjump CrystalScript
-.end
     end
 
 CrystalScript:
@@ -518,6 +500,7 @@ CrystalScript:
 	loadtrainer CRYSTAL, CRYSTAL_1
 	startbattle
 	setevent EVENT_BEAT_CRYSTAL_1
+	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
 	reloadmap
 
 	opentext
@@ -863,8 +846,8 @@ NewBarkTown_MapEvents:
 	coord_event  11, 11, SCENE_DEFAULT, NeedToGetAPokemon
 	coord_event  18, 17, SCENE_DEFAULT, NeedToGetAPokemon2
 	coord_event  18, 18, SCENE_DEFAULT, NeedToGetAPokemon2
-	coord_event  1, 20, SCENE_ALWAYS, CrystalScript1
-	coord_event  1, 21, SCENE_ALWAYS, CrystalScript2
+	coord_event  1, 20, SCENE_CUSTOM_1, CrystalScript1
+	coord_event  1, 21, SCENE_CUSTOM_1, CrystalScript2
 
 
 	def_bg_events

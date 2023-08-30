@@ -507,6 +507,7 @@ MasterRedScript:
 	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_RED
+	setscene SCENE_FINISHED
 	opentext
 	writetext MasterRedAfterBattleText
 	waitbutton
@@ -982,15 +983,12 @@ RematchRefuseTextHallOfOrigin:
     done
 
 MustBeatMasterRedScript:
-    checkevent EVENT_BEAT_MASTER_RED
-    iftrue .end
     turnobject PLAYER, DOWN
 	opentext
 	writetext MustBeatMasterRedScriptText
     waitbutton
     closetext
     applymovement PLAYER, Movement_HallOfOriginTurnBack
-.end
     end
 
 MustBeatMasterRedScriptText:
@@ -1521,18 +1519,152 @@ MultiverseDefeatText:
     text "Defeat!"
     done
 
+InvaderMasterPatches:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_PATCHES
+	iftrue .FightDone
+.fight
+	writetext InvaderMasterPatchesSeenText
+	waitbutton
+	closetext
+	winlosstext InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText
+	loadtrainer INVADER, MASTER_PATCHES
+	startbattle
+	reloadmapafterbattle
+
+	setmapscene ORIGIN_ROAD, SCENE_FINISHED
+
+	checkevent EVENT_BEAT_MASTER_PATCHES
+	iftrue .finish
+	setevent EVENT_BEAT_MASTER_PATCHES
+	setmapscene HALL_OF_ORIGIN, SCENE_CUSTOM_1
+	opentext
+	writetext InvaderMasterPatchesAfterText
+	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_PATCHES
+	closetext
+.finish
+	special HealParty
+	end
+.FightDone:
+	writetext InvaderMasterPatchesAfterText
+	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_PATCHES
+    closetext
+	opentext
+	writetext RematchTextPatches
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextPatches
+	waitbutton
+	closetext
+	end
+
+RematchTextPatches:
+    text "How about a"
+    line "match friend?"
+    done
+
+RematchRefuseTextPatches:
+    text "Stop by"
+    line "anytime."
+    done
+
+InvaderMasterPatchesSeenText:
+	text "What you again?"
+	line "Well, well!"
+
+	para "You've been a"
+	line "stranger."
+
+	para "You must be"
+	line "searching for"
+	cont "the ultimate"
+	cont "treasure!"
+
+	para "It's just up"
+	line "ahead."
+
+	para "But don't"
+	line "get your"
+	cont "hopes up."
+
+	para "There is a"
+	line "group of max"
+	cont "level trainers."
+
+	para "I could not"
+	line "defeat them."
+
+	para "Even with my"
+	line "cheat codes!"
+
+	para "Oh, you caught"
+	line "me!"
+
+	para "Heh heh, this"
+	line "is what I do"
+	cont "my friend."
+
+	para "The #MON"
+	line "I'll be taking"
+	cont "from you."
+
+	para "That's the"
+	line "real treasure!"
+	done
+
+InvaderMasterPatchesBeatenText:
+	text "...Oh"
+	line "You, I..."
+	cont "Let's just"
+	cont "calm down."
+	done
+
+InvaderMasterPatchesVictoryText:
+	text "Phew."
+	para "The righteous"
+	line "prevail again."
+	done
+
+InvaderMasterPatchesAfterText:
+	text "No hard"
+	line "feelings!"
+
+	para "I'm but a "
+	line "humble merchant"
+	cont "now."
+
+	para "Go on take a"
+	line "look."
+
+	para "It'll shimmer"
+	line "you blind."
+
+	para "Heh, heh, heh..."
+	done
+
+PatchesAttacks:
+    turnobject PLAYER, RIGHT
+    sjump InvaderMasterPatches
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 
 	def_coord_events
-	coord_event 11, 18, SCENE_ALWAYS, MustBeatMasterRedScript
-	coord_event 12, 18, SCENE_ALWAYS, MustBeatMasterRedScript
+
 	coord_event 10, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 11, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 12, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 13, 45, SCENE_ALWAYS, ReloadMapScript
+	coord_event 10, 29, SCENE_DEFAULT, PatchesAttacks
+	coord_event 11, 29, SCENE_DEFAULT, PatchesAttacks
+	coord_event 12, 29, SCENE_DEFAULT, PatchesAttacks
+	coord_event 11, 18, SCENE_CUSTOM_1, MustBeatMasterRedScript
+	coord_event 12, 18, SCENE_CUSTOM_1, MustBeatMasterRedScript
 
 	def_bg_events
 
@@ -1547,6 +1679,7 @@ HallOfOrigin_MapEvents:
 	object_event  8, 20, SPRITE_LANCE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterLanceScript, -1
 	object_event 15, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
 	object_event 13, 18, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
-	object_event 11, 22, SPRITE_KOGA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
+	object_event 13, 23, SPRITE_KOGA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
 	object_event 2, 21, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, MultiverseRolePlayScript, -1
+	object_event 13, 29, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderMasterPatches, -1
 

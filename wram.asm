@@ -3101,8 +3101,9 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wEcruteakCitySceneID::                            db
+wHallOfOriginSceneID::                            db
 
-	ds 48
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

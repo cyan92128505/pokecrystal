@@ -1,3 +1,20 @@
+; AndrewNote - Scenes - Here is how cutscenes work
+
+; Scenes are tightly coupled with the map they are on
+; This file defines the mapping between map and a variable in wram representing scenes on that map
+; You need to add a wram variable and an entry here if you want scenes to play on a map
+
+; Each map has a numerical value called sceneId assigned to it, the default is 0, represented by SCENE_DEFAULT
+; When the player walks on a coord_event tile it checks the sceneId for that event, SCENE_DEFAULT = 0, SCENE_ALWAYS = -1 etc
+; If the sceneId of the map and the coord_event match then the scene plays, unless using SCENE_ALWAYS which always play
+
+; I have added some custom sceneIds, SCENE_CUSTOM_1 = 101, SCENE_CUSTOM_2 = 102, down to SCENE_CUSTOM_9
+
+; The scenes on a map need to happen sequentially, starting with SCENE_DEFAULT = 0
+; When SCENE_DEFAULT has played you can set the maps sceneId to whichever scene should come next
+; This is done via - setmapscene MAP_NAME, SCENE_ID - you can do this anywhere
+; By convention the maps sceneId should have a final state of SCENE_FINISHED = 1, no coord_events should use that Id
+
 scene_var: MACRO
 ; map, variable
 	map_id \1
@@ -85,4 +102,5 @@ MapScenes::
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
+	scene_var HALL_OF_ORIGIN,                              wHallOfOriginSceneID
 	db -1 ; end

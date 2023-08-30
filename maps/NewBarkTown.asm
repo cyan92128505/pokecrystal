@@ -366,7 +366,7 @@ NeedToGetAPokemon:
     end
 
 NeedToGetAPokemon2:
-    turnobject PLAYER, DOWN
+    turnobject PLAYER, LEFT
 	opentext
 	writetext NewBarkTownBlockText
     waitbutton

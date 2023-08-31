@@ -561,6 +561,7 @@ Guard1BlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_JANINE
     iffalse .block
+    setmapscene DESTINY_FRONTIER, SCENE_CUSTOM_2
     end
 .block
     turnobject PLAYER, RIGHT
@@ -594,6 +595,7 @@ Guard2BlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_EUSINE
     iffalse .block
+    setmapscene DESTINY_FRONTIER, SCENE_FINISHED
     end
 .block
     turnobject PLAYER, UP
@@ -612,6 +614,7 @@ Guard2BlockText:
 
 OakScript:
     setevent EVENT_FRONTIER_INTRO
+    setmapscene DESTINY_FRONTIER, SCENE_CUSTOM_1
     faceplayer
     opentext
     checkevent EVENT_CAUGHT_MEWTWO
@@ -815,10 +818,9 @@ DestinyFrontier_MapEvents:
 
 
 	def_coord_events
-	coord_event 30, 38, SCENE_ALWAYS, Guard1BlockScript
-	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript
-	coord_event 11,  7, SCENE_ALWAYS, Guard2BlockScript
-	coord_event 30, 50, SCENE_ALWAYS, OakEncounterScript
+	coord_event 30, 50, SCENE_DEFAULT, OakEncounterScript
+	coord_event 30, 38, SCENE_CUSTOM_1, Guard1BlockScript
+	coord_event 11,  7, SCENE_CUSTOM_2, Guard2BlockScript
 
 	def_bg_events
 

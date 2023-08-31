@@ -70,7 +70,7 @@ MapScenes::
 	scene_var BATTLE_TOWER_BATTLE_ROOM,                    wBattleTowerBattleRoomSceneID
 	scene_var BATTLE_TOWER_ELEVATOR,                       wBattleTowerElevatorSceneID
 	scene_var BATTLE_TOWER_HALLWAY,                        wBattleTowerHallwaySceneID
-	scene_var BATTLE_TOWER_OUTSIDE,                        wBattleTowerOutsideSceneID ; unused
+	scene_var BATTLE_TOWER_OUTSIDE,                        wBattleTowerOutsideSceneID
 	scene_var ROUTE_43_GATE,                               wRoute43GateSceneID
 	scene_var MOUNT_MOON,                                  wMountMoonSceneID
 	scene_var SPROUT_TOWER_3F,                             wSproutTower3FSceneID
@@ -103,4 +103,22 @@ MapScenes::
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
 	scene_var HALL_OF_ORIGIN,                              wHallOfOriginSceneID
+	scene_var ANCIENT_TEMPLE,                              wAncientTempleSceneID
+	scene_var ANCIENT_RUIN_PRESENT,                        wAncientRuinPresentSceneID
+	scene_var CERULEAN_CAVE,                               wCeruleanCaveSceneID
+	scene_var DESTINY_ELITE_FOUR,                          wDestinyEliteFourSceneID
+	scene_var DESTINY_FRONTIER,                            wDestinyFrontierSceneID
+	scene_var DESTINY_SQUARE,                              wDestinySquareSceneID
+	scene_var GOLDENROD_CITY,                              wGoldenrodCitySceneID
+	scene_var PALLET_TOWN,                                 wPalletTownSceneID
+	scene_var RADIO_TOWER_1F,                              wRadioTower1FSceneID
+	scene_var ROUTE_22,                                    wRoute22SceneID
+	scene_var ROUTE_26,                                    wRoute26SceneID
+	scene_var ROUTE_31,                                    wRoute31SceneID
+	scene_var ROUTE_44,                                    wRoute44SceneID
+	scene_var SILVER_CAVE_ITEM_ROOMS,                      wSilverCaveItemRoomsSceneID
+	scene_var SILVER_CAVE_OUTSIDE,                         wSilverCaveOutsideSceneID
+	scene_var VERMILION_CITY,                              wVermilionCitySceneID
+	scene_var VIOLET_CITY,                                 wVioletCitySceneID
+	scene_var VIRIDIAN_GYM,                                wViridianGymSceneID
 	db -1 ; end

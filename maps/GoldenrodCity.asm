@@ -595,10 +595,6 @@ GoldenrodCityPokemonAttacksText:
 	done
 	
 GoldenrodCitySelfScript:
-    checkevent EVENT_RECEIVED_CARD_KEY
-    iffalse .end
-    checkevent EVENT_BEAT_GOLDENROD_SELF
-    iftrue .end
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear GOLDENRODCITY_SELF
@@ -646,13 +642,13 @@ GoldenrodCitySelfScript:
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
 	setevent EVENT_BEAT_GOLDENROD_SELF
+	setmapscene GOLDENROD_CITY, SCENE_FINISHED
 	opentext
 	writetext GoldenrodSelfText5
 	waitbutton
 	closetext
 	disappear GOLDENRODCITY_SELF
 	special RestartMapMusic
-.end
 	end
 
 GoldenrodSelfText1:
@@ -732,7 +728,7 @@ GoldenrodCity_MapEvents:
 	warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1
 
 	def_coord_events
-    coord_event 5, 16, SCENE_ALWAYS, GoldenrodCitySelfScript
+    coord_event 5, 16, SCENE_CUSTOM_1, GoldenrodCitySelfScript
 
 	def_bg_events
 	bg_event 10, 14, BGEVENT_READ, GoldenrodCityStationSign

@@ -1291,8 +1291,7 @@ TeamRocketBaseB2F_MapEvents:
 	def_coord_events
 	coord_event  5, 14, SCENE_DEFAULT, LanceHealsScript1
 	coord_event  4, 13, SCENE_DEFAULT, LanceHealsScript2
-	;coord_event 14, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFLeft
-	coord_event 14, 11, SCENE_ALWAYS, RocketBaseBossFLeft
+	coord_event 14, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFLeft
 	coord_event 15, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFRight
 	coord_event 14, 12, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseCantLeaveScript
 	coord_event 15, 12, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseCantLeaveScript

@@ -94,6 +94,7 @@ HenshinScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_HENSHIN
+	setmapscene ANCIENT_RUIN_PRESENT, SCENE_CUSTOM_1
 	;opentext
 	;writetext HenshinBeatenText
 	;waitbutton
@@ -141,8 +142,9 @@ RematchRefuseTextHenshin:
     done
 
 DialgaBlockScript:
-    checkevent EVENT_CAUGHT_DIALGA
+    callasm IsDialgaInParty
     iffalse .block
+    setmapscene ANCIENT_RUIN_PRESENT, SCENE_FINISHED
     end
 .block
     turnobject PLAYER, UP
@@ -152,6 +154,26 @@ DialgaBlockScript:
     closetext
     applymovement PLAYER, Movement_AncientRuinsPresentTurnBack
     end
+
+IsDialgaInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp DIALGA
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
 
 DialgaBlockText:
     text "Only the power of"
@@ -252,8 +274,8 @@ AncientRuinPresent_MapEvents:
 	warp_event 19,  5, ANCIENT_RUIN_PAST, 1
 
 	def_coord_events
-	coord_event 19, 6, SCENE_ALWAYS, DialgaBlockScript
-	coord_event 20, 22, SCENE_ALWAYS, FightHenshinScript
+	coord_event 19, 6, SCENE_CUSTOM_1, DialgaBlockScript
+	coord_event 20, 22, SCENE_DEFAULT, FightHenshinScript
 
 	def_bg_events
 

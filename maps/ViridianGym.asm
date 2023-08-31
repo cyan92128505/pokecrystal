@@ -29,9 +29,10 @@ ViridianGymBlueScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_EARTHBADGE
-	;iftrue .FightDone
+	iftrue .FightDone
 	checkevent EVENT_BEAT_HOEN_ARMY
-	;iftrue .battle
+	iftrue .battle
+	setmapscene VIRIDIAN_GYM, SCENE_FINISHED
 	writetext FalseIntroText
 	special FadeOutMusic
 	showemote EMOTE_SHOCK, VIRIDIANGYM_BLUE, 15
@@ -61,6 +62,8 @@ ViridianGymBlueScript:
     disappear VIRIDIANGYM_BLUE
 
 	setevent EVENT_HOEN_INVASION_UNDERWAY
+	setmapscene ROUTE_22, SCENE_CUSTOM_1
+	setmapscene VERMILION_CITY, SCENE_CUSTOM_1
 	setval 1
     writemem wHoenInvasionUnderway
 	end
@@ -387,8 +390,8 @@ ViridianGym_MapEvents:
 	warp_event  5, 17, VIRIDIAN_CITY, 1
 
 	def_coord_events
-	coord_event 4, 5, SCENE_ALWAYS, ApproachBlueScript1
-	coord_event 5, 5, SCENE_ALWAYS, ApproachBlueScript2
+	coord_event 4, 5, SCENE_DEFAULT, ApproachBlueScript1
+	coord_event 5, 5, SCENE_DEFAULT, ApproachBlueScript2
 
 	def_bg_events
 	bg_event  3, 13, BGEVENT_READ, ViridianGymStatue

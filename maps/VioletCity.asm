@@ -383,8 +383,6 @@ VioletCityFieldMon4Script:
     end
 
 VioletCitySelfScript:
-    checkevent EVENT_BEAT_VIOLET_SELF
-    iftrue .end
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear VIOLETCITY_SELF
@@ -430,6 +428,7 @@ VioletCitySelfScript:
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
 	setevent EVENT_BEAT_VIOLET_SELF
+	setmapscene VIOLET_CITY, SCENE_FINISHED
 	opentext
 	writetext VioletSelfText5
 	waitbutton
@@ -506,7 +505,7 @@ VioletCity_MapEvents:
 	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
 
 	def_coord_events
-    coord_event 18, 18, SCENE_ALWAYS, VioletCitySelfScript
+    coord_event 18, 18, SCENE_DEFAULT, VioletCitySelfScript
 
 	def_bg_events
 	bg_event 24, 20, BGEVENT_READ, VioletCitySign

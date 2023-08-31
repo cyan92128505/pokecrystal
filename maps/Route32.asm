@@ -956,8 +956,6 @@ Route32FieldMon8Script:
 	end
 
 Route32CrystalScript:
-    checkevent EVENT_BEAT_CRYSTAL_2
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     playmusic MUSIC_CRYSTAL_ENCOUNTER
     opentext
@@ -984,6 +982,7 @@ Route32CrystalScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_2
+	setmapscene ROUTE_32, SCENE_FINISHED
 
 	opentext
 	writetext Route32CrystalText_KeepItUp
@@ -1149,7 +1148,7 @@ Route32_MapEvents:
 
 	def_coord_events
 	coord_event 18,  8, SCENE_DEFAULT, Route32CooltrainerMStopsYouScene
-	coord_event 18,  9, SCENE_ALWAYS, Route32CrystalScript
+	coord_event 18,  9, SCENE_CUSTOM_1, Route32CrystalScript
 
 	def_bg_events
 	bg_event 13,  5, BGEVENT_READ, Route32Sign

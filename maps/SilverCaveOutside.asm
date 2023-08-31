@@ -344,12 +344,6 @@ Movement_SilverCaveOutsideTurnBackSlow:
 	step_end
 
 SilverCaveRivalsScript:
-    checkevent EVENT_BEAT_SILVER_CAVE_RIVAL
-    iffalse .fight
-    checkevent EVENT_BEAT_CRYSTAL_7
-    iffalse .fight
-    end
-.fight
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, Movement_SilverCaveOutsideTurnBack
     playmusic MUSIC_RIVAL_ENCOUNTER
@@ -474,6 +468,7 @@ SilverCaveRivalsScript:
     closetext
     applymovement SILVERCAVEOUTSIDE_CRYSTAL, SilverCaveOutsideMovement_CrystalLeaves
     disappear SILVERCAVEOUTSIDE_CRYSTAL
+    setmapscene SILVER_CAVE_OUTSIDE, SCENE_FINISHED
     end
 
 SilverCaveOutsideMovement_SilverApproaches:
@@ -1947,7 +1942,7 @@ SilverCaveOutside_MapEvents:
 	def_coord_events
 	coord_event 31,  6, SCENE_ALWAYS, SilverCaveOutsideBlockScript
 	coord_event 32,  6, SCENE_ALWAYS, SilverCaveOutsideBlockScript
-	coord_event 18, 10, SCENE_ALWAYS, SilverCaveRivalsScript
+	coord_event 18, 10, SCENE_DEFAULT, SilverCaveRivalsScript
 
 	def_bg_events
 	bg_event 24, 19, BGEVENT_READ, MtSilverPokecenterSign

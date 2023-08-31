@@ -23,11 +23,11 @@ MasterSabrinaScript:
 	loadtrainer SABRINA, MASTER_SABRINA
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MASTER_SABRINA
+	iftrue .skipFlags
 	setevent EVENT_BEAT_MASTER_SABRINA
-	;opentext
-	;writetext DefaultAfterBattleTextDEF
-	;waitbutton
-	;closetext
+	setmapscene DESTINY_ELITE_FOUR, SCENE_CUSTOM_3
+.skipFlags
 	special HealParty
 	end
 .FightDone:
@@ -57,11 +57,11 @@ MasterBrunoScript:
 	loadtrainer BRUNO, MASTER_BRUNO
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MASTER_BRUNO
+	iftrue .skipFlags
 	setevent EVENT_BEAT_MASTER_BRUNO
-	;opentext
-	;writetext DefaultAfterBattleTextDEF
-	;waitbutton
-	;closetext
+	setmapscene DESTINY_ELITE_FOUR, SCENE_CUSTOM_1
+.skipFlags
 	special HealParty
 	end
 .FightDone:
@@ -91,11 +91,11 @@ MasterKarenScript:
 	loadtrainer KAREN, MASTER_KAREN
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MASTER_KAREN
+	iftrue .skipFlags
 	setevent EVENT_BEAT_MASTER_KAREN
-	;opentext
-	;writetext DefaultAfterBattleTextDEF
-	;waitbutton
-	;closetext
+	setmapscene DESTINY_ELITE_FOUR, SCENE_CUSTOM_2
+.skipFlags
 	special HealParty
 	end
 .FightDone:
@@ -125,11 +125,11 @@ MasterGiovanniScript:
 	loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MASTER_GIOVANNI
+	iftrue .skipFlags
 	setevent EVENT_BEAT_MASTER_GIOVANNI
-	;opentext
-	;writetext DefaultAfterBattleTextDEF
-	;waitbutton
-	;closetext
+	setmapscene DESTINY_ELITE_FOUR, SCENE_FINISHED
+.skipFlags
 	special HealParty
 	end
 .FightDone:
@@ -172,10 +172,6 @@ Movement_DestinyEliteFourTurnBack:
 	step_end
 
 KarenBlockScript:
-    checkevent EVENT_BEAT_MASTER_KAREN
-    iffalse .block
-    end
-.block
 	opentext
 	writetext DefeatOpponentText
     waitbutton
@@ -184,10 +180,6 @@ KarenBlockScript:
     end
 
 BrunoBlockScript:
-    checkevent EVENT_BEAT_MASTER_BRUNO
-    iffalse .block
-    end
-.block
 	opentext
 	writetext DefeatOpponentText
     waitbutton
@@ -196,10 +188,6 @@ BrunoBlockScript:
     end
 
 SabrinaBlockScript:
-    checkevent EVENT_BEAT_MASTER_SABRINA
-    iffalse .block
-    end
-.block
 	opentext
 	writetext DefeatOpponentText
     waitbutton
@@ -208,10 +196,6 @@ SabrinaBlockScript:
     end
 
 GiovanniBlockScript:
-    checkevent EVENT_BEAT_MASTER_GIOVANNI
-    iffalse .block
-    end
-.block
 	opentext
 	writetext DefeatOpponentText
     waitbutton
@@ -251,14 +235,14 @@ DestinyEliteFour_MapEvents:
 	warp_event  19, 24, DESTINY_SQUARE, 2
 
 	def_coord_events
-	coord_event 18,  3, SCENE_ALWAYS, KarenBlockScript
-	coord_event 19,  3, SCENE_ALWAYS, KarenBlockScript
-	coord_event  4,  3, SCENE_ALWAYS, BrunoBlockScript
-	coord_event  5,  3, SCENE_ALWAYS, BrunoBlockScript
-	coord_event  4, 25, SCENE_ALWAYS, SabrinaBlockScript
-	coord_event  5, 25, SCENE_ALWAYS, SabrinaBlockScript
-	coord_event 18, 25, SCENE_ALWAYS, GiovanniBlockScript
-	coord_event 19, 25, SCENE_ALWAYS, GiovanniBlockScript
+	coord_event  4,  3, SCENE_DEFAULT, BrunoBlockScript
+	coord_event  5,  3, SCENE_DEFAULT, BrunoBlockScript
+	coord_event 18,  3, SCENE_CUSTOM_1, KarenBlockScript
+	coord_event 19,  3, SCENE_CUSTOM_1, KarenBlockScript
+	coord_event  4, 25, SCENE_CUSTOM_2, SabrinaBlockScript
+	coord_event  5, 25, SCENE_CUSTOM_2, SabrinaBlockScript
+	coord_event 18, 25, SCENE_CUSTOM_3, GiovanniBlockScript
+	coord_event 19, 25, SCENE_CUSTOM_3, GiovanniBlockScript
 
 	def_bg_events
 

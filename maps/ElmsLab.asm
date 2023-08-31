@@ -466,6 +466,7 @@ ElmGiveTicketScript:
 	waitbutton
 	closetext
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
+	setmapscene ELMS_LAB, SCENE_CUSTOM_1
 	setevent EVENT_GOT_CLEAR_BELL
 	end
 
@@ -1567,14 +1568,8 @@ DadBattleScript2:
     end
 
 DadBattleScript1:
-    checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
-    iffalse .end
-    checkevent EVENT_BEAT_DAD
-    iftrue .end
     applymovement PLAYER, ELmsLabMovement_PlayerDown
     sjump DadBattleScript
-.end
-    end
 
 DadBattleScript:
     showemote EMOTE_SHOCK, PLAYER, 15
@@ -1632,6 +1627,7 @@ DadBattleScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_DAD
+	setmapscene ELMS_LAB, SCENE_FINISHED
 
 	applymovement ELMSLAB_MUM, ELmsLabMovement_MumToDad
 	opentext
@@ -1937,8 +1933,8 @@ ElmsLab_MapEvents:
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POTION, AideScript_WalkPotion2
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
-    coord_event  4,  5, SCENE_ALWAYS, DadBattleScript1
-	coord_event  5,  5, SCENE_ALWAYS, DadBattleScript2
+    coord_event  4,  5, SCENE_CUSTOM_1, DadBattleScript1
+	coord_event  5,  5, SCENE_CUSTOM_1, DadBattleScript2
 
 	def_bg_events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine

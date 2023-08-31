@@ -234,6 +234,9 @@ DialgaBarrierScript:
     changeblock 30, 4, $2B
     setevent EVENT_DIALGA_BARRIER_CLEARED
     reloadmap
+    checkevent EVENT_PALKIA_BARRIER_CLEARED
+    iffalse .end
+    setmapscene SILVER_CAVE_ITEM_ROOMS, SCENE_FINISHED
 .end
     end
 
@@ -258,6 +261,9 @@ PalkiaBarrierScript:
     changeblock 18, 4, $2B
     setevent EVENT_PALKIA_BARRIER_CLEARED
     reloadmap
+    checkevent EVENT_DIALGA_BARRIER_CLEARED
+    iffalse .end
+    setmapscene SILVER_CAVE_ITEM_ROOMS, SCENE_FINISHED
 .end
     end
 
@@ -337,10 +343,10 @@ SilverCaveItemRooms_MapEvents:
 	warp_event  5, 15, SILVER_CAVE_ROOM_2, 3
 
 	def_coord_events
-	coord_event 29, 6, SCENE_ALWAYS, DialgaBarrierScript
-	coord_event 30, 6, SCENE_ALWAYS, DialgaBarrierScript
-	coord_event 17, 6, SCENE_ALWAYS, PalkiaBarrierScript
-	coord_event 18, 6, SCENE_ALWAYS, PalkiaBarrierScript
+	coord_event 29, 6, SCENE_DEFAULT, DialgaBarrierScript
+	coord_event 30, 6, SCENE_DEFAULT, DialgaBarrierScript
+	coord_event 17, 6, SCENE_DEFAULT, PalkiaBarrierScript
+	coord_event 18, 6, SCENE_DEFAULT, PalkiaBarrierScript
 
 	def_bg_events
 

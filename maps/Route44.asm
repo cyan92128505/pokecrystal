@@ -701,6 +701,7 @@ VanceEncounterScript:
 .talk
     turnobject PLAYER, RIGHT
     sjump TrainerBirdKeeperVance1
+    setmapscene ROUTE_44, SCENE_FINISHED
 
 Route44_MapEvents:
 	db 0, 0 ; filler
@@ -709,7 +710,7 @@ Route44_MapEvents:
 	warp_event 56,  7, ICE_PATH_1F, 1
 
 	def_coord_events
-	coord_event 56, 8, SCENE_ALWAYS, VanceEncounterScript
+	coord_event 56, 8, SCENE_DEFAULT, VanceEncounterScript
 
 	def_bg_events
 	bg_event 53,  7, BGEVENT_READ, Route44Sign1

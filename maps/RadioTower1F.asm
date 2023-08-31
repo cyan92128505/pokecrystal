@@ -477,37 +477,19 @@ RadioTower1FLuckyChannelSignText:
 	done
 
 RadioTowerCrystalScript1:
-    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-    iffalse .end
-    checkevent EVENT_BEAT_CRYSTAL_4
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, RadioTowerMovement_PlayerDown
     sjump RadioTowerCrystalScript
-.end
-    end
 
 RadioTowerCrystalScript2:
-    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-    iffalse .end
-    checkevent EVENT_BEAT_CRYSTAL_4
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     turnobject PLAYER, LEFT
     sjump RadioTowerCrystalScript
-.end
-    end
 
 RadioTowerCrystalScript3:
-    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-    iffalse .end
-    checkevent EVENT_BEAT_CRYSTAL_4
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, RadioTowerMovement_PlayerUp
     sjump RadioTowerCrystalScript
-.end
-    end
 
 RadioTowerCrystalScript:
     playmusic MUSIC_CRYSTAL_ENCOUNTER
@@ -541,6 +523,7 @@ RadioTowerCrystalScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_4
+	setmapscene RADIO_TOWER_1F, SCENE_FINISHED
 
 	opentext
 	writetext RadioTowerCrystalGoodbye
@@ -696,9 +679,9 @@ RadioTower1F_MapEvents:
 	warp_event 15,  0, RADIO_TOWER_2F, 2
 
 	def_coord_events
-	coord_event 5,  2, SCENE_ALWAYS, RadioTowerCrystalScript1
-	coord_event 5,  3, SCENE_ALWAYS, RadioTowerCrystalScript2
-	coord_event 5,  4, SCENE_ALWAYS, RadioTowerCrystalScript3
+	coord_event 5,  2, SCENE_CUSTOM_1, RadioTowerCrystalScript1
+	coord_event 5,  3, SCENE_CUSTOM_1, RadioTowerCrystalScript2
+	coord_event 5,  4, SCENE_CUSTOM_1, RadioTowerCrystalScript3
 
 	def_bg_events
 	bg_event  3,  0, BGEVENT_READ, RadioTower1FDirectory

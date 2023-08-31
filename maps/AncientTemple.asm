@@ -22,8 +22,7 @@ HoohLugiaBlockScript:
     iffalse .block
     checkevent EVENT_FOUGHT_LUGIA
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_FALKNER
-    iffalse .fight
+    setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_1
     end
 .block
     turnobject PLAYER, LEFT
@@ -33,9 +32,6 @@ HoohLugiaBlockScript:
     closetext
     applymovement PLAYER, Movement_AncientTempleTurnBack
     end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterFalknerScript
 
 HoohLugiaBlockText:
     text "Only those who"
@@ -54,8 +50,7 @@ GroudonKyogreBlockScript:
     iffalse .block
     checkevent EVENT_CAUGHT_KYOGRE
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_WHITNEY
-    iffalse .fight
+    setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_2
     end
 .block
     turnobject PLAYER, LEFT
@@ -65,9 +60,6 @@ GroudonKyogreBlockScript:
     closetext
     applymovement PLAYER, Movement_AncientTempleTurnBack
     end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterWhitneyScript
 
 GroudonKyogreBlockText:
     text "Only those who"
@@ -86,8 +78,7 @@ PalkiaDialgaBlockScript:
     iffalse .block
     checkevent EVENT_CAUGHT_DIALGA
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_WILL
-    iffalse .fight
+    setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_3
     end
 .block
     turnobject PLAYER, LEFT
@@ -97,9 +88,6 @@ PalkiaDialgaBlockScript:
     closetext
     applymovement PLAYER, Movement_AncientTempleTurnBack
     end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterWillScript
 
 PalkiaDialgaBlockText:
     text "Only those who"
@@ -118,8 +106,7 @@ RayquazaGiratinaBlockScript:
     iffalse .block
     checkevent EVENT_CAUGHT_GIRATINA
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_CLAIR
-    iffalse .fight
+    setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_4
     end
 .block
     turnobject PLAYER, LEFT
@@ -129,9 +116,6 @@ RayquazaGiratinaBlockScript:
     closetext
     applymovement PLAYER, Movement_AncientTempleTurnBack
     end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterClairScript
 
 RayquazaGiratinaBlockText:
     text "Only those who"
@@ -150,8 +134,7 @@ XerneasYveltalBlockScript:
     iffalse .block
     checkevent EVENT_CAUGHT_XERNEAS
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_RIVAL
-    iffalse .fight
+    setmapscene ANCIENT_TEMPLE, SCENE_FINISHED
     end
 .block
     turnobject PLAYER, LEFT
@@ -161,9 +144,6 @@ XerneasYveltalBlockScript:
     closetext
     applymovement PLAYER, Movement_AncientTempleTurnBack
     end
-.fight
-    turnobject PLAYER, LEFT
-    sjump MasterRivalScript
 
 XerneasYveltalBlockText:
     text "Only those who"
@@ -195,16 +175,16 @@ AncientTemple_MapEvents:
 	warp_event 21, 21, ICE_PATH_B3F, 3
 
 	def_coord_events
-	coord_event  7, 26, SCENE_ALWAYS, HoohLugiaBlockScript
-	coord_event  8, 26, SCENE_ALWAYS, HoohLugiaBlockScript
-	coord_event 11, 12, SCENE_ALWAYS, GroudonKyogreBlockScript
-	coord_event 12, 12, SCENE_ALWAYS, GroudonKyogreBlockScript
-	coord_event 25, 24, SCENE_ALWAYS, PalkiaDialgaBlockScript
-	coord_event 25, 24, SCENE_ALWAYS, PalkiaDialgaBlockScript
-	coord_event 25, 16, SCENE_ALWAYS, RayquazaGiratinaBlockScript
-	coord_event 26, 16, SCENE_ALWAYS, RayquazaGiratinaBlockScript
-	coord_event 26,  2, SCENE_ALWAYS, XerneasYveltalBlockScript
-	coord_event 25,  2, SCENE_ALWAYS, XerneasYveltalBlockScript
+	coord_event  7, 26, SCENE_DEFAULT, HoohLugiaBlockScript
+	coord_event  8, 26, SCENE_DEFAULT, HoohLugiaBlockScript
+	coord_event 11, 12, SCENE_CUSTOM_1, GroudonKyogreBlockScript
+	coord_event 12, 12, SCENE_CUSTOM_1, GroudonKyogreBlockScript
+	coord_event 25, 24, SCENE_CUSTOM_2, PalkiaDialgaBlockScript
+	coord_event 25, 24, SCENE_CUSTOM_2, PalkiaDialgaBlockScript
+	coord_event 25, 16, SCENE_CUSTOM_3, RayquazaGiratinaBlockScript
+	coord_event 26, 16, SCENE_CUSTOM_3, RayquazaGiratinaBlockScript
+	coord_event 26,  2, SCENE_CUSTOM_4, XerneasYveltalBlockScript
+	coord_event 25,  2, SCENE_CUSTOM_4, XerneasYveltalBlockScript
 
 	def_bg_events
 

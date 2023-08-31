@@ -336,10 +336,7 @@ MasterAdamScript:
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_ADAM
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	setmapscene DESTINY_SQUARE, SCENE_FINISHED
 	special HealParty
 	end
 .FightDone:
@@ -512,10 +509,6 @@ DefaultLoseAfterBattleTextDestinySquare:
     done
 
 FightAdamScript:
-    checkevent EVENT_BEAT_MASTER_ADAM
-    iffalse .fight
-    end
-.fight
     turnobject PLAYER, LEFT
     sjump MasterAdamScript
 
@@ -526,8 +519,6 @@ ChampionsBlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_STEVEN
     iffalse .block
-    ;checkevent EVENT_BEAT_MASTER_WALLACE
-    ;iffalse .block
     checkevent EVENT_BEAT_MASTER_CYNTHIA
     iffalse .block
     checkevent EVENT_BEAT_MASTER_ALDER
@@ -536,6 +527,7 @@ ChampionsBlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_LEON
     iffalse .block
+    setmapscene DESTINY_SQUARE, SCENE_CUSTOM_1
     end
 .block
 	opentext
@@ -555,14 +547,6 @@ Movement_DestinySquareTurnBack:
 	step DOWN
 	step_end
 
-;FightMewtwoScript:
-;    checkevent EVENT_CAUGHT_MEWTWO
-;    iftrue .end
-;    applymovement PLAYER, Movement_PlayerFacesMewtwo
-;    sjump MewtwoScript
-;.end
-;    end
-
 DestinySquare_MapEvents:
 	db 0, 0 ; filler
 
@@ -576,10 +560,10 @@ DestinySquare_MapEvents:
 	warp_event  7, 8, DESTINY_SQUARE, 4
 
 	def_coord_events
-	coord_event  6,  6, SCENE_ALWAYS, FightAdamScript
-;	coord_event  6,  5, SCENE_ALWAYS, FightMewtwoScript
-	coord_event  6,  17, SCENE_ALWAYS, ChampionsBlockScript
-	coord_event  7,  17, SCENE_ALWAYS, ChampionsBlockScript
+	coord_event  6,  17, SCENE_DEFAULT, ChampionsBlockScript
+	coord_event  7,  17, SCENE_DEFAULT, ChampionsBlockScript
+	coord_event  6,  6, SCENE_CUSTOM_1, FightAdamScript
+;	coord_event  6,  5, SCENE_CUSTOM_2, MewtwoScript
 
 	def_bg_events
 

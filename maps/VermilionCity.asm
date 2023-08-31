@@ -733,12 +733,12 @@ VermilionCity_MapEvents:
 
 	def_coord_events
 	coord_event 10, 20, SCENE_ALWAYS, VermilionGymBlockScript
-	coord_event 10, 20, SCENE_ALWAYS, VermilionHoenInvadedBlockScript
-	coord_event 21, 18, SCENE_ALWAYS, VermilionHoenInvadedBlockScript
-	coord_event  5,  6, SCENE_ALWAYS, VermilionHoenInvadedBlockScript
-	coord_event 13, 14, SCENE_ALWAYS, VermilionHoenInvadedBlockScript
-	coord_event  7, 14, SCENE_ALWAYS, VermilionHoenInvadedBlockScript
-	coord_event 19, 30, SCENE_ALWAYS, VermilionPortHoenInvadedBlockScript
+	coord_event 10, 20, SCENE_CUSTOM_1, VermilionHoenInvadedBlockScript
+	coord_event 21, 18, SCENE_CUSTOM_1, VermilionHoenInvadedBlockScript
+	coord_event  5,  6, SCENE_CUSTOM_1, VermilionHoenInvadedBlockScript
+	coord_event 13, 14, SCENE_CUSTOM_1, VermilionHoenInvadedBlockScript
+	coord_event  7, 14, SCENE_CUSTOM_1, VermilionHoenInvadedBlockScript
+	coord_event 19, 30, SCENE_CUSTOM_1, VermilionPortHoenInvadedBlockScript
 
 
 	def_bg_events

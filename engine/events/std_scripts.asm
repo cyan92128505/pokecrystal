@@ -303,6 +303,7 @@ RadioTowerRocketsScript:
 	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
 	specialphonecall SPECIALCALL_WEIRDBROADCAST
 	setmapscene MAHOGANY_TOWN, SCENE_FINISHED
+	setmapscene RADIO_TOWER_1F, SCENE_CUSTOM_1
 	end
 
 BugContestResultsWarpScript:

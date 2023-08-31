@@ -305,20 +305,12 @@ Movement_SilverCave3TurnBack:
 	step_end
 
 FightAshScript1:
-    checkevent EVENT_BEAT_ASH
-    iftrue .end
     applymovement PLAYER, Movement_PlayerToAsh1
     sjump FightAshScript
-.end
-    end
 
 FightAshScript2:
-    checkevent EVENT_BEAT_ASH
-    iftrue .end
     applymovement PLAYER, Movement_PlayerToAsh2
     sjump FightAshScript
-.end
-    end
 
 FightAshScript:
     pause 20
@@ -345,6 +337,7 @@ FightAshScript:
 	closetext
 	applymovement SILVERCAVEROOM3_ASH, Movement_AshBack
 	turnobject SILVERCAVEROOM3_RED, RIGHT
+	setmapscene SILVER_CAVE_ROOM_3, SCENE_FINISHED
 	end
 
 Movement_AshToPlayer:
@@ -473,8 +466,8 @@ SilverCaveRoom3_MapEvents:
 	warp_event  10, 3, ORIGIN_ROAD_SOUTH, 3
 
 	def_coord_events
-	coord_event 9, 14, SCENE_ALWAYS, FightAshScript1
-	coord_event 10, 14, SCENE_ALWAYS, FightAshScript2
+	coord_event 9, 14, SCENE_DEFAULT, FightAshScript1
+	coord_event 10, 14, SCENE_DEFAULT, FightAshScript2
 	coord_event 9, 4, SCENE_ALWAYS, SilverCave3BlockScript
 	coord_event 10, 4, SCENE_ALWAYS, SilverCave3BlockScript
 

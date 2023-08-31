@@ -758,8 +758,6 @@ Route36FieldMon6Script:
 	end
 
 Route36CrystalScript:
-    checkevent EVENT_BEAT_CRYSTAL_3
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     playmusic MUSIC_CRYSTAL_ENCOUNTER
     appear ROUTE36_CRYSTAL
@@ -776,6 +774,7 @@ Route36CrystalScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_3
+	setmapscene ROUTE_36, SCENE_CUSTOM_1
 
 	opentext
 	writetext Route36CrystalText_KeepItUp
@@ -893,7 +892,7 @@ Route36_MapEvents:
 	def_coord_events
 	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
-	coord_event 35,  9, SCENE_ALWAYS, Route36CrystalScript
+	coord_event 35,  9, SCENE_DEFAULT, Route36CrystalScript
 
 	def_bg_events
 	bg_event 29,  3, BGEVENT_READ, Route36TrainerTips2

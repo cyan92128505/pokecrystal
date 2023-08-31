@@ -401,8 +401,6 @@ Route31FieldMon4Script:
     end
 
 InvaderWarningScript:
-    checkevent EVENT_INVADER_WARNING
-    iftrue .end
     applymovement ROUTE31_YOUNGSTER, Route31Movement_YoungsterApproaches
     opentext
     writetext InvaderWarningText
@@ -410,6 +408,7 @@ InvaderWarningScript:
     closetext
     applymovement ROUTE31_YOUNGSTER, Route31Movement_YoungsterLeaves
     setevent EVENT_INVADER_WARNING
+    setmapscene ROUTE_31, SCENE_FINISHED
 .end
     end
 
@@ -456,7 +455,7 @@ Route31_MapEvents:
 	warp_event 38,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 
 	def_coord_events
-	coord_event  9, 9, SCENE_ALWAYS, InvaderWarningScript
+	coord_event  9, 9, SCENE_DEFAULT, InvaderWarningScript
 
 	def_bg_events
 	bg_event  7,  5, BGEVENT_READ, Route31Sign

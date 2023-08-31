@@ -210,6 +210,7 @@ CeruleanCaveAizenScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_AIZEN
+	setmapscene CERULEAN_CAVE, SCENE_FINISHED
 	;opentext
 	;writetext AizenAfterBattleText
 	;waitbutton
@@ -271,10 +272,6 @@ RematchRefuseTextAizen:
     done
 
 FightAizenScript:
-    checkevent EVENT_BEAT_AIZEN
-    iffalse .fight
-    end
-.fight
     turnobject PLAYER, RIGHT
     sjump CeruleanCaveAizenScript
 
@@ -308,7 +305,7 @@ CeruleanCave_MapEvents:
 
 
 	def_coord_events
-	coord_event 27, 46, SCENE_ALWAYS, FightAizenScript
+	coord_event 27, 46, SCENE_DEFAULT, FightAizenScript
 
 	def_bg_events
 	bg_event 19, 37, BGEVENT_ITEM, CeruleanCaveHiddenAmbrosia

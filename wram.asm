@@ -3102,8 +3102,26 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wEcruteakCitySceneID::                            db
 wHallOfOriginSceneID::                            db
+wAncientTempleSceneID::                           db
+wAncientRuinPresentSceneID::                      db
+wCeruleanCaveSceneID::                            db
+wDestinyEliteFourSceneID::                        db
+wDestinyFrontierSceneID::                         db
+wDestinySquareSceneID::                           db
+wGoldenrodCitySceneID::                           db
+wPalletTownSceneID::                              db
+wRadioTower1FSceneID::                            db
+wRoute22SceneID::                                 db
+wRoute26SceneID::                                 db
+wRoute31SceneID::                                 db
+wRoute44SceneID::                                 db
+wSilverCaveItemRoomsSceneID::                     db
+wSilverCaveOutsideSceneID::                       db
+wVermilionCitySceneID::                           db
+wVioletCitySceneID::                              db
+wViridianGymSceneID::                             db
 
-	ds 47
+	ds 29
 
 ; fight counts
 wJackFightCount::    db

@@ -87,11 +87,11 @@ CherrygroveCityGuideGent:
 	stopfollow
 	special RestartMapMusic
 	turnobject PLAYER, UP
-	;applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement6
 	turnobject CHERRYGROVECITY_GRAMPS, UP
 	playsound SFX_ENTER_DOOR
 	disappear CHERRYGROVECITY_GRAMPS
 	clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
+	setmapscene CHERRYGROVE_CITY, SCENE_CUSTOM_1
 	waitsfx
 	end
 
@@ -1762,12 +1762,8 @@ StarWarsStopText:
     done
 
 CherrygroveGentScene:
-    checkevent EVENT_GUIDE_GENT_IN_HIS_HOUSE
-    iftrue .end
     turnobject PLAYER, UP
     sjump CherrygroveCityGuideGent
-.end
-    end
 
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
@@ -1782,7 +1778,7 @@ CherrygroveCity_MapEvents:
 	def_coord_events
 	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneNorth
 	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneSouth
-	coord_event 32,  7, SCENE_ALWAYS, CherrygroveGentScene
+	coord_event 32,  7, SCENE_DEFAULT, CherrygroveGentScene
 
 
 	def_bg_events

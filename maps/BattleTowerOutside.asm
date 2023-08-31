@@ -178,6 +178,7 @@ BTGrampsScript:
     moveobject BATTLETOWEROUTSIDE_GRAMPS, 10, 28
     appear BATTLETOWEROUTSIDE_GRAMPS
     setevent EVENT_TAKEN_BT_TOUR
+    setmapscene BATTLE_TOWER_OUTSIDE, SCENE_FINISHED
     turnobject PLAYER, UP
 .end
     end
@@ -457,21 +458,13 @@ Movement_GrampsLeaves:
     step_end
 
 BattleTowerTourScript1:
-    checkevent EVENT_TAKEN_BT_TOUR
-    iftrue .end
     turnobject PLAYER, RIGHT
     sjump BTGrampsScript
-.end
-    end
 
 BattleTowerTourScript2:
-    checkevent EVENT_TAKEN_BT_TOUR
-    iftrue .end
     applymovement PLAYER, Movement_BTTour
     turnobject PLAYER, RIGHT
     sjump BTGrampsScript
-.end
-    end
 
 Movement_BTTour:
     step RIGHT
@@ -495,8 +488,8 @@ BattleTowerOutside_MapEvents:
 	warp_event  3,  15, TRAINER_HOUSE_B1F, 8
 
 	def_coord_events
-	coord_event 8, 28, SCENE_ALWAYS, BattleTowerTourScript2
-	coord_event 9, 28, SCENE_ALWAYS, BattleTowerTourScript1
+	coord_event 8, 28, SCENE_DEFAULT, BattleTowerTourScript2
+	coord_event 9, 28, SCENE_DEFAULT, BattleTowerTourScript1
 
 	def_bg_events
 	bg_event 10, 12, BGEVENT_READ, BattleTowerOutsideSign

@@ -78,6 +78,7 @@ GoldenrodUndergroundWarehouseDirectorScript:
 	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
+	setmapscene GOLDENROD_CITY, SCENE_CUSTOM_1
 	writetext DirectorCardKeyText
 	promptbutton
 .GotCardKey:

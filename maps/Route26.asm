@@ -560,8 +560,6 @@ Route26FieldMon8Script:
 	end
 	
 Route26CrystalScript:
-    checkevent EVENT_BEAT_CRYSTAL_5
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     turnobject PLAYER, DOWN
     playmusic MUSIC_CRYSTAL_ENCOUNTER
@@ -593,6 +591,7 @@ Route26CrystalScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_5
+	setmapscene ROUTE_26, SCENE_FINISHED
 
     playmusic MUSIC_INDIGO_PLATEAU
 	opentext
@@ -748,7 +747,7 @@ Route26_MapEvents:
 	warp_event  5, 71, DAY_OF_WEEK_SIBLINGS_HOUSE, 1
 
 	def_coord_events
-	coord_event 7,  6, SCENE_ALWAYS, Route26CrystalScript
+	coord_event 7,  6, SCENE_DEFAULT, Route26CrystalScript
 
 	def_bg_events
 	bg_event  8,  6, BGEVENT_READ, Route26Sign

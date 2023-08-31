@@ -251,10 +251,6 @@ MahoganyGymSignText:
 	done
 	
 MahoganyTownSelfScript:
-    checkevent EVENT_DECIDED_TO_HELP_LANCE
-    iffalse .end
-    checkevent EVENT_BEAT_MAHOGANY_SELF
-    iftrue .end
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear MAHOGANYTOWN_SELF
@@ -301,13 +297,13 @@ MahoganyTownSelfScript:
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
 	setevent EVENT_BEAT_MAHOGANY_SELF
+	setmapscene MAHOGANY_TOWN, SCENE_FINISHED
 	opentext
 	writetext MahoganySelfText5
 	waitbutton
 	closetext
 	disappear MAHOGANYTOWN_SELF
 	special RestartMapMusic
-.end
 	end
 
 MahoganySelfText1:
@@ -380,7 +376,7 @@ MahoganyTown_MapEvents:
 	def_coord_events
 	;coord_event 19,  8, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
 	;coord_event 19,  9, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
-    coord_event 11, 8, SCENE_ALWAYS, MahoganyTownSelfScript
+    coord_event 11, 8, SCENE_CUSTOM_1, MahoganyTownSelfScript
 
 
 	def_bg_events

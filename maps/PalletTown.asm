@@ -195,10 +195,6 @@ RematchRefuseTextAerith2:
     done
 
 PalletTownCrystalScript1:
-    checkevent EVENT_BEAT_ELITE_FOUR
-    iffalse .end
-    checkevent EVENT_BEAT_CRYSTAL_6
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement PLAYER, PalletTownMovement_PlayerRight
     sjump PalletTownCrystalScript
@@ -206,10 +202,6 @@ PalletTownCrystalScript1:
     end
 
 PalletTownCrystalScript2:
-    checkevent EVENT_BEAT_ELITE_FOUR
-    iffalse .end
-    checkevent EVENT_BEAT_CRYSTAL_6
-    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     turnobject PLAYER, DOWN
     sjump PalletTownCrystalScript
@@ -232,6 +224,7 @@ PalletTownCrystalScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_6
+	setmapscene PALLET_TOWN, SCENE_FINISHED
 
     special FadeOutMusic
 	opentext
@@ -351,8 +344,8 @@ PalletTown_MapEvents:
 	warp_event 12, 11, OAKS_LAB, 1
 
 	def_coord_events
-	coord_event 8,  2, SCENE_ALWAYS, PalletTownCrystalScript1
-	coord_event 9,  2, SCENE_ALWAYS, PalletTownCrystalScript2
+	coord_event 8,  2, SCENE_CUSTOM_1, PalletTownCrystalScript1
+	coord_event 9,  2, SCENE_CUSTOM_1, PalletTownCrystalScript2
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign

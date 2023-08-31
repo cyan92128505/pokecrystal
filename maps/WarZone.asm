@@ -53,6 +53,9 @@ WallaceScript:
 	special FadeOutMusic
 	setevent EVENT_BEAT_WALLACE
 	setevent EVENT_BEAT_HOEN_ARMY
+	setmapscene ROUTE_22, SCENE_FINISHED
+	setmapscene VERMILION_CITY, SCENE_FINISHED
+	setmapscene WAR_ZONE, SCENE_FINISHED
 	clearevent EVENT_HOEN_INVASION_UNDERWAY
 	setval 0
     writemem wHoenInvasionUnderway
@@ -1046,10 +1049,10 @@ WarZone_MapEvents:
 	warp_event  13, 35, FUCHSIA_CITY, 12
 
 	def_coord_events
-	coord_event  20,  7, SCENE_ALWAYS, FightWallaceScript1
-	coord_event  21,  7, SCENE_ALWAYS, FightWallaceScript2
-	coord_event  7,  32, SCENE_ALWAYS, WarZoneBlueScript1
-	coord_event  7,  33, SCENE_ALWAYS, WarZoneBlueScript2
+	coord_event  20,  7, SCENE_DEFAULT, FightWallaceScript1
+	coord_event  21,  7, SCENE_DEFAULT, FightWallaceScript2
+	coord_event  7,  32, SCENE_DEFAULT, WarZoneBlueScript1
+	coord_event  7,  33, SCENE_DEFAULT, WarZoneBlueScript2
 
 	def_bg_events
 

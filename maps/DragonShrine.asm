@@ -198,8 +198,6 @@ DragonShrineElder1Script:
 	iftrue .ReceivedDratini
 	checkevent EVENT_GOT_DRATINI
 	iffalse .GiveDratini
-	;checkevent EVENT_BEAT_RIVAL_SAFFRON
-	;iftrue .BeatRivalInMtMoon
 	writetext DragonShrineClairsGrandfatherText
 	waitbutton
 	closetext

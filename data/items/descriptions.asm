@@ -43,7 +43,7 @@ ItemDescriptions:
 	dw MaxReviveDesc
 	dw GuardSpecDesc
 	dw GoldDiceDesc
-	dw MaxRepelDesc
+	dw SportShoesDesc
 	dw RepulsorDesc
 	dw MarkOfGodDesc
 	dw FreshWaterDesc
@@ -426,9 +426,9 @@ GoldDiceDesc:
 	db   "Play any of the"
 	next "roleplay games.@"
 
-MaxRepelDesc:
-	db   "Repels weak #-"
-	next "MON for 250 steps.@"
+SportShoesDesc:
+	db   "Run by default"
+	next "when not indoors.@"
 
 RepulsorDesc:
 	db   "Repels wild"

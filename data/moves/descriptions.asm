@@ -558,8 +558,8 @@ MegaDrainDescription:
 	next "damage inflicted.@"
 
 LeechSeedDescription:
-	db   "Steals HP from the"
-	next "foe on every turn.@"
+	db   "Drain HP of foes"
+	next "in level range.@"
 
 GrowthDescription:
 	db   "Raises the SPCL."

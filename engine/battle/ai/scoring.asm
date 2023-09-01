@@ -1591,6 +1591,14 @@ AI_Smart_LeechSeed:
 	cp GRASS
 	jr z, .discourage
 
+; don't use on foes twice our level
+	ld a, [wBattleMonLevel]
+	add 20
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	sub b
+	jr c, .discourage
+
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
     push hl

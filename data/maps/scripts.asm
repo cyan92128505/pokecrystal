@@ -441,10 +441,6 @@ INCLUDE "maps/OriginRoad.asm"
 INCLUDE "maps/OriginRoadSouth.asm"
 INCLUDE "maps/HallOfOrigin.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
-INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
-INCLUDE "maps/SilverCaveItemRooms.asm"
-INCLUDE "maps/AncientRuinPresent.asm"
-INCLUDE "maps/AncientRuinPast.asm"
 
 SECTION "Map Scripts Overflow 2", ROMX
 
@@ -518,3 +514,10 @@ INCLUDE "maps/Route36NationalParkGate.asm"
 SECTION "Map Scripts Overflow 8", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
+INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
+INCLUDE "maps/SilverCaveItemRooms.asm"
+INCLUDE "maps/AncientRuinPresent.asm"
+
+SECTION "Map Scripts Overflow 9", ROMX
+
+INCLUDE "maps/AncientRuinPast.asm"

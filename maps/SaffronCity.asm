@@ -274,7 +274,6 @@ SaffronGymBlockScript:
     iffalse .block
     checkevent EVENT_BEAT_RIVAL_SAFFRON
     iffalse .SaffronSilverScript
-    sjump .SaffronSilverScript
     end
 .block
     turnobject PLAYER, UP
@@ -357,11 +356,11 @@ SaffronSilverText:
 
 SaffronSilverPokemonFreedText:
     text "I was wrong to"
-    line "steal that #MON."
+    line "steal #MON."
 
     para "I gave all my"
     line "#MON the choice"
-    cont "to stay with me..."
+    cont "to stay with me.."
 
     para "They didn't all"
     line "accept..."

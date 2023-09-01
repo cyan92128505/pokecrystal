@@ -6,6 +6,21 @@ BattleCommand_LeechSeed:
 	call CheckSubstituteOpp
 	jr nz, .evaded
 
+	ld hl, wEnemyMonLevel
+	ld de, wBattleMonLevel
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_levels
+	push hl
+	ld h, d
+	ld l, e
+	pop de
+.got_levels
+	ld a, [de]
+	sla a ; AndrewNote - LeechSeed doesn't work on foes over twice your level
+	sub [hl]
+	jr c, .grass
+
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a

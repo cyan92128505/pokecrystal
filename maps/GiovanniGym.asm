@@ -123,7 +123,7 @@ RematchRefuseTextGiovanni:
     done
 
 TrainerLassEve:
-	trainer LASS, EVE, EVENT_BEAT_LASS_EVE, LassEveSeenText, LassEveBeatenText, 0, .Script
+	trainer LASS, EVEE, EVENT_BEAT_LASS_EVE, LassEveSeenText, LassEveBeatenText, 0, .Script
 .Script:
 	endifjustbattled
 	opentext

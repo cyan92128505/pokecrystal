@@ -212,7 +212,7 @@ KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
-	const EVE
+	const EVEE
 
 	trainerclass JANINE ; 1a
 	const JANINE1

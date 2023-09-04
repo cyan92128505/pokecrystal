@@ -705,6 +705,8 @@ DBZRolePlayScript:
     opentext
     writetext DBZCh5GokuHeroText
     waitbutton
+    writetext NewWarriorText
+    waitbutton
     closetext
 	setval ROLE_PLAYER_SHINY
 	writemem wOtherTrainerClass
@@ -737,6 +739,8 @@ DBZRolePlayScript:
 .VegetaHero
     opentext
     writetext DBZCh5VegetaHeroText
+    waitbutton
+    writetext NewWarriorText
     waitbutton
     closetext
 	setval ROLE_PLAYER_SHINY
@@ -882,6 +886,8 @@ DBZRolePlayScript:
     opentext
     writetext DBZCh5VegetaVillainText
     waitbutton
+    writetext PowerSurgingText
+    waitbutton
     closetext
 	setval ROLE_PLAYER_NORMAL
 	writemem wOtherTrainerClass
@@ -914,6 +920,8 @@ DBZRolePlayScript:
 .VegetaVillain
     opentext
     writetext DBZCh5GokuVillainText
+    waitbutton
+    writetext PowerSurgingText
     waitbutton
     closetext
 	setval ROLE_PLAYER_NORMAL
@@ -1029,11 +1037,6 @@ DBZIntroText:
     line "GYM LEADER is a"
     cont "huge DBZ fan."
 
-    para "So I decided to"
-    line "have a DBZ role"
-    cont "play to get in"
-    cont "the mood."
-
     para "Would you like to"
     line "play?"
 
@@ -1048,21 +1051,7 @@ DBZHeroOrVillainChoiceText:
     done
 
 DBZCh1HeroText:
-    text "You have enjoyed"
-    line "5 years of peace."
-
-    para "You have a wife"
-    line "and a son."
-
-    para "Life is good."
-
-    para "It's been a long"
-    line "time since you"
-    cont "saved the planet"
-    cont "from the evil"
-    cont "PICCOLO."
-
-    para "You are GOKU."
+    text "You are GOKU."
 
     para "The hero of earth."
 
@@ -1070,10 +1059,6 @@ DBZCh1HeroText:
     line "some old friends"
     cont "when a stranger"
     cont "appears."
-
-    para "He can fly and"
-    line "is wearing combat"
-    cont "armour."
 
     para "He claims to be"
     line "an alien."
@@ -1088,36 +1073,21 @@ DBZCh1HeroText:
 
     para "You refuse!"
 
-    para "Next thing you"
-    line "you know you are"
-    cont "on the ground"
-    cont "and he has your"
-    cont "son."
+    para "He steals your"
+    line "young son."
 
     para "You can't match"
     line "him."
-
-    para "For the first"
-    line "time in your life"
-    cont "you are helpless."
 
     para "Only by teaming up"
     line "with your old"
     cont "enemy PICCOLO will"
     cont "you have a chance."
-
-    para "Old rivals unite"
-    line "against a common"
-    cont "foe."
     done
 
 DBZCh1VillainText:
     text "Your space pod"
     line "lands on Earth."
-
-    para "A small planet"
-    line "full of weak"
-    cont "life forms."
 
     para "As you emerge, a"
     line "man with something"
@@ -1129,8 +1099,6 @@ DBZCh1VillainText:
     cont "projectile in"
     cont "your direction."
 
-    para "It moves slow."
-
     para "You catch it and"
     line "flick it back."
 
@@ -1140,17 +1108,9 @@ DBZCh1VillainText:
     para "You are here for"
     line "your brother."
 
-    para "When you find him"
-    line "you are disgusted"
-    cont "at how weak he is."
-
     para "When he refuses to"
     line "come with you, you"
     cont "take his son."
-
-    para "He will come with"
-    line "you one way or"
-    cont "another."
 
     para "Your brother"
     line "approaches meaning"
@@ -1161,13 +1121,8 @@ DBZCh1VillainText:
     done
 
 DBZCh2HeroText:
-    text "By fighting as"
-    line "one, you and"
-    cont "PICCOLO defeat"
-    cont "RADITZ."
-
-    para "However you are"
-    line "fatally injured."
+    text "You are fatally"
+    line "injured."
 
     para "With his last"
     line "breath RADITZ"
@@ -1179,20 +1134,11 @@ DBZCh2HeroText:
 
     para "You pass away."
 
-    para "You find yourself"
-    line "in OTHERWORLD."
-
-    para "An afterlife where"
-    line "you will continue"
-    cont "to train until"
-    cont "your friends can"
-    cont "resurrect you with"
-    cont "the magical DRAGON"
-    cont "BALLS."
-
     para "Over the next"
-    line "year you and your"
-    cont "friends train."
+    line "year you train"
+    cont "in OTHERWORLD and"
+    cont "your friends train"
+    cont "on EARTH."
 
     para "Then they arrive."
 
@@ -1201,14 +1147,8 @@ DBZCh2HeroText:
     para "They begin killing"
     line "right away."
 
-    para "You haven't been"
-    line "wished back yet."
-
     para "Your friends try"
     line "to stop them."
-
-    para "Including your"
-    line "young son."
     done
 
 DBZCh2VillainText:
@@ -1218,13 +1158,6 @@ DBZCh2VillainText:
 
     para "They fatally"
     line "injure you."
-
-    para "Your brother"
-    line "sacrificed himself"
-    cont "to do it."
-
-    para "But you have the"
-    line "last laugh."
 
     para "Your friends are"
     line "far stronger than"
@@ -1236,67 +1169,31 @@ DBZCh2VillainText:
     line "fierce warriors"
     cont "head for earth."
 
-    para "They are the last"
-    line "of their kind."
-
-    para "And they live to"
-    line "fight."
-
     para "You are VEGETA."
 
     para "Prince of your"
     line "dead race."
 
-    para "And destroyer"
-    line "of planets."
-
     para "Your pod lands on"
     line "earth."
 
-    para "Your partner NAPPA"
-    line "emerges first."
-
     para "You are in a city"
     line "full of people."
-
-    para "Men, women and"
-    line "children."
-
-    para "All looking at"
-    line "you."
-
-    para "Insects."
 
     para "With a flick of"
     line "your finger all"
     cont "their lives end."
 
-    para "Only a crater"
-    line "remains."
-
     para "A group arrives."
-
-    para "Stronger than the"
-    line "rest."
 
     para "They mean to stop"
     line "you."
-
-    para "You will crush"
-    line "them without a"
-    cont "second thought."
     done
 
 DBZCh3HeroText:
     text "You sense the"
     line "lives of your"
     cont "friends fade."
-
-    para "One by one."
-
-    para "Only PICOLLO"
-    line "and GOHAN, your"
-    cont "son remain."
 
     para "You feel a"
     line "sudden change."
@@ -1307,20 +1204,6 @@ DBZCh3HeroText:
     para "With your new"
     line "power you fly"
     cont "to the battle."
-
-    para "There are two"
-    line "enemies."
-
-    para "As the larger"
-    line "one prepares a"
-    cont "lethal blow for"
-    cont "your son."
-
-    para "You sweep in."
-
-    para "Everyone is"
-    line "shocked to see"
-    cont "you."
 
     para "All you notice"
     line "are the bodies"
@@ -1337,10 +1220,6 @@ DBZCh3VillainText:
     text "One after another"
     line "Your foes die."
 
-    para "You are truly"
-    line "the mightiest"
-    cont "of races."
-
     para "You feel no"
     line "pleasure."
 
@@ -1350,88 +1229,28 @@ DBZCh3VillainText:
     cont "allow such an"
     cont "indulgence."
 
-    para "Only the alien"
-    line "and the child"
-    cont "remain."
-
-    para "The child is"
-    line "incredibly strong"
-    cont "for his age."
-
-    para "Alas he shall"
-    line "never live to"
-    cont "see his potential."
-
-    para "NAPPA is about"
-    line "to finish up this"
-    cont "mess."
-
     para "What is this!"
 
     para "A massive power"
     line "heading this way"
     cont "and fast!"
 
-    para "NAPPA is knocked"
-    line "to the ground at"
-    cont "your feet."
-
     para "A new warrior"
     line "stands before you."
 
-    para "You can tell he"
-    line "is one of you."
-
-    para "It must be the"
-    line "brother of RADITZ."
-
-    para "How did he live?"
-
     para "His power level."
 
-    para "It surges."
-
     para "It's over 9000!"
-
-    para "He prepares to"
-    line "attack."
-
-    para "You ready yourself"
-    line "for a real fight."
     done
 
 DBZCh4HeroText:
-    text "You ready a"
-    line "killing blow for"
-    cont "VEGETA."
-
-    para "But it feels"
-    line "wrong to kill."
-
-    para "You let him call"
-    line "his pod and flee."
-
-    para "You secretly hope"
-    line "to fight him"
-    cont "again one day."
-
-    para "PICCOLO is dead."
-
-    para "This means the"
-    line "DRAGON BALLS are"
-    cont "gone and you"
-    cont "can't wish your"
-    cont "friends back."
+    text "You let VEGETA"
+    line "flee to space."
 
     para "You need to head"
-    line "for his home"
+    line "to PICCOLOS home"
     cont "planet to acquire"
-    cont "more."
-
-    para "You travel with"
-    line "GOHAN, KRILLIN"
-    cont "and a scientist"
-    cont "BULMA."
+    cont "DRAGON BALLS."
 
     para "The journey takes"
     line "months."
@@ -1442,23 +1261,11 @@ DBZCh4HeroText:
     para "You arrive on a"
     line "dead planet."
 
-    para "Almost no life"
-    line "left at all."
-
     para "You sense a power."
 
     para "Not VEGETA."
 
     para "Something evil."
-
-    para "Its power feels"
-    line "like an endless"
-    cont "abyss. A black"
-    cont "hole of evil."
-
-    para "You find VEGETA."
-
-    para "He is terrified."
 
     para "FRIEZA Emporer"
     line "of the universe"
@@ -1477,16 +1284,6 @@ DBZCh4HeroText:
 
     para "FRIEZA is here."
 
-    para "He is happy"
-    line "to find some"
-    cont "creatures left"
-    cont "alive."
-
-    para "He intends to"
-    line "torture all of"
-    cont "you before"
-    cont "killing you."
-
     para "You and VEGETA"
     line "team up to stop"
     cont "him."
@@ -1498,19 +1295,8 @@ DBZCh4VillainText:
 
     para "NAPPA is killed."
 
-    para "And now VEGETA"
-    line "is about to die."
-
-    para "What's this."
-
-    para "The fool is"
-    line "letting him go."
-
-    para "He calls his"
-    line "pod and escapes."
-
-    para "He is horribly"
-    line "injured."
+    para "But VEGETA is"
+    line "shown mercy."
 
     para "On a distant world"
     line "the Emperor of all"
@@ -1520,16 +1306,11 @@ DBZCh4VillainText:
     para "You are lord"
     line "FRIEZA."
 
-    para "And you are bored."
-
     para "A servant comes."
 
     para "He speaks of magic"
     line "balls that can"
     cont "grant a wish."
-
-    para "You feel a sudden"
-    line "excitement."
 
     para "You could become"
     line "immortal!"
@@ -1542,25 +1323,13 @@ DBZCh4VillainText:
     line "planet with these"
     cont "DRAGON BALLS."
 
-    para "You waste no time"
-    line "killing everything"
-    cont "that moves, or"
-    cont "pleas for mercy."
-
-    para "You love killing."
-
-    para "It is the only"
-    line "pleasure you"
-    cont "still feel."
+    para "You kill everyone!"
 
     para "There is one ball"
     line "missing."
 
     para "You sense a life"
     line "form."
-
-    para "In a moment you"
-    line "are there."
 
     para "Ah VEGETA, and he"
     line "has some friends"
@@ -1595,27 +1364,19 @@ DBZCh5GokuHeroText:
     para "VEGETA falls to"
     line "the ground."
 
-    para "He fights the"
-    line "inevitable for a"
-    cont "moment."
-
     para "He is gone."
 
     para "Another flash."
 
     para "No KRILLIN!"
 
-    para "He is gone."
-
     para "FRIEZAS finger"
     line "moves..."
 
     para "Towards GOHAN."
+    done
 
-    para "The exhaustion and"
-    line "pain disappears"
-    cont "instantly."
-
+NewWarriorText:
     para "You feel something"
     line "taking over."
 
@@ -1623,20 +1384,12 @@ DBZCh5GokuHeroText:
     line "it."
 
     para "You open your"
-    line "eyes for the"
-    cont "first time."
-
-    para "A new warrior."
-
-    para "One not seen in"
-    line "millennia."
+    line "eyes as a new"
+    cont "warrior."
 
     para "A SUPER SAIYAN!"
 
-    para "Your body moves"
-    line "by itself."
-
-    para "Toward FRIEZA."
+    para "FRIEZA will pay!"
     done
 
 DBZCh5VegetaHeroText:
@@ -1650,17 +1403,9 @@ DBZCh5VegetaHeroText:
     para "GOKU falls to"
     line "the ground."
 
-    para "He fights the"
-    line "inevitable for a"
-    cont "moment."
-
     para "He is gone."
 
     para "FRIEZA laughs."
-
-    para "He died just"
-    line "like your father"
-    cont "did."
 
     para "You SAIYANS are"
     line "too weak to"
@@ -1674,32 +1419,6 @@ DBZCh5VegetaHeroText:
 
     para "The words hit"
     line "you in your core."
-
-    para "The exhaustion and"
-    line "pain disappears"
-    cont "instantly."
-
-    para "You feel something"
-    line "taking over."
-
-    para "You don't fight"
-    line "it."
-
-    para "You open your"
-    line "eyes for the"
-    cont "first time."
-
-    para "A new warrior."
-
-    para "One not seen in"
-    line "millennia."
-
-    para "A SUPER SAIYAN!"
-
-    para "Your body moves"
-    line "by itself."
-
-    para "Toward FRIEZA."
     done
 
 DBZCh5VegetaVillainText:
@@ -1709,13 +1428,7 @@ DBZCh5VegetaVillainText:
 
     para "GOKU falls dead."
 
-    para "How easy."
-
     para "You tell VEGETA.."
-
-    para "He died just"
-    line "like your father"
-    cont "did."
 
     para "You SAIYANS are"
     line "too weak to"
@@ -1726,10 +1439,12 @@ DBZCh5VegetaVillainText:
     cont "universe by"
     cont "destroying your"
     cont "planet."
+    done
 
+PowerSurgingText:
     para "What's this!"
 
-    para "VEGETAs power"
+    para "His power"
     line "is surging!"
 
     para "He is transformed!"
@@ -1751,32 +1466,11 @@ DBZCh5GokuVillainText:
 
     para "VEGETA falls dead."
 
-    para "How easy."
-
     para "You need another."
 
     para "KRILLIN explodes."
 
     para "that felt good."
-
-    para "Such insignificant"
-    line "insects."
-
-    para "What's this!"
-
-    para "GOKUs power"
-    line "is surging!"
-
-    para "He is transformed!"
-
-    para "He glows golden."
-
-    para "But you are not"
-    line "afraid."
-
-    para "You are the"
-    line "strongest in the"
-    cont "universe!"
     done
 
 DBZConcText:
@@ -1797,10 +1491,6 @@ DBZCh6Text:
     cont "and both reached"
     cont "SUPER SAIYAN."
 
-    para "They push each"
-    line "other beyond"
-    cont "their limits."
-
     para "They have one"
     line "last battle to"
     cont "decide who is"
@@ -1815,9 +1505,6 @@ DBZRolePlayEndText:
     para "And close friends."
 
     para "What a story!"
-
-    para "I need a rest"
-    line "after that."
 
     para "I'm sure we will"
     line "meet again for"

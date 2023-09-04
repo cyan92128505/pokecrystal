@@ -1284,14 +1284,6 @@ StarWarsIntroText:
     line "a STAR WARS theme"
     cont "RPG."
 
-    para "I balance the"
-    line "fights so usually"
-    cont "either side can"
-    cont "win. But it's"
-    cont "easier for the"
-    cont "side that is"
-    cont "meant to win."
-
     para "You can play too."
 
     para "But you will need"
@@ -1308,134 +1300,89 @@ StarWarsHeroOrVillainChoiceText:
     done
 
 StarWarsCh1HeroText:
-    text "Two Jedi Knights"
-    line "have found them-"
-    cont "selves stranded"
-    cont "on a desert world."
+    text "The palace is"
+    line "under attack."
 
-    para "They befriend a"
-    line "powerful young"
-    cont "boy named ANIKAN."
-
-    para "Could he be the"
-    line "one the prophesy"
-    cont "speaks of?"
+    para "You and your"
+    line "master fight to"
+    cont "defend a gifted"
+    cont "child."
 
     para "A dark figure"
-    line "appears as they"
-    cont "head to their"
-    cont "ship."
-
-    para "He too can sense"
-    line "the boys powers."
-
-    para "He attacks!"
+    line "appears."
 
     para "You must defend"
     line "ANIKAN."
     done
 
 StarWarsCh1VillainText:
-    text "After years of"
-    line "oppression you"
-    cont "are finally"
-    cont "ready to fight"
-    cont "back!"
-
-    para "The Jedi are a"
+    text "The Jedi are a"
     line "cult that kidnap"
     cont "and brainwash"
     cont "gifted children."
 
-    para "You alone escaped."
+    para "You fight to free"
+    line "another child"
+    cont "from them."
 
-    para "On a desert planet"
-    line "two Jedi hunt ano-"
-    cont "ther gifted child."
+    para "There are the"
+    line "two Jedi!"
 
-    para "They have found"
-    line "him."
-
-    para "But you will not"
-    line "let them have"
-    cont "him."
+    para "You will stop"
+    line "them!"
     done
 
 StarWarsCh2HeroText:
-    text "The battle was"
-    line "fierce."
+    text "QUI GON is struck"
+    line "down."
 
-    para "QUI GON falls"
-    line "and with his"
-    cont "last breath asks"
-    cont "OBI WAN to train"
-    cont "ANIKAN."
+    para "In a rage you"
+    line "defeat the dark"
+    cont "figure."
+
+    para "You resolve to"
+    line "train ANIKAN."
 
     para "15 years pass."
 
-    para "OBI WANs heart"
-    line "sinks when he"
-    cont "sees his brother"
-    cont "and pupil ANIKAN"
-    cont "slaughtering"
-    cont "younglings."
+    para "You heart sinks."
 
-    para "He has become a"
-    line "Sith."
+    para "ANIKAN has turned"
+    line "to the dark side."
 
-    para "OBI WAN knows he"
-    line "has to stop him!"
+    para "He is a brother"
+    line "to you."
+
+    para "But he must be"
+    line "stopped."
     done
 
 StarWarsCh2VillainText:
-    text "The battle was"
-    line "fierce."
-
     para "You are killed"
-    line "but you manage"
-    cont "to send info"
-    cont "back to your"
-    cont "master."
-
-    para "The master is"
-    line "close to the Jedi"
-    cont "and protects the"
-    cont "boy from their"
-    cont "brainwashing."
+    line "but you have"
+    cont "seen the virtue"
+    cont "in ANIKANS"
+    cont "heart."
 
     para "15 years pass."
-
-    para "Now finally ready."
 
     para "ANIKAN has seen"
     line "the evil of the"
     cont "Jedi."
 
-    para "Now he fights to"
+    para "Now you fights to"
     line "stop the Jedi."
-
-    para "Starting with his"
-    line "old master"
-    cont "OBI WAN."
     done
 
 StarWarsCh3HeroText:
     text "ANIKAN was"
     line "stopped."
 
-    para "But the empire"
+    para "But the EMPIRE"
     line "grows strong."
-
-    para "They develop a"
-    line "super weapon."
-
-    para "The DEATH STAR."
 
     para "ANIKAN had a"
     line "son, LUKE."
-
-    para "OBI WAN protects"
-    line "him."
 
     para "Over the next 20"
     line "years LUKE grows"
@@ -1444,21 +1391,19 @@ StarWarsCh3HeroText:
 
     para "He leads the"
     line "final assault on"
-    cont "the DEATH STAR."
+    cont "the EMPIRE."
 
     para "Only he can"
     line "save the galaxy."
     done
 
 StarWarsCh3VillainText:
-    text "ANIKAN was"
+    text "You were"
     line "defeated but"
     cont "not killed."
 
-    para "He was rebuilt"
-    line "as the mighty"
-    cont "mechanical"
-    cont "warrior, VADER."
+    para "You are reborn"
+    line "as VADER."
 
     para "20 more years"
     line "pass."
@@ -1466,18 +1411,10 @@ StarWarsCh3VillainText:
     para "The Empire grows"
     line "strong."
 
-    para "They develop a"
-    line "new weapon of"
-    cont "peace."
-
-    para "The DEATH STAR."
-
     para "When the rebels"
     line "attack it is"
-    cont "up to VADER to"
-    cont "defend the Empire"
-    cont "in a violent"
-    cont "space battle."
+    cont "up to you to"
+    cont "defend the Empire."
     done
 
 StarWarsCh4HeroText:
@@ -1488,52 +1425,30 @@ StarWarsCh4HeroText:
     line "his father ANIKAN"
     cont "is not dead."
 
-    para "He lives as a"
-    line "mechanical"
-    cont "monster."
+    para "LUKE can sense"
+    line "there is good"
+    cont "in him."
 
-    para "VADER."
-
-    para "But LUKE can"
-    line "sense there is"
-    cont "good in him."
-
-    para "He knows only"
-    line "he can save him."
-
-    para "He gives himself"
+    para "You give yourself"
     line "up to the Empire."
 
-    para "He is taken to see"
-    line "VADER and his"
-    cont "master."
+    para "You are taken to"
+    line "see VADER and"
+    cont "his master."
 
     para "PALPATINE."
-
-    para "Ruler of the"
-    line "galaxy."
-
-    para "He must fight to"
-    line "save his father."
     done
 
 StarWarsCh4VillainText:
     text "The Rebels repel"
     line "the DEATH STAR."
 
-    para "VADER learns"
-    line "That he has a"
-    cont "son from his"
-    cont "previous life"
-    cont "as ANIKAN."
+    para "VADER learn he"
+    line "has a son from"
+    cont "his previous"
+    cont "life as ANIKAN."
 
-    para "His son LUKE"
-    line "is the rebel"
-    cont "who led the"
-    cont "assault on the"
-    cont "DEATH STAR."
-
-    para "LUKE has given"
+    para "He has given"
     line "himself over to"
     cont "the Empire."
 
@@ -1552,13 +1467,6 @@ StarWarsCh4VillainText:
 
     para "Ruler of the"
     line "Galaxy."
-
-    para "You feel something"
-    line "stir within VADER."
-
-    para "You don't know"
-    line "what it is but"
-    cont "you don't like it."
     done
 
 StarWarsCh5HeroText:
@@ -1575,13 +1483,6 @@ StarWarsCh5HeroText:
     line "your father to"
     cont "help you."
 
-    para "But you know he"
-    line "wont."
-
-    para "There is nothing"
-    line "left within that"
-    cont "metal chest."
-
     para "The pain fades."
 
     para "The end comes."
@@ -1589,21 +1490,9 @@ StarWarsCh5HeroText:
     para "You open your"
     line "eyes."
 
-    para "PALPATINE stands"
-    line "looking angry"
-    cont "and shocked."
-
     para "VADER stands"
-    line "between him and"
-    cont "you."
-
-    para "He tells you.."
-
-    para "Get up LUKE!"
-
-    para "Let us free the"
-    line "galaxy as father"
-    cont "and son."
+    line "between you and"
+    cont "PALPATINE."
 
     para "You rise for one"
     line "last battle."
@@ -1618,19 +1507,8 @@ StarWarsCh5VillainText:
     line "slowly killing"
     cont "him."
 
-    para "You have much"
-    line "experience in"
-    cont "such slow deaths."
-
     para "LUKE asks for"
     line "VADER to save him."
-
-    para "What a pathetic"
-    line "way to die."
-
-    para "He pleas again."
-
-    para "And again."
 
     para "You become aware"
     line "of an anger."
@@ -1648,23 +1526,6 @@ StarWarsCh5VillainText:
     para "He stands between"
     line "you and LUKE."
 
-    para "Get up LUKE!"
-
-    para "Let us free the"
-    line "galaxy as father"
-    cont "and son."
-
-    para "You have waited"
-    line "too long for this."
-
-    para "For VADER to"
-    line "finally attempt"
-    cont "to overthrow"
-    cont "you."
-
-    para "But to do so"
-    line "out of love..."
-
     para "How disgusting."
 
     para "They must die."
@@ -1680,12 +1541,8 @@ StarWarsEndText:
     para "But the battle"
     line "was intense."
 
-    para "VADER now ANIKAN"
-    line "once more knows"
-    cont "he will die."
-
     para "In LUKES arms"
-    line "his life ends."
+    line "ANIKANS life ends."
 
     para "Finally content"
     line "that he made the"
@@ -1704,17 +1561,12 @@ StarWarsCh6Text:
     cont "Heroes and"
     cont "Villains all"
     cont "powered up to"
-    cont "their max in a"
-    cont "big fight!"
+    cont "their max."
     done
 
 StarWarsRolePlayEndText:
     text "Thanks for"
     line "playing with me."
-
-    para "I travel about"
-    line "playing different"
-    cont "games."
 
     para "I will see you"
     line "around I'm sure."

@@ -1302,47 +1302,536 @@ MultiverseRolePlayScript:
     end
 
 RolePlay7PrizeText:
-    text "."
+    text "We finished a"
+    line "new game."
+
+    para "Here take this"
+    line "for playing."
     done
 
 MultiverseIntroText:
-     text "."
-     done
+    text "Hello again"
+    line "old friend."
+
+    para "We have had many"
+    line "fun games."
+
+    para "With lots of"
+    line "fun characters."
+
+    para "Heroes, villains"
+    line "and being beyond"
+    cont "good and evil."
+
+    para "I think it is"
+    line "time for..."
+
+    para "A universe"
+    line "crossover!"
+
+    para "Powered up to"
+    line "impossible..."
+
+    para "Game breaking"
+    line "levels!"
+
+    para "Would you like"
+    line "to play?"
+
+    para "You'll have to"
+    line "Save your game?"
+    done
 
 MultiverseCharacterChoiceText:
-    text "."
+    text "Great!"
+
+    para "Which group"
+    line "would you like"
+    cont "to play as?"
     done
 
 MultiverseHeroes1Text:
-    text "."
+    text "You are in a"
+    line "strange place."
+
+    para "A desolate land"
+    line "with a single"
+    cont "huge tower in"
+    cont "the distance"
+    cont "piercing a red"
+    cont "orange sky."
+
+    para "There are others"
+    line "with you."
+
+    para "A young woman"
+    line "with a pure heart"
+    cont "but weilding dark"
+    cont "magic."
+
+    para "She speaks with"
+    line "an old wizard in"
+    cont "a white cloak."
+
+    para "Two other men"
+    line "converse together."
+
+    para "One is clad in."
+    line "silver armour."
+
+    para "He has a singular"
+    line "mind brimming"
+    cont "with courage."
+
+    para "The other man is"
+    line "rather simple."
+
+    para "He is happy and"
+    line "seeks challenge."
+
+    para "You can tell he"
+    line "contains immense"
+    cont "power."
+
+    para "One more arrives."
+
+    para "It is a young"
+    line "peasant man."
+
+    para "The permanent"
+    line "glow in his eyes"
+    cont "hides a power"
+    cont "greater than any"
+    cont "other."
+
+    para "Together you"
+    line "make for the"
+    cont "tower."
+
+    para "You encounter"
+    line "another group."
+
+    para "You recognise"
+    line "PALPATINE."
+
+    para "They look to"
+    line "have been in"
+    cont "a fight already."
+
+    para "They attack!"
     done
 
 MultiverseHeroes2Text:
-    text "."
+    text "JIREN and GOKU"
+   line "engage first."
+
+    para "You go right"
+    line "for PALPATINE."
+
+    para "The dark magic"
+    line "girl comes to"
+    cont "your aid and you"
+    cont "take a quick"
+    cont "victory."
+
+    para "You then fight"
+    line "together and"
+    cont "take out"
+    cont "NIGHTMARE."
+
+    para "Meanwhile GANDALF"
+    line "and COURAGE"
+    cont "struggle with"
+    cont "MORGANA and"
+    cont "SAURON."
+
+    para "At his full"
+    line "power MERLIN"
+    cont "brings an end"
+    cont "to the fight."
+
+    para "As a group you"
+    line "make your way"
+    cont "to the top of"
+    cont "the tower."
+
+    para "There you find"
+    line "another group."
+
+    para "The beings all"
+    line "seem god like."
+
+    para "They have decided"
+    line "all mortals are"
+    cont "evil."
+
+    para "You don't care"
+    line "who are what"
+    cont "they are."
+
+    para "You will protect"
+    line "your new friends!"
     done
 
 MultiverseVillains1Text:
-    text "."
+    text "You are in a"
+    line "strange place."
+
+    para "A large dark"
+    line "room within"
+    cont "what appears"
+    cont "to be a tower."
+
+    para "You are not"
+    line "alone."
+
+    para "A large man in"
+    line "gold armour sits"
+    cont "in a dark corner."
+
+    para "You sense many"
+    line "souls within him."
+
+    para "An old man in a"
+    line "dark cloak stands"
+    cont "talking to another"
+    cont "large and wild"
+    cont "looking man."
+
+    para "The older man"
+    line "is not a wizard"
+   cont "but commands some"
+   cont "kind of force."
+
+    para "The wild man is"
+    line "oddly singular and"
+    cont "full of wrath."
+
+    para "Another appears."
+
+    para "An impossibly"
+    line "huge and muscular"
+    cont "man with grey"
+    cont "skin and black"
+    cont "eyes."
+
+    para "You sense an"
+    line "endless well"
+    cont "of power within"
+    cont "him."
+
+    para "One more comes!"
+
+    para "You feel fear."
+
+    para "The shadows of"
+    line "the room take"
+    cont "shape."
+
+    para "Its pure evil effects"
+    line   "everyone except"
+    cont "the muscular man."
+
+    para "Together you head"
+    line "for the top of the"
+    cont "tower."
+
+    para "Another group"
+    line "wait there."
+
+    para "One only recognise"
+    line "one of them."
+
+    para "AITHUSA the royal"
+    line "dragon."
+
+    para "He would make"
+    line "a strong ally."
+
+    para "All these beings"
+    line "would."
+
+    para "You resolve to"
+    line "bend them to"
+    cont "your will."
     done
 
 MultiverseVillains2Text:
-    text "."
+    text "They are too"
+    line "powerful!"
+
+    para "GALADRIEL blasts"
+    line "your team apart."
+
+    para "SAURON reaches"
+    line "full power and"
+   cont "rampages."
+
+    para "Enemies being to"
+    line "fall."
+
+    para "Then..."
+
+    para "SAURON crashes"
+    line "to the ground!"
+
+    para "A light engulfs"
+    line "all!"
+
+    para "ARCEUS is too"
+    line "strong."
+
+    para "JIREN intercepts"
+    line "the light."
+
+   para "His shirt tears"
+   line "apart."
+
+    para "The white light"
+    line "gives way to a"
+    cont "sunburst red."
+
+    para "...."
+
+    para "The sky clears."
+
+    para "You have won."
+
+    para "You are all"
+    line "horribly wounded."
+
+    para "PALPATINE heals"
+    line "everyone and"
+    cont "informs you of"
+    cont "another group"
+    cont "away from the"
+    cont "tower."
+
+    para "You all rush"
+    line "to them."
+
+    para "You see MERLIN!"
+
+    para "You crave revenge!"
     done
 
 MultiverseDeities1Text:
-    text "."
+    text "Now you find"
+    line "yourself atop"
+    cont "a tower."
+
+    para "You look out at"
+    line "a desolate waste"
+    cont "and a red sky."
+
+    para "Who am I?"
+
+    para "Why am I here?"
+
+    para "Others appear."
+
+    para "A massive gold"
+    line "creature with"
+    cont "chains on its"
+    cont "arms and legs."
+
+    para "It doesn't move"
+    line "or speak."
+
+    para "Just stands in"
+    line "reflection."
+
+    para "Like you."
+
+    para "A regal woman"
+    line "communicates with"
+    cont "a similarly regal"
+    cont "looking dragon."
+
+    para "Their magic is"
+    line "ancient and pure."
+
+    para "Like you."
+
+    para "The sky darkens."
+
+    para "A huge dragon"
+    line "appears above"
+    cont "the tower."
+
+    para "You sense some"
+    line "impatience and"
+    cont "a power that"
+    cont "transcends law."
+
+    para "Like you."
+
+    para "Your body moves"
+    line "by itself."
+
+    para "You are kneeling"
+    line "on the ground."
+
+    para "Everyone is."
+
+    para "Even the dragon"
+    line "bows its head."
+
+    para "The sky changes"
+    line "to a bright"
+    cont "golden glow."
+
+    para "A being that even"
+    line "you can only"
+    cont "describe as..."
+
+    para "God."
+
+    para "ARCEUS takes its"
+    line "place above the"
+    cont "group."
+
+    para "You become aware"
+    line "of six more"
+    cont "beings making"
+    cont "their way up"
+    cont "the tower."
+
+    para "They summit and"
+    line "look upon your"
+    cont "group."
+
+    para "You sense their"
+    line "dark ambitions."
+
+    para "They attack!"
     done
 
 MultiverseDeities2Text:
-    text "."
+    text "You sense the"
+    line "titanic powers"
+    cont "of your group"
+    cont "crushing your"
+    cont "foes."
+
+    para "Then a darkness"
+    line "takes hold."
+
+    para "SAURON is at"
+    line "full power."
+
+    para "Your team mates"
+    line "fall."
+
+    para "But a warmth"
+    line "grows..."
+
+    para "It burns!"
+
+    para "ARCEUS dispenses"
+    line "judgement."
+
+    para "SAURON falls."
+
+    para "All foes fall."
+
+    para "Except one."
+
+    para "JIREN powers up."
+
+    para "A power that can"
+    line "overcome anything."
+
+    para "Unless you can"
+    line "stop him!"
+
+    para "PALPATINE freezes"
+    line "you from the"
+    cont "shadows but you"
+    cont "break free."
+
+    para "With the last of"
+    line "your strength"
+    cont "you interrupt"
+    cont "JIRENs power up."
+
+    para"Just long enough"
+    line "for ARCEUS to"
+    cont "finish the group."
+
+    para "ARCEUS heals"
+    line "everyone."
+
+    para "Some time passes."
+
+    para "None of you seem"
+    line "in any hurry."
+
+    para "Time is no"
+    line "concern to the"
+    cont "immortal."
+
+    para "Another group"
+    line "reaches the top"
+    cont "with you."
+
+    para "They are mortal."
+
+    para "All mortal beings"
+    line "are driven to"
+    cont "evil by their"
+    cont "desire to exist"
+    cont "beyond their time."
+
+    para "You must end"
+    line "suffering by"
+    cont "bringing an"
+    cont "end to this"
+    cont "group."
     done
 
 MultiverseRolePlayFinalText:
-     text "."
-     done
+    text "The fighting"
+    line "draws on."
+
+    para "Why are we here?"
+
+    para "What are we all"
+    line "fighting for?"
+
+    para "...."
+
+    para "You are back!"
+
+    para "You wonder was"
+    line "any of that real."
+
+    para "What even is real?"
+
+    para "Are we real?"
+
+    para "Is this real?"
+
+    para "Or are we all"
+    line "part of another"
+    cont "persons roleplay"
+    cont "game!"
+    done
 
 MultiverseRolePlayEndText:
-    text "."
+    text "Thanks for that"
+    line "last game."
+
+    para "The games that"
+    line "matter to us"
+    cont "will always be"
+    cont "there to come"
+    cont "back to."
+
+    para "They are old"
+    line "friends."
+
+    para "Like us."
     done
 
 MultiverseRolePlayRefusedText:

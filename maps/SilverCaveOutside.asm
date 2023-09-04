@@ -1127,39 +1127,16 @@ HoenWarCh1HeroText:
     text "You have made it"
     line "across unnoticed."
 
-    para "Swiftly you move"
-    line "through the shadow"
-    cont "and enter the"
-    cont "night air of"
-    cont "HOEN."
-
     para "You alone know"
     line "that STEVEN is"
     cont "about to be"
     cont "overthrown."
 
-    para "And war will"
-    line "soon follow."
-
-    para "And you know"
-    line "the man behind it."
-
-    para "WALLACE."
-
     para "Your mission is"
     line "to assassinate"
     cont "WALLACE."
 
-    para "You have a life"
-    line "of experience in"
-    cont "such work."
-
     para "You are KOGA."
-
-    para "One of the most"
-    line "powerful GYM"
-    cont "LEADERS of"
-    cont "KANTO."
 
     para "Like a frozen"
     line "breeze on a still"
@@ -1179,18 +1156,11 @@ HoenWarCh1HeroText:
     line "the lower floor"
     cont "of the palace."
 
-    para "You cross the"
-    line "room in a flash."
-
     para "Your senses"
     line "flare."
 
     para "You look back"
-    line "to see a man"
-    cont "standing with"
-    cont "confidence in"
-    cont "center of the"
-    cont "dark room."
+    line "to see a man."
 
     para "Nobody has ever"
     line "taken you unaware"
@@ -1200,35 +1170,18 @@ HoenWarCh1HeroText:
     line "is a soldier of"
     cont "vast experience."
 
-    para "There is only one"
-    line "course of action."
-
     para "You must kill him."
-
-    para "You can see he"
-    line "has faced death"
-    cont "before."
-
-    para "He has not a"
-    line "hint of fear."
     done
 
 HoenWarCh3HeroText:
-   text "This is no mere"
+    text "This is no mere"
     line "soldier."
 
     para "He is ADMIRAL"
     line "DRAKE."
 
-    para "The most feared"
-    line "soldier in all"
-    cont "of HOEN."
-
     para "His LATIOS readies"
     line "a final attack."
-
-    para "Your life is at"
-    line "its end."
 
     para "But your CROBAT"
     line "has escaped and"
@@ -1239,9 +1192,6 @@ HoenWarCh3HeroText:
     para "You cast one last"
     line "thought to your"
     cont "daughter JANINE."
-
-    para "A light and a"
-    line "moment of pain."
 
     para "...."
 
@@ -1256,10 +1206,6 @@ HoenWarCh3HeroText:
     para "BLAINE has been"
     line "defeated."
 
-    para "A rush of"
-    line "adrenaline shoots"
-    cont "through your body."
-
     para "You will finally"
     line "get the chance to"
     cont "kill the man who"
@@ -1271,20 +1217,11 @@ HoenWarCh3HeroText:
 
     para "JANINE."
 
-    para "You mobilise your"
-    line "strongest trainers"
-    cont "to defend your"
-    cont "home."
-
     para "You see something."
 
     para "Out to sea."
 
     para "A huge wave!"
-
-    para "Like the sea"
-    line "itself is moving"
-    cont "toward you."
 
     para "Above it the"
     line "clouds part."
@@ -1299,19 +1236,8 @@ HoenWarCh3HeroText:
     para "The wave crashes"
     line "upon the shore."
 
-    para "As it does so"
-    line "you stumble."
-
     para "The ground is"
     line "tore apart."
-
-    para "ripping right"
-    line "through your"
-    cont "defenses and"
-    cont "forming a lava"
-    cont "filled crater"
-    cont "that encircles"
-    cont "the whole city."
 
     para "There is no more"
     line "escape."
@@ -1322,8 +1248,6 @@ HoenWarCh3HeroText:
     para "A huge figure"
     line "appears in the"
     cont "sky."
-
-    para "A #MON."
 
     para "It draws near"
     line "and sweeps houses"
@@ -1340,31 +1264,11 @@ HoenWarCh3HeroText:
     cont "place at his"
     cont "side."
 
-    para "You immediately"
-    line "understand why a"
-    cont "country of people"
-    cont "believe and obey"
-    cont "this man."
-
     para "Looking down on"
     line "you from his"
     cont "living throne he"
     cont "seems more a God"
     cont "than a man."
-
-    para "You have to will"
-    line "your legs to move."
-
-    para "You declare that"
-    line "this city is under"
-    cont "your protection."
-
-    para "You know you can"
-    line "not win."
-
-    para "You know why your"
-    line "father could not"
-    cont "win."
 
     para "No matter."
 
@@ -1395,20 +1299,6 @@ HoenWarTakeActionText:
     para "Just as you lost"
     line "your son."
 
-    para "There is a"
-    line "horrible silence."
-
-    para "Everyone looks on"
-    line "as WALLACE stands"
-    cont "over the beaten"
-    cont "JANINE."
-
-    para "Nobody dares to"
-    line "do anything after"
-    cont "witnessing the"
-    cont "horror of FUHRER"
-    cont "WALLACE."
-
     para "But you can not"
     line "let this happen!"
 
@@ -1418,12 +1308,6 @@ HoenWarTakeActionText:
 
 HoenWarTalkText:
     text "You step forward."
-
-    para "The monstrous"
-    line "#MON of WALLACE"
-    cont "look at you but"
-    cont "do not try to"
-    cont "stop you."
 
     para "You kneel low"
     line "and proclaim"
@@ -1483,8 +1367,6 @@ HoenWarAttackText:
     para "You crash to the"
     line "ground."
 
-    para "In intense pain!"
-
     para "The huge dragon"
     line "#MON has swept"
     cont "your legs and"
@@ -1496,17 +1378,9 @@ HoenWarAttackText:
     para "She begs WALLACE"
     line "to spare you."
 
-    para "WALLACE looks"
-    line "away in contempt."
-
-    para "JANINE holds you"
-    line "as you see the"
-    cont "dragons mouth"
+    para "You see the"
+    line "dragons mouth"
     cont "open wide."
-
-    para "Then you are"
-    line "engulfed in"
-    cont "darkness."
 
     para "...."
 
@@ -1518,18 +1392,7 @@ HoenWarAttackText:
     done
 
 HoenWarCh4HeroText:
-    text "You have always"
-    line "prayed when in"
-    cont "times of pain."
-
-    para "It has never"
-    line "made a difference."
-
-    para "But right now it"
-    line "is the only thing"
-    cont "you can do."
-
-    para "You kneel and"
+    text "You kneel and"
     line "clasp your hands."
 
     para "With an open"
@@ -1555,13 +1418,6 @@ HoenWarCh4HeroText:
     para "A perfect symmetry"
     line "of light."
 
-    para "You can tell"
-    line "WALLACE and his"
-    cont "#MON have"
-    cont "noticed it."
-
-    para "Your vision swims."
-
     para "Has your prayer"
     line "been answered."
     done
@@ -1569,13 +1425,6 @@ HoenWarCh4HeroText:
 HoenWarCh1VillainText:
     text "You look out over"
     line "the night sea."
-
-    para "You allow your"
-    line "mind to wonder."
-
-    para "All the battles"
-    line "play in your"
-    cont "head."
 
     para "Faces of your"
     line "victims bubble"
@@ -1587,19 +1436,12 @@ HoenWarCh1VillainText:
     para "You are ADMIRAL of"
     line "the HOEN army."
 
-    para "You are DRAKE the"
-    line "strongest soldier."
-
     para "Tonight you do"
     line "the unthinkable."
 
     para "You plan to ambush"
     line "and kill STEVEN"
     cont "the CHAMPION."
-
-    para "He is weak and is"
-    line "weakening your"
-    cont "country."
 
     para "Your #MON alert"
     line "you to a presence"
@@ -1610,16 +1452,10 @@ HoenWarCh1VillainText:
     line "the palace lower"
     cont "levels."
 
-    para "You see him now."
-
     para "An assassin."
 
     para "He must not"
     line "interfere."
-
-    para "Your #MON"
-    line "lower you into"
-    cont "the room."
 
     para "He sees you."
 
@@ -1634,13 +1470,7 @@ HoenWarCh1VillainText:
     done
 
 HoenWarCh3VillainText:
-    text "It is clear this"
-    line "is no normal"
-    cont "assassin."
-
-    para "No matter."
-
-    para "With one last"
+    text "With one last"
     line "blast LATIOS"
     cont "removes the"
     cont "intruder."
@@ -1648,12 +1478,6 @@ HoenWarCh3VillainText:
     para "You make your"
     line "way to STEVENS"
     cont "chamber."
-
-    para "You have planned"
-    line "this so he wont"
-    cont "have his #MON."
-
-    para "He is gone."
 
     para "The room is"
     line "littered with"
@@ -1678,19 +1502,8 @@ HoenWarCh3VillainText:
     line "day you attack"
     cont "KANTO."
 
-    para "You look out"
-    line "upon the sea."
-
-    para "You could cover"
-    line "the whole thing"
-    cont "with your noble"
-    cont "ambitions."
-
     para "You fly atop"
     line "AIR WEAPON."
-
-    para "One of your three"
-    line "legendary weapons."
 
     para "Within hours you"
     line "approach the"
@@ -1719,24 +1532,13 @@ HoenWarCh3VillainText:
     line "your authority"
     cont "upon the land."
 
-    para "The whole city is"
-    line "watching."
-
     para "A girl walks up"
     line "to you."
-
-    para "She shows no"
-    line "fear."
-
-    para "The people seem"
-    line "to cheer for her."
 
     para "You see she is"
     line "in fact the GYM"
     cont "LEADER of the"
     cont "city."
-
-    para "Perfect."
 
     para "Let KANTO see the"
     line "beauty of HOEN."
@@ -1754,20 +1556,6 @@ HoenWarJanineDefeatText:
     para "She slumps to the"
     line "ground as you"
     cont "approach."
-
-    para "Voices lower and"
-    line "a silence falls."
-
-    para "You see an old"
-    line "woman who seems"
-    cont "to be praying."
-
-    para "The only God"
-    line "here is you!"
-
-    para "You look upon"
-    line "the beaten GYM"
-    cont "LEADER."
 
     para "You are surprised"
     line "at how young she"
@@ -1832,24 +1620,13 @@ HoenWarCh4VillainText:
     para "You turn to see"
     line "a light."
 
-    para "No it's a being"
-    line "of some sort."
-
     para "An otherworldly"
     line "perfection."
-
-    para "You have never"
-    line "seen it before"
-    cont "but it feels"
-    cont "so familiar."
 
     para "Its appearance"
     line "strikes at a"
     cont "primal fear"
     cont "within you."
-
-    para "You feel like a"
-    line "child."
 
     para "It draws near!"
     done
@@ -1870,12 +1647,6 @@ HoenWarRolePlayEndText:
     para "Everything returns"
     line "to as it was."
 
-    para "Like it never"
-    line "happened."
-
-    para "But WALLACE knows"
-    line "it did."
-
     para "ARCEUS was letting"
     line "people know their"
     cont "prayers had been"
@@ -1889,9 +1660,6 @@ HoenWarRolePlayEndText:
     para "A CHAMPION."
 
     para "CHAMPION <PLAYER>!"
-
-    para "The rest is"
-    line "history."
     done
 
 GoldDicePrizeText:

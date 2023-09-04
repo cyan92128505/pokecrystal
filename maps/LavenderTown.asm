@@ -406,19 +406,6 @@ MerlinMorgana1Text:
     line "all magic is"
     cont "forbidden."
 
-    para "Those that are"
-    line "seen using such"
-    cont "special moves"
-    cont "are executed."
-
-    para "Your father takes"
-    line "these laws very"
-    cont "seriously."
-
-    para "You have been"
-    line "having nightmares"
-    cont "recently."
-
     para "You have been"
     line "seeing events that"
     cont "haven't occurred"
@@ -431,67 +418,30 @@ MerlinMorgana1Text:
 
     para "You are in the"
     line "throne room with"
-    cont "your father UTHER."
-
-    para "He is sentencing"
-    line "another innocent"
-    cont "person to death."
+    cont "your father UTHER"
+    cont "as an innocent"
+    cont "is sentenced to"
+    cont "death."
 
     para "You feel an anger."
 
-    para "In the palm of"
-    line "your hand a"
-    cont "flame ignites out"
-    cont "of nothing!"
+    para "A flame ignites"
+    line "in your hand."
 
     para "UTHER looks at"
     line "you horrified."
 
-    para "A guard moves in"
-    line "your direction."
-
-    para "An instinct"
-    line "reaches out from"
-    cont "you and pushes"
-    cont "him out of the"
-    cont "room."
-
-    para "You turn to see"
-    line "your father."
-
-    para "His sword in his"
-    line "hand."
-
-    para "It all happened"
-    line "so fast!"
-
-    para "You are forced to"
-    line "defend yourself"
-    cont "against your"
-    cont "own father."
+    para "He draws his"
+    line "sword."
     done
 
 MerlinMorgana2Text:
     text "You narrowly"
     line "escape."
 
-    para "You hide in the"
-    line "castle you have"
-    cont "known your whole"
-    cont "life."
-
     para "You know everyone"
     line "will be looking"
     cont "for you."
-
-    para "And if they find"
-    line "you..."
-
-    para "With your position"
-    line "they may show pity"
-    cont "and end you on the"
-    cont "gallows rather"
-    cont "than the pyre."
 
     para "Who's there!"
 
@@ -499,9 +449,6 @@ MerlinMorgana2Text:
 
     para "One of ARTHURS"
     line "KNIGHTS."
-
-    para "You think your"
-    line "life is up."
 
     para "Then he holds out"
     line "his hand and in it"
@@ -518,12 +465,7 @@ MerlinMorgana2Text:
 
     para "A dragon egg!"
 
-    para "Several years"
-    line "pass."
-
-    para "You are finally"
-    line "ready to have"
-    cont "your revenge!"
+    para "Years pass."
 
     para "You and MORDRED"
     line "have explored"
@@ -543,18 +485,7 @@ MerlinMorgana2Text:
     done
 
 MerlinMorgana3Text:
-    text "Your fingers"
-    line "ripple with"
-    cont "power!"
-
-    para "You feel full"
-    line "of life."
-
-    para "The battle rages!"
-
-    para "Even their dragon"
-    line "doesn't concern"
-    cont "you."
+    text "The battle rages!"
 
     para "There is poor"
     line "UTHER."
@@ -577,15 +508,9 @@ MerlinMorgana3Text:
     cont "deserve and take"
     cont "his life quickly."
 
-    para "A wave of darkness"
-    line "and he is gone."
-
     para "You are surprised"
     line "at how little you"
     cont "care."
-
-    para "The battle is"
-    line "over."
 
     para "ARTHUR falls"
     line "overcome by the"
@@ -597,11 +522,6 @@ MerlinMorgana3Text:
     cont "him."
 
     para "CAMELOT is yours!"
-
-    para "As it always was"
-    line "meant to be."
-
-    para "AHGGGGHHH..."
 
     para "Voices scream in"
     line "your head."
@@ -617,8 +537,6 @@ MerlinMorgana3Text:
     para "What magic is"
     line "this!"
 
-    para "He stands defiant."
-
     para "You will show"
     line "his the true"
     cont "power of magic!"
@@ -629,11 +547,6 @@ MerlinArthur1Text:
     line "of the great"
     cont "kingdom of"
     cont "CAMELOT."
-
-    para "You are ARTHUR"
-    line "the greatest"
-    cont "knight of the"
-    cont "realm."
 
     para "Walking through"
     line "the hamlet a"
@@ -646,9 +559,6 @@ MerlinArthur1Text:
     para "Instead he asks"
     line "for an apology."
 
-    para "He must not know"
-    line "who you are."
-
     para "You suggest some"
     line "light sparing."
 
@@ -656,21 +566,12 @@ MerlinArthur1Text:
     line "lose some nerve."
 
     para "But he accepts."
-
-    para "He will soon learn"
-    line "who you are."
     done
 
 MerlinArthur2Text:
     text "You trip and"
     line "fall into a pile"
     cont "of manure."
-
-    para "Your knights draw"
-    line "their blades at"
-    cont "the boy as you"
-    cont "reveal who you"
-    cont "are."
 
     para "You like that the"
     line "boy still doesn't"
@@ -685,8 +586,7 @@ MerlinArthur2Text:
     cont "gives you far"
     cont "more attitude"
     cont "than any sane"
-    cont "person should"
-    cont "dare."
+    cont "person should."
 
     para "You are searching"
     line "for a suspected"
@@ -699,29 +599,10 @@ MerlinArthur2Text:
     para "You have found"
     line "him."
 
-    para "You draw your"
-    line "sword and the man"
-    cont "turns."
-
     para "It's MORDRED, one"
     line "of your KNIGHTS."
 
     para "It can't be."
-
-    para "He reacts in a"
-    line "defensive way."
-
-    para "You become aware"
-    line "of your hand."
-
-    para "It is covered in"
-    line "ice."
-
-    para "This is magic!"
-
-    para "You make ready"
-    line "to fight for your"
-    cont "life."
     done
 
 MerlinArthur3Text:
@@ -748,38 +629,15 @@ MerlinArthur3Text:
     para "And that she has"
     line "magic."
 
-    para "The castle is"
-    line "searched but"
-    cont "MORGANA and"
-    cont "MORDRED are gone."
-
-    para "There is also an"
-    line "artifact missing."
-
-    para "A dragon egg."
+    para "They are both"
+    line "missing and so"
+    cont "is a dragon egg."
 
     para "Several years"
     line "pass."
 
-    para "Everyone has"
-    line "been training"
-    cont "and preparing."
-
     para "You know MORGANA"
     line "will attack soon."
-
-    para "MERLIN believes"
-    line "you can combat"
-    cont "MORGANAs dragon"
-    cont "with your own"
-    cont "dragon."
-
-    para "An old dragon"
-    line "KILGHARRAH is"
-    cont "held beneath"
-    cont "the castle."
-
-    para "Word comes."
 
     para "They are here."
 
@@ -803,16 +661,9 @@ MerlinArthur3Text:
 MerlinRolePlayMerlinArthurText:
     text "You fight MORDRED."
 
-    para "You fight with"
-    line "all you have."
-
     para "You hear a cry!"
 
-    para "It's your father."
-
     para "UTHER is dead."
-
-    para "Killed by MORGANA."
 
     para "Your body moves"
     line "on instinct."
@@ -831,12 +682,6 @@ MerlinRolePlayMerlinArthurText:
     para "You are mortally"
     line "wounded by his"
     cont "magic."
-
-    para "You fall in the"
-    line "court yard."
-
-    para "You are going to"
-    line "die."
 
     para "GWEN and MERLIN"
     line "collapse at your"
@@ -862,14 +707,7 @@ MerlinRolePlayMerlinArthurText:
     para "He is clad in"
     line "golden light."
 
-    para "This is magic?!"
-
-    para "GWEN drags you"
-    line "away as MERLIN"
-    cont "is attacked by"
-    cont "AITHUSA, MORGANA"
-    cont "and MORDRED at"
-    cont "once."
+    para "Is this magic?!"
     done
 
 MerlinMerlin1Text:
@@ -891,14 +729,6 @@ MerlinMerlin1Text:
     line "arrogant man"
     cont "bumps into you."
 
-    para "He asks for an"
-    line "apology."
-
-    para "You confidently"
-    line "tell him that he"
-    cont "should be the"
-    cont "one apologising."
-
     para "He suggests you"
     line "settle this with"
     cont "a sparing match."
@@ -919,26 +749,15 @@ MerlinMerlin2Text:
     cont "a little covert"
     cont "magic."
 
-    para "You then find"
-    line "four blades at"
-    cont "your throat."
-
-    para "The KNIGHTS of"
-    line "CAMELOT!"
-
-    para "The man stands"
-    line "and reveals"
-    cont "himself as ARTHUR"
-    cont "the prince of"
-    cont "CAMELOT."
-
     para "A year has passed"
     line "since then."
 
-    para "ARTHUR offered you"
-    line "a job as his"
-    cont "servant and you"
-    cont "accepted."
+    para "The man was ARTHUR"
+    line "the prince of"
+    cont "CAMELOT!"
+
+    para "You are now his"
+    line "trusted servant."
 
     para "You now consider"
     line "him your best"
@@ -947,10 +766,6 @@ MerlinMerlin2Text:
     para "But you can not"
     line "let him know"
     cont "your secret."
-
-    para "ARTHUR is hunting"
-    line "a wizard right"
-    cont "now."
 
     para "You enter the"
     line "throne room to"
@@ -968,9 +783,6 @@ MerlinMerlin2Text:
     para "Both were using"
     line "magic they say."
 
-    para "And both must be"
-    line "found and killed."
-
     para "You already can"
     line "sense they have"
     cont "gone."
@@ -982,20 +794,10 @@ MerlinMerlin2Text:
     line "have taken a rare"
     cont "dragon egg."
 
-    para "The egg is from a"
-    line "royal line and it"
-    cont "will produce a"
-    cont "mighty dragon."
-
     para "ARTHUR will die."
 
     para "You all prepare"
-    line "for a year."
-
-    para "You know when the"
-    line "time comes it"
-    cont "will be up to you"
-    cont "to save ARTHUR."
+    line "for years."
 
     para "The day comes."
 
@@ -1014,15 +816,7 @@ MerlinMerlin2Text:
     done
 
 MerlinMerlin3Text:
-    text "You fight MORGANA"
-    line "while KILGHARRAH"
-    cont "handles AITHUSA."
-
-    para "With an orb of"
-    line "darkness MORGANA"
-    cont "eludes you."
-
-    para "You hear a cry."
+    text "You hear a cry."
 
     para "UTHER is dead."
 
@@ -1034,13 +828,8 @@ MerlinMerlin3Text:
 
     para "ARTHUR rushes"
     line "MORGANA but is"
-    cont "intercepted by"
+    cont "attacked by"
     cont "AITHUSA."
-
-    para "With a mighty"
-    line "blast of magic"
-    cont "ARTHUR falls to"
-    cont "the ground."
 
     para "You rush to"
     line "ARTHUR."
@@ -1054,16 +843,10 @@ MerlinMerlin3Text:
     cont "ARTHURS life."
 
     para "ARTHUR is gone."
-
-    para "MORGANA has won."
     done
 
 MerlinMerlin4Text:
-    text "As you stare on"
-    line "at your dead"
-    cont "friend."
-
-    para "Sounds fade."
+    text "Sounds fade."
 
     para "Light fades."
 
@@ -1071,22 +854,12 @@ MerlinMerlin4Text:
     line "your center."
 
     para "You are in a"
-    line "huge cavern."
-
-    para "Everything made"
-    line "of crystal."
+    line "huge cavern of"
+    cont "crystal."
 
     para "Hundreds of voices"
     line "speak in your"
     cont "head at once."
-
-    para "You hear them all"
-    line "clearly."
-
-    para "You are EMRYS."
-
-    para "You do not use"
-    line "magic."
 
     para "You are magic"
     line "itself."
@@ -1094,19 +867,8 @@ MerlinMerlin4Text:
     para "There is nothing"
     line "you can not do."
 
-    para "Nothing you can"
-    line "not conquer."
-
-    para "Not AITHUSA."
-
-    para "Not even death"
-    line "itself."
-
     para "You awaken back"
     line "in the court."
-
-    para "Everything is"
-    line "clear."
 
     para "You reach into"
     line "ARTHURS chest with"
@@ -1117,9 +879,6 @@ MerlinMerlin4Text:
     para "AITHUSAs magic"
     line "evaporates in"
     cont "your presence."
-
-    para "You feel the life"
-    line "return to him."
 
     para "You turn to face"
     line "your enemies."
@@ -1169,29 +928,15 @@ MerlinRolePlayFinalText:
     line "hand on MERLINS"
     cont "shoulder."
 
-    para "Of course you have"
-    line "magic."
-
-    para "I'm not as stupid"
-    line "as you think me."
+    para "I've always known."
 
     para "All the times a"
     line "lucky trip has"
     cont "saved my life."
 
-    para "Always with you"
-    line "around."
-
     para "I'm disappointed"
     line "you never told me"
     cont "sooner."
-
-    para "MERLIN looks up"
-    line "as ARTHUR"
-    cont "continues."
-
-    para "I am not my"
-    line "father."
 
     para "No longer will"
     line "innocent people"

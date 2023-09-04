@@ -725,7 +725,7 @@ YuGiOhIntroText:
     line "the RUINS OF ALPH?"
 
     para "I did and it got"
-    line "me in the mood"
+    line "me in the mind"
     cont "for a YUGIOH"
     cont "roleplay."
 
@@ -746,22 +746,13 @@ YuGiOhCharacterChoiceText:
     done
 
 YuGiOhHenshin1Text:
-    text "For decades you"
-    line "have been the"
+    text "You are the"
     cont "high priest of"
     cont "a great dynasty."
 
     para "Your master is an"
     line "arrogant young"
     cont "man."
-
-    para "But he has a"
-    line "following that"
-    cont "might allow him"
-    cont "to overthrow"
-    cont "the young Pharaoh."
-
-    para "The time has come."
 
     para "You will now be"
     line "master of your"
@@ -784,8 +775,6 @@ YuGiOhHenshin1Text:
     para "You fight back"
     line "with your own"
     cont "cards."
-
-    para "It's a duel."
     done
 
 YuGiOhHenshin2Text:
@@ -794,11 +783,8 @@ YuGiOhHenshin2Text:
     cont "hide in the"
     cont "palace."
 
-    para "SETO seems full"
-    line "of confidence."
-
     para "You watch as"
-    line "he marches into"
+    line "SETO marches into"
     cont "the throne room."
 
     para "He challenges the"
@@ -809,15 +795,8 @@ YuGiOhHenshin2Text:
     cont "power of YAMIs"
     cont "cards."
 
-    para "His monsters,"
-    line "more like Gods,"
-    cont "make easy work"
-    cont "of SETO."
-
     para "SETO lies on"
     line "the floor."
-
-    para "Motionless."
 
     para "This is your"
     line "chance!"
@@ -826,29 +805,19 @@ YuGiOhHenshin2Text:
     line "and stab YAMI"
     cont "in the back."
 
-    para "He reels to"
-    line "the side and"
-    cont "drops his godly"
-    cont "cards."
-
-    para "Now you reach"
-    line "for your own"
-    cont "cards to finish"
-    cont "the job."
+    para "He drops his"
+    line "godly cards."
 
     para "But YAMI brings"
     line "from his robe"
     cont "some old and"
     cont "shabby looking"
-    cont "cards to defend"
-    cont "himself with."
+    cont "cards."
 
     para "You wont be"
     line "denied your"
     cont "rightful place"
     cont "in history."
-
-    para "You attack!"
     done
 
 YuGiOhHenshin3Text:
@@ -865,16 +834,10 @@ YuGiOhHenshin3Text:
 
     para "Years pass."
 
-    para "A decade passes."
-
     para "YAMI and SETO"
     line "protect the"
-    cont "kingdom and fight"
-    cont "many hard battles."
-
-    para "They send many"
-    line "duelists to the"
-    cont "shadow realm."
+    cont "kingdom from"
+    cont "many foes."
 
     para "PEGASUS."
 
@@ -889,19 +852,14 @@ YuGiOhHenshin3Text:
     cont "entity consumes"
     cont "their souls."
 
-    para "Once you are"
-    line "strong enough you"
-    cont "pull YAMI and"
-    cont "SETO into the"
-    cont "shadow realm."
+    para "You pull YAMI"
+    line "and SETO into"
+    cont "your realm."
 
     para "You are NIGHTMARE."
 
     para "The greatest"
     line "duelist."
-
-    para "YAMI and SETO"
-    line "belong to you."
     done
 
 YuGiOhSeto1Text:
@@ -909,14 +867,9 @@ YuGiOhSeto1Text:
     line "of a powerful"
     cont "dynasty."
 
-    para "Only the young"
-    line "Pharaoh YAMI"
-    cont "holds more"
-    cont "power than you."
-
     para "You plan to"
-    line "overthrow him"
-    cont "soon."
+    line "overthrow the"
+    cont "Pharaoh soon."
 
     para "The cards from"
     line "which you can"
@@ -927,16 +880,9 @@ YuGiOhSeto1Text:
     line "HENSHIN has asked"
     cont "to speak with you."
 
-    para "As you walk"
-    line "into the chamber"
-    cont "you see him in"
-    cont "the shadows."
-
     para "He says he shall"
     line "now take your"
     cont "place."
-
-    para "How dare he!"
 
     para "He reaches for"
     line "his cards."
@@ -950,26 +896,14 @@ YuGiOhSeto2Text:
     text "HENSHIN is"
     line "defeated."
 
-    para "He was stronger"
-    line "than expected."
-
-    para "You are the"
-    line "strongest!"
-
     para "None can defeat"
     line "you!"
-
-    para "You decide now"
-    line "is the time to"
-    cont "overthrow YAMI."
 
     para "You march proudly"
     line "into the throne"
     cont "room and proclaim"
     cont "the kingdom as"
     cont "your own."
-
-    para "YAMI says nothing."
 
     para "YAMI looks at you"
     line "and through you."
@@ -978,30 +912,16 @@ YuGiOhSeto2Text:
     line "a golden box"
     cont "several cards."
 
-    para "They seem to"
-    line "glow with power."
-
     para "You have no"
     line "fear."
 
     para "Your kingdom"
     line "awaits."
-
-    para "You ready your"
-    line "cards for battle!"
     done
 
 YuGiOhSeto3Text:
     text "You fall to"
     line "the floor."
-
-    para "Every part of"
-    line "you numb."
-
-    para "Such power!"
-
-    para "You never had"
-    line "a chance."
 
     para "As your vision"
     line "fades you see..."
@@ -1011,9 +931,6 @@ YuGiOhSeto3Text:
 
     para "He stabs YAMI in"
     line "the back."
-
-    para "YAMI drops his"
-    line "cards..."
 
     para "You lose your"
     line "fight for"
@@ -1030,13 +947,6 @@ YuGiOhYami1Text:
     cont "peace and"
     cont "kindness."
 
-    para "But you show"
-    line "no quarter to"
-    cont "those who would"
-    cont "seek to hurt"
-    cont "you or your"
-    cont "people."
-
     para "You command the"
     line "God cards from"
     cont "which you can"
@@ -1044,18 +954,10 @@ YuGiOhYami1Text:
     cont "to fight for"
     cont "you."
 
-    para "Even the mightiest"
-    line "God EXODIA is at"
-    cont "your command."
-
     para "None can challenge"
     line "you."
 
-    para "Even the lord of"
-    line "the second house"
-    cont "SETO."
-
-    para "You know he will"
+    para "You know SETO will"
     line "try to overthrow"
     cont "you."
 
@@ -1075,23 +977,6 @@ YuGiOhYami1Text:
 
     para "But an example"
     line "must be made."
-
-    para "SETO is the next"
-    line "most powerful"
-    cont "duelist in the"
-    cont "kingdom."
-
-    para "But you know the"
-    line "gap between you"
-    cont "is like that"
-    cont "between earth"
-    cont "and heaven."
-
-    para "You take out"
-    line "your godly cards."
-
-    para "To do what must"
-    line "be done."
     done
 
 YuGiOhYami2Text:
@@ -1101,16 +986,7 @@ YuGiOhYami2Text:
     para "Utterly defeated"
     line "but still alive."
 
-    para "You regret what"
-    line "you had to do."
-
-    para "But before you"
-    line "can form words"
-    cont "in your mouth"
-    cont "you feel an"
-    cont "intense pain"
-    cont "shooting all"
-    cont "over your body."
+    para "What is that!!"
 
     para "You find yourself"
     line "on the ground."
@@ -1131,19 +1007,8 @@ YuGiOhYami2Text:
     para "Was this his"
     line "plan..."
 
-    para "HENSHIN holds"
-    line "cards in his"
-    cont "hand."
-
     para "He means to kill"
     line "you."
-
-    para "But he doesn't"
-    line "know you."
-
-    para "You didn't always"
-    line "command the power"
-    cont "of Gods."
 
     para "From your robes"
     line "you take out"
@@ -1151,15 +1016,6 @@ YuGiOhYami2Text:
 
     para "Your oldest"
     line "friends."
-
-    para "Its been a long"
-    line "time since you"
-    cont "used them."
-
-    para "But your bond"
-    line "is stronger now"
-    cont "than it has ever"
-    cont "been."
     done
 
 YuGiOhRolePlayYamiSetoText:
@@ -1186,19 +1042,9 @@ YuGiOhRolePlayYamiSetoText:
     para "SETO retrieves"
     line "YAMIs God cards."
 
-    para "The power"
-    line "causing his hands"
-    cont "to tremble."
-
-    para "SETO uses their"
+    para "And uses their"
     line "power to heal"
     cont "YAMI."
-
-    para "SETO realising"
-    line "only YAMI can"
-    cont "truly protect"
-    cont "kingdom, asks"
-    cont "for forgiveness."
 
     para "YAMI in his"
     line "wisdom appoints"
@@ -1210,11 +1056,7 @@ YuGiOhYami3Text:
     text "YAMI and SETO"
     line "protect the"
     cont "kingdom and fight"
-    cont "many hard battles."
-
-    para "They send many"
-    line "duelists to the"
-    cont "shadow realm."
+    cont "many foes."
 
     para "PEGASUS."
 
@@ -1233,11 +1075,7 @@ YuGiOhYami3Text:
 
     para "He pulls you both"
     line "into the shadow"
-    cont "realm to consume"
-    cont "your souls."
-
-    para "This foe is not"
-    line "like any before."
+    cont "realm."
 
     para "You fight together"
     line "in a desperate"
@@ -1288,33 +1126,6 @@ YuGiOhVictoryText:
 
 YuGiOhDefeatText:
     text "Defeat!"
-    done
-    
-YuGiOhBreakText:
-    text "Do you need to"
-    line "go or would you"
-    cont "like to continue"
-    cont "to the second"
-    cont "half of the story?"
-    done
-
-YuGiOhBonusRoundText:
-    text "That's the end"
-    line "of the story."
-
-    para "But would you"
-    line "like to have a"
-    cont "special bonus"
-    cont "round?"
-    done
-
-YuGiOhStopText:
-    text "OK we will leave"
-    line "it there then."
-
-    para "Maybe we can do"
-    line "the whole story"
-    cont "next time."
     done
 
 AzaleaTown_MapEvents:

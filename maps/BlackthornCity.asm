@@ -692,29 +692,12 @@ LOTRHeroOrVillainChoiceText:
     done
 
 LOTRCh1HeroText:
-    text "It's been so long"
-    line "since you left"
-    cont "the SHIRE."
-
-    para "You rarely think"
-    line "of how much you"
-    cont "miss home."
-
-    para "Here you are"
-    line "hiding atop a"
-    cont "stone tower with"
-    cont "your friend SAM."
-
-    para "You are being"
+    text "You are being"
     line "hunted by RING"
     cont "WRAITHS."
 
     para "They seek the ONE"
     line "RING."
-
-    para "The ultimate"
-    line "weapon entrusted"
-    cont "to you alone."
 
     para "What was that?"
 
@@ -738,32 +721,11 @@ LOTRCh1VillainText:
     line "your maker and"
     cont "master."
 
-    para "Many have held"
-    line "you."
-
-    para "And all have had"
-    line "their wills bend"
-    cont "to your purpose."
-
-    para "The one who holds"
-    line "you now is strong."
-
-    para "But FRODO will"
-    line "bend to you"
-    cont "eventually."
-
     para "You are the ONE"
     line "RING."
 
-    para "The ultimate"
-    line "weapon."
-
     para "The RING WRAITHS"
     line "are near."
-
-    para "They will return"
-    line "you to your master"
-    cont "SAURON."
 
     para "You call out."
 
@@ -809,12 +771,6 @@ LOTRCh2HeroText:
     para "Your wizard friend"
     line "GANDALF is there."
 
-    para "FRODO is healed."
-
-    para "You form a team."
-
-    para "A fellowship."
-
     para "You and SAM will"
     line "take the ring to"
     cont "MT DOOM to destroy"
@@ -829,21 +785,6 @@ LOTRCh2HeroText:
     para "They travel deep"
     line "into the mine"
     cont "of MORIA."
-
-    para "It is clear they"
-    line "are not alone."
-
-    para "There are swarms"
-    line "of Orcs and evil"
-    cont "creatures."
-
-    para "GANDALF senses"
-    line "something much"
-    cont "worse."
-
-    para "A Demon of the"
-    line "ancient world"
-    cont "awaits us here."
     done
 
 LOTRCh2VillainText:
@@ -856,9 +797,6 @@ LOTRCh2VillainText:
 
     para "A stranger has"
     line "appeared."
-
-    para "No this is no"
-    line "normal man."
 
     para "This is ARAGORN"
     line "the true king of"
@@ -885,52 +823,22 @@ LOTRCh2VillainText:
     cont "DOOM to destroy"
     cont "you."
 
-    para "This is what you"
-    line "want."
-
-    para "For SAURON will"
+    para "SAURON will"
     line "surly find you"
     cont "at MT DOOM."
-
-    para "FRODO will be"
-    line "dead long before"
-    cont "he gets there."
 
     para "GANDALF is going"
     line "to the mine of"
     cont "MORIA."
 
-    para "You reach out"
-    line "and take command"
-    cont "of an ancient"
-    cont "demon that lies"
-    cont "deep within MORIA."
-
-    para "Your body is a"
-    line "towering inferno."
-
-    para "You are a BALROG."
-
-    para "Lord of fire!"
-
-    para "GANDALF comes."
-
-    para "The poor wizard"
-    line "shall die here"
-    cont "and now!"
+    para "SAURONS forces"
+    line "will put an end"
+    cont "to him there."
     done
 
 LOTRHeroConcText:
     text "The BALROG is"
     line "too powerful."
-
-    para "It is intent on"
-    line "killing all who"
-    cont "oppose it."
-
-    para "GANDALF uses all"
-    line "his wizardly might"
-    cont "to restrain it."
 
     para "ARAGORN and the"
     line "party escape."
@@ -948,33 +856,15 @@ LOTRCh3HeroText:
     line "has not gone"
     cont "unnoticed."
 
-    para "GALARIEL revives"
-    line "him as GANDALF THE"
-    cont "WHITE."
-
-    para "The highest order"
-    line "of wizard."
-
-    para "He must make"
-    line "haste to catch"
-    cont "up with the party."
+    para "He is revived as"
+    line "GANDALF the WHITE."
 
     para "SARUMAN the former"
-    line "high wizard makes"
-    cont "sure GANDALF is"
-    cont "killed."
+    line "WHITE wizard is"
+    cont "not happy."
 
     para "There can be only"
     line "one WHITE wizard!"
-
-    para "GANDALF knows"
-    line "this."
-
-    para "But is not"
-    line "concerned."
-
-    para "His new powers are"
-    line "great."
     done
 
 LOTRVillainConcText:
@@ -991,13 +881,6 @@ LOTRVillainConcText:
 
     para "One last full"
     line "power swing!"
-
-    para "GANDALFS shield"
-    line "is gone."
-
-    para "All that remains"
-    line "of him are chard"
-    cont "remnants of cloth."
 
     para "Finally GANDALF"
     line "is dead!"
@@ -1023,29 +906,14 @@ LOTRCh3VillainText:
     line "as GANDALF THE"
     cont "WHITE."
 
-    para "The highest order"
-    line "of wizard."
-
-    para "On a distant tower"
-    line "SARUMAN the former"
-    cont "head of the wizard"
-    cont "order senses this."
-
     para "You are most"
     line "displeased."
 
     para "You are SARUMAN"
     line "THE WHITE."
 
-    para "You have been"
-    line "head of the order"
-    cont "for centuries."
-
     para "You will not allow"
     line "this insult!"
-
-    para "You gather your"
-    line "forces."
 
     para "You must kill"
     line "GANDALF!"
@@ -1061,62 +929,26 @@ LOTRCh4HeroText:
     cont "defeat SARUMAN."
 
     para "But ARAGORN faces"
-    line "enemies he can"
-    cont "not defeat."
-
-    para "GANDALF can not"
-    line "offer assistance"
-    cont "in time."
-
-    para "You sit on the"
-    line "eve of another"
-    cont "battle."
-
-    para "You know you don't"
-    line "have the strength"
-    cont "to win."
+    line "a battle he can"
+    cont "not win."
 
     para "An elf ELROND"
-    line "enters."
-
-    para "He has something"
-    line "concealed in a"
-    cont "cloth."
-
-    para "It can not be."
+    line "has a gift for"
+    cont "you."
 
     para "The ancient sword"
     line "of kings."
-
-    para "It was destroyed"
-    line "centuries ago."
-
-    para "ELROND puts the"
-    line "sword in your"
-    cont "hand."
 
     para "It is reforged."
 
     para "For the one true"
     line "king."
 
-    para "You feel the power"
-    line "and legacy of the"
-    cont "sword in hand."
-
     para "The battle horn"
     line "sounds."
 
-    para "You feel nothing."
-
     para "There is only"
     line "purpose."
-
-    para "You fight for"
-    line "FRODO."
-
-    para "You fight for"
-    line "hope."
 
     para "A wave of Orcs"
     line "rush you."
@@ -1149,31 +981,15 @@ LOTRCh4VillainText:
 
     para "As are his men."
 
-    para "With him gone"
-    line "SAROMANS forces"
-    cont "will be free to"
-    cont "move."
-
-    para "And you will be"
-    line "reunited with"
-    cont "your master."
-
     para "You take command"
     line "of GOTHMOG the"
     cont "commander of the"
     cont "Orc forces."
 
-    para "The attack begins!"
-
     para "There is ARAGORN."
 
     para "Alone he walks"
     line "towards us."
-
-    para "Fool, there will"
-    line "be no mercy."
-
-    para "First wave attack!"
 
     para "With a flash"
     line "a dozen Orcs and"
@@ -1182,15 +998,6 @@ LOTRCh4VillainText:
 
     para "Did ARAGORN do"
     line "that!"
-
-    para "That sword!"
-
-    para "I know it."
-
-    para "The sword of"
-    line "the great king!"
-
-    para "ARAGORN must die!"
 
     para "Attack at will!"
     done
@@ -1208,8 +1015,7 @@ LOTRCh5HeroText:
 
     para "Finally you will"
     line "cast it into the"
-    cont "fire and be rid"
-    cont "of it!"
+    cont "fire."
 
     para "But why not keep"
     line "it..."
@@ -1230,18 +1036,9 @@ LOTRCh5HeroText:
     para "A huge figure"
     line "appears."
 
-    para "You feel the life"
-    line "leave you."
-
     para "It is SAURON!"
 
     para "He has the RING!"
-
-    para "But you and SAM"
-    line "wont give up."
-
-    para "You have grown"
-    line "so much."
 
     para "Here at the end"
     line "all things."
@@ -1261,17 +1058,8 @@ LOTRCh5VillainText:
     cont "the fires of"
     cont "MT DOOM."
 
-    para "You will be"
-    line "destroyed!"
-
     para "You plead for"
     line "your life."
-
-    para "You can help"
-    line "FRODO."
-
-    para "You can make him"
-    line "immortal."
 
     para "Where am I?"
 
@@ -1283,29 +1071,8 @@ LOTRCh5VillainText:
 
     para "You awaken."
 
-    para "The world seem to"
-    line "warp and kneel"
-    cont "about you as you"
-    cont "rise."
-
-    para "Overflowing with"
-    line "power!"
-
     para "You are whole"
     line "again."
-
-    para "Look upon those"
-    line "two pitiful"
-    cont "hobbits."
-
-    para "The fear in their"
-    line "faces delights"
-    cont "you."
-
-    para "They look ready"
-    line "to battle you."
-
-    para "Futile."
 
     para "You are the lord"
     line "of all things."
@@ -1315,9 +1082,7 @@ LOTRCh5VillainText:
     done
 
 LOTRCh6Text:
-    text "That was great."
-
-    para "Let's have one"
+    text "Let's have one"
     line "last bonus game."
 
     para "All the heroes and"
@@ -1361,19 +1126,6 @@ LOTREndText:
     cont "RING was finally"
     cont "destroyed."
 
-    para "SAURON was"
-    line "defeated."
-
-    para "FRODO and SAM"
-    line "found themselves"
-    cont "sitting on a rock."
-
-    para "Lava flowing about"
-    line "them from the"
-    cont "falling mountain."
-
-    para "You are content."
-
     para "You gave your life"
     line "to save everyone."
 
@@ -1385,8 +1137,6 @@ LOTREndText:
     para "It is GANDALF!"
 
     para "He takes you away."
-
-    para "The world is safe."
 
     para "You welcome your"
     line "simple life in"

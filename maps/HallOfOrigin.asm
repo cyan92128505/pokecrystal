@@ -1423,7 +1423,7 @@ MultiverseHeroes1Text:
 
 MultiverseHeroes2Text:
     text "JIREN and GOKU"
-   line "engage first."
+    line "engage first."
 
     para "You go right"
     line "for PALPATINE."

@@ -1377,7 +1377,7 @@ DBZCh5GokuHeroText:
     done
 
 NewWarriorText:
-    para "You feel something"
+    text "You feel something"
     line "taking over."
 
     para "You don't fight"
@@ -1442,7 +1442,7 @@ DBZCh5VegetaVillainText:
     done
 
 PowerSurgingText:
-    para "What's this!"
+    text "What's this!"
 
     para "His power"
     line "is surging!"
@@ -1471,6 +1471,8 @@ DBZCh5GokuVillainText:
     para "KRILLIN explodes."
 
     para "that felt good."
+
+    para "GOKU cries out."
     done
 
 DBZConcText:

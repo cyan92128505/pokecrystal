@@ -21,7 +21,13 @@ FindFirstAliveMonAndStartBattle:
     call GetWorldMapLocation
 	cp LANDMARK_HALL_OF_ORIGIN
     jr z, .daypal
+    cp LANDMARK_ANCIENT_RUIN
+    jr nz, .checkEnv
+    call GetMapEnvironment
+    cp ROUTE
+    jr z, .daypal
 
+.checkEnv
     call GetMapEnvironment
     cp CAVE
     jr z, .nightpal

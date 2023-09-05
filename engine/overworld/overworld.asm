@@ -105,6 +105,8 @@ AddMapSprites:
     jr z, .indoor
     cp LANDMARK_WAR_ZONE
     jr z, .indoor
+    cp LANDMARK_ANCIENT_RUIN
+    jr z, .indoor
 
 	call GetMapEnvironment
 	call CheckOutdoorMap

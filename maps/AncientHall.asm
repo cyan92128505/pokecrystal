@@ -28,49 +28,49 @@ AncientHall_MapScripts:
     endcallback
     
 AncientHallFieldMon1Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_1, AncientHallPokemonAttacksText, 70, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_1, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_1
     end
 
 AncientHallFieldMon2Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_2, AncientHallPokemonAttacksText, 70, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_2, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_2
     end
 
 AncientHallFieldMon3Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_3, AncientHallPokemonAttacksText, 70, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_3, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_3
     end
 
 AncientHallFieldMon4Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_4, AncientHallPokemonAttacksText, 70, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_4, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_4
     end
 
 AncientHallFieldMon5Script:
-	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_5, AncientHallPokemonAttacksText, 80, 0, .script
+	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_5, AncientHallPokemonAttacksText, 90, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_5
     end
 
 AncientHallFieldMon6Script:
-	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_6, AncientHallPokemonAttacksText, 80, 0, .script
+	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_6, AncientHallPokemonAttacksText, 90, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_6
     end
 
 AncientHallFieldMon7Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientHallPokemonAttacksText, 70, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_7
     end
 
 AncientHallFieldMon8Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, AncientHallPokemonAttacksText, 70, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_8
     end
@@ -87,7 +87,7 @@ ZygardeScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZYGARDE, 80
+	loadwildmon ZYGARDE, 90
 	startbattle
 	reloadmapafterbattle
     setval ZYGARDE

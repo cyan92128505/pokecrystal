@@ -515,7 +515,7 @@ IlexForestShrineScript:
 	pause 20
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	special CelebiShrineEvent
-	loadwildmon CELEBI, 60
+	loadwildmon CELEBI, 70
 	startbattle
 	reloadmapafterbattle
 	pause 20
@@ -987,13 +987,13 @@ BugCatcherWayneAfterBattleText:
 	done
 
 IlexForestFieldMon1Script:
-	trainer SCYTHER, FIELD_MON, EVENT_FIELD_MON_1, IlexForestPokemonAttacksText, 31, 0, .script
+	trainer SCYTHER, FIELD_MON, EVENT_FIELD_MON_1, IlexForestPokemonAttacksText, 36, 0, .script
 .script
     disappear ILEXFOREST_FIELDMON_1
     end
 
 IlexForestFieldMon2Script:
-	trainer YANMEGA, FIELD_MON, EVENT_FIELD_MON_2, IlexForestPokemonAttacksText, 32, 0, .script
+	trainer YANMEGA, FIELD_MON, EVENT_FIELD_MON_2, IlexForestPokemonAttacksText, 37, 0, .script
 .script
     disappear ILEXFOREST_FIELDMON_2
     end

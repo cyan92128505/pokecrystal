@@ -522,7 +522,7 @@ LakeOfRageFieldMon1Script:
 	end
 
 LakeOfRageFieldMon2Script:
-	trainer GRENINJA, FIELD_MON, EVENT_FIELD_MON_2, LakeOfRagePokemonAttacksText, 52, 0, .script
+	trainer GRENINJA, FIELD_MON, EVENT_FIELD_MON_2, LakeOfRagePokemonAttacksText, 62, 0, .script
 .script
     disappear LAKEOFRAGE_FIELDMON_2
     end
@@ -567,7 +567,7 @@ LakeOfRageFieldMon6Script:
 	faceplayer
 	cry SALAMENCE
 	pause 15
-	loadwildmon SALAMENCE, 70
+	loadwildmon SALAMENCE, 75
     loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

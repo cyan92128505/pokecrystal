@@ -42,8 +42,6 @@ LatiasScript:
 	cry LATIAS
 	pause 15
 	closetext
-	;loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	;loadwildmon LATIAS, 60
 	checkevent EVENT_BEAT_MORTY
 	iffalse .tinyLevel
 	checkevent EVENT_BEAT_PRYCE
@@ -53,23 +51,23 @@ LatiasScript:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 70
+	loadwildmon LATIAS, 80
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 60
+	loadwildmon LATIAS, 70
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 50
+	loadwildmon LATIAS, 60
 	sjump .begin
 .smallLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 40
+	loadwildmon LATIAS, 50
 	sjump .begin
 .tinyLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 30
+	loadwildmon LATIAS, 40
 .begin
 	startbattle
 	reloadmapafterbattle

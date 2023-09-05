@@ -2432,17 +2432,12 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld hl, wEnemyMonBaseExp
 
 ; AndrewNote - ExpShare
-; gives 1/4 exp to all bench Pokemon until all Johto badges obtained
 ; then gives 1/2 exp to all bench Pokemon until all Kanto badges obtained
 ; then gives full exp to all bench Pokemon
 	ld a, [wKantoBadges]
 	cp %11111111 ; all badges
     jr z, .continue
     srl [hl] ; halve exp
-	ld a, [wJohtoBadges]
-	cp %11111111 ; all badges
-	jr z, .continue
-	srl [hl] ; halve exp
 .continue
 	ld a, [wBattleParticipantsNotFainted]
 	push af
@@ -7667,8 +7662,12 @@ GiveExperiencePoints:
     pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
-	ld a, [hl]
-	cp MAX_LEVEL
+	ld a, [wLevelCap]
+    push bc
+    ld b, a
+    ld a, [hl]
+    cp b
+    pop bc
 	jp nc, .next_mon
 	push bc
 	xor a
@@ -7702,21 +7701,20 @@ GiveExperiencePoints:
 	ld a, 1
 
 .no_boost
-; Boost experience for a Trainer Battle
-	ld [wStringBuffer2 + 2], a
+    ld [wStringBuffer2 + 2], a
+; AndrewNote - Rematch exp
+; Boost experience for a Trainer Battle unless in a REMATCH, unless we have all kanto badges
+   	ld a, [wKantoBadges]
+   	cp %11111111 ; all badges
+    jr z, .ignoreRematch
+    ld a, [wBattleType]
+    cp BATTLETYPE_REMATCH
+    jr z, .noTrainerBoost
+.ignoreRematch
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
-; AndrewNote - exp reduced until all Kanto badges are obtained
-; all exp halved and halved again for rematches
-   	ld a, [wKantoBadges]
-   	cp %11111111 ; all badges
-    jr z, .noReduction
-    call ReducedExp ; AndrewNote - exp reduced to 3/4 for balance reasons
-    ld a, [wBattleType]
-    cp BATTLETYPE_REMATCH
-    call z, HalfExp
-.noReduction
+.noTrainerBoost
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM
@@ -7771,7 +7769,8 @@ GiveExperiencePoints:
 	ld [wCurSpecies], a
 	call GetBaseData
 	push bc
-	ld d, MAX_LEVEL
+	ld a, [wLevelCap]
+    ld d, a
 	callfar CalcExpAtLevel
 	pop bc
 	ld hl, MON_EXP + 2
@@ -7806,8 +7805,12 @@ GiveExperiencePoints:
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
+	ld a, [wLevelCap]
+    push bc
+    ld b, a
 	ld a, [hl]
-	cp MAX_LEVEL
+    cp b
+	pop bc
 	jp nc, .next_mon
 	cp d
 	jp z, .next_mon
@@ -7992,32 +7995,6 @@ BoostExp:
 	pop bc
 	ret
 
-HalfExp:
-	push bc
-; load experience value
-	ldh a, [hProduct + 2]
-	ld b, a
-	ldh a, [hProduct + 3]
-	ld c, a
-; halve it
-	srl b
-	rr c
-; load it back to the exp value
-    ld a, c
-	ldh [hProduct + 3], a
-	ld a, b
-	ldh [hProduct + 2], a
-	pop bc
-	ret
-
-; Reduces Exp gain to 3/4 - used for game balancing
-ReducedExp:
-    call BoostExp
-    ;call BoostExp
-    ;call HalfExp
-    call HalfExp
-    ret
-
 Text_MonGainedExpPoint:
 	text_far Text_Gained
 	text_asm
@@ -8045,8 +8022,12 @@ AnimateExpBar:
 	cp [hl]
 	jp nz, .finish
 
+    ld a, [wLevelCap]
+	push bc
+	ld b, a
 	ld a, [wBattleMonLevel]
-	cp MAX_LEVEL
+	cp b
+    pop bc
 	jp nc, .finish
 
 	ldh a, [hProduct + 3]
@@ -8083,7 +8064,8 @@ AnimateExpBar:
 	ld [hl], a
 
 .NoOverflow:
-	ld d, MAX_LEVEL
+	ld a, [wLevelCap]
+    ld d, a
 	callfar CalcExpAtLevel
 	ldh a, [hProduct + 1]
 	ld b, a
@@ -8118,8 +8100,12 @@ AnimateExpBar:
 	ld d, a
 
 .LoopLevels:
+    ld a, [wLevelCap]
+	push bc
+	ld b, a
 	ld a, e
-	cp MAX_LEVEL
+	cp b
+    pop bc
 	jr nc, .FinishExpBar
 	cp d
 	jr z, .FinishExpBar

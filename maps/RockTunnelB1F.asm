@@ -54,15 +54,15 @@ DarkraiScript:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 70
+	loadwildmon DARKRAI, 80
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 60
+	loadwildmon DARKRAI, 70
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 50
+	loadwildmon DARKRAI, 60
 .begin
 	startbattle
 	disappear ROCKTUNNELB1F_DARKRAI

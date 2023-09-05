@@ -94,7 +94,7 @@ SPDSPCDV_SHINY EQU $AA
 	const BATTLETYPE_TREE               ; enemies in trees, may be asleep at night
 	const BATTLETYPE_SUICUNE            ; Suicune plays right music
 	const BATTLETYPE_SETNOITEMS         ; can't use items or set mode - no set no items
-	const BATTLETYPE_REMATCH            ; enemy yields half normal exp + no set no items
+	const BATTLETYPE_REMATCH            ; enemy yields reduced exp + no set no items
 	const BATTLETYPE_PERFECT            ; enemy has max dvs and you can't escape
 	const BATTLETYPE_PERFECT_ESCAPE     ; enemy has max dvs and you can escape
 	const BATTLETYPE_BOSS_BATTLE        ; enemy has max stat exp + no set no items

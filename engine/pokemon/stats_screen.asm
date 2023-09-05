@@ -658,7 +658,7 @@ LoadPinkPage:
 	ld a, [wTempMonLevel]
 	push af
 	cp MAX_LEVEL
-	jr z, .AtMaxLevel
+	jr nc, .AtMaxLevel
 	inc a
 	ld [wTempMonLevel], a
 .AtMaxLevel:
@@ -670,7 +670,7 @@ LoadPinkPage:
 .CalcExpToNextLevel:
 	ld a, [wTempMonLevel]
 	cp MAX_LEVEL
-	jr z, .AlreadyAtMaxLevel
+	jr nc, .AlreadyAtMaxLevel
 	inc a
 	ld d, a
 	farcall CalcExpAtLevel

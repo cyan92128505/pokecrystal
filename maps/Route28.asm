@@ -70,7 +70,7 @@ Route28FieldMon4Script:
 	faceplayer
 	cry SKARMORY
 	pause 15
-	loadwildmon SKARMORY, 70
+	loadwildmon SKARMORY, 71
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -82,7 +82,7 @@ Route28FieldMon5Script:
 	faceplayer
 	cry BLISSEY
 	pause 15
-	loadwildmon BLISSEY, 70
+	loadwildmon BLISSEY, 74
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -94,7 +94,7 @@ Route28FieldMon6Script:
 	faceplayer
 	cry SNORLAX
 	pause 15
-	loadwildmon SNORLAX, 70
+	loadwildmon SNORLAX, 75
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -106,7 +106,7 @@ Route28FieldMon7Script:
 	faceplayer
 	cry ROTOM
 	pause 15
-	loadwildmon ROTOM, 70
+	loadwildmon ROTOM, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -118,7 +118,7 @@ Route28FieldMon8Script:
 	faceplayer
 	cry POLTEGEIST
 	pause 15
-	loadwildmon POLTEGEIST, 70
+	loadwildmon POLTEGEIST, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -130,7 +130,7 @@ Route28FieldMon9Script:
 	faceplayer
 	cry BISHARP
 	pause 15
-	loadwildmon BISHARP, 70
+	loadwildmon BISHARP, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -142,7 +142,7 @@ Route28FieldMon10Script:
 	faceplayer
 	cry TAUROS
 	pause 15
-	loadwildmon TAUROS, 70
+	loadwildmon TAUROS, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -158,7 +158,7 @@ LatiosScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIOS, 70
+	loadwildmon LATIOS, 85
 	startbattle
 	reloadmapafterbattle
     setval LATIOS

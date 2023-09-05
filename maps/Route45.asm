@@ -534,7 +534,7 @@ Route45FieldMon5Script:
     end
 
 Route45FieldMon6Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_6, Route45PokemonAttacksText, 70, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_6, Route45PokemonAttacksText, 72, 0, .script
 .script
     disappear ROUTE45_FIELDMON_6
     end

@@ -83,7 +83,7 @@ SilverCaveOutsideFieldMon4Script:
 	faceplayer
 	cry STARAPTOR
 	pause 15
-	loadwildmon STARAPTOR, 70
+	loadwildmon STARAPTOR, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -95,7 +95,7 @@ SilverCaveOutsideFieldMon5Script:
 	faceplayer
 	cry GALVANTULA
 	pause 15
-	loadwildmon GALVANTULA, 70
+	loadwildmon GALVANTULA, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -107,7 +107,7 @@ SilverCaveOutsideFieldMon6Script:
 	faceplayer
 	cry VOLCARONA
 	pause 15
-	loadwildmon VOLCARONA, 70
+	loadwildmon VOLCARONA, 75
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -119,7 +119,7 @@ SilverCaveOutsideFieldMon7Script:
 	faceplayer
 	cry EXEGGUTOR
 	pause 15
-	loadwildmon EXEGGUTOR, 70
+	loadwildmon EXEGGUTOR, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -131,7 +131,7 @@ SilverCaveOutsideFieldMon8Script:
 	faceplayer
 	cry STARMIE
 	pause 15
-	loadwildmon STARMIE, 70
+	loadwildmon STARMIE, 75
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -155,7 +155,7 @@ SilverCaveOutsideFieldMon10Script:
 	faceplayer
 	cry AMPHAROS
 	pause 15
-	loadwildmon AMPHAROS, 70
+	loadwildmon AMPHAROS, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

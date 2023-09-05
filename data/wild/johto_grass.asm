@@ -1019,7 +1019,7 @@ JohtoGrassWildMons:
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
 	db 42, ARCTOVISH
-	db 62, GARCHOMP
+	db 72, GARCHOMP
 	; day
 	db 34, GABITE
 	db 34, DRAGONAIR
@@ -1027,7 +1027,7 @@ JohtoGrassWildMons:
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
 	db 42, ARCTOVISH
-	db 62, GARCHOMP
+	db 72, GARCHOMP
 	; nite
 	db 34, GABITE
 	db 34, DRAGONAIR
@@ -1035,7 +1035,7 @@ JohtoGrassWildMons:
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
 	db 42, ARCTOVISH
-	db 62, GARCHOMP
+	db 72, GARCHOMP
 	end_grass_wildmons
 
 	def_grass_wildmons WHIRL_ISLAND_B2F
@@ -1047,7 +1047,7 @@ JohtoGrassWildMons:
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
 	db 42, ARCTOVISH
-	db 62, GARCHOMP
+	db 72, GARCHOMP
 	; day
 	db 34, GABITE
 	db 34, DRAGONAIR
@@ -1055,7 +1055,7 @@ JohtoGrassWildMons:
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
 	db 42, ARCTOVISH
-	db 62, GARCHOMP
+	db 72, GARCHOMP
 	; nite
 	db 34, GABITE
 	db 34, DRAGONAIR
@@ -1063,7 +1063,7 @@ JohtoGrassWildMons:
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
 	db 42, ARCTOVISH
-	db 62, GARCHOMP
+	db 72, GARCHOMP
 	end_grass_wildmons
 
 	def_grass_wildmons WHIRL_ISLAND_LUGIA_CHAMBER
@@ -1075,7 +1075,7 @@ JohtoGrassWildMons:
 	db 43, MILOTIC
 	db 47, STARMIE
 	db 47, REUNICLUS
-	db 65, DRAGONITE
+	db 75, DRAGONITE
 	; day
 	db 40, SLOWKING
 	db 40, LAPRAS
@@ -1083,7 +1083,7 @@ JohtoGrassWildMons:
 	db 43, MILOTIC
 	db 47, STARMIE
 	db 47, REUNICLUS
-	db 65, DRAGONITE
+	db 75, DRAGONITE
 	; nite
 	db 40, SLOWKING
 	db 40, LAPRAS
@@ -1091,118 +1091,118 @@ JohtoGrassWildMons:
 	db 43, MILOTIC
 	db 47, STARMIE
 	db 47, REUNICLUS
-	db 65, DRAGONITE
+	db 75, DRAGONITE
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, CHANDELURE
-	db 60, HOUNDOOM
-	db 62, SCIZOR
-	db 62, AEGISLASH
-	db 65, MAGMORTAR
-	db 65, EXCADRILL
+	db 70, CHANDELURE
+	db 70, HOUNDOOM
+	db 72, SCIZOR
+	db 72, AEGISLASH
+	db 75, MAGMORTAR
+	db 75, EXCADRILL
 	db 80, AERODACTYL
 	; day
-	db 60, CHANDELURE
-	db 60, HOUNDOOM
-	db 62, SCIZOR
-	db 62, AEGISLASH
-	db 65, MAGMORTAR
-	db 65, EXCADRILL
+	db 70, CHANDELURE
+	db 70, HOUNDOOM
+	db 72, SCIZOR
+	db 72, AEGISLASH
+	db 75, MAGMORTAR
+	db 75, EXCADRILL
 	db 80, AERODACTYL
 	; nite
-	db 60, GENGAR
-	db 60, WEAVILE
-	db 62, SPIRITOMB
-	db 62, AEGISLASH
-	db 65, GLISCOR
-	db 65, MAMOSWINE
+	db 70, GENGAR
+	db 70, WEAVILE
+	db 72, SPIRITOMB
+	db 72, AEGISLASH
+	db 75, GLISCOR
+	db 75, MAMOSWINE
 	db 80, AERODACTYL
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_2
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, BRELOOM
-	db 60, HAWLUCHA
-	db 62, HERACROSS
-	db 62, CONKELDURR
-	db 60, KLEFKI
-	db 62, TOGEKISS
+	db 70, BRELOOM
+	db 70, HAWLUCHA
+	db 72, HERACROSS
+	db 72, CONKELDURR
+	db 75, KLEFKI
+	db 75, TOGEKISS
 	db 80, SNORLAX
 	; day
-	db 60, BRELOOM
-	db 60, HAWLUCHA
-	db 62, HERACROSS
-	db 62, CONKELDURR
-	db 60, KLEFKI
-	db 62, TOGEKISS
+	db 70, BRELOOM
+	db 70, HAWLUCHA
+	db 72, HERACROSS
+	db 72, CONKELDURR
+	db 75, KLEFKI
+	db 75, TOGEKISS
 	db 80, SNORLAX
 	; nite
-	db 60, GALADE
-	db 60, GARDEVOIR
-	db 62, MACHAMP
-	db 62, PORYGONZ
-	db 60, STEELIX
-	db 62, CLEFABLE
+	db 70, GALADE
+	db 70, GARDEVOIR
+	db 72, MACHAMP
+	db 72, PORYGONZ
+	db 75, STEELIX
+	db 75, CLEFABLE
 	db 80, SNORLAX
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_3
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, TYRANITAR
-	db 60, DRAGONITE
-	db 62, SALAMENCE
-	db 62, GARCHOMP
-	db 65, METAGROSS
-	db 65, GENESECT
+	db 75, TYRANITAR
+	db 75, DRAGONITE
+	db 75, SALAMENCE
+	db 75, GARCHOMP
+	db 75, METAGROSS
+	db 75, GENESECT
 	db 80, ARTICUNO
 	; day
-	db 60, TYRANITAR
-	db 60, DRAGONITE
-	db 62, SALAMENCE
-	db 62, GARCHOMP
-	db 65, METAGROSS
-	db 65, GENESECT
+	db 75, TYRANITAR
+	db 75, DRAGONITE
+	db 75, SALAMENCE
+	db 75, GARCHOMP
+	db 75, METAGROSS
+	db 75, GENESECT
 	db 80, MOLTRES
 	; nite
-	db 60, TYRANITAR
-	db 60, DRAGONITE
-	db 62, SALAMENCE
-	db 62, GARCHOMP
-	db 65, METAGROSS
-	db 65, GENESECT
+	db 75, TYRANITAR
+	db 75, DRAGONITE
+	db 75, SALAMENCE
+	db 75, GARCHOMP
+	db 75, METAGROSS
+	db 75, GENESECT
 	db 80, ZAPDOS
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, LUCARIO
-	db 60, ALAKAZAM
-	db 62, MACHAMP
-	db 62, CONKELDURR
-	db 60, MAGNEZONE
-	db 62, SYLVEON
+	db 70, LUCARIO
+	db 70, ALAKAZAM
+	db 72, MACHAMP
+	db 72, CONKELDURR
+	db 75, MAGNEZONE
+	db 75, SYLVEON
 	db 80, ARCTOZOLT
 	; day
-	db 60, LUCARIO
-	db 60, ALAKAZAM
-	db 62, MACHAMP
-	db 62, CONKELDURR
-	db 60, MAGNEZONE
-	db 62, SYLVEON
+	db 70, LUCARIO
+	db 70, ALAKAZAM
+	db 72, MACHAMP
+	db 72, CONKELDURR
+	db 75, MAGNEZONE
+	db 75, SYLVEON
 	db 80, ARCTOZOLT
 	; nite
-	db 60, MISMAGIUS
-	db 60, HONCHKROW
-	db 62, EXCADRILL
-	db 62, AEGISLASH
-	db 65, ELECTIVIRE
-	db 65, RHYPERIOR
+	db 70, MISMAGIUS
+	db 70, HONCHKROW
+	db 72, EXCADRILL
+	db 72, AEGISLASH
+	db 75, ELECTIVIRE
+	db 75, RHYPERIOR
 	db 80, ARCTOZOLT
 	end_grass_wildmons
 
@@ -1215,7 +1215,7 @@ JohtoGrassWildMons:
 	db 10, SNEASEL
 	db 12, PAWNIARD
 	db 12, LARVITAR
-	db 66, TYRANITAR
+	db 76, TYRANITAR
 	; day
 	db 8, ZUBAT
 	db 8, DUNSPARCE
@@ -1223,7 +1223,7 @@ JohtoGrassWildMons:
 	db 10, SNEASEL
 	db 12, PAWNIARD
 	db 12, LARVITAR
-	db 66, TYRANITAR
+	db 76, TYRANITAR
 	; nite
 	db 8, ZUBAT
 	db 8, DUNSPARCE
@@ -1231,7 +1231,7 @@ JohtoGrassWildMons:
 	db 10, SNEASEL
 	db 12, PAWNIARD
 	db 12, LARVITAR
-	db 66, TYRANITAR
+	db 76, TYRANITAR
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
@@ -1243,7 +1243,7 @@ JohtoGrassWildMons:
 	db 42, HOUNDOOM
 	db 44, BISHARP
 	db 46, SPIRITOMB
-	db 66, TYRANITAR
+	db 76, TYRANITAR
 	; day
 	db 40, GENGAR
 	db 40, HONCHKROW
@@ -1251,7 +1251,7 @@ JohtoGrassWildMons:
 	db 42, HOUNDOOM
 	db 44, BISHARP
 	db 46, SPIRITOMB
-	db 66, TYRANITAR
+	db 76, TYRANITAR
 	; nite
 	db 45, GENGAR
 	db 45, HONCHKROW
@@ -1259,7 +1259,7 @@ JohtoGrassWildMons:
 	db 47, HOUNDOOM
 	db 49, BISHARP
 	db 51, SPIRITOMB
-	db 64, TYRANITAR
+	db 76, TYRANITAR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_29
@@ -1607,7 +1607,7 @@ JohtoGrassWildMons:
 	db 28, BAGON
 	db 30, AMPHAROS
 	db 34, STARAPTOR
-	db 63, SALAMENCE
+	db 73, SALAMENCE
 	; day
 	db 25, QUAGSIRE
 	db 25, POLIWHIRL
@@ -1615,7 +1615,7 @@ JohtoGrassWildMons:
 	db 28, BAGON
 	db 30, AMPHAROS
 	db 32, HAWLUCHA
-	db 63, SALAMENCE
+	db 73, SALAMENCE
 	; nite
 	db 25, QUAGSIRE
 	db 25, POLIWHIRL
@@ -1623,7 +1623,7 @@ JohtoGrassWildMons:
 	db 28, BAGON
 	db 30, AMPHAROS
 	db 32, HONCHKROW
-	db 63, SALAMENCE
+	db 73, SALAMENCE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_44
@@ -1663,7 +1663,7 @@ JohtoGrassWildMons:
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
-	db 65, DRAGONITE
+	db 75, DRAGONITE
 	; day
 	db 32, DRAGONAIR
 	db 33, GABITE
@@ -1671,7 +1671,7 @@ JohtoGrassWildMons:
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
-	db 65, DRAGONITE
+	db 75, DRAGONITE
 	; nite
 	db 32, DRAGONAIR
 	db 33, GABITE
@@ -1679,7 +1679,7 @@ JohtoGrassWildMons:
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
-	db 65, DRAGONITE
+	db 75, DRAGONITE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46
@@ -1714,27 +1714,27 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, EEVEE
-	db 60, STARAPTOR
-	db 62, GALVANTULA
-	db 62, VOLCARONA
-	db 65, VENUSAUR
-	db 65, SCEPTILE
+	db 70, STARAPTOR
+	db 72, GALVANTULA
+	db 72, VOLCARONA
+	db 75, VENUSAUR
+	db 75, SCEPTILE
 	db 80, GENESECT
 	; day
 	db 30, EEVEE
-	db 60, STARAPTOR
-	db 62, GALVANTULA
-	db 62, VOLCARONA
-	db 65, CHARIZARD
-	db 65, INFERNAPE
+	db 70, STARAPTOR
+	db 72, GALVANTULA
+	db 72, VOLCARONA
+	db 75, CHARIZARD
+	db 75, INFERNAPE
 	db 80, GENESECT
 	; nite
-	db 60, POLITOED
-	db 60, STARMIE
-	db 62, EXEGGUTOR
-	db 62, ARCANINE
-	db 65, BLASTOISE
-	db 65, GRENINJA
+	db 70, POLITOED
+	db 70, STARMIE
+	db 72, EXEGGUTOR
+	db 72, ARCANINE
+	db 75, BLASTOISE
+	db 75, GRENINJA
 	db 80, GENESECT
 
     def_grass_wildmons HALL_OF_ORIGIN
@@ -1828,25 +1828,25 @@ JohtoGrassWildMons:
 	db 53, BISHARP
 	db 53, RHYPERIOR
 	db 63, METAGROSS
-	db 64, GARCHOMP
-	db 65, GENESECT
-	db 70, DARKRAI
+	db 75, GARCHOMP
+	db 75, GENESECT
+	db 80, DARKRAI
 	; day
 	db 51, GENGAR
 	db 53, BISHARP
 	db 53, RHYPERIOR
 	db 63, METAGROSS
-	db 64, GARCHOMP
-	db 65, GENESECT
-	db 70, DARKRAI
+	db 75, GARCHOMP
+	db 75, GENESECT
+	db 80, DARKRAI
 	; nite
 	db 51, GENGAR
 	db 53, BISHARP
 	db 53, RHYPERIOR
 	db 63, METAGROSS
-	db 64, GARCHOMP
-	db 65, GENESECT
-	db 70, DARKRAI
+	db 75, GARCHOMP
+	db 75, GENESECT
+	db 80, DARKRAI
 	end_grass_wildmons
 
     def_grass_wildmons ANCIENT_RUIN_PAST
@@ -1856,25 +1856,25 @@ JohtoGrassWildMons:
 	db 55, VENUSAUR
 	db 58, SIGILYPH
 	db 58, REUNICLUS
-	db 65, CHARIZARD
-	db 65, SNORLAX
-	db 70, MEW
+	db 75, CHARIZARD
+	db 75, SNORLAX
+	db 80, MEW
 	; day
 	db 55, LUCARIO
 	db 55, VENUSAUR
 	db 58, SIGILYPH
 	db 58, REUNICLUS
-	db 65, CHARIZARD
-	db 65, SNORLAX
-	db 70, MEW
+	db 75, CHARIZARD
+	db 75, SNORLAX
+	db 80, MEW
 	; nite
 	db 55, LUCARIO
 	db 55, VENUSAUR
 	db 58, SIGILYPH
 	db 58, REUNICLUS
-	db 65, CHARIZARD
-	db 65, SNORLAX
-	db 70, MEW
+	db 75, CHARIZARD
+	db 75, SNORLAX
+	db 80, MEW
 	end_grass_wildmons
 
     def_grass_wildmons ANCIENT_TEMPLE

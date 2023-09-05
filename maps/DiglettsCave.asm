@@ -39,31 +39,31 @@ DiglettsCavePokefanMText:
 	done
 	
 DiglettsCaveFieldMon1Script:
-	trainer ONIX, FIELD_MON, EVENT_FIELD_MON_1, DiglettsCavePokemonAttacksText, 34, 0, .script
+	trainer ONIX, FIELD_MON, EVENT_FIELD_MON_1, DiglettsCavePokemonAttacksText, 44, 0, .script
 .script
     disappear DIGLETTSCAVE_FIELDMON_1
     end
 
 DiglettsCaveFieldMon2Script:
-	trainer PUPITAR, FIELD_MON, EVENT_FIELD_MON_2, DiglettsCavePokemonAttacksText, 36, 0, .script
+	trainer PUPITAR, FIELD_MON, EVENT_FIELD_MON_2, DiglettsCavePokemonAttacksText, 46, 0, .script
 .script
     disappear DIGLETTSCAVE_FIELDMON_2
     end
 
 DiglettsCaveFieldMon3Script:
-	trainer GABITE, FIELD_MON, EVENT_FIELD_MON_3, DiglettsCavePokemonAttacksText, 36, 0, .script
+	trainer GABITE, FIELD_MON, EVENT_FIELD_MON_3, DiglettsCavePokemonAttacksText, 46, 0, .script
 .script
     disappear DIGLETTSCAVE_FIELDMON_3
     end
 
 DiglettsCaveFieldMon4Script:
-	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_4, DiglettsCavePokemonAttacksText, 37, 0, .script
+	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_4, DiglettsCavePokemonAttacksText, 47, 0, .script
 .script
     disappear DIGLETTSCAVE_FIELDMON_4
     end
 
 DiglettsCaveFieldMon5Script:
-	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, DiglettsCavePokemonAttacksText, 38, 0, .script
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, DiglettsCavePokemonAttacksText, 48, 0, .script
 .script
     disappear DIGLETTSCAVE_FIELDMON_5
     end

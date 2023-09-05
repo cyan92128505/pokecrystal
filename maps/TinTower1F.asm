@@ -140,7 +140,7 @@ TinTower1F_MapScripts:
 	applymovement TINTOWER1F_SUICUNE, TinTower1FSuicuneApproachesMovement
 	cry SUICUNE
 	pause 20
-	loadwildmon SUICUNE, 60
+	loadwildmon SUICUNE, 70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	startbattle
 	dontrestartmapmusic

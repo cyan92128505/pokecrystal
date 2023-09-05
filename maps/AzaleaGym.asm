@@ -26,6 +26,7 @@ AzaleaGymBugsyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BUGSY
+	loadmem wLevelCap, 35
 	opentext
 	writetext Text_ReceivedHiveBadge
 	playsound SFX_GET_BADGE

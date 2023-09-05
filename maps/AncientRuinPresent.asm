@@ -42,7 +42,7 @@ YveltalScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon YVELTAL, 70
+	loadwildmon YVELTAL, 85
 	startbattle
 	reloadmapafterbattle
     setval YVELTAL
@@ -213,13 +213,13 @@ AncientRuinsPresentFieldMon2Script:
     end
 
 AncientRuinsPresentFieldMon3Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 55, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 65, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_3
     end
 
 AncientRuinsPresentFieldMon4Script:
-	trainer GENESECT, FIELD_MON, EVENT_FIELD_MON_4, AncientRuinsPresentPokemonAttacksText, 65, 0, .script
+	trainer GENESECT, FIELD_MON, EVENT_FIELD_MON_4, AncientRuinsPresentPokemonAttacksText, 75, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_4
     end
@@ -237,13 +237,13 @@ AncientRuinsPresentFieldMon6Script:
     end
 
 AncientRuinsPresentFieldMon7Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientRuinsPresentPokemonAttacksText, 64, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientRuinsPresentPokemonAttacksText, 72, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_7
     end
 
 AncientRuinsPresentFieldMon8Script:
-	trainer METAGROSS, FIELD_MON, EVENT_FIELD_MON_8, AncientRuinsPresentPokemonAttacksText, 63, 0, .script
+	trainer METAGROSS, FIELD_MON, EVENT_FIELD_MON_8, AncientRuinsPresentPokemonAttacksText, 73, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_8
     end
@@ -255,7 +255,7 @@ AncientRuinsPresentFieldMon9Script:
     end
 
 AncientRuinsPresentFieldMon10Script:
-	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 70, 0, .script
+	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_10
     end

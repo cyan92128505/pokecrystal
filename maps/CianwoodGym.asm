@@ -43,6 +43,7 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHUCK
+	loadmem wLevelCap, 45
 	opentext
 	writetext GetStormBadgeText
 	playsound SFX_GET_BADGE

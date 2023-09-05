@@ -68,15 +68,15 @@ MoltresScript:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 70
+	loadwildmon MOLTRES, 80
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 60
+	loadwildmon MOLTRES, 70
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 50
+	loadwildmon MOLTRES, 60
 .begin
 	startbattle
 	reloadmapafterbattle

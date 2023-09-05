@@ -214,6 +214,10 @@ endc
 	inc hl
 	ld [hl], LOW(MOM_MONEY)
 
+	; AndrewNote - Level cap initial value
+	ld a, 20
+    ld [wLevelCap], a
+
 	call InitializeNPCNames
 
 	farcall InitDecorations

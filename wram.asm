@@ -3124,8 +3124,9 @@ wVermilionCitySceneID::                           db
 wVioletCitySceneID::                              db
 wViridianGymSceneID::                             db
 
-; AndrewNote - 157 free bytes!
-	ds 157
+wLevelCap:: db
+; AndrewNote - 156 free bytes!
+	ds 156
 
 wEventFlags:: flag_array NUM_EVENTS
 

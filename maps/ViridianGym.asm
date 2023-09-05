@@ -77,6 +77,7 @@ ViridianGymBlueScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
+	loadmem wLevelCap, 100
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE

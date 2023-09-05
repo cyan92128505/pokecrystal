@@ -26,10 +26,10 @@ BillsGrandpa:
     waitsfx
     checkflag ENGINE_EARTHBADGE
     iffalse .midLevel
-    givepoke MEW, 70
+    givepoke MEW, 80
     sjump .given
 .midLevel
-    givepoke MEW, 60
+    givepoke MEW, 70
 .given
     setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
     writetext BillGrampsMewExplain

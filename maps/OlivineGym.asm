@@ -21,6 +21,7 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JASMINE
+	loadmem wLevelCap, 50
 	opentext
 	writetext Text_ReceivedMineralBadge
 	playsound SFX_GET_BADGE

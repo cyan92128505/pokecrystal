@@ -33,15 +33,15 @@ ZapdosScript:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 70
+	loadwildmon ZAPDOS, 80
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 60
+	loadwildmon ZAPDOS, 70
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 50
+	loadwildmon ZAPDOS, 60
 .begin
 	startbattle
 	reloadmapafterbattle

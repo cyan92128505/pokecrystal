@@ -346,13 +346,13 @@ VictoryRoadFieldMon7Script:
     end
 
 VictoryRoadFieldMon8Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 64, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 74, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_8
     end
 
 VictoryRoadFieldMon9Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 64, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 74, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_9
     end

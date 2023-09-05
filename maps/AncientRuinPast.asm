@@ -36,7 +36,7 @@ XerneasScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon XERNEAS, 70
+	loadwildmon XERNEAS, 85
 	startbattle
 	reloadmapafterbattle
     setval XERNEAS
@@ -91,7 +91,7 @@ AncientRuinPastFieldMon2Script:
 	faceplayer
 	cry SNORLAX
 	pause 15
-	loadwildmon SNORLAX, 64
+	loadwildmon SNORLAX, 74
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

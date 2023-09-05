@@ -130,9 +130,9 @@ VioletPokecenter1F_BillText2:
 	line "didn't fight!"
 
 	para "Right now they"
-	line "will gain a"
-	cont "quarter of the"
-	cont "full EXP."
+	line "will gain half"
+	cont "of the full"
+	cont "EXP."
 
 	para "But PROF.OAK"
 	line "and I are working"

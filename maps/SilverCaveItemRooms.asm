@@ -73,7 +73,7 @@ SilverCaveItemRoomFieldMon3Script:
 	faceplayer
 	cry MAGNEZONE
 	pause 15
-	loadwildmon MAGNEZONE, 70
+	loadwildmon MAGNEZONE, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -85,7 +85,7 @@ SilverCaveItemRoomFieldMon4Script:
 	faceplayer
 	cry MISMAGIUS
 	pause 15
-	loadwildmon MISMAGIUS, 70
+	loadwildmon MISMAGIUS, 71
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -97,7 +97,7 @@ SilverCaveItemRoomFieldMon5Script:
 	faceplayer
 	cry HONCHKROW
 	pause 15
-	loadwildmon HONCHKROW, 70
+	loadwildmon HONCHKROW, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -109,7 +109,7 @@ SilverCaveItemRoomFieldMon6Script:
 	faceplayer
 	cry RHYPERIOR
 	pause 15
-	loadwildmon RHYPERIOR, 70
+	loadwildmon RHYPERIOR, 74
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -121,7 +121,7 @@ SilverCaveItemRoomFieldMon7Script:
 	faceplayer
 	cry GYARADOS
 	pause 15
-	loadwildmon GYARADOS, 70
+	loadwildmon GYARADOS, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -133,7 +133,7 @@ SilverCaveItemRoomFieldMon8Script:
 	faceplayer
 	cry MILOTIC
 	pause 15
-	loadwildmon MILOTIC, 70
+	loadwildmon MILOTIC, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -145,7 +145,7 @@ SilverCaveItemRoomFieldMon9Script:
 	faceplayer
 	cry ARCTOVISH
 	pause 15
-	loadwildmon ARCTOVISH, 70
+	loadwildmon ARCTOVISH, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -157,7 +157,7 @@ SilverCaveItemRoomFieldMon10Script:
 	faceplayer
 	cry ARCTOZOLT
 	pause 15
-	loadwildmon ARCTOZOLT, 70
+	loadwildmon ARCTOZOLT, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -173,7 +173,7 @@ PalkiaScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon PALKIA, 70
+	loadwildmon PALKIA, 85
 	startbattle
 	reloadmapafterbattle
     setval PALKIA
@@ -197,7 +197,7 @@ DialgaScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DIALGA, 70
+	loadwildmon DIALGA, 85
 	startbattle
 	reloadmapafterbattle
     setval DIALGA

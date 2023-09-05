@@ -418,7 +418,7 @@ CianwoodBeachSignText:
 	done
 
 CianwoodCityFieldMon1Script:
-	trainer HAWLUCHA, FIELD_MON, EVENT_FIELD_MON_1, CianwoodCityPokemonAttacksText, 44, 0, .script
+	trainer HAWLUCHA, FIELD_MON, EVENT_FIELD_MON_1, CianwoodCityPokemonAttacksText, 54, 0, .script
 .script
     disappear CIANWOODCITY_FIELDMON_1
     end

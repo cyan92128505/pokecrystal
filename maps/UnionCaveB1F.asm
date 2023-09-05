@@ -170,19 +170,19 @@ PokemaniacCalvinAfterBattleText:
 	done
 	
 UnionCaveB1FFieldMon1Script:
-	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_1, UnionCaveB1FPokemonAttacksText, 40, 0, .script
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_1, UnionCaveB1FPokemonAttacksText, 50, 0, .script
 .script
     disappear UNIONCAVEB1F_FIELDMON_1
     end
     
 UnionCaveB1FFieldMon2Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB1FPokemonAttacksText, 50, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB1FPokemonAttacksText, 71, 0, .script
 .script
     disappear UNIONCAVEB1F_FIELDMON_2
     end
     
 UnionCaveB1FFieldMon3Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, UnionCaveB1FPokemonAttacksText, 43, 0, .script
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, UnionCaveB1FPokemonAttacksText, 53, 0, .script
 .script
     disappear UNIONCAVEB1F_FIELDMON_3
     end

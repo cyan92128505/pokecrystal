@@ -3741,9 +3741,10 @@ MewtwoEvosAttacks:
 
 ArceusEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, DIG
 	db 1, TELEPORT
-	db 1, JUDGEMENT
-	db 1, RECOVER
-	db 1, HOLY_ARMOUR
 	db 1, SWORDS_DANCE
+	db 1, RECOVER
+	db 1, JUDGEMENT
+	db 1, HOLY_ARMOUR
 	db 0 ; no more level-up moves

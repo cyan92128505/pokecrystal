@@ -216,47 +216,14 @@ PokeBallEffect:
 	jp nz, UseBallInTrainerBattle
 
 ; AndrewNote - capture level restrictions
-    ld hl, wJohtoBadges
+    push bc
+    ld a, [wLevelCap]
+    ld b, a
     ld a, [wEnemyMonLevel]
-    cp 61
-    jr nc, .checkKantoBadges ; beat blue to capture >L60
-    cp 51
-    jr nc, .checkRisingBadge ; beat clair to capture L51-60
-    cp 41
-    jr nc, .checkMineralBadge ; beat jasmine to capture L41-50
-    cp 31
-    jr nc, .checkFogBadge ; beat morty to capture L31-40
-    cp 21
-    jr nc, .checkHiveBadge ; beat bugsy to capture L21-30
-    jr .continue
+    cp b
+    pop bc
+    jr c, .continue
 
-.checkKantoBadges
-	ld a, [wKantoBadges]
-	cp %11111111 ; all badges
-    jr nz, .levelTooHigh
-    jr .continue
-
-.checkRisingBadge
-	bit RISINGBADGE, [hl]
-	jr z, .levelTooHigh
-	jr .continue
-
-.checkMineralBadge
-	bit MINERALBADGE, [hl]
-	jr z, .levelTooHigh
-	jr .continue
-
-.checkFogBadge
-	bit FOGBADGE, [hl]
-	jr z, .levelTooHigh
-	jr .continue
-
-.checkHiveBadge
-	bit HIVEBADGE, [hl]
-	jr z, .levelTooHigh
-	jr .continue
-
-.levelTooHigh
     call ReturnToBattle_UseBall
 	ld de, ANIM_THROW_POKE_BALL
 	ld a, e
@@ -1431,8 +1398,10 @@ RareCandyEffect:
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 
+    ld a, [wLevelCap]
+	ld b, a
 	ld a, [hl]
-	cp MAX_LEVEL
+	cp b
 	jp nc, NoEffectMessage
 
 	inc a

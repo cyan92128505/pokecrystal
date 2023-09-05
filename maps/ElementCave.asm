@@ -54,7 +54,7 @@ GroudonScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon GROUDON, 70
+	loadwildmon GROUDON, 85
 	startbattle
 	reloadmapafterbattle
     setval GROUDON
@@ -78,7 +78,7 @@ KyogreScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon KYOGRE, 70
+	loadwildmon KYOGRE, 85
 	startbattle
 	reloadmapafterbattle
     setval KYOGRE
@@ -95,49 +95,49 @@ KyogreCry:
     done
 
 ElementCaveFieldMon1Script:
-	trainer CHARIZARD, FIELD_MON, EVENT_FIELD_MON_1, ElementCavePokemonAttacksText, 54, 0, .script
+	trainer CHARIZARD, FIELD_MON, EVENT_FIELD_MON_1, ElementCavePokemonAttacksText, 64, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_1
     end
 
 ElementCaveFieldMon2Script:
-	trainer NINETALES, FIELD_MON, EVENT_FIELD_MON_2, ElementCavePokemonAttacksText, 56, 0, .script
+	trainer NINETALES, FIELD_MON, EVENT_FIELD_MON_2, ElementCavePokemonAttacksText, 66, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_2
     end
 
 ElementCaveFieldMon3Script:
-	trainer MAGMAR, FIELD_MON, EVENT_FIELD_MON_3, ElementCavePokemonAttacksText, 55, 0, .script
+	trainer MAGMAR, FIELD_MON, EVENT_FIELD_MON_3, ElementCavePokemonAttacksText, 65, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_3
     end
 
 ElementCaveFieldMon4Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_4, ElementCavePokemonAttacksText, 57, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_4, ElementCavePokemonAttacksText, 67, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_4
     end
 
 ElementCaveFieldMon5Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_5, ElementCavePokemonAttacksText, 65, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_5, ElementCavePokemonAttacksText, 75, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_5
     end
 
 ElementCaveFieldMon6Script:
-	trainer POLITOED, FIELD_MON, EVENT_FIELD_MON_6, ElementCavePokemonAttacksText, 54, 0, .script
+	trainer POLITOED, FIELD_MON, EVENT_FIELD_MON_6, ElementCavePokemonAttacksText, 64, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_6
     end
 
 ElementCaveFieldMon7Script:
-	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_7, ElementCavePokemonAttacksText, 57, 0, .script
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_7, ElementCavePokemonAttacksText, 67, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_7
     end
 
 ElementCaveFieldMon8Script:
-	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_8, ElementCavePokemonAttacksText, 65, 0, .script
+	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_8, ElementCavePokemonAttacksText, 75, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_8
     end

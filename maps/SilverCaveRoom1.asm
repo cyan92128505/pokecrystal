@@ -61,7 +61,7 @@ SilverCaveRoom1FieldMon3Script:
 	faceplayer
 	cry SCIZOR
 	pause 15
-	loadwildmon SCIZOR, 70
+	loadwildmon SCIZOR, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -73,7 +73,7 @@ SilverCaveRoom1FieldMon4Script:
 	faceplayer
 	cry AEGISLASH
 	pause 15
-	loadwildmon AEGISLASH, 70
+	loadwildmon AEGISLASH, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -85,7 +85,7 @@ SilverCaveRoom1FieldMon5Script:
 	faceplayer
 	cry EXCADRILL
 	pause 15
-	loadwildmon EXCADRILL, 70
+	loadwildmon EXCADRILL, 74
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -97,7 +97,7 @@ SilverCaveRoom1FieldMon6Script:
 	faceplayer
 	cry AERODACTYL
 	pause 15
-	loadwildmon AERODACTYL, 70
+	loadwildmon AERODACTYL, 75
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -109,7 +109,7 @@ SilverCaveRoom1FieldMon7Script:
 	faceplayer
 	cry GENGAR
 	pause 15
-	loadwildmon GENGAR, 70
+	loadwildmon GENGAR, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -133,7 +133,7 @@ SilverCaveRoom1FieldMon9Script:
 	faceplayer
 	cry GLISCOR
 	pause 15
-	loadwildmon GLISCOR, 70
+	loadwildmon GLISCOR, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -145,7 +145,7 @@ SilverCaveRoom1FieldMon10Script:
 	faceplayer
 	cry MAMOSWINE
 	pause 15
-	loadwildmon MAMOSWINE, 70
+	loadwildmon MAMOSWINE, 75
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

@@ -1106,7 +1106,7 @@ Zygarde1Script:
 	faceplayer
 	cry ZYGARDE
 	pause 15
-	loadwildmon ZYGARDE, 80
+	loadwildmon ZYGARDE, 100
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	startbattle
 	reloadmapafterbattle
@@ -1118,7 +1118,7 @@ Zygarde2Script:
 	faceplayer
 	cry ZYGARDE
 	pause 15
-	loadwildmon ZYGARDE, 80
+	loadwildmon ZYGARDE, 100
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	startbattle
 	reloadmapafterbattle

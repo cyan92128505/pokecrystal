@@ -845,57 +845,57 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, SKARMORY
-	db 60, SMEARGLE
-	db 62, BLISSEY
-	db 62, SNORLAX
-	db 65, GRENINJA
-	db 65, SCEPTILE
+	db 70, SKARMORY
+	db 70, SMEARGLE
+	db 72, BLISSEY
+	db 72, SNORLAX
+	db 75, GRENINJA
+	db 75, SCEPTILE
 	db 80, GENESECT
 	; day
-	db 60, SKARMORY
-	db 60, SMEARGLE
-	db 62, BLISSEY
-	db 62, SNORLAX
-	db 65, SCEPTILE
-	db 65, INFERNAPE
+	db 70, SKARMORY
+	db 70, SMEARGLE
+	db 72, BLISSEY
+	db 72, SNORLAX
+	db 75, SCEPTILE
+	db 75, INFERNAPE
 	db 80, GENESECT
 	; nite
-	db 60, ROTOM
-	db 60, POLTEGEIST
-	db 62, BISHARP
-	db 62, NINETALES
-	db 65, INFERNAPE
-	db 65, GRENINJA
+	db 70, ROTOM
+	db 70, POLTEGEIST
+	db 72, BISHARP
+	db 72, NINETALES
+	db 75, INFERNAPE
+	db 75, GRENINJA
 	db 80, GENESECT
 	end_grass_wildmons
 
 	def_grass_wildmons CERULEAN_CAVE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 50, RAICHU
-	db 51, ELECTRODE
-	db 53, RHYPERIOR
-	db 53, WIGGLYTUFF
-	db 61, DITTO
-	db 64, CHANSEY
-	db 70, ALAKAZAM
+	db 60, RAICHU
+	db 61, ELECTRODE
+	db 63, RHYPERIOR
+	db 63, WIGGLYTUFF
+	db 71, DITTO
+	db 74, CHANSEY
+	db 80, ALAKAZAM
 	; day
-	db 50, RAICHU
-	db 51, ELECTRODE
-	db 53, RHYPERIOR
-	db 53, WIGGLYTUFF
-	db 61, DITTO
-	db 64, CHANSEY
-	db 70, ALAKAZAM
+	db 60, RAICHU
+	db 61, ELECTRODE
+	db 63, RHYPERIOR
+	db 63, WIGGLYTUFF
+	db 71, DITTO
+	db 74, CHANSEY
+	db 80, ALAKAZAM
 	; nite
-	db 50, RAICHU
-	db 51, ELECTRODE
-	db 53, RHYPERIOR
-	db 53, WIGGLYTUFF
-	db 61, DITTO
-	db 64, CHANSEY
-	db 70, ALAKAZAM
+	db 60, RAICHU
+	db 61, ELECTRODE
+	db 63, RHYPERIOR
+	db 63, WIGGLYTUFF
+	db 71, DITTO
+	db 74, CHANSEY
+	db 80, ALAKAZAM
 	end_grass_wildmons
 
 	db -1 ; end

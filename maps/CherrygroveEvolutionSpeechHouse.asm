@@ -30,9 +30,8 @@ CherrygroveEvolutionSpeechHouseYoungsterText:
 
 	para "When you REMATCH"
 	line "someone though"
-	cont "you only get"
-	cont "half the EXP you"
-	cont "got first time."
+	cont "you don't get"
+	cont "as much EXP."
 	done
 
 CherrygroveEvolutionSpeechHouseLassText:

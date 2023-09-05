@@ -39,7 +39,7 @@ DeoxysScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DEOXYS, 70
+	loadwildmon DEOXYS, 85
 	startbattle
 	reloadmapafterbattle
     setval DEOXYS

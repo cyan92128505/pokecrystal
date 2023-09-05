@@ -67,84 +67,6 @@ Route44_MapScripts:
 .end
     endcallback
 
-;TrainerBirdKeeperVance1:
-;	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
-;.Script:
-;	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
-;	endifjustbattled
-;	opentext
-;	checkflag ENGINE_VANCE_READY_FOR_REMATCH
-;	iftrue .WantsBattle
-;	checkcellnum PHONE_BIRDKEEPER_VANCE
-;	iftrue Route44NumberAcceptedM
-;	checkevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-;	iftrue .AskedAlready
-;	writetext BirdKeeperVanceLegendaryBirdsText
-;	promptbutton
-;	setevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-;	scall Route44AskNumber1M
-;	sjump .AskForNumber
-;.AskedAlready:
-;	scall Route44AskNumber2M
-;.AskForNumber:
-;	askforphonenumber PHONE_BIRDKEEPER_VANCE
-;	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
-;	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
-;	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
-;	scall Route44RegisteredNumberM
-;	sjump Route44NumberAcceptedM
-;.WantsBattle:
-;	scall Route44RematchM
-;	winlosstext BirdKeeperVance1BeatenText, 0
-;	readmem wVanceFightCount
-;	ifequal 2, .Fight2
-;	ifequal 1, .Fight1
-;	ifequal 0, .LoadFight0
-;.Fight2:
-;	checkevent EVENT_RESTORED_POWER_TO_KANTO
-;	iftrue .LoadFight2
-;.Fight1:
-;	checkevent EVENT_BEAT_ELITE_FOUR
-;	iftrue .LoadFight1
-;.LoadFight0:
-;	loadtrainer BIRD_KEEPER, VANCE1
-;	startbattle
-;	reloadmapafterbattle
-;	loadmem wVanceFightCount, 1
-;	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-;	end
-;.LoadFight1:
-;	loadtrainer BIRD_KEEPER, VANCE2
-;	startbattle
-;	reloadmapafterbattle
-;	loadmem wVanceFightCount, 2
-;	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-;	end
-;.LoadFight2:
-;	loadtrainer BIRD_KEEPER, VANCE3
-;	startbattle
-;	reloadmapafterbattle
-;	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-;	checkevent EVENT_VANCE_CARBOS
-;	iftrue .Carbos
-;	checkevent EVENT_GOT_CARBOS_FROM_VANCE
-;	iftrue .ReceivedCarbosBefore
-;	scall Route44RematchGiftM
-;	verbosegiveitem CARBOS
-;	iffalse VancePackFull
-;	setevent EVENT_GOT_CARBOS_FROM_VANCE
-;	sjump Route44NumberAcceptedM
-;.ReceivedCarbosBefore:
-;	end
-;.Carbos:
-;	opentext
-;	writetext BirdKeeperVance2BeatenText
-;	waitbutton
-;	verbosegiveitem CARBOS
-;	iffalse VancePackFull
-;	clearevent EVENT_VANCE_CARBOS
-;	setevent EVENT_GOT_CARBOS_FROM_VANCE
-;	sjump Route44NumberAcceptedM
 Route44AskNumber1M:
 	jumpstd AskNumber1MScript
 	end
@@ -274,7 +196,6 @@ TrainerFisherWilton1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_FISHER_WILTON
-	endifjustbattled
 	opentext
 	checkflag ENGINE_WILTON_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -303,21 +224,13 @@ TrainerFisherWilton1:
 .WantsBattle:
 	scall Route44RematchM
 	winlosstext FisherWilton1BeatenText, 0
-	readmem wWiltonFightCount
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight2:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight2
-.Fight1:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
-.LoadFight0:
 	loadtrainer FISHER, WILTON1
 	startbattle
 	reloadmapafterbattle
-	loadmem wWiltonFightCount, 1
 	clearflag ENGINE_WILTON_READY_FOR_REMATCH
 	end
 
@@ -325,7 +238,6 @@ TrainerFisherWilton1:
 	loadtrainer FISHER, WILTON2
 	startbattle
 	reloadmapafterbattle
-	loadmem wWiltonFightCount, 2
 	clearflag ENGINE_WILTON_READY_FOR_REMATCH
 	end
 

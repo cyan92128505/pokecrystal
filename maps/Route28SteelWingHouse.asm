@@ -14,19 +14,8 @@ Route28SteelWingHouse_MapScripts:
 Celebrity:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM47_STEEL_WING
-	iftrue .AlreadyGotItem
 	writetext CelebrityText1
 	promptbutton
-	verbosegiveitem TM_THUNDER_WAVE
-	iffalse .Done
-	setevent EVENT_GOT_TM47_STEEL_WING
-.Done:
-	closetext
-	end
-.AlreadyGotItem:
-	writetext CelebrityText2
-	waitbutton
 	closetext
 	end
 
@@ -47,10 +36,6 @@ CelebrityText1:
 
 	para "Please don't tell"
 	line "anyone about me."
-
-	para "I'll give you this"
-	line "for keeping my"
-	cont "secret. Please?"
 	done
 
 CelebrityText2:

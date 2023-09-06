@@ -459,7 +459,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 31, ONIX
+	db 36, ONIX
 	; day
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -467,7 +467,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 31, ONIX
+	db 36, ONIX
 	; nite
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -475,7 +475,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 31, ONIX
+	db 36, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B1F
@@ -487,7 +487,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 31, ONIX
+	db 36, ONIX
 	; day
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -495,7 +495,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 31, ONIX
+	db 36, ONIX
 	; nite
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -503,7 +503,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 31, ONIX
+	db 36, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
@@ -515,7 +515,7 @@ JohtoGrassWildMons:
 	db 33, GURDURR
 	db 35, EXCADRILL
 	db 35, GABITE
-	db 55, RHYPERIOR
+	db 65, RHYPERIOR
 	; day
 	db 32, GRAVELER
 	db 32, GOLBAT
@@ -523,7 +523,7 @@ JohtoGrassWildMons:
 	db 33, GURDURR
 	db 35, EXCADRILL
 	db 35, GABITE
-	db 55, RHYPERIOR
+	db 65, RHYPERIOR
 	; nite
 	db 32, GRAVELER
 	db 32, GOLBAT
@@ -531,7 +531,7 @@ JohtoGrassWildMons:
 	db 33, GURDURR
 	db 35, EXCADRILL
 	db 35, GABITE
-	db 55, RHYPERIOR
+	db 65, RHYPERIOR
 	end_grass_wildmons
 
 	def_grass_wildmons SLOWPOKE_WELL_B1F
@@ -599,7 +599,7 @@ JohtoGrassWildMons:
 	db 14, YANMA
 	db 15, LARVESTA
 	db 15, PINSIR
-	db 34, BUTTERFREE
+	db 44, BUTTERFREE
 	; day
 	db 12, SHROOMISH
 	db 12, VOLTIK
@@ -607,7 +607,7 @@ JohtoGrassWildMons:
 	db 14, YANMA
 	db 15, LARVESTA
 	db 15, PINSIR
-	db 37, YANMEGA
+	db 47, YANMEGA
 	; nite
 	db 12, HOOTHOOT
 	db 12, MURKROW
@@ -615,7 +615,7 @@ JohtoGrassWildMons:
 	db 14, YANMA
 	db 14, LARVESTA
 	db 15, PINSIR
-	db 43, HONCHKROW
+	db 48, HONCHKROW
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE

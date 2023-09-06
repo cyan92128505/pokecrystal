@@ -84,6 +84,11 @@ CherrygroveCityGuideGent:
 	writetext GuideGentPokegearText
 	waitbutton
 	closetext
+	opentext
+	writetext GuideGentRunningShoesText
+	waitbutton
+	verbosegiveitem RUNNING_SHOES
+	closetext
 	stopfollow
 	special RestartMapMusic
 	turnobject PLAYER, UP
@@ -101,6 +106,26 @@ CherrygroveCityGuideGent:
 
 .mapcardname
 	db "MAP CARD@"
+
+GuideGentRunningShoesText:
+    text "Here these will"
+    line "help you keep"
+    cont "up with me."
+
+    para "When you put"
+    line "these on you will"
+    cont "run by default."
+
+    para "You can then"
+    line "hold B to walk."
+
+    para "Unless you're"
+    line "indoors."
+
+    para "You kids shouldn't"
+    line "be running"
+    cont "indoors."
+    done
 
 CherrygroveSilverSceneSouth:
 	moveobject CHERRYGROVECITY_SILVER, 39, 7
@@ -173,7 +198,7 @@ CherrygroveSilverSceneNorth:
 	turnobject PLAYER, LEFT
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
 	disappear CHERRYGROVECITY_SILVER
-	setscene SCENE_CHERRYGROVECITY_NOTHING
+	setscene SCENE_FINISHED
 	special HealParty
 	playmapmusic
 	end
@@ -484,14 +509,6 @@ GuideGentGiftText:
 	line "Thanks for your"
 	cont "company."
 
-	para "Remember you can"
-	line "run by holding"
-	cont "B."
-
-	para "You never know"
-	line "when you might"
-	cont "need to run!"
-
 	para "Let me give you a"
 	line "small gift."
 	done
@@ -739,15 +756,12 @@ JuliusScript:
 	writetext JuliusSeenText
 	waitbutton
 	closetext
-	checkevent EVENT_BEAT_JULIUS
-	iftrue .dontAsk
 	opentext
 	writetext JuliusOfferFightText
 	waitbutton
 	yesorno
 	iffalse .refused
 	closetext
-.dontAsk
 	winlosstext JuliusBeatenText, JuliusWinsText
 	loadtrainer YOUNGSTER, JULIUS
 	startbattle
@@ -762,7 +776,16 @@ JuliusScript:
 	opentext
 	writetext RematchTextJulius
 	yesorno
-	iftrue .fight
+	iffalse .refused
+	writetext JuliusSeenText
+	waitbutton
+	closetext
+    winlosstext JuliusBeatenText, JuliusWinsText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
+	loadtrainer YOUNGSTER, JULIUS
+	startbattle
+	reloadmapafterbattle
+	end
 .refused
 	writetext RematchRefuseTextJulius
 	waitbutton

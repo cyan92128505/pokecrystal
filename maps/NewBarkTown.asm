@@ -521,6 +521,7 @@ CrystalScript:
 	turnobject PLAYER, LEFT
 	applymovement NEWBARKTOWN_CRYSTAL, NewBarkTownMovement_CrystalLeaves
 	disappear NEWBARKTOWN_CRYSTAL
+	special HealParty
 .end
     end
 

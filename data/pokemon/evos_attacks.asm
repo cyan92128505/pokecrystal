@@ -1712,7 +1712,8 @@ ChanseyEvosAttacks:
 	db 13, SOFTBOILED
 	db 17, DOUBLESLAP
 	db 29, SING
-	db 41, DEFENSE_CURL
+    db 35, TRI_ATTACK
+	db 41, SOFTBOILED
 	db 49, LIGHT_SCREEN
 	db 57, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -3609,7 +3610,9 @@ BlisseyEvosAttacks:
 	db 13, DOUBLESLAP
 	db 23, SING
 	db 33, DEFENSE_CURL
-	db 40, LIGHT_SCREEN
+	db 35, TRI_ATTACK
+	db 41, SOFTBOILED
+	db 43, LIGHT_SCREEN
 	db 47, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 

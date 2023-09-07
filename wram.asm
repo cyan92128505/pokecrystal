@@ -3013,7 +3013,7 @@ wFieldWeather::
 	db
 
 wUndergroundSwitchPositions:: db
-wFarfetchdPosition:: db
+    ds 1
 
 ; AndrewNote - wram 8 free slots
 

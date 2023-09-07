@@ -2283,10 +2283,10 @@ TreeckoEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 24, MEGA_DRAIN
-	db 28, SLASH
+	db 20, MEGA_DRAIN
+	db 25, SLASH
 	db 32, X_SCISSOR
-	db 36, GIGA_DRAIN
+	db 35, GIGA_DRAIN
 	db 40, LEAF_BLADE
 	db 45, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -2299,10 +2299,10 @@ GrovyleEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 24, MEGA_DRAIN
-	db 28, SLASH
+	db 20, MEGA_DRAIN
+	db 25, SLASH
 	db 32, X_SCISSOR
-	db 36, GIGA_DRAIN
+	db 35, GIGA_DRAIN
 	db 40, LEAF_BLADE
 	db 45, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -2314,10 +2314,10 @@ SceptileEvosAttacks:
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 24, MEGA_DRAIN
-	db 28, SLASH
+	db 20, MEGA_DRAIN
+	db 25, SLASH
 	db 32, X_SCISSOR
-	db 36, GIGA_DRAIN
+	db 35, GIGA_DRAIN
 	db 40, LEAF_BLADE
 	db 45, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -2330,9 +2330,9 @@ ChimcharEvosAttacks:
 	db 8, EMBER
 	db 16, KARATE_CHOP
 	db 20, MACH_PUNCH
-	db 26, FLAME_WHEEL
+	db 25, FLAME_WHEEL
 	db 30, SUBMISSION
-	db 34, FIRE_PUNCH
+	db 35, FIRE_PUNCH
 	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
@@ -2380,9 +2380,9 @@ FroakieEvosAttacks:
 	db 12, WATER_GUN
 	db 16, HYPNOSIS
 	db 20, NIGHT_SHADE
-	db 26, BUBBLEBEAM
+	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
-	db 36, NIGHT_SLASH
+	db 35, NIGHT_SLASH
 	db 40, DARK_PULSE
 	db 45, HYDRO_PUMP
 	db 50, SUBSTITUTE
@@ -2399,9 +2399,9 @@ FrogadierEvosAttacks:
 	db 12, WATER_GUN
 	db 16, HYPNOSIS
 	db 20, NIGHT_SHADE
-	db 26, BUBBLEBEAM
+	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
-	db 36, NIGHT_SLASH
+	db 35, NIGHT_SLASH
 	db 40, DARK_PULSE
 	db 45, HYDRO_PUMP
 	db 50, SUBSTITUTE
@@ -2417,9 +2417,9 @@ GreninjaEvosAttacks:
 	db 12, WATER_GUN
 	db 16, HYPNOSIS
 	db 20, NIGHT_SHADE
-	db 26, BUBBLEBEAM
+	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
-	db 36, NIGHT_SLASH
+	db 35, NIGHT_SLASH
 	db 40, DARK_PULSE
 	db 45, HYDRO_PUMP
 	db 50, SUBSTITUTE
@@ -3207,8 +3207,8 @@ HeracrossEvosAttacks:
 	db 6, HORN_ATTACK
 	db 12, ENDURE
 	db 18, LEECH_LIFE
-	db 22, COUNTER
-	db 26, ROCK_SMASH
+	db 22, KARATE_CHOP
+	db 26, COUNTER
 	db 30, X_SCISSOR
 	db 35, REVERSAL
 	db 45, CLOSE_COMBAT

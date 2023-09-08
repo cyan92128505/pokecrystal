@@ -837,7 +837,7 @@ ElmsLabCynthiaIntroText:
 
     para "I envy you."
 
-    para "To experiance it"
+    para "To experience it"
     line "all again for the"
     cont "first time."
 
@@ -889,9 +889,6 @@ ElmsLabElmStevenText:
 
 ElmsLabCynthiaResolveText:
     text "I know he lives."
-
-    para "His aura is clear"
-    line "to us."
 
     para "I will find him."
     done
@@ -957,7 +954,7 @@ ElmText_ResearchAmbitions:
 	cont "adventure."
 
 	para "Now let's choose"
-	line "you partner on"
+	line "your partner on"
 	cont "this journey."
 	done
 

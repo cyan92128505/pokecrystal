@@ -155,67 +155,52 @@ RuinsOfAlphKabutoChamberReceptionistText:
 	para "a #MON drawn by"
 	line "the ancients."
 
-	para "Slide the panels"
-	line "around to form the"
-	cont "picture."
+	para "But their not in"
+	line "the right order."
 
-	para "To the right is a"
-	line "description of the"
-	cont "#MON."
+	para "This puzzle has"
+	line "never been solved."
 
-	para "Scientists in the"
-	line "back are examining"
+	para "The #MON is"
+	line "extinct so who"
+	cont "knows what it"
+	cont "should look like."
 
-	para "some newly found"
-	line "patterns."
+	para "Good luck."
 	done
 
 RuinsOfAlphKabutoChamberScientistCrypticText:
-	text "Recently, strange,"
-	line "cryptic patterns"
-	cont "have appeared."
+	text "What does this"
+	line "mean!"
 
-	para "It's odd. They"
-	line "weren't here a"
-	cont "little while ago…"
+	para "What is it!"
 
-	para "You should take a"
-	line "look at the walls."
+	para "Are these letters!"
+
+	para "Curse my lack"
+	line "of real"
+	cont "understanding."
 	done
 
 RuinsOfAlphKabutoChamberScientistHoleText:
-	text "Ah! Here's another"
-	line "huge hole!"
+	text "Watch out!"
 
-	para "It's big enough to"
-	line "go through!"
+	para "This place is"
+	line "falling apart!"
+
+	para "I need better"
+	line "health insurance"
+	cont "for this!"
 	done
 
 RuinsOfAlphKabutoChamberScientistTremorText:
-	text "That tremor was"
-	line "pretty scary!"
+	text "I've done it!"
 
-	para "But I'm more"
-	line "concerned about"
-	cont "this wall here…"
-	done
+	para "After you left"
+	line "this door opened!"
 
-RuinsOfAlphKabutoChamberUnusedText: ; unreferenced
-	text "The patterns on"
-	line "the wall appear to"
-	cont "be words!"
-
-	para "And those sliding"
-	line "stone panels seem"
-
-	para "to be signals of"
-	line "some kind."
-
-	para "I think they make"
-	line "#MON appear,"
-
-	para "but it's not clear"
-	line "yet…"
+	para "Now how did I"
+	cont "do that..."
 	done
 
 RuinsOfAlphKabutoChamberWallPatternLeftText:

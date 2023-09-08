@@ -148,28 +148,6 @@ RuinsOfAlphResearchCenterComputer:
 	closetext
 	end
 
-RuinsOfAlphResearchCenterPrinter:
-	opentext
-	checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
-	iftrue .SkipChecking
-	readvar VAR_UNOWNCOUNT
-	ifequal NUM_UNOWN, .PrinterAvailable
-.SkipChecking:
-	writetext RuinsOfAlphResearchCenterPrinterText_DoesntWork
-	waitbutton
-	closetext
-	end
-
-.PrinterAvailable:
-	writetext RuinsOfAlphResearchCenterUnownPrinterText
-	waitbutton
-	special UnownPrinter
-	closetext
-	end
-
-RuinsOfAlphResearchCenterPhoto: ; unreferenced
-	jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText
-
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText
 
@@ -215,23 +193,31 @@ RuinsOfAlphResearchCenterScientist3Text:
 	line "catch will all be"
 	cont "recorded."
 
-	para "Check to see how"
-	line "many kinds exist."
+	para "Of course there"
+	line "is no good reason"
+	cont "to catch them."
+
+	para "Just a curiosity."
 	done
 
 RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
 	text "You caught all the"
 	line "UNOWN variations?"
 
-	para "That's a great"
-	line "achievement!"
+	para "That's amazing"
 
-	para "I've set up the"
-	line "printer here for"
-	cont "handling UNOWN."
+	para "So what is the"
+	line "secret to their"
+	cont "strength?"
 
-	para "Feel free to use"
-	line "it anytime."
+	para "...."
+
+	para "You mean they"
+	line "really are as"
+	cont "weak as they seem."
+
+	para "I've wasted my"
+	line "life...."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text:
@@ -239,9 +225,26 @@ RuinsOfAlphResearchCenterScientist1Text:
 	line "about 1500 years"
 	cont "old."
 
-	para "But it's not known"
-	line "why they were"
-	cont "built--or by whom."
+	para "It is believed"
+	line "that the ruler"
+	cont "of the ancient"
+	cont "city was a man"
+	cont "named YAMI."
+
+	para "It is believed"
+	line "he commanded"
+	cont "immensely"
+	cont "powerful"
+	cont "#MON."
+
+	para "Even WALLACE"
+	line "wouldn't have"
+	cont "stood a chance"
+	cont "against him."
+
+	para "He is considered"
+	line "the first true"
+	cont "#MON MASTER."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text_GotUnownDex:
@@ -254,38 +257,52 @@ RuinsOfAlphResearchCenterScientist1Text_UnownAppeared:
 	text "#MON appeared"
 	line "in the RUINS?"
 
-	para "That's incredible"
-	line "news!"
-
 	para "We'll need to"
 	line "investigate this."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
-	text "Our investigation,"
-	line "with your help, is"
+	text "The tower to the"
+	line "west is open!"
 
-	para "giving us insight"
-	line "into the RUINS."
+	para "I tried to"
+	line "explore."
 
-	para "The RUINS appear"
-	line "to have been built"
+	para "It leads to an"
+	line "ancient city."
 
-	para "as a habitat for"
-	line "#MON."
+	para "But it's too"
+	line "dangerous down"
+	cont "there."
+
+	para "I'm just a"
+	line "scientist."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text:
-	text "There are odd pat-"
-	line "terns drawn on the"
+	text "You are the one"
+	line "the prophesy"
+	cont "speaks of."
 
-	para "walls of the"
-	line "RUINS."
+	para "The prophesy I"
+	line "just made up!"
 
-	para "They must be the"
-	line "keys for unravel-"
-	cont "ing the mystery"
-	cont "of the RUINS."
+	para "Only you can"
+	line "do it."
+
+	para "Find and solve"
+	line "all the puzzles."
+
+	para "There are 3 in"
+	line "total."
+
+	para "Or maybe there"
+	line "are 4..."
+
+	para "Only when they"
+	line "are all solved"
+	cont "might the secret"
+	cont "be revealed."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
@@ -300,38 +317,6 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 	line "walls there."
 
 	para "Hmm…"
-
-	para "That must mean"
-	line "there are many"
-	cont "kinds of them…"
-	done
-
-RuinsOfAlphResearchCenterUnusedText1: ; unreferenced
-	text "We think something"
-	line "caused the cryptic"
-
-	para "patterns to appear"
-	line "in the RUINS."
-
-	para "We've focused our"
-	line "studies on that."
-	done
-
-RuinsOfAlphResearchCenterUnusedText2: ; unreferenced
-	text "According to my"
-	line "research…"
-
-	para "Those mysterious"
-	line "patterns appeared"
-
-	para "when the #COM"
-	line "CENTER was built."
-
-	para "It must mean that"
-	line "radio waves have"
-
-	para "some sort of a"
-	line "link…"
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
@@ -365,26 +350,15 @@ RuinsOfAlphResearchCenterPrinterText_DoesntWork:
 	line "to work yet."
 	done
 
-RuinsOfAlphResearchCenterUnownPrinterText:
-	text "UNOWN may be"
-	line "printed out."
-	done
-
-RuinsOfAlphResearchCenterProfSilktreePhotoText:
-	text "It's a photo of"
-	line "the RESEARCH"
-
-	para "CENTER'S founder,"
-	line "PROF.SILKTREE."
-	done
-
 RuinsOfAlphResearchCenterAcademicBooksText:
 	text "There are many"
 	line "academic books."
 
-	para "Ancient Ruins…"
-	line "Mysteries of the"
-	cont "Ancients…"
+	para "Wait..."
+
+	para "In the back..."
+
+	para "A DIGIMON book!"
 	done
 
 RuinsOfAlphResearchCenter_MapEvents:
@@ -399,7 +373,6 @@ RuinsOfAlphResearchCenter_MapEvents:
 	def_bg_events
 	bg_event  6,  5, BGEVENT_READ, RuinsOfAlphResearchCenterBookshelf
 	bg_event  3,  4, BGEVENT_READ, RuinsOfAlphResearchCenterComputer
-	bg_event  7,  1, BGEVENT_READ, RuinsOfAlphResearchCenterPrinter
 
 	def_object_events
 	object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1

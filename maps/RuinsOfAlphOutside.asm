@@ -85,18 +85,7 @@ RuinsOfAlphOutsideScientistSceneContinue:
 	end
 
 RuinsOfAlphOutsideFisherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_RUINS_COWARD
-	iftrue .Next
-	setevent EVENT_TALKED_TO_RUINS_COWARD
-	writetext RuinsOfAlphOutsideFisherText1
-	promptbutton
-.Next:
-	writetext RuinsOfAlphOutsideFisherText2
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer RuinsOfAlphOutsideFisherText1
 
 RuinsOfAlphOutsideYoungster1Script:
 	faceplayer
@@ -122,17 +111,6 @@ TrainerPsychicNathan:
 	endifjustbattled
 	opentext
 	writetext PsychicNathanAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerSuperNerdStan: ; unreferenced
-	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SuperNerdStanAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -164,77 +142,37 @@ RuinsOfAlphOutsidePlayerEnterLabMovement:
 	step_end
 
 RuinsOfAlphOutsideScientistText:
-	text "Hm? That's a #-"
-	line "DEX, isn't it?"
-	cont "May I see it?"
+	text "You solved the"
+	line "puzzle!"
 
-	para "There are so many"
-	line "kinds of #MON."
+	para "Even the greatest"
+	line "minds in JOHTO"
+	cont "could not solve"
+	cont "them."
 
-	para "Hm? What's this?"
+	para "Some strange"
+	line "#MON have"
+	cont "appeared in"
+	cont "the hall."
 
-	para "What is this"
-	line "#MON?"
-
-	para "It looks like the"
-	line "strange writing on"
-
-	para "the walls of the"
-	line "RUINS."
-
-	para "If those drawings"
-	line "are really #-"
-	cont "MON, there should"
-	cont "be many more."
-
-	para "I know! Let me up-"
-	line "grade your #-"
-	cont "DEX. Follow me."
-	done
-
-SuperNerdStanSeenText:
-	text "What do you want?"
-	line "I'm studying--"
-	cont "don't disturb me!"
-	done
-
-SuperNerdStanBeatenText:
-	text "Sorry…"
-	line "I'm frustrated by"
-
-	para "our lack of real"
-	line "understanding…"
-	done
-
-SuperNerdStanAfterBattleText:
-	text "The RUINS are from"
-	line "about 1500 years"
-	cont "ago."
-
-	para "Nobody knows who"
-	line "built them."
-
-	para "It's also not"
-	line "known if the #-"
-	cont "MON statues have"
-	cont "any meaning."
-
-	para "It's all one big"
-	line "mystery…"
+	para "You must follow"
+	line "me!"
 	done
 
 PsychicNathanSeenText:
-	text "Hmmm… This is a"
-	line "strange place."
+	text "Who dares disturb"
+	line "the tranquility"
+	cont "of this place!"
 	done
 
 PsychicNathanBeatenText:
-	text "…"
+	text "You're too loud."
 	done
 
 PsychicNathanAfterBattleText:
-	text "I like thinking"
-	line "here."
+	text "There's too much"
+	line "chaos in this"
+	cont "world."
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
@@ -256,43 +194,50 @@ RuinsOfAlphResearchCenterSignText:
 	done
 
 RuinsOfAlphOutsideFisherText1:
-	text "While exploring"
-	line "the RUINS, we"
+	text "I... I..."
 
-	para "suddenly noticed"
-	line "an odd presence."
+	para "I was in hall"
+	line "and some kind"
+	cont "of monster with"
+	cont "one eye just"
+	cont "appeared behind"
+	cont "me!"
 
-	para "We all got scared"
-	line "and ran away."
-
-	para "You should be"
-	line "careful too."
-	done
-
-RuinsOfAlphOutsideFisherText2:
-	text "The RUINS hide a"
-	line "huge secret!"
-
-	para "…I think…"
+	para "I didn't know"
+	line "these mighty"
+	cont "muscled legs"
+	cont "could move so"
+	cont "fast..."
 	done
 
 RuinsOfAlphOutsideYoungster1Text:
-	text "There are many"
-	line "kinds of UNOWN, so"
+	text "I wonder what"
+	line "this place"
+	cont "looked like"
+	cont "a thousand"
+	cont "years ago."
 
-	para "we use them for"
-	line "our secret codes."
+	para "I wonder what"
+	line "#MON they used."
 	done
 
 RuinsOfAlphOutsideYoungster2Text:
-	text "A… H… E… A… D…"
-	line "Hmm…"
+	text "Is he here!"
 
-	para "What?"
+	para "There was a guy"
+	line "here at night"
+	cont "once and he"
+	cont "attacked me."
 
-	para "I'm decoding this"
-	line "message!"
+	para "His #MON"
+	line "were so crazy"
+	cont "strong!"
+
+	para "He must be a"
+	line "CHAMPION or"
+	cont "something."
 	done
+
 
 RuinsOfAlphBlockScript:
     checkevent EVENT_SOLVED_AERODACTYL_PUZZLE

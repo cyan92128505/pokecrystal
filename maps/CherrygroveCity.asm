@@ -127,13 +127,18 @@ GuideGentRunningShoesText:
     cont "indoors."
     done
 
+Movement_CherryGrove_Player_Up:
+    step UP
+    step_end
+
 CherrygroveSilverSceneSouth:
-	moveobject CHERRYGROVECITY_SILVER, 39, 7
+    showemote EMOTE_SHOCK, PLAYER, 15
+	applymovement PLAYER, Movement_CherryGrove_Player_Up
 CherrygroveSilverSceneNorth:
 	turnobject PLAYER, RIGHT
-	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
+	setmapscene CHERRYGROVE_CITY, SCENE_CUSTOM_1
 	appear CHERRYGROVECITY_SILVER
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalWalksToYou
 	turnobject PLAYER, RIGHT
@@ -198,9 +203,10 @@ CherrygroveSilverSceneNorth:
 	turnobject PLAYER, LEFT
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
 	disappear CHERRYGROVECITY_SILVER
-	setscene SCENE_FINISHED
+	setevent EVENT_BEAT_RIVAL_1
 	special HealParty
 	playmapmusic
+.end
 	end
 
 CherrygroveTeacherScript:

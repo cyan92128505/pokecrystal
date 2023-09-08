@@ -409,6 +409,7 @@
     const EVENT_DIALGA_BARRIER_CLEARED
     const EVENT_PALKIA_BARRIER_CLEARED
     const EVENT_GIRATINA_BARRIER_CLEARED
+    const EVENT_BEAT_RIVAL_1
 
     ; ======================================
     ; ======================================

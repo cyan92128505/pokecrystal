@@ -160,7 +160,7 @@ RayquazaScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon RAYQUAZA, 55
+	loadwildmon RAYQUAZA, 60
 .begin
 	startbattle
 	reloadmapafterbattle

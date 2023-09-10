@@ -189,10 +189,6 @@ VioletPokecenter1F_ElmsAideScript:
 	writetext VioletPokecenterElmsAideGiveEggText
 	waitbutton
 	closetext
-	opentext
-	writetext VioletPokecenterElmsAideExplainsCapsText
-	waitbutton
-	closetext
 	readvar VAR_FACING
 	ifequal UP, .AideWalksAroundPlayer
 	turnobject PLAYER, DOWN
@@ -313,62 +309,6 @@ VioletPokecenterElmsAideAskEggText:
 	text "<PLAY_G>, will you"
 	line "take the EGG?"
 	done
-
-VioletPokecenterElmsAideExplainsCapsText:
-    text "Now listen up."
-
-    para "This is important"
-    line "information."
-
-    para "#MON strength"
-    line "depends on its"
-    cont "trainers strength."
-
-    para "With more BADGES"
-    line "your #MON can"
-    cont "grow stronger."
-
-    para "Without any"
-    line "BADGES the"
-    cont "maximum level"
-    cont "of #MON you"
-    cont "can train or"
-    cont "capture is 25."
-
-    para "The BADGE from"
-    line "VIOLET GYM will"
-    cont "raise that to 30."
-
-    para "The BADGE of the"
-    line "next GYM will"
-    cont "raise it to 35."
-
-    para "And so on."
-
-    para "With all 8 BADGES"
-    line "you can train and"
-    cont "capture #MON"
-    cont "up to level 70."
-
-    para "Defeating the"
-    line "ELITE FOUR and"
-    cont "becoming a"
-    cont "CHAMPION will"
-    cont "raise that to 80."
-
-    para "Only the most"
-    line "extraordinary"
-    cont "trainers can go"
-    cont "beyond that."
-
-    para "Maybe you will"
-    line "get there"
-    cont "someday."
-
-    para "I believe in you."
-
-    para "Good luck!"
-    done
 
 VioletPokecenter1FGameboyKidText:
 	text "The INVADER"

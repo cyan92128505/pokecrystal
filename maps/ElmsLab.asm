@@ -570,6 +570,10 @@ AideScript_GiveYouBalls:
 	promptbutton
 	itemnotify
 	closetext
+	opentext
+	writetext AideText_ExplainCaps
+	waitbutton
+	closetext
 	setscene SCENE_ELMSLAB_NOTHING
 	end
 
@@ -604,7 +608,7 @@ AideScript_ExplainBalls:
 	end
 
 AideScript_AfterTheft:
-	writetext AideText_AfterTheft
+	writetext AideText_ExplainCaps
 	waitbutton
 	closetext
 	end
@@ -1270,19 +1274,86 @@ ElmText_CallYou:
 	cont "thing comes up."
 	done
 
-AideText_AfterTheft:
-	text "…sigh… That"
-	line "stolen #MON."
+AideText_ExplainCaps:
+    text "Now listen up."
 
-	para "I wonder how it's"
-	line "doing."
+    para "This is important"
+    line "information."
 
-	para "They say a #MON"
-	line "raised by a bad"
+    para "#MON strength"
+    line "depends on its"
+    cont "trainers strength."
 
-	para "person turns bad"
-	line "itself."
-	done
+    para "With more BADGES"
+    line "your #MON can"
+    cont "grow stronger."
+
+    para "There is a level"
+    line "limit on how"
+    cont "strong your"
+    cont "#MON can get"
+    cont "depending on"
+    cont "how many BADGES"
+    cont "you have."
+
+    para "There is also a"
+    line "limit on what"
+    cont "level you can"
+    cont "capture and it"
+    cont "is always 10"
+    cont "levels lower."
+
+    para "Without any"
+    line "BADGES the"
+    cont "maximum level"
+    cont "of #MON you"
+    cont "can train is 25"
+    cont "and capture is 15."
+
+    para "The BADGE from"
+    line "VIOLET GYM will"
+    cont "raise that to 30"
+    cont "and 20."
+
+    para "The BADGE of the"
+    line "next GYM will"
+    cont "raise it to 35"
+    cont "and 30."
+
+    para "And so on."
+
+    para "With all 8 BADGES"
+    line "you can train"
+    cont "#MON up to"
+    cont "level 70 and"
+    cont "capture up to"
+    cont "level 60"
+
+    para "Defeating the"
+    line "ELITE FOUR and"
+    cont "becoming a"
+    cont "CHAMPION will"
+    cont "raise that to 80"
+    cont "and 70."
+
+    para "Only the most"
+    line "extraordinary"
+    cont "trainers can go"
+    cont "beyond that."
+
+    para "The maximum is"
+    line "level 100 for"
+    cont "both training"
+    cont "and capture."
+
+    para "Maybe you will"
+    line "get there"
+    cont "someday."
+
+    para "I believe in you."
+
+    para "Good luck!"
+    done
 
 ElmGiveMasterBallText1:
 	text "ELM: Hi, <PLAY_G>!"

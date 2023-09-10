@@ -485,13 +485,13 @@ Route29Sign2Text:
 	done
 	
 Route29FieldMon1Script:
-	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route29PokemonAttacksText, 26, 0, .script
+	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route29PokemonAttacksText, 16, 0, .script
 .script
     disappear ROUTE29_FIELDMON_1
     end
     
 Route29FieldMon3Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route29PokemonAttacksText, 41, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route29PokemonAttacksText, 31, 0, .script
 .script
     disappear ROUTE29_FIELDMON_3
     end

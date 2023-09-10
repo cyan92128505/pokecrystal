@@ -459,7 +459,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 36, ONIX
+	db 31, ONIX
 	; day
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -467,7 +467,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 36, ONIX
+	db 31, ONIX
 	; nite
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -475,7 +475,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 36, ONIX
+	db 31, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B1F
@@ -487,7 +487,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 36, ONIX
+	db 31, ONIX
 	; day
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -495,7 +495,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 36, ONIX
+	db 31, ONIX
 	; nite
 	db 11, GEODUDE
 	db 14, ZUBAT
@@ -503,7 +503,7 @@ JohtoGrassWildMons:
 	db 13, TIMBURR
 	db 16, DRILBUR
 	db 16, GIBLE
-	db 36, ONIX
+	db 31, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
@@ -1271,7 +1271,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 26, RATICATE
+	db 16, RATICATE
 	; day
 	db 3, RATTATA
 	db 3, STARLY
@@ -1279,7 +1279,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 26, RATICATE
+	db 16, RATICATE
 	; nite
 	db 3, RATTATA
 	db 3, HOOTHOOT
@@ -1287,7 +1287,7 @@ JohtoGrassWildMons:
 	db 4, CLEFAIRY
 	db 5, VULPIX
 	db 5, MURKROW
-	db 26, RATICATE
+	db 16, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30
@@ -1299,7 +1299,7 @@ JohtoGrassWildMons:
 	db 5, BUNEARY
 	db 7, VOLTIK
 	db 7, PIKACHU
-	db 28, STARAVIA
+	db 18, STARAVIA
 	; day
 	db 3, CATERPIE
 	db 4, STARLY
@@ -1307,7 +1307,7 @@ JohtoGrassWildMons:
 	db 5, BUNEARY
 	db 7, VOLTIK
 	db 7, PIKACHU
-	db 28, STARAVIA
+	db 18, STARAVIA
 	; nite
 	db 4, HOOTHOOT
 	db 5, MEOWTH
@@ -1315,7 +1315,7 @@ JohtoGrassWildMons:
 	db 6, POLIWAG
 	db 7, MURKROW
 	db 7, SNEASEL
-	db 28, PERSIAN
+	db 18, PERSIAN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_31
@@ -1327,7 +1327,7 @@ JohtoGrassWildMons:
 	db 7, VULPIX
 	db 8, VOLTIK
 	db 8, PIKACHU
-	db 31, GROWLITHE
+	db 21, GROWLITHE
 	; day
 	db 5, BELLSPROUT
 	db 6, STARLY
@@ -1335,7 +1335,7 @@ JohtoGrassWildMons:
 	db 7, VULPIX
 	db 8, VOLTIK
 	db 8, PIKACHU
-	db 31, GROWLITHE
+	db 21, GROWLITHE
 	; nite
 	db 5, HOOTHOOT
 	db 6, GASTLY
@@ -1343,7 +1343,7 @@ JohtoGrassWildMons:
 	db 7, VULPIX
 	db 8, CLEFAIRY
 	db 8, LITWICK
-	db 31, HAUNTER
+	db 21, HAUNTER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32
@@ -1355,7 +1355,7 @@ JohtoGrassWildMons:
 	db 9, STARLY
 	db 11, SOLOSIS
 	db 11, ABRA
-	db 36, SIGILYPH
+	db 31, SIGILYPH
 	; day
 	db 7, EKANS
 	db 7, MAREEP
@@ -1363,7 +1363,7 @@ JohtoGrassWildMons:
 	db 9, STARLY
 	db 11, SOLOSIS
 	db 11, ABRA
-	db 36, SIGILYPH
+	db 31, SIGILYPH
 	; nite
 	db 7, WOOPER
 	db 7, POLIWAG
@@ -1371,7 +1371,7 @@ JohtoGrassWildMons:
 	db 9, MURKROW
 	db 11, SOLOSIS
 	db 11, ABRA
-	db 36, SIGILYPH
+	db 31, SIGILYPH
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_33
@@ -1383,7 +1383,7 @@ JohtoGrassWildMons:
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
-	db 36, QUAGSIRE
+	db 32, QUAGSIRE
 	; day
 	db 9, WOOPER
 	db 9, POLIWAG
@@ -1391,7 +1391,7 @@ JohtoGrassWildMons:
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
-	db 36, QUAGSIRE
+	db 32, QUAGSIRE
 	; nite
 	db 9, WOOPER
 	db 9, POLIWAG
@@ -1399,7 +1399,7 @@ JohtoGrassWildMons:
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
-	db 36, GOLBAT
+	db 32, GOLBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34

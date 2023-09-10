@@ -211,7 +211,7 @@ UnionCave1FUnusedSignText:
 	done
 	
 UnionCave1FFieldMon1Script:
-	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, UnionCave1FPokemonAttacksText, 37, 0, .script
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, UnionCave1FPokemonAttacksText, 31, 0, .script
 .script
     disappear UNIONCAVE1F_FIELDMON_1
     end
@@ -245,9 +245,9 @@ UnionCave1FFieldMon3Script:
 	
 UnionCave1FFieldMon4Script:
 	faceplayer
-	cry GEODUDE
+	cry GRAVELER
 	pause 15
-	loadwildmon GEODUDE, 15
+	loadwildmon GRAVELER, 25
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

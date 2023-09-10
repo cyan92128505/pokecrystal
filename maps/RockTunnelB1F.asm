@@ -62,18 +62,14 @@ DarkraiScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 55
+	loadwildmon DARKRAI, 50
 .begin
 	startbattle
 	disappear ROCKTUNNELB1F_DARKRAI
 	reloadmapafterbattle
 	end
 DarkraiCry:
-    text "The next time"
-    line "you sleep."
-
-    para "You shall"
-    line "never awake."
+    text "DARKRAI!"
     done
 
 RockTunnelB1FHiddenMaxPotion:

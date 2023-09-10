@@ -41,7 +41,7 @@ ZapdosScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 55
+	loadwildmon ZAPDOS, 50
 .begin
 	startbattle
 	reloadmapafterbattle

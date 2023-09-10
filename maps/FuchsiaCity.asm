@@ -59,15 +59,15 @@ LatiasScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 55
+	loadwildmon LATIAS, 60
 	sjump .begin
 .smallLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 50
+	loadwildmon LATIAS, 40
 	sjump .begin
 .tinyLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 40
+	loadwildmon LATIAS, 30
 .begin
 	startbattle
 	reloadmapafterbattle

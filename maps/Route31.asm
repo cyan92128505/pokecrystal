@@ -346,13 +346,13 @@ GiantDadAfterBattleText:
     done
     
 Route31FieldMon1Script:
-	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, Route31PokemonAttacksText, 31, 0, .script
+	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, Route31PokemonAttacksText, 21, 0, .script
 .script
     disappear ROUTE31_FIELDMON_1
     end
 
 Route31FieldMon2Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route31PokemonAttacksText, 42, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route31PokemonAttacksText, 32, 0, .script
 .script
     disappear ROUTE31_FIELDMON_2
     end

@@ -467,13 +467,13 @@ YoungsterJoeyText_GiveHPUpAfterBattle:
 	done
 	
 Route30FieldMon1Script:
-	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_1, Route30PokemonAttacksText, 28, 0, .script
+	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_1, Route30PokemonAttacksText, 18, 0, .script
 .script
     disappear ROUTE30_FIELDMON_1
     end
 
 Route30FieldMon2Script:
-	trainer NOCTOWL, FIELD_MON, EVENT_FIELD_MON_2, Route30PokemonAttacksText, 28, 0, .script
+	trainer NOCTOWL, FIELD_MON, EVENT_FIELD_MON_2, Route30PokemonAttacksText, 18, 0, .script
 .script
     disappear ROUTE30_FIELDMON_2
     end

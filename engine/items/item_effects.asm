@@ -218,12 +218,16 @@ PokeBallEffect:
 ; AndrewNote - capture level restrictions
     push bc
     ld a, [wLevelCap]
-    ld b, a
+    ld b, a ; b is the current level cap
+    cp 100
+    jr c, .continue ; if level cap is max just allow capture
     ld a, [wEnemyMonLevel]
+    add 10 ; the capture cap is 10 levels lower than the training cap
     cp b
     pop bc
-    jr c, .continue
+    jr c, .continue ; if levelCap >= level + 10 then we CAN capture
 
+    ; here we are not allowed to capture
     call ReturnToBattle_UseBall
 	ld de, ANIM_THROW_POKE_BALL
 	ld a, e

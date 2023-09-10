@@ -59,7 +59,7 @@ LatiasScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIAS, 60
+	loadwildmon LATIAS, 55
 	sjump .begin
 .smallLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
@@ -383,9 +383,10 @@ FuchsiaCitySelfScript:
     waitbutton
     closetext
     winlosstext FuchsiaSelfVictoryText, FuchsiaSelfLossText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer CAL, CAL1
 	startbattle
+	ifequal LOSE, .lose
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
@@ -440,6 +441,24 @@ FuchsiaCitySelfScript:
 	playmusic MUSIC_RED_INDIGO_PLATEAU
 .end
 	end
+.lose
+    dontrestartmapmusic
+    reloadmap
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	opentext
+	writetext FuchsiaSelfText6
+	waitbutton
+	closetext
+	applymovement PLAYER, FuchsiaMovement_PlayerDown
+	pause 5
+	disappear VIOLETCITY_SELF
+	playmusic MUSIC_RED_INDIGO_PLATEAU
+	special HealParty
+	end
+
+FuchsiaMovement_PlayerDown:
+    slow_step DOWN
+    step_end
 
 FuchsiaSelfText1:
     text "Listen to me!"
@@ -586,6 +605,16 @@ FuchsiaSelfLossText:
 
 FuchsiaSelfVictoryText:
     text "Please stop!"
+    done
+
+FuchsiaSelfText6:
+    text "I only do this"
+    line "because I care"
+    cont "about you."
+
+    para "Now go back"
+    line "home where you"
+    cont "will be safe."
     done
 
 FuchsiaCity_MapEvents:

@@ -635,9 +635,10 @@ GoldenrodCitySelfScript:
     waitbutton
     closetext
     winlosstext GoldenrodSelfVictoryText, GoldenrodSelfLossText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer CAL, CAL1
 	startbattle
+	ifequal LOSE, .lose
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
@@ -648,8 +649,26 @@ GoldenrodCitySelfScript:
 	waitbutton
 	closetext
 	disappear GOLDENRODCITY_SELF
-	special RestartMapMusic
+	playmusic MUSIC_GOLDENROD_CITY
 	end
+.lose
+    dontrestartmapmusic
+    reloadmap
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	opentext
+	writetext GoldenrodSelfText6
+	waitbutton
+	closetext
+	applymovement PLAYER, GoldenrodMovement_PlayerDown
+	pause 5
+	disappear VIOLETCITY_SELF
+	playmusic MUSIC_GOLDENROD_CITY
+	special HealParty
+	end
+
+GoldenrodMovement_PlayerDown:
+    slow_step DOWN
+    step_end
 
 GoldenrodSelfText1:
     text "She was going"
@@ -695,6 +714,16 @@ GoldenrodSelfText5:
 
     para "Never getting to"
     line "see you again."
+    done
+
+GoldenrodSelfText6:
+    text "I only do this"
+    line "because I care"
+    cont "about you."
+
+    para "Now go back"
+    line "home where you"
+    cont "will be safe."
     done
 
 GoldenrodSelfLossText:

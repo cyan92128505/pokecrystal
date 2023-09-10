@@ -41,7 +41,7 @@ ShayminScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon SHAYMIN, 60
+	loadwildmon SHAYMIN, 65
 	startbattle
 	reloadmapafterbattle
     setval SHAYMIN

@@ -179,7 +179,7 @@ UnionCaveB2FFieldMon3Script:
 	faceplayer
 	cry GABITE
 	pause 15
-	loadwildmon GABITE, 32
+	loadwildmon GABITE, 36
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

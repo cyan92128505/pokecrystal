@@ -719,7 +719,7 @@ IlexForestFieldMon3Script:
 	cry VOLCARONA
 	pause 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
-	loadwildmon VOLCARONA, 65
+	loadwildmon VOLCARONA, 72
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

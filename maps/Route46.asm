@@ -143,6 +143,7 @@ PicnickerErinMercyText:
 ;	end
 
 TrainerHikerBailey:
+    setmapscene ROUTE_46, SCENE_FINISHED
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_HIKER_BAILEY
@@ -174,8 +175,18 @@ TrainerHikerBailey:
 .Mercy:
     writetext HikerBaileyMercyText
     yesorno
-    iftrue .fight
-	closetext
+    closetext
+    iffalse .end
+    winlosstext HikerBaileyBeatenText, 0
+	loadtrainer HIKER, BAILEY
+	startbattle
+	reloadmap
+	ifequal LOSE, .lose
+	setevent EVENT_BEAT_HIKER_BAILEY
+	sjump .end
+.lose
+    special HealParty
+.end
 	end
 
 HikerBaileyMercyText:
@@ -323,6 +334,7 @@ Route46_MapEvents:
 	warp_event 14,  5, DARK_CAVE_VIOLET_ENTRANCE, 3
 
 	def_coord_events
+	coord_event 14, 6, SCENE_DEFAULT, TrainerHikerBailey
 
 	def_bg_events
 	bg_event  9, 27, BGEVENT_READ, Route46Sign

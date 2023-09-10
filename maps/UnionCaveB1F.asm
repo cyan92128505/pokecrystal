@@ -170,7 +170,7 @@ PokemaniacCalvinAfterBattleText:
 	done
 	
 UnionCaveB1FFieldMon1Script:
-	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_1, UnionCaveB1FPokemonAttacksText, 50, 0, .script
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_1, UnionCaveB1FPokemonAttacksText, 52, 0, .script
 .script
     disappear UNIONCAVEB1F_FIELDMON_1
     end

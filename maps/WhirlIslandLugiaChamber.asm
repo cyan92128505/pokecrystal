@@ -45,7 +45,7 @@ Lugia:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LUGIA, 60
+	loadwildmon LUGIA, 55
 .begin
 	startbattle
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA

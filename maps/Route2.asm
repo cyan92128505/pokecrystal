@@ -127,7 +127,7 @@ Route2FieldMon8Script:
 	faceplayer
 	cry HERACROSS
 	pause 15
-	loadwildmon HERACROSS, 80
+	loadwildmon HERACROSS, 82
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

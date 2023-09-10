@@ -76,7 +76,7 @@ MoltresScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 60
+	loadwildmon MOLTRES, 55
 .begin
 	startbattle
 	reloadmapafterbattle

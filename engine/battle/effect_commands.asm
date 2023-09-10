@@ -670,55 +670,11 @@ BattleCommand_CheckObedience:
 	ret z
 
 .obeylevel
-	; The maximum obedience level is constrained by owned badges:
-	ld hl, wJohtoBadges
-
-	; risingbadge
-	bit RISINGBADGE, [hl]
-	ld a, MAX_LEVEL + 1
-	jr nz, .getlevel
-
-	; stormbadge
-	bit STORMBADGE, [hl]
-	ld a, 70
-	jr nz, .getlevel
-
-	; fogbadge
-	bit FOGBADGE, [hl]
-	ld a, 50
-	jr nz, .getlevel
-
-	; hivebadge
-	bit HIVEBADGE, [hl]
-	ld a, 30
-	jr nz, .getlevel
-
-	; no badges
-	ld a, 10
-
-.getlevel
-; c = obedience level
-; d = monster level
-; b = c + d
-
-	ld b, a
-	ld c, a
-
-	ld a, [wBattleMonLevel]
-	ld d, a
-
-	add b
-	ld b, a
-
-; No overflow (this should never happen)
-	jr nc, .checklevel
-	ld b, $ff
-
-.checklevel
-; If the monster's level is lower than the obedience level, it will obey.
-	ld a, c
-	cp d
-	ret nc
+    ld a, [wLevelCap]
+    ld b, a
+    ld a, [wBattleMonLevel]
+    cp b
+    ret c   ; if levelCap >= level then obey
 
 ; Random number from 0 to obedience level + monster level
 .rand1

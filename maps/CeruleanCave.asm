@@ -145,7 +145,7 @@ GenesectScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon GENESECT, 70
+	loadwildmon GENESECT, 71
 	startbattle
 	reloadmapafterbattle
     setval GENESECT

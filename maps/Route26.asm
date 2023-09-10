@@ -532,7 +532,7 @@ Route26FieldMon8Script:
 	faceplayer
 	cry VOLCARONA
 	pause 15
-	loadwildmon VOLCARONA, 65
+	loadwildmon VOLCARONA, 72
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8

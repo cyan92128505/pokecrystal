@@ -32,7 +32,7 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
-	loadmem wLevelCap, 25
+	loadmem wLevelCap, 30
 	opentext
 	writetext ReceivedZephyrBadgeText
 	playsound SFX_GET_BADGE

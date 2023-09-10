@@ -62,7 +62,7 @@ DarkraiScript:
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 60
+	loadwildmon DARKRAI, 55
 .begin
 	startbattle
 	disappear ROCKTUNNELB1F_DARKRAI

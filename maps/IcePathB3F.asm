@@ -22,7 +22,7 @@ IcePathB3FFieldMon1Script:
 	faceplayer
 	cry MAMOSWINE
 	pause 15
-	loadwildmon MAMOSWINE, 70
+	loadwildmon MAMOSWINE, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

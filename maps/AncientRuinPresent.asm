@@ -207,13 +207,13 @@ AncientRuinsPresentFieldMon1Script:
     end
 
 AncientRuinsPresentFieldMon2Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 53, 0, .script
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 51, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_2
     end
 
 AncientRuinsPresentFieldMon3Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 65, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 71, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_3
     end
@@ -225,13 +225,13 @@ AncientRuinsPresentFieldMon4Script:
     end
 
 AncientRuinsPresentFieldMon5Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 53, 0, .script
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 51, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_5
     end
 
 AncientRuinsPresentFieldMon6Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, AncientRuinsPresentPokemonAttacksText, 54, 0, .script
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, AncientRuinsPresentPokemonAttacksText, 52, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_6
     end
@@ -249,13 +249,13 @@ AncientRuinsPresentFieldMon8Script:
     end
 
 AncientRuinsPresentFieldMon9Script:
-	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_9, AncientRuinsPresentPokemonAttacksText, 55, 0, .script
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_9, AncientRuinsPresentPokemonAttacksText, 52, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_9
     end
 
 AncientRuinsPresentFieldMon10Script:
-	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 80, 0, .script
+	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 81, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_10
     end

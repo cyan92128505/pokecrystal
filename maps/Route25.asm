@@ -498,7 +498,7 @@ Route25FieldMon5Script:
 	faceplayer
 	cry ALAKAZAM
 	pause 15
-	loadwildmon ALAKAZAM, 65
+	loadwildmon ALAKAZAM, 61
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

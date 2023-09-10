@@ -121,7 +121,7 @@ WhirlIslandB1FFieldMon6Script:
 	faceplayer
 	cry SLOWKING
 	pause 15
-	loadwildmon SLOWKING, 70
+	loadwildmon SLOWKING, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -133,7 +133,7 @@ WhirlIslandB1FFieldMon7Script:
 	faceplayer
 	cry MILOTIC
 	pause 15
-	loadwildmon MILOTIC, 70
+	loadwildmon MILOTIC, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

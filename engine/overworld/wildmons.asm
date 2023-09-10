@@ -493,7 +493,7 @@ InitRoamMons:
 
 ; AndrewNote - Roam mon level here
 ; level
-	ld a, 70
+	ld a, 60
 	ld [wRoamMon1Level], a
 	ld [wRoamMon2Level], a
 

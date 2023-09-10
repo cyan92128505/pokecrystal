@@ -57,7 +57,7 @@ MountMortarB1FFieldMon4Script:
 	faceplayer
 	cry METAGROSS
 	pause 15
-	loadwildmon METAGROSS, 70
+	loadwildmon METAGROSS, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

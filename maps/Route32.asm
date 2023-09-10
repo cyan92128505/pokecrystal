@@ -845,19 +845,19 @@ Route32UnionCaveSignText:
 	done
 	
 Route32FieldMon1Script:
-	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 31, 0, .script
+	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 36, 0, .script
 .script
     disappear ROUTE32_FIELDMON_1
     end
 
 Route32FieldMon2Script:
-	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 32, 0, .script
+	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 37, 0, .script
 .script
     disappear ROUTE32_FIELDMON_2
     end
     
 Route32FieldMon3Script:
-	trainer DUOSION, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 34, 0, .script
+	trainer DUOSION, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 37, 0, .script
 .script
     disappear ROUTE32_FIELDMON_3
     end

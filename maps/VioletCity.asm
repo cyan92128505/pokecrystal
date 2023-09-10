@@ -421,9 +421,10 @@ VioletCitySelfScript:
     waitbutton
     closetext
     winlosstext VioletSelfVictoryText, VioletSelfLossText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer CAL, CAL1
 	startbattle
+	ifequal LOSE, .lose
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
@@ -434,9 +435,26 @@ VioletCitySelfScript:
 	waitbutton
 	closetext
 	disappear VIOLETCITY_SELF
-	special RestartMapMusic
-.end
+	playmusic MUSIC_VIOLET_CITY
 	end
+.lose
+    dontrestartmapmusic
+    reloadmap
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	opentext
+	writetext VioletSelfText6
+	waitbutton
+	closetext
+	applymovement PLAYER, VioletMovement_PlayerDown
+	pause 5
+	disappear VIOLETCITY_SELF
+	playmusic MUSIC_VIOLET_CITY
+	special HealParty
+	end
+
+VioletMovement_PlayerDown:
+    slow_step DOWN
+    step_end
 
 VioletSelfText1:
     text "You let him get"
@@ -478,6 +496,16 @@ VioletSelfText5:
     para "By reminding you"
     line "how insignificant"
     cont "you really are."
+    done
+
+VioletSelfText6:
+    text "I only do this"
+    line "because I care"
+    cont "about you."
+
+    para "Now go back"
+    line "home where you"
+    cont "will be safe."
     done
 
 VioletSelfLossText:

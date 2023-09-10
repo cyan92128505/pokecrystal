@@ -290,9 +290,10 @@ MahoganyTownSelfScript:
     waitbutton
     closetext
     winlosstext MahoganySelfVictoryText, MahoganySelfLossText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer CAL, CAL1
 	startbattle
+	ifequal LOSE, .lose
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
@@ -303,8 +304,26 @@ MahoganyTownSelfScript:
 	waitbutton
 	closetext
 	disappear MAHOGANYTOWN_SELF
-	special RestartMapMusic
+	playmusic MUSIC_CHERRYGROVE_CITY
 	end
+.lose
+    dontrestartmapmusic
+    reloadmap
+    playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	opentext
+	writetext MahoganySelfText6
+	waitbutton
+	closetext
+	applymovement PLAYER, MahoganyMovement_PlayerDown
+	pause 5
+	disappear VIOLETCITY_SELF
+	playmusic MUSIC_CHERRYGROVE_CITY
+	special HealParty
+	end
+
+MahoganyMovement_PlayerDown:
+    slow_step DOWN
+    step_end
 
 MahoganySelfText1:
     text "You can't fight"
@@ -350,6 +369,16 @@ MahoganySelfText5:
     cont "stop."
 
     para "Go home."
+    done
+
+MahoganySelfText6:
+    text "I only do this"
+    line "because I care"
+    cont "about you."
+
+    para "Now go back"
+    line "home where you"
+    cont "will be safe."
     done
 
 MahoganySelfLossText:

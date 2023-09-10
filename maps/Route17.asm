@@ -83,7 +83,7 @@ Route17FieldMon8Script:
 	faceplayer
 	cry CHARIZARD
 	pause 15
-	loadwildmon CHARIZARD, 65
+	loadwildmon CHARIZARD, 61
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

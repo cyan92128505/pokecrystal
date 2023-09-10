@@ -7715,6 +7715,14 @@ GiveExperiencePoints:
 	dec a
 	call nz, BoostExp
 .noTrainerBoost
+; AndrewNote - exp reduced until all Kanto badges are obtained
+   	ld a, [wKantoBadges]
+   	cp %11111111 ; all badges
+    jr z, .noReduction
+    ; AndrewNote - exp reduced to 3/4 for balance reasons
+    call BoostExp
+    call HalfExp
+.noReduction
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM
@@ -7991,6 +7999,24 @@ BoostExp:
 	ldh [hProduct + 3], a
 	ldh a, [hProduct + 2]
 	adc b
+	ldh [hProduct + 2], a
+	pop bc
+	ret
+
+HalfExp:
+	push bc
+; load experience value
+	ldh a, [hProduct + 2]
+	ld b, a
+	ldh a, [hProduct + 3]
+	ld c, a
+; halve it
+	srl b
+	rr c
+; load it back to the exp value
+    ld a, c
+	ldh [hProduct + 3], a
+	ld a, b
 	ldh [hProduct + 2], a
 	pop bc
 	ret

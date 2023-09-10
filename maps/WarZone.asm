@@ -12,6 +12,7 @@
 	const WARZONE_SILVER
 	const WARZONE_CRYSTAL
 	const WARZONE_INVADER
+	const WARZONE_OAK
 
 WarZone_MapScripts:
 	def_scene_scripts
@@ -23,6 +24,7 @@ WarZone_MapScripts:
     disappear WARZONE_BLUE
     disappear WARZONE_SILVER
     disappear WARZONE_CRYSTAL
+    disappear WARZONE_OAK
 
 	setval WEATHER_RAIN
 	writemem wFieldWeather
@@ -156,6 +158,19 @@ WallaceScript:
     closetext
     applymovement WARZONE_CRYSTAL, WarZoneMovement_CrystalLeaves
     disappear WARZONE_CRYSTAL
+
+    turnobject PLAYER, DOWN
+    appear WARZONE_OAK
+    applymovement WARZONE_OAK, WarZoneMovement_CrystalApproaches
+    turnobject PLAYER, RIGHT
+    opentext
+    writetext WarZoneOakText
+    waitbutton
+    closetext
+    loadmem wLevelCap, 100
+    applymovement WARZONE_OAK, WarZoneMovement_CrystalLeaves
+    disappear WARZONE_OAK
+    turnobject PLAYER, UP
 	end
 
 WarZoneMovement_SilverApproaches:
@@ -168,11 +183,11 @@ WarZoneMovement_SilverApproaches:
     step_end
 
 WarZoneMovement_CrystalApproaches:
-    big_step UP
-    big_step UP
-    big_step UP
-    big_step UP
-    big_step UP
+    step UP
+    step UP
+    step UP
+    step UP
+    step UP
     step_end
 
 WarZoneMovement_SilverLeaves:
@@ -185,12 +200,72 @@ WarZoneMovement_SilverLeaves:
     step_end
 
 WarZoneMovement_CrystalLeaves:
-    big_step DOWN
-    big_step DOWN
-    big_step DOWN
-    big_step DOWN
-    big_step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
+    step DOWN
     step_end
+
+WarZoneOakText:
+    text "<PLAYER>..."
+
+    para "You alone have"
+    line "defeated WALLACE."
+
+    para "I saw the battle."
+
+    para "You now stand"
+    line "above and beyond"
+    cont "CHAMPIONS."
+
+    para "I have only known"
+    line "one other to"
+    cont "posses such"
+    cont "extraordinary"
+    cont "ability."
+
+    para "Perhaps you might"
+    line "you might even be"
+    cont "able to defeat"
+    cont "him."
+
+    para "RED."
+
+    para "In recognition"
+    line "of your authority"
+    cont "as a trainer you"
+    cont "can now train"
+    cont "and capture"
+    cont "#MON up to"
+    cont "any level."
+
+    para "Now you have one"
+    line "more badge to"
+    cont "obtain do you"
+    cont "not?"
+
+    para "Head to VIRIDIAN"
+    line "and battle my"
+    cont "nephew BLUE."
+
+    para "If you defeat"
+    line "him then I am"
+    cont "certain about"
+    cont "you."
+
+    para "You must come"
+    line "see me after the"
+    cont "battle."
+
+    para "And..."
+
+    para "Thank you"
+    line "<PLAYER>."
+
+    para "For saving us"
+    line "all."
+    done
 
 WarZoneSilverText:
     text "FUHRER WALLACE..."
@@ -1071,4 +1146,5 @@ WarZone_MapEvents:
 	object_event 20, 10, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 21, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
 	object_event 26, 12, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
+	object_event 21, 10, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_6
 

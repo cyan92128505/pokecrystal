@@ -245,9 +245,9 @@ UnionCave1FFieldMon3Script:
 	
 UnionCave1FFieldMon4Script:
 	faceplayer
-	cry GRAVELER
+	cry GEODUDE
 	pause 15
-	loadwildmon GRAVELER, 25
+	loadwildmon GEODUDE, 15
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

@@ -90,6 +90,9 @@ Route29_MapScripts:
 	endcallback
 
 Route29Tutorial1:
+    setscene SCENE_ROUTE29_NOTHING
+    checkitem REPULSOR
+    iftrue .end
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a
@@ -97,24 +100,16 @@ Route29Tutorial1:
 	setevent EVENT_DUDE_TALKED_TO_YOU
 	opentext
 	writetext CatchingTutorialIntroText
-	yesorno
-	iffalse Script_RefusedTutorial1
 	closetext
-	follow ROUTE29_COOLTRAINER_M1, PLAYER
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b
-	stopfollow
-	loadwildmon RATTATA, 5
-	;catchtutorial BATTLETYPE_TUTORIAL
-	turnobject ROUTE29_COOLTRAINER_M1, UP
-	opentext
-	writetext CatchingTutorialDebriefText
-	waitbutton
-	closetext
-	setscene SCENE_ROUTE29_NOTHING
+.end
 	setevent EVENT_LEARNED_TO_CATCH_POKEMON
 	end
 
 Route29Tutorial2:
+    setscene SCENE_ROUTE29_NOTHING
+    checkitem REPULSOR
+    iftrue .end
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2a
@@ -122,89 +117,14 @@ Route29Tutorial2:
 	setevent EVENT_DUDE_TALKED_TO_YOU
 	opentext
 	writetext CatchingTutorialIntroText
-	yesorno
-	iffalse Script_RefusedTutorial2
 	closetext
-	follow ROUTE29_COOLTRAINER_M1, PLAYER
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
-	stopfollow
-	loadwildmon RATTATA, 5
-	;catchtutorial BATTLETYPE_TUTORIAL
-	turnobject ROUTE29_COOLTRAINER_M1, UP
-	opentext
-	writetext CatchingTutorialDebriefText
-	waitbutton
-	closetext
-	setscene SCENE_ROUTE29_NOTHING
+.end
 	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	end
-
-Script_RefusedTutorial1:
-	writetext CatchingTutorialDeclinedText
-	waitbutton
-	closetext
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b
-	setscene SCENE_ROUTE29_NOTHING
-	end
-
-Script_RefusedTutorial2:
-	writetext CatchingTutorialDeclinedText
-	waitbutton
-	closetext
-	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
-	setscene SCENE_ROUTE29_NOTHING
 	end
 
 CatchingTutorialDudeScript:
-	faceplayer
-	opentext
-	readvar VAR_BOXSPACE
-	ifequal 0, .BoxFull
-	checkevent EVENT_LEARNED_TO_CATCH_POKEMON
-	iftrue .BoxFull
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iffalse .BoxFull
-	writetext CatchingTutorialRepeatText
-	yesorno
-	iffalse .Declined
-	closetext
-	loadwildmon RATTATA, 5
-	;catchtutorial BATTLETYPE_TUTORIAL
-	opentext
-	writetext CatchingTutorialDebriefText
-	waitbutton
-	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	sjump .checkRepulsor
-
-.BoxFull:
-	writetext CatchingTutorialBoxFullText
-    sjump .checkRepulsor
-
-.Declined:
-	writetext CatchingTutorialDeclinedText
-
-.checkRepulsor:
-    checkitem REPULSOR
-    iftrue .end
-    waitbutton
-    writetext Route29RepulsorText
-    promptbutton
-	verbosegiveitem REPULSOR
-.end
-    waitbutton
-	closetext
-	end
-
-Route29RepulsorText:
-    text "Wild #MON"
-    line "can be seen in"
-    cont "the field or they"
-    cont "attack at random."
-
-    para "This will keep the"
-    line "weaker random"
-    cont "#MON away."
-    done
+    jumptextfaceplayer CatchingTutorialDebriefText
 
 Route29YoungsterScript:
 	jumptextfaceplayer Route29YoungsterText
@@ -316,50 +236,32 @@ DudeMovementData2b:
 	step DOWN
 	step_end
 
-CatchingTutorialBoxFullText:
-	text "#MON hide in"
-	line "the grass. Who"
-
-	para "knows when they'll"
-	line "pop out…"
-	done
-
 CatchingTutorialIntroText:
 	text "I've seen you a"
-	line "couple times. How"
+	line "couple times."
 
-	para "many #MON have"
-	line "you caught?"
+	para "Are #MON"
+	line "giving you trouble"
+	cont "by always popping"
+	cont "up?"
 
-	para "Would you like me"
-	line "to show you how to"
-	cont "catch #MON?"
+	para "A REPULSOR will"
+	line "keep weak ones"
+	cont "away for good."
+
+	para "There is a woman"
+	line "in NEWBARK TOWN"
+	cont "who has one."
 	done
 
 CatchingTutorialDebriefText:
-	text "That's how you do"
-	line "it!"
-
-	para "If you weaken them"
-	line "first, #MON are"
-	cont "easier to catch."
-	done
-
-CatchingTutorialDeclinedText:
-	text "Oh I see."
-
-	para "You got this all"
-	line "figured out eh."
-
-	para "No that's fine."
-
-	para "Good luck buddy."
-	done
-
-CatchingTutorialRepeatText:
-	text "Huh? You want me"
-	line "to show you how to"
-	cont "catch #MON?"
+	text "To catch a"
+	line "#MON you"
+	cont "need to weaken"
+	cont "it then throw"
+	cont "a POKEBALL from"
+	cont "the ITEMS menu"
+	cont "in battle."
 	done
 
 Route29YoungsterText:

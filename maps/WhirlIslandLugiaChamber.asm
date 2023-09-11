@@ -34,7 +34,7 @@ Lugia:
 
 	checkitem RAINBOW_WING
 	iffalse .lowerLevel
-	checkflag ENGINE_EARTHBADGE
+	checkevent EVENT_BEAT_WALLACE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LUGIA, 80

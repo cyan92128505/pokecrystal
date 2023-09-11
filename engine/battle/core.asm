@@ -56,8 +56,8 @@ DoBattle:
 	ld a, [wBattleType]
 ;	cp BATTLETYPE_DEBUG
 ;	jp z, .tutorial_debug
-	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+;	cp BATTLETYPE_TUTORIAL
+;	jp z, .tutorial_debug
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -116,8 +116,8 @@ DoBattle:
     call FieldWeather
 	jp BattleTurn
 
-.tutorial_debug
-	jp BattleMenu
+;.tutorial_debug
+;	jp BattleMenu
 
 WildFled_EnemyFled_LinkBattleCanceled:
 	call SafeLoadTempTilemapToTilemap
@@ -5443,8 +5443,8 @@ BattleMenu:
 	ld a, [wBattleType]
 ;	cp BATTLETYPE_DEBUG
 ;	jr z, .ok
-	cp BATTLETYPE_TUTORIAL
-	jr z, .ok
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .ok
 	call EmptyBattleTextbox
 	call UpdateBattleHuds
 	call EmptyBattleTextbox
@@ -5538,8 +5538,8 @@ BattleMenu_Pack:
 	call LoadStandardMenuHeader
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .tutorial
 	cp BATTLETYPE_CONTEST
 	jr z, .contest
 
@@ -5549,12 +5549,12 @@ BattleMenu_Pack:
 	jr z, .didnt_use_item
 	jr .got_item
 
-.tutorial
-	farcall TutorialPack
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	call DoItemEffect
-	jr .got_item
+;.tutorial
+;	farcall TutorialPack
+;	ld a, POKE_BALL
+;	ld [wCurItem], a
+;	call DoItemEffect
+;	jr .got_item
 
 .contest
 	ld a, PARK_BALL
@@ -5598,22 +5598,22 @@ BattleMenu_Pack:
 	call _LoadBattleFontsHPBar
 	call ClearSprites
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial2
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .tutorial2
 	call GetBattleMonBackpic
 
-.tutorial2
-	call GetEnemyMonFrontpic
-	ld a, $1
-	ld [wMenuCursorY], a
-	call ExitMenu
-	call UpdateBattleHUDs
-	call WaitBGMap
-	call LoadTilemapToTempTilemap
-	call ClearWindowData
-	call FinishBattleAnim
-	and a
-	ret
+;.tutorial2
+;	call GetEnemyMonFrontpic
+;	ld a, $1
+;	ld [wMenuCursorY], a
+;	call ExitMenu
+;	call UpdateBattleHUDs
+;	call WaitBGMap
+;	call LoadTilemapToTempTilemap
+;	call ClearWindowData
+;	call FinishBattleAnim
+;	and a
+;	ret
 
 .run
 	xor a
@@ -9555,8 +9555,8 @@ GetTrainerBackpic:
 	ld b, BANK(DudeBackpic)
 	ld hl, DudeBackpic
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .Decompress
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .Decompress
 
 ; What gender are we?
 	ld a, [wPlayerSpriteSetupFlags]

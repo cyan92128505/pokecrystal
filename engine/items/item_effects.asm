@@ -272,8 +272,8 @@ PokeBallEffect:
 	ld a, [wEnemyMonCatchRate]
 	ld b, a
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jp z, .catch_without_fail
+;	cp BATTLETYPE_TUTORIAL
+;	jp z, .catch_without_fail
 	ld a, [wCurItem]
 
 	; AndrewNote - master ball here
@@ -541,8 +541,8 @@ PokeBallEffect:
 	ld [wCurPartySpecies], a
 	ld [wTempSpecies], a
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jp z, .FinishTutorial
+;	cp BATTLETYPE_TUTORIAL
+;	jp z, .FinishTutorial
 
 	farcall StubbedTrainerRankings_WildMonsCaught
 
@@ -726,8 +726,8 @@ PokeBallEffect:
 	farcall BugContest_SetCaughtContestMon
 	jr .return_from_capture
 
-.FinishTutorial:
-	ld hl, Text_GotchaMonWasCaught
+;.FinishTutorial:
+;	ld hl, Text_GotchaMonWasCaught
 
 .shake_and_break_free
 	call PrintText
@@ -735,8 +735,8 @@ PokeBallEffect:
 
 .return_from_capture
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	ret z
+;	cp BATTLETYPE_TUTORIAL
+;	ret z
 ;	cp BATTLETYPE_DEBUG
 ;	ret z
 	cp BATTLETYPE_CONTEST

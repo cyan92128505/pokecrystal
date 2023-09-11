@@ -24,7 +24,7 @@ BillsGrandpa:
     writetext ReceivedMewText
     playsound SFX_CAUGHT_MON
     waitsfx
-    checkflag ENGINE_EARTHBADGE
+    checkevent EVENT_BEAT_WALLACE
     iffalse .midLevel
     givepoke MEW, 80
     sjump .given

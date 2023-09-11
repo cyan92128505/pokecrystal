@@ -26,14 +26,6 @@ BillScript:
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-;	checkflag ENGINE_EARTHBADGE
-;	iffalse .midLevel
-;    givepoke SHAYMIN, 70
-;    sjump .given
-;.midLevel
-;	givepoke SHAYMIN, 50
-;.given
-;	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
 	waitbutton
 	closetext

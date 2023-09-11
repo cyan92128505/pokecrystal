@@ -86,7 +86,7 @@ SPDSPCDV_SHINY EQU $AA
 ;	const BATTLETYPE_DEBUG              ; not used
 	const BATTLETYPE_NORMAL             ; nothing special
 	const BATTLETYPE_CANLOSE            ; not strictly needed. using reloadmap rather than reloadmapafterbattle does this.
-	const BATTLETYPE_TUTORIAL           ; used for catching tutorial, a lot of code for this small part of game
+;	const BATTLETYPE_TUTORIAL           ; used for catching tutorial, a lot of code for this small part of game
 	const BATTLETYPE_FISH               ; lure ball works better against fished mon, hooked a mon text
 	const BATTLETYPE_ROAMING            ; roaming mon (Riakou, Entei) have different structs, keep hp and moves
 	const BATTLETYPE_CONTEST            ; use bug contest battle menu, park balls

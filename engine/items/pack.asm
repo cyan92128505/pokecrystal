@@ -1213,22 +1213,22 @@ DrawPackGFX:
 	ld e, a
 	ld d, 0
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .male_dude
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .male_dude
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr nz, .female
-.male_dude
-	ld hl, PackGFXPointers
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld e, a
-	ld d, [hl]
-	ld hl, vTiles2 tile $50
-	lb bc, BANK(PackGFX), 15
-	call Request2bpp
-	ret
+;.male_dude
+;	ld hl, PackGFXPointers
+;	add hl, de
+;	add hl, de
+;	ld a, [hli]
+;	ld e, a
+;	ld d, [hl]
+;	ld hl, vTiles2 tile $50
+;	lb bc, BANK(PackGFX), 15
+;	call Request2bpp
+;	ret
 
 .female
 	farcall DrawKrisPackGFX

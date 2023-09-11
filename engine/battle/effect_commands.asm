@@ -660,7 +660,6 @@ BattleCommand_CheckObedience:
 	; some conditions need to be met.
 	ld a, MON_ID
 	call BattlePartyAttr
-
 	ld a, [wPlayerID]
 	cp [hl]
 	jr nz, .obeylevel

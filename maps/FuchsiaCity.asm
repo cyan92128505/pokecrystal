@@ -48,7 +48,7 @@ LatiasScript:
 	iffalse .smallLevel
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .lowerLevel
-	checkflag ENGINE_EARTHBADGE
+	checkevent EVENT_BEAT_WALLACE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 80

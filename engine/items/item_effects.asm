@@ -216,18 +216,18 @@ PokeBallEffect:
 	jp nz, UseBallInTrainerBattle
 
 ; AndrewNote - capture level restrictions
-    push bc
     ld a, [wLevelCap]
-    ld b, a ; b is the current level cap
     cp 100
-    jr c, .continue ; if level cap is max just allow capture
+    jr z, .capture
+    push bc
+    ld b, a
     ld a, [wEnemyMonLevel]
-    add 10 ; the capture cap is 10 levels lower than the training cap
+    add 9
     cp b
     pop bc
-    jr c, .continue ; if levelCap >= level + 10 then we CAN capture
+    jr c, .capture
 
-    ; here we are not allowed to capture
+    ; restrict
     call ReturnToBattle_UseBall
 	ld de, ANIM_THROW_POKE_BALL
 	ld a, e
@@ -245,7 +245,7 @@ PokeBallEffect:
 	call PrintText
 	jp UseDisposableItem
 
-.continue
+.capture
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr nz, .room_in_party

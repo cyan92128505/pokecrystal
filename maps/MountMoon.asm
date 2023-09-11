@@ -29,7 +29,7 @@ MountMoonFieldMon4Script:
 	faceplayer
 	cry CLEFABLE
 	pause 15
-	loadwildmon CLEFABLE, 71
+	loadwildmon CLEFABLE, 65
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

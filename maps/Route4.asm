@@ -61,7 +61,7 @@ Route4FieldMon4Script:
 	faceplayer
 	cry BLASTOISE
 	pause 15
-	loadwildmon BLASTOISE, 71
+	loadwildmon BLASTOISE, 65
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

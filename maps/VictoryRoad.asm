@@ -334,25 +334,25 @@ VictoryRoadFieldMon5Script:
     end
 
 VictoryRoadFieldMon6Script:
-	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, VictoryRoadPokemonAttacksText, 71, 0, .script
+	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, VictoryRoadPokemonAttacksText, 64, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_6
     end
 
 VictoryRoadFieldMon7Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 71, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 64, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_7
     end
 
 VictoryRoadFieldMon8Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 72, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 65, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_8
     end
 
 VictoryRoadFieldMon9Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 72, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 65, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_9
     end

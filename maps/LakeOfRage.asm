@@ -104,8 +104,15 @@ RedGyarados:
 	pause 15
 	cry GYARADOS
 	closetext
-	loadwildmon GYARADOS, 40
+	checkevent EVENT_BEAT_CHUCK
+	iffalse .lvl30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon GYARADOS, 40
+	sjump .begin
+.lvl30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon GYARADOS, 30
+.begin
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear LAKEOFRAGE_GYARADOS
@@ -567,7 +574,7 @@ LakeOfRageFieldMon6Script:
 	faceplayer
 	cry SALAMENCE
 	pause 15
-	loadwildmon SALAMENCE, 75
+	loadwildmon SALAMENCE, 70
     loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

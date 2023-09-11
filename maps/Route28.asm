@@ -70,7 +70,7 @@ Route28FieldMon4Script:
 	faceplayer
 	cry SKARMORY
 	pause 15
-	loadwildmon SKARMORY, 71
+	loadwildmon SKARMORY, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -82,7 +82,7 @@ Route28FieldMon5Script:
 	faceplayer
 	cry BLISSEY
 	pause 15
-	loadwildmon BLISSEY, 74
+	loadwildmon BLISSEY, 72
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

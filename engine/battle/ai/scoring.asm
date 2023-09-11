@@ -111,10 +111,10 @@ AI_ClearBodyPokemon:
     db BELDUM
     db METANG
     db METAGROSS
-    db MACHAMP
-    db ENTEI
     db DIALGA
     db ARCEUS
+    db REGIGIGAS
+    db DEOXYS
     db $FF
 
 AI_UberImmunePokemon:

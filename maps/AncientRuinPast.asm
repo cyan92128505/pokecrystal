@@ -36,7 +36,7 @@ XerneasScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon XERNEAS, 85
+	loadwildmon XERNEAS, 80
 	startbattle
 	reloadmapafterbattle
     setval XERNEAS

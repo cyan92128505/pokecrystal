@@ -97,13 +97,13 @@ CeruleanCaveFieldMon4Script:
     end
 
 CeruleanCaveFieldMon5Script:
-	trainer CHANSEY, FIELD_MON, EVENT_FIELD_MON_5, CeruleanCavePokemonAttacksText, 71, 0, .script
+	trainer CHANSEY, FIELD_MON, EVENT_FIELD_MON_5, CeruleanCavePokemonAttacksText, 66, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_5
     end
 
 CeruleanCaveFieldMon6Script:
-	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_6, CeruleanCavePokemonAttacksText, 70, 0, .script
+	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_6, CeruleanCavePokemonAttacksText, 65, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_6
     end
@@ -127,7 +127,7 @@ CeruleanCaveFieldMon9Script:
     end
 
 CeruleanCaveFieldMon10Script:
-	trainer ALAKAZAM, FIELD_MON, EVENT_FIELD_MON_10, CeruleanCavePokemonAttacksText, 81, 0, .script
+	trainer ALAKAZAM, FIELD_MON, EVENT_FIELD_MON_10, CeruleanCavePokemonAttacksText, 70, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_10
     end
@@ -145,7 +145,7 @@ GenesectScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon GENESECT, 71
+	loadwildmon GENESECT, 70
 	startbattle
 	reloadmapafterbattle
     setval GENESECT
@@ -174,7 +174,7 @@ RegigigasScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon REGIGIGAS, 85
+	loadwildmon REGIGIGAS, 80
 	startbattle
 	reloadmapafterbattle
     setval REGIGIGAS

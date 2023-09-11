@@ -31,7 +31,7 @@ GiratinaScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon GIRATINA, 85
+	loadwildmon GIRATINA, 80
 	startbattle
 	reloadmapafterbattle
     setval GIRATINA

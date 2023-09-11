@@ -54,7 +54,7 @@ GroudonScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon GROUDON, 85
+	loadwildmon GROUDON, 80
 	startbattle
 	reloadmapafterbattle
     setval GROUDON
@@ -78,7 +78,7 @@ KyogreScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon KYOGRE, 85
+	loadwildmon KYOGRE, 80
 	startbattle
 	reloadmapafterbattle
     setval KYOGRE

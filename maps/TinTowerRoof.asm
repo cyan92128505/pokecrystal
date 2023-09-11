@@ -43,7 +43,7 @@ TinTowerHoOh:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon HO_OH, 85
+	loadwildmon HO_OH, 80
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT

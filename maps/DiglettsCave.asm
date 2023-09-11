@@ -72,7 +72,7 @@ DiglettsCaveFieldMon6Script:
 	faceplayer
 	cry STEELIX
 	pause 15
-	loadwildmon STEELIX, 71
+	loadwildmon STEELIX, 70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	startbattle
 	reloadmapafterbattle

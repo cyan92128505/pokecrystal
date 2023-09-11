@@ -104,7 +104,7 @@ Route29Tutorial1:
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b
 	stopfollow
 	loadwildmon RATTATA, 5
-	catchtutorial BATTLETYPE_TUTORIAL
+	;catchtutorial BATTLETYPE_TUTORIAL
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	opentext
 	writetext CatchingTutorialDebriefText
@@ -129,7 +129,7 @@ Route29Tutorial2:
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
 	stopfollow
 	loadwildmon RATTATA, 5
-	catchtutorial BATTLETYPE_TUTORIAL
+	;catchtutorial BATTLETYPE_TUTORIAL
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	opentext
 	writetext CatchingTutorialDebriefText
@@ -169,7 +169,7 @@ CatchingTutorialDudeScript:
 	iffalse .Declined
 	closetext
 	loadwildmon RATTATA, 5
-	catchtutorial BATTLETYPE_TUTORIAL
+	;catchtutorial BATTLETYPE_TUTORIAL
 	opentext
 	writetext CatchingTutorialDebriefText
 	waitbutton

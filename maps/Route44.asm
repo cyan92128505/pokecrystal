@@ -575,7 +575,7 @@ Route44FieldMon6Script:
 	faceplayer
 	cry TOGEKISS
 	pause 15
-	loadwildmon TOGEKISS, 73
+	loadwildmon TOGEKISS, 66
     loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

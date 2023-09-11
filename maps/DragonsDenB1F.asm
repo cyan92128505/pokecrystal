@@ -86,7 +86,7 @@ DragonsDenB1FieldMon5Script:
 	faceplayer
 	cry DRAGONITE
 	pause 15
-	loadwildmon DRAGONITE, 75
+	loadwildmon DRAGONITE, 70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -150,7 +150,7 @@ RayquazaScript:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon RAYQUAZA, 85
+	loadwildmon RAYQUAZA, 80
     sjump .begin
 .midLevel
 	checkevent EVENT_BEAT_ELITE_FOUR

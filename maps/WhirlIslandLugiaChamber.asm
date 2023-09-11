@@ -37,7 +37,7 @@ Lugia:
 	checkflag ENGINE_EARTHBADGE
 	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LUGIA, 85
+	loadwildmon LUGIA, 80
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT

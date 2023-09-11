@@ -152,22 +152,27 @@ Route33FruitTree:
 	fruittree FRUITTREE_ROUTE_33
 
 HikerAnthony2SeenText:
-	text "I came through the"
-	line "tunnel, but I"
+	text "I came through"
+	line "UNION CAVE."
 
-	para "still have plenty"
-	line "of energy left."
+	para "I am tough!"
+
+	para "Real tough!"
 	done
 
 HikerAnthony2BeatenText:
-	text "Whoa! You've got"
-	line "more zip than me!"
+	text "You are more"
+	line "tough than me!"
 	done
 
 HikerAnthony2AfterText:
-	text "We HIKERS are at"
-	line "our best in the"
-	cont "mountains."
+	text "I thought I saw"
+	line "some TEAM ROCKET"
+	cont "members around"
+	cont "here."
+
+	para "I'll show them"
+	line "how tough I am!"
 	done
 
 HikerAnthonyDunsparceText:

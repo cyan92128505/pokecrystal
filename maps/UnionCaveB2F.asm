@@ -94,68 +94,82 @@ UnionCaveB2FHyperPotion:
 	itemball HYPER_POTION
 
 CooltrainermNickSeenText:
-	text "There are two"
-	line "kinds of people."
+	text "I came here with"
+	line "my girlfriend."
 
-	para "Those who have"
-	line "style, and those"
-	cont "who don't."
+	para "But I'm meant"
+	line "to meet with"
+	cont "someone..."
 
-	para "What kind of"
-	line "person are you?"
+	para "else..."
+
+	para "Have you seen"
+	line "her?"
 	done
 
 CooltrainermNickBeatenText:
-	text "You've got"
-	line "dazzling style!"
+	text "Shh, keep quiet."
 	done
 
 CooltrainermNickAfterBattleText:
-	text "Your #MON style"
-	line "is stunning and"
-	cont "colorful, I admit."
+	text "I thought this"
+	line "place would be"
+	cont "isolated."
 
-	para "You'll just keep"
-	line "getting better!"
+	para "But my girlfriend"
+	line "insisted on"
+	cont "coming along."
 	done
 
 CooltrainerfGwenSeenText:
-	text "I'm in training."
-	line "Care for a round?"
+	text "I came here with"
+	line "my boyfriend."
+
+	para "He thinks he can"
+	line "sneak away from"
+	cont "me in here."
+
+	para "I know she is"
+	line "here!"
 	done
 
 CooltrainerfGwenBeatenText:
-	text "Aww, no! You're"
-	line "too good for me."
+	text "I will find"
+	line "them!"
 	done
 
 CooltrainerfGwenAfterBattleText:
-	text "I'm going to train"
-	line "by myself until I"
-	cont "improve."
+	text "I'm sure he is"
+	line "meeting her here."
+
+	para "When I find her."
+
+	para "I will kill her."
 	done
 
 CooltrainerfEmmaSeenText:
-	text "If the #MON I"
-	line "liked were there,"
-	cont "I'd go anywhere."
+	text "Hey have you seen"
+	line "a guy in here?"
 
-	para "That's what a real"
-	line "trainer does."
+	para "I saw him come"
+	line "in with..."
+
+	para "Another."
+
+	para "She will kill me!"
 	done
 
 CooltrainerfEmmaBeatenText:
-	text "I'd rather pet my"
-	line "babies than this!"
+	text "Be quiet."
 	done
 
 CooltrainerfEmmaAfterBattleText:
-	text "Just once a week,"
-	line "a #MON comes to"
-	cont "the water's edge."
+	text "It would be"
+	line "easier to let"
+	cont "these #MON"
+	cont "eat me."
 
-	para "I wanted to see"
-	line "that #MON…"
+	para "Than to face her."
 	done
 	
 UnionCaveB2FFieldMon1Script:

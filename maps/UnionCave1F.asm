@@ -98,85 +98,85 @@ UnionCave1FUnusedSign: ; unreferenced
 	jumptext UnionCave1FUnusedSignText
 
 HikerRussellSeenText:
-	text "You're headed to"
-	line "AZALEA, are you?"
+	text "I am sure there"
+	line "is treasure in"
+	cont "the RUINS OF"
+	cont "ALPH."
 
-	para "Let my #MON see"
-	line "if you are good"
-	cont "enough to battle."
+	para "DRILBUR and I"
+	line "are going to dig"
+	cont "underneath the"
+	cont "ruins to find it!"
 	done
 
 HikerRussellBeatenText:
-	text "Oh, oh, oh!"
+	text "Soon I'll be"
+	line "rich!"
 	done
 
 HikerRussellAfterBattleText:
-	text "All right, then!"
-	line "I've decided."
-
-	para "I'm not leaving"
-	line "until my #MON"
-	cont "get tougher!"
+	text "Oh no, I've"
+	line "forgotten to"
+	cont "bring a lunch"
+	cont "for the trip."
 	done
 
 PokemaniacLarrySeenText:
-	text "I roam far and"
-	line "wide in search of"
-	cont "#MON."
+	text "This cave goes"
+	line "deeper."
 
-	para "Are you looking"
-	line "for #MON too?"
-
-	para "Then you're my"
-	line "collecting rival!"
+	para "I heard scary"
+	line "roars down there"
+	cont "and came back up."
 	done
 
 PokemaniacLarryBeatenText:
-	text "Ugh. My poor #-"
-	line "MON…"
+	text "I must face my"
+	line "fears."
 	done
 
 PokemaniacLarryAfterBattleText:
-	text "Every Friday, you"
-	line "can hear #MON"
+	text "There is a lake"
+	line "down there."
 
-	para "roars from deep"
-	line "inside the cave."
+	para "If only I could"
+	line "pass it."
 	done
 
 HikerDanielSeenText:
-	text "Whoa! What a"
-	line "surprise!"
+	text "I love the"
+	line "thrill of cave"
+	cont "exploring."
 
-	para "I didn't expect to"
-	line "see anyone here!"
+	para "I tried it at"
+	line "DARK CAVE but"
+	cont "it was too scary."
 	done
 
 HikerDanielBeatenText:
-	text "Whoa! I'm beaten"
-	line "big time!"
+	text "You'll cause a"
+	line "cave in!"
 	done
 
 HikerDanielAfterBattleText:
-	text "I was conned into"
-	line "buying a SLOWPOKE-"
-	cont "TAIL."
+	text "I'm sure there"
+	line "is some kind of"
+	cont "secret in here."
 
-	para "I feel sorry for"
-	line "the poor #MON."
+	para "I can hear roars"
+	line "from deep in the"
+	cont "cave."
 	done
 
 FirebreatherBillSeenText:
-	text "ZUBAT's SUPERSONIC"
-	line "keeps confusing"
-	cont "my #MON."
-
-	para "I'm seriously"
-	line "upset about that!"
+	text "This cave will"
+	line "make a great"
+	cont "bunker to wait"
+	cont "out the war."
 	done
 
 FirebreatherBillBeatenText:
-	text "I flamed out!"
+	text "My rations..."
 	done
 
 FirebreatherBillAfterBattleText:
@@ -188,22 +188,23 @@ FirebreatherBillAfterBattleText:
 	done
 
 FirebreatherRaySeenText:
-	text "If it's light, a"
-	line "cave isn't scary."
+	text "My job is to"
+	line "keep people in"
+	cont "here safe."
 
-	para "If you're strong,"
-	line "#MON aren't"
-	cont "scary."
+	para "I think you are"
+	line "causing trouble."
 	done
 
 FirebreatherRayBeatenText:
-	text "FLASH!"
+	text "You are well"
+	line "equipped."
 	done
 
 FirebreatherRayAfterBattleText:
-	text "It's my #MON's"
-	line "fire that lights"
-	cont "up this cave."
+	text "That was a"
+	line "successful days"
+	cont "work..."
 	done
 
 UnionCave1FUnusedSignText:

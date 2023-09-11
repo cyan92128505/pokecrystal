@@ -85,88 +85,86 @@ UnionCaveB1FBoulder:
 	jumpstd StrengthBoulderScript
 
 HikerPhillipSeenText:
-	text "It's been a while"
-	line "since I last saw"
-	cont "another person."
-
-	para "Don't be shy."
-	line "Let's battle!"
+	text "You wont get"
+	line "the treasure"
+	cont "before me!"
 	done
 
 HikerPhillipBeatenText:
-	text "Uurggh…"
+	text "You'll never"
+	line "find it."
 	done
 
 HikerPhillipAfterBattleText:
-	text "I've been lost for"
-	line "a long time…"
+	text "Yes you go first."
 
-	para "I don't mind it"
-	line "here, but I am"
-	cont "soooo hungry!"
+	para "There are probably"
+	line "ancient traps in"
+	cont "place."
 	done
 
 HikerLeonardSeenText:
-	text "What do you know!"
-	line "A visitor!"
+	text "My brother went"
+	line "into ROCKY TUNNEL"
+	cont "in KANTO."
+
+	para "He never came"
+	line "back."
+
+	para "When I am good"
+	line "enough I will"
+	cont "go find him."
 	done
 
 HikerLeonardBeatenText:
-	text "Wahahah! You're a"
-	line "feisty one!"
+	text "You remind me"
+	line "of my brother."
 	done
 
 HikerLeonardAfterBattleText:
-	text "I live down here."
-
-	para "You can, too, if"
-	line "you'd like."
-
-	para "There's plenty of"
-	line "room, you see."
+	text "I am drawn to"
+	line "the deep places"
+	cont "of the world."
 	done
 
 PokemaniacAndrewSeenText:
-	text "Who's there?"
-
-	para "Leave me and my"
-	line "#MON alone!"
+	text "Can you see it?"
 	done
 
 PokemaniacAndrewBeatenText:
-	text "Go…"
-	line "Go away!"
+	text "I see it."
 	done
 
 PokemaniacAndrewAfterBattleText:
-	text "Just me and my"
-	line "#MON. I'm de-"
-	cont "lirious with joy."
+	text "xor a"
+	line "and a"
+	cont "jr z, .continue"
+
+	para "...."
+
+	para "What does it mean?"
 	done
 
 PokemaniacCalvinSeenText:
-	text "I came all the way"
-	line "here to conduct my"
-	cont "#MON research."
+	text "I just barley"
+	line "escaped."
 
-	para "Let me demonstrate"
-	line "my findings in a"
-	cont "real battle!"
+	para "There is a sea"
+	line "of monsters"
+	cont "down there."
+
+	para "I can't let"
+	line "you pass."
 	done
 
 PokemaniacCalvinBeatenText:
-	text "You demonstrated"
-	line "on me!"
+	text "Fine go on"
+	line "then."
 	done
 
 PokemaniacCalvinAfterBattleText:
-	text "I should compile"
-	line "and announce my"
-	cont "study findings."
-
-	para "I might even be-"
-	line "come famous like"
-	cont "PROF.ELM."
+	text "Be careful"
+	line "down there."
 	done
 	
 UnionCaveB1FFieldMon1Script:

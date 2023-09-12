@@ -21,26 +21,35 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "There's no GREAT"
-	line "BALL here. #"
+	text "This MART sells"
+	line "a special KURT"
+	cont "BALL."
 
-	para "BALLS will have"
-	line "to do."
+	para "The FRIEND BALL."
 
-	para "I wish KURT would"
-	line "make me some of"
-	cont "his custom BALLS."
+	para "It makes #MON"
+	line "like you more"
+	cont "if you catch"
+	cont "them with it."
+
+	para "I want my"
+	line "#MON to be"
+	cont "happy."
 	done
 
 AzaleaMartBugCatcherText:
-	text "A GREAT BALL is"
-	line "better for catch-"
-	cont "ing #MON than a"
-	cont "# BALL."
+	text "One day I'm"
+	line "going to be a"
+	cont "trainer at"
+	cont "the GYM."
 
-	para "But KURT's might"
-	line "be better some-"
-	cont "times."
+	para "I don't know"
+	line "why I bother"
+	cont "buying POTIONS."
+
+	para "I can't use"
+	line "them in any"
+	cont "important battles."
 	done
 
 AzaleaMart_MapEvents:

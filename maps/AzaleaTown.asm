@@ -64,7 +64,7 @@ AzaleaTownRivalBattleScript:
 	iftrue .Totodile
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .Chikorita
-	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
+	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalWinText
 	setlasttalked AZALEATOWN_SILVER
 	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
 	startbattle
@@ -244,130 +244,169 @@ AzaleaTownPlayerLeavesKurtsHouseMovement:
 	step_end
 
 AzaleaTownRivalBeforeText:
-	text "…Tell me some-"
-	line "thing."
+	text "I came when I"
+	line "heard TEAM ROCKET"
+	cont "where here."
 
-	para "Is it true that"
-	line "TEAM ROCKET has"
-	cont "returned?"
+	para "But they have"
+	line "already crawled"
+	cont "back under their"
+	cont "rock."
 
-	para "What? You beat"
-	line "them? Hah! Quit"
-	cont "lying."
+	para "I despise TEAM"
+	line "ROCKET."
 
-	para "You're not joking?"
-	line "Then let's see how"
-	cont "good you are."
+	para "An organisation"
+	line "full of slow"
+	cont "talking, slow"
+	cont "thinking, weak"
+	cont "simpletons."
+
+	para "Even weaker"
+	line "than you."
+
+	para "Let me teach"
+	line "you how you"
+	cont "should deal"
+	cont "with them."
 	done
 
 AzaleaTownRivalWinText:
-	text "… Humph! Useless"
+	text "These useless"
 	line "#MON!"
 
-	para "Listen, you. You"
-	line "only won because"
-
-	para "my #MON were"
-	line "weak."
-	done
-
-AzaleaTownRivalAfterText:
-	text "I hate the weak."
-
-	para "#MON, trainers."
-	line "It doesn't matter"
-	cont "who or what."
-
-	para "I'm going to be"
-	line "strong and wipe"
-	cont "out the weak."
-
-	para "That goes for TEAM"
-	line "ROCKET too."
-
-	para "They act big and"
-	line "tough in a group."
-
-	para "But get them"
-	line "alone, and they're"
-	cont "weak."
-
-	para "I hate them all."
-
-	para "You stay out of my"
-	line "way. A weakling"
-
-	para "like you is only a"
-	line "distraction."
+	para "Why aren't they"
+	line "strong enough!"
 	done
 
 AzaleaTownRivalLossText:
-	text "…Humph! I knew"
-	line "you were lying."
+	text "That's exactly"
+	line "what I would"
+	cont "have done to"
+	cont "TEAM ROCKET!"
+	done
+
+AzaleaTownRivalAfterText:
+	text "True strength"
+	line "takes time and"
+	cont "dedication."
+
+	para "You may be strong"
+	line "now but you have"
+	cont "already reached"
+	cont "your peak."
+
+	para "I will continue"
+	line "to grow."
+
+	para "Soon I shall"
+	line "stand far above"
+	cont "you."
+
+	para "I shall stand"
+	line "above all!"
+
+	para "See you then."
 	done
 
 AzaleaTownRocket1Text:
-	text "It's unsafe to go"
-	line "in there, so I'm"
-	cont "standing guard."
+	text "This well is"
+	line "too dangerous."
 
-	para "Aren't I a good"
-	line "Samaritan?"
+	para "We are making"
+	line "it safer."
+
+	para "Sorry but nobody"
+	line "can enter until"
+	cont "we are finished."
 	done
 
 AzaleaTownRocket2Text:
-	text "Do you know about"
-	line "SLOWPOKETAIL? I"
-	cont "heard it's tasty!"
+	text "The GYM is"
+	line "closed for now."
 
-	para "Aren't you glad I"
-	line "told you that?"
+	para "The GYM LEADER"
+	line "asked me to"
+	cont "make sure nobody"
+	cont "can enter."
+
+	para "Um..."
+
+	para "MORTY..."
+
+	para "No!"
+
+	para "BUGSY!"
+
+	para "Yes that's his"
+	line "name."
 	done
 
 AzaleaTownGrampsTextBefore:
 	text "The SLOWPOKE have"
 	line "disappeared from"
-	cont "town…"
+	cont "town."
 
-	para "I heard their"
-	line "TAILS are being"
-	cont "sold somewhere."
+	para "These fellows in"
+	line "black must have"
+	cont "some interest in"
+	cont "them."
+
+	para "Wont be long"
+	line "until they"
+	cont "realise they"
+	cont "are useless."
 	done
 
 AzaleaTownGrampsTextAfter:
 	text "The SLOWPOKE have"
 	line "returned."
 
-	para "Knowing them, they"
-	line "could've just been"
+	para "Look at them."
 
-	para "goofing off some-"
-	line "where."
+	para "Would you just"
+	line "look at them."
+
+	para "Everywhere!"
+
+	para "Useless things."
 	done
 
 AzaleaTownTeacherText:
-	text "Did you come to"
-	line "get KURT to make"
-	cont "some BALLS?"
+	text "There is a"
+	line "# BALL expert"
+	cont "called KURT in"
+	cont "this town."
 
-	para "A lot of people do"
-	line "just that."
+	para "He has tried to"
+	line "convince the"
+	cont "MARTS to trial"
+	cont "his products"
+	cont "but only the"
+	cont "MART in this"
+	cont "town sells any."
 	done
 
 AzaleaTownYoungsterText:
-	text "Cut through AZALEA"
-	line "and you'll be in"
-	cont "ILEX FOREST."
+	text "Through the"
+	line "forest you'll"
+	cont "find GOLDENROD"
+	cont "CITY."
 
-	para "But these skinny"
-	line "trees make it"
+	para "It's a big and"
+	line "busy place."
 
-	para "impossible to get"
-	line "through."
+	para "This little town"
+	line "is better."
 
-	para "The CHARCOAL MAN's"
-	line "#MON can CUT"
-	cont "down trees."
+	para "A forest on"
+	line "one side."
+
+	para "A cave on the"
+	line "other."
+
+	para "A good place to"
+	line "think."
 	done
 
 AzaleaTownSlowpokeText1:

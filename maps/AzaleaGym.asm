@@ -169,33 +169,40 @@ AzaleaGymStatue:
 	jumpstd GymStatue2Script
 
 BugsyText_INeverLose:
-	text "I'm BUGSY!"
-	line "I never lose when"
+	text "For a billion"
+	line "years bugs have"
+	cont "thrived."
 
-	para "it comes to bug"
-	line "#MON."
+	para "They are perfect"
+	line "fighting machines."
 
-	para "My research is"
-	line "going to make me"
+	para "No other creature"
+	line "can match their"
+	cont "ferocity and"
+	cont "determination."
 
-	para "the authority on"
-	line "bug #MON!"
+	para "They have seen"
+	line "the rise of"
+	cont "humanity."
 
-	para "Let me demonstrate"
-	line "what I've learned"
-	cont "from my studies."
+	para "They will see"
+	line "its fall."
+
+	para "I wish to be as"
+	line "ruthless and hard"
+	cont "as them."
+
+	para "I'll show you"
+	line "how soft you"
+	cont "are."
 	done
 
 BugsyText_ResearchIncomplete:
-	text "Whoa, amazing!"
-	line "You're an expert"
-	cont "on #MON!"
+	text "You have the"
+	line "will to win!"
 
-	para "My research isn't"
-	line "complete yet."
-
-	para "OK, you win. Take"
-	line "this BADGE."
+	para "Here take this"
+	line "badge."
 	done
 
 Text_ReceivedHiveBadge:
@@ -208,115 +215,125 @@ BugsyText_HiveBadgeSpeech:
 	line "benefits of HIVE-"
 	cont "BADGE?"
 
-	para "If you have it,"
-	line "#MON up to L30"
+	para "You can train"
+	line "#MON up to"
+	cont "level 35."
 
-	para "will obey you,"
-	line "even traded ones."
+	para "And capture"
+	line "#MON up to"
+	cont "level 25."
 
-	para "#MON that know"
-	line "CUT will be able"
-
-	para "to use it outside"
-	line "of battle too."
-
-	para "Here, I also want"
-	line "you to have this."
+	para "You can also"
+	line "use CUT outside"
+	cont "of battle."
 	done
 
 BugsyText_FuryCutterSpeech:
 	text "TM49 contains"
-	line "FURY CUTTER."
+	line "X SCISSOR."
 
-	para "If you don't miss,"
-	line "it gets stronger"
-	cont "every turn."
-
-	para "The longer your"
-	line "battle goes, the"
-	cont "better it gets."
-
-	para "Isn't that great?"
-	line "I discovered it!"
+	para "It is a vicious"
+	line "and powerful"
+	cont "attack that"
+	cont "can cut foes"
+	cont "in half."
 	done
 
 BugsyText_BugMonsAreDeep:
-	text "Bug #MON are"
-	line "deep. There are"
+	text "I am not scared"
+	line "of war."
 
-	para "many mysteries to"
-	line "be explored."
+	para "BUG #MON"
+	line "live in constant"
+	cont "strife."
 
-	para "Study your favor-"
-	line "ites thoroughly."
+	para "Nothing bothers"
+	line "them."
+
+	para "They are immune"
+	line "to fear."
+
+	para "They just get"
+	line "on with things."
 	done
 
 BugCatcherBennySeenText:
-	text "Bug #MON evolve"
-	line "young. So they get"
+	text "Not all BUGS"
+	line "can be stepped"
+	cont "on."
 
-	para "stronger that much"
-	line "faster."
+	para "Just try stepping"
+	line "on my mighty BUG"
+	cont "#MON!"
 	done
 
 BugCatcherBennyBeatenText:
-	text "Just evolving"
-	line "isn't enough!"
+	text "Squashed!"
 	done
 
 BugCatcherBennyAfterBattleText:
-	text "#MON become"
-	line "stronger if they"
-	cont "evolve. Really!"
+	text "BUG #MON are"
+	line "tough but can't"
+	cont "withstand FIRE"
+	cont "or FLYING moves."
+
+	para "Or ROCK, can't"
+	line "handle that"
+	cont "either."
 	done
 
 BugCatcherAlSeenText:
 	text "Bug #MON are"
-	line "cool and tough!"
+	line "so cool."
 
-	para "I'll prove it to"
-	line "you!"
+	para "Like just look"
+	line "at my thorax!"
 	done
 
 BugCatcherAlBeatenText:
-	text "You proved how"
-	line "tough you are…"
+	text "Ow my abdomen!"
 	done
 
 BugCatcherAlAfterBattleText:
-	text "They're so cool,"
-	line "but most girls"
-
-	para "don't like bug"
-	line "#MON."
-
-	para "I don't know why…"
+	text "I want to be"
+	line "a HERACROSS"
+	cont "when I grow up!"
 	done
 
 BugCatcherJoshSeenText:
-	text "You saved all the"
-	line "SLOWPOKE? Whew,"
-	cont "you're mighty!"
+	text "We were locked"
+	line "in here."
 
-	para "But my grown-up"
-	line "#MON are pretty"
-	cont "tough too!"
+	para "BUGSY could have"
+	line "sliced the door"
+	cont "down and killed"
+	cont "those ROCKETS."
+
+	para "But he was"
+	line "asleep and I"
+	cont "wasn't going to"
+	cont "wake him!"
 	done
 
 BugCatcherJoshBeatenText:
-	text "Urrgggh!"
+	text "You're strong!"
 	done
 
 BugCatcherJoshAfterBattleText:
-	text "I guess I should"
-	line "teach them better"
-	cont "moves…"
+	text "You are the one"
+	line "who beat the"
+	cont "ROCKETS aren't"
+	cont "you!"
 	done
 
 TwinsAmyandmay1SeenText:
-	text "AMY: Hi! Are you"
-	line "challenging the"
-	cont "LEADER? No way!"
+	text "AMY: The door"
+	line "is open again!"
+
+	para "I was going to"
+	line "break it down"
+	cont "but my sister"
+	cont "held me back."
 	done
 
 TwinsAmyandmay1BeatenText:
@@ -326,13 +343,19 @@ TwinsAmyandmay1BeatenText:
 
 TwinsAmyandmay1AfterBattleText:
 	text "AMY: You're"
-	line "really strong!"
+	line "strong."
+
+	para "But BUGSY is"
+	line "stronger."
 	done
 
 TwinsAmyandmay2SeenText:
-	text "MAY: You want to"
-	line "see the LEADER?"
-	cont "We come first!"
+	text "MAY: I was"
+	line "going to bust"
+	cont "that door down!"
+
+	para "But my sister"
+	line "restrained me."
 	done
 
 TwinsAmyandmay2BeatenText:
@@ -341,31 +364,26 @@ TwinsAmyandmay2BeatenText:
 	done
 
 TwinsAmyandmay2AfterBattleText:
-	text "MAY: Our bug #-"
-	line "MON lost! Oh, what"
-	cont "a shame."
+	text "MAY: Not bad."
+
+	para "But BUGSY will"
+	line "squash you."
 	done
 
 AzaleaGymGuideText:
-	text "Yo, challenger!"
+	text "BUGSY has"
+	line "some really"
+	cont "strong moves!"
 
-	para "BUGSY's young, but"
-	line "his knowledge of"
+	para "GRASS types"
+	line "wont be able to"
+	cont "do much."
 
-	para "bug #MON is for"
-	line "real."
+	para "A ROCK or FIRE"
+	line "type would work."
 
-	para "It's going to be"
-	line "tough without my"
-	cont "advice."
-
-	para "Let's see… Bug"
-	line "#MON don't like"
-	cont "fire."
-
-	para "Flying-type moves"
-	line "are super-effec-"
-	cont "tive too."
+	para "ELECTRIC might"
+	line "do well too."
 	done
 
 AzaleaGymGuideWinText:

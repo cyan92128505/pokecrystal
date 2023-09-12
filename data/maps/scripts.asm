@@ -301,8 +301,6 @@ INCLUDE "maps/AzaleaPokecenter1F.asm"
 INCLUDE "maps/CharcoalKiln.asm"
 INCLUDE "maps/AzaleaMart.asm"
 INCLUDE "maps/KurtsHouse.asm"
-INCLUDE "maps/AzaleaGym.asm"
-
 
 SECTION "Map Scripts 17", ROMX
 
@@ -521,3 +519,4 @@ INCLUDE "maps/AncientRuinPresent.asm"
 SECTION "Map Scripts Overflow 9", ROMX
 
 INCLUDE "maps/AncientRuinPast.asm"
+INCLUDE "maps/AzaleaGym.asm"

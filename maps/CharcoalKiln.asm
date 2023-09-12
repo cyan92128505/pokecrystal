@@ -81,12 +81,13 @@ CharcoalKilnBossText1:
 	cont "from the town."
 
 	para "The forest's pro-"
-	line "tector may be"
-	cont "angry with us…"
+	line "tector will be"
+	cont "angry with us."
 
-	para "It may be a bad"
-	line "omen. We should"
-	cont "stay in."
+	para "I must punish"
+	line "myself for"
+	cont "letting this"
+	cont "happen."
 	done
 
 CharcoalKilnBossText2:
@@ -97,53 +98,57 @@ CharcoalKilnBossText2:
 	line "hasn't come back"
 	cont "from ILEX FOREST."
 
-	para "Where in the world"
-	line "is that lazy guy?"
+	para "He must have"
+	line "been sacrificed"
+	cont "to appease the"
+	cont "protector CELEBI."
 	done
 
 CharcoalKilnBossText3:
-	text "You chased off"
-	line "TEAM ROCKET and"
+	text "You defeated"
+	line "TEAM ROCKET!"
 
-	para "went to ILEX"
-	line "FOREST alone?"
+	para "And you freed"
+	line "the SLOWPOKE."
 
-	para "That takes guts!"
-	line "I like that. Come"
-	cont "train with us."
+	para "You are a hero"
+	line "in this town!"
 	done
 
 CharcoalKilnApprenticeText1:
 	text "Where have all the"
 	line "SLOWPOKE gone?"
 
-	para "Are they out play-"
-	line "ing somewhere?"
+	para "The spirits of"
+	line "the forest wont"
+	cont "be happy."
+
+	para "I better go"
+	line "calm them."
 	done
 
 CharcoalKilnApprenticeText2:
-	text "I'm sorry--I for-"
-	line "got to thank you."
+	text "You are a Hero."
 
-	para "This is CHARCOAL"
-	line "that I made."
+	para "For all your"
+	line "help please"
+	cont "take this!"
 
-	para "Fire-type #MON"
-	line "would be happy to"
-	cont "hold that."
+	para "CHARCOAL will"
+	line "make FIRE moves"
+	cont "much stronger."
 	done
 
 CharcoalKilnApprenticeText3:
-	text "The SLOWPOKE came"
-	line "back, and you even"
-	cont "found FARFETCH'D."
-
-	para "You're the cool-"
-	line "est, man!"
+	text "With the SLOWPOKE"
+	line "back we have"
+	cont "plenty of"
+	cont "sacrifices for"
+	cont "the spirits."
 	done
 
 FarfetchdText:
-	text "FARFETCH'D: Kwaa!"
+	text "MURKROW!"
 	done
 
 CharcoalKiln_MapEvents:
@@ -163,4 +168,4 @@ CharcoalKiln_MapEvents:
 	def_object_events
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, EVENT_CHARCOAL_KILN_BOSS
 	object_event  5,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, EVENT_CHARCOAL_KILN_APPRENTICE
-	object_event  5,  6, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D
+	object_event  5,  6, SPRITE_BIRD, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D

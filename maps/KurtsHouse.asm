@@ -458,38 +458,30 @@ KurtsHouseKurtGetStartedText:
 KurtsHouseKurtMakingBallsMustWaitText:
 	text "Hm? Who are you?"
 
-	para "<PLAYER>, eh? You"
-	line "want me to make"
-	cont "some BALLS?"
+	para "You must want"
+	line "some of my"
+	cont "special # BALLS."
 
-	para "Sorry, but that'll"
-	line "have to wait."
+	para "But I have more"
+	line "important business"
+	cont "right now."
 
-	para "Do you know TEAM"
-	line "ROCKET? Ah, don't"
+	para "TEAM ROCKET have"
+	line "taken over the"
+	cont "SLOWPOKE WELL."
 
-	para "worry. I'll tell"
-	line "you anyhow."
+	para "They are a group"
+	line "for KANTO that"
+	cont "exploit and"
+	cont "traffic #MON."
 
-	para "TEAM ROCKET's an"
-	line "evil gang that"
+	para "They are scum."
 
-	para "uses #MON for"
-	line "their dirty work."
-
-	para "They're supposed"
-	line "to have disbanded"
-	cont "three years ago."
-
-	para "Anyway, they're at"
-	line "the WELL, cutting"
-
-	para "off SLOWPOKETAILS"
-	line "for sale!"
-
-	para "So I'm going to"
-	line "go give them a"
-	cont "lesson in pain!"
+	para "I am going to"
+	line "give them a"
+	cont "whopping they"
+	cont "wont soon be"
+	cont "forgetting!"
 
 	para "Hang on, SLOWPOKE!"
 	line "Old KURT is on his"
@@ -502,8 +494,6 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	para "You handled your-"
 	line "self like a real"
 	cont "hero at the WELL."
-
-	para "I like your style!"
 
 	para "I would be honored"
 	line "to make BALLS for"
@@ -525,6 +515,12 @@ KurtsHouseKurtBallsFromApricornsText:
 
 	para "I'll make BALLS"
 	line "out of them."
+
+	para "They have all"
+	line "sorts of special"
+	cont "effects that make"
+	cont "it easier to catch"
+	cont "certain #MON."
 	done
 
 KurtsHouseKurtAskYouHaveAnApricornText:
@@ -606,23 +602,31 @@ KurtsHouseKurtThisBallStartedToShakeText:
 
 KurtsGranddaughterSlowpokeGoneText:
 	text "The SLOWPOKE are"
-	line "gone… Were they"
+	line "gone…"
 
 	para "taken away by bad"
 	line "people?"
+
+	para "BUGSY will make"
+	line "them suffer."
 	done
 
 KurtsGranddaughterLonelyText:
 	text "Grandpa's gone…"
-	line "I'm so lonely…"
+
+	para "I'm worried he"
+	line "could get hurt."
 	done
 
 KurtsGranddaughterSlowpokeBackText:
 	text "The SLOWPOKE my"
 	line "dad gave me came"
+	cont "back!"
 
-	para "back! Its TAIL is"
-	line "growing back too!"
+	para "I thought I"
+	line "had scared it"
+	cont "away with too"
+	cont "many cuddles!"
 	done
 
 KurtsGranddaughterDadText:

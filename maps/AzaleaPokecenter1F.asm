@@ -26,32 +26,28 @@ AzaleaPokecenter1FPokefanFScript:
 	jumptextfaceplayer AzaleaPokecenter1FPokefanFText
 
 AzaleaPokecenter1FGentlemanText:
-	text "Do your #MON"
-	line "know HM moves?"
+	text "There must be a"
+	line "way to make some"
+	cont "money from all"
+	cont "these SLOWPOKE."
 
-	para "Those moves can"
-	line "be used even if"
-
-	para "your #MON has"
-	line "fainted."
-	done
-
-AzaleaPokecenter1FUnusedText: ; unreferenced
-	text "This BILL guy"
-	line "created the system"
-
-	para "for storing"
-	line "#MON in a PC."
-
-	para "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
+	para "Perhaps I can"
+	line "refine some sort"
+	cont "of hallucinogen"
+	cont "from them..."
 	done
 
 AzaleaPokecenter1FFishingGuruText:
 	text "BILL's PC can"
 	line "store up to 20"
 	cont "#MON per BOX."
+
+	para "I have no idea"
+	line "how it works."
+
+	para "I wonder if I"
+	line "can store people"
+	cont "in boxes..."
 	done
 
 AzaleaPokecenter1FPokefanFText:

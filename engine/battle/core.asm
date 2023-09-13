@@ -7042,6 +7042,10 @@ LoadEnemyMon:
 	call CopyBytes
 
 ; Saw this mon
+    ld a, [wBattleType]
+    cp BATTLETYPE_BATTLE_FRONTIER
+    jr z, .skipSeen
+
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	ld c, a
@@ -7049,6 +7053,7 @@ LoadEnemyMon:
 	ld hl, wPokedexSeen
 	predef SmallFarFlagAction
 
+.skipSeen
 	ld hl, wEnemyMonStats
 	ld de, wEnemyStats
 	ld bc, NUM_EXP_STATS * 2

@@ -49,32 +49,29 @@ SlowpokeWellB2FKingsRock:
 	itemball KINGS_ROCK
 
 SlowpokeWellB2FGymGuideText:
-	text "I'm waiting to see"
-	line "SLOWPOKE's moment"
-	cont "of evolution."
+	text "I'm observing"
+	line "the complex social"
+	cont "structure of the"
+	cont "SLOWPOKE."
 
-	para "Through observa-"
-	line "tion, I made a new"
-	cont "discovery."
+	para "...."
 
-	para "A SLOWPOKE with a"
-	line "KING'S ROCK often"
+	para "Ok I'm not a"
+	line "scientist but"
+	cont "these glasses"
+	cont "make me look"
+	cont "smart don't they?"
 
-	para "gets bitten by a"
-	line "SHELLDER."
-
-	para "Here, I'll share a"
-	line "KING'S ROCK with"
-	cont "you."
+	para "Here you can have"
+	line "a pair."
 	done
 
 SlowpokeWellB2FGymGuideText_GotLeftovers:
-	text "I'm going to be"
-	line "like SLOWPOKE."
-
-	para "I'll wait patient-"
-	line "ly, so I can see"
-	cont "one evolve."
+	text "Once I understand"
+	line "their ways I will"
+	cont "live with them"
+	cont "and write a book"
+	cont "about it."
 	done
 	
 SlowpokeWellB2FFieldMon1Script:

@@ -2440,7 +2440,7 @@ ExplainImpossibleTrialText:
     text "IMPOSSIBLE TRIAL!"
 
     para "It consists of 4"
-    cont "total battles."
+    line "total battles."
 
     para "Your #MON are"
     line "not healed during"

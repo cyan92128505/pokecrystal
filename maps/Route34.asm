@@ -501,130 +501,153 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	step_end
 
 YoungsterSamuelSeenText:
-	text "This is where I do"
-	line "my training!"
+	text "My #MON are"
+	line "far cuter than"
+	cont "yours."
+
+	para "That's the only"
+	line "victory that"
+	cont "matters!"
 	done
 
 YoungsterSamuelBeatenText:
-	text "Beaten by a"
-	line "passing stranger!"
-	done
-
-YoungsterSamuelMobileText: ; unreferenced
-	text "Have you been to"
-	line "GOLDENROD CITY?"
-
-	para "Weren't you amazed"
-	line "by how they've"
-
-	para "changed the"
-	line "#MON CENTER?"
+	text "Strength isn't"
+	line "my forte."
 	done
 
 YoungsterSamuelAfterText:
-	text "I'm going to train"
-	line "even harder."
+	text "My #MON are"
+	line "so cute."
 
-	para "After all, I'm"
-	line "trying to become"
-	cont "a GYM LEADER."
+	para "All the girls"
+	line "talk to me."
 	done
 
 YoungsterIanSeenText:
-	text "I'm the best in my"
-	line "class at #MON."
+	text "Have you heard"
+	line "of ERIKA?"
+
+	para "She is a GRASS"
+	line "GYM LEADER in"
+	cont "KANTO."
+
+	para "I'm going to be"
+	line "the first GRASS"
+	cont "GYM LEADER in"
+	cont "JOHTO!"
 	done
 
 YoungsterIanBeatenText:
-	text "No! There are bet-"
-	line "ter trainers…"
+	text "It's hard using"
+	line "just one TYPE."
 	done
 
 YoungsterIanAfterText:
-	text "I'm trying hard so"
-	line "I can be the star"
-	cont "in my class."
+	text "GRASS has a"
+	line "lot of weaknesses."
 	done
 
 CamperTodd1SeenText:
-	text "I'm confident in"
-	line "my ability to"
-	cont "raise #MON."
+	text "It is important"
+	line "to have TYPE"
+	cont "coverage."
 
-	para "Want to see?"
+	para "Every team needs"
+	line "a WATER, GRASS,"
+	cont "FIRE core."
 	done
 
 CamperTodd1BeatenText:
-	text "Did I screw up my"
-	line "training?"
+	text "You broke my core."
 	done
 
 CamperTodd1AfterText:
-	text "Maybe I should"
-	line "take one to a DAY-"
-
-	para "CARE. Or maybe use"
-	line "some items…"
+	text "I need to"
+	line "level up and"
+	cont "have good moves"
+	cont "too."
 	done
 
 CamperToddSaleText:
-	text "Shopping under the"
-	line "sky!"
-
-	para "It feels so nice"
-	line "up on a rooftop."
+	text "A good trainer"
+	line "can sense a"
+	cont "bargain!"
 	done
 
 PicnickerGina1SeenText:
-	text "Are you a trainer?"
+	text "I'm from KANTO."
 
-	para "Let's have a"
-	line "practice battle."
+	para "I came here to"
+	line "escape the war."
+
+	para "We have different"
+	line "starters in KANTO."
 	done
 
 PicnickerGina1BeatenText:
-	text "Oh, no! I just"
-	line "can't win…"
+	text "JOHTO #MON"
+	line "are strong too."
 	done
 
 PicnickerGina1AfterText:
-	text "You're too strong"
-	line "to be a practice"
-	cont "partner."
+	text "When my #MON"
+	line "evolve you'll"
+	cont "see the full"
+	cont "power of KANTO."
 	done
 
 OfficerKeithSeenText:
 	text "Who goes there?"
-	line "What are you up"
-	cont "to?"
+
+	para "Stop criminal"
+	line "scum!"
 	done
 
 OfficerKeithWinText:
-	text "You're a tough"
-	line "little kid."
+	text "Officer down!"
 	done
 
 OfficerKeithAfterText:
-	text "Yep, I see nothing"
-	line "wrong today. You"
+	text "It's late for"
+	line "you to be out."
 
-	para "be good and stay"
-	line "out of trouble."
+	para "I understand."
+
+	para "On a peaceful"
+	line "night walk."
+
+	para "Watch out for"
+	line "the night"
+	cont "stalker..."
+
+	para "HYPNO."
 	done
 
 OfficerKeithDaytimeText:
-	text "I'm on patrol for"
-	line "suspicious indi-"
-	cont "viduals."
+	text "I have a big"
+	line "responsibility."
+
+	para "I am charged with"
+	line "protecting the"
+	cont "city."
+
+	para "I fear nobody."
+
+	para "Not even WALLACE!"
 	done
 
 PokefanmBrandonSeenText:
-	text "I just got my"
-	line "#MON back from"
-	cont "DAY-CARE."
+	text "All big cities"
+	line "attract criminals."
 
-	para "Let's see how much"
-	line "stronger it got!"
+	para "But where there"
+	line "are criminals."
+
+	para "There are heroes"
+	line "ready to face"
+	cont "them!"
+
+	para "Like me!!"
 	done
 
 PokefanmBrandonBeatenText:
@@ -633,12 +656,15 @@ PokefanmBrandonBeatenText:
 	done
 
 PokefanmBrandonAfterText:
-	text "My #MON knew"
-	line "moves I didn't"
-	cont "know it had."
+	text "I see without"
+	line "seeing."
 
-	para "That confounded me"
-	line "to no end!"
+	para "To me darkness"
+	line "is as clear as"
+	cont "daylight."
+
+	para "I am the"
+	line "BATMAN!"
 	done
 
 CooltrainerfIreneSeenText:
@@ -814,7 +840,7 @@ Route34_MapEvents:
 	bg_event 16,  6, BGEVENT_READ, Route34Sign
 	bg_event 17, 33, BGEVENT_READ, Route34TrainerTips
 	bg_event 14, 13, BGEVENT_READ, DayCareSign
-	bg_event 12, 32, BGEVENT_ITEM, Route34HiddenRareCandy
+	bg_event  4, 20, BGEVENT_ITEM, Route34HiddenRareCandy
 	bg_event 21, 19, BGEVENT_ITEM, Route34HiddenSuperPotion
 
 	def_object_events
@@ -832,6 +858,6 @@ Route34_MapEvents:
 	object_event 10, 51, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
 
 	object_event 14,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route34FieldMon1Script, EVENT_FIELD_MON_1
-   	object_event  8, 34, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route34FieldMon2Script, EVENT_FIELD_MON_2
-   	object_event 18, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34FieldMon3Script, EVENT_FIELD_MON_3
-   	object_event 12, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route34FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  9, 34, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route34FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 18, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 12, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route34FieldMon4Script, EVENT_FIELD_MON_4

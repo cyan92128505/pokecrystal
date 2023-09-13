@@ -1,9 +1,10 @@
 GinaAskNumber1Text:
-	text "Whenever I see a"
-	line "strong trainer, I"
+	text "I want to show"
+	line "you the power"
+	cont "of KANTO."
 
-	para "want to be their"
-	line "cheerleader."
+	para "Want to give me"
+	line "your number?"
 
 	para "When I'm on my"
 	line "walk, I sometimes"
@@ -11,12 +12,6 @@ GinaAskNumber1Text:
 
 	para "If I get anything,"
 	line "you can have it!"
-
-	para "Want to give me"
-	line "your number?"
-
-	para "I'll call as soon"
-	line "as I get anything."
 	done
 
 GinaAskNumber2Text:
@@ -33,9 +28,7 @@ GinaNumberAcceptedText:
 	done
 
 GinaNumberDeclinedText:
-	text "Is that so? Well,"
-	line "I'll still be"
-	cont "rooting for you!"
+	text "What a pity."
 	done
 
 GinaPhoneFullText:

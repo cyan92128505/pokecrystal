@@ -143,158 +143,177 @@ KurtSlowpokeWellVictoryMovementData:
 	step_end
 
 SlowpokeWellB1FKurtText:
-	text "KURT: Hey there,"
-	line "<PLAYER>!"
+	text "Uhhhhh..."
 
-	para "The guard up top"
-	line "took off when I"
-	cont "shouted at him."
+	para "Oh my back..."
 
-	para "But then I took a"
-	line "tumble down the"
-	cont "WELL."
+	para "My back..."
 
-	para "I slammed down"
-	line "hard on my back,"
-	cont "so I can't move."
+	para "I fell down the"
+	line "well."
 
-	para "Rats! If I were"
-	line "fit, my #MON"
+	para "Don't worry."
 
-	para "would've punished"
-	line "them…"
+	para "I'll be fine."
 
-	para "Ah, it can't be"
-	line "helped."
+	para "But I can't fight"
+	line "the ROCKETS like"
+	cont "this."
 
-	para "<PLAYER>, show them"
-	line "how gutsy you are"
-	cont "in my place!"
+	para "You must do it."
+
+	para "Use your rage."
+
+	para "seize upon your"
+	line "hate..."
+
+	para "Free the dear"
+	line "SLOWPOKE."
+
+	para "For me..."
 	done
 
 KurtLeaveSlowpokeWellText:
-	text "KURT: Way to go,"
-	line "<PLAYER>!"
+	text "You did it!"
 
-	para "TEAM ROCKET has"
-	line "taken off."
+	para "I seen the"
+	line "ROCKETS run"
+	cont "away with fear"
+	cont "in their eyes."
 
-	para "My back's better"
-	line "too. Let's get out"
-	cont "of here."
+	para "You are a brave"
+	line "warrior."
+
+	para "Let's get out"
+	line "of here."
 	done
 
 GruntM29SeenText:
-	text "Darn! I was stand-"
-	line "ing guard up top"
+	text "Ha that old man"
+	line "tried to shout"
+	cont "at me."
 
-	para "when some old coot"
-	line "yelled at me."
+	para "I pushed him"
+	line "down here."
 
-	para "He startled me so"
-	line "much that I fell"
-	cont "down here."
+	para "He seems in a"
+	line "bad way."
 
-	para "I think I'll vent"
-	line "my anger by taking"
-	cont "it out on you!"
+	para "If he dies."
+
+	para "He dies."
+
+	para "Now you should"
+	line "leave if you"
+	cont "don't want to"
+	cont "join him."
 	done
 
 GruntM29BeatenText:
-	text "Arrgh! This is NOT"
-	line "my day!"
+	text "I implore you!"
+
+	para "Mercy!"
+
+	para "Mercy!"
 	done
 
 GruntM29AfterBattleText:
-	text "Sure, we've been"
-	line "hacking the tails"
+	text "I didn't push"
+	line "the old man."
 
-	para "off SLOWPOKE and"
-	line "selling them."
+	para "He fell!"
 
-	para "Everything we do"
-	line "is for profit."
-
-	para "That's right!"
-	line "We're TEAM ROCKET,"
-
-	para "and we'll do any-"
-	line "thing for money!"
+	para "In fact I tried"
+	line "to save him!"
 	done
 
 GruntM1SeenText:
-	text "What do you want?"
+	text "I can't allow"
+	line "you to interfere"
+	cont "any further."
 
-	para "If you interrupt"
-	line "our work, don't"
-	cont "expect any mercy!"
+	para "I need this to"
+	line "go well to secure"
+	cont "my promotion."
 	done
 
 GruntM1BeatenText:
-	text "You did OK today,"
-	line "but wait till next"
-	cont "time!"
+	text "You are too late."
 	done
 
 TrainerGruntM1WhenTalkText:
-	text "Yeah, TEAM ROCKET"
-	line "was broken up"
-	cont "three years ago."
+	text "OK, OK..."
 
-	para "But we continued"
-	line "our activities"
-	cont "underground."
+	para "I'll tell you"
+	line "what I know."
 
-	para "Now you can have"
-	line "fun watching us"
-	cont "stir up trouble!"
+	para "We are looking"
+	line "for ways to win"
+	cont "the war with HOEN."
+
+	para "Our scientists are"
+	line "interested in"
+	cont "SLOWPOKE."
+
+	para "Something about"
+	line "their brain"
+	cont "wave patterns."
+
+	para "That is all I"
+	line "know!"
+
+	para "We already have"
+	line "enough data."
+
+	para "See you around."
 	done
 
 GruntM2SeenText:
-	text "Quit taking SLOW-"
-	line "POKETAILS?"
+	text "Our leader can"
+	line "command the"
+	cont "SLOWPOKE."
 
-	para "If we obeyed you,"
-	line "TEAM ROCKET's rep"
-	cont "would be ruined!"
+	para "We are trying"
+	line "to help them."
 	done
 
 GruntM2BeatenText:
-	text "Just…"
-	line "Too strong…"
+	text "Another hero."
 	done
 
 GruntM2AfterBattleText:
-	text "We need the money,"
-	line "but selling SLOW-"
-	cont "POKETAILS?"
-
-	para "It's tough being a"
-	line "ROCKET GRUNT!"
+	text "You wont get"
+	line "any thanks from"
+	cont "these SLOWPOKE."
 	done
 
 GruntF1SeenText:
-	text "Stop taking TAILS?"
-
-	para "Yeah, just try to"
-	line "defeat all of us!"
+	text "These dumb"
+	line "creatures should"
+	cont "be happy them"
+	cont "are finally"
+	cont "useful for"
+	cont "something."
 	done
 
 GruntF1BeatenText:
-	text "You rotten brat!"
+	text "Silly kid!"
 	done
 
 GruntF1AfterBattleText:
-	text "SLOWPOKETAILS"
-	line "grow back fast!"
+	text "You are just"
+	line "going to get hurt."
 
-	para "What's wrong with"
-	line "selling them?"
+	para "You should go"
+	line "back."
+
+	para "I wont say I"
+	line "seen you."
 	done
 
 SlowpokeWellB1FSlowpokeWithMailText:
-	text "A SLOWPOKE with"
-	line "its TAIL cut off…"
+	text "A SLOWPOKE seems"
+	line "concerned."
 
 	para "Huh? It has MAIL."
 	line "Read it?"
@@ -314,8 +333,7 @@ SlowpokeWellB1FSlowpokeMailText:
 	done
 
 SlowpokeWellB1FTaillessSlowpokeText:
-	text "A SLOWPOKE with"
-	line "its TAIL cut off…"
+	text "SLOWPOKE..."
 	done
 
 SlowpokeWellB1F_MapEvents:

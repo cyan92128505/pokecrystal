@@ -272,7 +272,8 @@ Kurt1:
 	setevent EVENT_GAVE_GS_BALL_TO_KURT
 	takeitem GS_BALL
 	setflag ENGINE_KURT_MAKING_BALLS
-	end
+	opentext
+	sjump .NotMakingBalls
 
 .GaveGSBallToKurt:
 	checkflag ENGINE_KURT_MAKING_BALLS

@@ -489,7 +489,7 @@ PokeBallEffect:
 
 .ditto
 	ld a, DITTO
-	ld [wTempEnemyMonSpecies], a
+	;ld [wTempEnemyMonSpecies], a
 	jr .load_data
 
 .not_ditto

@@ -122,6 +122,11 @@ ApprenticeGivesCutText:
     cont "the move it"
     cont "will be able"
     cont "to use it."
+
+    para "You will need"
+    line "to have the"
+    cont "AZALEA GYM"
+    cont "BADGE though."
     done
 
 AlreadyGotCutText:
@@ -209,11 +214,6 @@ IlexForestShrineScript:
 	end
 
 .CelebiEvent:
-	takeitem GS_BALL
-	clearevent EVENT_FOREST_IS_RESTLESS
-	setevent EVENT_AZALEA_TOWN_KURT
-	disappear ILEXFOREST_LASS
-	clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	writetext Text_InsertGSBall
 	waitbutton
 	closetext
@@ -224,14 +224,20 @@ IlexForestShrineScript:
 	pause 30
 	turnobject PLAYER, DOWN
 	pause 20
-	clearflag ENGINE_FOREST_IS_RESTLESS
 	special CelebiShrineEvent
 	loadwildmon CELEBI, 70
 	startbattle
 	reloadmapafterbattle
 	pause 20
-	special CheckCaughtCelebi
+	setval CELEBI
+	special MonCheck
 	iffalse .DidntCatchCelebi
+	takeitem GS_BALL
+	clearevent EVENT_FOREST_IS_RESTLESS
+	setevent EVENT_AZALEA_TOWN_KURT
+	disappear ILEXFOREST_LASS
+	clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
+	clearflag ENGINE_FOREST_IS_RESTLESS
 	appear ILEXFOREST_KURT
 	applymovement ILEXFOREST_KURT, IlexForestKurtStepsUpMovement
 	opentext
@@ -498,123 +504,53 @@ IlexForestPlayerStepsDownMovement:
 	remove_fixed_facing
 	step_end
 
-IlexForestApprenticeIntroText:
-	text "Oh, man… My boss"
-	line "is going to be"
-	cont "steaming…"
-
-	para "The FARFETCH'D"
-	line "that CUTS trees"
-
-	para "for charcoal took"
-	line "off on me."
-
-	para "I can't go looking"
-	line "for it here in the"
-	cont "ILEX FOREST."
-
-	para "It's too big, dark"
-	line "and scary for me…"
-	done
-
-IlexForestApprenticeAfterText:
-	text "Wow! Thanks a"
-	line "whole bunch!"
-
-	para "My boss's #MON"
-	line "won't obey me be-"
-	cont "cause I don't have"
-	cont "a BADGE."
-	done
-
-Text_ItsTheMissingPokemon:
-	text "It's the missing"
-	line "#MON!"
-	done
-
-Text_Kwaaaa:
-	text "FARFETCH'D: Kwaa!"
-	done
-
-Text_CharcoalMasterIntro:
-	text "Ah! My FARFETCH'D!"
-
-	para "You found it for"
-	line "us, kid?"
-
-	para "Without it, we"
-	line "wouldn't be able"
-
-	para "to CUT trees for"
-	line "charcoal."
-
-	para "Thanks, kid!"
-
-	para "Now, how can I"
-	line "thank you…"
-
-	para "I know! Here, take"
-	line "this."
-	done
-
-Text_CharcoalMasterOutro:
-	text "That's the CUT HM."
-	line "Teach that to a"
-
-	para "#MON to clear"
-	line "small trees."
-
-	para "Of course, you"
-	line "have to have the"
-
-	para "GYM BADGE from"
-	line "AZALEA to use it."
-	done
-
-Text_CharcoalMasterTalkAfter:
-	text "Do you want to"
-	line "apprentice as a"
-
-	para "charcoal maker"
-	line "with me?"
-
-	para "You'll be first-"
-	line "rate in ten years!"
-	done
-
 Text_HeadbuttIntro:
 	text "What am I doing?"
 
-	para "I'm shaking trees"
-	line "using HEADBUTT."
+	para "I am strengthening"
+	line "the skulls of my"
+	cont "#MON."
 
-	para "It's fun. Here,"
-	line "you try it too!"
+	para "By using HEADBUTT"
+	line "on this tree."
+
+	para "It's an ancient"
+	line "means of training."
 	done
 
 Text_HeadbuttOutro:
-	text "Rattle trees with"
-	line "HEADBUTT. Some-"
-	cont "times, sleeping"
-	cont "#MON fall out."
+	text "UH!"
+
+	para "HURRAHH!"
+
+	para "Who are you"
+	line "again!?"
+
+	para "This tree wont"
+	line "HEADBUTT itself."
 	done
 
 Text_IlexForestLass:
-	text "Did something"
-	line "happen to the"
-	cont "forest's guardian?"
+	text "Something is"
+	line "wrong."
+
+	para "The forest is"
+	line "restless."
+
+	para "The spirit of"
+	line "the forest is"
+	cont "looking for you."
 	done
 
 IlexForestSignpostText:
 	text "ILEX FOREST is"
-	line "so overgrown with"
+	line "said to be over"
+	cont "1000 years old."
 
-	para "trees that you"
-	line "can't see the sky."
-
-	para "Please watch out"
-	line "for items that may"
-	cont "have been dropped."
+	para "The ancients"
+	line "believed a"
+	cont "mythical protector"
+	cont "watches over it."
 	done
 
 Text_IlexForestShrine:
@@ -652,31 +588,33 @@ Text_InsertGSBall:
 	done
 
 Text_KurtCaughtCelebi:
-	text "Whew, wasn't that"
-	line "something!"
+	text "I do not"
+	line "believe it!"
 
-	para "<PLAYER>, that was"
-	line "fantastic. Thanks!"
+	para "You have been"
+	line "chosen by the"
+	cont "protector of"
+	cont "the forest."
 
-	para "The legends about"
-	line "that SHRINE were"
-	cont "real after all."
+	para "You will do"
+	line "great things"
+	cont "and be remembered"
+	cont "for all time."
 
-	para "I feel inspired by"
-	line "what I just saw."
-
-	para "It motivates me to"
-	line "make better BALLS!"
-
-	para "I'm going!"
+	para "I would be"
+	line "honoured to"
+	cont "make # BALLS"
+	cont "for you!"
 	done
 
 BugCatcherWayneSeenText:
-	text "Don't sneak up on"
-	line "me like that!"
+	text "There is a"
+	line "colony of"
+	cont "ancient BUG"
+	cont "#MON in"
+	cont "here somewhere."
 
-	para "You frightened a"
-	line "#MON away!"
+	para "I will find it."
 	done
 
 BugCatcherWayneBeatenText:
@@ -685,16 +623,12 @@ BugCatcherWayneBeatenText:
 	done
 
 BugCatcherWayneAfterBattleText:
-	text "A #MON I've"
-	line "never seen before"
+	text "They must be"
+	line "much further"
+	cont "SOUTH."
 
-	para "fell out of the"
-	line "tree when I used"
-	cont "HEADBUTT."
-
-	para "I ought to use"
-	line "HEADBUTT in other"
-	cont "places too."
+	para "The hunt"
+	line "continues."
 	done
 
 IlexForestFieldMon1Script:

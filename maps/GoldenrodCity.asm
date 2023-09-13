@@ -296,19 +296,42 @@ GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement:
 	step_end
 
 GoldenrodCityPokefanMText:
-	text "They built the new"
-	line "RADIO TOWER to"
+	text "I keep applying"
+	line "to be a radio"
+	cont "host and keep"
+	cont "getting turned"
+	cont "away."
 
-	para "replace the old,"
-	line "creaky one."
+	para "Let me pitch"
+	line "my idea to you."
+
+	para "A show where we"
+	line "rank #MON"
+	cont "by how attractive"
+	cont "they would be if"
+	cont "they were human!"
+
+	para "Sounds great"
+	line "right!?..."
 	done
 
 GoldenrodCityYoungster1Text:
-	text "I know there's a"
-	line "new BIKE SHOP, but"
+	text "I used to have"
+	line "a little brother."
 
-	para "I can't find it"
-	line "anywhere."
+	para "Then he just"
+	line "disappeared one"
+	cont "night."
+
+	para "I'm sure it was"
+	line "the night"
+	cont "stalker."
+
+	para "A HYPNO that"
+	line "roams the street"
+	cont "at night."
+
+	para "I will find it!"
 	done
 
 GoldenrodCityCooltrainerF1Text:
@@ -490,11 +513,6 @@ GoldenrodCityUndergroundSignSouthText:
 	line "ENTRANCE"
 	done
 
-GoldenrodCityPokeComCenterSignText: ; unreferenced
-	text "For Mobile Tips!"
-	line "#COM CENTER"
-	done
-
 GoldenrodCityFlowerShopSignText:
 	text "Blooming Beautiful"
 	line "FLOWER SHOP"
@@ -505,8 +523,7 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
 
 	para "I can teach your"
 	line "#MON amazing"
-
-	para "moves!"
+	cont "moves!"
 
     para "Moves that can"
     line "win battles!"

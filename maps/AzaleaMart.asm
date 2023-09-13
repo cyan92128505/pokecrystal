@@ -32,9 +32,11 @@ AzaleaMartCooltrainerMText:
 	cont "if you catch"
 	cont "them with it."
 
-	para "I want my"
-	line "#MON to be"
-	cont "happy."
+	para "I'm going to"
+	line "catch a RALTS"
+	cont "so I can have"
+	cont "a GARDEVOIR"
+	cont "that loves me."
 	done
 
 AzaleaMartBugCatcherText:

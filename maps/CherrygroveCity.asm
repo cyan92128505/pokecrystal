@@ -919,7 +919,7 @@ Peasant2Script:
     iftrue .end
     writetext TakeNuggetText
     waitbutton
-    verbosegiveitem NUGGET
+    verbosegiveitem FOCUS_SASH
     setevent EVENT_GOT_JULIUS_NUGGET
 .end
     closetext

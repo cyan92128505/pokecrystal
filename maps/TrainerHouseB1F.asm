@@ -1572,7 +1572,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer COOLTRAINERM, MASTER_TOBIAS
+    loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1590,7 +1590,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer GIOVANNI, MASTER_GIOVANNI
+    loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1600,7 +1600,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer MYSTICALMAN, MASTER_EUSINE
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1610,45 +1610,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer STEVEN, MASTER_STEVEN
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext AcceptPrize
-	waitbutton
-	verbosegiveitem AMBROSIA
-	writetext NowHeal
-	waitbutton
-	special LoadPokemonData
-	special HealParty
-	writetext Trial10Text
-	waitbutton
-	closetext
-
-    winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CYNTHIA, MASTER_CYNTHIA
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext Trial11Text
-	waitbutton
-	closetext
-	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
     loadtrainer LEON, MASTER_LEON
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext Trial12Text
-	waitbutton
-	closetext
-	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer POKEMON_PROF, MASTER_OAK
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1671,9 +1633,9 @@ BattleTrialReceptionistScript:
 	applymovement BATTLE_TRIAL_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 
-    winlosstext victoryText, defeatText
+	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer WALLACE, MASTER_WALLACE
+    loadtrainer POKEMON_PROF, MASTER_OAK
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1681,24 +1643,14 @@ BattleTrialReceptionistScript:
 	writetext Trial2Text
 	waitbutton
 	closetext
-	winlosstext victoryText, defeatText
+    winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer BLUE, MASTER_SETO
+    loadtrainer WALLACE, MASTER_WALLACE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
 	writetext Trial3Text
-	waitbutton
-	closetext
-    winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, MASTER_YAMI
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext Trial4Text
 	waitbutton
 	closetext
 	winlosstext victoryText, defeatText
@@ -1708,7 +1660,7 @@ BattleTrialReceptionistScript:
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
-	writetext Trial5Text
+	writetext Trial4Text
 	waitbutton
 	closetext
 	winlosstext victoryText, defeatText
@@ -2476,7 +2428,7 @@ ExplainStandardTrialText:
 
 ExplainMasterTrialText:
     text "The MASTER TRIAL"
-    line "consists of 12"
+    line "consists of 9"
     cont "total battles."
 
     para "With your #MON"
@@ -2487,7 +2439,7 @@ ExplainMasterTrialText:
 ExplainImpossibleTrialText:
     text "IMPOSSIBLE TRIAL!"
 
-    para "It consists of 5"
+    para "It consists of 4"
     cont "total battles."
 
     para "Your #MON are"

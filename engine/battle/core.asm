@@ -5598,22 +5598,18 @@ BattleMenu_Pack:
 	call _LoadBattleFontsHPBar
 	call ClearSprites
 	ld a, [wBattleType]
-;	cp BATTLETYPE_TUTORIAL
-;	jr z, .tutorial2
 	call GetBattleMonBackpic
-
-;.tutorial2
-;	call GetEnemyMonFrontpic
-;	ld a, $1
-;	ld [wMenuCursorY], a
-;	call ExitMenu
-;	call UpdateBattleHUDs
-;	call WaitBGMap
-;	call LoadTilemapToTempTilemap
-;	call ClearWindowData
-;	call FinishBattleAnim
-;	and a
-;	ret
+	call GetEnemyMonFrontpic
+	ld a, $1
+	ld [wMenuCursorY], a
+	call ExitMenu
+	call UpdateBattleHUDs
+	call WaitBGMap
+	call LoadTilemapToTempTilemap
+	call ClearWindowData
+	call FinishBattleAnim
+	and a
+	ret
 
 .run
 	xor a

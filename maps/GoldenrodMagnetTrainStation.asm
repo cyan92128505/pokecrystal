@@ -14,10 +14,13 @@ GoldenrodMagnetTrainStation_MapScripts:
 GoldenrodMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_HOEN_INVASION_UNDERWAY
+	iftrue .noTrain
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .MagnetTrainToSaffron
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .MagnetTrainToSaffron
+.noTrain
 	writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText
 	waitbutton
 	closetext
@@ -27,8 +30,8 @@ GoldenrodMagnetTrainStationOfficerScript:
 	writetext GoldenrodMagnetTrainStationOfficerAreYouComingAboardText
 	yesorno
 	iffalse .DecidedNotToRide
-	checkitem PASS
-	iffalse .PassNotInBag
+	;checkitem PASS
+	;iffalse .PassNotInBag
 	writetext GoldenrodMagnetTrainStationOfficerRightThisWayText
 	waitbutton
 	closetext
@@ -46,11 +49,11 @@ GoldenrodMagnetTrainStationOfficerScript:
 	turn_head DOWN
 	step_end
 
-.PassNotInBag:
-	writetext GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText
-	waitbutton
-	closetext
-	end
+;.PassNotInBag:
+;	writetext GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText
+;	waitbutton
+;	closetext
+;	end
 
 .DecidedNotToRide:
 	writetext GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText
@@ -129,17 +132,14 @@ GoldenrodMagnetTrainStationOfficerAreYouComingAboardText:
 	done
 
 GoldenrodMagnetTrainStationOfficerRightThisWayText:
-	text "May I see your"
-	line "rail PASS, please?"
-
-	para "OK. Right this"
+	text "OK. Right this"
 	line "way, please."
 	done
 
-GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText:
-	text "Sorry. You don't"
-	line "have a rail PASS."
-	done
+;GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText:
+;	text "Sorry. You don't"
+;	line "have a rail PASS."
+;	done
 
 GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText:
 	text "We hope to see you"

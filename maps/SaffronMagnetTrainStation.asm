@@ -49,11 +49,11 @@ SaffronMagnetTrainStationOfficerScript:
 	turn_head DOWN
 	step_end
 
-.PassNotInBag:
-	writetext SaffronMagnetTrainStationOfficerYouDontHaveAPassText
-	waitbutton
-	closetext
-	end
+;.PassNotInBag:
+;	writetext SaffronMagnetTrainStationOfficerYouDontHaveAPassText
+;	waitbutton
+;	closetext
+;	end
 
 .DecidedNotToRide:
 	writetext SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText
@@ -148,17 +148,14 @@ SaffronMagnetTrainStationOfficerAreYouComingOnBoardText:
 	done
 
 SaffronMagnetTrainStationOfficerRightThisWayText:
-	text "May I see your"
-	line "rail PASS, please?"
-
-	para "OK. Right this"
+	text "OK. Right this"
 	line "way, please."
 	done
 
-SaffronMagnetTrainStationOfficerYouDontHaveAPassText:
-	text "Sorry, but you"
-	line "don't have a PASS."
-	done
+;SaffronMagnetTrainStationOfficerYouDontHaveAPassText:
+;	text "Sorry, but you"
+;	line "don't have a PASS."
+;	done
 
 SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText:
 	text "We hope to see you"

@@ -461,7 +461,8 @@ KurtsHouseKurtMakingBallsMustWaitText:
 
 	para "You must want"
 	line "some of my"
-	cont "special # BALLS."
+	cont "special"
+	cont "# BALLS."
 
 	para "But I have more"
 	line "important business"

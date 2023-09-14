@@ -1657,25 +1657,25 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 36, DRAGONAIR
-	db 36, GABITE
-	db 36, SHELGON
+	db 30, DRAGONAIR
+	db 30, GABITE
+	db 30, SHELGON
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
 	db 75, DRAGONITE
 	; day
-	db 36, DRAGONAIR
-	db 36, GABITE
-	db 36, SHELGON
+	db 30, DRAGONAIR
+	db 30, GABITE
+	db 30, SHELGON
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
 	db 75, DRAGONITE
 	; nite
-	db 36, DRAGONAIR
-	db 36, GABITE
-	db 36, SHELGON
+	db 30, DRAGONAIR
+	db 30, GABITE
+	db 30, SHELGON
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR

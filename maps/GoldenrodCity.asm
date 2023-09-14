@@ -335,19 +335,26 @@ GoldenrodCityYoungster1Text:
 	done
 
 GoldenrodCityCooltrainerF1Text:
-	text "Is that man in"
-	line "black dressed up"
+	text "It's..."
 
-	para "like a TEAM ROCKET"
-	line "member? How silly!"
+	para "TEAM ROCKET!"
+
+	para "What are they"
+	line "doing in JOHTO."
+
+	para "Why can't KANTOs"
+	line "problems stay"
+	cont "in KANTO."
 	done
 
 GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
-	text "Was that man in"
-	line "black really part"
+	text "I'm glad those"
+	line "TEAM ROCKET scum"
+	cont "are gone."
 
-	para "of TEAM ROCKET? I"
-	line "can't believe it!"
+	para "I hope WALLACE"
+	line "puts an end to"
+	cont "them!"
 	done
 
 GoldenrodCityCooltrainerF2Text:
@@ -355,15 +362,11 @@ GoldenrodCityCooltrainerF2Text:
 	line "GOLDENROD CITY is"
 	cont "a landmark."
 
-	para "They're running a"
-	line "promotional cam- "
-	cont "paign right now."
-
-	para "They'll modify"
-	line "your #GEAR,"
-
-	para "so it can also"
-	line "serve as a radio."
+	para "They will update"
+	line "your #GEAR"
+	cont "with a RADIO"
+	cont "if you can pass"
+	cont "a tough quiz."
 	done
 
 GoldenrodCityCooltrainerF2Text_GotRadioCard:
@@ -372,45 +375,60 @@ GoldenrodCityCooltrainerF2Text_GotRadioCard:
 	done
 
 GoldenrodCityYoungster2Text:
-	text "E-he-he-he…"
+	text "I have heard"
+	line "there is a large"
+	cont "underground"
+	cont "facility in this"
+	cont "city."
 
-	para "I got in trouble"
-	line "for playing in the"
-
-	para "basement of the"
-	line "DEPT.STORE."
+	para "I wonder what"
+	line "secrets are"
+	cont "hiding down"
+	cont "there."
 	done
 
 GoldenrodCityLassText:
 	text "The man at that"
-	line "house rates your"
-	cont "#MON names."
+	line "house can rename"
+	cont "your #MON."
 
-	para "He can even rename"
-	line "your #MON."
+	para "He also will"
+	line "viciously critique"
+	cont "your nicknames."
 	done
 
 GoldenrodCityGrampsText:
-	text "Whew! This is one"
-	line "big town. I don't"
+	text "I'm an undercover"
+	line "detective."
 
-	para "know where any-"
-	line "thing is."
+	para "I suspect the"
+	line "BIKE SHOP owner"
+	cont "is a TEAM ROCKET"
+	cont "informant."
 	done
 
 GoldenrodCityRocketScoutText1:
-	text "So this is the"
-	line "RADIO TOWER…"
+	text "Look at it!"
+
+	para "It is beautiful."
+
+	para "This tower shall"
+	line "be our salvation"
+	cont "against the HOEN"
+	cont "onslaught."
 	done
 
 GoldenrodCityRocketScoutText2:
-	text "What do you want,"
-	line "you pest? Scram!"
+	text "You will thank"
+	line "us one day!"
 	done
 
 GoldenrodCityRocket1Text:
-	text "Stay out of the"
-	line "way! Beat it!"
+	text "Don't worry"
+	line "we are here to"
+	cont "help."
+
+	para "Now go away."
 	done
 
 GoldenrodCityRocket2Text:
@@ -422,31 +440,43 @@ GoldenrodCityRocket2Text:
 	done
 
 GoldenrodCityRocket3Text:
-	text "#MON? They're"
-	line "nothing more than"
+	text "We are the good"
+	line "guys here!"
 
-	para "tools for making"
-	line "money!"
+	para "We will protect"
+	line "everyone from"
+	cont "HOEN!"
+
+	para "If we get rich"
+	line "while doing it"
+	cont "I'll accept it."
 	done
 
 GoldenrodCityRocket4Text:
-	text "Our dream will"
-	line "soon come true…"
+	text "Man this is"
+	line "boring!"
 
-	para "It was such a long"
-	line "struggle…"
+	para "Just standing"
+	line "around hungry"
+	cont "all day."
 	done
 
 GoldenrodCityRocket5Text:
-	text "Hey, brat! You"
-	line "don't belong here!"
-	cont "Get lost!"
+	text "We are protecting"
+	line "the residents of"
+	cont "this city."
+
+	para "You better run"
+	line "along before I"
+	cont "protect you too."
 	done
 
 GoldenrodCityRocket6Text:
-	text "Come taste the"
-	line "true terror of"
-	cont "TEAM ROCKET!"
+	text "This is so"
+	line "cool!"
+
+	para "I always wanted"
+	line "to be the hero!"
 	done
 
 GoldenrodCityStationSignText:

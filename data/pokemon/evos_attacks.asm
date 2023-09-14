@@ -879,35 +879,48 @@ GrowlitheEvosAttacks:
 	db 9, EMBER
 	db 18, LEER
 	db 24, FLAME_WHEEL
+	db 28, ROAR
 	db 30, TAKE_DOWN
-	db 42, ROAR
-	db 50, FLAMETHROWER
+	db 33, CRUNCH
+	db 36, FLAMETHROWER
+	db 40, MORNING_SUN
+	db 42, EXTREMESPEED
+	db 45, FIRE_BLAST
+	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 ArcanineEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEER
-	db 1, TAKE_DOWN
-	db 1, FLAME_WHEEL
-	db 20, FLAME_WHEEL
-	db 30, MORNING_SUN
-	db 40, FLAMETHROWER
-	db 45, EXTREMESPEED
-	db 50, FIRE_BLAST
-	db 55, FLARE_BLITZ
+	db 1, BITE
+	db 9, EMBER
+	db 18, LEER
+	db 24, FLAME_WHEEL
+	db 28, ROAR
+	db 30, TAKE_DOWN
+	db 33, CRUNCH
+	db 36, FLAMETHROWER
+	db 40, MORNING_SUN
+	db 42, EXTREMESPEED
+	db 45, FIRE_BLAST
+	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 PoliwagEvosAttacks:
 	db EVOLVE_LEVEL, 25, POLIWHIRL
 	db 0 ; no more evolutions
 	db 1, BUBBLE
+	db 1, HYPNOSIS
+	db 1, WATER_GUN
 	db 7, HYPNOSIS
-	db 13, WATER_GUN
-	db 19, DOUBLESLAP
+	db 10, WATER_GUN
+	db 13, DOUBLESLAP
+	db 20, BUBBLEBEAM
 	db 25, RAIN_DANCE
-	db 31, BODY_SLAM
-	db 37, BELLY_DRUM
-	db 43, HYDRO_PUMP
+	db 30, BODY_SLAM
+	db 35, WATERFALL
+	db 42, BULK_UP
+	db 45, HYDRO_PUMP
+	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves
 
 PoliwhirlEvosAttacks:
@@ -918,24 +931,33 @@ PoliwhirlEvosAttacks:
 	db 1, HYPNOSIS
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
-	db 13, WATER_GUN
-	db 19, DOUBLESLAP
-	db 27, RAIN_DANCE
-	db 35, BODY_SLAM
-	db 40, BULK_UP
+	db 10, WATER_GUN
+	db 13, DOUBLESLAP
+	db 20, BUBBLEBEAM
+	db 25, RAIN_DANCE
+	db 30, BODY_SLAM
+	db 35, WATERFALL
+	db 42, BULK_UP
 	db 45, HYDRO_PUMP
 	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 1, DOUBLESLAP
+	db 1, BUBBLE
 	db 1, HYPNOSIS
-	db 1, SURF
+	db 1, WATER_GUN
+	db 7, HYPNOSIS
+	db 10, WATER_GUN
+	db 13, DOUBLESLAP
+	db 20, BUBBLEBEAM
+	db 25, RAIN_DANCE
 	db 30, DRAIN_PUNCH
 	db 35, WATERFALL
-	db 40, CLOSE_COMBAT
+	db 42, BULK_UP
+	db 45, CLOSE_COMBAT
+	db 50, HYDRO_PUMP
+	db 55, BELLY_DRUM
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
@@ -1823,11 +1845,16 @@ StaryuEvosAttacks:
 	db 1, TACKLE
 	db 1, HARDEN
 	db 7, WATER_GUN
+	db 10, CONFUSION
 	db 13, RAPID_SPIN
+	db 16, SWIFT
 	db 19, RECOVER
-	db 25, SWIFT
-	db 31, BUBBLEBEAM
-	db 43, LIGHT_SCREEN
+	db 23, PSYBEAM
+	db 28, BUBBLEBEAM
+	db 33, AURORA_BEAM
+	db 38, PSYCHIC_M
+	db 40, RECOVER
+	db 45, BLIZZARD
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1836,11 +1863,16 @@ StarmieEvosAttacks:
 	db 1, TACKLE
 	db 1, HARDEN
 	db 7, WATER_GUN
+	db 10, CONFUSION
 	db 13, RAPID_SPIN
+	db 16, SWIFT
 	db 19, RECOVER
-	db 25, SWIFT
-	db 31, BUBBLEBEAM
-	db 43, LIGHT_SCREEN
+	db 23, PSYBEAM
+	db 28, BUBBLEBEAM
+	db 33, AURORA_BEAM
+	db 38, PSYCHIC_M
+	db 40, RECOVER
+	db 45, BLIZZARD
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2069,7 +2101,7 @@ PorygonEvosAttacks:
 	db 0 ; no more level-up moves
 
 RaltsEvosAttacks:
-	db EVOLVE_LEVEL, 20, KIRLIA
+	db EVOLVE_LEVEL, 18, KIRLIA
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, CONFUSION
@@ -2805,12 +2837,20 @@ GenesectEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 1, DOUBLESLAP
+	db 1, BUBBLE
 	db 1, HYPNOSIS
-	db 1, PERISH_SONG
-	db 35, SURF
-	db 40, HYDRO_PUMP
+	db 1, WATER_GUN
+	db 7, HYPNOSIS
+	db 10, WATER_GUN
+	db 13, DOUBLESLAP
+	db 20, BUBBLEBEAM
+	db 25, RAIN_DANCE
+	db 30, BODY_SLAM
+	db 35, WATERFALL
+	db 40, PERISH_SONG
+	db 45, THUNDER
+	db 50, HYDRO_PUMP
+	db 55, HYPNOSIS
 	db 0 ; no more level-up moves
 
 TimburrEvosAttacks:

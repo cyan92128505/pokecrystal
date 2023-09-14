@@ -594,27 +594,29 @@ JigglypuffEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db 0 ; no more evolutions
 	db 1, SING
+	db 1, POUND
 	db 4, DEFENSE_CURL
-	db 9, POUND
-	db 14, DISABLE
-	db 19, DRAIN_KISS
-	db 24, DOUBLESLAP
-	db 29, REST
-	db 34, BODY_SLAM
-	db 39, DOUBLE_EDGE
-	db 45, MOON_BLAST
+	db 8, DISABLE
+	db 12, DOUBLESLAP
+	db 16, DRAIN_KISS
+	db 25, REST
+	db 30, BODY_SLAM
+	db 35, MOON_BLAST
+	db 40, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
-	db 1, DISABLE
-	db 1, DEFENSE_CURL
-	db 1, DOUBLESLAP
-	db 30, DRAIN_KISS
-	db 35, BODY_SLAM
-	db 40, MOONLIGHT
-	db 45, MOON_BLAST
+	db 1, POUND
+	db 4, DEFENSE_CURL
+	db 8, DISABLE
+	db 12, DOUBLESLAP
+	db 16, DRAIN_KISS
+	db 25, REST
+	db 30, BODY_SLAM
+	db 35, MOON_BLAST
+	db 40, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:

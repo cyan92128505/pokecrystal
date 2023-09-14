@@ -256,6 +256,10 @@ endr
 	jr z, .fullStatExp
 	cp ADAM
 	jr z, .fullStatExp
+	cp ROLE_PLAYER_NORMAL
+	jr z, .fullStatExp
+	cp ROLE_PLAYER_SHINY
+	jr z, .fullStatExp
 
 	; decide stat exp based on badges
     ld hl, wJohtoBadges

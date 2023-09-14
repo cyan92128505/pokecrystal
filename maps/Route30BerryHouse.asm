@@ -14,9 +14,12 @@ Route30BerryHousePokefanMScript:
 	writetext Route30BerrySpeechHouseText
 	waitbutton
 	writetext Route30BerrySpeechHouseTakeBerryText
+	waitbutton
 	verbosegiveitem BERRY
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
+	closetext
+	end
 .GotBerry:
 	writetext Route30BerrySpeechHouseText
 	waitbutton
@@ -38,7 +41,8 @@ Route30BerrySpeechHouseText:
 
 	para "But there's kid"
 	line "trainers and wild"
-	cont "#MON everywhere!"
+	cont "#MON"
+	cont "everywhere!"
 
 	para "It's even more"
 	line "stressful."

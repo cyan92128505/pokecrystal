@@ -608,7 +608,8 @@ CherrygroveYoungsterText_NoPokedex:
 	para "There are trainers"
 	line "up there but I'm"
 	cont "sure OAK must have"
-	cont "some strong #MON."
+	cont "some strong"
+	cont "#MON."
 	done
 
 CherrygroveYoungsterText_HavePokedex:
@@ -1387,7 +1388,7 @@ StarWarsCh2HeroText:
     done
 
 StarWarsCh2VillainText:
-    para "You are killed"
+    text "You are killed"
     line "but you have"
     cont "seen the virtue"
     cont "in ANIKANS"
@@ -1616,11 +1617,10 @@ StarWarsDefeatText:
     done
 
 StarWarsBreakText:
-    text "Do you need to"
-    line "go or would you"
-    cont "like to continue"
-    cont "to the second"
-    cont "half of the story?"
+    text "Would you like to"
+    cont "continue to the"
+    cont "second half of"
+    cont "the story?"
     done
 
 StarWarsBonusRoundText:

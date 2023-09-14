@@ -185,9 +185,24 @@ TrainerHikerBailey:
 	setevent EVENT_BEAT_HIKER_BAILEY
 	sjump .end
 .lose
+    opentext
+    writetext HikerBaileyGloatText
+    waitbutton
+    closetext
     special HealParty
 .end
 	end
+
+HikerBaileyGloatText:
+    text "Hohohoho..."
+
+    para "See you are"
+    line "not ready for"
+    cont "this place!"
+
+    para "But I wont"
+    line "stop you."
+    done
 
 HikerBaileyMercyText:
     text "I got close but"

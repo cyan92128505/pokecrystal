@@ -175,7 +175,7 @@ ItemNames::
 	li "WISE GLASSES"
 	li "BERRY"
 	li "GOLD BERRY"
-	li "SQUIRTBOTTLE"
+	li "HOLY WATER"
 	li "TERU-SAMA"
 	li "PARK BALL"
 	li "RAINBOW WING"

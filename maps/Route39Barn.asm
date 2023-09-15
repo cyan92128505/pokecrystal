@@ -53,13 +53,12 @@ MoomooScript:
 	special PlaySlowCry
 	promptbutton
 	writetext Route39BarnItsCryIsWeakText
-	checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
-	iftrue .GiveBerry
-	waitbutton
-	closetext
-	end
-
-.GiveBerry:
+	;checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
+	;iftrue .GiveBerry
+	;waitbutton
+	;closetext
+	;end
+;.GiveBerry:
 	promptbutton
 	writetext Route39BarnAskGiveBerryText
 	yesorno
@@ -68,29 +67,7 @@ MoomooScript:
 	iffalse .NoBerriesInBag
 	takeitem GOLD_BERRY
 	scall .SevenBerries
-	;readmem wMooMooBerries
-	;addval 1
-	;writemem wMooMooBerries
-	;ifequal 3, .ThreeBerries
-	;ifequal 5, .FiveBerries
-	;ifequal 7, .SevenBerries
 	writetext Route39BarnGaveBerryText
-	waitbutton
-	closetext
-	end
-
-.ThreeBerries:
-	writetext Route39BarnGaveBerryText
-	promptbutton
-	writetext Route39BarnLittleHealthierText
-	waitbutton
-	closetext
-	end
-
-.FiveBerries:
-	writetext Route39BarnGaveBerryText
-	promptbutton
-	writetext Route39BarnQuiteHealthyText
 	waitbutton
 	closetext
 	end
@@ -129,8 +106,8 @@ MoomooScript:
 Route39BarnTwinMoomooIsSickText:
 	text "MOOMOO is sick…"
 
-	para "She needs lots of"
-	line "BERRIES."
+	para "She needs a"
+	line "GOLDEN BERRY"
 	done
 
 Route39BarnTwinWereFeedingMoomooText:
@@ -151,13 +128,14 @@ MoomooHappyMooText:
 	done
 
 Route39BarnAskGiveBerryText:
-	text "Give a BERRY to"
+	text "Give GOLDBERRY to"
 	line "MILTANK?"
 	done
 
 Route39BarnGaveBerryText:
 	text "<PLAYER> gave a"
-	line "BERRY to MILTANK."
+	line "GOLDBERRY to"
+	cont "MILTANK."
 	done
 
 Route39BarnLittleHealthierText:

@@ -1312,6 +1312,9 @@ AI_Smart_AccuracyDown:
 	ret
 
 AI_Smart_StatDown:
+	call ShouldAIBoost
+	ret nc
+
 ; discourage if enemy is immune to stat drops
     ld a, [wBattleMonSpecies]
     push bc
@@ -1323,8 +1326,7 @@ AI_Smart_StatDown:
 	pop de
 	pop hl
 	pop bc
-	ret nc
-
+    ret nc
 	inc [hl]
 	inc [hl]
 	inc [hl]

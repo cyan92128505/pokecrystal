@@ -213,6 +213,31 @@ TrainerHouseSignText:
 	line "Trainer Battles"
 	done
 
+ViridianGymBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext ViridianGymBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_ViridianGymTurnBack
+    end
+Movement_ViridianGymTurnBack:
+    step RIGHT
+    step_end
+ViridianGymBlockText:
+    text "The door is"
+    line "locked."
+
+    para "This GYM is only"
+    line "accepting CHAMPION"
+    cont "level challengers"
+    cont "at this time."
+    done
+
 ViridianCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -224,6 +249,7 @@ ViridianCity_MapEvents:
 	warp_event 23, 25, VIRIDIAN_POKECENTER_1F, 1
 
 	def_coord_events
+	coord_event 32,  8, SCENE_ALWAYS, ViridianGymBlockScript
 
 	def_bg_events
 	bg_event 17, 17, BGEVENT_READ, ViridianCitySign

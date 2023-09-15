@@ -388,7 +388,11 @@ Route36FruitTree:
 	fruittree FRUITTREE_ROUTE_36
 
 SudowoodoShakeMovement:
-	tree_shake
+	turn_head LEFT
+	turn_head RIGHT
+	turn_head LEFT
+	turn_head RIGHT
+	turn_head DOWN
 	step_end
 
 WeirdTreeMovement_Flee:
@@ -432,22 +436,24 @@ Route36SuicuneMovement:
 	step_end
 
 UseSquirtbottleText:
-	text "It's a weird tree."
-	line "Use SQUIRTBOTTLE?"
+	text "It's a strange"
+	line "old man."
+
+	para "Use HOLY WATER?"
 	done
 
 UsedSquirtbottleText:
 	text "<PLAYER> used the"
-	line "SQUIRTBOTTLE."
+	line "HOLY WATER."
 	done
 
 SudowoodoAttackedText:
-	text "The weird tree"
-	line "doesn't like the"
-	cont "SQUIRTBOTTLE!"
+	text "The old man is"
+	line "revealed as an"
+	cont "evil spirit."
 
-	para "The weird tree"
-	line "attacked!"
+	para "The spirit"
+	line "attacks!"
 	done
 
 FloriaText1:
@@ -505,7 +511,7 @@ RockSmashGuyText1:
 
 RockSmashGuyText2:
 	text "Did you clear that"
-	line "wretched tree?"
+	line "wretched old man?"
 
 	para "I'm impressed!"
 	line "I want you to"
@@ -887,7 +893,7 @@ Route36_MapEvents:
 	def_object_events
 	object_event 14,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 35,  9, SPRITE_GENGAR, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
+	object_event 35,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1

@@ -6,6 +6,14 @@ Route24_MapScripts:
 
 	def_callbacks
 
+.Rocket
+    disappear ROUTE24_ROCKET
+    checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
+    iffalse .end
+    appear ROUTE24_ROCKET
+.end
+    endcallback
+
 Route24RocketScript:
 	faceplayer
 	playmusic MUSIC_ROCKET_ENCOUNTER
@@ -162,4 +170,4 @@ Route24_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, -1
+	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, EVENT_TEMP_EVENT_1

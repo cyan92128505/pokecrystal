@@ -576,6 +576,26 @@ RematchRefuseTextAerith1:
     text "That's fine!"
     done
 
+BurntTowerBlockScript:
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext BurntTowerBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_BurntTowerTurnBack
+    end
+Movement_BurntTowerTurnBack:
+    step DOWN
+    step_end
+BurntTowerBlockText:
+    text "The door is"
+    line "locked."
+    done
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -600,6 +620,7 @@ EcruteakCity_MapEvents:
 
 	def_coord_events
 	coord_event 16, 30, SCENE_DEFAULT, EcruteakTeleportGuyEncounterScript
+	coord_event 5, 6, SCENE_ALWAYS, BurntTowerBlockScript
 
 	def_bg_events
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign

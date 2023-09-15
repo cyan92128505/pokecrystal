@@ -388,6 +388,8 @@ VermilionBlockText:
     done
 
 VermilionPortHoenInvadedBlockScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .block
     checkevent EVENT_HOEN_INVASION_UNDERWAY
     iftrue .block
     end

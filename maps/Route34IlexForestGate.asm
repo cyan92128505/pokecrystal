@@ -45,19 +45,20 @@ Route34IlexForestGateTeacherScript:
 	opentext
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .ForestIsRestless
-	checkevent EVENT_GOT_TM12_SWEET_SCENT
-	iftrue .GotSweetScent
+	;checkevent EVENT_GOT_TM12_SWEET_SCENT
+	;iftrue .GotSweetScent
 	writetext Route34IlexForestGateTeacherText
 	promptbutton
-	verbosegiveitem TM_SELFDESTRUCT
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM12_SWEET_SCENT
-.GotSweetScent:
-	writetext Route34IlexForestGateTeacher_GotSweetScent
-	waitbutton
-.NoRoom:
-	closetext
 	end
+	;verbosegiveitem TM_SELFDESTRUCT
+	;iffalse .NoRoom
+	;setevent EVENT_GOT_TM12_SWEET_SCENT
+;.GotSweetScent:
+	;writetext Route34IlexForestGateTeacher_GotSweetScent
+	;waitbutton
+;.NoRoom:
+	;closetext
+	;end
 
 .ForestIsRestless:
 	writetext Route34IlexForestGateTeacher_ForestIsRestless
@@ -97,15 +98,15 @@ Route34IlexForestGateTeacherText:
 	line "this TM."
 	done
 
-Route34IlexForestGateTeacher_GotSweetScent:
-	text "It's SWEET SCENT."
-
-	para "Use it wherever"
-	line "#MON appear."
-
-	para "#MON will be"
-	line "enticed by it."
-	done
+;Route34IlexForestGateTeacher_GotSweetScent:
+;	text "It's SWEET SCENT."
+;
+;	para "Use it wherever"
+;	line "#MON appear."
+;
+;	para "#MON will be"
+;	line "enticed by it."
+;	done
 
 Route34IlexForestGateTeacher_ForestIsRestless:
 	text "Something's wrong"

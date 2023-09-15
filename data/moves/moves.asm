@@ -105,7 +105,7 @@ Moves: ; 41afb
 	move DIG,          EFFECT_FLY,                70, GROUND,        PHYSICAL, 100, 10,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,        STATUS,    85, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE,  SPECIAL,  100, 25,  10
-	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE,  SPECIAL,  100, 10,  10
+	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE,  SPECIAL,  100, 15,  10
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC_TYPE,  STATUS,    60, 20,   0
 	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE,  STATUS,   100, 40,   0
 	move AGILITY,      EFFECT_SPEED_UP_2,          0, PSYCHIC_TYPE,  STATUS,   100, 30,   0
@@ -250,7 +250,7 @@ Moves: ; 41afb
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,         STATUS,   100, 10,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       60, NORMAL,        SPECIAL,  100, 15,   0
 	move SEED_FLARE,   EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,         SPECIAL,  85,  10,  50
-	move DRACO_METEOR, EFFECT_RECOIL_HIT,        120, DRAGON,        SPECIAL,  100, 10,   0
+	move DRACO_METEOR, EFFECT_RECOIL_HIT,        120, DRAGON,        SPECIAL,  100, 15,   0
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,    90,  5,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,    90,  5,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,          PHYSICAL, 100, 15,  20

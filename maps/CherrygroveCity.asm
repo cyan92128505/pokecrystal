@@ -1618,7 +1618,7 @@ StarWarsDefeatText:
 
 StarWarsBreakText:
     text "Would you like to"
-    cont "continue to the"
+    line "continue to the"
     cont "second half of"
     cont "the story?"
     done

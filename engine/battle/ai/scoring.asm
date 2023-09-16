@@ -797,11 +797,11 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_EVASION_UP_2,     AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
-    dbw EFFECT_ATTACK_DOWN,      AI_Smart_StatDown
-    dbw EFFECT_ATTACK_DOWN_2,    AI_Smart_StatDown
+    dbw EFFECT_ATTACK_DOWN,      AI_Smart_AttackDown
+    dbw EFFECT_ATTACK_DOWN_2,    AI_Smart_AttackDown
     dbw EFFECT_DEFENSE_DOWN,     AI_Smart_StatDown
     dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_StatDown
-    dbw EFFECT_SPEED_DOWN_2,     AI_Smart_StatDown
+    dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
 	dbw EFFECT_HEAL,             AI_Smart_Heal
@@ -1311,10 +1311,7 @@ AI_Smart_AccuracyDown:
 	inc [hl]
 	ret
 
-AI_Smart_StatDown:
-	call ShouldAIBoost
-	ret nc
-
+AI_Smart_AttackDown:
 ; discourage if enemy is immune to stat drops
     ld a, [wBattleMonSpecies]
     push bc
@@ -1326,12 +1323,85 @@ AI_Smart_StatDown:
 	pop de
 	pop hl
 	pop bc
-    ret nc
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
+    jr c, .discourage
+
+	call ShouldAIBoost
+	jr nc, .discourage
+
+; discourage after player is at -3
+    ld a, [wPlayerAtkLevel]
+    cp BASE_STAT_LEVEL - 1
+    jr c, .discourage
+
+    call IsPlayerPhysicalOrSpecial
+    jr nc, .discourage
+
+    dec [hl]
+    ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
+
+AI_Smart_SpeedDown:
+; discourage if enemy is immune to stat drops
+    ld a, [wBattleMonSpecies]
+    push bc
+    push hl
+    push de
+	ld hl, AI_ClearBodyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+    jr c, .discourage
+
+	call ShouldAIBoost
+	jr nc, .discourage
+
+    call AICompareSpeed
+    jr c, .discourage
+
+    dec [hl]
+    dec [hl]
+    ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
+
+
+AI_Smart_StatDown:
+; discourage if enemy is immune to stat drops
+    ld a, [wBattleMonSpecies]
+    push bc
+    push hl
+    push de
+	ld hl, AI_ClearBodyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+    jr c, .discourage
+
+	call ShouldAIBoost
+	jr nc, .discourage
+
+    dec [hl]
+    ret
+
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 
 AI_Smart_ResetStats:

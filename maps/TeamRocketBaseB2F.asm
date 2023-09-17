@@ -46,7 +46,7 @@ TeamRocketBaseB2F_MapScripts:
 	changeblock 14, 12, $07 ; floor
 	endcallback
 
-RocketBaseBossFLeft:
+SaveThenContinueLeft:
     opentext
     writetext SaveGame_TRB
     yesorno
@@ -56,14 +56,13 @@ RocketBaseBossFLeft:
     special TryQuickSave
     closetext
     iffalse .turnBack
-
-	moveobject TEAMROCKETBASEB2F_LANCE, 9, 13
-	sjump RocketBaseBossFScript
+    applymovement PLAYER, TRB2F_PlayerUp
+    sjump RocketBaseBossFLeft
 .turnBack
     applymovement PLAYER, Movement_TRB_TurnBack
     end
 
-RocketBaseBossFRight:
+SaveThenContinueRight:
     opentext
     writetext SaveGame_TRB
     yesorno
@@ -73,15 +72,26 @@ RocketBaseBossFRight:
     special TryQuickSave
     closetext
     iffalse .turnBack
+    applymovement PLAYER, TRB2F_PlayerUp
+    sjump RocketBaseBossFRight
+.turnBack
+    applymovement PLAYER, Movement_TRB_TurnBack
+    end
 
+TRB2F_PlayerUp:
+    step UP
+    step_end
+
+RocketBaseBossFLeft:
+	moveobject TEAMROCKETBASEB2F_LANCE, 9, 13
+	sjump RocketBaseBossFScript
+
+RocketBaseBossFRight:
 	moveobject TEAMROCKETBASEB2F_ROCKET_GIRL, 21, 16
 	moveobject TEAMROCKETBASEB2F_ROCKET1, 21, 16
 	moveobject TEAMROCKETBASEB2F_DRAGON, 10, 13
 	moveobject TEAMROCKETBASEB2F_LANCE, 10, 13
 	sjump RocketBaseBossFScript
-.turnBack
-    applymovement PLAYER, Movement_TRB_TurnBack
-    end
 
 RocketBaseBossFScript:
 	appear TEAMROCKETBASEB2F_ROCKET_GIRL
@@ -218,6 +228,8 @@ RocketBaseBossFScript:
 	startbattle
 	reloadmap
 
+	special LoadPokemonData
+	special HealParty
 	opentext
 	writetext ItsNotOverText
 	waitbutton
@@ -571,7 +583,7 @@ TrainerGruntM19:
 
 RocketElectrode1:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 40
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE1
@@ -589,7 +601,7 @@ RocketElectrode1:
 
 RocketElectrode2:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 40
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE2
@@ -607,7 +619,7 @@ RocketElectrode2:
 
 RocketElectrode3:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 40
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE3
@@ -1293,6 +1305,8 @@ TeamRocketBaseB2F_MapEvents:
 	coord_event  4, 13, SCENE_DEFAULT, LanceHealsScript2
 	coord_event 14, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFLeft
 	coord_event 15, 11, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, RocketBaseBossFRight
+	coord_event 14, 12, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, SaveThenContinueLeft
+	coord_event 15, 12, SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS, SaveThenContinueRight
 	coord_event 14, 12, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseCantLeaveScript
 	coord_event 15, 12, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseCantLeaveScript
 	coord_event 12,  3, SCENE_TEAMROCKETBASEB2F_ELECTRODES, RocketBaseLancesSideScript

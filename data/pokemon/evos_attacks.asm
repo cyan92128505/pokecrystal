@@ -2437,8 +2437,8 @@ FrogadierEvosAttacks:
 	db 30, PSYCHIC_M
 	db 35, NIGHT_SLASH
 	db 40, DARK_PULSE
-	db 45, HYDRO_PUMP
-	db 50, SUBSTITUTE
+	db 50, HYDRO_PUMP
+	db 55, SUBSTITUTE
 	db 0 ; no more level-up moves
 
 GreninjaEvosAttacks:
@@ -3182,8 +3182,8 @@ GibleEvosAttacks:
 	db 22, DRAGON_RAGE
 	db 30, DRAGON_CLAW
 	db 35, DIG
-	db 40, EARTHQUAKE
-	db 50, OUTRAGE
+	db 50, EARTHQUAKE
+	db 55, OUTRAGE
 	db 60, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -3198,8 +3198,8 @@ GabiteEvosAttacks:
 	db 25, DRAGON_RAGE
 	db 30, DRAGON_CLAW
 	db 35, DIG
-	db 40, EARTHQUAKE
-	db 50, OUTRAGE
+	db 50, EARTHQUAKE
+	db 55, OUTRAGE
 	db 60, SWORDS_DANCE
 	db 0 ; no more level-up moves
 

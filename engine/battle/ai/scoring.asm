@@ -879,12 +879,10 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
     dbw EFFECT_KINGS_SHIELD,     AI_Smart_KingsShield
     dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage
-    dbw EFFECT_ATTACK_DOWN,      AI_Smart_LesserStatChange
     dbw EFFECT_DEFENSE_UP,       AI_Smart_LesserStatChange
-    dbw EFFECT_DEFENSE_DOWN,     AI_Smart_LesserStatChange
-    dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_LesserStatChange
     dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
     dbw EFFECT_SAFEGUARD,        AI_Smart_LesserStatChange
+    dbw EFFECT_PARALYZE_HIT,     AI_Smart_ParalyzeHit
     dbw EFFECT_JUDGEMENT,        AI_Smart_Judgement
 	db -1 ; end
 
@@ -1987,7 +1985,7 @@ AI_Smart_Paralyze:
 	bit SCREENS_SAFEGUARD, a
 	jr nz, .discourage
 
-; never use thunderwave against ground types
+; never use thunderwave against ground types or volt absorbers
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp THUNDER_WAVE
 	jr nz, .glare
@@ -1997,6 +1995,17 @@ AI_Smart_Paralyze:
 	ld a, [wBattleMonType2]
 	cp GROUND
 	jr z, .discourage
+    ld a, [wBattleMonSpecies]
+    push bc
+    push hl
+    push de
+	ld hl, AI_VoltAbsorbPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	jr c, .discourage
 
 .glare
 ; never use glare against ghost types
@@ -2051,6 +2060,53 @@ endr
 .discourage50
     call AI_50_50
     ret c
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
+
+AI_Smart_ParalyzeHit:
+; if we are Magnezone
+    ld a, [wEnemyMonSpecies]
+    cp MAGNEZONE
+    ret nz
+
+; if the move is zap cannon
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp ZAP_CANNON
+	ret nz
+
+; if the enemy is vulnerable to electric moves
+    ld a, [wBattleMonType1]
+	cp GROUND
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp GROUND
+	jr z, .discourage
+    ld a, [wBattleMonSpecies]
+    push bc
+    push hl
+    push de
+	ld hl, AI_VoltAbsorbPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	jr c, .discourage
+
+; if they are not statused
+    ld a, [wBattleMonStatus]
+    and a
+    ret nz
+
+; prioritize move
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 .discourage
     inc [hl]
     inc [hl]
@@ -4203,7 +4259,6 @@ AI_Smart_Barrier:
 .strongEncourage
     dec [hl]
     dec [hl]
-.encourage
 	dec [hl]
 	ret
 

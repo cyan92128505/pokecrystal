@@ -2281,6 +2281,7 @@ FlyMap:
 	call TownMapPlayerIcon
 	ret
 
+; AndrewNote - Fly - Kanto map not available until Indigo Plateau OR Saffron has been visited
 .KantoFlyMap:
 ; The event that there are no flypoints enabled in a map is not
 ; accounted for. As a result, if you attempt to select a flypoint
@@ -2288,19 +2289,34 @@ FlyMap:
 ; the flypoint selection has a default starting point that
 ; can be flown to even if none are enabled.
 ; To prevent both of these things from happening when the player
-; enters Kanto, fly access is restricted until Indigo Plateau is
+; enters Kanto, fly access is restricted until Indigo Plateau or Saffron is
 ; visited and its flypoint enabled.
 	push af
 	ld c, SPAWN_INDIGO
 	call HasVisitedSpawn
 	and a
-	jr z, .NoKanto
-; Kanto's map is only loaded if we've visited Indigo Plateau
+	jr nz, .DoKantoIndigo
+	ld c, SPAWN_SAFFRON
+	call HasVisitedSpawn
+	and a
+	jr nz, .DoKantoSaffron
+	jr .NoKanto
+.DoKantoIndigo
+; Kanto's map is only loaded if we've visited Indigo Plateau or Saffron
 	ld a, KANTO_FLYPOINT ; first Kanto flypoint
 	ld [wStartFlypoint], a
 	ld a, NUM_FLYPOINTS - 1 ; last Kanto flypoint
 	ld [wEndFlypoint], a
 	ld [wTownMapPlayerIconLandmark], a ; last one is default (Indigo Plateau)
+	jr .FillKantoMap
+.DoKantoSaffron
+; Kanto's map is only loaded if we've visited Indigo Plateau or Saffron
+	ld a, KANTO_FLYPOINT ; first Kanto flypoint
+	ld [wStartFlypoint], a
+	ld [wTownMapPlayerIconLandmark], a ; first one is default (Saffron)
+	ld a, NUM_FLYPOINTS - 1 ; last Kanto flypoint
+	ld [wEndFlypoint], a
+.FillKantoMap
 ; Fill out the map
 	call FillKantoMap
 	call .MapHud

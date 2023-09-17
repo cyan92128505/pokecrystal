@@ -492,9 +492,12 @@ BattleRouletteReceptionistScript:
     loadtrainer EXECUTIVEF, EXECUTIVEM_1
     sjump .finish
 .Rocket1
-    checkevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
-    iffalse .sample
+    checkevent EVENT_BEAT_ROCKET_EXECUTIVEF_2
+    iffalse .Rocket0
     loadtrainer EXECUTIVEF, EXECUTIVEF_1
+    sjump .finish
+.Rocket0
+    loadtrainer GRUNTM, GRUNTM_1
     sjump .finish
 
 .Tobias
@@ -588,18 +591,21 @@ BattleRouletteReceptionistScript:
 
 .Silver
     checkevent EVENT_BEAT_MASTER_RIVAL
-    iffalse .Silver2
+    iffalse .Silver7
     loadtrainer RIVAL2, MASTER_RIVAL
     sjump .finish
-.Silver2
+.Silver7
     checkevent EVENT_BEAT_SILVER_CAVE_RIVAL
-    iffalse .Silver1
+    iffalse .Silver6
     loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
     sjump .finish
-.Silver1
+.Silver6
     checkevent EVENT_BEAT_RIVAL_SAFFRON
-    iffalse .sample
+    iffalse .Silver1
     loadtrainer RIVAL2, RIVAL2_SAFFRON
+    sjump .finish
+.Silver1
+    loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
     sjump .finish
 
 .Crystal

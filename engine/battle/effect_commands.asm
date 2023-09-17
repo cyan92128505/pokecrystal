@@ -652,9 +652,13 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
+    ; or battle tower
 	ld a, [wInBattleTowerBattle]
 	and a
 	ret nz
+	ld a, [wBattleType]
+	cp BATTLETYPE_BATTLE_FRONTIER
+	ret z
 
 	; If the monster's id doesn't match the player's,
 	; some conditions need to be met.
@@ -672,6 +676,7 @@ BattleCommand_CheckObedience:
     ld a, [wLevelCap]
     ld b, a
     ld a, [wBattleMonLevel]
+    dec a
     cp b
     ret c   ; if levelCap >= level then obey
 

@@ -2436,7 +2436,10 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 ; then gives full exp to all bench Pokemon
 	ld a, [wKantoBadges]
 	cp %11111111 ; all badges
-    jr z, .continue
+    jr nz, .notAllBadges
+    call BoostExp
+    jr .continue
+.notAllBadges
     srl [hl] ; halve exp
 .continue
 	ld a, [wBattleParticipantsNotFainted]

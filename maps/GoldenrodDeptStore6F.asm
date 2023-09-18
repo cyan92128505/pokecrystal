@@ -123,23 +123,23 @@ GoldenrodDeptStore6FLassText:
 	text "Do you listen to"
 	line "LUCKY CHANNEL?"
 
-	para "If you want to"
-	line "win, trade #MON"
+	para "It's all a fix."
 
-	para "with as many peo-"
-	line "ple as possible to"
+	para "How are you"
+	line "expected to match"
+	cont "a whole trainerId!"
 
-	para "get different ID"
-	line "numbers."
+	para "It's impossible!"
 	done
 
 GoldenrodDeptStore6FSuperNerdText:
-	text "If you're tired,"
-	line "try the vending"
-	cont "machine's drinks."
+	text "I'm on my"
+	line "twenty fifth"
+	cont "LEMONADE."
 
-	para "Your #MON will"
-	line "love them too."
+	para "They are so..."
+
+	para "I need MORE!"
 	done
 
 GoldenrodDeptStore6FDirectoryText:

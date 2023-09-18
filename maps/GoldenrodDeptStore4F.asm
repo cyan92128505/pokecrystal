@@ -38,34 +38,58 @@ GoldenrodDeptStore4FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore4FCooltrainerMText:
-	text "Hey. I love strong"
-	line "#MON."
+	text "PROTIEN!"
 
-	para "I feed them PRO-"
-	line "TEIN to crank up"
-	cont "their ATTACK."
+	para "I NEED!"
+
+	para "MORE!"
+
+	para "PROTIEN..."
+
+	para "RAWARRRRUH!!"
 	done
 
 GoldenrodDeptStore4FBugCatcherText:
-	text "IRON adds to your"
-	line "#MON's DEFENSE."
+	text "CARBOS increases"
+	line "the speed of"
+	cont "your #MON."
+
+	para "Just one extra"
+	line "point of speed"
+	cont "is all it takes"
+	cont "to make the"
+	cont "difference."
 	done
 
 GoldenrodDeptStore4FGameboyKidText:
-	text "Some #MON"
-	line "evolve only by"
+	text "Vitamins are"
+	line "expensive."
 
-	para "being traded via a"
-	line "Game Link cable."
+	para "It takes 25"
+	line "of them to max"
+	cont "one stat."
 
-	para "I know of four:"
-	line "MACHOKE, KADABRA,"
+	para "That means it"
+	line "takes 125 to"
+	cont "max all stats"
+	cont "for one #MON."
 
-	para "HAUNTER and, um,"
-	line "GRAVELER."
+	para "However the"
+	line "effects are not"
+	cont "linear."
 
-	para "I heard there are"
-	line "others too."
+	para "Just a few"
+	line "vitamins is all"
+	cont "it takes to get"
+	cont "most of the"
+	cont "benefits."
+
+	para "Legends speak"
+	line "of AMBROSIA."
+
+	para "A single divine"
+	line "food that will"
+	cont "max all stats."
 	done
 
 GoldenrodDeptStore4FDirectoryText:

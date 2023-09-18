@@ -3,20 +3,25 @@ MoveDeletion:
 	call PrintText
 	call YesNoBox
 	jr c, .declined
+; Select a Pokemon from your party
 	ld hl, .DeleterAskWhichMonText
 	call PrintText
 	farcall SelectMonFromParty
 	jr c, .declined
+; He can't use an egg...
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .egg
+; Get mon moves
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Moves + 1
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	ld a, [hl]
+; cant delete if its the last move
 	and a
 	jr z, .onlyonemove
+; select the move
 	ld hl, .DeleterAskWhichMoveText
 	call PrintText
 	call LoadStandardMenuHeader

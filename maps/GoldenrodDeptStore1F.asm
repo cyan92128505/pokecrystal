@@ -33,29 +33,45 @@ GoldenrodDeptStore1FReceptionistText:
 	done
 
 GoldenrodDeptStore1FGentlemanText:
-	text "The DEPT.STORE"
-	line "has a decent se-"
-	cont "lection."
+	text "There is a"
+	line "great selection"
+	cont "in this store."
 
-	para "But some items"
-	line "are only available"
+	para "But the best"
+	line "items are not"
+	cont "for the poor."
 
-	para "as GAME CORNER"
-	line "prizes."
+	para "Which is of"
+	line "course not an"
+	cont "issue for those"
+	cont "who live here."
 	done
 
 GoldenrodDeptStore1FPokefanFText:
-	text "I'm raring to shop"
-	line "again today!"
+	text "I am a TRUE"
+	line "POKEFAN!"
+
+	para "I spend all my"
+	line "money here."
+
+	para "Food and rent..."
+
+	para "Not important."
+
+	para "Only #MON"
+	line "matters!"
 	done
 
 GoldenrodDeptStore1FBugCatcherText:
-	text "Mom's good at"
-	line "bargain hunting."
+	text "I need a LEAF"
+	line "STONE for my"
+	cont "EXEGGCUTE."
 
-	para "She always buys"
-	line "stuff at lower"
-	cont "prices."
+	para "It isn't cheap!"
+
+	para "I'll need to"
+	line "sell everything"
+	cont "I have."
 	done
 
 GoldenrodDeptStore1FDirectoryText:
@@ -64,8 +80,8 @@ GoldenrodDeptStore1FDirectoryText:
 	para "2F TRAINER'S"
 	line "   MARKET"
 
-	para "3F BATTLE"
-	line "   COLLECTION"
+	para "3F EVOLUTION"
+	line "   STONES"
 
 	para "4F MEDICINE BOX"
 

@@ -39,22 +39,37 @@ GoldenrodBikeShopClerkScript:
 	closetext
 	end
 
-GoldenrodBikeShopJustReleasedCompactBike: ; unreferenced
-	jumptext GoldenrodBikeShopJustReleasedCompactBikeText
-
 GoldenrodBikeShopBicycle:
 	jumptext GoldenrodBikeShopBicycleText
 
 GoldenrodBikeShopClerkIntroText:
-	text "…sigh… I moved"
-	line "here, but I can't"
+	text "Hey there kid!"
 
-	para "sell my BICYCLES."
-	line "Why is that?"
+	para "These BIKES are"
+	line "the best you"
+	cont "can buy."
 
-	para "Could you ride a"
-	line "BICYCLE and adver-"
-	cont "tise for me?"
+	para "For a limited"
+	line "time when you"
+	cont "purchase one"
+	cont "of these BIKES"
+	cont "you also get"
+	cont "hi-tec location"
+	cont "tracking tech."
+
+	para "This will keep"
+	line "you safe in"
+	cont "these evil"
+	cont "times."
+
+	para "Wait..."
+
+	para "You are our"
+	line "one thousandth"
+	cont "customer!!"
+
+	para "Here take a"
+	line "BIKE for free!"
 	done
 
 GoldenrodBikeShopClerkAgreedText:
@@ -63,34 +78,30 @@ GoldenrodBikeShopClerkAgreedText:
 	para "Give me your name"
 	line "and phone number,"
 
-	para "and I'll loan you"
-	line "a BICYCLE."
+	para "and here is your"
+	line "BICYCLE."
 	done
 
 BorrowedABicycleText:
-	text "<PLAYER> borrowed a"
+	text "<PLAYER> recieved a"
 	line "BICYCLE."
 	done
 
 GoldenrodBikeShopClerkFirstRateBikesText:
-	text "My BICYCLES are"
-	line "first-rate! You"
+	text "Heh heh enjoy"
+	line "the BIKE!"
 
-	para "can ride them"
-	line "anywhere."
+	para "You be sure to"
+	line "ride it and"
+	cont "let it record"
+	cont "all your location"
+	cont "information."
 	done
 
 GoldenrodBikeShopClerkRefusedText:
-	text "…sigh… Oh, for"
-	line "the kindness of"
-	cont "people…"
-	done
+	text "But it's..."
 
-GoldenrodBikeShopJustReleasedCompactBikeText:
-	text "Just released!"
-
-	para "First-rate compact"
-	line "BICYCLES!"
+	para "FREE!"
 	done
 
 GoldenrodBikeShopBicycleText:

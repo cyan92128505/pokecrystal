@@ -39,25 +39,6 @@ GoldenrodDeptStore2FDirectory:
 GoldenrodDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
-GoldenrodDeptStore2FUnusedText1: ; unreferenced
-	text "We intend to sell"
-	line "items for #MON"
-	cont "to hold."
-
-	para "This is a free"
-	line "gift. Have a #-"
-	cont "MON hold it."
-	done
-
-GoldenrodDeptStore2FUnusedText2: ; unreferenced
-	text "By giving #MON"
-	line "items to hold, I"
-
-	para "bet trainers will"
-	line "develop new battle"
-	cont "techniques."
-	done
-
 GoldenrodDeptStore2FYoungsterText:
 	text "#GEAR can store"
 	line "up to ten phone"
@@ -72,20 +53,24 @@ GoldenrodDeptStore2FCooltrainerFText:
 	text "I got my ABRA at"
 	line "the GAME CORNER."
 
-	para "Now it's my best"
-	line "partner."
+	para "I didn't think"
+	line "much of it but"
+	cont "once it evolved"
+	cont "it quickly became"
+	cont "my best #MON."
 	done
 
 GoldenrodDeptStore2FGentlemanText:
 	text "This DEPT.STORE"
-	line "makes me realize"
+	line "is indeed good."
 
-	para "that GOLDENROD is"
-	line "a big city."
+	para "But the large"
+	line "STORE in CELADON"
+	cont "is better."
 
-	para "The selection here"
-	line "is unmatched any-"
-	cont "where else."
+	para "I have an"
+	line "equity stake"
+	cont "in it."
 	done
 
 GoldenrodDeptStore2FDirectoryText:

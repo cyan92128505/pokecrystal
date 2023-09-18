@@ -9,14 +9,23 @@ _EggPhotoText::
 	done
 
 _NameRaterHelloText::
-	text "Hello, hello! I'm"
-	line "the NAME RATER."
+	text "So many people"
+	line "proudly give"
+	cont "awful nicknames"
+	cont "to their #MON."
 
-	para "I rate the names"
-	line "of #MON."
+	para "They shouldn't"
+	line "be allowed to"
+	cont "raise #MON."
 
-	para "Would you like me"
-	line "to rate names?"
+	para "I will gladly"
+	line "change any"
+	cont "nickname of"
+	cont "any #MON."
+
+	para "Do you want"
+	line "me to rate your"
+	cont "nicknames?"
 	done
 
 _NameRaterWhichMonText::
@@ -29,8 +38,12 @@ _NameRaterBetterNameText::
 	text "Hm… @"
 	text_ram wStringBuffer1
 	text "…"
-	line "That's a fairly"
-	cont "decent name."
+	line "That's an"
+	cont "awful name."
+
+	para "No creativity."
+
+	para "No soul."
 
 	para "But, how about a"
 	line "slightly better"
@@ -47,8 +60,8 @@ _NameRaterWhatNameText::
 	prompt
 
 _NameRaterFinishedText::
-	text "That's a better"
-	line "name than before!"
+	text "That's a far"
+	line "better name!"
 
 	para "Well done!"
 	done
@@ -72,8 +85,10 @@ _NameRaterPerfectNameText::
 	done
 
 _NameRaterEggText::
-	text "Whoa… That's just"
-	line "an EGG."
+	text "Are you sick!"
+
+	para "You can't name"
+	line "an EGG!"
 	done
 
 _NameRaterSameNameText::

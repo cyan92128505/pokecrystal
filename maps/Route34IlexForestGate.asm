@@ -88,32 +88,30 @@ Route34IlexForestGateTeacherReturnsMovement:
 	step_end
 
 Route34IlexForestGateTeacherText:
-	text "Oh, honey. You're"
-	line "making a #DEX?"
+	text "ILEX FOREST is"
+	line "an ancient and"
+	cont "sacred place."
 
-	para "It must be hard if"
-	line "#MON won't"
-
-	para "appear. Try using"
-	line "this TM."
+	para "GOLDENROD CITY"
+	line "keeps expanding"
+	cont "but we will never"
+	cont "let them damage"
+	cont "the forest."
 	done
-
-;Route34IlexForestGateTeacher_GotSweetScent:
-;	text "It's SWEET SCENT."
-;
-;	para "Use it wherever"
-;	line "#MON appear."
-;
-;	para "#MON will be"
-;	line "enticed by it."
-;	done
 
 Route34IlexForestGateTeacher_ForestIsRestless:
 	text "Something's wrong"
 	line "in ILEX FOREST…"
 
-	para "You should stay"
-	line "away right now."
+	para "The protector is"
+	line "angry!"
+
+	para "I have worked all"
+	line "my life to protect"
+	cont "the forest."
+
+	para "CELEBI have mercy"
+	line "on me!"
 	done
 
 Route34IlexForestGateButterfreeText:

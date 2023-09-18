@@ -28,30 +28,40 @@ GoldenrodDeptStore3FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore3FSuperNerdText:
-	text "I, I, I'm really"
-	line "impatient!"
+	text "I just..."
 
-	para "I use X SPEED in"
-	line "battle to speed up"
-	cont "my #MON."
+	para "CAN'T DECIDE!"
+
+	para "My KIRLIA can"
+	line "become a cool"
+	cont "sword master"
+	cont "via SUN STONE."
+
+	para "Or a beautiful"
+	line "mystic sorceress"
+	cont "via MOON STONE."
+
+	para "Which do I pick!?"
 	done
 
 GoldenrodDeptStore3FRockerText:
-	text "Hey! When you bat-"
-	line "tle, do you use X"
-	cont "SPECIAL?"
+    text "HA HA!"
 
-	para "It's awesome. It"
-	line "really jacks up"
-	cont "SPECIAL ATTACK!"
+    para "I have the"
+    line "FIRE STONE!"
+
+	para "Finally my weak"
+	line "GROWLITHE can"
+	cont "become a mighty"
+	cont "ARCANINE!"
 	done
 
 GoldenrodDeptStore3FDirectoryText:
-	text "For Victory"
-	line "Seekers"
+	text "Unlock your"
+	line "potential."
 
-	para "3F BATTLE"
-	line "   COLLECTION"
+	para "3F EVOLUTION"
+	line "   STONES"
 	done
 
 GoldenrodDeptStore3F_MapEvents:

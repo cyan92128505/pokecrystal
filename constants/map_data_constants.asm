@@ -113,7 +113,6 @@ SPAWN_N_A EQU -1
 ; Flypoints indexes (see data/maps/flypoints.asm)
 	const_def
 ; johto
-; AndrewNote - Fly map order here
 JOHTO_FLYPOINT EQU const_value
 	const FLY_NEW_BARK
 	const FLY_CHERRYGROVE
@@ -129,7 +128,6 @@ JOHTO_FLYPOINT EQU const_value
 	const FLY_MT_SILVER
 ; kanto
 KANTO_FLYPOINT EQU const_value
-    const FLY_SAFFRON
 	const FLY_PALLET
 	const FLY_VIRIDIAN
 	const FLY_PEWTER
@@ -138,6 +136,7 @@ KANTO_FLYPOINT EQU const_value
 	const FLY_ROCK_TUNNEL
 	const FLY_LAVENDER
 	const FLY_CELADON
+	const FLY_SAFFRON
 	const FLY_FUCHSIA
 	const FLY_CINNABAR
 	const FLY_INDIGO

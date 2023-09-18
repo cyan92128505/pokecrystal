@@ -2313,9 +2313,10 @@ FlyMap:
 ; Kanto's map is only loaded if we've visited Indigo Plateau or Saffron
 	ld a, KANTO_FLYPOINT ; first Kanto flypoint
 	ld [wStartFlypoint], a
-	ld [wTownMapPlayerIconLandmark], a ; first one is default (Saffron)
 	ld a, NUM_FLYPOINTS - 1 ; last Kanto flypoint
 	ld [wEndFlypoint], a
+	ld a, FLY_SAFFRON
+	ld [wTownMapPlayerIconLandmark], a ; first one is default (Saffron)
 .FillKantoMap
 ; Fill out the map
 	call FillKantoMap

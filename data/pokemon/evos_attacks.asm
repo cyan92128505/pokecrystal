@@ -2412,7 +2412,7 @@ FroakieEvosAttacks:
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 16, HYPNOSIS
+	db 16, SWIFT
 	db 20, NIGHT_SHADE
 	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
@@ -2431,7 +2431,7 @@ FrogadierEvosAttacks:
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 16, HYPNOSIS
+	db 16, SWIFT
 	db 20, NIGHT_SHADE
 	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
@@ -2449,7 +2449,7 @@ GreninjaEvosAttacks:
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 16, HYPNOSIS
+	db 16, SWIFT
 	db 20, NIGHT_SHADE
 	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
@@ -3017,7 +3017,8 @@ UmbreonEvosAttacks:
 	db 24, BITE
 	db 32, MEAN_LOOK
 	db 36, DARK_PULSE
-	db 40, MOONLIGHT
+	db 40, CALM_MIND
+	db 45, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:

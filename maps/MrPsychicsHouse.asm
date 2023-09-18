@@ -12,9 +12,8 @@ MrPsychic:
 	checkitem TM_PSYCHIC_M
 	iftrue .AlreadyGotItem
 	writetext MrPsychicText1
-	promptbutton
-	verbosegiveitem TM_PSYCHIC_M
-	iffalse .Done
+	waitbutton
+	sjump .Done
 .AlreadyGotItem:
 	writetext MrPsychicText2
 	waitbutton

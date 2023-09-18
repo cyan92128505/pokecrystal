@@ -91,6 +91,7 @@ RocketBaseBossFRight:
 	moveobject TEAMROCKETBASEB2F_ROCKET1, 21, 16
 	moveobject TEAMROCKETBASEB2F_DRAGON, 10, 13
 	moveobject TEAMROCKETBASEB2F_LANCE, 10, 13
+	moveobject TEAMROCKETBASEB2F_DAD, 10, 13
 	sjump RocketBaseBossFScript
 
 RocketBaseBossFScript:
@@ -144,6 +145,7 @@ RocketBaseBossFScript:
 	reloadmap
 
     special HealParty
+    playsound SFX_TACKLE
     applymovement PLAYER, Movement_PlayerLeft
     turnobject PLAYER, RIGHT
     applymovement TEAMROCKETBASEB2F_DAD, Movement_DadDown
@@ -269,6 +271,7 @@ RocketBaseBossFScript:
 	closetext
 	applymovement TEAMROCKETBASEB2F_LANCE, RocketBaseLanceApproachesElectrodesMovement
 	disappear TEAMROCKETBASEB2F_LANCE
+	applymovement PLAYER, RocketBasePlayerApproachesElectrodesMovement
 	end
 
 YouWontGetAway:
@@ -847,6 +850,15 @@ RocketBaseLanceApproachesElectrodesMovement:
 	step UP
 	step_end
 
+RocketBasePlayerApproachesElectrodesMovement:
+    step UP
+    step LEFT
+    step LEFT
+    step LEFT
+    step LEFT
+    turn_head UP
+    step_end
+
 RocketBasePlayerCantLeaveElectrodesMovement:
 	step UP
 	step LEFT
@@ -983,16 +995,16 @@ RocketBaseBossDontMeddleText:
 	done
 
 RocketBaseBossLoseText:
+	text "That is not"
+	line "meant to"
+	cont "happen!"
+	done
+
+RocketBaseBossInitialWinText:
 	text "Such a weak"
 	line "display on the"
 	cont "last battle of"
 	cont "your life."
-
-
-RocketBaseBossInitialWinText:
-	text "That is not"
-	line "meant to"
-	cont "happen!"
 	done
 
 RocketBaseBossWinText:

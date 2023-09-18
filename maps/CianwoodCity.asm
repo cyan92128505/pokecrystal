@@ -524,6 +524,8 @@ PsychicGirlTalkScript:
     waitbutton
     closetext
     playsound SFX_WARP_FROM
+    waitsfx
+    special FadeOutMusic
     disappear CIANWOODCITY_GIRL_2
     warpfacing RIGHT, CIANWOOD_CITY, 18, 8
     moveobject CIANWOODCITY_GIRL_2, 18, 9
@@ -556,6 +558,8 @@ PsychicGirlTalkScript:
 	reloadmap
 	special FadeOutMusic
 	special HealParty
+	playsound SFX_TACKLE
+	waitsfx
 	applymovement PLAYER, Movement_PlayerKnockedBackBySpy
 	applymovement CIANWOODCITY_GIRL_2, Movement_GirlBehindPlayer
 	opentext
@@ -576,7 +580,8 @@ PsychicGirlTalkScript:
 	closetext
 	pause 15
 	special FadeOutPalettes
-	playsound SFX_WARP_FROM
+	playsound SFX_THUNDER
+	waitsfx
 	appear CIANWOODCITY_MEWTWO
 	cry MEWTWO
 	turnobject CIANWOODCITY_GIRL_2, RIGHT
@@ -600,7 +605,8 @@ PsychicGirlTalkScript:
 	writetext HoenSpyBegs
 	waitbutton
 	closetext
-	cry MEWTWO
+	playsound SFX_PSYCHIC
+	waitsfx
 	special FadeOutPalettes
 	disappear CIANWOODCITY_HOEN_SPY
 	disappear CIANWOODCITY_POLIWRATH
@@ -609,7 +615,9 @@ PsychicGirlTalkScript:
 	writetext ThankYouKitty
 	waitbutton
 	closetext
+	cry MEWTWO
 	playsound SFX_WARP_FROM
+	waitsfx
 	disappear CIANWOODCITY_MEWTWO
 	turnobject PLAYER, LEFT
 	opentext
@@ -618,6 +626,8 @@ PsychicGirlTalkScript:
 	verbosegiveitem TM_PSYCHIC_M
 	writetext MoveUsBack
 	closetext
+	playsound SFX_WARP_FROM
+	waitsfx
     disappear CIANWOODCITY_GIRL_2
     warpfacing DOWN, CIANWOOD_CITY, 12, 10
     moveobject CIANWOODCITY_GIRL_2, 12, 11

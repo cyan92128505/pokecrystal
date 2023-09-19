@@ -136,11 +136,6 @@ GoldenrodMagnetTrainStationOfficerRightThisWayText:
 	line "way, please."
 	done
 
-;GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText:
-;	text "Sorry. You don't"
-;	line "have a rail PASS."
-;	done
-
 GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText:
 	text "We hope to see you"
 	line "again!"
@@ -157,15 +152,22 @@ GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText:
 GoldenrodMagnetTrainStationGentlemanText:
 	text "I'm the PRESIDENT."
 
-	para "My dream was to"
-	line "build a train that"
-
-	para "is faster than any"
-	line "#MON."
+	para "I invested my"
+	line "sizable life"
+	cont "savings into"
+	cont "this train."
 
 	para "It really brings"
 	line "JOHTO much closer"
 	cont "to KANTO."
+
+	para "Well SAFFRON at"
+	line "least."
+
+	para "I don't want to"
+	line "be much closer"
+	cont "to the rest of"
+	cont "KANTO."
 	done
 
 GoldenrodMagnetTrainStation_MapEvents:
@@ -184,4 +186,4 @@ GoldenrodMagnetTrainStation_MapEvents:
 
 	def_object_events
 	object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1
-	object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, -1

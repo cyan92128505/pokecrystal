@@ -379,105 +379,85 @@ GoldenrodGameCornerPrizeVendorNoCoinCaseText:
 	done
 
 GoldenrodGameCornerPharmacistText:
-if DEF(_CRYSTAL_AU)
-	text "This machine looks"
-	line "the same as the"
-	cont "others."
-	done
-else
 	text "I always play this"
 	line "slot machine. It"
 
 	para "pays out more than"
 	line "others, I think."
 	done
-endc
 
 GoldenrodGameCornerPokefanM1Text:
-if DEF(_CRYSTAL_AU)
-	text "These machines"
-	line "seem different"
-
-	para "from the ones at"
-	line "CELADON CITY!"
-	done
-else
 	text "I just love this"
 	line "new slot machine."
 
-	para "It's more of a"
-	line "challenge than the"
-	cont "ones in CELADON."
+	para "The ones in"
+	line "CELADON are all"
+	cont "rigged."
+
+	para "At least for me."
 	done
-endc
 
 GoldenrodGameCornerCooltrainerMText:
-if DEF(_CRYSTAL_AU)
-	text "Nothing is certain"
-	line "in this area."
+	text "I need enough"
+	line "coins for those"
+	cont "super strong"
+	cont "special move"
+	cont "prizes."
+
+	para "Then I'll blast"
+	line "my way through"
+	cont "life!"
 	done
-else
-	text "Life is a gamble."
-	line "I'm going to flip"
-	cont "cards till I drop!"
-	done
-endc
 
 GoldenrodGameCornerPokefanFText:
-	text "Card flip…"
+	text "My trap card..."
 
-if DEF(_CRYSTAL_AU)
-	para "Different from the"
-	line "other machines."
+	para "You activated it!"
+
+	para "Jackpot!!"
 	done
-else
-	para "I prefer it over"
-	line "the slots because"
-
-	para "it's easier to"
-	line "figure the odds."
-
-	para "But the payout is"
-	line "much lower."
-	done
-endc
 
 GoldenrodGameCornerCooltrainerFText:
 	text "I won't quit until"
 	line "I win!"
+
+	para "Or until I run"
+	line "out of money."
+
+	para "Probably the"
+	line "latter with the"
+	cont "way things are"
+	cont "going."
 	done
 
 GoldenrodGameCornerGentlemanText:
-	text "I taught BLIZZARD"
+	text "I taught THUNDER"
 	line "to my #MON."
 
-	para "It was hard to get"
-	line "enough coins for"
+	para "It took eight"
+	line "months to get"
+	cont "enough coins."
 
-	para "it, but it was"
-	line "worth it."
+	para "Patients is the"
+	line "ultimate move."
 	done
 
 GoldenrodGameCornerPokefanM2Text:
-if DEF(_CRYSTAL_AU)
-	text "COIN CASE? I threw"
-	line "it away in the"
+	text "I lost all my"
+	line "money."
+
+	para "I got so furious!"
+
+	para "I threw away my"
+	line "COIN CASE in the"
 	cont "UNDERGROUND."
+
+	para "But here I am"
+	line "still."
+
+	para "I just can't"
+	line "stop!"
 	done
-else
-	text "I couldn't win at"
-	line "the slots, and I"
-
-	para "blew it on card"
-	line "flipping…"
-
-	para "I got so furious,"
-	line "I tossed out my"
-
-	para "COIN CASE in the"
-	line "UNDERGROUND."
-	done
-endc
 
 MoveTutorInsideText:
 	text "Wahahah! The coins"
@@ -486,9 +466,12 @@ MoveTutorInsideText:
 
 GoldenrodGameCornerLeftTheirDrinkText:
 	text "Someone left their"
-	line "drink."
+	line "coffee."
 
-	para "It smells sweet."
+	para "It smells like"
+	line "there might be"
+	cont "something a little"
+	cont "stronger in there."
 	done
 
 GoldenrodGameCorner_MapEvents:

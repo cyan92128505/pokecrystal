@@ -13,16 +13,12 @@ BillScript:
 	opentext
 	checkevent EVENT_GOT_EEVEE
 	iftrue .GotEevee
-;	checkevent EVENT_BEAT_ELITE_FOUR
-;	iffalse .notBeatE4
 	writetext BillTakeThisEeveeText
 	yesorno
 	iffalse .Refused
 	writetext BillImCountingOnYouText
 	promptbutton
 	waitsfx
-	;readvar VAR_PARTYCOUNT
-	;ifequal PARTY_LENGTH, .NoRoom
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -30,12 +26,6 @@ BillScript:
 	waitbutton
 	closetext
 	end
-
-;.NoRoom:
-;	writetext BillPartyFullText
-;	waitbutton
-;	closetext
-;	end
 
 .Refused:
 	writetext BillNoEeveeText
@@ -49,27 +39,8 @@ BillScript:
 	closetext
 	end
 
-;.notBeatE4:
-;	writetext BillMustBeatEliteFourText
-;	waitbutton
-;	closetext
-;	end
-
 BillsMomScript:
-	faceplayer
-	opentext
-	checkevent EVENT_MET_BILL
-	iffalse .HaventMetBill
-	writetext BillsMomText_BeforeEcruteak
-	waitbutton
-	closetext
-	end
-
-.HaventMetBill:
-	writetext BillsMomText_AfterEcruteak
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer BillsMomText
 
 BillsSisterScript:
 	faceplayer
@@ -112,50 +83,27 @@ BillsHouseBookshelf2:
 BillsHouseRadio:
 	jumpstd Radio2Script
 
-BillMustBeatEliteFourText:
-    text "BILL: Hi, <PLAYER>!"
-    line "I have a #MON"
-    cont "that needs a"
-    cont "good trainer."
-
-    para "But it must be"
-    line "a strong trainer."
-
-    para "If you ever"
-    line "beat the ELITE"
-    cont "FOUR do come"
-    cont "back and see"
-    cont "me."
-    done
-
 BillTakeThisEeveeText:
 	text "BILL: Hi, <PLAYER>!"
 
-	para "You are the"
-	line "CHAMPION!"
+	para "How is the EXP"
+	line "SHARE doing?"
 
-	para "Here you would"
-	line "be perfect to"
-	cont "look after this"
-	cont "SHAYMIN."
+	para "I have an"
+	line "interesting"
+	cont "#MON for you."
 
 	para "Can I count on you"
-	line "to play with it,"
+	line "to look after it"
 	cont "<PLAYER>?"
 	done
 
 BillImCountingOnYouText:
-	text "BILL: I knew you'd"
-	line "come through!"
+	text "Excelent!"
 
-	para "Way to go! You're"
-	line "the real deal!"
-
-	para "OK, I'm counting"
-	line "on you."
-
-	para "Take good care of"
-	line "it!"
+	para "You will be a"
+	line "true CHAMPION"
+	cont "one day!"
 	done
 
 ReceivedEeveeText:
@@ -164,62 +112,45 @@ ReceivedEeveeText:
 	done
 
 BillEeveeMayEvolveText:
-	text "BILL: PROF.ELM"
-	line "claims EEVEE may"
+	text "EEVEE can evolve"
+	line "in may ways."
 
-	para "evolve in new and"
-	line "unknown ways."
-	done
+	para "Every evolution"
+	line "stone will work."
 
-BillPartyFullText:
-	text "Whoa, wait. You"
-	line "can't carry any"
-	cont "more #MON."
+	para "You can buy them"
+	line "from the store."
+
+	para "If you don't"
+	line "use a stone EEVEE"
+	cont "will still evolve"
+	cont "eventually if you"
+	cont "are kind to it."
 	done
 
 BillNoEeveeText:
-	text "Oh… Now what to"
-	line "do?"
+	text "What a pity."
 	done
 
 BillPopWontWorkText:
-	text "BILL: My pop, he"
-	line "won't work. All he"
-
-	para "does is goof off"
-	line "all day long."
-
-	para "He's getting to be"
-	line "a real headache…"
-	done
-
-BillsMomText_BeforeEcruteak:
-	text "Oh, you collect"
-	line "#MON? My son"
-	cont "BILL is an expert."
-
-	para "He just got called"
-	line "to the #MON"
-
-	para "CENTER in ECRUTEAK"
-	line "CITY."
-
-	para "My husband went"
-	line "off to the GAME"
-
-	para "CORNER without"
-	line "being called…"
-	done
-
-BillsMomText_AfterEcruteak:
-	text "My husband was"
-	line "once known as a"
-
-	para "#MANIAC."
-	line "BILL must have"
-
-	para "taken after his"
+	text "Don't mind my"
 	line "father."
+
+	para "He is not the"
+	line "most sophisticated"
+	cont "individual."
+	done
+
+BillsMomText:
+	text "I am very proud"
+	line "of my son."
+
+	para "He's accomplished"
+	cont "so much."
+
+	para "But my husband"
+	line "spends all day in"
+	cont "the GAME CORNER."
 	done
 
 BillsSisterUsefulNumberText:
@@ -236,13 +167,12 @@ RecordedBillsNumberText:
 	done
 
 BillsSisterRefusedNumberText:
-	text "My brother made"
-	line "the PC #MON"
-	cont "storage system."
+	text "I was going to"
+	line "give you my"
+	cont "brothers number."
 
-	para "I was going to"
-	line "give you BILL's"
-	cont "number…"
+	para "You should feel"
+	line "honored."
 	done
 
 BillsSisterPhoneFullText:
@@ -256,6 +186,9 @@ BillsSisterStorageSystemText:
 
 	para "#MON storage"
 	line "system."
+
+	para "He has changed"
+	line "the world!"
 	done
 
 BillsFamilysHouse_MapEvents:

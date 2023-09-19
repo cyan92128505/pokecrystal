@@ -1646,11 +1646,11 @@ DuosionEvosAttacks:
 	db 12, CHARM
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
-	db 21, REFLECT
-	db 26, PAIN_SPLIT
+	db 20, REFLECT
+	db 30, FUTURE_SIGHT
+	db 26, ACID_ARMOR
 	db 32, RECOVER
-	db 41, PSYCHIC_M
-	db 46, FUTURE_SIGHT
+	db 40, PSYCHIC_M
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
@@ -1661,11 +1661,11 @@ ReuniclusEvosAttacks:
 	db 12, CHARM
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
-	db 21, REFLECT
-	db 26, PAIN_SPLIT
+	db 20, REFLECT
+	db 30, FUTURE_SIGHT
+	db 26, ACID_ARMOR
 	db 32, RECOVER
-	db 41, PSYCHIC_M
-	db 46, FUTURE_SIGHT
+	db 40, PSYCHIC_M
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 

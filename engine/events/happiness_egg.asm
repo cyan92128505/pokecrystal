@@ -73,7 +73,8 @@ ChangeHappiness:
 	ld d, 0
 	add hl, de
 	ld a, [hl]
-	cp $64 ; why not $80?
+	;cp $64 ; why not $80?
+	cp $FF
 	pop de
 
 	ld a, [de]

@@ -190,7 +190,7 @@ RadioTower1FYoungsterScript:
 	jumptextfaceplayer RadioTower1FYoungsterText
 
 TrainerGruntM3:
-	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, 0, .Script
+	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, GruntM3LossText, .Script
 
 .Script:
 	endifjustbattled
@@ -308,9 +308,12 @@ RadioTower1FLuckyNumberManNoRoomForYourPrizeText:
 	done
 
 RadioTower1FRadioCardWomanOfferQuizText:
-	text "We have a special"
-	line "quiz campaign on"
-	cont "right now."
+	text "It's your lucky"
+	line "day!"
+
+	para "We have a QUIZ"
+	line "and you can enter"
+	cont "for free."
 
 	para "Answer five ques-"
 	line "tions correctly to"
@@ -329,39 +332,40 @@ RadioTower1FRadioCardWomanOfferQuizText:
 RadioTower1FRadioCardWomanQuestion1Text:
 	text "Question 1:"
 
-	para "Is there a #MON"
-	line "that appears only"
-	cont "in the morning?"
+	para "DRAGON attacks are"
+	line "resisted only by"
+	cont "STEEL, FAIRY"
+	cont "and ICE types?"
 	done
 
 RadioTower1FRadioCardWomanQuestion2Text:
 	text "Correct!"
 	line "Question 2:"
 
-	para "Is this statement"
-	line "correct?"
-
-	para "You can't buy a"
-	line "BERRY at a MART."
+	para "HYDRO PUMP is more"
+	line "accurate than"
+	cont "THUNDER?"
 	done
 
 RadioTower1FRadioCardWomanQuestion3Text:
 	text "Bull's-eye!"
 	line "Question 3:"
 
-	para "Does HM01 contain"
-	line "the move FLASH?"
+	para "FIRE BLAST has"
+	line "110 base power?"
 	done
 
 RadioTower1FRadioCardWomanQuestion4Text:
 	text "So far so good!"
 	line "Question 4:"
 
-	para "Is FALKNER the"
-	line "VIOLET GYM LEADER"
-
-	para "who uses bird"
-	line "#MON?"
+	para "The level cap"
+	line "for training"
+	cont "#MON is higher"
+	cont "than the level"
+	cont "cap for capturing"
+	cont "#MON by"
+	cont "5 levels?"
 	done
 
 RadioTower1FRadioCardWomanQuestion5Text:
@@ -369,11 +373,9 @@ RadioTower1FRadioCardWomanQuestion5Text:
 	line "Here's the final"
 	cont "question:"
 
-	para "Do GOLDENROD GAME"
-	line "CORNER's slots"
-
-	para "have CHARMANDER"
-	line "on their reels?"
+	para "GASTLY is immune"
+	line "to 2 types of"
+	cont "attacks?"
 	done
 
 RadioTower1FRadioCardWomanYouWinText:
@@ -396,7 +398,7 @@ RadioTower1FRadioCardWomanTuneInText:
 	done
 
 RadioTower1FRadioCardWomanWrongAnswerText:
-	text "Oh, dear."
+	text "Nope!"
 	line "Sorry, but you"
 
 	para "got it wrong."
@@ -415,43 +417,77 @@ RadioTower1FLassText:
 
 	para "His sweet voice"
 	line "makes me melt!"
+
+	para "I wait here"
+	line "everyday in"
+	cont "hopes to see"
+	cont "him."
+
+	para "To smell him..."
+
+	para "I could wait"
+	line "here for hours."
 	done
 
 RadioTower1FYoungsterText:
-	text "I love MARY, from"
-	line "#MON TALK."
+	text "I think I could"
+	line "be a radio"
+	cont "personality."
 
-	para "I only know what"
-	line "she sounds like,"
-	cont "though."
+	para "I'd make a"
+	line "happy show to"
+	cont "cheer people up."
+
+	para "Then I would"
+	line "use my popularity"
+	cont "to go into"
+	cont "politics."
+
+	para "Then..."
+
+	para "I'd abolish all"
+	line "level caps!"
 	done
 
 GruntM3SeenText:
-	text "We've finally"
-	line "taken over the"
-	cont "RADIO TOWER!"
+	text "I have only"
+	line "one job here!"
 
-	para "Now everyone will"
-	line "get to experience"
+	para "To guard this"
+	line "door."
 
-	para "the true terror of"
-	line "TEAM ROCKET!"
+	para "They don't put"
+	line "me in charge of"
+	cont "anything"
+	cont "important."
 
-	para "We'll show you"
-	line "how scary we are!"
+	para "I'm not reliable"
+	line "apparently."
+
+	para "I'll show them."
 	done
 
 GruntM3BeatenText:
-	text "Too strong! We"
-	line "must watch you…"
+	text "Story of my life!"
+	done
+
+GruntM3LossText:
+	text "I did it!"
+
+	para "I did it!"
 	done
 
 GruntM3AfterBattleText:
-	text "You're too strong."
+	text "I can't do"
+	line "anything right."
 
-	para "Our plan could be"
-	line "ruined. I must"
-	cont "warn the others…"
+	para "Don't you lose"
+	line "to anyone else."
+
+	para "I don't want to"
+	line "be the one guy"
+	cont "who lost to a"
+	cont "kid."
 	done
 
 RadioTower1FDirectoryText:

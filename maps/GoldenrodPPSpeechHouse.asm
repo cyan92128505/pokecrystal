@@ -23,30 +23,33 @@ GoldenrodPPSpeechHouseRadio:
 	jumpstd Radio2Script
 
 GoldenrodPPSpeechHouseFisherText:
-	text "Once while I was"
-	line "battling, my"
+	text "You have a"
+	line "POCKET PC."
 
-	para "#MON couldn't"
-	line "make any moves."
-
-	para "The POWER POINTS,"
-	line "or PP, of its"
-
-	para "moves were all"
-	line "gone."
+	para "You can use it"
+	line "to heal your"
+	cont "#MON by"
+	cont "depositing them"
+	cont "then withdrawing"
+	cont "them."
 	done
 
 GoldenrodPPSpeechHouseLassText:
-	text "Sometimes, a"
-	line "healthy #MON"
+	text "Have you heard"
+	line "of DIANTHA?"
 
-	para "may be unable to"
-	line "use its moves."
+	para "She is a"
+	line "CHAMPION."
 
-	para "If that happens,"
-	line "heal it at a #-"
-	cont "MON CENTER or use"
-	cont "an item."
+	para "But she is also"
+	line "a famous actress."
+
+	para "She is beautiful"
+	line "and powerful."
+
+	para "The GYM here is"
+	line "basically her"
+	cont "fan club."
 	done
 
 GoldenrodPPSpeechHouse_MapEvents:

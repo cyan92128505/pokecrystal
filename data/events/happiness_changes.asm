@@ -21,5 +21,5 @@ HappinessChanges:
 	db -15, -15, -20 ; Used Revival Herb (bitter)
 	db  +3,  +3,  +1 ; Grooming
 	db +10,  +6,  +4 ; Gained a level in the place where it was caught
-	db +255, +255, +255 ; Ambrosia
+	db +250, +150, +50 ; Ambrosia
 	assert_table_length NUM_HAPPINESS_CHANGES

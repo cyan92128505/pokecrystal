@@ -84,39 +84,37 @@ FlowerShopRadio: ; unreferenced
 
 GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 	text "Have you seen that"
-	line "wiggly tree that's"
-
-	para "growing on ROUTE"
-	line "36?"
+	line "strange old man"
+	cont "who is blocking"
+	cont "ROUTE 36?"
 
 	para "My little sister"
-	line "got all excited"
+	line "doesn't think"
+	cont "it's a man at"
+	cont "all."
 
-	para "and went to see"
-	line "it…"
+	para "She has gone to"
+	line "investigate."
 
-	para "I'm worried… Isn't"
-	line "it dangerous?"
+	para "I'm worried…"
 	done
 
 GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText:
 	text "Do you want to"
-	line "borrow the water"
+	line "borrow some"
+	cont "HOLY WATER?"
 
-	para "bottle too?"
-	line "I don't want you"
-
-	para "doing anything"
-	line "dangerous with it."
+	para "It may come in"
+	line "useful."
 	done
 
 GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
-	text "Oh, you're better"
-	line "than WHITNEY…"
+	text "I see you have"
+	line "beaten WHITNEY."
 
-	para "You'll be OK,"
-	line "then. Here's the"
-	cont "SQUIRTBOTTLE!"
+	para "Here you can be"
+	line "trusted with this"
+	cont "HOLY WATER."
 	done
 
 GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
@@ -125,28 +123,37 @@ GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
-	text "Lalala lalalala."
-	line "Have plenty of"
-	cont "water, my lovely!"
+	text "The secret to"
+	line "beautiful flowers"
+	cont "is to bless the"
+	cont "water."
+
+	para "ARCEUS be praised."
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
-	text "When I told my sis"
-	line "about the jiggly"
+	text "I think that"
+	line "old man on"
+	cont "ROUTE 36 may"
+	cont "be an evil spirit."
 
-	para "tree, she told me"
-	line "it's dangerous."
+	para "Maybe some HOLY"
+	line "WATER might"
+	cont "remove it."
 
-	para "If I beat WHITNEY,"
-	line "I wonder if she'll"
+	para "But I'm not"
+	line "strong enough."
 
-	para "lend me her water"
-	line "bottle…"
+	para "I haven't beat"
+	line "WHITNEY."
 	done
 
 GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 	text "Wow, you beat"
-	line "WHITNEY? Cool!"
+	line "WHITNEY?"
+
+	para "You are a strong"
+	line "trainer!"
 	done
 
 GoldenrodFlowerShopFloriaItReallyWasAMonText:

@@ -557,30 +557,34 @@ DetermineMoveOrder:
 	and a
 	ret
 
+; AndrewNote - Double speed - these functions don't work correctly
+; They give a much bigger boost than intended, always maxing speed at 999
+; they have a nasty hack to skip the boost if the mon is paralysed to give the illusion of working correctly
+
 DoubleEnemySpeedInHL:
-    push bc
-	ld a, [wEnemyMonSpeed]
-	ld b, a
-	ld a, [wEnemyMonSpeed + 1]
-	sla a
-	rl b
-	ld [hli], a
-	ld [hl], b
-	pop bc
+	ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	ret nz
+
+    ld a, [wEnemyMonSpeed]
+    srl a
+    ld l, a
+    ld a, [wEnemyMonSpeed + 1]
+    rl a
+    ld h, a
     ret
 
 DoublePlayerSpeedInDE:
-    push bc
-	ld a, [wBattleMonSpeed]
-	ld b, a
-	ld a, [wBattleMonSpeed + 1]
-	sla a
-	rl b
-	ld [de], a
-	inc de
-	ld a, b
-	ld [de], a
-	pop bc
+	ld a, [wBattleMonStatus]
+	and 1 << PAR
+	ret nz
+
+    ld a, [wBattleMonSpeed]
+    srl a
+    ld e, a
+    ld a, [wBattleMonSpeed + 1]
+    rl a
+    ld d, a
     ret
 
 CheckContestBattleOver:

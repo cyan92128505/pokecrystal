@@ -365,7 +365,7 @@ RadioTower1FRadioCardWomanQuestion4Text:
 	cont "than the level"
 	cont "cap for capturing"
 	cont "#MON by"
-	cont "5 levels?"
+	cont "10 levels?"
 	done
 
 RadioTower1FRadioCardWomanQuestion5Text:

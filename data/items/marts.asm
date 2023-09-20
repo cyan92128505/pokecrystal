@@ -45,13 +45,12 @@ MartCherrygrove:
 	db -1 ; end
 
 MartCherrygroveDex:
-	db 6 ; # items
+	db 5 ; # items
 	db POKE_BALL
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-    db RUNNING_SHOES
 	db -1 ; end
 
 MartViolet:

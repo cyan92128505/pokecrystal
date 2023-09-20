@@ -220,14 +220,15 @@ OakOpenMtSilverText:
 	para "There!"
 
 	para "Now all #MON"
-	line "gain full EXP."
+	line "gain double"
+	cont "full EXP!"
 
 	para "Not only that."
 
 	para "But you will"
-	line "now gain full"
-	cont "EXP from"
-	cont "rematches!"
+	line "no longer get"
+	cont "reduced EXP"
+	cont "from rematches."
 
     para "I have also made"
 	line "arrangements so"

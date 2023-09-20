@@ -320,21 +320,37 @@ RadioTower2FPlayerWalksToMicrophoneMovement:
 	step_end
 
 RadioTower2FSuperNerdText:
-	text "You can listen to"
-	line "the radio any-"
-	cont "where. Tune in!"
+	text "I could listen"
+	line "to the radio"
+	cont "all day!"
+
+	para "Particularly"
+	line "the screamo"
+	cont "death metal"
+	cont "channel."
 	done
 
 RadioTower2FTeacherText:
-	text "Lullabies on the"
-	line "radio may make"
-	cont "#MON sleep."
+	text "KANTO has their"
+	line "own radio"
+	cont "channels."
+
+	para "But they play"
+	line "weird stuff like"
+	cont "a channel just"
+	cont "of # FLUTE"
+	cont "music."
 	done
 
 RadioTower2FTeacherText_Rockets:
-	text "Why would they"
-	line "want to take over"
-	cont "the RADIO TOWER?"
+	text "They must have"
+	line "realised the"
+	cont "power of radio!"
+
+	para "I wonder what"
+	line "kind of music"
+	cont "TEAM ROCKET"
+	cont "are into."
 	done
 
 RadioTowerJigglypuffText:
@@ -343,16 +359,20 @@ RadioTowerJigglypuffText:
 	done
 
 RadioTower2FBlackBelt1Text:
-	text "Sorry. Authorized"
-	line "personnel only"
+	text "Sorry but nobody"
+	line "is allowed"
 	cont "beyond this point."
 
-	para "It wasn't that way"
-	line "before."
+	para "By order of the"
+	line "DIRECTOR!"
 
-	para "There's something"
-	line "wrong with the"
-	cont "DIRECTOR…"
+	para "He didn't used"
+	line "to be like"
+	cont "this."
+
+	para "He has suddenly"
+	line "become very"
+	cont "secretive."
 	done
 
 RadioTower2FBlackBelt2Text:
@@ -360,50 +380,45 @@ RadioTower2FBlackBelt2Text:
 	line "around anywhere."
 
 	para "The DIRECTOR is"
-	line "nice again, just"
-	cont "as he was before."
+	line "back to his old"
+	cont "self."
 	done
 
 GruntM4SeenText:
-	text "Three years ago,"
-	line "TEAM ROCKET was"
-	cont "forced to disband."
-
-	para "But we're making a"
-	line "comeback here!"
+	text "Anyone who tries"
+	line "to stop us is"
+	cont "only helping"
+	cont "HOEN to invade"
+	cont "KANTO."
 	done
 
 GruntM4BeatenText:
-	text "Gwah! Don't get"
-	line "cute!"
+	text "You don't"
+	line "understand!"
 	done
 
 GruntM4AfterBattleText:
-	text "We won't let you"
-	line "ruin our plans"
-	cont "for our comeback!"
+	text "You are a"
+	line "HOEN sympathiser."
 	done
 
 GruntF2SeenText:
-	text "Hahaha!"
-
-	para "How boring."
-	line "It was far too"
-
-	para "easy to take over"
-	line "this place!"
-
-	para "Come on, keep me"
-	line "amused!"
+	text "We are turning"
+	line "this tower into"
+	cont "an ultimate"
+	cont "weapon of war!"
 	done
 
 GruntF2BeatenText:
-	text "Wh-who are you?"
+	text "You poor fool."
 	done
 
 GruntF2AfterBattleText:
-	text "You beat me, and"
-	line "I won't forget it!"
+	text "I may be weak"
+	line "but TEAM ROCKET"
+	cont "is strong!"
+
+	para "KANTO is strong!"
 	done
 
 RadioTower2FBuenaShowIntroductionText:

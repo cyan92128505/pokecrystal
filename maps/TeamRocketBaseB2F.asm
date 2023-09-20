@@ -188,10 +188,6 @@ RocketBaseBossFScript:
 	writetext RocketBaseRocketsDefeatedText
 	waitbutton
 	closetext
-	opentext
-	writetext RocketBaseLanceTauntText
-	waitbutton
-	closetext
 	turnobject TEAMROCKETBASEB2F_ROCKET_GIRL, LEFT
 	opentext
 	writetext RocketBaseBossDefeatedText
@@ -471,17 +467,6 @@ RocketBaseRocketsDefeatedText:
 
     para "Cough..."
     line "Cough....."
-    done
-
-RocketBaseLanceTauntText:
-    text "Mark you the"
-    cont "folly of pride."
-
-    para "It lies broken"
-    line "and helpless."
-
-    para "It reeks now"
-    line "of fear."
     done
 
 RocketBaseBossDefeatedText:

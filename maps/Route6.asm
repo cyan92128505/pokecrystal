@@ -19,7 +19,7 @@ Route6_MapScripts:
     disappear ROUTE6_INVADER
     checkevent EVENT_BEAT_INVADER_BACKSTABER
     iffalse .fieldMon
-    ;appear ROUTE6_INVADER
+    appear ROUTE6_INVADER
 .fieldMon
 ; Pokemon which always appear
     appear ROUTE6_FIELDMON_1
@@ -224,6 +224,7 @@ InvaderBackstaberScene:
 	loadtrainer INVADER, BACKSTABER
 	startbattle
 	reloadmapafterbattle
+	setevent EVENT_BEAT_INVADER_BACKSTABER
 	turnobject PLAYER, UP
     applymovement ROUTE6_INVADER, BackstabberLeaves
 .end

@@ -96,7 +96,7 @@ CherrygroveCityGuideGent:
 	playsound SFX_ENTER_DOOR
 	disappear CHERRYGROVECITY_GRAMPS
 	clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
-	setmapscene CHERRYGROVE_CITY, SCENE_CUSTOM_1
+	setmapscene CHERRYGROVE_CITY, SCENE_CUSTOM_FINISHED
 	waitsfx
 	end
 

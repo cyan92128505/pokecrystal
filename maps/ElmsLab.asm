@@ -1695,7 +1695,7 @@ DadBattleScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_DAD
-	setmapscene ELMS_LAB, SCENE_FINISHED
+	setmapscene ELMS_LAB, SCENE_CUSTOM_FINISHED
 
 	applymovement ELMSLAB_MUM, ELmsLabMovement_MumToDad
 	opentext

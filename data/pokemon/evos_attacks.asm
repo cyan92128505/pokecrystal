@@ -3527,16 +3527,6 @@ Porygon2EvosAttacks:
 
 RayquazaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DRAGON_CLAW
-	db 1, FLY
-	db 55, EXTREMESPEED
-	db 60, OUTRAGE
-	db 65, DRAGON_DANCE
-	db 70, DRACO_ASCENT
-	db 75, HURRICANE
-	db 80, DRACO_METEOR
-	db 85, HYPER_BEAM
-
 	db 1, SCARY_FACE
 	db 1, FLY
 	db 1, ANCIENTPOWER

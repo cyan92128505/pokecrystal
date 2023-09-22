@@ -236,7 +236,7 @@ Moves: ; 41afb
 	move MAGNITUDE,    EFFECT_MAGNITUDE,           1, GROUND,        PHYSICAL, 100, 30,   0
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       100, FIGHTING,      PHYSICAL,  50, 10, 100
 	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, BUG,           PHYSICAL,  85, 10,   0
-	move DRAGON_PULSE, EFFECT_NORMAL_HIT,         90, DRAGON,        SPECIAL,  100, 20,   0
+	move DRAGON_PULSE, EFFECT_SP_DEF_DOWN_HIT,    90, DRAGON,        SPECIAL,  100, 20,  20
 	move BATON_PASS,   EFFECT_BATON_PASS,          0, NORMAL,        STATUS,   100, 40,   0
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,        STATUS,   100,  5,   0
 	move PURSUIT,      EFFECT_NORMAL_HIT,         50, DARK,          PHYSICAL, 100, 20,   0

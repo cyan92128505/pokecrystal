@@ -1222,8 +1222,8 @@ SeedFlareDescription:
 	next "lowers SPCL.DEF.@"
 
 DracoMeteorDescription:
-	db   "Meteors rain on"
-	next "both #MON.@"
+	db   "The ultimate"
+	next "DRAGON attack.@"
 
 RainDanceDescription:
 	db   "Boosts water-type"

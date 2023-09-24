@@ -225,7 +225,7 @@ IlexForestShrineScript:
 	turnobject PLAYER, DOWN
 	pause 20
 	special CelebiShrineEvent
-	loadwildmon CELEBI, 70
+	loadwildmon CELEBI, 60
 	startbattle
 	reloadmapafterbattle
 	pause 20

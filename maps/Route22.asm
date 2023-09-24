@@ -72,7 +72,7 @@ MoltresScript:
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 70
+	loadwildmon MOLTRES, 60
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT

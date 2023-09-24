@@ -467,6 +467,7 @@ ElmGiveTicketScript:
 	closetext
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
 	setmapscene ELMS_LAB, SCENE_CUSTOM_1
+	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_FINISHED
 	setevent EVENT_GOT_CLEAR_BELL
 	end
 
@@ -1690,6 +1691,7 @@ DadBattleScript:
 
     winlosstext DadLosesText, DadWinsText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LT_SURGE, DAD
 	loadtrainer LT_SURGE, DAD
 	startbattle
 	dontrestartmapmusic

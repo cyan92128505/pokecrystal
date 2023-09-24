@@ -2672,6 +2672,10 @@ PlayerAttackDamage:
 
 	ld hl, wPlayerMoveStructPower
 	ld a, [hli]
+	cp 1
+	jr nz, .notOne
+	ld a, 100 ; AndrewNote - Return - treat moves with 1 power as 100. This is for AI to not be broken by RETURN.
+.notOne
 	and a
 	ld d, a
 	ret z
@@ -5312,12 +5316,23 @@ BattleCommand_Rampage:
 	and SLP
 	ret nz
 
-	ld de, wPlayerRolloutCount
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .ok
+	jr z, .playerTurn
 	ld de, wEnemyRolloutCount
+	ld a, [wEnemyMonSpecies]
+	jr .ok
+.playerTurn
+	ld de, wPlayerRolloutCount
+	ld a, [wBattleMonSpecies]
 .ok
+    ; AndrewNote - Dragonite does not rampage
+    cp DRAGONITE
+    jr nz, .notDragonite
+    ld hl, MaintainsControlText
+    call PrintText
+    ret z
+.notDragonite
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	set SUBSTATUS_RAMPAGE, [hl]
@@ -5329,6 +5344,10 @@ BattleCommand_Rampage:
 	ld a, 1
 	ld [wSomeoneIsRampaging], a
 	ret
+
+MaintainsControlText:
+    text_far _MaintainsControlText
+    text_end
 
 INCLUDE "engine/battle/move_effects/teleport.asm"
 

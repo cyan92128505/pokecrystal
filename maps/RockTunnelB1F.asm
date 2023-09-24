@@ -58,7 +58,7 @@ DarkraiScript:
     sjump .begin
 .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 70
+	loadwildmon DARKRAI, 60
     sjump .begin
 .lowerLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT

@@ -64,7 +64,6 @@ RockHeadPokemon:
     db AERODACTYL
     db CUBONE
     db MAROWAK
-    db GIRATINA
     db BAGON
     db SHELGON
     db CHIMCHAR

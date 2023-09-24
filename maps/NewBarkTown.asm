@@ -380,6 +380,20 @@ NewBarkTownBlockText:
     cont "PROF.ELM!"
     done
 
+ElmsMission:
+    turnobject PLAYER, LEFT
+	opentext
+	writetext ElmsMissionText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_NewBarkTownTurnLeft
+    end
+
+ElmsMissionText:
+    text "I better see"
+    line "PROF.ELM!"
+    done
+
 Movement_NewBarkTownTurnBack:
 	step DOWN
 	step_end
@@ -500,7 +514,7 @@ CrystalScript:
 	loadtrainer CRYSTAL, CRYSTAL_1
 	startbattle
 	setevent EVENT_BEAT_CRYSTAL_1
-	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
+	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_FINISHED
 	reloadmap
 
 	opentext
@@ -849,6 +863,8 @@ NewBarkTown_MapEvents:
 	coord_event  18, 18, SCENE_DEFAULT, NeedToGetAPokemon2
 	coord_event  1, 20, SCENE_CUSTOM_1, CrystalScript1
 	coord_event  1, 21, SCENE_CUSTOM_1, CrystalScript2
+	coord_event  18, 17, SCENE_CUSTOM_2, ElmsMission
+	coord_event  18, 18, SCENE_CUSTOM_2, ElmsMission
 
 
 	def_bg_events

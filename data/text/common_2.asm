@@ -716,6 +716,11 @@ Text_BattleUser::
 	text "<USER>@"
 	text_end
 
+_MaintainsControlText::
+	text "<USER>"
+	line "stays focused."
+    prompt
+
 _BattleMadeWhirlwindText::
 	text_start
 	line "made a whirlwind!"

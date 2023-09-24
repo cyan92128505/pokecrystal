@@ -20,7 +20,7 @@ ArticunoScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ARTICUNO, 70
+	loadwildmon ARTICUNO, 60
 	startbattle
 	reloadmapafterbattle
     setval ARTICUNO

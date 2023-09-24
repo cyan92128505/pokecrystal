@@ -2252,7 +2252,7 @@ DratiniEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 50, OUTRAGE
 	db 55, DRAGON_DANCE
-	db 65, HYPER_BEAM
+	db 65, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
@@ -2269,7 +2269,7 @@ DragonairEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 50, OUTRAGE
 	db 55, DRAGON_DANCE
-	db 65, HYPER_BEAM
+	db 65, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DragoniteEvosAttacks:
@@ -2285,9 +2285,10 @@ DragoniteEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 50, HURRICANE
 	db 50, ROOST
+	db 52, DRAGON_CLAW
 	db 55, DRAGON_DANCE
 	db 60, OUTRAGE
-	db 65, HYPER_BEAM
+	db 65, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DarkraiEvosAttacks:
@@ -3095,6 +3096,7 @@ BagonEvosAttacks:
 	db 53, FIRE_BLAST
 	db 55, DRAGON_DANCE
 	db 60, OUTRAGE
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 ShelgonEvosAttacks:
@@ -3112,6 +3114,7 @@ ShelgonEvosAttacks:
 	db 53, FIRE_BLAST
 	db 55, DRAGON_DANCE
 	db 60, OUTRAGE
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 SalamenceEvosAttacks:
@@ -3125,6 +3128,7 @@ SalamenceEvosAttacks:
 	db 53, FIRE_BLAST
 	db 55, DRAGON_DANCE
 	db 60, OUTRAGE
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:

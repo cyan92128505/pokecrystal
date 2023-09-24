@@ -131,18 +131,14 @@ DragonsDenB1FieldMon8Script:
 	end
 
 RayquazaScript:
-	opentext
-
-    setval DRAGONITE
-	special MonCheck
+	callasm IsDragoniteInParty
 	iffalse .notWorthy
-    setval SALAMENCE
-	special MonCheck
+	callasm IsSalamenceInParty
 	iffalse .notWorthy
-    setval GARCHOMP
-	special MonCheck
+	callasm IsGarchompInParty
 	iffalse .notWorthy
 
+    opentext
 	writetext RayquazaWorthyText
 	cry RAYQUAZA
 	pause 15
@@ -173,10 +169,71 @@ RayquazaScript:
 	disappear DRAGONSDENB1F_RAYQUAZA
 	end
 .notWorthy
+    opentext
     writetext RayquazaNotWorthyText
     waitbutton
     closetext
     end
+
+IsDragoniteInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp DRAGONITE
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
+IsSalamenceInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp SALAMENCE
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
+IsGarchompInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp GARCHOMP
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
 
 RayquazaNotWorthyText:
 	text "I AM RAYQUAZA!"
@@ -201,10 +258,9 @@ RayquazaNotWorthyText:
 
 	para "SALAMENCE!"
 
-	para "AND"
-	line "GARCHOMP!"
+	para "GARCHOMP!"
 
-	para "THEN RETURN TO ME!"
+	para "BRING THEM TO ME!"
 	done
 
 RayquazaWorthyText:

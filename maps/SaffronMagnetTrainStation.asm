@@ -20,7 +20,6 @@ SaffronMagnetTrainStationOfficerScript:
 	iffalse .MagnetTrainToGoldenrod
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .MagnetTrainToGoldenrod
-	sjump .MagnetTrainToGoldenrod
 	writetext SaffronMagnetTrainStationOfficerTrainIsntOperatingText
 	waitbutton
 	closetext

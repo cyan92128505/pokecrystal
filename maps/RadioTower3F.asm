@@ -45,8 +45,6 @@ RadioTower3FGymGuideScript:
 RadioTower3FCooltrainerFScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER
-	iftrue .GotSunnyDay
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .NoRockets
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
@@ -64,19 +62,7 @@ RadioTower3FCooltrainerFScript:
 
 .NoRockets:
 	writetext RadioTower3FCooltrainerFYoureMyHeroText
-	promptbutton
-	verbosegiveitem TM_SUNNY_DAY
-	iffalse .NoRoom
-	writetext RadioTower3FCooltrainerFItsSunnyDayText
 	waitbutton
-	closetext
-	setevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER
-	end
-
-.GotSunnyDay:
-	writetext RadioTower3FCooltrainerFYouWereMarvelousText
-	waitbutton
-.NoRoom:
 	closetext
 	end
 
@@ -133,52 +119,55 @@ RadioTower3FPokemonMusicSign:
 	jumptext RadioTower3FPokemonMusicSignText
 
 RadioTower3FSuperNerdText:
-	text "We have recordings"
-	line "of the cries of"
+	text "I am working on"
+	line "my #DEX."
 
-	para "all #MON that"
-	line "have been found."
+	para "I've seen 200"
+	line "#MON."
 
-	para "We must have about"
-	line "200 kinds."
+	para "When I complete"
+	line "ot I will sell"
+	cont "it and make a"
+	cont "fortune."
 	done
 
 RadioTower3FGymGuideText_Rockets:
-	text "To trainers, #-"
-	line "MON are their"
-	cont "beloved partners."
+	text "TEAM ROCKET say"
+	line "they are fighting"
+	cont "to save us from"
+	cont "HOEN."
 
-	para "It's terrible how"
-	line "TEAM ROCKET is"
-
-	para "trying to control"
-	line "#MON."
+	para "Don't believe a"
+	line "word of it!"
 	done
 
 RadioTower3FGymGuideText:
-	text "We run 24 hours a"
-	line "day to broadcast"
+	text "The only slots"
+	line "I get given are"
+	cont "always just after"
+	cont "midnight."
 
-	para "entertaining pro-"
-	line "grams."
+	para "Most would hate"
+	line "it but I love"
+	cont "it."
 
-	para "I'll do my best to"
-	line "run around the"
-	cont "clock too!"
+	para "I call it"
+	line "HYPNO hunt!"
 	done
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:
-	text "The TEAM ROCKET"
-	line "boss has locked"
-	cont "himself in."
+	text "TEAM ROCKET have"
+	line "taken the DIRECTOR"
+	cont "hostage!"
 
-	para "But the DIRECTOR"
-	line "can open it."
+	para "He is locked on"
+	line "the fifth floor."
 
-	para "He's up on the"
-	line "fifth floor."
+	para "ROCKET executives"
+	line "are there."
 
-	para "Please save him!"
+	para "They are really"
+	line "strong!"
 	done
 
 RadioTower3FCooltrainerFIsDirectorSafeText:
@@ -187,61 +176,63 @@ RadioTower3FCooltrainerFIsDirectorSafeText:
 	done
 
 RadioTower3FCooltrainerFYoureMyHeroText:
-	text "Thank you!"
-	line "You're my hero!"
+	text "You defeated all"
+	line "of TEAM ROCKET!"
 
-	para "This is a token of"
-	line "my appreciation."
-	done
-
-RadioTower3FCooltrainerFItsSunnyDayText:
-	text "It's SUNNY DAY."
-	line "It powers up fire-"
-	cont "type moves for a"
-	cont "while."
-	done
-
-RadioTower3FCooltrainerFYouWereMarvelousText:
-	text "You were simply"
-	line "marvelous!"
+	para "I heard a hero"
+	line "from KANTO done"
+	cont "that 5 years ago."
 	done
 
 GruntM8SeenText:
-	text "It feels great"
-	line "ordering #MON"
-	cont "to commit crimes."
+	text "You should not"
+	line "be here!"
+
+	para "I knew the guy"
+	line "on the ground"
+	cont "floor was going"
+	cont "to be useless."
 	done
 
 GruntM8BeatenText:
-	text "You're kidding!"
+	text "That makes sense."
 	done
 
 GruntM8AfterBattleText:
-	text "I feel lousy over"
-	line "losing!"
+	text "If you think"
+	line "you have any"
+	cont "hope against"
+	cont "the executives."
 
-	para "Darn it! I hate"
-	line "useless #MON!"
+	para "You are a fool."
 	done
 
 GruntM9SeenText:
-	text "Why did the shut-"
-	line "ter open? Did you"
+	text "My wall!"
 
-	para "have something to"
-	line "do with this?"
+	para "My precious"
+	line "wall!"
+
+	para "The paling"
+	line "has fallen!"
+
+	para "You shall know"
+	line "my wrath!"
 	done
 
 GruntM9BeatenText:
-	text "I'm done for!"
+	text "We are undone."
 	done
 
 GruntM9AfterBattleText:
-	text "What?! You made it"
-	line "past our men in"
-	cont "the UNDERGROUND?"
+	text "There is only"
+	line "one way you"
+	cont "could have that"
+	cont "key."
 
-	para "How could you?"
+	para "You would see"
+	line "us all slaves"
+	cont "of HOEN."
 	done
 
 RadioTower3FCardKeySlotText:

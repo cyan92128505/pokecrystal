@@ -2810,14 +2810,16 @@ AI_Smart_BulkUp:
     jp nc, StandardDiscourage
 
 ; encourage to +2
-    ld a, [wEnemyAtkLevel]
-    cp BASE_STAT_LEVEL + 2
-    jp c, StandardEncourage
+;    ld a, [wEnemyAtkLevel]
+;    cp BASE_STAT_LEVEL + 2
+;    jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
+
+; encourage if we have no reason not to
+    jp StandardEncourage
 
 AI_Smart_Curse:
 	ld a, [wEnemyMonType1]
@@ -3942,14 +3944,16 @@ AI_Smart_CalmMind:
     jp nc, StandardDiscourage
 
 ; encourage to +2
-    ld a, [wEnemySAtkLevel]
-    cp BASE_STAT_LEVEL + 2
-    jp c, StandardEncourage
+;    ld a, [wEnemySAtkLevel]
+;    cp BASE_STAT_LEVEL + 2
+;    jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
+
+; encourage if we have no reason not to
+    jp StandardEncourage
 
 AI_Smart_DragonDance:
 	call IsAttackMaxed
@@ -3988,14 +3992,16 @@ AI_Smart_DragonDance:
 
 .normalEncourage
 ; encourage to get to +2
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jp c, StandardEncourage
+;	ld a, [wEnemyAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
+
+; encourage if we have no reason not to
+    jp StandardEncourage
 
 AI_Smart_SwordsDance:
     call IsAttackMaxed
@@ -4006,14 +4012,16 @@ AI_Smart_SwordsDance:
     jp nc, StandardDiscourage
 
 ; encourage to get to +2
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jp c, StandardEncourage
+;	ld a, [wEnemyAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
+
+; encourage if we have no reason not to
+    jp StandardEncourage
 
 AI_Smart_Barrier:
 	call IsDefenseMaxed
@@ -4083,14 +4091,16 @@ AI_Smart_Growth:
     jp nc, StandardDiscourage
 
 ; encourage to get to +1
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jp c, StandardEncourage
+;    ld a, [wEnemySAtkLevel]
+;	cp BASE_STAT_LEVEL + 1
+;	jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
+
+; encourage if we have no reason not to
+    jp StandardEncourage
 
 AI_Smart_NastyPlot:
 	call IsSpecialAttackMaxed
@@ -4113,14 +4123,16 @@ AI_Smart_NastyPlot:
     jp nc, StandardDiscourage
 
 ; encourage to get to +2
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jp c, StandardEncourage
+;    ld a, [wEnemySAtkLevel]
+;	cp BASE_STAT_LEVEL + 2
+;	jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
+
+; encourage if we have no reason not to
+    jp StandardEncourage
 
 AI_Smart_DynamicPunch:
 ; encourage dynamic punch for machamp
@@ -4440,7 +4452,7 @@ IsAIToxified:
    	pop bc
    	pop de
    	pop hl
-   	ret c
+   	jr c, .no
 
     ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a

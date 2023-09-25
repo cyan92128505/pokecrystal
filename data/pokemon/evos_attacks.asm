@@ -2250,9 +2250,10 @@ DratiniEvosAttacks:
 	db 30, WATERFALL
 	db 35, DRAGON_CLAW
 	db 40, DRAGON_PULSE
-	db 50, OUTRAGE
 	db 55, DRAGON_DANCE
+	db 60, DRAGON_CLAW
 	db 65, DRACO_METEOR
+	db 70, OUTRAGE
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
@@ -2267,9 +2268,10 @@ DragonairEvosAttacks:
 	db 30, WATERFALL
 	db 35, DRAGON_CLAW
 	db 40, DRAGON_PULSE
-	db 50, OUTRAGE
 	db 55, DRAGON_DANCE
+	db 60, DRAGON_CLAW
 	db 65, DRACO_METEOR
+	db 70, OUTRAGE
 	db 0 ; no more level-up moves
 
 DragoniteEvosAttacks:
@@ -2285,10 +2287,10 @@ DragoniteEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 50, HURRICANE
 	db 50, ROOST
-	db 52, DRAGON_CLAW
 	db 55, DRAGON_DANCE
-	db 60, OUTRAGE
+	db 60, DRAGON_CLAW
 	db 65, DRACO_METEOR
+	db 70, OUTRAGE
 	db 0 ; no more level-up moves
 
 DarkraiEvosAttacks:

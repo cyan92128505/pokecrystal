@@ -312,133 +312,223 @@ RadioTower5CrystalText:
     done
 
 FakeDirectorTextBefore1:
-	text "Y-you! You came to"
-	line "rescue me?"
+	text "Oh thank you!"
+
+	para "You have saved"
+	line "me..."
 	done
 
 FakeDirectorTextBefore2:
 	text "Is that what you"
 	line "were expecting?"
 
-	para "Wrong!"
-	line "I'm an imposter!"
+	para "I am sorry to"
+	line "disappoint you."
 
-	para "I pretended to be"
-	line "the real thing to"
+	para "I have assumed"
+	line "the likeness of"
+	cont "the good DIRECTOR"
+	cont "to help guide"
+	cont "people to our"
+	cont "cause."
 
-	para "prepare for our"
-	line "takeover."
+	para "The real DIRECTOR"
+	line "is quite safe."
 
-	para "Do you want to"
-	line "know where we hid"
-	cont "the real DIRECTOR?"
+	para "He would get in"
+	line "the way."
 
-	para "Sure, I'll tell"
-	line "you. But only if"
-	cont "you can beat me!"
+	para "And all those"
+	line "who get in our"
+	cont "way..."
+
+	para "Must be dealt"
+	line "with."
 	done
 
 FakeDirectorWinText:
-	text "OK, OK. I'll tell"
-	line "you where he is."
+	text "You think you"
+	line "are helping these"
+	cont "people?"
+	done
+
+FakeDirectorLoseText:
+	text "We are the"
+	line "heroes now."
 	done
 
 FakeDirectorTextAfter:
-	text "We stashed the"
-	line "real DIRECTOR in"
+	text "The HOEN legendary"
+	line "#MON are"
+	cont "must stronger"
+	cont "than the element"
+	cont "birds of KANTO."
 
-	para "the UNDERGROUND"
-	line "WAREHOUSE."
+	para "We did at one"
+	line "time have a"
+	cont "weapon that"
+	cont "could beat them."
 
-	para "It's at the far"
-	line "end of the UNDER-"
-	cont "GROUND."
+	para "A #MON designed"
+	line "only for battle."
 
-	para "But I doubt you'll"
-	line "get that far."
+	para "But it grew too"
+	line "strong and"
+	cont "escaped us."
+
+	para "Now we have a"
+	line "new plan."
+
+	para "And we need this"
+	line "tower to carry"
+	cont "it out."
+
+	para "But you are too"
+	line "simple to see the"
+	cont "nuance of this."
+
+	para "Fine go rescue"
+	line "your DIRECTOR."
+
+	para "He is stashed"
+	line "away in the"
+	cont "UNDERGROUND."
 	done
 
 Executivef1SeenText:
-	text "Remember me from"
-	line "the HIDEOUT in"
-	cont "MAHOGANY TOWN?"
+	text "Well, well..."
 
-	para "I lost then, but I"
-	line "won't this time."
+	para "Where is your"
+	line "daddy?"
+
+	para "I would like"
+	line "to see the pain"
+	cont "in his face as"
+	cont "my #MON"
+	cont "torture you."
+
+	para "This time LANCE"
+	line "isn't here to"
+	cont "save you!"
+
+	para "I'm going to"
+	line "enjoy this all"
+	cont "the same."
+
+	para "Time to die"
+	line "HOEN sympathiser!"
 	done
 
 Executivef1BeatenText:
-	text "This can't be"
-	line "happening!"
+	text "That's impossible!"
 
-	para "I fought hard, but"
-	line "I still lost…"
+	para "You were weak"
+	line "before!"
 	done
 
 Executivef1AfterBattleText:
 	text "<PLAYER>, isn't it?"
 
-	para "A brat like you"
-	line "won't appreciate"
+	para "Go on!"
 
-	para "the magnificence"
-	line "of TEAM ROCKET."
+	para "Finish me!"
 
-	para "That's too bad."
-	line "I really admire"
-	cont "your power."
+	para "I don't deserve"
+	line "mercy."
+
+	para "I wasn't going"
+	line "to show you any."
+
+	para "But if you care"
+	line "about JOHTO."
+
+	para "If you care about"
+	line "your family."
+
+	para "You will let my"
+	line "brother finish"
+	cont "his work."
+
+	para "HOEN will kill"
+	line "everyone you"
+	cont "love."
+
+	para "They killed our"
+	line "parents in front"
+	cont "of us when we"
+	cont "were children."
+
+	para "LANCE then"
+	line "liberated SAFFRON"
+	cont "from HOEN control."
+
+	para "But our lives"
+	line "were already"
+	cont "ruined."
+
+	para "I wont let them"
+	line "get away with it."
 	done
 
 RadioTower5FRocketBossBeforeText:
-	text "Oh? You managed to"
-	line "get this far?"
+	text "We have developed"
+	line "an EM signal that"
+	cont "induces rage in"
+	cont "#MON."
 
-	para "You must be quite"
-	line "the trainer."
+	para "Our only hope"
+	line "to defeat HOEN"
+	cont "is to use this"
+	cont "signal to turn"
+	cont "their legendary"
+	cont "#MON against"
+	cont "them."
 
-	para "We intend to take"
-	line "over this RADIO"
+	para "Imagine the shock"
+	line "of WALLACE when"
+	cont "his own #MON"
+	cont "destroy his army."
 
-	para "STATION and an-"
-	line "nounce our come-"
-	cont "back."
+	para "You may not agree"
+	line "with our methods"
+	cont "but you must see"
+	cont "the necessity of"
+	cont "our work."
 
-	para "That should bring"
-	line "our boss GIOVANNI"
-
-	para "back from his solo"
-	line "training."
-
-	para "We are going to"
-	line "regain our former"
-	cont "glory."
-
-	para "I won't allow you"
-	line "to interfere with"
-	cont "our plans."
+	para "I can not allow"
+	line "you to interfere."
 	done
 
 RadioTower5FRocketBossWinText:
-	text "No! Forgive me,"
-	line "GIOVANNI!"
+	text "No!"
+
+	para "You naive child."
 	done
 
 RadioTower5FRocketBossAfterText:
-	text "How could this be?"
+	text "It is not over."
 
-	para "Our dreams have"
-	line "come to naught."
+	para "This is not the"
+	line "only radio tower."
 
-	para "I wasn't up to the"
-	line "task after all."
+	para "Our top operative"
+	line "is entrusted to"
+	cont "see our vision"
+	cont "to fruition."
 
-	para "Like GIOVANNI did"
-	line "before me, I will"
+	para "He is stronger"
+	line "even than LANCE."
 
-	para "disband TEAM"
-	line "ROCKET here today."
+	para "One day you will"
+	line "see you are the"
+	cont "villain here."
 
-	para "Farewell."
+	para "But by then it"
+	line "will be too late."
+
+	para "All suffering"
+	line "that follows is"
+	cont "on your head."
 	done
 
 RadioTower5FDirectorThankYouText:

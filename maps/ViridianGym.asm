@@ -66,6 +66,7 @@ ViridianGymBlueScript:
 	setmapscene VERMILION_CITY, SCENE_CUSTOM_1
 	setval 1
     writemem wHoenInvasionUnderway
+    blackoutmod VIRIDIAN_CITY
 	end
 .battle
 	writetext LeaderBlueBeforeText

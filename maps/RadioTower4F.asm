@@ -113,16 +113,19 @@ RadioTower4FFisherText:
 	done
 
 RadioTower4FDJMaryText:
-	text "MARY: Why? Why do"
-	line "I have to suffer"
-	cont "through this?"
+	text "I don't care"
+	line "what happens"
+	cont "to me!"
 
-	para "MEOWTH, help me!"
+	para "But please save"
+	line "my MEOWTH!"
 	done
 
 RadioTower4FDJMaryText_ClearedRockets:
-	text "MARY: Oh! You're"
-	line "my little savior!"
+	text "You are a hero."
+
+	para "You are strong"
+	line "and beautiful."
 
 	para "Will you take this"
 	line "as my thanks?"
@@ -132,16 +135,17 @@ RadioTower4FDJMaryText_GivePinkBow:
 	text "MARY: It's just"
 	line "right for #MON"
 
-	para "that know normal-"
+	para "that know fairy-"
 	line "type moves."
 	done
 
 RadioTower4FDJMaryText_After:
-	text "MARY: Please tune"
-	line "into me on PROF."
+	text "Let the world"
+	line "know about"
+	cont "<PLAYER>."
 
-	para "OAK'S #MON TALK"
-	line "show."
+	para "The strong and"
+	line "beautiful!"
 	done
 
 RadioTowerMeowthText:
@@ -149,90 +153,109 @@ RadioTowerMeowthText:
 	done
 
 GruntM10SeenText:
-	text "You plan to rescue"
-	line "the DIRECTOR?"
+	text "Have you heard"
+	line "of the #MON"
 
-	para "That won't be pos-"
-	line "sible because I'm"
-	cont "going to beat you!"
+	para "KYOGRE and"
+	line "GROUDON!"
+
+	para "They are HOEN"
+	line "legendary"
+	cont "#MON."
+
+	para "They will kill"
+	line "us all!"
 	done
 
 GruntM10BeatenText:
-	text "No! Unbelievable!"
+	text "You fool!"
 	done
 
 GruntM10AfterBattleText:
-	text "I don't believe"
-	line "it! I was beaten!"
+	text "You have doomed"
+	line "us all!"
 	done
 
 Executivem2SeenText:
-	text "Stop! I'm known as"
-	line "the TEAM ROCKET"
-	cont "fortress!"
+	text "Stop!"
+
+	para "I'm known as the"
+	line "TEAM ROCKET"
+	cont "FORTRESS!"
 
 	para "You're not taking"
 	line "another step!"
 	done
 
 Executivem2BeatenText:
-	text "The fortress came"
-	line "down!"
+	text "The fortress has"
+	line "fallen!"
 	done
 
 Executivem2AfterBattleText:
 	text "You've earned my"
-	line "respect, so here's"
-	cont "some advice."
+	line "respect."
 
-	para "It's not too late."
-	line "You can still turn"
-	cont "back."
+	para "Join us!"
+
+	para "Let us save"
+	line "KANTO and JOHTO"
+	cont "together."
 	done
 
 GruntF4SeenText:
-	text "Don't I think"
-	line "#MON are cute?"
+	text "Have you heard"
+	line "of the #MON"
 
-	para "I'll think my"
-	line "#MON are cute--"
+	para "KYOGRE and"
+	line "GROUDON!"
 
-	para "after they beat"
-	line "yours!"
+	para "They are HOEN"
+	line "legendary"
+	cont "#MON."
+
+	para "They will kill"
+	line "us all!"
 	done
 
 GruntF4BeatenText:
-	text "Oh, no! They're so"
-	line "useless!"
+	text "You fool!"
 	done
 
 GruntF4AfterBattleText:
-	text "I love my"
-	line "beautiful self!"
-
-	para "Who cares about"
-	line "#MON?"
+	text "You have doomed"
+	line "us all!"
 	done
 
 ScientistRichSeenText:
-	text "Most excellent."
+	text "Did I give you"
+	line "permission to"
+	cont "leave."
 
-	para "This RADIO TOWER"
-	line "will fulfill our"
-	cont "grand design."
+	para "Their power will"
+	line "be mine."
+
+	para "The HOEN legendary"
+	line "#MON."
+
+	para "I will learn to"
+	line "control them and"
+	cont "rule the world!"
+
+	para "Muhahahaha."
 	done
 
 ScientistRichBeatenText:
-	text "Hmmm…"
-
-	para "All grand plans"
-	line "come with snags."
+	text "Tis but a minor"
+	line "set back."
 	done
 
 ScientistRichAfterBattleText:
-	text "Do you honestly"
-	line "believe you can"
-	cont "stop TEAM ROCKET?"
+	text "Destiny."
+
+	para "You can not"
+	line "destroy my"
+	cont "destiny."
 	done
 
 RadioTower4FProductionSignText:

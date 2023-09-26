@@ -787,6 +787,7 @@ KRIS EQU __trainer_class__
     const OROBORO
     const MAX
     const MASTER_PATCHES
+    const ARTORIAS
 
     trainerclass CRYSTAL ; 45
     const CRYSTAL_1

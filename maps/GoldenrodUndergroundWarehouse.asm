@@ -1,7 +1,5 @@
 	object_const_def
 	const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET1
-	;const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET2
-	;const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET3
 	const GOLDENRODUNDERGROUNDWAREHOUSE_GENTLEMAN
 	const GOLDENRODUNDERGROUNDWAREHOUSE_POKE_BALL1
 	const GOLDENRODUNDERGROUNDWAREHOUSE_POKE_BALL2
@@ -40,28 +38,6 @@ TrainerGruntM24:
 	endifjustbattled
 	opentext
 	writetext GruntM24AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerGruntM14:
-	trainer GRUNTM, GRUNTM_14, EVENT_BEAT_ROCKET_GRUNTM_14, GruntM14SeenText, GruntM14BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM14AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerGruntM15:
-	trainer GRUNTM, GRUNTM_15, EVENT_BEAT_ROCKET_GRUNTM_15, GruntM15SeenText, GruntM15BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM15AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -117,45 +93,6 @@ GruntM24AfterBattleText:
 
 	para "We'll do whatever"
 	line "it takes."
-	done
-
-GruntM14SeenText:
-	text "You're not going"
-	line "any farther!"
-
-	para "I don't show mercy"
-	line "to my enemies, not"
-	cont "even brats!"
-	done
-
-GruntM14BeatenText:
-	text "Blast it!"
-	done
-
-GruntM14AfterBattleText:
-	text "I lost…"
-
-	para "Please forgive me,"
-	line "GIOVANNI!"
-	done
-
-GruntM15SeenText:
-	text "Hyuck-hyuck-hyuck!"
-	line "I remember you!"
-
-	para "You got me good"
-	line "at our hideout!"
-	done
-
-GruntM15BeatenText:
-	text "Hyuck-hyuck-hyuck!"
-	line "So, that's how?"
-	done
-
-GruntM15AfterBattleText:
-	text "Hyuck-hyuck-hyuck!"
-	line "That was a blast!"
-	cont "I'll remember you!"
 	done
 
 DirectorIntroText:

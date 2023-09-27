@@ -3934,8 +3934,8 @@ AI_Smart_QuiverDance:
 
 AI_Smart_CalmMind:
 	call IsSpecialAttackMaxed
-	jr nc, .continue
-	call IsSpecialDefenseMaxed
+	;jr nc, .continue
+	;call IsSpecialDefenseMaxed
 	jp c, StandardDiscourage
 
 .continue
@@ -4312,13 +4312,6 @@ ShouldAIBoost:
 	jp c, .dontBoost
 
 .noForceSwitch
-; if we can 2HKO and player can 2HKO, just attack
-    call CanAI2HKO
-    jr nc, .checkSpeed
-    call CanPlayer2HKO
-    jr c, .dontBoost
-
-.checkSpeed
 ; who moves first
     call DoesAIOutSpeedPlayer
     jr nc, .playerMovesFirst

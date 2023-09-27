@@ -1334,8 +1334,8 @@ AideText_ExplainCaps:
     line "ELITE FOUR and"
     cont "becoming a"
     cont "CHAMPION will"
-    cont "raise that to 80"
-    cont "and 70."
+    cont "raise that to 85"
+    cont "and 75."
 
     para "Only the most"
     line "extraordinary"

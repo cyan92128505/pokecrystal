@@ -31,7 +31,7 @@ HallOfFame_MapScripts:
 	setval HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
 	setevent EVENT_BEAT_ELITE_FOUR
-	loadmem wLevelCap, 80
+	loadmem wLevelCap, 85
 	setevent EVENT_TELEPORT_GUY
 	setevent EVENT_RIVAL_SPROUT_TOWER
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME

@@ -5,6 +5,7 @@ Route24_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Rocket
 
 .Rocket
     disappear ROUTE24_ROCKET

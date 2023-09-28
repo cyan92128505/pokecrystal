@@ -419,94 +419,101 @@ GoldenrodUndergroundHiddenAntidote:
 	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
 
 SupernerdEricSeenText:
-	text "I got booted out"
-	line "of the GAME COR-"
-	cont "NER."
+	text "MOON STONE!"
 
-	para "I was trying to"
-	line "cheat using my"
-	cont "#MON…"
+	para "I must have a"
+	line "MOON STONE."
 	done
 
 SupernerdEricBeatenText:
-	text "…Grumble…"
+	text "More lost money!"
 	done
 
 SupernerdEricAfterBattleText:
-	text "I guess I have to"
-	line "do things fair and"
-	cont "square…"
+	text "I can't explain"
+	line "why."
+
+	para "I just..."
+
+	para "Really need one!"
 	done
 
 SupernerdTeruSeenText:
-	text "Do you consider"
-	line "type alignments in"
-	cont "battle?"
+	text "The best #MON"
+	line "take a long time"
+	cont "to evolve."
 
-	para "If you know your"
-	line "type advantages,"
+	para "But it will be"
+	line "worth it."
 
-	para "you'll do better"
-	line "in battle."
+	para "I will be the"
+	line "next LANCE!"
 	done
 
 SupernerdTeruBeatenText:
-	text "Ow, ow, ow!"
+	text "It's a marathon"
+	line "not a sprint."
 	done
 
 SupernerdTeruAfterBattleText:
-	text "I know my #MON"
-	line "type alignments."
-
-	para "But I only use one"
-	line "type of #MON."
+	text "One day I will"
+	line "have a legendary"
+	cont "and mighty team."
 	done
 
 PokemaniacIssacSeenText:
-	text "My #MON just"
-	line "got a haircut!"
+	text "After a month"
+	line "working as a"
+	cont "cleaner in the"
+	cont "DEPT.STORE I"
+	cont "was finally able"
+	cont "to buy a"
+	cont "SUN STONE."
 
-	para "I'll show you how"
-	line "strong it is!"
+	para "Now I am way"
+	line "stronger!"
 	done
 
 PokemaniacIssacBeatenText:
-	text "Aiyeeee!"
+	text "All that work..."
+
+	line "For nothing..."
 	done
 
 PokemaniacIssacAfterBattleText:
-	text "Your #MON will"
-	line "like you more if"
+	text "I need better"
+	line "TMs now."
 
-	para "you give them"
-	line "haircuts."
+	para "Time to start"
+	line "sending CVs out."
 	done
 
 PokemaniacDonaldSeenText:
-	text "I think you have"
-	line "some rare #MON"
-	cont "with you."
+	text "Heh heh heh."
 
-	para "Let me see them!"
+	para "I played slots"
+	line "for months."
+
+	para "I quite my"
+	line "job."
+
+	para "Then I finally"
+	line "bought the TM"
+	cont "I wanted."
+
+	para "I'll show you."
 	done
 
 PokemaniacDonaldBeatenText:
-	text "Gaah! I lost!"
-	line "That makes me mad!"
+	text "But it's the"
+	line "strongest move!"
 	done
 
 PokemaniacDonaldAfterBattleText:
-	text "Are you making a"
-	line "#DEX? Here's a"
-	cont "hot tip."
-
-	para "The HIKER on ROUTE"
-	line "33, ANTHONY, is a"
-	cont "good guy."
-
-	para "He'll phone you if"
-	line "he sees any rare"
-	cont "#MON."
+	text "I guess a"
+	line "single really"
+	cont "strong move isn't"
+	cont "enough to win."
 	done
 
 GoldenrodUndergroundTheDoorsLockedText:

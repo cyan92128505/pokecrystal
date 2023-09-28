@@ -2810,9 +2810,9 @@ AI_Smart_BulkUp:
     jp nc, StandardDiscourage
 
 ; encourage to +2
-;    ld a, [wEnemyAtkLevel]
-;    cp BASE_STAT_LEVEL + 2
-;    jp c, StandardEncourage
+    ld a, [wEnemyAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
@@ -3902,15 +3902,8 @@ AI_Smart_Serenity:
 
 AI_Smart_QuiverDance:
 	call IsSpecialAttackMaxed
-	jr nc, .continue
-	call IsSpecialDefenseMaxed
-	jp c, StandardDiscourage
-	
-.continue
-; if we already outspeed and player can 2hko us, just attack
-	call DoesAIOutSpeedPlayer
 	jr nc, .shouldBoost
-	call CanPlayer2HKO
+	call IsSpecialDefenseMaxed
 	jp c, StandardDiscourage
 
 .shouldBoost
@@ -3934,8 +3927,8 @@ AI_Smart_QuiverDance:
 
 AI_Smart_CalmMind:
 	call IsSpecialAttackMaxed
-	;jr nc, .continue
-	;call IsSpecialDefenseMaxed
+	jr nc, .continue
+	call IsSpecialDefenseMaxed
 	jp c, StandardDiscourage
 
 .continue
@@ -3944,9 +3937,9 @@ AI_Smart_CalmMind:
     jp nc, StandardDiscourage
 
 ; encourage to +2
-;    ld a, [wEnemySAtkLevel]
-;    cp BASE_STAT_LEVEL + 2
-;    jp c, StandardEncourage
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
@@ -3957,12 +3950,6 @@ AI_Smart_CalmMind:
 
 AI_Smart_DragonDance:
 	call IsAttackMaxed
-	jp c, StandardDiscourage
-
-; if we already outspeed and player can 2hko us, just attack
-	call DoesAIOutSpeedPlayer
-	jr nc, .shouldBoost
-	call CanPlayer2HKO
 	jp c, StandardDiscourage
 	
 .shouldBoost
@@ -4002,17 +3989,14 @@ AI_Smart_SwordsDance:
     call IsAttackMaxed
     jp c, StandardDiscourage
 
-; if we are boosted >=+2 and can 2hko, just attack
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .notBoosted
-	call CanAI2HKO
-	jp c, StandardDiscourage
-.notBoosted
-
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
+
+; encourage to +2
+    ld a, [wEnemyAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
@@ -4122,6 +4106,11 @@ AI_Smart_NastyPlot:
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
+
+; encourage to +2
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
@@ -4277,6 +4266,11 @@ AI_Smart_LesserStatChange:
 ; generally don't boost if player will just KO anyway
 ; returns carry if the AI can boost
 ShouldAIBoost:
+    call IsAttackMaxed
+    jp c, .dontBoost
+    call IsSpecialAttackMaxed
+    jp c, .dontBoost
+
 ; if AI evasion is >= +2 then go for the boost - only used by Patches
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -4308,6 +4302,22 @@ ShouldAIBoost:
 	jp c, .dontBoost
 
 .noForceSwitch
+; if our offence is already at +2 and either side can 2HKO, just attack
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .checkSpecialAttack
+    jr .checkMutual2HKO
+.checkSpecialAttack
+	ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .checkSpeed
+.checkMutual2HKO
+	call CanAI2HKO
+	jr c, .dontBoost
+	call CanPlayer2HKO
+	jr c, .dontBoost
+
+.checkSpeed
 ; who moves first
     call DoesAIOutSpeedPlayer
     jr nc, .playerMovesFirst

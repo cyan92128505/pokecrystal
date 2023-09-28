@@ -711,7 +711,7 @@ JohtoGrassWildMons:
 	db 31, EXCADRILL
 	db 33, MAGMAR
 	db 33, ELECTABUZZ
-	db 73, METAGROSS
+	db 70, METAGROSS
 	; day
 	db 28, MACHOKE
 	db 28, GURDURR
@@ -719,7 +719,7 @@ JohtoGrassWildMons:
 	db 31, EXCADRILL
 	db 33, MAGMAR
 	db 33, ELECTABUZZ
-	db 73, METAGROSS
+	db 70, METAGROSS
 	; nite
 	db 28, MACHOKE
 	db 28, GURDURR
@@ -727,7 +727,7 @@ JohtoGrassWildMons:
 	db 31, EXCADRILL
 	db 33, MAGMAR
 	db 33, ELECTABUZZ
-	db 73, METAGROSS
+	db 70, METAGROSS
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_1F
@@ -1663,7 +1663,7 @@ JohtoGrassWildMons:
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
-	db 75, DRAGONITE
+	db 70, DRAGONITE
 	; day
 	db 30, DRAGONAIR
 	db 30, GABITE
@@ -1671,7 +1671,7 @@ JohtoGrassWildMons:
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
-	db 75, DRAGONITE
+	db 70, DRAGONITE
 	; nite
 	db 30, DRAGONAIR
 	db 30, GABITE
@@ -1679,7 +1679,7 @@ JohtoGrassWildMons:
 	db 41, FERROTHORN
 	db 42, EXCADRILL
 	db 43, GLISCOR
-	db 75, DRAGONITE
+	db 70, DRAGONITE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46

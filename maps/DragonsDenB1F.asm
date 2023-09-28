@@ -86,7 +86,7 @@ DragonsDenB1FieldMon5Script:
 	faceplayer
 	cry DRAGONITE
 	pause 15
-	loadwildmon DRAGONITE, 75
+	loadwildmon DRAGONITE, 76
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

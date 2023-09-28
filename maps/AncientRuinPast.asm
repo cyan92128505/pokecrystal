@@ -91,7 +91,7 @@ AncientRuinPastFieldMon2Script:
 	faceplayer
 	cry SNORLAX
 	pause 15
-	loadwildmon SNORLAX, 74
+	loadwildmon SNORLAX, 76
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

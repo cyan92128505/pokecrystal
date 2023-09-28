@@ -174,7 +174,7 @@ UnionCaveB1FFieldMon1Script:
     end
     
 UnionCaveB1FFieldMon2Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB1FPokemonAttacksText, 71, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB1FPokemonAttacksText, 70, 0, .script
 .script
     disappear UNIONCAVEB1F_FIELDMON_2
     end

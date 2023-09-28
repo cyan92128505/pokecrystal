@@ -3991,11 +3991,6 @@ AI_Smart_DragonDance:
 	jp StandardDiscourage
 
 .normalEncourage
-; encourage to get to +2
-;	ld a, [wEnemyAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jp c, StandardEncourage
-
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
@@ -4007,14 +4002,17 @@ AI_Smart_SwordsDance:
     call IsAttackMaxed
     jp c, StandardDiscourage
 
+; if we are boosted >=+2 and can 2hko, just attack
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .notBoosted
+	call CanAI2HKO
+	jp c, StandardDiscourage
+.notBoosted
+
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
-
-; encourage to get to +2
-;	ld a, [wEnemyAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
@@ -4090,11 +4088,6 @@ AI_Smart_Growth:
     call ShouldAIBoost
     jp nc, StandardDiscourage
 
-; encourage to get to +1
-;    ld a, [wEnemySAtkLevel]
-;	cp BASE_STAT_LEVEL + 1
-;	jp c, StandardEncourage
-
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
@@ -4118,14 +4111,17 @@ AI_Smart_NastyPlot:
     jp z, StandardDiscourage
 
 .notDeoxys
+; if we are boosted >=+2 and can 2hko, just attack
+	ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .notBoosted
+	call CanAI2HKO
+	jp c, StandardDiscourage
+.notBoosted
+
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
-
-; encourage to get to +2
-;    ld a, [wEnemySAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	jp c, StandardEncourage
 
 ; discourage after boost if afflicted with toxic
     call IsAIToxified

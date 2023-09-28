@@ -119,7 +119,7 @@ ElementCaveFieldMon4Script:
     end
 
 ElementCaveFieldMon5Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_5, ElementCavePokemonAttacksText, 75, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_5, ElementCavePokemonAttacksText, 68, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_5
     end
@@ -137,7 +137,7 @@ ElementCaveFieldMon7Script:
     end
 
 ElementCaveFieldMon8Script:
-	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_8, ElementCavePokemonAttacksText, 75, 0, .script
+	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_8, ElementCavePokemonAttacksText, 68, 0, .script
 .script
     disappear ELEMENTCAVE_FIELDMON_8
     end

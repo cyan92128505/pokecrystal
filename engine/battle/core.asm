@@ -201,6 +201,9 @@ BattleTurn:
 	jr nz, .quit
 .skip_iteration
 	call ParsePlayerAction
+    push af
+	call ClearSprites
+	pop af
 	jr nz, .loop1
 
 	call EnemyTriesToFlee
@@ -1927,34 +1930,8 @@ HandleWeather:
 	dec [hl]
 	jp z, .ended
 
-	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
-	jr z, .rain
-	cp WEATHER_SUN
-	jr z, .sun
-	cp WEATHER_SANDSTORM
-	jr z, .sand
-	ret
-
-.sand
-    ld de, ANIM_IN_SANDSTORM
-    jr .playAnim
-.rain
-	ld de, RAIN_DANCE
-	jr .playAnim
-.sun
-    ld de, SUNNY_DAY
-.playAnim
-    xor a
-	ld [wNumHits], a
-	call Call_PlayBattleAnim
-
-	ld a, [wOptions]
-	bit BATTLE_SCENE, a
-	jr z, .skipMessage
 	ld hl, .WeatherMessages
     call .PrintWeatherMessage
-.skipMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -6017,6 +5994,7 @@ MoveSelectionScreen:
 
 .battle_player_moves
 	call MoveInfoBox
+	farcall GetWeatherImage
 	ld a, [wSwappingMove]
 	and a
 	jr z, .interpret_joypad
@@ -6103,6 +6081,9 @@ MoveSelectionScreen:
 	ld hl, BattleText_TheresNoPPLeftForThisMove
 
 .place_textbox_start_over
+    push hl
+	call ClearSprites
+	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
 	jp MoveSelectionScreen

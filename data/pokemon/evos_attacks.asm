@@ -2501,14 +2501,14 @@ HoothootEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 6, FORESIGHT
-	db 11, PECK
+	db 9, PECK
+	db 13, CONFUSION
 	db 16, HYPNOSIS
 	db 22, REFLECT
-	db 26, TAKE_DOWN
-	db 30, ZEN_HEADBUTT
-	db 34, PSYCHIC_M
-	db 40, DREAM_EATER
-	db 45, HURRICANE
+	db 26, ZEN_HEADBUTT
+	db 30, PSYCHIC_M
+	db 35, DREAM_EATER
+	db 40, HURRICANE
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
@@ -2516,14 +2516,14 @@ NoctowlEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 6, FORESIGHT
-	db 11, PECK
+	db 9, PECK
+	db 13, CONFUSION
 	db 16, HYPNOSIS
 	db 22, REFLECT
-	db 26, TAKE_DOWN
-	db 30, ZEN_HEADBUTT
-	db 34, PSYCHIC_M
-	db 40, DREAM_EATER
-	db 45, HURRICANE
+	db 26, ZEN_HEADBUTT
+	db 30, PSYCHIC_M
+	db 35, DREAM_EATER
+	db 40, HURRICANE
 	db 0 ; no more level-up moves
 
 DrilburEvosAttacks:

@@ -140,9 +140,7 @@ wUnusedScriptByte:: db
 wMapTimeOfDay:: db
 wBattleTimeOfDay:: db
 wInvading::db
-
-	;ds 2
-	ds 1
+wBattleTimeOfDayBackup:: db
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
@@ -550,7 +548,9 @@ wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
 	ds 1
 
-	ds 1
+	;ds 1
+
+wBattleWeatherBackup:: db
 
 wBattleWeather::
 ; 00 normal

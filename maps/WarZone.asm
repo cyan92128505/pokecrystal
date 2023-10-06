@@ -16,9 +16,17 @@
 
 WarZone_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene0
+	scene_script .DummyScene1
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .Weather
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
 
 .Weather:
     disappear WARZONE_BLUE
@@ -55,9 +63,9 @@ WallaceScript:
 	special FadeOutMusic
 	setevent EVENT_BEAT_WALLACE
 	setevent EVENT_BEAT_HOEN_ARMY
-	setmapscene ROUTE_22, SCENE_FINISHED
-	setmapscene VERMILION_CITY, SCENE_FINISHED
-	setmapscene WAR_ZONE, SCENE_FINISHED
+	setmapscene ROUTE_22, SCENE_CUSTOM_FINISHED
+	setmapscene VERMILION_CITY, SCENE_CUSTOM_FINISHED
+	setmapscene WAR_ZONE, SCENE_CUSTOM_FINISHED
 	clearevent EVENT_HOEN_INVASION_UNDERWAY
 	setval 0
     writemem wHoenInvasionUnderway
@@ -1025,6 +1033,7 @@ WarZoneBlueScript:
     disappear WARZONE_BLUE
     turnobject PLAYER, LEFT
     setevent EVENT_SPOKE_TO_WARZONE_BLUE
+    setmapscene WAR_ZONE, SCENE_CUSTOM_1
     end
 
 WarZoneBlueText:
@@ -1124,8 +1133,8 @@ WarZone_MapEvents:
 	warp_event  13, 35, FUCHSIA_CITY, 12
 
 	def_coord_events
-	coord_event  20,  7, SCENE_DEFAULT, FightWallaceScript1
-	coord_event  21,  7, SCENE_DEFAULT, FightWallaceScript2
+	coord_event  20,  7, SCENE_CUSTOM_1, FightWallaceScript1
+	coord_event  21,  7, SCENE_CUSTOM_1, FightWallaceScript2
 	coord_event  7,  32, SCENE_DEFAULT, WarZoneBlueScript1
 	coord_event  7,  33, SCENE_DEFAULT, WarZoneBlueScript2
 
@@ -1140,11 +1149,11 @@ WarZone_MapEvents:
 	object_event  4,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
 	object_event 23, 26, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
 	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier4, EVENT_BEAT_WALLACE
-	object_event 35,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSoldier5, EVENT_BEAT_WALLACE
+	object_event 23, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier5, EVENT_BEAT_WALLACE
 
 	object_event 12, 35, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_3
 	object_event 20, 10, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 21, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
-	object_event 26, 12, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
+	object_event 33,  4, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
 	object_event 21, 10, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_6
 

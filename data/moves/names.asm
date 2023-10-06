@@ -26,7 +26,7 @@ MoveNames::
 	li "DOUBLE KICK"
 	li "MEGA KICK"
 	li "MOON BLAST"
-	li "ROLLING KICK"
+	li "RECOVER"
 	li "SAND-ATTACK"
 	li "HEADBUTT"
 	li "HORN ATTACK"

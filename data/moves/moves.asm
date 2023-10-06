@@ -38,7 +38,7 @@ Moves: ; 41afb
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING,      PHYSICAL, 100, 30,   0
 	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, NORMAL,        PHYSICAL,  75, 10,   0
 	move MOON_BLAST,   EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,         SPECIAL,  100, 15,  30
-	move ROLLING_KICK, EFFECT_FLINCH_HIT,         60, FIGHTING,      PHYSICAL, 100, 15,  30
+	move BIG_RECOVER,  EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 20,   0
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,        STATUS,   100, 15,   0
 	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,        PHYSICAL, 100, 15,  30
 	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0
@@ -116,7 +116,7 @@ Moves: ; 41afb
 	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,        STATUS,   100, 10,   0
 	move SCREECH,      EFFECT_DEFENSE_DOWN_2,      0, NORMAL,        STATUS,    85, 40,   0
 	move AFTER_IMAGE,  EFFECT_EVASION_UP_2,        0, NORMAL,        STATUS,   100, 15,   0
-	move RECOVER,      EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 15,   0
+	move RECOVER,      EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,        STATUS,   100, 30,   0
 	move DARK_VOID,    EFFECT_SLEEP,               0, DARK,          STATUS,   75,  10,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,   100, 20,   0
@@ -168,7 +168,7 @@ Moves: ; 41afb
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0
 	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,        PHYSICAL,  90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100, 10,   0
-	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,          PHYSICAL,  90, 10,  30
+	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,          PHYSICAL,  95, 15,  30
 	move HYPER_FANG,   EFFECT_FLINCH_HIT,         80, NORMAL,        PHYSICAL,  90, 15,  10
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,         PHYSICAL, 100, 20,   0
 	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,           PHYSICAL, 100, 15,   0
@@ -179,7 +179,7 @@ Moves: ; 41afb
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,        STATUS,   100,  1,   0
 	move QUIVER_DANCE, EFFECT_QUIVER_DANCE,        0, BUG,           STATUS,   100, 15,   0
-	move BUG_BUZZ,     EFFECT_SP_DEF_DOWN_HIT,    90, BUG,           SPECIAL,  100, 10,  10
+	move BUG_BUZZ,     EFFECT_SP_DEF_DOWN_HIT,    90, BUG,           SPECIAL,  100, 15,  10
 	move SAVAGE_REND,  EFFECT_NORMAL_HIT,        150, WATER,         PHYSICAL, 100,  5,   0
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,         STATUS,   100, 15,   0

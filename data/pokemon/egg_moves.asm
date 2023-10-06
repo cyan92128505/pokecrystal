@@ -170,7 +170,7 @@ AbraEggMoves:
 MachopEggMoves:
 	db LIGHT_SCREEN
 	db MEDITATE
-	db ROLLING_KICK
+	db DOUBLE_KICK
 	db ENCORE
 	db -1 ; end
 

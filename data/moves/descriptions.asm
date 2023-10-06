@@ -27,7 +27,7 @@ MoveDescriptions::
 	dw DoubleKickDescription
 	dw MegaKickDescription
 	dw MoonBlastDescription
-	dw RollingKickDescription
+	dw BigRecoverDescription
 	dw SandAttackDescription
 	dw HeadbuttDescription
 	dw HornAttackDescription
@@ -371,9 +371,9 @@ MoonBlastDescription:
 	db   "A blast of"
 	next "life force.@"
 
-RollingKickDescription:
-	db   "A fast, spinning"
-	next "kick.@"
+BigRecoverDescription:
+	db   "Restores HP by 1/2"
+	next "the max HP.@"
 
 SandAttackDescription:
 	db   "Reduces accuracy"

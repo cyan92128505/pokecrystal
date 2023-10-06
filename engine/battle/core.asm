@@ -264,6 +264,7 @@ HandleBetweenTurnEffects:
 	call CheckFaint_PlayerThenEnemy
 	ret c
 	call HandleWeather
+	farcall _CGB_BattleColors
 	call CheckFaint_PlayerThenEnemy
 	ret c
 	call HandleWrap
@@ -281,6 +282,7 @@ HandleBetweenTurnEffects:
 	call CheckFaint_EnemyThenPlayer
 	ret c
 	call HandleWeather
+	farcall _CGB_BattleColors
 	call CheckFaint_EnemyThenPlayer
 	ret c
 	call HandleWrap
@@ -2004,6 +2006,11 @@ HandleWeather:
 .ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
+
+    farcall _CGB_BattleColors
+    ld a, 1
+	ld [hCGBPalUpdate], a
+
 	xor a
 	ld [wBattleWeather], a
 	ret
@@ -3732,6 +3739,9 @@ CheckWhetherToAskSwitch:
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc
+	ld a, [wOtherTrainerClass]
+	cp SOLDIER
+	jr z, .return_nc
 	ld a, [wBattleType]
     cp BATTLETYPE_SETNOITEMS
     jr z, .return_nc
@@ -5503,6 +5513,9 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
+	ld a, [wOtherTrainerClass]
+	cp SOLDIER
+	jr z, .ItemsCantBeUsed
     ld a, [wBattleType]
     cp BATTLETYPE_SETNOITEMS
     jp z, .ItemsCantBeUsed
@@ -8931,6 +8944,8 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wStatsScreenFlags], a
+	ld [wBattleWeather], a
     ld [wBattleTimeOfDay], a
 	ld [wLowHealthAlarm], a
 	ld [wBattleMode], a

@@ -7,6 +7,21 @@ NUM_STAT_PAGES EQU const_value - 1
 STAT_PAGE_MASK EQU %00000011
 
 BattleStatsScreenInit:
+; Load current Battle Time of Day into Backup
+    ld a, [wBattleTimeOfDay]
+	ld [wBattleTimeOfDayBackup], a
+
+; Load current Weather into Backup,
+    ld a, [wBattleWeather]
+	ld [wBattleWeatherBackup], a
+
+; Clear Weather and Time to 0, giving the stats screen the day palette.
+	ld a, 0
+	ld [wBattleTimeOfDay], a
+
+	ld a, 0
+	ld [wBattleWeather], a
+
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
 	jr nz, StatsScreenInit
@@ -17,6 +32,13 @@ BattleStatsScreenInit:
 	jr _MobileStatsScreenInit
 
 StatsScreenInit:
+    xor a
+    ld [wBattleTimeOfDay], a
+    ld [wBattleWeather], a
+    ld a, 0
+  	ld [wBattleTimeOfDay], a
+	farcall _CGB_BattleColors
+
 	ld hl, StatsScreenMain
 	jr StatsScreenInit_gotaddress
 
@@ -142,6 +164,10 @@ StatsScreen_SetJumptableIndex:
 StatsScreen_Exit:
 	ld hl, wJumptableIndex
 	set 7, [hl]
+    ld a, [wBattleTimeOfDayBackup]
+    ld [wBattleTimeOfDay], a
+    ld a, [wBattleWeatherBackup]
+    ld [wBattleWeather], a
 	ret
 
 MonStatsInit:

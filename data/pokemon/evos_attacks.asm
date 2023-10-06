@@ -321,7 +321,7 @@ RattataEvosAttacks:
 	db 1, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
-	db 20, FOCUS_ENERGY
+	db 20, FALSE_SWIPE
 	db 30, SHADOW_CLAW
 	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
@@ -330,9 +330,9 @@ RaticateEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 1, QUICK_ATTACK
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
+	db 20, FALSE_SWIPE
 	db 30, SHADOW_CLAW
 	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
@@ -345,7 +345,7 @@ BunearyEvosAttacks:
 	db 1, DEFENSE_CURL
 	db 12, QUICK_ATTACK
 	db 16, CHARM
-	db 20, ROLLING_KICK
+	db 20, DOUBLE_KICK
 	db 24, HEADBUTT
 	db 28, DRAIN_PUNCH
 	db 34, ATTRACT
@@ -361,7 +361,7 @@ LopunnyEvosAttacks:
 	db 1, DEFENSE_CURL
 	db 12, QUICK_ATTACK
 	db 16, CHARM
-	db 20, ROLLING_KICK
+	db 20, DOUBLE_KICK
 	db 24, HEADBUTT
 	db 28, DRAIN_PUNCH
 	db 34, ATTRACT
@@ -706,7 +706,7 @@ HawluchaEvosAttacks:
 	db 8, PROTECT
 	db 12, LOW_KICK
 	db 16, ENCORE
-	db 20, ROLLING_KICK
+	db 20, DOUBLE_KICK
 	db 25, SUBMISSION
 	db 30, ROOST
 	db 36, BULK_UP
@@ -3780,7 +3780,7 @@ MewtwoEvosAttacks:
 	db 1, PSYBLAST
 	db 1, SERENITY
 	db 1, BARRIER
-	db 1, RECOVER
+	db 1, BIG_RECOVER
 	db 0 ; no more level-up moves
 
 ArceusEvosAttacks:

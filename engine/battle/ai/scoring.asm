@@ -4302,14 +4302,14 @@ ShouldAIBoost:
 	jp c, .dontBoost
 
 .noForceSwitch
-; if our offence is already at +2 and either side can 2HKO, just attack
+; if our offence is already at or over +1 and either side can 2HKO, just attack
 	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr c, .checkSpecialAttack
     jr .checkMutual2HKO
 .checkSpecialAttack
 	ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 1
 	jr c, .checkSpeed
 .checkMutual2HKO
 	call CanAI2HKO
@@ -5659,12 +5659,16 @@ IsPlayerPhysicalOrSpecial:
     ret
 
 IsAttackMaxed:
+    ld a, [wEnemyAtkLevel]
+    cp BASE_STAT_LEVEL + 6
+    jr z, .yes
+
     ld a, [wEnemyMonAttack + 1]
     sub LOW(MAX_STAT_VALUE)
 	jr nz, .no
 	ld a, [wEnemyMonAttack]
 	sbc HIGH(MAX_STAT_VALUE)
-	jp z, .yes
+	jr z, .yes
 .no
     xor a
     ret
@@ -5673,12 +5677,16 @@ IsAttackMaxed:
     ret
 
 IsDefenseMaxed:
+    ld a, [wEnemyDefLevel]
+    cp BASE_STAT_LEVEL + 6
+    jr z, .yes
+
     ld a, [wEnemyMonDefense + 1]
     sub LOW(MAX_STAT_VALUE)
 	jr nz, .no
 	ld a, [wEnemyMonDefense]
 	sbc HIGH(MAX_STAT_VALUE)
-	jp z, .yes
+	jr z, .yes
 .no
     xor a
     ret
@@ -5687,12 +5695,16 @@ IsDefenseMaxed:
     ret
 
 IsSpecialAttackMaxed:
+    ld a, [wEnemySAtkLevel]
+    cp BASE_STAT_LEVEL + 6
+    jr z, .yes
+
     ld a, [wEnemyMonSpclAtk + 1]
     sub LOW(MAX_STAT_VALUE)
 	jr nz, .no
 	ld a, [wEnemyMonSpclAtk]
 	sbc HIGH(MAX_STAT_VALUE)
-	jp z, .yes
+	jr z, .yes
 .no
     xor a
     ret
@@ -5701,12 +5713,16 @@ IsSpecialAttackMaxed:
     ret
 
 IsSpecialDefenseMaxed:
+    ld a, [wEnemySDefLevel]
+    cp BASE_STAT_LEVEL + 6
+    jr z, .yes
+
     ld a, [wEnemyMonSpclDef + 1]
     sub LOW(MAX_STAT_VALUE)
 	jr nz, .no
 	ld a, [wEnemyMonSpclDef]
 	sbc HIGH(MAX_STAT_VALUE)
-	jp z, .yes
+	jr z, .yes
 .no
     xor a
     ret

@@ -891,7 +891,7 @@ AI_Smart_Sleep:
     ld a, [wBattleMonStatus]
     and a
     jr nz, .discourage
-    
+
 ; never use if player has substitute
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a

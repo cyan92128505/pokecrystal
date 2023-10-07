@@ -427,7 +427,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 200 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Officer
 	db NO_ITEM, NO_ITEM ; items

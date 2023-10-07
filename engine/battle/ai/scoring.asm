@@ -887,6 +887,11 @@ AI_Smart_EffectHandlers:
 	db -1 ; end
 
 AI_Smart_Sleep:
+; don't use if there already is a status
+    ld a, [wBattleMonStatus]
+    and a
+    jr nz, .discourage
+    
 ; never use if player has substitute
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
@@ -967,11 +972,9 @@ AI_Smart_Sleep:
 	call AI_50_50
 	ret c
 .useMove
+rept 10
     dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
+endr
     ret
 
 AI_Smart_LeechHit:
@@ -4143,44 +4146,34 @@ AI_Smart_DynamicPunch:
     ret
 
 AI_Smart_ShellSmash:
-	call IsSpecialAttackMaxed
-	jp c, StandardDiscourage
-
-; Smeargle should use once and not again
-    ld a, [wEnemyMonSpecies]
-    cp SMEARGLE
-    jr nz, .notSmeargle
+; just use once before attacking
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr c, .encourage
-    jp StandardDiscourage
+    jp nc, StandardDiscourage
 
-.notSmeargle
+; don't use if we will be koed
+; skip if player is SLP or FRZ
+	ld a, [wBattleMonStatus]
+	and 1 << FRZ | SLP
+	jr nz, .skipKOCheck
+; skip if we have sash/sturdy
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
+; consider OHKO, assuming we will outspeed after use
+    call CanPlayerKO
+    jp c, StandardDiscourage
+.skipKOCheck
+
 ; is the player behind a sub, then don't use
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jp nz, StandardDiscourage
 
-; encourage to get to +2
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr c, .encourage
-
-; discourage after +2 if not at max hp
-    call AICheckEnemyMaxHP
-    jp nc, StandardDiscourage
-    ret
-
 .encourage
 ; this needs to be enough to overcome encouragement from having a move that can KO
+rept 8
     dec [hl]
-	dec [hl]
-    dec [hl]
-	dec [hl]
-    dec [hl]
-	dec [hl]
-    dec [hl]
-	dec [hl]
+endr
 	ret
 
 AI_Smart_Flinch:

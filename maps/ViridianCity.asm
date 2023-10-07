@@ -34,8 +34,8 @@ ViridianCityCoffeeGramps:
 ViridianCityGrampsNearGym:
 	faceplayer
 	opentext
-	;checkevent EVENT_BLUE_IN_CINNABAR
-	;iftrue .BlueReturned
+	checkevent EVENT_BLUE_IN_CINNABAR
+	iftrue .BlueReturned
 	writetext ViridianCityGrampsNearGymText
 	waitbutton
 	closetext

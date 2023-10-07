@@ -16,17 +16,9 @@
 
 WarZone_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0
-	scene_script .DummyScene1
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .Weather
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 .Weather:
     disappear WARZONE_BLUE
@@ -1133,10 +1125,10 @@ WarZone_MapEvents:
 	warp_event  13, 35, FUCHSIA_CITY, 12
 
 	def_coord_events
-	coord_event  20,  7, SCENE_CUSTOM_1, FightWallaceScript1
-	coord_event  21,  7, SCENE_CUSTOM_1, FightWallaceScript2
-	coord_event  7,  32, SCENE_DEFAULT, WarZoneBlueScript1
-	coord_event  7,  33, SCENE_DEFAULT, WarZoneBlueScript2
+	coord_event  20,  7, SCENE_ALWAYS, FightWallaceScript1
+	coord_event  21,  7, SCENE_ALWAYS, FightWallaceScript2
+	coord_event  7,  32, SCENE_ALWAYS, WarZoneBlueScript1
+	coord_event  7,  33, SCENE_ALWAYS, WarZoneBlueScript2
 
 	def_bg_events
 

@@ -2120,7 +2120,6 @@ BattleAnim_TakeDown:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_BraveBird:
 BattleAnim_DoubleEdge:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
@@ -2601,6 +2600,7 @@ BattleAnim_Minimize:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_BraveBird:
 BattleAnim_SkyAttack:
 	anim_if_param_equal $1, BattleAnim_FocusEnergy
 	anim_1gfx ANIM_GFX_SKY_ATTACK

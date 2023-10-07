@@ -32,6 +32,22 @@ ViridianGymBlueScript:
 	iftrue .FightDone
 	checkevent EVENT_BEAT_HOEN_ARMY
 	iftrue .battle
+
+	checkevent EVENT_BEAT_BROCK
+	iffalse .mustBeatAllGyms
+	checkevent EVENT_BEAT_MISTY
+	iffalse .mustBeatAllGyms
+	checkevent EVENT_BEAT_LTSURGE
+	iffalse .mustBeatAllGyms
+	checkevent EVENT_BEAT_ERIKA
+	iffalse .mustBeatAllGyms
+	checkevent EVENT_BEAT_JANINE
+	iffalse .mustBeatAllGyms
+	checkevent EVENT_BEAT_WILL
+	iffalse .mustBeatAllGyms
+	checkevent EVENT_BEAT_BLAINE
+	iffalse .mustBeatAllGyms
+
 	setmapscene VIRIDIAN_GYM, SCENE_FINISHED
 	writetext FalseIntroText
 	special FadeOutMusic
@@ -110,6 +126,12 @@ ViridianGymBlueScript:
 	waitbutton
 	closetext
 	end
+.mustBeatAllGyms
+    opentext
+    writetext MustBeatAllGymsText
+    waitbutton
+    closetext
+    end
 
 Movement_BlueLeaves:
     step DOWN
@@ -154,6 +176,16 @@ ViridianGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, BLUE, BLUE1
 	jumpstd GymStatue2Script
+
+
+MustBeatAllGymsText:
+    text "Prove yourself"
+    line "by beating all"
+    cont "the KANTO GYMs."
+
+    para "Then I will fight"
+    line "you JOHTO CHAMP!"
+    done
 
 FalseIntroText:
     text "Yo CHAMPION!"
@@ -401,5 +433,5 @@ ViridianGym_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_FIELD_MON_1
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_FIELD_MON_2
+	;object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_FIELD_MON_2
 	object_event  5,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3

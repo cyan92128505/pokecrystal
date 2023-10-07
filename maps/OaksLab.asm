@@ -35,6 +35,8 @@ Oak:
 	writetext OakLabGoodbyeText
 	waitbutton
 	closetext
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .end
 
 	opentext
 	writetext OakBattleOffer
@@ -58,6 +60,7 @@ Oak:
     writetext OakAfterBattleText
     waitbutton
     closetext
+.end
 	end
 .refuse
     opentext
@@ -69,6 +72,9 @@ Oak:
 .OpenMtSilver:
 	writetext OakOpenMtSilverText
 	promptbutton
+	writetext OakGiveWarpDeviceText
+	waitbutton
+	verbosegiveitem WARP_DEVICE
 	setevent EVENT_OPENED_MT_SILVER
 	sjump .CheckPokedex
 
@@ -183,7 +189,7 @@ OakWelcomeKantoText:
 
 	para "Come see me if"
 	line "you beat them"
-	line "all."
+	cont "all."
 	done
 
 OakLabDexCheckText:
@@ -278,6 +284,19 @@ OakOpenMtSilverText:
 	line "you will be a"
 	cont "#MON MASTER."
 	done
+
+OakGiveWarpDeviceText:
+    text "Now you are a"
+    line "Hero you will"
+    cont "be very busy."
+
+    para "Here this will"
+    line "help you get"
+    cont "around."
+
+    para "I use it all"
+    line "the time."
+    done
 
 OakNoKantoBadgesText:
 	text "OAK: Hmm? You're"

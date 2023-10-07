@@ -523,6 +523,8 @@ MerlinMorgana3Text:
 
     para "CAMELOT is yours!"
 
+    para "What's this!"
+
     para "Voices scream in"
     line "your head."
 
@@ -530,7 +532,7 @@ MerlinMorgana3Text:
     line "MERLIN."
 
     para "A golden aura"
-    cont "surrounds him."
+    line "surrounds him."
 
     para "ARTHUR is revived!"
 
@@ -538,7 +540,7 @@ MerlinMorgana3Text:
     line "this!"
 
     para "You will show"
-    line "his the true"
+    line "him the true"
     cont "power of magic!"
     done
 

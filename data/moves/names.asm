@@ -161,7 +161,7 @@ MoveNames::
 	li "BULLET PUNCH"
 	li "X SCISSOR"
 	li "TRI ATTACK"
-	li "SUPER FANG"
+	li "FINAL FANG"
 	li "SLASH"
 	li "SUBSTITUTE"
 	li "STRUGGLE"

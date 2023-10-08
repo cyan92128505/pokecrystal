@@ -313,8 +313,6 @@ MtSilverSignText:
 SilverCaveOutsideBlockScript:
     checkevent EVENT_BEAT_RED
     iffalse .block
-    checkevent EVENT_BEAT_ASH
-    iffalse .block
     end
 .block
     turnobject PLAYER, UP
@@ -800,7 +798,7 @@ SilverCaveSilverGoodbyeText:
     cont "me everytime we"
     cont "have fought."
 
-    para "Good luck Mr"
+    para "Good luck"
     line "#MON MASTER."
     done
 

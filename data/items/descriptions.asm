@@ -887,8 +887,8 @@ TeruSama21Desc:
 	db   "?@"
 
 LightBallDesc:
-	db   "An odd, electrical"
-	next "orb. (HOLD)@"
+	db   "Doubles damage"
+	next "for PIKACHU.@"
 
 FriendBallDesc:
 	db   "A BALL that makes"

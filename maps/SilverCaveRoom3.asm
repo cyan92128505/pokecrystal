@@ -155,7 +155,6 @@ Red:
 	end
 
 Ash:
-	special FadeOutMusic
 	faceplayer
 	opentext
     checkevent EVENT_BEAT_ASH
@@ -246,30 +245,16 @@ AshWinWinText:
 	done
 
 AshLeavesText:
-	text "You have beaten"
-	line "both of us."
+	text "You go ahead"
+	line "and fight RED."
 
-	para "You are the"
-	line "strongest"
-	cont "trainer in the"
-	cont "world!"
+	para "If you beat him"
+	line "you will be the"
+	cont "strongest trainer"
+	cont "in the world."
 
-	para "But that's not"
-	line "enough."
-
-	para "I've heard of"
-	line "a tournament"
-	cont "with the best"
-	cont "trainers from"
-	cont "many different"
-	cont "worlds."
-
-	para "You should enter."
-
-	para "Then you might"
-	line "be able to enter"
-	cont "the doorway"
-	cont "ahead."
+	para "You will be a"
+	line "#MON MASTER."
 	done
 
 RematchTextAsh:
@@ -338,6 +323,7 @@ FightAshScript:
 	applymovement SILVERCAVEROOM3_ASH, Movement_AshBack
 	turnobject SILVERCAVEROOM3_RED, RIGHT
 	setmapscene SILVER_CAVE_ROOM_3, SCENE_FINISHED
+	setevent EVENT_BEAT_ASH
 	end
 
 Movement_AshToPlayer:

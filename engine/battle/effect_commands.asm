@@ -2700,14 +2700,28 @@ PlayerAttackDamage:
 
 	ld hl, wBattleMonAttack
 	call CheckDamageStatsCritical
-	jr c, .thickclub
+	jr nc, .noPhysCrit
 
+	ld a, [wBattleMonSpecies]
+	cp PIKACHU
+	jr nz, .noPikachu1
+	jr .lightball
+.noPikachu1
+    jr .thickclub
+
+.noPhysCrit
 	ld hl, wEnemyDefense
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
 	ld hl, wPlayerAttack
-	jr .thickclub
+
+	ld a, [wBattleMonSpecies]
+	cp PIKACHU
+	jr nz, .noPikachu2
+	jr .lightball
+.noPikachu2
+    jr .thickclub
 
 .special
 	ld hl, wEnemyMonSpclDef
@@ -2944,14 +2958,28 @@ EnemyAttackDamage:
 .physicalcrit
 	ld hl, wEnemyMonAttack
 	call CheckDamageStatsCritical
-	jr c, .thickclub
+	jr nc, .noPhysCrit
 
+	ld a, [wEnemyMonSpecies]
+	cp PIKACHU
+	jr nz, .noPikachu1
+	jr .lightball
+.noPikachu1
+    jr .thickclub
+
+.noPhysCrit
 	ld hl, wPlayerDefense
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
 	ld hl, wEnemyAttack
-	jr .thickclub
+
+	ld a, [wEnemyMonSpecies]
+	cp PIKACHU
+	jr nz, .noPikachu2
+	jr .lightball
+.noPikachu2
+    jr .thickclub
 
 .special
 	ld hl, wBattleMonSpclDef
@@ -2986,11 +3014,8 @@ EnemyAttackDamage:
 
 .done
 	call TruncateHL_BC
-
 	ld a, [wEnemyMonLevel]
 	ld e, a
-	;call DittoMetalPowder
-
 	ld a, 1
 	and a
 	ret

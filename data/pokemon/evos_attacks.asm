@@ -322,7 +322,7 @@ RattataEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FALSE_SWIPE
-	db 30, SHADOW_CLAW
+	db 30, CRUNCH
 	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
@@ -333,7 +333,7 @@ RaticateEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FALSE_SWIPE
-	db 30, SHADOW_CLAW
+	db 30, CRUNCH
 	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
@@ -402,13 +402,13 @@ PikachuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
-	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
 	db 20, BODY_SLAM
 	db 26, THUNDERBOLT
 	db 30, AGILITY
-	db 35, EXTREMESPEED
+	db 33, CRUNCH
+	db 36, EXTREMESPEED
 	db 40, THUNDER
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
@@ -422,6 +422,7 @@ RaichuEvosAttacks:
 	db 11, QUICK_ATTACK
 	db 20, BODY_SLAM
 	db 26, THUNDERBOLT
+	db 35, CRUNCH
 	db 40, THUNDER
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
@@ -3788,7 +3789,7 @@ ArceusEvosAttacks:
 	db 1, DIG
 	db 1, TELEPORT
 	db 1, SWORDS_DANCE
-	db 1, RECOVER
+	db 1, BIG_RECOVER
 	db 1, JUDGEMENT
 	db 1, HOLY_ARMOUR
 	db 0 ; no more level-up moves

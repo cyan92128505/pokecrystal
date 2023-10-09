@@ -3865,12 +3865,19 @@ AI_Smart_Serenity:
 	jr c, .discourage
 
 .continue
-; discourage if player is faster and can OHKO
+; if player physical consider normal boost logic
+; if player special consider only if they can outspeed and OHKO
+	call IsPlayerPhysicalOrSpecial
+	jr nc, .special
+	call ShouldAIBoost
+	jr nc, .discourage
+    jr .doneKOCheck
+.special
 	call DoesAIOutSpeedPlayer
-	jr nc, .skipKOCheck
+	jr nc, .doneKOCheck
 	call CanPlayerKO
 	jr c, .discourage
-.skipKOCheck
+.doneKOCheck
 
 ; strongly encourage if player has higher SpAtk than Atk
     call IsPlayerPhysicalOrSpecial

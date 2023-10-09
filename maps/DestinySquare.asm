@@ -384,13 +384,6 @@ MewtwoScript:
 	waitbutton
 	closetext
 	disappear DESTINYSQUARE_MEWTWO
-	;playsound SFX_ENTER_DOOR
-	;appear DESTINYSQUARE_OAK
-	;applymovement DESTINYSQUARE_OAK, Movement_OakApproaches
-	;opentext
-	;writetext DSOakText
-	;waitbutton
-	;closetext
 	special HealParty
 	warp DESTINY_FRONTIER, 30, 50
 	end
@@ -403,41 +396,44 @@ MewtwoScript:
     closetext
     end
 
-;Movement_OakApproaches:
-;    step UP
-;    step UP
-;    step UP
-;    step UP
-;    step UP
-;    turn_head RIGHT
-;    step_end
-
-;Movement_PlayerFacesMewtwo:
-;    step UP
-;    step_end
-
-DSOakText:
-    text "You have done it!"
-
-    para "You are the"
-    line "GRAND MASTER."
-
-    para "Your ascension"
-    line "is not over yet."
-
-    para "Go now to the"
-    line "summit of"
-    cont "MT.SILVER."
-
-    para "There you can"
-    line "pass onto the"
-    cont "HALL OF ORIGIN."
-
-    para "I don't know"
-    line "what awaits you"
-    cont "there but it must"
-    cont "be great indeed."
-    done
+InvaderDLCScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_INVADER_MANUS
+	iftrue .FightDone
+.fight
+	writetext DefaultSeenTextDS
+	waitbutton
+	closetext
+	winlosstext DefaultBeatenTextDS, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer INVADER, MANUS
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_INVADER_MANUS
+	special HealParty
+	end
+.FightDone:
+	writetext DefaultAfterBattleTextDS
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinySquare
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinySquare
+	waitbutton
+	closetext
+	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinySquare
+    waitbutton
+    closetext
+    end
 
 MewtwoCry:
     text "This world is"
@@ -547,6 +543,12 @@ Movement_DestinySquareTurnBack:
 	step DOWN
 	step_end
 
+DestinySquareMasterBall:
+	itemball MASTER_BALL
+
+DestinySquareAmbrosia:
+	itemball AMBROSIA
+
 DestinySquare_MapEvents:
 	db 0, 0 ; filler
 
@@ -563,7 +565,6 @@ DestinySquare_MapEvents:
 	coord_event  6,  17, SCENE_DEFAULT, ChampionsBlockScript
 	coord_event  7,  17, SCENE_DEFAULT, ChampionsBlockScript
 	coord_event  6,  6, SCENE_CUSTOM_1, FightAdamScript
-;	coord_event  6,  5, SCENE_CUSTOM_2, MewtwoScript
 
 	def_bg_events
 
@@ -577,4 +578,9 @@ DestinySquare_MapEvents:
 	object_event  9, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterAdamScript, -1
 	object_event  6,  3, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CAUGHT_MEWTWO
-;	object_event  6,  8, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+
+	object_event  5,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DestinySquareMasterBall, EVENT_DESTINY_SQUARE_MASTER_BALL
+	object_event  8,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DestinySquareAmbrosia, EVENT_DESTINY_SQUARE_AMBROSIA
+	object_event  1, 16, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderDLCScript, -1
+
+

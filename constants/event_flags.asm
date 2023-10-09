@@ -410,6 +410,9 @@
     const EVENT_PALKIA_BARRIER_CLEARED
     const EVENT_GIRATINA_BARRIER_CLEARED
     const EVENT_BEAT_RIVAL_1
+    const EVENT_DESTINY_SQUARE_MASTER_BALL
+    const EVENT_DESTINY_SQUARE_AMBROSIA
+    const EVENT_BEAT_INVADER_MANUS
 
     ; ======================================
     ; ======================================

@@ -439,6 +439,7 @@ FuchsiaCitySelfScript:
     closetext
 	disappear FUCHSIACITY_SELF
 	playmusic MUSIC_RED_INDIGO_PLATEAU
+	special HealParty
 .end
 	end
 .lose

@@ -1236,7 +1236,7 @@ VitaminEffect:
 
 ; AndrewNote - Vitamins have no limit
 	ld a, [hl]
-	cp 255
+	cp 250
 	jp nc, NoEffectMessage
 
 	add 10

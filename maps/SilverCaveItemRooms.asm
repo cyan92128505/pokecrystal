@@ -173,7 +173,7 @@ PalkiaScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon PALKIA, 85
+	loadwildmon PALKIA, 80
 	startbattle
 	reloadmapafterbattle
     setval PALKIA
@@ -197,7 +197,7 @@ DialgaScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DIALGA, 85
+	loadwildmon DIALGA, 80
 	startbattle
 	reloadmapafterbattle
     setval DIALGA

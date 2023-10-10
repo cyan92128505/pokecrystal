@@ -128,6 +128,7 @@ NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownSilverScript:
+    faceplayer
 	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iffalse .noPokemon
@@ -670,6 +671,7 @@ FinalSilverScript:
 	end
 
 FinalCrystalScript:
+    faceplayer
     opentext
 	writetext CrystalFinalGeneralText
 	waitbutton

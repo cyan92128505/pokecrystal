@@ -28,7 +28,7 @@ BattleAnimations::
 	dw BattleAnim_DoubleKick
 	dw BattleAnim_MegaKick
 	dw BattleAnim_MoonBlast
-	dw BattleAnim_RollingKick
+	dw BattleAnim_BigRecover
 	dw BattleAnim_SandAttack
 	dw BattleAnim_Headbutt
 	dw BattleAnim_HornAttack
@@ -1610,6 +1610,7 @@ BattleAnim_DoubleTeam:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_BigRecover:
 BattleAnim_Roost:
 BattleAnim_Recover:
 	anim_1gfx ANIM_GFX_BUBBLE

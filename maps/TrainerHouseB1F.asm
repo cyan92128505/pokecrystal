@@ -1305,7 +1305,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer SOLDIER, SOLDIER_SPY
+    loadtrainer YOUNGSTER, JOEY4
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1323,7 +1323,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer EXECUTIVEF, EXECUTIVEF_2
+    loadtrainer JASMINE, JASMINE1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1333,7 +1333,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer JASMINE, JASMINE1
+    loadtrainer EXECUTIVEF, EXECUTIVEF_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1475,7 +1475,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer COOLTRAINERM, TOBIAS
+    loadtrainer POKEMON_PROF, PROF_OAK
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1485,7 +1485,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer SAGE, HENSHIN
+    loadtrainer SOLDIER, SOLDIER_5
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -2607,7 +2607,7 @@ TrialUnlockMasterText:
 
     para "A more difficult"
     line "trial with a"
-    cont "total of 12"
+    cont "total of 9"
     cont "Battles."
     done
 
@@ -2619,7 +2619,7 @@ TrialUnlockImpossibleText:
     cont "IMPOSSIBLE TRIAL!"
 
     para "An insane trial"
-    line "with 5 straight"
+    line "with 4 straight"
     cont "battles without"
     cont "healing."
     done

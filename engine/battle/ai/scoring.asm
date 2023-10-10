@@ -1545,26 +1545,26 @@ AI_Smart_Moonlight:
     call AICheckEnemyQuarterHP
     jr nc, .encourage
 
-; Arceus and Mewtwo are fast and bulky enough to focus on set up and only heal below half
-    ld a, [wEnemyMonSpecies]
-    cp MEWTWO
-    jr z, .healBelowHalf
-    cp ARCEUS
-    jr z, .healBelowHalf
-
 ; if faster than the player, heal if the player can 1hko
     call DoesAIOutSpeedPlayer
     jr nc, .playerMovesFirst
     call CanPlayerKO
     jr c, .encourage
-    jr .discourage
+    jr .checkArceusMewtwo
 
 ; if slower than the player, heal if player can 2hko
 .playerMovesFirst
     call CanPlayer2HKO
     jr c, .encourage
-    jr .discourage
 
+.checkArceusMewtwo
+; Arceus and Mewtwo always heal when below half
+    ld a, [wEnemyMonSpecies]
+    cp MEWTWO
+    jr z, .healBelowHalf
+    cp ARCEUS
+    jr z, .healBelowHalf
+    jr .discourage
 .healBelowHalf
     call AICheckEnemyHalfHP
     jr c, .discourage
@@ -3827,23 +3827,11 @@ AI_Smart_HolyArmour:
 	jr c, .discourage
 
 .continue
-; if we are faster than player and above 1/2 HP then use holy armour
-; if we are faster and below 1/2 HP then use if player can not KO us, discourage otherwise
-; if we are slower and player can not KO us then use, discourage otherwise
+; if player outspeeds us and can OHKO then don't use
 	call DoesAIOutSpeedPlayer
-	jr c, .playerFaster
-	call AICheckEnemyHalfHP
-	jr nc, .belowHalfHP
-    jr .encourage
-.belowHalfHP
+	jr c, .encourage
     call CanPlayerKO
     jr c, .discourage
-    jr .encourage
-
-.playerFaster
-    call CanPlayerKO
-    jr c, .discourage
-    jr .encourage
 
 ; encourage enough to overcome encouragement to score a KO
 .encourage
@@ -3874,7 +3862,7 @@ AI_Smart_Serenity:
     jr .doneKOCheck
 .special
 	call DoesAIOutSpeedPlayer
-	jr nc, .doneKOCheck
+	jr c, .doneKOCheck
 	call CanPlayerKO
 	jr c, .discourage
 .doneKOCheck
@@ -4019,22 +4007,23 @@ AI_Smart_Barrier:
 	call IsDefenseMaxed
 	jp c, StandardDiscourage
 
-; discourage if player is faster and can OHKO
+; if player special then don't use
+	call IsPlayerPhysicalOrSpecial
+	jp nc, StandardDiscourage
+
+; if player physical don't use only if they can outspeed and OHKO
 	call DoesAIOutSpeedPlayer
-	jr nc, .skipKOCheck
+	jr c, .skipKOCheck
 	call CanPlayerKO
 	jp c, StandardDiscourage
 .skipKOCheck
 
-; discourage after boost if afflicted with toxic
+; discourage if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
-    ret
 
-; encourage if players attack is higher than special attack
-	call IsPlayerPhysicalOrSpecial
-	jp c, StrongEncourage
-	jp StandardDiscourage
+; encourage if we get here
+	jp StrongEncourage
 
 AI_Smart_Geomancy:
 	call IsSpecialAttackMaxed

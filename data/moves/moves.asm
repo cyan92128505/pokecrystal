@@ -211,7 +211,7 @@ Moves: ; 41afb
 	move LEAF_BLADE,   EFFECT_NORMAL_HIT,         80, GRASS,         PHYSICAL, 100, 20,   0
 	move PSYCHO_SLASH, EFFECT_NORMAL_HIT,         80, PSYCHIC_TYPE,  PHYSICAL, 100, 20,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
-	move OUTRAGE,      EFFECT_RAMPAGE,           100, DRAGON,        PHYSICAL, 100, 15,   0
+	move OUTRAGE,      EFFECT_RAMPAGE,           110, DRAGON,        PHYSICAL, 100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, GRASS,         SPECIAL,  100, 10,   0
 	move ENDURE,       EFFECT_ENDURE,              0, NORMAL,        STATUS,   100, 10,   0
@@ -250,7 +250,7 @@ Moves: ; 41afb
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,         STATUS,   100, 10,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       60, NORMAL,        SPECIAL,  100, 15,   0
 	move SEED_FLARE,   EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,         SPECIAL,  85,  10,  50
-	move DRACO_METEOR, EFFECT_NORMAL_HIT,        120, DRAGON,        SPECIAL,  100, 15,   0
+	move DRACO_METEOR, EFFECT_NORMAL_HIT,        110, DRAGON,        SPECIAL,  100, 15,   0
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,    90,  5,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,    90,  5,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,          PHYSICAL, 100, 15,  20

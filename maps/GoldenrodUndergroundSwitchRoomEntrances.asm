@@ -618,26 +618,12 @@ UndergroundSilverRetreatMovement2:
 	step_end
 
 UndergroundSilverBeforeText:
-	text "Hold it!"
+	text "I knew I would" 
+        line "find you here!" 
 
-	para "I saw you, so I"
-	line "tailed you."
-
-	para "I don't need you"
-	line "underfoot while I"
-
-	para "take care of TEAM"
-	line "ROCKET."
-
-	para "…Wait a second."
-	line "You beat me be-"
-	cont "fore, didn't you?"
-
-	para "That was just a"
-	line "fluke."
-
-	para "But I repay my"
-	line "debts!"
+        para "I have had some" 
+        line "past experience" 
+        cont "with TEAM ROCKET." 
 	done
 
 UndergroundSilverWinText:

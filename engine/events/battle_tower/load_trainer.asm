@@ -136,20 +136,31 @@ LoadRandomBattleTowerMon:
     cp 20 ; last trainer only uses 20 strongest mons, can pick the runkiller
     jr nc, .resample
 
-; AndrewNote - Battle Tower - master level specific logic here
+; AndrewNote - BT - master level specific logic here
 .masterLevel
     ld a, [wNrOfBeatenBattleTowerTrainers]
     cp BATTLETOWER_STREAK_LENGTH - 1
     jr z, .lastTrainerMaster
     ld a, b
-    cp 80 ; AndrewNote - Battle Tower - master has a pool of 80 Pokemon rather than 40
+; AndrewNote - Battle Tower - master has a pool of 80 Pokemon rather than 40
+    cp 80
     jr nc, .resample
+; mon 0 is Mewtwo, since we are not the last trainer we try again if we get it
     and a
     jr z, .resample ; only the last trainer can have mewtwo
-    jr .continue
+; The first 12 mons are Uber - if we have one 33% chance to try again, don't want too many Ubers
+    ld a, b
+    cp 11
+    jr nc, .continue
+	call Random
+	cp 33 percent
+	jr c, .resample
+	ld a, b
+	jr .continue
+; last trainer only uses 30 strongest mons and can pick mewtwo
 .lastTrainerMaster
     ld a, b
-    cp 30 ; last trainer only uses 30 strongest mons, can pick mewtwo
+    cp 30
     jr nc, .resample
 
 .continue
@@ -184,15 +195,15 @@ LoadRandomBattleTowerMon:
 
 	ld a, [sBTMonPrevTrainer2]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jP z, .FindARandomBattleTowerMon
 
     ld a, [sBTMonPrevTrainer3]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld a, [sBTMonPrevPrevTrainer1]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld a, [sBTMonPrevPrevTrainer2]
 	cp b

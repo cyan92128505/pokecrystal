@@ -4253,32 +4253,6 @@ BattleTowerMons:
 	bigdw 406 ; SDef
 	db "RANTA-N@@@@"
 
-    db DEOXYS
-	db FOCUS_SASH
-	db NASTY_PLOT, PSYCHO_BOOST, ICE_BEAM, CLOSE_COMBAT
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 20, 16, 16, 16 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 458 ; Atk
-	bigdw 138 ; Def
-	bigdw 398 ; Spd
-	bigdw 458 ; SAtk
-	bigdw 138 ; SDef
-	db "RANTA-N@@@@"
-
     db KYOGRE
 	db LEFTOVERS
 	db SURF, CALM_MIND, ICE_BEAM, THUNDER
@@ -4485,6 +4459,84 @@ BattleTowerMons:
 	bigdw 296 ; Spd
 	bigdw 360 ; SAtk
 	bigdw 294 ; SDef
+	db "RANTA-N@@@@"
+
+	db REGIGIGAS
+	db LEFTOVERS
+	db DOUBLE_EDGE, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 24, 24, 24, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 423 ; HP
+	bigdw 423 ; Max HP
+	bigdw 418 ; Atk
+	bigdw 318 ; Def
+	bigdw 298 ; Spd
+	bigdw 258 ; SAtk
+	bigdw 318 ; SDef
+	db "RANTA-N@@@@"
+
+	db ZYGARDE
+	db LEFTOVERS
+	db OBLITERATE, DRAGON_DANCE, BULK_UP, GLARE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 32, 24, 24, 42 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+    bigdw 635
+    bigdw 635
+    bigdw 298
+    bigdw 340
+    bigdw 268
+    bigdw 280
+    bigdw 288
+	db "RANTA-N@@@@"
+
+    db DEOXYS
+	db FOCUS_SASH
+	db NASTY_PLOT, PSYCHO_BOOST, ICE_BEAM, CLOSE_COMBAT
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 20, 16, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 303 ; HP
+	bigdw 303 ; Max HP
+	bigdw 458 ; Atk
+	bigdw 138 ; Def
+	bigdw 398 ; Spd
+	bigdw 458 ; SAtk
+	bigdw 138 ; SDef
 	db "RANTA-N@@@@"
 
     db DARKRAI
@@ -4901,58 +4953,6 @@ BattleTowerMons:
 	bigdw 218 ; Spd
 	bigdw 398 ; SAtk
 	bigdw 198 ; SDef
-	db "RANTA-N@@@@"
-
-	db REGIGIGAS
-	db LEFTOVERS
-	db DOUBLE_EDGE, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 16 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 423 ; HP
-	bigdw 423 ; Max HP
-	bigdw 418 ; Atk
-	bigdw 318 ; Def
-	bigdw 298 ; Spd
-	bigdw 258 ; SAtk
-	bigdw 318 ; SDef
-	db "RANTA-N@@@@"
-
-	db ZYGARDE
-	db LEFTOVERS
-	db OBLITERATE, DRAGON_DANCE, BULK_UP, GLARE
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 32, 24, 24, 42 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-    bigdw 635
-    bigdw 635
-    bigdw 298
-    bigdw 340
-    bigdw 268
-    bigdw 280
-    bigdw 288
 	db "RANTA-N@@@@"
 
 ; ============ Final Trainer End - 30 mons ==============

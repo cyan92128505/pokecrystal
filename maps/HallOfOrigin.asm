@@ -165,6 +165,10 @@ ArceusPokeBallScript:
 	writetext TakeArceusText
 	yesorno
 	iffalse .Refused
+
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+
 	disappear HALLOFORIGIN_ARCEUS_POKEBALL
 	setevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	waitsfx
@@ -183,6 +187,17 @@ ArceusPokeBallScript:
 	waitbutton
 	closetext
 	end
+.NoRoom
+    opentext
+	writetext MakeRoomText
+	waitbutton
+	closetext
+	end
+MakeRoomText:
+    text "Make room in"
+    line "your party for"
+    cont "this #MON."
+    done
 TakeArceusText:
     text "You choose"
     line "ARCEUS."
@@ -205,6 +220,10 @@ MewtwoPokeBallScript:
 	writetext TakeMewtwoText
 	yesorno
 	iffalse .Refused
+
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+
 	disappear HALLOFORIGIN_MEWTWO_POKEBALL
 	setevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
 	waitsfx
@@ -220,6 +239,12 @@ MewtwoPokeBallScript:
 .MustBeatOak
     opentext
 	writetext MustBeatOakText
+	waitbutton
+	closetext
+	end
+.NoRoom
+    opentext
+	writetext MakeRoomText
 	waitbutton
 	closetext
 	end

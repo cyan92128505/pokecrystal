@@ -619,93 +619,129 @@ UndergroundSilverRetreatMovement2:
 
 UndergroundSilverBeforeText:
 	text "I knew I would" 
-        line "find you here!" 
+    line "find you here!"
 
-        para "I have had some" 
-        line "past experience" 
-        cont "with TEAM ROCKET." 
+    para "I have had some"
+    line "past experience"
+    cont "with TEAM ROCKET."
+
+    para "I know how they"
+    line "operate."
+
+    para "No doubt they"
+    line "are hiding the"
+    cont "DIRECTOR in here."
+
+    para "I'm looking for"
+    line "someone."
+
+    para "TEAM ROCKET must"
+    line "know where he is."
+
+    para "You are just going"
+    line "to get hurt."
+
+    para "Just like that"
+    line "other girl."
+
+    para "Let me convince"
+    line "you to stay out"
+    cont "of my way."
 	done
 
 UndergroundSilverWinText:
-	text "…Why…"
-	line "Why do I lose?"
+	text "I don't understand"
+	line "why I keep losing"
+	cont "to you!"
 
-	para "I've assembled the"
-	line "toughest #MON."
-
-	para "I didn't ease up"
-	line "on the gas."
-
-	para "So why do I lose?"
+	para "What am I"
+	line "lacking!"
 	done
 
 UndergroundSilverAfterText:
-	text "…I don't under-"
-	line "stand…"
+	text "I keep losing!"
 
-	para "Is what that LANCE"
-	line "guy said true?"
+	para "I fought the"
+	line "ROCKETS at"
+	cont "MAHOGANY."
 
-	para "That I don't treat"
-	line "#MON properly?"
+	para "But they had"
+	line "already been"
+	cont "defeated by"
+	cont "that LANCE guy."
 
-	para "Love…"
+	para "I fought him"
+	line "and was completely"
+	cont "destroyed by a"
+	cont "single #MON!"
 
-	para "Trust…"
+	para "He told me that"
+	line "my #MON will"
+	cont "never reach their"
+	cont "full potential"
+	cont "with the way I"
+	cont "train them."
 
-	para "Are they really"
-	line "what I lack?"
+	para "Then spouted"
+	line "some cliche"
+	cont "nonsense about"
+	cont "respect and"
+	cont "compassion."
 
-	para "Are they keeping"
-	line "me from winning?"
+	para "Sickening how"
+	line "someone so"
+	cont "pathetic is so"
+	cont "strong!"
 
-	para "I… I just don't"
-	line "understand."
+	para "I'm going to"
+	line "find my own"
+	cont "way."
 
-	para "But it's not going"
-	line "to end here."
+	para "I'll beat the"
+	line "ROCKETS and you"
+	cont "and even LANCE"
+	cont "one day."
 
-	para "Not now. Not"
-	line "because of this."
-
-	para "I won't give up my"
-	line "dream of becoming"
-
-	para "the world's best"
-	line "#MON trainer!"
+	para "Mark my words!"
 	done
 
 UndergroundSilverLossText:
-	text "Humph. This is my"
-	line "real power, wimp."
+	text "I told you"
+	line "you would get"
+	cont "hurt."
 
-	para "I'll make TEAM"
-	line "ROCKET history."
+	para "I will crush"
+	line "these ROCKETS"
+	cont "and everyone"
+	cont "else."
 
-	para "And I'm going to"
-	line "grind that LANCE"
-	cont "under my heels."
+	para "I'll show LANCE"
+	line "how effective my"
+	cont "training is!"
 	done
 
 GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText:
-	text "I was challenged"
-	line "to a battle down-"
-	cont "stairs."
+	text "There are some"
+	line "aggressive nerds"
+	cont "down there."
 
-	para "It's rough down"
-	line "there. You'd"
-	cont "better be careful."
+	para "If they're not"
+	line "playing their"
+	cont "board games"
+	cont "they're battling"
+	cont "everyone."
 	done
 
 GoldenrodUndergroundSwitchRoomEntrances_TeacherText:
-	text "There are some"
-	line "shops downstairs…"
+	text "All the weird"
+	line "creepy guys"
+	cont "hang out down"
+	cont "there."
 
-	para "But there are"
-	line "also trainers."
-
-	para "I'm scared to go"
-	line "down there."
+	para "Always playing"
+	line "their weird"
+	cont "board games"
+	cont "and battling."
 	done
 
 BurglarEddieSeenText:
@@ -713,12 +749,16 @@ BurglarEddieSeenText:
 	line "project before"
 	cont "they finished."
 
-	para "I'm searching for"
-	line "leftover loot."
+	para "There must be"
+	line "some super"
+	cont "secret TEAM"
+	cont "ROCKET loot!"
 	done
 
 BurglarEddieBeatenText:
-	text "Over the top!"
+	text "You've got to"
+	line "pick a pocket"
+	cont "or two."
 	done
 
 BurglarEddieAfterBattleText:
@@ -729,7 +769,7 @@ BurglarEddieAfterBattleText:
 	line "to go there for?"
 
 	para "There's nothing"
-	line "down there."
+	line "valuable there."
 	done
 
 SwitchRoomText_Switch1:
@@ -738,25 +778,39 @@ SwitchRoomText_Switch1:
 	done
 
 GruntF3SeenText:
-	text "Are you lost? No,"
-	line "you can't be."
+	text "Wait there!"
 
-	para "You don't have"
-	line "that scared look."
+	para "There is nothing"
+	line "interesting in"
+	cont "here."
 
-	para "I'll give you"
-	line "something to be"
-	cont "scared about!"
+	para "You should go"
+	line "back home."
+
+	para "There is..."
+
+	para "Radiation!"
+
+	para "It is dangerous."
 	done
 
 GruntF3BeatenText:
-	text "How could you?"
+	text "You'll get sick!"
 	done
 
 GruntF3AfterBattleText:
-	text "Go wherever you'd"
-	line "like! Get lost!"
-	cont "See if I care!"
+	text "If you go in"
+	line "there..."
+
+	para "The radiation"
+	line "will get you!"
+
+	para "...."
+
+	para "Oh I don't care."
+
+	para "Go rescue the"
+	line "DIRECTOR."
 	done
 
 SwitchRoomText_OffTurnOn:

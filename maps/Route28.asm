@@ -158,7 +158,7 @@ LatiosScript:
 	pause 15
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIOS, 85
+	loadwildmon LATIOS, 80
 	startbattle
 	reloadmapafterbattle
     setval LATIOS

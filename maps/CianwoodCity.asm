@@ -1088,6 +1088,28 @@ HoenSpyText:
     cont "this lighthouse."
     done
 
+FlyScene:
+    checkevent EVENT_GOT_HM02_FLY
+    iftrue .end
+    checkevent EVENT_BEAT_CHUCK
+    iffalse .end
+    applymovement CIANWOODCITY_POKEFAN_F, ChucksWife_Approach
+    scall CianwoodCityChucksWife
+    applymovement CIANWOODCITY_POKEFAN_F, ChucksWife_Leave
+.end
+    end
+
+ChucksWife_Approach:
+    step LEFT
+    step LEFT
+    turn_head UP
+    step_end
+
+ChucksWife_Leave:
+    step RIGHT
+    step RIGHT
+    step_end
+
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1104,7 +1126,7 @@ CianwoodCity_MapEvents:
 	coord_event 11, 28, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
 	coord_event 15, 60, SCENE_ALWAYS, PsychicGirlFirstScene
 	coord_event 11, 27, SCENE_ALWAYS, PsychicGirlSecondScene
-
+	coord_event  8, 56, SCENE_ALWAYS, FlyScene
 
 	def_bg_events
 	bg_event 20, 46, BGEVENT_READ, CianwoodCitySign
@@ -1121,7 +1143,7 @@ CianwoodCity_MapEvents:
 	object_event 21, 49, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 45, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 54, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
-	object_event 10, 58, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
+	object_event 10, 57, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 33, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 26, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	object_event 15, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, CianwoodCityFieldMon1Script, EVENT_FIELD_MON_1

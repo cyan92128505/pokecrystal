@@ -5,6 +5,8 @@
 	const OLIVINECITY_OLIVINE_RIVAL
 	const OLIVINECITY_OLIVINE_YUNA
 	const OLIVINECITY_CRYSTAL
+	const OLIVINECITY_ROLEPLAYER
+	const OLIVINECITY_SAILOR3
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -102,7 +104,7 @@ OlivineCityRivalSceneTop:
 	follow OLIVINECITY_CRYSTAL, OLIVINECITY_OLIVINE_RIVAL
 	applymovement OLIVINECITY_CRYSTAL, OlivineMovement_CrystalLeaves
 
-	setscene SCENE_FINISHED
+	setmapscene OLIVINE_CITY, SCENE_CUSTOM_1
 	disappear OLIVINECITY_OLIVINE_RIVAL
 	disappear OLIVINECITY_CRYSTAL
 	special RestartMapMusic
@@ -1554,6 +1556,129 @@ DBZStopText:
     cont "next time."
     done
 
+StrengthScenePush:
+    playsound SFX_TACKLE
+    waitsfx
+    applymovement PLAYER, Movement_StrengthTop_Approach
+
+    ; fallthrough
+
+StrengthSceneTop:
+    appear OLIVINECITY_SAILOR3
+    playsound SFX_ENTER_DOOR
+    waitsfx
+    turnobject PLAYER, UP
+    applymovement OLIVINECITY_SAILOR3, Movement_StrengthTop_Approach
+    scall StrengthScene
+    applymovement OLIVINECITY_SAILOR3, Movement_StrengthTop_Leave
+    turnobject OLIVINECITY_SAILOR3, UP
+    playsound SFX_ENTER_DOOR
+    waitsfx
+    disappear OLIVINECITY_SAILOR3
+    setmapscene OLIVINE_CITY, SCENE_CUSTOM_FINISHED
+    end
+
+StrengthSceneMiddle:
+    appear OLIVINECITY_SAILOR3
+    playsound SFX_ENTER_DOOR
+    waitsfx
+    turnobject PLAYER, UP
+    applymovement OLIVINECITY_SAILOR3, Movement_StrengthMiddle_Approach
+    scall StrengthScene
+    applymovement OLIVINECITY_SAILOR3, Movement_StrengthMiddle_Leave
+    playsound SFX_ENTER_DOOR
+    waitsfx
+    disappear OLIVINECITY_SAILOR3
+    setmapscene OLIVINE_CITY, SCENE_CUSTOM_FINISHED
+    end
+
+StrengthSceneBottom:
+    appear OLIVINECITY_SAILOR3
+    playsound SFX_ENTER_DOOR
+    waitsfx
+    turnobject PLAYER, UP
+    applymovement OLIVINECITY_SAILOR3, Movement_StrengthBottom_Approach
+    scall StrengthScene
+    applymovement OLIVINECITY_SAILOR3, Movement_StrengthBottom_Leave
+    playsound SFX_ENTER_DOOR
+    waitsfx
+    disappear OLIVINECITY_SAILOR3
+    setmapscene OLIVINE_CITY, SCENE_CUSTOM_FINISHED
+    end
+
+StrengthScene:
+    opentext
+    writetext StrengthText
+    waitbutton
+	verbosegiveitem HM_STRENGTH
+	setevent EVENT_GOT_HM04_STRENGTH
+	writetext GotStrengthText
+	waitbutton
+	closetext
+    end
+
+Movement_StrengthTop_Approach:
+    step DOWN
+    step_end
+
+Movement_StrengthTop_Leave:
+    step UP
+    step_end
+
+Movement_StrengthMiddle_Approach:
+    step DOWN
+    step DOWN
+    step_end
+
+Movement_StrengthMiddle_Leave:
+    step UP
+    step UP
+    step_end
+
+Movement_StrengthBottom_Approach:
+    step DOWN
+    step DOWN
+    step DOWN
+    step_end
+
+Movement_StrengthBottom_Leave:
+    step UP
+    step UP
+    step UP
+    step_end
+
+StrengthText:
+    text "Hey Kid!"
+
+    para "Have you been"
+    line "to the"
+
+    para "BATTLE FRONTIER."
+
+    para "I'm having so"
+    line "much fun I've"
+    cont "quit my job!"
+
+    para "Told my boss"
+    line "to shove this HM"
+    cont "right up his"
+    cont "behind!"
+
+    para "Here you can"
+    line "have it!"
+    done
+
+GotStrengthText:
+    text "That is STRENGTH."
+
+    para "With it your"
+    line "#MON can move"
+    cont "boulders!"
+
+    para "My boulder moving"
+    line "days are done!"
+    done
+
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1573,6 +1698,10 @@ OlivineCity_MapEvents:
 	def_coord_events
 	coord_event 13, 12, SCENE_DEFAULT, OlivineCityRivalSceneTop
 	coord_event 13, 13, SCENE_DEFAULT, OlivineCityRivalSceneBottom
+	coord_event  7, 22, SCENE_CUSTOM_1, StrengthScenePush
+	coord_event  7, 23, SCENE_CUSTOM_1, StrengthSceneTop
+	coord_event  7, 24, SCENE_CUSTOM_1, StrengthSceneMiddle
+	coord_event  7, 25, SCENE_CUSTOM_1, StrengthSceneBottom
 
 	def_bg_events
 	bg_event 17, 11, BGEVENT_READ, OlivineCitySign
@@ -1591,3 +1720,4 @@ OlivineCity_MapEvents:
 	object_event  6, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScript, EVENT_BEAT_ELITE_FOUR
 	object_event 18,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 10, 22, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, DBZRolePlayScript, -1
+	object_event  7, 21, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2

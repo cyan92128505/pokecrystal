@@ -112,6 +112,59 @@ ComputerTwoText:
     para "we are all doomed."
     done
 
+WaterfallSceneTop:
+    checkevent EVENT_GOT_HM07_WATERFALL
+    iftrue .end
+    checkevent EVENT_BEAT_PRYCE
+    iffalse .end
+    applymovement PLAYER, Movement_WaterfallTop
+    sjump WaterfallSceneBottom
+.end
+    end
+
+WaterfallSceneMiddle:
+    checkevent EVENT_GOT_HM07_WATERFALL
+    iftrue .end
+    checkevent EVENT_BEAT_PRYCE
+    iffalse .end
+    applymovement PLAYER, Movement_WaterfallMiddle
+    sjump WaterfallSceneBottom
+.end
+    end
+
+WaterfallSceneBottom:
+    checkevent EVENT_GOT_HM07_WATERFALL
+    iftrue .end
+    checkevent EVENT_BEAT_PRYCE
+    iffalse .end
+    turnobject PLAYER, DOWN
+    opentext
+    writetext GetWaterfallText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_WaterfallLeft
+.end
+    end
+
+Movement_WaterfallTop:
+    step DOWN
+    step DOWN
+    step_end
+
+Movement_WaterfallMiddle:
+    step DOWN
+    step_end
+
+Movement_WaterfallLeft:
+    step LEFT
+    step_end
+
+GetWaterfallText:
+    text "There is something"
+    line "special about"
+    cont "that item."
+    done
+
 IcePath1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -122,6 +175,9 @@ IcePath1F_MapEvents:
 	warp_event 37, 13, ICE_PATH_B1F, 7
 
 	def_coord_events
+	coord_event 31, 2, SCENE_ALWAYS, WaterfallSceneTop
+	coord_event 31, 3, SCENE_ALWAYS, WaterfallSceneMiddle
+	coord_event 31, 4, SCENE_ALWAYS, WaterfallSceneBottom
 
 	def_bg_events
 	bg_event 28, 30, BGEVENT_READ, ComputerOne

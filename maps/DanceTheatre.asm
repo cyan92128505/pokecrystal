@@ -335,6 +335,74 @@ DanceTheatreFancyPanelText:
 	cont "with flowers."
 	done
 
+SurfScriptLeft:
+	checkevent EVENT_GOT_HM03_SURF
+	iftrue .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_NAOKO
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_SAYO
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_ZUKI
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_KUNI
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_MIKI
+	iffalse .end
+    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfLeft_Approach
+    turnobject PLAYER, UP
+    scall DanceTheaterSurfGuy
+    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfLeft_Leave
+.end
+    end
+
+SurfScriptRight:
+	checkevent EVENT_GOT_HM03_SURF
+	iftrue .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_NAOKO
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_SAYO
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_ZUKI
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_KUNI
+	iffalse .end
+	checkevent EVENT_BEAT_KIMONO_GIRL_MIKI
+	iffalse .end
+    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfRight_Approach
+    turnobject PLAYER, UP
+    scall DanceTheaterSurfGuy
+    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfRight_Leave
+.end
+    end
+
+Movement_SurfLeft_Approach:
+    step LEFT
+    step LEFT
+    step DOWN
+    step DOWN
+    step_end
+
+Movement_SurfLeft_Leave:
+    step UP
+    step UP
+    step RIGHT
+    step RIGHT
+    turn_head UP
+    step_end
+
+Movement_SurfRight_Approach:
+    step LEFT
+    step DOWN
+    step DOWN
+    step_end
+
+Movement_SurfRight_Leave:
+    step UP
+    step UP
+    step RIGHT
+    turn_head UP
+    step_end
+
 DanceTheatre_MapEvents:
 	db 0, 0 ; filler
 
@@ -343,6 +411,8 @@ DanceTheatre_MapEvents:
 	warp_event  6, 13, ECRUTEAK_CITY, 8
 
 	def_coord_events
+	coord_event 5, 13, SCENE_ALWAYS, SurfScriptLeft
+	coord_event 5, 13, SCENE_ALWAYS, SurfScriptRight
 
 	def_bg_events
 	bg_event  5,  6, BGEVENT_UP, DanceTheatreFancyPanel

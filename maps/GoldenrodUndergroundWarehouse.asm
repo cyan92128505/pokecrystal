@@ -73,77 +73,75 @@ GoldenrodUndergroundWarehouseUltraBall:
 	itemball ULTRA_BALL
 
 GruntM24SeenText:
-	text "How did you get"
-	line "this far?"
+	text "The DIRECTOR"
+	line "is not well."
 
-	para "I guess it can't"
-	line "be helped. I'll"
-	cont "dispose of you."
+	para "He may have the"
+	line "#RUS!"
+
+	para "I am looking"
+	line "after him."
+
+	para "You need to"
+	line "leave."
 	done
 
 GruntM24BeatenText:
-	text "I got disposed of…"
+	text "You thug."
 	done
 
 GruntM24AfterBattleText:
 	text "TEAM ROCKET will"
-	line "keep going, wait-"
-	cont "ing for the return"
-	cont "of GIOVANNI."
-
-	para "We'll do whatever"
-	line "it takes."
+	line "save KANTO even"
+	cont "in spite of your"
+	cont "misguided efforts."
 	done
 
 DirectorIntroText:
-	text "DIRECTOR: Who?"
-	line "What? You came to"
-	cont "rescue me?"
+	text "LANCE is that"
+	line "you?"
 
-	para "Thank you!"
+	para "Oh sorry I"
+	line "thought you"
+	cont "were somebody"
+	cont "else."
 
-	para "The RADIO TOWER!"
+	para "You saved me!"
 
-	para "What's happening"
-	line "there?"
+	para "There is little"
+	line "time!"
 
-	para "Taken over by TEAM"
-	line "ROCKET?"
+	para "You must stop"
+	line "TEAM ROCKET!"
 
-	para "Here. Take this"
-	line "CARD KEY."
+	para "You can be sure"
+	line "their plans will"
+	cont "cause suffering."
+
+	para "Take this key."
 	done
 
 DirectorCardKeyText:
-	text "DIRECTOR: Use that"
-	line "to open the shut-"
-	cont "ters on 3F."
+	text "That will open"
+	line "the blast door"
+	cont "on 3F."
 	done
 
 DirectorAfterText:
-	text "I'm begging you to"
-	line "help."
+	text "You are our"
+	line "only hope."
 
-	para "There's no telling"
-	line "what they'll do if"
+	para "If TEAM ROCKET"
+	line "control the"
+	cont "transmitter they"
+	cont "could do terrible"
+	cont "things."
 
-	para "they control the"
-	line "transmitter."
-
-	para "They may even be"
-	line "able to control"
-
-	para "#MON using a"
-	line "special signal!"
-
-	para "You're the only"
-	line "one I can call on."
-
-	para "Please save the"
-	line "RADIO TOWER…"
-
-	para "And all the #-"
-	line "MON nationwide!"
+	para "They might even"
+	line "be able to"
+	cont "control"
+	cont "#MON with"
+	cont "the signal."
 	done
 
 GoldenrodUndergroundWarehouse_MapEvents:

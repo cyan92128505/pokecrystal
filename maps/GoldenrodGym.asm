@@ -205,207 +205,289 @@ BridgetWalksAwayMovement:
 	step_end
 
 WhitneyBeforeText:
-	text "Hi! I'm WHITNEY!"
+	text "Oh my, look"
+	line "at you."
 
-	para "Everyone was into"
-	line "#MON, so I got"
-	cont "into it too!"
+	para "So serious!"
 
-	para "#MON are"
-	line "super-cute!"
+	para "So dramatic!"
 
-	para "You want to bat-"
-	line "tle? I'm warning"
-	cont "you--I'm good!"
+	para "You could be"
+	line "a great actor."
+
+	para "We all aspire"
+	line "to make a name"
+	cont "for ourselves"
+	cont "on the big screen!"
+
+	para "Just like our"
+	line "hero DIANTHA!"
+
+	para "She is so pretty"
+	line "and so talented."
+
+	para "But also a great"
+	line "trainer."
+
+	para "Just like me."
+
+	para "If you want to"
+	line "to a great"
+	cont "trainer too"
+	cont "you will have"
+	cont "to beat me."
 	done
 
 WhitneyShouldntBeSoSeriousText:
-	text "Sob…"
+	text "How could you!"
 
-	para "…Waaaaaaah!"
-	line "You're mean!"
-
-	para "You shouldn't be"
-	line "so serious! You…"
-	cont "you child, you!"
+	para "How could you"
+	line "use such brutish"
+	cont "force against a"
+	cont "delegate beauty"
+	cont "like me."
 	done
 
 WhitneyYouMeanieText:
-	text "Waaaaah!"
+	text "You are a"
+	line "monster!"
 
-	para "Waaaaah!"
+	para "I am shaken."
 
-	para "…Snivel, hic…"
-	line "…You meanie!"
+	para "I am beside"
+	line "myself."
+
+	para "Get away from"
+	line "me you brute!"
 	done
 
 WhitneyWhatDoYouWantText:
-	text "…Sniff…"
+	text "Composure..."
 
-	para "What? What do you"
-	line "want? A BADGE?"
+	para "Composure..."
 
-	para "Oh, right."
-	line "I forgot. Here's"
-	cont "PLAINBADGE."
+	para "I am composed."
+
+	para "I am beautiful"
+	line "and strong."
+
+	para "And..."
+
+	para "So are you."
+
+	para "You have earned"
+	line "this BADGE!"
 	done
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "PLAINBADGE."
+	line "STARBADGE."
 	done
 
 WhitneyPlainBadgeText:
-	text "PLAINBADGE lets"
+    text "With the STARBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 40."
+
+    para "And capture"
+    line "#MON up to"
+    cont "level 30."
+
+	para "It also lets"
 	line "your #MON use"
 
 	para "STRENGTH outside"
 	line "of battle."
-
-	para "It also boosts"
-	line "your #MON's"
-	cont "SPEED."
 
 	para "Oh, you can have"
 	line "this too!"
 	done
 
 WhitneyAttractText:
-	text "It's ATTRACT!"
-	line "It makes full use"
+	text "It's RETURN."
 
-	para "of a #MON's"
-	line "charm."
+	para "This move gets"
+	line "more powerful"
+	cont "the more your"
+	cont "#MON like"
+	cont "you."
 
-	para "Isn't it just per-"
-	line "fect for a cutie"
-	cont "like me?"
+	para "It turns their"
+	line "love into power!"
+
+	para "Isn't that"
+	line "beautiful."
 	done
 
 WhitneyGoodCryText:
-	text "Ah, that was a"
-	line "good cry!"
+	text "I feel good now!"
 
-	para "Come for a visit"
-	line "again! Bye-bye!"
+    para "With the STARBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 40."
+
+    para "And capture"
+    line "#MON up to"
+    cont "level 30."
+
+    para "Good luck <PLAYER>."
+
+    para "Stay strong and"
+    line "never give up!"
 	done
 
 LassCarrieSeenText:
-	text "Don't let my"
-	line "#MON's cute"
+	text "I've heard you"
+	line "are really good."
 
-	para "looks fool you."
-	line "They can whip you!"
+	para "I even heard"
+	line "you fought off"
+	cont "TEAM ROCKET"
+	cont "at AZALEA."
+
+	para "That is soo"
+	line "Fetch!"
 	done
 
 LassCarrieBeatenText:
-	text "Darn… I thought"
-	line "you were weak…"
+	text "You really are"
+	line "good!"
 	done
 
 LassCarrieAfterBattleText:
-	text "Do my #MON"
-	line "think I'm cute?"
+	text "WHITNEY is strong"
+	line "but you are way"
+	cont "more Fetch than"
+	cont "her!"
 	done
 
 LassBridgetSeenText:
-	text "I like cute #-"
-	line "MON better than"
-	cont "strong #MON."
+	text "The other girls"
+	line "here need to"
+	cont "stop trying to"
+	cont "make Fetch happen."
 
-	para "But I have strong"
-	line "and cute #MON!"
+	para "It's not going"
+	line "to happen!"
 	done
 
 LassBridgetBeatenText:
-	text "Oh, no, no, no!"
+	text "..."
+	line "You are pretty"
+	cont "Fetch."
 	done
 
 LassBridgetAfterBattleText:
-	text "I'm trying to beat"
-	line "WHITNEY, but…"
-	cont "It's depressing."
+	text "WHITNEY is"
+	line "beautiful."
 
-	para "I'm okay! If I"
-	line "lose, I'll just"
-
-	para "try harder next"
-	line "time!"
+	para "But you have"
+	line "real star power!"
 	done
 
 BridgetWhitneyCriesText:
-	text "Oh, no. You made"
-	line "WHITNEY cry."
+	text "You beat WHITNEY!"
 
-	para "It's OK. She'll"
-	line "stop soon. She"
+	para "She takes losing"
+	line "really badly."
 
-	para "always cries when"
-	line "she loses."
+	para "Just give her"
+	line "a moment to"
+	cont "cool down."
 	done
 
 BeautyVictoriaSeenText:
 	text "Oh, you are a cute"
 	line "little trainer! "
 
-	para "I like you, but I"
-	line "won't hold back!"
+	para "Have you heard"
+	line "of DIANTHA!"
+
+	para "She is a beautiful"
+	line "actress and a"
+	cont "CHAMPION."
+
+	para "She is truly"
+	line "Fetch."
 	done
 
 BeautyVictoriaBeatenText:
-	text "Let's see… Oops,"
-	line "it's over?"
+	text "You have training!"
 	done
 
 BeautyVictoriaAfterBattleText:
-	text "Wow, you must be"
-	line "good to beat me!"
-	cont "Keep it up!"
+	text "I can tell talent"
+	line "when I see it."
+
+	para "You have real"
+	line "talent!"
 	done
 
 BeautySamanthaSeenText:
-	text "Give it your best"
-	line "shot, or I'll take"
-	cont "you down!"
+	text "I dream that"
+	line "one day DIANTHA"
+	cont "will visit us."
+
+	para "If that happened"
+	line "I think I would"
+	cont "faint!"
 	done
 
 BeautySamanthaBeatenText:
-	text "No! Oh, MEOWTH,"
-	line "I'm so sorry!"
+	text "You are so"
+	line "Fetch!"
 	done
 
 BeautySamanthaAfterBattleText:
-	text "I taught MEOWTH"
-	line "moves for taking"
-	cont "on any type…"
+	text "Not everyone gets"
+	line "famous overnight."
+
+	para "It takes years"
+	line "of perseverance."
+
+	para "WHITNEY doesn't"
+	line "have the patience"
+	cont "to make it!"
 	done
 
 GoldenrodGymGuideText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "This GYM is"
+	line "full of aspiring"
+	cont "movie stars who"
+	cont "like to use"
+	cont "FAIRY #MON."
 
-	para "This GYM is home"
-	line "to normal-type"
-	cont "#MON trainers."
+	para "FAIRY types have"
+	line "few weaknesses."
 
-	para "I recommend you"
-	line "use fighting-type"
-	cont "#MON."
+	para "Only STEEL and"
+	line "POISON."
+
+	para "But they generally"
+	line "have trouble with"
+	cont "strong physical"
+	cont "attacks."
 	done
 
 GoldenrodGymGuideWinText:
-	text "You won? Great! I"
-	line "was busy admiring"
-	cont "the ladies here."
+	text "Looks like you"
+	line "upstaged them"
+	cont "all eh!"
 	done
 
 RematchTextWhitney:
-    text "How about a"
-    line "rematch?"
+    text "Would you like"
+    line "to train together"
+    cont "some more?"
     prompt
 
 RematchRefuseTextWhitney:
-    text "Maybe next time."
+    text "I'm not good"
+    line "enough huh?"
+
+    para "How Fetch!"
     done
 
 GoldenrodGym_MapEvents:

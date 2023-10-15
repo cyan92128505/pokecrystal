@@ -217,7 +217,16 @@ ReceivedZephyrBadgeText:
 	done
 
 FalknerZephyrBadgeText:
-	text "ZEPHYRBADGE"
+    text "The ZEPHYRBADGE"
+    line "lets you train"
+    cont "#MON up to"
+    cont "level 30."
+
+    para "And capture"
+    line "#MON up to"
+    cont "level 20."
+
+	para "ZEPHYRBADGE"
 	line "enables #MON"
 	line "to use FLASH."
 
@@ -251,7 +260,16 @@ FalknerTMMudSlapText:
 	done
 
 FalknerFightDoneText:
-	text "There are #MON"
+    text "The ZEPHYRBADGE"
+    line "lets you train"
+    cont "#MON up to"
+    cont "level 30."
+
+    para "And capture"
+    line "#MON up to"
+    cont "level 20."
+
+	para "There are #MON"
 	line "GYMS in cities and"
 	cont "towns ahead."
 

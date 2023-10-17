@@ -324,9 +324,17 @@ InvaderLautrecAfterBattleText:
 	done
 
 CamperElliotSeenText:
-	text "I'm gonna show my"
-	line "girlfriend I'm hot"
-	cont "stuff!"
+	text "Stay back babe!"
+
+	para "I'll protect you"
+	line "from that INVADER."
+
+	para "Oh... look..."
+
+	para "The INVADER has"
+	line "an apprentice."
+
+	para "I'll protect you!"
 	done
 
 CamperElliotBeatenText:
@@ -341,9 +349,17 @@ CamperElliotAfterBattleText:
 	done
 
 PicnickerBrookeSeenText:
-	text "My boyfriend's"
-	line "weak, so I can't"
-	cont "rely on him."
+	text "My boyfriend"
+	line "is as weak as"
+	cont "he is immature."
+
+	para "But I do care"
+	line "about him."
+
+	para "Don't worry hun."
+
+	para "I'll protect you"
+	line "from this thug!"
 	done
 
 PicnickerBrookeBeatenText:
@@ -352,139 +368,178 @@ PicnickerBrookeBeatenText:
 	done
 
 PicnickerBrookeAfterBattleText:
-	text "I can count on my"
-	line "#MON more than"
-	cont "my boyfriend."
+	text "I don't like"
+	line "losing."
+
+	para "I'll have to"
+	line "battle my"
+	cont "boyfriend to"
+	cont "feel better."
 	done
 
 PicnickerKimSeenText:
-	text "Are you going to"
-	line "the GYM? Me too!"
+	text "I tried to join"
+	line "the GOLDENROD GYM"
+	cont "but they said my"
+	cont "#MON was too"
+	cont "violent!"
+
+	para "They are mad!"
+
+	para "My #MON is"
+	line "the cutest!"
 	done
 
 PicnickerKimBeatenText:
-	text "Oh. I couldn't"
-	line "win…"
+	text "Punch them in"
+	line "the face"
+	cont "LOPUNNY!!"
 	done
 
 PicnickerKimAfterBattleText:
-	text "The GYM BADGES are"
-	line "pretty. I collect"
-	cont "them."
+	text "I'm going to beat"
+	line "all those GYM"
+	cont "trainers!"
+
+	para "That'll show"
+	line "them how cute"
+	cont "my LOPUNNY is."
 	done
 
 BirdKeeperBryanSeenText:
-	text "What kinds of"
-	line "BALLS do you use?"
+	text "Once my #MON"
+	line "are big enough"
+	cont "they will FLY me"
+	cont "away to KALOS"
+	cont "to escape the war."
 	done
 
 BirdKeeperBryanBeatenText:
-	text "Yikes! Not fast"
-	line "enough!"
+	text "FLY you fools."
 	done
 
 BirdKeeperBryanAfterBattleText:
-	text "Some #MON flee"
-	line "right away."
+	text "You know I"
+	line "think KANTO have"
+	cont "it coming."
 
-	para "Try catching them"
-	line "with KURT's FAST"
-	cont "BALL."
-
-	para "Whenever I find a"
-	line "WHT APRICORN, I"
-	cont "take it to KURT."
-
-	para "He turns it into a"
-	line "custom BALL."
+	para "But when JOHTO"
+	line "gets pulled in"
+	cont "I'll be ready"
+	cont "to get right"
+	cont "outta here!"
 	done
 
 JugglerIrwin1SeenText:
-	text "Behold my graceful"
-	line "BALL dexterity!"
+	text "Heh heh heh."
+
+	para "There is no"
+	line "greater advantage"
+	cont "than outnumbering"
+	cont "your opponent."
+
+	para "Behold all my"
+	line "balls!"
 	done
 
 JugglerIrwin1BeatenText:
-	text "Whew! That was a"
-	line "jolt!"
+	text "I need more!"
 	done
 
 JugglerIrwinAfterBattleText:
-	text "I was going to"
-	line "dazzle you with my"
-	cont "prize #MON."
+	text "Why can't I have"
+	line "more than six"
+	cont "balls!"
 
-	para "But your prowess"
-	line "electrified me!"
+	para "I have hundreds"
+	line "in my PC."
 	done
 
 BugCatcherArnieSeenText:
-	text "I'll go anywhere"
-	line "if bug #MON"
-	cont "appear there."
+	text "I have been using"
+	line "my one beloved"
+	cont "#MON and"
+	cont "nothing else."
+
+	para "I'll show you"
+	line "what a well"
+	cont "trained BUG"
+	cont "can do."
 	done
 
 BugCatcherArnieBeatenText:
-	text "Huh? I shouldn't"
-	line "have lost that…"
+	text "You did well"
+	line "BUTTERFREE."
 	done
 
 BugCatcherArnieAfterBattleText:
-	text "My LARVESTA won me"
-	line "the Bug-Catching"
-
-	para "Contest at the"
-	line "NATIONAL PARK."
+	text "I know my"
+	line "BUTTERFREE can"
+	cont "get even stronger!"
 	done
 
 BugCatcherArnieYanmaText:
-	text "Wow… Look at all"
-	line "those YANMA!"
+	text "There are a lot"
+	line "of YANMA out"
+	cont "there."
 
-	para "I'm so blown away,"
-	line "I can't move."
+	para "But I'm not"
+	line "interested."
 	done
 
 FirebreatherWaltSeenText:
-	text "I'm practicing my"
-	line "fire breathing."
+	text "I finally got"
+	line "my FIRE STONES."
+
+	para "Now I can be"
+	line "like my hero"
+	cont "BLAINE."
 	done
 
 FirebreatherWaltBeatenText:
-	text "Ow! I scorched the"
-	line "tip of my nose!"
+	text "Maybe I'm not"
+	line "ready yet."
 	done
 
 FirebreatherWaltAfterBattleText:
-	text "The #MON March"
-	line "on the radio lures"
-	cont "wild #MON."
+	text "BLAINE is a"
+	line "mad scientist"
+	cont "FIRE GYM LEADER."
+
+	para "He will roast"
+	line "those HOENITES!"
 	done
 
 OfficerDirkSeenText:
-	text "Danger lurks in"
-	line "the night!"
+	text "Halt!"
+
+	para "Identify yourself"
+	line "punk!"
 	done
 
 OfficerDirkBeatenText:
-	text "Whoops!"
+	text "Officer down!!"
 	done
 
 OfficerDirkAfterBattleText:
-	text "You know, night-"
-	line "time is fun in its"
-	cont "own ways."
+	text "I used to work"
+	line "in KANTO and"
+	cont "all the BIKER"
+	cont "gangs hardened"
+	cont "me."
 
-	para "But don't overdo"
-	line "it, OK?"
+	para "Now I attack"
+	line "first and think"
+	cont "later."
 	done
 
 OfficerDirkPrettyToughText:
-	text "Your #MON look"
-	line "pretty tough."
+	text "I am keeping"
+	line "you safe."
 
-	para "You could go any-"
-	line "where safely."
+	para "I wont let any"
+	line "rotten punks"
+	cont "pass."
 	done
 
 Route35SignText:

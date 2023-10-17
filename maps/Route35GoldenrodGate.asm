@@ -11,10 +11,10 @@ Route35GoldenrodGate_MapScripts:
 RandyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HP_UP_FROM_RANDY
-	iftrue .gothpup
-	checkevent EVENT_GAVE_KENYA
-	iftrue .questcomplete
+	;checkevent EVENT_GOT_HP_UP_FROM_RANDY
+	;iftrue .gothpup
+	;checkevent EVENT_GAVE_KENYA
+	;iftrue .questcomplete
 	checkevent EVENT_GOT_KENYA
 	iftrue .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText
@@ -49,23 +49,23 @@ RandyScript:
 	closetext
 	end
 
-.questcomplete
-	writetext Route35GoldenrodGateRandySomethingForYourTroubleText
-	promptbutton
-	verbosegiveitem HP_UP
-	iffalse .bagfull
-	setevent EVENT_GOT_HP_UP_FROM_RANDY
-.gothpup
-	writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText
-	waitbutton
-.bagfull
-	closetext
-	end
+;.questcomplete
+;	writetext Route35GoldenrodGateRandySomethingForYourTroubleText
+;	promptbutton
+;	verbosegiveitem HP_UP
+;	iffalse .bagfull
+;	setevent EVENT_GOT_HP_UP_FROM_RANDY
+;.gothpup
+;	writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText
+;	waitbutton
+;.bagfull
+;	closetext
+;	end
 
-GiftSpearowMail:
-	db FLOWER_MAIL
-	db   "DARK CAVE leads"
-	next "to another road@"
+;GiftSpearowMail:
+;	db FLOWER_MAIL
+;	db   "DARK CAVE leads"
+;	next "to another road@"
 
 GiftSpearowName:
 	db "PIKACHU@"
@@ -76,64 +76,57 @@ GiftSpearowOTName:
 	db 0 ; unused
 
 Route35GoldenrodGatePokefanFScript:
-	faceplayer
-	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .FoughtSudowoodo
-	writetext Route35GoldenrodGatePokefanFText
-	waitbutton
-	closetext
-	end
-
-.FoughtSudowoodo
-	writetext Route35GoldenrodGatePokefanFText_FoughtSudowoodo
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer Route35GoldenrodGatePokefanFText
 
 Route35GoldenrodGateFisherScript:
 	jumptextfaceplayer Route35GoldenrodGateFisherText
 
 Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText:
-	text "Excuse me, kid!"
-	line "Can you do a guy"
-	cont "a favor?"
+	text "Hey, you look"
+	line "like a good"
+	cont "trainer."
 
-	para "Can you take this"
-	line "#MON with MAIL"
-	cont "to my friend?"
+	para "I recently found"
+	line "this #MON."
 
-	para "He's on ROUTE 31."
+	para "I can tell"
+	line "there is something"
+	cont "special about it."
+
+	para "It needs a good"
+	line "trainer."
+
+	para "Would you look"
+	line "after it?"
 	done
 
 Route35GoldenrodGateRandyThanksText:
-	text "You will? Perfect!"
-	line "Thanks, kid!"
+	text "I can tell"
+	line "this #MON"
+	cont "has been well"
+	cont "trained."
 
-	para "My pal's a chubby"
-	line "guy who snoozes"
-	cont "all the time."
-
-	para "You'll recognize"
-	line "him right away!"
+	para "It will help"
+	line "you out I'm"
+	cont "sure."
 	done
 
 Route35GoldenrodGatePlayerReceivedAMonWithMailText:
 	text "<PLAYER> received a"
-	line "#MON with MAIL."
+	line "PIKACHU."
 	done
 
 Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
-	text "You can read it,"
-	line "but don't lose it!"
-	cont "ROUTE 31!"
+	text "Up ahead there"
+	line "was a strange"
+	cont "old man blocking"
+	cont "the road."
 
-	para "Oh, yeah. There"
-	line "was a weird tree"
-	cont "blocking the road."
+	para "He is probably"
+	line "lost."
 
-	para "I wonder if it's"
-	line "been cleared?"
+	para "I wonder if"
+	line "he is gone now."
 	done
 
 Route35GoldenrodGateRandyCantCarryAnotherMonText:
@@ -146,53 +139,52 @@ Route35GoldenrodGateRandyOhNeverMindThenText:
 	line "then…"
 	done
 
-Route35GoldenrodGateRandySomethingForYourTroubleText:
-	text "Thanks, kid! You"
-	line "made the delivery"
-	cont "for me!"
+;Route35GoldenrodGateRandySomethingForYourTroubleText:
+;	text "Thanks, kid! You"
+;	line "made the delivery"
+;	cont "for me!"
+;
+;	para "Here's something"
+;	line "for your trouble!"
+;	done
 
-	para "Here's something"
-	line "for your trouble!"
-	done
-
-Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
-	text "My pal was snooz-"
-	line "ing, right? Heh,"
-	cont "what'd I say?"
-	done
+;Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
+;	text "My pal was snooz-"
+;	line "ing, right? Heh,"
+;	cont "what'd I say?"
+;	done
 
 Route35GoldenrodGatePokefanFText:
-	text "A strange tree is"
-	line "blocking the road."
+	text "The NATIONAL PARK"
+	line "is up ahead."
 
-	para "It wriggles around"
-	line "if you talk to it."
+	para "Some days you"
+	line "can find"
+	cont "CHAMPION LEON"
+	cont "there!"
 
-	para "I heard it became"
-	line "wild when someone"
-
-	para "watered it with a"
-	line "SQUIRTBOTTLE."
-	done
-
-Route35GoldenrodGatePokefanFText_FoughtSudowoodo:
-	text "I like the #MON"
-	line "Lullaby they play"
-	cont "on the radio."
+	para "I'd love to"
+	line "see his"
+	cont "CHARIZARD!"
 	done
 
 Route35GoldenrodGateFisherText:
-	text "I wonder how many"
-	line "kinds of #MON"
+	text "I saw the nurse"
+	line "in GOLDENROD"
+	cont "#MON CENTER"
+	cont "holding some"
+	cont "kind of special"
+	cont "#BALL."
 
-	para "there are in the"
-	line "world."
+	para "She said if she"
+	line "ever meets a"
+	cont "CHAMPION she"
+	cont "would give it"
+	cont "as a present."
 
-	para "Three years ago,"
-	line "PROF.OAK said that"
-
-	para "there were 150"
-	line "different kinds."
+	para "Now how to"
+	line "convince her I'm"
+	cont "a CHAMPION..."
 	done
 
 Route35GoldenrodGate_MapEvents:

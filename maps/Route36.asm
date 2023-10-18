@@ -115,7 +115,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	closetext
 	loadwildmon SPIRITOMB, 30
 	startbattle
-	setevent EVENT_FOUGHT_SUDOWOODO
+	setevent EVENT_FOUGHT_SPIRITOMB
 	ifequal DRAW, DidntCatchSudowoodo
 	disappear ROUTE36_WEIRD_TREE
 	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
@@ -165,43 +165,20 @@ Route36FloriaScript:
 Route36RockSmashGuyScript:
 	faceplayer
 	opentext
-	;checkevent EVENT_GOT_TM08_ROCK_SMASH
-	;iftrue .AlreadyGotRockSmash
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .ClearedSudowoodo
+	checkevent EVENT_FOUGHT_SPIRITOMB
+	iftrue .ClearedSpiritomb
 	writetext RockSmashGuyText1
 	waitbutton
 	closetext
 	end
-
-.ClearedSudowoodo:
+.ClearedSpiritomb:
 	writetext RockSmashGuyText2
-	promptbutton
-	;verbosegiveitem TM_ROCK_SLIDE
-	;iffalse .NoRoomForTM
-	;setevent EVENT_GOT_TM08_ROCK_SMASH
-;.AlreadyGotRockSmash:
-	;writetext RockSmashGuyText3
-	;waitbutton
-;.NoRoomForTM:
-	;closetext
+	waitbutton
+	closetext
 	end
 
 Route36LassScript:
-	faceplayer
-	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .ClearedSudowoodo
-	writetext Route36LassText
-	waitbutton
-	closetext
-	end
-
-.ClearedSudowoodo:
-	writetext Route36LassText_ClearedSudowoodo
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer Route36LassText
 
 TrainerSchoolboyAlan1:
 	trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyAlan1SeenText, SchoolboyAlan1BeatenText, 0, .Script
@@ -457,155 +434,132 @@ SudowoodoAttackedText:
 	done
 
 FloriaText1:
-	text "I'm the FLOWER"
-	line "SHOP's FLORIA!"
+	text "Hold on!"
 
-	para "Listen, listen!"
+	para "That old man up"
+	line "ahead..."
 
-	para "When I sprinkled"
-	line "water on that"
+	para "I'm convinced he"
+	line "is not a man at"
+	cont "all but a"
+	cont "#MON."
 
-	para "wiggly tree, it"
-	line "jumped right up!"
+	para "An evil"
+	line "#MON."
 
-	para "It just has to be"
-	line "a #MON."
+	para "I'm going to"
+	line "get my sister at"
+	cont "the GOLDENROD"
+	cont "FLOWER SHOP."
 
-	para "I bet it would be"
-	line "shocked out of its"
+	para "She has some"
+	line "HOLY WATER."
 
-	para "disguise if you"
-	line "soaked it!"
-
-	para "I know! I'll tell"
-	line "my sis and borrow"
-	cont "her water bottle!"
+	para "That should move"
+	line "that #MON."
 	done
 
 FloriaText2:
-	text "When I told my sis"
-	line "about the jiggly"
+	text "My sister told"
+	line "me the #MON"
+	cont "disguised as an"
+	cont "old man is too"
+	cont "dangerous."
 
-	para "tree, she said"
-	line "it's dangerous."
-
-	para "If I beat WHITNEY,"
-	line "I wonder if she'll"
-
-	para "lend me her water"
-	line "bottle…"
+	para "She will only"
+	line "give the HOLY"
+	cont "WATER to a"
+	cont "trainer that"
+	cont "has proved their"
+	cont "strength by"
+	cont "beating WHITNEY."
 	done
 
 RockSmashGuyText1:
-	text "Wa-hey!"
+	text "That old man"
+	line "wont budge."
 
-	para "I was going to"
-	line "snap that tree"
+	para "He wont even"
+	line "talk to me."
 
-	para "with my straight-"
-	line "arm punch."
-
-	para "But I couldn't!"
-	line "I'm a failure!"
+	para "There is something"
+	line "about him that"
+	cont "makes me uneasy."
 	done
 
 RockSmashGuyText2:
-	text "Did you clear that"
-	line "wretched old man?"
+	text "That old man"
+	line "was actually an"
+	cont "evil spirit!"
 
-	para "I'm impressed!"
-	line "I want you to"
-	cont "have this."
-	done
-
-Text_ReceivedTM08: ; unreferenced
-	text "<PLAYER> received"
-	line "TM08."
-	done
-
-RockSmashGuyText3:
-	text "That happens to be"
-	line "ROCK SMASH."
-
-	para "You can shatter"
-	line "rocks with just a"
-
-	para "single well-aimed"
-	line "smack."
-
-	para "If any rocks are"
-	line "in your way, just"
-	cont "smash 'em up!"
-	done
-
-UnusedOddTreeText: ; unreferenced
-	text "An odd tree is"
-	line "blocking the way"
-	cont "to GOLDENROD CITY."
-
-	para "I wanted to go see"
-	line "the huge #MON"
-
-	para "CENTER they just"
-	line "opened…"
+	para "And that evil"
+	line "spirit was"
+	cont "actually a"
+	cont "#MON."
 	done
 
 Route36LassText:
-	text "An odd tree is"
-	line "blocking the way"
-	cont "to GOLDENROD CITY."
+	text "I've just been"
+	line "to the RUINS"
+	cont "OF ALPH."
 
-	para "It's preventing"
-	line "me from shopping."
-
-	para "Something should"
-	line "be done about it."
-	done
-
-Route36LassText_ClearedSudowoodo:
-	text "That odd tree dis-"
-	line "appeared without a"
-	cont "trace."
-
-	para "Oh! That tree was"
-	line "really a #MON?"
+	para "There wasn't"
+	line "much to do but"
+	cont "I got the sense"
+	cont "there are some"
+	cont "ancient secrets"
+	cont "hidden in there."
 	done
 
 PsychicMarkSeenText:
-	text "I'm going to read"
-	line "your thoughts!"
+	text "There is a"
+	line "haunted forest"
+	cont "ahead."
+
+	para "I tried to"
+	line "get through it"
+	cont "but my #MON"
+	cont "were too scared."
 	done
 
 PsychicMarkBeatenText:
-	text "I misread you!"
+	text "Your #MON"
+	line "are brave."
 	done
 
 PsychicMarkAfterBattleText:
-	text "I'd be strong if"
-	line "only I could tell"
+	text "Fear is the"
+	line "mind killer."
 
-	para "what my opponent"
-	line "was thinking."
+	para "PSYCHIC #MON"
+	line "are weak to"
+	cont "common fears"
+	cont "DARK, BUG and"
+	cont "GHOST."
 	done
 
 SchoolboyAlan1SeenText:
-	text "Thanks to my stud-"
-	line "ies, I'm ready for"
-	cont "any #MON!"
+	text "I am not scared"
+	line "of the haunted"
+	cont "forest."
+
+	para "I have used my"
+	line "studies to make"
+	cont "a strong team."
 	done
 
 SchoolboyAlan1BeatenText:
-	text "Oops! Computation"
-	line "error?"
+	text "I miss clicked."
 	done
 
 SchoolboyAlanBooksText:
-	text "Darn. I study five"
-	line "hours a day too."
+	text "My studies have"
+	line "failed me!"
 
-	para "There's more to"
-	line "learning than just"
-	cont "reading books."
+	para "I must use"
+	line "generative AI"
+	cont "to aid my"
+	cont "progress."
 	done
 
 MeetArthurText:
@@ -658,32 +612,26 @@ RuinsOfAlphNorthSignText:
 Route36TrainerTips1Text:
 	text "TRAINER TIPS"
 
-	para "#MON stats"
-	line "vary--even within"
-	cont "the same species."
-
-	para "Their stats may be"
-	line "similar at first."
-
-	para "However, differ-"
-	line "ences will become"
-
-	para "pronounced as the"
-	line "#MON grow."
+	para "On the #DEX"
+	line "you can press"
+	cont "SELECT to see"
+	cont "the SHINY colour"
+	cont "of a #MON."
 	done
 
 Route36TrainerTips2Text:
 	text "TRAINER TIPS"
 
-	para "Use DIG to return"
-	line "to the entrance of"
-	cont "any place."
+	para "When obtaining a"
+	line "new BADGE your"
+	cont "level caps"
+	cont "increase."
 
-	para "It is convenient"
-	line "for exploring"
-
-	para "caves and other"
-	line "landmarks."
+	para "It can be good"
+	line "to revisit areas"
+	cont "to find #MON"
+	cont "you are now"
+	cont "able to catch."
 	done
 	
 Route36FieldMon1Script:

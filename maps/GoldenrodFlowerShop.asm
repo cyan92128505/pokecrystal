@@ -8,7 +8,7 @@ GoldenrodFlowerShop_MapScripts:
 	def_callbacks
 
 FlowerShopTeacherScript:
-	checkevent EVENT_FOUGHT_SUDOWOODO
+	checkevent EVENT_FOUGHT_SPIRITOMB
 	iftrue .Lalala
 	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .GotSquirtbottle
@@ -49,7 +49,7 @@ FlowerShopTeacherScript:
 FlowerShopFloriaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
+	checkevent EVENT_FOUGHT_SPIRITOMB
 	iftrue .FoughtSudowoodo
 	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .GotSquirtbottle

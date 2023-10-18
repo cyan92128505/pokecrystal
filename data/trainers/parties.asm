@@ -661,8 +661,8 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (3)
 	db "ALAN@", TRAINERTYPE_NORMAL
-	db 25, FERROSEED
-	db 26, GRAVELER
+	db 27, FERROSEED
+	db 28, GYARADOS
 	db 30, BISHARP
 	db -1 ; end
 
@@ -3178,8 +3178,8 @@ PsychicGroup:
 
 	; PSYCHIC_T (7)
 	db "MARK@", TRAINERTYPE_NORMAL
-	db 26, ESPEON
-	db 27, KIRLIA
+	db 27, ESPEON
+	db 28, KIRLIA
 	db 30, KADABRA
 	db -1 ; end
 

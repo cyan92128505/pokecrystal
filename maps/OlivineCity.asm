@@ -28,6 +28,7 @@ OlivineCity_MapScripts:
 	endcallback
 
 .Crystal
+    disappear OLIVINECITY_SAILOR3
     disappear OLIVINECITY_CRYSTAL
     endcallback
 

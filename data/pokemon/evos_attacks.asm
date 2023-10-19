@@ -1478,7 +1478,6 @@ HypnoEvosAttacks:
 	db 1, DISABLE
 	db 1, CONFUSION
 	db 10, DISABLE
-	db 18, CONFUSION
 	db 25, HEADBUTT
 	db 28, PSYBEAM
 	db 30, MEDITATE

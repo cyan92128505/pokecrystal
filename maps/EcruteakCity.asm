@@ -49,20 +49,7 @@ EcruteakCityLass2Script:
 	end
 
 EcruteakCityFisherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_JASMINE_RETURNED_TO_GYM
-	iftrue .JasmineReturned
-	writetext EcruteakCityFisherText
-	waitbutton
-	closetext
-	end
-
-.JasmineReturned:
-	writetext EcruteakCityFisherText_JasmineReturned
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer EcruteakCityFisherText
 
 EcruteakCityYoungsterScript:
 	jumptextfaceplayer EcruteakCityYoungsterText
@@ -91,64 +78,60 @@ EcruteakCityMartSign:
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION
 
-UnusedMissingDaughterText: ; unreferenced
-	text "Oh, no. Oh, no…"
-
-	para "My daughter is"
-	line "missing."
-
-	para "No… She couldn't"
-	line "have gone to the"
-	cont "BURNED TOWER."
-
-	para "I told her not to"
-	line "go near it…"
-
-	para "People seem to"
-	line "disappear there…"
-
-	para "Oh, what should I"
-	line "do…?"
-	done
-
 EcruteakCityGramps1Text:
-	text "ECRUTEAK used to"
-	line "have two towers:"
+	text "I see the"
+	line "wonder in your"
+	cont "eyes."
 
-	para "one each in the"
-	line "east and west."
+	para "You remind me"
+	line "of my son."
+
+	para "I lost him 15"
+	line "years ago in"
+	cont "the last war"
+	cont "with HOEN."
+
+	para "I pray for"
+	line "him everyday."
 	done
 
 EcruteakCityGramps2Text:
-	text "Ah, child."
-	line "Have you learned"
+	text "This theatre"
+	line "is where the"
+	cont "KIMONO girls"
+	cont "dance."
 
-	para "to dance like the"
-	line "KIMONO GIRLS?"
+	para "My wife was a"
+	line "KIMONO girl."
 
-	para "If you go to their"
-	line "DANCE THEATER, an"
-
-	para "odd old man will"
-	line "give you something"
-	cont "nice, I hear."
+	para "Back when I"
+	line "was young and"
+	cont "the world seemed"
+	cont "full of joy."
 	done
 
 EcruteakCityLass1Text:
-	text "I'm going to prac-"
-	line "tice at the DANCE"
+	text "The KIMONO girls"
+	line "are so beautiful!"
 
-	para "THEATER. Care to"
-	line "join me?"
+	para "I am here to"
+	line "learn to dance"
+	cont "like them."
 	done
 
 EcruteakCityLass2Text:
-	text "The tower that"
-	line "used to be here…"
+	text "My grandma told"
+	line "me that long"
+	cont "ago this tower"
+	cont "was as big as"
+	cont "the TIN TOWER."
 
-	para "My grandma told me"
-	line "it used to be much"
-	cont "taller."
+	para "But it burned"
+	line "down."
+
+	para "Nobody knows"
+	line "how the fire"
+	cont "started."
 	done
 
 EcruteakCityLass2Text_ReleasedBeasts:
@@ -156,37 +139,37 @@ EcruteakCityLass2Text_ReleasedBeasts:
 	line "ran off in differ-"
 	cont "ent directions."
 	cont "What were they?"
+
+	para "They looked"
+	line "fierce!"
 	done
 
 EcruteakCityFisherText:
-	text "I heard a rumor"
-	line "about OLIVINE"
-	cont "LIGHTHOUSE."
+	text "This was the"
+	line "first major city"
+	cont "built in JOHTO."
 
-	para "The #MON that"
-	line "serves as the"
-
-	para "beacon fell ill."
-	line "Sounds like they"
-	cont "are in trouble."
-	done
-
-EcruteakCityFisherText_JasmineReturned:
-	text "The #MON at"
-	line "OLIVINE LIGHTHOUSE"
-	cont "has been cured."
-
-	para "Boats can safely"
-	line "sail out to sea at"
-	cont "night again."
+	para "Right in the"
+	line "middle of the"
+	cont "province to"
+	cont "facilitate"
+	cont "trade."
 	done
 
 EcruteakCityYoungsterText:
-	text "I hear #MON are"
-	line "rampaging at the"
+	text "I came here"
+	line "from PEWTER after"
+	cont "the #RUS"
+	cont "outbreak."
 
-	para "LAKE OF RAGE. I'd"
-	line "like to see that."
+	para "The TIN TOWER"
+	line "is the tallest"
+	cont "building in"
+	cont "JOHTO."
+
+	para "But the SILPH CO"
+	line "building in KANTO"
+	cont "is taller still."
 	done
 
 EcruteakCityGramps3Text:
@@ -213,8 +196,8 @@ EcruteakCityGramps3Text:
 
 	para "Me?"
 
-	para "I was a trainer"
-	line "way back when."
+	para "I was the GYM"
+	line "LEADER long ago."
 	cont "Hohoho!"
 	done
 
@@ -258,13 +241,6 @@ BurnedTowerSignText:
 	para "Please stay away,"
 	line "as it is unsafe."
 	done
-
-ReloadMapEcruteakScript:
-    checktime NITE
-    iftrue .end
-	reloadmap
-.end
-    end
 
 SetoScript:
 	faceplayer

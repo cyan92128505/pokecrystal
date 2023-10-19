@@ -18,10 +18,10 @@ PalletTown_MapScripts:
 
 .Aerith:
     disappear PALLETTOWN_CRYSTAL
-    appear PALLETTOWN_AERITH
-    checkevent EVENT_BEAT_AERITH_1
-    iftrue .end
     disappear PALLETTOWN_AERITH
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .end
+    appear PALLETTOWN_AERITH
 .end
     endcallback
 

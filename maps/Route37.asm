@@ -155,60 +155,77 @@ Route37HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER
 
 TwinsAnnandanne1SeenText:
-	text "ANN: ANNE and I"
-	line "are in this to-"
-	cont "gether!"
+	text "My sister and"
+	line "I died here many"
+	cont "years ago."
+
+	para "We are lonely."
+
+	para "Join us."
 	done
 
 TwinsAnnandanne1BeatenText:
-	text "ANN & ANNE: Nnn… A"
-	line "little too strong."
+	text "Don't leave!"
 	done
 
 TwinsAnnandanne1AfterBattleText:
-	text "ANN: I can tell"
-	line "what my sister and"
+	text "If you die"
+	line "here."
 
-	para "my #MON are"
-	line "thinking."
+	para "You must come"
+	line "play with us."
 	done
 
 TwinsAnnandanne2SeenText:
-	text "ANNE: ANN and I"
-	line "are in this to-"
-	cont "gether!"
+	text "It was my"
+	line "sisters idea"
+	cont "to come here."
+
+	para "If I hadn't"
+	line "of listened to"
+	cont "her I'd be an"
+	cont "old woman now."
+
+	para "I miss being"
+	line "alive."
 	done
 
 TwinsAnnandanne2BeatenText:
-	text "ANN & ANNE: Nnn… A"
-	line "little too strong."
+	text "Don't leave."
 	done
 
 TwinsAnnandanne2AfterBattleText:
-	text "ANNE: We share the"
-	line "same feelings as"
-	cont "our #MON."
+	text "It's not so"
+	line "bad being stuck"
+	cont "here."
+
+	para "It's cosy."
 	done
 
 PsychicGregSeenText:
-	text "#MON can't do a"
-	line "thing if they are"
-	cont "asleep."
+	text "I must not fear."
 
-	para "I'll show you how"
-	line "scary that is!"
+	para "Fear is the"
+	line "mind killer."
+
+	para "Fear is the"
+	line "little death"
+	cont "that brings total"
+	cont "obliteration."
 	done
 
 PsychicGregBeatenText:
-	text "I lost. That's"
-	line "pretty sad…"
+	text "I will let it"
+	line "pass over me."
 	done
 
 PsychicGregAfterBattleText:
-	text "Putting #MON to"
-	line "sleep or paralyz-"
-	cont "ing them are good"
-	cont "battle techniques."
+	text "Where the fear"
+	line "has gone there"
+	cont "will be nothing."
+
+	para "Only I will"
+	line "remain."
 	done
 
 MeetSunnyText:

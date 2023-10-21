@@ -696,6 +696,8 @@ Route36FieldMon6Script:
 	end
 
 Route36CrystalScript:
+    checkevent EVENT_BEAT_MORTY
+    iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
     playmusic MUSIC_CRYSTAL_ENCOUNTER
     appear ROUTE36_CRYSTAL

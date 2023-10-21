@@ -21,26 +21,32 @@ EcruteakMartGrannyScript:
 	jumptextfaceplayer EcruteakMartGrannyText
 
 EcruteakMartSuperNerdText:
-	text "My EEVEE evolved"
-	line "into an ESPEON."
+	text "I can't decide!"
 
-	para "But my friend's"
-	line "EEVEE turned into"
-	cont "an UMBREON."
+	para "Should I evolve"
+	line "my EEVEE into an"
+	cont "ESPEON or an"
+	cont "UMBREON."
 
-	para "I wonder why? We"
-	line "both were raising"
-
-	para "our EEVEE in the"
-	line "same way…"
+	para "They are both"
+	line "cool in their"
+	cont "own ways!"
 	done
 
 EcruteakMartGrannyText:
-	text "If you use REVIVE,"
-	line "a #MON that's"
+	text "I was in the"
+	line "burnt tower"
+	cont "years ago when"
+	cont "it caught fire."
 
-	para "fainted will wake"
-	line "right up."
+	para "I was lucky"
+	line "but my #MON"
+	cont "weren't."
+
+	para "I gave up"
+	line "being a KIMONO"
+	cont "girl after I"
+	cont "lost them."
 	done
 
 EcruteakMart_MapEvents:

@@ -17,29 +17,72 @@ LugiaSpeechHouseRadio:
 	jumpstd Radio2Script
 
 EcruteakLugiaSpeechHouseGrampsText:
-	text "This happened when"
-	line "I was young."
+	text "I see you have"
+	line "a genuine heart."
 
-	para "The sky suddenly"
-	line "turned black. A"
+	para "I have an awful"
+	line "secret I have"
+	cont "never told"
+	cont "anyone."
 
-	para "giant flying #-"
-	line "MON was blocking"
-	cont "out the sun."
+	para "I will tell you."
 
-	para "I wonder what that"
-	line "#MON was? "
+	para "I was the one"
+	line "who burnt down"
+	cont "the BRASS TOWER."
 
-	para "It was like a bird"
-	line "and a dragon."
+	para "I was a boy and"
+	line "it was an"
+	cont "accident."
+
+	para "I barley managed"
+	line "to escape."
+
+	para "When I got"
+	line "older the full"
+	cont "horror of what"
+	cont "I had done"
+	cont "took over me."
+
+	para "I fled into"
+	line "the mountains."
+
+    para "Then a #MON"
+    line "bight as the"
+    cont "sun appeared."
+
+    para "Its fire engulfed"
+    line "me."
+
+    para "I believed I"
+    line "deserved death."
+
+    para "But It didn't"
+    line "burn my flesh."
+
+    para "It burned away"
+    line "my guilt."
+
+    para "I knew then"
+    line "that HO OH had"
+    cont "forgiven me."
+
+    para "I wept like a"
+    line "child."
+
+    para "I dedicated the"
+    line "rest of my life"
+    cont "to protecting"
+    cont "the TIN TOWER."
 	done
 
 EcruteakLugiaSpeechHouseYoungsterText:
-	text "Is there really a"
-	line "#MON that big?"
+	text "My grandad used"
+	line "to be a monk."
 
-	para "If it exists, it"
-	line "must be powerful."
+	para "He still visits"
+	line "the TIN TOWER"
+	cont "everyday."
 	done
 
 EcruteakLugiaSpeechHouse_MapEvents:

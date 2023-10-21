@@ -27,47 +27,62 @@ EcruteakPokecenter1FGymGuideScript:
 	jumptextfaceplayer EcruteakPokecenter1FGymGuideText
 
 EcruteakPokecenter1FPokefanMText:
-	text "The way the KIMONO"
-	line "GIRLS dance is"
-
-	para "marvelous. Just"
-	line "like the way they"
-	cont "use their #MON."
+	text "The KIMONO girls"
+	line "are as skilled"
+	cont "with #MON as"
+	cont "they are at"
+	cont "dancing."
 	done
 
 EcruteakPokecenter1FPokefanMTextMobile:
-	text "You must be hoping"
-	line "to battle more"
+	text "BATTLE FRONTIER"
+	line "is just past"
+	cont "OLIVINE."
 
-	para "people, right?"
-	line "There's apparently"
+	para "It has all sorts"
+	line "of challenges for"
+	cont "trainers."
 
-	para "some place where"
-	line "trainers gather."
-
-	para "Where, you ask?"
-
-	para "It's a little past"
-	line "OLIVINE CITY."
+	para "You could spend"
+	line "hours there."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
-	text "MORTY, the GYM"
-	line "LEADER, is soooo"
-	cont "cool."
+	text "MORTY the GYM"
+	line "LEADER spent"
+	cont "weeks in the"
+	cont "haunted forest"
+	cont "as a child."
 
-	para "His #MON are"
-	line "really tough too."
+	para "He has a strong"
+	line "connection to"
+	cont "GHOST #MON."
 	done
 
 EcruteakPokecenter1FGymGuideText:
-	text "LAKE OF RAGE…"
+	text "Far to the"
+	line "NORTH EAST is"
+	cont "LAKE OF RAGE."
 
-	para "The appearance of"
-	line "a GYARADOS swarm…"
+	para "Years ago a lot"
+	line "of people went"
+	cont "missing there."
 
-	para "I smell a conspir-"
-	line "acy. I know it!"
+	para "They say it was"
+	line "a serial killer"
+	cont "the MAHOGANY"
+	cont "murderer."
+
+	para "He was never"
+	line "caught."
+
+	para "And now the"
+	line "#MON there"
+	cont "have all gone"
+	cont "mad with anger."
+
+	para "It's a cursed"
+	line "place."
 	done
 
 EcruteakPokecenter1F_MapEvents:

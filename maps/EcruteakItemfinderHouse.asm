@@ -56,16 +56,21 @@ ItemFinderHouseRadio:
 	jumpstd Radio2Script
 
 EcruteakItemfinderAdventureText:
-	text "Ah. You're on an"
-	line "adventure with"
-	cont "your #MON?"
+	text "ARR I be on"
+	line "the hunt for"
+	cont "hidden treasure."
 
-	para "Well, what's an"
-	line "adventure without"
-	cont "treasure hunting?"
+	para "Sometimes items"
+	line "are left that"
+	cont "can't be seen."
 
-	para "Am I right, or am"
-	line "I right?"
+	para "But I have"
+	line "created a device"
+	cont "that can detect"
+	cont "them."
+
+	para "Here do you"
+	line "want one?"
 	done
 
 EcruteakItemfinderTrueSpiritText:
@@ -75,8 +80,7 @@ EcruteakItemfinderTrueSpiritText:
 	para "spirit of adven-"
 	line "ture."
 
-	para "I like that! Take"
-	line "this with you."
+	para "I like that!"
 	done
 
 ItemfinderExplanationText:

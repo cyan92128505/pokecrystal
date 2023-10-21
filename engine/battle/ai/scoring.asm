@@ -4045,10 +4045,17 @@ AI_Smart_Geomancy:
 .check3HKO
 	call CanAI3HKO
 	jp c, StandardDiscourage
+    call Random
+    cp 50 percent + 1
+    jp c, StandardDiscourage
 	jr .continue
 .check2HKO
 	call CanAI2HKOMaxHP
 	jp c, StandardDiscourage
+    call Random
+    cp 50 percent + 1
+    jp c, StandardDiscourage
+	jr .continue
 
 .checkKO
 ; don't use if we are at risk of being KOd, just attack them
@@ -4061,7 +4068,11 @@ AI_Smart_Geomancy:
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jp c, StandardEncourage
-    ret
+
+; if we are at +2 and can 2HKO, just attack
+	call CanAI2HKO
+	jp c, StandardDiscourage
+	ret
 
 AI_Smart_Growth:
 	call IsSpecialAttackMaxed

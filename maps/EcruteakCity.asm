@@ -129,6 +129,10 @@ EcruteakCityLass2Text:
 	para "But it burned"
 	line "down."
 
+	para "It used to be"
+	line "called the"
+	cont "BRASS TOWER."
+
 	para "Nobody knows"
 	line "how the fire"
 	cont "started."

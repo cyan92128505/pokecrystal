@@ -109,6 +109,9 @@ LoadRandomBattleTowerMon:
 	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
 	call AddNTimes ; increment hl by a * bc, so we are at the right mon
 
+    ld a, MUSIC_XVZ
+    ld [wBattleMusicOverride], a
+
 	ldh a, [hRandomAdd]
 	ld b, a
 .resample
@@ -191,7 +194,7 @@ LoadRandomBattleTowerMon:
 
 	ld a, [wBT_OTMon3]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld a, [sBTMonPrevTrainer1]
 	cp b

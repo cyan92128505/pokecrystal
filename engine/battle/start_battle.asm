@@ -171,6 +171,27 @@ PlayBattleMusic:
 	jp .done
 
 .noOverride
+; set BattleTower Music
+    ld a, [wInBattleTowerBattle]
+    and a
+    jr z, .notBT
+    ld a, [wNrOfBeatenBattleTowerTrainers]
+    cp BATTLETOWER_STREAK_LENGTH - 1
+    jr z, .lastTrainer
+    ld de, MUSIC_XVZ
+    jp .done
+.lastTrainer
+	ld a, [wBTChoiceOfLvlGroup]
+	cp 5
+	jr z, .masterLevel
+    ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+    jp .done
+.masterLevel
+    ld de, MUSIC_EPIC_TETRIS
+    jp .done
+.notBT
+
+; set music based on enemy trainer class
     ld a, [wOtherTrainerClass]
 
     ld de, MUSIC_EPIC_TETRIS

@@ -109,9 +109,6 @@ LoadRandomBattleTowerMon:
 	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
 	call AddNTimes ; increment hl by a * bc, so we are at the right mon
 
-    ld a, MUSIC_XVZ
-    ld [wBattleMusicOverride], a
-
 	ldh a, [hRandomAdd]
 	ld b, a
 .resample
@@ -135,8 +132,6 @@ LoadRandomBattleTowerMon:
     jr z, .resample ; only the last trainer can have the runkiller
 	jr .continue
 .lastTrainer
-    ld a, MUSIC_KANTO_GYM_LEADER_BATTLE
-    ld [wBattleMusicOverride], a
     ld a, b
     cp 20 ; last trainer only uses 20 strongest mons, can pick the runkiller
     jr nc, .resample
@@ -164,8 +159,6 @@ LoadRandomBattleTowerMon:
 	jr .continue
 ; last trainer only uses 25 strongest mons and can pick mewtwo
 .lastTrainerMaster
-    ld a, MUSIC_EPIC_TETRIS
-    ld [wBattleMusicOverride], a
     ld a, b
     cp 25
     jr nc, .resample
@@ -186,11 +179,11 @@ LoadRandomBattleTowerMon:
 	; no item restrictions
 	ld a, [wBT_OTMon1]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld a, [wBT_OTMon2]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld a, [wBT_OTMon3]
 	cp b

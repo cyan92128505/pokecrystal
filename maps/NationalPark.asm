@@ -87,9 +87,6 @@ NationalParkLassScript:
 .leon
     jumptextfaceplayer NationalParkLassLeonText
 
-NationalParkPokefanFScript:
-	jumptextfaceplayer NationalParkPokefanFText
-
 NationalParkTeacher1Script:
 	faceplayer
 	opentext
@@ -106,9 +103,6 @@ NationalParkTeacher1Script:
 .NoRoom:
 	closetext
 	end
-
-NationalParkYoungster1Script:
-	jumptextfaceplayer NationalParkYoungster1Text
 
 NationalParkYoungster2Script:
     checkevent EVENT_TEMP_EVENT_1
@@ -259,8 +253,6 @@ TrainerPokefanfBeverly1:
 	iftrue .GiveNugget
 	checkcellnum PHONE_POKEFAN_BEVERLY
 	iftrue .NumberAccepted
-	checkpoke WOOPER
-	iffalse .NoMarill
 	checkevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskAgain
 	writetext PokefanBeverlyCuteMonText
@@ -288,12 +280,6 @@ TrainerPokefanfBeverly1:
 
 .NoRoom:
 	sjump .PackFull
-
-.NoMarill:
-	writetext PokefanFBeverlyMarillFriendText
-	waitbutton
-	closetext
-	end
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
@@ -385,30 +371,25 @@ NationalParkLassLeonText:
 	para "I feel faint."
 	done
 
-NationalParkPokefanFText:
-	text "This is MAIL I got"
-	line "from my daughter."
-	cont "It cheers me up."
-	done
-
 NationalParkTeacher1Text:
-	text "Pay attention,"
-	line "please!"
+	text "SPEED is very"
+	line "important in"
+	cont "battle."
 
-	para "…Oops, I have to"
-	line "quit thinking like"
+	para "Being just one"
+	line "point faster"
+	cont "than your enemy"
+	cont "will allow you"
+	cont "to strike first."
 
-	para "a teacher all the"
-	line "time."
+	para "However there"
+	line "is a way to"
+	cont "cheat!"
 
-	para "You must be a"
-	line "#MON trainer."
+	para "Don't tell"
+	line "anyone."
 
-	para "Since you're work-"
-	line "ing so hard, I"
-
-	para "want you to have"
-	line "this."
+	para "Here take this."
 	done
 
 NationalParkTeacher1Text_GotQuickClaw:
@@ -417,13 +398,12 @@ NationalParkTeacher1Text_GotQuickClaw:
 
 	para "Sometimes it will"
 	line "strike first"
-	cont "during battle."
-	done
+	cont "during battle"
+	cont "regardless of"
+	cont "its stats."
 
-NationalParkYoungster1Text:
-	text "I'm playing with"
-	line "stickers I printed"
-	cont "from my #DEX."
+	para "Isn't that"
+	line "unfair!"
 	done
 
 NationalParkYoungster2Text:
@@ -479,113 +459,125 @@ NationalParkPersianText:
 	text "PERSIAN: Fufushaa!"
 	done
 
-NationalParkGameboyKidText:
-	text "I'm printing out"
-	line "my #DEX."
-
-	para "You can also print"
-	line "out stuff like"
-
-	para "MAIL and your PC"
-	line "BOXES."
-	done
-
 SchoolboyJack1SeenText:
-	text "The world of"
-	line "#MON is deep."
+	text "I am top of"
+	line "my class."
 
-	para "There are still"
-	line "lots of things we"
-	cont "don't know."
-
-	para "But I know more"
-	line "than you do!"
+	para "I got a 91"
+	line "on our TYPE"
+	cont "matchup test!"
 	done
 
 SchoolboyJack1BeatenText:
-	text "Wha-wha-what?"
+	text "I have more"
+	line "to learn."
 	done
 
 SchoolboyJackTradeMonText:
-	text "There is a lot"
-	line "to learn."
+	text "I am going to"
+	line "to know all the"
+	cont "little facts."
 
-	para "For example…"
+	para "For example..."
 
-	para "There are {d:NUM_TMS} kinds"
-	line "of TMs."
+	para "Did you know"
+	line "LEECH SEED wont"
+	cont "work if the"
+	cont "enemy is more"
+	cont "than twice your"
+	cont "level?"
 
-	para "Traded #MON"
-	line "level up faster."
+	para "Didn't think so!"
 	done
 
 PokefanfBeverly1SeenText:
-	text "My #MON are"
-	line "simply darling."
+	text "Fighting crime"
 
-	para "Let me tell you"
-	line "how proud my"
-	cont "darlings make me."
+	para "Trying to save"
+	line "the world."
+
+	para "Here they come"
+	line "just in time..."
 	done
 
 PokefanfBeverly1BeatenText:
-	text "I can beat you in"
-	line "pride, but…"
+	text "I need more"
+	line "chemical X!"
 	done
 
 PokefanBeverlyCuteMonText:
-	text "I must say, your"
-	line "#MON are quite"
-	cont "cute, too."
+	text "When war comes"
+	line "and HOEN invades"
+	cont "we will be"
+	cont "ready..."
+
+	para "To face..."
+
+	para "HIM..."
 	done
 
 PokefanmWilliamSeenText:
-	text "We adore our #-"
-	line "MON, even if they"
-	cont "dislike us."
+	text "Captains log..."
 
-	para "That's what being"
-	line "a FAN is about."
+	para "Stardate -299189.2"
+
+	para "We have"
+	line "encountered a"
+	cont "hostile trainer."
+
+	para "Ready phasors!"
 	done
 
 PokefanmWilliamBeatenText:
-	text "M-my #MON!"
+	text "KHANNNN!"
 	done
 
 PokefanmWilliamAfterBattleText:
-	text "I lost the battle,"
-	line "but my #MON win"
+	text "Of all the"
+	line "souls I've"
+	cont "encountered."
 
-	para "the prize for"
-	line "being most lovely."
-	done
+	para "Yours is the"
+	line "most..."
 
-PokefanFBeverlyMarillFriendText:
-	text "My friend keeps a"
-	line "MARILL!"
+	para "..."
 
-	para "I find them very"
-	line "endearing."
-
-	para "Oh, I wish for a"
-	line "MARILL of my own…"
+	para "Human."
 	done
 
 LassKriseSeenText:
-	text "Hello? Why are you"
-	line "staring at me?"
+	text "You are staring"
+	line "right at me."
 
-	para "Oh, a battle?"
+	para "..."
+
+	para "You're still"
+	line "staring at me."
+
+	para "..."
+
+	para "Hello!"
+
+	para "..."
+
+	para "What is your"
+	line "problem!"
 	done
 
 LassKriseBeatenText:
-	text "…Hmmm…"
+	text "Don't look"
+	line "at me."
 	done
 
 LassKriseAfterBattleText:
-	text "I thought you were"
-	line "staring at me"
-	cont "because I'm cute!"
+	text "Oh you just"
+	line "wanted a battle."
+
+	para "I thought you"
+	line "might have found"
+	cont "me attractive..."
+
+	para "Silly me!"
 	done
 
 NationalParkRelaxationSquareText:

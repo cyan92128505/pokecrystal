@@ -2076,7 +2076,8 @@ FlareonEvosAttacks:
 	db 16, EMBER
 	db 20, FLAME_WHEEL
 	db 24, BITE
-	db 28, FIRE_SPIN
+	db 28, CRUNCH
+	db 32, FIRE_SPIN
 	db 36, FLAMETHROWER
 	db 45, FIRE_BLAST
 	db 50, FLARE_BLITZ
@@ -2617,12 +2618,14 @@ ChinchouEvosAttacks:
 	db 1, BUBBLE
 	db 1, THUNDER_WAVE
 	db 5, SUPERSONIC
-	db 13, FLAIL
-	db 17, WATER_GUN
-	db 25, RAIN_DANCE
-	db 29, CONFUSE_RAY
-	db 37, THUNDERBOLT
-	db 41, HYDRO_PUMP
+	db 10, FLAIL
+	db 12, WATER_GUN
+	db 14, THUNDERSHOCK
+	db 18, BUBBLEBEAM
+	db 21, RAIN_DANCE
+	db 23, CONFUSE_RAY
+	db 30, THUNDERBOLT
+	db 40, HYDRO_PUMP
 	db 45, THUNDER
 	db 0 ; no more level-up moves
 
@@ -2630,15 +2633,15 @@ LanturnEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, THUNDER_WAVE
-	db 1, SUPERSONIC
 	db 5, SUPERSONIC
-	db 13, FLAIL
-	db 17, WATER_GUN
+	db 10, FLAIL
+	db 12, WATER_GUN
+	db 14, THUNDERSHOCK
+	db 18, BUBBLEBEAM
 	db 21, RAIN_DANCE
-	db 25, BUBBLEBEAM
-	db 29, CONFUSE_RAY
-	db 35, THUNDERBOLT
-	db 41, HYDRO_PUMP
+	db 23, CONFUSE_RAY
+	db 30, THUNDERBOLT
+	db 40, HYDRO_PUMP
 	db 45, THUNDER
 	db 0 ; no more level-up moves
 

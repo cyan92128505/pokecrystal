@@ -158,121 +158,124 @@ BurnedTower1FEusineMovement:
 	step_end
 
 BurnedTowerSilver_BeforeText:
-	text "<……> <……> <……>"
+    text "They say a"
+    line "legendary"
+    cont "#MON used"
+    cont "to dwell here."
 
-	para "…Oh, it's you."
+    para "Well if it did"
+    line "it's long gone"
+    cont "now."
 
-	para "I came looking for"
-	line "some legendary"
+    para "Legendary"
+    line "#MON are the"
+    cont "strongest of"
+    cont "all #MON."
 
-	para "#MON that they"
-	line "say roosts here."
+    para "I will catch one"
+    line "someday!"
 
-	para "But there's"
-	line "nothing here!"
+    para "Then I will"
+    line "stand above all"
+    cont "trainers."
 
-	para "Nothing after all"
-	line "the trouble of"
-
-	para "coming to this"
-	line "dump? No way!"
-
-	para "It's all your"
-	line "fault!"
+    para "Especially you."
 	done
 
 BurnedTowerSilver_WinText:
-	text "…Humph!"
+	text "Don't get ahead"
+	line "of yourself."
 
-	para "This is why I hate"
-	line "battling wimps."
-
-	para "There's no"
-	line "challenge in it."
-	done
-
-BurnedTowerSilver_AfterText1:
-	text "…Aw, whatever."
-
-	para "You would never be"
-	line "able to catch a"
-
-	para "legendary #MON"
-	line "anyway."
+	para "This is nothing."
 	done
 
 BurnedTowerSilver_LossText:
-	text "…Humph!"
+	text "Seems I don't"
+	line "need legendary"
+	cont "#MON to win!"
+	done
 
-	para "This is why I hate"
-	line "battling wimps."
+BurnedTowerSilver_AfterText1:
+	text "There is no"
+	line "point you looking"
+	cont "around here."
 
-	para "It's just a waste"
-	line "of my time."
+	para "I've already"
+	line "explored all"
+	cont "over here."
+
+	para "Besides even if"
+	line "you found a"
+	cont "legendary"
+	cont "#MON you"
+	cont "would never be"
+	cont "able to catch it"
+
+	para "Now get lost!"
 	done
 
 BurnedTowerSilver_AfterText2:
 	text "Humph!"
 
-	para "What are you doing"
-	line "falling into a"
+	para "I didn't mean"
+	line "you to take that"
+	cont "literally."
 
-	para "hole? Some genius"
-	line "you are!"
+	para "Let me know if"
+	line "you find a"
+	cont "legendary"
+	cont "#MON down"
+	cont "there!"
 
-	para "Serves you right!"
+	para "Heh heh heh..."
 	done
 
 BurnedTower1FEusineIntroText:
-	text "EUSINE: My name's"
-	line "EUSINE."
+	text "Have you see"
+	line "SUICUNE!"
 
-	para "I'm on the trail"
-	line "of a #MON named"
-	cont "SUICUNE."
+	para "When I was a"
+	line "child I would"
+	cont "draw pictures"
+	cont "of SUICUNE."
 
-	para "And you are…?"
+	para "It is my"
+	line "destiny to"
+	cont "catch SUICUNE."
 
-	para "<PLAYER>? Glad to"
-	line "meet you!"
+	para "Only through"
+	line "SUICUNE can I"
+	cont "find true joy."
 
-	para "I heard rumors"
-	line "that SUICUNE is in"
-
-	para "this BURNED TOWER,"
-	line "so I came to look."
-
-	para "But where exactly"
-	line "could it be?"
+	para "I am EUSINE"
+	line "by the way."
 	done
 
 BurnedTower1FEusineText:
-	text "EUSINE: I heard"
-	line "that SUICUNE is in"
+	text "I know SUICUNE"
+	line "is in this tower"
+	cont "somewhere."
 
-	para "this BURNED TOWER,"
-	line "so I came to look."
-
-	para "But where exactly"
-	line "could it be?"
+	para "I can feel it"
+	line "all over."
 	done
 
 BurnedTower1FMortyText:
-	text "MORTY: ECRUTEAK's"
-	line "GYM LEADER has to"
+	text "This guy EUSINE"
+	line "is a very..."
 
-	para "study what are"
-	line "said to be the"
+	para "Dedicated fellow."
 
-	para "legendary #MON"
-	line "--SUICUNE, ENTEI"
-	cont "and RAIKOU."
+	para "He convinced me"
+	line "to investigate"
+	cont "this place for"
+	cont "legendary"
+	cont "#MON."
 
-	para "EUSINE is here, so"
-	line "I've decided to"
+	para "He is rather..."
 
-	para "investigate the"
-	line "TOWER with him."
+	para "Eager to find"
+	line "them."
 	done
 
 BurnedTower1F_MapEvents:

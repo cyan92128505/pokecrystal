@@ -191,46 +191,42 @@ BurnedTowerB1FEusineMovement1:
 	step_end
 
 BurnedTowerB1FEusineText:
-	text "EUSINE: I dug a"
-	line "hole here, too…"
+	text "...."
 
-	para "I was shocked!"
+	para "...."
 
-	para "SUICUNE raced by"
-	line "like a blur, right"
+	para "That was it."
 
-	para "in front of my"
-	line "eyes!"
+	para "...."
 
-	para "For ten years I"
-	line "chased SUICUNE,"
+	para "...."
 
-	para "and I finally got"
-	line "to see it."
+	para "I saw SUICUNE."
 
-	para "I'm all choked up!"
+	para "I saw SUICUNE."
 
-	para "<PLAYER>, I owe"
-	line "this all to you!"
+	para "I saw SUICUNE!!!!"
 
-	para "Thank you!"
+	para "All thanks to"
+	line "you <PLAYER>!"
 
-	para "I heard that the"
-	line "legendary #MON"
+	para "I owe you a"
+	line "dept for the rest"
+	cont "of my life."
 
-	para "of ECRUTEAK test"
-	line "chosen humans by"
+	para "SUICUNE fled with"
+	line "the others."
 
-	para "allowing them to"
-	line "get close."
+	para "RAIKOU and ENTEI."
 
-	para "I'm going to track"
-	line "SUICUNE."
+	para "Destiny calls."
 
-	para "<PLAYER>, let's"
-	line "meet again!"
+	para "Now the hunt"
+	line "begins."
 
-	para "Farewell!"
+	para "See you around..."
+
+	para "friend."
 	done
 
 BurnedTowerB1F_MapEvents:

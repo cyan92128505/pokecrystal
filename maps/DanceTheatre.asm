@@ -121,7 +121,7 @@ SurfGuyAlreadyGaveSurf:
 DanceTheaterRhydon:
 	opentext
 	writetext RhydonText
-	cry RHYDON
+	cry BLASTOISE
 	waitbutton
 	closetext
 	end
@@ -136,145 +136,149 @@ DanceTheatreFancyPanel:
 	jumptext DanceTheatreFancyPanelText
 
 KimonoGirlNaokoSeenText:
-	text "You have lovely"
-	line "#MON. May I see"
-	cont "them in battle?"
+	text "Let war come!"
+
+	para "I shall fight"
+	line "to my last"
+	cont "breath."
+
+	para "My rage burns."
 	done
 
 KimonoGirlNaokoBeatenText:
-	text "Oh, you are very"
-	line "strong."
+	text "I need to chill."
 	done
 
 KimonoGirlNaokoAfterBattleText:
-	text "I enjoyed that"
-	line "bout. I would like"
-	cont "to see you again."
+	text "Fire will burn"
+	line "everything if"
+	cont "you can't"
+	cont "control it."
 	done
 
 KimonoGirlSayoSeenText:
-	text "I always dance"
-	line "with my #MON."
+	text "I see your"
+	line "heart is pure."
 
-	para "Of course, I also"
-	line "train them."
+	para "But such purity"
+	line "means little"
+	cont "without strength."
 	done
 
 KimonoGirlSayoBeatenText:
-	text "Oh, so close!"
-	line "I almost had you."
+	text "Your heart is"
+	line "your weapon."
 	done
 
 KimonoGirlSayoAfterBattleText:
-	text "Rhythm is impor-"
-	line "tant for both"
+	text "Listen to your"
+	line "heart."
 
-	para "dancing and #-"
-	line "MON."
+	para "Let it guide"
+	line "you."
 	done
 
 KimonoGirlZukiSeenText:
-	text "Isn't my barrette"
-	line "pretty?"
+	text "We are consumed"
+	line "by our trivial"
+	cont "lives."
 
-	para "Oh. A #MON"
-	line "battle?"
+	para "In a million"
+	line "years none of"
+	cont "it will matter."
 	done
 
 KimonoGirlZukiBeatenText:
-	text "I don't have any"
-	line "#MON left…"
+	text "A meaningless"
+	line "victory."
 	done
 
 KimonoGirlZukiAfterBattleText:
-	text "I put a different"
-	line "flower in my bar-"
-	cont "rette every month."
+	text "It doesn't matter"
+	line "that it doesn't"
+	cont "matter."
+
+	para "It's the journey"
+	line "not the"
+	cont "destination."
 	done
 
 KimonoGirlKuniSeenText:
-	text "Oh, you're a cute"
-	line "trainer. Would you"
-	cont "like to battle?"
+	text "You need to"
+	line "stop and feel"
+	cont "push and pull"
+	cont "of life."
+
+	para "Go with the flow."
 	done
 
 KimonoGirlKuniBeatenText:
-	text "You're stronger"
-	line "than you look."
+	text "Your flow is"
+	line "strong."
 	done
 
 KimonoGirlKuniAfterBattleText:
-	text "I trained a lot,"
-	line "so I thought I was"
-
-	para "a capable trainer."
-	line "I guess I'm not."
+	text "In hard times"
+	line "hope is something"
+	cont "you must give"
+	cont "yourself."
 	done
 
 KimonoGirlMikiSeenText:
-	text "Do you like my"
-	line "dancing? I'm good"
-	cont "at #MON too."
+	text "Stop right there!"
+
+	para "You must always"
+	line "be prepared."
+
+	para "To defend"
+	line "yourself!"
 	done
 
 KimonoGirlMikiBeatenText:
-	text "Ooh, you're good"
-	line "at #MON too."
+	text "You were ready."
 	done
 
 KimonoGirlMikiAfterBattleText:
-	text "I can keep dancing"
-	line "because there are"
-
-	para "people who enjoy"
-	line "what I do."
-
-	para "My #MON keep my"
-	line "spirits up too."
+	text "I'm going to"
+	line "dance my cares"
+	cont "away."
 	done
 
 SurfGuyNeverLeftAScratchText:
-	text "Not only are the"
-	line "KIMONO GIRLS great"
+	text "The KIMONO GIRLS"
+	line "all have distinct"
+	cont "personalities."
 
-	para "dancers, they're"
-	line "also skilled at"
-	cont "#MON."
-
-	para "I always challenge"
-	line "them, but I've"
-
-	para "never even left a"
-	line "scratch…"
+	para "They are suited"
+	line "to battling with"
+	cont "their #MON."
 	done
 
 SurfGuyLadGiftText:
-	text "Lad! If you can"
-	line "defeat all the"
-
-	para "KIMONO GIRLS, I'll"
-	line "give you a gift."
+	text "Young man, if"
+	line "you defeat all the"
+	cont "KIMONO GIRLS, I'll"
+	cont "give you a gift."
 	done
 
 SurfGuyLassieGiftText:
-	text "Lassie, if you can"
-	line "defeat all the"
-
-	para "KIMONO GIRLS, I'll"
-	line "give you a gift."
+	text "Young woman, if"
+	line "you defeat all the"
+	cont "KIMONO GIRLS, I'll"
+	cont "give you a gift."
 	done
 
 SurfGuyLikeADanceText:
-	text "The way you bat-"
-	line "tled, it was like"
-	cont "watching a dance."
+	text "Your battling was"
+	line "a masterful"
+	cont "dance."
 
-	para "It was a rare"
-	line "treat to see!"
+	para "You must travel"
+	line "the world to"
+	cont "hone your craft."
 
-	para "I want you to have"
-	line "this. Don't worry"
-	cont "--take it!"
+	para "This will let"
+	line "you do that!"
 	done
 
 SurfGuySurfExplanationText:
@@ -286,28 +290,26 @@ SurfGuySurfExplanationText:
 	done
 
 SurfGuyElegantKimonoGirlsText:
-	text "I wish my #MON"
-	line "were as elegant as"
-	cont "the KIMONO GIRLS…"
+	text "If only I could"
+	line "be so elegant as"
+	cont "the KIMONO GIRLS."
 	done
 
 RhydonText:
-	text "RHYDON: Gugooh"
-	line "gugogooh!"
+	text "BLASTOISE!"
 	done
 
 DanceTheatreCooltrainerMText:
 	text "That man's always"
-	line "with his RHYDON."
+	line "with BLASTOISE."
 
-	para "Says he wants a"
-	line "#MON that can"
-	cont "SURF and dance."
+	para "It looks really"
+	line "old like he is."
 
-	para "Is he trying to"
-	line "make a synchro-"
-	cont "nized swimming"
-	cont "#MON?"
+	para "I'm pretty sure"
+	line "BLASTOISE can live"
+	cont "much longer than"
+	cont "humans."
 	done
 
 DanceTheatreGrannyText:
@@ -324,9 +326,13 @@ DanceTheatreGrannyText:
 	para "customs before ap-"
 	line "pearing in public."
 
-	para "But if you love"
-	line "something, any-"
-	cont "thing is possible."
+	para "Sometimes I feel"
+	line "sorry for them."
+
+	para "They should enjoy"
+	line "being young and"
+	cont "free while they"
+	cont "can."
 	done
 
 DanceTheatreFancyPanelText:

@@ -29,7 +29,7 @@ EcruteakGymMortyScript:
 	writetext MortyIntroText
 	waitbutton
 	closetext
-	winlosstext MortyWinLossText, 0
+	winlosstext MortyLossText, MortyWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MORTY, MORTY1
 	startbattle
@@ -66,7 +66,7 @@ EcruteakGymMortyScript:
     writetext MortyIntroText
 	waitbutton
 	closetext
-	winlosstext MortyWinLossText, 0
+	winlosstext MortyLossText, MortyWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer MORTY, MORTY1
 	startbattle
@@ -199,52 +199,46 @@ EcruteakGymGrampsSlowStepDownMovement:
 	step_end
 
 MortyIntroText:
-	text "Good of you to"
-	line "have come."
+	text "ECRUTEAK is an"
+	line "ancient city."
 
-	para "Here in ECRUTEAK,"
-	line "#MON have been"
-	cont "revered."
+	para "With a history of"
+	line "tragedy, death"
+	cont "and resurrection."
 
-	para "It's said that a"
-	line "rainbow-colored"
+	para "Do you fear"
+	line "death?"
 
-	para "#MON will come"
-	line "down to appear"
+	para "I do not."
 
-	para "before a truly"
-	line "powerful trainer."
+	para "I have already"
+	line "been dead for"
+	cont "all of time before"
+	cont "I was born."
 
-	para "I believed that"
-	line "tale, so I have"
+	para "Fear is the"
+	line "shackle that"
+	cont "binds the world."
 
-	para "secretly trained"
-	line "here all my life."
-
-	para "As a result, I can"
-	line "now see what"
-	cont "others cannot."
-
-	para "Just a bit more…"
-
-	para "With a little"
-	line "more, I could see"
-
-	para "a future in which"
-	line "I meet the #MON"
-	cont "of rainbow colors."
-
-	para "You're going to"
-	line "help me reach that"
-	cont "level!"
+	para "I will help you"
+	line "shatter your"
+	cont "bonds."
 	done
 
-MortyWinLossText:
-	text "I'm not good"
-	line "enough yet…"
+MortyLossText:
+	text "You have"
+	line "broken free."
 
-	para "All right. This"
-	line "BADGE is yours."
+	para "This BADGE is"
+	line "yours."
+	done
+
+MortyWinText:
+	text "You are infected"
+	line "with fear."
+
+	para "It leeches your"
+	line "soul energy."
 	done
 
 Text_ReceivedFogBadge:
@@ -253,137 +247,149 @@ Text_ReceivedFogBadge:
 	done
 
 MortyText_FogBadgeSpeech:
-	text "By having FOG-"
-	line "BADGE, #MON up"
+    para "With the FOGBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 45."
 
-	para "to L50 will obey"
-	line "you."
+    para "And capture"
+    line "#MON up to"
+    cont "level 35."
 
-	para "Also, #MON that"
-	line "know SURF will be"
+    para "You can also"
+    line "use SURF outside"
+    cont "of battle."
 
-	para "able to use that"
-	line "move anytime."
-
-	para "I want you to have"
-	line "this too."
+    para "I want you to"
+    line "have this also."
 	done
 
 MortyText_ShadowBallSpeech:
-	text "It's SHADOW BALL."
-	line "It causes damage"
+	text "It is SHADOW BALL."
 
-	para "and may reduce"
-	line "SPCL.DEF."
-
-	para "Use it if it"
-	line "appeals to you."
+    para "It concentrates"
+    line "fear into an"
+    cont "attack that can"
+    cont "lower the enemies"
+    cont "spirit."
 	done
 
 MortyFightDoneText:
-	text "I see…"
+    para "With the FOGBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 45."
 
-	para "Your journey has"
-	line "taken you to far-"
-	cont "away places."
+    para "And capture"
+    line "#MON up to"
+    cont "level 35."
 
-	para "And you have wit-"
-	line "nessed much more"
-	cont "than I."
+    para "You have conquered"
+    line "your fear."
 
-	para "I envy you for"
-	line "that…"
+    para "Now your mind and"
+    line "body unburdened"
+    cont "can accomplish"
+    cont "anything."
 	done
 
 SageJeffreySeenText:
-	text "I spent the spring"
-	line "with my #MON."
+	text "I have had a"
+	line "long, peaceful"
+	cont "and happy life"
+	cont "with my #MON."
 
-	para "Then summer, fall"
-	line "and winter…"
-
-	para "Then spring came"
-	line "again. We have"
-
-	para "lived together"
-	line "for a long time."
+	para "My joy gives me"
+	line "strength."
 	done
 
 SageJeffreyBeatenText:
 	text "Wins and losses, I"
-	line "experienced both."
+	line "experience both."
 	done
 
 SageJeffreyAfterBattleText:
-	text "Where did #MON"
-	line "come from?"
+	text "I hope you may"
+	line "have as long a"
+	cont "life as I."
 	done
 
 SagePingSeenText:
-	text "Can you inflict"
-	line "any damage on our"
-	cont "#MON?"
+	text "GHOST #MON"
+	line "remind me to"
+	cont "be grateful"
+	cont "for every new"
+	cont "day."
 	done
 
 SagePingBeatenText:
-	text "Ah! Well done!"
+	text "Oh my days."
 	done
 
 SagePingAfterBattleText:
-	text "We use only ghost-"
-	line "type #MON."
+	text "You have many"
+	line "days ahead of"
+	cont "you."
 
-	para "No normal-type"
-	line "attack can harm"
-	cont "them!"
+	para "Take a moment"
+	line "to appreciate"
+	cont "each one."
 	done
 
 MediumMarthaSeenText:
-	text "I shall win!"
+    text "Death is the"
+    line "source of all"
+    cont "fear."
+
+	para "MORTY teaches"
+	line "us to purge the"
+	cont "disease of"
+	cont "fear."
 	done
 
 MediumMarthaBeatenText:
-	text "I, I, I lost!"
+	text "I am at peace."
 	done
 
 MediumMarthaAfterBattleText:
-	text "The one who wants"
-	line "to win most--will!"
+	text "Death is not"
+	line "all so bad."
 	done
 
 MediumGraceSeenText:
-	text "Stumped by our in-"
-	line "visible floor?"
+	text "GHOST #MON"
+	line "are immune to"
+	cont "NORMAL and"
+	cont "FIGHTING moves."
 
-	para "Defeat me if you"
-	line "want a hint!"
+	para "As I am immune"
+	line "to fear and"
+	cont "doubt."
 	done
 
 MediumGraceBeatenText:
-	text "Wha-what?"
+	text "This is fine."
 	done
 
 MediumGraceAfterBattleText:
-	text "Fine. I shall tell"
-	line "you the secret of"
-
-	para "the invisible"
-	line "floor."
-
-	para "The path is right"
-	line "before our eyes!"
+	text "The more you"
+	line "have to lose"
+	cont "the more you"
+	cont "have to fear."
 	done
 
 EcruteakGymGuideText:
-	text "The trainers here"
-	line "have secret mo-"
-	cont "tives."
+	text "The trainers"
+	line "here use GHOST"
+	cont "#MON."
 
-	para "If you win, they"
-	line "may tell you some"
+	para "They are weak"
+	line "to DARK and"
+	cont "GHOST."
 
-	para "deep secrets about"
-	line "ECRUTEAK."
+	para "They are generally"
+	line "weak to physical"
+	cont "attacks."
 	done
 
 EcruteakGymGuideWinText:
@@ -396,22 +402,20 @@ EcruteakGymGuideWinText:
 	done
 
 RematchTextMorty:
-    text "How about a"
-    line "rematch?"
+    text "Do you need"
+    line "more training?"
     prompt
 
 RematchRefuseTextMorty:
-    text "Maybe next time."
+    text "I can teach you"
+    line "no more."
     done
 
 EcruteakGymClosedText:
 	text "MORTY, the GYM"
 	line "LEADER, is absent."
 
-	para "Sorry, but you'll"
-	line "have to leave."
-
-	para "Hohohoho."
+	para "Begone!"
 	done
 
 EcruteakGym_MapEvents:

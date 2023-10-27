@@ -10,16 +10,58 @@ Route38EcruteakGateOfficerScript:
 	jumptextfaceplayer Route38EcruteakGateOfficerText
 
 Route38EcruteakGateOfficerText:
-	text "Where did you say"
-	line "you're from?"
+	text "This is a very"
+	line "boring job."
 
-	para "NEW BARK TOWN?"
+	para "The hours are"
+	line "insane."
 
-	para "PROF.ELM lives"
-	line "over there, right?"
+	para "Basically all"
+	line "day every day."
 
-	para "You've come a long"
-	line "way to get here."
+	para "The pay is"
+	line "awful!"
+
+	para "10 dollars an"
+	line "hour."
+
+	para "And it's so"
+	line "lonely."
+
+	para "I mean nobody"
+	line "ever talks to"
+	cont "me."
+
+	para "Why would they."
+
+	para "Then I go home"
+	line "to my boring"
+	cont "life."
+
+	para "No money, no"
+	line "partner, no"
+	cont "prospects."
+
+	para "I had a gambling"
+	line "problem for a"
+	cont "time but I"
+	cont "quickly ran"
+	cont "out of money."
+
+	para "It seemed like"
+	line "my only ticket"
+	cont "out of here."
+
+	para "Knowing my"
+	line "luck WALLACE"
+	cont "will take over"
+	cont "and I'll still"
+	cont "be working here."
+
+	para "I'm in a bad"
+	line "mood now."
+
+	para "Get lost kid."
 	done
 
 Route38EcruteakGate_MapEvents:

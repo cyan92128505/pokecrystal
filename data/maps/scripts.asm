@@ -203,7 +203,6 @@ INCLUDE "maps/OlivineTimsHouse.asm"
 ;INCLUDE "maps/OlivineHouseBeta.asm"
 INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
-INCLUDE "maps/OlivineCafe.asm"
 INCLUDE "maps/OlivineMart.asm"
 INCLUDE "maps/Route38EcruteakGate.asm"
 INCLUDE "maps/ManiasHouse.asm"
@@ -520,3 +519,5 @@ SECTION "Map Scripts Overflow 9", ROMX
 
 INCLUDE "maps/AncientRuinPast.asm"
 INCLUDE "maps/AzaleaGym.asm"
+INCLUDE "maps/OlivineCafe.asm"
+

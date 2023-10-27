@@ -342,130 +342,134 @@ Route38FruitTree:
 	fruittree FRUITTREE_ROUTE_38
 
 BirdKeeperTobySeenText:
-	text "Fly high into the"
-	line "sky, my beloved"
-	cont "bird #MON!"
+	text "I don't know"
+	line "how my #MON"
+	cont "evolve."
+
+	para "I don't think"
+	line "it's level."
 	done
 
 BirdKeeperTobyBeatenText:
-	text "I feel like just"
-	line "flying away now."
+	text "Evolve!"
 	done
 
 BirdKeeperTobyAfterBattleText:
-	text "I plan to train in"
-	line "CIANWOOD CITY to"
+	text "Is it a stone!"
 
-	para "teach my #MON"
-	line "how to FLY."
+	para "Maybe happiness!"
 	done
 
 SchoolboyChad1SeenText:
-	text "Let me try some-"
-	line "thing I learned"
-	cont "today."
+	text "I am CHAD."
+
+	para "All girls are"
+	line "my girlfriend."
+
+	para "I'll show you"
+	line "why."
 	done
 
 SchoolboyChad1BeatenText:
-	text "I didn't study"
-	line "enough, I guess."
+	text "I hope nobody"
+	line "saw that."
 	done
 
 SchoolboyChadSoManyTestsText:
-	text "I have to take so"
-	line "many tests, I"
-
-	para "don't have much"
-	line "time for #MON."
-
-	para "So when I do get"
-	line "to play, I really"
-	cont "concentrate."
+	text "It's a full"
+	line "time job being"
+	cont "a CHAD."
 	done
 
 LassDana1SeenText:
-	text "You seem to be"
-	line "good at #MON."
+	text "This kid called"
+	line "CHAD thinks I'm"
+	cont "his girlfriend."
 
-	para "If you are, how"
-	line "about giving me"
-	cont "some advice?"
+	para "Lots of boys"
+	line "think that."
+
+	para "I like it that"
+	line "way."
 	done
 
 LassDana1BeatenText:
-	text "I see. So you can"
-	line "battle that way."
+	text "You are strong."
+
+	para "And cute."
 	done
 
 LassDanaMoomooMilkText:
-	text "I know something"
-	line "good!"
-
-	para "MOOMOO FARM's milk"
-	line "is famous for its"
-	cont "flavor."
+	text "As long as the"
+	line "boys never run"
+	cont "into each other"
+	cont "my secret should"
+	cont "be safe."
 	done
 
 BeautyValerieSeenText:
-	text "Hi! Aren't you a"
-	line "cute trainer!"
+	text "This is my"
+	line "private"
+	cont "training area."
 
-	para "May I see your"
-	line "#MON?"
+	para "My #MON are"
+	line "big and beautiful."
 	done
 
 BeautyValerieBeatenText:
-	text "I'm glad I got to"
-	line "see your #MON!"
+	text "You villain."
 	done
 
 BeautyValerieAfterBattleText:
-	text "When I see #-"
-	line "MON, it seems to"
-	cont "soothe my nerves."
+	text "The secret of"
+	line "my beauty is"
+	cont "MOO MOO MILK."
+
+	para "But it must be"
+	line "fresh!"
 	done
 
 SailorHarrySeenText:
-	text "I've been over-"
-	line "seas, so I know"
+	text "I'm on leave"
+	line "from OLIVINE."
 
-	para "about all sorts of"
-	line "#MON!"
+	para "I'm heading to"
+	line "ECRUTEAK to"
+	cont "see some nice"
+	cont "dancing girls."
 	done
 
 SailorHarryBeatenText:
-	text "Your skill is"
-	line "world class!"
+	text "I'm glad the"
+	line "guys didn't see"
+	cont "this!"
 	done
 
 SailorHarryAfterBattleText:
-	text "All kinds of peo-"
-	line "ple around the"
+	text "I am very"
+	line "interested in"
+	cont "culture."
 
-	para "world live happily"
-	line "with #MON."
+	para "And pretty girls!"
 	done
 
 BeautyOliviaSeenText:
-	text "Don't you think my"
-	line "#MON and I are"
-	cont "beautiful?"
+	text "My #MON and"
+	line "I drink MOO"
+	cont "MOO MILK every"
+	cont "day to stay"
+	cont "beautiful."
 	done
 
 BeautyOliviaBeatenText:
-	text "We drink MOOMOO"
-	line "MILK every day."
+	text "We need moar!"
 	done
 
 BeautyOliviaAfterBattleText:
-	text "MOOMOO MILK is"
-	line "good for beauty"
-
-	para "and health, but"
-	line "inconveniently,"
-
-	para "they only sell a"
-	line "bottle at a time."
+	text "I need to get"
+	line "a MILTANK for"
+	cont "the freshest"
+	cont "milk!"
 	done
 
 Route38SignText:

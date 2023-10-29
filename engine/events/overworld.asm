@@ -979,7 +979,7 @@ WarpDeviceScript:
 	warp PALLET_TOWN, 5, 6
 	end
 .battleTower
-	warp BATTLE_TOWER_OUTSIDE, 9, 16
+	warp BATTLE_TOWER_OUTSIDE, 8, 16
 	end
 .league
     warp ROUTE_23, 8, 6

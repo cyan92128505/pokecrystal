@@ -94,40 +94,48 @@ FarmhouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 FarmerMText_SickCow:
-	text "My MILTANK ain't"
-	line "givin' me milk"
-	cont "n'more."
+	text "My prized MILTANK"
+	line "is terribly sick."
 
-	para "This here FARM's"
-	line "got famous milk."
+	para "Her Milk is my"
+	line "main source of"
+	cont "income."
 
-	para "Most everyone"
-	line "wants a drink."
+	para "This is real"
+	line "bad."
 
-	para "It'll give me lots"
-	line "o' milk if'n I"
+	para "If she doesn't"
+	line "get better soon"
+	cont "I wont be able"
+	cont "to feed my"
+	cont "family."
 
-	para "feed it lots o'"
-	line "BERRIES, I reckon."
+	para "She needs a"
+	line "GOLD BERRY!"
+
+	para "But they are"
+	line "real rare."
 	done
 
 FarmerMText_BuyMilk:
-	text "How'd you like my"
-	line "MOOMOO MILK?"
+	text "MOOMOO is back"
+	line "and feeling good!"
 
-	para "It's my pride and"
-	line "joy, there."
+	para "Thank you!"
 
-	para "Give it to #MON"
-	line "to restore HP!"
+	para "You saved me"
+	line "business."
 
-	para "I'll give it to ya"
-	line "fer just ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
+	para "Here you can"
+	line "have some lovely"
+	cont "MOOMOO MILK at"
+	cont "a discounted price"
+	cont "of ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
 	done
 
 FarmerMText_GotMilk:
 	text "Here ya go!"
-	line "Drink up'n enjoy!"
+	line "Drink that up!"
 	done
 
 FarmerMText_NoMoney:
@@ -147,46 +155,68 @@ FarmerMText_NoSale:
 
 FarmerMText_Milking:
 	text "I best go do my"
-	line "milkin'."
+	line "milkin!"
 	done
 
 FarmerFText_InTrouble:
+    text "MOOMOO MILK is"
+    line "packed with"
+    cont "nutrients."
+
 	text "Our milk even goes"
 	line "out to KANTO."
 
-	para "So if our own"
-	line "MILTANK won't give"
+	para "With MILTANK"
+	line "sick we are in"
+	cont "trouble."
 
-	para "us any milk, we're"
-	line "in trouble."
+	para "Nobody cares"
+	line "enough to help"
+	cont "us."
+
+	para "I think I"
+	line "could cry."
 	done
 
 FarmerFText_HealedMiltank:
-	text "You fixed our"
-	line "MILTANK, hon. Now"
+	text "You gave a rare"
+	line "GOLD BERRY to"
+	cont "help us!"
 
-	para "it gives MOOMOO"
-	line "MILK again."
+	para "You are a real"
+	line "good kid."
 
-	para "Here's somethin'"
-	line "fer your trouble."
+	para "I know your"
+	line "mother must be"
+	cont "very proud of"
+	cont "you."
+
+	para "But every chick"
+	line "has to flee the"
+	cont "nest eventually."
+
+	para "But you always"
+	line "have a home to"
+	cont "go back to."
+
+	para "Here I want you"
+	line "to have this."
 	done
 
 Text_ReceivedTM13: ; unreferenced
 	text "<PLAYER> received"
-	line "TM13 EXPLOSION."
+	line "TM09 ROOST."
 	done
 
 FarmerFText_SnoreSpeech:
-	text "That there's"
-	line "EXPLOSION."
+	text "ROOST lets"
+	line "some #MON"
+	cont "recover their"
+	cont "health."
 
-	para "Ya go BOOM!"
-	line "Hurp durp!"
-
-	para "You best think how"
-	line "you ought to use"
-	cont "it, hon."
+	para "I hope it helps"
+	line "you on your"
+	cont "journey."
 	done
 
 Route39Farmhouse_MapEvents:

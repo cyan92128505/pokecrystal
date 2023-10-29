@@ -111,8 +111,13 @@ Route39BarnTwinMoomooIsSickText:
 	done
 
 Route39BarnTwinWereFeedingMoomooText:
-	text "We're feeding"
-	line "MOOMOO!"
+	text "You healed MOOMOO!"
+
+	para "Thank you so much!"
+
+	para "You should go let"
+	line "our mum and dad"
+	cont "know!"
 	done
 
 MoomooWeakMooText:
@@ -138,16 +143,6 @@ Route39BarnGaveBerryText:
 	cont "MILTANK."
 	done
 
-Route39BarnLittleHealthierText:
-	text "MILTANK became a"
-	line "little healthier!"
-	done
-
-Route39BarnQuiteHealthyText:
-	text "MILTANK became"
-	line "quite healthy!"
-	done
-
 Route39BarnTotallyHealthyText:
 	text "MILTANK became"
 	line "totally healthy!"
@@ -155,7 +150,7 @@ Route39BarnTotallyHealthyText:
 
 Route39BarnNoBerriesText:
 	text "<PLAYER> has no"
-	line "BERRIES…"
+	line "GOLD BERRY"
 	done
 
 Route39BarnRefusedBerryText:

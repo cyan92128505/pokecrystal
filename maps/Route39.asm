@@ -70,8 +70,6 @@ TrainerPokefanmDerek:
 	iftrue .HasNugget
 	checkcellnum PHONE_POKEFANM_DEREK
 	iftrue .NumberAccepted
-	checkpoke PIKACHU
-	iffalse .WantsPikachu
 	checkevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext PokefanMDerekText_NotBragging
@@ -99,12 +97,6 @@ TrainerPokefanmDerek:
 
 .NoRoom:
 	sjump .PackFull
-
-.WantsPikachu:
-	writetext PokefanMDerekPikachuIsItText
-	waitbutton
-	closetext
-	end
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
@@ -163,8 +155,6 @@ TrainerPsychicNorman:
 TrainerPokefanfJaime:
 	faceplayer
 	opentext
-	checktime NITE
-	iffalse .NotNight
 	checkevent EVENT_BEAT_POKEFANF_JAIME
 	iftrue .Beaten
 	writetext PokefanfJaimeSeenText
@@ -180,12 +170,6 @@ TrainerPokefanfJaime:
 
 .Beaten:
 	writetext PokefanfJaimeAfterBattleText
-	waitbutton
-	closetext
-	end
-
-.NotNight:
-	writetext PokefanfJaimeHopeItGetsDarkText
 	waitbutton
 	closetext
 	end
@@ -210,109 +194,105 @@ Route39MiltankText:
 	done
 
 PokefanmDerekSeenText:
-	text "This is a good"
-	line "time to brag about"
-	cont "my PIKACHU!"
+	text "When the dark"
+	line "lord WALLACE"
+	cont "arrives I"
+	cont "shall be ready."
+
+	para "I must retrieve"
+	line "the Elder wand."
 	done
 
 PokefanmDerekBeatenText:
-	text "I had no time to"
-	line "show off PIKACHU…"
+	text "My soul is split."
 	done
 
 PokefanMDerekText_NotBragging:
-	text "I'm not listening"
-	line "to your bragging!"
-
-	para "We # FANS have"
-	line "a policy of not"
-
-	para "listening to other"
-	line "people brag!"
+	text "I need to"
+	line "learn a defense"
+	cont "against"
+	cont "AVADA KADAVRA."
 	done
 
 PokefanfRuthSeenText:
-	text "Such darling"
-	line "#MON."
+	text "There is a"
+	line "young summoner"
+	cont "named YUNA in"
+	cont "OLIVINE."
 
-	para "Let's show our"
-	line "#MON together"
-	cont "at the same time."
+	para "One day she"
+	line "may be able to"
+	cont "defeat WALLACE."
 	done
 
 PokefanfRuthBeatenText:
-	text "I don't mind"
-	line "losing."
+	text "Stop."
+
+	para "That is enough."
 	done
 
 PokefanfRuthAfterBattleText:
-	text "Do you know about"
-	line "baby #MON?"
-
-	para "I bet they're just"
-	line "adorable!"
-	done
-
-PokefanMDerekPikachuIsItText:
-	text "PIKACHU is it!"
-	line "Don't you agree?"
+	text "You will do"
+	line "what I failed"
+	cont "to do and bring"
+	cont "an end to war."
 	done
 
 PsychicNormanSeenText:
-	text "Let me see what"
-	line "your #MON are"
-	cont "capable of."
+	text "There is another"
+	line "world."
+
+	para "A dream world."
+
+	para "My #MON will"
+	line "take you there."
+
+	para "And keep you"
+	line "there forever."
 	done
 
 PsychicNormanBeatenText:
-	text "Ooh, your #MON"
-	line "have potential."
+	text "You broke free!"
 	done
 
 PsychicNormanAfterBattleText:
-	text "You know how #-"
-	line "MON have different"
-	cont "abilities?"
+	text "There is a"
+	line "#MON that"
+	cont "rules the dark"
+	cont "dream realm."
 
-	para "People are like"
-	line "that too. Every-"
-	cont "one has different"
-	cont "potential."
-	done
+	para "Fear its name."
 
-PokefanfJaimeHopeItGetsDarkText:
-	text "Ufufufu… I hope it"
-	line "gets dark soon."
+	para "DARKRAI!"
 	done
 
 PokefanfJaimeSeenText:
-	text "You came at just"
-	line "the right time."
+	text "What!"
 
-	para "Let's battle."
+	para "Who's there!"
+
+	para "Have you come"
+	line "to take my little"
+	cont "pretties away."
+
+	para "I wont let you!"
+
+	para "Never!"
 	done
 
 PokefanfJaimeBeatenText:
-	text "Oh, how disap-"
-	line "pointing…"
+	text "My poor little"
+	line "darlings!"
 	done
 
 PokefanfJaimeAfterBattleText:
-	text "I met my MEOWTH at"
-	line "night, right here"
-	cont "on ROUTE 39."
+	text "Oh sorry my"
+	line "dear."
 
-	para "I'm not sure why,"
-	line "but it seems to"
-
-	para "like it when I"
-	line "train here."
-
-	para "It seems to become"
-	line "friendlier by"
-
-	para "training here than"
-	line "anywhere else."
+	para "I get very"
+	line "protective of"
+	cont "my darling"
+	cont "babies."
 	done
 
 Route39SignText:
@@ -332,16 +312,21 @@ MoomooFarmSignText:
 Route39TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "Use HEADBUTT on"
-	line "trees to shake"
-	cont "#MON out."
+	para "There are three"
+	line "ways a #MON"
+	cont "can evolve."
 
-	para "Different kinds of"
-	line "#MON drop out"
-	cont "of trees."
+	para "Through reaching"
+	line "a required level."
 
-	para "Use HEADBUTT on"
-	line "any tree you see!"
+	para "Through use of"
+	line "an evolution"
+	cont "stone."
+
+	para "Or through"
+	line "level up after"
+	cont "developing love"
+	cont "for its trainer."
 	done
 
 Route39FieldMon1Script:

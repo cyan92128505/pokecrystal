@@ -184,3 +184,4 @@ SpecialsPointers::
 	add_special InitialClearDSTFlag
 	add_special LoadPokemonData
     add_special OverridePlayerParty
+    add_special MoveRelearner

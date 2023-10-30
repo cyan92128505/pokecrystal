@@ -454,11 +454,6 @@ OlivineCityBattleTowerSignText:
 	text "BATTLE TOWER AHEAD"
 	line "Opening Now!"
 	done
-
-OlivineCityBattleTowerSignText_NotYetOpen: ; unreferenced
-; originally shown when the Battle Tower was closed
-	text "BATTLE TOWER AHEAD"
-	done
 	
 YunaScript:
     faceplayer

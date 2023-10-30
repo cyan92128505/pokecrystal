@@ -2514,6 +2514,7 @@ PocketPCEffect:
 
 RedEyeOrbEffect:
     farcall RedEyeOrbFunction
+    ;farcall MoveRelearnFunction
     ret
 
 WarpDeviceEffect:

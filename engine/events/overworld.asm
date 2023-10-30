@@ -2050,10 +2050,6 @@ RodNothingText:
 	text_far _RodNothingText
 	text_end
 
-UnusedNothingHereText: ; unreferenced
-	text_far _UnusedNothingHereText
-	text_end
-
 RedEyeOrbFunction:
 	call .InvadeWorld
 	and $7f
@@ -2165,6 +2161,18 @@ PocketPCFunction:
 	ld a, $0
 	ret
 
+MoveRelearnFunction:
+	call .MoveRelearn
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+.MoveRelearn:
+	ld a, [wPlayerState]
+	ld hl, Script_MoveRelearn
+	call QueueScript
+	ld a, TRUE
+	ret
+
 BikeFunction:
 	call .TryBike
 	and $7f
@@ -2262,6 +2270,18 @@ Script_LoadPocketPC_Register:
 	special PokemonCenterPC
 	reloadmappart
 	end
+
+Script_MoveRelearn:
+	reloadmappart
+	special UpdateTimePals
+    special MoveRelearner
+    reloadmappart
+    end
+
+Script_MoveRelearn_Register:
+    special MoveRelearner
+    reloadmappart
+    end
 
 Script_GetOnBike:
 	reloadmappart

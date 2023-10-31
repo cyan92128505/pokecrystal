@@ -80,7 +80,7 @@ ItemEffects:
 	dw RestorePPEffect     ; ETHER
 	dw RestorePPEffect     ; MAX_ETHER
 	dw RestorePPEffect     ; ELIXER
-	dw NoEffect            ; RED_SCALE
+	dw RemembrallEffect    ; REMEMBRALL
 	dw NoEffect            ; SECRETPOTION
 	dw NoEffect            ; S_S_TICKET
 	dw NoEffect            ; MYSTERY_EGG
@@ -2514,7 +2514,10 @@ PocketPCEffect:
 
 RedEyeOrbEffect:
     farcall RedEyeOrbFunction
-    ;farcall MoveRelearnFunction
+    ret
+
+RemembrallEffect:
+    farcall MoveRelearnFunction
     ret
 
 WarpDeviceEffect:

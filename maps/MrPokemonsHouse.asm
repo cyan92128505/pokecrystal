@@ -50,8 +50,6 @@ MrPokemonsHouse_MapScripts:
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
-	checkitem RED_SCALE
-	iftrue .RedScale
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .AlwaysNewDiscoveries
 	writetext MrPokemonText_ImDependingOnYou
@@ -62,22 +60,6 @@ MrPokemonsHouse_MrPokemonScript:
 .AlwaysNewDiscoveries:
 	writetext MrPokemonText_AlwaysNewDiscoveries
 	waitbutton
-	closetext
-	end
-
-.RedScale:
-	writetext MrPokemonText_GimmeTheScale
-	yesorno
-	iffalse .refused
-	verbosegiveitem EXPERT_BELT
-	iffalse .full
-	takeitem RED_SCALE
-	sjump .AlwaysNewDiscoveries
-
-.refused
-	writetext MrPokemonText_Disappointed
-	waitbutton
-.full
 	closetext
 	end
 
@@ -116,6 +98,13 @@ MrPokemonsHouse_OakScript:
 	pause 60
 	special FadeInQuickly
 	special RestartMapMusic
+
+	opentext
+	writetext MrPokemonGiveRemembrallText
+	waitbutton
+	verbosegiveitem REMEMBRALL
+	closetext
+
 	opentext
 	writetext MrPokemonText_ImDependingOnYou
 	waitbutton
@@ -242,6 +231,30 @@ MrPokemonText_ImDependingOnYou:
 	line "you!"
 	done
 
+MrPokemonGiveRemembrallText:
+    text "Being a secret"
+    line "agent I need to"
+    cont "remember many"
+    cont "little details."
+
+    para "This helps me"
+    line "remember things"
+    cont "I have forgotten."
+
+    para "It can help"
+    line "#MON to"
+    cont "moves they have"
+    cont "forgotten too."
+
+    para "Here take it."
+
+    para "You might not"
+    line "need it now but"
+    cont "when you do it"
+    cont "will be a life"
+    cont "saver."
+    done
+
 MrPokemonText_AlwaysNewDiscoveries:
 	text "People would not"
 	line "like me for"
@@ -331,29 +344,6 @@ MrPokemonsHouse_OakText2:
 	para "<PLAY_G>, I'm"
 	line "putting my faith"
 	cont "in you!"
-	done
-
-MrPokemonText_GimmeTheScale:
-	text "Hm? That SCALE!"
-	line "What's that?"
-	cont "A red GYARADOS?"
-
-	para "Such items are"
-	line "highly prized in"
-	cont "HOEN."
-
-	para "<PLAY_G>, would you"
-	line "care to trade it?"
-
-	para "I can offer this"
-	line "EXPERT BELT I got"
-	cont "from PROF.OAK."
-	done
-
-MrPokemonText_Disappointed:
-	text "That's disappoint-"
-	line "ing. That happens"
-	cont "to be very rare."
 	done
 
 MrPokemonsHouse_ForeignMagazinesText:

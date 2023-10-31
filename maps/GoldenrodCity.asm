@@ -59,7 +59,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
 	yesorno
 	iffalse .Refused2
-	checkmoney YOUR_MONEY, 50000
+	checkmoney YOUR_MONEY,40000
     ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
@@ -135,7 +135,7 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takemoney YOUR_MONEY, 50000
+	takemoney YOUR_MONEY, 40000
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodCityMoveTutorFarewellKidText
@@ -552,23 +552,19 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
     text "You are worthy!"
 
 	para "I can teach your"
-	line "#MON amazing"
-	cont "moves!"
-
-    para "Moves that can"
-    line "win battles!"
+	line "#MON moves"
+	cont "that win battles!"
 
     para "Do you accept?"
 	done
 
 GoldenrodCityMoveTutorNotYetText:
-	text "I can teach your"
-	line "#MON amazing"
+	text "I know the secrets"
+	line "to victory."
 
-	para "moves!"
-
-    para "Moves that can"
-    line "win battles!"
+	para "I can teach your"
+	line "#MON moves"
+	cont "that win battles!"
 
 	para "But only to"
 	line "those who have"
@@ -581,49 +577,53 @@ GoldenrodCityMoveTutorNotYetText:
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "50000 Okay?"
+	line "40000."
+
+	para "Do you accept?"
 	done
 
 GoldenrodCityMoveTutorAwwButTheyreAmazingText:
-	text "Aww… But they're"
-	line "amazing…"
+	text "You will never"
+	line "learn these moves"
+	cont "otherwise."
 	done
 
 GoldenrodCityMoveTutorWhichMoveShouldITeachText:
-	text "Wahahah! You won't"
-	line "regret it!"
+	text "Victory awaits"
+	line "you."
 
 	para "Which move should"
 	line "I teach?"
 	done
 
 GoldenrodCityMoveTutorHmTooBadText:
-	text "Hm, too bad. I'll"
-	line "have to get some"
-	cont "cash from home…"
+	text "It's a small"
+	line "price for such"
+	cont "power."
 	done
 
 GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 	text "If you understand"
-	line "what's so amazing"
+	line "why these moves"
+	cont "are so good."
 
-	para "about this move,"
-	line "you've made it as"
-	cont "a trainer."
+	para "Then you aren't"
+	line "stupid."
 	done
 
 GoldenrodCityMoveTutorFarewellKidText:
-	text "Wahahah!"
-	line "Farewell, kid!"
+	text "Farwell CHAMPION!"
 	done
 
 GoldenrodCityMoveTutorBButText:
-	text "B-but…"
+	text "That can not"
+	line "be done."
 	done
 
 GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText:
-	text "…You don't have"
-	line "enough coins here…"
+	text "I'm afraid you're"
+	line "too poor for my"
+	cont "teachings."
 	done
 
 GoldenrodCityMoveTutorMoveText:

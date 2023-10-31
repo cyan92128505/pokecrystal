@@ -119,11 +119,6 @@ RedGyarados:
 .NotBeaten:
 	reloadmapafterbattle
 	opentext
-	giveitem RED_SCALE
-	waitsfx
-	writetext LakeOfRageGotRedScaleText
-	playsound SFX_ITEM
-	waitsfx
 	itemnotify
 	closetext
 	setscene 0 ; Lake of Rage does not have a scene variable
@@ -339,11 +334,6 @@ LakeOfRageLanceAskHelpText:
 
 LakeOfRageGyaradosCryText:
 	text "GYARADOS: Gyashaa!"
-	done
-
-LakeOfRageGotRedScaleText:
-	text "<PLAYER> obtained a"
-	line "RED SCALE."
 	done
 
 LakeOfRageGrampsText:

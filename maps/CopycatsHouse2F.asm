@@ -26,12 +26,12 @@ CopycatsHouse2F_MapScripts:
 
 Copycat:
 	faceplayer
-	checkevent EVENT_GOT_PASS_FROM_COPYCAT
-	iftrue .GotPass
-	checkevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
-	iftrue .TryGivePassAgain
-	checkitem LOST_ITEM
-	iftrue .ReturnLostItem
+	;checkevent EVENT_GOT_PASS_FROM_COPYCAT
+	;iftrue .GotPass
+	;checkevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
+	;iftrue .TryGivePassAgain
+	;checkitem LOST_ITEM
+	;iftrue .ReturnLostItem
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Default_Female_1
 	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
@@ -105,14 +105,14 @@ Copycat:
 	setevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
 	end
 
-.ReturnLostItem:
-	opentext
-	writetext CopycatText_GiveDoll
-	promptbutton
-	takeitem LOST_ITEM
-	setevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
-	clearevent EVENT_COPYCATS_HOUSE_2F_DOLL
-	sjump .GivePass
+;.ReturnLostItem:
+;	opentext
+;	writetext CopycatText_GiveDoll
+;	promptbutton
+;	takeitem LOST_ITEM
+;	setevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
+;	clearevent EVENT_COPYCATS_HOUSE_2F_DOLL
+;	sjump .GivePass
 
 .TryGivePassAgain:
 	opentext

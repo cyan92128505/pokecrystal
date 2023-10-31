@@ -9,11 +9,11 @@
 	const MOVERELEARNERTEXT_NOMOVESTOLEARN
 
 MoveRelearner:
-	ld a, MOVERELEARNERTEXT_INTRO
-	call PrintMoveRelearnerText
+	;ld a, MOVERELEARNERTEXT_INTRO
+	;call PrintMoveRelearnerText
 	;farcall PlaceMoneyTopRight
-	call YesNoBox
-	jp c, .cancel
+	;call YesNoBox
+	;jp c, .cancel
 	;ld hl, .cost_to_relearn
 	;ld de, hMoneyTemp
 	;ld bc, 3
@@ -72,8 +72,8 @@ MoveRelearner:
 	call CloseSubmenu
 	call SpeechTextbox
 .cancel
-	ld a, MOVERELEARNERTEXT_COMEAGAIN
-	call PrintMoveRelearnerText
+	;ld a, MOVERELEARNERTEXT_COMEAGAIN
+	;call PrintMoveRelearnerText
 	ret
 .egg
 	ld a, MOVERELEARNERTEXT_EGG
@@ -398,31 +398,29 @@ PrintMoveRelearnerText:
 	dw .NoMovesToLearn
 
 .Intro
-	text "Hello! I am the"
-	line "MOVE RELEARNER."
-
-	para "I can help your"
-	line "#MON remember"
-	cont "moves they have"
-	cont "forgotten."
-
-	para "Would you like"
-	line "me to help you?"
+;	text "Hello! I am the"
+;	line "MOVE RELEARNER."
+;	para "I can help your"
+;	line "#MON remember"
+;	cont "moves they have"
+;	cont "forgotten."
+;	para "Would you like"
+;	line "me to help you?"
 	done
 .WhichMon
-	text "Excellent! Which"
-	line "#MON should"
-	cont "remember a move?"
+	text "Which #MON"
+	line "should remember"
+	cont "a move?"
 	done
 .WhichMove
 	text "Which move should"
 	line "it remember?"
 	done
 .ComeAgain
-	text "If you want your"
-	line "#MON to remem-"
-	cont "ber moves, come"
-	cont "back to me."
+;	text "If you want your"
+;	line "#MON to remem-"
+;	cont "ber moves, come"
+;	cont "back to me."
 	done
 .Egg
 	text "An EGG can't learn"

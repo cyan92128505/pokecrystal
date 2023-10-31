@@ -66,7 +66,7 @@ ItemNames::
 	li "ETHER"
 	li "MAX ETHER"
 	li "ELIXER"
-	li "RED SCALE"
+	li "REMEMBRALL"
 	li "SECRETPOTION"
 	li "S.S.TICKET"
 	li "MYSTERY EGG"

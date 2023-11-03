@@ -4,6 +4,8 @@
 	const BATTLETOWEROUTSIDE_SAILOR
 	const BATTLETOWEROUTSIDE_LASS
 	const BATTLETOWEROUTSIDE_GRAMPS
+	const BATTLETOWEROUTSIDE_POKEFAN_M
+	const BATTLETOWEROUTSIDE_BEAUTY_2
 
 BattleTowerOutside_MapScripts:
 	def_scene_scripts
@@ -29,86 +31,95 @@ BattleTowerOutsideBeautyScript:
 BattleTowerOutsideSailorScript:
 	jumptextfaceplayer BattleTowerOutsideSailorText
 
+BattleTowerOutsideBeauty2Script:
+	jumptextfaceplayer BattleTowerOutsideBeauty2Text
+
+BattleTowerOutsidePokefanScript:
+	jumptextfaceplayer BattleTowerOutsidePokefanText
+
 BattleTowerOutsideSign:
 	jumptext BattleTowerOutsideSignText
 
-BattleTowerOutsideYoungsterText_NotYetOpen: ; unreferenced
-	text "Wow, the BATTLE"
-	line "TOWER is huge! My"
-
-	para "neck is tired from"
-	line "looking up at it."
-	done
-
-BattleTowerOutsideYoungsterText_Mobile: ; unreferenced
-	text "Wow, the BATTLE"
-	line "TOWER is huge!"
-
-	para "Since there are a"
-	line "whole bunch of"
-
-	para "trainers inside,"
-	line "there must also be"
-
-	para "a wide variety of"
-	line "#MON."
-	done
-
 BattleTowerOutsideYoungsterText:
-	text "Wow, the BATTLE"
-	line "TOWER is huge!"
+	text "I'm addicted!"
 
-	para "There must be many"
-	line "kinds of #MON"
-	cont "in there!"
-	done
+	para "I keep playing"
+	line "BATTLE ROULETT."
 
-BattleTowerOutsideBeautyText_NotYetOpen: ; unreferenced
-	text "What on earth do"
-	line "they do here?"
+	para "You never know"
+	line "who you will"
+	cont "battle or what"
+	cont "you will win."
 
-	para "If the name says"
-	line "anything, I guess"
+	para "Once I even"
+	line "won a LEFTOVERS."
 
-	para "it must be for"
-	line "#MON battles."
+	para "It's all random."
 	done
 
 BattleTowerOutsideBeautyText:
-	text "You can use only"
-	line "three #MON."
+	text "BATTLE TOWER"
+	line "is so tough."
 
-	para "It's so hard to"
-	line "decide which three"
+	para "I can't even"
+	line "beat NOVICE"
+	cont "level with my"
+	cont "#MON."
 
-	para "should go into"
-	line "battle…"
+	para "But I do well"
+	line "in MIRROR mode."
+
+	para "I even won once!"
 	done
 
-BattleTowerOutsideSailorText_Mobile: ; unreferenced
-	text "Ehehehe…"
-	line "I sneaked out of"
-	cont "work to come here."
+BattleTowerOutsidePokefanText:
+    text "I main CHUCK in"
+    line "the ARCADE."
 
-	para "I'm never giving"
-	line "up until I become"
-	cont "a LEADER!"
-	done
+    para "With the right"
+    line "strategy I"
+    cont "can overcome"
+    cont "any type"
+    cont "disadvantage."
+
+    para "MORTY is cool"
+    line "too though."
+
+    para "I hear you can"
+    line "unlock CYNTHIA."
+
+    para "I'd main her"
+    line "all day..."
+    done
+
+BattleTowerOutsideBeauty2Text:
+    text "I've been fighting"
+    line "myself but I"
+    cont "keep losing."
+
+    para "I'm sure there"
+    line "is some way I"
+    cont "can trick"
+    cont "myself by using"
+    cont "weak #MON."
+    done
 
 BattleTowerOutsideSailorText:
-	text "Hehehe, I snuck"
-	line "out from work."
+	text "This is grueling."
 
-	para "I can't bail out"
-	line "until I've won!"
+	para "But I will never"
+	line "give up!"
 
-	para "I have to win it"
-	line "all. That I must!"
-	done
+	para "I got to"
+	line "battle 9 once."
 
-BattleTowerOutsideSignText_NotYetOpen: ; unreferenced
-; originally shown when the Battle Tower was closed
-	text "BATTLE TOWER"
+	para "That's a new"
+	line "record for me!"
+
+	para "BATTLE TRIAL"
+	line "is all about"
+	cont "slow constant"
+	cont "improvement."
 	done
 
 BattleTowerOutsideSignText:
@@ -116,17 +127,6 @@ BattleTowerOutsideSignText:
 
 	para "Take the Ultimate"
 	line "Trainer Challenge!"
-	done
-
-BattleTowerOutsideText_DoorsClosed: ; unreferenced
-; originally shown when the Battle Tower was closed
-	text "The BATTLE TOWER's"
-	line "doors are closed…"
-	done
-
-BattleTowerOutsideText_DoorsOpen: ; unreferenced
-; originally shown after the Battle Tower opened
-	text "It's open!"
 	done
 
 BTGrampsScript:
@@ -496,8 +496,9 @@ BattleTowerOutside_MapEvents:
 
 	def_object_events
 	object_event  6, 24, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
-	object_event  6, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
-	object_event  8, 19, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event  7, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
+	object_event 11, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	object_event 12, 32, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 10, 28, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BTGrampsScript, EVENT_TEMP_EVENT_1
-
+	object_event  0, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsidePokefanScript, -1
+	object_event 12, 24, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeauty2Script, -1

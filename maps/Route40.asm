@@ -88,12 +88,7 @@ Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
 
 Route40PokefanMScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer Route40PokefanMText
-
-.mobile
-	jumptextfaceplayer Route40PokefanMText_Mobile
 
 Route40Lass2Script:
 	jumptextfaceplayer Route40Lass2Text
@@ -250,75 +245,93 @@ SwimmerfElaineAfterBattleText:
 	done
 
 SwimmerfPaulaSeenText:
-	text "No inner tube for"
-	line "me."
+	text "I visited HOEN"
+	line "once."
 
-	para "I'm hanging on to"
-	line "a sea #MON!"
+	para "It had such"
+	line "beautiful water."
+
+	para "I can't believe"
+	line "they would attack"
+	cont "anyone."
 	done
 
 SwimmerfPaulaBeatenText:
-	text "Ooh, I'm feeling"
-	line "dizzy!"
+	text "Make it rain."
 	done
 
 SwimmerfPaulaAfterBattleText:
-	text "While I float like"
-	line "this, the waves"
-	cont "carry me along."
+	text "KANTO is polluted"
+	line "and filthy."
+
+	para "I'm rooting"
+	line "for HOEN."
 	done
 
 Route40Lass1Text:
-	text "Although you can't"
-	line "see it from here,"
+	text "CIANWOOD is"
+	line "across the sea."
 
-	para "CIANWOOD is across"
-	line "the sea."
+	para "I used to go"
+	line "there but then"
+	cont "a new little"
+	cont "psychic girl"
+	cont "started talking"
+	cont "to me all the"
+	cont "time."
+
+	para "She is very"
+	line "annoying!"
 	done
 
 Route40PokefanMText:
-	text "Hm! There's a big"
-	line "building up ahead!"
+	text "Up ahead is the"
+	line "BATTLE FRONTIER!"
 
-	para "What is it?"
-	done
+	para "There is so"
+	line "much to do there!"
 
-Route40PokefanMText_Mobile:
-	text "Hm! Look at all"
-	line "those serious-"
-	cont "looking trainers"
-	cont "streaming in."
+	para "I like the"
+	line "BATTLE ARCADE."
 
-	para "What? What?"
+	para "You can play as"
+	line "a super powered"
+	cont "GYM LEADER and"
+	cont "fight other GYM"
+	cont "LEADERS."
+
+	para "I only have 8"
+	line "characters"
+	cont "unlocked."
+
+	para "I like playing"
+	line "as WHITNEY!"
 	done
 
 Route40Lass2Text:
-	text "I came to OLIVINE"
-	line "by ship to see the"
+	text "I've been winning"
+	line "prizes in the"
+	cont "BATTLE FRONTIER."
 
-	para "sights and soak up"
-	line "the atmosphere."
+	para "I like the"
+	line "BATTLE MIRROR."
 
-	para "Being a port, it"
-	line "feels so different"
-	cont "from a big city."
+	para "I get to fight"
+	line "my beautiful self."
 	done
 
 Route40StandingYoungsterText:
-	text "Have you gone to"
-	line "the BATTLE TOWER?"
+	text "The sea is"
+	line "dangerous."
 
-	para "I think a lot of"
-	line "tough trainers"
+	para "You need to"
+	line "watch out for"
+	cont "TENTACRUEL."
 
-	para "have gathered"
-	line "there already."
-
-	para "But since you have"
-	line "so many BADGES,"
-
-	para "you shouldn't do"
-	line "badly at all."
+	para "They are weak to"
+	line "DIG. Which still"
+	cont "works in water"
+	cont "somehow..."
 	done
 
 MeetMonicaText:

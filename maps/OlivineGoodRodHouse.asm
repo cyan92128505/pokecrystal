@@ -39,44 +39,47 @@ GoodRodHouseBookshelf: ; unreferenced
 	jumpstd PictureBookshelfScript
 
 OfferGoodRodText:
-	text "OLIVINE is on the"
-	line "sea!"
+	text "Are you sick of"
+	line "only catching"
+	cont "MAGIKARP when"
+	cont "you fish!?"
 
-	para "And if it's on the"
-	line "sea, there are"
-	cont "bound to be fish!"
+	para "Then you need a"
+	line "GOOD ROD!"
 
-	para "I've fished here"
-	line "for 30 years."
+	para "A rod guaranteed"
+	line "to catch other"
+	cont "#MON!"
 
-	para "Would you like to"
-	line "face the sea and"
-	cont "fish?"
+	para "It can be yours"
+	line "today, for free!"
+
+	para "Would you like a"
+	line "GOOD ROD?"
 	done
 
 GiveGoodRodText:
-	text "Ah, hahah!"
-	line "We have ourselves"
-	cont "a new angler!"
+	text "You won't be"
+	line "disappointed."
 	done
 
 GaveGoodRodText:
-	text "Fish aren't found"
-	line "in the sea alone."
-
-	para "They go wherever"
-	line "there is water."
+	text "You'll catch many"
+	line "good POLIWAG and"
+	cont "TENTACOOL with"
+	cont "that."
 	done
 
 DontWantGoodRodText:
-	text "Whaaat? You don't"
-	line "like to fish!?"
-	cont "Incomprehensible!"
+	text "But it's a"
+	line "limited time"
+	cont "offer!"
 	done
 
 HaveGoodRodText:
-	text "How are things?"
-	line "Land the big one?"
+	text "If you enjoy the"
+	line "GOOD ROD please"
+	cont "leave a review."
 	done
 
 OlivineGoodRodHouse_MapEvents:

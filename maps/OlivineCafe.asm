@@ -9,19 +9,7 @@ OlivineCafe_MapScripts:
 	def_callbacks
 
 OlivineCafeStrengthSailorScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_HM04_STRENGTH
-	iftrue .GotStrength
-	writetext OlivineCafeStrengthSailorText
-	promptbutton
-	verbosegiveitem HM_STRENGTH
-	setevent EVENT_GOT_HM04_STRENGTH
-.GotStrength:
-	writetext OlivineCafeStrengthSailorText_GotStrength
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer OlivineCafeStrengthSailorText_GotStrength
 
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
@@ -29,51 +17,40 @@ OlivineCafeFishingGuruScript:
 OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
 
-OlivineCafeStrengthSailorText:
-	text "Hah! Your #MON"
-	line "sure look like"
-	cont "lightweights!"
-
-	para "They don't have"
-	line "the power to move"
-	cont "boulders aside."
-
-	para "Here, use this"
-	line "and teach them"
-	cont "STRENGTH!"
-	done
-
 OlivineCafeStrengthSailorText_GotStrength:
-	text "On the sea, the"
-	line "only thing you can"
+	text "I see you've"
+	line "gotten more buff"
+	cont "since I gave you"
+	cont "STRENGTH."
 
-	para "count on is your"
-	line "own good self!"
+	para "You need to visit"
+	line "BATTLE FRONTIER!"
 
-	para "I'm so proud of my"
-	line "buff bod!"
+	para "It is all I"
+	line "need in life."
 	done
 
 OlivineCafeFishingGuruText:
-	text "OLIVINE CAFE's"
-	line "menu is chock full"
+	text "You lookin for"
+	line "some good food"
+	cont "to make ye a"
+	cont "real mawn!"
 
-	para "of hearty fare for"
-	line "beefy SAILORS!"
+	para "None of that"
+	line "vegan muck here!"
+
+	para "TAUROS burgers"
+	line "are what ye need!"
 	done
 
 OlivineCafeSailorText:
-	text "Whenever I roll"
-	line "into this town, I"
+	text "Aww man I need"
+	line "more PROTIEN."
 
-	para "always visit the"
-	line "OLIVINE CAFE."
-
-	para "Everything on the"
-	line "menu makes me feel"
-
-	para "stronger. I can't"
-	line "stop eating!"
+	para "This is the"
+	line "best place for"
+	cont "my pre-workout"
+	cont "meal!"
 	done
 
 OlivineCafe_MapEvents:

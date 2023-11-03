@@ -172,57 +172,81 @@ Route40_StepUp4Movement: ; unreferenced
 	step_end
 
 SwimmermSimonSeenText:
-	text "You have to warm"
-	line "up before going"
-	cont "into the water."
+	text "I love WATER"
+	line "#MON."
 
-	para "That's basic."
+	para "I love the"
+	line "sea."
+
+	para "You know..."
+
+	para "I don't think"
+	line "HOEN rule would"
+	cont "be so bad."
 	done
 
 SwimmermSimonBeatenText:
-	text "OK! Uncle! I give!"
+	text "I see you"
+	line "disagree."
 	done
 
 SwimmermSimonAfterBattleText:
-	text "CIANWOOD CITY is"
-	line "a good distance"
-	cont "away from here."
+	text "You just have"
+	line "to keep an open"
+	cont "mind man."
 	done
 
 SwimmermRandallSeenText:
-	text "Hey, you're young"
-	line "and fit!"
+	text "I don't have"
+	line "SURF."
 
-	para "Don't ride your"
-	line "#MON! Swim!"
+	para "I don't need it."
+
+	para "Look at these"
+	line "muscles."
+
+	para "I could swim"
+	line "for days."
 	done
 
 SwimmermRandallBeatenText:
-	text "Uh-oh. I lost…"
+	text "Look at these"
+	line "muscles!"
 	done
 
 SwimmermRandallAfterBattleText:
 	text "Swimming exercises"
 	line "your entire body."
-	cont "It's healthy."
+
+	para "Do you really"
+	line "understand what"
+	cont "I mean."
 	done
 
 SwimmerfElaineSeenText:
-	text "Are you going to"
-	line "CIANWOOD?"
+	text "I believe my"
+	line "STARMIE has"
+	cont "the potential"
+	cont "to be the"
+	cont "strongest"
+	cont "#MON in"
+	cont "the world."
 
-	para "How about a quick"
-	line "battle first?"
+	para "I never lose."
 	done
 
 SwimmerfElaineBeatenText:
-	text "I lost that one!"
+	text "I am missing"
+	line "something."
 	done
 
 SwimmerfElaineAfterBattleText:
-	text "I'd say I'm a bet-"
-	line "ter swimmer than"
-	cont "you. Yeah!"
+	text "I lost."
+
+	para "But I will"
+	line "become the best"
+	cont "like no one"
+	cont "ever was."
 	done
 
 SwimmerfPaulaSeenText:

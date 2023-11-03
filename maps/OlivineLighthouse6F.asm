@@ -160,27 +160,38 @@ OlivineLighthouseJasmineLeavesRightMovement:
 	step_end
 
 JasmineCianwoodPharmacyText:
-	text "JASMINE: … This"
-	line "#MON always"
+	text "Hello, I am"
+	line "JASMINE."
 
-	para "kept the sea lit"
-	line "at night."
+	para "This AMPHAROS"
+	line "always kept the"
+	cont "lighthouse lit"
+	cont "on dark nights"
 
-	para "…But it suddenly"
-	line "got sick… It's"
-	cont "gasping for air…"
+	para "But now it is"
+	line "very sick."
 
-	para "…I understand"
-	line "that there is a"
+	para "I think it"
+	line "may have"
+	cont "contracted"
+	cont "#RUS."
 
-	para "wonderful PHARMACY"
-	line "in CIANWOOD…"
+	para "If left untreated"
+	line "it may die."
 
-	para "But that's across"
-	line "the sea…"
+	para "There is a"
+	line "special"
+	cont "pharmacy in"
+	cont "CIANWOOD across"
+	cont "the sea."
 
-	para "And I can't leave"
-	line "AMPHY unattended…"
+	para "They have a new"
+	line "medicine that"
+	cont "may help"
+	cont "AMPHAROS."
+
+	para "You must be a"
+	line "strong trainer."
 	done
 
 JasmineGetSomeMedicineText:
@@ -190,9 +201,9 @@ JasmineGetSomeMedicineText:
 	done
 
 JasmineCureAmphyText:
-	text "JASMINE: …Will"
-	line "that medicine cure"
-	cont "AMPHY?"
+	text "I sincerely hope"
+	line "that medicine can"
+	cont "help AMPHAROS?"
 	done
 
 PlayerHandedSecretpotionText:
@@ -202,47 +213,49 @@ PlayerHandedSecretpotionText:
 	done
 
 JasmineDontBeOffendedText:
-	text "JASMINE: …Um,"
-	line "please don't be"
+	text "Please don't be"
 	cont "offended…"
 
-	para "…AMPHY will not"
+	para "AMPHAROS will not"
 	line "take anything from"
 	cont "anyone but me…"
 	done
 
 JasmineAmphyHowAreYouFeelingText:
-	text "JASMINE: …"
-
-	para "AMPHY, how are you"
-	line "feeling?"
+	para "AMPHAROS, how are"
+	line "you feeling?"
 	done
 
 JasmineThankYouText:
-	text "JASMINE: …Oh, I'm"
-	line "so relieved…"
+	text "Thank you so"
+	line "much."
 
-	para "This is just so"
-	line "wonderful…"
+	para "You kindness"
+	line "shines brighter"
+	cont "than any"
+	cont "lighthouse."
 
-	para "Thank you so very,"
-	line "very much."
+	para "I will reward"
+	line "you in the only"
+	cont "way fitting of"
+	cont "a GYM LEADER."
 
-	para "…I will return to"
-	line "the GYM…"
+	para "I will return"
+	line "to my GYM and"
+	cont "welcome your"
+	cont "challenge."
 	done
 
 JasmineISeeText:
-	text "JASMINE: …I see…"
+	text "…I see…"
 	done
 
 JasmineAmphyHangOnText:
-	text "…AMPHY, hang on!"
+	text "hang on!"
 	done
 
 AmphyPalPalooText:
-	text "AMPHY: …"
-	line "…Pa… paloo…"
+	text "…Pa… paloo…"
 	done
 
 AmphyBreathingLaboredText:
@@ -251,8 +264,7 @@ AmphyBreathingLaboredText:
 	done
 
 AmphyPaluPaluluText:
-	text "AMPHY: Palu!"
-	line "Palulu!"
+	text "Palulu!"
 	done
 
 OlivineLighthouse6F_MapEvents:

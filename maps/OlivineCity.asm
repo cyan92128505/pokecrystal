@@ -248,20 +248,7 @@ OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
 OlivineCityStandingYoungsterScript:
-	faceplayer
-	opentext
-	random 2
-	ifequal 0, .FiftyFifty
-	writetext OlivineCityStandingYoungsterPokegearText
-	waitbutton
-	closetext
-	end
-
-.FiftyFifty:
-	writetext OlivineCityStandingYoungsterPokedexText
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer OlivineCityStandingYoungsterPokegearText
 
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
@@ -340,87 +327,82 @@ OlivineCityPlayerStepsAsideBottomMovement:
 	step_end
 
 OlivineCityRivalText:
-	text "…"
+	text "Why is it I"
+	line "run into you"
+	cont "everywhere I go!"
 
-	para "You again?"
+	para "I see the fear"
+	line "in your eyes."
 
-	para "There's no need to"
-	line "panic. I don't"
+	para "Don't worry I'm"
+	line "too busy to battle"
+	cont "you right now."
 
-	para "bother with wimps"
-	line "like you."
+	para "The GYM LEADER"
+	line "isn't here."
 
-	para "Speaking of weak-"
-	line "lings, the city's"
+	para "She has one job!"
 
-	para "GYM LEADER isn't"
-	line "here."
+	para "Sit in the GYM"
+	line "and battle any"
+	cont "challengers."
 
-	para "Supposedly taking"
-	line "care of a sick"
-
-	para "#MON at the"
-	line "LIGHTHOUSE."
-
-	para "Humph! Boo-hoo!"
-	line "Just let sick"
-	cont "#MON go!"
-
-	para "A #MON that"
-	line "can't battle is"
-	cont "worthless!"
-
-	para "Why don't you go"
-	line "train at the"
-	cont "LIGHTHOUSE?"
-
-	para "Who knows. It may"
-	line "make you a bit"
-	cont "less weak!"
+	para "It isn't hard."
 	done
 
 OlivineCitySailor1Text:
-	text "Dark roads are"
-	line "dangerous at"
-	cont "night."
+	text "A few years ago"
+	line "I fell overboard"
+	cont "on a night"
+	cont "fishing trip."
 
-	para "But in the pitch-"
-	line "black of night,"
+	para "I lost my"
+	line "bearing and"
+	cont "thought I"
+	cont "would drown."
 
-	para "the sea is even"
-	line "more treacherous!"
+	para "I followed a"
+	line "light in the"
+	cont "distance and"
+	cont "another boat"
+	cont "found me."
 
-	para "Without the beacon"
-	line "of the LIGHTHOUSE"
-
-	para "to guide it, no"
-	line "ship can sail."
+	para "This lighthouse"
+	line "saved my life."
 	done
 
 OlivineCityStandingYoungsterPokegearText:
-	text "That thing you"
-	line "have--it's a #-"
-	cont "GEAR, right? Wow,"
-	cont "that's cool."
-	done
+	text "I can't get"
+	line "to CIANWOOD and"
+	cont "relax on the"
+	cont "beach."
 
-OlivineCityStandingYoungsterPokedexText:
-	text "Wow, you have a"
-	line "#DEX!"
+	para "Maybe CIANWOOD"
+	line "isn't the best"
+	cont "place to go."
 
-	para "That is just so"
-	line "awesome."
+	para "I heard a"
+	line "rumour there"
+	cont "is a HOEN"
+	cont "spy there."
 	done
 
 OlivineCitySailor2Text:
-	text "The sea is sweet!"
+	text "There are several"
+	line "islands in the"
+	cont "sea between here"
+	cont "and CIANWOOD."
 
-	para "Sunsets on the sea"
-	line "are marvelous!"
+	para "They are protected"
+	line "by fierce waters."
 
-	para "Sing with me! "
-	line "Yo-ho! Blow the"
-	cont "man down!…"
+	para "I reckon they all"
+	line "connect in a"
+	cont "vast cave system."
+
+	para "I bet there are"
+	line "strong #MON"
+	cont "in there."
 	done
 
 OlivineCitySignText:

@@ -46,68 +46,78 @@ OlivineLighthouse3FEther:
 	itemball ETHER
 
 BirdKeeperTheoSeenText:
-	text "Why are you here?"
-	line "Are you just going"
+	text "My #MON"
+	line "are predators."
 
-	para "to gawk? I suggest"
-	line "that you leave!"
+	para "I can't guarantee"
+	line "they wont eat"
+	cont "your #MON."
 	done
 
 BirdKeeperTheoBeatenText:
-	text "You really are"
-	line "concerned…"
+	text "The hunter"
+	line "becomes the"
+	cont "hunted."
 	done
 
 BirdKeeperTheoAfterBattleText:
-	text "How the heck do"
-	line "you go up?"
+	text "My #MON"
+	line "and I will soar"
+	cont "up the tower."
 
-	para "I want to visit"
-	line "the sick #MON,"
-
-	para "but I can't get up"
-	line "there…"
+	para "And eat every"
+	line "enemy along"
+	cont "the way."
 	done
 
 SailorTerrellSeenText:
-	text "Sailors are both"
-	line "kind and strong."
-	cont "How about you?"
+	text "My POLIWRATH"
+	line "and I work out"
+	cont "everyday."
+
+	para "We are both"
+	line "going to BULK UP."
 	done
 
 SailorTerrellBeatenText:
-	text "You are both kind"
-	line "and strong…"
+	text "You got some"
+	line "muscles on you!"
 	done
 
 SailorTerrellAfterBattleText:
-	text "Every time I come"
-	line "back to OLIVINE, I"
-	cont "visit the GYM."
+	text "The GYM LEADER"
+	line "of CIANWOOD is"
+	cont "a real strong"
+	cont "man."
 
-	para "The GYM LEADER's"
-	line "#MON type has"
-
-	para "changed without me"
-	line "noticing."
+	para "I got crushed"
+	line "when I fought"
+	cont "him."
 	done
 
 GentlemanPrestonSeenText:
-	text "I travel the world"
-	line "to train my #-"
-	cont "MON. I wish to"
-	cont "battle with you."
+	text "My #MON"
+	line "are worth more"
+	cont "than all these"
+	cont "filthy sailors"
+	cont "life savings"
+	cont "combined."
+
+	para "Hohohoho!"
 	done
 
 GentlemanPrestonBeatenText:
-	text "…sigh… I must"
-	line "train some more…"
+	text "My assets!"
 	done
 
 GentlemanPrestonAfterBattleText:
-	text "JASMINE used to"
-	line "use rock #MON"
-	cont "like ONIX."
+	text "I felt sure"
+	line "I could beat"
+	cont "JASMINE with my"
+	cont "FIRE #MON."
+
+	para "But I got put"
+	line "in my place."
 	done
 
 OlivineLighthouse3F_MapEvents:

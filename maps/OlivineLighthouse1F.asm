@@ -14,24 +14,31 @@ OlivineLighthouse1FPokefanFScript:
 	jumptextfaceplayer OlivineLighthouse1FPokefanFText
 
 OlivineLighthouse1FSailorText:
-	text "People train at"
-	line "this LIGHTHOUSE."
+	text "There are lots"
+	line "of trainers in"
+	cont "this lighthouse."
 
-	para "It's not easy to"
-	line "climb because of"
-	cont "all the trainers."
+	para "You have to"
+	line "fight your"
+	cont "way up."
+
+	para "I'm going to"
+	line "the top!"
 	done
 
 OlivineLighthouse1FPokefanFText:
-	text "In the past, #-"
-	line "MON used to light"
+	text "150 years ago"
+	line "the CHAMPION of"
+	cont "JOHTO was from"
+	cont "OLIVINE."
 
-	para "the sea around"
-	line "OLIVINE at night."
+	para "She trained at"
+	line "this lighthouse."
 
-	para "The LIGHTHOUSE was"
-	line "made in honor of"
-	cont "those #MON."
+	para "Now it is"
+	line "tradition for"
+	cont "trainers to"
+	cont "train here."
 	done
 
 OlivineLighthouse1F_MapEvents:

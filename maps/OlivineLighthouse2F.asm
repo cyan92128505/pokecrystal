@@ -139,53 +139,47 @@ TrainerSailorHuey:
 	end
 
 SailorHueySeenText:
-	text "Men of the sea are"
-	line "always spoiling"
-	cont "for a good fight!"
+	text "I have a long"
+	line "way to go."
+
+	para "But I'll never"
+	line "give up."
+
+	para "Behold the rage"
+	line "of the sea!"
 	done
 
 SailorHueyBeatenText:
-	text "Urf!"
-	line "I lose!"
-	done
-
-SailorHueyUnusedText: ; unreferenced
-	text "What power!"
-	line "How would you like"
-
-	para "to sail the seas"
-	line "with me?"
+	text "I knew that"
+	line "would happen."
 	done
 
 GentlemanAlfredSeenText:
-	text "Hm? This is no"
-	line "place for playing."
+	text "Dear child you"
+	line "can't possibly"
+	cont "be naive enough"
+	cont "to believe you"
+	cont "can match my"
+	cont "#MON."
 	done
 
 GentlemanAlfredBeatenText:
-	text "Ah! I can see that"
-	line "you're serious."
+	text "You roughian!"
 	done
 
 GentlemanAlfredAfterBattleText:
-	text "Up top is a #-"
-	line "MON that keeps the"
-	cont "LIGHTHOUSE lit."
-
-	para "But I hear that"
-	line "it's sick now and"
-
-	para "can't be cured by"
-	line "ordinary medicine."
+	text "I won't allow"
+	line "you to climb"
+	cont "the social"
+	cont "ladder higher"
+	cont "than me!"
 	done
 
 SailorHueyGiveProteinText:
-	text "Man! You're as"
-	line "tough as ever!"
-
-	para "Anyway, here's"
-	line "that medicine from"
-	cont "before."
+	text "Here don't"
+	line "tell anyone you"
+	cont "got this from"
+	cont "me."
 	done
 
 OlivineLighthouse2F_MapEvents:

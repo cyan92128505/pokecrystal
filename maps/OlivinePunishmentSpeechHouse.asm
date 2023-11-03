@@ -20,21 +20,40 @@ OlivinePunishmentSpeechHouseBookshelf1:
 	jumpstd MagazineBookshelfScript
 
 OlivinePunishmentSpeechHouseDadText:
-	text "Along the way to"
-	line "CIANWOOD, there"
+	text "Last year my"
+	line "daughter fell"
+	cont "in the sea by"
+	cont "the lighthouse."
 
-	para "are four deserted"
-	line "islands."
+	para "I immediately"
+	line "jumped in after"
+	cont "her."
 
-	para "Bad kids are taken"
-	line "to the islands as"
-	cont "punishment!"
+	para "But I couldn't"
+	line "swim."
+
+	para "We would have"
+	line "died if a"
+	cont "nearby sailor"
+	cont "hadn't saved"
+	cont "us."
+
+	para "I swear I will"
+	line "never let myself"
+	cont "be so powerless"
+	cont "again!"
 	done
 
 OlivinePunishmentSpeechHouseDaughterText:
-	text "Whenever I get in"
-	line "trouble, Daddy"
-	cont "always scares me."
+	text "Daddy is very"
+	line "strict that he"
+	cont "always has a"
+	cont "WATER #MON"
+	cont "in his party."
+
+	para "He swims in"
+	line "the sea"
+	cont "everyday."
 	done
 
 OlivinePunishmentSpeechHouse_MapEvents:

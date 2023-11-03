@@ -30,53 +30,58 @@ TrainerSailorKent:
 	end
 
 SailorKentSeenText:
-	text "JASMINE must be"
-	line "worried sick about"
-	cont "the #MON here."
+	text "I have been"
+	line "been training"
+	cont "here for days."
 
-	para "She won't even"
-	line "smile these days."
+	para "I believe in"
+	line "my partner."
+
+	para "We will become"
+	line "the strongest."
 	done
 
 SailorKentBeatenText:
-	text "I can't manage a"
-	line "smile either…"
+	text "You did well"
+	line "QUAGSIRE."
 	done
 
 SailorKentAfterBattleText:
-	text "Speaking of sick,"
-	line "I've heard there's"
+	text "An AMPHAROS"
+	line "produces the"
+	cont "light for the"
+	cont "lighthouse."
 
-	para "a good PHARMACY in"
-	line "CIANWOOD."
+	para "It hasn't been"
+	line "so bright"
+	cont "recently."
 	done
 
 LassConnie1SeenText:
-	text "JASMINE is this"
-	line "city's GYM LEADER."
+	text "JASMINE has spent"
+	line "days here looking"
+	cont "after a sick"
+	cont "AMPHAROS."
 
-	para "I mean to bring"
-	line "her back with me."
+	para "I'm worried"
+	line "about her."
 
-	para "Nobody had better"
-	line "get in my way!"
+	para "I'm going to"
+	line "put her to sleep"
+	cont "and take her out"
+	cont "of here."
 	done
 
 LassConnie1BeatenText:
-	text "Aaack! My #MON!"
+	text "You ruined my"
+	line "plan!"
 	done
 
 LassConnie1AfterBattleText:
-	text "Right. Anybody"
-	line "would be worried"
-	cont "if his or her own"
-	cont "#MON were hurt."
-
-	para "I'll pray for the"
-	line "#MON here, so"
-
-	para "JASMINE can come"
-	line "back to the GYM."
+	text "If I can't beat"
+	line "you then I had"
+	cont "no chance of"
+	cont "beating JASMINE."
 	done
 
 OlivineLighthouse4F_MapEvents:

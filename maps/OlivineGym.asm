@@ -114,42 +114,45 @@ OlivineGymStatue:
 	jumpstd GymStatue2Script
 
 Jasmine_SteelTypeIntro:
-	text "…Thank you for"
-	line "your help at the"
-	cont "LIGHTHOUSE…"
+	text "Welcome to"
+	line "OLIVINE GYM."
 
-	para "But this is dif-"
-	line "ferent. Please"
+	para "You have a quiet"
+	line "strength that"
+	cont "resonates with"
+	cont "me."
 
-	para "allow me to intro-"
-	line "duce myself."
+	para "People that"
+	line "strut and flaunt"
+	cont "their muscles"
+	cont "are weak."
 
-	para "I am JASMINE, a"
-	line "GYM LEADER. I use"
-	cont "the steel-type."
+	para "Like that"
+	line "brute CHUCK."
 
-	para "…Do you know about"
-	line "the steel-type?"
+	para "In difficult"
+	line "times."
 
-	para "It's a type that"
-	line "was only recently"
-	cont "discovered."
+	para "Hope is something"
+	line "you give yourself."
 
-	para "…Um… May I begin?"
+	para "That is true"
+	line "strength."
+
+	para "You must have"
+	line "a heart made of"
+	cont "STEEL."
 	done
 
 Jasmine_BetterTrainer:
-	text "…You are a better"
-	line "trainer than me,"
+	text "Your will does"
+	line "not bend."
 
-	para "in both skill and"
-	line "kindness."
+	para "You are stronger"
+	line "than me."
 
-	para "In accordance with"
-	line "LEAGUE rules, I"
-
-	para "confer upon you"
-	line "this BADGE."
+	para "I confer upon"
+	line "you this BADGE."
 	done
 
 Text_ReceivedMineralBadge:
@@ -158,29 +161,59 @@ Text_ReceivedMineralBadge:
 	done
 
 Jasmine_BadgeSpeech:
-	text "MINERALBADGE"
-	line "raises #MON's"
-	cont "DEFENSE."
+    para "With the"
+    line "MINERALBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 55."
 
-	para "…Um… Please take"
-	line "this too…"
-	done
+    para "And capture"
+    line "#MON up to"
+    cont "level 45."
 
-Text_ReceivedTM09: ; unreferenced
-	text "<PLAYER> received"
-	line "TM09."
+	para "Don't let"
+	line "anyone change"
+	cont "your perception"
+	cont "of yourself."
+
+	para "You plant your"
+	line "feet in the"
+	cont "ground and be"
+	cont "stubborn."
+
+	para "This will"
+	line "help you."
 	done
 
 Jasmine_IronTailSpeech:
-	text "…You could use"
-	line "that TM to teach"
-	cont "IRON TAIL."
+	text "That TM teaches"
+	line "IRON HEAD."
+
+	para "It can cause"
+	line "the enemy to"
+	cont "flinch."
 	done
 
 Jasmine_GoodLuck:
-	text "Um… I don't know"
-	line "how to say this,"
-	cont "but good luck…"
+    text "With the"
+    line "MINERALBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 55."
+
+    para "And capture"
+    line "#MON up to"
+    cont "level 45."
+
+	para "Don't let"
+	line "anyone change"
+	cont "your perception"
+	cont "of yourself."
+
+	para "You plant your"
+	line "feet in the"
+	cont "ground and be"
+	cont "stubborn."
 	done
 
 OlivineGymGuideText:

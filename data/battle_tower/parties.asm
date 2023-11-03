@@ -4255,7 +4255,7 @@ BattleTowerMons:
 
     db KYOGRE
 	db LEFTOVERS
-	db HYDRO_PUMP, ICE_BEAM, THUNDER, CALM_MIND
+	db SURF, ICE_BEAM, THUNDER, CALM_MIND
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4670,8 +4670,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db VOLCARONA
-	db CHARCOAL
-	db QUIVER_DANCE, FIRE_BLAST, BUG_BUZZ, ROOST
+	db LEFTOVERS
+	db QUIVER_DANCE, FIRE_BLAST, BUG_BUZZ, ANCIENTPOWER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

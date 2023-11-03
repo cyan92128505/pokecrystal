@@ -45,37 +45,58 @@ OlivineLighthouse5FHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_OLIVINE_LIGHTHOUSE_5F_HIDDEN_HYPER_POTION
 
 SailorErnestSeenText:
-	text "I wanted to battle"
-	line "JASMINE, but she's"
+	text "Welcome to the"
+	line "top floor for"
+	cont "us trainers."
 
-	para "not up to it now."
-	line "So, how about you?"
+	para "I am ERNEST"
+	line "the strongest"
+	cont "sailor!"
+
+	para "Master of the"
+	line "seas."
+
+	para "I have learnt"
+	line "to become the"
+	cont "water and calm"
+	cont "my mind."
 	done
 
 SailorErnestBeatenText:
-	text "Whoa, whoa. You're"
-	line "overwhelming!"
+	text "You have learnt"
+	line "the secret too."
 	done
 
 SailorErnestAfterBattleText:
-	text "A GYM LEADER isn't"
-	line "just about being"
+	text "The sea can"
+	line "be fierce and"
+	cont "ruthless."
 
-	para "strong. A LEADER"
-	line "also needs to be"
-	cont "compassionate."
+	para "But it can also"
+	line "be serene and"
+	cont "beautiful."
+
+	para "That is the"
+	line "aspect I focus on."
 	done
 
 BirdKeeperDenisSeenText:
-	text "We're pretty high"
-	line "up here. My bird"
+	text "The CHAMPION"
+	line "that once trained"
+	cont "here used bird"
+	cont "#MON."
 
-	para "#MON are in"
-	line "prime form."
+	para "I have reached"
+	line "such heights!"
+
+	para "Now I'll drop"
+	line "you back down"
+	cont "where you belong."
 	done
 
 BirdKeeperDenisBeatenText:
-	text "Oops…They crashed…"
+	text "My ego has soared"
+	line "too high."
 	done
 
 BirdKeeperDenisAfterBattleText:
@@ -83,9 +104,9 @@ BirdKeeperDenisAfterBattleText:
 	line "how to use FLY in"
 	cont "CIANWOOD."
 
-	para "Well, since I'm a"
-	line "loser, I'll FLY"
-	cont "across the sea…"
+	para "I can go"
+	line "anywhere in no"
+	cont "time."
 	done
 
 OlivineLighthouse5F_MapEvents:

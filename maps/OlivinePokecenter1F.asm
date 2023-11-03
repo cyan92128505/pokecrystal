@@ -22,27 +22,30 @@ OlivinePokecenter1FTeacherScript:
 	jumptextfaceplayer OlivinePokecenter1FTeacherText
 
 OlivinePokecenter1FFisherText:
-	text "The SAILOR in the"
-	line "OLIVINE CAFE next"
+	text "I'm devising"
+	line "strategies for"
+	cont "BATTLE FRONTIER."
 
-	para "door is really"
-	line "generous."
-
-	para "He taught my"
-	line "#MON STRENGTH."
-
-	para "Now it can move"
-	line "big boulders."
+	para "I tried the"
+	line "BATTLE TRIAL"
+	cont "but didn't get"
+	cont "very far."
 	done
 
 OlivinePokecenter1FTeacherText:
-	text "There's a person"
-	line "in CIANWOOD CITY"
-	cont "across the sea."
+	text "Do you know"
+	line "which types STEEL"
+	cont "is weak to?"
 
-	para "I heard him brag-"
-	line "ging about his"
-	cont "rare #MON."
+	para "I now know they"
+	line "are not weak to"
+	cont "GRASS."
+
+	para "I tried to fight"
+	line "JASMINE but was"
+	cont "unable to do"
+	cont "any damage to"
+	cont "her #MON."
 	done
 
 OlivinePokecenter1F_MapEvents:

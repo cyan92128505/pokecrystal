@@ -21,26 +21,24 @@ OlivineMartLassScript:
 	jumptextfaceplayer OlivineMartLassText
 
 OlivineMartCooltrainerFText:
-	text "Do your #MON"
-	line "already know the"
+	text "Do you have SURF?"
 
-	para "move for carrying"
-	line "people on water?"
+	para "Some old man"
+	line "wanted me to"
+	cont "dance for it."
+
+	para "I'm not doing"
+	line "that."
 	done
 
 OlivineMartLassText:
-	text "My BUTTERFREE came"
-	line "from my boyfriend"
-	cont "overseas."
+	text "I can buy"
+	line "MAX ETHER and"
+	cont "HYPER POTION"
+	cont "from here."
 
-	para "It carried some"
-	line "MAIL from him."
-
-	para "Want to know what"
-	line "it says?"
-
-	para "Let's see… Nope!"
-	line "It's a secret!"
+	para "I have a bag"
+	line "full of them.!"
 	done
 
 OlivineMart_MapEvents:

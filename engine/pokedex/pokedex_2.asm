@@ -270,9 +270,6 @@ DisplayAbility:
 	ld hl, sp+0
 	ld d, h
 	ld e, l
-	hlcoord 11, 9
-	lb bc, 2, (4 << 4) | 5
-	call PrintNum
 	pop de
 
 .skip_weight

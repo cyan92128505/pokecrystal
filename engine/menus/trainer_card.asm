@@ -278,20 +278,45 @@ TrainerCard_PrintTopHalfOfCard:
 	db $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $26, -1 ; ____________>
 
 TrainerCard_Page1_PrintDexCaught_GameTime:
+    hlcoord 2, 14
+    ld de, .capture_cap
+    call PlaceString
+
+    hlcoord 7, 14
+	ld de, wLevelCap
+	lb bc, 1, 3
+	call PrintNum
+
+    hlcoord 7, 16
+	ld a, [de]
+	cp 100
+	jr z, .printCap
+	cp 10
+	jr c, .printCap
+	sub 10
+	ld [de], a
+.printCap
+	lb bc, 1, 3
+	call PrintNum
+
 	hlcoord 2, 10
 	ld de, .Dex_PlayTime
 	call PlaceString
+
 	hlcoord 10, 15
 	ld de, .Badges
 	call PlaceString
+
 	ld hl, wPokedexCaught
 	ld b, wEndPokedexCaught - wPokedexCaught
 	call CountSetBits
 	ld de, wNumSetBits
+
 	hlcoord 15, 10
 	lb bc, 1, 3
 	call PrintNum
 	call TrainerCard_Page1_PrintGameTime
+
 	hlcoord 2, 8
 	ld de, .StatusTilemap
 	call TrainerCardSetup_PlaceTilemapString
@@ -306,6 +331,10 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 .Dex_PlayTime:
 	db   "#DEX"
 	next "PLAY TIME@"
+
+.capture_cap:
+    db "TRAIN"
+    next "CATCH@"
 
 .Unused: ; unreferenced
 	db "@"

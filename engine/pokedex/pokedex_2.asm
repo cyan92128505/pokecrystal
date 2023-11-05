@@ -225,22 +225,9 @@ DisplayAbility:
 	ld h, b
 	ld l, c
 	push de
-; Print dex number
-	hlcoord 2, 8
-	ld a, $5c ; No
-	ld [hli], a
-	ld a, $5d ; .
-	ld [hli], a
 	ld de, wTempSpecies
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
-; Check to see if we caught it.  Get out of here if we haven't.
-	ld a, [wTempSpecies]
-	dec a
-	call CheckCaughtMon
 	pop hl
 	pop bc
-	ret z
 ; Get the height of the Pokemon.
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a

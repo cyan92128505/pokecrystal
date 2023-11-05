@@ -214,13 +214,14 @@ DisplayDexEntry:
 	call PlaceFarString
 	ret
 
+; AndrewNote - Stats Page - code to display ability
 DisplayAbility:
 	ld a, [wTempSpecies]
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 9, 5
+	hlcoord 18, 18 ; placed off screen
 	call PlaceFarString ; dex species
 	ld h, b
 	ld l, c

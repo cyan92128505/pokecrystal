@@ -5,6 +5,6 @@
 	next "the pouches on"
 	next "its cheeks"
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

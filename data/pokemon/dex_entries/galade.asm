@@ -5,6 +5,6 @@
 	next "and fierce guard"
 	next "of its trainer."
 
-	page "AB Raises"
+	page "Raises"
 	next "REFLECT upon"
 	next "entering battle.@"

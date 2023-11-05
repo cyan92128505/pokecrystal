@@ -5,6 +5,6 @@
 	next "and raises the"
 	next "young."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

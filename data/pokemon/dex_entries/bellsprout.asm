@@ -5,5 +5,5 @@
 	next "at anything that"
 	next "moves."
 
-	page "AB Gets critical"
+	page "Gets critical"
 	next "hits often.@"

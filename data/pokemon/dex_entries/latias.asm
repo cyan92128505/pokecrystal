@@ -5,6 +5,6 @@
 	next "It is intelligent"
 	next "and powerful."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "GROUND and lays"
 	next "LIGHT SCREEN.@"

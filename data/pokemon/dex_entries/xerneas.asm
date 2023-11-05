@@ -5,6 +5,6 @@
 	next "eternal life with"
 	next "the worthy."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

@@ -5,6 +5,6 @@
 	next "of all #MON."
 	next "Learns any move."
 
-	page "AB Random stat"
+	page "Random stat"
 	next "increase upon"
 	next "entering battle.@"

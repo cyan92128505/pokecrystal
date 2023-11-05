@@ -5,5 +5,5 @@
 	next "agitated it spits"
 	next "intense flames."
 
-	page "AB Gets critical"
+	page "Gets critical"
 	next "hits often.@"

@@ -5,5 +5,5 @@
 	next "SHELLDER won't let"
 	next "go."
 
-	page "AB Regenerates"
+	page "Regenerates"
 	next "HP every turn.@"

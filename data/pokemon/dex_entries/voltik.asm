@@ -5,5 +5,5 @@
 	next "cities and drain"
 	next "the electricity."
 
-	page "AB THUNDER will"
+	page "THUNDER will"
 	next "always hit.@"

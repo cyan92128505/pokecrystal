@@ -5,6 +5,6 @@
 	next "only one thing at"
 	next "a time."
 
-	page "AB Takes reduced"
+	page "Takes reduced"
 	next "damage from super"
 	next "effective moves.@"

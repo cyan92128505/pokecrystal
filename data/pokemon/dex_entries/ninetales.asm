@@ -5,6 +5,6 @@
 	next "a thousand years"
 	next "for each tail."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE and raises"
 	next "SAFEGUARD.@"

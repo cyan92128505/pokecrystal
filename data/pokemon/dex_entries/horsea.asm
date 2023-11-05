@@ -5,6 +5,6 @@
 	next "tangle their tails"
 	next "together."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

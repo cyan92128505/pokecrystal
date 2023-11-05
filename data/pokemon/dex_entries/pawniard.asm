@@ -4,6 +4,6 @@
 	db   "Blades comprise"
 	next "its entire body."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

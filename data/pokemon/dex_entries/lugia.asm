@@ -5,5 +5,5 @@
 	next "sea and sky. It"
 	next "brings peace."
 
-	page "AB Gains armour"
+	page "Gains armour"
 	next "when at full hp.@"

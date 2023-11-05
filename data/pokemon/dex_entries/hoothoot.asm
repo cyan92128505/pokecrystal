@@ -5,5 +5,5 @@
 	next "at the same time"
 	next "every day."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

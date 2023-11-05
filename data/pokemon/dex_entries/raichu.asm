@@ -5,6 +5,6 @@
 	next "from the atmosphere"
 	next "with its tail"
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

@@ -5,5 +5,5 @@
 	next "ground, this"
 	next "#MON eats dirt."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

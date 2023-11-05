@@ -5,5 +5,5 @@
 	next "its speed. Moves"
 	next "too fast to see."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

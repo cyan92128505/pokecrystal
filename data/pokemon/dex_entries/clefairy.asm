@@ -5,6 +5,6 @@
 	next "said to be from"
 	next "the moon."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

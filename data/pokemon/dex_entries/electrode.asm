@@ -5,6 +5,6 @@
 	next "charges up, the"
 	next "faster it gets."
 
-	page "AB Unleashes a"
+	page "Unleashes a"
 	next "final attack upon"
 	next "being defeated.@"

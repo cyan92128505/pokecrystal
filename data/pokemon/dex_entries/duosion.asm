@@ -5,6 +5,6 @@
 	next "divided. It has"
 	next "many thoughts."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

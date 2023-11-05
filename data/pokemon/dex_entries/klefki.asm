@@ -5,6 +5,6 @@
 	next "and nobody knows"
 	next "what for."
 
-	page "AB Status moves"
+	page "Status moves"
 	next "always land"
 	next "first.@"

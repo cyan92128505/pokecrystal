@@ -5,6 +5,6 @@
 	next "it loves its"
 	next "trainer."
 
-	page "AB EVASION"
+	page "EVASION"
 	next "increases upon"
 	next "entering battle.@"

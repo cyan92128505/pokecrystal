@@ -4,6 +4,6 @@
 	db   "It builds its nest"
 	next "on a steep cliff."
 
-	page "AB Becomes more"
+	page "Becomes more"
 	next "evasive when in"
 	next "a sandstorm.@"

@@ -5,5 +5,5 @@
 	next "to send messages"
 	next "into space."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

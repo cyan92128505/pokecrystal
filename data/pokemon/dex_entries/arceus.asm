@@ -5,6 +5,6 @@
 	next "Creator of all"
 	next "the universe."
 
-	page "AB Immune to all"
+	page "Immune to all"
 	next "status and"
 	next "enemy effects.@"

@@ -5,6 +5,6 @@
 	next "times it ruled"
 	next "the skies."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

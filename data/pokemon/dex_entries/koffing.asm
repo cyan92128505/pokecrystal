@@ -5,6 +5,6 @@
 	next "to it when it"
 	next "expels poison."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "GROUND type"
 	next "moves.@"

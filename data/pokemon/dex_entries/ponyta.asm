@@ -4,5 +4,5 @@
 	db   "It is a world"
 	next "class jumper."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

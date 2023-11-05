@@ -5,6 +5,6 @@
 	next "throat to croak"
 	next "out a tune."
 
-	page "AB Summons a"
+	page "Summons a"
 	next "rain storm upon"
 	next "entering battle.@"

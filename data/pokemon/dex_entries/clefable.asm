@@ -5,6 +5,6 @@
 	next "quiet, remote"
 	next "mountains."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

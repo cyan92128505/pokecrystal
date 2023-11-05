@@ -5,5 +5,5 @@
 	next "threatened, it"
 	next "draws its legs."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

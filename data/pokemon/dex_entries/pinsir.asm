@@ -5,6 +5,6 @@
 	next "pincers to crush"
 	next "its foe in half."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

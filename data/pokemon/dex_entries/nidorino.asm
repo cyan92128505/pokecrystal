@@ -5,6 +5,6 @@
 	next "agitated and uses"
 	next "its horn."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "against opposite"
 	next "gender foes.@"

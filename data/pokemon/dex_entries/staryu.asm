@@ -5,5 +5,5 @@
 	next "twinkle at night,"
 	next "it floats up."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

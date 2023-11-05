@@ -5,6 +5,6 @@
 	next "rare and mighty"
 	next "Dragon #MON."
 
-	page "AB Armoured at"
+	page "Armoured at"
 	next "full hp. Can use"
 	next "OUTRAGE freely.@"

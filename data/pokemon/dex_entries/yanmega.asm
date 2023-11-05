@@ -5,6 +5,6 @@
 	next "and bite its"
 	next "foe apart."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases upon"
 	next "entering battle.@"

@@ -5,6 +5,6 @@
 	next "it great agility"
 	next "and jump height."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

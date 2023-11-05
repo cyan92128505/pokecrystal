@@ -5,6 +5,6 @@
 	next "children at"
 	next "night."
 
-	page "AB Gives"
+	page "Gives"
 	next "nightmares to"
 	next "sleeping foes.@"

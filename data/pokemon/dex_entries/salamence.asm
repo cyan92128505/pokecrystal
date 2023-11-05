@@ -5,6 +5,6 @@
 	next "and merciless"
 	next "in its assault."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

@@ -5,6 +5,6 @@
 	next "of electricity in"
 	next "its skin."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

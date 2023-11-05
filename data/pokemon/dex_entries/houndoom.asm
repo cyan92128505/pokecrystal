@@ -5,5 +5,5 @@
 	next "cause eternal"
 	next "pain."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

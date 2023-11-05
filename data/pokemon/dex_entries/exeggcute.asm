@@ -5,6 +5,6 @@
 	next "instant if they"
 	next "separate."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases in"
 	next "the sun.@"

@@ -5,6 +5,6 @@
 	next "tip of its tongue"
 	next "to seek prey."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

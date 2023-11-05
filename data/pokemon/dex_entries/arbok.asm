@@ -5,6 +5,6 @@
 	next "foes, it spreads"
 	next "its chest wide."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

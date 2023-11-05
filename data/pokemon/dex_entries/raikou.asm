@@ -5,6 +5,6 @@
 	next "stores energy"
 	next "inside its body,"
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases upon"
 	next "entering battle.@"

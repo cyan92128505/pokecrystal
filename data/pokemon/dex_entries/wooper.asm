@@ -5,5 +5,5 @@
 	next "membrane covers"
 	next "its body."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "WATER attacks.@"

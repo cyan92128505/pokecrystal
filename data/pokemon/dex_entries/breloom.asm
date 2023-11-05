@@ -5,5 +5,5 @@
 	next "warrior with a"
 	next "powerful punch."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

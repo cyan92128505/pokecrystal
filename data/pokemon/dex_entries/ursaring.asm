@@ -5,6 +5,6 @@
 	next "foe with its huge"
 	next "muscular body."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

@@ -5,6 +5,6 @@
 	next "5000. It can best"
 	next "any opponent."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

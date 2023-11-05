@@ -5,5 +5,5 @@
 	next "the flame on its"
 	next "tail blazes."
 
-	page "AB Gets critical"
+	page "Gets critical"
 	next "hits often.@"

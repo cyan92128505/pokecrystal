@@ -5,5 +5,5 @@
 	next "moment of death"
 	next "to steal souls."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

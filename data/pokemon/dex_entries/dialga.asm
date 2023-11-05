@@ -5,6 +5,6 @@
 	next "over the flow of"
 	next "time itself."
 
-	page "AB Lays SPIKES"
+	page "Lays SPIKES"
 	next "and Immune to"
 	next "stat drops.@"

@@ -5,6 +5,6 @@
 	next "pathetic #MON"
 	next "has hidden might."
 
-	page "AB Uses SPLASH"
+	page "Uses SPLASH"
 	next "with true and"
 	next "honest vigor.@"

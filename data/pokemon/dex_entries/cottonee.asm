@@ -5,6 +5,6 @@
 	next "each other to"
 	next "form a ball."
 
-	page "AB Status moves"
+	page "Status moves"
 	next "always land"
 	next "first.@"

@@ -5,5 +5,5 @@
 	next "utilizing their"
 	next "brains in union."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "stat drops.@"

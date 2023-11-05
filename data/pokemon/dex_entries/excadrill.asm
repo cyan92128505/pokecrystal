@@ -5,6 +5,6 @@
 	next "together can drill"
 	next "through anything."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases in"
 	next "a sandstorm.@"

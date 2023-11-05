@@ -5,5 +5,5 @@
 	next "still, even while"
 	next "it's a pupa."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

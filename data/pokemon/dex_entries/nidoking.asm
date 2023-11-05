@@ -5,6 +5,6 @@
 	next "arms, legs and"
 	next "tail to attack."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "against opposite"
 	next "gender foes.@"

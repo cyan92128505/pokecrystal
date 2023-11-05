@@ -5,6 +5,6 @@
 	next "mighty hands can"
 	next "shake the earth."
 
-	page "AB Summons a"
+	page "Summons a"
 	next "sand storm upon"
 	next "entering battle.@"

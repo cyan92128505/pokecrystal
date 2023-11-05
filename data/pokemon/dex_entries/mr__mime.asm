@@ -5,6 +5,6 @@
 	next "mysterious power"
 	next "in its fingers."
 
-	page "AB Raises"
+	page "Raises"
 	next "REFLECT upon"
 	next "entering battle.@"

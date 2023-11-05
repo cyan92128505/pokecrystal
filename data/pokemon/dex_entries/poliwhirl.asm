@@ -5,5 +5,5 @@
 	next "underwater, though"
 	next "it can walk."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "WATER attacks.@"

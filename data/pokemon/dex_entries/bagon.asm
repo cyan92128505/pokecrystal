@@ -5,6 +5,6 @@
 	next "head can shatter"
 	next "large boulders."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

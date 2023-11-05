@@ -5,6 +5,6 @@
 	next "skull of its"
 	next "dead mother."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

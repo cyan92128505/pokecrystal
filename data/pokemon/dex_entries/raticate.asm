@@ -5,6 +5,6 @@
 	next "legs enable it to"
 	next "cross rivers."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

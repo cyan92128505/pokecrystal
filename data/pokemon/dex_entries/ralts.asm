@@ -5,6 +5,6 @@
 	next "emotions of"
 	next "others."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "against opposite"
 	next "gender foes.@"

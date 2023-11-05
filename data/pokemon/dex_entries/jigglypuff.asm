@@ -5,6 +5,6 @@
 	next "eyes as it sings a"
 	next "soothing lullaby."
 
-	page "AB SPEC DEFENSE"
+	page "SPEC DEFENSE"
 	next "increases upon"
 	next "entering battle.@"

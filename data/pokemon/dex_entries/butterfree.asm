@@ -5,5 +5,5 @@
 	next "flower to flower,"
 	next "collecting honey."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

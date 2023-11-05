@@ -5,6 +5,6 @@
 	next "and never shows"
 	next "forgiveness."
 
-	page "AB It lands"
+	page "It lands"
 	next "critical hits"
 	next "more often.@"

@@ -5,6 +5,6 @@
 	next "of this #MON,"
 	next "are unnatural."
 
-	page "AB Unleashes a"
+	page "Unleashes a"
 	next "final attack upon"
 	next "being defeated.@"

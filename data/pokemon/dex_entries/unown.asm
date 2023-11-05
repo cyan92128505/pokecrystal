@@ -5,6 +5,6 @@
 	next "represents a"
 	next "letter."
 
-	page "AB HIDDEN POWER"
+	page "HIDDEN POWER"
 	next "does double"
 	next "normal damage.@"

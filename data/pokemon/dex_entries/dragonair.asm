@@ -4,5 +4,5 @@
 	db   "It is called the"
 	next "divine #MON."
 
-	page "AB Gains armour"
+	page "Gains armour"
 	next "when at full hp.@"

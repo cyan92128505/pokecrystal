@@ -5,5 +5,5 @@
 	next "by dipping wounds"
 	next "into lava."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

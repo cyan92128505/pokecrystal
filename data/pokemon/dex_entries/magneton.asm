@@ -5,5 +5,5 @@
 	next "work together to"
 	next "pull down planes."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

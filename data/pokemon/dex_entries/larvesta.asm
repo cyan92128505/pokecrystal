@@ -4,5 +4,5 @@
 	db   "Evolves from a"
 	next "cacoon of fire."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

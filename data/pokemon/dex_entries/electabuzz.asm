@@ -5,6 +5,6 @@
 	next "ELECTABUZZ touch,"
 	next "a current flows."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

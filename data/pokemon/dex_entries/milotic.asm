@@ -5,5 +5,5 @@
 	next "powerful spirit"
 	next "of the sea."
 
-	page "AB Gains armour"
+	page "Gains armour"
 	next "when at full hp.@"

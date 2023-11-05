@@ -5,5 +5,5 @@
 	next "can reach up to"
 	next "1700 degrees."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

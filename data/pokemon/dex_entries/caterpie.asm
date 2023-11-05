@@ -5,5 +5,5 @@
 	next "foliage where it"
 	next "camouflages itself."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

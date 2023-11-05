@@ -5,6 +5,6 @@
 	next "ancient lost"
 	next "city."
 
-	page "AB Ignore passive"
+	page "Ignore passive"
 	next "damage and raise"
 	next "SAFEGUARD.@"

@@ -5,6 +5,6 @@
 	next "object it finds in"
 	next "a secret location."
 
-	page "AB Status moves"
+	page "Status moves"
 	next "always land"
 	next "first.@"

@@ -5,5 +5,5 @@
 	next "deadly slashes."
 	next "Will soon evolve."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

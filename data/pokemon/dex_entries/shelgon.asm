@@ -5,6 +5,6 @@
 	next "off its heavy"
 	next "armoured body."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

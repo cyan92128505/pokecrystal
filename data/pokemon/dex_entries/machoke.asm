@@ -5,6 +5,6 @@
 	next "always stays in"
 	next "the zone."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

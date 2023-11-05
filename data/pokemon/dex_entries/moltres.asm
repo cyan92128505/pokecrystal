@@ -5,6 +5,6 @@
 	next "#MON that incin-"
 	next "erates foes."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE and raises"
 	next "SAFEGUARD.@"

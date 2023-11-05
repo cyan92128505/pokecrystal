@@ -5,5 +5,5 @@
 	next "planet. Bringer"
 	next "of order."
 
-	page "AB Regenerates"
+	page "Regenerates"
 	next "HP every turn.@"

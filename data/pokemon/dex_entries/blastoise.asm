@@ -5,5 +5,5 @@
 	next "naval weapons of"
 	next "war."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

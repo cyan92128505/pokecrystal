@@ -5,6 +5,6 @@
 	next "by sleeping at"
 	next "underwater depths."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases in"
 	next "the rain.@"

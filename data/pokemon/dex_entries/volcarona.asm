@@ -5,5 +5,5 @@
 	next "incandescent"
 	next "embodiment of sun."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

@@ -5,5 +5,5 @@
 	next "it awaits its"
 	next "evolution."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

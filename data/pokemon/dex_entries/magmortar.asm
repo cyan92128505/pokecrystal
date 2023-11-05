@@ -5,5 +5,5 @@
 	next "balls of over"
 	next "3600 degree heat."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

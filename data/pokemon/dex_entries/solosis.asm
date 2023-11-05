@@ -5,6 +5,6 @@
 	next "its body protects"
 	next "It from harm."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

@@ -594,9 +594,14 @@ StatsScreen_LoadGFX:
 	assert_table_length NUM_STAT_PAGES
 
 LoadOrangePage:
+    ld de, AbilityText
 	hlcoord 1, 9
+	call PlaceString
 	farcall DisplayAbility
 	ret
+
+AbilityText:
+    db "ABILITY:@"
 
 LoadPinkPage:
 	hlcoord 0, 9

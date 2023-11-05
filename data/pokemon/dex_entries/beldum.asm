@@ -5,5 +5,5 @@
 	next "a scout droid by"
 	next "the military."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "stat drops.@"

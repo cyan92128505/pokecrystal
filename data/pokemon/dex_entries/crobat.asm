@@ -5,6 +5,6 @@
 	next "it fly faster,"
 	next "yet more silent."
 
-	page "AB EVASION"
+	page "EVASION"
 	next "increases upon"
 	next "entering battle.@"

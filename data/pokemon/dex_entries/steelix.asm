@@ -5,6 +5,6 @@
 	next "monster that can"
 	next "destroy tanks."
 
-	page "AB Lays SPIKES"
+	page "Lays SPIKES"
 	next "and can't be"
 	next "KOd at full HP.@"

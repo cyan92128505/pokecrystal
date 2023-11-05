@@ -5,5 +5,5 @@
 	next "ominous howl"
 	next "echoes all over."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

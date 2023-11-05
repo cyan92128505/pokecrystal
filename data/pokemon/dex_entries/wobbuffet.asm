@@ -5,5 +5,5 @@
 	next "true self. The"
 	next "rest is a decoy."
 
-	page "AB Regenerates"
+	page "Regenerates"
 	next "HP every turn.@"

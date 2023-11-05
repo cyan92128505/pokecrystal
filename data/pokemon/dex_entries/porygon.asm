@@ -5,5 +5,5 @@
 	next "#MON created"
 	next "due to research."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

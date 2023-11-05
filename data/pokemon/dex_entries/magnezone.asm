@@ -5,6 +5,6 @@
 	next "fields restrain its"
 	next "immense energy."
 
-	page "AB ZAP CANNON"
+	page "ZAP CANNON"
 	next "hits. Attacks"
 	next "upon defeat.@"

@@ -5,6 +5,6 @@
 	next "It can climb"
 	next "vertical walls."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

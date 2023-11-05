@@ -5,6 +5,6 @@
 	next "its forked tail"
 	next "quivers."
 
-	page "AB Raises"
+	page "Raises"
 	next "LIGHT SCREEN on"
 	next "entering battle.@"

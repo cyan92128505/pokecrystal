@@ -5,6 +5,6 @@
 	next "peirce even a"
 	next "diamond plate."
 
-	page "AB Takes reduced"
+	page "Takes reduced"
 	next "damage from super"
 	next "effective moves.@"

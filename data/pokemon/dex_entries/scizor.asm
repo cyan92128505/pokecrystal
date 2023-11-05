@@ -5,5 +5,5 @@
 	next "steel pincers can"
 	next "crush any object."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

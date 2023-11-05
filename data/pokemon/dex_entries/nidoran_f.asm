@@ -5,6 +5,6 @@
 	next "docile, uses its"
 	next "horn for defense."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "against opposite"
 	next "gender foes.@"

@@ -5,5 +5,5 @@
 	next "back grows as it"
 	next "absorbs nutrients."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

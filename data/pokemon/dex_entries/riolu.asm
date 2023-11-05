@@ -5,6 +5,6 @@
 	next "communicate with"
 	next "others."
 
-	page "AB Status moves"
+	page "Status moves"
 	next "always land"
 	next "first.@"

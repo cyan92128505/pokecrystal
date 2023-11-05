@@ -5,6 +5,6 @@
 	next "lifting rocks in"
 	next "the mountains."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

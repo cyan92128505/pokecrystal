@@ -5,6 +5,6 @@
 	next "over the boundaries"
 	next "of space."
 
-	page "AB Resists FIRE/"
+	page "Resists FIRE/"
 	next "ICE and raises"
 	next "SAFEGUARD.@"

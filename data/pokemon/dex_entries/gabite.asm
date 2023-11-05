@@ -5,6 +5,6 @@
 	next "#MON run away"
 	next "by showing fangs."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

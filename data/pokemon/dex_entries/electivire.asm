@@ -5,6 +5,6 @@
 	next "20000 volts of"
 	next "wild power."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

@@ -5,6 +5,6 @@
 	next "speeds equal to"
 	next "a jet plane."
 
-	page "AB Becomes more"
+	page "Becomes more"
 	next "evasive when in"
 	next "a sandstorm.@"

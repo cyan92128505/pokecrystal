@@ -5,5 +5,5 @@
 	next "on the waves, it"
 	next "spreads toxins."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "stat drops.@"

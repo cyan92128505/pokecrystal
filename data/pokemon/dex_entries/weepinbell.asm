@@ -5,5 +5,5 @@
 	next "cuts with razor"
 	next "sharp leaves."
 
-	page "AB Gets critical"
+	page "Gets critical"
 	next "hits often.@"

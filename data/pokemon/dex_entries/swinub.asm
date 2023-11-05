@@ -5,6 +5,6 @@
 	next "its nose to dig"
 	next "for food."
 
-	page "AB Takes half"
+	page "Takes half"
 	next "damage from FIRE"
 	next "and ICE moves.@"

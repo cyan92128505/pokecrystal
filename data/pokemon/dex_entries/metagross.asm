@@ -5,5 +5,5 @@
 	next "machine with four"
 	next "super brains."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "stat drops.@"

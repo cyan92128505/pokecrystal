@@ -5,5 +5,5 @@
 	next "of DNA mutated by"
 	next "space radiation."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "stat drops.@"

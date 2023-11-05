@@ -5,5 +5,5 @@
 	next "ling on mountain"
 	next "paths."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

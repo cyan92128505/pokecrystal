@@ -5,5 +5,5 @@
 	next "powers only when"
 	next "its brain awakes."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

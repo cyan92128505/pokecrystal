@@ -5,6 +5,6 @@
 	next "#MON hides"
 	next "in the dark."
 
-	page "AB EVASION"
+	page "EVASION"
 	next "increases upon"
 	next "entering battle.@"

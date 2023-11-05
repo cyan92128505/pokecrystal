@@ -5,6 +5,6 @@
 	next "ponent in its gas-"
 	next "like body."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "GROUND type"
 	next "moves.@"

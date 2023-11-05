@@ -5,6 +5,6 @@
 	next "soundless. Its"
 	next "fangs are wicked."
 
-	page "AB Becomes more"
+	page "Becomes more"
 	next "evasive when in"
 	next "a sandstorm.@"

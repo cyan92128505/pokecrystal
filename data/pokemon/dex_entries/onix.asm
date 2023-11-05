@@ -5,5 +5,5 @@
 	next "the ground, it"
 	next "absorbs rocks."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

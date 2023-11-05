@@ -5,6 +5,6 @@
 	next "whirlwinds and"
 	next "loves pranks."
 
-	page "AB Status moves"
+	page "Status moves"
 	next "always land"
 	next "first.@"

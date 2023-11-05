@@ -5,6 +5,6 @@
 	next "its six tails"
 	next "become beautiful."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE and raises"
 	next "SAFEGUARD.@"

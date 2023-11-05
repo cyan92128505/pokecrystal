@@ -5,6 +5,6 @@
 	next "fully along on the"
 	next "quiet rivers."
 
-	page "AB Clears"
+	page "Clears"
 	next "weather upon"
 	next "switching in.@"

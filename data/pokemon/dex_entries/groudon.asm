@@ -5,6 +5,6 @@
 	next "land. It seeks"
 	next "global drought."
 
-	page "AB Summons"
+	page "Summons"
 	next "harsh sun upon"
 	next "entering battle.@"

@@ -5,5 +5,5 @@
 	next "blends with the"
 	next "water perfectly."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "WATER attacks.@"

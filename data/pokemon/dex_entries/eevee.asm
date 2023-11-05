@@ -5,6 +5,6 @@
 	next "stone, or with"
 	next "friendship."
 
-	page "AB Random stat"
+	page "Random stat"
 	next "increase upon"
 	next "entering battle.@"

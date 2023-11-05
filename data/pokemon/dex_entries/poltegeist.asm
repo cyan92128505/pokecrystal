@@ -5,6 +5,6 @@
 	next "lives inside"
 	next "teapots."
 
-	page "AB Raises"
+	page "Raises"
 	next "SAFEGUARD upon"
 	next "entering battle.@"

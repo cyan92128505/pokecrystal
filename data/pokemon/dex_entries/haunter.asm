@@ -5,6 +5,6 @@
 	next "dark, planning to"
 	next "take ones life."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "GROUND type"
 	next "moves.@"

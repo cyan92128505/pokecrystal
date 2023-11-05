@@ -5,5 +5,5 @@
 	next "a ninja, leaving"
 	next "defeated foes."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

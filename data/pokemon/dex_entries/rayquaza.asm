@@ -5,6 +5,6 @@
 	next "It cleaves the"
 	next "skies apart"
 
-	page "AB Has reduced"
+	page "Has reduced"
 	next "weaknesses."
 	next "Clears weather.@"

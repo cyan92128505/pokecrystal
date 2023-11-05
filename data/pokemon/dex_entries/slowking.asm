@@ -5,5 +5,5 @@
 	next "of the slowbro"
 	next "and slowpoke."
 
-	page "AB Regenerates"
+	page "Regenerates"
 	next "HP every turn.@"

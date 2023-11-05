@@ -5,5 +5,5 @@
 	next "absent-minded that"
 	next "it won't react."
 
-	page "AB Regenerates"
+	page "Regenerates"
 	next "HP every turn.@"

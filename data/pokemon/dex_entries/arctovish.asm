@@ -5,5 +5,5 @@
 	next "predator with"
 	next "a lethal move."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "WATER attacks.@"

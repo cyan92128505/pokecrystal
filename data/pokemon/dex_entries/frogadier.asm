@@ -5,5 +5,5 @@
 	next "unmatched. it can"
 	next "scale buildings."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

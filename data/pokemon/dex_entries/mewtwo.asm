@@ -5,6 +5,6 @@
 	next "weapon. Exceeds"
 	next "mortal limits."
 
-	page "AB Gets crits"
+	page "Gets crits"
 	next "often. Has double"
 	next "RECOVER PP.@"

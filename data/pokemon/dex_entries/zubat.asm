@@ -5,6 +5,6 @@
 	next "gathers with"
 	next "others."
 
-	page "AB EVASION"
+	page "EVASION"
 	next "increases upon"
 	next "entering battle.@"

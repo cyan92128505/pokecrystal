@@ -5,5 +5,5 @@
 	next "body by covering"
 	next "itself in bubbles."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

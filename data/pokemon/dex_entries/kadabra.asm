@@ -5,6 +5,6 @@
 	next "eyes, its mind can"
 	next "move objects."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

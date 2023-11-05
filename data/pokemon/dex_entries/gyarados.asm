@@ -5,6 +5,6 @@
 	next "ever there is"
 	next "world conflict."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

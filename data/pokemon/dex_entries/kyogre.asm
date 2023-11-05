@@ -5,6 +5,6 @@
 	next "sea. It seeks"
 	next "global flood."
 
-	page "AB Summons a"
+	page "Summons a"
 	next "rain storm upon"
 	next "entering battle.@"

@@ -5,6 +5,6 @@
 	next "its wings to drive"
 	next "out prey."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

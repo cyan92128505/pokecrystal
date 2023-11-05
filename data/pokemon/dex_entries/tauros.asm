@@ -5,6 +5,6 @@
 	next "#MON fight"
 	next "with anything."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

@@ -5,6 +5,6 @@
 	next "are short, they"
 	next "are sturdy."
 
-	page "AB Takes half"
+	page "Takes half"
 	next "damage from FIRE"
 	next "and ICE moves.@"

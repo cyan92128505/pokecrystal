@@ -5,6 +5,6 @@
 	next "is shown by the"
 	next "size of its tail."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

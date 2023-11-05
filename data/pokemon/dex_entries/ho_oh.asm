@@ -5,5 +5,5 @@
 	next "of life and the"
 	next "pure of heart."
 
-	page "AB Regenerates"
+	page "Regenerates"
 	next "HP every turn.@"

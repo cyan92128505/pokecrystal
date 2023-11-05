@@ -5,6 +5,6 @@
 	next "full moon, it"
 	next "glows with power"
 
-	page "AB Raises"
+	page "Raises"
 	next "REFLECT upon"
 	next "entering battle.@"

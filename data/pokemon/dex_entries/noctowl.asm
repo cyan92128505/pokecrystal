@@ -5,5 +5,5 @@
 	next "feathers make no"
 	next "sound in flight."
 
-	page "AB Has increased"
+	page "Has increased"
 	next "accuracy.@"

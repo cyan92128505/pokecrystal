@@ -5,6 +5,6 @@
 	next "air with few flaps"
 	next "of its wings."
 
-	page "AB move effects"
+	page "move effects"
 	next "are more likely"
 	next "to occur.@"

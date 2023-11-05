@@ -5,5 +5,5 @@
 	next "it uses its stored"
 	next "nutrients."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

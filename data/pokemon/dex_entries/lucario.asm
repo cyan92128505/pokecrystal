@@ -5,6 +5,6 @@
 	next "the life force and"
 	next "feelings of others"
 
-	page "AB ATTACK"
+	page "ATTACK"
 	next "increases upon"
 	next "entering battle.@"

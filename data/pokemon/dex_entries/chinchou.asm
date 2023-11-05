@@ -5,6 +5,6 @@
 	next "charged with"
 	next "electricity."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

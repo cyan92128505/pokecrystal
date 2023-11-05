@@ -5,6 +5,6 @@
 	next "air in its soft"
 	next "fur to stay cool."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

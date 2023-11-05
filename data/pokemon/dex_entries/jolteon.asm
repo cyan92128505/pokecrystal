@@ -5,6 +5,6 @@
 	next "charged ions"
 	next "flow through it."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "ELECTRIC"
 	next "attacks.@"

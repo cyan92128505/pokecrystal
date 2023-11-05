@@ -5,5 +5,5 @@
 	next "life force from"
 	next "nearby people."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

@@ -5,5 +5,5 @@
 	next "it emits creates"
 	next "strong magnetism."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

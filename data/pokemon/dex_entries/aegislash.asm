@@ -5,6 +5,6 @@
 	next "that has slain"
 	next "many kings."
 
-	page "AB Switch between"
+	page "Switch between"
 	next "attack and defense"
 	next "stance.@"

@@ -5,6 +5,6 @@
 	next "powerful predator"
 	next "without fear."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

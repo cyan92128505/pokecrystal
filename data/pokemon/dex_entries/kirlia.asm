@@ -5,6 +5,6 @@
 	next "from the emotions"
 	next "of its trainer."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "against opposite"
 	next "gender foes.@"

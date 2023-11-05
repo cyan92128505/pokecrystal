@@ -5,6 +5,6 @@
 	next "able to withstand"
 	next "volcanic blasts."
 
-	page "AB Takes reduced"
+	page "Takes reduced"
 	next "damage from super"
 	next "effective moves.@"

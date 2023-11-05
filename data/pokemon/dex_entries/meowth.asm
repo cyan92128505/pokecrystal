@@ -5,5 +5,5 @@
 	next "that sparkle and"
 	next "collects them."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

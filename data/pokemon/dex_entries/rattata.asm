@@ -5,6 +5,6 @@
 	next "vitality allows it"
 	next "to live anywhere."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

@@ -5,6 +5,6 @@
 	next "that embodies the"
 	next "ancient forest."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases in"
 	next "the sun.@"

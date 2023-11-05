@@ -5,6 +5,6 @@
 	next "a drill, allowing"
 	next "it to travel fast."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases in"
 	next "a sandstorm.@"

@@ -5,5 +5,5 @@
 	next "slimy. It often"
 	next "bangs its head."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "WATER attacks.@"

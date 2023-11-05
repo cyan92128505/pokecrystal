@@ -5,6 +5,6 @@
 	next "its gases it can"
 	next "kill all around."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "GROUND type"
 	next "moves.@"

@@ -5,6 +5,6 @@
 	next "#MON that"
 	next "causes storms."
 
-	page "AB Raises LIGHT"
+	page "Raises LIGHT"
 	next "SCREEN and immune"
 	next "to ELECTRIC.@"

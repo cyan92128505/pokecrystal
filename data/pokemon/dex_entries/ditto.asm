@@ -5,6 +5,6 @@
 	next "every aspect of"
 	next "its opponent."
 
-	page "AB Status moves"
+	page "Status moves"
 	next "always land"
 	next "first.@"

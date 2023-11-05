@@ -5,5 +5,5 @@
 	next "inhabits a sword."
 	next "Has hidden might."
 
-	page "AB Can not be KOd"
+	page "Can not be KOd"
 	next "from full HP.@"

@@ -5,6 +5,6 @@
 	next "milk which it"
 	next "defends fiercely."
 
-	page "AB Takes half"
+	page "Takes half"
 	next "damage from FIRE"
 	next "and ICE moves.@"

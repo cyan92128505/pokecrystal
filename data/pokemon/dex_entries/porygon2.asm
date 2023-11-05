@@ -5,6 +5,6 @@
 	next "#MON evolved"
 	next "from software."
 
-	page "AB DEFENSE"
+	page "DEFENSE"
 	next "increases upon"
 	next "entering battle.@"

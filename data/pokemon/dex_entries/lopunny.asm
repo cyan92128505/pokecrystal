@@ -5,6 +5,6 @@
 	next "fluffy. It is very"
 	next "aware of danger."
 
-	page "AB EVASION"
+	page "EVASION"
 	next "increases upon"
 	next "entering battle.@"

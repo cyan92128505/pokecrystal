@@ -5,5 +5,5 @@
 	next "belly is its"
 	next "insides showing."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "WATER attacks.@"

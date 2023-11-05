@@ -5,6 +5,6 @@
 	next "idolised this"
 	next "might #MON."
 
-	page "AB lowers foes"
+	page "lowers foes"
 	next "ATTACK upon"
 	next "switch in.@"

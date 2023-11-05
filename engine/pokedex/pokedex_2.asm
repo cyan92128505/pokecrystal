@@ -252,7 +252,6 @@ DisplayAbility:
 	ld e, l
 	pop af
 	pop hl
-
 .skip_height
 	pop af
 	push af
@@ -271,39 +270,24 @@ DisplayAbility:
 	ld d, h
 	ld e, l
 	pop de
-
 .skip_weight
-; Page
+; Page 1
 	pop de
 	pop af
 	hlcoord 2, 11
 	push af
 	call PlaceFarString
 	pop bc
-
 ; Page 2
 	push bc
 	push de
 	lb bc, 5, SCREEN_WIDTH - 2
 	hlcoord 2, 11
 	call ClearBox
-	hlcoord 1, 10
-	ld bc, SCREEN_WIDTH - 1
-	ld a, $61
-	call ByteFill
-	; page number
-	hlcoord 1, 9
-	ld [hl], $55
-	inc hl
-	ld [hl], $55
-	hlcoord 1, 10
-	ld [hl], $56 ; P.
-	inc hl
-	ld [hl], $58 ; 2
 	pop de
 	inc de
 	pop af
-	hlcoord 2, 11
+	hlcoord 1, 11
 	call PlaceFarString
 	ret
 

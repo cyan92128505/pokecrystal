@@ -5,6 +5,6 @@
 	next "cowardly #MON."
 	next "It hides fear."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

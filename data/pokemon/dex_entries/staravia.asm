@@ -5,6 +5,6 @@
 	next "a circle looking"
 	next "for prey."
 
-	page "AB Boosted damage"
+	page "Boosted damage"
 	next "when afflicted by"
 	next "a status.@"

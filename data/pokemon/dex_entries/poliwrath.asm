@@ -5,6 +5,6 @@
 	next "well-developed"
 	next "arms and legs."
 
-	page "AB SPEED"
+	page "SPEED"
 	next "increases in"
 	next "the rain.@"

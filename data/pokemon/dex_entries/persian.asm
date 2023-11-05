@@ -5,6 +5,6 @@
 	next "elegant appearance"
 	next "lies a monster."
 
-	page "AB Slash always"
+	page "Slash always"
 	next "crits. Makes weak"
 	next "moves stronger.@"

@@ -5,6 +5,6 @@
 	next "combat. It loves"
 	next "to have a crowd."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

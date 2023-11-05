@@ -5,6 +5,6 @@
 	next "attack any foe"
 	next "with fire fists."
 
-	page "AB Takes no"
+	page "Takes no"
 	next "recoil damage"
 	next "from attacks.@"

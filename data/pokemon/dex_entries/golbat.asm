@@ -5,6 +5,6 @@
 	next "evolves when it"
 	next "loves its trainer."
 
-	page "AB EVASION"
+	page "EVASION"
 	next "increases upon"
 	next "entering battle.@"

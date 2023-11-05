@@ -5,6 +5,6 @@
 	next "PAWNIARD, it is"
 	next "truly merciless."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

@@ -5,7 +5,7 @@
 	next "a sudden and"
 	next "screams loudly."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "GROUND type"
 	next "moves.@"
 

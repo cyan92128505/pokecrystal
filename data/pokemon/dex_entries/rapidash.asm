@@ -5,5 +5,5 @@
 	next "gallop and run at"
 	next "blistering speed."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "FIRE attacks.@"

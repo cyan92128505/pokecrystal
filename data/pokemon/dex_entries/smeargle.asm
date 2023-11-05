@@ -5,6 +5,6 @@
 	next "and use it with"
 	next "mastery."
 
-	page "AB Random stat"
+	page "Random stat"
 	next "increase upon"
 	next "entering battle.@"

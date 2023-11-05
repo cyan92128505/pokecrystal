@@ -5,6 +5,6 @@
 	next "It steals life"
 	next "from its foes."
 
-	page "AB Immune to"
+	page "Immune to"
 	next "all passive"
 	next "damage.@"

@@ -5,5 +5,5 @@
 	next "delicious mushroom"
 	next "with a temper."
 
-	page "AB Makes weaker"
+	page "Makes weaker"
 	next "moves stronger.@"

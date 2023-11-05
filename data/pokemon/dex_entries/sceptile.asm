@@ -5,6 +5,6 @@
 	next "body are a sharp"
 	next "as swords."
 
-	page "AB Deals extra"
+	page "Deals extra"
 	next "critical hit"
 	next "damage.@"

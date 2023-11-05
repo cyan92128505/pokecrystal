@@ -5,5 +5,5 @@
 	next "ers of skin as it"
 	next "grows larger."
 
-	page "AB Gains armour"
+	page "Gains armour"
 	next "when at full hp.@"

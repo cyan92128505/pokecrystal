@@ -153,7 +153,14 @@ TrainerCard_Page2_LoadGFX:
 	ld hl, TrainerCard_JohtoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	call TrainerCard_IncrementJumptable
+
+	hlcoord 18, 16
+	ld de, .arrow
+	call PlaceString
 	ret
+
+.arrow:
+    db "▶@"
 
 TrainerCard_Page2_Joypad:
 	ld hl, TrainerCard_JohtoBadgesOAM
@@ -162,14 +169,6 @@ TrainerCard_Page2_Joypad:
 	ld a, [hl]
     and D_LEFT
 	jr nz, .pressed_left
-	ld a, [wKantoBadges]
-	and a
-	jr nz, .has_kanto_badges
-	ld a, [hl]
-	and A_BUTTON
-	jr nz, .Quit
-	ret
-.has_kanto_badges
 	ld a, [hl]
 	and D_RIGHT | A_BUTTON
 	jr nz, .pressed_right_a
@@ -293,12 +292,21 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	jr z, .printCap
 	cp 10
 	jr c, .printCap
+
 	sub 10
 	ld [de], a
+	lb bc, 1, 3
+	call PrintNum
+	ld a, [de]
+	add 10
+	ld [de], a
+	jr .doneCaps
+
 .printCap
 	lb bc, 1, 3
 	call PrintNum
 
+.doneCaps
 	hlcoord 2, 10
 	ld de, .Dex_PlayTime
 	call PlaceString

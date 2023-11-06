@@ -221,8 +221,15 @@ DisplayAbility:
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 18, 18 ; placed off screen
+	hlcoord 0, 17 ; placed off screen
 	call PlaceFarString ; dex species
+
+	push de
+	hlcoord 0, 17
+	ld de, EmptyString
+	call PlaceString
+	pop de
+
 	ld h, b
 	ld l, c
 	push de
@@ -291,6 +298,9 @@ DisplayAbility:
 	hlcoord 1, 11
 	call PlaceFarString
 	ret
+
+EmptyString:
+    db "           @"
 
 POKeString: ; unreferenced
 	db "#@"

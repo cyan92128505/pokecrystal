@@ -55,6 +55,12 @@ PlayersNeighborsDaughterText:
 	line "has some special"
 	cont "ability."
 
+	para "You can see"
+	line "them on the"
+	cont "STATS page or"
+	cont "the second page"
+	cont "of the #DEX."
+
 	para "My little sister"
 	line "wants to be a"
 	cont "trainer."

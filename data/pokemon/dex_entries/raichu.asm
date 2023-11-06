@@ -1,8 +1,8 @@
 	db "MOUSE@" ; species name
 	dw 207, 660 ; height, weight
 
-	db   "Gathers electricity"
-	next "from the atmosphere"
+	db   "Gathers energy"
+	next "from the air"
 	next "with its tail"
 
 	page "Immune to"

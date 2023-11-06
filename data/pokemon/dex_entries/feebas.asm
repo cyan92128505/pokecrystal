@@ -2,7 +2,7 @@
 	dw 200, 163 ; height, weight
 
 	db   "An ugly and weak"
-	next "#MON that seeks"
+	next "#MON seeking"
 	next "friendship."
 
 	page "Uses SPLASH"

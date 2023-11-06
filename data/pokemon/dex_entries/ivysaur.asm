@@ -3,7 +3,7 @@
 
 	db   "The bulb on its"
 	next "back grows as it"
-	next "absorbs nutrients."
+	next "absorbs nutrients"
 
 	page "Makes weaker"
 	next "moves stronger.@"

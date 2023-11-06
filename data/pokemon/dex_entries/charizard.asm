@@ -3,7 +3,7 @@
 
 	db   "A powerful and"
 	next "proud fire drake"
-	next "that loves battle."
+	next "that loves battle"
 
 	page "Summons"
 	next "harsh sun upon"

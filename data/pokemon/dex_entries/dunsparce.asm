@@ -2,7 +2,7 @@
 	dw 411, 310 ; height, weight
 
 	db   "It hides deep"
-	next "inside caves where"
+	next "in caves where"
 	next "no light reaches."
 
 	page "Random stat"

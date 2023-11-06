@@ -5,6 +5,6 @@
 	next "fur that covers"
 	next "it feels good."
 
-	page "SPEC DEFENSE"
+	page "SPECIAL DEFENSE"
 	next "increases upon"
 	next "entering battle.@"

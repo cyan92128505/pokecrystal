@@ -2,7 +2,7 @@
 	dw 311, 982 ; height, weight
 
 	db   "Built of pure"
-	next "muscle. They wield"
+	next "muscle. It wields"
 	next "steel beams."
 
 	page "Boosted damage"

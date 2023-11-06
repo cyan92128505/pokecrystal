@@ -113,7 +113,9 @@ Script_BeatenAllTrainers2:
     setval 0
     writemem wHandOfGod
     opentext
-    writetext Text_CongratulationsButNoReward
+    writetext Text_CongratulationsMirror
+    waitbutton
+    verbosegiveitem SACRED_ASH
     waitbutton
     closetext
 	setval BATTLETOWERACTION_CHALLENGECANCELED
@@ -123,15 +125,6 @@ Script_BeatenAllTrainers2:
 	opentext
 	writetext Text_CongratulationsYouveBeatenAllTheTrainers
 	sjump Script_GivePlayerHisPrize
-
-Script_TooMuchTimeElapsedNoRegister: ; unreferenced
-	setval BATTLETOWERACTION_CHALLENGECANCELED
-	special BattleTowerAction
-	opentext
-	writetext Text_TooMuchTimeElapsedNoRegister
-	waitbutton
-	closetext
-	end
 
 Script_ChallengeCanceled: ; unreferenced
 	setval BATTLETOWERACTION_CHALLENGECANCELED

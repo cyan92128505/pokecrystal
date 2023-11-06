@@ -1,8 +1,8 @@
 	db "STARLING@" ; species name
 	dw 307, 660 ; height, weight
 
-	db   "It slowly flies in"
-	next "a circle looking"
+	db   "It slowly flies"
+	next "while looking"
 	next "for prey."
 
 	page "Boosted damage"

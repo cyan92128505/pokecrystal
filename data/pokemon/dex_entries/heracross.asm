@@ -1,7 +1,7 @@
 	db "SINGLEHORN@" ; species name
 	dw 411, 1190 ; height, weight
 
-	db   "With its Herculean"
+	db   "With Herculean"
 	next "powers, it can"
 	next "lift anything."
 

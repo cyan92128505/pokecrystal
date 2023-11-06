@@ -1,8 +1,8 @@
 	db "SEED@" ; species name
 	dw 204, 150 ; height, weight
 
-	db   "While it is young,"
-	next "it uses its stored"
+	db   "While it is young"
+	next "it uses stored"
 	next "nutrients."
 
 	page "Makes weaker"

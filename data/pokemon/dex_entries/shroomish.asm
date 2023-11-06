@@ -1,8 +1,8 @@
 	db "MUSHROOM@" ; species name
 	dw 104, 99 ; height, weight
 
-	db   "A dangerous and"
-	next "delicious mushroom"
+	db   "A violent and"
+	next "tasty mushroom"
 	next "with a temper."
 
 	page "Makes weaker"

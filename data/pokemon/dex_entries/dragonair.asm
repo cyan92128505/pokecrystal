@@ -5,4 +5,4 @@
 	next "divine #MON."
 
 	page "Gains armour"
-	next "when at full hp.@"
+	next "when at full HP.@"

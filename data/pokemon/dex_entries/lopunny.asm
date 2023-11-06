@@ -2,7 +2,7 @@
 	dw 311, 734 ; height, weight
 
 	db   "It is soft and"
-	next "fluffy. It is very"
+	next "fluffy. It is"
 	next "aware of danger."
 
 	page "EVASION"

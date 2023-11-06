@@ -3,7 +3,7 @@
 
 	db   "They carry cut"
 	next "logs and help"
-	next "with construction."
+	next "with construction"
 
 	page "Boosted damage"
 	next "when afflicted by"

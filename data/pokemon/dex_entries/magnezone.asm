@@ -2,7 +2,7 @@
 	dw 311, 3968 ; height, weight
 
 	db   "Three magnetic"
-	next "fields restrain its"
+	next "fields restrain"
 	next "immense energy."
 
 	page "ZAP CANNON"

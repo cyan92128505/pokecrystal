@@ -5,6 +5,6 @@
 	next "guardian of the"
 	next "forest."
 
-	page "SPEC DEFENSE"
+	page "SPECIAL DEFENSE"
 	next "increases upon"
 	next "entering battle.@"

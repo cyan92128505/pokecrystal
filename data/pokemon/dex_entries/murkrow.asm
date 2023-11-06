@@ -1,9 +1,9 @@
 	db "DARKNESS@" ; species name
 	dw 108, 50 ; height, weight
 
-	db   "It hides any shiny"
-	next "object it finds in"
-	next "a secret location."
+	db   "It hides shiny"
+	next "objects in many"
+	next "secret locations."
 
 	page "Status moves"
 	next "always land"

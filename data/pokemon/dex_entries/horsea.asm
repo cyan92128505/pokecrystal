@@ -2,7 +2,7 @@
 	dw 104, 180 ; height, weight
 
 	db   "They playfully"
-	next "tangle their tails"
+	next "tangle tails"
 	next "together."
 
 	page "Deals extra"

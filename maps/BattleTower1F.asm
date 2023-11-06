@@ -208,84 +208,10 @@ Script_BattleTowerHopeToServeYouAgain:
 	closetext
 	end
 
-Script_MobileError2: ; unreferenced
-	special BattleTowerMobileError
-	closetext
-	end
-
 Script_WaitButton:
 	waitbutton
 	closetext
 	end
-
-Script_ChooseChallenge2: ; unreferenced
-	writetext Text_SaveBeforeEnteringBattleRoom
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	special TryQuickSave
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setval BATTLETOWERACTION_SET_EXPLANATION_READ
-	special BattleTowerAction
-	special Function1700ba
-	ifequal $a, Script_Menu_ChallengeExplanationCancel
-	ifnotequal $0, Script_MobileError
-	writetext Text_ReceivedAListOfLeadersOnTheHonorRoll
-	turnobject BATTLETOWER1F_RECEPTIONIST, LEFT
-	writetext Text_PleaseConfirmOnThisMonitor
-	waitbutton
-	turnobject BATTLETOWER1F_RECEPTIONIST, DOWN
-	closetext
-	end
-
-Script_StartChallenge: ; unreferenced
-	setval BATTLETOWERACTION_LEVEL_CHECK
-	special BattleTowerAction
-	ifnotequal $0, Script_AMonLevelExceeds
-	setval BATTLETOWERACTION_UBERS_CHECK
-	special BattleTowerAction
-	ifnotequal $0, Script_MayNotEnterABattleRoomUnderL70
-	special CheckForBattleTowerRules
-	ifnotequal FALSE, Script_WaitButton
-	setval BATTLETOWERACTION_05
-	special BattleTowerAction
-	ifequal $0, .zero
-	writetext Text_CantBeRegistered_PreviousRecordDeleted
-	sjump .continue
-
-.zero
-	writetext Text_CantBeRegistered
-.continue
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	writetext Text_SaveBeforeReentry
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setscene SCENE_DEFAULT
-	special TryQuickSave
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setscene SCENE_FINISHED
-	setval BATTLETOWERACTION_06
-	special BattleTowerAction
-	setval BATTLETOWERACTION_12
-	special BattleTowerAction
-	writetext Text_RightThisWayToYourBattleRoom
-	waitbutton
-	sjump Script_ResumeBattleTowerChallenge
-
-Script_ReachedBattleLimit: ; unreferenced
-	writetext Text_FiveDayBattleLimit_Mobile
-	waitbutton
-	sjump Script_BattleTowerHopeToServeYouAgain
-
-Script_AMonLevelExceeds:
-	writetext Text_AMonLevelExceeds
-	waitbutton
-	sjump Script_Menu_ChallengeExplanationCancel
-
-Script_MayNotEnterABattleRoomUnderL70:
-	writetext Text_MayNotEnterABattleRoomUnderL70
-	waitbutton
-	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_MobileError:
 	special BattleTowerMobileError
@@ -418,66 +344,6 @@ Text_RightThisWayToYourBattleRoom:
 	line "your BATTLE ROOM."
 	done
 
-Text_BattleTowerIntroduction_1: ; unreferenced
-	text "BATTLE TOWER is a"
-	line "facility made for"
-	cont "#MON battles."
-
-	para "Countless #MON"
-	line "trainers gather"
-
-	para "from all over to"
-	line "hold battles in"
-
-	para "specially designed"
-	line "BATTLE ROOMS."
-
-	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
-
-	para "Each ROOM holds"
-	line "seven trainers."
-
-	para "If you defeat the"
-	line "seven in a ROOM,"
-
-	para "and you have a"
-	line "good record, you"
-
-	para "could become the"
-	line "ROOM's LEADER."
-
-	para "All LEADERS will"
-	line "be recorded in the"
-
-	para "HONOR ROLL for"
-	line "posterity."
-
-	para "You may challenge"
-	line "in up to five"
-
-	para "BATTLE ROOMS each"
-	line "day."
-
-	para "However, you may"
-	line "battle only once a"
-
-	para "day in any given"
-	line "ROOM."
-
-	para "To interrupt a"
-	line "session, you must"
-
-	para "SAVE. If not, you"
-	line "won't be able to"
-
-	para "resume your ROOM"
-	line "challenge."
-
-	para ""
-	done
-
 Text_BattleTowerIntroduction_2:
 	text "BATTLE TOWER is a"
 	line "facility made for"
@@ -514,46 +380,14 @@ Text_BattleTowerIntroduction_2:
 	para ""
 	done
 
-Text_ReceivedAListOfLeadersOnTheHonorRoll:
-	text "Received a list of"
-	line "LEADERS on the"
-	cont "HONOR ROLL."
-
-	para ""
-	done
-
 Text_PleaseConfirmOnThisMonitor:
 	text "Please confirm on"
 	line "this monitor."
 	done
 
-Text_ThankYou: ; unreferenced
-	text "Thank you!"
-
-	para ""
-	done
-
 Text_ThanksForVisiting:
 	text "Thanks for"
 	line "visiting!"
-	done
-
-Text_BeatenAllTheTrainers_Mobile: ; unreferenced
-	text "Congratulations!"
-
-	para "You've beaten all"
-	line "the trainers!"
-
-	para "Your feat may be"
-	line "worth registering,"
-
-	para "<PLAYER>. With your"
-	line "results, you may"
-
-	para "be chosen as a"
-	line "ROOM LEADER."
-
-	para ""
 	done
 
 Text_CongratulationsYouveBeatenAllTheTrainers:
@@ -568,22 +402,15 @@ Text_CongratulationsYouveBeatenAllTheTrainers:
 	para ""
 	done
 
-Text_CongratulationsButNoReward:
+Text_CongratulationsMirror:
 	text "Congratulations!"
 
 	para "You have proven"
-	line "your great skill."
+	line "your great skill"
+	cont "and knowledge."
 
-	para "That is reward"
-	line "enough."
-	done
-
-Text_AskRegisterRecord_Mobile: ; unreferenced
-	text "Would you like to"
-	line "register your"
-
-	para "record with the"
-	line "CENTER?"
+	para "Please accept"
+	line "this reward."
 	done
 
 Text_PlayerGotFive:
@@ -612,13 +439,6 @@ Text_YourPackIsStuffedFull:
 	line "and come back."
 	done
 
-Text_YourRegistrationIsComplete: ; unreferenced
-	text "Your registration"
-	line "is complete."
-
-	para "Please come again!"
-	done
-
 Text_WeHopeToServeYouAgain:
 	text "We hope to serve"
 	line "you again."
@@ -635,31 +455,6 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 	cont "BATTLE TOWER?"
 	done
 
-Text_CantBeRegistered:
-	text "Your record from"
-	line "the previous"
-
-	para "BATTLE ROOM can't"
-	line "be registered. OK?"
-	done
-
-Text_CantBeRegistered_PreviousRecordDeleted:
-	text "Your record from"
-	line "the previous"
-
-	para "BATTLE ROOM can't"
-	line "be registered."
-
-	para "Also, the existing"
-	line "record will be"
-	cont "deleted. OK?"
-	done
-
-Text_CheckTheLeaderHonorRoll: ; unreferenced
-	text "Check the LEADER"
-	line "HONOR ROLL?"
-	done
-
 Text_ReadBattleTowerRules:
 	text "BATTLE TOWER rules"
 	line "are written here."
@@ -668,21 +463,22 @@ Text_ReadBattleTowerRules:
 	done
 
 Text_BattleTowerRules:
-	text "Three #MON may"
-	line "enter battles."
+	text "There are no"
+	line "rules!"
 
-	para "All three must be"
-	line "different."
+	para "You must win"
+	line "four full battles."
 
-	para "The items they"
-	line "hold must also be"
-	cont "different."
+	para "NORMAL battles"
+	line "use your own"
+	cont "party."
 
-	para "Certain #MON"
-	line "may also have"
+	para "MIRROR battles"
+	line "use a copy of"
+	cont "the enemy party."
 
-	para "level restrictions"
-	line "placed on them."
+	para "Different prizes"
+	line "are won in each."
 	done
 
 Text_BattleTower_LeftWithoutSaving:
@@ -712,14 +508,6 @@ Text_NextUpOpponentNo:
 	text ". Ready?"
 	done
 
-Text_SaveBeforeConnecting_Mobile: ; unreferenced
-	text "Your session will"
-	line "be SAVED before"
-
-	para "connecting with"
-	line "the CENTER."
-	done
-
 Text_SaveBeforeEnteringBattleRoom:
 	text "Before entering"
 	line "the BATTLE ROOM,"
@@ -746,15 +534,6 @@ Text_CancelYourBattleRoomChallenge:
 	line "ROOM challenge?"
 	done
 
-Text_RegisterRecordOnFile_Mobile: ; unreferenced
-	text "We have your"
-	line "previous record on"
-
-	para "file. Would you"
-	line "like to register"
-	cont "it at the CENTER?"
-	done
-
 Text_WeveBeenWaitingForYou:
 	text "We've been waiting"
 	line "for you. This way"
@@ -763,105 +542,81 @@ Text_WeveBeenWaitingForYou:
 	line "please."
 	done
 
-Text_FiveDayBattleLimit_Mobile:
-	text "You may enter only"
-	line "five BATTLE ROOMS"
-	cont "each day."
-
-	para "Please come back"
-	line "tomorrow."
-	done
-
-Text_TooMuchTimeElapsedNoRegister:
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your"
-	line "current record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
-	done
-
-Text_RegisterRecordTimedOut_Mobile: ; unreferenced
-; duplicate of Text_TooMuchTimeElapsedNoRegister
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your most"
-	line "recent record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
-	done
-
-Text_AMonLevelExceeds:
-	text "One or more of"
-	line "your #MON's"
-	cont "levels exceeds @"
-	text_decimal wScriptVar, 1, 3
-	text "."
-	done
-
-Text_MayNotEnterABattleRoomUnderL70:
-	text_ram wcd49
-	text " may not"
-	line "enter a BATTLE"
-	cont "ROOM under L70."
-
-	para "This BATTLE ROOM"
-	line "is for L@"
-	text_decimal wScriptVar, 1, 3
-	text "."
-	done
-
 Text_BattleTowerYoungster:
-	text "Destroyed by the"
-	line "first opponent in"
+	text "There are four"
+	line "opponents."
 
-	para "no time at all…"
-	line "I'm no good…"
+	para "But the final"
+	line "one is different."
+
+	para "The final one"
+	line "uses only the"
+	cont "best #MON"
+
+	para "And there is"
+	line "one #MON"
+	cont "that only the"
+	cont "final opponent"
+	cont "may use."
+
+	para "We call that"
+	line "the run killer!"
 	done
 
 Text_BattleTowerCooltrainerF:
-	text "There are lots of"
-	line "BATTLE ROOMS, but"
+	text "There are two"
+	line "levels only open"
+	cont "to CHAMPIONS."
 
-	para "I'm going to win"
-	line "them all!"
+	para "The highest level"
+	line "is MASTER."
+
+	para "MASTER has twice"
+	line "as many #MON"
+	cont "available as"
+	cont "any other level."
+
+	para "But I can't"
+	line "even get past"
+	cont "NOVICE level."
 	done
 
 Text_BattleTowerGranny:
-	text "It's a grueling"
-	line "task, not being"
+	text "Years ago I"
+	line "saw a man take"
+	cont "on MASTER level."
 
-	para "able to use items"
-	line "in battle."
+	para "He shined like"
+	line "gold and he"
+	cont "used a #MON"
+	cont "I have never"
+	cont "seen before or"
+	cont "since."
 
-	para "Making your"
-	line "#MON hold items"
+	para "He defeated every"
+	line "opponent using"
+	cont "only one #MON!"
 
-	para "is the key to"
-	line "winning battles."
+	para "I didn't think"
+	line "such things were"
+	cont "possible."
+
+	para "I have never"
+	line "seen him since."
 	done
 
 Text_BattleTowerBugCatcher:
-	text "I'm trying to see"
-	line "how far I can go"
+	text "I only play"
+	line "on MIRROR mode."
 
-	para "using just bug"
-	line "#MON."
+	para "With my keen"
+	line "intellectual"
+	cont "prowess I can"
+	cont "often win."
 
-	para "Don't let there be"
-	line "any fire #MON…"
+	para "It takes some"
+	line "luck too of"
+	cont "course."
 	done
 
 TurnOffHandOfGodScript:

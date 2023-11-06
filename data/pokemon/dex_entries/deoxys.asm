@@ -1,7 +1,7 @@
 	db "DNA@" ; species name
 	dw 507, 1340 ; height, weight
 
-	db   "Born from a strand"
+	db   "Born from strands"
 	next "of DNA mutated by"
 	next "space radiation."
 

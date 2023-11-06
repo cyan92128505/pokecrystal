@@ -224,12 +224,6 @@ DisplayAbility:
 	hlcoord 0, 17 ; placed off screen
 	call PlaceFarString ; dex species
 
-	push de
-	hlcoord 0, 17
-	ld de, EmptyString
-	call PlaceString
-	pop de
-
 	ld h, b
 	ld l, c
 	push de
@@ -297,10 +291,16 @@ DisplayAbility:
 	pop af
 	hlcoord 1, 11
 	call PlaceFarString
+
+	push de
+	hlcoord 0, 17
+	ld de, EmptyString
+	call PlaceString
+	pop de
 	ret
 
 EmptyString:
-    db "           @"
+    db "                @"
 
 POKeString: ; unreferenced
 	db "#@"

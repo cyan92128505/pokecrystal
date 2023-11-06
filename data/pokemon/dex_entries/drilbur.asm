@@ -3,7 +3,7 @@
 
 	db   "It can spin like"
 	next "a drill, allowing"
-	next "it to travel fast."
+	next "it to travel fast"
 
 	page "SPEED"
 	next "increases in"

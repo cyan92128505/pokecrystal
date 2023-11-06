@@ -1,9 +1,8 @@
 	db "TRANSPORT@" ; species name
 	dw 802, 8850 ; height, weight
 
-	db   "This gentle"
-	next "#MON loves to"
-	next "ferry people."
+	db   "A gentle and"
+	next "caring #MON"
 
 	page "Immune to"
 	next "WATER attacks.@"

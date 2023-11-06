@@ -1,7 +1,7 @@
 	db "ROYAL SWORD@" ; species name
 	dw 507, 1168 ; height, weight
 
-	db   "A peerless warrior"
+	db   "A peerless knight"
 	next "that has slain"
 	next "many kings."
 

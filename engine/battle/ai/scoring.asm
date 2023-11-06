@@ -4060,7 +4060,16 @@ AI_Smart_Geomancy:
 .checkKO
 ; don't use if we are at risk of being KOd, just attack them
 ; as a two turn move we care about being 2HKOd
+    call IsPlayerPhysicalOrSpecial
+    jr nc, .special
+.physical
     call CanPlayer2HKO
+    jp c, StandardDiscourage
+    jr .continue
+.special
+    call DoesAIOutSpeedPlayer
+    jr nc, .physical
+    call CanPlayerKO
     jp c, StandardDiscourage
 
 .continue

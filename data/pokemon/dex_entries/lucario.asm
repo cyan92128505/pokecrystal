@@ -2,8 +2,8 @@
 	dw 403, 1190 ; height, weight
 
 	db   "It can detect"
-	next "the life force and"
-	next "feelings of others"
+	next "the life force"
+	next "of others"
 
 	page "ATTACK"
 	next "increases upon"

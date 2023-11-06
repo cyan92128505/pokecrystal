@@ -2,7 +2,7 @@
 	dw 100, 80 ; height, weight
 
 	db   "This #MON's"
-	next "vitality allows it"
+	next "vitality lets it"
 	next "to live anywhere."
 
 	page "Boosted damage"

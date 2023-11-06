@@ -3,7 +3,7 @@
 
 	db   "It crawls into"
 	next "foliage where it"
-	next "camouflages itself."
+	next "hides itself."
 
 	page "Has increased"
 	next "accuracy.@"

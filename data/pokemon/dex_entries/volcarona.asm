@@ -3,7 +3,7 @@
 
 	db   "The grossly"
 	next "incandescent"
-	next "embodiment of sun."
+	next "embodiment of sun"
 
 	page "Immune to"
 	next "FIRE attacks.@"

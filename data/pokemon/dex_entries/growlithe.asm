@@ -1,9 +1,9 @@
 	db "PUPPY@" ; species name
 	dw 204, 420 ; height, weight
 
-	db   "It controls a big"
-	next "territory. It will"
-	next "defend it."
+	db   "It controls its"
+	next "territory and"
+	next "will defend it."
 
 	page "Immune to"
 	next "FIRE attacks.@"

@@ -3,7 +3,7 @@
 
 	db   "It stores energy"
 	next "by sleeping at"
-	next "underwater depths."
+	next "underwater depths"
 
 	page "SPEED"
 	next "increases in"

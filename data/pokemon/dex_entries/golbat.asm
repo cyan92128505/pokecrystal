@@ -1,9 +1,9 @@
 	db "BAT@" ; species name
 	dw 503, 1210 ; height, weight
 
-	db   "It seeks blood. It"
-	next "evolves when it"
-	next "loves its trainer."
+	db   "It seeks blood."
+	next "It evolves when"
+	next "happy."
 
 	page "EVASION"
 	next "increases upon"

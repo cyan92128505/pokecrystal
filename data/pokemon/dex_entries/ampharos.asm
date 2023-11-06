@@ -1,8 +1,8 @@
 	db "LIGHT@" ; species name
 	dw 407, 1360 ; height, weight
 
-	db   "When it gets dark,"
-	next "it light can be"
+	db   "In the darkness"
+	next "its light can be"
 	next "seen for miles."
 
 	page "Raises LIGHT"

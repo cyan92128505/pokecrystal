@@ -6,5 +6,5 @@
 	next "Dragon #MON."
 
 	page "Armoured at"
-	next "full hp. Can use"
+	next "full HP. Can use"
 	next "OUTRAGE freely.@"

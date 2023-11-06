@@ -3,7 +3,7 @@
 
 	db   "It protects its"
 	next "body by covering"
-	next "itself in bubbles."
+	next "itself in bubbles"
 
 	page "Has increased"
 	next "accuracy.@"

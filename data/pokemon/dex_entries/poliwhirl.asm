@@ -1,8 +1,8 @@
 	db "TADPOLE@" ; species name
 	dw 303, 440 ; height, weight
 
-	db   "It prefers to live"
-	next "underwater, though"
+	db   "It likes to live"
+	next "underwater, but"
 	next "it can walk."
 
 	page "Immune to"

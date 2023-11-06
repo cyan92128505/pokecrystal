@@ -6,4 +6,4 @@
 	next "brings peace."
 
 	page "Gains armour"
-	next "when at full hp.@"
+	next "when at full HP.@"

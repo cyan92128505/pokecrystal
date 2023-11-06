@@ -2,7 +2,7 @@
 	dw 311, 790 ; height, weight
 
 	db   "It is always so"
-	next "absent-minded that"
+	next "absent-minded"
 	next "it won't react."
 
 	page "Regenerates"

@@ -22,6 +22,7 @@ MasterSabrinaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SABRINA, MASTER_SABRINA
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	checkevent EVENT_BEAT_MASTER_SABRINA
 	iftrue .skipFlags
@@ -42,6 +43,14 @@ MasterSabrinaScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyEliteFour
+    waitbutton
+    closetext
+    end
 
 MasterBrunoScript:
 	faceplayer
@@ -56,6 +65,7 @@ MasterBrunoScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BRUNO, MASTER_BRUNO
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	checkevent EVENT_BEAT_MASTER_BRUNO
 	iftrue .skipFlags
@@ -76,6 +86,14 @@ MasterBrunoScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyEliteFour
+    waitbutton
+    closetext
+    end
 
 MasterKarenScript:
 	faceplayer
@@ -90,6 +108,7 @@ MasterKarenScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KAREN, MASTER_KAREN
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	checkevent EVENT_BEAT_MASTER_KAREN
 	iftrue .skipFlags
@@ -110,6 +129,14 @@ MasterKarenScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyEliteFour
+    waitbutton
+    closetext
+    end
 
 MasterGiovanniScript:
 	faceplayer
@@ -124,6 +151,7 @@ MasterGiovanniScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer GIOVANNI, MASTER_GIOVANNI
 	startbattle
+	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	checkevent EVENT_BEAT_MASTER_GIOVANNI
 	iftrue .skipFlags
@@ -144,6 +172,14 @@ MasterGiovanniScript:
 	waitbutton
 	closetext
 	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext DefaultLoseAfterBattleTextDestinyEliteFour
+    waitbutton
+    closetext
+    end
 
 DefaultSeenTextDEF:
     text "Let's fight!"
@@ -165,6 +201,11 @@ RematchTextDestinyEliteFour:
 RematchRefuseTextDestinyEliteFour:
     text "I will always"
     line "be here."
+    done
+
+DefaultLoseAfterBattleTextDestinyEliteFour:
+    text "Better luck"
+    line "next time."
     done
 
 Movement_DestinyEliteFourTurnBack:

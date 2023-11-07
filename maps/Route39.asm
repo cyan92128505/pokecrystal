@@ -252,7 +252,7 @@ PsychicNormanSeenText:
 	done
 
 PsychicNormanBeatenText:
-	text "You broke free!"
+	text "What's the test!"
 	done
 
 PsychicNormanAfterBattleText:

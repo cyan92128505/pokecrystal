@@ -160,7 +160,7 @@ Route41Rock: ; unreferenced
 	jumpstd SmashRockScript
 
 Route41HiddenMaxEther:
-	hiddenitem MAX_ETHER, EVENT_ROUTE_41_HIDDEN_MAX_ETHER
+	hiddenitem MAX_ELIXER, EVENT_ROUTE_41_HIDDEN_MAX_ETHER
 
 SwimmermCharlieSeenText:
 	text "The water's warm"
@@ -183,165 +183,216 @@ SwimmermCharlieAfterBattleText:
 	done
 
 SwimmermGeorgeSeenText:
-	text "I'm a bit tired."
-	line "If I win, lend me"
-	cont "your #MON."
+	text "Hey kid."
+
+	para "That a real nice"
+	line "#MON ya"
+	cont "got der."
+
+	para "get you off"
+	line "now."
 	done
 
 SwimmermGeorgeBeatenText:
-	text "Pant, pant…"
+	text "I wer only"
+	line "foolin."
 	done
 
 SwimmermGeorgeAfterBattleText:
-	text "It's so far to"
-	line "CIANWOOD."
+	text "I've picked up"
+	line "many a gift"
+	cont "from other"
+	cont "trainers."
 
-	para "But it's no easy"
-	line "return trip to"
-	cont "OLIVINE either."
-
-	para "What should I do?"
+	para "Yar har har!"
 	done
 
 SwimmermBerkeSeenText:
-	text "See those islands"
-	line "that are blocked"
-	cont "by whirlpools?"
+	text "Oh hello there."
 
-	para "There just has to"
-	line "be a secret!"
+	para "You're looking"
+	line "like you might"
+	cont "be somewhat lost."
+
+	para "Given you are"
+	line "here..."
+
+	para "Wherever here"
+	line "is..."
+
+	para "I'm CAPTAIN"
+	line "JACK SPARROW."
+
+	para "I would bet"
+	line "all me ALPH"
+	cont "gold that you"
+	cont "have the heart"
+	cont "of a pirate."
+
+	para "Show me your"
+	line "footwork!"
 	done
 
 SwimmermBerkeBeatenText:
-	text "What's the secret"
-	line "to your strength?"
+	text "That's not much"
+	line "incentive to"
+	cont "fight fair."
 	done
 
 SwimmermBerkeAfterBattleText:
-	text "It was a dark and"
-	line "stormy night…"
+	text "We all come"
+	line "into this world"
+	cont "with a pistol"
+	cont "loaded with but"
+	cont "a single shot."
 
-	para "I saw this giant"
-	line "#MON flying"
-	cont "from the islands."
+	para "Don't waste"
+	line "your one shot."
 
-	para "It was scattering"
-	line "feathers from its"
-	cont "silver wings."
+	para "Make it count!"
 	done
 
 SwimmermKirkSeenText:
-	text "The waves are wild"
-	line "here."
+	text "Halt!"
 
-	para "They tire you out"
-	line "while you swim."
+	para "Do you have the"
+	line "correct papers"
+	cont "to operate in"
+	cont "these waters."
+
+	para "No..."
+
+	para "Another rotten"
+	line "pirate."
+
+	para "Well I shall"
+	line "see to it you"
+	cont "are dealt with."
 	done
 
 SwimmermKirkBeatenText:
-	text "I'm beat!"
+	text "I surrender!"
 	done
 
 SwimmermKirkAfterBattleText:
-	text "The currents keep"
-	line "me from reaching"
-	cont "that island."
+	text "If you run into"
+	line "a pirate named"
+	cont "Jack you be sure"
+	cont "to alert me!"
 	done
 
 SwimmermMathewSeenText:
-	text "Are you seeking"
-	line "the secrets of"
-	cont "WHIRL ISLANDS?"
+	text "Within the caves"
+	line "dwells a great"
+	cont "leviathan."
+
+	para "But it will"
+	line "only appear to"
+	cont "a true SILVER"
+	cont "knight."
 	done
 
 SwimmermMathewBeatenText:
-	text "Ooh, you've got"
-	line "great endurance!"
+	text "Forgive me great"
+	line "LUGIA."
 	done
 
 SwimmermMathewAfterBattleText:
-	text "A secret about"
-	line "WHIRL ISLANDS…"
+	text "Stay away from"
+	line "the caves!"
 
-	para "It's pitch-black"
-	line "inside!"
+	para "They are a"
+	line "holy place and"
+	cont "I will not let"
+	cont "you besmirch"
+	cont "them."
 	done
 
 SwimmerfKayleeSeenText:
-	text "I'm on my way to"
-	line "WHIRL ISLANDS."
+	text "I can't go on."
 
-	para "I'm going explor-"
-	line "ing with friends."
+	para "CIANWOOD is"
+	line "too far."
+
+	para "I need my"
+	line "#MON to"
+	cont "save me."
+
+	para "Right after I"
+	line "beat you."
 	done
 
 SwimmerfKayleeBeatenText:
-	text "Is that how you do"
-	line "it?"
+	text "I'm doomed"
 	done
 
 SwimmerfKayleeAfterBattleText:
-	text "There's supposed"
-	line "to be a big #-"
-	cont "MON deep beneath"
-	cont "WHIRL ISLANDS."
+	text "I must push"
+	line "through!"
 
-	para "I wonder what it"
-	line "could be?"
+	para "I must keep"
+	line "going!"
 	done
 
 SwimmerfSusieSeenText:
-	text "You look so ele-"
-	line "gant, riding your"
-	cont "#MON."
+	text "It is always"
+	line "logical to check"
+	cont "the perimeter"
+	cont "when looking"
+	cont "for a way in."
 	done
 
 SwimmerfSusieBeatenText:
-	text "I'm crushed…"
+	text "Q.E.D"
 	done
 
 SwimmerfSusieAfterBattleText:
-	text "Wasn't there a hit"
-	line "song about a boy"
-	cont "riding a LAPRAS?"
+	text "Why are these"
+	line "barriers not"
+	cont "perfect squares."
+
+	para "Who would make"
+	line "this!"
 	done
 
 SwimmerfDeniseSeenText:
-	text "The weather is so"
-	line "beautiful, I'm in"
-	cont "a daze!"
+	text "What are these"
+	line "barriers?"
+
+	para "I will use my"
+	line "ninja jutsu"
+	cont "to slip under"
+	cont "these"
 	done
 
 SwimmerfDeniseBeatenText:
-	text "Ohhh!"
+	text "Go shadow"
+	line "clones!"
 	done
 
 SwimmerfDeniseAfterBattleText:
-	text "A sunburn is the"
-	line "worst for skin."
+	text "I welcome the"
+	line "darkness of"
+	cont "the cave."
 
-	para "But I don't use a"
-	line "sunblock."
-
-	para "I won't pollute"
-	line "the water."
+	para "Where my ninja"
+	line "power is"
+	cont "strongest."
 	done
 
 SwimmerfKaraSeenText:
-	text "If you need to"
-	line "rest, just tread"
-	cont "water."
+	text "There must be"
+	line "a way into these"
+	cont "islands."
 
-	para "You'll get your"
-	line "wind back, so you"
-
-	para "can keep on going"
-	line "strong."
+	para "Maybe a special"
+	line "move can get"
+	cont "past these rough"
+	cont "waters."
 	done
 
 SwimmerfKaraBeatenText:
-	text "Oh! You have more"
-	line "energy than I do."
+	text "That didn't do it."
 	done
 
 SwimmerfKaraAfterBattleText:
@@ -351,22 +402,30 @@ SwimmerfKaraAfterBattleText:
 	done
 
 SwimmerfWendySeenText:
-	text "At night, STARYU"
-	line "gather near the"
-	cont "water's surface."
+	text "I've had it"
+	line "living in"
+	cont "CIANWOOD!"
+
+	para "I'm swimming to"
+	line "the mainland."
+
+	para "Nobody can"
+	line "stop me!"
 	done
 
 SwimmerfWendyBeatenText:
-	text "Oh, dear…"
+	text "I'm not going"
+	line "back there!"
 	done
 
 SwimmerfWendyAfterBattleText:
-	text "The clusters of"
-	line "STARYU light up"
-	cont "at the same time."
+	text "It's just so"
+	line "boring in"
+	cont "CIANWOOD."
 
-	para "It's so beautiful,"
-	line "it's scary."
+	para "And that little"
+	line "psychic girl"
+	cont "is so annoying!"
 	done
 
 Route41FieldMon1Script:

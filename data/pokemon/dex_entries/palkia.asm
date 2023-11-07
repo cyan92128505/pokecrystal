@@ -1,8 +1,8 @@
 	db "SPATIAL@" ; species name
 	dw 1309, 21000 ; height, weight
 
-	db   "Has full control"
-	next "over the aspects"
+	db   "Has control"
+	next "over aspects"
 	next "of space."
 
 	page "Resists FIRE/"

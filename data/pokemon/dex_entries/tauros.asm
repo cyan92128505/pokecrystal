@@ -1,9 +1,8 @@
 	db "WILD BULL@" ; species name
 	dw 507, 8950 ; height, weight
 
-	db   "These violent"
-	next "#MON fight"
-	next "with anything."
+	db   "A violent beast"
+	next "full of rage."
 
 	page "lowers foes"
 	next "ATTACK upon"

@@ -5,6 +5,6 @@
 	next "cyborg from the"
 	next "future!"
 
-	page "SPEC ATTACK"
+	page "SPECIAL ATTACK"
 	next "increases upon"
 	next "entering battle.@"

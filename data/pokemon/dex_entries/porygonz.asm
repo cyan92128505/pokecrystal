@@ -5,6 +5,6 @@
 	next "to travel alien"
 	next "dimensions."
 
-	page "SPEC ATTACK"
+	page "SPECIAL ATTACK"
 	next "increases upon"
 	next "entering battle.@"

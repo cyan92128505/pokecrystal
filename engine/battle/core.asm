@@ -572,7 +572,7 @@ DoubleEnemySpeedInHL:
 	ret nz
 
     ld a, [wEnemyMonSpeed]
-    srl a
+    sla a
     ld l, a
     ld a, [wEnemyMonSpeed + 1]
     rl a
@@ -585,7 +585,7 @@ DoublePlayerSpeedInDE:
 	ret nz
 
     ld a, [wBattleMonSpeed]
-    srl a
+    sla a
     ld e, a
     ld a, [wBattleMonSpeed + 1]
     rl a

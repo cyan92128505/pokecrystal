@@ -571,10 +571,10 @@ DoubleEnemySpeedInHL:
 	and 1 << PAR
 	ret nz
 
-    ld a, [wEnemyMonSpeed]
+    ld a, [wEnemyMonSpeed + 1]
     sla a
     ld l, a
-    ld a, [wEnemyMonSpeed + 1]
+    ld a, [wEnemyMonSpeed]
     rl a
     ld h, a
     ret
@@ -584,10 +584,10 @@ DoublePlayerSpeedInDE:
 	and 1 << PAR
 	ret nz
 
-    ld a, [wBattleMonSpeed]
+    ld a, [wBattleMonSpeed + 1]
     sla a
     ld e, a
-    ld a, [wBattleMonSpeed + 1]
+    ld a, [wBattleMonSpeed]
     rl a
     ld d, a
     ret

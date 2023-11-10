@@ -1047,7 +1047,7 @@ BattleTowerMons:
 
     db SNORLAX
 	db LEFTOVERS
-	db AI_RETURN, CURSE, REST, CRUNCH
+	db AI_RETURN, CRUNCH, REST, CURSE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -1057,7 +1057,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 10, 10, 10 ; PP
+	db 32, 24, 10, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 45 ; Level
@@ -2037,7 +2037,7 @@ BattleTowerMons:
 
     db MAGNEZONE
 	db MAGNET
-	db THUNDERBOLT, THUNDER_WAVE, EXPLOSION, FLASH_CANNON
+	db ZAP_CANNON, FLASH_CANNON, FLASH, EXPLOSION
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2047,7 +2047,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 24, 24 ; PP
+	db 16, 24, 32, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 43 ; Level
@@ -2309,7 +2309,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 13, 13, 13, 13 ; DVs
-	db 10, 10, 5, 15 ; PP
+	db 32, 24, 10, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 63 ; Level
@@ -2949,7 +2949,7 @@ BattleTowerMons:
 
 	db MAGNEZONE
 	db MAGNET
-	db THUNDERBOLT, THUNDER_WAVE, EXPLOSION, FLASH_CANNON
+	db ZAP_CANNON, FLASH_CANNON, FLASH, EXPLOSION
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2959,7 +2959,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 24, 24 ; PP
+	db 16, 24, 32, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3733,7 +3733,7 @@ BattleTowerMons:
 
     db SNORLAX
 	db LEFTOVERS
-	db AI_RETURN, CURSE, REST, CRUNCH
+	db AI_RETURN, CRUNCH, REST, CURSE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -3743,7 +3743,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 10, 10, 10 ; PP
+	db 32, 24, 10, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 82 ; Level
@@ -4855,7 +4855,7 @@ BattleTowerMons:
 
     db SNORLAX
 	db LEFTOVERS
-	db AI_RETURN, CURSE, REST, CRUNCH
+	db AI_RETURN, CRUNCH, REST, CURSE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4865,7 +4865,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 16, 10, 24 ; PP
+	db 32, 24, 10, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

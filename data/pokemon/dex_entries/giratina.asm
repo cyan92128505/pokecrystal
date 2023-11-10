@@ -5,6 +5,6 @@
 	next "ARCEUS for its"
 	next "violent power."
 
-	page "Immune to"
-	next "status changes"
-	next "and recoil.@"
+	page "Is immune"
+	next "to all status"
+	next "changes.@"

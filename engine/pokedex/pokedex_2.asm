@@ -215,92 +215,67 @@ DisplayDexEntry:
 	ret
 
 ; AndrewNote - Stats Page - code to display ability
+; NOTE:
+; for some reason viewing the ability stats page while in battle
+; will break the game if the Pokemons weight is between
+; 563.2 - 588.7
+; these give a first byte of 16 in the 16 bit weight register
+
 DisplayAbility:
 	ld a, [wTempSpecies]
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 0, 17 ; placed off screen
-	call PlaceFarString ; dex species
 
-	ld h, b
-	ld l, c
+; place species
+	hlcoord 1, 11
+	call PlaceFarString
+
+; clear area
 	push de
-	ld de, wTempSpecies
+	lb bc, 5, SCREEN_WIDTH - 1
+	hlcoord 1, 11
+	call ClearBox
+	pop de
+
+; do stuff?
+	push de
 	pop hl
 	pop bc
-; Get the height of the Pokemon.
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
-	inc hl
 	ld a, b
 	push af
-	push hl
-	call GetFarWord
-	ld d, l
-	ld e, h
-	pop hl
-	inc hl
-	inc hl
-	ld a, d
-	or e
-	jr z, .skip_height
-	push hl
 	push de
-; Print the height, with two of the four digits in front of the decimal point
-	ld hl, sp+0
-	ld d, h
-	ld e, l
 	pop af
-	pop hl
-.skip_height
-	pop af
-	push af
+	inc hl
+	inc hl
+	inc hl
 	inc hl
 	push hl
 	dec hl
-	call GetFarWord
-	ld d, l
-	ld e, h
-	ld a, e
-	or d
-	jr z, .skip_weight
-	push de
-; Print the weight, with four of the five digits in front of the decimal point
-	ld hl, sp+0
-	ld d, h
-	ld e, l
-	pop de
-.skip_weight
-; Page 1
+
+; place pokedex page 1
 	pop de
 	pop af
-	hlcoord 2, 11
+	hlcoord 1, 11
 	push af
 	call PlaceFarString
-	pop bc
-; Page 2
-	push bc
+
+; clear area
 	push de
-	lb bc, 5, SCREEN_WIDTH - 2
-	hlcoord 2, 11
+	lb bc, 5, SCREEN_WIDTH - 1
+	hlcoord 1, 11
 	call ClearBox
 	pop de
+
+; place pokedex page 2
 	inc de
 	pop af
 	hlcoord 1, 11
 	call PlaceFarString
-
-	push de
-	hlcoord 0, 17
-	ld de, EmptyString
-	call PlaceString
-	pop de
 	ret
-
-EmptyString:
-    db "                @"
 
 POKeString: ; unreferenced
 	db "#@"

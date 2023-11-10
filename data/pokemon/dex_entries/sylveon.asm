@@ -5,6 +5,6 @@
 	next "trainers feelings"
 	next "with its ribbons."
 
-	page "It is immune"
+	page "Is immune"
 	next "to all status"
 	next "changes.@"

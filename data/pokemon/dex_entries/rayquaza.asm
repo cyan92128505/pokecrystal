@@ -1,5 +1,5 @@
 	db "SKY LORD@" ; species name
-	dw 7000, 4553 ; height, weight
+	dw 7000, 50000 ; height, weight
 
 	db   "The great dragon."
 	next "It cleaves the"

@@ -101,7 +101,7 @@ PlayerNeighborRadioText1:
 	line "have been seen"
 	cont "mobilising near"
 	cont "the coast."
-
+	done
 
 PlayerNeighborRadioText2:
 	para "Invasion of KANTO"

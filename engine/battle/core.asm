@@ -568,12 +568,18 @@ DoubleEnemySpeedInHL:
 	ld hl, wEnemyMonSpeed + 1
 	sla [hl]
 	dec hl
-	rl [hl]
+    rl [hl]
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp h
+	jr c, .cap
+	ret nz
+	ld a, LOW(MAX_STAT_VALUE)
+	cp l
 	ret nc
-	ld a, $FF
-	ld [hli], a
-	ld [hl], a
-	ret
+.cap
+	ld hl, MAX_STAT_VALUE
+ 	ret
 
 DoublePlayerSpeedInDE:
     push hl
@@ -581,13 +587,19 @@ DoublePlayerSpeedInDE:
 	sla [hl]
 	dec hl
 	rl [hl]
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp h
+	jr c, .cap
+	jr nz, .return
+	ld a, LOW(MAX_STAT_VALUE)
+	cp l
 	jr nc, .return
-	ld a, $FF
-	ld [hli], a
-	ld [hl], a
+.cap
+	ld hl, MAX_STAT_VALUE
 .return
 	pop hl
-	ret
+ 	ret
 
 CheckContestBattleOver:
 	ld a, [wBattleType]

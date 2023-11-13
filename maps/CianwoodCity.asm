@@ -117,11 +117,9 @@ CianwoodCityChucksWife:
 	opentext
 	checkevent EVENT_GOT_HM02_FLY
 	iftrue .GotFly
-	writetext ChucksWifeEasierToFlyText
-	promptbutton
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .BeatChuck
-	writetext ChucksWifeBeatChuckText
+	writetext ChucksWifeEasierToFlyText
 	waitbutton
 	closetext
 	end
@@ -149,9 +147,6 @@ CianwoodCityPokefanM:
 
 CianwoodCityLass:
 	jumptextfaceplayer CianwoodCityLassText
-
-CianwoodCityUnusedScript: ; unreferenced
-	jumptextfaceplayer CianwoodCityUnusedText
 
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
@@ -215,59 +210,54 @@ CianwoodCityEusineDepartMovement:
 	step_end
 
 ChucksWifeEasierToFlyText:
-	text "You crossed the"
-	line "sea to get here?"
+	text "My husband is"
+	line "the GYM LEADER."
 
-	para "That must have"
-	line "been hard."
+	para "He is obsessed"
+	line "with FIGHTING"
+	cont "#MON..."
 
-	para "It would be much"
-	line "easier if your"
+	para "and anime."
 
-	para "#MON knew how"
-	line "to FLY…"
-	done
+	para "I like FLYING"
+	line "#MON."
 
-ChucksWifeBeatChuckText:
-	text "But you can't use"
-	line "FLY without this"
-	cont "city's GYM BADGE."
+	para "They are strong"
+	line "against FIGHTING."
 
-	para "If you beat the"
-	line "GYM LEADER here,"
-	cont "come see me."
+	para "Please beat CHUCK."
 
-	para "I'll have a nice"
-	line "gift for you."
+	para "He needs a kick in"
+	line "his ego."
 	done
 
 ChucksWifeGiveHMText:
-	text "That's CIANWOOD's"
-	line "GYM BADGE!"
+	text "You beat CHUNK!"
 
-	para "Then you should"
-	line "take this HM."
+	para "I hope that"
+	line "humbles him a"
+	cont "little."
+
+	para "Take this."
+
+	para "It will make the"
+	line "world a smaller"
+	cont "place."
 	done
 
 ChucksWifeFlySpeechText:
-	text "Teach FLY to your"
-	line "#MON."
-
-	para "You will be able"
-	line "to FLY instantly"
-
-	para "to anywhere you "
-	line "have visited."
+	text "With FLY you can"
+	line "instantly return"
+	cont "to any place you"
+	cont "have been before."
 	done
 
 ChucksWifeChubbyText:
-	text "My husband lost to"
-	line "you, so he needs"
-	cont "to train harder."
-
-	para "That's good, since"
-	line "he was getting a"
-	cont "little chubby."
+	text "I love CHUCK"
+	line "but he needs to"
+	cont "be brought down"
+	cont "to earth"
+	cont "sometimes."
 	done
 
 CianwoodCityYoungsterText:
@@ -276,99 +266,128 @@ CianwoodCityYoungsterText:
 
 	para "to OLIVINE in-"
 	line "stantly."
+
+	para "As long as you"
+	line "have a"
+	cont "#MON that"
+	cont "is able to use"
+	cont "it."
+
+	para "I think I saw"
+	line "some bird"
+	cont "#MON up near"
+	cont "the lighthouse."
 	done
 
 CianwoodCityPokefanMText:
-	text "Boulders to the"
-	line "north of town can"
-	cont "be crushed."
+	text "DBZ is pretty"
+	line "cool."
 
-	para "They may be hiding"
-	line "something."
+	para "I'm more of a"
+	line "FMAB guy."
 
-	para "Your #MON could"
-	line "use ROCK SMASH to"
-	cont "break them."
+	para "Though I tell"
+	line "you a secret."
+
+	para "CHUCK would"
+	line "pound me for"
+	cont "saying this..."
+
+	para "The best anime is"
+	line "Avatar The Last"
+	cont "Air Bender."
 	done
 
 CianwoodCityLassText:
-	text "CHUCK, the GYM"
-	line "LEADER, spars with"
+	text "Everyone here"
+	line "is wrong."
 
-	para "his fighting #-"
-	line "MON."
-	done
+	para "The best anime is"
+	line "Death Note."
 
-CianwoodCityUnusedText:
-	text "There are several"
-	line "islands between"
-	cont "here and OLIVINE."
+	para "You actually get"
+	line "to think rather"
+	cont "than just punch"
+	cont "people."
 
-	para "A mythical sea"
-	line "creature supposed-"
-	cont "ly lives there."
+	para "I wish I had a"
+	line "Death Note!"
+
+	para "The names I"
+	line "would put in it."
 	done
 
 EusineSuicuneText:
-	text "EUSINE: Yo,"
-	line "<PLAYER>."
+	text "<PLAYER>!"
 
-	para "Wasn't that"
-	line "SUICUNE just now?"
+	para "That was SUICUNE!"
 
-	para "I only caught a"
-	line "quick glimpse, but"
+	para "SUICUNE seems"
+	line "taken with you."
 
-	para "I thought I saw"
-	line "SUICUNE running on"
-	cont "the waves."
+	para "It must be that"
+	line "quiet heroic"
+	cont "strength you"
+	cont "radiate."
 
-	para "SUICUNE is beau-"
-	line "tiful and grand."
+	para "You have an"
+	line "indomitable and"
+	cont "kind heart."
 
-	para "And it races"
-	line "through towns and"
+	para "I can tell."
 
-	para "roads at simply"
-	line "awesome speeds."
+	para "But you can't"
+	line "have her!"
 
-	para "It's wonderful…"
+	para "She is mine!"
 
-	para "I want to see"
-	line "SUICUNE up close…"
-
-	para "I've decided."
-
-	para "I'll battle you as"
-	line "a trainer to earn"
-	cont "SUICUNE's respect!"
-
-	para "Come on, <PLAYER>."
-	line "Let's battle now!"
+	para "I will prove"
+	line "to SUICUNE I"
+	cont "am worthy."
 	done
 
 EusineBeatenText:
-	text "I hate to admit"
-	line "it, but you win."
+	text "My one shot."
+
+	para "Gone!"
+
+	para "My skills have"
+	line "failed me!"
+	done
+
+EusineWinsText:
+	text "Did you see"
+	line "this SUICUNE!"
+
+	para "Accept me!!"
 	done
 
 EusineAfterText:
-	text "You're amazing,"
-	line "<PLAYER>!"
+	text "It is clear what"
+	line "SUICUNE sees in"
+	cont "you."
 
-	para "No wonder #MON"
-	line "gravitate to you."
+	para "I can never"
+	line "compare to you."
 
-	para "I get it now."
+	para "...."
 
-	para "I'm going to keep"
-	line "searching for"
-	cont "SUICUNE."
+	para "But I will never"
+	line "give up."
 
-	para "I'm sure we'll see"
-	line "each other again."
+	para "My heart is"
+	line "bound to SUICUNE"
+	cont "with chains I"
+	cont "can never break."
 
-	para "See you around!"
+	para "Where she goes I"
+	line "must follow."
+
+	para "I know we will"
+	line "meet again."
+
+	para "Good luck"
+	line "<PLAYER>."
 	done
 
 CianwoodCitySignText:
@@ -1118,7 +1137,7 @@ CianwoodCity_MapEvents:
 	warp_event  8, 55, CIANWOOD_GYM, 1
 	warp_event 23, 55, CIANWOOD_POKECENTER_1F, 1
 	warp_event 15, 59, CIANWOOD_PHARMACY, 1
-	warp_event  9, 43, CIANWOOD_PHOTO_STUDIO, 1
+	warp_event  0, 65, CIANWOOD_PHOTO_STUDIO, 1
 	warp_event 15, 49, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event  5, 29, POKE_SEERS_HOUSE, 1
 
@@ -1133,7 +1152,7 @@ CianwoodCity_MapEvents:
 	bg_event  7, 57, BGEVENT_READ, CianwoodGymSign
 	bg_event 24, 55, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 19, 59, BGEVENT_READ, CianwoodPharmacySign
-	bg_event  8, 44, BGEVENT_READ, CianwoodPhotoStudioSign
+	bg_event  0, 65, BGEVENT_READ, CianwoodPhotoStudioSign
 	bg_event  8, 36, BGEVENT_READ, CianwoodPokeSeerSign
 	bg_event 12, 22, BGEVENT_READ, CianwoodBeachSign
 	bg_event  4, 31, BGEVENT_ITEM, CianwoodCityHiddenRevive
@@ -1152,7 +1171,7 @@ CianwoodCity_MapEvents:
 	object_event 25, 46, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 7, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 23, 8, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, HoenSpyScript, EVENT_BEAT_SOLDIER_10
-	object_event 15, 55, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, PsychicGirlPostScript, EVENT_TEMP_EVENT_1
+	object_event 13, 55, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, PsychicGirlPostScript, EVENT_TEMP_EVENT_1
 	object_event 11, 22, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, PsychicGirlTalkScript, EVENT_TEMP_EVENT_2
 	object_event 22,  8, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, ObjectEvent, EVENT_TEMP_EVENT_3
 	object_event 23,  9, SPRITE_POLIWAG, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, ObjectEvent, EVENT_FIELD_MON_6

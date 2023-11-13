@@ -161,7 +161,7 @@ Text_ReceivedMineralBadge:
 	done
 
 Jasmine_BadgeSpeech:
-    para "With the"
+    text "With the"
     line "MINERALBADGE"
     line "you can now train"
     cont "#MON up to"
@@ -195,17 +195,7 @@ Jasmine_IronTailSpeech:
 	done
 
 Jasmine_GoodLuck:
-    text "With the"
-    line "MINERALBADGE"
-    line "you can now train"
-    cont "#MON up to"
-    cont "level 55."
-
-    para "And capture"
-    line "#MON up to"
-    cont "level 45."
-
-	para "Don't let"
+	text "Don't let"
 	line "anyone change"
 	cont "your perception"
 	cont "of yourself."

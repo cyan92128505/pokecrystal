@@ -21,42 +21,58 @@ CianwoodLugiaSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 CianwoodLugiaSpeechHouseTeacherText:
-	text "You came from"
-	line "OLIVINE?"
+	text "We are safe"
+	line "from the war here."
 
-	para "Do you remember"
-	line "the four islands"
-	cont "along the way?"
-
-	para "I heard that a "
-	line "mythical sea crea-"
-	cont "ture is hiding in"
-	cont "them."
+	para "HOENs battle ships"
+	line "will never make it"
+	cont "past the rough"
+	cont "waters of the"
+	cont "WHIRL ISLANDS."
 	done
 
 CianwoodLugiaSpeechHouseLassText:
-	text "I heard that you"
-	line "can only see it if"
+	text "I think the"
+	line "whirlpools around"
+	cont "the islands are"
+	cont "caused by an"
+	cont "ancient #MON"
+	cont "within the cave."
 
-	para "you have a SILVER"
-	line "WING."
+	para "I went looking"
+	line "for it with a"
+	cont "group of explorers"
+	cont "once."
 
-	para "It must have the"
-	line "same scent as the"
-	cont "creature."
+	para "We didn't find"
+	line "anything and we"
+	cont "nearly didn't"
+	cont "make it back out."
+
+	para "I think a"
+	line "special item is"
+	cont "needed to see"
+	cont "the #MON."
 	done
 
 CianwoodLugiaSpeechHouseTwinText:
-	text "I've heard that"
-	line "the whirlpools"
+	text "A new sailor"
+	line "started hanging"
+	cont "around here."
 
-	para "around the islands"
-	line "are caused by the"
-	cont "sea creature."
+	para "He seems a bit"
+	line "odd."
 
-	para "You might need a"
-	line "special move to"
-	cont "get past them."
+	para "I think he is"
+	line "hiding something."
+
+	para "My friend AMBER"
+	line "thinks so too."
+
+	para "She lives with"
+	line "the #SEER."
+
+	para "She is psychic!"
 	done
 
 CianwoodLugiaSpeechHouse_MapEvents:

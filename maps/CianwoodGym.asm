@@ -22,7 +22,7 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText1
 	waitbutton
 	closetext
-	turnobject CIANWOODGYM_CHUCK, RIGHT
+    playmusic MUSIC_HOEN_CHAMPION
 	opentext
 	writetext ChuckIntroText2
 	waitbutton
@@ -37,7 +37,7 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText3
 	waitbutton
 	closetext
-	winlosstext ChuckLossText, 0
+	winlosstext ChuckLossText, ChuckWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CHUCK, CHUCK1
 	startbattle
@@ -71,7 +71,7 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText1
 	waitbutton
 	closetext
-	turnobject CIANWOODGYM_CHUCK, RIGHT
+    playmusic MUSIC_HOEN_CHAMPION
 	opentext
 	writetext ChuckIntroText2
 	waitbutton
@@ -86,7 +86,7 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText3
 	waitbutton
 	closetext
-	winlosstext ChuckLossText, 0
+	winlosstext ChuckLossText, ChuckWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer CHUCK, CHUCK1
 	startbattle
@@ -184,50 +184,80 @@ CianwoodGymMovement_ChuckChucksBoulder:
 	step_end
 
 ChuckIntroText1:
-	text "WAHAHAH!"
+	text "Strength is the"
+	line "only thing that"
+	cont "matters in this"
+	cont "world."
 
-	para "So you've come"
-	line "this far!"
+	para "Like VEGETA I"
+	line "train everyday."
 
-	para "Let me tell you,"
-	line "I'm tough!"
+	para "I train to claim"
+	line "my destiny!"
 
-	para "My #MON will"
-	line "crush stones and"
-	cont "shatter bones!"
+	para "To be the best"
+	line "as I always have"
+	cont "been."
 
-	para "Watch this!"
+	para "Now behold."
+
+	para "This is my"
+	line "normal state."
+
+	para "WHAAAH!"
+
+	para "This is a"
+	line "SUPER TRAINER."
+
+	para "And this..."
+
+	para "is to go..."
+
+	para "Even further"
+	line "beyond."
 	done
 
 ChuckIntroText2:
-	text "CHUCK: Urggh!"
-	line "…"
+    text "AHAAAAAAAAA!!"
 
-	para "Oooarrgh!"
+    para "AHHHAHHHAHH!!"
+
+    para "WHUAHHHHHHH!!"
+
+    para "AHAAAAAAAA!!"
+
+    para "OOOHHARRRA!!"
+
+    para "RRAHHHAAUUUU!!"
+
+    para ".............."
+
+    para "EHHEEEEEEEEH!!!!!!"
 	done
 
 ChuckIntroText3:
-	text "There! Scared now,"
-	line "are you?"
+	text "This is called"
+	line "SUPER TRAINER 3!"
 
-	para "What?"
-	line "It has nothing to"
-
-	para "do with #MON?"
-	line "That's true!"
-
-	para "Come on. We shall"
-	line "do battle!"
+	para "I'm gonna blow"
+	line "you to bits!"
 	done
 
 ChuckLossText:
-	text "Wha? Huh?"
-	line "I lost?"
+	text "Oh man!"
 
-	para "How about that!"
-	line "You're worthy of"
-	cont "STORMBADGE!"
+	para "That was a"
+	line "good fight!"
+
+	para "You have earned"
+	line "the STORMBADGE!"
 	done
+
+ChuckWinText:
+    text "I'm just way"
+    line "stronger than"
+    cont "you."
+    done
 
 GetStormBadgeText:
 	text "<PLAYER> received"
@@ -235,108 +265,164 @@ GetStormBadgeText:
 	done
 
 ChuckExplainBadgeText:
-	text "STORMBADGE makes"
-	line "all #MON up to"
+    text "The STORMBADGE"
+    line "lets you train"
+    cont "#MON up to"
+    cont "level 45."
 
-	para "L70 obey, even"
-	line "traded ones."
-
-	para "It also lets your"
-	line "#MON use FLY"
-
-	para "when you're not in"
-	line "a battle."
+    para "And capture"
+    line "#MON up to"
+    cont "level 35."
 
 	para "Here, take this"
 	line "too!"
 	done
 
 ChuckExplainTMText:
-	text "That is DYNAMIC-"
+	text "That is DRAIN"
 	line "PUNCH."
 
-	para "It doesn't always"
-	line "hit, but when it"
-
-	para "does, it causes"
-	line "confusion!"
+	para "It drains the"
+	line "enemies KI"
+	cont "like what androids"
+	cont "nineteen and"
+	cont "twenty did!"
 	done
 
 ChuckAfterText:
-	text "WAHAHAH! I enjoyed"
-	line "battling you!"
+	text "I powered all"
+	line "the way up to"
+	cont "SUPER TRAINER 3!"
 
-	para "But a loss is a"
-	line "loss!"
+	para "But your power"
+	line "level was still"
+	cont "too great."
 
-	para "From now on, I'm"
-	line "going to train 24"
-	cont "hours a day!"
+	para "But I am not"
+	line "phased."
+
+	para "There is one"
+	line "thing a trainer"
+	cont "always keeps..."
+
+	para "His pride!!"
 	done
 
 BlackbeltYoshiSeenText:
-	text "My #MON and I"
-	line "are bound togeth-"
-	cont "er by friendship."
+	text "DRAGON!"
+	line "DRAGON!"
 
-	para "Our bond will"
-	line "never be broken!"
+	para "ROCK THE DRAGON!"
+
+	para "DRAGON BALL"
+	line "ZEEEEEE!!!!!"
 	done
 
 BlackbeltYoshiBeatenText:
-	text "This isn't real!"
+	text "Where did I"
+	line "put that"
+	cont "SENZU BEAN!"
 	done
 
 BlackbeltYoshiAfterText:
-	text "You seem to have a"
-	line "strong bond with"
-	cont "your #MON too!"
+	text "Are you a fan"
+	line "of DBZ?"
+
+	para "Here I will"
+	line "lend you my"
+	cont "complete dvd"
+	cont "collection!"
 	done
 
 BlackbeltLaoSeenText:
-	text "We martial artists"
-	line "fear nothing!"
+	text "The best villian"
+	line "is clearly CELL."
+
+	para "FRIEZA is over"
+	line "hyped and not"
+	cont "cool anymore."
+
+	para "And BUU is"
+	line "just stupid."
+
+	para "CELL is perfect!"
 	done
 
 BlackbeltLaoBeatenText:
-	text "That's shocking!"
+	text "But I'm the"
+	line "perfect beinngg..."
 	done
 
 BlackbeltLaoAfterText:
-	text "Fighting #MON"
-	line "are afraid of psy-"
-	cont "chics…"
+	text "Cell has the"
+	line "potential to be"
+	cont "the strongest"
+	cont "character!"
+
+	para "Anything GOKU,"
+	line "VEGETA or FRIEZA"
+	cont "can do, CELL can"
+	cont "do better!"
 	done
 
 BlackbeltNobSeenText:
-	text "Words are useless."
-	line "Let your fists do"
-	cont "the talking!"
+	text "I literally"
+	line "break down and"
+	cont "cry like a baby"
+	cont "every time I"
+	cont "see it."
+
+	para "And I watch it"
+	line "nearly everyday."
+
+	para "The father-son"
+	line "KAMEHAMEHA is the"
+	cont "coolest scene in"
+	cont "all fiction!"
 	done
 
 BlackbeltNobBeatenText:
-	text "…"
+	text "Let your power"
+	line "explode!!!"
 	done
 
 BlackbeltNobAfterText:
-	text "I lost! "
-	line "I'm speechless!"
+	text "I'm watching it"
+	line "again tonight."
+
+	para "I hope one day"
+	line "I become a dad"
+	cont "so can do the"
+	cont "father-son"
+	cont "KAMEHAMEHA with"
+	cont "my son."
+
+	para "Or daughter!"
 	done
 
 BlackbeltLungSeenText:
-	text "My raging fists"
-	line "will shatter your"
-	cont "#MON!"
+	text "BANKAI!"
+
+	para "Oh no wait..."
+
+	para "KAMEHAMEHA..."
+
+	para "I'm more of a"
+	line "BLEACH guy."
 	done
 
 BlackbeltLungBeatenText:
-	text "I got shattered!"
+	text "Now for my sad"
+	line "back story."
 	done
 
 BlackbeltLungAfterText:
-	text "My #MON lost…"
-	line "My… my pride is"
-	cont "shattered…"
+	text "Don't tell the"
+	line "others I prefer"
+	cont "BLEACH."
+
+	para "They'll want to"
+	line "debate me over it."
 	done
 
 RematchTextChuck:

@@ -7,8 +7,8 @@ SendScreenToPrinter:
 	bit 7, a
 	jr nz, .finished
 	call PrinterJumptableIteration
-	call CheckPrinterStatus
-	call PlacePrinterStatusString
+;	call CheckPrinterStatus
+;	call PlacePrinterStatusString
 	call DelayFrame
 	jr .loop
 
@@ -250,7 +250,7 @@ PrintUnownStamp:
 	call PrinterJumptableIteration
 	ld a, [wJumptableIndex]
 	cp $2
-	jr nc, .check_status
+;	jr nc, .check_status
 	ld a, 6 / 2
 	ld [wPrinterRowIndex], a
 

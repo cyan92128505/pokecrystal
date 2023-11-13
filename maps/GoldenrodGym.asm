@@ -323,19 +323,14 @@ WhitneyAttractText:
 WhitneyGoodCryText:
 	text "I feel good now!"
 
-    para "With the STARBADGE"
-    line "you can now train"
-    cont "#MON up to"
-    cont "level 40."
-
-    para "And capture"
-    line "#MON up to"
-    cont "level 30."
-
     para "Good luck <PLAYER>."
 
     para "Stay strong and"
     line "never give up!"
+
+    para "The audience"
+    line "loves a perky"
+    cont "protagonist."
 	done
 
 LassCarrieSeenText:

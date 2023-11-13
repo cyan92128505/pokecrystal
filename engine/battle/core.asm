@@ -565,6 +565,10 @@ DetermineMoveOrder:
 ; AndrewNote - Double speed in weather
 
 DoubleEnemySpeedInHL:
+	ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	ret nz
+
 	ld hl, wEnemyMonSpeed + 1
 	sla [hl]
 	dec hl
@@ -582,6 +586,10 @@ DoubleEnemySpeedInHL:
  	ret
 
 DoublePlayerSpeedInDE:
+	ld a, [wBattleMonStatus]
+	and 1 << PAR
+	ret nz
+
     push hl
 	ld hl, wBattleMonSpeed + 1
 	sla [hl]

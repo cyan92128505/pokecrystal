@@ -260,16 +260,7 @@ FalknerTMMudSlapText:
 	done
 
 FalknerFightDoneText:
-    text "The ZEPHYRBADGE"
-    line "lets you train"
-    cont "#MON up to"
-    cont "level 30."
-
-    para "And capture"
-    line "#MON up to"
-    cont "level 20."
-
-	para "There are #MON"
+	text "There are #MON"
 	line "GYMS in cities and"
 	cont "towns ahead."
 

@@ -36,97 +36,72 @@ CianwoodPokecenter1FSuperNerdScript:
 	jumptextfaceplayer CianwoodPokecenter1FSuperNerdText
 
 CianwoodPokecenter1FLassText:
-	text "Did you meet the"
-	line "#MANIAC?"
+	text "I so sick of"
+	line "all the muscle"
+	cont "heads here."
 
-	para "He's always brag-"
-	line "ging about his"
-	cont "rare #MON."
+	para "They are all"
+	line "big kids talking"
+	cont "about their"
+	cont "cartoons..."
+
+	para "sorry, anime..."
+
+	para "I want a real"
+	line "man."
+
+	para "Like those DRAGON"
+	line "trainers in"
+	cont "BLACKTHORN CITY."
 	done
 
 CianwoodGymGuideText:
-	text "The #MON GYM"
-	line "trainers here are"
-	cont "macho bullies."
+	text "Hey!"
 
-	para "If I stick around,"
-	line "they might come"
-	cont "after me."
+	para "I was too scared"
+	line "to go into the"
+	cont "GYM with all"
+	cont "those intense"
+	cont "muscled nerds."
 
-	para "Here's some ad-"
-	line "vice: the GYM"
+	para "They use"
+	line "FIGHTING"
+	cont "#MON."
 
-	para "LEADER uses the"
-	line "fighting-type."
-
-	para "So you should"
-	line "confound him with"
-	cont "psychic #MON."
-
-	para "Wipe out his #-"
-	line "MON before they"
-
-	para "can use their"
-	line "physical strength."
-
-	para "And those boulders"
-	line "in the middle of"
-	cont "the GYM?"
-
-	para "If you don't move"
-	line "them correctly,"
-
-	para "you won't reach"
-	line "the GYM LEADER."
-
-	para "If you get stuck,"
-	line "go outside."
+	para "You will want"
+	line "to use FLYING,"
+	cont "PSYCHIC or FAIRY"
+	cont "#MON against"
+	cont "them."
 	done
 
 CianwoodGymGuideWinText:
-	text "<PLAYER>! You won!"
-	line "I could tell by"
-	cont "looking at you!"
-	done
+	text "<PLAYER>! You"
+	line "knocked those"
+	cont "big guys right"
+	cont "on their backs."
 
-CianwoodPokecenter1FUnusedText1: ; unreferenced
-	text "Don't you get the"
-	line "urge to show off"
-
-	para "your #MON to"
-	line "friends?"
-
-	para "I wish I could"
-	line "show the #MON I"
-
-	para "raised to my pal"
-	line "in VIOLET."
-	done
-
-CianwoodPokecenter1FUnusedText2: ; unreferenced
-	text "I've been battling"
-	line "my pal in VIOLET"
-
-	para "using a MOBILE"
-	line "ADAPTER link."
-
-	para "I'm down 5-7"
-	line "against him. I've"
-	cont "gotta crank it up!"
+	para "I wish I was"
+	line "as strong as"
+	cont "you are!"
 	done
 
 CianwoodPokecenter1FSuperNerdText:
-	text "I love showing off"
-	line "the #MON that"
+	text "I mean I like"
+	line "anime as much"
+	cont "as the next guy."
 
-	para "I've raised."
-	line "Don't you?"
+	para "But I'm more"
+	line "into STAR TREK."
 
-	para "I'm going to get"
-	line "into a bunch of"
+	para "It doesn't have"
+	line "super action."
 
-	para "battles, and show"
-	line "off my #MON!"
+	para "But it has super"
+	line "ideas."
+
+	para "SPOCK vs KIRK"
+	line "was epic though!"
 	done
 
 CianwoodPokecenter1F_MapEvents:

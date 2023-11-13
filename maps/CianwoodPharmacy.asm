@@ -39,22 +39,37 @@ CianwoodPharmacyBookshelf:
 	jumpstd DifficultBookshelfScript
 
 PharmacistGiveSecretpotionText:
-	text "Your #MON ap-"
-	line "pear to be fine."
+	text "Who's there!"
 
-	para "Is something wor- "
-	line "rying you?"
+	para "Ah a customer!"
 
-	para "…"
+	para "Step right up a"
+	line "be the first to"
+	cont "sample my wonder"
+	cont "cure!"
 
-	para "The LIGHTHOUSE"
-	line "#MON is in"
-	cont "trouble?"
+	para "It can heal any"
+	line "ailment!"
 
-	para "I got it!"
+	para "Any you can"
+	line "think of."
 
-	para "This ought to do"
-	line "the trick."
+	para "Made with a"
+	line "super secret"
+	cont "ingredient."
+
+	para "What's that?"
+
+	para "The AMPHAROS at"
+	line "OLIVINE lighthouse"
+	cont "is ill."
+
+	para "Then you better"
+	line "take this for"
+	cont "free."
+
+	para "It wont let you"
+	line "down."
 	done
 
 ReceivedSecretpotionText:
@@ -64,10 +79,11 @@ ReceivedSecretpotionText:
 
 PharmacistDescribeSecretpotionText:
 	text "My SECRETPOTION is"
-	line "a tad too strong."
+	line "a miracle wonder"
+	cont "cure all."
 
-	para "I only offer it in"
-	line "an emergency."
+	para "Or your money"
+	line "back!"
 	done
 
 CianwoodPharmacy_MapEvents:

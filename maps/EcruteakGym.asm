@@ -247,7 +247,7 @@ Text_ReceivedFogBadge:
 	done
 
 MortyText_FogBadgeSpeech:
-    para "With the FOGBADGE"
+    text "With the FOGBADGE"
     line "you can now train"
     cont "#MON up to"
     cont "level 45."
@@ -275,16 +275,7 @@ MortyText_ShadowBallSpeech:
 	done
 
 MortyFightDoneText:
-    para "With the FOGBADGE"
-    line "you can now train"
-    cont "#MON up to"
-    cont "level 45."
-
-    para "And capture"
-    line "#MON up to"
-    cont "level 35."
-
-    para "You have conquered"
+    text "You have conquered"
     line "your fear."
 
     para "Now your mind and"

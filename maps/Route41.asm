@@ -163,23 +163,29 @@ Route41HiddenMaxEther:
 	hiddenitem MAX_ELIXER, EVENT_ROUTE_41_HIDDEN_MAX_ETHER
 
 SwimmermCharlieSeenText:
-	text "The water's warm"
-	line "here. I'm loose"
-	cont "and limber."
+	text "Have you heard"
+	line "of MISTY?"
 
-	para "Sure, I'll take"
-	line "you on!"
+	para "She is probably"
+	line "the strongest"
+	cont "WATER trainer."
+
+	para "One day I hope"
+	line "to be a GYM"
+	cont "trainer for her."
 	done
 
 SwimmermCharlieBeatenText:
-	text "Yikes! I've got"
-	line "prune skin!"
+	text "Avenge me"
+	line "MISTY!"
 	done
 
 SwimmermCharlieAfterBattleText:
-	text "Isn't it relaxing"
-	line "just floating like"
-	cont "this?"
+	text "Then she will"
+	line "see how strong"
+	cont "I am and slowly"
+	cont "fall in love"
+	cont "with me."
 	done
 
 SwimmermGeorgeSeenText:

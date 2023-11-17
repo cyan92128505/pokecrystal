@@ -129,7 +129,6 @@ SlowpokeTailGrunt:
 	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, GruntF5Script
 
 GruntF5Script:
-	endifjustbattled
 	opentext
 	writetext GruntF5AfterBattleText
 	waitbutton
@@ -141,7 +140,6 @@ RaticateTailGrunt:
 	trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script
 
 GruntM28Script:
-	endifjustbattled
 	opentext
 	writetext GruntM28AfterBattleText
 	waitbutton
@@ -317,113 +315,160 @@ RocketBaseRivalShovesPlayerMovement:
 	step_end
 
 LanceGetPasswordText:
-	text "LANCE: It takes"
-	line "two passwords to"
+	text "I am reliably"
+	line "informed that the"
+	cont "transmitter room"
+	cont "is sealed by two"
+	cont "passwords."
 
-	para "get into the"
-	line "boss's quarters."
+	para "These passwords"
+	line "are known to few"
+	cont "ROCKETS."
 
-	para "Those passwords"
-	line "are known only to"
-	cont "a few ROCKETS."
+	para "We may have to"
+	line "encourage their"
+	cont "cooperation."
 
-	para "That ROCKET there"
-	line "very graciously"
-	cont "told me so."
+	para "A lamentable"
+	line "task to be sure."
 
-	para "<PLAY_G>, let's go"
-	line "get the passwords."
+	para "Let us commence"
+	line "the negotiations."
 	done
 
 TeamRocketBaseB3FRocketText:
-	text "Urrggh… The guy"
-	line "in the cape is"
-	cont "incredibly tough…"
+	text "UHHHH...."
+
+	para "OH.. Cough."
+
+	para "That man..."
+
+	para "Terrifying"
+	line "power..."
 	done
 
 RocketBaseRivalText:
 	text "…"
 
-	para "Didn't I tell you"
-	line "that I was going"
+	para "I didn't expect"
+	line "to see you."
 
-	para "to destroy TEAM"
-	line "ROCKET?"
+	para "But somehow I"
+	line "had a feeling"
+	cont "it might happen."
 
-	para "…Tell me, who was"
-	line "the guy in the"
+	para "We both smell"
+	line "the blood in the"
+	cont "water and can't"
+	cont "help but be"
+	cont "drawn to it."
 
-	para "cape who used"
-	line "dragon #MON?"
+	para "These ROCKETS are"
+	line "far weaker than"
+	cont "I thought they"
+	cont "would be."
 
-	para "My #MON were no"
-	line "match at all."
+	para "But there was"
+	line "one guy..."
 
-	para "I don't care that"
-	line "I lost. I can beat"
+	para "He wore a"
+	line "ridiculous cape."
 
-	para "him by getting"
-	line "stronger #MON."
+	para "I thought he'd"
+	line "go down easy."
 
-	para "It's what he said"
-	line "that bothers me…"
+	para "He destroyed me."
 
-	para "He told me that"
-	line "I don't love and"
+	para "With a single"
+	line "#MON."
 
-	para "trust my #MON"
-	line "enough."
+	para "I've never been"
+	line "so decisively"
+	cont "and thoroughly"
+	cont "beaten."
 
-	para "I'm furious that I"
-	line "lost to a bleeding"
-	cont "heart like him."
+	para "I can handle"
+	line "being beat."
 
-	para "…Humph! I don't"
-	line "have the time for"
-	cont "the likes of you!"
+	para "But he continued"
+	line "to spout the usual"
+	cont "cliche nonsense"
+	cont "about treating"
+	cont "#MON with"
+	cont "respect."
+
+	para "I am disgusted"
+	line "I lost to someone"
+	cont "like that!"
+
+	para "You'd probably"
+	line "get along great"
+	cont "with him."
+
+	para "I'm not done with"
+	line "these ROCKETS."
+
+	para "They will give"
+	line "me the information"
+	cont "I want."
+
+	para "You just stay out"
+	line "of my way!"
 	done
 
 ExecutiveM4BeforeText:
-	text "What? Who are you?"
-	line "This is the office"
+	text "Ah we meet again."
 
-	para "of our leader,"
-	line "GIOVANNI."
+	para "You don't"
+	line "remember me?"
 
-	para "Since disbanding"
-	line "TEAM ROCKET three"
+	para "We met at SLOWPOKE"
+	line "WELL."
 
-	para "years ago, he has"
-	line "been in training."
+	para "You interfered"
+	line "with us then but"
+	cont "you were too late."
 
-	para "But we're certain"
-	line "he will be back"
+	para "The mission was a"
+	line "success."
 
-	para "some day to assume"
-	line "command again."
+	para "I have come a"
+	line "long way since"
+	cont "then."
 
-	para "That's why we're"
-	line "standing guard."
+	para "I have even been"
+	line "promoted to an"
+	cont "executive."
 
-	para "I won't let any-"
-	line "one disturb this"
-	cont "place!"
+	para "You will never"
+	line "know such career"
+	cont "success."
+
+	para "Now I finally"
+	line "will make you"
+	cont "pay for daring"
+	cont "to hamper my"
+	cont "ambitions."
 	done
 
 ExecutiveM4BeatenText:
-	text "I… I couldn't do a"
-	line "thing…"
+	text "No!"
 
-	para "GIOVANNI, please"
-	line "forgive me…"
+	para "My useless"
+	line "#MON."
 	done
 
 ExecutiveM4AfterText:
-	text "No, I can't let"
-	line "this affect me."
+	text "You have no"
+	line "idea who you"
+	cont "are dealing with."
 
-	para "I have to inform"
-	line "the others…"
+	para "I must inform"
+	line "my bosses."
+
+	para "They are not"
+	line "as forgiving"
+	cont "as I."
 	done
 
 RocketBaseMurkrowText:
@@ -434,13 +479,20 @@ RocketBaseMurkrowText:
 	done
 
 GruntF5SeenText:
-	text "Do I know the"
-	line "password?"
+	text "You think I'm"
+	line "going to tell"
+	cont "you the password."
 
-	para "Maybe."
+	para "Just because you"
+	line "ask for it?"
 
-	para "But no weakling's"
-	line "going to get it!"
+	para "Fine."
+
+	para "The password is."
+
+	para "...."
+
+	para "Hail Hydra."
 	done
 
 GruntF5BeatenText:
@@ -449,102 +501,128 @@ GruntF5BeatenText:
 	done
 
 GruntF5AfterBattleText:
-	text "The password to"
-	line "the boss's room is"
+	text "Fine you have"
+	line "beaten me."
+
+	para "I'll tell you."
+
+	para "I'll tell you."
+
+	para "Just don't"
+	line "hurt me."
+
+	para "The password is."
 
 	para "SLOWPOKETAIL."
-
-	para "But it's useless"
-	line "unless you have"
-	cont "two passwords."
 	done
 
 GruntM28SeenText:
-	text "Hyuck-hyuck-hyuck!"
+	text "I will never"
+	line "reveal the"
+	cont "password."
 
-	para "You're challenging"
-	line "me to a battle?"
+	para "I will take it to"
+	line "the grave with me!"
 
-	para "Hah! You're nuts,"
-	line "but you have guts!"
+	para "You will never"
+	line "make me talk."
 
-	para "I like that!"
+	para "My lips are"
+	line "sealed."
 
-	para "If you can beat"
-	line "me, I'll tell you"
+	para "I am unbreakable."
 
-	para "a password to the"
-	line "boss's room!"
+	para "I am immovable."
+
+	para "I have the will"
+	line "of a concrete"
+	cont "MAMOSWINE."
+
+	para "It is futile."
+
+	para "You waste your"
+	line "time."
+
+	para "I will never..."
+
+	para "Ever...."
+
+	para "Tell you."
 	done
 
 GruntM28BeatenText:
-	text "Hyuck-hyuck-hyuck!"
-	line "You're good!"
+	text "RATICATE TAIL!"
 	done
 
 GruntM28AfterBattleText:
-	text "Hyuck-hyuck-hyuck!"
+	text "It's RATICATE"
+	line "TAIL!"
 
-	para "The password to"
-	line "the boss's room…"
-
-	para "Uh…, I think it is"
-	line "RATICATE TAIL."
+	para "The password is"
+	line "RATICATE TALE!"
 	done
 
 ScientistRossSeenText:
-	text "I used to work for"
-	line "SILPH, but now I"
+	text "Fascinating."
 
-	para "run research for"
-	line "TEAM ROCKET."
+	para "The neural"
+	line "dynamics induced"
+	cont "by the stimulus"
+	cont "exceeds what"
+	cont "any model could"
+	cont "have predicted."
 
-	para "A meddlesome child"
-	line "like you needs to"
-	cont "be punished."
+	para "I wonder how a"
+	line "human subject"
+	cont "would react."
 	done
 
 ScientistRossBeatenText:
-	text "A mere tactical"
-	line "error cost me…"
+	text "But it's for"
+	line "science!"
 	done
 
 ScientistRossAfterBattleText:
-	text "A radio signal"
-	line "that drives #-"
-	cont "MON mad…"
+	text "You would make a"
+	line "poor subject."
 
-	para "My experiment is a"
-	line "complete success."
+	para "The experiment is"
+	line "a success."
 
 	para "My promotion is"
-	line "assured. This loss"
-
-	para "means absolutely"
-	line "nothing."
+	line "assured!"
 	done
 
 ScientistMitchSeenText:
-	text "I don't care that"
-	line "#MON are hurt"
-	cont "by our experiment."
+	text "The synaptic"
+	line "response to"
+	cont "severe pain is"
+	cont "quite different"
+	cont "between human and"
+	cont "#MON."
+
+	para "It's a fascinating"
+	line "topic."
+
+	para "I shall enlighten"
+	line "you."
 	done
 
 ScientistMitchBeatenText:
-	text "Thinking is my"
-	line "strong suit, not"
-	cont "battling."
+	text "You are good"
+	line "at inflicting"
+	cont "pain too."
 	done
 
 ScientistMitchAfterBattleText:
-	text "If we turn up the"
-	line "power of our radio"
+	text "The pain you"
+	line "inflicted upon"
+	cont "my #MON"
+	cont "is fascinating"
+	cont "to me."
 
-	para "signal for broad-"
-	line "cast nationwide…"
-
-	para "The very thought"
-	line "excites me!"
+	para "How can you not"
+	line "be interested?"
 	done
 
 TeamRocketBaseB3FLockedDoorNeedsPasswordText:

@@ -246,68 +246,83 @@ Route42SuicuneMovement:
 	step_end
 
 FisherTullySeenText:
-	text "Let me demonstrate"
-	line "the power of the"
-	cont "#MON I caught!"
+	text "Weather is an"
+	line "important part"
+	cont "of battle."
+
+	para "Let the weather"
+	line "wars begin!"
 	done
 
 FisherTullyBeatenText:
-	text "What? That's not"
-	line "right."
+	text "It can't rain"
+	line "everyday."
 	done
 
 FisherTullyAfterBattleText:
-	text "I want to become"
-	line "the trainer CHAMP"
-
-	para "using the #MON"
-	line "I caught."
-
-	para "That's the best"
-	line "part of fishing!"
+	text "I need to build"
+	line "a team of"
+	cont "#MON around"
+	cont "my weather to"
+	cont "really get the"
+	cont "best of it."
 	done
 
 HikerBenjaminSeenText:
-	text "Ah, it's good to"
-	line "be outside!"
-	cont "I feel so free!"
+	text "I'm trying to"
+	line "map out this cave."
+
+	para "This is the"
+	line "largest cave in"
+	cont "all of JOHTO."
+
+	para "It is easy to"
+	line "get lost in"
+	cont "here."
+
+	para "Of course there"
+	line "are trainers who"
+	cont "take their life"
+	cont "in their hands"
+	cont "by exploring."
+
+	para "I can't let you"
+	line "do that."
 	done
 
 HikerBenjaminBeatenText:
-	text "Gahahah!"
+	text "Ok ok go on!"
 	done
 
 HikerBenjaminAfterBattleText:
-	text "Losing feels in-"
-	line "significant if you"
+	text "I hear there are"
+	line "areas of the cave"
+	cont "you can only get"
+	cont "to with a special"
+	cont "WATER #MON"
+	cont "move."
 
-	para "look up at the big"
-	line "sky!"
+	para "That's why I"
+	line "have QUAGSIRE."
 	done
 
 PokemaniacShaneSeenText:
-	text "HEY!"
-
-	para "This is my secret"
-	line "place! Get lost,"
-	cont "you outsider!"
+	text "My #MON are"
+	line "bros who don't"
+	cont "take no lip from"
+	cont "any fool!"
 	done
 
 PokemaniacShaneBeatenText:
-	text "I should have used"
-	line "my MOON STONE…"
+	text "You wut m8!"
 	done
 
 PokemaniacShaneAfterBattleText:
-	text "You're working on"
-	line "a #DEX?"
+	text "Ok I'm acting"
+	line "tough so people"
+	cont "don't bother me."
 
-	para "Wow, you must know"
-	line "some pretty rare"
-	cont "#MON!"
-
-	para "May I please see"
-	line "it. Please?"
+	para "Now go away."
 	done
 
 Route42Sign1Text:
@@ -423,8 +438,8 @@ Route42_MapEvents:
 
 	def_object_events
 	object_event 40, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherTully, -1
-	object_event 51,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBenjamin, -1
-	object_event 47,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacShane, -1
+	object_event 48,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBenjamin, -1
+	object_event 51,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacShane, -1
 	object_event 27, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree1, -1
 	object_event 28, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree2, -1
 	object_event 29, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree3, -1

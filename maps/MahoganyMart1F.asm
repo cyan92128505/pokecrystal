@@ -154,68 +154,80 @@ MahoganyMart1FLanceGoDownStairsMovement:
 	slow_step RIGHT
 	step_end
 
-MahoganyMart1FRageCandyBarText: ; unreferenced
-	text "Hello, kiddo!"
-
-	para "How would you like"
-	line "some RAGECANDYBAR?"
-
-	para "It's the thing to"
-	line "eat in MAHOGANY!"
-	done
-
 MahoganyMart1FPharmacistText_LanceEntered:
-	text "Arrgh… You found"
-	line "the secret stair-"
-	cont "way…"
+	text "Arrgh ah I uh..."
+
+	para "I can't believe"
+	line "that there's a"
+	cont "hidden stairway"
+	cont "there!"
+
+	para "I've never seen"
+	line "it before!"
 	done
 
 MahoganyMart1FBlackBeltText:
-	text "Heheh! The experi-"
-	line "ment worked like a"
-	cont "charm."
+	text "We are going to"
+	line "redefine the laws"
+	cont "of war and battle."
 
-	para "MAGIKARP are just"
-	line "worthless, but"
+	para "Soon powerful"
+	line "#MON will"
+	cont "become a huge"
+	cont "liability."
 
-	para "GYARADOS are big"
-	line "moneymakers."
+	para "Heh heh heh."
 	done
 
 MahoganyMart1FBlackBeltText_LanceEntered:
-	text "Urrgh…"
+	text "URRGH..."
 
-	para "That guy's dragon"
-	line "#MON are tough…"
+	para "I can't feel"
+	line "my legs."
+
+	para "That..."
+
+	para "That is one real"
+	line "strong phantom"
+	cont "you have there."
 	done
 
 MahoganyMart1FLanceDragoniteHyperBeamText:
-	text "LANCE: DRAGONITE,"
-	line "HYPER BEAM."
+	text "DRAGONITE,"
+	line "OUTRAGE!"
 	done
 
 MahoganyMart1FLanceRadioText:
-	text "What took you,"
-	line "<PLAY_G>?"
+	text "Good to see you"
+	line "<PLAYER>."
 
-	para "Just as I thought,"
-	line "that strange radio"
+	para "The nefarious"
+	line "radio signal is"
+	cont "emanating from"
+	cont "here."
 
-	para "signal is coming"
-	line "from here."
+	para "This place is"
+	line "not what it seems."
 	done
 
 MahoganyMart1FLanceStairsText:
-	text "The stairs are"
-	line "right here."
+	text "This den of"
+	line "liars is undone."
+
+	para "Your masters"
+	line "shall not escape"
+	cont "my wrath."
 	done
 
 MahoganyMart1FLanceSplitUpText:
-	text "LANCE: <PLAY_G>, we"
-	line "should split up to"
+	text "I shall venture"
+	line "in first and cut"
+	cont "a path for you."
 
-	para "check this place."
-	line "I'll go first."
+	para "We should separate"
+	line "and launch an"
+	cont "attack on two"
+	cont "fronts."
 	done
 
 MahoganyMart1F_MapEvents:

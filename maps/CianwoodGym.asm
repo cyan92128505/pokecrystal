@@ -27,6 +27,9 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText2
 	waitbutton
 	closetext
+	special FadeOutPalettes
+	pause 10
+	special FadeInPalettes
 	applymovement CIANWOODGYM_BOULDER1, CianwoodGymMovement_ChuckChucksBoulder
 	playsound SFX_STRENGTH
 	earthquake 80
@@ -76,6 +79,9 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText2
 	waitbutton
 	closetext
+	special FadeOutPalettes
+	pause 10
+	special FadeInPalettes
 	applymovement CIANWOODGYM_BOULDER1, CianwoodGymMovement_ChuckChucksBoulder
 	playsound SFX_STRENGTH
 	earthquake 80

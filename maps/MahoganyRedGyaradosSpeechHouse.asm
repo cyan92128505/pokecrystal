@@ -11,51 +11,47 @@ MahoganyRedGyaradosSpeechHouseBlackBeltScript:
 	jumptextfaceplayer MahoganyRedGyaradosSpeechHouseBlackBeltText
 
 MahoganyRedGyaradosSpeechHouseTeacherScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iftrue .RocketsInRadioTower
-	writetext MahoganyRedGyaradosSpeechHouseTeacherText
-	waitbutton
-	closetext
-	end
-
-.RocketsInRadioTower:
-	writetext MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower
-	waitbutton
-	closetext
-	end
-
-MahoganyRedGyaradosSpeechHouseUnusedBookshelf1: ; unreferenced
-	jumpstd PictureBookshelfScript
-
-MahoganyRedGyaradosSpeechHouseUnusedBookshelf2: ; unreferenced
-	jumpstd MagazineBookshelfScript
+    jumptextfaceplayer MahoganyRedGyaradosSpeechHouseTeacherText
 
 MahoganyRedGyaradosSpeechHouseBlackBeltText:
-	text "I heard that a red"
-	line "GYARADOS appeared"
-	cont "at the LAKE."
+	text "Don't be fooled."
 
-	para "That's odd, since"
-	line "even ordinary"
+	para "This might look"
+	line "like a quiet"
+	cont "little town."
 
-	para "GYARADOS are rare"
-	line "in that lake…"
+	para "But there is a"
+	line "dark heart"
+	cont "beating under"
+	cont "the surface."
+
+	para "I know there"
+	line "is a large"
+	cont "underground"
+	cont "facility hidden"
+	cont "under the mart."
 	done
 
 MahoganyRedGyaradosSpeechHouseTeacherText:
-	text "My favorite radio"
-	line "program? I'd say"
-	cont "#MON MUSIC."
-	done
+	text "I had a friend"
+	line "who just went"
+	cont "missing one day"
+	cont "last year."
 
-MahoganyRedGyaradosSpeechHouseTeacherText_RocketsInRadioTower:
-	text "I've been hearing"
-	line "laughter on the"
+	para "I think it was"
+	line "the MAHOGANY"
+	cont "murderer."
 
-	para "radio…"
-	line "It's creepy."
+	para "A serial killer"
+	line "that people think"
+	cont "disappeared."
+
+	para "But I think he"
+	line "is still out"
+	cont "there."
+
+	para "I'm scared to"
+	line "go out by myself."
 	done
 
 MahoganyRedGyaradosSpeechHouse_MapEvents:

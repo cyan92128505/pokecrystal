@@ -1,6 +1,5 @@
 	object_const_def
 	const TEAMROCKETBASEB1F_ROCKET1
-	;const TEAMROCKETBASEB1F_ROCKET2
 	const TEAMROCKETBASEB1F_SCIENTIST
 	const TEAMROCKETBASEB1F_POKE_BALL1
 	const TEAMROCKETBASEB1F_POKE_BALL2
@@ -542,17 +541,6 @@ TrainerScientistJed:
 	closetext
 	end
 
-TrainerGruntM16:
-	trainer GRUNTM, GRUNTM_16, EVENT_BEAT_ROCKET_GRUNTM_16, GruntM16SeenText, GruntM16BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM16AfterBattleText
-	waitbutton
-	closetext
-	end
-
 TeamRocketBaseB1FSecurityCamera:
 	jumptext TeamRocketBaseB1FSecurityCameraText
 
@@ -682,81 +670,60 @@ SecurityCameraMovement9:
 	step_end
 
 CameraGrunt1SeenText:
-	text "Hey!"
-	line "Intruder alert!"
+	text "Stop right there!"
+
+	para "Intruder alert!"
 	done
 
 CameraGrunt1BeatenText:
-	text "Dang… I failed…"
+	text "Send backup!"
+
+	para "Send backup!"
 	done
 
 CameraGrunt2SeenText:
-	text "It's my turn!"
-	line "There's no escape!"
+	text "Ah my old"
+	line "nemesis."
+
+	para "We meet again!"
+
+	para "I've got you"
+	line "this time."
 	done
 
 CameraGrunt2BeatenText:
-	text "Surveillance cams"
-	line "are in the #MON"
-	cont "statues."
+	text "We must retreat"
+	line "and heal our"
+	cont "#MON."
 
-	para "We'll keep appear-"
-	line "ing until you trip"
-	cont "a secret switch."
+	para "We shall meet"
+	line "again!"
 	done
 
 ScientistJedSeenText:
-	text "This was once a"
-	line "ninja hideout."
+	text "Help me!"
 
-	para "There are traps to"
-	line "confound intruders"
-	cont "like you."
+	para "Please..."
+
+	para "The #MON!"
+
+	para "They have gone"
+	line "mad!"
+
+	para "I can't control"
+	line "them."
 	done
 
 ScientistJedBeatenText:
-	text "I get it…"
+	text "They will kill"
+	line "us all!"
 	done
 
 ScientistJedAfterBattleText:
-	text "All right. I'll"
-	line "divulge a secret"
-	cont "about our hideout."
+	text "What have we"
+	line "done!"
 
-	para "That thing on the"
-	line "floor up ahead is"
-	cont "a warp panel."
-
-	para "If you step on it,"
-	line "you'll be warped"
-
-	para "back to the en-"
-	line "trance."
-	done
-
-GruntM16SeenText:
-	text "Heheh. Feeling"
-	line "lucky, punk?"
-
-	para "Go ahead, take"
-	line "another step."
-
-	para "We've got traps"
-	line "set in the floor!"
-	done
-
-GruntM16BeatenText:
-	text "Kaboom!"
-	done
-
-GruntM16AfterBattleText:
-	text "I don't even know"
-	line "where the traps"
-	cont "are planted."
-
-	para "You'll just have"
-	line "to collect your"
-	cont "courage and walk."
+	para "This is wrong..."
 	done
 
 TeamRocketBaseB1FSecurityCameraText:
@@ -835,7 +802,6 @@ TeamRocketBaseB1F_MapEvents:
 
 	def_object_events
 	object_event  0,  0, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_SECURITY_GRUNTS
-	;object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM16, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 18, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistJed, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 27,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FHyperPotion, EVENT_TEAM_ROCKET_BASE_B1F_HYPER_POTION
 	object_event 14, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FNugget, EVENT_TEAM_ROCKET_BASE_B1F_NUGGET

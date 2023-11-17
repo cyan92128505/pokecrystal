@@ -9,8 +9,6 @@
 	const TEAMROCKETBASEB2F_ELECTRODE4
 	const TEAMROCKETBASEB2F_ELECTRODE5
 	const TEAMROCKETBASEB2F_ELECTRODE6
-	;const TEAMROCKETBASEB2F_ROCKET2
-	;const TEAMROCKETBASEB2F_ROCKET3
 	const TEAMROCKETBASEB2F_ROCKET4
 	const TEAMROCKETBASEB2F_POKE_BALL
 	const TEAMROCKETBASEB2F_DAD
@@ -394,13 +392,14 @@ RocketsThreatText:
     line "no position to"
     cont "protect anyone."
 
-    para "You both have"
+    para "You have both"
     line "decided to make"
     cont "enemies of us."
 
     para "And we have"
-    line "learnt not to let"
-    cont "our enemies live."
+    line "learnt that we"
+    cont "must punish our"
+    cont "enemies severely."
     done
 
 DadDefeatedText:
@@ -436,13 +435,13 @@ RocketTauntText:
     done
 
 LanceIntroText:
-    text "You take great"
+    text "You take perverse"
     line "pride in your"
-    cont "lack of"
-    cont "compassion."
+    cont "effortless"
+    cont "cruelty."
 
-    para "I shall crush"
-    line "that pride."
+    para "I shall shatter"
+    line "this pride."
     done
 
 WhoIsThatText:
@@ -457,7 +456,7 @@ WhoIsThatText:
 DragoniteAttackText:
     text "DRAGONITE!"
 
-    para "ATTACK!"
+    para "OUTRAGE!"
     done
 
 RocketBaseRocketsDefeatedText:
@@ -477,6 +476,9 @@ RocketBaseBossDefeatedText:
 
     para "Is CHAMPION"
     line "LANCE!"
+
+    para "Why were we not"
+    line "informed!"
 
     para "We can't win this."
 
@@ -534,28 +536,6 @@ LanceHealsCommon:
 .FacingRight:
 	applymovement TEAMROCKETBASEB2F_LANCE, RocketBaseLanceLeavesAfterHealRightMovement
 	disappear TEAMROCKETBASEB2F_LANCE
-	end
-
-TrainerGruntM17:
-	trainer GRUNTM, GRUNTM_17, EVENT_BEAT_ROCKET_GRUNTM_17, GruntM17SeenText, GruntM17BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM17AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerGruntM18:
-	trainer GRUNTM, GRUNTM_18, EVENT_BEAT_ROCKET_GRUNTM_18, GruntM18SeenText, GruntM18BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM18AfterBattleText
-	waitbutton
-	closetext
 	end
 
 TrainerGruntM19:
@@ -932,61 +912,35 @@ Movement_TRB_TurnBack:
     step_end
 
 RocketBaseExecutiveFHoldItText:
-	text "Hold it right"
-	line "there!"
+	text "Oh well done."
 	done
 
 RocketBaseBossFThrashText:
-	text "We can't have a"
-	line "brat like you on"
-	cont "the loose."
+	text "You've done quite"
+	line "a number on us."
 
-	para "It's harmful to"
-	line "TEAM ROCKET's"
-	cont "pride, you see."
+	para "You must be a"
+	line "real little hero."
 
-	para "However strong you"
-	line "may be, you can't"
+	para "Well my little"
+	line "hero."
 
-	para "take both of us at"
-	line "the same time."
+	para "It's time you"
+	line "learnt that life"
+	cont "can be violent,"
+	cont "unfair and all"
+	cont "too short."
 
-	para "Sorry, baby. Now"
-	line "get ready to be"
-	cont "thrashed."
-	done
-
-RocketBaseLanceShareFunText:
-	text "Hey! Don't be so"
-	line "selfish. Spread"
-	cont "the fun around."
-	done
-
-RocketBaseBossDontMeddleText:
-	text "What? You had an"
-	line "accomplice?"
-
-	para "Where is your"
-	line "sense of honor?"
-
-	para "As the interim"
-	line "boss in place of"
-
-	para "GIOVANNI, I'll"
-	line "show you how wrong"
-
-	para "it is to meddle"
-	line "with TEAM ROCKET!"
+	para "I will be your"
+	line "teacher."
 	done
 
 RocketBaseBossLoseText:
-	text "That is not"
-	line "meant to"
-	cont "happen!"
+	text "Damn you!"
 	done
 
 RocketBaseBossInitialWinText:
-	text "Such a weak"
+	text "Such a pathetic"
 	line "display on the"
 	cont "last battle of"
 	cont "your life."
@@ -998,118 +952,120 @@ RocketBaseBossWinText:
 	cont "you."
 
 	para "You would be"
-	line "dead right now!"
+	line "begging for"
+	cont "your life right"
+	cont "now."
 
 	para "LANCE wont be"
 	line "here next time"
 	cont "we meet."
+
+	para "Little hero."
 	done
 
 RocketBaseBossRetreatText:
-	text "…This hideout is"
-	line "done for…"
+	text "It would seem"
+	line "our operations"
+	cont "here have come"
+	cont "to an unexpected"
+	cont "end."
 
-	para "But that's fine."
-	line "The broadcast ex-"
-	cont "periment was a"
-	cont "total success."
+	para "However our"
+    line "experiments have"
+    cont "been a success."
 
-	para "It doesn't matter"
-	line "what happens to"
-	cont "this hideout now."
-
-	para "Your victory"
-	line "means nothing."
+    para "You're small"
+    line "victory here"
+    cont "means nothing."
 	done
 
 RocketBaseLancePostBattleText:
-	text "I've never seen"
-	line "such a thing."
+	text "Never have I"
+	line "witnessed such"
+	cont "a thing."
 
 	para "DRAGONITE took"
-	line "you as its"
-	cont "trainer."
+	line "heed of your"
+	cont "command as he"
+	cont "would mine."
 
-	para "DARGONITE is a"
-	line "much better judge"
-	cont "of character than"
-	cont "I."
+	para "DARGONITEs judge"
+	line "of character is"
+	cont "beyond question."
 
-	para "If you have"
-	line "earned his respect"
-	cont "then you have mine"
-	cont "also."
+	para "Having earned his"
+	line "respect you have"
+	cont "more than earned"
+	cont "mine."
 	done
 
 RocketBaseLancePowerOffText:
-	text "Sorry, <PLAY_G>."
-	line "I saw how well you"
-
-	para "were doing, so I"
-	line "just hung back."
-
-	para "Now all there is"
-	line "left to do is to"
-
-	para "turn off that odd"
-	line "radio signal."
+	text "Now <PLAYER>"
+	line "it is imperative"
+	cont "we put an end to"
+	cont "this insidious"
+	cont "signal."
 	done
 
 RockerBaseLanceElectrodeFaintText:
-	text "It's this machine"
-	line "that's causing all"
-	cont "the problems."
+	text "I see..."
 
-	para "I don't see a"
-	line "switch on it…"
+	para "This device"
+	cont "conjures the"
+	cont "signal."
 
-	para "We have no choice."
-	line "We have to make"
+	para "Alas..."
 
-	para "all the ELECTRODE"
-	line "faint."
+	para "I fear the only"
+	line "means to stop it"
+	cont "is to disconnect"
+	cont "the electrode."
 
-	para "That should stop"
-	line "this machine from"
+	para "The only way to"
+	line "do this is through"
+	cont "battle."
 
-	para "transmitting that"
-	line "strange signal."
+	para "They know not"
+	line "what they do."
 
-	para "It's no fault of"
-	line "the #MON, so it"
-
-	para "makes me feel"
-	line "guilty."
-
-	para "<PLAY_G>, let's"
-	line "split the job."
+	para "We must liberate"
+	line "them from their"
+	cont "servitude."
 	done
 
 RocketBaseLancesSideText:
-	text "LANCE: Leave this"
-	line "side to me."
+	text "You need not"
+	line "worry about me."
+
+	para "Focus upon your"
+	line "task."
 	done
 
 RocketBaseLanceElectrodeDoneText:
-	text "LANCE: That odd"
-	line "signal has finally"
-	cont "stopped."
+	text "The signal has"
+	cont "ceased."
 
-	para "The LAKE should be"
-	line "back to normal."
+	para "I am proud of"
+	line "what you have"
+	cont "achieved here"
+	cont "today."
 
-	para "You're the hero!"
-	line "Let me thank you"
+	para "As doubtless your"
+	line "father is too."
 
-	para "on behalf of all"
-	line "the #MON."
+	para "You exemplify"
+	line "strength in"
+	cont "every regard."
 
-	para "Oh, yes. You"
-	line "should take this."
+	para "But our battle"
+	line "is not finished."
 
-	para "I found it here,"
-	line "but I don't have"
-	cont "any need for it."
+	para "The battle never"
+	line "truly finishes."
+
+	para "Here, consider"
+	line "this my gift for"
+	cont "your journey."
 	done
 
 RocketBaseReceivedHM06Text: ; unreferenced
@@ -1118,138 +1074,98 @@ RocketBaseReceivedHM06Text: ; unreferenced
 	done
 
 RocketBaseLanceWhirlpoolText:
-	text "That's WHIRLPOOL."
-	line "Teach it to a"
+	text "That is WHIRLPOOL."
 
-	para "#MON to get"
-	line "across wild water."
+	para "With this a"
+	line "#MON can"
+	cont "plough through"
+	cont "rough waters."
 
-	para "But keep this in"
-	line "mind."
-
-	para "You can use that"
-	line "out of battle only"
-
-	para "with the BADGE"
-	line "from MAHOGANY GYM."
+	para "So long as one"
+	line "has the BADGE"
+	cont "of the MAHOGANY"
+	cont "GYM."
 	done
 
 RocketBaseLanceMonMasterText:
-	text "<PLAY_G>…"
+	text "<PLAYER>."
 
-	para "The journey to be-"
-	line "coming the #MON"
+	para "The path to"
+	line "#MON MASTER"
+	cont "is fraught with"
+	cont "peril, uncertainty"
+	cont "and sacrifice."
 
-	para "MASTER is long and"
-	line "difficult."
+	para "Few have ever"
+	line "made such a"
+	cont "journey."
 
-	para "Knowing that, will"
-	line "you keep going?"
+	para "Now we travel"
+	line "the path together."
 
-	para "…"
+	para "We shall meet"
+	line "again."
 
-	para "I see. No, you're"
-	line "right."
-
-	para "If you would give"
-	line "up that easily,"
-
-	para "you would have"
-	line "never chased that"
-
-	para "dream in the first"
-	line "place."
-
-	para "I look forward to"
-	line "seeing you again!"
+	para "Farewell."
 	done
 
 LanceHealsText1:
-	text "LANCE: Are you all"
-	line "right?"
+	text "Well done"
+	line "<PLAYER>."
 
-	para "Your #MON are"
-	line "hurt and tired."
+	para "The situation"
+	line "is more severe"
+	cont "than I could have"
+	cont "anticipated."
 
-	para "Here, give them"
-	line "some of my medi-"
-	cont "cine."
+	para "You must be"
+	line "steadfast and"
+	cont "unyielding."
+
+	para "You are fatigued."
+
+	para "I shall restore"
+	line "you."
 	done
 
 LanceHealsText2:
-	text "LANCE: <PLAY_G>,"
-	line "let's give it our"
-	cont "best for #MON."
-	done
+	text "It is done."
 
-GruntM17SeenText:
-	text "The door won't"
-	line "open?"
+	para "Now we push forth"
+	line "and continue our"
+	cont "assault!"
 
-	para "Well, duh."
-	line "It has to have a"
-
-	para "password that only"
-	line "TEAM ROCKET knows."
-	done
-
-GruntM17BeatenText:
-	text "What? I lost?"
-	done
-
-GruntM17AfterBattleText:
-	text "Heh, I'm just a"
-	line "GRUNT."
-
-	para "I don't know the"
-	line "password. Too bad"
-	cont "for you."
-	done
-
-GruntM18SeenText:
-	text "Oh, a kid? I don't"
-	line "really like this,"
-
-	para "but eliminate you"
-	line "I must."
-	done
-
-GruntM18BeatenText:
-	text "I knew I'd lose…"
-	done
-
-GruntM18AfterBattleText:
-	text "I got wiped out on"
-	line "the last mission"
-	cont "by a kid too."
-
-	para "When we were ab-"
-	line "ducting #MON,"
-
-	para "this kid with long"
-	line "red hair and mean-"
-
-	para "looking eyes just"
-	line "creamed me…"
+	para "Stay visualant."
 	done
 
 GruntM19SeenText:
-	text "You rotten little"
-	line "pest!"
+	text "Well, well."
+
+	para "A poor little"
+	line "punk thinks it"
+	cont "is fun to break"
+	cont "into restricted"
+	cont "places."
+
+	para "You're never"
+	line "going to leave!"
 	done
 
 GruntM19BeatenText:
-	text "Grrrr…"
+	text "Who are you!?"
 	done
 
 GruntM19AfterBattleText:
-	text "Heh, only the boss"
-	line "knows the password"
-	cont "for that door."
+	text "I went exploring"
+	line "too when I was"
+	cont "younger."
 
-	para "Where's the boss?"
-	line "Who knows? Go look"
-	cont "for yourself."
+	para "One day I ran"
+	line "into some TEAM"
+	cont "ROCKET members."
+
+	para "The rest is"
+	line "history."
 	done
 
 RocketBaseDoorNoPasswordText:
@@ -1346,8 +1262,6 @@ TeamRocketBaseB2F_MapEvents:
 	object_event 22,  5, SPRITE_VOLTORB, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_ELECTRODE_1
 	object_event 22,  7, SPRITE_VOLTORB, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_ELECTRODE_2
 	object_event 22,  9, SPRITE_VOLTORB, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_ELECTRODE_3
-	;object_event 25, 13, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM17, EVENT_TEAM_ROCKET_BASE_POPULATION
-	;object_event  4,  1, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM18, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 21, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntM19, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  3, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB2FTMThief, EVENT_TEAM_ROCKET_BASE_B2F_TM_THIEF
 	object_event  9, 13, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE

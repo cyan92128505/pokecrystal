@@ -23,17 +23,31 @@ Route43MahoganyGateOfficer:
 	end
 
 Route43MahoganyGateOfficerText:
-	text "Only people headed"
-	line "up to LAKE OF RAGE"
+	text "If you are heading"
+	line "to LAKE OF RAGE"
+	cont "you should be"
+	cont "careful."
 
-	para "have been through"
-	line "here lately."
+	para "The GYARADOS are"
+	line "violent and I"
+	cont "swear I have"
+	cont "see ROCKETS"
+	cont "about the place."
+
+	para "These things"
+	line "can't be good."
 	done
 
 Route43MahoganyGateOfficerRocketsClearedText:
-	text "Nobody goes up to"
-	line "LAKE OF RAGE these"
-	cont "days."
+	text "The LAKE OF RAGE"
+	line "is back to"
+	cont "normal and the"
+	cont "ROCKETS are gone."
+
+	para "Things are safe"
+	line "again."
+
+	para "Totally safe..."
 	done
 
 Route43MahoganyGate_MapEvents:

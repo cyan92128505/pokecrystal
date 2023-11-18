@@ -525,6 +525,7 @@ KRIS EQU __trainer_class__
 	const ANTHONY4
 	const ANTHONY5
 	const MASTER_ALDER
+	const MAHOGANY_MURDERER
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; unused

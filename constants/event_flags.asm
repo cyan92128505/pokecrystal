@@ -413,6 +413,8 @@
     const EVENT_DESTINY_SQUARE_MASTER_BALL
     const EVENT_DESTINY_SQUARE_AMBROSIA
     const EVENT_BEAT_INVADER_MANUS
+    const EVENT_BEAT_MAHOGANY_MURDERER
+    const EVENT_MET_MAHOGANY_MURDERER
 
     ; ======================================
     ; ======================================

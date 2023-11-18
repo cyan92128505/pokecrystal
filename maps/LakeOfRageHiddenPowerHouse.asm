@@ -7,63 +7,162 @@ LakeOfRageHiddenPowerHouse_MapScripts:
 	def_callbacks
 
 HiddenPowerGuy:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM10_HIDDEN_POWER
-	iftrue .AlreadyGotItem
-	writetext HiddenPowerGuyText1
-	promptbutton
-	verbosegiveitem TM_THUNDERBOLT
-	iffalse .Done
-	setevent EVENT_GOT_TM10_HIDDEN_POWER
-	writetext HiddenPowerGuyText2
-	waitbutton
-	closetext
-	end
-.AlreadyGotItem:
-	writetext HiddenPowerGuyText3
-	waitbutton
-.Done:
-	closetext
-	end
+    setevent EVENT_MET_MAHOGANY_MURDERER
+    jumptextfaceplayer DontLeaveText
 
 HiddenPowerHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
-HiddenPowerGuyText1:
-	text "…You have strayed"
-	line "far…"
+MurderScript1:
+    checkevent EVENT_MET_MAHOGANY_MURDERER
+    iffalse .end
+    checkevent EVENT_BEAT_MAHOGANY_MURDERER
+    iffalse .assault
+    turnobject LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, DOWN
+    opentext
+    writetext MurdererStaySafeText
+    waitbutton
+    closetext
+.end
+    end
+.assault
+    turnobject LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, DOWN
+    pause 15
+    showemote EMOTE_SHOCK, PLAYER, 15
+    applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderAssault1
+	winlosstext MurdererLossText, MurdererWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer HIKER, MAHOGANY_MURDERER
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MAHOGANY_MURDERER
+	turnobject PLAYER, UP
+	opentext
+	writetext MurderGivesThunderboltText
+	waitbutton
+	verbosegiveitem TM_THUNDERBOLT
+	closetext
+	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat1
+	end
 
-	para "Here I have medi-"
-	line "tated. Inside me,"
+MurderScript2:
+    checkevent EVENT_MET_MAHOGANY_MURDERER
+    iffalse .end
+    checkevent EVENT_BEAT_MAHOGANY_MURDERER
+    iffalse .assault
+    turnobject LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, DOWN
+    opentext
+    writetext MurdererStaySafeText
+    waitbutton
+    closetext
+.end
+    end
+.assault
+    turnobject LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, DOWN
+    pause 15
+    showemote EMOTE_SHOCK, PLAYER, 15
+    applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderAssault2
+	winlosstext MurdererLossText, MurdererWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer HIKER, MAHOGANY_MURDERER
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MAHOGANY_MURDERER
+	turnobject PLAYER, UP
+	opentext
+	writetext MurderGivesThunderboltText
+	waitbutton
+	verbosegiveitem TM_THUNDERBOLT
+	closetext
+	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat2
+	end
 
-	para "a new power has"
-	line "been awakened."
+DontLeaveText:
+    text "Oh hello there."
 
-	para "Let me share my"
-	line "power with your"
+    para "I don't often"
+    line "have visitors."
 
-	para "#MON."
-	line "Take this, child."
-	done
+    para "Oh don't mind"
+    line "the smell."
 
-HiddenPowerGuyText2:
-	text "Do you see it? It"
-	line "is HIDDEN POWER!"
+    para "Would you like"
+    line "a drink?"
 
-	para "It draws out the"
-	line "power of #MON"
-	cont "for attacking."
+    para "...."
 
-	para "Remember this: its"
-	line "type and power de-"
-	cont "pend on the #-"
-	cont "MON using it."
-	done
+    para "Please don't"
+    line "leave!"
+    done
 
-HiddenPowerGuyText3:
-	text "I am meditating…"
-	done
+MurderGivesThunderboltText:
+    text "What are you"
+    line "doing!"
+
+    para "Attacking me"
+    line "in my own home."
+
+    para "Here look I"
+    line "will forget this"
+    cont "ever happened."
+
+    para "Consider this a"
+    line "gift."
+
+    para "It is very"
+    line "powerful and if"
+    cont "you're lucky can"
+    cont "paralyse your"
+    cont "victim."
+
+    para "Good luck."
+    done
+
+MurdererStaySafeText:
+    text "Stay safe out"
+    line "there."
+
+    para "Heh heh heh."
+    done
+
+MurdererLossText:
+    text "I was only"
+    line "playing about."
+    done
+
+MurdererWinText:
+    text "I'm going to"
+    line "need more room"
+    cont "in the basement."
+    done
+
+Movement_MurderAssault1:
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    step_end
+
+Movement_MurderRetreat1:
+    big_step UP
+    big_step UP
+    big_step UP
+    turn_head RIGHT
+    step_end
+
+Movement_MurderAssault2:
+    big_step DOWN
+    big_step DOWN
+    big_step RIGHT
+    big_step DOWN
+    step_end
+
+Movement_MurderRetreat2:
+    big_step UP
+    big_step LEFT
+    big_step UP
+    big_step UP
+    turn_head RIGHT
+    step_end
 
 LakeOfRageHiddenPowerHouse_MapEvents:
 	db 0, 0 ; filler
@@ -73,6 +172,8 @@ LakeOfRageHiddenPowerHouse_MapEvents:
 	warp_event  3,  7, LAKE_OF_RAGE, 1
 
 	def_coord_events
+	coord_event 2, 7, SCENE_ALWAYS, MurderScript1
+	coord_event 3, 7, SCENE_ALWAYS, MurderScript2
 
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, HiddenPowerHouseBookshelf

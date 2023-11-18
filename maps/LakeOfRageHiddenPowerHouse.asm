@@ -11,7 +11,11 @@ HiddenPowerGuy:
     jumptextfaceplayer DontLeaveText
 
 HiddenPowerHouseBookshelf:
-	jumpstd DifficultBookshelfScript
+    opentext
+    writetext StrangeSmellText
+    waitbutton
+    closetext
+    end
 
 MurderScript1:
     checkevent EVENT_MET_MAHOGANY_MURDERER
@@ -30,6 +34,8 @@ MurderScript1:
     pause 15
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderAssault1
+	setval MUSIC_RED_DUNGEON
+	writemem wBattleMusicOverride
 	winlosstext MurdererLossText, MurdererWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer HIKER, MAHOGANY_MURDERER
@@ -62,6 +68,8 @@ MurderScript2:
     pause 15
     showemote EMOTE_SHOCK, PLAYER, 15
     applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderAssault2
+	setval MUSIC_RED_DUNGEON
+	writemem wBattleMusicOverride
 	winlosstext MurdererLossText, MurdererWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer HIKER, MAHOGANY_MURDERER
@@ -76,6 +84,13 @@ MurderScript2:
 	closetext
 	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat2
 	end
+
+StrangeSmellText:
+    text "There is a"
+    line "strange and"
+    cont "putrid smell"
+    cont "around here."
+    done
 
 DontLeaveText:
     text "Oh hello there."
@@ -110,10 +125,10 @@ MurderGivesThunderboltText:
     line "gift."
 
     para "It is very"
-    line "powerful and if"
+    line "reliable and if"
     cont "you're lucky can"
     cont "paralyse your"
-    cont "victim."
+    cont "prey."
 
     para "Good luck."
     done

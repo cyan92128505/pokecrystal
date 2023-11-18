@@ -504,6 +504,11 @@ CamperSpencerSeenText:
 	cont "still out there"
 	cont "somewhere."
 
+	para "He drugged his"
+	line "victims with"
+	cont "drinks laced with"
+	cont "SLEEP POWDER."
+
 	para "Oh that's right"
 	line "I'm a trainer."
 

@@ -345,43 +345,59 @@ Route43MaxEther:
 	itemball MAX_ETHER
 
 PokemaniacBenSeenText:
-	text "I love #MON!"
+	text "You are trying"
+	line "to catch the"
+	cont "GYARADOS before"
+	cont "I can!"
 
-	para "That's why I"
-	line "started--and why"
+	para "It is my"
+	line "destiny to"
+	cont "become..."
 
-	para "I'll keep on col-"
-	line "lecting #MON!"
+	para "BEN!"
+
+	para "The greatest"
+	line "WATER TRAINER!"
 	done
 
 PokemaniacBenBeatenText:
-	text "How could you do"
-	line "this to me?"
+	text "I wont let you!"
 	done
 
 PokemaniacBenAfterBattleText:
-	text "What else do I"
-	line "like besides"
-	cont "#MON?"
+	text "Fine you can"
+	line "have the GYARADOS."
 
-	para "MARY on the radio."
-	line "I bet she's cute!"
+	para "I'll find a FEEBAS"
+	line "and get myself a"
+	cont "MILOTIC."
 	done
 
 PokemaniacBrentSeenText:
-	text "Hey! Do you have"
-	line "any rare #MON?"
+	text "Come on where"
+	line "are all the super"
+	cont "aggressive crazy"
+	cont "#MON!"
+
+	para "I want to beat"
+	line "them the same way"
+	cont "I beat everyone."
+
+	para "Blasting them"
+	line "right in the face!"
 	done
 
 PokemaniacBrentBeatenText:
-	text "Oh, my poor #-"
-	line "MON! Darlings!"
+	text "You are"
+	line "blastproof."
 	done
 
 PokemaniacBrentAfterBattleText:
-	text "I'd be happy just"
-	line "to own a single"
-	cont "rare #MON."
+	text "I have blasted"
+	line "many enemies."
+
+	para "Right in the"
+	line "face!"
 	done
 
 InvaderPatchesSeenText:
@@ -443,74 +459,107 @@ InvaderPatchesAfterBattleText:
 	done
 
 FisherMarvinSeenText:
-	text "I'm in a slump."
+	text "Well aren't you"
+	line "a purdy little"
+	cont "thang."
 
-	para "Maybe it's the"
-	line "gear I'm using."
+	para "It could be"
+	line "real dangerous"
+	cont "for you to be"
+	cont "goin much further"
+	cont "this way."
 
-	para "Let's battle for a"
-	line "change of pace!"
+	para "You had best be"
+	line "turnin back."
 	done
 
 FisherMarvinBeatenText:
-	text "I lost, but I feel"
-	line "better anyway."
+	text "Oh you're a"
+	line "tough little"
+	cont "thang."
 	done
 
 FisherMarvinAfterBattleText:
-	text "KURT's LURE BALL"
-	line "is the best for"
+	text "People like you"
+	line "that be wanderin"
+	cont "past here..."
 
-	para "catching hooked"
-	line "#MON."
-
-	para "It's much more"
-	line "effective than a"
-	cont "ULTRA BALL."
+	para "They don't all"
+	line "be comin back."
 	done
 
 CamperSpencerSeenText:
-	text "I can do so much"
-	line "with my #MON--"
-	cont "it's super-fun!"
+	text "Hey kid be"
+	line "careful."
+
+	para "I'm an undercover"
+	line "detective."
+
+	para "I'm investigating"
+	line "the case of the"
+	cont "MAHOGANY murderer."
+
+	para "A serial killer"
+	line "some believe is"
+	cont "still out there"
+	cont "somewhere."
+
+	para "Oh that's right"
+	line "I'm a trainer."
+
+	para "Yes let's do"
+	line "that thing"
+	cont "trainers do."
 	done
 
+
 CamperSpencerBeatenText:
-	text "Losing isn't fun"
-	line "at all…"
+	text "You play along"
+	line "well."
 	done
 
 CamperSpencerAfterBattleText:
-	text "What is going on"
-	line "at LAKE OF RAGE?"
+	text "Be careful out"
+	line "there in the"
+	cont "wilderness."
 
-	para "We were planning"
-	line "to camp there."
+	para "Don't trust"
+	line "anyone."
 	done
 
 PicnickerTiffanySeenText:
-	text "Are you going to"
-	line "LAKE OF RAGE too?"
+	text "People say it"
+	line "is dangerous for"
+	cont "a girl to be out"
+	cont "here alone."
 
-	para "Let's play for a "
-	line "little while!"
+	para "But I'm not"
+	line "alone."
+
+	para "I'm with my best"
+	line "friend CLEFABLE."
+
+	para "I'll show you"
+	line "we can look"
+	cont "after ourselves."
 	done
 
 PicnickerTiffanyBeatenText:
-	text "I played too much!"
+	text "You did great"
+	line "CLEFABLE!"
 	done
 
 PicnickerTiffanyWantsPicnicText:
-	text "I'm having a pic-"
-	line "nic with #MON."
-
-	para "Won't you join us?"
+	text "If only it would"
+	line "stop raining so"
+	cont "we can have our"
+	cont "picnic."
 	done
 
 PicnickerTiffanyClefairyText:
-	text "Isn't my CLEFAIRY"
-	line "just the most"
-	cont "adorable thing?"
+	text "Isn't my CLEFABLE"
+	line "adorable and"
+	cont "strong?"
 	done
 
 Route43Sign1Text:
@@ -530,23 +579,20 @@ Route43Sign2Text:
 Route43TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "All #MON have"
-	line "pros and cons"
+	para "Rain boosts WATER"
+	line "moves and nerfs"
+	cont "FIRE moves."
 
-	para "depending on their"
-	line "types."
+	para "Sun boosts FIRE"
+	line "moves and nerfs"
+	cont "WATER moves."
 
-	para "If their types"
-	line "differ, a higher-"
-
-	para "level #MON may"
-	line "lose in battle."
-
-	para "Learn which types"
-	line "are strong and"
-
-	para "weak against your"
-	line "#MON's type."
+	para "Sand boost ROCK"
+	line "#MON"
+	cont "SPECIAL DEFENSE"
+	cont "and damages all"
+	cont "non ROCK, GROUND"
+	cont "or STEEL types."
 	done
 
 Route43FieldMon1Script:

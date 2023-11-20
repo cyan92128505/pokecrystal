@@ -141,9 +141,6 @@ LakeOfRageGrampsScript:
 	closetext
 	end
 
-;LakeOfRageSuperNerdScript:
-;	jumptextfaceplayer LakeOfRageSuperNerdText
-
 LakeOfRageCooltrainerFScript:
 	jumptextfaceplayer LakeOfRageCooltrainerFText
 
@@ -198,16 +195,8 @@ TrainerCooltrainermAaron:
 	closetext
 	end
 
-TrainerCooltrainerfLois:
-	trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext CooltrainerfLoisAfterBattleText
-	waitbutton
-	closetext
-	end
+CooltrainerfLoisScript:
+    jumptextfaceplayer CooltrainerfLoisText
 
 WesleyScript:
 	faceplayer
@@ -265,71 +254,88 @@ LakeOfRageLanceTeleportIntoSkyMovement:
 	step_end
 
 LakeOfRageLanceForcedToEvolveText:
-	text "This lake is full"
-	line "of GYARADOS but"
-	cont "nothing else…"
+	text "Some external"
+	line "torment heightens"
+	cont "the aggressive"
+	cont "instincts of"
+	cont "these #MON."
 
-	para "So the MAGIKARP"
-	line "are being forced"
-	cont "to evolve…"
+	para "The product of an"
+	line "unnatural and"
+	cont "nefarious force."
 	done
 
 LakeOfRageLanceIntroText:
-	text "Did you come here"
-	line "because of the"
-	cont "rumors?"
+	text "Having witnessed"
+	line "your interaction"
+	cont "with the GYARADOS"
+	cont "I am convinced"
+	cont "you harbour an"
+	cont "extraordinary"
+	cont "affinity with"
+	cont "#MON."
 
-	para "You're <PLAYER>?"
-	line "I'm LANCE, a"
-	cont "trainer like you."
+	para "A rare gift."
 
-	para "I heard some ru-"
-	line "mors, so I came to"
-	cont "investigate…"
+	para "As rare as your"
+	line "gift for battle."
 
-	para "I saw the way you"
-	line "battled earlier,"
-	cont "<PLAY_G>."
+	para "I intend to"
+	line "uncover those"
+	cont "orchestrating"
+	cont "these events and"
+	cont "put them to a"
+	cont "decisive end."
 
-	para "I can tell that"
-	line "you're a trainer"
-
-	para "with considerable"
-	line "skill."
-
-	para "If you don't mind,"
-	line "could you help me"
-	cont "investigate?"
+	para "Will you aid me"
+	line "in this quest?"
 	done
 
 LakeOfRageLanceRadioSignalText:
-	text "LANCE: Excellent!"
+	text "Our collaboration"
+	line "is ordained by"
+	cont "those #MON"
+	cont "who are suffering."
 
-	para "It seems that the"
-	line "LAKE's MAGIKARP"
+	para "We shall permit"
+	line "them endure this"
+	cont "no longer."
 
-	para "are being forced"
-	line "to evolve."
+	para "The signal that"
+	line "torments our"
+	cont "kin originates"
+	cont "from MAHOGANY"
+	cont "TOWN."
 
-	para "A mysterious radio"
-	line "broadcast coming"
+	para "Some there guard"
+	line "their secrets"
+	cont "well."
 
-	para "from MAHOGANY is"
-	line "the cause."
+	para "Meet me at the"
+	line "mart."
 
-	para "I'll be waiting"
-	line "for you, <PLAY_G>."
+	para "We shall press"
+	line "the limits of"
+	cont "their loyalty."
 	done
 
 LakeOfRageLanceRefusedText:
-	text "Oh… Well, if you"
-	line "change your mind,"
-	cont "please help me."
+	text "You can not"
+	line "fool me as easily"
+	cont "as you do"
+	cont "yourself."
+
+	para "I see how this"
+	line "suffering stokes"
+	cont "the inferno of"
+	cont "justice in your"
+	cont "heart."
 	done
 
 LakeOfRageLanceAskHelpText:
-	text "LANCE: Hm? Are you"
-	line "going to help me?"
+	text "I humbly request"
+	line "your aid in this"
+	cont "matter?"
 	done
 
 LakeOfRageGyaradosCryText:
@@ -337,124 +343,169 @@ LakeOfRageGyaradosCryText:
 	done
 
 LakeOfRageGrampsText:
-	text "The GYARADOS are"
-	line "angry!"
+	text "This lake used to"
+	line "symbolise peace"
+	cont "and tranquility."
 
-	para "It's a bad omen!"
+	para "That was decades"
+	line "ago."
+
+	para "I struggle to"
+	line "remember those"
+	cont "days."
 	done
 
 LakeOfRageGrampsText_ClearedRocketHideout:
-	text "Hahah! The MAGI-"
-	line "KARP are biting!"
-	done
+	text "Something has"
+	line "changed here."
 
-LakeOfRageSuperNerdText:
-	text "I heard this lake"
-	line "was made by ram-"
-	cont "paging GYARADOS."
+	para "The air is fresh"
+	line "and still."
 
-	para "I wonder if there"
-	line "is any connection"
-
-	para "to their mass out-"
-	line "break now?"
+	para "It reminds me"
+	line "of the peaceful"
+	cont "days of my"
+	cont "youth."
 	done
 
 LakeOfRageCooltrainerFText:
-	text "Did my eyes de-"
-	line "ceive me? I saw a"
+	text "GYARADOS has base"
+	line "81 speed."
 
-	para "red GYARADOS in"
-	line "the LAKE…"
+	para "That's exactly 1"
+	line "point higher than"
+	cont "DRAGONITE."
 
-	para "But I thought"
-	line "GYARADOS were"
-	cont "usually blue?"
+	para "I'm sure I can"
+	line "use this to my"
+	cont "advantage one"
+	cont "day."
+
+	para "WHAHAHA..."
 	done
 
 FisherAndreSeenText:
-	text "Let me battle with"
-	line "the #MON I just"
-	cont "caught!"
+	text "I saw a RED"
+	line "GYARADOS!"
+
+	para "I must have it!"
+
+	para "It's bound to be"
+	line "really strong"
+	cont "right?"
+
+	para "I'm kicking my"
+	line "current GYARADOS"
+	cont "out of my team!"
 	done
 
 FisherAndreBeatenText:
-	text "I might be an ex-"
-	line "pert angler, but"
+	text "Damn it GYARADOS!"
 
-	para "I stink as a #-"
-	line "MON trainer…"
+	para "This is all"
+	line "your fault!"
 	done
 
 FisherAndreAfterBattleText:
-	text "I won't lose as an"
-	line "angler! I catch"
-	cont "#MON all day."
+	text "My #MON are"
+	line "just too weak!"
+
+	para "I don't want to"
+	line "train them!"
+
+	para "I want them to"
+	line "be strong from"
+	cont "the get go."
 	done
 
 FisherRaymondSeenText:
-	text "No matter what I"
-	line "do, all I catch"
+	text "Blimey!"
 
-	para "are the same #-"
-	line "MON…"
+	para "Dat der RED"
+	line "GYARADOS outta"
+	cont "be worth a few"
+	cont "bob eh?"
+
+	para "You had better"
+	line "be givin it to me."
 	done
 
 FisherRaymondBeatenText:
-	text "My line's all"
-	line "tangled up…"
+	text "Steady on mate!"
 	done
 
 FisherRaymondAfterBattleText:
-	text "Why can't I catch"
-	line "any good #MON?"
+	text "If I paint a"
+	line "regular GYARADOS"
+	cont "RED...."
+
+	para "That outta do it!"
 	done
 
 CooltrainermAaronSeenText:
-	text "If a trainer spots"
-	line "another trainer,"
+	text "Come on!"
 
-	para "he has to make a"
-	line "challenge."
+	para "Bring it on!"
 
-	para "That is our"
-	line "destiny."
+	para "Oh..."
+
+	para "I was told it"
+	line "is dangerous to"
+	cont "be around here."
+
+	para "I am ready for"
+	line "it."
+
+	para "I fear nothing!"
 	done
 
 CooltrainermAaronBeatenText:
-	text "Whew…"
-	line "Good battle."
+	text "Stop!"
+
+	para "Help me!"
 	done
 
 CooltrainermAaronAfterBattleText:
-	text "#MON and their"
-	line "trainer become"
+	text "I'm not as strong"
+	line "as I thought!"
 
-	para "powerful through"
-	line "constant battling."
+	para "What am I"
+	line "doing here."
+
+	para "I'm lost in the"
+	line "woods."
+
+	para "I'm so scared!"
 	done
 
-CooltrainerfLoisSeenText:
-	text "What happened to"
-	line "the red GYARADOS?"
+CooltrainerfLoisText:
+	text "Oh hello."
 
-	para "It's gone?"
+	para "This place is"
+	line "beautiful."
 
-	para "Oh, darn. I came"
-	line "here for nothing?"
+	para "But I can't see"
+	line "the beauty."
 
-	para "I know--let's"
-	line "battle!"
-	done
+	para "Three years ago"
+	line "my little brother"
+	cont "went missing here."
 
-CooltrainerfLoisBeatenText:
-	text "Good going!"
-	done
+	para "He said he had"
+	line "ate a DITTO and"
+	cont "could TRANSFORM."
 
-CooltrainerfLoisAfterBattleText:
-	text "Come to think of"
-	line "it, I've seen a"
-	cont "pink BUTTERFREE."
+	para "He said he would"
+	line "TRANSFORM into a"
+	cont "dragon."
+
+	para "All I remember"
+	line "are the colourful"
+	cont "CHOICE SPECS he"
+	cont "was wearing when"
+	cont "he left."
+
+	para "I miss him."
 	done
 
 MeetWesleyText:
@@ -595,7 +646,7 @@ LakeOfRage_MapEvents:
 	object_event 30, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAndre, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event 24, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherRaymond, EVENT_LAKE_OF_RAGE_CIVILIANS
 	object_event  4, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAaron, EVENT_LAKE_OF_RAGE_CIVILIANS
-	object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerCooltrainerfLois, EVENT_LAKE_OF_RAGE_CIVILIANS
+	object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CooltrainerfLoisScript, -1
 	object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS
 	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageChoiceSpecs, EVENT_LAKE_OF_RAGE_CHOICE_SPECS

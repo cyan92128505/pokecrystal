@@ -82,16 +82,14 @@ MahoganyTownGrampsText_ClearedRocketHideout:
 	line "the lake have all"
 	cont "settled down."
 
-	para "Wel..."
+	para "Well..."
 
 	para "Relatively"
 	line "speaking."
 
-	para "I came here to"
-	line "retire."
-
-	para "I don't want"
-	line "any fuss."
+	para "All is well in"
+	line "this quiet little"
+	cont "mountain town."
 	done
 
 MahoganyTownFisherText:
@@ -107,20 +105,21 @@ MahoganyTownFisherText:
 	done
 
 MahoganyTownLassText:
-	text "I like this town."
+	text "Thank you so"
+	line "much for getting"
+	cont "rid of those"
+	cont "awful ROCKETS."
 
-	para "It's nice and"
-	line "peaceful."
+	para "Now grandmas shop"
+	line "has a massive"
+	cont "basement."
 
-	para "Only issue is I"
-	line "live with my"
-	cont "grandma and her"
-	cont "food is awful."
-
-	para "Buy some of her"
-	line "sweets in the"
-	cont "shop to see what"
-	cont "I mean."
+	para "If only we could"
+	line "get rid of the"
+	cont "aggressive"
+	cont "#MON we could"
+	cont "rent it out and"
+	cont "make a fortune."
 	done
 
 MahoganyTownSignText:

@@ -1,10 +1,8 @@
 	object_const_def
 	const ROUTE44_FISHER1
-	;const ROUTE44_FISHER2
 	const ROUTE44_YOUNGSTER1
 	const ROUTE44_POKEBALL
 	const ROUTE44_YOUNGSTER2
-	;const ROUTE44_COOLTRAINER_M
 	const ROUTE44_COOLTRAINER_F
 	const ROUTE44_FRUIT_TREE
 	const ROUTE44_FIELDMON_1
@@ -94,13 +92,6 @@ Route44GiftM:
 Route44PackFullM:
 	jumpstd PackFullMScript
 	end
-;VancePackFull:
-;	setevent EVENT_VANCE_CARBOS
-;	jumpstd PackFullMScript
-;	end
-;Route44RematchGiftM:
-;	jumpstd RematchGiftMScript
-;	end
 
 TrainerBirdKeeperVance1:
 	faceplayer
@@ -276,17 +267,6 @@ TrainerFisherWilton1:
 .Route44PackFullM:
 	sjump Route44PackFullM
 
-TrainerFisherEdgar:
-	trainer FISHER, EDGAR, EVENT_BEAT_FISHER_EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext FisherEdgarAfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerCooltrainerfCybil:
 	trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
 
@@ -309,17 +289,6 @@ TrainerPokemaniacZach:
 	closetext
 	end
 
-TrainerCooltrainermAllen:
-	trainer COOLTRAINERM, ALLEN, EVENT_BEAT_COOLTRAINERM_ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext CooltrainermAllenAfterBattleText
-	waitbutton
-	closetext
-	end
-
 Route44Sign1:
 	jumptext Route44Sign1Text
 
@@ -336,177 +305,182 @@ Route44HiddenAmbrosia:
 	hiddenitem LUCKY_EGG, EVENT_ROUTE_44_HIDDEN_LUCKY_EGG
 
 FisherWilton1SeenText:
-	text "Aack! You made me"
-	line "lose a POLIWAG!"
+	text "AACK! I was"
+	line "just about to"
+	cont "catch a FEEBAS"
+	cont "but you made"
+	cont "let it get away!"
 
-	para "What are you going"
-	line "to do about it?"
+	para "Have you ever"
+	line "eaten a FEEBAS?"
+
+	para "Nothing compares."
+
+	para "Nothing."
+
+	para "Now what am I"
+	line "meant to have"
+	cont "for dinner."
 	done
 
 FisherWilton1BeatenText:
-	text "Just forget about"
-	line "it."
+	text "Don't eat me!"
 	done
 
 FisherWiltonHugePoliwagText:
-	text "That POLIWAG that"
-	line "got away…"
-	cont "It was huge."
+	text "If you look"
+	line "after your FEEBAS"
+	cont "and love it, it"
+	cont "will evolve into"
+	cont "a MILOTIC."
 
-	para "I swear it must've"
-	line "been 16 feet long!"
-	done
-
-FisherEdgarSeenText:
-	text "I fish until I"
-	line "can't anymore."
-
-	para "I also battle"
-	line "until I drop."
-
-	para "That's my"
-	line "relationship"
-	cont "with my #MON."
-	done
-
-FisherEdgarBeatenText:
-	text "Hmmmm… "
-	line "This isn't right."
-	done
-
-FisherEdgarAfterBattleText:
-	text "That's 100 wins"
-	line "to 101 losses."
-
-	para "I won't battle"
-	line "again for a while."
+	para "But there isn't a"
+	line "man alive who can"
+	cont "resist the allure"
+	cont "of a delicious"
+	cont "FEEBAS."
 	done
 
 BirdKeeperVance1SeenText:
-	text "Do you know about"
-	line "the legendary bird"
-	cont "#MON?"
+	text "Do you have any"
+	line "idea how many"
+	cont "cool and legendary"
+	cont "#MON are FLYING"
+	cont "TYPE?"
+
+	para "It is the coolest"
+	line "type."
+
+	para "By far!"
 	done
 
 BirdKeeperVance1BeatenText:
-	text "Whew! You're hot"
-	line "stuff."
+	text "I need some"
+	line "legendary"
+	cont "#MON!"
 	done
 
 BirdKeeperVanceLegendaryBirdsText:
-	text "ARTICUNO, ZAPDOS"
-	line "and MOLTRES are"
+	text "My perfect team..."
 
-	para "the three legend-"
-	line "ary bird #MON."
+	para "ARTICUNO"
 
-	para "I heard there are"
-	line "other legendary"
-	cont "birds, though."
+	para "ZAPDOS"
+
+	para "MOLTRES"
+
+	para "HO OH"
+
+	para "LUGIA"
+
+	para "YVELTAL"
+
+	para "Perfect!"
 	done
 
 BirdKeeperVance2BeatenText:
-	text "Why can't I ever"
-	line "beat you?"
-
-	para "Oh yeah, here you"
-	line "go. It's that gift"
-
-	para "I couldn't give"
-	line "you last time."
+	text "You just keep"
+	line "soaring higher"
+	cont "and higher."
 	done
 
 PsychicPhilSeenText:
-	text "I'm gonna win,"
-	line "for sure!"
+    text "I am working to"
+    line "control my anger."
+
+	para "I'm heading to"
+	line "ICE CAVE to"
+	cont "meditate and"
+	cont "heighten my"
+	cont "psychic powers."
+
+	para "You disturb my"
+	line "zen."
 	done
 
 PsychicPhilBeatenText:
-	text "Arrgh… That's a"
-	line "shocking loss…"
+	text "ARRRRAHHHH!!"
 	done
 
 PsychicPhilAfterBattleText:
-	text "It's important to"
-	line "have conviction"
-	cont "on your side."
+	text "Who the hell do"
+	line "you think you are!"
+
+	para "I'm going to..."
+
+	para "ARRAGAHHRRR"
+
+	para "........"
+
+	para "Zen... zen..."
 	done
 
 PokemaniacZachSeenText:
-	text "I'll do anything"
-	line "to get my hands on"
-	cont "rare #MON!"
+	text "I am building"
+	line "a team that can"
+	cont "cover every"
+	cont "threat."
+
+	para "When war comes I"
+	line "will survive and"
+	cont "by surviving I"
+	cont "will win."
 	done
 
 PokemaniacZachBeatenText:
-	text "Oooh, your #MON"
-	line "are so appealing."
+	text "You breached my"
+	line "defenses!"
 	done
 
 PokemaniacZachAfterBattleText:
-	text "If a #MON has"
-	line "different colors"
+	text "Maybe it is"
+	line "impossible to"
+	cont "cover every"
+	cont "threat with just"
+	cont "six #MON."
 
-	para "from usual, it's"
-	line "more valuable."
-
-	para "What? You mean"
-	line "that's not true?"
-	done
-
-CooltrainermAllenSeenText:
-	text "I can tell you're"
-	line "a good trainer by"
-	cont "looking at you."
-
-	para "I'm good at #-"
-	line "MON, and I can see"
-	cont "that you are too."
-	done
-
-CooltrainermAllenBeatenText:
-	text "Tch! It's a total"
-	line "loss on my part."
-	done
-
-CooltrainermAllenAfterBattleText:
-	text "Wow. You have a"
-	line "lot of BADGES."
-
-	para "No wonder you're"
-	line "so tough."
-
-	para "I wonder if"
-	line "ECRUTEAK GYM's"
-
-	para "MORTY is still in"
-	line "training?"
-
-	para "He really hammered"
-	line "me."
+	para "Maybe it is"
+	line "kill or be killed."
 	done
 
 CooltrainerfCybilSeenText:
-	text "You look strong."
+	text "For years I"
+	line "have studied under"
+	cont "the KIMONO GIRLS."
 
-	para "Good trainers seek"
-	line "tough opponents"
-	cont "instinctively."
+	para "Everyday I danced"
+	line "like it was my"
+	cont "last."
+
+	para "I learnt the"
+	line "secrets of their"
+	cont "power."
+
+	para "And have poured"
+	line "all my knowledge"
+	cont "into my ultimate"
+	cont "team."
 	done
 
 CooltrainerfCybilBeatenText:
-	text "Nope! This won't"
-	line "do at all."
+	text "All those years..."
+
+	para "Gone."
 	done
 
 CooltrainerfCybilAfterBattleText:
-	text "We all get better"
-	line "by experiencing"
-	cont "many battles."
+	text "EEVEE has many"
+	line "forms."
 
-	para "I battled a lot to"
-	line "become what I am"
-	cont "today--an elite."
+	para "We too have many"
+	line "different forms"
+	cont "within us."
+
+	para "Only when these"
+	line "different people"
+	cont "work together can"
+	cont "we achieve our"
+	cont "full potential."
 	done
 
 Route44Sign1Text:
@@ -631,12 +605,10 @@ Route44_MapEvents:
 
 	def_object_events
 	object_event 35,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
-	;object_event 19, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
 	object_event 10,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
 	object_event 6, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44LifeOrb, EVENT_ROUTE_44_LIFE_ORB
 	object_event 57,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TrainerBirdKeeperVance1, -1
-	;object_event 41, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
-	object_event 31, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
+	object_event 49, 19, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
 	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
 
 	object_event 49,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route44FieldMon1Script, EVENT_FIELD_MON_1

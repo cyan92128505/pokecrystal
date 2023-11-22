@@ -205,7 +205,7 @@ KimonoGirlZukiAfterBattleText:
 
 KimonoGirlKuniSeenText:
 	text "You need to"
-	line "stop and feel"
+	line "stop and feel the"
 	cont "push and pull"
 	cont "of life."
 
@@ -225,23 +225,28 @@ KimonoGirlKuniAfterBattleText:
 	done
 
 KimonoGirlMikiSeenText:
-	text "Stop right there!"
+	text "EEVEE has many"
+	line "forms."
 
-	para "You must always"
-	line "be prepared."
+	para "#MON have"
+	line "many forms."
 
-	para "To defend"
-	line "yourself!"
+	para "What kind of"
+	line "#MON are"
+	cont "you."
 	done
 
 KimonoGirlMikiBeatenText:
-	text "You were ready."
+	text "A strong one!"
 	done
 
 KimonoGirlMikiAfterBattleText:
-	text "I'm going to"
-	line "dance my cares"
-	cont "away."
+	text "You remind me"
+	line "of CYBIL."
+
+	para "He too understood"
+	line "the meaning of"
+	cont "our dance."
 	done
 
 SurfGuyNeverLeftAScratchText:
@@ -303,13 +308,13 @@ DanceTheatreCooltrainerMText:
 	text "That man's always"
 	line "with BLASTOISE."
 
-	para "It looks really"
-	line "old like he is."
+	para "And he is always"
+	line "watching these"
+	cont "girls dance."
 
-	para "I'm pretty sure"
-	line "BLASTOISE can live"
-	cont "much longer than"
-	cont "humans."
+	para "I don't know"
+	line "what to make"
+	cont "of this."
 	done
 
 DanceTheatreGrannyText:

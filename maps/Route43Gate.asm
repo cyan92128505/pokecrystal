@@ -113,7 +113,7 @@ OfficerScript_GuardWithSludgeBomb:
 	iftrue .GotSludgeBomb
 	writetext OfficerText_FoundTM
 	promptbutton
-	verbosegiveitem TM_SLUDGE_BOMB
+	verbosegiveitem NUGGET
 	iffalse .NoRoomForSludgeBomb
 	setevent EVENT_GOT_TM36_SLUDGE_BOMB
 	closetext
@@ -211,14 +211,20 @@ RocketText_AllYouGot:
 	done
 
 RocketText_MakingABundle:
-	text "He-he-he. We're"
-	line "making a bundle."
+	text "Our boss doesn't"
+	line "know we are here"
+	cont "doing this."
 
-	para "Everyone wants to"
-	line "see what's going"
+	para "Hey we might"
+	line "as well make a"
+	cont "little extra"
+	cont "cash."
 
-	para "on up at LAKE OF"
-	line "RAGE."
+	para "Consider it a"
+	line "tip."
+
+	para "It goes a long"
+	line "way."
 	done
 
 OfficerText_FoundTM:
@@ -229,20 +235,21 @@ OfficerText_FoundTM:
 	para "They left this"
 	line "behind."
 
-	para "It makes me uncom-"
-	line "fortable. Could"
-	cont "you take it away?"
-	done
-
-Text_ReceivedTM30: ; unreferenced
-	text "<PLAYER> received"
-	line "TM30."
+	para "It's probably"
+	line "stolen. Here you"
+	cont "should take it."
 	done
 
 OfficerText_AvoidGrass:
-	text "Use this gate to"
-	line "avoid walking in"
-	cont "the grass."
+	text "You heading to"
+	line "the LAKE OF RAGE?"
+
+	para "It is a beautiful"
+	line "place but it can"
+	cont "be dangerous."
+
+	para "Take care out"
+	line "there."
 	done
 
 Route43Gate_MapEvents:

@@ -342,7 +342,7 @@ Route43FruitTree:
 	fruittree FRUITTREE_ROUTE_43
 
 Route43MaxEther:
-	itemball MAX_ETHER
+	itemball TM_SLUDGE_BOMB
 
 PokemaniacBenSeenText:
 	text "You are trying"

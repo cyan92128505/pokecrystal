@@ -421,9 +421,9 @@ AI_Smart_Switch:
 	;and SLP
 	;jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
 
-; switch if choice locked into a NVE move that cant 3hko (assumes ai only has the one move)
-    call CanAI3HKO
-    jr c, .not_encored
+; switch if choice locked into a NVE move
+   ; call CanAI3HKO
+   ; jr c, .not_encored
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .not_encored
@@ -436,6 +436,16 @@ AI_Smart_Switch:
 	cp EFFECTIVE
 	jp c, .switch
 	and a
+	jp z, .switch
+
+; switch if locked into a move with 0 pp
+	ld hl, wEnemyMonPP
+	ld a, [wCurEnemyMoveNum]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
 	jp z, .switch
 .not_encored
 

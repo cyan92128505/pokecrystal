@@ -21,27 +21,41 @@ BlackthornMartBlackBeltScript:
 	jumptextfaceplayer BlackthornMartBlackBeltText
 
 BlackthornMartCooltrainerMText:
-	text "You can't buy MAX"
-	line "REVIVE, but it"
+	text "I wish I could"
+	line "use MAX_POTION in"
+	cont "GYM battles!"
 
-	para "fully restores a"
-	line "fainted #MON."
+	para "DRAGON type is"
+	line "weak to ICE."
 
-	para "Beware--it won't"
-	line "restore PP, the"
+	para "But CLAIR has"
+	line "some #MON"
+	cont "that aren't"
+	cont "DRAGON type."
 
-	para "POWER POINTS"
-	line "needed for moves."
+	para "She is so smart!"
+
+	para "DRAGONS are"
+	line "also weak to"
+	cont "FAIRY and DRAGON"
+	cont "but I don't have"
+	cont "any of those."
 	done
 
 BlackthornMartBlackBeltText:
-	text "MAX REPEL keeps"
-	line "weak #MON away"
-	cont "from you."
+	text "I need more"
+	line "#MON."
 
-	para "It's the longest"
-	line "lasting of the"
-	cont "REPEL sprays."
+	para "But should I"
+	line "buy a small"
+	cont "number of"
+	cont "ULTRA BALLS"
+	cont "or loads of"
+	cont "#BALLS?"
+
+	para "Or maybe a"
+	line "moderate number of"
+	cont "GREAT BALLS."
 	done
 
 BlackthornMart_MapEvents:

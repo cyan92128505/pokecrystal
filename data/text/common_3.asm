@@ -1504,7 +1504,11 @@ _AskDeleteMoveText::
 	done
 
 _DeleterForgotMoveText::
-	text "Done! Your #MON"
+	text "Whack!"
+
+	para "One good pop from"
+	line "my forget me mallet"
+	cont "and the #MON"
 	line "forgot the move."
 	done
 

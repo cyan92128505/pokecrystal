@@ -3509,8 +3509,8 @@ DialgaEvosAttacks:
 	db 30, FLASH_CANNON
 	db 40, AURA_SPHERE
 	db 50, DRAGON_PULSE
-	db 60, EARTHQUAKE
-	db 70, DRAGON_CLAW
+	db 60, DRAGON_CLAW
+	db 70, OUTRAGE
 	db 80, METEOR_MASH
 	db 0 ; no more level-up moves
 

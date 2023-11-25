@@ -236,54 +236,80 @@ IsGarchompInParty:
     ret
 
 RayquazaNotWorthyText:
-	text "I AM RAYQUAZA!"
+	text "RRAGGGGGGG"
 
-	para "THE DRAGON LORD!"
+	para "...."
 
-	para "TINY HUMAN..."
+	para "Thou hast traveled"
+	line "far and the burden"
+	cont "of thine travels is"
+	cont "written on thine"
+	cont "heart."
 
-	para "I SENSE IN YOU"
-	line "THE HEART OF A"
-	cont "DRAGON!"
+	para "I am RAYQUAZA."
 
-	para "PROVE TO ME"
-	line "YOUR KINSHIP."
+	para "Upon throne"
+	line "immortal I sit."
 
-	para "BECOME A DRAGON"
-	line "CHAMPION BY"
-	cont "MASTERING MY"
-	cont "DRAGONS."
+	para "Thou life fleeting"
+	line "though it be..."
 
-	para "DRAGONITE!"
+	para "It sends ripples"
+	line "cascading through"
+	cont "time beyond thine"
+	cont "days."
 
-	para "SALAMENCE!"
+	para "YES...RRGGGHHHH"
 
-	para "GARCHOMP!"
+	para "A tiny flame"
+	line "whispers of the"
+	cont "dormant inferno"
+	cont "resting in thine"
+	cont "soul."
 
-	para "BRING THEM TO ME!"
+	para "Prove to me thine"
+	line "kinship."
+
+	para "Entwine thou"
+	line "flame with those"
+	cont "of mine kin."
+
+	para "DRAGONITE."
+
+	para "SALAMENCE."
+
+	para "GARCHOMP."
+
+	para "Present them to"
+	line "me and thou shalt"
+	cont "know my favor."
 	done
 
 RayquazaWorthyText:
 	text "AHHHHH..."
 
-	para "YOU ARE A TRUE"
-	line "DRAGON CHAMPION!"
+	para "The inferno"
+	line "erupts."
 
-	para "BUT IS YOUR HEART"
-	line "STRONG ENOUGH.."
+	para "Luminous thou"
+	line "appears before me."
 
-	para "TO MASTER ME!"
+	para "An overwhelming"
+	line "light I have only"
+	cont "felt once before."
 
-	para "THE DRAGON LORD!"
+	para "I feel the fire"
+	line "course my veins."
 
-	para "SO THAT TOGETHER"
-	line "WE MIGHT CONQUER"
-	cont "THE DARK ONE.."
+	para "Which flame shall"
+	line "prevail!"
 
-	para "GIRATINA!"
+	para "RRRGAAAHHH!!!"
 
-	para "SHOW ME YOUR"
-	line "STRENGTH!"
+	para "Come young"
+	line "DRAGON CHAMPION."
+
+	para "Have at thee!"
 	done
 
 DragonsDenB1F_ClairScene:
@@ -433,11 +459,19 @@ ClairText_Wait:
 	done
 
 ClairText_GiveDragonbreathDragonDen:
-	text "CLAIR: I'm sorry"
-	line "about this."
+	text "I apologise"
+	line "for my conduct."
 
-	para "Here, take this as"
-	line "my apology."
+	para "It has been most"
+	line "shameful and"
+	cont "unbecoming of a"
+	cont "LEADER."
+
+	para "You have the heart"
+	line "of a dragon!"
+
+	para "You should take"
+	line "this."
 	done
 
 Text_ReceivedTM24:
@@ -450,7 +484,7 @@ ClairText_DescribeDragonbreathDragonDen:
 	line "DRAGON PULSE."
 	done
 
-ClairText_NoRoom:
+ClairText_NoRoom: ; impossible?
 	text "Oh? You don't have"
 	line "any room for this."
 
@@ -462,66 +496,87 @@ ClairText_NoRoom:
 	done
 
 ClairText_WhatsTheMatterDragonDen:
-	text "CLAIR: What's the"
-	line "matter? Aren't you"
+	text "You have obtained"
+	line "all 8 BADGES of"
+	cont "JOHTO."
 
-	para "going on to the"
-	line "#MON LEAGUE?"
+	para "Now you are"
+	line "ready for the"
+	cont "final challenge."
 
-	para "Do you know how to"
-	line "get there?"
+	para "You must face the"
+	line "ELITE FOUR."
 
-	para "From here, go to"
-	line "NEW BARK TOWN."
+	para "They are some of"
+	line "the strongest"
+	cont "trainers in the"
+	cont "world."
 
-	para "Then SURF east to"
-	line "#MON LEAGUE."
+	para "If you defeat"
+	line "them you become"
+	cont "a CHAMPION."
 
-	para "The route there is"
-	line "very tough."
+	para "To get to them"
+	line "you must travel"
+	cont "east from NEW"
+	cont "BARK TOWN."
 
-	para "Don't you dare"
-	line "lose at the #-"
-	cont "MON LEAGUE!"
+	para "If you become"
+	line "a CHAMPION many"
+	cont "things will"
+	cont "change."
 
-	para "If you do, I'll"
-	line "feel even worse"
+	para "People will"
+	line "expect you to"
+	cont "fight in the"
+	cont "war."
 
-	para "about having lost"
-	line "to you!"
+	para "You don't have"
+	line "to do this."
 
-	para "Give it everything"
-	line "you've got."
+	para "But you are a"
+	line "dragon!"
+
+	para "I know you will"
+	line "protect people"
+	cont "with your life."
+
+	para "Just like LANCE."
+
+	para "Good luck!"
 	done
 
 DragonShrineSignpostText:
 	text "DRAGON SHRINE"
 
 	para "A shrine honoring"
-	line "the dragon #MON"
-
-	para "said to have lived"
-	line "in DRAGON'S DEN."
+	line "DRAGON #MON"
 	done
 
 CooltrainermDarinSeenText:
-	text "You! How dare you"
-	line "enter uninvited!"
+	text "How dare you"
+	line "enter this sacred"
+	cont "place."
+
+	para "In the name of"
+	line "the great LANCE."
+
+	para "I shall expel you!"
 	done
 
 CooltrainermDarinBeatenText:
-	text "S-strong!"
+	text "Forgive me"
+	line "father."
 	done
 
 CooltrainermDarinAfterBattleText:
-	text "The SHRINE ahead"
-	line "is home to the"
+	text "You must be the"
+	line "trainer CLAIR"
+	cont "has permitted."
 
-	para "MASTER of our"
-	line "dragon-user clan."
-
-	para "You're not allowed"
-	line "to just go in!"
+	para "I can tell that"
+	line "LANCE would agree"
+	cont "with her decision."
 	done
 
 CooltrainerfCaraSeenText:

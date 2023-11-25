@@ -22,29 +22,44 @@ BlackthornPokecenter1FCooltrainerMScript:
 	jumpstd HappinessCheckScript
 
 BlackthornPokecenter1FGentlemanText:
-	text "Deep inside far-"
-	line "off INDIGO PLATEAU"
+	text "DRAGON #MON"
+	line "are very rare."
 
-	para "is the #MON"
-	line "LEAGUE."
+	para "The CELADON"
+	line "GAME CORNER pays"
+	cont "a very handsome"
+	cont "price for any"
+	cont "DRAGON #MON"
+	cont "they can get."
 
-	para "I hear the best"
-	line "trainers gather"
+	para "I am recruiting"
+	line "a team."
 
-	para "there from around"
-	line "the country."
+	para "We are going to"
+	line "break into"
+	cont "DRAGONS DEN."
+
+	para "Keep this a"
+	line "secret!"
 	done
 
 BlackthornPokecenter1FTwinText:
-	text "There was this"
-	line "move I just had"
+	text "I have overheard"
+	line "that old guy"
+	cont "talking about"
+	cont "breaking into"
+	cont "DRAGONS DEN."
 
-	para "to teach my #-"
-	line "MON."
+	para "What an idiot!"
 
-	para "So I got the MOVE"
-	line "DELETER to make it"
-	cont "forget an HM move."
+	para "Anyone who"
+	line "enters unwelcome"
+	cont "either becomes"
+	cont "dinner for the"
+	cont "DRAGON LORD..."
+
+	para "or dinner for"
+	line "CLAIR."
 	done
 
 BlackthornPokecenter1F_MapEvents:

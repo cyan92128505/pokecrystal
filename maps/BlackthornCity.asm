@@ -61,20 +61,7 @@ BlackthornGramps2Script:
 	jumptextfaceplayer BlackthornGrampsGrantsEntryText
 
 BlackthornBlackBeltScript:
-	faceplayer
-	opentext
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .ClearedRadioTower
-	writetext BlackBeltText_WeirdRadio
-	waitbutton
-	closetext
-	end
-
-.ClearedRadioTower:
-	writetext BlackBeltText_VoicesInMyHead
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer BlackBeltText_WeirdRadio
 
 BlackthornCooltrainerF1Script:
 	jumptextfaceplayer BlackthornCooltrainerF1Text
@@ -143,36 +130,40 @@ BlackthornCityMartSign:
 	jumpstd MartSignScript
 
 Text_ClairIsOut:
-	text "I am sorry."
+	text "Are you a"
+	line "trainer?"
 
-	para "CLAIR, our GYM"
-	line "LEADER, entered"
+	para "You don't look"
+	line "very strong."
 
-	para "the DRAGON'S DEN"
-	line "behind the GYM."
+	para "The GYM LEADER"
+	line "CLAIR is in the"
+	cont "DRAGONS DEN."
 
-	para "I have no idea"
-	line "when our LEADER"
-	cont "will return."
+	para "She is a very"
+	line "bust woman."
+
+	para "I'm afraid she"
+	line "doesn't have time"
+	cont "for the likes of"
+	cont "you."
 	done
 
 Text_ClairIsIn:
-	text "CLAIR, our GYM"
-	line "LEADER, is waiting"
-	cont "for you."
+	text "CLAIR awaits"
+	line "your challenge."
 
-	para "However, it would"
-	line "be impossible for"
-
-	para "a run-of-the-mill"
-	line "trainer to win."
+	para "Not that a"
+	line "trainer like you"
+	cont "would pose any"
+	cont "challenge for her."
 	done
 
 Text_ClairIsBeaten:
 	text "You defeated"
 	line "CLAIR?"
 
-	para "That's amazing!"
+	para "How can that be!"
 
 	para "I've never heard"
 	line "of her losing to"
@@ -182,46 +173,85 @@ Text_ClairIsBeaten:
 	done
 
 BlackthornGrampsRefusesEntryText:
-	text "No. Only chosen"
-	line "trainers may train"
+	text "Only those with"
+	line "the heart of"
+	cont "the dragon may"
+	cont "enter."
 
-	para "here."
-	line "Please leave."
+	para "The great dragon"
+	line "lord decrees it."
+
+	para "You are not"
+	line "chosen."
+
+	para "Be gone!"
 	done
 
 BlackthornGrampsGrantsEntryText:
-	text "If CLAIR allows"
-	line "it, her grand-"
-	cont "father--our MASTER"
-	cont "--will also."
+	text "LEADER CLAIR has"
+	line "permitted your"
+	cont "entry."
 
-	para "You may enter."
+	para "Her grandfather"
+	line "awaits you."
+
+	para "Do not offend"
+	line "the great dragon"
+	cont "lord."
+
+	para "Lest your days"
+	line "find an early end."
 	done
 
 BlackBeltText_WeirdRadio:
-	text "My radio's busted?"
-	line "Lately, I only get"
-	cont "this weird signal."
-	done
+	text "I came here to"
+	line "fight dragons."
 
-BlackBeltText_VoicesInMyHead:
-	text "Arooo! Voices in"
-	line "my head!"
+	para "But I just spent"
+	line "the last four"
+	cont "hours playing"
+	cont "some RPG game"
+	cont "with that guy."
 
-	para "Huh? I'm listening"
-	line "to my radio!"
+	para "Time to get back"
+	line "to the grind!"
 	done
 
 BlackthornCooltrainerF1Text:
-	text "Are you going to"
-	line "make your #MON"
-	cont "forget some moves?"
+	text "I lost my"
+	line "REMEMBRALL."
+
+	para "Luckily the guy"
+	line "who invented it"
+	cont "lives in that"
+	cont "house down there."
+
+	para "He has this friend"
+	line "who can make"
+	cont "#MON forget"
+	cont "moves."
+
+	para "But his methods"
+	line "are a bit..."
+
+	para "Physical."
 	done
 
 BlackthornYoungsterText:
-	text "Dragon masters all"
-	line "come from the city"
-	cont "of BLACKTHORN."
+	text "Once I was"
+	line "standing right"
+	cont "here and I saw"
+	cont "LANCE as he"
+	cont "was visiting."
+
+	para "He is from this"
+	line "city."
+
+	para "He is a hero."
+
+	para "I know if war"
+	line "comes he will"
+	cont "protect us."
 	done
 
 MeetSantosText:
@@ -265,19 +295,27 @@ SantosNotSaturdayText:
 	done
 
 BlackthornCooltrainerF2Text:
-	text "Wow, you came"
-	line "through the ICE"
-	cont "PATH?"
+	text "Welcome to"
+	line "BLACKTHORN."
 
-	para "You must be a real"
-	line "hotshot trainer!"
+	para "We are serious"
+	line "trainers who"
+	cont "dedicate our"
+	cont "lives to the"
+	cont "great DRAGON LORD"
+	cont "in DRAGONS DEN."
+
+	para "Of course only"
+	line "a handful of"
+	cont "people are able"
+	cont "to actually enter"
+	cont "DRAGONS DEN."
 	done
 
 BlackthornCitySignText:
 	text "BLACKTHORN CITY"
 
-	para "A Quiet Mountain"
-	line "Retreat"
+	para "The DRAGON SANCTUM"
 	done
 
 BlackthornGymSignText:
@@ -285,8 +323,7 @@ BlackthornGymSignText:
 	line "#MON GYM"
 	cont "LEADER: CLAIR"
 
-	para "The Blessed User"
-	line "of Dragon #MON"
+	para "The DRAGON MASTER."
 	done
 
 MoveDeletersHouseSignText:

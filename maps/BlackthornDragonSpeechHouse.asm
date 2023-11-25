@@ -18,25 +18,42 @@ BlackthornDragonSpeechHouseDratiniScript:
 	closetext
 	end
 
-BlackthornDragonSpeechHousePictureBookshelf: ; unreferenced
-	jumpstd PictureBookshelfScript
-
-BlackthornDragonSpeechHouseMagazineBookshelf: ; unreferenced
-	jumpstd MagazineBookshelfScript
-
 BlackthornDragonSpeechHouseGrannyText:
-	text "A clan of trainers"
-	line "who can freely"
+	text "The dragons lived"
+	line "in these mountains"
+	cont "long before us."
 
-	para "command dragons"
-	line "live right here in"
-	cont "BLACKTHORN."
+	para "They reside now"
+	line "in a sacred place"
+	cont "called DRAGONS"
+	cont "DEN."
 
-	para "As a result, there"
-	line "are many legends"
+	para "There lives the"
+	line "great DRAGON LORD."
 
-	para "about dragons in"
-	line "this town."
+	para "An ancient and"
+	line "supreme species"
+	cont "of dragon."
+
+	para "A RAYQUAZA."
+
+	para "The DRAGON LORD"
+	line "is centuries old."
+
+	para "He alone bestows"
+	line "the title of"
+	cont "dragon champion"
+	cont "upon those who"
+	cont "are worthy."
+
+	para "Only one person"
+	line "has been deemed"
+	cont "worthy thus far."
+
+	para "The pride of"
+	line "BLACKTHORN."
+
+	para "CHAMPION LANCE."
 	done
 
 BlackthornDragonSpeechHouseDratiniText:

@@ -88,7 +88,7 @@ GiratinaIntroText:
     cont "den a great"
     cont "hieratic!"
 
-    para "The dragon lord"
+    para "The DRAGON LORD"
     line "they call him."
 
     para "If those poor"

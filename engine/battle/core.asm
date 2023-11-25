@@ -766,14 +766,15 @@ HandleEncore:
 	dec a
 	ld [wPlayerEncoreCount], a
 	jr z, .end_player_encore
-	ld hl, wBattleMonPP
-	ld a, [wCurMoveNum]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	and PP_MASK
-	ret nz
+	;ld hl, wBattleMonPP
+	;ld a, [wCurMoveNum]
+	;ld c, a
+	;ld b, 0
+	;add hl, bc
+	;ld a, [hl]
+	;and PP_MASK
+	;ret nz
+	ret ; don't break encore when pp depleted
 
 .end_player_encore
 	ld hl, wPlayerSubStatus5
@@ -790,14 +791,15 @@ HandleEncore:
 	dec a
 	ld [wEnemyEncoreCount], a
 	jr z, .end_enemy_encore
-	ld hl, wEnemyMonPP
-	ld a, [wCurEnemyMoveNum]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	and PP_MASK
-	ret nz
+;	ld hl, wEnemyMonPP
+;	ld a, [wCurEnemyMoveNum]
+;	ld c, a
+;	ld b, 0
+;	add hl, bc
+;	ld a, [hl]
+;	and PP_MASK
+;	ret nz
+    ret ; don't break encore when pp deleted
 
 .end_enemy_encore
 	ld hl, wEnemySubStatus5

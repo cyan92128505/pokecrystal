@@ -580,58 +580,98 @@ CooltrainermDarinAfterBattleText:
 	done
 
 CooltrainerfCaraSeenText:
-	text "You shouldn't be"
-	line "in here!"
+	text "Are you the one"
+	line "who defeated"
+	cont "LEADER CLAIR?"
+
+	para "No way."
+
+	para "I won't allow"
+	line "a nobody like"
+	cont "you to disrespect"
+	cont "the beautiful"
+	cont "CLAIR."
 	done
 
 CooltrainerfCaraBeatenText:
-	text "Oh yikes, I lost!"
+	text "I tried CLAIR."
 	done
 
 CooltrainerfCaraAfterBattleText:
-	text "Soon I'm going to"
-	line "get permission"
+	text "CLAIR and I"
+	line "started training"
+	cont "at the same time."
 
-	para "from our MASTER to"
-	line "use dragons."
+	para "We were both"
+	line "given a HORSEA"
+	cont "as our first"
+	cont "#MON."
 
-	para "When I do, I'm"
-	line "going to become an"
+	para "But CLAIR is so"
+	line "talented."
 
-	para "admirable dragon"
-	line "trainer and gain"
-
-	para "our MASTER's"
-	line "approval."
+	para "She overtook me"
+	line "in no time."
 	done
 
 TwinsLeaandpia1SeenText:
-	text "It's a stranger we"
-	line "don't know."
+	text "This is a"
+	line "sacred place."
+
+	para "My sister and I"
+	line "can hear the"
+	cont "dragons talk."
+
+	para "Very few have"
+	line "such a gift."
+
+	para "Even the master"
+	line "and CLAIR can not"
+	cont "do that."
 	done
 
 TwinsLeaandpia1BeatenText:
-	text "Ouchies."
+	text "You must listen."
 	done
 
 TwinsLeaandpia1AfterBattleText:
-	text "It was like having"
-	line "to battle LANCE."
+	text "You should talk"
+	line "with the great"
+	cont "DRAGON LORD."
+
+	para "I'm too scared to"
+	line "talk to him."
+
+	para "He will eat me!"
 	done
 
 TwinsLeaandpia2SeenText:
-	text "Who are you?"
+	text "My sister keeps"
+	line "asking me to"
+	cont "talk to the"
+	cont "DRAGON LORD."
+
+	para "She is too"
+	line "scared of him."
 	done
 
 TwinsLeaandpia2BeatenText:
-	text "Meanie."
+	text "Can you speak"
+	line "dragon!"
 	done
 
 TwinsLeaandpia2AfterBattleText:
-	text "We'll tell on you."
+	text "Hearing dragons"
+	line "talk is a rare"
+	cont "gift."
 
-	para "MASTER will be"
-	line "angry with you."
+	para "The only other"
+	line "who can do it"
+	cont "is LANCE."
+
+	para "That's why we"
+	line "are allowed in"
+	cont "here."
 	done
 
 Text_FoundDragonFang:

@@ -153,7 +153,7 @@ LoadRandomBattleTowerMon:
     cp 11
     jr nc, .continue
 	call Random
-	cp 40 percent
+	cp 50 percent
 	jr c, .resample
 	ld a, b
 	jr .continue

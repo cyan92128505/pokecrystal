@@ -2822,11 +2822,17 @@ AI_Smart_BulkUp:
     call ShouldAIBoost
     jp nc, StandardDiscourage
 
-; encourage to +2
+; encourage to +2 - strong encourage if player is physical
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jp c, StandardEncourage
+    jp nc, .atPlus2
+    call IsPlayerPhysicalOrSpecial
+    jr nc, .special
+    jp StrongEncourage
+.special
+    jp StandardEncourage
 
+.atPlus2
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage
@@ -3924,7 +3930,7 @@ AI_Smart_QuiverDance:
 	jp nz, StandardDiscourage
 
 ; encourage to +2, strongly encourage if player has boosted SpAtk
-	ld a, [wPlayerSAtkLevel]
+	ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jp c, StandardEncourage
 
@@ -3968,6 +3974,11 @@ AI_Smart_DragonDance:
     ld a, [wEnemyMonStatus]
 	and 1 << PAR
 	jp nz, StandardDiscourage
+
+; discourage if player speed is +2 or higher
+    ld a, [wPlayerSpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp nc, StandardDiscourage
 
 ; Some Pokemon have double boost sets with DragonDance and BulkUp/SwordsDance
 ; in such cases we want to use DragonDance first to get to +1 speed, then only use the other boost

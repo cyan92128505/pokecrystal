@@ -169,76 +169,102 @@ BlackthornGymStatue:
 ClairIntroText:
 	text "I am CLAIR."
 
-	para "The world's best"
-	line "dragon master."
+	para "DRAGON warrior"
+	line "of BLACKTHORN."
 
-	para "I can hold my own"
-	line "against even the"
+	para "Defender of the"
+	line "DRAGONS FANG."
 
-	para "#MON LEAGUE's"
-	line "ELITE FOUR."
+	para "Keeper of the"
+	line "DRAGONS DEN."
 
-	para "Do you still want"
-	line "to take me on?"
+	para "I am second"
+	line "only to LANCE"
+	cont "himself."
 
-	para "…Fine."
-	line "Let's do it!"
+	para "All LEADERs you"
+	line "have fought before"
+	cont "are weak."
 
-	para "As a GYM LEADER,"
-	line "I will use my full"
+	para "The blood of the"
+	line "DRAGON courses my"
+	cont "veins."
 
-	para "power against any"
-	line "opponent!"
+	para "Let war come!"
+
+	para "Let my foes"
+	line "perish before me!"
+
+	para "Come trainer."
+
+	para "Show me your"
+	line "hunger to be a"
+	cont "CHAMPION!"
 	done
 
 ClairWinText:
-	text "I lost?"
+	text "You have defeated"
+	line "me..."
 
-	para "I don't believe"
-	line "it. There must be"
-	cont "some mistake…"
+	para "But you are"
+	line "not ready."
 	done
 
 ClairText_GoToDragonsDen:
-	text "I won't admit"
-	line "this."
+	text "You are the"
+	line "victor."
 
-	para "I may have lost,"
-	line "but you're still"
+	para "You're prowess at"
+	line "the art of battle"
+	cont "is evident."
 
-	para "not ready for the"
-	line "#MON LEAGUE."
+	para "But that is not"
+	line "enough..."
 
-	para "I know. You should"
-	line "take the dragon"
-	cont "user challenge."
+	para "It takes more"
+	line "than strength to"
+	cont "be a CHAMPION."
 
-	para "Behind this GYM is"
-	line "a place called"
-	cont "DRAGON'S DEN."
+	para "You are not"
+	line "ready."
 
-	para "There is a small"
-	line "shrine at its"
+	para "But I will give"
+	line "you a chance to"
+	cont "prove yourself."
 
-	para "center."
-	line "Go there."
+	para "Behind the GYM is"
+	line "DRAGONS DEN."
 
-	para "If you can prove"
-	line "that you've lost"
+	para "A sacred place."
 
-	para "your lazy ideals,"
-	line "I will recognize"
+	para "I permit your"
+	line "entry."
 
-	para "you as a trainer"
-	line "worthy of a GYM"
-	cont "BADGE!"
+	para "Go to the shrine"
+	line "deep within the"
+	cont "DEN."
+
+	para "There your heart"
+	line "will be tested."
 	done
 
 ClairText_TooMuchToExpect:
-	text "What's the matter?"
+	text "Do you think this"
+	line "is unfair."
 
-	para "Is it too much to"
-	line "expect of you?"
+	para "Life is unfair."
+
+	para "At least it is"
+	line "for the weak."
+
+	para "You must take"
+	line "what you want."
+
+	para "Now go to DRAGONS"
+	line "DEN."
+
+	para "And claim what you"
+	line "think you deserve!"
 	done
 
 BlackthornGymClairText_YouKeptMeWaiting:
@@ -257,9 +283,8 @@ BlackthornGymClairText_DescribeTM24:
 	text "That contains"
 	line "DRAGON PULSE."
 
-	para "If you don't want"
-	line "it, you don't have"
-	cont "to take it."
+	para "May it serve you"
+	line "well."
 	done
 
 BlackthornGymClairText_BagFull:
@@ -268,135 +293,165 @@ BlackthornGymClairText_BagFull:
 	done
 
 BlackthornGymClairText_League:
-	text "What's the matter?"
+	text "You have proven"
+	line "yourself as a"
+	cont "CHAMPION and a"
+	cont "hero."
 
-	para "Aren't you headed"
-	line "to the #MON"
-	cont "LEAGUE?"
+	para "It enrages me"
+	line "how much you"
+	cont "remind me of"
+	cont "LANCE."
 
-	para "Don't you know"
-	line "where it is?"
-
-	para "From here, go to"
-	line "NEW BARK TOWN."
-
-	para "Then SURF east."
-	line "The route there is"
-	cont "very tough."
-
-	para "Don't you dare"
-	line "lose at the #-"
-	cont "MON LEAGUE!"
-
-	para "If you do, I'll"
-	line "feel even worse"
-
-	para "about having lost"
-	line "to you!"
-
-	para "Give it every-"
-	line "thing you've got."
+	para "Now go and"
+	line "stamp your mark"
+	cont "upon the world."
 	done
 
 CooltrainermPaulSeenText:
-	text "Your first battle"
-	line "against dragons?"
+	text "Dragons are"
+	line "mythical #MON."
 
-	para "I'll show you how"
-	line "tough they are!"
+	para "They are hard to"
+	line "catch and raise."
+
+	para "But their powers"
+	line "are superior."
+
+	para "Are you ready"
+	line "to lose?"
 	done
 
 CooltrainermPaulBeatenText:
-	text "My dragon #MON"
-	line "lost?"
+	text "I yield!!"
 	done
 
 CooltrainermPaulAfterBattleText:
-	text "LANCE told you"
-	line "that he'd like to"
+	text "You met LANCE!"
 
-	para "see you again?"
-	line "Not a chance!"
+	para "You fought beside"
+	line "him!"
+
+	para "You commanded his"
+	line "DRAGONITE!!!"
+
+	para "Okay now I know"
+	line "you are making"
+	cont "this up!"
 	done
 
 CooltrainermMikeSeenText:
-	text "My chance of"
-	line "losing? Not even"
-	cont "one percent!"
+	text "Dragons live for"
+	line "many decades."
+
+	para "My #MON"
+	line "will probably"
+	cont "out live me."
+
+	para "I will do my"
+	line "best to help"
+	cont "them reach their"
+	cont "full potential."
 	done
 
 CooltrainermMikeBeatenText:
-	text "That's odd."
+	text "We keep getting"
+	line "stronger."
 	done
 
 CooltrainermMikeAfterBattleText:
-	text "I know my short-"
-	line "comings now."
+	text "The DRAGON LORD"
+	line "is centuries old."
 
-	para "Thanks for showing"
-	line "me!"
+	para "It terrifies me"
+	line "to think of how"
+	cont "strong he must be."
 	done
 
 CooltrainerfLolaSeenText:
-	text "Dragons are sacred"
-	line "#MON."
+	text "CLAIR is strong."
 
-	para "They are full of"
-	line "life energy."
+	para "But she lacks"
+	line "the real heart"
+	cont "of a DRAGON."
 
-	para "If you're not"
-	line "serious, you won't"
+	para "She senses I"
+	line "will overtake her."
 
-	para "be able to beat"
-	line "them."
+	para "That's why she"
+	line "wont allow me"
+	cont "into DRAGONS DEN."
+
+	para "I want more."
+
+	para "And I know I"
+	line "shouldn't."
 	done
 
 CooltrainerfLolaBeatenText:
-	text "Way to go!"
+	text "She's holding"
+	line "me back!"
 	done
 
 CooltrainerfLolaAfterBattleText:
-	text "Dragons are weak"
-	line "against dragon-"
-	cont "type moves."
+	text "I will continue"
+	line "to be close to"
+	cont "CLAIR."
+
+	para "Then when the"
+	line "time is right."
+
+	para "I will claim my"
+	line "birthright."
+
+	para "The DRAGON LORD"
+	line "will see I am"
+	cont "more worthy than"
+	cont "her!"
 	done
 
 BlackthornGymGuideText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "This is it, the"
+	line "final GYM in"
+	cont "JOHTO!"
 
-	para "It's been a long"
-	line "journey, but we"
-
-	para "are almost done!"
-	line "Count on me!"
-
-	para "CLAIR uses the"
-	line "mythical and sac-"
-	cont "red dragon-type"
+	para "The trainers here"
+	line "worship DRAGON"
 	cont "#MON."
 
-	para "You can't damage"
-	line "them very easily."
+	para "DRAGONS have high"
+	line "stats, especially"
+	cont "attacking stats."
 
-	para "But you know,"
-	line "they're supposed"
+	para "But they have"
+	line "good bulk and"
+	cont "speed too."
 
-	para "to be weak against"
-	line "ice-type moves."
+	para "However they"
+	line "often have a"
+	cont "severe weakness"
+	cont "to ICE moves."
+
+	para "If you have ICE"
+	line "moves, now is"
+	cont "the time to use"
+	cont "them."
 	done
 
 BlackthornGymGuideWinText:
-	text "You were great to"
-	line "beat CLAIR!"
+	text "Well done!"
 
-	para "All that's left is"
-	line "the #MON LEAGUE"
-	cont "challenge."
+	para "I knew you"
+	cont "could do it."
 
-	para "You're on the way"
-	line "to becoming the"
-	cont "#MON CHAMPION!"
+	para "All hail"
+	line "<PLAYER> the"
+	cont "DRAGON slayer!"
+
+	para "The ELITE FOUR"
+	line "have no idea"
+	cont "what they are"
+	cont "in for."
 	done
 
 RematchTextClair:

@@ -1,8 +1,6 @@
 	object_const_def
 	const MAHOGANYGYM_PRYCE
 	const MAHOGANYGYM_BEAUTY1
-	;const MAHOGANYGYM_ROCKER1
-	;const MAHOGANYGYM_BEAUTY2
 	const MAHOGANYGYM_ROCKER2
 	const MAHOGANYGYM_ROCKER3
 	const MAHOGANYGYM_GYM_GUIDE
@@ -100,28 +98,6 @@ TrainerSkierRoxanne:
 	closetext
 	end
 
-TrainerSkierClarissa:
-	trainer COOLTRAINERF, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SkierClarissaAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerBoarderRonald:
-	trainer COOLTRAINERM, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext BoarderRonaldAfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerBoarderBrad:
 	trainer COOLTRAINERM, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script
 
@@ -169,48 +145,58 @@ MahoganyGymStatue:
 	jumpstd GymStatue2Script
 
 PryceText_Intro:
-	text "#MON have many"
-	line "experiences in"
+	text "Young people today"
+	line "have become soft."
 
-	para "their lives, just "
-	line "like we do. "
+	para "In my youth I"
+	line "was a climber."
 
-	para "I, too, have seen"
-	line "and suffered much"
-	cont "in my life."
+	para "When climbing the"
+	line "biggest and most"
+	cont "dangerous peaks"
+	cont "there is an"
+	cont "unspoken rule."
 
-	para "Since I am your"
-	line "elder, let me show"
-	cont "you what I mean."
+	para "You must look"
+	line "after yourself."
 
-	para "I have been with"
-	line "#MON since"
+	para "I had to leave"
+	line "my brother as he"
+	cont "begged for help."
 
-	para "before you were"
-	line "born."
+	para "If I had tried"
+	line "to help him we"
+	cont "both would have"
+	cont "died."
 
-	para "I do not lose"
-	line "easily."
+	para "One day I was"
+	line "careless and found"
+	cont "myself in his"
+	cont "position."
 
-	para "I, PRYCE--the"
-	line "winter trainer--"
+	para "I was prepared"
+	line "to die."
 
-	para "shall demonstrate"
-	line "my power!"
+	para "Then a huge blue"
+	line "bird #MON"
+	cont "picked me up"
+	cont "and saved me."
+
+	para "After that I"
+	line "channeled all"
+	cont "my passion into"
+	cont "battle."
 	done
 
 PryceText_Impressed:
-	text "Ah, I am impressed"
-	line "by your prowess."
+	text "You have faced"
+	line "death too."
 
-	para "With your strong"
-	line "will, I know you"
+	para "I see your"
+	line "strength."
 
-	para "will overcome all"
-	line "life's obstacles."
-
-	para "You are worthy of"
-	line "this BADGE!"
+	para "You deserve"
+	line "this BADGE."
 	done
 
 Text_ReceivedGlacierBadge:
@@ -219,176 +205,190 @@ Text_ReceivedGlacierBadge:
 	done
 
 PryceText_GlacierBadgeSpeech:
-	text "That BADGE will"
-	line "raise the SPECIAL"
-	cont "stats of #MON."
+    text "With the"
+    line "GLACIERBADGE"
+    line "you can now train"
+    cont "#MON up to"
+    cont "level 60."
 
-	para "It also lets your"
-	line "#MON use WHIRL-"
-	cont "POOL to get across"
-	cont "real whirlpools."
+    para "And capture"
+    line "#MON up to"
+    cont "level 50."
 
-	para "And this… This is"
-	line "a gift from me!"
+    para "Take this also."
 	done
 
 PryceText_IcyWindSpeech:
 	text "That TM contains"
 	line "ICY WIND."
 
-	para "It inflicts damage"
-	line "and lowers speed."
+	para "It always reminds"
+	line "me of how fragile"
+	cont "life is and how"
+	cont "powerless we"
+	cont "really are."
 
-	para "It demonstrates"
-	line "the harshness of"
-	cont "winter."
+	para "May it give you"
+	line "the same strength"
+	line "it gives me."
 	done
 
 PryceText_CherishYourPokemon:
-	text "When the ice and"
-	line "snow melt, spring"
-	cont "arrives."
+	text "In the end we"
+	line "have to look"
+	cont "after ourselves"
+	cont "first."
 
-	para "You and your #-"
-	line "MON will be to-"
+	para "If you can't"
+	line "do that, then"
+	cont "you can look"
+	cont "after anyone else."
 
-	para "gether for many"
-	line "years to come."
+	para "People wonder why"
+	line "I climbed the"
+	cont "mountains."
 
-	para "Cherish your time"
-	line "together!"
-	done
+	para "Because they are"
+	line "there."
 
-BoarderRonaldSeenText:
-	text "I'll freeze your"
-	line "#MON, so you"
-	cont "can't do a thing!"
-	done
-
-BoarderRonaldBeatenText:
-	text "Darn. I couldn't"
-	line "do a thing."
-	done
-
-BoarderRonaldAfterBattleText:
-	text "I think there's a"
-	line "move a #MON"
-
-	para "can use while it's"
-	line "frozen."
+	para "That's the only"
+	line "reason we need"
+	cont "to keep fighting."
 	done
 
 BoarderBradSeenText:
-	text "This GYM has a"
-	line "slippery floor."
+	text "You think"
+	line "you're cool"
+	cont "sliding around?"
 
-	para "It's fun, isn't"
-	line "it?"
+	para "wait..."
 
-	para "But hey--we're"
-	line "not playing games"
-	cont "here!"
+	para "There is a"
+	line "pun in there."
 	done
 
 BoarderBradBeatenText:
-	text "Do you see how"
-	line "serious we are?"
+	text "I'm a funny guy."
 	done
 
 BoarderBradAfterBattleText:
-	text "This GYM is great."
-	line "I love boarding"
-	cont "with my #MON!"
+	text "Don't get so"
+	line "serious."
+
+	para "You need to..."
+
+	para "Chill out!"
+
+	para "Hahahah..."
+	line "I'm good!"
 	done
 
 BoarderDouglasSeenText:
-	text "I know PRYCE's"
-	line "secret."
+	text "I hear there"
+	line "where some ROCKETS"
+	cont "in town recently."
+
+	para "I didn't notice."
+
+	para "We are busy"
+	line "training and"
+	cont "meditating."
+
+	para "PRYCE would have"
+	line "frozen those"
+	cont "ROCKETS if he"
+	cont "knew."
 	done
 
 BoarderDouglasBeatenText:
-	text "OK. I'll tell you"
-	line "PRYCE's secret."
+	text "I heard about you."
 	done
 
 BoarderDouglasAfterBattleText:
-	text "The secret behind"
-	line "PRYCE's power…"
+	text "So you took care"
+	line "of the ROCKETS."
 
-	para "He meditates under"
-	line "a waterfall daily"
+	para "Well then..."
 
-	para "to strengthen his"
-	line "mind and body."
+	para "Everything worked"
+	line "out fine in the"
+	cont "end!"
 	done
 
 SkierRoxanneSeenText:
-	text "To get to PRYCE,"
-	line "our GYM LEADER,"
+	text "Life is fragile."
 
-	para "you need to think"
-	line "before you skate."
+	para "But in this GYM"
+	line "we are family."
+
+	para "Together we will"
+	line "overcome anything."
+
+	para "Except BRADs"
+	line "awful jokes."
+
+	para "I'll never"
+	line "overcome those!"
 	done
 
 SkierRoxanneBeatenText:
-	text "I wouldn't lose to"
-	line "you in skiing!"
+	text "That was rough."
 	done
 
 SkierRoxanneAfterBattleText:
-	text "If you don't skate"
-	line "with precision,"
+	text "PRYCE is intense."
 
-	para "you won't get far"
-	line "in this GYM."
-	done
+	para "He tells stories"
+	line "of disasters that"
+	cont "make me admire"
+	cont "how much inner"
+	cont "strength he has."
 
-SkierClarissaSeenText:
-	text "Check out my"
-	line "parallel turn!"
-	done
-
-SkierClarissaBeatenText:
-	text "No! You made me"
-	line "wipe out!"
-	done
-
-SkierClarissaAfterBattleText:
-	text "I shouldn't have"
-	line "been bragging"
-	cont "about my skiing…"
+	para "We all want to"
+	line "be strong like"
+	cont "him."
 	done
 
 MahoganyGymGuideText:
-	text "PRYCE is a veteran"
-	line "who has trained"
+	text "PRYCE has a lot"
+	line "of experience."
 
-	para "#MON for some"
-	line "50 years."
+	para "He used to climb"
+	line "mountains so he"
+	cont "never gives up."
 
-	para "He's said to be"
-	line "good at freezing"
+	para "He uses ICE"
+	line "types."
 
-	para "opponents with"
-	line "ice-type moves."
+	para "Which isn't a"
+	line "very good type..."
 
-	para "That means you"
-	line "should melt him"
+	para "They are weak to"
+	line "FIRE, FIGHTING"
+	cont "ROCK and STEEL."
 
-	para "with your burning"
-	line "ambition!"
+	para "But PRYCE has"
+	line "strong #MON"
+	cont "in spite of their"
+	cont "type."
 	done
 
 MahoganyGymGuideWinText:
-	text "PRYCE is some-"
-	line "thing, but you're"
-	cont "something else!"
+	text "HA you kicked"
+	line "that old guys"
+	cont "butt!"
 
-	para "That was a hot"
-	line "battle that"
+	para "He can conquer"
+	line "mountains all"
+	cont "he wants."
 
-	para "bridged the gen-"
-	line "eration gap!"
+	para "Mountains are"
+	line "nothing compared"
+	cont "to you."
+
+	para "You are so cool!"
+
+	para "Excuse the pun."
 	done
 
 RematchTextPryce:
@@ -416,8 +416,6 @@ MahoganyGym_MapEvents:
 	def_object_events
 	object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, -1
 	object_event  4,  6, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierRoxanne, -1
-	;object_event  0, 17, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderRonald, -1
-	;object_event  9, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierClarissa, -1
 	object_event  5,  9, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderBrad, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderDouglas, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyGymGuideScript, -1

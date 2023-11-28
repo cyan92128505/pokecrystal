@@ -534,14 +534,13 @@ ClairText_WhatsTheMatterDragonDen:
 	para "You don't have"
 	line "to do this."
 
-	para "But you are a"
-	line "dragon!"
+	para "I have a feeling"
+	line "it will be an"
+	cont "easy decision"
+	cont "for you."
 
-	para "I know you will"
-	line "protect people"
-	cont "with your life."
-
-	para "Just like LANCE."
+	para "Just as it was"
+	line "for LANCE."
 
 	para "Good luck!"
 	done

@@ -308,167 +308,235 @@ Route45HiddenPpUp:
 	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
 
 HikerMichaelSeenText:
-	text "Yo! You're spunky!"
-	line "But you know what?"
+	text "I was doing a"
+	line "spot of urban"
+	cont "exploring around"
+	cont "an old house"
+	cont "below here."
 
-	para "When it comes to"
-	line "sheer spunkiness,"
-	cont "I'm the man!"
+	para "I thought I saw"
+	line "a TM."
+
+	para "Then a huge and"
+	line "rapid GARCHOMP"
+	cont "attacked me."
+
+	para "I barely"
+	line "escaped."
 	done
 
 HikerMichaelBeatenText:
-	text "My #MON weren't"
-	line "spunky enough!"
+	text "Why do we"
+	line "battle."
 	done
 
 HikerMichaelAfterBattleText:
-	text "Boy, do I love"
-	line "HP UP! Mmmm, yum!"
+	text "Watch out down"
+	line "there kid."
 
-	para "I keep drinking my"
-	line "#MON's!"
-
-	para "I can't help it!"
+	para "That GARCHOMP"
+	line "isn't messing"
+	cont "around."
 	done
 
 HikerParry3SeenText:
-	text "My #MON are"
-	line "power packed!"
+	text "I have spent"
+	line "my years wandering"
+	cont "in the mountains"
+	cont "with my #MON."
+
+	para "My legs have"
+	line "grown thick and"
+	cont "powerful."
+
+	para "Your legs look"
+	line "awful skinny from"
+	cont "where I'm"
+	cont "standing."
 	done
 
 HikerParry3BeatenText:
-	text "Wahahah! I'm the"
-	line "big loser!"
+	text "Aww my knees"
+	line "have buckled."
 	done
 
 HikerParryAfterBattleText:
-	text "I'm not much good"
-	line "at thinking, see?"
+	text "If you keep"
+	line "climbing these"
+	cont "mountains"
+	cont "you'll get big"
+	cont "muscular legs."
 
-	para "So, I just plow"
-	line "ahead with power!"
+	para "Not as big as"
+	line "mine mind you."
 	done
 
 HikerTimothySeenText:
-	text "Why do I climb"
-	line "mountains?"
+	text "Everyone knows"
+	line "the volcano that"
+	cont "destroyed CINNABAR"
+	cont "was the doing of"
+	cont "HOEN."
 
-	para "Because they're"
-	line "there."
+	para "We must train!"
 
-	para "Why do I train"
-	line "#MON?"
-
-	para "Because they're"
-	line "there!"
+	para "Maybe I can"
+	line "beat a legendary"
+	cont "#MON."
 	done
 
 HikerTimothyBeatenText:
-	text "Losses…"
-	line "They're there too!"
+	text "Train with me!"
 	done
 
 HikerTimothyAfterBattleText:
-	text "The best thing to"
-	line "ever happen to me"
+	text "I need to get"
+	line "stronger!"
 
-	para "was discovering"
-	line "#MON."
+	para "If I fought a"
+	line "legendary #MON"
+	cont "right now I"
+	cont "don't think I"
+	cont "would win."
 	done
 
 HikerParryGivesIronText:
-	text "I just can't find"
-	line "a way to win!"
-
-	para "Keep it up!"
-
-	para "Oh, and take this"
-	line "--it's the gift"
-
-	para "you couldn't take"
-	line "when we last met."
+	text "Here this will"
+	line "help toughen"
+	cont "those legs."
 	done
 
 BlackbeltKenji3SeenText:
-	text "I was training"
-	line "here alone."
+	text "I used to be"
+	line "part of a dojo"
+	cont "in SAFFRON."
 
-	para "Behold the fruits"
-	line "of my labor!"
+	para "I moved to the"
+	line "CIANWOOD dojo"
+	cont "but they were"
+	cont "too soft."
+
+	para "I train now in"
+	line "these mountains."
+
+	para "Always searching"
+	line "for my old master."
 	done
 
 BlackbeltKenji3BeatenText:
-	text "Waaaargh!"
+	text "Matte!"
 	done
 
 BlackbeltKenjiAfterBattleText:
-	text "This calls for"
-	line "extreme measures."
+	text "My master KIYO"
+	line "moved to JOHTO."
 
-	para "I must take to the"
-	line "hills and train in"
-	cont "solitude."
+	para "I am searching"
+	line "for him."
+
+	para "I know he"
+	line "would train in"
+	cont "the mountains"
+	cont "or perhaps a"
+	cont "cave."
 	done
 
 BlackbeltKenjiMorningText:
-	text "I'm going to train"
-	line "a bit more before"
-	cont "I break for lunch."
+	text "The morning air"
+	line "speaks to me"
+	cont "of stories of"
+	cont "the past."
+
+	para "We must let go"
+	line "of regret and"
+	cont "face a new day."
 	done
 
 BlackbeltKenjiNightText:
-	text "We had plenty of"
-	line "rest at lunch, so"
+	text "The still night"
+	line "whispers to me."
 
-	para "now we're all"
-	line "ready to go again!"
+	para "It tells me to"
+	line "stop fighting"
+	cont "and rest."
 
-	para "We're going to"
-	line "train again!"
+	para "Night will set"
+	line "upon all our"
+	cont "lives."
+
+	para "May we greet it"
+	line "with pride and"
+	cont "dignity."
 	done
 
 CooltrainermRyanSeenText:
-	text "What are your"
-	line "thoughts on rais-"
-	cont "ing #MON?"
+	text "You know maybe"
+	line "I'm the only"
+	cont "person who"
+	cont "thinks this."
+
+	para "But DRAGON"
+	line "#MON are kind"
+	cont "of overrated."
+
+	para "They all look"
+	line "the same, just"
+	cont "a stereotype of"
+	cont "cool."
+
+	para "I'll show you"
+	line "some actually"
+	cont "cool #MON."
 	done
 
 CooltrainermRyanBeatenText:
-	text "You've won my"
-	line "respect."
+	text "You are pretty"
+	line "cool too."
 	done
 
 CooltrainermRyanAfterBattleText:
-	text "I see you're rais-"
-	line "ing your #MON"
-	cont "with care."
+	text "You're #MON"
+	line "are cool and all."
 
-	para "The bond you build"
-	line "will save you in"
-	cont "tough situations."
+	para "I just can't"
+	line "stand all the"
+	cont "DRAGON simps"
+	cont "around here."
 	done
 
 CooltrainerfKellySeenText:
-	text "What is your"
-	line "battle strategy?"
+	text "Everyone keeps"
+	line "talking about how"
+	cont "DARK CAVE contains"
+	cont "pure evil."
 
-	para "It is foolish to"
-	line "use strong moves"
-	cont "indiscriminately."
+	para "I'm going to"
+	line "explore it!"
+
+	para "My team is"
+	line "built to take"
+	cont "on the challenge."
 	done
 
 CooltrainerfKellyBeatenText:
-	text "Fine. I lost."
+	text "That was good"
+	line "practice."
 	done
 
 CooltrainerfKellyAfterBattleText:
-	text "I'm not in favor"
-	line "of overly power-"
-	cont "ful moves."
+	text "I heard a girl"
+	line "got lost in"
+	cont "DARK CAVE for"
+	cont "days."
 
-	para "I want to win, but"
-	line "I also don't want"
-	cont "to harm #MON."
+	para "Everyone knew"
+	line "she was dead"
+	cont "but then she"
+	cont "appeared and"
+	cont "she was fine."
+
+	para "I think KAREN"
+	line "was her name."
 	done
 
 Route45DummyText:
@@ -481,21 +549,41 @@ Route45DummyText:
 	done
 
 CamperQuentinSeenText:
-	text "I'm really, really"
-	line "tough!"
+	text "I will set up"
+	line "camp anywhere."
+
+	para "I fear no man"
+	line "nor no #MON."
+
+	para "I don't fear"
+	line "no HOEN army"
+	cont "nor no soldier."
+
+	para "My girlfriend"
+	line "though."
+
+	para "Aye I fear"
+	line "her I do."
+
+	para "Is why I camp"
+	line "so much."
 	done
 
 CamperQuentinBeatenText:
-	text "I was tough at the"
-	line "BATTLE TOWER…"
+	text "I'm not as"
+	line "brave as I"
+	cont "thought."
 	done
 
 CamperQuentinAfterBattleText:
-	text "Have you been to"
-	line "the BATTLE TOWER?"
+	text "I fear that DARK"
+	line "CAVE though."
 
-	para "I never, ever lose"
-	line "there, but…"
+	para "And Route 37"
+	line "I fear there."
+
+	para "And BATTLE TOWER"
+	line "I fear that too."
 	done
 
 Route45SignText:
@@ -557,7 +645,7 @@ Route45_MapEvents:
 	bg_event 13, 82, BGEVENT_ITEM, Route45HiddenPpUp
 
 	def_object_events
-	object_event 15, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerMichael, -1
+	object_event 15, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerMichael, -1
 	object_event  5, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
 	object_event  9, 65, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerTimothy, -1
 	object_event 11, 50, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltKenji, -1

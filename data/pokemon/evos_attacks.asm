@@ -252,7 +252,7 @@ StarlyEvosAttacks:
 	db 1, SAND_ATTACK
 	db 5, QUICK_ATTACK
 	db 9, PECK
-	db 15, WING_ATTACK
+	db 16, WING_ATTACK
 	db 24, SLASH
 	db 32, FLY
 	db 36, ROOST
@@ -270,7 +270,7 @@ StaraviaEvosAttacks:
     db 1, SAND_ATTACK
 	db 5, QUICK_ATTACK
 	db 9, PECK
-	db 14, WING_ATTACK
+	db 16, WING_ATTACK
 	db 24, SLASH
 	db 35, FLY
 	db 36, ROOST
@@ -287,7 +287,7 @@ StaraptorEvosAttacks:
 	db 1, SAND_ATTACK
 	db 5, QUICK_ATTACK
 	db 9, PECK
-	db 14, WING_ATTACK
+	db 16, WING_ATTACK
 	db 24, SLASH
 	db 34, FLY
 	db 36, ROOST

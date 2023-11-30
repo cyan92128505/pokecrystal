@@ -29,12 +29,12 @@ AncientRuinPast_MapScripts:
     endcallback
 
 XerneasScript:
-	opentext
-	writetext XerneasCry
-	waitbutton
+;	opentext
+;	writetext XerneasCry
+;	waitbutton
 	cry XERNEAS
 	pause 15
-	closetext
+;	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon XERNEAS, 80
 	startbattle
@@ -181,19 +181,100 @@ AncientRuinsPastGirl2Script:
 	jumptextfaceplayer AncientRuinsPastGirl2Text
 
 AncientRuinsPastGuy1Text:
-    text "...."
+    text "Welcome young"
+    line "traveler to our"
+    cont "great city."
+
+    para "Those are some"
+    line "very odd clothes"
+    cont "you are wearing."
+
+    para "I see you are"
+    line "a trainer."
+
+    para "Well don't get"
+    line "any ideas of"
+    cont "causing trouble."
+
+    para "It wont end well"
+    line "for you."
+
+    para "PHARAOH YAMI is"
+    line "unbeatable."
     done
 
 AncientRuinsPastGuy2Text:
-    text "...."
+    text "I teach at our"
+    line "university."
+
+    para "I study ancient"
+    line "cultures."
+
+    para "In a recent trip"
+    line "to ALPH I found"
+    cont "an ancient text"
+    cont "that described a"
+    cont "god like being."
+
+    para "A man made of"
+    line "gold who wields"
+    cont "ARCEUS itself."
+
+    para "He notion that"
+    line "a trainer could"
+    cont "command ARCEUS"
+    cont "is heresy."
     done
 
 AncientRuinsPastGirl1Text:
-    text "...."
+    text "Are you another"
+    line "outsider seeking"
+    cont "to live in our"
+    cont "paradise."
+
+    para "If you talk to"
+    line "our PHAROAH I'm"
+    cont "sure he will"
+    cont "help you."
+
+    para "As long as you"
+    line "don't cause"
+    cont "trouble."
+
+    para "SETO tried to"
+    line "overthrow YAMI"
+    cont "years ago and"
+    cont "was soundly"
+    cont "defeated."
+
+    para "But YAMI showed"
+    line "mercy and"
+    cont "forgave him."
     done
 
 AncientRuinsPastGirl2Text:
-    text "...."
+    text "We live in peace"
+    line "with #MON"
+    cont "in this city."
+
+    para "We worship the"
+    line "great merciful"
+    cont "XERNEAS."
+
+    para "We revile the"
+    line "evil YVELTAL."
+
+    para "The high priest"
+    line "of the house of"
+    cont "SETO, a man"
+    cont "named HENSHIN"
+    cont "was banished"
+    cont "years ago."
+
+    para "Many believe he"
+    line "is out there"
+    cont "looking for"
+    cont "YVELTAL."
     done
 
 YamiScript:
@@ -242,9 +323,6 @@ YamiSeenText:
     text "XERNEAS has chosen"
     line "you!"
 
-    para "You're heart is"
-    line "true and pure."
-
     para "It gives me hope"
     line "to know someone"
     cont "from so far in"
@@ -276,13 +354,8 @@ YamiSeenText:
     para "I will give one"
     line "one last gift."
 
-    para "Knowledge of your"
-    line "own strength."
-
-    para "Strength to"
-    line "defeat the"
-    cont "strongest trainer"
-    cont "in this old world."
+    para "A duel with a"
+    line "#MON MASTER!"
     done
 
 YamiBeatenText:
@@ -291,6 +364,35 @@ YamiBeatenText:
     done
 
 YamiAfterBattleText:
+    text "XERNEAS brings"
+    line "life."
+
+    para "YVELTAL brings"
+    line "death."
+
+    para "But one is not"
+    line "good and the"
+    cont "other evil."
+
+    para "If either is"
+    line "left unchallenged"
+    cont "it would bring"
+    cont "chaos."
+
+    para "There must be"
+    line "balance."
+
+    para "ZYGARDE brings"
+    line "balance."
+
+    para "ZYGARDE can be"
+    line "found deep"
+    cont "within a cave."
+
+    para "A cave sitting"
+    line "below a SILVER"
+    cont "mountain."
+
     text "Return now to"
     line "your time and"
     cont "shape your future"
@@ -308,31 +410,25 @@ CatchXerneasFirstText:
 
     para "In fact you are"
     line "not from this"
-    cont "word at all."
+    cont "time at all."
 
-    para "You come from"
-    line "another time."
+    para "I am YAMI."
 
-    para "I am Yami!"
+    para "The great PHARAOH"
 
-    para "The great Pharaoh"
-
-    para "You are here for"
-    line "the great gift."
+    para "I know what you"
+    line "are here for."
 
     para "XERNEAS"
 
     para "The power to live"
     line "forever."
 
-    para "Many hav sought"
+    para "Many have sought"
     line "such a blessing."
 
     para "XERNEAS shall"
     line "judge you."
-
-    para "Should you be"
-    line "unworthy."
 
     para "I trust you will"
     line "not cause trouble."

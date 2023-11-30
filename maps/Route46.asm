@@ -17,17 +17,6 @@ Route46_MapScripts:
     appear ROUTE46_FIELDMON_1
     endcallback
 
-;TrainerCamperTed:
-;	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
-
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext CamperTedAfterBattleText
-;	waitbutton
-;	closetext
-;	end
-
 TrainerCamperTed:
 	faceplayer
 	opentext
@@ -132,16 +121,6 @@ PicnickerErinMercyText:
     para "Run along now."
     done
 
-;TrainerHikerBailey:
-;	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext HikerBaileyAfterBattleText
-;	waitbutton
-;	closetext
-;	end
-
 TrainerHikerBailey:
     setmapscene ROUTE_46, SCENE_FINISHED
 	faceplayer
@@ -241,78 +220,97 @@ Route46FruitTree2:
 	fruittree FRUITTREE_ROUTE_46_2
 
 HikerBaileySeenText:
-	text "Awright! I'll show"
-	line "you the power of"
-	cont "mountain #MON!"
+	text "Ah I see you"
+	line "have gotten"
+	cont "real strong."
+
+	para "You can help me"
+	line "train to beat"
+	cont "CLAIR."
 	done
 
 HikerBaileyBeatenText:
-	text "Mercy! You showed"
-	line "me your power!"
+	text "I think I"
+	line "got stronger"
+	cont "right there!"
 	done
 
 HikerBaileyAfterBattleText:
-	text "It's over. I don't"
-	line "mind. We HIKERS"
-	cont "are like that."
+	text "You might be"
+	line "sore and tired"
+	cont "but you have to"
+	cont "keep on climbing."
+
+	para "I'm going to"
+	line "keep on battling"
+	cont "and conquer my"
+	cont "mountains."
 	done
 
 CamperTedSeenText:
-	text "I'm raising #-"
-	line "MON too!"
+	text "Kid! We are on"
+	line "a date!"
 
-	para "Will you battle"
-	line "with me?"
+	para "Damn I need to"
+	line "play it cool."
+
+	para "Hey fellow trainer"
+	line "shall we battle?"
 	done
 
 CamperTedBeatenText:
-	text "Wha…?"
+	text "Haha...."
+
+	para "Well done..."
+
+	para "I am a good"
+	line "loser see..."
 	done
 
 CamperTedAfterBattleText:
-	text "I did my best but"
-	line "came up short."
+	text "That was fun."
 
-	para "No excuses--I"
-	line "admit I lost."
+	para "Now back to"
+	line "our date."
+
+	para "So ah..."
+
+	para "What's your"
+	line "typical day"
+	cont "look like?"
 	done
 
 PicnickerErin1SeenText:
-	text "I raise #MON"
-	line "too!"
+	text "Hey, un we are"
+	line "on a date."
 
-	para "Will you battle"
-	line "with me?"
+	para "I think..."
+
+	para "Maybe a battle"
+	line "will liven"
+	cont "things up."
 	done
 
 PicnickerErin1BeatenText:
-	text "Oh, rats!"
+	text "How embarrassing."
+
+	para "How could I"
+	line "lose."
 	done
 
 PicnickerErinAfterBattleText:
-	text "I've been to many"
-	line "GYMS, but the GYM"
+	text "I feel bad"
+	line "after losing."
 
-	para "in GOLDENROD is my"
-	line "favorite."
+	para "But back to the"
+	line "date."
 
-	para "It's filled with"
-	line "pretty flowers!"
-	done
+	para "Um..."
 
-PicnickerErin2BeatenText:
-	text "Aww… I keep losing"
-	line "all the time!"
+	para "Whats your"
+	line "favorite..."
 
-	para "I'll just have to"
-	line "try harder!"
-
-	para "Anyway, thanks for"
-	line "battling me again"
-
-	para "and again. Here's"
-	line "that present from"
-	cont "the other time."
+	para "#MON?"
 	done
 
 Route46SignText:

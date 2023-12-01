@@ -393,7 +393,7 @@ YamiAfterBattleText:
     line "below a SILVER"
     cont "mountain."
 
-    text "Return now to"
+    para "Return now to"
     line "your time and"
     cont "shape your future"
     cont "as I have shaped"

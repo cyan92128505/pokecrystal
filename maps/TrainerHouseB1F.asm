@@ -531,7 +531,7 @@ BattleRouletteReceptionistScript:
 .Yami
     checkevent EVENT_BEAT_MASTER_YAMI
     iffalse .Yami1
-    loadtrainer RED, MASTER_YAMI
+    loadtrainer RED, YAMI
     sjump .finish
 .Yami1
     checkevent EVENT_BEAT_YAMI
@@ -1829,7 +1829,7 @@ BattleArcadeReceptionistScript:
     ifequal 27, .GreenPlayer
     ifequal 28, .BluePlayer
     ifequal 29, .RedPlayer
-    ifequal 30, .PatchesPlayer
+	ifequal 30, .AshPlayer
 	closetext
 	end
 
@@ -1857,9 +1857,6 @@ BattleArcadeReceptionistScript:
     loadmenu .DefaultCharacterMenuHeader
     _2dmenu
 .doneEnemyMenu
-
-	;loadmenu .ChooseCharacterMenuHeader
-	;_2dmenu
 	closewindow
 	ifequal 1, .FalknerEnemy
 	ifequal 2, .BugsyEnemy
@@ -1890,7 +1887,7 @@ BattleArcadeReceptionistScript:
     ifequal 27, .GreenEnemy
     ifequal 28, .BlueEnemy
     ifequal 29, .RedEnemy
-    ifequal 30, .PatchesEnemy
+    ifequal 30, .AshEnemy
 	closetext
 	end
 
@@ -2103,6 +2100,17 @@ BattleArcadeReceptionistScript:
     loadtrainer KAREN, MASTER_KAREN
     sjump .beginBattle
 
+.AshPlayer
+	setval RED
+	writemem wOtherTrainerClass
+	setval MASTER_ASH
+	writemem wOtherTrainerID
+	special OverridePlayerParty
+    sjump .chooseEnemy
+.AshEnemy
+    loadtrainer RED, MASTER_ASH
+    sjump .beginBattle
+
 .AdamPlayer
 	setval ADAM
 	writemem wOtherTrainerClass
@@ -2213,17 +2221,6 @@ BattleArcadeReceptionistScript:
     loadtrainer POKEMON_PROF, MASTER_OAK
     sjump .beginBattle
 
-.PatchesPlayer
-	setval INVADER
-	writemem wOtherTrainerClass
-	setval MASTER_PATCHES
-	writemem wOtherTrainerID
-	special OverridePlayerParty
-    sjump .chooseEnemy
-.PatchesEnemy
-    loadtrainer INVADER, MASTER_PATCHES
-    sjump .beginBattle
-
 .PostRedCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 19, 11
@@ -2248,9 +2245,9 @@ BattleArcadeReceptionistScript:
 	db "BN@"
 	db "KN@"
 	db "OK@"
-	db "BR@"
+	db "BK@"
 	db "MS@"
-	db "SR@"
+	db "SU@"
 	db "ER@"
     db "JN@"
     db "WL@"
@@ -2265,7 +2262,7 @@ BattleArcadeReceptionistScript:
     db "GR@"
     db "BU@"
     db "RD@"
-    db "PT@"
+    db "AS@"
 
 .PostWallaceCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -2291,9 +2288,9 @@ BattleArcadeReceptionistScript:
 	db "BN@"
 	db "KN@"
 	db "OK@"
-	db "BR@"
+	db "BK@"
 	db "MS@"
-	db "SR@"
+	db "SU@"
 	db "ER@"
     db "JN@"
     db "WL@"
@@ -2328,9 +2325,9 @@ BattleArcadeReceptionistScript:
 	db "BN@"
 	db "KN@"
 	db "OK@"
-	db "BR@"
+	db "BK@"
 	db "MS@"
-	db "SR@"
+	db "SU@"
 	db "ER@"
     db "JN@"
     db "WL@"
@@ -2702,8 +2699,6 @@ BattleRouletteAskWantToBattleText:
 BattleGoRightInText:
 	text "Please go right"
 	line "through."
-	;para "You may begin"
-	;line "right away."
 	done
 
 PleaseComeAgainText:

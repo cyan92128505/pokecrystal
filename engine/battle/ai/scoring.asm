@@ -2823,7 +2823,7 @@ AI_Smart_BulkUp:
     jp nc, StandardDiscourage
 
 ; encourage to +2 - strong encourage if player is physical
-    ld a, [wEnemyAtkLevel]
+    ld a, [wEnemyDefLevel]
     cp BASE_STAT_LEVEL + 2
     jp nc, .atPlus2
     call IsPlayerPhysicalOrSpecial

@@ -749,8 +749,8 @@ KRIS EQU __trainer_class__
 	const RED1
 	const ASH
 	const MASTER_RED
+	const MASTER_ASH
 	const YAMI
-	const MASTER_YAMI
 	const RED_MEWTWO
 
 	trainerclass BLUE ; 40

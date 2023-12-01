@@ -81,7 +81,7 @@ MasterYamiScript:
 	closetext
 	winlosstext DefaultBeatenTextDF, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, MASTER_YAMI
+	loadtrainer RED, YAMI
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle

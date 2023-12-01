@@ -1725,9 +1725,9 @@ BattleArcadeReceptionistScript:
     writemem wHandOfGod
     setval 1
     writemem wShinyOverride
-    writetext WantToPlayAsAnotherText
-    yesorno
-    iffalse .pickEnemy
+   ; writetext WantToPlayAsAnotherText
+   ; yesorno
+   ; iffalse .pickEnemy
     sjump .ChoosePlayerCharacter
 .pickEnemy
     writetext FineThenText
@@ -2702,16 +2702,15 @@ BattleRouletteAskWantToBattleText:
 BattleGoRightInText:
 	text "Please go right"
 	line "through."
-
-	para "You may begin"
-	line "right away."
+	;para "You may begin"
+	;line "right away."
 	done
 
 PleaseComeAgainText:
 	text "Sorry. Only those"
 	line "trainers who will"
 
-	para "be battling are"
+	para "be playing are"
 	line "allowed to go in."
 	done
 

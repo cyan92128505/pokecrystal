@@ -1663,7 +1663,8 @@ ChanseyEvosAttacks:
     db 33, TRI_ATTACK
 	db 36, LIGHT_SCREEN
 	db 40, SOFTBOILED
-	db 40, DOUBLE_EDGE
+	db 45, DOUBLE_EDGE
+	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 
 WeavileEvosAttacks:
@@ -3591,7 +3592,8 @@ BlisseyEvosAttacks:
     db 33, TRI_ATTACK
 	db 36, LIGHT_SCREEN
 	db 40, SOFTBOILED
-	db 40, DOUBLE_EDGE
+	db 45, DOUBLE_EDGE
+	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

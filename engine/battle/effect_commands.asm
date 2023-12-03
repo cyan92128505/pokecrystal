@@ -1921,9 +1921,10 @@ BattleCommand_EffectChance:
     jr c, .sereneGrace
     jr .continue
 .sereneGrace
-    ld a, [hl]
-    sla a
-    ld [hl], a
+	ld hl, wEnemyMoveStruct + MOVE_CHANCE + 1
+	sla [hl]
+	dec hl
+    rl [hl]
 .continue
     ld a, [hl]
 	sub 100 percent
@@ -5151,6 +5152,9 @@ LowerStat:
 
 BattleCommand_TriStatusChance:
 ; tristatuschance
+	ld a, [wEffectFailed]
+	and a
+	ret nz
 	call BattleCommand_EffectChance
 .loop
 	; 1/3 chance of each status

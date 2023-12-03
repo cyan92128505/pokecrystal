@@ -430,6 +430,8 @@ AI_Smart_Switch:
     push hl
 	ld a, 1
 	ldh [hBattleTurn], a
+	ld a, [wCurEnemyMove]
+	call AIGetEnemyMove
 	callfar BattleCheckTypeMatchup
 	pop hl
 	ld a, [wTypeMatchup]
@@ -919,6 +921,8 @@ AI_Smart_Sleep:
     cp SYLVEON
     jr z, .discourage
     cp GIRATINA
+    jp z, .discourage
+    cp SMEARGLE
     jp z, .discourage
 
 ; discourage if player have a held item that would heal sleep

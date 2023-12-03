@@ -3994,6 +3994,14 @@ BattleCommand_SleepTarget:
 	;ld hl, ProtectedByText
 	;jr .fail
 ;.not_protected_by_item
+
+    call GetOpposingMon
+    cp SMEARGLE
+    jr nz, .notSmeargle
+    ld hl, CantSleepText
+    jr .fail
+
+.notSmeargle
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h

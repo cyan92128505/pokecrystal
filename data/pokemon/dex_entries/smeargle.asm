@@ -6,5 +6,5 @@
 	next "mastery."
 
 	page "Random stat"
-	next "increase upon"
-	next "entering battle.@"
+	next "boosts. Immune"
+	next "to SLEEP.@"

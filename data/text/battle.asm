@@ -1018,6 +1018,11 @@ ProtectedByText:
 	text "!"
 	prompt
 
+CantSleepText:
+	text "<TARGET>"
+	line "can not SLEEP."
+	prompt
+
 MirrorMoveFailedText:
 	text "The MIRROR MOVE"
 	next "failed!"

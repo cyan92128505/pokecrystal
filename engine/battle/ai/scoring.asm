@@ -282,11 +282,9 @@ AI_Basic:
 ;	jr z, .discourage
 
 ; switch if current move is
-; JUDGEMENT, PSYBLAST or DRACO_METEOR (common mono-attackers)
+; PSYBLAST or DRACO_METEOR (common mono-attackers)
 ; and its pp is 0
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-    cp JUDGEMENT
-    jr z, .checkPP
     cp PSYBLAST
     jr z, .checkPP
     cp DRACO_METEOR

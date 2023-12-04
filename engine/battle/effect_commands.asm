@@ -1921,10 +1921,7 @@ BattleCommand_EffectChance:
     jr c, .sereneGrace
     jr .continue
 .sereneGrace
-    inc hl
 	sla [hl]
-	dec hl
-    rl [hl]
 .continue
     ld a, [hl]
 	sub 100 percent

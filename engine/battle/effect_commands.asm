@@ -1921,7 +1921,7 @@ BattleCommand_EffectChance:
     jr c, .sereneGrace
     jr .continue
 .sereneGrace
-	ld hl, wEnemyMoveStruct + MOVE_CHANCE + 1
+    inc hl
 	sla [hl]
 	dec hl
     rl [hl]

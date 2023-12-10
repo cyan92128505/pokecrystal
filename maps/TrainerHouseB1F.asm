@@ -427,9 +427,9 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Patches
-    checkevent EVENT_BEAT_MASTER_PATCHES
+    checkevent EVENT_BEAT_INVADER_MANUS
     iffalse .Patches1
-    loadtrainer INVADER, MASTER_PATCHES
+    loadtrainer INVADER, MANUS
     sjump .finish
 .Patches1
     checkevent EVENT_BEAT_INVADER_PATCHES
@@ -1520,7 +1520,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer BLUE, BLUE1
+    loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1530,7 +1530,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, ASH
+    loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1540,45 +1540,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, RED1
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext AcceptPrize
-	waitbutton
-	verbosegiveitem MASTER_BALL
-	writetext NowHeal
-	waitbutton
-	special LoadPokemonData
-	special HealParty
-	writetext Trial4Text
-	waitbutton
-	closetext
-
-    winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer FALKNER, MASTER_FALKNER
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext Trial5Text
-	waitbutton
-	closetext
-	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CLAIR, MASTER_CLAIR
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext Trial6Text
-	waitbutton
-	closetext
-	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer GIOVANNI, MASTER_GIOVANNI
+    loadtrainer LEON, MASTER_LEON
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1590,33 +1552,33 @@ BattleTrialReceptionistScript:
 	waitbutton
 	special LoadPokemonData
 	special HealParty
-	writetext Trial7Text
+	writetext Trial4Text
 	waitbutton
 	closetext
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer STEVEN, MASTER_STEVEN
+    loadtrainer RED, ASH
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
-	writetext Trial8Text
+	writetext Trial5Text
 	waitbutton
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CYNTHIA, MASTER_CYNTHIA
+    loadtrainer RED, RED1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
 	opentext
-	writetext Trial9Text
+	writetext Trial6Text
 	waitbutton
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer LEON, MASTER_LEON
+    loadtrainer POKEMON_PROF, MASTER_OAK
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1641,7 +1603,7 @@ BattleTrialReceptionistScript:
 
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer POKEMON_PROF, MASTER_OAK
+    loadtrainer WALLACE, MASTER_WALLACE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1651,7 +1613,7 @@ BattleTrialReceptionistScript:
 	closetext
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer WALLACE, MASTER_WALLACE
+    loadtrainer CHAMPION, MASTER_LANCE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1661,17 +1623,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer LEAF, MASTER_GREEN
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmap
-	opentext
-	writetext Trial4Text
-	waitbutton
-	closetext
-	winlosstext victoryText, defeatText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CHAMPION, MASTER_LANCE
+    loadtrainer RED, MASTER_ASH
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -2431,7 +2383,7 @@ ExplainStandardTrialText:
 
 ExplainMasterTrialText:
     text "The MASTER TRIAL"
-    line "consists of 9"
+    line "consists of 6"
     cont "total battles."
 
     para "With your #MON"
@@ -2442,7 +2394,7 @@ ExplainMasterTrialText:
 ExplainImpossibleTrialText:
     text "IMPOSSIBLE TRIAL!"
 
-    para "It consists of 4"
+    para "It consists of 3"
     line "total battles."
 
     para "Your #MON are"
@@ -2604,7 +2556,7 @@ TrialUnlockMasterText:
 
     para "A more difficult"
     line "trial with a"
-    cont "total of 9"
+    cont "total of 6"
     cont "Battles."
     done
 
@@ -2616,7 +2568,7 @@ TrialUnlockImpossibleText:
     cont "IMPOSSIBLE TRIAL!"
 
     para "An insane trial"
-    line "with 4 straight"
+    line "with 3 brutal"
     cont "battles without"
     cont "healing."
     done

@@ -634,7 +634,7 @@ PawniardEvosAttacks:
 	db 15, PURSUIT
 	db 20, SCARY_FACE
 	db 30, SLASH
-	db 35, ACID_ARMOR
+	db 35, BULLET_PUNCH
 	db 40, NIGHT_SLASH
 	db 45, IRON_HEAD
 	db 50, SWORDS_DANCE
@@ -648,7 +648,7 @@ BisharpEvosAttacks:
 	db 15, PURSUIT
 	db 20, SCARY_FACE
 	db 30, SLASH
-	db 35, ACID_ARMOR
+	db 35, BULLET_PUNCH
 	db 40, NIGHT_SLASH
 	db 45, IRON_HEAD
 	db 50, SWORDS_DANCE

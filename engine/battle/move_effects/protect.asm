@@ -21,7 +21,7 @@ ProtectChance:
 .got_count
 
 	call CheckOpponentWentFirst
-	jr nz, .failed
+	;jr nz, .failed
 
 ; Halve the chance of a successful Protect for each consecutive use.
 

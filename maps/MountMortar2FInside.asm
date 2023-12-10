@@ -103,23 +103,39 @@ MountMortar2FInsideHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE
 
 SupernerdHughSeenText:
-	text "Yo! MARKUS!"
+	text "MARKUS!"
+
+	para "My partner pushed"
+	line "me over the"
+	cont "waterfall."
+
+	para "My #MON"
+	line "saved me."
+
+	para "He tried to"
+	line "kill me!"
+
+	para "Did he send"
+	line "you to finish"
+	cont "the job!"
 	done
 
 SupernerdHughBeatenText:
-	text "Sorry, my mistake."
+	text "I need to"
+	line "calm down."
 	done
 
 SupernerdHughAfterBattleText:
-	text "I'm investigating"
-	line "MT.MORTAR, but my"
-	cont "pal's gone AWOL."
+	text "I'm going to"
+	line "get out of here"
+	cont "and I'm going"
+	cont "to find MARKUS."
 
-	para "Have you seen a"
-	line "trainer who has a"
-
-	para "SLOWPOKE that can"
-	line "use STRENGTH?"
+	para "Then my #MON"
+	line "and I are going"
+	cont "to take him for"
+	cont "a little"
+	cont "swimming lesson."
 	done
 
 MountMortar2FInside_MapEvents:

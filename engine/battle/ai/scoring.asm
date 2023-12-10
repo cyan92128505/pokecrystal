@@ -160,6 +160,28 @@ AI_Basic:
 ; Dismiss moves with special effects if they are
 ; useless or not a good choice right now.
 ; For example, healing moves, weather moves, Dream Eater...
+
+; if move locked dismiss all moves except the last one used
+; this shouldn't be needed but for some reason AI enemies can switch moves when locked
+    push hl
+    ld hl, wEnemySubStatus5
+	bit SUBSTATUS_ENCORED, [hl]
+	pop hl
+	jr z, .checkRedundant
+    ld a, [wLastEnemyMove]
+    and a
+    jr z, .checkRedundant
+    push bc
+    ld b, a
+    ld a, [wEnemyMoveStruct + MOVE_ANIM]
+    cp b
+    pop bc
+    jp nz, .checkRedundant
+    xor a
+    ld [hl], a
+    jp .checkmove
+
+.checkRedundant
 	push hl
 	push de
 	push bc
@@ -262,7 +284,7 @@ AI_Basic:
 
 .checkFireAbsorb
     cp FIRE
-	jr nz, .checkSafeguard
+	jr nz, .checkMonoAttack
 	ld a, [wBattleMonSpecies]
 	push hl
 	push de
@@ -275,12 +297,12 @@ AI_Basic:
 	pop hl
     jp c, .discourage
 
-.checkSafeguard
 ; Dismiss Safeguard if it's already active.
 ;	ld a, [wPlayerScreens]
 ;	bit SCREENS_SAFEGUARD, a
 ;	jr z, .discourage
 
+.checkMonoAttack
 ; switch if current move is
 ; PSYBLAST or DRACO_METEOR (common mono-attackers)
 ; and its pp is 0

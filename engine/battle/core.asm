@@ -659,6 +659,8 @@ ParsePlayerAction:
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .not_encored
 	ld a, [wLastPlayerMove]
+	and a
+	jr z, .not_encored
 	ld [wCurPlayerMove], a
 	jr .encored
 
@@ -6415,10 +6417,13 @@ ParseEnemyAction:
 	jp .finish
 
 .not_linked
+; here we are not linked - AI enemy turn
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .skip_encore
 	ld a, [wLastEnemyMove]
+	and a
+	jr z, .skip_encore
 	jp .finish
 
 .skip_encore

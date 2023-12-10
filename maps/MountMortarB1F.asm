@@ -118,39 +118,52 @@ MountMortarB1FHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE
 
 MountMortarB1FKiyoIntroText:
-	text "Hey!"
+	text "I have purged"
+	line "my soul of all"
+	cont "the connections"
+	cont "that tied it"
+	cont "down."
 
-	para "I am the KARATE"
-	line "KING!"
+	para "Anger toward"
+	line "SABRINA."
 
-	para "I train alone here"
-	line "in the dark!"
+	para "Anger toward"
+	line "GIOVANNI."
 
-	para "You!"
-	line "Battle with me!"
+	para "Anger toward"
+	line "myself."
 
-	para "Hwaaarggh!"
+	para "Love of SAFFRON."
+
+	para "Love of myself."
+
+	para "But there is"
+	line "one love that"
+	cont "remains."
+
+	para "Love of battle."
+
+	para "It is a chain"
+	line "this old master"
+	cont "can never break."
 	done
 
 MountMortarB1FKiyoWinText:
-	text "Waaaarggh!"
-	line "I'm beaten!"
+	text "Break the chain."
 	done
 
 MountMortarB1FLucarioRewardText:
-	text "I… I'm crushed…"
+	text "I lost the battle."
 
-	para "My training is"
-	line "still not enough…"
+	para "But have won the"
+	line "struggle within."
 
-	para "But a loss is a"
-	line "loss. I admit it."
+	para "My pride is gone."
 
-	para "As proof that you"
-	line "defeated me, I'll"
+	para "I am pure."
 
-	para "give you a rare"
-	line "fighting #MON."
+	para "Take this fragment"
+	line "of my soul."
 	done
 
 MountMortarB1FReceiveMonText:
@@ -159,16 +172,23 @@ MountMortarB1FReceiveMonText:
 	done
 
 MountMortarB1FKiyoGotLucarioText:
-	text "Lucario is a"
-	line "fighting-type."
+	text "My mind is clear."
 
-	para "It is a"
-	line "strong #MON."
+	para "Unshrouded by"
+	line "pride, or anger"
+	cont "or love."
 
-	para "It will take you"
-	line "to greatness!"
+	para "I am the KARATE"
+	line "MASTER."
 
-	para "Farewell!"
+	para "And it's time"
+	line "of my return."
+
+	para "Thank you."
+
+	para "Now I just need"
+	line "to find my way"
+	cont "out of here."
 	done
 
 MountMortarB1FKiyoFullPartyText:

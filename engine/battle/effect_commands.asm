@@ -965,7 +965,6 @@ BattleCommand_DoTurn:
 .lock
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
-	bit SUBSTATUS_ENCORED, [hl]
 	set SUBSTATUS_ENCORED, [hl]
     ldh a, [hBattleTurn]
   	and a
@@ -2329,7 +2328,7 @@ GetFailureResultText:
 	ld hl, wCurDamage
 	ld a, [hli]
 	ld b, [hl]
-rept 3
+rept 2
 	srl a
 	rr b
 endr

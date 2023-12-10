@@ -108,53 +108,75 @@ MountMortar1FInsideHiddenMaxRepel:
 	hiddenitem RARE_CANDY, EVENT_MOUNT_MORTAR_1F_INSIDE_HIDDEN_MAX_REPEL
 
 PokemaniacMillerSeenText:
-	text "I'm not losing"
-	line "this time!"
+	text "There are others"
+	line "in here."
+
+	para "They say there is"
+	line "a great warrior"
+	cont "who was exiled"
+	cont "for his strength"
+	cont "somewhere deep,"
+	cont "deep in here."
 	done
 
 PokemaniacMillerBeatenText:
-	text "I lost to some"
-	line "kid…?"
+	text "My royal family."
 	done
 
 PokemaniacMillerAfterBattleText:
-	text "A while back, this"
-	line "karate dude wanted"
+	text "Exploring caves"
+	line "is thrilling."
 
-	para "to battle. He was"
-	line "ridiculously good."
+	para "You never know"
+	line "what dangers there"
+	cont "are."
 
-	para "He just thrashed"
-	line "us silly."
-
-	para "He went in deeper"
-	line "saying it was for"
-
-	para "his training. I"
-	line "wonder how he is?"
+    para "But I don't"
+    line "know how to"
+    cont "get deeper"
+    cont "in here."
 	done
 
 SupernerdMarkusSeenText:
-	text "Hey! HUGH!"
+	text "I came here"
+	line "with my buddy."
+
+	para "There was a"
+	line "cave in and we"
+	cont "got separated."
+
+	para "He is a gonner"
+	line "for sure."
+
+	para "I will truly"
+	line "miss him."
+
+	para "Now how do I"
+	line "get out of"
+	cont "here."
 	done
 
 SupernerdMarkusBeatenText:
-	text "I mistook you for"
-	line "someone else…"
+	text "I'm too sad to"
+	line "battle."
 	done
 
 SupernerdMarkusAfterBattleText:
-	text "I came to explore"
-	line "MT.MORTAR, but I"
+	text "My buddy was"
+	line "really strong."
 
-	para "got separated from"
-	line "my partner…"
+	para "His name was HUGH."
 
-	para "Did you run into a"
-	line "trainer who uses a"
+	para "If you..."
 
-	para "SEADRA that knows"
-	line "WATERFALL?"
+	para "If you find his"
+	line "body."
+
+	para "Make it look"
+	line "like I tried"
+	cont "to help."
+
+	para "Gotta go!"
 	done
 
 MountMortar1FInsideFieldMon1Script:

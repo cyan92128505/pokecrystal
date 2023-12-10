@@ -1,9 +1,7 @@
 	object_const_def
 	const ROUTE27_COOLTRAINER_M1
-	;const ROUTE27_COOLTRAINER_M2
 	const ROUTE27_COOLTRAINER_F1
 	const ROUTE27_COOLTRAINER_F2
-	;const ROUTE27_YOUNGSTER1
 	const ROUTE27_YOUNGSTER2
 	const ROUTE27_POKE_BALL1
 	const ROUTE27_POKE_BALL2
@@ -76,17 +74,6 @@ FirstStepIntoKantoScene_Continue:
 
 Route27FisherScript:
 	jumptextfaceplayer Route27FisherText
-
-TrainerPsychicGilbert:
-	trainer PSYCHIC_T, GILBERT, EVENT_BEAT_PSYCHIC_GILBERT, PsychicGilbertSeenText, PsychicGilbertBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PsychicGilbertAfterBattleText
-	waitbutton
-	closetext
-	end
 
 TrainerBirdKeeperJose2:
 	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
@@ -198,17 +185,6 @@ TrainerCooltrainermBlake:
 	endifjustbattled
 	opentext
 	writetext CooltrainermBlakeAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerCooltrainermBrian:
-	trainer COOLTRAINERM, BRIAN, EVENT_BEAT_COOLTRAINERM_BRIAN, CooltrainermBrianSeenText, CooltrainermBrianBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext CooltrainermBrianAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -326,64 +302,75 @@ Route27FisherStepLeftOnceMovement:
 	step_end
 
 Route27FisherHeyText:
-	text "Hey!"
+	text "Halt!!"
 	done
 
 Route27FisherText:
-	text "Do you know what"
-	line "you just did?"
+	text "I am a member"
+	line "of KANTO border"
+	cont "patrol."
 
-	para "You've taken your"
-	line "first step into"
-	cont "KANTO."
+	para "The country is"
+	line "in lock down due"
+	cont "to the threat of"
+	cont "the HEON war."
 
-	para "Check your #-"
-	line "GEAR MAP and see."
+	para "Let me see your"
+	line "trainer card!"
+
+	para "...."
+
+	para "Ok this checks"
+	line "out."
+
+	para "You may go"
+	line "ahead."
+
+	para "Welcome to KANTO."
 	done
 
 CooltrainermBlakeSeenText:
-	text "You look pretty"
-	line "strong."
-	cont "Let me battle you!"
+	text "Ah a fresh face"
+	line "around here."
+
+	para "Are you heading"
+	line "to battle the"
+	cont "ELITE FOUR."
+
+	para "You're the third"
+	line "person today"
+	cont "doing that."
+
+	para "But you don't"
+	line "look nearly"
+	cont "strong enough."
+
+	para "Even I can beat"
+	line "you."
+
+	para "Come on let's"
+	line "go!"
 	done
 
 CooltrainermBlakeBeatenText:
-	text "Yow!"
+	text "Not again."
 	done
 
 CooltrainermBlakeAfterBattleText:
-	text "If you prevail on"
-	line "this harsh trek,"
+	text "This is the third"
+	line "time today I've"
+	cont "lost a battle."
 
-	para "the truth will be"
-	line "revealed!"
+	para "But even though"
+	line "you beat me."
 
-	para "Heh, sorry, I just"
-	line "wanted to say"
-	cont "something cool."
-	done
-
-CooltrainermBrianSeenText:
-	text "Hm? You're good,"
-	line "aren't you?"
-	done
-
-CooltrainermBrianBeatenText:
-	text "Just as I thought!"
-	done
-
-CooltrainermBrianAfterBattleText:
-	text "A good trainer can"
-	line "recognize other"
-	cont "good trainers."
+	para "You are going"
+	line "to get destroyed"
+	cont "by the ELITE FOUR!"
 	done
 
 CooltrainerfReenaSeenText:
-	text "You shouldn't"
-	line "underestimate the"
-
-	para "wild #MON in"
-	line "these parts."
+	text ""
 	done
 
 CooltrainerfReenaBeatenText:
@@ -424,32 +411,6 @@ CooltrainerfMeganAfterBattleText:
 	para "But evolved forms"
 	line "also learn moves"
 	cont "later on."
-	done
-
-PsychicGilbertSeenText:
-	text "Don't say a thing!"
-
-	para "Let me guess what"
-	line "you're thinking."
-
-	para "Mmmmmmm…"
-
-	para "I got it! You're"
-	line "on the #MON"
-	cont "LEAGUE challenge!"
-	done
-
-PsychicGilbertBeatenText:
-	text "You're too much!"
-	done
-
-PsychicGilbertAfterBattleText:
-	text "With your skills,"
-	line "you'll do well at"
-	cont "the LEAGUE."
-
-	para "That's what my"
-	line "premonition says."
 	done
 
 BirdKeeperJose2SeenText:
@@ -493,7 +454,6 @@ Route27_MapEvents:
 
 	def_object_events
 	object_event 48,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermBlake, -1
-	;object_event 58,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermBrian, -1
 	object_event 72, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfReena, -1
 	object_event 37,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfMegan, -1
 	;object_event 65,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicGilbert, -1

@@ -1,6 +1,6 @@
 	object_const_def
 	const LANCESROOM_LANCE
-	const LANCESROOM_MARY
+	const LANCESROOM_ELM
 	const LANCESROOM_OAK
 
 LancesRoom_MapScripts:
@@ -78,16 +78,23 @@ LancesRoomLanceScript:
 	turnobject LANCESROOM_LANCE, DOWN
 	pause 10
 	turnobject PLAYER, DOWN
-	appear LANCESROOM_MARY
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRushesIn
+	
+	
+	appear LANCESROOM_ELM
+	applymovement LANCESROOM_ELM, LancesRoomMovementData_ElmRushesIn
 	opentext
-	writetext LancesRoomMaryOhNoOakText
+	writetext LancesRoomElmText1
+	waitbutton
+	closetext
+	turnobject LANCESROOM_ELM, DOWN
+	opentext
+	writetext LancesRoomElmIsntItOak
 	waitbutton
 	closetext
 	appear LANCESROOM_OAK
 	applymovement LANCESROOM_OAK, LancesRoomMovementData_OakWalksIn
-	follow LANCESROOM_MARY, LANCESROOM_OAK
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryYieldsToOak
+	follow LANCESROOM_ELM, LANCESROOM_OAK
+	applymovement LANCESROOM_ELM, LancesRoomMovementData_ElmYieldsToOak
 	stopfollow
 	turnobject LANCESROOM_OAK, UP
 	turnobject LANCESROOM_LANCE, LEFT
@@ -95,10 +102,18 @@ LancesRoomLanceScript:
 	writetext LancesRoomOakCongratulationsText
 	waitbutton
 	closetext
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryInterviewChampion
-	turnobject PLAYER, LEFT
+
+	turnobject LANCESROOM_LANCE, DOWN
 	opentext
-	writetext LancesRoomMaryInterviewText
+	writetext LancesRoomLanceHappyText
+	waitbutton
+	closetext
+
+	applymovement LANCESROOM_ELM, LancesRoomMovementData_ElmInterviewChampion
+	turnobject PLAYER, LEFT
+	turnobject LANCESROOM_LANCE, LEFT
+	opentext
+	writetext LancesRoomElmText2
 	waitbutton
 	closetext
 	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway
@@ -108,7 +123,7 @@ LancesRoomLanceScript:
 	waitbutton
 	closetext
 	follow LANCESROOM_LANCE, PLAYER
-	turnobject LANCESROOM_MARY, UP
+	turnobject LANCESROOM_ELM, UP
 	turnobject LANCESROOM_OAK, UP
 	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
 	stopfollow
@@ -117,13 +132,13 @@ LancesRoomLanceScript:
 	applymovement PLAYER, LancesRoomMovementData_PlayerExits
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYER
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryTriesToFollow
-	showemote EMOTE_SHOCK, LANCESROOM_MARY, 15
+	applymovement LANCESROOM_ELM, LancesRoomMovementData_ElmTriesToFollow
+	;showemote EMOTE_SHOCK, LANCESROOM_ELM, 15
 	opentext
-	writetext LancesRoomMaryNoInterviewText
+	writetext LancesRoomElmWellDoneText
 	pause 30
 	closetext
-	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRunsBackAndForth
+	;applymovement LANCESROOM_ELM, LancesRoomMovementData_ElmRunsBackAndForth
 	special FadeOutPalettes
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
@@ -149,11 +164,10 @@ MovementData_ApproachLanceFromRight:
 	turn_head RIGHT
 	step_end
 
-LancesRoomMovementData_MaryRushesIn:
+LancesRoomMovementData_ElmRushesIn:
 	big_step UP
 	big_step UP
 	big_step UP
-	turn_head DOWN
 	step_end
 
 LancesRoomMovementData_OakWalksIn:
@@ -161,12 +175,12 @@ LancesRoomMovementData_OakWalksIn:
 	step UP
 	step_end
 
-LancesRoomMovementData_MaryYieldsToOak:
+LancesRoomMovementData_ElmYieldsToOak:
 	step LEFT
 	turn_head RIGHT
 	step_end
 
-LancesRoomMovementData_MaryInterviewChampion:
+LancesRoomMovementData_ElmInterviewChampion:
 	big_step UP
 	turn_head RIGHT
 	step_end
@@ -185,13 +199,13 @@ LancesRoomMovementData_PlayerExits:
 	step UP
 	step_end
 
-LancesRoomMovementData_MaryTriesToFollow:
+LancesRoomMovementData_ElmTriesToFollow:
 	step UP
 	step RIGHT
 	turn_head UP
 	step_end
 
-LancesRoomMovementData_MaryRunsBackAndForth:
+LancesRoomMovementData_ElmRunsBackAndForth:
 	big_step RIGHT
 	big_step RIGHT
 	big_step LEFT
@@ -206,135 +220,193 @@ LancesRoomMovementData_MaryRunsBackAndForth:
 	step_end
 
 LanceBattleIntroText:
-	text "LANCE: I've been"
-	line "waiting for you."
-
-	para "<PLAY_G>!"
-
-	para "I knew that you,"
-	line "with your skills,"
-
-	para "would eventually"
-	line "reach me here."
-
-	para "There's no need"
-	line "for words now."
-
-	para "We will battle to"
-	line "determine who is"
-
-	para "the stronger of"
-	line "the two of us."
-
-	para "As the most power-"
-	line "ful trainer and as"
-
-	para "the #MON LEAGUE"
-	line "CHAMPION…"
-
-	para "I, LANCE the drag-"
-	line "on master, accept"
-	cont "your challenge!"
+	text "Your arrival here"
+	line "was inevitable"
+	cont "<PLAYER>."
+	
+	para "You exemplify"
+	line "the qualities of"
+	cont "CHAMPION."
+	
+	para "Will"
+	
+	para "Strength"
+	
+	para "Bravery"
+	
+	para "Humility"
+	
+	para "Alas fine though"
+	line "they be, these"
+	cont "are insufficient."
+	
+	para "There is a final,"
+	line "less definable"
+	cont "quality."
+	
+	para "You must possess"
+	line "the heart of a"
+	cont "CHAMPION."
+	
+	para "I shall not yield"
+	line "my expectations."
+	
+	para "If you befit the"
+	line "mantle CHAMPION."
+	
+	para "You must make your"
+	line "claim decisively."
+	
+	para "Here and now!"
 	done
 
 LanceBattleWinText:
-	text "…It's over."
-
-	para "But it's an odd"
-	line "feeling."
-
-	para "I'm not angry that"
-	line "I lost. In fact, I"
-	cont "feel happy."
-
-	para "Happy that I"
-	line "witnessed the rise"
-
-	para "of a great new"
-	line "CHAMPION!"
+	text "It is done."
+	
+	para "I, LANCE the"
+	line "DRAGON CHAMPION."
+	
+	para "bestow upon"
+	line "you <PLAYER>."
+	
+	para "The title of"
+	line "JOHTO CHAMPION!"
 	done
 
 LanceBattleAfterText:
-	text "…Whew."
-
-	para "You have become"
-	line "truly powerful,"
-	cont "<PLAY_G>."
-
-	para "Your #MON have"
-	line "responded to your"
-
-	para "strong and up-"
-	line "standing nature."
-
-	para "As a trainer, you"
-	line "will continue to"
-
-	para "grow strong with"
-	line "your #MON."
+	text "Many years have"
+	line "passed since last"
+	cont "I battled with"
+	cont "such heart."
+	
+	para "It is my honor"
+	line "to be the first"
+	cont "to address you"
+	cont "by your rightful"
+	cont "title."
+	
+	para "CHAMPION <PLAYER>."
+	
+	para "The first CHAMPION"
+	line "of JOHTO."
+	
+	para "The crown of"
+	line "CHAMPION is a"
+	cont "heavy one."
+	
+	para "You alone shall"
+	line "kindle the ember"
+	cont "of hope within"
+	cont "the population."
+	
+	para "Your singular"
+	line "responsibility is"
+	cont "to nurture and"
+	cont "defend this flame."
 	done
 
-LancesRoomMaryOhNoOakText:
-	text "MARY: Oh, no!"
-	line "It's all over!"
+LancesRoomElmText1:
+	text "<PLAYER>!"
 
-	para "PROF.OAK, if you"
-	line "weren't so slow…"
+	para "You did it!"
+
+	para "I saw the battle"
+	line "it was terrifying!"
+
+	para "I've never seen"
+	line "two CHAMPIONS"
+	cont "battle before."
+
+	para "I am amazed at"
+	line "how strong you"
+	cont "have become"
+	cont "<PLAYER>."
+	done
+
+LancesRoomElmIsntItOak:
+	text "OAK is equally"
+	line "impressed!"
 	done
 
 LancesRoomOakCongratulationsText:
-	text "PROF.OAK: Ah,"
-	line "<PLAY_G>!"
+	text "Indeed I am."
 
-	para "It's been a long"
-	line "while."
+	para "I had my doubts"
+	line "I would ever see"
+	cont "a trainer manage"
+	cont "to overcome the"
+	cont "full power of"
+	cont "CHAMPION LANCE."
 
-	para "You certainly look"
-	line "more impressive."
+	para "But you did it"
+	line "<PLAYER>."
 
-	para "Your conquest of"
-	line "the LEAGUE is just"
-	cont "fantastic!"
+	para "Watching you"
+	line "battle it quickly"
+	cont "became clear you"
+	cont "are a true"
+	cont "CHAMPION."
 
-	para "Your dedication,"
-	line "trust and love for"
+	para "I haven't seen"
+	line "one possess such"
+	cont "natural talents"
+	cont "since RED."
 
-	para "your #MON made"
-	line "this happen."
-
-	para "Your #MON were"
-	line "outstanding too."
-
-	para "Because they be-"
-	line "lieved in you as a"
-
-	para "trainer, they per-"
-	line "severed."
-
-	para "Congratulations,"
-	line "<PLAY_G>!"
+	para "Well LANCE, it"
+	line "seems you have"
+	cont "lost your title"
+	cont "as standing"
+	cont "CHAMPION of"
+	cont "JOHTO."
 	done
 
-LancesRoomMaryInterviewText:
-	text "MARY: Let's inter-"
-	line "view the brand new"
-	cont "CHAMPION!"
+LancesRoomLanceHappyText:
+    text "A title I am"
+    line "most pleased to"
+    cont "relinquish"
+    cont "Professor."
+    done
+
+LancesRoomElmText2:
+	text "I am so proud"
+	line "of you <PLAYER>."
+
+	para "I known you since"
+	line "you were a baby."
+
+	para "I can't believe"
+	line "what you have"
+	cont "achieved."
+
+	para "Your mother is"
+	line "also very proud."
+
+	para "And so is your"
+	line "father."
+
+	para "They are both"
+	line "waiting for you"
+	cont "back home."
 	done
 
 LancesRoomNoisyText:
-	text "LANCE: This is"
-	line "getting to be a"
-	cont "bit too noisy…"
+	text "We are all"
+	line "overwhelmed with"
+	cont "immense pride."
 
-	para "<PLAY_G>, could you"
-	line "come with me?"
+	para "Now if you would"
+	line "excuse us"
+	cont "Professors."
+
+	para "Only CHAMPIONS are"
+	line "permitted to enter"
+	cont "the HALL OF FAME."
 	done
 
-LancesRoomMaryNoInterviewText:
-	text "MARY: Oh, wait!"
-	line "We haven't done"
-	cont "the interview!"
-	done
+LancesRoomElmWellDoneText:
+    text "WELL DONE"
+    line "<PLAYER>!"
+    done
 
 LancesRoom_MapEvents:
 	db 0, 0 ; filler
@@ -353,5 +425,5 @@ LancesRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, -1
-	object_event  4,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
+	object_event  4,  7, SPRITE_ELM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY
 	object_event  4,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY

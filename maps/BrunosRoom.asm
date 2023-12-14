@@ -118,7 +118,7 @@ BrunoScript_BrunoDefeatText:
 	para "Take that"
 	line "strength and"
 	cont "face your next"
-	cont "trial."
+	cont "challenge."
 	done
 
 BrunosRoom_MapEvents:

@@ -65,49 +65,40 @@ HallOfFame_SlowlyApproachMachine:
 	step_end
 
 HallOfFame_LanceText:
-	text "LANCE: It's been a"
-	line "long time since I"
-	cont "last came here."
+	text "You are only the"
+	line "third trainer to"
+	cont "see this room."
 
-	para "This is where we"
-	line "honor the LEAGUE"
+	para "And the first"
+	line "JOHTO trainer to"
+	cont "have such honour."
 
-	para "CHAMPIONS for all"
-	line "eternity."
+	para "Upon this throne"
+	line "the greatest"
+	cont "trainers and"
+	cont "their #MON"
+	cont "are accepted and"
+	cont "commemorated for"
+	cont "all eternity."
 
-	para "Their courageous"
-	line "#MON are also"
-	cont "inducted."
+	para "Countless trainers"
+	line "have come before"
+	cont "our time."
 
-	para "Here today, we"
-	line "witnessed the rise"
+	para "Countless more"
+	line "are yet to exist."
 
-	para "of a new LEAGUE"
-	line "CHAMPION--a"
+	para "But here and now"
+	line "trainers one and"
+	cont "all shall bare"
+	cont "witness."
 
-	para "trainer who feels"
-	line "compassion for,"
+	para "<PLAYER>."
 
-	para "and trust toward,"
-	line "all #MON."
-
-	para "A trainer who"
-	line "succeeded through"
-
-	para "perseverance and"
-	line "determination."
-
-	para "The new LEAGUE"
-	line "CHAMPION who has"
-
-	para "all the makings"
-	line "of greatness!"
-
-	para "<PLAY_G>, allow me"
-	line "to register you"
-
-	para "and your partners"
-	line "as CHAMPIONS!"
+	para "I coronate you"
+	line "and accordingly"
+	cont "your #MON"
+	cont "as CHAMPIONS!"
 	done
 
 HallOfFame_MapEvents:

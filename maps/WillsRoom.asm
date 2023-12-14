@@ -120,7 +120,7 @@ WillScript_WillDefeatText:
 
 	para "I have only met"
 	line "one other trainer"
-	cont "with such strength."
+	cont "with such power."
 
 	para "Now continue"
 	line "your challenge"

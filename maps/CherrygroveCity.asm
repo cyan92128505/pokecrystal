@@ -1375,7 +1375,7 @@ StarWarsCh2HeroText:
 
     para "15 years pass."
 
-    para "You heart sinks."
+    para "Your heart sinks."
 
     para "ANIKAN has turned"
     line "to the dark side."

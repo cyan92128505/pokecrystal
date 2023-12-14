@@ -81,94 +81,28 @@ AbraScript:
 	closetext
 	end
 
-PlateauRivalMovement1:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	turn_head LEFT
-	step_end
-
-PlateauRivalMovement2:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	turn_head RIGHT
-	step_end
-
-PlateauRivalLeavesMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 IndigoPlateauPokecenter1FCooltrainerMText:
-	text "At the #MON"
-	line "LEAGUE, you'll get"
+	text "This is it!"
 
-	para "tested by the"
-	line "ELITE FOUR."
+	para "We're going to"
+	line "face the ELITE"
+	cont "FOUR."
 
-	para "You have to beat"
-	line "them all. If you"
+	para "We have to battle"
+	line "five consecutive"
+	cont "trainers."
 
-	para "lose, you have to"
-	line "start all over!"
-	done
+	para "You can't use"
+	line "items in the"
+	cont "battles or the"
+	cont "POCKET PC"
+	cont "between battles."
 
-PlateauRivalText1:
-	text "Hold it."
-
-	para "You're going to"
-	line "take the #MON"
-
-	para "LEAGUE challenge"
-	line "now?"
-
-	para "That's not going"
-	line "to happen."
-
-	para "My super-well-"
-	line "trained #MON"
-
-	para "are going to pound"
-	line "you."
-
-	para "<PLAYER>!"
-	line "I challenge you!"
-	done
-
-PlateauRivalWinText:
-	text "…"
-
-	para "OK--I lost…"
-	done
-
-PlateauRivalText2:
-	text "…Darn… I still"
-	line "can't win…"
-
-	para "I… I have to think"
-	line "more about my"
-	cont "#MON…"
-
-	para "Humph! Try not to"
-	line "lose!"
-	done
-
-PlateauRivalLoseText:
-	text "…"
-
-	para "Whew…"
-	line "With my partners,"
-
-	para "I'm going to be"
-	line "the CHAMPION!"
+	para "So it will be"
+	line "good to buy lots"
+	cont "of healing items"
+	cont "to use between"
+	cont "battles."
 	done
 
 TeleportGuyText1:

@@ -370,64 +370,77 @@ CooltrainermBlakeAfterBattleText:
 	done
 
 CooltrainerfReenaSeenText:
-	text ""
+	text "Everyone here"
+	line "wants to be the"
+	cont "first CHAMPION"
+	cont "of JOHTO."
+
+	para "But only I"
+	line "will succeed."
 	done
 
 CooltrainerfReenaBeatenText:
-	text "Oh! You're much"
-	line "too strong!"
+	text "I'm not ready."
 	done
 
 CooltrainerfReenaAfterBattleText:
-	text "You're just a kid,"
-	line "but you're not to"
-
-	para "be underestimated"
-	line "either."
+	text "You are strong"
+	line "but the ELITE"
+	cont "FOUR will put"
+	cont "you in your"
+	cont "place."
 	done
 
 CooltrainerfMeganSeenText:
-	text "It's rare to see"
-	line "anyone come here."
+	text "We all know we"
+	line "destined to"
+	cont "become soldiers."
 
-	para "Are you training"
-	line "on your own?"
+	para "But it's what"
+	line "I want."
+
+	para "I want to"
+	line "protect the"
+	cont "weak."
 	done
 
 CooltrainerfMeganBeatenText:
-	text "Oh! You're really"
-	line "strong!"
+	text "You don't need"
+	line "protecting."
 	done
 
 CooltrainerfMeganAfterBattleText:
-	text "I'm checking out"
-	line "pre- and post-"
-	cont "evolution #MON."
-
-	para "Evolution really"
-	line "does make #MON"
+	text "#MON start"
+	line "of weak but they"
+	cont "grow and get"
 	cont "stronger."
 
-	para "But evolved forms"
-	line "also learn moves"
-	cont "later on."
+	para "Everyone deserves"
+	line "the chance to"
+	cont "grow."
 	done
 
 BirdKeeperJose2SeenText:
-	text "Tweet! Tweet!"
-	line "Tetweet!"
+	text "My beautiful"
+	line "#MON are"
+	cont "seasoned machines"
+	cont "designed to do"
+	cont "one thing..."
+
+	para "Kill!"
 	done
 
 BirdKeeperJose2BeatenText:
-	text "Tweet!"
+	text "You are nobodies"
+	line "prey."
 	done
 
 BirdKeeperJose2AfterBattleText:
-	text "BIRD KEEPERS like"
-	line "me mimic bird"
+	text "Let HOEN come!"
 
-	para "whistles to com-"
-	line "mand #MON."
+	para "my #MON will"
+	line "feast on their"
+	cont "fish #MON!"
 	done
 
 TohjoFallsSignText:

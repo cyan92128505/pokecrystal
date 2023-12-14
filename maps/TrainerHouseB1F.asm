@@ -1613,7 +1613,7 @@ BattleTrialReceptionistScript:
 	closetext
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CHAMPION, MASTER_LANCE
+    loadtrainer LEAF, MASTER_GREEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1621,6 +1621,21 @@ BattleTrialReceptionistScript:
 	writetext Trial3Text
 	waitbutton
 	closetext
+	winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+    loadtrainer CHAMPION, MASTER_LANCE
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmap
+	opentext
+	writetext NowHeal
+	waitbutton
+	special LoadPokemonData
+	special HealParty
+	writetext TrialLeaderText
+	waitbutton
+	closetext
+	special HealParty
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
     loadtrainer RED, MASTER_ASH
@@ -2571,6 +2586,21 @@ TrialUnlockImpossibleText:
     line "with 3 brutal"
     cont "battles without"
     cont "healing."
+    done
+
+TrialLeaderText:
+    text "You are a"
+    line "remarkable"
+    cont "trainer."
+
+    para "Now you shall"
+    line "face the elusive"
+    cont "master of the"
+    cont "BATTLE TRIAL."
+
+    para "Let the final"
+    line "ultimate trial"
+    cont "begin!"
     done
 
 TrialCongratsText:

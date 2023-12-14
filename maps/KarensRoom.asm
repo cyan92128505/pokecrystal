@@ -80,55 +80,63 @@ KarensRoom_EnterMovement:
 	step_end
 
 KarenScript_KarenBeforeText:
-	text "I am KAREN of the"
-	line "ELITE FOUR."
+	text "I am KAREN of"
+	line "the ELITE FOUR."
 
-	para "You're <PLAYER>?"
-	line "How amusing."
+	para "Darkness is the"
+	line "great equaliser."
 
-	para "I love dark-type"
-	line "#MON."
+	para "The most primal"
+	line "fear."
 
-	para "I find their wild,"
-	line "tough image to be"
+	para "The infinite"
+	line "expanse."
 
-	para "so appealing. And"
-	line "they're so strong."
+	para "In its embrace the"
+	line "strong and the"
+	cont "weak are all"
+	cont "the same."
 
-	para "Think you can take"
-	line "them? Just try to"
-	cont "entertain me."
+	para "afraid."
 
-	para "Let's go."
+	para "Those that embrace"
+	line "the fear are the"
+	cont "ones to survive."
+
+	para "Only by facing"
+	line "your fear can"
+	cont "you learn who"
+	cont "you really are."
 	done
 
 KarenScript_KarenBeatenText:
-	text "Well, aren't you"
-	line "good. I like that"
-	cont "in a trainer."
+	text "You understand"
+	line "what's important."
 	done
 
 KarenScript_KarenDefeatText:
-	text "Strong #MON."
+	text "Strong and weak."
 
-	para "Weak #MON."
+	para "These are terms"
+	line "without meaning."
 
-	para "That is only the"
-	line "selfish perception"
-	cont "of people."
+	para "A naive"
+	line "perception."
 
-	para "Truly skilled"
-	line "trainers should"
+	para "There is only"
+	line "those who survive"
+	cont "and those who"
+	cont "do not."
 
-	para "try to win with"
-	line "their favorites."
+	para "You have mastered"
+	line "your fear."
 
-	para "I like your style."
-	line "You understand"
-	cont "what's important."
+	para "An essential"
+	line "quality of a"
+	cont "CHAMPION."
 
-	para "Go on--the CHAM-"
-	line "PION is waiting."
+	para "Now march forward"
+	line "without fear."
 	done
 
 KarensRoom_MapEvents:

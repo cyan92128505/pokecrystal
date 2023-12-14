@@ -4,9 +4,7 @@
 	const ROUTE26_COOLTRAINER_F1
 	const ROUTE26_COOLTRAINER_F2
 	const ROUTE26_YOUNGSTER
-	;const ROUTE26_FISHER
 	const ROUTE26_FRUIT_TREE
-	;const ROUTE26_POKE_BALL
     const ROUTE26_FIELDMON_1
     const ROUTE26_FIELDMON_2
     const ROUTE26_FIELDMON_3
@@ -278,175 +276,200 @@ TrainerPsychicRichard:
 	closetext
 	end
 
-TrainerFisherScott:
-	trainer FISHER, SCOTT, EVENT_BEAT_FISHER_SCOTT, FisherScottSeenText, FisherScottBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext FisherScottAfterBattleText
-	waitbutton
-	closetext
-	end
-
 Route26Sign:
 	jumptext Route26SignText
 
 Route26FruitTree:
 	fruittree FRUITTREE_ROUTE_26
 
-Route26MaxElixer:
-	itemball MAX_ELIXER
-
 CooltrainermJakeSeenText:
-	text "I'm making my"
-	line "final preparations"
+	text "The ELITE FOUR"
+	line "are new to JOHTO."
 
-	para "for the #MON"
-	line "LEAGUE."
+	para "Half of them are"
+	line "from KANTO."
+
+	para "JOHTO should have"
+	line "an all JOHTO"
+	cont "ELITE FOUR."
+
+	para "If only I had"
+	line "all eight BADGES."
+
+	para "...."
+
+	para "As a proud"
+	line "citizen of JOHTO"
+	cont "you must hand"
+	cont "em over."
 	done
 
 CooltrainermJakeBeatenText:
-	text "I blew it!"
+	text "For the"
+	line "motherland!"
 	done
 
 CooltrainermJakeAfterBattleText:
-	text "It's going to be"
-	line "tough to win at"
-	cont "the LEAGUE."
+	text "LANCE is from"
+	line "JOHTO."
 
-	para "I need to do some"
-	line "more training."
+	para "He is CHAMPION"
+	line "of KANTO."
 
-	para "I hear that the"
-	line "LEAGUE's ELITE"
-
-	para "FOUR are tougher"
-	line "than GYM LEADERS."
+	para "This makes me"
+	line "proud enough"
+	cont "to cry."
 	done
 
 CooltrainermGaven3SeenText:
-	text "By experiencing"
-	line "tough battles, you"
-	cont "gain power."
+	text "LANCE is CHAMPION"
+	line "of KANTO but is"
+	cont "acting CHAMPION"
+	cont "of JOHTO until"
+	cont "we can produce"
+	cont "our own CHAMPION."
+
+	para "For our national"
+	line "dignity we must"
+	cont "do this!"
 	done
 
 CooltrainermGaven3BeatenText:
-	text "Gaah! Life is even"
-	line "tougher!"
+	text "You might be"
+	line "the one!"
 	done
 
 CooltrainermGavenAfterText:
-	text "To get to #MON"
-	line "LEAGUE, you have"
+	text "To become CHAMPION"
+	line "you wil have to"
+	cont "defeat LANCE."
 
-	para "to get through"
-	line "VICTORY ROAD."
+	para "His strength is"
+	line "infamous."
 
-	para "But VICTORY ROAD"
-	line "is tough."
-
-	para "Practically nobody"
-	line "goes there!"
+	para "I can't imagine"
+	line "him losing to"
+	cont "anyone."
 	done
 
 CooltrainerfJoyceSeenText:
-	text "Since you've come"
-	line "this far, you must"
-	cont "be good."
+	text "Everyone here is"
+	line "going on and on"
+	cont "about JOHTO having"
+	cont "to get its own"
+	cont "CHAMPION."
 
-	para "I'm going to give"
-	line "this battle every-"
-	cont "thing I've got!"
+	para "All the patriotism"
+	line "makes me uneasy."
+
+	para "Don't tell anyone."
+
+	para "But I'm actually"
+	line "from KANTO!"
 	done
 
 CooltrainerfJoyceBeatenText:
-	text "No! I don't"
-	line "believe this!"
+	text "Glory to KANTO!"
 	done
 
 CooltrainerfJoyceAfterBattleText:
-	text "I've defeated"
-	line "eight GYM LEADERS,"
-
-	para "so I was feeling"
-	line "confident."
-
-	para "I'll have to try"
-	line "harder next time."
+	text "Promise me you"
+	line "will use all"
+	cont "your strength to"
+	cont "protect my home."
 	done
 
 CooltrainerfBeth1SeenText:
-	text "I lost to a train-"
-	line "er named <RIVAL>."
+	text "Beyond here is"
+	line "VICTORY ROAD."
 
-	para "He was really"
-	line "strong, but…"
+	para "It is the final"
+	line "path to the"
+	cont "ELITE FOUR."
 
-	para "It was as if he"
-	line "absolutely had to"
-	cont "win at any cost."
+	para "We all line up"
+	line "nicely to get"
+	cont "shipped off to"
+	cont "war."
 
-	para "I felt sorry for"
-	line "his #MON."
+	para "It's always the"
+	line "young who do"
+	cont "the dying."
+
+	para "A trainer named"
+	line "<RIVAL> came"
+	cont "past here."
+
+	para "He was the"
+	line "perfect little"
+	cont "soldier."
+
+	para "How about you?"
 	done
 
 CooltrainerfBeth1BeatenText:
-	text "#MON aren't"
-	line "tools of war."
+	text "There is more"
+	line "to you."
 	done
 
 CooltrainerfBethAfterText:
-	text "#MON are in-"
-	line "valuable, lifelong"
-	cont "partners."
+	text "#MON are not"
+	line "tools of war."
+
+	para "They are the"
+	line "real victims."
+
+	para "On both sides."
 	done
 
 PsychicRichardSeenText:
-	text "Wow, look at all"
-	line "those BADGES!"
-	cont "I'm impressed."
+	text "Have you heard of"
+	line "SABRINA?"
 
-	para "But you're not"
-	line "satisfied by just"
+	para "She was a KANTO"
+	line "GYM LEADER but"
+	cont "is now an ELITE"
+	cont "FOUR member."
 
-	para "collecting them,"
-	line "right?"
+	para "She is a powerful"
+	line "PSYCHIC trainer."
+
+	para "I have to meet"
+	line "her!"
+
+	para "That's all I"
+	line "want."
 	done
 
 PsychicRichardBeatenText:
-	text "Good battle!"
+	text "NO!"
+	para "My dear SABRINA"
+	line "I'm sorry!"
+
+	para "I was too weak!"
+
+	para "She will never"
+	cont "accept me now."
+
+	para "NO!"
+
+	para "She can hear my"
+	line "thoughts!"
+
+	para "Be strong!"
+
+	para "Good battle"
+	line "trainer."
+
+	para "I knew I would"
+	line "lose."
 	done
 
 PsychicRichardAfterBattleText:
-	text "People and #MON"
-	line "grow from their"
-	cont "experiences."
+	text "That was close."
 
-	para "Don't get lazy and"
-	line "complacent."
-	done
-
-FisherScottSeenText:
-	text "I'm feeling great"
-	line "today!"
-
-	para "I feel like I"
-	line "could boot even"
-	cont "the LEAGUE CHAMP!"
-	done
-
-FisherScottBeatenText:
-	text "No! Not in this"
-	line "battle!"
-	done
-
-FisherScottAfterBattleText:
-	text "Just like in fish-"
-	line "ing, it's all over"
-
-	para "in #MON if you"
-	line "give up."
+	para "Do you think she"
+	line "fell for it!"
 	done
 
 Route26SignText:
@@ -738,9 +761,7 @@ Route26_MapEvents:
 	object_event 10, 56, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJoyce, -1
 	object_event  5,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfBeth1, -1
 	object_event 13, 79, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicRichard, -1
-	;object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
-	;object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 
 	object_event  8, 51, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route26FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 15, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route26FieldMon2Script, EVENT_FIELD_MON_2

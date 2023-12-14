@@ -28,25 +28,41 @@ DayOfWeekSiblingsHousePokedexText1:
 	done
 
 DayOfWeekSiblingsHousePokedexText2:
-	text "To my brothers and"
-	line "sisters:"
+	text "We had a loving"
+	line "family."
 
-	para "We take pride in"
-	line "serving #MON"
-	cont "trainers."
+	para "Mother and father"
+	line "cared deeply for"
+	cont "all of us."
 
-	para "When trainers talk"
-	line "to you, give them"
-	cont "something useful."
+	para "It was difficult"
+	line "for us all."
 
-	para "Love,"
-	line "MONICA"
+	para "But for the"
+	line "greater good"
+	cont "they had to die."
+
+	para "We will search"
+	line "the world for the"
+	cont "purest of souls."
+
+	para "So that we might"
+	line "make a devine"
+	cont "offering to the"
+	cont "one true GOD."
+
+	para "Hail GIRATINA."
 
 	para "Keep reading?"
 	done
 
 DayOfWeekSiblingsHousePokedexText3:
-	text "Monday, MONICA"
+    text "We have nothing"
+    line "to hide."
+
+    para "Join us."
+
+	para "Monday, MONICA"
 	line "ROUTE 40"
 
 	para "Tuesday, TUSCANY"

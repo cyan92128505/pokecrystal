@@ -80,51 +80,51 @@ WillsRoom_EnterMovement:
 	step_end
 
 WillScript_WillBeforeText:
-	text "Welcome to #MON"
-	line "LEAGUE, <PLAYER>."
+	text "I had a vision"
+	line "of your arrival."
 
-	para "Allow me to intro-"
-	line "duce myself. I am"
-	cont "WILL."
+	para "I am SABRINA."
 
-	para "I have trained all"
-	line "around the world,"
+	para "I am the newest"
+	line "member of the"
+	cont "ELITE FOUR."
 
-	para "making my psychic"
-	line "#MON powerful."
+	para "PSYCHIC power"
+	line "is the"
+	cont "manifestation of"
+	cont "ones will to win."
 
-	para "And, at last, I've"
-	line "been accepted into"
-	cont "the ELITE FOUR."
+	para "My PSYCHIC power"
+	line "exceeds all"
+	cont "others."
 
-	para "I can only keep"
-	line "getting better!"
+	para "A #MON"
+	line "battle is a"
+	cont "battle of wills."
 
-	para "Losing is not an"
-	line "option!"
+	para "I will not lose."
 	done
 
 WillScript_WillBeatenText:
-	text "I… I can't…"
-	line "believe it…"
+	text "Our wills collided"
+	line "and mine is"
+	cont "shattered."
 	done
 
 WillScript_WillDefeatText:
-	text "Even though I was"
-	line "defeated, I won't"
-	cont "change my course."
+	text "You are no normal"
+	line "trainer."
 
-	para "I will continue"
-	line "battling until I"
+	para "You have the will"
+	line "to be a CHAMPION."
 
-	para "stand above all"
-	line "trainers!"
+	para "I have only met"
+	line "one other trainer"
+	cont "with such strength."
 
-	para "Now, <PLAYER>, move"
-	line "on and experience"
-
-	para "the true ferocity"
-	line "of the ELITE FOUR."
+	para "Now continue"
+	line "your challenge"
+	cont "and never give up."
 	done
 
 WillsRoom_MapEvents:
@@ -132,8 +132,6 @@ WillsRoom_MapEvents:
 
 	def_warp_events
 	warp_event  5, 17, INDIGO_PLATEAU_POKECENTER_1F, 4
-	;warp_event  4,  2, KOGAS_ROOM, 1
-	;warp_event  5,  2, KOGAS_ROOM, 2
 	warp_event  4,  2, BRUNOS_ROOM, 1
 	warp_event  5,  2, BRUNOS_ROOM, 2
 

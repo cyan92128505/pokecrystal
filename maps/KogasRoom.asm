@@ -86,52 +86,64 @@ KogasRoom_EnterMovement:
 	step_end
 
 KogaScript_KogaBeforeText:
-	text "Fwahahahaha!"
+	text "So you've managed"
+	line "to stomach the"
+	cont "cliche, dramatic"
+	cont "speeches up"
+	cont "until now."
 
-	para "I am ADAM of the"
-	line "ELITE FOUR."
+	para "Well done."
 
-	para "I live in shadows,"
-	line "a ninja!"
+	para "That alone should"
+	line "make you a"
+	cont "CHAMPION."
 
-	para "My intricate style"
-	line "will confound and"
-	cont "destroy you!"
+	para "I am ADAM."
 
-	para "Confusion, sleep,"
-	line "poison…"
+	para "They call me a"
+	line "prodigy."
 
-	para "Prepare to be the"
-	line "victim of my sin-"
-	cont "ister technique!"
+	para "That's just a"
+	line "convenient way"
+	cont "for others to"
+	cont "rationalise their"
+	cont "own mediocrity."
 
-	para "Fwahahahaha!"
+	para "I'm not one for"
+	line "useless speeches."
 
-	para "#MON is not"
-	line "merely about brute"
-
-	para "force--you shall"
-	line "see soon enough!"
+	para "We both know there"
+	line "is only one way"
+	cont "you are getting"
+	cont "through that"
+	cont "door."
 	done
 
 KogaScript_KogaBeatenText:
-	text "Ah!"
-	line "You have proven"
-	cont "your worth!"
+	text "Don't let it"
+	line "go to your"
+	cont "head."
 	done
 
 KogaScript_KogaDefeatText:
-	text "I subjected you to"
-	line "everything I could"
-	cont "muster."
+	text "Well done"
+	line "<PLAYER>."
 
-	para "But my efforts"
-	line "failed. I must"
-	cont "hone my skills."
+	para "Alright here"
+	line "goes my little"
+	cont "speech."
 
-	para "Go on to the next"
-	line "room, and put your"
-	cont "abilities to test!"
+	para "To be a CHAMPION"
+	line "you have to"
+	cont "keep your ego"
+	cont "in check."
+
+	para "Now go into the"
+	line "final room and"
+	cont "do what you were"
+	cont "born to do."
+
+	para "You've got this!"
 	done
 
 KogasRoom_MapEvents:

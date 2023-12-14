@@ -80,47 +80,45 @@ BrunosRoom_EnterMovement:
 	step_end
 
 BrunoScript_BrunoBeforeText:
-	text "I am BRUNO of the"
-	line "ELITE FOUR."
+	text "I am BRUNO."
 
-	para "I always train to"
-	line "the extreme be-"
-	cont "cause I believe in"
-	cont "our potential."
+	para "I do not care"
+	line "for the subtle"
+	cont "games of words"
+	cont "and politics."
 
-	para "That is how we"
-	line "became strong."
+	para "I do not care"
+	line "for the arrogant"
+	cont "and wasted words"
+	cont "of those who"
+	cont "say but do not"
+	cont "act."
 
-	para "Can you withstand"
-	line "our power?"
+	para "We must face our"
+	line "problems head on."
 
-	para "Hm? I see no fear"
-	line "in you. You look"
+	para "Direct action is"
+	line "the only power"
+	cont "to bring change."
 
-	para "determined. Per-"
-	line "fect for battle!"
-
-	para "Ready, <PLAYER>?"
-	line "You will bow down"
-
-	para "to our overwhelm-"
-	line "ing power!"
-
-	para "Hoo hah!"
+	para "Now I will judge"
+	line "your power."
 	done
 
 BrunoScript_BrunoBeatenText:
-	text "Why? How could we"
-	line "lose?"
+	text "The world bends"
+	line "to your might."
 	done
 
 BrunoScript_BrunoDefeatText:
-	text "Having lost, I"
-	line "have no right to"
-	cont "say anything…"
+	text "You have the"
+	line "strength to be"
+	cont "a CHAMPION."
 
-	para "Go face your next"
-	line "challenge!"
+	para "Take that"
+	line "strength and"
+	cont "face your next"
+	cont "trial."
 	done
 
 BrunosRoom_MapEvents:

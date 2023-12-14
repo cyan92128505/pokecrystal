@@ -71,28 +71,39 @@ VictoryRoadGateEightBadgesText:
 	text "Oh! The eight"
 	line "BADGES of JOHTO!"
 
-	para "Please, go right"
-	line "on through!"
+	para "You are worthy!"
 	done
 
 VictoryRoadGateLeftBlackBeltText:
 	text "This way leads to"
 	line "MT.SILVER."
 
-	para "You'll see scary-"
-	line "strong #MON out"
-	cont "there."
+	para "An ancient and"
+	line "forbidden place."
+
+	para "Said to be the"
+	line "bridge between"
+	cont "worlds."
+
+	para "The #MON out"
+	line "there would"
+	cont "kill a normal"
+	cont "trainer without"
+	cont "a thought."
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "Off to the #MON"
-	line "LEAGUE, are you?"
+	text "You must be very"
+	line "strong to get"
+	cont "here."
 
-	para "The ELITE FOUR are"
-	line "so strong it's"
+	para "But the ELITE"
+	line "FOUR are unlike"
+	cont "any JOHTO trainers"
+	cont "you have faced."
 
-	para "scary, and they're"
-	line "ready for you!"
+	para "Good luck JOHTO"
+	line "kid."
 	done
 
 VictoryRoadGate_MapEvents:

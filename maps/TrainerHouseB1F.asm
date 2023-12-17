@@ -2409,12 +2409,12 @@ ExplainMasterTrialText:
 ExplainImpossibleTrialText:
     text "IMPOSSIBLE TRIAL!"
 
-    para "It consists of 3"
+    para "It consists of 4"
     line "total battles."
 
-    para "Your #MON are"
-    line "not healed during"
-    cont "the trial."
+    para "With your #MON"
+    line "healed before"
+    cont "the final battle."
     done
 
 WhatTrialText:
@@ -2583,9 +2583,8 @@ TrialUnlockImpossibleText:
     cont "IMPOSSIBLE TRIAL!"
 
     para "An insane trial"
-    line "with 3 brutal"
-    cont "battles without"
-    cont "healing."
+    line "with 4 brutal"
+    cont "battles."
     done
 
 TrialLeaderText:

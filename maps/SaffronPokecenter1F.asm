@@ -13,17 +13,12 @@ SaffronPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 SaffronPokecenter1FTeacherScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer SaffronPokecenter1FTeacherText
-
-.mobile
-	jumptextfaceplayer SaffronPokecenter1FTeacherMobileText
 
 SaffronPokecenter1FFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .SolvedKantoPowerCrisis
 	writetext SaffronPokecenter1FFisherText
 	waitbutton
@@ -31,7 +26,7 @@ SaffronPokecenter1FFisherScript:
 	end
 
 .SolvedKantoPowerCrisis:
-	writetext SaffronPokecenter1FFisherReturnedMachinePartText
+	writetext SaffronPokecenter1FFisherBeatWallaceText
 	waitbutton
 	closetext
 	end
@@ -40,73 +35,73 @@ SaffronPokecenter1FYoungsterScript:
 	jumptextfaceplayer SaffronPokecenter1FYoungsterText
 
 SaffronPokecenter1FTeacherText:
-	text "What are JOHTO's"
-	line "#MON CENTERS"
-	cont "like?"
+	text "For a long time"
+	line "SAFFRON tried to"
+	cont "innovate by"
+	cont "charging money"
+	cont "in #CENTERS."
 
-	para "…Oh, I see. So"
-	line "they're not much"
+	para "Then the meddling"
+	line "#MON LEAGUE"
+	cont "said it was"
+	cont "illegal."
 
-	para "different from the"
-	line "ones in KANTO."
-
-	para "I can go to JOHTO"
-	line "without worrying,"
-	cont "then!"
-	done
-
-SaffronPokecenter1FTeacherMobileText:
-	text "What are JOHTO's"
-	line "#MON CENTERS"
-	cont "like?"
-
-	para "…Oh, I see."
-	line "So they let you"
-
-	para "link with people"
-	line "far away?"
-
-	para "Then I'll get my"
-	line "friend in JOHTO to"
-
-	para "catch a MARILL and"
-	line "trade it to me!"
+	para "They know nothing"
+	line "about business!"
 	done
 
 SaffronPokecenter1FFisherText:
-	text "I just happened to"
-	line "come through ROCK"
-
-	para "TUNNEL. There was"
-	line "some commotion at"
-	cont "the POWER PLANT."
+	text "The whole of"
+	line "KANTO is turned"
+	cont "upside down by"
+	cont "the threat of HOEN"
+	cont "invasion."
+	
+	para "There must be"
+	line "some way I can"
+	cont "help."
+	
+	para "I could place a"
+	line "SHORT position"
+	cont "on HOEN dollars."
+	
+	para "That would devalue"
+	line "their currency!"
 	done
 
-SaffronPokecenter1FFisherReturnedMachinePartText:
-	text "Caves collapse"
-	line "easily."
-
-	para "Several caves have"
-	line "disappeared in the"
-
-	para "past few years,"
-	line "like the one out-"
-	cont "side CERULEAN."
-
-	para "As a pro HIKER,"
-	line "that's common"
-	cont "knowledge."
+SaffronPokecenter1FFisherBeatWallaceText:
+	text "HOEN are defeated!"
+	
+	para "Aren't you..."
+	
+	para "CHAMPION <PLAYER>!"
+	
+	para "Thank you!"
+	
+	para "The HOEN dollar"
+	line "has plummeted in"
+	cont "value thanks to"
+	cont "you."
+	
+	para "Time to buy the"
+	line "dip."
 	done
 
 SaffronPokecenter1FYoungsterText:
-	text "SILPH CO.'s HEAD"
-	line "OFFICE and the"
+	text "I'm only here to"
+	line "make my fortune."
 
-	para "MAGNET TRAIN STA-"
-	line "TION--they're the"
+	para "Then I'm heading"
+	line "somewhere cheaper"
+	cont "to live."
 
-	para "places to see in"
-	line "SAFFRON."
+	para "You can live dirt"
+	line "cheap in PEWTER."
+
+	para "Nobody wants to"
+	line "live there after"
+	cont "the #RUS"
+	cont "outbreak."
 	done
 
 SaffronPokecenter1F_MapEvents:

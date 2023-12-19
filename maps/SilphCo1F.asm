@@ -35,22 +35,29 @@ SilphCoReceptionistText:
 
 SilphCoOfficerText:
 	text "Only employees are"
-	line "permitted to go"
-	cont "upstairs."
+	line "permitted beyond"
+	cont "this point."
 
-	para "But since you came"
-	line "such a long way,"
+	para "We have stepped"
+	line "up security since"
+	cont "the ROCKET incident"
+	cont "five years ago."
 
-	para "have this neat"
-	line "little souvenir."
+	para "But since you"
+	line "are so polite"
+	cont "here is a free"
+	cont "sample."
 	done
 
 SilphCoOfficerText_GotUpGrade:
-	text "It's SILPH CO.'s"
-	line "latest product."
+	text "Those special"
+	line "specs make your"
+	cont "special attacks"
+	cont "much stronger."
 
-	para "It's not for sale"
-	line "anywhere yet."
+	para "But you must"
+	line "pick your move"
+	cont "wisely."
 	done
 
 SilphCo1F_MapEvents:

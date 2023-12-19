@@ -21,28 +21,39 @@ LavenderMartRockerScript:
 	jumptextfaceplayer LavenderMartRockerText
 
 LavenderMartPokefanMText:
-	text "REPEL is a neces-"
-	line "sity if you are"
+	text "Man I need a"
+	line "pick me up."
 
-	para "going to explore a"
-	line "cave."
+	para "I just spent"
+	line "hours going"
+	cont "through every"
+	cont "game with that"
+	cont "RPG guy."
 
-	para "Even though I like"
-	line "exploring, I still"
+	para "It's exhausting"
+	line "work!"
 
-	para "haven't made it to"
-	line "all the caves."
+	para "Who has even"
+	line "seen that show"
+	cont "anyway!"
 	done
 
 LavenderMartRockerText:
-	text "I heard about a"
-	line "craftsman who"
+	text "This place is"
+	line "so down!"
 
-	para "makes custom BALLS"
-	line "in the JOHTO town"
+	para "I have a plan."
 
-	para "of AZALEA. I wish"
-	line "I had some."
+	para "I'm going to"
+	line "hijack the"
+	cont "RADIO TOWER and"
+	cont "play my latest"
+	cont "SOLENOIDS album"
+	cont "on full blast!"
+
+	para "I'll crank it up"
+	line "to 11 and liven"
+	cont "everyone up."
 	done
 
 LavenderMart_MapEvents:

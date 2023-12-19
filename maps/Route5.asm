@@ -48,10 +48,11 @@ HouseForSaleSign:
 
 Route5PokefanMText:
 	text "The road is closed"
-	line "until the problem"
+	line "until for now."
 
-	para "at the POWER PLANT"
-	line "is solved."
+	para "People have been"
+	line "dropping all their"
+	cont "litter down there."
 	done
 
 Route5UndergroundPathSignText:
@@ -62,10 +63,14 @@ Route5UndergroundPathSignText:
 	done
 
 HouseForSaleSignText:
-	text "What's this?"
+	text "Well done for"
+	line "finding this."
 
-	para "House for Sale…"
-	line "Nobody lives here."
+	para "You enjoying"
+	line "the game?"
+
+	para "Praise be to"
+	line "Andrew."
 	done
 
 Route5_MapEvents:

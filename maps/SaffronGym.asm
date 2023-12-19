@@ -19,7 +19,7 @@ SaffronGymSabrinaScript:
 	writetext SabrinaIntroText
 	waitbutton
 	closetext
-	winlosstext SabrinaWinLossText, 0
+	winlosstext SabrinaLossText, SabrinaWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer WILL, WILL1
 	startbattle
@@ -42,7 +42,7 @@ SaffronGymSabrinaScript:
 	writetext SabrinaIntroText
 	waitbutton
 	closetext
-	winlosstext SabrinaWinLossText, 0
+	winlosstext SabrinaLossText, SabrinaWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer WILL, WILL1
 	startbattle
@@ -131,47 +131,47 @@ SaffronGymStatue:
 	jumpstd GymStatue2Script
 
 SabrinaIntroText:
-	text "SABRINA: I knew"
-	line "you were coming…"
+	text "I am WILL."
 
-	para "Three years ago I"
-	line "had a vision of"
-	cont "your arrival."
+	para "I was an"
+	line "archaeologist for"
+	cont "many years."
 
-	para "You're after my"
-	line "BADGE."
+	para "I traveled the"
+	line "world visiting"
+	cont "ruins and all the"
+	cont "while my PSYCHIC"
+	cont "#MON were"
+	cont "growing powerful."
 
-	para "I don't enjoy bat-"
-	line "tling, but it's my"
+	para "PROF OAK suggested"
+	line "me for this post"
+	cont "after SABRINA left."
 
-	para "duty as a LEADER"
-	line "to confer BADGES"
+	para "I've never been"
+	line "one for battling."
 
-	para "on anyone who has"
-	line "proven him- or"
-	cont "herself worthy."
+	para "But I accepted."
 
-	para "Since you wish it,"
-	line "I will show you my"
-	cont "psychic powers!"
+	para "CHAMPION <PLAYER>."
+
+	para "As SAFFRON CITY"
+	line "GYM LEADER I do"
+	cont "hereby accept your"
+	cont "challenge."
 	done
 
-SabrinaWinLossText:
-	text "SABRINA: Your"
-	line "power…"
+SabrinaLossText:
+	text "Well done!"
 
-	para "It far exceeds"
-	line "what I foresaw…"
+	para "I confer the"
+	line "MARSHBADGE."
+	done
 
-	para "Maybe it isn't"
-	line "possible to fully"
+SabrinaWinText:
+	text "You did well."
 
-	para "predict what the"
-	line "future holds…"
-
-	para "OK, you win. You"
-	line "earned yourself"
-	cont "MARSHBADGE."
+	para "Keep on training."
 	done
 
 ReceivedMarshBadgeText:
@@ -180,130 +180,166 @@ ReceivedMarshBadgeText:
 	done
 
 SabrinaMarshBadgeText:
-	text "SABRINA: MARSH-"
-	line "BADGE draws out"
+	text "The MARSHBADGE"
+	line "signifies your"
+	cont "indomitable soul."
 
-	para "your subliminal"
-	line "powers…"
-
-	para "Although I failed"
-	line "to accurately pre-"
-	cont "dict your power,"
-	cont "this much I know"
-	cont "to be true."
-
-	para "You will become a"
-	line "celebrated and"
-	cont "beloved CHAMPION!"
+	para "Few throughout"
+	line "history have"
+	cont "attained your"
+	cont "strength."
 	done
 
 SabrinaFightDoneText:
-	text "SABRINA: Your love"
-	line "for your #MON"
+	text "It's been a tough"
+	line "first few months."
 
-	para "overwhelmed my"
-	line "psychic power…"
+	para "Second day and the"
+	line "other GYM opened"
+	cont "next door."
 
-	para "The power of love,"
-	line "I think, is also a"
+	para "The LEADER"
+	line "challenged me"
+	cont "to a battle."
 
-	para "kind of psychic"
-	line "power…"
+	para "I've never been"
+	line "much of a fighter."
+
+	para "He has clearly"
+	line "been fighting for"
+	cont "decades."
+
+	para "But I will not"
+	line "be discouraged!"
 	done
 
 MediumRebeccaSeenText:
-	text "The power of all"
-	line "those you defeated"
-	cont "comes to me!"
+	text "SABRINA would"
+	line "never have allowed"
+	cont "that lesser GYM"
+	cont "to dishonor us"
+	cont "like this!"
+
+	para "I hope she comes"
+	line "back to crush"
+	cont "them!"
 	done
 
 MediumRebeccaBeatenText:
-	text "Strong…"
-	line "Far too strong…"
+	text "Maybe you can"
+	line "crush them."
 	done
 
 MediumRebeccaAfterBattleText:
-	text "What is the source"
-	line "of your power?"
+	text "WILL is not"
+	line "strong enough."
+
+	para "I will have to"
+	line "take matters into"
+	cont "my own hands."
 	done
 
 PsychicFranklinSeenText:
-	text "Psychic power is"
-	line "the power of your"
-	cont "soul."
+	text "How typical of"
+	line "LEAGUE to hire"
+	cont "from outside"
+	cont "rather than"
+	cont "promote one of"
+	cont "us trainers."
+
+	para "WILL does not"
+	line "understand the"
+	cont "superiority of"
+	cont "PSYCHIC types."
 	done
 
 PsychicFranklinBeatenText:
-	text "Your soul has more"
-	line "power than mine!"
+	text "You should be"
+	line "GYM LEADER."
 	done
 
 PsychicFranklinAfterBattleText:
-	text "You made your soul"
-	line "stronger, not just"
-	cont "your abilities."
+	text "I'm going to"
+	line "formally complain"
+	cont "and request a"
+	cont "promotion!"
 	done
 
 MediumDorisSeenText:
-	text "Fufufufu…"
-	line "I see it clearly."
+	text "When the other GYM"
+	line "first arrived the"
+	cont "GYM LEADER"
+	cont "challenged us."
 
-	para "I can see into"
-	line "your soul!"
+	para "He made quick"
+	line "work of us all"
+	cont "with disgusting"
+	cont "brute force."
+
+	para "But we did the"
+	line "same to the old"
+	cont "fighting dojo."
+
+	para "Good times."
 	done
 
 MediumDorisBeatenText:
-	text "Though I read you,"
-	line "I still lost…"
+	text "You would do well"
+	line "next door."
 	done
 
 MediumDorisAfterBattleText:
-	text "Darn! I forgot"
-	line "that I predicted I"
-	cont "would lose to you."
+	text "Karma is a funny"
+	line "thing."
+
+	para "We had this"
+	line "coming."
 	done
 
 PsychicJaredSeenText:
-	text "The FIGHTING DOJO"
-	line "next door was once"
-	cont "this city's GYM."
+	text "I've heard that"
+	line "the other GYM"
+	cont "pays twice as much"
+	cont "to GYM trainers as"
+	cont "we get."
+
+	para "No wonder it is"
+	line "growing so fast."
+
+	para "The LEADER must"
+	line "be rich."
 	done
 
 PsychicJaredBeatenText:
-	text "I was no match…"
+	text "I don't get"
+	line "payed enough for"
+	cont "this!"
 	done
 
 PsychicJaredAfterBattleText:
-	text "KARATE KING, the"
-	line "master of the"
-
-	para "FIGHTING DOJO, was"
-	line "just destroyed by"
-	cont "SABRINA."
+	text "I'm really"
+	line "rethinking my"
+	cont "life choices."
 	done
 
 SaffronGymGuideText:
-	text "Yo, CHAMP in"
-	line "making!"
+	text "These poor"
+	line "psychics have"
+	cont "been beaten down"
+	cont "by the other GYM."
 
-	para "A trainer as"
-	line "skilled as you"
-
-	para "doesn't need to be"
-	line "told how to deal"
-
-	para "with psychic-type"
-	line "#MON, right?"
-
-	para "I expect great"
-	line "things from you!"
-
-	para "Good luck!"
+	para "The GYM LEADER"
+	line "here is new and"
+	cont "apparently isn't"
+	cont "much of a fighter."
 	done
 
 SaffronGymGuideWinText:
-	text "That was another"
-	line "fantastic battle!"
+	text "That wasn't so"
+	line "tough."
+
+	para "SABRINA must be"
+	line "upset by this."
 	done
 
 RematchTextSabrina:

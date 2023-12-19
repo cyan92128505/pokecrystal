@@ -11,40 +11,29 @@ Route6SaffronGate_MapScripts:
 	end
 
 Route6SaffronGuardScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
-	writetext Route6SaffronGuardWelcomeText
-	waitbutton
-	closetext
-	end
-
-.ReturnedPart:
-	writetext Route6SaffronGuardMagnetTrainText
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer Route6SaffronGuardWelcomeText
 
 Route6SaffronGuardWelcomeText:
 	text "Welcome to SAFFRON"
-	line "CITY, home of the"
-	cont "MAGNET TRAIN!"
+	line "CITY."
 
-	para "…That's what I'd"
-	line "normally say, but"
+	para "The largest and"
+	line "most brilliant"
+	cont "city in all the"
+	cont "world."
 
-	para "the MAGNET TRAIN"
-	line "isn't running now."
+	para "The BIG #BALL!"
 
-	para "It's not getting"
-	line "any electricity"
+	para "Land city of"
+	line "opportunity."
 
-	para "because there's"
-	line "something wrong"
+	para "If you can make"
+	line "it here you can"
+	cont "make it anywhere."
 
-	para "with the POWER"
-	line "PLANT."
+	para "Now hurry up and"
+	line "get out of here"
+	cont "you immigrant."
 	done
 
 Route6SaffronGuardMagnetTrainText:

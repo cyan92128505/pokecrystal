@@ -36,34 +36,55 @@ CopycatsHouse1FBlisseyScript:
 	end
 
 CopycatsHouse1FPokefanMText:
-	text "My daughter likes"
-	line "to mimic people."
+	text "I invested a lot"
+	line "of money in some"
+	cont "old con man from"
+	cont "VERMILION running"
+	cont "a pyramid scheme."
 
-	para "Her mimicry has"
-	line "earned her the"
+	para "I was an early"
+	line "investor so I"
+	cont "made a lot of"
+	cont "money from it."
 
-	para "nickname COPYCAT"
-	line "around here."
+	para "Some poor folk"
+	line "from PEWTER lost"
+	cont "everything they"
+	cont "had though."
+
+	para "Which wasn't very"
+	line "much I'm sure."
 	done
 
 CopycatsHouse1FPokefanFText:
-	text "My daughter is so"
-	line "self-centered…"
+	text "More foreigners"
+	line "just wandering"
+	cont "about the streets"
+	cont "and into peoples"
+	cont "houses."
 
-	para "She only has a few"
-	line "friends."
+	para "What is this city"
+	cont "coming to."
 	done
 
 CopycatsHouse1FPokefanFText_ReturnedMachinePart:
-	text "She recently lost"
-	line "the # DOLL that"
+	text "Oh! Oh my!"
 
-	para "a boy gave her"
-	line "three years ago."
+	para "You are"
+	line "CHAMPION <PLAYER>."
 
-	para "Ever since then,"
-	line "she's gotten even"
-	cont "better at mimicry…"
+	para "The hero that saved"
+	line "us all!"
+
+	para "Please sit down!"
+
+	para "I must get out"
+	line "the fine china!"
+
+	para "I'll whip up a"
+	line "finger buffet."
+
+	para "Oh my!"
 	done
 
 CopycatsHouse1FBlisseyText:

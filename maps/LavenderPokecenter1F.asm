@@ -35,47 +35,67 @@ LavenderPokecenter1FYoungsterScript:
 	end
 
 LavenderPokecenter1FGentlemanText:
-	text "To the north of"
-	line "LAVENDER is ROCK"
+	text "The RADIO TOWER"
+	line "is doing very"
+	cont "well."
 
-	para "TUNNEL. Go through"
-	line "it to get to the"
-	cont "POWER PLANT."
+	para "All you have to"
+	line "do is tell"
+	cont "people it will"
+	cont "help in the war"
+	cont "and everyone is"
+	cont "on board!"
+
+	para "Bereaved people"
+	line "are the easiest"
+	cont "to sell to."
 	done
 
 LavenderPokecenter1FTeacherText:
-	text "There's a radio"
-	line "program that plays"
-	cont "# FLUTE music."
+	text "There is a"
+	line "radio channel that"
+	cont "plays the"
+	cont "#FLUTE."
 
-	para "Oh? Ah, your radio"
-	line "needs an EXPN CARD"
-	cont "to tune into it."
+	para "It can be used"
+	line "to awaken a"
+	cont "sleeping #MON."
+
+	para "If only it worked"
+	line "on my teen son!"
 	done
 
 LavenderPokecenter1FYoungsterText:
-	text "If the POWER PLANT"
-	line "isn't running, the"
+	text "We are all"
+	line "going to die!"
 
-	para "MAGNET TRAIN won't"
-	line "run either…"
+	para "WALLACE will"
+	line "invade and kill"
+	cont "us all."
 
-	para "It also means the"
-	line "RADIO STATION"
-	cont "can't broadcast…"
+	para "I'm here to"
+	line "pick out a good"
+	cont "spot to spend"
+	cont "eternity."
 	done
 
 LavenderPokecenter1FYoungsterText_ReturnedMachinePart:
-	text "The DIRECTOR of"
-	line "the RADIO STATION"
-	cont "sure was happy."
+	text "We are all saved!"
 
-	para "He said they're"
-	line "back on the air"
+	para "Wait!"
 
-	para "because the POWER"
-	line "PLANT is running"
-	cont "smoothly again."
+	para "You are"
+	line "CHAMPION <PLAYER>!"
+
+	para "You are my hero!"
+
+	para "But we are all"
+	line "still slowly"
+	cont "dying."
+
+	para "That fact is"
+	line "never far from"
+	cont "my mind."
 	done
 
 LavenderPokecenter1F_MapEvents:

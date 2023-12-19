@@ -45,34 +45,67 @@ LavenderMartSignText:
 	jumpstd MartSignScript
 
 LavenderTownPokefanMText:
-	text "That's quite some"
-	line "building, eh?"
+	text "This used to"
+	line "be a tower of"
+	cont "the dead."
 
-	para "It's KANTO's RADIO"
-	line "TOWER."
+	para "There was a lot"
+	line "of controversy"
+	cont "when it changed"
+	cont "to a radio tower."
+
+	para "When it was"
+	line "marketed that it"
+	cont "would help in the"
+	cont "war with HOEN."
+
+	para "Peoples opinions"
+	line "quickly changed."
 	done
 
 LavenderTownTeacherText:
-	text "KANTO has many"
-	line "good radio shows."
+	text "This is usually"
+	line "a quiet little"
+	cont "place."
+
+	para "It got very busy"
+	line "last year during"
+	cont "the #RUS"
+	cont "outbreak."
+
+	para "There is a big"
+	line "graveyard that"
+	cont "only MR FUJI"
+	cont "can access."
 	done
 
 LavenderTownGrampsText:
-	text "People come from"
-	line "all over to pay"
+	text "Many #MON"
+	line "rest forever"
+	cont "in here."
 
-	para "their respects to"
-	line "the departed souls"
-	cont "of #MON."
+	para "We will protect"
+	line "them even in"
+	cont "death."
+
+	para "That is the mark"
+	line "of a truly strong"
+	cont "trainer."
 	done
 
 LavenderTownYoungsterText:
-	text "You need a #"
-	line "FLUTE to wake"
-	cont "sleeping #MON."
+	text "Have you been"
+	line "to ROCK TUNNEL?"
 
-	para "Every trainer has"
-	line "to know that!"
+	para "There is something"
+	line "evil in that"
+	cont "place."
+
+	para "I fell asleep"
+	line "and had the"
+	cont "most horrific"
+	cont "nightmares in"
+	cont "there."
 	done
 
 LavenderTownSignText:

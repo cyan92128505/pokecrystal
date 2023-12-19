@@ -346,8 +346,6 @@ INCLUDE "maps/Route43MahoganyGate.asm"
 INCLUDE "maps/Route43Gate.asm"
 INCLUDE "maps/RedsHouse2F.asm"
 INCLUDE "maps/BluesHouse.asm"
-INCLUDE "maps/OaksLab.asm"
-
 
 SECTION "Map Scripts 20", ROMX
 
@@ -517,3 +515,7 @@ INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/TimeCapsule.asm"
 INCLUDE "maps/MobileTradeRoom.asm"
+
+SECTION "Map Scripts Overflow 10", ROMX
+
+INCLUDE "maps/OaksLab.asm"

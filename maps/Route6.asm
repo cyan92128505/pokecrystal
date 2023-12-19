@@ -122,10 +122,14 @@ Route6UndergroundPathSign:
 
 Route6PokefanMText:
 	text "The road is closed"
-	line "until the problem"
+	line "while the power"
+	cont "is out."
 
-	para "at the POWER PLANT"
-	line "is solved."
+	para "There must be a"
+	line "problem at the"
+	cont "POWER PLANT."
+
+	para "It must be HOEN."
 	done
 
 Route6UndergroundPathSignText:
@@ -136,41 +140,56 @@ Route6UndergroundPathSignText:
 	done
 
 PokefanmRexSeenText:
-	text "My COTTONEE is the"
-	line "cutest in the"
-	cont "world."
+	text "I'm not so much"
+	line "into games."
+
+	para "I'm more into"
+	line "super heroes."
+
+	para "The more over"
+	line "powered and"
+	cont "morally dubious"
+	cont "the better."
 	done
 
 PokefanmRexBeatenText:
-	text "My COTTONEE!"
+	text "How!?"
 	done
 
 PokefanmRexAfterBattleText:
-	text "Look how adorable"
-	line "my COTTONEE acts!"
+	text "I wish I had"
+	line "super powers."
 
-	para "Isn't it cute"
-	line "enough to make"
-	cont "your heart melt?"
+	para "Then I wouldn't"
+	line "have to pay my"
+	cont "rent!"
 	done
 
 PokefanmAllanSeenText:
-	text "My TEDDIURSA is"
-	line "the cutest in the"
-	cont "world."
+	text "I'm not much into"
+	line "comics."
+
+	para "I like strategy"
+	line "games."
+
+	para "But not ones that"
+	line "involve any luck!"
+
+	para "I want pure mind"
+	line "verses mind."
 	done
 
 PokefanmAllanBeatenText:
-	text "My TEDDIURSA!"
+	text "Checkmate!"
 	done
 
 PokefanmAllanAfterBattleText:
-	text "Look how adorable"
-	line "my TEDDIURSA acts!"
+	text "Life is a game"
+	line "of chess."
 
-	para "Isn't it cute"
-	line "enough to make"
-	cont "your heart melt?"
+	para "Everybody else is"
+	line "always trying to"
+	cont "put me in check."
 	done
 
 InvaderBackstaberScript:

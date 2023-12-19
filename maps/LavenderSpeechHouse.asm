@@ -13,17 +13,40 @@ LavenderSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 LavenderSpeechHousePokefanFText:
-	text "LAVENDER is a"
-	line "tiny, quiet town"
+	text "LAVENDER has"
+	line "changed a lot"
+	cont "in recent years."
 
-	para "at the foot of the"
-	line "mountains."
+	para "All the talk of"
+	line "war will do that."
 
-	para "It's gotten a bit"
-	line "busier since the"
+	para "Last time HOEN"
+	line "invaded they"
+	cont "came here."
 
-	para "RADIO TOWER was"
-	line "built."
+	para "All those poor"
+	line "young soldiers."
+
+	para "MR FUJI is a"
+	line "pacifist but..."
+
+	para "AGATHA wasn't"
+
+	para "Her #MON"
+	line "possessed the"
+	cont "poor soldiers"
+	cont "and in moments"
+	cont "they had all"
+	cont "killed each other."
+
+	para "AGATHA passed not"
+	line "long ago."
+
+	para "She never got to"
+	line "see the new"
+	cont "RADIO TOWER."
+
+	para "I'm glad of that."
 	done
 
 LavenderSpeechHouse_MapEvents:

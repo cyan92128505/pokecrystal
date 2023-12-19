@@ -165,98 +165,167 @@ Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
 
 BikerDwayneSeenText:
-	text "We're the KANTO"
-	line "#MON FEDERATION"
-	cont "trainer group."
+	text "ZEKE just hasn't"
+	line "been the same"
+	cont "since the incident"
+	cont "with that little"
+	cont "psychic girl."
 
-	para "We'll drive you"
-	line "under our wheels!"
+	para "Oh yeah, nearly"
+	line "forgot."
+
+	para "Hand over your"
+	line "money!"
 	done
 
 BikerDwayneBeatenText:
-	text "S-sorry!"
+	text "Please don't!"
 	done
 
 BikerDwayneAfterBattleText:
-	text "The KANTO #MON"
-	line "FEDERATION will"
-	cont "never fall!"
+	text "We are the most"
+	line "feared biker gang"
+	cont "in all KANTO."
+
+	para "We keep the"
+	line "CYCLE ROAD gangs"
+	cont "in check."
 	done
 
 BikerHarrisSeenText:
-	text "The cops shut down"
-	line "our UNDERGROUND"
+	text "Stop right there!"
 
-	para "PATH! That really"
-	line "fries me!"
+	para "Are you with the"
+	line "CYCLE ROAD gangs?"
+
+	para "This is our turf!"
+
+	para "Right ZEKE?"
+
+	para "He's just not the"
+	line "same anymore."
 	done
 
 BikerHarrisBeatenText:
-	text "F-forgive me!"
+	text "Please! Please!"
 	done
 
 BikerHarrisAfterBattleText:
-	text "Wiped out by some"
-	line "punk from JOHTO…"
+	text "It was a little"
+	line "psychic girl."
+
+	para "We were going to"
+	line "play with her."
+
+	para "We were too"
+	line "scary."
+
+	para "And then..."
 	done
 
 BikerZekeSeenText:
-	text "We're the KANTO"
-	line "#MON FEDERA-"
-	cont "TION!"
-	cont "Right on!"
+	text "I still see it!"
+
+	para "The monster!"
+
+	para "I still hear it"
+	line "in my head!"
+
+	para "The eyes!"
+
+	para "Those glowing"
+	line "blue eyes!"
+
+	para "Get away from me!"
 	done
 
 BikerZekeBeatenText:
-	text "Yikes! Sorry!"
+	text "NOOOO!"
+
+	para "NO NOT AGAIN!"
+
+	para "PLEASE!!"
 	done
 
 BikerZekeAfterBattleText:
-	text "We'll try not to"
-	line "disturb anyone"
-	cont "from now on…"
+	text "We were the most"
+	line "badass gang in"
+	cont "all KANTO."
+
+	para "Then..."
+
+	para "AMBER..."
+
+	para "The monster with"
+	line "the glowing"
+	cont "blue eyes."
+
+	para "AGGHHHH!!"
 	done
 
 SupernerdSamSeenText:
-	text "How does the MAG-"
-	line "NET TRAIN work?"
+	text "I am perpetually"
+	line "angry!"
+
+	para "Darn!"
+
+	para "You are jealous"
+	line "of my beauty."
 	done
 
 SupernerdSamBeatenText:
-	text "I just want to see"
-	line "the MAGNET TRAIN…"
+	text "You are toxic."
 	done
 
 SupernerdSamAfterBattleText:
-	text "The power of mag-"
-	line "nets is awesome!"
+	text "Would you date me?"
+
+	para "I'd date me."
+
+	para "I'd date me easy!"
 	done
 
 SupernerdTomSeenText:
-	text "Hm… You've got"
-	line "many GYM BADGES."
+	text "I like to use"
+	line "old fashioned"
+    cont "and well tested"
+    cont "strategies."
+
+    para "I have wiped out"
+    line "may a noob with"
+    cont "this."
 	done
 
 SupernerdTomBeatenText:
-	text "Just as I thought…"
-	line "You're tough!"
+	text "Aww it didn't"
+	line "work out."
 	done
 
 SupernerdTomAfterBattleText:
-	text "GYM BADGES give"
-	line "you advantages in"
-	cont "battles."
+	text "There are too"
+	line "many new things"
+	cont "to learn."
+
+	para "I'll make the best"
+	line "with what I know."
 	done
 
 Route8LockedDoorText:
-	text "It's locked…"
+	text "An abandoned"
+	line "building."
+
+	para "The door wont"
+	line "open."
 	done
 
 Route8UndergroundPathSignText:
-	text "The flyer's torn."
+	text "The sign is"
+	line "covered in"
+	cont "graphity."
 
-	para "It's impossible to"
-	line "read…"
+	para "Unintelligible"
+	line "acronyms and"
+	cont "immature doodles."
 	done
 
 Route8_MapEvents:

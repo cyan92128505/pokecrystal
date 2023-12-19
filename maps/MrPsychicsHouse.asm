@@ -7,40 +7,50 @@ MrPsychicsHouse_MapScripts:
 	def_callbacks
 
 MrPsychic:
-	faceplayer
-	opentext
-	checkitem TM_PSYCHIC_M
-	iftrue .AlreadyGotItem
-	writetext MrPsychicText1
-	waitbutton
-	sjump .Done
-.AlreadyGotItem:
-	writetext MrPsychicText2
-	waitbutton
-.Done:
-	closetext
-	end
+    jumptextfaceplayer MrPsychicText1
 
 MrPsychicsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 MrPsychicText1:
-	text "…"
+	text "Ah <PLAYER>"
+	line "welcome."
 
-	para "…"
+	para "I read your mind."
 
-	para "…"
+	para "I have been a"
+	line "psychic here"
+	cont "for many years."
 
-	para "…I got it!"
+	para "But this city is"
+	line "no longer safe."
 
-	para "You wanted this!"
-	done
+	para "So I sent my"
+	line "daughter to"
+	cont "CIANWOOD to"
+	cont "live peacefully."
 
-MrPsychicText2:
-	text "TM29 is PSYCHIC."
+	para "She is very"
+	line "powerful."
 
-	para "It may lower the"
-	line "target's SPCL.DEF."
+	para "Once she even took"
+	line "out a whole biker"
+	cont "gang."
+
+	para "They even had a"
+	line "TYRANITAR."
+
+	para "No idea how she"
+	line "did it!"
+
+	para "I wasn't there."
+
+	para "If you see her"
+	line "say hey from me."
+
+	para "Better say hey to"
+	line "her invisible"
+	cont "friend too!"
 	done
 
 MrPsychicsHouse_MapEvents:

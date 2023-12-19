@@ -10,11 +10,19 @@ Route8SaffronGateOfficerScript:
 	jumptextfaceplayer Route8SaffronGateOfficerText
 
 Route8SaffronGateOfficerText:
-	text "Have you been to"
+	text "You heading to"
 	line "LAVENDER TOWN?"
 
-	para "There's a tall"
-	line "RADIO TOWER there."
+	para "Be careful!"
+
+	para "Biker gangs are"
+	line "known to mug"
+	cont "travelers around"
+	cont "here."
+
+	para "Hoping to get"
+	line "some rich SAFFRON"
+	cont "aristocrat."
 	done
 
 Route8SaffronGate_MapEvents:

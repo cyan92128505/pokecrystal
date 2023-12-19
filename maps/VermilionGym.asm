@@ -18,6 +18,7 @@ VermilionGymSurgeScript:
 	writetext LtSurgeIntroText
 	yesorno
 	iffalse .refuseSong
+	playmusic MUSIC_HOEN_GRUNT
 	writetext LtSurgeSingAndBattle
 	waitbutton
 	closetext
@@ -43,6 +44,7 @@ VermilionGymSurgeScript:
     writetext LtSurgeIntroText
 	yesorno
 	iffalse .refuseSong
+	playmusic MUSIC_HOEN_GRUNT
 	writetext LtSurgeSingAndBattle
 	waitbutton
 	closetext
@@ -171,9 +173,11 @@ LtSurgeSingAndBattle:
     line "our popular songs."
 
     para "It's called"
-    line "ELECTRODE."
+    line "RAGING ELECTRODE."
 
     para "...."
+
+    para "URRHHHHAAAHHHH!"
 
     para "WITHOUT YOU IN"
     line "MY LIFE."
@@ -195,6 +199,8 @@ LtSurgeSingAndBattle:
     para "ELECTRODE!!"
 
     para "ELECTRODE!!"
+
+    para "BOOOOOOMMM!!"
 
     para "...."
 

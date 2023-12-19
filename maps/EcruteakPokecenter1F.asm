@@ -13,12 +13,7 @@ EcruteakPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 EcruteakPokecenter1FPokefanMScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
-
-.mobile
-	jumptextfaceplayer EcruteakPokecenter1FPokefanMTextMobile
 
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText
@@ -27,14 +22,6 @@ EcruteakPokecenter1FGymGuideScript:
 	jumptextfaceplayer EcruteakPokecenter1FGymGuideText
 
 EcruteakPokecenter1FPokefanMText:
-	text "The KIMONO girls"
-	line "are as skilled"
-	cont "with #MON as"
-	cont "they are at"
-	cont "dancing."
-	done
-
-EcruteakPokecenter1FPokefanMTextMobile:
 	text "BATTLE FRONTIER"
 	line "is just past"
 	cont "OLIVINE."

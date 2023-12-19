@@ -23,52 +23,71 @@ SoulHouseGrannyScript:
 	jumptextfaceplayer SoulHouseGrannyText
 
 MrFujiText:
-	text "MR.FUJI: Welcome."
+	text "Welcome child."
 
-	para "Hmm… You appear to"
-	line "be raising your"
+	para "In this hallowed"
+	line "place are layed"
+	cont "to rest the souls"
+	cont "many a #MON."
 
-	para "#MON in a kind"
-	line "and loving manner."
+	para "They were close"
+	line "friends, and"
+	cont "partners."
 
-	para "#MON lovers"
-	line "come here to pay"
+	para "A trainers"
+	line "responsibility"
+	cont "does not end"
+	cont "with death."
 
-	para "their respects to"
-	line "departed #MON."
+	para "The best trainers"
+	line "know this."
 
-	para "Please offer con-"
-	line "dolences for the"
-
-	para "souls of the de-"
-	line "parted #MON."
-
-	para "I'm sure that will"
-	line "make them happy."
+	para "I can tell you"
+	line "will become the"
+	cont "sort of trainer"
+	cont "who understands."
 	done
 
 SoulHouseTeacherText:
 	text "There are other"
 	line "graves of #MON"
-	cont "here, I think."
+	cont "here."
 
-	para "There are many"
-	line "chambers that only"
-	cont "MR.FUJI may enter."
+	para "There is a"
+	line "large graveyard"
+	cont "only FUJI can"
+	cont "grant access to."
 	done
 
 SoulHouseLassText:
-	text "I came with my mom"
-	line "to visit #MON"
-	cont "graves…"
+	text "My grandmother"
+	line "always gets very"
+	cont "emotional when"
+	cont "she comes here."
+
+	para "I don't remember"
+	line "BLISSEY but granny"
+	cont "always talks about"
+	cont "her."
 	done
 
 SoulHouseGrannyText:
-	text "The #MON that"
-	line "lived with me…"
+	text "BLISSEY was"
+	line "with me since"
+	cont "I was a girl."
 
-	para "I loved them like"
-	line "my grandchildren…"
+	para "She looked"
+	line "after me, my"
+	cont "daughter, and"
+	cont "her daughter."
+
+	para "It is the least"
+	line "I can do to"
+	cont "remember her"
+	cont "everyday."
+
+	para "Good bye my"
+	line "friend."
 	done
 
 SpiritHouseBlockScript:

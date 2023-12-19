@@ -183,39 +183,55 @@ SaffronMagnetTrainStationGymGuideText:
 	para "However, if there"
 	line "isn't any elec-"
 	cont "tricity…"
+
+	para "Maybe HOEN are"
+	line "behind this."
 	done
 
 SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart:
-	text "Whew…"
+	text "I keep going back"
+	line "and forth between"
+	cont "KANTO and JOHTO."
 
-	para "How many times"
-	line "have I gone back"
+	para "I like the food"
+	line "onboard."
 
-	para "and forth between"
-	line "KANTO and JOHTO?"
+	para "Though it is a"
+	line "bit expensive."
 	done
 
 SaffronMagnetTrainStationTeacherText:
-	text "Before the MAGNET"
-	line "TRAIN STATION was"
+	text "This train cost"
+	line "an insane amount"
+	cont "of tax payers"
+	cont "money."
 
-	para "built, there was a"
-	line "house there."
+	para "We weren't sure"
+	line "it would be a"
+	cont "good investment."
 
-	para "A little girl"
-	line "named COPYCAT used"
-	cont "to live there."
+	para "But it has more"
+	line "than payed for"
+	cont "itself by now."
 	done
 
 SaffronMagnetTrainStationLassText:
-	text "Hi. Do you have a"
-	line "rail PASS? I have"
+	text "I knew the MAGNET"
+	line "TRAIN would be a"
+	cont "huge success."
 
-	para "one. All the peo-"
-	line "ple in SAFFRON who"
+	para "I bought cheap"
+	line "shares early."
 
-	para "ride the MAGNET"
-	line "TRAIN have PASSES."
+	para "Hehehe, now I"
+	line "am sitting on a"
+	cont "huge profit."
+
+	para "But I'm going to"
+	line "diamond hand"
+	cont "these shares for"
+	cont "years and retire"
+	cont "on them!"
 	done
 
 SaffronMagnetTrainStation_MapEvents:

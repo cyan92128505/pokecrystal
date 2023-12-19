@@ -31,7 +31,10 @@ HouseForSaleBookshelf:
 	jumpstd DifficultBookshelfScript
 
 Route5CleanseTagHouseGrannyText1:
-	text "Eeyaaaah!"
+	text "ARCEUS is not"
+	line "the one true GOD."
+
+	para "There is another!"
 
 	para "I sense a sinister"
 	line "shadow hovering"
@@ -42,20 +45,25 @@ Route5CleanseTagHouseGrannyText1:
 	done
 
 Route5CleanseTagHouseGrannyText2:
-	text "You were in mortal"
-	line "danger, but you"
-	cont "are protected now."
+	text "ARCEUS is not"
+	line "the one true GOD."
+
+	para "There is another!"
 	done
 
 Route5CleanseTagHouseTeacherText:
-	text "My grandma is into"
-	line "warding off what"
+	text "My grandma always"
+	line "talks crazy."
 
-	para "she believes to be"
-	line "evil spirits."
+	para "She says this is"
+	line "all some kind of"
+	cont "game."
 
-	para "I'm sorry that she"
-	line "startled you."
+	para "If that were true"
+	line "we wouldn't have"
+	cont "to put up this"
+	cont "things like level"
+	cont "caps and taxes."
 	done
 
 Route5CleanseTagHouse_MapEvents:

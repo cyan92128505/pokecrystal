@@ -176,6 +176,8 @@ PowerPlantManager:
 	iftrue .ReturnedMachinePart
 	checkitem MACHINE_PART
 	iftrue .FoundMachinePart
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .MetManager
 	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
 	iftrue .MetManager
 	writetext PowerPlantManagerWhoWouldRuinMyGeneratorText

@@ -25,33 +25,20 @@ SaffronCity_MapScripts:
     endcallback
 
 SaffronCityLass1Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronCityLass1Text
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronCityLass1Text_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer SaffronCityLass1Text
 
 SaffronCityPokefanMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .BeatWallace
 	writetext SaffronCityPokefanMText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext SaffronCityPokefanMText_ReturnedMachinePart
+.BeatWallace:
+	writetext SaffronCityPokefanMText_BeatWallace
 	waitbutton
 	closetext
 	end
@@ -65,15 +52,15 @@ SaffronCityCooltrainerFScript:
 SaffronCityFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .BeatWallace
 	writetext SaffronCityFisherText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext SaffronCityFisherText_ReturnedMachinePart
+.BeatWallace:
+	writetext SaffronCityFisherText_BeatWallace
 	waitbutton
 	closetext
 	end
@@ -112,145 +99,206 @@ SaffronCityMartSign:
 	jumpstd MartSignScript
 
 SaffronCityLass1Text:
-	text "A little girl who"
-	line "is an expert at"
+	text "Get out of my"
+	line "way!"
 
-	para "mimicking people"
-	line "lives here."
+	para "I have another"
+	line "client call to"
+	cont "get to at the"
+	cont "SILPH building!"
 
-	para "She even mimics"
-	line "the people she's"
-
-	para "conversing with."
-	line "It's confusing."
-	done
-
-SaffronCityLass1Text_ReturnedMachinePart:
-	text "The COPYCAT girl"
-	line "looked unhappy."
-
-	para "She said she lost"
-	line "her favorite #"
-	cont "DOLL--CLEFAIRY."
+	para "The SILPH SCOPE"
+	line "is really taking"
+	cont "off in LAVENDER."
 	done
 
 SaffronCityPokefanMText:
-	text "You came out from"
-	line "JOHTO?"
+	text "Everybody here"
+	line "knows that when"
+	cont "HOEN invades they"
+	cont "will be cutting a"
+	cont "path straight to"
+	cont "SAFFRON!"
 
-	para "You can zip back"
-	line "home if the MAGNET"
-	cont "TRAIN's running."
+	para "If SAFFRON falls"
+	line "KANTO is done for!"
 	done
 
-SaffronCityPokefanMText_ReturnedMachinePart:
-	text "You came out from"
-	line "JOHTO?"
+SaffronCityPokefanMText_BeatWallace:
+	text "You..."
 
-	para "You can zip back"
-	line "home by hopping on"
-	cont "the MAGNET TRAIN."
+	para "You are the"
+	line "CHAMPION that"
+	cont "defeated WALLACE!"
+
+	para "You have saved us"
+	line "all!"
+
+	para "You have saved my"
+	line "investments!"
+
+	para "Listen if you ever"
+	line "want to get into"
+	cont "the real estate"
+	cont "market you come"
+	cont "straight to me!"
 	done
 
 SaffronCityCooltrainerMText:
-	text "I went to the GYM,"
-	line "raring for battles"
-	cont "against trainers…"
+	text "I was going to"
+	line "challenge the GYM"
+	cont "but they are only"
+	cont "accepting CHAMPION"
+	cont "level challengers."
+	
+	para "What use is that!"
+	
+	para "But the other GYM"
+	line "accepts anyone."
 
-	para "It turns out, I"
-	line "stumbled into the"
-
-	para "unused GYM next"
-	line "door."
-
-	para "Boy, I was pretty"
-	line "embarrassed."
+	para "The LEADER even"
+	line "spoke to me and"
+	cont "helped me out."
+	
+	para "I hope this new"
+	line "GYM becomes the"
+	cont "official one."
 	done
 
 SaffronCityCooltrainerFText:
-	text "This is SILPH CO.,"
-	line "famous for #MON"
-	cont "merchandise."
-
-	para "In the past, TEAM"
-	line "ROCKET wanted the"
-
-	para "company because of"
-	line "that."
+	text "This is SILPH CO."
+	
+	para "They make cutting"
+	line "edge tech."
+	
+	para "They are the"
+	line "largest employer"
+	cont "in KANTO."
+	
+	para "This is reflected"
+	line "in their building."
+	
+	para "The tallest in"
+	line "KANTO."
 	done
 
 SaffronCityFisherText:
-	text "Chew… Chew…"
-
-	para "I hear there's big"
-	line "trouble brewing at"
-	cont "the POWER PLANT."
-
-	para "Chew… Chew…"
+	text "Last time HOEN"
+	line "invaded they made"
+	cont "it to SAFFRON."
+	
+	para "I was a kid."
+	
+	para "I will never"
+	line "forget the horror."
+	
+	para "I need to get"
+	line "out of here."
+	
+	para "Is JOHTO nice?"
 	done
 
-SaffronCityFisherText_ReturnedMachinePart:
-	text "Chew… Chew…"
-
-	para "I hear there was"
-	line "big trouble at the"
-	cont "POWER PLANT."
-
-	para "Chew… Chew…"
-	line "Haaah, I'm full!"
+SaffronCityFisherText_BeatWallace:
+	text "You are..."
+	
+	para "CHAMPION <PLAYER>!"
+	
+	para "You saved us all!"
+	
+	para "Last time HEON"
+	line "invaded it was"
+	cont "LANCE saving us."
+	
+	para "He was a young man."
+	
+	para "I remember the sky"
+	line "igniting and a"
+	cont "storm of DRAGONS"
+	cont "taking out the"
+	cont "HOEN forces."
+	
+	para "But I hear you"
+	line "were even more"
+	cont "impressive!"
 	done
 
 SaffronCityYoungster1Text:
-	text "Going into an"
-	line "alley for the"
-
-	para "first time makes"
-	line "me sorta anxious."
+	text "Hey listen."
+	
+	para "Anything you"
+	line "need I can get it."
+	
+	para "You need some"
+	line "RARE CANDY!"
+	
+	para "Not a problem."
+	
+	para "For the right"
+	line "price."
 	done
 
 SaffronCityYoungster2Text:
-	text "There's a place"
-	line "called TRAINER"
+	text "Oh another JOHTO"
+	line "immigrant."
 
-	para "HOUSE in VIRIDIAN"
-	line "where trainers"
+	para "This is SAFFRON!"
 
-	para "gather from all"
-	line "over the place."
+	para "The economic hub"
+	line "of KANTO."
+
+	para "SAFFRON alone"
+	line "contributes 63"
+	cont "percent of the"
+	cont "KANTO GDP."
+
+	para "I pay more in"
+	line "taxes than the"
+	cont "average JOHTO"
+	cont "employee salary."
 	done
 
 SaffronCityLass2Text:
-	text "Our city was"
-	line "featured on a"
-	cont "radio program."
-
-	para "It's nice to hear"
-	line "praise for your"
-
-	para "city, but it's a"
-	line "bit embarrassing"
-	cont "too."
+	text "TEAM ROCKET used"
+	line "to operate in"
+	cont "this city."
+	
+	para "We are told they"
+	line "are gone but we"
+	cont "all know that isn't"
+	cont "true."
+	
+	para "In fact."
+	
+	para "I support them!"
+	
+	para "They fight for"
+	line "KANTO!"
+	
+	para "At least they take"
+	line "action unlike the"
+	cont "#MON LEAGUE."
 	done
 
 SaffronCitySignText:
 	text "SAFFRON CITY"
 
-	para "Shining, Golden"
-	line "Land of Commerce"
+	para "THE GOLDEN CITY."
+	
+	para "THE BIG #BALL."
 	done
 
 SaffronGymSignText:
 	text "SAFFRON CITY"
 	line "#MON GYM"
-	cont "LEADER: SABRINA"
+	cont "LEADER: WILL"
 
-	para "The Master of"
-	line "Psychic #MON!"
+	para "New to the job."
 	done
 
 FightingDojoSignText:
 	text "Everyone Welcome!"
-	line "FIGHTING DOJO"
+	line "The true"
+	cont "SAFFRON GYM!"
 	done
 
 SilphCoSignText:

@@ -21,18 +21,34 @@ SaffronMartCooltrainerFScript:
 	jumptextfaceplayer SaffronMartCooltrainerFText
 
 SaffronMartCooltrainerMText:
-	text "There's a big"
-	line "RADIO TOWER in"
-	cont "LAVENDER."
+	text "Oh you are from"
+	line "JOHTO."
+
+	para "I've always said"
+	line "the wealthy need"
+	cont "to do more to"
+	cont "help the less"
+	cont "fortunate."
+
+	para "How are you"
+	line "finding it here."
+
+	para "Yes, very good."
 	done
 
 SaffronMartCooltrainerFText:
-	text "I want to become"
-	line "stronger, but I'm"
-	cont "not good yet…"
+	text "I tried the new"
+	line "GYM and got"
+	cont "destroyed."
 
-	para "Could you show me"
-	line "how sometime?"
+	para "But the GYM"
+	line "LEADER himself"
+	cont "spoke to me and"
+	cont "give me tips."
+
+	para "He is so much"
+	line "nicer than those"
+	cont "elitist psychics."
 	done
 
 SaffronMart_MapEvents:

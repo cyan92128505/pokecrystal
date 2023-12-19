@@ -13,20 +13,7 @@ VermilionPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 VermilionPokecenter1FFishingGuruScript:
-	faceplayer
-	opentext
-	checkevent EVENT_FOUGHT_SNORLAX
-	iftrue .FoughtSnorlax
-	writetext VermilionPokecenter1FFishingGuruText
-	waitbutton
-	closetext
-	end
-
-.FoughtSnorlax:
-	writetext VermilionPokecenter1FFishingGuruText_FoughtSnorlax
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer VermilionPokecenter1FFishingGuruText
 
 VermilionPokecenter1FSailorScript:
     checkevent EVENT_HOEN_INVASION_UNDERWAY
@@ -43,52 +30,57 @@ VermilionPokecenter1FBugCatcherScript:
 	jumptextfaceplayer VermilionPokecenter1FBugCatcherText
 
 VermilionPokecenter1FFishingGuruText:
-	text "A sleeping #MON"
-	line "is lying in front"
-	cont "of DIGLETT'S CAVE."
+	text "There is a cave"
+	line "near here called"
+	cont "DIGLETT'S CAVE."
 
-	para "It's a fantastic"
-	line "opportunity to get"
+	para "DIGLETT is an"
+	line "extinct species"
+	cont "of #MON."
 
-	para "it, but how do you"
-	line "wake it up?"
-	done
-
-VermilionPokecenter1FFishingGuruText_FoughtSnorlax:
-	text "There used to be a"
-	line "sleeping #MON"
-
-	para "lying in front of"
-	line "DIGLETT'S CAVE."
-
-	para "But it seems to"
-	line "have disappeared."
+	para "They were meant"
+	line "to be quite weak."
 	done
 
 VermilionPokecenter1FSailorText:
-	text "The FAST SHIP is a"
-	line "great place to"
+	text "I were born in"
+	line "this here city."
 
-	para "meet and battle"
-	line "trainers."
+	para "Anyone who"
+	line "attacks will"
+	cont "to answer to me"
+	cont "POLIWHIRL."
+
+	para "I can't imagine"
+	line "him ever losing"
+	cont "to anybody."
 	done
 
 InvadedVermilionPokecenter1FSailorText:
 	text "Damn those HOEN"
 	line "soldiers!"
 
-	para "They have such"
+	para "They got such"
 	line "strong WATER"
 	cont "#MON!"
+
+	para "Me POLIWHIRL"
+	line "didn't last"
+	cont "one turn!"
 	done
 
 VermilionPokecenter1FBugCatcherText:
-	text "Oh? You have some"
-	line "BADGES I've never"
-	cont "seen before."
+	text "I was going to"
+	line "visit VIRIDIAN"
+	cont "through DIGLETT'S"
+	cont "CAVE."
 
-	para "Oh, I get it. You"
-	line "got them in JOHTO."
+	para "I got past the"
+	line "fat #MON"
+	cont "but there was"
+	cont "another #MON"
+	cont "blocking in"
+	cont "the cave itself!"
 	done
 
 InvadedVermilionPokecenter1FBugCatcherText:

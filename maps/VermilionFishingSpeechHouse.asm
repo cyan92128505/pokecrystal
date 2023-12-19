@@ -12,39 +12,43 @@ FishingDude:
 FishingDudesHousePhoto:
 	jumptext FishingDudesHousePhotoText
 
-FishingDudesHouseBookshelf: ; unreferenced
-	jumpstd PictureBookshelfScript
 
 FishingDudeText:
-	text "I am the FISHING"
-	line "DUDE, the elder of"
-	cont "the FISHING BROS."
+	text "Owi you!"
 
-	para "Have you met the"
-	line "FISHING GURU at"
-	cont "LAKE OF RAGE?"
+	para "Ow me heed!"
 
-	para "He dreams about"
-	line "seeing the world's"
-	cont "greatest MAGIKARP."
+	para "I be drinkin"
+	line "a wey bi tay"
+	cont "muh last nigh."
 
-	para "If you don't mind,"
-	line "could you show him"
+	para "I be a fishin"
+	line "man but naw fish"
+	cont "bay bittin."
 
-	para "any MAGIKARP you"
-	line "catch?"
+	para "Nout bu fuppin"
+	line "MAGIKARP."
 
-	para "Who knows, you may"
-	line "catch the MAGIKARP"
-	cont "of his dreams."
+	para "Deh gud fer notin."
+
+	para "Deh not ethin be"
+	line "gud fer eatten."
+
+	para "Oww I need be"
+	line "havin a wey sleep."
+
+	para "Owi!"
+
+	para "Get otta mi hous!!"
 	done
 
 FishingDudesHousePhotoText:
 	text "It's a photo of"
 	line "people fishing…"
 
-	para "They're having a"
-	line "great time…"
+	para "And drinking."
+
+	para "Lots of drinking."
 	done
 
 VermilionFishingSpeechHouse_MapEvents:

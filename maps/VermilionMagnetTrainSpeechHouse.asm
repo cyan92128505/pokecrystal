@@ -17,18 +17,40 @@ VermilionMagnetTrainSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 VermilionMagnetTrainSpeechHousePokefanFText:
-	text "Do you know about"
-	line "the MAGNET TRAIN?"
+	text "This town used"
+	line "to be booming."
 
-	para "It's a railway"
-	line "that goes to GOL-"
-	cont "DENROD in JOHTO."
+	para "The port employed"
+	line "many people and"
+	cont "everyone here"
+	cont "made a good"
+	cont "living."
+
+	para "Then came the"
+	line "MAGNET TRAIN."
+
+	para "Now you can get"
+	line "KANTO much faster"
+	cont "and free of"
+	cont "charge."
+
+	para "Money for the"
+	line "train comes from"
+	cont "tax."
+
+	para "Now this place"
+	line "is all but empty."
 	done
 
 VermilionMagnetTrainSpeechHouseYoungsterText:
-	text "I want to go to"
-	line "SAFFRON to see"
-	cont "the MAGNET TRAIN."
+	text "Dads always going"
+	line "on about how he"
+	cont "hates the MAGNET"
+	cont "TRAIN."
+
+	para "But he uses it"
+	line "at least once"
+	cont "a week."
 	done
 
 VermilionMagnetTrainSpeechHouse_MapEvents:

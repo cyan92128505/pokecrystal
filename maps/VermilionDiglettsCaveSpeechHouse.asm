@@ -10,12 +10,30 @@ VermilionDiglettsCaveSpeechHouseGentlemanScript:
 	jumptextfaceplayer VermilionDiglettsCaveSpeechHouseGentlemanText
 
 VermilionDiglettsCaveSpeechHouseGentlemanText:
-	text "Over many years,"
-	line "DIGLETT dug a"
-	cont "large tunnel."
+	text "DIGLETT were a"
+	line "species of"
+	cont "#MON that went"
+	cont "extinct not too"
+	cont "long ago."
 
-	para "That tunnel goes"
-	line "to a distant town."
+	para "They were small"
+	line "GROUND type"
+	cont "#MON."
+
+	para "They weren't"
+	line "very strong but"
+	cont "high level DUGTRIO"
+	cont "were also known"
+	cont "to inhabit the"
+	cont "cave."
+
+	para "It is rumoured"
+	line "the ELECTRIC GYM"
+	cont "trainers got rid"
+	cont "of the DIGLETT"
+	cont "so challengers"
+	cont "couldn't use them"
+	cont "against the GYM."
 	done
 
 VermilionDiglettsCaveSpeechHouse_MapEvents:

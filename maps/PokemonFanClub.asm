@@ -37,6 +37,11 @@ PokemonFanClubChairmanScript:
 .HeardSpeech:
 	writetext PokemonFanClubChairmanMoreTalesToTellText
 	waitbutton
+	yesorno
+	iffalse .noTalk
+	writetext PokemonFanClubChairmanRapidashText
+	waitbutton
+.noTalk
 	closetext
 	end
 
@@ -123,48 +128,75 @@ PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
 	line "of the #MON FAN"
 	cont "CLUB."
 
-	para "I've raised over"
-	line "150 #MON."
+	para "I formally bring"
+	line "to order this"
+	cont "meeting of"
+	cont "esteemed #MON"
+	cont "fans."
 
-	para "I'm very fussy"
-	line "when it comes to"
-	cont "#MON."
+	para "Excuss me."
 
-	para "Did you visit just"
-	line "to hear about my"
-	cont "#MON?"
+	para "Are you here"
+	line "for the meeting?"
 	done
 
 PokemonFanClubChairmanRapidashText:
-	text "Good!"
-	line "Then listen up!"
+	text "Very well."
 
-	para "So… my favorite"
-	line "RAPIDASH…"
+	para "I shall commence"
+	line "todays proceedings"
+	cont "by explaining in"
+	cont "comprehensive and"
+	cont "explicit detail"
+	cont "my choice for"
+	cont "favorite #MON."
 
-	para "It… cute… lovely…"
-	line "smart… unbearably…"
-	cont "plus… amazing… oh…"
-	cont "you think so?…"
-	cont "Too much… wild…"
-	cont "beautiful… kindly…"
-	cont "love it!"
+	para "It is of course..."
 
-	para "Hug it… when…"
-	line "sleeping… warm and"
-	cont "cuddly… Oh, and…"
-	cont "spectacular…"
-	cont "ravishing… simply"
-	cont "divine…"
-	cont "Oops! Look at the"
-	cont "time! I've kept"
-	cont "you too long!"
+	para "VAPOREON."
+
+	para "I believe VAPOREON"
+	line "to be the most"
+	cont "human compatible"
+	cont "#MON."
+
+	para "It has high"
+	line "emotional"
+	cont "intelligence."
+
+	para "Just the right"
+	line "height for"
+	cont "petting."
+
+	para "So smooth and"
+	line "slippery."
+
+	para "Has huge HP and"
+	line "DEFENSE with"
+	cont "ACID ARMOUR for"
+	cont "more defense."
+
+	para "Is fully immune"
+	line "to liquid based"
+	cont "attacks."
+
+	para "Oh my..."
+
+	para "It is perfect!"
 	done
 
 PokemonFanClubChairmanIWantYouToHaveThisText:
-	text "Thanks for hearing"
-	line "me out. I want you"
-	cont "to have this!"
+	text "Oh boy..."
+
+	para "Thank you for"
+	line "listening to me."
+
+	para "Surly now you must"
+	line "agree with my"
+	cont "assessment."
+
+	para "Here take this"
+	line "for listening."
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
@@ -175,32 +207,38 @@ PokemonFanClubChairmanItsARareCandyText:
 	para "I prefer making my"
 	line "#MON stronger"
 
-	para "by battling, so"
-	line "you can have it."
+	para "by training"
+	line "together with"
+	cont "them."
 	done
 
 PokemonFanClubChairmanMoreTalesToTellText:
-	text "Hello, <PLAY_G>!"
+	text "Hello again"
+	line "<PLAYER>."
 
-	para "Did you come see"
-	line "me about my #-"
-	cont "MON again?"
-
-	para "No? Oh… I had more"
-	line "tales to tell…"
+	para "Would you like"
+	line "to again hear"
+	cont "my reasoning"
+	cont "behind my choice"
+	cont "of favorite"
+	cont "#MON?"
 	done
 
 PokemonFanClubChairmanHowDisappointingText:
 	text "How disappointing…"
 
 	para "Come back if you"
-	line "want to listen."
+	line "want to learn"
+	cont "the truth."
 	done
 
 PokemonFanClubReceptionistText:
 	text "Our CHAIRMAN is"
-	line "very vocal when it"
-	cont "comes to #MON…"
+	line "very..."
+
+	para "Passionate when"
+	line "it comes to"
+	cont "#MON."
 	done
 
 PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
@@ -238,10 +276,9 @@ PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	line "little girl?"
 
 	para "I'll befriend a"
-	line "real CLEFAIRY on"
+	line "real CLEFAIRY."
 
-	para "my own one day."
-	line "No worries!"
+	para "Off to MT MOON!"
 	done
 
 PokemonFanClubPlayerReceivedDollText:
@@ -250,11 +287,11 @@ PokemonFanClubPlayerReceivedDollText:
 	done
 
 PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
-	text "You watch. I'm"
-	line "going to get a"
-
-	para "real CLEFAIRY as"
-	line "my friend."
+	text "I'm planning my"
+	line "expedition to"
+	cont "MT MOON to find"
+	cont "a real, honest"
+	cont "and true CLFAIRY."
 	done
 
 PokemonFanClubClefairyGuyPackIsJammedFullText:
@@ -266,8 +303,15 @@ PokemonFanClubTeacherText:
 	text "Look at my darling"
 	line "GROVYLE!"
 
-	para "The leaf on its"
-	line "head is so cute!"
+	para "It's so cool."
+
+	para "Like it doesn't"
+	line "care about me."
+
+	para "But I know it"
+	line "does..."
+
+	para "Right."
 	done
 
 PokemonFanClubClefairyDollText:
@@ -280,7 +324,8 @@ PokemonFanClubClefairyDollText:
 	done
 
 PokemonFanClubBayleefText:
-	text "GROVYLE: Li liif!"
+	text "GROOO..."
+	line "VILE!"
 	done
 
 PokemonFanClubListenSignText:

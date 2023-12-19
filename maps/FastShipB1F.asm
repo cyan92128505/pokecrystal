@@ -219,32 +219,53 @@ FastShipB1FSailorBlocksLeftMovement:
 	step_end
 
 FastShipB1FOnDutySailorText:
-	text "Hey, kid. Could I"
-	line "get you to look"
-	cont "for my buddy?"
+	text "Hey I need your"
+	line "help!"
 
-	para "He's goofing off"
-	line "somewhere, that"
-	cont "lazy bum!"
+	para "My best buddy"
+	line "and I had a"
+	cont "bit of a fight."
 
-	para "I want to go find"
-	line "him, but I'm on"
-	cont "duty right now."
+	para "We sailors fight"
+	line "all the time."
+
+	para "But he has left"
+	line "me here and I"
+	cont "feel guilty."
+
+	para "But I can't say"
+	line "sorry or anything"
+	cont "pansy like that."
+
+	para "I need you to"
+	line "do it for me."
+
+	para "Find my friend"
+	line "and tell him I'm"
+	cont "sorry."
 	done
 
 FastShipB1FOnDutySailorRefusedText:
-	text "Oh, gee…"
+	text "You don't get it."
 
-	para "The CAPTAIN will"
-	line "be furious…"
+	para "A friendship is"
+	line "at stake."
+
+	para "Only you can"
+	line "save it!"
 	done
 
 FastShipB1FOnDutySailorThanksText:
-	text "Thanks, kid!"
-	line "I chewed him out"
+	text "Thanks buddy."
 
-	para "good so he'll quit"
-	line "slacking off!"
+	para "You have healed"
+	line "a friendship."
+
+	para "I now consider you"
+
+	para "...."
+
+	para "My friend!"
 	done
 
 FastShipB1FOnDutySailorSawLittleGirlText:
@@ -252,118 +273,172 @@ FastShipB1FOnDutySailorSawLittleGirlText:
 
 	para "I may have seen"
 	line "her go by here."
+
+	para "Then again, maybe"
+	line "I saw nothing."
+
+	para "What's it to ya?"
 	done
 
 FastShipB1FOnDutySailorDirectionsText:
 	text "The dining room is"
 	line "up ahead."
 
+	para "Dinner starts at"
+	line "7pm."
+
 	para "The stairs at the"
 	line "end lead to the"
 	cont "CAPTAIN's cabin."
+
+	para "But passengers are"
+	line "prohibited from"
+	cont "entering."
+
+	para "This job is so"
+	line "boring."
 	done
 
 SailorJeffSeenText:
-	text "Nothing beats a"
-	line "battle when I'm"
-	cont "on my break."
+	text "I need to train!"
+
+	para "We could run into"
+	line "a HOEN ship any"
+	cont "day now."
 	done
 
 SailorJeffBeatenText:
-	text "Win or lose, my"
-	line "break's over!"
+	text "That was a good"
+	line "warm up."
 	done
 
 SailorJeffAfterBattleText:
-	text "I guess I can't"
-	line "win if I don't get"
-	cont "serious."
+	text "My #MON"
+	line "need to be strong"
+	cont "enough to swim me"
+	cont "to shore."
 	done
 
 PicnickerDebraSeenText:
-	text "I'm so bored."
-	line "Want to battle?"
+	text "I heard JOHTO has"
+	line "a new CHAMPION!"
+
+	para "I heard they are"
+	line "young, beautiful"
+	cont "and get their"
+	cont "strength from"
+	cont "MOO MOO MILK."
 	done
 
 PicnickerDebraBeatenText:
-	text "Yow! You're too"
-	line "strong!"
+	text "You are super"
+	line "strong..."
+
+	para "and young..."
+
+	para "and beautiful..."
 	done
 
 PicnickerDebraAfterBattleText:
-	text "SAFFRON, CELADON…"
-	line "I hear there are"
+	text "Are you the"
+	line "CHAMPION!"
 
-	para "many big cities"
-	line "in KANTO."
+	para "Is your secret"
+	line "MOO MOO MILK!"
 	done
 
 JugglerFritzSeenText:
-	text "Urrf…"
-	line "I'm seasick!"
+	text "Awwwwww"
+
+	para "To and fro..."
+
+	para "To and fro..."
+
+	para "I'm going to"
+	line "and throw..."
 	done
 
 JugglerFritzBeatenText:
-	text "I can't move any-"
-	line "more…"
+	text "Oh no, here it..."
+
+	para "URRHHHHHHH...."
 	done
 
 JugglerFritzAfterBattleText:
-	text "No more ships for"
-	line "me. Next time,"
+	text "Listen!"
 
-	para "I'm taking the"
-	line "MAGNET TRAIN."
+	para "At the canteen."
+
+	para "Don't eat the"
+	line "FEEBAS!"
 	done
 
 SailorGarrettSeenText:
-	text "This is where we"
-	line "sailors work!"
+	text "Did you feel that?"
+
+	para "Did we just get"
+	line "hit by a missile!"
+
+	para "Hull breach!!!"
 	done
 
 SailorGarrettBeatenText:
-	text "I lost on my home"
-	line "field…"
+	text "I need to relax."
 	done
 
 SailorGarrettAfterBattleText:
-	text "We get different"
-	line "passengers from"
+	text "Where is your"
+	line "life jacket."
 
-	para "VERMILION CITY to"
-	line "OLIVINE CITY."
+	para "You're not wearing"
+	line "it, are you mad!"
 	done
 
 FisherJonahSeenText:
-	text "Even though we're"
-	line "out on the sea, I"
-	cont "can't fish!"
+	text "I need to catch"
+	line "more FEEBAS."
 
-	para "This is boring!"
-	line "Let's battle!"
+	para "They are where I"
+	line "get all my money"
+	cont "from."
+
+	para "Nobody wants"
+	line "MAGIKARP!"
 	done
 
 FisherJonahBeatenText:
-	text "I… I'm not bored"
-	line "anymore…"
+	text "I need a bigger"
+	line "net."
 	done
 
 FisherJonahAfterBattleText:
-	text "I plan to fish off"
-	line "VERMILION's pier."
+	text "I don't actually"
+	line "have a fishing"
+	cont "licence."
+
+	para "Don't tell anyone"
+	line "or my kids will"
+	cont "starve!"
 	done
 
 BlackbeltWaiSeenText:
-	text "I'm building up my"
-	line "legs by bracing"
+	text "I am traveling"
+	line "the world to"
+	cont "challenge all the"
+	cont "martial art"
+	cont "masters."
 
-	para "against the ship's"
-	line "rocking!"
+	para "I will defeat"
+	line "them all!"
+
+	para "Then everyone"
+	line "will train at"
+	cont "my dojo!"
 	done
 
 BlackbeltWaiBeatenText:
-	text "Rocked and rolled"
-	line "over!"
+	text "The sun was in"
+	line "my eyes."
 	done
 
 BlackbeltWaiAfterBattleText:
@@ -374,76 +449,113 @@ BlackbeltWaiAfterBattleText:
 	para "He's supposed to"
 	line "be training in a"
 	cont "cave somewhere."
+
+	para "He knows I am"
+	line "coming and he is"
+	cont "hiding away."
+
+	para "Hooha!"
 	done
 
 SailorKennethSeenText:
-	text "I'm a sailor man!"
+	text "I need your"
+	line "life jacket!"
 
-	para "But I'm training"
-	line "#MON, so I can"
-	cont "become the CHAMP!"
+	para "Hand it over kid!"
 	done
 
 SailorKennethBeatenText:
-	text "My lack of train-"
-	line "ing is obvious…"
+	text "I can't swim."
 	done
 
 SailorKennethAfterBattleText:
-	text "Eight BADGES!"
-	line "They must prove"
+	text "Come on you"
+	line "don't need it!"
 
-	para "that you've beaten"
-	line "GYM LEADERS."
-
-	para "No wonder you're"
-	line "so good!"
+	para "Your #MON"
+	line "can save you."
 	done
 
 TeacherShirleySeenText:
-	text "Don't lay a finger"
-	line "on my students!"
+	text "Did you hear there"
+	line "is now a JOHTO"
+	cont "CHAMPION."
+
+	para "This is awful!"
+
+	para "I was sure one of"
+	line "my students would"
+	cont "be the first to"
+	cont "become CHAMPION."
 	done
 
 TeacherShirleyBeatenText:
-	text "Aaack!"
+	text "I've wasted my life!"
 	done
 
 TeacherShirleyAfterBattleText:
 	text "We're on a field"
 	line "trip to the RUINS"
 	cont "outside VIOLET."
+
+	para "There we will find"
+	line "some great power."
+
+	para "I know it!"
 	done
 
 SchoolboyNateSeenText:
 	text "Do you know the"
 	line "RUINS OF ALPH?"
+
+	para "We are going"
+	line "there."
+
+	para "There we will"
+	line "find the power"
+	cont "to conquer the"
+	cont "ELITE FOUR."
 	done
 
 SchoolboyNateBeatenText:
-	text "Yaargh!"
+	text "No way!"
 	done
 
 SchoolboyNateAfterBattleText:
 	text "Radios pick up"
 	line "strange signals"
 	cont "inside the RUINS."
+
+	para "It must be the"
+	line "secret power!"
 	done
 
 SchoolboyRickySeenText:
-	text "There are some odd"
-	line "stone panels in"
-	cont "the RUINS OF ALPH."
+	text "I want to find the"
+	line "new JOHTO CHAMP."
+
+	para "I'm going to beat"
+	line "them and prove it"
+	cont "should have been"
+	cont "me to become"
+	cont "CHAMPION!"
 	done
 
 SchoolboyRickyBeatenText:
-	text "I was done in!"
+	text "It can't be..."
+
+	para "It's you!"
 	done
 
 SchoolboyRickyAfterBattleText:
-	text "I read that there"
-	line "are four of those"
-	cont "stone panels."
+	text "I'm sorry."
+
+	para "I though I was"
+	line "strong enough"
+	cont "to be the CHAMP."
+
+	para "But it's clear I"
+	line "am nowhere near."
 	done
 
 FastShipB1F_MapEvents:

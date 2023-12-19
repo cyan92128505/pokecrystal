@@ -29,11 +29,12 @@ VermilionMartBeautyScript:
 	jumptextfaceplayer VermilionMartBeautyText
 
 VermilionMartSuperNerdText:
-	text "TEAM ROCKET is no"
-	line "longer in KANTO."
-
-	para "That alone makes"
-	line "me happy."
+	text "I need lots of"
+	line "POTION to get"
+	cont "over my hang-"
+	cont "over from the"
+	cont "last SOLENOID"
+	cont "concert."
 	done
 
 InvadedVermilionMartSuperNerdText:
@@ -48,9 +49,15 @@ InvadedVermilionMartSuperNerdText:
 	done
 
 VermilionMartBeautyText:
-	text "I'm thinking about"
-	line "going shopping in"
-	cont "SAFFRON."
+	text "A lady like me"
+	line "doesn't belong in"
+	cont "a backwater place"
+	cont "like this."
+
+	para "But the rent in"
+	line "SAFFRON or"
+	cont "CELADON is way"
+	cont "too high."
 	done
 
 InvadedVermilionMartBeautyText:

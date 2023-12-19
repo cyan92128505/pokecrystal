@@ -255,47 +255,74 @@ SSAquaGrandpaApproachesPlayerMovement:
 	step_end
 
 SSAquaCaptainExhaustingText:
-	text "Whew! Thanks for"
-	line "coming along."
+	text "My goodness that"
+	line "little girl asks"
+	cont "all sorts of"
+	cont "questions."
 
-	para "Keeping that lit-"
-	line "tle girl amused"
-	cont "was exhausting."
+	para "Questions about"
+	line "the ship, the"
+	cont "route, the port."
+
+	para "She knows her"
+	line "stuff."
 	done
 
 SSAquaCaptainHowDoYouLikeText:
-	text "How do you like"
-	line "S.S.AQUA's ride?"
+	text "How are you"
+	line "finding your trip"
+	cont "on this fine,"
+	cont "luxurious ship?"
 
-	para "She practically"
-	line "skates across the"
-	cont "waves."
+	para "We hold the BLUE"
+	line "RIBAND for KANTO"
+	cont "crossing."
 	done
 
 SSAquaCantFindGranddaughterText:
-	text "Oh, hello…"
+	text "Oh hello again!"
 
-	para "I still can't find"
-	line "my granddaughter."
+	para "I still haven't"
+	line "found my..."
 
-	para "If she's on the"
-	line "ship, that's OK."
+	para "Granddaughter."
 
-	para "She's an energetic"
-	line "child, so she may"
+	para "Have you seen her!"
 
-	para "be bugging some-"
-	line "one. I'm worried…"
+	para "If you do please"
+	line "let her know"
+	cont "I'm looking for"
+	cont "her."
 	done
 
 SSAquaEntertainedGranddaughterText:
-	text "<PLAY_G>, was it?"
-	line "I heard you enter-"
-	cont "tained my grand-"
-	cont "daughter."
+	text "Well done! You"
+	line "are as talented"
+	cont "as I have heard."
 
-	para "I want to thank"
-	line "you for that."
+	para "CHAMPION <PLAYER>."
+
+	para "I am in fact a"
+	line "secret angent and"
+	cont "this little girl"
+	cont "is one of our"
+	cont "best operatives."
+
+	para "We use the"
+	line "graddaughter"
+	cont "persona as a"
+	cont "cover."
+
+	para "We have completed"
+	line "our mission."
+
+	para "The captain is"
+	line "not selling"
+	cont "secrets to HOEN."
+
+	para "Here, I have been"
+	line "authorized to give"
+	cont "this to you."
 	done
 
 SSAquaGrandpaHaveThisText:
@@ -375,8 +402,11 @@ SSAquaGrandpaHaveThisSilverWingText:
 	done
 
 SSAquaGrandpaTravellingText:
-	text "We're traveling"
-	line "around the world."
+	text "Well done CHAMPION."
+
+	para "I am satisfied"
+	line "the captain hasn't"
+	cont "been compromised."
 	done
 
 SSAquaGranddaughterCaptainPlayWithMeText:
@@ -389,17 +419,18 @@ SSAquaGranddaughterCaptainPlayWithMeText:
 
 SSAquaGranddaughterHasToFindGrandpaText:
 	text "Hi! Will you play"
-	line "with me?"
+	line "with us?"
 
-	para "…Oh!"
+	para "Ah my grandad is"
+	line "looking for me."
 
-	para "Grandpa's worried"
-	line "about me?"
+	para "OK I'll go back"
+	line "to him."
 
-	para "I have to go!"
-
-	para "I have to go find"
-	line "Grandpa!"
+	para "Thank you for"
+	line "answering all my"
+	cont "questions MR"
+	cont "CAPTAIN sir."
 	done
 
 SSAquaGranddaughterWasPlayingMText:
@@ -415,130 +446,204 @@ SSAquaGranddaughterWasPlayingFText:
 	line "am! I was playing"
 
 	para "with the CAPTAIN"
-	line "and this big girl!"
+	line "and this lady!"
 	done
 
 SSAquaGranddaughterHadFunText:
 	text "I had lots of fun"
 	line "playing!"
+
+	para "The CAPTAIN was"
+	line "most cooperative."
+
+	para "And well informed."
 	done
 
 PokefanmColinSeenText:
-	text "Hey, kid! Want to"
-	line "battle with me?"
+	text "War is coming."
+
+	para "We can either"
+	line "wait patiently"
+	cont "or go out to"
+	cont "meet it."
+
+	para "Now let the"
+	line "battle begin!"
 	done
 
 PokefanmColinBeatenText:
-	text "You're strong!"
+	text "And beyond that."
 	done
 
 PokefanmColinAfterBattleText:
-	text "You're traveling"
-	line "all alone?"
+	text "We managed to"
+	line "flee from the"
+	cont "commandos."
 
-	para "Isn't your mom"
-	line "worried?"
+	para "Now we are"
+	line "searching for"
+	cont "our home."
+
+	para "For GORGON."
 	done
 
 TwinsMegandpeg1SeenText:
-	text "You think I'm a"
-	line "baby?"
-	cont "That's not fair!"
+	text "The world isn't"
+	line "split into heroes"
+	cont "and villains."
+
+	para "We both have"
+	line "light and dark"
+	cont "within us."
+
+	para "I bask in the"
+	line "light."
 	done
 
 TwinsMegandpeg1BeatenText:
-	text "Oh! We lost!"
+	text "The sun sets."
 	done
 
 TwinsMegandpeg1AfterBattleText:
-	text "Baby is a rude"
-	line "name to call us"
-	cont "girls!"
+	text "My cat is the"
+	line "cutest don't"
+	cont "you think."
 	done
 
 TwinsMegandpeg2SeenText:
-	text "I'm not a baby!"
+	text "The world isn't"
+	line "split into heroes"
+	cont "and villains."
 
-	para "That's not nice to"
-	line "say to a lady!"
+	para "We both have"
+	line "light and dark"
+	cont "within us."
+
+	para "I wallow in"
+	line "the dark."
 	done
 
 TwinsMegandpeg2BeatenText:
-	text "Oh! We lost!"
+	text "The sun rises."
 	done
 
 TwinsMegandpeg2AfterBattleText:
-	text "Sometimes, kids"
-	line "are smarter than"
-	cont "grown-ups!"
+	text "My cat is for"
+	line "sure the most"
+	cont "adorable!"
 	done
 
 PsychicRodneySeenText:
-	text "Ssh! My brain is"
-	line "picking up radio"
-	cont "signals!"
+	text "Have you heard"
+	line "SAFFRON has a"
+	cont "second GYM."
+
+	para "They showed up"
+	line "and beat up the"
+	cont "PSYCHICS."
+
+	para "I'm sure the"
+	line "karate guys are"
+	cont "loving this!"
 	done
 
 PsychicRodneyBeatenText:
-	text "…I hear some-"
-	line "thing!"
+	text "Psychic power"
+	line "never gives up."
 	done
 
 PsychicRodneyAfterBattleText:
-	text "I get it. You can"
-	line "hear JOHTO's radio"
-	cont "on the FAST SHIP."
+	text "I'm going to"
+	line "SAFFRON to do"
+	cont "my part in"
+	cont "defending the"
+	cont "honor of the"
+	cont "Psychics."
 	done
 
 PokefanmJeremySeenText:
-	text "What do you think?"
-	line "My #MON are"
-	cont "beautiful, yes?"
+	text "I travel all over"
+	line "the world showing"
+	cont "off my mighty"
+	cont "#MON."
+
+	para "If you only knew"
+	line "the power of the"
+	cont "dark side!"
+
+	para "You're not a"
+	line "sequel fan are"
+	cont "you?"
 	done
 
 PokefanmJeremyBeatenText:
-	text "Oh, no! My beauti-"
-	line "ful #MON!"
+	text "A surprise to"
+	line "be sure."
+
+	para "But a welcome"
+	line "one."
 	done
 
 PokefanmJeremyAfterBattleText:
-	text "I must go to the"
-	line "#MON SALON and"
-	cont "fix them up nice!"
+	text "May the force"
+	line "be with you."
+
+	para "Unless you are"
+	line "a fan of the"
+	cont "sequels."
 	done
 
 PokefanfGeorgiaSeenText:
-	text "I'm going to shop"
-	line "at the DEPT.STORE"
-	cont "and then…"
+	text "Do you cosplay?"
+
+	para "I go to all"
+	line "the conventions."
+
+	para "There should be"
+	line "one in SAFFRON."
+
+	para "I like to spread"
+	line "my girl power"
+	cont "message!"
 	done
 
 PokefanfGeorgiaBeatenText:
-	text "What was I going"
-	line "to do?"
+	text "Girls get it done."
 	done
 
 PokefanfGeorgiaAfterBattleText:
-	text "Oh, yes! I have to"
-	line "get my #MON out"
-	cont "of DAY-CARE!"
+	text "Of course I like"
+	line "male characters"
+	cont "too."
+
+	para "None is better"
+	line "than the other."
+
+	para "We are in this"
+	line "together."
 	done
 
 SupernerdShawnSeenText:
-	text "What kinds of #"
-	line "BALLS do you have"
-	cont "with you?"
+	text "I am taking"
+	line "some APRICORN"
+	cont "BALLS to sell"
+	cont "in KANTO."
+
+	para "I'll make a"
+	line "killing!"
 	done
 
 SupernerdShawnBeatenText:
-	text "Wait! Stop! Don't!"
-	line "Please!"
+	text "You want in"
+	line "on this!"
 	done
 
 SupernerdShawnAfterBattleText:
-	text "You should use the"
-	line "right BALLS to fit"
-	cont "the situation."
+	text "I hope that new"
+	line "JOHTO CHAMPION"
+	cont "doesn't show up"
+	cont "to spoil my new"
+	cont "business."
 	done
 
 SSAquaHasArrivedVermilionText:

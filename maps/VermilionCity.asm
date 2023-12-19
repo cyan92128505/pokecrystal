@@ -1,7 +1,6 @@
 	object_const_def
 	const VERMILIONCITY_TEACHER
 	const VERMILIONCITY_GRAMPS
-	;const VERMILIONCITY_MACHOP
 	const VERMILIONCITY_SUPER_NERD
 	const VERMILIONCITY_BIG_SNORLAX
 	const VERMILIONCITY_POKEFAN_M
@@ -59,19 +58,6 @@ VermilionMachopOwner:
     jumptextfaceplayer InvadedVermilionMachopOwnerText
 .normal
 	jumptextfaceplayer VermilionMachopOwnerText
-
-VermilionMachop:
-	opentext
-	writetext VermilionMachopText1
-	cry MACHOP
-	waitbutton
-	closetext
-	earthquake 30
-	opentext
-	writetext VermilionMachopText2
-	waitbutton
-	closetext
-	end
 
 VermilionCitySuperNerdScript:
     checkevent EVENT_HOEN_INVASION_UNDERWAY
@@ -166,13 +152,16 @@ VermilionCityHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
 
 VermilionCityTeacherText:
-	text "VERMILION PORT is"
-	line "KANTO's seaside"
-	cont "gateway."
+	text "The old man over"
+	line "there was seeking"
+	cont "investment to"
+	cont "build something."
 
-	para "Luxury liners from"
-	line "around the world"
-	cont "dock here."
+	para "Whole thing turned"
+	line "out to be a"
+	cont "pyramid scheme"
+	cont "and now he's back"
+	cont "at it again."
 	done
 
 InvadedVermilionCityTeacherText:
@@ -185,13 +174,18 @@ InvadedVermilionCityTeacherText:
 	done
 
 VermilionMachopOwnerText:
-	text "My #MON is"
-	line "preparing the land"
-	cont "for construction."
+	text "Ah hello young"
+	line "traveler!"
 
-	para "But I have no"
-	line "money to start the"
-	cont "project…"
+	para "You know the best"
+	line "time to invest is"
+	cont "when you're"
+	cont "young."
+
+	para "Give me 100000"
+	line "and I'll give"
+	cont "back 10 times"
+	cont "that in 10 years."
 	done
 
 InvadedVermilionMachopOwnerText:
@@ -199,31 +193,26 @@ InvadedVermilionMachopOwnerText:
 	line "war in my life."
 
 	para "I have had a good"
-	line "long life."
+	line "long life and made"
+	cont "my money."
 
 	para "It is people like"
 	line "you I feel bad"
 	cont "for."
-	done
 
-VermilionMachopText1:
-	text "MACHOP: Guooh"
-	line "gogogoh!"
-	done
-
-VermilionMachopText2:
-	text "A MACHOP is growl-"
-	line "ing while stomping"
-	cont "the ground flat."
+	para "Your investments"
+	line "will plummet."
 	done
 
 VermilionCitySuperNerdText:
-	text "There are eight"
-	line "GYMS in KANTO."
+	text "The trainers in"
+	line "VERMILION GYM"
+	cont "are a rock band"
+	cont "known as"
+	cont "THE SOLENOIDS!"
 
-	para "That big building"
-	line "is VERMILION's"
-	cont "#MON GYM."
+	para "They have some"
+	line "sick rifts!"
 	done
 
 InvadedVermilionCitySuperNerdText:
@@ -257,14 +246,17 @@ VermilionCityRadioNearSnorlaxText:
 	done
 
 VermilionCityBadgeGuyTrainerText:
-	text "Skilled trainers"
-	line "gather in KANTO."
+	text "With KANTO getting"
+	line "ready for war the"
+	cont "GYM LEADERS are"
+	cont "super strong."
 
-	para "GYM LEADERS are"
-	line "especially strong."
+	para "As strong as some"
+	line "CHAMPIONS!"
 
-	para "They won't be easy"
-	line "to defeat."
+	para "If you can beat"
+	line "them all come"
+	cont "and let me know."
 	done
 
 VermilionCityBadgeGuySomeBadgesText:
@@ -272,21 +264,26 @@ VermilionCityBadgeGuySomeBadgesText:
 	line "collect KANTO GYM"
 	cont "BADGES?"
 
-	para "Don't you agree"
-	line "that the trainers"
-	cont "here are tough?"
+	para "It's tough isn't"
+	line "it."
+
+	para "You must exploit"
+	line "their type"
+	cont "weaknesses."
 	done
 
 VermilionCityBadgeGuyMostBadgesText:
-	text "I guess you'll be"
-	line "finished with your"
+	text "You've got lots"
+	line "of KANTO BADGES."
 
-	para "conquest of KANTO"
-	line "GYMS soon."
+	para "But don't get too"
+	cont "confident."
 
-	para "Let me know if"
-	line "you get all eight"
-	cont "BADGES."
+	para "BLUE used to be"
+	line "a CHAMPION."
+
+	para "He is on a whole"
+	line "other level."
 	done
 
 VermilionCityBadgeGuyAllBadgesText:
@@ -295,20 +292,21 @@ VermilionCityBadgeGuyAllBadgesText:
 	para "You got all the"
 	line "KANTO GYM BADGES."
 
+	para "You are a true"
+	line "CHAMPION!"
+
 	para "I've got a reward"
 	line "for your efforts."
 	done
 
 VermilionCityBadgeGuyBattleEdgeText:
-	text "Having a variety"
-	line "of #MON types"
+	text "There are many"
+	line "powerful"
+	cont "#MON around"
+	cont "KANTO."
 
-	para "should give you an"
-	line "edge in battle."
-
-	para "I'm sure the KANTO"
-	line "GYM BADGES will"
-	cont "help you."
+	para "Looking around"
+	line "might help you."
 	done
 
 VermilionCitySignText:
@@ -324,7 +322,7 @@ VermilionGymSignText:
 	cont "LEADER: LT.SURGE"
 
 	para "The Lightning"
-	line "American"
+	line "Soldier"
 	done
 
 PokemonFanClubSignText:
@@ -420,17 +418,33 @@ TrainerSoldier6:
 	closetext
 	end
 Soldier6SeenText:
-    text "You can't win!"
+    text "Stop you filthy"
+    line "KANTO son of a"
+    cont "DUNSPARCE scum."
+
+    para "Kneel and kiss"
+    line "my boots and I"
+    cont "might let you"
+    cont "live."
     done
 Soldier6BeatenText:
-    text "Damn!"
+    text "Avenge me"
+    line "comrade!"
     done
 Soldier6WinsText:
-    text "You fool!"
+    text "Dirty KANTO"
+    line "filth."
+
+    para "Know your place."
     done
 Soldier6AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "Your country will"
+    line "fall."
+
+    para "Your children"
+    line "will burn."
+
+    para "It is inevitable."
     done
 
 TrainerSoldier7:
@@ -443,17 +457,39 @@ TrainerSoldier7:
 	closetext
 	end
 Soldier7SeenText:
-    text "You can't win!"
+    text "Placing an"
+    line "ELECTRIC GYM"
+    cont "on the coast"
+    cont "was an obvious"
+    cont "move."
+
+    para "Our captain has"
+    line "trained to deal"
+    cont "the ELECTRIC"
+    cont "#MON."
+
+    para "You're GYM"
+    line "LEADER can't"
+    cont "help you!"
     done
 Soldier7BeatenText:
-    text "Damn!"
+    text "You can protect"
+    line "yourself."
+
+    para "But your friends"
+    cont "can't."
     done
 Soldier7WinsText:
-    text "You fool!"
+    text "Off to the"
+    cont "camps with you."
     done
 Soldier7AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "We have taken"
+    line "VERMILION with"
+    cont "ease."
+
+    para "Resistance is"
+    line "futile."
     done
 
 TrainerSoldier8:
@@ -466,17 +502,37 @@ TrainerSoldier8:
 	closetext
 	end
 Soldier8SeenText:
-    text "You can't win!"
+    text "I love the"
+    line "sound of the"
+    cont "children crying."
+
+    text "This place is"
+    line "locked down."
+
+    para "We are just the"
+    line "first wave."
+
+    para "Once we take"
+    line "SAFFRON your"
+    cont "country is"
+    cont "ours."
+
+    para "You won't live"
+    line "to see that."
     done
 Soldier8BeatenText:
-    text "Damn!"
+    text "I done my job"
+    line "well."
     done
 Soldier8WinsText:
-    text "You fool!"
+    text "Nobody will"
+    line "cry for you."
     done
 Soldier8AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "Once WALLACE"
+    line "joins the battle"
+    cont "you will know"
+    cont "total desperation."
     done
 
 HoenCaptain:
@@ -528,7 +584,7 @@ HoenCaptainSeenText:
     text "You have"
     line "disrespected HOEN"
     cont "for your first"
-    cont "last time!"
+    cont "and last time!"
 
     para "I have been tasked"
     line "with containing"
@@ -550,7 +606,8 @@ HoenCaptainBeatenText:
     done
 
 HoenCaptainWinsText:
-    text "Be gone!"
+    text "Just another"
+    line "corpse."
     done
 
 HoenCaptainAfterBattleText:
@@ -573,7 +630,7 @@ HoenCaptainAfterBattleText:
     para "KANTO is doomed."
 
     para "FUHRER WALLACE"
-    line "has the strongest"
+    line "has our strongest"
     cont "squad with him."
 
     para "Two COMMANDERS"
@@ -756,7 +813,6 @@ VermilionCity_MapEvents:
 	def_object_events
 	object_event 18,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
 	object_event 23,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
-	;object_event 26,  7, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
 	object_event 14, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
 	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_VERMILION_CITY_SNORLAX
 	object_event 31, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1

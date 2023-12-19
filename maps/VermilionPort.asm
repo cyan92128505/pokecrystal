@@ -294,6 +294,11 @@ VermilionPortSuperNerdText:
 	para "I hear many rare"
 	line "#MON live over"
 	cont "there."
+
+	para "I want to"
+	line "imprison them"
+	cont "all within my"
+	cont "PC!"
 	done
 
 VermilionPort_MapEvents:

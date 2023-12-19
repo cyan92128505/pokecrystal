@@ -130,6 +130,7 @@ SquirtleEvosAttacks:
 	db 37, RAIN_DANCE
 	db 40, SURF
 	db 50, HYDRO_PUMP
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
@@ -146,6 +147,7 @@ WartortleEvosAttacks:
 	db 37, RAIN_DANCE
 	db 40, SURF
 	db 50, HYDRO_PUMP
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 BlastoiseEvosAttacks:
@@ -1681,6 +1683,7 @@ WeavileEvosAttacks:
 	db 35, NASTY_PLOT
 	db 40, DARK_PULSE
 	db 45, NIGHT_SLASH
+	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
 RhyperiorEvosAttacks:

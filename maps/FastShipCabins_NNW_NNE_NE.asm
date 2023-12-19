@@ -132,8 +132,15 @@ FastShipLazySailorLeavesMovement2:
 	step_end
 
 CooltrainermSeanSeenText:
-	text "I'm going to KANTO"
-	line "to test my skills."
+	text "KANTO is in war"
+	line "time."
+
+	para "All the trainers"
+	line "are really strong."
+
+	para "I'm going there to"
+	line "hone my immense"
+	cont "skills."
 	done
 
 CooltrainermSeanBeatenText:
@@ -141,127 +148,193 @@ CooltrainermSeanBeatenText:
 	done
 
 CooltrainermSeanAfterBattleText:
-	text "Trainers from"
-	line "JOHTO can battle"
-
-	para "with KANTO GYM"
-	line "LEADERS."
+	text "I won't stand a"
+	line "chance against the"
+	cont "KANTO GYM LEADERS."
 	done
 
 CooltrainerfCarolSeenText:
-	text "I'm training to"
-	line "become the CHAMP!"
+	text "I will hunt down"
+	line "the KANTO"
+	cont "COOLTRAINERS"
+	cont "one by one."
+
+	para "I will defeat"
+	line "each of them."
+
+	para "Until there is"
+	line "only me left."
 	done
 
 CooltrainerfCarolBeatenText:
-	text "What's so differ-"
-	line "ent between us?"
-	done
-
-CooltrainerfCarolAfterBattleText:
 	text "I'm going to beat"
 	line "you someday!"
 	done
 
+CooltrainerfCarolAfterBattleText:
+	text "There can be only"
+	line "one COOLTRAINER!"
+	done
+
 PokemaniacEthanSeenText:
-	text "Do you know LILY?"
-	line "She's a hot DJ in"
-	cont "KANTO."
+	text "ERIKA."
+
+	para "I'm going to"
+	line "CELADON to find"
+	cont "GYM LEADER ERIKA."
+
+	para "I will show her"
+	line "I am the perfect"
+	cont "man for her!"
+
+	para "I will be her"
+	line "little plant."
 	done
 
 PokemaniacEthanBeatenText:
-	text "Gyaaaah!"
+	text "ERIKA!!"
 	done
 
 PokemaniacEthanAfterBattleText:
-	text "LILY's nice, but"
-	line "MARY's the best!"
+	text "I will be her"
+	line "little plant."
 
-	para "I want to check"
-	line "out JOHTO's radio"
-	cont "programs!"
+	para "She will water me"
+	line "and care for me."
+
+	para "And I will grow"
+	line "for her."
 	done
 
 HikerNolandSeenText:
-	text "Are you alone?"
-	line "Then let's battle!"
+	text "I have conquered"
+	line "every cave in"
+	cont "JOHTO."
+
+	para "But the real"
+	line "hard core hikers"
+	cont "head to ROCK"
+	cont "TUNNEL."
+
+	para "I will be the"
+	line "first to complete"
+	cont "every cave in the"
+	cont "world!"
 	done
 
 HikerNolandBeatenText:
-	text "That's too much to"
-	line "handle!"
+	text "Caves are my"
+	line "love, not battle."
 	done
 
 HikerNolandAfterBattleText:
-	text "I wonder if there"
-	line "are any mountains"
+	text "Many have never"
+	line "returned from"
+	cont "ROCK TUNNEL."
 
-	para "worth climbing in"
-	line "KANTO?"
+	para "It is said they"
+	line "fall into a"
+	cont "sleep and never"
+	cont "wake."
 	done
 
 SailorStanlySeenText:
 	text "Yeah, I'm a sail-"
 	line "or, all right."
 
-	para "I wasn't goofing"
-	line "off!"
+	para "Oh, oh he did,"
+	line "did he."
 
-	para "This cabin was"
-	line "vacant, so I just"
-	cont "took a quick nap!"
+    para "He better be"
+    line "sorry."
 
-	para "Ah, forget it!"
-	line "Let's battle!"
+    para "I don't accept!"
+
+    para "I'm going to beat"
+    line "you up and send"
+    cont "you back to him."
 	done
 
 SailorStanlyBeatenText:
-	text "Sorry! It's all my"
-	line "fault!"
+	text "Alright, alright."
+
+	para "...."
+
+	para "I'm sorry."
 	done
 
 SailorStanlyAfterBattleText:
-	text "Being a sailor, I"
-	line "have to do phys-"
-	cont "ical labor. It's"
-	cont "exhausting!"
+	text "No hard feelings."
+
+	para "All water under"
+	line "the bridge."
+
+	para "I'm heading back"
+	line "to work."
+
+	para "He is such a"
+	line "silly goose."
 	done
 
 GentlemanEdwardSeenText:
-	text "Oh, no. I've lost"
-	line "something that's"
-	cont "very important."
+	text "Ho ho ho."
+
+	para "The business is"
+	line "booming thanks to"
+	cont "dear old WALLACE."
+
+	para "KANTO are willing"
+	line "to take on enormous"
+	cont "debt to fund their"
+	cont "war."
+
+	para "I import rare"
+	line "#MON from JOHTO"
+	cont "and I do rather"
+	cont "well for myself."
 	done
 
 GentlemanEdwardBeatenText:
-	text "I… I can't find"
-	line "it…"
+	text "Jealousy is quite"
+	line "unbecoming."
 	done
 
 GentlemanEdwardAfterBattleText:
-	text "I give up."
-	line "You don't have to"
+	text "No matter who"
+	line "wins the war I"
+	cont "will grow my"
+	cont "wealth regardless."
 
-	para "look. Just forget"
-	line "about it!"
+	para "That is the mark"
+	line "of a masterful"
+	cont "entrepreneur"
 	done
 
 BurglarCoreySeenText:
-	text "Yeehaw!"
-	line "Lucky!"
+	text "Look at all the"
+	line "rich fat persians"
+	cont "on this ship."
+
+	para "perfect little"
+	line "starlys ripe"
+	cont "for picken."
+
+	para "You got some nice"
+	line "gear on you!"
 	done
 
 BurglarCoreyBeatenText:
-	text "How unlucky!"
-	line "I lost!"
+	text "I got your"
+	line "BADGES!"
 	done
 
 BurglarCoreyAfterBattleText:
-	text "I found a pretty"
-	line "coin here."
+	text "I didn't actually"
+	line "steal your BADGES."
 
-	para "Someone must have"
-	line "lost it…"
+	para "But you better"
+	line "believe I want"
+	cont "them!"
 	done
 
 FastShipCabins_NNW_NNE_NE_MapEvents:

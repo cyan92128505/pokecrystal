@@ -112,67 +112,103 @@ FastShipCabinsNorthwestCabinTrashcan:
 	jumpstd TrashCanScript
 
 FirebreatherLyleSeenText:
-	text "I'm going to KANTO"
-	line "to put on fire-"
-	cont "breathing shows!"
+	text "I heading to"
+	line "KANTO to find my"
+	cont "hero BLAINE."
+
+	para "The CINNABAR GYM"
+	line "was destroyed in"
+	cont "a HOEN attack."
+
+	para "Everyone knows the"
+	line "volcano wasn't"
+	cont "an accident."
 	done
 
 FirebreatherLyleBeatenText:
-	text "Fizzle… The"
-	line "flame's tiny…"
+	text "Flame."
+	line "Dear flame."
 	done
 
 FirebreatherLyleAfterBattleText:
-	text "I guess fire is"
-	line "weak on the sea."
+	text "BLAINE needs"
+	line "GYM trainers."
 
-	para "It doesn't matter?"
-	line "Really?"
+	para "I'm going to"
+	line "volunteer."
 	done
 
 BugCatcherKenSeenText:
-	text "I'm visiting my"
-	line "grandma to catch"
-	cont "me some bugs!"
+	text "There used to be"
+	line "a big forrest in"
+	cont "VIRIDIAN."
+
+	para "It was ravaged"
+	line "during the #RUS"
+	cont "outbreak."
+
+	para "But there must"
+	line "be some strong"
+	cont "BUG #MON"
+	cont "to find."
 	done
 
 BugCatcherKenBeatenText:
-	text "Ooh, wow."
-	line "You're tough!"
+	text "You have a"
+	line "tough exo-"
+	cont "skeleton."
 	done
 
 BugCatcherKenAfterBattleText:
-	text "You can find lots"
-	line "of #MON in the"
-	cont "trees of JOHTO!"
+	text "I must save the"
+	line "BUG #MON."
+
+	para "They need someone"
+	line "to protect them!"
 	done
 
 BeautyCassieSeenText:
-	text "I'm trying to"
-	line "forget my woes."
-	cont "Let's battle!"
+	text "All these sailors"
+	line "keep staring at"
+	cont "me."
+
+	para "They rarely see"
+	line "a beautiful"
+	cont "woman."
+
+	para "Unfortunately my"
+	line "interests rest"
+	cont "elsewhere"
 	done
 
 BeautyCassieBeatenText:
-	text "My heart weeps…"
+	text "You have very"
+	line "cute #MON."
 	done
 
 BeautyCassieAfterBattleText:
-	text "A voyage is best"
-	line "for getting over"
-	cont "a broken heart."
+	text "I'm starting a"
+	line "new life in KANTO."
 
-	para "But a FAST SHIP"
-	line "trip is too short"
-	cont "for grieving."
+	para "Away from the"
+	line "judgement of"
+	cont "others."
 	done
 
 GuitaristClydeSeenText:
-	text "I'm going to audi-"
-	line "tion my songs at"
+	text "Hey man, I got"
+	line "to get back to"
+	cont "my groupies."
 
-	para "GOLDENROD's RADIO"
-	line "STATION."
+	para "We have a band"
+	line "in VERMILION."
+
+	para "We're called"
+	line "THE SOLENOIDS!"
+
+	para "LT SURGE himself"
+	line "is the lead"
+	cont "singer."
 	done
 
 GuitaristClydeBeatenText:
@@ -181,21 +217,19 @@ GuitaristClydeBeatenText:
 	done
 
 GuitaristClydeAfterBattleMobileText:
-	text "I was going to"
-	line "make my debut at"
-	cont "the BATTLE TOWER…"
+	text "We do metal songs"
+	line "about war."
 
-	para "I should go back"
-	line "to VERMILION and"
-	cont "redo my training…"
+	para "The audience"
+	line "loves it!"
 	done
 
 GuitaristClydeAfterBattleText:
-	text "Speaking of the"
-	line "RADIO STATION,"
+	text "We do metal songs"
+	line "about war."
 
-	para "what's this week's"
-	line "lucky number?"
+	para "The audience"
+	line "loves it!"
 	done
 
 FastShipBedText1:

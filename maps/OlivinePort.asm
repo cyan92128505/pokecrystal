@@ -345,11 +345,16 @@ OlivinePortFridayShipText:
 	done
 
 OlivinePortFishingGuru1Text:
-	text "SHELLDER are easy"
-	line "to catch here."
+	text "The Ship travels"
+	line "to VERMILION in"
+	cont "KANTO."
 
-	para "They're kind of"
-	line "rare elsewhere."
+	para "You need a ticket"
+	line "though."
+
+	para "Don't need one"
+	line "for the magnet"
+	cont "train."
 	done
 
 OlivinePortFishingGuru2Text:
@@ -372,14 +377,18 @@ OlivinePortCooltrainerFText:
 	line "#MON in KANTO."
 
 	para "I wish I could go…"
+
+	para "But everything is"
+	line "shut down due to"
+	cont "the war."
 	done
 
 OlivinePortSailorBeforeHOFText:
-	text "We don't want you"
-	line "to fall into the"
+	text "It is very risky"
+	line "to travel by sea."
 
-	para "sea, so you're not"
-	line "allowed in."
+	para "HOEN subs may be"
+	line "out there."
 	done
 
 OlivinePort_MapEvents:

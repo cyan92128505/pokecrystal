@@ -99,20 +99,7 @@ FastShip1FSailor1Script:
 	end
 
 FastShip1FSailor2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_FAST_SHIP_FIRST_TIME
-	iftrue .Vermilion
-	writetext FastShip1FSailor2Text_FirstTime
-	waitbutton
-	closetext
-	end
-
-.Vermilion:
-	writetext FastShip1FSailor2Text
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer FastShip1FSailor2Text_FirstTime
 
 FastShip1FSailor3Script:
 	jumptextfaceplayer FastShip1FSailor3Text
@@ -228,47 +215,44 @@ FastShip1FSailor1Text_ToOlivine:
 FastShip1FSailor2Text_FirstTime:
 	text "Here's your cabin."
 
-	para "If your #MON"
-	line "are hurt, take a"
-	cont "nap in the bed."
-
-	para "That will heal"
-	line "them."
-	done
-
-FastShip1FSailor2Text:
-	text "Here's your cabin."
-
-	para "You can heal your"
-	line "#MON by taking"
-	cont "a nap in the bed."
+	para "It's third class"
+	line "but has a bed"
+	cont "for you to rest"
+	cont "and heal in."
 
 	para "The ship will"
-	line "arrive while"
-	cont "you're sleeping."
+	line "probably arrive"
+	cont "as you sleep."
 	done
 
 FastShip1FSailor3Text:
-	text "The passengers are"
-	line "all trainers."
+	text "You are free to"
+	line "go into other"
+	cont "passengers cabins."
 
-	para "They're all itch-"
-	line "ing to battle in"
-	cont "their cabins."
+
+	para "But don't get"
+	line "too rowdy with"
+	cont "the trainers."
 	done
 
 FastShip1FGrandpaText:
-	text "Whoa! Excuse me."
-	line "I was in a hurry!"
+	text "Oh sorry!"
 
-	para "My granddaughter"
-	line "is missing!"
+	para "Don't mind me I'm"
+	line "just a normal"
+	cont "passenger."
 
-	para "She's just a wee"
-	line "girl. If you see"
+	para "I'm looking for"
+	line "a little girl."
 
-	para "her, please let me"
-	line "know!"
+	para "If you see her"
+	line "tell her that"
+	cont "her..."
+
+	para "Grandad"
+
+	para "Wants her."
 	done
 
 FastShip1FSailor1Text_InOlivine:

@@ -16,9 +16,12 @@ VermilionGymSurgeScript:
 	checkflag ENGINE_THUNDERBADGE
 	iftrue .FightDone
 	writetext LtSurgeIntroText
+	yesorno
+	iffalse .refuseSong
+	writetext LtSurgeSingAndBattle
 	waitbutton
 	closetext
-	winlosstext LtSurgeWinLossText, 0
+	winlosstext LtSurgeLossText, LtSurgeWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
@@ -38,14 +41,22 @@ VermilionGymSurgeScript:
 	end
 .rematch
     writetext LtSurgeIntroText
+	yesorno
+	iffalse .refuseSong
+	writetext LtSurgeSingAndBattle
 	waitbutton
 	closetext
-	winlosstext LtSurgeWinLossText, 0
+	winlosstext LtSurgeLossText, LtSurgeWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle
 	end
+.refuseSong
+    writetext LtSurgeFineThenText
+    waitbutton
+    closetext
+    end
 
 .FightDone:
 	writetext LtSurgeFightDoneText
@@ -121,34 +132,93 @@ VermilionGymStatue:
 	jumpstd GymStatue2Script
 
 LtSurgeIntroText:
-	text "SURGE: Hey, you"
-	line "little tyke!"
+	text "For many people"
+	line "war is a"
+	cont "terrifying"
+	cont "prospect."
 
-	para "I have to hand it"
-	line "to you. It may not"
+	para "To me it feels"
+	line "like going home."
 
-	para "be very smart to"
-	line "challenge me, but"
-	cont "it takes guts!"
+	para "I have fought in"
+	line "every major war"
+	cont "for the last"
+	cont "decade."
 
-	para "When it comes to"
-	line "electric #MON,"
-	cont "I'm number one!"
+	para "I have traveled"
+	line "the world and"
+	cont "caught the best"
+	cont "ELECTRIC #MON."
 
-	para "I've never lost on"
-	line "the battlefield."
+	para "Recently I have"
+	line "learnt to relax."
 
-	para "I'll zap you just"
-	line "like I did my"
-	cont "enemies in war!"
+	para "Rather than"
+	line "zapping my enemies"
+	cont "with my mighty"
+	cont "ELECTRIC #MON."
+
+	para "I'm zapping my"
+	line "fans with my"
+	cont "mighty ELECTRIC"
+	cont "voice."
+
+	para "Want to hear?"
 	done
 
-LtSurgeWinLossText:
-	text "SURGE: Arrrgh!"
-	line "You are strong!"
+LtSurgeSingAndBattle:
+    text "This is one of"
+    line "our popular songs."
 
-	para "OK, kid. You get"
-	line "THUNDERBADGE!"
+    para "It's called"
+    line "ELECTRODE."
+
+    para "...."
+
+    para "WITHOUT YOU IN"
+    line "MY LIFE."
+
+    para "I FEEL NO PAIN."
+
+    para "I FEEL NO STRIFE."
+
+    para "ELECTRODE!!"
+
+    para "ELECTRODE!!"
+
+    para "I CAN'T BEGIN"
+    line "TO STATE."
+
+    para "MY INDIFFERENCE"
+    line "TO PARTICIPATE."
+
+    para "ELECTRODE!!"
+
+    para "ELECTRODE!!"
+
+    para "...."
+
+	para "Man that has me"
+	line "in the mood."
+
+	para "Lets FIGHT!"
+	done
+
+LtSurgeFineThenText:
+    text "Fine then!"
+
+    para "Get out of here."
+    done
+
+LtSurgeLossText:
+	text "You have fought"
+	line "with honor"
+	cont "soldier."
+	done
+
+LtSurgeWinText:
+	text "I amped up"
+	line "too much."
 	done
 
 ReceivedThunderBadgeText:
@@ -157,118 +227,144 @@ ReceivedThunderBadgeText:
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
+	text "Wear the"
+	line "THUNDERBADGE"
+	cont "with pride."
 
-	para "Consider it proof"
-	line "that you defeated"
-
-	para "me. You wear it"
-	line "proudly, hear?"
+	para "It proves your"
+	line "valor on the"
+	cont "battlefield."
 	done
 
 LtSurgeFightDoneText:
-	text "SURGE: Hey, kid!"
-	line "Still slugging and"
-	cont "chugging away?"
+	text "Hey soldier!"
 
-	para "My #MON and I"
-	line "are still at it!"
+	para "Suck in that"
+	line "gut!"
+
+	para "You should go"
+	line "to a SOLENOID"
+	cont "concert."
+
+	para "I'll blow your"
+	line "mind with mighty"
+	cont "metal muscle!"
 	done
 
 GentlemanGregorySeenText:
-	text "You're here to"
-	line "defeat LT.SURGE?"
+	text "I fought with"
+	line "LT SURGE in"
+	cont "wars long ago."
 
-	para "Not if I can help"
-	line "it!"
+	para "I am the agent"
+	line "for his band."
+
+	para "I have many"
+	line "useful contacts."
+
+	para "But I appreciate"
+	line "his metal."
+
+	para "Used to be a"
+	line "singer myself."
 	done
 
 GentlemanGregoryBeatenText:
-	text "Sorry I failed"
-	line "you, LT.SURGE,"
-	cont "sir!"
+	text "LT SURGE."
+
+	para "I failed you"
+	line "sir."
 	done
 
 GentlemanGregoryAfterBattleText:
-	text "When I was still"
-	line "in the army, LT."
+	text "LT SURGE saved"
+	line "my life on the"
+	cont "battlefield."
 
-	para "SURGE saved my"
-	line "life."
+	para "I will never be"
+	line "able to repay him."
 	done
 
 GuitaristVincentSeenText:
-	text "LT.SURGE recog-"
-	line "nized my potential"
+	text "Hang on little"
+	line "dude."
 
-	para "with electric"
-	line "#MON."
+	para "I'm the lead"
+	line "guitarist of"
+	cont "THE SOLENOIDS."
 
-	para "Think you can beat"
-	line "me?"
+	para "Let me show you"
+	line "this tasty rift!"
 	done
 
 GuitaristVincentBeatenText:
-	text "Ooh, how shocking!"
+	text "Narly."
 	done
 
 GuitaristVincentAfterBattleText:
-	text "If the GYM's traps"
-	line "were working, you"
+	text "SURGE is the"
+	line "main man."
 
-	para "would have been"
-	line "toast…"
+	para "But the chicks"
+	line "still dig the"
+	cont "guitarist."
 	done
 
 JugglerHortonSeenText:
-	text "I'm going to take"
-	line "you down! Prepare"
-	cont "to be shocked!"
+	text "I'm the drummer"
+	line "around here."
+
+	para "You can't just"
+	line "come backstage"
+	cont "without tickets."
+
+	para "I'll pound you"
+	line "flat!"
 	done
 
 JugglerHortonBeatenText:
-	text "Gwaaah!"
-	line "I was overpowered…"
+	text "Du dum pesht."
 	done
 
 JugglerHortonAfterBattleText:
-	text "Don't get too com-"
-	line "fortable about"
+	text "We're waiting on"
+	line "our backing"
+	cont "guitarist."
 
-	para "beating me…"
-	line "LT.SURGE is tough."
+	para "Is he still on"
+	line "the ship!"
 	done
 
 VermilionGymGuideText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "Hey welcome to"
+	line "the gig!"
 
-	para "You lucked out"
-	line "this time."
+	para "The trainers here"
+	line "form a band."
 
-	para "LT.SURGE is very"
-	line "cautious. He has"
+	para "But this is still"
+	line "a GYM."
 
-	para "traps set all over"
-	line "the GYM."
+	para "LT SURGE is a war"
+	line "hero."
 
-	para "But--he-heh--the"
-	line "traps aren't"
-	cont "active right now."
+	para "He has the best"
+	line "ELECTRIC #MON."
 
-	para "You'll have no"
-	line "problem getting to"
-	cont "LT.SURGE."
+	para "GROUND types are"
+	line "your best bet."
+
+	para "But SURGE has"
+	line "faced them many"
+	cont "times before I'm"
+	cont "sure."
 	done
 
 VermilionGymGuideWinText:
-	text "Whew! That was an"
-	line "electrifying bout!"
-
-	para "It sure made me"
-	line "nervous."
+	text "You got right"
+	line "up on that stage"
+	cont "and stole the"
+	cont "show!"
 	done
 
 VermilionGymTrashCanText:

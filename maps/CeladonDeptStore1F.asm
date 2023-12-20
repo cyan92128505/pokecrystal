@@ -39,19 +39,24 @@ CeladonDeptStore1FGentlemanText:
 	para "chain as the one"
 	line "in GOLDENROD CITY."
 
-	para "They were both"
-	line "renovated at the"
-	cont "same time."
+	para "I know because"
+	line "I have dumped my"
+	cont "live savings into"
+	cont "shares in them."
+
+	para "I have high hopes."
 	done
 
 CeladonDeptStore1FTeacherText:
-	text "This is my first"
-	line "time here."
+	text "This place is too"
+	line "big!"
 
-	para "It's so big…"
+	para "I just want"
+	line "#BALLS and"
+	cont "potions."
 
-	para "I'm afraid I'll"
-	line "get lost."
+	para "Where can I"
+	line "just get them."
 	done
 
 CeladonDeptStore1FDirectoryText:

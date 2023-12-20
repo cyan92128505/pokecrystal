@@ -6,113 +6,135 @@ CeladonMansionRoofHouse_MapScripts:
 
 	def_callbacks
 
-CeladonMansionRoofHousePharmacistScript:
-	faceplayer
+CeladonMansionRoofHouseAndrewScript:
+    faceplayer
+    opentext
+    checkevent EVENT_FOUGHT_CELADON_ANDREW
+    iftrue .noBattle
+    writetext CeladonAndrewInitialIntroText
+    waitbutton
+    closetext
+	winlosstext CeladonAndrewBeatenText, CeladonAndrewWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RED, CELADON_ANDREW
+	startbattle
+	reloadmap
+	special HealParty
+	setevent EVENT_FOUGHT_CELADON_ANDREW
 	opentext
-	checkevent EVENT_GOT_TM03_CURSE
-	iftrue .GotCurse
-	writetext CeladonMansionRoofHousePharmacistIntroText
-	promptbutton
-	checktime NITE
-	iftrue .Night
-	writetext CeladonMansionRoofHousePharmacistNotNightText
+	writetext CeladonAndrewAfterBattleText
+	waitbutton
+	verbosegiveitem HOLY_CROWN
+.noBattle
+	writetext CeladonAndrewFinalText
 	waitbutton
 	closetext
 	end
 
-.Night:
-	writetext CeladonMansionRoofHousePharmacistStoryText
-	promptbutton
-	verbosegiveitem TM_CURSE
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM03_CURSE
-.GotCurse:
-	writetext CeladonMansionRoofHousePharmacistCurseText
-	waitbutton
-.NoRoom:
-	closetext
-	end
+CeladonAndrewInitialIntroText:
+    text "Hello <PLAYER>."
 
-CeladonMansionRoofHousePharmacistIntroText:
-	text "Let me recount a"
-	line "terrifying tale…"
-	done
+    para "Are you enjoying"
+    line "the game?"
 
-CeladonMansionRoofHousePharmacistNotNightText:
-	text "Then again, it's"
-	line "not as scary while"
+    para "I am ANDREW."
 
-	para "it's still light"
-	line "outside."
+    para "The creator of"
+    line "this romhack."
 
-	para "Come back after"
-	line "sunset, OK?"
-	done
+    para "Well I'm the game"
+    line "representation"
+    cont "of him of course."
 
-CeladonMansionRoofHousePharmacistStoryText:
-	text "Once upon a time,"
-	line "there was a little"
+    para "What you don't"
+    line "believe me!"
 
-	para "boy who was given"
-	line "a new BICYCLE…"
+    para "You need proof!"
 
-	para "He wanted to try"
-	line "it right away…"
+    para "Very well, here"
+    line "have some proof."
+    done
 
-	para "He was having so"
-	line "much fun that he"
+CeladonAndrewWinsText:
+    text "You convinced now?"
+    done
 
-	para "didn't notice the"
-	line "sun had set…"
+CeladonAndrewBeatenText:
+    text "Oh very good!"
 
-	para "While riding home"
-	line "in the pitch-black"
+    para "really well done!"
 
-	para "night, the bike"
-	line "suddenly slowed!"
+    para "You totally did"
+    line "that legit."
 
-	para "The pedals became"
-	line "heavy!"
+    para "No gameshark"
+    line "codes required!"
 
-	para "When he stopped"
-	line "pedaling, the bike"
+    para "Yeah I know"
+    line "what you are"
+    cont "doing."
 
-	para "began slipping"
-	line "backwards!"
+    para "I applaud your"
+    line "initiative."
 
-	para "It was as if the"
-	line "bike were cursed"
+    para "But this text is"
+    line "the only cool"
+    cont "easter egg you"
+    cont "will get."
+    done
 
-	para "and trying to drag"
-	line "him into oblivion!"
+CeladonAndrewAfterBattleText:
+    text "You were never"
+    line "going to win that"
+    cont "without cheats."
 
-	para "…"
+    para "But I think I've"
+    line "made my point."
 
-	para "…"
+    para "Here is a little"
+    line "more proof."
 
-	para "SHRIEEEEK!"
+    para "Take this item."
 
-	para "The boy had been"
-	line "riding uphill on"
-	cont "CYCLING ROAD!"
+    para "You can't use it"
+    line "but it sells"
+    cont "for a lot."
 
-	para "…"
-	line "Ba-dum ba-dum!"
+    para "You wont get"
+    line "another one of"
+    cont "these for a while."
+    done
 
-	para "For listening so"
-	line "patiently, you may"
-	cont "take this--TM03!"
-	done
+CeladonAndrewFinalText:
+    text "I'm happy you are"
+    line "playing and"
+    cont "enjoying the game."
 
-CeladonMansionRoofHousePharmacistCurseText:
-	text "TM03 is CURSE."
+    para "I have a house at"
+    line "MT SILVER."
 
-	para "It's a terrifying"
-	line "move that slowly"
+    para "Come visit when"
+    line "you get there."
 
-	para "whittles down the"
-	line "victim's HP."
-	done
+    para "If you complete"
+    line "the game I'll"
+    cont "give you a very"
+    cont "special item."
+
+    para "One I've buried"
+    line "away in the game."
+
+    para "It's too powerful"
+    line "and game warping"
+    cont "for any player."
+
+    para "If you complete"
+    line "the game I'll"
+    cont "give you the"
+    cont "HAND OF GOD."
+
+    para "Now go have fun!"
+    done
 
 CeladonMansionRoofHouse_MapEvents:
 	db 0, 0 ; filler
@@ -126,4 +148,4 @@ CeladonMansionRoofHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePharmacistScript, -1
+	object_event  3,  2, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseAndrewScript, -1

@@ -140,9 +140,10 @@ GoldenrodPokecenter1FLassText:
 	para "I'll start with"
 	line "a radio show."
 
-	para "I'm ready to"
-	line "take on the"
-	cont "world."
+	para "My brand is..."
+
+	para "Funny, quirky and"
+	line "innocent."
 	done
 
 GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText:

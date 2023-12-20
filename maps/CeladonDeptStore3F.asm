@@ -59,33 +59,46 @@ CeladonDeptStore3FYoungsterText:
 	done
 
 CeladonDeptStore3FGameboyKid1Text:
-	text "Uh-oh! I traded my"
-	line "#MON without"
+	text "Ok ok..."
 
-	para "removing the UP-"
-	line "GRADE from it."
+	para "now lets not mess"
+	line "it up this time!"
+
+	para "When I tell you"
+	line "to, you turn off"
+	cont "your gameboy."
+
+	para "ONLY when I"
+	line "tell you."
 	done
 
 CeladonDeptStore3FGameboyKid2Text:
-	text "Yeah! I'm finally"
-	line "getting a PORYGON!"
+	text "My friend says"
+	line "if I turn off"
+	cont "my gameboy as"
+	cont "we trade it can"
+	cont "somehow end up"
+	cont "cloning the"
+	cont "#MON and"
+	cont "it's item."
 
-	para "I'm no good at the"
-	line "slots, so I could"
+	para "But another"
+	line "#MON is lost"
+	cont "forever."
 
-	para "never get enough"
-	line "coins…"
-
-	para "…Huh?"
-
-	para "The traded PORYGON"
-	line "turned into a dif-"
-	cont "ferent #MON!"
+	para "Equivalent"
+	cont "exchange."
 	done
 
 CeladonDeptStore3FSuperNerdText:
-	text "The TM SHOP sells"
-	line "some rare moves."
+	text "I'm looking for"
+	line "the elemental"
+	cont "punches."
+
+	para "Oh wait..."
+
+	para "I'm meant to be"
+	line "in GOLDENROD!"
 	done
 
 CeladonDeptStore3FDirectoryText:

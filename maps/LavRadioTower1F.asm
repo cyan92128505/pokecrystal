@@ -51,20 +51,7 @@ LavRadioTower1FGentlemanScript:
 	db "EXPN CARD@"
 
 LavRadioTower1FSuperNerd2Script:
-	faceplayer
-	opentext
-	checkflag ENGINE_EXPN_CARD
-	iftrue .GotExpnCard
-	writetext LavRadioTower1FSuperNerd2Text
-	waitbutton
-	closetext
-	end
-
-.GotExpnCard:
-	writetext LavRadioTower1FSuperNerd2Text_GotExpnCard
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer LavRadioTower1FSuperNerd2Text
 
 LavRadioTower1FDirectory:
 	jumptext LavRadioTower1FDirectoryText
@@ -77,82 +64,100 @@ LavRadioTower1FReferenceLibrary: ; unreferenced
 
 LavRadioTower1FReceptionistText:
 	text "Welcome!"
-	line "Feel free to look"
 
-	para "around anywhere on"
-	line "this floor."
+    para "If you're looking"
+    line "for some dead"
+    cont "#MON you"
+    cont "need to go to"
+    cont "the SOUL HOUSE."
+
+    para "If you're looking"
+    line "for some good"
+    cont "tunes you're in"
+    cont "the right place."
 	done
 
 LavRadioTower1FOfficerText:
-	text "Sorry, but you can"
-	line "only tour the"
-	cont "ground floor."
+	text "We have implemented"
+	line "security measures"
+	cont "similar to the"
+	cont "SILPH BUILDING."
 
-	para "Ever since JOHTO's"
-	line "RADIO TOWER was"
-
-	para "taken over by a"
-	line "criminal gang, we"
-
-	para "have had to step"
-	line "up our security."
+	para "Non employees are"
+	line "only permitted on"
+	cont "this floor."
 	done
 
 LavRadioTower1FSuperNerd1Text:
-	text "Many people are"
-	line "hard at work here"
+	text "We report the"
+	line "news all over"
+	cont "KANTO."
 
-	para "in the RADIO"
-	line "TOWER."
+	para "Our charter says"
+	line "we have a duty to"
+	cont "impartiality."
 
-	para "They must be doing"
-	line "their best to put"
-	cont "on good shows."
+	para "We take this"
+	line "very seriously."
+
+	para "Now I need to"
+	line "write the script"
+	cont "for our popular"
+	cont "HOENITE CANNIBALS"
+	cont "show."
 	done
 
 LavRadioTower1FGentlemanText:
-	text "Oh, no, no, no!"
+	text "Damn we keep"
+	line "having power"
+	cont "outages and this"
+	cont "is cutting into"
+	cont "our bottom line."
 
-	para "We've been off the"
-	line "air ever since the"
+	para "I took out a lot"
+	line "of high interest"
+	cont "loans to get this"
+	cont "off the ground."
 
-	para "POWER PLANT shut"
-	line "down."
-
-	para "All my efforts to"
-	line "start this station"
-
-	para "would be wasted if"
-	line "I can't broadcast."
-
-	para "I'll be ruined!"
+	para "The POWER PLANT"
+	line "better get their"
+	cont "act together!"
 	done
 
 LavRadioTower1FGentlemanText_ReturnedMachinePart:
-	text "Ah! So you're the"
-	line "<PLAY_G> who solved"
+	text "We have full and"
+	line "uninterrupted power!"
 
-	para "the POWER PLANT's"
-	line "problem?"
+	para "I believe I have"
+	line "you to thank for"
+	cont "this."
 
-	para "Thanks to you, I"
-	line "never lost my job."
+	para "You are the"
+	line "<PLAYER> who"
+	cont "solved the power"
+	cont "issue."
 
-	para "I tell you, you're"
-	line "a real lifesaver!"
+	para "You probably expect"
+	line "money but I have"
+	cont "something even"
+	cont "better for you."
 
-	para "Please take this"
-	line "as my thanks."
+	para "Here take this."
 	done
 
 LavRadioTower1FGentlemanText_GotExpnCard:
-	text "With that thing,"
-	line "you can tune into"
+	text "With that you can"
+	line "listen to our"
+	cont "quality programing"
+	cont "anytime."
 
-	para "the radio programs"
-	line "here in KANTO."
+	para "It also entitles"
+	line "you to a single"
+	cont "OPTION of our"
+	cont "stock."
 
-	para "Gahahahaha!"
+	para "Just three years"
+	line "until it vests!"
 	done
 
 LavRadioTower1FSuperNerd2Text:
@@ -161,34 +166,22 @@ LavRadioTower1FSuperNerd2Text:
 	para "I am the super"
 	line "MUSIC DIRECTOR!"
 
-	para "Huh? Your #GEAR"
-	line "can't tune into my"
+	para "People around"
+	line "here are rather"
+	cont "found of country"
+	cont "music."
 
-	para "music programs."
-	line "How unfortunate!"
+	para "The sadder the"
+	cont "better."
 
-	para "If you get an EXPN"
-	line "CARD upgrade, you"
+	para "MR FUJI karaoke"
+	line "is particularly"
+	cont "popular."
 
-	para "can tune in. You'd"
-	line "better get one!"
-	done
-
-LavRadioTower1FSuperNerd2Text_GotExpnCard:
-	text "Hey there!"
-
-	para "I am the super"
-	line "MUSIC DIRECTOR!"
-
-	para "I'm responsible"
-	line "for the gorgeous"
-
-	para "melodies that go"
-	line "out over the air."
-
-	para "Don't be square."
-	line "Grab your music"
-	cont "off the air!"
+	para "But we slip in"
+	line "some sponsored"
+	cont "music when we"
+	cont "can."
 	done
 
 LavRadioTower1FDirectoryText:

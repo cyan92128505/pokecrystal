@@ -14,7 +14,7 @@ GameFreakGameDesignerScript:
 	opentext
 	writetext GameFreakGameDesignerText
 	readvar VAR_DEXCAUGHT
-	ifgreater NUM_POKEMON - 2 - 1, .CompletedPokedex ; ignore Mew and Celebi
+	ifgreater NUM_POKEMON - 1, .CompletedPokedex
 	waitbutton
 	closetext
 	end
@@ -34,28 +34,7 @@ GameFreakGameDesignerScript:
 	end
 
 GameFreakGraphicArtistScript:
-	faceplayer
-	opentext
-	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
-	iftrue .CanPrintDiploma
-	writetext GameFreakGraphicArtistText
-	waitbutton
-	closetext
-	end
-
-.CanPrintDiploma:
-	writetext GameFreakGraphicArtistPrintDiplomaText
-	yesorno
-	iffalse .Refused
-	special PrintDiploma
-	closetext
-	end
-
-.Refused:
-	writetext GameFreakGraphicArtistRefusedText
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer GameFreakGraphicArtistText
 
 GameFreakProgrammerScript:
 	jumptextfaceplayer GameFreakProgrammerText
@@ -76,20 +55,32 @@ CeladonMansion3FReferenceMaterial:
 	jumptext CeladonMansion3FReferenceMaterialText
 
 GameFreakGameDesignerText:
-	text "Is that right?"
+	text "I am the GAME"
+	line "DESIGNER."
 
-	para "I'm the GAME"
-	line "DESIGNER!"
+	para "The creator went"
+	line "back and forth on"
+	cont "whether to have"
+	cont "level caps but"
+	cont "in the end it"
+	cont "was better than"
+	cont "global exp scaling"
+	cont "for balancing."
 
-	para "Filling up your"
-	line "#DEX is tough,"
-	cont "but don't give up!"
+	para "If you complete"
+	line "the #DEX let"
+	cont "me know!"
 	done
 
 GameFreakGameDesignerCompletedPokedexText:
-	text "Wow! Excellent!"
-	line "You completed your"
-	cont "#DEX!"
+	text "You completed the"
+	line "#DEX!"
+
+	para "Thank you so"
+	line "much for playing."
+
+	para "Andrew is very"
+	line "proud of you!"
 
 	para "Congratulations!"
 	done
@@ -99,60 +90,78 @@ GameFreakGameDesignerPauseForDiplomaText:
 	done
 
 GameFreakGameDesignerAfterDiplomaText:
-	text "The GRAPHIC ARTIST"
-	line "will print out a"
-	cont "DIPLOMA for you."
+	text "I never thought"
+	line "anyone would ever"
+	cont "do this."
 
-	para "You should go show"
-	line "it off."
+	para "You have made all"
+	line "the countless"
+	cont "evenings in front"
+	cont "of the laptop"
+	cont "worth it!"
 	done
 
 GameFreakGraphicArtistText:
 	text "I'm the GRAPHIC"
 	line "ARTIST."
 
-	para "I drew you!"
-	done
+	para "Finding sprites"
+	line "for all the new"
+	cont "#MON was"
+	cont "difficult."
 
-GameFreakGraphicArtistPrintDiplomaText:
-	text "I'm the GRAPHIC"
-	line "ARTIST."
+	para "Some like ZYGARDE"
+	line "and GENESECT"
+	cont "didn't have back"
+	cont "sprites."
 
-	para "Oh, you completed"
-	line "your #DEX?"
-
-	para "Want me to print"
-	line "out your DIPLOMA?"
-	done
-
-GameFreakGraphicArtistRefusedText:
-	text "Give me a shout if"
-	line "you want your"
-	cont "DIPLOMA printed."
-	done
-
-GameFreakGraphicArtistErrorText:
-	text "Something's wrong."
-	line "I'll have to can-"
-	cont "cel printing."
+	para "It took some"
+	line "creativity to"
+	cont "make those."
 	done
 
 GameFreakProgrammerText:
 	text "Who, me? I'm the"
 	line "PROGRAMMER."
 
-	para "Play the slot"
-	line "machines!"
+	para "It took a long"
+	line "time and many"
+	cont "failed attempts"
+	cont "to get the SELF"
+	cont "trainer to work."
+
+	para "But the biggest"
+	line "breakthrough was"
+	cont "overriding the"
+	cont "player team for"
+	cont "BATTLE ARCADE or"
+	cont "the RPG minigames."
+
+	para "I don't think"
+	line "any other hack"
+	cont "or #MON"
+	cont "game has these"
+	cont "features."
+
+	para "Aggressive field"
+	line "#MON was"
+	cont "also full of"
+	cont "messy hacks."
 	done
 
 GameFreakCharacterDesignerText:
-	text "Aren't the TWINS"
-	line "adorable?"
+	text "I'm the CHARACTER"
+	line "DESIGNER."
 
-	para "JASMINE's pretty"
-	line "too."
+	para "CYNTHIA and LEON"
+	line "had to be made"
+	cont "by editing other"
+	cont "trainers."
 
-	para "Oh, I love them!"
+	para "WALLACE too."
+
+	para "I think they"
+	line "turned out OK."
 	done
 
 CeladonMansion3FDevRoomSignText:

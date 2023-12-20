@@ -36,26 +36,30 @@ CeladonDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 CeladonDeptStore2FPokefanMText:
-	text "I just recently"
-	line "became a trainer."
+	text "Where are those"
+	line "items that make"
+	cont "moves 20 percent"
+	cont "stronger?"
 
-	para "My son encouraged"
-	line "me to do it."
-
-	para "I'm impressed by"
-	line "the selection of"
-	cont "convenient items."
+	para "I need a few"
+	line "of those."
 	done
 
 CeladonDeptStore2FYoungsterText:
-	text "My dad's having a"
-	line "hard time learning"
+	text "I'm trying to"
+	line "get my dad into"
+	cont "being a trainer."
 
-	para "the names of items"
-	line "and how they are"
+	para "I think it's"
+	line "just too much"
+	cont "stuff for him"
+	cont "to learn."
 
-	para "supposed to be"
-	line "used…"
+	para "Yes GROUND is"
+	line "weak to WATER!"
+
+	para "Why is that so"
+	line "confusing."
 	done
 
 CeladonDeptStore2FDirectoryText:

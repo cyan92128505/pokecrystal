@@ -58,8 +58,6 @@ CeladonCafeFisher3:
 	end
 
 CeladonCafeTeacher:
-	checkitem COIN_CASE
-	iftrue .HasCoinCase
 	opentext
 	writetext TeacherText_CrunchCrunch
 	waitbutton
@@ -67,19 +65,6 @@ CeladonCafeTeacher:
 	faceplayer
 	opentext
 	writetext TeacherText_NoCoinCase
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_TEACHER, LEFT
-	end
-
-.HasCoinCase:
-	opentext
-	writetext TeacherText_KeepEating
-	waitbutton
-	closetext
-	turnobject CELADONCAFE_TEACHER, RIGHT
-	opentext
-	writetext TeacherText_MoreChef
 	waitbutton
 	closetext
 	turnobject CELADONCAFE_TEACHER, LEFT
@@ -117,80 +102,87 @@ CeladonCafeTrashcan:
 	jumpstd TrashCanScript
 
 ChefText_Eatathon:
-	text "Hi!"
+	text "Hey there, welcome"
+	line "to the cafe."
 
-	para "We're holding an"
-	line "eatathon contest."
+	para "You are looking"
+	line "pretty skinny."
 
-	para "We can't serve you"
-	line "right now. Sorry."
+	para "If you want to"
+	line "put on some real"
+	cont "beef come see"
+	cont "me."
+
+	para "I'll hook you up."
 	done
 
 Fisher1Text_Snarfle:
-	text "…Snarfle, chew…"
+	text "Aw man..."
+
+	para "This is so good!"
 	done
 
 Fisher1Text_Concentration:
-	text "Don't talk to me!"
+	text "Phew..."
 
-	para "You'll break my"
-	line "concentration!"
+	para "I can feel my"
+	line "left arm anymore"
+	cont "but I can't stop."
 	done
 
 Fisher2Text_GulpChew:
-	text "…Gulp… Chew…"
+	text "What is this..."
 	done
 
 Fisher2Text_Quantity:
-	text "I take quantity"
-	line "over quality!"
-
-	para "I'm happy when I'm"
-	line "full!"
+	text "I don't know what"
+	line "I'm eating but"
+	cont "I want to keep"
+	cont "going."
 	done
 
 Fisher3Text_MunchMunch:
-	text "Munch, munch…"
+	text "If I could do"
+	line "these years over."
+
+	para "I wouldn't of"
+	line "ruined our lives."
+
+	para "My dear Mary."
 	done
 
 Fisher3Text_GoldenrodIsBest:
-	text "The food is good"
-	line "here, but GOLDEN-"
-	cont "ROD has the best"
-	cont "food anywhere."
+	text "WAITER!"
+
+	para "Another bottle..."
 	done
 
 TeacherText_CrunchCrunch:
-	text "Crunch… Crunch…"
+	text "Being a teacher"
+	line "is not what I"
+	cont "thought it would"
+	cont "be."
 	done
 
 TeacherText_NoCoinCase:
-	text "Nobody here will"
-	line "give you a COIN"
-
-	para "CASE. You should"
-	line "look in JOHTO."
-	done
-
-TeacherText_KeepEating:
-	text "Crunch… Crunch…"
-
-	para "I can keep eating!"
-	done
-
-TeacherText_MoreChef:
-	text "More, CHEF!"
+	text "I know it sounds"
+	line "stupid but an"
+	cont "adult can still"
+	cont "be bullied by"
+	cont "kids."
 	done
 
 EatathonContestPosterText:
-	text "Eatathon Contest!"
-	line "No time limit!"
+	text "Menu:"
 
-	para "A battle without"
-	line "end! The biggest"
+	para "TAUROS burger"
 
-	para "muncher gets it"
-	line "all for free!"
+	para "grilled FEEBAS"
+
+	para "roast MAREEP"
+
+	para "all served with"
+	line "chips or mash."
 	done
 
 FoundLeftoversText:

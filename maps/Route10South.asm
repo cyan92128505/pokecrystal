@@ -85,37 +85,52 @@ Route10Sign:
 	jumptext Route10SignText
 
 HikerJimSeenText:
-	text "Hahahah!"
+	text "I'm not afraid!"
+
+	para "I'm going into"
+	line "ROCK TUNNEL."
+
+	para "I have salt,"
+	line "garlic and holy"
+	cont "water with me!"
 	done
 
 HikerJimBeatenText:
-	text "Hahaha-hachoo!"
+	text "Good warm up."
 	done
 
 HikerJimAfterBattleText:
-	text "Hay fever is"
-	line "making me sneeze!"
-	cont "Ahahah-CHOO!"
+	text "Say a prayer"
+	line "with me."
+
+	para "Dear ARCEUS"
+	line "watch over me."
+
+	para "Amen."
 	done
 
 PokefanmRobertSeenText:
-	text "You like #MON,"
-	line "don't you?"
+	text "I love the"
+	line "mountain air."
 
-	para "Me too!"
+	para "Rocky mountain"
+	line "high!"
+
+	para "I've seen it"
+	line "raining fire in"
+	cont "the sky."
 	done
 
 PokefanmRobertBeatenText:
-	text "I'd have to say"
-	line "that's my loss."
+	text "Take me home."
 	done
 
 PokefanmRobertAfterBattleText:
-	text "Look what you did"
-	line "to my #MON…"
+	text "What a friend we"
+	line "have in time."
 
-	para "I won't forget"
-	line "this…"
+	para "Thank ARCEUS I'm"
+	line "a country boy!"
 	done
 
 Route10SignText:

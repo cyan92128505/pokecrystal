@@ -43,14 +43,20 @@ CeladonMansion1FBookshelf:
 	jumpstd PictureBookshelfScript
 
 CeladonMansionManagerText:
-	text "My dear #MON"
-	line "keep me company,"
+	text "Hello my dear."
 
-	para "so I don't ever"
-	line "feel lonely."
+	para "I am a manager"
+	line "here."
 
-	para "MEOWTH even brings"
-	line "money home."
+	para "In this place we"
+	line "communicate with"
+	cont "the creator to"
+	cont "help build this"
+	cont "world."
+
+	para "Don't we MEOWTH"
+	line "you're a good"
+	cont "kitty!"
 	done
 
 CeladonMansion1FMeowthText:

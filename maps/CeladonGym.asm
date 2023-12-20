@@ -138,39 +138,41 @@ CeladonGymStatue:
 	jumpstd GymStatue2Script
 
 ErikaBeforeBattleText:
-	text "ERIKA: Hello…"
-	line "Lovely weather,"
+	text "Oh hello there."
 
-	para "isn't it?"
-	line "It's so pleasant…"
+	para "It is pleasant"
+	line "and peaceful here."
 
-	para "…I'm afraid I may"
-	line "doze off…"
+	para "It's the only"
+	line "place in the city"
+	cont "you can stop and"
+	cont "think."
 
-	para "My name is ERIKA."
-	line "I am the LEADER of"
-	cont "CELADON GYM."
+	para "Smell the grass"
+	line "and listen to the"
+	cont "trees."
 
-	para "…Oh? All the way"
-	line "from JOHTO, you"
-	cont "say? How nice…"
+	para "This city has lost"
+	line "its way."
 
-	para "Oh. I'm sorry, I"
-	line "didn't realize"
+	para "But I never will."
 
-	para "that you wished to"
-	line "challenge me."
+	para "This GYM will stand"
+	line "always as a shrine"
+	cont "to nature."
 
-	para "Very well, but I"
-	line "shall not lose."
+	para "People can build"
+	line "all the buildings"
+	cont "and weapons they"
+	cont "want."
+
+	para "Nothing is more"
+	line "powerful than"
+	cont "mother nature"
 	done
 
 ErikaBeatenText:
-	text "ERIKA: Oh!"
-	line "I concede defeat…"
-
-	para "You are remarkably"
-	line "strong…"
+	text "Well done."
 
 	para "I shall give you"
 	line "RAINBOWBADGE…"
@@ -182,91 +184,114 @@ PlayerReceivedRainbowBadgeText:
 	done
 
 ErikaExplainTMText:
-	text "ERIKA: That was a"
-	line "delightful match."
+	text "That was a great"
+	line "match."
 
-	para "I felt inspired."
-	line "Please, I wish you"
-	cont "to have this TM."
+	para "Nature already"
+	line "has the solution"
+	cont "to many problems."
 
-	para "It is GIGA DRAIN."
+	para "Here take this."
 
-	para "It is a wonderful"
-	line "move that drains"
-
-	para "half the damage it"
-	line "inflicts to heal"
-	cont "your #MON."
-
-	para "Please use it if"
-	line "it pleases you…"
+	para "It is versatile"
+	line "and I know it"
+	cont "will help you."
 	done
 
 ErikaAfterBattleText:
-	text "ERIKA: Losing"
-	line "leaves a bitter"
-	cont "aftertaste…"
+	text "Never forget."
 
-	para "But knowing that"
-	line "there are strong"
+	para "All of these"
+	line "great cities will"
+	cont "one day be in"
+	cont "RUINS."
 
-	para "trainers spurs me"
-	line "to do better…"
+	para "One day humanity"
+	line "will be no more."
+
+	para "Nature will still"
+	line "be there."
+
+	para "Nature always"
+	line "finds a way."
 	done
 
 LassMichelleSeenText:
-	text "Do you think a"
-	line "girls-only GYM"
-	cont "is rare?"
+	text "I think this"
+	line "is the only"
+	cont "girls only GYM."
+
+	para "Except GOLDENROD."
+
+	para "And I guess maybe"
+	line "OLIVINE."
 	done
 
 LassMichelleBeatenText:
-	text "Oh, bleah!"
+	text "Oh my!"
 	done
 
 LassMichelleAfterBattleText:
-	text "I just got care-"
-	line "less, that's all!"
+	text "I guess a girl"
+	line "only GYM isn't"
+	cont "such a novel"
+	cont "concept."
 	done
 
 PicnickerTanyaSeenText:
-	text "Oh, a battle?"
-	line "That's kind of"
-	cont "scary, but OK!"
+	text "I only came here"
+	line "to get away from"
+	cont "the city."
+
+	para "I didn't expect"
+	line "to battle."
+
+	para "But that doesn't"
+	line "mean I'm not able."
 	done
 
 PicnickerTanyaBeatenText:
-	text "Oh, that's it?"
+	text "Yeah, take that!"
 	done
 
 PicnickerTanyaAfterBattleText:
-	text "Oh, look at all"
-	line "your BADGES. No"
+	text "Yeah let's battle."
 
-	para "wonder I couldn't"
-	line "win!"
+	para "Ok I need to"
+	line "calm down."
 	done
 
 BeautyJuliaSeenText:
-	text "Were you looking"
-	line "at these flowers"
-	cont "or at me?"
+	text "I caught you."
+
+	para "Don't pretend to"
+	line "be looking at the"
+	cont "flowers."
+
+	para "You were looking"
+	line "at me."
 	done
 
 BeautyJuliaBeatenText:
-	text "How annoying!"
+	text "Can't take your"
+	line "eyes off me."
 	done
 
 BeautyJuliaAfterBattleText:
-	text "How do I go about"
-	line "becoming ladylike"
-	cont "like ERIKA?"
+	text "It's ok I know"
+	line "I'm pretty."
+
+	para "Even I find it"
+	line "hard not to look"
+	cont "at me."
 	done
 
 TwinsJoAndZoe1SeenText:
-	text "We'll show you"
-	line "#MON moves that"
-	cont "ERIKA taught us!"
+	text "ERIKA has been"
+	line "teaching us how"
+	cont "to battle."
+
+	para "Go #BALL!"
 	done
 
 TwinsJoAndZoe1BeatenText:
@@ -274,13 +299,20 @@ TwinsJoAndZoe1BeatenText:
 	done
 
 TwinsJoAndZoe1AfterBattleText:
-	text "ERIKA will get you"
-	line "back for us!"
+	text "ERIKA will stomp"
+	line "you into the dirt."
+
+	para "Then plant a"
+	line "tree on you!"
 	done
 
 TwinsJoAndZoe2SeenText:
-	text "We're going to"
-	line "protect ERIKA!"
+	text "Stop!"
+
+	para "We wont let you"
+	line "get to ERIKA."
+
+	para "She is sleeping."
 	done
 
 TwinsJoAndZoe2BeatenText:
@@ -288,8 +320,12 @@ TwinsJoAndZoe2BeatenText:
 	done
 
 TwinsJoAndZoe2AfterBattleText:
-	text "ERIKA is much,"
-	line "much stronger!"
+	text "Don't disturb"
+	line "ERIKA when she"
+	cont "is sleeping."
+
+	para "She can wake up"
+	line "a bit grumpy."
 	done
 
 RematchTextErika:

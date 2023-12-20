@@ -76,118 +76,157 @@ CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
 CeladonCityFisherText:
-	text "This POLIWRATH is"
-	line "my partner."
+	text "My buddy here is"
+	line "POLIWRATH."
 
-	para "I wonder if it'll"
-	line "ever evolve into a"
-	cont "frog #MON."
+	para "He loves PROTEIN!"
+
+	para "If any HOEN thugs"
+	line "come to this city"
+	cont "they are going to"
+	cont "get their skulls"
+	cont "crushed."
+
+	para "Isn't that right"
+	line "POLIWRATH."
 	done
 
 CeladonCityPoliwrathText:
-	text "POLIWRATH: Croak!"
+	text "POLIIII!"
+
+	para "WRAAAAATH!!!"
 	done
 
 CeladonCityTeacher1Text:
-if DEF(_CRYSTAL_AU)
-	text "I lost at the"
-	line "machines."
-	done
-else
-	text "I lost at the slot"
-	line "machines again…"
+	text "The prize hall"
+	line "has some TMs that"
+	cont "can defeat any"
+	cont "enemy in one hit!"
 
-	para "We girls also play"
-	line "the slots now."
+	para "I have taken out"
+	line "a very high"
+	cont "interest loan"
+	cont "so I can get"
+	cont "coins I need."
 
-	para "You should check"
-	line "them out too."
+	para "It will all be"
+	line "worth it when I'm"
+	cont "the strongest"
+	cont "trainer in the"
+	cont "world!"
 	done
-endc
 
 CeladonCityGramps1Text:
-	text "TENTACOOL have been"
-	line "appearing lately."
+	text "I've lived here"
+	line "here my whole"
+	cont "life."
 
-	para "See that pond out"
-	line "in front of the"
+	para "Here is my"
+	line "secret."
 
-	para "house? TENTACOOL live"
-	line "there now."
+	para "Never drink the"
+	line "water from here."
 
-	para "Where did they"
-	line "come from? This is"
-	cont "a serious problem…"
+	para "It is highly"
+	line "polluted."
+
+	para "There are"
+	line "TENTACOOL in"
+	cont "this pond!"
 	done
 
 CeladonCityGramps2Text:
-	text "Nihihi! This GYM"
-	line "is great! Only"
+	text "As this city"
+	line "of gambling,"
+	cont "crime, pollution"
+	cont "and immorality"
+	cont "gets bigger and"
+	cont "bigger."
 
-	para "girls are allowed"
-	line "here!"
+	para "This GYM stays"
+	line "the same."
+
+	para "An oasis of life"
+	line "and purity."
 	done
 
 CeladonCityYoungster1Text:
-	text "Want to know a"
-	line "secret?"
+	text "People from"
+	line "SAFFRON are always"
+	cont "talking about"
+	cont "how SAFFRON is"
+	cont "the biggest and"
+	cont "most wealthy city."
 
-	para "CELADON MANSION"
-	line "has a hidden back"
-	cont "door."
+	para "I'm pretty sure"
+	line "CELADON is"
+	cont "bigger."
+
+	para "And there's lots"
+	line "of money floating"
+	cont "around the GAME"
+	cont "CORNER and DEPT"
+	cont "STORE."
+
+	para "We are the best!"
 	done
 
 CeladonCityYoungster2Text:
-	text "They're holding an"
-	line "eating contest at"
-	cont "the restaurant."
+	text "TEAM ROCKET used"
+	line "to operate in"
+	cont "the GAME CORNER."
 
-	para "Just watching them"
-	line "go at it makes me"
-	cont "feel bloated…"
+	para "There was a guy"
+	line "who would hide"
+	cont "ABRA in his coat"
+	cont "and use its powers"
+	cont "to always win."
+
+	para "Nobody really"
+	line "believes that"
+	cont "TEAM ROCKET are"
+	cont "fully gone."
 	done
 
 CeladonCityTeacher2Text:
 	text "CELADON DEPT.STORE"
-	line "has the biggest"
+	line "is the largest"
+	cont "center of commerce"
+	cont "in KANTO."
 
-	para "and best selection"
-	line "of merchandise."
+	para "I hear GOLDENROD"
+	line "has a similar"
+	cont "STORE."
 
-	para "If you can't get"
-	line "it there, you"
+	para "Given the economic"
+	line "condition of"
+	cont "JOHTO I bet there"
+	cont "is potential for"
+	cont "arbitrage between"
+	cont "the two stores."
 
-	para "can't get it any-"
-	line "where."
-
-	para "Gee… I sound like"
-	line "a sales clerk."
-	done
-
-CeladonCityLassText_Mobile: ; unreferenced
-	text "I love being"
-	line "surrounded by tall"
-	cont "buildings!"
-
-	para "Isn't it true that"
-	line "GOLDENROD #MON"
-
-	para "CENTER was made"
-	line "much, much bigger?"
-
-	para "That is so neat!"
-	line "I wish we had a"
-
-	para "place like that in"
-	line "KANTO…"
+	para "I must write this"
+	line "idea down!"
 	done
 
 CeladonCityLassText:
-	text "Looking at the"
-	line "ground while I was"
+	text "I used to go"
+	line "on the CYCLING"
+	cont "ROAD but there"
+	cont "all the biker"
+	cont "gangs telling me"
+	cont "how pretty I am"
+	cont "became unbearable."
 
-	para "walking made me"
-	line "dizzy."
+	para "I'm training my"
+	line "#MON so I"
+	cont "can beat them"
+	cont "all up."
+
+	para "I need some witty"
+	line "line about being"
+	cont "pretty to say"
+	cont "after winning!"
 	done
 
 CeladonCitySignText:
@@ -217,31 +256,27 @@ CeladonCityMansionSignText:
 	done
 
 CeladonCityGameCornerSignText:
-if DEF(_CRYSTAL_AU)
 	text "The Game Area for"
 	line "Grown-ups--CELADON"
 	cont "GAME CORNER"
 	done
-else
-	text "The Playground for"
-	line "Everybody--CELADON"
-	cont "GAME CORNER"
-	done
-endc
 
 CeladonCityTrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "GUARD SPEC."
-	line "protects #MON"
+	para "#MON get"
+	line "stronger by"
+	cont "battling."
 
-	para "against SPECIAL"
-	line "attacks such as"
-	cont "fire and water."
+	para "All stats can"
+	line "increase up to"
+	cont "63 extra points"
+	cont "at level 100."
 
-	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
+	para "You don't have"
+	line "to worry about"
+	cont "training in any"
+	cont "specific way."
 	done
 
 CeladonGymBlockScript:

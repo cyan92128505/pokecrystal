@@ -321,7 +321,7 @@ Route8LockedDoorText:
 Route8UndergroundPathSignText:
 	text "The sign is"
 	line "covered in"
-	cont "graphity."
+	cont "graffiti."
 
 	para "Unintelligible"
 	line "acronyms and"

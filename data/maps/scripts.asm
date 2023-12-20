@@ -114,12 +114,6 @@ INCLUDE "maps/CeladonPokecenter1F.asm"
 INCLUDE "maps/CeladonGameCorner.asm"
 INCLUDE "maps/CeladonGameCornerPrizeRoom.asm"
 INCLUDE "maps/CeladonGym.asm"
-INCLUDE "maps/CeladonCafe.asm"
-INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
-INCLUDE "maps/Route16Gate.asm"
-INCLUDE "maps/Route7SaffronGate.asm"
-INCLUDE "maps/Route17Route18Gate.asm"
-
 
 SECTION "Map Scripts 8", ROMX
 
@@ -519,3 +513,8 @@ INCLUDE "maps/MobileTradeRoom.asm"
 SECTION "Map Scripts Overflow 10", ROMX
 
 INCLUDE "maps/OaksLab.asm"
+INCLUDE "maps/Route17Route18Gate.asm"
+INCLUDE "maps/Route16Gate.asm"
+INCLUDE "maps/Route7SaffronGate.asm"
+INCLUDE "maps/CeladonCafe.asm"
+INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"

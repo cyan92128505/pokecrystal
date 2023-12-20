@@ -21,15 +21,15 @@ LavenderPokecenter1FTeacherScript:
 LavenderPokecenter1FYoungsterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatWallace
 	writetext LavenderPokecenter1FYoungsterText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext LavenderPokecenter1FYoungsterText_ReturnedMachinePart
+.BeatWallace:
+	writetext LavenderPokecenter1FYoungsterText_BeatWallace
 	waitbutton
 	closetext
 	end
@@ -79,7 +79,7 @@ LavenderPokecenter1FYoungsterText:
 	cont "eternity."
 	done
 
-LavenderPokecenter1FYoungsterText_ReturnedMachinePart:
+LavenderPokecenter1FYoungsterText_BeatWallace:
 	text "We are all saved!"
 
 	para "Wait!"

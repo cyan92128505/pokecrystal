@@ -567,9 +567,9 @@ BattleRouletteReceptionistScript:
     loadtrainer MYSTICALMAN, MASTER_EUSINE
     sjump .finish
 .Eusine2
-    checkevent EVENT_BEAT_SILVER_CAVE_EUSINE
+    checkevent EVENT_BEAT_CELADON_EUSINE
     iffalse .Eusine1
-    loadtrainer MYSTICALMAN, EUSINE_SILVER_CAVE
+    loadtrainer MYSTICALMAN, EUSINE_CELADON
     sjump .finish
 .Eusine1
     checkevent EVENT_FOUGHT_EUSINE

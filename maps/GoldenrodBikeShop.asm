@@ -49,27 +49,24 @@ GoldenrodBikeShopClerkIntroText:
 	line "the best you"
 	cont "can buy."
 
-	para "For a limited"
-	line "time when you"
-	cont "purchase one"
-	cont "of these BIKES"
-	cont "you also get"
-	cont "hi-tec location"
-	cont "tracking tech."
+	para "Who am I kidding?"
 
-	para "This will keep"
-	line "you safe in"
-	cont "these evil"
-	cont "times."
+	para "Nobody rides a"
+	line "bike anymore."
 
-	para "Wait..."
+	para "Everyone has"
+	line "running shoes!"
 
-	para "You are our"
-	line "one thousandth"
-	cont "customer!!"
+	para "Would you like"
+	line "a bike?"
 
-	para "Here take a"
-	line "BIKE for free!"
+	para "Here just take it."
+
+	para "It's free!"
+
+	para "Maybe if people"
+	line "see you on it"
+	cont "they may want one."
 	done
 
 GoldenrodBikeShopClerkAgreedText:
@@ -88,14 +85,22 @@ BorrowedABicycleText:
 	done
 
 GoldenrodBikeShopClerkFirstRateBikesText:
-	text "Heh heh enjoy"
-	line "the BIKE!"
+	text "Enjoy the bike!"
 
-	para "You be sure to"
-	line "ride it and"
-	cont "let it record"
-	cont "all your location"
-	cont "information."
+	para "It can be fun"
+	line "I swear."
+
+	para "You know there is"
+	line "a big road in"
+	cont "KANTO where you"
+	cont "need to ride a"
+	cont "bike to enter."
+
+	para "It's fun."
+
+	para "Except for the"
+	line "violent biker"
+	cont "gangs!"
 	done
 
 GoldenrodBikeShopClerkRefusedText:

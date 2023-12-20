@@ -43,12 +43,12 @@ VermilionMagnetTrainSpeechHousePokefanFText:
 	done
 
 VermilionMagnetTrainSpeechHouseYoungsterText:
-	text "Dads always going"
-	line "on about how he"
+	text "Mums always going"
+	line "on about how she"
 	cont "hates the MAGNET"
 	cont "TRAIN."
 
-	para "But he uses it"
+	para "But she uses it"
 	line "at least once"
 	cont "a week."
 	done

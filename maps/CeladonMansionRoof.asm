@@ -13,22 +13,27 @@ CeladonMansionRoofGraffiti:
 	jumptext CeladonMansionRoofGraffitiText
 
 CeladonMansionRoofFisherText:
-	text "High places--I do"
-	line "love them so!"
+	text "Are you up there!"
 
-	para "I'd say the only"
-	line "thing that loves"
+	para "I know you!"
 
-	para "heights as much as"
-	line "me is smoke!"
+	para "You exist up"
+	line "there somewhere."
+
+	para "You are a devine"
+	line "entity."
+
+	para "One known as a..."
+
+	para "Gamer!"
 	done
 
 CeladonMansionRoofGraffitiText:
 	text "There's graffiti"
 	line "on the wall…"
 
-	para "<PLAYER> added a"
-	line "moustache!"
+	para "#MON"
+	line "AMBROSIA"
 	done
 
 CeladonMansionRoof_MapEvents:

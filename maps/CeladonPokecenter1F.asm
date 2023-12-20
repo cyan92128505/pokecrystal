@@ -1,6 +1,5 @@
 	object_const_def
 	const CELADONPOKECENTER1F_NURSE
-	const CELADONPOKECENTER1F_GENTLEMAN
 	const CELADONPOKECENTER1F_PHARMACIST
 	const CELADONPOKECENTER1F_COOLTRAINER_F
 	const CELADONPOKECENTER1F_EUSINE
@@ -9,12 +8,18 @@ CeladonPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Eusine
+
+.Eusine
+    disappear CELADONPOKECENTER1F_EUSINE
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .end
+    appear CELADONPOKECENTER1F_EUSINE
+.end
+    endcallback
 
 CeladonPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
-
-CeladonPokecenter1FGentlemanScript:
-	jumpstd HappinessCheckScript
 
 CeladonPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer CeladonPokecenter1FCooltrainerFText
@@ -23,60 +28,147 @@ CeladonPokecenter1FPharmacistScript:
 	jumptextfaceplayer CeladonPokecenter1FPharmacistText
 
 CeladonEusine:
-	faceplayer
+    faceplayer
 	opentext
-	writetext CeladonEusineText1
-	promptbutton
-	setval SUICUNE
-	special MonCheck
-	iffalse .NoSuicune
-	special BeastsCheck
-	iftrue .HoOh
-	writetext NoBeastsText
-	waitbutton
-.NoSuicune:
-	closetext
-	end
-
-.HoOh:
-	writetext EusineLeavesCeladonText
+	checkevent EVENT_BEAT_CELADON_EUSINE
+	iftrue .FightDone
+.fight
+	writetext Eusine2SeenText
 	waitbutton
 	closetext
-	readvar VAR_FACING
-	ifequal UP, .Location1
-	applymovement CELADONPOKECENTER1F_EUSINE, .Movement1
-	sjump .Continue
-
-.Location1:
-	applymovement CELADONPOKECENTER1F_EUSINE, .Movement2
-.Continue:
-	disappear CELADONPOKECENTER1F_EUSINE
-	playsound SFX_EXIT_BUILDING
-	waitsfx
+	checkevent EVENT_BEAT_CELADON_EUSINE
+	iftrue .dontAsk
+	opentext
+	writetext Eusine2OfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.dontAsk
+	winlosstext Eusine2BeatenText, Eusine2WinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MYSTICALMAN, EUSINE_CELADON
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CELADON_EUSINE
 	end
+.FightDone:
+	writetext Eusine2AfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextEusine2
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextEusine2
+	waitbutton
+	closetext
+	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext Eusine2WinAfterBattleText
+    waitbutton
+    closetext
+    end
+Eusine2WinAfterBattleText:
+    text "Thank you"
+    line "<PLAYER>."
 
-.Movement2:
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
+    para "I feel whole"
+    line "and complete."
 
-.Movement1:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
+    para "I hope one day"
+    line "you can find"
+    cont "whatever it is"
+    cont "that makes you"
+    cont "complete."
+    done
+Eusine2SeenText:
+    text "Hi <PLAYER>!"
+
+    para "I'm vising my"
+    line "home town and"
+    cont "seeing my family."
+
+    para "I finally did it."
+
+    para "I had given up."
+
+    para "I didn't care"
+    line "anymore."
+
+    para "Then I got up"
+    line "and decided I"
+    cont "had to see"
+    cont "SUICUNE one"
+    cont "more time."
+
+    para "For the first"
+    line "time I didn't"
+    cont "want to catch"
+    cont "her."
+
+    para "Only to say"
+    line "goodbye."
+
+    para "SUICUNE didn't"
+    line "run."
+
+    para "Now let us battle"
+    line "one more time."
+    done
+Eusine2BeatenText:
+    text "I am not upset."
+
+    para "I am complete."
+    done
+Eusine2WinsText:
+    text "I am complete."
+    done
+Eusine2OfferFightText:
+    text "Shall we battle?"
+    done
+Eusine2AfterBattleText:
+    text "I am one with"
+    line "SUICUNE."
+
+    para "I can not explain"
+    line "the peace I feel."
+
+    para "My journey is"
+    line "over and now a"
+    cont "new one begins."
+
+    para "I've always been"
+    line "interested in"
+    cont "the legendary"
+    cont "birds."
+    done
+RematchTextEusine2:
+    text "Would you like"
+    line "another battle?"
+    done
+RematchRefuseTextEusine2:
+    text "Go find what"
+    line "matters to you."
+    done
 
 CeladonPokecenter1FCooltrainerFText:
 	text "ERIKA is a master"
 	line "of grass #MON."
 
-	para "She'll make you"
-	line "pay if you don't"
-	cont "watch yourself."
+	para "She is so pretty."
+
+	para "We need to fight"
+	line "back against"
+	cont "pollution and"
+	cont "crime."
+
+	para "Lead us ERIKA!"
 	done
 
 CeladonPokecenter1FPharmacistText:
@@ -86,8 +178,11 @@ CeladonPokecenter1FPharmacistText:
 	para "basement of the"
 	line "GAME CORNER."
 
-	para "Oh, wait. That was"
-	line "three years ago."
+	para "It was closed up."
+
+	para "Rumor is the"
+	line "black market"
+	cont "exists there now."
 	done
 
 CeladonEusineText1:
@@ -157,7 +252,6 @@ CeladonPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FNurseScript, -1
-	object_event  1,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FGentlemanScript, -1
 	object_event  0,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FPharmacistScript, -1
 	object_event  8,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FCooltrainerFScript, -1
-	object_event  4,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonEusine, EVENT_SET_WHEN_FOUGHT_HO_OH
+	object_event  4,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonEusine, EVENT_TEMP_EVENT_1

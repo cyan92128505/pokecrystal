@@ -40,29 +40,48 @@ CeladonDeptStore5FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 CeladonDeptStore5FGentlemanText:
-	text "I want to buy some"
-	line "items that raise"
+	text "I'm alway looking"
+	line "for the best ways"
+	cont "to make my money"
+	cont "work for me."
 
-	para "#MON stats, but"
-	line "I don't have"
-	cont "enough money…"
+	para "CALCIUM raises"
+	line "two stats instead"
+	cont "of one."
+
+	para "It's the clear"
+	line "choice."
 	done
 
 CeladonDeptStore5FSailorText:
-	text "I want PP UP, so I"
-	line "can raise the PP"
+	text "I need more!"
 
-	para "of moves. But you"
-	line "can't buy it…"
+	para "More PROTEIN!!!"
+
+	para "It's time for my"
+	line "pre workout!"
 	done
 
 CeladonDeptStore5FTeacherText:
-	text "Using items on"
-	line "them makes #-"
-	cont "MON happy."
+	text "The effect of"
+	line "vitamins is not"
+	cont "linear."
 
-	para "They hate certain"
-	line "items, though…"
+	para "In fact it is"
+	line "a square root"
+	cont "relation."
+
+	para "You get most of"
+	line "the benefit from"
+	cont "just the first"
+	cont "3 to 5 uses."
+
+	para "But you can"
+	line "keep going all"
+	cont "the way to 25"
+	cont "if you want to"
+	cont "throw your money"
+	cont "away."
 	done
 
 CeladonDeptStore5FDirectoryText:

@@ -192,20 +192,7 @@ GoldenrodCityCooltrainerF1Script:
 	end
 
 GoldenrodCityCooltrainerF2Script:
-	faceplayer
-	opentext
-	checkflag ENGINE_RADIO_CARD
-	iftrue .GotRadioCard
-	writetext GoldenrodCityCooltrainerF2Text
-	waitbutton
-	closetext
-	end
-
-.GotRadioCard:
-	writetext GoldenrodCityCooltrainerF2Text_GotRadioCard
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer GoldenrodCityCooltrainerF2Text
 
 GoldenrodCityYoungster2Script:
 	jumptextfaceplayer GoldenrodCityYoungster2Text
@@ -302,17 +289,14 @@ GoldenrodCityPokefanMText:
 	cont "getting turned"
 	cont "away."
 
-	para "Let me pitch"
-	line "my idea to you."
-
-	para "A show where we"
-	line "rank #MON"
+	para "The world needs"
+	line "a show where we"
+	cont "rank #MON"
 	cont "by how attractive"
 	cont "they would be if"
-	cont "they were human!"
+	cont "they were human."
 
-	para "Sounds great"
-	line "right!?..."
+	para "You must agree!"
 	done
 
 GoldenrodCityYoungster1Text:
@@ -332,6 +316,9 @@ GoldenrodCityYoungster1Text:
 	cont "at night."
 
 	para "I will find it!"
+
+	para "I will have"
+	line "vengeance!"
 	done
 
 GoldenrodCityCooltrainerF1Text:
@@ -339,52 +326,67 @@ GoldenrodCityCooltrainerF1Text:
 
 	para "TEAM ROCKET!"
 
-	para "What are they"
-	line "doing in JOHTO."
+	para "Well shares in"
+	line "the RADIO TOWER"
+	cont "are about to"
+	cont "plummet."
 
-	para "Why can't KANTOs"
-	line "problems stay"
-	cont "in KANTO."
+	para "Time to sell and"
+	line "buy when they are"
+	cont "cheap."
 	done
 
 GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
-	text "I'm glad those"
-	line "TEAM ROCKET scum"
-	cont "are gone."
+	text "You were the"
+	line "one to stop the"
+	cont "ROCKETS!"
 
-	para "I hope WALLACE"
-	line "puts an end to"
-	cont "them!"
+	para "Couldn't you have"
+	line "waited another"
+	cont "day or two!"
+
+	para "The RADIO TOWER"
+	line "share price could"
+	cont "have fallen more"
+	cont "and I'd have made"
+	cont "more sweet money."
 	done
 
 GoldenrodCityCooltrainerF2Text:
-	text "The RADIO TOWER in"
-	line "GOLDENROD CITY is"
-	cont "a landmark."
+	text "GOLDENROD was"
+	line "the first city"
+	cont "to have a RADIO"
+	cont "TOWER."
 
-	para "They will update"
-	line "your #GEAR"
-	cont "with a RADIO"
-	cont "if you can pass"
-	cont "a tough quiz."
-	done
+	para "Then LAVENDER"
+	line "TOWN had to go"
+	cont "and copy us!"
 
-GoldenrodCityCooltrainerF2Text_GotRadioCard:
-	text "Oh, your #GEAR"
-	line "works as a radio!"
+	para "They even tore"
+	line "down a grave"
+	cont "for #MON"
+	cont "to do it!"
+
+	para "I can see why"
+	line "people hate KANTO."
 	done
 
 GoldenrodCityYoungster2Text:
-	text "I have heard"
-	line "there is a large"
-	cont "underground"
-	cont "facility in this"
-	cont "city."
+	text "Have you heard"
+	line "of the SOLENOIDS?"
 
-	para "I wonder what"
-	line "secrets are"
-	cont "hiding down"
-	cont "there."
+	para "They are a metal"
+	line "band from"
+	cont "VERMILION."
+
+	para "LT SURGE is the"
+	line "lead vocalist."
+
+	para "They are great!"
+
+	para "I've listened to"
+	line "RAGING ELECTRODE"
+	cont "like fifty times!"
 	done
 
 GoldenrodCityLassText:
@@ -392,19 +394,32 @@ GoldenrodCityLassText:
 	line "house can rename"
 	cont "your #MON."
 
-	para "He also will"
-	line "viciously critique"
-	cont "your nicknames."
+	para "He seems to hate"
+	line "any name that he"
+	cont "didn't think of."
+
+	para "Who put him in"
+	line "charge!"
 	done
 
 GoldenrodCityGrampsText:
-	text "I'm an undercover"
-	line "detective."
+	text "We have worked"
+	line "very hard to"
+	cont "grow this city."
 
-	para "I suspect the"
-	line "BIKE SHOP owner"
-	cont "is a TEAM ROCKET"
-	cont "informant."
+	para "And along with it"
+	line "the GDP of JOHTO."
+
+	para "Of course I"
+	line "have investments"
+	cont "in the RADIO"
+	cont "TOWER here and"
+	cont "SILPH CO from"
+	cont "SAFFRON."
+
+	para "So my portfolio"
+	line "will grow no"
+	cont "matter what."
 	done
 
 GoldenrodCityRocketScoutText1:
@@ -435,8 +450,13 @@ GoldenrodCityRocket2Text:
 	text "Take over the"
 	line "RADIO TOWER…"
 
-	para "What? It's none of"
-	line "your business!"
+	para "What gave you"
+	line "that idea!"
+
+	para "That's mad!"
+
+	para "Why would we"
+	line "want to do that!"
 	done
 
 GoldenrodCityRocket3Text:
@@ -459,6 +479,10 @@ GoldenrodCityRocket4Text:
 	para "Just standing"
 	line "around hungry"
 	cont "all day."
+
+	para "How am I meant"
+	line "to stand out"
+	cont "and get promoted."
 	done
 
 GoldenrodCityRocket5Text:
@@ -477,6 +501,12 @@ GoldenrodCityRocket6Text:
 
 	para "I always wanted"
 	line "to be the hero!"
+
+	para "Never fear dear"
+	line "citizen."
+
+	para "TEAM ROCKET"
+	line "are here!"
 	done
 
 GoldenrodCityStationSignText:

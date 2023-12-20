@@ -752,6 +752,7 @@ KRIS EQU __trainer_class__
 	const MASTER_ASH
 	const YAMI
 	const RED_MEWTWO
+	const CELADON_ANDREW
 
 	trainerclass BLUE ; 40
 	const BLUE1
@@ -772,7 +773,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
-	const EUSINE_SILVER_CAVE
+	const EUSINE_CELADON
 	const MASTER_EUSINE
 
     trainerclass INVADER ; 44

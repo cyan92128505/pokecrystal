@@ -126,19 +126,30 @@ CeladonVendingNoSpaceText:
 	done
 
 CeladonDeptStore6FSuperNerdText:
-	text "A vending machine"
-	line "with a prize rou-"
-	cont "lette…"
+	text "I don't know"
+	line "how many drinks"
+	cont "I've had now."
 
-	para "You never see"
-	line "those anymore."
+	para "I'm just going"
+	line "to sit on this"
+	cont "roof and drink"
+	cont "my problems away."
+
+	para "Does the machine"
+	line "do vodka..."
 	done
 
 CeladonDeptStore6FYoungsterText:
-	text "Aww! There's no"
-	line "games here!"
+	text "It's a good view"
+	line "from up here."
 
-	para "I wanted to play…"
+	para "I can see the"
+	line "SILPH building"
+	cont "and the RADIO"
+	cont "TOWER!"
+
+	para "See they are"
+	line "right over there."
 	done
 
 CeladonDeptStore6FDirectoryText:

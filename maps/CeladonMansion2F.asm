@@ -18,28 +18,24 @@ CeladonMansion2FComputerText:
 
 	para "…"
 
-	para "Someone was in the"
-	line "middle of compos-"
-	cont "ing an e-mail."
+	para "What is this!"
 
-	para "…I hope you'll"
-	line "come visit KANTO."
-
-	para "I think you'll be"
-	line "surprised at how"
-
-	para "much things have"
-	line "changed here."
-
-	para "You'll also see"
-	line "many #MON that"
-
-	para "aren't native to"
-	line "JOHTO."
-
-	para "To the PRODUCER"
+	para "ld a, wBattleMon"
+	line "ld b, a"
+	cont "ldh a, hBattleTurn"
+	cont "and a"
+	cont "jr z, .gotSpecies"
+	cont "ld a, wEnemyMon"
+	cont "ld b, a"
 
 	para "…"
+
+	para "It's code that"
+	line "gets the current"
+	cont "player or enemy"
+	cont "#MON"
+	cont "depending on whose"
+	cont "turn it is."
 	done
 
 CeladonMansion2FMeetingRoomSignText:

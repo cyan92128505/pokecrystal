@@ -105,9 +105,6 @@ CeladonGameCornerGrampsScript:
 CeladonGameCornerPoster1Script:
 	jumptext CeladonGameCornerPoster1Text
 
-CeladonGameCornerPoster2Script:
-	jumptext CeladonGameCornerPoster2Text
-
 CeladonGameCornerLuckySlotMachineScript:
 	random 6
 	ifequal 0, CeladonGameCornerSlotMachineScript
@@ -157,77 +154,46 @@ CeladonGameCornerReceptionistText:
 	done
 
 CeladonGameCornerPokefanMText:
-	text "The slot machines"
-	line "are all state of"
-	cont "the art."
+	text "Just one more."
+
+	para "Just one more"
+	line "pull, I'll stop"
+	cont "after that."
 	done
 
 CeladonGameCornerTeacherText:
-if DEF(_CRYSTAL_AU)
-	text "The weather"
-	line "outside is very"
-	cont "nice."
+	text "I hear they pump"
+	line "pure oxygen in"
+	cont "here to keep"
+	cont "people awake so"
+	cont "they play longer."
 	done
-else
-	text "It's this machine"
-	line "I want."
-
-	para "It cleaned me out"
-	line "yesterday, so it"
-
-	para "should pay out"
-	line "today."
-	done
-endc
 
 CeladonGameCornerFishingGuruText:
-if DEF(_CRYSTAL_AU)
-	text "This machine looks"
-	line "the same as the"
-	cont "others."
-	done
-else
-	text "I think this slot"
-	line "machine will pay"
-	cont "out…"
+	text "That old guy"
+	line "keeps winning!"
 
-	para "The odds vary"
-	line "among machines."
+	para "What is his"
+	line "secret!"
 	done
-endc
 
 CeladonGameCornerFisherText1:
-if DEF(_CRYSTAL_AU)
-	text "Whoa!"
+	text "I ate a whole"
+	line "LUCKY EGG this"
+	cont "morning!"
 
-	para "What? You want to"
-	line "play this machine?"
-
-	para "Here, take my"
-	line "coins."
+	para "I have increased"
+	line "luck stat for at"
+	cont "least 24 hours!"
 	done
-else
-	text "Gahahaha!"
-
-	para "The coins just"
-	line "keep popping out!"
-
-	para "Hm? What, kid? You"
-	line "want to play?"
-
-	para "I'll share my luck"
-	line "with you!"
-	done
-endc
 
 CeladonGameCornerFisherText2:
-	text "Gahahaha!"
+	text "TEAM ROCKET used"
+	line "to run this place."
 
-	para "It makes me feel"
-	line "good to do nice"
-
-	para "things for other"
-	line "people!"
+	para "Everybody knows"
+	line "they still secretly"
+	cont "do."
 	done
 
 CeladonGameCornerFisherNoCoinCaseText:
@@ -240,11 +206,6 @@ CeladonGameCornerFisherNoCoinCaseText:
 	done
 
 CeladonGameCornerFisherFullCoinCaseText:
-if DEF(_CRYSTAL_AU)
-	text "Your COIN CASE is"
-	line "full."
-	done
-else
 	text "Hey, your COIN"
 	line "CASE is full, kid."
 
@@ -252,52 +213,39 @@ else
 	line "a winning streak"
 	cont "too."
 	done
-endc
 
 CeladonGymGuideText:
 	text "Hey! CHAMP in"
 	line "making!"
 
 	para "Are you playing"
-if DEF(_CRYSTAL_AU)
-	line "too?"
-else
 	line "the slots too?"
-endc
 
-	para "I'm trying to get"
-	line "enough coins for a"
-	cont "prize #MON."
+	para "Look I need to"
+	line "get money somehow."
 
-	para "But I don't have"
-	line "enough coins yet…"
+	para "You don't pay me"
+	line "for sage advice."
 	done
 
 CeladonGameCornerGrampsText:
-if DEF(_CRYSTAL_AU)
-	text "Is there any"
-	line "difference between"
-	cont "these lines?"
-	done
-else
-	text "Hmmm… The odds are"
-	line "surely better for"
+	text "I used to keep"
+	line "an ABRA in my"
+	cont "coat to help with"
+	cont "the odds."
 
-	para "PIKACHU's line,"
-	line "but… What to do?"
+	para "But I have come"
+	line "to learn the error"
+	cont "of my ways."
+
+	para "SOLOSIS is way"
+	line "smaller."
+
+	para "I can fit several"
+	line "in my pockets."
 	done
-endc
 
 CeladonGameCornerPoster1Text:
-	text "Hey!"
-
-	para "Underneath this"
-	line "poster…"
-
-	para "There's nothing!"
-	done
-
-CeladonGameCornerPoster2Text:
 	text "Hey!"
 
 	para "Underneath this"
@@ -367,7 +315,7 @@ CeladonGameCorner_MapEvents:
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
 	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
-	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPoster2Script
+	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
 
 	def_object_events
 	object_event  5,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerClerkScript, -1

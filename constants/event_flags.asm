@@ -415,8 +415,10 @@
     const EVENT_BEAT_INVADER_MANUS
     const EVENT_BEAT_MAHOGANY_MURDERER
     const EVENT_MET_MAHOGANY_MURDERER
+    const EVENT_FOUGHT_CELADON_ANDREW
 
     ; ======================================
+    ; AndrewNote - here
     ; ======================================
 
 	const_next 600
@@ -1621,7 +1623,7 @@
     const EVENT_CAUGHT_XERNEAS
     const EVENT_CAUGHT_YVELTAL
 	const EVENT_BEAT_SILVER_CAVE_RIVAL
-	const EVENT_BEAT_SILVER_CAVE_EUSINE
+	const EVENT_BEAT_CELADON_EUSINE
 	const EVENT_BEAT_HOEN_ARMY
 	const EVENT_BEAT_LORD_OAK
 	const EVENT_ARCEUS_POKEBALL_NOT_PRESENT

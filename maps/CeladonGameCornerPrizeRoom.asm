@@ -219,27 +219,25 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	db "CANCEL@"
 
 CeladonGameCornerPrizeRoomGentlemanText:
-	text "I wanted PORYGON,"
-	line "but I was short by"
-	cont "100 coins…"
+	text "I want the BAGON"
+	line "but it's so"
+	cont "expensive!"
 	done
 
 CeladonGameCornerPrizeRoomPharmacistText:
-if DEF(_CRYSTAL_AU)
-	text "I don't want to"
-	line "lose my coins."
-	done
-else
-	text "Whew…"
+	text "OK."
 
-	para "I've got to stay"
-	line "calm and cool…"
+	para "It took me hours"
+	line "to win these coins."
 
-	para "I can't lose my"
-	line "cool, or I'll lose"
-	cont "all my money…"
+	para "I need to very"
+	cont "carefully decide"
+	cont "what to spend"
+	cont "them on!"
+
+	para "I wonder if TM42"
+	line "is any good!"
 	done
-endc
 
 CeladonPrizeRoom_PrizeVendorIntroText:
 	text "Welcome!"

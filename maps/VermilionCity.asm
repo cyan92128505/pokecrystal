@@ -411,7 +411,8 @@ Movement_VermilionPortTurnUp:
 TrainerSoldier6:
 	trainer SOLDIER, SOLDIER_6, EVENT_BEAT_SOLDIER_6, Soldier6SeenText, Soldier6BeatenText, Soldier6WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
+	;endifjustbattled
 	opentext
 	writetext Soldier6AfterBattleText
 	waitbutton
@@ -450,7 +451,8 @@ Soldier6AfterBattleText:
 TrainerSoldier7:
 	trainer SOLDIER, SOLDIER_7, EVENT_BEAT_SOLDIER_7, Soldier7SeenText, Soldier7BeatenText, Soldier7WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
+	;endifjustbattled
 	opentext
 	writetext Soldier7AfterBattleText
 	waitbutton
@@ -495,7 +497,8 @@ Soldier7AfterBattleText:
 TrainerSoldier8:
 	trainer SOLDIER, SOLDIER_8, EVENT_BEAT_SOLDIER_8, Soldier8SeenText, Soldier8BeatenText, Soldier8WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
+	;endifjustbattled
 	opentext
 	writetext Soldier8AfterBattleText
 	waitbutton

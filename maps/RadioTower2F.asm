@@ -56,6 +56,7 @@ TrainerGruntM4:
 	trainer GRUNTM, GRUNTM_4, EVENT_BEAT_ROCKET_GRUNTM_4, GruntM4SeenText, GruntM4BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	endifjustbattled
 	opentext
 	writetext GruntM4AfterBattleText
@@ -67,6 +68,7 @@ TrainerGruntF2:
 	trainer GRUNTF, GRUNTF_2, EVENT_BEAT_ROCKET_GRUNTF_2, GruntF2SeenText, GruntF2BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	endifjustbattled
 	opentext
 	writetext GruntF2AfterBattleText

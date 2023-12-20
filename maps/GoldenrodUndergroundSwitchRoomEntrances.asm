@@ -216,6 +216,7 @@ TrainerGruntF3:
 	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	endifjustbattled
 	opentext
 	writetext GruntF3AfterBattleText

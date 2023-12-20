@@ -17,10 +17,26 @@ FuchsiaPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 FuchsiaPokecenter1FCooltrainerMScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer FuchsiaPokecenter1FCooltrainerMText_Invaded
+.normal
 	jumptextfaceplayer FuchsiaPokecenter1FCooltrainerMText
+.saved
+    jumptextfaceplayer FuchsiaPokecenter1FCooltrainerMText_Saved
 
 FuchsiaPokecenter1FCooltrainerFScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer FuchsiaPokecenter1FCooltrainerFText_Invaded
+.normal
 	jumptextfaceplayer FuchsiaPokecenter1FCooltrainerFText
+.saved
+    jumptextfaceplayer FuchsiaPokecenter1FCooltrainerFText_Saved
 
 FuchsiaPokecenter1FJanineImpersonatorScript:
 	faceplayer
@@ -59,21 +75,61 @@ FuchsiaPokecenter1FJanineImpersonatorSpinMovement:
 	step_end
 
 FuchsiaPokecenter1FCooltrainerMText:
-	text "Hey! You have a"
-	line "brand new kind of"
-	cont "#DEX."
+	text "This city has a"
+	line "long and violent"
+	cont "history."
 
-	para "Did PROF.OAK give"
-	line "that to you?"
+	para "Lots of feuding"
+	line "ninja clans."
+	done
+
+FuchsiaPokecenter1FCooltrainerMText_Invaded:
+	text "Oh my ARCEUS."
+
+	para "This is it."
+
+	para "I'm going to die!"
+	done
+
+FuchsiaPokecenter1FCooltrainerMText_Saved:
+	text "You saved me!"
+
+	para "I owe you a life"
+	line "debt!"
+
+	para "I will be your"
+	line "servant anytime"
+	cont "you need anything."
 	done
 
 FuchsiaPokecenter1FCooltrainerFText:
-	text "I got quite a"
-	line "shock at the GYM."
+	text "Everyone at the"
+	line "GYM is in some"
+	cont "kind of disguise."
 
-	para "There were all"
-	line "these girls who"
-	cont "looked identical."
+	para "It's annoying!"
+	done
+
+FuchsiaPokecenter1FCooltrainerFText_Invaded:
+	text "I'm sending a"
+	line "message to my"
+	cont "mum..."
+
+	para "I love you..."
+
+	para "I'm sorry..."
+
+	para "Goodbye..."
+	done
+
+FuchsiaPokecenter1FCooltrainerFText_Saved:
+	text "You, you saved us."
+
+	para "Come here!"
+
+	para "kiss..."
+
+	para "Thank you."
 	done
 
 FuchsiaPokecenter1FJanineImpersonatorText1:

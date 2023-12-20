@@ -142,68 +142,127 @@ Route17HiddenMaxElixer:
 	hiddenitem MAX_ELIXER, EVENT_ROUTE_17_HIDDEN_MAX_ELIXER
 
 BikerRileySeenText:
-	text "Hey, you! You're"
-	line "from JOHTO, huh?"
+	text "Hey there kid."
+
+	para "Ah another"
+	line "JOHTO tourist!"
+
+	para "You have to pay"
+	line "a fee to continue."
+
+	para "Really."
+
+	para "Give me your"
+	line "wallet!"
 	done
 
 BikerRileyBeatenText:
-	text "Whoa, you kick!"
+	text "Ok, ok you"
+	cont "can go free."
 	done
 
 BikerRileyAfterBattleText:
-	text "Don't get cocky,"
-	line "you JOHTO punk!"
+	text "Route 17 is the"
+	line "best route!"
+
+	para "Far better than"
+	line "Route 8."
 	done
 
 BikerJoelSeenText:
-	text "Wow. That's a cool"
-	line "BICYCLE!"
+	text "We have a beef"
+	line "with the Route 8"
+	cont "Bikers."
+
+	para "We are the most"
+	line "ruthless and"
+	cont "mighty of all"
+	cont "Bikers!"
+
+	para "We aren't afraid"
+	line "of little girls."
 	done
 
 BikerJoelBeatenText:
-	text "But you don't just"
-	line "look cool…"
+	text "You are a real"
+	line "badass!"
 	done
 
 BikerJoelAfterBattleText:
-	text "I look cool, but"
-	line "I'm weak, so I'm"
-	cont "not really cool."
-
-	para "I have to train"
-	line "harder…"
+	text "Every year there"
+	line "are fewer and"
+	cont "fewer bikers on"
+	cont "this road."
 	done
 
 BikerGlennSeenText:
-	text "Hey! Want to have"
-	line "a speed battle?"
+	text "You are a tough"
+	line "trainer!"
+
+	para "And you have a"
+	line "nice bike."
+
+	para "You must join"
+	line "the brotherhood"
+	cont "of bikers!"
+
+	para "It is a"
+	line "challenging and"
+	cont "promising career."
 	done
 
 BikerGlennBeatenText:
-	text "Yikes! You've got"
-	line "awesome torque!"
+	text "It's ona and"
+	line "all for one."
 	done
 
 BikerGlennAfterBattleText:
-	text "Hands-free riding"
-	line "is considered cool"
-	cont "on CYCLING ROAD."
+	text "You know what"
+	line "you wouldn't make"
+	cont "a good biker."
+
+	para "You are just too"
+	line "clean looking."
+
+	para "Makes me sick."
 	done
 
 BikerCharlesSeenText:
-	text "We're fearless"
-	line "highway stars!"
+	text "I heard big bad"
+	line "ZEKE, the leader"
+	cont "of the Route 8"
+	cont "bikers..."
+
+	para "Is literally"
+	line "afraid of a"
+	cont "little girl!"
+
+	para "Hahahaha..."
+
+	para "Oh... ha...."
+
+	para "Now I am the"
+	line "undisputed most"
+	cont "powerful biker"
+	cont "in all KANTO!"
 	done
 
 BikerCharlesBeatenText:
-	text "Arrrgh! Crash and"
-	line "burn!"
+	text "I guess you"
+	line "are the best"
+	cont "trainer on a"
+	cont "bike."
 	done
 
 BikerCharlesAfterBattleText:
-	text "Reckless driving"
-	line "causes accidents!"
-	cont "Take it easy!"
+    text "I can always make"
+    line "myself feel happy"
+    cont "I just need to"
+    cont "think about poor"
+	cont "wee ZEKE!"
+
+	para "Little girls sure"
+	line "are scary!"
 	done
 
 Route17_MapEvents:

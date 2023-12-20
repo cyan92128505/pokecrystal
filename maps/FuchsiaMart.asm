@@ -15,24 +15,89 @@ FuchsiaMartClerkScript:
 	end
 
 FuchsiaMartFisherScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer FuchsiaMartFisherText_Invaded
+.normal
 	jumptextfaceplayer FuchsiaMartFisherText
+.saved
+    jumptextfaceplayer FuchsiaMartFisherText_Saved
 
 FuchsiaMartCooltrainerFScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iffalse .normal
+    jumptextfaceplayer FuchsiaMartCooltrainerFText_Invaded
+.normal
 	jumptextfaceplayer FuchsiaMartCooltrainerFText
+.saved
+    jumptextfaceplayer FuchsiaMartCooltrainerFText_Saved
 
 FuchsiaMartFisherText:
-	text "I was hoping to"
-	line "buy some SAFARI"
+	text "Aw cool I can"
+	line "buy MAX REVIVE"
+	cont "here!"
 
-	para "ZONE souvenirs,"
-	line "but it's closed…"
+	para "It's very rare"
+	line "and powerful."
+	done
+
+FuchsiaMartFisherText_Invaded:
+	text "Clerk!"
+
+	para "I need all the"
+	line "MAX REVIVE you"
+	cont "got in stock."
+
+	para "I'm getting out"
+	line "of here."
+	done
+
+FuchsiaMartFisherText_Saved:
+	text "It's you!"
+
+	para "The saviour of"
+	line "us all."
+
+	para "Please allow me"
+	line "to but you some"
+	cont "MAX REVIVE!"
 	done
 
 FuchsiaMartCooltrainerFText:
-	text "The SAFARI ZONE"
-	line "WARDEN's grand-"
-	cont "daughter lives in"
-	cont "town."
+	text "I wanted to be"
+	line "a GYM trainer"
+	cont "but I would"
+	cont "need to dress up"
+	cont "as JANINE."
+
+	para "Such vanity!"
+	done
+
+FuchsiaMartCooltrainerFText_Invaded:
+	text "I saw it!"
+
+	para "A GROUDON!"
+
+	para "I thought it was"
+	line "going to eat me."
+
+	para "My heart is"
+	line "racing!"
+	done
+
+FuchsiaMartCooltrainerFText_Saved:
+	text "Yo saved me!"
+
+	para "I'm not going to"
+	line "end up as a"
+	cont "GROUDON snack."
+
+	para "I don't know how"
+	line "I can thank you!"
 	done
 
 FuchsiaMart_MapEvents:

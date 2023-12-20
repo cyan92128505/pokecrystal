@@ -542,6 +542,7 @@ TrainerGruntM19:
 	trainer GRUNTM, GRUNTM_19, EVENT_BEAT_ROCKET_GRUNTM_19, GruntM19SeenText, GruntM19BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	endifjustbattled
 	opentext
 	writetext GruntM19AfterBattleText

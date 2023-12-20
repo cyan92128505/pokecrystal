@@ -38,6 +38,10 @@ FuchsiaCity_MapScripts:
 LatiasScript:
 	faceplayer
 	opentext
+    special GetFirstPokemonHappiness
+	ifgreater 225 - 1, .battle
+    sjump .notHappy
+.battle
 	writetext LatiasCry
 	cry LATIAS
 	pause 15
@@ -79,35 +83,60 @@ LatiasScript:
     setevent EVENT_CAUGHT_LATIAS
 	disappear FUCHSIACITY_LATIAS
 	end
+.notHappy
+    writetext LatiasNotHappyText
+    waitbutton
+    closetext
+    end
+
+LatiasNotHappyText:
+    text "...."
+
+    para "#MON...."
+
+    para "Sad...."
+    done
 
 LatiasCry:
     text "...."
 
-    para "...."
+    para "#MON...."
 
-    para "...."
+    para "Loves you!"
     done
 
 FuchsiaCityYoungster:
-    checkevent EVENT_BEAT_SOLDIER_9
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
     iffalse .normal
     jumptextfaceplayer InvadedFuchsiaCityYoungsterText
 .normal
 	jumptextfaceplayer FuchsiaCityYoungsterText
+.saved
+    jumptextfaceplayer FuchsiaCityYoungsterText_Saved
 
 FuchsiaCityPokefanM:
-    checkevent EVENT_BEAT_SOLDIER_9
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
     iffalse .normal
     jumptextfaceplayer InvadedFuchsiaCityPokefanMText
 .normal
 	jumptextfaceplayer FuchsiaCityPokefanMText
+.saved
+    jumptextfaceplayer FuchsiaCityPokefanMText_Saved
 
 FuchsiaCityTeacher:
-    checkevent EVENT_BEAT_SOLDIER_9
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .saved
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
     iffalse .normal
     jumptextfaceplayer InvadedFuchsiaCityTeacherText
 .normal
 	jumptextfaceplayer FuchsiaCityTeacherText
+.saved
+    jumptextfaceplayer FuchsiaCityTeacherText_Saved
 
 FuchsiaCitySign:
 	jumptext FuchsiaCitySignText
@@ -144,10 +173,35 @@ FuchsiaCityYoungsterText:
 
 	para "We will never"
 	line "forget you KOGA."
+
+	para "You fought and"
+	line "died for us."
+	done
+
+FuchsiaCityYoungsterText_Saved:
+	text "You put your"
+	line "life on the line"
+	cont "to save us all."
+
+	para "I know KOGA would"
+	line "be proud of you."
+
+	para "Everybody else"
+	line "sure is."
+
+	para "Thank you"
+	line "CHAMPION <PLAYER>."
 	done
 
 InvadedFuchsiaCityYoungsterText:
 	text "We have fallen."
+
+	para "WALLACE..."
+
+	para "I understand why"
+	line "he is so feared."
+
+	para "His #MON!"
 
 	para "But I would"
 	line "rather go down"
@@ -163,6 +217,28 @@ FuchsiaCityPokefanMText:
 	para "the GYM LEADER"
 	line "after he fell"
 	cont "in battle."
+
+	para "We are all very"
+	line "proud of her."
+
+	para "Especially her"
+	line "grandmother."
+	done
+
+FuchsiaCityPokefanMText_Saved:
+	text "Thank you"
+	line "CHAMPION!"
+
+	para "You saved all of"
+	line "KANTO."
+
+	para "We should build"
+	line "a statue in your"
+	cont "honor."
+
+	para "I'll make it my"
+	line "life mission to"
+	cont "build it!"
 	done
 
 InvadedFuchsiaCityPokefanMText:
@@ -172,6 +248,10 @@ InvadedFuchsiaCityPokefanMText:
 	para "WALLACE himself"
 	line "insisted on"
 	cont "fighting her."
+
+	para "I thought he"
+	line "was going to"
+	cont "kill her."
 
 	para "his #MON!"
 
@@ -184,11 +264,34 @@ InvadedFuchsiaCityPokefanMText:
 
 FuchsiaCityTeacherText:
 	text "The SAFARI ZONE is"
-	line "closed… It's sad,"
+	line "now used as"
+	cont "military training"
+	cont "grounds."
 
-	para "It is now used"
-	line "as military"
-	cont "training grounds."
+	para "It is closed to"
+	line "all civilians."
+	done
+
+FuchsiaCityTeacherText_Saved:
+	text "You beat him!"
+
+	para "You beat WALLACE"
+	line "and his god like"
+	cont "#MON!"
+
+	para "You are so young."
+
+	para "I hope the world"
+	line "treats you right."
+
+	para "I hope you will"
+	line "always defend the"
+	cont "helpless."
+
+	para "Thank you <PLAYER>."
+
+	para "The greatest of"
+	line "CHAMPIONS!"
 	done
 
 InvadedFuchsiaCityTeacherText:
@@ -197,11 +300,25 @@ InvadedFuchsiaCityTeacherText:
 	cont "grounds with his"
 	cont "troops."
 
-	para "His #MON!"
+	para "I saw it."
 
-	para "They are strong"
-	line "but are weak to"
-	cont "GRASS moves."
+	para "A tidal wave"
+	line "crashed onto the"
+	cont "shore."
+
+	para "An earthquake"
+	line "ripped the earth"
+	cont "apart."
+
+	para "The heavens split"
+	line "and he descended on"
+	cont "a living throne."
+
+	para "His three gods"
+	line "among #MON."
+
+	para "None can defeat"
+	line "him."
 	done
 
 FuchsiaCitySignText:
@@ -235,19 +352,16 @@ WardensHomeSignText:
 	done
 
 SafariZoneClosedSignText:
-	text "The WARDEN is"
-	line "traveling abroad."
-
-	para "Therefore, the"
-	line "SAFARI ZONE is"
-	cont "closed."
+	text "The position of"
+	line "WARDEN is no"
+	cont "longer required."
 	done
 
 NoLitteringSignText:
 	text "No littering."
 
-	para "Please take your"
-	line "waste with you."
+	para "Do so at your"
+	line "own risk!"
 	done
 	
 FuchsiaGymBlockScript:

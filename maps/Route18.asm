@@ -59,39 +59,50 @@ Route18Sign:
 	jumptext Route18SignText
 
 BirdKeeperBorisSeenText:
-	text "If you're looking"
-	line "for #MON, you"
+	text "I don't have a"
+	line "bike so I used"
+	cont "my #MON to"
+	cont "FLY to FUCHSIA."
 
-	para "have to look in"
-	line "the tall grass."
+	para "Bikes are for"
+	line "the poor."
 	done
 
 BirdKeeperBorisBeatenText:
-	text "Ayieee!"
+	text "Time to fly."
 	done
 
 BirdKeeperBorisAfterBattleText:
-	text "Since you're so"
-	line "strong, it must be"
-	cont "fun to battle."
+	text "Once you are"
+	line "able to FLY the"
+	cont "world becomes"
+	cont "small."
 	done
 
 BirdKeeperBobSeenText:
-	text "CYCLING ROAD is a"
-	line "quick shortcut to"
-	cont "CELADON."
+	text "I've looked all"
+	line "over KANTO."
+
+	para "Every little nook"
+	line "and cave."
+
+	para "I can't find the"
+	line "FLY TM."
+
+	para "Where is it!"
 	done
 
 BirdKeeperBobBeatenText:
-	text "…Whew!"
+	text "Where."
 	done
 
 BirdKeeperBobAfterBattleText:
-	text "If you don't have"
-	line "a BICYCLE, you're"
+	text "Wait so it's in"
+	line "JOHTO."
 
-	para "not allowed to use"
-	line "the shortcut."
+	para "Good thing my"
+	line "#MON learnt"
+	cont "it by level up."
 	done
 
 Route18SignText:

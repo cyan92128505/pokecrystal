@@ -17,12 +17,35 @@ BillsBrotherText:
 	text "My grandpa is at "
 	line "my brother BILL's"
 	cont "on CERULEAN CAPE."
+
+	para "BILL has all the"
+	line "money and fame."
+
+	para "We all know he"
+	line "is dads favorite."
+
+	para "Every holiday we"
+	line "get together and"
+	cont "it's just BILL"
+	cont "talking non stop"
+	cont "about himself."
+
+	para "I wish I could"
+	line "shut him up!"
 	done
 
 BillsBrothersHouseYoungsterText:
-	text "I saw these weird,"
-	line "slow #MON on"
-	cont "CYCLING ROAD."
+	text "We love #MON"
+	line "in our family."
+
+	para "My older brother"
+	line "BILL is so smart."
+
+	para "I wish I could"
+	line "be more like him."
+
+	para "Our older brother"
+	line "is jealous though."
 	done
 
 BillsBrothersHouse_MapEvents:

@@ -143,10 +143,8 @@ GameFreakProgrammerText:
 	cont "game has these"
 	cont "features."
 
-	para "Aggressive field"
-	line "#MON was"
-	cont "also full of"
-	cont "messy hacks."
+	para "The AI also needed"
+	line "some real buffs!"
 	done
 
 GameFreakCharacterDesignerText:

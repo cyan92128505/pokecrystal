@@ -252,23 +252,30 @@ Movement_NinjaSpin:
 	step_end
 
 JanineText_DisappointYou:
-	text "Fufufufu…"
+	text "Well done!"
 
-	para "I'm sorry to dis-"
-	line "appoint you…"
+	para "You found me!"
 
-	para "I'm only joking!"
+	para "After dad was"
+	line "murdered I took"
+	cont "over the GYM."
 
-	para "I'm the real deal!"
+	para "I train everyday"
+	line "in honor of his"
+	cont "memory."
 
-	para "JANINE of FUCHSIA"
-	line "GYM, that's me!"
+	para "I will make him"
+	line "proud."
+
+	para "He will be"
+	line "avenged!"
 	done
 
 JanineText_ToughOne:
-	text "JANINE: You're a"
-	line "tough one. You"
-	cont "definitely won…"
+	text "You are tough."
+
+	para "Our battle helped"
+	line "me get stronger."
 
 	para "Here's SOULBADGE."
 	line "Take it."
@@ -280,27 +287,44 @@ Text_ReceivedSoulBadge:
 	done
 
 JanineText_ToxicSpeech:
-	text "JANINE: You're so"
-	line "tough! I have a"
-	cont "special gift!"
+	text "You are tough."
 
-	para "It's TOXIC, a pow-"
-	line "erful poison that"
+	para "But even the most"
+	line "tough people can"
+	cont "worn down slowly."
 
-	para "steadily saps the"
-	line "victim's HP."
+	para "Taken apart piece"
+	line "by piece."
+
+	para "That's what life"
+	line "does to you."
+
+	para "This move runs in"
+	line "my family."
+
+	para "It represents the"
+	line "the slow never"
+	cont "ending assault of"
+	cont "life."
 	done
 
 JanineText_ApplyMyself:
-	text "JANINE: I'm going"
-	line "to really apply"
+	text "I keep going"
+	line "through the pain."
 
-	para "myself and improve"
-	line "my skills."
+	para "I am young and I"
+	line "am small but I"
+	cont "am tough."
 
-	para "I want to become"
-	line "better than both"
-	cont "Father and you!"
+	para "Dad did not lose"
+	line "his life for no"
+	cont "reason."
+
+	para "I will give his"
+	line "sacrifice meaning."
+
+	para "But I'll never"
+	line "stop missing him."
 	done
 
 LassAliceBeforeText:
@@ -314,80 +338,118 @@ LassAliceBeforeText:
 	done
 
 LassAliceBeatenText:
-	text "I had you fooled…"
+	text "I had you fooled."
 	done
 
 LassAliceAfterText:
 	text "How will you dis-"
 	line "tinguish our real"
 	cont "LEADER?"
+
+	para "You can't."
+
+	para "Our disguise is"
+	line "perfect."
 	done
 
 LassLindaBeforeText:
-	text "Fooled you!"
-	line "Hahaha!"
+	text "My trap card!"
+
+	para "You activated it."
 	done
 
 LassLindaBeatenText:
-	text "Ooh… I lost…"
-	line "You're not weak…"
+	text "Wrong anime!"
 	done
 
 LassLindaAfterText:
-	text "Well? Wasn't my"
-	line "disguise perfect?"
+	text "You play your"
+	line "cards well."
+
+	para "We all play with"
+	line "the cards we are"
+	cont "dealt."
 	done
 
 PicnickerCindyBeforeText:
-	text "I'm JANINE!"
+	text "Yep well done."
 
-	para "How did you know I"
-	line "was real?"
+	para "I'm the real GYM"
+	line "LEADER."
 
-	para "Let's battle!"
+	para "Really!"
+
+	para "Beat me and get"
+	line "a BADGE."
 	done
 
 PicnickerCindyBeatenText:
-	text "Darn it!"
-	line "I wanted to win!"
+	text "Just kidding!"
 	done
 
 PicnickerCindyAfterText:
-	text "You must be"
-	line "getting tired."
+	text "I'm not the real"
+	line "GYM LEADER."
+
+	para "I'm nowhere near"
+	line "as strong as"
+	cont "JANINE!"
 	done
 
 CamperBarryBeforeText:
-	text "Wahahaha!"
+	text "Hoha!"
 
-	para "You betcha!"
-	line "I'm JANINE!"
+	para "Yes I'm a man!"
+
+	para "Did my teen girl"
+	line "disguise fool you?"
+
+	para "Hahaha..."
+
+	para "It always does."
 	done
 
 CamperBarryBeatenText:
-	text "My disguise was"
-	line "right on! Dang!"
+	text "I tore my dress!"
 	done
 
 CamperBarryAfterText:
-	text "Hey, you. Was my"
-	line "disguise cute or"
-	cont "what, huh?"
+	text "Now be honest."
+
+	para "You thought I"
+	line "was quite pretty"
+	cont "didn't you..."
+
+	para "Aw I see you"
+	line "blushing!"
 	done
 
 FuchsiaGymGuideText:
-	text "Yo, CHAMP in"
-	line "making!"
+	text "This GYM is full"
+	line "of people dressed"
+	cont "as JANINE the"
+	cont "LEADER."
 
-	para "Whoops! Take a"
-	line "good look around"
+	para "You will just"
+	line "have to fight"
+	cont "them all!"
 
-	para "you. The trainers"
-	line "all look like the"
-	cont "LEADER, JANINE."
+	para "This gym has no"
+	line "single type but"
+	cont "seems to favor"
+	cont "POISON."
 
-	para "Which of them is"
-	line "the real JANINE?"
+	para "POISON isn't a"
+	line "very good type."
+
+	para "A strong PSYCHIC"
+	line "TYPE should make"
+	cont "easy work of this."
+
+	para "But what do I"
+	line "know."
+
+	para "I'm not a trainer."
 	done
 
 FuchsiaGymGuideWinText:

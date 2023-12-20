@@ -3024,7 +3024,8 @@ wHandOfGod:: db
 wBattleMusicOverride:: ds 2
 wShinyOverride:: db
 wRunningShoesOn:: db
-	ds 8
+wNoRematch:: db
+	ds 7
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

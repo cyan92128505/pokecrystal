@@ -35,6 +35,7 @@ TrainerGruntM24:
 	trainer GRUNTM, GRUNTM_24, EVENT_BEAT_ROCKET_GRUNTM_24, GruntM24SeenText, GruntM24BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	endifjustbattled
 	opentext
 	writetext GruntM24AfterBattleText

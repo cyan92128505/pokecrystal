@@ -33,8 +33,10 @@ AlreadyBeatenTrainerScript:
 ; AndrewNote - rematch all trainers
 RematchScript:
     scall AlreadyBeatenTrainerScript
-    ;callasm rematchTrainerClass
-    ;iffalse .end
+    readmem wNoRematch
+    iftrue .noRematch
+    ;callasm noRematchTrainerClass
+    ;iftrue .end
 	opentext
 	writetext RematchText
 	yesorno
@@ -47,15 +49,17 @@ RematchScript:
 	writetext RematchRefuseText
 	waitbutton
 	closetext
-;.end
 	end
+.noRematch
+    loadmem wNoRematch, 0
+    end
 
-;rematchTrainerClass:
+;noRematchTrainerClass:
 ;	xor a
 ;	ld [wScriptVar], a
 ;	ld a, [wOtherTrainerClass]
-;	cp WALLACE
-;	ret z
+;	cp SOLDIER
+;	ret nz
 ;	ld a, $1
 ;	ld [wScriptVar], a
 ;	ret

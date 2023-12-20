@@ -849,99 +849,267 @@ LeonAfterBattleText:
 TrainerSoldier1:
 	trainer SOLDIER, SOLDIER_1, EVENT_BEAT_SOLDIER_1, Soldier1SeenText, Soldier1BeatenText, Soldier1WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
 	opentext
 	writetext Soldier1AfterBattleText
 	waitbutton
 	closetext
 	end
 Soldier1SeenText:
-    text "You can't win!"
+    text "Do you actually"
+    line "believe that a"
+    cont "single child like"
+    cont "you stands a"
+    cont "chance against"
+    cont "HOENs most elite"
+    cont "soldiers."
+    para "Your hubris will"
+    cont "Get you killed."
     done
 Soldier1BeatenText:
-    text "Damn!"
+    text "You are too late."
     done
 Soldier1WinsText:
-    text "You fool!"
+    text "You're lucky I"
+    line "didn't kill you."
     done
 Soldier1AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "More reinforcements"
+    line "will be pouring in."
+
+    para "Ah my lieutenants"
+    line "are reporting now!"
+
+    para "...."
+
+    para "Yes...."
+
+    para "What do you mean"
+    line "LT SURGE is free!"
+
+    para "...."
+
+    para "Raining down"
+    line "thunder on our"
+    cont "ships."
+
+    para "...."
+
+    para "While singing"
+    line "about ELECTRODES!"
+
+    para "...."
+
+    para "Damn!!!"
     done
 
 TrainerSoldier2:
 	trainer SOLDIER, SOLDIER_2, EVENT_BEAT_SOLDIER_2, Soldier2SeenText, Soldier2BeatenText, Soldier2WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
 	opentext
 	writetext Soldier2AfterBattleText
 	waitbutton
 	closetext
 	end
 Soldier2SeenText:
-    text "You can't win!"
+    text "So you caused the"
+    line "trouble in"
+    cont "VERMILION."
+
+    para "We have been"
+    line "preparing this"
+    cont "invasion for"
+    cont "years!"
+
+    para "You and everyone"
+    line "you love will"
+    cont "die because of"
+    cont "your actions!"
     done
 Soldier2BeatenText:
-    text "Damn!"
+    text "My commanders"
+    line "will end you!"
     done
 Soldier2WinsText:
-    text "You fool!"
+    text "Sleep now."
     done
 Soldier2AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "Our air units are"
+    line "on theor way as"
+    cont "we speak."
+
+    para "Here's their"
+    line "progress report"
+    cont "coimg now."
+
+    para "...."
+
+    para "What was that?"
+    line "Speak up!"
+
+    para "...."
+
+    para "Too fast to see!"
+
+    para "DRAGONS"
+
+    para "...."
+
+    para "............"
+
+    para "Damn!"
+
+    para "Lance got here"
+    line "quicker than"
+    cont "expected!"
     done
 
 TrainerSoldier3:
 	trainer SOLDIER, SOLDIER_3, EVENT_BEAT_SOLDIER_3, Soldier3SeenText, Soldier3BeatenText, Soldier3WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
 	opentext
 	writetext Soldier3AfterBattleText
 	waitbutton
 	closetext
 	end
 Soldier3SeenText:
-    text "You can't win!"
+    text "KANTO will burn!"
+
+    para "It is too late."
+
+    para "Our reinforcements"
+    line "have made it past"
+    cont "SURGE and will be"
+    cont "taking SAFFRON"
+    cont "shortly."
+
+    para "You have failed."
+
+    para "And now..."
+
+    para "You will die."
     done
 Soldier3BeatenText:
-    text "Damn!"
+    text "It's...."
+
+    para "It's no use..."
     done
 Soldier3WinsText:
-    text "You fool!"
+    text "Your name will"
+    line "not be remembered."
     done
 Soldier3AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "It's over!"
+
+    para "Our forces have"
+    line "taken SAFFRON."
+
+    para "Listen yourself."
+
+    para "...."
+
+    para "Yes Captain, have"
+    line "you taken SAFFRON."
+
+    para "...."
+
+    para "There are two GYMs"
+
+    para "...."
+
+    para "Fighting together."
+
+    para "Well surly you"
+    line "can handle...."
+
+    para "...."
+
+    para "A #MON as"
+    line "big as a building!"
+
+    para "With psychic armour."
+
+    para "Impossible to win!"
+
+    para "...."
+
+    para "None of it matters."
+
+    para "ADMIRAL DRAKE"
+    line "will end them all."
+
+    para "Starting with you."
     done
 
 TrainerSoldier4:
 	trainer SOLDIER, SOLDIER_4, EVENT_BEAT_SOLDIER_4, Soldier1SeenText, Soldier4BeatenText, Soldier4WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
 	opentext
 	writetext Soldier4AfterBattleText
 	waitbutton
 	closetext
 	end
 Soldier4SeenText:
-    text "You can't win!"
+    text "I am ADMIRAL"
+    line "DRAKE."
+
+    para "I have commanded"
+    line "the HOEN army"
+    cont "since before you"
+    cont "were born."
+
+    para "I have killed"
+    line "many people."
+
+    para "All just faces"
+    line "in my memory."
+
+    para "I can push them"
+    line "all down without"
+    cont "thinking about it"
+    cont "at this point."
+
+    para "I am sorry."
+
+    para "You will be just"
+    line "another face."
     done
 Soldier4BeatenText:
-    text "Damn!"
+    text "Remarkable"
     done
 Soldier4WinsText:
-    text "You fool!"
+    text "Forgive me."
     done
 Soldier4AfterBattleText:
-    text "Some stuff is"
-    line "happening."
+    text "Listen."
+
+    para "I have lived many"
+    line "decades."
+
+    para "Never have I met"
+    line "one with such raw"
+    cont "potential as you."
+
+    para "Run away now."
+
+    para "I won't tell"
+    line "anyone."
+
+    para "Live to grow and"
+    line "learn and fight."
+
+    para "Live to save"
+    line "your country."
     done
 
 TrainerSoldier5:
 	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier1SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
 .Script:
-	endifjustbattled
+    loadmem wNoRematch, 1
+	;endifjustbattled
 	opentext
 	writetext Soldier5AfterBattleText
 	waitbutton

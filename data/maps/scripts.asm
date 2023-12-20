@@ -315,16 +315,6 @@ INCLUDE "maps/SafariZoneMainOffice.asm"
 INCLUDE "maps/FuchsiaGym.asm"
 INCLUDE "maps/BillsBrothersHouse.asm"
 INCLUDE "maps/FuchsiaPokecenter1F.asm"
-;INCLUDE "maps/FuchsiaPokecenter2FBeta.asm"
-INCLUDE "maps/SafariZoneWardensHome.asm"
-INCLUDE "maps/Route15FuchsiaGate.asm"
-INCLUDE "maps/CherrygroveMart.asm"
-INCLUDE "maps/CherrygrovePokecenter1F.asm"
-INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
-INCLUDE "maps/GuideGentsHouse.asm"
-INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
-INCLUDE "maps/Route31VioletGate.asm"
-
 
 SECTION "Map Scripts 19", ROMX
 
@@ -419,10 +409,9 @@ SECTION "Map Scripts Overflow 2", ROMX
 INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
-INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/Museum.asm"
-INCLUDE "maps/LavenderForest.asm"
 INCLUDE "maps/VermilionCity.asm"
+INCLUDE "maps/LavenderForest.asm"
 
 SECTION "Map Scripts Overflow 3", ROMX
 
@@ -518,3 +507,12 @@ INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
 INCLUDE "maps/CeladonCafe.asm"
 INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
+INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
+INCLUDE "maps/GuideGentsHouse.asm"
+INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
+INCLUDE "maps/Route31VioletGate.asm"
+INCLUDE "maps/SafariZoneWardensHome.asm"
+INCLUDE "maps/Route15FuchsiaGate.asm"
+INCLUDE "maps/CherrygroveMart.asm"
+INCLUDE "maps/CherrygrovePokecenter1F.asm"
+INCLUDE "maps/PewterCity.asm"

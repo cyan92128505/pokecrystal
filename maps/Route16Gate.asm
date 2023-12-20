@@ -37,15 +37,13 @@ Route16GateOfficerText:
 	text "CYCLING ROAD"
 	line "starts here."
 
-	para "It's all downhill,"
-	line "so it's totally"
-	cont "exhilarating."
+	para "It's all downhill"
+	line "and you need a"
+	cont "BICYCLE."
 
-	para "It's a great sort"
-	line "of feeling that"
-
-	para "you can't get from"
-	line "a ship or train."
+	para "But be only the"
+	line "lookout for"
+	cont "other bikers."
 	done
 
 Route16GateCannotPassText:
@@ -56,6 +54,9 @@ Route16GateCannotPassText:
 
 	para "ROAD without a"
 	line "BICYCLE."
+
+	para "Such a thing"
+	line "would be madness."
 	done
 
 Route16Gate_MapEvents:

@@ -210,7 +210,21 @@ CherrygroveSilverSceneNorth:
 	end
 
 CherrygroveTeacherScript:
-    jumptextfaceplayer CherrygroveTeacherText
+    faceplayer
+    opentext
+    writetext CherrygroveTeacherText
+    waitbutton
+    checkevent EVENT_CHERRYGROVE_POKEDOLL
+    iffalse .giveDoll
+    closetext
+    end
+.giveDoll
+    writetext CherrygroveTeacherGiveDollText
+    waitbutton
+    verbosegiveitem POKE_DOLL
+    setevent EVENT_CHERRYGROVE_POKEDOLL
+    closetext
+    end
 
 CherrygroveYoungsterScript:
 	faceplayer
@@ -596,7 +610,20 @@ CherrygroveTeacherText:
     cont "you!"
 
     para "And you can't"
-    line "escape from them!"
+    line "escape from them"
+    cont "unless you use a"
+    cont "#DOLL."
+
+    para "I have no idea"
+    line "where you can buy"
+    cont "them though."
+    done
+
+CherrygroveTeacherGiveDollText:
+    text "Here is one I"
+    line "found."
+
+    para "You can have it."
     done
 
 CherrygroveYoungsterText_NoPokedex:

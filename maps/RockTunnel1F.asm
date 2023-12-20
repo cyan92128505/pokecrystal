@@ -58,7 +58,7 @@ RockTunnel1FPokemonAttacksText:
 	done
 
 RockTunnel1FElixer:
-	itemball ELIXER
+	itemball POKE_DOLL
 
 RockTunnel1FTMSteelWing:
 	itemball METAL_COAT

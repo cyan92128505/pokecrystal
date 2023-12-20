@@ -117,7 +117,7 @@ BurnedTowerB1FEusine:
 	end
 
 BurnedTowerB1FTMEndure:
-	itemball MAX_REVIVE
+	itemball POKE_DOLL
 
 BurnedTowerB1FBoulder:
 	jumpstd StrengthBoulderScript

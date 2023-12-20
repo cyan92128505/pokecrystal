@@ -82,7 +82,7 @@ TrainerSupernerdHugh:
 	end
 
 MountMortar2FInsideMaxPotion:
-	itemball MAX_POTION
+	itemball POKE_DOLL
 
 MountMortar2FInsideRareCandy:
 	itemball RARE_CANDY

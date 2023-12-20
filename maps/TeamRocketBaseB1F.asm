@@ -576,7 +576,7 @@ TeamRocketBaseB1FNugget:
 	itemball NUGGET
 
 TeamRocketBaseB1FGuardSpec:
-	itemball GUARD_SPEC
+	itemball POKE_DOLL
 
 TeamRocketBaseB1FHiddenRevive:
 	hiddenitem REVIVE, EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE

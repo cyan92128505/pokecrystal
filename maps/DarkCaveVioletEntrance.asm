@@ -28,7 +28,7 @@ DarkCaveVioletEntrancePotion:
 	itemball RED_EYE_ORB
 
 DarkCaveVioletEntranceFullHeal:
-	itemball FULL_HEAL
+	itemball POKE_DOLL
 
 DarkCaveVioletEntranceHyperPotion:
 	itemball HYPER_POTION

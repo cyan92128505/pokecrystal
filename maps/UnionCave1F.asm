@@ -89,7 +89,7 @@ UnionCave1FXAttack:
 	itemball HARD_STONE
 
 UnionCave1FPotion:
-	itemball POTION
+	itemball POKE_DOLL
 
 UnionCave1FAwakening:
 	itemball AWAKENING

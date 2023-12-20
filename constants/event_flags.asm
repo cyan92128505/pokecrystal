@@ -416,6 +416,7 @@
     const EVENT_BEAT_MAHOGANY_MURDERER
     const EVENT_MET_MAHOGANY_MURDERER
     const EVENT_FOUGHT_CELADON_ANDREW
+    const EVENT_CHERRYGROVE_POKEDOLL
 
     ; ======================================
     ; AndrewNote - here

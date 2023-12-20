@@ -171,7 +171,7 @@ IlexForestRevive:
 	itemball REVIVE
 
 IlexForestXAttack:
-	itemball X_ATTACK
+	itemball POKE_DOLL
 
 IlexForestAntidote:
 	itemball ANTIDOTE

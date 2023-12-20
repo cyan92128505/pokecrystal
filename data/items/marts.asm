@@ -102,12 +102,11 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 6 ; # items
+	db 5 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db REVIVE
 	db FULL_HEAL
-	db POKE_DOLL
 	db FLOWER_MAIL
 	db -1 ; end
 

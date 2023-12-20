@@ -35,8 +35,6 @@ RematchScript:
     scall AlreadyBeatenTrainerScript
     readmem wNoRematch
     iftrue .noRematch
-    ;callasm noRematchTrainerClass
-    ;iftrue .end
 	opentext
 	writetext RematchText
 	yesorno
@@ -53,16 +51,6 @@ RematchScript:
 .noRematch
     loadmem wNoRematch, 0
     end
-
-;noRematchTrainerClass:
-;	xor a
-;	ld [wScriptVar], a
-;	ld a, [wOtherTrainerClass]
-;	cp SOLDIER
-;	ret nz
-;	ld a, $1
-;	ld [wScriptVar], a
-;	ret
 
 RematchText:
     text "How about a"

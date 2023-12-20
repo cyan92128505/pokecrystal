@@ -411,7 +411,6 @@ INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
 INCLUDE "maps/Museum.asm"
 INCLUDE "maps/VermilionCity.asm"
-INCLUDE "maps/LavenderForest.asm"
 
 SECTION "Map Scripts Overflow 3", ROMX
 
@@ -516,3 +515,4 @@ INCLUDE "maps/Route15FuchsiaGate.asm"
 INCLUDE "maps/CherrygroveMart.asm"
 INCLUDE "maps/CherrygrovePokecenter1F.asm"
 INCLUDE "maps/PewterCity.asm"
+INCLUDE "maps/LavenderForest.asm"

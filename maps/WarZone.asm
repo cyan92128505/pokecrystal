@@ -877,7 +877,7 @@ Soldier1AfterBattleText:
     text "More reinforcements"
     line "will be pouring in."
 
-    para "Ah my lieutenants"
+    para "Ah my Lieutenants"
     line "are reporting now!"
 
     para "...."
@@ -936,12 +936,12 @@ Soldier2WinsText:
     done
 Soldier2AfterBattleText:
     text "Our air units are"
-    line "on theor way as"
+    line "on their way as"
     cont "we speak."
 
     para "Here's their"
     line "progress report"
-    cont "coimg now."
+    cont "coming now."
 
     para "...."
 
@@ -1053,6 +1053,62 @@ TrainerSoldier4:
 	closetext
 	end
 Soldier4SeenText:
+    text "You are walking"
+    line "into your doom."
+
+    para "Any moment now"
+    line "floods more"
+    cont "soldiers will"
+    cont "converge upon"
+    cont "FUCHSIA."
+
+    para "Even if you beat"
+    line "me..."
+
+    para "WALLACE will kill"
+    line "everyone!"
+    done
+Soldier4BeatenText:
+    text "Let it burn!"
+    line "Let it al burn!"
+    done
+Soldier4WinsText:
+    text "I'll slit your"
+    line "throat quick."
+    done
+Soldier4AfterBattleText:
+    text "You aren't nearly"
+    line "strong enough to"
+    cont "beat WALLACE."
+
+    para "I haven't heard"
+    line "anything from my"
+    cont "troops."
+
+    para "Maybe LANCE,"
+    line "CYNTHIA and LEON"
+    cont "have all come to"
+    cont "your rescue."
+
+    para "It doesn't matter."
+
+    para "WALLACE can not"
+    line "lose."
+
+    para "WALLACE and HOEN"
+    line "will live forever."
+    done
+
+TrainerSoldier5:
+	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier1SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
+.Script:
+    loadmem wNoRematch, 1
+	opentext
+	writetext Soldier5AfterBattleText
+	waitbutton
+	closetext
+	end
+Soldier5SeenText:
     text "I am ADMIRAL"
     line "DRAKE."
 
@@ -1077,13 +1133,13 @@ Soldier4SeenText:
     para "You will be just"
     line "another face."
     done
-Soldier4BeatenText:
+Soldier5BeatenText:
     text "Remarkable"
     done
-Soldier4WinsText:
+Soldier5WinsText:
     text "Forgive me."
     done
-Soldier4AfterBattleText:
+Soldier5AfterBattleText:
     text "Listen."
 
     para "I have lived many"
@@ -1103,30 +1159,6 @@ Soldier4AfterBattleText:
 
     para "Live to save"
     line "your country."
-    done
-
-TrainerSoldier5:
-	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier1SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
-.Script:
-    loadmem wNoRematch, 1
-	;endifjustbattled
-	opentext
-	writetext Soldier5AfterBattleText
-	waitbutton
-	closetext
-	end
-Soldier5SeenText:
-    text "You can't win!"
-    done
-Soldier5BeatenText:
-    text "Damn!"
-    done
-Soldier5WinsText:
-    text "You fool!"
-    done
-Soldier5AfterBattleText:
-    text "Some stuff is"
-    line "happening."
     done
 
 RematchTextWarZone:

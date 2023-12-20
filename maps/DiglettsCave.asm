@@ -25,17 +25,31 @@ DiglettsCave_MapScripts:
     endcallback
 
 DiglettsCavePokefanMScript:
+    checkevent EVENT_FOUGHT_SNORLAX
+    iffalse .blocked
 	jumptextfaceplayer DiglettsCavePokefanMText
+.blocked
+    jumptextfaceplayer DiglettsCavePokefanMText_blocked
 
 DiglettsCaveHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
 
 DiglettsCavePokefanMText:
-	text "A bunch of DIGLETT"
-	line "popped out of the"
+	text "The exit is not"
+	line "blocked anymore!"
 
-	para "ground! That was"
-	line "shocking."
+	para "I thought I would"
+	line "die in here!"
+	done
+
+DiglettsCavePokefanMText_blocked:
+	text "The exit is"
+	line "blocked by a"
+	cont "big sleeping"
+	cont "#MON."
+
+	para "I'll never get"
+	line "out of here!"
 	done
 	
 DiglettsCaveFieldMon1Script:
@@ -88,6 +102,30 @@ DiglettsCavePokemonAttacksText:
 DiglettsCaveMuscleBand:
 	itemball MUSCLE_BAND
 
+DiglettCaveBlockScript:
+    checkevent EVENT_FOUGHT_SNORLAX
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, DOWN
+	opentext
+	writetext DiglettBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_DiglettCaveTurnUp
+    end
+
+DiglettBlockText:
+    text "The exit is"
+    line "blocked by"
+    cont "something!"
+    done
+
+Movement_DiglettCaveTurnUp:
+    step UP
+    turn_head DOWN
+    step_end
+
 DiglettsCave_MapEvents:
 	db 0, 0 ; filler
 
@@ -100,6 +138,7 @@ DiglettsCave_MapEvents:
 	warp_event  3,  3, DIGLETTS_CAVE, 4
 
 	def_coord_events
+	coord_event 3, 33, SCENE_ALWAYS, DiglettCaveBlockScript
 
 	def_bg_events
 	bg_event  6, 11, BGEVENT_ITEM, DiglettsCaveHiddenMaxRevive

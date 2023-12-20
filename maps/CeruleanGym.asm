@@ -64,7 +64,7 @@ CeruleanGymMistyScript:
 	writetext MistyIntroText
 	waitbutton
 	closetext
-	winlosstext MistyWinLossText, 0
+	winlosstext MistyLossText, MistyWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MISTY, MISTY1
 	startbattle
@@ -99,7 +99,7 @@ CeruleanGymMistyScript:
     writetext MistyIntroText
 	waitbutton
 	closetext
-	winlosstext MistyWinLossText, 0
+	winlosstext MistyLossText, MistyWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer MISTY, MISTY1
 	startbattle
@@ -219,34 +219,49 @@ CeruleanGymGruntBacksAwayMovement:
 	step_end
 
 CeruleanGymGruntIntroText:
-	text "Oops! I so sorry!"
-	line "You not hurt,"
-	cont "okay?"
+	text "Move aside!"
 
-	para "I very busy."
-	line "No time for talk-"
-	cont "ing with you. Not"
-	cont "good for me if"
-	cont "seen by somebody."
+	para "I don't have"
+	line "time to entertain"
+	cont "you kid."
 	done
 
 CeruleanGymGruntBigMistakeText:
-	text "Oh no! You seen"
-	line "me already! I make"
-	cont "big mistake!"
+	text "I recognize you!"
+
+	para "You dismantled"
+	line "TEAM ROCKET in"
+	cont "JOHTO."
+
+	para "I would very much"
+	line "like to drown you"
+	cont "right here."
+
+	para "But I don't have"
+	line "time right now."
 	done
 
 CeruleanGymGruntByeText:
-	text "Hey, you! Forget"
-	line "you see me, okay?"
+	text "I will not"
+	line "allow HOEN to"
+	cont "get away with"
+	cont "their disrespect"
+	cont "of KANTO."
 
-	para "You see, hear,"
-	line "know nothing,"
+	para "I must complete"
+	line "my mission."
 
-	para "okay?"
-	line "Bye, kid! Nothing!"
+	para "Get out of my"
+	line "way and don't"
+	cont "follow me if you"
+	cont "value your life."
 
-	para "Bye-bye a go-go!"
+	para "I am the PRIMERA"
+
+	para "The strongest of"
+	line "all ROCKETS."
+
+	para "Now be gone!"
 	done
 
 CeruleanGymNote1Text:
@@ -262,27 +277,48 @@ CeruleanGymNote2Text:
 	done
 
 MistyIntroText:
-	text "MISTY: I was ex-"
-	line "pecting you, you"
-	cont "pest!"
+	text "I was hoping you"
+	line "would show up."
 
-	para "You may have a"
-	line "lot of JOHTO GYM"
+	para "After ruining my"
+	line "date I expect you"
+	cont "will at least"
+	cont "give me an"
+	cont "exciting battle."
 
-	para "BADGES, but you'd"
-	line "better not take me"
-	cont "too lightly."
+	para "I am MISTY."
 
-	para "My water-type"
-	line "#MON are tough!"
+	para "Just like the sea"
+	line "I am deadly but"
+	cont "beautiful."
+
+	para "It is said that"
+	line "only HOEN trainers"
+	cont "can unlock the"
+	cont "full potential of"
+	cont "WATER #MON."
+
+	para "I will prove them"
+	line "all wrong."
 	done
 
-MistyWinLossText:
+MistyLossText:
 	text "MISTY: You really"
 	line "are good…"
 
 	para "I'll admit that"
 	line "you are skilled…"
+
+	para "Here you go. It's"
+	line "CASCADEBADGE."
+	done
+
+MistyWinText:
+	text "That was an"
+	line "exciting battle."
+
+	para "Though I hate"
+	line "to admit it."
 
 	para "Here you go. It's"
 	line "CASCADEBADGE."
@@ -294,63 +330,93 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyFightDoneText:
-	text "MISTY: Are there"
-	line "many strong train-"
-	cont "ers in JOHTO? Like"
-	cont "you, I mean."
+	text "Well now I need"
+	line "to ring that guy"
+	cont "back and try to"
+	cont "organise another"
+	cont "date."
 
-	para "I'm going to"
-	line "travel one day, so"
+	para "I don't know why"
+	line "it's so hard for"
+	cont "me to find a"
+	cont "boyfriend."
 
-	para "I can battle some"
-	line "skilled trainers."
+	para "I just want"
+	line "someone funny,"
+	cont "smart, driven"
+	cont "and able to keep"
+	cont "up with me in a"
+	cont "battle."
+
+	para "How hard is that!"
 	done
 
 SwimmerfDianaSeenText:
-	text "Sorry about being"
-	line "away. Let's get on"
-	cont "with it!"
+	text "MISTY came back"
+	line "so I rushed over"
+	cont "and made it look"
+	cont "like I never"
+	cont "left."
+
+	para "It can be our"
+	line "secret ok?"
 	done
 
 SwimmerfDianaBeatenText:
-	text "I give up! You're"
-	line "the winner!"
+	text "This is such"
+	line "a tough job."
 	done
 
 SwimmerfDianaAfterBattleText:
-	text "I'll be swimming"
-	line "quietly."
+	text "I'm just going"
+	line "to keep my head"
+	cont "down and swim"
+	cont "quietly."
+
+	para "There are no"
+	line "other jobs"
+	cont "around here."
 	done
 
 SwimmerfBrianaSeenText:
-	text "Don't let my ele-"
-	line "gant swimming un-"
-	cont "nerve you."
+	text "How about instead"
+	line "of a battle we"
+	cont "have a swimming"
+	cont "race!"
+
+	para "No."
+
+	para "OK let's go then."
 	done
 
 SwimmerfBrianaBeatenText:
-	text "Ooh, you calmly"
-	line "disposed of me…"
+	text "I can still"
+	line "swim faster"
+	cont "than you."
 	done
 
 SwimmerfBrianaAfterBattleText:
-	text "Don't be too smug"
-	line "about beating me."
-
-	para "MISTY will destroy"
-	line "you if you get"
-	cont "complacent."
+	text "I think I'm a"
+	line "good swimmer but"
+	cont "none of us can"
+	cont "swim nearly as"
+	cont "fast as MISTY."
 	done
 
 SwimmermParkerSeenText:
-	text "Glub…"
+	text "As a WATER"
+	line "trainer I feel"
+	cont "an extra respons-"
+	cont "ibility to do my"
+	cont "part to fight"
+	cont "against HOEN."
 
-	para "I'm first! Come"
-	line "and get me!"
+	para "I need to train!"
 	done
 
 SwimmermParkerBeatenText:
-	text "This can't be…"
+	text "Let's keep"
+	line "training!"
 	done
 
 SwimmermParkerAfterBattleText:
@@ -358,29 +424,37 @@ SwimmermParkerAfterBattleText:
 	line "much better in the"
 	cont "past few years."
 
-	para "Don't let your"
-	line "guard down, or"
-	cont "you'll be crushed!"
+	para "She will put up"
+	line "a great fight"
+	cont "against anyone."
 	done
 
 CeruleanGymGuideText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "Hey CHAMP!"
 
-	para "Since MISTY was"
-	line "away, I went out"
+	para "You know the"
+	line "drill by now."
 
-	para "for some fun too."
-	line "He-he-he."
+	para "WATER GYM."
+
+	para "Use ELECTRIC or"
+	line "GRASS attacks."
 	done
 
 CeruleanGymGuideWinText:
-	text "Hoo, you showed me"
-	line "how tough you are."
+	text "Maybe I should"
+	line "ask MISTY out."
 
-	para "As always, that"
-	line "was one heck of a"
-	cont "great battle!"
+	para "Do you think a"
+	line "guy like me and"
+	cont "a woman like her."
+
+	para "...."
+
+	para "Aww never mind."
+
+	para "I'm just being"
+	line "stupid."
 	done
 
 RematchTextMisty:

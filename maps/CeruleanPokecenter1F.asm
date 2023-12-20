@@ -12,52 +12,40 @@ CeruleanPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 CeruleanPokecenter1FSuperNerdScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText
-
-.mobile
-	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText_Mobile
 
 CeruleanPokecenter1FGymGuideScript:
 	jumptextfaceplayer CeruleanPokecenter1FGymGuideText
 
 CeruleanPokecenter1FSuperNerdText:
-	text "For battles, I'd"
-	line "much rather use"
+	text "There are a lot"
+	line "of trainers to"
+	cont "the NORTH."
 
-	para "#MON I've been"
-	line "raising, even if"
-
-	para "they're weaker"
-	line "than some newly"
-	cont "caught #MON."
-	done
-
-CeruleanPokecenter1FSuperNerdText_Mobile:
-	text "Do you battle by"
-	line "mobile phone?"
-
-	para "If time runs out"
-	line "during a battle,"
-
-	para "waiting to see who"
-	line "won is really"
-	cont "nerve wracking."
+	para "I wanted to visit"
+	line "BILLS dad but I"
+	cont "can't get past"
+	cont "them all!"
 	done
 
 CeruleanPokecenter1FGymGuideText:
-	text "The MAGNET TRAIN"
-	line "travels at over"
+	text "CERULEAN CAVE is"
+	line "said to contain"
+	cont "really strong"
+	cont "#MON."
 
-	para "340 mph. It goes"
-	line "between KANTO and"
+	para "Apparently lots"
+	line "of trainers have"
+	cont "gone in there"
+	cont "and lost their"
+	cont "items while"
+	cont "running for"
+	cont "their lives."
 
-	para "JOHTO in almost no"
-	line "time at all."
-
-	para "It really makes"
-	line "JOHTO accessible."
+	para "There might be"
+	line "lots of cool"
+	cont "items hidden in"
+	cont "there."
 	done
 
 CeruleanPokecenter1F_MapEvents:

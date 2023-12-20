@@ -12,6 +12,19 @@ CeruleanGymBadgeSpeechHousePokefanMScript:
 CeruleanGymBadgeSpeechHousePokefanMText:
 	text "Are you collecting"
 	line "KANTO GYM BADGES?"
+
+	para "The KANTO LEADERS"
+	line "are very strong."
+
+	para "The strongest by"
+	line "far is BLUE."
+
+	para "He used to be a"
+	line "CHAMPION but took"
+	cont "a demotion to GYM"
+	cont "LEADER so he could"
+	cont "be politically"
+	cont "autonomous."
 	done
 
 CeruleanGymBadgeSpeechHouse_MapEvents:

@@ -32,11 +32,9 @@ Route24RocketScript:
 	reloadmapafterbattle
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
+	special FadeOutMusic
 	writetext Route24RocketAfterBattleText
 	promptbutton
-	special FadeOutMusic
-	writetext Route24RocketDisappearsText
-	waitbutton
 	closetext
 	;special FadeBlackQuickly
 	;special ReloadSpritesNoPalettes
@@ -58,7 +56,7 @@ Route24RocketScript:
 	end
 
 .FightDone:
-	writetext Route24RocketDisappearsText
+	writetext Route24RocketAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -80,85 +78,82 @@ RematchRefuseTextRocket:
     done
 
 Route24RocketSeenText:
-	text "Hey, kid! Me am a"
-	line "TEAM ROCKET member"
-	cont "kind of guy!"
+	text "Of course you"
+	line "would come."
 
-	para "Come from another"
-	line "country, a trainer"
-	cont "number one, me!"
+	para "I have lost all"
+	line "contact with the"
+	cont "JOHTO ROCKETS."
 
-	para "Think I did, if"
-	line "stop the energy,"
+	para "I assume this is"
+	line "your doing?"
 
-	para "be big panic for"
-	line "here people!"
+	para "They were weak"
+	line "and deserved what"
+	cont "they got."
 
-	para "Secret it is my"
-	line "mission, so tell"
-	cont "you I not!"
+	para "I will carry out"
+	line "our mission."
 
-	para "But! If win you do"
-	line "versus me, a man I"
+	para "To use the RADIO"
+	line "TOWER to control"
+	cont "HOEN #MON."
 
-	para "be and mine secret"
-	line "to you I tell."
+	para "I'm sure you know"
+	line "about that."
 
-	para "Hey, kid! Battle"
-	line "begin we do!"
+	para "But I will go"
+	line "further."
+
+	para "We used to have"
+	line "a secret weapon."
+
+	para "MEWTWO."
+
+	para "It used to dwell"
+    line "in CERULEAN CAVE."
+
+    para "I will find it."
+
+    para "Nothing will"
+    line "stop me."
 	done
 
 Route24RocketBeatenText:
-	text "Ayieeeh! No, no,"
-	line "no, believe it I"
-	cont "can't!"
+	text "I can see why"
+	line "the ROCKETS"
+	cont "lost to you."
 
-	para "Strong very much"
-	line "be you! Match I am"
-	cont "not to you!"
+	para "The Machine part"
+	line "is in the GYM"
+	cont "in the square"
+	cont "pool in the"
+	cont "middle."
 	done
 
 Route24RocketAfterBattleText:
-	text "OK. Tell you mine"
-	line "secret will I."
+	text "TEAM ROCKET used"
+	line "to have a true"
+	cont "leader."
 
-	para "MACHINE PART steal"
-	line "by me, hide it I"
+	para "A great leader."
 
-	para "did in GYM of the"
-	line "CERULEAN."
+	para "I know he is"
+	line "alive and lives"
+	cont "in KANTO."
 
-	para "Inside water put"
-	line "it I did. Look for"
+	para "I had hoped to"
+	line "to find him and"
+	cont "find MEWTWO."
 
-	para "in water center of"
-	line "GYM at."
+	para "Together we"
+	line "would reinvent"
+	cont "TEAM ROCKET."
 
-	para "But you forget me"
-	line "not!"
-
-	para "Beat you for sure"
-	line "will TEAM ROCKET."
-
-	para "Come from JOHTO"
-	line "will they, mine"
-
-	para "friends, yes. Will"
-	line "revenge they are."
-	done
-
-Route24RocketDisappearsText:
-	text "…"
-
-	para "You say what? TEAM"
-	line "ROCKET bye-bye a"
-
-	para "go-go? Broken it"
-	line "is says you?"
-
-	para "Oh, no! Should I"
-	line "do what now on"
-	cont "from, me?"
+	para "But alas the"
+	line "world has moved"
+	cont "on and I must"
+	cont "move on too."
 	done
 
 Route24_MapEvents:

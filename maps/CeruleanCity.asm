@@ -19,7 +19,7 @@ CeruleanCity_MapScripts:
 CeruleanCityCooltrainerMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .ReturnedMachinePart
 	writetext CeruleanCityCooltrainerMText1
 	waitbutton
@@ -148,36 +148,44 @@ CeruleanCityHiddenBerserkGene:
 	hiddenitem BRIGHTPOWDER, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
 
 CeruleanCityCooltrainerMText1:
-	text "KANTO's POWER"
-	line "PLANT?"
+	text "There is a POWER"
+	line "PLANT to the west"
+	cont "of here."
 
-	para "It's near the end"
-	line "of ROUTE 9, the"
-
-	para "road that heads"
-	line "east from here."
-
-	para "I think there was"
-	line "an accident of"
-	cont "some sort there."
+	para "The guy in charge"
+	line "is a bit of a"
+	cont "psycho."
 	done
 
 CeruleanCityCooltrainerMText2:
-	text "You're collecting"
-	line "every single kind"
-	cont "of #MON?"
+	text "You're the hero"
+	line "that saved KANTO!"
 
-	para "That must be quite"
-	line "a challenge, but"
-	cont "it sounds fun too."
+	para "CHAMPION <PLAYER>!"
+
+	para "I've heard you"
+	line "are the strongest"
+	cont "trainer in the"
+	cont "whole world!"
+
+	para "I want to thank"
+	line "you with all my"
+	cont "heart."
 	done
 
 CeruleanCitySuperNerdText:
-	text "The CAPE in the"
-	line "north is a good"
+	text "There is a large"
+	line "cave near here."
 
-	para "place for dates."
-	line "Girls like it!"
+	para "It was sealed off"
+	line "but recently it"
+	cont "is sitting open."
+
+	para "It's a horrifying"
+	line "place with insanely"
+	cont "strong #MON."
+
+	para "Let's explore it!"
 	done
 
 CeruleanCitySlowbroText:
@@ -185,14 +193,14 @@ CeruleanCitySlowbroText:
 	done
 
 CeruleanCityCooltrainerFText1:
-	text "My SLOWBRO and I"
-	line "make an awesome"
-	cont "combination!"
+	text "My SLOWBRO is"
+	line "the strongest in"
+	cont "all the world."
 	done
 
 CeruleanCityCooltrainerFText2:
 	text "SLOWBRO, show me"
-	line "your CONFUSION!"
+	line "your PSYCHIC!"
 	done
 
 CeruleanCityCooltrainerFText3:
@@ -203,20 +211,46 @@ CeruleanCityFisherText:
 	text "I'm a huge fan of"
 	line "CERULEAN GYM's"
 	cont "MISTY."
+
+	para "I know everything"
+	line "about her."
+
+	para "Her #MON."
+
+	para "Her win rate."
+
+	para "Her favorite food."
+
+	para "Her daily routine."
 	done
 
 CeruleanCityFisherRocketTipText:
-	text "I saw this shady"
-	line "guy go off toward"
-	cont "CERULEAN's CAPE."
+	text "I saw a guy head"
+	line "toward CERULEAN"
+	cont "CAVE."
+
+	para "He was wearing"
+	line "glasses but he"
+	cont "took them off"
+	cont "and slicked back"
+	cont "his hair."
+
+	para "He looked so"
+	line "cool!"
 	done
 
 CeruleanCityYoungsterText1:
-	text "There used to be a"
-	line "cave here that had"
+	text "The cave over"
+	line "there is open!"
 
-	para "horribly powerful"
-	line "#MON in it."
+	para "It shouldn't be!"
+
+	para "This is bad."
+
+	para "Who knows what kind"
+	line "of monstrous"
+	cont "#MON will"
+	cont "emerge!"
 	done
 
 CeruleanCityYoungsterText2:
@@ -246,20 +280,20 @@ CeruleanBikeShopSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "The BIKE SHOP has"
-	line "moved to GOLDENROD"
-	cont "CITY in JOHTO…"
+	para "The BIKE SHOP is"
+	line "closed due to"
+	cont "everyone using"
+	cont "SPORT SHOES."
 	done
 
 CeruleanPoliceSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "Stamp out thievery"
-	line "and make the city"
-
-	para "a friendlier, more"
-	line "cheerful place!"
+	para "Thieves will be"
+	line "subject to swift"
+	cont "and severe"
+	cont "retribution."
 
 	para "CERULEAN POLICE"
 	done

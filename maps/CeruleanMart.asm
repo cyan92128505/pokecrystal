@@ -21,26 +21,33 @@ CeruleanMart_CooltrainerF:
 	jumptextfaceplayer CeruleanMart_CooltrainerFText
 
 CeruleanMart_CooltrainerMText:
-	text "You'll run into"
-	line "many trainers on"
+	text "I went into"
+	line "CERULEAN CAVE"
+	cont "last month."
 
-	para "the way to CERU-"
-	line "LEAN's CAPE."
+	para "I've not been"
+	line "able to sleep"
+	cont "since."
 
-	para "They want to see"
-	line "how they stack"
+	para "It's terrifying"
+	line "in there."
 
-	para "up against other"
-	line "trainers."
+	para "I lost my"
+	line "LEFTOVERS in"
+	cont "there too."
+
+	para "In a maze of"
+	line "rocks."
 	done
 
 CeruleanMart_CooltrainerFText:
-	text "MISTY is about the"
-	line "only person in"
+	text "MISTY is really"
+	line "strong."
 
-	para "town who can beat"
-	line "the trainers at"
-	cont "CERULEAN's CAPE."
+	para "She keeps all"
+	line "those weirdos"
+	cont "across the bridge"
+	cont "in check."
 	done
 
 CeruleanMart_MapEvents:

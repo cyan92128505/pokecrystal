@@ -39,7 +39,13 @@ CeruleanTradeSpeechHouseGrannyText:
 	done
 
 CeruleanTradeSpeechHouseGrampsText:
-	text "Ah… I'm so happy…"
+	text "Traded #MON"
+	line "level up faster."
+
+	para "It makes me so"
+	line "happy everytime"
+	cont "they get boosted"
+	cont "experience!"
 	done
 
 CeruleanTradeSpeechHouseRhydonText:
@@ -48,7 +54,7 @@ CeruleanTradeSpeechHouseRhydonText:
 	done
 
 CeruleanTradeSpeechHouseZubatText:
-	text "ZUBAT: Zuba zubaa."
+	text "CROBAT: Crooow!."
 	done
 
 CeruleanTradeSpeechHouse_MapEvents:

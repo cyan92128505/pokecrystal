@@ -16,7 +16,7 @@ PewterGymBrockScript:
 	writetext BrockIntroText
 	waitbutton
 	closetext
-	winlosstext BrockWinLossText, 0
+	winlosstext BrockLossText, BrockWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BROCK, BROCK1
 	startbattle
@@ -28,7 +28,7 @@ PewterGymBrockScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
-	writetext BrockBoulderBadgeText
+	writetext BrockFightDoneText
 	waitbutton
 	closetext
 	end
@@ -36,7 +36,7 @@ PewterGymBrockScript:
     writetext BrockIntroText
 	waitbutton
 	closetext
-	winlosstext BrockWinLossText, 0
+	winlosstext BrockLossText, BrockWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer BROCK, BROCK1
 	startbattle
@@ -92,136 +92,142 @@ PewterGymStatue:
 	jumpstd GymStatue2Script
 
 BrockIntroText:
-	text "BROCK: Wow, it's"
-	line "not often that we"
+	text "Welcome to"
+	line "PEWTER CITY."
 
-	para "get a challenger"
-	line "from JOHTO."
+	para "I'm sure you"
+	line "have noticed the"
+	cont "state the city"
+	cont "is in."
 
-	para "I'm BROCK, the"
-	line "PEWTER GYM LEADER."
+	para "The state the"
+	line "people are in."
 
-	para "I'm an expert on"
-	line "rock-type #MON."
+	para "I lost my dad"
+	line "and my home in"
+	cont "the incident."
 
-	para "My #MON are im-"
-	line "pervious to most"
+	para "I have not shed"
+	line "one tear."
 
-	para "physical attacks."
-	line "You'll have a hard"
+	para "I must not, I"
+	line "can not let the"
+	cont "people see me in"
+	cont "such a state."
 
-	para "time inflicting"
-	line "any damage."
+    para "These people need"
+    line "a strong, stable"
+    cont "and constant"
+    cont "presence in their"
+    cont "live."
 
-	para "Come on!"
+    para "I am their rock."
 	done
 
-BrockWinLossText:
-	text "BROCK: Your #-"
-	line "MON's powerful at-"
-	cont "tacks overcame my"
-	cont "rock-hard defense…"
+BrockLossText:
+	text "You don't"
+	line "shatter easily."
 
-	para "You're stronger"
-	line "than I expected…"
-
-	para "Go ahead--take"
-	line "this BADGE."
+	para "Here take the"
+	line "BOULDERBADGE."
 	done
+
+BrockWinText:
+    text "Together we"
+    line "can become"
+    cont "stronger."
+    done
 
 ReceivedBoulderBadgeText:
 	text "<PLAYER> received"
 	line "BOULDERBADGE."
 	done
 
-BrockBoulderBadgeText:
-	text "BROCK: <PLAY_G>,"
-	line "thanks. I enjoyed"
-
-	para "battling you, even"
-	line "though I am a bit"
-	cont "upset."
-
-	para "That BOULDERBADGE"
-	line "will make your"
-
-	para "#MON even more"
-	line "powerful."
-	done
-
 BrockFightDoneText:
-	text "BROCK: The world"
-	line "is huge. There are"
+	text "BLUE sealed off"
+	line "the MUSEUM years"
+	cont "ago."
 
-	para "still many strong"
-	line "trainers like you."
+	para "Since you have"
+	line "defeated me I"
+	cont "grant you"
+	cont "permission to"
+	cont "enter it."
 
-	para "Just wait and see."
-	line "I'm going to be-"
-	cont "come a lot strong-"
-	cont "er too."
+	para "You are the first"
+	line "to be given this."
+
+	para "BLUE has been a"
+	line "huge help to me."
+
+	para "I could not have"
+	line "protected this"
+	cont "city without him."
 	done
 
 CamperJerrySeenText:
-	text "The trainers of"
-	line "this GYM use rock-"
-	cont "type #MON."
+	text "BROCK is the"
+	line "strongest person"
+	cont "I know."
 
-	para "The rock-type has"
-	line "high DEFENSE."
+	para "Not just as a"
+	line "trainer but as"
+	cont "a leader."
 
-	para "Battles could end"
-	line "up going a long"
-
-	para "time. Are you"
-	line "ready for this?"
+	para "I hope to be"
+	line "half the man he"
+	cont "is one day."
 	done
 
 CamperJerryBeatenText:
-	text "I have to win"
-	line "these battles…"
+	text "I have a long"
+	line "way to go."
 	done
 
 CamperJerryAfterBattleText:
-	text "Hey, you! Trainer"
-	line "from JOHTO! BROCK"
+	text "We will never"
+	line "keep fighting"
+	cont "to restore PEWTER"
+	cont "and its people."
 
-	para "is tough. He'll"
-	line "punish you if you"
-
-	para "don't take him"
-	line "seriously."
+	para "To make both"
+	line "whole again."
 	done
 
 PewterGymGuideText:
-	text "Yo! CHAMP in"
-	line "making! You're"
+	text "This is such a"
+	line "sad place."
 
-	para "really rocking."
-	line "Are you battling"
+	para "I want to help"
+	line "these people"
+	cont "but I can't."
 
-	para "the GYM LEADERS of"
-	line "KANTO?"
+	para "You can!"
 
-	para "They're strong and"
-	line "dedicated people,"
+	para "But you have to"
+	line "beat BROCK."
 
-	para "just like JOHTO's"
-	line "GYM LEADERS."
+	para "He uses a"
+	line "SANDSTORM team."
+
+	para "Changing the"
+	line "weather to rain"
+	cont "and throwing WATER"
+	cont "attacks at him"
+	cont "should soften"
+	cont "him up."
 	done
 
 PewterGymGuideWinText:
-	text "Yo! CHAMP in"
-	line "making! That GYM"
+	text "You did it!"
 
-	para "didn't give you"
-	line "much trouble."
+	para "Now you can enter"
+	line "the MUSEUM and"
+	cont "find the source"
+	cont "of the virus."
 
-	para "The way you took"
-	line "charge was really"
-
-	para "inspiring. I mean"
-	line "that seriously."
+	para "If you're crazy"
+	line "that is!"
 	done
 
 RematchTextBrock:

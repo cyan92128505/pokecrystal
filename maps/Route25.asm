@@ -7,7 +7,6 @@
 	const ROUTE25_LASS2
 	const ROUTE25_YOUNGSTER3
 	const ROUTE25_LASS3
-	const ROUTE25_SUPER_NERD
 	const ROUTE25_COOLTRAINER_M2
 	const ROUTE25_POKE_BALL
 	const ROUTE25_FIELDMON_1
@@ -165,43 +164,18 @@ TrainerLassShannon:
 	closetext
 	end
 
-TrainerSupernerdPat:
-	trainer SUPER_NERD, PAT, EVENT_BEAT_SUPER_NERD_PAT, SupernerdPatSeenText, SupernerdPatBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SupernerdPatAfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerCooltrainermKevin:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_COOLTRAINERM_KEVIN
-	iftrue .AfterBattle
 	checkevent EVENT_CLEARED_NUGGET_BRIDGE
 	iftrue .AfterNuggetBridge
 	writetext CooltrainermKevinNuggetText
 	promptbutton
 	verbosegiveitem NUGGET
-	iffalse .NoRoomForNugget
 	setevent EVENT_CLEARED_NUGGET_BRIDGE
 .AfterNuggetBridge:
 	writetext CooltrainermKevinSeenText
 	waitbutton
-	closetext
-	winlosstext CooltrainermKevinBeatenText, 0
-	loadtrainer COOLTRAINERM, KEVIN
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_COOLTRAINERM_KEVIN
-	opentext
-.AfterBattle:
-	writetext CooltrainermKevinAfterBattleText
-	waitbutton
-.NoRoomForNugget:
 	closetext
 	end
 
@@ -259,172 +233,240 @@ Route25MistyLeavesMovement:
 	step_end
 
 Route25MistyDateText:
-	text "MISTY: Aww! Why"
-	line "did you have to"
+	text "What do you think"
+	line "you're doing!"
 
-	para "show up and bug us"
-	line "now?"
+	para "That date was"
+	line "going really well!"
 
-	para "Do you know what"
-	line "they call people"
-	cont "like you?"
+	para "You shouldn't ruin"
+	line "other peoples fun"
+	cont "because you are"
+	cont "jealous."
 
-	para "Pests! You heard"
-	line "me right, pest!"
+	para "...."
 
-	para "…"
+	para "Oh you want a"
+	line "GYM battle."
 
-	para "…Oh? Those BADGES"
-	line "you have… Are they"
-	cont "JOHTO GYM BADGES?"
+	para "Yes I am MISTY"
+	line "the GYM LEADER."
 
-	para "If you have eight,"
-	line "you must be good."
+	para "I'll be all too"
+	line "happy to crush"
+	cont "you in a battle."
 
-	para "OK, then. Come to"
-	line "CERULEAN GYM."
-
-	para "I'll be happy to"
-	line "take you on."
-
-	para "I'm MISTY, the"
-	line "GYM LEADER in"
-	cont "CERULEAN."
+	para "Meet me at the"
+	line "GYM if you are"
+	cont "brave enough."
 	done
 
 SchoolboyDudleySeenText:
-	text "Beat the six of us"
-	line "trainers to win a"
-	cont "fabulous prize!"
+	text "We 6 are about"
+	line "to enter CERULEAN"
+	cont "CAVE."
 
-	para "Think you've got"
-	line "what it takes?"
+	para "We have been in"
+	line "training just"
+	cont "for this."
+
+	para "You can be our"
+	line "final test!"
 	done
 
 SchoolboyDudleyBeatenText:
-	text "Whoo! Good stuff."
+	text "I am the"
+	line "weakest!"
 	done
 
 SchoolboyDudleyAfterBattleText:
-	text "I did my best."
-	line "I have no regrets."
+	text "I'm going to"
+	line "catch some super"
+	cont "strong #MON"
+	cont "in the cave."
+
+	para "Then I'll win!"
 	done
 
 LassEllenSeenText:
-	text "I'm second."
-	line "Now it's serious!"
+	text "I am number 5."
+
+	para "I prepare the"
+	line "food for the trip."
+
+	para "It's basically"
+	line "just chocolate"
+	cont "bars and energy"
+	cont "drinks."
+
+	para "Here have some"
+	line "RED TAUROS!"
 	done
 
 LassEllenBeatenText:
-	text "How could I lose?"
+	text "I need more"
+	line "energy drink!"
 	done
 
 LassEllenAfterBattleText:
-	text "I did my best."
-	line "I have no regrets."
+	text "When you are on"
+	line "a big trip you"
+	cont "don't care about"
+	cont "healthy food."
+
+	para "You need as much"
+	line "quick energy as"
+	cont "possible."
 	done
 
 SchoolboyJoeSeenText:
-	text "Here's No. 3!"
-	line "I won't be easy."
+	text "I am ranked"
+	line "forth in strength."
+
+	para "I have taken the"
+	line "liberty to plan"
+	cont "the route our"
+	cont "exhibition shall"
+	cont "travel."
+
+	para "It is a veritable"
+	line "labyrinth of rock"
+	cont "within the cave."
 	done
 
 SchoolboyJoeBeatenText:
-	text "Ow! Stomped flat!"
+	text "I couldn't find"
+	line "my way to victory."
 	done
 
 SchoolboyJoeAfterBattleText:
-	text "I did my best."
-	line "I have no regrets."
+	text "There is nothing"
+	line "more terrifying"
+	cont "than being truly,"
+	cont "utterly lost."
+
+	para "One must sit and"
+	line "calm ones nerves"
+	cont "so one may think."
 	done
 
 LassLauraSeenText:
-	text "I'm No. 4!"
-	line "Getting tired?"
+	text "I am LAURA!"
+
+	para "I am number 3!"
+
+	para "I raised the funds"
+	line "for the trip."
+
+	para "I swam in the sea"
+	line "and ran a marathon"
+	cont "in a cute MEOWTH"
+	cont "costume."
+
+	para "All this gear is"
+	line "expensive!"
+
+	para "Who will sponsor"
+	line "me to battle this"
+	cont "stranger!"
 	done
 
 LassLauraBeatenText:
-	text "I lost too…"
+	text "I wasn't sponsored"
+	line "so it doesn't"
+	cont "matter."
 	done
 
 LassLauraAfterBattleText:
-	text "I did my best."
-	line "I have no regrets."
+	text "I may have got"
+	line "addicted to"
+	cont "energy drinks."
+
+	para "Especially that"
+	line "RED TAUROS."
 	done
 
 CamperLloydSeenText:
-	text "OK! I'm No. 5."
-	line "I'll stomp you!"
+	text "I am number 2!"
+
+	para "Second only to"
+	line "number 1!"
+
+	para "I bought the"
+	line "gear!"
+
+	para "We got Helmets,"
+	line "head lamps,"
+	cont "harnesses,"
+	cont "ascenders,"
+	cont "ropes."
+
+	para "It's the gear"
+	line "that keeps you"
+	cont "alive!"
 	done
 
 CamperLloydBeatenText:
-	text "Whoa! Too much."
+	text "My ascender"
+	line "snapped!"
 	done
 
 CamperLloydAfterBattleText:
-	text "I did my best."
-	line "I have no regrets."
+	text "You don't have"
+	line "any of this gear!"
+
+	para "Don't you feel"
+	line "naked without it!"
 	done
 
 LassShannonSeenText:
-	text "I'm the last in"
-	line "line, but I tell"
-	cont "you, I'm tough!"
+	text "I am number 1!"
+
+	para "There are many"
+	line "strong #MON"
+	cont "in the cave."
+
+	para "I am the muscle"
+	line "that will fight"
+	cont "them off."
+
+	para "You are going"
+	line "down!"
 	done
 
 LassShannonBeatenText:
-	text "You're kidding."
+	text "Mayday!"
 	done
 
 LassShannonAfterBattleText:
-	text "I did my best."
-	line "I have no regrets."
-	done
+	text "You should join"
+	line "us!"
 
-SupernerdPatSeenText:
-	text "Mufufufu…"
-
-	para "I have nothing to"
-	line "do with the six-"
-	cont "pack trainers."
-
-	para "I waited here to"
-	line "beat you when you"
-
-	para "were tired out by"
-	line "all the battles."
-	done
-
-SupernerdPatBeatenText:
-	text "Aren't you tired"
-	line "at all?"
-	done
-
-SupernerdPatAfterBattleText:
-	text "I'm sorry… I won't"
-	line "cheat anymore…"
+	para "We need someone"
+	line "as strong as you!"
 	done
 
 CooltrainermKevinNuggetText:
-	text "You took on one"
-	line "more battle than"
+	text "I am the"
+	line "organiser of"
+	cont "the trip."
 
-	para "you expected, but"
-	line "you won anyway."
+	para "Well done on"
+	line "giving the troops"
+	cont "a good warm up."
 
-	para "As promised, you"
-	line "win a prize."
+	para "Here take this!"
 	done
 
 CooltrainermKevinSeenText:
-	text "But after seeing"
-	line "how you battle, I"
+	text "Of course I'm"
+	line "not actually"
+	cont "going in myself."
 
-	para "want to see how"
-	line "I'll fare."
-
-	para "How about it? Let"
-	line "me take you on."
+	para "But I will take"
+	line "the credit for"
+	cont "anything they"
+	cont "find!"
 	done
 
 CooltrainermKevinBeatenText:
@@ -528,7 +570,6 @@ Route25_MapEvents:
 	object_event 22,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassLaura, -1
 	object_event 25,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperLloyd, -1
 	object_event 28, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassShannon, -1
-	object_event 31,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSupernerdPat, -1
 	object_event 37,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainermKevin, -1
 	object_event 32,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Protein, EVENT_ROUTE_25_PROTEIN
 	object_event  5, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 2, Route25FieldMon1Script, EVENT_FIELD_MON_1

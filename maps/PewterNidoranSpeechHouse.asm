@@ -19,7 +19,33 @@ PewterNidoran:
 	end
 
 PewterNidoranSpeechHouseSuperNerdText:
-	text "NIDORAN, shake!"
+	text "My grandad is"
+	line "very down about"
+	cont "everything."
+
+	para "He lost all his"
+	line "money to some"
+	cont "pyramid scheme"
+	cont "in VERMILION."
+
+	para "Then one by one"
+	line "we lost our whole"
+	cont "family."
+
+	para "But life goes"
+	line "on."
+
+	para "This NIDORAN was"
+	line "just hatched."
+
+	para "It knows nothing"
+	line "of pain and"
+	cont "hardship."
+
+	para "And I intend to"
+	line "keep it that way"
+	cont "for as long as"
+	cont "I can."
 	done
 
 PewterNidoranText:

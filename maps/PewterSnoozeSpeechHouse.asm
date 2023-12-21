@@ -13,9 +13,17 @@ PewterSnoozeSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 PewterSnoozeSpeechHouseGrampsText:
-	text "I like snoozing"
-	line "with the radio on…"
-	cont "…Zzzz…"
+	text "All the young"
+	line "people left this"
+	cont "place to make"
+	cont "better lives in"
+	cont "other cities."
+
+	para "Us old folk are"
+	line "all that's left."
+
+	para "Too tired to"
+	line "keep on going."
 	done
 
 PewterSnoozeSpeechHouse_MapEvents:

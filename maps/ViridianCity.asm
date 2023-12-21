@@ -86,100 +86,136 @@ ViridianCityMartSign:
 	jumpstd MartSignScript
 
 ViridianCityCoffeeGrampsQuestionText:
-	text "Hey, kid! I just"
-	line "had a double shot"
+	text "It's ok dear"
+	line "child."
 
-	para "of espresso, and"
-	line "I am wired!"
+	para "You have nothing"
+	line "to fear from me."
 
-	para "I need to talk to"
-	line "someone, so you'll"
-	cont "have to do!"
+	para "My therapist tells"
+	line "me it's all in my"
+	cont "head, not real."
 
-	para "I might not look"
-	line "like much now, but"
+	para "I don't have the"
+	line "power to summon"
+	cont "demons in far"
+	cont "off shores!"
 
-	para "I was an expert at"
-	line "catching #MON."
+	para "I'm just an"
+	line "OLD MAN who"
+	cont "like coffee..."
 
-	para "Do you believe me?"
+	para "Isn't that right?"
 	done
 
 ViridianCityCoffeeGrampsBelievedText:
-	text "Good, good. Yes, I"
-	line "was something out"
+	text "Yes indeed!"
 
-	para "of the ordinary,"
-	line "let me tell you!"
+	para "I used to enjoy"
+	line "catching #MON"
+	cont "but now I enjoy"
+	cont "a nice coffee..."
 	done
 
 ViridianCityCoffeeGrampsDoubtedText:
-	text "What? You little"
-	line "whelp!"
+	text "What do you"
+	line "know of it!?"
 
-	para "If I were just a"
-	line "bit younger, I'd"
+	para "No!"
 
-	para "show you a thing"
-	line "or two. Humph!"
+	para "Don't speak it's"
+	line "name!"
+
+	para "It's not real!"
+
+	para "...."
+
+	para "MISSINGNO..."
+
+	para "AWWWWAAHHHHH!!"
 	done
 
 ViridianCityGrampsNearGymText:
-	text "This GYM didn't"
-	line "have a LEADER"
-	cont "until recently."
+	text "The GYM LEADER"
+	line "here is very"
+	cont "busy trying to"
+	cont "do the jobs the"
+	cont "#MON LEAUGE"
+	cont "should be doing!"
 
-	para "A young man from"
-	line "PALLET became the"
+	para "BLUE will always"
+	line "be a CHAMPION to"
+	cont "to us."
 
-	para "LEADER, but he's"
-	line "often away."
+	para "The peoples"
+	line "CHAMPION."
 	done
 
 ViridianCityGrampsNearGymBlueReturnedText:
-	text "Are you going to"
-	line "battle the LEADER?"
+	text "CHAMPION BLUE"
+	line "is ready to take"
+	cont "challengers again."
 
-	para "Good luck to you."
-	line "You'll need it."
+	para "BLUE is stronger"
+	line "than any other"
+	cont "GYM LEADER."
+
+	para "Stronger even"
+	line "than CHAMPIONS."
+
+	para "He is the peoples"
+	line "CHAMPION!"
 	done
 
 ViridianCityDreamEaterFisherText:
-	text "Yawn!"
+	text "How did you get"
+	line "in here."
 
-	para "I must have dozed"
-	line "off in the sun."
+	para "What what!"
 
-	para "…I had this dream"
-	line "about a DROWZEE"
+	para "I fortified this"
+	line "defense position"
+	cont "myself."
 
-	para "eating my dream."
-	line "Weird, huh?"
+	para "It is virtually"
+	line "impregnable!"
 
-	para "Huh?"
-	line "What's this?"
+	para "We must all make"
+	line "an effort to"
+	cont "protect ourselves"
+	cont "in these fractious"
+	cont "times!"
 
-	para "Where did this TM"
-	line "come from?"
+	para "Here hurry and"
+	line "take this!"
 
-	para "This is spooky!"
-	line "Here, you can have"
-	cont "this TM."
+	para "Look lively now!"
 	done
 
 ViridianCityDreamEaterFisherGotDreamEaterText:
-	text "TM42 contains"
-	line "DREAM EATER…"
+	text "I must continue"
+	line "to fortify these"
+	cont "barricades to"
+	cont "deter anyone"
+	cont "who might attack!"
 
-	para "…Zzzzz…"
+	para "It is your duty"
+	line "as a responsible"
+	cont "citizen to protect"
+	cont "yourself."
 	done
 
 ViridianCityYoungsterText:
-	text "I heard that there"
-	line "are many items on"
+	text "VIRIDIAN FOREST"
+	line "is a husk of"
+	cont "what it once was."
 
-	para "the ground in"
-	line "VIRIDIAN FOREST."
+	para "The #RUS"
+	line "outbreak really"
+	cont "ravaged it."
+
+	para "We must preserve"
+	line "what remains."
 	done
 
 ViridianCitySignText:
@@ -194,8 +230,10 @@ ViridianGymSignText:
 	line "#MON GYM"
 	cont "LEADER: …"
 
-	para "The rest of the"
-	line "text is illegible…"
+	para "BLUE!"
+
+	para "THE PEOPLES"
+	line "CHAMPION!"
 	done
 
 ViridianCityWelcomeSignText:
@@ -207,10 +245,13 @@ ViridianCityWelcomeSignText:
 	done
 
 TrainerHouseSignText:
-	text "TRAINER HOUSE"
+	text "KANTO WAR ROOM"
 
-	para "The Club for Top"
-	line "Trainer Battles"
+	para "The hub for"
+	line "military strategy."
+
+	para "Authorized persons"
+	line "only."
 	done
 
 ViridianGymBlockScript:

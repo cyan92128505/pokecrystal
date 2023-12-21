@@ -36,14 +36,17 @@ Chris:
 	end
 
 PewterPokecenter1FTeacherText:
-	text "…Yeah, and the"
-	line "GYM in CINNABAR's"
+	text "I often wonder"
+	line "what exactly it"
+	cont "was those careless"
+	cont "scientists brought"
+	cont "back in those"
+	cont "space rocks."
 
-	para "gone. I was really"
-	line "amazed."
-
-	para "…Yes? I'm on the"
-	line "phone. Go away!"
+	para "The MUSEUM is"
+	line "sealed off so"
+	cont "we will never"
+	cont "know."
 	done
 
 PewterJigglypuffText:
@@ -52,18 +55,22 @@ PewterJigglypuffText:
 	done
 
 PewterPokecenter1FBugCatcherText:
-	text "Most #MON get"
-	line "drowsy if they"
+	text "The remains of"
+	line "VIRIDIAN FOREST"
+	cont "are south of here."
 
-	para "hear a JIGGLYPUFF"
-	line "singing."
+	para "It used to be"
+	line "a huge lush"
+	cont "forest."
 
-	para "There are several"
-	line "moves that can be"
+	para "Then the outbreak"
+	line "ravaged it."
 
-	para "used only while a"
-	line "#MON is asleep."
+	para "But the bugs that"
+	line "still live there"
+	cont "are real fighters!"
 	done
+
 
 PewterPokecenter1F_MapEvents:
 	db 0, 0 ; filler

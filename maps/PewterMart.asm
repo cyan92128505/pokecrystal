@@ -21,26 +21,35 @@ PewterMartSuperNerdScript:
 	jumptextfaceplayer PewterMartSuperNerdText
 
 PewterMartYoungsterText:
-	text "Hi! Check out my"
-	line "GYARADOS!"
+	text "There is no"
+	line "cure for"
+	cont "#RUS."
 
-	para "I raised it from a"
-	line "MAGIKARP. I can't"
+	para "It's not clear"
+	line "how exactly it"
+	cont "affects #MON."
 
-	para "believe how strong"
-	line "it has become."
+	para "It seems like"
+	line "the #MON of"
+	cont "stronger trainers"
+	cont "are less affected."
 	done
 
 PewterMartSuperNerdText:
-	text "There once was a"
-	line "weird old man who"
-	cont "sold MAGIKARP."
+	text "I want to get"
+	line "#RUS."
 
-	para "He was saying the"
-	line "MAGIKARP from the"
+	para "I think it is"
+	line "misunderstood."
 
-	para "LAKE OF RAGE were"
-	line "excellent."
+	para "I have a theory"
+	line "that if used"
+	cont "right it can"
+	cont "actually make"
+	cont "#MON stronger."
+
+	para "If it doesn't"
+	line "kill them that is."
 	done
 
 PewterMart_MapEvents:

@@ -25,24 +25,8 @@ PewterCityBugCatcherScript:
 PewterCityMuseumGuardScript:
 	jumptextfaceplayer MuseumBlockText
 
-PewterCityGrampsScript: ; AndrewNote - here is how to make an npc give an item
-	faceplayer
-	opentext
-	sjump .GotSilverWing ; player now gets silver wing by other means
-	checkevent EVENT_GOT_SILVER_WING
-	iftrue .GotSilverWing
-	writetext PewterCityGrampsText
-	promptbutton
-	verbosegiveitem SILVER_WING
-	setevent EVENT_GOT_SILVER_WING
-	closetext
-	end
-
-.GotSilverWing:
-	writetext PewterCityGrampsText_GotSilverWing
-	waitbutton
-	closetext
-	end
+PewterCityGrampsScript:
+    jumptextfaceplayer PewterCityGrampsText
 
 PewterCitySign:
 	jumptext PewterCitySignText
@@ -72,56 +56,69 @@ PewterCityFruitTree2:
 	fruittree FRUITTREE_PEWTER_CITY_2
 
 PewterCityCooltrainerFText:
-	text "Have you visited"
-	line "PEWTER GYM?"
+	text "The #RUS"
+	line "outbreak put"
+	cont "PEWTER on the map"
+	cont "in all the wrong"
+	cont "ways."
 
-	para "The LEADER uses"
-	line "rock-type #MON."
+	para "We have slowly"
+	line "tried to rebuild."
+
+	para "BROCK spends his"
+	line "whole GYM LEADER"
+	cont "salary helping"
+	cont "everyone."
 	done
 
 PewterCityBugCatcherText:
-	text "At night, CLEFAIRY"
-	line "come out to play"
-	cont "at MT.MOON."
+	text "Everyone knows"
+	line "it was those"
+	cont "filthy scientists"
+	cont "that brought this"
+	cont "upon us."
 
-	para "But not every"
-	line "night."
+	para "Of course none"
+	line "of them are still"
+	cont "alive to answer"
+	cont "for their crimes."
 	done
 
 PewterCityGrampsText:
-	text "Ah, you came all"
-	line "the way out here"
-	cont "from JOHTO?"
+	text "After the incident"
+	line "my family was out"
+	cont "of money."
 
-	para "That brings back"
-	line "memories. When I"
+	para "I invested in"
+	line "a new promising"
+	cont "venture in"
+	cont "VERMILION."
 
-	para "was young, I went"
-	line "to JOHTO to train."
+	para "But it was a"
+	line "con and collapsed"
+	cont "shortly after."
 
-	para "You remind me so"
-	line "much of what I was"
+	para "I lost my pension"
+	line "along with my"
+	cont "family."
 
-	para "like as a young"
-	line "man."
+	para "I've lost"
+	line "everything."
 
-	para "Here. I want you"
-	line "to have this item"
-	cont "I found in JOHTO."
-	done
+	para "hu hu... sniff"
 
-PewterCityGrampsText_GotSilverWing:
-	text "Going to new, un-"
-	line "known places and"
-	cont "seeing new people…"
+	para "...."
 
-	para "Those are the joys"
-	line "of travel."
+	para "BROCK comes to"
+	line "see me everyday."
+
+	para "He's such a good"
+	line "young man."
 	done
 
 PewterCitySignText:
 	text "PEWTER CITY"
-	line "A Stone Gray City"
+	line "The gray city."
 	done
 
 PewterGymSignText:
@@ -138,8 +135,7 @@ PewterMuseumSignText:
 	line "here…"
 
 	para "PEWTER MUSEUM OF"
-	line "SCIENCE is closed"
-	cont "for renovations…"
+	line "SCIENCE is sealed."
 	done
 
 PewterCityMtMoonGiftShopSignText:
@@ -152,7 +148,10 @@ PewterCityMtMoonGiftShopSignText:
 
 PewterCityWelcomeSignText:
 	text "WELCOME TO"
-	line "PEWTER CITY!"
+	line "PEW..."
+
+	para "The rest is"
+	line "worn away."
 	done
 	
 PewterGymBlockScript:
@@ -169,7 +168,7 @@ PewterGymBlockScript:
     end
 
 MuseumBlockScript:
-    checkevent EVENT_BEAT_BLUE
+    checkevent EVENT_BEAT_BROCK
     iffalse .block
     end
 .block
@@ -188,7 +187,7 @@ MuseumBlockText:
     line "the PEWTER MUSEUM."
 
     para "Two years ago a"
-    line "Pokerus outbreak"
+    line "#RUS outbreak"
     cont "occurred here."
 
     para "It was believed"
@@ -212,8 +211,8 @@ MuseumBlockText:
 
     para "Only those who"
     line "have defeated"
-    cont "him are allowed"
-    cont "to enter."
+    cont "GYM LEADER BROCK"
+    cont "may enter."
     done
 
 PewterGymBlockText:

@@ -44,10 +44,14 @@ CeruleanMart_CooltrainerFText:
 	text "MISTY is really"
 	line "strong."
 
-	para "She keeps all"
-	line "those weirdos"
-	cont "across the bridge"
-	cont "in check."
+	para "But she can't"
+	cont "keep boyfriends."
+
+	para "She has high"
+	line "standards and"
+	cont "can be clingy"
+	cont "with people she"
+	cont "likes."
 	done
 
 CeruleanMart_MapEvents:

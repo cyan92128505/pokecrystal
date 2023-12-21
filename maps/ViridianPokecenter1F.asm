@@ -15,7 +15,7 @@ ViridianPokecenter1FNurseScript:
 ViridianPokecenter1FCooltrainerMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BLUE_IN_CINNABAR
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .BlueReturned
 	writetext ViridianPokecenter1FCooltrainerMText
 	waitbutton
@@ -35,38 +35,60 @@ ViridianPokecenter1FBugCatcherScript:
 	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
 
 ViridianPokecenter1FCooltrainerMText:
-	text "Where in the world"
-	line "is VIRIDIAN's GYM"
+	text "We are all doing"
+	line "our best to get"
+	cont "ready for war."
 
-	para "LEADER? I wanted"
-	line "to challenge him."
+	para "BLUE tells us"
+	line "we will survive."
+
+	para "But I'm scared."
 	done
 
 ViridianPokecenter1FCooltrainerMText_BlueReturned:
-	text "There are no GYM"
-	line "TRAINERS at the"
-	cont "VIRIDIAN GYM."
+	text "You are CHAMPION"
+	line "<PLAYER>!"
 
-	para "The LEADER claims"
-	line "his policy is to"
+	para "BLUE told us all"
+	line "about you."
 
-	para "win without having"
-	line "any underlings."
+	para "You're battle"
+	line "with WALLACE is"
+	cont "LEGENDARY!"
+
+	para "Thank you so"
+	line "much for saving"
+	cont "everybody."
 	done
 
 ViridianPokecenter1FCooltrainerFText:
-	text "I heard that the"
-	line "GYM in CINNABAR is"
-	cont "gone."
+	text "It's not even a"
+	line "conspiracy."
 
-	para "I wonder what be-"
-	line "came of BLAINE,"
-	cont "the GYM LEADER."
+	para "It is the obvious"
+	line "truth!"
+
+	para "CINNABAR was"
+	line "destroyed by a"
+	cont "new HOEN weapon."
 	done
 
 ViridianPokecenter1FBugCatcherText:
-	text "My dream is to be-"
-	line "come a GYM LEADER."
+	text "CINNABAR was"
+	cont "not destroyed by"
+	cont "a HOEN weapon."
+
+	para "They want us to"
+	line "think that to"
+	cont "make us angry."
+
+	para "It was the"
+	line "#MON LEAUGE"
+	cont "themselves that"
+	cont "destroyed it!"
+
+	para "That's the real"
+	line "truth!"
 	done
 
 ViridianPokecenter1F_MapEvents:

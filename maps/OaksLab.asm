@@ -17,7 +17,7 @@ Oak:
 	opentext
 	checkevent EVENT_OPENED_MT_SILVER
 	iftrue .CheckPokedex
-	checkevent EVENT_TALKED_TO_OAK_IN_KANTO
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .CheckBadges
 	writetext OakWelcomeKantoText
 	promptbutton
@@ -175,21 +175,23 @@ OakRefusedText:
     done
 
 OakWelcomeKantoText:
-	text "OAK: Ah, <PLAY_G>!"
-	line "It's good of you"
+	text "Good to see you"
+	line "<PLAYER>."
 
-	para "to come all this"
-	line "way to KANTO."
+	para "KANTO is still"
+	line "in a war ready"
+	cont "state."
 
-	para "What do you think"
-	line "of the trainers"
+	para "The trainers are"
+	line "all very strong."
 
-	para "out here?"
-	line "Pretty tough, huh?"
+	para "Especially the"
+	line "GYM LEADERS."
 
-	para "Come see me if"
-	line "you beat them"
-	cont "all."
+	para "It may not be"
+	line "a frindly place"
+	cont "for you right"
+	cont "now."
 	done
 
 OakLabDexCheckText:
@@ -206,15 +208,18 @@ OakLabGoodbyeText:
 	done
 
 OakOpenMtSilverText:
-	text "OAK: Wow! That's"
-	line "excellent!"
+	text "You have done"
+	line "incredibly well."
 
-	para "You collected the"
-	line "BADGES of GYMS in"
-	cont "KANTO. Well done!"
+	para "You have saved"
+	line "KANTO."
 
-	para "I was right in my"
-	line "assessment of you."
+	para "You have defeated"
+	line "WALLACE."
+
+	para "And you have"
+	line "obtained all KANTO"
+	cont "BADGES."
 
 	para "You are a true"
 	line "CHAMPION!"
@@ -245,20 +250,13 @@ OakOpenMtSilverText:
 	line "mountain that is"
 
 	para "home to many wild"
-	line "#MON."
+	line "#MON far"
+	cont "to powerful for"
+	cont "any trainer to"
+	cont "conquer."
 
-	para "It's too dangerous"
-	line "for your average"
-
-	para "trainer, so it's"
-	line "off limits. But"
-
-	para "we can make an"
-	line "exception in your"
-	cont "case, <PLAY_G>."
-
-	para "Go up to INDIGO"
-	line "PLATEAU. You can"
+	para "Head west from"
+	line "VIRIDIAN."
 
 	para "reach MT.SILVER"
 	line "from there."
@@ -299,60 +297,58 @@ OakGiveWarpDeviceText:
     done
 
 OakNoKantoBadgesText:
-	text "OAK: Hmm? You're"
-	line "not collecting"
-	cont "KANTO GYM BADGES?"
+    text "Hello <PLAYER>."
 
-	para "The GYM LEADERS in"
-	line "KANTO are as tough"
+	para "The KANTO GYMS"
+	line "are very tough."
 
-	para "as any you battled"
-	line "in JOHTO."
-
-	para "I recommend that"
-	line "you challenge"
+	para "I sense you are"
+	line "having some"
+	cont "difficulty with"
 	cont "them."
+
+	para "Try fighting them"
+	line "all and you will"
+	cont "find one you can"
+	cont "beat I am sure."
 	done
 
 OakYesKantoBadgesText:
-	text "OAK: Ah, you're"
-	line "collecting KANTO"
-	cont "GYM BADGES."
+    text "Hello <PLAYER>."
 
-	para "I imagine that"
-	line "it's hard, but the"
+	para "Ah you have some"
+	line "KANTO BADGES."
 
-	para "experience is sure"
-	line "to help you."
+	para "Very good!"
 
-	para "Come see me when"
-	line "you get them all."
+	para "Keep battling"
+	line "and eventually"
+	cont "you will face my"
+	cont "nephew BLUE."
 
-	para "I'll have a gift"
-	line "for you."
+	para "He is much more"
+	line "powerful than a"
+	cont "typical GYM"
+	cont "LEADER!"
 
-	para "Keep trying hard,"
-	line "<PLAY_G>!"
+	para "If you ever beat"
+	line "him you mist"
+	cont "come see me."
 	done
 
 OaksAssistant1Text:
-	text "The PROF's #MON"
-	line "TALK radio program"
-
-	para "isn't aired here"
-	line "in KANTO."
-
-	para "It's a shame--I'd"
-	line "like to hear it."
+	text "We are working"
+	line "closly with BILL"
+	cont "on adjustments"
+	cont "to the EXP SHARE."
 	done
 
 OaksAssistant2Text:
-	text "Thanks to your"
-	line "work on the #-"
-	cont "DEX, the PROF's"
+	text "Keep growing"
+	line "your #DEX."
 
-	para "research is coming"
-	line "along great."
+	para "The information"
+	line "is very valubal."
 	done
 
 OaksAssistant3Text:

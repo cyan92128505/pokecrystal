@@ -133,38 +133,45 @@ Route1FruitTree:
 	fruittree FRUITTREE_ROUTE_1
 
 SchoolboyDannySeenText:
-	text "If trainers meet,"
-	line "the first thing to"
-	cont "do is battle."
+	text "The only things"
+	line "about school I'm"
+	cont "sure I'll remember"
+	cont "are my friends."
 	done
 
 SchoolboyDannyBeatenText:
-	text "Awww… I've got a"
-	line "losing record…"
+	text "Good times!"
 	done
 
 SchoolboyDannyAfterBattleText:
-	text "For trainers, it's"
-	line "a given that we'll"
+	text "Friends always"
+	line "stay with you."
 
-	para "battle whenever we"
-	line "meet."
+	para "They are what give"
+	line "colour to all the"
+	cont "memories."
 	done
 
 CooltrainerfQuinnSeenText:
-	text "You there!"
-	line "Want to battle?"
+	text "Are you a new"
+	line "trainer!"
+
+	para "Welcome to"
+	line "#MON!"
 	done
 
 CooltrainerfQuinnBeatenText:
-	text "Down and out…"
+	text "Are you griefing"
+	line "too?"
 	done
 
 CooltrainerfQuinnAfterBattleText:
-	text "You're strong."
+	text "You are not a"
+	line "noob, that's no"
+	cont "fun."
 
-	para "You obviously must"
-	line "have trained hard."
+	para "I want to be an"
+	line "INVADER one day!"
 	done
 
 Route1SignText:

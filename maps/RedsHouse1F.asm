@@ -17,10 +17,10 @@ RedsMom:
 	iftrue .MetAlready
 	writetext RedsMomText1
 	waitbutton
-	closetext
+	;closetext
 	verbosegiveitem LUCKY_EGG
 	setevent EVENT_MET_REDS_MOM
-	end
+	;end
 .MetAlready:
 	writetext RedsMomText2
 	waitbutton
@@ -34,37 +34,65 @@ RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
 
 RedsMomText1:
-	text "Hi!"
+	text "Hello there."
 
-	para "RED's been away"
-	line "for a long time."
+	para "You are a"
+	line "#MON trainer."
 
-	para "He hasn't called"
-	line "either, so I have"
+	para "My son is also"
+	line "a trainer."
 
-	para "no idea where he"
-	line "is or what he's"
-	cont "been doing."
+	para "He started his"
+	line "journey about"
+	cont "7 years ago."
 
-	para "They say that no"
-	line "word is proof that"
+	para "He visits very"
+	line "rarly."
 
-	para "he's doing fine,"
-	line "but I do worry"
-	cont "about him."
+	para "It's been months"
+	line "since I last saw"
+	cont "him."
+
+	para "I never have any"
+	line "idea where he is"
+	cont "but I know he is"
+	cont "save."
+
+	para "He gave me this"
+	line "a while ago."
+
+	para "Said he didn't"
+	line "need it anymore."
+
+	para "Here you can have"
+	line "it. It might be"
+	cont "of use to you."
 	done
 
 RedsMomText2:
-	text "I worry about RED"
-	line "getting hurt or"
+	text "I miss my son"
+	line "very much."
 
-	para "sick, but he's a"
-	line "boy. I'm proud"
+	para "But I am proud"
+	line "of him and know"
+	cont "he living his"
+	cont "life the way he"
+	cont "wants."
 
-	para "that he is doing"
-	line "what he wants to"
+	para "And I know nobody"
+	line "can hurt him."
 
-	para "do."
+	para "I'm sure your mum"
+	line "misses you."
+
+	para "Visit her when"
+	line "you can."
+
+	para "If you ever see"
+	line "my son RED."
+
+	para "Tell him I'm"
+	line "thinking of him."
 	done
 
 RedsHouse1FTVText:

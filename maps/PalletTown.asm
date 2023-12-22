@@ -29,7 +29,11 @@ PalletTownTeacherScript:
 	jumptextfaceplayer PalletTownTeacherText
 
 PalletTownFisherScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .amaze
 	jumptextfaceplayer PalletTownFisherText
+.amaze
+    jumptextfaceplayer PalletTownFisherText_Amaze
 
 PalletTownSign:
 	jumptext PalletTownSignText
@@ -44,21 +48,59 @@ BluesHouseSign:
 	jumptext BluesHouseSignText
 
 PalletTownTeacherText:
-	text "I'm raising #-"
-	line "MON too."
+	text "I read in the"
+	line "news that the"
+	cont "world is full of"
+	cont "problems."
 
-	para "They serve as my"
-	line "private guards."
+	para "Those problems"
+	line "haven't found"
+	cont "their way here."
+
+	para "I hope they never"
+	line "do."
 	done
 
 PalletTownFisherText:
-	text "Technology is"
-	line "incredible!"
+	text "Have you met"
+	line "LANCE!"
 
-	para "You can now trade"
-	line "#MON across"
-	cont "time like e-mail."
+	para "Aww man he is"
+	line "so cool!"
+
+	para "LEON is cool too"
+	cont "and CYNTHIA too!"
+
+	para "People like that"
+	line "will never visit"
+	cont "a little town"
+	cont "like this!"
 	done
+
+PalletTownFisherText_Amaze:
+    text "Wait!"
+
+    para "No way!"
+
+    para "Aren't you..."
+
+    para "CHAMPION <PLAYER>!"
+
+    para "The slayer of"
+    line "WALLACE!"
+
+    para "The saviour of"
+    line "KANTO!"
+
+    para "You are the"
+    line "COOLEST!"
+
+    para "I can't believe"
+    line "I've met you!"
+
+    para "You have made"
+    line "my day!"
+    done
 
 PalletTownSignText:
 	text "PALLET TOWN"

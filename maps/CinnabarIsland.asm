@@ -42,69 +42,63 @@ CinnabarIslandBlueTeleport:
 CinnabarIslandBlueText:
 	text "Who are you?"
 
-	para "Well, it's plain"
-	line "to see that you're"
-	cont "a trainer…"
+	para "Ah you are the"
+	line "JOHTO CHAMPION."
 
-	para "My name's BLUE."
+	para "There was a time"
+	line "when being a"
+	cont "CHAMPION meant"
+	cont "something."
 
-	para "I was once the"
-	line "CHAMPION, although"
+	para "Now it's just"
+	line "a puppet of the"
+	cont "#MON LEAUGE."
 
-	para "it was for only a"
-	line "short time…"
+	para "I was a CHAMPION"
+	line "myself for a"
+	cont "time."
 
-	para "That meddling RED"
-	line "did me in…"
+	para "Look at this place."
 
-	para "Anyway, what do"
-	line "you want? You want"
+	para "Destroyed by a"
+	line "volcanoe in an"
+	cont "instant."
 
-	para "to challenge me or"
-	line "something?"
+	para "It's not the"
+	line "only place to"
+	cont "have problems."
 
-	para "…I hate to say"
-	line "it, but I'm not in"
+	para "PEWTER had a"
+	line "#RUS outbreak."
 
-	para "the mood for a"
-	line "battle now."
+	para "And now the war"
+	line "with HOEN."
 
-	para "Take a good look"
-	line "around you…"
+	para "You know what the"
+	line "LEAUGE does."
 
-	para "A volcano erupts,"
-	line "and just like"
+	para "Nothing!"
 
-	para "that, a whole town"
-	line "disappears."
+	para "They must remain"
+	line "politically"
+	cont "neutral."
 
-	para "We can go on win-"
-	line "ning and losing in"
+	para "That's why I"
+	line "give up my title"
+	cont "of CHAMPION."
 
-	para "#MON. But if"
-	line "nature so much as"
+	para "It means nothing."
 
-	para "twitches, we can"
-	line "lose in a second."
+	para "If you get seven"
+	line "KANTO GYM BADGES"
+	cont "come see me in"
+	cont "VIRIDIAN."
 
-	para "…"
+	para "I'm the GYM"
+	line "LEADER."
 
-	para "That's the way it"
-	line "is…"
-
-	para "But, anyway, I'm"
-	line "still a trainer."
-
-	para "If I see a strong"
-	line "opponent, it makes"
-	cont "me want to battle."
-
-	para "If you want to"
-	line "battle me, come to"
-	cont "the VIRIDIAN GYM."
-
-	para "I'll take you on"
-	line "then."
+	para "I'll show you"
+	line "a real CHAMPION."
 	done
 
 CinnabarIslandGymSignText:

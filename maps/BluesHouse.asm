@@ -64,43 +64,47 @@ DaisyScript:
 	end
 
 DaisyHelloText:
-	text "DAISY: Hi! My kid"
-	line "brother is the GYM"
+	text "Hi! Oh you are"
+	line "from JOHTO."
 
-	para "LEADER in VIRIDIAN"
-	line "CITY."
+	para "You may have met"
+	line "my little brother."
 
-	para "But he goes out"
-	line "of town so often,"
+	para "He is the GYM"
+	line "LEADER of"
+	cont "VIRIDIAN."
 
-	para "it causes problems"
-	line "for the trainers."
+	para "People call him"
+	line "CHAMPION BLUE."
+
+	para "Even though he"
+	line "isn't technically"
+	cont "a CHAMP anymore."
 	done
 
 DaisyOfferGroomingText:
-	text "DAISY: Hi! Good"
-	line "timing. I'm about"
-	cont "to have some tea."
+	text "Hello!"
 
-	para "Would you like to"
-	line "join me?"
+	para "I'm about to"
+	line "have some tea."
 
-	para "Oh, your #MON"
-	line "are a bit dirty."
+	para "Would you like"
+	cont "some?"
 
-	para "Would you like me"
-	line "to groom one?"
+	para "Oh I could groom"
+	line "your #MON"
+	cont "while you drink."
 	done
 
 DaisyWhichMonText:
-	text "DAISY: Which one"
-	line "should I groom?"
+	text "Which one should"
+	line "I groom?"
 	done
 
 DaisyAlrightText:
-	text "DAISY: OK, I'll"
-	line "get it looking"
-	cont "nice in no time."
+	text "OK, I'll get it"
+	line "looking lovely"
+	cont "in no time."
 	done
 
 GroomedMonLooksContentText:
@@ -110,8 +114,8 @@ GroomedMonLooksContentText:
 	done
 
 DaisyAllDoneText:
-	text "DAISY: There you"
-	line "go! All done."
+	text "There you have it."
+	line "All done."
 
 	para "See? Doesn't it"
 	line "look nice?"
@@ -121,24 +125,25 @@ DaisyAllDoneText:
 	done
 
 DaisyAlreadyGroomedText:
-	text "DAISY: I always"
-	line "have tea around"
+	text "I always have"
+	line "tea around this"
+	cont "time."
 
-	para "this time. Come"
-	line "join me."
+	para "Come join me."
 	done
 
 DaisyRefusedText:
-	text "DAISY: You don't"
-	line "want to have one"
+	text "You don't want"
+	line "to have one"
 
 	para "groomed? OK, we'll"
 	line "just have tea."
 	done
 
 DaisyCantGroomEggText:
-	text "DAISY: Oh, sorry."
-	line "I honestly can't"
+	text "Oh, sorry."
+
+	para "I honestly can't"
 	cont "groom an EGG."
 	done
 

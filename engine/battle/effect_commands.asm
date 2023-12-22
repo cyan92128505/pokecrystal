@@ -5497,6 +5497,9 @@ BattleCommand_ForceSwitch:
 	ld hl, SpikesDamage
 	call CallBattleCore
 
+	ld hl, SwitchInEffects ; AndrewNote - Force Switch - switch in effects
+	call CallBattleCore
+
 	ld hl, ApplyStatusEffectOnEnemyStats
 	jp CallBattleCore
 
@@ -5596,6 +5599,9 @@ BattleCommand_ForceSwitch:
 
 	ld hl, SpikesDamage
 	jp CallBattleCore
+
+	ld hl, SwitchInEffects ; AndrewNote - Force Switch - switch in effects
+	call CallBattleCore
 
 .fail
 	call BattleCommand_LowerSub

@@ -18,18 +18,37 @@ CinnabarPokecenter1FFisherScript:
 	jumptextfaceplayer CinnabarPokecenter1FFisherText
 
 CinnabarPokecenter1FCooltrainerFText:
-	text "CINNABAR GYM's"
-	line "BLAINE apparently"
+	text "They say the"
+	line "volcanoe was the"
+	cont "doing of HOEN."
 
-	para "lives alone in the"
-	line "SEAFOAM ISLANDS"
-	cont "cave…"
+	para "No!"
+
+	para "It was the wrath"
+	line "of the great one."
+
+	para "The one true God"
+	line "of the universe."
+
+	para "MISSINGNO!"
+
+	para "Have mercy!"
 	done
 
 CinnabarPokecenter1FFisherText:
 	text "It's been a year"
 	line "since the volcano"
 	cont "erupted."
+
+	para "There is nothing"
+	line "to rebuild on."
+
+	para "Everyhting is"
+	line "gone."
+
+	para "Even BLAINE now"
+	line "operates out of"
+	cont "a cave in the sea."
 	done
 
 CinnabarPokecenter1F_MapEvents:

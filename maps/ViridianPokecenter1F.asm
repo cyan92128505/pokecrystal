@@ -75,7 +75,7 @@ ViridianPokecenter1FCooltrainerFText:
 
 ViridianPokecenter1FBugCatcherText:
 	text "CINNABAR was"
-	cont "not destroyed by"
+	line "not destroyed by"
 	cont "a HOEN weapon."
 
 	para "They want us to"

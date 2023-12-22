@@ -46,87 +46,106 @@ TrainerHouse1FReceptionistText:
 	done
 
 TrainerHouse1FCooltrainerMText:
-	text "VIRIDIAN is the"
-	line "town closest to"
-	cont "INDIGO PLATEAU."
+	text "We must take the"
+	line "fight to them!"
 
-	para "They built this"
-	line "place because so"
+	para "Release a hord"
+	line "of TENTACOOL into"
+	cont "their water supply"
+	cont "and slowly poison"
+	cont "their population."
 
-	para "many trainers pass"
-	line "through on their"
+	para "Then sell them"
+	line "an adictive drug"
+	cont "as an antidote."
 
-	para "way up to INDIGO"
-	line "PLATEAU."
+	para "When we have them"
+	line "hooked they will"
+	cont "be our slaves!"
 	done
 
 TrainerHouse1FCooltrainerFText:
-	text "They hold practice"
-	line "battles downstairs"
-	cont "here."
+	text "We must focus"
+	line "on what we have"
+	cont "in common."
 
-	para "I would love to"
-	line "see how well a"
+	para "Let's have a"
+	line "HOEN appreciaition"
+	cont "day where we"
+	cont "celebrate their"
+	cont "culture."
 
-	para "trainer from JOHTO"
-	line "battles."
+	para "We can criminalise"
+	line "critisum of HOEN."
+
+	para "That would convey"
+	line "soladarity with"
+	cont "our HOEN siblings."
 	done
 
 TrainerHouse1FYoungsterText:
-	text "I guess you can't"
-	line "become the CHAMP"
+	text "We should build"
+	line "a wall all around"
+	cont "the shore line."
 
-	para "unless you go all"
-	line "over the place and"
+	para "We have lots of"
+	line "FLYING #MON"
+	cont "we could train"
+	cont "to drop bombs"
+	cont "on the enemy"
+	cont "fleets."
 
-	para "battle all kinds"
-	line "of people."
-
-	para "The CHAMPION from"
-	line "PALLET traveled to"
-
-	para "all the cities and"
-	line "towns in KANTO."
+	para "We must fortify"
+	line "our position."
 	done
 
 TrainerHouse1FGentlemanText:
-	text "Whew… I'm taking a"
-	line "rest from #MON"
-	cont "battles."
+	text "Hello everyone"
+
+	para "...."
+
+	para "Welcome to this"
+	line "meeting of..."
+
+	para "Uh...."
+
+	para "Yes the war room!"
+
+	para "...."
+
+	para "Let's have some"
+	line "tea."
+
+	para "Oh and those"
+	line "little cakes too."
 	done
 
 TrainerHouseSign1Text:
-	text "Practice battles"
-	line "are held in the"
-
-	para "TRAINING HALL"
-	line "downstairs."
-
-	para "Skilled trainers"
-	line "are invited to"
-	cont "participate."
+	text "To know your"
+	line "enemy you must"
+	cont "become your enemy."
 	done
 
 TrainerHouseSign2Text:
-	text "There are no rules"
-	line "or regulations for"
-
-	para "practice matches."
-	line "Just like in field"
-
-	para "battles, anything"
-	line "goes!"
+	text "Until death itself"
+	line "comes no calamity"
+	cont "need be feared."
 	done
 
 TrainerHouseIllegibleText:
-	text "…What's this?"
-	line "A strategy memo?"
+	text "There is something"
+	line "written here."
 
-	para "This writing looks"
-	line "like ONIX tracks…"
+	para "If you lot don't"
+	line "start coming up"
+	cont "with some ideas"
+	cont "that aren't"
+	cont "absolutly terrible"
+	cont "I'll disband this"
+	cont "little tea party."
 
-	para "It's completely"
-	line "illegible…"
+	para "Sincerly,"
+	line "BLUE."
 	done
 
 TrainerHouse1F_MapEvents:

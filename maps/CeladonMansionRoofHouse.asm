@@ -24,7 +24,7 @@ CeladonMansionRoofHouseAndrewScript:
 	opentext
 	writetext CeladonAndrewAfterBattleText
 	waitbutton
-	verbosegiveitem HOLY_CROWN
+	verbosegiveitem AMBROSIA
 .noBattle
 	writetext CeladonAndrewFinalText
 	waitbutton
@@ -52,7 +52,7 @@ CeladonAndrewInitialIntroText:
     para "You need proof!"
 
     para "Very well, here"
-    line "have some proof."
+    line "is your proof."
     done
 
 CeladonAndrewWinsText:
@@ -91,18 +91,9 @@ CeladonAndrewAfterBattleText:
     para "But I think I've"
     line "made my point."
 
-    para "Here is a little"
-    line "more proof."
-
-    para "Take this item."
-
-    para "You can't use it"
-    line "but it sells"
-    cont "for a lot."
-
-    para "You wont get"
-    line "another one of"
-    cont "these for a while."
+    para "Here take this"
+    line "for being a good"
+    cont "sport."
     done
 
 CeladonAndrewFinalText:

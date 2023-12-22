@@ -104,36 +104,35 @@ SeafoamGymGuideScript:
 	end
 
 BlaineIntroText:
-	text "BLAINE: Waaah!"
+	text "I am BLAINE."
 
-	para "My GYM in CINNABAR"
-	line "burned down."
+	para "A GYM LEADER"
+	line "without a GYM."
 
-	para "My fire-breathing"
-	line "#MON and I are"
+	para "Without a city."
 
-	para "homeless because"
-	line "of the volcano."
+	para "But there is one"
+	line "thing a LEADER"
+	cont "always keeps."
 
-	para "Waaah!"
+	para "His pride!"
 
-	para "But I'm back in"
-	line "business as a GYM"
+	para "I am the second"
+	line "strongest GYM"
+	cont "LEADER in KANTO."
 
-	para "LEADER here in"
-	line "this cave."
+	para "And you..."
 
-	para "If you can beat"
-	line "me, I'll give you"
-	cont "a BADGE."
+	para "CHAMPION!"
 
-	para "Ha! You'd better"
-	line "have BURN HEAL!"
+	para "Will feel the"
+	line "fires of my"
+	cont "pride!"
 	done
 
 BlaineWinLossText:
-	text "BLAINE: Awesome."
-	line "I've burned out…"
+	text "You have proven"
+	line "yourself."
 
 	para "You've earned"
 	line "VOLCANOBADGE!"
@@ -144,58 +143,53 @@ ReceivedVolcanoBadgeText:
 	line "VOLCANOBADGE."
 	done
 
-BlaineAfterBattleText:
-	text "BLAINE: I did lose"
-	line "this time, but I'm"
-
-	para "going to win the"
-	line "next time."
-
-	para "When I rebuild my"
-	line "CINNABAR GYM,"
-
-	para "we'll have to have"
-	line "a rematch."
-	done
-
 BlaineFightDoneText:
-	text "BLAINE: My fire"
-	line "#MON will be"
+	text "I have all I"
+	line "need, my"
+	cont "#MON!"
 
-	para "even stronger."
-	line "Just you watch!"
+	para "I don't need a"
+	line "GYM or a city."
+
+	para "All of KANTO"
+	line "is my city."
+
+	para "Here on these"
+	line "waters I am the"
+	cont "first line of"
+	cont "defense against"
+	cont "any attcker."
+
+	para "I will endure any"
+	line "hardship to"
+	cont "fulfil this vital"
+	cont "purpose!"
 	done
 
 SeafoamGymGuideWinText:
-	text "Yo!"
+	text "This guy is"
+	line "serious."
 
-	para "… Huh? It's over"
-	line "already?"
+	para "He mat even be"
+	line "a little insane."
 
-	para "Sorry, sorry!"
+	para "He uses a fire"
+	line "team and uses"
+	cont "SUNNY weather."
 
-	para "CINNABAR GYM was"
-	line "gone, so I didn't"
-
-	para "know where to find"
-	line "you."
-
-	para "But, hey, you're"
-	line "plenty strong even"
-
-	para "without my advice."
-	line "I knew you'd win!"
+	para "If you can take"
+	line "his sun away you"
+	cont "can win!"
 	done
 
 SeafoamGymGuideWinText2:
-	text "A #MON GYM can"
-	line "be anywhere as"
-
-	para "long as the GYM"
-	line "LEADER is there."
-
-	para "There's no need"
-	line "for a building."
+	text "You took his"
+	line "pride and snuffed"
+	cont "it out like a"
+	cont "feeble ember."
+	
+	para "Man you really"
+	line "are the best!"
 	done
 
 RematchTextBlaine:

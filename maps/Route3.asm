@@ -94,70 +94,92 @@ Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
 
 FirebreatherOtisSeenText:
-	text "Ah! The weather's"
-	line "as fine as ever."
+	text "I am the great"
+	line "OTIS, fire"
+	cont "breather"
+	cont "extraordinaire!"
+	para "No other fire"
+	line "breather can match"
+	cont "my style."
+	para "Certainly not that"
+	line "brutish BURT."
 	done
 
 FirebreatherOtisBeatenText:
-	text "It's sunny, but"
-	line "I'm all wet…"
+	text "Behold my style!"
 	done
 
 FirebreatherOtisAfterBattleText:
-	text "When it rains,"
-	line "it's hard to get"
-	cont "ignition…"
+	text "I hope you"
+	line "appreciated the"
+	cont "show."
+	para "Those troglodytes"
+	line "in PEWTER are too"
+	cont "dim to do so."
 	done
 
 YoungsterWarrenSeenText:
-	text "Hmmm… I don't know"
-	line "what to do…"
+	text "I need to get out"
+	line "of PEWTER."
+	para "I have no future"
+	line "here."
+	para "Where is a nice"
+	line "remote place to"
+	cont "go?"
 	done
 
 YoungsterWarrenBeatenText:
-	text "I knew I'd lose…"
+	text "Where are you"
+	line "from?"
 	done
 
 YoungsterWarrenAfterBattleText:
-	text "You looked strong."
-
-	para "I was afraid to"
-	line "take you on…"
+	text "Maybe I'll go to"
+	line "CINNABAR."
+	para "It should be nice"
+	line "and peaceful."
 	done
 
 YoungsterJimmySeenText:
-	text "I can run like the"
-	line "wind!"
+	text "I managed to break"
+	line "into the MUSEUM"
+	cont "last week."
+	para "I haven't been"
+	line "able to sleep"
+	cont "since."
 	done
 
 YoungsterJimmyBeatenText:
-	text "Blown away!"
+	text "Cough..."
 	done
 
 YoungsterJimmyAfterBattleText:
-	text "I wear shorts the"
-	line "whole year round."
-
-	para "That's my fashion"
-	line "policy."
+	text "I lost my lucky"
+	line "shorts in the"
+	cont "MUSEUM."
+	para "They were comfy"
+	line "and easy to wear."
 	done
 
 FirebreatherBurtSeenText:
-	text "Step right up and"
-	line "take a look!"
+	text "I want to put on a"
+	line "show to cheer up"
+	cont "the people of"
+	cont "PEWTER."
+	para "But that damn OTIS"
+	line "is here first."
 	done
 
 FirebreatherBurtBeatenText:
-	text "Yow! That's hot!"
+	text "You have flare!"
 	done
 
 FirebreatherBurtAfterBattleText:
-	text "The greatest fire-"
-	line "breather in KANTO,"
-	cont "that's me."
-
-	para "But not the best"
-	line "trainer…"
+	text "OTIS only cares"
+	line "about himself."
+	para "I want to make"
+	line "people warm and"
+	cont "happy."
 	done
 
 Route3MtMoonSquareSignText:

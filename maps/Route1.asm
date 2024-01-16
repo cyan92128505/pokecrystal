@@ -154,24 +154,28 @@ SchoolboyDannyAfterBattleText:
 
 CooltrainerfQuinnSeenText:
 	text "Are you a new"
-	line "trainer!"
-
-	para "Welcome to"
-	line "#MON!"
+	line "trainer?"
+	para "I'm really"
+	line "sorry but I"
+	cont "have to do"
+	cont "this."
+	para "I have to"
+	line "destroy you."
 	done
 
 CooltrainerfQuinnBeatenText:
-	text "Are you griefing"
-	line "too?"
+	text "Please"
+	line "forgive me."
 	done
 
 CooltrainerfQuinnAfterBattleText:
-	text "You are not a"
-	line "noob, that's no"
-	cont "fun."
-
-	para "I want to be an"
-	line "INVADER one day!"
+	text "It is my duty"
+	line "as as trainer"
+	cont "to destroy my"
+	cont "enemies."
+	para "No matter how"
+	line "unfair it"
+	cont "might be."
 	done
 
 Route1SignText:

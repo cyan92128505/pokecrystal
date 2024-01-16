@@ -1025,6 +1025,7 @@ Battle_EnemyFirst:
 	ld a, [wLinkMode]
 	and a
 	jr nz, .noSwitch
+
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .noSwitch

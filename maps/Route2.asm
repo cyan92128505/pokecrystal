@@ -202,57 +202,64 @@ Route2HiddenRevive:
 	hiddenitem REVIVE, EVENT_ROUTE_2_HIDDEN_REVIVE
 
 BugCatcherRobSeenText:
-	text "My bug #MON are"
-	line "tough. Prepare to"
-	cont "lose!"
+	text "DOUG thinks his"
+	line "#MON are the"
+	cont "rulers of the"
+	cont "colony."
+	para "I have no choice"
+	line "but to destroy"
+	cont "him!"
 	done
 
 BugCatcherRobBeatenText:
-	text "I was whipped…"
+	text "I have lost my"
+	line "sovereignty."
 	done
 
 BugCatcherRobAfterBattleText:
-	text "I'm going to look"
-	line "for stronger bug"
-	cont "#MON."
+	text "This is just one"
+	line "battle."
+	para "Among BUGS the"
+	line "wars never end."
 	done
 
 BugCatcherEdSeenText:
-	text "If you walk in"
-	line "tall grass wearing"
-
-	para "shorts, do you get"
-	line "nicks and cuts?"
+	text "All things decay."
+	para "One day nobody"
+	line "will remember how"
+	cont "magnificent"
+	cont "VIRIDIAN FOREST"
+	cont "used to be."
 	done
 
 BugCatcherEdBeatenText:
-	text "Ouch, ouch, ouch!"
+	text "All things decay."
 	done
 
 BugCatcherEdAfterBattleText:
-	text "They'll really"
-	line "sting when you"
-	cont "take a bath."
+	text "Maybe one day the"
+	line "forest will grow"
+	cont "back."
+	para "BUGS always find a"
+	line "way."
 	done
 
 BugCatcherDougSeenText:
-	text "Why don't girls"
-	line "like bug #MON?"
+	text "My #MON rule"
+	line "the colony."
+	para "ROB shall never"
+	line "dethrone me."
+	para "Nor shall you!"
 	done
 
 BugCatcherDougBeatenText:
-	text "No good!"
+	text "Treason!"
 	done
 
 BugCatcherDougAfterBattleText:
-	text "Bug #MON squish"
-	line "like plush toys"
-
-	para "when you squeeze"
-	line "their bellies."
-
-	para "I love how they"
-	line "feel!"
+	text "ROBS #MON"
+	line "shall make fine"
+	cont "drones."
 	done
 
 Route2SignText:

@@ -32,31 +32,28 @@ Rattey:
 	end
 
 ViridianNicknameSpeechHousePokefanMText:
-	text "Do you put a lot"
-	line "of thought into"
-
-	para "naming your"
-	line "#MON?"
-
-	para "Giving them good"
-	line "nicknames adds to"
-
-	para "the fun of trading"
-	line "with others."
+	text "VIRIDIAN is the"
+	line "closest point to"
+	cont "JOHTO."
+	para "We collaborate"
+	line "together in the"
+	cont "war effort."
 	done
 
 ViridianNicknameSpeechHouseLassText:
-	text "They're SPEARY--"
-	line "a BUNEARY--and"
-	cont "RATTEY--a RATTATA."
+	text "I tried to go west"
+	line "to the #MON"
+	cont "LEAGUE and I saw a"
+	cont "big firey bird."
+	para "I ran for it!"
 	done
 
 SpearyText:
-	text "SPEARY: Ch-chun!"
+	text "STARLY: Ch-chun!"
 	done
 
 RatteyText:
-	text "RATTEY: Kikiii!"
+	text "RATTATA: Kikiii!"
 	done
 
 ViridianNicknameSpeechHouse_MapEvents:

@@ -2076,9 +2076,9 @@ AI_Smart_Paralyze:
 	jr c, .discourage50
 	jr .checkEvasion
 
-; if we are faster and player can 3HKO, discourage
+; if we are faster and player can 2HKO, discourage
 .AIFaster
-    call CanPlayer3HKOMaxHP
+    call CanPlayer2HKOMaxHP
     jr c, .discourage
 
 .checkEvasion

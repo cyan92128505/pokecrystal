@@ -187,13 +187,13 @@ GreenSeenText:
     cont "months before"
     cont "RED and BLUE."
 
-    para "BLUE is a"
-    line "CHAMPION now."
+    para "BLUE was a"
+    line "CHAMPION."
 
     para "And RED..."
 
     para "He is beyond"
-    line "any of us."
+    line "any titles."
 
     para "But I am plenty"
     line "strong too!"

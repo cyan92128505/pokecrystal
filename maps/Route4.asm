@@ -112,63 +112,71 @@ Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 
 BirdKeeperHankSeenText:
-	text "I'm raising my"
-	line "#MON. Want to"
-	cont "battle with me?"
+	text "When HEON attacks"
+	line "I'll use my birds"
+	cont "to FLY people to"
+	cont "JOHTO."
+	para "At a small fee of"
+	line "course."
 	done
 
 BirdKeeperHankBeatenText:
-	text "Ack! I lost that"
-	line "one…"
+	text "You get a"
+	line "discount."
 	done
 
 BirdKeeperHankAfterBattleText:
-	text "If you have a"
-	line "specific #MON"
-
-	para "that you want to"
-	line "raise, put it out"
-
-	para "first, then switch"
-	line "it right away."
-
-	para "That's how to do"
-	line "it."
+	text "I've heard legends"
+	line "of hugh bird"
+	cont "#MON in JOHTO."
+	para "I could make loads"
+	line "of money with"
+	cont "those!"
 	done
 
 PicnickerHopeSeenText:
-	text "I have a feeling"
-	line "that I can win."
-
-	para "Let's see if I'm"
-	line "right!"
+	text "Did you come from"
+	line "MT MOON?"
+	para "Did you see that"
+	line "girl GREEN."
+	para "She is really"
+	line "strong and pretty!"
+	para "I am her biggest"
+	line "fan!"
 	done
 
 PicnickerHopeBeatenText:
-	text "Aww, you are too"
-	line "strong."
+	text "You are strong"
+	line "too!"
 	done
 
 PicnickerHopeAfterBattleText:
-	text "I heard CLEFAIRY"
-	line "appear at MT.MOON."
-
-	para "But where could"
-	line "they be?"
+	text "GREEN is friends"
+	line "with BLUE and RED!"
+	para "I wish she would"
+	line "be friends with me"
+	cont "too."
 	done
 
 PicnickerSharonSeenText:
-	text "Um…"
-	line "I…"
+	text "Oh..."
+	para "Oh thank ARCEUS..."
+	para "I went into the"
+	line "cave ahead and"
+	cont "nearly got lost."
+	para "I would have died"
+	line "for sure."
 	done
 
 PicnickerSharonBeatenText:
-	text "…"
+	text "I need to calm"
+	line "down."
 	done
 
 PicnickerSharonAfterBattleText:
-	text "……I'll go train"
-	line "some more…"
+	text "I think I dropped"
+	line "my LUCKY EGG in"
+	cont "there somewhere!"
 	done
 
 MtMoonSquareSignText:

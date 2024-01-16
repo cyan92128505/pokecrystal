@@ -21,17 +21,20 @@ ViridianMartCooltrainerMScript:
 	jumptextfaceplayer ViridianMartCooltrainerMText
 
 ViridianMartLassText:
-	text "The GYM LEADER"
-	line "here is totally"
-	cont "cool."
+	text "BLUE worked very"
+	line "hard to protect us"
+	cont "during the"
+	cont "#RUS outbreak."
+	para "He is a real hero."
 	done
 
 ViridianMartCooltrainerMText:
-	text "Have you been to"
-	line "CINNABAR?"
-
-	para "It's an island way"
-	line "south of here."
+	text "I think even the"
+	line "#RUS outbreak"
+	cont "was an attack by"
+	cont "HOEN."
+	para "It must be some"
+	line "kind of bioweapon!"
 	done
 
 ViridianMart_MapEvents:

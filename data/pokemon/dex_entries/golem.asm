@@ -5,5 +5,6 @@
 	next "even dynamite"
 	next "wont scratch it."
 
-	page "Can not be KOd"
-	next "from full HP.@"
+	page "SPEED"
+	next "increases in"
+	next "a sandstorm.@"

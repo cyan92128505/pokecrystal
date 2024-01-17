@@ -562,6 +562,7 @@ NinetalesEvosAttacks:
 	db 28, HYPNOSIS
 	db 32, FLAMETHROWER
 	db 40, FIRE_BLAST
+	db 50, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
@@ -1087,8 +1088,9 @@ GeodudeEvosAttacks:
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
 	db 26, ROCK_SLIDE
-	db 31, ROLLOUT
+	db 30, ROLLOUT
 	db 40, EARTHQUAKE
+	db 45, SANDSTORM
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -1101,8 +1103,9 @@ GravelerEvosAttacks:
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
 	db 25, ROCK_SLIDE
-	db 31, ROLLOUT
+	db 30, ROLLOUT
 	db 41, EARTHQUAKE
+	db 45, SANDSTORM
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -1114,8 +1117,9 @@ GolemEvosAttacks:
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
 	db 25, ROCK_SLIDE
-	db 31, ROLLOUT
+	db 30, ROLLOUT
 	db 40, EARTHQUAKE
+	db 45, SANDSTORM
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -1331,7 +1335,8 @@ ShellderEvosAttacks:
 	db 41, CLAMP
 	db 45, ICE_BEAM
 	db 50, HYDRO_PUMP
-	db 55, SHELL_SMASH
+	db 55, AVALANCHE
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 CloysterEvosAttacks:
@@ -1345,7 +1350,8 @@ CloysterEvosAttacks:
 	db 41, SPIKE_CANNON
 	db 45, ICE_BEAM
 	db 50, HYDRO_PUMP
-	db 65, SHELL_SMASH
+	db 55, AVALANCHE
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 GastlyEvosAttacks:
@@ -1880,15 +1886,17 @@ MagmarEvosAttacks:
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 7, FOCUS_ENERGY
-	db 13, WRAP
-	db 19, SEISMIC_TOSS
-	db 25, HARDEN
+	db 10, ROCK_THROW
+	db 15, LEECH_LIFE
+	db 20, SEISMIC_TOSS
+	db 25, SLASH
 	db 30, X_SCISSOR
-	db 35, SUBMISSION
-	db 40, MEGAHORN
-	db 45, SWORDS_DANCE
-	db 50, GUILLOTINE
+	db 35, ROCK_SLIDE
+	db 40, CLOSE_COMBAT
+    db 45, MEGAHORN
+	db 50, SWORDS_DANCE
+	db 55, GUILLOTINE
+	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
 TaurosEvosAttacks:
@@ -2715,7 +2723,9 @@ AmpharosEvosAttacks:
 	db 18, THUNDER_WAVE
 	db 30, THUNDERBOLT
 	db 35, LIGHT_SCREEN
+	db 40, FLASH_CANNON
 	db 45, THUNDER
+	db 50, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 SylveonEvosAttacks:

@@ -527,11 +527,15 @@ DetermineMoveOrder:
     call z, DoubleEnemySpeedInHL
     cp EXCADRILL
     call z, DoubleEnemySpeedInHL
+    cp GOLEM
+    call z, DoubleEnemySpeedInHL
 
     ld a, [wBattleMonSpecies]
     cp DRILBUR
     call z, DoublePlayerSpeedInDE
     cp EXCADRILL
+    call z, DoublePlayerSpeedInDE
+    cp GOLEM
     call z, DoublePlayerSpeedInDE
 
 .continue
@@ -1521,6 +1525,8 @@ HandleRegenerator:
     cp SLOWKING
     jr z, .regen
     cp WOBBUFFET
+    jr z, .regen
+    cp DUNSPARCE
     jr z, .regen
     ret
 .regen
@@ -4581,6 +4587,9 @@ SwitchInEffects:
     cp STARAPTOR
     jp z, .atkDown
 
+    cp WEEZING
+    jp z, .accDown
+
     cp AEGISLASH
     jp z, .defenseMode
 
@@ -4729,6 +4738,13 @@ SwitchInEffects:
     ret
 .atkDown
     farcall BattleCommand_AttackDown
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz ; printing the message before enemy sends out mon causes visual glitches
+	farcall BattleCommand_StatDownMessage
+	ret
+.accDown
+    farcall BattleCommand_AccuracyDown
     ld a, [wBattleHasJustStarted]
     and a
     ret nz ; printing the message before enemy sends out mon causes visual glitches

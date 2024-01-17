@@ -5,6 +5,6 @@
 	next "its gases it can"
 	next "kill all around."
 
-	page "Immune to"
-	next "GROUND type"
-	next "moves.@"
+	page "lowers foes"
+	next "ACCURACY upon"
+	next "switch in.@"

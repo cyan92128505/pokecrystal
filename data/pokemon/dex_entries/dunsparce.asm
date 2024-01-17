@@ -5,6 +5,5 @@
 	next "in caves where"
 	next "no light reaches."
 
-	page "Random stat"
-	next "increase upon"
-	next "entering battle.@"
+	page "Possesses many"
+	next "abilities.@"

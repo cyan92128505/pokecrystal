@@ -388,7 +388,6 @@ INCLUDE "maps/Route24.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route10South.asm"
-INCLUDE "maps/Route23.asm"
 
 SECTION "Map Scripts 25", ROMX
 
@@ -516,3 +515,4 @@ INCLUDE "maps/CherrygroveMart.asm"
 INCLUDE "maps/CherrygrovePokecenter1F.asm"
 INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/LavenderForest.asm"
+INCLUDE "maps/Route23.asm"

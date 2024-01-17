@@ -5,6 +5,5 @@
 	next "pincers to crush"
 	next "its foe in half."
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "Can not be KOd"
+	next "from full HP.@"

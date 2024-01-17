@@ -24,6 +24,7 @@ SturdyPokemon:
     db PUPITAR
     db HONEDGE
     db DOUBLADE
+    db PINSIR
     db -1
 
 SniperPokemon:
@@ -58,6 +59,7 @@ SereneGracePokemon:
     db TOGETIC
     db TOGEKISS
     db SHAYMIN
+    db DUNSPARCE
     db -1
 
 RockHeadPokemon:
@@ -87,7 +89,6 @@ GutsPokemon:
     db CONKELDURR
     db TEDDIURSA
     db URSARING
-    db PINSIR
     db -1
 
 RivalryPokemon:
@@ -157,6 +158,7 @@ ClearBodyPokemon:
     db ARCEUS
     db REGIGIGAS
     db DEOXYS
+    db DUNSPARCE
     db -1
 
 SolidRockPokemon:

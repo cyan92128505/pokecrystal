@@ -3141,6 +3141,8 @@ AI_Smart_Sandstorm:
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
     jr z, .encourage
+    cp GOLEM
+    jr z, .encourage
     cp GARCHOMP
     jr z, .encourage
     cp GLISCOR
@@ -4274,6 +4276,8 @@ AI_Smart_Flinch:
     cp SHAYMIN
     jr z, .encourage
     cp TOGEKISS
+    jr z, .encourage
+    cp DUNSPARCE
     jr z, .encourage
 
     ret

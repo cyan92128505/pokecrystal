@@ -203,86 +203,82 @@ Route12HiddenElixer:
 	hiddenitem ELIXER, EVENT_ROUTE_12_HIDDEN_ELIXER
 
 FisherMartinSeenText:
-	text "Patience is the"
-	line "key to both fish-"
-	cont "ing and #MON."
+	text "These waters are"
+	line "calm."
+	para "Too calm..."
+	para "This place be"
+	line "cursed!"
 	done
 
 FisherMartinBeatenText:
-	text "Gwaaah!"
+	text "Begone demon!"
 	done
 
 FisherMartinAfterBattleText:
-	text "I'm too impatient"
-	line "for fishing…"
+	text "The fish are never"
+	line "biting."
+	para "My rod be cursed!"
 	done
 
 FisherStephenSeenText:
-	text "I feel so content,"
-	line "fishing while lis-"
-	cont "tening to some"
-	cont "tunes on my radio."
+	text "Years ago this"
+	line "path was blocked"
+	cont "by a huge, massive"
+	cont "fat man."
 	done
 
 FisherStephenBeatenText:
-	text "My stupid radio"
-	line "distracted me!"
+	text "I need to put"
+	line "on more weight."
 	done
 
 FisherStephenAfterBattleText:
-	text "Have you checked"
-	line "out KANTO's radio"
-
-	para "programs? We get a"
-	line "good variety here."
+	text "Some say it was"
+	line "actually a"
+	cont "#MON."
+	para "No way, only a man"
+	line "could be so fat."
 	done
 
 FisherBarneySeenText:
-	text "What's most impor-"
-	line "tant in our every-"
-	cont "day lives?"
+	text "You understand,"
+	line "life is about"
+	cont "balance."
+	para "No such thing bad"
+	line "student, only bad"
+	cont "teacher."
+	para "Now show me"
+	line "#MON battle!"
 	done
 
 FisherBarneyBeatenText:
-	text "The answer is"
-	line "coming up next!"
+	text "You have found"
+	line "balance."
 	done
 
 FisherBarneyAfterBattleText:
-	text "I think electric-"
-	line "ity is the most"
-
-	para "important thing in"
-	line "our daily lives."
-
-	para "If it weren't,"
-	line "people wouldn't"
-
-	para "have made such a"
-	line "fuss when the"
-
-	para "POWER PLANT went"
-	line "out of commission."
+	text "It's ok to lose to"
+	line "opponent."
+	para "Never ok to lose"
+	line "to fear."
 	done
 
 FisherKyleSeenText:
-	text "Do you remember?"
+	text "The water here is"
+	line "still and calm."
+	para "Your mind must"
+	line "enter such a state"
+	cont "to see the truth."
 	done
 
 FisherKyleBeatenText:
-	text "You do remember?"
+	text "Do you see!"
 	done
 
 FisherKyleAfterBattleText:
-	text "The tug you feel"
-	line "on the ROD when"
-
-	para "you hook a #-"
-	line "MON…"
-
-	para "That's the best"
-	line "feeling ever for"
-	cont "an angler like me."
+	text "Liberati tutemet"
+	line "ex Inferis."
+	para "Praise GIRATINA."
 	done
 
 Route12SignText:
@@ -312,7 +308,7 @@ Route12_MapEvents:
 	def_object_events
 	object_event  5, 13, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherMartin, -1
 	object_event 14, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherStephen, -1
-	object_event 10, 38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerFisherBarney, -1
+	object_event 13, 38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerFisherBarney, -1
 	object_event  6,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherKyle, -1
 	object_event  5, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Calcium, EVENT_ROUTE_12_CALCIUM
 	object_event  5, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Nugget, EVENT_ROUTE_12_NUGGET

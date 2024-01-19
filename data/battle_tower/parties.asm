@@ -4591,9 +4591,9 @@ BattleTowerMons:
 	bigdw 188 ; SDef
 	db "RANTA-N@@@@"
 
-	db BLASTOISE
-	db MYSTIC_WATER
-	db SHELL_SMASH, HYDRO_PUMP, ICE_BEAM, EARTHQUAKE
+	db PINSIR
+	db SILVERPOWDER
+	db SHELL_SMASH, MEGAHORN, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4603,18 +4603,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 16, 16 ; PP
+	db 16, 16, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 361 ; HP
-	bigdw 361 ; Max HP
-	bigdw 264 ; Atk
-	bigdw 298 ; Def
-	bigdw 254 ; Spd
-	bigdw 268 ; SAtk
-	bigdw 308 ; SDef
+    bigdw 333
+    bigdw 333
+    bigdw 348
+    bigdw 298
+    bigdw 268
+    bigdw 208
+    bigdw 238
 	db "RANTA-N@@@@"
 
     db CLOYSTER
@@ -6361,9 +6361,9 @@ BattleTowerMons:
 	bigdw 312 ; SDef
 	db "RANTA-N@@@@"
 
-	db ARCTOZOLT
-	db MAGNET
-	db BOLT_BREAK, AVALANCHE, THUNDERBOLT, ICE_BEAM
+	db BLASTOISE
+	db MYSTIC_WATER
+	db SHELL_SMASH, HYDRO_PUMP, ICE_BEAM, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -6373,18 +6373,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 8, 16, 24, 16 ; PP
+	db 16, 16, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 383 ; HP
-	bigdw 383 ; Max HP
-	bigdw 298 ; Atk
-	bigdw 278 ; Def
-	bigdw 208 ; Spd
-	bigdw 278 ; SAtk
-	bigdw 258 ; SDef
+	bigdw 361 ; HP
+	bigdw 361 ; Max HP
+	bigdw 264 ; Atk
+	bigdw 298 ; Def
+	bigdw 254 ; Spd
+	bigdw 268 ; SAtk
+	bigdw 308 ; SDef
 	db "RANTA-N@@@@"
 
 	db ARCTOVISH

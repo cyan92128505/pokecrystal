@@ -1295,7 +1295,7 @@ FerroseedEvosAttacks:
 	db 1, TACKLE
 	db 1, HARDEN
 	db 5, METAL_CLAW
-	db 10, PIN_MISSILE
+	db 10, LEECH_LIFE
 	db 15, LEECH_SEED
 	db 20, FLASH_CANNON
 	db 25, IRON_HEAD
@@ -1312,7 +1312,7 @@ FerrothornEvosAttacks:
 	db 1, TACKLE
 	db 1, HARDEN
 	db 5, METAL_CLAW
-	db 10, PIN_MISSILE
+	db 10, LEECH_LIFE
 	db 15, LEECH_SEED
 	db 20, FLASH_CANNON
 	db 25, IRON_HEAD
@@ -1830,8 +1830,8 @@ ScytherEvosAttacks:
 	db 1, LEER
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT
-	db 18, WING_ATTACK
-	db 24, SLASH
+	db 18, SLASH
+	db 24, WING_ATTACK
     db 30, X_SCISSOR
 	db 45, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2003,11 +2003,10 @@ JolteonEvosAttacks:
 	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
 	db 24, DOUBLE_KICK
-	db 30, PIN_MISSILE
-	db 34, THUNDERBOLT
-	db 38, THUNDER_WAVE
-	db 42, AGILITY
-	db 50, THUNDER
+	db 30, THUNDERBOLT
+	db 34, THUNDER_WAVE
+	db 38, AGILITY
+	db 45, THUNDER
 	db 0 ; no more level-up moves
 
 FlareonEvosAttacks:

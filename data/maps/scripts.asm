@@ -169,8 +169,6 @@ INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
-INCLUDE "maps/Route12SuperRodHouse.asm"
-
 
 SECTION "Map Scripts 11", ROMX
 
@@ -516,3 +514,4 @@ INCLUDE "maps/CherrygrovePokecenter1F.asm"
 INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/LavenderForest.asm"
 INCLUDE "maps/Route23.asm"
+INCLUDE "maps/Route12SuperRodHouse.asm"

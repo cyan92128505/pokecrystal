@@ -36,44 +36,50 @@ SuperRodHouseBookshelf: ; unreferenced
 	jumpstd PictureBookshelfScript
 
 OfferSuperRodText:
-	text "I'm the FISHING"
-	line "GURU's younger"
-	cont "brother."
-
-	para "I can see that you"
-	line "like fishing."
-
-	para "There's no doubt"
-	line "in my mind at all!"
-
-	para "So? I know I'm"
-	line "right."
+	text "You have ventured"
+	line "far."
+	para "You have crossed"
+	line "the seas and"
+	cont "broadened your"
+	cont "horizons."
+	para "With your new"
+	line "appetites I am"
+	cont "quite sure you"
+	cont "crave"
+	cont "satisfaction."
+	para "You need more than"
+	line "the endless"
+	cont "POLIWAG and"
+	cont "MAGIKARP found on"
+	cont "the end of your"
+	cont "rods."
+	para "Am I right?"
 	done
 
 GiveSuperRodText:
-	text "Yes, yes. Just as"
-	line "I thought!"
-
-	para "Here, fishing fan!"
-	line "Take this--it's a"
-	cont "SUPER ROD."
+	text "Very well!"
+	para "Your deepest"
+	line "desires are"
+	cont "realised..."
 	done
 
 GaveSuperRodText:
-	text "Try your hand at"
-	line "fishing wherever"
-	cont "there is water."
-
-	para "Remember--you can"
-	line "catch different"
-
-	para "#MON using"
-	line "different RODS."
+	text "With the power of"
+	line "the SUPER ROD you"
+	cont "shall swim freely"
+	cont "in a cosmic sea of"
+	cont "dreams and"
+	cont "deities."
+	para "Just like I do."
+	para "Every single day!"
 	done
 
 DontWantSuperRodText:
-	text "Huh? My own eyes"
-	line "deceived me?"
+	text "The first step to"
+	line "achieving your"
+	cont "dreams is"
+	cont "admitting that you"
+	cont "want them."
 	done
 
 Route12SuperRodHouse_MapEvents:

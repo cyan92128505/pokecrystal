@@ -268,6 +268,10 @@ PlayBattleMusic:
 	cp GIOVANNI
 	jr z, .done
 
+	ld de, MUSIC_SUICUNE_BATTLE
+	cp MYSTICALMAN
+	jr z, .done
+
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
 	jr c, .done

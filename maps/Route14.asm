@@ -1,7 +1,6 @@
 	object_const_def
 	const ROUTE14_POKEFAN_M1
 	const ROUTE14_YOUNGSTER
-	const ROUTE14_POKEFAN_M2
 	const ROUTE14_KIM
 	const ROUTE14_FIELDMON_1
     const ROUTE14_FIELDMON_2
@@ -99,17 +98,6 @@ TrainerBirdKeeperRoy:
 	closetext
 	end
 
-TrainerPokefanmTrevor:
-	trainer POKEFANM, TREVOR, EVENT_BEAT_POKEFANM_TREVOR, PokefanmTrevorSeenText, PokefanmTrevorBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PokefanmTrevorAfterBattleText
-	waitbutton
-	closetext
-	end
-
 PokefanmCarterSeenText:
 	text "Let me tell you,"
 	line "I had a hard time"
@@ -131,46 +119,24 @@ PokefanmCarterAfterBattleText:
 	done
 
 BirdKeeperRoySeenText:
-	text "My dream is to fly"
-	line "with my beloved"
-	cont "bird #MON."
+	text "I love the smell"
+	line "of Napalm in the"
+	cont "morning!"
+	para "We will rain hell"
+	line "down on any HOEN"
+	cont "scum!"
 	done
 
 BirdKeeperRoyBeatenText:
-	text "I can dream, but I"
-	line "can't ever fly…"
+	text "My war heads are"
+	line "ready."
 	done
 
 BirdKeeperRoyAfterBattleText:
-	text "You have #MON"
-	line "that know the HM"
-
-	para "move FLY, don't"
-	line "you? I envy you."
-	done
-
-PokefanmTrevorSeenText:
-	text "Hi. Did you know…?"
-
-	para "#MON get more"
-	line "friendly if you"
-
-	para "train them in a"
-	line "place that they"
-	cont "remember."
-	done
-
-PokefanmTrevorBeatenText:
-	text "Where did I meet"
-	line "this PSYDUCK?"
-	done
-
-PokefanmTrevorAfterBattleText:
-	text "If only there were"
-	line "an easy way to"
-
-	para "identify where I"
-	line "got my #MON…"
+	text "We will fight them"
+	para "on the beaches, in"
+	line "the sky, and on"
+	cont "the battle field."
 	done
 
 Route14_MapEvents:
@@ -185,7 +151,6 @@ Route14_MapEvents:
 	def_object_events
 	object_event 11, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
 	object_event 11, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRoy, -1
-	object_event  6, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
 	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
 	object_event  9, 28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route14FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 15, 15, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route14FieldMon2Script, EVENT_FIELD_MON_2

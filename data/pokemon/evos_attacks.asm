@@ -1449,6 +1449,7 @@ FeebasEvosAttacks:
 	db 1, SPLASH
 	db 15, TACKLE
 	db 30, FLAIL
+	db 100, WATER_GUN
 	db 0 ; no more level-up moves
 
 MiloticEvosAttacks:
@@ -1920,6 +1921,7 @@ MagikarpEvosAttacks:
 	db 1, SPLASH
 	db 15, TACKLE
 	db 30, FLAIL
+	dn 100, WATER_GUN
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:

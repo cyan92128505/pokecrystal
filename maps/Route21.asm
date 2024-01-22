@@ -177,18 +177,26 @@ TrainerFisherArnold:
 	end
 
 SwimmermSethSeenText:
-	text "Land ho! Gotta"
-	line "keep going!"
+	text "I used to live in"
+	line "CINNABAR, then the"
+	cont "volcano blew the"
+	cont "whole place up."
+	para "But even with the"
+	line "island gone, my"
+	cont "memories are still"
+	cont "here."
 	done
 
 SwimmermSethBeatenText:
-	text "Glug…"
+	text "Boom!"
 	done
 
 SwimmermSethAfterBattleText:
-	text "This arrogant guy"
-	line "was at CINNABAR's"
-	cont "volcano."
+	text "You think you're"
+	line "tough."
+	para "Then a volcano"
+	line "rips your life"
+	cont "apart."
 	done
 
 SwimmerfNikkiSeenText:
@@ -203,23 +211,36 @@ SwimmerfNikkiBeatenText:
 	done
 
 SwimmerfNikkiAfterBattleText:
-	text "I have to watch"
-	line "out for blemishes"
-	cont "caused by the sun."
+	text "I know I lost but"
+	line "would you like to"
+	cont "help me with the"
+	cont "lotion anyway."
+	para "I really don't"
+	line "want to burn."
 	done
 
 FisherArnoldSeenText:
-	text "I'm bored by fish-"
-	line "ing. Let's battle!"
+	text "Hey kid, I'm sorry"
+	line "to do this to you"
+	cont "but you just found"
+	cont "an optional boss."
+	para "Really!"
+	para "I'm going to have"
+	line "to destroy you!"
 	done
 
 FisherArnoldBeatenText:
-	text "Utter failure…"
+	text "I bow to you."
 	done
 
 FisherArnoldAfterBattleText:
-	text "I'll just go back"
-	line "to fishing…"
+	text "You have defeated"
+	line "me, the most"
+	cont "powerful trainer"
+	cont "in all the world."
+	para "You have truly"
+	line "mastered the art"
+	cont "of #MON!"
 	done
 
 Route21_MapEvents:
@@ -232,14 +253,14 @@ Route21_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 11, 16, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNikki, -1
+	object_event 14, 18, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNikki, -1
 	object_event  2, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSeth, -1
-	object_event 14, 22, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherArnold, -1
+	object_event  7, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherArnold, -1
 	object_event  2, 22, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route21FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 16, 15, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route21FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  7, 25, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 11, 29, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon4Script, EVENT_FIELD_MON_4
-	object_event  7, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 14, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 10,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route21FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 12,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route21FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 13,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route21FieldMon8Script, EVENT_FIELD_MON_8

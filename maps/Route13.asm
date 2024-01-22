@@ -153,7 +153,7 @@ TrainerBirdKeeperBret:
 	end
 
 TrainerHikerKenny:
-	trainer HIKER, KENNY, EVENT_BEAT_HIKER_KENNY, HikerKennySeenText, HikerKennyBeatenText, 0, .Script
+	trainer MYSTICALMAN, KING_JARETH, EVENT_BEAT_HIKER_KENNY, HikerKennySeenText, HikerKennyBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -203,76 +203,125 @@ PokefanmAlexAfterBattleText:
 	done
 
 PokefanmJoshuaSeenText:
-	text "Nihihi! Would you"
-	line "like to battle my"
-	cont "PIKACHU gang?"
+	text "It's not safe out"
+	line "here."
+	para "It's wondrous,"
+	line "with treasures to"
+	cont "satiate desires"
+	cont "both subtle and"
+	cont "gross."
+	para "But it's not for"
+	line "the timid."
 	done
 
 PokefanmJoshuaBeatenText:
-	text "PI-PIKACHU!"
-	done
-
-PokefanmJoshuaAfterBattleText:
-	text "You look like you"
-	line "have many #MON,"
-
-	para "but PIKACHU is"
-	line "still the best."
-	done
-
-BirdKeeperPerrySeenText:
-	text "Agility is the key"
-	line "attribute of bird"
+	text "The acquisition of"
+	line "wealth is no"
+	cont "longer the driving"
+	cont "force of our"
+	cont "lives."
+	para "We work to better"
+	line "ourselves and all"
 	cont "#MON."
 	done
 
+PokefanmJoshuaAfterBattleText:
+	text "Don't try to be a"
+	line "great trainer,"
+	cont "just be a trainer"
+	cont "and let history"
+	cont "make its own"
+	cont "judgements."
+	done
+
+BirdKeeperPerrySeenText:
+	text "Ah welcome to the"
+	line "Labyrinth."
+	para "One path leads out"
+	line "of here, the other"
+	cont "lead to certain"
+	cont "death!"
+	para "My brother always"
+	line "lies but I always"
+	cont "tell the truth..."
+	para "Honestly."
+	done
+
 BirdKeeperPerryBeatenText:
-	text "You beat me with"
-	line "your speed…"
+	text "I always tell"
+	line "the truth."
 	done
 
 BirdKeeperPerryAfterBattleText:
-	text "Your #MON are"
-	line "remarkably well-"
-	cont "trained."
+	text "What, if I were my"
+	line "brother would I"
+	cont "say this path"
+	cont "leads to death?"
+	para "Um..."
+	para "I don't know."
 	done
 
 BirdKeeperBretSeenText:
-	text "Check out my #-"
-	line "MON. Just look at"
-
-	para "their coloring and"
-	line "their plumage."
+	text "You have entered"
+	line "the Labyrinth."
+	para "You want to reach"
+	line "the goblin king"
+	cont "JARETH?"
+	para "We know the way."
+	para "One of us always"
+	line "tells the truth"
+	cont "and the other"
+	cont "always lies."
+	para "You may ask us but"
+	line "one question."
 	done
 
 BirdKeeperBretBeatenText:
-	text "Shoot!"
-	line "Not good enough!"
+	text "I always tell"
+	line "the truth."
 	done
 
 BirdKeeperBretAfterBattleText:
-	text "If you groom them,"
-	line "#MON get happy."
+	text "If I were my"
+	line "brother I'd tell"
+	cont "you this path"
+	cont "leads to certain"
+	cont "death!"
 	done
 
 HikerKennySeenText:
-	text "I should go to"
-	line "ROCK TUNNEL to get"
-	cont "myself an ONIX."
+	text "Turn back"
+	line "<PLAYER>."
+	para "Beware."
+	para "I have been"
+	line "generous up until"
+	cont "now."
+	para "I can be cruel."
+	para "I have reordered"
+	line "time."
+	para "I have turned the"
+	line "world upside down."
+	para "I have done it all"
+	line "for you!"
+	para "I move ths stars"
+	line "for no one."
 	done
 
 HikerKennyBeatenText:
-	text "I lost…"
+	text "Stop."
+	para "Look what I'm"
+	line "offering you."
+	para "Your dreams."
 	done
 
 HikerKennyAfterBattleText:
-	text "Geological fea-"
-	line "tures don't appear"
-	cont "to change."
-
-	para "But they actually"
-	line "change, little by"
-	cont "little."
+	text "I ask for so"
+	line "little."
+	para "Just fear me."
+	para "Love me."
+	para "Do as I ask, and I"
+	line "shall be your"
+	cont "slave."
 	done
 
 Route13TrainerTipsText:
@@ -315,8 +364,8 @@ Route13_MapEvents:
 	object_event 42,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperPerry, -1
 	object_event 43,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperBret, -1
 	object_event 32,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmJoshua, -1
-	object_event 14, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerHikerKenny, -1
-	object_event 25,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmAlex, -1
+	object_event 14, 10, SPRITE_WILL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_TRAINER, 4, TrainerHikerKenny, -1
+	object_event 25,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmAlex, -1
 	object_event 28,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route13FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 14,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route13FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  7,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route13FieldMon3Script, EVENT_FIELD_MON_3

@@ -146,56 +146,76 @@ CinnabarGymSign:
 	jumptext CinnabarGymSignText
 
 SwimmerfNicoleSeenText:
-	text "I feel so much"
-	line "lighter in water."
+	text "I thought the fire"
+	line "GYM LEADER would"
+	cont "be weakened by"
+	cont "living in a sea"
+	cont "cave."
+	para "But he is stronger"
+	line "than ever!"
+	para "I couldn't beat"
+	line "him so there's no"
+	cont "way you can."
 	done
 
 SwimmerfNicoleBeatenText:
-	text "Oh, no!"
+	text "You're on fire"
+	line "today!"
 	done
 
 SwimmerfNicoleAfterBattleText:
-	text "Swimming exercises"
-	line "your full body."
-
-	para "It's really good"
-	line "for you."
+	text "I can't beat you"
+	line "in a battle but I"
+	cont "could beat you in"
+	cont "a swimming"
+	cont "contest."
 	done
 
 SwimmerfLoriSeenText:
-	text "What an impressive"
-	line "collection of GYM"
-
-	para "BADGES. We should"
-	line "battle!"
+	text "This is the only"
+	line "place I feel like"
+	cont "I belong."
+	para "Everybody dislikes"
+	line "me because I'm"
+	cont "from HOEN."
 	done
 
 SwimmerfLoriBeatenText:
-	text "No!"
+	text "Thank you for"
+	line "the battle."
 	done
 
 SwimmerfLoriAfterBattleText:
-	text "SURF is no longer"
-	line "the only HM move"
-	cont "you use in water."
+	text "I actually really"
+	line "miss HOEN."
+	para "It's a beautiful"
+	line "place."
+	para "Just ruled by"
+	line "horrible people."
 	done
 
 SwimmermCameronSeenText:
-	text "I guess it's im-"
-	line "possible to swim"
-
-	para "all the way to"
-	line "JOHTO."
+	text "I have totally"
+	line "overestimated my"
+	cont "swimming ability."
+	para "I think I'm"
+	line "drowning!"
+	para "But there's still"
+	line "time for a battle!"
 	done
 
 SwimmermCameronBeatenText:
-	text "Aiyah!"
+	text "Cough cough..."
+	line "Huuuu!"
 	done
 
 SwimmermCameronAfterBattleText:
-	text "Besides the sea, I"
-	line "can also swim in"
-	cont "ponds and rivers."
+	text "Don't worry about"
+	line "me."
+	para "Cough cough..."
+	para "I'm going to swim"
+	line "all the way to"
+	cont "JOHTO!"
 	done
 
 CinnabarGymSignText:
@@ -238,7 +258,7 @@ Route20_MapEvents:
 
 	def_warp_events
 	warp_event 38,  7, SEAFOAM_GYM, 1
-	warp_event 42, 11, ELEMENT_CAVE, 2
+	warp_event 30,  5, ELEMENT_CAVE, 2
 
 	def_coord_events
 	coord_event 38, 8, SCENE_ALWAYS, CinnabarGymBlockScript
@@ -247,14 +267,14 @@ Route20_MapEvents:
 	bg_event 37, 11, BGEVENT_READ, CinnabarGymSign
 
 	def_object_events
-	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
-	object_event 49, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
-	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
-	object_event 16, 15, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon1Script, EVENT_FIELD_MON_1
-	object_event 20,  4, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 31, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
+	object_event 51, 10, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
+	object_event 13, 11, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
+	object_event 20, 15, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 19,  4, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 54,  6, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  6,  5, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  4, 14, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon5Script, EVENT_FIELD_MON_5
-	object_event 54, 14, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon6Script, EVENT_FIELD_MON_6
-	object_event 50,  3, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route20FieldMon7Script, EVENT_FIELD_MON_7
-	object_event 20, 15, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route20FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 54, 15, SPRITE_SURF, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route20FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 51,  3, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route20FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 18, 10, SPRITE_SURF, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route20FieldMon8Script, EVENT_FIELD_MON_8

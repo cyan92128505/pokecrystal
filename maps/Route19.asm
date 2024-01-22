@@ -1,7 +1,6 @@
 	object_const_def
 	const ROUTE19_SWIMMER_GIRL
 	const ROUTE19_SWIMMER_GUY1
-	const ROUTE19_SWIMMER_GUY2
 	const ROUTE19_SWIMMER_GUY3
 	const ROUTE19_FISHER1
 	const ROUTE19_FISHER2
@@ -97,17 +96,6 @@ TrainerSwimmermHarold:
 	closetext
 	end
 
-TrainerSwimmermJerome:
-	trainer SWIMMERM, JEROME, EVENT_BEAT_SWIMMERM_JEROME, SwimmermJeromeSeenText, SwimmermJeromeBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SwimmermJeromeAfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerSwimmermTucker:
 	trainer SWIMMERM, TUCKER, EVENT_BEAT_SWIMMERM_TUCKER, SwimmermTuckerSeenText, SwimmermTuckerBeatenText, 0, .Script
 
@@ -158,82 +146,68 @@ CarefulSwimmingSign:
 	jumptext CarefulSwimmingSignText
 
 SwimmermHaroldSeenText:
-	text "Have you ever gone"
-	line "swimming in the"
-	cont "sea at night?"
+	text "Begone you"
+	line "fascist!"
+	para "I shall be the"
+	line "first to welcome"
+	cont "our HEON brothers"
+	cont "and sisters across"
+	cont "the boarder."
 	done
 
 SwimmermHaroldBeatenText:
-	text "Glub…"
+	text "Welcome HOEN!"
 	done
 
 SwimmermHaroldAfterBattleText:
-	text "At night, the sea"
-	line "turns black. It"
-
-	para "feels like it will"
-	line "swallow you up."
+	text "You're a typical"
+	line "alt right"
+	cont "xenophobe, you"
+	cont "will never be as"
+	cont "enlightened as I!"
 	done
 
 SwimmermTuckerSeenText:
-	text "Pant, pant…"
-	line "Just… a little…"
-
-	para "farther… to…"
-	line "FUCHSIA…"
+	text "Dude I'm trying to"
+	line "propose to me"
+	cont "girlfriend!"
+	para "It's not going"
+	line "working as I'd"
+	cont "hoped."
 	done
 
 SwimmermTuckerBeatenText:
-	text "I'm drowning!"
+	text "This is just"
+	line "what I need."
 	done
 
 SwimmermTuckerAfterBattleText:
-	text "I… asked my girl-"
-	line "friend to swim to"
-	cont "FUCHSIA… Gasp…"
+	text "I think I've"
+	line "forgot the ring!"
+	para "Forget it!"
+	para "Dawn will you"
+	line "marry me?"
 	done
 
 SwimmerfDawnSeenText:
-	text "I'm disgusted by"
-	line "wimpy people!"
+	text "I was planning to"
+	line "propose to my"
+	cont "boyfriend but he"
+	cont "seems rather"
+	cont "distracted."
 	done
 
 SwimmerfDawnBeatenText:
-	text "I could beat you"
-	line "at swimming…"
+	text "My heart wasn't"
+	line "really in it."
 	done
 
 SwimmerfDawnAfterBattleText:
-	text "It's a quick swim"
-	line "between FUCHSIA"
-
-	para "and SEAFOAM IS-"
-	line "LANDS…"
-
-	para "Sheesh, some big"
-	line "man my boyfriend"
-
-	para "is! What a wimp!"
-	done
-
-SwimmermJeromeSeenText:
-	text "Swimming?"
-	line "I'm lousy at it."
-
-	para "I'm just splashing"
-	line "around in these"
-	cont "shallow waters."
-	done
-
-SwimmermJeromeBeatenText:
-	text "I thought I could"
-	line "win."
-	done
-
-SwimmermJeromeAfterBattleText:
-	text "I might be bad at"
-	line "swimming, but I"
-	cont "love the sea."
+	text "Alright it's now"
+	line "or never."
+	para "I have the rings."
+	para "Tucker will you"
+	line "marry me?"
 	done
 
 Route19Fisher1Text:
@@ -249,8 +223,11 @@ Route19Fisher1Text:
 	done
 
 Route19Fisher1Text_RocksCleared:
-	text "I'm all sweaty."
-	line "Time for a swim!"
+	text "Well that was"
+	line "lucky."
+	para "The road is clear"
+	line "and my work here"
+	cont "is done!"
 	done
 
 Route19Fisher2Text:
@@ -260,11 +237,14 @@ Route19Fisher2Text:
 	done
 
 Route19Fisher2Text_RocksCleared:
-	text "The roadwork is"
-	line "finally finished."
-
-	para "Now I can go"
-	line "fishing again."
+	text "There was some"
+	line "kind fo small"
+	cont "earthquake and it"
+	cont "shifted the rocks!"
+	para "Maybe it was HOEN."
+	para "I'll have to thank"
+	line "them when they get"
+	cont "here eh!"
 	done
 
 Route19SignText:
@@ -298,7 +278,6 @@ Route19_MapEvents:
 	def_object_events
 	object_event  9, 23, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerSwimmerfDawn, -1
 	object_event 13, 28, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermHarold, -1
-	object_event 11, 17, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermJerome, -1
 	object_event  8, 23, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
 	object_event  9,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
 	object_event 11,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1

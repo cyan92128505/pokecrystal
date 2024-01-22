@@ -705,7 +705,7 @@ KRIS EQU __trainer_class__
 	const COLIN
 	const DEREK2 ; unused
 	const DEREK3 ; unused
-	const ALEX
+	const JARETH
 	const REX
 	const ALLAN
 	const CHRIS_CHAN
@@ -775,6 +775,7 @@ KRIS EQU __trainer_class__
 	const EUSINE
 	const EUSINE_CELADON
 	const MASTER_EUSINE
+	const KING_JARETH
 
     trainerclass INVADER ; 44
     const GIANT_DAD

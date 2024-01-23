@@ -122,20 +122,7 @@ PowerPlantGymGuide1Script:
 	end
 
 PowerPlantGymGuide2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide2PowerPlantUpAndRunningText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide2GeneratorIsRunningAgainText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantGymGuide2PowerPlantUpAndRunningText
 
 PowerPlantOfficer2Script:
 	faceplayer
@@ -154,20 +141,7 @@ PowerPlantOfficer2Script:
 	end
 
 PowerPlantGymGuide4Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide4MagnetTrainConsumesElectricityText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide4WeCanGetMagnetTrainRunningText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantGymGuide4MagnetTrainConsumesElectricityText
 
 PowerPlantManager:
 	faceplayer
@@ -253,177 +227,168 @@ PowerPlantOfficer1ReturnToPostMovement:
 	step_end
 
 PowerPlantOfficer1AThiefBrokeInText:
-	text "A thief broke into"
-	line "the POWER PLANT…"
-
-	para "What is the world"
-	line "coming to?"
+	text "This POWER PLANT"
+	line "is ultra high"
+	cont "security."
+	para "You better be well"
+	line "behaved or I'll"
+	cont "deal with you"
+	cont "myself."
 	done
 
 PowerPlantOfficer1CeruleanShadyCharacterText:
-	text "I just got word"
-	line "from CERULEAN."
-
-	para "It appears that a"
-	line "shady character"
-
-	para "has been loitering"
-	line "around."
+	text "Everyone!"
+	para "I just received"
+	line "word from"
+	cont "CERULEAN, a TEAM"
+	cont "ROCKET member has"
+	cont "been spotted."
+	para "He must be the one"
+	line "who stole the"
+	cont "thingy!"
 	done
 
 PowerPlantOfficer1CouldIAskForYourCooperationText:
-	text "Could I ask for"
-	line "your cooperation?"
+	text "I must ask you to"
+	line "get the thingy"
+	cont "back and save my"
+	cont "job!"
 	done
 
 PowerPlantOfficer1HaveToBeefUpSecurityText:
-	text "We'll have to beef"
-	line "up our security"
-	cont "presence."
+	text "You retrieved the"
+	line "thingy and saved"
+	cont "my job!"
+	para "It will never"
+	line "happen again."
+	para "I swear it!"
 	done
 
 PowerPlantGymGuide1SomeoneStoleAPartText:
-	text "Someone made off"
-	line "with a part that's"
-
-	para "essential for the"
-	line "generator."
-
-	para "Without it, the"
-	line "new generator's"
-	cont "useless!"
+	text "Someone has stolen"
+	line "the heart from the"
+	cont "generator."
+	para "This feeling."
+	para "My heart is torn"
+	line "asunder!"
 	done
 
 PowerPlantGymGuide1GeneratorUpAndRunningText:
-	text "The generator's up"
-	line "and running. It's"
-
-	para "making electricity"
-	line "to spare."
+	text "I've been working"
+	line "on the generator"
+	cont "for 10 years."
+	para "it is powerful,"
+	line "efficient, even"
+	cont "beautiful."
 	done
 
 PowerPlantGymGuide2PowerPlantUpAndRunningText:
-	text "This POWER PLANT"
-	line "had been abandoned"
-	cont "in the past."
-
-	para "We got it back up"
-	line "and running to"
-
-	para "provide power to"
-	line "the MAGNET TRAIN."
-	done
-
-PowerPlantGymGuide2GeneratorIsRunningAgainText:
-	text "The generator's"
-	line "running again!"
+	text "With the threat of"
+	line "war KANTO needs"
+	cont "all the power we"
+	cont "can generate."
+	para "Remove the control"
+	line "rods, full power"
+	cont "now!"
 	done
 
 PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
-	text "The POWER PLANT's"
-	line "MANAGER is up"
-	cont "ahead."
-
-	para "But since someone"
-	line "wrecked the gener-"
-	cont "ator, he's been"
-	cont "both sad and"
-	cont "furious…"
+	text "Our Manager is"
+	line "very protective of"
+	cont "the generator and"
+	cont "has a short"
+	cont "temper."
+	para "If you damage the"
+	line "generator you'll"
+	cont "be swallowing his"
+	cont "ZAP CANNON!"
 	done
 
 PowerPlantOfficer2ManagerHasBeenCheerfulText:
-	text "Since the gener-"
-	line "ator's been fixed,"
-
-	para "the MANAGER has"
-	line "been cheerful."
+	text "You have no idea"
+	line "how thankful I am"
+	cont "for you fixing the"
+	cont "generator."
+	para "The Manager was"
+	line "going pound us all"
+	cont "with his ZAP"
+	cont "CANNON."
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
-	text "The MAGNET TRAIN"
-	line "consumes a lot of"
-	cont "electricity."
-
-	para "It can't move if"
-	line "the new generator"
-	cont "isn't operating."
-	done
-
-PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
-	text "All right! We can"
-	line "finally get the"
-
-	para "MAGNET TRAIN"
-	line "running again."
+	text "KANTO requires a"
+	line "lot of power."
+	para "The MAGNET TRAIN"
+	line "and RADIO TOWER"
+	cont "draw a lot but for"
+	cont "some reason the"
+	cont "VERMILION GYM"
+	cont "draws the most."
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	text "MANAGER: I, I, I'm"
-	line "ready to blast"
-	cont "someone!"
-
-	para "Who would dare"
-	line "ruin my generator?"
-
-	para "I spent so much"
-	line "time on it!"
-
-	para "If I catch him,"
-	line "he's going to get"
-
-	para "a taste of my ZAP"
-	line "CANNON!"
+	text "AARRRAGGG!!!"
+	para "Look at how they"
+	line "massacred my"
+	cont "generator!"
+	para "The FLUX CAPACITOR"
+	line "has been stolen!"
+	para "AAARRRR!"
+	para "When I find the"
+	line "person that did"
+	cont "this..."
+	para "ZAP CANNON!!!"
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
-	text "MANAGER: I won't"
-	line "forgive him!"
-
-	para "The culprit can"
-	line "cry and apologize,"
-
-	para "but I'll still"
-	line "hammer him!"
-
-	para "Gahahahah!"
+	text "I wont let anyone"
+	line "hurt my generator!"
+	para "My ZAP CANNON is"
+	line "eager to vaporise"
+	cont "anyone who would"
+	cont "dare."
+	para "You're a good"
+	line "generator, yes you"
+	cont "are!"
 	done
 
 PowerPlantManagerThatsThePartText:
-	text "MANAGER: Ah! Yeah!"
-
-	para "That's the missing"
-	line "PART from my be-"
-	cont "loved generator!"
-	cont "You found it?"
+	text "You..."
+	para "That's..."
+	para "That's the FLUX"
+	line "CAPACITOR!!"
+	para "I need it!"
+	para "Give it to me now!"
 	done
 
 PowerPlantManagerTakeThisTMText:
-	text "Wahah! Thanks!"
-
-	para "Here! Take this TM"
-	line "as a reward!"
+	text "You have made a"
+	line "wise choice."
+	para "Here I bestow upon"
+	line "you my mighty"
+	cont "weapon."
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
-	text "MANAGER: TM07 is"
-	line "my ZAP CANNON."
-
-	para "It's a powerful"
-	line "technique!"
-
-	para "It's not what any-"
-	line "one would consider"
-
-	para "accurate, but it"
-	line "packs a wallop!"
+	text "That is ZAP"
+	line "CANNON."
+	para "It doesn't always"
+	line "land but will"
+	cont "vaporise anyone it"
+	cont "can dump it's"
+	cont "electrical load"
+	cont "on."
 	done
 
 PowerPlantManagerMyBelovedGeneratorText:
-	text "MANAGER: My be-"
-	line "loved generator!"
-
-	para "Keep pumping the"
-	line "electricity out!"
+	text "My dear generator,"
+	line "I will never let"
+	cont "anyone hurt you"
+	cont "again!"
+	para "NEVER!"
+	para "You are my"
+	line "beautiful"
+	cont "generator."
 	done
 
 PowerPlant_MapEvents:

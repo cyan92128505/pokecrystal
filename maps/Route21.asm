@@ -166,15 +166,50 @@ TrainerSwimmerfNikki:
 	end
 
 TrainerFisherArnold:
-	trainer FISHER, ARNOLD, EVENT_BEAT_FISHER_ARNOLD, FisherArnoldSeenText, FisherArnoldBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_FISHER_ARNOLD
+	iftrue .FightDone
+.fight
+	writetext FisherArnoldSeenText
+	waitbutton
+	closetext
+	setval MUSIC_CHAMPION_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext FisherArnoldBeatenText, FisherArnoldWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer FISHER, ARNOLD
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_FISHER_ARNOLD
 	opentext
 	writetext FisherArnoldAfterBattleText
 	waitbutton
 	closetext
+	special HealParty
 	end
+.FightDone:
+	writetext FisherArnoldAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchFisherText
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseFisherText
+	waitbutton
+	closetext
+	end
+RematchFisherText:
+    text "You once again"
+    line "seek the ultimate"
+    cont "challenge?"
+    done
+RematchRefuseFisherText:
+    text "You are not yet"
+    line "ready young"
+    cont "LARVESTA."
+    done
 
 SwimmermSethSeenText:
 	text "I used to live in"
@@ -227,6 +262,14 @@ FisherArnoldSeenText:
 	para "Really!"
 	para "I'm going to have"
 	line "to destroy you!"
+	para "Forefathers one"
+	line "and all..."
+	para "Bare witness!"
+	done
+
+FisherArnoldWinsText:
+	text "Rest now dear"
+	line "child."
 	done
 
 FisherArnoldBeatenText:

@@ -35,47 +35,49 @@ Route10Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route10Pokecenter1FCooltrainerFText
 
 Route10Pokecenter1FGentlemanText:
-	text "A #MON CENTER"
-	line "near a cave?"
-
-	para "That's mighty"
-	line "convenient."
+	text "This #CENTER"
+	line "doesn't do very"
+	cont "good business."
+	para "I am offering to"
+	line "buy it and turn it"
+	cont "into bunker for"
+	cont "the rich to"
+	cont "protect their"
+	cont "belongs from any"
+	cont "HOEN thieves."
 	done
 
 Route10Pokecenter1FGymGuideText:
-	text "The POWER PLANT's"
-	line "MANAGER is looking"
-
-	para "for a strong #-"
-	line "MON trainer."
-
-	para "He needs help"
-	line "getting back"
-
-	para "something that"
-	line "was stolen."
+	text "Hey there hero!"
+	para "There is a POWER"
+	line "PLANT down stream"
+	cont "from here."
+	para "You should visit,"
+	line "it might be"
+	cont "educational."
 	done
 
 Route10Pokecenter1FGymGuideText_ReturnedMachinePart:
-	text "I hear TEAM ROCKET"
-	line "got back together"
-
-	para "in JOHTO but fell"
-	line "apart right away."
-
-	para "I didn't know any-"
-	line "thing about that."
+	text "Well done on"
+	line "helping out the"
+	cont "POWER PLANT"
+	cont "manager."
+	para "I thought he was"
+	line "going to have a"
+	cont "heart attack."
 	done
 
 Route10Pokecenter1FCooltrainerFText:
-	text "When you go out-"
-	line "side, you can see"
-
-	para "the roof of a big"
-	line "building."
-
-	para "That's the POWER"
-	line "PLANT."
+	text "In the cave there"
+	line "was a ledge and I"
+	cont "fell!"
+	para "I thought I would"
+	line "fall into the"
+	cont "abyss."
+	para "Then I remember"
+	line "waking up here."
+	para "There is something"
+	line "evil in that cave."
 	done
 
 Route10Pokecenter1F_MapEvents:

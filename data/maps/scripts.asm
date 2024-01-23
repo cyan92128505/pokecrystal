@@ -385,7 +385,6 @@ INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route24.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
-INCLUDE "maps/Route10South.asm"
 
 SECTION "Map Scripts 25", ROMX
 
@@ -515,3 +514,4 @@ INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/LavenderForest.asm"
 INCLUDE "maps/Route23.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
+INCLUDE "maps/Route10South.asm"

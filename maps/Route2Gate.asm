@@ -10,17 +10,15 @@ Route2GateScientistScript:
 	jumptextfaceplayer Route2GateScientistText
 
 Route2GateScientistText:
-	text "Are you <PLAY_G>?"
-
-	para "I work as PROF."
-	line "OAK's AIDE."
-
-	para "I had no idea that"
-	line "you were out here."
-
-	para "PROF.OAK's LAB is"
-	line "nearby in PALLET"
-	cont "TOWN."
+	text "The commoners"
+	line "don't understand."
+	para "The real crime"
+	line "would be not to"
+	cont "finish what we"
+	cont "have started."
+	para "But the lab, it's"
+	line "sealed off, and"
+	cont "for good reason."
 	done
 
 Route2Gate_MapEvents:

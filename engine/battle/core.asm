@@ -1193,6 +1193,31 @@ Core_MagicGuardPokemon:
     db YVELTAL
     db -1
 
+Core_SpikesImmunePokemon:
+    db CLEFAIRY
+    db CLEFABLE
+    db ABRA
+    db KADABRA
+    db ALAKAZAM
+    db ARCEUS
+    db SOLOSIS
+    db DUOSION
+    db REUNICLUS
+    db XERNEAS
+    db YVELTAL
+    db GASTLY
+    db HAUNTER
+    db GENGAR
+    db MISDREAVUS
+    db MISMAGIUS
+    db KOFFING
+    db WEEZING
+    db LATIAS
+    db LATIOS
+    db UNOWN
+    db ROTOM
+    db -1
+
 ResidualDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
     call GetCurrentMonCore
@@ -4444,11 +4469,11 @@ SpikesDamage:
 	ld bc, UpdateEnemyHUD
 	ld a, [wEnemyMonSpecies]
 .ok
-; Pokemon who are immune to residual damage (magic guard) take no damage
+; Pokemon who are immune to residual damage (magic guard and levitate) take no damage
     push hl
     push de
 	push bc
-	ld hl, Core_MagicGuardPokemon
+	ld hl, Core_SpikesImmunePokemon
 	ld de, 1
 	call IsInArray
 	pop bc

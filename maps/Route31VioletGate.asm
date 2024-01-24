@@ -15,10 +15,14 @@ Route31VioletGateCooltrainerFScript:
 
 Route31VioletGateOfficerText:
 	text "Welcome to VIOLET"
-	cont "CITY."
+	line "CITY."
 
-	para "Be sure to visit"
-	line "SPROUT TOWER."
+	para "This used to be a"
+	line "happy place to"
+	cont "live."
+	para "But something"
+	line "seems off about it"
+	cont "these days."
 	done
 
 Route31VioletGateCooltrainerFText:

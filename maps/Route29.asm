@@ -265,18 +265,23 @@ CatchingTutorialDebriefText:
 	done
 
 Route29YoungsterText:
-	text "Yo!"
-
-	para "How strong are"
-	line "your #MON?"
-
+	text "Do you have a"
+	line "POCKET PC?"
 	para "You can deposit"
-	line "them in the PC"
-	cont "to heal them."
+	line "then withdraw your"
+	cont "#MON to heal"
+	cont "them."
+	para "It kind of feels"
+	line "like cheating"
+	cont "though right?"
 	done
 
 Route29TeacherText:
 	text "See those ledges?"
+
+	para "You can only hop"
+	line "over them in one"
+	cont "direction."
 
     para "I used to be an"
     line "adventurer like"
@@ -304,20 +309,24 @@ Route29FisherText:
 	done
 
 Route29CooltrainerMText_WaitingForNight:
-	text "At night a huge"
-	line "URSARING might"
-	cont "appear around"
-	cont "here."
-
-	para "It will be mine!"
+	text "Watch out!"
+	para "There is a rapid"
+	line "RATICATE out"
+	cont "there, it nearly"
+	cont "got me."
+	para "I too afraid to"
+	line "leave."
 	done
 
 Route29CooltrainerMText_WaitingForMorning:
-	text "I'm waiting for"
-	line "#MON that"
-
-	para "appear only in the"
-	line "morning."
+	text "Get down!"
+	para "There is huge"
+	line "violent URSARING"
+	cont "around here at"
+	cont "night."
+	para "Don't bother"
+	line "playing dead, it"
+	cont "doesn't work!"
 	done
 
 MeetTuscanyText:

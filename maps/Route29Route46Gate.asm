@@ -14,24 +14,27 @@ Route29Route46GateYoungsterScript:
 	jumptextfaceplayer Route29Route46GateYoungsterText
 
 Route29Route46GateOfficerText:
-	text "You can't climb"
-	line "ledges."
-
-	para "But you can jump"
-	line "down from them to"
-	cont "take a shortcut."
+	text "This way leads"
+	line "through DARK CAVE"
+	cont "to BLACKTHORN"
+	cont "CITY."
+	para "There are very"
+	line "powerful trainers"
+	cont "that direction."
+	para "You should"
+	line "probably turn"
+	cont "back."
 	done
 
 Route29Route46GateYoungsterText:
-	text "Different kinds of"
-	line "#MON appear"
-	cont "past here."
-
-	para "If you want to"
-	line "catch them all,"
-
-	para "you have to look"
-	line "everywhere."
+	text "There is a cave"
+	line "ahead but it's"
+	cont "pitch black."
+	para "I couldn't see"
+	line "anything but I"
+	cont "could hear"
+	cont "terrifying noises."
+	cont "immediately."
 	done
 
 Route29Route46Gate_MapEvents:

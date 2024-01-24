@@ -185,7 +185,7 @@ PowerPlantManager:
 	iftrue .GotZapCannon
 	writetext PowerPlantManagerTakeThisTMText
 	promptbutton
-	verbosegiveitem TM_ZAP_CANNON
+	verbosegiveitem TM_BODY_SLAM
 	iffalse .NoRoom
 	setevent EVENT_GOT_TM07_ZAP_CANNON
 	writetext PowerPlantManagerTM07IsZapCannonText
@@ -300,8 +300,8 @@ PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
 	cont "temper."
 	para "If you damage the"
 	line "generator you'll"
-	cont "be swallowing his"
-	cont "ZAP CANNON!"
+	cont "be getting my"
+	cont "BODY SLAM!"
 	done
 
 PowerPlantOfficer2ManagerHasBeenCheerfulText:
@@ -310,9 +310,9 @@ PowerPlantOfficer2ManagerHasBeenCheerfulText:
 	cont "for you fixing the"
 	cont "generator."
 	para "The Manager was"
-	line "going pound us all"
-	cont "with his ZAP"
-	cont "CANNON."
+	line "going take turns"
+	cont "giving us all a"
+	cont "BODY SLAM!"
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
@@ -337,14 +337,17 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	para "When I find the"
 	line "person that did"
 	cont "this..."
-	para "ZAP CANNON!!!"
+	para "I'm going to lift"
+	line "them above my head"
+	cont "and BODY SLAM"
+	cont "them to death!"
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
 	text "I wont let anyone"
 	line "hurt my generator!"
-	para "My ZAP CANNON is"
-	line "eager to vaporise"
+	para "My BODY SLAM is"
+	line "eager to crush"
 	cont "anyone who would"
 	cont "dare."
 	para "You're a good"

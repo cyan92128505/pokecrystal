@@ -157,15 +157,11 @@ Route35GoldenrodGateRandyOhNeverMindThenText:
 Route35GoldenrodGatePokefanFText:
 	text "The NATIONAL PARK"
 	line "is up ahead."
-
-	para "Some days you"
-	line "can find"
-	cont "CHAMPION LEON"
-	cont "there!"
-
-	para "I'd love to"
-	line "see his"
-	cont "CHARIZARD!"
+	para "Some days you can"
+	line "find CHAMPION LEON"
+	cont "there."
+	para "I'd love to see"
+	line "his CHARIZARD."
 	done
 
 Route35GoldenrodGateFisherText:

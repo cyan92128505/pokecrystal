@@ -283,7 +283,7 @@ VioletCityGrampsText:
 	line "of them at DARK"
 	cont "CAVE."
 
-	para "I think they"
+	para "I think they are"
 	line "nurturing the"
 	cont "darkness so"
 	cont "their beliefs"

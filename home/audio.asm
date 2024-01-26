@@ -360,35 +360,33 @@ PlayMapMusic::
 	ret
 
 PlayMapMusicBike::
+    ret
 ; If the player's on a bike, play the bike music instead of the map music
-	push hl
-	push de
-	push bc
-	push af
-
-	xor a
-	ld [wDontPlayMapMusicOnReload], a
-	ld de, MUSIC_BICYCLE
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr z, .play
-	call GetMapMusic_MaybeSpecial
-.play
-	push de
-	ld de, MUSIC_NONE
-	call PlayMusic
-	call DelayFrame
-	pop de
-
-	ld a, e
-	ld [wMapMusic], a
-	call PlayMusic
-
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
+;	push hl
+;	push de
+;	push bc
+;	push af
+;	xor a
+;	ld [wDontPlayMapMusicOnReload], a
+;	ld de, MUSIC_BICYCLE
+;	ld a, [wPlayerState]
+;	cp PLAYER_BIKE
+;	jr z, .play
+;	call GetMapMusic_MaybeSpecial
+;.play
+;	push de
+;	ld de, MUSIC_NONE
+;	call PlayMusic
+;	call DelayFrame
+;	pop de
+;	ld a, e
+;	ld [wMapMusic], a
+;	call PlayMusic
+;	pop af
+;	pop bc
+;	pop de
+;	pop hl
+;	ret
 
 TryRestartMapMusic::
 	ld a, [wDontPlayMapMusicOnReload]
@@ -422,11 +420,11 @@ RestartMapMusic::
 	ret
 
 SpecialMapMusic::
-	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .surf
-	cp PLAYER_SURF_PIKA
-	jr z, .surf
+;	ld a, [wPlayerState]
+;	cp PLAYER_SURF
+;	jr z, .surf
+;	cp PLAYER_SURF_PIKA
+;	jr z, .surf
 
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
@@ -436,15 +434,15 @@ SpecialMapMusic::
 	and a
 	ret
 
-.bike ; unreferenced
-	ld de, MUSIC_BICYCLE
-	scf
-	ret
+;.bike ; unreferenced
+;	ld de, MUSIC_BICYCLE
+;	scf
+;	ret
 
-.surf
-	ld de, MUSIC_SURF
-	scf
-	ret
+;.surf
+;	ld de, MUSIC_SURF
+;	scf
+;	ret
 
 .contest
 	ld a, [wMapGroup]

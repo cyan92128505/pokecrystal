@@ -243,7 +243,7 @@ MonMenuIconPals:
 	icon_pals SILVER,  BLUE     ; DIALGA
 	icon_pals TEAL,  GOLD    ; KLEFKI
 	icon_pals BLUE,  SILVER     ; XERNEAS
-	icon_pals RED,  SILVER       ; YVELTAL
+	icon_pals BLUE,  SILVER       ; YVELTAL
 	icon_pals BROWN,  GREEN      ; GIRATINA
 	icon_pals PURPLE,  TEAL     ; MILTANK
 	icon_pals RED,  PURPLE    ; BLISSEY

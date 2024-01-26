@@ -26,7 +26,6 @@ MountMoonFieldMon3Script:
 	end
 
 MountMoonFieldMon4Script:
-	faceplayer
 	cry CLEFABLE
 	pause 15
 	loadwildmon CLEFABLE, 65

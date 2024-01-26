@@ -240,7 +240,7 @@ MonMenuIcons:
 	db ICON_BIGMON      ; DIALGA
 	db ICON_VOLTORB     ; KLEFKI
 	db ICON_EQUINE      ; XERNEAS
-	db ICON_HO_OH       ; YVELTAL
+	db ICON_LUGIA       ; YVELTAL
 	db ICON_BAT         ; GIRATINA
 	db ICON_EQUINE      ; MILTANK
 	db ICON_CLEFAIRY    ; BLISSEY
@@ -254,5 +254,5 @@ MonMenuIcons:
 	db ICON_HO_OH       ; HO_OH
 	db ICON_HUMANSHAPE  ; CELEBI
 	db ICON_MEWTWO      ; MEWTWO
-	db ICON_EQUINE      ; ARCEUS
+	db ICON_ARCEUS      ; ARCEUS
 	assert_table_length NUM_POKEMON

@@ -41,4 +41,5 @@ IconPointers:
 	dw SudowoodoIcon
 	dw BigmonIcon
 	dw MewtwoIcon
+	dw ArceusIcon
 	assert_table_length NUM_ICONS + 1

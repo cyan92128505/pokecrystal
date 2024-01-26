@@ -2194,16 +2194,16 @@ BikeFunction:
 	ld de, Script_GetOnBike_Register
 	call .CheckIfRegistered
 	call QueueScript
-	xor a
-	ld [wMusicFade], a
-	ld de, MUSIC_NONE
-	call PlayMusic
-	call DelayFrame
-	call MaxVolume
-	ld de, MUSIC_BICYCLE
-	ld a, e
-	ld [wMapMusic], a
-	call PlayMusic
+	;xor a
+	;ld [wMusicFade], a
+	;ld de, MUSIC_NONE
+	;call PlayMusic
+	;call DelayFrame
+	;call MaxVolume
+	;ld de, MUSIC_BICYCLE
+	;ld a, e
+	;ld [wMapMusic], a
+	;call PlayMusic
 	ld a, $1
 	ret
 

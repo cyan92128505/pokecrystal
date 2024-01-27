@@ -152,22 +152,25 @@ _CardFolderOpenText::
 	text_end
 
 _OakTimeWokeUpText::
-	text "<……><……><……><……><……><……>"
-	line "<……><……><……><……><……><……>"
+	;text "<……><……><……><……><……><……>"
+	;line "<……><……><……><……><……><……>"
 
-	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
+	;para "Zzz… Hm? Wha…?"
+	;line "You woke me up!"
 
-	para "Will you check the"
-	line "clock for me?"
+	;para "Will you check the"
+	;line "clock for me?"
+	text "Please set the"
+	line "time."
 	prompt
 
 _OakTimeWhatTimeIsItText::
-	text "What time is it?"
+	;text "What time is it?"
+	text "What hour is it?"
 	done
 
 _OakTimeWhatHoursText::
-	text "What?@"
+	text "Is that so?@"
 	text_end
 
 _OakTimeHoursQuestionMarkText::
@@ -179,7 +182,7 @@ _OakTimeHowManyMinutesText::
 	done
 
 _OakTimeWhoaMinutesText::
-	text "Whoa!@"
+	text "Indeed!@"
 	text_end
 
 _OakTimeMinutesQuestionMarkText::

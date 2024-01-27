@@ -63,8 +63,9 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTilemapEtc
-	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
+	call AreYouABoyOrAreYouAGirl
+	call FinishIntro
 	call InitializeWorld
 
 	ld a, LANDMARK_NEW_BARK_TOWN
@@ -81,6 +82,7 @@ AreYouABoyOrAreYouAGirl:
 	farcall Mobile_AlwaysReturnNotCarry ; mobile
 	jr c, .ok
 	farcall InitGender
+	farcall InitClock
 	ret
 
 .ok
@@ -637,18 +639,31 @@ Continue_DisplayGameTime:
 	jp PrintNum
 
 OakSpeech:
-	farcall InitClock
-	call RotateFourPalettesLeft
 	call ClearTilemap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_NONE
 	call PlayMusic
 
-	call RotateFourPalettesRight
+	ld de, SFX_THUNDER
+	call PlaySFX
+	call WaitSFX
+
+	ld de, MUSIC_RED_DUNGEON
+	call PlayMusic
+
+	ld hl, DontKillUsText
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTilemap
+
+	ld de, SFX_THUNDER
+	call PlaySFX
+	call WaitSFX
+
 	call RotateThreePalettesRight
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
+	ld a, WALLACE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -656,12 +671,12 @@ OakSpeech:
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText1
+	ld hl, RayquazaKillText
 	call PrintText
 	call RotateThreePalettesRight
 	call ClearTilemap
 
-	ld a, WOOPER
+	ld a, RAYQUAZA
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
@@ -677,16 +692,23 @@ OakSpeech:
 	call GetSGBLayout
 	call Intro_WipeInFrontpic
 
-	ld hl, OakText2
-	call PrintText
-	ld hl, OakText4
+	ld de, SFX_HYPER_BEAM
+	call PlaySFX
+	call WaitSFX
+
+	ld hl, DeathText
 	call PrintText
 	call RotateThreePalettesRight
 	call ClearTilemap
 
+	ld de, MUSIC_RED_INDIGO_PLATEAU
+	call PlayMusic
+
+	call RotateFourPalettesRight
+	call RotateThreePalettesRight
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
+	ld a, WALLACE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -694,8 +716,44 @@ OakSpeech:
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText5
+	ld hl, WallaceText1
 	call PrintText
+
+	ld hl, WallaceText2
+	call PrintText
+	;call RotateThreePalettesRight
+	call ClearTilemap
+
+	ld de, SFX_THUNDER
+	call PlaySFX
+	call WaitSFX
+
+	ld de, MUSIC_LUGIA_SONG
+	call PlayMusic
+
+	;call RotateThreePalettesRight
+	;call ClearTilemap
+
+	ld hl, DadText1
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTilemap
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, LT_SURGE
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, DadText2
+	call PrintText
+	ret
+
+FinishIntro:
 	call RotateThreePalettesRight
 	call ClearTilemap
 
@@ -745,6 +803,34 @@ OakText6:
 
 OakText7:
 	text_far _OakText7
+	text_end
+
+DontKillUsText:
+	text_far _DontKillUsText
+	text_end
+
+RayquazaKillText:
+	text_far _RayquazaKillText
+	text_end
+
+DeathText:
+	text_far _DeathText
+	text_end
+
+WallaceText1:
+	text_far _WallaceText1
+	text_end
+
+WallaceText2:
+	text_far _WallaceText2
+	text_end
+
+DadText1:
+	text_far _DadText1
+	text_end
+
+DadText2:
+	text_far _DadText2
 	text_end
 
 NamePlayer:

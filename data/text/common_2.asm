@@ -1629,3 +1629,92 @@ _WhitedOutToTrainerText::
 	para "<PLAYER> whited"
 	line "out!"
 	done
+
+_DontKillUsText::
+    text "No..."
+    para "Please..."
+    para "It's him!"
+    para "No, there are"
+    line "children here."
+    para "Don't kill us!"
+    prompt
+
+_RayquazaKillText::
+    text "You willingly"
+    line "forfeit your"
+    cont "lives."
+
+    para "What am I to do"
+    line "with those who"
+    cont "would oppose me."
+
+    para "But show them"
+    line "death."
+
+    para "RAYQUAZA!"
+
+    para "DRACO METEOR!"
+    prompt
+
+_DeathText::
+    text "NOOOO! AGGGHHH..."
+    prompt
+
+_WallaceText1::
+    text "Citizens of KANTO."
+	para "Your exploitation"
+	line "of #MON ends"
+	cont "today."
+	para "Your cities shall"
+	line "burn."
+	para "your kin shall"
+	line "perish."
+	para "HOEN shall"
+	line "liberate the land"
+	cont "you squander."
+	para "Those who resist"
+	line "shall die."
+	prompt
+
+_WallaceText2::
+	text "To those nobel"
+	line "denizens on JOHTO."
+	para "You have nothing"
+	line "to fear."
+	para "No longer shall"
+	line "you suffer the"
+	cont "rampant"
+	cont "industrialization"
+	cont "of KANTO."
+	para "However, should"
+	line "you come to"
+	cont "sympathise with"
+	cont "KANTO you will be"
+	cont "shown no quarter."
+	para "I, WALLACE, the"
+	line "greatest trainer"
+	cont "shall ensure it!"
+	prompt
+
+_DadText1::
+	text "Hey don't worry."
+	para "You're having the"
+	line "same nightmare"
+	cont "again."
+	para "That's why I had"
+	line "to leave you and"
+	cont "your mother, so I"
+	cont "could protect you."
+	prompt
+
+_DadText2::
+	text "You're my kid!"
+	para "And you are much"
+	line "stronger than you"
+	cont "think."
+	para "You are my"
+	line "favorite person."
+	para "You just need to"
+	line "remember who you"
+	cont "are."
+	prompt

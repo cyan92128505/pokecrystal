@@ -73,7 +73,7 @@ MeetMomScript:
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
 	yesorno
-	iffalse .ExplainPhone
+	iftrue .ExplainPhone
 	sjump .KnowPhone
 
 .KnowPhone:

@@ -113,9 +113,6 @@ InitClock:
 
 .MinutesAreSet:
 	call InitTimeOfDay
-	;ld hl, OakText_ResponseToSetTime
-	;call PrintText
-	;call WaitPressAorB_BlinkCursor
 	pop af
 	ldh [hInMenu], a
 	ret

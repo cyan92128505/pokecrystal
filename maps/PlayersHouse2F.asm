@@ -103,6 +103,7 @@ PlayersRadioText1:
 	line "have been seen"
 	cont "mobilising near"
 	cont "the coast."
+	done
 
 PlayersRadioText2:
 	para "Invasion of KANTO"

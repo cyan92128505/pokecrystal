@@ -1,5 +1,5 @@
 AlanAnswerPhoneText:
-	text "Yup, it's @"
+	text "Indeed it's @"
 	text_ram wStringBuffer3
 	text "!"
 
@@ -8,7 +8,7 @@ AlanAnswerPhoneText:
 	done
 
 AlanAnswerPhoneDayText:
-	text "Yup, it's @"
+	text "Indeed it's @"
 	text_ram wStringBuffer3
 	text "!"
 
@@ -16,7 +16,7 @@ AlanAnswerPhoneDayText:
 	done
 
 AlanAnswerPhoneNiteText:
-	text "Yup, it's @"
+	text "Indeed it's @"
 	text_ram wStringBuffer3
 	text "!"
 
@@ -25,35 +25,31 @@ AlanAnswerPhoneNiteText:
 	done
 
 AlanGreetText:
-	text "Hello! It's me,"
+	text "Hello! It is I,"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
 	done
 
 AlanGreetDayText:
-	text "Hello! It's me,"
+	text "Hello! It is I,"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
 	done
 
 AlanGreetNiteText:
-	text "Hello! It's me,"
+	text "Hello! It is I"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
 	done
 
 AlanGenericText:
-	text "<PLAY_G>, are you"
-	line "raising your"
-	cont "#MON properly?"
-
-	para "I read in a book"
-	line "that you should"
-
-	para "raise any #MON"
-	line "you catch with"
-	cont "love and care."
+	text "<PLAYER>, why are"
+	line "you calling me?"
+	para "You must study"
+	line "harder!"
+	para "Only through study"
+	line "can we ascend."
 	done

@@ -1,19 +1,13 @@
 AlanAskNumber1Text:
-	text "Reading textbooks"
-	line "is worthwhile"
-	cont "every so often."
-
-	para "When I'm reading"
-	line "and walking, I"
-	cont "have to look down."
-
-	para "So I notice items"
-	line "on the ground."
-
-	para "Next time I find"
-	line "something, I'll"
-	cont "give it to you."
-
+	text "Only through study"
+	line "can we achieve our"
+	cont "dreams."
+	para "We should study"
+	line "together."
+	para "I can provide you"
+	line "with study"
+	cont "materials when I"
+	cont "find them."
 	para "May I have your"
 	line "phone number?"
 	done
@@ -27,19 +21,23 @@ AlanAskNumber2Text:
 	done
 
 AlanNumberAcceptedText:
-	text "I'll call you as"
-	line "soon as I find"
+	text "Great we shall"
+	line "study together."
 
-	para "something. You can"
-	line "count on it!"
+	para "I'll call you if I"
+	line "find something to"
+	cont "help your study."
+
+	para "Then we will be"
+	line "assured high"
+	cont "salary jobs!"
 	done
 
 AlanNumberDeclinedText:
-	text "Oh… I thought it"
-	line "would be a good"
-
-	para "break to call you"
-	line "when I'm studying…"
+	text "You don't fully"
+	line "appreciate the"
+	cont "benefits of pair"
+	cont "study."
 	done
 
 AlanPhoneFullText:
@@ -48,24 +46,20 @@ AlanPhoneFullText:
 	done
 
 AlanRematchText:
-	text "I waited around"
-	line "for you!"
+	text "The test begins."
 
-	para "I'm thoroughly"
-	line "prepared today!"
+	para "You have 3 hours"
+	line "starting now."
+
+	para "Good luck!"
 	done
 
 AlanGiftText:
-	text "This, this! This"
-	line "is yours! Ta-da!"
+	text "This will aide"
+	line "your study."
 	done
 
 AlanPackFullText:
-	text "Whoops!"
-
-	para "You can't carry"
-	line "any more items!"
-
-	para "I'll hold it until"
-	line "next time."
+	text "You must make"
+	line "room for this!"
 	done

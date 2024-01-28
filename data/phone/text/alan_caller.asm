@@ -33,31 +33,30 @@ AlanLostAMonText:
 	done
 
 AlanBattleRematchText:
-	text "I've studied quite"
-	line "a bit since then,"
+	text "I've studied with"
+	line "vigor since then,"
 
-	para "and I've gotten a"
-	line "lot better!"
+	para "and I've reached"
+	line "a new plateau."
 
 	para "I'm hanging out on"
 	line "@"
 	text_ram wStringBuffer5
 	text "."
 
-	para "Can you come down"
-	line "for a battle?"
+	para "We must battle!"
 	done
 
 AlanHangUpText:
-	text "See you later!"
+	text "Farewell!"
 	done
 
 AlanFoundItemText:
-	text "Hehehe, I picked"
-	line "up something nice!"
+	text "I have acquired an"
+	line "interesting item."
 
-	para "You can have it!"
-	line "Why don't you come"
+	para "It might help your"
+	line "studies. Come"
 
 	para "to @"
 	text_ram wStringBuffer5
@@ -66,17 +65,17 @@ AlanFoundItemText:
 	done
 
 AlanHaventPickedUpAnythingText:
-	text "I haven't picked"
-	line "up anything yet."
+	text "I haven't found"
+	line "any items yet."
 
 	para "I'll call you if I"
 	line "find something."
 	done
 
 AlanReminderText:
-	text "If we don't battle"
-	line "soon, I'll forget"
-	cont "my strategy!"
+	text "Listen I need"
+	line "to test my new"
+	cont "strats on you!"
 
 	para "I'm waiting on"
 	line "@"
@@ -85,8 +84,8 @@ AlanReminderText:
 	done
 
 AlanComePickUpGiftText:
-	text "I have to do my"
-	line "homework, so can"
+	text "I have much to"
+	line "study today."
 
 	para "you come get your"
 	line "gift right away?"

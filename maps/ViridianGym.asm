@@ -86,7 +86,7 @@ ViridianGymBlueScript:
 	writetext LeaderBlueBeforeText
 	waitbutton
 	closetext
-	winlosstext LeaderBlueWinText, 0
+	winlosstext LeaderBlueWinText, LeaderBlueLossText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BLUE, BLUE1
 	startbattle
@@ -258,13 +258,13 @@ LeaderBlueBeforeText:
 	line "you've got!"
 	done
 
-LeaderBlueLossText:
+LeaderBlueWinText:
 	text "That was the"
 	line "predictable"
 	cont "ending."
 	done
 
-LeaderBlueWinText:
+LeaderBlueLossText:
 	text "I should have"
 	line "taken on WALLACE!"
 	done

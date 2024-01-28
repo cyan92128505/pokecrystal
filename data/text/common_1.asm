@@ -182,7 +182,7 @@ _OakTimeHowManyMinutesText::
 	done
 
 _OakTimeWhoaMinutesText::
-	text "Indeed!@"
+	text "Sure?@"
 	text_end
 
 _OakTimeMinutesQuestionMarkText::

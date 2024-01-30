@@ -48,6 +48,7 @@ MapGroupPointers::
 	dw MapGroup_AncientRuin  ; 29
 	dw MapGroup_WarZone      ; 30
 	dw MapGroup_Museum       ; 31
+	dw MapGroup_Manor        ; 32
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_Olivine:
@@ -579,3 +580,10 @@ MapGroup_Museum:
     table_width MAP_LENGTH, MapGroup_Museum
 	map Museum, TILESET_GATE, CAVE, LANDMARK_MUSEUM, MUSIC_RUINS_OF_ALPH_RADIO, TRUE, PALETTE_NITE | IN_DARKNESS, FISHGROUP_NONE
     assert_table_length NUM_MUSEUM_MAPS
+
+MapGroup_Manor:
+    table_width MAP_LENGTH, MapGroup_Manor
+	map ManorOutside, TILESET_BATTLE_TOWER_OUTSIDE, ROUTE, LANDMARK_MANOR, MUSIC_ECRUTEAK_CITY, TRUE, PALETTE_AUTO, FISHGROUP_NONE
+	map ManorInside, TILESET_PLAYERS_HOUSE, INDOOR, LANDMARK_MANOR, MUSIC_ECRUTEAK_CITY, TRUE, PALETTE_DAY, FISHGROUP_NONE
+    assert_table_length NUM_MANOR_MAPS
+

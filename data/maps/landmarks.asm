@@ -111,6 +111,7 @@ Landmarks:
     landmark  92, 106, WarZoneName
     landmark  52,  50, MuseumName
     landmark  90,  52, CeruleanCaveName
+    landmark  20,  40, ManorName
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK¯TOWN@"
@@ -160,6 +161,7 @@ SafariZoneName:      db "SAFARI ZONE@" ; unreferenced
 SeafoamIslandsName:  db "SEAFOAM¯ISLANDS@"
 PokemonMansionName:  db "#MON¯MANSION@" ; unreferenced
 CeruleanCaveName:    db "CERULEAN¯CAVE@" ; unreferenced
+ManorName:           db "SILVER MANOR@"
 Route1Name:          db "ROUTE 1@"
 Route2Name:          db "ROUTE 2@"
 Route3Name:          db "ROUTE 3@"

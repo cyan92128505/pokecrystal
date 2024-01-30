@@ -971,3 +971,10 @@ AncientTemple_Blocks:
 
 AncientHall_Blocks:
 	INCBIN "maps/AncientHall.blk"
+
+ManorOutside_Blocks:
+    INCBIN "maps/ManorOutside.blk"
+
+ManorInside_Blocks:
+    INCBIN "maps/ManorInside.blk"
+

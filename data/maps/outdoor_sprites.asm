@@ -50,6 +50,7 @@ OutdoorSprites:
 	dw AncientRuinSprites
 	dw WarZoneSprites
 	dw MuseumSprites
+	dw ManorSprites
 	assert_table_length NUM_MAP_GROUPS
 
 PalletGroupSprites:
@@ -310,6 +311,7 @@ DestinyTowerSprites:
 AncientRuinSprites:
 WarZoneSprites:
 MuseumSprites:
+ManorSprites:
 SilverGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_SILVER_TROPHY

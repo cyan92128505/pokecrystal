@@ -105,6 +105,7 @@ KANTO_LANDMARK EQU const_value
 	const LANDMARK_WAR_ZONE
 	const LANDMARK_MUSEUM
 	const LANDMARK_CERULEAN_CAVE
+	const LANDMARK_MANOR
 NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData

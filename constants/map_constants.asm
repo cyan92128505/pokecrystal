@@ -380,7 +380,7 @@ ENDM
 	endgroup
 
 	newgroup SILVER                                               ; 19
-	map_const ROUTE_28,                                    20,  9 ;  1
+	map_const ROUTE_28,                                    20, 12 ;  1
 	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
 	map_const ROUTE_28_STEEL_WING_HOUSE,                    4,  4 ;  4
@@ -534,4 +534,9 @@ ENDM
 	map_const MUSEUM,                                     10, 16 ;  1
 	endgroup
 
-NUM_MAP_GROUPS EQU const_value ; 29
+    newgroup MANOR
+	map_const MANOR_OUTSIDE,                               7, 13 ;  1
+	map_const MANOR_INSIDE,                                9, 16 ; 2
+	endgroup
+
+NUM_MAP_GROUPS EQU const_value ; 30

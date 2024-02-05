@@ -386,10 +386,13 @@ INCLUDE "maps/Route4.asm"
 
 SECTION "Map Scripts 25", ROMX
 
-INCLUDE "maps/DestinyPark.asm"
-INCLUDE "maps/DestinySquare.asm"
-INCLUDE "maps/DestinyFrontier.asm"
 INCLUDE "maps/DestinyEliteFour.asm"
+INCLUDE "maps/DestinySquare.asm"
+
+SECTION "Map Scripts 26", ROMX
+
+INCLUDE "maps/DestinyPark.asm"
+INCLUDE "maps/DestinyFrontier.asm"
 
 SECTION "Map Scripts Overflow 1", ROMX
 

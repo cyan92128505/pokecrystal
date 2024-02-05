@@ -37,10 +37,10 @@ MasterChrisChanScript:
 	checkevent EVENT_BEAT_MASTER_CHRIS_CHAN
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext ChrisChanSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext ChrisChanBeatenText, ChrisChanWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEFANM, MASTER_CHRIS_CHAN
 	startbattle
@@ -50,7 +50,7 @@ MasterChrisChanScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext ChrisChanAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -65,10 +65,45 @@ MasterChrisChanScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext ChrisChanLoseAfterBattleText
     waitbutton
     closetext
     end
+
+ ChrisChanSeenText:
+	text " Megan!?"
+	para "Who are you?"
+	para "I am the ruler of"
+	line "this universe"
+	cont "C187!"
+	para "The merge is upon"
+	line "us!"
+	done
+
+ ChrisChanBeatenText:
+    text "CURSYEHAMEHAA!"
+    done
+
+ ChrisChanWinText:
+    text "I am strong!"
+    done
+
+ ChrisChanAfterBattleText:
+	text "After the merge"
+	line "all shall worship"
+	cont "me and I shall use"
+	cont "my power to build"
+	cont "a sweetheart from"
+	cont "the ground up."
+	done
+
+ ChrisChanLoseAfterBattleText:
+	text "Stay honest and"
+	line "true brave spirit."
+	para "And don't forget"
+	line "to worship me"
+	cont "everyday."
+	done
 
 MasterYamiScript:
 	faceplayer
@@ -76,10 +111,10 @@ MasterYamiScript:
 	checkevent EVENT_BEAT_MASTER_YAMI
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterYamiSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterYamiBeatenText, MasterYamiWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, YAMI
 	startbattle
@@ -89,7 +124,7 @@ MasterYamiScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterYamiAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -104,10 +139,54 @@ MasterYamiScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterYamiLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterYamiSeenText:
+	text "Ah <PLAYER>, it's"
+	line "a small universe."
+	para "You are training"
+	line "to be the Master"
+	cont "of Masters."
+	para "As am I."
+	para "Let us test each"
+	line "other."
+	done
+
+MasterYamiBeatenText:
+	text "You keep breaking"
+	line "your limits."
+	done
+
+MasterYamiWinText:
+	text "You fought"
+	line "admirably."
+	done
+
+MasterYamiAfterBattleText:
+	text "You are truly a"
+	line "#MON MASTER."
+	para "Beware that man"
+	line "over there."
+	para "I sense a great"
+	line "evil within him."
+	done
+
+MasterYamiLoseAfterBattleText:
+	text "You have gotten"
+	line "stronger."
+	para "You will grow"
+	line "stronger still."
+	para "You should leave"
+	line "now."
+	para "I sense a powerful"
+	line "evil in that man"
+	cont "over there."
+	para "He may try to hurt"
+	line "you."
+	done
 
 MasterSetoScript:
 	faceplayer
@@ -115,10 +194,10 @@ MasterSetoScript:
 	checkevent EVENT_BEAT_MASTER_SETO
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterSetoSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterSetoBeatenText, MasterSetoWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BLUE, MASTER_SETO
 	startbattle
@@ -128,7 +207,7 @@ MasterSetoScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterSetoAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -143,10 +222,50 @@ MasterSetoScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterSetoLoseAfterBattleText
     waitbutton
     closetext
     end
+
+ MasterSetoSeenText:
+	text "I should have"
+	line "known I'd find you"
+	cont "here!"
+	para "I am trying to"
+	line "find YAMI, but I"
+	cont "can spare a moment"
+	cont "to crush you!"
+	done
+
+ MasterSetoBeatenText:
+	text "Why is everyone so"
+	line "strong!"
+	done
+
+ MasterSetoWinText:
+	text "How pathetic, you"
+	line "shouldn't be here."
+	done
+
+ MasterSetoAfterBattleText:
+	text "I don't have time"
+	line "for you."
+	para "I saw YAMI earlier"
+	line "following someone"
+	cont "who looked like"
+	cont "HENSHIN, but"
+	cont "couldn't be"
+	cont "HENSHIN."
+	done
+
+ MasterSetoLoseAfterBattleText:
+	text "That couldn't"
+	line "have ended any"
+	cont "other way."
+	para "Now run along kid."
+	para "I need to find"
+	line "YAMI."
+	done
 
 MasterDrakeScript:
 	faceplayer
@@ -154,10 +273,10 @@ MasterDrakeScript:
 	checkevent EVENT_BEAT_MASTER_DRAKE
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterDrakeSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterDrakeBeatenText, MasterDrakeWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SOLDIER, MASTER_DRAKE
 	startbattle
@@ -167,7 +286,7 @@ MasterDrakeScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterDrakeAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -182,10 +301,51 @@ MasterDrakeScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterDrakeLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterDrakeSeenText:
+	text "So you defeated"
+	line "WALLACE in your"
+	cont "world."
+	para "My world was not"
+	line "so lucky."
+	para "I should have"
+	line "acted sooner."
+	para "I have nobody to"
+	line "blame but myself."
+	done
+
+MasterDrakeBeatenText:
+	text "We all need heroes"
+	line "like you."
+	done
+
+MasterDrakeWinText:
+	text "The advantage of"
+	line "experience."
+	done
+
+MasterDrakeAfterBattleText:
+	text "Seeing that KANTO"
+	line "woman stand up to"
+	cont "WALLACE finally"
+	cont "broke me."
+	para "I threw away"
+	line "everything and"
+	cont "done what my heart"
+	cont "told me was right."
+	done
+
+MasterDrakeLoseAfterBattleText:
+	text "Never stop"
+	line "challenging all"
+	cont "those around you."
+	para "Challenge yourself"
+	line "most of all."
+	done
 
 MasterExecutiveFScript:
 	faceplayer
@@ -193,10 +353,10 @@ MasterExecutiveFScript:
 	checkevent EVENT_BEAT_MASTER_EXECUTIVEF
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterExecutiveSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterExecutiveBeatenText, MasterExecutiveWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer EXECUTIVEF, MASTER_EXECUTIVEF
 	startbattle
@@ -206,7 +366,7 @@ MasterExecutiveFScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterExecutiveAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -221,10 +381,54 @@ MasterExecutiveFScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterExecutiveLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterExecutiveSeenText:
+	text "We had no heroes"
+	line "in my world."
+	para "Our plan didn't"
+	line "work and WALLACE"
+	cont "conquered KANTO."
+	para "He killed my"
+	line "brother."
+	para "I escaped with my"
+	line "brothers #MON"
+	cont "and we never"
+	cont "stopped fighting."
+	done
+
+MasterExecutiveBeatenText:
+	text "If only you were"
+	line "there."
+	done
+
+MasterExecutiveWinText:
+	text "Pain is our"
+	line "weapon."
+	done
+
+MasterExecutiveAfterBattleText:
+	text "Eventually I led"
+	line "the assault"
+	cont "against WALLACE."
+	para "But he would have"
+	line "killed me too if"
+	cont "it wasn't for"
+	cont "DRAKE."
+	para "He is our hero."
+	done
+
+MasterExecutiveLoseAfterBattleText:
+	text "Don't envy my"
+	line "strength."
+	para "It is only"
+	line "obtained by having"
+	cont "your life ripped"
+	cont "apart."
+	done
 
 MasterTobiasScript:
 	faceplayer
@@ -232,10 +436,10 @@ MasterTobiasScript:
 	checkevent EVENT_BEAT_MASTER_TOBIAS
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterTobiasSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterTobiasBeatenText, MasterTobiasWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer COOLTRAINERM, MASTER_TOBIAS
 	startbattle
@@ -245,7 +449,7 @@ MasterTobiasScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterTobiasAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -260,10 +464,43 @@ MasterTobiasScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterTobiasLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterTobiasSeenText:
+	text "There are strong"
+	line "trainers"
+	cont "everywhere."
+	para "Even some that"
+	line "also use"
+	cont "Legendaries."
+	para "Now I can win"
+	line "without any guilt."
+	done
+
+MasterTobiasBeatenText:
+    text "What can I do?"
+    done
+
+MasterTobiasWinText:
+	text "Some things never"
+	line "change."
+	done
+
+MasterTobiasAfterBattleText:
+	text "Even Legendaries"
+	line "wont cut it here."
+	para "I need to get some"
+	line "Ubers!"
+	done
+
+MasterTobiasLoseAfterBattleText:
+	text "Looks like I'm"
+	line "still the best."
+	para "How very boring."
+	done
 
 MasterYunaScript:
 	faceplayer
@@ -271,10 +508,10 @@ MasterYunaScript:
 	checkevent EVENT_BEAT_MASTER_YUNA
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterYunaSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterYunaBeatenText, MasterYunaWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, MASTER_YUNA
 	startbattle
@@ -284,7 +521,7 @@ MasterYunaScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterYunaAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -299,10 +536,48 @@ MasterYunaScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterYunaLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterYunaSeenText:
+	text "My pilgrimage is"
+	line "at its end."
+	para "But I wont be"
+	line "another name is a"
+	cont "long tradition of"
+	cont "false hope."
+	para "I will forge my"
+	line "own way."
+	done
+
+MasterYunaBeatenText:
+	text "Thank you, I"
+	line "learnt a lot."
+	done
+
+MasterYunaWinText:
+    text "I am ready."
+
+MasterYunaAfterBattleText:
+	text "I live for all"
+	line "people."
+	para "I would gladly die"
+	line "for any of them."
+	para "We will always"
+	line "remember those"
+	cont "dear to us."
+	done
+
+MasterYunaLoseAfterBattleText:
+	text "We are both trying"
+	line "to find our way."
+	para "As long as we are"
+	line "surrounded by"
+	cont "those we trust we"
+	cont "can do it."
+	done
 
 MasterAizenScript:
 	faceplayer
@@ -310,10 +585,10 @@ MasterAizenScript:
 	checkevent EVENT_BEAT_MASTER_AIZEN
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterAizenSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterAizenBeatenText, MasterAizenWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMANIAC, MASTER_AIZEN
 	startbattle
@@ -323,7 +598,7 @@ MasterAizenScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterAizenAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -338,10 +613,50 @@ MasterAizenScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterAizenLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterAizenSeenText:
+	text "I have tracked the"
+	line "spiritual pressure"
+	cont "of MEWTWO to this"
+	cont "place."
+	para "Once I bend him to"
+	line "my will I shall"
+	cont "destroy the SOUL"
+	cont "KING!"
+	done
+
+MasterAizenBeatenText:
+	text "Fear is necessary"
+	line "for evolution."
+	done
+
+MasterAizenWinText:
+	text "I sense nothing"
+	line "from you."
+	done
+
+MasterAizenAfterBattleText:
+	text "The SOUL KING"
+	line "resides in a"
+	cont "palace, in the"
+	cont "HALL OF ORIGIN."
+	para "A man made of gold"
+	line "they say."
+	para "How pretentious!"
+	done
+
+MasterAizenLoseAfterBattleText:
+	text "Admiration is"
+	line "furthest from"
+	cont "understanding."
+	para "You are not strong"
+	line "enough to fight"
+	cont "for me."
+	done
 
 MasterXehanortScript:
 	faceplayer
@@ -349,10 +664,10 @@ MasterXehanortScript:
 	checkevent EVENT_BEAT_MASTER_XEHANORT
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterXehanortSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterXehanortBeatenText, MasterXehanortWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SAGE, MASTER_XEHANORT
 	startbattle
@@ -362,7 +677,7 @@ MasterXehanortScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterXehanortAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -377,10 +692,47 @@ MasterXehanortScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterXehanortLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterXehanortSeenText:
+	text "There is a"
+	line "remarkable light"
+	cont "emanating from"
+	cont "that young man."
+	para "But not as radiant"
+	line "as yours."
+	para "Your light will be"
+	line "mine!"
+	para "Come Kingdom"
+	line "Hearts!"
+	done
+
+MasterXehanortBeatenText:
+    text "Enlighten meeeee!"
+    done
+
+MasterXehanortWinText:
+    text "Become darkness!"
+    done
+
+MasterXehanortAfterBattleText:
+    text "All worlds begin"
+    line "in darkness."
+
+    para "And also end."
+
+    para "Your heart is"
+    line "no different."
+
+
+MasterXehanortLoseAfterBattleText:
+	text "All things begin"
+	line "in darkness and"
+	cont "also end."
+	done
 
 MasterAerithScript:
 	faceplayer
@@ -388,10 +740,10 @@ MasterAerithScript:
 	checkevent EVENT_BEAT_MASTER_AERITH
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterAerithSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterAerithBeatenText, MasterAerithWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, MASTER_AERITH
 	startbattle
@@ -401,7 +753,7 @@ MasterAerithScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterAerithAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -416,10 +768,46 @@ MasterAerithScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterAerithLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterAerithSeenText:
+	text "The life stream"
+	line "here feels"
+	cont "different."
+	para "It is finally at"
+	line "peace."
+	para "But we must always"
+	line "be ready to"
+	cont "protect it."
+	done
+
+MasterAerithBeatenText:
+	text "That was fun"
+	line "wasn't it."
+	done
+
+MasterAerithWinText:
+	text "That was fun"
+	line "wasn't it."
+	done
+
+MasterAerithAfterBattleText:
+	text "I saved my own"
+	line "world, but I gave"
+	cont "up my body to do"
+	cont "it."
+	para "Now I'm here!"
+	done
+
+MasterAerithLoseAfterBattleText:
+	text "Since there is no"
+	line "threat to the"
+	cont "earth here, we can"
+	cont "just have fun."
+	done
 
 MasterJoeyScript:
 	faceplayer
@@ -427,10 +815,10 @@ MasterJoeyScript:
 	checkevent EVENT_BEAT_MASTER_JOEY
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDF
+	writetext MasterJoeySeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDF, 0
+	winlosstext MasterJoeyBeatenText, MasterJoeyWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer YOUNGSTER, MASTER_JOEY
 	startbattle
@@ -440,7 +828,7 @@ MasterJoeyScript:
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDF
+	writetext MasterJoeyAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -455,10 +843,51 @@ MasterJoeyScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinyFrontier
+    writetext MasterJoeyLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterJoeySeenText:
+	text "At last we have"
+	line "fulfilled our"
+	cont "destiny."
+	para "We have claimed"
+	line "the infinite stair"
+	cont "and reached throne"
+	cont "immortal."
+	para "Behold the RAT"
+	line "GOD!"
+	done
+
+MasterJoeyBeatenText:
+	text "But how!"
+	para "I am in the top"
+	line "percentile!"
+	para "I break the"
+	line "percentiles!"
+	done
+
+MasterJoeyWinText:
+    text "Pitiful mortal."
+    done
+
+MasterJoeyAfterBattleText:
+	text "It was always our"
+	line "destiny to inherit"
+	cont "godhood."
+	para "I say onto thee,"
+	line "kneel before us."
+	done
+
+MasterJoeyLoseAfterBattleText:
+	text "Fear not for the"
+	line "RAT GOD is"
+	cont "merciful."
+	para "Since we are fond"
+	line "of you, you shall"
+	cont "be spared."
+	done
 
 NurseScript:
     faceplayer
@@ -502,18 +931,6 @@ MartScript:
     closetext
     end
 
-DefaultSeenTextDF:
-    text "Let's fight!"
-    done
-
-DefaultBeatenTextDF:
-    text "Well done!"
-    done
-
-DefaultAfterBattleTextDF:
-    text "You done well!"
-    done
-
 RematchTextDestinyFrontier:
     text "Shall we have"
     line "another match?"
@@ -522,11 +939,6 @@ RematchTextDestinyFrontier:
 RematchRefuseTextDestinyFrontier:
     text "I will always"
     line "be here."
-    done
-
-DefaultLoseAfterBattleTextDestinyFrontier:
-    text "Better luck"
-    line "next time."
     done
 
 GuardScript:

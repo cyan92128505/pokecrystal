@@ -259,6 +259,7 @@ MasterSurgeAfterBattleText:
     para "ELECTRODE!!"
     para "ELECTRODE!!"
     para "BOOOOOOMMM!!"
+    done
 
 MasterSurgeLoseAfterBattleText:
 	text "It's difficult to"

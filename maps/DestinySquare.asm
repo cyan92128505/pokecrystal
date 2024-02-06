@@ -25,24 +25,24 @@ MasterRivalScript:
 	checkevent EVENT_BEAT_MASTER_RIVAL
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterRivalSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterRivalBeatenText, MasterRivalWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, MASTER_RIVAL
 	startbattle
     ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_RIVAL
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterRivalAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterRivalAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -57,10 +57,65 @@ MasterRivalScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterRivalLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterRivalSeenText:
+	text "What took you so"
+	line "long getting here?"
+	para "Did my dad give"
+	line "you trouble?"
+	para "You haven't"
+	line "changed one bit,"
+	cont "but I have."
+	para "My old self"
+	line "sickens me, so"
+	cont "insecure, always"
+	cont "chasing"
+	cont "validation."
+	para "I have you to"
+	line "thank for changing"
+	cont "that."
+	para "So here is my"
+	line "thanks."
+	done
+
+MasterRivalBeatenText:
+	text "I'd be"
+	line "disappointed if"
+	cont "you didn't win."
+	done
+
+MasterRivalWinText:
+	text "In truth, I didn't"
+	line "want to win."
+	done
+
+MasterRivalAfterBattleText:
+	text "To think I used to"
+	line "believe I could"
+	cont "beat you."
+	para "What a fool I was."
+	para "Too much like my"
+	line "father."
+	para "I'll have to tell"
+	line "him about this"
+	cont "battle."
+	para "Now go and conquer"
+	line "all!"
+	done
+
+MasterRivalLoseAfterBattleText:
+	text "What happened to"
+	line "you?"
+	para "Where is that"
+	line "impossible"
+	cont "strength!"
+	para "You can do this,"
+	line "now try again."
+	done
 
 MasterCrystalScript:
 	faceplayer
@@ -68,24 +123,24 @@ MasterCrystalScript:
 	checkevent EVENT_BEAT_MASTER_CRYSTAL
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterCrystalSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterCrystalBeatenText, MasterCrystalWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, MASTER_CRYSTAL
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CRYSTAL
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterCrystalAfterBattleText
+	waitbutton
+    closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterCrystalAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -100,10 +155,55 @@ MasterCrystalScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterCrystalLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterCrystalSeenText:
+	text "Hey <PLAYER>!"
+	para "You look just as I"
+	line "remember you."
+	para "I knew I would see"
+	line "you in this place."
+	para "But your journey"
+	line "doesn't end here"
+	cont "does it?"
+	para "You have much"
+	line "further to go."
+	para "Let me give you"
+	line "one last bit of"
+	cont "encouragement."
+	done
+
+MasterCrystalBeatenText:
+	text "That felt good."
+	done
+
+MasterCrystalWinText:
+	text "It doesn't end"
+	line "here."
+	done
+
+MasterCrystalAfterBattleText:
+	text "Thank you for"
+	line "humouring me one"
+	cont "last time."
+	para "You really are the"
+	line "best, like no one"
+	cont "ever was."
+	para "Now go kick some"
+	line "butt!"
+	done
+
+MasterCrystalLoseAfterBattleText:
+	text "I just got lucky."
+	para "You had a little"
+	line "stumble."
+	para "But you are"
+	line "destined to"
+	cont "overtake me."
+	done
 
 MasterCynthiaScript:
 	faceplayer
@@ -111,24 +211,24 @@ MasterCynthiaScript:
 	checkevent EVENT_BEAT_MASTER_CYNTHIA
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterCynthiaSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterCynthiaBeatenText, MasterCynthiaWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CYNTHIA, MASTER_CYNTHIA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CYNTHIA
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterCynthiaAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterCynthiaAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -143,10 +243,59 @@ MasterCynthiaScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterCynthiaLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterCynthiaSeenText:
+	text "Ah <PLAYER>, hero"
+	line "of KANTO."
+	para "I remember when"
+	line "you walked into"
+	cont "ELMs lab."
+	para "Your aura was"
+	line "overwhelming, like"
+	cont "a star pulling"
+	cont "everything into"
+	cont "orbit."
+	para "I am just another"
+	line "trainer to you."
+	para "Honour me with a"
+	line "battle."
+	done
+
+MasterCynthiaBeatenText:
+	text "I will remember"
+	line "this."
+	done
+
+MasterCynthiaWinText:
+	text "Thank you for"
+	line "teaching me."
+	done
+
+MasterCynthiaAfterBattleText:
+	text "I hope on your"
+	line "journey you had"
+	cont "room for joy and"
+	cont "laughter."
+	para "You are now the"
+	line "beacon for all"
+	cont "young #MON"
+	cont "trainers to"
+	cont "follow."
+	done
+
+MasterCynthiaLoseAfterBattleText:
+	text "Even the sun loses"
+	line "its light in an"
+	cont "eclipse."
+	para "But only for a"
+	line "moment."
+	para "Your light will"
+	line "shine again."
+	done
 
 MasterStevenScript:
 	faceplayer
@@ -154,24 +303,24 @@ MasterStevenScript:
 	checkevent EVENT_BEAT_MASTER_STEVEN
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterStevenSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterStevenBeatenText, MasterStevenWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer STEVEN, MASTER_STEVEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_STEVEN
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterStevenAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterStevenAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -186,10 +335,55 @@ MasterStevenScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterStevenLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterStevenSeenText:
+	text "Leadership is the"
+	line "greatest weapon"
+	cont "for all."
+	para "The best leaders"
+	line "can inspire good"
+	cont "people to do evil"
+	cont "things."
+	para "Maybe I wasn't a"
+	line "great leader, but"
+	cont "you will be."
+	para "Will you be the"
+	line "right leader!"
+	done
+
+MasterStevenBeatenText:
+    text "Thank you"
+    line "GRAND MASTER."
+    done
+
+MasterStevenWinText:
+    text "You are humble."
+    done
+
+MasterStevenAfterBattleText:
+	text "You are a great"
+	line "leader."
+	para "So was WALLACE."
+	para "He isn't here I"
+	line "notice."
+	para "Perhaps he learnt"
+	line "from his mistakes."
+	para "He too is a great"
+	line "trainer."
+	done
+
+MasterStevenLoseAfterBattleText:
+	text "I spent a long"
+	line "time thinking I"
+	cont "was a failure."
+	para "You showed me I"
+	line "wasn't."
+	para "Now show me again."
+	done
 
 MasterDianthaScript:
 	faceplayer
@@ -197,24 +391,24 @@ MasterDianthaScript:
 	checkevent EVENT_BEAT_MASTER_DIANTHA
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterDianthaSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterDianthaBeatenText, MasterDianthaWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer BEAUTY, MASTER_DIANTHA
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_DIANTHA
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterDianthaAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterDianthaAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -229,10 +423,58 @@ MasterDianthaScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterDianthaLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterDianthaSeenText:
+	text "Everyone saw"
+	line "DIANTHA the movie"
+	cont "star."
+	para "I wanted to be"
+	line "taken seriously as"
+	cont "a trainer."
+	para "Even as CHAMPION I"
+	line "was still not"
+	cont "recognised."
+	para "I can tell you are"
+	line "not like them, you"
+	cont "only see the"
+	cont "trainer."
+	done
+
+MasterDianthaBeatenText:
+    text "Thank you!"
+    done
+
+MasterDianthaWinText:
+	text "I'm more than just"
+	line "a pretty face."
+	done
+
+MasterDianthaAfterBattleText:
+	text "We are all actors"
+	line "to some extent."
+	para "In battle your"
+	line "true self emerges."
+	para "That's why I love"
+	line "battle, it reminds"
+	cont "me who I really"
+	cont "am."
+	done
+
+MasterDianthaLoseAfterBattleText:
+	text "It's hard when"
+	line "everyone idolises"
+	cont "and scrutinises"
+	cont "you."
+	para "All waiting for"
+	line "you to fail."
+	para "You only fail if"
+	line "you let it get to"
+	cont "you."
+	done
 
 MasterAlderScript:
 	faceplayer
@@ -240,24 +482,24 @@ MasterAlderScript:
 	checkevent EVENT_BEAT_MASTER_ALDER
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterAlderSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterAlderBeatenText, MasterAlderWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer HIKER, MASTER_ALDER
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_ALDER
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterAlderAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterAlderAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -272,10 +514,55 @@ MasterAlderScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterAlderLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterAlderSeenText:
+	text "All conflict comes"
+	line "from a lack of"
+	cont "communication."
+	para "We all have"
+	line "something in"
+	cont "common."
+	para "We are alive here"
+	line "and now."
+	para "That should be"
+	line "enough to look"
+	cont "after each other."
+	para "You understand?"
+	done
+
+MasterAlderBeatenText:
+    text "I see you do."
+    done
+
+MasterAlderWinText:
+	text "There are no"
+	line "winners."
+	done
+
+MasterAlderAfterBattleText:
+	text "Even if we don't"
+	line "understand each"
+	cont "other, that's not"
+	cont "a reason to reject"
+	cont "each other."
+	para "There is no one"
+	line "point of view that"
+	cont "has all the"
+	cont "answers."
+	done
+
+MasterAlderLoseAfterBattleText:
+	text "Without trainers"
+	line "would #MON"
+	cont "still fight?"
+	para "If #MON didn't"
+	line "fight would they"
+	cont "still be happy."
+	done
 
 MasterLeonScript:
 	faceplayer
@@ -283,24 +570,24 @@ MasterLeonScript:
 	checkevent EVENT_BEAT_MASTER_LEON
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterLeonSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterLeonBeatenText, MasterLeonWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LEON, MASTER_LEON
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_LEON
-	;opentext
-	;writetext DefaultAfterBattleTextDS
-	;waitbutton
-	;closetext
+	opentext
+	writetext MasterLeonAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterLeonAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -315,10 +602,56 @@ MasterLeonScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterLeonLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterLeonSeenText:
+	text "Look at all this"
+	line "rif raf here."
+	para "Present company"
+	line "excluded of"
+	cont "course!"
+	para "In the end only"
+	line "you were able to"
+	cont "save the world."
+	para "Everyone here is a"
+	line "CHAMPION so I'll"
+	cont "need a new"
+	cont "catchphrase for"
+	cont "this battle."
+	para "It's MASTER time!"
+	done
+
+MasterLeonBeatenText:
+    text "MASTER indeed."
+    done
+
+MasterLeonWinText:
+	text "There's no shame"
+	line "in it."
+	done
+
+MasterLeonAfterBattleText:
+	text "You are a real"
+	line "MASTER."
+	para "I notice LANCE and"
+	line "BLUE aren't"
+	cont "here..."
+	para "There's no way"
+	line "they too are now"
+	cont "stronger than me!"
+	done
+
+MasterLeonLoseAfterBattleText:
+	text "There can only be"
+	line "one strongest"
+	cont "CHAMPION."
+	para "And it's not me."
+	para "Now battle like"
+	line "you mean it."
+	done
 
 MasterAdamScript:
 	faceplayer
@@ -326,10 +659,10 @@ MasterAdamScript:
 	checkevent EVENT_BEAT_MASTER_ADAM
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext MasterAdamSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext MasterAdamBeatenText, MasterAdamWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ADAM, MASTER_ADAM
 	startbattle
@@ -337,10 +670,14 @@ MasterAdamScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_ADAM
 	setmapscene DESTINY_SQUARE, SCENE_FINISHED
+	opentext
+	writetext MasterAdamAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext MasterAdamAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -355,10 +692,60 @@ MasterAdamScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MasterAdamLoseAfterBattleText
     waitbutton
     closetext
     end
+
+MasterAdamSeenText:
+	text "Hello again"
+	line "<PLAYER>."
+	para "You've been"
+	line "through a lot to"
+	cont "get here."
+	para "Ahead is MEWTWO, a"
+	line "#MON only a"
+	cont "true MASTER can"
+	cont "command."
+	para "I wont bore you"
+	line "with a protracted,"
+	cont "pretensions"
+	cont "speech."
+	para "You know what you"
+	line "have to do."
+	done
+
+MasterAdamBeatenText:
+    text "Good game"
+    line "well played."
+    done
+
+MasterAdamWinText:
+    text "GG WP."
+    done
+
+MasterAdamAfterBattleText:
+	text "Go ahead and do"
+	line "what you must."
+	para "You have passed my"
+	line "test."
+	para "It's a big"
+	line "responsibility"
+	cont "being part of a"
+	cont "world your dad"
+	cont "created."
+	para "I know he is proud"
+	line "of you."
+	done
+
+MasterAdamLoseAfterBattleText:
+	text "You are really"
+	line "close."
+	para "I'm totally"
+	line "beatable just"
+	cont "think outside the"
+	cont "box."
+	done
 
 MewtwoScript:
 	opentext
@@ -391,7 +778,7 @@ MewtwoScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext MewtwoLoseAfterBattleText
     waitbutton
     closetext
     end
@@ -402,20 +789,24 @@ InvaderDLCScript:
 	checkevent EVENT_BEAT_INVADER_MANUS
 	iftrue .FightDone
 .fight
-	writetext DefaultSeenTextDS
+	writetext InvaderDLCSeenText
 	waitbutton
 	closetext
-	winlosstext DefaultBeatenTextDS, 0
+	winlosstext InvaderDLCBeatenText, InvaderDLCWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer INVADER, MANUS
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_INVADER_MANUS
+	opentext
+	writetext InvaderDLCAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
-	writetext DefaultAfterBattleTextDS
+	writetext InvaderDLCAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -430,10 +821,54 @@ InvaderDLCScript:
     special HealParty
     reloadmap
     opentext
-    writetext DefaultLoseAfterBattleTextDestinySquare
+    writetext InvaderDLCLoseAfterBattleText
     waitbutton
     closetext
     end
+
+InvaderDLCSeenText:
+	text "The truly"
+	line "passionate seek"
+	cont "mastery."
+	para "Such mastery can"
+	line "only be found"
+	cont "through challenge."
+	para "Such challenge"
+	line "that must be"
+	cont "sought to be"
+	cont "found."
+	para "An optional"
+	line "challenge."
+	done
+
+InvaderDLCBeatenText:
+    text "Link the fire!"
+
+InvaderDLCWinText:
+    text "Are you casual?"
+
+InvaderDLCAfterBattleText:
+	text "By being here you"
+	line "have proven your"
+	cont "love and"
+	cont "dedication to your"
+	cont "passions."
+	para "Those like us must"
+	line "always continue"
+	cont "the war with our"
+	cont "sworn enemies."
+	para "The filthy"
+	line "casuals!"
+	done
+
+InvaderDLCLoseAfterBattleText:
+	text "Optional bosses"
+	line "aren't for"
+	cont "casuals."
+	para "Maybe you should"
+	line "stick to the story"
+	cont "bosses."
+	done
 
 MewtwoCry:
     text "This world is"
@@ -477,17 +912,13 @@ MewtwoAfterText:
     line "awaits."
     done
 
-DefaultSeenTextDS:
-    text "Let's fight!"
-    done
-
-DefaultBeatenTextDS:
-    text "Well done!"
-    done
-
-DefaultAfterBattleTextDS:
-    text "You done well!"
-    done
+MewtwoLoseAfterBattleText:
+	text "As the victor, I"
+	line "now claim my"
+	cont "prize."
+	para "Your #MON!"
+	para "In another battle!"
+	done
 
 RematchTextDestinySquare:
     text "Shall we have"
@@ -497,11 +928,6 @@ RematchTextDestinySquare:
 RematchRefuseTextDestinySquare:
     text "I will always"
     line "be here."
-    done
-
-DefaultLoseAfterBattleTextDestinySquare:
-    text "Better luck"
-    line "next time."
     done
 
 FightAdamScript:
@@ -582,5 +1008,3 @@ DestinySquare_MapEvents:
 	object_event  5,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DestinySquareMasterBall, EVENT_DESTINY_SQUARE_MASTER_BALL
 	object_event  8,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DestinySquareAmbrosia, EVENT_DESTINY_SQUARE_AMBROSIA
 	object_event  1, 16, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderDLCScript, -1
-
-

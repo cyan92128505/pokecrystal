@@ -753,6 +753,8 @@ KRIS EQU __trainer_class__
 	const YAMI
 	const RED_MEWTWO
 	const CELADON_ANDREW
+	const ANDREW_ME
+	const ANDREW_IMPOSSIBLE
 
 	trainerclass BLUE ; 40
 	const BLUE1

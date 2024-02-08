@@ -14,6 +14,8 @@ CeladonMansionRoofHouseAndrewScript:
     writetext CeladonAndrewInitialIntroText
     waitbutton
     closetext
+	setval MUSIC_EPIC_TETRIS
+	writemem wBattleMusicOverride
 	winlosstext CeladonAndrewBeatenText, CeladonAndrewWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, CELADON_ANDREW

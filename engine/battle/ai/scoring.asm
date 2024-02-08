@@ -2229,6 +2229,8 @@ AI_Smart_Substitute:
 	dec [hl]
 	dec [hl]
 	dec [hl]
+	dec [hl]
+	dec [hl]
 	ret
 .discourage
     inc [hl]

@@ -846,6 +846,7 @@ InvaderDLCBeatenText:
 
 InvaderDLCWinText:
     text "Are you casual?"
+    done
 
 InvaderDLCAfterBattleText:
 	text "By being here you"

@@ -7,6 +7,26 @@ ManorInside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .MoveAboutHouse
+
+.MoveAboutHouse:
+    checktime MORN
+    iffalse .checkNite
+    moveobject MANOR_ANDREW, 2, 16
+    moveobject MANOR_CATHERINE, 11, 5
+    moveobject MANOR_JAMES, 16, 16
+.checkNite
+    checktime NITE
+    iffalse .checkSaturday
+    moveobject MANOR_CATHERINE, 11, 5
+.checkSaturday
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, .moveToLivingRoom
+	endcallback
+.moveToLivingRoom
+    moveobject MANOR_ANDREW, 2, 16
+    moveobject MANOR_JAMES, 5, 16
+    endcallback
 
 AndrewScript:
     faceplayer
@@ -16,25 +36,31 @@ AndrewScript:
     checkevent EVENT_BEAT_LORD_OAK
     iffalse .intro
 .fight
+    setval 0
+    writemem wHandOfGod
     writetext AndrewBeatOakText
     waitbutton
+    checkevent EVENT_BEAT_ANDREW
+    iftrue .dontAsk
     closetext
     opentext
     writetext AndrewOfferBattleText
     waitbutton
     yesorno
     iffalse .refused
+.dontAsk
     writetext AndrewBattleTypeText
     waitbutton
     yesorno
     iffalse .fullPower
     writetext AndrewBeginBattleText
+    waitbutton
     closetext
 	setval MUSIC_EPIC_TETRIS
 	writemem wBattleMusicOverride
 	winlosstext AndrewBeatenText, AndrewWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, ANDREW_ME
+	loadtrainer RED, ANDREW
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -56,6 +82,7 @@ AndrewScript:
 	end
 .fullPower
     writetext AndrewBeginBattleText
+    waitbutton
     closetext
 	setval MUSIC_EPIC_TETRIS
 	writemem wBattleMusicOverride
@@ -90,7 +117,7 @@ AndrewScript:
 	waitbutton
     closetext
 	opentext
-	writetext AndrewRematchText
+	writetext AndrewOfferBattleText
 	yesorno
 	iftrue .fight
 .refused
@@ -129,10 +156,15 @@ AndrewBeatOakText:
 	para "Or so you think."
 	para "You haven't beat"
 	line "me yet."
+	para "Bear in mind"
+	line "JUDGEMENT OHKO"
+	cont "effect doesn't"
+	cont "work in this"
+	cont "house."
 	done
 
 AndrewOfferBattleText:
-	text "Shall we?"
+	text "Let's play?"
 	done
 
 AndrewBattleTypeText:
@@ -247,12 +279,6 @@ AndrewLoseAfterBattleText:
 	cont "out!"
 	done
 
-AndrewRematchText:
-	text "Would you like to"
-	line "have some fun"
-	cont "again?"
-	done
-
 AndrewBattleRefusedText:
 	text "Yeah it's more fun"
 	line "for me probably"
@@ -265,10 +291,280 @@ AndrewLoseAfterImpossibleBattleText:
 	done
 
 CatherineScript:
+    faceplayer
+    opentext
+    checkevent EVENT_BEAT_CATHERINE
+    iftrue .fightDone
+    checkevent EVENT_BEAT_MASTER_ADAM
+    iffalse .intro
+.fight
+    setval 0
+    writemem wHandOfGod
+    writetext CatherineBeatAdamText
+    waitbutton
+    checkevent EVENT_BEAT_CATHERINE
+    iftrue .dontAsk
+    closetext
+    opentext
+    writetext CatherineOfferBattleText
+    waitbutton
+    yesorno
+    iffalse .refused
+.dontAsk
+    writetext CatherineBeginBattleText
+    waitbutton
+    closetext
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext CatherineBeatenText, CatherineWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LEAF, CATHERINE
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CATHERINE
+	opentext
+	writetext CatherineAfterBattleText
+	waitbutton
+	closetext
+	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext CatherineLoseAfterBattleText
+    waitbutton
+    closetext
+    end
+.fightDone:
+	writetext CatherineAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext CatherineOfferBattleText
+	yesorno
+	iftrue .fight
+.refused
+    writetext CatherineBattleRefusedText
+    waitbutton
+    closetext
+    end
+.intro
+    writetext CatherineIntroText
+    waitbutton
+    closetext
     end
 
+CatherineIntroText:
+	text "Oh hello."
+	para "I am CATHERINE, I"
+	line "live here with my"
+	cont "husband ANDREW."
+	para "You have met our"
+	line "son ADAM, he takes"
+	cont "his ELITE FOUR job"
+	cont "very seriously."
+	para "You still have"
+	line "plenty left to do,"
+	cont "come see us when"
+	cont "your done."
+	para "Oh and ANDREWS"
+	line "brother JAMES is"
+	cont "here somewhere,"
+	cont "watch out for him."
+	done
+
+CatherineBeatAdamText:
+	text "You have beaten"
+	line "ADAM at his"
+	cont "strongest!"
+	para "You must be one of"
+	line "his friends."
+	para "You like battling."
+	para "I don't mind the"
+	line "odd battle myself."
+	done
+
+CatherineOfferBattleText:
+	text "How about a wee"
+	line "battle?"
+	done
+
+CatherineBeginBattleText:
+	text "My little plants"
+	line "ready"
+	done
+
+CatherineBeatenText:
+	text "ANDREW would like"
+	line "you."
+	done
+
+CatherineWinText:
+	text "That was fun!"
+	done
+
+CatherineAfterBattleText:
+	text "ANDREW and I miss"
+	line "ADAM being here."
+	para "He will always be"
+	line "our wee boy."
+	para "Instead we have to"
+	line "put up with JAMES"
+	cont "being here."
+	done
+
+CatherineLoseAfterBattleText:
+	text "You are really"
+	line "good."
+	para "You and ADAM must"
+	line "get along."
+	done
+
+CatherineBattleRefusedText:
+	text "That's fine, I"
+	line "don't really like"
+	cont "battling anyway."
+	done
+
 JamesScript:
+    faceplayer
+    opentext
+    checkevent EVENT_BEAT_JAMES
+    iftrue .fightDone
+    checkevent EVENT_BEAT_MASTER_ADAM
+    iffalse .intro
+.fight
+    setval 0
+    writemem wHandOfGod
+    writetext JamesBeatAdamText
+    waitbutton
+    checkevent EVENT_BEAT_JAMES
+    iftrue .dontAsk
+    closetext
+    opentext
+    writetext JamesOfferBattleText
+    waitbutton
+    yesorno
+    iffalse .refused
+.dontAsk
+    writetext JamesBeginBattleText
+    waitbutton
+    closetext
+	setval MUSIC_FINAL_BATTLE
+	writemem wBattleMusicOverride
+	winlosstext JamesBeatenText, JamesWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLUE, JAMES
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_JAMES
+	opentext
+	writetext JamesAfterBattleText
+	waitbutton
+	closetext
+	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext JamesLoseAfterBattleText
+    waitbutton
+    closetext
     end
+.fightDone:
+	writetext JamesAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext JamesOfferBattleText
+	yesorno
+	iftrue .fight
+.refused
+    writetext JamesBattleRefusedText
+    waitbutton
+    closetext
+    end
+.intro
+    writetext JamesIntroText
+    waitbutton
+    closetext
+    end
+
+JamesIntroText:
+	text "What are you doing"
+	line "here?"
+	para "You might think"
+	line "you're real strong"
+	cont "but your not."
+	para "You don't even"
+	line "have a MEWTWO."
+	para "Come back when"
+	line "you're worth my"
+	cont "time."
+	done
+
+JamesBeatAdamText:
+	text "I see you have"
+	line "become at least"
+	cont "decent."
+	para "I guess I could"
+	line "battle you."
+	para "You should know"
+	line "though, hax don't"
+	cont "work in this"
+	cont "house."
+	para "No JUDGEMENT OHKO"
+	line "here!"
+	done
+
+JamesOfferBattleText:
+	text "You going to"
+	line "battle me?"
+	done
+
+JamesBeginBattleText:
+	text "Let's see if"
+	line "you're any good."
+	done
+
+JamesBeatenText:
+	text "Yeah you're"
+	line "alright."
+	done
+
+JamesWinText:
+	text "Not surprising."
+	done
+
+JamesAfterBattleText:
+	text "I hang out here"
+	line "with my brother,"
+	cont "his wife and"
+	cont "sometimes my"
+	cont "nephew ADAM."
+	para "My brother made"
+	line "this world but I'm"
+	cont "far more"
+	cont "successful than"
+	cont "him!"
+	done
+
+JamesLoseAfterBattleText:
+	text "Your strategy was"
+	line "totally wrong."
+	para "Analyse the"
+	line "battle, think"
+	cont "outside the box."
+	para "It is possible."
+	done
+
+JamesBattleRefusedText:
+	text "Yeah it would be a"
+	line "waste of time for"
+	cont "both of us."
+	done
 
 ManorInside_MapEvents:
 	db 0, 0 ; filler
@@ -289,4 +585,3 @@ ManorInside_MapEvents:
 	object_event  15,  4, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
 	object_event   1, 17, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CatherineScript, -1
 	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, JamesScript, -1
-

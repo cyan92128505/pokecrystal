@@ -295,7 +295,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
-	const ANDREW
+	const ANDREW2
 	const CALVIN
 	const SHANE
 	const BEN
@@ -434,7 +434,7 @@ KRIS EQU __trainer_class__
 	const RICK ; unused
 	const CAMERON
 	const SETH
-	const JAMES ; unused
+	const JAMES2 ; unused
 	const LEWIS ; unused
 	const PARKER
 
@@ -753,7 +753,7 @@ KRIS EQU __trainer_class__
 	const YAMI
 	const RED_MEWTWO
 	const CELADON_ANDREW
-	const ANDREW_ME
+	const ANDREW
 	const ANDREW_IMPOSSIBLE
 
 	trainerclass BLUE ; 40
@@ -761,6 +761,7 @@ KRIS EQU __trainer_class__
 	const MASTER_BLUE
 	const SETO
 	const MASTER_SETO
+	const JAMES
 
 	trainerclass OFFICER ; 41 ; Remove?
 	const KEITH
@@ -807,6 +808,7 @@ KRIS EQU __trainer_class__
     trainerclass LEAF ; 46
     const GREEN1
     const MASTER_GREEN
+    const CATHERINE
 
     trainerclass LORD_OAK ; 47
     const OAK

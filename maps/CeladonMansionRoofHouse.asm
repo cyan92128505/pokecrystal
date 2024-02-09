@@ -14,6 +14,8 @@ CeladonMansionRoofHouseAndrewScript:
     writetext CeladonAndrewInitialIntroText
     waitbutton
     closetext
+    setval 0
+    writemem wHandOfGod
 	setval MUSIC_EPIC_TETRIS
 	writemem wBattleMusicOverride
 	winlosstext CeladonAndrewBeatenText, CeladonAndrewWinsText

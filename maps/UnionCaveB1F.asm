@@ -32,7 +32,7 @@ UnionCaveB1F_MapScripts:
     endcallback
 
 TrainerPokemaniacAndrew:
-	trainer POKEMANIAC, ANDREW, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
+	trainer POKEMANIAC, ANDREW2, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled

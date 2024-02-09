@@ -5844,6 +5844,15 @@ BattleCommand_HeldFlinch:
 
 BattleCommand_CheckDeathImmunity:
 ; checkDeathImmunity
+; always immune if in manor (my house)
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_MANOR
+    jr z, .immune
+
     call GetOpposingMon
 	ld hl, UberImmunePokemon
 	ld de, 1
@@ -5910,6 +5919,15 @@ BattleCommand_OHKO:
 ; AndrewNote - JUDGEMENT has 5% chance to instant KO enemy
 BattleCommand_Judgement:
 ; judgement
+; judgement effect does not happen in MANOR (my house)
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_MANOR
+    jr z, .done
+
 	call BattleRandom
 	cp 5 percent ; 5% chance of instant death
 	jr nc, .done

@@ -1214,7 +1214,7 @@ TitleScreenEntrance:
 
 ; Play the title screen music.
 	;ld de, MUSIC_TITLE
-	ld de, MUSIC_LUGIA_SONG
+	ld de, MUSIC_EPIC_TETRIS
 	call PlayMusic
 
 	ld a, $88

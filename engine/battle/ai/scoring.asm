@@ -2020,7 +2020,7 @@ AI_Smart_Paralyze:
 ; never use if player has safeguard
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
-	jr nz, .discourage
+	jp nz, .discourage
 
 ; never use thunderwave against ground types or volt absorbers
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
@@ -2076,9 +2076,11 @@ AI_Smart_Paralyze:
 	jr c, .discourage50
 	jr .checkEvasion
 
-; if we are faster and player can 2HKO, discourage
+; if we are faster and either the player or us can 2HKO, discourage
 .AIFaster
     call CanPlayer2HKOMaxHP
+    jr c, .discourage
+    call CanAI2HKO
     jr c, .discourage
 
 .checkEvasion
@@ -6340,7 +6342,10 @@ RecoverHolyCrown:
 SetUpSelfDVs:
     ld a, [wOtherTrainerClass]
     cp CAL
+    jr z, .self
+    cp CAL_F
     jr nz, .notSelf
+.self
     ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation

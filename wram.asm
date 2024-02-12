@@ -2909,9 +2909,9 @@ endr
 
 wStoneTableAddress:: dw
 
-    ds 28
-; AndrewNote - BackPack - comment out above and replace with this when updating the pack space
-    ;ds 3
+    ;ds 28
+; AndrewNote - BackPack - comment out above 28 and replace with this 3 when updating the pack space
+    ds 3
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0

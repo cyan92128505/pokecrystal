@@ -75,4 +75,5 @@ TrainerClassDVs:
     dn 15, 15, 15, 15 ; LORD_OAK
     dn 10, 15, 15, 15 ; ROLE_PLAYER_NORMAL
     dn 10, 10, 10, 10 ; ROLE_PLAYER_SHINY
+	dn 15, 15, 15, 15 ; CAL_F
 	assert_table_length NUM_TRAINER_CLASSES

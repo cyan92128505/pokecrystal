@@ -496,11 +496,21 @@ FuchsiaCitySelfScript:
     writetext FuchsiaSelfText4
     waitbutton
     closetext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
     winlosstext FuchsiaSelfVictoryText, FuchsiaSelfLossText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	loadtrainer CAL, CAL1
 	startbattle
 	ifequal LOSE, .lose
+	sjump .over
+.Female
+    winlosstext FuchsiaSelfVictoryText, FuchsiaSelfLossText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer CAL_F, CAL_F1
+	startbattle
+	ifequal LOSE, .lose
+.over
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO

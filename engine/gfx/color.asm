@@ -926,7 +926,10 @@ endr
     cp LORD_OAK
     jr z, .shiny
     cp CAL
+    jr z, .check
+    cp CAL_F
     jr nz, .done
+.check
     ld a, [wMarkOfGod]
     and a
     jr nz, .shiny

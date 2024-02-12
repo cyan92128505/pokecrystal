@@ -77,4 +77,5 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; lord_oak
 	db MUSIC_NONE                  ; role_player_normal
 	db MUSIC_NONE                  ; role_player_shiny
+	db MUSIC_HIKER_ENCOUNTER       ; cal_f
 	assert_table_length NUM_TRAINER_CLASSES + 1

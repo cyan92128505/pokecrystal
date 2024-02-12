@@ -5,6 +5,8 @@
 	const BATTLE_ARCADE_RECEPTIONIST
 	const BATTLE_MIRROR_CHRIS
 	const BATTLE_MIRROR_CHRIS_GOLD
+	const BATTLE_MIRROR_KRIS
+	const BATTLE_MIRROR_KRIS_GOLD
 
 TrainerHouseB1F_MapScripts:
 	def_scene_scripts
@@ -15,6 +17,8 @@ TrainerHouseB1F_MapScripts:
 .Chris
     disappear BATTLE_MIRROR_CHRIS
     disappear BATTLE_MIRROR_CHRIS_GOLD
+    disappear BATTLE_MIRROR_KRIS
+    disappear BATTLE_MIRROR_KRIS_GOLD
     endcallback
 
 BattleRouletteReceptionistScript:
@@ -944,16 +948,36 @@ BattleMirrorReceptionistScript:
 	pause 15
 	readmem wMarkOfGod
 	ifequal 0, .normalChris
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .goldKris
 	appear BATTLE_MIRROR_CHRIS_GOLD
 	sjump .fightCal
+.goldKris
+  	appear BATTLE_MIRROR_KRIS_GOLD
+  	sjump .fightCal
 .normalChris
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .normalKris
 	appear BATTLE_MIRROR_CHRIS
+	sjump .fightCal
+.normalKris
+    appear BATTLE_MIRROR_KRIS
 .fightCal
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
     loadtrainer CAL, CAL1
 	startbattle
 	ifequal WIN, .Win
+	sjump .over
+.Female
+    winlosstext victoryText, defeatText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
+	loadtrainer CAL_F, CAL_F1
+	startbattle
+	ifequal WIN, .Win
+.over
 	reloadmap
     warpfacing UP, TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
@@ -2736,4 +2760,5 @@ TrainerHouseB1F_MapEvents:
 	object_event 45, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleArcadeReceptionistScript, -1
 	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
-
+	object_event 18,  3, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
+	object_event 18,  3, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_2

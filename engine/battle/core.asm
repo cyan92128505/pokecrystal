@@ -4244,7 +4244,10 @@ BattleCheckEnemyShininess:
     cp LORD_OAK
     jr z, .shiny
     cp CAL
+    jr z, .check
+    cp CAL_F
     jr nz, .normal
+.check
     ld a, [wMarkOfGod]
     and a
     jr nz, .shiny
@@ -8849,7 +8852,10 @@ InitEnemyTrainer:
 	callfar GetTrainerAttributes
 	ld a, [wOtherTrainerClass]
 	cp CAL
+	jr z, .self
+	cp CAL_F
 	jr nz, .notCal
+.self
 	callfar ReadPlayerPartyAsTrainerParty
 	jr .ok
 .notCal

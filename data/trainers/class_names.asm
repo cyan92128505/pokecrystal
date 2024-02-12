@@ -74,4 +74,5 @@ TrainerClassNames::
 	li "LORD"
 	li "ROLEPLAYER"
 	li "ROLEPLAYER"
+	li "SELF"
 	assert_list_length NUM_TRAINER_CLASSES

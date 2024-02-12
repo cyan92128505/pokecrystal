@@ -85,7 +85,7 @@ KRIS EQU __trainer_class__
 	const WILL1
 	const MASTER_WILL
 
-	trainerclass CAL ; c ; Remove?
+	trainerclass CAL ; c
 	const CAL1
 
 	trainerclass BRUNO ; d
@@ -877,5 +877,8 @@ KRIS EQU __trainer_class__
     const DBZ_CH5_GOKU
     const MERLIN_EMRYS
     const HOEN_WAR_ARCEUS
+
+	trainerclass CAL_F
+	const CAL_F1
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

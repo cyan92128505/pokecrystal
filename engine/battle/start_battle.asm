@@ -239,6 +239,8 @@ PlayBattleMusic:
 	jp z, .done
 	cp CAL
 	jp z, .done
+	cp CAL_F
+	jp z, .done
 
 	ld de, MUSIC_HOEN_GRUNT
 	cp SOLDIER

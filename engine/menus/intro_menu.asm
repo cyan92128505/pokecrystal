@@ -1213,7 +1213,8 @@ TitleScreenEntrance:
 	ldh [hLCDCPointer], a
 
 ; Play the title screen music.
-	ld de, MUSIC_TITLE
+	;ld de, MUSIC_TITLE
+	ld de, MUSIC_LUGIA_SONG
 	call PlayMusic
 
 	ld a, $88

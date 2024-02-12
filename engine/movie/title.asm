@@ -225,7 +225,7 @@ SuicuneFrameIterator:
 	ret nz
 
 	ld a, c
-	and %11000
+	and %11100
 	sla a
 	swap a
 	ld e, a

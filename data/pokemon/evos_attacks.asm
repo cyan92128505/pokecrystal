@@ -1476,6 +1476,7 @@ VoltorbEvosAttacks:
 	db 24, ROLLOUT
 	db 28, THUNDER_WAVE
 	db 32, FLASH
+	db 36, MIRROR_COAT
 	db 40, THUNDERBOLT
 	db 45, EXPLOSION
 	db 0 ; no more level-up moves
@@ -1490,6 +1491,7 @@ ElectrodeEvosAttacks:
 	db 24, ROLLOUT
 	db 28, THUNDER_WAVE
 	db 32, FLASH
+	db 36, MIRROR_COAT
 	db 40, THUNDERBOLT
 	db 45, EXPLOSION
 	db 0 ; no more level-up moves
@@ -1887,6 +1889,7 @@ MagmarEvosAttacks:
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
+	db 1, COUNTER
 	db 10, ROCK_THROW
 	db 15, LEECH_LIFE
 	db 20, SEISMIC_TOSS
@@ -1921,7 +1924,7 @@ MagikarpEvosAttacks:
 	db 1, SPLASH
 	db 15, TACKLE
 	db 30, FLAIL
-	dn 100, WATER_GUN
+	;db 100, WATER_GUN
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:

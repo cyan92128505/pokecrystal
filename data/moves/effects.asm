@@ -1259,6 +1259,7 @@ Counter:
 	checkobedience
 	usedmovetext
 	doturn
+	checkdeathimmunity
 	counter
 	moveanim
 	failuretext
@@ -1809,6 +1810,7 @@ MirrorCoat:
 	checkobedience
 	usedmovetext
 	doturn
+	checkdeathimmunity
 	mirrorcoat
 	moveanim
 	failuretext

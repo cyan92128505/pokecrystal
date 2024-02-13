@@ -174,27 +174,23 @@ BugsyText_INeverLose:
 	cont "thrived."
 
 	para "They are perfect"
-	line "fighting machines."
+	line "survival machines."
 
 	para "No other creature"
 	line "can match their"
 	cont "ferocity and"
 	cont "determination."
 
-	para "They have seen"
-	line "the rise of"
-	cont "humanity."
+	para "When we are all"
+	line "gone the bugs will"
+	cont "remain."
 
-	para "They will see"
-	line "its fall."
+	para "They are the"
+	line "perfect organism."
 
-	para "I wish to be as"
-	line "ruthless and hard"
-	cont "as them."
-
-	para "I'll show you"
-	line "how soft you"
-	cont "are."
+	para "I strive to share"
+	line "in their"
+	cont "perfection."
 	done
 
 BugsyText_ResearchIncomplete:
@@ -240,31 +236,20 @@ BugsyText_FuryCutterSpeech:
 	done
 
 BugsyText_BugMonsAreDeep:
-	text "I am not scared"
-	line "of war."
-
-	para "BUG #MON"
-	line "live in constant"
-	cont "strife."
-
-	para "Nothing bothers"
-	line "them."
-
-	para "They are immune"
-	line "to fear."
-
-	para "They just get"
-	line "on with things."
+	text "All things strive"
+	line "for perfection."
+	para "It is only natural"
+	line "to emulate that"
+	cont "which come closest"
+	cont "to achieving the"
+	cont "impossible."
 	done
 
 BugCatcherBennySeenText:
-	text "Not all BUGS"
-	line "can be stepped"
-	cont "on."
-
-	para "Just try stepping"
-	line "on my mighty BUG"
-	cont "#MON!"
+	text "It's a BUG eat BUG"
+	line "world out there!"
+	para "Let the feast"
+	line "begin!"
 	done
 
 BugCatcherBennyBeatenText:
@@ -272,14 +257,10 @@ BugCatcherBennyBeatenText:
 	done
 
 BugCatcherBennyAfterBattleText:
-	text "BUG #MON are"
-	line "tough but can't"
-	cont "withstand FIRE"
-	cont "or FLYING moves."
-
-	para "Or ROCK, can't"
-	line "handle that"
-	cont "either."
+	text "You are on top of"
+	line "the food chain."
+	para "Like a SNORLAX!"
+	done
 	done
 
 BugCatcherAlSeenText:
@@ -320,10 +301,9 @@ BugCatcherJoshBeatenText:
 	done
 
 BugCatcherJoshAfterBattleText:
-	text "You are the one"
-	line "who beat the"
-	cont "ROCKETS aren't"
-	cont "you!"
+	text "Don't anger BUGSY,"
+	line "his #MON are"
+	cont "terrifying."
 	done
 
 TwinsAmyandmay1SeenText:
@@ -338,15 +318,14 @@ TwinsAmyandmay1SeenText:
 
 TwinsAmyandmay1BeatenText:
 	text "AMY & MAY: Oh,"
-	line "double goodness!"
+	line "double trouble!"
 	done
 
 TwinsAmyandmay1AfterBattleText:
-	text "AMY: You're"
-	line "strong."
-
-	para "But BUGSY is"
-	line "stronger."
+	text "We like BUG"
+	line "#MON!"
+	para "They are not icky,"
+	line "they are cool!"
 	done
 
 TwinsAmyandmay2SeenText:
@@ -364,10 +343,10 @@ TwinsAmyandmay2BeatenText:
 	done
 
 TwinsAmyandmay2AfterBattleText:
-	text "MAY: Not bad."
-
-	para "But BUGSY will"
-	line "squash you."
+	text "You're luck my"
+	line "sister is holding"
+	cont "me back or I'd"
+	cont "slap you silly!"
 	done
 
 AzaleaGymGuideText:
@@ -381,21 +360,13 @@ AzaleaGymGuideText:
 
 	para "A ROCK or FIRE"
 	line "type would work."
-
-	para "ELECTRIC might"
-	line "do well too."
 	done
 
 AzaleaGymGuideWinText:
-	text "Well done! That"
-	line "was a great clash"
-
-	para "of talented young"
-	line "trainers."
-
-	para "With people like"
-	line "you, the future of"
-	cont "#MON is bright!"
+	text "I guess it's a BUG"
+	line "eat BUG world out"
+	cont "there eh."
+	done
 	done
 
 RematchTextBugsy:

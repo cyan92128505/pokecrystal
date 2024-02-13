@@ -1,11 +1,11 @@
 Intro_MainMenu:
 	ld de, MUSIC_NONE
-	call PlayMusic
+	;call PlayMusic
 	call DelayFrame
 	ld de, MUSIC_MAIN_MENU
 	ld a, e
 	ld [wMapMusic], a
-	call PlayMusic
+	;call PlayMusic
 	farcall MainMenu
 	jp StartTitleScreen
 

@@ -131,7 +131,7 @@ StaySafeText:
     text "Stay safe out"
     line "there <PLAYER>."
 
-    para "I know you want"
+    para "I know you want to"
     line "find your father."
 
     para "But we need to"
@@ -271,16 +271,16 @@ ElmsLookingForYouText:
 	cont "already!"
 
 	para "Oh! Don't forget"
-	line "Your #MON"
+	line "Your #GEAR is"
 
-	para "GEAR is back from"
-	line "the repair shop."
+	para "back from the"
+	line "repair shop."
 
 	para "Here you go!"
 	done
 
 MomGivesPokegearText:
-	text "This devise has"
+	text "This device has"
 	line "all sorts of"
 	cont "useful tools."
 
@@ -396,7 +396,7 @@ PlayersHouse1FFridgeText:
 
 PlayersHouse1FTVText:
 	text "There's a movie on"
-	line "TV"
+	line "TV."
 
 	para "A man with many"
 	line "personalities has"
@@ -469,17 +469,11 @@ NeighborNiteIntroText:
 	done
 
 NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
+	text "<PLAY_G>, this is"
+	line "your big day!"
 
-	para "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
+	para "I know your father"
+	line "would be proud."
 	done
 
 PlayersHouse1F_MapEvents:

@@ -24,17 +24,12 @@ ElmsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 ElmsWifeText:
-	text "Hi, <PLAY_G>! My"
-	line "husband's always"
-
-	para "so busy--I hope"
-	line "he's OK."
-
-	para "When he's caught"
-	line "up in his #MON"
-
-	para "research, he even"
-	line "forgets to eat."
+	text "Hello <PLAYER>!"
+	para "ELM is at the lab"
+	line "like he always is."
+	para "He lives to work,"
+	line "but what he does"
+	cont "is very important."
 	done
 
 ElmsSonText:
@@ -42,9 +37,9 @@ ElmsSonText:
 	line "I'm going to help"
 	cont "my dad!"
 
-	para "I'm going to be a"
-	line "great #MON"
-	cont "professor!"
+	para "I'm going to find"
+	line "the strongest"
+	cont "#MON!"
 	done
 
 ElmsHousePCPostWallaceText:

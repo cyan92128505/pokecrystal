@@ -225,8 +225,15 @@ Text_GearIsImpressive:
 	line "an URSARING out"
 	cont "there."
 
-	para "I'm never leaving"
-	line "here again."
+	para "I ran for it!"
+
+	para "You can run by"
+	line "holding B."
+
+	para "Unless you have"
+	line "SPORT SHOES then"
+	cont "you can run by"
+	cont "default."
 	done
 
 Text_WaitPlayer:

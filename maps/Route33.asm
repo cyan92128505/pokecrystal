@@ -157,7 +157,9 @@ HikerAnthony2SeenText:
 
 	para "I am tough!"
 
-	para "Real tough!"
+	para "You can call me..."
+
+	para "ANGUS CHAD MAXIMUS"
 	done
 
 HikerAnthony2BeatenText:

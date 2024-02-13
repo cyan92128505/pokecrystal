@@ -1073,10 +1073,10 @@ ElmDescribesMrPokemonText:
 
 	para "He is visiting"
 	line "MR.#MON who"
-	cont "is researching"
-	cont "the recently"
-	cont "discovered FAIRY"
-	cont "TYPE."
+	cont "is a secret agent."
+
+	para "He can be a bit"
+	line "paranoid."
 	done
 
 ElmPokeBallText:
@@ -1388,7 +1388,7 @@ ElmGiveTicketText2:
 	para "I have one more"
 	line "thing for you!"
 
-	para "This was enrusted"
+	para "This was entrusted"
 	line "to me by a strange"
 	cont "man who seemed"
 	cont "obsessed with you."
@@ -1479,6 +1479,9 @@ ElmsLabOfficerText1:
 	para "Apparently, it was"
 	line "a young male with"
 	cont "long, red hair…"
+
+	para "It is believed his"
+	line "name is SILVER."
 
 	para "What?"
 

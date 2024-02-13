@@ -115,19 +115,16 @@ HikerRussellBeatenText:
 	done
 
 HikerRussellAfterBattleText:
-	text "Oh no, I've"
-	line "forgotten to"
-	cont "bring a lunch"
-	cont "for the trip."
+	text "Alright back to"
+	line "operation UNION"
+	cont "STORM!"
 	done
 
 PokemaniacLarrySeenText:
-	text "This cave goes"
-	line "deeper."
-
-	para "I heard scary"
-	line "roars down there"
-	cont "and came back up."
+	text "I lost it!"
+	para "I lost my inner"
+	line "strength, my"
+	cont "HIDDEN POWER!"
 	done
 
 PokemaniacLarryBeatenText:
@@ -136,21 +133,22 @@ PokemaniacLarryBeatenText:
 	done
 
 PokemaniacLarryAfterBattleText:
-	text "There is a lake"
-	line "down there."
-
-	para "If only I could"
-	line "pass it."
+	text "There is a super"
+	line "strong GOLEM down"
+	cont "there."
+	para "I got out of"
+	line "there!"
 	done
 
 HikerDanielSeenText:
-	text "I love the"
-	line "thrill of cave"
-	cont "exploring."
-
-	para "I tried it at"
-	line "DARK CAVE but"
-	cont "it was too scary."
+	text "I went to ROCK"
+	line "TUNNEL with my dad"
+	cont "years ago, I got"
+	cont "lost and made it"
+	cont "out but never"
+	cont "found him."
+	para "I must go back."
+	done
 	done
 
 HikerDanielBeatenText:
@@ -159,41 +157,39 @@ HikerDanielBeatenText:
 	done
 
 HikerDanielAfterBattleText:
-	text "I'm sure there"
-	line "is some kind of"
-	cont "secret in here."
-
-	para "I can hear roars"
-	line "from deep in the"
-	cont "cave."
+	text "I am training in"
+	line "cave exploring so"
+	cont "I can explore ROCK"
+	cont "TUNNEL in KANTO."
 	done
 
 FirebreatherBillSeenText:
-	text "This cave will"
-	line "make a great"
-	cont "bunker to wait"
-	cont "out the war."
+	text "I am becoming one"
+	line "with the rocks."
+	para "I will become the"
+	line "greatest ROCK"
+	cont "trainer, like"
+	cont "BROCK."
 	done
 
 FirebreatherBillBeatenText:
-	text "My rations..."
+	text "My rocks!"
 	done
 
 FirebreatherBillAfterBattleText:
-	text "On weekends, you"
-	line "can hear strange"
-
-	para "roars from deep in"
-	line "the cave."
+	text "ROCKS are eternal,"
+	line "like my"
+	cont "determination."
 	done
 
 FirebreatherRaySeenText:
-	text "My job is to"
-	line "keep people in"
-	cont "here safe."
-
-	para "I think you are"
-	line "causing trouble."
+	text "I'm meant to be"
+	line "guiding people"
+	cont "through this cave"
+	cont "but everyone has"
+	cont "wandered off."
+	para "This is your"
+	line "fault!"
 	done
 
 FirebreatherRayBeatenText:
@@ -202,9 +198,11 @@ FirebreatherRayBeatenText:
 	done
 
 FirebreatherRayAfterBattleText:
-	text "That was a"
-	line "successful days"
-	cont "work..."
+	text "I thought this"
+	line "would be an easy"
+	cont "job."
+	para "They don't pay me"
+	line "enough for this."
 	done
 
 UnionCave1FUnusedSignText:

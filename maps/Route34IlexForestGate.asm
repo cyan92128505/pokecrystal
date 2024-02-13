@@ -45,20 +45,9 @@ Route34IlexForestGateTeacherScript:
 	opentext
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .ForestIsRestless
-	;checkevent EVENT_GOT_TM12_SWEET_SCENT
-	;iftrue .GotSweetScent
 	writetext Route34IlexForestGateTeacherText
-	promptbutton
+	waitbutton
 	end
-	;verbosegiveitem TM_SELFDESTRUCT
-	;iffalse .NoRoom
-	;setevent EVENT_GOT_TM12_SWEET_SCENT
-;.GotSweetScent:
-	;writetext Route34IlexForestGateTeacher_GotSweetScent
-	;waitbutton
-;.NoRoom:
-	;closetext
-	;end
 
 .ForestIsRestless:
 	writetext Route34IlexForestGateTeacher_ForestIsRestless

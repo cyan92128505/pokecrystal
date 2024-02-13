@@ -70,6 +70,7 @@ TrainerGruntM1:
 	special HealParty
 	pause 15
 	warp KURTS_HOUSE, 3, 3
+	playmusic MUSIC_AZALEA_TOWN
 	end
 
 TrainerGruntM2:
@@ -293,7 +294,7 @@ GruntM2AfterBattleText:
 GruntF1SeenText:
 	text "These dumb"
 	line "creatures should"
-	cont "be happy them"
+	cont "be happy they"
 	cont "are finally"
 	cont "useful for"
 	cont "something."

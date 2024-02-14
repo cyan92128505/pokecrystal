@@ -748,7 +748,7 @@ GoldenrodCitySelfScript:
 	closetext
 	applymovement PLAYER, GoldenrodMovement_PlayerDown
 	pause 5
-	disappear VIOLETCITY_SELF
+	disappear GOLDENRODCITY_SELF
 	playmusic MUSIC_GOLDENROD_CITY
 	special HealParty
 	end

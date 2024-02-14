@@ -226,17 +226,16 @@ CeladonGameCornerPrizeRoomGentlemanText:
 
 CeladonGameCornerPrizeRoomPharmacistText:
 	text "OK."
-
-	para "It took me hours"
-	line "to win these coins."
-
+	para "It took me days"
+	line "to win these"
+	cont "coins."
 	para "I need to very"
-	cont "carefully decide"
-	cont "what to spend"
-	cont "them on!"
-
+	line "carefully decide"
+	cont "what to spend them"
+	cont "on!"
 	para "I wonder if TM42"
 	line "is any good!"
+	done
 	done
 
 CeladonPrizeRoom_PrizeVendorIntroText:

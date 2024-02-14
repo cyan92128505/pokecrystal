@@ -35,7 +35,7 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY
-	loadmem wLevelCap, 45
+	loadmem wLevelCap, 50
 	opentext
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE
@@ -251,11 +251,11 @@ MortyText_FogBadgeSpeech:
     text "With the FOGBADGE"
     line "you can now train"
     cont "#MON up to"
-    cont "level 45."
+    cont "level 50."
 
     para "And capture"
     line "#MON up to"
-    cont "level 35."
+    cont "level 40."
 
     para "You can also"
     line "use SURF outside"

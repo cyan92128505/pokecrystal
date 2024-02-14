@@ -222,7 +222,7 @@ JasmineDontBeOffendedText:
 	done
 
 JasmineAmphyHowAreYouFeelingText:
-	para "AMPHAROS, how are"
+	text "AMPHAROS, how are"
 	line "you feeling?"
 	done
 

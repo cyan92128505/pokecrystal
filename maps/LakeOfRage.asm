@@ -99,31 +99,33 @@ LakeOfRageLanceScript:
 	sjump .AgreedToHelp
 
 RedGyarados:
+    checkevent EVENT_BEAT_CHUCK
+    iffalse .notInterested
+    checkevent EVENT_BEAT_JASMINE
+    iffalse .notInterested
 	opentext
 	writetext LakeOfRageGyaradosCryText
 	pause 15
 	cry GYARADOS
 	closetext
-	checkevent EVENT_BEAT_CHUCK
-	iffalse .lvl30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	loadwildmon GYARADOS, 40
-	sjump .begin
-.lvl30
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon GYARADOS, 30
-.begin
 	startbattle
-	ifequal LOSE, .NotBeaten
 	disappear LAKEOFRAGE_GYARADOS
-.NotBeaten:
 	reloadmapafterbattle
-	opentext
-	itemnotify
-	closetext
-	setscene 0 ; Lake of Rage does not have a scene variable
 	appear LAKEOFRAGE_LANCE
 	end
+.notInterested:
+    opentext
+    writetext NotInterestedText
+    waitbutton
+    closetext
+    end
+
+NotInterestedText:
+    text "GYARADOS seems"
+    line "uninterested."
+    done
 
 LakeOfRageGrampsScript:
 	faceplayer

@@ -576,7 +576,7 @@ FuchsiaCitySelfScript:
 	closetext
 	applymovement PLAYER, FuchsiaMovement_PlayerDown
 	pause 5
-	disappear VIOLETCITY_SELF
+	disappear FUCHSIACITY_SELF
 	playmusic MUSIC_RED_INDIGO_PLATEAU
 	special HealParty
 	end

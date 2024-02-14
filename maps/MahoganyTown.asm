@@ -214,7 +214,7 @@ MahoganyTownSelfScript:
 	closetext
 	applymovement PLAYER, MahoganyMovement_PlayerDown
 	pause 5
-	disappear VIOLETCITY_SELF
+	disappear MAHOGANYTOWN_SELF
 	playmusic MUSIC_CHERRYGROVE_CITY
 	special HealParty
 	end

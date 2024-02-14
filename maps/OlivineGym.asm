@@ -21,7 +21,10 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JASMINE
+	checkevent EVENT_BEAT_CHUCK
+	iffalse .skipCaps
 	loadmem wLevelCap, 55
+.skipCaps
 	opentext
 	writetext Text_ReceivedMineralBadge
 	playsound SFX_GET_BADGE
@@ -32,7 +35,13 @@ OlivineGymJasmineScript:
 .FightDone:
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
+	checkevent EVENT_BEAT_CHUCK
+	iftrue .capUp
+	writetext JasmineBeatChuckText
+	sjump .cont
+.capUp
 	writetext Jasmine_BadgeSpeech
+.cont
 	promptbutton
 	verbosegiveitem TM_IRON_HEAD
 	iffalse .NoRoomForIronTail
@@ -170,6 +179,30 @@ Jasmine_BadgeSpeech:
     para "And capture"
     line "#MON up to"
     cont "level 45."
+
+	para "Don't let"
+	line "anyone change"
+	cont "your perception"
+	cont "of yourself."
+
+	para "You plant your"
+	line "feet in the"
+	cont "ground and be"
+	cont "stubborn."
+
+	para "This will"
+	line "help you."
+	done
+
+JasmineBeatChuckText:
+	text "You have done well"
+	line "but I'm afraid you"
+	cont "also must defeat"
+	cont "CHUCK in CAINWOOD"
+	cont "to increase your"
+	cont "level caps."
+	para "It should not be"
+	line "difficult for you."
 
 	para "Don't let"
 	line "anyone change"

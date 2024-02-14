@@ -26,13 +26,13 @@ MountMortarB1F_MapScripts:
     endcallback
 
 MountMortarB1FFieldMon1Script:
-	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_1, MountMortarB1FPokemonAttacksText, 42, 0, .script
+	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_1, MountMortarB1FPokemonAttacksText, 62, 0, .script
 .script
     disappear MOUNTMORTARB1F_FIELDMON_1
     end
 
 MountMortarB1FFieldMon2Script:
-	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_2, MountMortarB1FPokemonAttacksText, 42, 0, .script
+	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_2, MountMortarB1FPokemonAttacksText, 62, 0, .script
 .script
     disappear MOUNTMORTARB1F_FIELDMON_2
     end
@@ -103,10 +103,10 @@ MountMortarB1FHyperPotion:
 	itemball MAX_ELIXER
 
 MountMortarB1FCarbos:
-	itemball CARBOS
+	itemball CHOICE_BAND
 
 MountMortarB1FFullRestore:
-	itemball CHOICE_BAND
+	itemball HP_UP
 
 MountMortarB1FMaxEther:
 	itemball MAX_REVIVE

@@ -702,6 +702,7 @@ Route36CrystalScript:
     playmusic MUSIC_CRYSTAL_ENCOUNTER
     appear ROUTE36_CRYSTAL
     applymovement ROUTE36_CRYSTAL, Route36Movement_CrystalApproaches
+    turnobject PLAYER, LEFT
 
     opentext
     writetext Route36CrystalText_Intro

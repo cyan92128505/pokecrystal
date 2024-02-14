@@ -46,7 +46,10 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHUCK
-	loadmem wLevelCap, 50
+	checkevent EVENT_BEAT_JASMINE
+	iffalse .skipCap
+	loadmem wLevelCap, 55
+.skipCap
 	opentext
 	writetext GetStormBadgeText
 	playsound SFX_GET_BADGE
@@ -61,7 +64,13 @@ CianwoodGymChuckScript:
 	setevent EVENT_BEAT_BLACKBELT_LAO
 	setevent EVENT_BEAT_BLACKBELT_NOB
 	setevent EVENT_BEAT_BLACKBELT_LUNG
+	checkevent EVENT_BEAT_JASMINE
+	iftrue .capUp
+	writetext BeatJasmineText
+	sjump .cont
+.capUp
 	writetext ChuckExplainBadgeText
+.cont
 	promptbutton
 	verbosegiveitem TM_DRAIN_PUNCH
 	iffalse .BagFull
@@ -274,14 +283,25 @@ ChuckExplainBadgeText:
     text "The STORMBADGE"
     line "lets you train"
     cont "#MON up to"
-    cont "level 45."
+    cont "level 55."
 
     para "And capture"
     line "#MON up to"
-    cont "level 35."
+    cont "level 45."
 
 	para "Here, take this"
 	line "too!"
+	done
+
+BeatJasmineText:
+	text "You done well but"
+	line "you have beat both"
+	cont "me and JASMINE in"
+	cont "OLIVINE to"
+	cont "increase your"
+	cont "level caps."
+	para "Hey I don't make"
+	line "the rules!"
 	done
 
 ChuckExplainTMText:

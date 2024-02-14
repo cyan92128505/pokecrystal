@@ -39,6 +39,7 @@ BulbasaurEvosAttacks:
 
 IvysaurEvosAttacks:
 	db EVOLVE_LEVEL, 32, VENUSAUR
+	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
 	db 7, LEECH_SEED
@@ -1051,6 +1052,7 @@ VictreebelEvosAttacks:
 
 TentacoolEvosAttacks:
 	db EVOLVE_LEVEL, 30, TENTACRUEL
+	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, SUPERSONIC
 	db 1, WATER_GUN
@@ -1308,7 +1310,6 @@ FerroseedEvosAttacks:
 
 FerrothornEvosAttacks:
 	db 0 ; no more evolutions
-	; moves are not sorted by level
 	db 1, TACKLE
 	db 1, HARDEN
 	db 5, METAL_CLAW

@@ -449,7 +449,7 @@ PsychicRichardBeatenText:
 	para "I was too weak!"
 
 	para "She will never"
-	cont "accept me now."
+	line "accept me now."
 
 	para "NO!"
 

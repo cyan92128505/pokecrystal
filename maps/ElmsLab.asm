@@ -1357,8 +1357,21 @@ ElmGiveMasterBallText2:
 	done
 
 ElmGiveTicketText1:
-	text "ELM: <PLAY_G>!"
+	text "CHAMPION <PLAYER>"
 	line "There you are!"
+
+	para "Congratulations"
+	line "again on becoming"
+	cont "the first JOHTO"
+	cont "CHAMPION!"
+
+    para "you can now train"
+    line "#MON up to"
+    cont "level 85."
+
+    para "And capture"
+    line "#MON up to"
+    cont "level 75."
 
 	para "I called because I"
 	line "have something for"
@@ -1367,8 +1380,12 @@ ElmGiveTicketText1:
 	para "See? It's an"
 	line "S.S.TICKET."
 
-	para "Now you can catch"
-	line "#MON in KANTO."
+	para "The boat heads"
+	line "for KANTO."
+
+	para "There is a secret"
+	line "agent onboard"
+	cont "awaiting you."
 	done
 
 ElmGiveTicketText2:

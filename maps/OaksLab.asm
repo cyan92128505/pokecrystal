@@ -332,7 +332,7 @@ OakYesKantoBadgesText:
 	cont "LEADER!"
 
 	para "If you ever beat"
-	line "him you mist"
+	line "him you must"
 	cont "come see me."
 	done
 

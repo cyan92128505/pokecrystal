@@ -36,7 +36,7 @@ BlackthornGymClairScript:
 	writetext ClairIntroText
 	waitbutton
 	closetext
-	winlosstext ClairWinText, 0
+	winlosstext ClairWinText, ClairLoseText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CLAIR, CLAIR1
 	startbattle
@@ -60,7 +60,7 @@ BlackthornGymClairScript:
     writetext ClairIntroText
 	waitbutton
 	closetext
-	winlosstext ClairWinText, 0
+	winlosstext ClairWinText, ClairLoseText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer CLAIR, CLAIR1
 	startbattle
@@ -209,6 +209,12 @@ ClairWinText:
 	para "But you are"
 	line "not ready."
 	done
+
+ClairLoseText:
+    text "You're destiny"
+    line "was always to"
+    cont "lose."
+    done
 
 ClairText_GoToDragonsDen:
 	text "You are the"

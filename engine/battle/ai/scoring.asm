@@ -3962,19 +3962,6 @@ AI_Smart_QuiverDance:
 	and 1 << PAR
 	jp nz, StandardDiscourage
 
-; discourage if player speed is +2 or higher
-    ld a, [wPlayerSpdLevel]
-    cp BASE_STAT_LEVEL + 2
-    jp nc, StandardDiscourage
-
-; discourage if players level is >10 higher than AI
-    ld a, [wBattleMonLevel]
-    ld b, a
-    ld a, [wEnemyMonLevel]
-    add 10
-    cp b
-    jp c, StandardDiscourage
-
 ; encourage to +2, strongly encourage if player has boosted SpAtk
 	ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2

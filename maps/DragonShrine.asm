@@ -486,7 +486,7 @@ DragonShrinePartyFullText:
 DragonShrineSymbolicDragonText:
 	text "Dragon #MON are"
 	line "the most sacred"
-	cont "og beings."
+	cont "of beings."
 
 	para "The closest to"
 	line "ARCEUS itself."

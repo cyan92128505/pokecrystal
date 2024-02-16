@@ -25,6 +25,9 @@ SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
+    db BELDUM
+    db METANG
+    db METAGROSS
     db -1
 
 SniperPokemon:

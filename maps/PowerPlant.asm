@@ -373,14 +373,12 @@ PowerPlantManagerTakeThisTMText:
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
-	text "That is ZAP"
-	line "CANNON."
-	para "It doesn't always"
-	line "land but will"
-	cont "vaporise anyone it"
-	cont "can dump it's"
-	cont "electrical load"
-	cont "on."
+	text "BODY SLAM is a"
+	line "strong and"
+	cont "reliable move that"
+	cont "can paralyse your"
+	cont "enemy if executed"
+	cont "just right."
 	done
 
 PowerPlantManagerMyBelovedGeneratorText:

@@ -47,7 +47,7 @@ RedsMomText1:
 	cont "7 years ago."
 
 	para "He visits very"
-	line "rarly."
+	line "rarely."
 
 	para "It's been months"
 	line "since I last saw"
@@ -56,7 +56,7 @@ RedsMomText1:
 	para "I never have any"
 	line "idea where he is"
 	cont "but I know he is"
-	cont "save."
+	cont "safe."
 
 	para "He gave me this"
 	line "a while ago."
@@ -75,7 +75,7 @@ RedsMomText2:
 
 	para "But I am proud"
 	line "of him and know"
-	cont "he living his"
+	cont "he's living his"
 	cont "life the way he"
 	cont "wants."
 

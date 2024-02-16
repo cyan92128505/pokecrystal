@@ -6,4 +6,5 @@
 	next "super brains."
 
 	page "Immune to"
-	next "stat drops.@"
+	next "stat drops and"
+	next "OHKO.@"

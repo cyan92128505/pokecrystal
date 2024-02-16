@@ -6,4 +6,5 @@
 	next "the military."
 
 	page "Immune to"
-	next "stat drops.@"
+	next "stat drops and"
+	next "OHKO.@"

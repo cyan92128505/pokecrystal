@@ -203,6 +203,7 @@ MahoganyTownSelfScript:
 	closetext
 	disappear MAHOGANYTOWN_SELF
 	playmusic MUSIC_CHERRYGROVE_CITY
+	special HealParty
 	end
 .lose
     dontrestartmapmusic

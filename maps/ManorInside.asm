@@ -79,6 +79,7 @@ AndrewScript:
 	writetext AndrewAfterBattleText
 	waitbutton
 	closetext
+	special HealParty
 	end
 .fullPower
     writetext AndrewBeginBattleText
@@ -95,6 +96,7 @@ AndrewScript:
    	writetext AndrewUnreachableText
    	waitbutton
    	closetext
+   	special HealParty
    	end
 .lose
     special HealParty
@@ -327,6 +329,7 @@ CatherineScript:
 	writetext CatherineAfterBattleText
 	waitbutton
 	closetext
+	special HealParty
 	end
 .lose
     special HealParty
@@ -464,6 +467,7 @@ JamesScript:
 	writetext JamesAfterBattleText
 	waitbutton
 	closetext
+	special HealParty
 	end
 .lose
     special HealParty

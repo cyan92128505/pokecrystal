@@ -71,20 +71,7 @@ Script_ArriveFromGoldenrod:
 	end
 
 SaffronMagnetTrainStationGymGuideScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronMagnetTrainStationGymGuideText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer SaffronMagnetTrainStationGymGuideText
 
 SaffronMagnetTrainStationTeacherScript:
 	jumptextfaceplayer SaffronMagnetTrainStationTeacherText
@@ -170,34 +157,9 @@ SaffronMagnetTrainStationOfficerArrivedInSaffronText:
 	done
 
 SaffronMagnetTrainStationGymGuideText:
-	text "The MAGNET TRAIN"
-	line "is a super-modern"
-
-	para "rail liner that"
-	line "uses electricity"
-
-	para "and magnets to"
-	line "attain incredible"
-	cont "speed."
-
-	para "However, if there"
-	line "isn't any elec-"
-	cont "tricity…"
-
-	para "Maybe HOEN are"
-	line "behind this."
-	done
-
-SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart:
-	text "I keep going back"
-	line "and forth between"
-	cont "KANTO and JOHTO."
-
-	para "I like the food"
-	line "onboard."
-
-	para "Though it is a"
-	line "bit expensive."
+	text "Oh excuses me did"
+	line "I get in your way?"
+	para "Apologies."
 	done
 
 SaffronMagnetTrainStationTeacherText:

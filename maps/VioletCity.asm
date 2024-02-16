@@ -446,6 +446,7 @@ VioletCitySelfScript:
 	closetext
 	disappear VIOLETCITY_SELF
 	playmusic MUSIC_VIOLET_CITY
+	special HealParty
 	end
 .lose
     dontrestartmapmusic

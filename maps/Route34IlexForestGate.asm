@@ -47,11 +47,12 @@ Route34IlexForestGateTeacherScript:
 	iftrue .ForestIsRestless
 	writetext Route34IlexForestGateTeacherText
 	waitbutton
+	closetext
 	end
 
 .ForestIsRestless:
 	writetext Route34IlexForestGateTeacher_ForestIsRestless
-	promptbutton
+	waitbutton
 	closetext
 	end
 

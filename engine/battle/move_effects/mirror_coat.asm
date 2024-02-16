@@ -1,5 +1,8 @@
 BattleCommand_MirrorCoat:
 ; mirrorcoat
+    ld a, [wEffectFailed]
+    and a
+    jr nz, .failed
 
 	ld a, 1
 	ld [wAttackMissed], a

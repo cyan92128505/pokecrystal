@@ -125,7 +125,7 @@ Fisher1Text_Snarfle:
 Fisher1Text_Concentration:
 	text "Phew..."
 
-	para "I can feel my"
+	para "I can't feel my"
 	line "left arm anymore"
 	cont "but I can't stop."
 	done

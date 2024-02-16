@@ -914,6 +914,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_DEFENSE_UP,       AI_Smart_LesserStatChange
     dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
     dbw EFFECT_SAFEGUARD,        AI_Smart_LesserStatChange
+    dbw EFFECT_DEFENSE_CURL,     AI_Smart_LesserStatChange
     dbw EFFECT_PARALYZE_HIT,     AI_Smart_ParalyzeHit
     dbw EFFECT_JUDGEMENT,        AI_Smart_Judgement
 	db -1 ; end
@@ -1862,7 +1863,9 @@ AI_Smart_StaticDamage:
    	pop bc
    	pop de
    	pop hl
-   	ret nc
+   	jr c, .discourage
+   	ret
+.discourage
    	inc [hl]
    	inc [hl]
    	inc [hl]

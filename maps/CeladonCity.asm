@@ -212,10 +212,9 @@ CeladonCityTeacher2Text:
 CeladonCityLassText:
 	text "I used to go"
 	line "on the CYCLING"
-	cont "ROAD but there"
-	cont "all the biker"
-	cont "gangs telling me"
-	cont "how pretty I am"
+	cont "ROAD but all the"
+	cont "biker gangs cat"
+	cont "calling me has"
 	cont "became unbearable."
 
 	para "I'm training my"

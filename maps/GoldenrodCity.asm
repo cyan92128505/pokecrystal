@@ -737,6 +737,7 @@ GoldenrodCitySelfScript:
 	closetext
 	disappear GOLDENRODCITY_SELF
 	playmusic MUSIC_GOLDENROD_CITY
+	special HealParty
 	end
 .lose
     dontrestartmapmusic

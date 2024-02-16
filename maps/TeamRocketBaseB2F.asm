@@ -1012,7 +1012,7 @@ RockerBaseLanceElectrodeFaintText:
 	text "I see..."
 
 	para "This device"
-	cont "conjures the"
+	line "conjures the"
 	cont "signal."
 
 	para "Alas..."
@@ -1044,7 +1044,7 @@ RocketBaseLancesSideText:
 
 RocketBaseLanceElectrodeDoneText:
 	text "The signal has"
-	cont "ceased."
+	line "ceased."
 
 	para "I am proud of"
 	line "what you have"

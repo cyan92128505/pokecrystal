@@ -18,7 +18,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_Intro
 	waitbutton
 	closetext
-	winlosstext PryceText_Impressed, 0
+	winlosstext PryceText_Impressed, PryceWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer PRYCE, PRYCE1
 	startbattle
@@ -66,7 +66,7 @@ PryceScript_Defeat:
     writetext PryceText_Intro
 	waitbutton
 	closetext
-	winlosstext PryceText_Impressed, 0
+	winlosstext PryceText_Impressed, PryceWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer PRYCE, PRYCE1
 	startbattle
@@ -199,6 +199,11 @@ PryceText_Impressed:
 	line "this BADGE."
 	done
 
+PryceWinText:
+    text "you are too"
+    line "young."
+    done
+
 Text_ReceivedGlacierBadge:
 	text "<PLAYER> received"
 	line "GLACIERBADGE."
@@ -230,7 +235,7 @@ PryceText_IcyWindSpeech:
 
 	para "May it give you"
 	line "the same strength"
-	line "it gives me."
+	cont "it gives me."
 	done
 
 PryceText_CherishYourPokemon:

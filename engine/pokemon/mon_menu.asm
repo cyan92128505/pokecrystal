@@ -790,6 +790,7 @@ MonMenu_RockSmash:
 
 MonMenu_Heal:
 	farcall HealParty
+	farcall Play_SFX_FULL_HEAL
 	ld hl, HealPartyText
 	call PrintText
 	xor a

@@ -649,6 +649,7 @@ NewBarkTownMovement_CrystalLeaves:
     step_end
 
 FinalSilverScript:
+    faceplayer
     opentext
 	writetext SilverFinalGeneralText
 	waitbutton
@@ -669,10 +670,19 @@ FinalSilverScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	special HealParty
 	opentext
 	writetext SilverFinalAfterBattleText
+	waitbutton
+	closetext
+	end
+.lose
+    reloadmap
+	special HealParty
+	opentext
+	writetext SilverFinalLoseAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -699,10 +709,19 @@ FinalCrystalScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_7
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	special HealParty
 	opentext
 	writetext CrystalFinalAfterBattleText
+	waitbutton
+	closetext
+	end
+.lose
+    reloadmap
+    special HealParty
+	opentext
+	writetext CrystalFinalLoseAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -755,6 +774,13 @@ SilverFinalLossText:
 
 SilverFinalWinText:
     text "You let me win!"
+    done
+
+SilverFinalLoseAfterBattleText:
+    text "You've gone soft"
+    line "it seems."
+
+    para "How disappointing."
     done
 
 SilverFinalAfterBattleText:
@@ -831,6 +857,17 @@ CrystalFinalLossText:
 CrystalFinalWinText:
     text "You don't have"
     line "let me win."
+    done
+
+CrystalFinalLoseAfterBattleText:
+    text "I won?!"
+
+    para "I must truly be"
+    line "the best trainer"
+    cont "ever huh."
+
+    para "Thanks for letting"
+    line "me win."
     done
 
 CrystalFinalAfterBattleText:

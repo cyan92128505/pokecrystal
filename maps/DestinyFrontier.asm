@@ -1099,8 +1099,8 @@ OakIntroText:
     text "Welcome <PLAYER>."
 
     para "This is a place"
-    line "that exists outside"
-    cont "of your reality."
+    line "that exists beyond"
+    cont "your reality."
 
     para "Every person here"
     line "is a #MON"
@@ -1120,11 +1120,6 @@ OakIntroText:
     para "The GYMS have two"
     line "leaders but no"
     cont "trainers."
-
-    para "Some GYMS will"
-    line "have restrictions"
-    cont "on which trainers"
-    cont "may challenge."
 
     para "Then you can face"
     line "the ELITE FOUR"
@@ -1146,7 +1141,7 @@ OakIntroText:
     done
 
 CongratsText:
-    text "You have done it."
+    text "You have done it!"
 
     para "GRAND MASTER."
 

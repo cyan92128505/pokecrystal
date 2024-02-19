@@ -701,6 +701,7 @@ CynthiaWinsAfterBattleText:
 
     para "You are certainly"
     line "a worthy CHAMPION."
+    done
 CynthiaSeenText:
     text "You have CHAMPION"
     line "BLUE to thank for"
@@ -864,7 +865,7 @@ Soldier1SeenText:
     cont "HOENs most elite"
     cont "soldiers."
     para "Your hubris will"
-    cont "Get you killed."
+    line "Get you killed."
     done
 Soldier1BeatenText:
     text "You are too late."
@@ -874,8 +875,8 @@ Soldier1WinsText:
     line "didn't kill you."
     done
 Soldier1AfterBattleText:
-    text "More reinforcements"
-    line "will be pouring in."
+    text "Reinforcements"
+    line "are pouring in."
 
     para "Ah my Lieutenants"
     line "are reporting now!"
@@ -1011,7 +1012,7 @@ Soldier3AfterBattleText:
     para "...."
 
     para "Yes Captain, have"
-    line "you taken SAFFRON."
+    line "you taken SAFFRON?"
 
     para "...."
 
@@ -1029,13 +1030,11 @@ Soldier3AfterBattleText:
     para "A #MON as"
     line "big as a building!"
 
-    para "With psychic armour."
-
     para "Impossible to win!"
 
     para "...."
 
-    para "None of it matters."
+    para "It matters not."
 
     para "ADMIRAL DRAKE"
     line "will end them all."
@@ -1100,7 +1099,7 @@ Soldier4AfterBattleText:
     done
 
 TrainerSoldier5:
-	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier1SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
+	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier5SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
 .Script:
     loadmem wNoRematch, 1
 	opentext
@@ -1162,11 +1161,13 @@ Soldier5AfterBattleText:
     done
 
 RematchTextWarZone:
-    text "Let's settle this?"
+    text "How about another"
+    line "battle?"
     done
 
 RematchRefuseTextWarZone:
-    text "It's not over."
+    text "Good luck out"
+    line "there."
     done
 
 FightWallaceScript1:
@@ -1348,4 +1349,3 @@ WarZone_MapEvents:
 	object_event 21, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
 	object_event 33,  4, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
 	object_event 21, 10, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_6
-

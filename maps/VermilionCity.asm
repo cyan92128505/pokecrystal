@@ -419,14 +419,13 @@ TrainerSoldier6:
 	closetext
 	end
 Soldier6SeenText:
-    text "Stop you filthy"
-    line "KANTO son of a"
-    cont "DUNSPARCE scum."
-
-    para "Kneel and kiss"
-    line "my boots and I"
-    cont "might let you"
-    cont "live."
+	text "Stop you filthy"
+	line "KANTO son of a"
+	cont "DUNSPARCE scum."
+	para "Kneel and kiss my"
+	line "boots and I might"
+	cont "let you live."
+	done
     done
 Soldier6BeatenText:
     text "Avenge me"
@@ -459,31 +458,27 @@ TrainerSoldier7:
 	closetext
 	end
 Soldier7SeenText:
-    text "Placing an"
-    line "ELECTRIC GYM"
-    cont "on the coast"
-    cont "was an obvious"
-    cont "move."
-
-    para "Our captain has"
-    line "trained to deal"
-    cont "the ELECTRIC"
-    cont "#MON."
-
-    para "You're GYM"
-    line "LEADER can't"
-    cont "help you!"
+	text "Placing an"
+	line "ELECTRIC GYM on"
+	cont "the coast was an"
+	cont "obvious move."
+	para "Our captain has"
+	line "trained to deal"
+	cont "the ELECTRIC"
+	cont "#MON."
+	para "You're GYM LEADER"
+	line "can't help you!"
     done
 Soldier7BeatenText:
     text "You can protect"
     line "yourself."
 
     para "But your friends"
-    cont "can't."
+    line "can't."
     done
 Soldier7WinsText:
-    text "Off to the"
-    cont "camps with you."
+    text "Off to the camps"
+    line "with you."
     done
 Soldier7AfterBattleText:
     text "We have taken"
@@ -505,38 +500,33 @@ TrainerSoldier8:
 	closetext
 	end
 Soldier8SeenText:
-    text "I love the"
-    line "sound of the"
-    cont "children crying."
-
-    text "This place is"
-    line "locked down."
-
-    para "We are just the"
-    line "first wave."
-
-    para "Once we take"
-    line "SAFFRON your"
-    cont "country is"
-    cont "ours."
-
-    para "You won't live"
-    line "to see that."
-    done
+	text "I love the sound"
+	line "of the children"
+	cont "crying."
+	para "This place is"
+	line "locked down."
+	para "We are just the"
+	line "first wave."
+	para "Once we take"
+	line "SAFFRON your"
+	cont "country is ours."
+	para "You won't live to"
+	line "see that."
+	done
 Soldier8BeatenText:
     text "I done my job"
     line "well."
     done
 Soldier8WinsText:
     text "Nobody will"
-    line "cry for you."
+    line "mourn for you."
     done
 Soldier8AfterBattleText:
-    text "Once WALLACE"
-    line "joins the battle"
-    cont "you will know"
-    cont "total desperation."
-    done
+	text "Once WALLACE joins"
+	line "the battle you"
+	cont "will know total"
+	cont "desperation."
+	done
 
 HoenCaptain:
     faceplayer
@@ -573,35 +563,32 @@ HoenCaptain:
    	end
 
 GoAwayText:
-    text "Go back to"
-    line "your home and"
-    cont "pray our plans"
-    cont "go unhindered."
-
-    para "We have no"
-    line "interest in heroes"
-    cont "or hostages."
-    done
+	text "Go back to your"
+	line "home and pray our"
+	cont "plans go"
+	cont "unhindered."
+	para "We have no"
+	line "interest in heroes"
+	cont "or hostages."
+	done
 
 HoenCaptainSeenText:
-    text "You have"
-    line "disrespected HOEN"
-    cont "for your first"
-    cont "and last time!"
-
-    para "I have been tasked"
-    line "with containing"
-    cont "the ELECTRIC GYM."
-
-    para "HOEN will liberate"
-    line "all of KANTO!"
-
-    para "If you are not"
-    line "happy with this."
-
-    para "Then you will"
-    line "die."
-    done
+	text "You have"
+	line "disrespected HOEN"
+	cont "for your first and"
+	cont "last time!"
+	para "I have been"
+	line "tasked with"
+	cont "containing the"
+	cont "ELECTRIC GYM."
+	para "HOEN will"
+	line "liberate all of"
+	cont "KANTO!"
+	para "If you are not"
+	line "happy with this."
+	para "Then you will"
+	line "die."
+	done
 
 HoenCaptainBeatenText:
     text "Forgive me"
@@ -614,43 +601,30 @@ HoenCaptainWinsText:
     done
 
 HoenCaptainAfterBattleText:
-    text "Who are you!"
-
-    para "Wait..."
-
-    para "You are the new"
-    line "CHAMPION!"
-
-    para "You have failed"
-    line "CHAMPION."
-
-    para "I've' accomplished"
-    line "my mission."
-
-    para "WALLACE has made"
-    line "it to FUCHSIA."
-
-    para "KANTO is doomed."
-
-    para "FUHRER WALLACE"
-    line "has our strongest"
-    cont "squad with him."
-
-    para "Two COMMANDERS"
-
-    para "Two CAPTAINS"
-
-    para "and ADMIRAL DRAKE!"
-
-    para "DRAKE has beaten"
-    line "CHAMPIONS much"
-    cont "stronger than"
-    cont "you."
-
-    para "You should stay"
-    line "away from FUCHSIA"
-    cont "if you value your"
-    cont "life."
+	text "Who are you!"
+	para "Wait..."
+	para "You are the new"
+	line "CHAMPION!"
+	para "You have failed"
+	line "CHAMPION."
+	para "I've accomplished"
+	line "my mission."
+	para "WALLACE has made"
+	line "it to FUCHSIA."
+	para "KANTO is doomed."
+	para "FUHRER WALLACE"
+	line "has our strongest"
+	cont "squad with him."
+	para "Two COMMANDERS "
+	line "Two CAPTAINS  and"
+	cont "ADMIRAL DRAKE!"
+	para "DRAKE has beaten"
+	line "CHAMPIONS much"
+	cont "stronger than you."
+	para "You should stay"
+	line "away from FUCHSIA"
+	cont "if you value your"
+	cont "life."
     done
 
 YunaScriptVermilion:
@@ -819,9 +793,9 @@ VermilionCity_MapEvents:
 	object_event 14, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
 	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_VERMILION_CITY_SNORLAX
 	object_event 31, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
-	object_event 16, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSoldier6, EVENT_FIELD_MON_1
-	object_event 19, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSoldier7, EVENT_FIELD_MON_2
-	object_event 17, 15, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier8, EVENT_FIELD_MON_3
+	object_event 16, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier6, EVENT_FIELD_MON_1
+	object_event 19, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier7, EVENT_FIELD_MON_2
+	object_event 17, 15, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier8, EVENT_FIELD_MON_3
 	object_event 10, 20, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HoenCaptain, EVENT_FIELD_MON_4
 	object_event 25, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScriptVermilion, EVENT_FIELD_MON_5
 

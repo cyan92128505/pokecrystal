@@ -1595,9 +1595,6 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
-; AndrewNote - revert this!!!
-    ret
-
 ; damagevariation
 ; Modify the damage spread between 85% and 100%.
 

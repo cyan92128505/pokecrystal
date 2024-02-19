@@ -4281,7 +4281,7 @@ BattleTowerMons:
 
     db GROUDON
 	db LEFTOVERS
-	db SWORDS_DANCE, EARTHQUAKE, ROCK_SLIDE, THUNDER_WAVE
+	db SWORDS_DANCE, FLARE_BLITZ, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4291,7 +4291,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 16, 24, 32 ; PP
+	db 32, 24, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

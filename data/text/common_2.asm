@@ -118,14 +118,14 @@ _BoostedExpPointsText::
 	text_start
 	line "a boosted"
 	cont "@"
-	text_decimal wStringBuffer2, 2, 4
+	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
 	prompt
 
 _ExpPointsText::
 	text_start
 	line "@"
-	text_decimal wStringBuffer2, 2, 4
+	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
 	prompt
 
@@ -1532,6 +1532,10 @@ _MailSentToPCText::
 	text "The MAIL was sent"
 	line "to your PC."
 	prompt
+
+_HealPartyText::
+    text "Party Restored."
+    prompt
 
 _PokemonNotEnoughHPText::
 	text "Not enough HP!"

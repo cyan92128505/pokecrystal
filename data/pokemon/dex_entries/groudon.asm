@@ -6,5 +6,5 @@
 	next "global drought."
 
 	page "Summons"
-	next "Sun and has"
-	next "FIRE STAB.@"
+	next "Sun and resists"
+	next "WATER.@"

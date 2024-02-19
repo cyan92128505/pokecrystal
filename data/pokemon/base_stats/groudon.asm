@@ -3,10 +3,10 @@
 	db  100,  150,  140,  90,  100, 90
 	;   hp  atk  def  spd  sat  sdf
 
-	db GROUND, GROUND ; type
+	db GROUND, FIRE ; type
     db 3 ; catch rate
 	db 255 ; base exp
-	db NO_ITEM, SOFT_SAND ; items
+	db NO_ITEM, CHARCOAL ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 120 ; step cycles to hatch

@@ -3384,7 +3384,7 @@ GroudonEvosAttacks:
 	db 50, FISSURE
 	db 60, BULK_UP
 	db 70, EARTHQUAKE
-	db 80, FIRE_BLAST
+	db 80, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 SkarmoryEvosAttacks:

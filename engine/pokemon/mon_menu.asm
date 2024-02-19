@@ -140,7 +140,7 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_HEADBUTT,   MonMenu_Headbutt
 	dbw MONMENUITEM_WATERFALL,  MonMenu_Waterfall
 	dbw MONMENUITEM_ROCKSMASH,  MonMenu_RockSmash
-	dbw MONMENUITEM_SWEETSCENT, MonMenu_SweetScent
+	dbw MONMENUITEM_HEAL,       MonMenu_Heal
 	dbw MONMENUITEM_STATS,      OpenPartyStats
 	dbw MONMENUITEM_SWITCH,     SwitchPartyMons
 	dbw MONMENUITEM_ITEM,       GiveTakePartyMonItem
@@ -788,11 +788,18 @@ MonMenu_RockSmash:
 	ld a, $3
 	ret
 
-MonMenu_SweetScent:
-	farcall SweetScentFromMenu
-	ld b, $4
-	ld a, $2
+MonMenu_Heal:
+	farcall HealParty
+	ld hl, HealPartyText
+	call PrintText
+	xor a
+	ld [wPartyMenuActionText], a
+	ld a, $3
 	ret
+
+HealPartyText:
+    text_far _HealPartyText
+    text_end
 
 ChooseMoveToDelete:
 	ld hl, wOptions

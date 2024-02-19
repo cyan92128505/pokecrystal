@@ -129,6 +129,7 @@ GetMonSubmenuItems:
 	call CanUseTeleport
     call CanUseSoftboiled
 	call CanUseMilkdrink
+	call CanUseHeal
 
 .skip_moves
 	ld a, MONMENUITEM_STATS
@@ -524,5 +525,15 @@ CanUseMilkdrink:
 	ret nz
 
 	ld a, MONMENUITEM_MILKDRINK
+	call AddMonMenuItem
+	ret
+
+CanUseHeal:
+	ld a, JUDGEMENT
+	call CheckMonKnowsMove
+	and a
+	ret nz
+
+	ld a, MONMENUITEM_HEAL
 	call AddMonMenuItem
 	ret

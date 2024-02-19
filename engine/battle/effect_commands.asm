@@ -3216,9 +3216,7 @@ BattleCommand_DamageCalc:
 ; ======= Guts ========
 ; =====================
     call CheckGutsMon
-    jr c, .getStatus
-	jr .groudon
-.getStatus
+    jr nc, .choiceBand
     ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonStatus]
@@ -3226,29 +3224,7 @@ BattleCommand_DamageCalc:
 	ld a, [wEnemyMonStatus]
 .checkStatus
 	and a
-	jr z, .groudon
-    call FiftyPercentBoost
-
-.groudon
-; ===========================
-; ======= Groudon ===========
-; ===========================
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	ld b, a
-	ld a, [wBattleMonSpecies]
-	jr z, .done
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	ld b, a
-	ld a, [wEnemyMonSpecies]
-.done
-    cp GROUDON
-    jr nz, .choiceBand
-    ld a, b
-    and TYPE_MASK
-    cp FIRE
-    jr nz, .choiceBand
+	jr z, .choiceBand
     call FiftyPercentBoost
 
 .choiceBand
@@ -3381,9 +3357,8 @@ BattleCommand_DamageCalc:
 	call IsInArray
 	pop bc
 	pop de
-	jr c, .checkType
-    jr .finishThickFat
-.checkType
+	jr nc, .finishThickFat
+
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
 	and TYPE_MASK
@@ -3395,6 +3370,21 @@ BattleCommand_DamageCalc:
 .thickFatReduction
 	call HalfDamage
 .finishThickFat
+
+; ==================================
+; ========= Groudon ==============
+; ==================================
+; half damage from water attacks
+    call GetOpposingMon
+    cp GROUDON
+	jr nz, .finishGroudon
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	cp WATER
+    jr nz, .finishGroudon
+	call HalfDamage
+.finishGroudon
 
 ; =================================
 ; ========== Technician ===========

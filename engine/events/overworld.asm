@@ -974,23 +974,18 @@ WarpDeviceScript:
 
 .newBark
 	warp NEW_BARK_TOWN, 13, 18
-	playmusic MUSIC_NEW_BARK_TOWN
 	end
 .pallet
 	warp PALLET_TOWN, 5, 6
-	playmusic MUSIC_PALLET_TOWN
 	end
 .battleTower
 	warp BATTLE_TOWER_OUTSIDE, 8, 16
-	playmusic MUSIC_BATTLE_TOWER_THEME
 	end
 .league
     warp ROUTE_23, 8, 6
-    playmusic MUSIC_INDIGO_PLATEAU
     end
 .silver
     warp SILVER_CAVE_OUTSIDE, 23, 20
-    playmusic MUSIC_MISTY_MOUNTAIN
     end
 
 WarpChoiceText:

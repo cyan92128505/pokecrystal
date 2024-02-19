@@ -1318,7 +1318,7 @@ BattleCommand_Stab:
 	ld hl, wTypeModifier
 	set 7, [hl]
 
-.SkipStab: ; AndrewNote - now we try to aply type matchup
+.SkipStab: ; AndrewNote - now we try to apply type matchup
 	ld a, BATTLE_VARS_MOVE_TYPE ; get move type
 	call GetBattleVar
 	and TYPE_MASK
@@ -1595,6 +1595,9 @@ INCLUDE "engine/battle/ai/switch.asm"
 INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
+; AndrewNote - revert this!!!
+    ret
+
 ; damagevariation
 ; Modify the damage spread between 85% and 100%.
 
@@ -3217,7 +3220,7 @@ BattleCommand_DamageCalc:
 ; =====================
     call CheckGutsMon
     jr c, .getStatus
-	jr .choiceBand
+	jr .groudon
 .getStatus
     ldh a, [hBattleTurn]
 	and a
@@ -3226,7 +3229,29 @@ BattleCommand_DamageCalc:
 	ld a, [wEnemyMonStatus]
 .checkStatus
 	and a
-	jr z, .choiceBand
+	jr z, .groudon
+    call FiftyPercentBoost
+
+.groudon
+; ===========================
+; ======= Groudon ===========
+; ===========================
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	ld b, a
+	ld a, [wBattleMonSpecies]
+	jr z, .done
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	ld b, a
+	ld a, [wEnemyMonSpecies]
+.done
+    cp GROUDON
+    jr nz, .choiceBand
+    ld a, b
+    and TYPE_MASK
+    cp FIRE
+    jr nz, .choiceBand
     call FiftyPercentBoost
 
 .choiceBand

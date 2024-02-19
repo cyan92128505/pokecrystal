@@ -6,5 +6,5 @@
 	next "global drought."
 
 	page "Summons"
-	next "harsh sun upon"
-	next "entering battle.@"
+	next "Sun and has"
+	next "FIRE STAB.@"

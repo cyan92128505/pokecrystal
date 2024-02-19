@@ -43,8 +43,7 @@ MapSetupScript_Warp:
 	mapsetup LoadMapPalettes
 	mapsetup SpawnInFacingDown
 	mapsetup RefreshMapSprites
-	mapsetup PlayMapMusicBike
-	mapsetup FadeInToMusic
+	mapsetup FadeToMapMusic
 	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
@@ -150,7 +149,7 @@ MapSetupScript_LinkReturn:
 	mapsetup EnableLCD
 	mapsetup LoadMapPalettes
 	mapsetup RefreshMapSprites
-	mapsetup PlayMapMusicBike
+    mapsetup FadeToMapMusic
 	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData
@@ -171,7 +170,7 @@ MapSetupScript_Continue:
 	mapsetup EnableLCD
 	mapsetup LoadMapPalettes
 	mapsetup RefreshMapSprites
-	mapsetup PlayMapMusicBike
+	mapsetup FadeToMapMusic
 	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData

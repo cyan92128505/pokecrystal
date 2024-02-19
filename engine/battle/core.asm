@@ -7787,13 +7787,12 @@ GiveExperiencePoints:
 	call nz, BoostExp
 .noTrainerBoost
 ; AndrewNote - exp reduced until all Kanto badges are obtained
+    call BoostExp
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
-    jr z, .noReduction
-    ; AndrewNote - exp reduced to 3/4 for balance reasons
-    call BoostExp
+    jr z, .skipReduction
     call HalfExp
-.noReduction
+.skipReduction
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM

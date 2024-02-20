@@ -262,6 +262,10 @@ LeaderBlueWinText:
 	text "That was the"
 	line "predictable"
 	cont "ending."
+	para "Congratulations"
+	line "great CHAMPION."
+	para "You must go see my"
+	line "uncle PROF OAK."
 	done
 
 LeaderBlueLossText:
@@ -293,7 +297,7 @@ LeaderBlueEpilogueText:
 	line "that right."
 
 	para "Now go do some-"
-	line "thing usefull"
+	line "thing useful"
 	cont "with your talent."
 
 	para "Oh great CHAMPION"

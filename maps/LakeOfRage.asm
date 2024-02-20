@@ -345,29 +345,32 @@ LakeOfRageGyaradosCryText:
 	done
 
 LakeOfRageGrampsText:
-	text "This lake used to"
-	line "symbolise peace"
-	cont "and tranquility."
-
-	para "That was decades"
-	line "ago."
-
-	para "I struggle to"
-	line "remember those"
-	cont "days."
+	text "Aye I've seen many"
+	line "a sea monster in"
+	cont "ma day."
+	para "Ones like dat red"
+	line "beauty out der,"
+	cont "they have a way of"
+	cont "known a strong"
+	cont "trainer from a"
+	cont "weak one."
+	para "Aye, I reckon dat"
+	line "one wont pay no"
+	cont "mind ta any"
+	cont "trainer with less"
+	cont "than 6 badges I'd"
+	cont "say."
 	done
 
 LakeOfRageGrampsText_ClearedRocketHideout:
-	text "Something has"
-	line "changed here."
-
-	para "The air is fresh"
-	line "and still."
-
-	para "It reminds me"
-	line "of the peaceful"
-	cont "days of my"
-	cont "youth."
+	text "You conquered that"
+	line "might red beast!"
+	para "Aye I've only"
+	line "known one other"
+	cont "trainer ta tame"
+	cont "such a beast."
+	para "Fella who likes ta"
+	line "wear a cape."
 	done
 
 LakeOfRageCooltrainerFText:

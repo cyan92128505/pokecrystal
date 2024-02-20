@@ -186,78 +186,54 @@ VictoryRoadRivalBattleExitMovement2:
 	step_end
 
 VictoryRoadRivalBeforeText:
-	text "Hold it."
-
-	para "…Are you going to"
-	line "take the #MON"
-	cont "LEAGUE challenge?"
-
-	para "…Don't make me"
-	line "laugh."
-
-	para "You're so much"
-	line "weaker than I am."
-
-	para "I'm not like I was"
-	line "before."
-
-	para "I now have the"
-	line "best and strongest"
-
-	para "#MON with me."
-	line "I'm invincible!"
-
-	para "<PLAYER>!"
-	line "I challenge you!"
+	text "Stop!"
+	para "I will decide if"
+	line "you are ready to"
+	cont "face the ELITE"
+	cont "FOUR."
+	para "I am now fully"
+	line "committed to my"
+	cont "cause."
+	para "I am the greatest"
+	line "trainer and I'm"
+	cont "destined to"
+	cont "defeat you, that"
+	cont "dragon imposter"
+	cont "and everyone else."
+	para "Now be gone with"
+	line "you!"
 	done
 
 VictoryRoadRivalDefeatText:
-	text "…I couldn't win…"
-
-	para "I gave it every-"
-	line "thing I had…"
-
-	para "What you possess,"
-	line "and what I lack…"
-
-	para "I'm beginning to"
-	line "understand what"
-
-	para "that dragon master"
-	line "said to me…"
+	text "What is going on!?"
+	para "I just can't win."
+	para "I don't"
+	line "understand."
 	done
 
 VictoryRoadRivalAfterText:
-	text "…I haven't given up"
-	line "on becoming the"
-	cont "greatest trainer…"
-
-	para "I'm going to find"
-	line "out why I can't"
-
-	para "win and become"
-	line "stronger…"
-
-	para "When I do, I will"
-	line "challenge you."
-
-	para "And I'll beat you"
-	line "down with all my"
-	cont "power."
-
-	para "…Humph! You keep"
-	line "at it until then."
+	text "Mark these words."
+	para "I will beat you."
+	para "Not today but one"
+	line "day I will."
+	para "Once I figure out"
+	line "what I'm doing"
+	cont "wrong."
+	para "There is someone I"
+	line "need to find."
+	para "A score I need to"
+	line "settle."
+	para "Only then will I"
+	line "be at peace."
+	para "Then I will find"
+	line "you."
 	done
 
 VictoryRoadRivalVictoryText:
-	text "…Humph!"
-
-	para "When it comes down"
-	line "to it, nothing can"
-	cont "beat power."
-
-	para "I don't need any-"
-	line "thing else."
+	text "I've done it!"
+	para "I beat you!"
+	para "Now time to defeat"
+	line "my father."
 	done
 
 InvaderSolaireScript:

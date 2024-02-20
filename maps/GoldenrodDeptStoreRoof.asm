@@ -93,109 +93,109 @@ PokeDollVendingMachine:
 	jumptext PokeDollVendingMachineText
 
 GoldenrodDeptStoreRoofPokefanFText:
-	text "Whew, I'm tired."
-
-	para "I sometimes come"
-	line "up to the rooftop"
-
-	para "to take a break"
-	line "from shopping."
+	text "Huuuu..."
+	para "Huuuu..."
+	para "I take..."
+	para "the stairs..."
+	para "for exercise..."
+	para "it's..."
+	para "good for me..."
+	done
 	done
 
 GoldenrodDeptStoreRoofFisherText:
-	text "Pardon? Who says"
-	line "an adult can't get"
-	cont "into this?"
-
-	para "I'm going to be"
-	line "back every day to"
-
-	para "collect all the"
-	line "dolls!"
+	text "No my precious"
+	line "dolls, they are"
+	cont "out of #DOLLS!"
+	para "They will need a"
+	line "new shipment from"
+	cont "CELADON."
 	done
 
 GoldenrodDeptStoreRoofTwinText:
 	text "They have bargain"
 	line "sales here every"
 	cont "so often."
+	
+	para "I like cheap"
+	line "stuff!"
 	done
 
 GoldenrodDeptStoreRoofSuperNerdOhWowText:
-	text "Oh, wow!"
+	text "Hey baby, yeah I"
+	line "got the POTIONS."
+	para "You are the only"
+	line "POTION I need"
+	cont "baby."
+	para "Hang on a moment"
+	line "darling."
 	done
 
 GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText:
-	text "Will you quit"
-	line "bothering me?"
+	text "Who are you!"
+	para "You make a habit"
+	line "of just waltzing"
+	cont "up to strangers"
+	cont "and talking to"
+	cont "them."
+	para "Maybe I don't want"
+	line "you invading my"
+	cont "space!"
+	para "Go away!"
 	done
 
 GoldenrodDeptStoreRoofPokefanMText:
-	text "There's something"
-	line "I really want, but"
-
-	para "I don't have the"
-	line "necessary cash…"
-
-	para "Maybe I'll sell"
-	line "off the BERRIES"
-	cont "I've collected…"
+	text "I'm in huge dept"
+	line "to the GAME"
+	cont "CORNER."
+	para "They are coming to"
+	line "get me."
+	para "It would be better"
+	line "if I was never"
+	cont "born."
+	para "It's a long way"
+	line "down from here!"
 	done
 
 GoldenrodDeptStoreRoofTeacherText:
-	text "Oh, everything is"
-	line "so cheap!"
-
-	para "I bought so much,"
-	line "my PACK's crammed!"
+	text "I've bought so"
+	line "much!"
+	para "I've used all 40"
+	line "spaces in my pack!"
 	done
 
 GoldenrodDeptStoreRoofBugCatcherText:
-	text "My #MON always"
-	line "get paralyzed or"
-
-	para "poisoned when the"
-	line "chips are down…"
-
-	para "So I came to buy"
-	line "some FULL HEAL."
-
-	para "I wonder if"
-	line "there's any left?"
+	text "I can see so much"
+	line "from up here!"
+	para "Like a hawk I will"
+	line "find the BUG"
+	cont "#MON prey."
+	para "Kawww!"
 	done
 
 Binoculars1Text:
-	text "These binoculars"
-	line "let me see far"
-
-	para "away. Maybe I can"
-	line "see my own house."
-
-	para "Is it the one with"
-	line "the green roof?"
+	text "To the NORTH there"
+	line "is a giant tower"
+	cont "beyond a dark"
+	cont "forest."
 	done
 
 Binoculars2Text:
-	text "Hey! Some trainers"
-	line "are battling on"
-	cont "the road!"
-
-	para "A #MON fired a"
-	line "flurry of leaves!"
-
-	para "That makes me feel"
-	line "like battling"
-	cont "right now!"
+	text "To the East a huge"
+	line "silver mountain"
+	cont "dominates the"
+	cont "skyline."
+	done
 	done
 
 Binoculars3Text:
-	text "A FISHER caught a"
-	line "lot of MAGIKARP…"
-
-	para "They're SPLASHing"
-	line "at the same time!"
-
-	para "Look at the water"
-	line "going everywhere!"
+	text "To the south the"
+	line "security guard has"
+	cont "his binoculars"
+	cont "out..."
+	para "He is looking"
+	line "right at me!"
+	para "Time to bale!"
 	done
 
 PokeDollVendingMachineText:
@@ -205,8 +205,7 @@ PokeDollVendingMachineText:
 	para "Insert money, then"
 	line "turn the crank…"
 
-	para "But it's almost"
-	line "empty…"
+	para "But it's empty!"
 	done
 
 GoldenrodDeptStoreRoof_MapEvents:
@@ -229,6 +228,6 @@ GoldenrodDeptStoreRoof_MapEvents:
 	object_event  2,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofFisherScript, -1
 	object_event  3,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTwinScript, EVENT_GOLDENROD_SALE_ON
 	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofSuperNerdScript, EVENT_GOLDENROD_SALE_ON
-	object_event  7,  0, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanMScript, EVENT_GOLDENROD_SALE_OFF
-	object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTeacherScript, EVENT_GOLDENROD_SALE_OFF
+	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanMScript, EVENT_GOLDENROD_SALE_OFF
+	object_event  8,  1, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTeacherScript, EVENT_GOLDENROD_SALE_OFF
 	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofBugCatcherScript, EVENT_GOLDENROD_SALE_OFF

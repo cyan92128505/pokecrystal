@@ -22,27 +22,38 @@ MahoganyPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer MahoganyPokecenter1FCooltrainerFText
 
 MahoganyPokecenter1FPokefanMText:
-	text ""
+	text "I thought the ICE"
+	line "GYM LEADER would"
+	cont "be a cool woman"
+	cont "like LORELEI."
+	para "I came all the way"
+	line "here from KANTO."
+	para "I was..."
+	para "wrong."
 	done
 
 MahoganyPokecenter1FYoungsterText:
-	text "I stop my #MON"
-	line "from evolving too"
-	cont "early."
-
-	para "I make them learn"
-	line "certain moves be-"
-	cont "fore I let them"
-	cont "evolve."
+	text "You need to be"
+	line "careful around the"
+	cont "LAKE OF RAGE."
+	para "People can go"
+	line "missing."
+	para "My friend went"
+	line "there with his"
+	cont "DITTO one day and"
+	cont "never came back."
 	done
 
 MahoganyPokecenter1FCooltrainerFText:
-	text "#MON do become"
-	line "stronger when they"
-
-	para "evolve, but they"
-	line "also learn moves"
-	cont "more slowly."
+	text "I'm going hiking"
+	line "in ICE PATH."
+	para "Last time I tried"
+	line "I couldn't figure"
+	cont "out the complex"
+	cont "ice fields."
+	para "I've drawn up"
+	line "detailed plans"
+	cont "since then!"
 	done
 
 MahoganyPokecenter1F_MapEvents:

@@ -46,6 +46,7 @@ BillExpShareScript:
 	itemnotify
 	waitbutton
 	closetext
+	loadmem wExpShareToggle, 1
 	turnobject PLAYER, DOWN
 	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement2
 	playsound SFX_EXIT_BUILDING
@@ -119,10 +120,8 @@ VioletPokecenter1F_BillText2:
 	para "I think you are"
 	line "the right person."
 
-	para "You have to turn"
-	line "the EXP.SHARE on."
-	cont "When you do all"
-	cont "your #MON will"
+	para "With EXP.SHARE all"
+	line "your #MON will"
 	cont "gain EXP in"
 	cont "battle."
 
@@ -150,8 +149,11 @@ VioletPokecenter1F_BillText2:
 	para "But why would"
 	line "you!"
 
-	para "Here I entrust"
-	line "this to you."
+	para "I entrust this to"
+	line "you."
+
+	para "Here I'll turn it"
+	line "on for you!"
 
 	para "I have to hurry on"
 	line "back to GOLDENROD"

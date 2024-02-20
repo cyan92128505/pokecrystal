@@ -89,6 +89,7 @@ CherrygroveCityGuideGent:
 	waitbutton
 	verbosegiveitem RUNNING_SHOES
 	closetext
+	loadmem wRunningShoesOn, 1
 	stopfollow
 	special RestartMapMusic
 	turnobject PLAYER, UP
@@ -125,6 +126,9 @@ GuideGentRunningShoesText:
     para "You kids shouldn't"
     line "be running"
     cont "indoors."
+
+    para "Here I'll put"
+    line "these on you!"
     done
 
 Movement_CherryGrove_Player_Up:
@@ -1378,9 +1382,10 @@ StarWarsCh1VillainText:
     cont "and brainwash"
     cont "gifted children."
 
-    para "You fight to free"
-    line "another child"
-    cont "from them."
+	para "You have stormed"
+	line "their palace to"
+	cont "rescue a special"
+	cont "child from them."
 
     para "There are the"
     line "two Jedi!"
@@ -1427,7 +1432,7 @@ StarWarsCh2VillainText:
     line "the evil of the"
     cont "Jedi."
 
-    para "Now you fights to"
+    para "Now he fights to"
     line "stop the Jedi."
     done
 
@@ -1437,6 +1442,10 @@ StarWarsCh3HeroText:
 
     para "But the EMPIRE"
     line "grows strong."
+
+	para "They develop the"
+	line "ultimate weapon,"
+	cont "the DEATH STAR."
 
     para "ANIKAN had a"
     line "son, LUKE."
@@ -1448,7 +1457,9 @@ StarWarsCh3HeroText:
 
     para "He leads the"
     line "final assault on"
-    cont "the EMPIRE."
+    cont "the EMPIRE in a"
+    cont "violent space"
+    cont "battle."
 
     para "Only he can"
     line "save the galaxy."
@@ -1468,15 +1479,21 @@ StarWarsCh3VillainText:
     para "The Empire grows"
     line "strong."
 
+	para "They develop the"
+	line "ultimate weapon,"
+	cont "the DEATH STAR."
+
     para "When the rebels"
     line "attack it is"
     cont "up to you to"
-    cont "defend the Empire."
+    cont "defend the Empire"
+    cont "in a violent"
+    cont "space battle."
     done
 
 StarWarsCh4HeroText:
     text "The DEATH STAR"
-    line "is repeled."
+    line "is destroyed."
 
     para "LUKE learns that"
     line "his father ANIKAN"
@@ -1494,13 +1511,19 @@ StarWarsCh4HeroText:
     cont "his master."
 
     para "PALPATINE."
+
+	para "You don't want to"
+	line "fight but it is"
+	cont "clear you must if"
+	cont "you are to save"
+	cont "your father."
     done
 
 StarWarsCh4VillainText:
     text "The Rebels repel"
     line "the DEATH STAR."
 
-    para "VADER learn he"
+    para "VADER learns he"
     line "has a son from"
     cont "his previous"
     cont "life as ANIKAN."
@@ -1524,6 +1547,10 @@ StarWarsCh4VillainText:
 
     para "Ruler of the"
     line "Galaxy."
+
+	para "If he will not"
+	line "join you he must"
+	cont "die."
     done
 
 StarWarsCh5HeroText:
@@ -1540,9 +1567,9 @@ StarWarsCh5HeroText:
     line "your father to"
     cont "help you."
 
-    para "The pain fades."
-
-    para "The end comes."
+	para "You plea again and"
+	line "again, but"
+	cont "nothing."
 
     para "You open your"
     line "eyes."
@@ -1564,8 +1591,10 @@ StarWarsCh5VillainText:
     line "slowly killing"
     cont "him."
 
-    para "LUKE asks for"
+    para "LUKE begs for"
     line "VADER to save him."
+
+    para "How pathetic."
 
     para "You become aware"
     line "of an anger."
@@ -1575,17 +1604,23 @@ StarWarsCh5VillainText:
     para "Unexplained and"
     line "uncontrollable."
 
-    para "LUKEs voice fades."
+	para "You are knocked"
+	line "away."
 
-    para "Involuntary VADER"
-    line "attacks you!"
+	para "VADER is attacking"
+	line "you."
 
-    para "He stands between"
-    line "you and LUKE."
+	para "You have longed"
+	line "for the day VADER"
+	cont "would do this."
 
-    para "How disgusting."
+	para "But to do so out"
+	line "of love."
 
-    para "They must die."
+	para "How disgusting."
+
+	para "They must both"
+	line "die!"
     done
 
 StarWarsEndText:

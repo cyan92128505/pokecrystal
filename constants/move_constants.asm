@@ -111,7 +111,7 @@
 	const SCREECH      ; 67
 	const AFTER_IMAGE  ; 68
 	const RECOVER      ; 69
-	const HARDEN       ; 6a   replace, use defense curl instead
+	const HARDEN       ; 6a - not used (replace with defense curl)
 	const DARK_VOID    ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
@@ -160,7 +160,7 @@
 	const DRAIN_KISS   ; 98
 	const EXPLOSION    ; 99
 	const FURY_SWIPES  ; 9a
-	const BONEMERANG   ; 9b
+	const BONEMERANG   ; 9b - not used
 	const REST         ; 9c
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
@@ -185,7 +185,7 @@
 	const AEROBLAST    ; b1
 	const SHADOW_CLAW  ; b2
 	const REVERSAL     ; b3
-	const SPITE        ; b4    AndrewNote - this is not used
+	const SPITE        ; b4 - not used
 	const POWDER_SNOW  ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7

@@ -605,13 +605,13 @@ NationalParkTrainerTipsText:
 	done
 
 NationalParkFieldMon1Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, NationalParkPokemonAttacksText, 43, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, NationalParkPokemonAttacksText, 48, 0, .script
 .script
     disappear NATIONALPARK_FIELDMON_1
     end
 
 NationalParkFieldMon2Script:
-	trainer GARDEVOIR, FIELD_MON, EVENT_FIELD_MON_2, NationalParkPokemonAttacksText, 26, 0, .script
+	trainer GARDEVOIR, FIELD_MON, EVENT_FIELD_MON_2, NationalParkPokemonAttacksText, 42, 0, .script
 .script
     disappear NATIONALPARK_FIELDMON_2
     end

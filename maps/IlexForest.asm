@@ -638,7 +638,7 @@ IlexForestFieldMon1Script:
     end
 
 IlexForestFieldMon2Script:
-	trainer YANMEGA, FIELD_MON, EVENT_FIELD_MON_2, IlexForestPokemonAttacksText, 37, 0, .script
+	trainer YANMEGA, FIELD_MON, EVENT_FIELD_MON_2, IlexForestPokemonAttacksText, 38, 0, .script
 .script
     disappear ILEXFOREST_FIELDMON_2
     end

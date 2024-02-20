@@ -45,37 +45,37 @@ Route20_MapScripts:
 	endcallback
 
 Route20FieldMon1Script:
-	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, Route20PokemonAttacksText, 51, 0, .script
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, Route20PokemonAttacksText, 71, 0, .script
 .script
     disappear ROUTE20_FIELDMON_1
     end
 
 Route20FieldMon2Script:
-	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_2, Route20PokemonAttacksText, 54, 0, .script
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_2, Route20PokemonAttacksText, 74, 0, .script
 .script
     disappear ROUTE20_FIELDMON_2
     end
 
 Route20FieldMon3Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_3, Route20PokemonAttacksText, 51, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_3, Route20PokemonAttacksText, 71, 0, .script
 .script
     disappear ROUTE20_FIELDMON_3
     end
 
 Route20FieldMon4Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_4, Route20PokemonAttacksText, 52, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_4, Route20PokemonAttacksText, 72, 0, .script
 .script
     disappear ROUTE20_FIELDMON_4
     end
 
 Route20FieldMon5Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, Route20PokemonAttacksText, 54, 0, .script
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, Route20PokemonAttacksText, 74, 0, .script
 .script
     disappear ROUTE20_FIELDMON_5
     end
 
 Route20FieldMon6Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_6, Route20PokemonAttacksText, 53, 0, .script
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_6, Route20PokemonAttacksText, 73, 0, .script
 .script
     disappear ROUTE20_FIELDMON_6
     end

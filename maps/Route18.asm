@@ -17,13 +17,13 @@ Route18_MapScripts:
     endcallback
 
 Route18FieldMon1Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route18PokemonAttacksText, 51, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_1, Route18PokemonAttacksText, 71, 0, .script
 .script
     disappear ROUTE18_FIELDMON_1
     end
 
 Route18FieldMon2Script:
-	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_2, Route18PokemonAttacksText, 52, 0, .script
+	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_2, Route18PokemonAttacksText, 72, 0, .script
 .script
     disappear ROUTE18_FIELDMON_2
     end

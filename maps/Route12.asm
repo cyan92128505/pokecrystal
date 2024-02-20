@@ -60,13 +60,13 @@ Route12_MapScripts:
     endcallback
 
 Route12FieldMon1Script:
-	trainer POLIWRATH, FIELD_MON, EVENT_FIELD_MON_1, Route12PokemonAttacksText, 42, 0, .script
+	trainer POLIWRATH, FIELD_MON, EVENT_FIELD_MON_1, Route12PokemonAttacksText, 62, 0, .script
 .script
     disappear ROUTE12_FIELDMON_1
     end
 
 Route12FieldMon2Script:
-	trainer ROTOM, FIELD_MON, EVENT_FIELD_MON_2, Route12PokemonAttacksText, 45, 0, .script
+	trainer ROTOM, FIELD_MON, EVENT_FIELD_MON_2, Route12PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE12_FIELDMON_2
     end

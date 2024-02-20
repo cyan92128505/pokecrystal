@@ -23,31 +23,31 @@ RockTunnel1F_MapScripts:
     endcallback
 
 RockTunnel1FFieldMon1Script:
-	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_1, RockTunnel1FPokemonAttacksText, 36, 0, .script
+	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_1, RockTunnel1FPokemonAttacksText, 66, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_1
     end
 
 RockTunnel1FFieldMon2Script:
-	trainer GRAVELER, FIELD_MON, EVENT_FIELD_MON_2, RockTunnel1FPokemonAttacksText, 37, 0, .script
+	trainer GRAVELER, FIELD_MON, EVENT_FIELD_MON_2, RockTunnel1FPokemonAttacksText, 67, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_2
     end
 
 RockTunnel1FFieldMon3Script:
-	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_3, RockTunnel1FPokemonAttacksText, 38, 0, .script
+	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_3, RockTunnel1FPokemonAttacksText, 68, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_3
     end
 
 RockTunnel1FFieldMon4Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_4, RockTunnel1FPokemonAttacksText, 41, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_4, RockTunnel1FPokemonAttacksText, 61, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_4
     end
 
 RockTunnel1FFieldMon5Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_5, RockTunnel1FPokemonAttacksText, 50, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_5, RockTunnel1FPokemonAttacksText, 70, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_5
     end

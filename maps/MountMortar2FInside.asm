@@ -30,37 +30,37 @@ MountMortar2FInside_MapScripts:
     endcallback
 
 MountMortar2FInsideFieldMon1Script:
-	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_1, MountMortar2FInsidePokemonAttacksText, 51, 0, .script
+	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_1, MountMortar2FInsidePokemonAttacksText, 71, 0, .script
 .script
     disappear MOUNTMORTAR2FINSIDE_FIELDMON_1
     end
 
 MountMortar2FInsideFieldMon2Script:
-	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_2, MountMortar2FInsidePokemonAttacksText, 51, 0, .script
+	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_2, MountMortar2FInsidePokemonAttacksText, 71, 0, .script
 .script
     disappear MOUNTMORTAR2FINSIDE_FIELDMON_2
     end
 
 MountMortar2FInsideFieldMon3Script:
-	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_3, MountMortar2FInsidePokemonAttacksText, 50, 0, .script
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_3, MountMortar2FInsidePokemonAttacksText, 70, 0, .script
 .script
     disappear MOUNTMORTAR2FINSIDE_FIELDMON_3
     end
 
 MountMortar2FInsideFieldMon4Script:
-	trainer CONKELDURR, FIELD_MON, EVENT_FIELD_MON_4, MountMortar2FInsidePokemonAttacksText, 52, 0, .script
+	trainer CONKELDURR, FIELD_MON, EVENT_FIELD_MON_4, MountMortar2FInsidePokemonAttacksText, 72, 0, .script
 .script
     disappear MOUNTMORTAR2FINSIDE_FIELDMON_4
     end
 
 MountMortar2FInsideFieldMon5Script:
-	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_5, MountMortar2FInsidePokemonAttacksText, 52, 0, .script
+	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_5, MountMortar2FInsidePokemonAttacksText, 72, 0, .script
 .script
     disappear MOUNTMORTAR2FINSIDE_FIELDMON_5
     end
 
 MountMortar2FInsideFieldMon6Script:
-	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, MountMortar2FInsidePokemonAttacksText, 50, 0, .script
+	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, MountMortar2FInsidePokemonAttacksText, 70, 0, .script
 .script
     disappear MOUNTMORTAR2FINSIDE_FIELDMON_6
     end

@@ -24,7 +24,7 @@ Route22_MapScripts:
     endcallback
 
 Route22FieldMon1Script:
-	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route22PokemonAttacksText, 60, 0, .script
+	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route22PokemonAttacksText, 80, 0, .script
 .script
     disappear ROUTE22_FIELDMON_1
     end

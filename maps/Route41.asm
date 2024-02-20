@@ -435,25 +435,25 @@ SwimmerfWendyAfterBattleText:
 	done
 
 Route41FieldMon1Script:
-	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, Route41PokemonAttacksText, 46, 0, .script
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, Route41PokemonAttacksText, 66, 0, .script
 .script
     disappear ROUTE41_FIELDMON_1
     end
 
 Route41FieldMon2Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, Route41PokemonAttacksText, 48, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, Route41PokemonAttacksText, 68, 0, .script
 .script
     disappear ROUTE41_FIELDMON_2
     end
 
 Route41FieldMon3Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, Route41PokemonAttacksText, 48, 0, .script
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, Route41PokemonAttacksText, 68, 0, .script
 .script
     disappear ROUTE41_FIELDMON_3
     end
 
 Route41FieldMon4Script:
-	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_4, Route41PokemonAttacksText, 65, 0, .script
+	trainer KINGDRA, FIELD_MON, EVENT_FIELD_MON_4, Route41PokemonAttacksText, 76, 0, .script
 .script
     disappear ROUTE41_FIELDMON_4
     end

@@ -209,7 +209,7 @@ Route33SignText:
 	done
 	
 Route33FieldMon3Script:
-	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_3, Route33PokemonAttacksText, 32, 0, .script
+	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_3, Route33PokemonAttacksText, 36, 0, .script
 .script
     disappear ROUTE33_FIELDMON_3
     end

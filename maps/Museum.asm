@@ -61,61 +61,61 @@ DeoxysCry:
     done
     
 MuseumFieldMon1Script:
-	trainer MR__MIME, FIELD_MON, EVENT_FIELD_MON_1, MuseumPokemonAttacksText, 63, 0, .script
+	trainer MR__MIME, FIELD_MON, EVENT_FIELD_MON_1, MuseumPokemonAttacksText, 73, 0, .script
 .script
     disappear MUSEUM_FIELDMON_1
     end
 
 MuseumFieldMon2Script:
-	trainer LOPUNNY, FIELD_MON, EVENT_FIELD_MON_2, MuseumPokemonAttacksText, 62, 0, .script
+	trainer LOPUNNY, FIELD_MON, EVENT_FIELD_MON_2, MuseumPokemonAttacksText, 72, 0, .script
 .script
     disappear MUSEUM_FIELDMON_2
     end
 
 MuseumFieldMon3Script:
-	trainer KIRLIA, FIELD_MON, EVENT_FIELD_MON_3, MuseumPokemonAttacksText, 63, 0, .script
+	trainer KIRLIA, FIELD_MON, EVENT_FIELD_MON_3, MuseumPokemonAttacksText, 73, 0, .script
 .script
     disappear MUSEUM_FIELDMON_3
     end
 
 MuseumFieldMon4Script:
-	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_4, MuseumPokemonAttacksText, 64, 0, .script
+	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_4, MuseumPokemonAttacksText, 74, 0, .script
 .script
     disappear MUSEUM_FIELDMON_4
     end
 
 MuseumFieldMon5Script:
-	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_5, MuseumPokemonAttacksText, 64, 0, .script
+	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_5, MuseumPokemonAttacksText, 74, 0, .script
 .script
     disappear MUSEUM_FIELDMON_5
     end
 
 MuseumFieldMon6Script:
-	trainer BRELOOM, FIELD_MON, EVENT_FIELD_MON_6, MuseumPokemonAttacksText, 67, 0, .script
+	trainer BRELOOM, FIELD_MON, EVENT_FIELD_MON_6, MuseumPokemonAttacksText, 77, 0, .script
 .script
     disappear MUSEUM_FIELDMON_6
     end
 
 MuseumFieldMon7Script:
-	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_7, MuseumPokemonAttacksText, 63, 0, .script
+	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_7, MuseumPokemonAttacksText, 73, 0, .script
 .script
     disappear MUSEUM_FIELDMON_7
     end
 
 MuseumFieldMon8Script:
-	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_8, MuseumPokemonAttacksText, 63, 0, .script
+	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_8, MuseumPokemonAttacksText, 73, 0, .script
 .script
     disappear MUSEUM_FIELDMON_8
     end
 
 MuseumFieldMon9Script:
-	trainer REUNICLUS, FIELD_MON, EVENT_FIELD_MON_9, MuseumPokemonAttacksText, 65, 0, .script
+	trainer REUNICLUS, FIELD_MON, EVENT_FIELD_MON_9, MuseumPokemonAttacksText, 76, 0, .script
 .script
     disappear MUSEUM_FIELDMON_9
     end
 
 MuseumFieldMon10Script:
-	trainer REUNICLUS, FIELD_MON, EVENT_FIELD_MON_10, MuseumPokemonAttacksText, 65, 0, .script
+	trainer REUNICLUS, FIELD_MON, EVENT_FIELD_MON_10, MuseumPokemonAttacksText, 76, 0, .script
 .script
     disappear MUSEUM_FIELDMON_10
     end

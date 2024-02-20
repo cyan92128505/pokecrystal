@@ -304,55 +304,55 @@ InvaderSolaireAfterBattleText:
 	done
 
 VictoryRoadFieldMon1Script:
-	trainer LUCARIO, FIELD_MON, EVENT_FIELD_MON_1, VictoryRoadPokemonAttacksText, 50, 0, .script
+	trainer LUCARIO, FIELD_MON, EVENT_FIELD_MON_1, VictoryRoadPokemonAttacksText, 70, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_1
     end
 
 VictoryRoadFieldMon2Script:
-	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_2, VictoryRoadPokemonAttacksText, 50, 0, .script
+	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_2, VictoryRoadPokemonAttacksText, 70, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_2
     end
 
 VictoryRoadFieldMon3Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, VictoryRoadPokemonAttacksText, 51, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, VictoryRoadPokemonAttacksText, 71, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_3
     end
 
 VictoryRoadFieldMon4Script:
-	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_4, VictoryRoadPokemonAttacksText, 51, 0, .script
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_4, VictoryRoadPokemonAttacksText, 71, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_4
     end
 
 VictoryRoadFieldMon5Script:
-	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, VictoryRoadPokemonAttacksText, 52, 0, .script
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, VictoryRoadPokemonAttacksText, 72, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_5
     end
 
 VictoryRoadFieldMon6Script:
-	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, VictoryRoadPokemonAttacksText, 64, 0, .script
+	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, VictoryRoadPokemonAttacksText, 74, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_6
     end
 
 VictoryRoadFieldMon7Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 64, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 74, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_7
     end
 
 VictoryRoadFieldMon8Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 65, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 77, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_8
     end
 
 VictoryRoadFieldMon9Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 65, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 77, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_9
     end

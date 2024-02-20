@@ -48,13 +48,13 @@ Route13_MapScripts:
     endcallback
 
 Route13FieldMon1Script:
-	trainer VICTREEBEL, FIELD_MON, EVENT_FIELD_MON_1, Route13PokemonAttacksText, 46, 0, .script
+	trainer VICTREEBEL, FIELD_MON, EVENT_FIELD_MON_1, Route13PokemonAttacksText, 66, 0, .script
 .script
     disappear ROUTE13_FIELDMON_1
     end
 
 Route13FieldMon2Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_2, Route13PokemonAttacksText, 51, 0, .script
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_2, Route13PokemonAttacksText, 71, 0, .script
 .script
     disappear ROUTE13_FIELDMON_2
     end

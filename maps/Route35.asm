@@ -547,7 +547,7 @@ Route35SignText:
 	done
 
 Route35FieldMon1Script:
-	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_1, Route35PokemonAttacksText, 34, 0, .script
+	trainer CLEFABLE, FIELD_MON, EVENT_FIELD_MON_1, Route35PokemonAttacksText, 41, 0, .script
 .script
     disappear ROUTE35_FIELDMON_1
     end

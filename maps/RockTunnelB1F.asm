@@ -76,31 +76,31 @@ RockTunnelB1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION
 
 RockTunnelB1FFieldMon1Script:
-	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_1, RockTunnelB1FPokemonAttacksText, 42, 0, .script
+	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_1, RockTunnelB1FPokemonAttacksText, 62, 0, .script
 .script
     disappear ROCKTUNNELB1F_FIELDMON_1
     end
 
 RockTunnelB1FFieldMon2Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, RockTunnelB1FPokemonAttacksText, 43, 0, .script
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, RockTunnelB1FPokemonAttacksText, 63, 0, .script
 .script
     disappear ROCKTUNNELB1F_FIELDMON_2
     end
 
 RockTunnelB1FFieldMon3Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_3, RockTunnelB1FPokemonAttacksText, 45, 0, .script
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_3, RockTunnelB1FPokemonAttacksText, 65, 0, .script
 .script
     disappear ROCKTUNNELB1F_FIELDMON_3
     end
 
 RockTunnelB1FFieldMon4Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_4, RockTunnelB1FPokemonAttacksText, 46, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_4, RockTunnelB1FPokemonAttacksText, 66, 0, .script
 .script
     disappear ROCKTUNNELB1F_FIELDMON_4
     end
 
 RockTunnelB1FFieldMon5Script:
-	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_5, RockTunnelB1FPokemonAttacksText, 50, 0, .script
+	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_5, RockTunnelB1FPokemonAttacksText, 70, 0, .script
 .script
     disappear ROCKTUNNELB1F_FIELDMON_5
     end

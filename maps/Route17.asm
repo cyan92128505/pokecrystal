@@ -33,43 +33,43 @@ Route17_MapScripts:
 	endcallback
 
 Route17FieldMon1Script:
-	trainer LOPUNNY, FIELD_MON, EVENT_FIELD_MON_1, Route17PokemonAttacksText, 50, 0, .script
+	trainer LOPUNNY, FIELD_MON, EVENT_FIELD_MON_1, Route17PokemonAttacksText, 60, 0, .script
 .script
     disappear ROUTE17_FIELDMON_1
     end
 
 Route17FieldMon2Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route17PokemonAttacksText, 51, 0, .script
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route17PokemonAttacksText, 61, 0, .script
 .script
     disappear ROUTE17_FIELDMON_2
     end
 
 Route17FieldMon3Script:
-	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_3, Route17PokemonAttacksText, 52, 0, .script
+	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_3, Route17PokemonAttacksText, 62, 0, .script
 .script
     disappear ROUTE17_FIELDMON_3
     end
 
 Route17FieldMon4Script:
-	trainer CONKELDURR, FIELD_MON, EVENT_FIELD_MON_4, Route17PokemonAttacksText, 52, 0, .script
+	trainer CONKELDURR, FIELD_MON, EVENT_FIELD_MON_4, Route17PokemonAttacksText, 62, 0, .script
 .script
     disappear ROUTE17_FIELDMON_4
     end
 
 Route17FieldMon5Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_5, Route17PokemonAttacksText, 53, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_5, Route17PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE17_FIELDMON_5
     end
 
 Route17FieldMon6Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, Route17PokemonAttacksText, 54, 0, .script
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, Route17PokemonAttacksText, 64, 0, .script
 .script
     disappear ROUTE17_FIELDMON_6
     end
 
 Route17FieldMon7Script:
-	trainer ARCANINE, FIELD_MON, EVENT_FIELD_MON_7, Route17PokemonAttacksText, 55, 0, .script
+	trainer ARCANINE, FIELD_MON, EVENT_FIELD_MON_7, Route17PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE17_FIELDMON_7
     end

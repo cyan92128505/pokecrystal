@@ -220,13 +220,13 @@ DarkCaveBlackthornEntranceFieldMon1Script:
     end
 
 DarkCaveBlackthornEntranceFieldMon2Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveBlackthornEntrancePokemonAttacksText, 62, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveBlackthornEntrancePokemonAttacksText, 72, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
     end
 
 DarkCaveBlackthornEntranceFieldMon3Script:
-	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 61, 0, .script
+	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 71, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     end

@@ -180,31 +180,31 @@ SupernerdMarkusAfterBattleText:
 	done
 
 MountMortar1FInsideFieldMon1Script:
-	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_1, MountMortar1FInsidePokemonAttacksText, 30, 0, .script
+	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_1, MountMortar1FInsidePokemonAttacksText, 50, 0, .script
 .script
     disappear MOUNTMORTAR1FINSIDE_FIELDMON_1
     end
 
 MountMortar1FInsideFieldMon2Script:
-	trainer GRAVELER, FIELD_MON, EVENT_FIELD_MON_2, MountMortar1FInsidePokemonAttacksText, 32, 0, .script
+	trainer GRAVELER, FIELD_MON, EVENT_FIELD_MON_2, MountMortar1FInsidePokemonAttacksText, 52, 0, .script
 .script
     disappear MOUNTMORTAR1FINSIDE_FIELDMON_2
     end
 
 MountMortar1FInsideFieldMon3Script:
-	trainer MACHOKE, FIELD_MON, EVENT_FIELD_MON_3, MountMortar1FInsidePokemonAttacksText, 31, 0, .script
+	trainer MACHOKE, FIELD_MON, EVENT_FIELD_MON_3, MountMortar1FInsidePokemonAttacksText, 51, 0, .script
 .script
     disappear MOUNTMORTAR1FINSIDE_FIELDMON_3
     end
 
 MountMortar1FInsideFieldMon4Script:
-	trainer GURDURR, FIELD_MON, EVENT_FIELD_MON_4, MountMortar1FInsidePokemonAttacksText, 31, 0, .script
+	trainer GURDURR, FIELD_MON, EVENT_FIELD_MON_4, MountMortar1FInsidePokemonAttacksText, 51, 0, .script
 .script
     disappear MOUNTMORTAR1FINSIDE_FIELDMON_4
     end
 
 MountMortar1FInsideFieldMon5Script:
-	trainer ONIX, FIELD_MON, EVENT_FIELD_MON_5, MountMortar1FInsidePokemonAttacksText, 33, 0, .script
+	trainer ONIX, FIELD_MON, EVENT_FIELD_MON_5, MountMortar1FInsidePokemonAttacksText, 53, 0, .script
 .script
     disappear MOUNTMORTAR1FINSIDE_FIELDMON_5
     end

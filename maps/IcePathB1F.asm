@@ -77,13 +77,13 @@ IcePathBoulderFellThroughText:
 	done
 
 IcePathB1FieldMon1Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_1, IcePathB1PokemonAttacksText, 52, 0, .script
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_1, IcePathB1PokemonAttacksText, 62, 0, .script
 .script
     disappear ICEPATHB1F_FIELDMON_1
     end
 
 IcePathB1FieldMon2Script:
-	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_2, IcePathB1PokemonAttacksText, 54, 0, .script
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_2, IcePathB1PokemonAttacksText, 64, 0, .script
 .script
     disappear ICEPATHB1F_FIELDMON_2
     end

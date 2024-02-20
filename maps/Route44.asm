@@ -496,13 +496,13 @@ Route44Sign2Text:
 	done
 
 Route44FieldMon1Script:
-	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_1, Route44PokemonAttacksText, 55, 0, .script
+	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_1, Route44PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE44_FIELDMON_1
     end
 
 Route44FieldMon2Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, Route44PokemonAttacksText, 44, 0, .script
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, Route44PokemonAttacksText, 64, 0, .script
 .script
     disappear ROUTE44_FIELDMON_2
     end

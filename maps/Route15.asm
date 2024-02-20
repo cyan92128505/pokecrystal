@@ -51,13 +51,13 @@ Route15_MapScripts:
     endcallback
 
 Route15FieldMon1Script:
-	trainer ARCANINE, FIELD_MON, EVENT_FIELD_MON_1, Route15PokemonAttacksText, 55, 0, .script
+	trainer ARCANINE, FIELD_MON, EVENT_FIELD_MON_1, Route15PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE15_FIELDMON_1
     end
 
 Route15FieldMon2Script:
-	trainer AERODACTYL, FIELD_MON, EVENT_FIELD_MON_2, Route15PokemonAttacksText, 56, 0, .script
+	trainer AERODACTYL, FIELD_MON, EVENT_FIELD_MON_2, Route15PokemonAttacksText, 66, 0, .script
 .script
     disappear ROUTE15_FIELDMON_2
     end

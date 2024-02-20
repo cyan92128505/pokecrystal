@@ -27,7 +27,7 @@ Route10South_MapScripts:
     endcallback
 
 Route10SouthFieldMon2Script:
-	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, Route10SouthPokemonAttacksText, 48, 0, .script
+	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, Route10SouthPokemonAttacksText, 68, 0, .script
 .script
     disappear ROUTE10SOUTH_FIELDMON_1
     end

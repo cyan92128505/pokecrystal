@@ -780,7 +780,7 @@ DayCareSignText:
 	done
 
 Route34FieldMon1Script:
-	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_1, Route34PokemonAttacksText, 33, 0, .script
+	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_1, Route34PokemonAttacksText, 37, 0, .script
 .script
     disappear ROUTE34_FIELDMON_1
     end

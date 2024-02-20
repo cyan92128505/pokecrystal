@@ -45,7 +45,7 @@ Route8_MapScripts:
     endcallback
 
 Route8FieldMon1Script:
-	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_1, Route8PokemonAttacksText, 44, 0, .script
+	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_1, Route8PokemonAttacksText, 64, 0, .script
 .script
     disappear ROUTE8_FIELDMON_1
     end
@@ -57,7 +57,7 @@ Route8FieldMon2Script:
     end
 
 Route8FieldMon3Script:
-	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_3, Route8PokemonAttacksText, 43, 0, .script
+	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_3, Route8PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE8_FIELDMON_3
     end

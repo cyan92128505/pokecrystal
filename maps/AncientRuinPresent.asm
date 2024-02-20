@@ -201,61 +201,61 @@ AncientRuinsPresentAmbrosia:
     itemball AMBROSIA
 
 AncientRuinsPresentFieldMon1Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, AncientRuinsPresentPokemonAttacksText, 52, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, AncientRuinsPresentPokemonAttacksText, 62, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_1
     end
 
 AncientRuinsPresentFieldMon2Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 51, 0, .script
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 61, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_2
     end
 
 AncientRuinsPresentFieldMon3Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 62, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, AncientRuinsPresentPokemonAttacksText, 72, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_3
     end
 
 AncientRuinsPresentFieldMon4Script:
-	trainer GENESECT, FIELD_MON, EVENT_FIELD_MON_4, AncientRuinsPresentPokemonAttacksText, 64, 0, .script
+	trainer GENESECT, FIELD_MON, EVENT_FIELD_MON_4, AncientRuinsPresentPokemonAttacksText, 74, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_4
     end
 
 AncientRuinsPresentFieldMon5Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 51, 0, .script
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 71, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_5
     end
 
 AncientRuinsPresentFieldMon6Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, AncientRuinsPresentPokemonAttacksText, 52, 0, .script
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, AncientRuinsPresentPokemonAttacksText, 72, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_6
     end
 
 AncientRuinsPresentFieldMon7Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientRuinsPresentPokemonAttacksText, 65, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_7, AncientRuinsPresentPokemonAttacksText, 75, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_7
     end
 
 AncientRuinsPresentFieldMon8Script:
-	trainer METAGROSS, FIELD_MON, EVENT_FIELD_MON_8, AncientRuinsPresentPokemonAttacksText, 65, 0, .script
+	trainer METAGROSS, FIELD_MON, EVENT_FIELD_MON_8, AncientRuinsPresentPokemonAttacksText, 75, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_8
     end
 
 AncientRuinsPresentFieldMon9Script:
-	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_9, AncientRuinsPresentPokemonAttacksText, 55, 0, .script
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_9, AncientRuinsPresentPokemonAttacksText, 75, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_9
     end
 
 AncientRuinsPresentFieldMon10Script:
-	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 70, 0, .script
+	trainer DARKRAI, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_10
     end

@@ -480,7 +480,7 @@ Route26SignText:
 	done
 
 Route26FieldMon1Script:
-	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_1, Route26PokemonAttacksText, 55, 0, .script
+	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_1, Route26PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE26_FIELDMON_1
     end

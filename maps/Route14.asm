@@ -30,13 +30,13 @@ Route14_MapScripts:
     endcallback
 
 Route14FieldMon1Script:
-	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route14PokemonAttacksText, 51, 0, .script
+	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route14PokemonAttacksText, 61, 0, .script
 .script
     disappear ROUTE14_FIELDMON_1
     end
 
 Route14FieldMon2Script:
-	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_2, Route14PokemonAttacksText, 55, 0, .script
+	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_2, Route14PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE14_FIELDMON_2
     end

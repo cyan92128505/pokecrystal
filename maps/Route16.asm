@@ -47,25 +47,25 @@ CyclingRoadSignText:
 	done
 	
 Route16FieldMon1Script:
-	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_1, Route16PokemonAttacksText, 50, 0, .script
+	trainer WEEZING, FIELD_MON, EVENT_FIELD_MON_1, Route16PokemonAttacksText, 60, 0, .script
 .script
     disappear ROUTE16_FIELDMON_1
     end
     
 Route16FieldMon2Script:
-	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_2, Route16PokemonAttacksText, 50, 0, .script
+	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_2, Route16PokemonAttacksText, 60, 0, .script
 .script
     disappear ROUTE16_FIELDMON_2
     end
     
 Route16FieldMon3Script:
-	trainer SCIZOR, FIELD_MON, EVENT_FIELD_MON_3, Route16PokemonAttacksText, 50, 0, .script
+	trainer SCIZOR, FIELD_MON, EVENT_FIELD_MON_3, Route16PokemonAttacksText, 60, 0, .script
 .script
     disappear ROUTE16_FIELDMON_3
     end
     
 Route16FieldMon4Script:
-	trainer BRELOOM, FIELD_MON, EVENT_FIELD_MON_4, Route16PokemonAttacksText, 50, 0, .script
+	trainer BRELOOM, FIELD_MON, EVENT_FIELD_MON_4, Route16PokemonAttacksText, 60, 0, .script
 .script
     disappear ROUTE16_FIELDMON_4
     end

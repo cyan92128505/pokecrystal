@@ -384,19 +384,19 @@ Route40SignText:
 	done
 
 AreaFieldMon1Script:
-	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, AreaPokemonAttacksText, 37, 0, .script
+	trainer GYARADOS, FIELD_MON, EVENT_FIELD_MON_1, AreaPokemonAttacksText, 57, 0, .script
 .script
     disappear AREA_FIELDMON_1
     end
 
 AreaFieldMon2Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, AreaPokemonAttacksText, 45, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, AreaPokemonAttacksText, 55, 0, .script
 .script
     disappear AREA_FIELDMON_2
     end
 
 AreaFieldMon3Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_3, AreaPokemonAttacksText, 44, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_3, AreaPokemonAttacksText, 54, 0, .script
 .script
     disappear AREA_FIELDMON_3
     end

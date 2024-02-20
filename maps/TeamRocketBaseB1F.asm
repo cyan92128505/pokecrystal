@@ -32,37 +32,37 @@ TeamRocketBaseB1F_MapScripts:
 	endcallback
 
 TeamRocketBaseB1FFieldMon1Script:
-	trainer NIDOKING, FIELD_MON, EVENT_FIELD_MON_1, TeamRocketBaseB1FPokemonAttacksText, 42, 0, .script
+	trainer NIDOKING, FIELD_MON, EVENT_FIELD_MON_1, TeamRocketBaseB1FPokemonAttacksText, 52, 0, .script
 .script
     disappear TEAMROCKETBASEB1F_FIELDMON_1
     end
 
 TeamRocketBaseB1FFieldMon2Script:
-	trainer NIDOKING, FIELD_MON, EVENT_FIELD_MON_2, TeamRocketBaseB1FPokemonAttacksText, 42, 0, .script
+	trainer NIDOKING, FIELD_MON, EVENT_FIELD_MON_2, TeamRocketBaseB1FPokemonAttacksText, 52, 0, .script
 .script
     disappear TEAMROCKETBASEB1F_FIELDMON_2
     end
 
 TeamRocketBaseB1FFieldMon3Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, TeamRocketBaseB1FPokemonAttacksText, 43, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, TeamRocketBaseB1FPokemonAttacksText, 53, 0, .script
 .script
     disappear TEAMROCKETBASEB1F_FIELDMON_3
     end
 
 TeamRocketBaseB1FFieldMon4Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_4, TeamRocketBaseB1FPokemonAttacksText, 43, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_4, TeamRocketBaseB1FPokemonAttacksText, 53, 0, .script
 .script
     disappear TEAMROCKETBASEB1F_FIELDMON_4
     end
 
  TeamRocketBaseB1FFieldMon5Script:
- 	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_5, TeamRocketBaseB1FPokemonAttacksText, 44, 0, .script
+ 	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_5, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
  .script
      disappear TEAMROCKETBASEB1F_FIELDMON_5
      end
 
  TeamRocketBaseB1FFieldMon6Script:
- 	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_6, TeamRocketBaseB1FPokemonAttacksText, 44, 0, .script
+ 	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_6, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
  .script
      disappear TEAMROCKETBASEB1F_FIELDMON_6
      end

@@ -330,25 +330,25 @@ Route39TrainerTipsText:
 	done
 
 Route39FieldMon1Script:
-	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route39PokemonAttacksText, 35, 0, .script
+	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route39PokemonAttacksText, 55, 0, .script
 .script
     disappear ROUTE39_FIELDMON_1
     end
 
 Route39FieldMon2Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route39PokemonAttacksText, 43, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route39PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE39_FIELDMON_2
     end
 
 Route39FieldMon3Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route39PokemonAttacksText, 36, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route39PokemonAttacksText, 56, 0, .script
 .script
     disappear ROUTE39_FIELDMON_3
     end
 
 Route39FieldMon4Script:
-	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_4, Route39PokemonAttacksText, 42, 0, .script
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_4, Route39PokemonAttacksText, 55, 0, .script
 .script
     disappear ROUTE39_FIELDMON_4
     end

@@ -592,37 +592,37 @@ Route45SignText:
 	done
 
 Route45FieldMon1Script:
-	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, Route45PokemonAttacksText, 44, 0, .script
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_1, Route45PokemonAttacksText, 64, 0, .script
 .script
     disappear ROUTE45_FIELDMON_1
     end
 
 Route45FieldMon2Script:
-	trainer FERROTHORN, FIELD_MON, EVENT_FIELD_MON_2, Route45PokemonAttacksText, 44, 0, .script
+	trainer FERROTHORN, FIELD_MON, EVENT_FIELD_MON_2, Route45PokemonAttacksText, 64, 0, .script
 .script
     disappear ROUTE45_FIELDMON_2
     end
 
 Route45FieldMon3Script:
-	trainer SKARMORY, FIELD_MON, EVENT_FIELD_MON_3, Route45PokemonAttacksText, 45, 0, .script
+	trainer SKARMORY, FIELD_MON, EVENT_FIELD_MON_3, Route45PokemonAttacksText, 65, 0, .script
 .script
     disappear ROUTE45_FIELDMON_3
     end
 
 Route45FieldMon4Script:
-	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_4, Route45PokemonAttacksText, 46, 0, .script
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_4, Route45PokemonAttacksText, 66, 0, .script
 .script
     disappear ROUTE45_FIELDMON_4
     end
 
 Route45FieldMon5Script:
-	trainer GLISCOR, FIELD_MON, EVENT_FIELD_MON_5, Route45PokemonAttacksText, 48, 0, .script
+	trainer GLISCOR, FIELD_MON, EVENT_FIELD_MON_5, Route45PokemonAttacksText, 68, 0, .script
 .script
     disappear ROUTE45_FIELDMON_5
     end
 
 Route45FieldMon6Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_6, Route45PokemonAttacksText, 70, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_6, Route45PokemonAttacksText, 80, 0, .script
 .script
     disappear ROUTE45_FIELDMON_6
     end

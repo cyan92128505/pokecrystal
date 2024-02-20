@@ -572,7 +572,7 @@ LakeOfRageFieldMon1Script:
 	end
 
 LakeOfRageFieldMon2Script:
-	trainer GRENINJA, FIELD_MON, EVENT_FIELD_MON_2, LakeOfRagePokemonAttacksText, 62, 0, .script
+	trainer GRENINJA, FIELD_MON, EVENT_FIELD_MON_2, LakeOfRagePokemonAttacksText, 72, 0, .script
 .script
     disappear LAKEOFRAGE_FIELDMON_2
     end

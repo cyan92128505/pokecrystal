@@ -42,13 +42,13 @@ Route6_MapScripts:
     endcallback
 
 Route6FieldMon1Script:
-	trainer PINSIR, FIELD_MON, EVENT_FIELD_MON_1, Route6PokemonAttacksText, 42, 0, .script
+	trainer PINSIR, FIELD_MON, EVENT_FIELD_MON_1, Route6PokemonAttacksText, 62, 0, .script
 .script
     disappear ROUTE6_FIELDMON_1
     end
 
 Route6FieldMon2Script:
-	trainer JOLTEON, FIELD_MON, EVENT_FIELD_MON_2, Route6PokemonAttacksText, 44, 0, .script
+	trainer JOLTEON, FIELD_MON, EVENT_FIELD_MON_2, Route6PokemonAttacksText, 64, 0, .script
 .script
     disappear ROUTE6_FIELDMON_2
     end

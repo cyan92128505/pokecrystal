@@ -601,13 +601,13 @@ Route43TrainerTipsText:
 	done
 
 Route43FieldMon1Script:
-	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_1, Route43PokemonAttacksText, 53, 0, .script
+	trainer STARAPTOR, FIELD_MON, EVENT_FIELD_MON_1, Route43PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE43_FIELDMON_1
     end
 
 Route43FieldMon2Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_2, Route43PokemonAttacksText, 51, 0, .script
+	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_2, Route43PokemonAttacksText, 61, 0, .script
 .script
     disappear ROUTE43_FIELDMON_2
     end

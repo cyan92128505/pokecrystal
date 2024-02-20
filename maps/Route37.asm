@@ -293,25 +293,25 @@ Route37SignText:
 	done
 
 Route37FieldMon1Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, Route37PokemonAttacksText, 41, 3, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, Route37PokemonAttacksText, 51, 3, .script
 .script
     disappear ROUTE37_FIELDMON_1
     end
 
 Route37FieldMon2Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_2, Route37PokemonAttacksText, 34, 3, .script
+	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_2, Route37PokemonAttacksText, 54, 3, .script
 .script
     disappear ROUTE37_FIELDMON_2
     end
 
 Route37FieldMon3Script:
-	trainer LAMPENT, FIELD_MON, EVENT_FIELD_MON_3, Route37PokemonAttacksText, 30, 3, .script
+	trainer LAMPENT, FIELD_MON, EVENT_FIELD_MON_3, Route37PokemonAttacksText, 50, 3, .script
 .script
     disappear ROUTE37_FIELDMON_3
     end
 
 Route37FieldMon4Script:
-	trainer DOUBLADE, FIELD_MON, EVENT_FIELD_MON_4, Route37PokemonAttacksText, 30, 3, .script
+	trainer DOUBLADE, FIELD_MON, EVENT_FIELD_MON_4, Route37PokemonAttacksText, 50, 3, .script
 .script
     disappear ROUTE37_FIELDMON_4
     end

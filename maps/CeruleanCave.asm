@@ -73,61 +73,61 @@ CeruleanCaveHiddenKingsRock:
 	hiddenitem KINGS_ROCK, EVENT_CERULEAN_CAVE_HIDDEN_KINGS_ROCK
 	
 CeruleanCaveFieldMon1Script:
-	trainer RAICHU, FIELD_MON, EVENT_FIELD_MON_1, CeruleanCavePokemonAttacksText, 63, 0, .script
+	trainer RAICHU, FIELD_MON, EVENT_FIELD_MON_1, CeruleanCavePokemonAttacksText, 73, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_1
     end
 
 CeruleanCaveFieldMon2Script:
-	trainer ELECTRODE, FIELD_MON, EVENT_FIELD_MON_2, CeruleanCavePokemonAttacksText, 65, 0, .script
+	trainer ELECTRODE, FIELD_MON, EVENT_FIELD_MON_2, CeruleanCavePokemonAttacksText, 75, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_2
     end
 
 CeruleanCaveFieldMon3Script:
-	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_3, CeruleanCavePokemonAttacksText, 67, 0, .script
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_3, CeruleanCavePokemonAttacksText, 77, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_3
     end
 
 CeruleanCaveFieldMon4Script:
-	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_4, CeruleanCavePokemonAttacksText, 64, 0, .script
+	trainer GOLEM, FIELD_MON, EVENT_FIELD_MON_4, CeruleanCavePokemonAttacksText, 74, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_4
     end
 
 CeruleanCaveFieldMon5Script:
-	trainer CHANSEY, FIELD_MON, EVENT_FIELD_MON_5, CeruleanCavePokemonAttacksText, 66, 0, .script
+	trainer CHANSEY, FIELD_MON, EVENT_FIELD_MON_5, CeruleanCavePokemonAttacksText, 76, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_5
     end
 
 CeruleanCaveFieldMon6Script:
-	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_6, CeruleanCavePokemonAttacksText, 65, 0, .script
+	trainer DITTO, FIELD_MON, EVENT_FIELD_MON_6, CeruleanCavePokemonAttacksText, 75, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_6
     end
 
 CeruleanCaveFieldMon7Script:
-	trainer WIGGLYTUFF, FIELD_MON, EVENT_FIELD_MON_7, CeruleanCavePokemonAttacksText, 66, 0, .script
+	trainer WIGGLYTUFF, FIELD_MON, EVENT_FIELD_MON_7, CeruleanCavePokemonAttacksText, 76, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_7
     end
 
 CeruleanCaveFieldMon8Script:
-	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_8, CeruleanCavePokemonAttacksText, 64, 0, .script
+	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_8, CeruleanCavePokemonAttacksText, 74, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_8
     end
 
 CeruleanCaveFieldMon9Script:
-	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_9, CeruleanCavePokemonAttacksText, 63, 0, .script
+	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_9, CeruleanCavePokemonAttacksText, 73, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_9
     end
 
 CeruleanCaveFieldMon10Script:
-	trainer ALAKAZAM, FIELD_MON, EVENT_FIELD_MON_10, CeruleanCavePokemonAttacksText, 70, 0, .script
+	trainer ALAKAZAM, FIELD_MON, EVENT_FIELD_MON_10, CeruleanCavePokemonAttacksText, 80, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_10
     end

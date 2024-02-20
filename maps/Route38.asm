@@ -496,13 +496,13 @@ Route38TrainerTipsText:
 	done
 
 Route38FieldMon1Script:
-	trainer PORYGONZ, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 44, 0, .script
+	trainer PORYGONZ, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 54, 0, .script
 .script
     disappear ROUTE38_FIELDMON_1
     end
 
 Route38FieldMon2Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route38PokemonAttacksText, 46, 0, .script
+	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route38PokemonAttacksText, 56, 0, .script
 .script
     disappear ROUTE38_FIELDMON_2
     end

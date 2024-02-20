@@ -63,61 +63,61 @@ ShayminCry:
     done
     
 LavenderForestFieldMon1Script:
-	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, LavenderForestPokemonAttacksText, 53, 0, .script
+	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, LavenderForestPokemonAttacksText, 73, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_1
     end
 
 LavenderForestFieldMon2Script:
-	trainer POLTEGEIST, FIELD_MON, EVENT_FIELD_MON_2, LavenderForestPokemonAttacksText, 52, 0, .script
+	trainer POLTEGEIST, FIELD_MON, EVENT_FIELD_MON_2, LavenderForestPokemonAttacksText, 72, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_2
     end
 
 LavenderForestFieldMon3Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_3, LavenderForestPokemonAttacksText, 53, 0, .script
+	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_3, LavenderForestPokemonAttacksText, 73, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_3
     end
 
 LavenderForestFieldMon4Script:
-	trainer ROTOM, FIELD_MON, EVENT_FIELD_MON_4, LavenderForestPokemonAttacksText, 54, 0, .script
+	trainer ROTOM, FIELD_MON, EVENT_FIELD_MON_4, LavenderForestPokemonAttacksText, 74, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_4
     end
 
 LavenderForestFieldMon5Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 54, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 74, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_5
     end
 
 LavenderForestFieldMon6Script:
-	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_6, LavenderForestPokemonAttacksText, 57, 0, .script
+	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_6, LavenderForestPokemonAttacksText, 77, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_6
     end
 
 LavenderForestFieldMon7Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_7, LavenderForestPokemonAttacksText, 53, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_7, LavenderForestPokemonAttacksText, 73, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_7
     end
 
 LavenderForestFieldMon8Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_8, LavenderForestPokemonAttacksText, 53, 0, .script
+	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_8, LavenderForestPokemonAttacksText, 73, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_8
     end
 
 LavenderForestFieldMon9Script:
-	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_9, LavenderForestPokemonAttacksText, 55, 0, .script
+	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_9, LavenderForestPokemonAttacksText, 77, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_9
     end
 
 LavenderForestFieldMon10Script:
-	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_10, LavenderForestPokemonAttacksText, 65, 0, .script
+	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_10, LavenderForestPokemonAttacksText, 77, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_10
     end

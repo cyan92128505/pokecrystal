@@ -635,13 +635,13 @@ Route36TrainerTips2Text:
 	done
 	
 Route36FieldMon1Script:
-	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_1, Route36PokemonAttacksText, 32, 0, .script
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_1, Route36PokemonAttacksText, 42, 0, .script
 .script
     disappear ROUTE36_FIELDMON_1
     end
 
 Route36FieldMon2Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route36PokemonAttacksText, 36, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route36PokemonAttacksText, 46, 0, .script
 .script
     disappear ROUTE36_FIELDMON_2
     end

@@ -17,13 +17,13 @@ TinTower8F_MapScripts:
     endcallback
 
 TinTower8FFieldMon1Script:
-	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_1, TinTower8FAttacksText, 52, 0, .script
+	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_1, TinTower8FAttacksText, 62, 0, .script
 .script
     disappear TINTOWER8F_FIELDMON_1
     end
 
 TinTower8FFieldMon2Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, TinTower8FAttacksText, 51, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, TinTower8FAttacksText, 61, 0, .script
 .script
     disappear TINTOWER8F_FIELDMON_2
     end

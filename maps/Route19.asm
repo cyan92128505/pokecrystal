@@ -36,13 +36,13 @@ Route19_MapScripts:
 	endcallback
 
 Route19FieldMon1Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_1, Route19PokemonAttacksText, 50, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_1, Route19PokemonAttacksText, 70, 0, .script
 .script
     disappear ROUTE19_FIELDMON_1
     end
 
 Route19FieldMon2Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, Route19PokemonAttacksText, 52, 0, .script
+	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, Route19PokemonAttacksText, 72, 0, .script
 .script
     disappear ROUTE19_FIELDMON_2
     end

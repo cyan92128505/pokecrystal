@@ -83,31 +83,31 @@ WhirlIslandB1FHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_WHIRL_ISLAND_B1F_HIDDEN_FULL_RESTORE
 
 WhirlIslandB1FFieldMon1Script:
-	trainer GABITE, FIELD_MON, EVENT_FIELD_MON_1, WhirlIslandB1FPokemonAttacksText, 43, 0, .script
+	trainer GABITE, FIELD_MON, EVENT_FIELD_MON_1, WhirlIslandB1FPokemonAttacksText, 63, 0, .script
 .script
     disappear WHIRLISLANDB1F_FIELDMON_1
     end
 
 WhirlIslandB1FFieldMon2Script:
-	trainer SHELGON, FIELD_MON, EVENT_FIELD_MON_2, WhirlIslandB1FPokemonAttacksText, 43, 0, .script
+	trainer SHELGON, FIELD_MON, EVENT_FIELD_MON_2, WhirlIslandB1FPokemonAttacksText, 63, 0, .script
 .script
     disappear WHIRLISLANDB1F_FIELDMON_2
     end
 
 WhirlIslandB1FFieldMon3Script:
-	trainer DRAGONAIR, FIELD_MON, EVENT_FIELD_MON_3, WhirlIslandB1FPokemonAttacksText, 43, 0, .script
+	trainer DRAGONAIR, FIELD_MON, EVENT_FIELD_MON_3, WhirlIslandB1FPokemonAttacksText, 63, 0, .script
 .script
     disappear WHIRLISLANDB1F_FIELDMON_3
     end
 
 WhirlIslandB1FFieldMon4Script:
-	trainer ARCTOZOLT, FIELD_MON, EVENT_FIELD_MON_4, WhirlIslandB1FPokemonAttacksText, 45, 0, .script
+	trainer ARCTOZOLT, FIELD_MON, EVENT_FIELD_MON_4, WhirlIslandB1FPokemonAttacksText, 65, 0, .script
 .script
     disappear WHIRLISLANDB1F_FIELDMON_4
     end
 
 WhirlIslandB1FFieldMon5Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, WhirlIslandB1FPokemonAttacksText, 45, 0, .script
+	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, WhirlIslandB1FPokemonAttacksText, 65, 0, .script
 .script
     disappear WHIRLISLANDB1F_FIELDMON_5
     end

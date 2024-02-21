@@ -856,7 +856,7 @@ CrystalFinalLossText:
 
 CrystalFinalWinText:
     text "You don't have"
-    line "let me win."
+    line "to let me win."
     done
 
 CrystalFinalLoseAfterBattleText:

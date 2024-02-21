@@ -46,8 +46,8 @@
 	const DOUBLE_EDGE  ; 26
 	const TAIL_WHIP    ; 27
 	const POISON_STING ; 28
-	const TWINEEDLE    ; 29 - not used
-	const PIN_MISSILE  ; 2a - not used
+	const STONE_EDGE   ; 29
+	const SCALD        ; 2a
 	const LEER         ; 2b
 	const BITE         ; 2c
 	const GROWL        ; 2d

@@ -41,8 +41,8 @@ MoveDescriptions::
 	dw DoubleEdgeDescription
 	dw TailWhipDescription
 	dw PoisonStingDescription
-	dw TwineedleDescription
-	dw PinMissileDescription
+	dw StoneEdgeDescription
+	dw ScaldDescription
 	dw LeerDescription
 	dw BiteDescription
 	dw GrowlDescription
@@ -429,13 +429,13 @@ PoisonStingDescription:
 	db   "An attack that may"
 	next "poison the target.@"
 
-TwineedleDescription:
-	db   "Jabs the foe twice"
-	next "using stingers.@"
+StoneEdgeDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
-PinMissileDescription:
-	db   "Fires pins that"
-	next "strike 2-5 times.@"
+ScaldDescription:
+	db   "An attack that may"
+	next "inflict a burn.@"
 
 LeerDescription:
 	db   "Reduces the foe's"

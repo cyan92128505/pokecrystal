@@ -311,11 +311,20 @@ FadeToMapMusic::
 	push bc
 	push af
 
+	ld a, [wHoenInvasionUnderway]
+	and a
+	jr z, .normal
+	ld de, MUSIC_RED_INDIGO_PLATEAU
+	ld a, [wMapMusic]
+	jr .setMusic
+
+.normal
 	call GetMapMusic_MaybeSpecial
 	ld a, [wMapMusic]
 	cp e
 	jr z, .done
 
+.setMusic
 	ld a, 8
 	ld [wMusicFade], a
 	ld a, e
@@ -394,29 +403,12 @@ RestartMapMusic::
 	ret
 
 SpecialMapMusic::
-;	ld a, [wPlayerState]
-;	cp PLAYER_SURF
-;	jr z, .surf
-;	cp PLAYER_SURF_PIKA
-;	jr z, .surf
-
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	jr nz, .contest
-
 .no
 	and a
 	ret
-
-;.bike ; unreferenced
-;	ld de, MUSIC_BICYCLE
-;	scf
-;	ret
-
-;.surf
-;	ld de, MUSIC_SURF
-;	scf
-;	ret
 
 .contest
 	ld a, [wMapGroup]

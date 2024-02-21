@@ -42,8 +42,8 @@ BattleAnimations::
 	dw BattleAnim_DoubleEdge
 	dw BattleAnim_TailWhip
 	dw BattleAnim_PoisonSting
-	dw BattleAnim_Twineedle
-	dw BattleAnim_PinMissile
+	dw BattleAnim_StoneEdge
+	dw BattleAnim_Scald
 	dw BattleAnim_Leer
 	dw BattleAnim_Bite
 	dw BattleAnim_Growl
@@ -2996,6 +2996,7 @@ BattleAnim_Sludge:
 	anim_wait 56
 	anim_ret
 
+BattleAnim_Scald:
 BattleAnim_Toxic:
 	anim_1gfx ANIM_GFX_POISON
 	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
@@ -4122,6 +4123,7 @@ BattleAnim_Dynamicpunch:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_StoneEdge:
 BattleAnim_Megahorn:
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $2, $0

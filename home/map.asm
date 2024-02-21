@@ -2202,15 +2202,8 @@ GetWorldMapLocation::
 GetMapMusic::
 	push hl
 	push bc
-	ld a, [wHoenInvasionUnderway]
-	and a
-	jr z, .normal
-	ld c, MUSIC_RED_INDIGO_PLATEAU
-	jr .continue
-.normal
 	ld de, MAP_MUSIC
 	call GetMapField
-.continue
 	ld a, c
 	cp MUSIC_MAHOGANY_MART
 	jr z, .mahoganymart

@@ -1229,7 +1229,7 @@ BattleTowerMons:
 
 	db MILOTIC
 	db LEFTOVERS
-	db SURF, ICE_BEAM, ATTRACT, RECOVER
+	db SCALD, ICE_BEAM, ATTRACT, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2091,7 +2091,7 @@ BattleTowerMons:
 
 	db SUICUNE
 	db LEFTOVERS
-	db CALM_MIND, SURF, REST, SLEEP_TALK
+	db CALM_MIND, SCALD, REST, SLEEP_TALK
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2247,7 +2247,7 @@ BattleTowerMons:
 
     db TYRANITAR
 	db LEFTOVERS
-	db DRAGON_DANCE, ROCK_SLIDE, CRUNCH, EARTHQUAKE
+	db DRAGON_DANCE, STONE_EDGE, CRUNCH, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2257,7 +2257,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 16 ; PP
+	db 24, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 64 ; Level
@@ -2637,7 +2637,7 @@ BattleTowerMons:
 
 	db MILOTIC
 	db LEFTOVERS
-	db SURF, ICE_BEAM, CALM_MIND, RECOVER
+	db SCALD, ICE_BEAM, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2767,7 +2767,7 @@ BattleTowerMons:
 
 	db RHYPERIOR
 	db LEFTOVERS
-	db EARTHQUAKE, ROCK_SLIDE, MEGAHORN, SWORDS_DANCE
+	db EARTHQUAKE, STONE_EDGE, MEGAHORN, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2777,7 +2777,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 32 ; PP
+	db 16, 16, 16, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 61 ; Level
@@ -3419,7 +3419,7 @@ BattleTowerMons:
 
 	db SUICUNE
 	db LEFTOVERS
-	db CALM_MIND, SURF, REST, SLEEP_TALK
+	db CALM_MIND, SCALD, REST, SLEEP_TALK
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -3681,7 +3681,7 @@ BattleTowerMons:
 
     db TYRANITAR
 	db LEFTOVERS
-	db DRAGON_DANCE, ROCK_SLIDE, CRUNCH, EARTHQUAKE
+	db DRAGON_DANCE, STONE_EDGE, CRUNCH, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -3691,7 +3691,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 16 ; PP
+	db 24, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 82 ; Level
@@ -3967,7 +3967,7 @@ BattleTowerMons:
 
 	db MILOTIC
 	db LEFTOVERS
-	db SURF, ICE_BEAM, CALM_MIND, RECOVER
+	db SCALD, ICE_BEAM, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -4699,7 +4699,7 @@ BattleTowerMons:
 
 	db SUICUNE
 	db LEFTOVERS
-	db CALM_MIND, SURF, ICE_BEAM, REST
+	db CALM_MIND, SCALD, ICE_BEAM, REST
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5167,7 +5167,7 @@ BattleTowerMons:
 
     db TYRANITAR
 	db LEFTOVERS
-	db DRAGON_DANCE, ROCK_SLIDE, CRUNCH, EARTHQUAKE
+	db DRAGON_DANCE, STONE_EDGE, CRUNCH, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5177,7 +5177,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 16 ; PP
+	db 24, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5219,7 +5219,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db CHOICE_BAND
-	db BRAVE_BIRD, EARTHQUAKE, ROCK_SLIDE, DOUBLE_EDGE
+	db STONE_EDGE, BRAVE_BIRD, EARTHQUAKE, DOUBLE_EDGE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5229,7 +5229,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 24, 24 ; PP
+	db 16, 24, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5947,7 +5947,7 @@ BattleTowerMons:
 
 	db RHYPERIOR
 	db LEFTOVERS
-	db EARTHQUAKE, ROCK_SLIDE, MEGAHORN, SWORDS_DANCE
+	db EARTHQUAKE, STONE_EDGE, MEGAHORN, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -5957,7 +5957,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 32 ; PP
+	db 16, 16, 16, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -6285,7 +6285,7 @@ BattleTowerMons:
 
 	db MILOTIC
 	db LEFTOVERS
-	db SURF, ICE_BEAM, CALM_MIND, RECOVER
+	db SCALD, ICE_BEAM, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp

@@ -1062,7 +1062,7 @@ TentacoolEvosAttacks:
 	db 25, SCREECH
 	db 31, POISON_JAB
 	db 35, SLUDGE_BOMB
-	db 40, SURF
+	db 40, SCALD
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1077,7 +1077,7 @@ TentacruelEvosAttacks:
 	db 25, SCREECH
 	db 30, POISON_JAB
 	db 35, SLUDGE_BOMB
-	db 40, SURF
+	db 40, SCALD
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1093,7 +1093,8 @@ GeodudeEvosAttacks:
 	db 30, ROLLOUT
 	db 40, EARTHQUAKE
 	db 45, SANDSTORM
-	db 50, EXPLOSION
+	db 50, STONE_EDGE
+	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
@@ -1108,7 +1109,8 @@ GravelerEvosAttacks:
 	db 30, ROLLOUT
 	db 41, EARTHQUAKE
 	db 45, SANDSTORM
-	db 50, EXPLOSION
+	db 50, STONE_EDGE
+	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
@@ -1122,7 +1124,8 @@ GolemEvosAttacks:
 	db 30, ROLLOUT
 	db 40, EARTHQUAKE
 	db 45, SANDSTORM
-	db 50, EXPLOSION
+	db 50, STONE_EDGE
+	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
@@ -1459,7 +1462,7 @@ MiloticEvosAttacks:
 	db 31, HYPNOSIS
 	db 33, RECOVER
 	db 36, AURORA_BEAM
-	db 40, SURF
+	db 40, SCALD
 	db 42, HYPNOSIS
 	db 44, RECOVER
 	db 50, HYDRO_PUMP
@@ -1644,6 +1647,7 @@ RhyhornEvosAttacks:
 	db 38, HORN_DRILL
 	db 44, MEGAHORN
 	db 50, EARTHQUAKE
+	db 55, STONE_EDGE
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
@@ -1660,6 +1664,7 @@ RhydonEvosAttacks:
 	db 37, HORN_DRILL
 	db 44, MEGAHORN
 	db 51, EARTHQUAKE
+	db 55, STONE_EDGE
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
@@ -1708,6 +1713,7 @@ RhyperiorEvosAttacks:
 	db 37, POISON_JAB
 	db 44, MEGAHORN
 	db 50, EARTHQUAKE
+	db 55, STONE_EDGE
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
@@ -1993,8 +1999,9 @@ VaporeonEvosAttacks:
 	db 20, BITE
 	db 24, BUBBLEBEAM
 	db 28, ACID_ARMOR
-	db 32, AURORA_BEAM
-	db 42, HAZE
+	db 34, AURORA_BEAM
+	db 40, SCALD
+	db 43, HAZE
 	db 46, HYDRO_PUMP
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
@@ -2120,6 +2127,7 @@ AerodactylEvosAttacks:
 	db 33, CRUNCH
 	db 35, ROCK_SLIDE
 	db 40, DOUBLE_EDGE
+	db 45, STONE_EDGE
 	db 50, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
@@ -2572,8 +2580,9 @@ ChinchouEvosAttacks:
 	db 21, RAIN_DANCE
 	db 23, CONFUSE_RAY
 	db 30, THUNDERBOLT
-	db 40, HYDRO_PUMP
-	db 45, THUNDER
+	db 40, SCALD
+	db 45, HYDRO_PUMP
+	db 50, THUNDER
 	db 0 ; no more level-up moves
 
 LanturnEvosAttacks:
@@ -2588,8 +2597,9 @@ LanturnEvosAttacks:
 	db 21, RAIN_DANCE
 	db 23, CONFUSE_RAY
 	db 30, THUNDERBOLT
-	db 40, HYDRO_PUMP
-	db 45, THUNDER
+	db 40, SCALD
+	db 45, HYDRO_PUMP
+	db 50, THUNDER
 	db 0 ; no more level-up moves
 
 LitwickEvosAttacks:
@@ -2800,11 +2810,10 @@ PolitoedEvosAttacks:
 	db 20, BUBBLEBEAM
 	db 25, RAIN_DANCE
 	db 30, BODY_SLAM
-	db 35, WATERFALL
-	db 40, PERISH_SONG
+	db 35, PERISH_SONG
+	db 40, SCALD
 	db 45, THUNDER
 	db 50, HYDRO_PUMP
-	db 55, HYPNOSIS
 	db 0 ; no more level-up moves
 
 TimburrEvosAttacks:
@@ -2930,6 +2939,7 @@ WooperEvosAttacks:
 	db 31, RECOVER
 	db 36, EARTHQUAKE
 	db 41, RAIN_DANCE
+	db 45, SCALD
 	db 51, HAZE
 	db 0 ; no more level-up moves
 
@@ -2943,6 +2953,7 @@ QuagsireEvosAttacks:
 	db 31, RECOVER
 	db 36, EARTHQUAKE
 	db 41, RAIN_DANCE
+	db 45, SCALD
 	db 51, HAZE
 	db 0 ; no more level-up moves
 
@@ -3007,6 +3018,7 @@ SlowkingEvosAttacks:
 	db 32, RECOVER
 	db 35, PSYCHIC_M
 	db 40, CALM_MIND
+	db 45, SCALD
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
@@ -3651,7 +3663,7 @@ SuicuneEvosAttacks:
 	db 31, GUST
 	db 41, AURORA_BEAM
 	db 45, MIRROR_COAT
-	db 50, ICE_BEAM
+	db 50, SCALD
 	db 55, HYDRO_PUMP
 	db 60, CALM_MIND
 	db 0 ; no more level-up moves
@@ -3667,6 +3679,7 @@ LarvitarEvosAttacks:
 	db 31, CRUNCH
 	db 40, EARTHQUAKE
 	db 55, DRAGON_DANCE
+	db 60, STONE_EDGE
 	db 0 ; no more level-up moves
 
 PupitarEvosAttacks:
@@ -3680,6 +3693,7 @@ PupitarEvosAttacks:
 	db 30, CRUNCH
 	db 40, EARTHQUAKE
 	db 55, DRAGON_DANCE
+	db 60, STONE_EDGE
 	db 0 ; no more level-up moves
 
 TyranitarEvosAttacks:
@@ -3693,6 +3707,7 @@ TyranitarEvosAttacks:
 	db 40, EARTHQUAKE
 	db 50, HYPER_BEAM
 	db 55, DRAGON_DANCE
+	db 60, STONE_EDGE
 	db 0 ; no more level-up moves
 
 LugiaEvosAttacks:

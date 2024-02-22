@@ -51,6 +51,7 @@ WallaceScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer WALLACE, FUHRER_WALLACE
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	special FadeOutMusic
 	setevent EVENT_BEAT_WALLACE
@@ -172,6 +173,27 @@ WallaceScript:
     disappear WARZONE_OAK
     turnobject PLAYER, UP
 	end
+.lose
+    applymovement PLAYER, Player_Fall
+    dontrestartmapmusic
+    reloadmap
+	opentext
+	writetext WallaceHeroText
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	special Reset
+	end
+
+WallaceHeroText:
+	text "You were never the"
+	line "hero of this"
+	cont "story."
+	done
+
+Player_Fall:
+    skyfall_top
+    step_end
 
 WarZoneMovement_SilverApproaches:
     step UP
@@ -1317,6 +1339,38 @@ InvaderOroboroAfterBattleText:
 	line "reason you won!"
 	done
 
+SaveBeforeWallaceScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .end
+    opentext
+    writetext AboutToFightWallaceText
+    waitbutton
+    closetext
+    yesorno
+    iffalse .declined
+    special TryQuickSave
+    iffalse .declined
+    applymovement PLAYER, WarZoneMovement_PlayerForward
+.end
+    end
+.declined
+    applymovement PLAYER, WarZoneMovement_PlayerBackward
+    end
+
+AboutToFightWallaceText:
+	text "Wallace awaits."
+	para "You must save your"
+	line "game?"
+	done
+
+WarZoneMovement_PlayerForward:
+    step UP
+    step_end
+
+WarZoneMovement_PlayerBackward:
+    step DOWN
+    step_end
+
 WarZone_MapEvents:
 	db 0, 0 ; filler
 
@@ -1325,6 +1379,8 @@ WarZone_MapEvents:
 	warp_event  13, 35, FUCHSIA_CITY, 12
 
 	def_coord_events
+	coord_event  20,  8, SCENE_ALWAYS, SaveBeforeWallaceScript
+	coord_event  21,  8, SCENE_ALWAYS, SaveBeforeWallaceScript
 	coord_event  20,  7, SCENE_ALWAYS, FightWallaceScript1
 	coord_event  21,  7, SCENE_ALWAYS, FightWallaceScript2
 	coord_event  7,  32, SCENE_ALWAYS, WarZoneBlueScript1

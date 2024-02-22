@@ -40,6 +40,7 @@ MurderScript1:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer HIKER, MAHOGANY_MURDERER
 	startbattle
+    ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MAHOGANY_MURDERER
 	turnobject PLAYER, UP
@@ -49,6 +50,10 @@ MurderScript1:
 	verbosegiveitem TM_THUNDERBOLT
 	closetext
 	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat1
+	end
+.lose
+	special FadeOutPalettes
+	special Reset
 	end
 
 MurderScript2:

@@ -1345,15 +1345,15 @@ SaveBeforeWallaceScript:
     opentext
     writetext AboutToFightWallaceText
     waitbutton
-    closetext
     yesorno
     iffalse .declined
     special TryQuickSave
     iffalse .declined
-    applymovement PLAYER, WarZoneMovement_PlayerForward
+    closetext
 .end
     end
 .declined
+    closetext
     applymovement PLAYER, WarZoneMovement_PlayerBackward
     end
 

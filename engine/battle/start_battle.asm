@@ -120,8 +120,65 @@ PlayBattleMusic:
 	; Are we fighting a trainer?
 	ld a, [wOtherTrainerClass]
 	and a
-	jr nz, .trainermusic
+	jp nz, .trainermusic
 
+; music for ubers
+	ld a, [wTempWildMonSpecies]
+	cp ARCEUS
+	jr z, .arceus
+	cp MEWTWO
+	jr z, .mewtwo
+	cp LUGIA
+	jr z, .lugia
+	cp HO_OH
+	jr z, .lugia
+	cp ZYGARDE
+	jr z, .lugia
+	cp KYOGRE
+	jr z, .hoen
+	cp GROUDON
+	jr z, .hoen
+	cp RAYQUAZA
+	jr z, .hoen
+	cp GIRATINA
+	jr z, .creation
+	cp PALKIA
+	jr z, .creation
+	cp DIALGA
+	jr z, .creation
+	cp XERNEAS
+	jr z, .life
+	cp YVELTAL
+	jr z, .life
+	cp REGIGIGAS
+	jr z, .life
+    jr .notUber
+
+.arceus
+    ld de, MUSIC_EPIC_TETRIS
+    jp .done
+
+.mewtwo
+    ld de, MUSIC_FINAL_BATTLE
+    jp .done
+
+.lugia
+    ld de, MUSIC_LUGIA_SONG
+    jp .done
+
+.hoen
+    ld de, MUSIC_HOEN_CHAMPION
+    jp .done
+
+.creation
+    ld de, MUSIC_ZINNIA_BATTLE
+    jp .done
+
+.life
+    ld de, MUSIC_UNOVA_ELITE_FOUR
+    jp .done
+
+.notUber
     ; is this suicune battle
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE

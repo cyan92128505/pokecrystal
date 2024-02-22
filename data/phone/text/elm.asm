@@ -72,157 +72,118 @@ ElmPhoneEggHatchedText:
 
 ElmPhoneDiscoveredHatchTimeText:
 	text "Hello, <PLAY_G>?"
-
-	para "I just made a new"
-	line "discovery."
-
-	para "The time it takes"
-	line "for an EGG to"
-
-	para "hatch depends on"
-	line "the #MON."
+	para "I just want to let"
+	line "you know you are"
+	cont "doing great."
+	para "Keep to up!"
 	done
 
 ElmPhoneInvestigatingEggMovesText:
 	text "Hello, <PLAY_G>?"
-
-	para "It's still a"
-	line "mystery what kinds"
-
-	para "of moves hatched"
-	line "#MON have."
-
-	para "We're investigat-"
-	line "ing that now."
+	para "You are really"
+	line "collecting those"
+	cont "Badges!"
+	cont "now"
 	done
 
 ElmPhoneDiscoveredPokerusText:
-	text "Hello, <PLAY_G>?"
-
-	para "I discovered an"
-	line "odd thing."
-
-	para "Apparently there's"
-	line "something called"
-
-	para "#RUS that in-"
-	line "fects #MON."
-
-	para "Yes, it's like a"
-	line "virus, so it's"
-	cont "called #RUS."
-
-	para "It multiplies fast"
-	line "and infects other"
-
-	para "#MON too. But"
-	line "that's all."
-
-	para "It doesn't seem to"
-	line "do anything, and"
-
-	para "it goes away over"
-	line "time."
-
-	para "I guess it's"
-	line "nothing to worry"
-	cont "about. Bye!"
+	text "<PLAYER>!"
+	para "The #CENTER"
+	line "told me your"
+	cont "#MON have"
+	cont "#RUS!"
+	para "Don't panic, I"
+	line "haven't told your"
+	cont "Mum."
+	para "I think you will"
+	line "be ok."
+	para "My research"
+	line "suggested strong"
+	cont "trainers were less"
+	cont "affected, in fact"
+	cont "it may even"
+	cont "benefit them."
+	para "You're #MON"
+	line "will get over it"
+	cont "shortly."
+	para "Just keep going!"
 	done
 
 ElmPhoneDisasterText:
-	text "H-hello? <PLAY_G>?"
-	line "It's a disaster!"
-
-	para "Uh, um, it's just"
-	line "terrible!"
-
-	para "What should I do?"
-	line "It… Oh, no…"
-
-	para "Please get back"
-	line "here now!"
+	text "<PLAYER>!"
+	para "I need your help!"
+	para "No, no get back"
+	line "you fiend!"
+	para "I will fight you!"
+	para "AWWW!"
+	para "<PLAYER>..."
+	para "Help Me!"
 	done
 
 ElmPhoneEggAssistantText:
-	text "Hello, <PLAY_G>? We"
-	line "discovered some-"
-
-	para "thing about the"
-	line "EGG!"
-
-	para "My assistant is at"
-	line "the #MON CENTER"
-
-	para "in VIOLET CITY. "
-	line "Could you talk to"
-	cont "him?"
+	text "Hey <PLAYER>."
+	para "My assistant is in"
+	line "the VIOLET"
+	cont "#CENTER, he"
+	cont "has a gift for"
+	cont "you."
+	para "He is quite taken"
+	line "with you."
+	para "Just go say hi to"
+	line "him then send him"
+	cont "back here."
 	done
 
 ElmPhoneRadioTowerRocketTakeoverText:
-	text "<PLAY_G>, how are"
-	line "things going?"
-
-	para "I called because"
-	line "something weird is"
-
-	para "happening with the"
-	line "radio broadcasts."
-
-	para "They were talking"
-	line "about TEAM ROCKET."
-
-	para "<PLAY_G>, do you"
-	line "know anything"
-	cont "about it?"
-
-	para "Maybe TEAM ROCKET"
-	line "has returned. No,"
-
-	para "that just can't"
-	line "be true."
-
-	para "Sorry to bug you."
-	line "Take care!"
+	text "<PLAYER>!"
+	para "I just got word!"
+	para "Apparently TEAM"
+	line "ROCKET are back"
+	cont "and GOLDENROD"
+	cont "is under siege."
+	para "I can't imagine"
+	line "what they would be"
+	cont "doing in JOHTO but"
+	cont "it must be bad."
+	para "You are the"
+	line "strongest trainer"
+	cont "available."
+	para "I hate to put you"
+	line "in danger but I"
+	cont "have to ask if you"
+	cont "can help the"
+	cont "people of"
+	cont "GOLDENROD."
 	done
 
 ElmExpShareGiftText:
-	text "Hello, <PLAY_G>?"
+	text "<PLAYER>!"
 
 	para "You have obtained"
-	line "all Johto badges!"
+	line "all JOHTO badges!"
 
 	para "Well done!"
 
 	para "I have something"
 	line "here for you."
 
-	para "Could you swing by"
-	line "my LAB?"
-
-	para "See you later!"
+	para "Come see me!"
 	done
 
 ElmPhoneGiftText:
-	text "Hello, <PLAY_G>?"
+	text "Hello, <PLAY_G>!"
 
     para "I have something"
 	line "here for you."
 
-	para "Could you swing by"
-	line "my LAB?"
-
-	para "See you later!"
+	para "Come see me!"
 	done
 
 ElmPhoneGotAholdOfSomethingNeatText:
-	text "Hello, <PLAY_G>?"
-	line "How's it going?"
+	text "Hello, <PLAY_G>!"
 
-	para "I got ahold of"
-	line "something neat."
+	para "You want to see"
+	line "something cool?"
 
-	para "Swing by my LAB"
-	line "and pick it up!"
-
-	para "See you later!"
+	para "Come see me!"
 	done

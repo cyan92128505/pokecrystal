@@ -229,16 +229,7 @@ PokeBallEffect:
 
     ; restrict
     call ReturnToBattle_UseBall
-	ld de, ANIM_THROW_POKE_BALL
-	ld a, e
-	ld [wFXAnimID], a
-	ld a, d
-	ld [wFXAnimID + 1], a
-	xor a
-	ld [wBattleAnimParam], a
-	ldh [hBattleTurn], a
-	ld [wNumHits], a
-	predef PlayBattleAnim
+    call DeflectBall
 	ld hl, LevelTooHighText
 	call PrintText
 	ld hl, MoreBadgesText
@@ -396,7 +387,7 @@ PokeBallEffect:
 	ld d, a
 	push de
 	ld a, [wBattleMonItem]
-	; ld b, a
+	ld b, a
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_CATCH_CHANCE
@@ -420,6 +411,17 @@ PokeBallEffect:
 
 .catch_without_fail
 	ld a, [wEnemyMonSpecies]
+	cp ARCEUS
+	jr z, .destroy
+	cp MEWTWO
+	jr z, .destroy
+	jr .fail_to_catch
+
+.destroy
+    call DeflectBall
+	ld hl, MasterBallDestroyedText
+	call PrintText
+	jp UseDisposableItem
 
 .fail_to_catch
 	ld [wWildMon], a
@@ -488,7 +490,7 @@ PokeBallEffect:
 	jr .not_ditto
 
 .ditto
-	ld a, DITTO
+	;ld a, DITTO
 	;ld [wTempEnemyMonSpecies], a
 	jr .load_data
 
@@ -759,6 +761,24 @@ PokeBallEffect:
 	ld hl, wParkBallsRemaining
 	dec [hl]
 	ret
+
+DeflectBall:
+	ld de, ANIM_THROW_POKE_BALL
+	ld a, e
+	ld [wFXAnimID], a
+	ld a, d
+	ld [wFXAnimID + 1], a
+	xor a
+	ld [wBattleAnimParam], a
+	ldh [hBattleTurn], a
+	ld [wNumHits], a
+	predef PlayBattleAnim
+	ret
+
+MasterBallDestroyedText:
+    text "MASTER BALL"
+    line "was destroyed!"
+    prompt
 
 BallMultiplierFunctionTable:
 ; table of routines that increase or decrease the catch rate based on

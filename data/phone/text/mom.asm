@@ -2,7 +2,9 @@ MomPhoneGreetingText:
 	text "Hello?"
 
 	para "Oh, hi, <PLAYER>!"
-	line "Working hard?"
+	line "I'm proud of you."
+
+	para "I love you."
 	done
 
 MomPhoneLandmarkText:
@@ -17,6 +19,8 @@ MomPhoneLandmarkText:
 	text_start
 	para "is? Did you go"
 	line "take a look?"
+
+	para "I love you."
 	done
 
 MomPhoneGenericAreaText:
@@ -26,8 +30,10 @@ MomPhoneGenericAreaText:
 	text "?"
 
 	para "I've never gone"
-	line "there. That's kind"
-	cont "of neat, <PLAYER>."
+	line "there. Please be"
+	cont "safe, <PLAYER>."
+
+	para "I love you."
 	done
 
 MomPhoneNewBarkText:
@@ -38,6 +44,8 @@ MomPhoneNewBarkText:
 
 	para "Come see your MOM"
 	line "sometime!"
+
+	para "I love you."
 	done
 
 MomPhoneCherrygroveText:
@@ -48,6 +56,8 @@ MomPhoneCherrygroveText:
 
 	para "How about coming"
 	line "home for a bit?"
+
+	para "I love you."
 	done
 
 MomOtherAreaText:
@@ -58,6 +68,8 @@ MomOtherAreaText:
 
 	para "Good luck on your"
 	line "#MON quest!"
+
+	para "I love you."
 	done
 
 MomDeterminedText:
@@ -68,7 +80,9 @@ MomDeterminedText:
 	line "know you're really"
 
 	para "determined. You'll"
-	line "be OK, right?"
+	line "be OK."
+
+	para "I love you."
 	done
 
 MomCheckBalanceText:
@@ -79,11 +93,18 @@ MomCheckBalanceText:
 
 	para "Do you want to"
 	line "keep on saving?"
+
+	para "I love you."
 	done
 
 MomImportantToSaveText:
 	text "It's important to"
 	line "save your money."
+
+	para "Don't want you to"
+	line "lose it all."
+
+	para "I love you."
 	done
 
 MomYoureNotSavingText:
@@ -92,6 +113,14 @@ MomYoureNotSavingText:
 
 	para "any money. Would"
 	line "you like to save?"
+
+	para "I'll keep it safe."
+
+	para "So other trainers"
+	line "can't take it from"
+	cont "you."
+
+	para "I love you."
 	done
 
 MomYouveSavedText:
@@ -107,17 +136,29 @@ MomYouveSavedText:
 MomOKIllSaveText:
 	text "OK. I'll save your"
 	line "money."
+
+	para "I love you."
 	done
 
 MomPhoneWontSaveMoneyText:
 	text "OK. I won't save"
 	line "your money."
+
+	para "You be sure not"
+	line "to lose it!"
+
+	para "I love you."
 	done
 
 MomPhoneHangUpText:
 	text "<PLAYER>, keep it"
 	line "up! I'm rooting"
-	cont "for you, baby!"
+	cont "for you!"
+
+	para "I'm always in"
+	line "your corner."
+
+	para "I love you."
 	done
 
 MomPhoneNoPokemonText:
@@ -126,6 +167,8 @@ MomPhoneNoPokemonText:
 	para "Oh, hi, <PLAYER>!"
 	line "Wasn't PROF.ELM"
 	cont "waiting for you?"
+
+	para "I love you."
 	done
 
 MomPhoneNoPokedexText:
@@ -135,7 +178,12 @@ MomPhoneNoPokedexText:
 	line "You're on a big"
 
 	para "mission for PROF."
-	line "ELM? Be good!"
+	line "ELM?"
+
+	para "Look after"
+	line "yourself."
+
+	para "I love you."
 	done
 
 MomPhoneNoGymQuestText:
@@ -146,6 +194,8 @@ MomPhoneNoGymQuestText:
 
 	para "your errand come"
 	line "on home, dear."
+
+	para "I love you."
 	done
 
 MomPhoneLectureText:
@@ -158,8 +208,15 @@ MomPhoneLectureText:
 	line "on a long trip."
 
 	para "I wish you would"
-	line "have told me…"
+	line "have told me!"
+
+	para "I am your Mother!"
 
 	para "What about money?"
+
+	para "Other trainers may"
+	line "take it all from"
+	cont "you!"
+
 	line "Should I save it?"
 	done

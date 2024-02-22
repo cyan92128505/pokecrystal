@@ -57,17 +57,13 @@ AnthonyGreetNiteText:
 	done
 
 AnthonyGenericText:
-	text "Are your #MON"
-	line "as feisty as ever?"
-
-	para "My @"
-	text_ram wStringBuffer4
-	text " and"
-	line "me--we have energy"
-
-	para "to burn. We hike"
-	line "up mountains every"
-
-	para "day to work out"
-	line "all our energy."
+	text "I bet a badass"
+	line "like you never"
+	cont "loses any battles."
+	para "I can tell because"
+	line "I also never lose."
+	para "You are the only"
+	line "person to have"
+	cont "defeated..."
+	cont "ANGUS CHAD MAXIMUS"
 	done

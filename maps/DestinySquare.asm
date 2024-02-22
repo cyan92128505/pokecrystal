@@ -695,6 +695,7 @@ MasterAdamScript:
     writetext MasterAdamLoseAfterBattleText
     waitbutton
     closetext
+    applymovement PLAYER, Movement_DestinySquareTurnBack
     end
 
 MasterAdamSeenText:
@@ -709,7 +710,7 @@ MasterAdamSeenText:
 	cont "command."
 	para "I wont bore you"
 	line "with a protracted,"
-	cont "pretensions"
+	cont "pretentious"
 	cont "speech."
 	para "You know what you"
 	line "have to do."
@@ -933,7 +934,7 @@ RematchRefuseTextDestinySquare:
     done
 
 FightAdamScript:
-    turnobject PLAYER, LEFT
+    turnobject PLAYER, RIGHT
     sjump MasterAdamScript
 
 ChampionsBlockScript:

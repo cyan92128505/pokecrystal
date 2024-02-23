@@ -185,7 +185,7 @@
 	const AEROBLAST    ; b1
 	const SHADOW_CLAW  ; b2
 	const REVERSAL     ; b3
-	const SPITE        ; b4 - not used
+	const SUCKER_PUNCH ; b4 - not used
 	const POWDER_SNOW  ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7

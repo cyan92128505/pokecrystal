@@ -164,6 +164,7 @@ WallaceScript:
     appear WARZONE_OAK
     applymovement WARZONE_OAK, WarZoneMovement_CrystalApproaches
     turnobject PLAYER, RIGHT
+    turnobject WARZONE_OAK, LEFT
     opentext
     writetext WarZoneOakText
     waitbutton

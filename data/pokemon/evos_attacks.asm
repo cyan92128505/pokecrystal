@@ -308,7 +308,7 @@ RattataEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FALSE_SWIPE
-	db 30, CRUNCH
+	db 30, SUCKER_PUNCH
 	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
@@ -319,7 +319,7 @@ RaticateEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FALSE_SWIPE
-	db 30, CRUNCH
+	db 30, SUCKER_PUNCH
 	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
@@ -334,7 +334,8 @@ BunearyEvosAttacks:
 	db 20, DOUBLE_KICK
 	db 24, HEADBUTT
 	db 28, DRAIN_PUNCH
-	db 34, ATTRACT
+	db 33, ATTRACT
+	db 36, SUCKER_PUNCH
 	db 40, RETURN
 	db 46, MEGA_KICK
 	db 50, HI_JUMP_KICK
@@ -350,7 +351,8 @@ LopunnyEvosAttacks:
 	db 20, DOUBLE_KICK
 	db 24, HEADBUTT
 	db 28, DRAIN_PUNCH
-	db 34, ATTRACT
+	db 33, ATTRACT
+	db 36, SUCKER_PUNCH
 	db 40, RETURN
 	db 46, MEGA_KICK
 	db 50, HI_JUMP_KICK
@@ -636,11 +638,11 @@ PawniardEvosAttacks:
 	db 1, LEER
 	db 10, METAL_CLAW
 	db 15, PURSUIT
-	db 20, SCARY_FACE
-	db 30, SLASH
-	db 35, BULLET_PUNCH
-	db 40, NIGHT_SLASH
-	db 45, IRON_HEAD
+	db 20, SLASH
+	db 30, BULLET_PUNCH
+	db 35, NIGHT_SLASH
+	db 40, IRON_HEAD
+	db 45, SUCKER_PUNCH
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -650,11 +652,11 @@ BisharpEvosAttacks:
 	db 1, LEER
 	db 10, METAL_CLAW
 	db 15, PURSUIT
-	db 20, SCARY_FACE
-	db 30, SLASH
-	db 35, BULLET_PUNCH
-	db 40, NIGHT_SLASH
-	db 45, IRON_HEAD
+	db 20, SLASH
+	db 30, BULLET_PUNCH
+	db 35, NIGHT_SLASH
+	db 40, IRON_HEAD
+	db 45, SUCKER_PUNCH
 	db 50, SWORDS_DANCE
 	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
@@ -966,9 +968,10 @@ MachopEvosAttacks:
 	db 7, FOCUS_ENERGY
 	db 13, KARATE_CHOP
 	db 19, SEISMIC_TOSS
-	db 23, FORESIGHT
+	db 23, MACH_PUNCH
 	db 29, STRENGTH
 	db 30, DRAIN_PUNCH
+	db 35, SUCKER_PUNCH
 	db 40, DYNAMICPUNCH
 	db 45, BULK_UP
 	db 0 ; no more level-up moves
@@ -981,9 +984,10 @@ MachokeEvosAttacks:
 	db 8, FOCUS_ENERGY
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
-	db 23, FORESIGHT
+	db 23, MACH_PUNCH
 	db 28, STRENGTH
 	db 30, DRAIN_PUNCH
+	db 35, SUCKER_PUNCH
 	db 41, DYNAMICPUNCH
 	db 45, BULK_UP
 	db 0 ; no more level-up moves
@@ -995,10 +999,10 @@ MachampEvosAttacks:
 	db 8, FOCUS_ENERGY
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
-	db 23, FORESIGHT
-	db 26, STRENGTH
+	db 23, MACH_PUNCH
+	db 28, STRENGTH
 	db 30, DRAIN_PUNCH
-	db 31, DRAIN_PUNCH
+	db 35, SUCKER_PUNCH
 	db 40, DYNAMICPUNCH
 	db 45, BULK_UP
 	db 0 ; no more level-up moves
@@ -1367,6 +1371,7 @@ GastlyEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
+	db 26, SUCKER_PUNCH
 	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
@@ -1382,8 +1387,9 @@ HaunterEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
+	db 25, SUCKER_PUNCH
 	db 30, SHADOW_BALL
-	db 40, SLUDGE_BOMB
+	db 41, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -1396,6 +1402,7 @@ GengarEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
+	db 25, SUCKER_PUNCH
 	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
@@ -1690,12 +1697,12 @@ WeavileEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 14, ICY_WIND
-	db 18, FURY_SWIPES
-	db 22, PURSUIT
-	db 25, SLASH
+	db 18, PURSUIT
+	db 22, SLASH
+	db 25, SCREECH
 	db 30, ICE_PUNCH
-	db 32, SCREECH
-	db 35, NASTY_PLOT
+	db 33, SUCKER_PUNCH
+	db 36, NASTY_PLOT
 	db 40, DARK_PULSE
 	db 45, NIGHT_SLASH
 	db 50, AVALANCHE
@@ -1773,9 +1780,10 @@ HonchkrowEvosAttacks:
 	db 30, FLY
 	db 33, NIGHT_SLASH
 	db 36, DARK_PULSE
-	db 40, CLOSE_COMBAT
-	db 45, NASTY_PLOT
-	db 50, BRAVE_BIRD
+	db 40, NASTY_PLOT
+	db 45, CLOSE_COMBAT
+	db 50, SUCKER_PUNCH
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 StaryuEvosAttacks:
@@ -2108,10 +2116,11 @@ GaladeEvosAttacks:
 	db 12, TELEPORT
 	db 20, PSYBEAM
 	db 24, CHARM
-	db 30, PSYCHIC_M
+	db 30, SUCKER_PUNCH
 	db 35, DRAIN_PUNCH
 	db 40, PSYCHO_SLASH
-	db 45, CLOSE_COMBAT
+	db 45, NIGHT_SLASH
+	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -2825,8 +2834,8 @@ TimburrEvosAttacks:
 	db 8, ROCK_THROW
 	db 12, MEGA_PUNCH
 	db 18, ROCK_SMASH
-	db 24, ROCK_SLIDE
-	db 28, MACH_PUNCH
+	db 24, MACH_PUNCH
+	db 28, SUCKER_PUNCH
 	db 32, DRAIN_PUNCH
 	db 40, BULK_UP
 	db 0 ; no more level-up moves
@@ -2840,8 +2849,8 @@ GurdurrEvosAttacks:
 	db 8, ROCK_THROW
 	db 12, MEGA_PUNCH
 	db 18, ROCK_SMASH
-	db 24, ROCK_SLIDE
-	db 28, MACH_PUNCH
+	db 24, MACH_PUNCH
+	db 28, SUCKER_PUNCH
 	db 32, DRAIN_PUNCH
 	db 40, BULK_UP
 	db 0 ; no more level-up moves
@@ -2854,8 +2863,8 @@ ConkeldurrEvosAttacks:
 	db 8, ROCK_THROW
 	db 12, MEGA_PUNCH
 	db 18, ROCK_SMASH
-	db 24, ROCK_SLIDE
-	db 28, MACH_PUNCH
+	db 24, MACH_PUNCH
+	db 28, SUCKER_PUNCH
 	db 32, DRAIN_PUNCH
 	db 40, BULK_UP
 	db 0 ; no more level-up moves
@@ -3002,6 +3011,7 @@ MurkrowEvosAttacks:
 	db 26, AIR_SLASH
 	db 31, NIGHT_SLASH
 	db 36, DARK_PULSE
+	db 40, SUCKER_PUNCH
 	db 45, NASTY_PLOT
 	db 50, BRAVE_BIRD
 	db 0 ; no more level-up moves
@@ -3230,6 +3240,7 @@ HeracrossEvosAttacks:
 	db 26, COUNTER
 	db 30, X_SCISSOR
 	db 35, REVERSAL
+	db 40, SUCKER_PUNCH
 	db 45, CLOSE_COMBAT
 	db 50, MEGAHORN
 	db 55, SWORDS_DANCE
@@ -3242,14 +3253,15 @@ SneaselEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 14, ICY_WIND
-	db 18, FURY_SWIPES
-	db 22, PURSUIT
-	db 25, SLASH
+	db 18, PURSUIT
+	db 22, SLASH
+	db 25, SCREECH
 	db 30, ICE_PUNCH
-	db 32, SCREECH
-	db 35, NASTY_PLOT
+	db 33, SUCKER_PUNCH
+	db 36, NASTY_PLOT
 	db 40, DARK_PULSE
-	db 44, NIGHT_SLASH
+	db 45, NIGHT_SLASH
+	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:
@@ -3342,6 +3354,7 @@ SpiritombEvosAttacks:
 	db 1, DREAM_EATER
 	db 32, SHADOW_BALL
 	db 36, DARK_PULSE
+	db 40, SUCKER_PUNCH
 	db 50, NASTY_PLOT
 	db 0 ; no more level-up moves
 
@@ -3574,6 +3587,7 @@ YveltalEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, AIR_SLASH
 	db 1, PSYCHIC_M
+	db 1, SUCKER_PUNCH
 	db 50, RECOVER
 	db 60, DARK_PULSE
 	db 70, OBLIVION
@@ -3705,9 +3719,8 @@ TyranitarEvosAttacks:
 	db 22, ROCK_SLIDE
 	db 34, CRUNCH
 	db 40, EARTHQUAKE
-	db 50, HYPER_BEAM
+	db 50, STONE_EDGE
 	db 55, DRAGON_DANCE
-	db 60, STONE_EDGE
 	db 0 ; no more level-up moves
 
 LugiaEvosAttacks:

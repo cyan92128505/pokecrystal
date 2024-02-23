@@ -181,7 +181,7 @@ BattleAnimations::
 	dw BattleAnim_Aeroblast
 	dw BattleAnim_ShadowClaw
 	dw BattleAnim_Reversal
-	dw BattleAnim_Spite
+	dw BattleAnim_SuckerPunch
 	dw BattleAnim_PowderSnow
 	dw BattleAnim_Protect
 	dw BattleAnim_MachPunch
@@ -3447,6 +3447,7 @@ BattleAnim_ScaryFace:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_SuckerPunch:
 BattleAnim_FaintAttack:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_CURSE

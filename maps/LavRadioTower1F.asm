@@ -126,7 +126,7 @@ LavRadioTower1FGentlemanText:
 
 LavRadioTower1FGentlemanText_ReturnedMachinePart:
 	text "We have full and"
-	line "uninterrupted power!"
+	line "constant power!"
 
 	para "I believe I have"
 	line "you to thank for"
@@ -137,7 +137,7 @@ LavRadioTower1FGentlemanText_ReturnedMachinePart:
 	cont "solved the power"
 	cont "issue."
 
-	para "You probably expect"
+	para "You maybe expect"
 	line "money but I have"
 	cont "something even"
 	cont "better for you."

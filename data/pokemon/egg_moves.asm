@@ -60,7 +60,6 @@ BunearyEggMoves:
 
 EkansEggMoves:
 	db PURSUIT
-	;db SPITE
 	db CRUNCH
 	db -1 ; end
 
@@ -94,7 +93,6 @@ VulpixEggMoves:
 	db NIGHT_SLASH
 	db HYPNOSIS
 	db FLAIL
-	;db SPITE
 	db DISABLE
 	db -1 ; end
 
@@ -122,7 +120,6 @@ ArctozoltEggMoves:
 	db -1 ; end
 
 MeowthEggMoves:
-	;db SPITE
 	db CHARM
 	db HYPNOSIS
 	db AMNESIA
@@ -371,7 +368,6 @@ RaltsEggMoves:
 	db CONFUSE_RAY
 	db DESTINY_BOND
 	db DISABLE
-	;db SPITE
 	db MEAN_LOOK
 	db -1 ; end
 
@@ -571,7 +567,6 @@ HeracrossEggMoves:
 
 SneaselEggMoves:
 	db COUNTER
-	;db SPITE
 	db FORESIGHT
 	db REFLECT
 	db BITE
@@ -610,7 +605,6 @@ HoundourEggMoves:
 	db RAGE
 	db PURSUIT
 	db COUNTER
-	;db SPITE
 	db REVERSAL
 	db -1 ; end
 
@@ -618,7 +612,6 @@ CottoneeEggMoves:
 	db FOCUS_ENERGY
 	db BODY_SLAM
 	db ANCIENTPOWER
-	db WATER_GUN
 	db -1 ; end
 
 MiltankEggMoves:

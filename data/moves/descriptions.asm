@@ -180,7 +180,7 @@ MoveDescriptions::
 	dw AeroblastDescription
 	dw ShadowClawDescription
 	dw ReversalDescription
-	dw SpiteDescription
+	dw SuckerPunchDescription
 	dw PowderSnowDescription
 	dw ProtectDescription
 	dw MachPunchDescription
@@ -985,9 +985,9 @@ ReversalDescription:
 	db   "Stronger if the"
 	next "user's HP is low.@"
 
-SpiteDescription:
-	db   "Cuts the PP of the"
-	next "foe's last move.@"
+SuckerPunchDescription:
+	db   "A powerful first-"
+	next "strike move.@"
 
 PowderSnowDescription:
 	db   "An attack that may"

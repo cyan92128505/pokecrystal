@@ -687,6 +687,7 @@ MasterAdamScript:
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
 	closetext
+	turnobject DESTINYSQUARE_ADAM, DOWN
 	end
 .Lose
     special HealParty
@@ -696,6 +697,7 @@ MasterAdamScript:
     waitbutton
     closetext
     applymovement PLAYER, Movement_DestinySquareTurnBack
+    turnobject DESTINYSQUARE_ADAM, DOWN
     end
 
 MasterAdamSeenText:
@@ -935,6 +937,7 @@ RematchRefuseTextDestinySquare:
 
 FightAdamScript:
     turnobject PLAYER, RIGHT
+    turnobject DESTINYSQUARE_ADAM, LEFT
     sjump MasterAdamScript
 
 ChampionsBlockScript:

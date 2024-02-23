@@ -179,7 +179,7 @@ MoveNames::
 	li "AEROBLAST"
 	li "SHADOW CLAW"
 	li "REVERSAL"
-	li "SPITE"
+	li "SUCKER PUNCH"
 	li "POWDER SNOW"
 	li "PROTECT"
 	li "MACH PUNCH"

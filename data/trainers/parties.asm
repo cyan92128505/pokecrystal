@@ -3,12 +3,20 @@
 ; - 1 to 6 Pokémon:
 ;    * in all cases:              db level, species
 ;    * with TRAINERTYPE_NICKNAME: db "NICKNAME@"
-;    * with TRAINERTYPE_DVS:      db atk|def dv, spd|spc dv
-;    * with TRAINERTYPE_STAT_EXP: dw hp, atk, def, spd, spc
 ;    * with TRAINERTYPE_ITEM:     db item
 ;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
-;    (TRAINERTYPE_ITEM_MOVES is just TRAINERTYPE_ITEM | TRAINERTYPE_MOVES)
+;    (TRAINERTYPE_ITEM_MOVES = TRAINERTYPE_ITEM | TRAINERTYPE_MOVES)
 ; - db -1 ; end
+;
+; NOTE
+; STAT EXP
+; this is handled in read_trainer_party.asm where it is assigned in three ways
+; - default stat exp based on how many badges the player has - maxed out at 8
+; - specific values based on enemy trainer class, hard coded to max stat exp
+; - based on the VAR_BATTLETYPE, with max stat exp for BATTLETYPE_BOSS_BATTLE
+;
+; DVS
+; these are assigned per trainer class in dvs.asm
 
 SECTION "Enemy Trainer Parties 1", ROMX
 
@@ -1543,7 +1551,7 @@ PokemaniacGroup:
 	db -1 ; end
 
 	; POKEMANIAC (2)
-	db "ANDREW@", TRAINERTYPE_ITEM_MOVES
+	db "ANDY@", TRAINERTYPE_ITEM_MOVES
 	db 40, SNORLAX, LEFTOVERS, CURSE, REST, BODY_SLAM, FIRE_PUNCH
 	db -1 ; end
 

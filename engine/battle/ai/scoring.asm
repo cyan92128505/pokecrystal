@@ -923,7 +923,7 @@ AI_Smart_Sleep:
 ; don't use if there already is a status
     ld a, [wBattleMonStatus]
     and a
-    jr nz, .discourage
+    jp nz, .discourage
 
 ; never use if player has substitute
     ld a, [wPlayerSubStatus4]
@@ -946,7 +946,7 @@ AI_Smart_Sleep:
     cp SMEARGLE
     jp z, .discourage
 
-; discourage if player have a held item that would heal sleep
+; does player have a held item that would heal sleep
 	push hl
 	push de
 	ld a, [wBattleMonItem]
@@ -957,8 +957,21 @@ AI_Smart_Sleep:
 	cp HELD_HEAL_STATUS
 	pop de
 	pop hl
-	jr z, .discourage
+	jr nz, .noItem
 
+; if faster than the player, don't sleep if the player can 1hko
+    call DoesAIOutSpeedPlayer
+    jr nc, .playerMovesFirst
+    call CanPlayerKO
+    jr c, .discourage
+    jr .noItem
+
+; if slower than the player, don't sleep if player can 2hko
+.playerMovesFirst
+    call CanPlayer2HKO
+    jr c, .discourage
+
+.noItem
 ; check if the move is Spore
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp SPORE
@@ -2196,19 +2209,29 @@ AI_Smart_Substitute:
 ; if player has status moves then don't consider player damage
 	ld b, EFFECT_PARALYZE
 	call PlayerHasMoveEffect
-	jr c, .skipDamageCheck
+	jr c, .hasStatus
 	ld b, EFFECT_SLEEP
 	call PlayerHasMoveEffect
-	jr c, .skipDamageCheck
+	jr c, .hasStatus
 	ld b, EFFECT_TOXIC
 	call PlayerHasMoveEffect
-	jr c, .skipDamageCheck
+	jr c, .hasStatus
 
 ; if player can 3HKO from max hp the discourage sub
     call CanPlayer3HKOMaxHP
     jr c, .discourage
+    jr .pastStatus
 
-.skipDamageCheck
+.hasStatus
+; extra encourage at full hp
+    call AICheckEnemyMaxHP
+    jr nc, .pastStatus
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    dec [hl]
+
+.pastStatus
 ; encourage at full hp
     call AICheckEnemyMaxHP
     jr c, .encourage
@@ -2849,6 +2872,14 @@ AI_Smart_BulkUp:
 	jp c, StandardDiscourage
 
 .continue
+; if player is asleep or frozen and is physical we should boost
+	ld a, [wBattleMonStatus]
+	and 1 << FRZ | SLP
+	jr z, .noStatus
+	call IsPlayerPhysicalOrSpecial
+	jp c, StandardEncourage
+.noStatus
+
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
@@ -2885,6 +2916,14 @@ AI_Smart_Curse:
 	jr c, .discourage
 
 .continue
+; if player is asleep or frozen and is physical we should boost
+	ld a, [wBattleMonStatus]
+	and 1 << FRZ | SLP
+	jr z, .noStatus
+	call IsPlayerPhysicalOrSpecial
+	jp c, StandardEncourage
+.noStatus
+
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jr nc, .discourage
@@ -3956,7 +3995,7 @@ AI_Smart_QuiverDance:
 .shouldBoost
     call ShouldAIBoost
     jp nc, StandardDiscourage
-    
+
 ; discourage if enemy is paralyzed
     ld a, [wEnemyMonStatus]
 	and 1 << PAR
@@ -3979,6 +4018,14 @@ AI_Smart_CalmMind:
 	jp c, StandardDiscourage
 
 .continue
+; if player is asleep or frozen and is special we should boost
+	ld a, [wBattleMonStatus]
+	and 1 << FRZ | SLP
+	jr z, .noStatus
+	call IsPlayerPhysicalOrSpecial
+	jp nc, StandardEncourage
+.noStatus
+
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
@@ -3998,7 +4045,7 @@ AI_Smart_CalmMind:
 AI_Smart_DragonDance:
 	call IsAttackMaxed
 	jp c, StandardDiscourage
-	
+
 .shouldBoost
     call ShouldAIBoost
     jp nc, StandardDiscourage
@@ -4091,6 +4138,19 @@ AI_Smart_Barrier:
 AI_Smart_Geomancy:
 	call IsSpecialAttackMaxed
 	jp c, StandardDiscourage
+
+; if we are evasive go for boost
+	ld a, [wEnemyEvaLevel]
+	cp BASE_STAT_LEVEL + 2
+	jp nc, StandardEncourage
+
+; if player is asleep or frozen and is special we should boost
+	ld a, [wBattleMonStatus]
+	and 1 << FRZ | SLP
+	jr z, .noStatus
+	call IsPlayerPhysicalOrSpecial
+	jp nc, StandardEncourage
+.noStatus
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack

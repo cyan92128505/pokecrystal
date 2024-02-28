@@ -62,18 +62,14 @@ BethGreetNiteText:
 	done
 
 BethGenericText:
-	text "Are you the kind"
-	line "of person who goes"
-
-	para "to #MON CENTERS"
-	line "often?"
-
-	para "I go every day."
-	line "Watching out for"
-
-	para "the health of your"
-	line "#MON is a basic"
-
-	para "part of being a"
-	line "#MON trainer."
+	text "I was about to"
+	line "face the ELITe"
+	cont "FOUR but then I"
+	cont "stopped myself."
+	para "What am I"
+	line "thinking."
+	para "I'm not ready yet."
+	para "I don't even know"
+	line "all of their"
+	cont "movesets yet."
 	done

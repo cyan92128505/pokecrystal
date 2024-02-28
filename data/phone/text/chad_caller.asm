@@ -1,63 +1,44 @@
 ChadObservingWildText:
-	text "I recently began"
-	line "observing wild"
-	cont "@"
-	text_ram wStringBuffer4
-	text "."
-
-	para "I've been learning"
-	line "all sorts of new"
-
-	para "things through my"
-	line "observations."
-
-	para "I wish I could"
-	line "become a #MON"
-
-	para "researcher like"
-	line "PROF.OAK soon."
+	text "It's very"
+	line "difficult being as"
+	cont "popular as me."
+	para "I don't know who"
+	line "to spend my time"
+	cont "with."
+	para "You should feel"
+	line "privileged I'm"
+	cont "calling you."
 	done
 
 ChadDefeatedMonText:
-	text "Oh yes, I managed"
-	line "to knock out a"
-
-	para "wild @"
-	text_ram wStringBuffer4
-	text " a"
-	line "while back."
-
-	para "Well, considering"
-	line "all the studying I"
-
-	para "do every day, it"
-	line "was inevitable."
+	text "These girls were"
+	line "passing by the"
+	cont "other day."
+	para "Their eyes were"
+	line "glued to my"
+	cont "CHARIZARD."
+	para "You need some cool"
+	line "#MON."
 	done
 
 ChadLostAMonText:
-	text "Oh yes, I came"
-	line "close to catching"
-
-	para "a wild @"
-	text_ram wStringBuffer4
-	text ","
-	line "but it got away."
-
-	para "For the longest"
-	line "time, I've been"
-
-	para "wanting to observe"
-	line "@"
-	text_ram wStringBuffer4
-	text ". Rats…"
+	text "I thought about"
+	line "catching a TAUROS"
+	cont "for its rugged and"
+	cont "tough image."
+	para "But I don't want"
+	line "to appear"
+	cont "unsophisticated."
 	done
 
 ChadBattleRematchText:
-	text "Want to battle?"
-	line "I have to battle"
-
-	para "every so often to"
-	line "avoid rusting out."
+	text "I have an idea,"
+	line "let's have a"
+	cont "battle!"
+	para "We will make sure"
+	line "all the cute girls"
+	cont "and guys are"
+	cont "watching us."
 
 	para "I'll be on"
 	line "@"
@@ -70,165 +51,131 @@ ChadHangUpText:
 	done
 
 ChadBlueGossipText:
-	text "Do you know BLUE?"
-
-	para "He's PROF.OAK's"
-	line "grandson and a"
-
-	para "former #MON"
-	line "LEAGUE CHAMPION!"
-
-	para "He's one super"
-	line "#MON trainer!"
+	text "I aspire to be"
+	line "like BLUE."
+	para "He was a CHAMPION"
+	line "but is so cool he"
+	cont "gave it up so he"
+	cont "could be himself."
+	para "That is peak"
+	line "aloof!"
 	done
 
 ChadDaisyGossipText:
-	text "PROF.OAK has a"
-	line "granddaughter"
-	cont "named DAISY."
-
-	para "When she's around,"
-	line "even the most"
-
-	para "ferocious #MON"
-	line "calm right down."
+	text "They say BLUE has"
+	line "a sister named"
+	cont "DAISEY."
+	para "She is meant to be"
+	line "truly beautiful."
+	para "No woman is out of"
+	line "my reach!"
 	done
 
 ChadProfElmGossipText:
-	text "Everyone's talking"
-	line "about PROF.ELM."
-
-	para "He used to be an"
-	line "assistant to the"
-	cont "great PROF.OAK!"
-
-	para "That is so cool!"
-	line "I envy him!"
+	text "You don't want to"
+	line "be like ELM, he"
+	cont "sits in his lab"
+	cont "all day."
+	para "There's nothing"
+	line "wrong with that"
+	cont "but he doesn't go"
+	cont "out at night"
+	cont "either."
+	para "You have to be"
+	line "seen!"
 	done
 
 ChadProfOaksDreamGossipText:
-	text "PROF.OAK's dream"
-	line "is to compile a"
-
-	para "comprehensive"
-	line "#DEX."
-
-	para "I envy you for"
-	line "taking part in"
-	cont "that project…"
+	text "I've heard that"
+	line "OAK was a ladies"
+	cont "man when he was"
+	cont "young."
+	para "Apparently has has"
+	line "a huge DRAGONITE."
+	para "Take note my"
+	line "pupil."
 	done
 
 ChadKurtGossipText:
-	text "Do you know KURT,"
-	line "the BALL creator?"
-
-	para "He and PROF.OAK go"
-	line "back a long way."
-
-	para "I guess great"
-	line "people attract one"
-	cont "another!"
+	text "KURT is an expert"
+	line "at making"
+	cont "#BALLS."
+	para "I asked him to"
+	line "make me a LOVE"
+	cont "BALL once, that I"
+	cont "could use on"
+	cont "girls."
+	para "But he said it was"
+	line "impossible."
 	done
 
 ChadLeagueGossipText:
-	text "#MON LEAGUE is"
-	line "the great gather-"
-	cont "ing place for all"
-
-	para "trainers who wish"
-	line "to become CHAMP."
-
-	para "PROF.OAK acts as"
-	line "an advisor to the"
-
-	para "#MON LEAGUE's"
-	line "headquarters."
-
-	para "He really is a"
-	line "great man."
+	text "Now listen,"
+	line "everyone loves"
+	cont "muscles."
+	para "Do you work out?"
+	para "You know who does."
+	para "BRUNO."
+	para "I bet he gets all"
+	line "the girls!"
 	done
 
 ChadPokemonTalkGossipText:
-	text "PROF.OAK'S #MON"
-	line "TALK is a popular"
-	cont "radio show, right?"
-
-	para "Did you know that"
-	line "he was going to"
-
-	para "turn down the show"
-	line "at first?"
-
-	para "But MARY's energy"
-	line "and persistence"
-	cont "wore him down."
-
-	para "So we have MARY to"
-	line "thank for it!"
+	text "There is this LASS"
+	line "DANA nearby and I"
+	cont "think she is"
+	cont "really into me."
+	para "She looks away"
+	line "everytime I walk"
+	cont "past her."
+	para "Sure sign of"
+	line "attraction."
 	done
 
 ChadProfOakTrainerGossipText:
-	text "PROF.OAK used to"
-	line "be a trainer a"
-	cont "long time ago."
-
-	para "But rather than"
-	line "battling, he found"
-
-	para "#MON themselves"
-	line "to be interesting."
-
-	para "So he abandoned"
-	line "his training to"
-
-	para "focus on becoming"
-	line "a researcher."
+	text "I've heard that"
+	line "OAK was a ladies"
+	cont "man when he was"
+	cont "young."
+	para "Apparently has has"
+	line "a huge DRAGONITE."
+	para "Take note my"
+	line "pupil."
 	done
 
 ChadDaisyTeaGossipText:
-	text "PROF.OAK has a"
-	line "granddaughter"
-	cont "named DAISY."
-
-	para "She has tea every"
-	line "day for an hour"
-
-	para "from three in the"
-	line "afternoon."
-
-	para "I wish I could"
-	line "join her for tea"
-
-	para "and chat about"
-	line "PROF.OAK."
-	done
+	text "There is this LASS"
+	line "DANA nearby and I"
+	cont "think she is"
+	cont "really into me."
+	para "She looks away"
+	line "everytime I walk"
+	cont "past her."
+	para "Sure sign of"
+	line "attraction."
 
 ChadProfOakTravelingGossipText:
-	text "Did you know?"
-	line "PROF.OAK traveled"
-
-	para "all over the world"
-	line "when he was young."
-
-	para "While traveling,"
-	line "he must've learned"
-
-	para "about #MON"
-	line "naturally."
-
-	para "I envy him…"
-	line "I'd like to travel"
-
-	para "and learn about"
-	line "things too…"
+	text "I aspire to be"
+	line "like BLUE."
+	para "He was a CHAMPION"
+	line "but is so cool he"
+	cont "gave it up so he"
+	cont "could be himself."
+	para "That is peak"
+	line "aloof!"
 	done
 
 ChadGoingToStudyHardText:
-	text "I'm going to study"
-	line "hard so PROF.OAK"
-
-	para "will make me his"
-	line "assistant!"
+	text "KURT is an expert"
+	line "at making"
+	cont "#BALLS."
+	para "I asked him to"
+	line "make me a LOVE"
+	cont "BALL once, that I"
+	cont "could use on"
+	cont "girls."
+	para "But he said it was"
+	line "impossible."
 	done
 
 ChadReminderText:
@@ -240,6 +187,7 @@ ChadReminderText:
 	text_ram wStringBuffer5
 	text "."
 
-	para "Hurry over--I'm"
-	line "waiting."
+	para "Hurry over."
+	para "DANA will be"
+	line "watching."
 	done

@@ -1,15 +1,12 @@
 BrentRareTradeText:
-	text "Oh yeah, I got an"
-	line "extremely rare"
-
-	para "#MON in a trade"
-	line "a while back."
-
-	para "Do you want to"
-	line "know what it is?"
-
-	para "Hehe, I'm keeping"
-	line "it a secret!"
+	text "People tell me"
+	line "HYPER BEAM is a"
+	cont "bad move because"
+	cont "it takes two"
+	cont "turns."
+	para "Let's see them say"
+	line "that after I one"
+	cont "shot them!"
 	done
 
 BrentDefeatedMonText:
@@ -19,44 +16,37 @@ BrentDefeatedMonText:
 	para "@"
 	text_ram wStringBuffer4
 	text "."
-	line "It wasn't rare"
 
-	para "enough to bother"
-	line "catching."
+	para "I was in a strange"
+	line "mood."
+	para "I looked at it."
+	para "Then decided to"
+	line "HYPER BEAM it"
+	cont "right in the face."
+	para "It felt good."
+	para "Am I a bad person?"
 	done
 
 BrentLostAMonText:
-	text "Oh yeah, I saw a"
-	line "rare #MON about"
-	cont "an hour ago."
-
-	para "It was my first"
-	line "sighting. But I"
-
-	para "didn't have any"
-	line "# BALLS…"
-
-	para "Would BILL laugh"
-	line "at my mistakes?"
+	text "I fought a guy"
+	line "with a BLISSEY the"
+	cont "other day."
+	para "It took my HYPER"
+	line "BEAM, it barley"
+	cont "did any damage!"
+	para "I..."
+	para "I just don't"
+	line "understand."
+	para "I just..."
 	done
 
 BrentBattleRematchText:
-	text "You've got time"
-	line "like usual, right?"
-
-	para "Feel like having a"
-	line "battle?"
-
-	para "It'll be a chance"
-	line "to see my rare"
-
-	para "#MON. It'll be"
-	line "worth your time!"
-
-	para "You know where--"
-	line "@"
-	text_ram wStringBuffer5
-	text "."
+	text "I need to blast"
+	line "you..."
+	para "I mean battle you!"
+	para "I need to..."
+	para "Come over here and"
+	line "eat my HYPER BEAM!"
 	done
 
 BrentHangUpText:
@@ -64,97 +54,107 @@ BrentHangUpText:
 	done
 
 BrentFatherGossipText:
-	text "Did you know…?"
-	line "BILL's father is"
-
-	para "supposed to be a"
-	line "great #MANIAC."
+	text "Apparently CHOICE"
+	line "SPECS boost"
+	cont "special attacks by"
+	cont "50 percent!"
+	para "I need a pair!"
 	done
 
 BrentGrandpaGossipText:
-	text "Did you know…?"
-	line "Apparently BILL's"
-
-	para "grandpa isn't a"
-	line "#MANIAC."
+	text "Apparently CHOICE"
+	line "SPECS boost"
+	cont "special attacks by"
+	cont "50 percent!"
+	para "I need a pair!"
 	done
 
 BrentGoldenrodGossipText:
-	text "Did you know…?"
-	line "BILL's originally"
-	cont "from GOLDENROD."
+	text "Apparently CHOICE"
+	line "SPECS boost"
+	cont "special attacks by"
+	cont "50 percent!"
+	para "I need a pair!"
 	done
 
 BrentRoute25GossipText:
-	text "Did you know…?"
-	line "BILL evidently"
-
-	para "lives on ROUTE 25"
-	line "in KANTO."
+	text "Do you know the"
+	line "move NASTY_PLOT?"
+	para "It can double"
+	line "special attack!"
+	para "I must have it!"
 	done
 
 BrentAbraGossipText:
-	text "Did you know…?"
-	line "ABRA was the first"
-
-	para "#MON that BILL"
-	line "ostensibly caught."
+	text "Do you know the"
+	line "move NASTY_PLOT?"
+	para "It can double"
+	line "special attack!"
+	para "I must have it!"
 	done
 
 BrentSisterGossipText:
-	text "Did you know…?"
-	line "BILL's younger"
-
-	para "sister apparently"
-	line "can't wink."
+	text "Do you know the"
+	line "move NASTY_PLOT?"
+	para "It can double"
+	line "special attack!"
+	para "I must have it!"
 	done
 
 BrentMilkGossipText:
-	text "Did you know…?"
-	line "BILL supposedly"
-
-	para "hates milk and"
-	line "can't drink it."
+	text "They say there is"
+	line "some kind of"
+	cont "serial killer"
+	cont "around here."
+	para "If I see him, he"
+	line "wont be leaving in"
+	cont "one piece."
 	done
 
 BrentBattlingGossipText:
-	text "Did you know…?"
-	line "Evidently, BILL"
-
-	para "isn't very good at"
-	line "battling."
+	text "They say there is"
+	line "some kind of"
+	cont "serial killer"
+	cont "around here."
+	para "If I see him, he"
+	line "wont be leaving in"
+	cont "one piece."
 	done
 
 BrentFlowerShopGossipText:
-	text "Did you know…?"
-	line "BILL appears to"
-
-	para "like the lady at"
-	line "the FLOWER SHOP."
+	text "They say there is"
+	line "some kind of"
+	cont "serial killer"
+	cont "around here."
+	para "If I see him, he"
+	line "wont be leaving in"
+	cont "one piece."
 	done
 
 BrentKimonoGirlGossipText:
-	text "Did you know…?"
-	line "BILL's mother is"
-
-	para "said to have been"
-	line "a KIMONO GIRL."
+	text "Did you know the"
+	line "GOLDENROD TUTOR"
+	cont "can teach NASTY"
+	cont "PLOT!"
+	para "But only to those"
+	line "with 8 badges!"
+	para "What a con!"
 	done
 
 BrentSorryImTooBusyText:
-	text "You wanted to hear"
-	line "about BILL?"
-
-	para "Sorry, but I'm too"
-	line "busy for you."
-
-	para "I'll call when I"
-	line "have time."
+	text "Did you know the"
+	line "GOLDENROD TUTOR"
+	cont "can teach NASTY"
+	cont "PLOT!"
+	para "But only to those"
+	line "with 8 badges!"
+	para "What a con!"
 	done
 
 BrentReminderText:
-	text "You want to see my"
-	line "rare #MON."
+	text "Are you scared?"
+	para "I'm still waiting"
+	line "to HYPER BEAM you."
 
 	para "Hurry over to"
 	line "@"

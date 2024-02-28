@@ -57,12 +57,14 @@ BeverlyGreetNiteText:
 	done
 
 BeverlyGenericText:
-	text "Keeping your"
-	line "#MON happy?"
-
-	para "My @"
-	text_ram wStringBuffer4
-	text " is"
-	line "healthy. It eats a"
-	cont "lot every day."
+	text "I must be ever"
+	line "vigilant!"
+	para "Let me know if"
+	line "you're ever in a"
+	cont "city being"
+	cont "attacked by a"
+	cont "giant robot"
+	cont "piloted by a"
+	cont "monkey with a huge"
+	cont "brain!"
 	done

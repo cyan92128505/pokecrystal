@@ -56,24 +56,12 @@ BrentGreetNiteText:
 	done
 
 BrentGenericText:
-	text "Oh yeah, I saw you"
-	line "coming out of a"
-
-	para "#MON CENTER the"
-	line "other day."
-
-	para "You heal your"
-	line "#MON regularly,"
-
-	para "don't you?"
-	line "I'm impressed."
-
-	para "Heh, my @"
-	text_ram wStringBuffer4
-	text_start
-	line "is so tough, it"
-
-	para "doesn't need to go"
-	line "to #MON CENTERS"
-	cont "often. Heheh!"
+	text "As a trainer you"
+	line "must understand..."
+	para "There is nothing"
+	line "mare satisfying"
+	cont "than watching your"
+	cont "enemies HP go from"
+	cont "full to zero in"
+	cont "one attack!"
 	done

@@ -1,76 +1,53 @@
 BethExhilaratingRideText:
-	text "Do you remember my"
-	line "sweet @"
-	text_ram wStringBuffer4
-	text "?"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " runs"
-	line "very fast."
-
-	para "It's exhilarating"
-	line "to ride on its"
-
-	para "back when it"
-	line "really gets going."
+	text "I seem to win more"
+	line "often against male"
+	cont "trainers than"
+	cont "female."
+	para "Unfortunately the"
+	line "first ELITE FOUR"
+	cont "member is a woman."
+	para "I am not ready"
+	line "yet, not even"
+	cont "close..."
 	done
 
 BethDefeatedMonText:
-	text "Oh, have you ever"
-	line "seen a @"
-	text_ram wStringBuffer4
-	text_start
-	cont "before?"
-
-	para "I just battled"
-	line "one…"
-
-	para "It was much faster"
-	line "than I expected."
-
-	para "I was a little"
-	line "shocked."
-
-	para "I still won, of"
-	line "course."
+	text "I have analysed"
+	line "each ELITE FOUR"
+	cont "member."
+	para "BRUNO has the"
+	line "lowest win rate."
+	para "My RAPIDASH has a"
+	line "good match up"
+	cont "against his lead"
+	cont "LUCARIO."
+	para "But I'm not ready"
+	line "yet."
 	done
 
 BethLostAMonText:
-	text "Oh, I just saw a"
-	line "wild @"
-	text_ram wStringBuffer4
-	text "."
-
-	para "I was trying to"
-	line "catch it when I"
-
-	para "noticed that I was"
-	line "all out of #"
-	cont "BALLS."
-
-	para "If you don't check"
-	line "your items, you"
-
-	para "may run out at the"
-	line "worst time."
-
-	para "I hope you learn"
-	line "from my mistake."
+	text "Did you know KAREN"
+	line "used to live in"
+	cont "BLACKTHORN!"
+	para "She must a"
+	line "subconscious fear"
+	cont "of DRAGON"
+	cont "#MON."
+	para "Perhaps I can use"
+	line "this to my"
+	cont "advantage."
+	para "I must analyse"
+	line "this."
 	done
 
 BethBattleRematchText:
-	text "Do you want to"
-	line "battle? I'm going"
-	cont "to win this time!"
-
-	para "I'll be waiting"
-	line "for you around"
-
-	para "@"
-	text_ram wStringBuffer5
-	text "."
-	line "Look for me, OK?"
+	text "I am ready to test"
+	line "myself against you"
+	cont "again."
+	para "Will you help me"
+	line "build the courage"
+	cont "to face the ELITE"
+	cont "FOUR?"
 	done
 
 BethHangUpText:
@@ -83,16 +60,11 @@ BethLetsBattleAgainSometimeText:
 	done
 
 BethReminderText:
-	text "Um… <PLAY_G>?"
-	line "What's wrong?"
-
-	para "Did you forget our"
-	line "deal?"
-
-	para "@"
-	text_ram wStringBuffer5
-	text "."
-
-	para "That's where I'm"
-	line "waiting."
+	text "I was about to"
+	line "face the ELITE"
+	cont "FOUR but I"
+	cont "remembered I asked"
+	cont "you for a battle."
+	para "I'll be waiting"
+	line "for you."
 	done

@@ -1,34 +1,40 @@
 BeverlyAskNumber1Text:
-	text "Your MARILL is so"
-	line "cute and adorable!"
-
-	para "You love #MON"
-	line "just like I do!"
-
-	para "Want to trade"
-	line "phone numbers?"
-
-	para "Let's chat! It'll"
-	line "be so much fun!"
+	text "We can't be"
+	line "everywhere at"
+	cont "once."
+	para "You can help us!"
+	para "If you're ever in"
+	line "a city being"
+	cont "attacked by a"
+	cont "giant robot"
+	cont "piloted by a"
+	cont "monkey with a huge"
+	cont "brain you should"
+	cont "call us."
+	para "Can I have your"
+	line "number?"
 	done
 
 BeverlyAskNumber2Text:
-	text "Your MARILL is so"
-	line "cute and adorable!"
-
-	para "We should chat, it"
-	line "will be fun."
-
+	text "We can't be"
+	line "everywhere at"
+	cont "once."
+	para "You can help us!"
+	para "If you're ever in"
+	line "a city being"
+	cont "attacked by a"
+	cont "giant robot"
+	cont "piloted by a"
+	cont "monkey with a huge"
+	cont "brain you should"
+	cont "call us."
 	para "Can I have your"
-	line "phone number?"
+	line "number?"
 	done
 
 BeverlyNumberAcceptedText:
-	text "To be honest, I"
-	line "want a MARILL."
-
-	para "But I make do with"
-	line "my cute SNUBBULL."
+	text "You are under our"
+	line "protection now!"
 	done
 
 BeverlyNumberDeclinedText:
@@ -39,16 +45,15 @@ BeverlyNumberDeclinedText:
 	done
 
 BeverlyPhoneFullText:
-	text "Oh? Your phone's"
-	line "memory is full."
+	text "Are you working"
+	line "for HIM..."
 	done
 
 BeverlyGiftText:
-	text "Oh? <PLAYER>? "
-	line "I waited here for"
-
-	para "you. I brought you"
-	line "a little gift."
+	text "Hi <PLAYER>."
+	para "Here you can have"
+	line "this."
+	para "I don't need it."
 	done
 
 BeverlyPackFullText:

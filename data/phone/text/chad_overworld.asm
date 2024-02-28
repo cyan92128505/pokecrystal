@@ -1,48 +1,34 @@
 ChadAskNumber1Text:
-	text "Huh? Is that thing"
-	line "a #DEX? Have"
-	cont "you met PROF.OAK?"
-
-	para "Huh? You have? "
-	line "That's way cool!"
-
-	para "I have a dream of"
-	line "becoming a #MON"
-
-	para "researcher like"
-	line "PROF.OAK."
-
-	para "May I please have"
-	line "your phone number?"
-
-	para "We should chat"
-	line "about PROF.OAK."
-
-	para "I'm sure it will"
-	line "be loads of fun!"
+	text "You're good at"
+	line "#MON, but what"
+	cont "about with the"
+	cont "opposite sex."
+	para "Give me your"
+	line "number and I will"
+	cont "teach you my"
+	cont "secrets."
 	done
 
 ChadAskNumber2Text:
-	text "May I please have"
-	line "your phone number?"
-
-	para "We should chat"
-	line "about PROF.OAK."
-
-	para "I'm sure it will"
-	line "be loads of fun!"
+	text "You're good at"
+	line "#MON, but what"
+	cont "about with the"
+	cont "opposite sex."
+	para "Give me your"
+	line "number and I will"
+	cont "teach you my"
+	cont "secrets."
 	done
 
 ChadNumberAcceptedText:
-	text "You must listen to"
-	line "PROF.OAK'S #MON"
-	cont "TALK, right?"
+	text "I will teach you"
+	line "my ways."
 	done
 
 ChadNumberDeclinedText:
-	text "Oh… I wish I had a"
-	line "chance to meet"
-	cont "PROF.OAK…"
+	text "Playing hard to"
+	line "get!"
+	para "Good, very aloof."
 	done
 
 ChadPhoneFullText:
@@ -51,6 +37,9 @@ ChadPhoneFullText:
 	done
 
 ChadRematchText:
-	text "I've been waiting!"
-	line "Let's battle now!"
+	text "Alright the girls"
+	line "are watching."
+	para "Now don't just"
+	line "instantly destroy"
+	cont "me ok!"
 	done

@@ -1,36 +1,33 @@
 BethAskNumber1Text:
-	text "It's been a while"
-	line "since I lost…"
-
-	para "You're very good"
-	line "at battling."
-
-	para "We should battle"
-	line "again sometime."
-
-	para "By challenging a"
-	line "tough trainer like"
-
-	para "you, I think I can"
-	line "get better too."
-
-	para "So how about it?"
-
-	para "Would you give me"
-	line "your phone number?"
+	text "I am going to"
+	line "battle the ELITE"
+	cont "FOUR!"
+	para "But I'm not ready"
+	line "yet."
+	para "I must analyse"
+	line "every aspect of"
+	cont "battle performance"
+	cont "and optimise my"
+	cont "victory chances."
+	para "Will you help me"
+	line "by sharing your"
+	cont "phone number?"
 	done
 
 BethAskNumber2Text:
-	text "By challenging a"
-	line "tough trainer like"
-
-	para "you, I think I can"
-	line "get better too."
-
-	para "So how about it?"
-
-	para "Would you give me"
-	line "your phone number?"
+	text "I am going to"
+	line "battle the ELITE"
+	cont "FOUR!"
+	para "But I'm not ready"
+	line "yet."
+	para "I must analyse"
+	line "every aspect of"
+	cont "battle performance"
+	cont "and optimise my"
+	cont "victory chances."
+	para "Will you help me"
+	line "by sharing your"
+	cont "phone number?"
 	done
 
 BethNumberAcceptedText:
@@ -51,6 +48,7 @@ BethPhoneFullText:
 	done
 
 BethRematchText:
-	text "You sure kept me"
-	line "waiting! Let's go!"
+	text "This battle will"
+	line "inform me if I am"
+	cont "ready."
 	done

@@ -22,7 +22,7 @@ AnthonyDefeatedMonText:
 	line "to battle me."
 	para "Ha!"
 	para "I let it take a"
-	line "drink of my blood"
+	line "swig of my blood"
 	cont "so it would get"
 	cont "close."
 	para "Then I thrashed"
@@ -84,13 +84,18 @@ AnthonySwarmText:
 	done
 
 AnthonyWasntPayingAttentionText:
-	text "Rare #MON?"
-
-	para "Hey, sorry! I was"
-	line "too focused on my"
-
-	para "hike, so I wasn't"
-	line "paying attention."
+	text "I thought I saw a"
+	line "ROCKET again the"
+	cont "other day."
+	para "I stared him down."
+	para "Then I tore of my"
+	line "shirt and flexed"
+	cont "in his direction."
+	para "He went sprinting"
+	line "away."
+	para "My manliness"
+	line "intimidates most"
+	cont "people!"
 	done
 
 AnthonyReminderText:
@@ -112,19 +117,12 @@ AnthonyReminderText:
 	done
 
 AnthonyHurryText:
-	text "Hello? What? Where"
-	line "is DUNSPARCE?"
-
-	para "DARK CAVE! Hurry!"
-
-	para "DUNSPARCE don't"
-	line "appear when there"
-
-	para "are strong #MON"
-	line "around."
-
-	para "They are delicious!"
-
-	para "And full of"
-	line "protein!"
+	text "This is it!"
+	para "DUNSPARCE are"
+	line "swarming all over"
+	cont "DARK CAVE."
+	para "So much quality"
+	line "protein going for"
+	cont "free!"
+	para "Get over there!"
 	done

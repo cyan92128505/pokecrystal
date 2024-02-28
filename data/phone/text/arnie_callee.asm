@@ -56,7 +56,11 @@ ArnieGreetNiteText:
 	done
 
 ArnieGenericText:
-	text "I bet your #MON"
-	line "are a lot stronger"
-	cont "than before."
+	text "My BUTTERFREE is"
+	line "my best and only"
+	cont "friend."
+	para "I love him more"
+	line "than I ever could"
+	cont "another human"
+	cont "being."
 	done

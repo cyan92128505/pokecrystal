@@ -65,7 +65,6 @@ TeleportGuyScript:
 	special FadeOutPalettes
 	waitsfx
 	warp NEW_BARK_TOWN, 13, 18
-	playmusic MUSIC_NEW_BARK_TOWN
 	end
 
 .No:

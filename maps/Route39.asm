@@ -239,16 +239,13 @@ PokefanfRuthAfterBattleText:
 	done
 
 PsychicNormanSeenText:
-	text "There is another"
-	line "world."
-
-	para "A dream world."
-
-	para "My #MON will"
-	line "take you there."
-
-	para "And keep you"
-	line "there forever."
+	text "Do you smell that?"
+	para "Ahhhhh."
+	para "That my friend..."
+	para "Is pure MILTANK"
+	line "manure."
+	para "It heightens my"
+	line "psychic power."
 	done
 
 PsychicNormanBeatenText:
@@ -256,14 +253,12 @@ PsychicNormanBeatenText:
 	done
 
 PsychicNormanAfterBattleText:
-	text "There is a"
-	line "#MON that"
-	cont "rules the dark"
-	cont "dream realm."
-
-	para "Fear its name."
-
-	para "DARKRAI!"
+	text "You need to align,"
+	line "plan, execute and"
+	cont "verify."
+	para "I couldn't imagine"
+	line "not doing it!"
+	done
 	done
 
 PokefanfJaimeSeenText:

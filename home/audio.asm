@@ -311,20 +311,11 @@ FadeToMapMusic::
 	push bc
 	push af
 
-	ld a, [wHoenInvasionUnderway]
-	and a
-	jr z, .normal
-	ld de, MUSIC_RED_INDIGO_PLATEAU
-	ld a, [wMapMusic]
-	jr .setMusic
-
-.normal
 	call GetMapMusic_MaybeSpecial
 	ld a, [wMapMusic]
 	cp e
 	jr z, .done
 
-.setMusic
 	ld a, 8
 	ld [wMusicFade], a
 	ld a, e
@@ -368,8 +359,30 @@ PlayMapMusic::
 	pop hl
 	ret
 
-UnusedMusicRoutine::
-    ret
+PlayMapMusicNew::
+	push hl
+	push de
+	push bc
+	push af
+
+	xor a
+	ld [wDontPlayMapMusicOnReload], a
+	call GetMapMusic_MaybeSpecial
+	push de
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+	pop de
+
+	ld a, e
+	ld [wMapMusic], a
+	call PlayMusic
+
+	pop af
+	pop bc
+	pop de
+	pop hl
+	ret
 
 TryRestartMapMusic::
 	ld a, [wDontPlayMapMusicOnReload]
@@ -403,6 +416,10 @@ RestartMapMusic::
 	ret
 
 SpecialMapMusic::
+	ld a, [wHoenInvasionUnderway]
+	and a
+	jr nz, .invasion
+
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	jr nz, .contest
@@ -422,6 +439,11 @@ SpecialMapMusic::
 
 .ranking
 	ld de, MUSIC_BUG_CATCHING_CONTEST_RANKING
+	scf
+	ret
+
+.invasion
+	ld de, MUSIC_RED_INDIGO_PLATEAU
 	scf
 	ret
 

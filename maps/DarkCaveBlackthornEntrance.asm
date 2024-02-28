@@ -317,7 +317,6 @@ GiratinaBarrierScript:
     waitbutton
     closetext
     warp DARK_CAVE_VIOLET_ENTRANCE, 17, 2
-    playmusic MUSIC_RED_DUNGEON
     opentext
     writetext DarkraiNeededText
     waitbutton

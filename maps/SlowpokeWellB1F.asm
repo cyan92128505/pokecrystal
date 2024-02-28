@@ -70,7 +70,6 @@ TrainerGruntM1:
 	special HealParty
 	pause 15
 	warp KURTS_HOUSE, 3, 3
-	playmusic MUSIC_AZALEA_TOWN
 	end
 
 TrainerGruntM2:

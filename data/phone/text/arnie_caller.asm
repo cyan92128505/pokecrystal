@@ -4,46 +4,38 @@ ArnieMonIsSoCuteText:
 	text_ram wStringBuffer4
 	text "!"
 
-	para "It's so cute!"
-	line "I just love it!"
+	text "He is my oldest"
+	line "and dearest"
+	cont "friend."
 	done
 
 ArnieDefeatedMonText:
-	text "Changing the topic"
-	line "here, I saw this"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " for the"
-	line "first time."
-
-	para "It was easy to"
-	line "beat, actually."
+	text "Do you think BUG"
+	line "#MON are cute?"
+	para "Like you know"
+	line "interesting"
+	cont "looking?"
+	para "Like you know"
+	line "attractive?"
 	done
 
 ArnieLostAMonText:
-	text "I was wondering,"
-	line "do you happen to"
-	cont "have @"
-	text_ram wStringBuffer4
-	text "?"
-
-	para "I can't seem to"
-	line "catch one. What is"
-
-	para "its weakness, I"
-	line "wonder."
+	text "Are you ready for"
+	line "the BUG invasion."
+	para "If it happened"
+	line "right now would"
+	cont "you be ready!"
+	para "I didn't think"
+	line "so..."
 	done
 
 ArnieBattleRematchText:
-	text "Hey, let's battle"
-	line "our #MON!"
-
-	para "I won't lose to"
-	line "you battling or in"
-
-	para "the Bug-Catching"
-	line "Contest!"
+	text "We have trained"
+	line "together for days!"
+	para "We are way"
+	line "stronger now!"
+	para "Let's have a"
+	line "battle right now."
 
 	para "I'll be here on"
 	line "@"
@@ -57,8 +49,10 @@ ArnieHangUpText:
 	done
 
 ArnieSwarmText:
-	text "Boy, am I glad I"
-	line "caught you!"
+	text "The BUGS are"
+	line "everywhere, this"
+	cont "is a BUG CATCHERS"
+	cont "dream."
 
 	para "A whole bunch of"
 	line "@"
@@ -69,38 +63,44 @@ ArnieSwarmText:
 	line "@"
 	text_ram wStringBuffer5
 	text "!"
-
-	para "You have to see"
-	line "this!"
 	done
 
 ArnieHaventSeenRareMonText:
-	text "I haven't had any"
-	line "luck seeing rare"
-	cont "#MON lately…"
-
-	para "But I know they're"
-	line "out there!"
+	text "I haven't seen any"
+	line "rare #MON"
+	cont "latley."
+	para "I don't need them."
+	para "All I need in life"
+	line "is my one and only"
+	cont "friend BUTTERFREE."
+	para "I need nothing"
+	line "else!"
 	done
 
 ArnieReminderText:
-	text "Hey, where are you"
-	line "now?"
+	text "We are still"
+	line "waiting to battle"
+	cont "you."
+	para "It's fine, we can"
+	line "wait forever as"
+	cont "long as we are"
+	cont "together."
 
-	para "Let's battle. I'll"
-	line "be waiting for you"
-	cont "on @"
+	para "I am waiting"
+	line "on @"
 	text_ram wStringBuffer5
 	text "!"
 	done
 
 ArnieHurryText:
-	text "Hello? Are you"
-	line "coming or what?"
-
-	para "You're missing out"
-	line "on seeing YANMA!"
-
-	para "Get down to ROUTE"
-	line "35 right now!"
+	text "You must hurry,"
+	line "there is a swarm"
+	cont "of YANMA on ROUTE"
+	cont "35."
+	para "This is it, the"
+	line "BUGS are making"
+	cont "their move against"
+	cont "the humans!"
+	para "Go my BUG"
+	line "brethren!"
 	done

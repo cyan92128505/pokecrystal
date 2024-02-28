@@ -776,7 +776,6 @@ MewtwoScript:
 	disappear DESTINYSQUARE_MEWTWO
 	special HealParty
 	warp DESTINY_FRONTIER, 30, 50
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
 	end
 .Lose
     special HealParty

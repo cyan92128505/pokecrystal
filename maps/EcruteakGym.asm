@@ -114,7 +114,6 @@ EcruteakGymClosed:
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp ECRUTEAK_CITY, 6, 27
-	playmusic MUSIC_ECRUTEAK_CITY
 	end
 
 TrainerSageJeffrey:

@@ -28,7 +28,7 @@ AnthonyAnswerPhoneNiteText:
 	done
 
 AnthonyGreetText:
-	text "Yo, <PLAYER>?"
+	text "Hi, <PLAYER>?"
 
 	para "This is @"
 	text_ram wStringBuffer3

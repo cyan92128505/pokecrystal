@@ -1,40 +1,38 @@
 AnthonyAskNumber1Text:
-	text "By the way, I'm a"
-	line "HIKER, so I often"
-
-	para "go to mountains"
-	line "and caves."
-
-	para "I occasionally see"
-	line "rare #MON."
-
-	para "I could call you"
-	line "the next time I"
-	cont "see one."
-
-	para "Feel like swapping"
-	line "phone numbers?"
+	text "Look I can tell"
+	line "you want to be as"
+	cont "manly as me."
+	para "I'll tell you"
+	line "what, give you"
+	cont "your number."
+	para "I'll let you know"
+	line "when there is good"
+	cont "protein going"
+	cont "around here."
 	done
 
 AnthonyAskNumber2Text:
-	text "I could call you"
-	line "when I see some"
-	cont "rare #MON."
-
-	para "Feel like swapping"
-	line "phone numbers?"
+	text "Look I can tell"
+	line "you want to be as"
+	cont "manly as me."
+	para "I'll tell you"
+	line "what, give you"
+	cont "your number."
+	para "I'll let you know"
+	line "when there is good"
+	cont "protein going"
+	cont "around here."
 	done
 
 AnthonyNumberAcceptedText:
-	text "Be patient. I'll"
-	line "find some rare"
-	cont "#MON for you!"
+	text "I'll get you"
+	line "jacked in no time."
 	done
 
 AnthonyNumberDeclinedText:
-	text "You're cold. I may"
-	line "as well head to"
-	cont "the mountains…"
+	text "Fine!"
+	para "Stay a skinny kid"
+	line "forever."
 	done
 
 AnthonyPhoneFullText:
@@ -45,8 +43,7 @@ AnthonyPhoneFullText:
 	done
 
 AnthonyRematchText:
-	text "All righty, then!"
-
-	para "My #MON and I"
-	line "are raring to go!"
+	text "Now you face the"
+	line "might of..."
+	cont "ANGUS CHAD MAXIMUS"
 	done

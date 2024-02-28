@@ -80,7 +80,6 @@ MoomooScript:
 	special RestartMapMusic
 	writetext Route39BarnTotallyHealthyText
 	waitbutton
-	closetext
 	setevent EVENT_HEALED_MOOMOO
 	end
 

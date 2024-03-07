@@ -322,7 +322,9 @@ CooltrainermJakeAfterBattleText:
 	done
 
 CooltrainermGaven3SeenText:
-	text "LANCE is CHAMPION"
+    text "LANCE is so cool!"
+
+	para "LANCE is CHAMPION"
 	line "of KANTO but is"
 	cont "acting CHAMPION"
 	cont "of JOHTO until"
@@ -332,6 +334,10 @@ CooltrainermGaven3SeenText:
 	para "For our national"
 	line "dignity we must"
 	cont "do this!"
+
+	para "I..."
+
+	para "will be CHAMPION!"
 	done
 
 CooltrainermGaven3BeatenText:

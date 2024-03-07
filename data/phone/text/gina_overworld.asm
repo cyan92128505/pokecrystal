@@ -1,34 +1,28 @@
-GinaAskNumber1Text:
-	text "I want to show"
-	line "you the power"
-	cont "of KANTO."
-
-	para "Want to give me"
-	line "your number?"
-
-	para "When I'm on my"
-	line "walk, I sometimes"
-	cont "pick up items."
-
-	para "If I get anything,"
-	line "you can have it!"
-	done
-
 GinaAskNumber2Text:
-	text "If I find an item,"
-	line "you can have it!"
-
-	para "Want to give me"
-	line "your number?"
+GinaAskNumber1Text:
+	text "Maybe KANTO"
+	line "#MON just"
+	cont "aren't that"
+	cont "strong."
+	para "I want my #MON"
+	line "to be as strong as"
+	cont "they can be."
+	para "Will you help me?"
+	para "I'll pay you with"
+	line "gifts for your"
+	cont "training!"
 	done
 
 GinaNumberAcceptedText:
-	text "I'll call as soon"
-	line "as I get anything!"
+	text "Thank you!"
+	para "My #MON will"
+	line "get much stronger"
+	cont "with your help."
 	done
 
 GinaNumberDeclinedText:
-	text "What a pity."
+	text "I guess they are"
+	line "just weak..."
 	done
 
 GinaPhoneFullText:
@@ -37,18 +31,17 @@ GinaPhoneFullText:
 	done
 
 GinaRematchText:
-	text "I've been waiting!"
-
-	para "I've gotten a bit"
-	line "better at this!"
+	text "OK I need to make"
+	line "sure all my"
+	cont "#MON get some"
+	cont "EXP."
 	done
 
 GinaGiftText:
-	text "So you're finally"
-	line "here!"
-
-	para "I think this will"
-	line "make you happy."
+	text "Thank for your"
+	line "training."
+	para "Here is your"
+	line "payment."
 	done
 
 GinaPackFullText:
@@ -57,4 +50,7 @@ GinaPackFullText:
 
 	para "I'll have to hold"
 	line "on to this."
+
+	para "You wont charge"
+	line "interest will you?"
 	done

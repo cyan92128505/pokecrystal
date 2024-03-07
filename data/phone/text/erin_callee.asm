@@ -15,7 +15,6 @@ ErinAnswerPhoneDayText:
 	text "…"
 
 	para "Oh, hi, <PLAY_G>!"
-	line "Yahoo!"
 	done
 
 ErinAnswerPhoneNiteText:
@@ -55,14 +54,11 @@ ErinGreetNiteText:
 	done
 
 ErinGenericText:
-	text "Are you raising"
-	line "your #MON?"
-
-	para "Hey, @"
-	text_ram wStringBuffer3
-	text "'s"
-	line "@"
-	text_ram wStringBuffer4
-	text " is"
-	cont "looking good!"
+	text "It's not even"
+	line "about the badge"
+	cont "now."
+	para "This is personal."
+	para "I will wipe that"
+	line "smirk of CLAIRs"
+	cont "face."
 	done

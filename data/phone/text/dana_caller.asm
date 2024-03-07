@@ -1,92 +1,84 @@
 DanaTakingPhotosText:
-	text "My @"
-	text_ram wStringBuffer4
-	text " is"
-	line "getting prettier!"
-
-	para "I've been taking"
-	line "photos galore!"
+	text "All these FISHER"
+	line "men keep telling"
+	cont "me I'm pretty."
+	para "Like, I know, duh."
+	para "I don't need them"
+	line "to tell me that."
+	para "Cringe!"
 	done
 
 DanaDefeatedMonText:
-	text "It took only an"
-	line "instant to KO a"
-	cont "wild @"
-	text_ram wStringBuffer4
-	text "."
-
-	para "It must be because"
-	line "you gave me some"
-
-	para "battling tips last"
-	line "time."
+	text "Listen if you want"
+	line "people do to what"
+	cont "you want you need"
+	cont "to just smile and"
+	cont "play with your"
+	cont "hair while you"
+	cont "talk to them."
+	para "You should"
+	line "practice this."
 	done
 
 DanaLostAMonText:
-	text "You know what?"
-	line "A wild @"
-	text_ram wStringBuffer4
-	text_start
-	para "got away from me"
-	line "again."
-
-	para "It was so close!"
-	line "Really, just a"
-
-	para "little bit more,"
-	line "and I would've…"
+	text "This boy called"
+	line "CHAD keeps"
+	cont "strutting around"
+	cont "with his"
+	cont "CHARIZARD."
+	para "I'm not impressed"
+	line "by his giant"
+	cont "chicken."
 	done
 
 DanaBattleRematchText:
-	text "Right now, I'm on"
-	line "@"
-	text_ram wStringBuffer5
-	text "."
-
-	para "If you're close"
-	line "by, let's battle!"
-
-	para "I'll be waiting"
-	line "for you!"
+	text "Hey <PLAYER>, I've"
+	line "been thinking"
+	cont "about you."
+	para "I think we should"
+	line "get together and"
+	cont "have a fight"
+	cont "again."
+	para "Stop by ROUTE 38"
+	line "sometime."
+	para "I'm all yours..."
 	done
 
 DanaHangUpText:
-	text "See you!"
+	text "See ya!"
 	done
 
 DanaFoundItemText:
-	text "You know what?"
-	line "I got a good gift!"
-
-	para "As I promised,"
-	line "it's yours!"
-
-	para "I'm sure you'd"
-	line "like it. Come get"
-
-	para "it! I'm waiting on"
-	line "@"
-	text_ram wStringBuffer5
-	text "!"
+	text "One of these"
+	line "SAILORS gave me"
+	cont "something as a"
+	cont "gift."
+	para "Yuck I don't want"
+	line "it."
+	para "Stop by ROUTE 38"
+	line "and it's all"
+	cont "yours."
 	done
 
 DanaCanYouWaitABitLongerText:
-	text "Oh! You wanted a"
-	line "gift, right?"
-
-	para "I got one, but I"
-	line "want to keep this."
-
-	para "Can you wait a bit"
-	line "longer?"
+	text "That guy CHAD"
+	line "totally stomped"
+	cont "some SAILORS that"
+	cont "were hassling me."
+	para "His CHARIZARD is"
+	line "pretty strong."
+	para "I didn't need his"
+	line "help though, I"
+	cont "don't appreciate"
+	cont "it."
 	done
 
 DanaReminderText:
-	text "Hi! You haven't"
-	line "forgotten about"
-
-	para "your promise to"
-	line "battle me?"
+	text "You shouldn't keep"
+	line "me waiting."
+	para "I'm getting bored!"
+	para "Are you going to"
+	line "battle me or not?"
 
 	para "I'm waiting on"
 	line "@"
@@ -95,7 +87,7 @@ DanaReminderText:
 	done
 
 DanaComePickUpText:
-	text "Hello?"
+	text "Hello!?"
 
 	para "If you don't come"
 	line "get your present"

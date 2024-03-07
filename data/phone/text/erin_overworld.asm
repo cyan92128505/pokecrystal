@@ -1,37 +1,30 @@
-ErinAskNumber1Text:
-	text "It really made me"
-	line "angry to lose."
-
-	para "I'll have to train"
-	line "much harder…"
-
-	para "Here's my number."
-	line "I'm ERIN--don't"
-
-	para "forget! Want to"
-	line "battle me again?"
-	done
-
 ErinAskNumber2Text:
-	text "I want to battle"
-	line "with you again."
-
-	para "Do you want to"
-	line "exchange numbers?"
+ErinAskNumber1Text:
+	text "I'll never be able"
+	line "to beat CLAIR at"
+	cont "this pace."
+	para "I only need one"
+	line "more badge!"
+	para "Can you help me"
+	line "find a way to beat"
+	cont "her?"
 	done
 
 ErinNumberAcceptedText:
-	text "I'll remember to"
-	line "call when I want"
-	cont "to battle again!"
+	text "Great!"
+	para "I'll take down"
+	line "that stuck up"
+	cont "MILTANK CLAIR!"
+	para "Then I'll give her"
+	line "a taste of her own"
+	cont "smack talking"
+	cont "medicine."
 	done
 
 ErinNumberDeclinedText:
-	text "Oh… I'm sad…"
-	line "If you do want to"
-
-	para "battle, come see"
-	line "ERIN--that's me!"
+	text "I only want to"
+	line "learn from strong"
+	cont "trainers anyway."
 	done
 
 ErinPhoneFullText:
@@ -40,24 +33,30 @@ ErinPhoneFullText:
 	done
 
 ErinRematchText:
-	text "Yay! I waited!"
-	line "Let's start now!"
+	text "Alright I'll"
+	line "pretend your"
+	cont "CLAIR."
+	para "..."
+	para "Take this you"
+	line "stuck up"
+	cont "MILTANK!!!"
 	done
 
 ErinPackFullText:
-	text "That's too bad!"
-	line "You have no room…"
-
-	para "I'll give it to"
-	line "you another time."
+	text "You don't have"
+	line "room for my gift."
+	para "I'll just keep it"
+	line "then!"
 	done
 
 ErinRematchGiftText:
-	text "Aww… I lost again!"
-
-	para "I wonder how many"
-	line "times that is…"
-
-	para "Thanks for coming!"
-	line "Here's a present!"
+	text "I think I learned"
+	line "something there."
+	para "Here I have a"
+	line "present for you."
+	para "I was going to"
+	line "give this to my"
+	cont "boyfriend but he"
+	cont "isn't as helpful"
+	cont "as you."
 	done

@@ -1,40 +1,29 @@
-DerekAskNumber1Text:
-	text "Oh, wow! PIKACHU!"
-	line "It's so soft and"
-	cont "furry! How cute!"
-
-	para "Let's be friends!"
-	line "PIKACHU-lovers are"
-	cont "never bad people!"
-
-	para "Let's chat about"
-	line "PIKACHU!"
-
-	para "Can I get your"
-	line "phone number?"
-	done
-
 DerekAskNumber2Text:
-	text "Let's chat about"
-	line "PIKACHU!"
-
-	para "Can I get your"
-	line "phone number?"
+DerekAskNumber1Text:
+	text "You have powerful"
+	line "magic!"
+	para "We need to team up"
+	line "to defeat the dark"
+	cont "lord."
+	para "I know he is using"
+	line "dark magic!"
+	para "Give me your"
+	line "number and I'll"
+	cont "let you know if I"
+	cont "find out anything?"
 	done
 
 DerekNumberAcceptedText:
-	text "PIKACHU is the"
-	line "one! If anything"
-
-	para "comes up, I'll"
-	line "give you a jingle."
+	text "We have made the"
+	line "unbreakable vow."
+	para "I'll let you know"
+	line "if I find any"
+	cont "magical relics."
 	done
 
 DerekNumberDeclinedText:
-	text "You…"
-
-	para "I bet you don't"
-	line "even like PIKACHU…"
+	text "Are you a"
+	line "horcrux!?"
 	done
 
 DerekPhoneFullText:
@@ -43,19 +32,16 @@ DerekPhoneFullText:
 	done
 
 DerekGiftText:
-	text "I've been looking"
-	line "for you! Here, see"
-	cont "this? This is it!"
-
-	para "I'm certain your"
-	line "PIKACHU will love"
-	cont "my gift too!"
+	text "I found a horcrux!"
+	para "Here you must take"
+	line "it."
+	para "Find a way to"
+	line "destroy it!"
 	done
 
 DerekPackFullText:
-	text "Uh-oh, too bad."
-	line "You don't have any"
-
-	para "room. Be sure to"
-	line "get it later."
+	text "You must make room"
+	line "for this, the fate"
+	cont "of the world"
+	cont "depends on it!"
 	done

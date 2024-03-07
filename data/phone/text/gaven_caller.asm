@@ -1,85 +1,64 @@
 GavenMonGreaterThanImaginedText:
-	text "My @"
-	text_ram wStringBuffer4
-	text_start
-	line "might be greater"
-	cont "than I imagined."
-
-	para "I doubt I'll see a"
-	line "@"
-	text_ram wStringBuffer4
-	text " that's"
-	cont "better than mine."
+	text "I have rehearsed"
+	line "the moment in my"
+	cont "dreams many times."
+	para "I walk beside"
+	line "LANCE as a peer"
+	cont "into the HALL OF"
+	cont "FAME."
+	para "Then we go out for"
+	line "dinner together."
+	para "A perfect day."
+	para "It will happen!"
 	done
 
 GavenDefeatedMonText:
-	text "Oh, and I managed"
-	line "to barely defeat"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " the"
-	line "other day."
-
-	para "I've never seen a"
-	line "@"
-	text_ram wStringBuffer4
-	text " get"
-	cont "that strong…"
-
-	para "You shouldn't let"
-	line "your guard down,"
-
-	para "even against a"
-	line "#MON you're"
-	cont "used to seeing."
+	text "DRAGON #MON"
+	line "resist WATER,"
+	cont "GRASS and FIRE!"
+	para "Surly LANCE must"
+	line "be unbeatable!"
+	para "I will find a"
+	line "way..."
 	done
 
 GavenLostAMonText:
-	text "And a while back,"
-	line "I tried to catch a"
-	cont "wild @"
-	text_ram wStringBuffer4
-	text "."
-
-	para "But it managed to"
-	line "elude me."
-
-	para "One wrong decision"
-	line "could mean total"
-
-	para "failure… You ought"
-	line "to be careful too."
+	text "I've got it!"
+	para "How to beat LANCE!"
+	para "I'll spam ICE BEAM"
+	line "with MILOTIC and"
+	cont "hope to get a"
+	cont "freeze on each"
+	cont "one."
+	para "I'll need some PP"
+	line "UPs!"
+	done
 	done
 
 GavenBattleRematchText:
-	text "Let's battle!"
+	text "The only way I"
+	line "will be able to"
+	cont "beat LANCE is to"
+	cont "practice with"
+	cont "another CHAMPION."
+	para "You must help me!"
 
 	para "I'll be waiting on"
 	line "@"
 	text_ram wStringBuffer5
 	text "."
-
-	para "Give me a shout"
-	line "when you're close."
 	done
 
 GavenHangUpText:
-	text "OK, I'll talk to"
-	line "you soon!"
-	done
-
 GavenHangUpNotThursdayText:
-	text "I obsess over how"
-	line "to beat you."
+	text "I must go."
+	para "Destiny calls..."
 	done
 
 GavenReminderText:
-	text "<PLAY_G>, why"
-	line "aren't you here?"
-
-	para "I'll take you down"
-	line "with @"
-	text_ram wStringBuffer5
-	text "!"
+	text "A CHAMPION has"
+	line "obligations."
+	para "You must battle"
+	line "me!"
+	para "Come and face me!"
 	done

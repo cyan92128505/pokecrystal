@@ -1,105 +1,72 @@
 DerekCheekPinchingText:
-	text "Listen to this."
-	line "My @"
-	text_ram wStringBuffer4
-	text_start
-	para "grins happily when"
-	line "I pinch its cheek."
-
-	para "But it never grins"
-	line "for anyone else."
-
-	para "I must be special."
+	text "<PLAYER>!"
+	para "The chamber of"
+	line "secrets has been"
+	cont "opened!"
+	para "The entrance is"
+	line "said to somewhere"
+	cont "in the RUINS OF"
+	cont "ALPH."
+	para "A great evil"
+	line "dwells down there."
 	done
 
 DerekDefeatedMonText:
-	text "Oh, and recently,"
-	line "my PIKACHU beat a"
-	cont "wild @"
-	text_ram wStringBuffer4
-	text "!"
-
-	para "A wild @"
-	text_ram wStringBuffer4
-	text ","
-	line "I tell you!"
-
-	para "Don't you think"
-	line "that's astounding?"
-
-	para "My PIKACHU is"
-	line "awesome!"
-
-	para "My PIKACHU is the"
-	line "greatest!"
+	text "Did you know that"
+	line "drinking the blood"
+	cont "of a BLISSEY will"
+	cont "keep you alive"
+	cont "even if you are an"
+	cont "inch from death!"
+	para "Now you do."
 	done
 
 DerekLostAMonText:
-	text "Oh, and I saw a"
-	line "wild @"
-	text_ram wStringBuffer4
-	text " a"
-	cont "little while ago."
-
-	para "But it wasn't very"
-	line "cute, so I left"
-
-	para "it…"
-	line "#MON have to be"
-
-	para "cute. They're no"
-	line "good otherwise."
+	text "Only one will die"
+	line "tonight..."
+	para "Sorry wrong"
+	line "number!"
 	done
 
 DerekHangUpText:
-	text "Well, let's talk"
-	line "again!"
+	text "Mischief managed."
 	done
 
 DerekBugCatchingContestText:
-	text "Did you remember?"
-	line "The Bug-Catching"
-	cont "Contest is today."
-
-	para "You're going to"
-	line "go, aren't you?"
-
-	para "I think I'll"
-	line "participate with"
-
-	para "PIKACHU to show"
-	line "off its cuteness."
+	text "The dark lord is"
+	line "using horcruxes!"
+	para "I think I may have"
+	line "found one."
+	para "I'll let you"
+	line "know..."
 	done
 
 DerekFoundItemText:
-	text "I'd like you to"
-	line "have a NUGGET."
-
-	para "My PIKACHU just"
-	line "loves it."
-
-	para "I'm certain your"
-	line "PIKACHU will love"
-	cont "it too!"
+	text "I may have found a"
+	line "horcrux."
+	para "Come on over to"
+	line "ROUTE 39 and I'll"
+	cont "give it to you."
 	done
 
 DerekLetsGetTogetherText:
-	text "How is your"
-	line "PIKACHU doing?"
-
-	para "Let's get together"
-	line "and brag about our"
-	cont "PIKACHU!"
+	text "I am sure WALLACE"
+	line "will make"
+	cont "exclusive use of"
+	cont "AVADA KADRAVRA."
+	para "There must be a"
+	line "defense against"
+	cont "it!"
+	para "Are there any ELF"
+	line "#MON?"
 	done
 
 DerekComePickUpText:
-	text "What's wrong?"
-
-	para "I'm waiting on"
-	line "@"
-	text_ram wStringBuffer5
-	text "."
-
-	para "Come pick this up"
-	line "anytime."
+	text "<PLAYER>!"
+	para "I need you to help"
+	line "me with this"
+	cont "horcrux."
+	para "This is our only"
+	line "chance to stop the"
+	cont "dark lord!"
 	done

@@ -57,16 +57,15 @@ GavenGreetNiteText:
 	done
 
 GavenGenericText:
-	text "How are your"
-	line "#MON doing?"
-
-	para "My @"
-	text_ram wStringBuffer4
-	text "'s"
-	line "doing as great as"
-	cont "ever."
-
-	para "Let's keep at it"
-	line "and become #MON"
-	cont "CHAMPS!"
+	text "I have rehearsed"
+	line "the moment in my"
+	cont "dreams many times."
+	para "I walk beside"
+	line "LANCE as a peer"
+	cont "into the HALL OF"
+	cont "FAME."
+	para "Then we go out for"
+	line "dinner together."
+	para "A perfect day."
+	para "It will happen!"
 	done

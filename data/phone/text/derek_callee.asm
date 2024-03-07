@@ -1,64 +1,51 @@
 DerekAnswerPhoneText:
 	text "Hi, <PLAY_G>?"
 
-	para "Good morning pika."
-	line "What's up pika?"
+	para "I solemnly swear"
+	line "I'm up to no good."
 	done
 
 DerekAnswerPhoneDayText:
 	text "Hi, <PLAY_G>?"
 
-	para "Good day pika,"
-	line "what's up pika?"
+	para "I solemnly swear"
+	line "I'm up to no good."
 	done
 
 DerekAnswerPhoneNiteText:
 	text "Hi, <PLAY_G>?"
 
-	para "Good evening pika,"
-	line "what's up pika?"
+	para "Lumous maxima!"
 	done
 
 DerekGreetText:
-	text "<PLAY_G> pika, good"
+	text "<PLAY_G>, good"
 	line "morning!"
 
-	para "It's @"
-	text_ram wStringBuffer3
-	text ", how"
-	line "pika are you?"
+	para "I solemnly swear"
+	line "I'm up to no good."
 	done
 
 DerekGreetDayText:
-	text "<PLAY_G> pika, good"
-	line "pika day!"
+	text "<PLAY_G>, good"
+	line "day!"
 
-	para "It's @"
-	text_ram wStringBuffer3
-	text ", how"
-	line "pika are you?"
+	para "I solemnly swear"
+	line "I'm up to no good."
 	done
 
 DerekGreetNiteText:
-	text "<PLAY_G> pika, good"
+	text "<PLAY_G>, good"
 	line "evening!"
 
-	para "It's @"
-	text_ram wStringBuffer3
-	text ". Were"
-	line "you pika awake?"
+	para "I solemnly swear"
+	line "I'm up to no good."
 	done
 
 DerekGenericText:
-	text "You have to hear"
-	line "this! My lovable"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " looked"
-	line "at me and grinned!"
-
-	para "It must be because"
-	line "our hearts beat"
-	cont "together as one!"
+	text "There will always"
+	line "be a dark lord"
+	cont "somewhere in the"
+	cont "world."
+	para "We must fight!"
 	done

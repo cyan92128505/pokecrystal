@@ -1,49 +1,30 @@
-GavenAskNumber1Text:
-	text "Wow, you're tough."
-	line "I haven't battled"
-
-	para "that seriously in"
-	line "a long time."
-
-	para "Could I get your"
-	line "phone number?"
-
-	para "I'd like to battle"
-	line "again when I heal"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " and the"
-	line "rest of my team."
-	done
-
 GavenAskNumber2Text:
-	text "Could I get your"
-	line "phone number?"
-
-	para "I'd like to battle"
-	line "again when I heal"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " and the"
-	line "rest of my team."
+GavenAskNumber1Text:
+	text "You have what it"
+	line "takes to be a"
+	cont "CHAMPION."
+	para "But you'll never"
+	line "beat LANCE."
+	para "I have studied his"
+	line "style."
+	para "We must work"
+	line "together!"
+	para "Give me your"
+	line "number."
 	done
 
 GavenNumberAcceptedText:
-	text "How should I beat"
-	line "you? I'm tormented"
-
-	para "by those thoughts"
-	line "all the time…"
+	text "If we work"
+	line "together..."
+	para "I'm sure we will"
+	line "discover the"
+	cont "secret."
 	done
 
 GavenNumberDeclinedText:
-	text "OK… I understand…"
-	line "But if you change"
-
-	para "your mind, give me"
-	line "a shout anytime."
+	text "A coward will"
+	line "never be a"
+	cont "CHAMPION."
 	done
 
 GavenPhoneFullText:
@@ -55,9 +36,13 @@ GavenPhoneFullText:
 	done
 
 GavenRematchText:
-	text "Hi! I've been"
-	line "waiting for you!"
-
-	para "This time, I'm"
-	line "going to win!"
+	text "Are you watching"
+	line "LANCE!?"
+	para "I hope you are for"
+	line "today I will"
+	cont "defeat this"
+	cont "CHAMPION and begin"
+	cont "my quest to become"
+	cont "CHAMPION of"
+	cont "CHAMPIONS!"
 	done

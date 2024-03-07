@@ -60,9 +60,8 @@ DanaGenericText:
 	text " is"
 	line "so full of energy,"
 
-	para "it's a little"
-	line "scary."
-
-	para "How are your"
-	line "#MON doing?"
+	para "I don't think I"
+	line "can control it!"
+	para "I better have a"
+	line "battle soon."
 	done

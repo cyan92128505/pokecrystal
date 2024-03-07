@@ -1,26 +1,20 @@
 DanaAskNumber1Text:
-	text "You're really good"
-	line "at #MON!"
-
-	para "Boys give me items"
-	line "after battles, but"
-
-	para "sometimes they"
-	line "give me too much."
-
-	para "Next time, I can"
-	line "share some if you"
-
-	para "want. Let me get"
-	line "your phone number."
-	done
-
 DanaAskNumber2Text:
-	text "I'll share my"
-	line "gifts with you."
-
-	para "Let me get your"
-	line "phone number."
+	text "You are really"
+	line "strong!"
+	para "You must gat lots"
+	line "of attention from"
+	cont "admirers like I"
+	cont "do."
+	para "Sometimes my"
+	line "admirers give me"
+	cont "items as gifts."
+	para "Pathetic right!"
+	para "Tell you what,"
+	line "give me your"
+	cont "number and I'll"
+	cont "give these items"
+	cont "to you instead?"
 	done
 
 DanaNumberAcceptedText:
@@ -48,19 +42,19 @@ DanaPhoneFullText:
 	done
 
 DanaRematchText:
-	text "You're really"
-	line "late!"
-
-	para "I'm eager to get"
-	line "going!"
+	text "You kept me"
+	line "waiting long"
+	cont "enough!"
+	para "I'm really eager"
+	line "now."
+	para "Let's do it."
 	done
 
 DanaGiftText:
-	text "Hi! Are you here"
-	line "for your gift?"
-
-	para "This should really"
-	line "make your day!"
+	text "Hey <PLAYER>!"
+	para "This is for you."
+	para "A little something"
+	line "from yours truly."
 	done
 
 DanaPackFullText:

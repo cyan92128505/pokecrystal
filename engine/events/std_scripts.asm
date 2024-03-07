@@ -630,7 +630,6 @@ AskNumber1MScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -653,9 +652,6 @@ AskNumber1MScript:
 	end
 .Gaven:
 	farwritetext GavenAskNumber1Text
-	end
-.Jose:
-	farwritetext JoseAskNumber1Text
 	end
 .Joey:
 	farwritetext JoeyAskNumber1Text
@@ -711,7 +707,6 @@ AskNumber2MScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -734,9 +729,6 @@ AskNumber2MScript:
 	end
 .Gaven:
 	farwritetext GavenAskNumber2Text
-	end
-.Jose:
-	farwritetext JoseAskNumber2Text
 	end
 .Joey:
 	farwritetext JoeyAskNumber2Text
@@ -798,7 +790,6 @@ NumberAcceptedMScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -823,11 +814,6 @@ NumberAcceptedMScript:
 	end
 .Gaven:
 	farwritetext GavenNumberAcceptedText
-	waitbutton
-	closetext
-	end
-.Jose:
-	farwritetext JoseNumberAcceptedText
 	waitbutton
 	closetext
 	end
@@ -916,7 +902,6 @@ NumberDeclinedMScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -941,11 +926,6 @@ NumberDeclinedMScript:
 	end
 .Gaven:
 	farwritetext GavenNumberDeclinedText
-	waitbutton
-	closetext
-	end
-.Jose:
-	farwritetext JoseNumberDeclinedText
 	waitbutton
 	closetext
 	end
@@ -1034,7 +1014,6 @@ PhoneFullMScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -1059,11 +1038,6 @@ PhoneFullMScript:
 	end
 .Gaven:
 	farwritetext GavenPhoneFullText
-	waitbutton
-	closetext
-	end
-.Jose:
-	farwritetext JosePhoneFullText
 	waitbutton
 	closetext
 	end
@@ -1152,7 +1126,6 @@ RematchMScript:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -1174,11 +1147,6 @@ RematchMScript:
 	end
 .Gaven:
 	farwritetext GavenRematchText
-	waitbutton
-	closetext
-	end
-.Jose:
-	farwritetext JoseRematchText
 	waitbutton
 	closetext
 	end
@@ -1250,7 +1218,6 @@ RematchMScript:
 
 GiftMScript:
 	readvar VAR_CALLERID
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
 	ifequal PHONE_POKEFANM_DEREK, .Derek
@@ -1258,10 +1225,6 @@ GiftMScript:
 	ifequal PHONE_FISHER_WILTON, .Wilton
 	ifequal PHONE_BLACKBELT_KENJI, .Kenji
 
-.Jose:
-	farwritetext JoseGiftText
-	promptbutton
-	end
 .Wade:
 	farwritetext WadeGiftText
 	promptbutton
@@ -1289,7 +1252,6 @@ GiftMScript:
 
 PackFullMScript:
 	readvar VAR_CALLERID
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
@@ -1300,11 +1262,6 @@ PackFullMScript:
 	ifequal PHONE_BLACKBELT_KENJI, .Kenji
 	ifequal PHONE_HIKER_PARRY, .Parry
 
-.Jose:
-	farwritetext JosePackFullText
-	waitbutton
-	closetext
-	end
 .Joey:
 	farwritetext JoeyPackFullText
 	waitbutton

@@ -10,10 +10,6 @@ BethBattleReminderScript:
 	farwritetext BethReminderText
 	end
 
-JoseReminderScript:
-	farwritetext JoseReminderText
-	end
-
 ReenaHurryScript:
 	farwritetext ReenaHurryText
 	end

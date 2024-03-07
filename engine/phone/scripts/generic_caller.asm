@@ -58,7 +58,6 @@ Phone_WhosBragging_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -81,11 +80,6 @@ Phone_WhosBragging_Male:
 
 .Gaven:
 	farwritetext GavenMonGreaterThanImaginedText
-	promptbutton
-	end
-
-.Jose:
-	farwritetext JoseMonsStickHasADeliciousAromaText
 	promptbutton
 	end
 
@@ -214,7 +208,6 @@ Phone_WhoDefeatedMon_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -237,11 +230,6 @@ Phone_WhoDefeatedMon_Male:
 
 .Gaven:
 	farwritetext GavenDefeatedMonText
-	promptbutton
-	end
-
-.Jose:
-	farwritetext JoseDefeatedMonText
 	promptbutton
 	end
 
@@ -370,7 +358,6 @@ Phone_WhoLostAMon_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -393,11 +380,6 @@ Phone_WhoLostAMon_Male:
 
 .Gaven:
 	farwritetext GavenLostAMonText
-	promptbutton
-	end
-
-.Jose:
-	farwritetext JoseLostAMonText
 	promptbutton
 	end
 
@@ -534,7 +516,6 @@ PhoneScript_RematchText_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -556,11 +537,6 @@ PhoneScript_RematchText_Male:
 
 .Gaven:
 	farwritetext GavenBattleRematchText
-	promptbutton
-	end
-
-.Jose:
-	farwritetext JoseBattleRematchText
 	promptbutton
 	end
 
@@ -686,7 +662,6 @@ PhoneScript_HangUpText_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
@@ -710,10 +685,6 @@ PhoneScript_HangUpText_Male:
 
 .Gaven:
 	farwritetext GavenHangUpText
-	end
-
-.Jose:
-	farwritetext JoseHangUpText
 	end
 
 .Joey:
@@ -885,16 +856,11 @@ AnthonySwarmScript:
 
 PhoneScript_FoundItem_Male:
 	readvar VAR_CALLERID
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 	ifequal PHONE_FISHER_TULLY, .Tully
 	ifequal PHONE_FISHER_WILTON, .Wilton
-
-.Jose:
-	farwritetext JoseFoundItemText
-	end
 
 .Wade:
 	farwritetext WadeFoundItemText

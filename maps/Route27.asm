@@ -76,106 +76,14 @@ Route27FisherScript:
 	jumptextfaceplayer Route27FisherText
 
 TrainerBirdKeeperJose2:
-	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
+	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJoseSeenText, BirdKeeperJoseBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
+	endifjustbattled
 	opentext
-	checkflag ENGINE_JOSE_READY_FOR_REMATCH
-	iftrue .WantsBattle
-	checkflag ENGINE_JOSE_HAS_STAR_PIECE
-	iftrue .HasStarPiece
-	checkcellnum PHONE_BIRDKEEPER_JOSE
-	iftrue .NumberAccepted
-	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	writetext BirdKeeperJose2AfterBattleText
-	promptbutton
-	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_JOSE
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.WantsBattle:
-	scall .Rematch
-	winlosstext BirdKeeperJose2BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer BIRD_KEEPER, JOSE2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
-	loadtrainer BIRD_KEEPER, JOSE1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
-	loadtrainer BIRD_KEEPER, JOSE3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
-	end
-
-.HasStarPiece:
-	scall .Gift
-	verbosegiveitem STAR_PIECE
-	iffalse .NoRoom
-	clearflag ENGINE_JOSE_HAS_STAR_PIECE
-	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
-
-.AskNumber1:
-	jumpstd AskNumber1MScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2MScript
-	end
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
-	end
-
-.NumberDeclined:
-	jumpstd NumberDeclinedMScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullMScript
-	end
-
-.Rematch:
-	jumpstd RematchMScript
-	end
-
-.Gift:
-	jumpstd GiftMScript
-	end
-
-.PackFull:
-	jumpstd PackFullMScript
+	writetext BirdKeeperJoseAfterBattleText
+	waitbutton
+	closetext
 	end
 
 TrainerCooltrainermBlake:
@@ -420,7 +328,7 @@ CooltrainerfMeganAfterBattleText:
 	cont "grow."
 	done
 
-BirdKeeperJose2SeenText:
+BirdKeeperJoseSeenText:
 	text "My beautiful"
 	line "#MON are"
 	cont "seasoned machines"
@@ -430,12 +338,12 @@ BirdKeeperJose2SeenText:
 	para "Kill!"
 	done
 
-BirdKeeperJose2BeatenText:
+BirdKeeperJoseBeatenText:
 	text "You are nobodies"
 	line "prey."
 	done
 
-BirdKeeperJose2AfterBattleText:
+BirdKeeperJoseAfterBattleText:
 	text "Let HOEN come!"
 
 	para "my #MON will"

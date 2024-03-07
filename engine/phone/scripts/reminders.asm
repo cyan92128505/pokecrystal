@@ -2,10 +2,6 @@ JackWantsBattleScript:
 	farwritetext JackReminderText
 	end
 
-HueyWantsBattleScript:
-	farwritetext HueyReminderText
-	end
-
 GavenReminderScript:
 	farwritetext GavenReminderText
 	end

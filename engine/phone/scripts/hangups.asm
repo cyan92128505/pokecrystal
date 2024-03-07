@@ -8,11 +8,6 @@ BeverlyHangUpScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Female
 
-HueyHangUpScript:
-	farwritetext HueyWeHaveToBattleAgainSometimeText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
 GavenHangUpNotThursdayScript:
 	farwritetext GavenHangUpNotThursdayText
 	promptbutton

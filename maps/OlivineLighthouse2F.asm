@@ -22,120 +22,11 @@ TrainerSailorHuey:
 	trainer SAILOR, HUEY1, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_SAILOR_HUEY
+	endifjustbattled
 	opentext
-	checkflag ENGINE_HUEY_READY_FOR_REMATCH
-	iftrue .WantsBattle
-	checkcellnum PHONE_SAILOR_HUEY
-	iftrue .NumberAccepted
-	checkevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedBefore
-	setevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
-	sjump .AskForNumber
-
-.AskedBefore:
-	scall .AskNumber2
-.AskForNumber:
-	askforphonenumber PHONE_SAILOR_HUEY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, SAILOR, HUEY1
-	scall .RegisteredNumber
-	sjump .NumberAccepted
-
-.WantsBattle:
-	scall .Rematch
-	winlosstext SailorHueyBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight3
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight2
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight1
-	loadtrainer SAILOR, HUEY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_HUEY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
-	loadtrainer SAILOR, HUEY2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_HUEY_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
-	loadtrainer SAILOR, HUEY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_HUEY_READY_FOR_REMATCH
-	end
-
-.LoadFight3:
-	loadtrainer SAILOR, HUEY4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_HUEY_READY_FOR_REMATCH
-	checkevent EVENT_HUEY_PROTEIN
-	iftrue .HasProtein
-	checkevent EVENT_GOT_PROTEIN_FROM_HUEY
-	iftrue .SkipGift
-	scall .RematchGift
-	verbosegiveitem PROTEIN
-	iffalse .PackFull
-	setevent EVENT_GOT_PROTEIN_FROM_HUEY
-	sjump .NumberAccepted
-
-.SkipGift:
-	end
-
-.HasProtein:
-	opentext
-	writetext SailorHueyGiveProteinText
+	writetext SailorHueyAfterBattleText
 	waitbutton
-	verbosegiveitem PROTEIN
-	iffalse .PackFull
-	clearevent EVENT_HUEY_PROTEIN
-	setevent EVENT_GOT_PROTEIN_FROM_HUEY
-	sjump .NumberAccepted
-
-.AskNumber1:
-	jumpstd AskNumber1MScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2MScript
-	end
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
-	end
-
-.NumberDeclined:
-	jumpstd NumberDeclinedMScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullMScript
-	end
-
-.Rematch:
-	jumpstd RematchMScript
-	end
-
-.PackFull:
-	setevent EVENT_HUEY_PROTEIN
-	jumpstd PackFullMScript
-	end
-
-.RematchGift:
-	jumpstd RematchGiftMScript
+	closetext
 	end
 
 SailorHueySeenText:
@@ -145,13 +36,21 @@ SailorHueySeenText:
 	para "But I'll never"
 	line "give up."
 
-	para "Behold the rage"
-	line "of the sea!"
+	para "This is the BATTLE"
+	line "TOWER right?"
+	done
 	done
 
 SailorHueyBeatenText:
-	text "I knew that"
-	line "would happen."
+    text "My streak!"
+    done
+
+SailorHueyAfterBattleText:
+	text "Wait this isn't"
+	line "the BATTLE TOWER!"
+	para "I'm not going to"
+	line "get a prize for"
+	cont "all this crap!?"
 	done
 
 GentlemanAlfredSeenText:
@@ -164,7 +63,7 @@ GentlemanAlfredSeenText:
 	done
 
 GentlemanAlfredBeatenText:
-	text "You roughian!"
+	text "You hooligan!"
 	done
 
 GentlemanAlfredAfterBattleText:

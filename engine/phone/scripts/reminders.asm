@@ -22,10 +22,6 @@ WadeQuickBattleScript:
 	farwritetext WadeQuickBattleText
 	end
 
-RalphReminderScript:
-	farwritetext RalphReminderText
-	end
-
 LizReminderScript:
 	farwritetext LizReminderText
 	end
@@ -58,20 +54,12 @@ ChadReminderScript:
 	farwritetext ChadReminderText
 	end
 
-TullyForwardScript:
-	farwritetext TullyForwardText
-	end
-
 BrentReminderScript:
 	farwritetext BrentReminderText
 	end
 
 TiffanyAsleepScript:
 	farwritetext TiffanyAsleepText
-	end
-
-VanceHurryHurryScript:
-	farwritetext VanceHurryHurryText
 	end
 
 WiltonNotBitingScript:

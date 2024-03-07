@@ -35,57 +35,12 @@ Route45_MapScripts:
     endcallback
 
 TrainerBlackbeltKenji:
-	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
+	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenjiSeenText, BlackbeltKenjiBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BLACKBELT_KENJI
 	endifjustbattled
 	opentext
-	checkcellnum PHONE_BLACKBELT_KENJI
-	iftrue .Registered
-	checkevent EVENT_KENJI_ASKED_FOR_PHONE_NUMBER
-	iftrue .AskedAlready
-	special SampleKenjiBreakCountdown
 	writetext BlackbeltKenjiAfterBattleText
-	waitbutton
-	setevent EVENT_KENJI_ASKED_FOR_PHONE_NUMBER
-	scall Route45AskNumber1M
-	sjump .AskForNumber
-
-.AskedAlready:
-	scall Route45AskNumber2M
-.AskForNumber:
-	askforphonenumber PHONE_BLACKBELT_KENJI
-	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
-	gettrainername STRING_BUFFER_3, BLACKBELT_T, KENJI3
-	scall Route45RegisteredNumberM
-	sjump Route45NumberAcceptedM
-
-.Registered:
-	readvar VAR_KENJI_BREAK
-	ifnotequal 1, Route45NumberAcceptedM
-	checktime MORN
-	iftrue .Morning
-	checktime NITE
-	iftrue .Night
-	checkevent EVENT_KENJI_ON_BREAK
-	iffalse Route45NumberAcceptedM
-	scall Route45GiftM
-	verbosegiveitem PP_UP
-	iffalse .NoRoom
-	clearevent EVENT_KENJI_ON_BREAK
-	special SampleKenjiBreakCountdown
-	sjump Route45NumberAcceptedM
-
-.Morning:
-	writetext BlackbeltKenjiMorningText
-	waitbutton
-	closetext
-	end
-
-.Night:
-	writetext BlackbeltKenjiNightText
 	waitbutton
 	closetext
 	end
@@ -406,7 +361,7 @@ HikerParryGivesIronText:
 	cont "those legs."
 	done
 
-BlackbeltKenji3SeenText:
+BlackbeltKenjiSeenText:
 	text "I used to be"
 	line "part of a dojo"
 	cont "in SAFFRON."
@@ -423,7 +378,7 @@ BlackbeltKenji3SeenText:
 	line "for my old master."
 	done
 
-BlackbeltKenji3BeatenText:
+BlackbeltKenjiBeatenText:
 	text "Matte!"
 	done
 

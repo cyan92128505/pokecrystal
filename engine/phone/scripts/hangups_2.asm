@@ -28,11 +28,6 @@ DerekComePickUpScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
-TullyHurryScript:
-	farwritetext TullyHurryText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
 TiffanyHurryScript:
 	farwritetext TiffanyHurryText
 	promptbutton

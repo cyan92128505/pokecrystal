@@ -4,7 +4,7 @@ IrwinAnswerPhoneText:
 	text_start
 	line "here…"
 
-	para "Hey, <PLAY_G>!"
+	para "Hello <PLAY_G>."
 	done
 
 IrwinAnswerPhoneDayText:
@@ -13,7 +13,7 @@ IrwinAnswerPhoneDayText:
 	text_start
 	line "here…"
 
-	para "Wow, <PLAY_G>!"
+	para "Hello <PLAY_G>."
 	done
 
 IrwinAnswerPhoneNiteText:
@@ -22,7 +22,7 @@ IrwinAnswerPhoneNiteText:
 	text_start
 	line "here…"
 
-	para "Yippee, <PLAY_G>!"
+	para "Hello <PLAY_G>."
 	done
 
 IrwinGreetText:

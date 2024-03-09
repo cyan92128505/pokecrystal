@@ -80,7 +80,19 @@ PlayersHouseRadioScript:
 	end
 
 PlayersHouseBookshelfScript:
-	jumpstd PictureBookshelfScript
+	opentext
+	writetext PlayersBooksText
+	waitbutton
+	closetext
+	end
+
+PlayersBooksText:
+	text "A photo album lies"
+	line "open."
+	para "Happy pictures of"
+	line "mum and dad stare"
+	cont "up from the page."
+	done
 
 PlayersHousePCScript:
 	opentext

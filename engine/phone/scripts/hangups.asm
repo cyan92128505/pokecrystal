@@ -98,11 +98,6 @@ ParryBattleWithMeScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
-ErinWorkingHardScript:
-	farwritetext ErinWorkingHardText
-	promptbutton
-	sjump PhoneScript_HangUpText_Female
-
 IrwinRandomTextScript:
 	random 3
 	ifequal 0, IrwinEscapadeScript

@@ -1,251 +1,149 @@
 IrwinHangUpText:
-	text "I hate having to"
-	line "hang up on you!"
-
-	para "Call you later!"
+	text "You catch more"
+	line "#MON, bye!"
 	done
 
 IrwinRocketTakeoverRumorText:
-	text "<PLAY_G>, have you"
-	line "heard?"
-
-	para "GOLDENROD's RADIO"
-	line "TOWER has been"
-
-	para "taken over by TEAM"
-	line "ROCKET!"
-
-	para "…Um… What's TEAM"
-	line "ROCKET?"
+	text "<PLAYER>!"
+	para "The rockets have"
+	line "taken over"
+	cont "GOLDENROD."
+	para "Don't worry I got"
+	line "this."
+	para "I'm going to"
+	line "explode all over"
+	cont "them!"
 	done
 
 IrwinPlainBadgeGossipText:
-	text "<PLAY_G>, I heard!"
-
-	para "You defeated that"
-	line "WHITNEY?"
-
-	para "It makes me proud"
-	line "to be your friend!"
+	text "You defeated"
+	line "WHITNEY eh!?"
+	para "How'd that go?"
+	para "I tried to battle"
+	line "her but ran out of"
+	cont "VOLTORBS."
 	done
 
 IrwinJasmineReturnedGossipText:
-	text "Hey, I heard about"
-	line "you!"
-
-	para "You saved that"
-	line "#MON at the"
-
-	para "LIGHTHOUSE, didn't"
-	line "you?"
-
-	para "<PLAY_G>, I wish"
-	line "you'd come see me"
-
-	para "when I'm sick in"
-	line "bed with a cold!"
-	done
-
-IrwinRocketHideoutGossipText:
-	text "I heard, I heard,"
-	line "I heard!"
-
-	para "You smashed TEAM"
-	line "ROCKET's hideout!"
-
-	para "You're like a"
-	line "movie hero, even!"
-
-	para "But um… What was"
-	line "TEAM ROCKET?"
+	text "You defeated CHUCK"
+	line "eh!?"
+	para "How'd that go?"
+	para "I hear he's on"
+	line "that vitamin S, ya"
+	cont "know what I mean!?"
 	done
 
 IrwinRadioTowerGossipText:
-	text "I heard, I heard,"
-	line "I heard!"
-
-	para "About your heroic"
-	line "liberation of the"
-
-	para "RADIO TOWER! You"
-	line "rock so hard!"
+IrwinRocketHideoutGossipText:
+	text "I heard you found"
+	line "TEAM ROCKET"
+	cont "hideout and took"
+	cont "them all out."
+	para "I heard out"
+	line "slaughtered them"
+	cont "all!"
+	para "Damn you're cool."
 	done
 
 IrwinRisingBadgeGossipText:
-	text "I saw, I saw!"
-
-	para "I saw you go into"
-	line "the DRAGON'S DEN!"
-
-	para "I'm certain you"
-	line "passed! Aww, no"
-
-	para "need to be modest!"
-	line "You can't fail!"
-	done
-
-IrwinEliteFourGossipText:
-	text "Yesterday, I went"
-	line "out to NEW BARK"
-
-	para "TOWN.  There was a"
-	line "lady who looked a"
-
-	para "lot like you,"
-	line "<PLAY_G>."
-
-	para "What? That lady"
-	line "was your mom?"
-
-	para "Aww, I should've"
-	line "introduced myself!"
-
-	para "I bet your mom's"
-	line "really proud of"
-
-	para "all that you've"
-	line "accomplished."
-
-	para "Heh, put it this"
-	line "way. I'd be proud"
-
-	para "if I were your"
-	line "mom, believe me!"
+	text "You defeated CLAIR"
+	line "eh!?"
+	para "How'd that go?"
+	para "I met her once."
+	para "She crushed my"
+	line "VOLTORBS."
+	para "It hurt."
 	done
 
 IrwinVermilionCityGossipText:
-	text "I saw, I saw,"
-	line "I saw!"
-
-	para "You striding onto"
-	line "a ship, <PLAY_G>!"
-
-	para "I can't get over"
-	line "how good you look"
-
-	para "with the sea as"
-	line "your backdrop!"
+IrwinEliteFourGossipText:
+	text "You defeated the"
+	line "ELITE FOUR eh!?"
+	para "How'd that go?"
+	para "I heard LANCE"
+	line "cried like a baby"
+	cont "after you"
+	cont "crucified him."
+	para "You are a badass!"
 	done
 
 IrwinTrainPassGossipText:
-	text "I heard, I heard!"
-
-	para "You got a MAGNET"
-	line "TRAIN PASS!"
-
-	para "When I saw you"
-	line "departing on the"
-
-	para "ship, I felt sad"
-	line "that I wouldn't be"
-
-	para "able to see you"
-	line "for a while."
-
-	para "But since you have"
-	line "that PASS, you can"
-
-	para "zip back anytime!"
-	line "That's reassuring!"
-
-	para "What? You can FLY"
-	line "back anytime?"
-
-	para "What do you mean"
-	line "by FLY?"
+	text "I heard you fixed"
+	line "the MAGNET TRAIN."
+	para "They say you"
+	line "pushed it from"
+	cont "JOHTO to KANTO by"
+	cont "yourself."
+	para "Damn you are"
+	line "strong!"
 	done
 
 IrwinSnorlaxGossipText:
-	text "I saw, I saw!"
-
-	para "You waking up"
-	line "SNORLAX!"
-
-	para "I was watching you"
-	line "from afar, so I"
-
-	para "couldn't tell what"
-	line "you did exactly."
-
-	para "Did you play a"
-	line "flute to wake it?"
-
-	para "Wow! That's like"
-	line "magic!"
+	text "I heard you"
+	line "unblocked DIGLETTS"
+	cont "CAVE."
+	para "They say you"
+	line "pushed that fat"
+	cont "#MON out of"
+	cont "the way by"
+	cont "yourself!"
 	done
 
 IrwinMtSilverGossipText:
-	text "I hear rumors"
-	line "about you all over"
-	cont "the place."
-
-	para "It just makes me"
-	line "sigh, <PLAY_G>."
-
-	para "How did you get so"
-	line "strong?"
-
-	para "Go for the world"
-	line "championship now!"
-
-	para "I'll always be"
-	line "cheering you on!"
+	text "You defeated"
+	line "WALLACE and saved"
+	cont "the world eh!?"
+	para "How'd that go."
+	para "I heard you are"
+	line "the strongest and"
+	cont "bravest trainer in"
+	cont "the world."
+	para "Just thinking"
+	line "about it makes my"
+	cont "VOLTORBS quiver"
+	cont "with admiration!"
 	done
 
 IrwinCalledRightAwayText:
-	text "Hehe, I called"
-	line "right away!"
-
-	para "I think we can be"
-	line "good friends!"
+	text "Hey."
+	para "..."
+	para "You doing good?"
+	para "..."
+	para "See ya..."
 	done
 
 IrwinFogBadgeGossipText:
-	text "I saw, I heard!"
-
-	para "You beat MORTY of"
-	line "ECRUTEAK GYM!"
-
-	para "Th-that's just"
-	line "incredible!"
-
-	para "I actually went to"
-	line "the GYM's entrance"
-
-	para "to cheer you on."
-	line "Did you know that?"
-
-	para "But everyone was"
-	line "floating, and"
-
-	para "there were ghosts"
-	line "all over! So I"
-
-	para "chickened out and"
-	line "took off for home…"
+	text "You defeated MORTY"
+	line "eh!?"
+	para "How'd that go?"
+	para "I went into the"
+	line "GYM once and a"
+	cont "bunch of GHOST"
+	cont "#MON spooked"
+	cont "me."
+	para "Scared the"
+	line "VOLTORBS off me."
 	done
 
 IrwinMarshBadgeGossipText:
-	text "<PLAY_G>, I heard!"
-
-	para "You're kicking up"
-	line "a mighty ruckus"
-
-	para "over in KANTO!"
-	line "What a glorious"
-
-	para "rampage it must"
-	line "be!"
-
-	para "You so rock!"
+	text "You defeated WILL"
+	line "eh!?"
+	para "How'd that go?"
+	para "I hear he is"
+	line "really weak and"
+	cont "only got the job"
+	cont "by putting OAK as"
+	cont "a co-author on all"
+	cont "his academic"
+	cont "papers."
 	done
 
 IrwinYourEscapadesRockText:
-	text "Hearing about your"
-	line "escapades rocks my"
-
-	para "soul!"
-	line "It sure does!"
+	text "Hey!"
+	para "..."
+	para "What am I doing, I"
+	line "got nothing to"
+	cont "talk about."
 	done
 
 IrwinGoodMatchText:
@@ -255,8 +153,9 @@ IrwinGoodMatchText:
 	para "I was just about"
 	line "to call you too!"
 
-	para "I guess we must be"
-	line "a good match!"
+	para "You are the"
+	line "coolest person I"
+	cont "know!"
 	done
 
 IrwinSoMuchToChatAboutText:
@@ -275,15 +174,5 @@ IrwinSoMuchToChatAboutText:
 
 	para "How's your mom?"
 
-	para "Have you got lots"
-	line "of #MON?"
-
-	para "Is it going to be"
-	line "sunny tomorrow?"
-
-	para "Arrgh, there's so"
-	line "much I want to"
-
-	para "chat about! This"
-	line "is going nowhere!"
+	para "Do you like me?"
 	done

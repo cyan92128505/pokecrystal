@@ -1,41 +1,29 @@
-JackAskNumber1Text:
-	text "Your knowledge is"
-	line "impressive!"
-
-	para "I like that!"
-
-	para "Want to trade"
-	line "battle tips?"
-
-	para "I'll phone if I"
-	line "get good info."
-
-	para "Would you tell me"
-	line "your number?"
-	done
-
 JackAskNumber2Text:
-	text "Want to trade"
-	line "battle tips?"
-
-	para "I'll phone if I"
-	line "get good info."
-
-	para "Would you tell me"
-	line "your number?"
+JackAskNumber1Text:
+	text "You have good"
+	line "experience but"
+	cont "your technical"
+	cont "knowledge is"
+	cont "lacking."
+	para "Give me your"
+	line "number and I'll"
+	cont "keep you sharp"
+	cont "with surprise"
+	cont "quizzes."
 	done
 
 JackNumberAcceptedText:
-	text "I'll call you if I"
-	line "hear anything!"
+	text "I will call you"
+	line "when you least"
+	cont "expect it to keep"
+	cont "your mind sharp!"
 	done
 
 JackNumberDeclinedText:
-	text "Oh, OK. Too bad…"
-
-	para "Well, if you ever"
-	line "want my number,"
-	cont "come see me, OK?"
+	text "You'll never"
+	line "amount to anything"
+	cont "if you don't"
+	cont "educate yourself."
 	done
 
 JackPhoneFullText:
@@ -47,9 +35,11 @@ JackPhoneFullText:
 	done
 
 JackRematchText:
-	text "Hi, I was waiting"
-	line "for you to show!"
-
-	para "Let's get started"
-	line "right away!"
+	text "Place your name"
+	line "and student number"
+	cont "in the columns"
+	cont "provided."
+	para "You have three"
+	line "hours."
+	cont "Begin!"
 	done

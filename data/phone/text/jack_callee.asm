@@ -4,7 +4,7 @@ JackAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Good morning,"
+	para "Are you ready"
 	line "<PLAY_G>!"
 	done
 
@@ -14,8 +14,8 @@ JackAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "How's it going,"
-	line "<PLAY_G>?"
+	para "Are you ready"
+	line "<PLAY_G>!"
 	done
 
 JackAnswerPhoneNiteText:
@@ -24,7 +24,7 @@ JackAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Good evening,"
+	para "Are you ready"
 	line "<PLAY_G>!"
 	done
 
@@ -32,40 +32,30 @@ JackGreetText:
 	text "<PLAY_G>, good"
 	line "morning!"
 
-	para "It's me, @"
-	text_ram wStringBuffer3
-	text "."
-	line "How are you doing?"
+	para "Are you ready"
+	line "<PLAY_G>!"
 	done
 
 JackGreetDayText:
 	text "<PLAY_G>, howdy!"
 
-	para "It's me, @"
-	text_ram wStringBuffer3
-	text "."
-	line "Isn't it nice out?"
+	para "Are you ready"
+	line "<PLAY_G>!"
 	done
 
 JackGreetNiteText:
 	text "<PLAY_G>, good"
 	line "evening!"
 
-	para "It's me, @"
-	text_ram wStringBuffer3
-	text "."
-	line "Got a minute?"
+	para "Are you ready"
+	line "<PLAY_G>!"
 	done
 
 JackGenericText:
-	text "How are your"
-	line "#MON doing?"
-
-	para "My @"
-	text_ram wStringBuffer4
-	text " is"
-	line "so curious, it's a"
-
-	para "problem. Maybe"
-	line "it's like me…"
+	text "I give surprise"
+	line "quizzes to my"
+	cont "friends often."
+	para "You better be"
+	line "ready when I call"
+	cont "you."
 	done

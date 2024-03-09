@@ -3,6 +3,8 @@ JoeyAnswerPhoneText:
 	text_ram wStringBuffer3
 	text " here!"
 
+	para "RAT GOD here."
+
 	para "Oh, <PLAYER>? You"
 	line "doing well?"
 	done
@@ -11,6 +13,8 @@ JoeyAnswerPhoneDayText:
 	text "Hi, @"
 	text_ram wStringBuffer3
 	text " here!"
+
+	para "RAT GOD here."
 
 	para "Oh, <PLAYER>? You"
 	line "doing well?"
@@ -21,13 +25,14 @@ JoeyAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text " here!"
 
+	para "RAT GOD here."
+
 	para "Oh, <PLAYER>? You"
-	line "doing well?"
+	line "hunting for prey?"
 	done
 
 JoeyGreetText:
-	text "Yo, <PLAYER>!"
-	line "How're you doing?"
+	text "<PLAYER>!"
 
 	para "This is @"
 	text_ram wStringBuffer3
@@ -36,8 +41,7 @@ JoeyGreetText:
 	done
 
 JoeyGreetDayText:
-	text "Yo, <PLAYER>! How's"
-	line "it going?"
+	text "<PLAYER>!"
 
 	para "This is @"
 	text_ram wStringBuffer3
@@ -46,13 +50,14 @@ JoeyGreetDayText:
 	done
 
 JoeyGreetNiteText:
-	text "Yo, <PLAYER>!"
-	line "How're you doing?"
+	text "<PLAYER>!"
+
+	para "Fine night."
 
 	para "This is @"
 	text_ram wStringBuffer3
-	text ","
-	line "got a minute?"
+	text "."
+	line "Got a minute?"
 	done
 
 JoeyGenericText:

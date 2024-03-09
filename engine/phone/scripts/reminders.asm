@@ -69,7 +69,3 @@ WiltonNotBitingScript:
 ParryHaventYouGottenToScript:
 	farwritetext ParryHaventYouGottenToText
 	end
-
-ErinComeBattleScript:
-	farwritetext ErinComeBattleText
-	end

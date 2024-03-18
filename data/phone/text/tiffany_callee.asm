@@ -55,24 +55,13 @@ TiffanyGreetNiteText:
 	done
 
 TiffanyGenericText:
-	text "Are your #MON"
-	line "doing well?"
-
-	para "I hope you take"
-	line "them to a #MON"
-	cont "CENTER every day."
-
-	para "Don't push them"
-	line "too hard."
-
-	para "My @"
-	text_ram wStringBuffer4
-	text " is"
-	line "cute and lively"
-
-	para "precisely because"
-	line "I take it to a"
-
-	para "#MON CENTER"
-	line "every day."
+	text "Lots of people"
+	line "come through here,"
+	cont "strangers that"
+	cont "nobody would"
+	cont "notice."
+	para "They should be"
+	line "careful."
+	para "Don't want them to"
+	line "go missing."
 	done

@@ -125,7 +125,7 @@ TrainerPokemaniacBrent:
 .WantsBattle:
 	scall .Rematch
 	winlosstext PokemaniacBrentBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight3
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight2
@@ -243,7 +243,7 @@ TrainerPicnickerTiffany:
 .WantsBattle:
 	scall .Rematch
 	winlosstext PicnickerTiffanyBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight3
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight2
@@ -555,10 +555,12 @@ PicnickerTiffanyBeatenText:
 	done
 
 PicnickerTiffanyWantsPicnicText:
-	text "If only it would"
-	line "stop raining so"
-	cont "we can have our"
-	cont "picnic."
+	text "You never know"
+	line "what someone is"
+	cont "thinking."
+	para "Be wary of friends"
+	line "and strangers"
+	cont "alike."
 	done
 
 PicnickerTiffanyClefairyText:

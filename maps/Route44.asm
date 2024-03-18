@@ -215,7 +215,7 @@ TrainerFisherWilton1:
 .WantsBattle:
 	scall Route44RematchM
 	winlosstext FisherWilton1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1

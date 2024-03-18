@@ -1,39 +1,32 @@
 TiffanyAskNumber1Text:
-	text "Hi! You like"
-	line "CLEFAIRY too?"
-
-	para "They're so very"
-	line "cute, aren't they?"
-
-	para "I think we can be"
-	line "good friends!"
-
-	para "I want to know"
-	line "your phone number!"
-
-	para "Let's talk about"
-	line "CLEFAIRY!"
-	done
-
 TiffanyAskNumber2Text:
-	text "I want to know"
-	line "your phone number!"
-
-	para "Let's talk about"
-	line "CLEFAIRY!"
+	text "I can tell you are"
+	line "someone who can be"
+	cont "trusted."
+	para "You just have that"
+	line "face."
+	para "I wish I had a"
+	line "face like that."
+	para "We should look out"
+	line "for each other."
+	para "May I please have"
+	line "your phone number."
 	done
 
 TiffanyNumberAcceptedText:
-	text "Isn't my CLEFAIRY"
-	line "super-adorable?"
+	text "Thank you very"
+	line "much."
+	para "Be careful out"
+	line "there."
 	done
 
 TiffanyNumberDeclinedText:
-	text "Aww… Oh well."
-	line "Look for me if you"
-
-	para "want to talk about"
-	line "CLEFAIRY."
+	text "Aww, that's a"
+	line "pity."
+	para "Do come back"
+	line "anytime."
+	para "Be careful out"
+	line "there."
 	done
 
 TiffanyPhoneFullText:
@@ -42,21 +35,20 @@ TiffanyPhoneFullText:
 	done
 
 TiffanyRematchText:
-	text "There you are!"
-
-	para "CLEFAIRY, I want"
-	line "you to try hard!"
+	text "I'm just a little"
+	line "girl."
+	para "Please don't hurt"
+	line "me..."
+	cont "Hahahaha..."
 	done
 
 TiffanyGiftText:
-	text "You took a long"
-	line "time. See this?"
-
-	para "Isn't it cute?"
-	line "It's a PINK BOW."
+	text "Here you go"
+	line "friend."
+	para "Take this quick."
 	done
 
 TiffanyPackFullText:
-	text "Uh-oh. Your PACK"
-	line "is crammed full."
+	text "There is no room"
+	line "in your PACK."
 	done

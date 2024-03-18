@@ -1752,8 +1752,9 @@ BattleArcadeReceptionistScript:
     warpfacing UP, TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP
 	opentext
-	writetext BattleWinNoPrizeText
+	writetext BattleWinText
 	waitbutton
+	verbosegiveitem GOLD_BERRY
 	closetext
 	special LoadPokemonData
 	special HealParty

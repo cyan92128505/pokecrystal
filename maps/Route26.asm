@@ -119,7 +119,7 @@ TrainerCooltrainermGaven3:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainermGaven3BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
@@ -213,7 +213,7 @@ TrainerCooltrainerfBeth1:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainerfBeth1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1

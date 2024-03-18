@@ -140,11 +140,11 @@ TrainerHouseIllegibleText:
 	line "start coming up"
 	cont "with some ideas"
 	cont "that aren't"
-	cont "absolutly terrible"
+	cont "absolutely terrible"
 	cont "I'll disband this"
 	cont "little tea party."
 
-	para "Sincerly,"
+	para "Sincerely,"
 	line "BLUE."
 	done
 

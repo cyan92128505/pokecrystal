@@ -135,7 +135,7 @@ TrainerHikerParry:
 .WantsBattle:
 	scall Route45RematchM
 	winlosstext HikerParry3BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight3
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight2

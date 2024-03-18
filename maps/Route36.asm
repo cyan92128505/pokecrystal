@@ -213,7 +213,7 @@ TrainerSchoolboyAlan1:
 .ChooseRematch:
 	scall .Rematch
 	winlosstext SchoolboyAlan1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3

@@ -1,99 +1,93 @@
 TiffanyMonIsAdorableText:
-	text "My @"
-	text_ram wStringBuffer4
-	text "'s"
-	line "adorable, don't"
-
-	para "you think so?"
-	line "I always sleep"
-
-	para "with it--it's so"
-	line "fluffy and warm!"
+	text "A trainer snuck up"
+	line "on me the other"
+	cont "day."
+	para "I thought it was"
+	line "going to be"
+	cont "attacked!"
+	para "CLEFABLE reacted"
+	line "on instinct and"
+	cont "paralysed the"
+	cont "attacker with"
+	cont "THUNDER."
+	para "Don't sneak up on"
+	line "me."
 	done
 
 TiffanyDefeatedMonText:
-	text "Oh, and we had to"
-	line "battle a wild"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " a while"
-	line "ago…"
-
-	para "My CLEFAIRY came"
-	line "close to fainting!"
-
-	para "Isn't that awful?"
-
-	para "I hate those nasty"
-	line "@"
-	text_ram wStringBuffer4
-	text "!"
+	text "I was following"
+	line "some people"
+	cont "yesterday and"
+	cont "found a hidden"
+	cont "shack in the"
+	cont "forest."
+	para "I think I'll take"
+	line "a look around it."
+	para "Maybe some people"
+	line "are hiding in"
+	cont "there."
 	done
 
 TiffanyLostAMonText:
-	text "Oh, and we had to"
-	line "battle a wild"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " a while"
-	line "ago…"
-
-	para "My CLEFAIRY got"
-	line "frightened, so we"
-
-	para "ran away as fast"
-	line "as we could!"
-
-	para "I just can't help"
-	line "feeling protective"
-	cont "of my CLEFAIRY."
+	text "There was some"
+	line "weird guy in that"
+	cont "old shack."
+	para "He offered me a"
+	line "drink which I"
+	cont "turned down and"
+	cont "then he attacked"
+	cont "me."
+	para "Such an amateur."
+	para "CLEFABLE and I"
+	line "showed him true"
+	cont "horror."
+	para "You look after"
+	line "yourself."
 	done
 
 TiffanyBattleRematchText:
-	text "I know this might"
-	line "surprise you, but"
-
-	para "would you like to"
-	line "battle?"
+	text "I need a test to"
+	line "make sure I can"
+	cont "look after myself."
+	para "I want you to"
+	line "sneak up on me and"
+	cont "battle me."
+	done
 
 	para "I'll be waiting"
-	line "with CLEFAIRY on"
+	line "with CLEFABLE on"
 	cont "@"
 	text_ram wStringBuffer5
 	text "."
 	done
 
 TiffanyItsAwfulText:
-	text_ram wStringBuffer4
-	text "!"
-
-	para "It's awful."
-	line "My CLEFAIRY…"
-
-	para "Huh? <PLAY_G>?"
-
-	para "Oh, sorry! I was"
-	line "in a hurry, and I…"
-
-	para "I have to go!"
-	line "Bye-bye!"
+	text "You'll never see"
+	line "him again."
+	para "Don't bother"
+	line "looking..."
+	para "Oh <PLAYER>!"
+	para "Sorry wrong"
+	line "number, just"
+	cont "kidding..."
 	done
 
 TiffanyHangUpText:
-	text "Bye-bye!"
+	text "Be careful out"
+	line "there."
 	done
 
 TiffanyFoundItemText:
-	text "I bought some PINK"
-	line "BOWS at GOLDENROD"
-
-	para "DEPT.STORE for my"
-	line "CLEFAIRY."
-
-	para "I got too many, so"
-	line "I'll give you one!"
+	text "I found a PINK BOW"
+	line "yesterday."
+	para "It must have been"
+	line "dropped by a"
+	cont "trainer, they"
+	cont "probably got lost,"
+	cont "lots of people get"
+	cont "lost around here."
+	para "I need to get rid"
+	line "of this BOW."
 
 	para "Come collect it on"
 	line "@"
@@ -102,33 +96,23 @@ TiffanyFoundItemText:
 	done
 
 TiffanyNoItemText:
-	text "I love dressing up"
-	line "my CLEFAIRY!"
+	text "CLEFABLE and I"
+	line "love greeting new"
+	cont "trainers."
+	para "Everyone needs a"
+	line "friend around"
+	cont "here."
 	done
 
 TiffanyAsleepText:
-	text "What's wrong?"
-	line "Can't you visit?"
-
-	para "CLEFAIRY got tired"
-	line "and fell asleep."
-
-	para "I'm not sure if I"
-	line "can wake it up…"
-
-	para "Please hurry to"
-	line "@"
-	text_ram wStringBuffer5
-	text "!"
-	done
-
 TiffanyHurryText:
-	text "What's wrong?"
-	line "Can't you visit?"
-
-	para "I'm sure this will"
-	line "look good on your"
-	cont "CLEFAIRY."
+	text "CLEFABLE and I"
+	line "haven't seen you"
+	cont "in a while."
+	para "I think I'm being"
+	line "followed."
+	para "You have to get"
+	line "here and help me."
 
 	para "Please hurry to"
 	line "@"

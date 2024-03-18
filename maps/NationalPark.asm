@@ -132,7 +132,6 @@ TrainerSchoolboyJack1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	opentext
 	checkflag ENGINE_JACK_READY_FOR_REMATCH
 	iftrue .Rematch
@@ -159,7 +158,7 @@ TrainerSchoolboyJack1:
 .Rematch:
 	scall .RematchStd
 	winlosstext SchoolboyJack1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
@@ -246,8 +245,6 @@ TrainerPokefanfBeverly1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	endifjustbattled
 	opentext
 	checkflag ENGINE_BEVERLY_HAS_NUGGET
 	iftrue .GiveNugget

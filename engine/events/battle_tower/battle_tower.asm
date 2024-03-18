@@ -965,7 +965,7 @@ BattleTower_RandomlyChooseReward:
     cp 5
     jr z, .master
 .novice
-    ld a, GOLD_BERRY
+    ld a, MIRACLEBERRY
     jr .give
 .leader
     ld a, HP_UP

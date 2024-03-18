@@ -1,71 +1,57 @@
 JoeyAskNumber1Text:
-	text "Listen, can I get"
-	line "your phone number?"
-
-	para "I'll ring you for"
-	line "some battles."
-
-	para "I'm a rookie too, "
-	line "so I think it'd be"
-	cont "a good motivator."
-	done
-
 JoeyAskNumber2Text:
-	text "Can I get your"
-	line "phone number?"
-
-	para "I don't want to"
-	line "lose against you!"
-
-	para "We have to battle"
-	line "again, OK?"
+	text "My #MON and I"
+	line "are destined to"
+	cont "become deities."
+	para "And all shall"
+	line "tremble before us"
+	cont "in fear."
+	para "You however shall"
+	line "have the honour of"
+	cont "being our servant."
+	para "Give me your"
+	line "number so you may"
+	cont "ascend with us?"
 	done
 
 JoeyNumberAcceptedText:
-	text "I'll ring you"
-	line "whenever I get the"
-	cont "urge to battle!"
+	text "When it is time"
+	line "for you to fulfill"
+	cont "your destiny I"
+	cont "shall call."
 	done
 
 JoeyNumberDeclinedText:
-	text "Oh, all right…"
-
-	para "But I won't lose"
-	line "to you again!"
+	text "When the RAT GOD"
+	line "passes judgement"
+	cont "this shall be"
+	cont "remembered."
 	done
 
 JoeyPhoneFullText:
-	text "Huh, what? Your"
-	line "phone's full."
+	text "Your mortal phone"
+	line "has reached its"
+	cont "limit."
 	done
 
 JoeyRematchText:
-	text "I've been waiting!"
-	line "Let's battle now!"
+	text "We are ready to"
+	line "receive your"
+	cont "worship."
 	done
 
 JoeyPackFullText:
-	text "Hey, wait! Your"
-	line "PACK is stuffed!"
-
-	para "Well, we'll leave"
-	line "it till next time."
+	text "Your mortal pack"
+	line "has reached it's"
+	cont "limit it would"
+	cont "seem."
 	done
 
 JoeyRematchGiftText:
-	text "And yet another"
-	line "loss…"
-
-	para "No doubt about"
-	line "it--you're tough."
-
-	para "Being beaten this"
-	line "often actually"
-	cont "feels good now!"
-
-	para "Here, take this. "
-	line "Use it to get even"
-
-	para "tougher. That will"
-	line "toughen me up too!"
+	text "We are pleased"
+	line "with your praise."
+	para "We present to you"
+	line "this gift."
+	para "May it strengthen"
+	line "your faith."
 	done

@@ -1,88 +1,80 @@
 JoeyMonLookingSharperText:
-	text "My @"
-	text_ram wStringBuffer4
-	text "'s"
-	line "looking sharper"
-	cont "than before!"
-
-	para "I doubt there's a"
-	line "#MON as cool as"
-
-	para "this guy in your"
-	line "party!"
+	text "Do you know LIFE"
+	line "ORB increase all"
+	cont "damage by 30"
+	cont "percent but drains"
+	cont "your HP with every"
+	cont "attack?"
+	para "The RAT GOD has no"
+	line "need for any more"
+	cont "power however!"
 	done
 
 JoeyDefeatedMonText:
-	text "Oh yeah, I took"
-	line "down a @"
-	text_ram wStringBuffer4
-	text_start
-	para "in the wild the"
-	line "other day."
-
-	para "It was a cakewalk."
-	line "Well, I guess it"
-
-	para "can't be helped,"
-	line "us being so tough."
+	text "Yesterday we"
+	line "defeated some new"
+	cont "trainer with a"
+	cont "STARLY."
+	para "This is the first"
+	line "step!"
+	para "Soon the CHAMPIONS"
+	line "will be in that"
+	cont "kids position,"
+	cont "beneath our feet."
 	done
 
 JoeyLostAMonText:
-	text "Oh yeah, I saw a"
-	line "wild @"
-	text_ram wStringBuffer4
-	text "!"
-
-	para "I thought about"
-	line "going for it, but"
-
-	para "I decided to work"
-	line "with my one-and-"
-
-	para "only right to the"
-	line "extreme end."
+	text "Did you know"
+	line "RATICATE has a"
+	cont "secret ultimate"
+	cont "move, FINAL FANG."
+	para "Only the strongest"
+	line "RATICATE can"
+	cont "obtain it."
+	para "It shall be childs"
+	line "play for us."
 	done
 
 JoeyBattleRematchText:
-	text "Let's get together"
-	line "and battle!"
+	text "<PLAYER> the time"
+	line "has come for you"
+	cont "to fulfill your"
+	cont "duty."
+	para "Come and face us!"
+	para "We promise not to"
+	line "permanently damage"
+	cont "you."
 
-	para "I promise things"
-	line "will be different!"
-
-	para "@"
+	para "I'm waiting on"
+	line "@"
 	text_ram wStringBuffer5
-	text "'s"
-	line "where I'll be."
-
-	para "Give me a shout"
-	line "when you come."
+	text "!"
 	done
 
 JoeyHangUpText:
-	text "All right. Later!"
+	text "Praise be to the"
+	line "RAT GOD."
 	done
 
 JoeyDevisingStrategiesText:
-	text "I'm checking out"
-	line "@"
-	text_ram wStringBuffer4
-	text "'s moves"
-
-	para "and devising some"
-	line "strategies."
-
-	para "When I come up"
-	line "with a good one,"
-	cont "let's battle!"
+	text "They say the"
+	line "maximum level a"
+	cont "#MON can reach"
+	cont "is 100."
+	para "The RAT GOD laughs"
+	line "as such mortal"
+	cont "limitations!"
 	done
 
 JoeyReminderText:
-	text "What's keeping"
-	line "you, <PLAYER>!"
-
-	para "Let's get down and"
-	line "battle already!"
+	text " <PLAYER>!"
+	para "You are destined"
+	line "to fight us and we"
+	cont "are destined to"
+	cont "win."
+	para "Now come face us."
+	para "We wont ask a"
+	line "third time."
 
 	para "I'm waiting on"
 	line "@"

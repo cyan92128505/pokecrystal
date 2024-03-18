@@ -105,7 +105,7 @@ TrainerHikerMichael:
 	end
 
 TrainerHikerParry:
-	trainer HIKER, PARRY3, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
+	trainer HIKER, PARRY1, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_PARRY
@@ -136,16 +136,9 @@ TrainerHikerParry:
 	scall Route45RematchM
 	winlosstext HikerParry3BeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
+	iftrue .LoadFight3
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer HIKER, PARRY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_PARRY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight2
 	loadtrainer HIKER, PARRY1
 	startbattle
 	reloadmapafterbattle
@@ -154,6 +147,13 @@ TrainerHikerParry:
 
 .LoadFight2:
 	loadtrainer HIKER, PARRY2
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_PARRY_READY_FOR_REMATCH
+	end
+
+.LoadFight3:
+	loadtrainer HIKER, PARRY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH

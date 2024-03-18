@@ -1,37 +1,28 @@
-ParryAskNumber1Text:
-	text "Sheesh, the way"
-	line "you attacked! That"
-
-	para "was something! We"
-	line "should meet again!"
-
-	para "How about giving"
-	line "me your number?"
-	done
-
 ParryAskNumber2Text:
-	text "So you want to"
-	line "register my phone"
-
-	para "number for a re-"
-	line "match, huh?"
+ParryAskNumber1Text:
+	text "I wasn't expecting"
+	line "you to put up such"
+	cont "a fight."
+	para "Not with those"
+	line "skinny legs of"
+	cont "yours."
+	para "I can help you"
+	line "grow some real"
+	cont "muscles."
+	para "Give me you"
+	line "number?"
 	done
 
 ParryNumberAcceptedText:
-	text "I'll call you"
-	line "whenever I feel"
-	cont "like battling!"
+	text "I call you when"
+	line "I'm ready for a"
+	cont "work out."
 	done
 
 ParryNumberDeclinedText:
-	text "No? That's fine."
-
-	para "A definite no is"
-	line "easy to take!"
-
-	para "I'll be right here"
-	line "when you're ready"
-	cont "for a rematch."
+	text "You like having"
+	line "those skinny twig"
+	cont "legs!?"
 	done
 
 ParryPhoneFullText:
@@ -41,33 +32,25 @@ ParryPhoneFullText:
 	done
 
 ParryRematchText:
-	text "Hey, here comes"
-	line "the kid! Let's go!"
-
-	para "Ready for my usual"
-	line "no-brainer, all-"
-	cont "out offense?"
+	text "Look at these"
+	line "striations!"
+	para "My thighs are"
+	line "bigger than you."
+	para "Are you ready for"
+	line "these?"
 	done
 
 ParryPackFullText:
-	text "Your PACK looks"
-	line "stuffed full!"
-
-	para "You can't have"
-	line "this now."
+	text "You got no room in"
+	line "your PACK!"
 	done
 
 ParryRematchGiftText:
-	text "Well, you're"
-	line "special all right."
-
-	para "If only I'd begun"
-	line "#MON when I was"
-	cont "a tad younger…"
-
-	para "I want you to work"
-	line "and succeed for"
-
-	para "the both of us."
-	line "So take this, OK?"
+	text "You are making"
+	line "some solid"
+	cont "progress in your"
+	cont "training."
+	para "Here this will"
+	line "help keep your"
+	cont "muscles tight!"
 	done

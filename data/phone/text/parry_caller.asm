@@ -1,69 +1,66 @@
 ParryNothingCanMatchText:
-	text "Nothing can match"
-	line "my @"
-	text_ram wStringBuffer4
-	text " now."
+	text "Today I beat my"
+	line "old record and"
+	cont "lifted my GOLEM 10"
+	cont "times in a row."
+	para "My legs are"
+	line "swollen with"
+	cont "power."
 	done
 
 ParryDefeatedMonText:
-	text "Yeah, we KO'd a"
-	line "wild @"
-	text_ram wStringBuffer4
-	text "!"
-
-	para "That was OK, but I"
-	line "wanted to get it…"
+	text "Some kids"
+	line "challenged me the"
+	cont "other day."
+	para "I took one look at"
+	line "their skinny twig"
+	cont "legs and knew they"
+	cont "would offer no"
+	cont "challenges."
 	done
 
 ParryLostAMonText:
-	text "And yesterday, we"
-	line "spotted a wild"
-
-	para "@"
-	text_ram wStringBuffer4
-	text "."
-	line "We were debating"
-
-	para "whether to catch"
-	line "it or beat it."
-
-	para "When along came"
-	line "another guy who"
-
-	para "caught it!"
-	line "How about that!"
+	text "Today I attached a"
+	line "rope to my STEELIX"
+	cont "and dragged it up"
+	cont "to BLACKTHORN."
+	para "I should compete"
+	line "in JOHTOS"
+	cont "strongest man!"
 	done
 
 ParryBattleRematchText:
-	text "You're thinking"
-	line "you'd like to"
+	text "How is your"
+	line "training going,"
+	cont "have you bulked"
+	cont "up?"
+	para "I am stronger than"
+	line "ever!"
+	para "Come battle me and"
+	line "see for yourself!"
 
-	para "battle me. Am I"
-	line "right or what?"
-
-	para "Yep! We'll meet on"
+	para "Meet me on"
 	line "@"
 	text_ram wStringBuffer5
 	text "!"
 	done
 
 ParryHangUpText:
-	text "OK, give me a call"
-	line "again!"
+	text "I need to get back"
+	line "to my work out."
 	done
 
 ParryBattleWithMeText:
-	text "You'll battle with"
-	line "me again, right?"
+	text "Come battle me,"
+	line "show me your"
+	cont "muscles."
 	done
 
 ParryHaventYouGottenToText:
-	text "Haven't you gotten"
-	line "to @"
-	text_ram wStringBuffer5
-	text "?"
-
-	para "Waiting here isn't"
-	line "bad, but I'd sure"
-	cont "like to battle!"
+	text "Don't you love"
+	line "that burn in your"
+	cont "legs after a tough"
+	cont "hike."
+	para "It feels real"
+	line "good, real good."
 	done

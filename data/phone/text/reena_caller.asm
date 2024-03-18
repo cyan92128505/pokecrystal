@@ -1,55 +1,36 @@
 ReenaMonsIsAPerfectMatchText:
-	text "Listen, dear…"
-
-	para "Do you recall my"
-	line "@"
-	text_ram wStringBuffer4
-	text "?"
-
-	para "Yes, exactly. That"
-	line "lovely @"
-	text_ram wStringBuffer4
-	text "."
-
-	para "Wouldn't you agree"
-	line "it's a perfect"
-	cont "match for me?"
+	text "CYNTHIA doesn't"
+	line "specialise in a"
+	cont "single type."
+	para "I wonder if that"
+	line "is some kind of"
+	cont "strategy..."
 	done
 
 ReenaDefeatedMonText:
-	text "Have I ever faced"
-	line "a wild @"
-	text_ram wStringBuffer4
-	text "?"
-
-	para "You need to ask?"
-
-	para "@"
-	text_ram wStringBuffer4
-	text " I've"
-	line "beaten on numerous"
-	cont "occasions!"
+	text "DIANTHA has a"
+	line "BLISSEY, it's"
+	cont "surprisingly"
+	cont "strong for a pink"
+	cont "blob."
+	para "I must have one."
 	done
 
 ReenaLostAMonText:
-	text "Have I ever failed"
-	line "to catch a wild"
-	cont "#MON?"
-
-	para "You need to ask?"
-
-	para "I would never fail"
-	line "to catch a wild"
-
-	para "@"
-	text_ram wStringBuffer4
-	text "…"
-	line "Oh! Never mind!"
+	text "ALDER doesn't have"
+	line "a powerful ace"
+	cont "#MON like"
+	cont "other CHAMPIONS."
+	para "I guess that's why"
+	line "he's the least"
+	cont "popular CHAMPION"
+	cont "huh..."
 	done
 
 ReenaBattleRematchText:
-	text "We are going to"
-	line "battle!"
+	text "Do you want to"
+	line "fight a real"
+	cont "CHAMPION!?"
 
 	para "The place shall be"
 	line "@"
@@ -71,7 +52,8 @@ ReenaForwardText:
 	para "happened to beat"
 	line "me… "
 
-	para "It was a fluke!"
+	para "I have a long way"
+	line "to go."
 	done
 
 ReenaHurryText:

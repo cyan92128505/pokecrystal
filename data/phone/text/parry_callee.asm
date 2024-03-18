@@ -1,72 +1,41 @@
 ParryAnswerPhoneText:
-	text "Yup, yup!"
-	line "It's @"
-	text_ram wStringBuffer3
-	text "!"
-
-	para "Hah, and here's"
-	line "<PLAY_G>!"
-	done
-
 ParryAnswerPhoneDayText:
-	text "Yup, yup!"
+ParryGreetDayText:
+	text "Uaugh!"
 	line "It's @"
 	text_ram wStringBuffer3
 	text "!"
 
-	para "Hah, and here's"
-	line "<PLAY_G>!"
+	para "I'm in the middle"
+	line "of a tough hike!"
 	done
 
 ParryAnswerPhoneNiteText:
-	text "Yup, yup!"
+	text "Hello."
 	line "It's @"
 	text_ram wStringBuffer3
 	text "!"
 
-	para "Hah, and here's"
-	line "<PLAY_G>!"
+	para "I'm just setting"
+	line "up camp."
 	done
 
 ParryGreetText:
-	text "<PLAY_G>, it's"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
-
-	para "Have you had a"
-	line "proper breakfast?"
-	done
-
-ParryGreetDayText:
-	text "<PLAY_G>, it's"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
-
-	para "Have you had a"
-	line "proper lunch?"
-	done
-
 ParryGreetNiteText:
-	text "<PLAY_G>, it's"
-	line "@"
+	text "Hello."
+	line "It's @"
 	text_ram wStringBuffer3
 	text "!"
 
-	para "Have you had a"
-	line "proper dinner?"
+	text "I'm just setting"
+	line "up camp."
 	done
 
 ParryGenericText:
-	text "Are your #MON"
-	line "looking good?"
-
-	para "My @"
-	text_ram wStringBuffer4
-	text " and"
-	line "me--we're looking"
-
-	para "mighty dandy!"
-	line "Hahahah!"
+	text "You haven't been"
+	line "skipping leg day"
+	cont "have you?"
+	para "One day you might"
+	line "have might legs"
+	cont "like mine."
 	done

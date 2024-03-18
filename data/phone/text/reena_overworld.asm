@@ -1,37 +1,31 @@
 ReenaAskNumber1Text:
-	text "Not bad…"
-	line "It's something to"
-
-	para "beat me, even by"
-	line "an unlikely fluke…"
-
-	para "I like you! Give"
-	line "me your number!"
-
-	para "You can be my"
-	line "practice partner!"
-	done
-
 ReenaAskNumber2Text:
-	text "Give me your phone"
-	line "number!"
-
-	para "You are going to"
-	line "be my practice"
-	cont "partner!"
+	text "Not bad..."
+	para "How would you like"
+	line "to give the world"
+	cont "the strongest"
+	cont "CHAMPION it has"
+	cont "ever seen..."
+	para "me!"
+	para "Give me your"
+	line "number and become"
+	cont "my practice"
+	cont "partner?"
 	done
 
 ReenaNumberAcceptedText:
-	text "Don't be too proud"
-	line "about beating me!"
-
-	para "It was a fluke!"
+	text "It is your destiny"
+	line "to be my stepping"
+	cont "stone."
+	para "And a fine destiny"
+	line "it is."
 	done
 
 ReenaNumberDeclinedText:
-	text "I don't believe"
-	line "it! You're going"
-	cont "to regret this!"
+	text "You choose to live"
+	line "in obscurity"
+	cont "forever."
+	para "So be it."
 	done
 
 ReenaPhoneFullText:
@@ -40,6 +34,6 @@ ReenaPhoneFullText:
 	done
 
 ReenaRematchText:
-	text "What took you?"
-	line "Start right away!"
+	text "Behold the true"
+	line "CHAMPION of JOHTO!"
 	done

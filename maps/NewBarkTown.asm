@@ -820,7 +820,7 @@ CrystalFinalGeneralText:
     done
 
 RematchTextCrystalFinal:
-    text "I can get a"
+    text "It can get a"
     line "little boring"
     cont "sometimes though."
 

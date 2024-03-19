@@ -1,12 +1,12 @@
 ToddAskNumber1Text:
-	text "From here, I can"
-	line "see GOLDENROD's"
-
-	para "DEPT.STORE. They"
-	line "have bargain sales"
-
-	para "up on the rooftop"
-	line "every so often."
+ToddAskNumber2Text:
+	text "I don't think I'm"
+	line "a very good"
+	cont "trainer but I'm"
+	cont "trying to improve."
+	para "Maybe you could"
+	line "help me get"
+	cont "stronger."
 
 	para "Could I get your"
 	line "phone number?"
@@ -15,32 +15,20 @@ ToddAskNumber1Text:
 	line "they have a sale."
 	done
 
-ToddAskNumber2Text:
-	text "If you give me"
-	line "your number, I'll"
-
-	para "call you when they"
-	line "have a sale."
-	done
-
 ToddNumberAcceptedText:
-	text "I check GOLDENROD"
-	line "DEPT.STORE every"
-
-	para "day, so I know"
-	line "when there's a"
-	cont "sale."
+	text "Thank..."
+	para "Thank you!"
+	para "I promise I will"
+	line "do my best to be"
+	cont "worth your time."
 	done
 
 ToddNumberDeclinedText:
-	text "Anyway…"
-
-	para "If you're short on"
-	line "money, take down"
-	cont "my number."
-
-	para "I'll call you when"
-	line "there's a sale."
+	text "That makes sense."
+	para "I'm sorry I asked"
+	line "and put you in"
+	cont "that awkward"
+	cont "position."
 	done
 
 ToddPhoneFullText:
@@ -50,18 +38,10 @@ ToddPhoneFullText:
 	done
 
 ToddRematchText:
-	text "I waited for you!"
-	line "I even cut back my"
-
-	para "shopping to raise"
-	line "my #MON better!"
-	done
-
-ToddSaleText: ; unreferenced
-; This is a duplicate of CamperToddSaleText in maps/Route34.asm.
-	text "Shopping under the"
-	line "sky!"
-
-	para "It feels so nice"
-	line "up on a rooftop."
+	text "Hey <PLAYER>!"
+	para "I don't really"
+	line "think I'm going to"
+	cont "win but I have got"
+	cont "stronger."
+	para "I'll show you."
 	done

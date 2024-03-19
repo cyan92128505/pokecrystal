@@ -67,4 +67,7 @@ ToddGenericText:
 
 	para "toughening them up"
 	line "with items."
+
+	text "I don't like to"
+	line "battle with them."
 	done

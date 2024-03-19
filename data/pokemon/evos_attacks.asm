@@ -2526,17 +2526,17 @@ ExcadrillEvosAttacks:
 	db 0 ; no more level-up moves
 
 VoltikEvosAttacks:
-	db EVOLVE_LEVEL, 36, GALVANTULA
+	db EVOLVE_LEVEL, 30, GALVANTULA
 	db 0 ; no more evolutions
 	db 1, LEECH_LIFE
 	db 1, THUNDERSHOCK
 	db 8, ABSORB
 	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
-	db 20, AGILITY
-	db 24, SLASH
-	db 28, X_SCISSOR
-	db 32, GIGA_DRAIN
+	db 20, SLASH
+	db 24, X_SCISSOR
+	db 28, GIGA_DRAIN
+	db 31, THUNDERBOLT
 	db 37, BUG_BUZZ
 	db 40, THUNDERBOLT
 	db 50, THUNDER
@@ -2549,13 +2549,12 @@ GalvantulaEvosAttacks:
 	db 8, ABSORB
 	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
-	db 20, AGILITY
-	db 24, SLASH
-	db 28, X_SCISSOR
-	db 32, GIGA_DRAIN
+	db 20, SLASH
+	db 24, X_SCISSOR
+	db 28, GIGA_DRAIN
+	db 30, THUNDERBOLT
 	db 36, BUG_BUZZ
-	db 40, THUNDERBOLT
-	db 50, THUNDER
+	db 45, THUNDER
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:

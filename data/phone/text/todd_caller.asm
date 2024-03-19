@@ -1,50 +1,43 @@
 ToddLooksCuteLikeMeText:
-	text "My @"
-	text_ram wStringBuffer4
-	text " is"
-	line "looking more and"
-
-	para "more like me. It's"
-	line "getting cuter!"
+	text "Do you grind"
+	line "against wild"
+	cont "#MON?"
+	para "It's so slow and I"
+	line "have to go back"
+	cont "and forth to the"
+	cont "#CENTER."
+	para "It's awful."
 	done
 
 ToddDefeatedMonText:
-	text "And, you know?"
-
-	para "Now we can KO"
-	line "@"
-	text_ram wStringBuffer4
-	text " easily."
-
-	para "I should challenge"
-	line "the GOLDENROD GYM."
+	text "I've heard people"
+	line "talking about some"
+	cont "super secret item,"
+	cont "an EXP SHARE."
+	para "Have you ever"
+	line "heard of this?"
+	para "I think I need"
+	line "one."
 	done
 
 ToddLostAMonText:
-	text "And, you know?"
-	line "We just failed to"
-
-	para "beat @"
-	text_ram wStringBuffer4
-	text " by"
-	line "a tiny margin."
-
-	para "I'm guessing my"
-	line "#MON's levels"
-
-	para "aren't high enough"
-	line "yet…"
+	text "I beat a trainer"
+	line "today."
+	para "I didn't expect to"
+	line "win but it felt"
+	cont "good."
+	para "I totally wrecked"
+	line "that guy!"
 	done
 
 ToddBattleRematchText:
-	text "You must be a lot"
-	line "better now, huh?"
-
-	para "How about showing"
-	line "me your technique"
-
-	para "in a real battle"
-	line "with me?"
+	text "I think I'm a lot"
+	line "stronger."
+	para "I'm sure you are"
+	line "stronger too but I"
+	cont "think I might have"
+	cont "what it takes to"
+	cont "beat you."
 
 	para "I'll be waiting on"
 	line "@"
@@ -53,48 +46,43 @@ ToddBattleRematchText:
 	done
 
 ToddHangUpText:
-	text "See you later!"
+	text "Keep er lit!"
 	done
 
 ToddDepartmentStoreBargainSaleText:
-	text "This is it--the"
-	line "one we've all been"
-	cont "waiting for!"
-
-	para "GOLDENROD DEPT."
-	line "STORE's bargain"
-	cont "sale is on now!"
-
-	para "Want it cheap?"
-	line "Want it lots?"
-
-	para "Don't miss this"
-	line "GOLDENROD chance!"
-
-	para "Huh? I sound like"
-	line "a huckster?"
-
-	para "Well, yeah. I was"
-	line "mimicking them…"
-
-	para "Anyway, you've got"
-	line "to get there as"
-	cont "soon as you can!"
+	text "The GOLDENROD DEPT"
+	line "is having a sale."
+	para "I'm going to get"
+	line "all the cheap"
+	cont "vitamins and force"
+	cont "them into my"
+	cont "#MON."
+	para "They will thank me"
+	line "one day."
 	done
 
 ToddSavingUpForBargainSaleText:
 	text "I'm saving up for"
-	line "the next bargain"
-
-	para "sale. When's the"
-	line "next one?"
+	line "some PP UP."
+	para "I want to max out"
+	line "all my #MON"
+	cont "moves."
+	para "I think it will"
+	line "give me a big"
+	cont "advantage in"
+	cont "battle."
 	done
 
 ToddLookingForwardToBattleText:
-	text "Where are you?"
-
-	para "Let's have our"
-	line "battle soon!"
+	text "I haven't seen you"
+	line "after my"
+	cont "challenge."
+	para "Are you afraid you"
+	line "will lose?"
+	para "I've got a lot"
+	line "better so you"
+	cont "might."
+	para "Come and find out."
 
 	para "I'll be waiting on"
 	line "@"
@@ -103,15 +91,13 @@ ToddLookingForwardToBattleText:
 	done
 
 ToddHaveYouGoneToDepartmentStoreText:
-	text "Haven't you gone"
-	line "to GOLDENROD DEPT."
-
-	para "STORE? I've scoped"
-	line "it out already!"
-
-	para "They had some real"
-	line "bargains."
-
-	para "You should get"
-	line "there quickly."
+	text "You might want to"
+	line "get here soon, the"
+	cont "GOLDENROD DEPT is"
+	cont "having a sale and"
+	cont "things are going."
+	para "Some guy on the"
+	line "roof is hording"
+	cont "all the"
+	cont "#DOLLS."
 	done

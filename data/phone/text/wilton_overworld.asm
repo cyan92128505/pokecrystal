@@ -1,35 +1,30 @@
 WiltonAskNumber1Text:
-	text "Eh, our battle was"
-	line "fun, I'd say…"
-
-	para "When I'm fishing,"
-	line "I sometimes snag"
-
-	para "items that people"
-	line "have dropped."
-
-	para "Do you want them?"
-	line "What's the number?"
-	done
-
 WiltonAskNumber2Text:
-	text "If I snag an item"
-	line "while I'm fishing,"
-
-	para "it's yours. What's"
-	line "your number?"
+	text "I can tell you"
+	line "know a tasty"
+	cont "#MON when you"
+	cont "see one!"
+	para "Your #MON look"
+	line "to be shaping up"
+	cont "nicely."
+	para "Give me your"
+	line "number and we can"
+	cont "share recipes."
 	done
 
 WiltonNumberAcceptedText:
-	text "If I snag anything"
-	line "good, I'll be sure"
-	cont "to let you know."
+	text "I'll introduce you"
+	line "to a whole new"
+	cont "world of culinary"
+	cont "experience."
 	done
 
 WiltonNumberDeclinedText:
-	text "All right… Come"
-	line "back if you have a"
-	cont "change of heart."
+	text "Ah you have a dull"
+	line "palate like"
+	cont "everyone else."
+	para "Fine, you deserve"
+	line "your bland life."
 	done
 
 WiltonPhoneFullText:
@@ -38,19 +33,17 @@ WiltonPhoneFullText:
 	done
 
 WiltonRematchText:
-	text "Argh! You startled"
-	line "POLIWAG into"
-	cont "fleeing again!"
+	text "Ah you're here."
+	para "Let's make a six"
+	line "course meal out of"
+	cont "this!"
 	done
 
 WiltonGiftText:
-	text "So here you are."
-
-	para "See this?"
-	line "I snagged it just"
-
-	para "a little while"
-	line "ago. It's yours."
+	text "Here take this."
+	para "It will help you"
+	line "prepare your"
+	cont "meals."
 	done
 
 WiltonPackFullText:

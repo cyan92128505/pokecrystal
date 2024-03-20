@@ -54,11 +54,7 @@ WiltonGreetNiteText:
 	done
 
 WiltonGenericText:
-	text "Have your #MON"
-	line "grown any?"
-
-	para "My @"
-	text_ram wStringBuffer4
-	text " has"
-	line "grown quite a bit."
+	text "Do ever wonder"
+	line "what your #MON"
+	cont "taste like?"
 	done

@@ -1,60 +1,64 @@
 WiltonMonHasGrownText:
-	text "My @"
-	text_ram wStringBuffer4
-	text "'s"
-	line "grown impressive!"
-
-	para "My fishing skills"
-	line "have improved too!"
+	text "Yesterday I caught"
+	line "the most amazing"
+	cont "FEEBAS."
+	para "It was such a"
+	line "beautiful"
+	cont "#MON."
+	para "I added some"
+	line "rosemary and a"
+	cont "little salt and"
+	cont "butter."
+	para "Oww it were"
+	line "mighty!"
 	done
 
 WiltonDefeatedMonText:
-	text "We beat a wild"
-	line "@"
-	text_ram wStringBuffer4
-	text "…"
-
-	para "You know, I have"
-	line "more fun fishing"
-
-	para "than beating wild"
-	line "#MON."
+	text "I fished the"
+	line "strangest thing"
+	cont "today, a LUCKY"
+	cont "EGG."
+	para "I tossed back in"
+	line "and it floated"
+	cont "over to the"
+	cont "island."
 	done
 
 WiltonLostAMonText:
-	text "But a while back,"
-	line "we came this close"
-
-	para "to landing a wild"
-	line "@"
-	text_ram wStringBuffer4
-	text "."
-
-	para "I tell you, it was"
-	line "huge. Believe me."
+	text "I've been eying up"
+	line "this TOGEKISS"
+	cont "nesting nearby."
+	para "I've heard legends"
+	line "of their tender"
+	cont "and succulent"
+	cont "meat."
 	done
 
 WiltonBattleRematchText:
-	text "I'm fishing on"
+	text "I need to battle"
+	line "my #MON to"
+	cont "tenderise them."
+	para "Get over here and"
+	line "lets have a"
+	cont "battle."
+
+	para "I'm fishing on"
 	line "@"
 	text_ram wStringBuffer5
-	text ","
-
-	para "but nothing's"
-	line "biting today."
-
-	para "Help me while my"
-	line "time away, come"
-	cont "over for a battle."
+	text "."
 	done
 
 WiltonHangUpText:
-	text "All right, later."
+	text "Taste ya later."
 	done
 
 WiltonFoundItemText:
-	text "I snagged an item"
-	line "while fishing."
+	text "I fished up an"
+	line "item while"
+	cont "catching my"
+	cont "dinner."
+	para "Come on by nd you"
+	line "can have it."
 
 	para "Come pick it up on"
 	line "@"
@@ -63,41 +67,35 @@ WiltonFoundItemText:
 	done
 
 WiltonHaventFoundAnythingText:
-	text "Nah, I haven't"
-	line "found anything"
-
-	para "that's worth your"
-	line "time."
-
-	para "You have to have"
-	line "patience."
+	text "Hey, I'm in the"
+	line "market for some..."
+	para "special meat,"
+	line "could you hook me"
+	cont "up..."
+	para "Oh <PLAYER>!"
+	para "Sorry wrong"
+	line "number!"
 	done
 
 WiltonNotBitingText:
-	text "Sigh…"
-	line "They're not biting"
-
-	para "like before on"
-	line "@"
-	text_ram wStringBuffer5
-	text "…"
-
-	para "You have to come"
-	line "for a battle!"
+	text "Hey my #MON"
+	line "aren't going to"
+	cont "tenderise"
+	cont "themselves."
+	para "Get over here and"
+	line "let's battle!"
 	done
 
 WiltonWantThisText:
-	text "Don't you want"
-	line "this item?"
-
-	para "Hah? You don't"
-	line "know where?"
-
-	para "@"
-	text_ram wStringBuffer5
-	text "…"
-	line "Just head from"
-
-	para "MAHOGANY toward"
-	line "BLACKTHORN!"
+	text "I've eaten all"
+	line "sorts of #MON."
+	para "MILOTIC is real"
+	line "nice but I tell"
+	cont "you kid, I tell"
+	cont "you the tastiest"
+	cont "#MON."
+	para "It's DUNSPARCE!"
+	para "Don't believe me,"
+	line "try it for"
+	cont "yourself."
 	done

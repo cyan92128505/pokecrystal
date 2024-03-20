@@ -1,96 +1,74 @@
 WadeAreYourMonGrowingText:
-	text "Are your #MON"
-	line "growing?"
-
-	para "My #MON are"
-	line "growing a bit too"
-
-	para "quickly for me."
-	line "It's overwhelming!"
-
-	para "@"
-	text_ram wStringBuffer4
-	text "'s grow-"
-	line "ing especially"
-
-	para "quickly. I think"
-	line "it'll get tough."
+	text "I can see my bugs"
+	line "growing stronger"
+	cont "everyday, it won't"
+	cont "be long until we"
+	cont "overtake you and"
+	cont "everyone."
+	para "Hahaha hahaha!"
 	done
 
 WadeDefeatedMonText:
-	text "Oh yeah, we KO'd a"
-	line "wild @"
-	text_ram wStringBuffer4
-	text_start
-	para "with one hit a"
-	line "while back."
-
-	para "It went down so"
-	line "easily, I felt a"
-
-	para "little sorry for"
-	line "the poor thing."
+	text "Have you"
+	line "considered"
+	cont "catching some BUG"
+	cont "#MON?"
+	para "I would highly"
+	line "recommend them."
+	para "They will slice up"
+	line "your enemies."
 	done
 
 WadeLostAMonText:
-	text "Oh yeah, a wild"
-	line "@"
-	text_ram wStringBuffer4
-	text " got"
-
-	para "away from me at"
-	line "the last second."
-
-	para "I know it's a"
-	line "common #MON…"
-
-	para "But it does annoy"
-	line "me that it got"
-
-	para "away when I almost"
-	line "had it."
+	text "BUGSY is an"
+	line "arrogant larva"
+	cont "compared to me."
+	para "One day I will"
+	line "march into his GYM"
+	cont "and murder his"
+	cont "queen!"
 	done
 
 WadeBattleRematchText:
-	text "Do you feel like a"
-	line "#MON battle?"
-
-	para "It won't be like"
-	line "last time!"
+	text "Do you even"
+	line "understand the"
+	cont "superiority of BUG"
+	cont "#MON?"
+	para "I must educate"
+	line "you."
+	para "Battle me!"
 
 	para "@"
 	text_ram wStringBuffer5
 	text "'s"
 	line "where I'll be."
-
-	para "Let me know when"
-	line "you get there."
 	done
 
 WadeHangUpText:
-	text "See you later!"
+	text "Hail the colony!"
 	done
 
 WadeBugCatchingContestText:
-	text "The Bug-Catching"
-	line "Contest is at the"
-
-	para "NATIONAL PARK"
-	line "today."
-
-	para "Are you going,"
-	line "<PLAY_G>?"
-
-	para "I'm trying to make"
-	line "up my mind."
+	text "The BUG-catching"
+	line "contest is on"
+	cont "today at the"
+	cont "NATIONAL PARK."
+	para "It's disgusting"
+	line "catching bugs for"
+	cont "sport."
+	para "The bugs will have"
+	line "their vengeance."
 	done
 
 WadeFoundItemText:
-	text "I found all kinds"
-	line "of BERRIES. If you"
-
-	para "want, I'll share"
-	line "some with you."
+	text "My bugs love to"
+	line "eat berries, and"
+	cont "other BUG"
+	cont "#MON."
+	para "I have a lot of"
+	line "let over berries."
+	para "Come over and you"
+	line "can have some."
 
 	para "I'll be waiting on"
 	line "@"
@@ -99,32 +77,28 @@ WadeFoundItemText:
 	done
 
 WadeNoBerriesText:
-	text "Huh? BERRIES?"
-
-	para "Sorry, I haven't"
-	line "found any yet."
-
-	para "I'll call you if I"
-	line "find any. Will you"
-	cont "please wait?"
+	text "I've been beating"
+	line "lots of new"
+	cont "trainers lately."
+	para "BUG #MON do"
+	line "not hold back."
+	para "Every battle is to"
+	line "the death!"
 	done
 
 WadeQuickBattleText:
-	text "Let's battle"
-	line "already!"
-
-	para "@"
-	text_ram wStringBuffer5
-	text " is"
-	line "where I am."
-
-	para "Please get here as"
-	line "soon as you can!"
+	text "Are you afraid to"
+	line "battle my bug"
+	cont "army?"
+	para "Fear not little"
+	line "pupa, we will try"
+	cont "not to kill you."
 	done
 
 WadeComeQuickText:
-	text "How come you're"
-	line "not here yet?"
+	text "Where are you!?"
+	para "The colony needs"
+	line "you."
 
 	para "@"
 	text_ram wStringBuffer5

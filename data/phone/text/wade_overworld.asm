@@ -1,45 +1,30 @@
 WadeAskNumber1Text:
-	text "You're awesome!"
-	line "I like you!"
-
-	para "I look for #MON"
-	line "here every day."
-
-	para "When I'm in the"
-	line "grass, I find all"
-	cont "kinds of BERRIES."
-
-	para "If you'd like,"
-	line "I'll share some."
-
-	para "Could I get your"
-	line "phone number?"
-	done
-
 WadeAskNumber2Text:
-	text "When I'm in the"
-	line "grass, I find all"
-	cont "kinds of BERRIES."
-
-	para "If you'd like,"
-	line "I'll share some."
-
-	para "Could I get your"
-	line "phone number?"
+	text "BUG #MON start"
+	line "off small and weak"
+	cont "but the grow fast"
+	cont "and become"
+	cont "powerful vicious"
+	cont "warriors."
+	para "Give me your"
+	line "number and you"
+	cont "will see their"
+	cont "superiority for"
+	cont "yourself."
 	done
 
 WadeNumberAcceptedText:
-	text "You'll hear from"
-	line "me as soon as I"
-
-	para "find anything that"
-	line "you might like."
+	text "You are a friend"
+	line "to the colony."
+	para "You will be"
+	line "rewarded one day."
 	done
 
 WadeNumberDeclinedText:
-	text "Oh well. Don't be"
-	line "shy if you want to"
-	cont "get my number."
+	text "You mandibles will"
+	line "never grow strong"
+	cont "with an attitude"
+	cont "like that."
 	done
 
 WadePhoneFullText:
@@ -49,22 +34,20 @@ WadePhoneFullText:
 	done
 
 WadeRematchText:
-	text "I was waiting for"
-	line "you. Let's battle!"
+	text "Behold my"
+	line "perfectly ultimate"
+	cont "BUG #MON!"
 	done
 
 WadeGiftText:
-	text "Good to see you!"
-	line "See? This is what"
-
-	para "I found."
-	line "It's for you!"
+	text "Ah here have this,"
+	line "it will help your"
+	cont "#MON become"
+	cont "more ferocious."
 	done
 
 WadePackFullText:
-	text "Oops, your PACK's"
-	line "full. Too bad."
-
-	para "You should come"
-	line "back for it later."
+	text "Your pack is"
+	line "already full of"
+	cont "junk."
 	done

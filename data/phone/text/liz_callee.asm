@@ -59,23 +59,18 @@ LizGreetNiteText:
 	done
 
 LizGenericText:
-	text "I had some time,"
-	line "so I called you."
-
-	para "So anyway, how are"
-	line "your #MON?"
-
-	para "Me, I take my"
-	line "@"
-	text_ram wStringBuffer4
-	text " to the"
-
-	para "#MON CENTER in"
-	line "VIOLET every day,"
-
-	para "so it's doing just"
-	line "fantastic!"
-
-	para "I'm friends with"
-	line "the receptionist!"
+	text "Hey um..."
+	para "I just thought I'd"
+	line "call."
+	para "How are your"
+	line "#MON doing?"
+	para "Do you have a"
+	line "crush on anyone?"
+	para "I'm sorry that"
+	line "just came out!"
+	para "I would never"
+	line "normally ask if"
+	cont "you had a crush on"
+	cont "me..."
+	para "Oh no."
 	done

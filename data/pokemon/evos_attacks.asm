@@ -639,6 +639,7 @@ PawniardEvosAttacks:
 	db 10, METAL_CLAW
 	db 15, PURSUIT
 	db 20, SLASH
+	db 25, MACH_PUNCH
 	db 30, BULLET_PUNCH
 	db 35, NIGHT_SLASH
 	db 40, IRON_HEAD
@@ -653,6 +654,7 @@ BisharpEvosAttacks:
 	db 10, METAL_CLAW
 	db 15, PURSUIT
 	db 20, SLASH
+	db 25, MACH_PUNCH
 	db 30, BULLET_PUNCH
 	db 35, NIGHT_SLASH
 	db 40, IRON_HEAD
@@ -2023,7 +2025,7 @@ JolteonEvosAttacks:
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
-	db 24, DOUBLE_KICK
+	db 24, FLASH_CANNON
 	db 30, THUNDERBOLT
 	db 34, THUNDER_WAVE
 	db 38, AGILITY

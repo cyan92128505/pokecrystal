@@ -1,36 +1,26 @@
 LizAskNumber1Text:
-	text "Oh? You're on a"
-	line "big journey to see"
-	cont "the sights? Neat!"
-
-	para "Let's be friends!"
-	line "Can I have your"
-	cont "phone number?"
-
-	para "I want to hear"
-	line "about everything"
-	cont "you've seen!"
-	done
-
 LizAskNumber2Text:
-	text "Let's be friends!"
-	line "Can I have your"
-	cont "phone number?"
-
-	para "I want to hear"
-	line "about everything"
-	cont "you've seen!"
+	text "Oh hey wait before"
+	line "you go..."
+	para "Umm..."
+	para "Well I mean I was"
+	line "just wondering..."
+	para "Could I have your"
+	line "number?"
 	done
 
 LizNumberAcceptedText:
-	text "I'll telephone you"
-	line "if I hear anything"
-	cont "interesting."
+	text "Really!"
+	para "Thank you!"
+	para "I'll keep in"
+	line "touch."
 	done
 
 LizNumberDeclinedText:
-	text "Aww… You won't be"
-	line "my friend?"
+	text "Oh..."
+	para "That OK..."
+	para "I don't mind"
+	line "rejection..."
 	done
 
 LizPhoneFullText:
@@ -39,6 +29,11 @@ LizPhoneFullText:
 	done
 
 LizRematchText:
-	text "You're late! Let's"
-	line "get started now!"
+	text "<PLAYER>!"
+	para "Hey it's been a"
+	line "while."
+	para "You look good..."
+	para "Strong I mean."
+	para "Let's have some"
+	line "fun!"
 	done

@@ -197,79 +197,81 @@ Route11HiddenRevive:
 	hiddenitem REVIVE, EVENT_ROUTE_11_HIDDEN_REVIVE
 
 YoungsterOwenSeenText:
-	text "There's no cheat-"
-	line "ing in #MON."
-
-	para "Let's keep it fair"
-	line "and square!"
+	text "Are you here for"
+	line "the SOLENOID"
+	cont "concert?"
+	para "No way man, I got"
+	line "here first!"
 	done
 
 YoungsterOwenBeatenText:
-	text "Huh? How did this"
-	line "happen?"
+	text "Radical dude!"
 	done
 
 YoungsterOwenAfterBattleText:
-	text "I fought fair and"
-	line "square with honor."
-
-	para "I don't regret"
-	line "this at all."
-	done
+	text "Dude you're not a"
+	line "true fan, I can"
+	cont "tell."
 
 YoungsterJasonSeenText:
-	text "It itches and"
-	line "tickles a bit when"
-
-	para "I wear shorts in"
-	line "the grass."
+	text "There is something"
+	line "big, long and hard"
+	cont "inside DIGLETTS"
+	cont "CAVE."
 	done
 
 YoungsterJasonBeatenText:
-	text "Aiyaaah!"
-	line "I got stomped!"
+	text "You're hard too."
 	done
 
 YoungsterJasonAfterBattleText:
-	text "I'm going to catch"
-	line "more #MON in"
-	cont "the grass."
+	text "I don't know what"
+	line "it is but I'm not"
+	cont "going near it!"
 	done
 
 PsychicHermanSeenText:
-	text "…"
+	text "I just gave a lot"
+	line "of money to some"
+	cont "old man in town."
+	para "I can foresee it"
+	line "was a really dumb"
+	cont "move."
 	done
 
 PsychicHermanBeatenText:
-	text "…"
+	text "I'm such an idiot!"
 	done
 
 PsychicHermanAfterBattleText:
-	text "…"
-
-	para "I lost while I had"
-	line "my eyes closed…"
+	text "I need to get that"
+	line "money back or that"
+	cont "new SAFFRON GYM"
+	cont "LEADER will come"
+	cont "looking for me!"
 	done
 
 PsychicFidelSeenText:
-	text "I can see it…"
-
-	para "Everything to see"
-	line "about you…"
+	text "I was trying to"
+	line "move that SNORLAX"
+	cont "with my mind."
+	para "I swear I made it"
+	line "roll over once."
 	done
 
 PsychicFidelBeatenText:
-	text "I couldn't foresee"
-	line "your power…"
+	text "See I made it"
+	line "move!"
 	done
 
 PsychicFidelAfterBattleText:
-	text "Strength in con-"
-	line "viction…"
-
-	para "You're strong be-"
-	line "cause you believe"
-	cont "in your #MON."
+	text "SABRINA could pick"
+	line "that SNORLAX up"
+	cont "and flip it around"
+	cont "like a pancake"
+	cont "with her mind."
+	para "Her beautiful"
+	line "mind!"
 	done
 
 Route11SignText:

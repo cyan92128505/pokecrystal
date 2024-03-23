@@ -212,6 +212,7 @@ YoungsterOwenAfterBattleText:
 	text "Dude you're not a"
 	line "true fan, I can"
 	cont "tell."
+	done
 
 YoungsterJasonSeenText:
 	text "There is something"

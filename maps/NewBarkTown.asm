@@ -119,7 +119,7 @@ NewBarkTownTeacherScript:
 	end
 
 .CallMom:
-	writetext Text_CallMomOnGear
+	writetext Text_GearIsImpressive
 	waitbutton
 	closetext
 	end
@@ -266,14 +266,6 @@ Text_TellMomIfLeaving:
 	cont "last time."
 	done
 
-Text_CallMomOnGear:
-	text "Call your mom on"
-	line "your #GEAR to"
-
-	para "let her know how"
-	line "you're doing."
-	done
-
 Text_ElmDiscoveredNewMon:
 	text "Yo, <PLAYER>!"
 
@@ -287,9 +279,8 @@ Text_ElmDiscoveredNewMon:
 	para "He caught a"
 	line "raging URSARING."
 
-	para "I'm sure he is"
-	line "out there"
-	cont "somewhere."
+	text "He can take care"
+	line "of himself."
 	done
 
 NewBarkTownRivalNotThatOneText:

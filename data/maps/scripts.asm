@@ -518,4 +518,7 @@ INCLUDE "maps/Route12SuperRodHouse.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 INCLUDE "maps/ManorOutside.asm"
+
+SECTION "Map Scripts Overflow 11", ROMX
+
 INCLUDE "maps/ManorInside.asm"

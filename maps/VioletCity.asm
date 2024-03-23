@@ -201,45 +201,45 @@ VioletCitySpinningEarl_MovementData:
 	step_end
 
 Text_EarlAsksIfYouBeatFalkner:
-	text "Ah a new trainer."
-
+	text "What did you think"
+	line "of that?"
+	para "I bet you never"
+	line "seen someone move"
+	cont "like that!"
+	para "That is the sign"
+	line "of a true #MON"
+	cont "MASTER."
 	para "Have you defeated"
-	line "GYM LEADER"
-	cont "FALKNER?"
+	line "the GYM LEADER?"
 	done
 
 Text_VeryNiceIndeed:
-	text "I see..."
-
-	para "You must be a"
-	line "real prodigy."
+	text "Ah you must also"
+	line "be a true #MON"
+	cont "MASTER."
+	para "You have nothing"
+	line "to learn from me."
 	done
 
 Text_FollowEarl:
-	text "There is much"
-	line "to learn."
-
-	para "Follow me."
-
-	para "I'll show a"
-	line "place where you"
-	cont "can find the"
-	cont "answers."
+	text "You need a"
+	line "teacher."
+	para "Well you'll be"
+	line "happy to learn I"
+	cont "am a teacher."
+	para "Come spin with me"
+	line "if you can."
 	done
 
 Text_HereTeacherIAm:
-	text "This is a school"
-	line "for #MON"
-	cont "trainers."
-
-	para "I teach here."
-
-	para "FALKNER used to"
-	line "be a student of"
-	cont "mine."
-
-	para "I can teach"
-	line "you too."
+	text "You are in a state"
+	line "of shock and awe,"
+	cont "I can tell."
+	para "This is my school!"
+	para "I taught FALKNER"
+	line "everything he"
+	cont "knows and now..."
+	para "I shall teach you."
 	done
 
 VioletCityLassText:

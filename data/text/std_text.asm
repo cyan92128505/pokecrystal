@@ -24,6 +24,34 @@ NurseNiteText:
 	line "#MON CENTER."
 	done
 
+NurseChampText:
+	text "Ah CHAMPION"
+	line "<PLAYER> it is an"
+	cont "honor."
+	para "Please let me heal"
+	line "your #MON."
+	done
+
+NurseInvadeText:
+	text "Oh my!"
+	para "Please don't hurt"
+	line "anyone!"
+	para "I..."
+	para "I'll heal your"
+	line "#MON."
+	done
+
+NurseLordText:
+	text "My..."
+	para "My lord, I am not"
+	line "worthy."
+	para "I am moved to be"
+	line "granted the"
+	cont "privilege of"
+	cont "healing your"
+	cont "#MON."
+	done
+
 PokeComNurseMornText:
 	text "Good morning!"
 

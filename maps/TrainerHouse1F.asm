@@ -140,7 +140,7 @@ TrainerHouseIllegibleText:
 	line "start coming up"
 	cont "with some ideas"
 	cont "that aren't"
-	cont "absolutely terrible"
+	cont "absolute trash"
 	cont "I'll disband this"
 	cont "little tea party."
 

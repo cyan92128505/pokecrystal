@@ -161,105 +161,126 @@ AcademyEarlSpinMovement:
 	step_end
 
 AcademyEarlIntroText:
-	text "EARL, I am!"
-
-	para "Wonderful are"
-	line "#MON, yes!"
-
-	para "Teach you I will"
-	line "to be a better"
-	cont "trainer!"
-
-	para "What you want to"
-	line "know? Want to be"
-	cont "a winner is you?"
+	text "I am EARL but you"
+	line "will call me"
+	cont "SENSAI."
+	para "Now tell me, do"
+	line "you want to be the"
+	cont "very best, like no"
+	cont "one ever was?"
 	done
 
 AcademyEarlTeachHowToWinText:
-	text "Good! Teach you,"
-	line "I will!"
-
-	para "In battle, #MON"
-	line "top on list jump"
-	cont "out first!"
-
-	para "Change order in"
-	line "list, make battle"
-	cont "easy, maybe!"
-
-	para "More from me you"
-	line "want to hear?"
+	text "Then listen up!"
+	para "Most #MON are"
+	line "good, catch what"
+	cont "you want, but"
+	cont "STEEL, DRAGON and"
+	cont "FAIRY types are"
+	cont "particularly good."
+	para "Explore and obtain"
+	line "as many TMs as"
+	cont "possible."
+	para "SAVE before a"
+	line "tough battle and"
+	cont "experiment with"
+	cont "teaching your"
+	cont "#MON different"
+	cont "moves and and"
+	cont "sending different"
+	cont "#MON out"
+	cont "first."
+	para "Rematch strong"
+	line "trainers until you"
+	cont "hit the level cap."
+	para "If all else fails,"
+	line "make save states"
+	cont "during battles,"
+	cont "that's what I do."
 	done
 
 AcademyEarlTeachMoreText:
-	text "So, want to know"
-	line "how to raise"
-	cont "#MON well?"
+	text "I see, so you want"
+	line "to become immersed"
+	cont "in the world and"
+	cont "the role you play?"
 	done
 
 AcademyEarlTeachHowToRaiseWellText:
-	text "Fine! Teach you,"
-	line "I will!"
-
-	para "If #MON come"
-	line "out in battle even"
-
-	para "briefly, some EXP."
-	line "Points it gets."
-
-	para "At top of list put"
-	line "weak #MON."
-
-	para "Switch in battle"
-	line "quick!"
-
-	para "This way, weak"
-	line "#MON strong"
-	cont "become!"
+	text "I understand."
+	para "War is upon us and"
+	line "you a young adult"
+	cont "with all your life"
+	cont "ahead of you."
+	para "Life, love,"
+	line "laughter and pain,"
+	cont "strife and"
+	cont "heartache."
+	para "All these are"
+	line "waiting for you on"
+	cont "the horizon."
+	para "How you reach them"
+	line "is up to you."
+	para "Now get out there"
+	line "and make this"
+	cont "world your own!"
 	done
 
 AcademyEarlNoMoreToTeachText:
-	text "Oh! Smart student"
-	line "you are! Nothing"
-	cont "more do I teach!"
-
-	para "Good to #MON"
-	line "you must be!"
+	text "I see..."
+	para "Well then what are"
+	line "you doing here?"
+	para "Why are you doing"
+	line "any of this!"
+	para "Don't waste your"
+	line "time doing things"
+	cont "you don't enjoy."
+	para "Now leave and do"
+	line "whatever the hell"
+	cont "you want!"
 	done
 
 EarlsPokemonAcademyYoungster1Text:
-	text "I'm taking notes"
-	line "of the teacher's"
-	cont "lecture."
-
-	para "I'd better copy"
-	line "the stuff on the"
-	cont "blackboard too."
+	text "I must learn EARLs"
+	line "spin to win"
+	cont "technique!"
+	para "There are just too"
+	line "many things to"
+	cont "learn!"
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
-	text "I traded my best"
-	line "#MON to the"
-	cont "guy beside me."
+	text "What happens if I"
+	line "catch a #MON"
+	cont "and trade it to a"
+	cont "friend who trains"
+	cont "it beyond my level"
+	cont "cap then trades it"
+	cont "back to me!"
 	done
 
 EarlsPokemonAcademyGameboyKid2Text:
-	text "Huh? The #MON I"
-	line "just got is hold-"
-	cont "ing something!"
+	text "As soon as this"
+	line "guy puts this"
+	cont "#MON in a PC"
+	cont "he is in for a"
+	cont "surprise."
+	para "It'll level down"
+	line "to his level cap."
 	done
 
 EarlsPokemonAcademyYoungster2Text:
-	text "A #MON holding"
-	line "a BERRY will heal"
-	cont "itself in battle."
-
-	para "Many other items"
-	line "can be held by"
-	cont "#MON…"
-
-	para "It sure is tough"
-	line "taking notes…"
+	text "If I give a FOCUS"
+	line "SASH to a #MON"
+	cont "with TELEPORT I"
+	cont "can escape from"
+	cont "wild #MON that"
+	cont "I can't normally"
+	cont "run from."
+	para "Except those RED"
+	line "#MON who"
+	cont "attack, I can't"
+	cont "escape from them."
 	done
 
 AcademyBlackboardText:
@@ -268,10 +289,6 @@ AcademyBlackboardText:
 
 	para "status changes in"
 	line "battle."
-	done
-
-AcademyBlackboardText2: ; unreferenced
-	text "Read which topic?"
 	done
 
 AcademyPoisonText:

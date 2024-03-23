@@ -79,7 +79,7 @@ TrainerPicnickerErin1:
 	writetext PicnickerErin1SeenText
 	waitbutton
 	closetext
-	winlosstext PicnickerErin1SeenText, 0
+	winlosstext PicnickerErin1BeatenText, 0
 	loadtrainer PICNICKER, ERIN1
 	startbattle
 	reloadmapafterbattle
@@ -295,7 +295,7 @@ PicnickerErin1BeatenText:
 	text "How embarrassing."
 
 	para "How could I"
-	line "lose."
+	line "lose to you!"
 	done
 
 PicnickerErinAfterBattleText:

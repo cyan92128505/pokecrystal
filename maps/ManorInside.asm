@@ -395,7 +395,7 @@ CatherineOfferBattleText:
 
 CatherineBeginBattleText:
 	text "My little plants"
-	line "ready"
+	line "are ready."
 	done
 
 CatherineBeatenText:
@@ -570,6 +570,502 @@ JamesBattleRefusedText:
 	cont "both of us."
 	done
 
+ManorBookshelf1:
+    opentext
+    writetext ManorBookshelf1Text
+    waitbutton
+    closetext
+    end
+
+ManorBookshelf1Text:
+	text "Books on all sorts"
+	line "of junk."
+	para "Physics,"
+	line "programming,"
+	cont "biology,"
+	cont "Youtube..."
+	done
+
+ManorHeul:
+    opentext
+    writetext ManorHeulText
+    waitbutton
+    closetext
+    end
+
+ManorHeulText:
+	text "It's full to the"
+	line "brim with"
+	cont "something called"
+	cont "Heul..."
+	cont "Yuck!"
+	done
+
+ManorUnused:
+    opentext
+    writetext ManorUnusedText
+    waitbutton
+    closetext
+    end
+
+ManorUnusedText:
+	text "This hasn't been"
+	line "used in a long"
+	cont "time."
+	done
+
+ManorDayo:
+    opentext
+    writetext ManorDayoText
+    waitbutton
+    closetext
+    end
+
+ManorDayoText:
+	text "Some shirtless man"
+	line "is speed running"
+	cont "Spyro on the TV."
+	done
+
+ManorDS2:
+    opentext
+    writetext ManorDS2Text
+    waitbutton
+    closetext
+    end
+
+ManorDS2Text:
+	text "Looks like the"
+	line "last game played"
+	cont "was Dark Souls 2."
+	para "Some strange"
+	line "people live here!"
+	done
+
+ManorFF7R:
+    opentext
+    writetext ManorFF7RText
+    waitbutton
+    closetext
+    end
+
+ManorFF7RText:
+	text "Looks like the"
+	line "last game played"
+	cont "was Final Fantasy"
+	cont "7 Rebirth."
+	para "It's not that"
+	line "good."
+	done
+
+ManorRC2:
+    opentext
+    writetext ManorRC2Text
+    waitbutton
+    closetext
+    end
+
+ManorRC2Text:
+	text "Looks like the"
+	line "last game played"
+	cont "was Ratchet and"
+	cont "Clank Going"
+	cont "Commando."
+	para "Now that's a good"
+	line "game!"
+	done
+
+ManorFact1:
+    opentext
+    writetext ManorFact1Text
+    waitbutton
+    closetext
+    end
+
+ManorFact2:
+    opentext
+    writetext ManorFact2Text
+    waitbutton
+    closetext
+    end
+
+ManorFact3:
+    opentext
+    writetext ManorFact3Text
+    waitbutton
+    closetext
+    end
+
+ManorFact4:
+    opentext
+    writetext ManorFact4Text
+    waitbutton
+    closetext
+    end
+
+ManorFact5:
+    opentext
+    writetext ManorFact5Text
+    waitbutton
+    closetext
+    end
+
+ManorFact6:
+    opentext
+    writetext ManorFact6Text
+    waitbutton
+    closetext
+    end
+
+ManorFact7:
+    opentext
+    writetext ManorFact7Text
+    waitbutton
+    closetext
+    end
+
+ManorFact8:
+    opentext
+    writetext ManorFact8Text
+    waitbutton
+    closetext
+    end
+
+ManorFact9:
+    opentext
+    writetext ManorFact9Text
+    waitbutton
+    closetext
+    end
+
+ManorFact10:
+    opentext
+    writetext ManorFact10Text
+    waitbutton
+    closetext
+    end
+
+ManorFact11:
+    opentext
+    writetext ManorFact11Text
+    waitbutton
+    closetext
+    end
+
+ManorFact12:
+    opentext
+    writetext ManorFact12Text
+    waitbutton
+    closetext
+    end
+
+ManorFact13:
+    opentext
+    writetext ManorFact13Text
+    waitbutton
+    closetext
+    end
+
+ManorFact14:
+    opentext
+    writetext ManorFact14Text
+    waitbutton
+    closetext
+    end
+
+ManorFact15:
+    opentext
+    writetext ManorFact15Text
+    waitbutton
+    closetext
+    end
+
+ManorFact16:
+    opentext
+    writetext ManorFact16Text
+    waitbutton
+    closetext
+    end
+
+ManorFact17:
+    opentext
+    writetext ManorFact17Text
+    waitbutton
+    closetext
+    end
+
+ManorFact18:
+    opentext
+    writetext ManorFact18Text
+    waitbutton
+    closetext
+    end
+
+ ManorFact19:
+     opentext
+     writetext ManorFact19Text
+     waitbutton
+     closetext
+     end
+
+ ManorFact20:
+     opentext
+     writetext ManorFact20Text
+     waitbutton
+     closetext
+     end
+
+ ManorFact21:
+     opentext
+     writetext ManorFact21Text
+     waitbutton
+     closetext
+     end
+
+ManorFact1Text:
+	text "The first thing"
+	line "created for this"
+	cont "romhack was ARCEUS"
+	cont "and it's unique"
+	cont "mechanics."
+	done
+
+ManorFact2Text:
+	text "ARCEUS has more"
+	line "code specifically"
+	cont "for it than any"
+	cont "other #MON."
+	done
+
+ManorFact3Text:
+	text "The AMBROSIA item"
+	line "was created long"
+	cont "before it was"
+	cont "decided this hack"
+	cont "would be called"
+	cont "#MON AMBROSIA."
+	done
+
+ManorFact4Text:
+	text "There used to be a"
+	line "bug in the BATTLE"
+	cont "ARCADE where you"
+	cont "could keep the"
+	cont "player team by"
+	cont "canceling at the"
+	cont "enemy select"
+	cont "screen."
+	done
+
+ManorFact5Text:
+	text "BATTLE ARCADE and"
+	line "RPG works by"
+	cont "loading the chosen"
+	cont "character as the"
+	cont "enemy, then"
+	cont "copying all enemy"
+	cont "party data to the"
+	cont "players party,"
+	cont "then loading the"
+	cont "chosen enemy party"
+	cont "data."
+	done
+
+ManorFact6Text:
+	text "Yes the AI now"
+	line "knows all your"
+	cont "moves and exactly"
+	cont "how much damage"
+	cont "they can do."
+	para "It also knows how"
+	line "much damage all"
+	cont "its moves can do"
+	cont "to you."
+	para "It knows what item"
+	line "you have and if it"
+	cont "outspeeds you."
+	done
+
+ManorFact7Text:
+	text "This romhack took"
+	line "about 2 years in"
+	cont "total to create."
+	para "I had my first"
+	line "child and got"
+	cont "married while"
+	cont "making it."
+	para "I'm very grateful"
+	line "to my wife for"
+	cont "putting up with"
+	cont "it!"
+	done
+
+ManorFact8Text:
+	text "HALL OF ORIGIN is"
+	line "coded as an indoor"
+	cont "map because the"
+	cont "outdoor sprite"
+	cont "system is an"
+	cont "abomination."
+	done
+
+ManorFact9Text:
+	text "HAND OF GOD was"
+	line "created by"
+	cont "accident when"
+	cont "trying to"
+	cont "implement BATTLE"
+	cont "ARCADE."
+	para "It was too cool to"
+	line "remove."
+	done
+
+ManorFact10Text:
+	text "Stat Exp was used"
+	line "instead of EVs"
+	cont "because it's more"
+	cont "fun being able to"
+	cont "just play with"
+	cont "your #MON and"
+	cont "not having to"
+	cont "worry about"
+	cont "messing up EVs and"
+	cont "EV training."
+	done
+
+ManorFact11Text:
+	text "This text was one"
+	line "of the last"
+	cont "additions to the"
+	cont "game."
+	done
+
+ManorFact12Text:
+	text "Originally there"
+	line "were no level caps"
+	cont "but instead more"
+	cont "severe global exp"
+	cont "scaling to balance"
+	cont "the game."
+	para "This didn't work"
+	line "very well."
+	done
+
+ManorFact13Text:
+	text "EXP SHARE used to"
+	line "give a quarter EXP"
+	cont "until obtaining 8"
+	cont "badges."
+	para "This was fixed"
+	line "after level caps"
+	cont "were introduced."
+	done
+
+ManorFact14Text:
+	text "Getting on a BIKE"
+	line "does not play any"
+	cont "special music."
+	para "This small change"
+	line "led to a bug where"
+	cont "all music would"
+	cont "stop after using"
+	cont "FLY."
+	para "That took days to"
+	line "fix."
+	done
+
+ManorFact15Text:
+	text "You don't want to"
+	line "know the mess"
+	cont "going on behind"
+	cont "the scenes to"
+	cont "print #MON"
+	cont "abilities on the"
+	cont "stats page!"
+	done
+
+ManorFact16Text:
+	text "If you lose to"
+	line "WALLACE or the"
+	cont "supposed MAHOGANY"
+	cont "MURDER during the"
+	cont "story it takes you"
+	cont "back to the title"
+	cont "screen."
+	para "This is cool but I"
+	line "couldn't find more"
+	cont "places to use it."
+	done
+
+ManorFact17Text:
+	text "Aggressive field"
+	line "#MON are coded"
+	cont "as trainers with a"
+	cont "hard coded"
+	cont "trainerId."
+	para "When the game sees"
+	line "this trainerId it"
+	cont "jumps to the wild"
+	cont "#MON logic."
+	done
+
+ManorFact18Text:
+	text "Initially the plan"
+	line "was to keep the"
+	cont "game as true to"
+	cont "original"
+	cont "generation 2"
+	cont "battle mechanics"
+	cont "as possible."
+	para "That didn't last"
+	line "long."
+	done
+
+ManorFact19Text:
+	text "Expert belt"
+	line "doesn't work"
+	cont "correctly."
+	para "It will give a"
+	line "boost if the move"
+	cont "is super effective"
+	cont "against either of"
+	cont "the enemies types"
+	cont "and will give a"
+	cont "double boost if"
+	cont "super effective"
+	cont "against both"
+	cont "types."
+	done
+
+ManorFact20Text:
+	text "Abilities that"
+	line "print the enemy"
+	cont "#MON name like"
+	cont "intimidate are"
+	cont "hard coded to not"
+	cont "activate on the"
+	cont "first turn of a"
+	cont "battle because it"
+	cont "causes a visual"
+	cont "glitch if the"
+	cont "enemy isn't sent"
+	cont "out yet."
+	done
+
+ManorFact21Text:
+	text "Weather speed"
+	line "boosting abilities"
+	cont "are broken in"
+	cont "spite of many,"
+	cont "many attempts to"
+	cont "fix them."
+	para "They boost speed"
+	line "every turn with"
+	cont "the boosts"
+	cont "persisting after"
+	cont "the weather fades."
+	done
+
 ManorInside_MapEvents:
 	db 0, 0 ; filler
 
@@ -582,8 +1078,36 @@ ManorInside_MapEvents:
     warp_event  7,  0, MANOR_INSIDE, 5
 
 	def_coord_events
+	bg_event  16, 25, BGEVENT_READ, ManorHeul
+	bg_event  14, 13, BGEVENT_READ, ManorUnused
+	bg_event  13, 13, BGEVENT_READ, ManorDayo
+	bg_event  2, 14, BGEVENT_READ, ManorDS2
+	bg_event  8, 5, BGEVENT_READ, ManorUnused
+	bg_event  3, 5, BGEVENT_READ, ManorUnused
+	bg_event  15, 26, BGEVENT_READ, ManorFF7R
+	bg_event  17, 2, BGEVENT_READ, ManorRC2
 
-	def_bg_events
+	bg_event  5, 13, BGEVENT_READ, ManorFact1
+	bg_event  4, 13, BGEVENT_READ, ManorFact2
+	bg_event  3, 13, BGEVENT_READ, ManorFact3
+	bg_event  12, 1, BGEVENT_READ, ManorFact4
+	bg_event  13, 1, BGEVENT_READ, ManorFact5
+	bg_event  14, 1, BGEVENT_READ, ManorFact6
+	bg_event  15, 1, BGEVENT_READ, ManorFact7
+	bg_event  0, 1, BGEVENT_READ, ManorFact8
+	bg_event  1, 1, BGEVENT_READ, ManorFact9
+	bg_event  2, 1, BGEVENT_READ, ManorFact10
+	bg_event  3, 1, BGEVENT_READ, ManorFact11
+	bg_event  2,  25, BGEVENT_READ, ManorFact12
+	bg_event  3,  25, BGEVENT_READ, ManorFact13
+	bg_event  4,  25, BGEVENT_READ, ManorFact14
+	bg_event  5,  25, BGEVENT_READ, ManorFact15
+	bg_event  6,  25, BGEVENT_READ, ManorFact16
+	bg_event  7,  25, BGEVENT_READ, ManorFact17
+	bg_event  8,  25, BGEVENT_READ, ManorFact18
+	bg_event  9,  25, BGEVENT_READ, ManorFact19
+	bg_event  12,  25, BGEVENT_READ, ManorFact20
+	bg_event  13,  25, BGEVENT_READ, ManorFact21
 
 	def_object_events
 	object_event  15,  4, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1

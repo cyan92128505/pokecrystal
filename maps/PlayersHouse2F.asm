@@ -50,6 +50,8 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .wallaceBeaten
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
@@ -78,6 +80,24 @@ PlayersHouseRadioScript:
 	pause 45
 	closetext
 	end
+
+.wallaceBeaten:
+    opentext
+    writetext WallaceBeatenRadioPH
+    waitbutton
+    closetext
+    end
+
+WallaceBeatenRadioPH:
+	text "The war is over!"
+	para "The new CHAMPION"
+	line "<PLAYER> from"
+	cont "NEWBARK TOWN"
+	cont "defeated wallace"
+	cont "and has saved us"
+	cont "all!"
+	cont "Rejoice!"
+	done
 
 PlayersHouseBookshelfScript:
 	opentext

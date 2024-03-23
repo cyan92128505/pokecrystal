@@ -8,15 +8,25 @@ PlayersNeighborsHouse_MapScripts:
 	def_callbacks
 
 PlayersNeighborsDaughterScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .wallaceBeaten
 	jumptextfaceplayer PlayersNeighborsDaughterText
+.wallaceBeaten
+    jumptextfaceplayer PlayersNeighborsDaughterTextPostWallace
 
 PlayersNeighborScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .wallaceBeaten
 	jumptextfaceplayer PlayersNeighborText
+.wallaceBeaten
+    jumptextfaceplayer PlayersNeighborTextPostWallace
 
 PlayersNeighborsHouseBookshelfScript:
 	jumpstd MagazineBookshelfScript
 
 PlayersNeighborsHouseRadioScript:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .wallaceBeaten
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
@@ -43,6 +53,23 @@ PlayersNeighborsHouseRadioScript:
 	pause 45
 	closetext
 	end
+.wallaceBeaten:
+    opentext
+    writetext WallaceBeatenRadio
+    waitbutton
+    closetext
+    end
+
+WallaceBeatenRadio:
+	text "The war is over!"
+	para "The new CHAMPION"
+	line "<PLAYER> from"
+	cont "NEWBARK TOWN"
+	cont "defeated wallace"
+	cont "and has saved us"
+	cont "all!"
+	cont "Rejoice!"
+	done
 
 PlayersNeighborsDaughterText:
 	text "PROF ELM has"
@@ -64,16 +91,21 @@ PlayersNeighborsDaughterText:
 	para "My little sister"
 	line "wants to be a"
 	cont "trainer."
+	done
 
-	para "With the War"
-	line "looming I am"
-	cont "worried for her."
+PlayersNeighborsDaughterTextPostWallace:
+	text "<PLAYER>!"
+	para "Our local hero!"
+	para "Thank you for"
+	line "saving us all."
+	para "I'm sure CRYSTAL"
+	line "is much stronger"
+	cont "too thanks to you."
 	done
 
 PlayersNeighborText:
 	text "CRYSTAL got her"
-	line "first #MON just"
-	cont "yesterday."
+	line "first #MON."
 
 	para "She loves her"
 	line "RIOLU."
@@ -92,6 +124,17 @@ PlayersNeighborText:
 	line "CHAMPION BLUE"
 	cont "came from a"
 	cont "small town too."
+	done
+
+PlayersNeighborTextPostWallace:
+	text "I want to thank"
+	line "you so much"
+	cont "<PLAYER> for"
+	cont "saving us all."
+	para "To think the"
+	line "strongest trainer"
+	cont "in the world came"
+	cont "from right here."
 	done
 
 PlayerNeighborRadioText1:

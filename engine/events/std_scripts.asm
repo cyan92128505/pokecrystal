@@ -61,6 +61,12 @@ PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
 
 	opentext
+	readmem wMarkOfGod
+	ifequal 1, .lord
+	readmem wInvading
+	ifequal 1, .invade
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .champ
 	checktime MORN
 	iftrue .morn
 	checktime DAY
@@ -95,6 +101,21 @@ PokecenterNurseScript:
 
 .eve
 	farwritetext NurseEveText
+	promptbutton
+	sjump .ok
+
+.champ
+	farwritetext NurseChampText
+	promptbutton
+	sjump .ok
+
+.lord
+	farwritetext NurseLordText
+	promptbutton
+	sjump .ok
+
+.invade
+	farwritetext NurseInvadeText
 	promptbutton
 	sjump .ok
 

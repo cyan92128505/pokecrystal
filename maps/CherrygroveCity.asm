@@ -658,23 +658,22 @@ CherrygroveYoungsterText_HavePokedex:
 	done
 
 MysticWaterGuyTextBefore:
-	text "This is the secret"
-	line "of my power."
-
-	para "Take it child!"
+	text "Here you can have"
+	line "this."
+	para "Trust me..."
+	para "I wont be needing"
+	line "it."
 	done
 
 MysticWaterGuyTextAfter:
-	text "I'll never stop"
-	line "fishing."
-
-	para "I'll catch every"
-	line "MAGIKARP in the"
-	cont "sea."
-
-	para "Then I'll end the"
-	line "war with an army"
-	cont "of GYARADOS!"
+	text "Listen, I have"
+	line "already filled my"
+	cont "PC with nothing"
+	cont "but MAGIKARP but I"
+	cont "just can't stop."
+	para "I need help, I'm"
+	line "hoarding these"
+	cont "things."
 	done
 
 CherrygroveCitySignText:

@@ -2355,15 +2355,10 @@ BattleArcadeIntroText:
     text "Welcome to the"
     line "BATTLE ARCADE."
 
-    para "Here you can fight"
-    line "as a super powered"
-    cont "trainer of your"
-    cont "choosing."
-
-    para "And fight against"
-    line "super powered"
-    cont "trainers of"
-    cont "your choosing."
+	para "Here you can fight"
+	line "using super"
+	cont "powered trainers"
+	cont "of your choosing."
 
     para "Do you want to"
     line "fight?"

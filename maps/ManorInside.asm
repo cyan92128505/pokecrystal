@@ -1078,6 +1078,8 @@ ManorInside_MapEvents:
     warp_event  7,  0, MANOR_INSIDE, 5
 
 	def_coord_events
+
+	def_bg_events
 	bg_event  16, 25, BGEVENT_READ, ManorHeul
 	bg_event  14, 13, BGEVENT_READ, ManorUnused
 	bg_event  13, 13, BGEVENT_READ, ManorDayo

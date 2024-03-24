@@ -1644,16 +1644,13 @@ _DontKillUsText::
     prompt
 
 _RayquazaKillText::
-    text "You willingly"
-    line "forfeit your"
-    cont "lives."
+	text "You have willingly"
+	line "forfeit their"
+	cont "lives."
 
-    para "What am I to do"
-    line "with those who"
-    cont "would oppose me."
-
-    para "But show them"
-    line "death."
+	para "The cost of"
+	line "insurrection is"
+	cont "known to all."
 
     para "RAYQUAZA!"
 
@@ -1695,9 +1692,10 @@ _WallaceText2::
 	cont "sympathise with"
 	cont "KANTO you will be"
 	cont "shown no quarter."
-	para "I, WALLACE, the"
-	line "greatest trainer"
-	cont "shall ensure it!"
+	para "As the ruler of"
+	line "HOEN I can"
+	cont "personally assure"
+	cont "you of that."
 	prompt
 
 _DadText1::
@@ -1716,8 +1714,9 @@ _DadText2::
 	para "And you are much"
 	line "stronger than you"
 	cont "think."
-	para "You are my"
-	line "favorite person."
+	para "You need to"
+	line "realise what you"
+	cont "are capable of."
 	para "You just need to"
 	line "remember who you"
 	cont "are."

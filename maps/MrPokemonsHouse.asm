@@ -75,9 +75,16 @@ MrPokemonsHouse_OakScript:
 	playsound SFX_ITEM
 	waitsfx
 	setflag ENGINE_POKEDEX
+
+	writetext OakGivesExpShareText
+	waitbutton
+	verbosegiveitem EXP_SHARE
+
 	writetext MrPokemonsHouse_OakText2
 	waitbutton
 	closetext
+	loadmem wExpShareToggle, 1
+
 	turnobject PLAYER, DOWN
 	applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakExits
 	playsound SFX_EXIT_BUILDING
@@ -306,7 +313,7 @@ MrPokemonsHouse_GetDexText:
 	line "#DEX!"
 	done
 
-MrPokemonsHouse_OakText2:
+OakGivesExpShareText:
 	text "This will help"
 	line "you identify and"
 	cont "capture #MON."
@@ -335,11 +342,21 @@ MrPokemonsHouse_OakText2:
 
 	para "We call it the"
 	line "EXP SHARE."
+	done
 
-	para "BILL has it and"
-	line "is waiting for"
-	cont "you at the VIOLET"
-	cont "#MON CENTER."
+MrPokemonsHouse_OakText2:
+	text "This will allow"
+	line "all your #MON"
+	cont "to receive EXP in"
+	cont "battle, even the"
+	cont "ones that didn't"
+	cont "fight."
+	para "Here I'll turn it"
+	line "on for you!"
+	para "You can always"
+	line "turn it off but"
+	cont "why would you do"
+	cont "that!"
 
 	para "<PLAY_G>, I'm"
 	line "putting my faith"

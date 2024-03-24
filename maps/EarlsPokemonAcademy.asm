@@ -19,8 +19,9 @@ AcademyEarl:
 	yesorno
 	iffalse .Part1
 	writetext AcademyEarlTeachHowToWinText
-	yesorno
-	iffalse .Done
+	waitbutton
+	closetext
+	end
 .Part1:
 	writetext AcademyEarlTeachMoreText
 	yesorno
@@ -138,9 +139,6 @@ AcademyNotebook:
 	closetext
 	end
 
-AcademyStickerMachine: ; unreferenced
-	jumptext AcademyStickerMachineText
-
 AcademyBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -186,7 +184,7 @@ AcademyEarlTeachHowToWinText:
 	cont "experiment with"
 	cont "teaching your"
 	cont "#MON different"
-	cont "moves and and"
+	cont "moves and also"
 	cont "sending different"
 	cont "#MON out"
 	cont "first."
@@ -415,13 +413,6 @@ AcademyNotebookText3:
 
 	para "I haven't written"
 	line "anymore…"
-	done
-
-AcademyStickerMachineText:
-	text "This super machine"
-	line "prints data out as"
-
-	para "stickers!"
 	done
 
 EarlsPokemonAcademy_MapEvents:

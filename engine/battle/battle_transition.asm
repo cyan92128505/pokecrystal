@@ -708,7 +708,101 @@ INCLUDE "gfx/overworld/trainer_battle.pal"
 INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
 .loadpokeballgfx:
+    ; rockets
+    ld de, TeamRocketTransition
 	ld a, [wOtherTrainerClass]
+    cp GRUNTM
+	ret z
+	cp GRUNTF
+	ret z
+	cp EXECUTIVEM
+	ret z
+	cp EXECUTIVEF
+	ret z
+	cp SCIENTIST
+	ret z
+
+    ; hoen
+    ld de, HoenTransition
+	ld a, [wOtherTrainerClass]
+    cp SOLDIER
+	ret z
+	cp WALLACE
+	ret z
+
+    ; gym leaders
+    ld de, GymLeaderTransition
+	ld a, [wOtherTrainerClass]
+    cp FALKNER
+	ret z
+    cp BUGSY
+	ret z
+    cp WHITNEY
+	ret z
+    cp MORTY
+	ret z
+    cp CHUCK
+	ret z
+    cp JASMINE
+	ret z
+    cp PRYCE
+	ret z
+    cp CLAIR
+	ret z
+    cp BROCK
+	ret z
+    cp MISTY
+	ret z
+    cp LT_SURGE
+	ret z
+    cp ERIKA
+	ret z
+    cp JANINE
+	ret z
+    cp WILL
+	ret z
+    cp BLAINE
+	ret z
+    cp GIOVANNI
+	ret z
+    cp SABRINA
+	ret z
+    cp BRUNO
+	ret z
+    cp KAREN
+	ret z
+    cp ADAM
+	ret z
+
+    ; champions
+    ld de, ChampionTransition
+	ld a, [wOtherTrainerClass]
+    cp CHAMPION
+	ret z
+	cp STEVEN
+	ret z
+	cp CYNTHIA
+	ret z
+	cp LEON
+	ret z
+	cp LORD_OAK
+	ret z
+	cp RED
+	ret z
+	cp BLUE
+	ret z
+	cp LEAF
+	ret z
+
+    ; wild
+    ld de, WildTransition
+	ld a, [wOtherTrainerClass]
+    cp FIELD_MON
+	ret z
+	cp INVADER
+	ret z
+
+	; default transition
 	ld de, PokeBallTransition
 	ret
 
@@ -732,6 +826,111 @@ opt b.X ; . = 0, X = 1
 	bigdw %..XXXX....XXXX..
 	bigdw %....XXXXXXXX....
 	bigdw %......XXXX......
+popo
+
+TeamRocketTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %XXXXXXXXXXXX....
+	bigdw %XXXXXXXXXXXXXX..
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXX.....XXXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX.....XXXXXX
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXX..
+	bigdw %XXXXXXXXXXXXX...
+	bigdw %XXXXX....XXXXX..
+	bigdw %XXXXX....XXXXX..
+	bigdw %XXXXX.....XXXXX.
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+popo
+
+HoenTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
+popo
+
+GymLeaderTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %.......XX.......
+	bigdw %......XXXX......
+	bigdw %.....XX..XX.....
+	bigdw %....XX....XX....
+	bigdw %...XX......XX...
+	bigdw %..XX........XX..
+	bigdw %.XX..........XX.
+	bigdw %XX............XX
+	bigdw %XX............XX
+	bigdw %.XX..........XX.
+	bigdw %..XX........XX..
+	bigdw %...XX......XX...
+	bigdw %....XX....XX....
+	bigdw %.....XX..XX.....
+	bigdw %......XXXX......
+	bigdw %.......XX.......
+popo
+
+ChampionTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %................
+	bigdw %................
+	bigdw %X......XX......X
+	bigdw %XX....XXXX....XX
+	bigdw %XX....XXXX....XX
+	bigdw %XXX..XX..XX..XXX
+	bigdw %XXX..XX..XX..XXX
+	bigdw %X.XXXX....XXXX.X
+	bigdw %XX............XX
+	bigdw %XX............XX
+	bigdw %XX............XX
+	bigdw %XX............XX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %................
+	bigdw %................
+	bigdw %................
+popo
+
+WildTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %XX............XX
+	bigdw %X.X..........X.X
+	bigdw %X..X........X..X
+	bigdw %XXXXX......XXXXX
+	bigdw %................
+	bigdw %................
+	bigdw %X....X....X....X
+	bigdw %.X..X.X..X.X..X.
+	bigdw %.X..X.X..X.X..X.
+	bigdw %..XX...XX...XX..
+	bigdw %................
+	bigdw %................
+	bigdw %.....X....X.....
+	bigdw %....X.X..X.X....
+	bigdw %....X.X..X.X....
+	bigdw %...X...XX...X...
 popo
 
 WipeLYOverrides:

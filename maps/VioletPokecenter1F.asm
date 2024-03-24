@@ -38,15 +38,6 @@ BillExpShareScript:
 	opentext
 	writetext VioletPokecenter1F_BillText1
 	promptbutton
-	writetext VioletPokecenter1F_BillText2
-	giveitem EXP_SHARE
-	writetext VioletPokecenter1F_GotExpShare
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	waitbutton
-	closetext
-	loadmem wExpShareToggle, 1
 	turnobject PLAYER, DOWN
 	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement2
 	playsound SFX_EXIT_BUILDING
@@ -84,87 +75,36 @@ VioletPokecenter1FPlayerMovement1:
 	step_end
 
 VioletPokecenter1F_BillText1:
-	text "Hi, I'm BILL. And"
-	line "who are you?"
-
-	para "Hmm, <PLAYER>, huh?"
-	line "You've come at the"
-	cont "right time."
-	done
-
-VioletPokecenter1F_BillText2:
-	text "I just finished"
-	line "adjustments on my"
-	cont "EXP SHARE."
-
-	para "It is a new"
-	line "powerful device."
-
-	para "I have created"
-	line "it with help from"
-	cont "PROF.OAK."
-
-	para "I am looking"
-	line "for the right"
-	cont "person to test"
-	cont "it."
-
-	para "But I must be"
-	line "careful."
-
-	para "This device can"
-	line "make a trainer"
-	cont "far more"
-	cont "powerful!"
-
-	para "I think you are"
-	line "the right person."
-
-	para "With EXP.SHARE all"
-	line "your #MON will"
-	cont "gain EXP in"
-	cont "battle."
-
-	para "Even ones that"
-	line "didn't fight!"
-
-	para "Right now they"
-	line "will gain half"
-	cont "of the full"
-	cont "EXP."
-
-	para "But PROF.OAK"
-	line "and I are working"
-	cont "on updates to"
-	cont "increase that."
-
-	para "We will learn"
-	line "a lot from you"
-	cont "using it."
-
-	para "Of course you can"
-	line "turn it off if"
-	cont "you want."
-
-	para "But why would"
-	line "you!"
-
-	para "I entrust this to"
-	line "you."
-
-	para "Here I'll turn it"
-	line "on for you!"
-
-	para "I have to hurry on"
-	line "back to GOLDENROD"
-	cont "and see my folks."
-
-	para "Buh-bye!"
-	done
-
-VioletPokecenter1F_GotExpShare:
-	text "<PLAYER> received"
-	line "EXP.SHARE."
+	text "Hi I'm BILL, the"
+	line "creator of the PC."
+	para "You must be"
+	line "<PLAYER>."
+	para "Did PROF OAK give"
+	line "you the secret"
+	cont "item..."
+	para "The EXP SHARE?"
+	para "Ah he did, great!"
+	para "I was originally"
+	line "going to give it"
+	cont "to you but though"
+	cont "it best for OAK to"
+	cont "do so."
+	para "With the EXP SHARE"
+	line "all #MON who"
+	cont "don't take part in"
+	cont "battle still get"
+	cont "half the full EXP."
+	para "I hope to improve"
+	line "upon this so all"
+	cont "#MON get full"
+	cont "EXP and perhaps"
+	cont "even boosted EXP"
+	cont "one day."
+	para "You be sure to use"
+	line "it so I can gather"
+	cont "data."
+	para "Good luck"
+	line "<PLAYER>!"
 	done
 
 VioletPokecenterNurse:

@@ -18,54 +18,29 @@ Route40BattleTowerGateRockerScript:
 Route40BattleTowerGateTwinScript:
 	jumptextfaceplayer Route40BattleTowerGateTwinText
 
-Route40BattleTowerGateUnusedText1: ; unreferenced
-	text "Did you come to"
-	line "see the BATTLE"
-	cont "TOWER too?"
-
-	para "But I guess you"
-	line "can't go in yet."
-	done
-
-Route40BattleTowerGateUnusedText2: ; unreferenced
-	text "BATTLE TOWER has"
-	line "opened."
-
-	para "I want to go, but"
-	line "I haven't thought"
-
-	para "up a cool line for"
-	line "when I win."
-	done
-
 Route40BattleTowerGateRockerText:
 	text "Are you going to"
-	line "the BATTLE TOWER?"
-
-	para "This is a secret,"
-	line "but if you win a"
-
-	para "whole lot, you can"
-	line "win special gifts."
-	done
-
-Route40BattleTowerGateUnusedText3: ; unreferenced
-	text "I'm going to train"
-	line "my #MON so I'll"
-
-	para "be all ready for"
-	line "the BATTLE TOWER."
+	line "the BATTLE"
+	cont "FRONTIER?"
+	para "There are five"
+	line "different battle"
+	cont "areas with"
+	cont "different prizes."
+	para "I'm trying to work"
+	line "out which is the"
+	cont "best to grind for"
+	cont "money."
 	done
 
 Route40BattleTowerGateTwinText:
-	text "The levels of the"
-	line "#MON I want to"
-
-	para "use are all"
-	line "different."
-
-	para "I have to go train"
-	line "them now!"
+	text "There are no rules"
+	line "or restrictions on"
+	cont "your party at any"
+	cont "of the battle"
+	cont "areas."
+	para "But I still can't"
+	line "win in any of"
+	cont "them."
 	done
 
 Route40BattleTowerGate_MapEvents:

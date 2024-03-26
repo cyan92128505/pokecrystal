@@ -648,10 +648,120 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ldh [hBGMapMode], a
 	call DelayFrame
 	call DelayFrame
-	jr .nextscene
+	jp .nextscene
 
 .cgb
+    ; rockets
+	ld hl, .rocketpals
+	ld a, [wOtherTrainerID]
+    cp FIELD_MON
+	jp z, .load_pals
+	ld a, [wOtherTrainerClass]
+	cp GRUNTM
+	jp z, .load_pals
+	cp GRUNTF
+	jp z, .load_pals
+	cp EXECUTIVEM
+	jp z, .load_pals
+	cp EXECUTIVEF
+	jp z, .load_pals
+	cp SCIENTIST
+	jp z, .load_pals
+	cp INVADER
+	jp z, .load_pals
+
+    ; hoen
+    ld hl, .hoenpals
+	ld a, [wOtherTrainerClass]
+    cp SOLDIER
+	jp z, .load_pals
+	cp WALLACE
+	jp z, .load_pals
+
+   ; gym leaders
+    ld hl, .gymleaderpals
+	ld a, [wOtherTrainerClass]
+    cp FALKNER
+	jp z, .load_pals
+    cp BUGSY
+	jp z, .load_pals
+    cp WHITNEY
+	jp z, .load_pals
+    cp MORTY
+	jp z, .load_pals
+    cp CHUCK
+	jp z, .load_pals
+    cp JASMINE
+	jp z, .load_pals
+    cp PRYCE
+	jr z, .load_pals
+    cp CLAIR
+	jr z, .load_pals
+    cp BROCK
+	jr z, .load_pals
+    cp MISTY
+	jr z, .load_pals
+    cp LT_SURGE
+	jr z, .load_pals
+    cp ERIKA
+	jr z, .load_pals
+    cp JANINE
+	jr z, .load_pals
+    cp WILL
+	jr z, .load_pals
+    cp BLAINE
+	jr z, .load_pals
+    cp GIOVANNI
+	jr z, .load_pals
+
+   ; champions
+    ld hl, .championpals
+	ld a, [wOtherTrainerClass]
+    cp CHAMPION
+	jr z, .load_pals
+	cp STEVEN
+	jr z, .load_pals
+	cp CYNTHIA
+	jr z, .load_pals
+	cp LEON
+	jr z, .load_pals
+	cp LORD_OAK
+	jr z, .load_pals
+	cp RED
+	jr z, .load_pals
+	cp BLUE
+	jr z, .load_pals
+	cp LEAF
+	jr z, .load_pals
+	cp ADAM
+	jr nz, .notAdamPals
+    ld a, [wOtherTrainerID]
+    cp MASTER_ADAM
+    jr z, .load_pals
+.notAdamPals
+
+    ; elite 4
+	ld hl, .elite4pals
+	ld a, [wOtherTrainerClass]
+    cp SABRINA
+	jr z, .load_pals
+    cp BRUNO
+	jr z, .load_pals
+    cp KAREN
+	jr z, .load_pals
+    cp ADAM
+	jr z, .load_pals
+
+    ; RPG
+    ld hl, .rpgpals
+	ld a, [wOtherTrainerClass]
+    cp ROLE_PLAYER_NORMAL
+	jr z, .load_pals
+	cp ROLE_PLAYER_SHINY
+	jr z, .load_pals
+
 	ld hl, .pals
+.load_pals
     ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr nz, .not_dark
@@ -707,7 +817,69 @@ INCLUDE "gfx/overworld/trainer_battle.pal"
 .darkpals:
 INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
+.rocketpals:
+INCLUDE "gfx/overworld/rocket_transition.pal"
+
+.hoenpals:
+INCLUDE "gfx/overworld/hoen_transition.pal"
+
+.gymleaderpals:
+INCLUDE "gfx/overworld/gymleader_transition.pal"
+
+.championpals:
+INCLUDE "gfx/overworld/champion_transition.pal"
+
+.elite4pals:
+INCLUDE "gfx/overworld/e4_transition.pal"
+
+.rpgpals:
+INCLUDE "gfx/overworld/rpg_transition.pal"
+
 .loadpokeballgfx:
+    ; wild
+    ld de, WildTransition
+	ld a, [wOtherTrainerID]
+    cp FIELD_MON
+	ret z
+	ld a, [wOtherTrainerClass]
+	cp INVADER
+	ret z
+
+	; ambrosia
+	ld de, AmbrosiaTransition
+	ld a, [wOtherTrainerClass]
+	cp LORD_OAK
+	ret z
+	cp ADAM
+	jr nz, .notAdam
+	ld a, [wOtherTrainerID]
+	cp MASTER_ADAM
+	ret z
+.notAdam
+    ld a, [wOtherTrainerClass]
+    cp RED
+    jr nz, .notRed
+    ld a, [wOtherTrainerID]
+    cp CELADON_ANDREW
+    ret z
+    cp ANDREW
+    ret z
+    cp ANDREW_IMPOSSIBLE
+    ret z
+.notRed
+	cp BLUE
+	jr nz, .notBlue
+	ld a, [wOtherTrainerID]
+	cp JAMES
+	ret z
+.notBlue
+	cp LEAF
+	jr nz, .notLeaf
+	ld a, [wOtherTrainerID]
+	cp CATHERINE
+	ret z
+.notLeaf
+
     ; rockets
     ld de, TeamRocketTransition
 	ld a, [wOtherTrainerClass]
@@ -765,6 +937,10 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ret z
     cp GIOVANNI
 	ret z
+
+	; e4
+	ld de, Elite4Transition
+	ld a, [wOtherTrainerClass]
     cp SABRINA
 	ret z
     cp BRUNO
@@ -785,8 +961,6 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ret z
 	cp LEON
 	ret z
-	cp LORD_OAK
-	ret z
 	cp RED
 	ret z
 	cp BLUE
@@ -794,12 +968,12 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	cp LEAF
 	ret z
 
-    ; wild
-    ld de, WildTransition
+    ; RPG
+    ld de, RPGTransition
 	ld a, [wOtherTrainerClass]
-    cp FIELD_MON
+    cp ROLE_PLAYER_NORMAL
 	ret z
-	cp INVADER
+	cp ROLE_PLAYER_SHINY
 	ret z
 
 	; default transition
@@ -907,7 +1081,7 @@ opt b.X ; . = 0, X = 1
 	bigdw %XX............XX
 	bigdw %XX............XX
 	bigdw %XXXXXXXXXXXXXXXX
-	bigdw %................
+	bigdw %XXXXXXXXXXXXXXXX
 	bigdw %................
 	bigdw %................
 popo
@@ -915,22 +1089,85 @@ popo
 WildTransition:
 pusho
 opt b.X ; . = 0, X = 1
+	bigdw %................
+	bigdw %................
+	bigdw %................
+	bigdw %................
+	bigdw %X..............X
 	bigdw %XX............XX
 	bigdw %X.X..........X.X
 	bigdw %X..X........X..X
-	bigdw %XXXXX......XXXXX
+	bigdw %X..XX......XX..X
+	bigdw %X..X.X....X.X..X
+	bigdw %.X....X..X....X.
+	bigdw %..XXXXX..XXXXX..
 	bigdw %................
 	bigdw %................
-	bigdw %X....X....X....X
-	bigdw %.X..X.X..X.X..X.
-	bigdw %.X..X.X..X.X..X.
-	bigdw %..XX...XX...XX..
 	bigdw %................
 	bigdw %................
-	bigdw %.....X....X.....
-	bigdw %....X.X..X.X....
-	bigdw %....X.X..X.X....
-	bigdw %...X...XX...X...
+popo
+
+Elite4Transition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %................
+	bigdw %........XXX.....
+	bigdw %......XXX.......
+	bigdw %......XXX.......
+	bigdw %....XXX.........
+	bigdw %....XXX.........
+	bigdw %..XXX...........
+	bigdw %..XXX...........
+	bigdw %XXX...XXXX......
+	bigdw %XXX...XXXX......
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %......XXXX......
+	bigdw %......XXXX......
+	bigdw %......XXXX......
+	bigdw %................
+popo
+
+AmbrosiaTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %................
+	bigdw %......XXXX......
+	bigdw %.....XXXXXX.....
+	bigdw %...XXXX..XXXX...
+	bigdw %...XXXX..XXXX...
+	bigdw %...XXXX..XXXX...
+	bigdw %..XXXX....XXXX..
+	bigdw %..XXXX....XXXX..
+	bigdw %..XXXX....XXXX..
+	bigdw %.XXXXXXXXXXXXXX.
+	bigdw %.XXXXXXXXXXXXXX.
+	bigdw %XXXX........XXXX
+	bigdw %XXXX........XXXX
+	bigdw %XXXX........XXXX
+	bigdw %................
+	bigdw %................
+popo
+
+RPGTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %.XXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %XX............XX
+	bigdw %XX............XX
+	bigdw %XX..XX....XX..XX
+	bigdw %XX..XX....XX..XX
+	bigdw %XX............XX
+	bigdw %XX.....XX.....XX
+	bigdw %XX.....XX.....XX
+	bigdw %XX............XX
+	bigdw %XX..XX....XX..XX
+	bigdw %XX..XX....XX..XX
+	bigdw %XX............XX
+	bigdw %XX............XX
+	bigdw %XXXXXXXXXXXXXXXX
+	bigdw %.XXXXXXXXXXXXXX.
 popo
 
 WipeLYOverrides:

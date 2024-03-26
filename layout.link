@@ -112,7 +112,7 @@ ROMX $24
 	"bank24"
 ROMX $25
 	"Maps"
-	;"Events"
+	"Events"
 ROMX $26
 	"Map Scripts 11"
 ROMX $27
@@ -272,7 +272,7 @@ ROMX $6a
 ROMX $6b
 	"Map Scripts 24"
 ROMX $6c
-	;"Phone Text 2"
+	"Phone Text 2"
 	"Map Scripts 25"
 ROMX $6d
 	"Special Phone Text"

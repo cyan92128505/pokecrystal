@@ -45,11 +45,9 @@ CANT_TOSS   EQU 1 << CANT_TOSS_F
 	const TM_HM_POCKET    ; 3
 NUM_POCKETS EQU const_value
 
-; AndrewNote - BackPack - Update below and wram to increase pack space
+; AndrewNote - BackPack
 MAX_ITEMS     EQU 30
-;MAX_ITEMS     EQU 20
 MAX_BALLS     EQU 12
-;MAX_KEY_ITEMS EQU 25
 MAX_KEY_ITEMS EQU 30
 MAX_PC_ITEMS  EQU 50
 

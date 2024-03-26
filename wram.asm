@@ -2227,7 +2227,7 @@ wStringBuffer5:: ds STRING_BUFFER_LENGTH
 
 wBattleMenuCursorPosition:: db
 
-	ds 1
+wBuffer1:: db
 
 wCurBattleMon:: db
 wCurMoveNum:: db
@@ -2909,8 +2909,6 @@ endr
 
 wStoneTableAddress:: dw
 
-    ;ds 28
-; AndrewNote - BackPack - comment out above 28 and replace with this 3 when updating the pack space
     ds 3
 
 wMapObjects::
@@ -3236,6 +3234,8 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
+; AndrewNote - Phone Contacts
+	;ds 6
 	ds 12
 
 wLuckyNumberShowFlag:: db

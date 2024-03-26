@@ -459,7 +459,7 @@ ChooseMoveToLearn:
 	ret z
 	dec a
 	ld [wCurSpecies], a
-	hlcoord 1, 14
+	hlcoord 1, 15
 	predef PrintMoveDescription
 ; This code falls through into the ".print_move_type" local jump.
 
@@ -467,7 +467,7 @@ ChooseMoveToLearn:
 .print_move_type
 	ld a, [wCurSpecies]
 	ld b, a
-	hlcoord 2, 11
+	hlcoord 10, 11
 	predef PrintMoveType
 ; This code falls through into the ".print_move_stat_strings" local jump.
 
@@ -480,15 +480,15 @@ ChooseMoveToLearn:
 	hlcoord 0, 10
 	ld de, MoveTypeString
 	call PlaceString
-	hlcoord 12, 11
+	hlcoord 1, 10
 	ld de, MoveAttackString
 	call PlaceString
 
 ; chance and accuracy
-    hlcoord  4, 12
+    hlcoord  1, 12
 	ld de, MoveChanceString
 	call PlaceString
-	hlcoord 12, 12
+	hlcoord 1, 11
 	ld de, MoveAccuracyString
 	call PlaceString
 
@@ -500,10 +500,10 @@ ChooseMoveToLearn:
 	ld a, [wCurSpecies]
 	ld b, a
 	farcall GetMoveCategoryName
-	hlcoord 1, 10
+	hlcoord 11, 12
 	ld de, wStringBuffer1
 	call PlaceString
-	hlcoord 1, 11
+	hlcoord 10, 12
 	ld [hl], "/"
 	inc hl
 
@@ -522,7 +522,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord  8, 12
+	hlcoord  5, 12
 	call PrintNum
 	jr .print_move_accuracy
 
@@ -535,7 +535,7 @@ ChooseMoveToLearn:
 .print_move_null_chance
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord  8, 12
+	hlcoord  5, 12
 	call PlaceString
 ; This code falls through into the ".print_move_accuracy" local jump.
 
@@ -551,7 +551,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 16, 12
+	hlcoord 5, 11
 	call PrintNum
 
 ; This code falls through into the ".print_move_attack" local jump.
@@ -569,14 +569,14 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 16, 11
+	hlcoord 5, 10
 	jp PrintNum
 
 ; This prints "---" if the move has an attack of "0".
 ; This means that the move does not initially cause
 ; damage or is a one hit knockout move.
 .print_move_null_attack
-	hlcoord 16, 11
+	hlcoord 5, 10
 	ld de, MoveNullValueString
 	ld bc, 3
 	jp PlaceString

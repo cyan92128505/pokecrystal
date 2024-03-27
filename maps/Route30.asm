@@ -79,7 +79,7 @@ YoungsterJoey_ImportantBattleScript:
 	end
 
 TrainerYoungsterJoey:
-	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, 0, .Script
+	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, YoungsterJoey1WinText, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
@@ -108,7 +108,7 @@ TrainerYoungsterJoey:
 
 .Rematch:
 	scall .RematchStd
-	winlosstext YoungsterJoey1BeatenText, 0
+	winlosstext YoungsterJoey1BeatenText, YoungsterJoey1WinText
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
@@ -324,6 +324,12 @@ YoungsterJoey1SeenText:
 YoungsterJoey1BeatenText:
 	text "It's ok..."
 	line "It's ok..."
+	done
+
+YoungsterJoey1WinText:
+	text "It was my devine"
+	line "destiny to win"
+	cont "battle"
 	done
 
 YoungsterJoey1AfterText:

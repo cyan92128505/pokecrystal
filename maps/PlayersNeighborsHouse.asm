@@ -31,14 +31,14 @@ PlayersNeighborsHouseRadioScript:
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
 	iftrue .AbbreviatedRadio
-	playmusic MUSIC_POKEMON_TALK
+	playmusic MUSIC_ROCKET_HIDEOUT
 	opentext
 	writetext PlayerNeighborRadioText1
-	pause 45
+	waitbutton
 	writetext PlayerNeighborRadioText2
-	pause 45
+	waitbutton
 	writetext PlayerNeighborRadioText3
-	pause 45
+	waitbutton
 	musicfadeout MUSIC_NEW_BARK_TOWN, 16
 	writetext PlayerNeighborRadioText4
 	pause 45
@@ -147,7 +147,7 @@ PlayerNeighborRadioText1:
 	done
 
 PlayerNeighborRadioText2:
-	para "Invasion of KANTO"
+	text "Invasion of KANTO"
 	line "seems imminent."
 	done
 

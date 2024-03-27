@@ -360,7 +360,7 @@ CatherineScript:
 
 CatherineIntroText:
 	text "Oh hello."
-	para "I am CATHERINE, I"
+	para "Welcome, I"
 	line "live here with my"
 	cont "husband ANDREW."
 	para "You have met our"
@@ -372,7 +372,7 @@ CatherineIntroText:
 	cont "come see us when"
 	cont "your done."
 	para "Oh and ANDREWS"
-	line "brother JAMES is"
+	line "brother is"
 	cont "here somewhere,"
 	cont "watch out for him."
 	done
@@ -413,8 +413,8 @@ CatherineAfterBattleText:
 	para "He will always be"
 	line "our wee boy."
 	para "Instead we have to"
-	line "put up with JAMES"
-	cont "being here."
+	line "put up with"
+	cont "ANDREWs brother."
 	done
 
 CatherineLoseAfterBattleText:

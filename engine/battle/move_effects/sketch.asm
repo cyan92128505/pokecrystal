@@ -41,6 +41,18 @@ BattleCommand_Sketch:
 	jr z, .fail
 	cp STRUGGLE
 	jr z, .fail
+	cp JUDGEMENT
+	jr z, .fail
+	cp AFTER_IMAGE
+	jr z, .fail
+	cp HOLY_ARMOUR
+	jr z, .fail
+	cp OBLITERATE
+	jr z, .fail
+	cp PSYBLAST
+	jr z, .fail
+	cp SERENITY
+	jr z, .fail
 ; Fail if user already knows that move
 	ld c, NUM_MOVES
 .does_user_already_know_move

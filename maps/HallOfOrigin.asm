@@ -863,7 +863,7 @@ MasterBlueAfterBattleText:
 BeatOthersFirstBlueText:
     text "Hey challenger!"
 
-    para "I you think you"
+    para "So you think you"
     line "are worthy to"
     cont "have an audience"
     cont "with ARCEUS."
@@ -943,13 +943,9 @@ MasterGreenSeenText:
     line "the success of"
     cont "others."
 
-    para "Coveting the"
-    line "destiny of"
-    cont "others."
-
     para "I never stopped"
     line "to consider my"
-    cont "destiny."
+    cont "achievements."
 
     para "Never allowed"
     line "myself to be me"
@@ -984,12 +980,11 @@ MasterGreenAfterBattleText:
     line "the endless"
     cont "struggle of"
     cont "chasing the"
-    cont "destiny of"
+    cont "success of"
     cont "another."
 
     para "Though I think"
-    line "they may already"
-    cont "do."
+    line "they already do."
     done
 
 RematchTextHallOfOrigin:

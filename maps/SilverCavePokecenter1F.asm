@@ -10,21 +10,29 @@ SilverCavePokecenter1F_MapScripts:
 SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
-SilverCavePokecenter1FGrannyScript:
-	jumptextfaceplayer SilverCavePokecenter1FGrannyText
+SilverCavePokecenter1FBobRossScript:
+	jumptextfaceplayer SilverCavePokecenter1FBobRossText
 
-SilverCavePokecenter1FGrannyText:
-	text "Trainers who seek"
-	line "power climb MT."
-
-	para "SILVER despite its"
-	line "many dangers…"
-
-	para "With their trusted"
-	line "#MON, they must"
-
-	para "feel they can go"
-	line "anywhere…"
+SilverCavePokecenter1FBobRossText:
+	text "It's hard to see"
+	line "things when you"
+	cont "are too close."
+	para "Take a step back"
+	line "and look."
+	para "This is a"
+	line "beautiful"
+	cont "mountain."
+	para "I keep paining it,"
+	line "a cloud here, a"
+	cont "happy little tree"
+	cont "there."
+	para "You can do"
+	line "anything you want,"
+	cont "this is your"
+	cont "world."
+	para "There are no"
+	line "mistakes, just"
+	cont "happy accidents."
 	done
 
 SilverCavePokecenter1F_MapEvents:
@@ -41,4 +49,4 @@ SilverCavePokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FNurseScript, -1
-	object_event  1,  5, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FGrannyScript, -1
+	object_event  1,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FBobRossScript, -1

@@ -345,7 +345,6 @@ INCLUDE "maps/Route13.asm"
 INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/PewterGym.asm"
 INCLUDE "maps/PewterMart.asm"
-INCLUDE "maps/PewterPokecenter1F.asm"
 
 SECTION "Map Scripts 22", ROMX
 
@@ -522,3 +521,4 @@ INCLUDE "maps/ManorOutside.asm"
 SECTION "Map Scripts Overflow 11", ROMX
 
 INCLUDE "maps/ManorInside.asm"
+INCLUDE "maps/PewterPokecenter1F.asm"

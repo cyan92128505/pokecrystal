@@ -344,24 +344,25 @@ SageLiAfterBattleText:
 	done
 
 SageJinSeenText:
-	text "You have done"
-	line "well dear child."
-
-	para "Now let your"
-	line "light shine"
-	cont "upon me."
+	text "I see it in my"
+	line "dreams."
+	para "A BELLSPROUT that"
+	line "has reached the"
+	cont "impossible"
+	cont "pinnacle of power."
 	done
 
 SageJinBeatenText:
-	text "I am humbled"
+	text "It is out there"
+	line "somewhere!"
 	done
 
 SageJinAfterBattleText:
-	text "It brings peace"
-	line "to my soul to"
-	cont "know there are"
-	cont "young people like"
-	cont "you."
+	text "A BELLSPROUT that"
+	line "can fell the very"
+	cont "gods with a single"
+	cont "stroke of its"
+	cont "leaf."
 	done
 
 SageTroySeenText:

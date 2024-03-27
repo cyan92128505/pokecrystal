@@ -420,6 +420,7 @@
     const EVENT_BEAT_ANDREW
     const EVENT_BEAT_CATHERINE
     const EVENT_BEAT_JAMES
+    const EVENT_SPOKE_TO_BAILEY
 
     ; ======================================
     ; AndrewNote - here

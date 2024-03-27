@@ -5497,8 +5497,8 @@ Text_LinkingWithCenter: ; unreferenced
 	done
 
 Text_WhatLevelDoYouWantToChallenge:
-	text "What level do you"
-	line "want to challenge?"
+	text "What challenge"
+	line "will you enter?"
 	done
 
 Text_CheckBattleRoomListByMaxLevel:

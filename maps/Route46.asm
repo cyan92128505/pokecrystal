@@ -122,7 +122,6 @@ PicnickerErinMercyText:
     done
 
 TrainerHikerBailey:
-    setmapscene ROUTE_46, SCENE_FINISHED
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_HIKER_BAILEY
@@ -338,6 +337,16 @@ Route46PokemonAttacksText:
 	line "attacks!"
 	done
 
+TrainerHikerBaileyScene:
+    checkevent EVENT_SPOKE_TO_BAILEY
+    iftrue .end
+    setevent EVENT_SPOKE_TO_BAILEY
+    turnobject ROUTE46_POKEFAN_M, LEFT
+    turnobject PLAYER, RIGHT
+    sjump TrainerHikerBailey
+.end
+    end
+
 Route46_MapEvents:
 	db 0, 0 ; filler
 
@@ -347,7 +356,7 @@ Route46_MapEvents:
 	warp_event 14,  5, DARK_CAVE_VIOLET_ENTRANCE, 3
 
 	def_coord_events
-	coord_event 14, 6, SCENE_DEFAULT, TrainerHikerBailey
+	coord_event 14, 6, SCENE_ALWAYS, TrainerHikerBaileyScene
 
 	def_bg_events
 	bg_event  9, 27, BGEVENT_READ, Route46Sign

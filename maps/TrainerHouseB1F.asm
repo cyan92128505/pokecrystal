@@ -1800,18 +1800,18 @@ BattleArcadeReceptionistScript:
 	ifequal 6, .JasminePlayer
 	ifequal 7, .PrycePlayer
 	ifequal 8, .ClairPlayer
-	ifequal 9, .SabrinaPlayer
-	ifequal 10, .BrunoPlayer
-	ifequal 11, .KarenPlayer
-	ifequal 12, .OakPlayer
-	ifequal 13, .BrockPlayer
-	ifequal 14, .MistyPlayer
-	ifequal 15, .SurgePlayer
-	ifequal 16, .ErikaPlayer
-	ifequal 17, .JaninePlayer
-	ifequal 18, .WillPlayer
-	ifequal 19, .BlainePlayer
-	ifequal 20, .GiovanniPlayer
+	ifequal 9, .BrockPlayer
+	ifequal 10, .MistyPlayer
+	ifequal 11, .SurgePlayer
+	ifequal 12, .ErikaPlayer
+	ifequal 13, .JaninePlayer
+	ifequal 14, .WillPlayer
+	ifequal 15, .BlainePlayer
+	ifequal 16, .SabrinaPlayer
+	ifequal 17, .BrunoPlayer
+	ifequal 18, .KarenPlayer
+	ifequal 19, .GiovanniPlayer
+	ifequal 20, .OakPlayer
 	ifequal 21, .StevenPlayer
 	ifequal 22, .CynthiaPlayer
 	ifequal 23, .LeonPlayer
@@ -1858,18 +1858,18 @@ BattleArcadeReceptionistScript:
 	ifequal 6, .JasmineEnemy
 	ifequal 7, .PryceEnemy
 	ifequal 8, .ClairEnemy
-	ifequal 9, .SabrinaEnemy
-	ifequal 10, .BrunoEnemy
-	ifequal 11, .KarenEnemy
-	ifequal 12, .OakEnemy
-	ifequal 13, .BrockEnemy
-	ifequal 14, .MistyEnemy
-	ifequal 15, .SurgeEnemy
-	ifequal 16, .ErikaEnemy
-	ifequal 17, .JanineEnemy
-	ifequal 18, .WillEnemy
-	ifequal 19, .BlaineEnemy
-	ifequal 20, .GiovanniEnemy
+	ifequal 9, .BrockEnemy
+	ifequal 10, .MistyEnemy
+	ifequal 11, .SurgeEnemy
+	ifequal 12, .ErikaEnemy
+	ifequal 13, .JanineEnemy
+	ifequal 14, .WillEnemy
+	ifequal 15, .BlaineEnemy
+	ifequal 16, .SabrinaEnemy
+	ifequal 17, .BrunoEnemy
+	ifequal 18, .KarenEnemy
+	ifequal 19, .GiovanniEnemy
+	ifequal 20, .OakEnemy
 	ifequal 21, .StevenEnemy
 	ifequal 22, .CynthiaEnemy
 	ifequal 23, .LeonEnemy
@@ -2233,10 +2233,6 @@ BattleArcadeReceptionistScript:
 	db "JS@"
 	db "PY@"
 	db "CL@"
-	db "SB@"
-	db "BN@"
-	db "KN@"
-	db "OK@"
 	db "BK@"
 	db "MS@"
 	db "SU@"
@@ -2244,7 +2240,11 @@ BattleArcadeReceptionistScript:
     db "JN@"
     db "WL@"
     db "BL@"
+	db "SB@"
+	db "BN@"
+	db "KN@"
     db "GV@"
+	db "OK@"
     db "ST@"
     db "CY@"
     db "LE@"
@@ -2276,10 +2276,6 @@ BattleArcadeReceptionistScript:
 	db "JS@"
 	db "PY@"
 	db "CL@"
-	db "SB@"
-	db "BN@"
-	db "KN@"
-	db "OK@"
 	db "BK@"
 	db "MS@"
 	db "SU@"
@@ -2287,7 +2283,11 @@ BattleArcadeReceptionistScript:
     db "JN@"
     db "WL@"
     db "BL@"
+	db "SB@"
+	db "BN@"
+	db "KN@"
     db "GV@"
+	db "OK@"
     db "ST@"
     db "CY@"
     db "LE@"
@@ -2313,16 +2313,16 @@ BattleArcadeReceptionistScript:
 	db "JS@"
 	db "PY@"
 	db "CL@"
-	db "SB@"
-	db "BN@"
-	db "KN@"
-	db "OK@"
 	db "BK@"
 	db "MS@"
 	db "SU@"
 	db "ER@"
     db "JN@"
     db "WL@"
+    db "BL@"
+	db "SB@"
+	db "BN@"
+	db "KN@"
 
 .DefaultCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags

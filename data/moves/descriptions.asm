@@ -368,8 +368,8 @@ MegaKickDescription:
 	line "attack.@"
 
 MoonBlastDescription:
-	db   "A blast of"
-	line "life force.@"
+	db   "An attack that may"
+	line "lower SPCL.ATK.@"
 
 BigRecoverDescription:
 	db   "Restores HP by 1/2"
@@ -774,8 +774,8 @@ FireBlastDescription:
 	line "may cause a burn.@"
 
 WaterfallDescription:
-	db   "An aquatic charge"
-	line "attack.@"
+	db   "An attack that may"
+	line "cause flinching.@"
 
 ClampDescription:
 	db   "Traps the foe for"
@@ -910,12 +910,12 @@ XScissorDescription:
 	line "sharp pincers.@"
 
 TriAttackDescription:
-	db   "Fires three kinds"
-	line "of beams at once.@"
+	db   "Attack that may"
+	line "inflict a status.@"
 
 SuperFangDescription:
-	db   "Cuts the foe's HP"
-	line "by 1/2.@"
+	db   "The ultimate fang"
+	line "attack.@"
 
 SlashDescription:
 	db   "Has a high criti-"
@@ -1134,8 +1134,8 @@ ReturnDescription:
 	line "based on loyalty.@"
 
 AirSlashDescription:
-	db   "A lethal slash"
-	line "that can flinch.@"
+	db   "An attack that may"
+	line "cause flinching.@"
 
 AiReturnDescription:
 	db   "Max power RETURN"

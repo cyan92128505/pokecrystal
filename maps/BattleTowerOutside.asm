@@ -220,6 +220,7 @@ Movement_GoToBattleMirror:
     step UP
     step RIGHT
     step RIGHT
+    step RIGHT
     turn_head UP
     step_end
 
@@ -242,6 +243,7 @@ BattleMirrorIntro:
     done
 
 Movement_GoToBattleRoulette:
+    step LEFT
     step LEFT
     step LEFT
     step LEFT
@@ -293,20 +295,19 @@ BattleArcadeIntro:
     line "favorite!"
 
     para "Here you can"
-    line "pick a trainer"
+    line "pick a character"
     cont "to play as."
 
     para "Then pick a"
-    line "trainer to fight"
+    line "character to fight"
     cont "against."
 
-    para "All trainers are"
+    para "All characters are"
     line "super powered!"
 
-    para "You can feel"
-    line "what it's like"
-    cont "to be super"
-    cont "strong!"
+	para "You get GOLD"
+	line "BERRIES for"
+	cont "winning."
 
     para "There are 6"
     line "characters at"
@@ -322,6 +323,7 @@ BattleArcadeIntro:
     done
 
 Movement_GoToBattleTrial:
+    step RIGHT
     step RIGHT
     step RIGHT
     step RIGHT
@@ -378,6 +380,7 @@ Movement_GoToBattleTower:
     step LEFT
     step LEFT
     step LEFT
+    step LEFT
     step UP
     step UP
     step UP
@@ -392,7 +395,7 @@ BattleTowerIntro:
     para "This is the"
     line "main event."
 
-    para "the BATTLE TOWER!"
+    para "The BATTLE TOWER!"
 
     para "Here you can have"
     line "a series of fights"

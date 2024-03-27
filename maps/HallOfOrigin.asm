@@ -695,44 +695,32 @@ LanceWinAfterBattleText:
     done
 
 MasterLanceSeenText:
-    text "You are strong"
-    line "<PLAYER>."
-
-    para "With steadfast"
-    line "conviction I"
-    cont "knew you would"
-    cont "present yourself."
-
-    para "Tis our destiny"
-    line "to meet here."
-
-    para "To claim the"
-    line "strength to"
-    cont "shape the world."
-
-    para "There can be"
-    line "only one!"
+	text "The day has"
+	line "finally come."
+	para "I knew your"
+	line "arrival here was"
+	cont "an inevitability."
+	para "As is the outcome"
+	line "of our final duel."
+	para "Now claim your"
+	line "destiny and defeat"
+	cont "me!"
     done
 
 MasterLanceBeatenText:
-    text "I yield!"
+    text "I yield."
     done
 
 MasterLanceAfterBattleText:
-    text "The heart of a"
-    line "dragon knows no"
-    cont "fear, no worry,"
-    cont "no regret."
-
-    para "You have the"
-    line "heart of a"
-    cont "dragon!"
-
-    para "You are destined"
-    line "to peirce through"
-    cont "the heavens and"
-    cont "raise above all."
-    done
+	text "You <PLAYER> have"
+	line "transcended all"
+	cont "that besets you."
+	para "You are DRAGON"
+	line "incarnate."
+	para "Destined to peirce"
+	line "the heavens and"
+	cont "raise above all."
+	done
 
 MasterBlueScript:
 	faceplayer

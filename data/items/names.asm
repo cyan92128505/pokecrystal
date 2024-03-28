@@ -151,7 +151,7 @@ ItemNames::
 	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "MYSTERYBERRY"
-	li "DRAGON SCALE"
+	li "DRAGON FANG"
 	li "BERSERK GENE"
 	li "TERU-SAMA"
 	li "TERU-SAMA"

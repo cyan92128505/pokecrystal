@@ -2796,9 +2796,6 @@ TruncateHL_BC:
 	inc l
 
 .finish
-;	ld a, [wLinkMode]
-;	cp LINK_COLOSSEUM
-;	jr z, .done
 ; If we go back to the loop point,
 ; it's the same as doing this exact
 ; same check twice.
@@ -7101,6 +7098,12 @@ INCLUDE "engine/battle/move_effects/thunder.asm"
 
 CheckHiddenOpponent:
 ; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_CheckHit does these checks properly.
+    ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVar
+	cpl
+	and 1 << SUBSTATUS_LOCK_ON
+	ret z
+
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND

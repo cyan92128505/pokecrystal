@@ -42,8 +42,6 @@ INCLUDE "engine/pokemon/breedmon_level_growth.asm"
 INCLUDE "engine/events/bug_contest/caught_mon.asm"
 INCLUDE "engine/items/item_effects.asm"
 INCLUDE "engine/battle_anims/pokeball_wobble.asm"
-INCLUDE "engine/pokemon/knows_move.asm"
-
 
 SECTION "bank4", ROMX
 
@@ -629,6 +627,10 @@ INCLUDE "engine/events/odd_egg.asm"
 SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
+
+SECTION "overflow", ROMX
+
+INCLUDE "engine/pokemon/knows_move.asm"
 
 
 ;SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]

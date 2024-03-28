@@ -6606,3 +6606,19 @@ GetWeatherImage:
 	db $88, $14 ; y/x - bottom left
 	db $80, $1c ; y/x - top right
 	db $80, $14 ; y/x - top left
+
+GiveExpOnCapture:
+    ld a, [wTempSpecies]
+	ld l, a
+	ld a, [wCurPartyLevel]
+	ld h, a
+	push hl
+	farcall ApplyExperienceAfterEnemyCaught
+	pop hl
+	ld a, l
+	ld [wCurPartySpecies], a
+	ld [wTempSpecies], a
+	ld a, h
+	ld [wCurPartyLevel], a
+	ret
+

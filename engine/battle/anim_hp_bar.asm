@@ -187,7 +187,6 @@ LongAnim_UpdateVariables:
 	pop bc
 	pop de
 	pop hl
-	;ld a, e ; Comment or delete this line to fix the above bug.
 	ld hl, wCurHPBarPixels
 	cp [hl]
 	jr z, .loop

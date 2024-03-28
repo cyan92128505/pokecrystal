@@ -210,6 +210,7 @@ AI_TryItem:
 	ld hl, AI_Items
 	ld de, wEnemyTrainerItem1
 .loop
+    ld de, wEnemyTrainerItem1
 	ld a, [hl]
 	and a
 	inc a
@@ -785,8 +786,8 @@ AI_HealStatus:
 	ld [wEnemyMonStatus], a
 	; Bug: this should reset SUBSTATUS_NIGHTMARE
 	; Uncomment the 2 lines below to fix
-	; ld hl, wEnemySubStatus1
-	; res SUBSTATUS_NIGHTMARE, [hl]
+	ld hl, wEnemySubStatus1
+	res SUBSTATUS_NIGHTMARE, [hl]
 	; Bug: this should reset SUBSTATUS_CONFUSED
 	; Uncomment the 2 lines below to fix
     ld hl, wEnemySubStatus3

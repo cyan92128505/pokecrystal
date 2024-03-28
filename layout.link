@@ -326,7 +326,7 @@ WRAM0
 	"Video"
 WRAMX 1
 	"WRAM 1"
-	"Miscellaneous WRAM 1"
+	;"Miscellaneous WRAM 1"
 	"More WRAM 1"
 	"Enemy Party"
 	"Party"

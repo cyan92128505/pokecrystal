@@ -152,7 +152,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	jr c, .skip_sfx
 
 	ld de, SFX_RUN
-	call PlaySFX
+	call WaitPlaySFX
 
 .skip_sfx
 	call SetPlayerTurn
@@ -305,7 +305,20 @@ HandleBetweenTurnEffects:
 	call LoadTilemapToTempTilemap
 	jp HandleEncore
 
+HasAnyoneFainted:
+	call HasPlayerFainted
+	jp nz, HasEnemyFainted
+	ret
+
 CheckFaint_PlayerThenEnemy:
+.faint_loop
+	call .Function
+	ret c
+	call HasAnyoneFainted
+	ret nz
+	jr .faint_loop
+
+.Function:
 	call HasPlayerFainted
 	jr nz, .PlayerNotFainted
 	call HandlePlayerMonFaint
@@ -330,6 +343,14 @@ CheckFaint_PlayerThenEnemy:
 	ret
 
 CheckFaint_EnemyThenPlayer:
+.faint_loop
+	call .Function
+	ret c
+	call HasAnyoneFainted
+	ret nz
+	jr .faint_loop
+
+.Function:
 	call HasEnemyFainted
 	jr nz, .EnemyNotFainted
 	call HandleEnemyMonFaint
@@ -2461,7 +2482,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld [wBattleResult], a ; WIN
 	; fallthrough
 
-;ApplyExperienceAfterEnemyCaught:
+ApplyExperienceAfterEnemyCaught:
 ; Preserve bits of non-fainted participants
 	ld a, [wBattleParticipantsNotFainted]
 	ld d, a
@@ -7128,6 +7149,7 @@ LoadEnemyMon:
 	ld bc, NUM_EXP_STATS * 2
 	call CopyBytes
 
+    call ApplyStatusEffectOnEnemyStats
 	ret
 
 CheckSleepingTreeMon:

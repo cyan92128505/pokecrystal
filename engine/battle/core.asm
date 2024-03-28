@@ -3028,7 +3028,8 @@ AskUseNextPokemon:
 	jr z, .loop
 	ld hl, wPartyMon1Speed
 	ld de, wEnemyMonSpeed
-	jp TryToRunAwayFromBattle
+	callfar TryToRunAwayFromBattle
+	ret
 
 ForcePlayerMonChoice:
 	call EmptyBattleTextbox
@@ -4020,196 +4021,6 @@ CheckIfCurPartyMonIsFitToFight:
 
 .finish_fail
 	xor a
-	ret
-
-TryToRunAwayFromBattle:
-; Run away from battle, with or without item
-	ld a, [wBattleType]
-;	cp BATTLETYPE_DEBUG
-;	jp z, .can_escape
-;	cp BATTLETYPE_CONTEST
-;	jp z, .can_escape
-	cp BATTLETYPE_SHINY
-	jp z, .cant_escape
-	cp BATTLETYPE_SUICUNE
-	jp z, .cant_escape
-	cp BATTLETYPE_PERFECT
-	jp z, .cant_escape
-
-	ld a, [wLinkMode]
-	and a
-	jp nz, .can_escape
-
-	ld a, [wBattleMode]
-	dec a
-	jp nz, .cant_run_from_trainer
-
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_CANT_RUN, a
-	jp nz, .cant_escape
-
-	ld a, [wPlayerWrapCount]
-	and a
-	jp nz, .cant_escape
-
-;	push hl
-;	push de
-;	ld a, [wBattleMonItem]
-;	ld [wNamedObjectIndex], a
-;	ld b, a
-;	callfar GetItemHeldEffect
-;	ld a, b
-;	cp HELD_ESCAPE
-;	pop de
-;	pop hl
-;	jr nz, .no_flee_item
-; AndrewNote - smoke ball 30% chance to fail
-;	call Random
-;	cp 30 percent
-;	jr c, .no_flee_item
-;	call SetPlayerTurn
-;	call GetItemName
-;	ld hl, BattleText_UserFledUsingAStringBuffer1
-;	call StdBattleTextbox
-;	jp .can_escape
-;.no_flee_item
-
-	ld a, [wNumFleeAttempts]
-	inc a
-	ld [wNumFleeAttempts], a
-	ld a, [hli]
-	ldh [hMultiplicand + 1], a
-	ld a, [hl]
-	ldh [hMultiplicand + 2], a
-	ld a, [de]
-	inc de
-	ldh [hEnemyMonSpeed + 0], a
-	ld a, [de]
-	ldh [hEnemyMonSpeed + 1], a
-	call SafeLoadTempTilemapToTilemap
-	ld de, hMultiplicand + 1
-	ld hl, hEnemyMonSpeed
-	ld c, 2
-	call CompareBytes
-	jr nc, .can_escape
-
-	xor a
-	ldh [hMultiplicand + 0], a
-	ld a, 32
-	ldh [hMultiplier], a
-	call Multiply
-	ldh a, [hProduct + 2]
-	ldh [hDividend + 0], a
-	ldh a, [hProduct + 3]
-	ldh [hDividend + 1], a
-	ldh a, [hEnemyMonSpeed + 0]
-	ld b, a
-	ldh a, [hEnemyMonSpeed + 1]
-	srl b
-	rr a
-	srl b
-	rr a
-	and a
-	jr z, .can_escape
-	ldh [hDivisor], a
-	ld b, 2
-	call Divide
-	ldh a, [hQuotient + 2]
-	and a
-	jr nz, .can_escape
-	ld a, [wNumFleeAttempts]
-	ld c, a
-.loop
-	dec c
-	jr z, .cant_escape_2
-	ld b, 30
-	ldh a, [hQuotient + 3]
-	add b
-	ldh [hQuotient + 3], a
-	jr c, .can_escape
-	jr .loop
-
-.cant_escape_2
-	call BattleRandom
-	ld b, a
-	ldh a, [hQuotient + 3]
-	cp b
-	jr nc, .can_escape
-	ld a, BATTLEPLAYERACTION_USEITEM
-	ld [wBattlePlayerAction], a
-	ld hl, BattleText_CantEscape2
-	jr .print_inescapable_text
-
-.cant_escape
-	ld hl, BattleText_CantEscape
-	jr .print_inescapable_text
-
-.cant_run_from_trainer
-    farcall ForfeitMatch
-	jp c, SetEnemyTurn
-
-.print_inescapable_text
-	call StdBattleTextbox
-	ld a, TRUE
-	ld [wFailedToFlee], a
-	call LoadTilemapToTempTilemap
-	and a
-	ret
-
-.can_escape
-	ld a, [wLinkMode]
-	and a
-	ld a, DRAW
-	jr z, .fled
-	call LoadTilemapToTempTilemap
-	xor a ; BATTLEPLAYERACTION_USEMOVE
-	ld [wBattlePlayerAction], a
-	ld a, $f
-	ld [wCurMoveNum], a
-	xor a
-	ld [wCurPlayerMove], a
-	call LinkBattleSendReceiveAction
-	call SafeLoadTempTilemapToTilemap
-	call CheckMobileBattleError
-	jr c, .mobile
-
-	; Got away safely
-	ld a, [wBattleAction]
-	cp BATTLEACTION_FORFEIT
-	ld a, DRAW
-	jr z, .fled
-	dec a ; LOSE
-.fled
-	ld b, a
-	ld a, [wBattleResult]
-	and BATTLERESULT_BITMASK
-	add b
-	ld [wBattleResult], a
-	call StopDangerSound
-	push de
-	ld de, SFX_RUN
-	call WaitPlaySFX
-	pop de
-	call WaitSFX
-	ld hl, BattleText_GotAwaySafely
-	call StdBattleTextbox
-	call WaitSFX
-	call LoadTilemapToTempTilemap
-	scf
-	ret
-
-.mobile
-	call StopDangerSound
-	ld hl, wcd2a
-	bit 4, [hl]
-	jr nz, .skip_link_error
-	ld hl, BattleText_LinkErrorBattleCanceled
-	call StdBattleTextbox
-
-.skip_link_error
-	call WaitSFX
-	call LoadTilemapToTempTilemap
-	scf
 	ret
 
 InitBattleMon:
@@ -5959,12 +5770,12 @@ PassedBattleMonEntrance:
 	jp SwitchInEffects
 
 BattleMenu_Run:
-	call SafeLoadTempTilemapToTilemap
+	callfar SafeLoadTempTilemapToTilemap
 	ld a, $3
 	ld [wMenuCursorY], a
 	ld hl, wBattleMonSpeed
 	ld de, wEnemyMonSpeed
-	call TryToRunAwayFromBattle
+	callfar TryToRunAwayFromBattle
 	ld a, FALSE
 	ld [wFailedToFlee], a
 	ret c
@@ -8534,6 +8345,16 @@ FillInExpBar:
 CalcExpBar:
 ; Calculate the percent exp between this level and the next
 ; Level in b
+
+; don't draw exp in battle tower
+	ld a, [wInBattleTowerBattle]
+	and a
+	jr z, .continue
+	xor a
+	ld b, a
+	ret
+
+.continue
 	push de
 	ld d, b
 	push de
@@ -8642,22 +8463,18 @@ PlaceExpBar:
 	dec c
 	jr z, .finish
 	jr .loop1
-
 .next
 	add $8
 	jr z, .loop2
 	add $54 ; tile to the left of small exp bar tile
 	jr .skip
-
 .loop2
 	ld a, $62 ; empty bar
-
 .skip
 	ld [hld], a
 	ld a, $62 ; empty bar
 	dec c
 	jr nz, .loop2
-
 .finish
 	ret
 
@@ -8749,10 +8566,6 @@ StartBattle:
 	scf
 	ret
 
-;CallDoBattle: ; unreferenced
-;	call DoBattle
-;	ret
-
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
 	call LoadTrainerOrWildMonPic
@@ -8770,9 +8583,12 @@ BattleIntro:
 	call BackUpBGMap2
 
 	; AndrewNote - Hand of God
+	; Don't copy for wild mon
+	; For field mon the hand is turned off in InitEnemy
 	ld a, [wOtherTrainerClass]
-	and a
-	jr z, .noCopy
+    and a
+    jr z, .noCopy
+
 	ld a, [wHandOfGod]
 	and a
 	jr z, .noCopy
@@ -8835,11 +8651,16 @@ InitEnemy:
 ; AndrewNote - Field Mon, check if this is a field mon
 	ld a, [wOtherTrainerID]
 	cp FIELD_MON
-	jr z, .wild
+	jr z, .fieldMon
 
 	ld a, [wOtherTrainerClass]
 	and a
 	jp nz, InitEnemyTrainer ; trainer
+	jr .wild
+.fieldMon
+; this is a hack to prevent bugs from HandOfGod and field mon
+    xor a
+    ld [wHandOfGod], a
 .wild
     xor a
     ld [wOtherTrainerID], a

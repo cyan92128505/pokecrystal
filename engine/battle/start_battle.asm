@@ -70,9 +70,13 @@ PlayBattleMusic:
 	push de
 	push bc
 
+; some maps have thier music play even during wild battles (map override)
+; is the trainer class 0, if so check for map override
 	ld a, [wOtherTrainerClass]
 	and a
 	jr z, .checkLocation
+
+; trainer class is not 0, is trainer id a field mon, if not then skip map override
 	ld a, [wOtherTrainerID]
 	cp FIELD_MON
 	jr nz, .fade
@@ -101,7 +105,7 @@ PlayBattleMusic:
 	call DelayFrame
 	call MaxVolume
 
-	; Are we fighting a trainer?
+	; Are we fighting a trainer? - this includes field mon
 	ld a, [wOtherTrainerClass]
 	and a
 	jp nz, .trainermusic

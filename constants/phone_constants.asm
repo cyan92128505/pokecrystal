@@ -69,7 +69,5 @@ PHONE_CONTACT_SCRIPT2_ADDR   rw
 PHONE_CONTACT_SIZE EQU _RS
 
 ; maximum number of pokegear contacts
-; AndrewNote - Phone Contacts
 
-;CONTACT_LIST_SIZE EQU 26
-CONTACT_LIST_SIZE EQU 20
+CONTACT_LIST_SIZE EQU 25

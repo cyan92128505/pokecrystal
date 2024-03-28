@@ -3234,9 +3234,7 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
-; AndrewNote - Phone Contacts
-	;ds 6
-	ds 12
+	ds 7
 
 wLuckyNumberShowFlag:: db
 wRepelType::db

@@ -418,8 +418,8 @@
     const EVENT_FOUGHT_CELADON_ANDREW
     const EVENT_CHERRYGROVE_POKEDOLL
     const EVENT_BEAT_ANDREW
-    const EVENT_BEAT_CATHERINE
-    const EVENT_BEAT_JAMES
+    const EVENT_BEAT_WIFE
+    const EVENT_BEAT_BROTHER
     const EVENT_SPOKE_TO_BAILEY
 
     ; ======================================

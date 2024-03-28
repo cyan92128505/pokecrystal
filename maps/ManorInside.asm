@@ -1,7 +1,7 @@
     object_const_def
     const MANOR_ANDREW
-    const MANOR_CATHERINE
-    const MANOR_JAMES
+    const MANOR_WIFE
+    const MANOR_BROTHER
 
 ManorInside_MapScripts:
 	def_scene_scripts
@@ -13,19 +13,19 @@ ManorInside_MapScripts:
     checktime MORN
     iffalse .checkNite
     moveobject MANOR_ANDREW, 2, 16
-    moveobject MANOR_CATHERINE, 11, 5
-    moveobject MANOR_JAMES, 16, 16
+    moveobject MANOR_WIFE, 11, 5
+    moveobject MANOR_BROTHER, 16, 16
 .checkNite
     checktime NITE
     iffalse .checkSaturday
-    moveobject MANOR_CATHERINE, 11, 5
+    moveobject MANOR_WIFE, 11, 5
 .checkSaturday
 	readvar VAR_WEEKDAY
 	ifequal SATURDAY, .moveToLivingRoom
 	endcallback
 .moveToLivingRoom
     moveobject MANOR_ANDREW, 2, 16
-    moveobject MANOR_JAMES, 5, 16
+    moveobject MANOR_BROTHER, 5, 16
     endcallback
 
 AndrewScript:
@@ -232,8 +232,8 @@ AndrewExplainHandText:
 	cont "players team."
 	para "Note though it"
 	line "doesn't work on"
-	cont "me, CATHERINE,"
-	cont "JAMES or LORD OAK"
+	cont "me, WIFE,"
+	cont "BROTHER or LORD OAK"
 	cont "but does on"
 	cont "anybody else!"
 	done
@@ -292,41 +292,41 @@ AndrewLoseAfterImpossibleBattleText:
 	line "wasn't it!"
 	done
 
-CatherineScript:
+WifeScript:
     faceplayer
     opentext
-    checkevent EVENT_BEAT_CATHERINE
+    checkevent EVENT_BEAT_WIFE
     iftrue .fightDone
     checkevent EVENT_BEAT_MASTER_ADAM
     iffalse .intro
 .fight
     setval 0
     writemem wHandOfGod
-    writetext CatherineBeatAdamText
+    writetext WifeBeatAdamText
     waitbutton
-    checkevent EVENT_BEAT_CATHERINE
+    checkevent EVENT_BEAT_WIFE
     iftrue .dontAsk
     closetext
     opentext
-    writetext CatherineOfferBattleText
+    writetext WifeOfferBattleText
     waitbutton
     yesorno
     iffalse .refused
 .dontAsk
-    writetext CatherineBeginBattleText
+    writetext WifeBeginBattleText
     waitbutton
     closetext
 	setval MUSIC_ZINNIA_BATTLE
 	writemem wBattleMusicOverride
-	winlosstext CatherineBeatenText, CatherineWinText
+	winlosstext WifeBeatenText, WifeWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer LEAF, CATHERINE
+	loadtrainer LEAF, WIFE
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
-	setevent EVENT_BEAT_CATHERINE
+	setevent EVENT_BEAT_WIFE
 	opentext
-	writetext CatherineAfterBattleText
+	writetext WifeAfterBattleText
 	waitbutton
 	closetext
 	special HealParty
@@ -335,30 +335,30 @@ CatherineScript:
     special HealParty
     reloadmap
     opentext
-    writetext CatherineLoseAfterBattleText
+    writetext WifeLoseAfterBattleText
     waitbutton
     closetext
     end
 .fightDone:
-	writetext CatherineAfterBattleText
+	writetext WifeAfterBattleText
 	waitbutton
     closetext
 	opentext
-	writetext CatherineOfferBattleText
+	writetext WifeOfferBattleText
 	yesorno
 	iftrue .fight
 .refused
-    writetext CatherineBattleRefusedText
+    writetext WifeBattleRefusedText
     waitbutton
     closetext
     end
 .intro
-    writetext CatherineIntroText
+    writetext WifeIntroText
     waitbutton
     closetext
     end
 
-CatherineIntroText:
+WifeIntroText:
 	text "Oh hello."
 	para "Welcome, I"
 	line "live here with my"
@@ -377,7 +377,7 @@ CatherineIntroText:
 	cont "watch out for him."
 	done
 
-CatherineBeatAdamText:
+WifeBeatAdamText:
 	text "You have beaten"
 	line "ADAM at his"
 	cont "strongest!"
@@ -388,26 +388,26 @@ CatherineBeatAdamText:
 	line "odd battle myself."
 	done
 
-CatherineOfferBattleText:
+WifeOfferBattleText:
 	text "How about a wee"
 	line "battle?"
 	done
 
-CatherineBeginBattleText:
+WifeBeginBattleText:
 	text "My little plants"
 	line "are ready."
 	done
 
-CatherineBeatenText:
+WifeBeatenText:
 	text "ANDREW would like"
 	line "you."
 	done
 
-CatherineWinText:
+WifeWinText:
 	text "That was fun!"
 	done
 
-CatherineAfterBattleText:
+WifeAfterBattleText:
 	text "ANDREW and I miss"
 	line "ADAM being here."
 	para "He will always be"
@@ -417,54 +417,54 @@ CatherineAfterBattleText:
 	cont "ANDREWs brother."
 	done
 
-CatherineLoseAfterBattleText:
+WifeLoseAfterBattleText:
 	text "You are really"
 	line "good."
 	para "You and ADAM must"
 	line "get along."
 	done
 
-CatherineBattleRefusedText:
+WifeBattleRefusedText:
 	text "That's fine, I"
 	line "don't really like"
 	cont "battling anyway."
 	done
 
-JamesScript:
+BrotherScript:
     faceplayer
     opentext
-    checkevent EVENT_BEAT_JAMES
+    checkevent EVENT_BEAT_BROTHER
     iftrue .fightDone
     checkevent EVENT_BEAT_MASTER_ADAM
     iffalse .intro
 .fight
     setval 0
     writemem wHandOfGod
-    writetext JamesBeatAdamText
+    writetext BrotherBeatAdamText
     waitbutton
-    checkevent EVENT_BEAT_JAMES
+    checkevent EVENT_BEAT_BROTHER
     iftrue .dontAsk
     closetext
     opentext
-    writetext JamesOfferBattleText
+    writetext BrotherOfferBattleText
     waitbutton
     yesorno
     iffalse .refused
 .dontAsk
-    writetext JamesBeginBattleText
+    writetext BrotherBeginBattleText
     waitbutton
     closetext
 	setval MUSIC_FINAL_BATTLE
 	writemem wBattleMusicOverride
-	winlosstext JamesBeatenText, JamesWinText
+	winlosstext BrotherBeatenText, BrotherWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BLUE, JAMES
+	loadtrainer BLUE, BROTHER
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
-	setevent EVENT_BEAT_JAMES
+	setevent EVENT_BEAT_BROTHER
 	opentext
-	writetext JamesAfterBattleText
+	writetext BrotherAfterBattleText
 	waitbutton
 	closetext
 	special HealParty
@@ -473,30 +473,30 @@ JamesScript:
     special HealParty
     reloadmap
     opentext
-    writetext JamesLoseAfterBattleText
+    writetext BrotherLoseAfterBattleText
     waitbutton
     closetext
     end
 .fightDone:
-	writetext JamesAfterBattleText
+	writetext BrotherAfterBattleText
 	waitbutton
     closetext
 	opentext
-	writetext JamesOfferBattleText
+	writetext BrotherOfferBattleText
 	yesorno
 	iftrue .fight
 .refused
-    writetext JamesBattleRefusedText
+    writetext BrotherBattleRefusedText
     waitbutton
     closetext
     end
 .intro
-    writetext JamesIntroText
+    writetext BrotherIntroText
     waitbutton
     closetext
     end
 
-JamesIntroText:
+BrotherIntroText:
 	text "What are you doing"
 	line "here?"
 	para "You might think"
@@ -509,7 +509,7 @@ JamesIntroText:
 	cont "time."
 	done
 
-JamesBeatAdamText:
+BrotherBeatAdamText:
 	text "I see you have"
 	line "become at least"
 	cont "decent."
@@ -523,26 +523,26 @@ JamesBeatAdamText:
 	line "here!"
 	done
 
-JamesOfferBattleText:
+BrotherOfferBattleText:
 	text "You going to"
 	line "battle me?"
 	done
 
-JamesBeginBattleText:
+BrotherBeginBattleText:
 	text "Let's see if"
 	line "you're any good."
 	done
 
-JamesBeatenText:
+BrotherBeatenText:
 	text "Yeah you're"
 	line "alright."
 	done
 
-JamesWinText:
+BrotherWinText:
 	text "Not surprising."
 	done
 
-JamesAfterBattleText:
+BrotherAfterBattleText:
 	text "I hang out here"
 	line "with my brother,"
 	cont "his wife and"
@@ -555,7 +555,7 @@ JamesAfterBattleText:
 	cont "him!"
 	done
 
-JamesLoseAfterBattleText:
+BrotherLoseAfterBattleText:
 	text "Your strategy was"
 	line "totally wrong."
 	para "Analyse the"
@@ -564,7 +564,7 @@ JamesLoseAfterBattleText:
 	para "It is possible."
 	done
 
-JamesBattleRefusedText:
+BrotherBattleRefusedText:
 	text "Yeah it would be a"
 	line "waste of time for"
 	cont "both of us."
@@ -828,13 +828,20 @@ ManorFact1Text:
 	cont "romhack was ARCEUS"
 	cont "and it's unique"
 	cont "mechanics."
-	done
 
-ManorFact2Text:
-	text "ARCEUS has more"
+	para "ARCEUS has more"
 	line "code specifically"
 	cont "for it than any"
 	cont "other #MON."
+	done
+
+ManorFact2Text:
+	text "All new maps are"
+	line "coded as an indoor"
+	cont "maps because the"
+	cont "outdoor sprite"
+	cont "system is an"
+	cont "abomination."
 	done
 
 ManorFact3Text:
@@ -901,12 +908,19 @@ ManorFact7Text:
 	done
 
 ManorFact8Text:
-	text "HALL OF ORIGIN is"
-	line "coded as an indoor"
-	cont "map because the"
-	cont "outdoor sprite"
-	cont "system is an"
-	cont "abomination."
+	text "Battles with"
+	line "aggressive"
+	cont "overworld #MON"
+	cont "turn off HAND OF"
+	cont "GOD automatically."
+	para "This prevents some"
+	line "nasty bugs as"
+	cont "these battles are"
+	cont "internally treated"
+	cont "as trainer battles"
+	cont "and would override"
+	cont "the players team"
+	cont "with empty data."
 	done
 
 ManorFact9Text:
@@ -1113,5 +1127,5 @@ ManorInside_MapEvents:
 
 	def_object_events
 	object_event  15,  4, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
-	object_event   1, 17, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CatherineScript, -1
-	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, JamesScript, -1
+	object_event   1, 17, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
+	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrotherScript, -1

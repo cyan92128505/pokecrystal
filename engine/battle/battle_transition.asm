@@ -214,6 +214,9 @@ StartTrainerBattle_DetermineWhichAnimation:
 ; your lead Pokemon relative to the opponent's.
 ; BUG: wBattleMonLevel and wEnemyMonLevel are not set at this point, so whatever
 ; values happen to be there will determine the animation.
+    ld a, [wOtherTrainerID]
+    cp FIELD_MON
+    jr z, .wild
     ld a, [wOtherTrainerClass]
 	and a
 	jr z, .wild
@@ -600,6 +603,9 @@ StartTrainerBattle_SpeckleToBlack:
 	ret
 
 StartTrainerBattle_LoadPokeBallGraphics:
+    ld a, [wOtherTrainerID]
+    cp FIELD_MON
+    jp z, .nextscene
 	ld a, [wOtherTrainerClass]
 	and a
 	jp z, .nextscene ; don't need to be here if wild
@@ -892,13 +898,13 @@ INCLUDE "gfx/overworld/rpg_transition.pal"
 	cp BLUE
 	jr nz, .notBlue
 	ld a, [wOtherTrainerID]
-	cp JAMES
+	cp BROTHER
 	ret z
 .notBlue
 	cp LEAF
 	jr nz, .notLeaf
 	ld a, [wOtherTrainerID]
-	cp CATHERINE
+	cp WIFE
 	ret z
 .notLeaf
 

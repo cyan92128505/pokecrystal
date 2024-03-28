@@ -400,7 +400,7 @@ BattleTowerIntro:
     para "Here you can have"
     line "a series of fights"
     cont "against enemies"
-    cont "random teams."
+    cont "with random teams."
 
     para "It's a different"
     line "challenge every"

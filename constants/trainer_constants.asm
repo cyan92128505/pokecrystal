@@ -761,7 +761,7 @@ KRIS EQU __trainer_class__
 	const MASTER_BLUE
 	const SETO
 	const MASTER_SETO
-	const JAMES
+	const BROTHER
 
 	trainerclass OFFICER ; 41 ; Remove?
 	const KEITH
@@ -808,7 +808,7 @@ KRIS EQU __trainer_class__
     trainerclass LEAF ; 46
     const GREEN1
     const MASTER_GREEN
-    const CATHERINE
+    const WIFE
 
     trainerclass LORD_OAK ; 47
     const OAK

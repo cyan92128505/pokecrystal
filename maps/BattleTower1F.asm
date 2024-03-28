@@ -345,39 +345,34 @@ Text_RightThisWayToYourBattleRoom:
 	done
 
 Text_BattleTowerIntroduction_2:
-	text "BATTLE TOWER is a"
-	line "facility made for"
-	cont "#MON battles."
-
-	para "Countless #MON"
-	line "trainers gather"
-
-	para "from all over to"
-	line "hold battles in"
-
-	para "specially designed"
-	line "BATTLE ROOMS."
-
-	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
-
-	para "Each ROOM holds"
-	line "seven trainers."
-
-	para "Beat them all, and"
-	line "win a prize."
-
-	para "To interrupt a"
-	line "session, you must"
-
-	para "SAVE. If not, you"
-	line "won't be able to"
-
-	para "resume your ROOM"
-	line "challenge."
-
-	para ""
+	text "BATTLE TOWER is"
+	line "the most popular"
+	cont "extreme #MON"
+	cont "challenge."
+	para "You must fight"
+	line "four trainers in"
+	cont "full battles with"
+	cont "no rules."
+	para "There are five"
+	line "difficulties to"
+	cont "pick from, with"
+	cont "the top two only"
+	cont "available to"
+	cont "CHAMPION level"
+	cont "trainers."
+	para "If you want a more"
+	line "rigorous test of"
+	cont "your knowledge and"
+	cont "skill you can"
+	cont "select MIRROR mode"
+	cont "where you and your"
+	cont "enemy always have"
+	cont "the same team, you"
+	cont "fight with a"
+	cont "different team"
+	cont "every round."
+	para "We hope you enjoy"
+	line "the challenges!"
 	done
 
 Text_PleaseConfirmOnThisMonitor:

@@ -81,7 +81,7 @@ ComputerOneText:
 	cont "place."
 	para "I am sure the"
 	line "original dragon"
-	cont "lord ZYGARDE"
+	cont "lord, ZYGARDE"
 	cont "resides there."
 	done
 

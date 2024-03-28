@@ -152,22 +152,11 @@ TrainerPsychicNorman:
 	end
 
 TrainerPokefanfJaime:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_POKEFANF_JAIME
-	iftrue .Beaten
-	writetext PokefanfJaimeSeenText
-	waitbutton
-	closetext
-	winlosstext PokefanfJaimeBeatenText, 0
-	loadtrainer POKEFANF, JAIME
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_POKEFANF_JAIME
-	closetext
-	end
+	trainer POKEFANF, JAIME, EVENT_BEAT_POKEFANF_JAIME, PokefanfJaimeSeenText, PokefanfJaimeBeatenText, 0, .Script
 
-.Beaten:
+.Script:
+	endifjustbattled
+	opentext
 	writetext PokefanfJaimeAfterBattleText
 	waitbutton
 	closetext
@@ -421,7 +410,7 @@ Route39_MapEvents:
 	;object_event 14, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event 19,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
 	;object_event 15,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
-	object_event 10, 22, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+	object_event 10, 22, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanfJaime, -1
 
 	object_event 2, 11, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 2,  20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route39FieldMon2Script, EVENT_FIELD_MON_2

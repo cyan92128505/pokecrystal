@@ -129,7 +129,11 @@ TrainerBirdKeeperVance1:
 	end
 
 BirdKeeperVance1MercyText:
-    text "You came through"
+    text "You don't look"
+    line "like you should"
+    cont "be here!"
+
+    para "You came through"
     line "from BLACKTHORN."
 
     para "Oh I don't think"
@@ -159,7 +163,7 @@ BirdKeeperVance1MercyText:
     para "But it will be"
     line "difficult."
 
-    para "good luck!"
+    para "Good luck!"
     done
 
 RematchTextRoute44:
@@ -585,6 +589,7 @@ VanceEncounterScript:
     iffalse .talk
     end
 .talk
+    turnobject ROUTE44_YOUNGSTER2, LEFT
     turnobject PLAYER, RIGHT
     sjump TrainerBirdKeeperVance1
     setmapscene ROUTE_44, SCENE_FINISHED

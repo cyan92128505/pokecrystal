@@ -98,9 +98,9 @@ MahoganyTownFisherText:
 
 	para "There is some"
 	line "strange looking"
-	cont "#MON at the LAKE"
-	cont "OF RAGE and"
-	cont "everyone is"
+	cont "#MON at the"
+	cont "LAKE OF RAGE."
+	cont "Everyone is"
 	cont "investigating."
 	done
 

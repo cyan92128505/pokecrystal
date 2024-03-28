@@ -309,7 +309,7 @@ BattleArcadeIntro:
 	line "BERRIES for"
 	cont "winning."
 
-    para "There are 6"
+    para "There are 8"
     line "characters at"
     cont "first."
 

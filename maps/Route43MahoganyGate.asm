@@ -31,7 +31,7 @@ Route43MahoganyGateOfficerText:
 	para "The GYARADOS are"
 	line "violent and I"
 	cont "swear I have"
-	cont "see ROCKETS"
+	cont "seen ROCKETS"
 	cont "about the place."
 
 	para "These things"

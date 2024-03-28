@@ -130,7 +130,7 @@ MirrorBattlesText:
 
     para "NORMAL battles"
     line "or MIRROR battles?"
-    done
+    prompt
 
 Script_ResumeBattleTowerChallenge:
 	closetext

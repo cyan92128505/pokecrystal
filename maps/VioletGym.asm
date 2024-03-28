@@ -228,7 +228,7 @@ FalknerZephyrBadgeText:
 
 	para "ZEPHYRBADGE"
 	line "enables #MON"
-	line "to use FLASH."
+	cont "to use FLASH."
 
 	para "Here--take this"
 	line "too."

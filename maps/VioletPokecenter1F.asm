@@ -38,6 +38,7 @@ BillExpShareScript:
 	opentext
 	writetext VioletPokecenter1F_BillText1
 	promptbutton
+	closetext
 	turnobject PLAYER, DOWN
 	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement2
 	playsound SFX_EXIT_BUILDING
@@ -86,7 +87,7 @@ VioletPokecenter1F_BillText1:
 	para "Ah he did, great!"
 	para "I was originally"
 	line "going to give it"
-	cont "to you but though"
+	cont "to you but thought"
 	cont "it best for OAK to"
 	cont "do so."
 	para "With the EXP SHARE"
@@ -290,7 +291,8 @@ VioletPokecenter1FGentlemanText:
 
 VioletPokecenter1FYoungsterText:
 	text "You can trade"
-	line "#MON with others."
+	line "#MON with"
+	cont "other trainers."
 
 	para "A traded #MON"
 	line "gains more EXP"

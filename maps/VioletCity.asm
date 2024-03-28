@@ -66,7 +66,7 @@ VioletCityEarlScript:
 	turnobject PLAYER, UP
 	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
 	stopfollow
-	special RestartMapMusic
+	playmusic MUSIC_VIOLET_CITY
 	opentext
 	writetext Text_HereTeacherIAm
 	waitbutton

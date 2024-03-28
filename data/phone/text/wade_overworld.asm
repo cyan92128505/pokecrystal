@@ -2,7 +2,7 @@ WadeAskNumber1Text:
 WadeAskNumber2Text:
 	text "BUG #MON start"
 	line "off small and weak"
-	cont "but the grow fast"
+	cont "but they grow fast"
 	cont "and become"
 	cont "powerful vicious"
 	cont "warriors."

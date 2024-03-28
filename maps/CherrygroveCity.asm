@@ -742,7 +742,7 @@ GoGetRedEyeOrbText:
     line "evil."
 
     para "In this cave it"
-    line "rest."
+    line "rests."
 
     para "The RED EYE ORB."
 

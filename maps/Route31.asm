@@ -246,7 +246,7 @@ BugCatcherWade1SeenText:
 	done
 
 BugCatcherWade1BeatenText:
-	text "You are strong!"
+	text "Hail the colony!"
 	done
 
 BugCatcherWade1AfterText:

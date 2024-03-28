@@ -377,7 +377,7 @@ BugCatcherDonSeenText:
 	text "BUG #MON are"
 	line "the strongest!"
 
-	para "They EVOLVE fast."
+	para "They EVOLVE fast"
 	line "and swarm their"
 	cont "enemies."
 	done

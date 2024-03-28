@@ -387,7 +387,7 @@ SageTroyAfterBattleText:
 	cont "balance."
 
 	para "And that we as"
-	line "being of pure"
+	line "beings of pure"
 	cont "light disrupt"
 	cont "that balance."
 

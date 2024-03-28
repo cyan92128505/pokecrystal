@@ -6440,7 +6440,7 @@ BattleCommand_Paralyze:
 CheckMoveTypeMatchesTarget:
 ; Compare move type to opponent type.
 ; Return z if matching the opponent type,
-; unless the move is Normal (Tri Attack) or Uber (Psyblast).
+; unless the move is Normal (Tri Attack) or Water (Scald).
 
 	push hl
 
@@ -6456,7 +6456,7 @@ CheckMoveTypeMatchesTarget:
 	and TYPE_MASK
 	cp NORMAL
 	jr z, .normal
-	cp UBER
+	cp WATER
 	jr z, .normal
 
 	cp [hl]

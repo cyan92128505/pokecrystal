@@ -114,6 +114,19 @@ PlayersBooksText:
 	cont "up from the page."
 	done
 
+PlayersHouseTVScript:
+	opentext
+	writetext PlayersTVText
+	waitbutton
+	closetext
+	end
+
+PlayersTVText:
+	text "A speedrun of a"
+	line "popular RPG is on"
+	cont "TV."
+	done
+
 PlayersHousePCScript:
 	opentext
 	special PlayersHousePC
@@ -169,6 +182,7 @@ PlayersHouse2F_MapEvents:
 	bg_event  2,  1, BGEVENT_UP, PlayersHousePCScript
 	bg_event  3,  1, BGEVENT_READ, PlayersHouseRadioScript
 	bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript
+	bg_event  4,  1, BGEVENT_READ, PlayersHouseTVScript
 	bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript
 
 	def_object_events

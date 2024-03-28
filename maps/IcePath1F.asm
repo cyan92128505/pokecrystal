@@ -68,49 +68,38 @@ ComputerTwo:
     jumptext ComputerTwoText
 
 ComputerOneText:
-    text "Fortress of"
-    line "Solitude"
-    cont "log:"
-
-    para "A sub-space"
-    line "fissure has"
-    cont "been detected"
-    cont "atop Mt SILVER."
-
-    para "Perhaps a"
-    line "gateway to"
-    cont "another world."
-    done
+	text "The Academic"
+	line "community shunned"
+	cont "me."
+	para "Those fools, now I"
+	line "will prove them"
+	cont "all wrong."
+	para "We have finally"
+	line "finished"
+	cont "excavating and"
+	cont "reached an ancient"
+	cont "place."
+	para "I am sure the"
+	line "original dragon"
+	cont "lord ZYGARDE"
+	cont "resides there."
+	done
 
 ComputerTwoText:
-    text "He is the"
-    line "inevitable"
-    cont "eventuality of"
-    cont "an anomaly."
-
-    para "which despite my"
-    line "sincerest efforts"
-    cont "I have been unable"
-    cont "to eliminate from"
-    cont "what is otherwise"
-    cont "a harmony of"
-    cont "mathematical"
-    cont "precision."
-
-    para "A man with an"
-    line "an aura of gold."
-
-    para "Immortal and"
-    line "all powerful."
-
-    para "Lord of ARCEUS"
-    line "itself."
-
-    para "Should he turn"
-    line "on us..."
-
-    para "we are all doomed."
-    done
+	text "I sent my students"
+	line "to make an"
+	cont "offering of SACRED"
+	cont "ASH days ago."
+	para "They have not"
+	line "returned."
+	para "I will go myself"
+	line "and offer my most"
+	cont "prized artifact, a"
+	cont "nugget of"
+	cont "AMBROSIA."
+	para "ZYGARDE will be"
+	line "mine!"
+	done
 
 WaterfallSceneTop:
     checkevent EVENT_GOT_HM07_WATERFALL

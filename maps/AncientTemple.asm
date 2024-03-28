@@ -25,7 +25,6 @@ HoohLugiaBlockScript:
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_1
     end
 .block
-    turnobject PLAYER, LEFT
 	opentext
 	writetext HoohLugiaBlockText
     waitbutton
@@ -53,7 +52,6 @@ GroudonKyogreBlockScript:
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_2
     end
 .block
-    turnobject PLAYER, LEFT
 	opentext
 	writetext GroudonKyogreBlockText
     waitbutton
@@ -81,7 +79,6 @@ PalkiaDialgaBlockScript:
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_3
     end
 .block
-    turnobject PLAYER, LEFT
 	opentext
 	writetext PalkiaDialgaBlockText
     waitbutton
@@ -109,7 +106,6 @@ RayquazaGiratinaBlockScript:
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_4
     end
 .block
-    turnobject PLAYER, LEFT
 	opentext
 	writetext RayquazaGiratinaBlockText
     waitbutton
@@ -137,7 +133,6 @@ XerneasYveltalBlockScript:
     setmapscene ANCIENT_TEMPLE, SCENE_FINISHED
     end
 .block
-    turnobject PLAYER, LEFT
 	opentext
 	writetext XerneasYveltalBlockText
     waitbutton

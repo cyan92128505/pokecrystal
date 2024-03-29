@@ -24,7 +24,7 @@ Route6SaffronGuardWelcomeText:
 
 	para "The BIG #BALL!"
 
-	para "Land city of"
+	para "Land of great"
 	line "opportunity."
 
 	para "If you can make"

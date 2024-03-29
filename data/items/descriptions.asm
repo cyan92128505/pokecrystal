@@ -843,8 +843,8 @@ MysteryBerryDesc:
 	next "for PP. (HOLD)@"
 
 DragonScaleDesc:
-	db   "A rare dragon-type"
-	next "item.@"
+	db   "Powers up dragon-"
+	next "type moves. (HOLD)@"
 
 BerserkGeneDesc:
 	db   "Boosts critical"

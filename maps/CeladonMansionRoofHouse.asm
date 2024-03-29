@@ -131,6 +131,35 @@ CeladonAndrewFinalText:
     para "Now go have fun!"
     done
 
+CeladonRoofHouseTVScript:
+	opentext
+	writetext CeladonRoofHouseTVText
+	waitbutton
+	closetext
+	end
+
+CeladonRoofHouseTVText:
+	text "#MON the First"
+	line "Movie is on!"
+	para "The original one."
+	para "The good one!"
+	done
+
+CeladonRoofHouseBooksScript:
+	opentext
+	writetext CeladonRoofHouseBooksText
+	waitbutton
+	closetext
+	end
+
+CeladonRoofHouseBooksText:
+	text "This bookshelf..."
+	para "Is full of Final"
+	line "Fantasy strategy"
+	cont "guides."
+	done
+
+
 CeladonMansionRoofHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -141,6 +170,9 @@ CeladonMansionRoofHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+    bg_event  2,  1, BGEVENT_READ, CeladonRoofHouseTVScript
+    bg_event  1,  1, BGEVENT_READ, CeladonRoofHouseBooksScript
+    bg_event  0,  1, BGEVENT_READ, CeladonRoofHouseBooksScript
 
 	def_object_events
 	object_event  3,  2, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseAndrewScript, -1

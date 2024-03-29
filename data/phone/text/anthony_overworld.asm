@@ -5,10 +5,11 @@ AnthonyAskNumber1Text:
 	para "I'll tell you"
 	line "what, give you"
 	cont "your number."
-	para "I'll let you know"
-	line "when there is good"
-	cont "protein going"
-	cont "around here."
+	para "Not anyone can"
+	line "become a true CHAD"
+	cont "but with my expert"
+	cont "tutelage you just"
+	cont "may."
 	done
 
 AnthonyAskNumber2Text:

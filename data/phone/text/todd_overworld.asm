@@ -10,9 +10,6 @@ ToddAskNumber2Text:
 
 	para "Could I get your"
 	line "phone number?"
-
-	para "I'll call you when"
-	line "they have a sale."
 	done
 
 ToddNumberAcceptedText:

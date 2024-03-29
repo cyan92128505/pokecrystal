@@ -323,16 +323,11 @@ SlowpokeWellB1FSlowpokeWithMailText:
 	done
 
 SlowpokeWellB1FSlowpokeMailText:
-	text "<PLAYER> read the"
-	line "MAIL."
-
-	para "Be good and look"
-	line "after the house"
-
-	para "with Grandpa and"
-	line "SLOWPOKE."
-
-	para "Love, Dad"
+	text "Specimen 3 of 4."
+	para "Exhibits"
+	line "impressive"
+	cont "indifference to"
+	cont "stimuli."
 	done
 
 SlowpokeWellB1FTaillessSlowpokeText:

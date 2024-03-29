@@ -133,7 +133,7 @@ SoulHouse_MapEvents:
 	warp_event 29,  5, LAVENDER_FOREST, 1
 
 	def_coord_events
-	coord_event 18, 4, SCENE_ALWAYS, SpiritHouseBlockScript
+	coord_event  8,  1, SCENE_ALWAYS, SpiritHouseBlockScript
 
 	def_bg_events
 

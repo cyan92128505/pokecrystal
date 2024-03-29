@@ -34,7 +34,7 @@ GinaGreetText:
 	para "It's @"
 	text_ram wStringBuffer3
 	text "."
-	line "Good morning!"
+	line "Good day!"
 	done
 
 GinaGreetDayText:

@@ -2132,7 +2132,9 @@ FisherGroup:
 
 	; FISHER (5)
 	db "HENRY@", TRAINERTYPE_NORMAL
-	db  18, HORSEA
+	db  16, WOOPER
+	db  17, WOOPER
+	db  18, WOOPER
 	db  20, FROGADIER
 	db -1 ; end
 
@@ -2838,7 +2840,7 @@ HikerGroup:
 
 	; HIKER (18)
 	db "DANIEL@", TRAINERTYPE_NORMAL
-	db 20, ONIX
+	db 20, RHYHORN
 	db -1 ; end
 
 	; HIKER (19)
@@ -3024,8 +3026,9 @@ FirebreatherGroup:
 
 	; FIREBREATHER (5)
 	db "BILL@", TRAINERTYPE_NORMAL
-	db  17, PONYTA
-	db  18, MAGMAR
+	db  17, GEODUDE
+	db  18, ONIX
+	db  20, MAGMAR
 	db -1 ; end
 
 	; FIREBREATHER (6)
@@ -4268,8 +4271,8 @@ OfficerGroup:
 GruntFGroup:
 	; GRUNTF (1)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 15, ZUBAT
-	db 17, EKANS
+	db 17, ZUBAT
+	db 19, EKANS
 	db -1 ; end
 
 	; GRUNTF (2)

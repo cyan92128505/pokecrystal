@@ -473,7 +473,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	cont "SLOWPOKE WELL."
 
 	para "They are a group"
-	line "for KANTO that"
+	line "from KANTO that"
 	cont "exploit and"
 	cont "traffic #MON."
 

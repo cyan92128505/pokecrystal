@@ -130,10 +130,10 @@ CeladonDeptStore6FSuperNerdText:
 	line "how many drinks"
 	cont "I've had now."
 
-	para "I'm just going"
-	line "to sit on this"
-	cont "roof and drink"
-	cont "my problems away."
+	para "I don't care!"
+	para "The bottle is the"
+	line "only friend I have"
+	cont "left."
 
 	para "Does the machine"
 	line "do vodka..."
@@ -141,7 +141,7 @@ CeladonDeptStore6FSuperNerdText:
 
 CeladonDeptStore6FYoungsterText:
 	text "It's a good view"
-	line "from up here."
+	line "from this floor."
 
 	para "I can see the"
 	line "SILPH building"

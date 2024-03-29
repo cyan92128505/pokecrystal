@@ -156,7 +156,7 @@ BillsMomText:
 	line "of my son."
 
 	para "He's accomplished"
-	cont "so much."
+	line "so much."
 
 	para "But my husband"
 	line "spends all day in"

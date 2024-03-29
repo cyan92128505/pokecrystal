@@ -130,11 +130,13 @@ ApprenticeGivesCutText:
     done
 
 AlreadyGotCutText:
-    text "You did it!"
-
-    para "You are quite"
-    line "the prodigy!"
-    done
+	text "Be careful with"
+	line "that HM I just"
+	cont "gave you."
+	para "With great power"
+	line "comes great"
+	cont "responsibility."
+	done
 
 IlexForestHeadbuttGuyScript:
 	faceplayer

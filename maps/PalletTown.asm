@@ -69,7 +69,7 @@ PalletTownFisherText:
 	line "so cool!"
 
 	para "LEON is cool too"
-	cont "and CYNTHIA too!"
+	line "and CYNTHIA too!"
 
 	para "People like that"
 	line "will never visit"

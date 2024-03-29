@@ -40,7 +40,7 @@ SilphCoOfficerText:
 
 	para "We have stepped"
 	line "up security since"
-	cont "the ROCKET incident"
+	cont "the ROCKET attack"
 	cont "five years ago."
 
 	para "But since you"

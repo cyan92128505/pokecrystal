@@ -20,8 +20,19 @@ Oak:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .CheckBadges
 	writetext OakWelcomeKantoText
-	promptbutton
-	setevent EVENT_TALKED_TO_OAK_IN_KANTO
+	yesorno
+	iftrue .warp
+	writetext OakGoodLuck
+	waitbutton
+	closetext
+	end
+.warp
+    writetext OakGoodLuck
+	waitbutton
+	closetext
+	warp SAFFRON_CITY, 9, 30
+	playsound SFX_WARP_TO
+	end
 .CheckBadges:
 	readvar VAR_BADGES
 	ifequal NUM_BADGES, .OpenMtSilver
@@ -189,10 +200,28 @@ OakWelcomeKantoText:
 	line "GYM LEADERS."
 
 	para "It may not be"
-	line "a frindly place"
+	line "a friendly place"
 	cont "for you right"
 	cont "now."
+
+	para "You're a long way"
+	line "from SAFFRON."
+	para "It might be"
+	line "difficult to get"
+	cont "back to JOHTO from"
+	cont "here."
+	para "I can warp you"
+	line "back to SAFFRON"
+	cont "with a device I"
+	cont "have."
+	para "Would you like me"
+	line "to warp you to"
+	cont "SAFFRON?"
 	done
+
+OakGoodLuck:
+    text "Good luck."
+    done
 
 OakLabDexCheckText:
 	text "How is your #-"
@@ -349,6 +378,12 @@ OaksAssistant2Text:
 
 	para "The information"
 	line "is very valubal."
+
+	para "Seriously, a"
+	line "completed #DEX"
+	cont "would sell for a"
+	cont "fortune."
+	done
 	done
 
 OaksAssistant3Text:

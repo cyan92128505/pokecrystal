@@ -78,7 +78,7 @@ LavRadioTower1FReceptionistText:
 	done
 
 LavRadioTower1FOfficerText:
-	text "We have implemented"
+	text "We've implemented"
 	line "security measures"
 	cont "similar to the"
 	cont "SILPH BUILDING."
@@ -172,7 +172,7 @@ LavRadioTower1FSuperNerd2Text:
 	cont "music."
 
 	para "The sadder the"
-	cont "better."
+	line "better."
 
 	para "MR FUJI karaoke"
 	line "is particularly"

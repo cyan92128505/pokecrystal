@@ -66,7 +66,7 @@ WadeFoundItemText:
 	cont "other BUG"
 	cont "#MON."
 	para "I have a lot of"
-	line "let over berries."
+	line "left over berries."
 	para "Come over and you"
 	line "can have some."
 

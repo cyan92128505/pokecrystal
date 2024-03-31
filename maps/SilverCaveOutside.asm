@@ -834,6 +834,8 @@ HoenWarRolePlayScript:
     writemem wHandOfGod
 	setval WEATHER_NONE
 	writemem wFieldWeather
+	setval BATTLETYPE_BATTLE_FRONTIER
+	writemem wBattleType
     writetext HoenWarHeroOrVillainChoiceText
 	loadmenu .HoenWarHeroOrVillainMenuHeader
 	_2dmenu

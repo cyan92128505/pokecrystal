@@ -132,84 +132,7 @@ ReadTrainerPartyPieces:
 	pop de
 .no_nickname
 
-; dvs? - this isn't used?
-	ld a, [wOtherTrainerType]
-	bit TRAINERTYPE_DVS_F, a
-	jr z, .no_dvs
-
-	push hl
-	ld a, [wOTPartyCount]
-	dec a
-	ld hl, wOTPartyMon1DVs
-	call GetPartyLocation
-	ld d, h
-	ld e, l
-	pop hl
-
-; When reading DVs, treat PERFECT_DV as $ff
-	call GetNextTrainerDataByte
-	cp PERFECT_DV
-	jr nz, .atk_def_dv_ok
-	ld a, $ff
-.atk_def_dv_ok
-	ld [de], a
-	inc de
-	call GetNextTrainerDataByte
-	cp PERFECT_DV
-	jr nz, .spd_spc_dv_ok
-	ld a, $ff
-.spd_spc_dv_ok
-	ld [de], a
-.no_dvs
-
-; stat exp?
-	ld a, [wOtherTrainerType]
-	bit TRAINERTYPE_STAT_EXP_F, a
-	jr z, .default_stat_exp ; is the trainer defined as one with stat exp, if not skip to default
-
-	push hl
-	ld a, [wOTPartyCount]
-	dec a
-	ld hl, wOTPartyMon1StatExp
-	call GetPartyLocation
-	ld d, h
-	ld e, l
-	pop hl ; de is now wOTPartyMon1StatExp
-
-	ld c, NUM_EXP_STATS ; c is how many stats have stat exp
-
-.stat_exp_loop
-; When reading stat experience, treat PERFECT_STAT_EXP as $FFFF
-	call GetNextTrainerDataByte ; this is used to allow trainers to be defined in different banks
-   	dec hl
-	cp LOW(PERFECT_STAT_EXP)
-	jr nz, .not_perfect_stat_exp ; jump if the stat exp is not max
-	inc hl
-	call GetNextTrainerDataByte
-    dec hl
-	cp HIGH(PERFECT_STAT_EXP)
-	dec hl
-	jr nz, .not_perfect_stat_exp ; jump if the stat exp is not max
-	ld a, $ff ; a is 255 for max stat exp
-rept 2
-	ld [de], a
-	inc de
-	inc hl
-endr ; above sets both parts of de to 255 and increments hl in turn
-	jr .continue_stat_exp ; jump to next stat if we used perfect stat exp
-
-.not_perfect_stat_exp
-rept 2
-    call GetNextTrainerDataByte
-	ld [de], a ; set de to the defined stat exp
-	inc de
-endr
-.continue_stat_exp
-	dec c ; decrease c, the count of stats to do this for
-	jr nz, .stat_exp_loop ; loop back around for next stat
-	jp .no_stat_exp
-
-.default_stat_exp
+; stat exp
     push hl
 	ld a, [wOTPartyCount]
 	dec a
@@ -279,7 +202,7 @@ endr
     jp .no_stat_exp
 
 .fullStatExp
-rept 6
+rept 5
     ld a, $ff
 	ld [de], a
 	inc de
@@ -290,7 +213,7 @@ endr
 	jp .no_stat_exp
 
 .highStatExp
-rept 6
+rept 5
     ld a, $90
 	ld [de], a
 	inc de
@@ -302,7 +225,7 @@ endr
 	jp .no_stat_exp
 
 .mediumStatExp
-rept 6
+rept 5
     ld a, $40
 	ld [de], a
 	inc de
@@ -314,7 +237,7 @@ endr
 	jr .no_stat_exp
 
 .lowStatExp
-rept 6
+rept 5
     ld a, $10
 	ld [de], a
 	inc de
@@ -326,7 +249,7 @@ endr
 	jr .no_stat_exp
 
 .zeroStatExp
-rept 6
+rept 5
     xor a
 	ld [de], a
 	inc de

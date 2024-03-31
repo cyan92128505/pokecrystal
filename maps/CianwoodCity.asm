@@ -608,6 +608,8 @@ PsychicGirlTalkScript:
 	writemem wOtherTrainerClass
 	setval RED_MEWTWO
 	writemem wOtherTrainerID
+	setval BATTLETYPE_BATTLE_FRONTIER
+	writemem wBattleType
 	special OverridePlayerParty
 	setval MUSIC_FINAL_BATTLE
 	writemem wBattleMusicOverride

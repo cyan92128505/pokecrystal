@@ -1768,6 +1768,8 @@ BattleArcadeReceptionistScript:
 	end
 
 .ChoosePlayerCharacter:
+	setval BATTLETYPE_BATTLE_FRONTIER
+	writemem wBattleType
     writetext PickYourPlayerText
     checkevent EVENT_BEAT_RED
     iffalse .notBeatRedPlayerMenu

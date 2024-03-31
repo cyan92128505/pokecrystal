@@ -215,6 +215,8 @@ RocketBaseBossFScript:
 	writemem wOtherTrainerClass
 	setval LANCE_DRAGONITE
 	writemem wOtherTrainerID
+	setval BATTLETYPE_BATTLE_FRONTIER
+	writemem wBattleType
 	special OverridePlayerParty
 	setval MUSIC_CHAMPION_BATTLE
 	writemem wBattleMusicOverride

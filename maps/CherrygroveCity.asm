@@ -1001,6 +1001,8 @@ StarWarsRolePlayScript:
     writemem wHandOfGod
 	setval WEATHER_NONE
 	writemem wFieldWeather
+	setval BATTLETYPE_BATTLE_FRONTIER
+	writemem wBattleType
 	special FadeOutMusic
 	playmusic MUSIC_MISTY_MOUNTAIN
 .HeroOrVillain

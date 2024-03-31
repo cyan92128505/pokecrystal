@@ -1144,6 +1144,8 @@ MultiverseRolePlayScript:
     iffalse .refused
     setval 0
     writemem wHandOfGod
+	setval BATTLETYPE_BATTLE_FRONTIER
+	writemem wBattleType
     writetext MultiverseCharacterChoiceText
 	loadmenu .MultiverseCharacterMenuHeader
 	_2dmenu

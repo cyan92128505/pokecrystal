@@ -202,7 +202,7 @@ ReadTrainerPartyPieces:
     jp .no_stat_exp
 
 .fullStatExp
-rept 5
+rept 6
     ld a, $ff
 	ld [de], a
 	inc de

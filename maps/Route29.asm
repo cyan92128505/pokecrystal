@@ -265,31 +265,31 @@ CatchingTutorialDebriefText:
 	done
 
 Route29YoungsterText:
-	text "Do you have a"
-	line "POCKET PC?"
-	para "You can deposit"
-	line "then withdraw your"
-	cont "#MON to heal"
-	cont "them."
-	para "It kind of feels"
-	line "like cheating"
-	cont "though right?"
+	text "You should check"
+	line "out your OPTIONS"
+	cont "in the menu."
+	para "BATTLE SCENE is"
+	line "off by default but"
+	cont "battles are way"
+	cont "more epic with it"
+	cont "turned on, they"
+	cont "take longer"
+	cont "though."
 	done
 
 Route29TeacherText:
-	text "See those ledges?"
-
-	para "You can only hop"
-	line "over them in one"
-	cont "direction."
-
-    para "I used to be an"
-    line "adventurer like"
-    cont "you."
-
-    para "Then I feel over"
-    line "one and broke my"
-    cont "leg."
+	text "You can see"
+	line "details of you"
+	cont "#MON moves in"
+	cont "the MOVES option"
+	cont "in the menu."
+	para "ATK is the moves"
+	line "power, ACC is its"
+	cont "percent accuracy"
+	cont "and EFF is the"
+	cont "percent chance of"
+	cont "its effect"
+	cont "occurring."
 	done
 
 Route29FisherText:

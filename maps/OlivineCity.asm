@@ -199,8 +199,8 @@ OlivineCrystalChallengeSilver:
     para "Fight me then."
 
     para "And the difference"
-    line "between our #MON"
-    cont "will be clear."
+    line "between us will"
+    cont "be clear."
 
     para "Yours will never"
     line "fight to their"
@@ -222,8 +222,8 @@ OlivineSilverFightCrystal:
     done
 
 OlivineCrystalGoodbye:
-    text "<PLAYER> you take"
-    line "care."
+    text "<PLAYER> you"
+    line "take care."
 
     para "I'm going to deal"
     line "with this bully"
@@ -462,6 +462,10 @@ YunaScript:
 	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_YUNA_1
+	opentext
+	writetext YunaAfterBattleText
+	waitbutton
+    closetext
 	end
 .FightDone:
 	writetext YunaAfterBattleText
@@ -508,7 +512,7 @@ YunaSeenText:
     cont "people."
 
     para "I can tell you"
-    line "are hurting inside."
+    line "are hurting."
 
     para "You miss your dad."
 

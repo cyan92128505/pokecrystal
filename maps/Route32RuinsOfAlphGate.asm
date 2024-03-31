@@ -32,14 +32,15 @@ Route32RuinsOfAlphGateOfficerText:
 	done
 
 Route32RuinsOfAlphGatePokefanMText:
-	text "What a waste"
-	line "of money!"
-
-	para "It's just one"
-	line "big empty room!"
-
-	para "Not a single"
-	line "UNOWN."
+	text "I was hiking and"
+	line "found myself in"
+	cont "one of the puzzle"
+	cont "chambers."
+	para "Then the WATER"
+	line "STONE in my pack"
+	cont "started to glow."
+	para "No idea what"
+	line "that's about."
 	done
 
 Route32RuinsOfAlphGateYoungsterText:

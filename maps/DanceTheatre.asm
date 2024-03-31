@@ -242,9 +242,9 @@ KimonoGirlMikiBeatenText:
 
 KimonoGirlMikiAfterBattleText:
 	text "You remind me"
-	line "of CYBIL."
+	line "of SOPHIE."
 
-	para "He too understood"
+	para "She too understood"
 	line "the meaning of"
 	cont "our dance."
 	done
@@ -423,7 +423,7 @@ DanceTheatre_MapEvents:
 
 	def_coord_events
 	coord_event 5, 13, SCENE_ALWAYS, SurfScriptLeft
-	coord_event 5, 13, SCENE_ALWAYS, SurfScriptRight
+	coord_event 6, 13, SCENE_ALWAYS, SurfScriptRight
 
 	def_bg_events
 	bg_event  5,  6, BGEVENT_UP, DanceTheatreFancyPanel

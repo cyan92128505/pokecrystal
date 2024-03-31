@@ -570,6 +570,7 @@ RadioTowerCrystalScript:
 	applymovement RADIOTOWER1F_CRYSTAL, RadioTowerMovement_CrystalLeaves
 	playsound SFX_EXIT_BUILDING
 	disappear RADIOTOWER1F_CRYSTAL
+    special HealParty
 	end
 
 RadioTowerMovement_PlayerDown:

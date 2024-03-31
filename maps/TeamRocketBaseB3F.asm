@@ -400,7 +400,7 @@ RocketBaseRivalText:
 	cont "respect."
 
 	para "I am disgusted"
-	line "I lost to someone"
+	line "I lose to someone"
 	cont "like that!"
 
 	para "You'd probably"

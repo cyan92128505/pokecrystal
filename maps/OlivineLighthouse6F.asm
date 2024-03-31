@@ -214,7 +214,7 @@ PlayerHandedSecretpotionText:
 
 JasmineDontBeOffendedText:
 	text "Please don't be"
-	cont "offended…"
+	line "offended…"
 
 	para "AMPHAROS will not"
 	line "take anything from"

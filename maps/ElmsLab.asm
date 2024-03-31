@@ -919,7 +919,7 @@ ElmsLabCynthiaGoodluckText:
 
 
 ElmText_Intro:
-	text "ELM: Ah <PLAYER>"
+	text "Ah <PLAYER>"
 	line "good to see you!"
 
 	para "Today is your big"
@@ -985,30 +985,30 @@ ElmText_LetYourMonBattleIt:
 	done
 
 LabWhereGoingText:
-	text "ELM: Wait! Where"
+	text "Wait! Where"
 	line "are you going?"
 	done
 
 TakeCyndaquilText:
-	text "ELM: You'll take"
+	text "You'll take"
 	line "CHIMCHAR, the"
 	cont "fire #MON?"
 	done
 
 TakeTotodileText:
-	text "ELM: Do you want"
+	text "Do you want"
 	line "FROAKIE, the"
 	cont "water #MON?"
 	done
 
 TakeChikoritaText:
-	text "ELM: So, you like"
+	text "So, you like"
 	line "TREECKO, the"
 	cont "grass #MON?"
 	done
 
 DidntChooseStarterText:
-	text "ELM: Think it over"
+	text "Think it over"
 	line "carefully."
 
 	para "Your partner is"
@@ -1016,7 +1016,7 @@ DidntChooseStarterText:
 	done
 
 ChoseStarterText:
-	text "ELM: I think"
+	text "I think"
 	line "that's a great"
 	cont "#MON too!"
 	done
@@ -1096,7 +1096,7 @@ ElmsLabHealingMachineText2:
 	done
 
 ElmAfterTheftText1:
-	text "ELM: <PLAY_G>, this"
+	text "<PLAY_G>, this"
 	line "is terrible…"
 
 	para "So you met the"
@@ -1113,7 +1113,7 @@ ElmAfterTheftText2:
 	done
 
 ElmAfterTheftText3:
-	text "ELM: This is"
+	text "This is"
 	line "an EGG of a"
 	cont "FAIRY #MON."
 	done
@@ -1182,7 +1182,7 @@ ElmAfterTheftText6:
 	done
 
 ElmStudyingEggText:
-	text "ELM: Don't give"
+	text "Don't give"
 	line "up! I'll call if"
 
 	para "I learn anything"
@@ -1190,7 +1190,7 @@ ElmStudyingEggText:
 	done
 
 ElmAideHasEggText:
-	text "ELM: <PLAY_G>?"
+	text "<PLAY_G>?"
 	line "Didn't you meet my"
 	cont "assistant?"
 
@@ -1206,7 +1206,7 @@ ElmAideHasEggText:
 	done
 
 ElmWaitingEggHatchText:
-	text "ELM: Hey, has that"
+	text "Hey, has that"
 	line "EGG changed any?"
 	done
 
@@ -1219,7 +1219,7 @@ ElmThoughtEggHatchedText:
 	done
 
 ShowElmTogepiText1:
-	text "ELM: <PLAY_G>, you"
+	text "<PLAY_G>, you"
 	line "look great!"
 	done
 
@@ -1270,7 +1270,7 @@ ElmGiveEverstoneText2:
 	done
 
 ElmText_CallYou:
-	text "ELM: <PLAY_G>, I'll"
+	text "<PLAY_G>, I'll"
 	line "call you if any-"
 	cont "thing comes up."
 	done
@@ -1324,7 +1324,7 @@ AideText_ExplainCaps:
     done
 
 ElmGiveMasterBallText1:
-	text "ELM: Hi, <PLAY_G>!"
+	text "Hi, <PLAY_G>!"
 	line "Thanks to you, my"
 
 	para "research is going"

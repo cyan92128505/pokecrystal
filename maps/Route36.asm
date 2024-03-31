@@ -499,16 +499,15 @@ RockSmashGuyText2:
 	done
 
 Route36LassText:
-	text "I've just been"
-	line "to the RUINS"
-	cont "OF ALPH."
-
-	para "There wasn't"
-	line "much to do but"
-	cont "I got the sense"
-	cont "there are some"
-	cont "ancient secrets"
-	cont "hidden in there."
+	text "I went into one of"
+	line "those puzzle"
+	cont "chambers and use"
+	cont "my ESCAPE POD to"
+	cont "leave and then I"
+	cont "head all these"
+	cont "spooky noises"
+	cont "coming from the"
+	cont "chamber!"
 	done
 
 PsychicMarkSeenText:

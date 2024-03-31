@@ -246,7 +246,7 @@ PryceText_CherishYourPokemon:
 
 	para "If you can't"
 	line "do that, then"
-	cont "you can look"
+	cont "you can't look"
 	cont "after anyone else."
 
 	para "People wonder why"

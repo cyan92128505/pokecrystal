@@ -25,7 +25,7 @@ CherrygrovePokecenter1FFisherText:
 	text "Have you heard of"
 	line "POKERUS?"
 
-	para "Its a virus your"
+	para "It's a virus your"
 	line "#MON can catch."
 
 	para "There was an"

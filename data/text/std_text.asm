@@ -185,12 +185,14 @@ IncenseBurnerText:
 	text "What is this?"
 
 	para "Oh, it's an"
-	line "incense burner!"
+	line "incense burner."
+
+	para "Smells nice!"
 	done
 
 MerchandiseShelfText:
 	text "Lots of #MON"
-	line "merchandise!"
+	line "junk!"
 	done
 
 LookTownMapText:
@@ -198,12 +200,13 @@ LookTownMapText:
 	done
 
 WindowText:
-	text "My reflection!"
-	line "Lookin' good!"
+	text "A cool breeze"
+	line "blows in."
 	done
 
 TVText:
-	text "It's a TV."
+	text "It's that show"
+	line "that's always on."
 	done
 
 HomepageText:

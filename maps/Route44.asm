@@ -108,7 +108,7 @@ TrainerBirdKeeperVance1:
 	loadtrainer BIRD_KEEPER, VANCE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_HIKER_BAILEY
+	setevent EVENT_BEAT_BIRD_KEEPER_VANCE
 	end
 .FightDone:
 	writetext BirdKeeperVanceLegendaryBirdsText

@@ -24,7 +24,7 @@ Moves: ; 41afb
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20
 	move GUILLOTINE,   EFFECT_OHKO,                0, BUG,           PHYSICAL,  30, 10,   0
-	move DRACO_ASCENT, EFFECT_NORMAL_HIT,        100, FLYING,        PHYSICAL, 100, 10,   0
+	move DRACO_ASCENT, EFFECT_NORMAL_HIT,        100, FLYING,        PHYSICAL, 100, 15,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
 	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        PHYSICAL,  95, 30,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0
@@ -250,7 +250,7 @@ Moves: ; 41afb
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,         STATUS,   100, 10,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       60, NORMAL,        SPECIAL,  100, 15,   0
 	move SEED_FLARE,   EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,         SPECIAL,  85,  10,  50
-	move DRACO_METEOR, EFFECT_NORMAL_HIT,        120, DRAGON,        SPECIAL,  100, 10,   0
+	move DRACO_METEOR, EFFECT_NORMAL_HIT,        120, DRAGON,        SPECIAL,  100, 15,   0
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,   100, 10,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,   100, 10,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,          PHYSICAL, 100, 15,  20

@@ -461,6 +461,7 @@ ElmGiveTicketScript:
 	verbosegiveitem S_S_TICKET
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
+	waitbutton
 	verbosegiveitem CLEAR_BELL
 	writetext ClearBellTips
 	waitbutton

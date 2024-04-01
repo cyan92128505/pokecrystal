@@ -2302,7 +2302,7 @@ BattleArcadeReceptionistScript:
 	db 1 ; default option
 .PostE4CharacterMenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 3, 6 ; rows, columns
+	dn 4, 5 ; rows, columns
 	db 3 ; spacing
 	dba .PostE4CharacterText
 	dbw BANK(@), NULL
@@ -2325,6 +2325,8 @@ BattleArcadeReceptionistScript:
 	db "SB@"
 	db "BN@"
 	db "KN@"
+    db "GV@"
+	db "OK@"
 
 .DefaultCharacterMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -2333,7 +2335,7 @@ BattleArcadeReceptionistScript:
 	db 1 ; default option
 .DefaultCharacterMenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 2, 4 ; rows, columns
+	dn 3, 5 ; rows, columns
 	db 3 ; spacing
 	dba .DefaultCharacterText
 	dbw BANK(@), NULL
@@ -2346,6 +2348,13 @@ BattleArcadeReceptionistScript:
 	db "JS@"
 	db "PY@"
 	db "CL@"
+	db "BK@"
+	db "MS@"
+	db "SU@"
+	db "ER@"
+    db "JN@"
+    db "WL@"
+    db "BL@"
 
 NeedToSaveText:
     text "You will need to"

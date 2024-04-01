@@ -387,8 +387,8 @@ SSAquaGrandpaHaveThisSilverWingText:
     para "It filled the"
     line "sky."
 
-    para "I know it must have"
-    line "saved us."
+    para "I know it must"
+    line "have saved us."
 
     para "I followed it out"
     line "to the WHIRL"
@@ -398,7 +398,8 @@ SSAquaGrandpaHaveThisSilverWingText:
     line "was this feather."
 
     para "Maybe you will be"
-    line "the one to find it."
+    line "the one to"
+    cont "find it."
 	done
 
 SSAquaGrandpaTravellingText:

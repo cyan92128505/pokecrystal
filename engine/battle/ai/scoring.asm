@@ -2773,6 +2773,10 @@ AI_Smart_MeanLook:
 	pop hl
 	jp z, AIDiscourageMove
 
+; discourage if we will be koed
+    call ShouldAIBoost
+    jp nz, AIDiscourageMove
+
 ; if we are Wobbuffet just encourage at this point
 	ld a, [wEnemyMonSpecies]
 	cp WOBBUFFET

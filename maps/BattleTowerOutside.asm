@@ -73,7 +73,7 @@ BattleTowerOutsideBeautyText:
 	done
 
 BattleTowerOutsidePokefanText:
-    text "I main CHUCK in"
+    text "I main BROCK in"
     line "the ARCADE."
 
     para "With the right"
@@ -82,14 +82,14 @@ BattleTowerOutsidePokefanText:
     cont "any type"
     cont "disadvantage."
 
-    para "MORTY is cool"
+    para "CLAIR is cool"
     line "too though."
 
     para "I hear you can"
     line "unlock CYNTHIA."
 
     para "I'd main her"
-    line "all day..."
+    line "for sure..."
     done
 
 BattleTowerOutsideBeauty2Text:
@@ -309,9 +309,12 @@ BattleArcadeIntro:
 	line "BERRIES for"
 	cont "winning."
 
-    para "There are 8"
+    para "There are 15"
     line "characters at"
     cont "first."
+
+    para "All the GYM"
+    line "LEADERS."
 
     para "You can unlock"
     line "more in batches"

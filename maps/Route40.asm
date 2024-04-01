@@ -300,12 +300,12 @@ Route40PokefanMText:
 	cont "fight other GYM"
 	cont "LEADERS."
 
-	para "I only have 8"
+	para "I only have 15"
 	line "characters"
 	cont "unlocked."
 
 	para "I like playing"
-	line "as WHITNEY!"
+	line "as BUGSY!"
 	done
 
 Route40Lass2Text:

@@ -371,8 +371,9 @@ LancesRoomElmText2:
 	text "I am so proud"
 	line "of you <PLAYER>."
 
-	para "I known you since"
-	line "you were a baby."
+	para "I've known you"
+	line "since you were a"
+	cont "baby."
 
 	para "I can't believe"
 	line "what you have"

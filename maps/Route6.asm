@@ -166,30 +166,24 @@ PokefanmRexAfterBattleText:
 	done
 
 PokefanmAllanSeenText:
-	text "I'm not much into"
-	line "comics."
-
-	para "I like strategy"
-	line "games."
-
-	para "But not ones that"
-	line "involve any luck!"
-
-	para "I want pure mind"
-	line "verses mind."
+	text "Commands!"
+	para "The time has come."
+	para "Exterminate the"
+	line "Gorgonites!"
+	para "Kill em all!"
 	done
 
 PokefanmAllanBeatenText:
-	text "Checkmate!"
+	text "Avenge me"
+	line "comrade..."
 	done
 
 PokefanmAllanAfterBattleText:
-	text "Life is a game"
-	line "of chess."
-
-	para "Everybody else is"
-	line "always trying to"
-	cont "put me in check."
+	text "We are the"
+	line "commando elite."
+	para "Everything else..."
+	para "Is just a"
+	line "#MON."
 	done
 
 InvaderBackstaberScript:

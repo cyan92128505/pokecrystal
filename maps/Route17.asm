@@ -158,7 +158,7 @@ BikerRileySeenText:
 
 BikerRileyBeatenText:
 	text "Ok, ok you"
-	cont "can go free."
+	line "can go free."
 	done
 
 BikerRileyAfterBattleText:

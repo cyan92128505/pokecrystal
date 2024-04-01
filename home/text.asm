@@ -344,7 +344,7 @@ PlaceBattlersName:
 	jr nz, .enemy
 
 	ld de, wBattleMonNickname
-	jr PlaceCommandCharacter
+	jp PlaceCommandCharacter
 
 .enemy
 	ld de, EnemyText
@@ -352,14 +352,14 @@ PlaceBattlersName:
 	ld h, b
 	ld l, c
 	ld de, wEnemyMonNickname
-	jr PlaceCommandCharacter
+	jp PlaceCommandCharacter
 
 PlaceEnemysName::
 	push de
 
 	ld a, [wLinkMode]
 	and a
-	jr nz, .linkbattle
+	jp nz, .linkbattle
 
 	ld a, [wTrainerClass]
 	cp RIVAL1
@@ -367,12 +367,65 @@ PlaceEnemysName::
 	cp RIVAL2
 	jr z, .rival
 
+; skip printing class for some trainers
+	cp LT_SURGE
+	jr nz, .notSurge
+	ld a, [wOtherTrainerID]
+	cp DAD
+	jr z, .skipClass
+	jr .printClass
+.notSurge
+    cp KIMONO_GIRL
+    jr nz, .notKimono
+    ld a, [wOtherTrainerID]
+    cp YUNA_1
+    jr nc, .skipClass
+    jr .printClass
+.notKimono
+    cp COOLTRAINERM
+    jr nz, .notCool
+    ld a, [wOtherTrainerID]
+    cp TOBIAS
+    jr z, .skipClass
+    cp MASTER_TOBIAS
+    jr z, .skipClass
+    jr .printClass
+.notCool
+    cp SAGE
+    jr nz, .notSage
+    ld a, [wOtherTrainerID]
+    cp HENSHIN
+    jr nc, .skipClass
+    jr .printClass
+.notSage
+    cp RED
+    jr nz, .notRed
+    ld a, [wOtherTrainerID]
+    cp YAMI
+    jr nc, .skipClass
+    jr .printClass
+.notRed
+    cp BLUE
+    jr nz, .notBlue
+    ld a, [wOtherTrainerID]
+    cp SETO
+    jr nc, .skipClass
+    jr .printClass
+.notBlue
+    cp LEAF
+    jr nz, .printClass
+    ld a, [wOtherTrainerID]
+    cp WIFE
+    jr z, .skipClass
+
+.printClass
 	ld de, wOTClassName
 	call PlaceString
 	ld h, b
 	ld l, c
 	ld de, String_Space
 	call PlaceString
+.skipClass
 	push bc
 	callfar Battle_GetTrainerName
 	pop hl

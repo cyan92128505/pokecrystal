@@ -30,15 +30,22 @@ HallOfFame_MapScripts:
 	pause 15
 	setval HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
-	setevent EVENT_BEAT_ELITE_FOUR
+
 	loadmem wLevelCap, 85
+
 	setevent EVENT_TELEPORT_GUY
 	setevent EVENT_RIVAL_SPROUT_TOWER
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
 	setmapscene SPROUT_TOWER_3F, SCENE_FINISHED
+
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .skipScenes
 	setmapscene PALLET_TOWN, SCENE_CUSTOM_1
 	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_2
+	setevent EVENT_BEAT_ELITE_FOUR
+.skipScenes
+
 	special HealParty
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .SkipPhoneCall

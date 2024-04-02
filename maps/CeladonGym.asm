@@ -157,9 +157,9 @@ ErikaBeforeBattleText:
 
 	para "But I never will."
 
-	para "This GYM will stand"
-	line "always as a shrine"
-	cont "to nature."
+	para "This GYM will"
+	line "stand always as a"
+	cont "shrine to nature."
 
 	para "People can build"
 	line "all the buildings"

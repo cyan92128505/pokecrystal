@@ -146,7 +146,8 @@ SabrinaIntroText:
 
 	para "PROF OAK suggested"
 	line "me for this post"
-	cont "after SABRINA left."
+	cont "after SABRINA"
+	cont "left."
 
 	para "I've never been"
 	line "one for battling."

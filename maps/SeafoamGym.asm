@@ -87,21 +87,7 @@ SeafoamGymBlaineScript:
 	end
 
 SeafoamGymGuideScript:
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_SEAFOAM_GYM_GUIDE_ONCE
-	iftrue .TalkedToSeafoamGymGuideScript
-	writetext SeafoamGymGuideWinText
-	waitbutton
-	closetext
-	setevent EVENT_TALKED_TO_SEAFOAM_GYM_GUIDE_ONCE
-	end
-
-.TalkedToSeafoamGymGuideScript:
-	writetext SeafoamGymGuideWinText2
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer SeafoamGymGuideWinText2
 
 BlaineIntroText:
 	text "I am BLAINE."
@@ -111,11 +97,11 @@ BlaineIntroText:
 
 	para "Without a city."
 
-	para "But there is one"
-	line "thing a LEADER"
-	cont "always keeps."
+	para "But I still have"
+	line "my pride."
 
-	para "His pride!"
+    para "Nothing can take"
+    line "that from me."
 
 	para "I am the second"
 	line "strongest GYM"
@@ -164,22 +150,6 @@ BlaineFightDoneText:
 	line "hardship to"
 	cont "fulfil this vital"
 	cont "purpose!"
-	done
-
-SeafoamGymGuideWinText:
-	text "This guy is"
-	line "serious."
-
-	para "He mat even be"
-	line "a little insane."
-
-	para "He uses a fire"
-	line "team and uses"
-	cont "SUNNY weather."
-
-	para "If you can take"
-	line "his sun away you"
-	cont "can win!"
 	done
 
 SeafoamGymGuideWinText2:

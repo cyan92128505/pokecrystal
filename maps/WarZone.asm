@@ -52,8 +52,8 @@ WallaceScript:
 	loadtrainer WALLACE, FUHRER_WALLACE
 	startbattle
 	ifequal LOSE, .lose
+	dontrestartmapmusic
 	reloadmapafterbattle
-	special FadeOutMusic
 	setevent EVENT_BEAT_WALLACE
 	setevent EVENT_BEAT_HOEN_ARMY
 	setmapscene ROUTE_22, SCENE_CUSTOM_FINISHED
@@ -139,6 +139,7 @@ WallaceScript:
     disappear WARZONE_SOLDIER_3
     disappear WARZONE_SOLDIER_4
     disappear WARZONE_SOLDIER_5
+    dontrestartmapmusic
     reloadmap
     playmusic MUSIC_ECRUTEAK_CITY
 
@@ -1254,7 +1255,7 @@ WarZoneBlueScript:
 WarZoneBlueText:
     text "I've got through"
     line "to the national"
-    cont "league."
+    cont "LEAGUE."
 
     para "I will argue that"
     line "The CHAMPIONs"
@@ -1271,8 +1272,13 @@ WarZoneBlueText:
     cont "forces occupied"
     cont "for a short while."
 
-    para "Don't get killed"
-    line "JOHTO CHAMPION."
+    para "Be sure to SAVE"
+    line "before fighting"
+    cont "WALLACE."
+
+    para "If you lose..."
+
+    para "He will kill you."
     done
 
 WarZoneMovement_PlayerUp:

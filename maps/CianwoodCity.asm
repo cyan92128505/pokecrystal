@@ -574,8 +574,8 @@ PsychicGirlTalkScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SOLDIER, SOLDIER_SPY
 	startbattle
+	dontrestartmapmusic
 	reloadmap
-	special FadeOutMusic
 	special HealParty
 	playsound SFX_TACKLE
 	waitsfx
@@ -617,6 +617,7 @@ PsychicGirlTalkScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WEAK_BATTLE
 	loadtrainer SOLDIER, SOLDIER_SPY
 	startbattle
+	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_RED_DUNGEON
 	special LoadPokemonData

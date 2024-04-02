@@ -170,7 +170,7 @@ MustBeatAllGymsText:
     done
 
 FalseIntroText:
-    text "Yo CHAMPION!"
+    text "Well CHAMPION!"
 
     para "You finally ready"
     line "for a real test?"
@@ -232,7 +232,7 @@ LeaderBlueBeforeText:
 	para "Slayer of WALLACE."
 
 	para "The true peoples"
-	cont "CHAMPION."
+	line "CHAMPION."
 
 	para "You're going to"
 	line "get a lot of that"
@@ -246,13 +246,13 @@ LeaderBlueBeforeText:
 	para "But be assured."
 
 	para "Right here, right"
-	cont "now."
+	line "now."
 
 	para "You are not the"
 	line "hero of KANTO."
 
 	para "You are just"
-	line "another challanger."
+	line "another trainer."
 
 	para "Now show me what"
 	line "you've got!"

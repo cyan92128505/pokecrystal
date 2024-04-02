@@ -51,7 +51,7 @@ PokemonCries::
 	mon_cry CRY_ODDISH,      150,  100 ; PAWNIARD
 	mon_cry CRY_ODDISH,      100,  150 ; BISHARP
 	mon_cry CRY_TYPHLOSION,  200,  400 ; REGIGIGAS
-	mon_cry CRY_GOLEM,      -100,  500 ; ZYGARDE
+	mon_cry CRY_GOLEM,         0,  500 ; ZYGARDE
 	mon_cry CRY_PIDGEOTTO,  -100,  250 ; HAWLUCHA
 	mon_cry CRY_VENONAT,      68,  192 ; LARVESTA
 	mon_cry CRY_VENONAT,      41,  256 ; VOLCARONA

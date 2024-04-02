@@ -311,10 +311,10 @@ InvadedFuchsiaCityTeacherText:
 	cont "apart."
 
 	para "The heavens split"
-	line "and he descended on"
+	line "as he descended on"
 	cont "a living throne."
 
-	para "His three gods"
+	para "His three Gods"
 	line "among #MON."
 
 	para "None can defeat"
@@ -561,6 +561,7 @@ FuchsiaCitySelfScript:
     writetext FuchsiaSelfBelieveText
     waitbutton
     closetext
+    applymovement FUCHSIACITY_SELF, FuchsiaSelfMerge
 	disappear FUCHSIACITY_SELF
 	playmusic MUSIC_RED_INDIGO_PLATEAU
 	special HealParty
@@ -580,6 +581,11 @@ FuchsiaCitySelfScript:
 	playmusic MUSIC_RED_INDIGO_PLATEAU
 	special HealParty
 	end
+
+FuchsiaSelfMerge:
+    slow_step UP
+    turn_head DOWN
+    step_end
 
 FuchsiaMovement_PlayerDown:
     slow_step DOWN
@@ -604,8 +610,7 @@ FuchsiaSelfText3:
     para "WALLACE can"
     line "kill CHAMPIONS."
 
-    para "He did with"
-    line "STEVEN."
+    para "He killed STEVEN!"
     done
 
 FuchsiaSelfText4:
@@ -613,16 +618,13 @@ FuchsiaSelfText4:
     line "there with his"
     cont "strongest troops."
 
-    para "You are nothing"
-    line "to them!"
-
     para "No other CHAMPIONS"
     line "are here."
 
     para "They know it is"
     line "suicide."
 
-    para "You will die."
+    para "We will die."
     done
 
 FuchsiaSelfText5:
@@ -665,62 +667,49 @@ FuchsiaSelfDefeatText2:
     text "WALLACE kills"
     line "CHAMPIONS."
 
-    para "We are another"
-    line "nameless victim"
-    cont "to him!"
+    para "He will kill us."
     done
 
 FuchsiaSelfConfidenceText3:
-    text "He may kill me."
-
-    para "My only purpose"
-    line "now is to stop"
-    cont "him."
-
-    para "I will show him"
-    line "we wont give up."
-
-    para "I will use all"
-    line "my might."
-    done
+	text "Silence!"
+	para "Maybe he will."
+	para "It doesn't matter."
+	para "If I don't stop"
+	line "him now he will"
+	cont "kill us eventually"
+	cont "anyway."
+	para "I have to stop"
+	line "him."
+	done
 
 FuchsiaSelfDefeatText3:
-    text "You will fail!!!"
+    text "...."
     done
 
 FuchsiaSelfBelieveText:
-    text "We are the only"
-    line "hope for everyone"
-    cont "we love."
-
-    para "We will stop this"
-    line "here and now!"
-
-    para "If we don't..."
-
-    para "No one will."
-
-    para "There is no more"
-    line "pain or fear."
-
-    para "Only purpose."
-
-    para "Go now and use"
-    line "all of your"
-    cont "power!"
-
-    para "All of your"
-    line "knowledge!"
-
-    para "Every breath!"
-
-    para "Every heartbeat!"
-
-    para "You and your"
-    line "#MON will"
-    cont "bring an end to"
-    cont "this war."
-    done
+	text "We have come a"
+	line "long way and"
+	cont "learnt a lot with"
+	cont "our #MON."
+	para "All of that"
+	line "experience has"
+	cont "lead to this"
+	cont "moment."
+	para "We are the only"
+	line "one who can save"
+	cont "everyone we love."
+	para "We will end this"
+	line "here and now."
+	para "If we don't..."
+	para "Nobody will."
+	para "There is no fear"
+	line "or rage."
+	para "Only focus and"
+	line "purpose."
+	para "Now let's do what"
+	line "we were born to do"
+	cont "and end this."
+	done
 
 FuchsiaSelfLossText:
     text "Put these foolish"

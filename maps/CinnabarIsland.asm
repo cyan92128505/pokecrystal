@@ -58,10 +58,11 @@ CinnabarIslandBlueText:
 	line "myself for a"
 	cont "time."
 
-	para "Look at this place."
+	para "Look at this"
+	line "place."
 
 	para "Destroyed by a"
-	line "volcanoe in an"
+	line "volcano in an"
 	cont "instant."
 
 	para "It's not the"

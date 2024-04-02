@@ -572,6 +572,11 @@ Credits_LoadBorderGFX:
 	ret
 
 .Frames:
+	dw CreditsPichuGFX
+	dw CreditsPichuGFX     + 16 tiles
+	dw CreditsPichuGFX     + 32 tiles
+	dw CreditsPichuGFX     + 48 tiles
+
 	dw CreditsDittoGFX
 	dw CreditsDittoGFX     + 16 tiles
 	dw CreditsDittoGFX     + 32 tiles
@@ -582,15 +587,10 @@ Credits_LoadBorderGFX:
 	dw CreditsDittoGFX     + 32 tiles
 	dw CreditsDittoGFX     + 48 tiles
 
-	dw CreditsPichuGFX
-	dw CreditsPichuGFX     + 16 tiles
-	dw CreditsPichuGFX     + 32 tiles
-	dw CreditsPichuGFX     + 48 tiles
-
-	dw CreditsPichuGFX
-	dw CreditsPichuGFX     + 16 tiles
-	dw CreditsPichuGFX     + 32 tiles
-	dw CreditsPichuGFX     + 48 tiles
+	dw CreditsIgglybuffGFX
+	dw CreditsIgglybuffGFX + 16 tiles
+	dw CreditsIgglybuffGFX + 32 tiles
+	dw CreditsIgglybuffGFX + 48 tiles
 
 Credits_TheEnd:
 	ld a, $40

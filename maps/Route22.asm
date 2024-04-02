@@ -106,8 +106,8 @@ VictoryRoadEntranceSignText:
 Route22HoenInvadedBlockScript:
     checkevent EVENT_BEAT_ELITE_FOUR
     iffalse .block
-    checkevent EVENT_HOEN_INVASION_UNDERWAY
-    iftrue .block
+    ;checkevent EVENT_HOEN_INVASION_UNDERWAY
+    ;iftrue .block
     end
 .block
     turnobject PLAYER, UP

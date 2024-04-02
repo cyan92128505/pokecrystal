@@ -4451,7 +4451,7 @@ ShouldAIBoost:
 	jr c, .checkSpeed
 .checkMutual2HKO
 	call CanAI2HKO
-	jr c, .dontBoost
+	jp c, .dontBoost
 	call CanPlayer2HKO
 	jr c, .dontBoost
 
@@ -4496,9 +4496,14 @@ ShouldAIBoost:
 	jr nz, .boost
 
 ; is the player behind a sub, if so don't boost, just attack
+; unless we have baton pass, in which case boost up
+    ld b, EFFECT_BATON_PASS
+	call AIHasMoveEffect
+	jr c, .skipSubCheck
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jr nz, .dontBoost
+.skipSubCheck
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack

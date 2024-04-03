@@ -344,7 +344,7 @@ PlaceBattlersName:
 	jr nz, .enemy
 
 	ld de, wBattleMonNickname
-	jp PlaceCommandCharacter
+	jr PlaceCommandCharacter
 
 .enemy
 	ld de, EnemyText
@@ -352,14 +352,14 @@ PlaceBattlersName:
 	ld h, b
 	ld l, c
 	ld de, wEnemyMonNickname
-	jp PlaceCommandCharacter
+	jr PlaceCommandCharacter
 
 PlaceEnemysName::
 	push de
 
 	ld a, [wLinkMode]
 	and a
-	jp nz, .linkbattle
+	jr nz, .linkbattle
 
 	ld a, [wTrainerClass]
 	cp RIVAL1
@@ -375,50 +375,55 @@ PlaceEnemysName::
 	jr z, .skipClass
 	jr .printClass
 .notSurge
-    cp KIMONO_GIRL
-    jr nz, .notKimono
-    ld a, [wOtherTrainerID]
-    cp YUNA_1
-    jr nc, .skipClass
-    jr .printClass
-.notKimono
-    cp COOLTRAINERM
-    jr nz, .notCool
-    ld a, [wOtherTrainerID]
-    cp TOBIAS
-    jr z, .skipClass
-    cp MASTER_TOBIAS
-    jr z, .skipClass
-    jr .printClass
-.notCool
-    cp SAGE
-    jr nz, .notSage
-    ld a, [wOtherTrainerID]
-    cp HENSHIN
-    jr nc, .skipClass
-    jr .printClass
-.notSage
-    cp RED
-    jr nz, .notRed
-    ld a, [wOtherTrainerID]
-    cp YAMI
-    jr nc, .skipClass
-    jr .printClass
-.notRed
-    cp BLUE
-    jr nz, .notBlue
-    ld a, [wOtherTrainerID]
-    cp SETO
-    jr nc, .skipClass
-    jr .printClass
-.notBlue
-    cp LEAF
-    jr nz, .printClass
-    ld a, [wOtherTrainerID]
-    cp WIFE
-    jr z, .skipClass
+
+; the following code would not print class for some trainers
+; however the game would crash after credits with this in
+; probably because it used up all the space in the section?
+;    cp KIMONO_GIRL
+;    jr nz, .notKimono
+;    ld a, [wOtherTrainerID]
+;    cp YUNA_1
+;    jr nc, .skipClass
+;    jr .printClass
+;.notKimono
+;    cp COOLTRAINERM
+;    jr nz, .notCool
+;    ld a, [wOtherTrainerID]
+;    cp TOBIAS
+;    jr z, .skipClass
+;    cp MASTER_TOBIAS
+;    jr z, .skipClass
+;    jr .printClass
+;.notCool
+;    cp SAGE
+;    jr nz, .notSage
+;    ld a, [wOtherTrainerID]
+;    cp HENSHIN
+;    jr nc, .skipClass
+;    jr .printClass
+;.notSage
+;    cp RED
+;    jr nz, .notRed
+;    ld a, [wOtherTrainerID]
+;    cp YAMI
+;    jr nc, .skipClass
+;    jr .printClass
+;.notRed
+;    cp BLUE
+;    jr nz, .notBlue
+;    ld a, [wOtherTrainerID]
+;    cp SETO
+;    jr nc, .skipClass
+;    jr .printClass
+;.notBlue
+;    cp LEAF
+;    jr nz, .printClass
+;    ld a, [wOtherTrainerID]
+;    cp WIFE
+;    jr z, .skipClass
 
 .printClass
+    ld a, [wTrainerClass]
 	ld de, wOTClassName
 	call PlaceString
 	ld h, b

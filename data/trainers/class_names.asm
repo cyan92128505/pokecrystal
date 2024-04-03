@@ -64,7 +64,7 @@ TrainerClassNames::
 	li "TWINS"
 	li "#FAN"
 	li "TRAINER"
-	li "CHAMPION"
+	li "TRAINER"
 	li "OFFICER"
 	li "ROCKET"
 	li "MYSTICALMAN"

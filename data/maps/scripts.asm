@@ -178,7 +178,8 @@ INCLUDE "maps/DanceTheatre.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
-INCLUDE "maps/TrainerHouseB1F.asm"
+INCLUDE "maps/ManorInside.asm"
+INCLUDE "maps/PewterPokecenter1F.asm"
 
 SECTION "Map Scripts 12", ROMX
 
@@ -520,5 +521,4 @@ INCLUDE "maps/ManorOutside.asm"
 
 SECTION "Map Scripts Overflow 11", ROMX
 
-INCLUDE "maps/ManorInside.asm"
-INCLUDE "maps/PewterPokecenter1F.asm"
+INCLUDE "maps/TrainerHouseB1F.asm"

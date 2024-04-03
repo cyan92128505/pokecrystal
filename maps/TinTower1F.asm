@@ -35,21 +35,12 @@ TinTower1F_MapScripts:
     disappear TINTOWER1F_EUSINE
     checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
     iffalse .NoClearBell
-	checkevent EVENT_GOT_RAINBOW_WING ; having rainbow wing takes priority
-	iftrue .GotRainbowWing
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .FaceBeasts ; face beasts if the player has not beat the elite 4
-	special BeastsCheck
-	iffalse .FaceBeasts ; face beasts if the player has not caught all beasts
+	setval SUICUNE
+	special MonCheck
+	iftrue .NoClearBell
+	sjump .FaceBeasts
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
-.GotRainbowWing:
-	checkevent EVENT_FOUGHT_HO_OH
-	iffalse .Done
-	appear TINTOWER1F_EUSINE
-    ; if player has rainbow wing eusine will only appear if player has fought ho-oh
-.Done:
-	endcallback
 .NoClearBell
 	disappear TINTOWER1F_SUICUNE
 	disappear TINTOWER1F_RAIKOU
@@ -97,7 +88,7 @@ TinTower1F_MapScripts:
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	endcallback
 
- ; if player has rainbow wing then shoe stairs
+ ; if player has rainbow wing then show stairs
 .StairsCallback:
 	checkevent EVENT_GOT_RAINBOW_WING
 	iftrue .DontHideStairs
@@ -335,7 +326,8 @@ TinTower1FSage3EntersMovement:
 TinTower1FEusineSuicuneText:
 	text "You did it!"
 
-	para "You fought SUICUNE."
+	para "You fought"
+	line "SUICUNE."
 
 	para "You are the"
 	line "chosen one."

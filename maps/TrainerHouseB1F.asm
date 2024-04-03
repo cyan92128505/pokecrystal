@@ -1886,6 +1886,9 @@ BattleArcadeReceptionistScript:
 	end
 
 .FalknerPlayer
+    writetext PlayAsFalknerText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval FALKNER
 	writemem wOtherTrainerClass
 	setval MASTER_FALKNER
@@ -1893,10 +1896,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .FalknerEnemy
+    writetext PlayAgainstFalknerText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer FALKNER, MASTER_FALKNER
     sjump .beginBattle
 
 .BugsyPlayer
+    writetext PlayAsBugsyText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval BUGSY
 	writemem wOtherTrainerClass
 	setval MASTER_BUGSY
@@ -1904,10 +1913,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .BugsyEnemy
+    writetext PlayAgainstBugsyText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer BUGSY, MASTER_BUGSY
     sjump .beginBattle
 
 .WhitneyPlayer
+    writetext PlayAsWhitneyText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval WHITNEY
 	writemem wOtherTrainerClass
 	setval MASTER_WHITNEY
@@ -1915,10 +1930,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .WhitneyEnemy
+    writetext PlayAgainstWhitneyText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer WHITNEY, MASTER_WHITNEY
     sjump .beginBattle
 
 .MortyPlayer
+    writetext PlayAsMortyText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval MORTY
 	writemem wOtherTrainerClass
 	setval MASTER_MORTY
@@ -1926,10 +1947,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .MortyEnemy
+    writetext PlayAgainstMortyText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer MORTY, MASTER_MORTY
     sjump .beginBattle
 
 .ChuckPlayer
+    writetext PlayAsChuckText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval CHUCK
 	writemem wOtherTrainerClass
 	setval MASTER_CHUCK
@@ -1937,10 +1964,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .ChuckEnemy
+    writetext PlayAgainstChuckText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer CHUCK, MASTER_CHUCK
     sjump .beginBattle
 
 .JasminePlayer
+    writetext PlayAsJasmineText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval JASMINE
 	writemem wOtherTrainerClass
 	setval MASTER_JASMINE
@@ -1948,10 +1981,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .JasmineEnemy
+    writetext PlayAgainstJasmineText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer JASMINE, MASTER_JASMINE
     sjump .beginBattle
 
 .PrycePlayer
+    writetext PlayAsPryceText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval PRYCE
 	writemem wOtherTrainerClass
 	setval MASTER_PRYCE
@@ -1959,10 +1998,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .PryceEnemy
+    writetext PlayAgainstPryceText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer PRYCE, MASTER_PRYCE
     sjump .beginBattle
 
 .ClairPlayer
+    writetext PlayAsClairText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval CLAIR
 	writemem wOtherTrainerClass
 	setval MASTER_CLAIR
@@ -1970,10 +2015,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .ClairEnemy
+    writetext PlayAgainstClairText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer CLAIR, MASTER_CLAIR
     sjump .beginBattle
 
 .BrockPlayer
+    writetext PlayAsBrockText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval BROCK
 	writemem wOtherTrainerClass
 	setval MASTER_BROCK
@@ -1981,10 +2032,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .BrockEnemy
+    writetext PlayAgainstBrockText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer BROCK, MASTER_BROCK
     sjump .beginBattle
 
 .MistyPlayer
+    writetext PlayAsMistyText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval MISTY
 	writemem wOtherTrainerClass
 	setval MASTER_MISTY
@@ -1992,10 +2049,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .MistyEnemy
+    writetext PlayAgainstMistyText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer MISTY, MASTER_MISTY
     sjump .beginBattle
 
 .SurgePlayer
+    writetext PlayAsSurgeText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval LT_SURGE
 	writemem wOtherTrainerClass
 	setval MASTER_SURGE
@@ -2003,10 +2066,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .SurgeEnemy
+    writetext PlayAgainstSurgeText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer LT_SURGE, MASTER_SURGE
     sjump .beginBattle
 
 .ErikaPlayer
+    writetext PlayAsErikaText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval ERIKA
 	writemem wOtherTrainerClass
 	setval MASTER_ERIKA
@@ -2014,10 +2083,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .ErikaEnemy
+    writetext PlayAgainstErikaText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer ERIKA, MASTER_ERIKA
     sjump .beginBattle
 
 .JaninePlayer
+    writetext PlayAsJanineText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval JANINE
 	writemem wOtherTrainerClass
 	setval MASTER_JANINE
@@ -2025,10 +2100,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .JanineEnemy
+    writetext PlayAgainstJanineText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer JANINE, MASTER_JANINE
     sjump .beginBattle
 
 .WillPlayer
+    writetext PlayAsWillText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval WILL
 	writemem wOtherTrainerClass
 	setval MASTER_WILL
@@ -2036,10 +2117,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .WillEnemy
+    writetext PlayAgainstWillText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer WILL, MASTER_WILL
     sjump .beginBattle
 
 .BlainePlayer
+    writetext PlayAsBlaineText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval BLAINE
 	writemem wOtherTrainerClass
 	setval MASTER_BLAINE
@@ -2047,10 +2134,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .BlaineEnemy
+    writetext PlayAgainstBlaineText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer BLAINE, MASTER_BLAINE
     sjump .beginBattle
 
 .GiovanniPlayer
+    writetext PlayAsGiovanniText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval GIOVANNI
 	writemem wOtherTrainerClass
 	setval MASTER_GIOVANNI
@@ -2058,10 +2151,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .GiovanniEnemy
+    writetext PlayAgainstGiovanniText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer GIOVANNI, MASTER_GIOVANNI
     sjump .beginBattle
 
 .SabrinaPlayer
+    writetext PlayAsSabrinaText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval SABRINA
 	writemem wOtherTrainerClass
 	setval MASTER_SABRINA
@@ -2069,10 +2168,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .SabrinaEnemy
+    writetext PlayAgainstSabrinaText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer SABRINA, MASTER_SABRINA
     sjump .beginBattle
 
 .BrunoPlayer
+    writetext PlayAsBrunoText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval BRUNO
 	writemem wOtherTrainerClass
 	setval MASTER_BRUNO
@@ -2080,10 +2185,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .BrunoEnemy
+    writetext PlayAgainstBrunoText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer BRUNO, MASTER_BRUNO
     sjump .beginBattle
 
 .KarenPlayer
+    writetext PlayAsKarenText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval KAREN
 	writemem wOtherTrainerClass
 	setval MASTER_KAREN
@@ -2091,10 +2202,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .KarenEnemy
+    writetext PlayAgainstKarenText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer KAREN, MASTER_KAREN
     sjump .beginBattle
 
 .AshPlayer
+    writetext PlayAsAshText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval RED
 	writemem wOtherTrainerClass
 	setval MASTER_ASH
@@ -2102,10 +2219,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .AshEnemy
+    writetext PlayAgainstAshText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer RED, MASTER_ASH
     sjump .beginBattle
 
 .AdamPlayer
+    writetext PlayAsAdamText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval ADAM
 	writemem wOtherTrainerClass
 	setval MASTER_ADAM
@@ -2113,10 +2236,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .AdamEnemy
+    writetext PlayAgainstAdamText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer ADAM, MASTER_ADAM
     sjump .beginBattle
 
 .StevenPlayer
+    writetext PlayAsStevenText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval STEVEN
 	writemem wOtherTrainerClass
 	setval MASTER_STEVEN
@@ -2124,10 +2253,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .StevenEnemy
+    writetext PlayAgainstStevenText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer STEVEN, MASTER_STEVEN
     sjump .beginBattle
 
 .CynthiaPlayer
+    writetext PlayAsCynthiaText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval CYNTHIA
 	writemem wOtherTrainerClass
 	setval MASTER_CYNTHIA
@@ -2135,10 +2270,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .CynthiaEnemy
+    writetext PlayAgainstCynthiaText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer CYNTHIA, MASTER_CYNTHIA
     sjump .beginBattle
 
 .LeonPlayer
+    writetext PlayAsLeonText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval LEON
 	writemem wOtherTrainerClass
 	setval MASTER_LEON
@@ -2146,10 +2287,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .LeonEnemy
+    writetext PlayAgainstLeonText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer LEON, MASTER_LEON
     sjump .beginBattle
 
 .WallacePlayer
+    writetext PlayAsWallaceText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval WALLACE
 	writemem wOtherTrainerClass
 	setval MASTER_WALLACE
@@ -2157,10 +2304,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .WallaceEnemy
+    writetext PlayAgainstWallaceText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer WALLACE, MASTER_WALLACE
     sjump .beginBattle
 
 .LancePlayer
+    writetext PlayAsLanceText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval CHAMPION
 	writemem wOtherTrainerClass
 	setval MASTER_LANCE
@@ -2168,10 +2321,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .LanceEnemy
+    writetext PlayAgainstLanceText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer CHAMPION, MASTER_LANCE
     sjump .beginBattle
 
 .BluePlayer
+    writetext PlayAsBlueText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval BLUE
 	writemem wOtherTrainerClass
 	setval MASTER_BLUE
@@ -2179,10 +2338,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .BlueEnemy
+    writetext PlayAgainstBlueText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer BLUE, MASTER_BLUE
     sjump .beginBattle
 
 .RedPlayer
+    writetext PlayAsRedText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval RED
 	writemem wOtherTrainerClass
 	setval MASTER_RED
@@ -2190,10 +2355,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .RedEnemy
+    writetext PlayAgainstRedText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer RED, MASTER_RED
     sjump .beginBattle
 
 .GreenPlayer
+    writetext PlayAsGreenText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval LEAF
 	writemem wOtherTrainerClass
 	setval MASTER_GREEN
@@ -2201,10 +2372,16 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .GreenEnemy
+    writetext PlayAgainstGreenText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer LEAF, MASTER_GREEN
     sjump .beginBattle
 
 .OakPlayer
+    writetext PlayAsOakText
+    yesorno
+    iffalse .ChoosePlayerCharacter
 	setval POKEMON_PROF
 	writemem wOtherTrainerClass
 	setval MASTER_OAK
@@ -2212,6 +2389,9 @@ BattleArcadeReceptionistScript:
 	special OverridePlayerParty
     sjump .chooseEnemy
 .OakEnemy
+    writetext PlayAgainstOakText
+    yesorno
+    iffalse .ChooseEnemyCharacter
     loadtrainer POKEMON_PROF, MASTER_OAK
     sjump .beginBattle
 
@@ -2355,6 +2535,306 @@ BattleArcadeReceptionistScript:
     db "JN@"
     db "WL@"
     db "BL@"
+
+PlayAsFalknerText:
+    text "Play as"
+    line "LEADER FALKNER?"
+    done
+
+PlayAgainstFalknerText:
+    text "Play against"
+    line "LEADER FALKNER?"
+    done
+
+PlayAsBugsyText:
+    text "Play as"
+    line "LEADER BUGSY?"
+    done
+
+PlayAgainstBugsyText:
+    text "Play against"
+    line "LEADER BUGSY?"
+    done
+
+PlayAsWhitneyText:
+    text "Play as"
+    line "LEADER WHITNEY?"
+    done
+
+PlayAgainstWhitneyText:
+    text "Play against"
+    line "LEADER WHITNEY?"
+    done
+
+PlayAsMortyText:
+    text "Play as"
+    line "LEADER MORTY?"
+    done
+
+PlayAgainstMortyText:
+    text "Play against"
+    line "LEADER MORTY?"
+    done
+
+PlayAsChuckText:
+    text "Play as"
+    line "LEADER CHUCK?"
+    done
+
+PlayAgainstChuckText:
+    text "Play against"
+    line "LEADER CHUCK?"
+    done
+
+PlayAsJasmineText:
+    text "Play as"
+    line "LEADER JASMINE?"
+    done
+
+PlayAgainstJasmineText:
+    text "Play against"
+    line "LEADER JASMINE?"
+    done
+
+PlayAsPryceText:
+    text "Play as"
+    line "LEADER PRYCE?"
+    done
+
+PlayAgainstPryceText:
+    text "Play against"
+    line "LEADER PRYCE?"
+    done
+
+PlayAsClairText:
+    text "Play as"
+    line "LEADER CLAIR?"
+    done
+
+PlayAgainstClairText:
+    text "Play against"
+    line "LEADER CLAIR?"
+    done
+
+PlayAsBrockText:
+    text "Play as"
+    line "LEADER BROCK?"
+    done
+
+PlayAgainstBrockText:
+    text "Play against"
+    line "LEADER BROCK?"
+    done
+
+PlayAsMistyText:
+    text "Play as"
+    line "LEADER MISTY?"
+    done
+
+PlayAgainstMistyText:
+    text "Play against"
+    line "LEADER MISTY?"
+    done
+
+PlayAsSurgeText:
+    text "Play as"
+    line "LEADER SURGE?"
+    done
+
+PlayAgainstSurgeText:
+    text "Play against"
+    line "LEADER SURGE?"
+    done
+
+PlayAsErikaText:
+    text "Play as"
+    line "LEADER ERIKA?"
+    done
+
+PlayAgainstErikaText:
+    text "Play against"
+    line "LEADER ERIKA?"
+    done
+
+PlayAsJanineText:
+    text "Play as"
+    line "LEADER JANINE?"
+    done
+
+PlayAgainstJanineText:
+    text "Play against"
+    line "LEADER JANINE?"
+    done
+
+PlayAsWillText:
+    text "Play as"
+    line "LEADER WILL?"
+    done
+
+PlayAgainstWillText:
+    text "Play against"
+    line "LEADER WILL?"
+    done
+
+PlayAsBlaineText:
+    text "Play as"
+    line "LEADER BLAINE?"
+    done
+
+PlayAgainstBlaineText:
+    text "Play against"
+    line "LEADER BLAINE?"
+    done
+
+PlayAsSabrinaText:
+    text "Play as"
+    line "ELITE 4 SABRINA?"
+    done
+
+PlayAgainstSabrinaText:
+    text "Play against"
+    line "ELITE 4 SABRINA?"
+    done
+
+PlayAsBrunoText:
+    text "Play as"
+    line "ELITE 4 BRUNO?"
+    done
+
+PlayAgainstBrunoText:
+    text "Play against"
+    line "ELITE 4 BRUNO?"
+    done
+
+PlayAsKarenText:
+    text "Play as"
+    line "ELITE 4 KAREN?"
+    done
+
+PlayAgainstKarenText:
+    text "Play against"
+    line "ELITE 4 KAREN?"
+    done
+
+PlayAsGiovanniText:
+    text "Play as"
+    line "LEADER GIOVANNI?"
+    done
+
+PlayAgainstGiovanniText:
+    text "Play against"
+    line "LEADER GIOVANNI?"
+    done
+
+PlayAsOakText:
+    text "Play as"
+    line "PROF OAK?"
+    done
+
+PlayAgainstOakText:
+    text "Play against"
+    line "PROF OAK?"
+    done
+
+PlayAsStevenText:
+    text "Play as"
+    line "CHAMPION STEVEN?"
+    done
+
+PlayAgainstStevenText:
+    text "Play against"
+    line "CHAMPION STEVEN?"
+    done
+
+PlayAsCynthiaText:
+    text "Play as"
+    line "CHAMPION CYNTHIA?"
+    done
+
+PlayAgainstCynthiaText:
+    text "Play against"
+    line "CHAMPION CYNTHIA?"
+    done
+
+PlayAsLeonText:
+    text "Play as"
+    line "CHAMPION LEON?"
+    done
+
+PlayAgainstLeonText:
+    text "Play against"
+    line "CHAMPION LEON?"
+    done
+
+PlayAsWallaceText:
+    text "Play as"
+    line "FUHRER WALLACE?"
+    done
+
+PlayAgainstWallaceText:
+    text "Play against"
+    line "FUHRER WALLACE?"
+    done
+
+PlayAsAdamText:
+    text "Play as"
+    line "MASTER ADAM?"
+    done
+
+PlayAgainstAdamText:
+    text "Play against"
+    line "MASTER ADAM?"
+    done
+
+PlayAsLanceText:
+    text "Play as"
+    line "MASTER LANCE?"
+    done
+
+PlayAgainstLanceText:
+    text "Play against"
+    line "MASTER LANCE?"
+    done
+
+PlayAsGreenText:
+    text "Play as"
+    line "MASTER GREEN?"
+    done
+
+PlayAgainstGreenText:
+    text "Play against"
+    line "MASTER GREEN?"
+    done
+
+PlayAsBlueText:
+    text "Play as"
+    line "MASTER BLUE?"
+    done
+
+PlayAgainstBlueText:
+    text "Play against"
+    line "MASTER BLUE?"
+    done
+
+PlayAsRedText:
+    text "Play as"
+    line "MASTER RED?"
+    done
+
+PlayAgainstRedText:
+    text "Play against"
+    line "MASTER RED?"
+    done
+
+PlayAsAshText:
+    text "Play as"
+    line "MASTER ASH?"
+    done
+
+PlayAgainstAshText:
+    text "Play against"
+    line "MASTER ASH?"
+    done
 
 NeedToSaveText:
     text "You will need to"

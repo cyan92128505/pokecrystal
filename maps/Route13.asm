@@ -303,7 +303,7 @@ HikerKennySeenText:
 	line "world upside down."
 	para "I have done it all"
 	line "for you!"
-	para "I move ths stars"
+	para "I move the stars"
 	line "for no one."
 	done
 

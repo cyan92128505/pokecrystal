@@ -4308,9 +4308,13 @@ AI_Smart_ShellSmash:
 .skipKOCheck
 
 ; is the player behind a sub, then don't use
+    ld b, EFFECT_BATON_PASS
+	call AIHasMoveEffect
+	jr c, .skipSubCheck
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
 	jp nz, StandardDiscourage
+.skipSubCheck
 
 .encourage
 ; this needs to be enough to overcome encouragement from having a move that can KO

@@ -113,7 +113,6 @@ Red:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	special FadeOutMusic
 	opentext
 	writetext RematchRefuseTextRed
 	waitbutton

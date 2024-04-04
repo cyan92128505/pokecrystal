@@ -25,8 +25,7 @@ HallOfOrigin_MapScripts:
 	setval WEATHER_NONE
 	writemem wFieldWeather
 
-    setval ARCEUS
-	special MonCheck
+	checkevent EVENT_CAUGHT_ARCEUS
 	iftrue .hasArceus
     disappear HALLOFORIGIN_OAK
     disappear HALLOFORIGIN_MEWTWO_POKEBALL
@@ -57,15 +56,11 @@ ArceusScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ARCEUS, 100
 	startbattle
-	ifequal LOSE, .lose
 
     setval ARCEUS
 	special MonCheck
 	iftrue .Credits
-	disappear HALLOFORIGIN_ARCEUS
-	reloadmapafterbattle
-	end
-.lose
+
     special HealParty
     reloadmap
     opentext
@@ -2008,8 +2003,8 @@ HallOfOrigin_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 11,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_ARCEUS_APPEARS
-	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_CAUGHT_ARCEUS
+	object_event 11,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_CAUGHT_ARCEUS
+	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_TEMP_EVENT_1
 	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	object_event 13,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
 	object_event 10, 13, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde1Script, EVENT_FIELD_MON_1

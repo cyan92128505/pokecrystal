@@ -13,24 +13,14 @@ RockTunnelB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Darkrai
+	callback MAPCALLBACK_OBJECTS, .fieldMon
 
-.Darkrai
+.fieldMon
     appear ROCKTUNNELB1F_FIELDMON_1
     appear ROCKTUNNELB1F_FIELDMON_2
     appear ROCKTUNNELB1F_FIELDMON_3
     appear ROCKTUNNELB1F_FIELDMON_4
     appear ROCKTUNNELB1F_FIELDMON_5
-
-    setval DARKRAI
-	special MonCheck
-	iftrue .NoAppear
-	sjump .Appear
-.Appear:
-	appear ROCKTUNNELB1F_DARKRAI
-	endcallback
-.NoAppear:
-	disappear ROCKTUNNELB1F_DARKRAI
 	endcallback
 
 RockTunnelB1FIron:
@@ -65,9 +55,16 @@ DarkraiScript:
 	loadwildmon DARKRAI, 50
 .begin
 	startbattle
-	disappear ROCKTUNNELB1F_DARKRAI
 	reloadmapafterbattle
+    setval DARKRAI
+	special MonCheck
+	iftrue .caught
 	end
+.caught
+    setevent EVENT_CAUGHT_DARKRAI
+    disappear ROCKTUNNELB1F_DARKRAI
+    end
+
 DarkraiCry:
     text "DARKRAI!"
     done

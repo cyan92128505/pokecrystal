@@ -155,11 +155,6 @@ GenesectScript:
 .caught
     setevent EVENT_CAUGHT_GENESECT
 	disappear CERULEANCAVE_GENESECT
-	pause 15
-	special FadeInQuickly
-	pause 30
-	special HealParty
-	refreshscreen
 	end
 
 GenesectCry:
@@ -184,11 +179,6 @@ RegigigasScript:
 .caught
     setevent EVENT_CAUGHT_REGIGIGAS
 	disappear CERULEANCAVE_REGIGIGAS
-	pause 15
-	special FadeInQuickly
-	pause 30
-	special HealParty
-	refreshscreen
 	end
 
 RegigigasCry:

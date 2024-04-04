@@ -14,37 +14,6 @@ ElementCave_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .GroudonAndKyogre
-
-.GroudonAndKyogre
-    appear ELEMENTCAVE_FIELDMON_1
-    appear ELEMENTCAVE_FIELDMON_2
-    appear ELEMENTCAVE_FIELDMON_3
-    appear ELEMENTCAVE_FIELDMON_4
-    appear ELEMENTCAVE_FIELDMON_5
-    appear ELEMENTCAVE_FIELDMON_6
-    appear ELEMENTCAVE_FIELDMON_7
-    appear ELEMENTCAVE_FIELDMON_8
-
-	checkevent EVENT_BEAT_HOEN_ARMY
-	iffalse .NoAppear
-    checkevent EVENT_CAUGHT_GROUDON
-    iftrue .NoGroudon
-    checkevent EVENT_CAUGHT_KYOGRE
-    iftrue .NoKyogre
-	appear ELEMENTCAVE_GROUDON
-	appear ELEMENTCAVE_KYOGRE
-	endcallback
-.NoGroudon:
-    disappear ELEMENTCAVE_GROUDON
-    endcallback
-.NoKyogre:
-    disappear ELEMENTCAVE_KYOGRE
-    endcallback
-.NoAppear:
-	disappear ELEMENTCAVE_GROUDON
-	disappear ELEMENTCAVE_KYOGRE
-	endcallback
 
 GroudonScript:
 	faceplayer

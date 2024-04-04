@@ -14,8 +14,7 @@ TinTowerRoof_MapScripts:
 	writemem wFieldWeather
 .skipWeather
 
-	setval HO_OH
-	special MonCheck
+	checkevent EVENT_FOUGHT_HO_OH
 	iftrue .NoAppear
 	checkitem RAINBOW_WING
 	iftrue .Appear
@@ -36,7 +35,6 @@ TinTowerHoOh:
 	cry HO_OH
 	pause 15
 	closetext
-	setevent EVENT_FOUGHT_HO_OH
 
 	checkitem SILVER_WING
 	iffalse .lowerLevel
@@ -54,9 +52,15 @@ TinTowerHoOh:
 	loadwildmon HO_OH, 60
 .begin
 	startbattle
-	disappear TINTOWERROOF_HO_OH
 	reloadmapafterbattle
 	setevent EVENT_SET_WHEN_FOUGHT_HO_OH
+
+	setval HO_OH
+	special MonCheck
+	iftrue .end
+	setevent EVENT_FOUGHT_HO_OH
+	disappear TINTOWERROOF_HO_OH
+.end
 	end
 
 HoOhText:

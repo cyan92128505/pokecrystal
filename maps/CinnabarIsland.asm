@@ -120,6 +120,29 @@ CinnabarIslandSignText:
 	line "Burning Desire"
 	done
 
+ElementCaveBlockScript:
+    checkevent EVENT_BEAT_WALLACE
+    iffalse .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext CinnabarElementCaveBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, Movement_CinnabarTurnBack
+    end
+
+CinnabarElementCaveBlockText:
+    text "The cave entrance"
+    line "is blocked by"
+    cont "rocks for now."
+    done
+
+Movement_CinnabarTurnBack:
+	step DOWN
+	step_end
+
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
@@ -128,6 +151,7 @@ CinnabarIsland_MapEvents:
 	warp_event 14, 5, ELEMENT_CAVE, 1
 
 	def_coord_events
+	coord_event 14, 6, SCENE_ALWAYS, ElementCaveBlockScript
 
 	def_bg_events
 	bg_event 12, 11, BGEVENT_READ, CinnabarIslandPokecenterSign

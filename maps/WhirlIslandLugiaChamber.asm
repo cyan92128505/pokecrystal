@@ -8,8 +8,7 @@ WhirlIslandLugiaChamber_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Lugia
 
 .Lugia:
-	setval LUGIA
-	special MonCheck
+    checkevent EVENT_FOUGHT_LUGIA
 	iftrue .NoAppear
 	checkitem SILVER_WING
 	iftrue .Appear
@@ -30,7 +29,6 @@ Lugia:
 	cry LUGIA
 	pause 15
 	closetext
-	setevent EVENT_FOUGHT_LUGIA
 
 	checkitem RAINBOW_WING
 	iffalse .lowerLevel
@@ -48,8 +46,13 @@ Lugia:
 	loadwildmon LUGIA, 60
 .begin
 	startbattle
-	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
 	reloadmapafterbattle
+	setval LUGIA
+	special MonCheck
+	iffalse .end
+	setevent EVENT_FOUGHT_LUGIA
+	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
+.end
 	end
 
 LugiaText:

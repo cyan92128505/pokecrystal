@@ -110,13 +110,6 @@ ElmsLab_MapScripts:
 	applymovement ELMSLAB_ELM, ElmsLabMovement_ElmReturns
 	turnobject PLAYER, LEFT
 
-;.MustSayYes:
-;	yesorno
-;	iftrue .ElmGetsEmail
-;	writetext ElmText_Refused
-;	sjump .MustSayYes
-;.ElmGetsEmail:
-
     special FadeOutMusic
     opentext
 	writetext ElmText_ResearchAmbitions
@@ -143,56 +136,35 @@ ProfElmScript:
 	iftrue ElmGiveTicketScript
 ElmCheckMasterBall:
 	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
-	iftrue ElmCheckEverstone
+	iftrue ElmConversation
 	checkflag ENGINE_RISINGBADGE
 	iftrue ElmGiveMasterBallScript
-ElmCheckEverstone:
-	checkevent EVENT_GOT_EVERSTONE_FROM_ELM
-	iftrue ElmScript_CallYou
-	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
-	iftrue ElmGiveEverstoneScript
-	checkevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
-	iffalse ElmCheckTogepiEgg
-	setval TOGEPI
-	special FindPartyMonThatSpeciesYourTrainerID
-	iftrue ShowElmTogepiScript
-	setval TOGETIC
-	special FindPartyMonThatSpeciesYourTrainerID
-	iftrue ShowElmTogepiScript
-	writetext ElmThoughtEggHatchedText
-	waitbutton
-	closetext
-	end
-
-ElmEggHatchedScript:
-	setval TOGEPI
-	special FindPartyMonThatSpeciesYourTrainerID
-	iftrue ShowElmTogepiScript
-	setval TOGETIC
-	special FindPartyMonThatSpeciesYourTrainerID
-	iftrue ShowElmTogepiScript
-	sjump ElmCheckGotEggAgain
-
-ElmCheckTogepiEgg:
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
-	iffalse ElmCheckGotEggAgain
-	checkevent EVENT_TOGEPI_HATCHED
-	iftrue ElmEggHatchedScript
-ElmCheckGotEggAgain:
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE ; why are we checking it again?
-	iftrue ElmWaitingEggHatchScript
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue ElmAideHasEggScript
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue ElmStudyingEggScript
-	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
-	iftrue ElmAfterTheftScript
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue ElmDescribesMrPokemonScript
-	writetext ElmText_LetYourMonBattleIt
-	waitbutton
-	closetext
-	end
+ElmConversation:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .beatWallaceText
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iftrue .beatEliteFourText
+    checkevent EVENT_CLEARED_RADIO_TOWER
+    iftrue .clearedRocketsText
+    writetext ElmStandardText
+    waitbutton
+    closetext
+    end
+.beatWallaceText
+    writetext ElmBeatWallaceText
+    waitbutton
+    closetext
+    end
+.beatEliteFourText
+    writetext ElmBeatEliteFourText
+    waitbutton
+    closetext
+    end
+.clearedRocketsText
+    writetext ElmBeatRocketsText
+    waitbutton
+    closetext
+    end
 
 LabTryToLeaveScript:
 	turnobject ELMSLAB_ELM, DOWN
@@ -394,53 +366,6 @@ ElmAfterTheftScript:
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
-	end
-
-ElmStudyingEggScript:
-	writetext ElmStudyingEggText
-	waitbutton
-	closetext
-	end
-
-ElmAideHasEggScript:
-	writetext ElmAideHasEggText
-	waitbutton
-	closetext
-	end
-
-ElmWaitingEggHatchScript:
-	writetext ElmWaitingEggHatchText
-	waitbutton
-	closetext
-	end
-
-ShowElmTogepiScript:
-	writetext ShowElmTogepiText1
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
-	setevent EVENT_SHOWED_TOGEPI_TO_ELM
-	opentext
-	writetext ShowElmTogepiText2
-	promptbutton
-	writetext ShowElmTogepiText3
-	promptbutton
-ElmGiveEverstoneScript:
-	writetext ElmGiveEverstoneText1
-	promptbutton
-	verbosegiveitem EVERSTONE
-	iffalse ElmScript_NoRoomForEverstone
-	writetext ElmGiveEverstoneText2
-	waitbutton
-	closetext
-	setevent EVENT_GOT_EVERSTONE_FROM_ELM
-	end
-
-ElmScript_CallYou:
-	writetext ElmText_CallYou
-	waitbutton
-ElmScript_NoRoomForEverstone:
-	closetext
 	end
 
 ElmGiveMasterBallScript:
@@ -821,6 +746,71 @@ ElmsLabMovement_ElmReturns:
     turn_head RIGHT
     step_end
 
+ElmBeatWallaceText:
+	text "<PLAYER> you have"
+	line "become the"
+	cont "strongest trainer"
+	cont "in the world and a"
+	cont "hero that has"
+	cont "saved all of us"
+	cont "from a life of"
+	cont "war."
+	para "I am deeply"
+	line "honoured to have"
+	cont "watched you grow"
+	cont "up and presented"
+	cont "you with your"
+	cont "first #MON."
+	para "Never stop"
+	line "learning and"
+	cont "growing."
+	done
+
+ElmBeatEliteFourText:
+	text "I can not believe"
+	line "you are the first"
+	cont "CHAMPION of JOHTO."
+	para "That kind of makes"
+	line "you my boss!"
+	para "The world needs"
+	line "people like you."
+	para "Your Mum and Dad"
+	line "need you too."
+	para "Good luck"
+	line "<PLAYER>."
+	done
+
+ElmBeatRocketsText:
+	text "Thank ARCEUS you"
+	line "were available to"
+	cont "deal with those"
+	cont "ROCKETS."
+	para "I don't think any"
+	line "other trainers"
+	cont "around would have"
+	cont "been strong"
+	cont "enough."
+	para "Not even GYM"
+	line "LEADERS."
+	para "You are a"
+	line "remarkable"
+	cont "trainer."
+	done
+
+ElmStandardText:
+	text "It's a wonderful"
+	line "thing to be a"
+	cont "#MON trainer."
+	para "But not all"
+	line "trainers are good."
+	para "Put your faith in"
+	line "your #MON and"
+	cont "yourself."
+	para "You know right"
+	line "from wrong"
+	cont "<PLAYER>."
+	done
+
 ElmText_ThisIsCynthia:
     text "Let me introduce"
     line "you."
@@ -1180,100 +1170,6 @@ ElmAfterTheftText6:
 	para "Before you leave,"
 	line "make sure that you"
 	cont "talk to your Mum."
-	done
-
-ElmStudyingEggText:
-	text "Don't give"
-	line "up! I'll call if"
-
-	para "I learn anything"
-	line "about that EGG!"
-	done
-
-ElmAideHasEggText:
-	text "<PLAY_G>?"
-	line "Didn't you meet my"
-	cont "assistant?"
-
-	para "He should have met"
-	line "you with the EGG"
-
-	para "at VIOLET CITY's"
-	line "#MON CENTER."
-
-	para "You must have just"
-	line "missed him. Try to"
-	cont "catch him there."
-	done
-
-ElmWaitingEggHatchText:
-	text "Hey, has that"
-	line "EGG changed any?"
-	done
-
-ElmThoughtEggHatchedText:
-	text "<PLAY_G>? I thought"
-	line "the EGG hatched."
-
-	para "Where is the"
-	line "#MON?"
-	done
-
-ShowElmTogepiText1:
-	text "<PLAY_G>, you"
-	line "look great!"
-	done
-
-ShowElmTogepiText2:
-	text "What?"
-	line "That #MON!?!"
-	done
-
-ShowElmTogepiText3:
-	text "The EGG hatched!"
-	line "Excellent."
-
-	para "I'm sure your"
-	line "new friend will"
-	cont "be a great help"
-	cont "to you."
-	done
-
-ElmGiveEverstoneText1:
-	text "Thanks, <PLAY_G>!"
-	line "You're helping"
-
-	para "unravel #MON"
-	line "mysteries for us!"
-
-	para "I want you to have"
-	line "this as a token of"
-	cont "our appreciation."
-	done
-
-ElmGiveEverstoneText2:
-	text "That's an"
-	line "EVERSTONE."
-
-	para "Some species of"
-	line "#MON evolve"
-
-	para "when they grow to"
-	line "certain levels."
-
-	para "A #MON holding"
-	line "the EVERSTONE"
-	cont "won't evolve."
-
-	para "Give it to a #-"
-	line "MON you don't want"
-	cont "to evolve."
-	done
-
-ElmText_CallYou:
-	text "<PLAY_G>, I'll"
-	line "call you if any-"
-	cont "thing comes up."
 	done
 
 AideText_ExplainCaps:

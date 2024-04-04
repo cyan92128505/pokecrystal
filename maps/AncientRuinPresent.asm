@@ -52,11 +52,6 @@ YveltalScript:
 .caught
     setevent EVENT_CAUGHT_YVELTAL
 	disappear ANCIENTRUINPRESENT_YVELTAL
-	pause 15
-	special FadeInQuickly
-	pause 30
-	special HealParty
-	refreshscreen
 	end
 
 YveltalCry:

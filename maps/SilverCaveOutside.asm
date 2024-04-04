@@ -176,140 +176,6 @@ MtSilverSignText:
 	text "MT.SILVER"
 	done
 
-;SilverCaveRival:
-;	opentext
-;	checkevent EVENT_BEAT_SILVER_CAVE_RIVAL
-;	iftrue .FightDone
-;.fight
-;	writetext SilverCaveRivalSeenText
-;	waitbutton
-;	closetext
-;	winlosstext SilverCaveRivalBeatenText, SilverCaveRivalBeatenText
-;	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-;	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
-;	startbattle
-;	reloadmapafterbattle
-;	setevent EVENT_BEAT_SILVER_CAVE_RIVAL
-;	special HealParty
-;	end
-;.FightDone:
-;	writetext SilverCaveRivalAfterBattleText
-;	waitbutton
-;   closetext
-;	opentext
-;	writetext RematchTextSilverCave
-;	yesorno
-;	iftrue .fight
-;	writetext RematchRefuseTextSilverCave
-;	waitbutton
-;	closetext
-;	end
-
-;RematchTextSilverCave:
-;    text "Shall we fight?"
-;    done
-
-;RematchRefuseTextSilverCave:
-;    text "Anytime."
-;    done
-
-;SilverCaveRivalSeenText:
-;    text "Hello <PLAYER>"
-
-;    para "We have been"
-;    line "through a lot"
-;    cont "together."
-
-;    para "Haven't we..."
-
-;    para "My #MON"
-;    line "and I are now"
-;    cont "united with a"
-;    cont "single purpose."
-
-;    para "To become all"
-;    line "that we can be."
-
-;    para "We want to thank"
-;    line "you."
-
-;    para "In the only way"
-;    line "we can."
-;    done
-
-;SilverCaveRivalBeatenText:
-;    text "We have a lot"
-;    line "further to"
-;    cont "go."
-;    done
-
-;SilverCaveRivalAfterBattleText:
-;    text "I always wanted"
-;    line "to prove myself"
-;    cont "to my father."
-
- ;   para "I don't care"
- ;   line "about that"
- ;   cont "anymore."
-
-;    para "I am surrounded"
-;    line "by friends who"
-;    cont "I respect far"
-;    cont "more."
-
-;    para "I consider you"
-;    line "one of them."
-;    done
-
-;SilverCaveEusine:
-;	trainer MYSTICALMAN, EUSINE_SILVER_CAVE, EVENT_BEAT_SILVER_CAVE_EUSINE, SilverCaveEusineSeenText, SilverCaveEusineBeatenText, 0, .Script
-
-;.Script:
-;	endifjustbattled
-;	opentext
-;	writetext SilverCaveEusineAfterBattleText
-;	waitbutton
-;	closetext
-;	end
-
-;SilverCaveEusineSeenText:
-;    text "I have been"
-;    line "chosen!"
-
-;    para "Thanks to you."
-
-;    para "SUICUNE has seen"
-;    line "my true value."
-
-;    para "Our bond grows"
-;    line "stronger through"
-;    cont "battle."
-
-;    para "Help me fortify"
-;    line "our bond further!"
-;    done
-
-;SilverCaveEusineBeatenText:
-;    text "We learn more"
-;    line "from defeat."
-;    done
-
-;SilverCaveEusineAfterBattleText:
-;    text "There is a"
-;    line "trainer in the"
-;    cont "cave."
-
-;    para "He defeated me"
-;    line "with just one"
-;    cont "#MON!"
-
-;    para "A PIKACHU of"
-;    line "all things."
-
-;    para "Be careful my"
-;    line "friend."
-;    done
-
 SilverCaveOutsideBlockScript:
     checkevent EVENT_BEAT_RED
     iffalse .block
@@ -467,6 +333,7 @@ SilverCaveRivalsScript:
     applymovement SILVERCAVEOUTSIDE_CRYSTAL, SilverCaveOutsideMovement_CrystalLeaves
     disappear SILVERCAVEOUTSIDE_CRYSTAL
     setmapscene SILVER_CAVE_OUTSIDE, SCENE_FINISHED
+    special HealParty
     end
 
 SilverCaveOutsideMovement_SilverApproaches:

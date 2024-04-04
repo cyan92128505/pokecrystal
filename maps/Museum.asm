@@ -49,11 +49,6 @@ DeoxysScript:
 .caught
     setevent EVENT_CAUGHT_DEOXYS
 	disappear MUSEUM_DEOXYS
-	pause 15
-	special FadeInQuickly
-	pause 30
-	special HealParty
-	refreshscreen
 	end
 
 DeoxysCry:

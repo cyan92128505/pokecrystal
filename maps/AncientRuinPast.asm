@@ -29,12 +29,8 @@ AncientRuinPast_MapScripts:
     endcallback
 
 XerneasScript:
-;	opentext
-;	writetext XerneasCry
-;	waitbutton
 	cry XERNEAS
 	pause 15
-;	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon XERNEAS, 80
 	startbattle

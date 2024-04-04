@@ -175,7 +175,7 @@ AncientTemple_MapEvents:
 	coord_event 11, 12, SCENE_CUSTOM_1, GroudonKyogreBlockScript
 	coord_event 12, 12, SCENE_CUSTOM_1, GroudonKyogreBlockScript
 	coord_event 25, 24, SCENE_CUSTOM_2, PalkiaDialgaBlockScript
-	coord_event 25, 24, SCENE_CUSTOM_2, PalkiaDialgaBlockScript
+	coord_event 26, 24, SCENE_CUSTOM_2, PalkiaDialgaBlockScript
 	coord_event 25, 16, SCENE_CUSTOM_3, RayquazaGiratinaBlockScript
 	coord_event 26, 16, SCENE_CUSTOM_3, RayquazaGiratinaBlockScript
 	coord_event 26,  2, SCENE_CUSTOM_4, XerneasYveltalBlockScript

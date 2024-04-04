@@ -49,10 +49,11 @@ Lugia:
 	reloadmapafterbattle
 	setval LUGIA
 	special MonCheck
-	iffalse .end
+	iftrue .caught
+	end
+.caught
 	setevent EVENT_FOUGHT_LUGIA
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
-.end
 	end
 
 LugiaText:

@@ -21,7 +21,7 @@ MountMortar1FOutside_MapScripts:
     endcallback
 
 MountMortar1FOutsideFieldMon1Script:
-	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_1, MountMortar1FOutsidePokemonAttacksText, 50, 0, .script
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_1, MountMortar1FOutsidePokemonAttacksText, 70, 0, .script
 .script
     disappear MOUNTMORTAR1FOUTSIDE_FIELDMON_1
     end

@@ -5,27 +5,14 @@ TinTowerRoof_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .HoOh
+	callback MAPCALLBACK_OBJECTS, .TTRWeather
 
-.HoOh:
+.TTRWeather:
     checktime NITE
     iftrue .skipWeather
 	setval WEATHER_SUN
 	writemem wFieldWeather
 .skipWeather
-
-	checkevent EVENT_FOUGHT_HO_OH
-	iftrue .NoAppear
-	checkitem RAINBOW_WING
-	iftrue .Appear
-	sjump .NoAppear
-
-.Appear:
-	appear TINTOWERROOF_HO_OH
-	endcallback
-
-.NoAppear:
-	disappear TINTOWERROOF_HO_OH
 	endcallback
 
 TinTowerHoOh:
@@ -57,10 +44,11 @@ TinTowerHoOh:
 
 	setval HO_OH
 	special MonCheck
-	iftrue .end
+	iftrue .caught
+	end
+.caught
 	setevent EVENT_FOUGHT_HO_OH
 	disappear TINTOWERROOF_HO_OH
-.end
 	end
 
 HoOhText:
@@ -78,4 +66,4 @@ TinTowerRoof_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH
+	object_event  9,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_FOUGHT_HO_OH

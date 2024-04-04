@@ -88,7 +88,7 @@ MountMortarB1FKiyoScript:
 	writetext MountMortarB1FReceiveMonText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke LUCARIO, 50
+	givepoke LUCARIO, 60
 	setevent EVENT_GOT_LUCARIO_FROM_KIYO
 .GotLucario:
 	writetext MountMortarB1FKiyoGotLucarioText

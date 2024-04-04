@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE14_POKEFAN_M1
 	const ROUTE14_YOUNGSTER
-	const ROUTE14_KIM
+	;const ROUTE14_KIM
 	const ROUTE14_FIELDMON_1
     const ROUTE14_FIELDMON_2
     const ROUTE14_FIELDMON_3
@@ -68,13 +68,13 @@ Route14FieldMon4Script:
 	disappear ROUTE14_FIELDMON_4
 	end
 
-Kim:
-	faceplayer
-	opentext
-	trade NPC_TRADE_KIM
-	waitbutton
-	closetext
-	end
+;Kim:
+;	faceplayer
+;	opentext
+;	trade NPC_TRADE_KIM
+;	waitbutton
+;	closetext
+;	end
 
 TrainerPokefanmCarter:
 	trainer POKEFANM, CARTER, EVENT_BEAT_POKEFANM_CARTER, PokefanmCarterSeenText, PokefanmCarterBeatenText, 0, .Script
@@ -99,23 +99,30 @@ TrainerBirdKeeperRoy:
 	end
 
 PokefanmCarterSeenText:
-	text "Let me tell you,"
-	line "I had a hard time"
-
-	para "catching my prized"
-	line "#MON."
+	text "The crystals!"
+	para "No..."
+	para "Alternate"
+	line "realities."
+	para "Time travel."
+	para "Dream worlds."
+	para "And of course..."
+	para "Optional bosses!"
 	done
 
 PokefanmCarterBeatenText:
-	text "Awaaah!"
+	text "Game Over."
 	done
 
 PokefanmCarterAfterBattleText:
-	text "SQUIRTLE, CHARMAN-"
-	line "DER and BULBASAUR…"
-
-	para "I think that's a"
-	line "well-balanced mix."
+	text "There will never"
+	line "be a final"
+	cont "fantasy."
+	para "Even after we are"
+	line "gone."
+	para "What we create"
+	line "will live on in"
+	cont "the fantasies of"
+	cont "others."
 	done
 
 BirdKeeperRoySeenText:
@@ -149,10 +156,10 @@ Route14_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 11, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
+	object_event  7,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
 	object_event 11, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRoy, -1
-	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
+	;object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
 	object_event  9, 28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route14FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 15, 15, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route14FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  7, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route14FieldMon3Script, EVENT_FIELD_MON_3
-	object_event  7,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  9,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14FieldMon4Script, EVENT_FIELD_MON_4

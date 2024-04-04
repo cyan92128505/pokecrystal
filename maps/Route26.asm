@@ -283,42 +283,29 @@ Route26FruitTree:
 	fruittree FRUITTREE_ROUTE_26
 
 CooltrainermJakeSeenText:
-	text "The ELITE FOUR"
-	line "are new to JOHTO."
-
-	para "Half of them are"
-	line "from KANTO."
-
-	para "JOHTO should have"
-	line "an all JOHTO"
-	cont "ELITE FOUR."
-
-	para "If only I had"
-	line "all eight BADGES."
-
-	para "...."
-
-	para "As a proud"
-	line "citizen of JOHTO"
-	cont "you must hand"
-	cont "em over."
+	text "I am a legendary"
+	line "trainer!"
+	para "I have a legendary"
+	line "#MON!"
+	para "Do you have one?"
+	para "I didn't think so."
+	para "You don't stand a"
+	line "chance."
 	done
 
 CooltrainermJakeBeatenText:
-	text "For the"
-	line "motherland!"
+	text "But my stats are"
+	line "superior!"
 	done
 
 CooltrainermJakeAfterBattleText:
-	text "LANCE is from"
-	line "JOHTO."
-
-	para "He is CHAMPION"
-	line "of KANTO."
-
-	para "This makes me"
-	line "proud enough"
-	cont "to cry."
+	text "I have no interest"
+	line "in weak ordinary"
+	cont "#MON."
+	para "I'm going to be a"
+	line "legendary trainer"
+	cont "like my hero"
+	cont "TOBIAS."
 	done
 
 CooltrainermGaven3SeenText:

@@ -406,20 +406,15 @@ TinTower1FSage2Text:
 	done
 
 TinTower1FSage3Text:
-	text "The two TOWERS are"
-	line "said to have been"
-
-	para "built to foster"
-	line "friendship and"
-
-	para "hope between #-"
-	line "MON and people."
-
-	para "That was 700 years"
-	line "ago, but the ideal"
-
-	para "still remains"
-	line "important today."
+	text "The stairs to the"
+	line "upper levels"
+	cont "disappeared long"
+	cont "ago."
+	para "It is said they"
+	line "will present"
+	cont "themselves to a"
+	cont "trainer with a"
+	cont "RAINBOW WING."
 	done
 
 TinTower1FSage4Text1:

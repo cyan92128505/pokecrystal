@@ -65,7 +65,7 @@ MasterRivalScript:
 MasterRivalSeenText:
 	text "What took you so"
 	line "long getting here?"
-	para "Did my dad give"
+	para "Did my Dad give"
 	line "you trouble?"
 	para "You haven't"
 	line "changed one bit,"
@@ -734,7 +734,7 @@ MasterAdamAfterBattleText:
 	para "It's a big"
 	line "responsibility"
 	cont "being part of a"
-	cont "world your dad"
+	cont "world your Dad"
 	cont "created."
 	para "I know he is proud"
 	line "of you."
@@ -882,29 +882,29 @@ MewtwoCry:
     cont "world and its"
     cont "beauty."
 
-    para "..."
-
-    para "You say I"
-    line "am part of this"
-    cont "world too."
-
-    para "Perhaps..."
-
-    para "Whether I am"
-    line "or not."
-
-    para "I shall use all"
-    line "my power..."
-
-    para "to defend it."
-    done
+	para "I was not born a"
+	line "#MON I was"
+	cont "created and my"
+	cont "creators used and"
+	cont "betrayed me."
+	para "Behold my powers!"
+	para "I am the most"
+	line "powerful #MON"
+	cont "in the world!"
+	done
 
 MewtwoAfterText:
     text "Life is"
     line "wonderful."
 
-    para "I know you"
-    line "understand."
+	para "The circumstances"
+	line "of ones birth are"
+	cont "irrelevant."
+	para "It is what you do"
+	line "with the gift of"
+	cont "life that"
+	cont "determines who you"
+	cont "are."
 
     para "Now go!"
 

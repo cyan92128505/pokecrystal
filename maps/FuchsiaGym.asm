@@ -256,7 +256,7 @@ JanineText_DisappointYou:
 
 	para "You found me!"
 
-	para "After dad was"
+	para "After Dad was"
 	line "murdered I took"
 	cont "over the GYM."
 

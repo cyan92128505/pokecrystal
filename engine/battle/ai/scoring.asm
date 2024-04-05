@@ -103,6 +103,15 @@ AI_SturdyPokemon:
     db BLASTOISE
     db FERROSEED
     db FERROTHORN
+    db METAPOD
+    db LARVITAR
+    db PUPITAR
+    db HONEDGE
+    db DOUBLADE
+    db PINSIR
+    db BELDUM
+    db METANG
+    db METAGROSS
     db $FF
 
 AI_ClearBodyPokemon:
@@ -4307,7 +4316,7 @@ AI_Smart_ShellSmash:
     jp c, StandardDiscourage
 .skipKOCheck
 
-; is the player behind a sub, then don't use
+; is the player behind a sub, then don't use, unless we have baton pass
     ld b, EFFECT_BATON_PASS
 	call AIHasMoveEffect
 	jr c, .skipSubCheck
@@ -5345,7 +5354,7 @@ INCLUDE "data/battle/ai/useful_moves.asm"
 ; AndrewNote - this used to be AI_Opportunist
 ; this used to discourage 0 power moves if the player is below 1/4 hp
 ; that is no longer needed as AI_Basic now encourages any attack once it can KO the player
-; this no discourages most 0 power moves if the player can KO the AI
+; this discourages most 0 power moves if the player can KO the AI
 AI_Final_Attack:
 ; Discourage stall moves if the player can KO us
     call ShouldAIBoost

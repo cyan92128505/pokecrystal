@@ -146,6 +146,11 @@ ElmConversation:
     iftrue .beatEliteFourText
     checkevent EVENT_CLEARED_RADIO_TOWER
     iftrue .clearedRocketsText
+    checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+    iftrue .standard
+	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
+	iftrue ElmAfterTheftScript
+.standard
     writetext ElmStandardText
     waitbutton
     closetext
@@ -358,14 +363,9 @@ ElmAfterTheftScript:
 	writetext ElmAfterTheftText5
 	promptbutton
 	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	setflag ENGINE_MAIN_MENU_MOBILE_CHOICES
-	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
-	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
-	setevent EVENT_ROUTE_30_BATTLE
 	writetext ElmAfterTheftText6
 	waitbutton
 	closetext
-	setscene SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
 	end
 
 ElmGiveMasterBallScript:
@@ -556,7 +556,12 @@ CopScript:
 	closetext
 	applymovement ELMSLAB_OFFICER, OfficerLeavesMovement
 	disappear ELMSLAB_OFFICER
-	setscene SCENE_ELMSLAB_NOTHING
+	;setscene SCENE_ELMSLAB_NOTHING
+	setflag ENGINE_MAIN_MENU_MOBILE_CHOICES
+	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
+	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
+	setevent EVENT_ROUTE_30_BATTLE
+	setscene SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
 	end
 
 ElmsLabWindow:
@@ -934,7 +939,7 @@ ElmText_ResearchAmbitions:
 
 	para "it's no secret"
 	line "that the #MON"
-	cont "league want to"
+	cont "LEAGUE want to"
 	cont "find strong"
 	cont "trainers to"
 	cont "fight in the"

@@ -110,7 +110,7 @@ PlayersBooksText:
 	text "A photo album lies"
 	line "open."
 	para "Happy pictures of"
-	line "mum and dad stare"
+	line "Mum and Dad stare"
 	cont "up from the page."
 	done
 

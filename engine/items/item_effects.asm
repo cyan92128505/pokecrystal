@@ -269,7 +269,22 @@ PokeBallEffect:
 
 	; AndrewNote - master ball here
 	cp MASTER_BALL
-	jp z, .catch_without_fail
+	jp nz, .notMaster
+
+	ld a, [wEnemyMonSpecies]
+	cp ARCEUS
+	jr z, .destroy
+	cp MEWTWO
+	jr z, .destroy
+	jp .catch_without_fail
+
+.destroy
+    call DeflectBall
+	ld hl, MasterBallDestroyedText
+	call PrintText
+	jp UseDisposableItem
+
+.notMaster
 	ld a, [wCurItem]
 	ld c, a
 	ld hl, BallMultiplierFunctionTable
@@ -411,17 +426,6 @@ PokeBallEffect:
 
 .catch_without_fail
 	ld a, [wEnemyMonSpecies]
-	cp ARCEUS
-	jr z, .destroy
-	cp MEWTWO
-	jr z, .destroy
-	jr .fail_to_catch
-
-.destroy
-    call DeflectBall
-	ld hl, MasterBallDestroyedText
-	call PrintText
-	jp UseDisposableItem
 
 .fail_to_catch
 	ld [wWildMon], a

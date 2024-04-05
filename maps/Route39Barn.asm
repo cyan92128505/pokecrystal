@@ -115,7 +115,7 @@ Route39BarnTwinWereFeedingMoomooText:
 	para "Thank you so much!"
 
 	para "You should go let"
-	line "our mum and dad"
+	line "our Mum and Dad"
 	cont "know!"
 	done
 

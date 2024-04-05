@@ -103,7 +103,7 @@ ElmPhoneDiscoveredPokerusText:
 	cont "affected, in fact"
 	cont "it may even"
 	cont "benefit them."
-	para "You're #MON"
+	para "Your #MON"
 	line "will get over it"
 	cont "shortly."
 	para "Just keep going!"

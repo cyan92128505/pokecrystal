@@ -32,12 +32,9 @@ Museum_MapScripts:
     endcallback
     
 DeoxysScript:
-	opentext
-	writetext DeoxysCry
-	waitbutton
-	cry GENESECT
+	cry DEOXYS
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon DEOXYS, 80
 	startbattle

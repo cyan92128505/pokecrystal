@@ -138,12 +138,9 @@ CeruleanCavePokemonAttacksText:
 	done
 
 GenesectScript:
-	opentext
-	writetext GenesectCry
-	waitbutton
 	cry GENESECT
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GENESECT, 70
 	startbattle
@@ -162,12 +159,9 @@ GenesectCry:
     done
 
 RegigigasScript:
-	opentext
-	writetext RegigigasCry
-	waitbutton
 	cry REGIGIGAS
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon REGIGIGAS, 80
 	startbattle

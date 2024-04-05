@@ -622,7 +622,7 @@ KurtsGranddaughterLonelyText:
 
 KurtsGranddaughterSlowpokeBackText:
 	text "The SLOWPOKE my"
-	line "dad gave me came"
+	line "Dad gave me came"
 	cont "back!"
 
 	para "I thought I"

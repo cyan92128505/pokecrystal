@@ -142,7 +142,7 @@ PokemaniacLarryAfterBattleText:
 
 HikerDanielSeenText:
 	text "I went to ROCK"
-	line "TUNNEL with my dad"
+	line "TUNNEL with my Dad"
 	cont "years ago, I got"
 	cont "lost and made it"
 	cont "out but never"

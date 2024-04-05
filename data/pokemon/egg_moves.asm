@@ -22,15 +22,13 @@ BulbasaurEggMoves:
 CharmanderEggMoves:
 	db BELLY_DRUM
 	db ANCIENTPOWER
-	db ROCK_SLIDE
-	db BITE
+	db CRUNCH
 	db OUTRAGE
 	db -1 ; end
 
 SquirtleEggMoves:
 	db MIRROR_COAT
 	db HAZE
-	db CONFUSION
 	db FORESIGHT
 	db FLAIL
 	db -1 ; end
@@ -45,7 +43,7 @@ RattataEggMoves:
 	db SCREECH
 	db FLAME_WHEEL
 	db FURY_SWIPES
-	db BITE
+	db SHADOW_CLAW
 	db COUNTER
 	db REVERSAL
 	db -1 ; end
@@ -55,7 +53,7 @@ BunearyEggMoves:
 	db FALSE_SWIPE
 	db SCARY_FACE
 	db QUICK_ATTACK
-	db TRI_ATTACK
+	db SUPER_FANG
 	db -1 ; end
 
 EkansEggMoves:
@@ -105,6 +103,8 @@ ZubatEggMoves:
 	db -1 ; end
 
 PawniardEggMoves:
+    db EXTREMESPEED
+    db SPIKES
 	db -1 ; end
 
 ZygardeEggMoves:
@@ -112,11 +112,11 @@ ZygardeEggMoves:
 
 LarvestaEggMoves:
 	db MORNING_SUN
-	db FIRE_BLAST
-	db BUG_BUZZ
+	db SOLARBEAM
 	db -1 ; end
 
 ArctozoltEggMoves:
+    db BLIZZARD
 	db -1 ; end
 
 MeowthEggMoves:
@@ -441,6 +441,8 @@ DrilburEggMoves:
 	db SWORDS_DANCE
 	db EARTHQUAKE
 	db FISSURE
+	db MAGNITUDE
+	db BELLY_DRUM
 	db -1 ; end
 
 VoltikEggMoves:

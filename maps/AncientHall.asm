@@ -80,12 +80,9 @@ AncientHallPokemonAttacksText:
     done
 
 ZygardeScript:
-	opentext
-	writetext ZygardeCry
-	waitbutton
 	cry ZYGARDE
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ZYGARDE, 90
 	startbattle

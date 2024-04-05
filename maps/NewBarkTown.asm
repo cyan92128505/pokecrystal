@@ -267,10 +267,10 @@ Text_TellMomIfLeaving:
 	done
 
 Text_ElmDiscoveredNewMon:
-	text "Yo, <PLAYER>!"
+	text "Hi, <PLAYER>!"
 
 	para "I remember when"
-	line "your dad left"
+	line "your Dad left"
 	cont "for his #MON"
 	cont "training."
 
@@ -279,7 +279,7 @@ Text_ElmDiscoveredNewMon:
 	para "He caught a"
 	line "raging URSARING."
 
-	text "He can take care"
+	para "He can take care"
 	line "of himself."
 	done
 
@@ -569,7 +569,7 @@ Crystal1_ChallengeText:
     line "my first #MON"
     cont "too."
 
-    para "My dad gave it"
+    para "My Dad gave it"
     line "to me."
 
     para "Well you know what"
@@ -611,7 +611,7 @@ Crystal1_SorryText:
     para "I didn't mean to"
     line "be flippant."
 
-    para "I know your dad is"
+    para "I know your Dad is"
     line "missing."
 
     para "War is no joke."

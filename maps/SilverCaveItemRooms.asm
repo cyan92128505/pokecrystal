@@ -166,12 +166,9 @@ SilverCaveItemRoomFieldMon10Script:
 	end
 
 PalkiaScript:
-	faceplayer
-	opentext
-	writetext PalkiaCry
 	cry PALKIA
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon PALKIA, 80
 	startbattle
@@ -190,12 +187,9 @@ PalkiaCry:
     done
 
 DialgaScript:
-	faceplayer
-	opentext
-	writetext DialgaCry
 	cry DIALGA
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon DIALGA, 80
 	startbattle

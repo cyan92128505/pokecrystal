@@ -16,12 +16,9 @@ ElementCave_MapScripts:
 	def_callbacks
 
 GroudonScript:
-	faceplayer
-	opentext
-	writetext GroudonCry
 	cry GROUDON
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GROUDON, 80
 	startbattle
@@ -40,12 +37,8 @@ GroudonCry:
     done
 
 KyogreScript:
-	faceplayer
-	opentext
-	writetext KyogreCry
 	cry KYOGRE
 	pause 15
-	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon KYOGRE, 80
 	startbattle

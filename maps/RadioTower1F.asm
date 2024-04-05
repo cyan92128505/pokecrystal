@@ -657,7 +657,7 @@ RadioTowerCrystalDadText:
     line "strong so we can"
     cont "keep everyone safe"
     cont "including your"
-    cont "dad."
+    cont "Dad."
 
     para "Before we get into"
     line "this let's have a"

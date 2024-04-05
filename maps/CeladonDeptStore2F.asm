@@ -47,7 +47,7 @@ CeladonDeptStore2FPokefanMText:
 
 CeladonDeptStore2FYoungsterText:
 	text "I'm trying to"
-	line "get my dad into"
+	line "get my Dad into"
 	cont "being a trainer."
 
 	para "I think it's"

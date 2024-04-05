@@ -113,7 +113,7 @@ FuchsiaPokecenter1FCooltrainerFText:
 FuchsiaPokecenter1FCooltrainerFText_Invaded:
 	text "I'm sending a"
 	line "message to my"
-	cont "mum..."
+	cont "Mum..."
 
 	para "I love you..."
 

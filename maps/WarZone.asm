@@ -347,7 +347,7 @@ WarZoneCrystalGoodbyeText:
 
     para "You are a hero."
 
-    para "Your dad and mum"
+    para "Your Dad and Mum"
     line "will be so proud"
     cont "of you."
 
@@ -733,7 +733,7 @@ CynthiaSeenText:
     para "He gave an"
     line "impassioned and"
     cont "masterful speech"
-    cont "to the league."
+    cont "to the LEAGUE."
 
     para "It made me ashamed"
     line "for not taking a"
@@ -1277,6 +1277,10 @@ WarZoneBlueText:
     cont "WALLACE."
 
     para "If you lose..."
+
+    para "You wont be coming"
+    line "back at the"
+    cont "#CENTER."
 
     para "He will kill you."
     done

@@ -33,12 +33,9 @@ RockTunnelB1FRevive:
 	itemball REVIVE
 
 DarkraiScript:
-	opentext
-	writetext DarkraiCry
-	waitbutton
 	cry DARKRAI
 	pause 15
-	closetext
+
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .lowerLevel
 	checkevent EVENT_BEAT_WALLACE

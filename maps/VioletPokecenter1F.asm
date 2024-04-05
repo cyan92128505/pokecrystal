@@ -125,6 +125,10 @@ VioletPokecenter1F_ElmsAideScript:
 	giveegg TOGEPI, EGG_LEVEL
 	getstring STRING_BUFFER_4, .eggname
 	scall .AideGivesEgg
+	checkitem MYSTERY_EGG ; just in case
+	iffalse .noEgg
+	takeitem MYSTERY_EGG
+.noEgg
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	clearevent EVENT_ELMS_AIDE_IN_LAB
 	clearevent EVENT_TOGEPI_HATCHED

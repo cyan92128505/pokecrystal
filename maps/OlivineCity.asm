@@ -514,7 +514,7 @@ YunaSeenText:
     para "I can tell you"
     line "are hurting."
 
-    para "You miss your dad."
+    para "You miss your Dad."
 
     para "I miss mine too."
 

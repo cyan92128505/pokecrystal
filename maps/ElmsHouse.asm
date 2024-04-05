@@ -35,7 +35,7 @@ ElmsWifeText:
 ElmsSonText:
 	text "When I grow up,"
 	line "I'm going to help"
-	cont "my dad!"
+	cont "my Dad!"
 
 	para "I'm going to find"
 	line "the strongest"

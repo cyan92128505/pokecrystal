@@ -23,7 +23,7 @@ CeruleanPokecenter1FSuperNerdText:
 	cont "the NORTH."
 
 	para "I wanted to visit"
-	line "BILLS dad but I"
+	line "BILLS Dad but I"
 	cont "can't get past"
 	cont "them all!"
 	done

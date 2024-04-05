@@ -2146,7 +2146,6 @@ SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 15, DEFENSE_CURL
-	db 22, BELLY_DRUM
 	db 25, ROLLOUT
 	db 29, HEADBUTT
 	db 33, BODY_SLAM

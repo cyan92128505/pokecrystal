@@ -16,12 +16,8 @@ TinTowerRoof_MapScripts:
 	endcallback
 
 TinTowerHoOh:
-	faceplayer
-	opentext
-	writetext HoOhText
 	cry HO_OH
 	pause 15
-	closetext
 
 	checkitem SILVER_WING
 	iffalse .lowerLevel

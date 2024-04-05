@@ -23,12 +23,8 @@ WhirlIslandLugiaChamber_MapScripts:
 	endcallback
 
 Lugia:
-	faceplayer
-	opentext
-	writetext LugiaText
 	cry LUGIA
 	pause 15
-	closetext
 
 	checkitem RAINBOW_WING
 	iffalse .lowerLevel

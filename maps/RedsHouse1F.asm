@@ -82,7 +82,7 @@ RedsMomText2:
 	para "And I know nobody"
 	line "can hurt him."
 
-	para "I'm sure your mum"
+	para "I'm sure your Mum"
 	line "misses you."
 
 	para "Visit her when"

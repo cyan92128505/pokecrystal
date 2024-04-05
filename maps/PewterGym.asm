@@ -103,7 +103,7 @@ BrockIntroText:
 	para "The state the"
 	line "people are in."
 
-	para "I lost my dad"
+	para "I lost my Dad"
 	line "and my home in"
 	cont "the incident."
 

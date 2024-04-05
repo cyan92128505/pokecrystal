@@ -35,12 +35,9 @@ AncientRuinPresent_MapScripts:
     endcallback
 
 YveltalScript:
-	opentext
-	writetext YveltalCry
-	waitbutton
 	cry YVELTAL
 	pause 15
-	closetext
+
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon YVELTAL, 80
 	startbattle

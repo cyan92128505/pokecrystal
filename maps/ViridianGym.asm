@@ -200,7 +200,7 @@ WarHasBegunText:
     line "VERMILION."
 
     para "I must contact"
-    line "the league and"
+    line "the LEAGUE and"
     cont "convince them that"
     cont "CHAMPIONS must be"
     cont "allowed to take"

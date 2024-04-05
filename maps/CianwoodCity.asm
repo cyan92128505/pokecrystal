@@ -697,7 +697,7 @@ CameHereToGetMedicine:
     line "which is full of"
     cont "Psychics."
 
-    para "My dad sent me"
+    para "My Dad sent me"
     line "here to escape"
     cont "the war."
 

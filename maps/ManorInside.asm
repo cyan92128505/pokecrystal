@@ -826,7 +826,7 @@ ManorFact1Text:
 	text "The first thing"
 	line "created for this"
 	cont "romhack was ARCEUS"
-	cont "and it's unique"
+	cont "and its unique"
 	cont "mechanics."
 
 	para "ARCEUS has more"

@@ -655,7 +655,7 @@ SilverCaveSilverYouRightText:
 SilverCaveSilverGoodbyeText:
     text "You should go"
     line "back too and see"
-    cont "your mum and dad."
+    cont "your Mum and Dad."
 
     para "But not before"
     line "you waltz in there"

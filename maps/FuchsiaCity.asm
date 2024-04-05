@@ -731,6 +731,24 @@ FuchsiaSelfText6:
     cont "will be safe."
     done
 
+FuchsiaHoenInvadedBlockScript:
+    checkevent EVENT_HOEN_INVASION_UNDERWAY
+    iftrue .block
+    end
+.block
+    turnobject PLAYER, UP
+	opentext
+	writetext FuchsiaBlockText
+    waitbutton
+    closetext
+    applymovement PLAYER, FuchsiaMovement_PlayerDown
+    end
+
+FuchsiaBlockText:
+    text "The door is locked"
+    done
+
+
 FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -751,6 +769,7 @@ FuchsiaCity_MapEvents:
 	def_coord_events
 	coord_event 8, 28, SCENE_ALWAYS, FuchsiaGymBlockScript
 	coord_event 18, 4, SCENE_ALWAYS, WarZoneAndSelfScript
+	coord_event 11, 28, SCENE_ALWAYS, FuchsiaHoenInvadedBlockScript
 
 	def_bg_events
 	bg_event 21, 15, BGEVENT_READ, FuchsiaCitySign

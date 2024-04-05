@@ -982,6 +982,7 @@ MasterChuckSeenText:
 MasterChuckBeatenText:
 	text "You're a SUPER"
 	line "SAIYAN!"
+	done
 
 MasterChuckWinText:
     text "Have a SENZU."

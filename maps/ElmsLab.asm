@@ -148,6 +148,8 @@ ElmConversation:
     iftrue .clearedRocketsText
     checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
     iftrue .standard
+    checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+    iftrue .standard
 	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iftrue ElmAfterTheftScript
 .standard

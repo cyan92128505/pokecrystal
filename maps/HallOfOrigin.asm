@@ -256,7 +256,7 @@ ReceivedMewtwoText:
 
 MustBeatOakText:
     text "I must defeat"
-    line "MASTER OAK!"
+    line "LORD OAK!"
     done
 
 MasterOakScript:

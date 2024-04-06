@@ -93,7 +93,7 @@ BattleCommand_Transform:
 	cp SKETCH
 	ld a, 1
 	jr z, .done_move
-	ld a, 5
+	ld a, 10
 .done_move
 	ld [hli], a
 	dec b

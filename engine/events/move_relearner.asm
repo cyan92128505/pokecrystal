@@ -38,8 +38,8 @@ MoveRelearner:
 	jr z, .no_moves_to_learn
 
 	; Loads and prints the "MoveReminderWhichMoveText" text.
-	;ld hl, MoveReminderWhichMoveText
-	;call PrintText
+	ld hl, MoveReminderWhichMoveText
+	call PrintText
 
 	; Generates the Move Reminder's menu. Relative jump to the
 	; ".exit_menu" local jump if the player leaves
@@ -688,15 +688,14 @@ MoveReminderWhichMonText:
 ; a Pokémon has been selected.
 MoveReminderWhichMoveText:
 	text "Which move should"
-	line "it remember, then?"
+	line "be remembered?"
 	prompt
 
 ; This is the text that displays just before
 ; the player ends the dialogue
 ; with the move reminder.
 MoveReminderCancelText:
-	text "Come visit me"
-	line "again."
+	text "Move recalled!"
 	done
 
 ; This is the text that displays if the player

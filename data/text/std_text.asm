@@ -43,7 +43,7 @@ NurseInvadeText:
 
 NurseLordText:
 	text "My..."
-	para "My lord, I am not"
+	para "My LORD, I am not"
 	line "worthy."
 	para "I am moved to be"
 	line "granted the"

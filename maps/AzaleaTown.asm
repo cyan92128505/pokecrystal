@@ -720,6 +720,10 @@ YuGiOhRolePlayScript:
 	reloadmap
 
 .endYuGiOh
+	opentext
+	writetext YuGiOhRolePlayFinalText
+	waitbutton
+	closetext
     playmusic MUSIC_AZALEA_TOWN
 
     checkevent EVENT_BEAT_ROLEPLAY_2
@@ -732,10 +736,6 @@ YuGiOhRolePlayScript:
     setevent EVENT_BEAT_ROLEPLAY_2
 .skipPrize
 
-	opentext
-	writetext YuGiOhRolePlayFinalText
-	waitbutton
-	closetext
 	opentext
 	writetext YuGiOhRolePlayEndText
 	waitbutton

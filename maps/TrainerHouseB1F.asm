@@ -1108,7 +1108,7 @@ BattleTrialReceptionistScript:
 	end
 .ImpossibleMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 12, 8
+	menu_coords 0, 0, 12, 7
 	dw .ImpossibleMenuData
 	db 1 ; default option
 .ImpossibleMenuData:
@@ -1271,7 +1271,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer KIMONO_GIRL, AERITH_1
+    loadtrainer MORTY, MORTY1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1281,7 +1281,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer MORTY, MORTY1
+    loadtrainer KIMONO_GIRL, YUNA_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1291,7 +1291,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer KIMONO_GIRL, YUNA_1
+    loadtrainer KIMONO_GIRL, AERITH_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -2931,7 +2931,7 @@ ExplainImpossibleTrialText:
 WhatTrialText:
     text "Which Trial do"
     line "you want to take."
-    done
+    prompt
 
 BattleMirrorIntroText:
     text "Welcome to the"

@@ -347,6 +347,18 @@ TeamRocketBaseB3FRocketText:
 
 	para "Terrifying"
 	line "power..."
+
+	para "The password..."
+
+	para "The password is..."
+
+	para "Blasto!"
+
+	para "Heh heh heh..."
+
+	para "Owwwww!"
+
+	para "The pain!"
 	done
 
 RocketBaseRivalText:
@@ -565,18 +577,18 @@ GruntM28AfterBattleText:
 	done
 
 ScientistRossSeenText:
-	text "Fascinating."
+	text "The synaptic"
+	line "response to"
+	cont "severe pain is"
+	cont "quite different"
+	cont "between human and"
+	cont "#MON."
 
-	para "The neural"
-	line "dynamics induced"
-	cont "by the stimulus"
-	cont "exceeds what"
-	cont "any model could"
-	cont "have predicted."
+	para "It's a fascinating"
+	line "topic."
 
-	para "I wonder how a"
-	line "human subject"
-	cont "would react."
+	para "I shall enlighten"
+	line "you."
 	done
 
 ScientistRossBeatenText:
@@ -585,14 +597,14 @@ ScientistRossBeatenText:
 	done
 
 ScientistRossAfterBattleText:
-	text "You would make a"
-	line "poor subject."
+	text "The pain you"
+	line "inflicted upon"
+	cont "my #MON"
+	cont "is fascinating"
+	cont "to me."
 
-	para "The experiment is"
-	line "a success."
-
-	para "My promotion is"
-	line "assured!"
+	para "How can you not"
+	line "be interested?"
 	done
 
 ScientistMitchSeenText:

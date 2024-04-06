@@ -1186,11 +1186,10 @@ LOTREndText:
     done
     
 LOTRBreakText:
-    text "Do you need to"
-    line "go or would you"
-    cont "like to continue"
-    cont "to the second"
-    cont "half of the story?"
+    text "Would you like to"
+    line "continue to the"
+    cont "second half of"
+    cont "the story?"
     done
 
 LOTRBonusRoundText:

@@ -1152,7 +1152,7 @@ StarWarsRolePlayScript:
 	setval SW_CH6_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_EPIC_TETRIS
+	setval MUSIC_HOEN_CHAMPION
 	writemem wBattleMusicOverride
 	winlosstext StarWarsVictoryText, StarWarsDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -1284,7 +1284,7 @@ StarWarsRolePlayScript:
 	setval SW_CH6_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_EPIC_TETRIS
+	setval MUSIC_HOEN_CHAMPION
 	writemem wBattleMusicOverride
 	winlosstext StarWarsVictoryText, StarWarsDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER

@@ -398,226 +398,226 @@ _BTWinM25Text:
 	done
 
 _BTGreetingF1Text:
-	text "OK, I'm not"
-	line "fooling around!"
+	text "Don't make me"
+	line "destroy you!"
 	done
 
 _BTLossF1Text:
-	text "Yay! Too easy!"
-	line "Like, no way!"
+	text "I think not!"
 	done
 
 _BTWinF1Text:
-	text "No!"
-	line "Like, no way!"
+	text "The force is"
+	line "strong with you."
 	done
 
 _BTGreetingF2Text:
-	text "Look! My #MON"
-	line "are really cute!"
+	text "I warn you, I'm"
+	line "really good at"
+	cont "#MON."
 	done
 
 _BTLossF2Text:
-	text "Aren't they really"
-	line "adorable?"
+	text "Told ya."
 	done
 
 _BTWinF2Text:
-	text "I'm sorry, it's"
-	line "all my fault!"
+	text "Ok OK, settle down"
+	line "bro."
 	done
 
 _BTGreetingF3Text:
-	text "Let's get our"
-	line "battle started!"
+	text "My ELO depends on"
+	line "this match!"
 	done
 
 _BTLossF3Text:
-	text "Was I too strong"
-	line "for you?"
+	text "Nice, I'm in the"
+	line "top 100 now."
 	done
 
 _BTWinF3Text:
-	text "Ooh, you're in a"
-	line "different class."
+	text "I lost so many"
+	line "points!"
 	done
 
 _BTGreetingF4Text:
-	text "Are we going to"
-	line "battle? Let's!"
+	text "Listen, could you"
+	line "just let me win?"
 	done
 
 _BTLossF4Text:
-	text "Oh, you're too"
-	line "weak. Shame."
+	text "Thanks buddy!"
 	done
 
 _BTWinF4Text:
-	text "Wow! Are you quite"
-	line "satisfied?"
+	text "My precious win"
+	line "streak!"
 	done
 
 _BTGreetingF5Text:
-	text "Oh, you have some"
-	line "rare #MON."
+	text "You're going to"
+	line "get rekt!"
 	done
 
 _BTLossF5Text:
-	text "May I have one of"
-	line "your #MON?"
+	text "GG scrub."
 	done
 
 _BTWinF5Text:
-	text "…I want one of"
-	line "your #MON."
+	text "Such Lag!"
 	done
 
 _BTGreetingF6Text:
-	text "Want to hear about"
-	line "my cute #MON?"
+	text "I've been doing"
+	line "this my whole"
+	cont "life."
 	done
 
 _BTLossF6Text:
-	text "What do you think"
-	line "about my cuties?"
+	text "Those years have"
+	line "payed off."
 	done
 
 _BTWinF6Text:
-	text "Oh! My! You're a"
-	line "dreadful trainer!"
+	text "Give me back my"
+	line "youth!"
 	done
 
 _BTGreetingF7Text:
-	text "Battle? Sure!"
-	line "Right now!"
+	text "I'll kill you!"
 	done
 
 _BTLossF7Text:
-	text "Oh, I love it!"
-	line "Battling is wild!"
+	text "Too many roids!"
 	done
 
 _BTWinF7Text:
-	text "Oh, how rude! Wait"
-	line "till next time!"
+	text "I need my meds."
 	done
 
 _BTGreetingF8Text:
-	text "Please let me win!"
-	line "Please?"
+	text "I have devised a"
+	line "perfect strategy."
 	done
 
 _BTLossF8Text:
-	text "Wow, thank you!"
-	line "You're so nice!"
+	text "I don't think you"
+	line "understand."
 	done
 
 _BTWinF8Text:
-	text "You're mean!"
-	line "I hate meanies!"
+	text "You have no"
+	line "semblance of"
+	cont "strategy."
+	para "You #MON are"
+	line "broken."
 	done
 
 _BTGreetingF9Text:
-	text "Well, can we"
-	line "begin?"
+	text "What's your rating"
+	line "bro?"
+	para "I'm a cool 1600."
 	done
 
 _BTLossF9Text:
-	text "Well, I beg your"
-	line "pardon…"
+	text "Why am I getting"
+	line "paired with noobs?"
 	done
 
 _BTWinF9Text:
-	text "Sob… That's not"
-	line "fair!"
+	text "You're top ladder"
+	line "material!"
 	done
 
 _BTGreetingF10Text:
-	text "I'm good!"
-	line "You can't win."
+	text "I've never"
+	line "finished all 4"
+	cont "battles before."
 	done
 
 _BTLossF10Text:
-	text "Giving up? You're"
-	line "pretty weak!"
+	text "Today is the day!"
 	done
 
 _BTWinF10Text:
-	text "I won't accept"
-	line "this… No way!"
+	text "Story of my"
+	line "life..."
 	done
 
 _BTGreetingF11Text:
-	text "Are you treating"
-	line "this seriously?"
+	text "I'm a total noob,"
+	line "please be gentle."
 	done
 
 _BTLossF11Text:
-	text "Oh, sorry! Looks"
-	line "like I won!"
+	text "I won?"
+	para "I won!!"
 	done
 
 _BTWinF11Text:
-	text "Oh, how nasty!"
-	line "You were serious!"
+	text "You are a horrible"
+	line "troll."
 	done
 
 _BTGreetingF12Text:
-	text "Ahahah! I'll take"
-	line "it easy on you!"
+	text "GL HF"
 	done
 
 _BTLossF12Text:
-	text "Oops, sorry! But"
-	line "I'm happy too!"
+	text "GG"
 	done
 
 _BTWinF12Text:
-	text "Oh, oh, I lost!"
-	line "Thanks. Bye!"
+	text "GG"
 	done
 
 _BTGreetingF13Text:
-	text "BATTLE TOWER is a"
-	line "tough place!"
+	text "Just give up noob."
+	line "You can't win"
 	done
 
 _BTLossF13Text:
-	text "You might have a"
-	line "hard time."
+	text "Should have thrown"
+	line "in the towel."
 	done
 
 _BTWinF13Text:
-	text "Ooh, you might"
-	line "make a run here!"
+	text "You're really"
+	line "good."
+	para "Teach me!"
 	done
 
 _BTGreetingF14Text:
-	text "I want to see your"
-	line "style in action!"
+	text "I am the chosen"
+	line "one."
+	para "Behold my power!"
 	done
 
 _BTLossF14Text:
-	text "Every battle is a"
-	line "drama!"
+	text "Unlimited power!!"
 	done
 
 _BTWinF14Text:
-	text "Oh… Want to trade"
-	line "something?"
+	text "But the prophesy!"
 	done
 
 _BTGreetingF15Text:
-	text "OK, here goes!"
-	line "I have momentum!"
+	text "This meta is so"
+	line "unbalanced."
+	para "We need to ban"
+	line "some stuff!"
 	done
 
 _BTLossF15Text:
-	text "See, I rolled"
-	line "right over you!"
+	text "You see now how"
+	line "uncompetitive this"
+	cont "is."
 	done
 
 _BTWinF15Text:
-	text "No! This did not"
-	line "happen!"
+	text "This is what I"
+	line "mean."
+	para "Those #MON are"
+	line "broken."
 	done

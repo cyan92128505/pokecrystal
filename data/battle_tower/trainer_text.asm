@@ -510,8 +510,8 @@ _BTWinF8Text:
 	text "You have no"
 	line "semblance of"
 	cont "strategy."
-	para "You #MON are"
-	line "broken."
+	para "Your #MON"
+	line "are broken."
 	done
 
 _BTGreetingF9Text:

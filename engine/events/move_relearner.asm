@@ -728,7 +728,5 @@ MoveReminderNoMovesText:
 ; This is the text that displays after a
 ; Pokémon successfully learns a move.
 MoveReminderMoveLearnedText:
-	text "Done! Your #MON"
-	line "remembered the"
-	cont "move."
-	done
+	text "Move recalled."
+	prompt

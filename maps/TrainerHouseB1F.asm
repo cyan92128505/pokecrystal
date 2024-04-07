@@ -42,7 +42,7 @@ BattleRouletteReceptionistScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 
 .sample
-    random 47
+    random 48
     ifequal 0, .Brock
     ifequal 1, .Misty
     ifequal 2, .Surge
@@ -90,6 +90,7 @@ BattleRouletteReceptionistScript:
     ifequal 44, .Crystal
     ifequal 45, .Dad
     ifequal 46, .Oak
+    ifequal 47, .Hoen
 
 .finish
 	startbattle
@@ -668,6 +669,10 @@ BattleRouletteReceptionistScript:
     checkevent EVENT_BEAT_OAK
     iffalse .sample
     loadtrainer POKEMON_PROF, OAK
+    sjump .finish
+
+.Hoen
+    loadtrainer SOLDIER, SOLDIER_SPY
     sjump .finish
 
 .Declined:
@@ -3177,6 +3182,9 @@ BattleRouletteIntroText:
 	line "battle a random"
 	cont "memorable enemy"
 	cont "you have beaten."
+
+	para "And maybe some"
+	line "you haven't."
 
 	para "You will receive"
 	line "a random prize"

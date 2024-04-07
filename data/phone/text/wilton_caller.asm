@@ -39,7 +39,7 @@ WiltonBattleRematchText:
 	line "my #MON to"
 	cont "tenderise them."
 	para "Get over here and"
-	line "lets have a"
+	line "let's have a"
 	cont "battle."
 
 	para "I'm fishing on"

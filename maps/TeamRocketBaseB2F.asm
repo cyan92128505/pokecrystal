@@ -977,7 +977,7 @@ RocketBaseBossRetreatText:
     line "experiments have"
     cont "been a success."
 
-    para "You're small"
+    para "Your small"
     line "victory here"
     cont "means nothing."
 	done

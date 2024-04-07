@@ -740,7 +740,7 @@ MasterBugsyWinText:
 MasterBugsyAfterBattleText:
 	text "We come from small"
 	line "towns, remember"
-	cont "who your were in"
+	cont "who you were in"
 	cont "that small town."
 	para "That's who you"
 	line "fight for."

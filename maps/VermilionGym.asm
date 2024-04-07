@@ -207,7 +207,7 @@ LtSurgeSingAndBattle:
 	para "Man that has me"
 	line "in the mood."
 
-	para "Lets FIGHT!"
+	para "Let's FIGHT!"
 	done
 
 LtSurgeFineThenText:

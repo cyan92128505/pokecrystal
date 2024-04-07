@@ -450,7 +450,7 @@ CooltrainermRyanBeatenText:
 	done
 
 CooltrainermRyanAfterBattleText:
-	text "You're #MON"
+	text "Your #MON"
 	line "are cool and all."
 
 	para "I just can't"

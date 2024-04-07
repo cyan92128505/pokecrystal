@@ -52,7 +52,7 @@ ViridianPokecenter1FCooltrainerMText_BlueReturned:
 	para "BLUE told us all"
 	line "about you."
 
-	para "You're battle"
+	para "Your battle"
 	line "with WALLACE is"
 	cont "LEGENDARY!"
 

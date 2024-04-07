@@ -302,7 +302,7 @@ WarZoneSilverText:
     done
 
 WarZoneCrystalText:
-    text "You're people"
+    text "Your people"
     line "deserve better."
 
     para "<PLAYER> has"
@@ -389,7 +389,7 @@ WallaceSeenText:
     para "Such a perfect"
     line "story."
 
-    para "You're great"
+    para "Your great"
     line "moment is now"
     cont "upon you."
 

@@ -141,7 +141,7 @@ Text_ClairIsOut:
 	cont "DRAGONS DEN."
 
 	para "She is a very"
-	line "bust woman."
+	line "busy woman."
 
 	para "I'm afraid she"
 	line "doesn't have time"

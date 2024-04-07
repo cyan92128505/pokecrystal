@@ -255,13 +255,17 @@ CatchingTutorialIntroText:
 	done
 
 CatchingTutorialDebriefText:
-	text "To catch a"
-	line "#MON you"
-	cont "need to weaken"
-	cont "it then throw"
-	cont "a POKEBALL from"
-	cont "the ITEMS menu"
-	cont "in battle."
+	text "When you're"
+	line "outside you never"
+	cont "know what the"
+	cont "weather will be."
+	para "It could be sunny"
+	line "or raining or it"
+	cont "could be mild."
+	para "It's random and"
+	line "seems to change"
+	cont "when you enter an"
+	cont "area."
 	done
 
 Route29YoungsterText:

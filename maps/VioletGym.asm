@@ -269,7 +269,7 @@ FalknerFightDoneText:
 	cont "along the way."
 
 	para "Many people will"
-	line "give you advise"
+	line "give you advice"
 	cont "and try to mold"
 	cont "you as they want."
 
@@ -284,7 +284,7 @@ FalknerFightDoneText:
 	para "And I must be"
 	line "strong enough to"
 	cont "take my own"
-	cont "advise."
+	cont "advice."
 
 	para "Good luck!"
 	done
@@ -368,7 +368,7 @@ VioletGymGuideText:
 VioletGymGuideWinText:
 	text "Nice battle!"
 
-	para "My advise was"
+	para "My advice was"
 	line "solid."
 
 	para "Stick with me"

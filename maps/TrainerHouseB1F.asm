@@ -91,6 +91,7 @@ BattleRouletteReceptionistScript:
     ifequal 45, .Dad
     ifequal 46, .Oak
     ifequal 47, .Hoen
+    sjump .sample
 
 .finish
 	startbattle
@@ -517,8 +518,6 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Henshin
-    checkevent EVENT_BEAT_HENSHIN
-    iffalse .sample
     loadtrainer SAGE, HENSHIN
     sjump .finish
 

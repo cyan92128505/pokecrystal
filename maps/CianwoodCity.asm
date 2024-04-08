@@ -950,6 +950,10 @@ ThanksHereIsTm:
     cont "called KITTY"
     cont "here."
 
+    para "Don't worry KITTYS"
+    line "trainer doesn't"
+    cont "mind."
+
     para "You might have"
     line "latent Psychic"
     cont "powers too."

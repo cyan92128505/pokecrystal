@@ -1137,6 +1137,16 @@ StarWarsRolePlayScript:
     waitbutton
     closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_1
+    iftrue .skipPrizeHero
+    opentext
+    writetext RolePlay1PrizeText
+    waitbutton
+    verbosegiveitem MUSCLE_BAND
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_1
+.skipPrizeHero
+
     opentext
     writetext StarWarsBonusRoundText
     yesorno
@@ -1269,6 +1279,16 @@ StarWarsRolePlayScript:
     waitbutton
     closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_1
+    iftrue .skipPrizeVillain
+    opentext
+    writetext RolePlay1PrizeText
+    waitbutton
+    verbosegiveitem MUSCLE_BAND
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_1
+.skipPrizeVillain
+
     opentext
     writetext StarWarsBonusRoundText
     yesorno
@@ -1294,16 +1314,6 @@ StarWarsRolePlayScript:
 
 .end
     playmusic MUSIC_CHERRYGROVE_CITY
-
-    checkevent EVENT_BEAT_ROLEPLAY_1
-    iftrue .skipPrize
-    opentext
-    writetext RolePlay1PrizeText
-    waitbutton
-    verbosegiveitem MUSCLE_BAND
-    closetext
-    setevent EVENT_BEAT_ROLEPLAY_1
-.skipPrize
 
 	opentext
 	writetext StarWarsRolePlayEndText

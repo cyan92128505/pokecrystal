@@ -163,7 +163,7 @@ FarmerFText_InTrouble:
     line "packed with"
     cont "nutrients."
 
-	text "Our milk even goes"
+	para "Our milk even goes"
 	line "out to KANTO."
 
 	para "With MILTANK"

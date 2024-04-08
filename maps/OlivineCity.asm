@@ -714,6 +714,16 @@ DBZRolePlayScript:
 	waitbutton
 	closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_3
+    iftrue .skipPrizeGokuHero
+    opentext
+    writetext RolePlay3PrizeText
+    waitbutton
+    verbosegiveitem FOCUS_SASH
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_3
+.skipPrizeGokuHero
+
     opentext
     writetext DBZBonusRoundText
     yesorno
@@ -748,6 +758,16 @@ DBZRolePlayScript:
 	writetext DBZConcText
 	waitbutton
 	closetext
+
+    checkevent EVENT_BEAT_ROLEPLAY_3
+    iftrue .skipPrizeVegetaHero
+    opentext
+    writetext RolePlay3PrizeText
+    waitbutton
+    verbosegiveitem FOCUS_SASH
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_3
+.skipPrizeVegetaHero
 
     opentext
     writetext DBZBonusRoundText
@@ -895,6 +915,16 @@ DBZRolePlayScript:
 	waitbutton
 	closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_3
+    iftrue .skipPrizeGokuVillain
+    opentext
+    writetext RolePlay3PrizeText
+    waitbutton
+    verbosegiveitem FOCUS_SASH
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_3
+.skipPrizeGokuVillain
+
     opentext
     writetext DBZBonusRoundText
     yesorno
@@ -930,6 +960,16 @@ DBZRolePlayScript:
 	waitbutton
 	closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_3
+    iftrue .skipPrizeVegetaVillain
+    opentext
+    writetext RolePlay3PrizeText
+    waitbutton
+    verbosegiveitem FOCUS_SASH
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_3
+.skipPrizeVegetaVillain
+
     opentext
     writetext DBZBonusRoundText
     yesorno
@@ -956,16 +996,6 @@ DBZRolePlayScript:
 
 .DBZEnd
     playmusic MUSIC_VIOLET_CITY
-
-    checkevent EVENT_BEAT_ROLEPLAY_3
-    iftrue .skipPrize
-    opentext
-    writetext RolePlay3PrizeText
-    waitbutton
-    verbosegiveitem FOCUS_SASH
-    closetext
-    setevent EVENT_BEAT_ROLEPLAY_3
-.skipPrize
 
 	opentext
 	writetext DBZRolePlayEndText

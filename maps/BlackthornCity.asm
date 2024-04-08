@@ -500,6 +500,16 @@ LOTRRolePlayScript:
     waitbutton
     closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_4
+    iftrue .skipPrizeHero
+    opentext
+    writetext RolePlay4PrizeText
+    waitbutton
+    verbosegiveitem CHOICE_BAND
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_4
+.skipPrizeHero
+
     opentext
     writetext LOTRBonusRoundText
     yesorno
@@ -637,6 +647,16 @@ LOTRRolePlayScript:
     waitbutton
     closetext
 
+    checkevent EVENT_BEAT_ROLEPLAY_4
+    iftrue .skipPrizeVillain
+    opentext
+    writetext RolePlay4PrizeText
+    waitbutton
+    verbosegiveitem CHOICE_BAND
+    closetext
+    setevent EVENT_BEAT_ROLEPLAY_4
+.skipPrizeVillain
+
     opentext
     writetext LOTRBonusRoundText
     yesorno
@@ -662,16 +682,6 @@ LOTRRolePlayScript:
 
 .end
     playmusic MUSIC_AZALEA_TOWN
-
-    checkevent EVENT_BEAT_ROLEPLAY_4
-    iftrue .skipPrize
-    opentext
-    writetext RolePlay4PrizeText
-    waitbutton
-    verbosegiveitem CHOICE_BAND
-    closetext
-    setevent EVENT_BEAT_ROLEPLAY_4
-.skipPrize
 
 	opentext
 	writetext LOTRRolePlayEndText

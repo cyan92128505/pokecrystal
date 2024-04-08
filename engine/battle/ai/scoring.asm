@@ -372,19 +372,19 @@ AI_Basic:
 ; don't encourage explosion as much
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
-	jr z, .lesserEncouragement
+	jr z, .explodeOrHeal
 
 ; don't encourage recoil moves as much
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RECOIL_HIT
-	jr z, .lesserEncouragement
+	jr z, .recoil
 
 ; if we are below 1/4 hp and have a healing move then lesser encourage so we can use it
     call AICheckEnemyQuarterHP
     jr c, .checkAcc
 	ld b, EFFECT_HEAL
 	call AIHasMoveEffect
-	jr c, .lesserEncouragement
+	jr c, .explodeOrHeal
 
 .checkAcc
 ; encourage more accurate moves if they can kill
@@ -392,11 +392,12 @@ AI_Basic:
 	cp 100 percent
 	jr c, .notAcc
 	dec [hl]
+.recoil
 	dec [hl]
 .notAcc
 	dec [hl]
     dec [hl]
-.lesserEncouragement
+.explodeOrHeal
     dec [hl]
     dec [hl]
     dec [hl]

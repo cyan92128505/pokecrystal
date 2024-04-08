@@ -111,7 +111,7 @@ MonicaScript:
 .MetMonica:
 	writetext MonicaGivesGiftText
 	promptbutton
-	verbosegiveitem POLKADOT_BOW
+	verbosegiveitem SHARP_BEAK
 	iffalse .done
 	setevent EVENT_GOT_SHARP_BEAK_FROM_MONICA
 	writetext MonicaGaveGiftText

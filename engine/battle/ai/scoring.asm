@@ -391,8 +391,16 @@ AI_Basic:
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
 	cp 100 percent
 	jr c, .notAcc
+
+; encouragements to KO enemy
+; standard attack = 9
+; recoil attack = 7
+; inaccurate attack = 5
+; explode attack = 3
+	dec [hl]
 	dec [hl]
 .recoil
+	dec [hl]
 	dec [hl]
 .notAcc
 	dec [hl]
@@ -1030,7 +1038,7 @@ AI_Smart_Sleep:
 	call AI_50_50
 	ret c
 .useMove
-rept 10
+rept 12
     dec [hl]
 endr
     ret
@@ -1633,7 +1641,7 @@ AI_Smart_Moonlight:
 	ld a, [wEnemyMonSpecies]
 	cp ARCEUS
 	jr nz, .normalEncourage
-rept 6
+rept 8
 	dec [hl]
 endr
 .normalEncourage
@@ -2125,7 +2133,7 @@ AI_Smart_Paralyze:
 .encourage
 ; needs to overcome encouragement to attack
 ; no good reason not to paralyze
-rept 7
+rept 12
     dec [hl]
 endr
     ret
@@ -2735,7 +2743,7 @@ AI_Smart_PriorityHit:
     and a
 	ret z
 
-rept 9
+rept 12
 	dec [hl]
 endr
 	ret
@@ -2874,7 +2882,7 @@ AI_Smart_FlameWheel:
 	ld a, [wEnemyMonStatus]
 	bit FRZ, a
 	ret z
-rept 5
+rept 12
 	dec [hl]
 endr
 	ret
@@ -3053,7 +3061,7 @@ AI_Smart_KingsShield:
 
 .massiveEncourage
 ; this must overcome encouragement from a potential ko
-rept 10
+rept 12
 	dec [hl]
 endr
     ret
@@ -3948,7 +3956,7 @@ AI_Smart_HolyArmour:
 
 ; encourage enough to overcome encouragement to score a KO
 .encourage
-rept 9
+rept 12
     dec [hl]
 endr
 	ret
@@ -4339,7 +4347,7 @@ AI_Smart_ShellSmash:
 
 .encourage
 ; this needs to be enough to overcome encouragement from having a move that can KO
-rept 8
+rept 12
     dec [hl]
 endr
 	ret

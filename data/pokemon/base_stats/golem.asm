@@ -7,7 +7,7 @@
 	db 45 ; catch rate
 	db 177 ; base exp
 	db EVERSTONE, NO_ITEM ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
 	db 15 ; step cycles to hatch
 	db 5 ; unknown 2

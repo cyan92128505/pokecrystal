@@ -26,10 +26,18 @@ LavRadioTower1FGentlemanScript:
 	iftrue .GotExpnCard
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .preE4
 	writetext LavRadioTower1FGentlemanText
 	waitbutton
 	closetext
 	end
+
+.preE4:
+    writetext LavTowerPreE4Text
+    waitbutton
+    closetext
+    end
 
 .ReturnedMachinePart:
 	writetext LavRadioTower1FGentlemanText_ReturnedMachinePart
@@ -61,6 +69,18 @@ LavRadioTower1FPokeFluteSign:
 
 LavRadioTower1FReferenceLibrary: ; unreferenced
 	jumptext LavRadioTower1FReferenceLibraryText
+
+LavTowerPreE4Text:
+	text "You need an EXPN"
+	line "CARD to tune into"
+	cont "KANTO radio."
+	para "But we are all out"
+	line "of stock right"
+	cont "now."
+	para "HOEN ships are"
+	line "blockading trade"
+	cont "routes."
+	done
 
 LavRadioTower1FReceptionistText:
 	text "Welcome!"

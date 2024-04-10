@@ -12,10 +12,10 @@ FlowerShopTeacherScript:
 	iftrue .Lalala
 	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .GotSquirtbottle
-	checkevent EVENT_MET_FLORIA
-	iffalse .HaventMetFloria
-	checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
-	iffalse .Lalala
+	;checkevent EVENT_MET_FLORIA
+	;iffalse .HaventMetFloria
+	;checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
+	;iffalse .Lalala
 	checkflag ENGINE_PLAINBADGE
 	iffalse .NoPlainBadge
 	faceplayer

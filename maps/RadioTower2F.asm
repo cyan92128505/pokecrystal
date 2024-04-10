@@ -342,6 +342,11 @@ RadioTower2FTeacherText:
 	cont "a channel just"
 	cont "of # FLUTE"
 	cont "music."
+
+	para "Of course you"
+	line "need a special"
+	cont "add on to tune"
+	cont "into KANTO radio."
 	done
 
 RadioTower2FTeacherText_Rockets:

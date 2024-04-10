@@ -654,8 +654,7 @@ ManorFF7RText:
 	line "last game played"
 	cont "was Final Fantasy"
 	cont "7 Rebirth."
-	para "It's not that"
-	line "good."
+	para "It's alright."
 	done
 
 ManorRC2:
@@ -948,10 +947,11 @@ ManorFact10Text:
 	done
 
 ManorFact11Text:
-	text "This text was one"
-	line "of the last"
-	cont "additions to the"
-	cont "game."
+	text "BATTLE TRIAL was"
+	line "inspired by trail"
+	cont "mode from Final"
+	cont "Fantasy 12 Zodiac"
+	cont "Edition."
 	done
 
 ManorFact12Text:

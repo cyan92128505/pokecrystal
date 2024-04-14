@@ -107,7 +107,7 @@ CheckIfMonIsYourOT:
 	ret
 
 .nope
-	scf
+	;scf
 	ret
 
 IsNewNameEmpty:

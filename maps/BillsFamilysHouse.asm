@@ -19,8 +19,8 @@ BillScript:
 	writetext BillImCountingOnYouText
 	promptbutton
 	waitsfx
-	;readvar VAR_PARTYCOUNT
-	;ifequal PARTY_LENGTH, .NoRoom
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -31,11 +31,11 @@ BillScript:
 	closetext
 	end
 
-;.NoRoom:
-;	writetext BillPartyFullText
-;	waitbutton
-;	closetext
-;	end
+.NoRoom:
+	writetext BillPartyFullText
+	waitbutton
+	closetext
+	end
 
 .Refused:
 	writetext BillNoEeveeText
@@ -93,6 +93,12 @@ BillsHouseBookshelf2:
 BillsHouseRadio:
 	jumpstd Radio2Script
 
+BillPartyFullText:
+    text "You'll need to"
+    line "make room in"
+    cont "your party."
+    done
+
 BillTakeThisEeveeText:
 	text "BILL: Hi, <PLAYER>!"
 
@@ -109,7 +115,7 @@ BillTakeThisEeveeText:
 	done
 
 BillImCountingOnYouText:
-	text "Excelent!"
+	text "Excellent!"
 
 	para "You will be a"
 	line "true CHAMPION"

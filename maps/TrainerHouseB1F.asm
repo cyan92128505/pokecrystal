@@ -793,6 +793,8 @@ GivePrize:
     end
 
 .Ambrosia:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .HpUp
     verbosegiveitem AMBROSIA
     sjump .done
 .Masterball:

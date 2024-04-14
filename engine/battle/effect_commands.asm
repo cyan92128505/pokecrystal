@@ -5794,12 +5794,12 @@ BattleCommand_FlinchTarget:
 ; ======== Inner Focus ========
 ; =============================
     call GetOpposingMon
-    cp ARCEUS
-    jr z, .noFlinch
-    cp UMBREON
-    jr z, .noFlinch
-    cp MEWTWO
-    jr z, .noFlinch
+	push bc
+	ld hl, UberImmunePokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	jr c, .noFlinch
     jr FlinchTarget
 .noFlinch
 	ld hl, CantFlinchText

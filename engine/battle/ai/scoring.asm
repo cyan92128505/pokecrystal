@@ -2907,7 +2907,7 @@ AI_Smart_BulkUp:
     jp nc, StandardDiscourage
 
 ; encourage to +2 - strong encourage if player is physical
-    ld a, [wEnemyDefLevel]
+    ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
     jp nc, .atPlus2
     call IsPlayerPhysicalOrSpecial
@@ -2950,11 +2950,17 @@ AI_Smart_Curse:
     call ShouldAIBoost
     jr nc, .discourage
 
-; encourage to +2
+; encourage to +2 - strong encourage if player is physical
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
-    jr c, .encourage
+    jp nc, .atPlus2
+    call IsPlayerPhysicalOrSpecial
+    jr nc, .special
+    jp StrongEncourage
+.special
+    jp .encourage
 
+.atPlus2
 ; discourage after boost if afflicted with toxic
     call IsAIToxified
     jr c, .discourage

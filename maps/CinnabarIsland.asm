@@ -14,6 +14,8 @@ CinnabarIsland_MapScripts:
 CinnabarIslandBlue:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .notBeatE4
 	writetext CinnabarIslandBlueText
 	waitbutton
 	closetext
@@ -22,6 +24,11 @@ CinnabarIslandBlue:
 	disappear CINNABARISLAND_BLUE
 	clearevent EVENT_VIRIDIAN_GYM_BLUE
 	end
+.notBeatE4
+    writetext CinnabarIslandBluePreE4Text
+    waitbutton
+    closetext
+    end
 
 CinnabarIslandGymSign:
 	jumptext CinnabarIslandGymSignText
@@ -38,6 +45,24 @@ CinnabarIslandHiddenRareCandy:
 CinnabarIslandBlueTeleport:
 	teleport_from
 	step_end
+
+CinnabarIslandBluePreE4Text:
+	text "Well well, a JOHTO"
+	line "trainer!"
+	para "What are you doing"
+	line "all the way out"
+	cont "here?"
+	para "There's not much"
+	line "to see."
+	para "This place could"
+	line "be very dangerous"
+	cont "for you and your"
+	cont "#MON."
+	para "They don't seem"
+	line "too strong."
+	para "You should go home"
+	line "JOHTO trainer."
+	done
 
 CinnabarIslandBlueText:
 	text "Who are you?"

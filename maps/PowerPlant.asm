@@ -146,12 +146,12 @@ PowerPlantGymGuide4Script:
 PowerPlantManager:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .MetManager
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
 	checkitem MACHINE_PART
 	iftrue .FoundMachinePart
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MetManager
 	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
 	iftrue .MetManager
 	writetext PowerPlantManagerWhoWouldRuinMyGeneratorText
@@ -177,7 +177,6 @@ PowerPlantManager:
 	setevent EVENT_RETURNED_MACHINE_PART
 	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
-	;setevent EVENT_ROUTE_24_ROCKET
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 .ReturnedMachinePart:

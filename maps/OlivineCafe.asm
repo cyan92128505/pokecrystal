@@ -9,7 +9,19 @@ OlivineCafe_MapScripts:
 	def_callbacks
 
 OlivineCafeStrengthSailorScript:
+;    checkevent EVENT_BEAT_ELITE_FOUR
+;    iftrue .normal
+;	clearevent EVENT_RETURNED_MACHINE_PART
+;	clearevent EVENT_RESTORED_POWER_TO_KANTO
+;	clearevent EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+;	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
+;	setevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+;.normal
+    checkevent EVENT_GOT_HM04_STRENGTH
+    iffalse .noStrength
     jumptextfaceplayer OlivineCafeStrengthSailorText_GotStrength
+.noStrength
+    jumptextfaceplayer OlivineCafeStrengthSailorText_NoStrength
 
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
@@ -28,6 +40,14 @@ OlivineCafeStrengthSailorText_GotStrength:
 
 	para "It is all I"
 	line "need in life."
+	done
+
+OlivineCafeStrengthSailorText_NoStrength:
+	text "These long days of"
+	line "back breaking work"
+	cont "are tough."
+	para "Good thing I have"
+	line "STRENGTH."
 	done
 
 OlivineCafeFishingGuruText:

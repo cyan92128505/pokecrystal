@@ -124,6 +124,7 @@ DragonShrine_MapScripts:
 	setflag ENGINE_RISINGBADGE
 	playsound SFX_GET_BADGE
 	waitsfx
+	loadmem wLevelCap, 70
 	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
 	setscene SCENE_FINISHED

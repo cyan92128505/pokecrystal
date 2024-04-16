@@ -92,12 +92,13 @@ ViridianGymBlueScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
-	loadmem wLevelCap, 100
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
+	writetext AllKantoBadgesText
+	waitbutton
 	writetext LeaderBlueEpilogueText
 	waitbutton
 	closetext
@@ -276,6 +277,17 @@ LeaderBlueLossText:
 Text_ReceivedEarthBadge:
 	text "<PLAYER> received"
 	line "EARTHBADGE."
+	done
+
+AllKantoBadgesText:
+	text "By winning here"
+	line "you have conquered"
+	cont "all KANTO GYMS."
+	para "You have to go see"
+	line "my uncle PROF OAK."
+	para "He will have made"
+	line "arrangements for"
+	cont "you."
 	done
 
 LeaderBlueEpilogueText:

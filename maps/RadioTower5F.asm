@@ -185,6 +185,7 @@ RadioTower5FRocketBossScene:
     writetext SilverWingTipsText
 
 .continue
+    writetext Need8BadgesText
 	waitbutton
 	closetext
 	setscene SCENE_RADIOTOWER5F_NOTHING
@@ -276,6 +277,15 @@ RadioTower5FPlayerTwoStepsLeftMovement:
 	step LEFT
 	step LEFT
 	step_end
+
+Need8BadgesText:
+	text "Whatever that"
+	line "#MON is it"
+	cont "will be strong."
+	para "You'll probably"
+	line "need 8 badges to"
+	cont "catch it."
+	done
 
 RadioTower5CrystalText:
     text "You did it!"
@@ -592,6 +602,10 @@ RainbowWingTipsText:
 
 	para "TIN TOWER in"
 	line "ECRUTEAK CITY…"
+
+	para "A powerful"
+	line "#MON may live"
+	cont "there."
 	done
 
 SilverWingTipsText:

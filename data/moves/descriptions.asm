@@ -107,7 +107,7 @@ MoveDescriptions::
 	dw DoubleTeamDescription
 	dw RecoverDescription
 	dw HardenDescription
-	dw MinimizeDescription
+	dw DarkVoidDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
 	dw ZenHeadbuttDescription
@@ -693,9 +693,9 @@ HardenDescription:
 	db   "Raises the user's"
 	line "DEFENSE.@"
 
-MinimizeDescription:
-	db   "Heightens evasive-"
-	line "ness.@"
+DarkVoidDescription:
+	db   "May put the foe to"
+	line "sleep.@"
 
 SmokescreenDescription:
 	db   "Lowers the foe's"

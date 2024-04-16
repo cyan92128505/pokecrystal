@@ -700,9 +700,9 @@ HawluchaEvosAttacks:
 	db 20, DOUBLE_KICK
 	db 25, SUBMISSION
 	db 30, ROOST
-	db 36, BULK_UP
-	db 40, BRAVE_BIRD
+	db 40, BULK_UP
 	db 45, HI_JUMP_KICK
+	db 50, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 LarvestaEvosAttacks:

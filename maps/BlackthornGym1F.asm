@@ -42,7 +42,6 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CLAIR
-	loadmem wLevelCap, 70
 	opentext
 	writetext ClairText_GoToDragonsDen
 	waitbutton

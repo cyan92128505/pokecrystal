@@ -2046,6 +2046,11 @@ AI_Smart_SuperFang:
 	ret
 
 AI_Smart_Paralyze:
+; never use if player already has a status
+    ld a, [wBattleMonStatus]
+    and a
+    jp nz, .discourage
+
 ; never use if player has substitute
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a

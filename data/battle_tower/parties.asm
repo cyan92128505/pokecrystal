@@ -4202,8 +4202,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db HO_OH
-	db LIFE_ORB
-	db BRAVE_BIRD, SACRED_FIRE, SWORDS_DANCE, RECOVER
+	db LEFTOVERS
+	db SWORDS_DANCE, SACRED_FIRE, FLY, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4213,7 +4213,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 32, 10 ; PP
+	db 32, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -4489,7 +4489,7 @@ BattleTowerMons:
 
 	db ZYGARDE
 	db LEFTOVERS
-	db OBLITERATE, DRAGON_DANCE, BULK_UP, GLARE
+	db OBLITERATE, DRAGON_DANCE, BULK_UP, PROTECT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4499,7 +4499,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 32, 24, 48 ; PP
+	db 32, 32, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

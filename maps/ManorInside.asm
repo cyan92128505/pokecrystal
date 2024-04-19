@@ -1067,17 +1067,22 @@ ManorFact20Text:
 	done
 
 ManorFact21Text:
-	text "Weather speed"
-	line "boosting abilities"
-	cont "are broken in"
-	cont "spite of many,"
-	cont "many attempts to"
-	cont "fix them."
-	para "They boost speed"
-	line "every turn with"
-	cont "the boosts"
-	cont "persisting after"
-	cont "the weather fades."
+	text "Abilities that"
+	line "increase speed in"
+	cont "specific weather"
+	cont "don't actually"
+	cont "increase speed."
+	para "This is because"
+	line "such changes would"
+	cont "persist even when"
+	cont "the weather is"
+	cont "removed."
+	para "Instead they"
+	line "conditionally"
+	cont "force the turn"
+	cont "order to create"
+	cont "the illusion of"
+	cont "double speed."
 	done
 
 ManorInside_MapEvents:

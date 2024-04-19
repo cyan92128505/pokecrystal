@@ -3114,18 +3114,26 @@ AI_Smart_Protect:
 	bit SUBSTATUS_CURSE, a
 	jr nz, .encourage
 
-; Discourage this move if the player's Rollout count is not boosted enough.
-	bit SUBSTATUS_ROLLOUT, a
-	jr z, .discourage
-	ld a, [wPlayerRolloutCount]
-	cp 3
+; at this point if we aren't Zygarde just discourage
+    ld a, [wEnemyMonSpecies]
+    cp ZYGARDE
+    jr nz, .discourage
+
+; discourage if at full HP
+	call AICheckEnemyMaxHP
 	jr c, .discourage
+
+; use for sure if below half HP
+	call AICheckEnemyHalfHP
+	jr nc, .use
 
 ; 80% chance to encourage this move otherwise.
 .encourage
 	call AI_80_20
 	ret c
-
+.use
+	dec [hl]
+	dec [hl]
 	dec [hl]
 	ret
 

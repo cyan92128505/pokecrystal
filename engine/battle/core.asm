@@ -497,15 +497,15 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
     cp POLIWRATH
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
 
     ld a, [wBattleMonSpecies]
     cp KINGDRA
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
     cp POLIWRATH
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
 
 .checkSun
 ; ===============================
@@ -517,23 +517,23 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
     cp VICTREEBEL
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
     cp EXEGGCUTE
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
     cp EXEGGUTOR
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
 
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
     cp VICTREEBEL
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
     cp EXEGGCUTE
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
     cp EXEGGUTOR
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
 
 .checkSand
 ; ==============================
@@ -545,19 +545,40 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp DRILBUR
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
     cp EXCADRILL
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
     cp GOLEM
-    call z, DoubleEnemySpeedInHL
+    jr z, .simulateEnemyDoubleSpeed
 
     ld a, [wBattleMonSpecies]
     cp DRILBUR
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
     cp EXCADRILL
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
     cp GOLEM
-    call z, DoublePlayerSpeedInDE
+    jr z, .simulatePlayerDoubleSpeed
+    jr .continue
+
+; enemy moves first unless enemy is paralysed or enemy is >+2 speed - in which case compare speed as normal
+.simulateEnemyDoubleSpeed
+	ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	jr nz, .continue
+    ld a, [wPlayerSpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .continue
+    jr .enemy_first
+
+; player moves first unless player is paralysed or enemy is >+2 speed - in which case compare speed as normal
+.simulatePlayerDoubleSpeed
+	ld a, [wBattleMonStatus]
+	and 1 << PAR
+	jr nz, .continue
+    ld a, [wEnemySpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .continue
+    jr .player_first
 
 .continue
 	ld c, 2
@@ -586,53 +607,6 @@ DetermineMoveOrder:
 .enemy_first
 	and a
 	ret
-
-; AndrewNote - Double speed in weather
-
-DoubleEnemySpeedInHL:
-	ld a, [wEnemyMonStatus]
-	and 1 << PAR
-	ret nz
-
-	ld hl, wEnemyMonSpeed + 1
-	sla [hl]
-	dec hl
-    rl [hl]
-
-	ld a, HIGH(MAX_STAT_VALUE)
-	cp h
-	jr c, .cap
-	ret nz
-	ld a, LOW(MAX_STAT_VALUE)
-	cp l
-	ret nc
-.cap
-	ld hl, MAX_STAT_VALUE
- 	ret
-
-DoublePlayerSpeedInDE:
-	ld a, [wBattleMonStatus]
-	and 1 << PAR
-	ret nz
-
-    push hl
-	ld hl, wBattleMonSpeed + 1
-	sla [hl]
-	dec hl
-	rl [hl]
-
-	ld a, HIGH(MAX_STAT_VALUE)
-	cp h
-	jr c, .cap
-	jr nz, .return
-	ld a, LOW(MAX_STAT_VALUE)
-	cp l
-	jr nc, .return
-.cap
-	ld hl, MAX_STAT_VALUE
-.return
-	pop hl
- 	ret
 
 CheckContestBattleOver:
 	ld a, [wBattleType]

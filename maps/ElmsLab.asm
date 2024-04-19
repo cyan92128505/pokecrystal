@@ -392,6 +392,8 @@ ElmGiveTicketScript:
 	verbosegiveitem CLEAR_BELL
 	writetext ClearBellTips
 	waitbutton
+	writetext ElmKantoExplainText
+	waitbutton
 	closetext
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_DEFAULT
 	setmapscene ELMS_LAB, SCENE_CUSTOM_1
@@ -1326,11 +1328,30 @@ ClearBellTips:
     cont "it out."
     done
 
-ElmsLabMonEggText: ; unreferenced
-	text "It's the #MON"
-	line "EGG being studied"
-	cont "by PROF.ELM."
+ElmKantoExplainText:
+	text "<PLAYER> now that"
+	line "you are the"
+	cont "CHAMPION of JOHTO"
+	cont "you have immense"
+	cont "responsibilities."
+	para "You first"
+	line "responsibility is"
+	cont "to protect people"
+	cont "and #MON."
+	para "To do this you"
+	line "must ensure the"
+	cont "KANTO GYM LEADERS"
+	cont "are ready for war."
+	para "Go to KANTO and"
+	line "challenge the"
+	cont "GYMS."
+	para "We must all work"
+	line "together and be"
+	cont "prepared."
+	para "Good luck"
+	line "<PLAYER>."
 	done
+
 
 AideText_GiveYouPotion:
 	text "<PLAY_G>, I want"
@@ -1542,6 +1563,7 @@ DadBattleScript:
     appear ELMSLAB_DAD
     applymovement ELMSLAB_DAD, ELmsLabMovement_DadEnters
     applymovement PLAYER, ELmsLabMovement_PlayerFaceDad
+    turnobject ELMSLAB_ELMS_AIDE, RIGHT
 
     opentext
     writetext MumHangOnText

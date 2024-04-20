@@ -6693,3 +6693,41 @@ CheckAmuletCoin:
 	ld a, 1
 	ld [wAmuletCoin], a
 	ret
+
+CheckUnownLetter:
+; Return carry if the Unown letter hasn't been unlocked yet
+	ld a, [wUnlockedUnowns]
+	ld c, a
+	ld de, 0
+.loop
+; Don't check this set unless it's been unlocked
+	srl c
+	jr nc, .next
+; Is our letter in the set?
+	ld hl, UnlockedUnownLetterSets
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push de
+	ld a, [wUnownLetter]
+	ld de, 1
+	push bc
+	call IsInArray
+	pop bc
+	pop de
+	jr c, .match
+.next
+; Make sure we haven't gone past the end of the table
+	inc e
+	inc e
+	ld a, e
+	cp UnlockedUnownLetterSets.End - UnlockedUnownLetterSets
+	jr c, .loop
+; Hasn't been unlocked, or the letter is invalid
+	scf
+	ret
+.match
+; Valid letter
+	and a
+	ret

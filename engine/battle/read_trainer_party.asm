@@ -383,6 +383,10 @@ endr
 	jp .loop
 
 ReadPlayerPartyAsTrainerParty:
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
     ; clear OT party count
 	ld hl, wOTPartyCount
 	xor a

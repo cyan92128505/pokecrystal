@@ -497,15 +497,15 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerRain
     cp POLIWRATH
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerRain
 
     ld a, [wBattleMonSpecies]
     cp KINGDRA
-    jr z, .simulatePlayerDoubleSpeed
+    jp z, .simulatePlayerDoubleSpeed
     cp POLIWRATH
-    jr z, .simulatePlayerDoubleSpeed
+    jp z, .simulatePlayerDoubleSpeed
 
 .checkSun
 ; ===============================
@@ -517,13 +517,13 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSun
     cp VICTREEBEL
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSun
     cp EXEGGCUTE
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSun
     cp EXEGGUTOR
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSun
 
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
@@ -545,11 +545,11 @@ DetermineMoveOrder:
 
     ld a, [wEnemyMonSpecies]
     cp DRILBUR
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSand
     cp EXCADRILL
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSand
     cp GOLEM
-    jr z, .simulateEnemyDoubleSpeed
+    jr z, .checkOtherPlayerSand
 
     ld a, [wBattleMonSpecies]
     cp DRILBUR
@@ -559,6 +559,36 @@ DetermineMoveOrder:
     cp GOLEM
     jr z, .simulatePlayerDoubleSpeed
     jr .continue
+
+.checkOtherPlayerRain
+    ld a, [wBattleMonSpecies]
+    cp POLIWRATH
+    jr z, .continue
+    cp KINGDRA
+    jr z, .continue
+    jr .simulateEnemyDoubleSpeed
+
+.checkOtherPlayerSun
+    ld a, [wBattleMonSpecies]
+    cp VENUSAUR
+    jr z, .continue
+    cp VICTREEBEL
+    jr z, .continue
+    cp EXEGGCUTE
+    jr z, .continue
+    cp EXEGGUTOR
+    jr z, .continue
+    jr .simulateEnemyDoubleSpeed
+
+.checkOtherPlayerSand
+    ld a, [wBattleMonSpecies]
+    cp DRILBUR
+    jr z, .continue
+    cp EXCADRILL
+    jr z, .continue
+    cp GOLEM
+    jr z, .continue
+    jr .simulateEnemyDoubleSpeed
 
 ; enemy moves first unless enemy is paralysed or enemy is >+2 speed - in which case compare speed as normal
 .simulateEnemyDoubleSpeed
@@ -4048,6 +4078,10 @@ BattleCheckPlayerShininess:
 BattleCheckEnemyShininess:
 ; AndrewNote - Lord Oaks Pokemon are shiny regardless of stats
 ; CALs Pokemon are shiny if MarkOfGod is active
+	ld a, [wLinkMode]
+	and a
+	jr nz, .normal
+
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
     jr z, .shiny
@@ -4268,6 +4302,10 @@ BreakAttraction:
 	ret
 
 SpikesDamage:
+	ld a, [wBattleHasJustStarted]
+	and a
+	ret nz
+
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
@@ -6634,7 +6672,7 @@ LoadEnemyMon:
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 ; If combined with forced shiny battletype, causes an infinite loop
-	call CheckUnownLetter
+	farcall CheckUnownLetter
 	jr c, .GenerateDVs ; try again
 
 .Magikarp:
@@ -6955,53 +6993,6 @@ CheckSleepingTreeMon:
 	ret
 
 INCLUDE "data/wild/treemons_asleep.asm"
-
-CheckUnownLetter:
-; Return carry if the Unown letter hasn't been unlocked yet
-
-	ld a, [wUnlockedUnowns]
-	ld c, a
-	ld de, 0
-
-.loop
-
-; Don't check this set unless it's been unlocked
-	srl c
-	jr nc, .next
-
-; Is our letter in the set?
-	ld hl, UnlockedUnownLetterSets
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-	push de
-	ld a, [wUnownLetter]
-	ld de, 1
-	push bc
-	call IsInArray
-	pop bc
-	pop de
-
-	jr c, .match
-
-.next
-; Make sure we haven't gone past the end of the table
-	inc e
-	inc e
-	ld a, e
-	cp UnlockedUnownLetterSets.End - UnlockedUnownLetterSets
-	jr c, .loop
-
-; Hasn't been unlocked, or the letter is invalid
-	scf
-	ret
-
-.match
-; Valid letter
-	and a
-	ret
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 

@@ -8794,7 +8794,7 @@ ExitBattle:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
-	farcall ShowLinkBattleParticipantsAfterEnd
+	call ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
 	call DisplayLinkBattleResult
@@ -8804,7 +8804,6 @@ ExitBattle:
 	ld a, [wBattleResult]
 	and $f
 	ret nz
-	call CheckPayDay
 	xor a
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
@@ -8846,39 +8845,16 @@ CleanUpBattleRAM:
 	call WaitSFX
 	ret
 
-CheckPayDay:
-	ld hl, wPayDayMoney
-	ld a, [hli]
-	or [hl]
-	inc hl
-	or [hl]
-	ret z
-	ld a, [wAmuletCoin]
-	and a
-	jr z, .okay
-	ld hl, wPayDayMoney + 2
-	sla [hl]
-	dec hl
-	rl [hl]
-	dec hl
-	rl [hl]
-	jr nc, .okay
-	ld a, $ff
-	ld [hli], a
-	ld [hli], a
+ShowLinkBattleParticipantsAfterEnd:
+	farcall StubbedTrainerRankings_LinkBattles
+	farcall BackupMobileEventIndex
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Status
+	call GetPartyLocation
+	ld a, [wEnemyMonStatus]
 	ld [hl], a
-
-.okay
-	ld hl, wPayDayMoney + 2
-	ld de, wMoney + 2
-	call AddBattleMoneyToAccount
-	ld hl, BattleText_PlayerPickedUpPayDayMoney
-	call StdBattleTextbox
-	ld a, [wInBattleTowerBattle]
-	bit 0, a
-	ret z
 	call ClearTilemap
-	call ClearBGPalettes
+	farcall _ShowLinkBattleParticipants
 	ret
 
 DisplayLinkBattleResult:

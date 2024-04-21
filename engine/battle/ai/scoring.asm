@@ -6518,18 +6518,6 @@ ForfeitMatchText:
     text "Forfeit battle?"
     done
 
-ShowLinkBattleParticipantsAfterEnd:
-	farcall StubbedTrainerRankings_LinkBattles
-	farcall BackupMobileEventIndex
-	ld a, [wCurOTMon]
-	ld hl, wOTPartyMon1Status
-	call GetPartyLocation
-	ld a, [wEnemyMonStatus]
-	ld [hl], a
-	call ClearTilemap
-	farcall _ShowLinkBattleParticipants
-	ret
-
 AllowShinyOverride:
     ld a, [wShinyOverride]
     and a

@@ -148,7 +148,7 @@
 	const ROOST        ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
-	const SKY_ATTACK   ; 8f
+	const SKY_ATTACK   ; 8f - not used
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
 	const DIZZY_PUNCH  ; 92
@@ -185,7 +185,7 @@
 	const AEROBLAST    ; b1
 	const SHADOW_CLAW  ; b2
 	const REVERSAL     ; b3
-	const SUCKER_PUNCH ; b4 - not used
+	const SUCKER_PUNCH ; b4
 	const POWDER_SNOW  ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7

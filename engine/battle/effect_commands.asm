@@ -4003,11 +4003,24 @@ BattleCommand_SleepTarget:
 
     call GetOpposingMon
     cp SMEARGLE
-    jr nz, .notSmeargle
+    jr z, .cantSleep
+    cp DEOXYS
+    jr z, .cantSleep
+    ld a, [wOtherTrainerClass]
+    cp WALLACE
+    jr nz, .gotosleep
+    ld a, [wHoenInvasionUnderway]
+    and a
+    jr z, .gotosleep
+    ld hl, WallaceCantSleepText
+    jr .fail
+    jr .gotosleep
+
+.cantSleep
     ld hl, CantSleepText
     jr .fail
 
-.notSmeargle
+.gotosleep
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -7003,16 +7016,14 @@ BattleCommand_TimeBasedHealContinue:
 	jr z, .Full
 
 ; Don't factor in time of day in link battles.
-	ld a, [wLinkMode]
-	and a
-	jr nz, .Weather
-
-	ld a, [wTimeOfDay]
-	cp b
-	jr z, .Weather
-	dec c ; double
-
-.Weather:
+;	ld a, [wLinkMode]
+;	and a
+;	jr nz, .Weather
+;	ld a, [wTimeOfDay]
+;	cp b
+;	jr z, .Weather
+;	dec c ; double
+;.Weather:
 	ld a, [wBattleWeather]
 	and a
 	jr z, .Heal
@@ -7092,15 +7103,7 @@ INCLUDE "engine/battle/move_effects/thunder.asm"
 
 CheckHiddenOpponent:
 ; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_CheckHit does these checks properly.
-    ld a, BATTLE_VARS_SUBSTATUS5_OPP
-	call GetBattleVar
-	cpl
-	and 1 << SUBSTATUS_LOCK_ON
-	ret z
-
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+    xor a
 	ret
 
 SandstormSpDefBoost:

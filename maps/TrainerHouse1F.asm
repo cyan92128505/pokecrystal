@@ -40,7 +40,7 @@ TrainerHouse1FReceptionistText:
 	cont "but you can go"
 	cont "ahead."
 
-	para "Their just"
+	para "They're just"
 	line "arguing like"
 	cont "children anyway."
 	done

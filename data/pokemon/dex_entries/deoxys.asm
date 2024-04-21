@@ -6,4 +6,5 @@
 	next "space radiation."
 
 	page "Immune to"
-	next "stat drops.@"
+	next "stat drops"
+	next "and SLEEP.@"

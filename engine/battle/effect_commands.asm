@@ -347,7 +347,7 @@ CantMove:
 	call GetBattleVar
 	cp FLY
 	jr z, .fly_dig
-	cp DRACO_ASCENT
+	cp SHADOW_FORCE
 	jr z, .fly_dig
 	cp DIG
 	ret nz
@@ -2044,7 +2044,7 @@ BattleCommand_MoveAnimNoSub:
 	call GetBattleVar
 	cp FLY
 	jr z, .clear_sprite
-	cp DRACO_ASCENT
+	cp SHADOW_FORCE
 	jr z, .clear_sprite
 	cp DIG
 	ret nz
@@ -2142,7 +2142,7 @@ BattleCommand_FailureText:
 
 	cp FLY
 	jr z, .fly_dig
-	cp DRACO_ASCENT
+	cp SHADOW_FORCE
 	jr z, .fly_dig
 	cp DIG
 	jr z, .fly_dig
@@ -6008,7 +6008,7 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp FLY
 	jr z, .flying
-	cp DRACO_ASCENT
+	cp SHADOW_FORCE
 	jr z, .flying
 	cp DIG
 	jr z, .flying
@@ -6025,7 +6025,7 @@ BattleCommand_Charge:
 	ld b, a
 	cp FLY
 	jr z, .set_flying
-	cp DRACO_ASCENT
+	cp SHADOW_FORCE
 	jr z, .set_flying
 	cp DIG
 	jr nz, .dont_set_digging
@@ -6068,8 +6068,8 @@ BattleCommand_Charge:
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
+	cp SHADOW_FORCE
+	ld hl, .BattleSoarText
 	jr z, .done
 
 	cp GEOMANCY
@@ -6078,10 +6078,6 @@ BattleCommand_Charge:
 
 	cp FLY
 	ld hl, .BattleFlewText
-	jr z, .done
-
-	cp DRACO_ASCENT
-	ld hl, .BattleSoarText
 	jr z, .done
 
 	cp DIG

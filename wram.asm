@@ -3014,7 +3014,7 @@ wFieldWeather::
 	db
 
 wUndergroundSwitchPositions:: db
-    ds 1
+wExpShareUpgrade:: db
 
 ; AndrewNote - wram 8 free slots
 

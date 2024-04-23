@@ -2503,12 +2503,12 @@ ApplyExperienceAfterEnemyCaught:
 ; AndrewNote - ExpShare
 ; then gives 1/2 exp to all bench Pokemon until all Kanto badges obtained
 ; then gives full exp to all bench Pokemon
-	ld a, [wKantoBadges]
-	cp %11111111 ; all badges
-    jr nz, .notAllBadges
+    ld a, [wExpShareUpgrade]
+    and a
+    jr z, .noUpgrade
     call BoostExp
     jr .continue
-.notAllBadges
+.noUpgrade
     srl [hl] ; halve exp
 .continue
 	ld a, [wBattleParticipantsNotFainted]
@@ -7598,6 +7598,9 @@ GiveExperiencePoints:
 	call GetNickname
 	ld hl, Text_MonGainedExpPoint
 	call BattleTextbox
+	ld c, 10
+	call DelayFrames
+
 	ld a, [wStringBuffer2 + 1]
 	ldh [hQuotient + 3], a
 	ld a, [wStringBuffer2]

@@ -3605,8 +3605,8 @@ GiratinaEvosAttacks:
 	db 50, SHADOW_CLAW
 	db 60, SHADOW_BALL
 	db 70, RECOVER
-	db 80, DRACO_METEOR
-	db 90, DESTINY_BOND
+	db 75, DRACO_METEOR
+	db 80, SHADOW_FORCE
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:

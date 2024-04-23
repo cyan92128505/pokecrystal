@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw RoostDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw ShadowForceDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -837,8 +837,8 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	line "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
+ShadowForceDescription:
+	db   "1st turn: Vanish"
 	line "2nd turn: Attack@"
 
 TransformDescription:

@@ -144,7 +144,7 @@ BattleAnimations::
 	dw BattleAnim_Roost
 	dw BattleAnim_LeechLife
 	dw BattleAnim_LovelyKiss
-	dw BattleAnim_SkyAttack
+	dw BattleAnim_ShadowForce
 	dw BattleAnim_Transform
 	dw BattleAnim_Bubble
 	dw BattleAnim_DizzyPunch
@@ -1575,6 +1575,28 @@ BattleAnim_Teleport:
 	anim_incbgeffect ANIM_BG_TELEPORT
 	anim_call BattleAnim_ShowMon_0
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
+	anim_call BattleAnimSub_WarpAway
+	anim_wait 64
+	anim_ret
+
+BattleAnim_ShadowForce:
+	anim_if_param_equal $1, .turn1
+	anim_if_param_equal $2, .miss
+	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 32
+.miss:
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 32
+	anim_ret
+
+.turn1:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
 	anim_call BattleAnimSub_WarpAway
 	anim_wait 64
 	anim_ret

@@ -49,6 +49,7 @@ Oak:
 	checkevent EVENT_OPENED_MT_SILVER
 	iffalse .end
 
+    loadmem wExpShareUpgrade, 1
 	opentext
 	writetext OakBattleOffer
 	waitbutton
@@ -87,6 +88,7 @@ Oak:
 	waitbutton
 	verbosegiveitem WARP_DEVICE
 	setevent EVENT_OPENED_MT_SILVER
+	loadmem wExpShareUpgrade, 1
 	sjump .CheckPokedex
 
 .Complain:

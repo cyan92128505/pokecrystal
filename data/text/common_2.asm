@@ -120,14 +120,14 @@ _BoostedExpPointsText::
 	cont "@"
 	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
-	prompt
+	done
 
 _ExpPointsText::
 	text_start
 	line "@"
 	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
-	prompt
+	done
 
 _GoMonText::
 	text "Go! @"
@@ -748,7 +748,7 @@ _BattleFlewText::
 
 _BattleSoarText::
 	text_start
-	line "Soared skyward!"
+	line "Disappeared!"
 	prompt
 
 _BattleDugText::

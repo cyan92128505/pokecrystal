@@ -266,7 +266,7 @@ LeaderBlueWinText:
 	para "Congratulations"
 	line "great CHAMPION."
 	para "You must go see my"
-	line "uncle PROF OAK."
+	line "grandad PROF OAK."
 	done
 
 LeaderBlueLossText:

@@ -142,7 +142,7 @@ MoveNames::
 	li "ROOST"
 	li "LEECH LIFE"
 	li "LOVELY KISS"
-	li "SKY ATTACK"
+	li "SHADOW FORCE"
 	li "TRANSFORM"
 	li "BUBBLE"
 	li "DIZZY PUNCH"

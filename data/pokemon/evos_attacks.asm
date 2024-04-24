@@ -2213,8 +2213,8 @@ DratiniEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 55, DRAGON_DANCE
 	db 60, DRAGON_CLAW
-	db 65, DRACO_METEOR
 	db 70, OUTRAGE
+	db 75, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
@@ -2230,8 +2230,8 @@ DragonairEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 55, DRAGON_DANCE
 	db 60, DRAGON_CLAW
-	db 65, DRACO_METEOR
 	db 70, OUTRAGE
+	db 75, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DragoniteEvosAttacks:
@@ -2248,8 +2248,8 @@ DragoniteEvosAttacks:
 	db 50, ROOST
 	db 55, DRAGON_DANCE
 	db 60, DRAGON_CLAW
-	db 65, DRACO_METEOR
 	db 70, OUTRAGE
+	db 75, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 DarkraiEvosAttacks:

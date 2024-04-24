@@ -3232,6 +3232,10 @@ LostBattle:
 	ld a, 1
 	ld [wBattleEnded], a
 
+	ld a, [wLinkMode]
+	and a
+	jr nz, .LostLinkBattle
+
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
 	jr nz, .battle_tower
@@ -3281,10 +3285,6 @@ LostBattle:
 	ret
 
 .no_loss_text
-	ld a, [wLinkMode]
-	and a
-	jr nz, .LostLinkBattle
-
 ; Grayscale
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout

@@ -930,6 +930,9 @@ endr
     cp CAL_F
     jr nz, .done
 .check
+	ld a, [wLinkMode]
+	and a
+	ret nz
     ld a, [wMarkOfGod]
     and a
     jr nz, .shiny

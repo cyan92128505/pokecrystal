@@ -726,6 +726,7 @@ MasterXehanortAfterBattleText:
 
     para "Your heart is"
     line "no different."
+    done
 
 
 MasterXehanortLoseAfterBattleText:

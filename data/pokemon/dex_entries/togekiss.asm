@@ -5,6 +5,6 @@
 	next "and happiness"
 	next "to loved ones."
 
-	page "move effects"
+	page "Move effects"
 	next "are more likely"
 	next "to occur.@"

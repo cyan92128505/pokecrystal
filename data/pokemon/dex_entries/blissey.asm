@@ -5,6 +5,6 @@
 	next "good luck and"
 	next "happiness."
 
-	page "move effects"
+	page "Move effects"
 	next "are more likely"
 	next "to occur.@"

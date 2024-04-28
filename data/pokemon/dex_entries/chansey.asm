@@ -5,6 +5,6 @@
 	next "catch it for its"
 	next "nutritious egg."
 
-	page "move effects"
+	page "Move effects"
 	next "are more likely"
 	next "to occur.@"

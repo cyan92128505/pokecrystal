@@ -5,6 +5,6 @@
 	next "afloat with few"
 	next "wing beats."
 
-	page "move effects"
+	page "Move effects"
 	next "are more likely"
 	next "to occur.@"

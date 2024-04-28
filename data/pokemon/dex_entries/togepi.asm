@@ -5,6 +5,6 @@
 	next "to be a symbol of"
 	next "good luck."
 
-	page "move effects"
+	page "Move effects"
 	next "are more likely"
 	next "to occur.@"

@@ -232,9 +232,9 @@ AndrewExplainHandText:
 	cont "players team."
 	para "Note though it"
 	line "doesn't work on"
-	cont "me, WIFE,"
-	cont "BROTHER or LORD OAK"
-	cont "but does on"
+	cont "me, my WIFE, my"
+	cont "BROTHER or LORD"
+	cont "OAK but does on"
 	cont "anybody else!"
 	done
 
@@ -255,7 +255,7 @@ AndrewAfterBattleText:
 	cont "happy."
 	para "You can do"
 	line "anything you set"
-	cont "yor mind to"
+	cont "your mind to"
 	cont "<PLAYER>."
 	done
 
@@ -399,8 +399,8 @@ WifeBeginBattleText:
 	done
 
 WifeBeatenText:
-	text "ANDREW would like"
-	line "you."
+	text "My husband would"
+	line "like you."
 	done
 
 WifeWinText:
@@ -408,8 +408,9 @@ WifeWinText:
 	done
 
 WifeAfterBattleText:
-	text "ANDREW and I miss"
-	line "ADAM being here."
+	text "My husband and I"
+	line "miss ADAM being"
+	cont "here."
 	para "He will always be"
 	line "our wee boy."
 	para "Instead we have to"

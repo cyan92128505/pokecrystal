@@ -41,10 +41,8 @@ CeladonAndrewInitialIntroText:
     para "Are you enjoying"
     line "the game?"
 
-    para "I am ANDREW."
-
-    para "The creator of"
-    line "this romhack."
+    para "I am the creator"
+    line "of this romhack."
 
     para "Well I'm the game"
     line "representation"

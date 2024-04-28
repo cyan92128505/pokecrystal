@@ -845,6 +845,7 @@ InvaderDLCSeenText:
 
 InvaderDLCBeatenText:
     text "Link the fire!"
+    done
 
 InvaderDLCWinText:
     text "Are you casual?"

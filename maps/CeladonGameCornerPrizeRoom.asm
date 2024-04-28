@@ -2,8 +2,8 @@ CELADONGAMECORNERPRIZEROOM_TM32_COINS EQU 4000
 CELADONGAMECORNERPRIZEROOM_TM29_COINS EQU 8000
 CELADONGAMECORNERPRIZEROOM_TM15_COINS EQU 8000
 CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS  EQU 1111 ; MR_MIME
-CELADONGAMECORNERPRIZEROOM_PORYGON_COINS  EQU 3333 ; CHANSEY
-CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS EQU 5555 ; BAGON
+CELADONGAMECORNERPRIZEROOM_PORYGON_COINS  EQU 3333 ; BAGON
+CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS EQU 5555 ; CHANSEY
 
 	object_const_def
 	const CELADONGAMECORNERPRIZEROOM_GENTLEMAN
@@ -173,24 +173,6 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
-	getmonname STRING_BUFFER_3, CHANSEY
-	scall CeladonPrizeRoom_askbuy
-	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	waitsfx
-	playsound SFX_TRANSACTION
-	writetext CeladonPrizeRoom_HereYouGoText
-	waitbutton
-	setval CHANSEY
-	special GameCornerPrizeMonCheckDex
-	givepoke CHANSEY, 20
-	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
-	sjump .loop
-
-.Larvitar:
-	checkcoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
-	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
 	getmonname STRING_BUFFER_3, BAGON
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
@@ -201,6 +183,24 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	setval BAGON
 	special GameCornerPrizeMonCheckDex
 	givepoke BAGON, 20
+	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
+	sjump .loop
+
+.Larvitar:
+	checkcoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
+	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
+	getmonname STRING_BUFFER_3, CHANSEY
+	scall CeladonPrizeRoom_askbuy
+	iffalse CeladonPrizeRoom_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext CeladonPrizeRoom_HereYouGoText
+	waitbutton
+	setval CHANSEY
+	special GameCornerPrizeMonCheckDex
+	givepoke CHANSEY, 20
 	takecoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
 	sjump .loop
 
@@ -213,9 +213,9 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "PIKACHU    {d:CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS}@"
-	db "PORYGON    {d:CELADONGAMECORNERPRIZEROOM_PORYGON_COINS}@"
-	db "LARVITAR   {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
+	db "MR MIME    {d:CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS}@"
+	db "BAGON      {d:CELADONGAMECORNERPRIZEROOM_PORYGON_COINS}@"
+	db "CHANSEY    {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
 	db "CANCEL@"
 
 CeladonGameCornerPrizeRoomGentlemanText:

@@ -3371,7 +3371,7 @@ BattleCommand_DamageCalc:
 ; ==================================
 ; ========= Groudon ==============
 ; ==================================
-; half damage from water attacks
+; quarter damage from water attacks
     call GetOpposingMon
     cp GROUDON
 	jr nz, .finishGroudon
@@ -3380,6 +3380,7 @@ BattleCommand_DamageCalc:
 	and TYPE_MASK
 	cp WATER
     jr nz, .finishGroudon
+	call HalfDamage
 	call HalfDamage
 .finishGroudon
 

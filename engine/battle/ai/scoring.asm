@@ -375,10 +375,20 @@ AI_Basic:
 	jr z, .explodeOrHeal
 
 ; don't encourage recoil moves as much
+    ld a, [wEnemyMonSpecies]
+    cp AERODACTYL
+    jr z, .skipRecoilCheck
+    cp INFERNAPE
+    jr z, .skipRecoilCheck
+    cp HAWLUCHA
+    jr z, .skipRecoilCheck
+    cp REGIGIGAS
+    jr z, .skipRecoilCheck
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RECOIL_HIT
 	jr z, .recoil
 
+.skipRecoilCheck
 ; if we are below 1/4 hp and have a healing move then lesser encourage so we can use it
     call AICheckEnemyQuarterHP
     jr c, .checkAcc
@@ -4617,6 +4627,7 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
 	jr z, .yes
 
 ; sturdy
+    ld a, [wEnemyMonSpecies]
     push bc
     push hl
     push de
@@ -5144,6 +5155,81 @@ CanAI3HKO:
     ret
 
 DoesAIOutSpeedPlayer:
+; lots of extra logic for the weather speed boosting abilities since they don't actually increase speed
+    ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	jp nz, .checkPlayer
+    ld a, [wPlayerSpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .checkPlayer
+
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr nz, .checkSun
+	ld a, [wEnemyMonSpecies]
+	cp POLIWRATH
+	jp z, .yes
+	cp KINGDRA
+	jp z, .yes
+.checkSun
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .checkSand
+	ld a, [wEnemyMonSpecies]
+	cp VENUSAUR
+	jr z, .yes
+	cp EXEGGUTOR
+	jr z, .yes
+	cp VICTREEBEL
+	jr z, .yes
+.checkSand
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr nz, .checkPlayer
+	ld a, [wEnemyMonSpecies]
+	cp EXCADRILL
+	jr z, .yes
+	cp GOLEM
+	jr z, .yes
+
+.checkPlayer
+    ld a, [wBattleMonStatus]
+	and 1 << PAR
+	jp nz, .speedCheck
+    ld a, [wEnemySpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jr nc, .speedCheck
+
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr nz, .checkSunPlayer
+	ld a, [wBattleMonSpecies]
+	cp POLIWRATH
+	jr z, .no
+	cp KINGDRA
+	jr z, .no
+.checkSunPlayer
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .checkSandPlayer
+	ld a, [wBattleMonSpecies]
+	cp VENUSAUR
+	jr z, .no
+	cp EXEGGUTOR
+	jr z, .no
+	cp VICTREEBEL
+	jr z, .no
+.checkSandPlayer
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr nz, .speedCheck
+	ld a, [wBattleMonSpecies]
+	cp EXCADRILL
+	jr z, .no
+	cp GOLEM
+	jr z, .no
+
+.speedCheck
 ; Return carry if enemy is faster than player.
 	push bc
 	ld a, [wEnemyMonSpeed + 1]
@@ -5156,6 +5242,12 @@ DoesAIOutSpeedPlayer:
 	sbc b
 	pop bc
 	ret
+.yes
+    scf
+    ret
+.no
+    xor a
+    ret
 
 AICheckPlayerMaxHP:
 	push hl

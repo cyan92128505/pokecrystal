@@ -1949,10 +1949,10 @@ GyaradosEvosAttacks:
 	db 1, THRASH
 	db 20, BITE
 	db 25, DRAGON_RAGE
-	db 30, RAIN_DANCE
-	db 35, DRAGON_PULSE
-	db 40, DRAGON_DANCE
-	db 45, WATERFALL
+	db 30, THRASH
+	db 35, CRUNCH
+	db 40, WATERFALL
+	db 45, DRAGON_DANCE
 	db 50, HURRICANE
 	db 55, HYPER_BEAM
 	db 0 ; no more level-up moves
@@ -2069,8 +2069,8 @@ RaltsEvosAttacks:
 	db 1, CONFUSION
 	db 9, HYPNOSIS
 	db 12, TELEPORT
-	db 16, DRAIN_KISS
-	db 20, PSYBEAM
+	db 19, DRAIN_KISS
+	db 21, PSYBEAM
 	db 24, ATTRACT
 	db 30, DREAM_EATER
 	db 35, PSYCHIC_M
@@ -2086,8 +2086,8 @@ KirliaEvosAttacks:
 	db 1, CONFUSION
 	db 9, HYPNOSIS
 	db 12, TELEPORT
-	db 16, DRAIN_KISS
-	db 20, PSYBEAM
+	db 18, DRAIN_KISS
+	db 21, PSYBEAM
 	db 24, ATTRACT
 	db 30, DREAM_EATER
 	db 35, PSYCHIC_M
@@ -2282,7 +2282,7 @@ TreeckoEvosAttacks:
 	db 1, LEER
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
-	db 16, RAZOR_LEAF
+	db 17, RAZOR_LEAF
 	db 20, MEGA_DRAIN
 	db 25, SLASH
 	db 32, X_SCISSOR
@@ -2328,7 +2328,7 @@ ChimcharEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, EMBER
-	db 16, KARATE_CHOP
+	db 17, KARATE_CHOP
 	db 20, MACH_PUNCH
 	db 25, FLAME_WHEEL
 	db 30, SUBMISSION
@@ -2378,7 +2378,7 @@ FroakieEvosAttacks:
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 12, WATER_GUN
-	db 16, SWIFT
+	db 17, SWIFT
 	db 20, NIGHT_SHADE
 	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
@@ -3270,13 +3270,13 @@ TeddiursaEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, LICK
-	db 15, FURY_SWIPES
-	db 22, NIGHT_SLASH
-	db 26, REST
+	db 15, HEADBUTT
+	db 22, REST
+	db 26, NIGHT_SLASH
 	db 31, SLASH
-	db 35, BODY_SLAM
-	db 40, CRUNCH
-	db 50, THRASH
+	db 35, THRASH
+	db 40, BODY_SLAM
+	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
@@ -3284,13 +3284,13 @@ UrsaringEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, LICK
-	db 15, FURY_SWIPES
-	db 22, NIGHT_SLASH
-	db 26, REST
-	db 30, SLASH
-	db 35, BODY_SLAM
-	db 40, CRUNCH
-	db 50, THRASH
+	db 15, HEADBUTT
+	db 22, REST
+	db 26, NIGHT_SLASH
+	db 31, SLASH
+	db 35, THRASH
+	db 40, BODY_SLAM
+	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 LatiasEvosAttacks:

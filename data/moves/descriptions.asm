@@ -1235,7 +1235,7 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "An attack that may"
-	line "lower SPCL.DEF.@"
+	line "lower DEF.@"
 
 MirrorCoatDescription:
 	db   "Counters a SPCL."

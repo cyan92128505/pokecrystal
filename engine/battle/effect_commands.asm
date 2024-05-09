@@ -3262,7 +3262,7 @@ BattleCommand_DamageCalc:
 ; ========================
 ; ===== Muscle Band ======
 ; ========================
-; AndrewNote - muscel band - x1.1 damage
+; AndrewNote - muscle band - x1.1 damage
     push hl
 	call GetUserItem
 	ld a, b
@@ -3279,7 +3279,7 @@ BattleCommand_DamageCalc:
 ; =========================
 ; ===== Wise Glasses ======
 ; =========================
-; AndrewNote - muscel band - x1.1 damage
+; AndrewNote - wise glasses - x1.1 damage
     push hl
 	call GetUserItem
 	ld a, b

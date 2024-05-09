@@ -3745,16 +3745,22 @@ ScoreMonTypeMatchups:
 	jr .quit
 
 .loop5
+    call FindRandomMonForSwitch
+.quit
+	ret
+
+FindRandomMonForSwitch:
+.randLoop
 	ld a, [wOTPartyCount]
 	ld b, a
 	call BattleRandom
 	and $7
 	cp b
-	jr nc, .loop5
+	jr nc, .randLoop
 	ld b, a
 	ld a, [wCurOTMon]
 	cp b
-	jr z, .loop5
+	jr z, .randLoop
 	ld hl, wOTPartyMon1HP
 	push bc
 	ld a, b
@@ -3764,13 +3770,28 @@ ScoreMonTypeMatchups:
 	ld c, a
 	ld a, [hl]
 	or c
-	jr z, .loop5
-
-.quit
+	jr z, .randLoop
 	ret
 
 LoadEnemyMonToSwitchTo:
 	; 'b' contains the PartyNr of the mon the AI will switch to
+	ld a, [wCurOTMon]
+	cp b
+	jr z, .resample
+	ld hl, wOTPartyMon1HP
+	push bc
+	ld a, b
+	call GetPartyLocation
+	pop bc
+	ld a, [hli]
+	ld c, a
+	ld a, [hl]
+	or c
+	jr z, .resample
+	jr .cont
+.resample
+    call FindRandomMonForSwitch
+.cont
 	ld a, b
 	ld [wCurPartyMon], a
 	ld hl, wOTPartyMon1Level

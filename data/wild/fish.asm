@@ -177,8 +177,8 @@ FishGroups:
 .Garchomp_NoSwarm_Old:
 .Garchomp_Old:
 	db  70 percent + 1, MAGIKARP,   15
-	db  85 percent + 1, SQUIRTLE,   15
-	db 100 percent,     SQUIRTLE,  15
+	db  85 percent + 1, MAGIKARP,   15
+	db 100 percent,     FEEBAS,  15
 .Garchomp_NoSwarm_Good:
 .Garchomp_Good:
 	db  35 percent,     SQUIRTLE,   20
@@ -194,8 +194,8 @@ FishGroups:
 
 .Latios_Old:
 	db  70 percent + 1, MAGIKARP,   15
-	db  85 percent + 1, FROAKIE,   15
-	db 100 percent,     FROAKIE,    15
+	db  85 percent + 1, MAGIKARP,   15
+	db 100 percent,     FEEBAS,    15
 .Latios_Good:
 	db  35 percent,     FROAKIE,   20
 	db  70 percent,     FROGADIER,    30

@@ -929,6 +929,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
 	dbw EFFECT_SP_ATK_UP,        AI_Smart_Growth
 	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
+	dbw EFFECT_SPEED_UP_2,       AI_Smart_Agility
 	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
 	dbw EFFECT_CALM_MIND,        AI_Smart_CalmMind
 	dbw EFFECT_DRAGON_DANCE,     AI_Smart_DragonDance
@@ -4197,6 +4198,18 @@ AI_Smart_Barrier:
 ; encourage if we get here
 	jp StrongEncourage
 
+AI_Smart_Agility:
+; discourage if we are faster
+    call DoesAIOutSpeedPlayer
+    jp c, StandardDiscourage
+
+; discourage if we will be KOd
+    call CanPlayerKO
+    jp c, StandardDiscourage
+
+; otherwise use
+    jp StandardEncourage
+
 AI_Smart_Geomancy:
 	call IsSpecialAttackMaxed
 	jp c, StandardDiscourage
@@ -4272,16 +4285,14 @@ AI_Smart_Growth:
 	call IsSpecialAttackMaxed
 	jp c, StandardDiscourage
 
-; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
     jp nc, StandardDiscourage
 
-; discourage after boost if afflicted with toxic
-    call IsAIToxified
-    jp c, StandardDiscourage
-
 ; encourage if we have no reason not to
-    jp StandardEncourage
+rept 6
+    dec [hl]
+endr
+    ret
 
 AI_Smart_NastyPlot:
 	call IsSpecialAttackMaxed

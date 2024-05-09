@@ -33,19 +33,15 @@ AnthonyDefeatedMonText:
 	done
 
 AnthonyLostAMonText:
-	text "Hey baby."
-	para "I'm going to take"
-	line "you in my manly"
-	cont "arms and tear"
-	cont "those clothes from"
-	cont "your body."
-	para "Then I'll sign my"
-	line "name..."
-	para "ANGUS CHAD MAXIMUS"
-	line "on your..."
-	para "..."
-	para "Oh my Arceus!"
-	para "Wrong number!"
+	text "I bet a badass"
+	line "like you never"
+	cont "loses any battles."
+	para "I can tell because"
+	line "I also never lose."
+	para "You are the only"
+	line "person to have"
+	cont "defeated..."
+	cont "ANGUS CHAD MAXIMUS"
 	done
 
 AnthonyBattleRematchText:

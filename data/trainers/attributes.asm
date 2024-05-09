@@ -138,7 +138,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 8 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
-	dw CONTEXT_USE
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Bird Keeper
 	db NO_ITEM, NO_ITEM ; items
@@ -300,7 +300,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 6 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
-	dw CONTEXT_USE
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Executivem
 	db NO_ITEM, NO_ITEM ; items
@@ -354,7 +354,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 20 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
-	dw CONTEXT_USE
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Kimono Girl
 	db NO_ITEM, NO_ITEM ; items
@@ -372,7 +372,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 20 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
-	dw CONTEXT_USE
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Red
 	db NO_ITEM, NO_ITEM ; items

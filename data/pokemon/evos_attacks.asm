@@ -565,7 +565,7 @@ NinetalesEvosAttacks:
 	db 28, HYPNOSIS
 	db 32, FLAMETHROWER
 	db 40, FIRE_BLAST
-	db 50, QUIVER_DANCE
+	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
@@ -713,19 +713,24 @@ LarvestaEvosAttacks:
 	db 20, ANCIENTPOWER
 	db 30, FLAME_WHEEL
 	db 40, X_SCISSOR
-	db 50, BUG_BUZZ
-	db 55, FLARE_BLITZ
-	db 60, FIRE_BLAST
+	db 45, BUG_BUZZ
+	db 55, FIRE_BLAST
+	db 60, FLARE_BLITZ
+	db 65, MORNING_SUN
 	db 0 ; no more level-up moves
 
 VolcaronaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ANCIENTPOWER
-	db 51, QUIVER_DANCE
-	db 53, BUG_BUZZ
-	db 57, FIRE_BLAST
+	db 1, EMBER
+	db 1, LEECH_LIFE
+	db 20, ANCIENTPOWER
+	db 30, FLAME_WHEEL
+	db 40, X_SCISSOR
+	db 45, BUG_BUZZ
+	db 50, QUIVER_DANCE
+	db 55, FIRE_BLAST
 	db 60, FLARE_BLITZ
-	db 64, MORNING_SUN
+	db 65, MORNING_SUN
 	db 0 ; no more level-up moves
 
 ArctozoltEvosAttacks:
@@ -2348,7 +2353,8 @@ MonfernoEvosAttacks:
 	db 20, MACH_PUNCH
 	db 26, FLAME_WHEEL
 	db 30, SUBMISSION
-	db 34, FIRE_PUNCH
+	db 33, FIRE_PUNCH
+	db 37, AURA_SPHERE
 	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
@@ -2363,7 +2369,8 @@ InfernapeEvosAttacks:
 	db 20, MACH_PUNCH
 	db 26, FLAME_WHEEL
 	db 30, SUBMISSION
-	db 34, FIRE_PUNCH
+	db 33, FIRE_PUNCH
+	db 36, AURA_SPHERE
 	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
@@ -2749,7 +2756,7 @@ AmpharosEvosAttacks:
 	db 35, LIGHT_SCREEN
 	db 40, FLASH_CANNON
 	db 45, THUNDER
-	db 50, QUIVER_DANCE
+	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 SylveonEvosAttacks:
@@ -3519,15 +3526,15 @@ RayquazaEvosAttacks:
 	db 1, SCARY_FACE
 	db 1, FLY
 	db 1, ANCIENTPOWER
-	db 20, CRUNCH
-	db 30, DRAGON_PULSE
-	db 40, REST
-	db 45, EXTREMESPEED
-	db 50, DRAGON_CLAW
-	db 60, DRAGON_DANCE
-	db 70, DRACO_ASCENT
-	db 75, OUTRAGE
-	db 80, DRACO_METEOR
+	db 1, CRUNCH
+	db 20, DRAGON_PULSE
+	db 30, REST
+	db 35, EXTREMESPEED
+	db 40, DRAGON_CLAW
+	db 50, DRAGON_DANCE
+	db 60, DRACO_ASCENT
+	db 65, OUTRAGE
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:

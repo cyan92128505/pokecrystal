@@ -2963,12 +2963,12 @@ AI_Smart_Curse:
 	and 1 << FRZ | SLP
 	jr z, .noStatus
 	call IsPlayerPhysicalOrSpecial
-	jp c, StandardEncourage
+	jr c, .encourage
 .noStatus
 
-; don't use if we are at risk of being KOd, just attack them
-    call ShouldAIBoost
-    jr nc, .discourage
+; don't use curse if player can 2HKO as we will likely take 2 hits due to the speed drop
+	call CanPlayer2HKO
+	jr c, .discourage
 
 ; encourage to +2 - strong encourage if player is physical
     ld a, [wEnemyAtkLevel]
@@ -2976,9 +2976,9 @@ AI_Smart_Curse:
     jp nc, .atPlus2
     call IsPlayerPhysicalOrSpecial
     jr nc, .special
-    jp StrongEncourage
+    jr .strongEncourage
 .special
-    jp .encourage
+    jr .encourage
 
 .atPlus2
 ; discourage after boost if afflicted with toxic
@@ -2986,6 +2986,8 @@ AI_Smart_Curse:
     jr c, .discourage
     ret
 
+.strongEncourage
+    dec [hl]
 .encourage
 	dec [hl]
 	dec [hl]
@@ -3772,16 +3774,10 @@ AI_Smart_PsychUp:
 
 ; encourage if player has a boosted stat
     ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .encourage
     ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .encourage
-    ld a, [wPlayerDefLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .encourage
-    ld a, [wPlayerSDefLevel]
-	cp BASE_STAT_LEVEL + 1
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .encourage
 
 ; discourage by default

@@ -283,7 +283,7 @@ Route29YoungsterText:
 
 Route29TeacherText:
 	text "You can see"
-	line "details of you"
+	line "details of your"
 	cont "#MON moves in"
 	cont "the MOVES option"
 	cont "in the menu."

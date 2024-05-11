@@ -26,7 +26,7 @@ Route24RocketScript:
 	closetext
 	winlosstext Route24RocketBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer GRUNTM, GRUNTM_31
+	loadtrainer EXECUTIVEM, PRIMERA
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -50,7 +50,7 @@ Route24RocketScript:
 	closetext
 	winlosstext Route24RocketBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer GRUNTM, GRUNTM_31
+	loadtrainer EXECUTIVEM, PRIMERA
 	startbattle
 	reloadmapafterbattle
 	end
@@ -85,15 +85,12 @@ Route24RocketSeenText:
 	line "contact with the"
 	cont "JOHTO ROCKETS."
 
-	para "I assume this is"
-	line "your doing?"
-
 	para "They were weak"
 	line "and deserved what"
 	cont "they got."
 
 	para "I will carry out"
-	line "our mission."
+	line "my mission."
 
 	para "To use the RADIO"
 	line "TOWER to control"

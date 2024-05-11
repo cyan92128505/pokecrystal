@@ -4,27 +4,27 @@ BattleTowerTrainers:
 ; See BattleTowerText in engine/events/battle_tower/trainer_text.asm.
 	table_width (NAME_LENGTH - 1) + 1, BattleTowerTrainers
 	; name, class
-	db "HANSON@@@@", FISHER
-	db "SAWYER@@@@", POKEMANIAC
-	db "MASUDA@@@@", WALLACE
-	db "NICKEL@@@@", SCIENTIST
-	db "OLSON@@@@@", POKEFANM
-	db "ZABOROWSKI", LASS
-	db "WRIGHT@@@@", YOUNGSTER
-	db "ALEXANDER@", HIKER
-	db "KAWAKAMI@@", BEAUTY
-	db "BICKETT@@@", POKEFANM
-	db "SAITO@@@@@", KIMONO_GIRL
-	db "CRAWFORD@@", SOLDIER
-	db "DIAZ@@@@@@", PICNICKER
-	db "ERICKSON@@", BIKER
-	db "FAIRFIELD@", POKEMANIAC
-	db "HUNTER@@@@", POKEFANF
-	db "HILL@@@@@@", FIREBREATHER
-	db "JAVIER@@@@", SWIMMERF
-	db "KAUFMAN@@@", SWIMMERM
-	db "LANCASTER@", GIOVANNI
-	db "McMAHILL@@", CAMPER
+	db "DAVE@@@@@@", FISHER
+	db "LARMOUR@@@", POKEMANIAC
+	db "HARRY@@@@@", BLACKBELT_T
+	db "MAURO@@@@@", SCIENTIST
+	db "JOSHUA@@@@", POKEFANM
+	db "KRISSIE@@@", LASS
+	db "SIR D.B.R@", COOLTRAINERM
+	db "SAM@@@@@@@", HIKER
+	db "JULIA@@@@@", BEAUTY
+	db "BOBY@@@@@@", GENTLEMAN
+	db "IRENE@@@@@", KIMONO_GIRL
+	db "JONATHAN@@", OFFICER
+	db "RACHEL S@@", PICNICKER
+	db "BEN@@@@@@@", BIKER
+	db "KENNY@@@@@", SAGE
+	db "RACHEL M@@", POKEFANF
+	db "DAVE HILL@", FIREBREATHER
+	db "REBECCA@@@", SWIMMERF
+	db "M POWER@@@", SUPER_NERD
+	db "MEREDITH@@", COOLTRAINERF
+	db "STEVEN@@@@", CAMPER
 	;assert_table_length BATTLETOWER_NUM_UNIQUE_MON
 ; The following can only be sampled in Crystal 1.1.
 	db "OBRIEN@@@@", GENTLEMAN
@@ -60,14 +60,14 @@ BattleTowerTrainers:
 	db "PARK@@@@@@", COOLTRAINERF
 	db "RAINE@@@@@", SWIMMERM
 	db "SELLS@@@@@", BIRD_KEEPER
-	db "ROCKWELL@@", SOLDIER
+	db "ROCKWELL@@", BIRD_KEEPER
 	db "THORNTON@@", LASS
 	db "TURNER@@@@", OFFICER
-	db "VAN DYKE@@", GIOVANNI
+	db "VAN DYKE@@", OFFICER
 	db "WALKER@@@@", SCHOOLBOY
 	db "MEYER@@@@@", SWIMMERF
 	db "JOHNSON@@@", YOUNGSTER
-	db "ADAMS@@@@@", WALLACE
+	db "ADAMS@@@@@", YOUNGSTER
 	db "SMITH@@@@@", BUG_CATCHER
 	db "TAJIRI@@@@", BUG_CATCHER
 	db "BAKER@@@@@", POKEMANIAC

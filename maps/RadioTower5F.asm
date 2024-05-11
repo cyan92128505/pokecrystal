@@ -522,6 +522,9 @@ RadioTower5FRocketBossAfterText:
 	para "This is not the"
 	line "only radio tower."
 
+	para "We have dispatched"
+	line "the PRIMERA."
+
 	para "Our top operative"
 	line "is entrusted to"
 	cont "see our vision"

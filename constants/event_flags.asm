@@ -421,6 +421,7 @@
     const EVENT_BEAT_WIFE
     const EVENT_BEAT_BROTHER
     const EVENT_SPOKE_TO_BAILEY
+    const EVENT_BEAT_MEOWTH
 
     ; ======================================
     ; AndrewNote - here

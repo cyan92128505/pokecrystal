@@ -382,7 +382,6 @@ INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route24.asm"
 INCLUDE "maps/Route3.asm"
-INCLUDE "maps/Route4.asm"
 
 SECTION "Map Scripts 25", ROMX
 
@@ -522,3 +521,4 @@ INCLUDE "maps/ManorOutside.asm"
 SECTION "Map Scripts Overflow 11", ROMX
 
 INCLUDE "maps/TrainerHouseB1F.asm"
+INCLUDE "maps/Route4.asm"

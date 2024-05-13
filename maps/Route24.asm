@@ -114,18 +114,25 @@ Route24RocketSeenText:
 
     para "Nothing will"
     line "stop me."
+
+    para "Go ahead, the"
+    line "machine part is"
+    cont "in the square"
+    cont "pool in the"
+    cont "centre of the"
+    cont "CERULEAN GYM."
+
+    para "But before you"
+    line "depart..."
+
+    para "The ROCKETS send"
+    line "their regards."
 	done
 
 Route24RocketBeatenText:
 	text "I can see why"
 	line "the ROCKETS"
 	cont "lost to you."
-
-	para "The Machine part"
-	line "is in the GYM"
-	cont "in the square"
-	cont "pool in the"
-	cont "middle."
 	done
 
 Route24RocketAfterBattleText:

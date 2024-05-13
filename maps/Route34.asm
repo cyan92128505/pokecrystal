@@ -3,7 +3,6 @@
 	const ROUTE34_YOUNGSTER2
 	const ROUTE34_YOUNGSTER3
 	const ROUTE34_LASS
-	const ROUTE34_OFFICER
 	const ROUTE34_POKEFAN_M
 	const ROUTE34_GRAMPS
 	const ROUTE34_DAY_CARE_MON_1
@@ -11,10 +10,10 @@
 	const ROUTE34_COOLTRAINER_F1
 	const ROUTE34_COOLTRAINER_F2
 	const ROUTE34_COOLTRAINER_F3
-    const ROUTE34_FIELDMON_1
-    const ROUTE34_FIELDMON_2
     const ROUTE34_FIELDMON_3
-    const ROUTE34_FIELDMON_4
+    const ROUTE34_JESSIE
+    const ROUTE34_JAMES
+    const ROUTE34_MEOWTH
 
 Route34_MapScripts:
 	def_scene_scripts
@@ -23,28 +22,19 @@ Route34_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .EggCheckCallback
 
 .EggCheckCallback:
-; Pokemon which always appear
-    appear ROUTE34_FIELDMON_2
     appear ROUTE34_FIELDMON_3
-
-    random 4
-    ifequal 1, .spawn4
-    disappear ROUTE34_FIELDMON_4
-    sjump .checkNight
-.spawn4
-    appear ROUTE34_FIELDMON_4
-
-.checkNight
-; Pokemon that only appear at night
-    checktime NITE
-    iffalse .checkEgg
-
-    random 3
-    ifequal 1, .spawn1
-    disappear ROUTE34_FIELDMON_1
+    checkevent EVENT_BEAT_MEOWTH
+    iffalse .noTeamRocket
+    checkevent EVENT_CLEARED_RADIO_TOWER
+    iffalse .noTeamRocket
+    appear ROUTE34_JESSIE
+    appear ROUTE34_JAMES
+    appear ROUTE34_MEOWTH
     sjump .checkEgg
-.spawn1
-    appear ROUTE34_FIELDMON_1
+.noTeamRocket
+    disappear ROUTE34_JESSIE
+    disappear ROUTE34_JAMES
+    disappear ROUTE34_MEOWTH
 
 .checkEgg
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -779,50 +769,59 @@ DayCareSignText:
 	line "#MON FOR YOU!"
 	done
 
-Route34FieldMon1Script:
-	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_1, Route34PokemonAttacksText, 37, 0, .script
-.script
-    disappear ROUTE34_FIELDMON_1
-    end
-
-Route34PokemonAttacksText:
-	text "Wild #MON"
-	line "attacks!"
-	done
-
-Route34FieldMon2Script:
-	faceplayer
-	cry CLOYSTER
-	pause 15
-	loadwildmon CLOYSTER, 38
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_2
-	disappear ROUTE34_FIELDMON_2
-	end
-
 Route34FieldMon3Script:
 	faceplayer
-	cry WHIMSICOTT
+	cry COTTONEE
 	pause 15
-	loadwildmon WHIMSICOTT, 22
+	loadwildmon COTTONEE, 22
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
 	disappear ROUTE34_FIELDMON_3
 	end
 
-Route34FieldMon4Script:
-	faceplayer
-	cry EEVEE
-	pause 15
-	loadwildmon EEVEE, 20
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_4
-	disappear ROUTE34_FIELDMON_4
-	end
+Route34James:
+    jumptextfaceplayer Route34JamesText
+
+Route34Jessie:
+    jumptextfaceplayer Route34JessieText
+
+Route34Meowth:
+    jumptextfaceplayer Route34MeowthText
+
+Route34JamesText:
+	text "You must learn how"
+	line "to lose."
+	para "It is such an"
+	line "important part of"
+	cont "#MON training"
+	cont "that we built our"
+	cont "entire careers on"
+	cont "it!"
+	para "Isn't that right"
+	line "JESSIE?"
+	done
+
+Route34JessieText:
+	text "Why can't I find"
+	line "anyone to love me"
+	cont "just because I'm"
+	cont "mean and nasty and"
+	cont "evil?"
+	para "But at least it's"
+	line "nice and peaceful"
+	cont "here."
+	para "Too bad about"
+	line "the company!"
+	done
+
+Route34MeowthText:
+	text "Youse two don't"
+	line "need the opposite"
+	cont "sex, youse have"
+	cont "each other!"
+	done
+
 
 Route34_MapEvents:
 	db 0, 0 ; filler
@@ -848,7 +847,7 @@ Route34_MapEvents:
 	object_event 19, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterSamuel, -1
 	object_event 15, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
 	object_event 14, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
-	object_event 13, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
+	;object_event 13, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
 	object_event 22, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
 	object_event 19, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event 18, 18, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
@@ -856,8 +855,7 @@ Route34_MapEvents:
 	object_event 15, 48, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfIrene, -1
 	object_event  7, 48, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
 	object_event 10, 51, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
-
-	object_event 14,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route34FieldMon1Script, EVENT_FIELD_MON_1
-	object_event  9, 34, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route34FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 18, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34FieldMon3Script, EVENT_FIELD_MON_3
-	object_event 12, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route34FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 4, 22, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34James, EVENT_TEMP_EVENT_1
+	object_event 4, 23, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Jessie, EVENT_TEMP_EVENT_2
+	object_event 5, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Meowth, EVENT_TEMP_EVENT_3

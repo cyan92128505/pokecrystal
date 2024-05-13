@@ -2,15 +2,30 @@
 	const RADIOTOWER4F_FISHER
 	const RADIOTOWER4F_TEACHER
 	const RADIOTOWER4F_GROWLITHE
-	const RADIOTOWER4F_ROCKET1
 	const RADIOTOWER4F_ROCKET2
 	const RADIOTOWER4F_ROCKET_GIRL
 	const RADIOTOWER4F_SCIENTIST
+	const RADIOTOWER4F_MEOWTH
 
 RadioTower4F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .teamRocket
+
+.teamRocket
+    disappear RADIOTOWER4F_MEOWTH
+    checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+    iffalse .disappear
+    checkevent EVENT_BEAT_MEOWTH
+    iftrue .disappear
+    appear RADIOTOWER4F_ROCKET_GIRL
+    appear RADIOTOWER4F_ROCKET2
+    endcallback
+ .disappear
+    disappear RADIOTOWER4F_ROCKET_GIRL
+    disappear RADIOTOWER4F_ROCKET2
+    endcallback
 
 RadioTower4FFisherScript:
 	jumptextfaceplayer RadioTower4FFisherText
@@ -65,29 +80,23 @@ TrainerGruntM10:
 	closetext
 	end
 
-TrainerExecutivem2:
-	trainer EXECUTIVEM, EXECUTIVEM_2, EVENT_BEAT_ROCKET_EXECUTIVEM_2, Executivem2SeenText, Executivem2BeatenText, 0, .Script
+TrainerJames:
+    jumptextfaceplayer jamesPreText
 
-.Script:
-    loadmem wNoRematch, 1
-	;endifjustbattled
-	opentext
-	writetext Executivem2AfterBattleText
-	waitbutton
-	closetext
-	end
+TrainerJessie:
+    jumptextfaceplayer jessiePreText
 
-TrainerGruntF4:
-	trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, GruntF4SeenText, GruntF4BeatenText, 0, .Script
+jamesPreText:
+	text "We have a proud"
+	line "tradition of"
+	cont "failure to uphold!"
+	done
 
-.Script:
-    loadmem wNoRematch, 1
-	endifjustbattled
-	opentext
-	writetext GruntF4AfterBattleText
-	waitbutton
-	closetext
-	end
+jessiePreText:
+	text "All's fair in love"
+	line "and war and"
+	cont "battles"
+	done
 
 TrainerScientistRich:
 	trainer SCIENTIST, RICH, EVENT_BEAT_SCIENTIST_RICH, ScientistRichSeenText, ScientistRichBeatenText, 0, .Script
@@ -179,57 +188,6 @@ GruntM10AfterBattleText:
 	line "us all!"
 	done
 
-Executivem2SeenText:
-	text "Stop!"
-
-	para "I'm known as the"
-	line "TEAM ROCKET"
-	cont "FORTRESS!"
-
-	para "You're not taking"
-	line "another step!"
-	done
-
-Executivem2BeatenText:
-	text "The fortress has"
-	line "fallen!"
-	done
-
-Executivem2AfterBattleText:
-	text "You've earned my"
-	line "respect."
-
-	para "Join us!"
-
-	para "Let us save"
-	line "KANTO and JOHTO"
-	cont "together."
-	done
-
-GruntF4SeenText:
-	text "Have you heard"
-	line "of the #MON"
-
-	para "KYOGRE and"
-	line "GROUDON!"
-
-	para "They are HOEN"
-	line "legendary"
-	cont "#MON."
-
-	para "They will kill"
-	line "us all!"
-	done
-
-GruntF4BeatenText:
-	text "You fool!"
-	done
-
-GruntF4AfterBattleText:
-	text "You have doomed"
-	line "us all!"
-	done
-
 ScientistRichSeenText:
 	text "Did I give you"
 	line "permission to"
@@ -269,16 +227,222 @@ RadioTower4FStudio2SignText:
 	text "4F STUDIO 2"
 	done
 
+JessieAndJamesScene:
+    checkevent EVENT_BEAT_MEOWTH
+    iftrue .end
+
+    turnobject RADIOTOWER4F_ROCKET_GIRL, RIGHT
+    turnobject RADIOTOWER4F_ROCKET2, LEFT
+
+    turnobject PLAYER, LEFT
+    opentext
+    writetext PrepareForTrouble
+    waitbutton
+    turnobject PLAYER, RIGHT
+    writetext MakeItDouble
+    waitbutton
+
+    turnobject PLAYER, LEFT
+    opentext
+    writetext ProtectFromDev
+    waitbutton
+    turnobject PLAYER, RIGHT
+    writetext UniteAllPeoples
+    waitbutton
+
+    turnobject PLAYER, LEFT
+    opentext
+    writetext DenounceEvils
+    waitbutton
+    turnobject PLAYER, RIGHT
+    writetext ExtendReach
+    waitbutton
+
+    turnobject PLAYER, LEFT
+    opentext
+    writetext Jessie
+    waitbutton
+    turnobject PLAYER, RIGHT
+    writetext James
+    waitbutton
+
+    turnobject PLAYER, LEFT
+    opentext
+    writetext BlastOffAtThe
+    waitbutton
+    turnobject PLAYER, RIGHT
+    writetext SurrenderNow
+    waitbutton
+    closetext
+
+	winlosstext JamesLose, JamesWin
+	loadtrainer GRUNTM, GRUNTM_31
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_31
+
+    turnobject PLAYER, LEFT
+    opentext
+    writetext CantDoThat
+    waitbutton
+    closetext
+
+	winlosstext JessieLose, JessieWin
+	loadtrainer GRUNTF, GRUNTF_4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTF_4
+
+	appear RADIOTOWER4F_MEOWTH
+
+    turnobject PLAYER, DOWN
+    opentext
+    writetext MeowthText
+    waitbutton
+    closetext
+
+	winlosstext MeowthLose, MeowthWin
+	loadtrainer GRUNTF, GRUNTF_6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MEOWTH
+
+    opentext
+    writetext BlastingOffAgain
+    waitbutton
+    closetext
+
+	special FadeOutPalettes
+    disappear RADIOTOWER4F_ROCKET2
+    disappear RADIOTOWER4F_ROCKET_GIRL
+    disappear RADIOTOWER4F_MEOWTH
+	pause 10
+	special FadeInPalettes
+
+.end
+    end
+
+PrepareForTrouble:
+    text "Prepare for"
+    line "trouble."
+    done
+
+MakeItDouble:
+    text "Make it double."
+    done
+
+ProtectFromDev:
+	text "To protect the"
+	line "world from"
+	cont "devastation."
+	done
+
+UniteAllPeoples:
+	text "To unite all"
+	line "peoples within our"
+	cont "nation."
+	done
+
+DenounceEvils:
+	text "To denounce the"
+	line "evils of truth and"
+	cont "love."
+	done
+
+ExtendReach:
+	text "To extend our"
+	line "reach to the stars"
+	cont "above."
+	done
+
+Jessie:
+    text "JESSIE!"
+    done
+
+James:
+    text "JAMES!"
+    done
+
+BlastOffAtThe:
+	text "Team ROCKET blast"
+	line "off at the speed"
+	cont "of light."
+	done
+
+SurrenderNow:
+	text "Surrender now or"
+	line "prepare to fight!"
+	done
+
+JamesLose:
+	text "With enemies like"
+	line "that, who needs"
+	cont "friends?"
+	done
+
+JamesWin:
+	text "We'd like to thank"
+	line "all of our fans"
+	cont "for their loyalty"
+	cont "and support; this"
+	cont "victory is for"
+	cont "them!"
+	done
+
+CantDoThat:
+    text "I'll stop you"
+    line "twerp!"
+    done
+
+JessieLose:
+	text "This is all"
+	line "your fault JAMES!"
+	done
+
+JessieWin:
+	text "I can't believe"
+	line "that worked!"
+	done
+
+MeowthText:
+	text "Youse twos can't"
+	line "get anything"
+	cont "right."
+	para "I'll take care of"
+	line "this myself!"
+	done
+
+MeowthLose:
+	text "Just once, I'd"
+	line "like to make a"
+	cont "dramatic exit that"
+	cont "doesn't involve a"
+	cont "life-threatening"
+	cont "explosion."
+	done
+
+MeowthWin:
+    text "MEOWTH,"
+    line "that's right!"
+    done
+
+BlastingOffAgain:
+	text "Looks like TEAM"
+	line "ROCKETS blasting"
+	cont "off again..."
+	done
+
 RadioTower4F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  0,  0, RADIO_TOWER_5F, 1
 	warp_event  9,  0, RADIO_TOWER_3F, 2
-	warp_event 12,  0, RADIO_TOWER_5F, 2
+	warp_event 13,  0, RADIO_TOWER_5F, 2
 	warp_event 17,  0, RADIO_TOWER_3F, 3
 
 	def_coord_events
+	coord_event 13, 1, SCENE_ALWAYS, JessieAndJamesScene
 
 	def_bg_events
 	bg_event  7,  0, BGEVENT_READ, RadioTower4FProductionSign
@@ -288,7 +452,7 @@ RadioTower4F_MapEvents:
 	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event 14,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
 	object_event 12,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
-	;object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerExecutivem2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerJames, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 12,  1, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerJessie, EVENT_TEMP_EVENT_2
 	object_event  1,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistRich, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 13,  2, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

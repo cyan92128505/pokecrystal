@@ -466,7 +466,7 @@ Soldier7SeenText:
 	line "trained to deal"
 	cont "the ELECTRIC"
 	cont "#MON."
-	para "You're GYM LEADER"
+	para "Your GYM LEADER"
 	line "can't help you!"
     done
 Soldier7BeatenText:

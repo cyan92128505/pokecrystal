@@ -272,46 +272,52 @@ TrainerGruntM1WhenTalkText:
 	done
 
 GruntM2SeenText:
-	text "Our leader can"
-	line "command the"
-	cont "SLOWPOKE."
-
-	para "We are trying"
-	line "to help them."
+	text "You beat JESSIE!"
+	para "She may be nasty"
+	line "and mean but I"
+	cont "will make you pay"
+	cont "for what you've"
+	cont "done!"
 	done
 
 GruntM2BeatenText:
-	text "Another hero."
+	text "This is so"
+	line "exciting!"
 	done
 
 GruntM2AfterBattleText:
-	text "You wont get"
-	line "any thanks from"
-	cont "these SLOWPOKE."
+	text "Team Rocket may be"
+	line "dirty rotten"
+	cont "criminals, but"
+	cont "we're not in the"
+	cont "business of"
+	cont "destroying"
+	cont "children's dreams!"
+	para "At least, not yet."
 	done
 
 GruntF1SeenText:
-	text "These dumb"
-	line "creatures should"
-	cont "be happy they"
-	cont "are finally"
-	cont "useful for"
-	cont "something."
+	text "Hold it twerp!"
+	para "We are on an"
+	line "important mission."
+	para "Though this dark"
+	line "and dirty cave"
+	cont "isn't good for my"
+	cont "skin."
+	para "It's just typical."
 	done
 
 GruntF1BeatenText:
-	text "Silly kid!"
+	text "You brat!"
 	done
 
 GruntF1AfterBattleText:
-	text "You are just"
-	line "going to get hurt."
-
-	para "You should go"
-	line "back."
-
-	para "I wont say I"
-	line "seen you."
+	text "Don't let it go to"
+	line "your head because"
+	cont "your #MON are"
+	cont "a teeny tiny bit"
+	cont "stronger."
+	done
 	done
 
 SlowpokeWellB1FSlowpokeWithMailText:

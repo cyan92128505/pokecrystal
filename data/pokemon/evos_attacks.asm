@@ -565,7 +565,6 @@ NinetalesEvosAttacks:
 	db 28, HYPNOSIS
 	db 32, FLAMETHROWER
 	db 40, FIRE_BLAST
-	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
@@ -2563,6 +2562,7 @@ GalvantulaEvosAttacks:
 	db 30, THUNDERBOLT
 	db 36, BUG_BUZZ
 	db 45, THUNDER
+	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
@@ -2756,7 +2756,6 @@ AmpharosEvosAttacks:
 	db 35, LIGHT_SCREEN
 	db 40, FLASH_CANNON
 	db 45, THUNDER
-	db 65, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 SylveonEvosAttacks:

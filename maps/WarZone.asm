@@ -948,8 +948,8 @@ Soldier2SeenText:
 
     para "You and everyone"
     line "you love will"
-    cont "die because of"
-    cont "your actions!"
+    cont "suffer because"
+    cont "of your actions!"
     done
 Soldier2BeatenText:
     text "My commanders"
@@ -1010,10 +1010,6 @@ Soldier3SeenText:
     cont "shortly."
 
     para "You have failed."
-
-    para "And now..."
-
-    para "You will die."
     done
 Soldier3BeatenText:
     text "It's...."
@@ -1066,7 +1062,7 @@ Soldier3AfterBattleText:
     done
 
 TrainerSoldier4:
-	trainer SOLDIER, SOLDIER_4, EVENT_BEAT_SOLDIER_4, Soldier1SeenText, Soldier4BeatenText, Soldier4WinsText, .Script
+	trainer SOLDIER, SOLDIER_4, EVENT_BEAT_SOLDIER_4, Soldier4SeenText, Soldier4BeatenText, Soldier4WinsText, .Script
 .Script:
     loadmem wNoRematch, 1
 	opentext
@@ -1087,7 +1083,7 @@ Soldier4SeenText:
     para "Even if you beat"
     line "me..."
 
-    para "WALLACE will kill"
+    para "WALLACE will end"
     line "everyone!"
     done
 Soldier4BeatenText:

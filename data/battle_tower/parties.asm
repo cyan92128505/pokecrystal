@@ -3027,7 +3027,7 @@ BattleTowerMons:
 
     db GALVANTULA
 	db MAGNET
-	db THUNDER, BUG_BUZZ, GIGA_DRAIN, SLUDGE_BOMB
+	db THUNDER, BUG_BUZZ, GIGA_DRAIN, QUIVER_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -6206,8 +6206,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db GALVANTULA
-	db MAGNET
-	db THUNDER, BUG_BUZZ, GIGA_DRAIN, SUBSTITUTE
+	db FOCUS_SASH
+	db THUNDER, BUG_BUZZ, GIGA_DRAIN, QUIVER_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

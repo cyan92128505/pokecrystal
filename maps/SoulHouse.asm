@@ -118,7 +118,7 @@ SoulHouseBlockText:
     done
 
 SoulHouseWiseGlasses:
-	itemball WISE_GLASSES
+	itemball SACRED_ASH
 
 SoulHouse_MapEvents:
 	db 0, 0 ; filler

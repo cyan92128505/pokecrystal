@@ -218,7 +218,7 @@ Route31Potion:
 	itemball MAX_POTION
 
 Route31PokeBall:
-	itemball POKE_BALL
+	itemball REVIVE
 
 Route31CooltrainerMText:
 	text "I just barley"

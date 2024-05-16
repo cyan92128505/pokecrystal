@@ -16,7 +16,7 @@ RuinsOfAlphOmanyteItemRoomMysticWater:
 	itemball QUICK_CLAW
 
 RuinsOfAlphOmanyteItemRoomStardust:
-	itemball TWISTEDSPOON
+	itemball KINGS_ROCK
 
 RuinsOfAlphOmanyteItemRoomStarPiece:
 	itemball TM_EARTH_POWER

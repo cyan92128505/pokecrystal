@@ -202,7 +202,7 @@ Ben:
 	jumptextfaceplayer BenText
 
 RadioTower5FUltraBall:
-	itemball ULTRA_BALL
+	itemball NUGGET
 
 RadioTower5FDirectorsOfficeSign:
 	jumptext RadioTower5FDirectorsOfficeSignText

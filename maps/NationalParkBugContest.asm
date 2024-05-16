@@ -107,13 +107,13 @@ NationalParkBugContestTrainerTipsSign:
 	jumptext NationalParkBugContestTrainerTipsText
 
 NationalParkBugContestParlyzHeal:
-	itemball PARLYZ_HEAL
+	itemball POKE_DOLL
 
 NationalParkBugContestTMDig:
 	itemball TM_DIG
 
 NationalParkBugContestHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
+	hiddenitem FOCUS_SASH, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
 BugCatchingContestant1AText:
 	text "DON: I'm going to"

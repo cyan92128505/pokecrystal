@@ -94,13 +94,13 @@ MountMortar2FInsideDragonScale:
 	itemball DRAGON_SCALE
 
 MountMortar2FInsideElixer:
-	itemball ELIXER
+	itemball MAX_ELIXER
 
 MountMortar2FInsideEscapeRope:
 	itemball HP_UP
 
 MountMortar2FInsideHiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE
+	hiddenitem SACRED_ASH, EVENT_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE
 
 SupernerdHughSeenText:
 	text "MARKUS!"

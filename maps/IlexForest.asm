@@ -176,19 +176,19 @@ IlexForestXAttack:
 	itemball POKE_DOLL
 
 IlexForestAntidote:
-	itemball ANTIDOTE
+	itemball SUPER_POTION
 
 IlexForestEther:
-	itemball ETHER
+	itemball FULL_HEAL
 
 IlexForestHiddenEther:
-	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
+	hiddenitem MAX_REVIVE, EVENT_ILEX_FOREST_HIDDEN_ETHER
 
 IlexForestHiddenSuperPotion:
-	hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
+	hiddenitem FULL_RESTORE, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
 
 IlexForestHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
+	hiddenitem MAX_ELIXER, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
 
 IlexForestBoulder: ; unreferenced
 	jumpstd StrengthBoulderScript

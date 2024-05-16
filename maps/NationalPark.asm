@@ -338,7 +338,7 @@ NationalParkTMDig:
 	itemball TM_DIG
 
 NationalParkHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
+	hiddenitem FOCUS_SASH, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
 NationalParkLassText:
 	text "I hate waiting"

@@ -579,7 +579,7 @@ TeamRocketBaseB1FGuardSpec:
 	itemball POKE_DOLL
 
 TeamRocketBaseB1FHiddenRevive:
-	hiddenitem REVIVE, EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE
+	hiddenitem MAX_REVIVE, EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE
 
 SecurityCameraMovement1:
 	big_step RIGHT

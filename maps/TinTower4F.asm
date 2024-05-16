@@ -48,7 +48,7 @@ TinTower4FEscapeRope:
 	itemball EXPERT_BELT
 
 TinTower4FHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_TIN_TOWER_4F_HIDDEN_MAX_POTION
+	hiddenitem RARE_CANDY, EVENT_TIN_TOWER_4F_HIDDEN_MAX_POTION
 
 TinTower4F_MapEvents:
 	db 0, 0 ; filler

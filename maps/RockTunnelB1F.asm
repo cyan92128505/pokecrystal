@@ -30,7 +30,7 @@ RockTunnelB1FPPUp:
 	itemball PP_UP
 
 RockTunnelB1FRevive:
-	itemball REVIVE
+	itemball MAX_REVIVE
 
 DarkraiScript:
 	cry DARKRAI

@@ -15,10 +15,10 @@ IcePathB2FMahoganySideBoulder:
 	jumptext IcePathB2FMahoganySideBoulderText
 
 IcePathB2FMahoganySideFullHeal:
-	itemball FULL_HEAL
+	itemball FULL_RESTORE
 
 IcePathB2FMahoganySideMaxPotion:
-	itemball MAX_POTION
+	itemball MAX_REVIVE
 
 IcePathB2FMahoganySideHiddenCarbos:
 	hiddenitem CARBOS, EVENT_ICE_PATH_B2F_MAHOGANY_SIDE_HIDDEN_CARBOS

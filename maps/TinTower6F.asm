@@ -38,7 +38,7 @@ TinTower6FFieldMon2Script:
 	end
 
 TinTower6FMaxPotion:
-	itemball MAX_POTION
+	itemball FULL_RESTORE
 
 TinTower6F_MapEvents:
 	db 0, 0 ; filler

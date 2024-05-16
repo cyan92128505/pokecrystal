@@ -76,7 +76,7 @@ RuinsOfAlphInnerChamberStatueText:
 	done
 
 RuinsOfAlphInnerChamberWiseGlasses:
-	itemball WISE_GLASSES
+	itemball EXPERT_BELT
 
 RuinsOfAlphInnerChamber_MapEvents:
 	db 0, 0 ; filler

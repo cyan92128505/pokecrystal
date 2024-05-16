@@ -65,13 +65,13 @@ MountMortar1FOutsideFieldMon4Script:
 	end
 
 MountMortar1FOutsideEther:
-	itemball ETHER
+	itemball FULL_RESTORE
 
 MountMortar1FOutsideRevive:
-	itemball REVIVE
+	itemball MAX_REVIVE
 
 MountMortar1FOutsideHiddenHyperPotion:
-	hiddenitem HYPER_POTION, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_HYPER_POTION
+	hiddenitem RARE_CANDY, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_HYPER_POTION
 
 MountMortar1FOutside_MapEvents:
 	db 0, 0 ; filler

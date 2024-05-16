@@ -92,7 +92,7 @@ UnionCave1FPotion:
 	itemball POKE_DOLL
 
 UnionCave1FAwakening:
-	itemball AWAKENING
+	itemball REVIVE
 
 UnionCave1FUnusedSign: ; unreferenced
 	jumptext UnionCave1FUnusedSignText

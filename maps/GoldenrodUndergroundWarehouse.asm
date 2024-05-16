@@ -71,7 +71,7 @@ GoldenrodUndergroundWarehouseTMSleepTalk:
 	itemball TM_SLEEP_TALK
 
 GoldenrodUndergroundWarehouseUltraBall:
-	itemball ULTRA_BALL
+	itemball FULL_RESTORE
 
 GruntM24SeenText:
 	text "The DIRECTOR"

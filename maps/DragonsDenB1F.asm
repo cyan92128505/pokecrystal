@@ -429,16 +429,16 @@ DragonsDenB1FCalcium:
 	itemball CALCIUM
 
 DragonsDenB1FMaxElixer:
-	itemball MAX_ELIXER
+	itemball MAX_REVIVE
 
 DragonsDenB1FHiddenRevive:
-	hiddenitem REVIVE, EVENT_DRAGONS_DEN_B1F_HIDDEN_REVIVE
+	hiddenitem RARE_CANDY, EVENT_DRAGONS_DEN_B1F_HIDDEN_REVIVE
 
 DragonsDenB1FHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_POTION
+	hiddenitem RARE_CANDY, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_POTION
 
 DragonsDenB1FHiddenMaxElixer:
-	hiddenitem MAX_ELIXER, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_ELIXER
+	hiddenitem RARE_CANDY, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_ELIXER
 
 MovementDragonsDen_ClairWalksToYou:
 	slow_step RIGHT

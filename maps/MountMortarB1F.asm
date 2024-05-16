@@ -115,7 +115,7 @@ MountMortarB1FPPUp:
 	itemball PP_UP
 
 MountMortarB1FHiddenMaxRevive:
-	hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE
+	hiddenitem EXPERT_BELT, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE
 
 MountMortarB1FKiyoIntroText:
 	text "I have purged"

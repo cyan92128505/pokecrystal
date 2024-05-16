@@ -580,7 +580,7 @@ GoldenrodUndergroundSwitchRoomEntrancesSmokeBall:
 	itemball BLACKBELT_I
 
 GoldenrodUndergroundSwitchRoomEntrancesFullHeal:
-	itemball FULL_HEAL
+	itemball MAX_REVIVE
 
 GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_MAX_POTION

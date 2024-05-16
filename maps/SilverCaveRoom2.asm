@@ -163,7 +163,7 @@ SilverCaveRoom2PPUp:
 	itemball RARE_CANDY
 
 SilverCaveRoom2HiddenMaxPotion:
-	hiddenitem RARE_CANDY, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
+	hiddenitem AMBROSIA, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
 
 InvaderMaxScript:
 	trainer INVADER, MAX, EVENT_BEAT_INVADER_MAX, InvaderMaxSeenText, InvaderMaxBeatenText, InvaderMaxVictoryText, .Script

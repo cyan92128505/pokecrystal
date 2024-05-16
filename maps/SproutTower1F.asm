@@ -39,7 +39,7 @@ TrainerSageChow:
 	end
 
 SproutTower1FParlyzHeal:
-	itemball PARLYZ_HEAL
+	itemball FULL_HEAL
 
 SproutTower1FStatue:
 	jumptext SproutTower1FStatueText

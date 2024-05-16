@@ -134,10 +134,10 @@ VictoryRoadAmbrosia:
 	itemball AMBROSIA
 
 VictoryRoadHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_VICTORY_ROAD_HIDDEN_MAX_POTION
+	hiddenitem RARE_CANDY, EVENT_VICTORY_ROAD_HIDDEN_MAX_POTION
 
 VictoryRoadHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL
+	hiddenitem RARE_CANDY, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL
 
 VictoryRoadRivalBattleApproachMovement1:
 	step LEFT

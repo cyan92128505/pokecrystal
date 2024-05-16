@@ -254,13 +254,13 @@ Route45RockSlide:
 	itemball TM_ROCK_SLIDE
 
 Route45Elixer:
-	itemball ELIXER
+	itemball FULL_RESTORE
 
 Route45DoubleEdge:
 	itemball TM_DOUBLE_EDGE
 
 Route45HiddenPpUp:
-	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
+	hiddenitem RARE_CANDY, EVENT_ROUTE_45_HIDDEN_PP_UP
 
 HikerMichaelSeenText:
 	text "I was doing a"

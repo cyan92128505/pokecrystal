@@ -154,22 +154,22 @@ SilverCaveRoom1FieldMon10Script:
 	end
 
 SilverCaveRoom1MaxElixer:
-	itemball MAX_ELIXER
+	itemball RARE_CANDY
 
 SilverCaveRoom1Protein:
-	itemball PROTEIN
+	itemball RARE_CANDY
 
 SilverCaveRoom1EscapeRope:
-	itemball NUGGET
+	itemball RARE_CANDY
 
 SilverCaveRoom1UltraBall:
-	itemball ULTRA_BALL
+	itemball RARE_CANDY
 
 SilverCaveRoom1HiddenDireHit:
-	hiddenitem RARE_CANDY, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_DIRE_HIT
+	hiddenitem AMBROSIA, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_DIRE_HIT
 
 SilverCaveRoom1HiddenUltraBall:
-	hiddenitem ULTRA_BALL, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_ULTRA_BALL
+	hiddenitem AMBROSIA, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_ULTRA_BALL
 
 SilverCaveRoom1_MapEvents:
 	db 0, 0 ; filler

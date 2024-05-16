@@ -93,7 +93,7 @@ MountMortar1FInsideHyperPotion:
 	itemball POKE_DOLL
 
 MountMortar1FInsideMaxPotion:
-	itemball MAX_POTION
+	itemball MAX_REVIVE
 
 MountMortar1FInsideNugget:
 	itemball NUGGET

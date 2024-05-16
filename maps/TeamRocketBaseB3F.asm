@@ -206,16 +206,16 @@ TeamRocketBaseB3FProtein:
 	itemball PROTEIN
 
 TeamRocketBaseB3FXSpecial:
-	itemball X_SPECIAL
+	itemball CALCIUM
 
 TeamRocketBaseB3FFullHeal:
 	itemball FULL_HEAL
 
 TeamRocketBaseB3FIceHeal:
-	itemball ICE_HEAL
+	itemball MAX_REVIVE
 
 TeamRocketBaseB3FUltraBall:
-	itemball ULTRA_BALL
+	itemball FULL_RESTORE
 
 RocketBaseLanceApproachesPlayerMovement:
 	step RIGHT

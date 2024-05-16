@@ -62,7 +62,7 @@ GoldenrodDeptStoreB1FMachopScript:
 	end
 
 GoldenrodDeptStoreB1FEther:
-	itemball ETHER
+	itemball NUGGET
 
 GoldenrodDeptStoreB1FAmuletCoin:
 	itemball AMULET_COIN
@@ -71,7 +71,7 @@ GoldenrodDeptStoreB1FBurnHeal:
 	itemball POKE_DOLL
 
 GoldenrodDeptStoreB1FUltraBall:
-	itemball ULTRA_BALL
+	itemball PP_UP
 
 GoldenrodDeptStoreB1FBlackBelt1Text:
 	text "Hey, kid! You're"

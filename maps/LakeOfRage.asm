@@ -237,7 +237,7 @@ WesleyNotWednesdayScript:
 	end
 
 ;LakeOfRageElixer:
-;	itemball ELIXER
+;	itemball MAX_ELIXER
 
 LakeOfRageChoiceSpecs:
 	itemball CHOICE_SPECS
@@ -249,7 +249,7 @@ LakeOfRageHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
 
 LakeOfRageHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION
+	hiddenitem PP_UP, EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION
 
 LakeOfRageLanceTeleportIntoSkyMovement:
 	teleport_from

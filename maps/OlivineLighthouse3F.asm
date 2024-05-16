@@ -43,7 +43,7 @@ TrainerSailorTerrell:
 	end
 
 OlivineLighthouse3FEther:
-	itemball ETHER
+	itemball MAX_REVIVE
 
 BirdKeeperTheoSeenText:
 	text "My #MON"

@@ -687,7 +687,7 @@ TeamRocketBaseB2FTMThief:
 	itemball TM_THUNDER_WAVE
 
 TeamRocketBaseB2FHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_TEAM_ROCKET_BASE_B2F_HIDDEN_FULL_HEAL
+	hiddenitem RARE_CANDY, EVENT_TEAM_ROCKET_BASE_B2F_HIDDEN_FULL_HEAL
 
 RocketBaseLanceLeavesAfterHealMovement:
 	step RIGHT

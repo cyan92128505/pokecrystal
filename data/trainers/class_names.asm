@@ -48,7 +48,7 @@ TrainerClassNames::
 	li "BIKER"
 	li "LEADER"
 	li "CHAMPION"
-	li "FIREBREATHER"
+	li "PYRO"
 	li "CHAMPION"
 	li "BLACKBELT"
 	li "ROCKET"

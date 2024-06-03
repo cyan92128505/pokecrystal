@@ -1371,25 +1371,16 @@ MultiverseHeroes1Text:
 
     para "A young woman"
     line "with a pure heart"
-    cont "but weilding dark"
+    cont "but welding dark"
     cont "magic."
 
     para "She speaks with"
     line "an old wizard in"
     cont "a white cloak."
 
-    para "Two other men"
-    line "converse together."
-
-    para "One is clad in."
-    line "silver armour."
-
-    para "He has a singular"
-    line "mind brimming"
-    cont "with courage."
-
-    para "The other man is"
-    line "rather simple."
+    para "A man with spiky"
+    line "hair looks to be"
+    cont "working out."
 
     para "He is happy and"
     line "seeks challenge."
@@ -1445,8 +1436,7 @@ MultiverseHeroes2Text:
     cont "NIGHTMARE."
 
     para "Meanwhile GANDALF"
-    line "and COURAGE"
-    cont "struggle with"
+    line "struggles with"
     cont "MORGANA and"
     cont "SAURON."
 
@@ -1499,18 +1489,13 @@ MultiverseVillains1Text:
 
     para "An old man in a"
     line "dark cloak stands"
-    cont "talking to another"
-    cont "large and wild"
-    cont "looking man."
+    cont "pensively in a"
+    cont "corner."
 
-    para "The older man"
+    para "The old man"
     line "is not a wizard"
-   cont "but commands some"
-   cont "kind of force."
-
-    para "The wild man is"
-    line "oddly singular and"
-    cont "full of wrath."
+    cont "but commands some"
+    cont "kind of force."
 
     para "Another appears."
 

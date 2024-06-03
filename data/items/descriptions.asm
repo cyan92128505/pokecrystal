@@ -723,8 +723,8 @@ ThickClubDesc:
 	next "sort. Sell low.@"
 
 FocusBandDesc:
-	db   "May prevent faint-"
-	next "ing. (HOLD)@"
+	db   "Prevent KO from"
+	next "full HP@"
 
 TeruSama8Desc:
 	db   "?@"

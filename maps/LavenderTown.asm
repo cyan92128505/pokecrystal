@@ -639,7 +639,7 @@ MerlinArthur2Text:
     para "It's MORDRED, one"
     line "of your KNIGHTS."
 
-    para "It can't be."
+    para "It can't be!"
     done
 
 MerlinArthur3Text:

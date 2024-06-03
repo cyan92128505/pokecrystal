@@ -788,7 +788,7 @@ YuGiOhCharacterChoiceText:
 
 YuGiOhHenshin1Text:
     text "You are the"
-    cont "high priest of"
+    line "high priest of"
     cont "a great dynasty."
 
     para "Your master is an"
@@ -808,7 +808,7 @@ YuGiOhHenshin1Text:
     para "SETO shakes with"
     line "rage."
 
-    para "He takes his"
+    para "He grabs his"
     line "cards from"
     cont "which he can"
     cont "summon monsters."

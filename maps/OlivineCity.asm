@@ -1069,7 +1069,7 @@ DBZHeroOrVillainChoiceText:
 DBZCh1HeroText:
     text "You are GOKU."
 
-    para "The hero of earth."
+    para "The hero of Earth."
 
     para "You are visiting"
     line "some old friends"
@@ -1152,16 +1152,16 @@ DBZCh2HeroText:
 
     para "Over the next"
     line "year you train"
-    cont "in OTHERWORLD and"
+    cont "in Otherworld and"
     cont "your friends train"
-    cont "on EARTH."
+    cont "on Earth."
 
-    para "Then they arrive."
+    para "Two space pods"
+    line "crash into a city."
 
-    para "Two of them."
-
-    para "They begin killing"
-    line "right away."
+    para "Two beings emerge"
+    line "and instantly"
+    cont "destroy the city."
 
     para "Your friends try"
     line "to stop them."
@@ -1191,7 +1191,7 @@ DBZCh2VillainText:
     line "dead race."
 
     para "Your pod lands on"
-    line "earth."
+    line "Earth."
 
     para "You are in a city"
     line "full of people."
@@ -1228,8 +1228,8 @@ DBZCh3HeroText:
     para "An inferno erupts"
     line "within you."
 
-    para "You must bring"
-    line "an end to this."
+    para "You will bring"
+    line "an end to this!"
     done
 
 DBZCh3VillainText:
@@ -1268,6 +1268,10 @@ DBZCh4HeroText:
     cont "planet to acquire"
     cont "DRAGON BALLS."
 
+    para "With them you"
+    line "can revive your"
+    cont "friends."
+
     para "The journey takes"
     line "months."
 
@@ -1283,20 +1287,25 @@ DBZCh4HeroText:
 
     para "Something evil."
 
-    para "FRIEZA Emporer"
+    para "FRIEZA Emperor"
     line "of the universe"
     cont "is here."
 
-    para "He heard about the"
+    para "He must have"
+    line "heard about the"
     line "DRAGON BALLS."
 
-    para "VEGETA has stolen"
+    para "You find VEGETA."
+
+    para "He has stolen"
     line "a DRAGON BALL so"
     cont "FRIEZA can't make"
     cont "his wish."
 
-    para "You feel your"
-    line "knees weaken."
+    para "Before you can"
+    line "speak together a"
+    cont "terrifying"
+    cont "presence appears."
 
     para "FRIEZA is here."
 
@@ -1332,8 +1341,9 @@ DBZCh4VillainText:
     line "immortal!"
 
     para "You kill the"
-    line "servant for a"
-    cont "moment of fun."
+    line "servant for not"
+    cont "telling you"
+    cont "sooner."
 
     para "Then head to the"
     line "planet with these"
@@ -1484,11 +1494,15 @@ DBZCh5GokuVillainText:
 
     para "You need another."
 
-    para "KRILLIN explodes."
+    para "The little bald"
+    line "one will do!"
 
     para "that felt good."
 
     para "GOKU cries out."
+
+    para "Such delightful"
+    cont "screams!"
     done
 
 DBZConcText:

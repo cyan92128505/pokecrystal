@@ -1401,6 +1401,9 @@ StarWarsCh1VillainText:
     para "There are the"
     line "two Jedi!"
 
+    para "They are taking"
+    line "the child."
+
     para "You will stop"
     line "them!"
     done
@@ -1416,26 +1419,32 @@ StarWarsCh2HeroText:
     para "You resolve to"
     line "train ANIKAN."
 
+    para "...."
+
     para "15 years pass."
 
-    para "Your heart sinks."
+    para "Your heart sinks"
+    line "as you watch the"
+    cont "security footage."
 
     para "ANIKAN has turned"
     line "to the dark side."
 
     para "He is a brother"
-    line "to you."
+    line "to you..."
 
     para "But he must be"
-    line "stopped."
+    line "stopped!"
     done
 
 StarWarsCh2VillainText:
     text "You are killed"
     line "but you have"
     cont "seen the virtue"
-    cont "in ANIKANS"
+    cont "in the childs"
     cont "heart."
+
+    para "...."
 
     para "15 years pass."
 
@@ -1443,15 +1452,26 @@ StarWarsCh2VillainText:
     line "the evil of the"
     cont "Jedi."
 
+    para "He turns on his"
+    line "abductors."
+
     para "Now he fights to"
     line "stop the Jedi."
     done
 
 StarWarsCh3HeroText:
     text "ANIKAN was"
-    line "stopped."
+    line "stopped but"
+    cont "not killed."
 
-    para "But the EMPIRE"
+    para "He joins the"
+    line "EMPIRE and"
+    cont "takes the name"
+    cont "VADER."
+
+    para "20 years pass."
+
+    para "The EMPIRE"
     line "grows strong."
 
 	para "They develop the"
@@ -1510,6 +1530,8 @@ StarWarsCh4HeroText:
     line "his father ANIKAN"
     cont "is not dead."
 
+    para "He is VADER."
+
     para "LUKE can sense"
     line "there is good"
     cont "in him."
@@ -1539,7 +1561,9 @@ StarWarsCh4VillainText:
     cont "his previous"
     cont "life as ANIKAN."
 
-    para "He has given"
+    para "His name is LUKE."
+
+    para "LUKE has given"
     line "himself over to"
     cont "the Empire."
 
@@ -1582,6 +1606,8 @@ StarWarsCh5HeroText:
 	line "again, but"
 	cont "nothing."
 
+	para "The pain ends."
+
     para "You open your"
     line "eyes."
 
@@ -1590,7 +1616,8 @@ StarWarsCh5HeroText:
     cont "PALPATINE."
 
     para "You rise for one"
-    line "last battle."
+    line "last battle as"
+    cont "father and son."
     done
 
 StarWarsCh5VillainText:

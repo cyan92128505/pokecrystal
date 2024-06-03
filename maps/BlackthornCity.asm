@@ -793,7 +793,7 @@ LOTRCh2HeroText:
     cont "WITCH KING."
 
     para "A stranger jumps"
-    line "in the battle."
+    line "into the battle."
 
     para "He wields a"
     line "basic sword."
@@ -813,9 +813,11 @@ LOTRCh2HeroText:
     line "disappears into"
     cont "the night."
 
-    para "The stranger"
-    line "takes you to a"
-    cont "city of elves."
+    para "The strangers"
+    line "name is ARAGORN."
+
+    para "You go with him"
+    line "to an elven city."
 
     para "Your wizard friend"
     line "GANDALF is there."
@@ -834,6 +836,11 @@ LOTRCh2HeroText:
     para "They travel deep"
     line "into the mine"
     cont "of MORIA."
+
+    para "You are ambushed!"
+
+    para "All manner of"
+    line "evil besets you."
     done
 
 LOTRCh2VillainText:
@@ -880,6 +887,10 @@ LOTRCh2VillainText:
     line "to the mine of"
     cont "MORIA."
 
+    para "They don't know"
+    line "what horrors await"
+    cont "them there."
+
     para "SAURONS forces"
     line "will put an end"
     cont "to him there."
@@ -892,8 +903,8 @@ LOTRHeroConcText:
     para "ARAGORN and the"
     line "party escape."
 
-    para "But GANDALF is"
-    line "no more."
+    para "But GANDALF dies"
+    line "protecting you."
 
     para "The party presses"
     line "on through the"
@@ -995,9 +1006,6 @@ LOTRCh4HeroText:
 
     para "The battle horn"
     line "sounds."
-
-    para "There is only"
-    line "purpose."
 
     para "A wave of Orcs"
     line "rush you."
@@ -1189,7 +1197,7 @@ LOTREndText:
 
     para "You welcome your"
     line "simple life in"
-    cont "SHIRE."
+    cont "the SHIRE."
 
     para "For the rest of"
     line "your days."

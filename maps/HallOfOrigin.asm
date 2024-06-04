@@ -1518,9 +1518,12 @@ MultiverseVillains1Text:
     line "the room take"
     cont "shape."
 
-    para "Its pure evil effects"
-    line   "everyone except"
-    cont "the muscular man."
+    para "Its pure evil"
+    line "excites you."
+
+    para "The muscular man"
+    line "seems immune to"
+    cont "its presence."
 
     para "Together you head"
     line "for the top of the"
@@ -1610,13 +1613,15 @@ MultiverseDeities1Text:
     line "yourself atop"
     cont "a tower."
 
-    para "You look out at"
-    line "a desolate waste"
-    cont "and a red sky."
+    para "Have you been"
+    line "summoned to grant"
+    cont "a wish."
 
-    para "Who am I?"
+    para "Nobody else is"
+    line "here!"
 
-    para "Why am I here?"
+    para "You start to"
+    line "grow impatient."
 
     para "Others appear."
 
@@ -1643,29 +1648,13 @@ MultiverseDeities1Text:
 
     para "Like you."
 
-    para "The sky darkens."
-
-    para "A huge dragon"
-    line "appears above"
-    cont "the tower."
-
-    para "You sense some"
-    line "impatience and"
-    cont "a power that"
-    cont "transcends law."
-
-    para "Like you."
-
     para "Your body moves"
     line "by itself."
 
-    para "You are kneeling"
+    para "You are curled"
     line "on the ground."
 
     para "Everyone is."
-
-    para "Even the dragon"
-    line "bows its head."
 
     para "The sky changes"
     line "to a bright"
@@ -1682,7 +1671,7 @@ MultiverseDeities1Text:
     cont "group."
 
     para "You become aware"
-    line "of six more"
+    line "of five more"
     cont "beings making"
     cont "their way up"
     cont "the tower."

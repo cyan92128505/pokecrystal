@@ -2536,12 +2536,9 @@ AI_Smart_SleepTalk:
 	cp 1
 	jr z, .discourage
 
+rept 12
 	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
+endr
 	ret
 
 .discourage

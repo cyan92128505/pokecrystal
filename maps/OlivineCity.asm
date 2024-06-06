@@ -1502,7 +1502,7 @@ DBZCh5GokuVillainText:
     para "GOKU cries out."
 
     para "Such delightful"
-    cont "screams!"
+    line "screams!"
     done
 
 DBZConcText:

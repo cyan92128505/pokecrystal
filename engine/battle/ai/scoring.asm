@@ -1216,6 +1216,27 @@ AI_Smart_Selfdestruct:
 	jr nz, .discourage
 
 .notlastmon
+; don't use if player is behind a sub
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a	;check for substitute bit
+	jr nz, .discourage
+
+; don't use if player has protect
+	ld b, EFFECT_PROTECT
+	call PlayerHasMoveEffect
+	jr c, .discourage
+
+; don't use if player is faster and has - substitute, fly, dig
+	call DoesAIOutSpeedPlayer
+	jr c, .faster
+	ld b, EFFECT_SUBSTITUTE
+	call PlayerHasMoveEffect
+	jr c, .discourage
+	ld b, EFFECT_FLY
+	call PlayerHasMoveEffect
+	jr c, .discourage
+
+.faster
 ; if enemy's HP is below 25% just boom
 	call AICheckEnemyQuarterHP
 	jr nc, .encourage

@@ -957,7 +957,7 @@ AI_Smart_Sleep:
 ; never use if player has substitute
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
-	jr nz, .discourage
+	jp nz, .discourage
 
 ; never use if player has safeguard
 	ld a, [wPlayerScreens]
@@ -973,6 +973,8 @@ AI_Smart_Sleep:
     cp GIRATINA
     jp z, .discourage
     cp SMEARGLE
+    jp z, .discourage
+    cp DEOXYS
     jp z, .discourage
 
 ; does player have a held item that would heal sleep
@@ -2554,8 +2556,8 @@ AI_Smart_SleepTalk:
 
 	ld a, [wEnemyMonStatus]
 	and SLP
-	cp 1
-	jr z, .discourage
+	cp 2
+	jr c, .discourage
 
 rept 12
 	dec [hl]

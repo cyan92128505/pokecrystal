@@ -76,14 +76,18 @@ BattleTowerOutsidePokefanText:
     text "I main BROCK in"
     line "the ARCADE."
 
-    para "With the right"
-    line "strategy I"
-    cont "can overcome"
-    cont "any type"
-    cont "disadvantage."
+    para "He has all the"
+    line "right tools!"
 
-    para "CLAIR is cool"
-    line "too though."
+    para "You can unlock"
+    line "30 characters."
+
+    para "But the last 6"
+    line "characters each"
+    cont "have two forms."
+
+    para "So there's really"
+    line "36 characters!"
 
     para "I hear you can"
     line "unlock CYNTHIA."

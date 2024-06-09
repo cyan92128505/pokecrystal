@@ -1722,6 +1722,8 @@ BattleArcadeReceptionistScript:
     writemem wHandOfGod
     setval 1
     writemem wShinyOverride
+	setval WEATHER_NONE
+	writemem wFieldWeather
    ; writetext WantToPlayAsAnotherText
    ; yesorno
    ; iffalse .pickEnemy
@@ -2220,7 +2222,13 @@ BattleArcadeReceptionistScript:
     iffalse .ChoosePlayerCharacter
 	setval RED
 	writemem wOtherTrainerClass
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterAshPlayer
+	setval ASH
+	sjump .AshPlayerDone
+.MasterAshPlayer
 	setval MASTER_ASH
+.AshPlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
@@ -2228,8 +2236,13 @@ BattleArcadeReceptionistScript:
     writetext PlayAgainstAshText
     yesorno
     iffalse .ChooseEnemyCharacter
-    loadtrainer RED, MASTER_ASH
-    sjump .beginBattle
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterAshEnemy
+	loadtrainer RED, ASH
+	sjump .beginBattle
+.MasterAshEnemy
+	loadtrainer RED, MASTER_ASH
+	sjump .beginBattle
 
 .AdamPlayer
     writetext PlayAsAdamText
@@ -2237,7 +2250,15 @@ BattleArcadeReceptionistScript:
     iffalse .ChoosePlayerCharacter
 	setval ADAM
 	writemem wOtherTrainerClass
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterAdamPlayer
+	setval WEATHER_RAIN
+	writemem wFieldWeather
+	setval ADAM_ARCADE
+	sjump .AdamPlayerDone
+.MasterAdamPlayer
 	setval MASTER_ADAM
+.AdamPlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
@@ -2245,8 +2266,15 @@ BattleArcadeReceptionistScript:
     writetext PlayAgainstAdamText
     yesorno
     iffalse .ChooseEnemyCharacter
-    loadtrainer ADAM, MASTER_ADAM
-    sjump .beginBattle
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterAdamEnemy
+	setval WEATHER_RAIN
+	writemem wFieldWeather
+	loadtrainer ADAM, ADAM_ARCADE
+	sjump .beginBattle
+.MasterAdamEnemy
+	loadtrainer ADAM, MASTER_ADAM
+	sjump .beginBattle
 
 .StevenPlayer
     writetext PlayAsStevenText
@@ -2322,7 +2350,13 @@ BattleArcadeReceptionistScript:
     iffalse .ChoosePlayerCharacter
 	setval CHAMPION
 	writemem wOtherTrainerClass
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterLancePlayer
+	setval LANCE_ARCADE
+	sjump .LancePlayerDone
+.MasterLancePlayer
 	setval MASTER_LANCE
+.LancePlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
@@ -2330,8 +2364,13 @@ BattleArcadeReceptionistScript:
     writetext PlayAgainstLanceText
     yesorno
     iffalse .ChooseEnemyCharacter
-    loadtrainer CHAMPION, MASTER_LANCE
-    sjump .beginBattle
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterLanceEnemy
+	loadtrainer CHAMPION, LANCE_ARCADE
+	sjump .beginBattle
+.MasterLanceEnemy
+	loadtrainer CHAMPION, MASTER_LANCE
+	sjump .beginBattle
 
 .BluePlayer
     writetext PlayAsBlueText
@@ -2339,7 +2378,13 @@ BattleArcadeReceptionistScript:
     iffalse .ChoosePlayerCharacter
 	setval BLUE
 	writemem wOtherTrainerClass
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterBluePlayer
+	setval BLUE_ARCADE
+	sjump .BluePlayerDone
+.MasterBluePlayer
 	setval MASTER_BLUE
+.BluePlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
@@ -2347,8 +2392,13 @@ BattleArcadeReceptionistScript:
     writetext PlayAgainstBlueText
     yesorno
     iffalse .ChooseEnemyCharacter
-    loadtrainer BLUE, MASTER_BLUE
-    sjump .beginBattle
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterBlueEnemy
+	loadtrainer BLUE, BLUE_ARCADE
+	sjump .beginBattle
+.MasterBlueEnemy
+	loadtrainer BLUE, MASTER_BLUE
+	sjump .beginBattle
 
 .RedPlayer
     writetext PlayAsRedText
@@ -2356,7 +2406,13 @@ BattleArcadeReceptionistScript:
     iffalse .ChoosePlayerCharacter
 	setval RED
 	writemem wOtherTrainerClass
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterRedPlayer
+	setval RED1
+	sjump .RedPlayerDone
+.MasterRedPlayer
 	setval MASTER_RED
+.RedPlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
@@ -2364,8 +2420,13 @@ BattleArcadeReceptionistScript:
     writetext PlayAgainstRedText
     yesorno
     iffalse .ChooseEnemyCharacter
-    loadtrainer RED, MASTER_RED
-    sjump .beginBattle
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterRedEnemy
+	loadtrainer RED, RED1
+	sjump .beginBattle
+.MasterRedEnemy
+	loadtrainer RED, MASTER_RED
+	sjump .beginBattle
 
 .GreenPlayer
     writetext PlayAsGreenText
@@ -2373,7 +2434,13 @@ BattleArcadeReceptionistScript:
     iffalse .ChoosePlayerCharacter
 	setval LEAF
 	writemem wOtherTrainerClass
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterGreenPlayer
+	setval GREEN_ARCADE
+	sjump .RedPlayerDone
+.MasterGreenPlayer
 	setval MASTER_GREEN
+.GreenPlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
@@ -2381,8 +2448,13 @@ BattleArcadeReceptionistScript:
     writetext PlayAgainstGreenText
     yesorno
     iffalse .ChooseEnemyCharacter
-    loadtrainer LEAF, MASTER_GREEN
-    sjump .beginBattle
+    scall WhichVariantChoice
+    ifequal TRUE, .MasterGreenEnemy
+	loadtrainer LEAF, GREEN_ARCADE
+	sjump .beginBattle
+.MasterGreenEnemy
+	loadtrainer LEAF, MASTER_GREEN
+	sjump .beginBattle
 
 .OakPlayer
     writetext PlayAsOakText
@@ -2541,6 +2613,39 @@ BattleArcadeReceptionistScript:
     db "JN@"
     db "WL@"
     db "BL@"
+
+WhichVariantChoice:
+    writetext WhichVariantText
+	loadmenu .WhichVariantHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Trainer
+	ifequal 2, .Master
+	closetext
+	end
+.WhichVariantHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 5
+	dw .WhichVariantMenuData
+	db 1 ; default option
+.WhichVariantMenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .WingText
+	dbw BANK(@), NULL
+.WingText:
+	db "TRAINER@"
+	db "MASTER@"
+.Trainer
+    setval FALSE
+    end
+.Master
+    setval TRUE
+    end
+WhichVariantText:
+    text "Which variant?"
+    done
 
 PlayAsFalknerText:
     text "Play as"
@@ -2784,62 +2889,62 @@ PlayAgainstWallaceText:
 
 PlayAsAdamText:
     text "Play as"
-    line "MASTER ADAM?"
+    line "ADAM?"
     done
 
 PlayAgainstAdamText:
     text "Play against"
-    line "MASTER ADAM?"
+    line "ADAM?"
     done
 
 PlayAsLanceText:
     text "Play as"
-    line "MASTER LANCE?"
+    line "LANCE?"
     done
 
 PlayAgainstLanceText:
     text "Play against"
-    line "MASTER LANCE?"
+    line "LANCE?"
     done
 
 PlayAsGreenText:
     text "Play as"
-    line "MASTER GREEN?"
+    line "GREEN?"
     done
 
 PlayAgainstGreenText:
     text "Play against"
-    line "MASTER GREEN?"
+    line "GREEN?"
     done
 
 PlayAsBlueText:
     text "Play as"
-    line "MASTER BLUE?"
+    line "BLUE?"
     done
 
 PlayAgainstBlueText:
     text "Play against"
-    line "MASTER BLUE?"
+    line "BLUE?"
     done
 
 PlayAsRedText:
     text "Play as"
-    line "MASTER RED?"
+    line "RED?"
     done
 
 PlayAgainstRedText:
     text "Play against"
-    line "MASTER RED?"
+    line "RED?"
     done
 
 PlayAsAshText:
     text "Play as"
-    line "MASTER ASH?"
+    line "ASH?"
     done
 
 PlayAgainstAshText:
     text "Play against"
-    line "MASTER ASH?"
+    line "ASH?"
     done
 
 NeedToSaveText:

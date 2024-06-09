@@ -99,11 +99,13 @@ KRIS EQU __trainer_class__
 	trainerclass ADAM ; f
 	const ADAM_ELITE
 	const MASTER_ADAM
+	const ADAM_ARCADE
 
 	trainerclass CHAMPION ; 10
 	const LANCE
 	const MASTER_LANCE
 	const LANCE_DRAGONITE
+	const LANCE_ARCADE
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -763,6 +765,7 @@ KRIS EQU __trainer_class__
 	const SETO
 	const MASTER_SETO
 	const BROTHER
+	const BLUE_ARCADE
 
 	trainerclass OFFICER ; 41 ; Remove?
 	const KEITH
@@ -811,6 +814,7 @@ KRIS EQU __trainer_class__
     const GREEN1
     const MASTER_GREEN
     const WIFE
+    const GREEN_ARCADE
 
     trainerclass LORD_OAK ; 47
     const OAK

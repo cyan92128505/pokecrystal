@@ -2750,6 +2750,8 @@ AI_Smart_PriorityHit:
 	dec [hl]
 	dec [hl]
 	dec [hl]
+	dec [hl]
+	dec [hl]
 	ret
 
 .noKO

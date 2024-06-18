@@ -487,11 +487,15 @@ WallaceFinalText:
     line "people will turn"
     cont "on you."
 
-    para "Then you will see"
-    line "that the only way"
-    cont "to survive is to"
-    cont "find the strength"
-    cont "I have."
+    para "It is inevitable."
+
+    para "Then you will"
+    line "realise the"
+    cont "virtue of my"
+    cont "actions."
+
+    para "RAYQUAZA!"
+    line "FLY!"
     done
 
 StevenIntroText:

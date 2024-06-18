@@ -2176,7 +2176,8 @@ AI_Smart_Paralyze:
 .encourage
 ; needs to overcome encouragement to attack
 ; no good reason not to paralyze
-rept 12
+;rept 12
+rept 8
     dec [hl]
 endr
     ret

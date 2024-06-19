@@ -326,7 +326,7 @@ BattleArcadeIntro:
     cont "in the world."
 
     para "Up to a maximum"
-    line "of 30 characters."
+    line "of 36 characters."
     done
 
 Movement_GoToBattleTrial:

@@ -26,6 +26,7 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 ## World
 
 - Many updated maps and numerous all new maps.
+- Random battle weather assigned upon entering an area, though some maps have fixed weather.  
 - With a more open world design allowing the player to enter areas with trainers and Pokemon far stronger than they would be able to beat but with hidden powerful rewards.
   - Can travel north to Blackthorn and west to Olivine from beginning of the game.
   - Can travel to Kanto as soon as reaching Goldenrod.
@@ -34,12 +35,13 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 
 Open world design is balanced by two levels caps, both of which are visible on your trainer card.
   - Cap on level you can train Pokemon to, this is a generous cap that starts at 25 and is generally slightly higher than the next gym leaders max level.
-  - Cap on the max level of Pokemon you can capture. This is generally 10 less than you training level cap.
+  - Cap on the max level of Pokemon you can capture. This is generally 10 less than your training level cap.
 
 ## Quality of Life
 
 Many massively impactful quality of life changes.
 - Can rematch any trainer by talking to them, including gym leaders. However, rematches give reduced exp and forbid the use of items.
+- Can forfeit almost any battle via the Run option.
 - Exp share available from very early game, giving 50% exp to all Pokemon who do not participate. This is upgraded by endgame to give double exp to all Pokemon.
 - Sprint shoes which allow you to run by default (rather than having to hold B) except when indoors where walking is the default (though you can still run by holding B).
 - A Remembral key item which acts as a portable move relearner with no cost.
@@ -103,5 +105,4 @@ It uses all these to make decisions, for example
         - players party is replaced with a copy of the enemies party.
         - this persists after battle, the player can deposit the Pokemon in their box if they want.
         - Gives the player the option to restore their original team from the last save when turned off.
-
-
+    

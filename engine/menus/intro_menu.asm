@@ -216,7 +216,7 @@ endc
 	inc hl
 	ld [hl], LOW(MOM_MONEY)
 
-	; AndrewNote - Level cap initial value
+	; DevNote - Level cap initial value
 	ld a, 25
     ld [wLevelCap], a
 

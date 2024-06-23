@@ -9,7 +9,7 @@
 	db EVERSTONE, NO_ITEM ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
-	db 15 ; step cycles to hatch
+	db 5 ; step cycles to hatch
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/golem/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)

@@ -83,7 +83,7 @@ LoadMapObjects:
 	farcall InitializeVisibleSprites
 	ret
 
-; AndrewNote - Weather - By default outdoor maps have
+; DevNote - Weather - By default outdoor maps have
 ; 25% chance of rain
 ; 25% chance of sun unless it is night
 HandleMapDefaultWeather:

@@ -1,4 +1,4 @@
-; AndrewNote - Scenes - Here is how cutscenes work
+; DevNote - Scenes - Here is how cutscenes work
 
 ; Scenes are tightly coupled with the map they are on
 ; This file defines the mapping between map and a variable in wram representing scenes on that map

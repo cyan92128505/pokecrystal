@@ -42,7 +42,7 @@ _CheckForBattleTowerRules:
 	dw .Functions
 	dw .TextPointers
 
-; AndrewNote - battle tower rules reduction
+; DevNote - battle tower rules reduction
 .Functions:
 	;dw CheckBTRule_PartyCountEq3
 	;dw CheckBTRule_PartySpeciesAreUnique

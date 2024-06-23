@@ -9,7 +9,7 @@ HiddenPowerDamage:
 .got_dvs
 
 ; Power:
-; AndrewNote -Unown has 120 bp hidden power
+; DevNote -Unown has 120 bp hidden power
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]

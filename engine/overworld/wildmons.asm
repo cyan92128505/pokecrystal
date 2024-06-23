@@ -285,7 +285,7 @@ ChooseWildEncounter:
 	add hl, bc ; this selects our mon
 	ld a, [hli]
 	ld b, a
-; AndrewNote - don't vary water levels for balance reasons
+; DevNote - don't vary water levels for balance reasons
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
 	;call CheckOnWater
 	;jr nz, .ok
@@ -491,7 +491,7 @@ InitRoamMons:
 	ld a, ENTEI
 	ld [wRoamMon2Species], a
 
-; AndrewNote - Roam mon level here
+; DevNote - Roam mon level here
 ; level
 	ld a, 60
 	ld [wRoamMon1Level], a

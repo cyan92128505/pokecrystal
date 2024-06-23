@@ -416,7 +416,7 @@ wPlayerToxicCount:: db
 wPlayerDisableCount:: db
 wPlayerEncoreCount:: db
 wPlayerPerishCount:: db
-wPlayerFuryCutterCount:: db ; AndrewNote - this is not used
+wPlayerFuryCutterCount:: db ; DevNote - this is not used
 wPlayerProtectCount:: db
 
 wEnemyRolloutCount:: db
@@ -3016,7 +3016,7 @@ wFieldWeather::
 wUndergroundSwitchPositions:: db
 wExpShareUpgrade:: db
 
-; AndrewNote - wram 8 free slots
+; DevNote - wram 8 free slots
 
 wHandOfGod:: db
 wBattleMusicOverride:: ds 2
@@ -3127,7 +3127,7 @@ wVioletCitySceneID::                              db
 wViridianGymSceneID::                             db
 
 wLevelCap:: db
-; AndrewNote - 156 free bytes!
+; DevNote - 156 free bytes!
 	ds 156
 
 wEventFlags:: flag_array NUM_EVENTS

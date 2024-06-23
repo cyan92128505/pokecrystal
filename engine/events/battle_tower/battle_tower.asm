@@ -954,7 +954,7 @@ BattleTower_SaveOptions:
 	ret
 
 BattleTower_RandomlyChooseReward:
-; AndrewNote - BT rewards
+; DevNote - BT rewards
     ld a, [wcd4f] ; load level group
     cp 2
     jr z, .leader

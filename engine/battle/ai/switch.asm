@@ -1,4 +1,4 @@
-; AndrewNote - this is only used via the trainer attributes SWITCH_OFTEN, SWITCH_RARELY etc
+; DevNote - this is only used via the trainer attributes SWITCH_OFTEN, SWITCH_RARELY etc
 ; it checks if AI should switch based on type effectiveness of players moves
 CheckPlayerMoveTypeMatchups:
 ; Check how well the moves you've already used

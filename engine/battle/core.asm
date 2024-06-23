@@ -487,7 +487,7 @@ DetermineMoveOrder:
 	ld de, wBattleMonSpeed
 	ld hl, wEnemyMonSpeed
 
-; AndrewNote - here add weather speed boosting abilities
+; DevNote - here add weather speed boosting abilities
 ; ==============================
 ; ========= Swift Swim =========
 ; ==============================
@@ -920,7 +920,7 @@ GetPlayerMovePriority:
 	cp ROAR
 	jr z, .noPrankster
 
-; AndrewNote - prankster
+; DevNote - prankster
 ; ===== Prankster =======
     ld a, [wBattleMonSpecies]
     cp COTTONEE
@@ -975,7 +975,7 @@ GetEnemyMovePriority:
 	cp ROAR
 	jr z, .noPrankster
 
-; AndrewNote - prankster
+; DevNote - prankster
 ; ===== Prankster =======
     ld a, [wEnemyMonSpecies]
     cp COTTONEE
@@ -1050,7 +1050,7 @@ Battle_EnemyFirst:
     call SetEnemyTurn
 	ld a, $1
 	ld [wEnemyGoesFirst], a
-; AndrewNote - logic for ai switching
+; DevNote - logic for ai switching
 	ld a, [wLinkMode]
 	and a
 	jr nz, .noSwitch
@@ -1100,7 +1100,7 @@ Battle_EnemyFirst:
 	ret
 
 Battle_PlayerFirst:
-; AndrewNote - add logic around enemy switching
+; DevNote - add logic around enemy switching
 	ld a, [wLinkMode]
 	and a
 	jr nz, .noSwitch
@@ -2074,7 +2074,7 @@ HandleWeather:
 	call Call_PlayBattleAnim
 	call SwitchTurnCore
 	;call GetEighthMaxHP
-	; AndrewNote - reduce sandstorm to 1/16
+	; DevNote - reduce sandstorm to 1/16
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
@@ -2500,7 +2500,7 @@ ApplyExperienceAfterEnemyCaught:
 	ret z
 	ld hl, wEnemyMonBaseExp
 
-; AndrewNote - ExpShare
+; DevNote - ExpShare
 ; then gives 1/2 exp to all bench Pokemon until all Kanto badges obtained
 ; then gives full exp to all bench Pokemon
     ld a, [wExpShareUpgrade]
@@ -2792,7 +2792,7 @@ WinTrainerBattle:
 
 .AddMoneyToWallet:
 	push bc
-; AndrewNote - beating master oak always maxes money
+; DevNote - beating master oak always maxes money
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
     jr nz, .notOak
@@ -2870,7 +2870,7 @@ AddBattleMoneyToAccount:
 	ld [hl], LOW(MAX_MONEY)
 	ret
 
-; AndrewNote - music - victory music
+; DevNote - music - victory music
 PlayVictoryMusic:
 	push de
 	ld de, MUSIC_NONE
@@ -3461,7 +3461,7 @@ EnemySwitch:
 	call FindMonInOTPartyToSwitchIntoBattle
 .skip
 	; 'b' contains the PartyNr of the mon the AI will switch to
-	; AndrewNote - Bug - there may be an issue here where stat effects of para/burn are lost on enemy switch
+	; DevNote - Bug - there may be an issue here where stat effects of para/burn are lost on enemy switch
 	call LoadEnemyMonToSwitchTo
 	call OfferSwitch
 	push af
@@ -3598,7 +3598,7 @@ FindMonInOTPartyToSwitchIntoBattle:
 	ld a, [hl]
 	and 1 << FRZ | SLP
 	pop bc
-	jr nz, .discourage ; AndrewNote - discourage switch to a SLP or FRZ mon
+	jr nz, .discourage ; DevNote - discourage switch to a SLP or FRZ mon
 
 	call LookUpTheEffectivenessOfEveryEnemyMove ; does the current AI mon have a SE move on the player
 	call AreThePlayerMonMovesEffectiveAgainstOTMon ; Does the player have a SE move on the current AI mon
@@ -4087,7 +4087,7 @@ InitBattleMon:
 	ret
 
 BattleCheckPlayerShininess:
-; AndrewNote - Shiny Pokemon for player when immortal
+; DevNote - Shiny Pokemon for player when immortal
     farcall AllowShinyOverride
     jr nc, .normal
     scf
@@ -4097,7 +4097,7 @@ BattleCheckPlayerShininess:
 	jr BattleCheckShininess
 
 BattleCheckEnemyShininess:
-; AndrewNote - Lord Oaks Pokemon are shiny regardless of stats
+; DevNote - Lord Oaks Pokemon are shiny regardless of stats
 ; CALs Pokemon are shiny if MarkOfGod is active
 	ld a, [wLinkMode]
 	and a
@@ -4415,14 +4415,14 @@ FieldWeather:
 	ld hl, SunGotBrightText
 	jp StdBattleTextbox
 
-; AndrewNote - function for Pokemon with effects on switching in
+; DevNote - function for Pokemon with effects on switching in
 SwitchInEffects:
 	xor a
 	ld [wFailedMessage], a
 	ld [wEffectFailed], a
 	ld [wAttackMissed], a
     call GetCurrentMonCore
-; AndrewNote - abilities that activate on switching in
+; DevNote - abilities that activate on switching in
     cp KYOGRE
     jp z, .rain
     cp POLITOED
@@ -6519,7 +6519,7 @@ LoadEnemyMon:
 ;    23% Item1
 ;     2% Item2
 
-; AndrewNote - Items for wild Pokemon are redone
+; DevNote - Items for wild Pokemon are redone
 ; if item 2 is defined then 100% to have it
 ; otherwise 10% for item 1
     ld a, [wBaseItem2]
@@ -6635,7 +6635,7 @@ LoadEnemyMon:
 	cp BATTLETYPE_PERFECT_ESCAPE
 	jr z, .GeneratePerfectDVs
 
-; AndrewNote - Silver cave has max dvs
+; DevNote - Silver cave has max dvs
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -7017,7 +7017,7 @@ INCLUDE "data/wild/treemons_asleep.asm"
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-;SwapBattlerLevels: ; unreferenced ; AndrewNote - WFT would this be used for
+;SwapBattlerLevels: ; unreferenced ; DevNote - WFT would this be used for
 ;	push bc
 ;	ld a, [wBattleMonLevel]
 ;	ld b, a
@@ -7583,7 +7583,7 @@ GiveExperiencePoints:
 
 .no_boost
     ld [wStringBuffer2 + 2], a
-; AndrewNote - Rematch exp
+; DevNote - Rematch exp
 ; Boost experience for a Trainer Battle unless in a REMATCH, unless we have all kanto badges
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
@@ -7596,7 +7596,7 @@ GiveExperiencePoints:
 	dec a
 	call nz, BoostExp
 .noTrainerBoost
-; AndrewNote - exp reduced until all Kanto badges are obtained
+; DevNote - exp reduced until all Kanto badges are obtained
     call BoostExp
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
@@ -8559,7 +8559,7 @@ BattleIntro:
 	call InitEnemy
 	call BackUpBGMap2
 
-	; AndrewNote - Hand of God
+	; DevNote - Hand of God
 	; Don't copy for wild mon
 	; For field mon the hand is turned off in InitEnemy
 	ld a, [wOtherTrainerClass]
@@ -8598,7 +8598,7 @@ BattleIntro:
 	ret
 
 LoadTrainerOrWildMonPic:
-; AndrewNote - Field Mon, check if this is a field mon
+; DevNote - Field Mon, check if this is a field mon
 	ld a, [wOtherTrainerID]
 	cp FIELD_MON
 	jr z, .field_mon
@@ -8610,7 +8610,7 @@ LoadTrainerOrWildMonPic:
 	ld [wCurPartySpecies], a
 	jr .Trainer
 
-; AndrewNote - Field Mon, here we swap trainer and wild mon variables
+; DevNote - Field Mon, here we swap trainer and wild mon variables
 .field_mon
     ld a, [wWinTextPointer]
     ld [wCurPartyLevel], a
@@ -8625,7 +8625,7 @@ LoadTrainerOrWildMonPic:
 	ret
 
 InitEnemy:
-; AndrewNote - Field Mon, check if this is a field mon
+; DevNote - Field Mon, check if this is a field mon
 	ld a, [wOtherTrainerID]
 	cp FIELD_MON
 	jr z, .fieldMon
@@ -9647,7 +9647,7 @@ TryToRunAwayFromBattle:
 ;	pop de
 ;	pop hl
 ;	jr nz, .no_flee_item
-; AndrewNote - smoke ball 30% chance to fail
+; DevNote - smoke ball 30% chance to fail
 ;	call Random
 ;	cp 30 percent
 ;	jr c, .no_flee_item

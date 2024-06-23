@@ -106,7 +106,7 @@ TextboxPalette::
 	inc c
 	inc c
 
-    ; AndrewNote - palette for battle text bg
+    ; DevNote - palette for battle text bg
 	ld a, [wBattleMode]
 	and a
 	jr nz, .battle

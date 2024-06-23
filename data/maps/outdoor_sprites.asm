@@ -1,7 +1,7 @@
 ; Valid sprite IDs for each map group.
 ; Maps with environment ROUTE or TOWN can only use these sprites.
 
-; AndrewNote - outdoor spites, here is how this works
+; DevNote - outdoor spites, here is how this works
 ; Maps are grouped into map groups
 ; Each map group has a set of 23 outdoor sprites
 ; Only the 9 sprites in positions 13 - 21 can have walking animations

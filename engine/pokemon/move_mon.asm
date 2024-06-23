@@ -203,7 +203,7 @@ endr
 	jr nz, .copywildmonDVs
 
 ; this part is for non wild pokes, so gift mon
-; AndrewNote - Gift Pokemon DVs - after having 8 badges all gift pokemon have max dvs
+; DevNote - Gift Pokemon DVs - after having 8 badges all gift pokemon have max dvs
 ; pikachu always has max dvs
 	ld a, [wJohtoBadges]
 	cp %11111111 ; all badges
@@ -1052,7 +1052,7 @@ SendMonIntoBox:
 	and a
 	jr nz, .wildDvs
 
-	; AndrewNote - Gift Pokemon Dvs, max dvs
+	; DevNote - Gift Pokemon Dvs, max dvs
 	; this should only be invoked for prize Mewtwo and Arceus from Master Oak
 	ld b, 2 + NUM_MOVES ; DVs and PP ; wEnemyMonHappiness - wEnemyMonDVs
 .giftMonIntoBoxDvsLoop

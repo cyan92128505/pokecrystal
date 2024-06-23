@@ -37,7 +37,7 @@ GENDER_F12_5   EQU  12 percent + 1
 GENDER_F25     EQU  25 percent
 GENDER_F50     EQU  50 percent
 GENDER_F75     EQU  75 percent
-GENDER_F82     EQU  82 percent ; AndrewNote - used after obtaining all johto badges and wild dvs are 10 at least
+GENDER_F82     EQU  82 percent ; DevNote - used after obtaining all johto badges and wild dvs are 10 at least
 GENDER_F100    EQU 100 percent - 1
 GENDER_UNKNOWN EQU -1
 

@@ -215,7 +215,7 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
-; AndrewNote - capture level restrictions
+; DevNote - capture level restrictions
     ld a, [wLevelCap]
     cp 100
     jr z, .capture
@@ -267,7 +267,7 @@ PokeBallEffect:
 ;	jp z, .catch_without_fail
 	ld a, [wCurItem]
 
-	; AndrewNote - master ball here
+	; DevNote - master ball here
 	cp MASTER_BALL
 	jp nz, .notMaster
 
@@ -1253,7 +1253,7 @@ VitaminEffect:
 	call GetPartyParamLocation
 	add hl, bc
 
-; AndrewNote - Vitamins have no limit
+; DevNote - Vitamins have no limit
 	ld a, [hl]
 	cp 250
 	jp nc, NoEffectMessage

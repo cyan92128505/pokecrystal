@@ -45,7 +45,7 @@ CANT_TOSS   EQU 1 << CANT_TOSS_F
 	const TM_HM_POCKET    ; 3
 NUM_POCKETS EQU const_value
 
-; AndrewNote - BackPack
+; DevNote - BackPack
 MAX_ITEMS     EQU 40
 MAX_BALLS     EQU 12
 MAX_KEY_ITEMS EQU 30

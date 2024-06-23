@@ -66,7 +66,7 @@
 	const EXP_SHARE    ; 39
 	const OLD_ROD      ; 3a
 	const GOOD_ROD     ; 3b
-	const SILVER_LEAF  ; 3c  Andrew - find a use for this?
+	const SILVER_LEAF  ; 3c  find a use for this?
 	const SUPER_ROD    ; 3d
 	const PP_UP        ; 3e
 	const ETHER        ; 3f
@@ -78,10 +78,10 @@
 	const MYSTERY_EGG  ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
-	const MOOMOO_MILK  ; 48  Andrew - this can be changed?
+	const MOOMOO_MILK  ; 48  this can be changed?
 	const QUICK_CLAW   ; 49
 	const PSNCUREBERRY ; 4a
-	const GOLD_LEAF    ; 4b  Andrew - find a use for this
+	const GOLD_LEAF    ; 4b  find a use for this
 	const SOFT_SAND    ; 4c
 	const SHARP_BEAK   ; 4d
 	const PRZCUREBERRY ; 4e

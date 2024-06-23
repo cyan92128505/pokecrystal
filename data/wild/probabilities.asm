@@ -3,7 +3,7 @@ mon_prob: MACRO
 	db \1, \2 * 2
 ENDM
 
-; AndrewNote - Encounter probabilities
+; DevNote - Encounter probabilities
 GrassMonProbTable:
 	table_width 2, GrassMonProbTable
 	mon_prob 24,  0 ; 24% chance

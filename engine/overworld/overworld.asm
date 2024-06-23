@@ -92,7 +92,7 @@ GetPlayerSprite:
 INCLUDE "data/sprites/player_sprites.asm"
 
 AddMapSprites:
-; AndrewNote - sprites for indoor/outdoor here
+; DevNote - sprites for indoor/outdoor here
 ; load indoor sprites for HallOfOrigin
     ld a, [wMapGroup]
 	ld b, a

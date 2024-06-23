@@ -112,13 +112,13 @@ LoseWhiteOutMoney:
 	ldh [hMultiplicand + 2], a
 	call Multiply
 ; Save the amount (capped at your total) in hMoneyTemp to print
-; AndrewNote - lose no money if immortal
+; DevNote - lose no money if immortal
     ld a, [wMarkOfGod]
     and a
     jr z, .notImmortal
     jr .take
 .notImmortal
-; AndrewNote - lose all money if invading
+; DevNote - lose all money if invading
     ld a, [wInvading]
     and a
     jr z, .notInvading

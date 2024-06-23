@@ -142,7 +142,7 @@ ReadTrainerPartyPieces:
 	ld e, l
 	pop hl ; de is now wOTPartyMon1StatExp
 
-; AndrewNote - stat exp, trainers to have a default amount of stat exp based on badges
+; DevNote - stat exp, trainers to have a default amount of stat exp based on badges
 ; 0 badges = 0
 ; FALKNER badge = $1000 = 4096 stat exp = 16/64 extra stat at lvl 100
 ; WHITNEY badge = $4000 = 16384 stat exp = 32/64 extra stat at lvl 100
@@ -1909,7 +1909,7 @@ ReadCopyOfTrainerParty:
     ret
 
 
-; AndrewNote - reward money here
+; DevNote - reward money here
 ComputeTrainerReward:
 	ld hl, hProduct
 	xor a

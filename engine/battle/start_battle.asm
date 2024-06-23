@@ -13,7 +13,7 @@ ShowLinkBattleParticipants:
 	ret
 
 FindFirstAliveMonAndStartBattle:
-; AndrewNote - Battle Palette decided here
+; DevNote - Battle Palette decided here
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -64,7 +64,7 @@ FindFirstAliveMonAndStartBattle:
 	ldh [hMapAnims], a
 	ret
 
-; AndrewNote - battle music stuff here
+; DevNote - battle music stuff here
 PlayBattleMusic:
 	push hl
 	push de

@@ -888,11 +888,11 @@ INCLUDE "gfx/overworld/rpg_transition.pal"
     cp RED
     jr nz, .notRed
     ld a, [wOtherTrainerID]
-    cp CELADON_ANDREW
+    cp CELADON_ME
     ret z
-    cp ANDREW
+    cp ME
     ret z
-    cp ANDREW_IMPOSSIBLE
+    cp ME_IMPOSSIBLE
     ret z
 .notRed
 	cp BLUE

@@ -1154,13 +1154,13 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld a, $1
 	ldh [rSVBK], a
 	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a ; AndrewNote - here is how to check for having defeated E4 in engine code
+	bit STATUSFLAGS_HALL_OF_FAME_F, a ; DevNote - here is how to check for having defeated E4 in engine code
 	jr nz, .asm_11896b
 	ld hl, Strings_Ll0ToL40 ; Address to list of strings with the choosable levels
 	ld a, 4                 ; 3 levels to choose from, including 'Cancel'-option
 	jr .asm_118970
 
-; AndrewNote - BT define a for level select
+; DevNote - BT define a for level select
 .asm_11896b
 	ld hl, Strings_L10ToL100 ; Address to list of strings with the choosable levels
     ld a, 6                  ; 5 levels to choose from, including 'Cancel'-option
@@ -1256,7 +1256,7 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	ld [hl], a
 	jr .asm_1189e5
 
-; AndrewNote - BT level choice done here
+; DevNote - BT level choice done here
 .a_button
 	call PlayClickSFX
 	ld a, [wcd4f]
@@ -3857,7 +3857,7 @@ BattleTowerRoomMenu_UpdateYesNoMenu:
 	ld [wBattleTowerRoomMenuJumptableIndex], a
 	ret
 
-; AndrewNote - adjest level selection box
+; DevNote - adjest level selection box
 MenuHeader_119cf7:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 12, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
@@ -3873,7 +3873,7 @@ MenuData_119cff: ; unreferenced
 String_119d07:
 	db "   ▼@"
 
-; AndrewNote - BT level menu strings
+; DevNote - BT level menu strings
 Strings_L10ToL100:
     db "NOVICE@@"
     db "LEADER@@"
@@ -3892,7 +3892,7 @@ BattleTowerCancelString: ; unreferenced
 	db "CANCEL@"
 
 BattleTower_LevelCheck:
-; AndrewNote - BT level check is skipped after 16 badges
+; DevNote - BT level check is skipped after 16 badges
     push af
     ld a, [wKantoBadges]
     cp %11111111
@@ -3903,7 +3903,7 @@ BattleTower_LevelCheck:
 	push af
 	ld a, BANK(wPartyMons)
 	ldh [rSVBK], a
-; AndrewNote - BT level choice calculated here
+; DevNote - BT level choice calculated here
 ; [wcd4f] is the level choice a = 1...5
 	ld a, [wcd4f]
 ;	ld c, 10
@@ -3985,7 +3985,7 @@ BattleTower_UbersCheck:
 	ret
 
 .uber_under_70
-    ret ; AndrewNote - battle tower lvl 70 restriction
+    ret ; DevNote - battle tower lvl 70 restriction
 
 	;pop af
 	;ld a, [de]

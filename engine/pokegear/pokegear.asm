@@ -2281,7 +2281,7 @@ FlyMap:
 	call TownMapPlayerIcon
 	ret
 
-; AndrewNote - Fly - Kanto map not available until Indigo Plateau OR Saffron has been visited
+; DevNote - Fly - Kanto map not available until Indigo Plateau OR Saffron has been visited
 .KantoFlyMap:
 ; The event that there are no flypoints enabled in a map is not
 ; accounted for. As a result, if you attempt to select a flypoint

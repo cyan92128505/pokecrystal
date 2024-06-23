@@ -60,7 +60,7 @@ AndrewScript:
 	writemem wBattleMusicOverride
 	winlosstext AndrewBeatenText, AndrewWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, ANDREW
+	loadtrainer RED, ME
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -89,7 +89,7 @@ AndrewScript:
 	writemem wBattleMusicOverride
    	winlosstext AndrewImpossibleBeatenText, AndrewImpossibleWinText
    	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-   	loadtrainer RED, ANDREW_IMPOSSIBLE
+   	loadtrainer RED, ME_IMPOSSIBLE
    	startbattle
    	ifequal LOSE, .loseImpossible
    	opentext
@@ -362,7 +362,7 @@ WifeIntroText:
 	text "Oh hello."
 	para "Welcome, I"
 	line "live here with my"
-	cont "husband ANDREW."
+	cont "husband."
 	para "You have met our"
 	line "son ADAM, he takes"
 	cont "his ELITE FOUR job"

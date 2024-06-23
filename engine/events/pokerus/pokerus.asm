@@ -27,7 +27,7 @@ GivePokerusAndConvertBerries:
     ;cp ARCEUS
     ;ret z
 
-	; AndrewNote - Pokerus has different probability in the Museum
+	; DevNote - Pokerus has different probability in the Museum
 	; In Museum 30% chance to contract after normal battle, 100% after Deoxys battle
     ld a, [wMapGroup]
 	ld b, a

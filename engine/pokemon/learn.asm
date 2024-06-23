@@ -184,7 +184,7 @@ ForgetMove:
 	pop bc
 	pop de
 	ld a, d
-; AndrewNote - HMs can be forgotten
+; DevNote - HMs can be forgotten
 	;jr c, .hmmove
 	pop hl
 	add hl, bc

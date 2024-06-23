@@ -919,7 +919,7 @@ rept 4
 	inc hl
 endr
 	ret
-; AndrewNote - Lord Oaks Pokemon are shiny regardless of stats
+; DevNote - Lord Oaks Pokemon are shiny regardless of stats
 ; CALs Pokemon are shiny if MarkOfGod is active
 .checkOak
     ld a, [wOtherTrainerClass]

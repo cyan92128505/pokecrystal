@@ -17,7 +17,7 @@ BattleCommand_LeechSeed:
 	pop de
 .got_levels
 	ld a, [de]
-	sla a ; AndrewNote - LeechSeed doesn't work on foes over twice your level
+	sla a ; DevNote - LeechSeed doesn't work on foes over twice your level
 	sub [hl]
 	jr c, .grass
 

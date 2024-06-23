@@ -9,7 +9,7 @@
 	db DRAGON_SCALE, NO_ITEM ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
-	db 40 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/gabite/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)

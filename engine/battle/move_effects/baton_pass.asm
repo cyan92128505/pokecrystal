@@ -61,7 +61,7 @@ BattleCommand_BatonPass:
 	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
 
-; AndrewNote - baton pass - logic for enemy ai revamped
+; DevNote - baton pass - logic for enemy ai revamped
 ; enemy AI will treat Pokemon in index 2 as dedicated recipients, unless in battle tower
 
 ; if in battle tower just clear recipient index
@@ -168,7 +168,7 @@ BattleCommand_BatonPass:
 	ld hl, SpikesDamage
 	call CallBattleCore
 
-; AndrewNote - switch in effects on baton pass
+; DevNote - switch in effects on baton pass
 	ld hl, SwitchInEffects
 	call CallBattleCore
 

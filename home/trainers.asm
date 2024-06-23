@@ -23,7 +23,7 @@ _CheckTrainerBattle::
 	push af
 	push de
 
-; AndrewNote - don't agress an immortal player
+; DevNote - don't agress an immortal player
 	ld a, [wMarkOfGod]
 	and a
 	jr nz, .next

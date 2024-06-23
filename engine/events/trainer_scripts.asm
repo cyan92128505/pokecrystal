@@ -30,7 +30,7 @@ StartBattleWithMapTrainerScript:
 AlreadyBeatenTrainerScript:
 	scripttalkafter
 
-; AndrewNote - rematch all trainers
+; DevNote - rematch all trainers
 RematchScript:
     scall AlreadyBeatenTrainerScript
     readmem wNoRematch

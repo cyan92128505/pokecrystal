@@ -142,7 +142,7 @@ _CGB_FinishBattleScreenLayout:
 	hlcoord 0, 12, wAttrmap
 	ld bc, 6 * SCREEN_WIDTH
 
-	; AndrewNote - palette for battle text bg
+	; DevNote - palette for battle text bg
 	ld a, PAL_BATTLE_BG_PLAYER
 
 	call ByteFill

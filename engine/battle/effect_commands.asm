@@ -897,7 +897,7 @@ IgnoreSleepOnly:
 	ret
 
 BattleCommand_UsedMoveText:
-; AndrewNote - Aegislash attack stance change
+; DevNote - Aegislash attack stance change
     push hl
     push bc
     ldh a, [hBattleTurn]
@@ -954,7 +954,7 @@ CheckUserIsCharging:
 	ret
 
 BattleCommand_DoTurn:
-; AndrewNote - lock into choice item move here
+; DevNote - lock into choice item move here
 	call GetUserItem
 	ld a, b
 	cp HELD_CHOICE_BAND
@@ -1043,7 +1043,7 @@ BattleCommand_DoTurn:
 	pop hl
 	ret c
 
-; AndrewNote - here we consume pp
+; DevNote - here we consume pp
 .consume_pp
 	ldh a, [hBattleTurn]
 	and a
@@ -1177,7 +1177,7 @@ BattleCommand_Critical:
 	inc c
 
 .CheckCritical:
-; AndrewNote - Persians Slash always crits
+; DevNote - Persians Slash always crits
     call GetCurrentMon
     cp PERSIAN
     jr z, .checkSlash
@@ -1318,7 +1318,7 @@ BattleCommand_Stab:
 	ld hl, wTypeModifier
 	set 7, [hl]
 
-.SkipStab: ; AndrewNote - now we try to apply type matchup
+.SkipStab: ; DevNote - now we try to apply type matchup
 	ld a, BATTLE_VARS_MOVE_TYPE ; get move type
 	call GetBattleVar
 	and TYPE_MASK
@@ -1390,8 +1390,8 @@ BattleCommand_Stab:
 	or b
 	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
 
-; AndrewNote - expert belt - x1.2 damage on SE hits
-; AndrewNote - Fix this!!
+; DevNote - expert belt - x1.2 damage on SE hits
+; DevNote - Fix this!!
 ; The problem with ExpertBelt / SolidRock is this
 ; we are right now in a loop that goes through enemy types
 ; if we are SE against one we boost
@@ -1648,7 +1648,7 @@ BattleCommand_DamageVariation:
 BattleCommand_CheckHit:
 ; checkhit
 
-    ; AndrewNote - levitate, water absorb, volt absorb, fire absorb here
+    ; DevNote - levitate, water absorb, volt absorb, fire absorb here
     ; note these functions are defined in scoring.asm as this file is out of space
 	farcall Levitate
 	jp z, .Miss
@@ -1688,7 +1688,7 @@ BattleCommand_CheckHit:
 	cp EFFECT_JUDGEMENT
 	ret z
 
-; AndrewNote - make dynamic punch always hit for Machamp
+; DevNote - make dynamic punch always hit for Machamp
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp DYNAMICPUNCH
@@ -1698,7 +1698,7 @@ BattleCommand_CheckHit:
 	ret z
 .notDynamicPunch
 
-; AndrewNote - make Zap Cannon always hit for Magnezone
+; DevNote - make Zap Cannon always hit for Magnezone
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp ZAP_CANNON
@@ -1708,7 +1708,7 @@ BattleCommand_CheckHit:
 	ret z
 .notZapCannon
 
-; AndrewNote - make thunder always hit for galvantula and joltik
+; DevNote - make thunder always hit for galvantula and joltik
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp THUNDER
@@ -2205,7 +2205,7 @@ BattleCommand_ApplyDamage:
     jr .damage
 
 .focusSash
- ; AndrewNote - this is actually focus sash
+ ; DevNote - this is actually focus sash
  	ldh a, [hBattleTurn]
  	and a
  	jr z, .enemy
@@ -2440,7 +2440,7 @@ BattleCommand_SuperEffectiveText:
 	jp StdBattleTextbox
 
 BattleCommand_CheckFaint:
-; AndrewNote - right here we first apply life orb recoil
+; DevNote - right here we first apply life orb recoil
     push hl
 	call GetUserItem
 	ld a, b
@@ -2671,7 +2671,7 @@ PlayerAttackDamage:
 	ld a, [hli]
 	cp 1
 	jr nz, .notOne
-	ld a, 100 ; AndrewNote - Return - treat moves with 1 power as 100. This is for AI to not be broken by RETURN.
+	ld a, 100 ; DevNote - Return - treat moves with 1 power as 100. This is for AI to not be broken by RETURN.
 .notOne
 	and a
 	ld d, a
@@ -3193,7 +3193,7 @@ BattleCommand_DamageCalc:
 ; =====================
 ; ==== Life Orb =======
 ; =====================
-; AndrewNote - Life Orb - x1.3 damage but take recoil (dealt with in CheckFaint)
+; DevNote - Life Orb - x1.3 damage but take recoil (dealt with in CheckFaint)
     push hl
     call GetUserItem
 	ld a, b
@@ -3228,7 +3228,7 @@ BattleCommand_DamageCalc:
 ; ========================
 ; ===== Choice Band ======
 ; ========================
-; AndrewNote - choice band - x1.5 damage but permanent encore
+; DevNote - choice band - x1.5 damage but permanent encore
     push hl
 	call GetUserItem
 	ld a, b
@@ -3245,7 +3245,7 @@ BattleCommand_DamageCalc:
 ; =========================
 ; ===== Choice Specs ======
 ; =========================
-; AndrewNote - choice specs - x1.5 damage but permanent encore
+; DevNote - choice specs - x1.5 damage but permanent encore
     push hl
 	call GetUserItem
 	ld a, b
@@ -3262,7 +3262,7 @@ BattleCommand_DamageCalc:
 ; ========================
 ; ===== Muscle Band ======
 ; ========================
-; AndrewNote - muscle band - x1.1 damage
+; DevNote - muscle band - x1.1 damage
     push hl
 	call GetUserItem
 	ld a, b
@@ -3279,7 +3279,7 @@ BattleCommand_DamageCalc:
 ; =========================
 ; ===== Wise Glasses ======
 ; =========================
-; AndrewNote - wise glasses - x1.1 damage
+; DevNote - wise glasses - x1.1 damage
     push hl
 	call GetUserItem
 	ld a, b
@@ -3525,7 +3525,7 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 .extraDamage
     call FiftyPercentBoost
 
-; AndrewNote - crits now deal x1.5 damage rather than x2
+; DevNote - crits now deal x1.5 damage rather than x2
 .FiftyPercent
     call FiftyPercentBoost
 
@@ -3744,7 +3744,7 @@ INCLUDE "engine/battle/move_effects/lock_on.asm"
 
 INCLUDE "engine/battle/move_effects/sketch.asm"
 
-; AndrewNote - this is not used
+; DevNote - this is not used
 BattleCommand_DefrostOpponent:
 ; defrostopponent
 ; Thaw the opponent if frozen, and
@@ -3990,7 +3990,7 @@ UpdateMoveData:
 
 BattleCommand_SleepTarget:
 ; sleeptarget
-; AndrewNote - there is no such item with HELD_PREVENT_SLEEP
+; DevNote - there is no such item with HELD_PREVENT_SLEEP
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_SLEEP
@@ -4050,7 +4050,7 @@ BattleCommand_SleepTarget:
 	call AnimateCurrentMove
 	ld b, SLP
 
-; AndrewNote - Sleep now lasts 1 to 3 turns
+; DevNote - Sleep now lasts 1 to 3 turns
 	call BattleRandom
 	cp 33 percent
 	jr c, .oneTurn
@@ -4136,7 +4136,7 @@ BattleCommand_Poison:
 	and 1 << PSN
 	jp nz, .failed
 
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_POISON
@@ -4343,7 +4343,7 @@ BattleCommand_BurnTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	ret z
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_BURN
@@ -4414,7 +4414,7 @@ BattleCommand_FreezeTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
 	ret z
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_FREEZE
@@ -4464,7 +4464,7 @@ BattleCommand_ParalyzeTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_PARALYZE
@@ -5385,7 +5385,7 @@ BattleCommand_Rampage:
 	ld de, wPlayerRolloutCount
 	ld a, [wBattleMonSpecies]
 .ok
-    ; AndrewNote - Dragonite does not rampage
+    ; DevNote - Dragonite does not rampage
     cp DRAGONITE
     jr nz, .notDragonite
     ld hl, MaintainsControlText
@@ -5514,7 +5514,7 @@ BattleCommand_ForceSwitch:
 	ld hl, SpikesDamage
 	call CallBattleCore
 
-	ld hl, SwitchInEffects ; AndrewNote - Force Switch - switch in effects
+	ld hl, SwitchInEffects ; DevNote - Force Switch - switch in effects
 	call CallBattleCore
 
 	ld hl, ApplyStatusEffectOnEnemyStats
@@ -5617,7 +5617,7 @@ BattleCommand_ForceSwitch:
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
-	ld hl, SwitchInEffects ; AndrewNote - Force Switch - switch in effects
+	ld hl, SwitchInEffects ; DevNote - Force Switch - switch in effects
 	call CallBattleCore
 
 .fail
@@ -5933,7 +5933,7 @@ BattleCommand_OHKO:
 	ld [wAttackMissed], a
 	ret
 
-; AndrewNote - JUDGEMENT has 5% chance to instant KO enemy
+; DevNote - JUDGEMENT has 5% chance to instant KO enemy
 BattleCommand_Judgement:
 ; judgement
 ; judgement effect does not happen in MANOR (my house)
@@ -6182,7 +6182,7 @@ INCLUDE "engine/battle/move_effects/shell_smash.asm"
 
 BattleCommand_Recoil:
 ; recoil
-; AndrewNote - Struggle always does 1/4 hp as recoil
+; DevNote - Struggle always does 1/4 hp as recoil
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp STRUGGLE
@@ -6275,7 +6275,7 @@ BattleCommand_Recoil:
 
 BattleCommand_ConfuseTarget:
 ; confusetarget
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_CONFUSE
@@ -6296,7 +6296,7 @@ BattleCommand_ConfuseTarget:
 
 BattleCommand_Confuse:
 ; confuse
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_CONFUSE
@@ -6389,7 +6389,7 @@ BattleCommand_Paralyze:
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
-; AndrewNote - there is no such item
+; DevNote - there is no such item
 	;call GetOpponentItem
 	;ld a, b
 	;cp HELD_PREVENT_PARALYZE

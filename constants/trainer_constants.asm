@@ -755,9 +755,9 @@ KRIS EQU __trainer_class__
 	const MASTER_ASH
 	const YAMI
 	const RED_MEWTWO
-	const CELADON_ANDREW
-	const ANDREW
-	const ANDREW_IMPOSSIBLE
+	const CELADON_ME
+	const ME
+	const ME_IMPOSSIBLE
 
 	trainerclass BLUE ; 40
 	const BLUE1

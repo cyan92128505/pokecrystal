@@ -10,7 +10,7 @@ SCENE_FINISHED EQU 1
 ; scene variable value.
 SCENE_ALWAYS   EQU -1
 
-; AndrewNote - scenes - custom scene constants
+; DevNote - scenes - custom scene constants
 SCENE_CUSTOM_1  EQU 101
 SCENE_CUSTOM_2  EQU 102
 SCENE_CUSTOM_3  EQU 103

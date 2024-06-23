@@ -269,7 +269,7 @@
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
 ; Unused: next 339 events
-; AndrewNote - events, lets add more here
+; DevNote - events, lets add more here
     const EVENT_BEAT_GIANT_DAD
     const EVENT_BEAT_INVADER_CRESTFALLEN
     const EVENT_CAUGHT_ZAPDOS
@@ -424,7 +424,7 @@
     const EVENT_BEAT_MEOWTH
 
     ; ======================================
-    ; AndrewNote - here
+    ; DevNote - here
     ; ======================================
 
 	const_next 600

@@ -635,7 +635,7 @@ AI_Smart_Switch:
     ld [wEnemyIsSwitching], a
 	ret
 
-; AndrewNote - this is commented out because this is stupid and will not be used
+; DevNote - this is commented out because this is stupid and will not be used
 AI_Setup:
     ret
 ; Use stat-modifying moves on turn 1.
@@ -695,7 +695,7 @@ AI_Setup:
 ;	inc [hl]
 ;	jr .checkmove
 
-; AndrewNote - this is commented out because this is made redundant by AI_Aggressive
+; DevNote - this is commented out because this is made redundant by AI_Aggressive
 AI_Types:
     ret
 ; Dismiss any move that the player is immune to.
@@ -777,7 +777,7 @@ AI_Types:
 ;	call AIDiscourageMove
 ;	jr .checkmove
 
-; AndrewNote - this is commented out because it is stupid and wont be used
+; DevNote - this is commented out because it is stupid and wont be used
 AI_Offensive:
     ret
 ; Greatly discourage non-damaging moves.
@@ -3511,7 +3511,7 @@ AI_Smart_Earthquake:
 AI_Smart_BatonPass:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
-; AndrewNote - WTF, why would you do this, baton pass is not to escape an enemy!!
+; DevNote - WTF, why would you do this, baton pass is not to escape an enemy!!
 
 ; discourage if we don't have any other mons to pass to
 	push hl
@@ -4470,7 +4470,7 @@ AI_Smart_LesserStatChange:
     inc [hl]
     ret
 
-; AndrewNote - functions which check if the player can KO the AI and decide to use boosting moves
+; DevNote - functions which check if the player can KO the AI and decide to use boosting moves
 
 ; decide if AI should use boosting moves
 ; generally don't boost if player will just KO anyway
@@ -5492,7 +5492,7 @@ StandardDiscourage:
 
 INCLUDE "data/battle/ai/useful_moves.asm"
 
-; AndrewNote - this used to be AI_Opportunist
+; DevNote - this used to be AI_Opportunist
 ; this used to discourage 0 power moves if the player is below 1/4 hp
 ; that is no longer needed as AI_Basic now encourages any attack once it can KO the player
 ; this discourages most 0 power moves if the player can KO the AI

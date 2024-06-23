@@ -214,7 +214,7 @@ DisplayDexEntry:
 	call PlaceFarString
 	ret
 
-; AndrewNote - Stats Page - code to display ability
+; DevNote - Stats Page - code to display ability
 ; NOTE:
 ; for some reason viewing the ability stats page while in battle
 ; will break the game if the Pokemons weight is between

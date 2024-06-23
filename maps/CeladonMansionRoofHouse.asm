@@ -20,7 +20,7 @@ CeladonMansionRoofHouseAndrewScript:
 	writemem wBattleMusicOverride
 	winlosstext CeladonAndrewBeatenText, CeladonAndrewWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, CELADON_ANDREW
+	loadtrainer RED, CELADON_ME
 	startbattle
 	reloadmap
 	special HealParty

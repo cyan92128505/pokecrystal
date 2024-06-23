@@ -119,7 +119,7 @@ endc
 ENDM
 
 trainer: MACRO
-; AndrewNote - trainer macro is used in two ways now
+; DevNote - trainer macro is used in two ways now
 ; to define trainers that aggro on the player
 ; to define wild pokemon in the field that aggro on the player
 ; the arguments mean different things in each case

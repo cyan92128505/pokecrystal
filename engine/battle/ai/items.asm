@@ -44,7 +44,7 @@ DontSwitch:
 	call AI_TryItem
 	ret
 
-; AndrewNote - this switches with probabilities - 50%, 80%, 96% depending on switch score
+; DevNote - this switches with probabilities - 50%, 80%, 96% depending on switch score
 SwitchOften:
     call CheckSetUp
     jp c, DontSwitch
@@ -82,7 +82,7 @@ SwitchOften:
 	ld [wEnemySwitchMonIndex], a
 	jp AI_TrySwitch
 
-; AndrewNote - this switches with probabilities - 8%, 12%, 80% depending on switch score
+; DevNote - this switches with probabilities - 8%, 12%, 80% depending on switch score
 SwitchRarely:
     call CheckSetUp
     jp c, DontSwitch
@@ -119,7 +119,7 @@ SwitchRarely:
 	ld [wEnemySwitchMonIndex], a
 	jp AI_TrySwitch
 
-; AndrewNote - this switches with probabilities - 20%, 50%, 80% depending on switch score
+; DevNote - this switches with probabilities - 20%, 50%, 80% depending on switch score
 SwitchSometimes:
     call CheckSetUp
     jp c, DontSwitch
@@ -673,7 +673,7 @@ EnemyPotionFinish:
 AI_TrySwitch:
 ; Determine whether the AI can switch based on how many Pokemon are still alive.
 ; If it can switch, it will.
-; AndrewNote - switch, don't switch if already set up
+; DevNote - switch, don't switch if already set up
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	ret nc
@@ -739,7 +739,7 @@ AI_Switch:
 	call PrintText
 
 .skiptext
-; AndrewNote - commented out - this assumed the ai will not switch during battle
+; DevNote - commented out - this assumed the ai will not switch during battle
 	;ld a, 1
 	;ld [wBattleHasJustStarted], a
 	callfar NewEnemyMonStatus
@@ -749,7 +749,7 @@ AI_Switch:
 	farcall EnemySwitch
 	farcall ResetBattleParticipants
 
-; AndrewNote - switch in effects for ai switching
+; DevNote - switch in effects for ai switching
 	ld a, [wLinkMode]
 	and a
 	jr nz, .linked

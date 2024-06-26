@@ -11,7 +11,7 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
   - some are different such as Lucario with Intrepid Sword.
   - some are completely new such as Guardevoir raising light screen upon switch in.
 
-<img src="/screenshots/rayquaza.png" width="150" height="150" />    <img src="/screenshots/sandstorm.png" width="150" height="150" />    <img src="/screenshots/stance.png" width="150" height="150" />
+<img src="/screenshots/rayquaza.png" width="150" height="150" />    <img src="/screenshots/sandstorm.png" width="150" height="150" />    <img src="/screenshots/stance.png" width="150" height="150" />   <img src="/screenshots/ability.png" width="150" height="150" />
 
 ## Overworld Pokemon
 
@@ -63,7 +63,7 @@ Many massively impactful quality of life changes.
 
 <img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
 
-## Items
+## Items and Moves
 
 Many important new and existing items.
 
@@ -77,8 +77,26 @@ Many important new and existing items.
     - expert belt
     - type boost items give 20% boost
     - leftovers
-- new item the Red Eye Orb allows player to become a dark souls like invader. This gives the player a Red sprite, gives them double prize money upon winning a battle but losing a battle cost all the players money.
+- Many important Pokemon moves added, including but not limited to
+    - Bulk Up
+    - Calm Mind
+    - Nasty Plot
+    - Dragon Dance
+    - Quiver Dance
+    - Shell Smash
+    - Geomancy
+    - Close Combat
+    - Stone Edge
+    - Brave Bird
+    - Flare Blitz
+    - Volt tackle
+    - Aura Sphere
+    - Dark Pulse
+    - Moon Blast
+- New item the Red Eye Orb allows player to become a dark souls like invader. This gives the player a Red sprite, gives them double prize money upon winning a battle but losing a battle cost all the players money.
 - New rare item Ambrosia maximises all stat exp (evs) and happiness. Acting like using 25 of each vitamin in one item.
+
+<img src="/screenshots/items.png" width="150" height="150" />     <img src="/screenshots/cloyster.png" width="150" height="150" />    <img src="/screenshots/xerneas.png" width="150" height="150" />    <img src="/screenshots/invading.png" width="150" height="150" />
 
 ## Entertaining Features
 
@@ -91,6 +109,10 @@ Many important new and existing items.
     - Battle tower (mirror mode) here instead of using your own party you use an exact copy of the random enemy party. Keeping the fights interesting.
 - A recurring RPG minigame where the player plays through stories from popular IPs such as Star Wars, DBZ and Lord of the Rings where the player takes part in battles with fixed teams.
 - Invader enemy class based on dark souls invaders. They don't generally have high level Pokemon but their Pokemon are min-maxed and they utilize meta strategies. They are all avoidable.
+
+<img src="/screenshots/battletower.png" width="150" height="150" />     <img src="/screenshots/mirrormode.png" width="150" height="150" />    <img src="/screenshots/arcademenu.png" width="150" height="150" />    <img src="/screenshots/arcadeconfirm.png" width="150" height="150" />
+
+<img src="/screenshots/herochoice.png" width="150" height="150" />     <img src="/screenshots/starwars1.png" width="150" height="150" />    <img src="/screenshots/invader.png" width="150" height="150" />    <img src="/screenshots/gitgud.png" width="150" height="150" />
 
 ## AI
 

@@ -27,6 +27,8 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 - The story is completely new and centers on an immanent invasion of Kanto due to a war with Hoen.
 - Three recurring rivals, one of which uses an exact copy of the players party including stats, items, nicknames, everything.
 
+<img src="/screenshots/cynthia.png" width="150" height="150" />    <img src="/screenshots/drown.png" width="150" height="150" />    <img src="/screenshots/self.png" width="150" height="150" />
+
 ## World
 
 - Many updated maps and numerous all new maps.
@@ -35,11 +37,15 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
   - Can travel north to Blackthorn and west to Olivine from beginning of the game.
   - Can travel to Kanto as soon as reaching Goldenrod.
 
+<img src="/screenshots/ruinpast.png" width="150" height="150" />    <img src="/screenshots/sprout.png" width="150" height="150" />    <img src="/screenshots/silvercave.png" width="150" height="150" />
+
 ## Level Caps
 
-Open world design is balanced by two levels caps, both of which are visible on your trainer card.
+Open world design is balanced by two levels caps, both of which are visible on your trainer card and increase upon defeating Gym leaders.
   - Cap on level you can train Pokemon to, this is a generous cap that starts at 25 and is generally slightly higher than the next gym leaders max level.
   - Cap on the max level of Pokemon you can capture. This is generally 10 less than your training level cap.
+
+<img src="/screenshots/card.png" width="150" height="150" />    <img src="/screenshots/capture.png" width="150" height="150" />    <img src="/screenshots/rarecandy.png" width="150" height="150" />
 
 ## Quality of Life
 
@@ -54,6 +60,8 @@ Many massively impactful quality of life changes.
 - A Pocket PC allowing access to PC anywhere except caves and dungeons for balance reasons.
 - An infinitely reusable escape rope called Escape Pod.
 - An infinitely reusable repel called a Repulsor.
+
+<img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
 
 ## Items
 

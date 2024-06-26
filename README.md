@@ -11,7 +11,7 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
   - some are different such as Lucario with Intrepid Sword.
   - some are completely new such as Guardevoir raising light screen upon switch in.
 
-<img src="/screenshots/rayquaza.png" width="150" height="150" /> <img src="/screenshots/rayquaza.png" width="150" height="150" /> <img src="/screenshots/rayquaza.png" width="150" height="150" />
+<img src="/screenshots/rayquaza.png" width="150" height="150" />    <img src="/screenshots/sandstorm.png" width="150" height="150" />    <img src="/screenshots/stance.png" width="150" height="150" />
 
 ## Overworld Pokemon
 
@@ -19,6 +19,8 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
   - Normal Pokemon that appear in various colours and are at an appropriate level.
   - Aggressive Pokemon that appear red and will attack the player on sight, they are at high levels and can only be escaped from by using a Pokedoll.
   - Shinny Pokemon that appear gold and generally have a 1/8 chance to spawn in the area.
+
+<img src="/screenshots/fieldmon.png" width="150" height="150" />    <img src="/screenshots/aggressive.png" width="150" height="150" />    <img src="/screenshots/shiny.png" width="150" height="150" />
 
 ## Story
 

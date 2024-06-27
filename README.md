@@ -2,6 +2,8 @@
 
 A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay and extensive additional and post game content.
 
+<img src="/screenshots/ambrosia.png" width="150" height="150" />
+
 ## Pokedex
 
 - Fully reworked Pokedex which includes fan favorite Pokemon and legendaries from the first 6 generations with 253 Pokemon in total.
@@ -30,7 +32,7 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 - New dialog for every NPC and event in the entire game  
 - Three recurring rivals, one of which uses an exact copy of the players party including stats, items, nicknames, everything.
 
-<img src="/screenshots/cynthia.png" width="150" height="150" />    <img src="/screenshots/drown.png" width="150" height="150" />    <img src="/screenshots/rivals.png" width="150" height="150" /> <img src="/screenshots/self.png" width="150" height="150" />
+<img src="/screenshots/cynthia.png" width="150" height="150" />    <img src="/screenshots/drown.png" width="150" height="150" />    <img src="/screenshots/rivals.png" width="150" height="150" />    <img src="/screenshots/self.png" width="150" height="150" />
 
 ## World
 

@@ -136,8 +136,10 @@ It uses all these to make decisions, take these moves for example
   
 - Swords Dance
   - AI will use if it will be able to get off at least one attack after using it.
-  - It will not use if the player can 1HKO.
-  - Unless the AI outspeeds player, has intact focus sash or sturdy and the player does not have a priority move.  
+  - It will not use if the player can 1HKO unless all the following are true
+    - The AI outspeeds player
+    - AI has intact focus sash or sturdy
+    - The player does not have a priority move  
 
 <img src="/screenshots/switch.png" width="150" height="150" />    <img src="/screenshots/swordsdance.png" width="150" height="150" />    <img src="/screenshots/whirlwind.png" width="150" height="150" />
 

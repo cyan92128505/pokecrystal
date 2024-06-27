@@ -55,16 +55,17 @@ Open world design is balanced by two levels caps, both of which are visible on y
 ## Quality of Life
 
 Many massively impactful quality of life changes.
-- Can rematch any trainer by talking to them, including gym leaders. However, rematches give reduced exp and forbid the use of items.
+- Can rematch any trainer by talking to them, including Gym leaders. However, rematches give reduced exp and forbid the use of items.
 - Can forfeit almost any battle via the Run option.
 - Exp share available from very early game, giving 50% exp to all Pokemon who do not participate. This is upgraded by endgame to give double exp to all Pokemon.
-- Sprint shoes which allow you to run by default (rather than having to hold B) except when indoors where walking is the default (though you can still run by holding B).
+- Sport Shoes which allows the player to run by default (rather than having to hold B) except when indoors where walking is the default (though you can still run by holding B).
 - A Remembral key item which acts as a portable move relearner with no cost.
 - All TMs are infinitely reusable.
 - HMs can be used by any Pokemon which is able to learn them, without actually needing to know them.
 - A Pocket PC allowing access to PC anywhere except caves and dungeons for balance reasons.
 - An infinitely reusable escape rope called Escape Pod.
 - An infinitely reusable repel called a Repulsor.
+- Warp Device which lets the player instantly warp to important locations.
 
 <img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
 

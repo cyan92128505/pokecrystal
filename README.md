@@ -127,6 +127,7 @@ AI has been extensively improved. At all times it has knowledge of
 - Whether the player has any moves that can 1HKO, 2HKO or 3HKO the AI from both its current and max health.
 - Whether the AI can outspeed the player.
 - What item the player Pokemon has.
+- Whether the AI is choice locked into a resisted move, it will switch out in this case.  
 - It does NOT know what specific move the player has selected on their turn.
 
 It uses all these to make decisions, take these moves for example

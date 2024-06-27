@@ -412,18 +412,25 @@ _BTWinF1Text:
 	done
 
 _BTGreetingF2Text:
-	text "I warn you, I'm"
-	line "really good at"
-	cont "#MON."
+	text "Ah greetings my"
+	line "dear fellow"
+	cont "trainer."
+
+	para "Let us have a"
+	line "splendid match!"
 	done
 
 _BTLossF2Text:
-	text "Told ya."
+	text "Oh my I may"
+	line "overdid it a"
+	cont "little."
 	done
 
 _BTWinF2Text:
-	text "Ok OK, settle down"
-	line "bro."
+	text "Ohhh a fine"
+	line "battle!"
+
+	para "Jolly good!"
 	done
 
 _BTGreetingF3Text:
@@ -485,15 +492,22 @@ _BTWinF6Text:
 	done
 
 _BTGreetingF7Text:
-	text "I'll kill you!"
+	text "I am the"
+	line "inevitable"
+	cont "eventuality of"
+	cont "an anomaly."
 	done
 
 _BTLossF7Text:
-	text "Too many roids!"
+	text "A harmony of"
+	line "mathematical"
+	cont "precision."
 	done
 
 _BTWinF7Text:
-	text "I need my meds."
+	text "You are remarkably"
+	line "efficient at"
+	cont "this."
 	done
 
 _BTGreetingF8Text:

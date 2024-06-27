@@ -11,7 +11,9 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
   - some are different such as Lucario with Intrepid Sword.
   - some are completely new such as Guardevoir raising light screen upon switch in.
 
-<img src="/screenshots/rayquaza.png" width="150" height="150" />    <img src="/screenshots/sandstorm.png" width="150" height="150" />    <img src="/screenshots/stance.png" width="150" height="150" />   <img src="/screenshots/ability.png" width="150" height="150" />
+<img src="/screenshots/rayquaza.png" width="150" height="150" />    <img src="/screenshots/garchomp.png" width="150" height="150" />    <img src="/screenshots/stance.png" width="150" height="150" />
+
+<img src="/screenshots/ability.png" width="150" height="150" />     <img src="/screenshots/latias.png" width="150" height="150" />     <img src="/screenshots/regigigas.png" width="150" height="150" />
 
 ## Overworld Pokemon
 
@@ -25,9 +27,10 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 ## Story
 
 - The story is completely new and centers on an immanent invasion of Kanto due to a war with Hoen.
+- New dialog for every NPC and event in the entire game  
 - Three recurring rivals, one of which uses an exact copy of the players party including stats, items, nicknames, everything.
 
-<img src="/screenshots/cynthia.png" width="150" height="150" />    <img src="/screenshots/drown.png" width="150" height="150" />    <img src="/screenshots/self.png" width="150" height="150" />
+<img src="/screenshots/cynthia.png" width="150" height="150" />    <img src="/screenshots/drown.png" width="150" height="150" />    <img src="/screenshots/wallace.png" width="150" height="150" /> <img src="/screenshots/self.png" width="150" height="150" />
 
 ## World
 
@@ -120,10 +123,14 @@ AI has been extensively improved. At all times it has access to
 - Whether it has any moves that can 1HKO, 2HKO or 3HKO the player from both their current and max health.
 - Whether the player has any moves that can 1HKO, 2HKO or 3HKO the AI from both its current and max health.
 - Whether the AI can outspeed the player or not.
+- What item the player Pokemon has
+- It does NOT know what specific move the player has selected on their turn
 
 It uses all these to make decisions, for example
 - AI will use recover if it has one more turn before being KOed unless the player can 2HKO from max HP as there is no point.
 - AI will use a setup move unless player can outspeed and 1HKO, unless AI has intact focus sash or sturdy, then it will set up as long as it can outspeed the player and the player doesn't have a priority move.
+
+<img src="/screenshots/switch.png" width="150" height="150" />    <img src="/screenshots/swordsdance.png" width="150" height="150" />    <img src="/screenshots/whirlwind.png" width="150" height="150" />
 
 ## Post game
 
@@ -139,4 +146,14 @@ It uses all these to make decisions, for example
         - players party is replaced with a copy of the enemies party.
         - this persists after battle, the player can deposit the Pokemon in their box if they want.
         - Gives the player the option to restore their original team from the last save when turned off.
+
+<img src="/screenshots/ceruleancave.png" width="150" height="150" />    <img src="/screenshots/museum.png" width="150" height="150" />    <img src="/screenshots/deoxys.png" width="150" height="150" />
+
+<img src="/screenshots/mastertrial.png" width="150" height="150" />    <img src="/screenshots/halloforigin.png" width="150" height="150" />    <img src="/screenshots/lordoak.png" width="150" height="150" />
+
+<img src="/screenshots/lordoakbattle.png" width="150" height="150" />    <img src="/screenshots/markhand.png" width="150" height="150" />    <img src="/screenshots/hand.png" width="150" height="150" />
+
+<img src="/screenshots/mark.png" width="150" height="150" />    <img src="/screenshots/mewtwo.png" width="150" height="150" />    <img src="/screenshots/arceus.png" width="150" height="150" />
+
+
     

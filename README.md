@@ -122,16 +122,22 @@ Many important new and existing items.
 
 ## AI
 
-AI has been extensively improved. At all times it has access to
+AI has been extensively improved. At all times it has knowledge of
 - Whether it has any moves that can 1HKO, 2HKO or 3HKO the player from both their current and max health.
 - Whether the player has any moves that can 1HKO, 2HKO or 3HKO the AI from both its current and max health.
-- Whether the AI can outspeed the player or not.
-- What item the player Pokemon has
-- It does NOT know what specific move the player has selected on their turn
+- Whether the AI can outspeed the player.
+- What item the player Pokemon has.
+- It does NOT know what specific move the player has selected on their turn.
 
-It uses all these to make decisions, for example
-- AI will use recover if it has one more turn before being KOed unless the player can 2HKO from max HP as there is no point.
-- AI will use a setup move unless player can outspeed and 1HKO, unless AI has intact focus sash or sturdy, then it will set up as long as it can outspeed the player and the player doesn't have a priority move.
+It uses all these to make decisions, take these moves for example
+- Recover
+  - AI will use if it will only get one more turn before being defeated by the player.
+  - Unless the player can 2HKO AI from max HP, no point using recover in that case.
+  
+- Swords Dance
+  - AI will use if it will be able to get off at least one attack after using it.
+  - It will not use if the player can 1HKO.
+  - Unless the AI outspeeds player, has intact focus sash or sturdy and the player does not have a priority move.  
 
 <img src="/screenshots/switch.png" width="150" height="150" />    <img src="/screenshots/swordsdance.png" width="150" height="150" />    <img src="/screenshots/whirlwind.png" width="150" height="150" />
 

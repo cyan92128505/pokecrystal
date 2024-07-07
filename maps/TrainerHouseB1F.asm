@@ -328,9 +328,9 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Adam
-    checkevent EVENT_BEAT_MASTER_ADAM
+    checkevent EVENT_BEAT_RED
     iffalse .Adam1
-    loadtrainer ADAM, MASTER_ADAM
+    loadtrainer ADAM, ADAM_ARCADE
     sjump .finish
 .Adam1
     checkevent EVENT_BEAT_ELITE_FOUR
@@ -350,9 +350,9 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Lance
-    checkevent EVENT_BEAT_MASTER_LANCE
+    checkevent EVENT_BEAT_RED
     iffalse .Lance1
-    loadtrainer CHAMPION, MASTER_LANCE
+    loadtrainer CHAMPION, LANCE_ARCADE
     sjump .finish
 .Lance1
     checkevent EVENT_BEAT_ELITE_FOUR
@@ -361,20 +361,15 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Red
-    checkevent EVENT_BEAT_MASTER_RED
-    iffalse .Red1
-    loadtrainer RED, MASTER_RED
-    sjump .finish
-.Red1
     checkevent EVENT_BEAT_RED
     iffalse .sample
     loadtrainer RED, RED1
     sjump .finish
 
 .Blue
-    checkevent EVENT_BEAT_MASTER_BLUE
+    checkevent EVENT_BEAT_RED
     iffalse .Blue1
-    loadtrainer BLUE, MASTER_BLUE
+    loadtrainer BLUE, BLUE_ARCADE
     sjump .finish
 .Blue1
     checkevent EVENT_BEAT_BLUE
@@ -535,12 +530,12 @@ BattleRouletteReceptionistScript:
 .Yami
     checkevent EVENT_BEAT_MASTER_YAMI
     iffalse .Yami1
-    loadtrainer RED, YAMI
+    loadtrainer RED, ATEM
     sjump .finish
 .Yami1
     checkevent EVENT_BEAT_YAMI
     iffalse .sample
-    loadtrainer RED, YAMI
+    loadtrainer RED, ATEM
     sjump .finish
 
 .Aizen
@@ -588,9 +583,14 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Green
-    checkevent EVENT_BEAT_MASTER_GREEN
-    iffalse .sample
+    checkevent EVENT_BEAT_RED
+    iffalse .green1
     loadtrainer LEAF, MASTER_GREEN
+    sjump .finish
+.green1
+    checkevent EVENT_BEAT_GREEN
+    iffalse .sample
+    loadtrainer LEAF, GREEN1
     sjump .finish
 
 .Silver
@@ -605,8 +605,28 @@ BattleRouletteReceptionistScript:
     sjump .finish
 .Silver6
     checkevent EVENT_BEAT_RIVAL_SAFFRON
-    iffalse .Silver1
+    iffalse .Silver5
     loadtrainer RIVAL2, RIVAL2_SAFFRON
+    sjump .finish
+.Silver5
+    checkevent EVENT_BEAT_CLAIR
+    iffalse .Silver4
+    loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+    sjump .finish
+.Silver4
+    checkevent EVENT_BEAT_PRYCE
+    iffalse .Silver3
+    loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+    sjump .finish
+.Silver3
+    checkevent EVENT_BEAT_WHITNEY
+    iffalse .Silver2
+    loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
+    sjump .finish
+.Silver2
+    checkevent EVENT_BEAT_FALKNER
+    iffalse .Silver1
+    loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL
     sjump .finish
 .Silver1
     loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL

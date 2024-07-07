@@ -327,7 +327,7 @@ AlphHenshinSeenText:
     cont "me. HENSHIN!"
 
     para "Then SETO and"
-    line "YAMI will kneel"
+    line "ATEM will kneel"
     cont "before me!"
     done
 AlphHenshinBeatenText:

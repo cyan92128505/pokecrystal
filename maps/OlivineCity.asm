@@ -1293,7 +1293,7 @@ DBZCh4HeroText:
 
     para "He must have"
     line "heard about the"
-    line "DRAGON BALLS."
+    cont "DRAGON BALLS."
 
     para "You find VEGETA."
 

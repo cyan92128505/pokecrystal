@@ -530,7 +530,7 @@ YuGiOhRolePlayScript:
 .YuGiOhCharacterText:
 	db "HENSHIN@"
 	db "SETO@"
-	db "YAMI@"
+	db "ATEM@"
 
 .Henshin
     opentext
@@ -829,7 +829,7 @@ YuGiOhHenshin2Text:
     cont "the throne room."
 
     para "He challenges the"
-    line "Pharaoh YAMI."
+    line "Pharaoh ATEM."
 
     para "You are horrified"
     line "by the immense"
@@ -843,13 +843,13 @@ YuGiOhHenshin2Text:
     line "chance!"
 
     para "You jump out"
-    line "and stab YAMI"
+    line "and stab ATEM"
     cont "in the back."
 
     para "He drops his"
     line "godly cards."
 
-    para "But YAMI brings"
+    para "But ATEM brings"
     line "from his robe"
     cont "some old and"
     cont "shabby looking"
@@ -866,7 +866,7 @@ YuGiOhHenshin3Text:
     line "battle of life"
     cont "and death."
 
-    para "YAMI triumphs."
+    para "ATEM triumphs."
 
     para "YAMIS monsters"
     line "banish HENSHIN"
@@ -875,7 +875,7 @@ YuGiOhHenshin3Text:
 
     para "Years pass."
 
-    para "YAMI and SETO"
+    para "ATEM and SETO"
     line "protect the"
     cont "kingdom from"
     cont "many foes."
@@ -893,7 +893,7 @@ YuGiOhHenshin3Text:
     cont "entity consumes"
     cont "their souls."
 
-    para "You pull YAMI"
+    para "You pull ATEM"
     line "and SETO into"
     cont "your realm."
 
@@ -946,7 +946,7 @@ YuGiOhSeto2Text:
     cont "the kingdom as"
     cont "your own."
 
-    para "YAMI looks at you"
+    para "ATEM looks at you"
     line "and through you."
 
     para "He takes from"
@@ -970,7 +970,7 @@ YuGiOhSeto3Text:
     para "HENSHIN jumps"
     line "from the shadows."
 
-    para "He stabs YAMI in"
+    para "He stabs ATEM in"
     line "the back."
 
     para "You lose your"
@@ -981,7 +981,7 @@ YuGiOhSeto3Text:
 YuGiOhYami1Text:
     text "You are the"
     line "great and mighty"
-    cont "Pharaoh YAMI."
+    cont "Pharaoh ATEM."
 
     para "You rule your"
     line "kingdom with"
@@ -1064,7 +1064,7 @@ YuGiOhRolePlayYamiSetoText:
     line "battle of life"
     cont "and death."
 
-    para "YAMI triumphs."
+    para "ATEM triumphs."
 
     para "YAMIS monsters"
     line "banish HENSHIN"
@@ -1073,7 +1073,7 @@ YuGiOhRolePlayYamiSetoText:
 
     para "SETO awakens and"
     line "sees the broken"
-    cont "YAMI."
+    cont "ATEM."
 
     para "It would be"
     line "trivial to end"
@@ -1085,16 +1085,16 @@ YuGiOhRolePlayYamiSetoText:
 
     para "And uses their"
     line "power to heal"
-    cont "YAMI."
+    cont "ATEM."
 
-    para "YAMI in his"
+    para "ATEM in his"
     line "wisdom appoints"
     cont "SETO as his"
     cont "right HAND."
     done
 
 YuGiOhYami3Text:
-    text "YAMI and SETO"
+    text "ATEM and SETO"
     line "protect the"
     cont "kingdom and fight"
     cont "many foes."
@@ -1135,7 +1135,7 @@ YuGiOhRolePlayFinalText:
     para "NIGHTMARE was"
     line "vanquished!"
 
-    para "YAMI and SETO"
+    para "ATEM and SETO"
     line "return home."
 
     para "They rule"

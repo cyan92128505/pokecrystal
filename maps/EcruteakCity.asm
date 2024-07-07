@@ -303,7 +303,7 @@ SetoSeenText:
     para "Then I will"
     line "return and"
     cont "finally beat"
-    cont "you YAMI!"
+    cont "you ATEM!"
 
     para "For your reward"
     line "I will give you"
@@ -327,7 +327,7 @@ SetoAfterBattleText:
     cont "live to be"
     cont "my pets."
 
-    para "And YAMI will"
+    para "And ATEM will"
     line "kneel before me!"
     done
 

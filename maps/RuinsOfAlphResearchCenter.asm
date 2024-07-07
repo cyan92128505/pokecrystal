@@ -229,7 +229,7 @@ RuinsOfAlphResearchCenterScientist1Text:
 	line "that the ruler"
 	cont "of the ancient"
 	cont "city was a man"
-	cont "named YAMI."
+	cont "named ATEM."
 
 	para "It is believed"
 	line "he commanded"

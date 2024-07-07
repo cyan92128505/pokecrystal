@@ -116,7 +116,7 @@ MasterYamiScript:
 	closetext
 	winlosstext MasterYamiBeatenText, MasterYamiWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, YAMI
+	loadtrainer RED, ATEM
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
@@ -232,7 +232,7 @@ MasterSetoScript:
 	line "known I'd find you"
 	cont "here!"
 	para "I am trying to"
-	line "find YAMI, but I"
+	line "find ATEM, but I"
 	cont "can spare a moment"
 	cont "to crush you!"
 	done
@@ -250,7 +250,7 @@ MasterSetoScript:
  MasterSetoAfterBattleText:
 	text "I don't have time"
 	line "for you."
-	para "I saw YAMI earlier"
+	para "I saw ATEM earlier"
 	line "following someone"
 	cont "who looked like"
 	cont "HENSHIN, but"
@@ -264,7 +264,7 @@ MasterSetoScript:
 	cont "other way."
 	para "Now run along kid."
 	para "I need to find"
-	line "YAMI."
+	line "ATEM."
 	done
 
 MasterDrakeScript:

@@ -405,7 +405,7 @@ PlaceEnemysName::
 ;    cp RED
 ;    jr nz, .notRed
 ;    ld a, [wOtherTrainerID]
-;    cp YAMI
+;    cp ATEM
 ;    jr nc, .skipClass
 ;    jr .printClass
 ;.notRed

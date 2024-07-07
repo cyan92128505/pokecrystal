@@ -195,7 +195,7 @@ AncientRuinsPastGuy1Text:
     para "It wont end well"
     line "for you."
 
-    para "PHARAOH YAMI is"
+    para "PHARAOH ATEM is"
     line "unbeatable."
     done
 
@@ -238,12 +238,12 @@ AncientRuinsPastGirl1Text:
     cont "trouble."
 
     para "SETO tried to"
-    line "overthrow YAMI"
+    line "overthrow ATEM"
     cont "years ago and"
     cont "was soundly"
     cont "defeated."
 
-    para "But YAMI showed"
+    para "But ATEM showed"
     line "mercy and"
     cont "forgave him."
     done
@@ -286,7 +286,7 @@ YamiScript:
 	closetext
 	winlosstext YamiBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, YAMI
+	loadtrainer RED, ATEM
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_YAMI
@@ -408,7 +408,7 @@ CatchXerneasFirstText:
     line "not from this"
     cont "time at all."
 
-    para "I am YAMI."
+    para "I am ATEM."
 
     para "The great PHARAOH"
 

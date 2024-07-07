@@ -753,7 +753,7 @@ KRIS EQU __trainer_class__
 	const ASH
 	const MASTER_RED
 	const MASTER_ASH
-	const YAMI
+	const ATEM
 	const RED_MEWTWO
 	const CELADON_ME
 	const ME

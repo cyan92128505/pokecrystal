@@ -1,8 +1,6 @@
 ArnieMonIsSoCuteText:
 	text "I'm always with my"
-	line "@"
-	text_ram wStringBuffer4
-	text "!"
+	line "BUTTERFREE."
 
 	text "He is my oldest"
 	line "and dearest"

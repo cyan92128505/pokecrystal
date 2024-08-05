@@ -6,6 +6,10 @@ SHINY_SPD_VAL EQU 10
 SHINY_SPC_VAL EQU 10
 
 CheckShininess:
+    ld a, [wShinyOverride]
+    and a
+    jr nz, .not_shiny
+    
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
 	ld l, c

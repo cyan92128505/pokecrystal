@@ -4481,6 +4481,14 @@ ShouldAIBoost:
     call IsSpecialAttackMaxed
     jp c, .dontBoost
 
+; if we are faster and player is flying or underground just boost
+    call DoesAIOutSpeedPlayer
+    jr nc, .checkEvasion
+	ld a, [wPlayerSubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jp nz, .boost
+
+.checkEvasion
 ; if AI evasion is >= +2 then go for the boost - only used by Patches
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -4513,6 +4521,7 @@ ShouldAIBoost:
 
 .noForceSwitch
 ; if our offence is already at or over +1 and either side can 2HKO, just attack
+; this is to prevent the AI from boosting until it only gets one attack off, should attack earlier for more damage
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr c, .checkSpecialAttack

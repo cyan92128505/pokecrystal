@@ -5,5 +5,6 @@
 	next "of its victim in"
 	next "its flames."
 
-	page "Immune to"
-	next "FIRE attacks.@"
+	page "Prevents enemy"
+	next "switching. Immune"
+	next "to FIRE.@"

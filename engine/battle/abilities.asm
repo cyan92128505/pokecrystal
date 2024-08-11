@@ -186,6 +186,7 @@ UberImmunePokemon:
     db HO_OH
     db REGIGIGAS
     db ZYGARDE
+    db WOBBUFFET
     db -1
 
 ; ======== NOT USED HERE ===========

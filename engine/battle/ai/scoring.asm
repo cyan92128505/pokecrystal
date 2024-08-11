@@ -77,8 +77,6 @@ AI_FireAbsorbPokemon:
     db MOLTRES
     db VULPIX
     db NINETALES
-    db PONYTA
-    db RAPIDASH
     db HOUNDOUR
     db HOUNDOOM
     db LITWICK
@@ -141,6 +139,7 @@ AI_UberImmunePokemon:
     db HO_OH
     db REGIGIGAS
     db ZYGARDE
+    db WOBBUFFET
     db $FF
 
 AI_Basic:
@@ -222,8 +221,6 @@ AI_Basic:
     cp ARCEUS
     jp z, .discourage
     cp SYLVEON
-    jp z, .discourage
-    cp GIRATINA
     jp z, .discourage
 
 .checkSub
@@ -970,8 +967,6 @@ AI_Smart_Sleep:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp GIRATINA
-    jp z, .discourage
     cp SMEARGLE
     jp z, .discourage
     cp DEOXYS
@@ -1724,8 +1719,6 @@ AI_Smart_Toxic:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp GIRATINA
-    jp z, .discourage
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
@@ -2139,8 +2132,6 @@ AI_Smart_Paralyze:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp GIRATINA
-    jp z, .discourage
 
 ; encourage if enemy is slower than player.
 ; 50% chance to discourage otherwise
@@ -4434,8 +4425,6 @@ AI_Smart_Swagger:
     cp ARCEUS
     jr z, .discourage
     cp SYLVEON
-    jr z, .discourage
-    cp GIRATINA
     jr z, .discourage
     ret
 
@@ -6829,4 +6818,15 @@ CheckUnownLetter:
 .match
 ; Valid letter
 	and a
+	ret
+
+ShadowTagTrap:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	jr nz, .gotSide
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+.gotSide
+	call GetBattleVarAddr
+	set SUBSTATUS_CANT_RUN, [hl]
 	ret

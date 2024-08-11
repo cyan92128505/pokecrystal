@@ -4,5 +4,6 @@
 	db   "It is a world"
 	next "class jumper."
 
-	page "Immune to"
-	next "FIRE attacks.@"
+	page "SPEED"
+	next "increases upon"
+	next "entering battle.@"

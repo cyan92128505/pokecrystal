@@ -5,5 +5,6 @@
 	next "true self. The"
 	next "rest is a decoy."
 
-	page "Regenerates"
-	next "HP every turn.@"
+	page "Prevents enemy"
+	next "switching."
+	next "Regens HP.@"

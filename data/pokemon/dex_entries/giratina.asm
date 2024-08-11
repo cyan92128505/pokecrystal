@@ -5,6 +5,5 @@
 	next "ARCEUS for its"
 	next "violent power."
 
-	page "Is immune"
-	next "to all status"
-	next "changes.@"
+	page "Prevents enemy"
+	next "switching.@"

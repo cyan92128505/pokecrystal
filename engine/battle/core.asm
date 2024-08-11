@@ -175,6 +175,28 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
+; Don't trap if the opponent is already trapped.
+;	ld a, BATTLE_VARS_SUBSTATUS5
+;	call GetBattleVarAddr
+;	bit SUBSTATUS_CANT_RUN, [hl]
+;	jr nz, .failed
+
+; ==================================
+; ========== SHADOW TAG ============
+; ==================================
+    call GetOpposingMonCore
+    cp WOBBUFFET
+    jr z, .trap
+    cp CHANDELURE
+    jr z, .trap
+    cp GIRATINA
+    jr z, .trap
+    jr .noTrap
+
+.trap
+    farcall ShadowTagTrap
+.noTrap
+
 	call UpdateBattleMonInParty
 
 	farcall AIChooseMove
@@ -1243,6 +1265,17 @@ Core_SpikesImmunePokemon:
     db ROTOM
     db -1
 
+Core_RegeneratorPokemon:
+    db SLOWPOKE
+    db SLOWBRO
+    db SLOWKING
+    db TENTACOOL
+    db TENTACRUEL
+    db WOBBUFFET
+    db HO_OH
+    db ZYGARDE
+    db -1
+
 ResidualDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
     call GetCurrentMonCore
@@ -1564,22 +1597,11 @@ HandleRegenerator:
 	call SetPlayerTurn
 	ld a, [wBattleMonSpecies]
 .do_it
-    cp HO_OH
-    jr z, .regen
-    cp ZYGARDE
-    jr z, .regen
-    cp SLOWPOKE
-    jr z, .regen
-    cp SLOWBRO
-    jr z, .regen
-    cp SLOWKING
-    jr z, .regen
-    cp WOBBUFFET
-    jr z, .regen
-    cp DUNSPARCE
-    jr z, .regen
-    ret
-.regen
+	ld hl, Core_RegeneratorPokemon
+	ld de, 1
+	call IsInArray
+	ret nc
+
     ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -4460,6 +4482,10 @@ SwitchInEffects:
     cp YANMA
     jp z, .spdUp
     cp YANMEGA
+    jp z, .spdUp
+    cp PONYTA
+    jp z, .spdUp
+    cp RAPIDASH
     jp z, .spdUp
 
     cp ENTEI

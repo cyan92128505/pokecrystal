@@ -5,5 +5,6 @@
 	next "down a small boat"
 	next "by itself."
 
-	page "Immune to"
+	page "Regens HP."
+	next "Immune to"
 	next "stat drops.@"

@@ -5,5 +5,6 @@
 	next "on the waves and"
 	next "spreads toxins."
 
-	page "Immune to"
+	page "Regens HP."
+	next "Immune to"
 	next "stat drops.@"

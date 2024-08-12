@@ -175,27 +175,10 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
-; Don't trap if the opponent is already trapped.
-;	ld a, BATTLE_VARS_SUBSTATUS5
-;	call GetBattleVarAddr
-;	bit SUBSTATUS_CANT_RUN, [hl]
-;	jr nz, .failed
-
 ; ==================================
 ; ========== SHADOW TAG ============
 ; ==================================
-    call GetOpposingMonCore
-    cp WOBBUFFET
-    jr z, .trap
-    cp CHANDELURE
-    jr z, .trap
-    cp GIRATINA
-    jr z, .trap
-    jr .noTrap
-
-.trap
-    farcall ShadowTagTrap
-.noTrap
+    farcall ShadowTag
 
 	call UpdateBattleMonInParty
 
@@ -1384,8 +1367,6 @@ ResidualDamage:
     cp HYPNO
     jr z, .checkSleep
     cp JYNX
-    jr z, .checkSleep
-    cp SPIRITOMB
     jr nz, .not_nightmare
 
 .checkSleep

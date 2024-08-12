@@ -628,6 +628,17 @@ AI_Smart_Switch:
     call AI_50_50
 	ret c
 .switch
+; can't switch if trapped
+	ld a, [wBattleMonSpecies]
+	cp WOBBUFFET
+	ret z
+	cp CHANDELURE
+	ret z
+	cp SPIRITOMB
+	ret z
+	cp GIRATINA
+	ret z
+
     ld a, $1
     ld [wEnemyIsSwitching], a
 	ret
@@ -1031,9 +1042,9 @@ AI_Smart_Sleep:
     ld a, [wEnemyMonSpecies]
     cp DARKRAI
     jr z, .encourage50
-    cp HYPNO
+    cp DROWZEE
     jr z, .encourage50
-    cp SPIRITOMB
+    cp HYPNO
     jr z, .encourage50
     cp JYNX
     jr z, .encourage50
@@ -6820,13 +6831,26 @@ CheckUnownLetter:
 	and a
 	ret
 
-ShadowTagTrap:
+ShadowTag:
     ldh a, [hBattleTurn]
 	and a
-	ld a, BATTLE_VARS_SUBSTATUS5
-	jr nz, .gotSide
-	ld a, BATTLE_VARS_SUBSTATUS5_OPP
-.gotSide
-	call GetBattleVarAddr
+	ld hl, wPlayerSubStatus5
+	ld a, [wBattleMonSpecies]
+	jr nz, .done
+	ld hl, wEnemySubStatus5
+	ld a, [wEnemyMonSpecies]
+.done
+    cp WOBBUFFET
+    jr z, .trap
+    cp CHANDELURE
+    jr z, .trap
+    cp GIRATINA
+    jr z, .trap
+    cp SPIRITOMB
+    jr z, .trap
+    ret
+.trap
+	bit SUBSTATUS_CANT_RUN, [hl]
+	ret nz
 	set SUBSTATUS_CANT_RUN, [hl]
 	ret

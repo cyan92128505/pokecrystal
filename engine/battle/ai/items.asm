@@ -672,7 +672,18 @@ EnemyPotionFinish:
 
 AI_TrySwitch:
 ; Determine whether the AI can switch based on how many Pokemon are still alive.
-; If it can switch, it will.
+
+; DevNote - switch, don't switch if trapped
+	ld a, [wBattleMonSpecies]
+	cp WOBBUFFET
+	ret z
+	cp CHANDELURE
+	ret z
+	cp SPIRITOMB
+	ret z
+	cp GIRATINA
+	ret z
+
 ; DevNote - switch, don't switch if already set up
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2

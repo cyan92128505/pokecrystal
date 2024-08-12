@@ -3359,7 +3359,9 @@ SpiritombEvosAttacks:
 	db 1, DREAM_EATER
 	db 32, SHADOW_BALL
 	db 36, DARK_PULSE
-	db 40, SUCKER_PUNCH
+	db 40, ACID_ARMOR
+	db 43, SUCKER_PUNCH
+	db 46, PAIN_SPLIT
 	db 50, NASTY_PLOT
 	db 0 ; no more level-up moves
 

@@ -5,6 +5,5 @@
 	next "a keystone for"
 	next "their misdeeds."
 
-	page "Gives"
-	next "nightmares to"
-	next "sleeping foes.@"
+	page "Prevents enemy"
+	next "switching.@"

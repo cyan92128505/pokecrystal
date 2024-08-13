@@ -3627,8 +3627,6 @@ AI_Smart_RainDance:
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
     jr z, .encourage
-    cp GOLDUCK
-    jr z, .encourage
     cp POLIWRATH
     jr z, .encourage
 ; discourage if we will be koed

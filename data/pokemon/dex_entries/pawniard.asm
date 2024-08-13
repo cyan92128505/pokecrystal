@@ -4,6 +4,5 @@
 	db   "Blades comprise"
 	next "its entire body."
 
-	page "Deals extra"
-	next "critical hit"
-	next "damage.@"
+	page "Makes weaker"
+	next "moves stronger.@"

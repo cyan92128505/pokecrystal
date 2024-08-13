@@ -1140,7 +1140,7 @@ BlewSpikesText:
 	prompt
 
 ClearFieldText:
-	text "The field was"
+	text "Enemy field was"
 	line "swept clear!"
 	prompt
 

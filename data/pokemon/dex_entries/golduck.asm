@@ -6,5 +6,5 @@
 	next "quiet rivers."
 
 	page "Clears"
-	next "weather upon"
+	next "field upon"
 	next "switching in.@"

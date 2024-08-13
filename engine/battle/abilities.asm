@@ -34,14 +34,12 @@ SniperPokemon:
     db TREECKO
     db GROVYLE
     db SCEPTILE
-    db PAWNIARD
-    db BISHARP
+    db SHROOMISH
+    db BRELOOM
     db HORSEA
     db SEADRA
-   ; db KINGDRA
     db GIBLE
     db GABITE
-    ;db GARCHOMP
     db -1
 
 SuperLuckPokemon:
@@ -128,8 +126,8 @@ TechnicianPokemon:
     db SCIZOR
     db MEOWTH
     db PERSIAN
-    db SHROOMISH
-    db BRELOOM
+    db PAWNIARD
+    db BISHARP
     db PSYDUCK
     db PORYGON
     db BULBASAUR

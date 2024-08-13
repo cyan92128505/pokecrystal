@@ -4442,7 +4442,7 @@ SwitchInEffects:
     cp RAYQUAZA
     jp z, .clearField
     cp GOLDUCK
-    jp z, .clearWeather
+    jp z, .clearField
 
     cp GENESECT
     jp z, .spAtkUp
@@ -4592,10 +4592,6 @@ SwitchInEffects:
 .safeguard
     farcall SafeguardSwitch
     ret
-.clearWeather
-	ld a, 1
-	ld [wWeatherCount], a
-	ret
 .clearField
 	farcall ClearField
 	ret

@@ -7,4 +7,4 @@
 
 	page "Has reduced"
 	next "weaknesses."
-	next "Clears weather.@"
+	next "Clears field.@"

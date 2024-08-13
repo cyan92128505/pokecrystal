@@ -3212,7 +3212,14 @@ BattleCommand_DamageCalc:
 ; =====================
 ; ======= Guts ========
 ; =====================
-    call CheckGutsMon
+    call GetCurrentMon
+    push de
+	push bc
+	ld hl, GutsPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
     jr nc, .choiceBand
     ldh a, [hBattleTurn]
 	and a
@@ -3220,8 +3227,14 @@ BattleCommand_DamageCalc:
 	jr z, .checkStatus
 	ld a, [wEnemyMonStatus]
 .checkStatus
-	and a
+	cp 0
 	jr z, .choiceBand
+	and 1 << BRN
+	jr z, .notBurn
+    ld a, 2
+	ldh [hMultiplier], a
+	call Multiply
+.notBurn
     call FiftyPercentBoost
 
 .choiceBand
@@ -3569,22 +3582,6 @@ TenPercentBoost:
 	ld b, 4
 	call Divide
 	ret
-
-CheckGutsMon:
-    call GetCurrentMon
-    push de
-	push bc
-	ld hl, GutsPokemon
-	ld de, 1
-	call IsInArray
-	pop bc
-	pop de
-	jr nc, .noCarry
-	scf
-	ret
-.noCarry
-    xor a
-    ret
 
 INCLUDE "data/types/type_boost_items.asm"
 
@@ -5229,12 +5226,9 @@ CalcPlayerStats:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
-    call CheckGutsMon
-    jr c, .skipBurn
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
-.skipBurn
 	jp BattleCommand_SwitchTurn
 
 CalcEnemyStats:
@@ -5250,12 +5244,9 @@ CalcEnemyStats:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
-    call CheckGutsMon
-    jr c, .skipBurn
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
-.skipBurn
 	jp BattleCommand_SwitchTurn
 
 CalcBattleStats:
@@ -5615,10 +5606,10 @@ BattleCommand_ForceSwitch:
 	call StdBattleTextbox
 
 	ld hl, SpikesDamage
-	jp CallBattleCore
+	call CallBattleCore
 
 	ld hl, SwitchInEffects ; DevNote - Force Switch - switch in effects
-	call CallBattleCore
+	jp CallBattleCore
 
 .fail
 	call BattleCommand_LowerSub

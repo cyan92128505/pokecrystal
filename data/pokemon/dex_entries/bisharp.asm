@@ -5,6 +5,5 @@
 	next "PAWNIARD, it is"
 	next "truly merciless."
 
-	page "Deals extra"
-	next "critical hit"
-	next "damage.@"
+	page "Makes weaker"
+	next "moves stronger.@"

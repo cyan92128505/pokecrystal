@@ -637,12 +637,11 @@ PawniardEvosAttacks:
 	db 1, LEER
 	db 10, METAL_CLAW
 	db 15, PURSUIT
-	db 20, SLASH
-	db 25, MACH_PUNCH
-	db 30, BULLET_PUNCH
-	db 35, NIGHT_SLASH
-	db 40, IRON_HEAD
-	db 45, SUCKER_PUNCH
+	db 20, MACH_PUNCH
+	db 25, BULLET_PUNCH
+	db 31, NIGHT_SLASH
+	db 35, IRON_HEAD
+	db 40, SUCKER_PUNCH
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -652,12 +651,11 @@ BisharpEvosAttacks:
 	db 1, LEER
 	db 10, METAL_CLAW
 	db 15, PURSUIT
-	db 20, SLASH
-	db 25, MACH_PUNCH
-	db 30, BULLET_PUNCH
-	db 35, NIGHT_SLASH
-	db 40, IRON_HEAD
-	db 45, SUCKER_PUNCH
+	db 20, MACH_PUNCH
+	db 25, BULLET_PUNCH
+	db 30, NIGHT_SLASH
+	db 35, IRON_HEAD
+	db 40, SUCKER_PUNCH
 	db 50, SWORDS_DANCE
 	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
@@ -825,7 +823,7 @@ ShroomishEvosAttacks:
 	db 5, STUN_SPORE
 	db 8, LEECH_SEED
 	db 12, MEGA_DRAIN
-	db 15, HEADBUTT
+	db 15, RAZOR_LEAF
 	db 19, POISONPOWDER
 	db 24, GIGA_DRAIN
 	db 41, LEAF_BLADE
@@ -838,9 +836,9 @@ BreloomEvosAttacks:
 	db 5, STUN_SPORE
 	db 8, LEECH_SEED
 	db 12, MEGA_DRAIN
-	db 15, HEADBUTT
+	db 15, RAZOR_LEAF
 	db 19, POISONPOWDER
-	db 23, ROCK_SMASH
+	db 23, KARATE_CHOP
 	db 26, GIGA_DRAIN
 	db 33, MACH_PUNCH
 	db 37, DRAIN_PUNCH

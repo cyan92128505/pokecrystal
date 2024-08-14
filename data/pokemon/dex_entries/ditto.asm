@@ -5,6 +5,6 @@
 	next "every aspect of"
 	next "its opponent."
 
-	page "Status moves"
-	next "always land"
-	next "first.@"
+	page "Protected"
+	next "while using"
+	next "TRANSFORM.@"

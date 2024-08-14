@@ -1,5 +1,15 @@
 BattleCommand_Transform:
 ; transform
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .gotSpecies
+	ld a, [wEnemyMonSpecies]
+.gotSpecies
+	cp DITTO
+	jr nz, .notDitto
+    call BattleCommand_Protect
+.notDitto
 
 	call ClearLastMove
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP

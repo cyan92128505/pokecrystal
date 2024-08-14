@@ -896,7 +896,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
-	dbw EFFECT_SPITE,            AI_Smart_Spite
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
@@ -1983,58 +1982,6 @@ AI_Smart_TrapTarget:
 	dec [hl]
 	ret
 
-AI_Smart_RazorWind:
-	ld a, [wEnemySubStatus1]
-	bit SUBSTATUS_PERISH, a
-	jr z, .no_perish_count
-
-	ld a, [wEnemyPerishCount]
-	cp 3
-	jr c, .discourage
-
-.no_perish_count
-	push hl
-	ld hl, wPlayerUsedMoves
-	ld c, NUM_MOVES
-
-.checkmove
-	ld a, [hli]
-	and a
-	jr z, .movesdone
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_PROTECT
-	jr z, .dismiss
-	dec c
-	jr nz, .checkmove
-
-.movesdone
-	pop hl
-	ld a, [wEnemySubStatus3]
-	bit SUBSTATUS_CONFUSED, a
-	jr nz, .maybe_discourage
-
-	call AICheckEnemyHalfHP
-	ret c
-
-.maybe_discourage
-	call Random
-	cp 79 percent - 1
-	ret c
-
-.discourage
-	inc [hl]
-	ret
-
-.dismiss
-	pop hl
-	ld a, [hl]
-	add 6
-	ld [hl], a
-	ret
-
 AI_Smart_SpDefenseUp2:
 	call ShouldAIBoost
 	jr nc, .discourage
@@ -2572,65 +2519,6 @@ endr
 	inc [hl]
 	inc [hl]
 	ret
-
-AI_Smart_Spite:
-	ld a, [wLastPlayerCounterMove]
-	and a
-	jr nz, .usedmove
-
-	call DoesAIOutSpeedPlayer
-	jp c, AIDiscourageMove
-
-	call AI_50_50
-	ret c
-	inc [hl]
-	ret
-
-.usedmove
-	push hl
-	ld b, a
-	ld c, NUM_MOVES
-	ld hl, wBattleMonMoves
-	ld de, wBattleMonPP
-
-.moveloop
-	ld a, [hli]
-	cp b
-	jr z, .foundmove
-
-	inc de
-	dec c
-	jr nz, .moveloop
-
-	pop hl
-	ret
-
-.foundmove
-	pop hl
-	ld a, [de]
-	cp 6
-	jr c, .encourage
-	cp 15
-	jr nc, .discourage
-
-	call Random
-	cp 39 percent + 1
-	ret nc
-
-.discourage
-	inc [hl]
-	ret
-
-.encourage
-	call Random
-	cp 39 percent + 1
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
-
-.dismiss ; unreferenced
-	jp AIDiscourageMove
 
 ; If the player can KO and is using damaging moves then encourage
 ; 50% chance to encourage if player can KO but isn't using damaging moves
@@ -3374,27 +3262,6 @@ AI_Smart_Endure:
 	inc [hl]
 	ret
 
-AI_Smart_FuryCutter:
-; Encourage this move based on Fury Cutter's count.
-
-	ld a, [wEnemyFuryCutterCount]
-	and a
-	jr z, AI_Smart_Rollout
-	dec [hl]
-
-	cp 2
-	jr c, AI_Smart_Rollout
-	dec [hl]
-	dec [hl]
-
-	cp 3
-	jr c, AI_Smart_Rollout
-	dec [hl]
-	dec [hl]
-	dec [hl]
-
-	; fallthrough
-
 AI_Smart_Rollout:
 ; Rollout, Fury Cutter
 
@@ -3541,24 +3408,6 @@ AI_Smart_BatonPass:
     inc [hl]
     inc [hl]
     ret
-
-AI_Smart_Pursuit:
-; 50% chance to greatly encourage this move if player's HP is below 25%.
-; 80% chance to discourage this move otherwise.
-
-	call AICheckPlayerQuarterHP
-	jr nc, .encourage
-	call AI_80_20
-	ret c
-	inc [hl]
-	ret
-
-.encourage
-	call AI_50_50
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
 
 AI_Smart_RapidSpin:
 ; 80% chance to greatly encourage this move if the enemy is

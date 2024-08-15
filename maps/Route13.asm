@@ -90,7 +90,7 @@ Route13FieldMon5Script:
 	faceplayer
 	cry CHANSEY
 	pause 15
-	loadwildmon CHANSEY, 38
+	loadwildmon CHANSEY, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -101,7 +101,7 @@ Route13FieldMon6Script:
 	faceplayer
 	cry DITTO
 	pause 15
-	loadwildmon DITTO, 40
+	loadwildmon DITTO, 61
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

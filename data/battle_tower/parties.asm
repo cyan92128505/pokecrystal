@@ -4751,7 +4751,7 @@ BattleTowerMons:
 
 	db RAIKOU
 	db MAGNET
-	db VOLT_TACKLE, THUNDERBOLT, DARK_PULSE, AURA_SPHERE
+	db THUNDERBOLT, DARK_PULSE, AURA_SPHERE, CALM_MIND
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4879,9 +4879,9 @@ BattleTowerMons:
 	bigdw 318 ; SDef
 	db "RANTA-N@@@@"
 
-    db MEW
-	db PINK_BOW
-	db SWORDS_DANCE, PSYCHO_SLASH, EARTHQUAKE, EXPLOSION
+    db DITTO
+	db FOCUS_SASH
+	db TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4891,18 +4891,18 @@ BattleTowerMons:
     bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 24, 16, 8 ; PP
+	db 32, 0, 0, 0 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 403 ; HP
-	bigdw 403 ; Max HP
-	bigdw 298 ; Atk
-	bigdw 298 ; Def
-	bigdw 298 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 298 ; SDef
+	bigdw 299 ; HP
+	bigdw 299 ; Max HP
+	bigdw 194 ; Atk
+	bigdw 194 ; Def
+	bigdw 194 ; Spd
+	bigdw 194 ; SAtk
+	bigdw 194 ; SDef
 	db "RANTA-N@@@@"
 
     db METAGROSS

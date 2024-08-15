@@ -482,20 +482,20 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 38, STARAPTOR
-	db 38, DITTO
+	db 38, RAPIDASH
 	db 40, VICTREEBEL
 	db 40, POLIWRATH
 	db 43, CHANSEY
 	db 43, MILTANK
-	db 66, MILTANK
+	db 70, DITTO
 	; day
 	db 38, STARAPTOR
-	db 38, DITTO
+	db 38, RAPIDASH
 	db 40, VICTREEBEL
 	db 40, POLIWRATH
 	db 43, CHANSEY
 	db 43, MILTANK
-	db 66, MILTANK
+	db 70, DITTO
 	; nite
 	db 38, HONCHKROW
 	db 38, NOCTOWL
@@ -503,14 +503,14 @@ KantoGrassWildMons:
 	db 40, QUAGSIRE
 	db 43, CLEFABLE
 	db 43, GENGAR
-	db 66, MILTANK
+	db 70, DITTO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_14
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 38, STARAPTOR
-	db 38, DITTO
+	db 38, RAPIDASH
 	db 40, VICTREEBEL
 	db 40, POLIWRATH
 	db 43, CHANSEY
@@ -518,7 +518,7 @@ KantoGrassWildMons:
 	db 66, TAUROS
 	; day
 	db 38, STARAPTOR
-	db 38, DITTO
+	db 38, RAPIDASH
 	db 40, VICTREEBEL
 	db 40, POLIWRATH
 	db 43, CHANSEY

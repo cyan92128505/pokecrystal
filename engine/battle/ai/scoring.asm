@@ -4364,7 +4364,7 @@ ShouldAIBoost:
 .maybeDontBoost
 	call Random
 	cp 50 percent
-	jp c, .dontBoost
+	jp c, .decideNotToBoost
 
 .noForceSwitch
 ; if our offence is already at or over +1 and either side can 2HKO, just attack
@@ -4379,9 +4379,9 @@ ShouldAIBoost:
 	jr c, .checkSpeed
 .checkMutual2HKO
 	call CanAI2HKO
-	jp c, .dontBoost
+	jp c, .decideNotToBoost
 	call CanPlayer2HKO
-	jr c, .dontBoost
+	jr c, .decideNotToBoost
 
 .checkSpeed
 ; who moves first
@@ -4438,33 +4438,33 @@ ShouldAIBoost:
 ; if the players last move was a healing move 50% chance to set up if we can't already 2HKO from max HP
 ; otherwise if the players last move was non-damaging 50% chance to set up if we can't already 3HKO from current HP
 	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 4
 	jr nc, .dontBoost
 	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 3
+	cp BASE_STAT_LEVEL + 4
 	jr nc, .dontBoost
 
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
     cp EFFECT_HEAL
-    jr z, .check2HKO
+    jr z, .check2HKOMaxHp
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
-	jr z, .check3HKO
+	jr z, .check2HKO
 	jr .dontBoost
-.check3HKO
-	call CanAI3HKO
+.check2HKO
+	call CanAI2HKO
 	jr c, .dontBoost
     call Random
-    cp 50 percent + 1
+    cp 25 percent + 1
     jr c, .dontBoost
 	jr .boost
-.check2HKO
+.check2HKOMaxHp
 	call CanAI2HKOMaxHP
 	jr c, .dontBoost
     call Random
-    cp 50 percent + 1
+    cp 25 percent + 1
     jr c, .dontBoost
 
 .boost

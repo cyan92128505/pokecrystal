@@ -4569,9 +4569,6 @@ SwitchInEffects:
     jp z, .safeguard
     cp PALKIA
     jp z, .safeguard
-
-    ;cp DITTO
-    ;jp z, .imposter
     ret
 
 .rain
@@ -4657,9 +4654,6 @@ SwitchInEffects:
 	ld hl, DefenseModeText
 	jp StdBattleTextbox
     ret
-;.imposter
-;    farcall BattleCommand_Transform
-;    ret
 
 ;PursuitSwitch:
 ;	ld a, BATTLE_VARS_MOVE

@@ -39,7 +39,7 @@ SwarmGrassWildMons:
 	db 12, YANMA
 	db 14, YANMA
 	db 14, STARLY
-	db 10, DITTO
+	db 10, STARLY
 	db 10, DITTO
 	; day
 	db 12, NIDORAN_M
@@ -47,7 +47,7 @@ SwarmGrassWildMons:
 	db 12, YANMA
 	db 14, YANMA
 	db 14, STARLY
-	db 10, DITTO
+	db 10, STARLY
 	db 10, DITTO
 	; nite
 	db 12, NIDORAN_M
@@ -55,7 +55,7 @@ SwarmGrassWildMons:
 	db 12, YANMA
 	db 14, YANMA
 	db 14, HOOTHOOT
-	db 10, DITTO
+	db 10, HOOTHOOT
 	db 10, DITTO
 
 	db -1 ; end

@@ -1408,7 +1408,7 @@ JohtoGrassWildMons:
 	db 16, JIGGLYPUFF
 	db 16, COTTONEE
 	db 18, DROWZEE
-	db 18, DITTO
+	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
 	db 41, HYPNO
@@ -1416,7 +1416,7 @@ JohtoGrassWildMons:
 	db 16, JIGGLYPUFF
 	db 16, COTTONEE
 	db 18, DROWZEE
-	db 18, DITTO
+	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
 	db 41, HYPNO
@@ -1424,7 +1424,7 @@ JohtoGrassWildMons:
 	db 16, JIGGLYPUFF
 	db 16, COTTONEE
 	db 18, DROWZEE
-	db 18, DITTO
+	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
 	db 41, HYPNO

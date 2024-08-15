@@ -96,6 +96,7 @@ BattleRouletteReceptionistScript:
 .finish
 	startbattle
 	ifequal WIN, .win
+    dontrestartmapmusic
 	reloadmap
     warpfacing UP, TRAINER_HOUSE_B1F, 3, 13
     turnobject PLAYER, UP
@@ -107,6 +108,7 @@ BattleRouletteReceptionistScript:
 	special HealParty
 	end
 .win
+    dontrestartmapmusic
 	reloadmapafterbattle
     warpfacing UP, TRAINER_HOUSE_B1F, 3, 13
     turnobject PLAYER, UP
@@ -1009,6 +1011,7 @@ BattleMirrorReceptionistScript:
 	startbattle
 	ifequal WIN, .Win
 .over
+    dontrestartmapmusic
 	reloadmap
     warpfacing UP, TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
@@ -1020,6 +1023,7 @@ BattleMirrorReceptionistScript:
 	special HealParty
 	end
 .Win
+    dontrestartmapmusic
 	reloadmapafterbattle
     warpfacing UP, TRAINER_HOUSE_B1F, 17, 13
     turnobject PLAYER, UP
@@ -1706,6 +1710,7 @@ BattleTrialReceptionistScript:
 	closetext
 
 .Win
+    dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BATTLE_TRIAL
     warpfacing UP, TRAINER_HOUSE_B1F, 31, 13
@@ -1718,6 +1723,8 @@ BattleTrialReceptionistScript:
 	special HealParty
 	end
 .Lose
+    dontrestartmapmusic
+    reloadmap
     warpfacing UP, TRAINER_HOUSE_B1F, 31, 13
     turnobject PLAYER, UP
 	opentext
@@ -1768,6 +1775,7 @@ BattleArcadeReceptionistScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
 	startbattle
 	ifequal WIN, .win
+	dontrestartmapmusic
 	reloadmap
     warpfacing UP, TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP
@@ -1781,6 +1789,7 @@ BattleArcadeReceptionistScript:
     writemem wShinyOverride
 	end
 .win
+    dontrestartmapmusic
 	reloadmapafterbattle
     warpfacing UP, TRAINER_HOUSE_B1F, 45, 13
     turnobject PLAYER, UP

@@ -2060,8 +2060,8 @@ PorygonEvosAttacks:
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 32, LOCK_ON
-	db 36, TRI_ATTACK
-	db 40, ZAP_CANNON
+	db 36, ZAP_CANNON
+	db 41, TRI_ATTACK
 	db 0 ; no more level-up moves
 
 RaltsEvosAttacks:
@@ -2789,13 +2789,12 @@ PorygonzEvosAttacks:
 	db 1, TACKLE
 	db 9, AGILITY
 	db 12, PSYBEAM
-	db 20, LOCK_ON
-	db 24, RECOVER
-	db 32, PSYCHIC_M
-	db 36, TRI_ATTACK
-    db 38, RECOVER
-	db 40, ZAP_CANNON
-	db 50, HYPER_BEAM
+	db 20, RECOVER
+	db 24, DEFENSE_CURL
+	db 32, LOCK_ON
+	db 36, ZAP_CANNON
+	db 40, TRI_ATTACK
+	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 GenesectEvosAttacks:
@@ -3515,8 +3514,8 @@ Porygon2EvosAttacks:
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
 	db 32, LOCK_ON
-	db 36, TRI_ATTACK
-	db 44, ZAP_CANNON
+	db 36, ZAP_CANNON
+	db 41, TRI_ATTACK
 	db 0 ; no more level-up moves
 
 RayquazaEvosAttacks:

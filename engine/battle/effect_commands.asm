@@ -6474,6 +6474,9 @@ INCLUDE "engine/battle/move_effects/substitute.asm"
 
 BattleCommand_RechargeNextTurn:
 ; rechargenextturn
+    call GetCurrentMon
+    cp PORYGONZ
+    ret z
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_RECHARGE, [hl]

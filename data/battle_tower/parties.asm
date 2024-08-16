@@ -4395,7 +4395,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 32, 10 ; PP
+	db 16, 16, 24, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -4761,7 +4761,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 32 ; PP
+	db 24, 24, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5479,7 +5479,7 @@ BattleTowerMons:
 
 	db PORYGONZ
 	db PINK_BOW
-	db TRI_ATTACK, DARK_PULSE, ICE_BEAM, HYPER_BEAM
+	db HYPER_BEAM, DARK_PULSE, NASTY_PLOT, AGILITY
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5489,7 +5489,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 2, 15, 15, 15 ; DVs
-	db 24, 24, 16, 16 ; PP
+	db 16, 24, 32, 48 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -6373,7 +6373,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 16, 24, 24 ; PP
+	db 24, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

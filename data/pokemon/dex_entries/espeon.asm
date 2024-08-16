@@ -5,6 +5,6 @@
 	next "its forked tail"
 	next "quivers."
 
-	page "Raises"
-	next "LIGHT SCREEN on"
+	page "SPECIAL ATTACK"
+	next "increases upon"
 	next "entering battle.@"

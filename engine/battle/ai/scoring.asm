@@ -2279,6 +2279,10 @@ AI_Smart_Substitute:
     ret
 
 AI_Smart_HyperBeam:
+    ld a, [wEnemyMonSpecies]
+    cp PORYGONZ
+    ret z
+
 	call AICheckEnemyHalfHP
 	jr c, .discourage
 

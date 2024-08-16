@@ -101,7 +101,7 @@ Route13FieldMon6Script:
 	faceplayer
 	cry DITTO
 	pause 15
-	loadwildmon DITTO, 61
+	loadwildmon DITTO, 77
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

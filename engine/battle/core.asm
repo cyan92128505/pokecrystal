@@ -4448,6 +4448,8 @@ SwitchInEffects:
     jp z, .spAtkUp
     cp PORYGONZ
     jp z, .spAtkUp
+    cp ESPEON
+    jp z, .spAtkUp
 
     cp SUICUNE
     jp z, .defUp
@@ -4501,6 +4503,8 @@ SwitchInEffects:
     jp z, .spDefUp
     cp CELEBI
     jp z, .spDefUp
+    cp UMBREON
+    jp z, .spDefUp
 
     cp BUNEARY
     jp z, .evasionUp
@@ -4537,8 +4541,6 @@ SwitchInEffects:
 
     cp MR__MIME
     jp z, .reflect
-    cp UMBREON
-    jp z, .reflect
     cp ARTICUNO
     jp z, .reflect
     cp GALADE
@@ -4547,8 +4549,6 @@ SwitchInEffects:
     jp z, .reflect
 
     cp AMPHAROS
-    jp z, .lightScreen
-    cp ESPEON
     jp z, .lightScreen
     cp ZAPDOS
     jp z, .lightScreen

@@ -487,7 +487,7 @@ KantoGrassWildMons:
 	db 40, POLIWRATH
 	db 43, CHANSEY
 	db 43, MILTANK
-	db 70, DITTO
+	db 77, DITTO
 	; day
 	db 38, STARAPTOR
 	db 38, RAPIDASH
@@ -495,7 +495,7 @@ KantoGrassWildMons:
 	db 40, POLIWRATH
 	db 43, CHANSEY
 	db 43, MILTANK
-	db 70, DITTO
+	db 77, DITTO
 	; nite
 	db 38, HONCHKROW
 	db 38, NOCTOWL
@@ -503,7 +503,7 @@ KantoGrassWildMons:
 	db 40, QUAGSIRE
 	db 43, CLEFABLE
 	db 43, GENGAR
-	db 70, DITTO
+	db 77, DITTO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_14
@@ -877,25 +877,25 @@ KantoGrassWildMons:
 	db 61, ELECTRODE
 	db 62, RHYPERIOR
 	db 63, WIGGLYTUFF
-	db 64, DITTO
+	db 64, ALAKAZAM
 	db 66, CHANSEY
-	db 70, ALAKAZAM
+	db 77, DITTO
 	; day
 	db 60, RAICHU
 	db 61, ELECTRODE
 	db 62, RHYPERIOR
 	db 63, WIGGLYTUFF
-	db 64, DITTO
+	db 64, ALAKAZAM
 	db 66, CHANSEY
-	db 70, ALAKAZAM
+	db 77, DITTO
 	; nite
 	db 60, RAICHU
 	db 61, ELECTRODE
 	db 62, RHYPERIOR
 	db 63, WIGGLYTUFF
-	db 64, DITTO
+	db 64, ALAKAZAM
 	db 66, CHANSEY
-	db 70, ALAKAZAM
+	db 77, DITTO
 	end_grass_wildmons
 
 	db -1 ; end

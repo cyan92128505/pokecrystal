@@ -5,6 +5,6 @@
 	next "full moon, it"
 	next "glows with power"
 
-	page "Raises"
-	next "REFLECT upon"
+	page "SPECIAL DEFENSE"
+	next "increases upon"
 	next "entering battle.@"

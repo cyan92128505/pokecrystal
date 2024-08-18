@@ -1618,6 +1618,11 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
+; if we have boosted evasion just heal below half
+	ld a, [wEnemyEvaLevel]
+	cp BASE_STAT_LEVEL + 2
+	jp nc, .healBelowHalf
+
 ; check if the move is Rest, it must be handled differently
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp REST
@@ -1670,9 +1675,6 @@ AI_Smart_Moonlight:
     jr z, .healBelowHalf
     cp ARCEUS
     jr z, .healBelowHalf
-	ld a, [wEnemyEvaLevel]
-	cp BASE_STAT_LEVEL + 2
-	jp nc, .healBelowHalf
     jr .discourage
 .healBelowHalf
     call AICheckEnemyHalfHP

@@ -1144,6 +1144,7 @@ PonytaEvosAttacks:
 	db 8, TAIL_WHIP
 	db 13, EMBER
 	db 19, STOMP
+	db 23, FLAME_WHEEL
 	db 26, FIRE_SPIN
 	db 30, AGILITY
 	db 35, TAKE_DOWN
@@ -1158,6 +1159,7 @@ RapidashEvosAttacks:
 	db 8, TAIL_WHIP
 	db 13, EMBER
 	db 19, STOMP
+	db 23, FLAME_WHEEL
 	db 26, FIRE_SPIN
 	db 30, AGILITY
 	db 35, POISON_JAB

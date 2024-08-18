@@ -1664,11 +1664,15 @@ AI_Smart_Moonlight:
 
 .checkArceusMewtwo
 ; Arceus and Mewtwo always heal when below half
+; also heal below half if we have increased evasion
     ld a, [wEnemyMonSpecies]
     cp MEWTWO
     jr z, .healBelowHalf
     cp ARCEUS
     jr z, .healBelowHalf
+	ld a, [wEnemyEvaLevel]
+	cp BASE_STAT_LEVEL + 2
+	jp nc, .healBelowHalf
     jr .discourage
 .healBelowHalf
     call AICheckEnemyHalfHP
@@ -4382,6 +4386,13 @@ ShouldAIBoost:
 	cp BASE_STAT_LEVEL + 1
 	jr c, .checkSpeed
 .checkMutual2HKO
+; if AI is Zygarde and player is physical then skip mutual 2HKO check
+    ld a, [wEnemyMonSpecies]
+    cp ZYGARDE
+    jr nz, .checkAsUsual
+    call IsPlayerPhysicalOrSpecial
+    jr c, .checkSpeed
+.checkAsUsual
 	call CanAI2HKO
 	jp c, .decideNotToBoost
 	call CanPlayer2HKO
@@ -4637,7 +4648,10 @@ CanPlayer2HKO:
 	pop de
 	pop hl
     jp nc, .loopPlayer2HKOMoves
-; skip moves that can't be used on consecutive turns
+; skip moves that can't be used on consecutive turns - exception for Porygonz which can use Hyper Beam consecutively
+    ld a, [wBattleMonSpecies]
+    cp PORYGONZ
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopPlayer2HKOMoves
@@ -4647,6 +4661,7 @@ CanPlayer2HKO:
 	jr z, .loopPlayer2HKOMoves
 	cp EFFECT_SOLARBEAM
 	jr z, .loopPlayer2HKOMoves
+.setFlag
 	scf
     ret
 .done
@@ -4700,7 +4715,10 @@ CanPlayer2HKOMaxHP:
 	pop de
 	pop hl
     jp nc, .loopPlayer2HKOMaxHPMoves
-; skip moves that can't be used on consecutive turns
+; skip moves that can't be used on consecutive turns - exception for Porygonz which can use Hyper Beam consecutively
+    ld a, [wBattleMonSpecies]
+    cp PORYGONZ
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopPlayer2HKOMaxHPMoves
@@ -4710,6 +4728,7 @@ CanPlayer2HKOMaxHP:
 	jr z, .loopPlayer2HKOMaxHPMoves
 	cp EFFECT_SOLARBEAM
 	jr z, .loopPlayer2HKOMaxHPMoves
+.setFlag
     scf
     ret
 .done
@@ -4766,7 +4785,10 @@ CanPlayer3HKOMaxHP:
 	pop de
 	pop hl
     jp nc, .loopPlayer3HKOMaxHPMoves
-; skip moves that can't be used on consecutive turns
+; skip moves that can't be used on consecutive turns - exception for Porygonz which can use Hyper Beam consecutively
+    ld a, [wBattleMonSpecies]
+    cp PORYGONZ
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopPlayer3HKOMaxHPMoves
@@ -4776,6 +4798,7 @@ CanPlayer3HKOMaxHP:
 	jr z, .loopPlayer3HKOMaxHPMoves
 	cp EFFECT_SOLARBEAM
 	jr z, .loopPlayer3HKOMaxHPMoves
+.setFlag
 	scf
     ret
 .done
@@ -4880,6 +4903,9 @@ CanAI2HKO:
 	pop hl
     jp nc, .loopMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
+    ld a, [wEnemyMonSpecies]
+    cp PORYGONZ
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopMoves
@@ -4889,6 +4915,7 @@ CanAI2HKO:
 	jr z, .loopMoves
 	cp EFFECT_SOLARBEAM
 	jr z, .loopMoves
+.setFlag
     scf
     ret
 .done
@@ -4943,6 +4970,9 @@ CanAI2HKOMaxHP:
 	pop hl
     jp nc, .loopMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
+    ld a, [wEnemyMonSpecies]
+    cp PORYGONZ
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopMoves
@@ -4952,6 +4982,7 @@ CanAI2HKOMaxHP:
 	jr z, .loopMoves
 	cp EFFECT_SOLARBEAM
 	jr z, .loopMoves
+.setFlag
     scf
     ret
 .done
@@ -5009,6 +5040,10 @@ CanAI3HKO:
 	pop hl
     jp nc, .loopAI3HKOMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
+; skip moves that can't be used on consecutive turns, except hyper beam
+    ld a, [wEnemyMonSpecies]
+    cp PORYGONZ
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopAI3HKOMoves
@@ -5018,6 +5053,7 @@ CanAI3HKO:
 	jr z, .loopAI3HKOMoves
 	cp EFFECT_SOLARBEAM
 	jr z, .loopAI3HKOMoves
+.setFlag
     scf
     ret
 .done

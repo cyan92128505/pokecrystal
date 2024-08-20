@@ -1886,7 +1886,6 @@ BattleAnim_Roar:
 .done
 	anim_ret
 
-BattleAnim_BugBuzz:
 BattleAnim_Supersonic:
 	anim_1gfx ANIM_GFX_PSYCHIC
 .loop
@@ -2691,6 +2690,7 @@ BattleAnim_Withdraw:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_BugBuzz:
 BattleAnim_Psybeam:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

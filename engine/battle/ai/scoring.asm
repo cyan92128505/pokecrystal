@@ -4226,6 +4226,13 @@ AI_Smart_ShellSmash:
 	ld a, [wBattleMonStatus]
 	and 1 << FRZ | SLP
 	jr nz, .skipKOCheck
+; discourage if player can 2HKO and has priority move
+    call CanPlayer2HKO
+    jr nc, .checkSash
+    ld b, EFFECT_PRIORITY_HIT
+    call PlayerHasMoveEffect
+    jp c, StandardDiscourage
+.checkSash
 ; skip if we have sash/sturdy
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skipKOCheck

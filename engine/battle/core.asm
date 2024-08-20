@@ -6638,16 +6638,12 @@ LoadEnemyMon:
 	cp BATTLETYPE_PERFECT_ESCAPE
 	jr z, .GeneratePerfectDVs
 
-; DevNote - Silver cave has max dvs
+; DevNote - Hall of Origin has max DVs
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LANDMARK_SILVER_CAVE
-    jr z, .GeneratePerfectDVs
-	cp LANDMARK_ROUTE_28
-    jr z, .GeneratePerfectDVs
 	cp LANDMARK_HALL_OF_ORIGIN
     jr z, .GeneratePerfectDVs
 

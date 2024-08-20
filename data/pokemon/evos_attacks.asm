@@ -2580,7 +2580,7 @@ CrobatEvosAttacks:
 	db 45, POISON_JAB
 	db 50, BRAVE_BIRD
 	db 55, HAZE
-	db 80, AFTER_IMAGE
+	db 86, AFTER_IMAGE
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
@@ -3126,7 +3126,7 @@ DunsparceEvosAttacks:
 	db 30, ROOST
 	db 35, DRAGON_CLAW
 	db 40, DOUBLE_EDGE
-	db 80, AFTER_IMAGE
+	db 86, AFTER_IMAGE
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:

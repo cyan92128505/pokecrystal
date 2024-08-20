@@ -1288,6 +1288,15 @@ AmbrosiaEffect:
 	call UseItem_SelectMon
 	jp c, RareCandy_StatBooster_ExitMenu
 
+; update DVs to max
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, %11111111
+	ld [hli], a
+	ld [hl], a
+
 	call RareCandy_StatBooster_GetParameters
 
     ld a, HP_UP

@@ -345,6 +345,14 @@ AI_Basic:
 	and a
 	jp z, .checkmove
 
+; if we are faster and player is flying or underground then don't encourage attacks
+    call DoesAIOutSpeedPlayer
+    jr nc, .calcDamage
+	ld a, [wPlayerSubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jp nz, .checkmove
+
+.calcDamage
     ld a, 1
 	ldh [hBattleTurn], a
 	push hl
@@ -1651,6 +1659,16 @@ AI_Smart_Moonlight:
     call CanPlayer2HKOMaxHP
     jr c, .discourage
 
+; if we are faster and player is flying or underground encourage heal if we can be 1HKO
+    call DoesAIOutSpeedPlayer
+    jr nc, .checkQuarter
+    call CanPlayerKO
+    jr nc, .checkQuarter
+	ld a, [wPlayerSubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jp nz, .bigEncourage
+
+.checkQuarter
 ; always heal when below 1/4 hp
     call AICheckEnemyQuarterHP
     jr nc, .encourage
@@ -1686,6 +1704,7 @@ AI_Smart_Moonlight:
 	ld a, [wEnemyMonSpecies]
 	cp ARCEUS
 	jr nz, .normalEncourage
+.bigEncourage
 rept 8
 	dec [hl]
 endr

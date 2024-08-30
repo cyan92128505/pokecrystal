@@ -27,19 +27,24 @@ ElmsWifeText:
 	text "Hello <PLAYER>!"
 	para "ELM is at the lab"
 	line "like he always is."
-	para "He lives to work,"
-	line "but what he does"
-	cont "is very important."
+
+	para "He doesn't believe"
+	line "in four day weeks,"
+	cont "or even five day"
+	cont "weeks for that"
+	cont "matter."
 	done
 
 ElmsSonText:
-	text "When I grow up,"
-	line "I'm going to help"
-	cont "my Dad!"
-
-	para "I'm going to find"
-	line "the strongest"
-	cont "#MON!"
+	text "When I grow up I'm"
+	line "going to find the"
+	cont "strongest #MON"
+	cont "and capture it!"
+	para "I'm going to beat"
+	line "the ELITE FOUR and"
+	cont "take out an evil"
+	cont "organisation along"
+	cont "the way."
 	done
 
 ElmsHousePCPostWallaceText:

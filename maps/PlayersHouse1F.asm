@@ -349,12 +349,12 @@ SoWhatWasProfElmsErrandText:
 	line "respected in"
 	cont "KANTO."
 
-	para "He used to be a"
-	line "trainer also."
+	para "He also used to"
+	line "be a trainer."
 
 	para "He understands us"
 	line "better than most"
-	cont "scientist types."
+	cont "academics."
 
 	para "Be polite."
 	done
@@ -367,16 +367,17 @@ ImBehindYouText:
 	done
 
 PlayersHouse1FStoveText:
-	text "Mom's specialty!"
-
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
+	text "Looks like dinner"
+	line "is pasta..."
+	para "again."
 	done
 
 PlayersHouse1FSinkText:
-	text "The sink is spot-"
-	line "less. Mom runs a"
-	cont "tight ship."
+	text "The sink is always"
+	line "spotless."
+	para "Mum has been"
+	line "cleaning a lot"
+	cont "recently."
 	done
 
 PlayerHouse1FFridgePostDadText:
@@ -395,13 +396,10 @@ PlayersHouse1FFridgeText:
 	done
 
 PlayersHouse1FTVText:
-	text "There's a movie on"
-	line "TV."
-
-	para "A man with many"
-	line "personalities has"
-	cont "kidnapped three"
-	cont "girls."
+	text "So many streaming"
+	line "services and still"
+	cont "nothing worth"
+	cont "watching..."
 	done
 
 DadScript:
@@ -452,20 +450,15 @@ DadPostWallaceText:
 NeighborMornIntroText:
 	text "Good morning,"
 	line "<PLAY_G>!"
-
-	para "I'm visiting!"
 	done
 
 NeighborDayIntroText:
 	text "Hello, <PLAY_G>!"
-	line "I'm visiting!"
 	done
 
 NeighborNiteIntroText:
 	text "Good evening,"
 	line "<PLAY_G>!"
-
-	para "I'm visiting!"
 	done
 
 NeighborText:

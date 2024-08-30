@@ -1668,7 +1668,7 @@ _WallaceText1::
 	cont "today."
 	para "Your cities shall"
 	line "burn."
-	para "your kin shall"
+	para "Your kin shall"
 	line "perish."
 	para "HOEN shall"
 	line "liberate the land"
@@ -1705,8 +1705,9 @@ _DadText1::
 	cont "again."
 	para "That's why I had"
 	line "to leave you and"
-	cont "your mother, so I"
-	cont "could protect you."
+	cont "your mother."
+	para "So I could protect"
+	line "you."
 	prompt
 
 _DadText2::

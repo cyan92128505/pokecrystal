@@ -866,7 +866,7 @@ ElmsLabCynthiaByeElmText:
     para "There is much"
     line "to be done."
 
-    para "Thanks you for"
+    para "Thank you for"
     line "your help PROF."
 
     para "There may be"
@@ -925,9 +925,9 @@ ElmText_Intro:
 	para "Today is your big"
 	line "day!"
 
-	para "Sorry I'll was"
-	line "just finishing"
-	cont "up here."
+	para "Sorry I was just"
+	line "finishing up"
+	cont "here."
 	done
 
 ElmText_ResearchAmbitions:
@@ -941,7 +941,7 @@ ElmText_ResearchAmbitions:
 	para "I'm sorry about"
 	line "your father."
 
-	para "it's no secret"
+	para "It's no secret"
 	line "that the #MON"
 	cont "LEAGUE want to"
 	cont "find strong"
@@ -1499,9 +1499,9 @@ ElmsLabTravelTip4Text:
 	done
 
 ElmsLabTrashcanText:
-	text "The wrapper from"
-	line "the snack PROF.ELM"
-	cont "ate is in there…"
+	text "It's full of empty"
+	line "cans of RED"
+	cont "TAUROS."
 	done
 
 ElmsLabPCText:

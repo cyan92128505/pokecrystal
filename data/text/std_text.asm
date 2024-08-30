@@ -149,8 +149,9 @@ PokeComNursePokerusText:
 	done
 
 DifficultBookshelfText:
-	text "It's full of"
-	line "difficult books."
+	text "It would take long"
+	line "time to read all"
+	cont "this stuff."
 	done
 
 PictureBookshelfText:
@@ -160,11 +161,9 @@ PictureBookshelfText:
 	done
 
 MagazineBookshelfText:
-	text "#MON magazines…"
-	line "#MON PAL,"
-
-	para "#MON HANDBOOK,"
-	line "#MON GRAPH…"
+	text "Lots of dumb"
+	line "colourful"
+	cont "clickbait books."
 	done
 
 TeamRocketOathText:

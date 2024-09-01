@@ -249,7 +249,7 @@ MrPokemonGiveRemembrallText:
     cont "I have forgotten."
 
     para "It can help"
-    line "#MON to"
+    line "#MON with"
     cont "moves they have"
     cont "forgotten too."
 

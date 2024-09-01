@@ -42,7 +42,7 @@ CherrygroveMartYoungsterScript:
 
 CherrygroveMartCooltrainerMText:
 	text "They're fresh out"
-	line "of # BALLS!"
+	line "of #BALLS!"
 
 	para "If I have no"
 	line "balls how am"

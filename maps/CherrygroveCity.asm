@@ -460,7 +460,7 @@ GuideGentMartText:
 	line "rarely has much."
 
 	para "The don't even"
-	line "have Pokeballs"
+	line "have #BALLS"
 	cont "right now."
 	done
 

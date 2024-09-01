@@ -172,7 +172,7 @@ IrwinSoMuchToChatAboutText:
 	para "How much money"
 	line "have you saved?"
 
-	para "How's your mom?"
+	para "How's your mum?"
 
 	para "Do you like me?"
 	done

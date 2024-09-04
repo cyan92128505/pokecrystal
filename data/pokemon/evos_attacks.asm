@@ -2286,6 +2286,7 @@ TreeckoEvosAttacks:
 	db 1, LEER
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
+	db 14, PURSUIT
 	db 17, RAZOR_LEAF
 	db 20, MEGA_DRAIN
 	db 25, SLASH
@@ -2301,6 +2302,7 @@ GrovyleEvosAttacks:
 	db 1, POUND
 	db 1, LEER
 	db 8, ABSORB
+	db 14, PURSUIT
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
 	db 20, MEGA_DRAIN
@@ -2316,6 +2318,7 @@ SceptileEvosAttacks:
 	db 1, POUND
 	db 1, LEER
 	db 8, ABSORB
+	db 14, PURSUIT
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
 	db 20, MEGA_DRAIN

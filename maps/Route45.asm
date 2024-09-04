@@ -14,6 +14,7 @@
     const ROUTE45_FIELDMON_4
     const ROUTE45_FIELDMON_5
     const ROUTE45_FIELDMON_6
+    const ROUTE45_FIELDMON_7
 
 Route45_MapScripts:
 	def_scene_scripts
@@ -32,6 +33,7 @@ Route45_MapScripts:
     appear ROUTE45_FIELDMON_4
     appear ROUTE45_FIELDMON_5
     appear ROUTE45_FIELDMON_6
+    appear ROUTE45_FIELDMON_7
     endcallback
 
 TrainerBlackbeltKenji:
@@ -582,6 +584,17 @@ Route45FieldMon6Script:
     disappear ROUTE45_FIELDMON_6
     end
 
+Route45FieldMon7Script:
+	faceplayer
+	cry PONYTA
+	pause 15
+	loadwildmon PONYTA, 17
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE45_FIELDMON_7
+	end
+
 Route45PokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
@@ -616,3 +629,4 @@ Route45_MapEvents:
 	object_event 12, 56, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route45FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 6,  72, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route45FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 14, 82, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route45FieldMon6Script, EVENT_FIELD_MON_6
+	object_event  8, 86, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route45FieldMon7Script, EVENT_FIELD_MON_7

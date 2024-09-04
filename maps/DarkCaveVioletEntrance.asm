@@ -2,7 +2,6 @@
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL1
 	const DARKCAVEVIOLETENTRANCE_ROCK1
 	const DARKCAVEVIOLETENTRANCE_ROCK2
-	const DARKCAVEVIOLETENTRANCE_ROCK3
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL2
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL3
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL4
@@ -10,6 +9,10 @@
 	const DARKCAVEVIOLETENTRANCE_FIELDMON_2
     const DARKCAVEVIOLETENTRANCE_FIELDMON_3
     const DARKCAVEVIOLETENTRANCE_FIELDMON_4
+    const DARKCAVEVIOLETENTRANCE_FIELDMON_5
+    const DARKCAVEVIOLETENTRANCE_FIELDMON_6
+    const DARKCAVEVIOLETENTRANCE_FIELDMON_7
+    const DARKCAVEVIOLETENTRANCE_POKE_BALL5
 
 DarkCaveVioletEntrance_MapScripts:
 	def_scene_scripts
@@ -22,6 +25,15 @@ DarkCaveVioletEntrance_MapScripts:
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_2
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_3
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_4
+    appear DARKCAVEVIOLETENTRANCE_FIELDMON_5
+    appear DARKCAVEVIOLETENTRANCE_FIELDMON_6
+
+    random 4
+    ifequal 1, .spawn
+    disappear DARKCAVEVIOLETENTRANCE_FIELDMON_7
+    endcallback
+.spawn
+    appear DARKCAVEVIOLETENTRANCE_FIELDMON_7
     endcallback
 
 DarkCaveVioletEntrancePotion:
@@ -35,6 +47,9 @@ DarkCaveVioletEntranceHyperPotion:
 
 DarkCaveVioletEntranceDireHit:
 	itemball RARE_CANDY
+
+DarkCaveVioletEntranceBlackGlasses:
+	itemball BLACKGLASSES
 
 DarkCaveVioletEntranceRock:
 	jumpstd SmashRockScript
@@ -66,6 +81,40 @@ DarkCaveVioletEntranceFieldMon4Script:
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_4
     end
 
+DarkCaveVioletEntranceFieldMon5Script:
+	faceplayer
+	cry PAWNIARD
+	pause 15
+	loadwildmon PAWNIARD, 11
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_5
+	end
+
+DarkCaveVioletEntranceFieldMon6Script:
+	faceplayer
+	cry HOUNDOUR
+	pause 15
+	loadwildmon HOUNDOUR, 10
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_6
+	end
+
+DarkCaveVioletEntranceFieldMon7Script:
+	faceplayer
+	cry LARVITAR
+	pause 15
+	loadwildmon LARVITAR, 13
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_7
+	end
+
 DarkCaveVioletEntrancePokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
@@ -88,7 +137,6 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event  7, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntrancePotion, EVENT_DARK_CAVE_RED_EYE_ORB
 	object_event 16, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
 	object_event 32,  3, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
-	object_event  7, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceRock, -1
 	object_event 36, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceFullHeal, EVENT_DARK_CAVE_VIOLET_ENTRANCE_FULL_HEAL
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceHyperPotion, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HYPER_POTION
 	object_event 30, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceDireHit, EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
@@ -96,5 +144,11 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 34, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 26,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 17,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 14, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 12, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 17, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon7Script, EVENT_FIELD_MON_7
+	object_event 15, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceBlackGlasses, EVENT_DARK_CAVE_VIOLET_ENTRANCE_BLACK_GLASSES
+
+
 
 

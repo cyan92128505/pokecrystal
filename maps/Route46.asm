@@ -6,6 +6,9 @@
 	const ROUTE46_FRUIT_TREE2
 	const ROUTE46_POKE_BALL
 	const ROUTE46_FIELDMON_1
+	const ROUTE46_FIELDMON_2
+	const ROUTE46_FIELDMON_3
+	const ROUTE46_FIELDMON_4
 
 Route46_MapScripts:
 	def_scene_scripts
@@ -15,6 +18,15 @@ Route46_MapScripts:
 
 .FieldMon:
     appear ROUTE46_FIELDMON_1
+    appear ROUTE46_FIELDMON_2
+    appear ROUTE46_FIELDMON_3
+
+    random 4
+    ifequal 1, .spawn
+    disappear ROUTE46_FIELDMON_4
+    endcallback
+.spawn
+    appear ROUTE46_FIELDMON_4
     endcallback
 
 TrainerCamperTed:
@@ -332,6 +344,40 @@ Route46FieldMon1Script:
     disappear ROUTE46_FIELDMON_1
     end
 
+Route46FieldMon2Script:
+	faceplayer
+	cry GEODUDE
+	pause 15
+	loadwildmon GEODUDE, 8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear ROUTE46_FIELDMON_2
+	end
+
+Route46FieldMon3Script:
+	faceplayer
+	cry ZUBAT
+	pause 15
+	loadwildmon ZUBAT, 7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE46_FIELDMON_3
+	end
+
+Route46FieldMon4Script:
+	faceplayer
+	cry DRATINI
+	pause 15
+	loadwildmon DRATINI, 10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE46_FIELDMON_4
+	end
+
 Route46PokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
@@ -369,3 +415,7 @@ Route46_MapEvents:
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
 	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46Protein, EVENT_ROUTE_46_PROTEIN
 	object_event  7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route46FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  7, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route46FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 11, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route46FieldMon3Script, EVENT_FIELD_MON_3
+	object_event  2, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route46FieldMon4Script, EVENT_FIELD_MON_4
+

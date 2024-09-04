@@ -156,7 +156,7 @@ Moves: ; 41afb
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        STATUS,    70, 10,   0
 	move SHADOW_FORCE, EFFECT_FLY,               120, GHOST,         SPECIAL,  100, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,        STATUS,   100, 20,   0
-	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     20, WATER,         SPECIAL,  100, 30,  10
+	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     30, WATER,         SPECIAL,  100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,        PHYSICAL, 100, 10,  20
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,         STATUS,   100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,   100, 20,   0

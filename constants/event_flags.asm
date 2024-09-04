@@ -422,6 +422,7 @@
     const EVENT_BEAT_BROTHER
     const EVENT_SPOKE_TO_BAILEY
     const EVENT_BEAT_MEOWTH
+    const EVENT_DARK_CAVE_VIOLET_ENTRANCE_BLACK_GLASSES
 
     ; ======================================
     ; DevNote - here

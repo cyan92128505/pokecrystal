@@ -348,7 +348,7 @@ Route46FieldMon2Script:
 	faceplayer
 	cry GEODUDE
 	pause 15
-	loadwildmon GEODUDE, 8
+	loadwildmon GEODUDE, 7
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -359,7 +359,7 @@ Route46FieldMon3Script:
 	faceplayer
 	cry ZUBAT
 	pause 15
-	loadwildmon ZUBAT, 7
+	loadwildmon ZUBAT, 6
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

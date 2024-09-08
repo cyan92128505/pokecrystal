@@ -259,3 +259,4 @@ MonMenuIconPals:
 	icon_pals SILVER,  GOLD  ; MEWTWO
 	icon_pals SILVER,  GOLD      ; ARCEUS
 	assert_table_length NUM_POKEMON
+	icon_pals SILVER, GOLD  ; EGG

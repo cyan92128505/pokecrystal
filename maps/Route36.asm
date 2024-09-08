@@ -501,10 +501,10 @@ RockSmashGuyText2:
 Route36LassText:
 	text "I went into one of"
 	line "those puzzle"
-	cont "chambers and use"
+	cont "chambers and used"
 	cont "my ESCAPE POD to"
 	cont "leave and then I"
-	cont "head all these"
+	cont "heard all these"
 	cont "spooky noises"
 	cont "coming from the"
 	cont "chamber!"

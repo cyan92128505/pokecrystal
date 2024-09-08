@@ -24,11 +24,18 @@ Route30_MapScripts:
 .Route30FieldMon:
 ; Pokemon which always appear
     appear ROUTE30_FIELDMON_1
-    appear ROUTE30_FIELDMON_4
     appear ROUTE30_FIELDMON_5
     appear ROUTE30_FIELDMON_7
 
 ; Pokemon that sometimes appear
+.mon4
+    random 2
+    ifequal 1, .spawn4
+    disappear ROUTE30_FIELDMON_4
+    sjump .mon6
+.spawn4
+    appear ROUTE30_FIELDMON_4
+
 .mon6
     random 2
     ifequal 1, .spawn6
@@ -491,9 +498,9 @@ Route30PokemonAttacksText:
 	
 Route30FieldMon4Script:
 	faceplayer
-	cry STARLY
+	cry PIKACHU
 	pause 15
-	loadwildmon STARLY, 9
+	loadwildmon PIKACHU, 7
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -572,7 +579,7 @@ Route30_MapEvents:
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
 	object_event 12, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13,  3, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon2Script, EVENT_FIELD_MON_2
-	object_event 7,  42, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 7,  42, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 16, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 4,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 18, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30FieldMon7Script, EVENT_FIELD_MON_7

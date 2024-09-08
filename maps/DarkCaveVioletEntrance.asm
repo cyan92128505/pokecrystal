@@ -85,7 +85,7 @@ DarkCaveVioletEntranceFieldMon5Script:
 	faceplayer
 	cry PAWNIARD
 	pause 15
-	loadwildmon PAWNIARD, 11
+	loadwildmon PAWNIARD, 9
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -96,7 +96,7 @@ DarkCaveVioletEntranceFieldMon6Script:
 	faceplayer
 	cry HOUNDOUR
 	pause 15
-	loadwildmon HOUNDOUR, 10
+	loadwildmon HOUNDOUR, 9
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -107,7 +107,7 @@ DarkCaveVioletEntranceFieldMon7Script:
 	faceplayer
 	cry LARVITAR
 	pause 15
-	loadwildmon LARVITAR, 13
+	loadwildmon LARVITAR, 10
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
@@ -148,7 +148,3 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 12, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 17, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 15, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceBlackGlasses, EVENT_DARK_CAVE_VIOLET_ENTRANCE_BLACK_GLASSES
-
-
-
-

@@ -457,24 +457,24 @@ JohtoGrassWildMons:
 	db 14, ZUBAT
 	db 13, MACHOP
 	db 13, TIMBURR
-	db 16, DRILBUR
-	db 16, GIBLE
+	db 15, DRILBUR
+	db 15, GIBLE
 	db 31, ONIX
 	; day
 	db 11, GEODUDE
 	db 14, ZUBAT
 	db 13, MACHOP
 	db 13, TIMBURR
-	db 16, DRILBUR
-	db 16, GIBLE
+	db 15, DRILBUR
+	db 15, GIBLE
 	db 31, ONIX
 	; nite
 	db 11, GEODUDE
 	db 14, ZUBAT
 	db 13, MACHOP
 	db 13, TIMBURR
-	db 16, DRILBUR
-	db 16, GIBLE
+	db 15, DRILBUR
+	db 15, GIBLE
 	db 31, ONIX
 	end_grass_wildmons
 
@@ -485,24 +485,24 @@ JohtoGrassWildMons:
 	db 14, ZUBAT
 	db 13, MACHOP
 	db 13, TIMBURR
-	db 16, DRILBUR
-	db 16, GIBLE
+	db 15, DRILBUR
+	db 15, GIBLE
 	db 31, ONIX
 	; day
 	db 11, GEODUDE
 	db 14, ZUBAT
 	db 13, MACHOP
 	db 13, TIMBURR
-	db 16, DRILBUR
-	db 16, GIBLE
+	db 15, DRILBUR
+	db 15, GIBLE
 	db 31, ONIX
 	; nite
 	db 11, GEODUDE
 	db 14, ZUBAT
 	db 13, MACHOP
 	db 13, TIMBURR
-	db 16, DRILBUR
-	db 16, GIBLE
+	db 15, DRILBUR
+	db 15, GIBLE
 	db 31, ONIX
 	end_grass_wildmons
 
@@ -1211,26 +1211,26 @@ JohtoGrassWildMons:
 	; morn
 	db 8, ZUBAT
 	db 8, DUNSPARCE
-	db 10, HOUNDOUR
-	db 10, SNEASEL
-	db 12, PAWNIARD
-	db 12, LARVITAR
+	db 9, HOUNDOUR
+	db 9, SNEASEL
+	db 10, PAWNIARD
+	db 10, LARVITAR
 	db 64, TYRANITAR
 	; day
 	db 8, ZUBAT
 	db 8, DUNSPARCE
-	db 10, HOUNDOUR
-	db 10, SNEASEL
-	db 12, PAWNIARD
-	db 12, LARVITAR
+	db 9, HOUNDOUR
+	db 9, SNEASEL
+	db 10, PAWNIARD
+	db 10, LARVITAR
 	db 64, TYRANITAR
 	; nite
 	db 8, ZUBAT
 	db 8, DUNSPARCE
-	db 10, HOUNDOUR
-	db 10, SNEASEL
-	db 12, PAWNIARD
-	db 12, LARVITAR
+	db 9, HOUNDOUR
+	db 9, SNEASEL
+	db 10, PAWNIARD
+	db 10, LARVITAR
 	db 64, TYRANITAR
 	end_grass_wildmons
 

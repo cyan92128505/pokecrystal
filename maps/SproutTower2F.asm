@@ -112,7 +112,7 @@ SproutTower2FFieldMon1Script:
 	faceplayer
 	cry RATTATA
 	pause 15
-	loadwildmon RATTATA, 8
+	loadwildmon RATTATA, 7
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -123,7 +123,7 @@ SproutTower2FFieldMon2Script:
 	faceplayer
 	cry GASTLY
 	pause 15
-	loadwildmon GASTLY, 9
+	loadwildmon GASTLY, 8
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

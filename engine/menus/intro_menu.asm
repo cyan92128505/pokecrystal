@@ -217,7 +217,7 @@ endc
 	ld [hl], LOW(MOM_MONEY)
 
 	; DevNote - Level cap initial value
-	ld a, 25
+	ld a, 20
     ld [wLevelCap], a
 
 	call InitializeNPCNames

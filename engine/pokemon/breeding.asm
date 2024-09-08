@@ -221,7 +221,7 @@ HatchEggs:
 	ld a, [hl]
 	and a
 	jp nz, .next
-	ld [hl], $78
+	ld [hl], 100 ; DevNote - Egg base happiness
 
 	push de
 

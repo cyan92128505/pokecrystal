@@ -32,7 +32,7 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
-	loadmem wLevelCap, 30
+	loadmem wLevelCap, 25
 	opentext
 	writetext ReceivedZephyrBadgeText
 	playsound SFX_GET_BADGE
@@ -220,11 +220,11 @@ FalknerZephyrBadgeText:
     text "The ZEPHYRBADGE"
     line "lets you train"
     cont "#MON up to"
-    cont "level 30."
+    cont "level 25."
 
     para "And capture"
     line "#MON up to"
-    cont "level 20."
+    cont "level 15."
 
 	para "ZEPHYRBADGE"
 	line "enables #MON"

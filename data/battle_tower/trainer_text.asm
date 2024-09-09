@@ -398,12 +398,14 @@ _BTWinM25Text:
 	done
 
 _BTGreetingF1Text:
-	text "Don't make me"
-	line "destroy you!"
+	text "I find your lack"
+	line "of skills"
+	cont "disturbing."
 	done
 
 _BTLossF1Text:
-	text "I think not!"
+	text "Your defeat is"
+	line "inconsequential"
 	done
 
 _BTWinF1Text:
@@ -423,7 +425,7 @@ _BTGreetingF2Text:
 _BTLossF2Text:
 	text "Oh my I may"
 	line "overdid it a"
-	cont "little."
+	cont "tad."
 	done
 
 _BTWinF2Text:
@@ -434,56 +436,61 @@ _BTWinF2Text:
 	done
 
 _BTGreetingF3Text:
-	text "My ELO depends on"
-	line "this match!"
+	text "Listen I'm"
+	line "laddering."
+	para "I need this win!"
 	done
 
 _BTLossF3Text:
-	text "Nice, I'm in the"
-	line "top 100 now."
+	text "That done wonders"
+	line "for my rating."
 	done
 
 _BTWinF3Text:
-	text "I lost so many"
-	line "points!"
+	text "No my rating!"
+	para "You massacred it!"
 	done
 
 _BTGreetingF4Text:
-	text "Listen, could you"
-	line "just let me win?"
+	text "If you are about"
+	line "to win you'll"
+	cont "forfeit right?"
 	done
 
 _BTLossF4Text:
-	text "Thanks buddy!"
+	text "How very kind of"
+	line "you."
 	done
 
 _BTWinF4Text:
-	text "My precious win"
-	line "streak!"
+	text "We had a deal!"
 	done
 
 _BTGreetingF5Text:
-	text "You're going to"
-	line "get rekt!"
+	text "Sorry noob, I'm"
+	line "about to end your"
+	cont "entire career."
 	done
 
 _BTLossF5Text:
-	text "GG scrub."
+	text "You got rekt hard."
 	done
 
 _BTWinF5Text:
-	text "Such Lag!"
+	text "You got a lucky"
+	line "crit pal."
 	done
 
 _BTGreetingF6Text:
-	text "I've been doing"
-	line "this my whole"
-	cont "life."
+	text "I have spent my"
+	line "life perfecting"
+	cont "this strategy."
 	done
 
 _BTLossF6Text:
-	text "Those years have"
-	line "payed off."
+	text "I have traded my"
+	line "life for this"
+	cont "power."
 	done
 
 _BTWinF6Text:
@@ -511,37 +518,44 @@ _BTWinF7Text:
 	done
 
 _BTGreetingF8Text:
-	text "I have devised a"
-	line "perfect strategy."
+	text "I have assessed"
+	line "all possibilities"
+	cont "and formulated the"
+	cont "optimal team."
 	done
 
 _BTLossF8Text:
-	text "I don't think you"
-	line "understand."
+	text "I can tell you"
+	line "would never"
+	cont "understand."
 	done
 
 _BTWinF8Text:
 	text "You have no"
 	line "semblance of"
-	cont "strategy."
-	para "Your #MON"
-	line "are broken."
+	cont "strategy!"
 	done
 
 _BTGreetingF9Text:
-	text "What's your rating"
-	line "bro?"
-	para "I'm a cool 1600."
+	text "What's your"
+	line "rating?"
+	para "Mine is 1787!"
+	para "I doubt I'll gain"
+	line "much from this."
 	done
 
 _BTLossF9Text:
-	text "Why am I getting"
-	line "paired with noobs?"
+	text "Only gained 11"
+	line "points."
+	para "What a waste of"
+	line "time."
 	done
 
 _BTWinF9Text:
-	text "You're top ladder"
-	line "material!"
+	text "I just lost 323"
+	line "points!"
+	para "I'll lose my"
+	line "voting rights!"
 	done
 
 _BTGreetingF10Text:
@@ -551,7 +565,8 @@ _BTGreetingF10Text:
 	done
 
 _BTLossF10Text:
-	text "Today is the day!"
+	text "Today is my day!"
+	para "I know it!"
 	done
 
 _BTWinF10Text:
@@ -560,22 +575,30 @@ _BTWinF10Text:
 	done
 
 _BTGreetingF11Text:
-	text "I'm a total noob,"
-	line "please be gentle."
+	text "I don't think I"
+	line "should be here."
+	para "I was just looking"
+	line "for the bathroom!"
 	done
 
 _BTLossF11Text:
-	text "I won?"
-	para "I won!!"
+	text "Can I go now?"
+	para "I can't hold it"
+	line "any longer!"
 	done
 
 _BTWinF11Text:
-	text "You are a horrible"
-	line "troll."
+	text "Oh no..."
+	para "I don't need the"
+	line "bathroom"
+	cont "anymore..."
 	done
 
 _BTGreetingF12Text:
-	text "GL HF"
+	text "Let's have a good"
+	line "battle."
+	para "Good luck and have"
+	line "fun!"
 	done
 
 _BTLossF12Text:
@@ -587,33 +610,42 @@ _BTWinF12Text:
 	done
 
 _BTGreetingF13Text:
-	text "Just give up noob."
-	line "You can't win"
+	text "I'm the main"
+	line "character of this"
+	cont "story."
+	para "I always win."
 	done
 
 _BTLossF13Text:
-	text "Should have thrown"
-	line "in the towel."
+	text "This is what's"
+	line "called the heroes"
+	cont "journey."
 	done
 
 _BTWinF13Text:
-	text "You're really"
-	line "good."
-	para "Teach me!"
+	text "What a devastating"
+	line "plot twist!"
 	done
 
 _BTGreetingF14Text:
-	text "I am the chosen"
-	line "one."
-	para "Behold my power!"
+	text "I'm really sick of"
+	line "all this."
+	para "Please can you"
+	line "just beat me?"
 	done
 
 _BTLossF14Text:
-	text "Unlimited power!!"
+	text "I had really hoped"
+	line "you would win."
+	para "This just doesn't"
+	line "end!"
 	done
 
 _BTWinF14Text:
-	text "But the prophesy!"
+	text "Thank ARCEUS for"
+	line "that!"
+	para "I feel really bad"
+	line "for you."
 	done
 
 _BTGreetingF15Text:
@@ -633,5 +665,5 @@ _BTWinF15Text:
 	text "This is what I"
 	line "mean."
 	para "Those #MON are"
-	line "broken."
+	line "centralising."
 	done

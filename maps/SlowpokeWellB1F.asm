@@ -4,15 +4,27 @@
 	const SLOWPOKEWELLB1F_ROCKET3
 	const SLOWPOKEWELLB1F_ROCKET_GIRL
 	const SLOWPOKEWELLB1F_SLOWPOKE1
-	const SLOWPOKEWELLB1F_SLOWPOKE2
+	const SLOWPOKEWELLB1F_FIELDMON_1
 	const SLOWPOKEWELLB1F_KURT
 	const SLOWPOKEWELLB1F_BOULDER
 	const SLOWPOKEWELLB1F_POKE_BALL
+	const SLOWPOKEWELLB1F_FIELDMON_2
 
 SlowpokeWellB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .SlowpokeWellB1FFieldMon
+
+.SlowpokeWellB1FFieldMon:
+    appear SLOWPOKEWELLB1F_FIELDMON_1
+    appear SLOWPOKEWELLB1F_FIELDMON_2
+
+    random 3
+    ifequal 1, .end
+    disappear SLOWPOKEWELLB1F_FIELDMON_2
+.end
+    endcallback
 
 SlowpokeWellB1FKurtScript:
 	jumptextfaceplayer SlowpokeWellB1FKurtText
@@ -108,15 +120,6 @@ SlowpokeWellB1FSlowpokeWithMailScript:
 
 .ReadMail:
 	writetext SlowpokeWellB1FSlowpokeMailText
-	waitbutton
-	closetext
-	end
-
-SlowpokeWellB1FTaillessSlowpokeScript:
-	faceplayer
-	opentext
-	writetext SlowpokeWellB1FTaillessSlowpokeText
-	cry SLOWPOKE
 	waitbutton
 	closetext
 	end
@@ -336,9 +339,25 @@ SlowpokeWellB1FSlowpokeMailText:
 	cont "stimuli."
 	done
 
-SlowpokeWellB1FTaillessSlowpokeText:
-	text "SLOWPOKE..."
-	done
+SlowpokeWellB1FFieldMon1Script:
+	cry SLOWPOKE
+	pause 15
+	loadwildmon SLOWPOKE, 14
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear SLOWPOKEWELLB1F_FIELDMON_1
+	end
+
+SlowpokeWellB1FFieldMon2Script:
+	cry STARYU
+	pause 15
+	loadwildmon STARYU, 15
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear SLOWPOKEWELLB1F_FIELDMON_2
+	end
 
 SlowpokeWellB1F_MapEvents:
 	db 0, 0 ; filler
@@ -357,7 +376,9 @@ SlowpokeWellB1F_MapEvents:
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM2, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event 10,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  7,  4, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FSlowpokeWithMailScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
-	object_event  6,  2, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FTaillessSlowpokeScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
+	object_event  6,  2, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FFieldMon1Script, SLOWPOKEWELLB1F_FIELDMON_1
 	object_event 16, 14, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FKurtScript, EVENT_SLOWPOKE_WELL_KURT
 	object_event  3,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FBoulder, -1
 	object_event 10,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION
+	object_event 14, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FFieldMon2Script, SLOWPOKEWELLB1F_FIELDMON_2
+

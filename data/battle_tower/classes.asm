@@ -8,7 +8,7 @@ BattleTowerTrainers:
 	db "FREDA@@@@@", KIMONO_GIRL
 	db "JAMES@@@@@", POKEMANIAC
 	db "CATHERINE@", LASS
-	db "ADAM@@@@@@", PSYCHIC_T
+	db "ADAM@@@@@@", COOLTRAINERM
 	db "PETER@@@@@", POKEFANM
 	db "LIZ@@@@@@@", POKEFANF
 	db "BOBBY@@@@@", GENTLEMAN
@@ -19,7 +19,7 @@ BattleTowerTrainers:
 	db "BEN@@@@@@@", FISHER
 	db "JOSHUA@@@@", BIKER
 	db "ZAC@@@@@@@", BUG_CATCHER
-	db "EVE@@@@@@@", SWIMMERF
+	db "EVE@@@@@@@", PICNICKER
 	db "KRISTY@@@@", BEAUTY
 	db "CARLA@@@@@", PICNICKER
 	db "HOLLY@@@@@", LASS
@@ -28,13 +28,13 @@ BattleTowerTrainers:
 	db "MAURO@@@@@", SCIENTIST
 	db "LARMOUR@@@", YOUNGSTER
 	db "KIRK@@@@@@", SAILOR
-	db "DARREN@@@@", COOLTRAINERM
+	db "DARREN@@@@", SCHOOLBOY
 	db "LUKE@@@@@@", SUPER_NERD
 	db "IAN@@@@@@@", BLACKBELT_T
 	db "JONATHAN@@", SAGE
 	db "KRISSE@@@@", LASS
 	db "JULIA@@@@@", BEAUTY
-	db "REBECCA@@@", SWIMMERF
+	db "RACHEL@@@@", SWIMMERF
 	db "ASHLEY@@@@", FISHER
 	db "MEREDITH@@", COOLTRAINERF
 	db "GERRY@@@@@", OFFICER
@@ -44,7 +44,7 @@ BattleTowerTrainers:
 	db "FREDA@@@@@", KIMONO_GIRL
 	db "JAMES@@@@@", POKEMANIAC
 	db "CATHERINE@", LASS
-	db "ADAM@@@@@@", PSYCHIC_T
+	db "ADAM@@@@@@", COOLTRAINERM
 	db "PETER@@@@@", POKEFANM
 	db "LIZ@@@@@@@", POKEFANF
 	db "BOBBY@@@@@", GENTLEMAN
@@ -55,7 +55,7 @@ BattleTowerTrainers:
 	db "BEN@@@@@@@", FISHER
 	db "JOSHUA@@@@", BIKER
 	db "ZAC@@@@@@@", BUG_CATCHER
-	db "EVE@@@@@@@", SWIMMERF
+	db "EVE@@@@@@@", PICNICKER
 	db "KRISTY@@@@", BEAUTY
 	db "CARLA@@@@@", PICNICKER
 	db "HOLLY@@@@@", LASS
@@ -64,13 +64,13 @@ BattleTowerTrainers:
 	db "MAURO@@@@@", SCIENTIST
 	db "LARMOUR@@@", YOUNGSTER
 	db "KIRK@@@@@@", SAILOR
-	db "DARREN@@@@", COOLTRAINERM
+	db "DARREN@@@@", SCHOOLBOY
 	db "LUKE@@@@@@", SUPER_NERD
 	db "IAN@@@@@@@", BLACKBELT_T
 	db "JONATHAN@@", SAGE
 	db "KRISSE@@@@", LASS
 	db "JULIA@@@@@", BEAUTY
-	db "REBECCA@@@", SWIMMERF
+	db "RACHEL@@@@", SWIMMERF
 	db "ASHLEY@@@@", FISHER
 	db "MEREDITH@@", COOLTRAINERF
 	db "GERRY@@@@@", OFFICER

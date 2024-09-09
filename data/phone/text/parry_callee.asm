@@ -12,9 +12,7 @@ ParryGreetDayText:
 
 ParryAnswerPhoneNiteText:
 	text "Hello."
-	line "It's @"
-	text_ram wStringBuffer3
-	text "!"
+	line "It's PARRY!"
 
 	para "I'm just setting"
 	line "up camp."
@@ -23,11 +21,9 @@ ParryAnswerPhoneNiteText:
 ParryGreetText:
 ParryGreetNiteText:
 	text "Hello."
-	line "It's @"
-	text_ram wStringBuffer3
-	text "!"
+	line "It's PARRY!"
 
-	text "I'm just setting"
+	para "I'm just setting"
 	line "up camp."
 	done
 

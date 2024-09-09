@@ -14,6 +14,7 @@
     const ROUTE34_JESSIE
     const ROUTE34_JAMES
     const ROUTE34_MEOWTH
+    const ROUTE34_FIELDMON_4
 
 Route34_MapScripts:
 	def_scene_scripts
@@ -23,6 +24,11 @@ Route34_MapScripts:
 
 .EggCheckCallback:
     appear ROUTE34_FIELDMON_3
+    appear ROUTE34_FIELDMON_4
+    random 3
+    ifequal 1, .cont
+    disappear ROUTE34_FIELDMON_4
+.cont
     checkevent EVENT_BEAT_MEOWTH
     iffalse .noTeamRocket
     checkevent EVENT_CLEARED_RADIO_TOWER
@@ -780,6 +786,17 @@ Route34FieldMon3Script:
 	disappear ROUTE34_FIELDMON_3
 	end
 
+Route34FieldMon4Script:
+	faceplayer
+	cry ABRA
+	pause 15
+	loadwildmon ABRA, 12
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE34_FIELDMON_4
+	end
+
 Route34James:
     jumptextfaceplayer Route34JamesText
 
@@ -859,3 +876,5 @@ Route34_MapEvents:
 	object_event 4, 22, SPRITE_ROCKET, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34James, EVENT_TEMP_EVENT_1
 	object_event 4, 23, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Jessie, EVENT_TEMP_EVENT_2
 	object_event 5, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Meowth, EVENT_TEMP_EVENT_3
+	object_event 19,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34FieldMon4Script, EVENT_FIELD_MON_4
+

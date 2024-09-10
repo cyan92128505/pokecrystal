@@ -1713,7 +1713,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, EEVEE
+	db 70, EEVEE
 	db 70, STARAPTOR
 	db 72, GALVANTULA
 	db 72, VOLCARONA
@@ -1721,7 +1721,7 @@ JohtoGrassWildMons:
 	db 75, SCEPTILE
 	db 80, GENESECT
 	; day
-	db 30, EEVEE
+	db 70, EEVEE
 	db 70, STARAPTOR
 	db 72, GALVANTULA
 	db 72, VOLCARONA

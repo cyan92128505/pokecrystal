@@ -11,15 +11,16 @@ Route2GateScientistScript:
 	jumptextfaceplayer Route2GateScientistText
 
 Route2GateScientistText:
-	text "The commoners"
-	line "don't understand."
-	para "The real crime"
-	line "would be not to"
-	cont "finish what we"
-	cont "have started."
-	para "But the lab, it's"
-	line "sealed off, and"
-	cont "for good reason."
+	text "Cosmic DNA started"
+	line "biogenesis on this"
+	cont "planet."
+	para "We were so close"
+	line "to unlocking the"
+	cont "secrets to life."
+	para "But now it's all"
+	line "sealed away in the"
+	cont "lab."
+	para "For good reason."
 	done
 
 Kim:

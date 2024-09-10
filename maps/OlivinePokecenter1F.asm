@@ -33,19 +33,17 @@ OlivinePokecenter1FFisherText:
 	done
 
 OlivinePokecenter1FTeacherText:
-	text "Do you know"
-	line "which types STEEL"
-	cont "is weak to?"
-
-	para "I now know they"
-	line "are not weak to"
-	cont "GRASS."
-
-	para "I tried to fight"
-	line "JASMINE but was"
-	cont "unable to do"
-	cont "any damage to"
-	cont "her #MON."
+	text "A retired business"
+	line "man lives behind"
+	cont "the lighthouse."
+	para "DICK JONES is his"
+	line "name."
+	para "He is trying to"
+	line "trade his"
+	cont "METAGROSS."
+	para "He doesn't tell"
+	line "people it is..."
+	para "Insane."
 	done
 
 OlivinePokecenter1F_MapEvents:

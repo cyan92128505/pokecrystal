@@ -109,6 +109,12 @@ BillTakeThisEeveeText:
 	line "interesting"
 	cont "#MON for you."
 
+	para "I got it from the"
+	line "GAME CORNER."
+
+	para "But I'll give it"
+	line "to you for free!"
+
 	para "Can I count on you"
 	line "to look after it"
 	cont "<PLAYER>?"

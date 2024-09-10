@@ -2069,6 +2069,7 @@ PorygonEvosAttacks:
 	db 9, AGILITY
 	db 12, PSYBEAM
 	db 20, RECOVER
+	db 24, DEFENSE_CURL
 	db 32, LOCK_ON
 	db 36, ZAP_CANNON
 	db 41, TRI_ATTACK

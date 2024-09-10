@@ -28,12 +28,17 @@ PewterPokecenter1FBugCatcherScript:
 	jumptextfaceplayer PewterPokecenter1FBugCatcherText
 
 Chris:
-	faceplayer
-	opentext
-	trade NPC_TRADE_CHRIS
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer PewterPokecenter1FChrisText
+
+PewterPokecenter1FChrisText:
+    text "Cough..."
+    line "Cough cough!"
+    cont "...."
+    para "Get..."
+    para "COUGH!..."
+    para "Away from me!"
+    para ".... Uhhhhh.."
+    done
 
 PewterPokecenter1FTeacherText:
 	text "I often wonder"

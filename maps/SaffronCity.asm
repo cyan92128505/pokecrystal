@@ -66,7 +66,12 @@ SaffronCityFisherScript:
 	end
 
 SaffronCityYoungster1Script:
-	jumptextfaceplayer SaffronCityYoungster1Text
+	faceplayer
+	opentext
+	trade NPC_TRADE_CHRIS
+	waitbutton
+	closetext
+	end
 
 SaffronCityYoungster2Script:
 	jumptextfaceplayer SaffronCityYoungster2Text
@@ -209,7 +214,7 @@ SaffronCityFisherText_BeatWallace:
 	line "invaded it was"
 	cont "LANCE saving us."
 	
-	para "He was a young man."
+	para "He was young then."
 	
 	para "I remember the sky"
 	line "igniting and a"
@@ -220,21 +225,6 @@ SaffronCityFisherText_BeatWallace:
 	para "But I hear you"
 	line "were even more"
 	cont "impressive!"
-	done
-
-SaffronCityYoungster1Text:
-	text "Hey listen."
-	
-	para "Anything you"
-	line "need I can get it."
-	
-	para "You need some"
-	line "RARE CANDY!"
-	
-	para "Not a problem."
-	
-	para "For the right"
-	line "price."
 	done
 
 SaffronCityYoungster2Text:
@@ -539,7 +529,7 @@ SaffronCity_MapEvents:
 	object_event 32,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
 	object_event 20, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
 	object_event 27, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
-	object_event 15, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
+	object_event 15, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 29,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

@@ -1,9 +1,9 @@
 GOLDENRODGAMECORNER_TM25_COINS EQU 2500
 GOLDENRODGAMECORNER_TM14_COINS EQU 2500
 GOLDENRODGAMECORNER_TM38_COINS EQU 2500
-GOLDENRODGAMECORNER_ABRA_COINS      EQU 1111 ; WOBBUFFET
-GOLDENRODGAMECORNER_CUBONE_COINS    EQU 2222 ; PORYGON
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3333 ; BELDUM
+GOLDENRODGAMECORNER_ABRA_COINS      EQU 1111 ; EEVEE
+GOLDENRODGAMECORNER_CUBONE_COINS    EQU 3333 ; PORYGON
+GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 6666 ; SMEARGLE
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -190,16 +190,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
+	getmonname STRING_BUFFER_3, EEVEE
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval WOBBUFFET
+	setval EEVEE
 	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 20
+	givepoke EEVEE, 25
 	takecoins GOLDENRODGAMECORNER_ABRA_COINS
 	sjump .loop
 
@@ -217,7 +217,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	setval PORYGON
 	special GameCornerPrizeMonCheckDex
-	givepoke PORYGON, 20
+	givepoke PORYGON, 25
 	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
 	sjump .loop
 
@@ -226,16 +226,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, BELDUM
+	getmonname STRING_BUFFER_3, SMEARGLE
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval BELDUM
+	setval SMEARGLE
 	special GameCornerPrizeMonCheckDex
-	givepoke BELDUM, 20
+	givepoke SMEARGLE, 25
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 
@@ -248,9 +248,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "WOBBUFFET 1111@"
-	db "PORYGON   2222@"
-	db "BELDUM    3333@"
+	db "EEVEE     1111@"
+	db "PORYGON   3333@"
+	db "SMEARGLE  6666@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPharmacistScript:

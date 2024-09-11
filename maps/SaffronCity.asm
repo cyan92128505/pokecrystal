@@ -68,10 +68,55 @@ SaffronCityFisherScript:
 SaffronCityYoungster1Script:
 	faceplayer
 	opentext
+	checkevent EVENT_MILTANK_TRADE
+	iftrue .tradeDone
+	writetext PartakeText
+	yesorno
+	iffalse .no
 	trade NPC_TRADE_CHRIS
 	waitbutton
 	closetext
+	setevent EVENT_MILTANK_TRADE
 	end
+.no
+    writetext PartakeRefuseText
+    waitbutton
+    closetext
+    end
+.tradeDone
+    writetext PartakenText
+    waitbutton
+    closetext
+    end
+
+PartakeText:
+	text "You look like a"
+	line "person of refined"
+	cont "tastes."
+	para "I'm in the market"
+	line "for a"
+	cont "particular..."
+	para "Exchange."
+	para "Would you be"
+	line "willing to..."
+	para "Partake?"
+	done
+
+PartakeRefuseText:
+	text "If you get bored"
+	line "you know where to"
+	cont "come."
+	done
+
+PartakenText:
+	text "Our exchange was"
+	line "the best decision"
+	cont "I've ever made."
+	para "I hope you have"
+	line "found equal..."
+	para "Satisfaction."
+	done
+
 
 SaffronCityYoungster2Script:
 	jumptextfaceplayer SaffronCityYoungster2Text
@@ -529,7 +574,7 @@ SaffronCity_MapEvents:
 	object_event 32,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerMScript, -1
 	object_event 20, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityCooltrainerFScript, -1
 	object_event 27, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityFisherScript, -1
-	object_event 15, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
+	object_event 15, 19, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 29,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

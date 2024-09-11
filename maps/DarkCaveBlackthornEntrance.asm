@@ -22,11 +22,21 @@ DarkCaveBlackthornEntrance_MapScripts:
     endcallback
 
 GiratinaScript:
-	opentext
-    checkevent EVENT_CAUGHT_RAYQUAZA
+	callasm IsArceusInParty
+	iftrue .arceus
+	callasm IsRayquazaInParty
 	iffalse .noRayquaza
+.rayquaza
+    opentext
 	writetext GiratinaPlayerHasRayquazaText
-	waitbutton
+	sjump .battle
+.arceus
+	opentext
+    ;checkevent EVENT_CAUGHT_RAYQUAZA
+	;iffalse .noRayquaza
+	writetext GiratinaPlayerHasArceusText
+.battle
+    waitbutton
 	cry GIRATINA
 	pause 15
 	closetext
@@ -70,7 +80,7 @@ GiratinaIntroText:
     line "ruler banished"
     cont "me for daring"
     cont "to question his"
-    cont "devine morality."
+    cont "divine morality."
 
     para "We are all"
     line "fallen beings"
@@ -112,6 +122,20 @@ GiratinaIntroText:
     para "Bring me"
     line "RAYQUAZA!"
     done
+
+GiratinaPlayerHasArceusText:
+	text "Impossible!"
+	para "Salvation preserve"
+	line "me!"
+	para "ARCEUS!"
+	para "Thine light doth"
+	line "wither my petty"
+	cont "temptations."
+	para "Thine is the"
+	line "kingdom."
+	para "Deliver me from"
+	line "evil!"
+	done
 
 GiratinaPlayerHasRayquazaText:
     text "Thou hast done"
@@ -312,6 +336,8 @@ RematchRefuseTextDarkCaveXehanort:
 GiratinaBarrierScript:
     callasm IsDarkraiInParty
     iftrue .unblock
+    callasm IsArceusInParty
+    iftrue .unblock
     opentext
     writetext BeGoneText
     waitbutton
@@ -350,6 +376,46 @@ IsDarkraiInParty:
     ld [wScriptVar], a
     ret
 
+IsArceusInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp ARCEUS
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
+IsRayquazaInParty:
+    ld a, [wPartyCount]
+    ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp RAYQUAZA
+	jr z, .found
+	dec b
+	jr z, .notFound
+	jr .loop
+.notFound
+    xor a
+    ld [wScriptVar], a
+    ret
+.found
+    ld a, 1
+    ld [wScriptVar], a
+    ret
+
 BeGoneText:
     text "A powerful"
     line "darkness overcomes"
@@ -365,8 +431,8 @@ DarkraiNeededText:
     done
 
 DarkraiUnblocksText:
-    text "DARKRAI reveals"
-    line "the path!"
+    text "The path is"
+    line "revealed!"
     done
 
 DarkCaveBlackthornEntrance_MapEvents:

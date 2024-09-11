@@ -638,9 +638,8 @@ ManorDS2:
 ManorDS2Text:
 	text "Looks like the"
 	line "last game played"
-	cont "was Dark Souls 2."
-	para "Some strange"
-	line "people live here!"
+	cont "was Elden Ring."
+	para "Makes sense."
 	done
 
 ManorFF7R:
@@ -673,6 +672,20 @@ ManorRC2Text:
 	cont "Commando."
 	para "Now that's a good"
 	line "game!"
+	done
+
+ManorCheese:
+    opentext
+    writetext ManorCheeseText
+    waitbutton
+    closetext
+    end
+
+ManorCheeseText:
+	text "It's full of"
+	line "different"
+	cont "varieties of"
+	cont "cheese!"
 	done
 
 ManorFact1:
@@ -837,7 +850,7 @@ ManorFact1Text:
 
 ManorFact2Text:
 	text "All new maps are"
-	line "coded as an indoor"
+	line "coded as indoor"
 	cont "maps because the"
 	cont "outdoor sprite"
 	cont "system is an"
@@ -895,7 +908,7 @@ ManorFact6Text:
 
 ManorFact7Text:
 	text "This romhack took"
-	line "about 2 years in"
+	line "over 2 years in"
 	cont "total to create."
 	para "I had my first"
 	line "child and got"
@@ -908,19 +921,20 @@ ManorFact7Text:
 	done
 
 ManorFact8Text:
-	text "Battles with"
-	line "aggressive"
-	cont "overworld #MON"
-	cont "turn off HAND OF"
-	cont "GOD automatically."
-	para "This prevents some"
-	line "nasty bugs as"
-	cont "these battles are"
-	cont "internally treated"
-	cont "as trainer battles"
-	cont "and would override"
-	cont "the players team"
-	cont "with empty data."
+	text "GIRATINA has"
+	line "unique dialog if"
+	cont "the player has"
+	cont "ARCEUS in their"
+	cont "party."
+	para "ARCEUS can also"
+	line "reveal the path to"
+	cont "GIRATINA."
+	para "This is inspired"
+	line "by Final Fantasy 9"
+	cont "where Hades has"
+	cont "unique dialog if"
+	cont "the player has"
+	cont "defeated Ozma."
 	done
 
 ManorFact9Text:
@@ -1093,9 +1107,9 @@ ManorInside_MapEvents:
 	warp_event  8,  19, MANOR_OUTSIDE, 3
 	warp_event  9,  19, MANOR_OUTSIDE, 3
 	warp_event  10,  12, MANOR_INSIDE, 4
-    warp_event  10,  24, MANOR_INSIDE, 3
-    warp_event  7,  12, MANOR_INSIDE, 6
-    warp_event  7,  0, MANOR_INSIDE, 5
+	warp_event  10,  24, MANOR_INSIDE, 3
+	warp_event  7,  12, MANOR_INSIDE, 6
+	warp_event  7,  0, MANOR_INSIDE, 5
 
 	def_coord_events
 
@@ -1108,6 +1122,7 @@ ManorInside_MapEvents:
 	bg_event  3, 5, BGEVENT_READ, ManorUnused
 	bg_event  15, 26, BGEVENT_READ, ManorFF7R
 	bg_event  17, 2, BGEVENT_READ, ManorRC2
+	bg_event 16, 13, BGEVENT_READ, ManorCheese
 
 	bg_event  5, 13, BGEVENT_READ, ManorFact1
 	bg_event  4, 13, BGEVENT_READ, ManorFact2

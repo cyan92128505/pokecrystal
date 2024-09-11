@@ -50,12 +50,16 @@ GoldenrodDeptStore5FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore5FLassText
 
 Mike:
-	faceplayer
-	opentext
-	trade NPC_TRADE_MIKE
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer MikeText
+
+MikeText:
+	text "The CELADON DEPT"
+	line "has way more TMs"
+	cont "than this!"
+	para "This place doesn't"
+	line "even have HYPER"
+	cont "BEAM."
+	done
 
 GoldenrodDeptStore5FPokefanMScript:
 	jumptextfaceplayer GoldenrodDeptStore5FPokefanMText

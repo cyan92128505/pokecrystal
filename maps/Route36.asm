@@ -15,6 +15,7 @@
     const ROUTE36_FIELDMON_5
     const ROUTE36_FIELDMON_6
     const ROUTE36_CRYSTAL
+    const ROUTE36_DRACULA
 
 Route36_MapScripts:
 	def_scene_scripts
@@ -694,6 +695,14 @@ Route36FieldMon6Script:
 	disappear ROUTE36_FIELDMON_6
 	end
 
+Dracula:
+	faceplayer
+	opentext
+	trade NPC_TRADE_MIKE
+	waitbutton
+	closetext
+	end
+
 Route36CrystalScript:
     checkevent EVENT_BEAT_MORTY
     iftrue .end
@@ -859,4 +868,5 @@ Route36_MapEvents:
 	object_event 26, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6
 
 	object_event 30,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 12,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Dracula, -1
 

@@ -1594,8 +1594,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db PORYGONZ
-	db EXPERT_BELT
-	db TRI_ATTACK, DARK_PULSE, THUNDERBOLT, ICE_BEAM
+	db CHOICE_SPECS
+	db HYPER_BEAM, DARK_PULSE, THUNDERBOLT, ICE_BEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -1605,7 +1605,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 6, 15, 15, 15 ; DVs
-	db 15, 15, 15, 10 ; PP
+	db 10, 15, 15, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level

@@ -167,5 +167,19 @@ It uses all these to make decisions, take these moves for example
 
 <img src="/screenshots/mark.png" width="150" height="150" />    <img src="/screenshots/mewtwo.png" width="150" height="150" />    <img src="/screenshots/arceus.png" width="150" height="150" />
 
+## Cheat Codes
+
+Note - I would recommend playing the game at least once without these.
+
+Change first item sold in Marts
+- Master Ball: 0101FCD0
+- Rare Candy: 0120FCD0
+- Ambrosia: 018BFCD0
+
+Infinite Money:
+- 010F40D8
+- 014241D8
+- 013F42D8
+
 
     

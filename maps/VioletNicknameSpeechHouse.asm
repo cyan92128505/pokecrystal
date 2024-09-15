@@ -39,6 +39,13 @@ VioletNicknameSpeechHouseTeacherText:
 
 	para "But they don't"
 	line "always appear."
+
+	para "You can see this"
+	line "alternate colour"
+	cont "in your #DEX"
+	cont "by pressing"
+	cont "SELECT."
+	done
 	done
 
 VioletNicknameSpeechHouseLassText:

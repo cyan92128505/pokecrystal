@@ -2712,9 +2712,9 @@ TogekissEvosAttacks:
 	db 12, ANCIENTPOWER
 	db 18, DRAIN_KISS
 	db 21, ENCORE
-	db 25, BODY_SLAM
-	db 28, SAFEGUARD
-	db 30, EXTREMESPEED
+	db 25, SAFEGUARD
+	db 28, EXTREMESPEED
+	db 30, BODY_SLAM
 	db 32, AURA_SPHERE
 	db 35, SOFTBOILED
 	db 40, AIR_SLASH
@@ -3641,7 +3641,6 @@ MiltankEvosAttacks:
 	db 26, ROLLOUT
 	db 30, ZEN_HEADBUTT
 	db 35, BODY_SLAM
-	db 40, MILK_DRINK
 	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 

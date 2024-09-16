@@ -1855,7 +1855,7 @@ BattleTowerMons:
 
 	db STEELIX
 	db LEFTOVERS
-	db EARTHQUAKE, IRON_HEAD, CRUNCH, ROCK_SLIDE
+	db EARTHQUAKE, IRON_HEAD, ROCK_SLIDE, CURSE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -1865,7 +1865,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 40000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 15, 15, 15 ; PP
+	db 10, 15, 15, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level

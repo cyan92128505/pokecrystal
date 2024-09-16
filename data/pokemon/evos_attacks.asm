@@ -1431,6 +1431,7 @@ OnixEvosAttacks:
 	db 31, BODY_SLAM
 	db 35, CRUNCH
 	db 40, EARTHQUAKE
+	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
@@ -3173,6 +3174,7 @@ SteelixEvosAttacks:
 	db 30, IRON_HEAD
 	db 35, CRUNCH
 	db 40, EARTHQUAKE
+	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 GibleEvosAttacks:

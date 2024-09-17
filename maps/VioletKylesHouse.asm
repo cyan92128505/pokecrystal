@@ -13,10 +13,23 @@ VioletKylesHousePokefanMScript:
 Kyle:
 	faceplayer
 	opentext
+	writetext violetTradeText
+	waitbutton
 	trade NPC_TRADE_KYLE
 	waitbutton
 	closetext
 	end
+
+ violetTradeText:
+ 	text "Only little kids"
+ 	line "think DRAGON"
+ 	cont "#MON are cool."
+ 	para "What is this the"
+ 	line "late 90s!"
+ 	para "DARK types don't"
+ 	line "conform, they are"
+ 	cont "truly cool."
+ 	done
 
 VioletKylesHousePokefanMText:
 	text "My son used to"

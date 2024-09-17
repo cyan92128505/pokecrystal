@@ -68,23 +68,15 @@ SaffronCityFisherScript:
 SaffronCityYoungster1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_MILTANK_TRADE
-	iftrue .tradeDone
 	writetext PartakeText
 	yesorno
 	iffalse .no
 	trade NPC_TRADE_CHRIS
 	waitbutton
 	closetext
-	setevent EVENT_MILTANK_TRADE
 	end
 .no
     writetext PartakeRefuseText
-    waitbutton
-    closetext
-    end
-.tradeDone
-    writetext PartakenText
     waitbutton
     closetext
     end
@@ -107,16 +99,6 @@ PartakeRefuseText:
 	line "you know where to"
 	cont "come."
 	done
-
-PartakenText:
-	text "Our exchange was"
-	line "the best decision"
-	cont "I've ever made."
-	para "I hope you have"
-	line "found equal..."
-	para "Satisfaction."
-	done
-
 
 SaffronCityYoungster2Script:
 	jumptextfaceplayer SaffronCityYoungster2Text

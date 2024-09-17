@@ -9,10 +9,21 @@ OlivineTimsHouse_MapScripts:
 Tim:
 	faceplayer
 	opentext
+	writetext metaTradeText
+	waitbutton
 	trade NPC_TRADE_TIM
 	waitbutton
 	closetext
 	end
+
+metaTradeText:
+	text "We all need to"
+	line "protect ourselves"
+	cont "in these times."
+	para "A state of the art"
+	line "Enforcement Droid"
+	cont "is what you need."
+	done
 
 TimsHouseBookshelf:
 	jumpstd MagazineBookshelfScript

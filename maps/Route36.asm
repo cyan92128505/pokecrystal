@@ -698,10 +698,23 @@ Route36FieldMon6Script:
 Dracula:
 	faceplayer
 	opentext
+	writetext gligarTradeText
+	waitbutton
 	trade NPC_TRADE_MIKE
 	waitbutton
 	closetext
 	end
+
+gligarTradeText:
+	text "Ah, human blood"
+	line "doth course thou"
+	cont "veins."
+	para "Such enticing"
+	line "scent."
+	para "I wish my son"
+	line "might learn more"
+	cont "of your world."
+	done
 
 Route36CrystalScript:
     checkevent EVENT_BEAT_MORTY

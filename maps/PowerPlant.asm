@@ -202,10 +202,21 @@ PowerPlantManager:
 Forest:
 	faceplayer
 	opentext
+	writetext genesectTradeText
+	waitbutton
 	trade NPC_TRADE_FOREST
 	waitbutton
 	closetext
 	end
+
+genesectTradeText:
+	text "Listen!"
+	para "I am from the"
+	line "future."
+	para "You must protect"
+	line "yourself from the"
+	cont "AI overlords."
+	done
 
 PowerPlantBookshelf:
 	jumpstd DifficultBookshelfScript

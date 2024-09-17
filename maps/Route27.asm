@@ -73,7 +73,7 @@ FirstStepIntoKantoScene_Continue:
 	end
 
 Route27FisherScript:
-	jumptextfaceplayer Route27FisherText
+	jumptextfaceplayer Route27AfterFisherText
 
 TrainerBirdKeeperJose2:
 	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJoseSeenText, BirdKeeperJoseBeatenText, 0, .Script
@@ -235,6 +235,16 @@ Route27FisherText:
 	line "ahead."
 
 	para "Welcome to KANTO."
+	done
+
+Route27AfterFisherText:
+	text "We wont have any"
+	line "more undocumented"
+	cont "JOHTO immigrants"
+	cont "flood across our"
+	cont "undefended western"
+	cont "boarder."
+	para "Not on my watch!"
 	done
 
 CooltrainermBlakeSeenText:

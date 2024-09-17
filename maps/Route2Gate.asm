@@ -26,10 +26,24 @@ Route2GateScientistText:
 Kim:
 	faceplayer
 	opentext
+	writetext aeroTradeText
+	waitbutton
 	trade NPC_TRADE_KIM
 	waitbutton
 	closetext
 	end
+
+aeroTradeText:
+	text "My dear specimens"
+	line "were lost when"
+	cont "experiment 8472"
+	cont "gained"
+	cont "consciousness."
+	para "I saved one and it"
+	line "will never achieve"
+	cont "its full potential"
+	cont "with me."
+	done
 
 Route2Gate_MapEvents:
 	db 0, 0 ; filler

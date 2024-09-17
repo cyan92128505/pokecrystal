@@ -9,10 +9,21 @@ BlackthornEmysHouse_MapScripts:
 Emy:
 	faceplayer
 	opentext
+	writetext snorlaxTradeText
+	waitbutton
 	trade NPC_TRADE_EMY
 	waitbutton
 	closetext
 	end
+
+snorlaxTradeText:
+	text "Adjust your"
+	line "Mawashi and mount"
+	cont "the Dohyo you"
+	cont "Junokuchi Rikishi."
+	para "You face the"
+	line "Yokozuna."
+	done
 
 EmysHouseBookshelf:
 	jumpstd MagazineBookshelfScript

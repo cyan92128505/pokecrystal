@@ -33,7 +33,6 @@ GoldenrodGymWhitneyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WHITNEY
-	loadmem wLevelCap, 40
 	setevent EVENT_MADE_WHITNEY_CRY
 	setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
 	setevent EVENT_BEAT_BEAUTY_VICTORIA
@@ -65,6 +64,7 @@ GoldenrodGymWhitneyScript:
 	iftrue .GotAttract
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
+	loadmem wLevelCap, 40
 	writetext WhitneyWhatDoYouWantText
 	promptbutton
 	waitsfx

@@ -74,33 +74,40 @@ GoldenrodDeptStoreB1FUltraBall:
 	itemball PP_UP
 
 GoldenrodDeptStoreB1FBlackBelt1Text:
-	text "Hey, kid! You're"
-	line "holding us up!"
-
-	para "Our policy is to"
-	line "work behind the"
-
-	para "scenes where no"
-	line "one can see us!"
+	text "I'd really"
+	line "appreciate a job"
+	cont "where I get to use"
+	cont "my brain for a"
+	cont "change."
+	para "Now back to"
+	line "pushing the heavy"
+	cont "objects."
 	done
 
 GoldenrodDeptStoreB1FBlackBelt2Text:
-	text "I lose my passion"
-	line "for work if some-"
-	cont "one's watching."
-
-	para "Come on, kid,"
-	line "scoot!"
+	text "Hey kid you want"
+	line "to be strong like"
+	cont "me?"
+	para "I can hook you up"
+	line "with my vitamin"
+	cont "supplier."
+	para "Nobody is natty"
+	line "these days."
+	para "You know who to"
+	line "come to."
 	done
 
 GoldenrodDeptStoreB1FBlackBelt3Text:
-	text "Oohah! Oohah!"
-
-	para "The stuff on the"
-	line "ground's junk."
-
-	para "Take it if you"
-	line "want it!"
+	text "Hey you're a"
+	line "trainer!"
+	para "I used to be a"
+	line "trainer at CHUCKs"
+	cont "GYM in CIANWOOD."
+	para "I couldn't stand"
+	line "it!"
+	para "All they ever"
+	line "talked about was"
+	cont "Dragon Ball Z."
 	done
 
 GoldenrodDeptStoreB1FMachokeText:

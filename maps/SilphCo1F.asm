@@ -17,7 +17,7 @@ SilphCoOfficerScript:
 	iftrue .GotUpGrade
 	writetext SilphCoOfficerText
 	promptbutton
-	verbosegiveitem CHOICE_SPECS
+	verbosegiveitem EXPERT_BELT
 	iffalse .NoRoom
 	setevent EVENT_GOT_UP_GRADE
 .GotUpGrade:

@@ -2640,13 +2640,13 @@ LitwickEvosAttacks:
 	db 18, FIRE_SPIN
 	db 24, NIGHT_SHADE
 	db 28, PAIN_SPLIT
-	db 31, FLAMETHROWER
-	db 36, SHADOW_BALL
-	db 46, FIRE_BLAST
+	db 31, SHADOW_BALL
+	db 36, FLAMETHROWER
+	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 LampentEvosAttacks:
-    db EVOLVE_LEVEL, 45, CHANDELURE
+    db EVOLVE_LEVEL, 40, CHANDELURE
 	db 0 ; no more evolutions
 	db 1, EMBER
 	db 1, LICK
@@ -2654,9 +2654,9 @@ LampentEvosAttacks:
 	db 18, FIRE_SPIN
 	db 24, NIGHT_SHADE
 	db 28, PAIN_SPLIT
-	db 31, FLAMETHROWER
-	db 36, SHADOW_BALL
-	db 46, FIRE_BLAST
+	db 31, SHADOW_BALL
+	db 36, FLAMETHROWER
+	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 ChandelureEvosAttacks:
@@ -2667,9 +2667,9 @@ ChandelureEvosAttacks:
 	db 18, FIRE_SPIN
 	db 24, NIGHT_SHADE
 	db 28, PAIN_SPLIT
-	db 31, FLAMETHROWER
-	db 36, SHADOW_BALL
-	db 46, FIRE_BLAST
+	db 31, SHADOW_BALL
+	db 36, FLAMETHROWER
+	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:

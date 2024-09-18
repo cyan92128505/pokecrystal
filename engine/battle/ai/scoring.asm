@@ -6752,14 +6752,7 @@ CheckUnownLetter:
 	ret
 
 ShadowTag:
-    ldh a, [hBattleTurn]
-	and a
-	ld hl, wPlayerSubStatus5
-	ld a, [wBattleMonSpecies]
-	jr nz, .done
-	ld hl, wEnemySubStatus5
 	ld a, [wEnemyMonSpecies]
-.done
     cp WOBBUFFET
     jr z, .trap
     cp CHANDELURE
@@ -6770,6 +6763,7 @@ ShadowTag:
     jr z, .trap
     ret
 .trap
+    ld hl, wEnemySubStatus5
 	bit SUBSTATUS_CANT_RUN, [hl]
 	ret nz
 	set SUBSTATUS_CANT_RUN, [hl]

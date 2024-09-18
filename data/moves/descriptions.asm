@@ -1178,8 +1178,8 @@ EncoreDescription:
 	line "peat 2-6 times.@"
 
 PursuitDescription:
-	db   "Heavily strikes"
-	line "switching #MON.@"
+	db   "Relentless fast"
+	line "strike.@"
 
 RapidSpinDescription:
 	db   "A high-speed"

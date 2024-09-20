@@ -2,6 +2,13 @@
 
 EncoreMoves:
 	db SWORDS_DANCE
+	db NASTY_PLOT
+	db CALM_MIND
+	db BULK_UP
+	db CURSE
+	db DRAGON_DANCE
+	db QUIVER_DANCE
+	db SHELL_SMASH
 	db WHIRLWIND
 	db LEER
 	db ROAR
@@ -19,7 +26,6 @@ EncoreMoves:
 	db DREAM_EATER
 	db POISON_GAS
 	db SPLASH
-	db SUPER_FANG
 	db SUBSTITUTE
 	db MIND_READER
 	db FLAME_WHEEL

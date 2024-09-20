@@ -2243,10 +2243,23 @@ AI_Smart_SpeedDownHit:
 	ret
 
 AI_Smart_Substitute:
+    ld a, [wEnemyMonSpecies]
+    cp COTTONEE
+    jr z, .skipSpeedCheck
+    cp WHIMSICOTT
+    jr z, .skipSpeedCheck
+    cp KLEFKI
+    jr z, .skipSpeedCheck
+    cp RIOLU
+    jr z, .skipSpeedCheck
+    cp MURKROW
+    jr z, .skipSpeedCheck
+
 ; discourage if Player will move first
     call DoesAIOutSpeedPlayer
     jr nc, .discourage
 
+.skipSpeedCheck
 ; if player has status moves then don't consider player damage
 	ld b, EFFECT_PARALYZE
 	call PlayerHasMoveEffect
@@ -2444,9 +2457,22 @@ AI_Smart_Counter:
 	ret
 
 AI_Smart_Encore:
+    ld a, [wEnemyMonSpecies]
+    cp COTTONEE
+    jr z, .skipSpeedCheck
+    cp WHIMSICOTT
+    jr z, .skipSpeedCheck
+    cp KLEFKI
+    jr z, .skipSpeedCheck
+    cp RIOLU
+    jr z, .skipSpeedCheck
+    cp MURKROW
+    jr z, .skipSpeedCheck
+
 	call DoesAIOutSpeedPlayer
 	jr nc, .discourage
 
+.skipSpeedCheck
 ; don't use if player already encored
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]

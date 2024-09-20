@@ -4591,6 +4591,8 @@ BattleTowerMons:
 	bigdw 188 ; SDef
 	db "RANTA-N@@@@"
 
+; ============ Final Trainer End - 16 mons ==============
+
 	db PINSIR
 	db SILVERPOWDER
 	db SHELL_SMASH, MEGAHORN, EARTHQUAKE, ROCK_SLIDE
@@ -4694,8 +4696,6 @@ BattleTowerMons:
 	bigdw 368 ; SAtk
 	bigdw 308 ; SDef
 	db "RANTA-N@@@@"
-
-; ============ Final Trainer End - 20 mons ==============
 
 	db SUICUNE
 	db LEFTOVERS

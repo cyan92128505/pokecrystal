@@ -163,10 +163,11 @@ LoadRandomBattleTowerMon:
     and a
     jr nz, .notMewtwo
     call Random
-    cp 50 percent
+    cp 25 percent
     jr c, .resample
+    ld a, b
 .notMewtwo
-    cp 20
+    cp 16
     jr nc, .resample
 
 .continue

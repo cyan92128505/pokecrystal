@@ -8,6 +8,10 @@ LakeOfRageHiddenPowerHouse_MapScripts:
 
 HiddenPowerGuy:
     setevent EVENT_MET_MAHOGANY_MURDERER
+    checkevent EVENT_BEAT_MAHOGANY_MURDERER
+    iftrue .beaten
+    jumptextfaceplayer HiFriendText
+.beaten
     jumptextfaceplayer DontLeaveText
 
 HiddenPowerHouseBookshelf:
@@ -114,6 +118,16 @@ DontLeaveText:
     para "Please don't"
     line "leave!"
     done
+
+HiFriendText:
+	text "Oh it's you, are"
+	line "you doing well?"
+	para "How about a drink?"
+	para "Hi if you have any"
+	line "friends you could"
+	cont "bring them around"
+	cont "here sometime..."
+	done
 
 MurderGivesThunderboltText:
     text "What are you"

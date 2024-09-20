@@ -130,7 +130,7 @@ NotInterestedText:
 LakeOfRageGrampsScript:
 	faceplayer
 	opentext
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
+	checkevent EVENT_LAKE_OF_RAGE_RED_GYARADOS
 	iftrue .ClearedRocketHideout
 	writetext LakeOfRageGrampsText
 	waitbutton

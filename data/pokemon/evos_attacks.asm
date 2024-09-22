@@ -2817,7 +2817,6 @@ PorygonzEvosAttacks:
 GenesectEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_LIFE
-	db 1, SCRATCH
 	db 14, METAL_CLAW
 	db 20, TRI_ATTACK
 	db 25, ANCIENTPOWER
@@ -2826,7 +2825,8 @@ GenesectEvosAttacks:
 	db 38, ZAP_CANNON
 	db 42, FLASH_CANNON
 	db 45, BUG_BUZZ
-	db 50, HYPER_BEAM
+	db 50, AGILITY
+	db 55, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:

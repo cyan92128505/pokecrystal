@@ -371,8 +371,8 @@ WifeIntroText:
 	line "plenty left to do,"
 	cont "come see us when"
 	cont "you're done."
-	para "Oh and ANDREWS"
-	line "brother is"
+	para "Oh and the"
+	line "brother in law is"
 	cont "here somewhere,"
 	cont "watch out for him."
 	done

@@ -37,13 +37,19 @@ CherrygroveEvolutionSpeechHouseYoungsterText:
 CherrygroveEvolutionSpeechHouseLassText:
 	text "When #MON"
 	line "gain enough EXP"
-	cont "they change form."
+	cont "they evolve."
 
-	para "One day I too"
-	line "may change form."
+	para "There are ways"
+	line "#MON can"
+	cont "evolve."
 
-	para "Then all will"
-	line "fear me...."
+	para "By leveling up."
+
+	para "By evolution"
+	line "stone."
+
+	para "Or by growing to"
+	line "love its trainer."
 	done
 
 CherrygroveEvolutionSpeechHouse_MapEvents:

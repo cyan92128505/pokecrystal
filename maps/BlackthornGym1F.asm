@@ -210,7 +210,7 @@ ClairWinText:
 	done
 
 ClairLoseText:
-    text "You're destiny"
+    text "Your destiny"
     line "was always to"
     cont "lose."
     done
@@ -219,7 +219,7 @@ ClairText_GoToDragonsDen:
 	text "You are the"
 	line "victor."
 
-	para "You're prowess at"
+	para "Your prowess at"
 	line "the art of battle"
 	cont "is evident."
 

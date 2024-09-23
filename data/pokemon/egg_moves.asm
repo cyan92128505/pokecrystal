@@ -29,14 +29,12 @@ CharmanderEggMoves:
 SquirtleEggMoves:
 	db MIRROR_COAT
 	db HAZE
-	db FORESIGHT
 	db FLAIL
 	db -1 ; end
 
 StarlyEggMoves:
 	db PURSUIT
 	db NIGHT_SLASH
-	db FORESIGHT
 	db -1 ; end
 
 RattataEggMoves:
@@ -129,7 +127,6 @@ PsyduckEggMoves:
 	db ICE_BEAM
 	db HYPNOSIS
 	db PSYBEAM
-	db FORESIGHT
 	db LIGHT_SCREEN
 	db FUTURE_SIGHT
 	db PSYCHIC_M
@@ -137,7 +134,6 @@ PsyduckEggMoves:
 
 ShroomishEggMoves:
 	db ROCK_SLIDE
-	db FORESIGHT
 	db MEDITATE
 	db COUNTER
 	db REVERSAL
@@ -209,9 +205,7 @@ SlowpokeEggMoves:
 	db -1 ; end
 
 MamoswineEggMoves:
-	db FORESIGHT
 	db MIRROR_MOVE
-	db GUST
 	db QUICK_ATTACK
 	db FLAIL
 	db -1 ; end
@@ -314,7 +308,6 @@ WeavileEggMoves:
 
 RhyperiorEggMoves:
 	db STOMP
-	db FORESIGHT
 	db FOCUS_ENERGY
 	db SAFEGUARD
 	db DISABLE
@@ -356,7 +349,6 @@ PinsirEggMoves:
 
 LaprasEggMoves:
 	db AURORA_BEAM
-	db FORESIGHT
 	db -1 ; end
 
 EeveeEggMoves:
@@ -382,7 +374,6 @@ GardevoirEggMoves:
 AerodactylEggMoves:
 	db WHIRLWIND
 	db PURSUIT
-	db FORESIGHT
 	db -1 ; end
 
 SnorlaxEggMoves:
@@ -409,7 +400,6 @@ ChimcharEggMoves:
 	db QUICK_ATTACK
 	db REVERSAL
 	db THRASH
-	db FORESIGHT
 	db SUBMISSION
 	db -1 ; end
 
@@ -465,7 +455,6 @@ LitwickEggMoves:
 TogepiEggMoves:
 	db MIRROR_MOVE
 	db PECK
-	db FORESIGHT
 	db FUTURE_SIGHT
 	db -1 ; end
 
@@ -492,7 +481,6 @@ MarillEggMoves:
 	db BELLY_DRUM
 	db PERISH_SONG
 	db SUPERSONIC
-	db FORESIGHT
 	db -1 ; end
 
 GenesectEggMoves:
@@ -567,7 +555,6 @@ HeracrossEggMoves:
 
 SneaselEggMoves:
 	db COUNTER
-	db FORESIGHT
 	db REFLECT
 	db BITE
 	db -1 ; end

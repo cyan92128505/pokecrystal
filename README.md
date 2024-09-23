@@ -181,5 +181,25 @@ Infinite Money:
 - 014241D8
 - 013F42D8
 
+## Acknowledgements
+
+Sprites
+- Rosehudson
+- Rangi
+- Solo
+- GoldZ
+- lakeofdance
+- Pokekoks
+- boonzeet  
+- Proyecto
+- Axel-Comics
+
+Music
+- Mmmmmm
+- ShockSlayer
+
+Code
+- All contributors to pret/pokecrytal tutorials
+
 
     

@@ -1,5 +1,14 @@
 BattleCommand_Transform:
 ; transform
+
+	call ClearLastMove
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_TRANSFORMED, [hl]
+	jp nz, BattleEffect_ButItFailed
+	call CheckHiddenOpponent
+	jp nz, BattleEffect_ButItFailed
+
     ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
@@ -11,13 +20,6 @@ BattleCommand_Transform:
     call BattleCommand_Protect
 .notDitto
 
-	call ClearLastMove
-	ld a, BATTLE_VARS_SUBSTATUS5_OPP
-	call GetBattleVarAddr
-	bit SUBSTATUS_TRANSFORMED, [hl]
-	jp nz, BattleEffect_ButItFailed
-	call CheckHiddenOpponent
-	jp nz, BattleEffect_ButItFailed
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimID + 1], a

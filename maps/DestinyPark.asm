@@ -589,7 +589,7 @@ MasterBlaineAfterBattleText:
 	done
 
 MasterBlaineLoseAfterBattleText:
-	text "You're fire is"
+	text "Your fire is"
 	line "either too wild or"
 	cont "too timid."
 	para "You must center"

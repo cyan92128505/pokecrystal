@@ -1147,7 +1147,7 @@ PonytaEvosAttacks:
 	db 23, FLAME_WHEEL
 	db 26, FIRE_SPIN
 	db 31, AGILITY
-	db 35, TAKE_DOWN
+	db 35, FLAMETHROWER
 	db 45, FIRE_BLAST
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -1161,9 +1161,9 @@ RapidashEvosAttacks:
 	db 19, STOMP
 	db 23, FLAME_WHEEL
 	db 26, FIRE_SPIN
-	db 30, AGILITY
+	db 30, MEGAHORN
 	db 35, POISON_JAB
-	db 40, MEGAHORN
+	db 40, FLAMETHROWER
 	db 45, FIRE_BLAST
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -1281,7 +1281,6 @@ MagnezoneEvosAttacks:
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, FORESIGHT
 	db 7, QUICK_ATTACK
 	db 13, BITE
 	db 18, LEECH_LIFE
@@ -2488,7 +2487,6 @@ HoothootEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 6, FORESIGHT
 	db 9, PECK
 	db 13, CONFUSION
 	db 16, HYPNOSIS
@@ -2503,7 +2501,6 @@ NoctowlEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 6, FORESIGHT
 	db 9, PECK
 	db 13, CONFUSION
 	db 16, HYPNOSIS
@@ -2943,7 +2940,6 @@ YanmaEvosAttacks:
 	db EVOLVE_LEVEL, 37, YANMEGA
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, FORESIGHT
 	db 1, GUST
 	db 7, QUICK_ATTACK
 	db 10, BITE

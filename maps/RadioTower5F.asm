@@ -177,12 +177,14 @@ RadioTower5FRocketBossScene:
     verbosegiveitem RAINBOW_WING
     setevent EVENT_GOT_RAINBOW_WING
     writetext RainbowWingTipsText
+    waitbutton
     sjump .continue
 
 .SilverItIs
     verbosegiveitem SILVER_WING
     setevent EVENT_GOT_SILVER_WING
     writetext SilverWingTipsText
+    waitbutton
 
 .continue
     writetext Need8BadgesText

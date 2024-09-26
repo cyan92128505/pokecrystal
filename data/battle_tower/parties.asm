@@ -2871,7 +2871,7 @@ BattleTowerMons:
 
 	db TOGEKISS
 	db LEFTOVERS
-	db NASTY_PLOT, THUNDER_WAVE, AIR_SLASH, ROOST
+	db CALM_MIND, THUNDER_WAVE, AIR_SLASH, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5453,7 +5453,7 @@ BattleTowerMons:
 
 	db TOGEKISS
 	db LEFTOVERS
-	db THUNDER_WAVE, AIR_SLASH, NASTY_PLOT, ROOST
+	db THUNDER_WAVE, AIR_SLASH, CALM_MIND, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

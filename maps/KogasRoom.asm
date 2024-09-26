@@ -8,7 +8,7 @@ KogasRoom_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .KogasRoomDoors
-	callback MAPCALLBACK_OBJECTS, .Weather
+	;callback MAPCALLBACK_OBJECTS, .Weather
 
 .LockDoor:
 	sdefer .KogasDoorLocksBehindYou
@@ -41,10 +41,10 @@ KogasRoom_MapScripts:
 	waitsfx
 	end
 
-.Weather:
-	setval WEATHER_RAIN
-	writemem wFieldWeather
-	endcallback
+;.Weather:
+;	setval WEATHER_RAIN
+;	writemem wFieldWeather
+;	endcallback
 
 AdamScript_Battle:
 	faceplayer

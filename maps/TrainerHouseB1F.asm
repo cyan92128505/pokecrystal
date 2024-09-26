@@ -2286,8 +2286,8 @@ BattleArcadeReceptionistScript:
 	writemem wOtherTrainerClass
     scall WhichVariantChoice
     ifequal TRUE, .MasterAdamPlayer
-	setval WEATHER_RAIN
-	writemem wFieldWeather
+	;setval WEATHER_RAIN
+	;writemem wFieldWeather
 	setval ADAM_ARCADE
 	sjump .AdamPlayerDone
 .MasterAdamPlayer
@@ -2302,8 +2302,8 @@ BattleArcadeReceptionistScript:
     iffalse .ChooseEnemyCharacter
     scall WhichVariantChoice
     ifequal TRUE, .MasterAdamEnemy
-	setval WEATHER_RAIN
-	writemem wFieldWeather
+	;setval WEATHER_RAIN
+	;writemem wFieldWeather
 	loadtrainer ADAM, ADAM_ARCADE
 	sjump .beginBattle
 .MasterAdamEnemy

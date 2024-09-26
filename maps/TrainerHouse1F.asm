@@ -49,14 +49,14 @@ TrainerHouse1FCooltrainerMText:
 	text "We must take the"
 	line "fight to them!"
 
-	para "Release a hord"
+	para "Release a hoard"
 	line "of TENTACOOL into"
 	cont "their water supply"
 	cont "and slowly poison"
 	cont "their population."
 
 	para "Then sell them"
-	line "an adictive drug"
+	line "an addictive drug"
 	cont "as an antidote."
 
 	para "When we have them"
@@ -70,16 +70,16 @@ TrainerHouse1FCooltrainerFText:
 	cont "in common."
 
 	para "Let's have a"
-	line "HOEN appreciaition"
+	line "HOEN appreciation"
 	cont "day where we"
 	cont "celebrate their"
 	cont "culture."
 
 	para "We can criminalise"
-	line "critisum of HOEN."
+	line "criticism of HOEN."
 
 	para "That would convey"
-	line "soladarity with"
+	line "solidarity with"
 	cont "our HOEN siblings."
 	done
 

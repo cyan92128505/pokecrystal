@@ -4471,7 +4471,7 @@ ShouldAIBoost:
 	jr c, .skipSturdySashCheck
 
     call DoesEnemyHaveIntactFocusSashOrSturdy
-    jr c, .boost
+    jp c, .boost
 
 .skipSturdySashCheck
     call CanPlayerKO
@@ -4523,9 +4523,23 @@ ShouldAIBoost:
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]
     cp EFFECT_HEAL
     jr z, .check2HKOMaxHp
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	and a
-	jr z, .check2HKO
+    cp EFFECT_MORNING_SUN
+    jr z, .check2HKOMaxHp
+    cp EFFECT_MOONLIGHT
+    jr z, .check2HKOMaxHp
+    cp EFFECT_SYNTHESIS
+    jr z, .check2HKOMaxHp
+
+    push hl
+    push de
+    push bc
+	ld hl, BoostingMoveEffects
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .check2HKO
 	jr .dontBoost
 .check2HKO
 	call CanAI2HKO

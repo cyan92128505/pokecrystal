@@ -180,6 +180,14 @@ BattleTurn:
 ; ==================================
     farcall ShadowTag
 
+; clear protect
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_PROTECT, [hl]
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	res SUBSTATUS_PROTECT, [hl]
+
 	call UpdateBattleMonInParty
 
 	farcall AIChooseMove
@@ -923,6 +931,10 @@ GetPlayerMovePriority:
 	cp MIRROR_COAT
 	jr z, .noPrankster
 	cp ROAR
+	jr z, .noPrankster
+	cp PROTECT
+	jr z, .noPrankster
+	cp ENDURE
 	jr z, .noPrankster
 
 ; DevNote - prankster

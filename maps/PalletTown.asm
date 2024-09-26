@@ -238,14 +238,7 @@ RematchRefuseTextAerith2:
 
 PalletTownCrystalScript1:
     showemote EMOTE_SHOCK, PLAYER, 15
-    applymovement PLAYER, PalletTownMovement_PlayerRight
-    sjump PalletTownCrystalScript
-.end
-    end
-
-PalletTownCrystalScript2:
-    showemote EMOTE_SHOCK, PLAYER, 15
-    turnobject PLAYER, DOWN
+    applymovement PLAYER, PalletTownMovement_PlayerLeft
     sjump PalletTownCrystalScript
 .end
     end
@@ -278,16 +271,18 @@ PalletTownCrystalScript:
 	special RestartMapMusic
 	end
 
-PalletTownMovement_PlayerRight:
-    step RIGHT
-    turn_head DOWN
+PalletTownMovement_PlayerLeft:
+    turn_head LEFT
     step_end
 
 PalletTownMovement_CrystalApproaches:
-    big_step UP
-    big_step UP
-    big_step UP
-    big_step UP
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step DOWN
+    big_step RIGHT
+    big_step RIGHT
     step_end
 
 PalletTownCrystalText_Intro:
@@ -344,7 +339,7 @@ Crystal6WinsText:
 
 PalletTownCrystalText_KeepItUp:
     text "The next time we"
-    line "see eachother we"
+    line "see each other we"
     cont "might be fighting"
     cont "not for fun, but"
     cont "our lives."
@@ -366,7 +361,7 @@ PalletTownCrystalText_KeepItUp:
 
 PalletTownMovement_CrystalLeaves:
     big_step LEFT
-    big_step UP
+    big_step LEFT
     big_step UP
     big_step UP
     big_step UP
@@ -386,8 +381,7 @@ PalletTown_MapEvents:
 	warp_event 12, 11, OAKS_LAB, 1
 
 	def_coord_events
-	coord_event 8,  2, SCENE_CUSTOM_1, PalletTownCrystalScript1
-	coord_event 9,  2, SCENE_CUSTOM_1, PalletTownCrystalScript2
+	coord_event 12,  12, SCENE_CUSTOM_1, PalletTownCrystalScript1
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign

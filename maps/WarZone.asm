@@ -59,6 +59,7 @@ WallaceScript:
 	setmapscene ROUTE_22, SCENE_CUSTOM_FINISHED
 	setmapscene VERMILION_CITY, SCENE_CUSTOM_FINISHED
 	setmapscene WAR_ZONE, SCENE_CUSTOM_FINISHED
+	setmapscene PALLET_TOWN, SCENE_FINISHED
 	clearevent EVENT_HOEN_INVASION_UNDERWAY
 	setval 0
     writemem wHoenInvasionUnderway

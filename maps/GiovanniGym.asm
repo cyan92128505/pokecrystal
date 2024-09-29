@@ -22,6 +22,8 @@ SaffronGymGiovanniScript:
 	opentext
 	writetext GiovanniFightDoneText
 	waitbutton
+	writetext GiovanniAfterBattleText
+	waitbutton
 	closetext
 	end
 .rematch
@@ -88,28 +90,29 @@ GiovanniFightDoneText:
     para "I have no Badge"
     line "to give you."
 
-    para "But you don't"
-    line "need such vapid"
-    cont "trinkets."
-
-    para "KANTO is safe"
-    line "with CHAMPIONS"
-    cont "like you."
-    done
+	para "But I do have some"
+	line "advise."
+	done
 
 GiovanniAfterBattleText:
-    text "The people of"
-    line "SAFFRON are under"
-    cont "my protection."
+	text "Life is not a"
+	line "competition."
 
-    para "Even the Psychics"
-    line "next door."
+	para "Unlike life, a"
+	line "competition is"
+	cont "fair."
 
-    para "You too must"
-    line "protect the"
-    cont "weak and help"
-    cont "them become"
-    cont "strong."
+	para "Life is a"
+	line "negotiation."
+
+	para "Those who go the"
+	line "furthest are not"
+	cont "always the most"
+	cont "talented."
+
+	para "Rather it is those"
+	line "who are best at"
+	cont "inspiring others."
     done
 
 RematchTextGiovanni:

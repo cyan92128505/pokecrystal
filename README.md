@@ -1,14 +1,14 @@
 # Pokémon Ambrosia
 
-A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay and extensive additional and post game content.
+A Romhack based on Pokémon Crystal with a focus on unique features, fun gameplay and extensive additional and post game content.
 
 <img src="/screenshots/ambrosia.png" width="250" height="250" />
 
 ## Pokedex
 
-- Fully reworked Pokedex which includes fan favorite Pokemon and legendaries from the first 6 generations with 253 Pokemon in total.
+- Fully reworked Pokedex which includes fan favorite Pokémon and legendaries from the first 6 generations with 253 Pokémon in total.
 
-- All Pokemon have one or more abilities.
+- All Pokémon have one or more abilities.
   - Some are the abilities you might expect such a Tyranitar Sandstream.
   - some are different such as Lucario with Intrepid Sword.
   - some are completely new such as Guardevoir raising light screen upon switch in.
@@ -17,12 +17,12 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 
 <img src="/screenshots/ability.png" width="150" height="150" />     <img src="/screenshots/latias.png" width="150" height="150" />     <img src="/screenshots/regigigas.png" width="150" height="150" />
 
-## Overworld Pokemon
+## Overworld Pokémon
 
-- Pokemon wander in the overworld. They randomly spawn and come in 3 varieties.
-  - Normal Pokemon that appear in various colours and are at an appropriate level.
-  - Aggressive Pokemon that appear red and will attack the player on sight, they are at high levels and can only be escaped from by using a Pokedoll.
-  - Shinny Pokemon that appear gold and generally have a 1/8 chance to spawn in the area.
+- Pokémon wander in the overworld. They randomly spawn and come in 3 varieties.
+  - Normal Pokémon that appear in various colours and are at an appropriate level.
+  - Aggressive Pokémon that appear red and will attack the player on sight, they are at high levels and can only be escaped from by using a Pokedoll.
+  - Shinny Pokémon that appear gold and generally have a 1/8 chance to spawn in the area.
 
 <img src="/screenshots/fieldmon.png" width="150" height="150" />    <img src="/screenshots/aggressive.png" width="150" height="150" />    <img src="/screenshots/shiny.png" width="150" height="150" />
 
@@ -38,8 +38,8 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 
 - Many updated maps and numerous all new maps.
 - Random battle weather assigned upon entering an area, though some maps have fixed weather.  
-- With a more open world design allowing the player to enter areas with trainers and Pokemon far stronger than they would be able to beat but with hidden powerful rewards.
-  - Can travel north to Blackthorn and west to Olivine from beginning of the game.
+- With a more open world design allowing the player to enter areas with trainers and Pokémon far stronger than they would be able to beat but with hidden powerful rewards.
+  - Can travel north to Blackthorn and west to Olivine from the beginning of the game.
   - Can travel to Kanto as soon as reaching Goldenrod.
 
 <img src="/screenshots/ruinpast.png" width="150" height="150" />    <img src="/screenshots/yveltal.png" width="150" height="150" />      <img src="/screenshots/sprout.png" width="150" height="150" />    <img src="/screenshots/silvercave.png" width="150" height="150" />
@@ -47,8 +47,8 @@ A Romhack based on Pokemon Crystal with a focus on unique features, fun gameplay
 ## Level Caps
 
 Open world design is balanced by two levels caps, both of which are visible on your trainer card and increase upon defeating Gym leaders.
-  - Cap on level you can train Pokemon to, this is a generous cap that starts at 25 and is generally slightly higher than the next gym leaders max level.
-  - Cap on the max level of Pokemon you can capture. This is generally 10 less than your training level cap.
+  - Cap on the max level you can train Pokémon to, this is a generous cap that starts at 20 and is generally slightly higher than the next gym leaders max level.
+  - Cap on the max level of Pokémon you can capture. This is generally 10 less than your training level cap.
 
 <img src="/screenshots/card.png" width="150" height="150" />    <img src="/screenshots/capture.png" width="150" height="150" />    <img src="/screenshots/rarecandy.png" width="150" height="150" />
 
@@ -57,11 +57,11 @@ Open world design is balanced by two levels caps, both of which are visible on y
 Many massively impactful quality of life changes.
 - Can rematch any trainer by talking to them, including Gym leaders. However, rematches give reduced exp and forbid the use of items.
 - Can forfeit almost any battle via the Run option.
-- Exp share available from very early game, giving 50% exp to all Pokemon who do not participate. This is upgraded by endgame to give double exp to all Pokemon.
+- Exp share available from very early game, giving 50% exp to all Pokémon who do not participate. This is upgraded by endgame to give 200% exp to all Pokémon.
 - Sport Shoes which allows the player to run by default (rather than having to hold B) except when indoors where walking is the default (though you can still run by holding B).
 - A Remembral key item which acts as a portable move relearner with no cost.
 - All TMs are infinitely reusable.
-- HMs can be used by any Pokemon which is able to learn them, without actually needing to know them.
+- HMs can be used by any Pokémon which is able to learn them, without actually needing to know them.
 - A Pocket PC allowing access to PC anywhere except caves and dungeons for balance reasons.
 - An infinitely reusable escape rope called Escape Pod.
 - An infinitely reusable repel called a Repulsor.
@@ -83,7 +83,7 @@ Many important new and existing items.
     - expert belt
     - type boost items give 20% boost
     - leftovers
-- Many important Pokemon moves added, including but not limited to
+- Many important Pokémon moves added, including but not limited to
     - Bulk Up
     - Calm Mind
     - Nasty Plot
@@ -99,7 +99,7 @@ Many important new and existing items.
     - Aura Sphere
     - Dark Pulse
     - Moon Blast
-- New item the Red Eye Orb allows player to become a dark souls like invader. This gives the player a Red sprite, gives them double prize money upon winning a battle but losing a battle cost all the players money.
+- New item the Red Eye Orb allows player to become a dark souls like invader. This gives the player a Red sprite, gives them double prize money upon winning a battle but losing a battle costs all the players money.
 - New rare item Ambrosia maximises all stat exp (evs) and happiness. Acting like using 25 of each vitamin in one item.
 
 <img src="/screenshots/items.png" width="150" height="150" />     <img src="/screenshots/cloyster.png" width="150" height="150" />    <img src="/screenshots/xerneas.png" width="150" height="150" />    <img src="/screenshots/invading.png" width="150" height="150" />
@@ -114,7 +114,7 @@ Many important new and existing items.
     - Battle tower which now consists of four 6v6 fights with no rules and has five difficulties.
     - Battle tower (mirror mode) here instead of using your own party you use an exact copy of the random enemy party. Keeping the fights interesting.
 - A recurring RPG minigame where the player plays through stories from popular IPs such as Star Wars, DBZ and Lord of the Rings where the player takes part in battles with fixed teams.
-- Invader enemy class based on dark souls invaders. They don't generally have high level Pokemon but their Pokemon are min-maxed and they utilize meta strategies. They are all avoidable.
+- Invader enemy class based on dark souls invaders. They don't generally have high level Pokémon but their Pokémon are min-maxed and they utilize meta strategies. They are all avoidable.
 
 <img src="/screenshots/battletower.png" width="150" height="150" />     <img src="/screenshots/mirrormode.png" width="150" height="150" />    <img src="/screenshots/arcademenu.png" width="150" height="150" />    <img src="/screenshots/arcadeconfirm.png" width="150" height="150" />
 
@@ -126,7 +126,7 @@ AI has been extensively improved. At all times it has knowledge of
 - Whether it has any moves that can 1HKO, 2HKO or 3HKO the player from both their current and max health.
 - Whether the player has any moves that can 1HKO, 2HKO or 3HKO the AI from both its current and max health.
 - Whether the AI can outspeed the player.
-- What item the player Pokemon has.
+- What item the player Pokémon has.
 - Whether the AI is choice locked into a resisted move, it will switch out in this case.  
 - It does NOT know what specific move the player has selected on their turn.
 
@@ -146,17 +146,17 @@ It uses all these to make decisions, take these moves for example
 
 ## Post game
 
-- 28 legendary Pokemon, 14 of which are Uber, including Mewtwo which has been redesigned to be equivalent to RBY Mewtwo mechanically and Arceus which is mechanically extremely overpowered.
+- 28 legendary Pokémon, 14 of which are Uber, including Mewtwo which has been redesigned to be equivalent to RBY Mewtwo mechanically and Arceus which is mechanically extremely overpowered.
 - Several huge new maps with over 50 optional bosses.
 - Significantly game changing rewards for completion
     - Mark of God which can be toggled on and off
         - it gives the player a gold sprite.
-        - makes all player Pokemon appear shiny regardless of stats.
+        - makes all player Pokémon appear shiny regardless of stats.
         - gives player infinite money.
         - makes player immune to all aggressive overworld entities.
     - Hand of God which can be toggled on and off and lets the player instantly make new teams or cosplay as any player they want.
         - players party is replaced with a copy of the enemies party.
-        - this persists after battle, the player can deposit the Pokemon in their box if they want.
+        - this persists after battle, the player can deposit the Pokémon in their box if they want.
         - Gives the player the option to restore their original team from the last save when turned off.
 
 <img src="/screenshots/ceruleancave.png" width="150" height="150" />    <img src="/screenshots/museum.png" width="150" height="150" />    <img src="/screenshots/deoxys.png" width="150" height="150" />
@@ -199,7 +199,7 @@ Music
 - ShockSlayer
 
 Code
-- All contributors to pret/pokecrytal tutorials
+- All contributors to pret/pokecrystal tutorials
 
 
     

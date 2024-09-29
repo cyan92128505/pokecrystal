@@ -539,7 +539,28 @@ AideScript_ExplainBalls:
 	end
 
 AideScript_AfterTheft:
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .afterWallace
+    checkevent EVENT_BEAT_DAD
+    iftrue .afterDad
+    checkevent EVENT_CLEARED_RADIO_TOWER
+    iftrue .afterRockets
 	writetext AideText_ExplainCaps
+	waitbutton
+	closetext
+	end
+.afterWallace
+	writetext AideText_AfterWallace
+	waitbutton
+	closetext
+	end
+.afterDad
+	writetext AideText_AfterDad
+	waitbutton
+	closetext
+	end
+.afterRockets
+	writetext AideText_AfterRockets
 	waitbutton
 	closetext
 	end
@@ -1179,6 +1200,41 @@ ElmAfterTheftText6:
 	para "Before you leave,"
 	line "make sure that you"
 	cont "talk to your Mum."
+	done
+
+AideText_AfterWallace:
+	text "You have done it!"
+	para "Your level caps"
+	line "are gone, you have"
+	cont "broken through!"
+	para "All it took was"
+	line "for you to destroy"
+	cont "the whole HOEN"
+	cont "army by yourself"
+	cont "and save the"
+	cont "world."
+	done
+
+AideText_AfterDad:
+	text "I've never seen a"
+	line "CHAMPION battle"
+	cont "before."
+	para "You destroyed your"
+	line "own dad."
+	para "I can't imagine"
+	line "level caps higher"
+	cont "than yours."
+	done
+
+AideText_AfterRockets:
+	text "You defeated TEAM"
+	line "ROCKET!"
+	para "ROCKET executives"
+	line "are some seriously"
+	cont "dangerous"
+	cont "trainers."
+	para "I bet your level"
+	line "caps are huge."
 	done
 
 AideText_ExplainCaps:

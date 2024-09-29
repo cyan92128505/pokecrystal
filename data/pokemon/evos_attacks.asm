@@ -2019,12 +2019,12 @@ VaporeonEvosAttacks:
 	db 12, QUICK_ATTACK
 	db 16, WATER_GUN
 	db 20, BITE
-	db 24, BUBBLEBEAM
+	db 25, BUBBLEBEAM
 	db 28, ACID_ARMOR
-	db 34, AURORA_BEAM
-	db 40, SCALD
-	db 43, HAZE
-	db 46, HYDRO_PUMP
+	db 32, AURORA_BEAM
+	db 36, SCALD
+	db 42, HAZE
+	db 45, HYDRO_PUMP
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
@@ -2037,10 +2037,10 @@ JolteonEvosAttacks:
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
-	db 24, FLASH_CANNON
-	db 30, THUNDERBOLT
-	db 34, THUNDER_WAVE
-	db 38, AGILITY
+	db 25, THUNDER_WAVE
+	db 28, FLASH_CANNON
+	db 32, AGILITY
+	db 36, THUNDERBOLT
 	db 45, THUNDER
 	db 0 ; no more level-up moves
 
@@ -2053,8 +2053,8 @@ FlareonEvosAttacks:
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, EMBER
-	db 20, FLAME_WHEEL
-	db 24, BITE
+	db 20, BITE
+	db 25, FLAME_WHEEL
 	db 28, CRUNCH
 	db 32, FIRE_SPIN
 	db 36, FLAMETHROWER
@@ -2452,7 +2452,7 @@ RioluEvosAttacks:
 	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, HEADBUTT
-	db 18, DOUBLE_KICK
+	db 18, REVERSAL
 	db 20, CRUNCH
     db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
@@ -2471,7 +2471,7 @@ LucarioEvosAttacks:
 	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, HEADBUTT
-	db 18, DOUBLE_KICK
+	db 18, REVERSAL
 	db 20, CRUNCH
     db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
@@ -2992,10 +2992,10 @@ EspeonEvosAttacks:
 	db 12, QUICK_ATTACK
 	db 16, CONFUSION
 	db 20, SWIFT
-	db 24, PSYBEAM
-	db 35, PSYCHIC_M
+	db 25, PSYBEAM
+	db 32, MORNING_SUN
+	db 36, PSYCHIC_M
 	db 40, CALM_MIND
-	db 45, MORNING_SUN
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -3008,11 +3008,11 @@ UmbreonEvosAttacks:
 	db 12, QUICK_ATTACK
 	db 16, PURSUIT
 	db 20, CONFUSE_RAY
-	db 24, BITE
-	db 32, MEAN_LOOK
+	db 25, CRUNCH
+	db 28, MEAN_LOOK
+	db 32, MOONLIGHT
 	db 36, DARK_PULSE
 	db 40, CALM_MIND
-	db 45, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:

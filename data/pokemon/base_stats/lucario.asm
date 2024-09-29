@@ -1,6 +1,6 @@
 	db LUCARIO ; 162
 
-	db  70,  110,  70,  90,  115,  70
+	db  70,  115,  70,  90,  115,  70
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIGHTING, STEEL ; type

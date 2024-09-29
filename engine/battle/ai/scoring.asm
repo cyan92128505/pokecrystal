@@ -3214,6 +3214,13 @@ AI_Smart_PerishSong:
 	ret
 
 AI_Smart_Sandstorm:
+; even if we benefit from weather, don't use if we will be koed
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
+    call CanPlayerKO
+    jr c, .discourage
+.skipKOCheck
+
 ; encourage if AI benefits from ability
     ld a, [wEnemyMonSpecies]
     cp EXCADRILL
@@ -3280,13 +3287,9 @@ AI_Smart_Endure:
 	and a
 	jr nz, .greatly_discourage
 
-; Greatly discourage this move if the enemy's HP is full.
-	call AICheckEnemyMaxHP
-	jr c, .greatly_discourage
-
-; Discourage this move if the enemy's HP is at least 25%.
-	call AICheckEnemyQuarterHP
-	jr c, .discourage
+; Greatly discourage if player can't KO.
+    call CanPlayerKO
+    jr nc, .greatly_discourage
 
 ; If the enemy has Reversal...
 	ld b, EFFECT_REVERSAL
@@ -3532,6 +3535,13 @@ AI_Smart_HiddenPower:
 	ret
 
 AI_Smart_RainDance:
+; even if we benefit from weather, don't use if we will be koed
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
+    call CanPlayerKO
+    jr c, .discourage
+.skipKOCheck
+
 ; encourage the move if AI is a swift swim mon
     ld a, [wEnemyMonSpecies]
     cp KINGDRA
@@ -3572,6 +3582,13 @@ AI_Smart_RainDance:
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
 AI_Smart_SunnyDay:
+; even if we benefit from weather, don't use if we will be koed
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
+    call CanPlayerKO
+    jr c, .discourage
+.skipKOCheck
+
 ; encourage if AI is a Chlorophyll mon
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
@@ -4276,16 +4293,24 @@ AI_Smart_ShellSmash:
 	ld a, [wBattleMonStatus]
 	and 1 << FRZ | SLP
 	jr nz, .skipKOCheck
-; discourage if player can 2HKO and has priority move
+; discourage if player can 2HKO and either has priority move or is >= +2 speed
     call CanPlayer2HKO
     jr nc, .checkSash
     ld b, EFFECT_PRIORITY_HIT
     call PlayerHasMoveEffect
     jp c, StandardDiscourage
+    ld a, [wPlayerSpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp nc, StandardDiscourage
 .checkSash
+; is the weather sandstorm, if so don't skip ko check due to focus sash or sturdy (no mon with shell smash is immune to sandstorm)
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr z, .checkKO
 ; skip if we have sash/sturdy
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skipKOCheck
+.checkKO
 ; consider OHKO, assuming we will outspeed after use
     call CanPlayerKO
     jp c, StandardDiscourage

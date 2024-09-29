@@ -23,6 +23,10 @@ PewterCityBugCatcherScript:
 	jumptextfaceplayer PewterCityBugCatcherText
 
 PewterCityMuseumGuardScript:
+    checkevent EVENT_BEAT_BROCK
+    iffalse .blocked
+    jumptextfaceplayer MuseumOpenText
+.blocked
 	jumptextfaceplayer MuseumBlockText
 
 PewterCityGrampsScript:
@@ -214,6 +218,22 @@ MuseumBlockText:
     cont "GYM LEADER BROCK"
     cont "may enter."
     done
+
+MuseumOpenText:
+	text "Having proven your"
+	line "strength against"
+	cont "BROCK you may"
+	cont "pass."
+	para "There is"
+	line "something..."
+	para "Unnatural buried"
+	line "deep in the lab."
+	para "Only trainers on"
+	line "the level of"
+	cont "CHAMPION BLUE can"
+	cont "hope to conquer"
+	cont "it."
+	done
 
 PewterGymBlockText:
     text "The door is"

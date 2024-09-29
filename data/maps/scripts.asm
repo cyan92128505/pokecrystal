@@ -141,8 +141,6 @@ INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/Route27SandstormHouse.asm"
-INCLUDE "maps/Route29Route46Gate.asm"
-
 
 SECTION "Map Scripts 10", ROMX
 
@@ -522,3 +520,4 @@ SECTION "Map Scripts Overflow 11", ROMX
 
 INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/Route4.asm"
+INCLUDE "maps/Route29Route46Gate.asm"

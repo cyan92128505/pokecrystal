@@ -40,6 +40,8 @@ MasterChrisChanScript:
 	writetext ChrisChanSeenText
 	waitbutton
 	closetext
+	setval MUSIC_MYSTICALMAN_ENCOUNTER
+	writemem wBattleMusicOverride
 	winlosstext ChrisChanBeatenText, ChrisChanWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEFANM, MASTER_CHRIS_CHAN

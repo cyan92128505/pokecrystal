@@ -1013,19 +1013,19 @@ LabWhereGoingText:
 TakeCyndaquilText:
 	text "You'll take"
 	line "CHIMCHAR, the"
-	cont "fire #MON?"
+	cont "FIRE #MON?"
 	done
 
 TakeTotodileText:
 	text "Do you want"
 	line "FROAKIE, the"
-	cont "water #MON?"
+	cont "WATER #MON?"
 	done
 
 TakeChikoritaText:
 	text "So, you like"
 	line "TREECKO, the"
-	cont "grass #MON?"
+	cont "GRASS #MON?"
 	done
 
 DidntChooseStarterText:
@@ -1561,11 +1561,14 @@ ElmsLabTrashcanText:
 	done
 
 ElmsLabPCText:
-	text "OBSERVATIONS ON"
-	line "#MON EVOLUTION"
-
-	para "…It says on the"
-	line "screen…"
+	text "ELM is working on"
+	line "a paper."
+	para "Non-Markovian"
+	line "Dynamics of"
+	cont "Entangled Stat"
+	cont "Augmenting"
+	cont "#MON"
+	cont "Abilities."
 	done
 
 AideText_GetPocketPCText:

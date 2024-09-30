@@ -60,7 +60,6 @@ SereneGracePokemon:
     db TOGETIC
     db TOGEKISS
     db SHAYMIN
-    db DUNSPARCE
     db -1
 
 RockHeadPokemon:
@@ -185,6 +184,7 @@ UberImmunePokemon:
     db REGIGIGAS
     db ZYGARDE
     db WOBBUFFET
+    db DUNSPARCE
     db -1
 
 ; ======== NOT USED HERE ===========

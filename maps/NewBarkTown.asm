@@ -222,8 +222,8 @@ Text_GearIsImpressive:
 	line "trainer once."
 
 	para "But I ran into"
-	line "an URSARING out"
-	cont "there."
+	line "a huge RATICATE"
+	cont "out there."
 
 	para "I ran for it!"
 

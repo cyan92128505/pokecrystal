@@ -377,7 +377,7 @@ Route31FieldMon4Script:
 	faceplayer
 	cry TIMBURR
 	pause 15
-	loadwildmon TIMBURR, 11
+	loadwildmon TIMBURR, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

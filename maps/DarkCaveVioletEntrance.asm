@@ -11,6 +11,7 @@
     const DARKCAVEVIOLETENTRANCE_FIELDMON_5
     const DARKCAVEVIOLETENTRANCE_FIELDMON_6
     const DARKCAVEVIOLETENTRANCE_FIELDMON_7
+    const DARKCAVEVIOLETENTRANCE_FIELDMON_8
     const DARKCAVEVIOLETENTRANCE_POKE_BALL5
 
 DarkCaveVioletEntrance_MapScripts:
@@ -26,6 +27,7 @@ DarkCaveVioletEntrance_MapScripts:
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_4
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_5
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_6
+    appear DARKCAVEVIOLETENTRANCE_FIELDMON_8
 
     random 4
     ifequal 1, .spawn
@@ -114,6 +116,17 @@ DarkCaveVioletEntranceFieldMon7Script:
 	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_7
 	end
 
+DarkCaveVioletEntranceFieldMon8Script:
+	faceplayer
+	cry DUNSPARCE
+	pause 15
+	loadwildmon DUNSPARCE, 6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_8
+	end
+
 DarkCaveVioletEntrancePokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
@@ -146,3 +159,5 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 13, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 16, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 15, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceBlackGlasses, EVENT_DARK_CAVE_VIOLET_ENTRANCE_BLACK_GLASSES
+	object_event 15, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon8Script, EVENT_FIELD_MON_8
+

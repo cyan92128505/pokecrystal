@@ -124,7 +124,50 @@ Route29Tutorial2:
 	end
 
 CatchingTutorialDudeScript:
-    jumptextfaceplayer CatchingTutorialDebriefText
+    faceplayer
+    opentext
+    writetext CatchingTutorialDebriefText
+    waitbutton
+    readmem wFieldWeather
+    ifequal WEATHER_SUN, .sun
+    ifequal WEATHER_RAIN, .rain
+    writetext NoWeatherText
+    waitbutton
+    closetext
+    end
+.sun
+    writetext SunText
+    waitbutton
+    closetext
+    end
+.rain
+    writetext RainText
+    waitbutton
+    closetext
+    end
+
+NoWeatherText:
+	text "Right now it seems"
+	line "to be clear."
+	para "Could be better,"
+	line "could be worse."
+	done
+
+SunText:
+	text "Right now it seems"
+	line "to be sunny."
+	para "Grab some sun"
+	line "cream and a nice"
+	cont "cold drink!"
+	done
+
+RainText:
+	text "Right now it seems"
+	line "to be raining."
+	para "I don't have an"
+	line "umbrella either!"
+	done
+
 
 Route29YoungsterScript:
 	jumptextfaceplayer Route29YoungsterText
@@ -314,7 +357,7 @@ Route29FisherText:
 
 Route29CooltrainerMText_WaitingForNight:
 	text "Watch out!"
-	para "There is a rapid"
+	para "There is a rabid"
 	line "RATICATE out"
 	cont "there, it nearly"
 	cont "got me."

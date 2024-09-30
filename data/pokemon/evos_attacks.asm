@@ -1839,7 +1839,6 @@ StarmieEvosAttacks:
 
 MrMimeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BARRIER
 	db 6, CONFUSION
 	db 11, SUBSTITUTE
 	db 14, MEDITATE
@@ -1847,8 +1846,8 @@ MrMimeEvosAttacks:
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
 	db 23, ENCORE
-	db 25, ZEN_HEADBUTT
-	db 30, PSYBEAM
+	db 25, PSYBEAM
+	db 30, ZEN_HEADBUTT
 	db 32, BARRIER
 	db 35, BATON_PASS
 	db 40, PSYCHIC_M
@@ -3475,7 +3474,6 @@ HoundoomEvosAttacks:
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
-	db 1, SMOKESCREEN
 	db 1, LEER
 	db 1, WATER_GUN
 	db 8, SMOKESCREEN

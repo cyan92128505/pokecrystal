@@ -4552,7 +4552,8 @@ SwitchInEffects:
     jp z, .spikes
 
     cp MR__MIME
-    jp z, .reflect
+    jp z, .bothScreens
+
     cp ARTICUNO
     jp z, .reflect
     cp GALADE
@@ -4594,6 +4595,10 @@ SwitchInEffects:
     ret
 .spikes
     farcall SpikesSwitch
+    ret
+.bothScreens
+    farcall ReflectSwitch
+    farcall LightScreenSwitch
     ret
 .reflect
     farcall ReflectSwitch

@@ -1345,7 +1345,7 @@ ShellderEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
-	db 9, SUPERSONIC
+	db 9, POWDER_SNOW
 	db 17, AURORA_BEAM
 	db 22, PROTECT
 	db 25, BUBBLEBEAM
@@ -1359,7 +1359,7 @@ ShellderEvosAttacks:
 CloysterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFENSE_CURL
-	db 1, SUPERSONIC
+	db 1, POWDER_SNOW
 	db 1, AURORA_BEAM
 	db 1, PROTECT
 	db 30, SPIKES
@@ -1419,7 +1419,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	db EVOLVE_LEVEL, 40, STEELIX
+	db EVOLVE_LEVEL, 35, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 10, WRAP
@@ -1427,8 +1427,8 @@ OnixEvosAttacks:
 	db 20, TAKE_DOWN
 	db 25, ROCK_SLIDE
 	db 30, BODY_SLAM
-	db 35, CRUNCH
-	db 41, IRON_HEAD
+	db 36, IRON_HEAD
+	db 40, CRUNCH
 	db 45, EARTHQUAKE
 	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
@@ -1708,7 +1708,7 @@ WeavileEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, SCRATCH
 	db 1, LEER
-	db 14, ICY_WIND
+	db 14, POWDER_SNOW
 	db 18, PURSUIT
 	db 22, SLASH
 	db 25, SCREECH
@@ -1882,6 +1882,7 @@ JynxEvosAttacks:
 	db 40, ICE_BEAM
 	db 45, PERISH_SONG
 	db 50, BLIZZARD
+	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
@@ -1972,7 +1973,7 @@ GyaradosEvosAttacks:
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 1, GROWL
+	db 1, POWDER_SNOW
 	db 1, SING
 	db 15, BODY_SLAM
 	db 22, CONFUSE_RAY
@@ -3135,9 +3136,10 @@ DunsparceEvosAttacks:
 	db 20, ANCIENTPOWER
 	db 25, CRUNCH
 	db 30, ROOST
-	db 35, DRAGON_CLAW
+	db 35, SHADOW_CLAW
 	db 40, DOUBLE_EDGE
-	db 86, AFTER_IMAGE
+	db 50, DRAGON_DANCE
+	db 100, AFTER_IMAGE
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
@@ -3166,8 +3168,8 @@ SteelixEvosAttacks:
 	db 20, TAKE_DOWN
 	db 25, ROCK_SLIDE
 	db 30, BODY_SLAM
-	db 35, CRUNCH
-	db 40, IRON_HEAD
+	db 35, IRON_HEAD
+	db 40, CRUNCH
 	db 45, EARTHQUAKE
 	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
@@ -3268,7 +3270,7 @@ SneaselEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, SCRATCH
 	db 1, LEER
-	db 14, ICY_WIND
+	db 14, POWDER_SNOW
 	db 18, PURSUIT
 	db 22, SLASH
 	db 25, SCREECH

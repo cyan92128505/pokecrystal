@@ -196,7 +196,7 @@ SilverCaveOutsideBlockText:
     line "MASTERS may enter."
 
     para "And become the"
-    line "GRAND MASTER."
+    line "MONARCH."
     done
 
 Movement_SilverCaveOutsideTurnBack:

@@ -1113,7 +1113,7 @@ OakIntroText:
 
     para "All are battling"
     line "to become the"
-    cont "GRAND MASTER."
+    cont "MONARCH."
 
     para "You will have to"
     line "beat eight GYMS."
@@ -1131,7 +1131,7 @@ OakIntroText:
 
     para "Finally moving on"
     line "to the current"
-    cont "GRAND MASTER."
+    cont "MONARCH."
 
     para "Enemies here are"
     line "strong."
@@ -1144,7 +1144,7 @@ OakIntroText:
 CongratsText:
     text "You have done it!"
 
-    para "GRAND MASTER."
+    para "MONARCH."
 
     para "You must go now"
     line "to the summit of"

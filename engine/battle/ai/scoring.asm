@@ -222,6 +222,8 @@ AI_Basic:
     jp z, .discourage
     cp SYLVEON
     jp z, .discourage
+    cp DUNSPARCE
+    jp z, .discourage
 
 .checkSub
 ; dismiss moves blocked by sub if sub is up
@@ -985,6 +987,8 @@ AI_Smart_Sleep:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp DUNSPARCE
+    jp z, .discourage
     cp SMEARGLE
     jp z, .discourage
     cp DEOXYS
@@ -1759,6 +1763,8 @@ AI_Smart_Toxic:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp DUNSPARCE
+    jp z, .discourage
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
@@ -2120,6 +2126,8 @@ AI_Smart_Paralyze:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp DUNSPARCE
+    jp z, .discourage
 
 ; encourage if enemy is slower than player.
 ; 50% chance to discourage otherwise
@@ -4376,6 +4384,8 @@ AI_Smart_Swagger:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
+    cp DUNSPARCE
+    jp z, .discourage
     ret
 
 .continue

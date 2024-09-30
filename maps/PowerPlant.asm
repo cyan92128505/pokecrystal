@@ -310,7 +310,7 @@ PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
 	cont "temper."
 	para "If you damage the"
 	line "generator you'll"
-	cont "be getting my"
+	cont "be getting his"
 	cont "BODY SLAM!"
 	done
 

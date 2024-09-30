@@ -404,7 +404,7 @@ MasterOakVictoryText:
 
     para "I am defeated."
 
-    para "I bestow upon"
+    para "I bestow upon you"
     line "powers earned"
     cont "through life"
     cont "immortal."

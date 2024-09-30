@@ -357,7 +357,7 @@ MasterStevenSeenText:
 
 MasterStevenBeatenText:
     text "Thank you"
-    line "GRAND MASTER."
+    line "MONARCH."
     done
 
 MasterStevenWinText:

@@ -323,6 +323,7 @@ FightAshScript:
 	turnobject SILVERCAVEROOM3_RED, RIGHT
 	setmapscene SILVER_CAVE_ROOM_3, SCENE_FINISHED
 	setevent EVENT_BEAT_ASH
+	special HealParty
 	end
 
 Movement_AshToPlayer:
@@ -397,7 +398,7 @@ AshFinalText:
 
     para "The greatest of"
     line "MASTERS is called"
-    cont "the GRAND MASTER."
+    cont "the MONARCH."
 
     para "Maybe that could"
     line "be you!"
@@ -436,7 +437,7 @@ PokemonMasterQuestText:
 
     para "The strongest of"
     line "them is called the"
-    cont "GRAND MASTER."
+    cont "MONARCH."
 
     para "That should be"
     line "your next goal."

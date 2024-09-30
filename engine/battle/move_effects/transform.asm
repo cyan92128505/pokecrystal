@@ -8,6 +8,10 @@ BattleCommand_Transform:
 	jp nz, BattleEffect_ButItFailed
 	call CheckHiddenOpponent
 	jp nz, BattleEffect_ButItFailed
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_SUBSTITUTE, [hl]
+	jp z, BattleEffect_ButItFailed
 
     ldh a, [hBattleTurn]
 	and a
@@ -25,12 +29,6 @@ BattleCommand_Transform:
 	ld [wFXAnimID + 1], a
 	ld a, $1
 	ld [wBattleAnimParam], a
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVarAddr
-	bit SUBSTATUS_SUBSTITUTE, [hl]
-	;jp z, BattleEffect_ButItFailed
-	;push af
-	jr z, .mimic_substitute
 	call CheckUserIsCharging
 	jr nz, .mimic_substitute
 	ld a, SUBSTITUTE

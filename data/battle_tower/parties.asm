@@ -5479,7 +5479,7 @@ BattleTowerMons:
 
 	db PORYGONZ
 	db PINK_BOW
-	db HYPER_BEAM, DARK_PULSE, AURA_SPHERE, AGILITY
+	db HYPER_BEAM, DARK_PULSE, NASTY_PLOT, AGILITY
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5499,7 +5499,7 @@ BattleTowerMons:
 	bigdw 258 ; Atk
 	bigdw 238 ; Def
 	bigdw 278 ; Spd
-	bigdw 368 ; SAtk
+	bigdw 338 ; SAtk
 	bigdw 248 ; SDef
 	db "RANTA-N@@@@"
 

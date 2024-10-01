@@ -3269,8 +3269,8 @@ SneaselEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, SCRATCH
 	db 1, LEER
-	db 14, POWDER_SNOW
-	db 18, PURSUIT
+	db 12, POWDER_SNOW
+	db 15, PURSUIT
 	db 22, SLASH
 	db 25, SCREECH
 	db 30, ICE_PUNCH

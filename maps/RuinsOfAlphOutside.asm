@@ -5,6 +5,7 @@
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
 	const RUINSOFALPHOUTSIDE_HENSHIN
+	const RUINSOFALPHOUTSIDE_FIELDMON_2
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -21,6 +22,7 @@ RuinsOfAlphOutside_MapScripts:
 	end
 
 .ScientistCallback:
+    appear RUINSOFALPHOUTSIDE_FIELDMON_2
     disappear RUINSOFALPHOUTSIDE_HENSHIN
 	checktime NITE
 	iffalse .continue
@@ -361,6 +363,17 @@ RematchRefuseTextAlphHenshin:
     text "I insist!"
     done
 
+RuinsOfAlphOutsideFieldMon1Script:
+	faceplayer
+	cry SNEASEL
+	pause 15
+	loadwildmon SNEASEL, 13
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear RUINSOFALPHOUTSIDE_FIELDMON_2
+	end
+
 RuinsOfAlphOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -395,4 +408,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 20, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 18,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 15,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, RuinsOfAlphOutsideHenshinScript, EVENT_FIELD_MON_1
-
+	object_event  3,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFieldMon1Script, EVENT_FIELD_MON_2

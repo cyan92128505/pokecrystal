@@ -18,11 +18,6 @@ BattleCommand_MirrorCoat:
 	cp EFFECT_MIRROR_COAT
 	ret z
 
-	call BattleCommand_ResetTypeMatchup
-	ld a, [wTypeMatchup]
-	and a
-	ret z
-
 	call CheckOpponentWentFirst
 	ret z
 

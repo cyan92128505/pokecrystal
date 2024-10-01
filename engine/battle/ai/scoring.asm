@@ -4511,7 +4511,7 @@ ShouldAIBoost:
 .skipSturdySashCheck
     call CanPlayerKO
     jr c, .decideNotToBoost
-    jr .boost
+    jp .boost
 
 .playerMovesFirst
 ; does the boost increase speed, these moves are treated differently
@@ -4529,9 +4529,24 @@ ShouldAIBoost:
 .decideNotToBoost
 ; is player SLP or FRZ, if so we can boost
 	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
+	and 1 << FRZ
 	jr nz, .boost
 
+    call DoesAIOutSpeedPlayer
+    jr nc, .playerFaster
+    ld b, 1
+    jr .checkSleep
+.playerFaster
+    ld b, 2
+
+.checkSleep
+    ld a, [wBattleMonStatus]
+	and SLP
+	cp b
+	jr z, .keepgoing
+	jr .boost
+
+.keepgoing
 ; is the player behind a sub, if so don't boost, just attack
 ; unless we have baton pass, in which case boost up
     ld b, EFFECT_BATON_PASS

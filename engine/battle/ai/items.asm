@@ -684,6 +684,10 @@ AI_TrySwitch:
 	cp GIRATINA
 	ret z
 
+    ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	ret nz
+
 ; DevNote - switch, don't switch if already set up
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2

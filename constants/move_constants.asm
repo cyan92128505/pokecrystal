@@ -136,7 +136,7 @@
 	const CLAMP        ; 80
 	const SWIFT        ; 81
 	const PSYCHO_BOOST ; 82
-	const SPIKE_CANNON ; 83
+	const SPIKE_CANNON ; 83 - wtf is this still here for!
 	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
 	const POISON_JAB   ; 86

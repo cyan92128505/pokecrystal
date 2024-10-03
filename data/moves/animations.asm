@@ -156,7 +156,7 @@ BattleAnimations::
 	dw BattleAnim_DrainKiss
 	dw BattleAnim_Explosion
 	dw BattleAnim_FurySwipes
-	dw BattleAnim_Bonemerang
+	dw BattleAnim_PlayRough
 	dw BattleAnim_Rest
 	dw BattleAnim_RockSlide
 	dw BattleAnim_HyperFang
@@ -4289,6 +4289,7 @@ BattleAnim_MetalClaw:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_PlayRough
 BattleAnim_VitalThrow:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row

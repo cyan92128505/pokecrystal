@@ -13,7 +13,6 @@ MoveGrammar:
 	db FLASH
 	db SPLASH
 	db ACID_ARMOR
-	db BONEMERANG
 	db REST
 	db SUBSTITUTE
 	db MIND_READER

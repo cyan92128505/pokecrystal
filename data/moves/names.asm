@@ -154,7 +154,7 @@ MoveNames::
 	li "DRAIN KISS"
 	li "EXPLOSION"
 	li "FURY SWIPES"
-	li "BONEMERANG"
+	li "PLAY ROUGH"
 	li "REST"
 	li "ROCK SLIDE"
 	li "HYPER FANG"

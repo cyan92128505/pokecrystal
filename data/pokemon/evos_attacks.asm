@@ -521,10 +521,10 @@ ClefairyEvosAttacks:
 	db 1, GROWL
 	db 4, SPLASH
 	db 8, SING
-	db 13, DOUBLESLAP
 	db 16, DRAIN_KISS
-	db 30, MOONLIGHT
-	db 35, ATTRACT
+	db 25, MOONLIGHT
+	db 30, ATTRACT
+	db 36, PLAY_ROUGH
 	db 40, MOON_BLAST
 	db 45, CALM_MIND
 	db 0 ; no more level-up moves
@@ -532,12 +532,11 @@ ClefairyEvosAttacks:
 ClefableEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
-	db 1, DOUBLESLAP
 	db 1, METRONOME
-	db 1, MOONLIGHT
 	db 16, DRAIN_KISS
-	db 30, MOONLIGHT
-	db 35, ATTRACT
+	db 25, MOONLIGHT
+	db 30, ATTRACT
+	db 36, PLAY_ROUGH
 	db 40, MOON_BLAST
 	db 45, CALM_MIND
 	db 0 ; no more level-up moves
@@ -582,8 +581,8 @@ JigglypuffEvosAttacks:
 	db 16, DRAIN_KISS
 	db 25, REST
 	db 30, BODY_SLAM
-	db 36, MOON_BLAST
-	db 40, DOUBLE_EDGE
+	db 36, PLAY_ROUGH
+	db 40, MOON_BLAST
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
@@ -596,8 +595,8 @@ WigglytuffEvosAttacks:
 	db 16, DRAIN_KISS
 	db 25, REST
 	db 30, BODY_SLAM
-	db 36, MOON_BLAST
-	db 40, DOUBLE_EDGE
+	db 36, PLAY_ROUGH
+	db 40, MOON_BLAST
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -856,8 +855,8 @@ GrowlitheEvosAttacks:
 	db 18, LEER
 	db 24, FLAME_WHEEL
 	db 28, ROAR
-	db 30, TAKE_DOWN
-	db 33, CRUNCH
+	db 30, CRUNCH
+	db 33, PLAY_ROUGH
 	db 36, FLAMETHROWER
 	db 40, MORNING_SUN
 	db 42, EXTREMESPEED
@@ -871,8 +870,8 @@ ArcanineEvosAttacks:
 	db 18, LEER
 	db 24, FLAME_WHEEL
 	db 28, ROAR
-	db 30, TAKE_DOWN
-	db 33, CRUNCH
+	db 30, CRUNCH
+	db 33, PLAY_ROUGH
 	db 36, FLAMETHROWER
 	db 40, MORNING_SUN
 	db 42, EXTREMESPEED
@@ -1556,9 +1555,9 @@ CuboneEvosAttacks:
 	db 21, FOCUS_ENERGY
 	db 25, DIG
 	db 29, FALSE_SWIPE
-	db 35, BONEMERANG
-	db 37, THRASH
-	db 40, EARTHQUAKE
+	db 35, THRASH
+	db 40, DOUBLE_EDGE
+	db 45, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
@@ -1570,9 +1569,9 @@ MarowakEvosAttacks:
 	db 21, FOCUS_ENERGY
 	db 25, DIG
 	db 29, FALSE_SWIPE
-	db 35, BONEMERANG
-	db 37, THRASH
-	db 40, EARTHQUAKE
+	db 35, THRASH
+	db 40, DOUBLE_EDGE
+	db 45, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 SolosisEvosAttacks:
@@ -2696,7 +2695,8 @@ TogeticEvosAttacks:
 	db 32, AURA_SPHERE
 	db 35, SOFTBOILED
 	db 40, AIR_SLASH
-	db 44, MOON_BLAST
+	db 42, PLAY_ROUGH
+	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
 TogekissEvosAttacks:
@@ -2712,7 +2712,8 @@ TogekissEvosAttacks:
 	db 32, AURA_SPHERE
 	db 35, SOFTBOILED
 	db 40, AIR_SLASH
-	db 44, MOON_BLAST
+	db 42, PLAY_ROUGH
+	db 45, MOON_BLAST
 	db 0 ; no more level-up moves
 
 SigilyphEvosAttacks:
@@ -3281,12 +3282,12 @@ TeddiursaEvosAttacks:
 	db EVOLVE_LEVEL, 30, URSARING
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, LEER
 	db 8, LICK
 	db 15, HEADBUTT
 	db 22, REST
 	db 26, NIGHT_SLASH
 	db 31, SLASH
+	db 33, PLAY_ROUGH
 	db 35, THRASH
 	db 40, BODY_SLAM
 	db 50, DOUBLE_EDGE
@@ -3295,13 +3296,12 @@ TeddiursaEvosAttacks:
 UrsaringEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, LEER
 	db 8, LICK
 	db 15, HEADBUTT
 	db 22, REST
 	db 26, NIGHT_SLASH
-	db 31, SLASH
-	db 35, THRASH
+	db 30, SLASH
+	db 33, PLAY_ROUGH
 	db 40, BODY_SLAM
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -3588,12 +3588,12 @@ KlefkiEvosAttacks:
 
 XerneasEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GROWTH
 	db 1, DRAIN_KISS
-	db 50, CLOSE_COMBAT
-	db 60, MEGAHORN
+	db 40, CLOSE_COMBAT
+	db 50, MEGAHORN
+	db 60, PLAY_ROUGH
 	db 70, MOON_BLAST
-	db 81, GEOMANCY
+	db 80, GEOMANCY
 	db 0 ; no more level-up moves
 
 YveltalEvosAttacks:
@@ -3604,7 +3604,7 @@ YveltalEvosAttacks:
 	db 60, DARK_PULSE
 	db 70, OBLIVION
 	db 75, HURRICANE
-	db 81, NASTY_PLOT
+	db 80, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 GiratinaEvosAttacks:
@@ -3624,14 +3624,14 @@ GiratinaEvosAttacks:
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, GROWL
 	db 8, DEFENSE_CURL
 	db 13, STOMP
 	db 19, MILK_DRINK
 	db 23, HEADBUTT
 	db 26, ROLLOUT
 	db 30, ZEN_HEADBUTT
-	db 35, BODY_SLAM
+	db 35, PLAY_ROUGH
+	db 40, BODY_SLAM
 	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 

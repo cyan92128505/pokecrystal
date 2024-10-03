@@ -155,7 +155,7 @@ MoveDescriptions::
 	dw DrainKissDescription
 	dw ExplosionDescription
 	dw FurySwipesDescription
-	dw BonemerangDescription
+	dw PlayRoughDescription
 	dw RestDescription
 	dw RockSlideDescription
 	dw HyperFangDescription
@@ -885,9 +885,9 @@ FurySwipesDescription:
 	db   "Quickly scratches"
 	line "2-5 times.@"
 
-BonemerangDescription:
-	db   "An attack that"
-	line "strikes twice.@"
+PlayRoughDescription:
+	db   "An attack that may"
+	line "lower ATTACK.@"
 
 RestDescription:
 	db   "Sleep for 2 turns"

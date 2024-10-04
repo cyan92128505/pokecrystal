@@ -1349,6 +1349,7 @@ ShellderEvosAttacks:
 	db 22, PROTECT
 	db 25, BUBBLEBEAM
 	db 35, CLAMP
+	db 40, WATERFALL
 	db 45, ICE_BEAM
 	db 50, HYDRO_PUMP
 	db 55, AVALANCHE
@@ -1363,7 +1364,7 @@ CloysterEvosAttacks:
 	db 1, PROTECT
 	db 30, SPIKES
 	db 35, CLAMP
-	db 41, SPIKE_CANNON
+	db 40, WATERFALL
 	db 45, ICE_BEAM
 	db 50, HYDRO_PUMP
 	db 55, AVALANCHE
@@ -1545,33 +1546,33 @@ ExeggutorEvosAttacks:
 	db 48, SUNNY_DAY
 	db 0 ; no more level-up moves
 
-CuboneEvosAttacks:
-	db EVOLVE_LEVEL, 28, MAROWAK
+MarillEvosAttacks:
+	db EVOLVE_LEVEL, 18, AZUMARILL
 	db 0 ; no more evolutions
-	db 1, GROWL
-	db 5, TAIL_WHIP
-	db 13, HEADBUTT
-	db 17, MAGNITUDE
-	db 21, FOCUS_ENERGY
-	db 25, DIG
-	db 29, FALSE_SWIPE
-	db 35, THRASH
-	db 40, DOUBLE_EDGE
-	db 45, EARTHQUAKE
+	db 1, TACKLE
+	db 1, WATER_GUN
+	db 6, TAIL_WHIP
+	db 15, BUBBLEBEAM
+	db 19, HEADBUTT
+	db 25, RAIN_DANCE
+	db 30, BODY_SLAM
+	db 36, WATERFALL
+	db 40, PLAY_ROUGH
+	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves
 
-MarowakEvosAttacks:
+AzumarillEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GROWL
-	db 5, TAIL_WHIP
-	db 13, HEADBUTT
-	db 17, MAGNITUDE
-	db 21, FOCUS_ENERGY
-	db 25, DIG
-	db 29, FALSE_SWIPE
-	db 35, THRASH
-	db 40, DOUBLE_EDGE
-	db 45, EARTHQUAKE
+	db 1, TACKLE
+	db 1, WATER_GUN
+	db 6, TAIL_WHIP
+	db 16, BUBBLEBEAM
+	db 19, HEADBUTT
+	db 25, RAIN_DANCE
+	db 30, BODY_SLAM
+	db 36, WATERFALL
+	db 40, PLAY_ROUGH
+	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves
 
 SolosisEvosAttacks:

@@ -39,9 +39,9 @@ Route10SouthPokemonAttacksText:
 
 Route10SouthFieldMon3Script:
 	faceplayer
-	cry MAROWAK
+	cry AZUMARILL
 	pause 15
-	loadwildmon MAROWAK, 42
+	loadwildmon AZUMARILL, 42
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

@@ -35,7 +35,7 @@ RockTunnel1FFieldMon2Script:
     end
 
 RockTunnel1FFieldMon3Script:
-	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_3, RockTunnel1FPokemonAttacksText, 68, 0, .script
+	trainer RHYHORN, FIELD_MON, EVENT_FIELD_MON_3, RockTunnel1FPokemonAttacksText, 68, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_3
     end

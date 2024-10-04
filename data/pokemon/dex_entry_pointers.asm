@@ -104,8 +104,8 @@ PokedexDataPointerTable:
 	dw ElectrodePokedexEntry
 	dw ExeggcutePokedexEntry
 	dw ExeggutorPokedexEntry
-	dw CubonePokedexEntry
-	dw MarowakPokedexEntry
+	dw MarillPokedexEntry
+	dw AzumarillPokedexEntry
 	dw SolosisPokedexEntry
 	dw DuosionPokedexEntry
 	dw ReuniclusPokedexEntry

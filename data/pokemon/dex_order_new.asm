@@ -177,8 +177,8 @@ NewPokedexOrder:
 	db SKARMORY
 	db PONYTA
 	db RAPIDASH
-	db CUBONE
-	db MAROWAK
+	db MARILL
+	db AZUMARILL
 	db DRILBUR
 	db EXCADRILL
 	db RHYHORN

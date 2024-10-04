@@ -341,7 +341,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, CUBONE
+	db 22, DRILBUR
 	db 24, GOLBAT
 	db 24, KOFFING
 	db 26, GROWLITHE
@@ -349,7 +349,7 @@ JohtoGrassWildMons:
 	db 28, WEEZING
 	db 42, NIDOKING
 	; day
-	db 22, CUBONE
+	db 22, DRILBUR
 	db 24, GOLBAT
 	db 24, KOFFING
 	db 26, GROWLITHE
@@ -357,7 +357,7 @@ JohtoGrassWildMons:
 	db 28, WEEZING
 	db 42, NIDOKING
 	; nite
-	db 22, CUBONE
+	db 22, DRILBUR
 	db 24, GOLBAT
 	db 24, KOFFING
 	db 26, GROWLITHE
@@ -541,7 +541,7 @@ JohtoGrassWildMons:
 	db 14, ZUBAT
 	db 15, PSYDUCK
 	db 15, POLIWAG
-	db 16, GOLBAT
+	db 16, MARILL
 	db 16, STARYU
 	db 42, SLOWBRO
 	; day
@@ -549,7 +549,7 @@ JohtoGrassWildMons:
 	db 14, ZUBAT
 	db 15, PSYDUCK
 	db 15, POLIWAG
-	db 16, GOLBAT
+	db 16, MARILL
 	db 16, STARYU
 	db 42, SLOWBRO
 	; nite
@@ -557,7 +557,7 @@ JohtoGrassWildMons:
 	db 14, ZUBAT
 	db 15, PSYDUCK
 	db 15, POLIWAG
-	db 16, GOLBAT
+	db 16, MARILL
 	db 16, STARYU
 	db 42, SLOWBRO
 	end_grass_wildmons
@@ -566,7 +566,7 @@ JohtoGrassWildMons:
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 25, SLOWPOKE
-	db 25, GOLBAT
+	db 25, AZUMARILL
 	db 33, POLIWHIRL
 	db 33, GOLDUCK
 	db 35, SLOWBRO
@@ -574,7 +574,7 @@ JohtoGrassWildMons:
 	db 64, SLOWKING
 	; day
 	db 25, SLOWPOKE
-	db 25, GOLBAT
+	db 25, AZUMARILL
 	db 30, POLIWHIRL
 	db 33, GOLDUCK
 	db 35, SLOWBRO
@@ -582,7 +582,7 @@ JohtoGrassWildMons:
 	db 64, SLOWKING
 	; nite
 	db 25, SLOWPOKE
-	db 25, GOLBAT
+	db 25, AZUMARILL
 	db 30, POLIWHIRL
 	db 33, GOLDUCK
 	db 35, SLOWBRO
@@ -1352,7 +1352,7 @@ JohtoGrassWildMons:
 	db 7, EKANS
 	db 7, MAREEP
 	db 9, BELLSPROUT
-	db 9, STARLY
+	db 9, MARILL
 	db 11, SOLOSIS
 	db 11, ABRA
 	db 31, SIGILYPH
@@ -1360,7 +1360,7 @@ JohtoGrassWildMons:
 	db 7, EKANS
 	db 7, MAREEP
 	db 9, BELLSPROUT
-	db 9, STARLY
+	db 9, MARILL
 	db 11, SOLOSIS
 	db 11, ABRA
 	db 31, SIGILYPH
@@ -1368,7 +1368,7 @@ JohtoGrassWildMons:
 	db 7, WOOPER
 	db 7, POLIWAG
 	db 9, CLEFAIRY
-	db 9, MURKROW
+	db 9, MARILL
 	db 11, SOLOSIS
 	db 11, ABRA
 	db 31, SIGILYPH
@@ -1462,7 +1462,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, STARAVIA
-	db 14, CUBONE
+	db 14, MARILL
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 31, SOLOSIS
@@ -1470,7 +1470,7 @@ JohtoGrassWildMons:
 	db 42, ALAKAZAM
 	; day
 	db 14, STARAVIA
-	db 14, CUBONE
+	db 14, MARILL
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 31, SOLOSIS
@@ -1576,7 +1576,7 @@ JohtoGrassWildMons:
 	db 26, ARBOK
 	db 26, STARAVIA
 	db 26, SWINUB
-	db 27, MACHOKE
+	db 27, AZUMARILL
 	db 27, HAWLUCHA
 	db 28, MAGMAR
 	db 52, MAGMORTAR
@@ -1584,7 +1584,7 @@ JohtoGrassWildMons:
 	db 26, ARBOK
 	db 26, STARAVIA
 	db 26, SWINUB
-	db 27, MACHOKE
+	db 27, AZUMARILL
 	db 27, HAWLUCHA
 	db 28, MAGMAR
 	db 52, MAGMORTAR
@@ -1592,7 +1592,7 @@ JohtoGrassWildMons:
 	db 26, POLIWHIRL
 	db 26, GOLBAT
 	db 26, SWINUB
-	db 27, MACHOKE
+	db 27, AZUMARILL
 	db 27, SNEASEL
 	db 28, MAGMAR
 	db 52, MAGMORTAR

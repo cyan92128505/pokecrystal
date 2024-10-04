@@ -235,7 +235,7 @@ INCBIN "gfx/footprints/voltorb.1bpp",    footprint_top
 INCBIN "gfx/footprints/electrode.1bpp",  footprint_top
 INCBIN "gfx/footprints/exeggcute.1bpp",  footprint_top
 INCBIN "gfx/footprints/exeggutor.1bpp",  footprint_top
-INCBIN "gfx/footprints/cubone.1bpp",     footprint_top
+INCBIN "gfx/footprints/marill.1bpp",     footprint_top
 ; 097-104 bottom halves
 INCBIN "gfx/footprints/hypno.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/feebas.1bpp",     footprint_bottom
@@ -244,9 +244,9 @@ INCBIN "gfx/footprints/voltorb.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/electrode.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/exeggcute.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/exeggutor.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/cubone.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/marill.1bpp",     footprint_bottom
 ; 105-112 top halves
-INCBIN "gfx/footprints/marowak.1bpp",    footprint_top
+INCBIN "gfx/footprints/azumarill.1bpp",    footprint_top
 INCBIN "gfx/footprints/solosis.1bpp",  footprint_top
 INCBIN "gfx/footprints/duosion.1bpp", footprint_top
 INCBIN "gfx/footprints/reuniclus.1bpp",  footprint_top
@@ -255,7 +255,7 @@ INCBIN "gfx/footprints/weezing.1bpp",    footprint_top
 INCBIN "gfx/footprints/rhyhorn.1bpp",    footprint_top
 INCBIN "gfx/footprints/rhydon.1bpp",     footprint_top
 ; 105-112 bottom halves
-INCBIN "gfx/footprints/marowak.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/azumarill.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/solosis.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/duosion.1bpp", footprint_bottom
 INCBIN "gfx/footprints/reuniclus.1bpp",  footprint_bottom

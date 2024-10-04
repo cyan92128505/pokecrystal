@@ -260,16 +260,6 @@ ExeggcuteEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
-CuboneEggMoves:
-	db ROCK_SLIDE
-	db ANCIENTPOWER
-	db BELLY_DRUM
-	db SCREECH
-	db HEADBUTT
-	db PERISH_SONG
-	db SWORDS_DANCE
-	db -1 ; end
-
 ReuniclusEggMoves:
 	db BELLY_DRUM
 	db MAGNITUDE
@@ -480,7 +470,7 @@ MarillEggMoves:
 	db FUTURE_SIGHT
 	db BELLY_DRUM
 	db PERISH_SONG
-	db SUPERSONIC
+	db PLAY_ROUGH
 	db -1 ; end
 
 GenesectEggMoves:

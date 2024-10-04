@@ -109,8 +109,8 @@ PokemonCries::
 	mon_cry CRY_VOLTORB,     168,  272 ; ELECTRODE
 	mon_cry CRY_DIGLETT,       0,  256 ; EXEGGCUTE
 	mon_cry CRY_DROWZEE,       0,  256 ; EXEGGUTOR
-	mon_cry CRY_CLEFAIRY,      0,  256 ; CUBONE
-	mon_cry CRY_ODDISH,       79,  224 ; MAROWAK
+	mon_cry CRY_MARILL,      283,  288 ; MARILL
+	mon_cry CRY_MARILL,      182,  384 ; AZUMARILL
 	mon_cry CRY_PARAS,      -100,  200 ; SOLOSIS
 	mon_cry CRY_PARAS,      -200,  250 ; DUOSION
 	mon_cry CRY_PARAS,      -250,  300 ; REUNICLUS

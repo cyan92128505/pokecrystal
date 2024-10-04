@@ -17,7 +17,7 @@ SometimesFleeMons:
 	db -1
 
 OftenFleeMons:
-	db CUBONE
+	db MARILL
 	db TOGEPI
 	db COTTONEE
 	db TEDDIURSA

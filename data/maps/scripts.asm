@@ -343,7 +343,6 @@ INCLUDE "maps/Route38.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/PewterGym.asm"
-INCLUDE "maps/PewterMart.asm"
 
 SECTION "Map Scripts 22", ROMX
 
@@ -521,3 +520,4 @@ SECTION "Map Scripts Overflow 11", ROMX
 INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route29Route46Gate.asm"
+INCLUDE "maps/PewterMart.asm"

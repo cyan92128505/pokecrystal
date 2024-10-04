@@ -2858,12 +2858,11 @@ CheckDamageStatsCritical:
 ThickClubBoost:
 ; Return in hl the stat value at hl.
 
-; If the attacking monster is Cubone or Marowak and
-; it's holding a Thick Club, double it.
+; If the attacking monster is Marill or Azumarill - double it.
 	push bc
 	push de
-	ld b, CUBONE
-	ld c, MAROWAK
+	ld b, MARILL
+	ld c, AZUMARILL
 	ld d, THICK_CLUB
 	call SpeciesItemBoost
 	pop de
@@ -2913,6 +2912,11 @@ SpeciesItemBoost:
 	ret nz
 
 .GetItemHeldEffect:
+    cp MARILL
+    jr z, .skipItemCheck
+    cp AZUMARILL
+    jr z, .skipItemCheck
+
 	push hl
 	call GetUserItem
 	ld a, [hl]
@@ -2920,6 +2924,7 @@ SpeciesItemBoost:
 	cp d
 	ret nz
 
+.skipItemCheck
 ; Double the stat
 	sla l
 	rl h

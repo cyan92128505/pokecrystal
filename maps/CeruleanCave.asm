@@ -116,7 +116,7 @@ CeruleanCaveFieldMon7Script:
     end
 
 CeruleanCaveFieldMon8Script:
-	trainer MAROWAK, FIELD_MON, EVENT_FIELD_MON_8, CeruleanCavePokemonAttacksText, 74, 0, .script
+	trainer AZUMARILL, FIELD_MON, EVENT_FIELD_MON_8, CeruleanCavePokemonAttacksText, 74, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_8
     end

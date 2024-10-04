@@ -38,7 +38,6 @@ AlphabeticalPokedexOrder:
 	db CONKELDURR
 	db COTTONEE
 	db CROBAT
-	db CUBONE
 	db DARKRAI
 	db DEOXYS
 	db DIALGA
@@ -134,7 +133,8 @@ AlphabeticalPokedexOrder:
 	db MAGNEZONE
 	db MAMOSWINE
 	db MAREEP
-	db MAROWAK
+	db MARILL
+	db AZUMARILL
 	db MEOWTH
 	db METAGROSS
 	db METANG

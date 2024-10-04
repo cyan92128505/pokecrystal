@@ -4524,13 +4524,18 @@ ShouldAIBoost:
 ; if player moves first consider if they can 2HKO
     call CanPlayer2HKO
     jr c, .decideNotToBoost
-    jr .boost
+    jp .boost
 
 .decideNotToBoost
-; is player SLP or FRZ, if so we can boost
+; is player FRZ we can boost
 	ld a, [wBattleMonStatus]
 	and 1 << FRZ
 	jr nz, .boost
+
+; if player is SLP and we get more than one turn before they wake up, then boost
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr z, .keepgoing
 
     call DoesAIOutSpeedPlayer
     jr nc, .playerFaster
@@ -4542,7 +4547,7 @@ ShouldAIBoost:
 .checkSleep
     ld a, [wBattleMonStatus]
 	and SLP
-	cp b
+    cp b
 	jr z, .keepgoing
 	jr .boost
 

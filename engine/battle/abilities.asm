@@ -64,8 +64,6 @@ SereneGracePokemon:
 
 RockHeadPokemon:
     db AERODACTYL
-    db CUBONE
-    db MAROWAK
     db BAGON
     db SHELGON
     db CHIMCHAR

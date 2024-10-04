@@ -108,8 +108,8 @@ MonMenuIconPals:
 	icon_pals RED,  BLUE     ; ELECTRODE
 	icon_pals GREEN,  PURPLE      ; EXEGGCUTE
 	icon_pals GREEN,  PURPLE       ; EXEGGUTOR
-	icon_pals BROWN,  TEAL     ; CUBONE
-	icon_pals BROWN,  TEAL    ; MAROWAK
+	icon_pals BLUE,  PURPLE     ; MARILL
+	icon_pals BLUE,  PURPLE    ; AZUMARILL
 	icon_pals GREEN,  BLUE       ; SOLOSIS
 	icon_pals GREEN,  BLUE         ; DUOSION
 	icon_pals GREEN,  BLUE       ; REUNICLUS

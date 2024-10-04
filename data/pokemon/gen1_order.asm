@@ -16,7 +16,7 @@ Pokered_MonIndices:
 	db GENGAR
 	db NIDORAN_F
 	db NIDOQUEEN
-	db CUBONE
+	db MARILL
 	db RHYHORN
 	db LAPRAS
 	db ARCANINE
@@ -144,7 +144,7 @@ Pokered_MonIndices:
 	db CLEFABLE
 	db WEEZING
 	db PERSIAN
-	db MAROWAK
+	db AZUMARILL
 	db KLEFKI ; MISSINGNO.
 	db HAUNTER
 	db ABRA

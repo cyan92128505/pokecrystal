@@ -7,7 +7,7 @@ KantoGrassWildMons:
 	; morn
 	db 33, ONIX
 	db 33, GRAVELER
-	db 35, MAROWAK
+	db 35, RHYHORN
 	db 35, PUPITAR
 	db 37, EXCADRILL
 	db 37, GABITE
@@ -15,7 +15,7 @@ KantoGrassWildMons:
 	; day
 	db 33, ONIX
 	db 33, GRAVELER
-	db 35, MAROWAK
+	db 35, RHYHORN
 	db 35, PUPITAR
 	db 37, EXCADRILL
 	db 37, GABITE
@@ -23,7 +23,7 @@ KantoGrassWildMons:
 	; nite
 	db 33, ONIX
 	db 33, GRAVELER
-	db 35, MAROWAK
+	db 35, RHYHORN
 	db 35, PUPITAR
 	db 37, EXCADRILL
 	db 37, GABITE
@@ -64,7 +64,7 @@ KantoGrassWildMons:
 	db 36, GOLBAT
 	db 36, GRAVELER
 	db 38, GABITE
-	db 38, MAROWAK
+	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
 	db 62, RHYPERIOR
@@ -72,7 +72,7 @@ KantoGrassWildMons:
 	db 36, GOLBAT
 	db 36, GRAVELER
 	db 38, GABITE
-	db 38, MAROWAK
+	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
 	db 62, RHYPERIOR
@@ -80,7 +80,7 @@ KantoGrassWildMons:
 	db 36, GOLBAT
 	db 36, GRAVELER
 	db 38, GABITE
-	db 38, MAROWAK
+	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
 	db 62, RHYPERIOR
@@ -92,7 +92,7 @@ KantoGrassWildMons:
 	db 36, GOLBAT
 	db 36, GRAVELER
 	db 38, GABITE
-	db 38, MAROWAK
+	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
 	db 62, RHYPERIOR
@@ -100,7 +100,7 @@ KantoGrassWildMons:
 	db 36, GOLBAT
 	db 36, GRAVELER
 	db 38, GABITE
-	db 38, MAROWAK
+	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
 	db 62, RHYPERIOR
@@ -108,7 +108,7 @@ KantoGrassWildMons:
 	db 36, GOLBAT
 	db 36, GRAVELER
 	db 38, GABITE
-	db 38, MAROWAK
+	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
 	db 62, RHYPERIOR

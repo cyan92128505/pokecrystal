@@ -107,6 +107,32 @@ BattleTowerMons:
     bigdw 48
 	db "BURAtuKI-@@"
 
+	db AZUMARILL
+	db CHOICE_BAND
+	db PLAY_ROUGH, WATERFALL, AI_RETURN, ICE_PUNCH
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	dn 15, 15, 15, 15 ; DVs
+	db 15, 15, 20, 15 ; PP
+	db 100 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 24 ; Level
+	db 0, 0 ; Status
+    bigdw 104
+    bigdw 104
+    bigdw 51
+    bigdw 65
+    bigdw 51
+    bigdw 56
+    bigdw 65
+	db "BURAtuKI-@@"
+
 	db NIDOKING
 	db MUSCLE_BAND
 	db THRASH, DIG, ROCK_SLIDE, FIRE_PUNCH
@@ -808,32 +834,6 @@ BattleTowerMons:
     bigdw 53
     bigdw 58
 	db "GARAGARA@@@"
-
-	db METANG
-	db MUSCLE_BAND
-	db METAL_CLAW, CONFUSION, HEADBUTT, FIRE_PUNCH
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	dn 15, 15, 15, 15 ; DVs
-	db 35, 25, 15, 15 ; PP
-	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 21 ; Level
-	db 0, 0 ; Status
-	bigdw 75
-    bigdw 75
-    bigdw 56
-    bigdw 66
-    bigdw 45
-    bigdw 47
-    bigdw 58
-	db "MARUMAIN@@@"
 
 	db QUAGSIRE
 	db MUSCLE_BAND

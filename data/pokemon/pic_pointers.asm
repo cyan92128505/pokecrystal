@@ -209,10 +209,10 @@ PokemonPicPointers::
 	dba_pic ExeggcuteBackpic
 	dba_pic ExeggutorFrontpic
 	dba_pic ExeggutorBackpic
-	dba_pic CuboneFrontpic
-	dba_pic CuboneBackpic
-	dba_pic MarowakFrontpic
-	dba_pic MarowakBackpic
+	dba_pic MarillFrontpic
+	dba_pic MarillBackpic
+	dba_pic AzumarillFrontpic
+	dba_pic AzumarillBackpic
 	dba_pic SolosisFrontpic
 	dba_pic SolosisBackpic
 	dba_pic DuosionFrontpic

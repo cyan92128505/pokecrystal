@@ -9,6 +9,7 @@
 	const ROUTE30_FRUIT_TREE1
 	const ROUTE30_FIELDMON_1
 	const ROUTE30_FIELDMON_2
+	const ROUTE30_FIELDMON_3
 	const ROUTE30_FIELDMON_4
 	const ROUTE30_FIELDMON_5
 	const ROUTE30_FIELDMON_6
@@ -26,6 +27,7 @@ Route30_MapScripts:
     appear ROUTE30_FIELDMON_1
     appear ROUTE30_FIELDMON_5
     appear ROUTE30_FIELDMON_7
+    appear ROUTE30_FIELDMON_3
 
 ; Pokemon that sometimes appear
 .mon4
@@ -495,6 +497,17 @@ Route30PokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
 	done
+
+Route30FieldMon3Script:
+	faceplayer
+	cry MARILL
+	pause 15
+	loadwildmon MARILL, 7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE30_FIELDMON_3
+	end
 	
 Route30FieldMon4Script:
 	faceplayer
@@ -579,6 +592,7 @@ Route30_MapEvents:
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
 	object_event 12, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13,  3, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route30FieldMon2Script, EVENT_FIELD_MON_2
+	object_event 18, 45, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route30FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 7,  42, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route30FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 16, 33, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 4,  13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30FieldMon6Script, EVENT_FIELD_MON_6

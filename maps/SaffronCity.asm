@@ -191,6 +191,13 @@ SaffronCityCooltrainerMText:
 	para "The LEADER even"
 	line "spoke to me and"
 	cont "helped me out."
+
+	para "He told me the"
+	line "ultimate skill in"
+	cont "life is to learn"
+	cont "how to disagree"
+	cont "without being"
+	cont "disagreeable."
 	
 	para "I hope this new"
 	line "GYM becomes the"

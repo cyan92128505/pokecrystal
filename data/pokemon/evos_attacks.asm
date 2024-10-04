@@ -330,7 +330,7 @@ BunearyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, SPLASH
-	db 1, DEFENSE_CURL
+	db 9, DRAIN_KISS
 	db 12, QUICK_ATTACK
 	db 16, CHARM
 	db 20, DOUBLE_KICK
@@ -338,7 +338,7 @@ BunearyEvosAttacks:
 	db 28, ATTRACT
 	db 33, DRAIN_PUNCH
 	db 36, SUCKER_PUNCH
-	db 40, RETURN
+	db 40, PLAY_ROUGH
 	db 46, MEGA_KICK
 	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves
@@ -347,7 +347,7 @@ LopunnyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, SPLASH
-	db 1, DEFENSE_CURL
+	db 9, DRAIN_KISS
 	db 12, QUICK_ATTACK
 	db 16, CHARM
 	db 20, DOUBLE_KICK
@@ -355,7 +355,7 @@ LopunnyEvosAttacks:
 	db 28, ATTRACT
 	db 33, DRAIN_PUNCH
 	db 36, SUCKER_PUNCH
-	db 40, RETURN
+	db 40, PLAY_ROUGH
 	db 46, MEGA_KICK
 	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves

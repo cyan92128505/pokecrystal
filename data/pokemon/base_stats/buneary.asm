@@ -14,7 +14,7 @@
 	INCBIN "gfx/pokemon/dragonite/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_GROUND, EGG_GROUND ; egg groups
+	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 
 	; tm/hm learnset
 	tmhm DRAIN_PUNCH, HEADBUTT, CURSE, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, BLIZZARD, ICE_BEAM, ICY_WIND, PROTECT, SUBSTITUTE, IRON_HEAD, THUNDER, RETURN, DOUBLE_EDGE, DIG, SLEEP_TALK, SWIFT, REST, FIRE_PUNCH, ICE_PUNCH, THUNDERPUNCH

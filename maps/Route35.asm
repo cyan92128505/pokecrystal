@@ -558,9 +558,9 @@ Route35PokemonAttacksText:
 
 Route35FieldMon2Script:
 	faceplayer
-	cry VULPIX
+	cry VOLTORB
 	pause 15
-	loadwildmon VULPIX, 25
+	loadwildmon VOLTORB, 25
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

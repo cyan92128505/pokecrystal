@@ -130,7 +130,7 @@ MoveNames::
 	li "CLAMP"
 	li "SWIFT"
 	li "PSYCHO BOOST"
-	li "SPIKE CANNON"
+	li "DISCHARGE"
 	li "DRAGON DANCE"
 	li "AMNESIA"
 	li "POSION JAB"

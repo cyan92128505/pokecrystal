@@ -131,7 +131,7 @@ MoveDescriptions::
 	dw ClampDescription
 	dw SwiftDescription
 	dw PsychoBoostDescription
-	dw SpikeCannonDescription
+	dw DischargeDescription
 	dw DragonDanceDescription
 	dw AmnesiaDescription
 	dw PoisonJabDescription
@@ -789,9 +789,9 @@ PsychoBoostDescription:
 	db   "A manifestation of"
 	line "lethal will.@"
 
-SpikeCannonDescription:
-	db   "Fires spikes to"
-	line "hit 2-5 times.@"
+DischargeDescription:
+	db   "An attack that may"
+	line "cause paralysis.@"
 
 DragonDanceDescription:
 	db   "Increases ATK"

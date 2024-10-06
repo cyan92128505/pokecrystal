@@ -28,7 +28,6 @@ NationalPark_MapScripts:
 	setval WEATHER_SUN
 	writemem wFieldWeather
 .skipWeather
-
     disappear NATIONALPARK_LEON
     checkevent EVENT_BEAT_MORTY
     iffalse .appearLeon
@@ -620,9 +619,9 @@ NationalParkPokemonAttacksText:
 
 NationalParkFieldMon3Script:
 	faceplayer
-	cry KADABRA
+	cry TEDDIURSA
 	pause 15
-	loadwildmon KADABRA, 20
+	loadwildmon TEDDIURSA, 20
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

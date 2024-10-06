@@ -132,7 +132,7 @@ BattleAnimations::
 	dw BattleAnim_Clamp
 	dw BattleAnim_Swift
 	dw BattleAnim_PsychoBoost
-	dw BattleAnim_SpikeCannon
+	dw BattleAnim_Discharge
 	dw BattleAnim_DragonDance
 	dw BattleAnim_Amnesia
 	dw BattleAnim_PoisonJab
@@ -210,7 +210,7 @@ BattleAnimations::
 	dw BattleAnim_FalseSwipe
 	dw BattleAnim_Swagger
 	dw BattleAnim_MilkDrink
-	dw BattleAnim_Spark
+	dw BattleAnim_VoltTackle
 	dw BattleAnim_BulkUp
 	dw BattleAnim_FlashCannon
 	dw BattleAnim_MeanLook
@@ -3876,7 +3876,8 @@ BattleAnim_MilkDrink:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_Spark:
+BattleAnim_Discharge:
+BattleAnim_VoltTackle:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_sound 0, 0, SFX_ZAP_CANNON
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3

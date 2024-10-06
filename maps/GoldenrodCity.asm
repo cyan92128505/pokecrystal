@@ -33,11 +33,10 @@ GoldenrodCity_MapScripts:
 	endcallback
 
 .MoveTutor:
-    checktime NITE
-    iffalse .tutor
-
     disappear GOLDENRODCITY_SELF
 
+    checktime NITE
+    iffalse .tutor
     random 3
     ifequal 1, .spawn1
     disappear GOLDENRODCITY_FIELDMON_1
@@ -59,7 +58,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
 	yesorno
 	iffalse .Refused2
-	checkmoney YOUR_MONEY,40000
+	checkmoney YOUR_MONEY,50000
     ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
@@ -135,7 +134,7 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takemoney YOUR_MONEY, 40000
+	takemoney YOUR_MONEY, 50000
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodCityMoveTutorFarewellKidText
@@ -607,7 +606,7 @@ GoldenrodCityMoveTutorNotYetText:
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "40000."
+	line "50000."
 
 	para "Do you accept?"
 	done

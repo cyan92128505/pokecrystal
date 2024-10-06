@@ -395,7 +395,7 @@ PikachuEvosAttacks:
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
 	db 20, BODY_SLAM
-	db 26, THUNDERPUNCH
+	db 26, DISCHARGE
 	db 30, AGILITY
 	db 33, CRUNCH
 	db 36, THUNDERBOLT
@@ -412,7 +412,7 @@ RaichuEvosAttacks:
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
 	db 20, BODY_SLAM
-	db 26, THUNDERPUNCH
+	db 26, DISCHARGE
 	db 33, CRUNCH
 	db 36, THUNDERBOLT
 	db 45, THUNDER
@@ -427,8 +427,9 @@ RotomEvosAttacks:
 	db 15, THUNDER_WAVE
 	db 25, PAIN_SPLIT
 	db 30, SHADOW_BALL
-	db 36, THUNDERBOLT
-	db 40, HYDRO_PUMP
+	db 35, DISCHARGE
+	db 40, THUNDERBOLT
+	db 45, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 PoltegeistEvosAttacks:
@@ -741,7 +742,7 @@ ArctozoltEvosAttacks:
 	db 21, ANCIENTPOWER
 	db 28, THUNDERPUNCH
 	db 30, ICE_PUNCH
-	db 35, BODY_SLAM
+	db 35, DISCHARGE
 	db 40, THUNDERBOLT
 	db 42, ICE_BEAM
 	db 45, AVALANCHE
@@ -1210,8 +1211,7 @@ MagnemiteEvosAttacks:
 	db 16, SONICBOOM
 	db 20, THUNDER_WAVE
 	db 25, FLASH_CANNON
-	db 31, TRI_ATTACK
-    db 33, FLASH_CANNON
+	db 31, DISCHARGE
     db 36, THUNDERBOLT
 	db 40, ZAP_CANNON
 	db 50, EXPLOSION
@@ -1226,8 +1226,8 @@ MagnetonEvosAttacks:
 	db 16, SONICBOOM
 	db 20, THUNDER_WAVE
 	db 25, FLASH_CANNON
-	db 30, TRI_ATTACK
-	db 33, FLASH_CANNON
+	db 30, DISCHARGE
+	db 33, TRI_ATTACK
     db 36, THUNDERBOLT
 	db 40, ZAP_CANNON
 	db 50, EXPLOSION
@@ -1256,9 +1256,9 @@ ElectivireEvosAttacks:
 	db 16, LIGHT_SCREEN
 	db 20, THUNDER_WAVE
 	db 25, THUNDERPUNCH
+	db 30, DISCHARGE
 	db 36, THUNDERBOLT
-	db 40, DRAIN_PUNCH
-	db 45, THUNDER
+	db 40, THUNDER
 	db 55, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
@@ -1270,8 +1270,8 @@ MagnezoneEvosAttacks:
 	db 16, SONICBOOM
 	db 21, THUNDER_WAVE
 	db 26, FLASH_CANNON
-	db 30, TRI_ATTACK
-	db 33, FLASH_CANNON
+	db 30, DISCHARGE
+	db 33, TRI_ATTACK
     db 36, THUNDERBOLT
 	db 40, ZAP_CANNON
 	db 50, EXPLOSION
@@ -1465,7 +1465,7 @@ HypnoEvosAttacks:
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
-	db EVOLVE_LEVEL, 28, MILOTIC
+	db EVOLVE_HAPPINESS, TR_ANYTIME, MILOTIC
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 15, TACKLE
@@ -1492,9 +1492,9 @@ VoltorbEvosAttacks:
 	db 9, SCREECH
 	db 17, SONICBOOM
 	db 20, SELFDESTRUCT
-	db 24, ROLLOUT
-	db 28, THUNDER_WAVE
-	db 32, FLASH
+	db 23, THUNDER_WAVE
+	db 27, ROLLOUT
+	db 31, DISCHARGE
 	db 36, MIRROR_COAT
 	db 40, THUNDERBOLT
 	db 45, EXPLOSION
@@ -1507,9 +1507,9 @@ ElectrodeEvosAttacks:
 	db 9, SCREECH
 	db 17, SONICBOOM
 	db 20, SELFDESTRUCT
-	db 24, ROLLOUT
-	db 28, THUNDER_WAVE
-	db 32, FLASH
+	db 23, THUNDER_WAVE
+	db 27, ROLLOUT
+	db 30, DISCHARGE
 	db 36, MIRROR_COAT
 	db 40, THUNDERBOLT
 	db 45, EXPLOSION
@@ -1551,9 +1551,10 @@ MarillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
-	db 6, TAIL_WHIP
+	db 6, DEFENSE_CURL
 	db 15, BUBBLEBEAM
-	db 19, HEADBUTT
+	db 19, ROLLOUT
+	db 22, HEADBUTT
 	db 25, RAIN_DANCE
 	db 30, BODY_SLAM
 	db 36, WATERFALL
@@ -1565,9 +1566,10 @@ AzumarillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
-	db 6, TAIL_WHIP
+	db 6, DEFENSE_CURL
 	db 16, BUBBLEBEAM
-	db 19, HEADBUTT
+	db 18, ROLLOUT
+	db 22, HEADBUTT
 	db 25, RAIN_DANCE
 	db 30, BODY_SLAM
 	db 36, WATERFALL
@@ -1887,13 +1889,12 @@ ElectabuzzEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 1, THUNDERSHOCK
-	db 12, SWIFT
 	db 16, LIGHT_SCREEN
 	db 20, THUNDER_WAVE
 	db 25, THUNDERPUNCH
+	db 30, DISCHARGE
 	db 36, THUNDERBOLT
-	db 40, DRAIN_PUNCH
-	db 45, THUNDER
+	db 41, THUNDER
 	db 55, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
@@ -2009,8 +2010,6 @@ VaporeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 1, TACKLE
-	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, WATER_GUN
@@ -2028,13 +2027,12 @@ JolteonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 1, TACKLE
-	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
 	db 25, THUNDER_WAVE
 	db 28, FLASH_CANNON
+	db 30, DISCHARGE
 	db 32, AGILITY
 	db 36, THUNDERBOLT
 	db 45, THUNDER
@@ -2044,8 +2042,6 @@ FlareonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 1, TACKLE
-	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, EMBER
@@ -2185,7 +2181,8 @@ ZapdosEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 13, THUNDER_WAVE
 	db 25, DRILL_PECK
-	db 35, AIR_SLASH
+	db 30, AIR_SLASH
+	db 35, DISCHARGE
 	db 45, ROOST
 	db 50, THUNDERBOLT
 	db 55, HURRICANE
@@ -2546,9 +2543,9 @@ VoltikEvosAttacks:
 	db 8, ABSORB
 	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
-	db 20, SLASH
-	db 24, X_SCISSOR
-	db 28, GIGA_DRAIN
+	db 20, X_SCISSOR
+	db 24, GIGA_DRAIN
+	db 28, DISCHARGE
 	db 31, BUG_BUZZ
 	db 36, THUNDERBOLT
 	db 45, THUNDER
@@ -2562,9 +2559,9 @@ GalvantulaEvosAttacks:
 	db 8, ABSORB
 	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
-	db 20, SLASH
-	db 24, X_SCISSOR
-	db 28, GIGA_DRAIN
+	db 20, X_SCISSOR
+	db 24, GIGA_DRAIN
+	db 28, DISCHARGE
 	db 30, BUG_BUZZ
 	db 36, THUNDERBOLT
 	db 45, THUNDER
@@ -2592,16 +2589,16 @@ CrobatEvosAttacks:
 ChinchouEvosAttacks:
 	db EVOLVE_LEVEL, 27, LANTURN
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 5, SUPERSONIC
 	db 10, FLAIL
-	db 12, WATER_GUN
 	db 14, THUNDERSHOCK
 	db 18, BUBBLEBEAM
 	db 21, RAIN_DANCE
 	db 23, CONFUSE_RAY
 	db 28, THUNDER_WAVE
-	db 32, SCALD
+	db 30, DISCHARGE
+	db 33, SCALD
 	db 36, THUNDERBOLT
 	db 45, HYDRO_PUMP
 	db 50, THUNDER
@@ -2609,16 +2606,16 @@ ChinchouEvosAttacks:
 
 LanturnEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 5, SUPERSONIC
 	db 10, FLAIL
-	db 12, WATER_GUN
 	db 14, THUNDERSHOCK
 	db 18, BUBBLEBEAM
 	db 21, RAIN_DANCE
 	db 23, CONFUSE_RAY
 	db 27, THUNDER_WAVE
-	db 32, SCALD
+	db 30, DISCHARGE
+	db 33, SCALD
 	db 36, THUNDERBOLT
 	db 45, HYDRO_PUMP
 	db 50, THUNDER
@@ -2983,8 +2980,6 @@ EspeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 1, TACKLE
-	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, CONFUSION
@@ -2999,8 +2994,6 @@ UmbreonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 1, TACKLE
-	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, PURSUIT
@@ -3659,6 +3652,7 @@ RaikouEvosAttacks:
 	db 11, THUNDERSHOCK
 	db 21, ROAR
 	db 31, QUICK_ATTACK
+	db 36, DISCHARGE
 	db 41, THUNDERBOLT
 	db 45, CRUNCH
 	db 50, REFLECT

@@ -5505,7 +5505,7 @@ BattleTowerMons:
 
 	db ZAPDOS ; 50 mons
 	db LEFTOVERS
-	db THUNDERBOLT, BRAVE_BIRD, ICY_WIND, ROOST
+	db DISCHARGE, BRAVE_BIRD, ICY_WIND, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

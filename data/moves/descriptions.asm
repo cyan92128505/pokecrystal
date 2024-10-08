@@ -730,8 +730,8 @@ ReflectDescription:
 	line "with a barrier.@"
 
 FocusEnergyDescription:
-	db   "Raises the criti-"
-	line "cal hit ratio.@"
+	db   "Greatly boosts"
+	line "crit ratio.@"
 
 BideDescription:
 	db   "An attack that"

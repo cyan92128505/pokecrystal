@@ -1175,7 +1175,8 @@ BattleCommand_Critical:
 	bit SUBSTATUS_FOCUS_ENERGY, a
 	jr z, .CheckCritical
 
-; +1 critical level - focus energy gives +1 level
+; +2 critical level - focus energy gives +2 level
+	inc c
 	inc c
 
 .CheckCritical:

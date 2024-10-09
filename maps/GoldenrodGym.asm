@@ -60,8 +60,6 @@ GoldenrodGymWhitneyScript:
 	end
 
 .StoppedCrying:
-	checkevent EVENT_GOT_TM45_ATTRACT
-	iftrue .GotAttract
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
 	loadmem wLevelCap, 40
@@ -74,18 +72,16 @@ GoldenrodGymWhitneyScript:
 	setflag ENGINE_PLAINBADGE
 	readvar VAR_BADGES
 	scall GoldenrodGymActivateRockets
-.GotPlainBadge:
 	writetext WhitneyPlainBadgeText
 	promptbutton
 	verbosegiveitem TM_RETURN
-	iffalse .NoRoomForAttract
 	setevent EVENT_GOT_TM45_ATTRACT
 	writetext WhitneyAttractText
 	waitbutton
 	closetext
 	end
 
-.GotAttract:
+.GotPlainBadge:
 	writetext WhitneyGoodCryText
 	waitbutton
     closetext
@@ -95,9 +91,6 @@ GoldenrodGymWhitneyScript:
 	iftrue .rematch
 	writetext RematchRefuseTextWhitney
 	waitbutton
-	closetext
-	end
-.NoRoomForAttract:
 	closetext
 	end
 

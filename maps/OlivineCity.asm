@@ -33,7 +33,7 @@ OlivineCity_MapScripts:
     endcallback
 
 OlivineCityRivalSceneBottom:
-    checkevent EVENT_BEAT_WHITNEY
+    checkflag ENGINE_PLAINBADGE
     iffalse .end
     applymovement PLAYER, OlivineCity_PlayerUp
     sjump OlivineCityRivalSceneTop
@@ -45,7 +45,7 @@ OlivineCity_PlayerUp:
     step_end
 
 OlivineCityRivalSceneTop:
-    checkevent EVENT_BEAT_WHITNEY
+    checkflag ENGINE_PLAINBADGE
     iffalse .end
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15

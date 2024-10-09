@@ -6,4 +6,5 @@
 	next "water perfectly."
 
 	page "Immune to"
+	next "stat drops and"
 	next "WATER attacks.@"

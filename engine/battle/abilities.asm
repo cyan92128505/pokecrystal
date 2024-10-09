@@ -40,6 +40,8 @@ SniperPokemon:
     db SEADRA
     db GIBLE
     db GABITE
+    db GARCHOMP
+    db FLAREON
     db -1
 
 SuperLuckPokemon:
@@ -47,10 +49,10 @@ SuperLuckPokemon:
     db HONCHKROW
     db BELLSPROUT
     db WEEPINBELL
-   ; db VICTREEBEL
+    db VICTREEBEL
     db CHARMANDER
     db CHARMELEON
-   ; db CHARIZARD
+    db JOLTEON
     db -1
 
 SereneGracePokemon:
@@ -157,6 +159,7 @@ ClearBodyPokemon:
     db REGIGIGAS
     db DEOXYS
     db DUNSPARCE
+    db VAPOREON
     db -1
 
 SolidRockPokemon:

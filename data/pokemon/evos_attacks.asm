@@ -1017,11 +1017,11 @@ BellsproutEvosAttacks:
 	db 1, VINE_WHIP
 	db 6, GROWTH
 	db 11, WRAP
-	db 15, SLEEP_POWDER
-	db 17, POISONPOWDER
-	db 19, STUN_SPORE
+	db 15, RAZOR_LEAF
+	db 18, SLEEP_POWDER
 	db 22, ACID
-	db 26, RAZOR_LEAF
+	db 24, POISONPOWDER
+	db 26, STUN_SPORE
 	db 30, POISON_JAB
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
@@ -1033,11 +1033,11 @@ WeepinbellEvosAttacks:
 	db 1, VINE_WHIP
 	db 6, GROWTH
 	db 11, WRAP
-	db 15, SLEEP_POWDER
-	db 17, POISONPOWDER
-	db 19, STUN_SPORE
+	db 15, RAZOR_LEAF
+	db 18, SLEEP_POWDER
 	db 21, ACID
-	db 26, RAZOR_LEAF
+	db 24, POISONPOWDER
+	db 26, STUN_SPORE
 	db 30, POISON_JAB
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
@@ -1048,14 +1048,15 @@ VictreebelEvosAttacks:
 	db 1, VINE_WHIP
 	db 6, GROWTH
 	db 11, WRAP
-	db 15, SLEEP_POWDER
-	db 17, POISONPOWDER
-	db 19, STUN_SPORE
-	db 22, ACID
-	db 26, RAZOR_LEAF
+	db 15, RAZOR_LEAF
+	db 18, SLEEP_POWDER
+	db 21, ACID
+	db 24, POISONPOWDER
+	db 26, STUN_SPORE
 	db 30, POISON_JAB
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
+	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
 TentacoolEvosAttacks:
@@ -1997,7 +1998,7 @@ EeveeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
+	db 8, FOCUS_ENERGY
 	db 16, GROWL
 	db 20, GROWTH
 	db 23, QUICK_ATTACK
@@ -2010,7 +2011,7 @@ VaporeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 8, SAND_ATTACK
+	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, WATER_GUN
 	db 20, BITE
@@ -2027,7 +2028,7 @@ JolteonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 8, SAND_ATTACK
+	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
 	db 25, THUNDER_WAVE
@@ -2042,7 +2043,7 @@ FlareonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 8, SAND_ATTACK
+	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, EMBER
 	db 20, BITE
@@ -2980,7 +2981,7 @@ EspeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 8, SAND_ATTACK
+	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, CONFUSION
 	db 20, SWIFT
@@ -2994,7 +2995,7 @@ UmbreonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 8, SAND_ATTACK
+	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, PURSUIT
 	db 20, CONFUSE_RAY

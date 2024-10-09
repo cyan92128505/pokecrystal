@@ -361,7 +361,7 @@ RematchRefuseTextSeto:
 EcruteakTeleportGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_WHITNEY
+	checkflag ENGINE_PLAINBADGE
 	iftrue .welcome
 	writetext EcruteakTeleportGuyText1
 	yesorno
@@ -425,7 +425,7 @@ EcruteakTeleportGuyEncounterScript:
     sjump EcruteakTeleportGuyScript
 
 BurnedTowerBlockScript:
-    checkevent EVENT_BEAT_WHITNEY
+    checkflag ENGINE_PLAINBADGE
     iffalse .block
     end
 .block
@@ -557,7 +557,7 @@ RematchRefuseTextAerith1:
     done
 
 BurntTowerBlockScript:
-    checkevent EVENT_BEAT_WHITNEY
+    checkflag ENGINE_PLAINBADGE
     iffalse .block
     end
 .block

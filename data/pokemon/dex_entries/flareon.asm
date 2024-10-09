@@ -6,4 +6,5 @@
 	next "1700 degrees."
 
 	page "Immune to"
-	next "FIRE attacks.@"
+	next "FIRE and has"
+	next "boosted crits.@"

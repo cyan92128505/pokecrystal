@@ -6,5 +6,5 @@
 	next "flow through it."
 
 	page "Immune to"
-	next "ELECTRIC"
-	next "attacks.@"
+	next "ELECTRIC and"
+	next "crits often.@"

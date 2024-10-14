@@ -364,7 +364,7 @@ LakeOfRageGrampsText:
 
 LakeOfRageGrampsText_ClearedRocketHideout:
 	text "You conquered that"
-	line "might red beast!"
+	line "mighty red beast!"
 	para "Aye I've only"
 	line "known one other"
 	cont "trainer ta tame"

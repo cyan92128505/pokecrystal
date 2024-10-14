@@ -11,7 +11,7 @@ BattleCommand_Transform:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	bit SUBSTATUS_SUBSTITUTE, [hl]
-	jp z, BattleEffect_ButItFailed
+	jp nz, BattleEffect_ButItFailed
 
     ldh a, [hBattleTurn]
 	and a

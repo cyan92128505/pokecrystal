@@ -63,6 +63,7 @@ Many massively impactful quality of life changes.
 - All TMs are infinitely reusable.
 - HMs can be used by any Pokémon which is able to learn them, without actually needing to know them.
 - A Pocket PC allowing access to PC anywhere except caves and dungeons for balance reasons.
+- Pocket PC also acts as a portable Pokémon Center
 - An infinitely reusable escape rope called Escape Pod.
 - An infinitely reusable repel called a Repulsor.
 - Warp Device which lets the player instantly warp to important locations.

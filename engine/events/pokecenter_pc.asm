@@ -65,7 +65,7 @@ PokemonCenterPC:
 .String_BillsPC:    db "BILL's PC@"
 .String_OaksPC:     db "PROF.OAK's PC@"
 .String_HallOfFame: db "HALL OF FAME@"
-.String_TurnOff:    db "TURN OFF@"
+.String_TurnOff:    db "HEAL PARTY@"
 
 .WhichPC:
 ; entries correspond to PCPC_* constants
@@ -173,9 +173,14 @@ HallOfFamePC:
 	ret
 
 TurnOffPC:
-	ld hl, PokecenterPCOaksClosedText
+	farcall HealParty
+	ld de, SFX_FULL_HEAL
+	call PC_WaitPlaySFX
+	call WaitSFX
+	ld hl, PCHealPartyText
 	call PrintText
-	scf
+	ld hl, PokecenterPCWhoseText
+	call PrintText
 	ret
 
 PC_PlayBootSound:
@@ -286,7 +291,7 @@ PlayersPCMenuData:
 .TossItem:     db "TOSS ITEM@"
 .MailBox:      db "MAIL BOX@"
 .Decoration:   db "DECORATION@"
-.TurnOff:      db "TURN OFF@"
+.TurnOff:      db "HEAL PARTY@"
 .LogOff:       db "LOG OFF@"
 
 .WhichPC:
@@ -677,3 +682,7 @@ PokecenterOaksPCText:
 PokecenterPCOaksClosedText:
 	text_far _PokecenterPCOaksClosedText
 	text_end
+
+PCHealPartyText:
+    text_far _HealPartyText
+    text_end

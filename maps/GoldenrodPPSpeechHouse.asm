@@ -28,10 +28,11 @@ GoldenrodPPSpeechHouseFisherText:
 
 	para "You can use it"
 	line "to heal your"
-	cont "#MON by"
-	cont "depositing them"
-	cont "then withdrawing"
-	cont "them."
+	cont "#MON anywhere."
+
+	text "Like what's the"
+	line "point in #MON"
+	cont "CENTERS!"
 	done
 
 GoldenrodPPSpeechHouseLassText:

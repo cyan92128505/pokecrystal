@@ -1583,11 +1583,9 @@ AideText_PocketPCInfoText:
 	line "your party"
 	cont "remotely."
 
-	para "If your #MON"
-	line "need a rest"
-	cont "you can store"
-	cont "them in the PC"
-	cont "to heal them."
+	para "You can also use"
+	line "it to heal your"
+	cont "#MON anytime!"
 
 	para "But this can't"
 	line "be used anywhere."

@@ -71,27 +71,34 @@ Director:
 	closetext
 	end
 
-TrainerExecutivef1:
-	trainer EXECUTIVEF, EXECUTIVEF_1, EVENT_BEAT_ROCKET_EXECUTIVEF_1, Executivef1SeenText, Executivef1BeatenText, 0, .Script
+RadioTower5FRocketBossScene:
+	applymovement PLAYER, RadioTower5FPlayerTwoStepsLeftMovement
+	playmusic MUSIC_ROCKET_ENCOUNTER
 
-.Script:
-    loadmem wNoRematch, 1
-	;endifjustbattled
+    showemote EMOTE_SHOCK, RADIOTOWER5F_ROCKET_GIRL, 15
+	turnobject RADIOTOWER5F_ROCKET_GIRL, UP
+	turnobject PLAYER, DOWN
+    opentext
+    writetext Executivef1SeenText
+    waitbutton
+    closetext
+    winlosstext Executivef1BeatenText, Executivef1LossText
+	loadtrainer EXECUTIVEF, EXECUTIVEF_1
+	startbattle
+	reloadmapafterbattle
 	opentext
 	writetext Executivef1AfterBattleText
 	waitbutton
 	closetext
-	end
 
-RadioTower5FRocketBossScene:
-	applymovement PLAYER, RadioTower5FPlayerTwoStepsLeftMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	showemote EMOTE_SHOCK, RADIOTOWER5F_ROCKET, 15
 	turnobject RADIOTOWER5F_ROCKET, RIGHT
+	turnobject PLAYER, LEFT
 	opentext
 	writetext RadioTower5FRocketBossBeforeText
 	waitbutton
 	closetext
-	winlosstext RadioTower5FRocketBossWinText, 0
+	winlosstext RadioTower5FRocketBossWinText, RadioTower5FRocketBossLossText
 	setlasttalked RADIOTOWER5F_ROCKET
 	loadtrainer EXECUTIVEM, EXECUTIVEM_1
 	startbattle
@@ -280,6 +287,24 @@ RadioTower5FPlayerTwoStepsLeftMovement:
 	step LEFT
 	step_end
 
+Executivef1LossText:
+	text "It's not as much"
+	line "fun without your"
+	cont "sobbing dad."
+	para "I'm in a good mood"
+	line "so I'm letting you"
+	cont "live."
+	para "Get out of here!"
+	done
+
+RadioTower5FRocketBossLossText:
+	text "Soon you will see"
+	line "your failure today"
+	cont "was necessary for"
+	cont "your survival."
+	para "Now go home."
+	done
+
 Need8BadgesText:
 	text "Whatever that"
 	line "#MON is it"
@@ -414,11 +439,13 @@ Executivef1SeenText:
 	para "Where is your"
 	line "daddy?"
 
-	para "I would like"
-	line "to see the pain"
-	cont "in his face as"
-	cont "my #MON"
-	cont "torture you."
+	para "I enjoyed his"
+	line "begging for your"
+	cont "life."
+
+	para "I was hoping to"
+	line "see some more of"
+	cont "it."
 
 	para "This time LANCE"
 	line "isn't here to"
@@ -428,15 +455,17 @@ Executivef1SeenText:
 	line "enjoy this all"
 	cont "the same."
 
-	para "Time to die"
+	para "Your time has come"
 	line "HOEN sympathiser!"
 	done
 
 Executivef1BeatenText:
-	text "That's impossible!"
-
-	para "You were weak"
-	line "before!"
+	text "I..."
+	para "I don't"
+	line "understand."
+	para "How have you got"
+	line "so much stronger"
+	cont "so quickly!"
 	done
 
 Executivef1AfterBattleText:
@@ -484,7 +513,10 @@ Executivef1AfterBattleText:
 	done
 
 RadioTower5FRocketBossBeforeText:
-	text "We have developed"
+    text "Don't trouble"
+    line "yourself CASSIDY."
+
+	para "We have developed"
 	line "an EM signal that"
 	cont "induces rage in"
 	cont "#MON."
@@ -513,9 +545,11 @@ RadioTower5FRocketBossBeforeText:
 	done
 
 RadioTower5FRocketBossWinText:
-	text "No!"
-
-	para "You naive child."
+	text "You think yourself"
+	line "strong?"
+	para "You have no idea"
+	line "what WALLACE will"
+	cont "do to us all."
 	done
 
 RadioTower5FRocketBossAfterText:
@@ -758,7 +792,7 @@ RadioTower5F_MapEvents:
 	def_object_events
 	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, -1
 	object_event 13,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  2, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerExecutivef1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 14,  6, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL
 	object_event 12,  0, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

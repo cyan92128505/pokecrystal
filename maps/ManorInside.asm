@@ -849,12 +849,20 @@ ManorFact1Text:
 	done
 
 ManorFact2Text:
-	text "All new maps are"
-	line "coded as indoor"
-	cont "maps because the"
-	cont "outdoor sprite"
-	cont "system is an"
-	cont "abomination."
+	text "The HEAL PARTY"
+	line "option on the PC"
+	cont "was a last minute"
+	cont "addition to the"
+	cont "game."
+	para "Prior to this the"
+	line "player had to"
+	cont "deposit then"
+	cont "withdraw all their"
+	cont "#MON to heal"
+	cont "them via the"
+	cont "POCKET PC."
+	para "Doing this all the"
+	line "time got old fast!"
 	done
 
 ManorFact3Text:

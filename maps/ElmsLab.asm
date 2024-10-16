@@ -471,7 +471,6 @@ AideScript_GivePocketPC:
 	promptbutton
 	verbosegiveitem POCKET_PC
 	writetext AideText_PocketPCInfoText
-	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOTHING
 	end
@@ -1575,7 +1574,7 @@ AideText_GetPocketPCText:
 	text "Oh, I have this"
 	line "for you too."
 
-	para "It's a Pocket PC!"
+	para "It's a POCKET PC!"
 	done
 
 AideText_PocketPCInfoText:
@@ -1590,9 +1589,17 @@ AideText_PocketPCInfoText:
 	para "But this can't"
 	line "be used anywhere."
 
-	para "Some places don't"
-	line "have a strong"
-	cont "enough signal."
+	para "You can use the"
+	line "SEL option in the"
+	cont "KEY ITEMS menu to"
+	cont "quick select the"
+	cont "POCKET PC using"
+	cont "the SELECT button."
+
+	para "Then you can"
+	line "quickly heal your"
+	cont "#MON after a"
+	cont "battle."
 	done
 
 DadBattleScript2:

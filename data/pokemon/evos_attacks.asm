@@ -26,12 +26,12 @@ BulbasaurEvosAttacks:
 	db 1, GROWL
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
-	db 17, POISONPOWDER
-	db 17, SLEEP_POWDER
+	db 17, SLUDGE
+	db 18, SLEEP_POWDER
 	db 20, RAZOR_LEAF
 	db 25, LEAF_BLADE
-	db 30, SLUDGE_BOMB
-	db 33, POISON_JAB
+	db 30, POISON_JAB
+	db 33, SLUDGE_BOMB
 	db 40, GROWTH
 	db 45, SYNTHESIS
 ;	db 50, SOLARBEAM
@@ -44,12 +44,12 @@ IvysaurEvosAttacks:
 	db 1, GROWL
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
-	db 16, POISONPOWDER
-	db 16, SLEEP_POWDER
+	db 16, SLUDGE
+	db 18, SLEEP_POWDER
 	db 20, RAZOR_LEAF
 	db 25, LEAF_BLADE
-	db 30, SLUDGE_BOMB
-	db 33, POISON_JAB
+	db 30, POISON_JAB
+	db 33, SLUDGE_BOMB
 	db 40, GROWTH
 	db 45, SYNTHESIS
 ;	db 50, SOLARBEAM
@@ -61,12 +61,12 @@ VenusaurEvosAttacks:
 	db 1, GROWL
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
-	db 15, POISONPOWDER
-	db 15, SLEEP_POWDER
+	db 16, SLUDGE
+	db 18, SLEEP_POWDER
 	db 20, RAZOR_LEAF
 	db 25, LEAF_BLADE
-	db 30, SLUDGE_BOMB
-	db 32, POISON_JAB
+	db 30, POISON_JAB
+	db 32, SLUDGE_BOMB
 	db 40, GROWTH
 	db 45, SYNTHESIS
 	db 50, SOLARBEAM
@@ -448,71 +448,69 @@ NidoranFEvosAttacks:
 	db EVOLVE_LEVEL, 16, NIDORINA
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 1, TACKLE
-	db 8, SCRATCH
+	db 1, SCRATCH
+	db 8, ACID
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 17, HORN_ATTACK
-	db 30, POISON_JAB
+	db 20, SLUDGE
 	db 0 ; no more level-up moves
 
 NidorinaEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, NIDOQUEEN
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 1, TACKLE
-	db 8, SCRATCH
+	db 1, SCRATCH
+	db 8, ACID
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 16, HORN_ATTACK
-	db 30, POISON_JAB
+	db 20, SLUDGE
 	db 0 ; no more level-up moves
 
 NidoqueenEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 8, SCRATCH
+	db 8, ACID
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 17, HORN_ATTACK
+	db 20, SLUDGE
 	db 30, BODY_SLAM
-	db 35, POISON_JAB
-	db 40, EARTHQUAKE
-	db 50, FISSURE
+	db 35, SLUDGE_BOMB
+	db 40, EARTH_POWER
 	db 0 ; no more level-up moves
 
 NidoranMEvosAttacks:
 	db EVOLVE_LEVEL, 16, NIDORINO
 	db 0 ; no more evolutions
 	db 1, LEER
-	db 1, TACKLE
-	db 8, HORN_ATTACK
+	db 1, HORN_ATTACK
+	db 8, ACID
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
-	db 30, POISON_JAB
+	db 20, SLUDGE
 	db 0 ; no more level-up moves
 
 NidorinoEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, NIDOKING
 	db 0 ; no more evolutions
 	db 1, LEER
-	db 1, TACKLE
-	db 8, HORN_ATTACK
+	db 1, HORN_ATTACK
+	db 8, ACID
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
-	db 30, POISON_JAB
+	db 20, SLUDGE
 	db 0 ; no more level-up moves
 
 NidokingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
 	db 1, HORN_ATTACK
 	db 1, DOUBLE_KICK
 	db 1, POISON_STING
+	db 20, SLUDGE
 	db 30, THRASH
 	db 35, POISON_JAB
 	db 40, EARTHQUAKE
-	db 50, HORN_DRILL
 	db 0 ; no more level-up moves
 
 ClefairyEvosAttacks:
@@ -603,12 +601,13 @@ WigglytuffEvosAttacks:
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
-	db 1, SCREECH
+	db 1, ACID
 	db 1, LEECH_LIFE
 	db 6, SUPERSONIC
-	db 12, BITE
-	db 15, HYPNOSIS
-	db 19, CONFUSE_RAY
+	db 10, BITE
+	db 13, HYPNOSIS
+	db 17, CONFUSE_RAY
+	db 20, SLUDGE
 	db 23, WING_ATTACK
 	db 30, AIR_SLASH
 	db 35, MEAN_LOOK
@@ -619,12 +618,13 @@ ZubatEvosAttacks:
 GolbatEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
 	db 0 ; no more evolutions
-	db 1, SCREECH
+	db 1, ACID
 	db 1, LEECH_LIFE
 	db 6, SUPERSONIC
-	db 12, BITE
-	db 15, HYPNOSIS
-	db 19, CONFUSE_RAY
+	db 10, BITE
+	db 13, HYPNOSIS
+	db 17, CONFUSE_RAY
+	db 20, SLUDGE
 	db 22, WING_ATTACK
 	db 30, AIR_SLASH
 	db 35, MEAN_LOOK
@@ -1015,11 +1015,12 @@ BellsproutEvosAttacks:
 	db EVOLVE_LEVEL, 21, WEEPINBELL
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
+	db 1, ACID
 	db 6, GROWTH
 	db 11, WRAP
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
-	db 22, ACID
+	db 22, SLUDGE
 	db 24, POISONPOWDER
 	db 26, STUN_SPORE
 	db 30, POISON_JAB
@@ -1031,11 +1032,12 @@ WeepinbellEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VICTREEBEL
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
+	db 1, ACID
 	db 6, GROWTH
 	db 11, WRAP
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
-	db 21, ACID
+	db 21, SLUDGE
 	db 24, POISONPOWDER
 	db 26, STUN_SPORE
 	db 30, POISON_JAB
@@ -1046,11 +1048,12 @@ WeepinbellEvosAttacks:
 VictreebelEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
+	db 1, ACID
 	db 6, GROWTH
 	db 11, WRAP
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
-	db 21, ACID
+	db 21, SLUDGE
 	db 24, POISONPOWDER
 	db 26, STUN_SPORE
 	db 30, POISON_JAB
@@ -1068,7 +1071,7 @@ TentacoolEvosAttacks:
 	db 10, ACID
 	db 15, WRAP
 	db 20, BUBBLEBEAM
-	db 25, SCREECH
+	db 25, SLUDGE
 	db 31, POISON_JAB
 	db 35, SLUDGE_BOMB
 	db 40, SCALD
@@ -1083,7 +1086,7 @@ TentacruelEvosAttacks:
 	db 10, ACID
 	db 15, WRAP
 	db 20, BUBBLEBEAM
-	db 25, SCREECH
+	db 25, SLUDGE
 	db 30, POISON_JAB
 	db 35, SLUDGE_BOMB
 	db 40, SCALD
@@ -1373,10 +1376,11 @@ GastlyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
+	db 1, ACID
 	db 8, CONFUSE_RAY
 	db 13, MEAN_LOOK
-	db 16, CURSE
-	db 20, NIGHT_SHADE
+	db 16, NIGHT_SHADE
+	db 20, SLUDGE
 	db 26, SUCKER_PUNCH
 	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
@@ -1389,10 +1393,11 @@ HaunterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
+	db 1, ACID
 	db 8, CONFUSE_RAY
 	db 13, MEAN_LOOK
-	db 16, CURSE
-	db 20, NIGHT_SHADE
+	db 16, NIGHT_SHADE
+	db 20, SLUDGE
 	db 25, SUCKER_PUNCH
 	db 30, SHADOW_BALL
 	db 41, SLUDGE_BOMB
@@ -1404,10 +1409,11 @@ GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
+	db 1, ACID
 	db 8, CONFUSE_RAY
 	db 13, MEAN_LOOK
-	db 16, CURSE
-	db 20, NIGHT_SHADE
+	db 16, NIGHT_SHADE
+	db 20, SLUDGE
 	db 25, SUCKER_PUNCH
 	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
@@ -1624,7 +1630,7 @@ ReuniclusEvosAttacks:
 KoffingEvosAttacks:
 	db EVOLVE_LEVEL, 30, WEEZING
 	db 0 ; no more evolutions
-	db 1, POISON_GAS
+	db 1, ACID
 	db 1, TACKLE
 	db 17, SLUDGE
 	db 20, SELFDESTRUCT
@@ -1638,7 +1644,7 @@ KoffingEvosAttacks:
 
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POISON_GAS
+	db 1, ACID
 	db 1, TACKLE
 	db 17, SLUDGE
 	db 21, SELFDESTRUCT
@@ -2567,13 +2573,14 @@ GalvantulaEvosAttacks:
 
 CrobatEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCREECH
+	db 1, ACID
 	db 1, LEECH_LIFE
 	db 6, SUPERSONIC
-	db 12, BITE
-	db 15, HYPNOSIS
-	db 19, CONFUSE_RAY
-	db 24, WING_ATTACK
+	db 10, BITE
+	db 13, HYPNOSIS
+	db 17, CONFUSE_RAY
+	db 20, SLUDGE
+	db 22, WING_ATTACK
 	db 30, AIR_SLASH
 	db 35, MEAN_LOOK
 	db 40, SLUDGE_BOMB

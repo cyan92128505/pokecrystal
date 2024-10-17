@@ -3563,9 +3563,9 @@ AI_Smart_RainDance:
 ; Particularly, if the player is a Water-type.
 	ld a, [wBattleMonType1]
 	cp WATER
-	jr z, AIBadWeatherType
+	jp z, AIBadWeatherType
 	cp FIRE
-	jr z, AIGoodWeatherType
+	jp z, AIGoodWeatherType
 
 	ld a, [wBattleMonType2]
 	cp WATER
@@ -3626,9 +3626,9 @@ AI_Smart_SunnyDay:
 	ld hl, SunnyDayMoves
 	jp AI_Smart_WeatherMove
 .encourage
-    dec [hl]
-    dec [hl]
-    dec [hl]
+rept 12
+    dec [hl] ; enough to overcome KO as it could be SOLARBEAM
+endr
     ret
 .discourage
     inc [hl]

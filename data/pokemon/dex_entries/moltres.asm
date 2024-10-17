@@ -5,6 +5,6 @@
 	next "#MON that"
 	next "melts foes."
 
-	page "Immune to"
-	next "FIRE and raises"
+	page "Immune to FIRE"
+	next "and RECOIL. Sets"
 	next "SAFEGUARD.@"

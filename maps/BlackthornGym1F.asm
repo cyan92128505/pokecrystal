@@ -447,7 +447,7 @@ BlackthornGymGuideWinText:
 	text "Well done!"
 
 	para "I knew you"
-	cont "could do it."
+	line "could do it."
 
 	para "All hail"
 	line "<PLAYER> the"

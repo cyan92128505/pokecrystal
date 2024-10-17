@@ -98,11 +98,11 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	cont "POCKET PC"
 	cont "between battles."
 
-	para "So it will be"
-	line "good to buy lots"
-	cont "of healing items"
-	cont "to use between"
-	cont "battles."
+	para "But don't worry"
+	line "your #MON will"
+	cont "be fully healed"
+	cont "after each battle"
+	cont "if you win!"
 	done
 
 TeleportGuyText1:

@@ -6,5 +6,5 @@
 	next "and powerful."
 
 	page "Immune to"
-	next "GROUND and lays"
+	next "GROUND and sets"
 	next "LIGHT SCREEN.@"

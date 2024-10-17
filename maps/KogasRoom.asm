@@ -64,6 +64,7 @@ AdamScript_Battle:
 	writetext KogaScript_KogaDefeatText
 	waitbutton
 	closetext
+	special HealParty
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	reloadmappart

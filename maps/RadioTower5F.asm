@@ -399,7 +399,7 @@ FakeDirectorTextAfter:
 	text "The HOEN legendary"
 	line "#MON are"
 	cont "must stronger"
-	cont "than the element"
+	cont "than the elemental"
 	cont "birds of KANTO."
 
 	para "We did at one"

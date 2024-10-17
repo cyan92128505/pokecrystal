@@ -68,10 +68,12 @@ RockHeadPokemon:
     db AERODACTYL
     db BAGON
     db SHELGON
+    db SALAMENCE
     db CHIMCHAR
     db MONFERNO
     db INFERNAPE
     db HAWLUCHA
+    db MOLTRES
     db REGIGIGAS
     db -1
 

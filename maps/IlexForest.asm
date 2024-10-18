@@ -25,51 +25,35 @@ IlexForest_MapScripts:
 .FarfetchdCallback:
 ; Pokemon which always appear
     appear ILEXFOREST_FIELDMON_1
-    appear ILEXFOREST_FIELDMON_3
-    appear ILEXFOREST_FIELDMON_4
-    appear ILEXFOREST_FIELDMON_5
-
-; Pokemon that sometimes appear
-    random 2
-    ifequal 1, .spawn2
-    disappear ILEXFOREST_FIELDMON_2
-    sjump .mon6
-.spawn2
     appear ILEXFOREST_FIELDMON_2
-    
-.mon6
+    appear ILEXFOREST_FIELDMON_3
+    appear ILEXFOREST_FIELDMON_6
+    appear ILEXFOREST_FIELDMON_7
+
     random 2
     ifequal 1, .spawn6
-    disappear ILEXFOREST_FIELDMON_6
+    disappear ILEXFOREST_FIELDMON_4
     sjump .mon7
 .spawn6
-    appear ILEXFOREST_FIELDMON_6
+    appear ILEXFOREST_FIELDMON_4
 
 .mon7
     random 2
     ifequal 1, .spawn7
-    disappear ILEXFOREST_FIELDMON_7
+    disappear ILEXFOREST_FIELDMON_5
     sjump .mon8
 .spawn7
-    appear ILEXFOREST_FIELDMON_7
+    appear ILEXFOREST_FIELDMON_5
 
 .mon8
     random 4 ; shiny
     ifequal 1, .spawn8
     disappear ILEXFOREST_FIELDMON_8
-    sjump .checkNight
+    sjump .end
 .spawn8
     appear ILEXFOREST_FIELDMON_8
 
-.checkNight
-; Pokemon that only appear at night
-    checktime NITE
-    iffalse .farfetchd
-
-; Pokemon that don't appear at night
-    disappear ILEXFOREST_FIELDMON_7
-
-.farfetchd
+.end
 	endcallback
 
 IlexForestCharcoalApprenticeScript:
@@ -664,9 +648,9 @@ IlexForestFieldMon3Script:
 
 IlexForestFieldMon4Script:
 	faceplayer
-	cry BUTTERFREE
+	cry SCYTHER
 	pause 15
-	loadwildmon BUTTERFREE, 20
+	loadwildmon SCYTHER, 17
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

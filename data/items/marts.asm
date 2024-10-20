@@ -139,7 +139,7 @@ MartGoldenrod5F:
 	db -1 ; end
 
 MartOlivine:
-	db 8 ; # items
+	db 9 ; # items
 	db GREAT_BALL
 	db SUPER_POTION
 	db HYPER_POTION
@@ -363,6 +363,7 @@ MartMtMoon:
 	db SODA_POP
 	db LEMONADE
 	db PORTRAITMAIL
+	db MOON_STONE
 	db -1 ; end
 
 MartIndigoPlateau:

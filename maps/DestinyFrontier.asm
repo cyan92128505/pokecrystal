@@ -9,7 +9,6 @@
     const DESTINYFRONTIER_AIZEN
     const DESTINYFRONTIER_XEHANORT
     const DESTINYFRONTIER_AERITH
-    const DESTINYFRONTIER_RAT_GOD
     const DESTINYFRONTIER_NURSE
     const DESTINYFRONTIER_CLERK
     const DESTINYFRONTIER_GUARD_1
@@ -812,86 +811,6 @@ MasterAerithLoseAfterBattleText:
 	cont "just have fun."
 	done
 
-MasterJoeyScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_JOEY
-	iftrue .FightDone
-.fight
-	writetext MasterJoeySeenText
-	waitbutton
-	closetext
-	winlosstext MasterJoeyBeatenText, MasterJoeyWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer YOUNGSTER, MASTER_JOEY
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_JOEY
-	special HealParty
-	end
-.FightDone:
-	writetext MasterJoeyAfterBattleText
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinyFrontier
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinyFrontier
-	waitbutton
-	closetext
-	end
-.Lose
-    special HealParty
-    reloadmap
-    opentext
-    writetext MasterJoeyLoseAfterBattleText
-    waitbutton
-    closetext
-    end
-
-MasterJoeySeenText:
-	text "At last we have"
-	line "fulfilled our"
-	cont "destiny."
-	para "We have claimed"
-	line "the infinite stair"
-	cont "and reached throne"
-	cont "immortal."
-	para "Behold the RAT"
-	line "GOD!"
-	done
-
-MasterJoeyBeatenText:
-	text "But how!"
-	para "I am in the top"
-	line "percentile!"
-	para "I break the"
-	line "percentiles!"
-	done
-
-MasterJoeyWinText:
-    text "Pitiful mortal."
-    done
-
-MasterJoeyAfterBattleText:
-	text "It was always our"
-	line "destiny to inherit"
-	cont "godhood."
-	para "I say onto thee,"
-	line "kneel before us."
-	done
-
-MasterJoeyLoseAfterBattleText:
-	text "Fear not for the"
-	line "RAT GOD is"
-	cont "merciful."
-	para "Since we are fond"
-	line "of you, you shall"
-	cont "be spared."
-	done
-
 NurseScript:
     faceplayer
 	opentext
@@ -1245,7 +1164,7 @@ DestinyFrontier_MapEvents:
 	object_event 48, 35, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAizenScript, -1
 	object_event 55, 14, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterXehanortScript, -1
 	object_event 28, 46, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAerithScript, -1
-	object_event 31, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1
+	;object_event 31, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1
 	object_event 29, 42, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript, -1
 	object_event 32, 42, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartScript, -1
 	object_event 31, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1

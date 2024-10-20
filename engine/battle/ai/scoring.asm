@@ -1625,7 +1625,6 @@ AI_Smart_ForceSwitch:
 	dec [hl]
 	ret
 
-
 AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
@@ -3189,36 +3188,46 @@ AI_Smart_PerishSong:
 	push hl
 	callfar FindAliveEnemyMons
 	pop hl
-	jr c, .no ; if this is the last enemy mon dont use
+	jr c, .discourage ; if this is the last enemy mon don't use
 
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
-	jr nz, .yes ; if player is trapped then 50% chance to encourage
+	jr nz, .encourage ; if player is trapped then encourage
 
+; don't use on Uber Pokemon as they are immune
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
+
+; encourage if player has only one pokemon left
 	push hl
-	callfar CheckPlayerMoveTypeMatchups
-	ld a, [wEnemyAISwitchScore]
-	cp BASE_AI_SWITCH_SCORE ; scores >= base NVE or neutral
+	call AICheckLastPlayerMon
 	pop hl
-	ret c ; don't do anything if the player has no shown any SE moves
+	jr z, .encourage
 
-	call AI_50_50 ; otherwise 50% chance to discourage
-	ret c
+; encourage this move if the player's attack levels are boosted.
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .encourage
 
-	inc [hl]
-	ret
-
-.yes
-	call AI_50_50
-	ret c
-
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
+.encourage
 	dec [hl]
-	ret
-
-.no
-	ld a, [hl]
-	add 5
-	ld [hl], a
 	ret
 
 AI_Smart_Sandstorm:

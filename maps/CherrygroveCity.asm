@@ -793,12 +793,15 @@ JuliusScript:
 	writetext JuliusSeenText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_JULIUS
+	iftrue .skipRequest
 	opentext
 	writetext JuliusOfferFightText
 	waitbutton
 	yesorno
 	iffalse .refused
 	closetext
+.skipRequest
 	winlosstext JuliusBeatenText, JuliusWinsText
 	loadtrainer YOUNGSTER, JULIUS
 	startbattle
@@ -813,16 +816,7 @@ JuliusScript:
 	opentext
 	writetext RematchTextJulius
 	yesorno
-	iffalse .refused
-	writetext JuliusSeenText
-	waitbutton
-	closetext
-    winlosstext JuliusBeatenText, JuliusWinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer YOUNGSTER, JULIUS
-	startbattle
-	reloadmapafterbattle
-	end
+	iftrue .fight
 .refused
 	writetext RematchRefuseTextJulius
 	waitbutton

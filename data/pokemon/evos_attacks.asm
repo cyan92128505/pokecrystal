@@ -209,7 +209,7 @@ HonedgeEvosAttacks:
 	db 24, NIGHT_SLASH
 	db 28, SHADOW_BALL
 	db 31, IRON_HEAD
-	db 36, SHADOW_CLAW
+	db 36, SHADOW_FIST
 	db 39, FLASH_CANNON
 	db 45, CLOSE_COMBAT
 	db 50, SWORDS_DANCE
@@ -225,7 +225,7 @@ DoubladeEvosAttacks:
 	db 24, NIGHT_SLASH
 	db 28, SHADOW_BALL
 	db 30, IRON_HEAD
-	db 36, SHADOW_CLAW
+	db 36, SHADOW_FIST
 	db 39, FLASH_CANNON
 	db 45, CLOSE_COMBAT
 	db 50, SWORDS_DANCE
@@ -240,7 +240,7 @@ AegislashEvosAttacks:
 	db 24, NIGHT_SLASH
 	db 28, SHADOW_BALL
 	db 32, IRON_HEAD
-	db 36, SHADOW_CLAW
+	db 36, SHADOW_FIST
 	db 39, FLASH_CANNON
 	db 40, KINGS_SHIELD
 	db 42, BULLET_PUNCH
@@ -310,8 +310,9 @@ RattataEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FALSE_SWIPE
-	db 25, SUCKER_PUNCH
-	db 50, SUPER_FANG
+	db 25, CRUNCH
+	db 30, EXTREMESPEED
+	db 50, FINAL_FANG
 	db 0 ; no more level-up moves
 
 RaticateEvosAttacks:
@@ -321,8 +322,9 @@ RaticateEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FALSE_SWIPE
-	db 25, SUCKER_PUNCH
-	db 50, SUPER_FANG
+	db 25, CRUNCH
+	db 30, EXTREMESPEED
+	db 50, FINAL_FANG
 	db 0 ; no more level-up moves
 
 BunearyEvosAttacks:
@@ -368,23 +370,23 @@ EkansEvosAttacks:
 	db 9, POISON_STING
 	db 15, BITE
 	db 23, GLARE
-	db 30, CRUNCH
-	db 37, POISON_JAB
-	db 50, HAZE
+	db 28, CRUNCH
+	db 33, POISON_JAB
+	db 40, HAZE
+	db 45, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 ArbokEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 1, LEER
-	db 1, POISON_STING
-	db 1, BITE
 	db 9, POISON_STING
 	db 15, BITE
-	db 22, GLARE
-	db 30, CRUNCH
-	db 37, POISON_JAB
-	db 50, HAZE
+	db 23, GLARE
+	db 28, CRUNCH
+	db 33, POISON_JAB
+	db 40, HAZE
+	db 45, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
@@ -672,7 +674,7 @@ RegigigasEvosAttacks:
 	db 24, PROTECT
 	db 30, BODY_SLAM
 	db 40, ZEN_HEADBUTT
-	db 50, SHADOW_CLAW
+	db 50, SHADOW_FIST
 	db 60, DYNAMICPUNCH
 	db 70, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -975,7 +977,7 @@ MachopEvosAttacks:
 	db 23, MACH_PUNCH
 	db 29, STRENGTH
 	db 32, DRAIN_PUNCH
-	db 35, SUCKER_PUNCH
+	db 35, SHADOW_FIST
 	db 40, DYNAMICPUNCH
 	db 45, BULK_UP
 	db 0 ; no more level-up moves
@@ -991,7 +993,7 @@ MachokeEvosAttacks:
 	db 23, MACH_PUNCH
 	db 28, STRENGTH
 	db 32, DRAIN_PUNCH
-	db 35, SUCKER_PUNCH
+	db 35, SHADOW_FIST
 	db 41, DYNAMICPUNCH
 	db 45, BULK_UP
 	db 0 ; no more level-up moves
@@ -1006,7 +1008,7 @@ MachampEvosAttacks:
 	db 23, MACH_PUNCH
 	db 28, STRENGTH
 	db 32, DRAIN_PUNCH
-	db 35, SUCKER_PUNCH
+	db 35, SHADOW_FIST
 	db 40, DYNAMICPUNCH
 	db 45, BULK_UP
 	db 0 ; no more level-up moves
@@ -1381,7 +1383,7 @@ GastlyEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, NIGHT_SHADE
 	db 20, SLUDGE
-	db 26, SUCKER_PUNCH
+	db 26, SHADOW_FIST
 	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
@@ -1398,7 +1400,7 @@ HaunterEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, NIGHT_SHADE
 	db 20, SLUDGE
-	db 25, SUCKER_PUNCH
+	db 25, SHADOW_FIST
 	db 30, SHADOW_BALL
 	db 41, SLUDGE_BOMB
 	db 45, DREAM_EATER
@@ -1414,7 +1416,7 @@ GengarEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, NIGHT_SHADE
 	db 20, SLUDGE
-	db 25, SUCKER_PUNCH
+	db 25, SHADOW_FIST
 	db 30, SHADOW_BALL
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
@@ -2129,7 +2131,7 @@ GaladeEvosAttacks:
 	db 30, NIGHT_SLASH
 	db 35, DRAIN_PUNCH
 	db 40, PSYCHO_SLASH
-	db 45, SUCKER_PUNCH
+	db 45, EXTREMESPEED
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2280,6 +2282,7 @@ MewEvosAttacks:
 	db 20, MEGA_PUNCH
 	db 30, RECOVER
 	db 40, PSYCHO_SLASH
+	db 45, SHADOW_FIST
 	db 50, PSYCHIC_M
 	db 60, BATON_PASS
 	db 0 ; no more level-up moves
@@ -2850,7 +2853,7 @@ TimburrEvosAttacks:
 	db 12, MEGA_PUNCH
 	db 18, KARATE_CHOP
 	db 26, MACH_PUNCH
-	db 32, SUCKER_PUNCH
+	db 32, SHADOW_FIST
 	db 36, DRAIN_PUNCH
 	db 41, BULK_UP
 	db 0 ; no more level-up moves
@@ -2865,7 +2868,7 @@ GurdurrEvosAttacks:
 	db 12, MEGA_PUNCH
 	db 18, KARATE_CHOP
 	db 25, MACH_PUNCH
-	db 32, SUCKER_PUNCH
+	db 32, SHADOW_FIST
 	db 36, DRAIN_PUNCH
 	db 41, BULK_UP
 	db 0 ; no more level-up moves
@@ -2879,7 +2882,7 @@ ConkeldurrEvosAttacks:
 	db 12, MEGA_PUNCH
 	db 18, KARATE_CHOP
 	db 24, MACH_PUNCH
-	db 28, SUCKER_PUNCH
+	db 28, SHADOW_FIST
 	db 32, DRAIN_PUNCH
 	db 40, BULK_UP
 	db 0 ; no more level-up moves
@@ -3130,7 +3133,7 @@ DunsparceEvosAttacks:
 	db 20, ANCIENTPOWER
 	db 25, CRUNCH
 	db 30, ROOST
-	db 35, SHADOW_CLAW
+	db 35, SHADOW_FIST
 	db 40, DOUBLE_EDGE
 	db 50, DRAGON_DANCE
 	db 100, AFTER_IMAGE
@@ -3253,7 +3256,7 @@ HeracrossEvosAttacks:
 	db 30, X_SCISSOR
 	db 33, DRAIN_PUNCH
 	db 36, REVERSAL
-	db 40, SUCKER_PUNCH
+	db 40, NIGHT_SLASH
 	db 45, CLOSE_COMBAT
 	db 50, MEGAHORN
 	db 55, SWORDS_DANCE
@@ -3613,7 +3616,7 @@ GiratinaEvosAttacks:
 	db 1, NIGHT_SLASH
 	db 1, ANCIENTPOWER
 	db 40, DRAGON_CLAW
-	db 50, SHADOW_CLAW
+	db 50, SHADOW_FIST
 	db 60, SHADOW_BALL
 	db 70, RECOVER
 	db 75, DRACO_METEOR

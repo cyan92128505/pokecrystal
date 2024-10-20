@@ -1437,7 +1437,7 @@ BattleTowerMons:
 
     db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, BULLET_PUNCH, SHADOW_CLAW, IRON_HEAD
+	db KINGS_SHIELD, BULLET_PUNCH, SHADOW_FIST, IRON_HEAD
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2533,7 +2533,7 @@ BattleTowerMons:
 
     db MACHAMP
 	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, SUCKER_PUNCH, THUNDERPUNCH
+	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_FIST, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2543,7 +2543,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 15, 10, 15 ; PP
+	db 10, 15, 15, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 62 ; Level
@@ -3001,7 +3001,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_CLAW, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_FIST, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3105,7 +3105,7 @@ BattleTowerMons:
 
     db CONKELDURR
 	db LEFTOVERS
-	db BULK_UP, DRAIN_PUNCH, SUCKER_PUNCH, ROCK_SLIDE
+	db BULK_UP, DRAIN_PUNCH, MACH_PUNCH, SHADOW_FIST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3115,7 +3115,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 15, 10, 15 ; PP
+	db 15, 15, 30, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3367,7 +3367,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_CLAW, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_FIST, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3863,7 +3863,7 @@ BattleTowerMons:
 
     db MACHAMP
 	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, SUCKER_PUNCH, THUNDERPUNCH
+	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_FIST, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3873,7 +3873,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 24 ; PP
+	db 16, 24, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -4463,7 +4463,7 @@ BattleTowerMons:
 
 	db REGIGIGAS
 	db LEFTOVERS
-	db DOUBLE_EDGE, SHADOW_CLAW, DRAIN_PUNCH, BULK_UP
+	db DOUBLE_EDGE, SHADOW_FIST, DRAIN_PUNCH, BULK_UP
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4959,7 +4959,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_CLAW, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_FIST, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5115,7 +5115,7 @@ BattleTowerMons:
 
     db MACHAMP
 	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, SUCKER_PUNCH, THUNDERPUNCH
+	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_FIST, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5125,7 +5125,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 24 ; PP
+	db 16, 24, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5583,7 +5583,7 @@ BattleTowerMons:
 
 	db CONKELDURR
 	db LEFTOVERS
-	db BULK_UP, DRAIN_PUNCH, SUCKER_PUNCH, ROCK_SLIDE
+	db BULK_UP, DRAIN_PUNCH, MACH_PUNCH, SHADOW_FIST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5593,7 +5593,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 16, 24 ; PP
+	db 24, 24, 48, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -6025,7 +6025,7 @@ BattleTowerMons:
 
 	db GALADE
 	db LIFE_ORB
-	db SWORDS_DANCE, CLOSE_COMBAT, PSYCHO_SLASH, SUCKER_PUNCH
+	db SWORDS_DANCE, CLOSE_COMBAT, PSYCHO_SLASH, EXTREMESPEED
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

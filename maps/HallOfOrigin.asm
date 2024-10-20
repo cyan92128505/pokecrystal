@@ -1957,6 +1957,99 @@ PatchesAttacks:
     turnobject PLAYER, RIGHT
     sjump InvaderMasterPatches
 
+MasterJoeyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_JOEY
+	iftrue .FightDone
+.fight
+    setval 0
+    writemem wHandOfGod
+	writetext MasterJoeySeenText
+	waitbutton
+	closetext
+	winlosstext MasterJoeyBeatenText, MasterJoeyWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer YOUNGSTER, MASTER_JOEY
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmapafterbattle
+	opentext
+	writetext MasterJoeyWinAfterBattleText
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_MASTER_JOEY
+	special HealParty
+	end
+.FightDone:
+	writetext MasterJoeyAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextHallOfOrigin
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextHallOfOrigin
+	waitbutton
+	closetext
+	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext MasterJoeyLoseAfterBattleText
+    waitbutton
+    closetext
+    end
+
+MasterJoeySeenText:
+	text "At last we have"
+	line "fulfilled our"
+	cont "destiny."
+	para "We have claimed"
+	line "the infinite stair"
+	cont "and reached throne"
+	cont "immortal."
+	para "Behold the RAT"
+	line "GOD!"
+	done
+
+MasterJoeyBeatenText:
+	text "But how!"
+	para "I am in the top"
+	line "percentile!"
+	para "I break the"
+	line "percentiles!"
+	done
+
+MasterJoeyWinText:
+    text "Pitiful mortal."
+    done
+
+MasterJoeyAfterBattleText:
+	text "It was always our"
+	line "destiny to inherit"
+	cont "Godhood."
+	para "I say onto thee,"
+	line "kneel before us."
+	done
+
+MasterJoeyLoseAfterBattleText:
+	text "Fear not for the"
+	line "RAT GOD is"
+	cont "merciful."
+	para "Since we are fond"
+	line "of you, you shall"
+	cont "be spared."
+	done
+
+MasterJoeyWinAfterBattleText:
+	text "The RAT GOD takes"
+	line "pity upon you and"
+	cont "blesses you with"
+	cont "mercy."
+	done
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
@@ -1990,3 +2083,4 @@ HallOfOrigin_MapEvents:
 	object_event 13, 23, SPRITE_KOGA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
 	object_event 2, 21, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, MultiverseRolePlayScript, -1
 	object_event 13, 29, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderMasterPatches, -1
+    object_event 8, 6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1

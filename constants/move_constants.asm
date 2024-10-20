@@ -167,7 +167,7 @@
 	const BULLET_PUNCH ; 9f
 	const X_SCISSOR    ; a0
 	const TRI_ATTACK   ; a1
-	const SUPER_FANG   ; a2
+	const FINAL_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
 	const STRUGGLE     ; a5
@@ -183,7 +183,7 @@
 	const FLAIL        ; af
 	const KINGS_SHIELD ; b0
 	const AEROBLAST    ; b1
-	const SHADOW_CLAW  ; b2
+	const SHADOW_FIST  ; b2
 	const REVERSAL     ; b3
 	const SUCKER_PUNCH ; b4
 	const POWDER_SNOW  ; b5

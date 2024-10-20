@@ -177,7 +177,7 @@ MoveNames::
 	li "FLAIL"
 	li "KINGS SHIELD"
 	li "AEROBLAST"
-	li "SHADOW CLAW"
+	li "SHADOW FIST"
 	li "REVERSAL"
 	li "SUCKER PUNCH"
 	li "POWDER SNOW"

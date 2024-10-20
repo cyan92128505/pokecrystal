@@ -149,7 +149,7 @@ CeruleanCityHiddenBerserkGene:
 
 CeruleanCityCooltrainerMText1:
 	text "There is a POWER"
-	line "PLANT to the west"
+	line "PLANT to the east"
 	cont "of here."
 
 	para "The guy in charge"

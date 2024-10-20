@@ -178,7 +178,7 @@ MoveDescriptions::
 	dw FlailDescription
 	dw KingsShieldDescription
 	dw AeroblastDescription
-	dw ShadowClawDescription
+	dw ShadowFistDescription
 	dw ReversalDescription
 	dw SuckerPunchDescription
 	dw PowderSnowDescription
@@ -977,7 +977,7 @@ AeroblastDescription:
 	db   "Has a high criti-"
 	line "cal hit ratio.@"
 
-ShadowClawDescription:
+ShadowFistDescription:
 	db   "Has a high criti-"
 	line "cal hit ratio.@"
 

@@ -173,7 +173,7 @@ Moves: ; 41afb
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,         PHYSICAL, 100, 20,   0
 	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,           PHYSICAL, 100, 15,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,        SPECIAL,  100, 15,  20
-	move SUPER_FANG,   EFFECT_NORMAL_HIT,        120, NORMAL,        PHYSICAL,  90, 10,   0
+	move FINAL_FANG,   EFFECT_NORMAL_HIT,        120, NORMAL,        PHYSICAL,  90, 10,   0
 	move SLASH,        EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 20,   0
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,        STATUS,   100, 10,   0
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0
@@ -189,7 +189,7 @@ Moves: ; 41afb
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,        PHYSICAL, 100, 15,   0
 	move KINGS_SHIELD, EFFECT_KINGS_SHIELD,        0, STEEL,         STATUS,   100, 30,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,        SPECIAL,  100, 10,   0
-	move SHADOW_CLAW,  EFFECT_NORMAL_HIT,         80, GHOST,         PHYSICAL, 100, 15,   0
+	move SHADOW_FIST,  EFFECT_NORMAL_HIT,         80, GHOST,         PHYSICAL, 100, 15,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,      PHYSICAL, 100, 15,   0
 	move SUCKER_PUNCH, EFFECT_PRIORITY_HIT,       70, DARK,          PHYSICAL, 100, 10,   0
 	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, ICE,           SPECIAL,  100, 25,  10

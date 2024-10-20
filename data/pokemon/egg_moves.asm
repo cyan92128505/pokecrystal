@@ -41,7 +41,7 @@ RattataEggMoves:
 	db SCREECH
 	db FLAME_WHEEL
 	db FURY_SWIPES
-	db SHADOW_CLAW
+	db SHADOW_FIST
 	db COUNTER
 	db REVERSAL
 	db -1 ; end
@@ -51,7 +51,7 @@ BunearyEggMoves:
 	db FALSE_SWIPE
 	db SCARY_FACE
 	db QUICK_ATTACK
-	db SUPER_FANG
+	db FINAL_FANG
 	db -1 ; end
 
 EkansEggMoves:

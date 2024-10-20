@@ -145,12 +145,27 @@ MtMoonGreenScript:
 	writetext GreenSeenText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_GREEN
+	iftrue .skipRequest
+	opentext
+	writetext GreenOfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.skipRequest
 	winlosstext GreenBeatenText, GreenWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LEAF, GREEN1
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GREEN
+	opentext
+	writetext GreenAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
 	end
 .FightDone:
 	writetext GreenAfterBattleText
@@ -160,10 +175,19 @@ MtMoonGreenScript:
 	writetext RematchTextGreen
 	yesorno
 	iftrue .fight
+.refused
 	writetext RematchRefuseTextGreen
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext MtMoonGreenWinAfterBattleText
+    waitbutton
+    closetext
+    end
 GreenSeenText:
     text "Hello!"
 
@@ -197,8 +221,10 @@ GreenSeenText:
 
     para "But I am plenty"
     line "strong too!"
-
-    para "Let me show you."
+    done
+GreenOfferFightText:
+    text "Want me to show"
+    line "you?"
     done
 GreenBeatenText:
     text "That brings back"
@@ -231,6 +257,16 @@ RematchRefuseTextGreen:
     text "RED wouldn't"
     line "refuse..."
     done
+MtMoonGreenWinAfterBattleText:
+	text "Aww you did really"
+	line "well."
+	para "Definitely better"
+	line "than me when I was"
+	cont "your age."
+	para "Never give up and"
+	line "you will be great"
+	cont "one day."
+	done
 
 MountMoonSquare_MapEvents:
 	db 0, 0 ; filler

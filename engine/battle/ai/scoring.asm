@@ -886,7 +886,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_TOXIC,            AI_Smart_Toxic
 	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_LightScreen
 	dbw EFFECT_OHKO,             AI_Smart_Ohko
-	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
@@ -909,15 +908,12 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
-	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_CURSE,            AI_Smart_Curse
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
-	dbw EFFECT_FORESIGHT,        AI_Smart_Foresight
 	dbw EFFECT_PERISH_SONG,      AI_Smart_PerishSong
 	dbw EFFECT_SANDSTORM,        AI_Smart_Sandstorm
 	dbw EFFECT_ENDURE,           AI_Smart_Endure
 	dbw EFFECT_ROLLOUT,          AI_Smart_Rollout
-	dbw EFFECT_SWAGGER,          AI_Smart_Swagger
 	dbw EFFECT_BULK_UP,          AI_Smart_BulkUp
 	dbw EFFECT_ATTRACT,          AI_Smart_Attract
 	dbw EFFECT_MAGNITUDE,        AI_Smart_Magnitude
@@ -932,11 +928,8 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
-	dbw EFFECT_TWISTER,          AI_Smart_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
-	dbw EFFECT_GUST,             AI_Smart_Gust
-	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
@@ -1629,6 +1622,10 @@ AI_Smart_Heal:
 AI_Smart_MorningSun:
 AI_Smart_Synthesis:
 AI_Smart_Moonlight:
+; don't use if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; if we have boosted evasion just heal below half
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -2062,13 +2059,6 @@ AI_Smart_Fly:
 	dec [hl]
 	ret
 
-AI_Smart_SuperFang:
-; Discourage this move if player's HP is below 25%.
-	call AICheckPlayerQuarterHP
-	ret c
-	inc [hl]
-	ret
-
 AI_Smart_Paralyze:
 ; never use if player already has a status
     ld a, [wBattleMonStatus]
@@ -2250,6 +2240,10 @@ AI_Smart_SpeedDownHit:
 	ret
 
 AI_Smart_Substitute:
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
     ld a, [wEnemyMonSpecies]
     cp COTTONEE
     jr z, .skipSpeedCheck
@@ -2866,16 +2860,6 @@ AICheckLastPlayerMon:
 
 	ret
 
-AI_Smart_Nightmare:
-; 50% chance to encourage this move.
-; The AI_Basic layer will make sure that
-; Dream Eater is only used against sleeping targets.
-
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
-
 AI_Smart_FlameWheel:
 ; Use this move if the enemy is frozen.
 
@@ -3146,42 +3130,6 @@ AI_Smart_Protect:
 
 	inc [hl]
 	inc [hl]
-	ret
-
-AI_Smart_Foresight:
-; 60% chance to encourage this move if the enemy's accuracy is sharply lowered.
-	ld a, [wEnemyAccLevel]
-	cp BASE_STAT_LEVEL - 2
-	jr c, .encourage
-
-; 60% chance to encourage this move if the player's evasion is sharply raised.
-	ld a, [wPlayerEvaLevel]
-	cp BASE_STAT_LEVEL + 3
-	jr nc, .encourage
-
-; 60% chance to encourage this move if the player is a Ghost type.
-	ld a, [wBattleMonType1]
-	cp GHOST
-	jr z, .encourage
-	ld a, [wBattleMonType2]
-	cp GHOST
-	jr z, .encourage
-
-; 92% chance to discourage this move otherwise.
-	call Random
-	cp 8 percent
-	ret c
-
-	inc [hl]
-	ret
-
-.encourage
-	call Random
-	cp 39 percent + 1
-	ret c
-
-	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_PerishSong:
@@ -3813,37 +3761,6 @@ AI_Smart_MirrorCoat:
 .done
 	ret
 
-AI_Smart_Twister:
-AI_Smart_Gust:
-; Greatly encourage this move if the player is flying and the enemy is faster.
-	ld a, [wLastPlayerCounterMove]
-	cp FLY
-	ret nz
-	cp DRACO_ASCENT
-	ret nz
-
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_FLYING, a
-	jr z, .couldFly
-
-	call DoesAIOutSpeedPlayer
-	ret nc
-
-	dec [hl]
-	dec [hl]
-	ret
-
-; Try to predict if the player will use Fly this turn.
-.couldFly
-
-; 50% chance to encourage this move if the enemy is slower than the player.
-	call DoesAIOutSpeedPlayer
-	ret c
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
-
 AI_Smart_FutureSight:
 ; Greatly encourage this move if the player is
 ; flying or underground, and slower than the enemy.
@@ -3856,19 +3773,6 @@ AI_Smart_FutureSight:
 	ret z
 
 	dec [hl]
-	dec [hl]
-	ret
-
-AI_Smart_Stomp:
-; 80% chance to encourage this move if the player has used Minimize.
-
-	ld a, [wPlayerMinimized]
-	and a
-	ret z
-
-	call AI_80_20
-	ret c
-
 	dec [hl]
 	ret
 
@@ -3919,6 +3823,10 @@ AI_Smart_HolyArmour:
 	call IsSpecialDefenseMaxed
 	jr c, .discourage
 
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 .continue
 ; if player outspeeds us and can OHKO then don't use
 	call DoesAIOutSpeedPlayer
@@ -3944,6 +3852,10 @@ AI_Smart_Serenity:
 	jr nc, .continue
 	call IsSpecialDefenseMaxed
 	jr c, .discourage
+
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
 
 .continue
 ; if player physical consider normal boost logic
@@ -4006,7 +3918,12 @@ AI_Smart_QuiverDance:
 	and 1 << PAR
 	jp nz, StandardDiscourage
 
-; encourage to +2, strongly encourage if player has boosted SpAtk
+; discourage if player speed is +2 or higher
+    ld a, [wPlayerSpdLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp nc, StandardDiscourage
+
+; encourage to +2
 	ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	jp c, StandardEncourage
@@ -4376,7 +4293,6 @@ AI_Smart_Flinch:
     ret
 
 AI_Smart_Confuse:
-AI_Smart_Swagger:
 ; never use if player has substitute
     ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
@@ -4437,6 +4353,10 @@ ShouldAIBoost:
     call IsAttackMaxed
     jp c, .dontBoost
     call IsSpecialAttackMaxed
+    jp c, .dontBoost
+
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
     jp c, .dontBoost
 
 ; if we are faster and player is flying or underground just boost
@@ -4625,6 +4545,28 @@ ShouldAIBoost:
 .dontBoost
     xor a ; clear carry flag
     ret
+
+DoesEnemyHaveChoiceItem:
+	push hl
+	push de
+	ld a, [wEnemyMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_CHOICE_BAND
+	jr z, .yes
+	cp HELD_CHOICE_SPECS
+	jr z, .yes
+	pop de
+	pop hl
+	xor a
+	ret
+.yes
+	pop de
+	pop hl
+	scf
+	ret
 
 DoesEnemyHaveIntactFocusSashOrSturdy:
 ; Is the AI at full HP

@@ -71,7 +71,7 @@ TrainerClassAttributes:
 ; Cal
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
-	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK
+	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Bruno
@@ -443,7 +443,7 @@ TrainerClassAttributes:
 ; Cal_f
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
-	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK
+	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 	assert_table_length NUM_TRAINER_CLASSES

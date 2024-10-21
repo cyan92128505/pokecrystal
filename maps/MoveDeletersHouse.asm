@@ -9,7 +9,16 @@ MoveDeletersHouse_MapScripts:
 MoveDeleter:
 	faceplayer
 	opentext
+	writetext RelearnerIntroText
+	waitbutton
+	yesorno
+	iffalse .refused
 	special MoveRelearner
+	waitbutton
+	closetext
+	end
+.refused
+	writetext RelearnerRefusedText
 	waitbutton
 	closetext
 	end
@@ -21,6 +30,24 @@ MoveRelearnerScript:
 	waitbutton
 	closetext
 	end
+
+RelearnerIntroText:
+	text "Hello I'm the Move"
+	line "Relearner, I"
+	cont "remember it so"
+	cont "your don't have"
+	cont "to!"
+	para "Would you like a"
+	line "#MON to"
+	cont "relearn a move?"
+	done
+
+RelearnerRefusedText:
+	text "If you need your"
+	line "memory jogged you"
+	cont "remember where to"
+	cont "come!"
+	done
 
 MoveDeletersHouseBookshelf:
 	jumpstd DifficultBookshelfScript

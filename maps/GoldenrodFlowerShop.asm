@@ -12,10 +12,6 @@ FlowerShopTeacherScript:
 	iftrue .Lalala
 	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .GotSquirtbottle
-	;checkevent EVENT_MET_FLORIA
-	;iffalse .HaventMetFloria
-	;checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
-	;iffalse .Lalala
 	checkflag ENGINE_PLAINBADGE
 	iffalse .NoPlainBadge
 	faceplayer
@@ -159,6 +155,31 @@ GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 GoldenrodFlowerShopFloriaItReallyWasAMonText:
 	text "So it really was a"
 	line "#MON!"
+	para "Let us offer"
+	line "prayer together."
+	para "Oh mighty ARCEUS"
+	line "may you guide all"
+	cont "wayward souls into"
+	cont "your loving"
+	cont "embrace."
+	cont "Amen."
+	done
+
+BerryShopScript:
+	faceplayer
+	opentext
+	writetext BerryWelcome
+	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_BERRY
+	closetext
+	end
+
+BerryWelcome:
+	text "If you persevere"
+	line "eventually your"
+	cont "hard work will"
+	cont "bear delicious"
+	cont "fruit!"
 	done
 
 GoldenrodFlowerShop_MapEvents:
@@ -175,3 +196,5 @@ GoldenrodFlowerShop_MapEvents:
 	def_object_events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
 	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP
+	object_event  5,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BerryShopScript, -1
+

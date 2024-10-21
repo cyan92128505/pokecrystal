@@ -41,4 +41,5 @@
 	const MART_UNDERGROUND
 	const MART_PATCHES
 	const MART_FRONTIER
+	const MART_BERRY
 NUM_MARTS EQU const_value

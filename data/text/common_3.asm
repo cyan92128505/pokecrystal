@@ -1503,9 +1503,9 @@ _DeleterForgotMoveText::
 	text "Whack!"
 
 	para "One good pop from"
-	line "my forget me mallet"
-	cont "and the #MON"
-	line "forgot the move."
+	line "my Mallet and the"
+	cont "#MON forgot"
+	cont "the move."
 	done
 
 _DeleterEggText::

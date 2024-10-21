@@ -287,25 +287,25 @@ Route40Lass1Text:
 Route40PokefanMText:
 	text "Up ahead is the"
 	line "BATTLE FRONTIER!"
-
 	para "There is so"
 	line "much to do there!"
-
-	para "I like the"
-	line "BATTLE ARCADE."
-
-	para "You can play as"
-	line "a super powered"
-	cont "GYM LEADER and"
-	cont "fight other GYM"
-	cont "LEADERS."
-
-	para "I only have 15"
-	line "characters"
-	cont "unlocked."
-
-	para "I like playing"
-	line "as BUGSY!"
+	para "The BATTLE TOWER"
+	line "is the most"
+	cont "prestigious"
+	cont "facility."
+	para "It has two"
+	line "difficulties that"
+	cont "only CHAMPIONS can"
+	cont "enter."
+	para "I hear the reward"
+	line "for one of them is"
+	cont "99 RARE CANDY."
+	para "And that's not"
+	line "even the highest"
+	cont "difficulty."
+	para "Imagine what the"
+	line "prize for that"
+	cont "must be!"
 	done
 
 Route40Lass2Text:

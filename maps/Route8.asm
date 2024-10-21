@@ -207,7 +207,7 @@ BikerHarrisSeenText:
 	done
 
 BikerHarrisBeatenText:
-	text "Please! Please!"
+	text "You Trumped me!"
 	done
 
 BikerHarrisAfterBattleText:

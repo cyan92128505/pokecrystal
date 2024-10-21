@@ -226,15 +226,18 @@ BlackthornCooltrainerF1Text:
 	cont "lives in that"
 	cont "house down there."
 
-	para "He has this friend"
+	para "He has a brother"
 	line "who can make"
 	cont "#MON forget"
 	cont "moves."
 
-	para "But his methods"
-	line "are a bit..."
+	para "They like to"
+	line "endlessly critique"
+	cont "old movies."
 
-	para "Physical."
+	para "They have some"
+	line "horrible takes."
+	done
 	done
 
 BlackthornYoungsterText:

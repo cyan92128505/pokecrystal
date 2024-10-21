@@ -104,7 +104,9 @@ HikerJimAfterBattleText:
 	line "with me."
 
 	para "Dear ARCEUS"
-	line "watch over me."
+	line "watch over me"
+	cont "and my expensive"
+	cont "equipment!"
 
 	para "Amen."
 	done

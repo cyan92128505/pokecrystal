@@ -34,6 +34,7 @@ Marts:
 	dw MartUnderground
 	dw MartPatches
 	dw MartFrontier
+	dw MartBerry
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -423,6 +424,19 @@ MartFrontier:
     db KINGS_ROCK
     db LUCKY_EGG
     db -1
+
+MartBerry:
+ 	db 9 ; # items
+ 	db BERRY
+ 	db PSNCUREBERRY
+ 	db BITTER_BERRY
+ 	db PRZCUREBERRY
+ 	db BURNT_BERRY
+ 	db ICE_BERRY
+ 	db MINT_BERRY
+ 	db GOLD_BERRY
+ 	db MIRACLEBERRY
+ 	db -1 ; end
 
 DefaultMart:
 	db 2 ; # items

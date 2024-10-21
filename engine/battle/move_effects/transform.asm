@@ -8,7 +8,7 @@ BattleCommand_Transform:
 	jp nz, BattleEffect_ButItFailed
 	call CheckHiddenOpponent
 	jp nz, BattleEffect_ButItFailed
-	ld a, BATTLE_VARS_SUBSTATUS4
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_SUBSTITUTE, [hl]
 	jp nz, BattleEffect_ButItFailed

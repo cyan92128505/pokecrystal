@@ -14,6 +14,7 @@
 	const ROUTE29_FIELDMON_6
 	const ROUTE29_FIELDMON_7
 	const ROUTE29_FIELDMON_8
+	const ROUTE29_FIELDMON_9
 
 Route29_MapScripts:
 	def_scene_scripts
@@ -35,6 +36,7 @@ Route29_MapScripts:
     appear ROUTE29_FIELDMON_4
     appear ROUTE29_FIELDMON_5
     appear ROUTE29_FIELDMON_7
+    appear ROUTE29_FIELDMON_9
 
 ; Pokemon that sometimes appear
     random 2
@@ -515,6 +517,17 @@ Route29FieldMon8Script:
 	disappear ROUTE29_FIELDMON_8
 	end
 
+Route29FieldMon9Script:
+	faceplayer
+	cry NIDORAN_F
+	pause 15
+	loadwildmon NIDORAN_F, 6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_9
+	disappear ROUTE29_FIELDMON_9
+	end
+
 Route29_MapEvents:
 	db 0, 0 ; filler
 
@@ -547,3 +560,4 @@ Route29_MapEvents:
 	object_event 6,  17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 55,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route29FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 43, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FieldMon9Script, EVENT_FIELD_MON_9

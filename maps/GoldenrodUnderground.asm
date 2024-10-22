@@ -11,6 +11,7 @@ GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE EQU 300
 	const GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_GRANNY
+	const GOLDENRODUNDERGROUND_FIELDMON_1
 
 GoldenrodUnderground_MapScripts:
 	def_scene_scripts
@@ -50,6 +51,7 @@ GoldenrodUnderground_MapScripts:
 	endcallback
 
 .CheckDayOfWeek:
+    appear GOLDENRODUNDERGROUND_FIELDMON_1
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .Monday
 	ifequal TUESDAY, .Tuesday
@@ -654,6 +656,17 @@ GoldenrodUndergroundNoEntryText:
 	line "THIS POINT"
 	done
 
+UndergroundMon1Script:
+	faceplayer
+	cry KOFFING
+	pause 15
+	loadwildmon KOFFING, 23
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear GOLDENRODUNDERGROUND_FIELDMON_1
+	end
+
 GoldenrodUnderground_MapEvents:
 	db 0, 0 ; filler
 
@@ -684,3 +697,5 @@ GoldenrodUnderground_MapEvents:
 	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
 	object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
+	object_event  3, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UndergroundMon1Script, EVENT_FIELD_MON_1
+

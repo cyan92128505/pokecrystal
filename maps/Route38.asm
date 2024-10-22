@@ -27,22 +27,15 @@ Route38_MapScripts:
     appear ROUTE38_FIELDMON_3
     appear ROUTE38_FIELDMON_4
     appear ROUTE38_FIELDMON_7
+    appear ROUTE38_FIELDMON_6
 
 ; Pokemon that sometimes appear
     random 2
     ifequal 1, .spawn5
     disappear ROUTE38_FIELDMON_5
-    sjump .mon6
+    sjump .mon8
 .spawn5
     appear ROUTE38_FIELDMON_5
-
-.mon6
-    random 2
-    ifequal 1, .spawn6
-    disappear ROUTE38_FIELDMON_6
-    sjump .mon8
-.spawn6
-    appear ROUTE38_FIELDMON_6
 
 .mon8
     random 4 ; shiny
@@ -496,7 +489,7 @@ Route38TrainerTipsText:
 	done
 
 Route38FieldMon1Script:
-	trainer PORYGONZ, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 54, 0, .script
+	trainer ELECTIVIRE, FIELD_MON, EVENT_FIELD_MON_1, Route38PokemonAttacksText, 54, 0, .script
 .script
     disappear ROUTE38_FIELDMON_1
     end
@@ -547,9 +540,9 @@ Route38FieldMon5Script:
 
 Route38FieldMon6Script:
 	faceplayer
-	cry METANG
+	cry ELECTABUZZ
 	pause 15
-	loadwildmon METANG, 28
+	loadwildmon ELECTABUZZ, 28
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

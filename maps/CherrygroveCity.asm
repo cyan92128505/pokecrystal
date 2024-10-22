@@ -4,6 +4,12 @@
 	const CHERRYGROVECITY_TEACHER
 	const CHERRYGROVECITY_YOUNGSTER
 	const CHERRYGROVECITY_FISHER
+	const CHERRYGROVECITY_CRESTFALLEN
+	const CHERRYGROVECITY_JULIUS
+	const CHERRYGROVECITY_PEASANT1
+	const CHERRYGROVECITY_PEASANT2
+	const CHERRYGROVECITY_ROLEPLAYER
+	const CHERRYGROVECITY_FIELDMON_1
 
 CherrygroveCity_MapScripts:
 	def_scene_scripts
@@ -11,6 +17,7 @@ CherrygroveCity_MapScripts:
 	scene_script .DummyScene1 ; SCENE_CHERRYGROVECITY_MEET_RIVAL
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .CherrygroveFieldMon
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
@@ -22,6 +29,10 @@ CherrygroveCity_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	endcallback
+
+.CherrygroveFieldMon:
+    appear CHERRYGROVECITY_FIELDMON_1
+    endcallback
 
 CherrygroveCityGuideGent:
 	faceplayer
@@ -1740,6 +1751,17 @@ CherrygroveGentScene:
     turnobject PLAYER, UP
     sjump CherrygroveCityGuideGent
 
+CherrygroveMon1Script:
+	faceplayer
+	cry RATTATA
+	pause 15
+	loadwildmon RATTATA, 4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear CHERRYGROVECITY_FIELDMON_1
+	end
+
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1773,5 +1795,4 @@ CherrygroveCity_MapEvents:
 	object_event 33, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant1Script, -1
 	object_event 30, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant2Script, -1
 	object_event 21, 4, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, StarWarsRolePlayScript, -1
-
-
+	object_event 23, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMon1Script, EVENT_FIELD_MON_1

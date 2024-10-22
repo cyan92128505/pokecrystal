@@ -12,6 +12,7 @@
 	const VIOLETCITY_FIELDMON_3
 	const VIOLETCITY_FIELDMON_4
 	const VIOLETCITY_SELF
+	const VIOLETCITY_FIELDMON_5
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -32,11 +33,19 @@ VioletCity_MapScripts:
     appear VIOLETCITY_FIELDMON_3
 
     random 4
-    ifequal 1, .spawn
+    ifequal 1, .spawn1
     disappear VIOLETCITY_FIELDMON_4
-    sjump .end
-.spawn
+    sjump .mon5
+.spawn1
     appear VIOLETCITY_FIELDMON_4
+
+.mon5
+    random 2
+    ifequal 1, .spawn2
+    disappear VIOLETCITY_FIELDMON_5
+    sjump .end
+.spawn2
+    appear VIOLETCITY_FIELDMON_5
 
 .end
     endcallback
@@ -382,6 +391,18 @@ VioletCityFieldMon4Script:
 	disappear VIOLETCITY_FIELDMON_4
     end
 
+VioletCityFieldMon5Script:
+	faceplayer
+	cry MEOWTH
+	pause 15
+	loadwildmon MEOWTH, 12
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear VIOLETCITY_FIELDMON_5
+    end
+
 VioletCitySelfScript:
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
@@ -544,7 +565,7 @@ VioletCity_MapEvents:
 	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
 
 	def_coord_events
-    coord_event 18, 18, SCENE_DEFAULT, VioletCitySelfScript
+	coord_event 18, 18, SCENE_DEFAULT, VioletCitySelfScript
 
 	def_bg_events
 	bg_event 24, 20, BGEVENT_READ, VioletCitySign
@@ -570,4 +591,4 @@ VioletCity_MapEvents:
 	object_event 4, 26, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 1, 24, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 21, 18, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-
+	object_event 23,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, VioletCityFieldMon5Script, EVENT_FIELD_MON_5

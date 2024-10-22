@@ -71,7 +71,7 @@ DiglettsCaveFieldMon3Script:
     end
 
 DiglettsCaveFieldMon4Script:
-	trainer RHYHORN, FIELD_MON, EVENT_FIELD_MON_4, DiglettsCavePokemonAttacksText, 67, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_4, DiglettsCavePokemonAttacksText, 67, 0, .script
 .script
     disappear DIGLETTSCAVE_FIELDMON_4
     end

@@ -72,7 +72,7 @@ MasterChrisChanScript:
     end
 
  ChrisChanSeenText:
-	text " Megan!?"
+	text "Megan!?"
 	para "Who are you?"
 	para "I am the ruler of"
 	line "this universe"

@@ -221,9 +221,9 @@ Route33PokemonAttacksText:
 
 Route33FieldMon1Script:
 	faceplayer
-	cry COTTONEE
+	cry SHROOMISH
 	pause 15
-	loadwildmon COTTONEE, 15
+	loadwildmon SHROOMISH, 15
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -243,9 +243,9 @@ Route33FieldMon2Script:
 
 Route33FieldMon4Script:
 	faceplayer
-	cry MACHOP
+	cry WOOPER
 	pause 15
-	loadwildmon MACHOP, 16
+	loadwildmon WOOPER, 14
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

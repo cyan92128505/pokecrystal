@@ -52,7 +52,7 @@ Route32_MapScripts:
     appear ROUTE32_FIELDMON_7
 
 .mon8
-    random 4
+    random 2
     ifequal 1, .spawn8
     disappear ROUTE32_FIELDMON_8
     sjump .checkNight
@@ -797,8 +797,7 @@ Route32FieldMon8Script:
 	faceplayer
 	cry SOLOSIS
 	pause 15
-	loadwildmon SOLOSIS, 16
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon SOLOSIS, 14
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8

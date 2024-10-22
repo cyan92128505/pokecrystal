@@ -619,9 +619,9 @@ NationalParkPokemonAttacksText:
 
 NationalParkFieldMon3Script:
 	faceplayer
-	cry TEDDIURSA
+	cry EXEGGCUTE
 	pause 15
-	loadwildmon TEDDIURSA, 20
+	loadwildmon EXEGGCUTE, 18
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

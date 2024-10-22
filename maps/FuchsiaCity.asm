@@ -194,20 +194,12 @@ FuchsiaCityYoungsterText_Saved:
 	done
 
 InvadedFuchsiaCityYoungsterText:
-	text "We have fallen."
-
+	text "I saw..."
 	para "WALLACE..."
-
-	para "I understand why"
-	line "he is so feared."
-
-	para "His #MON!"
-
-	para "But I would"
-	line "rather go down"
-	cont "fighting!"
-
-	para "For KOGA!!!"
+	para "His #MON..."
+	para "It's game over"
+	line "man!"
+	para "Game over!!"
 	done
 
 FuchsiaCityPokefanMText:

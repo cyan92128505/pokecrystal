@@ -7,22 +7,25 @@
 	const FUCHSIACITY_SOLDIER_1
 	const FUCHSIACITY_SOLDIER_2
 	const FUCHSIACITY_SELF
-	const FUCHSIACITY_SOLDIER_3
-	const FUCHSIACITY_SOLDIER_4
-	const FUCHSIACITY_GREEN
+	const FUCHSIACITY_FIELDMON_1
+	const FUCHSIACITY_FIELDMON_2
+	const FUCHSIACITY_FIELDMON_3
 
 FuchsiaCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .Invasion
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	endcallback
 
 .Invasion:
+    appear FUCHSIACITY_FIELDMON_1
+    appear FUCHSIACITY_FIELDMON_2
+    appear FUCHSIACITY_FIELDMON_3
     disappear FUCHSIACITY_SELF
     disappear FUCHSIACITY_SOLDIER_1
     disappear FUCHSIACITY_SOLDIER_2
@@ -740,6 +743,38 @@ FuchsiaBlockText:
     text "The door is locked"
     done
 
+FuchsiaCityMon1Script:
+	faceplayer
+	cry TAUROS
+	pause 15
+	loadwildmon TAUROS, 24
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear FUCHSIACITY_FIELDMON_1
+	end
+
+FuchsiaCityMon2Script:
+	faceplayer
+	cry DRATINI
+	pause 15
+	loadwildmon DRATINI, 21
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear FUCHSIACITY_FIELDMON_2
+	end
+
+FuchsiaCityMon3Script:
+	faceplayer
+	cry GIBLE
+	pause 15
+	loadwildmon GIBLE, 22
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear FUCHSIACITY_FIELDMON_3
+	end
 
 FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
@@ -779,7 +814,10 @@ FuchsiaCity_MapEvents:
 	object_event 16, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaCityTeacher, -1
 	object_event  8,  1, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaCityFruitTree, -1
 	object_event 30,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LatiasScript, EVENT_CAUGHT_LATIAS
-	object_event  8, 28, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier1, EVENT_FIELD_MON_1
-	object_event 22, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier2, EVENT_FIELD_MON_2
+	object_event  8, 28, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier1, EVENT_TEMP_EVENT_3
+	object_event 22, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlockingSoldier2, EVENT_TEMP_EVENT_2
 	object_event 19, 4, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 34, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityMon1Script, EVENT_FIELD_MON_1
+	object_event  6,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityMon2Script, EVENT_FIELD_MON_2
+	object_event 28, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaCityMon3Script, EVENT_FIELD_MON_3
 

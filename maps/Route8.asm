@@ -11,6 +11,7 @@
     const ROUTE8_FIELDMON_4
     const ROUTE8_FIELDMON_5
     const ROUTE8_FIELDMON_6
+    const ROUTE8_FIELDMON_7
 
 Route8_MapScripts:
 	def_scene_scripts
@@ -24,20 +25,17 @@ Route8_MapScripts:
     appear ROUTE8_FIELDMON_3
     appear ROUTE8_FIELDMON_4
     appear ROUTE8_FIELDMON_5
+    appear ROUTE8_FIELDMON_2
+    appear ROUTE8_FIELDMON_7
 
     random 3
     ifequal 1, .spawn6
     disappear ROUTE8_FIELDMON_6
-    sjump .checkNight
+    sjump .dayo
 .spawn6
     appear ROUTE8_FIELDMON_6
 
-.checkNight
-; Pokemon that only appear at night
-    checktime NITE
-    iffalse .end
-    appear ROUTE8_FIELDMON_2
-
+.dayo
 ; Pokemon that don't appear at night
     disappear ROUTE8_FIELDMON_4
 
@@ -98,6 +96,17 @@ Route8FieldMon6Script:
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
 	disappear ROUTE8_FIELDMON_6
+	end
+
+Route8FieldMon7Script:
+	faceplayer
+	cry CHIMCHAR
+	pause 15
+	loadwildmon CHIMCHAR, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
+	disappear ROUTE8_FIELDMON_7
 	end
 
 TrainerBikerDwayne:
@@ -348,9 +357,10 @@ Route8_MapEvents:
 	object_event 23,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdSam, -1
 	object_event 31, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdTom, -1
 	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
-	object_event  6, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route8FieldMon1Script, EVENT_FIELD_MON_1
-	object_event 34,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, Route8FieldMon2Script, EVENT_FIELD_MON_2
-	object_event  9, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route8FieldMon3Script, EVENT_FIELD_MON_3
+	object_event  6, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route8FieldMon1Script, EVENT_FIELD_MON_1
+	object_event 34,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, Route8FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  9, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route8FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 24,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route8FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 23, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route8FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 24, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route8FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 14,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route8FieldMon7Script, EVENT_FIELD_MON_7

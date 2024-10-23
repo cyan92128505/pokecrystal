@@ -3,6 +3,7 @@
 	const ROUTE22_FIELDMON_1
     const ROUTE22_FIELDMON_2
     const ROUTE22_FIELDMON_3
+    const ROUTE22_FIELDMON_4
 
 Route22_MapScripts:
 	def_scene_scripts
@@ -19,6 +20,7 @@ Route22_MapScripts:
 .spawn
     appear ROUTE22_FIELDMON_1
 .mon2
+    appear ROUTE22_FIELDMON_4
     appear ROUTE22_FIELDMON_2
     appear ROUTE22_FIELDMON_3
     endcallback
@@ -54,6 +56,17 @@ Route22FieldMon3Script:
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
 	disappear ROUTE22_FIELDMON_3
+	end
+
+Route22FieldMon4Script:
+	faceplayer
+	cry BAGON
+	pause 15
+	loadwildmon BAGON, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE22_FIELDMON_4
 	end
 
 MoltresScript:
@@ -143,3 +156,4 @@ Route22_MapEvents:
 	object_event 19,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route22FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 30,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route22FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 33, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route22FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 30,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route22FieldMon4Script, EVENT_FIELD_MON_4

@@ -8,6 +8,7 @@
     const ROUTE6_FIELDMON_4
     const ROUTE6_FIELDMON_5
     const ROUTE6_INVADER
+    const ROUTE6_FIELDMON_6
 
 Route6_MapScripts:
 	def_scene_scripts
@@ -25,6 +26,7 @@ Route6_MapScripts:
     appear ROUTE6_FIELDMON_1
     appear ROUTE6_FIELDMON_3
     appear ROUTE6_FIELDMON_4
+    appear ROUTE6_FIELDMON_6
 
     random 4
     ifequal 1, .spawn8
@@ -90,6 +92,17 @@ Route6FieldMon5Script:
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
 	disappear ROUTE6_FIELDMON_5
+	end
+
+Route6FieldMon6Script:
+	faceplayer
+	cry TREECKO
+	pause 15
+	loadwildmon TREECKO, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
+	disappear ROUTE6_FIELDMON_6
 	end
 
 TrainerPokefanmRex:
@@ -280,8 +293,8 @@ Route6_MapEvents:
 	object_event 10, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmAllan, -1
 	object_event 18,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route6FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route6FieldMon2Script, EVENT_FIELD_MON_2
-	object_event  4,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon3Script, EVENT_FIELD_MON_3
+	object_event  1,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  4, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  9,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route6FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 22,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderBackstaberScript, EVENT_FIELD_MON_6
-
+	object_event  4,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon6Script, EVENT_FIELD_MON_6

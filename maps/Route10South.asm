@@ -4,6 +4,7 @@
 	const ROUTE10SOUTH_FIELDMON_1
     const ROUTE10SOUTH_FIELDMON_2
     const ROUTE10SOUTH_FIELDMON_3
+    const ROUTE10SOUTH_FIELDMON_4
 
 Route10South_MapScripts:
 	def_scene_scripts
@@ -15,6 +16,7 @@ Route10South_MapScripts:
 ; Pokemon which always appear
     appear ROUTE10SOUTH_FIELDMON_1
     appear ROUTE10SOUTH_FIELDMON_2
+    appear ROUTE10SOUTH_FIELDMON_4
 
 ; Pokemon that sometimes appear
     random 2
@@ -52,11 +54,22 @@ Route10SouthFieldMon4Script:
 	faceplayer
 	cry GLISCOR
 	pause 15
-	loadwildmon GLISCOR, 58
+	loadwildmon GLISCOR, 54
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
 	disappear ROUTE10SOUTH_FIELDMON_3
+	end
+
+Route10SouthFieldMon5Script:
+	faceplayer
+	cry LARVITAR
+	pause 15
+	loadwildmon LARVITAR, 22
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ROUTE10SOUTH_FIELDMON_4
 	end
 
 TrainerHikerJim:
@@ -159,3 +172,4 @@ Route10South_MapEvents:
 	object_event 10, 10, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, Route10SouthFieldMon2Script, EVENT_FIELD_MON_1
 	object_event 17,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route10SouthFieldMon3Script, EVENT_FIELD_MON_2
 	object_event  3,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route10SouthFieldMon4Script, EVENT_FIELD_MON_3
+	object_event  5, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route10SouthFieldMon5Script, EVENT_FIELD_MON_4

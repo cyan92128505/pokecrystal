@@ -276,6 +276,8 @@ PokeBallEffect:
 	jr z, .destroy
 	cp MEWTWO
 	jr z, .destroy
+	cp ZYGARDE
+	jr z, .destroy
 	jp .catch_without_fail
 
 .destroy

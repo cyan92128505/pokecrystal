@@ -3179,6 +3179,10 @@ AI_Smart_PerishSong:
 	ret
 
 AI_Smart_Sandstorm:
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; even if we benefit from weather, don't use if we will be koed
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skipKOCheck
@@ -3500,6 +3504,10 @@ AI_Smart_HiddenPower:
 	ret
 
 AI_Smart_RainDance:
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; even if we benefit from weather, don't use if we will be koed
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skipKOCheck
@@ -3547,6 +3555,10 @@ AI_Smart_RainDance:
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
 AI_Smart_SunnyDay:
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
 ; even if we benefit from weather, don't use if we will be koed
     call DoesEnemyHaveIntactFocusSashOrSturdy
     jr c, .skipKOCheck

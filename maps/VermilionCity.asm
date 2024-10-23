@@ -9,6 +9,8 @@
 	const VERMILIONCITY_SOLDIER_3
 	const VERMILIONCITY_SOLDIER_4
 	const VERMILIONCITY_YUNA
+	const VERMILIONCITY_FIELDMON_1
+	const VERMILIONCITY_FIELDMON_2
 
 VermilionCity_MapScripts:
 	def_scene_scripts
@@ -22,6 +24,8 @@ VermilionCity_MapScripts:
 	endcallback
 
 .Invasion:
+    appear VERMILIONCITY_FIELDMON_1
+    appear VERMILIONCITY_FIELDMON_2
 	disappear VERMILIONCITY_SOLDIER_1
 	disappear VERMILIONCITY_SOLDIER_2
 	disappear VERMILIONCITY_SOLDIER_3
@@ -752,6 +756,28 @@ RematchRefuseTextVermilionYuna:
     text "Good luck."
     done
 
+VermilionCityMon1Script:
+	faceplayer
+	cry ELECTABUZZ
+	pause 15
+	loadwildmon ELECTABUZZ, 24
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_TEMP_EVENT_1
+	disappear VERMILIONCITY_FIELDMON_1
+	end
+
+VermilionCityMon2Script:
+	faceplayer
+	cry MAGNEMITE
+	pause 15
+	loadwildmon MAGNEMITE, 21
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_TEMP_EVENT_2
+	disappear VERMILIONCITY_FIELDMON_2
+	end
+
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -798,5 +824,7 @@ VermilionCity_MapEvents:
 	object_event 17, 15, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier8, EVENT_FIELD_MON_3
 	object_event 10, 20, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HoenCaptain, EVENT_FIELD_MON_4
 	object_event 25, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScriptVermilion, EVENT_FIELD_MON_5
+	object_event  5, 21, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, VermilionCityMon1Script, EVENT_TEMP_EVENT_1
+	object_event 12, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityMon2Script, EVENT_TEMP_EVENT_2
 
 

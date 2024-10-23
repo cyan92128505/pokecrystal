@@ -5,6 +5,6 @@
 	next "machine with four"
 	next "super brains."
 
-	page "Immune to"
-	next "stat drops and"
-	next "OHKO.@"
+	page "Immune to stat"
+	next "drops. Resists"
+	next "type weaknesses.@"

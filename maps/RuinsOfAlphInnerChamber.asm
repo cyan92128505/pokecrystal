@@ -3,6 +3,9 @@
 	const RUINSOFALPHINNERCHAMBER_TEACHER
 	const RUINSOFALPHINNERCHAMBER_GRAMPS
 	const RUINSOFALPHINNERCHAMBER_POKEBALL
+	const RUINSOFALPHINNERCHAMBER_FIELDMON_1
+	const RUINSOFALPHINNERCHAMBER_FIELDMON_2
+	const RUINSOFALPHINNERCHAMBER_FIELDMON_3
 
 RuinsOfAlphInnerChamber_MapScripts:
 	def_scene_scripts
@@ -10,6 +13,7 @@ RuinsOfAlphInnerChamber_MapScripts:
 	scene_script .UnownAppear ; SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .RuinsOfAlphFieldMon
 
 .DummyScene0:
 	end
@@ -17,6 +21,12 @@ RuinsOfAlphInnerChamber_MapScripts:
 .UnownAppear:
 	sdefer .StrangePresenceScript
 	end
+
+.RuinsOfAlphFieldMon
+    appear RUINSOFALPHINNERCHAMBER_FIELDMON_1
+    appear RUINSOFALPHINNERCHAMBER_FIELDMON_2
+    appear RUINSOFALPHINNERCHAMBER_FIELDMON_3
+    endcallback
 
 .StrangePresenceScript:
 	opentext
@@ -78,6 +88,39 @@ RuinsOfAlphInnerChamberStatueText:
 RuinsOfAlphInnerChamberWiseGlasses:
 	itemball EXPERT_BELT
 
+RuinsOfAlphInnerChamberMon1Script:
+	faceplayer
+	cry RALTS
+	pause 15
+	loadwildmon RALTS, 7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear RUINSOFALPHINNERCHAMBER_FIELDMON_1
+	end
+
+RuinsOfAlphInnerChamberMon2Script:
+	faceplayer
+	cry ABRA
+	pause 15
+	loadwildmon ABRA, 8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear RUINSOFALPHINNERCHAMBER_FIELDMON_2
+	end
+
+RuinsOfAlphInnerChamberMon3Script:
+	faceplayer
+	cry SOLOSIS
+	pause 15
+	loadwildmon SOLOSIS, 10
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear RUINSOFALPHINNERCHAMBER_FIELDMON_3
+	end
+
 RuinsOfAlphInnerChamber_MapEvents:
 	db 0, 0 ; filler
 
@@ -127,3 +170,7 @@ RuinsOfAlphInnerChamber_MapEvents:
 	object_event 14, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberTeacherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 11, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberGrampsScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event  9, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphInnerChamberWiseGlasses, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_WISE_GLASSES
+	object_event  5, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon1Script, EVENT_FIELD_MON_1
+	object_event  4, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon2Script, EVENT_FIELD_MON_2
+	object_event 16,  1, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon3Script, EVENT_FIELD_MON_3
+

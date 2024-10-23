@@ -8,6 +8,7 @@
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
 	const SAFFRONCITY_SILVER
+	const SAFFRONCITY_FIELDMON_1
 
 SaffronCity_MapScripts:
 	def_scene_scripts
@@ -21,6 +22,11 @@ SaffronCity_MapScripts:
 	endcallback
 
 .Silver:
+    appear SAFFRONCITY_FIELDMON_1
+    random 2
+    ifequal 1, .keepSpawn
+    disappear SAFFRONCITY_FIELDMON_1
+.keepSpawn
     disappear SAFFRONCITY_SILVER
     endcallback
 
@@ -523,6 +529,17 @@ Movement_SaffronGymTurnBack:
 	step DOWN
 	step_end
 
+SaffronMon1Script:
+	faceplayer
+	cry BELDUM
+	pause 15
+	loadwildmon BELDUM, 21
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear SAFFRONCITY_FIELDMON_1
+	end
+
 SaffronCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -567,3 +584,4 @@ SaffronCity_MapEvents:
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 29,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 24, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronMon1Script, EVENT_FIELD_MON_1

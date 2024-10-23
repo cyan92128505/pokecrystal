@@ -5,6 +5,6 @@
 	next "a scout droid by"
 	next "the military."
 
-	page "Immune to"
-	next "stat drops and"
-	next "OHKO.@"
+	page "Immune to stat"
+	next "drops. Resists"
+	next "type weaknesses.@"

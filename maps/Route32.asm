@@ -52,7 +52,7 @@ Route32_MapScripts:
     appear ROUTE32_FIELDMON_7
 
 .mon8
-    random 2
+    random 4
     ifequal 1, .spawn8
     disappear ROUTE32_FIELDMON_8
     sjump .checkNight
@@ -795,9 +795,10 @@ Route32FieldMon7Script:
 
 Route32FieldMon8Script:
 	faceplayer
-	cry SOLOSIS
+	cry PSYDUCK
 	pause 15
-	loadwildmon SOLOSIS, 14
+	loadwildmon PSYDUCK, 14
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -1024,7 +1025,7 @@ Route32_MapEvents:
 	object_event  7, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
-	object_event 8,  74, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 8,  74, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
 
 	object_event  17, 2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 

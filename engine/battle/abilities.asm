@@ -25,9 +25,6 @@ SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
-    db BELDUM
-    db METANG
-    db METAGROSS
     db -1
 
 SniperPokemon:
@@ -168,6 +165,9 @@ SolidRockPokemon:
     db RHYHORN
     db RHYDON
     db RHYPERIOR
+    db BELDUM
+    db METANG
+    db METAGROSS
     db RAYQUAZA
     db -1
 

@@ -8,16 +8,22 @@
 	const CELADONCITY_YOUNGSTER2
 	const CELADONCITY_TEACHER2
 	const CELADONCITY_LASS
+	const CELADONCITY_FIELDMON_1
 
 CeladonCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .CeladonFieldMon
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_CELADON
 	endcallback
+
+.CeladonFieldMon:
+    appear CELADONCITY_FIELDMON_1
+    endcallback
 
 CeladonCityFisherScript:
 	jumptextfaceplayer CeladonCityFisherText
@@ -305,6 +311,17 @@ Movement_CeladonGymTurnBack:
 	step DOWN
 	step_end
 
+CeladonMon1Script:
+	faceplayer
+	cry FROAKIE
+	pause 15
+	loadwildmon FROAKIE, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear CELADONCITY_FIELDMON_1
+	end
+
 CeladonCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -342,3 +359,4 @@ CeladonCity_MapEvents:
 	object_event 24, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
 	object_event  6, 14, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher2Script, -1
 	object_event  7, 22, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityLassScript, -1
+	object_event 14, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonMon1Script, EVENT_FIELD_MON_1

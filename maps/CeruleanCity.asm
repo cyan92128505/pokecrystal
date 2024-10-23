@@ -5,16 +5,22 @@
 	const CERULEANCITY_COOLTRAINER_F
 	const CERULEANCITY_FISHER
 	const CERULEANCITY_YOUNGSTER
+	const CERULEANCITY_FIELDMON_1
 
 CeruleanCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .CeruleanFieldMon
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
+
+.CeruleanFieldMon:
+    appear CERULEANCITY_FIELDMON_1
+    endcallback
 
 CeruleanCityCooltrainerMScript:
 	faceplayer
@@ -334,6 +340,17 @@ Movement_CeruleanGymTurnBack:
 	step DOWN
 	step_end
 
+CeruleanMon1Script:
+	faceplayer
+	cry SQUIRTLE
+	pause 15
+	loadwildmon SQUIRTLE, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear CERULEANCITY_FIELDMON_1
+	end
+
 CeruleanCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -367,3 +384,5 @@ CeruleanCity_MapEvents:
 	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
 	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
+	object_event 10, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanMon1Script, EVENT_FIELD_MON_1
+

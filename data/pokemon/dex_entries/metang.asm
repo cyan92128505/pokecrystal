@@ -5,6 +5,6 @@
 	next "utilize their"
 	next "brains in union."
 
-	page "Immune to"
-	next "stat drops and"
-	next "OHKO.@"
+	page "Immune to stat"
+	next "drops. Resists"
+	next "type weaknesses.@"

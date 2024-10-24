@@ -11,6 +11,7 @@
 	const VERMILIONCITY_YUNA
 	const VERMILIONCITY_FIELDMON_1
 	const VERMILIONCITY_FIELDMON_2
+	const VERMILIONCITY_FIELDMON_3
 
 VermilionCity_MapScripts:
 	def_scene_scripts
@@ -26,6 +27,7 @@ VermilionCity_MapScripts:
 .Invasion:
     appear VERMILIONCITY_FIELDMON_1
     appear VERMILIONCITY_FIELDMON_2
+    appear VERMILIONCITY_FIELDMON_3
 	disappear VERMILIONCITY_SOLDIER_1
 	disappear VERMILIONCITY_SOLDIER_2
 	disappear VERMILIONCITY_SOLDIER_3
@@ -778,6 +780,17 @@ VermilionCityMon2Script:
 	disappear VERMILIONCITY_FIELDMON_2
 	end
 
+VermilionCityMon3Script:
+	faceplayer
+	cry SHELLDER
+	pause 15
+	loadwildmon SHELLDER, 18
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_TEMP_EVENT_3
+	disappear VERMILIONCITY_FIELDMON_3
+	end
+
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -826,5 +839,4 @@ VermilionCity_MapEvents:
 	object_event 25, 25, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YunaScriptVermilion, EVENT_FIELD_MON_5
 	object_event  5, 21, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, VermilionCityMon1Script, EVENT_TEMP_EVENT_1
 	object_event 12, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityMon2Script, EVENT_TEMP_EVENT_2
-
-
+	object_event 20, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionCityMon3Script, EVENT_TEMP_EVENT_3

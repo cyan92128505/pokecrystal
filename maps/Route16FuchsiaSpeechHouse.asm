@@ -6,24 +6,39 @@ Route16FuchsiaSpeechHouse_MapScripts:
 
 	def_callbacks
 
-Route16FuchsiaSpeechHouseSuperNerdScript:
-	jumptextfaceplayer Route16FuchsiaSpeechHouseSuperNerdText
+Route16FuchsiaSpeechHouseAVGNScript:
+	jumptextfaceplayer Route16FuchsiaSpeechHouseAVGNText
+
+Route16FuchsiaSpeechHouseMusicianScript:
+	jumptextfaceplayer Route16FuchsiaSpeechHouseMusicianText
 
 Route16FuchsiaSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
-Route16FuchsiaSpeechHouseSuperNerdText:
-	text "I built this"
-	line "house myself."
+Route16FuchsiaSpeechHouseAVGNText:
+	text "I'd rather eat a"
+	line "steaming pile of"
+	cont "fresh SNORLAX"
+	cont "excrement and wash"
+	cont "it down with some"
+	cont "vintage TAUROS"
+	cont "urine than subject"
+	cont "myself to another"
+	cont "moment of this"
+	cont "wretched GAME!!!"
+	done
 
-	para "I like to be"
-	line "alone and far"
-	cont "away from the"
-	cont "world."
-
-	para "Then I can focus"
-	line "on my YouTube"
-	cont "business!"
+Route16FuchsiaSpeechHouseMusicianText:
+	text "He's gonna take"
+	line "you back to the"
+	cont "past."
+	para "To play the"
+	line "awesome romhacks"
+	cont "that ingest"
+	cont "Gluteus Maximus..."
+	para "Hey we don't want"
+	line "to be canceled"
+	cont "here."
 	done
 
 Route16FuchsiaSpeechHouse_MapEvents:
@@ -40,4 +55,5 @@ Route16FuchsiaSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, Route16FuchsiaSpeechHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseSuperNerdScript, -1
+	object_event  4,  5, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseAVGNScript, -1
+	object_event  3,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseMusicianScript, -1

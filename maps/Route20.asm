@@ -89,7 +89,7 @@ Route20FieldMon7Script:
 	faceplayer
 	cry CLOYSTER
 	pause 15
-	loadwildmon CLOYSTER, 50
+	loadwildmon CLOYSTER, 62
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

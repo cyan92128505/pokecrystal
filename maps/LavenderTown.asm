@@ -3,16 +3,23 @@
 	const LAVENDERTOWN_TEACHER
 	const LAVENDERTOWN_GRAMPS
 	const LAVENDERTOWN_YOUNGSTER
+	const LAVENDERTOWN_ROLE_PLAYER
+	const LAVENDERTOWN_FIELDMON_1
 
 LavenderTown_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .LavenderFieldMon
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_LAVENDER
 	endcallback
+
+.LavenderFieldMon:
+    appear LAVENDERTOWN_FIELDMON_1
+    endcallback
 
 LavenderTownPokefanMScript:
 	jumptextfaceplayer LavenderTownPokefanMText
@@ -1024,6 +1031,17 @@ MerlinDefeatText:
     text "Defeat!"
     done
 
+LavenderTownMon1Script:
+	faceplayer
+	cry MISDREAVUS
+	pause 15
+	loadwildmon MISDREAVUS, 21
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear LAVENDERTOWN_FIELDMON_1
+	end
+
 LavenderTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -1052,3 +1070,4 @@ LavenderTown_MapEvents:
 	object_event 14, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
 	object_event  6, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownYoungsterScript, -1
 	object_event 11,  5, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, MerlinRolePlayScript, -1
+	object_event  8,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, LavenderTownMon1Script, EVENT_FIELD_MON_1

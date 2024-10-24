@@ -5,6 +5,6 @@
 	next "It cleaves the"
 	next "skies apart"
 
-	page "Has reduced"
+	page "Resists type"
 	next "weaknesses."
 	next "Clears field.@"

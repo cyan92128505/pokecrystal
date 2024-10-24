@@ -89,9 +89,9 @@ Route12FieldMon3Script:
 
 Route12FieldMon4Script:
 	faceplayer
-	cry CLOYSTER
+	cry POLITOED
 	pause 15
-	loadwildmon CLOYSTER, 43
+	loadwildmon POLITOED, 43
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

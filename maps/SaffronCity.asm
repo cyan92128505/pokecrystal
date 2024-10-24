@@ -540,6 +540,25 @@ SaffronMon1Script:
 	disappear SAFFRONCITY_FIELDMON_1
 	end
 
+DarkCityMurdochScript:
+    jumptextfaceplayer murdochText
+
+murdochText:
+	text "They have changed"
+	line "things again!"
+	para "We aren't meant to"
+	line "stay awake but I"
+	cont "do."
+	para "I've been awake"
+	line "for hours, it's"
+	cont "always night here."
+	para "Do you know the"
+	line "way to OLIVINE"
+	cont "beach?"
+	para "Nobody remembers"
+	line "that!"
+	done
+
 SaffronCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -585,3 +604,4 @@ SaffronCity_MapEvents:
 	object_event 19,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 29,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 24, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronMon1Script, EVENT_FIELD_MON_1
+	object_event  5, 30, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCityMurdochScript, -1

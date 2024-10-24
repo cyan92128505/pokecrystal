@@ -25,7 +25,7 @@ Route34_MapScripts:
 .EggCheckCallback:
     appear ROUTE34_FIELDMON_3
     appear ROUTE34_FIELDMON_4
-    random 3
+    random 4
     ifequal 1, .cont
     disappear ROUTE34_FIELDMON_4
 .cont
@@ -791,6 +791,7 @@ Route34FieldMon4Script:
 	cry ABRA
 	pause 15
 	loadwildmon ABRA, 12
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

@@ -34,7 +34,7 @@ IcePath1FFieldMon2Script:
 	faceplayer
 	cry CLOYSTER
 	pause 15
-	loadwildmon CLOYSTER, 38
+	loadwildmon CLOYSTER, 34
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

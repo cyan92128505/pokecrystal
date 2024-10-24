@@ -121,8 +121,12 @@ PewterCityGrampsText:
 	done
 
 PewterCitySignText:
-	text "PEWTER CITY"
-	line "The gray city."
+	text "This garden is in"
+	line "memory of all"
+	cont "those who have"
+	cont "left us."
+	para "Safe in the arms"
+	line "of ARCEUS."
 	done
 
 PewterGymSignText:

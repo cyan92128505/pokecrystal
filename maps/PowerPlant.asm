@@ -210,12 +210,14 @@ Forest:
 	end
 
 genesectTradeText:
-	text "Listen!"
-	para "I am from the"
-	line "future."
-	para "You must protect"
-	line "yourself from the"
-	cont "AI overlords."
+	text "Everyone needs a"
+	line "cyborg assassin"
+	cont "from the future"
+	cont "that doesn't feel"
+	cont "pity or remorse or"
+	cont "fear to protect"
+	cont "them from the AI"
+	cont "overlords."
 	done
 
 PowerPlantBookshelf:
@@ -284,12 +286,17 @@ PowerPlantGymGuide1SomeoneStoleAPartText:
 	done
 
 PowerPlantGymGuide1GeneratorUpAndRunningText:
-	text "I've been working"
-	line "on the generator"
-	cont "for 10 years."
-	para "it is powerful,"
-	line "efficient, even"
-	cont "beautiful."
+	text "I don't understand"
+	line "how the thief"
+	cont "stole the"
+	cont "capacitor."
+	para "It would mean the"
+	line "reactor was open."
+	cont "But it couldn't be"
+	cont "open it's"
+	cont "protected by three"
+	cont "magnetic fields."
+	para "Do you see!"
 	done
 
 PowerPlantGymGuide2PowerPlantUpAndRunningText:
@@ -330,10 +337,11 @@ PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
 	line "lot of power."
 	para "The MAGNET TRAIN"
 	line "and RADIO TOWER"
-	cont "draw a lot but for"
-	cont "some reason the"
-	cont "VERMILION GYM"
-	cont "draws the most."
+	cont "draw a lot but it's"
+	cont "nothing compared"
+	cont "to one of LT"
+	cont "SURGES rock"
+	cont "concerts!"
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:

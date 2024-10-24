@@ -520,7 +520,7 @@ Route38FieldMon4Script:
 	faceplayer
 	cry MAGNETON
 	pause 15
-	loadwildmon MAGNETON, 27
+	loadwildmon MAGNEMITE, 24
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

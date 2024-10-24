@@ -7,6 +7,8 @@
 	const OLIVINECITY_CRYSTAL
 	const OLIVINECITY_ROLEPLAYER
 	const OLIVINECITY_SAILOR3
+	const OLIVINECITY_FIELDMON_1
+	const OLIVINECITY_FIELDMON_2
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -28,6 +30,8 @@ OlivineCity_MapScripts:
 	endcallback
 
 .Crystal
+    appear OLIVINECITY_FIELDMON_1
+    appear OLIVINECITY_FIELDMON_2
     disappear OLIVINECITY_SAILOR3
     disappear OLIVINECITY_CRYSTAL
     endcallback
@@ -1706,6 +1710,28 @@ GotStrengthText:
     line "days are done!"
     done
 
+OlivineCityMon1Script:
+	faceplayer
+	cry FLAAFFY
+	pause 15
+	loadwildmon FLAAFFY, 26
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear OLIVINECITY_FIELDMON_1
+	end
+
+OlivineCityMon2Script:
+	faceplayer
+	cry POLIWHIRL
+	pause 15
+	loadwildmon POLIWHIRL, 28
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear OLIVINECITY_FIELDMON_2
+	end
+
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1748,3 +1774,5 @@ OlivineCity_MapEvents:
 	object_event 18,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 10, 22, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, DBZRolePlayScript, -1
 	object_event  7, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
+	object_event 28, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityMon1Script, EVENT_FIELD_MON_1
+	object_event 31, 29, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCityMon2Script, EVENT_FIELD_MON_1

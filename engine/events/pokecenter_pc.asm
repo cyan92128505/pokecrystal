@@ -291,7 +291,7 @@ PlayersPCMenuData:
 .TossItem:     db "TOSS ITEM@"
 .MailBox:      db "MAIL BOX@"
 .Decoration:   db "DECORATION@"
-.TurnOff:      db "HEAL PARTY@"
+.TurnOff:      db "TURN OFF@"
 .LogOff:       db "LOG OFF@"
 
 .WhichPC:

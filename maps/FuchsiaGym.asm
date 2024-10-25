@@ -12,6 +12,8 @@ FuchsiaGym_MapScripts:
 	def_callbacks
 
 FuchsiaGymJanineScript:
+	faceplayer
+	opentext
 	checkflag ENGINE_SOULBADGE
 	iftrue .FightDone
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
@@ -40,28 +42,17 @@ FuchsiaGymJanineScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_SOULBADGE
-	sjump .AfterBattle
-.rematch
-    writetext JanineText_DisappointYou
-	waitbutton
-	closetext
-	winlosstext JanineText_ToughOne, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer JANINE, JANINE1
-	startbattle
-	reloadmapafterbattle
-	end
 .FightDone:
-	faceplayer
-	opentext
-.AfterBattle:
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
 	writetext JanineText_ToxicSpeech
 	promptbutton
 	verbosegiveitem TM_TOXIC
-	iffalse .AfterTM
 	setevent EVENT_GOT_TM06_TOXIC
+	writetext JanineText_ApplyMyself
+	waitbutton
+    closetext
+    end
 .AfterTM:
 	writetext JanineText_ApplyMyself
 	waitbutton
@@ -73,6 +64,16 @@ FuchsiaGymJanineScript:
 	writetext RematchRefuseTextJanine
 	waitbutton
 	closetext
+	end
+.rematch
+    writetext JanineText_DisappointYou
+	waitbutton
+	closetext
+	winlosstext JanineText_ToughOne, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
+	loadtrainer JANINE, JANINE1
+	startbattle
+	reloadmapafterbattle
 	end
 
 LassAliceScript:

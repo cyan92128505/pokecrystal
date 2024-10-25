@@ -60,10 +60,10 @@ TrainerClassDVs:
 	dn  11, 11, 11, 11 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
 	dn  12, 12, 12, 12 ; SOLDIER
-	dn  10, 10, 10, 10 ; POKEFANM
+	dn  14, 14, 14, 14 ; POKEFANM
 	dn  15,  15, 15, 15 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
-	dn  10, 10,  10,  10 ; POKEFANF
+	dn  14, 14,  14,  14 ; POKEFANF
 	dn 15, 15, 15, 15 ; RED
 	dn 15, 15, 15, 15 ; BLUE
 	dn  9,  8,  8,  8 ; OFFICER

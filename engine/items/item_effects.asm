@@ -1135,13 +1135,13 @@ LevelBallMultiplier:
 
 ; BallDodgedText and BallMissedText were used in Gen 1.
 
-BallDodgedText: ; unreferenced
-	text_far _BallDodgedText
-	text_end
+;BallDodgedText: ; unreferenced
+;	text_far _BallDodgedText
+;	text_end
 
-BallMissedText: ; unreferenced
-	text_far _BallMissedText
-	text_end
+;BallMissedText: ; unreferenced
+;	text_far _BallMissedText
+;	text_end
 
 BallBrokeFreeText:
 	text_far _BallBrokeFreeText
@@ -1290,15 +1290,20 @@ AmbrosiaEffect:
 	call UseItem_SelectMon
 	jp c, RareCandy_StatBooster_ExitMenu
 
-; update DVs to max
+; update DVs to max - unless the mon is Shiny
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1DVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
+	ld b, h
+	ld c, l
+	callfar CheckShininess
+	jr c, .skipDVs
 	ld a, %11111111
 	ld [hli], a
 	ld [hl], a
 
+.skipDVs
 	call RareCandy_StatBooster_GetParameters
 
     ld a, HP_UP
@@ -2914,16 +2919,16 @@ WontHaveAnyEffectMessage:
 	ld hl, ItemWontHaveEffectText
 	jr CantUseItemMessage
 
-BelongsToSomeoneElseMessage: ; unreferenced
-	ld hl, ItemBelongsToSomeoneElseText
-	jr CantUseItemMessage
+;BelongsToSomeoneElseMessage: ; unreferenced
+;	ld hl, ItemBelongsToSomeoneElseText
+;	jr CantUseItemMessage
 
-CyclingIsntAllowedMessage: ; unreferenced
-	ld hl, NoCyclingText
-	jr CantUseItemMessage
+;CyclingIsntAllowedMessage: ; unreferenced
+;	ld hl, NoCyclingText
+;	jr CantUseItemMessage
 
-CantGetOnYourBikeMessage: ; unreferenced
-	ld hl, ItemCantGetOnText
+;CantGetOnYourBikeMessage: ; unreferenced
+;	ld hl, ItemCantGetOnText
 	; fallthrough
 
 CantUseItemMessage:

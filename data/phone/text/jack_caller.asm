@@ -76,9 +76,9 @@ JackSolarbeamTriviaText:
 	text "How long does"
 	line "SLEEP last?"
 	para "..."
-	para "2 to 3 turns."
+	para "1 to 3 turns."
 	para "You always get at"
-	line "least 2 turns."
+	line "least 1 turn."
 	done
 
 JackStompTriviaText:

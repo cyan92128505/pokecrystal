@@ -1047,15 +1047,15 @@ ManorFact17Text:
 	done
 
 ManorFact18Text:
-	text "Initially the plan"
-	line "was to keep the"
-	cont "game as true to"
-	cont "original"
-	cont "generation 2"
-	cont "battle mechanics"
-	cont "as possible."
-	para "That didn't last"
-	line "long."
+	text "After clearing the"
+	line "RADIO TOWER of"
+	cont "ROCKETS you can"
+	cont "find JESSIE, JAMES"
+	cont "and MEOWTH on an"
+	cont "island west of"
+	cont "Route 34."
+	para "They are happy"
+	line "there."
 	done
 
 ManorFact19Text:
@@ -1075,18 +1075,22 @@ ManorFact19Text:
 	done
 
 ManorFact20Text:
-	text "Abilities that"
-	line "print the enemy"
-	cont "#MON name like"
-	cont "intimidate are"
-	cont "hard coded to not"
-	cont "activate on the"
-	cont "first turn of a"
-	cont "battle because it"
-	cont "causes a visual"
-	cont "glitch if the"
-	cont "enemy isn't sent"
-	cont "out yet."
+	text "AMBROSIA maximises"
+	line "the DVs of a"
+	cont "#MON in"
+	cont "addition to STAT"
+	cont "EXP and happiness."
+	para "Unless the"
+	line "#MON is shiny,"
+	cont "then AMBROSIA will"
+	cont "not alter DVs as"
+	cont "that would remove"
+	cont "the shininess."
+	para "Shiny #MON are"
+	line "also stronger in"
+	cont "this game with 14"
+	cont "in all DVs rather"
+	cont "than 10."
 	done
 
 ManorFact21Text:

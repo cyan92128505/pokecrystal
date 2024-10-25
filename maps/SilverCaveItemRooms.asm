@@ -50,7 +50,6 @@ SilverCaveItemRoomFieldMon1Script:
 	cry LUCARIO
 	pause 15
 	loadwildmon LUCARIO, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -62,7 +61,6 @@ SilverCaveItemRoomFieldMon2Script:
 	cry ALAKAZAM
 	pause 15
 	loadwildmon ALAKAZAM, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -74,7 +72,6 @@ SilverCaveItemRoomFieldMon3Script:
 	cry MAGNEZONE
 	pause 15
 	loadwildmon MAGNEZONE, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -86,7 +83,6 @@ SilverCaveItemRoomFieldMon4Script:
 	cry MISMAGIUS
 	pause 15
 	loadwildmon MISMAGIUS, 71
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -98,7 +94,6 @@ SilverCaveItemRoomFieldMon5Script:
 	cry HONCHKROW
 	pause 15
 	loadwildmon HONCHKROW, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -110,7 +105,6 @@ SilverCaveItemRoomFieldMon6Script:
 	cry RHYPERIOR
 	pause 15
 	loadwildmon RHYPERIOR, 74
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -122,7 +116,6 @@ SilverCaveItemRoomFieldMon7Script:
 	cry GYARADOS
 	pause 15
 	loadwildmon GYARADOS, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -134,7 +127,6 @@ SilverCaveItemRoomFieldMon8Script:
 	cry MILOTIC
 	pause 15
 	loadwildmon MILOTIC, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -146,7 +138,6 @@ SilverCaveItemRoomFieldMon9Script:
 	cry ARCTOVISH
 	pause 15
 	loadwildmon ARCTOVISH, 73
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9
@@ -158,7 +149,6 @@ SilverCaveItemRoomFieldMon10Script:
 	cry ARCTOZOLT
 	pause 15
 	loadwildmon ARCTOZOLT, 73
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10

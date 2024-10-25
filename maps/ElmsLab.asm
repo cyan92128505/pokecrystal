@@ -471,6 +471,7 @@ AideScript_GivePocketPC:
 	promptbutton
 	verbosegiveitem POCKET_PC
 	writetext AideText_PocketPCInfoText
+	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOTHING
 	end
@@ -1060,14 +1061,14 @@ ElmDirectionsText1:
 	done
 
 ElmDirectionsText2:
-	text "If your #MON is"
-	line "hurt, you should"
-
-	para "heal it with this"
-	line "machine."
-
-	para "Feel free to use"
-	line "it anytime."
+	text "If your #MON"
+	line "are hurt you can"
+	cont "heal them with"
+	cont "this machine."
+	para "My aide has a"
+	line "POCKET PC you can"
+	cont "use to heal your"
+	cont "#MON anywhere."
 	done
 
 ElmDirectionsText3:

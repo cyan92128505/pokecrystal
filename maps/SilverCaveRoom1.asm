@@ -38,7 +38,6 @@ SilverCaveRoom1FieldMon1Script:
 	cry HOUNDOOM
 	pause 15
 	loadwildmon HOUNDOOM, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -50,7 +49,6 @@ SilverCaveRoom1FieldMon2Script:
 	cry CHANDELURE
 	pause 15
 	loadwildmon CHANDELURE, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -62,7 +60,6 @@ SilverCaveRoom1FieldMon3Script:
 	cry SCIZOR
 	pause 15
 	loadwildmon SCIZOR, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -74,7 +71,6 @@ SilverCaveRoom1FieldMon4Script:
 	cry AEGISLASH
 	pause 15
 	loadwildmon AEGISLASH, 73
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -86,7 +82,6 @@ SilverCaveRoom1FieldMon5Script:
 	cry EXCADRILL
 	pause 15
 	loadwildmon EXCADRILL, 74
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -98,7 +93,6 @@ SilverCaveRoom1FieldMon6Script:
 	cry AERODACTYL
 	pause 15
 	loadwildmon AERODACTYL, 75
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -110,7 +104,6 @@ SilverCaveRoom1FieldMon7Script:
 	cry GENGAR
 	pause 15
 	loadwildmon GENGAR, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -122,7 +115,6 @@ SilverCaveRoom1FieldMon8Script:
 	cry WEAVILE
 	pause 15
 	loadwildmon WEAVILE, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -134,7 +126,6 @@ SilverCaveRoom1FieldMon9Script:
 	cry GLISCOR
 	pause 15
 	loadwildmon GLISCOR, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9
@@ -146,7 +137,6 @@ SilverCaveRoom1FieldMon10Script:
 	cry MAMOSWINE
 	pause 15
 	loadwildmon MAMOSWINE, 75
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10

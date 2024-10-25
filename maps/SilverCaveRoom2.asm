@@ -38,7 +38,6 @@ SilverCaveRoom2FieldMon1Script:
 	cry BRELOOM
 	pause 15
 	loadwildmon BRELOOM, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -50,7 +49,6 @@ SilverCaveRoom2FieldMon2Script:
 	cry REUNICLUS
 	pause 15
 	loadwildmon REUNICLUS, 74
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -62,7 +60,6 @@ SilverCaveRoom2FieldMon3Script:
 	cry HERACROSS
 	pause 15
 	loadwildmon HERACROSS, 71
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -74,7 +71,6 @@ SilverCaveRoom2FieldMon4Script:
 	cry CONKELDURR
 	pause 15
 	loadwildmon CONKELDURR, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -86,7 +82,6 @@ SilverCaveRoom2FieldMon5Script:
 	cry MACHAMP
 	pause 15
 	loadwildmon MACHAMP, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -98,7 +93,6 @@ SilverCaveRoom2FieldMon6Script:
 	cry GALADE
 	pause 15
 	loadwildmon GALADE, 73
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -110,7 +104,6 @@ SilverCaveRoom2FieldMon7Script:
 	cry GARDEVOIR
 	pause 15
 	loadwildmon GARDEVOIR, 73
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -122,7 +115,6 @@ SilverCaveRoom2FieldMon8Script:
 	cry PORYGONZ
 	pause 15
 	loadwildmon PORYGONZ, 71
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -134,7 +126,6 @@ SilverCaveRoom2FieldMon9Script:
 	cry CLEFABLE
 	pause 15
 	loadwildmon CLEFABLE, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9
@@ -146,7 +137,6 @@ SilverCaveRoom2FieldMon10Script:
 	cry TOGEKISS
 	pause 15
 	loadwildmon TOGEKISS, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10

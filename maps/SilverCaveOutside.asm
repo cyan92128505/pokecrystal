@@ -48,7 +48,6 @@ SilverCaveOutsideFieldMon1Script:
 	cry INFERNAPE
 	pause 15
 	loadwildmon INFERNAPE, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -60,7 +59,6 @@ SilverCaveOutsideFieldMon2Script:
 	cry SCEPTILE
 	pause 15
 	loadwildmon SCEPTILE, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -72,7 +70,6 @@ SilverCaveOutsideFieldMon3Script:
 	cry GRENINJA
 	pause 15
 	loadwildmon GRENINJA, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -84,7 +81,6 @@ SilverCaveOutsideFieldMon4Script:
 	cry STARAPTOR
 	pause 15
 	loadwildmon STARAPTOR, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -96,7 +92,6 @@ SilverCaveOutsideFieldMon5Script:
 	cry GALVANTULA
 	pause 15
 	loadwildmon GALVANTULA, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -108,7 +103,6 @@ SilverCaveOutsideFieldMon6Script:
 	cry VOLCARONA
 	pause 15
 	loadwildmon VOLCARONA, 75
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -120,7 +114,6 @@ SilverCaveOutsideFieldMon7Script:
 	cry EXEGGUTOR
 	pause 15
 	loadwildmon EXEGGUTOR, 72
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -132,7 +125,6 @@ SilverCaveOutsideFieldMon8Script:
 	cry STARMIE
 	pause 15
 	loadwildmon STARMIE, 75
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -144,7 +136,6 @@ SilverCaveOutsideFieldMon9Script:
 	cry POLITOED
 	pause 15
 	loadwildmon POLITOED, 70
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9
@@ -156,7 +147,6 @@ SilverCaveOutsideFieldMon10Script:
 	cry AZUMARILL
 	pause 15
 	loadwildmon AZUMARILL, 73
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10
@@ -582,18 +572,20 @@ SilverCaveSilverFriendshipText:
     cont "telling him I"
     cont "hated him."
 
-    para "But I didn't."
-
     para "To my surprise"
     line "we were really"
     cont "happy to see"
     cont "each other."
 
-    para "I think it was"
-    line "because of you"
-    cont "that I have"
-    cont "changed so much."
-    done
+	para "I guess I learnt"
+	line "not to be so angry"
+	cont "from you and"
+	cont "LANCE."
+
+	para "I certainly didn't"
+	line "learn it from"
+	cont "CRYSTAL."
+	done
 
 SilverCaveCrystalShouldGoText:
     text "Well..."

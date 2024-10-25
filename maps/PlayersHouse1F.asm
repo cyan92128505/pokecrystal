@@ -403,11 +403,32 @@ PlayersHouse1FTVText:
 	done
 
 DadScript:
+    faceplayer
+    opentext
     checkevent EVENT_BEAT_WALLACE
     iftrue .beatWallace
-    jumptextfaceplayer DadTalkText
+    writetext DadTalkText
+    waitbutton
+    closetext
+    sjump .heal
 .beatWallace
-    jumptextfaceplayer DadPostWallaceText
+    writetext DadPostWallaceText
+    waitbutton
+    closetext
+.heal
+    special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	playmusic MUSIC_HEAL
+	special StubbedTrainerRankings_Healings
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext DadGoodLuckText
+	waitbutton
+	closetext
+	end
 
 DadTalkText:
     text "I am very proud"
@@ -425,7 +446,11 @@ DadTalkText:
     para "Go and use your"
     line "strength to do"
     cont "what I could not."
-    done
+
+	para "Now you and your"
+	line "#MON should"
+	cont "have a good rest."
+	done
 
 DadPostWallaceText:
     text "You are a hero!"
@@ -445,7 +470,16 @@ DadPostWallaceText:
 
     para "You are my kid"
     line "and my hero."
-    done
+
+	para "Now you and your"
+	line "#MON should"
+	cont "have a good rest."
+	done
+
+DadGoodLuckText:
+	text "Good luck out"
+	line "there <PLAYER>."
+	done
 
 NeighborMornIntroText:
 	text "Good morning,"

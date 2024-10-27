@@ -555,8 +555,9 @@ _WhitedOutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> whited"
-	line "out!"
+	para "<PLAYER> scurried"
+	line "back to the"
+	cont "#CENTER"
 	done
 
 _ItemfinderItemNearbyText::
@@ -1613,8 +1614,9 @@ _WhitedOutToWildMonText::
 	para "<……><……><……>"
 	line "<……><……><……>"
 
-	para "<PLAYER> whited"
-	line "out!"
+	para "<PLAYER> scurried"
+	line "back to the"
+	cont "#CENTER"
 	done
 
 _WhitedOutToTrainerText::
@@ -1630,8 +1632,9 @@ _WhitedOutToTrainerText::
 	para "<……><……><……>"
 	line "<……><……><……>"
 
-	para "<PLAYER> whited"
-	line "out!"
+	para "<PLAYER> scurried"
+	line "back to the"
+	cont "#CENTER"
 	done
 
 _DontKillUsText::

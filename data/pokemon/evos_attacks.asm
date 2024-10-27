@@ -1019,7 +1019,7 @@ BellsproutEvosAttacks:
 	db 1, VINE_WHIP
 	db 1, ACID
 	db 6, GROWTH
-	db 11, WRAP
+	db 11, POISON_STING
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 22, SLUDGE
@@ -1036,7 +1036,7 @@ WeepinbellEvosAttacks:
 	db 1, VINE_WHIP
 	db 1, ACID
 	db 6, GROWTH
-	db 11, WRAP
+	db 11, POISON_STING
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 21, SLUDGE
@@ -1052,7 +1052,7 @@ VictreebelEvosAttacks:
 	db 1, VINE_WHIP
 	db 1, ACID
 	db 6, GROWTH
-	db 11, WRAP
+	db 11, POISON_STING
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 21, SLUDGE
@@ -1558,11 +1558,11 @@ MarillEvosAttacks:
 	db 1, WATER_GUN
 	db 6, DEFENSE_CURL
 	db 15, BUBBLEBEAM
-	db 19, ROLLOUT
-	db 22, HEADBUTT
-	db 25, RAIN_DANCE
+	db 19, HEADBUTT
+	db 22, RAIN_DANCE
+	db 25, ROLLOUT
 	db 30, BODY_SLAM
-	db 36, WATERFALL
+	db 35, WATERFALL
 	db 40, PLAY_ROUGH
 	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves
@@ -1573,11 +1573,11 @@ AzumarillEvosAttacks:
 	db 1, WATER_GUN
 	db 6, DEFENSE_CURL
 	db 16, BUBBLEBEAM
-	db 18, ROLLOUT
-	db 22, HEADBUTT
-	db 25, RAIN_DANCE
+	db 18, HEADBUTT
+	db 22, RAIN_DANCE
+	db 25, ROLLOUT
 	db 30, BODY_SLAM
-	db 36, WATERFALL
+	db 35, WATERFALL
 	db 40, PLAY_ROUGH
 	db 50, BELLY_DRUM
 	db 0 ; no more level-up moves

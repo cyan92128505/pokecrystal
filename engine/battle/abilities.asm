@@ -31,8 +31,6 @@ SniperPokemon:
     db TREECKO
     db GROVYLE
     db SCEPTILE
-    db SHROOMISH
-    db BRELOOM
     db HORSEA
     db SEADRA
     db GIBLE
@@ -126,6 +124,8 @@ TechnicianPokemon:
     db PERSIAN
     db PAWNIARD
     db BISHARP
+    db SHROOMISH
+    db BRELOOM
     db PSYDUCK
     db PORYGON
     db BULBASAUR

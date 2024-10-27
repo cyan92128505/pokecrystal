@@ -80,6 +80,8 @@ HenshinScript:
 	writetext HenshinSeenText
 	waitbutton
 	closetext
+	setval MUSIC_RED_DUNGEON
+	writemem wBattleMusicOverride
 	winlosstext HenshinBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SAGE, HENSHIN

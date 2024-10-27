@@ -91,6 +91,8 @@ SageLiScript:
 	writetext SageLiSeenText
 	waitbutton
 	closetext
+	setval MUSIC_LUGIA_SONG
+	writemem wBattleMusicOverride
 	winlosstext SageLiBeatenText, 0
 	loadtrainer SAGE, LI
 	startbattle
@@ -122,6 +124,8 @@ SageLiScript:
     writetext SageLiSeenText
 	waitbutton
 	closetext
+	setval MUSIC_LUGIA_SONG
+	writemem wBattleMusicOverride
 	winlosstext SageLiBeatenText, 0
     loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
 	loadtrainer SAGE, LI

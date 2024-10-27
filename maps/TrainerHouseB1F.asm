@@ -520,6 +520,8 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Henshin
+	setval MUSIC_RED_DUNGEON
+	writemem wBattleMusicOverride
     loadtrainer SAGE, HENSHIN
     sjump .finish
 
@@ -1200,6 +1202,8 @@ BattleTrialReceptionistScript:
 	writetext Trial2Text
 	waitbutton
 	closetext
+	setval MUSIC_LUGIA_SONG
+	writemem wBattleMusicOverride
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
     loadtrainer SAGE, LI

@@ -5,6 +5,5 @@
 	next "warrior with a"
 	next "powerful punch."
 
-	page "Deals extra"
-	next "critical hit"
-	next "damage.@"
+	page "Makes weaker"
+	next "moves stronger.@"

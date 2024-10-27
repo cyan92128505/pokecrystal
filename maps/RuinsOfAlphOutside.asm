@@ -290,6 +290,8 @@ RuinsOfAlphOutsideHenshinScript:
 	iffalse .refused
 	closetext
 .dontAsk
+	setval MUSIC_RED_DUNGEON
+	writemem wBattleMusicOverride
 	winlosstext AlphHenshinBeatenText, AlphHenshinWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SAGE, HENSHIN

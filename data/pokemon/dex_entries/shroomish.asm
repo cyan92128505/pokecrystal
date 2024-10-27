@@ -5,6 +5,5 @@
 	next "tasty mushroom"
 	next "with a temper."
 
-	page "Deals extra"
-	next "critical hit"
-	next "damage.@"
+	page "Makes weaker"
+	next "moves stronger.@"

@@ -51,7 +51,7 @@ Moves: ; 41afb
 	move THRASH,       EFFECT_RAMPAGE,            90, NORMAL,        PHYSICAL, 100, 20,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
-	move POISON_STING, EFFECT_POISON_HIT,         40, POISON,        PHYSICAL, 100, 35,  30
+	move POISON_STING, EFFECT_POISON_HIT,         50, POISON,        PHYSICAL, 100, 30,  30
 	move STONE_EDGE,   EFFECT_NORMAL_HIT,        100, ROCK,          PHYSICAL,  85, 10,   0
 	move SCALD,        EFFECT_BURN_HIT,           80, WATER,         SPECIAL,  100, 15,  30
 	move LEER,         EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0

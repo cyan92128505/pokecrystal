@@ -313,13 +313,16 @@ RuinsOfAlphOutsideHenshinScript:
 	closetext
 	end
 AlphHenshinSeenText:
-    text "I am sure the"
-    line "entrance to the"
-    cont "ANCIENT CITY"
-    cont "is around here."
+	text "Wretched things"
+	line "stars..."
+	para "They mar the"
+	line "blessed dark."
 
-    para "The darkness"
-    line "calls to me."
+    para "I am sure the"
+    line "entrance to the"
+    cont "ancient city of"
+    cont "MENZOBERRANZAN"
+    cont "is around here."
 
     para "It must have some"
     line "relation to these"
@@ -328,7 +331,7 @@ AlphHenshinSeenText:
     para "The power of"
     line "death will at"
     cont "last belong to"
-    cont "me. HENSHIN!"
+    cont "HENSHIN!"
 
     para "Then SETO and"
     line "ATEM will kneel"
@@ -362,7 +365,7 @@ RematchTextAlphHenshin:
     line "duel?"
     done
 RematchRefuseTextAlphHenshin:
-    text "I insist!"
+    text "Wise choice."
     done
 
 RuinsOfAlphOutsideFieldMon1Script:

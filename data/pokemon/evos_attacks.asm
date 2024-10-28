@@ -1243,10 +1243,10 @@ MamoswineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, POWDER_SNOW
-	db 1, ENDURE
-	db 19, MAGNITUDE
-	db 25, ICY_WIND
-	db 30, BODY_SLAM
+	db 16, MAGNITUDE
+	db 20, ICY_WIND
+	db 25, BODY_SLAM
+	db 30, AURORA_BEAM
 	db 37, AMNESIA
 	db 42, BLIZZARD
 	db 46, EARTHQUAKE
@@ -2345,7 +2345,7 @@ ChimcharEvosAttacks:
 	db 8, EMBER
 	db 17, KARATE_CHOP
 	db 20, MACH_PUNCH
-	db 25, FLAME_WHEEL
+	db 26, FLAME_WHEEL
 	db 30, SUBMISSION
 	db 35, FIRE_PUNCH
 	db 40, FLAMETHROWER
@@ -3336,10 +3336,10 @@ SwinubEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, POWDER_SNOW
-	db 1, ENDURE
-	db 19, MAGNITUDE
-	db 25, ICY_WIND
-	db 31, BODY_SLAM
+	db 16, MAGNITUDE
+	db 20, ICY_WIND
+	db 25, BODY_SLAM
+	db 31, AURORA_BEAM
 	db 37, AMNESIA
 	db 42, BLIZZARD
 	db 46, EARTHQUAKE
@@ -3351,10 +3351,10 @@ PiloswineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, POWDER_SNOW
-	db 1, ENDURE
-	db 19, MAGNITUDE
-	db 25, ICY_WIND
-	db 30, BODY_SLAM
+	db 16, MAGNITUDE
+	db 20, ICY_WIND
+	db 25, BODY_SLAM
+	db 30, AURORA_BEAM
     db 37, AMNESIA
 	db 43, BLIZZARD
 	db 46, EARTHQUAKE
@@ -3702,6 +3702,7 @@ LarvitarEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 8, SANDSTORM
+	db 11, ROCK_THROW
 	db 15, SCREECH
 	db 22, ROCK_SLIDE
 	db 31, CRUNCH

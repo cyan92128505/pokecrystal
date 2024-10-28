@@ -159,6 +159,7 @@ ClearBodyPokemon:
     db DEOXYS
     db DUNSPARCE
     db VAPOREON
+    db WOBBUFFET
     db -1
 
 SolidRockPokemon:

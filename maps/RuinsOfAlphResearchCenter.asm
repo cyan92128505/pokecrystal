@@ -268,8 +268,9 @@ RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 	para "I tried to"
 	line "explore."
 
-	para "It leads to an"
-	line "ancient city."
+	para "It leads to the"
+	line "ancient city of"
+	cont "MENZOBERRANZAN."
 
 	para "But it's too"
 	line "dangerous down"
@@ -303,6 +304,9 @@ RuinsOfAlphResearchCenterScientist2Text:
 	line "are all solved"
 	cont "might the secret"
 	cont "be revealed."
+
+	para "The path to"
+	line "MENZOBERRANZAN."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:

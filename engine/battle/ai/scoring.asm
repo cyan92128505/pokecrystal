@@ -2469,11 +2469,18 @@ AI_Smart_Encore:
     jr z, .skipSpeedCheck
     cp MURKROW
     jr z, .skipSpeedCheck
+    cp WOBBUFFET
+    jr z, .skipSpeedCheck
 
+; don't use if we are slower
 	call DoesAIOutSpeedPlayer
 	jr nc, .discourage
 
+; don't use if we can be koed
 .skipSpeedCheck
+    call ShouldAIBoost
+    jr nc, .discourage
+
 ; don't use if player already encored
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
@@ -2492,12 +2499,13 @@ AI_Smart_Encore:
    	pop hl
    	jr c, .discourage
 
+; don't use if no last move recorded
 	ld a, [wLastPlayerMove]
 	and a
 	jp z, AIDiscourageMove
 
+; never encore a super effective move
 	call AIGetEnemyMove
-
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
 	jr z, .weakmove
@@ -2518,6 +2526,11 @@ AI_Smart_Encore:
 	jr .encourage
 
 .weakmove
+; if we are wobbuffet just use encore here
+	ld a, [wEnemyMonSpecies]
+	cp WOBBUFFET
+	jr z, .encourage
+; encore if it is an encore move, discourage otherwise
 	push hl
 	ld a, [wLastPlayerCounterMove]
 	ld hl, EncoreMoves

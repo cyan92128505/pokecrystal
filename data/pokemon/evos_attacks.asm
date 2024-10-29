@@ -1246,10 +1246,10 @@ MamoswineEvosAttacks:
 	db 16, MAGNITUDE
 	db 20, ICY_WIND
 	db 25, BODY_SLAM
-	db 30, AURORA_BEAM
+	db 30, DIG
 	db 37, AMNESIA
-	db 42, BLIZZARD
-	db 46, EARTHQUAKE
+	db 42, EARTHQUAKE
+	db 46, BLIZZARD
 	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
@@ -1662,33 +1662,32 @@ RhyhornEvosAttacks:
 	db EVOLVE_LEVEL, 35, RHYDON
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
-	db 1, TAIL_WHIP
-	db 13, STOMP
-	db 16, SCARY_FACE
-	db 19, MAGNITUDE
-	db 25, TAKE_DOWN
-	db 31, ROCK_SLIDE
+	db 1, SCARY_FACE
+	db 12, ROCK_THROW
+	db 16, MAGNITUDE
+	db 22, TAKE_DOWN
+	db 28, POISON_JAB
+	db 32, ROCK_SLIDE
 	db 36, HORN_DRILL
-	db 44, MEGAHORN
-	db 50, EARTHQUAKE
-	db 55, STONE_EDGE
+	db 40, MEGAHORN
+	db 45, EARTHQUAKE
+	db 51, STONE_EDGE
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
 	db EVOLVE_LEVEL, 50, RHYPERIOR
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
-	db 1, TAIL_WHIP
-	db 13, STOMP
-	db 16, SCARY_FACE
-	db 19, MAGNITUDE
-	db 25, TAKE_DOWN
-	db 31, ROCK_SLIDE
-	db 34, POISON_JAB
+	db 1, SCARY_FACE
+	db 12, ROCK_THROW
+	db 16, MAGNITUDE
+	db 22, TAKE_DOWN
+	db 28, POISON_JAB
+	db 32, ROCK_SLIDE
 	db 35, HORN_DRILL
-	db 44, MEGAHORN
-	db 51, EARTHQUAKE
-	db 55, STONE_EDGE
+	db 40, MEGAHORN
+	db 45, EARTHQUAKE
+	db 51, STONE_EDGE
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
@@ -1728,16 +1727,16 @@ WeavileEvosAttacks:
 RhyperiorEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
-	db 1, TAIL_WHIP
-	db 13, STOMP
-	db 16, SCARY_FACE
-	db 19, MAGNITUDE
-	db 25, HORN_DRILL
-	db 31, ROCK_SLIDE
-	db 37, POISON_JAB
-	db 44, MEGAHORN
-	db 50, EARTHQUAKE
-	db 55, STONE_EDGE
+	db 1, SCARY_FACE
+	db 12, ROCK_THROW
+	db 16, MAGNITUDE
+	db 22, TAKE_DOWN
+	db 28, POISON_JAB
+	db 32, ROCK_SLIDE
+	db 36, HORN_DRILL
+	db 40, MEGAHORN
+	db 45, EARTHQUAKE
+	db 50, STONE_EDGE
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
@@ -1867,8 +1866,8 @@ ScytherEvosAttacks:
 	db 12, PURSUIT
 	db 18, SLASH
 	db 24, WING_ATTACK
-    db 30, X_SCISSOR
-	db 45, SWORDS_DANCE
+    db 31, X_SCISSOR
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
@@ -2521,7 +2520,7 @@ DrilburEvosAttacks:
 	db 19, DIG
 	db 26, SLASH
 	db 32, IRON_HEAD
-	db 35, ROCK_SLIDE
+	db 35, SANDSTORM
 	db 40, EARTHQUAKE
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -2536,7 +2535,7 @@ ExcadrillEvosAttacks:
 	db 19, DIG
 	db 26, SLASH
 	db 31, IRON_HEAD
-	db 35, ROCK_SLIDE
+	db 35, SANDSTORM
 	db 40, EARTHQUAKE
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -3176,15 +3175,15 @@ GibleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SAND_ATTACK
-	db 10, SANDSTORM
+	db 10, MAGNITUDE
 	db 14, CRUNCH
 	db 18, SLASH
 	db 25, DRAGON_RAGE
-	db 30, DRAGON_CLAW
-	db 35, DIG
-	db 50, EARTHQUAKE
-	db 55, OUTRAGE
-	db 60, SWORDS_DANCE
+	db 30, DIG
+	db 35, DRAGON_CLAW
+	db 42, EARTHQUAKE
+	db 49, OUTRAGE
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 GabiteEvosAttacks:
@@ -3192,30 +3191,30 @@ GabiteEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SAND_ATTACK
-	db 10, SANDSTORM
+	db 10, MAGNITUDE
 	db 14, CRUNCH
 	db 18, SLASH
 	db 24, DRAGON_RAGE
-	db 30, DRAGON_CLAW
-	db 35, DIG
-	db 49, EARTHQUAKE
-	db 55, OUTRAGE
-	db 60, SWORDS_DANCE
+	db 30, DIG
+	db 35, DRAGON_CLAW
+	db 42, EARTHQUAKE
+	db 49, OUTRAGE
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 GarchompEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SAND_ATTACK
-	db 10, SANDSTORM
+	db 10, MAGNITUDE
 	db 14, CRUNCH
 	db 18, SLASH
 	db 24, DRAGON_RAGE
-	db 30, DRAGON_CLAW
-	db 35, DIG
-	db 48, EARTHQUAKE
-	db 55, OUTRAGE
-	db 60, SWORDS_DANCE
+	db 30, DIG
+	db 35, DRAGON_CLAW
+	db 42, EARTHQUAKE
+	db 48, OUTRAGE
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ScizorEvosAttacks:
@@ -3228,7 +3227,7 @@ ScizorEvosAttacks:
 	db 24, AGILITY
 	db 30, BULLET_PUNCH
 	db 36, X_SCISSOR
-	db 45, SWORDS_DANCE
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ShayminEvosAttacks:
@@ -3339,10 +3338,10 @@ SwinubEvosAttacks:
 	db 16, MAGNITUDE
 	db 20, ICY_WIND
 	db 25, BODY_SLAM
-	db 31, AURORA_BEAM
+	db 31, DIG
 	db 37, AMNESIA
-	db 42, BLIZZARD
-	db 46, EARTHQUAKE
+	db 43, EARTHQUAKE
+	db 46, BLIZZARD
 	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
@@ -3354,10 +3353,10 @@ PiloswineEvosAttacks:
 	db 16, MAGNITUDE
 	db 20, ICY_WIND
 	db 25, BODY_SLAM
-	db 30, AURORA_BEAM
+	db 30, DIG
     db 37, AMNESIA
-	db 43, BLIZZARD
-	db 46, EARTHQUAKE
+	db 43, EARTHQUAKE
+	db 46, BLIZZARD
 	db 50, AVALANCHE
 	db 0 ; no more level-up moves
 
@@ -3703,7 +3702,7 @@ LarvitarEvosAttacks:
 	db 1, LEER
 	db 8, SANDSTORM
 	db 11, ROCK_THROW
-	db 15, SCREECH
+	db 15, MAGNITUDE
 	db 22, ROCK_SLIDE
 	db 31, CRUNCH
 	db 40, EARTHQUAKE
@@ -3717,7 +3716,7 @@ PupitarEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 8, SANDSTORM
-	db 15, SCREECH
+	db 15, MAGNITUDE
 	db 22, ROCK_SLIDE
 	db 30, CRUNCH
 	db 40, EARTHQUAKE
@@ -3730,7 +3729,7 @@ TyranitarEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 8, SANDSTORM
-	db 15, SCREECH
+	db 15, MAGNITUDE
 	db 22, ROCK_SLIDE
 	db 34, CRUNCH
 	db 40, EARTHQUAKE

@@ -22,7 +22,7 @@ IcePathB3FFieldMon1Script:
 	faceplayer
 	cry MAMOSWINE
 	pause 15
-	loadwildmon MAMOSWINE, 65
+	loadwildmon MAMOSWINE, 67
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -34,7 +34,7 @@ IcePathB3FFieldMon2Script:
 	faceplayer
 	cry PILOSWINE
 	pause 15
-	loadwildmon PILOSWINE, 38
+	loadwildmon PILOSWINE, 34
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -45,7 +45,7 @@ IcePathB3FFieldMon3Script:
 	faceplayer
 	cry PILOSWINE
 	pause 15
-	loadwildmon PILOSWINE, 38
+	loadwildmon PILOSWINE, 33
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

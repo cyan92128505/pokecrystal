@@ -23,7 +23,7 @@ IcePath1FFieldMon1Script:
 	faceplayer
 	cry PILOSWINE
 	pause 15
-	loadwildmon PILOSWINE, 38
+	loadwildmon PILOSWINE, 34
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

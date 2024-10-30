@@ -3192,6 +3192,11 @@ AI_Smart_PerishSong:
 	ret
 
 AI_Smart_Sandstorm:
+; don't use if already sandy
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr z, .discourage
+
 ; don't boost if choice locked
     call DoesEnemyHaveChoiceItem
     jp c, .discourage
@@ -3517,6 +3522,11 @@ AI_Smart_HiddenPower:
 	ret
 
 AI_Smart_RainDance:
+; don't use if already raining
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr z, .discourage
+
 ; don't boost if choice locked
     call DoesEnemyHaveChoiceItem
     jp c, .discourage
@@ -3547,9 +3557,9 @@ AI_Smart_RainDance:
 
 	ld a, [wBattleMonType2]
 	cp WATER
-	jr z, AIBadWeatherType
+	jp z, AIBadWeatherType
 	cp FIRE
-	jr z, AIGoodWeatherType
+	jp z, AIGoodWeatherType
 
 	push hl
 	ld hl, RainDanceMoves
@@ -3568,6 +3578,11 @@ AI_Smart_RainDance:
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
 AI_Smart_SunnyDay:
+; don't use if already sunny
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .discourage
+
 ; don't boost if choice locked
     call DoesEnemyHaveChoiceItem
     jp c, .discourage

@@ -101,6 +101,7 @@ TrainerCooltrainerfReena:
 	trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
 	opentext
 	checkflag ENGINE_REENA_READY_FOR_REMATCH
@@ -165,7 +166,17 @@ TrainerCooltrainerfReena:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext ReenaNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext ReenaRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext ReenaRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -179,6 +190,23 @@ TrainerCooltrainerfReena:
 .Rematch:
 	jumpstd RematchFScript
 	end
+
+ReenaNumberAcceptedText:
+	text "It is your destiny"
+	line "to be my stepping"
+	cont "stone."
+	para "And a fine destiny"
+	line "it is."
+	done
+
+ReenaRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+ReenaRematchRefuseText:
+    text "So be it."
+    done
 
 TrainerCooltrainerfMegan:
 	trainer COOLTRAINERF, MEGAN, EVENT_BEAT_COOLTRAINERF_MEGAN, CooltrainerfMeganSeenText, CooltrainerfMeganBeatenText, 0, .Script

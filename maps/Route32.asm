@@ -166,6 +166,7 @@ TrainerPicnickerLiz1:
 	trainer PICNICKER, LIZ1, EVENT_BEAT_PICNICKER_LIZ, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
 	opentext
 	checkflag ENGINE_LIZ_READY_FOR_REMATCH
@@ -248,7 +249,17 @@ TrainerPicnickerLiz1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext LizNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext LizRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext LizRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -262,6 +273,23 @@ TrainerPicnickerLiz1:
 .RematchStd:
 	jumpstd RematchFScript
 	end
+
+LizNumberAcceptedText:
+	text "Really!"
+	para "Thank you!"
+	para "I'll keep in"
+	line "touch."
+	done
+
+LizRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+LizRematchRefuseText:
+    text "You'll call me"
+    line "wont you."
+    done
 
 TrainerYoungsterGordon:
 	trainer YOUNGSTER, GORDON, EVENT_BEAT_YOUNGSTER_GORDON, YoungsterGordonSeenText, YoungsterGordonBeatenText, YoungsterGordonWinsText, .Script

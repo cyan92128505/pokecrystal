@@ -55,10 +55,11 @@ TrainerJugglerIrwin:
 	trainer POKEMANIAC, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
 
 .Script:
+    ; no rematch
 	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
 	opentext
 	checkcellnum PHONE_JUGGLER_IRWIN
-	iftrue Route35NumberAcceptedM
+	iftrue IrwinNumberAcceptedM
 	checkevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext JugglerIrwinAfterBattleText
@@ -75,7 +76,7 @@ TrainerJugglerIrwin:
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, POKEMANIAC, IRWIN1
 	scall Route35RegisteredNumberM
-	sjump Route35NumberAcceptedM
+	sjump IrwinNumberAcceptedM
 
 Route35AskNumber1M:
 	jumpstd AskNumber1MScript
@@ -89,7 +90,7 @@ Route35RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
 	end
 
-Route35NumberAcceptedM:
+IrwinNumberAcceptedM:
 	jumpstd NumberAcceptedMScript
 	end
 
@@ -104,6 +105,23 @@ Route35PhoneFullM:
 Route35RematchM:
 	jumpstd RematchMScript
 	end
+
+IrwinNumberAcceptedText:
+	text "I'm going to chat"
+	line "to you about"
+	cont "everything!"
+	cont "Everything!"
+	done
+
+IrwinRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+IrwinRematchRefuseText:
+    text "I will call you!"
+    line "I will!"
+    done
 
 InvaderLautrecScript:
 	trainer INVADER, LAUTREC, EVENT_BEAT_INVADER_LAUTREC, InvaderLautrecSeenText, InvaderLautrecBeatenText, InvaderLautrecVictoryText, .Script
@@ -153,6 +171,7 @@ TrainerBugCatcherArnie:
 	trainer BUG_CATCHER, ARNIE1, EVENT_BEAT_BUG_CATCHER_ARNIE, BugCatcherArnieSeenText, BugCatcherArnieBeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
 	opentext
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
@@ -160,7 +179,7 @@ TrainerBugCatcherArnie:
 	checkflag ENGINE_YANMA_SWARM
 	iftrue .YanmaSwarming
 	checkcellnum PHONE_BUG_CATCHER_ARNIE
-	iftrue Route35NumberAcceptedM
+	iftrue .ArnieNumberAcceptedM
 	checkevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext BugCatcherArnieAfterBattleText
@@ -177,7 +196,7 @@ TrainerBugCatcherArnie:
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, ARNIE1
 	scall Route35RegisteredNumberM
-	sjump Route35NumberAcceptedM
+	sjump .ArnieNumberAcceptedM
 
 .WantsBattle:
 	scall Route35RematchM
@@ -229,6 +248,37 @@ TrainerBugCatcherArnie:
 	waitbutton
 	closetext
 	end
+
+.ArnieNumberAcceptedM:
+	writetext ArnieNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext ArnieRematchText
+	waitbutton
+	yesorno
+	iftrue .WantsBattle
+	writetext ArnieRematchRefuseText
+	waitbutton
+	closetext
+	end
+
+ArnieNumberAcceptedText:
+	text "When the day comes"
+	line "and the BUGS swarm"
+	cont "these lands I will"
+	cont "let you know."
+	done
+
+ArnieRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+ArnieRematchRefuseText:
+    text "The swam comes"
+    line "soon."
+    done
 
 TrainerFirebreatherWalt:
 	trainer FIREBREATHER, WALT, EVENT_BEAT_FIREBREATHER_WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script

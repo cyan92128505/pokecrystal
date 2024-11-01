@@ -62,10 +62,6 @@ Route45RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
 	end
 
-Route45NumberAcceptedM:
-	jumpstd NumberAcceptedMScript
-	end
-
 Route45NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 	end
@@ -110,12 +106,13 @@ TrainerHikerParry:
 	trainer HIKER, PARRY1, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_HIKER_PARRY
 	opentext
 	checkflag ENGINE_PARRY_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkcellnum PHONE_HIKER_PARRY
-	iftrue Route45NumberAcceptedM
+	iftrue .NumberAcceptedM
 	checkevent EVENT_PARRY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext HikerParryAfterBattleText
@@ -132,7 +129,7 @@ TrainerHikerParry:
 	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
 	gettrainername STRING_BUFFER_3, HIKER, PARRY1
 	scall Route45RegisteredNumberM
-	sjump Route45NumberAcceptedM
+	sjump .NumberAcceptedM
 
 .WantsBattle:
 	scall Route45RematchM
@@ -167,7 +164,7 @@ TrainerHikerParry:
 	verbosegiveitem IRON
 	iffalse HikerParryHasIron
 	setevent EVENT_GOT_IRON_FROM_PARRY
-	sjump Route45NumberAcceptedM
+	sjump .NumberAcceptedM
 
 .GotIron:
 	end
@@ -180,7 +177,37 @@ TrainerHikerParry:
 	iffalse HikerParryHasIron
 	clearevent EVENT_PARRY_IRON
 	setevent EVENT_GOT_IRON_FROM_PARRY
-	sjump Route45NumberAcceptedM
+	sjump .NumberAcceptedM
+
+.NumberAcceptedM:
+	writetext ParryNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext ParryRematchText
+	waitbutton
+	yesorno
+	iftrue .WantsBattle
+	writetext ParryRematchRefuseText
+	waitbutton
+	closetext
+	end
+
+ParryNumberAcceptedText:
+	text "I call you when"
+	line "I'm ready for a"
+	cont "work out."
+	done
+
+ParryRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+ParryRematchRefuseText:
+    text "Don't skip leg"
+    line "day."
+    done
 
 TrainerHikerTimothy:
 	trainer HIKER, TIMOTHY, EVENT_BEAT_HIKER_TIMOTHY, HikerTimothySeenText, HikerTimothyBeatenText, 0, .Script

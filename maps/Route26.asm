@@ -92,6 +92,7 @@ TrainerCooltrainermGaven3:
 	trainer COOLTRAINERM, GAVEN1, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
 	opentext
 	checkflag ENGINE_GAVEN_READY_FOR_REMATCH
@@ -156,7 +157,17 @@ TrainerCooltrainermGaven3:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext GavenNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext GavenRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext GavenRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -170,6 +181,24 @@ TrainerCooltrainermGaven3:
 .Rematch:
 	jumpstd RematchMScript
 	end
+
+GavenNumberAcceptedText:
+	text "If we work"
+	line "together..."
+	para "I'm sure we will"
+	line "discover the"
+	cont "secret."
+	done
+
+GavenRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+GavenRematchRefuseText:
+    text "Do what must"
+    line "be done."
+    done
 
 TrainerCooltrainerfJoyce:
 	trainer COOLTRAINERF, JOYCE, EVENT_BEAT_COOLTRAINERF_JOYCE, CooltrainerfJoyceSeenText, CooltrainerfJoyceBeatenText, 0, .Script
@@ -186,6 +215,7 @@ TrainerCooltrainerfBeth1:
 	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
 	opentext
 	checkflag ENGINE_BETH_READY_FOR_REMATCH
@@ -250,7 +280,17 @@ TrainerCooltrainerfBeth1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext BethNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext BethRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext BethRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -264,6 +304,20 @@ TrainerCooltrainerfBeth1:
 .Rematch:
 	jumpstd RematchFScript
 	end
+
+BethNumberAcceptedText:
+	text "Let's battle again"
+	line "sometime!"
+	done
+
+BethRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+BethRematchRefuseText:
+    text "I'll call you."
+    done
 
 TrainerPsychicRichard:
 	trainer PSYCHIC_T, RICHARD, EVENT_BEAT_PSYCHIC_RICHARD, PsychicRichardSeenText, PsychicRichardBeatenText, 0, .Script

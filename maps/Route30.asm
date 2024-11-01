@@ -91,6 +91,7 @@ TrainerYoungsterJoey:
 	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, YoungsterJoey1WinText, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
 	opentext
 	checkflag ENGINE_JOEY_READY_FOR_REMATCH
@@ -194,7 +195,17 @@ TrainerYoungsterJoey:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext JoeyNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext JoeyRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext RematchRefuseTextJoey
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -217,6 +228,23 @@ TrainerYoungsterJoey:
 .RematchGift:
 	jumpstd RematchGiftMScript
 	end
+
+JoeyNumberAcceptedText:
+	text "When it is time"
+	line "for you to fulfill"
+	cont "your destiny I"
+	cont "shall call."
+	done
+
+JoeyRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+RematchRefuseTextJoey:
+    text "Your destiny"
+    line "will come."
+    done
 
 TrainerYoungsterMikey:
 	trainer YOUNGSTER, MIKEY, EVENT_BEAT_YOUNGSTER_MIKEY, YoungsterMikeySeenText, YoungsterMikeyBeatenText, 0, .Script

@@ -63,6 +63,7 @@ TrainerPokefanmDerek:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
 
 .Script:
+    ; no rematch
 	loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
 	opentext
 	checkflag ENGINE_DEREK_HAS_NUGGET

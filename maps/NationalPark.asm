@@ -130,6 +130,7 @@ TrainerSchoolboyJack1:
 	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
 	opentext
 	checkflag ENGINE_JACK_READY_FOR_REMATCH
@@ -212,7 +213,17 @@ TrainerSchoolboyJack1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext JackNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext JackRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext JackRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -226,6 +237,22 @@ TrainerSchoolboyJack1:
 .RematchStd:
 	jumpstd RematchMScript
 	end
+
+JackNumberAcceptedText:
+	text "I will call you"
+	line "when you least"
+	cont "expect it to keep"
+	cont "your mind sharp!"
+	done
+
+JackRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+JackRematchRefuseText:
+    text "I'll call you."
+    done
 
 TrainerPokefanmWilliam:
 	trainer POKEFANM, WILLIAM, EVENT_BEAT_POKEFANM_WILLIAM, PokefanmWilliamSeenText, PokefanmWilliamBeatenText, 0, .Script
@@ -243,6 +270,7 @@ TrainerPokefanfBeverly1:
 	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
 	opentext
 	checkflag ENGINE_BEVERLY_HAS_NUGGET
@@ -256,6 +284,21 @@ TrainerPokefanfBeverly1:
 	setevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
 	sjump .RequestNumber
+
+.Rematch:
+	winlosstext PokefanfBeverly1BeatenText, 0
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .LoadFight2
+	loadtrainer POKEFANF, BEVERLY1
+	startbattle
+	reloadmapafterbattle
+	end
+
+.LoadFight2:
+	loadtrainer POKEFANF, BEVERLY3
+	startbattle
+	reloadmapafterbattle
+	end
 
 .AskAgain:
 	scall .AskNumber2
@@ -290,7 +333,17 @@ TrainerPokefanfBeverly1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext BeverlyNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext BeverlyRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext BeverlyRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -308,6 +361,21 @@ TrainerPokefanfBeverly1:
 .PackFull:
 	jumpstd PackFullFScript
 	end
+
+BeverlyNumberAcceptedText:
+	text "You are under our"
+	line "protection now!"
+	done
+
+BeverlyRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+BeverlyRematchRefuseText:
+    text "The day..."
+    line "is saved!"
+    done
 
 TrainerLassKrise:
 	trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script

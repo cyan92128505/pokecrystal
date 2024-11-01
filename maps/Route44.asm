@@ -74,9 +74,6 @@ Route44AskNumber2M:
 Route44RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
 	end
-Route44NumberAcceptedM:
-	jumpstd NumberAcceptedMScript
-	end
 Route44NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 	end
@@ -190,6 +187,7 @@ TrainerFisherWilton1:
 	trainer FISHER, WILTON1, EVENT_BEAT_FISHER_WILTON, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_FISHER_WILTON
 	opentext
 	checkflag ENGINE_WILTON_READY_FOR_REMATCH
@@ -197,7 +195,7 @@ TrainerFisherWilton1:
 	checkflag ENGINE_WILTON_HAS_ITEM
 	iftrue .HasItem
 	checkcellnum PHONE_FISHER_WILTON
-	iftrue Route44NumberAcceptedM
+	iftrue .NumberAcceptedM
 	checkevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext FisherWiltonHugePoliwagText
@@ -214,7 +212,7 @@ TrainerFisherWilton1:
 	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
 	gettrainername STRING_BUFFER_3, FISHER, WILTON1
 	scall Route44RegisteredNumberM
-	sjump Route44NumberAcceptedM
+	sjump .NumberAcceptedM
 
 .WantsBattle:
 	scall Route44RematchM
@@ -266,10 +264,41 @@ TrainerFisherWilton1:
 	iffalse .Route44PackFullM
 .ItemReceived:
 	clearflag ENGINE_WILTON_HAS_ITEM
-	sjump Route44NumberAcceptedM
+	sjump .NumberAcceptedM
 
 .Route44PackFullM:
 	sjump Route44PackFullM
+
+.NumberAcceptedM:
+	writetext WiltonNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext WiltonRematchText
+	waitbutton
+	yesorno
+	iftrue .WantsBattle
+	writetext WiltonRematchRefuseText
+	waitbutton
+	closetext
+	end
+
+WiltonNumberAcceptedText:
+	text "I'll introduce you"
+	line "to a whole new"
+	cont "world of culinary"
+	cont "experience."
+	done
+
+WiltonRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+WiltonRematchRefuseText:
+    text "Keep an open"
+    line "mind."
+    done
 
 TrainerCooltrainerfCybil:
 	trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script

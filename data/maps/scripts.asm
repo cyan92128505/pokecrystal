@@ -140,7 +140,6 @@ INCLUDE "maps/ElmsLab.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
-INCLUDE "maps/Route27SandstormHouse.asm"
 
 SECTION "Map Scripts 10", ROMX
 
@@ -340,7 +339,6 @@ INCLUDE "maps/Route29.asm"
 INCLUDE "maps/Route30.asm"
 INCLUDE "maps/Route38.asm"
 INCLUDE "maps/Route13.asm"
-INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/PewterGym.asm"
 
 SECTION "Map Scripts 22", ROMX
@@ -352,8 +350,6 @@ INCLUDE "maps/Route31.asm"
 INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
-INCLUDE "maps/Route12.asm"
-
 
 SECTION "Map Scripts 23", ROMX
 
@@ -521,3 +517,6 @@ INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route29Route46Gate.asm"
 INCLUDE "maps/PewterMart.asm"
 INCLUDE "maps/FuchsiaMart.asm"
+INCLUDE "maps/Route27SandstormHouse.asm"
+INCLUDE "maps/Route12.asm"
+INCLUDE "maps/PewterNidoranSpeechHouse.asm"

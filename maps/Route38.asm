@@ -84,6 +84,7 @@ TrainerLassDana1:
 	trainer LASS, DANA1, EVENT_BEAT_LASS_DANA, LassDana1SeenText, LassDana1BeatenText, 0, .Script
 
 .Script
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_LASS_DANA
 	opentext
 	checkflag ENGINE_DANA_READY_FOR_REMATCH
@@ -179,7 +180,17 @@ TrainerLassDana1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext DanaNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext DanaRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext DanaRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .DeclinedPhoneNumber:
@@ -202,10 +213,32 @@ TrainerLassDana1:
 	jumpstd PackFullFScript
 	end
 
+DanaNumberAcceptedText:
+	text "Next time a boy"
+	line "gives me something"
+
+	para "after a battle,"
+	line "I'll share some!"
+
+	para "Does that make me"
+	line "bad?"
+	done
+
+DanaRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+DanaRematchRefuseText:
+    text "Do I look"
+    line "bothered!"
+    done
+
 TrainerSchoolboyChad1:
 	trainer SCHOOLBOY, CHAD1, EVENT_BEAT_SCHOOLBOY_CHAD, SchoolboyChad1SeenText, SchoolboyChad1BeatenText, 0, .Script
 
 .Script
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_CHAD
 	opentext
 	checkflag ENGINE_CHAD_READY_FOR_REMATCH
@@ -288,7 +321,17 @@ TrainerSchoolboyChad1:
 	end
 
 .HaveChadsNumber:
-	jumpstd NumberAcceptedMScript
+	writetext ChadNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext ChadRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext ChadRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .SaidNo:
@@ -302,6 +345,21 @@ TrainerSchoolboyChad1:
 .Rematch:
 	jumpstd RematchMScript
 	end
+
+ChadNumberAcceptedText:
+	text "I will teach you"
+	line "my ways."
+	done
+
+ChadRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+ChadRematchRefuseText:
+    text "That's it!"
+    line "Be aloof."
+    done
 
 TrainerBeautyValerie:
 	trainer BEAUTY, VALERIE, EVENT_BEAT_BEAUTY_VALERIE, BeautyValerieSeenText, BeautyValerieBeatenText, 0, .Script

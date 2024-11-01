@@ -182,6 +182,7 @@ TrainerSchoolboyAlan1:
 	trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyAlan1SeenText, SchoolboyAlan1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN
 	opentext
 	checkflag ENGINE_ALAN_READY_FOR_REMATCH
@@ -277,7 +278,17 @@ TrainerSchoolboyAlan1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext AlanNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext AlanRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext AlanRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -299,6 +310,30 @@ TrainerSchoolboyAlan1:
 .PackFull:
 	jumpstd PackFullMScript
 	end
+
+AlanNumberAcceptedText:
+	text "Great we shall"
+	line "study together."
+
+	para "I'll call you if I"
+	line "find something to"
+	cont "help your study."
+
+	para "Then we will be"
+	line "assured high"
+	cont "salary jobs!"
+	done
+
+AlanRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+AlanRematchRefuseText:
+    text "Only through me"
+    line "can you increase"
+    cont "your salary."
+    done
 
 TrainerPsychicMark:
 	trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script

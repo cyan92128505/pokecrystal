@@ -112,6 +112,7 @@ TrainerCamperTodd1:
 	trainer CAMPER, TODD1, EVENT_BEAT_CAMPER_TODD, CamperTodd1SeenText, CamperTodd1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_CAMPER_TODD
 	opentext
 	checkflag ENGINE_TODD_READY_FOR_REMATCH
@@ -202,7 +203,17 @@ TrainerCamperTodd1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext ToddNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext ToddRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext ToddRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -217,10 +228,28 @@ TrainerCamperTodd1:
 	jumpstd RematchMScript
 	end
 
+ToddNumberAcceptedText:
+	text "Thank..."
+	para "Thank you!"
+	para "I promise I will"
+	line "do my best to be"
+	cont "worth your time."
+	done
+
+ToddRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+ToddRematchRefuseText:
+    text "Yes Sensei."
+    done
+
 TrainerPicnickerGina1:
 	trainer PICNICKER, GINA1, EVENT_BEAT_PICNICKER_GINA, PicnickerGina1SeenText, PicnickerGina1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_PICNICKER_GINA
 	opentext
 	checkflag ENGINE_GINA_READY_FOR_REMATCH
@@ -316,7 +345,17 @@ TrainerPicnickerGina1:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext GinaNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext GinaRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext GinaRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -339,36 +378,22 @@ TrainerPicnickerGina1:
 	jumpstd PackFullFScript
 	end
 
-OfficerKeithScript:
-	faceplayer
-	opentext
-	checktime NITE
-	iffalse .NoFight
-	checkevent EVENT_BEAT_OFFICER_KEITH
-	iftrue .AfterScript
-	playmusic MUSIC_OFFICER_ENCOUNTER
-	writetext OfficerKeithSeenText
-	waitbutton
-	closetext
-	winlosstext OfficerKeithWinText, 0
-	loadtrainer OFFICER, KEITH
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_KEITH
-	closetext
-	end
+GinaNumberAcceptedText:
+	text "Thank you!"
+	para "My #MON will"
+	line "get much stronger"
+	cont "with your help."
+	done
 
-.AfterScript:
-	writetext OfficerKeithAfterText
-	waitbutton
-	closetext
-	end
+GinaRematchText:
+    text "How about a"
+    line "rematch?"
+    done
 
-.NoFight:
-	writetext OfficerKeithDaytimeText
-	waitbutton
-	closetext
-	end
+GinaRematchRefuseText:
+    text "We wont disappoint"
+    line "you."
+    done
 
 TrainerYoungsterSamuel:
 	trainer YOUNGSTER, SAMUEL, EVENT_BEAT_YOUNGSTER_SAMUEL, YoungsterSamuelSeenText, YoungsterSamuelBeatenText, 0, .Script
@@ -865,7 +890,6 @@ Route34_MapEvents:
 	object_event 19, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterSamuel, -1
 	object_event 15, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterIan, -1
 	object_event 14, 26, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerGina1, -1
-	;object_event 13, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerKeithScript, -1
 	object_event 22, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmBrandon, -1
 	object_event 19, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event 18, 18, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1

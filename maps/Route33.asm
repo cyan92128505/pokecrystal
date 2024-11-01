@@ -40,6 +40,7 @@ TrainerHikerAnthony:
 	trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY
 	opentext
 	checkflag ENGINE_ANTHONY_READY_FOR_REMATCH
@@ -130,7 +131,17 @@ TrainerHikerAnthony:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext AnthonyNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext AnthonyRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext AnthonyRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -144,6 +155,21 @@ TrainerHikerAnthony:
 .RematchStd:
 	jumpstd RematchMScript
 	end
+
+AnthonyNumberAcceptedText:
+	text "I'll get you"
+	line "jacked in no time."
+	done
+
+AnthonyRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+AnthonyRematchRefuseText:
+    text "I'll make a man"
+    line "out of you!"
+    done
 
 Route33Sign:
 	jumptext Route33SignText

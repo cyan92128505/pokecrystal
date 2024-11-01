@@ -98,6 +98,7 @@ TrainerPokemaniacBrent:
 	trainer POKEMANIAC, BRENT1, EVENT_BEAT_POKEMANIAC_BRENT, PokemaniacBrentSeenText, PokemaniacBrentBeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_POKEMANIAC_BRENT
 	opentext
 	checkflag ENGINE_BRENT_READY_FOR_REMATCH
@@ -171,7 +172,17 @@ TrainerPokemaniacBrent:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedMScript
+	writetext BrentNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext BrentRematchText
+	waitbutton
+	yesorno
+	iftrue .Rematch
+	writetext BrentRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -185,6 +196,22 @@ TrainerPokemaniacBrent:
 .Rematch:
 	jumpstd RematchMScript
 	end
+
+BrentNumberAcceptedText:
+	text "I look forward to"
+	line "blasting you in"
+	cont "the face."
+	done
+
+BrentRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+BrentRematchRefuseText:
+    text "Nobody wants to"
+    line "get one shot!"
+    done
 
 InvaderPatchesScript:
 	trainer INVADER, PATCHES, EVENT_BEAT_INVADER_PATCHES, InvaderPatchesSeenText, InvaderPatchesBeatenText, InvaderPatchesVictoryText, .Script
@@ -212,6 +239,7 @@ TrainerPicnickerTiffany:
 	trainer PICNICKER, TIFFANY3, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
 	opentext
 	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
@@ -220,8 +248,6 @@ TrainerPicnickerTiffany:
 	iftrue .HasPinkBow
 	checkcellnum PHONE_PICNICKER_TIFFANY
 	iftrue .NumberAccepted
-	;checkpoke CLEFAIRY
-	;iffalse .NoClefairy
 	checkevent EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext PicnickerTiffanyWantsPicnicText
@@ -306,7 +332,17 @@ TrainerPicnickerTiffany:
 	end
 
 .NumberAccepted:
-	jumpstd NumberAcceptedFScript
+	writetext TiffanyNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext TiffanyRematchText
+	waitbutton
+	yesorno
+	iftrue .WantsBattle
+	writetext TiffanyRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .NumberDeclined:
@@ -328,6 +364,22 @@ TrainerPicnickerTiffany:
 .PackFull:
 	jumpstd PackFullFScript
 	end
+
+TiffanyNumberAcceptedText:
+	text "Thank you very"
+	line "much."
+	para "Be careful out"
+	line "there."
+	done
+
+TiffanyRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+TiffanyRematchRefuseText:
+    text "Stay safe friend."
+    done
 
 Route43Sign1:
 	jumptext Route43Sign1Text

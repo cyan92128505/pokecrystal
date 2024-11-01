@@ -2958,12 +2958,12 @@ WooperEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
-	db 11, AMNESIA
+	db 11, RAIN_DANCE
 	db 21, BODY_SLAM
 	db 25, BUBBLEBEAM
 	db 31, RECOVER
 	db 36, SCALD
-	db 41, RAIN_DANCE
+	db 41, AMNESIA
 	db 45, EARTHQUAKE
 	db 51, HAZE
 	db 0 ; no more level-up moves
@@ -2972,12 +2972,12 @@ QuagsireEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
-	db 11, AMNESIA
+	db 11, RAIN_DANCE
 	db 20, BODY_SLAM
 	db 25, BUBBLEBEAM
 	db 31, RECOVER
 	db 36, SCALD
-	db 41, RAIN_DANCE
+	db 41, AMNESIA
 	db 45, EARTHQUAKE
 	db 51, HAZE
 	db 0 ; no more level-up moves

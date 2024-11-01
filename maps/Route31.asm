@@ -58,6 +58,7 @@ TrainerBugCatcherWade1:
 	trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script
 
 .Script:
+    loadmem wNoRematch, 1
 	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE
 	opentext
 	checkflag ENGINE_WADE_READY_FOR_REMATCH
@@ -173,7 +174,17 @@ TrainerBugCatcherWade1:
 	end
 
 .AcceptedNumberSTD:
-	jumpstd NumberAcceptedMScript
+	writetext WadeNumberAcceptedText
+	waitbutton
+	closetext
+	opentext
+	writetext WadeRematchText
+	waitbutton
+	yesorno
+	iftrue .WadeRematch
+	writetext WadeRematchRefuseText
+	waitbutton
+	closetext
 	end
 
 .DeclinedNumberSTD:
@@ -195,6 +206,22 @@ TrainerBugCatcherWade1:
 .PackFullSTD:
 	jumpstd PackFullMScript
 	end
+
+WadeNumberAcceptedText:
+	text "You are a friend"
+	line "to the colony."
+	para "You will be"
+	line "rewarded one day."
+	done
+
+WadeRematchText:
+    text "How about a"
+    line "rematch?"
+    done
+
+WadeRematchRefuseText:
+    text "Hail the colony!"
+    done
 
 Route31MailRecipientScript:
     jumptextfaceplayer Text_Route31SleepyMan

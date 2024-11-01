@@ -744,7 +744,7 @@ KRIS EQU __trainer_class__
 	const BEVERLY1
 	const RUTH
 	const KATHLEEN
-	const BEVERLY3 ; unused
+	const BEVERLY3
 	const GEORGIA
 	const JAIME
 

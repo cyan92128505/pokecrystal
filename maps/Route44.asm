@@ -212,7 +212,10 @@ TrainerFisherWilton1:
 	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
 	gettrainername STRING_BUFFER_3, FISHER, WILTON1
 	scall Route44RegisteredNumberM
-	sjump .NumberAcceptedM
+	writetext WiltonNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall Route44RematchM

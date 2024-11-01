@@ -129,7 +129,10 @@ TrainerHikerParry:
 	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
 	gettrainername STRING_BUFFER_3, HIKER, PARRY1
 	scall Route45RegisteredNumberM
-	sjump .NumberAcceptedM
+	writetext ParryNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall Route45RematchM

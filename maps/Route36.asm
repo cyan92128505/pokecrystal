@@ -207,7 +207,10 @@ TrainerSchoolboyAlan1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, ALAN1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext AlanNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .ChooseRematch:
 	scall .Rematch
@@ -285,7 +288,7 @@ TrainerSchoolboyAlan1:
 	writetext AlanRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .ChooseRematch
 	writetext AlanRematchRefuseText
 	waitbutton
 	closetext

@@ -14,6 +14,7 @@
     const DESTINYFRONTIER_GUARD_1
     const DESTINYFRONTIER_GUARD_2
     const DESTINYFRONTIER_OAK
+    const DESTINYFRONTIER_ULTIMA
 
 DestinyFrontier_MapScripts:
 	def_scene_scripts
@@ -811,6 +812,100 @@ MasterAerithLoseAfterBattleText:
 	cont "just have fun."
 	done
 
+UltimaScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ULTIMA
+	iftrue .FightDone
+.fight
+	writetext UltimaSeenText
+	waitbutton
+	closetext
+	winlosstext UltimaBeatenText, UltimaWinText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer POKEMANIAC, ULTIMA
+	startbattle
+	ifequal LOSE, .Lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ULTIMA
+	special HealParty
+	end
+.FightDone:
+	writetext UltimaAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextDestinyFrontier
+	yesorno
+	iftrue .fight
+	writetext RematchRefuseTextDestinyFrontier
+	waitbutton
+	closetext
+	end
+.Lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext UltimaLoseAfterBattleText
+    waitbutton
+    closetext
+    end
+
+UltimaSeenText:
+	text "The best meta is"
+	line "clearly DPP OU pre"
+	cont "LATIAS ban!"
+	para "I have a balanced"
+	line "team."
+	para "A lead."
+	para "A revenge killer."
+	para "A wall breaker."
+	para "A pivot."
+	para "A tank."
+	para "And a late game"
+	line "sweeper."
+	para "Let's go!"
+	done
+
+UltimaBeatenText:
+	text "A need to analyze"
+	line "this loss."
+	done
+
+UltimaWinText:
+	text "Good game!"
+	done
+
+UltimaAfterBattleText:
+	text "I got some hot"
+	line "takes."
+	para "Team preview is"
+	line "bad."
+	para "Mega evolutions"
+	line "were awful and Z"
+	cont "moves were even"
+	cont "worse."
+	para "Overpowered rock,"
+	line "paper, scissors"
+	cont "nonsense."
+	para "Dynamax was"
+	line "actually good."
+	para "But gen 4, that"
+	line "will always be the"
+	cont "best meta."
+	done
+
+UltimaLoseAfterBattleText:
+	text "Never be scared to"
+	line "loose."
+	para "All the best"
+	line "people have lost"
+	cont "many times."
+	para "Be scared of not"
+	line "learning from a"
+	cont "loss."
+	done
+
 NurseScript:
     faceplayer
 	opentext
@@ -1164,9 +1259,9 @@ DestinyFrontier_MapEvents:
 	object_event 48, 35, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAizenScript, -1
 	object_event 55, 14, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterXehanortScript, -1
 	object_event 28, 46, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAerithScript, -1
-	;object_event 31, 32, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1
 	object_event 29, 42, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript, -1
 	object_event 32, 42, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartScript, -1
 	object_event 31, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1
 	object_event 11,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1
 	object_event 31, 50, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OakScript, -1
+	object_event 31, 32, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, UltimaScript, -1

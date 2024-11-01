@@ -189,7 +189,10 @@ TrainerPicnickerLiz1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext LizNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .Rematch:
 	scall .RematchStd

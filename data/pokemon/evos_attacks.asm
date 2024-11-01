@@ -612,7 +612,7 @@ ZubatEvosAttacks:
 	db 20, SLUDGE
 	db 23, WING_ATTACK
 	db 30, AIR_SLASH
-	db 35, MEAN_LOOK
+	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
 	db 45, POISON_JAB
 	db 0 ; no more level-up moves
@@ -629,7 +629,7 @@ GolbatEvosAttacks:
 	db 20, SLUDGE
 	db 22, WING_ATTACK
 	db 30, AIR_SLASH
-	db 35, MEAN_LOOK
+	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
 	db 45, POISON_JAB
 	db 50, BRAVE_BIRD
@@ -1105,9 +1105,9 @@ GeodudeEvosAttacks:
 	db 20, SELFDESTRUCT
 	db 26, ROCK_SLIDE
 	db 30, ROLLOUT
-	db 40, EARTHQUAKE
-	db 45, SANDSTORM
-	db 50, STONE_EDGE
+	db 41, STONE_EDGE
+	db 45, EARTHQUAKE
+	db 50, SANDSTORM
 	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -1121,9 +1121,9 @@ GravelerEvosAttacks:
 	db 20, SELFDESTRUCT
 	db 25, ROCK_SLIDE
 	db 30, ROLLOUT
-	db 41, EARTHQUAKE
-	db 45, SANDSTORM
-	db 50, STONE_EDGE
+	db 41, STONE_EDGE
+	db 45, EARTHQUAKE
+	db 50, SANDSTORM
 	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -1136,9 +1136,9 @@ GolemEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 25, ROCK_SLIDE
 	db 30, ROLLOUT
-	db 40, EARTHQUAKE
-	db 45, SANDSTORM
-	db 50, STONE_EDGE
+	db 40, STONE_EDGE
+	db 45, EARTHQUAKE
+	db 50, SANDSTORM
 	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -2584,7 +2584,7 @@ CrobatEvosAttacks:
 	db 20, SLUDGE
 	db 22, WING_ATTACK
 	db 30, AIR_SLASH
-	db 35, MEAN_LOOK
+	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
 	db 45, POISON_JAB
 	db 50, BRAVE_BIRD

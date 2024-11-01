@@ -109,7 +109,10 @@ TrainerLassDana1:
 	ifequal PHONE_CONTACT_REFUSED, .DeclinedPhoneNumber
 	gettrainername STRING_BUFFER_3, LASS, DANA1
 	scall .RegisteredPhoneNumber
-	sjump .NumberAccepted
+	writetext DanaNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .DanaRematch:
 	scall .Rematch
@@ -187,7 +190,7 @@ TrainerLassDana1:
 	writetext DanaRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .DanaRematch
 	writetext DanaRematchRefuseText
 	waitbutton
 	closetext
@@ -261,7 +264,10 @@ TrainerSchoolboyChad1:
 	ifequal PHONE_CONTACT_REFUSED, .SaidNo
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, CHAD1
 	scall .RegisteredChad
-	sjump .HaveChadsNumber
+	writetext ChadNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .ChadRematch:
 	scall .Rematch
@@ -328,7 +334,7 @@ TrainerSchoolboyChad1:
 	writetext ChadRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .ChadRematch
 	writetext ChadRematchRefuseText
 	waitbutton
 	closetext

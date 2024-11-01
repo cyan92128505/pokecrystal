@@ -31,7 +31,7 @@ TrainerClassDVs:
 	dn 12, 12, 12, 12 ; COOLTRAINERM
 	dn  7, 12, 12, 12 ; COOLTRAINERF
 	dn  6,  15, 15, 15 ; BEAUTY
-	dn  9,  8,  8,  8 ; POKEMANIAC
+	dn 15, 15, 15, 15 ; POKEMANIAC
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn 15, 15, 15, 15 ; GIOVANNI

@@ -115,7 +115,10 @@ TrainerCooltrainermGaven3:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN3
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext GavenNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -164,7 +167,7 @@ TrainerCooltrainermGaven3:
 	writetext GavenRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .WantsBattle
 	writetext GavenRematchRefuseText
 	waitbutton
 	closetext
@@ -238,7 +241,10 @@ TrainerCooltrainerfBeth1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, BETH1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext BethNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -287,7 +293,7 @@ TrainerCooltrainerfBeth1:
 	writetext BethRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .WantsBattle
 	writetext BethRematchRefuseText
 	waitbutton
 	closetext

@@ -83,7 +83,10 @@ TrainerBugCatcherWade1:
 	ifequal PHONE_CONTACT_REFUSED, .DeclinedNumberSTD
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, WADE1
 	scall .RegisterNumberSTD
-	sjump .AcceptedNumberSTD
+	writetext WadeNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WadeRematch:
 	scall .RematchSTD

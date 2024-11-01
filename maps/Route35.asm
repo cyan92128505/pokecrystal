@@ -196,7 +196,10 @@ TrainerBugCatcherArnie:
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, ARNIE1
 	scall Route35RegisteredNumberM
-	sjump .ArnieNumberAcceptedM
+	writetext ArnieNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall Route35RematchM

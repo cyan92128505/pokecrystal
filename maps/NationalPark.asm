@@ -153,7 +153,10 @@ TrainerSchoolboyJack1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext JackNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .Rematch:
 	scall .RematchStd
@@ -308,7 +311,10 @@ TrainerPokefanfBeverly1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext BeverlyNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .GiveNugget:
 	scall .Gift

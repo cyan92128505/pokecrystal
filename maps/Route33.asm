@@ -65,7 +65,10 @@ TrainerHikerAnthony:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, HIKER, ANTHONY2
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext AnthonyNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .Rematch:
 	scall .RematchStd

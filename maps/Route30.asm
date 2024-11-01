@@ -114,7 +114,10 @@ TrainerYoungsterJoey:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, YOUNGSTER, JOEY1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext JoeyNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .Rematch:
 	scall .RematchStd

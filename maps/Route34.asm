@@ -137,7 +137,10 @@ TrainerCamperTodd1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, CAMPER, TODD1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext ToddNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .Rematch:
 	scall .RematchStd
@@ -274,7 +277,10 @@ TrainerPicnickerGina1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, GINA1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext GinaNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .Rematch:
 	scall .RematchStd

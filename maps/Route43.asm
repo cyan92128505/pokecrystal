@@ -121,7 +121,10 @@ TrainerPokemaniacBrent:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEMANIAC, BRENT1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext BrentNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -179,7 +182,7 @@ TrainerPokemaniacBrent:
 	writetext BrentRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .WantsBattle
 	writetext BrentRematchRefuseText
 	waitbutton
 	closetext
@@ -264,7 +267,10 @@ TrainerPicnickerTiffany:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, TIFFANY3
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext TiffanyNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall .Rematch

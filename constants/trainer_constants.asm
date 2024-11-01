@@ -316,6 +316,7 @@ KRIS EQU __trainer_class__
 	const IRWIN1
 	const FRITZ
 	const HORTON
+	const ULTIMA
 
 	trainerclass GRUNTM ; 1f
 	const GRUNTM_1

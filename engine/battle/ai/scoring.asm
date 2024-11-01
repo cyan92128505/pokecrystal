@@ -2039,6 +2039,7 @@ AI_Smart_SpDefenseUp2:
 .encourage
 	dec [hl]
 	dec [hl]
+	dec [hl]
 	ret
 
 AI_Smart_Fly:

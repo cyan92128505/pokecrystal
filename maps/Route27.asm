@@ -124,7 +124,10 @@ TrainerCooltrainerfReena:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+	writetext ReenaNumberAcceptedText
+	waitbutton
+	closetext
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -173,7 +176,7 @@ TrainerCooltrainerfReena:
 	writetext ReenaRematchText
 	waitbutton
 	yesorno
-	iftrue .Rematch
+	iftrue .WantsBattle
 	writetext ReenaRematchRefuseText
 	waitbutton
 	closetext

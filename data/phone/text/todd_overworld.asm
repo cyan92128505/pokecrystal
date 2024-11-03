@@ -13,11 +13,7 @@ ToddAskNumber2Text:
 	done
 
 ToddNumberAcceptedText:
-	text "Thank..."
-	para "Thank you!"
-	para "I promise I will"
-	line "do my best to be"
-	cont "worth your time."
+	text ""
 	done
 
 ToddNumberDeclinedText:

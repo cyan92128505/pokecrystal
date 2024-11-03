@@ -21,16 +21,7 @@ AlanAskNumber2Text:
 	done
 
 AlanNumberAcceptedText:
-	text "Great we shall"
-	line "study together."
-
-	para "I'll call you if I"
-	line "find something to"
-	cont "help your study."
-
-	para "Then we will be"
-	line "assured high"
-	cont "salary jobs!"
+	text ""
 	done
 
 AlanNumberDeclinedText:

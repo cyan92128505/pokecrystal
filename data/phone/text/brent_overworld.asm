@@ -33,9 +33,7 @@ BrentAskNumber2Text:
 	done
 
 BrentNumberAcceptedText:
-	text "I look forward to"
-	line "blasting you in"
-	cont "the face."
+	text ""
 	done
 
 BrentNumberDeclinedText:

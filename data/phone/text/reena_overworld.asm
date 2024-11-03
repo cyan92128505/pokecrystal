@@ -14,11 +14,7 @@ ReenaAskNumber2Text:
 	done
 
 ReenaNumberAcceptedText:
-	text "It is your destiny"
-	line "to be my stepping"
-	cont "stone."
-	para "And a fine destiny"
-	line "it is."
+	text ""
 	done
 
 ReenaNumberDeclinedText:

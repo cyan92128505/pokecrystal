@@ -35,10 +35,7 @@ ArnieAskNumber2Text:
 	done
 
 ArnieNumberAcceptedText:
-	text "When the day comes"
-	line "and the BUGS swarm"
-	cont "these lands I will"
-	cont "let you know."
+	text ""
 	done
 
 ArnieNumberDeclinedText:

@@ -14,10 +14,7 @@ WadeAskNumber2Text:
 	done
 
 WadeNumberAcceptedText:
-	text "You are a friend"
-	line "to the colony."
-	para "You will be"
-	line "rewarded one day."
+	text ""
 	done
 
 WadeNumberDeclinedText:

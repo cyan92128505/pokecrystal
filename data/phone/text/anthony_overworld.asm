@@ -26,8 +26,7 @@ AnthonyAskNumber2Text:
 	done
 
 AnthonyNumberAcceptedText:
-	text "I'll get you"
-	line "jacked in no time."
+	text ""
 	done
 
 AnthonyNumberDeclinedText:

@@ -14,11 +14,7 @@ GavenAskNumber1Text:
 	done
 
 GavenNumberAcceptedText:
-	text "If we work"
-	line "together..."
-	para "I'm sure we will"
-	line "discover the"
-	cont "secret."
+	text ""
 	done
 
 GavenNumberDeclinedText:

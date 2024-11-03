@@ -10,10 +10,7 @@ LizAskNumber2Text:
 	done
 
 LizNumberAcceptedText:
-	text "Really!"
-	para "Thank you!"
-	para "I'll keep in"
-	line "touch."
+	text ""
 	done
 
 LizNumberDeclinedText:

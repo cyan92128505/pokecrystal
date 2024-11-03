@@ -14,10 +14,7 @@ GinaAskNumber1Text:
 	done
 
 GinaNumberAcceptedText:
-	text "Thank you!"
-	para "My #MON will"
-	line "get much stronger"
-	cont "with your help."
+	text ""
 	done
 
 GinaNumberDeclinedText:

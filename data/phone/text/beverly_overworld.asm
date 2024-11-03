@@ -33,8 +33,7 @@ BeverlyAskNumber2Text:
 	done
 
 BeverlyNumberAcceptedText:
-	text "You are under our"
-	line "protection now!"
+	text ""
 	done
 
 BeverlyNumberDeclinedText:

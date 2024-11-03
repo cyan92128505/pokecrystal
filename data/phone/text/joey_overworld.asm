@@ -15,10 +15,7 @@ JoeyAskNumber2Text:
 	done
 
 JoeyNumberAcceptedText:
-	text "When it is time"
-	line "for you to fulfill"
-	cont "your destiny I"
-	cont "shall call."
+	text ""
 	done
 
 JoeyNumberDeclinedText:

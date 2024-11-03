@@ -545,7 +545,7 @@ MasterYunaScript:
 
 MasterYunaSeenText:
 	text "My pilgrimage is"
-	line "at its end."
+	line "near its end."
 	para "But I wont be"
 	line "another name is a"
 	cont "long tradition of"
@@ -567,18 +567,13 @@ MasterYunaAfterBattleText:
 	line "people."
 	para "I would gladly die"
 	line "for any of them."
-	para "We will always"
-	line "remember those"
-	cont "dear to us."
 	done
 
 MasterYunaLoseAfterBattleText:
-	text "We are both trying"
-	line "to find our way."
-	para "As long as we are"
+	text "As long as we are"
 	line "surrounded by"
 	cont "those we trust we"
-	cont "can do it."
+	cont "can do anything."
 	done
 
 MasterAizenScript:
@@ -706,8 +701,6 @@ MasterXehanortSeenText:
 	cont "that young man."
 	para "But not as radiant"
 	line "as yours."
-	para "Your light will be"
-	line "mine!"
 	para "Come Kingdom"
 	line "Hearts!"
 	done
@@ -778,13 +771,9 @@ MasterAerithScript:
 
 MasterAerithSeenText:
 	text "The life stream"
-	line "here feels"
-	cont "different."
+	line "ends here."
 	para "It is finally at"
 	line "peace."
-	para "But we must always"
-	line "be ready to"
-	cont "protect it."
 	done
 
 MasterAerithBeatenText:
@@ -885,9 +874,6 @@ UltimaAfterBattleText:
 	line "were awful and Z"
 	cont "moves were even"
 	cont "worse."
-	para "Overpowered rock,"
-	line "paper, scissors"
-	cont "nonsense."
 	para "Dynamax was"
 	line "actually good."
 	para "But gen 4, that"
@@ -898,9 +884,6 @@ UltimaAfterBattleText:
 UltimaLoseAfterBattleText:
 	text "Never be scared to"
 	line "loose."
-	para "All the best"
-	line "people have lost"
-	cont "many times."
 	para "Be scared of not"
 	line "learning from a"
 	cont "loss."
@@ -934,11 +917,7 @@ HealDoneText:
     prompt
 
 GoodbyeText:
-    text "Remember your"
-    line "#MON heal after"
-    cont "every battle here."
-
-    para "Stay safe."
+    text "Good luck!"
     done
 
 MartScript:
@@ -1170,11 +1149,8 @@ CongratsText:
     line "pass onto the"
     cont "HALL OF ORIGIN."
 
-    para "I don't know"
-    line "what awaits you"
-    cont "there. But it"
-    cont "must be great"
-    cont "indeed."
+    para "Good luck"
+    line "<PLAYER>."
     done
 
 Oak2LoseText:
@@ -1191,16 +1167,7 @@ Oak2AfterBattleText:
     para "In this place"
     line "your party is"
     cont "healed after every"
-    cont "fight win or"
-    cont "lose."
-
-    para "If you need to"
-    line "you can visit"
-    cont "BATTLE TOWER"
-    cont "to win"
-    cont "RARE CANDIES"
-    cont "and NUGGETS"
-    cont "to help you."
+    cont "fight."
 
     para "Good luck"
     line "<PLAYER>!"
@@ -1209,7 +1176,7 @@ Oak2AfterBattleText:
 OakRefusedBattleText:
     text "You will find"
     line "out for yourself"
-    cont "soon enough."
+    cont "soon."
     done
 
 Movement_DestinyFrontierTurnBack:

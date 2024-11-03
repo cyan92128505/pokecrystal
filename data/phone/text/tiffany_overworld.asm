@@ -14,10 +14,7 @@ TiffanyAskNumber2Text:
 	done
 
 TiffanyNumberAcceptedText:
-	text "Thank you very"
-	line "much."
-	para "Be careful out"
-	line "there."
+	text ""
 	done
 
 TiffanyNumberDeclinedText:

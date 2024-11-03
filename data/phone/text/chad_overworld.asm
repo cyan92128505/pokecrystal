@@ -21,8 +21,7 @@ ChadAskNumber2Text:
 	done
 
 ChadNumberAcceptedText:
-	text "I will teach you"
-	line "my ways."
+	text ""
 	done
 
 ChadNumberDeclinedText:

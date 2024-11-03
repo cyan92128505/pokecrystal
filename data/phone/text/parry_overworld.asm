@@ -14,9 +14,7 @@ ParryAskNumber1Text:
 	done
 
 ParryNumberAcceptedText:
-	text "I call you when"
-	line "I'm ready for a"
-	cont "work out."
+	text ""
 	done
 
 ParryNumberDeclinedText:

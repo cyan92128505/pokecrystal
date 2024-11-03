@@ -13,10 +13,7 @@ WiltonAskNumber2Text:
 	done
 
 WiltonNumberAcceptedText:
-	text "I'll introduce you"
-	line "to a whole new"
-	cont "world of culinary"
-	cont "experience."
+	text ""
 	done
 
 WiltonNumberDeclinedText:

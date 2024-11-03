@@ -13,10 +13,7 @@ JackAskNumber1Text:
 	done
 
 JackNumberAcceptedText:
-	text "I will call you"
-	line "when you least"
-	cont "expect it to keep"
-	cont "your mind sharp!"
+	text ""
 	done
 
 JackNumberDeclinedText:

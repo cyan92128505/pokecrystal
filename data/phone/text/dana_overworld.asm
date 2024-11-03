@@ -18,14 +18,7 @@ DanaAskNumber2Text:
 	done
 
 DanaNumberAcceptedText:
-	text "Next time a boy"
-	line "gives me something"
-
-	para "after a battle,"
-	line "I'll share some!"
-
-	para "Does that make me"
-	line "bad?"
+	text ""
 	done
 
 DanaNumberDeclinedText:

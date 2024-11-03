@@ -573,7 +573,7 @@ GruntM28AfterBattleText:
 	line "TAIL!"
 
 	para "The password is"
-	line "RATICATE TALE!"
+	line "RATICATE TAIL!"
 	done
 
 ScientistRossSeenText:

@@ -16,20 +16,14 @@ Route33_MapScripts:
 .Route33FieldMon:
     appear ROUTE33_FIELDMON_1
     appear ROUTE33_FIELDMON_2
+    appear ROUTE33_FIELDMON_3
 
-    random 16
+    random 4
     ifequal 1, .spawn
     disappear ROUTE33_FIELDMON_4
-    sjump .checkNight
+    sjump .end
 .spawn
     appear ROUTE33_FIELDMON_4
-    
-.checkNight
-; Pokemon that only appear at night
-    checktime NITE
-	iffalse .end
-    appear ROUTE33_FIELDMON_3
-    disappear ROUTE33_FIELDMON_1
 .end
     endcallback
 

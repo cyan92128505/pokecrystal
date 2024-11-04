@@ -37,35 +37,20 @@ Route32_MapScripts:
 
 .Frieda:
     appear ROUTE32_FIELDMON_1
+    appear ROUTE32_FIELDMON_2
     appear ROUTE32_FIELDMON_3
     appear ROUTE32_FIELDMON_4
     appear ROUTE32_FIELDMON_5
     appear ROUTE32_FIELDMON_6
+    appear ROUTE32_FIELDMON_7
     disappear ROUTE32_CRYSTAL
 
-; Pokemon that sometimes appear
-    random 2
-    ifequal 1, .spawn7
-    disappear ROUTE32_FIELDMON_7
-    sjump .mon8
-.spawn7
-    appear ROUTE32_FIELDMON_7
-
-.mon8
     random 4
     ifequal 1, .spawn8
     disappear ROUTE32_FIELDMON_8
-    sjump .checkNight
+    sjump .feieda
 .spawn8
     appear ROUTE32_FIELDMON_8
-
-.checkNight
-; Pokemon that only appear at night
-    checktime NITE
-	iffalse .feieda
-    appear ROUTE32_FIELDMON_2
-; Pokemon that don't appear at night
-    disappear ROUTE32_FIELDMON_7
 
 .feieda
 	readvar VAR_WEEKDAY
@@ -782,9 +767,9 @@ Route32PokemonAttacksText:
 	
 Route32FieldMon4Script:
 	faceplayer
-	cry CLEFAIRY
+	cry HORSEA
 	pause 15
-	loadwildmon CLEFAIRY, 14
+	loadwildmon HORSEA, 14
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -1052,7 +1037,7 @@ Route32_MapEvents:
 	object_event 5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 6, Route32FieldMon1Script, EVENT_FIELD_MON_1
 	object_event  4, 36, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 4, 68, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon3Script, EVENT_FIELD_MON_3
-	object_event 14, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  8, 47, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  7, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7

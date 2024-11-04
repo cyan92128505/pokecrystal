@@ -109,7 +109,7 @@ RedGyarados:
 	cry GYARADOS
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon GYARADOS, 40
+	loadwildmon GYARADOS, 45
 	startbattle
 	disappear LAKEOFRAGE_GYARADOS
 	reloadmapafterbattle

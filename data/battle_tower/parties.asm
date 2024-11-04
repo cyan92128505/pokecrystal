@@ -707,7 +707,7 @@ BattleTowerMons:
 
 	db JOLTEON
 	db MAGNET
-	db THUNDER, THUNDERSHOCK, HIDDEN_POWER, GROWTH
+	db THUNDER, AURA_SPHERE, SHADOW_BALL, GROWTH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -716,8 +716,8 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	bigdw 65000
-	dn 15, 13, 14, 13 ; DVs
-	db 10, 30, 15, 40 ; PP
+	dn 15, 15, 15, 15 ; DVs
+	db 10, 20, 15, 40 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level

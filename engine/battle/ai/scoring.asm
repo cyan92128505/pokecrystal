@@ -2483,8 +2483,8 @@ AI_Smart_Encore:
     jr nc, .discourage
 
 ; don't use if player already encored
-	ld hl, wPlayerSubStatus5
-	bit SUBSTATUS_ENCORED, [hl]
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_ENCORED, a
 	jr nz, .discourage
 
 ; don't use on Uber Pokemon as they are immune

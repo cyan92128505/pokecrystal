@@ -463,9 +463,9 @@ Route29PokemonAttacksText:
 	
 Route29FieldMon4Script:
 	faceplayer
-	cry BUNEARY
+	cry ARCEUS
 	pause 15
-	loadwildmon BUNEARY, 4
+	loadwildmon ARCEUS, 1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

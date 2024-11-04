@@ -1939,13 +1939,12 @@ TaurosEvosAttacks:
 	db 1, TACKLE
 	db 4, TAIL_WHIP
 	db 8, RAGE
-	db 13, HORN_ATTACK
-	db 19, SCARY_FACE
-	db 22, PURSUIT
+	db 10, HORN_ATTACK
+	db 16, PURSUIT
+	db 22, HEADBUTT
 	db 30, THRASH
-	db 35, REST
-	db 40, TAKE_DOWN
-	db 45, DOUBLE_EDGE
+	db 35, BODY_SLAM
+	db 40, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:

@@ -265,29 +265,26 @@ PokeBallEffect:
 	ld a, [wBattleType]
 ;	cp BATTLETYPE_TUTORIAL
 ;	jp z, .catch_without_fail
-	ld a, [wCurItem]
-
-	; DevNote - master ball here
-	cp MASTER_BALL
-	jp nz, .notMaster
 
 	ld a, [wEnemyMonSpecies]
 	cp ARCEUS
-	jr z, .destroy
+	jr z, .forcePokeball
 	cp MEWTWO
-	jr z, .destroy
+	jr z, .forcePokeball
 	cp ZYGARDE
-	jr z, .destroy
-	jp .catch_without_fail
+	jr z, .forcePokeball
+	jr .masterBall
 
-.destroy
-    call DeflectBall
-	ld hl, MasterBallDestroyedText
-	call PrintText
-	jp UseDisposableItem
+.forcePokeball
+    ld a, POKE_BALL
+    jr .notMaster
+
+.masterBall
+	ld a, [wCurItem]
+	cp MASTER_BALL
+	jp z, .catch_without_fail
 
 .notMaster
-	ld a, [wCurItem]
 	ld c, a
 	ld hl, BallMultiplierFunctionTable
 
@@ -775,11 +772,6 @@ DeflectBall:
 	ld [wNumHits], a
 	predef PlayBattleAnim
 	ret
-
-MasterBallDestroyedText:
-    text "MASTER BALL"
-    line "was destroyed!"
-    prompt
 
 BallMultiplierFunctionTable:
 ; table of routines that increase or decrease the catch rate based on

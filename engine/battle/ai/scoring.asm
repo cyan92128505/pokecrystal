@@ -4500,7 +4500,7 @@ ShouldAIBoost:
 ; is player FRZ we can boost
 	ld a, [wBattleMonStatus]
 	and 1 << FRZ
-	jr nz, .boost
+	jp nz, .boost
 
 ; if player is SLP and we get more than one turn before they wake up, then boost
 	ld a, [wBattleMonStatus]
@@ -4534,6 +4534,7 @@ ShouldAIBoost:
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack
+; if the AI already has +2 attack or special attack then just attack
 ; if the players last move was a healing move 50% chance to set up if we can't already 2HKO from max HP
 ; otherwise if the players last move was non-damaging 50% chance to set up if we can't already 3HKO from current HP
 	ld a, [wPlayerAtkLevel]
@@ -4541,6 +4542,13 @@ ShouldAIBoost:
 	jr nc, .dontBoost
 	ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 4
+	jr nc, .dontBoost
+
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .dontBoost
+	ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
 	jr nc, .dontBoost
 
     ld a, [wCurPlayerMove]

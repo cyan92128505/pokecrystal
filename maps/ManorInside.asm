@@ -978,14 +978,15 @@ ManorFact11Text:
 	done
 
 ManorFact12Text:
-	text "Originally there"
-	line "were no level caps"
-	cont "but instead more"
-	cont "severe global exp"
-	cont "scaling to balance"
-	cont "the game."
-	para "This didn't work"
-	line "very well."
+	text "Sleep lasts for 1"
+	line "to 3 turns."
+	para "Unless..."
+	para "Unless the enemy"
+	line "is WALLACE."
+	para "Then sleep lasts 1"
+	line "to 2 turns."
+	para "He wasn't hard"
+	line "enough!"
 	done
 
 ManorFact13Text:

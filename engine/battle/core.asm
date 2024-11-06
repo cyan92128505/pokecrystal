@@ -7635,7 +7635,7 @@ GiveExperiencePoints:
 	call GetNickname
 	ld hl, Text_MonGainedExpPoint
 	call BattleTextbox
-	ld c, 10
+	ld c, 8 ; DevNote - ExpShare text delay
 	call DelayFrames
 
 	ld a, [wStringBuffer2 + 1]

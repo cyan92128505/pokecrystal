@@ -4012,14 +4012,6 @@ BattleCommand_SleepTarget:
     jr z, .cantSleep
     cp DEOXYS
     jr z, .cantSleep
-    ld a, [wOtherTrainerClass]
-    cp WALLACE
-    jr nz, .gotosleep
-    ld a, [wHoenInvasionUnderway]
-    and a
-    jr z, .gotosleep
-    ld hl, WallaceCantSleepText
-    jr .fail
     jr .gotosleep
 
 .cantSleep
@@ -4055,7 +4047,15 @@ BattleCommand_SleepTarget:
 	call AnimateCurrentMove
 	ld b, SLP
 
-; DevNote - Sleep now lasts 1 to 3 turns
+; DevNote - Sleep now lasts 1 to 3 turns - except against WALLACE, then sleep lasts 1 to 2 turns
+    ld a, [wOtherTrainerClass]
+    cp WALLACE
+    jr nz, .normal
+    call BattleRandom
+    cp 50 percent
+    jr c, .oneTurn
+    jr .twoTurns
+.normal
 	call BattleRandom
 	cp 33 percent
 	jr c, .oneTurn

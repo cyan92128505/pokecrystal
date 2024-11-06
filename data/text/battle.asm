@@ -1023,11 +1023,6 @@ CantSleepText:
 	line "can not SLEEP."
 	prompt
 
-WallaceCantSleepText:
-	text "WALLACE orders his"
-	line "#MON awaken!"
-	prompt
-
 MirrorMoveFailedText:
 	text "The MIRROR MOVE"
 	next "failed!"

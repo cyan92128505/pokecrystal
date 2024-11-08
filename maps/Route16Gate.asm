@@ -41,7 +41,7 @@ Route16GateOfficerText:
 	line "and you need a"
 	cont "BICYCLE."
 
-	para "But be only the"
+	para "But be on the"
 	line "lookout for"
 	cont "other bikers."
 	done

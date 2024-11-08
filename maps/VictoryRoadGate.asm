@@ -93,17 +93,14 @@ VictoryRoadGateLeftBlackBeltText:
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "You must be very"
-	line "strong to get"
-	cont "here."
+	text "The ELITE FOUR"
+	line "are some of the"
+	cont "best trainers in"
+	cont "the world."
 
-	para "But the ELITE"
-	line "FOUR are unlike"
-	cont "any JOHTO trainers"
-	cont "you have faced."
-
-	para "Good luck JOHTO"
-	line "kid."
+	para "Only the best"
+	line "trainers may"
+	cont "face them."
 	done
 
 VictoryRoadGate_MapEvents:

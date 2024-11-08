@@ -9,7 +9,7 @@ Route7SaffronGate_MapScripts:
 Route7SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
+	checkevent EVENT_BEAT_WALLACE
 	iftrue .ReturnedPart
 	writetext Route7SaffronGuardPowerPlantText
 	waitbutton
@@ -23,24 +23,26 @@ Route7SaffronGuardScript:
 	end
 
 Route7SaffronGuardPowerPlantText:
-	text "Did you hear about"
-	line "the accident at"
-	cont "the POWER PLANT?"
+	text "WALLACE knows if"
+	line "he takes SAFFRON"
+	cont "he takes KANTO."
 
-	para "It's located in"
-	line "the East, close to"
-	cont "LAVENDER TOWN."
+	para "It is up to me"
+	line "to defend this"
+	cont "gate..."
 	done
 
 Route7SaffronGuardSeriousText:
-	text "I take my GUARD"
-	line "job seriously."
+	text "You are the HOEN"
+	line "CHAMPION that"
+	cont "defeated the whole"
+	cont "HOEN army!"
 
-	para "Hey! You have a"
-	line "#DEX."
-
-	para "OK. You can go"
-	line "through."
+	para "I was just about"
+	line "to make my move"
+	cont "when I heard"
+	cont "you were taking"
+	cont "care of things."
 	done
 
 Route7SaffronGate_MapEvents:

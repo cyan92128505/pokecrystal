@@ -1889,10 +1889,6 @@ DadAcknowledgmentText:
     para "...."
 
     para "It gives me hope."
-
-    para "That we can"
-    line "protect ourselves"
-    cont "from anyone."
     done
 
 DadGoodbyeText:

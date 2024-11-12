@@ -2598,8 +2598,11 @@ endr
 ; If the player can KO and is using damaging moves then encourage
 ; 50% chance to encourage if player can KO but isn't using damaging moves
 AI_Smart_DestinyBond:
+    call DoesAIOutSpeedPlayer
+    jr nc, .discourage
+
     call CanPlayerKO
-    ret nc
+    jr nc, .discourage
 
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
@@ -2607,8 +2610,12 @@ AI_Smart_DestinyBond:
     and a
 	jr nz, .encourage
 	call AI_50_50
-	ret c
+	jr c, .encourage
 
+.discourage
+    inc [hl]
+    inc [hl]
+    ret
 .encourage
     dec [hl]
     dec [hl]
@@ -6061,6 +6068,8 @@ AI_50_50:
 	cp 50 percent + 1
 	ret
 
+SECTION "excess commands", ROMX
+
 ; ============================================
 ; ====== EFFECT COMMAND EXCESS FUNCTIONS =====
 ; ============================================
@@ -6301,6 +6310,9 @@ SunSwitch:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
+    ld a, 0
+	ld [wBattleTimeOfDay], a
+	farcall _CGB_BattleColors
     ld a, [wBattleHasJustStarted]
     and a
     ret nz

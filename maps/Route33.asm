@@ -266,9 +266,9 @@ Route33FieldMon2Script:
 
 Route33FieldMon4Script:
 	faceplayer
-	cry WOOPER
+	cry MACHOP
 	pause 15
-	loadwildmon WOOPER, 14
+	loadwildmon MACHOP, 14
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

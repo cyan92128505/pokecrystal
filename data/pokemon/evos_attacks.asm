@@ -1583,7 +1583,7 @@ AzumarillEvosAttacks:
 	db 0 ; no more level-up moves
 
 SolosisEvosAttacks:
-    db EVOLVE_LEVEL, 32, DUOSION
+    db EVOLVE_LEVEL, 30, DUOSION
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, PROTECT
@@ -1591,10 +1591,10 @@ SolosisEvosAttacks:
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
-	db 25, PAIN_SPLIT
-	db 33, RECOVER
-	db 40, PSYCHIC_M
-	db 46, FUTURE_SIGHT
+	db 25, FUTURE_SIGHT
+	db 31, RECOVER
+	db 36, BARRIER
+	db 41, PSYCHIC_M
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
@@ -1607,8 +1607,8 @@ DuosionEvosAttacks:
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
-	db 30, FUTURE_SIGHT
-	db 32, RECOVER
+	db 25, FUTURE_SIGHT
+	db 30, RECOVER
 	db 36, BARRIER
 	db 41, PSYCHIC_M
 	db 50, CALM_MIND
@@ -2958,8 +2958,9 @@ WooperEvosAttacks:
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
 	db 11, RAIN_DANCE
-	db 21, BODY_SLAM
-	db 25, BUBBLEBEAM
+    db 16, MAGNITUDE
+	db 21, BUBBLEBEAM
+	db 25, BODY_SLAM
 	db 31, RECOVER
 	db 36, SCALD
 	db 41, AMNESIA
@@ -2972,8 +2973,9 @@ QuagsireEvosAttacks:
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
 	db 11, RAIN_DANCE
-	db 20, BODY_SLAM
-	db 25, BUBBLEBEAM
+    db 16, MAGNITUDE
+	db 20, BUBBLEBEAM
+	db 25, BODY_SLAM
 	db 31, RECOVER
 	db 36, SCALD
 	db 41, AMNESIA
@@ -3701,12 +3703,12 @@ LarvitarEvosAttacks:
 	db 1, LEER
 	db 8, SANDSTORM
 	db 11, ROCK_THROW
-	db 15, MAGNITUDE
-	db 22, ROCK_SLIDE
+	db 16, MAGNITUDE
+	db 25, ROCK_SLIDE
 	db 31, CRUNCH
 	db 40, EARTHQUAKE
+	db 51, STONE_EDGE
 	db 55, DRAGON_DANCE
-	db 60, STONE_EDGE
 	db 0 ; no more level-up moves
 
 PupitarEvosAttacks:
@@ -3715,12 +3717,12 @@ PupitarEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 8, SANDSTORM
-	db 15, MAGNITUDE
-	db 22, ROCK_SLIDE
+	db 16, MAGNITUDE
+	db 25, ROCK_SLIDE
 	db 30, CRUNCH
 	db 40, EARTHQUAKE
+	db 51, STONE_EDGE
 	db 55, DRAGON_DANCE
-	db 60, STONE_EDGE
 	db 0 ; no more level-up moves
 
 TyranitarEvosAttacks:
@@ -3728,9 +3730,9 @@ TyranitarEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 8, SANDSTORM
-	db 15, MAGNITUDE
-	db 22, ROCK_SLIDE
-	db 34, CRUNCH
+	db 16, MAGNITUDE
+	db 25, ROCK_SLIDE
+	db 30, CRUNCH
 	db 40, EARTHQUAKE
 	db 50, STONE_EDGE
 	db 55, DRAGON_DANCE

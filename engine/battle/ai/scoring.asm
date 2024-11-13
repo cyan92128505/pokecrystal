@@ -886,7 +886,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_TOXIC,            AI_Smart_Toxic
 	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_LightScreen
 	dbw EFFECT_OHKO,             AI_Smart_Ohko
-	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Reflect
@@ -1974,45 +1973,6 @@ AI_Smart_StaticDamage:
    	inc [hl]
    	inc [hl]
    	ret
-
-AI_Smart_TrapTarget:
-; Wrap, Fire Spin, Clamp
-
-; 50% chance to discourage this move if the player is already trapped.
-	ld a, [wPlayerWrapCount]
-	and a
-	jr nz, .discourage
-
-; 50% chance to greatly encourage this move if player is either
-; badly poisoned, in love, identified, stuck in Rollout, or has a Nightmare.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr nz, .encourage
-
-	ld a, [wPlayerSubStatus1]
-	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
-	jr nz, .encourage
-
-; Else, 50% chance to greatly encourage this move if it's the player's Pokemon first turn.
-	ld a, [wPlayerTurnsTaken]
-	and a
-	jr z, .encourage
-
-; 50% chance to discourage this move otherwise.
-.discourage
-	call AI_50_50
-	ret c
-	inc [hl]
-	ret
-
-.encourage
-	call AICheckEnemyQuarterHP
-	ret nc
-	call AI_50_50
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
 
 AI_Smart_SpDefenseUp2:
 	call ShouldAIBoost
@@ -6067,8 +6027,6 @@ AI_50_50:
 	call Random
 	cp 50 percent + 1
 	ret
-
-SECTION "excess commands", ROMX
 
 ; ============================================
 ; ====== EFFECT COMMAND EXCESS FUNCTIONS =====

@@ -55,8 +55,9 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 10 ; # items
+	db 11 ; # items
 	db POKE_BALL
+	db LEVEL_BALL
 	db POTION
 	db ETHER
 	db ANTIDOTE
@@ -103,9 +104,10 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 5 ; # items
+	db 6 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db LOVE_BALL
 	db REVIVE
 	db FULL_HEAL
 	db FLOWER_MAIL
@@ -140,8 +142,9 @@ MartGoldenrod5F:
 	db -1 ; end
 
 MartOlivine:
-	db 9 ; # items
+	db 10 ; # items
 	db GREAT_BALL
+	db LURE_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db MAX_ETHER
@@ -153,9 +156,10 @@ MartOlivine:
 	db -1 ; end
 
 MartEcruteak:
-	db 11 ; # items
+	db 12 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db MOON_BALL
 	db POTION
 	db SUPER_POTION
 	db MAX_ETHER
@@ -176,9 +180,10 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 9 ; # items
+	db 10 ; # items
 	db RAGECANDYBAR
 	db GREAT_BALL
+	db FAST_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db ELIXER
@@ -189,10 +194,11 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 10 ; # items
+	db 11 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
+	db HEAVY_BALL
 	db HYPER_POTION
 	db MAX_POTION
 	db ELIXER

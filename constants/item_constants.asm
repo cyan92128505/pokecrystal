@@ -163,16 +163,16 @@
 	const ITEM_9A      ; 9a
 	const ITEM_9B      ; 9b
 	const SACRED_ASH   ; 9c
-	const HEAVY_BALL   ; 9d
+	const HEAVY_BALL   ; 9d - for heavy mon
 	const FLOWER_MAIL  ; 9e
-	const LEVEL_BALL   ; 9f
-	const LURE_BALL    ; a0
-	const FAST_BALL    ; a1
+	const LEVEL_BALL   ; 9f - for low level mon
+	const LURE_BALL    ; a0 - for rod mon
+	const FAST_BALL    ; a1 - for fast mon
 	const ITEM_A2      ; a2
 	const LIGHT_BALL   ; a3
-	const FRIEND_BALL  ; a4
-	const MOON_BALL    ; a5
-	const LOVE_BALL    ; a6
+	const FRIEND_BALL  ; a4 - friendly ball
+	const MOON_BALL    ; a5 - moon stone pokemon
+	const LOVE_BALL    ; a6 - opposite gender
 	const NORMAL_BOX   ; a7
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9

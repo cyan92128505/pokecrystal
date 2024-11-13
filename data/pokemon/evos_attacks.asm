@@ -2061,13 +2061,13 @@ PorygonEvosAttacks:
 	db EVOLVE_LEVEL, 30, PORYGON2
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 9, AGILITY
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
 	db 32, LOCK_ON
 	db 36, ZAP_CANNON
 	db 41, TRI_ATTACK
+	db 50, AGILITY
 	db 0 ; no more level-up moves
 
 RaltsEvosAttacks:
@@ -2800,13 +2800,13 @@ MismagiusEvosAttacks:
 PorygonzEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 9, AGILITY
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
 	db 32, LOCK_ON
 	db 36, ZAP_CANNON
 	db 40, TRI_ATTACK
+	db 50, AGILITY
 	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -3520,13 +3520,13 @@ Porygon2EvosAttacks:
     db EVOLVE_LEVEL, 40, PORYGONZ
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 9, AGILITY
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
 	db 32, LOCK_ON
 	db 36, ZAP_CANNON
 	db 41, TRI_ATTACK
+	db 50, AGILITY
 	db 0 ; no more level-up moves
 
 RayquazaEvosAttacks:

@@ -1,6 +1,6 @@
 	db PORYGONZ ; 184
 
-	db 85,  80,  70,  90,  120,  75
+	db 85,  80,  70,  80,  120,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type

@@ -274,9 +274,7 @@ BattleText_CantEscape2:
 	prompt
 
 BattleText_TheresNoEscapeFromTrainerBattle:
-	text "No! There's no"
-	line "running from a"
-	cont "trainer battle!"
+	text "Never give up!"
 	prompt
 
 BattleText_DoesNotAccept:

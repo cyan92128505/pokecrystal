@@ -374,17 +374,17 @@ AzaleaTownGrampsTextAfter:
 
 AzaleaTownTeacherText:
 	text "There is a"
-	line "# BALL expert"
+	line "#BALL expert"
 	cont "called KURT in"
 	cont "this town."
 
-	para "He has tried to"
-	line "convince the"
-	cont "MARTS to trial"
-	cont "his products"
-	cont "but only the"
-	cont "MART in this"
-	cont "town sells any."
+	para "He makes them from"
+	line "APRICORN and"
+	cont "supplies them"
+	cont "across JOHTO."
+	para "Each mart has"
+	line "exclusivity on a"
+	cont "particular ball."
 	done
 
 AzaleaTownYoungsterText:

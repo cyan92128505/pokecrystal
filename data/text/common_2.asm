@@ -103,10 +103,9 @@ Text_Gained::
 
 _BoostedExpPointsText::
 	text_start
-	line "a boosted"
-	cont "@"
+	line "@"
 	text_decimal wStringBuffer2, 2, 5
-	text " EXP. Points!"
+	text " boosted EXP!"
 	done
 
 _ExpPointsText::

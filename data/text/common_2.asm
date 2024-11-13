@@ -71,19 +71,6 @@ _NameRaterComeAgainText::
 	line "again sometime."
 	done
 
-_NameRaterPerfectNameText::
-	text "Hm… @"
-	text_ram wStringBuffer1
-	text "?"
-	line "What a great name!"
-	cont "It's perfect."
-
-	para "Treat @"
-	text_ram wStringBuffer1
-	text_start
-	line "with loving care."
-	done
-
 _NameRaterEggText::
 	text "Are you sick!"
 

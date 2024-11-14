@@ -7,4 +7,4 @@
 
 	page "lowers foes"
 	next "ACCURACY upon"
-	next "switch in.@"
+	next "entering battle.@"

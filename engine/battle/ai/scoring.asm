@@ -2558,10 +2558,13 @@ endr
 ; If the player can KO and is using damaging moves then encourage
 ; 50% chance to encourage if player can KO but isn't using damaging moves
 AI_Smart_DestinyBond:
-    call DoesAIOutSpeedPlayer
+    call CanPlayerKO
     jr nc, .discourage
 
-    call CanPlayerKO
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .discourage
+
+    call DoesAIOutSpeedPlayer
     jr nc, .discourage
 
     ld a, [wCurPlayerMove]

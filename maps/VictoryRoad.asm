@@ -49,6 +49,8 @@ VictoryRoadRivalLeft:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
+	disappear VICTORYROAD_FIELDMON_1
+	disappear VICTORYROAD_FIELDMON_3
 	appear VICTORYROAD_SILVER
 	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleApproachMovement1
 	scall VictoryRoadRivalNext
@@ -63,6 +65,8 @@ VictoryRoadRivalRight:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
+	disappear VICTORYROAD_FIELDMON_1
+	disappear VICTORYROAD_FIELDMON_3
 	appear VICTORYROAD_SILVER
 	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleApproachMovement2
 	scall VictoryRoadRivalNext

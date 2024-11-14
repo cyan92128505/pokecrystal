@@ -750,7 +750,7 @@ SelfdestructDescription:
 	line "the user faint.@"
 
 BraveBirdDescription:
-	db   "A tackle that also"
+	db   "A attack that also"
 	line "hurts the user.@"
 
 LickDescription:
@@ -862,8 +862,8 @@ FlashDescription:
 	line "reduce accuracy.@"
 
 PsyblastDescription:
-	db   "A powerful blast"
-	line "that may freeze.@"
+	db   "A powerful"
+	line "psychic blast.@"
 
 SplashDescription:
 	db   "Has no effect"
@@ -934,12 +934,12 @@ SketchDescription:
 	line "move permanently.@"
 
 QuiverDanceDescription:
-	db   "raises special"
-	line "stats and speed.@"
+	db   "raises SPCL"
+	line "stats and SPEED.@"
 
 BugBuzzDescription:
 	db   "An attack that may"
-	line "lower special def.@"
+	line "lower SPCL.DEF.@"
 
 SavageRendDescription:
 	db   "Jaws of death"
@@ -1026,8 +1026,8 @@ AvalancheDescription:
 	line "ice boulders.@"
 
 FlareBlitzDescription:
-	db   "A super charged"
-	line "blazing tackle.@"
+	db   "An attack that al-"
+	line "so hurts the user.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
@@ -1102,16 +1102,16 @@ MilkDrinkDescription:
 	line "the max HP.@"
 
 VoltTackleDescription:
-	db   "A life risking"
-	line "wild charge.@"
+	db   "A tackle that also"
+	line "hurts the user.@"
 
 BulkUpDescription:
 	db   "Increases ATK"
 	line "and DEF.@"
 
 FlashCannonDescription:
-	db   "A blast of light"
-	line "can lower SPDef.@"
+	db   "An attack that may"
+	line "lower SPCL.DEF.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"
@@ -1166,7 +1166,7 @@ MegahornDescription:
 	line "attack.@"
 
 DragonbreathDescription:
-	db   "A strong breath"
+	db   "A strong dragon"
 	line "attack.@"
 
 BatonPassDescription:
@@ -1178,7 +1178,7 @@ EncoreDescription:
 	line "peat 2-6 times.@"
 
 PursuitDescription:
-	db   "Relentless fast"
+	db   "Relentless dark"
 	line "strike.@"
 
 RapidSpinDescription:
@@ -1198,8 +1198,8 @@ MetalClawDescription:
 	line "up user's ATTACK.@"
 
 MeteorMashDescription:
-	db   "Planet shaking blow"
-	line "May raise attack.@"
+	db   "An attack that may"
+	line "up user's ATTACK.@"
 
 MorningSunDescription:
 	db   "Restores HP"

@@ -7,4 +7,4 @@
 
 	page "lowers foes"
 	next "ATTACK upon"
-	next "switch in.@"
+	next "entering battle.@"

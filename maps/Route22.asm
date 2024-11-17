@@ -146,7 +146,7 @@ Route22_MapEvents:
 	warp_event 13,  5, VICTORY_ROAD_GATE, 1
 
 	def_coord_events
-	coord_event  13, 6, SCENE_ALWAYS, Route22HoenInvadedBlockScript
+	;coord_event  13, 6, SCENE_ALWAYS, Route22HoenInvadedBlockScript
 
 	def_bg_events
 	bg_event 15,  7, BGEVENT_READ, VictoryRoadEntranceSign

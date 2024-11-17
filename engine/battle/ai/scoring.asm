@@ -4233,6 +4233,11 @@ AI_Smart_ShellSmash:
     cp BASE_STAT_LEVEL + 2
     jp nc, StandardDiscourage
 
+; discourage if enemy is paralyzed
+    ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	jp nz, StandardDiscourage
+
 ; don't use if we will be koed
 ; skip if player is SLP or FRZ
 	ld a, [wBattleMonStatus]

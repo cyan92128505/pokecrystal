@@ -6667,8 +6667,8 @@ LoadEnemyMon:
 	jr .GenerateDVs
 
 .GenerateShinyDVs
-	ld b, ATKDEFDV_SHINY ; $ee
-	ld c, SPDSPCDV_SHINY ; $ee
+	ld b, ATKDEFDV_SHINY ; $FD
+	ld c, SPDSPCDV_SHINY ; $FF
 	jr .UpdateDVs
 
 .GeneratePerfectDVs

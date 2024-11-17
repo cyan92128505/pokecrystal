@@ -1289,7 +1289,9 @@ AmbrosiaEffect:
 	call AddNTimes
 	ld b, h
 	ld c, l
+	push hl
 	callfar CheckShininess
+	pop hl
 	jr c, .skipDVs
 	ld a, %11111111
 	ld [hli], a

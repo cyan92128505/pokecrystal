@@ -3,7 +3,7 @@ TrainerClassDVs:
 	table_width 2, TrainerClassDVs
 	;  atk,def,spd,spc
 	dn  15, 15, 15, 15 ; FALKNER
-	dn  15,  15, 15, 15 ; WHITNEY
+	dn  15, 15, 15, 15 ; WHITNEY
 	dn  15, 15, 15, 15 ; BUGSY
 	dn  15, 15, 15, 15 ; MORTY
 	dn  15, 15, 15, 15 ; PRYCE
@@ -21,59 +21,59 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; BROCK
 	dn  15, 15, 15, 15 ; MISTY
 	dn 15, 15, 15, 15 ; LT_SURGE
-	dn  9,  8,  8,  8 ; SCIENTIST
+	dn  9,  9,  9,  9 ; SCIENTIST
 	dn  15, 15, 15, 15 ; ERIKA
-	dn  9,  8,  8,  8 ; YOUNGSTER
-	dn  9,  8,  8,  8 ; SCHOOLBOY
-	dn  9,  8,  8,  8 ; BIRD_KEEPER
-	dn  5,  8,  8,  8 ; LASS
+	dn  9,  9,  9,  9 ; YOUNGSTER
+	dn  9,  9,  9,  9 ; SCHOOLBOY
+	dn  9,  9,  9,  9 ; BIRD_KEEPER
+	dn  5,  7,  7,  7 ; LASS
 	dn  15, 15, 15, 15 ; JANINE
-	dn 12, 12, 12, 12 ; COOLTRAINERM
-	dn  7, 12, 12, 12 ; COOLTRAINERF
-	dn  6,  15, 15, 15 ; BEAUTY
+	dn 13, 13, 13, 13 ; COOLTRAINERM
+	dn  7, 13, 13, 13 ; COOLTRAINERF
+	dn  7,  15, 15, 15 ; BEAUTY
 	dn 15, 15, 15, 15 ; POKEMANIAC
-	dn 13,  8, 10,  8 ; GRUNTM
-	dn  9,  8,  8,  8 ; GENTLEMAN
+	dn 13,  11, 11, 11 ; GRUNTM
+	dn  11,  11,  11,  11 ; GENTLEMAN
 	dn 15, 15, 15, 15 ; GIOVANNI
 	dn 15, 15, 15, 15 ; CYNTHIA
 	dn  15, 15, 15, 15 ; SABRINA
-	dn  9,  8,  8,  8 ; BUG_CATCHER
-	dn  9,  8,  8,  8 ; FISHER
-	dn  9,  8,  8,  8 ; SWIMMERM
-	dn  7,  8,  8,  8 ; SWIMMERF
-	dn  9,  8,  8,  8 ; SAILOR
-	dn  9,  8,  8,  8 ; SUPER_NERD
+	dn  9,  9,  9,  9 ; BUG_CATCHER
+	dn  9,  9,  9,  9 ; FISHER
+	dn  9,  9,  9,  9 ; SWIMMERM
+	dn  7,  9,  9,  9 ; SWIMMERF
+	dn  9,  9,  9,  9 ; SAILOR
+	dn  9,  9,  9,  9 ; SUPER_NERD
 	dn 15, 15, 15, 15 ; RIVAL2
 	dn 15, 15, 15, 15 ; WALLACE
-	dn 12,  12,  12,  12 ; HIKER
-	dn  9,  8,  8,  8 ; BIKER
+	dn 11,  11,  11,  11 ; HIKER
+	dn  9,  5,  5,  5 ; BIKER
 	dn 15, 15, 15, 15 ; BLAINE
 	dn 15, 15, 15, 15 ; STEVEN
-	dn  9,  8,  8,  8 ; FIREBREATHER
+	dn  9,  9,  9,  9 ; FIREBREATHER
 	dn  15, 15, 15, 15 ; LEON
-	dn  9,  8,  8,  8 ; BLACKBELT_T
+	dn  9,  9,  9,  9 ; BLACKBELT_T
 	dn 15, 15, 15, 15 ; EXECUTIVEM
-	dn  9,  8,  8,  8 ; PSYCHIC_T
-	dn  6, 10, 10,  8 ; PICNICKER
-	dn  8, 9, 10, 6 ; CAMPER
+	dn  9,  9,  9,  9 ; PSYCHIC_T
+	dn  7, 9, 9,  9 ; PICNICKER
+	dn  9, 9, 9, 9 ; CAMPER
 	dn  15, 15, 15, 15 ; EXECUTIVEF
 	dn  11, 11, 11, 11 ; SAGE
-	dn  7,  8,  8,  8 ; MEDIUM
-	dn  12, 12, 12, 12 ; SOLDIER
-	dn  14, 14, 14, 14 ; POKEFANM
-	dn  15,  15, 15, 15 ; KIMONO_GIRL
-	dn  6,  8, 10,  8 ; TWINS
-	dn  14, 14,  14,  14 ; POKEFANF
+	dn  7,  7,  7,  7 ; MEDIUM
+	dn  13, 13, 13, 13 ; SOLDIER
+	dn  15, 13, 15, 15 ; POKEFANM
+	dn  15, 15, 15, 15 ; KIMONO_GIRL
+	dn  2, 2, 2, 2 ; TWINS
+	dn  15, 13, 15, 15 ; POKEFANF
 	dn 15, 15, 15, 15 ; RED
 	dn 15, 15, 15, 15 ; BLUE
-	dn  9,  8,  8,  8 ; OFFICER
-	dn  7, 14, 10,  8 ; GRUNTF
+	dn  9,  9,  9,  9 ; OFFICER
+	dn  11, 13, 11,  11 ; GRUNTF
 	dn 15, 15, 15, 15 ; MYSTICALMAN
 	dn 15, 15, 15, 15 ; INVADER
     dn 15, 15, 15, 15 ; CRYSTAL
     dn 15, 15, 15, 15 ; GREEN
     dn 15, 15, 15, 15 ; LORD_OAK
     dn 15, 15, 15, 15 ; ROLE_PLAYER_NORMAL
-    dn 14, 14, 14, 14 ; ROLE_PLAYER_SHINY
+    dn 15, 13, 15, 15 ; ROLE_PLAYER_SHINY
 	dn 15, 15, 15, 15 ; CAL_F
 	assert_table_length NUM_TRAINER_CLASSES

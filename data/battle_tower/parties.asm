@@ -3077,9 +3077,9 @@ BattleTowerMons:
     bigdw 150
 	db "RANTA-N@@@@"
 
-	db REUNICLUS
+	db SIGILYPH
 	db LEFTOVERS
-	db CALM_MIND, PSYCHIC_M, THUNDERBOLT, RECOVER
+	db AIR_SLASH, EARTH_POWER, CALM_MIND, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3094,13 +3094,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 257
-    bigdw 257
-    bigdw 138
-    bigdw 150
-    bigdw 96
-    bigdw 210
-    bigdw 162
+    bigdw 212
+    bigdw 212
+    bigdw 130
+    bigdw 156
+    bigdw 177
+    bigdw 184
+    bigdw 156
 	db "RANTA-N@@@@"
 
     db CONKELDURR

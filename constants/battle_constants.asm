@@ -95,7 +95,7 @@ SPDSPCDV_SHINY EQU $FF
 	const BATTLETYPE_SUICUNE            ; Suicune plays right music
 	const BATTLETYPE_SETNOITEMS         ; can't use items or set mode - no set no items
 	const BATTLETYPE_REMATCH            ; enemy yields reduced exp + no set no items
-	const BATTLETYPE_PERFECT            ; enemy has max dvs and you can't escape
+	const BATTLETYPE_PERFECT            ; enemy has max dvs and you can't escape - 10% chance of shiny dvs (15, 13, 15, 15)
 	const BATTLETYPE_PERFECT_ESCAPE     ; enemy has max dvs and you can escape
 	const BATTLETYPE_BOSS_BATTLE        ; enemy has max stat exp + no set no items
 	const BATTLETYPE_BATTLE_FRONTIER    ; don't gain money/exp on a win, max stat exp + no set no items

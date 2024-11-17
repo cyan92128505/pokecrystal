@@ -6655,15 +6655,14 @@ LoadEnemyMon:
 	cp BATTLETYPE_PERFECT_ESCAPE
 	jr z, .GeneratePerfectDVs
 
-; DevNote - Hall of Origin has max DVs
-    ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	cp LANDMARK_HALL_OF_ORIGIN
-    jr z, .GeneratePerfectDVs
-
+; DevNote - Hall of Origin has max DVs - No longer the case
+;   ld a, [wMapGroup]
+;	ld b, a
+;	ld a, [wMapNumber]
+;	ld c, a
+;	call GetWorldMapLocation
+;	cp LANDMARK_HALL_OF_ORIGIN
+;   jr z, .GeneratePerfectDVs
 	jr .GenerateDVs
 
 .GenerateShinyDVs
@@ -6672,6 +6671,9 @@ LoadEnemyMon:
 	jr .UpdateDVs
 
 .GeneratePerfectDVs
+    call BattleRandom
+    cp 10 percent
+    jr c, .GenerateShinyDVs
 	ld b, $ff
 	ld c, $ff
 	jr .UpdateDVs

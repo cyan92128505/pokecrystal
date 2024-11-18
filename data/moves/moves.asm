@@ -204,7 +204,7 @@ Moves: ; 41afb
 	move FLARE_BLITZ,  EFFECT_RECOIL_HIT,        120, FIRE,          PHYSICAL, 100, 15,   0
 	move SPIKES,       EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0
 	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      100, ELECTRIC,      SPECIAL,   50, 10, 100
-	move PIKA_THUNDER, EFFECT_PARALYZE_HIT,      180, UBER,          SPECIAL,  100, 10,  30
+	move PIKA_THUNDER, EFFECT_PARALYZE_HIT,      200, UBER,          SPECIAL,  100, 10,  30
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     60, ICE,           SPECIAL,  100, 15, 100

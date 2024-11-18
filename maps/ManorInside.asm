@@ -916,8 +916,9 @@ ManorFact6Text:
 
 ManorFact7Text:
 	text "This romhack took"
-	line "over 2 years in"
-	cont "total to create."
+	line "nearly 3 years and"
+	cont "6000 commits to"
+	cont "create."
 	para "I had my first"
 	line "child and got"
 	cont "married while"
@@ -1089,9 +1090,9 @@ ManorFact20Text:
 	cont "the shininess."
 	para "Shiny #MON are"
 	line "also stronger in"
-	cont "this game with 14"
-	cont "in all DVs rather"
-	cont "than 10."
+	cont "this game with 15"
+	cont "in all DVs except"
+	cont "defense."
 	done
 
 ManorFact21Text:

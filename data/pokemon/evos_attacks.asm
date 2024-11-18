@@ -404,7 +404,7 @@ PikachuEvosAttacks:
 	db 40, EXTREMESPEED
 	db 45, THUNDER
 	db 50, VOLT_TACKLE
-	db 70, PIKA_THUNDER
+	db 85, PIKA_THUNDER
 	db 0 ; no more level-up moves
 
 RaichuEvosAttacks:

@@ -194,7 +194,7 @@ BattleAnimations::
 	dw BattleAnim_FlareBlitz
 	dw BattleAnim_Spikes
 	dw BattleAnim_ZapCannon
-	dw BattleAnim_Foresight
+	dw BattleAnim_PikaThunder
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
 	dw BattleAnim_IcyWind
@@ -1261,6 +1261,7 @@ BattleAnim_ThunderWave:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_PikaThunder:
 BattleAnim_Thunder:
 	anim_1gfx ANIM_GFX_LIGHTNING
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20

@@ -192,7 +192,7 @@ MoveNames::
 	li "FLARE BLITZ"
 	li "SPIKES"
 	li "ZAP CANNON"
-	li "FORESIGHT"
+	li "PIKA THUNDER"
 	li "DESTINY BOND"
 	li "PERISH SONG"
 	li "ICY WIND"

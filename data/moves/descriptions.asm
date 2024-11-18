@@ -193,7 +193,7 @@ MoveDescriptions::
 	dw FlareBlitzDescription
 	dw SpikesDescription
 	dw ZapCannonDescription
-	dw ForesightDescription
+	dw PikaThunderDescription
 	dw DestinyBondDescription
 	dw PerishSongDescription
 	dw IcyWindDescription
@@ -613,6 +613,7 @@ ThunderWaveDescription:
 	db   "A move that may"
 	line "cause paralysis.@"
 
+PikaThunderDescription:
 ThunderDescription:
 	db   "An attack that may"
 	line "cause paralysis.@"
@@ -1036,10 +1037,6 @@ SpikesDescription:
 ZapCannonDescription:
 	db   "An attack that"
 	line "always paralyzes.@"
-
-ForesightDescription:
-	db   "Negates accuracy"
-	line "reduction moves.@"
 
 DestinyBondDescription:
 	db   "The foe faints if"

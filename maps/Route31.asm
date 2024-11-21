@@ -43,13 +43,9 @@ Route31_MapScripts:
     random 3
     ifequal 1, .spawn2
     disappear ROUTE31_FIELDMON_2
-    sjump .despawn
+    sjump .end
 .spawn2
     appear ROUTE31_FIELDMON_2
-
-.despawn
-; Pokemon that don't appear at night
-    disappear ROUTE31_FIELDMON_3
 
 .end
     endcallback

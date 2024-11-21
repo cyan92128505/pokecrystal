@@ -547,7 +547,7 @@ MasterYunaSeenText:
 	text "My pilgrimage is"
 	line "near its end."
 	para "But I wont be"
-	line "another name is a"
+	line "another name in a"
 	cont "long tradition of"
 	cont "false hope."
 	para "I will forge my"
@@ -561,6 +561,7 @@ MasterYunaBeatenText:
 
 MasterYunaWinText:
     text "I am ready."
+    done
 
 MasterYunaAfterBattleText:
 	text "I live for all"

@@ -696,8 +696,11 @@ MasterAdamScript:
     writetext MasterAdamLoseAfterBattleText
     waitbutton
     closetext
+    checkevent EVENT_CAUGHT_MEWTWO
+    iftrue .end
     applymovement PLAYER, Movement_DestinySquareTurnBack
     turnobject DESTINYSQUARE_ADAM, DOWN
+.end
     end
 
 MasterAdamSeenText:

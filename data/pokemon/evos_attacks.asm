@@ -1481,8 +1481,8 @@ FeebasEvosAttacks:
 
 MiloticEvosAttacks:
 	db 0 ; no more evolutions
-	db 28, BUBBLEBEAM
-	db 31, HYPNOSIS
+	db 25, BUBBLEBEAM
+	db 30, HYPNOSIS
 	db 33, RECOVER
 	db 36, AURORA_BEAM
 	db 40, SCALD
@@ -2125,8 +2125,9 @@ GaladeEvosAttacks:
 	db 1, CONFUSION
 	db 9, HYPNOSIS
 	db 12, TELEPORT
+	db 16, DRAIN_KISS
 	db 20, PSYBEAM
-	db 24, CHARM
+	db 25, KARATE_CHOP
 	db 30, NIGHT_SLASH
 	db 35, DRAIN_PUNCH
 	db 40, PSYCHO_SLASH

@@ -1,7 +1,26 @@
+    object_const_def
+    const AEROWORDROOM_FIELDMON_1
+
 RuinsOfAlphAerodactylWordRoom_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .AeroWordRoomFieldMon
+
+.AeroWordRoomFieldMon
+    appear AEROWORDROOM_FIELDMON_1
+    endcallback
+
+AeroWordRoomFieldMon1Script:
+	faceplayer
+	cry SIGILYPH
+	pause 15
+	loadwildmon SIGILYPH, 35
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear AEROWORDROOM_FIELDMON_1
+	end
 
 RuinsOfAlphAerodactylWordRoom_MapEvents:
 	db 0, 0 ; filler
@@ -16,3 +35,4 @@ RuinsOfAlphAerodactylWordRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 14,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AeroWordRoomFieldMon1Script, EVENT_FIELD_MON_1

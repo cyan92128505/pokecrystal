@@ -1,7 +1,26 @@
+    object_const_def
+    const KABUTOWORDROOM_FIELDMON_1
+
 RuinsOfAlphKabutoWordRoom_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .KabutoWordRoomFieldMon
+
+.KabutoWordRoomFieldMon
+    appear KABUTOWORDROOM_FIELDMON_1
+    endcallback
+
+KabutoWordRoomFieldMon1Script:
+	faceplayer
+	cry MAGNEMITE
+	pause 15
+	loadwildmon MAGNEMITE, 8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear KABUTOWORDROOM_FIELDMON_1
+	end
 
 RuinsOfAlphKabutoWordRoom_MapEvents:
 	db 0, 0 ; filler
@@ -16,3 +35,4 @@ RuinsOfAlphKabutoWordRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 14,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KabutoWordRoomFieldMon1Script, EVENT_FIELD_MON_1

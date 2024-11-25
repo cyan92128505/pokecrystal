@@ -222,12 +222,12 @@ MonMenuIconPals:
 	icon_pals BLUE,  GOLD         ; SNEASEL
 	icon_pals RED,  GREEN    ; TEDDIURSA
 	icon_pals RED,  GREEN     ; URSARING
-	icon_pals RED,  GREEN     ; LATIAS
+	icon_pals RED,  GOLD     ; LATIAS
 	icon_pals RED,  GOLD  ; DEOXYS
 	icon_pals BROWN,  SILVER      ; SWINUB
 	icon_pals BROWN,  SILVER      ; PILOSWINE
 	icon_pals PURPLE,  BLUE     ; SPIRITOMB
-	icon_pals BLUE,  GREEN      ; LATIOS
+	icon_pals BLUE,  GOLD      ; LATIOS
 	icon_pals PURPLE,  RED     ; PALKIA
 	icon_pals BLUE,  PURPLE      ; KYOGRE
 	icon_pals RED,  GOLD    ; GROUDON

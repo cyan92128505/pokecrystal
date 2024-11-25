@@ -185,7 +185,7 @@ SproutTower3FPotion:
 	itemball BRIGHTPOWDER
 
 SproutTower3FEscapeRope:
-	itemball GOLD_BERRY
+	itemball SCOPE_LENS
 
 SproutTower3FPlayerApproachesRivalMovement:
 	step UP

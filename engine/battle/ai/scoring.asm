@@ -4054,6 +4054,20 @@ AI_Smart_Barrier:
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardDiscourage
 
+	ld a, [wEnemyMonSpecies]
+	cp MEWTWO
+	jr z, .mewtwo
+
+; if not mewtwo boost if we can up to +2
+	call ShouldAIBoost
+	jp nc, StandardDiscourage
+
+    ld a, [wEnemyDefLevel]
+    cp BASE_STAT_LEVEL + 2
+    jp nc, StandardDiscourage
+    jr .toxic
+
+.mewtwo
 ; if player physical don't use only if they can outspeed and OHKO
 	call DoesAIOutSpeedPlayer
 	jr c, .skipKOCheck
@@ -4061,6 +4075,7 @@ AI_Smart_Barrier:
 	jp c, StandardDiscourage
 .skipKOCheck
 
+.toxic
 ; discourage if afflicted with toxic
     call IsAIToxified
     jp c, StandardDiscourage

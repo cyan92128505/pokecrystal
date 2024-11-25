@@ -709,23 +709,20 @@ EvilOldManScript:
 	end
 .GotRedEyeOrb:
 	writetext GotRedEyeOrbText
-	checkevent EVENT_GOT_SCOPE_LENS
+	checkevent EVENT_GOT_LIFE_ORB
 	iftrue .finish
 	waitbutton
-	writetext takeScopeLensText
-	verbosegiveitem SCOPE_LENS
-	setevent EVENT_GOT_SCOPE_LENS
+	writetext takeLifeOrbText
+	verbosegiveitem LIFE_ORB
+	setevent EVENT_GOT_LIFE_ORB
 .finish
 	waitbutton
 	closetext
 	end
 
-takeScopeLensText:
+takeLifeOrbText:
     text "Here take this for"
     line "your trouble."
-
-    para "Luck will always"
-    line "beat skill."
 
     para "Heh heh heh."
     done

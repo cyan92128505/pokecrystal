@@ -739,6 +739,14 @@ NationalParkFieldMon6Script:
 NationalParkLeonScript:
     faceplayer
 	opentext
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .notHero
+	writetext HeyHeroText
+	waitbutton
+	yesorno
+	iffalse .refused
+	sjump .dontAsk
+.notHero
 	checkevent EVENT_BEAT_LEON
 	iftrue .FightDone
 .fight
@@ -768,6 +776,11 @@ NationalParkLeonScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LEON
 	special HealParty
+	opentext
+	writetext YoureStrongKidText
+	waitbutton
+	checkevent EVENT_FOUGHT_PARK_LEON
+    iffalse .giveGift
 	end
 .FightDone:
 	writetext NPLeonAfterBattleText
@@ -788,8 +801,40 @@ NationalParkLeonScript:
     opentext
     writetext NPLeonWinAfterBattleText
     waitbutton
+    checkevent EVENT_FOUGHT_PARK_LEON
+    iffalse .giveGift
     closetext
     end
+.giveGift
+    writetext LeonGiftText
+    waitbutton
+    verbosegiveitem LUCKY_EGG
+    closetext
+    setevent EVENT_FOUGHT_PARK_LEON
+    end
+
+HeyHeroText:
+    text "Hey <PLAYER>!"
+    para "The hero of the"
+    line "people."
+    para "How'd you like"
+    line "to fight a true"
+    cont "hero?"
+    done
+
+YoureStrongKidText:
+    text "You're pretty"
+    line "strong kid!"
+    para "I went easy on"
+    line "you."
+    done
+
+LeonGiftText:
+    text "You got heart kid."
+    para "Here this will"
+    line "help you get"
+    cont "stronger."
+    done
 
 NPLeonWinAfterBattleText:
     text "You did well kid."

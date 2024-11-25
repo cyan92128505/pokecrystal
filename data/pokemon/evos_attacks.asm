@@ -1213,10 +1213,10 @@ MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 6, THUNDERSHOCK
-	db 11, SUPERSONIC
-	db 16, SONICBOOM
-	db 20, THUNDER_WAVE
+	db 1, THUNDERSHOCK
+	db 10, SONICBOOM
+	db 15, THUNDER_WAVE
+	db 20, TRI_ATTACK
 	db 25, FLASH_CANNON
 	db 31, DISCHARGE
     db 36, THUNDERBOLT
@@ -1228,13 +1228,12 @@ MagnetonEvosAttacks:
     db EVOLVE_ITEM, THUNDERSTONE, MAGNEZONE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 6, THUNDERSHOCK
-	db 11, SUPERSONIC
-	db 16, SONICBOOM
-	db 20, THUNDER_WAVE
+	db 1, THUNDERSHOCK
+	db 10, SONICBOOM
+	db 15, THUNDER_WAVE
+	db 20, TRI_ATTACK
 	db 25, FLASH_CANNON
 	db 30, DISCHARGE
-	db 33, TRI_ATTACK
     db 36, THUNDERBOLT
 	db 40, ZAP_CANNON
 	db 50, EXPLOSION
@@ -1482,9 +1481,9 @@ FeebasEvosAttacks:
 MiloticEvosAttacks:
 	db 0 ; no more evolutions
 	db 25, BUBBLEBEAM
-	db 30, HYPNOSIS
-	db 33, RECOVER
-	db 36, AURORA_BEAM
+	db 30, AURORA_BEAM
+	db 33, HYPNOSIS
+	db 36, RECOVER
 	db 40, SCALD
 	db 50, HYDRO_PUMP
 	db 55, CALM_MIND
@@ -1741,7 +1740,7 @@ RhyperiorEvosAttacks:
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
-	db EVOLVE_LEVEL, 30, SEADRA
+	db EVOLVE_LEVEL, 25, SEADRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 8, SMOKESCREEN
@@ -2739,10 +2738,10 @@ MareepEvosAttacks:
 	db EVOLVE_LEVEL, 15, FLAAFFY
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, GROWL
-	db 9, THUNDERSHOCK
+	db 1, THUNDERSHOCK
 	db 16, THUNDER_WAVE
-	db 31, THUNDERPUNCH
+	db 25, THUNDERPUNCH
+	db 31, DISCHARGE
 	db 36, THUNDERBOLT
 	db 45, THUNDER
 	db 0 ; no more level-up moves
@@ -2751,10 +2750,10 @@ FlaaffyEvosAttacks:
 	db EVOLVE_LEVEL, 30, AMPHAROS
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, GROWL
-	db 9, THUNDERSHOCK
+	db 1, THUNDERSHOCK
 	db 15, THUNDER_WAVE
-	db 31, THUNDERPUNCH
+	db 25, THUNDERPUNCH
+	db 31, DISCHARGE
 	db 36, THUNDERBOLT
 	db 45, THUNDER
 	db 0 ; no more level-up moves
@@ -2762,10 +2761,10 @@ FlaaffyEvosAttacks:
 AmpharosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, GROWL
-	db 9, THUNDERSHOCK
+	db 1, THUNDERSHOCK
 	db 18, THUNDER_WAVE
-	db 30, THUNDERPUNCH
+	db 25, THUNDERPUNCH
+	db 30, DISCHARGE
 	db 36, THUNDERBOLT
 	db 40, FLASH_CANNON
 	db 45, THUNDER

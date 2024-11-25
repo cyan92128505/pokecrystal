@@ -73,8 +73,8 @@ CopycatsHouse1FPokefanFText_ReturnedMachinePart:
 	para "You are"
 	line "CHAMPION <PLAYER>."
 
-	para "The hero that saved"
-	line "us all!"
+	para "The hero that"
+	line "saved us all!"
 
 	para "Please sit down!"
 

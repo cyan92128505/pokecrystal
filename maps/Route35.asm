@@ -622,9 +622,9 @@ Route35FieldMon2Script:
 
 Route35FieldMon3Script:
 	faceplayer
-	cry MR__MIME
+	cry ELECTRODE
 	pause 15
-	loadwildmon MR__MIME, 41
+	loadwildmon ELECTRODE, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

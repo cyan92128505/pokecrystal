@@ -400,7 +400,7 @@ JohtoGrassWildMons:
 	db 30, SIGILYPH
 	db 20, SMEARGLE
 	db 25, IVYSAUR
-	db 32, MR__MIME
+	db 32, WIGGLYTUFF
 	db 32, WOBBUFFET
 	db 32, METANG
 	db 51, ALAKAZAM

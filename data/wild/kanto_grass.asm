@@ -369,29 +369,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, MR__MIME
+	db 35, SIGILYPH
 	db 36, KADABRA
 	db 37, EXEGGCUTE
 	db 38, DUOSION
 	db 42, GARDEVOIR
-	db 42, SIGILYPH
-	db 66, ALAKAZAM
+	db 42, ALAKAZAM
+	db 66, ESPEON
 	; day
-	db 35, MR__MIME
+	db 35, SIGILYPH
 	db 36, KADABRA
 	db 37, EXEGGCUTE
 	db 38, DUOSION
 	db 42, GARDEVOIR
-	db 42, SIGILYPH
-	db 66, ALAKAZAM
+	db 42, ALAKAZAM
+	db 66, ESPEON
 	; nite
-	db 35, MR__MIME
+	db 35, SIGILYPH
 	db 36, KADABRA
 	db 37, EXEGGCUTE
 	db 38, DUOSION
 	db 42, GARDEVOIR
-	db 42, SIGILYPH
-	db 66, ALAKAZAM
+	db 42, ALAKAZAM
+	db 66, ESPEON
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_9

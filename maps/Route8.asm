@@ -80,7 +80,7 @@ Route8FieldMon5Script:
 	faceplayer
 	cry MR__MIME
 	pause 15
-	loadwildmon MR__MIME, 41
+	loadwildmon MR__MIME, 63
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

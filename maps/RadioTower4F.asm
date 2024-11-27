@@ -231,6 +231,7 @@ JessieAndJamesScene:
     checkevent EVENT_BEAT_MEOWTH
     iftrue .end
 
+    playmusic MUSIC_ROCKET_ENCOUNTER
     turnobject RADIOTOWER4F_ROCKET_GIRL, RIGHT
     turnobject RADIOTOWER4F_ROCKET2, LEFT
 
@@ -301,6 +302,8 @@ JessieAndJamesScene:
     waitbutton
     closetext
 
+	setval MUSIC_MYSTICALMAN_ENCOUNTER
+	writemem wBattleMusicOverride
 	winlosstext MeowthLose, MeowthWin
 	loadtrainer GRUNTF, GRUNTF_6
 	startbattle

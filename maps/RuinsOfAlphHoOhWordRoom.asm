@@ -22,6 +22,24 @@ HoohWordRoomFieldMon1Script:
 	disappear HOOHWORDROOM_FIELDMON_1
 	end
 
+AtemStatueScript:
+    opentext
+    writetext atemStatueText
+    waitbutton
+    closetext
+    end
+
+atemStatueText:
+	text "It's a golden"
+	line "statue."
+	para "There is an"
+	line "inscription."
+	para "May ARCEUS guide"
+	line "and protect ATEM."
+	para "The MASTER of"
+	line "MASTERS."
+	done
+
 RuinsOfAlphHoOhWordRoom_MapEvents:
 	db 0, 0 ; filler
 
@@ -36,3 +54,4 @@ RuinsOfAlphHoOhWordRoom_MapEvents:
 
 	def_object_events
 	object_event 14,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HoohWordRoomFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  9,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AtemStatueScript, -1

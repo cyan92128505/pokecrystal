@@ -341,7 +341,7 @@ YamiSeenText:
     cont "me."
 
     para "The great Pharaoh"
-    line "Yami."
+    line "Atem."
 
     para "Just one of"
     line "countless long"
@@ -394,19 +394,11 @@ YamiAfterBattleText:
     cont "shape your future"
     cont "as I have shaped"
     cont "mine."
-
-    para "But know you"
-    line "always have a"
-    cont "home here."
     done
 
 CatchXerneasFirstText:
     text "You are not"
-    line "from here."
-
-    para "In fact you are"
-    line "not from this"
-    cont "time at all."
+    line "from this time."
 
     para "I am ATEM."
 
@@ -425,13 +417,6 @@ CatchXerneasFirstText:
 
     para "XERNEAS shall"
     line "judge you."
-
-    para "I trust you will"
-    line "not cause trouble."
-
-    para "Otherwise I will"
-    line "destroy you"
-    cont "myself!"
     done
 
 RematchTextYami:
@@ -444,13 +429,36 @@ RematchRefuseTextYami:
     line "your story."
     done
 
+ArceusOldStatueScript:
+    opentext
+    writetext arceusOldStatueText
+    waitbutton
+    closetext
+    end
+
+arceusOldStatueText:
+	text "A golden statue of"
+	line "ARCEUS the"
+	cont "creator."
+	para "There is an"
+	line "inscription."
+	para "Existence"
+	line "coverages upon a"
+	cont "singularity of"
+	cont "perfection."
+	para "A gift from"
+	line "ARCEUS."
+	para "The gift of"
+	line "AMBROSIA."
+	done
+
 AncientRuinPast_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event   5, 5, ANCIENT_RUIN_PRESENT, 3
 	warp_event  33, 5, ANCIENT_RUIN_PRESENT, 3
-	warp_event  19, 3, ECRUTEAK_CITY, 12
+	warp_event  19, 3, RUINS_OF_ALPH_OUTSIDE, 5
 
 	def_coord_events
 
@@ -466,10 +474,10 @@ AncientRuinPast_MapEvents:
 	object_event  3, 20, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AncientRuinPastFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 14, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AncientRuinPastFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 20, 34, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AncientRuinPastFieldMon8Script, EVENT_FIELD_MON_8
-	object_event 19,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientRuinsPastAmbrosia, EVENT_ANCIENT_RUINS_PAST_AMBROSIA
+	object_event 19,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientRuinsPastAmbrosia, EVENT_ANCIENT_RUINS_PAST_AMBROSIA
 	object_event  6, 26, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGuy1Script, -1
 	object_event 27, 30, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGuy2Script, -1
 	object_event 13, 33, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGirl1Script, -1
 	object_event 25, 35, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGirl2Script, -1
 	object_event 19, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YamiScript, -1
-
+	object_event 20, 4, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusOldStatueScript, -1

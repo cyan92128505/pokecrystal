@@ -74,37 +74,7 @@ RuinsOfAlphResearchCenterScientist3Script:
 	end
 
 RuinsOfAlphResearchCenterScientist1Script:
-	faceplayer
-	opentext
-	readvar VAR_UNOWNCOUNT
-	ifequal NUM_UNOWN, .GotAllUnown
-	checkflag ENGINE_UNOWN_DEX
-	iftrue .GotUnownDex
-	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
-	iftrue .UnownAppeared
-	writetext RuinsOfAlphResearchCenterScientist1Text
-	waitbutton
-	closetext
-	end
-
-.UnownAppeared:
-	writetext RuinsOfAlphResearchCenterScientist1Text_UnownAppeared
-	waitbutton
-	closetext
-	end
-
-.GotUnownDex:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotUnownDex
-	waitbutton
-	closetext
-	end
-
-.GotAllUnown:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
-	waitbutton
-	closetext
-	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
-	end
+    jumptextfaceplayer RuinsOfAlphResearchCenterScientist1Text
 
 RuinsOfAlphResearchCenterScientist2Script:
 	faceplayer
@@ -225,59 +195,37 @@ RuinsOfAlphResearchCenterScientist1Text:
 	line "about 1500 years"
 	cont "old."
 
+	para "Buried underground"
+	line "is the city of"
+	cont "MENZOBERRANZAN."
+
 	para "It is believed"
 	line "that the ruler"
 	cont "of the ancient"
 	cont "city was a man"
 	cont "named ATEM."
 
-	para "It is believed"
-	line "he commanded"
-	cont "immensely"
-	cont "powerful"
-	cont "#MON."
+	para "It is believed he"
+	line "was the most"
+	cont "powerful trainer"
+	cont "to ever exist."
 
-	para "Even WALLACE"
-	line "wouldn't have"
-	cont "stood a chance"
-	cont "against him."
+	para "The MASTER of"
+	line "MASTERS."
 
-	para "He is considered"
-	line "the first true"
-	cont "#MON MASTER."
-	done
+	para "However he was not"
+	line "worshiped."
 
-RuinsOfAlphResearchCenterScientist1Text_GotUnownDex:
-	text "I wonder how many"
-	line "kinds of #MON"
-	cont "are in the RUINS?"
-	done
+	para "The ancient people"
+	line "worshiped the"
+	cont "creator."
 
-RuinsOfAlphResearchCenterScientist1Text_UnownAppeared:
-	text "#MON appeared"
-	line "in the RUINS?"
+	para "The name of this"
+	line "creator begins"
+	cont "with A and is 6"
+	cont "characters long."
 
-	para "We'll need to"
-	line "investigate this."
-	done
-
-RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
-	text "The tower to the"
-	line "west is open!"
-
-	para "I tried to"
-	line "explore."
-
-	para "It leads to the"
-	line "ancient city of"
-	cont "MENZOBERRANZAN."
-
-	para "But it's too"
-	line "dangerous down"
-	cont "there."
-
-	para "I'm just a"
-	line "scientist."
+	para "It must be ARCEUS."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text:
@@ -304,34 +252,33 @@ RuinsOfAlphResearchCenterScientist2Text:
 	line "are all solved"
 	cont "might the secret"
 	cont "be revealed."
-
-	para "The path to"
-	line "MENZOBERRANZAN."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
-	text "The strange #-"
-	line "MON you saw in the"
-	cont "RUINS?"
-
-	para "They appear to be"
-	line "very much like the"
-
-	para "drawings on the"
-	line "walls there."
-
-	para "Hmm…"
+	text "The #MON have"
+	line "appeared in the"
+	cont "ruins."
+	para "They are"
+	line "incredibly weak"
+	cont "but you must catch"
+	cont "them!"
+	para "I'm sure something"
+	line "will happen..."
+	para "Maybe."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
-	text "Why did those"
-	line "ancient patterns"
-
-	para "appear on the wall"
-	line "now?"
-
-	para "The mystery"
-	line "deepens…"
+	text "You actually went"
+	line "and caught them"
+	cont "all!"
+	para "I don't believe"
+	line "it."
+	para "I was only joking,"
+	line "those #MON are"
+	cont "useless."
+	para "You got too much"
+	line "time on your"
+	cont "hands."
 	done
 
 RuinsOfAlphResearchCenterComputerText:

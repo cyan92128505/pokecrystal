@@ -871,7 +871,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_LEECH_HIT,        AI_Smart_LeechHit
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
-	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
 	dbw EFFECT_EVASION_UP_2,     AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
@@ -1343,47 +1342,6 @@ AI_Smart_AlwaysHit:
 	ret c
 
 .encourage
-	dec [hl]
-	ret
-
-AI_Smart_MirrorMove:
-; If the player did not use any move last turn...
-	ld a, [wLastPlayerCounterMove]
-	and a
-	jr nz, .usedmove
-
-; ...do nothing if enemy is slower than player
-	call DoesAIOutSpeedPlayer
-	ret nc
-
-; ...or dismiss this move if enemy is faster than player.
-	jp AIDiscourageMove
-
-; If the player did use a move last turn...
-.usedmove
-	push hl
-	ld hl, UsefulMoves
-	ld de, 1
-	call IsInArray
-	pop hl
-
-; ...do nothing if he didn't use a useful move.
-	ret nc
-
-; If he did, 50% chance to encourage this move...
-	call AI_50_50
-	ret c
-
-	dec [hl]
-
-; ...and 90% chance to encourage this move again if the enemy is faster.
-	call DoesAIOutSpeedPlayer
-	ret nc
-
-	call Random
-	cp 10 percent
-	ret c
-
 	dec [hl]
 	ret
 
@@ -2362,61 +2320,20 @@ AI_Smart_Mimic:
 	ret
 
 AI_Smart_Counter:
-;	push hl
-;	ld hl, wPlayerUsedMoves
-;	ld c, NUM_MOVES
-;	ld b, 0
-
-;.playermoveloop
-;	ld a, [hli]
-;	and a
-;	jr z, .skipmove
-
-;	call AIGetEnemyMove
-
-;	ld a, [wEnemyMoveStruct + MOVE_POWER]
-;	and a
-;	jr z, .skipmove
-
-;	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-;	cp SPECIAL
-;	jr nc, .skipmove
-
-;	inc b
-
-;.skipmove
-;	dec c
-;	jr nz, .playermoveloop
-
-;	pop hl
-;	ld a, b
-;	and a
-;	jr z, .discourage
-
-;	cp 3
-;	jr nc, .encourage
+    call BattleRandom
+    cp 10 percent + 1
+    ret c
 
 	ld a, [wLastPlayerCounterMove]
-	;and a
-	;jr z, .done
-
 	call AIGetEnemyMove
-
-	;ld a, [wEnemyMoveStruct + MOVE_POWER]
-	;and a
-	;jr z, .done
-
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
-	jr nc, .done
+	ret nc
 
-.encourage
+rept 10
 	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-.done
-	ret
+endr
+    ret
 
 AI_Smart_Encore:
     ld a, [wEnemyMonSpecies]
@@ -3716,61 +3633,20 @@ AI_Smart_PsychUp:
     ret
 
 AI_Smart_MirrorCoat:
-;	push hl
-;	ld hl, wPlayerUsedMoves
-;	ld c, NUM_MOVES
-;	ld b, 0
-
-;.playermoveloop
-;	ld a, [hli]
-;	and a
-;	jr z, .skipmove
-
-;	call AIGetEnemyMove
-
-;	ld a, [wEnemyMoveStruct + MOVE_POWER]
-;	and a
-;	jr z, .skipmove
-
-;	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-;	cp SPECIAL
-;	jr c, .skipmove
-
-;	inc b
-
-;.skipmove
-;	dec c
-;	jr nz, .playermoveloop
-
-;	pop hl
-;	ld a, b
-;	and a
-;	jr z, .discourage
-
-;	cp 3
-;	jr nc, .encourage
+    call BattleRandom
+    cp 10 percent + 1
+    ret c
 
 	ld a, [wLastPlayerCounterMove]
-	;and a
-	;jr z, .done
-
 	call AIGetEnemyMove
-
-	;ld a, [wEnemyMoveStruct + MOVE_POWER]
-	;and a
-	;jr z, .done
-
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
-	jr c, .done
+	ret c
 
-.encourage
+rept 10
 	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-.done
-	ret
+endr
+    ret
 
 AI_Smart_FutureSight:
 ; Greatly encourage this move if the player is

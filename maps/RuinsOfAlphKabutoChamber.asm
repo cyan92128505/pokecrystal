@@ -183,14 +183,19 @@ RuinsOfAlphKabutoChamberScientistCrypticText:
 	done
 
 RuinsOfAlphKabutoChamberScientistHoleText:
-	text "Watch out!"
+	text "I solved it!"
+	para "I am a genius."
+	para "You should go in"
+	line "and explore."
+	para "I'll just hold the"
+	line "door."
+	done
 
-	para "This place is"
-	line "falling apart!"
-
-	para "I need better"
-	line "health insurance"
-	cont "for this!"
+RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
+	text "You caught all the"
+	line "UNOWN!"
+	para "Your work ethic"
+	line "terrifies me."
 	done
 
 RuinsOfAlphKabutoChamberScientistTremorText:

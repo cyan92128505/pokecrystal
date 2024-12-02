@@ -265,10 +265,9 @@ AzaleaTownRivalBeforeText:
 	para "Even weaker"
 	line "than you."
 
-	para "Let me teach"
-	line "you how you"
-	cont "should deal"
-	cont "with them."
+	para "Let me teach you"
+	line "how you should"
+	cont "deal with them."
 	done
 
 AzaleaTownRivalWinText:

@@ -199,13 +199,13 @@ RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 	done
 
 RuinsOfAlphKabutoChamberScientistTremorText:
-	text "I've done it!"
-
-	para "After you left"
-	line "this door opened!"
-
-	para "Now how did I"
-	cont "do that..."
+	text "You solved the"
+	line "puzzle!"
+	para "You're IQ must be"
+	line "in the top"
+	cont "percentile."
+	para "Maybe you could"
+	line "help me."
 	done
 
 RuinsOfAlphKabutoChamberWallPatternLeftText:

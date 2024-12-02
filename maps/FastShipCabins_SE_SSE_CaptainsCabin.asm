@@ -403,7 +403,8 @@ SSAquaGrandpaHaveThisSilverWingText:
 	done
 
 SSAquaGrandpaTravellingText:
-	text "Well done CHAMPION."
+	text "Well done"
+	line "CHAMPION."
 
 	para "I am satisfied"
 	line "the captain hasn't"

@@ -77,7 +77,7 @@ CinnabarIslandBlueText:
 
 	para "Now it's just"
 	line "a puppet of the"
-	cont "#MON LEAUGE."
+	cont "#MON LEAGUE."
 
 	para "I was a CHAMPION"
 	line "myself for a"

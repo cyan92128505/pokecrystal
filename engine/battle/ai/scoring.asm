@@ -1942,9 +1942,9 @@ AI_Smart_SpDefenseUp2:
 	jr nc, .discourage
 
 ; greatly encourage this move if
-; enemy's Special Defense level is lower than +2,
+; enemy's Special Defense level is lower than +3,
 ; and the player's Pokémon is Special-oriented.
-	cp BASE_STAT_LEVEL + 2
+	cp BASE_STAT_LEVEL + 3
 	ret nc
 
 	call IsPlayerPhysicalOrSpecial
@@ -1955,9 +1955,9 @@ AI_Smart_SpDefenseUp2:
 	inc [hl]
 	ret
 .encourage
+rept 8
 	dec [hl]
-	dec [hl]
-	dec [hl]
+endr
 	ret
 
 AI_Smart_Fly:
@@ -3935,11 +3935,11 @@ AI_Smart_Barrier:
 	jr z, .mewtwo
 
 ; if not mewtwo boost if we can up to +2
-	call ShouldAIBoost
-	jp nc, StandardDiscourage
+    call ShouldAIBoost
+    jp nc, StandardDiscourage
 
     ld a, [wEnemyDefLevel]
-    cp BASE_STAT_LEVEL + 2
+    cp BASE_STAT_LEVEL + 3
     jp nc, StandardDiscourage
     jr .toxic
 

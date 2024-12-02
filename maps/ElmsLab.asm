@@ -1888,8 +1888,10 @@ DadAcknowledgmentText:
 
     para "...."
 
-    para "It gives me hope."
-    done
+	para "We are not as"
+	line "helpless as"
+	cont "everyone thinks."
+	done
 
 DadGoodbyeText:
     text "<PLAYER> you have"

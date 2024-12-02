@@ -6672,7 +6672,7 @@ LoadEnemyMon:
 
 .GeneratePerfectDVs
     call BattleRandom
-    cp 10 percent
+    cp 5 percent
     jr c, .GenerateShinyDVs
 	ld b, $ff
 	ld c, $ff

@@ -1485,8 +1485,8 @@ MiloticEvosAttacks:
 	db 33, HYPNOSIS
 	db 36, RECOVER
 	db 40, SCALD
-	db 50, HYDRO_PUMP
-	db 55, CALM_MIND
+	db 45, HYDRO_PUMP
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
 VoltorbEvosAttacks:
@@ -1855,6 +1855,7 @@ MrMimeEvosAttacks:
 	db 35, BATON_PASS
 	db 40, PSYCHIC_M
 	db 45, MOON_BLAST
+	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:

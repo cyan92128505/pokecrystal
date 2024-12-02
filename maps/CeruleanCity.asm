@@ -253,8 +253,8 @@ CeruleanCityYoungsterText1:
 
 	para "This is bad."
 
-	para "Who knows what kind"
-	line "of monstrous"
+	para "Who knows what"
+	line "kinds of monstrous"
 	cont "#MON will"
 	cont "emerge!"
 	done

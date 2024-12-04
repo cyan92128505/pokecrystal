@@ -2,7 +2,7 @@ ArnieMonIsSoCuteText:
 	text "I'm always with my"
 	line "BUTTERFREE."
 
-	text "He is my oldest"
+	para "He is my oldest"
 	line "and dearest"
 	cont "friend."
 	done

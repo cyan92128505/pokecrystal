@@ -14,6 +14,15 @@ ShowLinkBattleParticipants:
 
 FindFirstAliveMonAndStartBattle:
 ; DevNote - Battle Palette decided here
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jr z, .skipRPG
+    ld a, [wOtherTrainerClass]
+    cp ROLE_PLAYER_NORMAL
+    jr z, .daypal
+    cp ROLE_PLAYER_SHINY
+    jr z, .daypal
+.skipRPG
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]

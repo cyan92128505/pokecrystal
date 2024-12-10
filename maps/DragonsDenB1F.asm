@@ -400,11 +400,11 @@ TrainerTwinsLeaandpia2:
 DragonsDenB1FDragonFangScript:
 ; This whole script is written out rather than as an itemball
 ; because it's left over from the GS event.
-	giveitem DRAGON_FANG
+	giveitem DRAGON_SCALE
 	iffalse .BagFull
 	disappear DRAGONSDENB1F_POKE_BALL1
 	opentext
-	getitemname STRING_BUFFER_3, DRAGON_FANG
+	getitemname STRING_BUFFER_3, DRAGON_SCALE
 	writetext Text_FoundDragonFang
 	playsound SFX_ITEM
 	waitsfx
@@ -414,7 +414,7 @@ DragonsDenB1FDragonFangScript:
 
 .BagFull:
 	opentext
-	getitemname STRING_BUFFER_3, DRAGON_FANG
+	getitemname STRING_BUFFER_3, DRAGON_SCALE
 	writetext Text_FoundDragonFang
 	promptbutton
 	writetext Text_NoRoomForDragonFang

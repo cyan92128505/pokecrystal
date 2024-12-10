@@ -896,9 +896,11 @@ NurseScript:
 	writetext ShouldIHealText
 	yesorno
 	iffalse .done
+	closetext
 	special HealParty
 	special FadeOutPalettes
 	reloadmap
+	opentext
 	writetext HealDoneText
 .done
     writetext GoodbyeText

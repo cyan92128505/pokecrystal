@@ -666,7 +666,7 @@ FuchsiaSelfDefeatText2:
     done
 
 FuchsiaSelfConfidenceText3:
-	text "Silence!"
+	text "SHUT UP!"
 	para "Maybe he will."
 	para "It doesn't matter."
 	para "If I don't stop"

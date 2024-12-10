@@ -622,7 +622,7 @@ HoenCaptainAfterBattleText:
 	line "has our strongest"
 	cont "squad with him."
 	para "Four CAPTAINS and"
-	cont "ADMIRAL DRAKE!"
+	line "ADMIRAL DRAKE!"
 	para "DRAKE has beaten"
 	line "CHAMPIONS much"
 	cont "stronger than you."

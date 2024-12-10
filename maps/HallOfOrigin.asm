@@ -85,6 +85,7 @@ ArceusScript:
 	opentext
 	writetext OakBeatenArceusText
 	waitbutton
+	verbosegiveitem AMBROSIA
 	closetext
 	special HealParty
 	credits
@@ -126,6 +127,10 @@ OakBeatenArceusText:
     cont "ready to reach"
     cont "the heights of"
     cont "#MON LORD."
+
+    para "Until then take"
+    line "this token of my"
+    cont "gratitude."
     done
 ArceusText:
     text "<PLAYER>"

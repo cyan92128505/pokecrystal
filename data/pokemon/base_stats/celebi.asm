@@ -5,8 +5,8 @@
 
 	db PSYCHIC_TYPE, GRASS ; type
 	db 45 ; catch rate
-	db 64 ; base exp
-	db NO_ITEM, MIRACLEBERRY ; items
+	db 220 ; base exp
+	db MIRACLE_SEED, MIRACLE_SEED ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 120 ; step cycles to hatch

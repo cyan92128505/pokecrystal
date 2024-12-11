@@ -5,7 +5,7 @@
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 3 ; catch rate
-	db 255 ; base exp
+	db 220 ; base exp
 	db TWISTEDSPOON, TWISTEDSPOON ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1

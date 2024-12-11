@@ -6,7 +6,7 @@
 	db STEEL, DRAGON ; type
     db 3 ; catch rate
 	db 255 ; base exp
-	db NO_ITEM, DRAGON_SCALE ; items
+	db METAL_COAT, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 120 ; step cycles to hatch

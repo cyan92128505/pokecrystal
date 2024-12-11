@@ -23,11 +23,8 @@ PowerPlant_MapScripts:
 
 ZapdosScript:
 	faceplayer
-	opentext
-	writetext ZapdosCry
 	cry ZAPDOS
 	pause 15
-	closetext
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .lowerLevel
 	checkevent EVENT_BEAT_WALLACE
@@ -53,10 +50,6 @@ ZapdosScript:
     setevent EVENT_CAUGHT_ZAPDOS
 	disappear POWERPLANT_ZAPDOS
 	end
-
-ZapdosCry:
-    text "Zapdos!"
-    done
 
 PowerPlantGuardPhoneScript:
 	playsound SFX_CALL

@@ -71,11 +71,8 @@ Route22FieldMon4Script:
 
 MoltresScript:
 	faceplayer
-	opentext
-	writetext MoltresCry
 	cry MOLTRES
 	pause 15
-	closetext
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .lowerLevel
 	checkevent EVENT_BEAT_WALLACE
@@ -101,10 +98,6 @@ MoltresScript:
     setevent EVENT_CAUGHT_MOLTRES
 	disappear ROUTE22_MOLTRES
 	end
-
-MoltresCry:
-    text "Moltres!"
-    done
 
 VictoryRoadEntranceSign:
 	jumptext VictoryRoadEntranceSignText

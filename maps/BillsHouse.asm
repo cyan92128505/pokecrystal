@@ -26,7 +26,7 @@ BillsGrandpa:
     waitsfx
     checkevent EVENT_BEAT_WALLACE
     iffalse .midLevel
-    givepoke MEW, 80
+    givepoke MEW, 80, LUCKY_EGG
     sjump .given
 .midLevel
     givepoke MEW, 60

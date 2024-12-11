@@ -5,8 +5,8 @@
 
 	db BUG, STEEL ; type
     db 45 ; catch rate
-	db 218 ; base exp
-	db NO_ITEM, METAL_COAT ; items
+	db 220 ; base exp
+	db METAL_COAT, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 5 ; step cycles to hatch

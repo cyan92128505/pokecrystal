@@ -14,11 +14,8 @@ SeafoamGym_MapScripts:
 
 ArticunoScript:
 	faceplayer
-	opentext
-	writetext ArticunoCry
 	cry ARTICUNO
 	pause 15
-	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ARTICUNO, 60
 	startbattle
@@ -31,10 +28,6 @@ ArticunoScript:
     setevent EVENT_CAUGHT_ARTICUNO
 	disappear SEAFOAMGYM_ARTICUNO
 	end
-
-ArticunoCry:
-    text "Articuno!"
-    done
 
 SeafoamGymBlaineScript:
 	faceplayer

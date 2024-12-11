@@ -1273,7 +1273,7 @@ WarZoneBlueText:
     cont "forces occupied"
     cont "for a short while."
 
-    para "Be sure to SAVE"
+    para "Prepare yourself"
     line "before fighting"
     cont "WALLACE."
 
@@ -1282,8 +1282,6 @@ WarZoneBlueText:
     para "You wont be coming"
     line "back at the"
     cont "#CENTER."
-
-    para "He will kill you."
     done
 
 WarZoneMovement_PlayerUp:

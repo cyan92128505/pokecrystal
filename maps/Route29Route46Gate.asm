@@ -27,14 +27,17 @@ Route29Route46GateOfficerText:
 	done
 
 Route29Route46GateYoungsterText:
-	text "There is a cave"
-	line "ahead but it's"
-	cont "pitch black."
-	para "I couldn't see"
-	line "anything but I"
-	cont "could hear"
-	cont "terrifying noises."
-	cont "immediately."
+	text "I heard once that"
+	line "if you really need"
+	cont "to change the time"
+	cont "you should press"
+	cont "DOWN and B"
+	cont "together on the"
+	cont "TITLE SCREEN."
+	para "I have no idea"
+	line "what that means"
+	cont "but it sounds"
+	cont "useful."
 	done
 
 Route29Route46Gate_MapEvents:

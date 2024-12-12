@@ -5,8 +5,8 @@
 
 	db ELECTRIC, ELECTRIC ; type
 	db 3 ; catch rate
-	db 216 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db 220 ; base exp
+	db MAGNET, MAGNET ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch

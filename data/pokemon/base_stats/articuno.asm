@@ -5,7 +5,7 @@
 
 	db ICE, FLYING ; type
 	db 3 ; catch rate
-	db 215 ; base exp
+	db 220 ; base exp
 	db NEVERMELTICE, NEVERMELTICE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1

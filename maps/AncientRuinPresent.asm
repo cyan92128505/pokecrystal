@@ -89,10 +89,10 @@ HenshinScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_HENSHIN
 	setmapscene ANCIENT_RUIN_PRESENT, SCENE_CUSTOM_1
-	;opentext
-	;writetext HenshinBeatenText
-	;waitbutton
-	;closetext
+	opentext
+	writetext HenshinAfterBattleText
+	waitbutton
+	closetext
 	special HealParty
 	end
 .FightDone:
@@ -124,6 +124,10 @@ HenshinBeatenText:
 HenshinAfterBattleText:
     text "It can not"
     line "be!!"
+
+    para "I am destined"
+    line "to wield death"
+    cont "itself."
     done
 
 RematchTextHenshin:
@@ -132,7 +136,7 @@ RematchTextHenshin:
     done
 
 RematchRefuseTextHenshin:
-    text "I insist!"
+    text "Wise choice."
     done
 
 DialgaBlockScript:

@@ -22,6 +22,7 @@ DarkCaveBlackthornEntrance_MapScripts:
     endcallback
 
 GiratinaScript:
+    opentext
 	callasm IsArceusInParty
 	iftrue .arceus
 	callasm IsRayquazaInParty
@@ -32,8 +33,6 @@ GiratinaScript:
 	sjump .battle
 .arceus
 	opentext
-    ;checkevent EVENT_CAUGHT_RAYQUAZA
-	;iffalse .noRayquaza
 	writetext GiratinaPlayerHasArceusText
 .battle
     waitbutton
@@ -53,6 +52,7 @@ GiratinaScript:
 	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
 	end
 .noRayquaza
+    opentext
 	writetext GiratinaIntroText
 	waitbutton
 	closetext
@@ -95,7 +95,7 @@ GiratinaIntroText:
 
     para "Not far from"
     line "here lies the"
-    cont "den a great"
+    cont "den of a great"
     cont "hieratic!"
 
     para "The DRAGON LORD"
@@ -192,7 +192,7 @@ InvaderJackScript:
 	trainer INVADER, CRESTFALLEN, EVENT_BEAT_INVADER_CRESTFALLEN, InvaderJackSeenText, InvaderJackBeatenText, InvaderJackVictoryText, .Script
 
 .Script:
-	endifjustbattled
+	;endifjustbattled
 	opentext
 	writetext InvaderJackAfterBattleText
 	waitbutton

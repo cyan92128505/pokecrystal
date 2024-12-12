@@ -201,7 +201,7 @@ RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 RuinsOfAlphKabutoChamberScientistTremorText:
 	text "You solved the"
 	line "puzzle!"
-	para "You're IQ must be"
+	para "Your IQ must be"
 	line "in the top"
 	cont "percentile."
 	para "Maybe you could"

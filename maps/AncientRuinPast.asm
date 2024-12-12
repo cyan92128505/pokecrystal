@@ -174,7 +174,14 @@ AncientRuinsPastGirl1Script:
 	jumptextfaceplayer AncientRuinsPastGirl1Text
 
 AncientRuinsPastGirl2Script:
-	jumptextfaceplayer AncientRuinsPastGirl2Text
+	faceplayer
+	opentext
+	writetext AncientRuinsPastGirl2Text
+	waitbutton
+	closetext
+	playsound SFX_FULL_HEAL
+	special HealParty
+	end
 
 AncientRuinsPastGuy1Text:
     text "Welcome young"
@@ -233,10 +240,6 @@ AncientRuinsPastGirl1Text:
     cont "sure he will"
     cont "help you."
 
-    para "As long as you"
-    line "don't cause"
-    cont "trouble."
-
     para "SETO tried to"
     line "overthrow ATEM"
     cont "years ago and"
@@ -260,17 +263,9 @@ AncientRuinsPastGirl2Text:
     para "We revile the"
     line "evil YVELTAL."
 
-    para "The high priest"
-    line "of the house of"
-    cont "SETO, a man"
-    cont "named HENSHIN"
-    cont "was banished"
-    cont "years ago."
-
-    para "Many believe he"
-    line "is out there"
-    cont "looking for"
-    cont "YVELTAL."
+    para "I shall bestow"
+    line "our blessing upon"
+    cont "your #MON."
     done
 
 YamiScript:
@@ -288,6 +283,7 @@ YamiScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, ATEM
 	startbattle
+	ifequal LOSE, .lose
 	reloadmapafterbattle
 	setevent EVENT_BEAT_YAMI
 	opentext
@@ -308,12 +304,26 @@ YamiScript:
 	waitbutton
 	closetext
 	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext AtemWinAfterBattleText
+    waitbutton
+    closetext
+    end
 .catchXerneasFirst
     opentext
 	writetext CatchXerneasFirstText
 	waitbutton
 	closetext
 	end
+
+AtemWinAfterBattleText:
+	text "Remember this and"
+	line "use what you have"
+	cont "learnt."
+	done
 
 YamiSeenText:
     text "XERNEAS has chosen"
@@ -333,19 +343,14 @@ YamiSeenText:
     para "But I want no"
     line "such thing."
 
-    para "When you return"
-    line "home you will"
-    cont "be the only"
-    cont "person in the"
-    cont "world to remember"
-    cont "me."
+    para "Here I am the"
+    line "great Pharaoh"
+    cont "ATEM."
 
-    para "The great Pharaoh"
-    line "Atem."
-
-    para "Just one of"
-    line "countless long"
-    cont "since passed."
+    para "In your time I"
+    line "just another"
+    cont "person long since"
+    cont "passed."
 
     para "I will give one"
     line "one last gift."

@@ -1,6 +1,6 @@
 	db ZYGARDE ; 046
 
-	db  216,  100,  121,  85,  91,  95
+	db  216,  100,  106,  85,  91,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db DRAGON, GROUND ; type

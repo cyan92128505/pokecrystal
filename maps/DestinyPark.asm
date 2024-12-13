@@ -969,7 +969,7 @@ MasterChuckScript:
 MasterChuckSeenText:
 	text "We must never give"
 	line "into hopelessness"
-	cont "of laziness."
+	cont "or laziness."
 	para "Did GOKU get lazy"
 	line "on his way to"
 	cont "NAMEK or in the"
@@ -1243,7 +1243,7 @@ MasterClairWinText:
 
 MasterClairAfterBattleText:
 	text "Your dreams wont"
-	line "remain dream for"
+	line "remain dreams for"
 	cont "long."
 	para "But when you make"
 	line "them happen will"

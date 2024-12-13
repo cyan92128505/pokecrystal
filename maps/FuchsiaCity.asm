@@ -438,7 +438,7 @@ BlockingSoldier1Text:
 
 BlockingSoldier2Text:
     text "I saw the FUHRER"
-    line "battle welding"
+    line "battle wielding"
     cont "the great forces"
     cont "of HOEN."
 

@@ -4507,10 +4507,10 @@ BattleTowerMons:
     bigdw 635
     bigdw 635
     bigdw 298
-    bigdw 340
+    bigdw 310
     bigdw 268
     bigdw 280
-    bigdw 288
+    bigdw 258
 	db "RANTA-N@@@@"
 
     db DEOXYS

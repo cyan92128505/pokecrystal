@@ -153,15 +153,11 @@ GiratinaPlayerHasRayquazaText:
     line "receive true"
     cont "love."
 
-    para "I will inflict"
-    line "death upon you"
-    cont "a thousand"
-    cont "times..."
-    cont "RAYQUAZA!"
-
-    para "I shall savour"
-    line "each drop of"
-    cont "of your blood!"
+	para "I shall murder"
+	line "your dear RAYQUAZA"
+	cont "and spare him the"
+	cont "torment I"
+	cont "eternally endure."
 
     para "And you my"
     line "sweet disciple."
@@ -174,7 +170,9 @@ GiratinaPlayerHasRayquazaText:
     line "of me forever."
 
     para "I shall devour"
-    line "you, slowly..."
+    line "you."
+
+    para "Slowly..."
 
     para "Lovingly..."
 

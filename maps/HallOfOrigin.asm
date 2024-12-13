@@ -382,7 +382,7 @@ MasterOakIntroText:
     para "I seek another."
 
     para "One who might"
-    line "weld my great"
+    line "wield my great"
     cont "powers."
 
     para "Some have come"
@@ -1376,7 +1376,7 @@ MultiverseHeroes1Text:
 
     para "A young woman"
     line "with a pure heart"
-    cont "but welding dark"
+    cont "but wielding dark"
     cont "magic."
 
     para "She speaks with"

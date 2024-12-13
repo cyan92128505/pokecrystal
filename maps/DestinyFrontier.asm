@@ -255,7 +255,7 @@ MasterSetoScript:
 	para "I saw ATEM earlier"
 	line "following someone"
 	cont "who looked like"
-	cont "HENSHIN, but"
+	cont "HENSHIN, but it"
 	cont "couldn't be"
 	cont "HENSHIN."
 	done

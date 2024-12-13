@@ -1220,7 +1220,7 @@ AideText_AfterDad:
 	line "CHAMPION battle"
 	cont "before."
 	para "You destroyed your"
-	line "own dad."
+	line "own Dad."
 	para "I can't imagine"
 	line "level caps higher"
 	cont "than yours."

@@ -413,9 +413,9 @@ WifeAfterBattleText:
 	cont "here."
 	para "He will always be"
 	line "our wee boy."
-	para "Instead we have to"
-	line "put up with"
-	cont "ANDREWs brother."
+	para "Instead I have to"
+	line "put up with the"
+	cont "brother in-law."
 	done
 
 WifeLoseAfterBattleText:

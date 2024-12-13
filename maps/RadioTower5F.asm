@@ -290,7 +290,7 @@ RadioTower5FPlayerTwoStepsLeftMovement:
 Executivef1LossText:
 	text "It's not as much"
 	line "fun without your"
-	cont "sobbing dad."
+	cont "sobbing Dad."
 	para "I'm in a good mood"
 	line "so I'm letting you"
 	cont "live."

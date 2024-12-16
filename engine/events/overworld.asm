@@ -918,9 +918,9 @@ WarpDeviceScript:
 	loadmenu .BattleTowerWarpMenuHeader
 	_2dmenu
 	closewindow
-	ifequal 1, .newBark
-	ifequal 2, .pallet
-	ifequal 3, .league
+	ifequal 1, .home
+	ifequal 2, .goldenrod
+	ifequal 3, .saffron
 	ifequal 4, .battleTower
 	ifequal 5, .silver
 	closetext
@@ -937,9 +937,9 @@ WarpDeviceScript:
 	dba .BattleTowerWarpText
 	dbw BANK(@), NULL
 .BattleTowerWarpText:
-	db "NEWBARK@"
-	db "PALLET@"
-	db "LEAGUE@"
+	db "HOME@"
+	db "GOLDENROD@"
+	db "SAFFRON@"
 	db "FRONTIER@"
 	db "SILVER@"
 
@@ -947,9 +947,9 @@ WarpDeviceScript:
 	loadmenu .HomeMenuHeader
 	_2dmenu
 	closewindow
-	ifequal 1, .newBark
-	ifequal 2, .pallet
-	ifequal 3, .league
+	ifequal 1, .home
+	ifequal 2, .goldenrod
+	ifequal 3, .saffron
 	ifequal 4, .battleTower
 	closetext
 	end
@@ -965,22 +965,22 @@ WarpDeviceScript:
 	dba .HomeMenuText
 	dbw BANK(@), NULL
 .HomeMenuText:
-	db "NEWBARK@"
-	db "PALLET@"
-	db "LEAGUE@"
+	db "HOME@"
+	db "GOLDENROD@"
+	db "SAFFRON@"
 	db "FRONTIER@"
 
-.newBark
-	warp NEW_BARK_TOWN, 13, 18
+.home
+	warp PLAYERS_HOUSE_2F, 3, 3
 	end
-.pallet
-	warp PALLET_TOWN, 5, 6
+.goldenrod
+	warp GOLDENROD_CITY, 15, 28
 	end
 .battleTower
 	warp BATTLE_TOWER_OUTSIDE, 8, 16
 	end
-.league
-    warp ROUTE_23, 8, 6
+.saffron
+    warp SAFFRON_CITY, 9, 30
     end
 .silver
     warp SILVER_CAVE_OUTSIDE, 23, 20

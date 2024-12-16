@@ -26,8 +26,8 @@ BrentAnswerPhoneNiteText:
 	done
 
 BrentGreetText:
-	text "Hiya, <PLAYER>. How"
-	line "are you doing?"
+	text "Hiya <PLAYER>!"
+	line "How are you doing?"
 
 	para "Hey! It's me,"
 	line "@"
@@ -36,8 +36,8 @@ BrentGreetText:
 	done
 
 BrentGreetDayText:
-	text "Hiya, <PLAYER>, how"
-	line "are you doing?"
+	text "Hiya <PLAYER>!"
+	line "How are you doing?"
 
 	para "Hey, it's me,"
 	line "@"
@@ -46,8 +46,8 @@ BrentGreetDayText:
 	done
 
 BrentGreetNiteText:
-	text "Hiya, <PLAYER>, how"
-	line "are you doing?"
+	text "Hiya <PLAYER>!"
+	line "How are you doing?"
 
 	para "Hey, it's me,"
 	line "@"

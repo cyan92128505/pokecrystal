@@ -125,7 +125,7 @@
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_SASH   ; 77
-	const DECO_PRIZE   ; 78
+	const STAR_PRIZE   ; 78
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b
@@ -172,8 +172,8 @@
 	const FRIEND_BALL  ; a4 - friendly ball
 	const MOON_BALL    ; a5 - moon stone pokemon
 	const LOVE_BALL    ; a6 - opposite gender
-	const NORMAL_BOX   ; a7
-	const GORGEOUS_BOX ; a8
+	const SILVER_PRIZE   ; a7
+	const GOLD_PRIZE ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
 	const ITEM_AB      ; ab

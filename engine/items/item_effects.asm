@@ -134,7 +134,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_SASH
-	dw DecoPrizeEffect     ; DECO_PRIZE
+	dw DecoPrizeEffect     ; STAR_PRIZE
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER
@@ -181,8 +181,8 @@ ItemEffects:
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
 	dw PokeBallEffect      ; LOVE_BALL
-	dw NormalBoxEffect     ; NORMAL_BOX
-	dw GorgeousBoxEffect   ; GORGEOUS_BOX
+	dw NormalBoxEffect     ; SILVER_PRIZE
+	dw GorgeousBoxEffect   ; GOLD_PRIZE
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
 	dw NoEffect            ; ITEM_AB
@@ -2822,6 +2822,7 @@ SacredAshEffect:
 	call UseDisposableItem
 	ret
 
+; DevNote - Big Prize - adds all decorations except trophies
 DecoPrizeEffect:
     ld a, 1
 .loop

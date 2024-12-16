@@ -1408,14 +1408,10 @@ _MomLeavingText3::
 	done
 
 _MomIsThisAboutYourMoneyText::
-	text "Hi! Welcome home!"
-	line "You're trying very"
-	cont "hard, I see."
-
-	para "I've kept your"
+	text "I've kept your"
 	line "room tidy."
 
-	para "Or is this about"
+	para "Is this about"
 	line "your money?"
 	done
 
@@ -1478,8 +1474,11 @@ _MomTakenMoneyText::
 	done
 
 _MomJustDoWhatYouCanText::
-	text "Just do what"
-	line "you can."
+	text "Stay safe"
+	line "<PLAYER>."
+	para "You'll always be"
+	line "my baby."
+	para "I love you."
 	done
 
 _DaycareDummyText::

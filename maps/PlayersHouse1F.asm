@@ -152,6 +152,24 @@ PlayersHouse1FReceiveItemStd:
 
 MomScript:
 	faceplayer
+	checkevent EVENT_ROUTE_30_BATTLE
+	iffalse .start
+	opentext
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .checkDad
+	writetext PostWallaceMumText
+	sjump .continue
+.checkDad
+    checkevent EVENT_BEAT_DAD
+    iffalse .default
+	writetext PostDadMumText
+	sjump .continue
+.default
+    writetext MumDefaultText
+.continue
+    waitbutton
+    closetext
+.start
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	checkscene
 	iffalse MeetMomTalkedScript ; SCENE_DEFAULT
@@ -253,6 +271,38 @@ MomTurnsBackMovement:
 MomWalksBackMovement:
 	slow_step LEFT
 	step_end
+
+PostWallaceMumText:
+	text "We are so proud of"
+	line "you <PLAYER>."
+	para "You are our child."
+	para "Our CHAMPION."
+	para "Our HERO."
+	para "You will do great"
+	line "things and we will"
+	cont "always love you."
+	done
+
+PostDadMumText:
+	text "I wish we could"
+	line "all be a family"
+	cont "again."
+	para "But I know that is"
+	line "selfish."
+	para "You are the"
+	line "CHAMPION of JOHTO"
+	cont "and people need"
+	cont "you."
+	done
+
+MumDefaultText:
+	text "I'm proud of you"
+	line "<PLAYER>."
+	para "You are smart and"
+	line "kind."
+	para "I know you'll be a"
+	line "great trainer."
+	done
 
 ElmsLookingForYouText:
 	text "Oh <PLAYER>!"

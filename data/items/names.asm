@@ -120,7 +120,7 @@ ItemNames::
 	li "MIRACLE SEED"
 	li "THICK CLUB"
 	li "FOCUS SASH"
-	li "BIG PRIZE"
+	li "STAR PRIZE"
 	li "ENERGYPOWDER"
 	li "ENERGY ROOT"
 	li "HEAL POWDER"

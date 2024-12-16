@@ -19,7 +19,7 @@ TohjoFallsFieldMon1Script:
 	faceplayer
 	cry POLIWRATH
 	pause 15
-	loadwildmon POLIWRATH, 46
+	loadwildmon POLIWRATH, 47
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

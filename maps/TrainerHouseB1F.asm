@@ -1566,7 +1566,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem DECO_PRIZE
+	verbosegiveitem STAR_PRIZE
 	writetext TrialUnlockMasterText
 	waitbutton
 	closetext
@@ -1649,7 +1649,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem NORMAL_BOX
+	verbosegiveitem SILVER_PRIZE
 	writetext TrialUnlockImpossibleText
 	waitbutton
 	closetext
@@ -1708,7 +1708,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem GORGEOUS_BOX
+	verbosegiveitem GOLD_PRIZE
 	writetext TrialCongratsText
 	waitbutton
 	closetext

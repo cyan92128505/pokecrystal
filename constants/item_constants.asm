@@ -48,7 +48,6 @@
 	const MAX_REVIVE   ; 28
 	const GUARD_SPEC   ; 29
 	const GOLD_DICE    ; 2a
-	;const MAX_REPEL    ; 2b
 	const RUNNING_SHOES; 2b
 	const REPULSOR     ; 2c
 	const MARK_OF_GOD  ; 2d
@@ -126,7 +125,7 @@
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_SASH   ; 77
-	const ITEM_78      ; 78
+	const DECO_PRIZE   ; 78
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b

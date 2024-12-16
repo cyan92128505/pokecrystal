@@ -93,7 +93,7 @@ WallaceBeatenRadioPH:
 	para "The new CHAMPION"
 	line "<PLAYER> from"
 	cont "NEWBARK TOWN"
-	cont "defeated wallace"
+	cont "defeated WALLACE"
 	cont "and has saved us"
 	cont "all!"
 	cont "Rejoice!"

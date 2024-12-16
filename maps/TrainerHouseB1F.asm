@@ -1320,7 +1320,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer KIMONO_GIRL, YUNA_1
+    loadtrainer KIMONO_GIRL, AERITH_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1330,7 +1330,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer KIMONO_GIRL, AERITH_1
+    loadtrainer KIMONO_GIRL, YUNA_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1434,7 +1434,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer INVADER, CRESTFALLEN
+    loadtrainer CLAIR, CLAIR1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1444,7 +1444,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer CLAIR, CLAIR1
+    loadtrainer INVADER, CRESTFALLEN
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1566,7 +1566,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem AMBROSIA
+	verbosegiveitem DECO_PRIZE
 	writetext TrialUnlockMasterText
 	waitbutton
 	closetext

@@ -134,7 +134,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_SASH
-	dw NoEffect            ; ITEM_78
+	dw DecoPrizeEffect     ; DECO_PRIZE
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER
@@ -2821,6 +2821,25 @@ SacredAshEffect:
 	ret nz
 	call UseDisposableItem
 	ret
+
+DecoPrizeEffect:
+    ld a, 1
+.loop
+    cp 43
+    jr z, .done
+    ld c, a
+    push af
+    farcall SetSpecificDecorationFlag
+    pop af
+    inc a
+    jr .loop
+.done
+	ld hl, .SentDecorationsHomeText
+	call PrintText
+	jp UseDisposableItem
+.SentDecorationsHomeText:
+	text_far _SentDecorationsHomeText
+	text_end
 
 NormalBoxEffect:
 	ld c, DECOFLAG_SILVER_TROPHY_DOLL

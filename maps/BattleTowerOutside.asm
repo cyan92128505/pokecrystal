@@ -109,21 +109,16 @@ BattleTowerOutsideBeauty2Text:
     done
 
 BattleTowerOutsideSailorText:
-	text "This is grueling."
-
-	para "But I will never"
-	line "give up!"
-
-	para "I got to"
-	line "battle 9 once."
-
-	para "That's a new"
-	line "record for me!"
-
-	para "BATTLE TRIAL"
-	line "is all about"
-	cont "slow constant"
-	cont "improvement."
+	text "This is so tough!"
+	para "My record is"
+	line "battle 9."
+	para "But I hear the top"
+	line "prize here is a"
+	cont "treasure chest of"
+	cont "room decorations"
+	cont "that can't be"
+	cont "found anywhere"
+	cont "else!"
 	done
 
 BattleTowerOutsideSignText:

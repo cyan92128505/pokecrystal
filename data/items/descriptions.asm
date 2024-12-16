@@ -120,7 +120,7 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama8Desc
+	dw DecoPrizeDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -726,8 +726,9 @@ FocusBandDesc:
 	db   "Prevent KO from"
 	next "full HP@"
 
-TeruSama8Desc:
-	db   "?@"
+DecoPrizeDesc:
+	db   "Sends home all"
+	next "decorations!@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"

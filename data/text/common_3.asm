@@ -1354,6 +1354,12 @@ _PPRestoredText::
 	text "PP was restored."
 	prompt
 
+_SentDecorationsHomeText::
+    text "Congratulations!"
+    para "Your Bedroom is"
+    line "now decked out!"
+    prompt
+
 _SentTrophyHomeText::
 	text "There was a trophy"
 	line "inside!@"

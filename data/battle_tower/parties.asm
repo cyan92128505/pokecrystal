@@ -5815,9 +5815,9 @@ BattleTowerMons:
 	bigdw 228 ; SDef
 	db "RANTA-N@@@@"
 
-	db YANMEGA
-	db FOCUS_SASH
-	db AIR_SLASH, BUG_BUZZ, GIGA_DRAIN, HYPNOSIS
+	db QUAGSIRE
+	db LEFTOVERS
+	db WATERFALL, CURSE, AMNESIA, RECOVER
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5827,18 +5827,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 32 ; PP
+	db 24, 16, 32, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 375 ; HP
-	bigdw 375 ; Max HP
-	bigdw 250 ; Atk
-	bigdw 270 ; Def
-	bigdw 288 ; Spd
-	bigdw 330 ; SAtk
-	bigdw 210 ; SDef
+    bigdw 393
+    bigdw 393
+    bigdw 268
+    bigdw 268
+    bigdw 168
+    bigdw 228
+    bigdw 228
 	db "RANTA-N@@@@"
 
 	db MAMOSWINE

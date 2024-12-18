@@ -50,6 +50,10 @@ MasterChrisChanScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_CHRIS_CHAN
 	special HealParty
+	opentext
+	writetext ChrisChanAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext ChrisChanAfterBattleText
@@ -124,6 +128,10 @@ MasterYamiScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_YAMI
 	special HealParty
+	opentext
+	writetext MasterYamiAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterYamiAfterBattleText
@@ -207,6 +215,10 @@ MasterSetoScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_SETO
 	special HealParty
+	opentext
+	writetext MasterSetoAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterSetoAfterBattleText
@@ -286,6 +298,10 @@ MasterDrakeScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_DRAKE
 	special HealParty
+	opentext
+	writetext MasterDrakeAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterDrakeAfterBattleText
@@ -366,6 +382,10 @@ MasterExecutiveFScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_EXECUTIVEF
 	special HealParty
+	opentext
+	writetext MasterExecutiveAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterExecutiveAfterBattleText
@@ -449,6 +469,10 @@ MasterTobiasScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_TOBIAS
 	special HealParty
+	opentext
+	writetext MasterTobiasAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterTobiasAfterBattleText
@@ -521,6 +545,10 @@ MasterYunaScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_YUNA
 	special HealParty
+	opentext
+	writetext MasterYunaAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterYunaAfterBattleText
@@ -594,6 +622,10 @@ MasterAizenScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_AIZEN
 	special HealParty
+	opentext
+	writetext MasterAizenAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterAizenAfterBattleText
@@ -673,6 +705,10 @@ MasterXehanortScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_XEHANORT
 	special HealParty
+	opentext
+	writetext MasterXehanortAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterXehanortAfterBattleText
@@ -748,6 +784,10 @@ MasterAerithScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MASTER_AERITH
 	special HealParty
+	opentext
+	writetext MasterAerithAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext MasterAerithAfterBattleText
@@ -819,6 +859,10 @@ UltimaScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ULTIMA
 	special HealParty
+	opentext
+	writetext UltimaAfterBattleText
+	waitbutton
+	closetext
 	end
 .FightDone:
 	writetext UltimaAfterBattleText

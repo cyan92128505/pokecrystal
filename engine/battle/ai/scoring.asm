@@ -1617,6 +1617,10 @@ AI_Smart_Moonlight:
     jr c, .discourage
 
 .nonRestHeal
+; don't heal if afflicted with toxic
+    call IsAIToxified
+    jr c, .discourage
+
 ; don't heal if player can 2 shot from max hp, no point
     call CanPlayer2HKOMaxHP
     jr c, .discourage

@@ -3530,7 +3530,7 @@ CamperGroup:
 	; CAMPER (2)
 	db "TODD@", TRAINERTYPE_NORMAL
 	db 24, PSYDUCK
-	db 24, BELLSPROUT
+	db 24, WEEPINBELL
 	db 24, GROWLITHE
 	db -1 ; end
 

@@ -959,7 +959,7 @@ WarpDeviceScript:
 	dw .HomeMenuData
 	db 1 ; default option
 .HomeMenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db STATICMENU_CURSOR ; flags
 	dn 4, 1 ; rows, columns
 	db 5 ; spacing
 	dba .HomeMenuText

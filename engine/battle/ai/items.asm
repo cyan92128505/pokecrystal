@@ -689,6 +689,9 @@ AI_TrySwitch:
 	ret nz
 
 ; DevNote - switch, don't switch if already set up
+; there is a bit of an issue here
+; this prevents the AI from switching out a set up mon because there is another with a better type match - which is good
+; but this also prevents the ai from switching out a set up mon which has ran out of pp on a common mono-attacking move
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 2
 	ret nc
@@ -754,7 +757,7 @@ AI_Switch:
 	call PrintText
 
 .skiptext
-; DevNote - commented out - this assumed the ai will not switch during battle
+; DevNote - switch - this assumed the ai will not switch during battle
 	;ld a, 1
 	;ld [wBattleHasJustStarted], a
 	callfar NewEnemyMonStatus

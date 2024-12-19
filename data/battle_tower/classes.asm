@@ -16,13 +16,11 @@ BattleTowerTrainers:
 	db "SAM@@@@@@@", SAILOR
 	db "IRENE@@@@@", MEDIUM
 	db "HARRY@@@@@", BLACKBELT_T
-	db "BEN@@@@@@@", FISHER
 	db "JOSHUA@@@@", BIKER
 	db "ZAC@@@@@@@", BUG_CATCHER
 	db "EVE@@@@@@@", PICNICKER
 	db "KRISTY@@@@", BEAUTY
 	db "CARLA@@@@@", PICNICKER
-	db "HOLLY@@@@@", LASS
 	db "COOPER@@@@", FIREBREATHER
 	db "SHEERIN@@@", POKEFANM
 	db "MAURO@@@@@", SCIENTIST
@@ -38,7 +36,9 @@ BattleTowerTrainers:
 	db "ASHLEY@@@@", FISHER
 	db "MEREDITH@@", COOLTRAINERF
 	db "GERRY@@@@@", OFFICER
-	db "DAVE HILL@", FIREBREATHER
+    db "ROBERT@@@@", SAILOR
+    db "ANNIE@@@@@", KIMONO_GIRL
+    db "MIN@@@@@@@", POKEFANF
 ; same again
 	db "ALAN@@@@@@", HIKER
 	db "FREDA@@@@@", KIMONO_GIRL
@@ -52,13 +52,11 @@ BattleTowerTrainers:
 	db "SAM@@@@@@@", SAILOR
 	db "IRENE@@@@@", MEDIUM
 	db "HARRY@@@@@", BLACKBELT_T
-	db "BEN@@@@@@@", FISHER
 	db "JOSHUA@@@@", BIKER
 	db "ZAC@@@@@@@", BUG_CATCHER
 	db "EVE@@@@@@@", PICNICKER
 	db "KRISTY@@@@", BEAUTY
 	db "CARLA@@@@@", PICNICKER
-	db "HOLLY@@@@@", LASS
 	db "COOPER@@@@", FIREBREATHER
 	db "SHEERIN@@@", POKEFANM
 	db "MAURO@@@@@", SCIENTIST
@@ -74,5 +72,7 @@ BattleTowerTrainers:
 	db "ASHLEY@@@@", FISHER
 	db "MEREDITH@@", COOLTRAINERF
 	db "GERRY@@@@@", OFFICER
-	db "DAVE HILL@", FIREBREATHER
+    db "ROBERT@@@@", SAILOR
+    db "ANNIE@@@@@", KIMONO_GIRL
+    db "MIN@@@@@@@", POKEFANF
 	assert_table_length BATTLETOWER_NUM_UNIQUE_TRAINERS

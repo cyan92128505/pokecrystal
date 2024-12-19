@@ -835,6 +835,55 @@ ManorFact18:
      closetext
      end
 
+ ManorFact22:
+     opentext
+     checkevent EVENT_BEAT_ANDREW
+     iftrue .cheatText
+     writetext ManorCheatLockedText
+     sjump .end
+.cheatText
+     writetext ManorCheatText
+.end
+     waitbutton
+     closetext
+     end
+
+ManorCheatLockedText:
+	text "Only those with"
+	line "the HAND OF GOD"
+	cont "may read this"
+	cont "secret text."
+	done
+
+ManorCheatText:
+	text "Thank you for"
+	line "playing #MON"
+	cont "AMBROSIA."
+	para "These cheat codes"
+	line "might make your"
+	cont "next play through"
+	cont "more interesting."
+	para "Infinite Money"
+	line "010F40D8"
+	cont "014241D8"
+	cont "013F42D8"
+	para "Change first item"
+	line "in marts."
+	para "RARE CANDY"
+	line "0120FCD0"
+	para "AMBROSIA"
+	line "018BFCD0"
+	para "MASTER BALL"
+	line "0101FCD0"
+	para "MARK OF GOD"
+	line "012DFCD0"
+	para "HAND OF GOD"
+	line "0132FCD0"
+	para "Make all wild"
+	line "#MON ARCEUS"
+	cont "01FD0FD2"
+	done
+
 ManorFact1Text:
 	text "The first thing"
 	line "created for this"
@@ -917,7 +966,7 @@ ManorFact6Text:
 ManorFact7Text:
 	text "This romhack took"
 	line "nearly 3 years and"
-	cont "700 commits to"
+	cont "720 commits to"
 	cont "create."
 	para "I had my first"
 	line "child and got"
@@ -1141,10 +1190,10 @@ ManorInside_MapEvents:
 	bg_event  5, 13, BGEVENT_READ, ManorFact1
 	bg_event  4, 13, BGEVENT_READ, ManorFact2
 	bg_event  3, 13, BGEVENT_READ, ManorFact3
-	bg_event  12, 1, BGEVENT_READ, ManorFact4
-	bg_event  13, 1, BGEVENT_READ, ManorFact5
-	bg_event  14, 1, BGEVENT_READ, ManorFact6
-	bg_event  15, 1, BGEVENT_READ, ManorFact7
+	bg_event 11,  1, BGEVENT_READ, ManorFact4
+	bg_event 12,  1, BGEVENT_READ, ManorFact5
+	bg_event 13,  1, BGEVENT_READ, ManorFact6
+	bg_event 14,  1, BGEVENT_READ, ManorFact7
 	bg_event  0, 1, BGEVENT_READ, ManorFact8
 	bg_event  1, 1, BGEVENT_READ, ManorFact9
 	bg_event  2, 1, BGEVENT_READ, ManorFact10
@@ -1159,6 +1208,7 @@ ManorInside_MapEvents:
 	bg_event  9,  25, BGEVENT_READ, ManorFact19
 	bg_event  12,  25, BGEVENT_READ, ManorFact20
 	bg_event  13,  25, BGEVENT_READ, ManorFact21
+	bg_event  15,  1, BGEVENT_READ, ManorFact22
 
 	def_object_events
 	object_event  15,  4, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1

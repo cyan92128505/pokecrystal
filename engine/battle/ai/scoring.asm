@@ -311,13 +311,20 @@ AI_Basic:
 ;	jr z, .discourage
 
 .checkMonoAttack
-; switch if current move is
-; PSYBLAST or DRACO_METEOR (common mono-attackers)
-; and its pp is 0
+; switch if current move is common mon-attacking move and it is are out of pp
+; note - this will be blocked by other logic in AI_TrySwitch if the mon has set up, which it probably has
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
     cp PSYBLAST
     jr z, .checkPP
     cp DRACO_METEOR
+    jr z, .checkPP
+    cp WATERFALL
+    jr z, .checkPP
+    cp DRAGON_PULSE
+    jr z, .checkPP
+    cp MOON_BLAST
+    jr z, .checkPP
+    cp DARK_PULSE
     jr z, .checkPP
     jr .checkKO
 .checkPP

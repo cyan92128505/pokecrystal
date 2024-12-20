@@ -318,13 +318,9 @@ AI_Basic:
     jr z, .checkPP
     cp DRACO_METEOR
     jr z, .checkPP
-    cp WATERFALL
-    jr z, .checkPP
     cp DRAGON_PULSE
     jr z, .checkPP
     cp MOON_BLAST
-    jr z, .checkPP
-    cp DARK_PULSE
     jr z, .checkPP
     jr .checkKO
 .checkPP
@@ -1294,11 +1290,15 @@ AI_Smart_DreamEater:
 	ret
 
 AI_Smart_EvasionUp:
-; discourage if enemy is Arceus or Machamp
+; discourage if enemy is Arceus, Machamp, Magnezone or Zygarde
     ld a, [wBattleMonSpecies]
     cp ARCEUS
     jr z, .discourage
     cp MACHAMP
+    jr z, .discourage
+    cp MAGNEZONE
+    jr z, .discourage
+    cp ZYGARDE
     jr z, .discourage
 
 ; encourage to +4 and discourage after

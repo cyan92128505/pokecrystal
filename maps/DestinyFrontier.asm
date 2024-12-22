@@ -851,6 +851,8 @@ UltimaScript:
 	writetext UltimaSeenText
 	waitbutton
 	closetext
+	setval MUSIC_XVZ
+	writemem wBattleMusicOverride
 	winlosstext UltimaBeatenText, UltimaWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMANIAC, ULTIMA

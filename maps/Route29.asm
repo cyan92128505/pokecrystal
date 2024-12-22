@@ -363,7 +363,7 @@ Route29CooltrainerMText_WaitingForNight:
 	line "RATICATE out"
 	cont "there, it nearly"
 	cont "got me."
-	para "I too afraid to"
+	para "I'm too afraid to"
 	line "leave."
 	done
 

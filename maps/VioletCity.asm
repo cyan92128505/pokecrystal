@@ -128,7 +128,7 @@ VioletCityFruitTree:
 	fruittree FRUITTREE_VIOLET_CITY
 
 VioletCityHiddenHyperPotion:
-	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
+	hiddenitem POLKADOT_BOW, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
 
 VioletCityFollowEarl_MovementData:
 	big_step DOWN
@@ -263,7 +263,7 @@ VioletCityLassText:
 
     para "What other secrets"
     line "are buried under"
-    cont "that tower."
+    cont "that tower?"
 	done
 
 VioletCitySuperNerdText:

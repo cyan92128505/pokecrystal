@@ -35,8 +35,6 @@ LavenderForest_MapScripts:
     
 ShayminScript:
 	opentext
-	writetext ShayminCry
-	waitbutton
 	cry SHAYMIN
 	pause 15
 	closetext
@@ -57,10 +55,6 @@ ShayminScript:
 	special HealParty
 	refreshscreen
 	end
-
-ShayminCry:
-    text "SHAYMIN!"
-    done
     
 LavenderForestFieldMon1Script:
 	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, LavenderForestPokemonAttacksText, 73, 0, .script

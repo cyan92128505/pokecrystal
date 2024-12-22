@@ -667,9 +667,8 @@ ManorRC2:
 ManorRC2Text:
 	text "Looks like the"
 	line "last game played"
-	cont "was Ratchet and"
-	cont "Clank Going"
-	cont "Commando."
+	cont "was Final Fantasy"
+	cont "X."
 	para "Now that's a good"
 	line "game!"
 	done

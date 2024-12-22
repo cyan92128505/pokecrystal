@@ -372,8 +372,12 @@ TrainerPicnickerTiffany:
 	end
 
 TiffanyNumberAcceptedText:
-	text "Thank you very"
-	line "much."
+	text "Remember your best"
+	line "chance at"
+	cont "surviving is to"
+	cont "run away."
+	para "Never go with them"
+	line "no mater what."
 	para "Be careful out"
 	line "there."
 	done

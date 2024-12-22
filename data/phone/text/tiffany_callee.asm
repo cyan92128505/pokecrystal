@@ -25,6 +25,7 @@ TiffanyAnswerPhoneNiteText:
 	text "."
 
 	para "Oh, <PLAY_G>, good"
+	para "Oh, <PLAY_G>, good"
 	line "evening."
 	done
 

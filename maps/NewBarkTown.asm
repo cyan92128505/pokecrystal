@@ -95,6 +95,8 @@ NewBarkTown_TeacherStopsYouScene2:
 NewBarkTownTeacherScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatE4
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	iftrue .CallMom
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
@@ -124,7 +126,17 @@ NewBarkTownTeacherScript:
 	closetext
 	end
 
+.BeatE4:
+	writetext Text_SafeWithYou
+	waitbutton
+	closetext
+	end
+
 NewBarkTownFisherScript:
+    checkevent EVENT_BEAT_ELITE_FOUR
+    iffalse .notBeatE4
+    jumptextfaceplayer Text_FishBeatE4
+.notBeatE4
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownSilverScript:
@@ -236,6 +248,16 @@ Text_GearIsImpressive:
 	cont "default."
 	done
 
+Text_SafeWithYou:
+	text "Hello CHAMPION"
+	line "<PLAYER>!"
+	para "You make me so"
+	line "proud to be from"
+	cont "NEWBARK TOWN."
+	para "I feel safe with"
+	line "you here."
+	done
+
 Text_WaitPlayer:
 	text "Wait, <PLAY_G>!"
 	done
@@ -281,6 +303,16 @@ Text_ElmDiscoveredNewMon:
 
 	para "He can take care"
 	line "of himself."
+	done
+
+Text_FishBeatE4:
+	text "Wow <PLAYER> you"
+	line "are the CHAMPION!"
+	para "You dad is so"
+	line "proud."
+	para "You are way"
+	line "stronger than he"
+	cont "could ever be!"
 	done
 
 NewBarkTownRivalNotThatOneText:
@@ -920,6 +952,6 @@ NewBarkTown_MapEvents:
 	object_event 10,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
 	object_event  7, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 
-	object_event 16, 20, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
-	object_event 14, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
+	object_event 14, 20, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
+	object_event 12, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
 

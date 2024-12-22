@@ -49,7 +49,7 @@ BrentPhoneFullText:
 	done
 
 BrentRematchText:
-	text " Finally."
+	text "Finally!"
 	para "Oh I've been"
 	line "waiting for this."
 	para "PORYGONZ, ready"

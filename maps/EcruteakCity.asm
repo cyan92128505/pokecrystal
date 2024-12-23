@@ -89,7 +89,7 @@ EcruteakCityGramps1Text:
 	para "I lost him 15"
 	line "years ago in"
 	cont "the last war"
-	cont "with HOEN."
+	cont "with HOENN."
 
 	para "I pray for"
 	line "him everyday."

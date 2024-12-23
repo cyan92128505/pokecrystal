@@ -70,13 +70,13 @@ ViridianPokecenter1FCooltrainerFText:
 
 	para "CINNABAR was"
 	line "destroyed by a"
-	cont "new HOEN weapon."
+	cont "new HOENN weapon."
 	done
 
 ViridianPokecenter1FBugCatcherText:
 	text "CINNABAR was"
 	line "not destroyed by"
-	cont "a HOEN weapon."
+	cont "a HOENN weapon."
 
 	para "They want us to"
 	line "think that to"

@@ -176,7 +176,7 @@ SwimmermSimonSeenText:
 	para "You know..."
 
 	para "I don't think"
-	line "HOEN rule would"
+	line "HOENN rule would"
 	cont "be so bad."
 	done
 
@@ -245,7 +245,7 @@ SwimmerfElaineAfterBattleText:
 	done
 
 SwimmerfPaulaSeenText:
-	text "I visited HOEN"
+	text "I visited HOENN"
 	line "once."
 
 	para "It had such"
@@ -265,7 +265,7 @@ SwimmerfPaulaAfterBattleText:
 	line "and filthy."
 
 	para "I'm rooting"
-	line "for HOEN."
+	line "for HOENN."
 	done
 
 Route40Lass1Text:

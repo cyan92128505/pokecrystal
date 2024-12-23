@@ -153,7 +153,7 @@ SaffronCityLass1Text:
 SaffronCityPokefanMText:
 	text "Everybody here"
 	line "knows that when"
-	cont "HOEN invades they"
+	cont "HOENN invades they"
 	cont "will be cutting a"
 	cont "path straight to"
 	cont "SAFFRON!"
@@ -228,7 +228,7 @@ SaffronCityCooltrainerFText:
 	done
 
 SaffronCityFisherText:
-	text "Last time HOEN"
+	text "Last time HOENN"
 	line "invaded they made"
 	cont "it to SAFFRON."
 	
@@ -260,7 +260,7 @@ SaffronCityFisherText_BeatWallace:
 	line "igniting and a"
 	cont "storm of DRAGONS"
 	cont "taking out the"
-	cont "HOEN forces."
+	cont "HOENN forces."
 	
 	para "But I hear you"
 	line "were even more"

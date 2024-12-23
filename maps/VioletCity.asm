@@ -308,12 +308,12 @@ VioletCityYoungsterText:
 	para "You need SURF"
 	line "to get there."
 
-	para "When the HOEN"
+	para "When the HOENN"
 	line "army comes for"
 	cont "us I'll hide"
 	cont "there."
 
-	para "I hope HOEN"
+	para "I hope HOENN"
 	line "#MON can't"
 	cont "swim!"
 	done

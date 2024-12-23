@@ -630,7 +630,7 @@ Crystal1_WellDoneText:
     para "Beat all the ELITE"
     line "FOUR and CHAMPION."
 
-    para "Crush the HOEN"
+    para "Crush the HOENN"
     line "army and save all"
     cont "JOHTO and KANTO!"
 

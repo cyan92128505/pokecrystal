@@ -445,7 +445,7 @@ Route29Sign2Text:
 	done
 	
 Route29FieldMon1Script:
-	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route29PokemonAttacksText, 16, 0, .script
+	trainer RATICATE, FIELD_MON, EVENT_FIELD_MON_1, Route29PokemonAttacksText, 14, 0, .script
 .script
     disappear ROUTE29_FIELDMON_1
     end
@@ -463,9 +463,9 @@ Route29PokemonAttacksText:
 	
 Route29FieldMon4Script:
 	faceplayer
-	cry ARCEUS
+	cry BUNEARY
 	pause 15
-	loadwildmon ARCEUS, 1
+	loadwildmon BUNEARY, 6
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

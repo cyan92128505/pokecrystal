@@ -708,7 +708,7 @@ CameHereToGetMedicine:
     para "But a man showed"
     line "up here a few days"
     cont "ago and I am sure"
-    cont "he is a HOEN spy."
+    cont "he is a HOENN spy."
 
     para "I can read his"
     line "mind and I'm"
@@ -733,7 +733,7 @@ HoenSpyBelieve:
 
 SeeYouAtBeach:
     text "Together we will"
-    line "take this HOEN"
+    line "take this HOENN"
     cont "spy down!"
 
     para "Meet me at the"
@@ -799,7 +799,7 @@ HeIsOverThere:
 
     para "I'm sure he plans"
     line "to use it to guide"
-    cont "other HOEN forces."
+    cont "the HOENN forces."
 
     para "Hang on..."
 
@@ -857,7 +857,7 @@ YesIAm:
     line "spy."
 
     para "I am a CAPTAIN"
-    line "of the HOEN"
+    line "of the HOENN"
     cont "fleet."
 
     para "I report directly"
@@ -984,7 +984,7 @@ ByeBye:
     line "be the last"
     cont "time you save"
     cont "people from the"
-    cont "forces of HOEN."
+    cont "forces of HOENN."
 
     para "Good luck"
     line "<PLAYER>"

@@ -185,7 +185,7 @@ FalseIntroText:
 WarHasBegunText:
     text "War has begun..."
 
-    para "The HOEN invasion"
+    para "The HOENN invasion"
     line "forces have"
     cont "established a"
     cont "bridgehead at"

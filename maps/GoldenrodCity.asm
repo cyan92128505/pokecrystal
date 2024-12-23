@@ -428,7 +428,7 @@ GoldenrodCityRocketScoutText1:
 
 	para "This tower shall"
 	line "be our salvation"
-	cont "against the HOEN"
+	cont "against the HOENN"
 	cont "onslaught."
 	done
 
@@ -464,7 +464,7 @@ GoldenrodCityRocket3Text:
 
 	para "We will protect"
 	line "everyone from"
-	cont "HOEN!"
+	cont "HOENN!"
 
 	para "If we get rich"
 	line "while doing it"

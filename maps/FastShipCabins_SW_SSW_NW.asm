@@ -118,7 +118,7 @@ FirebreatherLyleSeenText:
 
 	para "The CINNABAR GYM"
 	line "was destroyed in"
-	cont "a HOEN attack."
+	cont "a HOENN attack."
 
 	para "Everyone knows the"
 	line "volcano wasn't"

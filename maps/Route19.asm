@@ -156,7 +156,7 @@ SwimmermHaroldSeenText:
 	done
 
 SwimmermHaroldBeatenText:
-	text "Welcome HOEN!"
+	text "Welcome HOENN!"
 	done
 
 SwimmermHaroldAfterBattleText:
@@ -241,7 +241,7 @@ Route19Fisher2Text_RocksCleared:
 	line "kind fo small"
 	cont "earthquake and it"
 	cont "shifted the rocks!"
-	para "Maybe it was HOEN."
+	para "it was HOENN!"
 	para "I'll have to thank"
 	line "them when they get"
 	cont "here eh!"

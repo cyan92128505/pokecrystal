@@ -1061,20 +1061,20 @@ MasterWallaceSeenText:
     para "I will show the"
     line "world that the"
     cont "power and beauty"
-    cont "of HOEN is enough"
+    cont "of HOENN is enough"
     cont "to conquer all."
     done
 
 MasterWallaceWinText:
     text "Do you now see"
     line "the beauty of"
-    cont "HOEN."
+    cont "HOENN."
     done
 
 MasterWallaceLoseText:
     text "I will never"
     line "stop fighting"
-    cont "for HOEN."
+    cont "for HOENN."
     done
 
 MasterWallaceAfterBattleText:
@@ -1098,7 +1098,7 @@ MasterWallaceAfterBattleText:
     para "I dedicate the"
     line "rest of my"
     cont "life to making"
-    cont "HOEN the protector"
+    cont "HOENN the defender"
     cont "of the world."
     done
 
@@ -1106,7 +1106,7 @@ LoseAfterBattleTextMasterWallace:
     text "Do not fear"
     line "your defeat."
 
-    para "HOEN shall protect"
+    para "HOENN shall defend"
     line "you and everyone."
     done
 

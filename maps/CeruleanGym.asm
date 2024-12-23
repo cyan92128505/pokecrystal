@@ -243,7 +243,7 @@ CeruleanGymGruntBigMistakeText:
 
 CeruleanGymGruntByeText:
 	text "I will not"
-	line "allow HOEN to"
+	line "allow HOENN to"
 	cont "get away with"
 	cont "their disrespect"
 	cont "of KANTO."
@@ -293,7 +293,7 @@ MistyIntroText:
 	cont "beautiful."
 
 	para "It is said that"
-	line "only HOEN trainers"
+	line "HOENN trainers"
 	cont "can unlock the"
 	cont "full potential of"
 	cont "WATER #MON."
@@ -409,7 +409,7 @@ SwimmermParkerSeenText:
 	cont "an extra respons-"
 	cont "ibility to do my"
 	cont "part to fight"
-	cont "against HOEN."
+	cont "against HOENN."
 
 	para "I need to train!"
 	done

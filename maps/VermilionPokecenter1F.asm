@@ -57,7 +57,7 @@ VermilionPokecenter1FSailorText:
 	done
 
 InvadedVermilionPokecenter1FSailorText:
-	text "Damn those HOEN"
+	text "Damn those HOENN"
 	line "soldiers!"
 
 	para "They got such"

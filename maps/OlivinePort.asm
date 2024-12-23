@@ -387,7 +387,7 @@ OlivinePortSailorBeforeHOFText:
 	text "It is very risky"
 	line "to travel by sea."
 
-	para "HOEN subs may be"
+	para "HOENN subs may be"
 	line "out there."
 	done
 

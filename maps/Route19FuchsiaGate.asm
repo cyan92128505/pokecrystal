@@ -41,7 +41,7 @@ Route19FuchsiaGateOfficerText_RocksCleared:
 	line "erupted."
 
 	para "Some say it was"
-	line "the doing of HOEN."
+	line "HOENN."
 
 	para "How can anyone"
 	line "make a volcano"

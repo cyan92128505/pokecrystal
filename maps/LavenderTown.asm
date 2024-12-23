@@ -64,7 +64,7 @@ LavenderTownPokefanMText:
 	para "When it was"
 	line "marketed that it"
 	cont "would help in the"
-	cont "war with HOEN."
+	cont "war with HOENN."
 
 	para "Peoples opinions"
 	line "quickly changed."

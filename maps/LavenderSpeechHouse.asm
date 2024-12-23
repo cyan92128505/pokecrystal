@@ -20,7 +20,7 @@ LavenderSpeechHousePokefanFText:
 	para "All the talk of"
 	line "war will do that."
 
-	para "Last time HOEN"
+	para "Last time HOENN"
 	line "invaded they"
 	cont "came here."
 

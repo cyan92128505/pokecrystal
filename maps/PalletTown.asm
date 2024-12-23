@@ -309,7 +309,7 @@ PalletTownCrystalText_Intro:
     para "...."
 
     para "I have heard that"
-    line "HOEN may invade"
+    line "HOENN may invade"
     cont "any day now."
 
     para "I bet you have"
@@ -351,7 +351,7 @@ PalletTownCrystalText_KeepItUp:
     line "anyone beating"
     cont "you!"
 
-    para "When HOEN invade"
+    para "When HOENN invade"
     line "I know you will"
     cont "defeat them."
 

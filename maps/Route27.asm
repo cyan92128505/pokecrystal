@@ -385,7 +385,7 @@ BirdKeeperJoseBeatenText:
 	done
 
 BirdKeeperJoseAfterBattleText:
-	text "Let HOEN come!"
+	text "Let HOENN come!"
 
 	para "my #MON will"
 	line "feast on their"

@@ -8632,7 +8632,7 @@ LoadTrainerOrWildMonPic:
 .field_mon
     ld a, [wWinTextPointer]
     ld [wCurPartyLevel], a
-    ld a, BATTLETYPE_PERFECT
+    ld a, BATTLETYPE_PERFECT_ESCAPE
     ld [wBattleType], a
     ld a, [wOtherTrainerClass]
     ld [wTempWildMonSpecies], a

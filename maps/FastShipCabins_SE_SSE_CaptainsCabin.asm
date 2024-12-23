@@ -318,7 +318,7 @@ SSAquaEntertainedGranddaughterText:
 
 	para "The captain is"
 	line "not selling"
-	cont "secrets to HOEN."
+	cont "secrets to HOENN."
 
 	para "Here, I have been"
 	line "authorized to give"

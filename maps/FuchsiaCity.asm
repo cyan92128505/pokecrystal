@@ -172,7 +172,7 @@ FuchsiaCityYoungsterText:
 	text "The previous GYM"
 	line "LEADER here was"
 	cont "killed battling"
-	cont "HOEN."
+	cont "HOENN."
 
 	para "We will never"
 	line "forget you KOGA."
@@ -418,7 +418,7 @@ BlockingSoldier1Text:
 
     para "WALLACE himself"
     line "showed her the"
-    cont "power of HOEN."
+    cont "power of HOENN."
 
     para "He took mercy on"
     line "the child and"
@@ -440,7 +440,7 @@ BlockingSoldier2Text:
     text "I saw the FUHRER"
     line "battle wielding"
     cont "the great forces"
-    cont "of HOEN."
+    cont "of HOENN."
 
     para "It was beautiful"
     line "watching the FIRE"
@@ -596,7 +596,7 @@ FuchsiaSelfText2:
     done
 
 FuchsiaSelfText3:
-    text "The HOEN army"
+    text "The HOENN army"
     line "are not like"
     cont "TEAM ROCKET."
 
@@ -653,7 +653,7 @@ FuchsiaSelfConfidenceText2:
     text "I have the power!"
 
     para "I am the CHAMPION"
-    line "of HOEN!"
+    line "of HOENN!"
 
     para "I must try!"
     done

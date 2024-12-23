@@ -56,7 +56,7 @@ ElmsHousePCPostWallaceText:
     para "CHAMPION STEVEN"
     line "lives and has"
     cont "assumed command"
-    cont "of the HOEN army."
+    cont "of the HOENN army."
 
     para "The war is over."
 
@@ -86,7 +86,7 @@ ElmsHousePCText:
 	line "FUHRER WALLACE"
 	cont "may now be in"
 	cont "command of the"
-	cont "HOEN LEGENDARY"
+	cont "HOENN LEGENDARY"
 	cont "#MON."
 
 	para "If he controls the"

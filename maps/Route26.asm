@@ -711,7 +711,7 @@ Route26CrystalText_Serious:
     para "I don't want to"
     line "be on the front"
     cont "line against"
-    cont "the HOEN army."
+    cont "the HOENN army."
 
     para "I want us to"
     line "just have fun"

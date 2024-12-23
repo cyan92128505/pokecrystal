@@ -580,14 +580,14 @@ GoAwayText:
 
 HoenCaptainSeenText:
 	text "You have"
-	line "disrespected HOEN"
+	line "disrespected HOENN"
 	cont "for your first and"
 	cont "last time!"
 	para "I have been"
 	line "tasked with"
 	cont "containing the"
 	cont "ELECTRIC GYM."
-	para "HOEN will"
+	para "HOENN will"
 	line "liberate all of"
 	cont "KANTO!"
 	para "If you are not"

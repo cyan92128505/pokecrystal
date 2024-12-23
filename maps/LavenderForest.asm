@@ -179,7 +179,7 @@ AgathaSeenText2:
     line "ELITE FOUR"
     cont "member."
 
-    para "Last time HOEN"
+    para "Last time HOENN"
     line "attacked she"
     cont "defended our"
     cont "home."

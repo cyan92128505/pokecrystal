@@ -140,7 +140,7 @@ PlayersNeighborTextPostWallace:
 PlayerNeighborRadioText1:
 	text "Breaking news!"
 
-	para "The HOEN fleet"
+	para "The HOENN fleet"
 	line "have been seen"
 	cont "mobilising near"
 	cont "the coast."
@@ -160,7 +160,7 @@ PlayerNeighborRadioText3:
 	done
 
 PlayerNeighborRadioText4:
-	text "The HOEN war is"
+	text "The HOENN war is"
 	line "inevitable."
 
 	para "ARCEUS help us!"

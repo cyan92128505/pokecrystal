@@ -98,7 +98,7 @@ CinnabarIslandBlueText:
 	line "#RUS outbreak."
 
 	para "And now the war"
-	line "with HOEN."
+	line "with HOENN."
 
 	para "You know what the"
 	line "LEAUGE does."

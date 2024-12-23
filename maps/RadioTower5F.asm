@@ -396,7 +396,7 @@ FakeDirectorLoseText:
 	done
 
 FakeDirectorTextAfter:
-	text "The HOEN legendary"
+	text "The HOENN legend"
 	line "#MON are"
 	cont "must stronger"
 	cont "than the elemental"
@@ -456,7 +456,7 @@ Executivef1SeenText:
 	cont "the same."
 
 	para "Your time has come"
-	line "HOEN sympathiser!"
+	line "HOENN sympathiser!"
 	done
 
 Executivef1BeatenText:
@@ -491,7 +491,7 @@ Executivef1AfterBattleText:
 	line "brother finish"
 	cont "his work."
 
-	para "HOEN will kill"
+	para "HOENN will kill"
 	line "everyone you"
 	cont "love."
 
@@ -502,7 +502,7 @@ Executivef1AfterBattleText:
 
 	para "LANCE then"
 	line "liberated SAFFRON"
-	cont "from HOEN control."
+	cont "from HOENN."
 
 	para "But our lives"
 	line "were already"
@@ -522,7 +522,7 @@ RadioTower5FRocketBossBeforeText:
 	cont "#MON."
 
 	para "Our only hope"
-	line "to defeat HOEN"
+	line "to defeat HOENN"
 	cont "is to use this"
 	cont "signal to turn"
 	cont "their legendary"

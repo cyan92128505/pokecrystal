@@ -1659,7 +1659,7 @@ _WallaceText1::
 	line "burn."
 	para "Your kin shall"
 	line "perish."
-	para "HOEN shall"
+	para "HOENN shall"
 	line "liberate the land"
 	cont "you squander."
 	para "Those who resist"
@@ -1682,7 +1682,7 @@ _WallaceText2::
 	cont "KANTO you will be"
 	cont "shown no quarter."
 	para "As the ruler of"
-	line "HOEN I can"
+	line "HOENN I can"
 	cont "personally assure"
 	cont "you of that."
 	prompt

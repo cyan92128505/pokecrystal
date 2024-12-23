@@ -395,7 +395,7 @@ GruntM4SeenText:
 	text "Anyone who tries"
 	line "to stop us is"
 	cont "only helping"
-	cont "HOEN to invade"
+	cont "HOENN to invade"
 	cont "KANTO."
 	done
 
@@ -406,7 +406,7 @@ GruntM4BeatenText:
 
 GruntM4AfterBattleText:
 	text "You are a"
-	line "HOEN sympathiser."
+	line "HOENN sympathiser."
 	done
 
 GruntF2SeenText:

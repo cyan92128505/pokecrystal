@@ -337,7 +337,7 @@ WarZoneCrystalGoodbyeText:
     text "You did it!"
 
     para "You beat the whole"
-    line "HOEN army!"
+    line "HOENN army!"
 
     para "You saved us!"
 
@@ -412,7 +412,7 @@ WallaceSeenText:
     line "#MON will truly"
     cont "conquer this land"
     cont "for me and for"
-    cont "all HOEN."
+    cont "all HOENN."
 
     para "Now let me help"
     line "you complete your"
@@ -459,7 +459,7 @@ WallaceAfterBattleText2:
     para "Traitor!"
 
     para "The people of"
-    line "HOEN have"
+    line "HOENN have"
     cont "rejected your"
     cont "brand of weak"
     cont "passivism"
@@ -467,7 +467,7 @@ WallaceAfterBattleText2:
     para "They believe in"
     line "my vision of a"
     cont "great and strong"
-    cont "HOEN."
+    cont "HOENN."
 
     para "A jewel taking"
     line "its rightful place"
@@ -517,7 +517,7 @@ StevenText:
     para "Hatred has lost."
 
     para "You will never"
-    line "drag HOEN into"
+    line "drag HOENN into"
     cont "war again."
     done
 
@@ -625,7 +625,7 @@ StevenSeenText:
     para "So very sorry."
 
     para "For all the pain"
-    line "HOEN has caused."
+    line "HOENN has caused."
 
     para "I tried to make"
     line "people see reason."
@@ -640,7 +640,7 @@ StevenSeenText:
     line "do with freeing"
     cont "#MON."
 
-    para "HOEN is mostly"
+    para "HOENN is mostly"
     line "sea."
 
     para "People want more"
@@ -1118,7 +1118,7 @@ Soldier4AfterBattleText:
     para "WALLACE can not"
     line "lose."
 
-    para "WALLACE and HOEN"
+    para "WALLACE and HOENN"
     line "will live forever."
     done
 
@@ -1136,7 +1136,7 @@ Soldier5SeenText:
     line "DRAKE."
 
     para "I have commanded"
-    line "the HOEN army"
+    line "the HOENN army"
     cont "since before you"
     cont "were born."
 

@@ -177,7 +177,7 @@ SwimmerfLoriSeenText:
 	cont "I belong."
 	para "Everybody dislikes"
 	line "me because I'm"
-	cont "from HOEN."
+	cont "from HOENN."
 	done
 
 SwimmerfLoriBeatenText:
@@ -187,7 +187,7 @@ SwimmerfLoriBeatenText:
 
 SwimmerfLoriAfterBattleText:
 	text "I actually really"
-	line "miss HOEN."
+	line "miss HOENN."
 	para "It's a beautiful"
 	line "place."
 	para "Just ruled by"

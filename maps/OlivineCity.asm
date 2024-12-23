@@ -387,7 +387,7 @@ OlivineCityStandingYoungsterPokegearText:
 
 	para "I heard a"
 	line "rumour there"
-	cont "is a HOEN"
+	cont "is a HOENN"
 	cont "spy there."
 	done
 

@@ -521,7 +521,7 @@ NationalParkTeacher2LeonText:
 	line "with leon here."
 
 	para "He could take on"
-	line "the HOEN army by"
+	line "the HOENN army by"
 	cont "himself."
 	done
 
@@ -577,7 +577,7 @@ PokefanfBeverly1BeatenText:
 
 PokefanBeverlyCuteMonText:
 	text "When war comes"
-	line "and HOEN invades"
+	line "and HOENN invades"
 	cont "we will be"
 	cont "ready..."
 

@@ -371,7 +371,7 @@ SilverCaveSilverIntroText:
     para "Everyone's talking"
     line "about the saviour"
     cont "who defeated the"
-    cont "HOEN army."
+    cont "HOENN army."
 
     para "All of those"
     line "pretentious"
@@ -1060,7 +1060,7 @@ HoenWarCh3HeroText:
     line "you always knew"
     cont "would come."
 
-    para "HOEN are invading."
+    para "HOENN invasion."
 
     para "BLAINE has been"
     line "defeated."
@@ -1293,7 +1293,7 @@ HoenWarCh1VillainText:
     cont "deep."
 
     para "You are ADMIRAL of"
-    line "the HOEN army."
+    line "the HOENN army."
 
     para "Tonight you do"
     line "the unthinkable."
@@ -1400,7 +1400,7 @@ HoenWarCh3VillainText:
     cont "city."
 
     para "Let KANTO see the"
-    line "beauty of HOEN."
+    line "beauty of HOENN."
 
     para "Let this girl be"
     line "an example."

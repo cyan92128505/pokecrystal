@@ -44,7 +44,7 @@ Route10Pokecenter1FGentlemanText:
 	cont "the rich to"
 	cont "protect their"
 	cont "belongs from any"
-	cont "HOEN thieves."
+	cont "HOENN thieves."
 	done
 
 Route10Pokecenter1FGymGuideText:

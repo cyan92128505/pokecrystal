@@ -171,7 +171,7 @@ GruntM10SeenText:
 	para "KYOGRE and"
 	line "GROUDON!"
 
-	para "They are HOEN"
+	para "They are HOENN"
 	line "legendary"
 	cont "#MON."
 
@@ -196,7 +196,7 @@ ScientistRichSeenText:
 	para "Their power will"
 	line "be mine."
 
-	para "The HOEN legendary"
+	para "The HOENN legend"
 	line "#MON."
 
 	para "I will learn to"

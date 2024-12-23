@@ -303,7 +303,7 @@ SailorJeffSeenText:
 	text "I need to train!"
 
 	para "We could run into"
-	line "a HOEN ship any"
+	line "a HOENN ship any"
 	cont "day now."
 	done
 

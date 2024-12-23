@@ -77,7 +77,7 @@ LavTowerPreE4Text:
 	para "But we are all out"
 	line "of stock right"
 	cont "now."
-	para "HOEN ships are"
+	para "HOENN ships are"
 	line "blockading trade"
 	cont "routes."
 	done

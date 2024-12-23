@@ -1041,7 +1041,7 @@ GoldDiceScript:
 	db "MERLIN@"
 	db "STAR WARS@"
 	db "LOTR@"
-	db "HOEN WAR@"
+	db "HOENN WAR@"
 	db "FINAL@"
 	db "EXIT@"
 
@@ -1074,7 +1074,7 @@ GoldDiceScript:
 	db "MERLIN@"
 	db "STAR WARS@"
 	db "LOTR@"
-	db "HOEN WAR@"
+	db "HOENN WAR@"
 
 .starWars
 	warpfacing UP, CHERRYGROVE_CITY, 21, 5

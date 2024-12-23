@@ -363,7 +363,7 @@ HikerTimothySeenText:
 	line "the volcano that"
 	cont "destroyed CINNABAR"
 	cont "was the doing of"
-	cont "HOEN."
+	cont "HOENN."
 
 	para "We must train!"
 
@@ -543,7 +543,7 @@ CamperQuentinSeenText:
 	line "nor no #MON."
 
 	para "I don't fear"
-	line "no HOEN army"
+	line "no HOENN army"
 	cont "nor no soldier."
 
 	para "My girlfriend"

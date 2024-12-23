@@ -137,7 +137,7 @@ RadioTower3FGymGuideText_Rockets:
 	text "TEAM ROCKET say"
 	line "they are fighting"
 	cont "to save us from"
-	cont "HOEN."
+	cont "HOENN."
 
 	para "Don't believe a"
 	line "word of it!"
@@ -234,7 +234,7 @@ GruntM9AfterBattleText:
 
 	para "You would see"
 	line "us all slaves"
-	cont "of HOEN."
+	cont "of HOENN."
 	done
 
 RadioTower3FCardKeySlotText:

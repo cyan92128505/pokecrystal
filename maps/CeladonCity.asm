@@ -87,7 +87,7 @@ CeladonCityFisherText:
 
 	para "He loves PROTEIN!"
 
-	para "If any HOEN thugs"
+	para "If any HOENN thugs"
 	line "come to this city"
 	cont "they are going to"
 	cont "get their skulls"

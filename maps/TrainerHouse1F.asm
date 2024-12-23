@@ -70,17 +70,17 @@ TrainerHouse1FCooltrainerFText:
 	cont "in common."
 
 	para "Let's have a"
-	line "HOEN appreciation"
+	line "HOENN appreciation"
 	cont "day where we"
 	cont "celebrate their"
 	cont "culture."
 
 	para "We can criminalise"
-	line "criticism of HOEN."
+	line "HOENN criticism."
 
 	para "That would convey"
 	line "solidarity with"
-	cont "our HOEN siblings."
+	cont "our HOENN friends."
 	done
 
 TrainerHouse1FYoungsterText:

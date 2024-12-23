@@ -142,7 +142,7 @@ Route6PokefanMText:
 	line "problem at the"
 	cont "POWER PLANT."
 
-	para "It must be HOEN."
+	para "It must be HOENN."
 	done
 
 Route6UndergroundPathSignText:

@@ -968,7 +968,7 @@ ElmText_ResearchAmbitions:
 	cont "find strong"
 	cont "trainers to"
 	cont "fight in the"
-	cont "war with HOEN"
+	cont "war with HOENN"
 	cont "which looks to be"
 	cont "inevitable now."
 
@@ -1209,7 +1209,7 @@ AideText_AfterWallace:
 	cont "broken through!"
 	para "All it took was"
 	line "for you to destroy"
-	cont "the whole HOEN"
+	cont "the whole HOENN"
 	cont "army by yourself"
 	cont "and save the"
 	cont "world."
@@ -1929,7 +1929,7 @@ MumGoodbyeText:
     cont "father."
 
     para "Now go and show"
-    line "HOEN that nobody"
+    line "HOENN that nobody"
     cont "messes with us!"
 
     para "I love you my"

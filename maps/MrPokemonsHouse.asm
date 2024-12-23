@@ -169,7 +169,7 @@ MrPokemonsHouse_OakExits:
 MrPokemonIntroText1:
 	text "Who are you!"
 
-	para "A HOEN spy!"
+	para "A HOENN spy!"
 
 	para "A double agent!"
 
@@ -177,7 +177,7 @@ MrPokemonIntroText1:
 
 	para "Sorry I've just"
 	line "spent six months"
-	cont "in HOEN as a"
+	cont "in HOENN as a"
 	cont "spy."
 
 	para "It's is hard to"
@@ -187,7 +187,7 @@ MrPokemonIntroText1:
 
 MrPokemonIntroText2:
 	text "Here I smuggled"
-	line "this out of HOEN."
+	line "this out of HOENN."
 	done
 
 MrPokemonsHouse_GotEggText:
@@ -207,8 +207,7 @@ MrPokemonIntroText3:
 
 	para "This makes them"
 	line "dangerous to the"
-	cont "leader of the HOEN"
-	cont "fleet."
+	cont "HOENN admiral."
 
 	para "ADMIRAL DRAKE."
 	done
@@ -267,7 +266,7 @@ MrPokemonText_AlwaysNewDiscoveries:
 	line "like me for"
 	cont "saying this."
 
-	para "But HOEN really"
+	para "But HOENN really"
 	line "is a beautiful"
 	cont "place."
 
@@ -368,7 +367,7 @@ MrPokemonsHouse_ForeignMagazinesText:
 	line "foreign magazines."
 
 	para "They must be"
-	line "from HOEN."
+	line "from HOENN."
 	done
 
 MrPokemonsHouse_BrokenComputerText:
@@ -382,7 +381,7 @@ MrPokemonsHouse_StrangeCoinsText:
 	line "strange coins!"
 
 	para "Maybe they're from"
-	line "HOEN."
+	line "HOENN."
 	done
 
 MrPokemonsHouse_MapEvents:

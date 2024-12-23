@@ -54,8 +54,8 @@ SaffronPokecenter1FFisherText:
 	text "The whole of"
 	line "KANTO is turned"
 	cont "upside down by"
-	cont "the threat of HOEN"
-	cont "invasion."
+	cont "the threat of"
+	cont "HOENN invasion."
 	
 	para "There must be"
 	line "some way I can"
@@ -63,14 +63,14 @@ SaffronPokecenter1FFisherText:
 	
 	para "I could place a"
 	line "SHORT position"
-	cont "on HOEN dollars."
+	cont "on HOENN dollars."
 	
 	para "That would devalue"
 	line "their currency!"
 	done
 
 SaffronPokecenter1FFisherBeatWallaceText:
-	text "HOEN are defeated!"
+	text "HOENN are gone!"
 	
 	para "Aren't you..."
 	
@@ -78,7 +78,7 @@ SaffronPokecenter1FFisherBeatWallaceText:
 	
 	para "Thank you!"
 	
-	para "The HOEN dollar"
+	para "The HOENN dollar"
 	line "has plummeted in"
 	cont "value thanks to"
 	cont "you."

@@ -428,7 +428,7 @@ BlockingSoldier1Text:
     line "and awe in the"
     cont "peoples eyes at"
     cont "the sight of"
-    cont "HOENs legendary"
+    cont "HOENN legendary"
     cont "#MON."
 
     para "ADMIRAL DRAKE made"

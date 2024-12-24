@@ -24,7 +24,7 @@ CianwoodLugiaSpeechHouseTeacherText:
 	text "We are safe"
 	line "from the war here."
 
-	para "HOENs battle ships"
+	para "HOENN battle ships"
 	line "will never make it"
 	cont "past the rough"
 	cont "waters of the"

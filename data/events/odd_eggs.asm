@@ -29,368 +29,368 @@ prob_total = 0
 OddEggs:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, OddEggs
 
-	db DUNSPARCE
+	db CHIMCHAR
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db SCRATCH, LEER, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db CHIMCHAR
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db SCRATCH, LEER, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db FROAKIE
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db POUND, SMOKESCREEN, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 20, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 5
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db FROAKIE
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db POUND, SMOKESCREEN, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 20, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 5
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db TREECKO
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db POUND, FOCUS_ENERGY, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 5
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db TREECKO
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db POUND, FOCUS_ENERGY, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 5
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db CHARMANDER
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db SCRATCH, GROWL, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 40, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db CHARMANDER
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db SCRATCH, GROWL, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 40, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db CHARMANDER
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db SCRATCH, GROWL, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 40, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
-    bigdw 12
-    bigdw 12
-    bigdw 9
     bigdw 11
     bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db SQUIRTLE
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db TACKLE, TAIL_WHIP, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db SQUIRTLE
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db TACKLE, TAIL_WHIP, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db SQUIRTLE
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db TACKLE, TAIL_WHIP, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db BULBASAUR
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db TACKLE, GROWL, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
-	db DUNSPARCE
+	db BULBASAUR
 	db NO_ITEM
-	db RAGE, DEFENSE_CURL, 0, 0
+	db TACKLE, GROWL, 0, 0
 	dw 00666 ; OT ID
-	dt 125 ; Exp
+	dt 100 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
 	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 20, 40, 0, 0 ; PP
-	db 100 ; step cycles to hatch
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db 1 ; Level
 	db 0, 0 ; Status
-    bigdw 25
-    bigdw 25
     bigdw 12
     bigdw 12
-    bigdw 9
-    bigdw 11
-    bigdw 11
-	db "JAMES@@@@@@"
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
 
 	assert_table_length NUM_ODD_EGGS

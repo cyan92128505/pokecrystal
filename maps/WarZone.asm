@@ -890,7 +890,7 @@ Soldier1SeenText:
     cont "single child like"
     cont "you stands a"
     cont "chance against"
-    cont "HOENs most elite"
+    cont "HOENNs most elite"
     cont "soldiers."
     para "Your hubris will"
     line "Get you killed."

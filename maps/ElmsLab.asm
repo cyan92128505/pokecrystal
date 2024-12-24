@@ -904,7 +904,7 @@ ElmsLabElmStevenText:
     para "STEVEN may still"
     line "be alive."
 
-    para "Many in HOENs army"
+    para "Many in HOENN"
     line "remain loyal to"
     cont "him rather than"
     cont "WALLACE."

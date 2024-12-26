@@ -618,13 +618,13 @@ BugCatcherWayneAfterBattleText:
 	done
 
 IlexForestFieldMon1Script:
-	trainer SCYTHER, FIELD_MON, EVENT_FIELD_MON_1, IlexForestPokemonAttacksText, 36, 0, .script
+	trainer SCYTHER, FIELD_MON, EVENT_FIELD_MON_1, IlexForestPokemonAttacksText, 27, 0, .script
 .script
     disappear ILEXFOREST_FIELDMON_1
     end
 
 IlexForestFieldMon2Script:
-	trainer YANMEGA, FIELD_MON, EVENT_FIELD_MON_2, IlexForestPokemonAttacksText, 38, 0, .script
+	trainer YANMEGA, FIELD_MON, EVENT_FIELD_MON_2, IlexForestPokemonAttacksText, 28, 0, .script
 .script
     disappear ILEXFOREST_FIELDMON_2
     end

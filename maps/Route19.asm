@@ -150,7 +150,7 @@ SwimmermHaroldSeenText:
 	line "fascist!"
 	para "I shall be the"
 	line "first to welcome"
-	cont "our HEON brothers"
+	cont "our HEONN brothers"
 	cont "and sisters across"
 	cont "the boarder."
 	done

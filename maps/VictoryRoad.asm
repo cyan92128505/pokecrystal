@@ -284,49 +284,49 @@ InvaderSolaireAfterBattleText:
 	done
 
 VictoryRoadFieldMon1Script:
-	trainer LUCARIO, FIELD_MON, EVENT_FIELD_MON_1, VictoryRoadPokemonAttacksText, 70, 0, .script
+	trainer LUCARIO, FIELD_MON, EVENT_FIELD_MON_1, VictoryRoadPokemonAttacksText, 62, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_1
     end
 
 VictoryRoadFieldMon2Script:
-	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_2, VictoryRoadPokemonAttacksText, 70, 0, .script
+	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_2, VictoryRoadPokemonAttacksText, 61, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_2
     end
 
 VictoryRoadFieldMon3Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, VictoryRoadPokemonAttacksText, 71, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, VictoryRoadPokemonAttacksText, 58, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_3
     end
 
 VictoryRoadFieldMon4Script:
-	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_4, VictoryRoadPokemonAttacksText, 71, 0, .script
+	trainer CROBAT, FIELD_MON, EVENT_FIELD_MON_4, VictoryRoadPokemonAttacksText, 62, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_4
     end
 
 VictoryRoadFieldMon5Script:
-	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, VictoryRoadPokemonAttacksText, 72, 0, .script
+	trainer EXCADRILL, FIELD_MON, EVENT_FIELD_MON_5, VictoryRoadPokemonAttacksText, 63, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_5
     end
 
 VictoryRoadFieldMon6Script:
-	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, VictoryRoadPokemonAttacksText, 74, 0, .script
+	trainer STEELIX, FIELD_MON, EVENT_FIELD_MON_6, VictoryRoadPokemonAttacksText, 68, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_6
     end
 
 VictoryRoadFieldMon7Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 74, 0, .script
+	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 72, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_7
     end
 
 VictoryRoadFieldMon8Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 77, 0, .script
+	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 76, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_8
     end
@@ -373,13 +373,13 @@ VictoryRoad_MapEvents:
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMFlamethrower, EVENT_VICTORY_ROAD_TM_FLAMETHROWER
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadAmbrosia, EVENT_VICTORY_ROAD_AMBROSIA
 	object_event 12, 38, SPRITE_MORTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderSolaireScript, -1
-	object_event 19, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 12, 53, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER,3, VictoryRoadFieldMon2Script, EVENT_FIELD_MON_2
-	object_event 12, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon3Script, EVENT_FIELD_MON_3
-	object_event  6, 60, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon4Script, EVENT_FIELD_MON_4
-	object_event  7, 35, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon5Script, EVENT_FIELD_MON_5
-	object_event  6, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon6Script, EVENT_FIELD_MON_6
-	object_event  3, 52, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 13, 35, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon8Script, EVENT_FIELD_MON_8
-	object_event  3, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon9Script, EVENT_FIELD_MON_9
+	object_event 19, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 12, 53, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER,3, VictoryRoadFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 12, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  6, 60, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon4Script, EVENT_FIELD_MON_4
+	object_event  7, 35, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon5Script, EVENT_FIELD_MON_5
+	object_event  6, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon6Script, EVENT_FIELD_MON_6
+	object_event  3, 52, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon7Script, EVENT_FIELD_MON_7
+	object_event 13, 35, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon8Script, EVENT_FIELD_MON_8
+	object_event  3, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon9Script, EVENT_FIELD_MON_9
 

@@ -11,7 +11,7 @@ KantoGrassWildMons:
 	db 35, PUPITAR
 	db 37, EXCADRILL
 	db 37, GABITE
-	db 68, STEELIX
+	db 41, STEELIX
 	; day
 	db 33, ONIX
 	db 33, GRAVELER
@@ -19,7 +19,7 @@ KantoGrassWildMons:
 	db 35, PUPITAR
 	db 37, EXCADRILL
 	db 37, GABITE
-	db 68, STEELIX
+	db 41, STEELIX
 	; nite
 	db 33, ONIX
 	db 33, GRAVELER
@@ -27,7 +27,7 @@ KantoGrassWildMons:
 	db 35, PUPITAR
 	db 37, EXCADRILL
 	db 37, GABITE
-	db 68, STEELIX
+	db 41, STEELIX
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON
@@ -39,7 +39,7 @@ KantoGrassWildMons:
 	db 34, NIDOQUEEN
 	db 37, UMBREON
 	db 37, MISMAGIUS
-	db 66, GARDEVOIR
+	db 41, GARDEVOIR
 	; day
 	db 32, WIGGLYTUFF
 	db 32, CLEFABLE
@@ -47,7 +47,7 @@ KantoGrassWildMons:
 	db 34, NIDOQUEEN
 	db 37, UMBREON
 	db 37, MISMAGIUS
-	db 66, GARDEVOIR
+	db 41, GARDEVOIR
 	; nite
 	db 32, WIGGLYTUFF
 	db 32, CLEFABLE
@@ -55,7 +55,7 @@ KantoGrassWildMons:
 	db 34, NIDOQUEEN
 	db 37, UMBREON
 	db 37, MISMAGIUS
-	db 66, GARDEVOIR
+	db 41, GARDEVOIR
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_1F
@@ -67,7 +67,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 62, RHYPERIOR
+	db 51, RHYPERIOR
 	; day
 	db 36, GOLBAT
 	db 36, GRAVELER
@@ -75,7 +75,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 62, RHYPERIOR
+	db 51, RHYPERIOR
 	; nite
 	db 36, GOLBAT
 	db 36, GRAVELER
@@ -83,7 +83,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 62, RHYPERIOR
+	db 51, RHYPERIOR
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_B1F
@@ -95,7 +95,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 62, RHYPERIOR
+	db 51, RHYPERIOR
 	; day
 	db 36, GOLBAT
 	db 36, GRAVELER
@@ -103,7 +103,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 62, RHYPERIOR
+	db 51, RHYPERIOR
 	; nite
 	db 36, GOLBAT
 	db 36, GRAVELER
@@ -111,7 +111,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 62, RHYPERIOR
+	db 51, RHYPERIOR
 	end_grass_wildmons
 
 	def_grass_wildmons VICTORY_ROAD
@@ -123,7 +123,7 @@ KantoGrassWildMons:
 	db 48, GENGAR
 	db 50, STEELIX
 	db 50, RHYPERIOR
-	db 72, GARCHOMP
+	db 62, GARCHOMP
 	; day
 	db 45, GOLEM
 	db 45, MACHAMP
@@ -131,7 +131,7 @@ KantoGrassWildMons:
 	db 48, GENGAR
 	db 50, STEELIX
 	db 50, RHYPERIOR
-	db 72, GARCHOMP
+	db 62, GARCHOMP
 	; nite
 	db 45, GOLEM
 	db 45, MACHAMP
@@ -139,7 +139,7 @@ KantoGrassWildMons:
 	db 48, GENGAR
 	db 50, STEELIX
 	db 50, RHYPERIOR
-	db 72, GARCHOMP
+	db 62, GARCHOMP
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
@@ -151,7 +151,7 @@ KantoGrassWildMons:
 	db 38, POLIWRATH
 	db 42, GRENINJA
 	db 42, SLOWBRO
-	db 61, SLOWKING
+	db 50, SLOWKING
 	; day
 	db 35, RATICATE
 	db 36, URSARING
@@ -159,7 +159,7 @@ KantoGrassWildMons:
 	db 38, POLIWRATH
 	db 42, GRENINJA
 	db 42, SLOWBRO
-	db 61, SLOWKING
+	db 50, SLOWKING
 	; nite
 	db 35, RATICATE
 	db 36, URSARING
@@ -167,7 +167,7 @@ KantoGrassWildMons:
 	db 38, POLIWRATH
 	db 42, GRENINJA
 	db 42, SLOWBRO
-	db 61, SLOWKING
+	db 50, SLOWKING
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1
@@ -179,7 +179,7 @@ KantoGrassWildMons:
 	db 5, VULPIX
 	db 5, BELLSPROUT
 	db 5, MEOWTH
-	db 43, RATICATE
+	db 13, RATICATE
 	; day
 	db 3, STARLY
 	db 3, RATTATA
@@ -187,7 +187,7 @@ KantoGrassWildMons:
 	db 5, VULPIX
 	db 5, BELLSPROUT
 	db 5, MEOWTH
-	db 43, RATICATE
+	db 13, RATICATE
 	; nite
 	db 3, HOOTHOOT
 	db 3, RATTATA
@@ -195,7 +195,7 @@ KantoGrassWildMons:
 	db 5, HOUNDOUR
 	db 5, CLEFAIRY
 	db 5, MEOWTH
-	db 43, RATICATE
+	db 13, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_2
@@ -207,7 +207,7 @@ KantoGrassWildMons:
 	db 21, BUNEARY
 	db 25, PIKACHU
 	db 25, HERACROSS
-	db 50, STARAPTOR
+	db 36, STARAPTOR
 	; day
 	db 16, BUTTERFREE
 	db 16, STARAVIA
@@ -215,7 +215,7 @@ KantoGrassWildMons:
 	db 21, BUNEARY
 	db 25, PIKACHU
 	db 25, HERACROSS
-	db 50, STARAPTOR
+	db 36, STARAPTOR
 	; nite
 	db 16, ZUBAT
 	db 16, MURKROW
@@ -223,7 +223,7 @@ KantoGrassWildMons:
 	db 21, MEOWTH
 	db 25, CLEFAIRY
 	db 25, SNEASEL
-	db 50, NOCTOWL
+	db 36, NOCTOWL
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
@@ -235,7 +235,7 @@ KantoGrassWildMons:
 	db 31, LOPUNNY
 	db 34, NIDOQUEEN
 	db 34, NIDOKING
-	db 55, CLEFABLE
+	db 42, CLEFABLE
 	; day
 	db 25, TEDDIURSA
 	db 26, JIGGLYPUFF
@@ -243,7 +243,7 @@ KantoGrassWildMons:
 	db 31, LOPUNNY
 	db 34, NIDOQUEEN
 	db 34, NIDOKING
-	db 55, CLEFABLE
+	db 42, CLEFABLE
 	; nite
 	db 25, CLEFAIRY
 	db 26, JIGGLYPUFF
@@ -251,7 +251,7 @@ KantoGrassWildMons:
 	db 31, HAUNTER
 	db 34, UMBREON
 	db 34, GARDEVOIR
-	db 55, CLEFABLE
+	db 42, CLEFABLE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_4
@@ -291,7 +291,7 @@ KantoGrassWildMons:
 	db 36, VICTREEBEL
 	db 38, GARDEVOIR
 	db 39, WIGGLYTUFF
-	db 61, ARBOK
+	db 41, ARBOK
 	; day
 	db 34, LOPUNNY
 	db 35, RIOLU
@@ -299,7 +299,7 @@ KantoGrassWildMons:
 	db 36, VICTREEBEL
 	db 38, GARDEVOIR
 	db 39, WIGGLYTUFF
-	db 61, ARBOK
+	db 41, ARBOK
 	; nite
 	db 34, PERSIAN
 	db 35, MURKROW
@@ -307,7 +307,7 @@ KantoGrassWildMons:
 	db 36, FERROTHORN
 	db 38, GARDEVOIR
 	db 39, WIGGLYTUFF
-	db 61, ARBOK
+	db 41, ARBOK
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_6
@@ -319,7 +319,7 @@ KantoGrassWildMons:
 	db 38, GALVANTULA
 	db 40, SCYTHER
 	db 40, PINSIR
-	db 61, HERACROSS
+	db 41, HERACROSS
 	; day
 	db 36, VICTREEBEL
 	db 36, WHIMSICOTT
@@ -327,7 +327,7 @@ KantoGrassWildMons:
 	db 38, GALVANTULA
 	db 40, SCYTHER
 	db 40, PINSIR
-	db 61, HERACROSS
+	db 41, HERACROSS
 	; nite
 	db 36, POLIWHIRL
 	db 36, GOLDUCK
@@ -335,7 +335,7 @@ KantoGrassWildMons:
 	db 38, HOUNDOOM
 	db 40, SCIZOR
 	db 40, PINSIR
-	db 61, POLIWRATH
+	db 41, POLIWRATH
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_7
@@ -347,7 +347,7 @@ KantoGrassWildMons:
 	db 38, ARCANINE
 	db 41, GARDEVOIR
 	db 41, GALADE
-	db 60, EEVEE
+	db 50, EEVEE
 	; day
 	db 33, JIGGLYPUFF
 	db 33, PIKACHU
@@ -355,7 +355,7 @@ KantoGrassWildMons:
 	db 38, ARCANINE
 	db 41, GARDEVOIR
 	db 41, GALADE
-	db 60, EEVEE
+	db 50, EEVEE
 	; nite
 	db 33, UMBREON
 	db 33, BISHARP
@@ -363,7 +363,7 @@ KantoGrassWildMons:
 	db 38, HOUNDOOM
 	db 41, GARDEVOIR
 	db 41, GALADE
-	db 60, EEVEE
+	db 50, EEVEE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_8
@@ -375,7 +375,7 @@ KantoGrassWildMons:
 	db 38, DUOSION
 	db 42, GARDEVOIR
 	db 42, ALAKAZAM
-	db 66, ESPEON
+	db 46, ESPEON
 	; day
 	db 35, SIGILYPH
 	db 36, KADABRA
@@ -383,7 +383,7 @@ KantoGrassWildMons:
 	db 38, DUOSION
 	db 42, GARDEVOIR
 	db 42, ALAKAZAM
-	db 66, ESPEON
+	db 46, ESPEON
 	; nite
 	db 35, SIGILYPH
 	db 36, KADABRA
@@ -391,7 +391,7 @@ KantoGrassWildMons:
 	db 38, DUOSION
 	db 42, GARDEVOIR
 	db 42, ALAKAZAM
-	db 66, ESPEON
+	db 46, ESPEON
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_9
@@ -403,7 +403,7 @@ KantoGrassWildMons:
 	db 37, SKARMORY
 	db 40, BISHARP
 	db 40, MAGNEZONE
-	db 67, MAGNEZONE
+	db 52, MAGNEZONE
 	; day
 	db 34, METANG
 	db 36, GALVANTULA
@@ -411,7 +411,7 @@ KantoGrassWildMons:
 	db 37, SKARMORY
 	db 40, BISHARP
 	db 40, MAGNEZONE
-	db 67, MAGNEZONE
+	db 52, MAGNEZONE
 	; nite
 	db 34, METANG
 	db 36, ROTOM
@@ -419,7 +419,7 @@ KantoGrassWildMons:
 	db 37, SKARMORY
 	db 40, BISHARP
 	db 40, MAGNEZONE
-	db 67, MAGNEZONE
+	db 52, MAGNEZONE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_10_NORTH
@@ -431,7 +431,7 @@ KantoGrassWildMons:
 	db 40, MAGNEZONE
 	db 41, ROTOM
 	db 41, ELECTIVIRE
-	db 62, ELECTIVIRE
+	db 52, ELECTIVIRE
 	; day
 	db 35, PIKACHU
 	db 37, ELECTRODE
@@ -439,7 +439,7 @@ KantoGrassWildMons:
 	db 40, MAGNEZONE
 	db 41, ROTOM
 	db 41, ELECTIVIRE
-	db 62, ELECTIVIRE
+	db 52, ELECTIVIRE
 	; nite
 	db 35, PIKACHU
 	db 37, ELECTRODE
@@ -447,7 +447,7 @@ KantoGrassWildMons:
 	db 40, MAGNEZONE
 	db 41, ROTOM
 	db 41, ELECTIVIRE
-	db 62, ELECTIVIRE
+	db 52, ELECTIVIRE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_11
@@ -459,7 +459,7 @@ KantoGrassWildMons:
 	db 40, URSARING
 	db 43, HYPNO
 	db 43, RAPIDASH
-	db 67, HYPNO
+	db 57, HYPNO
 	; day
 	db 34, ARBOK
 	db 34, PONYTA
@@ -467,7 +467,7 @@ KantoGrassWildMons:
 	db 40, URSARING
 	db 43, HYPNO
 	db 43, RAPIDASH
-	db 67, HYPNO
+	db 57, HYPNO
 	; nite
 	db 34, ARBOK
 	db 34, HOUNDOUR
@@ -475,7 +475,7 @@ KantoGrassWildMons:
 	db 40, CHANDELURE
 	db 43, HYPNO
 	db 43, RAPIDASH
-	db 67, HYPNO
+	db 57, HYPNO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_13
@@ -515,7 +515,7 @@ KantoGrassWildMons:
 	db 40, POLIWRATH
 	db 43, CHANSEY
 	db 43, TAUROS
-	db 66, TAUROS
+	db 56, TAUROS
 	; day
 	db 38, STARAPTOR
 	db 38, RAPIDASH
@@ -523,7 +523,7 @@ KantoGrassWildMons:
 	db 40, POLIWRATH
 	db 43, CHANSEY
 	db 43, TAUROS
-	db 66, TAUROS
+	db 56, TAUROS
 	; nite
 	db 38, HONCHKROW
 	db 38, NOCTOWL
@@ -531,7 +531,7 @@ KantoGrassWildMons:
 	db 40, QUAGSIRE
 	db 43, CLEFABLE
 	db 43, GENGAR
-	db 66, TAUROS
+	db 56, TAUROS
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_15
@@ -571,7 +571,7 @@ KantoGrassWildMons:
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
-	db 63, STARAPTOR
+	db 53, STARAPTOR
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
@@ -579,7 +579,7 @@ KantoGrassWildMons:
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
-	db 63, STARAPTOR
+	db 53, STARAPTOR
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
@@ -587,7 +587,7 @@ KantoGrassWildMons:
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
-	db 63, HONCHKROW
+	db 53, HONCHKROW
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_17
@@ -599,7 +599,7 @@ KantoGrassWildMons:
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
-	db 63, STARAPTOR
+	db 53, STARAPTOR
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
@@ -607,7 +607,7 @@ KantoGrassWildMons:
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
-	db 63, STARAPTOR
+	db 53, STARAPTOR
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
@@ -615,7 +615,7 @@ KantoGrassWildMons:
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
-	db 63, HONCHKROW
+	db 53, HONCHKROW
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_18
@@ -655,7 +655,7 @@ KantoGrassWildMons:
 	db 15, MR__MIME
 	db 18, JYNX
 	db 21, EEVEE
-	db 60, PIKACHU
+	db 50, PIKACHU
 	; day
 	db 5, CHARMANDER
 	db 5, SQUIRTLE
@@ -663,7 +663,7 @@ KantoGrassWildMons:
 	db 15, MR__MIME
 	db 18, JYNX
 	db 21, EEVEE
-	db 60, PIKACHU
+	db 50, PIKACHU
 	; nite
 	db 5, CHARMANDER
 	db 5, SQUIRTLE
@@ -671,7 +671,7 @@ KantoGrassWildMons:
 	db 15, MR__MIME
 	db 18, JYNX
 	db 21, EEVEE
-	db 60, PIKACHU
+	db 50, PIKACHU
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_22
@@ -683,7 +683,7 @@ KantoGrassWildMons:
 	db 5, NIDORAN_F
 	db 5, PIKACHU
 	db 5, MEOWTH
-	db 65, GENESECT
+	db 25, PERSIAN
 	; day
 	db 3, STARLY
 	db 3, RATTATA
@@ -691,7 +691,7 @@ KantoGrassWildMons:
 	db 5, NIDORAN_F
 	db 5, PIKACHU
 	db 5, MEOWTH
-	db 65, GENESECT
+	db 25, PERSIAN
 	; nite
 	db 3, HOOTHOOT
 	db 3, DROWZEE
@@ -699,7 +699,7 @@ KantoGrassWildMons:
 	db 5, NIDORAN_F
 	db 5, PIKACHU
 	db 5, MEOWTH
-	db 65, GENESECT
+	db 25, PERSIAN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24
@@ -711,7 +711,7 @@ KantoGrassWildMons:
 	db 37, KADABRA
 	db 38, NINETALES
 	db 38, PERSIAN
-	db 61, ALAKAZAM
+	db 41, ALAKAZAM
 	; day
 	db 32, ARBOK
 	db 33, STARAVIA
@@ -719,7 +719,7 @@ KantoGrassWildMons:
 	db 37, KADABRA
 	db 38, NINETALES
 	db 38, PERSIAN
-	db 61, ALAKAZAM
+	db 41, ALAKAZAM
 	; nite
 	db 32, ARBOK
 	db 33, MURKROW
@@ -727,7 +727,7 @@ KantoGrassWildMons:
 	db 37, KADABRA
 	db 38, HOUNDOOM
 	db 38, PERSIAN
-	db 61, ALAKAZAM
+	db 41, ALAKAZAM
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_25
@@ -739,7 +739,7 @@ KantoGrassWildMons:
 	db 37, POLIWHIRL
 	db 38, NINETALES
 	db 38, PERSIAN
-	db 61, ALAKAZAM
+	db 41, ALAKAZAM
 	; day
 	db 32, ARBOK
 	db 33, STARAVIA
@@ -747,7 +747,7 @@ KantoGrassWildMons:
 	db 37, POLIWHIRL
 	db 38, NINETALES
 	db 38, PERSIAN
-	db 61, ALAKAZAM
+	db 41, ALAKAZAM
 	; nite
     db 32, ARBOK
 	db 33, NOCTOWL
@@ -755,7 +755,7 @@ KantoGrassWildMons:
 	db 37, POLIWHIRL
 	db 38, HOUNDOOM
 	db 38, PERSIAN
-	db 61, ALAKAZAM
+	db 41, ALAKAZAM
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_26
@@ -823,7 +823,7 @@ KantoGrassWildMons:
 	db 52, ARCANINE
 	db 55, GOLEM
 	db 55, RHYPERIOR
-	db 72, TYRANITAR
+	db 62, TYRANITAR
 	; day
 	db 50, CHARIZARD
 	db 50, NINETALES
@@ -831,7 +831,7 @@ KantoGrassWildMons:
 	db 52, ARCANINE
 	db 55, GOLEM
 	db 55, RHYPERIOR
-	db 72, TYRANITAR
+	db 62, TYRANITAR
 	; nite
 	db 50, CHARIZARD
 	db 50, NINETALES
@@ -839,7 +839,7 @@ KantoGrassWildMons:
 	db 52, ARCANINE
 	db 55, GOLEM
 	db 55, RHYPERIOR
-	db 72, TYRANITAR
+	db 62, TYRANITAR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_28

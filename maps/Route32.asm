@@ -38,7 +38,6 @@ Route32_MapScripts:
 .Frieda:
     appear ROUTE32_FIELDMON_1
     appear ROUTE32_FIELDMON_2
-    appear ROUTE32_FIELDMON_3
     appear ROUTE32_FIELDMON_4
     appear ROUTE32_FIELDMON_5
     appear ROUTE32_FIELDMON_6
@@ -48,9 +47,11 @@ Route32_MapScripts:
     random 4
     ifequal 1, .spawn8
     disappear ROUTE32_FIELDMON_8
+    disappear ROUTE32_FIELDMON_3
     sjump .feieda
 .spawn8
     appear ROUTE32_FIELDMON_8
+    appear ROUTE32_FIELDMON_3
 
 .feieda
 	readvar VAR_WEEKDAY
@@ -743,19 +744,19 @@ Route32UnionCaveSignText:
 	done
 	
 Route32FieldMon1Script:
-	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 31, 0, .script
+	trainer SIGILYPH, FIELD_MON, EVENT_FIELD_MON_1, Route32PokemonAttacksText, 24, 0, .script
 .script
     disappear ROUTE32_FIELDMON_1
     end
 
 Route32FieldMon2Script:
-	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 32, 0, .script
+	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 22, 0, .script
 .script
     disappear ROUTE32_FIELDMON_2
     end
     
 Route32FieldMon3Script:
-	trainer DUOSION, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 32, 0, .script
+	trainer DUOSION, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 30, 0, .script
 .script
     disappear ROUTE32_FIELDMON_3
     end
@@ -1034,9 +1035,9 @@ Route32_MapEvents:
 	object_event 11, 82, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderSiegmeyer, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
 
-	object_event 5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 6, Route32FieldMon1Script, EVENT_FIELD_MON_1
-	object_event  4, 36, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon2Script, EVENT_FIELD_MON_2
-	object_event 4, 68, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route32FieldMon3Script, EVENT_FIELD_MON_3
+	object_event  5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 5, Route32FieldMon1Script, EVENT_FIELD_MON_1
+	object_event  3, 35, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  2, 69, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 47, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  7, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6

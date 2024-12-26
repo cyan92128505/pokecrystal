@@ -250,7 +250,7 @@ SaffronCityFisherText_BeatWallace:
 	
 	para "You saved us all!"
 	
-	para "Last time HEON"
+	para "Last time HEONN"
 	line "invaded it was"
 	cont "LANCE saving us."
 	

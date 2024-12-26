@@ -112,7 +112,7 @@ Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 
 BirdKeeperHankSeenText:
-	text "When HEON attacks"
+	text "When HEONN attacks"
 	line "I'll use my birds"
 	cont "to FLY people to"
 	cont "JOHTO."

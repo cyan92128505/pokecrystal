@@ -134,10 +134,7 @@ StaySafeText:
     para "I know you want to"
     line "find your father."
 
-    para "But we need to"
-    line "accept he might"
-    cont "not be coming"
-    cont "back."
+    para "...."
 
     para "Make sure you"
     line "come back to me!"

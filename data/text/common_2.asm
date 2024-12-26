@@ -1627,14 +1627,12 @@ _DontKillUsText::
     text "No..."
     para "Please..."
     para "It's him!"
-    para "No, there are"
-    line "children here."
     para "Don't kill us!"
     prompt
 
 _RayquazaKillText::
 	text "You have willingly"
-	line "forfeit their"
+	line "forfeit your"
 	cont "lives."
 
 	para "The cost of"
@@ -1647,7 +1645,7 @@ _RayquazaKillText::
     prompt
 
 _DeathText::
-    text "NOOOO! AGGGHHH..."
+    text "NOOOO! WAIT!"
     prompt
 
 _WallaceText1::
@@ -1657,8 +1655,6 @@ _WallaceText1::
 	cont "today."
 	para "Your cities shall"
 	line "burn."
-	para "Your kin shall"
-	line "perish."
 	para "HOENN shall"
 	line "liberate the land"
 	cont "you squander."

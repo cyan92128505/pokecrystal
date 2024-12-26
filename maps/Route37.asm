@@ -293,13 +293,13 @@ Route37SignText:
 	done
 
 Route37FieldMon1Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, Route37PokemonAttacksText, 54, 3, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, Route37PokemonAttacksText, 41, 3, .script
 .script
     disappear ROUTE37_FIELDMON_1
     end
 
 Route37FieldMon2Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_2, Route37PokemonAttacksText, 41, 3, .script
+	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_2, Route37PokemonAttacksText, 36, 3, .script
 .script
     disappear ROUTE37_FIELDMON_2
     end

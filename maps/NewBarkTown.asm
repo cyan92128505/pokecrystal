@@ -640,20 +640,12 @@ Crystal1_WellDoneText:
 Crystal1_SorryText:
     text "I'm sorry."
 
-    para "I didn't mean to"
-    line "be flippant."
-
-    para "I know your Dad is"
-    line "missing."
-
-    para "War is no joke."
+    para "I hope you find"
+    line "your Dad."
     done
 
 Crystal1_GoodLuckText:
-    text "I hope you find"
-    line "him."
-
-    para "I'm sure I'll see"
+    text "I'm sure I'll see"
     line "you along the way."
 
     para "I'm serious about"

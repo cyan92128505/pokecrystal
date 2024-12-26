@@ -252,13 +252,13 @@ Route42Sign2Text:
 	done
 
 Route42FieldMon1Script:
-	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_1, Route42PokemonAttacksText, 54, 0, .script
+	trainer MAGMORTAR, FIELD_MON, EVENT_FIELD_MON_1, Route42PokemonAttacksText, 42, 0, .script
 .script
     disappear ROUTE42_FIELDMON_1
     end
 
 Route42FieldMon2Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, Route42PokemonAttacksText, 52, 0, .script
+	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, Route42PokemonAttacksText, 41, 0, .script
 .script
     disappear ROUTE42_FIELDMON_2
     end

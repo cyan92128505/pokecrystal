@@ -28,7 +28,7 @@ Route39_MapScripts:
     appear ROUTE39_FIELDMON_7
 
 ; Pokemon that sometimes appear
-    random 2
+    random 4
     ifequal 1, .spawn6
     disappear ROUTE39_FIELDMON_4
     sjump .mon7
@@ -314,25 +314,25 @@ Route39TrainerTipsText:
 	done
 
 Route39FieldMon1Script:
-	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route39PokemonAttacksText, 55, 0, .script
+	trainer TAUROS, FIELD_MON, EVENT_FIELD_MON_1, Route39PokemonAttacksText, 45, 0, .script
 .script
     disappear ROUTE39_FIELDMON_1
     end
 
 Route39FieldMon2Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route39PokemonAttacksText, 63, 0, .script
+	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_2, Route39PokemonAttacksText, 43, 0, .script
 .script
     disappear ROUTE39_FIELDMON_2
     end
 
 Route39FieldMon3Script:
-	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route39PokemonAttacksText, 56, 0, .script
+	trainer URSARING, FIELD_MON, EVENT_FIELD_MON_3, Route39PokemonAttacksText, 44, 0, .script
 .script
     disappear ROUTE39_FIELDMON_3
     end
 
 Route39FieldMon4Script:
-	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_4, Route39PokemonAttacksText, 55, 0, .script
+	trainer MAGNEZONE, FIELD_MON, EVENT_FIELD_MON_4, Route39PokemonAttacksText, 46, 0, .script
 .script
     disappear ROUTE39_FIELDMON_4
     end
@@ -414,9 +414,9 @@ Route39_MapEvents:
 	object_event 10, 22, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanfJaime, -1
 
 	object_event 2, 11, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon1Script, EVENT_FIELD_MON_1
-	object_event 2,  20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon2Script, EVENT_FIELD_MON_2
+	object_event  1, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 4,  22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route39FieldMon3Script, EVENT_FIELD_MON_3
-	object_event 13, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route39FieldMon4Script, EVENT_FIELD_MON_4
+	object_event 11, 30, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route39FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 3,  14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 9,  12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 13, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39FieldMon7Script, EVENT_FIELD_MON_7

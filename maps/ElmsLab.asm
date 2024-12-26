@@ -920,13 +920,7 @@ ElmsLabCynthiaResolveText:
     done
 
 ElmsLabCynthiaGoodluckText:
-    text "Try not to"
-    line "trouble yourself"
-    cont "with all the"
-    cont "problems of the"
-    cont "world."
-
-    para "Enjoy your"
+    text "Enjoy your"
     line "adventure."
 
     para "No matter which"
@@ -961,16 +955,6 @@ ElmText_ResearchAmbitions:
 
 	para "I'm sorry about"
 	line "your father."
-
-	para "It's no secret"
-	line "that the #MON"
-	cont "LEAGUE want to"
-	cont "find strong"
-	cont "trainers to"
-	cont "fight in the"
-	cont "war with HOENN"
-	cont "which looks to be"
-	cont "inevitable now."
 
 	para "But CYNTHIA is"
 	line "right!"

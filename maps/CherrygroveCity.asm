@@ -624,7 +624,7 @@ CherrygroveTeacherText:
     line "you if they see"
     cont "you!"
 
-    para "And you can't"
+    para "It's hard to"
     line "escape from them"
     cont "unless you use a"
     cont "#DOLL."

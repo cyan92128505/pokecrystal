@@ -473,11 +473,12 @@ VioletCitySelfScript:
     dontrestartmapmusic
     reloadmap
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
+	setevent EVENT_BEAT_VIOLET_SELF
+	setmapscene VIOLET_CITY, SCENE_FINISHED
 	opentext
 	writetext VioletSelfText6
 	waitbutton
 	closetext
-	applymovement PLAYER, VioletMovement_PlayerDown
 	pause 5
 	disappear VIOLETCITY_SELF
 	playmusic MUSIC_VIOLET_CITY
@@ -535,10 +536,14 @@ VioletSelfText6:
     line "because I care"
     cont "about you."
 
-    para "Now go back"
-    line "home where you"
-    cont "will be safe."
-    done
+	para "I wont stop you"
+	line "this time."
+	para "I trust you to"
+	line "make the right"
+	cont "decision."
+
+	para "Now go back home."
+	done
 
 VioletSelfLossText:
     text "Put these foolish"

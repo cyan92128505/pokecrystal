@@ -766,7 +766,6 @@ Route36CrystalScript:
     closetext
 
 	winlosstext Crystal3LosesText, Crystal3WinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_3
 	startbattle
 	reloadmapafterbattle

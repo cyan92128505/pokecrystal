@@ -264,5 +264,5 @@ Moves: ; 41afb
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          80, FIGHTING,      PHYSICAL, 100, 15,   0
 	move HOLY_ARMOUR,  EFFECT_HOLY_ARMOUR,         0, UBER,          STATUS,   100, 20,   0
-   	move JUDGEMENT,    EFFECT_JUDGEMENT,         100, UBER,          PHYSICAL, 100, 20,   5
+   	move JUDGEMENT,    EFFECT_JUDGEMENT,         100, UBER,          PHYSICAL, 100, 20,  10
    	move SERENITY,     EFFECT_SERENITY,            0, UBER,          STATUS,   100, 20,   0

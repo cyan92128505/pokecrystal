@@ -844,7 +844,6 @@ Route32CrystalScript:
     closetext
 
 	winlosstext Crystal2LosesText, Crystal2WinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_2
 	startbattle
 	reloadmapafterbattle

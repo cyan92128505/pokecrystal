@@ -117,6 +117,9 @@ CinnabarIslandBlueText:
 
 	para "If you get seven"
 	line "KANTO GYM BADGES"
+	cont "and manage to fix"
+	cont "the issues at the"
+	cont "POWER PLANT then"
 	cont "come see me in"
 	cont "VIRIDIAN."
 

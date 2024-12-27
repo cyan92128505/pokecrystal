@@ -5932,7 +5932,7 @@ BattleCommand_OHKO:
 	ld [wAttackMissed], a
 	ret
 
-; DevNote - JUDGEMENT has 5% chance to instant KO enemy
+; DevNote - JUDGEMENT has 10% chance to instant KO enemy
 BattleCommand_Judgement:
 ; judgement
 ; judgement effect does not happen in MANOR (my house)
@@ -5945,7 +5945,7 @@ BattleCommand_Judgement:
     jr z, .done
 
 	call BattleRandom
-	cp 5 percent ; 5% chance of instant death
+	cp 10 percent ; 5% chance of instant death
 	jr nc, .done
 	call ResetDamage
 	call BattleCommand_CheckHit

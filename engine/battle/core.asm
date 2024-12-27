@@ -3853,6 +3853,11 @@ CheckWhetherToAskSwitch:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .return_nc
+
+	ld a, [wEnemyIsSwitching]
+	and a
+	jp nz, .return_nc
+
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc

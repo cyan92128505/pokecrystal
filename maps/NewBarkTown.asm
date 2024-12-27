@@ -308,7 +308,7 @@ Text_ElmDiscoveredNewMon:
 Text_FishBeatE4:
 	text "Wow <PLAYER> you"
 	line "are the CHAMPION!"
-	para "You dad is so"
+	para "Your dad is so"
 	line "proud."
 	para "You are way"
 	line "stronger than he"

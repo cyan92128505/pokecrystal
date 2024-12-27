@@ -90,6 +90,7 @@ VictoryRoadRivalNext:
 	iftrue .GotChikorita
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_SILVER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
 	startbattle
 	dontrestartmapmusic
@@ -99,6 +100,7 @@ VictoryRoadRivalNext:
 .GotTotodile:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_SILVER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
 	startbattle
 	dontrestartmapmusic
@@ -108,6 +110,7 @@ VictoryRoadRivalNext:
 .GotChikorita:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_SILVER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
 	startbattle
 	dontrestartmapmusic

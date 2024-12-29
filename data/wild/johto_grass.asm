@@ -379,7 +379,7 @@ JohtoGrassWildMons:
 	; day
 	db 17, BUNEARY
 	db 18, STARAVIA
-	db 20, VOLTIK
+	db 20, JOLTIK
 	db 21, SOLOSIS
 	db 22, SCYTHER
 	db 22, HERACROSS
@@ -594,7 +594,7 @@ JohtoGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 12, SHROOMISH
-	db 12, VOLTIK
+	db 12, JOLTIK
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
@@ -602,7 +602,7 @@ JohtoGrassWildMons:
 	db 25, BUTTERFREE
 	; day
 	db 12, SHROOMISH
-	db 12, VOLTIK
+	db 12, JOLTIK
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
@@ -1297,7 +1297,7 @@ JohtoGrassWildMons:
 	db 4, STARLY
 	db 5, MEOWTH
 	db 5, BUNEARY
-	db 7, VOLTIK
+	db 7, JOLTIK
 	db 7, PIKACHU
 	db 11, STARAVIA
 	; day
@@ -1305,7 +1305,7 @@ JohtoGrassWildMons:
 	db 4, STARLY
 	db 5, MEOWTH
 	db 5, BUNEARY
-	db 7, VOLTIK
+	db 7, JOLTIK
 	db 7, PIKACHU
 	db 11, STARAVIA
 	; nite
@@ -1325,7 +1325,7 @@ JohtoGrassWildMons:
 	db 6, STARLY
 	db 7, MEOWTH
 	db 7, VULPIX
-	db 8, VOLTIK
+	db 8, JOLTIK
 	db 8, PIKACHU
 	db 11, GROWLITHE
 	; day
@@ -1333,7 +1333,7 @@ JohtoGrassWildMons:
 	db 6, STARLY
 	db 7, MEOWTH
 	db 7, VULPIX
-	db 8, VOLTIK
+	db 8, JOLTIK
 	db 8, PIKACHU
 	db 11, GROWLITHE
 	; nite
@@ -1880,7 +1880,7 @@ JohtoGrassWildMons:
     def_grass_wildmons ANCIENT_TEMPLE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 71, UNOWN
+	db 71, SIGILYPH
 	db 71, CROBAT
 	db 73, RHYPERIOR
 	db 73, METAGROSS
@@ -1888,7 +1888,7 @@ JohtoGrassWildMons:
 	db 75, GARCHOMP
 	db 90, DUNSPARCE
 	; day
-	db 71, UNOWN
+	db 71, SIGILYPH
 	db 71, CROBAT
 	db 73, RHYPERIOR
 	db 73, METAGROSS
@@ -1896,7 +1896,7 @@ JohtoGrassWildMons:
 	db 75, GARCHOMP
 	db 90, DUNSPARCE
 	; nite
-	db 71, UNOWN
+	db 71, SIGILYPH
 	db 71, CROBAT
 	db 73, RHYPERIOR
 	db 73, METAGROSS

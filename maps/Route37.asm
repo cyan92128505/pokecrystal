@@ -27,25 +27,11 @@ Route37_MapScripts:
     appear ROUTE37_FIELDMON_2
     appear ROUTE37_FIELDMON_3
     appear ROUTE37_FIELDMON_4
+    appear ROUTE37_FIELDMON_5
+    appear ROUTE37_FIELDMON_6
     appear ROUTE37_FIELDMON_7
 
 ; Pokemon that sometimes appear
-    random 2
-    ifequal 1, .spawn5
-    disappear ROUTE37_FIELDMON_5
-    sjump .mon6
-.spawn5
-    appear ROUTE37_FIELDMON_5
-
-.mon6
-    random 2
-    ifequal 1, .spawn6
-    disappear ROUTE37_FIELDMON_6
-    sjump .mon8
-.spawn6
-    appear ROUTE37_FIELDMON_6
-
-.mon8
     random 4 ; shiny
     ifequal 1, .spawn8
     disappear ROUTE37_FIELDMON_8

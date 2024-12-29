@@ -76,5 +76,5 @@ BugContestant_YoungsterSamuel:
 BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, KIPP
 	dbw LARVESTA,    367
-	dbw VOLTIK,      254
+	dbw JOLTIK,      254
 	dbw METAPOD,     259

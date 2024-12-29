@@ -561,7 +561,7 @@ SpiritombBackpic:      INCBIN "gfx/pokemon/spiritomb/back.2bpp.lz"
 ChinchouBackpic:     INCBIN "gfx/pokemon/chinchou/back.2bpp.lz"
 ChanseyBackpic:      INCBIN "gfx/pokemon/chansey/back.2bpp.lz"
 GurdurrBackpic:     INCBIN "gfx/pokemon/gurdurr/back.2bpp.lz"
-VoltikFrontpic:    INCBIN "gfx/pokemon/voltik/front.animated.2bpp.lz"
+JoltikFrontpic:    INCBIN "gfx/pokemon/joltik/front.animated.2bpp.lz"
 Rival2Pic:           INCBIN "gfx/trainers/rival2.2bpp.lz"
 UnownWFrontpic:      INCBIN "gfx/pokemon/unown_w/front.animated.2bpp.lz"
 CharmanderBackpic:   INCBIN "gfx/pokemon/charmander/back.2bpp.lz"
@@ -641,7 +641,7 @@ UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
 SECTION "Pics 18", ROMX
 
-VoltikBackpic:     INCBIN "gfx/pokemon/voltik/back.2bpp.lz"
+JoltikBackpic:     INCBIN "gfx/pokemon/joltik/back.2bpp.lz"
 RaikouBackpic:       INCBIN "gfx/pokemon/raikou/back.2bpp.lz"
 UnownKFrontpic:      INCBIN "gfx/pokemon/unown_k/front.animated.2bpp.lz"
 HoundourBackpic:     INCBIN "gfx/pokemon/houndour/back.2bpp.lz"

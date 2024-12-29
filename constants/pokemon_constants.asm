@@ -186,7 +186,7 @@ JOHTO_POKEMON EQU const_value
 	const NOCTOWL    ; a4
 	const DRILBUR    ; a5
 	const EXCADRILL  ; a6
-	const VOLTIK     ; a7
+	const JOLTIK     ; a7
 	const GALVANTULA ; a8
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa

@@ -167,7 +167,7 @@ PokedexDataPointerTable:
 	dw NoctowlPokedexEntry
 	dw DrilburPokedexEntry
 	dw ExcadrillPokedexEntry
-	dw VoltikPokedexEntry
+	dw JoltikPokedexEntry
 	dw GalvantulaPokedexEntry
 	dw CrobatPokedexEntry
 	dw ChinchouPokedexEntry

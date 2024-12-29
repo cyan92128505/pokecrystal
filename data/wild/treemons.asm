@@ -56,7 +56,7 @@ TreeMonSet_Town:
 TreeMonSet_Route:
 ; common
 	db 50, HOOTHOOT,   10
-	db 15, VOLTIK,   10
+	db 15, JOLTIK,   10
 	db 15, STARLY,     10
 	db 10, EXEGGCUTE,  10
 	db  5, EXEGGCUTE,  10

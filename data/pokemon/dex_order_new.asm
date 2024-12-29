@@ -39,7 +39,7 @@ NewPokedexOrder:
 	db HONEDGE
 	db DOUBLADE
 	db AEGISLASH
-	db VOLTIK
+	db JOLTIK
 	db GALVANTULA
 	db GEODUDE
 	db GRAVELER

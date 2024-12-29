@@ -172,7 +172,7 @@ PokemonCries::
 	mon_cry CRY_HOOTHOOT,      0,  416 ; NOCTOWL
 	mon_cry CRY_LEDYBA,        0,  222 ; DRILBUR
 	mon_cry CRY_SLUGMA,     -200,  300 ; EXCADRILL
-	mon_cry CRY_SPINARAK,     17,  512 ; VOLTIK
+	mon_cry CRY_SPINARAK,     17,  512 ; JOLTIK
 	mon_cry CRY_SPINARAK,   -174,  482 ; GALVANTULA
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU

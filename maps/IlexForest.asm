@@ -681,9 +681,9 @@ IlexForestFieldMon6Script:
 
 IlexForestFieldMon7Script:
 	faceplayer
-	cry VOLTIK
+	cry JOLTIK
 	pause 15
-	loadwildmon VOLTIK, 17
+	loadwildmon JOLTIK, 17
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

@@ -335,8 +335,8 @@ PokemonPicPointers::
 	dba_pic DrilburBackpic
 	dba_pic ExcadrillFrontpic
 	dba_pic ExcadrillBackpic
-	dba_pic VoltikFrontpic
-	dba_pic VoltikBackpic
+	dba_pic JoltikFrontpic
+	dba_pic JoltikBackpic
 	dba_pic GalvantulaFrontpic
 	dba_pic GalvantulaBackpic
 	dba_pic CrobatFrontpic

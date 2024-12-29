@@ -168,7 +168,7 @@ MonMenuIcons:
 	db ICON_BIRD        ; NOCTOWL
 	db ICON_MONSTER     ; DRILBUR
 	db ICON_MONSTER     ; EXCADRILL
-	db ICON_BUG         ; VOLTIK
+	db ICON_BUG         ; JOLTIK
 	db ICON_BUG         ; GALVANTULA
 	db ICON_BAT         ; CROBAT
 	db ICON_FISH        ; CHINCHOU

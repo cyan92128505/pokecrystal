@@ -168,7 +168,7 @@ EvosAttacksPointers::
 	dw NoctowlEvosAttacks
 	dw DrilburEvosAttacks
 	dw ExcadrillEvosAttacks
-	dw VoltikEvosAttacks
+	dw JoltikEvosAttacks
 	dw GalvantulaEvosAttacks
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks

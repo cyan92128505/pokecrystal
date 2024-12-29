@@ -496,9 +496,9 @@ Route29FieldMon6Script:
 	
 Route29FieldMon7Script:
 	faceplayer
-	cry VOLTIK
+	cry JOLTIK
 	pause 15
-	loadwildmon VOLTIK, 7
+	loadwildmon JOLTIK, 7
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

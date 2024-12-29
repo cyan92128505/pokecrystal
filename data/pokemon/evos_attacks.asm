@@ -2541,7 +2541,7 @@ ExcadrillEvosAttacks:
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
-VoltikEvosAttacks:
+JoltikEvosAttacks:
 	db EVOLVE_LEVEL, 30, GALVANTULA
 	db 0 ; no more evolutions
 	db 1, LEECH_LIFE

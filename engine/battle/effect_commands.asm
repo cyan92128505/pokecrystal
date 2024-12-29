@@ -1717,7 +1717,7 @@ BattleCommand_CheckHit:
 	cp THUNDER
 	jr nz, .notThunder
     call GetCurrentMon
-    cp VOLTIK
+    cp JOLTIK
     ret z
 	cp GALVANTULA
 	ret z

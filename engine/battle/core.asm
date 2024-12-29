@@ -6653,21 +6653,20 @@ LoadEnemyMon:
 
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage
+
+; DevNote - shiny - all Pokemon have 5% chance to be shiny
+    ld b, a
+	call BattleRandom
+    cp 5 percent
+    ld a, b
+    jr c, .GenerateShinyDVs
+
 	cp BATTLETYPE_SHINY
 	jr z, .GenerateShinyDVs
 	cp BATTLETYPE_PERFECT
 	jr z, .GeneratePerfectDVs
 	cp BATTLETYPE_PERFECT_ESCAPE
 	jr z, .GeneratePerfectDVs
-
-; DevNote - Hall of Origin has max DVs - No longer the case
-;   ld a, [wMapGroup]
-;	ld b, a
-;	ld a, [wMapNumber]
-;	ld c, a
-;	call GetWorldMapLocation
-;	cp LANDMARK_HALL_OF_ORIGIN
-;   jr z, .GeneratePerfectDVs
 	jr .GenerateDVs
 
 .GenerateShinyDVs
@@ -6676,9 +6675,6 @@ LoadEnemyMon:
 	jr .UpdateDVs
 
 .GeneratePerfectDVs
-    call BattleRandom
-    cp 5 percent
-    jr c, .GenerateShinyDVs
 	ld b, $ff
 	ld c, $ff
 	jr .UpdateDVs

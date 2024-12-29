@@ -18,7 +18,7 @@ AsleepTreeMonsDay:
 	db MURKROW
 	db HOOTHOOT
 	db NOCTOWL
-	db VOLTIK
+	db JOLTIK
 	db HERACROSS
 	db -1 ; end
 
@@ -26,6 +26,6 @@ AsleepTreeMonsMorn:
 	db MURKROW
 	db HOOTHOOT
 	db NOCTOWL
-	db VOLTIK
+	db JOLTIK
 	db HERACROSS
 	db -1 ; end

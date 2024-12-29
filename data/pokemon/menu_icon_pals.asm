@@ -171,7 +171,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN         ; NOCTOWL
 	icon_pals BROWN,  BLUE      ; DRILBUR
 	icon_pals BROWN,  BLUE      ; EXCADRILL
-	icon_pals GOLD,  BLUE          ; VOLTIK
+	icon_pals GOLD,  BLUE          ; JOLTIK
 	icon_pals GOLD,  BLUE        ; GALVANTULA
 	icon_pals PURPLE,  PURPLE        ; CROBAT
 	icon_pals BLUE,  TEAL      ; CHINCHOU

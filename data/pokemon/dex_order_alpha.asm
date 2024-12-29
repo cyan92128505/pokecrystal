@@ -13,6 +13,7 @@ AlphabeticalPokedexOrder:
 	db ARCTOVISH
 	db ARCTOZOLT
 	db ARTICUNO
+    db AZUMARILL
 	db BAGON
 	db BELDUM
 	db BELLSPROUT
@@ -91,6 +92,7 @@ AlphabeticalPokedexOrder:
 	db GURDURR
 	db GYARADOS
 	db HAUNTER
+    db HAWLUCHA
 	db HERACROSS
 	db HO_OH
 	db HONCHKROW
@@ -104,6 +106,7 @@ AlphabeticalPokedexOrder:
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON
+	db JOLTIK
 	db JYNX
 	db KADABRA
 	db KINGDRA
@@ -134,7 +137,6 @@ AlphabeticalPokedexOrder:
 	db MAMOSWINE
 	db MAREEP
 	db MARILL
-	db AZUMARILL
 	db MEOWTH
 	db METAGROSS
 	db METANG
@@ -159,7 +161,6 @@ AlphabeticalPokedexOrder:
 	db NOCTOWL
 	db ONIX
 	db PALKIA
-	db HAWLUCHA
 	db PAWNIARD
 	db PERSIAN
 	db PIKACHU
@@ -237,7 +238,6 @@ AlphabeticalPokedexOrder:
 	db VENUSAUR
 	db VICTREEBEL
 	db VOLCARONA
-	db VOLTIK
 	db VOLTORB
 	db VULPIX
 	db WARTORTLE

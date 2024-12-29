@@ -203,7 +203,7 @@ KantoGrassWildMons:
 	; morn
 	db 16, BUTTERFREE
 	db 16, STARAVIA
-	db 21, VOLTIK
+	db 21, JOLTIK
 	db 21, BUNEARY
 	db 25, PIKACHU
 	db 25, HERACROSS
@@ -211,7 +211,7 @@ KantoGrassWildMons:
 	; day
 	db 16, BUTTERFREE
 	db 16, STARAVIA
-	db 21, VOLTIK
+	db 21, JOLTIK
 	db 21, BUNEARY
 	db 25, PIKACHU
 	db 25, HERACROSS

@@ -6,8 +6,8 @@ ContestMons:
 	db 10, METAPOD,      9, 18
 	db  5, BUTTERFREE, 12, 15
 	db  5, LARVESTA,   12, 15
-	db 10, VOLTIK,    10, 16
-	db 10, VOLTIK,      10, 17
+	db 10, JOLTIK,    10, 16
+	db 10, JOLTIK,      10, 17
 	db  5, SCYTHER,    22, 25
 	db  5, PINSIR,     22, 25
 	db -1, VOLCARONA,  60, 60

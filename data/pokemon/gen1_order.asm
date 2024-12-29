@@ -206,7 +206,7 @@ Pokered_MonIndices:
 	db NOCTOWL
 	db DRILBUR
 	db EXCADRILL
-	db VOLTIK
+	db JOLTIK
 	db GALVANTULA
 	db CROBAT
 	db CHINCHOU

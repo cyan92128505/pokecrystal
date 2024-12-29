@@ -424,7 +424,7 @@ DrilburEggMoves:
 	db BELLY_DRUM
 	db -1 ; end
 
-VoltikEggMoves:
+JoltikEggMoves:
 	db PSYBEAM
 	db DISABLE
 	db SONICBOOM

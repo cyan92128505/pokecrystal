@@ -1,4 +1,4 @@
-	db VOLTIK ; 167
+	db JOLTIK ; 167
 
 	db  50,  47,  50,  65,  57,  50
 	;   hp  atk  def  spd  sat  sdf

@@ -48,7 +48,7 @@ ElmsSonText:
 	done
 
 ElmsHousePCPostWallaceText:
-    text "FUHRER WALLACE"
+    text "EMPEROR WALLACE"
     line "has abdicated"
     cont "and his location"
     cont "is unknown."
@@ -83,7 +83,7 @@ ElmsHousePCText:
 	cont "news."
 
 	para "It is believed"
-	line "FUHRER WALLACE"
+	line "EMPEROR WALLACE"
 	cont "may now be in"
 	cont "command of the"
 	cont "HOENN LEGENDARY"

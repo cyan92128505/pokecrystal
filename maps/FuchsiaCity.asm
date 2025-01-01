@@ -237,7 +237,7 @@ FuchsiaCityPokefanMText_Saved:
 	done
 
 InvadedFuchsiaCityPokefanMText:
-	text "Janine tried to"
+	text "JANINE tried to"
 	line "defend us."
 
 	para "WALLACE himself"
@@ -430,14 +430,10 @@ BlockingSoldier1Text:
     cont "the sight of"
     cont "HOENN legendary"
     cont "#MON."
-
-    para "ADMIRAL DRAKE made"
-    line "easy work of"
-    cont "everyone else."
     done
 
 BlockingSoldier2Text:
-    text "I saw the FUHRER"
+    text "I saw the EMPEROR"
     line "battle wielding"
     cont "the great forces"
     cont "of HOENN."
@@ -446,7 +442,7 @@ BlockingSoldier2Text:
     line "watching the FIRE"
     cont "GYM LEADER on"
     cont "his knees before"
-    cont "our FUHRER."
+    cont "our EMPEROR."
     done
     
 FuchsiaCitySelfScript:
@@ -650,10 +646,8 @@ FuchsiaSelfDefeatText1:
     done
 
 FuchsiaSelfConfidenceText2:
-    text "I have the power!"
-
-    para "I am the CHAMPION"
-    line "of HOENN!"
+    text "I am the CHAMPION"
+    line "of JOHTO!"
 
     para "I must try!"
     done
@@ -697,13 +691,6 @@ FuchsiaSelfBelieveText:
 	line "here and now."
 	para "If we don't..."
 	para "Nobody will."
-	para "There is no fear"
-	line "or rage."
-	para "Only focus and"
-	line "purpose."
-	para "Now let's do what"
-	line "we were born to do"
-	cont "and end this."
 	done
 
 FuchsiaSelfLossText:

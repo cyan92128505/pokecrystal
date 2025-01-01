@@ -133,7 +133,7 @@ MoveNames::
 	li "DISCHARGE"
 	li "DRAGON DANCE"
 	li "AMNESIA"
-	li "POSION JAB"
+	li "POISON JAB"
 	li "SOFTBOILED"
 	li "HI JUMP KICK"
 	li "GLARE"

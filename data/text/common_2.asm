@@ -1627,7 +1627,7 @@ _DontKillUsText::
     text "No..."
     para "Please..."
     para "It's him!"
-    para "Don't kill us!"
+    para "Spare us!"
     prompt
 
 _RayquazaKillText::
@@ -1636,7 +1636,7 @@ _RayquazaKillText::
 	cont "lives."
 
 	para "The cost of"
-	line "insurrection is"
+	line "treason is"
 	cont "known to all."
 
     para "RAYQUAZA!"
@@ -1659,7 +1659,7 @@ _WallaceText1::
 	line "liberate the land"
 	cont "you squander."
 	para "Those who resist"
-	line "shall die."
+	line "shall pay dearly."
 	prompt
 
 _WallaceText2::
@@ -1675,8 +1675,8 @@ _WallaceText2::
 	para "However, should"
 	line "you come to"
 	cont "sympathise with"
-	cont "KANTO you will be"
-	cont "shown no quarter."
+	cont "KANTO you will"
+	cont "not be spared."
 	para "As the ruler of"
 	line "HOENN I can"
 	cont "personally assure"

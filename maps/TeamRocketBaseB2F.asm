@@ -421,13 +421,8 @@ DadDefeatedText:
     done
 
 RocketTauntText:
-    text "There is nothing"
-    line "more pathetic than"
-    cont "a weak parent"
-    cont "groveling for"
-    cont "the life of the"
-    cont "child they could"
-    cont "not protect."
+    text "Now this is one"
+    line "pathetic sight."
 
     para "Making an enemy"
     line "of us was the"
@@ -449,10 +444,9 @@ LanceIntroText:
 WhoIsThatText:
     text "Who is there?"
 
-    para "Come and join"
-    line "your friends in"
-    cont "their last"
-    cont "moments."
+    para "Come and give"
+    line "your farewells"
+    cont "to your friends."
     done
 
 DragoniteAttackText:
@@ -933,9 +927,6 @@ RocketBaseBossFThrashText:
 	cont "can be violent,"
 	cont "unfair and all"
 	cont "too short."
-
-	para "I will be your"
-	line "teacher."
 	done
 
 RocketBaseBossLoseText:
@@ -943,21 +934,17 @@ RocketBaseBossLoseText:
 	done
 
 RocketBaseBossInitialWinText:
-	text "Such a pathetic"
-	line "display on the"
-	cont "last battle of"
-	cont "your life."
+	text "Such a meager"
+	line "display on your"
+	cont "last battle."
 	done
 
 RocketBaseBossWinText:
 	text "If LANCE wasn't"
 	line "here to save"
-	cont "you."
+	cont "you!"
 
-	para "You would be"
-	line "begging for"
-	cont "your life right"
-	cont "now."
+	para "...."
 
 	para "LANCE wont be"
 	line "here next time"

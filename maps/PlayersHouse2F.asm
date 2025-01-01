@@ -156,7 +156,7 @@ PlayersRadioText2:
 	done
 
 PlayersRadioText3:
-	text "FUHRER WALLACE"
+	text "EMPEROR WALLACE"
 	line "has taken control"
 	cont "due to the"
 	cont "assassination of"

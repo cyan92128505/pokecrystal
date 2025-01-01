@@ -49,7 +49,7 @@ WallaceScript:
 	closetext
 	winlosstext WallaceBeatenText, WallaceWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WALLACE, FUHRER_WALLACE
+	loadtrainer WALLACE, EMPEROR_WALLACE
 	startbattle
 	ifequal LOSE, .lose
 	dontrestartmapmusic
@@ -292,7 +292,7 @@ WarZoneOakText:
     done
 
 WarZoneSilverText:
-    text "FUHRER WALLACE..."
+    text "EMPEROR WALLACE..."
 
     para "Hmph!"
 
@@ -377,10 +377,6 @@ WallaceSeenText:
     line "new CHAMPION of"
     cont "JOHTO."
 
-    para "Thank you for"
-    line "delivering"
-    cont "yourself to me."
-
     para "A young hero"
     line "rose to CHAMPION"
     cont "to conquer evil"
@@ -391,13 +387,8 @@ WallaceSeenText:
     line "story."
 
     para "Your great"
-    line "moment is now"
-    cont "upon you."
-
-    para "You'll accomplish"
-    line "more in death than"
-    cont "you ever would"
-    cont "have in life."
+    line "moment has now"
+    cont "come."
 
     para "The people will"
     line "mourn you."
@@ -416,7 +407,7 @@ WallaceSeenText:
 
     para "Now let me help"
     line "you complete your"
-    cont "destiny."
+    cont "story."
     done
 
 WallaceBeatenText:
@@ -436,10 +427,6 @@ WallaceWinsText:
 
 WallaceAfterBattleText1:
     text "NO!"
-
-    para "My #MON!"
-
-    para "They abandon me!"
 
     para "How dare you do"
     line "this to me."
@@ -919,7 +906,7 @@ Soldier1AfterBattleText:
     para "...."
 
     para "Raining down"
-    line "thunder on our"
+    line "THUNDER on our"
     cont "ships."
 
     para "...."
@@ -952,7 +939,7 @@ Soldier2SeenText:
     cont "years!"
 
     para "You and everyone"
-    line "you love will"
+    line "you know will"
     cont "suffer because"
     cont "of your actions!"
     done
@@ -989,7 +976,7 @@ Soldier2AfterBattleText:
 
     para "Damn!"
 
-    para "Lance got here"
+    para "LANCE got here"
     line "quicker than"
     cont "expected!"
     done
@@ -1076,10 +1063,7 @@ TrainerSoldier4:
 	closetext
 	end
 Soldier4SeenText:
-    text "You are walking"
-    line "into your doom."
-
-    para "Any moment now"
+    text "Any moment now"
     line "floods more"
     cont "soldiers will"
     cont "converge upon"
@@ -1140,8 +1124,8 @@ Soldier5SeenText:
     cont "since before you"
     cont "were born."
 
-    para "I have killed"
-    line "many people."
+    para "I have ended"
+    line "many lives."
 
     para "All just faces"
     line "in my memory."

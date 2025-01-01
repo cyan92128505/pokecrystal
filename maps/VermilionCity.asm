@@ -506,18 +506,13 @@ TrainerSoldier8:
 	closetext
 	end
 Soldier8SeenText:
-	text "I love the sound"
-	line "of the children"
-	cont "crying."
-	para "This place is"
+	text "This place is"
 	line "locked down."
 	para "We are just the"
 	line "first wave."
 	para "Once we take"
 	line "SAFFRON your"
 	cont "country is ours."
-	para "You won't live to"
-	line "see that."
 	done
 Soldier8BeatenText:
     text "I done my job"
@@ -570,7 +565,7 @@ HoenCaptain:
 
 GoAwayText:
 	text "Go back to your"
-	line "home and pray our"
+	line "home and hope our"
 	cont "plans go"
 	cont "unhindered."
 	para "We have no"
@@ -590,15 +585,11 @@ HoenCaptainSeenText:
 	para "HOENN will"
 	line "liberate all of"
 	cont "KANTO!"
-	para "If you are not"
-	line "happy with this."
-	para "Then you will"
-	line "die."
 	done
 
 HoenCaptainBeatenText:
     text "Forgive me"
-    line "FUHRER."
+    line "EMPEROR."
     done
 
 HoenCaptainWinsText:
@@ -618,7 +609,7 @@ HoenCaptainAfterBattleText:
 	para "WALLACE has made"
 	line "it to FUCHSIA."
 	para "KANTO is doomed."
-	para "FUHRER WALLACE"
+	para "EMPEROR WALLACE"
 	line "has our strongest"
 	cont "squad with him."
 	para "Four CAPTAINS and"

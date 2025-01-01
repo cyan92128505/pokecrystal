@@ -865,7 +865,7 @@ YesIAm:
 
     para "And he reports"
     line "directly to"
-    cont "FUHRER WALLACE."
+    cont "EMPEROR WALLACE."
 
     para "I am likely"
     line "the strongest"
@@ -887,7 +887,7 @@ HoenSpyBeatenText:
 
 HoenSpyWinsText:
     text "Long live"
-    line "FUHRER WALLACE!"
+    line "EMPEROR WALLACE!"
     done
 
 Poliwrath:

@@ -2135,17 +2135,21 @@ PocketPCFunction:
 	ld l, e
 	ret
 .CheckEnvironment:
-	call GetMapEnvironment
-    cp DUNGEON
-    jr z, .nope
-    cp CAVE
-    jr z, .nope
+	;call GetMapEnvironment
+    ;cp DUNGEON
+    ;jr z, .nope
+    ;cp CAVE
+    ;jr z, .nope
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
 	cp LANDMARK_ANCIENT_RUIN
+	jr z, .nope
+	cp LANDMARK_MUSEUM
+	jr z, .nope
+	cp LANDMARK_INDIGO_PLATEAU
 	jr z, .nope
 	jr .ok
 .ok

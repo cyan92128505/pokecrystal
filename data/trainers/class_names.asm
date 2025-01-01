@@ -43,7 +43,7 @@ TrainerClassNames::
 	li "SAILOR"
 	li "SUPER NERD"
 	li "RIVAL"
-	li "FUHRER"
+	li "EMPEROR"
 	li "HIKER"
 	li "BIKER"
 	li "LEADER"

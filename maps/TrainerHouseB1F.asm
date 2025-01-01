@@ -431,7 +431,7 @@ BattleRouletteReceptionistScript:
 .Wallace1
     checkevent EVENT_BEAT_WALLACE
     iffalse .sample
-    loadtrainer WALLACE, FUHRER_WALLACE
+    loadtrainer WALLACE, EMPEROR_WALLACE
     sjump .finish
 
 .Patches
@@ -1558,7 +1558,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer WALLACE, FUHRER_WALLACE
+    loadtrainer WALLACE, EMPEROR_WALLACE
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -2917,12 +2917,12 @@ PlayAgainstLeonText:
 
 PlayAsWallaceText:
     text "Play as"
-    line "FUHRER WALLACE?"
+    line "EMPEROR WALLACE?"
     done
 
 PlayAgainstWallaceText:
     text "Play against"
-    line "FUHRER WALLACE?"
+    line "EMPEROR WALLACE?"
     done
 
 PlayAsAdamText:

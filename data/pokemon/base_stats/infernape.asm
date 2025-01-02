@@ -1,9 +1,9 @@
 	db INFERNAPE ; 157
 
-	db  76,  104,  71, 108, 104,  71
+	db  150,  150,  150,  150,  150,  150
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIRE, FIGHTING ; type
+	db FIRE, GROUND ; type
 	db 45 ; catch rate
 	db 209 ; base exp
 	db NO_ITEM, NO_ITEM ; items

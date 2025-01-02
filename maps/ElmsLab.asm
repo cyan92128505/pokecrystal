@@ -217,8 +217,8 @@ TotodilePokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic FROAKIE
-	cry FROAKIE
+	pokepic TEDDIURSA
+	cry TEDDIURSA
 	waitbutton
 	closepokepic
 	opentext
@@ -230,12 +230,12 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, FROAKIE
+	getmonname STRING_BUFFER_3, TEDDIURSA
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke FROAKIE, 5, BERRY
+	givepoke TEDDIURSA, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -460,6 +460,8 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem RARE_CANDY
+	giveitem POKE_BALL, 99
+	giveitem RARE_CANDY, 90
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext

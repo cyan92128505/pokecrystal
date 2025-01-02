@@ -218,7 +218,6 @@ HonedgeEvosAttacks:
 DoubladeEvosAttacks:
 	db EVOLVE_LEVEL, 40, AEGISLASH
 	db 0 ; no more evolutions
-	db 1, CUT
 	db 1, NIGHT_SHADE
 	db 12, METAL_CLAW
 	db 20, SLASH
@@ -233,7 +232,6 @@ DoubladeEvosAttacks:
 
 AegislashEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CUT
 	db 1, NIGHT_SHADE
 	db 12, METAL_CLAW
 	db 20, SLASH
@@ -775,7 +773,6 @@ MeowthEvosAttacks:
 	db 11, BITE
 	db 18, SWIFT
 	db 22, SCREECH
-	db 25, CUT
 	db 30, SLASH
 	db 0 ; no more level-up moves
 
@@ -786,7 +783,6 @@ PersianEvosAttacks:
 	db 11, BITE
 	db 18, SWIFT
 	db 22, SCREECH
-	db 25, CUT
 	db 28, SLASH
 	db 0 ; no more level-up moves
 
@@ -1301,7 +1297,6 @@ GliscorEvosAttacks:
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
 	db 9, HARDEN
-	db 14, CUT
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
@@ -3147,7 +3142,6 @@ GligarEvosAttacks:
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
 	db 9, HARDEN
-	db 14, CUT
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
@@ -3286,27 +3280,29 @@ TeddiursaEvosAttacks:
 	db EVOLVE_LEVEL, 30, URSARING
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 8, LICK
+	db 8, STOMP
 	db 15, HEADBUTT
-	db 22, REST
+	db 22, DRAIN_KISS
 	db 26, NIGHT_SLASH
 	db 31, SLASH
 	db 33, PLAY_ROUGH
 	db 35, THRASH
 	db 40, BODY_SLAM
+	db 43, EARTHQUAKE
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 8, LICK
+	db 8, STOMP
 	db 15, HEADBUTT
-	db 22, REST
+	db 22, DRAIN_KISS
 	db 26, NIGHT_SLASH
 	db 30, SLASH
 	db 33, PLAY_ROUGH
 	db 40, BODY_SLAM
+	db 43, EARTHQUAKE
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 

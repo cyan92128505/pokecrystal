@@ -143,9 +143,9 @@ PokemonCries::
 	mon_cry CRY_VENONAT,      61,  256 ; JOLTEON
 	mon_cry CRY_VENONAT,      16,  160 ; FLAREON
 	mon_cry CRY_WEEPINBELL,  170,  383 ; PORYGON
-	mon_cry CRY_METAPOD,    -70,  150 ; RALTS
-	mon_cry CRY_METAPOD,    -40,  200 ; KIRLIA
-	mon_cry CRY_METAPOD,     50,  200 ; GARDEVOIR
+	mon_cry CRY_METAPOD,     -70,  150 ; RALTS
+	mon_cry CRY_METAPOD,     -40,  200 ; KIRLIA
+	mon_cry CRY_METAPOD,      50,  200 ; GARDEVOIR
 	mon_cry CRY_METAPOD,    -255,  150 ; GALADE
 	mon_cry CRY_REGIGIGAS,    32,  368 ; AERODACTYL
 	mon_cry CRY_GRIMER,       85,  129 ; SNORLAX
@@ -250,7 +250,7 @@ PokemonCries::
 	mon_cry CRY_SLOWKING,    659,  320 ; BLISSEY
 	mon_cry CRY_RAIKOU,      558,  288 ; RAIKOU
 	mon_cry CRY_ENTEI,         0,  416 ; ENTEI
-	mon_cry CRY_DEOXYS,      0,  384 ; SUICUNE
+	mon_cry CRY_DEOXYS,        0,  384 ; SUICUNE
 	mon_cry CRY_RAIKOU,       95,  208 ; LARVITAR
 	mon_cry CRY_SPINARAK,   -475,  336 ; PUPITAR
 	mon_cry CRY_RAIKOU,     -256,  384 ; TYRANITAR

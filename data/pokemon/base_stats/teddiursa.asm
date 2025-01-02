@@ -1,9 +1,9 @@
 	db TEDDIURSA ; 216
 
-	db  60,  80,  50,  40,  50,  50
+	db  60,  90,  50,  80,  50,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db GROUND, FAIRY ; type
 	db 120 ; catch rate
 	db 90 ; base exp
 	db NO_ITEM, NO_ITEM ; items

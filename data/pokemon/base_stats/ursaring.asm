@@ -1,9 +1,9 @@
 	db URSARING ; 217
 
-	db  90, 130,  75,  75,  55,  75
+	db  90, 130,  75,  150,  55,  75
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db GROUND, FAIRY ; type
 	db 60 ; catch rate
 	db 189 ; base exp
 	db NO_ITEM, NO_ITEM ; items

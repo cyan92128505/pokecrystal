@@ -15,8 +15,8 @@ Moves: ; 41afb
 	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          25, NORMAL,        PHYSICAL,  90, 10,   0
-	move CALM_MIND,    EFFECT_CALM_MIND,          0, PSYCHIC_TYPE,   STATUS,   100, 15,   0
-	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  85, 20,   0
+	move CALM_MIND,    EFFECT_CALM_MIND,           0, PSYCHIC_TYPE,  STATUS,   100, 15,   0
+	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         80, FIGHTING,      PHYSICAL,  85, 20,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,          STATUS,   100, 20,   0
 	move FIRE_PUNCH,   EFFECT_BURN_HIT,           75, FIRE,          PHYSICAL, 100, 15,  10
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         75, ICE,           PHYSICAL, 100, 15,  10
@@ -26,7 +26,7 @@ Moves: ; 41afb
 	move GUILLOTINE,   EFFECT_OHKO,                0, BUG,           PHYSICAL,  30, 10,   0
 	move DRACO_ASCENT, EFFECT_NORMAL_HIT,        120, FLYING,        PHYSICAL, 100, 10,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
-	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        PHYSICAL,  95, 30,   0
+	move CUT,          EFFECT_ALWAYS_HIT,         90, STEEL,         PHYSICAL, 100, 30,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 30,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0
@@ -34,9 +34,9 @@ Moves: ; 41afb
 	move OBLIVION,     EFFECT_LEECH_HIT,          90, FLYING,        SPECIAL,  100, 15,   0
 	move OBLITERATE,   EFFECT_ALWAYS_HIT,        150, UBER,          PHYSICAL, 100, 20,   0
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         40, GRASS,         PHYSICAL, 100, 20,   0
-	move STOMP,        EFFECT_STOMP,              65, NORMAL,        PHYSICAL, 100, 20,  30
+	move STOMP,        EFFECT_STOMP,              65, GROUND,        PHYSICAL, 100, 20,  30
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING,      PHYSICAL, 100, 30,   0
-	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, NORMAL,        PHYSICAL,  75, 10,   0
+	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, FIGHTING,      PHYSICAL,  75, 10,   0
 	move MOON_BLAST,   EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,         SPECIAL,  100, 15,  30
 	move BIG_RECOVER,  EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 20,   0
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,        STATUS,   100, 15,   0
@@ -183,7 +183,7 @@ Moves: ; 41afb
 	move SAVAGE_REND,  EFFECT_NORMAL_HIT,        150, WATER,         PHYSICAL, 100,  5,   0
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,         STATUS,   100, 15,   0
-	move FLAME_WHEEL,  EFFECT_RECOIL_HIT,        60, FIRE,          PHYSICAL, 100,  25,  10
+	move FLAME_WHEEL,  EFFECT_RECOIL_HIT,         60, FIRE,          PHYSICAL, 100, 25,  10
 	move HURRICANE,    EFFECT_HURRICANE,         120, FLYING,        SPECIAL,   70, 10,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,         STATUS,   100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,        PHYSICAL, 100, 15,   0

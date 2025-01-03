@@ -27,9 +27,9 @@ Route7FieldMon1Script:
 
 Route7FieldMon2Script:
 	faceplayer
-	cry GALADE
+	cry GALLADE
 	pause 15
-	loadwildmon GALADE, 43
+	loadwildmon GALLADE, 43
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

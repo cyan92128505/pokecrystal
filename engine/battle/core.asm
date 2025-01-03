@@ -1227,6 +1227,7 @@ Core_MagicGuardPokemon:
     db ABRA
     db KADABRA
     db ALAKAZAM
+    db SIGILYPH
     db ARCEUS
     db SOLOSIS
     db DUOSION
@@ -1256,7 +1257,6 @@ Core_SpikesImmunePokemon:
     db WEEZING
     db LATIAS
     db LATIOS
-    db UNOWN
     db ROTOM
     db -1
 
@@ -4561,7 +4561,7 @@ SwitchInEffects:
 
     cp ARTICUNO
     jp z, .reflect
-    cp GALADE
+    cp GALLADE
     jp z, .reflect
     cp LATIOS
     jp z, .reflect

@@ -140,7 +140,7 @@ PokemonNames::
 	db "RALTS@@@@@"
 	db "KIRLIA@@@@"
 	db "GARDEVOIR@"
-	db "GALADE@@@@"
+	db "GALLADE@@@"
 	db "AERODACTYL"
 	db "SNORLAX@@@"
 	db "ARTICUNO@@"

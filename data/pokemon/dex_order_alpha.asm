@@ -69,7 +69,7 @@ AlphabeticalPokedexOrder:
 	db FROAKIE
 	db FROGADIER
 	db GABITE
-	db GALADE
+	db GALLADE
 	db GALVANTULA
 	db GARCHOMP
 	db GARDEVOIR

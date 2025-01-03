@@ -195,7 +195,7 @@ FalknerLossText:
 
 	para "You don't conform."
 
-	para "All right."
+	para "Alright."
 	line "Take this."
 
 	para "It's the official"

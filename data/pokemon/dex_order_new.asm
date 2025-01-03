@@ -204,7 +204,7 @@ NewPokedexOrder:
 	db RALTS
 	db KIRLIA
 	db GARDEVOIR
-	db GALADE
+	db GALLADE
 	db ARCTOZOLT
 	db ARCTOVISH
 	db AERODACTYL

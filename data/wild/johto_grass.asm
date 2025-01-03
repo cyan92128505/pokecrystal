@@ -1141,7 +1141,7 @@ JohtoGrassWildMons:
 	db 75, TOGEKISS
 	db 80, SNORLAX
 	; nite
-	db 70, GALADE
+	db 70, GALLADE
 	db 70, GARDEVOIR
 	db 72, MACHAMP
 	db 72, PORYGONZ

@@ -1573,9 +1573,6 @@ AideText_PocketPCInfoText:
 	line "it to heal your"
 	cont "#MON anytime!"
 
-	para "But this can't"
-	line "be used anywhere."
-
 	para "You can use the"
 	line "SEL option in the"
 	cont "KEY ITEMS menu to"

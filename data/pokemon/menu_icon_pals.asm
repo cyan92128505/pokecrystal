@@ -145,7 +145,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  GOLD  ; RALTS
 	icon_pals GREEN,  GOLD  ; KIRLIA
 	icon_pals GREEN,  GOLD  ; GARDEVOIR
-	icon_pals GREEN,  GOLD  ; GALADE
+	icon_pals GREEN,  GOLD  ; GALLADE
 	icon_pals BLUE,  PURPLE        ; AERODACTYL
 	icon_pals RED,  BLUE     ; SNORLAX
 	icon_pals BLUE,  TEAL       ; ARTICUNO

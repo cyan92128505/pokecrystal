@@ -159,7 +159,7 @@
 	const RALTS      ; 8a
 	const KIRLIA     ; 8b
 	const GARDEVOIR  ; 8c
-	const GALADE     ; 8d
+	const GALLADE     ; 8d
 	const AERODACTYL ; 8e
 	const SNORLAX    ; 8f
 	const ARTICUNO   ; 90

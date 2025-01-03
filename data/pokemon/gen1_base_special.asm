@@ -142,7 +142,7 @@ KantoMonSpecials:
 	db  90 ; RALTS
 	db 115 ; KIRLIA
 	db  45 ; GARDEVOIR
-	db  70 ; GALADE
+	db  70 ; GALLADE
 	db  60 ; AERODACTYL
 	db  65 ; SNORLAX
 	db 125 ; ARTICUNO

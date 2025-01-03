@@ -90,9 +90,9 @@ SilverCaveRoom2FieldMon5Script:
 
 SilverCaveRoom2FieldMon6Script:
 	faceplayer
-	cry GALADE
+	cry GALLADE
 	pause 15
-	loadwildmon GALADE, 73
+	loadwildmon GALLADE, 73
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

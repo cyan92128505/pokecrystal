@@ -346,7 +346,7 @@ KantoGrassWildMons:
 	db 34, KIRLIA
 	db 38, ARCANINE
 	db 41, GARDEVOIR
-	db 41, GALADE
+	db 41, GALLADE
 	db 50, EEVEE
 	; day
 	db 33, JIGGLYPUFF
@@ -354,7 +354,7 @@ KantoGrassWildMons:
 	db 34, KIRLIA
 	db 38, ARCANINE
 	db 41, GARDEVOIR
-	db 41, GALADE
+	db 41, GALLADE
 	db 50, EEVEE
 	; nite
 	db 33, UMBREON
@@ -362,7 +362,7 @@ KantoGrassWildMons:
 	db 34, SNEASEL
 	db 38, HOUNDOOM
 	db 41, GARDEVOIR
-	db 41, GALADE
+	db 41, GALLADE
 	db 50, EEVEE
 	end_grass_wildmons
 

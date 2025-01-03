@@ -393,7 +393,7 @@ BattleTowerMons:
     bigdw 74
 	db "KENTAROSU@@"
 
-	db GALADE
+	db GALLADE
 	db EXPERT_BELT
 	db DRAIN_PUNCH, THUNDERPUNCH, FIRE_PUNCH, ICE_PUNCH
 	dw 0 ; OT ID
@@ -1905,7 +1905,7 @@ BattleTowerMons:
     bigdw 134
 	db "RANTA-N@@@@"
 
-	db GALADE
+	db GALLADE
 	db EXPERT_BELT
 	db DRAIN_PUNCH, PSYCHO_SLASH, ICE_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
@@ -6023,7 +6023,7 @@ BattleTowerMons:
 	bigdw 328 ; SDef
 	db "RANTA-N@@@@"
 
-	db GALADE
+	db GALLADE
 	db LIFE_ORB
 	db CLOSE_COMBAT, PSYCHO_SLASH, EXTREMESPEED, SWORDS_DANCE
 	dw 0 ; OT ID

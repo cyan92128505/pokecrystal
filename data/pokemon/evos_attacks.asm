@@ -2084,7 +2084,7 @@ RaltsEvosAttacks:
 
 KirliaEvosAttacks:
     db EVOLVE_ITEM, MOON_STONE, GARDEVOIR
-    db EVOLVE_ITEM, SUN_STONE, GALADE
+    db EVOLVE_ITEM, SUN_STONE, GALLADE
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, CONFUSION

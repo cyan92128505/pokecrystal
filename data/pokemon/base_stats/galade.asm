@@ -1,4 +1,4 @@
-	db GALADE ; 141
+	db GALLADE ; 141
 
 	db  68, 125, 65,  80,  65,  115
 	;   hp  atk  def  spd  sat  sdf

@@ -99,6 +99,12 @@ CherrygroveCityGuideGent:
 	writetext GuideGentRunningShoesText
 	waitbutton
 	verbosegiveitem RUNNING_SHOES
+	giveitem MOON_STONE
+	giveitem FIRE_STONE
+	giveitem WATER_STONE
+	giveitem LEAF_STONE
+	giveitem HARD_STONE
+	giveitem SUN_STONE
 	closetext
 	loadmem wRunningShoesOn, 1
 	stopfollow

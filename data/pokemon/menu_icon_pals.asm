@@ -241,7 +241,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  GOLD      ; RAYQUAZA
 	icon_pals BROWN,  GREEN    ; SMEARGLE
 	icon_pals SILVER,  BLUE     ; DIALGA
-	icon_pals TEAL,  GOLD    ; KLEFKI
+	icon_pals GREEN,  GOLD    ; KLEFKI
 	icon_pals BLUE,  SILVER     ; XERNEAS
 	icon_pals BLUE,  SILVER       ; YVELTAL
 	icon_pals BROWN,  GREEN      ; GIRATINA

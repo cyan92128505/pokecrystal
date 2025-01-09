@@ -236,7 +236,7 @@ PokemonNames::
 	db "RAYQUAZA@@"
 	db "SMEARGLE@@"
 	db "DIALGA@@@@"
-	db "KLEFKI@@@@"
+	db "LEAFEON@@@"
 	db "XERNEAS@@@"
 	db "YVELTAL@@@"
 	db "GIRATINA@@"

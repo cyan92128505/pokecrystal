@@ -14,7 +14,7 @@ Moves: ; 41afb
 ; entries correspond to constants/move_constants.asm
 	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0
-	move DOUBLESLAP,   EFFECT_MULTI_HIT,          25, NORMAL,        PHYSICAL,  90, 10,   0
+	move DOUBLESLAP,   EFFECT_MULTI_HIT,          25, NORMAL,        PHYSICAL, 100, 10,   0
 	move CALM_MIND,    EFFECT_CALM_MIND,           0, PSYCHIC_TYPE,  STATUS,   100, 15,   0
 	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         80, FIGHTING,      PHYSICAL,  85, 20,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,          STATUS,   100, 20,   0
@@ -52,7 +52,7 @@ Moves: ; 41afb
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
 	move POISON_STING, EFFECT_POISON_HIT,         50, POISON,        PHYSICAL, 100, 30,  30
-	move STONE_EDGE,   EFFECT_NORMAL_HIT,        100, ROCK,          PHYSICAL,  85, 10,   0
+	move STONE_EDGE,   EFFECT_NORMAL_HIT,        100, ROCK,          PHYSICAL, 100, 10,   0
 	move SCALD,        EFFECT_BURN_HIT,           80, WATER,         SPECIAL,  100, 15,  30
 	move LEER,         EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
 	move BITE,         EFFECT_FLINCH_HIT,         60, DARK,          PHYSICAL, 100, 25,  30
@@ -98,8 +98,8 @@ Moves: ; 41afb
 	move THUNDERSHOCK, EFFECT_PARALYZE_HIT,       40, ELECTRIC,      SPECIAL,  100, 30,  10
 	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       95, ELECTRIC,      SPECIAL,  100, 15,  10
 	move THUNDER_WAVE, EFFECT_PARALYZE,            0, ELECTRIC,      STATUS,   100, 20,   0
-	move THUNDER,      EFFECT_THUNDER,           120, ELECTRIC,      SPECIAL,   75, 10,  30
-	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,          PHYSICAL,  90, 15,   0
+	move THUNDER,      EFFECT_THUNDER,           120, ELECTRIC,      SPECIAL,  100, 10,  30
+	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,          PHYSICAL, 100, 15,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,        PHYSICAL, 100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                1, GROUND,        PHYSICAL,  30, 10,   0
 	move DIG,          EFFECT_FLY,                80, GROUND,        PHYSICAL, 100, 15,   0
@@ -168,7 +168,7 @@ Moves: ; 41afb
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0
 	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,         PHYSICAL, 100, 15,  10
 	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100,  5,   0
-	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,          PHYSICAL,  95, 15,  30
+	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,          PHYSICAL, 100, 15,  30
 	move HYPER_FANG,   EFFECT_FLINCH_HIT,         80, NORMAL,        PHYSICAL,  90, 15,  10
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,         PHYSICAL, 100, 20,   0
 	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,           PHYSICAL, 100, 15,   0
@@ -208,10 +208,10 @@ Moves: ; 41afb
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     60, ICE,           SPECIAL,  100, 15, 100
-	move LEAF_BLADE,   EFFECT_NORMAL_HIT,         90, GRASS,         PHYSICAL, 100, 15,   0
+	move LEAF_BLADE,   EFFECT_LEECH_HIT,          90, GRASS,         PHYSICAL, 100, 15,   0
 	move PSYCHO_SLASH, EFFECT_NORMAL_HIT,         80, PSYCHIC_TYPE,  PHYSICAL, 100, 15,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
-	move OUTRAGE,      EFFECT_RAMPAGE,           100, DRAGON,        PHYSICAL, 100, 15,   0
+	move OUTRAGE,      EFFECT_RAMPAGE,           100, DRAGON,        SPECIAL,  100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, GRASS,         SPECIAL,  100, 15,   0
 	move ENDURE,       EFFECT_ENDURE,              0, NORMAL,        STATUS,   100, 10,   0
@@ -249,7 +249,7 @@ Moves: ; 41afb
 	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,         STATUS,   100, 10,   0
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,         STATUS,   100, 10,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       60, NORMAL,        SPECIAL,  100, 15,   0
-	move SEED_FLARE,   EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,         SPECIAL,  85,  10,  50
+	move SEED_FLARE,   EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,         SPECIAL,  100, 10,  50
 	move DRACO_METEOR, EFFECT_NORMAL_HIT,        120, DRAGON,        SPECIAL,  100, 10,   0
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,   100, 10,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,   100, 10,   0

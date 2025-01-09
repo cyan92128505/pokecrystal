@@ -1271,7 +1271,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, RATICATE
+	db 5, EEVEE
 	; day
 	db 3, RATTATA
 	db 3, STARLY
@@ -1279,7 +1279,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, RATICATE
+	db 5, EEVEE
 	; nite
 	db 3, RATTATA
 	db 3, HOOTHOOT
@@ -1287,7 +1287,7 @@ JohtoGrassWildMons:
 	db 4, CLEFAIRY
 	db 5, VULPIX
 	db 5, MURKROW
-	db 9, RATICATE
+	db 5, EEVEE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30

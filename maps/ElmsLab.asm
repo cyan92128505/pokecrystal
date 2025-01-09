@@ -205,7 +205,7 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CHIMCHAR, 5, BERRY
+	givepoke CHIMCHAR, 5, GOLD_BERRY
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
@@ -235,7 +235,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TEDDIURSA, 5, BERRY
+	givepoke TEDDIURSA, 5, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -263,7 +263,7 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TREECKO, 5, BERRY
+	givepoke TREECKO, 5, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript

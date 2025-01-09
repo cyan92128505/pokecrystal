@@ -125,7 +125,7 @@ SquirtleEvosAttacks:
 	db 10, DEFENSE_CURL
 	db 12, WATER_GUN
 	db 17, BITE
-	db 20, RAPID_SPIN
+	db 20, IRON_HEAD
 	db 25, BUBBLEBEAM
 	db 31, BODY_SLAM
 	db 37, RAIN_DANCE
@@ -143,7 +143,7 @@ WartortleEvosAttacks:
 	db 10, DEFENSE_CURL
 	db 13, WATER_GUN
 	db 16, BITE
-	db 20, RAPID_SPIN
+	db 20, IRON_HEAD
 	db 25, BUBBLEBEAM
 	db 31, BODY_SLAM
 	db 37, RAIN_DANCE
@@ -160,7 +160,7 @@ BlastoiseEvosAttacks:
 	db 10, DEFENSE_CURL
 	db 13, WATER_GUN
 	db 19, BITE
-	db 20, RAPID_SPIN
+	db 20, IRON_HEAD
 	db 25, BUBBLEBEAM
 	db 31, BODY_SLAM
 	db 37, RAIN_DANCE
@@ -1992,15 +1992,16 @@ EeveeEvosAttacks:
 	db EVOLVE_ITEM, FIRE_STONE, FLAREON
 	db EVOLVE_ITEM, SUN_STONE, ESPEON
 	db EVOLVE_ITEM, MOON_STONE, UMBREON
+	db EVOLVE_ITEM, LEAF_STONE, KLEFKI
 	db EVOLVE_HAPPINESS, TR_ANYTIME, SYLVEON
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 8, FOCUS_ENERGY
-	db 16, GROWL
-	db 20, GROWTH
+	db 8, DOUBLESLAP
+	db 16, SWIFT
+	db 20, BITE
 	db 23, QUICK_ATTACK
-	db 30, BITE
+	db 30, DIG
 	db 36, BATON_PASS
 	db 42, TAKE_DOWN
 	db 0 ; no more level-up moves
@@ -3574,16 +3575,13 @@ DialgaEvosAttacks:
 KlefkiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 8, METRONOME
-	db 12, SCREECH
-	db 16, REFLECT
-	db 18, LIGHT_SCREEN
-	db 20, SPIKES
-	db 20, DRAIN_KISS
-	db 24, CONFUSE_RAY
-	db 30, IRON_HEAD
-	db 35, FLASH_CANNON
-	db 40, MOON_BLAST
+	db 1, TAIL_WHIP
+	db 8, SLASH
+	db 15, LEAF_BLADE
+	db 21, NIGHT_SLASH
+	db 21, PSYCHO_SLASH
+	db 33, IRON_HEAD
+	db 40, SEED_FLARE
 	db 0 ; no more level-up moves
 
 XerneasEvosAttacks:

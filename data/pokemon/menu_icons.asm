@@ -238,7 +238,7 @@ MonMenuIcons:
 	db ICON_BIGMON      ; RAYQUAZA
 	db ICON_MONSTER     ; SMEARGLE
 	db ICON_BIGMON      ; DIALGA
-	db ICON_VOLTORB     ; KLEFKI
+	db ICON_FOX         ; KLEFKI
 	db ICON_EQUINE      ; XERNEAS
 	db ICON_LUGIA       ; YVELTAL
 	db ICON_BAT         ; GIRATINA

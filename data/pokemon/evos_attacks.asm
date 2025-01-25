@@ -2339,13 +2339,13 @@ ChimcharEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, EMBER
-	db 17, KARATE_CHOP
-	db 20, MACH_PUNCH
-	db 26, FLAME_WHEEL
+	db 17, STOMP
+	db 20, FLAME_WHEEL
+	db 26, DRAIN_PUNCH
 	db 30, SUBMISSION
 	db 35, FIRE_PUNCH
 	db 40, FLAMETHROWER
-	db 45, CLOSE_COMBAT
+	db 45, EARTHQUAKE
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
@@ -2355,14 +2355,14 @@ MonfernoEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, EMBER
-	db 16, KARATE_CHOP
-	db 20, MACH_PUNCH
-	db 26, FLAME_WHEEL
+	db 16, STOMP
+	db 20, FLAME_WHEEL
+	db 26, DRAIN_PUNCH
 	db 30, SUBMISSION
 	db 33, FIRE_PUNCH
 	db 37, AURA_SPHERE
 	db 40, FLAMETHROWER
-	db 45, CLOSE_COMBAT
+	db 45, EARTHQUAKE
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
@@ -2371,14 +2371,14 @@ InfernapeEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, EMBER
-	db 16, KARATE_CHOP
-	db 20, MACH_PUNCH
-	db 26, FLAME_WHEEL
+	db 16, STOMP
+	db 20, FLAME_WHEEL
+	db 26, DRAIN_PUNCH
 	db 30, SUBMISSION
 	db 33, FIRE_PUNCH
 	db 36, AURA_SPHERE
 	db 40, FLAMETHROWER
-	db 45, CLOSE_COMBAT
+	db 45, EARTHQUAKE
 	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
@@ -3574,12 +3574,12 @@ DialgaEvosAttacks:
 
 KlefkiEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, CUT
 	db 1, TAIL_WHIP
 	db 8, SLASH
 	db 15, LEAF_BLADE
-	db 21, NIGHT_SLASH
-	db 21, PSYCHO_SLASH
+	db 20, NIGHT_SLASH
+	db 20, PSYCHO_SLASH
 	db 33, IRON_HEAD
 	db 40, SEED_FLARE
 	db 0 ; no more level-up moves

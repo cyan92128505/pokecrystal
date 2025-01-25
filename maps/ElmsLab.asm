@@ -462,6 +462,7 @@ AideScript_GivePotion:
 	verbosegiveitem RARE_CANDY
 	giveitem POKE_BALL, 99
 	giveitem RARE_CANDY, 90
+	giveitem AMBROSIA, 99
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
@@ -998,7 +999,7 @@ LabWhereGoingText:
 
 TakeCyndaquilText:
 	text "You'll take"
-	line "CHIMCHAR, the"
+	line "CYNDAQUIL, the"
 	cont "FIRE #MON?"
 	done
 
